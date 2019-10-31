@@ -103,11 +103,13 @@ pre {
     position: relative;
     .toggle-flex();
     .gatsby_demo_code {
-      .toggle-block();
-      position: absolute;
-      z-index: 4;
-      width: 100%;
-      height: 100%;
+      .collapse-height();
+      #overlay--open-full & {
+        position: absolute;
+        z-index: 4;
+        width: 100%;
+        height: 100%;
+      }
       .gatsby_demo_code_inner {
         display: flex;
         flex-flow: column;
