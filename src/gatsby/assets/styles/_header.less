@@ -5,7 +5,15 @@
 @gatsby_site_header_height: 5.5rem;
 
 .gatsby_site_header_top_left {
-  width: @gatsby_site_article_sidebar_width;
+  @media @min-md {
+    width: @gatsby_site_article_sidebar_width--md;
+  }
+  @media @min-lg {
+    width: @gatsby_site_article_sidebar_width--lg;
+  }
+  @media @min-xl {
+    width: @gatsby_site_article_sidebar_width--xl;
+  }
 }
 
 .gatsby_site_header_top_center {
@@ -13,7 +21,12 @@
 }
 
 .gatsby_site_header_top_right {
-  width: @gatsby_site_article_aside_width;
+  @media @min-lg {
+    width: @gatsby_site_article_aside_width--lg;
+  }
+  @media @min-xl {
+    width: @gatsby_site_article_aside_width--xl;
+  }
 }
 
 // .gatsby_site_header
@@ -21,7 +34,7 @@
 .gatsby_site_header_top {
   display: flex;
   color: @white;
-  background: linear-gradient(0deg, @grad-primary);
+  background: linear-gradient(0deg, @grad-accent);
 }
 
 .gatsby_site_header_top_row {

@@ -1,13 +1,4 @@
 /**
- * vars
- */
-
-// generate class: [false], [true] non responsive only, [sm, md, lg] responsive @breakpoints
-
-@generate-card-group: sm, md, lg;
-@generate-box-horizontal: sm, md, lg;
-
-/**
  * card
  */
 
@@ -122,7 +113,7 @@
   // preset
   .card--overlay& {
     > .card-design {
-      box-shadow: @shadow-primary;
+      box-shadow: @shadow-accent;
     }
   }
   // interactive
@@ -136,7 +127,7 @@
     }
     &:active, &.active {
       > .card-design {
-        box-shadow: @shadow-primary;
+        box-shadow: @shadow-accent;
       }
     }
   }
