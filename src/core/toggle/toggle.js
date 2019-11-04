@@ -2688,7 +2688,7 @@ Toggle.optionsDefaultSuper = {
   on: 'click',
   min: 0,
   max: 1,
-  instant: { elements: true },
+  instant: { elements: true, targets: false, elementsInner: false, targetsInner: false },
   // defaults
   class: 'active',
   classIn: 'in',
