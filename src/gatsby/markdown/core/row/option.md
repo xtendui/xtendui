@@ -80,6 +80,8 @@ Set children's horizontal alignment inside the flexbox.
   </demovanilla>
   <demovanilla src="inline/core/row/justify-around" mode="grid">
   </demovanilla>
+  <demovanilla src="inline/core/row/justify-evenly" mode="grid">
+  </demovanilla>
 </demo>
 
 ##Align items
@@ -146,15 +148,15 @@ Set item's order inside the flexbox.
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.order--{number}`                        | `.order--1`                   |
-| Class responsive        | `.order--{number}--{breakpoint}`           | `.order--1--sm`                |
+| Class                   | `.order-{number}`                        | `.order-1`                   |
+| Class responsive        | `.order-{number}--{breakpoint}`           | `.order-1--sm`                |
 | Mixin                   | `.order({number})`                        | `.order(1)`                   |
 | Mixin responsive min    | `.order({number}, {breakpoint})`          | `.order(1, sm)`               |
 
 </div>
 
 [[notePrimary]]
-| By default orders from `.order--0` to `.order--2` are negative values.
+| By default orders from `.order-0` to `.order-2` are negative values.
 
 <demo>
   <demovanilla src="inline/core/row/order" mode="grid">
