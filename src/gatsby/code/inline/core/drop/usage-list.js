@@ -17,20 +17,20 @@ demo.htmlSource = `
       <div class="drop-inner">
         <div class="drop-design"></div>
         <div class="drop-content">
-          <ul class="list-block list--default list-space--none list--center list--big list--squared">
+          <ul class="list list--drop">
             <li>
-              <button type="button">
-                Lorem ipsum dolor
-              </button>
+              <a href="#">
+                Lorem Ipsum
+              </a>
             </li>
             <li>
               <button type="button">
                 Dolor sit
               </button>
             </li>
-            <li>
-              <button type="button">
-                Amet
+            <li class="xt-custom">
+              <button type="button" class="btn btn--default btn--small btn--wide btn--squared">
+                Dolor sit
               </button>
             </li>
           </ul>

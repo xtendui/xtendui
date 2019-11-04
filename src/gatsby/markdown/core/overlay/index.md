@@ -56,6 +56,9 @@ You can use this markup to create an overlay with **no toggle**.
 
 ##Javascript
 
+[[notePrimary]]
+| Overlay uses toggle for logic, refer to [toggle page](/core/toggle#@TODO) for a complete **API**.
+
 ###Initialization
 
 Initialize automatically within markup with `[data-xt-overlay]`.
@@ -72,10 +75,6 @@ new Xt.Overlay(document.querySelector('.my-overlay'), {
 
 @TODO tables options
 
-Overlay uses toggle for logic, refer to [toggle page](/core/toggle#@TODO) for a complete **API**.
-
 ###Events
 
 @TODO tables events
-
-Overlay uses toggle for logic, refer to [toggle page](/core/toggle#@TODO) for a complete **API**.

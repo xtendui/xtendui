@@ -2,30 +2,34 @@
 type: "Core"
 parent: "Drop"
 title: "Content"
+date: "2000-04-01"
 ---
 
-##Content
+##Card
+
+[[notePrimary]]
+| Drop uses card to style it's content, refer to [card's content](/core/card/content) for a complete **API**.
 
 <demo>
   <demovanilla src="inline/core/drop/usage-card">
   </demovanilla>
 </demo>
 
+##List
+
+[[notePrimary]]
+| Drop uses list to style it's content, refer to [list's content](/core/list/content) for a complete **API**.
+
+Use `li.custom` to override styles applied by `.list.list--drop`.
+
 <demo>
   <demovanilla src="inline/core/drop/usage-list">
   </demovanilla>
 </demo>
 
-`.list.list--drop` to override buttons use `li.custom`
-
-<demo>
-  <demovanilla src="inline/core/drop/usage-list-drop">
-  </demovanilla>
-</demo>
-
 ##Overflow
 
-Drop with max sizes with automatic scrollbar on overflow with `drop--overflow-y`.
+You can set vertical overflow using `.drop--overflow-y` in `.drop`.
 
 <demo>
   <demovanilla src="inline/core/drop/overflow-y">

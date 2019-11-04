@@ -9,7 +9,7 @@ Overlay uses card to style it's content, refer to [card page](/core/card/other) 
 
 ##Disable
 
-To disable drop use `.overlay--disable` useful within media queries.
+To disable overlay use `.overlay--disable` useful within media queries.
 
 <demo>
   <demovanilla src="inline/core/overlay/disable">

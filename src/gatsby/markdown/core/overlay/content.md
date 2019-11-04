@@ -134,7 +134,7 @@ If you want full width assets use `.card-asset`.
 
 ##Overflow
 
-You can set vertical overflow using `.card--overflow-y` in `card-inner` or `card-block`.
+You can set vertical overflow using `.card--overflow-y` in `.card-inner` or `.card-block`.
 
 <demo>
   <demovanilla src="inline/core/overlay/overflow-y">
