@@ -7,7 +7,16 @@ date: "2000-02-01"
 
 ##Variant
 
-Optional classes for assigning variant.
+Classes for assigning variant (e.g.: border / background / font colors).
+
+<div class="table--scroll">
+
+|                         | Syntax                                    | Example                       |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Class                   | `.btn--{variant}`                        | `.btn--default` `.btn--primary` `.btn--text` `.btn--link` |
+| Mixin                   | `.btn--{variant}()`                      | `.btn--default()` `.btn--primary()`  `.btn--text()` `.btn--link()`   |
+
+</div>
 
 <demo>
   <demovanilla src="inline/core/button/variant">
@@ -23,7 +32,14 @@ On containers use `.text-inverse` to have white buttons (needs `color: inherit`)
 
 ##Sizes
 
-Optional classes for assigning size. Sizes uses `em` padding that depends on font size.
+Optional classes for assigning size (e.g.: padding or font size).
+
+Sizes uses `em` padding that depends on font size.
+
+|                         | Syntax                                    | Example                       |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Class                   | `.btn--{size}`                        | `.btn--tiny` `.btn--small` `.btn--medium` `.btn--big` `.btn--giant` |
+| Mixin                   | `.btn--{size}()`                      | `.btn--tiny()` `.btn--small()`  `.btn--medium()` `.btn--big()` `.btn--giant()`   |
 
 <demo>
   <demovanilla src="inline/core/button/size">

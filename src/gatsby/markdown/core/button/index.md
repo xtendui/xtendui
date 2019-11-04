@@ -6,9 +6,19 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 categories: ["300-Interaction"]
 ---
 
+##Setup
+
+To use this component import the **less** files accordingly:
+
+```less
+@import '~xtend-library/src/core/button/index.less';
+```
+
+Or just [import core](/core/setup/#@TODO).
+
 ##Usage
 
-Use `.btn` to create a button.
+Use this markup to create a button.
 
 <script type="text/plain" class="language-markup">
   <a href="#" class="btn btn--default">
@@ -18,7 +28,8 @@ Use `.btn` to create a button.
   <button type="button" class="btn btn--default">
     <!-- content -->
   </button>
-</script>
 
-[[notePrimary]]
-| The `span` that wraps the content is optional but recommended for animating the content.
+  <div class="btn btn--default">
+    <!-- content -->
+  </div>
+</script>

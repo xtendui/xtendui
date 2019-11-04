@@ -32,9 +32,5 @@ demo.htmlSource = `
   <button type="button" class="btn btn--default btn--giant">
     giant
   </button>
-  
-  <button type="button" class="btn btn--default btn--huge">
-    huge
-  </button>
 </div>
 `
