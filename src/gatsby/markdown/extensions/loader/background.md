@@ -4,7 +4,7 @@ parent: "Loader"
 title: "Background"
 ---
 
-## Background
+##Background
 
 Use `.loader--background` to add the custom background.
 

@@ -8,7 +8,7 @@ categories: ["100-Content"]
 
 ##Setup
 
-To use this component import the **less**files accordingly:
+To use this component import the **less** files accordingly:
 
 ```less
 @import '~xtend-library/src/core/group/index.less';

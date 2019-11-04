@@ -25,7 +25,7 @@ Classes for assigning variant (e.g.: border / background / font colors).
 
 ##Position
 
-Optional classes for assigning position.
+Classes for assigning position.
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |

@@ -28,7 +28,7 @@ Classes for assigning variant (e.g.: border / background / font colors).
 
 ##Size
 
-Optional classes for assigning width.
+Classes for assigning width.
 
 <div class="table--scroll">
 

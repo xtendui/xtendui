@@ -8,13 +8,13 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<form>
+<div class="form">
   <div class="form-group form-group--small xt-custom">
     <label class="form-label">
       Small
     </label>
     <input type="text" class="form-item">
-    <div class="form-text">
+    <div class="form-note">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis.
     </div>
   </div>
@@ -24,7 +24,7 @@ demo.htmlSource = `
       Medium
     </label>
     <input type="text" class="form-item">
-    <div class="form-text">
+    <div class="form-note">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis.
     </div>
   </div>
@@ -34,9 +34,9 @@ demo.htmlSource = `
       Big
     </label>
     <input type="text" class="form-item">
-    <div class="form-text">
+    <div class="form-note">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis.
     </div>
   </div>
-</form>
+</div>
 `

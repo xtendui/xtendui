@@ -4,21 +4,27 @@ parent: "Form"
 title: "Other"
 ---
 
-## Legend
+##Legend
+
+You can use `legend`.
 
 <demo>
   <demovanilla src="inline/core/form/legend">
   </demovanilla>
 </demo>
 
-## Fieldset
+##Fieldset
+
+You can use `fieldset`.
 
 <demo>
   <demovanilla src="inline/core/form/fieldset">
   </demovanilla>
 </demo>
 
-## Text
+##Text
+
+Use `.form-note` to make a form note.
 
 <demo>
   <demovanilla src="inline/core/form/text">

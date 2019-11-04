@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<form class="form--small">
+<div class="form form--small">
   <div class="form-group form-group--big xt-custom">
     <label class="form-label">
       Custom
@@ -79,5 +79,5 @@ demo.htmlSource = `
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
     </label>
   </div>
-</form>
+</div>
 `

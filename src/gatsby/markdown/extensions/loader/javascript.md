@@ -4,7 +4,7 @@ parent: "Loader"
 title: "Javascript"
 ---
 
-## Javascript
+##Javascript
 
 <demo>
   <demovanilla src="inline/demos/loader/js-spinner">

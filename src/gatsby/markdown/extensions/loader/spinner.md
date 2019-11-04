@@ -4,7 +4,7 @@ parent: "Loader"
 title: "Spinner"
 ---
 
-## Spinner
+##Spinner
 
 `.loader--spinner`.
 

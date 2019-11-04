@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<form>
+<div class="form">
   <fieldset>
   
     <div class="form-group">
@@ -44,5 +44,5 @@ demo.htmlSource = `
     </div>
     
   </fieldset>
-</form>
+</div>
 `

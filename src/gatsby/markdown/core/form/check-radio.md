@@ -2,6 +2,7 @@
 type: "Core"
 parent: "Form"
 title: "Check and Radio"
+date: "2000-05-01"
 ---
 
 ##Unstyled
@@ -11,20 +12,25 @@ title: "Check and Radio"
 Use this markup to create a checkbox or radio **unstyled**.
 
 <script type="text/plain" class="language-markup">
-  <div class="form-group">
-    <input type="checkbox" id="checkbox-unstyled" class="unstyled">
-    <label class="form-label" for="checkbox-unstyled">
-      <!-- content -->
-    </label>
-  </div>
+  <form>
+    <div class="form-group">
+      <input type="checkbox" id="checkbox-unstyled" class="unstyled">
+      <label class="form-label" for="checkbox-unstyled">
+        <!-- content -->
+      </label>
+    </div>
 
-  <div class="form-group">
-    <input type="radio" id="radio-unstyled" name="radio-unstyled" class="unstyled">
-    <label class="form-label" for="radio-unstyled">
-      <!-- content -->
-    </label>
-  </div>
+    <div class="form-group">
+      <input type="radio" id="radio-unstyled" name="radio-unstyled" class="unstyled">
+      <label class="form-label" for="radio-unstyled">
+        <!-- content -->
+      </label>
+    </div>
+  </form>
 </script>
+
+[[noteError]]
+| Checkbox and radio must be inside [form group](/core/form/group) to have default styles.
 
 ###Modes
 
@@ -44,20 +50,25 @@ Use this markup to create a checkbox or radio **unstyled**.
 Use this markup to create a checkbox or radio **styled**.
 
 <script type="text/plain" class="language-markup">
-  <div class="form-group">
-    <input type="checkbox" id="checkbox-styled">
-    <label class="form-label" for="checkbox-styled">
-      <!-- content -->
-    </label>
-  </div>
+  <form>
+    <div class="form-group">
+      <input type="checkbox" id="checkbox-styled">
+      <label class="form-label" for="checkbox-styled">
+        <!-- content -->
+      </label>
+    </div>
 
-  <div class="form-group">
-    <input type="radio" id="radio-styled" name="radio-styled">
-    <label class="form-label" for="radio-styled">
-      <!-- content -->
-    </label>
-  </div>
+    <div class="form-group">
+      <input type="radio" id="radio-styled" name="radio-styled">
+      <label class="form-label" for="radio-styled">
+        <!-- content -->
+      </label>
+    </div>
+  </form>
 </script>
+
+[[noteError]]
+| Checkbox and radio must be inside [form group](/core/form/group) to have default styles.
 
 ###Modes
 

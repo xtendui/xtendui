@@ -10,7 +10,16 @@ date: "2000-02-01"
 
 ##Variant
 
-Optional classes for assigning variant (e.g.: `.group--default`).
+Classes for assigning variant (e.g.: border / background / font colors).
+
+<div class="table--scroll">
+
+|                         | Syntax                                    | Example                       |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Class                   | `.group--{variant}`                        | `.group--default`             |
+| Mixin                   | `.group--{variant}()`                      | `.group--default()`            |
+
+</div>
 
 <demo>
   <demovanilla src="inline/core/group/options-variant-line">

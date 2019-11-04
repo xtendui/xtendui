@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<form>
+<div class="form">
   <div class="form-group--inline">
     <div class="form-group">
       <label class="form-label">
@@ -38,5 +38,5 @@ demo.htmlSource = `
       <input type="text" class="form-item">
     </div>
   </div>
-</form>
+</div>
 `

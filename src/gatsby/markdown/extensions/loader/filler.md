@@ -4,9 +4,9 @@ parent: "Loader"
 title: "Filler"
 ---
 
-## Filler
+##Filler
 
-### Direction
+###Direction
 
 `.loader--x` or `.loader--y`.
 
@@ -17,7 +17,7 @@ title: "Filler"
   </demovanilla>
 </demo>
 
-### Size
+###Size
 
 `.loader--x.loader-size--x` `.loader--y.loader-size--y` `.loader--x.loader-size--top` `.loader--x.loader-size--bottom` `.loader--y.loader-size--left` `.loader--y.loader-size--right`.
 

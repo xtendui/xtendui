@@ -4,7 +4,7 @@ parent: "Loader"
 title: "Mouse"
 ---
 
-## Mouse
+##Mouse
 
 `.loader--mouse`
 

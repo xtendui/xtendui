@@ -18,7 +18,7 @@ Classes for assigning variant (e.g.: border / background / font colors).
 
 ##Size
 
-Optional classes for assigning size (e.g.: padding or font size).
+Classes for assigning size (e.g.: padding or font size).
 
 <demo>
   <demovanilla src="inline/core/note/size-background">

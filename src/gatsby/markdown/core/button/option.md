@@ -30,9 +30,9 @@ On containers use `.text-inverse` to have white buttons (needs `color: inherit`)
   </demovanilla>
 </demo>
 
-##Sizes
+##Size
 
-Optional classes for assigning size (e.g.: padding or font size).
+Classes for assigning size (e.g.: padding or font size).
 
 Sizes uses `em` padding that depends on font size.
 
