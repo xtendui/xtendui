@@ -1,9 +1,9 @@
 ---
 type: "Core"
-parent: "Link"
-title: "Link"
+parent: "Container"
+title: "Container"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-categories: ["300-Interaction"]
+categories: ["200-Layout"]
 ---
 
 ##Setup
@@ -11,17 +11,17 @@ categories: ["300-Interaction"]
 To use this component import the **less** files accordingly:
 
 ```less
-@import '~xtend-library/src/core/link/index.less';
+@import '~xtend-library/src/core/container/index.less';
 ```
 
 Or just [import core](/core/setup/#@TODO).
 
 ##Usage
 
-Use this markup to create a link.
+Use this markup to create an container.
 
 <script type="text/plain" class="language-markup">
-  <a href="#">
+  <div class="container">
     <!-- content -->
-  </a>
+  </div>
 </script>
