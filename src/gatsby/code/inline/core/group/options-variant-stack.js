@@ -10,72 +10,16 @@ export const demo = {
 demo.htmlSource = `
 <div class="group full group--default">
   <div class="group-inner">
-    <button type="button" class="btn btn--default">
-      btn 1a
+    <button type="button" class="btn btn--primary">
+      Lorem ipsum
     </button>
     <button type="button" class="btn btn--default">
-      btn 1b
-    </button>
-  </div>
-  <div class="group-inner">
-    <button type="button" class="btn btn--default">
-      btn 2a
+      Dolor sit
     </button>
     <button type="button" class="btn btn--default">
-      btn 2b
+      amet
     </button>
   </div>
-  <input type="text" class="form-item form-item--default">
-  <div class="group-inner">
-    <button type="button" class="btn btn--default">
-      btn 3a
-    </button>
-    <button type="button" class="btn btn--default">
-      btn 3b
-    </button>
-  </div>
-  <div class="group-inner">
-    <button type="button" class="btn btn--default">
-      btn 4a
-    </button>
-    <button type="button" class="btn btn--default">
-      btn 4b
-    </button>
-  </div>
-</div>
-
-<div class="group full group--default">
-  <div class="group-inner flex-auto">
-    <button type="button" class="btn btn--default">
-      btn 1a
-    </button>
-    <button type="button" class="btn btn--default">
-      btn 1b
-    </button>
-  </div>
-  <div class="group-inner">
-    <button type="button" class="btn btn--default">
-      btn 2a
-    </button>
-    <button type="button" class="btn btn--default">
-      btn 2b
-    </button>
-  </div>
-  <div class="group-inner flex-auto">
-    <button type="button" class="btn btn--default">
-      btn 3a
-    </button>
-    <button type="button" class="btn btn--default">
-      btn 3b
-    </button>
-  </div>
-  <div class="group-inner">
-    <button type="button" class="btn btn--default">
-      btn 4a
-    </button>
-    <button type="button" class="btn btn--default">
-      btn 4b
-    </button>
-  </div>
+  <input type="text" class="form-item form-item--default" />
 </div>
 `

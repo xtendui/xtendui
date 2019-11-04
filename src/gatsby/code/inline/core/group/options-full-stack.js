@@ -9,72 +9,26 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="group full">
-  <div class="group-inner">
-    <button type="button" class="btn btn--primary">
-      btn 1a
-    </button>
-    <button type="button" class="btn btn--primary">
-      btn 1b
-    </button>
-  </div>
-  <div class="group-inner">
-    <button type="button" class="btn btn--default">
-      btn 2a
-    </button>
-    <button type="button" class="btn btn--default">
-      btn 2b
-    </button>
-  </div>
-  <input type="text" class="form-item form-item--default">
-  <div class="group-inner">
-    <button type="button" class="btn btn--primary">
-      btn 3a
-    </button>
-    <button type="button" class="btn btn--primary">
-      btn 3b
-    </button>
-  </div>
-  <div class="group-inner">
-    <button type="button" class="btn btn--default">
-      btn 4a
-    </button>
-    <button type="button" class="btn btn--default">
-      btn 4b
-    </button>
-  </div>
-</div>
-
-<div class="group full">
   <div class="group-inner flex-auto">
     <button type="button" class="btn btn--primary">
-      btn 1a
+      Lorem ipsum
     </button>
-    <button type="button" class="btn btn--primary">
-      btn 1b
+    <button type="button" class="btn btn--default">
+      Dolor sit
+    </button>
+    <button type="button" class="btn btn--default">
+      amet
     </button>
   </div>
   <div class="group-inner">
-    <button type="button" class="btn btn--default">
-      btn 2a
-    </button>
-    <button type="button" class="btn btn--default">
-      btn 2b
-    </button>
-  </div>
-  <div class="group-inner flex-auto">
     <button type="button" class="btn btn--primary">
-      btn 3a
-    </button>
-    <button type="button" class="btn btn--primary">
-      btn 3b
-    </button>
-  </div>
-  <div class="group-inner">
-    <button type="button" class="btn btn--default">
-      btn 4a
+      Lorem ipsum
     </button>
     <button type="button" class="btn btn--default">
-      btn 4b
+      Dolor sit
+    </button>
+    <button type="button" class="btn btn--default">
+      amet
     </button>
   </div>
 </div>

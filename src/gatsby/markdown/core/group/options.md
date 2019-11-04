@@ -2,31 +2,22 @@
 type: "Core"
 parent: "Group"
 title: "Options"
+date: "2000-02-01"
 ---
 
-##Full
-
-Full width groups with `.full`.
-
-Use `.group-inner.flex-auto` to expand groups.
-
-<demo>
-  <demovanilla src="inline/core/group/options-full-line">
-  </demovanilla>
-  <demovanilla src="inline/core/group/options-full-stack">
-  </demovanilla>
-</demo>
+[[notePrimary]]
+| Group uses list to style it's content, refer to [list's options](/core/list/option) for a complete **API**.
 
 ##Variant
 
-Optional classes for assigning variant (example: `.group--default`).
-
-[[notePrimary]]
-| Group variant's are defined inside @TODO less path.
+Optional classes for assigning variant (e.g.: `.group--default`).
 
 <demo>
   <demovanilla src="inline/core/group/options-variant-line">
   </demovanilla>
+</demo>
+
+<demo>
   <demovanilla src="inline/core/group/options-variant-stack">
   </demovanilla>
 </demo>
@@ -38,6 +29,9 @@ Space group elements with list's options.
 <demo>
   <demovanilla src="inline/core/group/options-list-line">
   </demovanilla>
+</demo>
+
+<demo>
   <demovanilla src="inline/core/group/options-list-stack">
   </demovanilla>
 </demo>

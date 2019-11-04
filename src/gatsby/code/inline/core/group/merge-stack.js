@@ -12,34 +12,24 @@ demo.htmlSource = `
   data-xt-propagate-interaction="{ targets: '.btn' }">
   <div class="group-inner">
     <div class="btn btn--primary">
-      btn 1a
-    </div>
-    <div class="btn btn--primary">
-      btn 1b
-    </div>
-  </div>
-  <div class="group-inner">
-    <div class="btn btn--default">
-      btn 2a
+      Lorem ipsum
     </div>
     <div class="btn btn--default">
-      btn 2b
+      Dolor sit
+    </div>
+    <div class="btn btn--default">
+      amet
     </div>
   </div>
   <div class="group-inner">
     <div class="btn btn--primary">
-      btn 3a
-    </div>
-    <div class="btn btn--primary">
-      btn 3b
-    </div>
-  </div>
-  <div class="group-inner">
-    <div class="btn btn--default">
-      btn 4a
+      Lorem ipsum
     </div>
     <div class="btn btn--default">
-      btn 4b
+      Dolor sit
+    </div>
+    <div class="btn btn--default">
+      amet
     </div>
   </div>
 </button>

@@ -10,48 +10,20 @@ export const demo = {
 demo.htmlSource = `
 <div class="group full group--default">
   <div class="group-inner">
-    <button type="button" class="btn btn--default">
-      btn 1
+    <button type="button" class="btn btn--primary">
+      Lorem ipsum
     </button>
   </div>
   <div class="group-inner">
     <button type="button" class="btn btn--default">
-      btn 2
-    </button>
-  </div>
-  <input type="text" class="form-item form-item--default">
-  <div class="group-inner">
-    <button type="button" class="btn btn--default">
-      btn 3
+      Dolor sit
     </button>
   </div>
   <div class="group-inner">
     <button type="button" class="btn btn--default">
-      btn 4
+      amet
     </button>
   </div>
-</div>
-
-<div class="group full group--default">
-  <div class="group-inner flex-auto">
-    <button type="button" class="btn btn--default">
-      btn 1
-    </button>
-  </div>
-  <div class="group-inner">
-    <button type="button" class="btn btn--default">
-      btn 2
-    </button>
-  </div>
-  <div class="group-inner flex-auto">
-    <button type="button" class="btn btn--default">
-      btn 3
-    </button>
-  </div>
-  <div class="group-inner">
-    <button type="button" class="btn btn--default">
-      btn 4
-    </button>
-  </div>
+  <input type="text" class="form-item form-item--default" />
 </div>
 `

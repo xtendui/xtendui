@@ -11,36 +11,15 @@ demo.htmlSource = `
 <div class="group">
   <div class="group-inner">
     <button type="button" class="btn btn--primary">
-      btn 1a
-    </button>
-    <button type="button" class="btn btn--primary">
-      btn 1b
-    </button>
-  </div>
-  <div class="group-inner">
-    <button type="button" class="btn btn--default">
-      btn 2a
+      Lorem ipsum
     </button>
     <button type="button" class="btn btn--default">
-      btn 2b
-    </button>
-  </div>
-  <input type="text" class="form-item form-item--default">
-  <div class="group-inner">
-    <button type="button" class="btn btn--primary">
-      btn 3a
-    </button>
-    <button type="button" class="btn btn--primary">
-      btn 3b
-    </button>
-  </div>
-  <div class="group-inner">
-    <button type="button" class="btn btn--default">
-      btn 4a
+      Dolor sit
     </button>
     <button type="button" class="btn btn--default">
-      btn 4b
+      amet
     </button>
   </div>
+  <input type="text" class="form-item form-item--default" />
 </div>
 `
