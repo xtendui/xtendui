@@ -18,20 +18,14 @@ demo.htmlSource = `
   <button type="button" class="btn btn--default">
     Toggle 2
   </button>
-  <div class="alert toggle-block">
-    <div class="alert-content">
-      Target 0
-    </div>
+  <div class="note note--default note--background toggle-block">
+    Target 0
   </div>
-  <div class="alert toggle-block">
-    <div class="alert-content">
-      Target 1
-    </div>
+  <div class="note note--default note--background toggle-block">
+    Target 1
   </div>
-  <div class="alert toggle-block">
-    <div class="alert-content">
-      Target 2
-    </div>
+  <div class="note note--default note--background toggle-block">
+    Target 2
   </div>
 </div>
 
@@ -48,20 +42,14 @@ demo.htmlSource = `
   <button type="button" class="btn btn--default">
     Toggle 2
   </button>
-  <div class="alert toggle-block">
-    <div class="alert-content">
-      Target 0
-    </div>
+  <div class="note note--default note--background toggle-block">
+    Target 0
   </div>
-  <div class="alert toggle-block">
-    <div class="alert-content">
-      Target 1
-    </div>
+  <div class="note note--default note--background toggle-block">
+    Target 1
   </div>
-  <div class="alert toggle-block">
-    <div class="alert-content">
-      Target 2
-    </div>
+  <div class="note note--default note--background toggle-block">
+    Target 2
   </div>
 </div>
 `

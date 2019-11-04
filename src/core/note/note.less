@@ -3,6 +3,7 @@
  */
 
 .note {
+  .block();
   line-height: 1.4;
   .note-title {
     .spacing-small();
@@ -133,4 +134,21 @@
 
 .note--squared {
   border-radius: 0;
+}
+
+// animation
+
+.note {
+  &.active {
+    .anim-x.active();
+    &.inverse {
+      .anim-x-inverse.active();
+    }
+  }
+  &.out {
+    .anim-x.out();
+    &.inverse {
+      .anim-x-inverse.out();
+    }
+  }
 }

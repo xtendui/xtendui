@@ -221,14 +221,12 @@ const populateDemo = function(container, i) {
   }
   // gatsby_demo_tabs_left
   new Xt.Toggle(container, {
-    // eslint-disable-line no-new
     elements: '.gatsby_demo_tabs_left .btn',
     targets: '.gatsby_demo_item',
     min: 1,
   })
   // btn--show-code
   new Xt.Toggle(container.querySelector('.btn--show-code'), {
-    // eslint-disable-line no-new
     targets: '#' + demoId,
     targetsInner: '.gatsby_demo_code',
     aria: false,
@@ -391,7 +389,6 @@ const populateIframe = function(item, iframe, htmlSource, jsSource, cssSource) {
       el.remove()
     }
     new Xt.Toggle(item, {
-      // eslint-disable-line no-new
       elements: '.gatsby_demo_code_tabs_left .btn',
       targets: '.gatsby_demo_code_body_item',
       min: 1,
@@ -414,7 +411,6 @@ const populateInline = function(item) {
       }
     }
     new Xt.Toggle(item, {
-      // eslint-disable-line no-new
       elements: '.gatsby_demo_code_tabs_left .btn',
       targets: '.gatsby_demo_code_body_item',
       min: 1,
