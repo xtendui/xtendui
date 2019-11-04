@@ -22,7 +22,7 @@ Or just [import core](/core/setup/#@TODO).
 
 ##Usage
 
-Use this markup to create an overlay.
+Use this markup to create an **overlay**.
 
 <script type="text/plain" class="language-markup">
   <button type="button" data-xt-overlay="{ targets: '#overlay--custom' }">

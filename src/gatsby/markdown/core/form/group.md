@@ -7,7 +7,7 @@ date: "2000-03-01"
 
 ##Usage
 
-Use this markup to create a form group.
+Use this markup to create a **form group**.
 
 <script type="text/plain" class="language-markup">
   <form>

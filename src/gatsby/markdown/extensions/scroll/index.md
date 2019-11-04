@@ -8,7 +8,7 @@ categories: ["400-Presentation"]
 
 ##Usage
 
-Use this markup to create a scroll.
+Use this markup to create a **scroll**.
 
 <script type="text/plain" class="language-markup">
   <div data-xt-scroll>

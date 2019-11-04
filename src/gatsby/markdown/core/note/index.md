@@ -18,7 +18,7 @@ Or just [import core](/core/setup/#@TODO).
 
 ##Usage
 
-Use this markup to create a note.
+Use this markup to create a **note**.
 
 <script type="text/plain" class="language-markup">
   <div class="note note--default">

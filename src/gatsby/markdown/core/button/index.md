@@ -18,7 +18,7 @@ Or just [import core](/core/setup/#@TODO).
 
 ##Usage
 
-Use this markup to create a button.
+Use this markup to create a **button**.
 
 <script type="text/plain" class="language-markup">
   <a href="#" class="btn btn--default">

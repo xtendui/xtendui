@@ -2,12 +2,13 @@
 type: "Core"
 parent: "List"
 title: "List"
+description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["200-Layout"]
 ---
 
 ##Usage
 
-Use `.list` to create a **row list**.
+Use this markup to create a **row list**.
 
 <script type="text/plain" class="language-markup">
   <ul class="list list--default">
@@ -17,7 +18,7 @@ Use `.list` to create a **row list**.
   </ul>
 </script>
 
-Use `.list-block`> to create a **column list**.
+Use this markup to create a **column list**.
 
 <script type="text/plain" class="language-markup">
   <ul class="list-block list--default">

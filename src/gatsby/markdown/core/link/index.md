@@ -18,7 +18,7 @@ Or just [import core](/core/setup/#@TODO).
 
 ##Usage
 
-Use this markup to create a link.
+Use this markup to create a **link**.
 
 <script type="text/plain" class="language-markup">
   <a href="#">

@@ -8,7 +8,7 @@ categories: ["200-Layout"]
 
 ##Usage
 
-Use `.row` to create a column/row layout with flexbox.
+Use this markup to create a **row**.
 
 <script type="text/plain" class="language-markup">
   <div class="row">

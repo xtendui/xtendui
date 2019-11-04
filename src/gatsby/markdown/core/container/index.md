@@ -18,7 +18,7 @@ Or just [import core](/core/setup/#@TODO).
 
 ##Usage
 
-Use this markup to create an container.
+Use this markup to create an **container**.
 
 <script type="text/plain" class="language-markup">
   <div class="container">

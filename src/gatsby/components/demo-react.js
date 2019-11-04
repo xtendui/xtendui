@@ -7,7 +7,7 @@ import { cssSource, jsSource } from 'assets/scripts/source'
 
 class DemoReact extends React.Component {
   render() {
-    const { children, src, name } = this.props
+    const { children, src, name, mode } = this.props
     const dirs = path.dirname(src).split('/')
     const demo = {
       name: path.basename(src, '.jsx'),
@@ -36,7 +36,15 @@ class DemoReact extends React.Component {
             <script type="text/plain" data-lang="html">
               <demo.Component></demo.Component>
             </script>
-            <div className="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate" />
+            <div
+              className={
+                mode === 'grid'
+                  ? 'gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate gatsby_demo-cols'
+                  : mode === 'grid-nested'
+                  ? 'gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate gatsby_demo-cols-nested'
+                  : 'gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate'
+              }
+            />
             {data.allFile.files
               .filter(x => x.file.relativePath === `${demo.type}/${demo.component}/${demo.name}.jsx`)
               .map((file, i) => (

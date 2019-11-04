@@ -20,7 +20,7 @@ Or just [import core](/core/setup/#@TODO).
 
 ###Button
 
-Use this markup to create a button group as line.
+Use this markup to create a **button group as line**.
 
 <script type="text/plain" class="language-markup">
   <div class="group">

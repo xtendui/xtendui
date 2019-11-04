@@ -8,11 +8,9 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="gatsby_demo-cols demo-source-from">
-  <div class="row">
-    <div class="demo--col-custom-percent"></div>
-    <div class="demo--col-custom-px"></div>
-    <div class="col-auto"></div>
-  </div>
+<div class="row">
+  <div class="demo--col-custom-percent"></div>
+  <div class="demo--col-custom-px"></div>
+  <div class="col-auto"></div>
 </div>
 `

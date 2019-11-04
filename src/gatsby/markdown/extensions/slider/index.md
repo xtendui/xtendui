@@ -8,7 +8,7 @@ categories: ["400-Presentation"]
 
 ##Usage
 
-Use this markup to create a drop.
+Use this markup to create a **drop**.
 
 <script type="text/plain" class="language-markup">
   <div class="slider" data-xt-slider>

@@ -9,7 +9,7 @@ date: "2000-05-01"
 
 ###Usage
 
-Use this markup to create a checkbox or radio **unstyled**.
+Use this markup to create a **unstyled** **checkbox** or **radio**.
 
 <script type="text/plain" class="language-markup">
   <form>
@@ -47,7 +47,7 @@ Use this markup to create a checkbox or radio **unstyled**.
 
 ###Usage
 
-Use this markup to create a checkbox or radio **styled**.
+Use this markup to create a **styled** **checkbox** or **radio**.
 
 <script type="text/plain" class="language-markup">
   <form>
@@ -85,7 +85,7 @@ Use this markup to create a checkbox or radio **styled**.
 
 ###Usage
 
-Use this markup to create a **fake** checkbox or radio **styled**.
+Use this markup to create a **fake** **styled** **checkbox** or **radio**.
 
 <script type="text/plain" class="language-markup">
   <div class="form-group">

@@ -7,7 +7,7 @@ date: "2000-04-01"
 
 ##Usage
 
-Use this markup to create a form label and form item.
+Use this markup to create a **form label** and **form item**.
 
 <script type="text/plain" class="language-markup">
   <form>

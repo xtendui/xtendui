@@ -8,7 +8,7 @@ categories: ["300-Interaction"]
 
 ##Usage
 
-Use this markup to create a toggle.
+Use this markup to create a **toggle**.
 
 <script type="text/plain" class="language-markup">
   <div data-xt-toggle>

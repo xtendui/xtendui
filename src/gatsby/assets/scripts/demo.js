@@ -23,11 +23,6 @@ new Xt.Smooth(document.scrollingElement)
  */
 
 const formatCode = function(source) {
-  let inner = source.querySelectorAll('.gatsby_demo_source--from')
-  inner = Array.from(inner).filter(x => !x.querySelectorAll('.gatsby_demo_source--from').length) // filter out nested
-  if (inner.length) {
-    source = inner[0]
-  }
   let text = source.innerHTML
   // replace
   const lang = source.getAttribute('data-lang')
@@ -200,6 +195,17 @@ const populateDemo = function(container, i) {
         requestAnimationFrame(function() {
           // @FIX multiple initializations
           sourceTo.innerHTML = item.querySelector('script[data-lang="html"]').innerHTML
+          // .gatsby_demo-cols
+          if (sourceTo.classList.contains('gatsby_demo-cols')) {
+            for (const [i, el] of sourceTo.querySelectorAll("[class^='col-'], [class*=' col-'], [class^='demo--col-'], [class*=' demo--col-']").entries()) {
+              el.setAttribute('data-index', i.toString())
+            }
+          }
+          if (sourceTo.classList.contains('gatsby_demo-cols-nested')) {
+            for (const [i, el] of sourceTo.querySelectorAll("[class^='col-'], [class*=' col-'], [class^='demo--col-'], [class*=' demo--col-']").entries()) {
+              el.setAttribute('data-index', i.toString())
+            }
+          }
         })
       }
     }

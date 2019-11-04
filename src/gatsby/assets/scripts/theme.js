@@ -43,18 +43,6 @@ const makeDocument = function() {
       )
     )
   }
-  // .gatsby_demo-cols
-  for (const element of document.querySelectorAll('.gatsby_demo-cols')) {
-    for (const [i, el] of element.querySelectorAll("[class^='col-'], [class*=' col-'], [class^='demo--col-'], [class*=' demo--col-']").entries()) {
-      el.setAttribute('data-index', i.toString())
-    }
-  }
-  // .gatsby_demo-cols-nested
-  for (const element of document.querySelectorAll(".gatsby_demo-cols-nested [class^='col-'], .gatsby_demo-cols-nested [class*=' col-']")) {
-    for (const [i, el] of element.querySelectorAll("[class^='col-'], [class*=' col-'], [class^='demo--col-'], [class*=' demo--col-']").entries()) {
-      el.setAttribute('data-index', i.toString())
-    }
-  }
   // docs tables
   const docs = document.querySelector('.gatsby_site_article_content')
   if (docs) {

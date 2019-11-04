@@ -18,7 +18,7 @@ Or just [import core](/core/setup/#@TODO).
 
 ##Usage
 
-Use this markup to create a card.
+Use this markup to create a **card**.
 
 <script type="text/plain" class="language-markup">
   <div class="card card--default">
