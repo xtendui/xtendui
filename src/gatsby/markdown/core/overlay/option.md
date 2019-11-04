@@ -5,7 +5,8 @@ title: "Option"
 date: "2000-02-01"
 ---
 
-Overlay uses card to style it's content, refer to [card page](/core/card/option) for complete card's options.
+[[notePrimary]]
+| Overlay uses card to style it's content, refer to [card's options](/core/card/option) for a complete **API**.
 
 ##Variant
 
@@ -15,7 +16,8 @@ Classes for assigning variant (e.g.: border / background / font colors).
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.overlay--{variant}`                        | `.overlay--default` `.overlay--primary` |
+| Class                   | `.overlay--{variant}`                     | `.overlay--default` `.overlay--primary` |
+| Mixin                   | `.overlay--{variant}()`                   | `.overlay--default()` `.overlay--primary()`         |
 
 </div>
 
@@ -33,7 +35,7 @@ Optional classes for assigning width.
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
 | Class                   | `.overlay--{size}`                        | `.overlay--small`             |
-| Mixin                   | `.overlay-size({size})`                  | `.overlay-size(small)`       |
+| Mixin                   | `.overlay-size({size})`                   | `.overlay-size(small)`         |
 
 </div>
 

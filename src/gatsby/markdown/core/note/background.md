@@ -1,11 +1,9 @@
 ---
 type: "Core"
 parent: "Note"
-title: "Addons"
+title: "Background"
 date: "2000-04-01"
 ---
-
-#Background
 
 Use `.note--background` to style the note with an internal padding and background.
 
@@ -29,9 +27,9 @@ Optional classes for assigning size (e.g.: padding or font size).
 
 #Block
 
+Use `.note-list` to make a list block inside contents.
+
 <demo>
-  <demovanilla src="inline/core/note/block">
-  </demovanilla>
   <demovanilla src="inline/core/note/block-background">
   </demovanilla>
 </demo>

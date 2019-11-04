@@ -7,7 +7,7 @@ date: "2000-10-01"
 
 ##Disable
 
-Disable card's variant styles with `card--disable`.
+Disable card's variant styles with `.card--disable`.
 
 <demo>
   <demovanilla src="inline/core/card/disable">
@@ -16,7 +16,7 @@ Disable card's variant styles with `card--disable`.
 
 ##Close
 
-Like `.btn--close`, for content absolutely positioned inside card, put them inside `.card-inner`.
+Usage of `.btn--close` @TODO link.
 
 <demo>
   <demovanilla src="inline/core/card/close">

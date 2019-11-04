@@ -16,6 +16,7 @@ You can use card's presets outside the normal scope, for example to style a card
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
 | Class                   | `.card--{preset}`                         | `.card--overlay` `.card--slide` `.card--drop` |
+| Mixin                   | Not possible                              | Not possible                  |
 
 </div>
 
@@ -33,6 +34,7 @@ Classes for assigning variant (e.g.: border / background / font colors).
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
 | Class                   | `.card--{variant}`                        | `.card--default` `.card--primary` |
+| Mixin                   | `.card--{variant}()`                      | `.card--default()` `.card--primary()`         |
 
 </div>
 
@@ -50,6 +52,7 @@ Optional classes for assigning size (e.g.: padding or font size).
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
 | Class                   | `.card--{size}`                           | `.card--small` `.card--medium` `.card--big`|
+| Mixin                   | `.card--{size}()`                         | `.card--small()` `.card--medium()` `.card--big()`         |
 
 </div>
 

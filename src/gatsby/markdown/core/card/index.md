@@ -6,11 +6,19 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 categories: ["200-Layout"]
 ---
 
+##Setup
+
+To use this component import the **less** files accordingly:
+
+```less
+@import '~xtend-library/src/core/card/index.less';
+```
+
+Or just [import core](/core/setup/#@TODO).
+
 ##Usage
 
 Use this markup to create a card.
-
-You can make interactive cards with `button.card` or `a.card`.
 
 <script type="text/plain" class="language-markup">
   <div class="card card--default">
@@ -30,6 +38,8 @@ You can make interactive cards with `button.card` or `a.card`.
     </div>
   </div>
 </script>
+
+You can make interactive cards with `button.card` or `a.card`.
 
 <demo>
   <demovanilla src="inline/core/card/usage">
