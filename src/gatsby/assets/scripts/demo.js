@@ -227,8 +227,7 @@ const populateDemo = function(container, i) {
   })
   // btn--show-code
   new Xt.Toggle(container.querySelector('.btn--show-code'), {
-    targets: '#' + demoId,
-    targetsInner: '.gatsby_demo_code',
+    targets: '#' + demoId + ' .gatsby_demo_code',
     aria: false,
   })
 }
