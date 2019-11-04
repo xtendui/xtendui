@@ -235,9 +235,6 @@ Lists **automatically** add horizontal and vertical spacing to the contents. You
 
 </div>
 
-[[notePrimary]]
-| You can set list's spaces in the `_variables.less` file.
-
 <demo>
   <div class="gatsby_demo-inline">
     <div class="gatsby_demo_item gatsby_demo_preview" data-name="none">
@@ -1552,9 +1549,6 @@ Set item's order inside the flexbox.
 | Mixin responsive min    | `.order({number}, {breakpoint})`          | `.order(1, sm)`               |
 
 </div>
-
-[[notePrimary]]
-| You can set orders in the `_variables.less` file.
 
 [[notePrimary]]
 | By default orders from `.order--0` to `.order--2` are negative values.
