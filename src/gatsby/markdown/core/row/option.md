@@ -155,7 +155,7 @@ Set item's order inside the flexbox.
 
 </div>
 
-[[notePrimary]]
+[[noteDefault]]
 | By default orders from `.order-0` to `.order-2` are negative values.
 
 <demo>

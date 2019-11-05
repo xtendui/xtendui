@@ -6,7 +6,7 @@ title: "Wheel"
 
 ###Wheel
 
-Use `"wheel": {"selector": "object"}` or `"wheel": {"selector": Query}` to enable mousewheel navigation.
+Use `"wheel": {"selector": "object"}` or `"wheel": {"selector": QuerySelector}` to enable mousewheel navigation.
 
 <demo>
   <demovanilla src="inline/demos/slider/wheel">

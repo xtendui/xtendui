@@ -22,7 +22,7 @@ class DocAside extends React.Component {
                   const filteredPosts = page.postsAll.posts.filter(
                     x => x.post.frontmatter.type === filter && x.post.frontmatter.parent === page.post.frontmatter.parent
                   )
-                  if (filteredPosts.length) {
+                  if (filteredPosts.length > 1) {
                     return (
                       <Link
                         to={kebabCase(filter) + '/' + kebabCase(page.post.frontmatter.parent)}
@@ -31,7 +31,7 @@ class DocAside extends React.Component {
                       >
                         <span>
                           <span className="gatsby_btn--site_multiline_line">
-                            {filteredPosts.length} <strong>{filter}</strong>
+                            {filteredPosts.length - 1} <strong>{filter}</strong>
                           </span>
                         </span>
                         <span>

@@ -428,11 +428,9 @@ class Toggle {
       // event off
       if (options.off) {
         const offHandler = Xt.dataStorage.put(el, options.off + '.' + self.namespace, self.eventOffHandler.bind(self).bind(self, el))
-        if (options.off) {
-          const events = [...options.off.split(' ')]
-          for (const event of events) {
-            el.addEventListener(event, offHandler)
-          }
+        const events = [...options.off.split(' ')]
+        for (const event of events) {
+          el.addEventListener(event, offHandler)
         }
         el.addEventListener('off.xt', offHandler)
       }
@@ -604,11 +602,10 @@ class Toggle {
     // handler
     if (
       element === e.target || // @FIX on.xt and off.xt event bubbles
-      element.contains(e.target)
+      element.contains(e.target) // @FIX on.xt and off.xt event bubbles (use only in library)
     ) {
-      // @FIX on.xt and off.xt event bubbles (use only in library)
+      // @FIX filter triggered from library (use only in library)
       if (!e || !e.detail || !e.detail.skip) {
-        // @FIX filter triggered from library (use only in library)
         // event block
         if (options.onBlock) {
           const now = new Date().getTime()
@@ -646,11 +643,10 @@ class Toggle {
     // handler
     if (
       element === e.target || // @FIX on.xt and off.xt event bubbles
-      element.contains(e.target)
+      element.contains(e.target) // @FIX on.xt and off.xt event bubbles (use only in library)
     ) {
-      // @FIX on.xt and off.xt event bubbles (use only in library)
+      // @FIX filter triggered from library (use only in library)
       if (!e || !e.detail || !e.detail.skip) {
-        // @FIX filter triggered from library (use only in library)
         // event block
         if (options.offBlock) {
           const now = new Date().getTime()
@@ -740,8 +736,8 @@ class Toggle {
    */
   eventAutoPauseHandler(e) {
     const self = this
+    // @FIX filter triggered from library (use only in library)
     if (!e || !e.detail || !e.detail.skip) {
-      // @FIX filter triggered from library (use only in library)
       if (!self.detail.autoPaused) {
         self.eventAutoPause()
         // paused
@@ -756,8 +752,8 @@ class Toggle {
    */
   eventAutoResumeHandler(e) {
     const self = this
+    // @FIX filter triggered from library (use only in library)
     if (!e || !e.detail || !e.detail.skip) {
-      // @FIX filter triggered from library (use only in library)
       if (self.detail.autoPaused) {
         self.eventAutoStart()
         // paused
@@ -2686,6 +2682,7 @@ Toggle.optionsDefaultSuper = {
   elementsInner: false,
   targetsInner: false,
   on: 'click',
+  off: false,
   min: 0,
   max: 1,
   instant: { elements: true, targets: false, elementsInner: true, targetsInner: false },
@@ -2711,8 +2708,8 @@ Toggle.optionsDefaultSuper = {
   },
   auto: {
     time: false,
-    step: 1,
     initial: true,
+    step: 1,
     inverse: false,
     pause: false,
   },

@@ -11,7 +11,7 @@ You can merge buttons in a single interactive object.
 
 Use this markup to merge multiple `.btn` in one `[button]` as line.
 
-[[notePrimary]]
+[[noteDefault]]
 | @TODO needs propagate-interaction extension
 
 <script type="text/plain" class="language-markup">

@@ -85,8 +85,8 @@ const populateBlock = function() {
     })
   }
   document.querySelector('#overlay--open-full').addEventListener('off.xt', function(e) {
+    // @FIX on.xt and off.xt event bubbles
     if (this === e.target) {
-      // @FIX on.xt and off.xt event bubbles
       const content = document.querySelector('#overlay--open-full-content')
       // populate source
       const container = content.querySelector('.gatsby_demo')
@@ -297,8 +297,8 @@ const initializeIframe = function(container, item) {
     if (!item.dataset.iframeLoadEvents) {
       item.dataset.iframeLoadEvents = 'true'
       item.addEventListener('on.xt', function(e) {
+        // @FIX on.xt and off.xt event bubbles
         if (this === e.target) {
-          // @FIX on.xt and off.xt event bubbles
           if (!item.dataset.iframeLoadCall) {
             item.dataset.iframeLoadCall = 'true'
             const iframe = item.querySelector('iframe')
@@ -307,8 +307,8 @@ const initializeIframe = function(container, item) {
         }
       })
       item.addEventListener('off.xt', function(e) {
+        // @FIX on.xt and off.xt event bubbles
         if (this === e.target) {
-          // @FIX on.xt and off.xt event bubbles
           if (item.dataset.iframeLoadCall) {
             delete item.dataset.iframeLoadCall
             const iframe = item.querySelector('iframe')

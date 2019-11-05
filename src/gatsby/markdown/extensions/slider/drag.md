@@ -8,7 +8,7 @@ title: "Drag"
 
 You can wrap the slides with `"drag": {"wrap": true}`.
 
-[[notePrimary]]
+[[noteDefault]]
 | With `"drag": {"wrap": true}` you have to set `"loop": true` and you can't use `"contain": true`
 
 <demo>

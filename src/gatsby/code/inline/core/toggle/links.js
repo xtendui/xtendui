@@ -9,18 +9,18 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="list list--default list-space--small align-items--center"
-     data-xt-toggle="{ min: 2, max: 2 }">
-  <button type="button" class="btn btn--default">
+     data-xt-toggle="{ min: 1, on: 'mouseenter', off: 'mouseleave' }">
+  <a href="#toggle-with-link-0" class="btn btn--default">
     Toggle 0
-  </button>
-  <button type="button" class="btn btn--default">
+  </a>
+  <a href="#toggle-with-link-1" class="btn btn--default">
     Toggle 1
+  </a>
+  <button type="button" class="btn btn--default">
+    <a href="#toggle-with-link-2" class="link-none">Toggle 2</a>
   </button>
   <button type="button" class="btn btn--default">
-    Toggle 2
-  </button>
-  <button type="button" class="btn btn--default">
-    Toggle 3
+    <a href="#toggle-with-link-3" class="link-none">Toggle 3</a>
   </button>
   <div class="note note--default note--background toggle-block">
     Target 0

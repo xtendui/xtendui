@@ -37,7 +37,7 @@ Use this markup to create an **overlay**.
   </div>
 </script>
 
-You can use this markup to create an overlay with **no toggle**.
+You can use this markup to create an **overlay** with **no toggle**.
 
 <script type="text/plain" class="language-markup">
   <div data-xt-overlay>
@@ -56,7 +56,7 @@ You can use this markup to create an overlay with **no toggle**.
 
 ##Javascript
 
-[[notePrimary]]
+[[noteDefault]]
 | Overlay uses toggle for logic, refer to [toggle page](/core/toggle#@TODO) for a complete **API**.
 
 ###Initialization

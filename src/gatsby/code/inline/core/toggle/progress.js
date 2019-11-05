@@ -49,45 +49,37 @@ demo.htmlSource = `
         </span>
       </span>
   </button>
-  <div class="alert toggle-block">
-    <div class="alert-content">
-      Target 0
-      <div class="loader loader--x loader-size--bottom loader--js">
-        <div class="filler">
-          <span></span><span></span>
-        </div>
+  <div class="note note--default note--background toggle-block">
+    Target 0
+    <div class="loader loader--x loader-size--bottom loader--js">
+      <div class="filler">
+        <span></span><span></span>
       </div>
     </div>
   </div>
-  <div class="alert toggle-block">
-    <div class="alert-content">
-      Target 1
-      <div class="loader loader--x loader-size--bottom loader--js">
-        <div class="filler">
-          <span></span><span></span>
-        </div>
+  <div class="note note--default note--background toggle-block">
+    Target 1
+    <div class="loader loader--x loader-size--bottom loader--js">
+      <div class="filler">
+        <span></span><span></span>
       </div>
     </div>
   </div>
-  <div class="alert toggle-block">
-    <div class="alert-content">
-      Target 2
-      <div class="loader loader--x loader-size--bottom loader--js">
-        <div class="filler">
-          <span></span><span></span>
-        </div>
+  <div class="note note--default note--background toggle-block">
+    Target 2
+    <div class="loader loader--x loader-size--bottom loader--js">
+      <div class="filler">
+        <span></span><span></span>
       </div>
     </div>
   </div>
-  <div class="alert toggle-block">
-    <div class="alert-content">
-      Target 3
-      <span class="loader loader--x loader-size--bottom loader--js">
-        <span class="filler">
-          <span></span><span></span>
-        </span>
+  <div class="note note--default note--background toggle-block">
+    Target 3
+    <span class="loader loader--x loader-size--bottom loader--js">
+      <span class="filler">
+        <span></span><span></span>
       </span>
-    </div>
+    </span>
   </div>
 </div>
 `

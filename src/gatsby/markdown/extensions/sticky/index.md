@@ -26,5 +26,5 @@ let self = new Xt.Sticky(document.querySelector('.my-sticky'), {
 });
 ```
 
-[[notePrimary]]
+[[noteDefault]]
 | It's recomended to style and animate a inner div <code>[data-xt-xticky] > div</code> when using <strong>sticky component</strong>.

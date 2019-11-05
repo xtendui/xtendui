@@ -445,8 +445,8 @@ class Slider extends Xt.Toggle {
   eventSlideOnHandler(dragger, slide, e) {
     const self = this
     // handler
+    // @FIX on.xt and off.xt event bubbles
     if (slide === e.target) {
-      // @FIX on.xt and off.xt event bubbles
       self.eventSlideOn(dragger, e)
     }
   }
@@ -460,8 +460,8 @@ class Slider extends Xt.Toggle {
   eventSlideOffHandler(dragger, slide, e) {
     const self = this
     // handler
+    // @FIX on.xt and off.xt event bubbles
     if (slide === e.target) {
-      // @FIX on.xt and off.xt event bubbles
       self.eventSlideOff(dragger, e)
     }
   }

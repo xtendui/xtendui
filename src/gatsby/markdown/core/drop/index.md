@@ -42,7 +42,7 @@ Use this markup to create a **drop**.
 
 ##Javascript
 
-[[notePrimary]]
+[[noteDefault]]
 | Drop uses toggle for logic, refer to [toggle page](/core/toggle#@TODO) for a complete **API**.
 
 ###Initialization

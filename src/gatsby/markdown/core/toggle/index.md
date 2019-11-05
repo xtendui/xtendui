@@ -6,6 +6,16 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 categories: ["300-Interaction"]
 ---
 
+##Setup
+
+To use this component import the **js** files accordingly:
+
+```jsx
+import 'xtend-library/src/core/toggle/toggle.js'
+```
+
+Or just [import core](/core/setup/#@TODO).
+
 ##Usage
 
 Use this markup to create a **toggle**.
@@ -21,7 +31,7 @@ Use this markup to create a **toggle**.
   </div>
 </script>
 
-You can use this markup to create a toggle with **no targets**.
+You can use this markup to create a **toggle** with **no targets**.
 
 <script type="text/plain" class="language-markup">
   <button type="button" data-xt-toggle>
@@ -29,67 +39,31 @@ You can use this markup to create a toggle with **no targets**.
   </button>
 </script>
 
-You can initialize **toggle** by javascript omitting `[data-xt-toggle]`.
+##Javascript
+
+###Initialization
+
+Initialize automatically within markup with `[data-xt-toggle]`.
+
+Or initialize with javascript:
 
 ```jsx
-let self = new Xt.Toggle(document.querySelector('.my-toggle'), {
+new Xt.Toggle(document.querySelector('.my-toggle'), {
+  // options
 });
 ```
 
-##Mode
+###Options
 
-[[notePrimary]]
-| For toggle utils classes read the documentation of <a href="{% link _docs/introduction/utils.html %}#toggle">toggle utils</a>.
+@TODO tables options
 
-###Multiple
+###Events
 
-You can create a toggle with **mutiple** mode by assigning `[data-xt-toggle]` to a scope element, elements and targets must be inside the scope. Check @TODO toggle defatuls for the default elements and targets.
+@TODO tables events
 
-[[notePrimary]]
-| With **multiple mode** you **can't** specify targets with **#id**.
-
-With multiple **targets**, the ones activated is the one with the same index of the toggled **element**. Nested **targets** are filtered out.
+You can animate with javascript instead of css, just use [toggle events](/core/toggle/@TODO) and remember to set `durationOn: Milliseconds` and `durationOff: Milliseconds`.
 
 <demo>
-  <demovanilla src="inline/core/toggle/multiple-index">
-  </demovanilla>
-</demo>
-
-Custom **elements** and **targets**.
-
-<demo>
-  <demovanilla src="inline/core/toggle/custom-options">
-  </demovanilla>
-</demo>
-
-Any class that starts with `.toggle-` can be used as **toggle targets**.
-
-###Unique
-
-The **unique** mode is useful when triggering **targets outside the scope** of the toggle root.
-
-When you don't specify **elements** the scope becomes global and the element becomes `[data-xt-toggle]` itself.
-
-[[notePrimary]]
-| With **munique mode** you **need** to specify targets with **#id**.
-
-Toggle a single **element** with `[data-xt-toggle]`.
-
-<demo>
-  <demovanilla src="inline/core/toggle/unique-self">
-  </demovanilla>
-</demo>
-
-Toggle a single **target** using `targets` with **#id**.
-
-<demo>
-  <demovanilla src="inline/core/toggle/unique-single">
-  </demovanilla>
-</demo>
-
-Toggle same **targets** using `targets` with **#id**.
-
-<demo>
-  <demovanilla src="inline/core/toggle/unique-same">
+  <demovanilla src="inline/core/toggle/javascript">
   </demovanilla>
 </demo>

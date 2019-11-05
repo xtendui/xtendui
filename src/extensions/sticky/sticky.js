@@ -123,8 +123,8 @@ class Sticky extends Xt.Toggle {
   eventStickyHandler(e = null, initial = false) {
     const self = this
     // handler
+    // @FIX filter triggered from library (use only in library)
     if (!e || !e.detail || !e.detail.skip) {
-      // @FIX filter triggered from library (use only in library)
       Xt.eventDelay(
         e,
         self.object,

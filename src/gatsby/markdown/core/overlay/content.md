@@ -5,7 +5,7 @@ title: "Content"
 date: "2000-04-01"
 ---
 
-[[notePrimary]]
+[[noteDefault]]
 | Overlay uses card to style it's content, refer to [card's content](/core/card/content) for a complete **API**.
 
 ##Custom

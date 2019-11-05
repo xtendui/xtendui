@@ -31,9 +31,7 @@ demo.htmlSource = `
     Group 0b
   </div>
   <div class="note note--default note--background toggle-block" data-xt-group="1">
-    <div class="alert-content">
-      Group 1b
-    </div>
+    Group 1b
   </div>
   <div class="note note--default note--background toggle-block" data-xt-group="0">
     Group 0c

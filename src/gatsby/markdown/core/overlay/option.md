@@ -5,7 +5,7 @@ title: "Option"
 date: "2000-02-01"
 ---
 
-[[notePrimary]]
+[[noteDefault]]
 | Overlay uses card to style it's content, refer to [card's options](/core/card/option) for a complete **API**.
 
 ##Variant

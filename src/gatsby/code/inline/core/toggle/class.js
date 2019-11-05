@@ -13,10 +13,8 @@ demo.htmlSource = `
   <button type="button" class="btn btn--default">
     Toggle
   </button>
-  <div class="alert toggle-block" id="alert-example">
-    <div class="alert-content">
-      Target
-    </div>
+  <div class="note note--default note--background toggle-block">
+    Target
   </div>
 </div>
 `

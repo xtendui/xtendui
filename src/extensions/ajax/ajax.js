@@ -150,8 +150,8 @@ class Ajax extends Xt.Toggle {
    * @param {Event} e
    */
   eventOnHandler(element, e) {
+    // @FIX filter triggered from library (use only in library)
     if (!e || !e.detail || !e.detail.skip) {
-      // @FIX filter triggered from library (use only in library)
       // not when opening in new tab
       if (e.metaKey || e.ctrlKey) {
         return
