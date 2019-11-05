@@ -6,9 +6,7 @@ title: "Contain"
 
 ###Contain
 
-Use `"contain": true` to contain the slides.
-
-`"contain": true", align": "center"` `"contain": true", "align": "left"` `"contain": true", "align": "right"`
+Use `contain: true` to contain the slides.
 
 <demo>
   <demovanilla src="inline/demos/slider/contain-center">

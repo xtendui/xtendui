@@ -118,7 +118,7 @@ If you need to toggle **multiple targets** with the **same element** assign `dat
 
 ##Jump
 
-Use `"jump": true` to enable clicking on a **target** to jump to them.
+Use `jump: true` to enable clicking on a **target** to jump to them.
 
 <div class="table--scroll">
 
@@ -135,7 +135,7 @@ Use `"jump": true` to enable clicking on a **target** to jump to them.
 
 ##Navigation
 
-You can add navigation with `"navigation": QuerySelector`, set the amount to add (`+1`) or remove (`-1`) to the current activation index with `[data-xt-nav="value"]`.
+You can add navigation with `navigation: QuerySelector`, set the amount to add (`+1`) or remove (`-1`) to the current activation index with `[data-xt-nav="value"]`.
 
 <div class="table--scroll">
 
@@ -166,7 +166,7 @@ Use `loop: false` to disable looping on activation.
 
 Activation/deactivation automatically waits for the <strong>duration</strong> of animations and transitions on <code>.active</code> and <code>.out</code>.
 
-You can use a function for <code>delayOn</code> and <code>delayOff</code> for example <code>delayOn: function(current, total) {return Math.min((total - current) * 150, 300)}</code>.
+You can use a function for <code>delayOn</code> and <code>delayOff</code> for example <code>function(current, total) {return Math.min((total - current) * 150, 300)}</code>.
 
 <div class="table--scroll">
 

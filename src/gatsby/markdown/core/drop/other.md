@@ -7,7 +7,7 @@ date: "2000-10-01"
 
 ##Event
 
-You can specify **on** and **off** events for the drop. Fore example `"on": "mouseenter"` `"off": "mouseleave"`. Default is `"on": "click"`.
+You can specify **on** and **off** events for the drop. Fore example `on: 'mouseenter'` `off: 'mouseleave'`. Default is `on: 'click'`.
 
 <demo>
   <demovanilla src="inline/core/drop/event">
@@ -34,7 +34,7 @@ To disable drop use `.drop--disable` useful within media queries.
 
 ##Backdrop
 
-Use `data-xt-drop="{ backdrop: true }"` to have a backdrop when drop opens.
+Use `data-xt-drop='{ backdrop: true }'` to have a backdrop when drop opens.
 
 <demo>
   <demovanilla src="inline/core/drop/backdrop">

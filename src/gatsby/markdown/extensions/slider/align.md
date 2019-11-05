@@ -6,8 +6,6 @@ title: "Align"
 
 ###Align
 
-`"align": "center"` `"align": "left"` `"align": "right"`
-
 <demo>
   <demovanilla src="inline/demos/slider/align-center">
   </demovanilla>
