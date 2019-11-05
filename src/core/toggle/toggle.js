@@ -312,7 +312,6 @@ class Toggle {
         }
         // targets
         for (const tr of self.targets) {
-          const els = self.getTargets(tr)
           // expanded
           const role = tr.getAttribute('role')
           if (role === 'tabpanel' || role === 'listbox' || role === 'dialog') {
@@ -334,6 +333,7 @@ class Toggle {
           }
           // labelledby
           if (options.aria === true || options.aria.labelledby) {
+            const els = self.getElements(tr)
             let str = ' '
             str += tr.getAttribute('aria-labelledby') || ''
             for (const el of els) {
