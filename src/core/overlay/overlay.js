@@ -57,7 +57,6 @@ Overlay.optionsDefault = {
   on: 'click',
   min: 0,
   max: 1,
-  instant: { elements: true, targets: false, elementsInner: false, targetsInner: false },
   eventLimit: '.event-limit, .card--overlay > .card-inner > .card-content',
   autoclose: true,
   appendTo: 'body',

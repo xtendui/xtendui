@@ -50,11 +50,10 @@ Drop.optionsDefault = {
   on: 'click',
   min: 0,
   max: 1,
-  instant: { elements: false, targets: false, elementsInner: true, targetsInner: false },
   eventLimit: '.event-limit, .drop',
   autoclose: true,
   closeOutside: 'body',
-  closeInside: '.drop-dismiss, .card--drop > .card-inner > .btn-close',
+  closeInside: '.drop-dismiss, .card--drop > .card-inner > .btn-close, :scope > .backdrop',
   ariaControls: ':scope > a, :scope > button',
 }
 Xt.optionsGlobal[Drop.componentName] = {}

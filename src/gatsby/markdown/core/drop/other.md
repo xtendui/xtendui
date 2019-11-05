@@ -34,7 +34,7 @@ To disable drop use `.drop--disable` useful within media queries.
 
 ##Backdrop
 
-Use `data-xt-drop="{ backdrop: 'true' }"` to have a backdrop when drop opens.
+Use `data-xt-drop="{ backdrop: true }"` to have a backdrop when drop opens.
 
 <demo>
   <demovanilla src="inline/core/drop/backdrop">
