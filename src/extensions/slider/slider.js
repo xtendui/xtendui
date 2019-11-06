@@ -652,30 +652,19 @@ class Slider extends Xt.Toggle {
       dragger.classList.remove('links--none')
       // drag wrap
       if (self.dragger && options.drag.wrap) {
-        const min = self.groupMqFirst.length
-        const max = self.groupMqFirst.length + self.groupMqInitial.length - 1
-        if (self.initial) {
-          // @FIX initial activation
-          if (self.currentIndex < min) {
-            requestAnimationFrame(function() {
-              self.initial = true
-              self.goToIndex(min, true)
-              self.initialCurrents = self.getCurrents().slice(0) // @FIX initialCurrents
-            })
-          }
-        } else {
+        if (!self.initial) {
+          const min = self.groupMqFirst.length
+          const max = self.groupMqFirst.length + self.groupMqInitial.length - 1
           // @FIX wrap with initial
           Xt.animTimeout(
             dragger,
             function() {
-              if (!self.initial) {
-                if (self.currentIndex < min) {
-                  self.initial = true
-                  self.goToIndex(max + self.currentIndex - min + 1, true) // wrap around xt-wrap items
-                } else if (self.currentIndex > max) {
-                  self.initial = true
-                  self.goToIndex(min + self.currentIndex - max - 1, true) // wrap around xt-wrap items
-                }
+              if (self.currentIndex < min) {
+                self.initial = true
+                self.goToIndex(max + self.currentIndex - min + 1, true) // wrap around xt-wrap items
+              } else if (self.currentIndex > max) {
+                self.initial = true
+                self.goToIndex(min + self.currentIndex - max - 1, true) // wrap around xt-wrap items
               }
             },
             'wrap'
