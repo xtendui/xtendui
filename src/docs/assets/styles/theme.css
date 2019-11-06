@@ -111,12 +111,6 @@ button {
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
-  -webkit-user-select: none;
-  -webkit-user-drag: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  user-drag: none;
 }
 button {
   font-family: inherit;
@@ -135,12 +129,6 @@ button {
 img {
   display: inline-block;
   vertical-align: top;
-  -webkit-user-select: none;
-  -webkit-user-drag: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  user-drag: none;
 }
 h1,
 h2,
@@ -461,10 +449,6 @@ img[class*=' icon-xt--']:before {
   display: block;
   position: relative;
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 .form-input {
   display: block;
@@ -487,10 +471,6 @@ textarea {
   display: block;
   position: relative;
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   margin-bottom: 1em;
   font-weight: 600;
   font-size: 1em;
@@ -554,10 +534,6 @@ input[type="checkbox"]:not(.unstyled) ~ .form-label {
   display: block;
   position: relative;
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   margin-bottom: 1em;
   font-weight: 600;
   font-size: 1em;
@@ -676,10 +652,6 @@ input[type="radio"]:not(.unstyled) ~ .form-label {
   display: block;
   position: relative;
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   margin-bottom: 1em;
   font-weight: 600;
   font-size: 1em;
@@ -1019,10 +991,6 @@ input[type="radio"].unstyled ~ .form-label.disabled:after {
   overflow: hidden;
 }
 .btn {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   cursor: pointer;
   display: inline-block;
   position: relative;
@@ -1307,33 +1275,18 @@ div.btn {
 }
 a:not(.btn),
 .btn--link {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   overflow-wrap: break-word;
   word-wrap: break-word;
 }
 [disabled],
 .disabled {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   cursor: default;
-  pointer-events: none;
-}
-a[href]:not([href^='#']).active {
   pointer-events: none;
 }
 .slider {
   position: relative;
 }
 .slides {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   overflow: hidden;
 }
 .slides_inner {
@@ -1635,8 +1588,14 @@ transition-delay: 0ms; // @start - @child * @decrement
   user-select: none;
   cursor: grab;
 }
+.grab a,
 .grab img {
-  pointer-events: none;
+  -webkit-user-drag: none;
+  user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .container {
   padding-right: 1.5rem;
@@ -3550,10 +3509,6 @@ img.icon--giant {
   display: block;
   position: relative;
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   margin-bottom: 1em;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 600;
@@ -4120,10 +4075,6 @@ input[type="radio"]:not(.unstyled):disabled ~ .form-label:after {
 }
 .list > li:not(.custom) > a,
 .list > li:not(.custom) > button {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   cursor: pointer;
   display: inline-block;
   position: relative;
@@ -4328,10 +4279,6 @@ input[type="radio"]:not(.unstyled):disabled ~ .form-label:after {
 }
 .list-block > li:not(.custom) > a,
 .list-block > li:not(.custom) > button {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   cursor: pointer;
   display: inline-block;
   position: relative;
@@ -6264,10 +6211,6 @@ html.xt-focus:not(.xt-focus--disable) input[type="radio"]:focus ~ .form-label:be
 }
 .slider_pagination > li:not(.custom) > a,
 .slider_pagination > li:not(.custom) > button {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   cursor: pointer;
   display: inline-block;
   position: relative;
@@ -6468,10 +6411,6 @@ html.xt-focus:not(.xt-focus--disable) input[type="radio"]:focus ~ .form-label:be
   margin: 0.5rem 0.5rem;
 }
 .slider_pagination [data-xt-pag] {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   cursor: pointer;
   display: inline-block;
   position: relative;
@@ -7797,10 +7736,6 @@ transition-timing-function: @bez--out;
   padding-bottom: 6rem;
 }
 .site-aside-text .btn {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   overflow-wrap: break-word;
   word-wrap: break-word;
   font-family: inherit;
@@ -8162,10 +8097,6 @@ h2 .site-article-anchor {
 .demo .demo-code-tabs > * > li:not(.custom) > a,
 .demo .demo-tabs > * > li:not(.custom) > button,
 .demo .demo-code-tabs > * > li:not(.custom) > button {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   cursor: pointer;
   display: inline-block;
   position: relative;
