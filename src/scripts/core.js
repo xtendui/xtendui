@@ -246,8 +246,9 @@ class Core {
       let todo = options.min - currents;
       if (todo > 0) {
         let start = 0;
+        // @FIX initial activation drag wrap
         if (!self.disabled && self.dragger && options.drag.wrap) {
-          start = 1;
+          start = self.groupMqFirst.length;
           todo += start;
         }
         // initial
