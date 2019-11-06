@@ -395,6 +395,12 @@ class Slider extends Core {
     }
     // dragger
     if (options.drag) {
+      // @FIX prevent firefox image dragging
+      for (const img of self.dragger.querySelectorAll('img')) {
+        let imgFixHandler = Xt.dataStorage.put(img, 'mousedown' + '.' + self.namespace,
+          self.eventImgFixHandler.bind(self));
+        img.addEventListener('mousedown', imgFixHandler);
+      }
       // drag start
       let dragstartHandler = Xt.dataStorage.put(dragger, 'mousedown touchstart' + '.' + self.namespace,
         self.eventDragstartHandler.bind(self).bind(self, dragger));
@@ -453,6 +459,14 @@ class Slider extends Core {
     if (e.target === slide) { // @FIX event.xt: handler triggered by child xt events
       self.eventSlideOff(dragger, e);
     }
+  }
+
+  /**
+   * drag fix handler
+   * @param {Event} e
+   */
+  eventImgFixHandler(e) {
+    e.preventDefault();
   }
 
   /**
