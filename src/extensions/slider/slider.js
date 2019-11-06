@@ -402,6 +402,11 @@ class Slider extends Xt.Toggle {
     }
     // dragger
     if (options.drag) {
+      // @FIX prevent firefox image dragging
+      for (const img of self.dragger.querySelectorAll('img')) {
+        let imgFixHandler = Xt.dataStorage.put(img, 'mousedown' + '.' + self.namespace, self.eventImgFixHandler.bind(self))
+        img.addEventListener('mousedown', imgFixHandler)
+      }
       // drag start
       const dragstartHandler = Xt.dataStorage.put(
         dragger,
@@ -464,6 +469,14 @@ class Slider extends Xt.Toggle {
     if (slide === e.target) {
       self.eventSlideOff(dragger, e)
     }
+  }
+
+  /**
+   * drag fix handler
+   * @param {Event} e
+   */
+  eventImgFixHandler(e) {
+    e.preventDefault();
   }
 
   /**
