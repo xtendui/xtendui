@@ -2,6 +2,7 @@ import path from 'path'
 import React from 'react'
 
 import DemoVanillaIframe from 'components/demo-vanilla-iframe'
+const spinner = require('components/snippets/spinner').default
 
 const dirs = path.dirname(__filename).split('/')
 export const demo = {
@@ -13,8 +14,162 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div>
-  Vanilla Iframe
+<div class="slider demo--test-vanilla-iframe">
+  <div class="loader loader--spinner loader--mouse loader--js">
+    <span class="spinner">
+      ${spinner({})}
+    </span>
+  </div>
+
+  <div class="slides">
+    <ul class="slides-inner">
+
+      <li class="slide col-6 col-4--sm">
+        <div class="slide-inner">
+
+          <div class="card card--slide text-align-center">
+            <div class="card-design"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-block card-item">
+                  <div class="card-title">1</div>
+                </div>
+                <div class="loader loader--x loader-size--bottom loader--js">
+                  <div class="filler">
+                    <span></span><span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </li>
+
+      <li class="slide col-6 col-4--sm">
+        <div class="slide-inner">
+
+          <div class="card card--slide text-align-center">
+            <div class="card-design"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-block card-item">
+                  <div class="card-title">2</div>
+                </div>
+                <div class="loader loader--x loader-size--bottom loader--js">
+                  <div class="filler">
+                    <span></span><span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </li>
+
+      <li class="slide col-6 col-4--sm">
+        <div class="slide-inner">
+
+          <div class="card card--slide text-align-center">
+            <div class="card-design"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-block card-item">
+                  <div class="card-title">3</div>
+                </div>
+                <div class="loader loader--x loader-size--bottom loader--js">
+                  <div class="filler">
+                    <span></span><span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </li>
+
+      <li class="slide col-6 col-4--sm">
+        <div class="slide-inner">
+
+          <div class="card card--slide text-align-center">
+            <div class="card-design"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-block card-item">
+                  <div class="card-title">4</div>
+                </div>
+                <div class="loader loader--x loader-size--bottom loader--js">
+                  <div class="filler">
+                    <span></span><span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </li>
+
+      <li class="slide col-6 col-4--sm">
+        <div class="slide-inner">
+
+          <div class="card card--slide text-align-center">
+            <div class="card-design"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-block card-item">
+                  <div class="card-title">5</div>
+                </div>
+                <div class="loader loader--x loader-size--bottom loader--js">
+                  <div class="filler">
+                    <span></span><span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </li>
+
+      <li class="slide col-12">
+        <div class="slide-inner">
+
+          <div class="card card--slide text-align-center"
+            style="height: 15rem">
+            <div class="card-design"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-block card-item">
+                  <div class="card-title">6</div>
+                </div>
+                <div class="loader loader--x loader-size--bottom loader--js">
+                  <div class="filler">
+                    <span></span><span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
+  <nav class="slider-pagination">
+    <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
+      <span class="loader loader--y loader--js">
+        <span class="filler">
+          <span></span><span></span>
+        </span>
+      </span>
+    </button>
+  </nav>
+
 </div>
 `
 

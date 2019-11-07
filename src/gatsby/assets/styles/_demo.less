@@ -102,6 +102,9 @@ pre {
   .gatsby_demo_item {
     position: relative;
     .toggle-flex();
+    .gatsby_demo_item_wrapper {
+      position: relative;
+    }
     .gatsby_demo_code {
       .collapse-height();
       #overlay--open-full & {
@@ -137,16 +140,6 @@ pre {
         border: 0;
         &:not(.gatsby_iframe-full) {
           height: @gatsby_demo-height;
-        }
-      }
-    }
-    &[data-shadow] {
-      &:not(.loaded) {
-        .gatsby_demo_item_wrapper {
-          height: @gatsby_demo-height;
-        }
-        .gatsby_demo_shadow {
-          display: none;
         }
       }
     }
