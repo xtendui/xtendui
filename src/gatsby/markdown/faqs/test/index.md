@@ -68,6 +68,16 @@ let self = new Xt.Scroll(document.documentElement, {
 
 </div>
 
+##Test
+
+<demo>
+  <div class="gatsby_demo_item" data-iframe="iframe/demos/test/test">
+    <div class="gatsby_demo_text">
+      <a href="/iframe/demos/test/test">link</a>
+    </div>
+  </div>
+</demo>
+
 ##Demo
 
 <demo>
