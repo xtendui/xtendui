@@ -194,7 +194,7 @@ const populateDemo = function(container, i) {
       } else {
         requestAnimationFrame(function() {
           // @FIX multiple initializations
-          sourceTo.innerHTML = item.querySelector('script[data-lang="html"]').innerHTML
+          sourceTo.innerHTML = item.querySelector('script[type="text/plain"]').innerHTML
           // .gatsby_demo-cols
           if (sourceTo.classList.contains('gatsby_demo-cols')) {
             for (const [i, el] of sourceTo.querySelectorAll("[class^='col-'], [class*=' col-'], [class^='demo--col-'], [class*=' demo--col-']").entries()) {
@@ -252,7 +252,7 @@ const makeFullscreen = function(container) {
   requestAnimationFrame(function() {
     // requestAnimationFrame fixes errors
     if (sourceTo && container.dataset.isFullscreenOnly) {
-      sourceTo.innerHTML = container.querySelector('script[data-lang="html"]').innerHTML
+      sourceTo.innerHTML = container.querySelector('script[type="text/plain"]').innerHTML
     }
   })
   // populate iframe
@@ -329,12 +329,12 @@ const unloadIframe = function(iframe) {
 }
 
 if (typeof window !== 'undefined') {
-  window.initIframe = function(name, htmlSource, jsSource, cssSource) {
+  window.initIframe = function(name, htmlSource, jsxSource, cssSource, jsSource) {
     const src = 'iframe[name="' + name + '"]'
     const iframes = document.querySelectorAll(src)
     for (const iframe of iframes) {
       const item = iframe.closest('.gatsby_demo_item')
-      populateIframe(item, iframe, htmlSource, jsSource, cssSource)
+      populateIframe(item, iframe, htmlSource, jsxSource, cssSource, jsSource)
       item.classList.add('loaded')
     }
   }
@@ -367,18 +367,21 @@ if (typeof window !== 'undefined') {
   }
 }
 
-const populateIframe = function(item, iframe, htmlSource, jsSource, cssSource) {
+const populateIframe = function(item, iframe, htmlSource, jsxSource, cssSource, jsSource) {
   if (!item.classList.contains('populated')) {
     item.classList.add('populated')
     // inject code
     if (htmlSource) {
       item.append(Xt.createElement('<div class="gatsby_demo_source xt-ignore" data-lang="html">' + htmlSource + '</div>'))
     }
-    if (jsSource) {
-      item.append(Xt.createElement('<div class="gatsby_demo_source xt-ignore" data-lang="js">' + jsSource + '</div>'))
+    if (jsxSource) {
+      item.append(Xt.createElement('<div class="gatsby_demo_source xt-ignore" data-lang="jsx">' + jsxSource + '</div>'))
     }
     if (cssSource) {
       item.append(Xt.createElement('<div class="gatsby_demo_source xt-ignore" data-lang="less">' + cssSource + '</div>'))
+    }
+    if (jsSource) {
+      item.append(Xt.createElement('<div class="gatsby_demo_source xt-ignore" data-lang="js">' + jsSource + '</div>'))
     }
     // populate
     const els = item.querySelectorAll('[data-lang]')
@@ -425,10 +428,12 @@ const populateSources = function(item, element, z) {
   // set text
   if (lang === 'language-markup') {
     lang = 'html'
-  } else if (lang === 'language-jsx') {
-    lang = 'js'
   } else if (lang === 'language-less') {
     lang = 'less'
+  } else if (lang === 'language-js') {
+    lang = 'js'
+  } else if (lang === 'language-jsx') {
+    lang = 'jsx'
   }
   // populate tabs
   item.querySelector('.gatsby_demo_code_body').append(Xt.createElement('<div class="gatsby_demo_code_body_item"><pre class="noedit"><code></code></pre></div>'))
@@ -439,10 +444,12 @@ const populateSources = function(item, element, z) {
   // set text
   if (lang === 'html') {
     lang = 'language-markup'
-  } else if (lang === 'js') {
-    lang = 'language-jsx'
   } else if (lang === 'less') {
     lang = 'language-less'
+  } else if (lang === 'js') {
+    lang = 'language-js'
+  } else if (lang === 'jsx') {
+    lang = 'language-jsx'
   }
   codeInside.innerHTML = formatCode(element)
   codeInside.classList.add(lang)

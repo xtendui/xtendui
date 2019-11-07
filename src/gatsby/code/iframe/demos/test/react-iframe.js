@@ -14,7 +14,7 @@ export const demo = {
 
 class Page extends React.Component {
   render() {
-    return <DemoReactIframe demo={demo} />
+    return <DemoReactIframe demo={demo} vanilla="vanilla-iframe" />
   }
 }
 

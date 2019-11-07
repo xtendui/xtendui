@@ -3,7 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
-import { cssSource, jsSource } from 'assets/scripts/source'
+import { cssSource, jsSource, jsxSource } from 'assets/scripts/source'
 
 class DemoReact extends React.Component {
   render() {
@@ -33,7 +33,7 @@ class DemoReact extends React.Component {
         render={data => (
           <div className="gatsby_demo_item gatsby_demo_preview" data-name={name || demo.name.split('-').pop()} data-inline={src}>
             {children}
-            <script type="text/plain" data-lang="html">
+            <script type="text/plain">
               <demo.Component></demo.Component>
             </script>
             <div
@@ -48,7 +48,7 @@ class DemoReact extends React.Component {
             {data.allFile.files
               .filter(x => x.file.relativePath === `${demo.type}/${demo.component}/${demo.name}.jsx`)
               .map((file, i) => (
-                <div className="gatsby_demo_source xt-ignore" data-lang="js" dangerouslySetInnerHTML={{ __html: jsSource(demo, '.jsx') }} key={i} />
+                <div className="gatsby_demo_source xt-ignore" data-lang="jsx" dangerouslySetInnerHTML={{ __html: jsxSource(demo) }} key={i} />
               ))}
             {data.allFile.files
               .filter(x => x.file.relativePath === `${demo.type}/${demo.component}/${demo.name}.less`)

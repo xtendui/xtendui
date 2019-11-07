@@ -25,7 +25,7 @@ class Layout extends React.Component {
     }
     const iframeLoaded = function() {
       if (window.self !== window.top) {
-        window.parent.initIframe(window.name, demo.htmlSource, demo.jsSource, demo.cssSource)
+        window.parent.initIframe(window.name, demo.htmlSource, demo.jsxSource, demo.cssSource, demo.jsSource)
         new ResizeSensor(document.querySelector('#body-outer'), function() {
           window.parent.resizeIframe(window.frameElement.getAttribute('name'))
         })
