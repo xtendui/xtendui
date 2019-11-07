@@ -4,7 +4,7 @@ const spinner = require('components/snippets/spinner').default
 class Component extends React.Component {
   render() {
     return (
-      <div className="slider demo--test-vanilla-iframe">
+      <div className="slider demo--test-iframe">
         <div className="loader loader--spinner loader--mouse loader--js">
           <span className="spinner" dangerouslySetInnerHTML={{ __html: spinner({}) }}>
           </span>

@@ -5,7 +5,7 @@ import 'xtend-library/src/extensions/animation/MouseFollow.js'
 import { TweenMax, TimelineMax } from 'gsap/TweenMax'
 
 Xt.mount.push({
-  matches: '.demo--test-vanilla-iframe',
+  matches: '.demo--test-iframe',
   mount: function(object) {
     // vars
 

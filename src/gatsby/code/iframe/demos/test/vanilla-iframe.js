@@ -14,7 +14,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="slider demo--test-vanilla-iframe">
+<div class="slider demo--test-iframe">
   <div class="loader loader--spinner loader--mouse loader--js">
     <span class="spinner">
       ${spinner({})}
