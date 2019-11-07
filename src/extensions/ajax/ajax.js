@@ -372,6 +372,7 @@ Ajax.optionsDefault = {
   min: 0,
   max: 1,
   instant: true,
+  class: 'active active-ajax',
   query: 'body', // needs to be unique
   baseUrl: '/',
   duration: false,

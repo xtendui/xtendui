@@ -50,6 +50,7 @@ Drop.optionsDefault = {
   on: 'click',
   min: 0,
   max: 1,
+  class: 'active active-drop',
   eventLimit: '.event-limit, .drop',
   autoclose: true,
   closeOutside: 'body',

@@ -434,6 +434,7 @@ Sticky.optionsDefault = {
   min: 0,
   max: 'Infinity',
   instant: true,
+  class: 'active active-sticky',
   sticky: true,
   position: 'top',
   limit: { bottom: 'Infinity' },

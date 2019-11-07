@@ -1006,6 +1006,7 @@ Slider.optionsDefault = {
   min: 1,
   max: 1,
   instant: true,
+  class: 'active active-slider',
   loop: true,
   jump: true,
   imageLoadedInit: true,
