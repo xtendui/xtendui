@@ -59,16 +59,18 @@ class DocSidebar extends React.Component {
                                   <div className="gatsby_site_article_sidebar_line"></div>
                                   {page.postsAdiacent.posts.map(({ post: adiacent }, i) =>
                                     adiacent.frontmatter.title !== post.frontmatter.parent ? (
-                                      <div key={i}>
-                                        <Link
-                                          to={markdownSlug(adiacent)}
-                                          className={`btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--adiacent ${
-                                            page.post.frontmatter.title === adiacent.frontmatter.title ? 'active' : ''
-                                          }`}
-                                        >
-                                          {adiacent.frontmatter.title}
-                                        </Link>
-                                      </div>
+                                      adiacent.frontmatter.layout !== 'theme' ? (
+                                        <div key={i}>
+                                          <Link
+                                            to={markdownSlug(adiacent)}
+                                            className={`btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--adiacent ${
+                                              page.post.frontmatter.title === adiacent.frontmatter.title ? 'active' : ''
+                                            }`}
+                                          >
+                                            {adiacent.frontmatter.title}
+                                          </Link>
+                                        </div>
+                                      ) : null
                                     ) : null
                                   )}
                                 </div>

@@ -25,38 +25,40 @@ class Template extends React.Component {
                 <div className="row">
                   {data.postsAdiacent.posts.map(({ post: adiacent }, i) =>
                     adiacent.frontmatter.parent !== adiacent.frontmatter.title ? (
-                      <div className="gatsby_listing_column" key={i}>
-                        <button
-                          type="button"
-                          className="card card--primary card--small card--full card--collapse gatsby_listing_item"
-                          data-gatsby-listing-toggle
-                        >
-                          <div className="card-design"></div>
-                          <div className="card-inner">
-                            <div className="card-content">
-                              <div className="card-block card-item">
-                                <div className="card-title">{adiacent.frontmatter.title}</div>
-                                <p>{adiacent.frontmatter.description}</p>
+                      adiacent.frontmatter.layout === 'theme' ? (
+                        <div className="gatsby_listing_column" key={i}>
+                          <button
+                            type="button"
+                            className="card card--primary card--small card--full card--collapse gatsby_listing_item"
+                            data-gatsby-listing-toggle
+                          >
+                            <div className="card-design"></div>
+                            <div className="card-inner">
+                              <div className="card-content">
+                                <div className="card-block card-item">
+                                  <div className="card-title">{adiacent.frontmatter.title}</div>
+                                  <p>{adiacent.frontmatter.description}</p>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        </button>
-                        {adiacent.frontmatter.iframe ? (
-                          <Demo>
-                            <div className="gatsby_demo_item" data-iframe-fullscreen={adiacent.frontmatter.iframe}></div>
-                          </Demo>
-                        ) : null}
-                        {adiacent.frontmatter.vanilla ? (
-                          <Demo>
-                            <DemoVanilla src={adiacent.frontmatter.vanilla}></DemoVanilla>
-                          </Demo>
-                        ) : null}
-                        {adiacent.frontmatter.react ? (
-                          <Demo>
-                            <DemoReact src={adiacent.frontmatter.react}></DemoReact>
-                          </Demo>
-                        ) : null}
-                      </div>
+                          </button>
+                          {adiacent.frontmatter.iframe ? (
+                            <Demo>
+                              <div className="gatsby_demo_item" data-iframe-fullscreen={adiacent.frontmatter.iframe}></div>
+                            </Demo>
+                          ) : null}
+                          {adiacent.frontmatter.vanilla ? (
+                            <Demo>
+                              <DemoVanilla src={adiacent.frontmatter.vanilla}></DemoVanilla>
+                            </Demo>
+                          ) : null}
+                          {adiacent.frontmatter.react ? (
+                            <Demo>
+                              <DemoReact src={adiacent.frontmatter.react}></DemoReact>
+                            </Demo>
+                          ) : null}
+                        </div>
+                      ) : null
                     ) : null
                   )}
                 </div>
@@ -113,6 +115,7 @@ export const query = graphql`
             iframe
             vanilla
             react
+            layout
           }
         }
       }
@@ -184,6 +187,7 @@ Template.propTypes = {
               iframe: PropTypes.string,
               vanilla: PropTypes.string,
               react: PropTypes.string,
+              layout: PropTypes.string,
             }).isRequired,
           }).isRequired,
         }).isRequired

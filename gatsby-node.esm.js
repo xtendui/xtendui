@@ -46,6 +46,7 @@ exports.createPages = ({ actions, graphql }) => {
               type
               parent
               title
+              layout
             }
           }
         }
@@ -59,7 +60,7 @@ exports.createPages = ({ actions, graphql }) => {
       let template = docPageTemplate
       if (!node.frontmatter.parent) {
         template = docListingTemplate
-      } else if (node.frontmatter.type === 'Themes') {
+      } else if (node.frontmatter.layout === 'theme') {
         template = docThemeTemplate
       }
       createPage({

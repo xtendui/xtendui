@@ -91,6 +91,7 @@ export const query = graphql`
             type
             parent
             title
+            layout
           }
         }
       }
@@ -158,6 +159,7 @@ Template.propTypes = {
               type: PropTypes.string.isRequired,
               parent: PropTypes.string,
               title: PropTypes.string.isRequired,
+              layout: PropTypes.string,
             }).isRequired,
           }).isRequired,
         }).isRequired

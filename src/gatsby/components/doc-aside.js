@@ -10,7 +10,7 @@ class DocAside extends React.Component {
       filterBy = ['Extensions']
     } else if (page.post.frontmatter.type === 'Extensions') {
       filterBy = ['Themes']
-    } else if (page.post.frontmatter.type === 'Themes') {
+    } else if (page.post.frontmatter.layout === 'theme') {
       filterBy = ['Core', 'Extensions']
     }
     return (
