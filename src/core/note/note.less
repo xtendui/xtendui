@@ -36,9 +36,12 @@
     color: @accent;
   }
   &.note--background {
-    border-color: @accent;
-    background: @accent;
-    .text-inverse();
+    border-color: fade(@accent, 10%);
+    background: fade(@accent, 10%);
+    color: @accent;
+  }
+  a {
+    color: inherit;
   }
 }
 
@@ -47,9 +50,12 @@
     color: @success;
   }
   &.note--background {
-    border-color: @success;
-    background: @success;
-    .text-inverse();
+    border-color: fade(@success, 10%);
+    background: fade(@success, 10%);
+    color: @success;
+  }
+  a {
+    color: inherit;
   }
 }
 
@@ -58,9 +64,12 @@
     color: @error;
   }
   &.note--background {
-    border-color: @error;
-    background: @error;
-    .text-inverse();
+    border-color: fade(@error, 10%);
+    background: fade(@error, 10%);
+    color: @error;
+  }
+  a {
+    color: inherit;
   }
 }
 
