@@ -6,8 +6,7 @@ class Component extends React.Component {
     return (
       <div className="slider demo--test-react-iframe">
         <div className="loader loader--spinner loader--mouse loader--js">
-          <span className="spinner">
-            ${spinner({})}
+          <span className="spinner" dangerouslySetInnerHTML={{ __html: spinner({}) }}>
           </span>
         </div>
 
