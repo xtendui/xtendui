@@ -2,6 +2,8 @@
  * ajax
  */
 
-.active-ajax {
-  pointer-events: none;
+a[href]:not([href^="#"]) {
+  &.active {
+    pointer-events: none;
+  }
 }

@@ -2,9 +2,7 @@
 type: "Extensions"
 parent: "Form"
 title: "Label Addon"
+description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+layout: "theme"
+vanilla: "inline/extensions/form/label-addon"
 ---
-
-<demo>
-  <demovanilla src="inline/extensions/form/label-addon">
-  </demovanilla>
-</demo>

@@ -6,6 +6,7 @@ import { markdownSlug } from 'components/markdown-slug.js'
 class DocFoot extends React.Component {
   render() {
     const { page } = this.props
+    const postsAdiacentFiltered = page.postsAdiacent.posts.filter(x => x.post.frontmatter.layout !== 'theme')
     return (
       <footer className="gatsby_article_foot">
         <div>
@@ -52,29 +53,30 @@ class DocFoot extends React.Component {
 
         <div>
           {page.post.frontmatter.type !== 'Themes'
-            ? page.postsAdiacent.posts.map(({ post: adiacent }, i) => {
-                if (page.postsAdiacent.posts.length > 1 && markdownSlug(adiacent) === markdownSlug(page.post)) {
+            ? postsAdiacentFiltered.map(({ post: adiacent }, i) => {
+                if (postsAdiacentFiltered.length > 0 && markdownSlug(adiacent) === markdownSlug(page.post)) {
                   let index = i + 1
-                  index = i === page.postsAdiacent.posts.length - 1 ? 0 : index
-                  index = i === page.postsAdiacent.posts.length - 2 ? 0 : index
-                  const nextAdiacent = page.postsAdiacent.posts[index].post
-                  return (
-                    <div key={i}>
-                      <Link to={markdownSlug(nextAdiacent)} className="btn gatsby_btn--site_multiline btn--right">
-                        <span>
-                          <span className="gatsby_btn--site_multiline_line">
-                            Next <strong>{nextAdiacent.frontmatter.title}</strong>
+                  index = index >= postsAdiacentFiltered.length ? 0 : index
+                  const nextAdiacent = postsAdiacentFiltered[index].post
+                  if (nextAdiacent.frontmatter.parent !== nextAdiacent.frontmatter.title) {
+                    return (
+                      <div key={index}>
+                        <Link to={markdownSlug(nextAdiacent)} className="btn gatsby_btn--site_multiline btn--right">
+                          <span>
+                            <span className="gatsby_btn--site_multiline_line">
+                              Next <strong>{nextAdiacent.frontmatter.title}</strong>
+                            </span>
                           </span>
-                        </span>
-                        <span>
-                          <span className="gatsby_btn--site_multiline_line gatsby_btn--site_multiline_special">
-                            <strong className="gatsby_btn--site_multiline_special_text">GO</strong>
-                            <span className="icon-chevron-right"></span>
+                          <span>
+                            <span className="gatsby_btn--site_multiline_line gatsby_btn--site_multiline_special">
+                              <strong className="gatsby_btn--site_multiline_special_text">GO</strong>
+                              <span className="icon-chevron-right"></span>
+                            </span>
                           </span>
-                        </span>
-                      </Link>
-                    </div>
-                  )
+                        </Link>
+                      </div>
+                    )
+                  }
                 }
               })
             : null}

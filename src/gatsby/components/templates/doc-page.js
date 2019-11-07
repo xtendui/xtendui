@@ -21,12 +21,59 @@ class Template extends React.Component {
     seo.title = data.post.frontmatter.title
     seo.description = data.post.frontmatter.description
     seo.parent = data.post.frontmatter.parent
-    let title = seo.title
-    title += ' — '
-    title += seo.description ? seo.description : seo.parent
     return (
       <Layout seo={seo} page={data}>
-        <SEO title={title} />
+        <SEO title={seo.title + ' — ' + seo.description} />
+        {data.post.frontmatter.parent === data.post.frontmatter.title ? (
+          <div className="gatsby_listing">
+            <div className="row">
+              <div className="gatsby_listing_group">
+                <div className="gatsby_listing_items">
+                  <div className="row">
+                    {data.postsAdiacent.posts.map(({ post: adiacent }, i) =>
+                      adiacent.frontmatter.parent !== adiacent.frontmatter.title ? (
+                        adiacent.frontmatter.layout === 'theme' ? (
+                          <div className="gatsby_listing_column" key={i}>
+                            <button
+                              type="button"
+                              className="card card--primary card--small card--full card--collapse gatsby_listing_item"
+                              data-gatsby-listing-toggle
+                            >
+                              <div className="card-design"></div>
+                              <div className="card-inner">
+                                <div className="card-content">
+                                  <div className="card-block card-item">
+                                    <div className="card-title">{adiacent.frontmatter.title}</div>
+                                    <p>{adiacent.frontmatter.description}</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </button>
+                            {adiacent.frontmatter.iframe ? (
+                              <Demo>
+                                <div className="gatsby_demo_item" data-iframe-fullscreen={adiacent.frontmatter.iframe}></div>
+                              </Demo>
+                            ) : null}
+                            {adiacent.frontmatter.vanilla ? (
+                              <Demo>
+                                <DemoVanilla src={adiacent.frontmatter.vanilla}></DemoVanilla>
+                              </Demo>
+                            ) : null}
+                            {adiacent.frontmatter.react ? (
+                              <Demo>
+                                <DemoReact src={adiacent.frontmatter.react}></DemoReact>
+                              </Demo>
+                            ) : null}
+                          </div>
+                        ) : null
+                      ) : null
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : null}
         {renderAst(data.post.htmlAst)}
       </Layout>
     )
@@ -46,6 +93,7 @@ export const query = graphql`
               type
               parent
               title
+              description
             }
           }
         }
@@ -72,6 +120,10 @@ export const query = graphql`
             type
             parent
             title
+            description
+            iframe
+            vanilla
+            react
             layout
           }
         }
@@ -111,6 +163,7 @@ Template.propTypes = {
                   type: PropTypes.string.isRequired,
                   parent: PropTypes.string,
                   title: PropTypes.string.isRequired,
+                  description: PropTypes.string.isRequired,
                 }).isRequired,
               }).isRequired,
             }).isRequired
@@ -139,6 +192,10 @@ Template.propTypes = {
               type: PropTypes.string.isRequired,
               parent: PropTypes.string,
               title: PropTypes.string.isRequired,
+              description: PropTypes.string,
+              iframe: PropTypes.string,
+              vanilla: PropTypes.string,
+              react: PropTypes.string,
               layout: PropTypes.string,
             }).isRequired,
           }).isRequired,
