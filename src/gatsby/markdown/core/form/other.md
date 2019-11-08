@@ -9,7 +9,7 @@ title: "Other"
 You can use `legend`.
 
 <demo>
-  <demovanilla src="inline/core/form/legend">
+  <demovanilla src="vanilla/core/form/legend">
   </demovanilla>
 </demo>
 
@@ -18,7 +18,7 @@ You can use `legend`.
 You can use `fieldset`.
 
 <demo>
-  <demovanilla src="inline/core/form/fieldset">
+  <demovanilla src="vanilla/core/form/fieldset">
   </demovanilla>
 </demo>
 
@@ -27,6 +27,6 @@ You can use `fieldset`.
 Use `.form-note` to make a form note.
 
 <demo>
-  <demovanilla src="inline/core/form/text">
+  <demovanilla src="vanilla/core/form/text">
   </demovanilla>
 </demo>

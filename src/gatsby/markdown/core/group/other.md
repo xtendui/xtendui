@@ -10,11 +10,11 @@ date: "2000-10-01"
 Use `.full` to have full width fluid group. Use `.group-inner.flex-auto` to expand groups.
 
 <demo>
-  <demovanilla src="inline/core/group/options-full-line">
+  <demovanilla src="vanilla/core/group/options-full-line">
   </demovanilla>
 </demo>
 
 <demo>
-  <demovanilla src="inline/core/group/options-full-stack">
+  <demovanilla src="vanilla/core/group/options-full-stack">
   </demovanilla>
 </demo>

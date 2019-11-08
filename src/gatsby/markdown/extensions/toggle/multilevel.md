@@ -5,6 +5,6 @@ title: "Multilevel"
 ---
 
 <demo>
-  <demovanilla src="inline/extensions/toggle/multilevel">
+  <demovanilla src="vanilla/extensions/toggle/multilevel">
   </demovanilla>
 </demo>

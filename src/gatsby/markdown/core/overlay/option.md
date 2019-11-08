@@ -22,7 +22,7 @@ Classes for assigning variant (e.g.: border / background / font colors).
 </div>
 
 <demo>
-  <demovanilla src="inline/core/overlay/variant">
+  <demovanilla src="vanilla/core/overlay/variant">
   </demovanilla>
 </demo>
 
@@ -40,6 +40,6 @@ Classes for assigning width.
 </div>
 
 <demo>
-  <demovanilla src="inline/core/overlay/size">
+  <demovanilla src="vanilla/core/overlay/size">
   </demovanilla>
 </demo>

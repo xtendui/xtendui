@@ -64,6 +64,6 @@ new Xt.Toggle(document.querySelector('.my-toggle'), {
 You can animate with javascript instead of css, just use [toggle events](/core/toggle/@TODO) and remember to set `durationOn: Milliseconds` and `durationOff: Milliseconds`.
 
 <demo>
-  <demovanilla src="inline/core/toggle/javascript">
+  <demovanilla src="vanilla/core/toggle/javascript">
   </demovanilla>
 </demo>

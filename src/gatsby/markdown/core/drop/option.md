@@ -19,7 +19,7 @@ Classes for assigning variant (e.g.: border / background / font colors).
 </div>
 
 <demo>
-  <demovanilla src="inline/core/drop/variant">
+  <demovanilla src="vanilla/core/drop/variant">
   </demovanilla>
 </demo>
 
@@ -34,6 +34,6 @@ Classes for assigning position.
 
         
 <demo>
-  <demovanilla src="inline/core/drop/position">
+  <demovanilla src="vanilla/core/drop/position">
   </demovanilla>
 </demo>

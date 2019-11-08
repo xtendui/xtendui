@@ -21,19 +21,19 @@ Row **automatically** add horizontal and vertical spacing to the contents. You c
 </div>
 
 <demo>
-  <demovanilla src="inline/core/row/space-none" mode="grid">
+  <demovanilla src="vanilla/core/row/space-none" mode="grid">
   </demovanilla>
-  <demovanilla src="inline/core/row/space-tiny" mode="grid">
+  <demovanilla src="vanilla/core/row/space-tiny" mode="grid">
   </demovanilla>
-  <demovanilla src="inline/core/row/space-small" mode="grid">
+  <demovanilla src="vanilla/core/row/space-small" mode="grid">
   </demovanilla>
-  <demovanilla src="inline/core/row/space-medium" mode="grid">
+  <demovanilla src="vanilla/core/row/space-medium" mode="grid">
   </demovanilla>
-  <demovanilla src="inline/core/row/space-big" mode="grid">
+  <demovanilla src="vanilla/core/row/space-big" mode="grid">
   </demovanilla>
-  <demovanilla src="inline/core/row/space-giant" mode="grid">
+  <demovanilla src="vanilla/core/row/space-giant" mode="grid">
   </demovanilla>
-  <demovanilla src="inline/core/row/space-huge" mode="grid">
+  <demovanilla src="vanilla/core/row/space-huge" mode="grid">
   </demovanilla>
 </demo>
 
@@ -42,13 +42,13 @@ Row **automatically** add horizontal and vertical spacing to the contents. You c
 Set children's direction inside the flexbox.
 
 <demo>
-  <demovanilla src="inline/core/row/direction-row" mode="grid">
+  <demovanilla src="vanilla/core/row/direction-row" mode="grid">
   </demovanilla>
-  <demovanilla src="inline/core/row/direction-row-reverse" mode="grid">
+  <demovanilla src="vanilla/core/row/direction-row-reverse" mode="grid">
   </demovanilla>
-  <demovanilla src="inline/core/row/direction-column" mode="grid">
+  <demovanilla src="vanilla/core/row/direction-column" mode="grid">
   </demovanilla>
-  <demovanilla src="inline/core/row/direction-column-reverse" mode="grid">
+  <demovanilla src="vanilla/core/row/direction-column-reverse" mode="grid">
   </demovanilla>
 </demo>
 
@@ -57,11 +57,11 @@ Set children's direction inside the flexbox.
 Set children's wrapping inside the flexbox.
 
 <demo>
-  <demovanilla src="inline/core/row/wrap" mode="grid">
+  <demovanilla src="vanilla/core/row/wrap" mode="grid">
   </demovanilla>
-  <demovanilla src="inline/core/row/wrap-reverse" mode="grid">
+  <demovanilla src="vanilla/core/row/wrap-reverse" mode="grid">
   </demovanilla>
-  <demovanilla src="inline/core/row/nowrap" mode="grid">
+  <demovanilla src="vanilla/core/row/nowrap" mode="grid">
   </demovanilla>
 </demo>
 
@@ -70,17 +70,17 @@ Set children's wrapping inside the flexbox.
 Set children's horizontal alignment inside the flexbox.
 
 <demo>
-  <demovanilla src="inline/core/row/justify-start" mode="grid">
+  <demovanilla src="vanilla/core/row/justify-start" mode="grid">
   </demovanilla>
-  <demovanilla src="inline/core/row/justify-end" mode="grid">
+  <demovanilla src="vanilla/core/row/justify-end" mode="grid">
   </demovanilla>
-  <demovanilla src="inline/core/row/justify-center" mode="grid">
+  <demovanilla src="vanilla/core/row/justify-center" mode="grid">
   </demovanilla>
-  <demovanilla src="inline/core/row/justify-between" mode="grid">
+  <demovanilla src="vanilla/core/row/justify-between" mode="grid">
   </demovanilla>
-  <demovanilla src="inline/core/row/justify-around" mode="grid">
+  <demovanilla src="vanilla/core/row/justify-around" mode="grid">
   </demovanilla>
-  <demovanilla src="inline/core/row/justify-evenly" mode="grid">
+  <demovanilla src="vanilla/core/row/justify-evenly" mode="grid">
   </demovanilla>
 </demo>
 
@@ -89,15 +89,15 @@ Set children's horizontal alignment inside the flexbox.
 Set children's vertical alignment inside the flexbox.
 
 <demo>
-  <demovanilla src="inline/core/row/items-start" mode="grid">
+  <demovanilla src="vanilla/core/row/items-start" mode="grid">
   </demovanilla>
-  <demovanilla src="inline/core/row/items-end" mode="grid">
+  <demovanilla src="vanilla/core/row/items-end" mode="grid">
   </demovanilla>
-  <demovanilla src="inline/core/row/items-center" mode="grid">
+  <demovanilla src="vanilla/core/row/items-center" mode="grid">
   </demovanilla>
-  <demovanilla src="inline/core/row/items-baseline" mode="grid">
+  <demovanilla src="vanilla/core/row/items-baseline" mode="grid">
   </demovanilla>
-  <demovanilla src="inline/core/row/items-stretch" mode="grid">
+  <demovanilla src="vanilla/core/row/items-stretch" mode="grid">
   </demovanilla>
 </demo>
 
@@ -106,17 +106,17 @@ Set children's vertical alignment inside the flexbox.
 Set children's vertical alignment inside the flexbox.
 
 <demo>
-  <demovanilla src="inline/core/row/content-start" mode="grid">
+  <demovanilla src="vanilla/core/row/content-start" mode="grid">
   </demovanilla>
-  <demovanilla src="inline/core/row/content-end" mode="grid">
+  <demovanilla src="vanilla/core/row/content-end" mode="grid">
   </demovanilla>
-  <demovanilla src="inline/core/row/content-center" mode="grid">
+  <demovanilla src="vanilla/core/row/content-center" mode="grid">
   </demovanilla>
-  <demovanilla src="inline/core/row/content-between" mode="grid">
+  <demovanilla src="vanilla/core/row/content-between" mode="grid">
   </demovanilla>
-  <demovanilla src="inline/core/row/content-around" mode="grid">
+  <demovanilla src="vanilla/core/row/content-around" mode="grid">
   </demovanilla>
-  <demovanilla src="inline/core/row/content-stretch" mode="grid">
+  <demovanilla src="vanilla/core/row/content-stretch" mode="grid">
   </demovanilla>
 </demo>
 
@@ -126,17 +126,17 @@ Set item's vertical alignment inside the flexbox.
 If set to **auto** computes to the parent's `align-items` value.
 
 <demo>
-  <demovanilla src="inline/core/row/self-start" mode="grid">
+  <demovanilla src="vanilla/core/row/self-start" mode="grid">
   </demovanilla>
-  <demovanilla src="inline/core/row/self-end" mode="grid">
+  <demovanilla src="vanilla/core/row/self-end" mode="grid">
   </demovanilla>
-  <demovanilla src="inline/core/row/self-center" mode="grid">
+  <demovanilla src="vanilla/core/row/self-center" mode="grid">
   </demovanilla>
-  <demovanilla src="inline/core/row/self-baseline" mode="grid">
+  <demovanilla src="vanilla/core/row/self-baseline" mode="grid">
   </demovanilla>
-  <demovanilla src="inline/core/row/self-stretch" mode="grid">
+  <demovanilla src="vanilla/core/row/self-stretch" mode="grid">
   </demovanilla>
-  <demovanilla src="inline/core/row/self-auto" mode="grid">
+  <demovanilla src="vanilla/core/row/self-auto" mode="grid">
   </demovanilla>
 </demo>
 
@@ -159,7 +159,7 @@ Set item's order inside the flexbox.
 | By default orders from `.order-0` to `.order-2` are negative values.
 
 <demo>
-  <demovanilla src="inline/core/row/order" mode="grid">
+  <demovanilla src="vanilla/core/row/order" mode="grid">
   </demovanilla>
 </demo>
   

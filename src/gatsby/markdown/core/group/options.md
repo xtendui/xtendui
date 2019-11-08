@@ -22,12 +22,12 @@ Classes for assigning variant (e.g.: border / background / font colors).
 </div>
 
 <demo>
-  <demovanilla src="inline/core/group/options-variant-line">
+  <demovanilla src="vanilla/core/group/options-variant-line">
   </demovanilla>
 </demo>
 
 <demo>
-  <demovanilla src="inline/core/group/options-variant-stack">
+  <demovanilla src="vanilla/core/group/options-variant-stack">
   </demovanilla>
 </demo>
 
@@ -36,11 +36,11 @@ Classes for assigning variant (e.g.: border / background / font colors).
 Space group elements with list's options.
 
 <demo>
-  <demovanilla src="inline/core/group/options-list-line">
+  <demovanilla src="vanilla/core/group/options-list-line">
   </demovanilla>
 </demo>
 
 <demo>
-  <demovanilla src="inline/core/group/options-list-stack">
+  <demovanilla src="vanilla/core/group/options-list-stack">
   </demovanilla>
 </demo>

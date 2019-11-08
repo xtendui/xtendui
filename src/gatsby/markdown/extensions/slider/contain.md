@@ -9,16 +9,16 @@ title: "Contain"
 Use `contain: true` to contain the slides.
 
 <demo>
-  <demovanilla src="inline/demos/slider/contain-center">
+  <demovanilla src="vanilla/demos/slider/contain-center">
   </demovanilla>
 </demo>
 
 <demo>
-  <demovanilla src="inline/demos/slider/contain-left">
+  <demovanilla src="vanilla/demos/slider/contain-left">
   </demovanilla>
 </demo>
 
 <demo>
-  <demovanilla src="inline/demos/slider/contain-right">
+  <demovanilla src="vanilla/demos/slider/contain-right">
   </demovanilla>
 </demo>

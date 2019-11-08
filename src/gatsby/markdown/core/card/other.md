@@ -10,7 +10,7 @@ date: "2000-10-01"
 Disable card's variant styles with `.card--disable`.
 
 <demo>
-  <demovanilla src="inline/core/card/disable">
+  <demovanilla src="vanilla/core/card/disable">
   </demovanilla>
 </demo>
 
@@ -19,6 +19,6 @@ Disable card's variant styles with `.card--disable`.
 Usage of `.btn--close` @TODO link.
 
 <demo>
-  <demovanilla src="inline/core/card/close">
+  <demovanilla src="vanilla/core/card/close">
   </demovanilla>
 </demo>

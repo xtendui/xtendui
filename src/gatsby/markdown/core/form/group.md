@@ -47,11 +47,11 @@ Classes for assigning size (e.g.: padding or font size).
 </div>
 
 <demo>
-  <demovanilla src="inline/core/form/group-small">
+  <demovanilla src="vanilla/core/form/group-small">
   </demovanilla>
-  <demovanilla src="inline/core/form/group-medium">
+  <demovanilla src="vanilla/core/form/group-medium">
   </demovanilla>
-  <demovanilla src="inline/core/form/group-big">
+  <demovanilla src="vanilla/core/form/group-big">
   </demovanilla>
 </demo>
 
@@ -60,14 +60,14 @@ Classes for assigning size (e.g.: padding or font size).
 There are several form group addons to change the form layout. They aren't just less classes to apply, but they need major markup formatting.
 
 <demo>
-  <demovanilla src="inline/core/form/addon-none">
+  <demovanilla src="vanilla/core/form/addon-none">
   </demovanilla>
-  <demovanilla src="inline/core/form/addon-row">
+  <demovanilla src="vanilla/core/form/addon-row">
   </demovanilla>
-  <demovanilla src="inline/core/form/addon-horizontal">
+  <demovanilla src="vanilla/core/form/addon-horizontal">
   </demovanilla>
-  <demovanilla src="inline/core/form/addon-inline-input" name="inline input">
+  <demovanilla src="vanilla/core/form/addon-inline-input" name="inline input">
   </demovanilla>
-  <demovanilla src="inline/core/form/addon-inline">
+  <demovanilla src="vanilla/core/form/addon-inline">
   </demovanilla>
 </demo>

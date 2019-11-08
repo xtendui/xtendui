@@ -10,7 +10,7 @@ date: "2000-05-01"
 You can add custom `.card-block` modifiers and style them as you like (e.g.: `.card-block--custom`).
 
 <demo>
-  <demovanilla src="inline/core/card/horizontal-block">
+  <demovanilla src="vanilla/core/card/horizontal-block">
   </demovanilla>
 </demo>
 
@@ -21,7 +21,7 @@ Sequential `.card-item` stack vertically.
 They have a separator automatically styled with [variants](/core/card/option#variant). Just be sure to style `.card-item--{variant}` as in the **card.less** to not break css specificity.
 
 <demo>
-  <demovanilla src="inline/core/card/horizontal-multiple">
+  <demovanilla src="vanilla/core/card/horizontal-multiple">
   </demovanilla>
 </demo>
 
@@ -30,7 +30,7 @@ They have a separator automatically styled with [variants](/core/card/option#var
 If you want full width assets use `.card-asset`.
 
 <demo>
-  <demovanilla src="inline/core/card/horizontal-asset">
+  <demovanilla src="vanilla/core/card/horizontal-asset">
   </demovanilla>
 </demo>
 
@@ -39,6 +39,6 @@ If you want full width assets use `.card-asset`.
 You can set vertical overflow using `.card--overflow-y` in `.card-inner` or `.card-block`.
 
 <demo>
-  <demovanilla src="inline/core/card/horizontal-overflow-y">
+  <demovanilla src="vanilla/core/card/horizontal-overflow-y">
   </demovanilla>
 </demo>

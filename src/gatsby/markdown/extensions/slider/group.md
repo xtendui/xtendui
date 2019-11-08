@@ -13,13 +13,13 @@ With `groupMq: { MediaQuery: Number }` you set a decimal number from 0 to 1 to g
 By default it's set to `groupMq: { 'all': 0.8 }`.
 
 <demo>
-  <demovanilla src="inline/demos/slider/group-responsive">
+  <demovanilla src="vanilla/demos/slider/group-responsive">
   </demovanilla>
 </demo>
 
 Set to `groupMq: false` to disable automatic grouping of slides.
 
 <demo>
-  <demovanilla src="inline/demos/slider/group-false">
+  <demovanilla src="vanilla/demos/slider/group-false">
   </demovanilla>
 </demo>

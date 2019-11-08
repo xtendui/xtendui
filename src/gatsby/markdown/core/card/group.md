@@ -21,7 +21,7 @@ You can use card's presets outside the normal scope, for example to style a card
 </div>
 
 <demo>
-  <demovanilla src="inline/core/card/preset">
+  <demovanilla src="vanilla/core/card/preset">
   </demovanilla>
 </demo>
 
@@ -39,7 +39,7 @@ Classes for assigning variant (e.g.: border / background / font colors).
 </div>
 
 <demo>
-  <demovanilla src="inline/core/card/variant">
+  <demovanilla src="vanilla/core/card/variant">
   </demovanilla>
 </demo>
 
@@ -57,6 +57,6 @@ Classes for assigning size (e.g.: padding or font size).
 </div>
 
 <demo>
-  <demovanilla src="inline/core/card/size">
+  <demovanilla src="vanilla/core/card/size">
   </demovanilla>
 </demo>

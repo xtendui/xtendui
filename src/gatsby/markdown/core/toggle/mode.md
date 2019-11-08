@@ -10,7 +10,7 @@ date: "2000-01-01"
 You can make an html element toggle itself.
 
 <demo>
-  <demovanilla src="inline/core/toggle/mode-self">
+  <demovanilla src="vanilla/core/toggle/mode-self">
   </demovanilla>
 </demo>
 
@@ -32,9 +32,9 @@ With multiple mode, the **targets** activated are the ones with the same index o
 Use `:scope` when using descendant selector on root (e.g. `:scope > *`).
 
 <demo>
-  <demovanilla src="inline/core/toggle/mode-default">
+  <demovanilla src="vanilla/core/toggle/mode-default">
   </demovanilla>
-  <demovanilla src="inline/core/toggle/mode-custom">
+  <demovanilla src="vanilla/core/toggle/mode-custom">
   </demovanilla>
 </demo>
 
@@ -46,8 +46,8 @@ The **unique** mode is useful when triggering **targets outside the scope** of t
 | To activate **unique mode** you **need** to specify targets with **#id**.
 
 <demo>
-  <demovanilla src="inline/core/toggle/mode-single">
+  <demovanilla src="vanilla/core/toggle/mode-single">
   </demovanilla>
-  <demovanilla src="inline/core/toggle/mode-same">
+  <demovanilla src="vanilla/core/toggle/mode-same">
   </demovanilla>
 </demo>

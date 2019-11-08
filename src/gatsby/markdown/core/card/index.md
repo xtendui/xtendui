@@ -42,6 +42,6 @@ Use this markup to create a **card**.
 You can make interactive cards with `button.card` or `a.card`.
 
 <demo>
-  <demovanilla src="inline/core/card/usage">
+  <demovanilla src="vanilla/core/card/usage">
   </demovanilla>
 </demo>

@@ -5,6 +5,6 @@ title: "Caret"
 ---
 
 <demo>
-  <demovanilla src="inline/extensions/link/caret">
+  <demovanilla src="vanilla/extensions/link/caret">
   </demovanilla>
 </demo>

@@ -11,7 +11,7 @@ On links or buttons use `.link-underline` or `.link-none` to add or remove `text
   underline;`.
 
 <demo>
-  <demovanilla src="inline/core/link/link">
+  <demovanilla src="vanilla/core/link/link">
   </demovanilla>
 </demo>
 
@@ -20,6 +20,6 @@ On links or buttons use `.link-underline` or `.link-none` to add or remove `text
 Links under `.text-inverse` are styled accordingly.
 
 <demo>
-  <demovanilla src="inline/core/link/inverse">
+  <demovanilla src="vanilla/core/link/inverse">
   </demovanilla>
 </demo>

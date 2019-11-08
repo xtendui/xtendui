@@ -7,6 +7,6 @@ title: "Auto"
 ###Auto
 
 <demo>
-  <demovanilla src="inline/demos/slider/auto">
+  <demovanilla src="vanilla/demos/slider/auto">
   </demovanilla>
 </demo>

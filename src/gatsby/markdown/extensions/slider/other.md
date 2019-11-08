@@ -7,6 +7,6 @@ title: "Other"
 ###Other
 
 <demo>
-  <demovanilla src="inline/demos/slider/other">
+  <demovanilla src="vanilla/demos/slider/other">
   </demovanilla>
 </demo>

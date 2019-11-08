@@ -23,9 +23,9 @@ Use `.col-auto` to fit the column inside the available width.
 </div>
 
 <demo>
-  <demovanilla src="inline/core/column/size" mode="grid">
+  <demovanilla src="vanilla/core/column/size" mode="grid">
   </demovanilla>
-  <demovanilla src="inline/core/column/nested" mode="grid-nested">
+  <demovanilla src="vanilla/core/column/nested" mode="grid-nested">
   </demovanilla>
 </demo>
 
@@ -43,6 +43,6 @@ Use `.col-custom` to set column width to a custom value.
 </div>
 
 <demo>
-  <demovanilla src="inline/core/column/custom" mode="grid">
+  <demovanilla src="vanilla/core/column/custom" mode="grid">
   </demovanilla>
 </demo>

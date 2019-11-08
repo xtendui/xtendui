@@ -7,42 +7,42 @@ title: "Full"
 ##Variant
 
 <demo>
-  <demovanilla src="inline/extensions/card/full-variant">
+  <demovanilla src="vanilla/extensions/card/full-variant">
   </demovanilla>
 </demo>
 
 ##Size
 
 <demo>
-  <demovanilla src="inline/extensions/card/full-size">
+  <demovanilla src="vanilla/extensions/card/full-size">
   </demovanilla>
 </demo>
 
 ##Block
 
 <demo>
-  <demovanilla src="inline/extensions/card/full-block">
+  <demovanilla src="vanilla/extensions/card/full-block">
   </demovanilla>
 </demo>
 
 ##Multiple
 
 <demo>
-  <demovanilla src="inline/extensions/card/full-multiple">
+  <demovanilla src="vanilla/extensions/card/full-multiple">
   </demovanilla>
 </demo>
 
 ##Group
 
 <demo>
-  <demovanilla src="inline/extensions/card/full-group">
+  <demovanilla src="vanilla/extensions/card/full-group">
   </demovanilla>
 </demo>
 
 ##Asset
 
 <demo>
-  <demovanilla src="inline/extensions/card/full-asset">
+  <demovanilla src="vanilla/extensions/card/full-asset">
   </demovanilla>
 </demo>
 
@@ -51,6 +51,6 @@ title: "Full"
 box with max sizes with automatic scrollbar on overflow with `card--overflow-y`.
 
 <demo>
-  <demovanilla src="inline/extensions/card/full-overflow-y">
+  <demovanilla src="vanilla/extensions/card/full-overflow-y">
   </demovanilla>
 </demo>

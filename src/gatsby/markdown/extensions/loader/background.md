@@ -9,10 +9,10 @@ title: "Background"
 Use `.loader--background` to add the custom background.
 
 <demo>
-  <demovanilla src="inline/demos/loader/background-spinner">
+  <demovanilla src="vanilla/demos/loader/background-spinner">
   </demovanilla>
-  <demovanilla src="inline/demos/loader/background-direction">
+  <demovanilla src="vanilla/demos/loader/background-direction">
   </demovanilla>
-  <demovanilla src="inline/demos/loader/background-size">
+  <demovanilla src="vanilla/demos/loader/background-size">
   </demovanilla>
 </demo>

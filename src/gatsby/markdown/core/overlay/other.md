@@ -12,13 +12,13 @@ Overlay uses card to style it's content, refer to [card page](/core/card/other) 
 To disable overlay use `.overlay--disable` useful within media queries.
 
 <demo>
-  <demovanilla src="inline/core/overlay/disable">
+  <demovanilla src="vanilla/core/overlay/disable">
   </demovanilla>
 </demo>
 
 ##Nested
 
 <demo>
-  <demovanilla src="inline/core/overlay/nested">
+  <demovanilla src="vanilla/core/overlay/nested">
   </demovanilla>
 </demo>

@@ -12,7 +12,7 @@ Use `.note--background` to style the note with an internal padding and backgroun
 Classes for assigning variant (e.g.: border / background / font colors).
 
 <demo>
-  <demovanilla src="inline/core/note/variant-background">
+  <demovanilla src="vanilla/core/note/variant-background">
   </demovanilla>
 </demo>
 
@@ -21,7 +21,7 @@ Classes for assigning variant (e.g.: border / background / font colors).
 Classes for assigning size (e.g.: padding or font size).
 
 <demo>
-  <demovanilla src="inline/core/note/size-background">
+  <demovanilla src="vanilla/core/note/size-background">
   </demovanilla>
 </demo>
 
@@ -30,6 +30,6 @@ Classes for assigning size (e.g.: padding or font size).
 Use `.note-list` to make a list block inside contents.
 
 <demo>
-  <demovanilla src="inline/core/note/block-background">
+  <demovanilla src="vanilla/core/note/block-background">
   </demovanilla>
 </demo>

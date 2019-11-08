@@ -33,7 +33,7 @@ You can add custom `.card-block` modifiers and style them as you like (e.g.: `.c
 </script>
 
 <demo>
-  <demovanilla src="inline/core/overlay/block">
+  <demovanilla src="vanilla/core/overlay/block">
   </demovanilla>
 </demo>
 
@@ -64,7 +64,7 @@ They have a separator automatically styled with [variants](/core/card/option#var
 </script>
 
 <demo>
-  <demovanilla src="inline/core/overlay/multiple">
+  <demovanilla src="vanilla/core/overlay/multiple">
   </demovanilla>
 </demo>
 
@@ -103,7 +103,7 @@ To stack `.card-item` horizontally use `.card-item-nested` and `.card-group` wit
 </script>
 
 <demo>
-  <demovanilla src="inline/core/overlay/group">
+  <demovanilla src="vanilla/core/overlay/group">
   </demovanilla>
 </demo>
 
@@ -128,7 +128,7 @@ If you want full width assets use `.card-asset`.
 </script>
 
 <demo>
-  <demovanilla src="inline/core/overlay/asset">
+  <demovanilla src="vanilla/core/overlay/asset">
   </demovanilla>
 </demo>
 
@@ -137,6 +137,6 @@ If you want full width assets use `.card-asset`.
 You can set vertical overflow using `.card--overflow-y` in `.card-inner` or `.card-block`.
 
 <demo>
-  <demovanilla src="inline/core/overlay/overflow-y">
+  <demovanilla src="vanilla/core/overlay/overflow-y">
   </demovanilla>
 </demo>

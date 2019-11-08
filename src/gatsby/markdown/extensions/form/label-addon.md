@@ -4,5 +4,5 @@ parent: "Form"
 title: "Label Addon"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 layout: "theme"
-vanilla: "inline/extensions/form/label-addon"
+vanilla: "vanilla/extensions/form/label-addon"
 ---

@@ -19,7 +19,7 @@ You can specify **min** and **max** concurrent activations. The **min** option i
 </div>
 
 <demo>
-  <demovanilla src="inline/core/toggle/minmax">
+  <demovanilla src="vanilla/core/toggle/minmax">
   </demovanilla>
 </demo>
 
@@ -40,9 +40,9 @@ You can specify classes to toggle with `class: 'my-class-0 my-class-1'`. Toggled
 </div>
 
 <demo>
-  <demovanilla src="inline/core/toggle/class">
+  <demovanilla src="vanilla/core/toggle/class">
   </demovanilla>
-  <demovanilla src="inline/core/toggle/start">
+  <demovanilla src="vanilla/core/toggle/start">
     <div class="gatsby_demo_text">
       You can start with toggled elements and targets just by adding the <strong>first class</strong> to the <strong>elements</strong> or <strong>targets</strong>. Following this activation the <strong>min</strong> option will take effect.
     </div>
@@ -63,9 +63,9 @@ You can specify **on** and **off** events for the toggle.
 </div>
 
 <demo>
-  <demovanilla src="inline/core/toggle/event">
+  <demovanilla src="vanilla/core/toggle/event">
   </demovanilla>
-  <demovanilla src="inline/core/toggle/links">
+  <demovanilla src="vanilla/core/toggle/links">
     <div class="gatsby_demo_text">
       If you set <code>"on": "mouseenter"</code> or <code>"on": "mousehover"</code>, when the <strong>element</strong> have links on the tag or inside, they automatically get triggered only on double click when using touch devices.
     </div>
@@ -77,7 +77,7 @@ You can specify **on** and **off** events for the toggle.
 If you need to toggle **multiple targets** with the **same element** assign `data-xt-group` to **elements** and the associated targets **targets**. Group's additional elements aren't counted for min and max.
 
 <demo>
-  <demovanilla src="inline/core/toggle/group">
+  <demovanilla src="vanilla/core/toggle/group">
   </demovanilla>
 </demo>
 
@@ -99,17 +99,17 @@ If you need to toggle **multiple targets** with the **same element** assign `dat
 </div>
 
 <demo>
-  <demovanilla src="inline/core/toggle/auto-initial">
+  <demovanilla src="vanilla/core/toggle/auto-initial">
   </demovanilla>
-  <demovanilla src="inline/core/toggle/auto-step">
+  <demovanilla src="vanilla/core/toggle/auto-step">
   </demovanilla>
-  <demovanilla src="inline/core/toggle/auto-inverse">
+  <demovanilla src="vanilla/core/toggle/auto-inverse">
   </demovanilla>
-  <demovanilla src="inline/core/toggle/auto-pause">
+  <demovanilla src="vanilla/core/toggle/auto-pause">
   </demovanilla>
-  <demovanilla src="inline/core/toggle/auto-minmax">
+  <demovanilla src="vanilla/core/toggle/auto-minmax">
   </demovanilla>
-  <demovanilla src="inline/core/toggle/progress">
+  <demovanilla src="vanilla/core/toggle/progress">
     <div class="gatsby_demo_text">
       Use <a href="/core/toggle/@TODO">auto events</a>.
     </div>
@@ -129,7 +129,7 @@ Use `jump: true` to enable clicking on a **target** to jump to them.
 </div>
 
 <demo>
-  <demovanilla src="inline/core/toggle/jump">
+  <demovanilla src="vanilla/core/toggle/jump">
   </demovanilla>
 </demo>
 
@@ -146,7 +146,7 @@ You can add navigation with `navigation: QuerySelector`, set the amount to add (
 </div>
 
 <demo>
-  <demovanilla src="inline/core/toggle/navigation">
+  <demovanilla src="vanilla/core/toggle/navigation">
   </demovanilla>
 </demo>
 
@@ -181,13 +181,13 @@ You can use a function for <code>delayOn</code> and <code>delayOff</code> for ex
 </div>
 
 <demo>
-  <demovanilla src="inline/core/toggle/timing-duration">
+  <demovanilla src="vanilla/core/toggle/timing-duration">
   </demovanilla>
-  <demovanilla src="inline/core/toggle/timing-delay">
+  <demovanilla src="vanilla/core/toggle/timing-delay">
   </demovanilla>
-  <demovanilla src="inline/core/toggle/timing-delay-fnc">
+  <demovanilla src="vanilla/core/toggle/timing-delay-fnc">
   </demovanilla>
-  <demovanilla src="inline/core/toggle/timing-instant">
+  <demovanilla src="vanilla/core/toggle/timing-instant">
   </demovanilla>
 </demo>
 
@@ -196,7 +196,7 @@ You can use a function for <code>delayOn</code> and <code>delayOff</code> for ex
 Use `keyboard: { selector: 'object' }` or `keyboard: { selector : QuerySelector }` to enable keyboard navigation on focus.
 
 <demo>
-  <demovanilla src="inline/core/toggle/usability-keyboard">
+  <demovanilla src="vanilla/core/toggle/usability-keyboard">
   </demovanilla>
 </demo>
 
@@ -205,6 +205,6 @@ Use `keyboard: { selector: 'object' }` or `keyboard: { selector : QuerySelector 
 Use `aria: false` to disable aria generation, or granularly see @TODO.
 
 <demo>
-  <demovanilla src="inline/core/toggle/usability-aria">
+  <demovanilla src="vanilla/core/toggle/usability-aria">
   </demovanilla>
 </demo>
