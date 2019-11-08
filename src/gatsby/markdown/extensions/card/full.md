@@ -2,55 +2,15 @@
 type: "Extensions"
 parent: "Card"
 title: "Full"
+description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+layout: "theme"
+demos: [
+"vanilla/extensions/card/full-variant",
+"vanilla/extensions/card/full-size",
+"vanilla/extensions/card/full-block",
+"vanilla/extensions/card/full-multiple",
+"vanilla/extensions/card/full-group",
+"vanilla/extensions/card/full-asset",
+"vanilla/extensions/card/full-overflow-y"
+]
 ---
-
-##Variant
-
-<demo>
-  <demovanilla src="vanilla/extensions/card/full-variant">
-  </demovanilla>
-</demo>
-
-##Size
-
-<demo>
-  <demovanilla src="vanilla/extensions/card/full-size">
-  </demovanilla>
-</demo>
-
-##Block
-
-<demo>
-  <demovanilla src="vanilla/extensions/card/full-block">
-  </demovanilla>
-</demo>
-
-##Multiple
-
-<demo>
-  <demovanilla src="vanilla/extensions/card/full-multiple">
-  </demovanilla>
-</demo>
-
-##Group
-
-<demo>
-  <demovanilla src="vanilla/extensions/card/full-group">
-  </demovanilla>
-</demo>
-
-##Asset
-
-<demo>
-  <demovanilla src="vanilla/extensions/card/full-asset">
-  </demovanilla>
-</demo>
-
-##Overflow
-
-box with max sizes with automatic scrollbar on overflow with `card--overflow-y`.
-
-<demo>
-  <demovanilla src="vanilla/extensions/card/full-overflow-y">
-  </demovanilla>
-</demo>

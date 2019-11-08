@@ -32,7 +32,7 @@ class Template extends React.Component {
                   <div className="row">
                     {data.postsAdiacent.posts.map(({ post: adiacent }, i) =>
                       adiacent.frontmatter.parent !== adiacent.frontmatter.title ? (
-                        adiacent.frontmatter.layout === 'theme' ? (
+                        adiacent.frontmatter.demos ? (
                           <div className="gatsby_listing_column" key={i}>
                             <button
                               type="button"
@@ -49,19 +49,18 @@ class Template extends React.Component {
                                 </div>
                               </div>
                             </button>
-                            {adiacent.frontmatter.iframe ? (
+                            {adiacent.frontmatter.demos ? (
                               <Demo>
-                                <div className="gatsby_demo_item" data-iframe-fullscreen={adiacent.frontmatter.iframe}></div>
-                              </Demo>
-                            ) : null}
-                            {adiacent.frontmatter.vanilla ? (
-                              <Demo>
-                                <DemoVanilla src={adiacent.frontmatter.vanilla}></DemoVanilla>
-                              </Demo>
-                            ) : null}
-                            {adiacent.frontmatter.react ? (
-                              <Demo>
-                                <DemoReact src={adiacent.frontmatter.react}></DemoReact>
+                                {adiacent.frontmatter.demos.map((demo, i) => {
+                                  const type = demo.split('/')[0]
+                                  if (type === 'vanilla') {
+                                    return <DemoVanilla src={demo} key={i}></DemoVanilla>
+                                  } else if (type === 'react') {
+                                    return <DemoReact src={demo} key={i}></DemoReact>
+                                  } else if (type === 'iframe') {
+                                    return <div className="gatsby_demo_item" data-iframe-fullscreen={demo} key={i}></div>
+                                  }
+                                })}
                               </Demo>
                             ) : null}
                           </div>
@@ -121,10 +120,8 @@ export const query = graphql`
             parent
             title
             description
-            iframe
-            vanilla
-            react
             layout
+            demos
           }
         }
       }
@@ -193,10 +190,8 @@ Template.propTypes = {
               parent: PropTypes.string,
               title: PropTypes.string.isRequired,
               description: PropTypes.string,
-              iframe: PropTypes.string,
-              vanilla: PropTypes.string,
-              react: PropTypes.string,
               layout: PropTypes.string,
+              demos: PropTypes.array,
             }).isRequired,
           }).isRequired,
         }).isRequired

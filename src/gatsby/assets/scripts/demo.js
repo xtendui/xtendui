@@ -238,7 +238,18 @@ const populateDemo = function(container, i) {
 const makeFullscreen = function(container) {
   const overlay = document.querySelector('#overlay--open-full')
   const content = document.querySelector('#overlay--open-full-content')
-  const sourceTo = container.querySelector('.gatsby_demo_source_populate')
+  // populate
+  const items = container.querySelectorAll('.gatsby_demo_item')
+  for (const item of items) {
+    const sourceTo = item.querySelector('.gatsby_demo_source_populate')
+    // populate source
+    requestAnimationFrame(function() {
+      // requestAnimationFrame fixes errors
+      if (sourceTo && container.dataset.isFullscreenOnly) {
+        sourceTo.innerHTML = item.querySelector('script[type="text/plain"]').innerHTML
+      }
+    })
+  }
   overlay.dispatchEvent(new CustomEvent('on.xt'))
   // move code block
   container.before(
@@ -248,13 +259,6 @@ const makeFullscreen = function(container) {
     container.classList.add('xt-ignore', 'xt-ignore--once') // @FIX ignore once for mount when moving
   }
   content.append(container)
-  // populate source
-  requestAnimationFrame(function() {
-    // requestAnimationFrame fixes errors
-    if (sourceTo && container.dataset.isFullscreenOnly) {
-      sourceTo.innerHTML = container.querySelector('script[type="text/plain"]').innerHTML
-    }
-  })
   // populate iframe
   for (const item of container.querySelectorAll('.gatsby_demo_item')) {
     if (item.getAttribute('data-iframe-fullscreen')) {
