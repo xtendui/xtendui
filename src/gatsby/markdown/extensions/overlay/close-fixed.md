@@ -3,6 +3,7 @@ type: "Extensions"
 parent: "Overlay"
 title: "Close Fixed"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-layout: "theme"
-vanilla: "vanilla/extensions/overlay/close-fixed"
+demos: [
+  "vanilla/extensions/overlay/close-fixed"
+]
 ---

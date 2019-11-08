@@ -742,8 +742,6 @@ if (typeof window !== 'undefined') {
     // xt-fixed
     const elements = container.querySelectorAll('.xt-fixed')
     for (const element of elements) {
-      element.style.right = ''
-      element.style.paddingRight = ''
       const style = getComputedStyle(element)
       let prop
       if (Xt.normalizeWidth(element.clientWidth) === '') {
@@ -754,8 +752,10 @@ if (typeof window !== 'undefined') {
         prop = 'right'
       }
       if (prop) {
-        const val = style[prop]
-        const str = 'calc(' + val + ' + ' + width + 'px)'
+        const old = element.style[prop]
+        let val = parseFloat(style[prop])
+        val = old !== '' ? val - parseFloat(old) : val
+        const str = 'calc(' + val + 'px + ' + width + 'px)'
         element.classList.add('transition-none')
         requestAnimationFrame(function() {
           element.style[prop] = str

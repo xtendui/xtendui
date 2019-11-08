@@ -6,7 +6,7 @@ import { markdownSlug } from 'components/markdown-slug.js'
 class DocFoot extends React.Component {
   render() {
     const { page } = this.props
-    const postsAdiacentFiltered = page.postsAdiacent.posts.filter(x => x.post.frontmatter.layout !== 'theme')
+    const postsAdiacentFiltered = page.postsAdiacent.posts.filter(x => !x.post.frontmatter.demos)
     return (
       <footer className="gatsby_article_foot">
         <div>

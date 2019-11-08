@@ -53,13 +53,13 @@ class DocSidebar extends React.Component {
                             >
                               {post.frontmatter.title}
                             </Link>
-                            {post.frontmatter.parent === page.post.frontmatter.parent && post.frontmatter.layout !== 'theme' ? (
+                            {post.frontmatter.parent === page.post.frontmatter.parent ? (
                               <div className="gatsby_site_article_sidebar_adiacent active">
                                 <div className="gatsby_site_article_sidebar_item">
                                   <div className="gatsby_site_article_sidebar_line"></div>
                                   {page.postsAdiacent.posts.map(({ post: adiacent }, i) =>
                                     adiacent.frontmatter.title !== post.frontmatter.parent ? (
-                                      adiacent.frontmatter.layout !== 'theme' ? (
+                                      !adiacent.frontmatter.demos ? (
                                         <div key={i}>
                                           <Link
                                             to={markdownSlug(adiacent)}

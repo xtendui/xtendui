@@ -13,7 +13,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn--primary">
       position multiple
     </button>
-    <div class="overlay overlay-position overlay-position-right overlay-position--right">
+    <div class="overlay overlay-position overlay-position--right">
       <div class="overlay-container">
         <div class="overlay-inner">
             

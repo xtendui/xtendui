@@ -120,7 +120,6 @@ export const query = graphql`
             parent
             title
             description
-            layout
             demos
           }
         }
@@ -190,7 +189,6 @@ Template.propTypes = {
               parent: PropTypes.string,
               title: PropTypes.string.isRequired,
               description: PropTypes.string,
-              layout: PropTypes.string,
               demos: PropTypes.array,
             }).isRequired,
           }).isRequired,

@@ -63,7 +63,7 @@ class Header extends React.Component {
                           page && page.post
                             ? markdownSlug(page.post) === '/' + 'themes'
                               ? 'active'
-                              : page.post.frontmatter.layout === 'theme'
+                              : page.post.frontmatter.type === 'Theme'
                               ? 'current'
                               : ''
                             : ''
