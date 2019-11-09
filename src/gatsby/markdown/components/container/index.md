@@ -12,7 +12,7 @@ categories: ["200-Layout"]
 To use this component import the **less** files accordingly:
 
 ```less
-@import '~xtend-library/src/core/container/index.less';
+@import '~xtend-library/src/core/container/container.less';
 ```
 
 Or just [import core](/core/setup/#@TODO).

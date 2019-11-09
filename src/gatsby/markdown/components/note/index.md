@@ -12,7 +12,7 @@ categories: ["100-Content"]
 To use this component import the **less** files accordingly:
 
 ```less
-@import '~xtend-library/src/core/note/index.less';
+@import '~xtend-library/src/core/note/note.less';
 ```
 
 Or just [import core](/core/setup/#@TODO).

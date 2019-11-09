@@ -12,7 +12,7 @@ categories: ["300-Interaction"]
 To use this component import the **less** files accordingly:
 
 ```less
-@import '~xtend-library/src/core/button/index.less';
+@import '~xtend-library/src/core/button/button.less';
 ```
 
 Or just [import core](/core/setup/#@TODO).

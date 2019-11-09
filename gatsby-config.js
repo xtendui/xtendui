@@ -3,7 +3,7 @@
  */
 
 const fs = require('fs')
-const version = JSON.parse(fs.readFileSync('package.json')).version
+const version = JSON.parse(fs.readFileSync('package.json').toString()).version
 
 module.exports = {
   siteMetadata: {

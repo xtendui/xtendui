@@ -1,3 +1,23 @@
+@import '~xtend-library/src/core/overlay/_overlay.less';
+
+/**
+ * vars
+ */
+
+// space
+
+@generate-overlay-space: @generate-container-space; // overlay external spacing
+
+// size
+
+@generate-overlay-size: tiny, small, medium, big, giant, full; // overlay internal spacing
+@overlay--tiny: @breakpoint-xs - 60;
+@overlay--small: @breakpoint-sm - 60;
+@overlay--medium: @breakpoint-md - 60;
+@overlay--big: @breakpoint-lg - 60;
+@overlay--giant: @breakpoint-xl - 60;
+@overlay--full: none;
+
 /**
  * overlay
  */

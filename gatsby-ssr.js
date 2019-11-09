@@ -7,8 +7,10 @@
 // https://github.com/gatsbyjs/gatsby/issues/1526
 // replace inline css with links
 
-exports.onPreRenderHTML = ({ getHeadComponents, replaceHeadComponents }) => {
-  if (process.env.NODE_ENV !== 'production') { return }
+exports.onPreRenderHTML = ({ getHeadComponents }) => {
+  if (process.env.NODE_ENV !== 'production') {
+    return
+  }
 
   const hc = getHeadComponents()
   hc.forEach(el => {

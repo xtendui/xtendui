@@ -8,7 +8,7 @@ title: "Propagate Interaction"
 ##Usage
 
 ```jsx
-import 'xtend-library/src/extensions/animation/PropagateInteraction.js'
+import 'xtend-library/src/extensions/animation/propagate-interaction.js'
 ```
 
 <script type="text/plain" class="language-markup">

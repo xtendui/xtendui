@@ -12,7 +12,7 @@ categories: ["300-Interaction"]
 To use this component import the **less** and **js** files accordingly:
 
 ```less
-@import '~xtend-library/src/core/overlay/index.less';
+@import '~xtend-library/src/core/overlay/overlay.less';
 ```
 
 ```jsx
