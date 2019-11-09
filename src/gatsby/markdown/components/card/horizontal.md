@@ -1,0 +1,45 @@
+---
+type: "Components"
+core: true
+parent: "Card"
+title: "Horizontal"
+date: "2000-05-01"
+---
+
+##Block
+
+You can add custom `.card-block` modifiers and style them as you like (e.g.: `.card-block--custom`).
+
+<demo>
+  <demovanilla src="vanilla/core/card/horizontal-block">
+  </demovanilla>
+</demo>
+
+##Multiple
+
+Sequential `.card-item` stack vertically.
+
+They have a separator automatically styled with [variants](/core/card/option#variant). Just be sure to style `.card-item--{variant}` as in the **card.less** to not break css specificity.
+
+<demo>
+  <demovanilla src="vanilla/core/card/horizontal-multiple">
+  </demovanilla>
+</demo>
+
+##Asset
+
+If you want full width assets use `.card-asset`.
+
+<demo>
+  <demovanilla src="vanilla/core/card/horizontal-asset">
+  </demovanilla>
+</demo>
+
+##Overflow
+
+You can set vertical overflow using `.card--overflow-y` in `.card-inner` or `.card-block`.
+
+<demo>
+  <demovanilla src="vanilla/core/card/horizontal-overflow-y">
+  </demovanilla>
+</demo>

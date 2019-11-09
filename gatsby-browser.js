@@ -10,7 +10,7 @@ exports.onPreRouteUpdate = ({ location, prevLocation }) => {
   // autoclose
   window.dispatchEvent(new CustomEvent('autoclose.xt')) // autoclose xt
   // sidebarArticleScrolltop
-  const sidebarArticle = document.querySelector('.site_article_sidebar');
+  const sidebarArticle = document.querySelector('.gatsby_site_article_sidebar');
   if (sidebarArticle) {
     sidebarArticleScrolltop = sidebarArticle.scrollTop
   }
@@ -18,7 +18,7 @@ exports.onPreRouteUpdate = ({ location, prevLocation }) => {
 
 exports.onRouteUpdate = ({ location, prevLocation }) => {
   // sidebarArticleScrolltop
-  const sidebarArticle = document.querySelector('.site_article_sidebar');
+  const sidebarArticle = document.querySelector('.gatsby_site_article_sidebar');
   if (sidebarArticle) {
     sidebarArticle.scrollTop = sidebarArticleScrolltop
   }

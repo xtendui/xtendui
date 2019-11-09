@@ -30,18 +30,18 @@ class Header extends React.Component {
                   <div>
                     <div className="gatsby_site_header_top_links">
                       <Link
-                        to="/core"
+                        to="/components"
                         className={`btn gatsby_btn--site_header_top_link ${
                           page && page.post
-                            ? markdownSlug(page.post) === '/' + 'core'
+                            ? markdownSlug(page.post) === '/' + 'components'
                               ? 'active'
-                              : page.post.frontmatter.type === 'Core'
+                              : page.post.frontmatter.type === 'Components'
                               ? 'current'
                               : ''
                             : ''
                         }`}
                       >
-                        Core
+                        Components
                       </Link>
                       <Link
                         to="/extensions"

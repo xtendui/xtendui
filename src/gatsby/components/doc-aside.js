@@ -6,12 +6,12 @@ class DocAside extends React.Component {
   render() {
     const { page } = this.props
     let filterBy = []
-    if (page.post.frontmatter.type === 'Core') {
+    if (page.post.frontmatter.type === 'Components') {
       filterBy = ['Extensions']
     } else if (page.post.frontmatter.type === 'Extensions') {
       filterBy = ['Themes']
     } else if (page.post.frontmatter.type === 'Theme') {
-      filterBy = ['Core', 'Extensions']
+      filterBy = ['Components', 'Extensions']
     }
     return (
       <aside className="gatsby_site_article_aside xt-fixed--check">
