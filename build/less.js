@@ -15,26 +15,38 @@ lessCoreGlob.on('end', function (filepath) {
   })
 })
 
-let lessDemo = ''
-const lessDemoGlob = new glob.Glob('src/demos/**/*.less', function (er, files) {
+let lessAddons = ''
+const lessAddonsGlob = new glob.Glob('src/addons/**/*.less', function (er, files) {
   for (const file of files) {
-    lessDemo += `@import '~xtend-library/${file}';\n`
+    lessAddons += `@import '~xtend-library/${file}';\n`
   }
 })
-lessDemoGlob.on('end', function (filepath) {
-  writeFile('./src/xtend-demos.less', lessDemo, function (err) {
+lessAddonsGlob.on('end', function (filepath) {
+  writeFile('./src/xtend-addons.less', lessAddons, function (err) {
     if (err) console.log(err)
   })
 })
 
-let lessExtension = ''
-const lessExtensionGlob = new glob.Glob('src/extensions/**/*.less', function (er, files) {
+let lessExtensions = ''
+const lessExtensionsGlob = new glob.Glob('src/extensions/**/*.less', function (er, files) {
   for (const file of files) {
-    lessExtension += `@import '~xtend-library/${file}';\n`
+    lessExtensions += `@import '~xtend-library/${file}';\n`
   }
 })
-lessExtensionGlob.on('end', function (filepath) {
-  writeFile('./src/xtend-extensions.less', lessExtension, function (err) {
+lessExtensionsGlob.on('end', function (filepath) {
+  writeFile('./src/xtend-extensions.less', lessExtensions, function (err) {
+    if (err) console.log(err)
+  })
+})
+
+let lessDemos = ''
+const lessDemosGlob = new glob.Glob('src/demos/**/*.less', function (er, files) {
+  for (const file of files) {
+    lessDemos += `@import '~xtend-library/${file}';\n`
+  }
+})
+lessDemosGlob.on('end', function (filepath) {
+  writeFile('./src/xtend-demos.less', lessDemos, function (err) {
     if (err) console.log(err)
   })
 })

@@ -1,5 +1,5 @@
 import { Xt } from 'xtend-library'
-import 'xtend-library/src/extensions/scroll/scroll.js'
+import 'xtend-library/src/addons/scroll/scroll.js'
 import { TweenMax } from 'gsap/TweenMax'
 
 /**

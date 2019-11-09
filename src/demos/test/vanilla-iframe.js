@@ -1,7 +1,7 @@
 import { Xt } from 'xtend-library'
 import 'xtend-library/src/vars.js'
-import 'xtend-library/src/extensions/slider/slider.js'
-import 'xtend-library/src/extensions/animation/MouseFollow.js'
+import 'xtend-library/src/addons/slider/slider.js'
+import 'xtend-library/src/addons/animation/MouseFollow.js'
 import { TweenMax, TimelineMax } from 'gsap/TweenMax'
 
 Xt.mount.push({

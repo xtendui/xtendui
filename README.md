@@ -33,6 +33,7 @@ import 'xtend-library/src/polyfill.js'
 import 'xtend-library/src/polyfill-old.js' // optional, use this only if you need old browsers support: ie11
 import { Xt } from 'xtend-library'
 import 'xtend-library/src/xtend-core.js' // optional, you can import xtend-library/src/core one by one
+import 'xtend-library/src/xtend-addons.js' // optional, you can import xtend-library/src/addons one by one
 import 'xtend-library/src/xtend-extensions.js' // optional, you can import xtend-library/src/extension one by one
 ```
 

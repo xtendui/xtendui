@@ -1,5 +1,6 @@
 ---
-type: "Extensions"
+type: "Components"
+core: false
 parent: "Animation"
 title: "Propagate Interaction"
 ---
