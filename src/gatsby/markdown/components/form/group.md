@@ -58,17 +58,17 @@ Classes for assigning size (e.g.: padding or font size).
 
 ##Addon
 
-There are several form group addons to change the form layout. They aren't just less classes to apply, but they need major markup formatting.
+There are several form group options to change the form layout. They aren't just less classes to apply, but they need major markup formatting.
 
 <demo>
-  <demovanilla src="vanilla/core/form/addon-none">
+  <demovanilla src="vanilla/core/form/special-none">
   </demovanilla>
-  <demovanilla src="vanilla/core/form/addon-row">
+  <demovanilla src="vanilla/core/form/special-row">
   </demovanilla>
-  <demovanilla src="vanilla/core/form/addon-horizontal">
+  <demovanilla src="vanilla/core/form/special-horizontal">
   </demovanilla>
-  <demovanilla src="vanilla/core/form/addon-inline-input" name="inline input">
+  <demovanilla src="vanilla/core/form/special-inline-input" name="inline input">
   </demovanilla>
-  <demovanilla src="vanilla/core/form/addon-inline">
+  <demovanilla src="vanilla/core/form/special-inline">
   </demovanilla>
 </demo>
