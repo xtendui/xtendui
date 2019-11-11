@@ -1,6 +1,6 @@
 import React from 'react'
 
-class DocAddon extends React.Component {
+class DocAdditional extends React.Component {
   render() {
     return (
       <>
@@ -22,4 +22,4 @@ class DocAddon extends React.Component {
   }
 }
 
-export default DocAddon
+export default DocAdditional

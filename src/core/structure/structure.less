@@ -112,21 +112,15 @@ body {
       display: none;
     }
   }
-  & when (@mode = none) {
-    &::-webkit-scrollbar-thumb {
-      background: fade(@gray-800, 20%);
-      &:hover {
-        background: fade(@gray-800, 40%);
-      }
+  &::-webkit-scrollbar-thumb {
+    background: fade(@gray-800, 20%);
+    &:hover {
+      background: fade(@gray-800, 40%);
     }
   }
+  & when (@mode = none) {
+  }
   & when (@mode = inner) {
-    &::-webkit-scrollbar-thumb {
-      background: fade(@gray-800, 10%);
-      &:hover {
-        background: fade(@gray-800, 20%);
-      }
-    }
   }
 }
 

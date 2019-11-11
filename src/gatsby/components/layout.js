@@ -5,7 +5,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import Footer from 'components/footer'
 import DocsSidebar from 'components/doc-sidebar'
 import DocsFoot from 'components/doc-foot'
-import DocsAddon from 'components/doc-addon'
+import DocsAdditional from 'components/doc-additional'
 
 import 'xtend-library/src/polyfill.js'
 import 'xtend-library/src/polyfill-old.js'
@@ -46,46 +46,33 @@ class Layout extends React.Component {
         `}
         render={data => (
           <>
-            <div
-              className={`gatsby_site_wrapper
-              ${page ? ' gatsby_site_wrapper--with-sidebar' : ''}`}
-            >
+            <div className="gatsby_site_wrapper">
               <div className="gatsby_site_main">
                 <div className="gatsby_site_main_inner">
-                  {page ? (
-                    <div className="gatsby_site--with-sidebar">
-                      <DocsSidebar site={data} seo={seo} page={page} />
-                      <main className="gatsby_site_article">
-                        <div className="gatsby_site_article_hero">
-                          <div className="container full">
-                            <h1>{seo.title}</h1>
-                            {seo.description ? <p>{seo.description}</p> : null}
-                          </div>
-                        </div>
-                        <div className="gatsby_site_article_content">
-                          <div className="container full">{children}</div>
-                        </div>
-                        {page.post.frontmatter.type !== page.post.frontmatter.title ? (
-                          <div className="gatsby_site_article_foot">
-                            <div className="container full">
-                              <DocsFoot page={page} />
-                            </div>
-                          </div>
-                        ) : null}
-                      </main>
-                    </div>
-                  ) : (
-                    <article className="gatsby_site_article">
-                      <div className="gatsby_site_article_content">
-                        <div className="container full">{children}</div>
+                  <DocsSidebar site={data} seo={seo} page={page} />
+                  <main className="gatsby_site_article">
+                    <div className="gatsby_site_article_hero">
+                      <div className="container full">
+                        <h1>{seo.title}</h1>
+                        {seo.description ? <p>{seo.description}</p> : null}
                       </div>
-                    </article>
-                  )}
+                    </div>
+                    <div className="gatsby_site_article_content">
+                      <div className="container full">{children}</div>
+                    </div>
+                    {page && page.post.frontmatter.type !== page.post.frontmatter.title ? (
+                      <div className="gatsby_site_article_foot">
+                        <div className="container full">
+                          <DocsFoot page={page} />
+                        </div>
+                      </div>
+                    ) : null}
+                  </main>
                 </div>
               </div>
 
               <Footer site={data} seo={seo} />
-              <DocsAddon />
+              <DocsAdditional />
             </div>
           </>
         )}
