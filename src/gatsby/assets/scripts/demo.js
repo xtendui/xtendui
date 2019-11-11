@@ -84,10 +84,22 @@ const populateBlock = function() {
       makeFullscreen(el.nextSibling)
     })
   }
-  document.querySelector('#overlay--open-full').addEventListener('off.xt', function(e) {
+  document.querySelector('#toggle--open-full').addEventListener('on.xt', function(e) {
     // @FIX on.xt and off.xt event bubbles
     if (this === e.target) {
-      const content = document.querySelector('#overlay--open-full-content')
+      const inner = document.querySelector('#toggle--open-full-inner')
+      // inner
+      inner.classList.add('display-none')
+    }
+  })
+  document.querySelector('#toggle--open-full').addEventListener('off.xt', function(e) {
+    // @FIX on.xt and off.xt event bubbles
+    if (this === e.target) {
+      console.log(e.currentTarget);
+      const content = document.querySelector('#toggle--open-full-content')
+      const inner = document.querySelector('#toggle--open-full-inner')
+      // inner
+      inner.classList.remove('display-none')
       // populate source
       const container = content.querySelector('.gatsby_demo')
       if (container.dataset.isFullscreenOnly) {
@@ -105,7 +117,7 @@ const populateBlock = function() {
         }
       }
       // move code block
-      const appendOrigin = document.querySelector('[data-xt-origin="overlay--open-full-content"]')
+      const appendOrigin = document.querySelector('[data-xt-origin="toggle--open-full-content"]')
       content.childNodes[0].classList.add('xt-ignore', 'xt-ignore--once') // @FIX ignore once for mount when moving
       appendOrigin.before(content.childNodes[0])
       appendOrigin.remove()
@@ -236,8 +248,8 @@ const populateDemo = function(container, i) {
  */
 
 const makeFullscreen = function(container) {
-  const overlay = document.querySelector('#overlay--open-full')
-  const content = document.querySelector('#overlay--open-full-content')
+  const overlay = document.querySelector('#toggle--open-full')
+  const content = document.querySelector('#toggle--open-full-content')
   // populate
   const items = container.querySelectorAll('.gatsby_demo_item')
   for (const item of items) {
@@ -253,7 +265,7 @@ const makeFullscreen = function(container) {
   overlay.dispatchEvent(new CustomEvent('on.xt'))
   // move code block
   container.before(
-    Xt.createElement('<div class="xt-ignore" data-xt-origin="overlay--open-full-content" style="height: ' + container.clientHeight + 'px"></div>')
+    Xt.createElement('<div class="xt-ignore" data-xt-origin="toggle--open-full-content" style="height: ' + container.clientHeight + 'px"></div>')
   )
   if (!container.dataset.isFullscreenOnly) {
     container.classList.add('xt-ignore', 'xt-ignore--once') // @FIX ignore once for mount when moving
