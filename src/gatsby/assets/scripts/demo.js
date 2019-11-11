@@ -84,7 +84,7 @@ const populateBlock = function() {
       makeFullscreen(el.nextSibling)
     })
   }
-  document.querySelector('#toggle--open-full').addEventListener('on.xt', function(e) {
+  document.querySelector('#toggle--open-full-trigger').addEventListener('on.xt', function(e) {
     // @FIX on.xt and off.xt event bubbles
     if (this === e.target) {
       const inner = document.querySelector('#toggle--open-full-inner')
@@ -92,7 +92,7 @@ const populateBlock = function() {
       inner.classList.add('display-none')
     }
   })
-  document.querySelector('#toggle--open-full').addEventListener('off.xt', function(e) {
+  document.querySelector('#toggle--open-full-trigger').addEventListener('off.xt', function(e) {
     // @FIX on.xt and off.xt event bubbles
     if (this === e.target) {
       console.log(e.currentTarget);
@@ -248,7 +248,7 @@ const populateDemo = function(container, i) {
  */
 
 const makeFullscreen = function(container) {
-  const overlay = document.querySelector('#toggle--open-full')
+  const toggle = document.querySelector('#toggle--open-full-trigger')
   const content = document.querySelector('#toggle--open-full-content')
   // populate
   const items = container.querySelectorAll('.gatsby_demo_item')
@@ -262,7 +262,7 @@ const makeFullscreen = function(container) {
       }
     })
   }
-  overlay.dispatchEvent(new CustomEvent('on.xt'))
+  toggle.dispatchEvent(new CustomEvent('on.xt'))
   // move code block
   container.before(
     Xt.createElement('<div class="xt-ignore" data-xt-origin="toggle--open-full-content" style="height: ' + container.clientHeight + 'px"></div>')
