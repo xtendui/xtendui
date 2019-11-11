@@ -108,16 +108,18 @@
 
 // .gatsby_site_article_sidebar
 
-@gatsby_site_article_sidebar_width--md: 22rem;
-@gatsby_site_article_sidebar_width--lg: 22rem;
-@gatsby_site_article_sidebar_width--xl: 25rem;
+@gatsby_site_article_sidebar_width--md: 30rem;
+@gatsby_site_article_sidebar_width--lg: 30rem;
+@gatsby_site_article_sidebar_width--xl: 35rem;
 
 .gatsby_site_article_sidebar {
   position: fixed;
   z-index: 2;
-  top: @gatsby_site_header_height;
+  top: 0;
   left: 0;
   bottom: 0;
+  background: linear-gradient(0deg, @grad-accent);
+  color: @white;
   @media @max-md {
     .sticky--disable();
   }
@@ -131,13 +133,13 @@
     width: @gatsby_site_article_sidebar_width--xl;
   }
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
   .overflow-style(@mode: inner) !important;
   line-height: 1;
 }
 
 .gatsby_site_article_sidebar_inner {
-  .padding(y, giant);
+  .padding(bottom, big);
 }
 
 .gatsby_site_article_sidebar_line {
@@ -146,7 +148,7 @@
   left: 0;
   bottom: .5rem;
   width: 1px !important;
-  background: @gray-300;
+  background: fade(@gray-800, 20%);
 }
 
 .gatsby_site_article_sidebar_cat {
@@ -187,7 +189,7 @@
   .btn--nodesign();
   overflow: visible;
   .font-sans--regular();
-  color: @text;
+  color: fade(@white, 80%) !important;
   letter-spacing: 0;
   text-transform: none;
   // states
@@ -198,8 +200,7 @@
     margin-left: -1.25rem;
     width: 0;
     height: 11px;
-    background: linear-gradient(0deg, @grad-accent);
-    box-shadow: @shadow-accent;
+    background: @white;
   }
   &:hover, &.hover {
     &:before {
@@ -208,14 +209,14 @@
   }
   &:active, &.active {
     .font-sans--semibold();
-    color: @black;
+    color: @white !important;
     &:before {
       width: 1px !important;
     }
   }
   &.current {
     .font-sans--semibold();
-    color: @black;
+    color: @white !important;
     &:before {
       width: 1px !important;
     }
@@ -226,7 +227,7 @@
     padding: 10px 0 7px 0 !important;
     .h6();
     .spacing-none();
-    color: @text !important;
+    color: fade(@white, 80%) !important;
     &:before {
       display: none;
     }
@@ -259,7 +260,7 @@
 .gatsby_site_article_aside {
   position: fixed;
   z-index: 1;
-  top: @gatsby_site_header_height;
+  top: 0;
   right: 0;
   bottom: 0;
   @media @max-lg {

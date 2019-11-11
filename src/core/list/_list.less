@@ -9,9 +9,6 @@
   > li {
     display: flex;
     align-items: flex-start;
-    > * {
-      .flex-auto();
-    }
   }
 }
 
@@ -42,41 +39,6 @@
 /**
  * @generate-list
  */
-
-// list alignment
-
-.list--left(@breakpoint: none) when (@breakpoint = none) {
-  .list-btns({ .btn--left(); });
-}
-
-.list--left(@breakpoint: none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    .list-btns({ .btn--left(); });
-  }
-}
-
-.list--center(@breakpoint: none) when (@breakpoint = none) {
-  .list-btns({ .btn--center(); });
-}
-
-.list--center(@breakpoint: none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    .list-btns({ .btn--center(); });
-  }
-}
-
-.list--right(@breakpoint: none) when (@breakpoint = none) {
-  .list-btns({ .btn--right(); });
-}
-
-.list--right(@breakpoint: none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    .list-btns({ .btn--right(); });
-  }
-}
 
 // list-space
 
@@ -162,32 +124,12 @@
   .generate-list();
   .generate-list(@breakpoint: none) {
     & when (@breakpoint = none) {
-      // list alignment
-      .list--left {
-        .list--left() !important;
-      }
-      .list--center {
-        .list--center() !important;
-      }
-      .list--right {
-        .list--right() !important;
-      }
       // list-space
       .generate-list-space(@breakpoint);
     }
     & when not (@breakpoint = none) {
       @query-min: 'min-@{breakpoint}';
       @media @@query-min {
-        // list alignment
-        .list--left--@{breakpoint} {
-          .list--left() !important;
-        }
-        .list--center--@{breakpoint} {
-          .list--center() !important;
-        }
-        .list--right--@{breakpoint} {
-          .list--right() !important;
-        }
         // list-space
         .generate-list-space(@breakpoint);
       }

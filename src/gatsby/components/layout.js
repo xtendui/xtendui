@@ -2,10 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
-import Header from 'components/header'
 import Footer from 'components/footer'
 import DocsSidebar from 'components/doc-sidebar'
-import DocsAside from 'components/doc-aside'
 import DocsFoot from 'components/doc-foot'
 import DocsAddon from 'components/doc-addon'
 
@@ -50,16 +48,14 @@ class Layout extends React.Component {
           <>
             <div
               className={`gatsby_site_wrapper
-              ${page ? ' gatsby_site_wrapper--with-sidebar gatsby_site_wrapper--with-aside' : ''}`}
+              ${page ? ' gatsby_site_wrapper--with-sidebar' : ''}`}
             >
-              <Header site={data} seo={seo} page={page} />
-
-              <main className="gatsby_site_main">
+              <div className="gatsby_site_main">
                 <div className="gatsby_site_main_inner">
                   {page ? (
-                    <div className="gatsby_site--with-sidebar gatsby_site--with-aside">
-                      <DocsSidebar page={page} />
-                      <article className="gatsby_site_article">
+                    <div className="gatsby_site--with-sidebar">
+                      <DocsSidebar site={data} seo={seo} page={page} />
+                      <main className="gatsby_site_article">
                         <div className="gatsby_site_article_hero">
                           <div className="container full">
                             <h1>{seo.title}</h1>
@@ -76,8 +72,7 @@ class Layout extends React.Component {
                             </div>
                           </div>
                         ) : null}
-                      </article>
-                      <DocsAside page={page} />
+                      </main>
                     </div>
                   ) : (
                     <article className="gatsby_site_article">
@@ -87,7 +82,7 @@ class Layout extends React.Component {
                     </article>
                   )}
                 </div>
-              </main>
+              </div>
 
               <Footer site={data} seo={seo} />
               <DocsAddon />

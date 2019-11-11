@@ -10,11 +10,12 @@ class Header extends React.Component {
     const { site, seo, page } = this.props
     return (
       <header className="gatsby_site_header">
-        <nav className="gatsby_site_header_top_outer" data-xt-sticky="{ sticky: 'fixed' }">
-          <div className="gatsby_site_header_top">
-            <div className="row row-space--none gatsby_site_header_top_row">
-              <div className="gatsby_site_header_top_left">
-                <div className="container full">
+        <div className="container full">
+          <nav className="gatsby_site_header_inner">
+
+            <div>
+              <div className="gatsby_site_header_logo_outer">
+                <div className="gatsby_site_header_logo">
                   <Link
                     to="/"
                     title="Home"
@@ -24,78 +25,7 @@ class Header extends React.Component {
                     <img src={logoIcon} alt={site.site.siteMetadata.title} />
                   </Link>
                 </div>
-              </div>
-              <div className="gatsby_site_header_top_center">
-                <div className="list list--default  gatsby_site_header_top_links_outer">
-                  <div>
-                    <div className="gatsby_site_header_top_links">
-                      <Link
-                        to="/components"
-                        className={`btn gatsby_btn--site_header_top_link ${
-                          page && page.post
-                            ? markdownSlug(page.post) === '/' + 'components'
-                              ? 'active'
-                              : page.post.frontmatter.type === 'Components'
-                              ? 'current'
-                              : ''
-                            : ''
-                        }`}
-                      >
-                        Components
-                      </Link>
-                      <Link
-                        to="/extensions"
-                        className={`btn gatsby_btn--site_header_top_link ${
-                          page && page.post
-                            ? markdownSlug(page.post) === '/' + 'extensions'
-                              ? 'active'
-                              : page.post.frontmatter.type === 'Extensions'
-                              ? 'current'
-                              : ''
-                            : ''
-                        }`}
-                      >
-                        Extensions
-                      </Link>
-                      <Link
-                        to="/themes"
-                        className={`btn gatsby_btn--site_header_top_link ${
-                          page && page.post
-                            ? markdownSlug(page.post) === '/' + 'themes'
-                              ? 'active'
-                              : page.post.frontmatter.type === 'Theme'
-                              ? 'current'
-                              : ''
-                            : ''
-                        }`}
-                      >
-                        Themes
-                      </Link>
-                      <Link
-                        to="/faqs"
-                        className={`btn gatsby_btn--site_header_top_link ${
-                          page && page.post
-                            ? markdownSlug(page.post) === '/' + 'faqs'
-                              ? 'active'
-                              : page.post.frontmatter.type === 'Faqs'
-                              ? 'current'
-                              : ''
-                            : ''
-                        }`}
-                      >
-                        Faqs
-                      </Link>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="gatsby_site_header_top_search">
-                      <input className="form-item form-item--inverse" placeholder="Search" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="gatsby_site_header_top_right">
-                <div className="container full">
+                <div>
                   <div className="gatsby_site_header_top_social">
                     <a href={site.site.siteMetadata.github} target="_blank" rel="noopener" className="btn gatsby_btn--site_header_top_social" title="Github">
                       <span className="icon-github icon--big"></span>
@@ -107,8 +37,70 @@ class Header extends React.Component {
                 </div>
               </div>
             </div>
-          </div>
-        </nav>
+
+            <div>
+              <div className="gatsby_site_header_links">
+                <Link
+                  to="/components"
+                  className={`btn gatsby_btn--site_header_link ${
+                    page && page.post
+                      ? markdownSlug(page.post) === '/' + 'components'
+                        ? 'active'
+                        : page.post.frontmatter.type === 'Components'
+                        ? 'current'
+                        : ''
+                      : ''
+                  }`}
+                >
+                  Components
+                </Link>
+                <Link
+                  to="/extensions"
+                  className={`btn gatsby_btn--site_header_link ${
+                    page && page.post
+                      ? markdownSlug(page.post) === '/' + 'extensions'
+                        ? 'active'
+                        : page.post.frontmatter.type === 'Extensions'
+                        ? 'current'
+                        : ''
+                      : ''
+                  }`}
+                >
+                  Extensions
+                </Link>
+                <Link
+                  to="/themes"
+                  className={`btn gatsby_btn--site_header_link ${
+                    page && page.post
+                      ? markdownSlug(page.post) === '/' + 'themes'
+                        ? 'active'
+                        : page.post.frontmatter.type === 'Theme'
+                        ? 'current'
+                        : ''
+                      : ''
+                  }`}
+                >
+                  Themes
+                </Link>
+                <Link
+                  to="/faqs"
+                  className={`btn gatsby_btn--site_header_link ${
+                    page && page.post
+                      ? markdownSlug(page.post) === '/' + 'faqs'
+                        ? 'active'
+                        : page.post.frontmatter.type === 'Faqs'
+                        ? 'current'
+                        : ''
+                      : ''
+                  }`}
+                >
+                  Faqs
+                </Link>
+              </div>
+            </div>
+
+          </nav>
+        </div>
       </header>
     )
   }

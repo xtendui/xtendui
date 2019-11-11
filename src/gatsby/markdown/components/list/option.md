@@ -38,32 +38,6 @@ Lists **automatically** add horizontal and vertical spacing to the contents. You
   </demovanilla>
 </demo>
 
-##Alignment
-
-Lists **automatically** has left aligment. You can **specify a different one** with this classes/mixins.
-
-You can also set other flex alignments like `.list-btns({ justify-content: space-between; })`.
-
-<div class="table--scroll">
-
-|                         | Syntax                                    | Example                       |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.list--{alignment}`                      | `.list--center`               |
-| Class responsive        | `.list--{alignment}--{breakpoint}`         | `.list--center--sm`            |
-| Mixin                   | `.list--{alignment}()`                    | `.list--center()`             |
-| Mixin responsive min    | `.list--{alignment}({breakpoint})`        | `.list--center(sm)`           |
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/core/list/align-left">
-  </demovanilla>
-  <demovanilla src="vanilla/core/list/align-center">
-  </demovanilla>
-  <demovanilla src="vanilla/core/list/align-right">
-  </demovanilla>
-</demo>
-
 ##Direction
 
 Set children's direction inside the flexbox.

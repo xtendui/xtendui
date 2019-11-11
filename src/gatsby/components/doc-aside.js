@@ -1,3 +1,4 @@
+/*
 import React from 'react'
 import { Link } from 'gatsby'
 import kebabCase from 'lodash.kebabcase'
@@ -58,3 +59,4 @@ class DocAside extends React.Component {
 }
 
 export default DocAside
+*/
