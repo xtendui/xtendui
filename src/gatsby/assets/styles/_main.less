@@ -99,7 +99,7 @@
 
 @gatsby_site_article_sidebar_width--md: 30rem;
 @gatsby_site_article_sidebar_width--lg: 30rem;
-@gatsby_site_article_sidebar_width--xl: 35rem;
+@gatsby_site_article_sidebar_width--xl: 30rem;
 
 .gatsby_site_article_sidebar {
   position: fixed;
@@ -107,7 +107,7 @@
   top: 0;
   left: 0;
   bottom: 0;
-  background: linear-gradient(0deg, @grad-accent);
+  background: linear-gradient(-90deg, @grad-accent);
   color: @white;
   @media @max-md {
     .sticky--disable();
@@ -127,17 +127,8 @@
   line-height: 1;
 }
 
-.gatsby_site_article_sidebar_inner {
-  .padding(bottom, big);
-}
-
-.gatsby_site_article_sidebar_line {
-  position: absolute;
-  top: .6rem;
-  left: 0;
-  bottom: .5rem;
-  width: 1px !important;
-  background: fade(@gray-800, 20%);
+.gatsby_site_article_sidebar_listing {
+  .padding(bottom, medium);
 }
 
 .gatsby_site_article_sidebar_cat {
@@ -147,93 +138,66 @@
   justify-content: flex-start;
 }
 
+.gatsby_site_article_sidebar_inner,
+.gatsby_site_article_sidebar_cat,
+.gatsby_site_article_sidebar_item,
+.gatsby_site_article_sidebar_adiacent {
+  position: relative;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+
 .gatsby_site_article_sidebar_sub, .gatsby_site_article_sidebar_adiacent {
   display: none;
   width: 100%;
-  //.padding(y, .25rem);
-  .gatsby_site_article_sidebar_item {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    .padding(left, 1.25rem);
-    > * {
-      width: 100%;
-    }
-  }
   &.active {
     display: block;
   }
 }
 
-// .gatsby_btn--site_article_sidebar
+.gatsby_site_article_sidebar_sub {
+  .gatsby_site_article_sidebar_item {
+    position: relative;
+  }
+}
+
+.gatsby_site_article_sidebar_adiacent {
+  .gatsby_site_article_sidebar_item {
+    position: relative;
+    .padding(left, 8px);
+  }
+}
+
+.gatsby_cat--site_article_sidebar {
+  .h6();
+  margin: 0;
+  padding: 1rem 0;
+  color: fade(@white, 80%);
+}
 
 .gatsby_btn--site_article_sidebar {
   .block();
-  .btn--left();
   .link-none();
-  .btn--squared();
-  .btn--noborder();
-  .btn--nodesign();
-  overflow: visible;
-  .font-sans--regular();
-  color: fade(@white, 80%) !important;
-  letter-spacing: 0;
+  box-shadow: none !important;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  padding: .4em .6em;
+  border-color: transparent;
+  background: transparent;
+  .font-sans--semibold();
+  font-size: 12px;
+  color: fade(@white, 50%);
+  line-height: 1;
   text-transform: none;
-  // states
-  .transition-none() !important;
-  &:before {
-    content: '';
-    position: absolute;
-    margin-left: -1.25rem;
-    width: 0;
-    height: 11px;
-    background: @white;
-  }
   &:hover, &.hover {
-    &:before {
-      width: 1px !important;
-    }
+    border-color: transparent;
+    background: fade(@gray-800, 20%);
+    color: @text-inverse--dark;
   }
-  &:active, &.active {
-    .font-sans--semibold();
-    color: @white !important;
-    &:before {
-      width: 1px !important;
-    }
-  }
-  &.current {
-    .font-sans--semibold();
-    color: @white !important;
-    &:before {
-      width: 1px !important;
-    }
-  }
-  // custom
-  &.gatsby_btn--site_article_sidebar--cat {
-    cursor: default;
-    padding: 10px 0 7px 0 !important;
-    .h6();
-    .spacing-none();
-    color: fade(@white, 80%) !important;
-    &:before {
-      display: none;
-    }
-  }
-  &.gatsby_btn--site_article_sidebar--sub {
-    padding: 4px 0 !important;
-    font-size: 13px;
-    &:before {
-      margin-top: 2px;
-    }
-  }
-  &.gatsby_btn--site_article_sidebar--adiacent {
-    padding: 4px 0 !important;
-    font-size: 12px;
-    &:before {
-      margin-top: 1px;
-    }
+  &:active, &.active, &.current {
+    border-color: transparent;
+    background: fade(@gray-800, 40%);
+    color: @text-inverse--dark;
   }
 }
 
@@ -266,9 +230,6 @@
   .spacing-big();
 }
 
-.gatsby_listing_category {
-}
-
 .gatsby_listing_items {
   > .row {
     .row-space(giant);
@@ -279,8 +240,5 @@
   .col(12);
   .col(6, sm);
   .col(4, xl);
-}
-
-.gatsby_listing_item {
 }
 

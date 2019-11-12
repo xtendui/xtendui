@@ -234,16 +234,14 @@
 // block
 
 .block(@breakpoint: none) when (@breakpoint = none) {
-  display: inline-block;
-  vertical-align: top; // fix inline-block spacing
+  display: block;
   width: 100%;
 }
 
 .block(@breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    display: inline-block;
-    vertical-align: top; // fix inline-block spacing
+    display: block;
     width: 100%;
   }
 }
