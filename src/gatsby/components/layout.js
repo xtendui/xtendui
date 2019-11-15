@@ -4,6 +4,7 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import Footer from 'components/footer'
 import DocSidebar from 'components/doc-sidebar'
+import DocHead from 'components/doc-head'
 import DocFoot from 'components/doc-foot'
 import DocFullscreen from 'components/doc-fullscreen'
 
@@ -53,21 +54,12 @@ class Layout extends React.Component {
                   <div className="gatsby_site_article">
                     <DocFullscreen />
                     <main className="gatsby_site_article_inner" id="toggle--open-full-inner">
-                      <header className="gatsby_site_article_hero">
-                        <div className="container full">
-                          <h1>{seo.title}</h1>
-                          {seo.description ? <p>{seo.description}</p> : null}
-                        </div>
-                      </header>
+                      <DocHead page={page} seo={seo} />
                       <article className="gatsby_site_article_content">
-                        <div className="container full">{children}</div>
+                        {children}
                       </article>
                       {page && page.post.frontmatter.type !== page.post.frontmatter.title ? (
-                        <footer className="gatsby_site_article_foot">
-                          <div className="container full">
-                            <DocFoot page={page} />
-                          </div>
-                        </footer>
+                        <DocFoot page={page} />
                       ) : null}
                       <Footer site={data} seo={seo} />
                     </main>
