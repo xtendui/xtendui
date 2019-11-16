@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import kebabCase from 'lodash.kebabcase'
-import { markdownSlug } from 'components/markdown-slug.js'
+import { markdownSlug } from 'components/snippets/markdown-slug.js'
 
 class DocHead extends React.Component {
   render() {
@@ -21,11 +21,11 @@ class DocHead extends React.Component {
             <p>{seo.description}</p>
           )}
           {page.post.frontmatter.parent ? (
-            <nav className="gatsby_site_article_links">
+            <nav className="gatsby_site_article_hero_links">
               <div className="row">
                 <div>
                   {page.post.frontmatter.parent === page.post.frontmatter.title ? (
-                    <Link to={kebabCase(page.post.frontmatter.type)} className="btn gatsby_btn--site_article_links">
+                    <Link to={kebabCase(page.post.frontmatter.type)} className="btn">
                       <span className="icon-arrow-left icon--left"></span>
                       {page.post.frontmatter.type}
                     </Link>
@@ -34,7 +34,7 @@ class DocHead extends React.Component {
                       if (page.post.frontmatter.parent === adiacent.frontmatter.title) {
                         return (
                           <div key={i}>
-                            <Link to={markdownSlug(adiacent)} className="btn gatsby_btn--site_article_links">
+                            <Link to={markdownSlug(adiacent)} className="btn">
                               <span className="icon-arrow-left icon--left"></span>
                               {adiacent.frontmatter.title}
                             </Link>
@@ -55,7 +55,7 @@ class DocHead extends React.Component {
                           if (nextAdiacent.frontmatter.parent !== nextAdiacent.frontmatter.title) {
                             return (
                               <div key={index}>
-                                <Link to={markdownSlug(nextAdiacent)} className="btn gatsby_btn--site_article_links btn--right">
+                                <Link to={markdownSlug(nextAdiacent)} className="btn btn--right">
                                   {nextAdiacent.frontmatter.title}
                                   <span className="icon-arrow-right icon--right"></span>
                                 </Link>

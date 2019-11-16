@@ -6,9 +6,7 @@ class DocHead extends React.Component {
   render() {
     const { page } = this.props
     const postsComponents = page.postsAll.posts.filter(
-      x =>
-        ['Components'].includes(x.post.frontmatter.type) &&
-        x.post.frontmatter.parent === page.post.frontmatter.parent
+      x => ['Components'].includes(x.post.frontmatter.type) && x.post.frontmatter.parent === page.post.frontmatter.parent
     )
     const postsExtensions = page.postsAll.posts.filter(
       x =>
@@ -46,7 +44,8 @@ class DocHead extends React.Component {
                           <div className="card-block card-item">
                             <div className="card-title">Visit the Components page</div>
                             <p>
-                              There {postsComponents.length === 1 ? 'is' : 'are'} {postsComponents.length} <strong>pages</strong> for {page.post.frontmatter.parent}
+                              There {postsComponents.length === 1 ? 'is' : 'are'} {postsComponents.length} <strong>pages</strong> for{' '}
+                              {page.post.frontmatter.parent}
                             </p>
                           </div>
                         </div>
@@ -67,8 +66,8 @@ class DocHead extends React.Component {
                           <div className="card-block card-item">
                             <div className="card-title">Visit the Extension page</div>
                             <p>
-                              There {postsExtensions.length === 1 ? 'is' : 'are'} {postsExtensions.length} <strong>extensions</strong>
-                              for {page.post.frontmatter.parent}
+                              There {postsExtensions.length === 1 ? 'is' : 'are'} {postsExtensions.length} <strong>extensions</strong> for{' '}
+                              {page.post.frontmatter.parent}
                             </p>
                           </div>
                         </div>
@@ -100,10 +99,7 @@ class DocHead extends React.Component {
 
                 {page.post.frontmatter.type !== 'Faqs' && postsFaqs.length ? (
                   <div className="gatsby_listing_column">
-                    <Link
-                      to={'/faqs/'}
-                      className="card card--primary card--small card--full card--collapse gatsby_listing_item"
-                    >
+                    <Link to={'/faqs/'} className="card card--primary card--small card--full card--collapse gatsby_listing_item">
                       <div className="card-design"></div>
                       <div className="card-inner">
                         <div className="card-content">

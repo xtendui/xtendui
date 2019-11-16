@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { markdownSlug } from 'components/markdown-slug.js'
+import { markdownSlug } from 'components/snippets/markdown-slug.js'
 
 import Header from 'components/header'
 

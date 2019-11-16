@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
-import { markdownSlug } from 'components/markdown-slug.js'
+import { markdownSlug } from 'components/snippets/markdown-slug.js'
 
 import SEO from 'components/seo'
 import Layout from 'components/layout'
