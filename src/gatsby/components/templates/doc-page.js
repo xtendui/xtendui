@@ -5,9 +5,9 @@ import RehypeReact from 'rehype-react'
 
 import SEO from 'components/seo'
 import Layout from 'components/layout'
-import Demo from 'components/demo'
-import DemoVanilla from 'components/demo-vanilla'
-import DemoReact from 'components/demo-react'
+import Demo from 'components/demo/demo'
+import DemoVanilla from 'components/demo/demo-vanilla'
+import DemoReact from 'components/demo/demo-react'
 
 const renderAst = new RehypeReact({
   createElement: React.createElement,

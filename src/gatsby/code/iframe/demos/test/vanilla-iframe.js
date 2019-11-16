@@ -1,7 +1,7 @@
 import path from 'path'
 import React from 'react'
 
-import DemoVanillaIframe from 'components/demo-vanilla-iframe'
+import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 const spinner = require('components/snippets/spinner').default
 
 const dirs = path.dirname(__filename).split('/')

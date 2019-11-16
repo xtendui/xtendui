@@ -1,7 +1,7 @@
 import React from 'react'
 import path from 'path'
 
-import DemoReactIframe from 'components/demo-react-iframe'
+import DemoReactIframe from 'components/demo/demo-react-iframe'
 
 const dirs = path.dirname(__filename).split('/')
 export const demo = {

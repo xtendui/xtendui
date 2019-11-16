@@ -2,7 +2,7 @@ import React from 'react'
 import path from 'path'
 const img = require('components/snippets/img').default
 
-import DemoVanillaIframe from 'components/demo-vanilla-iframe'
+import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
 const dirs = path.dirname(__filename).split('/')
 export const demo = {

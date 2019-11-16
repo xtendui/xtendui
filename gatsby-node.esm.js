@@ -5,7 +5,7 @@
  */
 
 import path from 'path'
-import { markdownSlug } from 'components/snippets/markdown-slug.js'
+import { markdownSlug } from './src/gatsby/components/snippets/markdown-slug.js'
 require('./build/less.js')
 require('./build/js.js')
 
