@@ -12,7 +12,6 @@ class Template extends React.Component {
     const seo = {}
     seo.title = data.post.frontmatter.title
     seo.description = data.post.frontmatter.description
-    seo.parent = data.post.frontmatter.parent
     return (
       <Layout seo={seo} page={data}>
         <SEO title={seo.title + ' — ' + seo.description} />
