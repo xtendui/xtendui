@@ -6,7 +6,7 @@ import { Xt } from 'xtend-library'
 
 const makeDocument = function() {
   // .gatsby_make-line
-  for (const el of document.querySelectorAll('.gatsby_site_article_content > * > * > h2, .gatsby_site_article_content > * > * > h3')) {
+  for (const el of document.querySelectorAll('.gatsby_site_article_content > * > h2, .gatsby_site_article_content > * > h3')) {
     el.classList.add('gatsby_make-line')
   }
   for (const el of document.querySelectorAll('.gatsby_make-line')) {
@@ -14,7 +14,7 @@ const makeDocument = function() {
     el.innerHTML = '<span class="gatsby_make-line_container">' + el.innerHTML + '</span>'
   }
   // .gatsby_make-anchor
-  for (const el of document.querySelectorAll('.gatsby_site_article_content > * > * > h2, .gatsby_site_article_content > * > * > h3')) {
+  for (const el of document.querySelectorAll('.gatsby_site_article_content > * > h2, .gatsby_site_article_content > * > h3')) {
     el.classList.add('gatsby_make-line')
     // previous h2 if h3
     let prevElement

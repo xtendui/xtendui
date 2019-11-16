@@ -79,7 +79,7 @@ const populateBlock = function() {
     Prism.highlightElement(el)
   }
   // overlay fullscreen
-  for (const el of document.querySelectorAll('[data-gatsby-listing-toggle')) {
+  for (const el of document.querySelectorAll('[data-gatsby-listing-toggle]')) {
     el.addEventListener('click', function() {
       makeFullscreen(el.nextSibling)
     })
@@ -95,9 +95,13 @@ const populateBlock = function() {
   document.querySelector('#toggle--open-full-trigger').addEventListener('off.xt', function(e) {
     // @FIX on.xt and off.xt event bubbles
     if (this === e.target) {
-      console.log(e.currentTarget);
       const content = document.querySelector('#toggle--open-full-content')
       const inner = document.querySelector('#toggle--open-full-inner')
+      // toggles
+      const listingToggles = document.querySelectorAll('[data-gatsby-listing-toggle]')
+      for (const el of listingToggles) {
+        el.classList.remove('active')
+      }
       // inner
       inner.classList.remove('display-none')
       // populate source
@@ -141,14 +145,28 @@ const populateDemo = function(container, i) {
     .querySelector('.gatsby_demo_tabs_right')
     .append(
       Xt.createElement(
-        '<button type="button" class="btn btn--text btn--tiny btn--icon btn--show-code" data-toggle="tooltip" data-placement="top" aria-label="Code"><span class="icon-code icon--big"></span></button>'
+        '<button type="button" class="btn btn--text btn--tiny btn--prev-demo" aria-label="Previous"><span class="icon-arrow-left icon--big"></span></button>'
       )
     )
   container
     .querySelector('.gatsby_demo_tabs_right')
     .append(
       Xt.createElement(
-        '<button type="button" class="btn btn--text btn--tiny btn--icon btn--open-full" data-toggle="tooltip" data-placement="top" aria-label="Fullscreen"><span class="icon-maximize icon--big"></span></button>'
+        '<button type="button" class="btn btn--text btn--tiny btn--next-demo" aria-label="Next"><span class="icon-arrow-right icon--big"></span></button>'
+      )
+    )
+  container
+    .querySelector('.gatsby_demo_tabs_right')
+    .append(
+      Xt.createElement(
+        '<button type="button" class="btn btn--text btn--tiny btn--show-code" aria-label="Toggle Code"><span class="icon-code icon--big"></span></button>'
+      )
+    )
+  container
+    .querySelector('.gatsby_demo_tabs_right')
+    .append(
+      Xt.createElement(
+        '<button type="button" class="btn btn--text btn--tiny btn--open-full" aria-label="Toggle Fullscreen"><span class="icon-maximize icon--big"></span></button>'
       )
     )
   // loop items
@@ -233,13 +251,49 @@ const populateDemo = function(container, i) {
   }
   // gatsby_demo_tabs_left
   new Xt.Toggle(container, {
-    elements: '.gatsby_demo_tabs_left .btn',
+    elements: '.gatsby_demo_tabs_left .btn:not(.btn--prev-demo):not(.btn--next-demo)',
     targets: '.gatsby_demo_item',
     min: 1,
   })
-  // btn--show-code
+  // .btn--show-code
   new Xt.Toggle(container.querySelector('.btn--show-code'), {
     targets: '#' + demoId + ' .gatsby_demo_code',
+  })
+  // .btn--prev-demo
+  container.querySelector('.btn--prev-demo').addEventListener('click', function() {
+    const listingToggles = document.querySelectorAll('[data-gatsby-listing-toggle]')
+    const self = Xt.get('xt-toggle', container)
+    if (!listingToggles.length || self.currentIndex < self.getGroups().length - 1) {
+      self.goToPrev()
+    } else {
+      for (let i = 0; i < listingToggles.length; i++) {
+        if (listingToggles[i].classList.contains('active')) {
+          let prev = i - 1
+          prev = prev >= 0 ? prev : listingToggles.length - 1
+          document.querySelector('#toggle--open-full-trigger').dispatchEvent(new CustomEvent('off.xt'))
+          listingToggles[prev].dispatchEvent(new CustomEvent('click'))
+          break
+        }
+      }
+    }
+  })
+  // .btn--next-demo
+  container.querySelector('.btn--next-demo').addEventListener('click', function() {
+    const listingToggles = document.querySelectorAll('[data-gatsby-listing-toggle]')
+    const self = Xt.get('xt-toggle', container)
+    if (!listingToggles.length || self.currentIndex < self.getGroups().length - 1) {
+      self.goToNext()
+    } else {
+      for (let i = 0; i < listingToggles.length; i++) {
+        if (listingToggles[i].classList.contains('active')) {
+          let next = i + 1
+          next = next < listingToggles.length ? next : 0
+          document.querySelector('#toggle--open-full-trigger').dispatchEvent(new CustomEvent('off.xt'))
+          listingToggles[next].dispatchEvent(new CustomEvent('click'))
+          break
+        }
+      }
+    }
   })
 }
 
@@ -250,6 +304,12 @@ const populateDemo = function(container, i) {
 const makeFullscreen = function(container) {
   const toggle = document.querySelector('#toggle--open-full-trigger')
   const content = document.querySelector('#toggle--open-full-content')
+  // toggles
+  const listingToggle = container.previousSibling
+  console.log(listingToggle)
+  if (listingToggle instanceof Element && listingToggle.getAttribute('data-gatsby-listing-toggle')) {
+    listingToggle.classList.add('active')
+  }
   // populate
   const items = container.querySelectorAll('.gatsby_demo_item')
   for (const item of items) {

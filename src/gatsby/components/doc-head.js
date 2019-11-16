@@ -32,7 +32,7 @@ class DocHead extends React.Component {
                 <div className="list">
                   {page.post.frontmatter.parent === page.post.frontmatter.title ? (
                     <Link to={kebabCase(page.post.frontmatter.type)} className="btn gatsby_btn--site_article_links">
-                      <span className="icon-xt-chevron-left icon--small icon--left"></span>
+                      <span className="icon-arrow-left icon--left"></span>
                       {page.post.frontmatter.type}
                     </Link>
                   ) : (
@@ -41,7 +41,7 @@ class DocHead extends React.Component {
                         return (
                           <div key={i}>
                             <Link to={markdownSlug(adiacent)} className="btn gatsby_btn--site_article_links">
-                              <span className="icon-xt-chevron-left icon--small icon--left"></span>
+                              <span className="icon-arrow-left icon--left"></span>
                               {adiacent.frontmatter.title}
                             </Link>
                           </div>
@@ -61,7 +61,7 @@ class DocHead extends React.Component {
                               <div key={index}>
                                 <Link to={markdownSlug(nextAdiacent)} className="btn gatsby_btn--site_article_links btn--right">
                                   {nextAdiacent.frontmatter.title}
-                                  <span className="icon-xt-chevron-right icon--small icon--right"></span>
+                                  <span className="icon-arrow-right icon--right"></span>
                                 </Link>
                               </div>
                             )

@@ -204,8 +204,8 @@ class Toggle {
         let start = 0
         // @FIX initial activation drag wrap
         if (!self.disabled && self.dragger && options.drag.wrap) {
-          start = self.groupMqFirst.length;
-          todo += start;
+          start = self.groupMqFirst.length
+          todo += start
         }
         // initial
         currents++
@@ -1200,7 +1200,7 @@ class Toggle {
       // queue obj
       const actionCurrent = 'On'
       const actionOther = 'Off'
-      self.eventQueue(actionCurrent, detail, groupElements, targets, elementsInner, targetsInner)
+      self.eventQueue(actionCurrent, detail, groupElements, targets, elementsInner, targetsInner, e)
       // queue run
       for (const type in self.detail['queue' + actionCurrent][0]) {
         self.queueStart(actionCurrent, actionOther, type, 0, true)
@@ -1263,7 +1263,7 @@ class Toggle {
       // queue obj
       const actionCurrent = 'Off'
       const actionOther = 'On'
-      self.eventQueue(actionCurrent, detail, groupElements, targets, elementsInner, targetsInner)
+      self.eventQueue(actionCurrent, detail, groupElements, targets, elementsInner, targetsInner, e)
       // if queue too big
       if (self.detail['queue' + actionCurrent].length > options.max) {
         // remove queue on and done other queue
@@ -1292,8 +1292,9 @@ class Toggle {
    * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} targets
    * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} elementsInner
    * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} targetsInner
+   * @param {Event} e
    */
-  eventQueue(actionCurrent, detail, groupElements, targets, elementsInner, targetsInner) {
+  eventQueue(actionCurrent, detail, groupElements, targets, elementsInner, targetsInner, e) {
     const self = this
     const options = self.options
     // populate
@@ -1301,23 +1302,27 @@ class Toggle {
     obj.elements = {
       detail: detail,
       queueEls: groupElements,
+      event: e,
     }
     if (targets.length) {
       obj.targets = {
         detail: detail,
         queueEls: targets,
+        event: e,
       }
     }
     if (elementsInner.length) {
       obj.elementsInner = {
         detail: detail,
         queueEls: elementsInner,
+        event: e,
       }
     }
     if (targetsInner.length) {
       obj.targetsInner = {
         detail: detail,
         queueEls: targetsInner,
+        event: e,
       }
     }
     // put in queue
@@ -1646,7 +1651,9 @@ class Toggle {
         }
       }
       // listener dispatch
-      el.dispatchEvent(new CustomEvent('on.xt', { bubbles: true, detail: obj[type].detail }))
+      if (!obj[type].event || obj[type].event.type !== 'on.xt') {
+        el.dispatchEvent(new CustomEvent('on.xt', { bubbles: true, detail: obj[type].detail }))
+      }
     } else if (actionCurrent === 'Off') {
       // deactivate
       self.deactivate(el)
@@ -1662,7 +1669,9 @@ class Toggle {
         self.specialClose(actionCurrent, el)
       }
       // listener dispatch
-      el.dispatchEvent(new CustomEvent('off.xt', { bubbles: true, detail: obj[type].detail }))
+      if (!obj[type].event || obj[type].event.type !== 'off.xt') {
+        el.dispatchEvent(new CustomEvent('off.xt', { bubbles: true, detail: obj[type].detail }))
+      }
     }
     // queue
     if (!skipQueue) {
@@ -1729,7 +1738,9 @@ class Toggle {
         .replace(/['"]+/g, '')
       self.specialCollapse('Reset', el, before, after)
       // listener dispatch
-      el.dispatchEvent(new CustomEvent('ondone.xt', { bubbles: true, detail: obj[type].detail }))
+      if (!obj[type].event || obj[type].event.type !== 'ondone.xt') {
+        el.dispatchEvent(new CustomEvent('ondone.xt', {bubbles: true, detail: obj[type].detail}))
+      }
     } else if (actionCurrent === 'Off') {
       // reset
       el.classList.remove(...self.classesOut)
@@ -1773,7 +1784,9 @@ class Toggle {
         }
       }
       // listener dispatch
-      el.dispatchEvent(new CustomEvent('offdone.xt', { bubbles: true, detail: obj[type].detail }))
+      if (!obj[type].event || obj[type].event.type !== 'offdone.xt') {
+        el.dispatchEvent(new CustomEvent('offdone.xt', {bubbles: true, detail: obj[type].detail}))
+      }
     }
     // queue
     if (!skipQueue) {
