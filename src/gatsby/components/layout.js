@@ -5,6 +5,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import Footer from 'components/footer'
 import DocSidebar from 'components/doc-sidebar'
 import DocHead from 'components/doc-head'
+import DocFoot from 'components/doc-foot'
 import DocFullscreen from 'components/doc-fullscreen'
 
 import 'xtend-library/src/polyfill.js'
@@ -55,6 +56,7 @@ class Layout extends React.Component {
                     <main className="gatsby_site_article_inner" id="toggle--open-full-inner">
                       {page ? <DocHead page={page} seo={seo} /> : null}
                       <article className="gatsby_site_article_content">{children}</article>
+                      {page && page.post.frontmatter.type !== page.post.frontmatter.title ? <DocFoot page={page} /> : null}
                       <Footer site={data} seo={seo} />
                     </main>
                   </div>
