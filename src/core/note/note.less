@@ -5,6 +5,7 @@
  */
 
 .note {
+  .font-sans--semibold();
   line-height: 1.4;
   .note-title {
     .spacing-small();
@@ -27,8 +28,8 @@
     color: @text;
   }
   &.note--background {
-    border-color: @gray-200;
-    background: @gray-200;
+    border-color: @gray-100;
+    background: @gray-100;
     color: @text;
   }
 }
@@ -38,9 +39,9 @@
     color: @accent;
   }
   &.note--background {
-    border-color: fade(@accent, 10%);
-    background: fade(@accent, 10%);
-    color: @accent;
+    border-color: @accent;
+    background: @accent;
+    .text-inverse();
   }
   a {
     color: inherit;
@@ -52,9 +53,9 @@
     color: @success;
   }
   &.note--background {
-    border-color: fade(@success, 10%);
-    background: fade(@success, 10%);
-    color: @success;
+    border-color: @success;
+    background: @success;
+    .text-inverse();
   }
   a {
     color: inherit;
@@ -66,9 +67,9 @@
     color: @error;
   }
   &.note--background {
-    border-color: fade(@error, 10%);
-    background: fade(@error, 10%);
-    color: @error;
+    border-color: @error;
+    background: @error;
+    .text-inverse();
   }
   a {
     color: inherit;

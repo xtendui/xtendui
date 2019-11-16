@@ -78,15 +78,39 @@ pre {
 .gatsby_demo {
   .margin(bottom, medium);
   .margin(bottom, layout);
+  // animations
   border: 3px solid @gray-200;
   transition-property: border-color;
   transition-duration: @time-medium;
   transition-timing-function: @bez-out;
+  .gatsby_demo_tabs_right {
+    overflow: hidden;
+    > * {
+      opacity: 0;
+      transform: translateY(1.5rem);
+      transition-property: opacity, transform;
+      transition-duration: @time-medium;
+      transition-timing-function: @bez-in;
+      transition-delay: 150ms; // @start + @child * @increment
+      .nth-child(@child: 3, @start: 0ms, @increment: 50ms, @decrement: 0ms, {
+        @transition-delay();
+      });
+    }
+  }
   &:hover {
     border-color: @gray-300;
     transition-property: border-color;
     transition-duration: @time-medium;
     transition-timing-function: @bez-in;
+    .gatsby_demo_tabs_right {
+      > * {
+        opacity: 1;
+        transform: translateY(0);
+        transition-property: opacity, transform;
+        transition-duration: @time-medium;
+        transition-timing-function: @bez-in;
+      }
+    }
     .gatsby_demo_tabs, .gatsby_demo_code_tabs {
       .btn {
         &:active, &.active {
@@ -96,7 +120,14 @@ pre {
     }
   }
   #toggle--open-full & {
-    border: 0;
+    border: 0 !important;
+    .gatsby_demo_tabs_right {
+      > * {
+        opacity: 1 !important;
+        .transform-none() !important;
+        .transition-none() !important;
+      }
+    }
   }
   // code
   .gatsby_demo_item {
@@ -292,8 +323,4 @@ html.toggle--open-full--open {
   body {
     overflow-y: hidden !important;
   }
-}
-
-.btn--prev-demo, .btn--next-demo {
-  display: none
 }

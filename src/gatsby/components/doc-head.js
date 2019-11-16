@@ -10,7 +10,7 @@ class DocHead extends React.Component {
     if (page.post.frontmatter.type === 'Components') {
       filterBy = ['Extensions']
     } else if (page.post.frontmatter.type === 'Extensions') {
-      filterBy = ['Themes']
+      filterBy = ['Components', 'Themes']
     } else if (page.post.frontmatter.type === 'Theme') {
       filterBy = ['Components', 'Extensions']
     }
@@ -23,13 +23,15 @@ class DocHead extends React.Component {
               ? page.post.frontmatter.parent + ' ' + seo.title
               : seo.title}
           </h1>
-          {seo.description ? <p>{seo.description}</p> : null}
-        </header>
-        {page.post.frontmatter.parent ? (
-          <nav className="gatsby_site_article_links">
-            <div className="list">
-              <div>
-                <div className="list">
+          {page.post.frontmatter.parent && page.post.frontmatter.parent !== page.post.frontmatter.title ? (
+            <p>{page.post.frontmatter.parent + ' ' + seo.title}</p>
+          ) : (
+            <p>{seo.description}</p>
+          )}
+          {page.post.frontmatter.parent ? (
+            <nav className="gatsby_site_article_links">
+              <div className="row">
+                <div>
                   {page.post.frontmatter.parent === page.post.frontmatter.title ? (
                     <Link to={kebabCase(page.post.frontmatter.type)} className="btn gatsby_btn--site_article_links">
                       <span className="icon-arrow-left icon--left"></span>
@@ -49,32 +51,11 @@ class DocHead extends React.Component {
                       }
                     })
                   )}
-
-                  {page.post.frontmatter.type !== 'Themes'
-                    ? postsAdiacentFiltered.map(({ post: adiacent }, i) => {
-                        if (postsAdiacentFiltered.length > 0 && markdownSlug(adiacent) === markdownSlug(page.post)) {
-                          let index = i + 1
-                          index = index >= postsAdiacentFiltered.length ? 0 : index
-                          const nextAdiacent = postsAdiacentFiltered[index].post
-                          if (nextAdiacent.frontmatter.parent !== nextAdiacent.frontmatter.title) {
-                            return (
-                              <div key={index}>
-                                <Link to={markdownSlug(nextAdiacent)} className="btn gatsby_btn--site_article_links btn--right">
-                                  {nextAdiacent.frontmatter.title}
-                                  <span className="icon-arrow-right icon--right"></span>
-                                </Link>
-                              </div>
-                            )
-                          }
-                        }
-                      })
-                    : null}
                 </div>
-              </div>
 
-              <div>
-                {page.post.frontmatter.type !== page.post.frontmatter.title
-                  ? filterBy.map((filter, i) => {
+                <div>
+                  {page.post.frontmatter.type !== page.post.frontmatter.title
+                    ? filterBy.map((filter, i) => {
                       const filteredPosts = page.postsAll.posts.filter(
                         x => x.post.frontmatter.type === filter && x.post.frontmatter.parent === page.post.frontmatter.parent
                       )
@@ -88,11 +69,34 @@ class DocHead extends React.Component {
                         )
                       }
                     })
-                  : null}
+                    : null}
+                </div>
+
+                <div>
+                  {page.post.frontmatter.type !== 'Themes'
+                    ? postsAdiacentFiltered.map(({ post: adiacent }, i) => {
+                      if (postsAdiacentFiltered.length > 0 && markdownSlug(adiacent) === markdownSlug(page.post)) {
+                        let index = i + 1
+                        index = index >= postsAdiacentFiltered.length ? 0 : index
+                        const nextAdiacent = postsAdiacentFiltered[index].post
+                        if (nextAdiacent.frontmatter.parent !== nextAdiacent.frontmatter.title) {
+                          return (
+                            <div key={index}>
+                              <Link to={markdownSlug(nextAdiacent)} className="btn gatsby_btn--site_article_links btn--right">
+                                {nextAdiacent.frontmatter.title}
+                                <span className="icon-arrow-right icon--right"></span>
+                              </Link>
+                            </div>
+                          )
+                        }
+                      }
+                    })
+                    : null}
+                </div>
               </div>
-            </div>
-          </nav>
-        ) : null}
+            </nav>
+          ) : null}
+        </header>
       </div>
     )
   }

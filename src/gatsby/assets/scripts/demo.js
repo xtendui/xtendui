@@ -306,7 +306,6 @@ const makeFullscreen = function(container) {
   const content = document.querySelector('#toggle--open-full-content')
   // toggles
   const listingToggle = container.previousSibling
-  console.log(listingToggle)
   if (listingToggle instanceof Element && listingToggle.getAttribute('data-gatsby-listing-toggle')) {
     listingToggle.classList.add('active')
   }
