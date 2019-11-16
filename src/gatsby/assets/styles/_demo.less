@@ -171,18 +171,19 @@ pre {
   .gatsby_demo_tabs, .gatsby_demo_code_tabs {
     position: relative;
     display: flex;
-    align-item: flex-start;
+    align-items: flex-start;
     justify-content: space-between;
     > * {
       .list();
       .list--default();
       .list-space(tiny);
     }
-    .padding(y, .8rem);
+    .padding(y, 7px);
     .padding(x, small);
     .btn {
       border-width: 3px;
       padding: .4em .6em;
+      font-size: 10px;
       color: fade(@text, 50%);
       &:hover, &.hover, &:active, &.active {
         border-color: @gray-200;
@@ -250,23 +251,26 @@ table {
 }
 
 #toggle--open-full {
+  @media @min-md {
+    // disable
+    position: static;
+    z-index: initial;
+    top: auto;
+    left: auto;
+    bottom: auto;
+    right: auto;
+    width: auto;
+    height: auto;
+    > .backdrop {
+      display: none !important;
+    }
+  }
   .btn-close {
-    .btn--center();
-    width: 4.5rem;
-    height: 4.5rem;
+    .btn--primary();
+    .btn--squared();
+    font-size: 14px;
   }
-  // disable
-  position: static;
-  z-index: initial;
-  top: auto;
-  left: auto;
-  bottom: auto;
-  right: auto;
-  width: auto;
-  height: auto;
-  > .backdrop {
-    display: none !important;
-  }
+  position: relative;
 }
 
 #toggle--open-full-content {

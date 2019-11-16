@@ -6,6 +6,14 @@ import { markdownSlug } from 'components/markdown-slug.js'
 class DocHead extends React.Component {
   render() {
     const { page, seo } = this.props
+    let filterBy = []
+    if (page.post.frontmatter.type === 'Components') {
+      filterBy = ['Extensions']
+    } else if (page.post.frontmatter.type === 'Extensions') {
+      filterBy = ['Themes']
+    } else if (page.post.frontmatter.type === 'Theme') {
+      filterBy = ['Components', 'Extensions']
+    }
     const postsAdiacentFiltered = page.postsAdiacent.posts.filter(x => !x.post.frontmatter.demos)
     return (
       <div>
@@ -20,47 +28,68 @@ class DocHead extends React.Component {
         {page.post.frontmatter.parent ? (
           <nav className="gatsby_site_article_links">
             <div className="list">
-              {page.post.frontmatter.parent === page.post.frontmatter.title ? (
-                <div>
-                  <Link to={kebabCase(page.post.frontmatter.type)} className="btn gatsby_btn--site_article_links">
-                    <span className="icon-xt-chevron-left icon--small icon--left"></span>
-                    {page.post.frontmatter.type}
-                  </Link>
-                </div>
-              ) : (
-                page.postsAdiacent.posts.map(({ post: adiacent }, i) => {
-                  if (page.post.frontmatter.parent === adiacent.frontmatter.title) {
-                    return (
-                      <div key={i}>
-                        <Link to={markdownSlug(adiacent)} className="btn gatsby_btn--site_article_links">
-                          <span className="icon-xt-chevron-left icon--small icon--left"></span>
-                          {adiacent.frontmatter.title}
-                        </Link>
-                      </div>
-                    )
-                  }
-                })
-              )}
-
-              {page.post.frontmatter.type !== 'Themes'
-                ? postsAdiacentFiltered.map(({ post: adiacent }, i) => {
-                    if (postsAdiacentFiltered.length > 0 && markdownSlug(adiacent) === markdownSlug(page.post)) {
-                      let index = i + 1
-                      index = index >= postsAdiacentFiltered.length ? 0 : index
-                      const nextAdiacent = postsAdiacentFiltered[index].post
-                      if (nextAdiacent.frontmatter.parent !== nextAdiacent.frontmatter.title) {
+              <div>
+                <div className="list">
+                  {page.post.frontmatter.parent === page.post.frontmatter.title ? (
+                    <Link to={kebabCase(page.post.frontmatter.type)} className="btn gatsby_btn--site_article_links">
+                      <span className="icon-xt-chevron-left icon--small icon--left"></span>
+                      {page.post.frontmatter.type}
+                    </Link>
+                  ) : (
+                    page.postsAdiacent.posts.map(({ post: adiacent }, i) => {
+                      if (page.post.frontmatter.parent === adiacent.frontmatter.title) {
                         return (
-                          <div key={index}>
-                            <Link to={markdownSlug(nextAdiacent)} className="btn gatsby_btn--site_article_links btn--right">
-                              {nextAdiacent.frontmatter.title}
-                              <span className="icon-xt-chevron-right icon--small icon--right"></span>
+                          <div key={i}>
+                            <Link to={markdownSlug(adiacent)} className="btn gatsby_btn--site_article_links">
+                              <span className="icon-xt-chevron-left icon--small icon--left"></span>
+                              {adiacent.frontmatter.title}
                             </Link>
                           </div>
                         )
                       }
-                    }
-                  })
-                : null}
+                    })
+                  )}
+
+                  {page.post.frontmatter.type !== 'Themes'
+                    ? postsAdiacentFiltered.map(({ post: adiacent }, i) => {
+                        if (postsAdiacentFiltered.length > 0 && markdownSlug(adiacent) === markdownSlug(page.post)) {
+                          let index = i + 1
+                          index = index >= postsAdiacentFiltered.length ? 0 : index
+                          const nextAdiacent = postsAdiacentFiltered[index].post
+                          if (nextAdiacent.frontmatter.parent !== nextAdiacent.frontmatter.title) {
+                            return (
+                              <div key={index}>
+                                <Link to={markdownSlug(nextAdiacent)} className="btn gatsby_btn--site_article_links btn--right">
+                                  {nextAdiacent.frontmatter.title}
+                                  <span className="icon-xt-chevron-right icon--small icon--right"></span>
+                                </Link>
+                              </div>
+                            )
+                          }
+                        }
+                      })
+                    : null}
+                </div>
+              </div>
+
+              <div>
+                {page.post.frontmatter.type !== page.post.frontmatter.title
+                  ? filterBy.map((filter, i) => {
+                      const filteredPosts = page.postsAll.posts.filter(
+                        x => x.post.frontmatter.type === filter && x.post.frontmatter.parent === page.post.frontmatter.parent
+                      )
+                      if (filteredPosts.length > 1) {
+                        return (
+                          <div key={i}>
+                            <Link to={kebabCase(filter) + '/' + kebabCase(page.post.frontmatter.parent)} className="btn gatsby_btn--site_article_links">
+                              {filteredPosts.length - 1} <strong>{filter}</strong> for <strong>{page.post.frontmatter.parent}</strong>
+                            </Link>
+                          </div>
+                        )
+                      }
+                    })
+                  : null}
+              </div>
             </div>
           </nav>
         ) : null}
