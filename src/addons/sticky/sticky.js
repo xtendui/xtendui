@@ -30,7 +30,7 @@ class Sticky extends Xt.Toggle {
     for (const el of self.elements) {
       let container = el.closest('.xt-container')
       if (!container) {
-        container = Xt.createElement('<div class="xt-container xt-fixed--check"></div>')
+        container = Xt.createElement('<div class="xt-container xt-fixed-check"></div>')
         el.before(container)
         el.classList.add('xt-ignore', 'xt-ignore--once') // @FIX ignore once for mount when moving
         container.append(el)

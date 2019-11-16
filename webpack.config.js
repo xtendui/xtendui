@@ -10,7 +10,9 @@ module.exports = {
   performance: { hints: false },
   context: path.resolve(__dirname, ''),
   entry: {
-    'dist/xtend': ['./dist/xtend.js', './dist/xtend.less'],
+    'dist/xtend-core': ['./dist/xtend-core.js', './dist/xtend-core.less'],
+    'dist/xtend-core-addons': ['./dist/xtend-core-addons.js', './dist/xtend-core-addons.less'],
+    'dist/xtend-core-addons-extensions': ['./dist/xtend-core-addons-extensions.js', './dist/xtend-core-addons-extensions.less'],
   },
   output: {
     filename: '[name].min.js',
