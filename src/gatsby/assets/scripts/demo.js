@@ -130,6 +130,7 @@ const populateBlock = function() {
 const populateDemo = function(container, i) {
   const items = container.querySelectorAll('.gatsby_demo_item')
   const demos = document.querySelectorAll('.gatsby_demo')
+  const listingToggles = document.querySelectorAll('[data-gatsby-listing-toggle]')
   // multiple elements
   container.prepend(Xt.createElement('<div class="gatsby_demo_tabs"><div class="gatsby_demo_tabs_left"></div><div class="gatsby_demo_tabs_right"></div></div>'))
   container
@@ -250,9 +251,19 @@ const populateDemo = function(container, i) {
   new Xt.Toggle(container.querySelector('.btn--show-code'), {
     targets: '#' + demoId + ' .gatsby_demo_code',
   })
+  // hide navigation if not needed
+  let count
+  if (!listingToggles.length) {
+    count = document.querySelectorAll('.gatsby_demo').length
+  } else {
+    count = listingToggles.length
+  }
+  if (count < 2) {
+    container.querySelector('.btn--prev-demo').classList.add('display-none')
+    container.querySelector('.btn--next-demo').classList.add('display-none')
+  }
   // .btn--prev-demo
   container.querySelector('.btn--prev-demo').addEventListener('click', function() {
-    const listingToggles = document.querySelectorAll('[data-gatsby-listing-toggle]')
     const self = Xt.get('xt-toggle', container)
     if (!listingToggles.length) {
       if (self.currentIndex > 0) {
@@ -290,7 +301,6 @@ const populateDemo = function(container, i) {
   })
   // .btn--next-demo
   container.querySelector('.btn--next-demo').addEventListener('click', function() {
-    const listingToggles = document.querySelectorAll('[data-gatsby-listing-toggle]')
     const self = Xt.get('xt-toggle', container)
     if (!listingToggles.length) {
       if (self.currentIndex < self.getGroups().length - 1) {
