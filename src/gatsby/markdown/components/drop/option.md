@@ -1,6 +1,6 @@
 ---
 type: "Components"
-core: true
+badge: "Core"
 parent: "Drop"
 title: "Option"
 date: "2000-02-01"
@@ -20,7 +20,7 @@ Classes for assigning variant (e.g.: border / background / font colors).
 </div>
 
 <demo>
-  <demovanilla src="vanilla/core/drop/variant">
+  <demovanilla src="vanilla/components/drop/variant">
   </demovanilla>
 </demo>
 
@@ -35,6 +35,6 @@ Classes for assigning position.
 
         
 <demo>
-  <demovanilla src="vanilla/core/drop/position">
+  <demovanilla src="vanilla/components/drop/position">
   </demovanilla>
 </demo>

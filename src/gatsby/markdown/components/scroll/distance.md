@@ -1,7 +1,7 @@
 ---
 
 type: "Components"
-core: false
+badge: "Addons"
 parent: "Scroll"
 title: "Distance"
 ---

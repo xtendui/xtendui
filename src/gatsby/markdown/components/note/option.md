@@ -1,6 +1,6 @@
 ---
 type: "Components"
-core: true
+badge: "Core"
 parent: "Note"
 title: "Option"
 date: "2000-02-01"
@@ -20,7 +20,7 @@ Classes for assigning variant (e.g.: border / background / font colors).
 </div>
 
 <demo>
-  <demovanilla src="vanilla/core/note/variant">
+  <demovanilla src="vanilla/components/note/variant">
   </demovanilla>
 </demo>
 
@@ -38,7 +38,7 @@ Classes for assigning size (e.g.: padding or font size).
 </div>
 
 <demo>
-  <demovanilla src="vanilla/core/note/size">
+  <demovanilla src="vanilla/components/note/size">
   </demovanilla>
 </demo>
 
@@ -47,6 +47,6 @@ Classes for assigning size (e.g.: padding or font size).
 Use `.note-list` to make a list block inside contents.
 
 <demo>
-  <demovanilla src="vanilla/core/note/block">
+  <demovanilla src="vanilla/components/note/block">
   </demovanilla>
 </demo>

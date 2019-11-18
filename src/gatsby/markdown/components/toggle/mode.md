@@ -1,6 +1,6 @@
 ---
 type: "Components"
-core: true
+badge: "Core"
 parent: "Toggle"
 title: "Mode"
 date: "2000-01-01"
@@ -11,7 +11,7 @@ date: "2000-01-01"
 You can make an html element toggle itself.
 
 <demo>
-  <demovanilla src="vanilla/core/toggle/mode-self">
+  <demovanilla src="vanilla/components/toggle/mode-self">
   </demovanilla>
 </demo>
 
@@ -33,9 +33,9 @@ With multiple mode, the **targets** activated are the ones with the same index o
 Use `:scope` when using descendant selector on root (e.g. `:scope > *`).
 
 <demo>
-  <demovanilla src="vanilla/core/toggle/mode-default">
+  <demovanilla src="vanilla/components/toggle/mode-default">
   </demovanilla>
-  <demovanilla src="vanilla/core/toggle/mode-custom">
+  <demovanilla src="vanilla/components/toggle/mode-custom">
   </demovanilla>
 </demo>
 
@@ -47,8 +47,8 @@ The **unique** mode is useful when triggering **targets outside the scope** of t
 | To activate **unique mode** you **need** to specify targets with **#id**.
 
 <demo>
-  <demovanilla src="vanilla/core/toggle/mode-single">
+  <demovanilla src="vanilla/components/toggle/mode-single">
   </demovanilla>
-  <demovanilla src="vanilla/core/toggle/mode-same">
+  <demovanilla src="vanilla/components/toggle/mode-same">
   </demovanilla>
 </demo>

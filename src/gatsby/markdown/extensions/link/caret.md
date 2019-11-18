@@ -1,5 +1,6 @@
 ---
 type: "Extensions"
+badge: "Extensions"
 parent: "Link"
 title: "Caret"
 ---

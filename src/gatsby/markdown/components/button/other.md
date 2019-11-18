@@ -1,6 +1,6 @@
 ---
 type: "Components"
-core: true
+badge: "Core"
 parent: "Button"
 title: "Other"
 date: "2000-10-01"

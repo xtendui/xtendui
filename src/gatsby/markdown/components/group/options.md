@@ -1,6 +1,6 @@
 ---
 type: "Components"
-core: true
+badge: "Core"
 parent: "Group"
 title: "Options"
 date: "2000-02-01"
@@ -23,12 +23,12 @@ Classes for assigning variant (e.g.: border / background / font colors).
 </div>
 
 <demo>
-  <demovanilla src="vanilla/core/group/options-variant-line">
+  <demovanilla src="vanilla/components/group/options-variant-line">
   </demovanilla>
 </demo>
 
 <demo>
-  <demovanilla src="vanilla/core/group/options-variant-stack">
+  <demovanilla src="vanilla/components/group/options-variant-stack">
   </demovanilla>
 </demo>
 
@@ -37,11 +37,11 @@ Classes for assigning variant (e.g.: border / background / font colors).
 Space group elements with list's options.
 
 <demo>
-  <demovanilla src="vanilla/core/group/options-list-line">
+  <demovanilla src="vanilla/components/group/options-list-line">
   </demovanilla>
 </demo>
 
 <demo>
-  <demovanilla src="vanilla/core/group/options-list-stack">
+  <demovanilla src="vanilla/components/group/options-list-stack">
   </demovanilla>
 </demo>

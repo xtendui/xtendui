@@ -1,6 +1,6 @@
 ---
 type: "Components"
-core: true
+badge: "Core"
 parent: "Form"
 title: "Group"
 date: "2000-03-01"
@@ -48,11 +48,11 @@ Classes for assigning size (e.g.: padding or font size).
 </div>
 
 <demo>
-  <demovanilla src="vanilla/core/form/group-small">
+  <demovanilla src="vanilla/components/form/group-small">
   </demovanilla>
-  <demovanilla src="vanilla/core/form/group-medium">
+  <demovanilla src="vanilla/components/form/group-medium">
   </demovanilla>
-  <demovanilla src="vanilla/core/form/group-big">
+  <demovanilla src="vanilla/components/form/group-big">
   </demovanilla>
 </demo>
 
@@ -61,14 +61,14 @@ Classes for assigning size (e.g.: padding or font size).
 There are several form group options to change the form layout. They aren't just less classes to apply, but they need major markup formatting.
 
 <demo>
-  <demovanilla src="vanilla/core/form/special-none">
+  <demovanilla src="vanilla/components/form/special-none">
   </demovanilla>
-  <demovanilla src="vanilla/core/form/special-row">
+  <demovanilla src="vanilla/components/form/special-row">
   </demovanilla>
-  <demovanilla src="vanilla/core/form/special-horizontal">
+  <demovanilla src="vanilla/components/form/special-horizontal">
   </demovanilla>
-  <demovanilla src="vanilla/core/form/special-inline-input" name="inline input">
+  <demovanilla src="vanilla/components/form/special-inline-input" name="inline input">
   </demovanilla>
-  <demovanilla src="vanilla/core/form/special-inline">
+  <demovanilla src="vanilla/components/form/special-inline">
   </demovanilla>
 </demo>

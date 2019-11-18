@@ -1,7 +1,7 @@
 ---
 
 type: "Components"
-core: false
+badge: "Addons"
 parent: "Sticky"
 title: "Show and Hide"
 ---

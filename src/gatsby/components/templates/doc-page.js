@@ -137,6 +137,7 @@ export const query = graphql`
       htmlAst
       frontmatter {
         type
+        badge
         parent
         title
         description
@@ -207,6 +208,7 @@ Template.propTypes = {
       htmlAst: PropTypes.object.isRequired,
       frontmatter: PropTypes.shape({
         type: PropTypes.string.isRequired,
+        badge: PropTypes.string.isRequired,
         parent: PropTypes.string,
         title: PropTypes.string.isRequired,
         description: PropTypes.string,

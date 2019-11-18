@@ -1,6 +1,6 @@
 ---
 type: "Components"
-core: true
+badge: "Core"
 parent: "Group"
 title: "Group"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
@@ -38,7 +38,7 @@ Use this markup to create a **button group as line**.
 </script>
 
 <demo>
-  <demovanilla src="vanilla/core/group/button-line">
+  <demovanilla src="vanilla/components/group/button-line">
   </demovanilla>
 </demo>
 
@@ -60,7 +60,7 @@ Use this markup to create a button group as stack.
 </script>
 
 <demo>
-  <demovanilla src="vanilla/core/group/button-stack">
+  <demovanilla src="vanilla/components/group/button-stack">
   </demovanilla>
 </demo>
 
@@ -83,7 +83,7 @@ Use this markup to create a input group as line.
 </script>
 
 <demo>
-  <demovanilla src="vanilla/core/group/input-line">
+  <demovanilla src="vanilla/components/group/input-line">
   </demovanilla>
 </demo>
 
@@ -107,6 +107,6 @@ Use this markup to create a input group as stack.
 </script>
 
 <demo>
-  <demovanilla src="vanilla/core/group/input-stack">
+  <demovanilla src="vanilla/components/group/input-stack">
   </demovanilla>
 </demo>

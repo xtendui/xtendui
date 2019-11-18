@@ -1,6 +1,6 @@
 ---
 type: "Components"
-core: true
+badge: "Core"
 parent: "Overlay"
 title: "Option"
 date: "2000-02-01"
@@ -23,7 +23,7 @@ Classes for assigning variant (e.g.: border / background / font colors).
 </div>
 
 <demo>
-  <demovanilla src="vanilla/core/overlay/variant">
+  <demovanilla src="vanilla/components/overlay/variant">
   </demovanilla>
 </demo>
 
@@ -41,6 +41,6 @@ Classes for assigning width.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/core/overlay/size">
+  <demovanilla src="vanilla/components/overlay/size">
   </demovanilla>
 </demo>

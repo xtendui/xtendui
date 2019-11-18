@@ -1,6 +1,6 @@
 ---
 type: "Components"
-core: false
+badge: "Addons"
 parent: "Ajax"
 title: "Ajax"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."

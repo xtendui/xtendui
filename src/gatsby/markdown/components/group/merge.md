@@ -1,6 +1,6 @@
 ---
 type: "Components"
-core: true
+badge: "Core"
 parent: "Group"
 title: "Merge"
 date: "2000-05-01"
@@ -34,7 +34,7 @@ Use this markup to merge multiple `.btn` in one `[button]` as line.
 </script>
 
 <demo>
-  <demovanilla src="vanilla/core/group/merge-line">
+  <demovanilla src="vanilla/components/group/merge-line">
   </demovanilla>
 </demo>
 
@@ -56,6 +56,6 @@ Use this markup to merge multiple `.btn` in one `[button]` as stack.
 </script>
 
 <demo>
-  <demovanilla src="vanilla/core/group/merge-stack">
+  <demovanilla src="vanilla/components/group/merge-stack">
   </demovanilla>
 </demo>

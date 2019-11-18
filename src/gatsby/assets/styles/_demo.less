@@ -93,8 +93,8 @@ pre {
       transition-property: opacity, transform;
       transition-duration: @time-medium;
       transition-timing-function: @bez-in;
-      transition-delay: 150ms; // @start + @child * @increment
-      .nth-child(@child: 3, @start: 0ms, @increment: 50ms, @decrement: 0ms, {
+      transition-delay: 0ms; // @start + @child * @increment
+      .nth-child(@child: 3, @start: 150ms, @increment: 0ms, @decrement: 50ms, {
         @transition-delay();
       });
     }
@@ -130,8 +130,19 @@ pre {
       }
     }
   }
+  .btn--prev-demo, .btn--next-demo {
+    display: none;
+  }
   #toggle--open-full & {
     border: 0 !important;
+    .btn--prev-demo, .btn--next-demo {
+      display: block;
+    }
+    @media @max-sm {
+      .btn--prev-demo, .btn--next-demo {
+        display: none;
+      }
+    }
     .gatsby_demo_tabs_right {
       > * {
         opacity: 1 !important;

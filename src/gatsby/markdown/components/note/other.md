@@ -1,6 +1,6 @@
 ---
 type: "Components"
-core: true
+badge: "Core"
 parent: "Note"
 title: "Other"
 date: "2000-10-01"
@@ -11,7 +11,7 @@ date: "2000-10-01"
 Example of muted note with `.muted` @TODO link.
 
 <demo>
-  <demovanilla src="vanilla/core/note/muted">
+  <demovanilla src="vanilla/components/note/muted">
   </demovanilla>
 </demo>
 
@@ -20,6 +20,6 @@ Example of muted note with `.muted` @TODO link.
 Usage of `.btn--close` @TODO link.
 
 <demo>
-  <demovanilla src="vanilla/core/note/close-background">
+  <demovanilla src="vanilla/components/note/close-background">
   </demovanilla>
 </demo>

@@ -1,6 +1,6 @@
 ---
 type: "Components"
-core: true
+badge: "Core"
 parent: "Link"
 title: "Other"
 date: "2000-10-01"
@@ -12,7 +12,7 @@ On links or buttons use `.link-underline` or `.link-none` to add or remove `text
   underline;`.
 
 <demo>
-  <demovanilla src="vanilla/core/link/link">
+  <demovanilla src="vanilla/components/link/link">
   </demovanilla>
 </demo>
 
@@ -21,6 +21,6 @@ On links or buttons use `.link-underline` or `.link-none` to add or remove `text
 Links under `.text-inverse` are styled accordingly.
 
 <demo>
-  <demovanilla src="vanilla/core/link/inverse">
+  <demovanilla src="vanilla/components/link/inverse">
   </demovanilla>
 </demo>

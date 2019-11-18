@@ -1,6 +1,6 @@
 ---
 type: "Components"
-core: true
+badge: "Core"
 parent: "Row"
 title: "Content"
 date: "2000-04-01"
@@ -11,11 +11,11 @@ date: "2000-04-01"
 You can use list to space childrens like [list](/core/list/content) does. But the childrens are spaced with **padding** instead of **margin**.
 
 <demo>
-  <demovanilla src="vanilla/core/row/anything-row">
+  <demovanilla src="vanilla/components/row/anything-row">
   </demovanilla>
-  <demovanilla src="vanilla/core/row/anything-column">
+  <demovanilla src="vanilla/components/row/anything-column">
   </demovanilla>
-  <demovanilla src="vanilla/core/row/anything-nested">
+  <demovanilla src="vanilla/components/row/anything-nested">
   </demovanilla>
 </demo>
 

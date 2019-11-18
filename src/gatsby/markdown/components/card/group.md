@@ -1,6 +1,6 @@
 ---
 type: "Components"
-core: true
+badge: "Core"
 parent: "Card"
 title: "Option"
 date: "2000-02-01"
@@ -22,7 +22,7 @@ You can use card's presets outside the normal scope, for example to style a card
 </div>
 
 <demo>
-  <demovanilla src="vanilla/core/card/preset">
+  <demovanilla src="vanilla/components/card/preset">
   </demovanilla>
 </demo>
 
@@ -40,7 +40,7 @@ Classes for assigning variant (e.g.: border / background / font colors).
 </div>
 
 <demo>
-  <demovanilla src="vanilla/core/card/variant">
+  <demovanilla src="vanilla/components/card/variant">
   </demovanilla>
 </demo>
 
@@ -58,6 +58,6 @@ Classes for assigning size (e.g.: padding or font size).
 </div>
 
 <demo>
-  <demovanilla src="vanilla/core/card/size">
+  <demovanilla src="vanilla/components/card/size">
   </demovanilla>
 </demo>

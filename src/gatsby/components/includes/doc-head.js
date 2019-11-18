@@ -5,21 +5,24 @@ import { markdownSlug } from 'components/snippets/markdown-slug.js'
 
 class DocHead extends React.Component {
   render() {
-    const { page, seo } = this.props
+    const { page } = this.props
     const postsAdiacentFiltered = page.postsAdiacent.posts.filter(x => !x.post.frontmatter.demos)
     return (
       <div>
         <header className="gatsby_site_article_hero">
-          <h1>
-            {page.post.frontmatter.parent && page.post.frontmatter.parent !== page.post.frontmatter.title
-              ? page.post.frontmatter.parent + ' ' + seo.title
-              : seo.title}
-          </h1>
-          {page.post.frontmatter.parent && page.post.frontmatter.parent !== page.post.frontmatter.title ? (
-            <p>{page.post.frontmatter.parent + ' ' + seo.title}</p>
-          ) : (
-            <p>{seo.description}</p>
-          )}
+          <div className="gatsby_site_article_hero_content">
+            <h1>
+              {page.post.frontmatter.parent && page.post.frontmatter.parent !== page.post.frontmatter.title ? (
+                <span>
+                  {page.post.frontmatter.title} <em>{page.post.frontmatter.parent}</em>
+                </span>
+              ) : (
+                <span>{page.post.frontmatter.title}</span>
+              )}
+              {page.post.frontmatter.badge ? <div className="badge badge--default badge--small">{page.post.frontmatter.badge}</div> : null}
+            </h1>
+            {page.post.frontmatter.description ? <p>{page.post.frontmatter.description}</p> : null}
+          </div>
           {page.post.frontmatter.parent ? (
             <nav className="gatsby_site_article_hero_links">
               <div className="row">

@@ -1,6 +1,6 @@
 ---
 type: "Components"
-core: false
+badge: "Addons"
 parent: "Loader"
 title: "Filler"
 ---

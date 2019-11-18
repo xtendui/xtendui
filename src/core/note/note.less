@@ -8,7 +8,6 @@
   .font-sans--semibold();
   line-height: 1.4;
   .note-title {
-    .spacing-small();
     .font-sans--semibold();
     line-height: 1.2;
     letter-spacing: 0;
@@ -28,8 +27,8 @@
     color: @text;
   }
   &.note--background {
-    border-color: @gray-100;
-    background: @gray-100;
+    border-color: @gray-200;
+    background: @gray-200;
     color: @text;
   }
 }
@@ -79,7 +78,7 @@
 // size
 
 .note--small {
-  .margin(y, small);
+  .margin(y, medium);
   .margin(y, layout);
   .font--small();
   &.note--background {
@@ -89,6 +88,7 @@
     .list-space(small);
   }
   .note-title {
+    .spacing-tiny();
     font-size: 1.7rem;
   }
   .note-icon {
@@ -107,6 +107,7 @@
     .list-space(medium);
   }
   .note-title {
+    .spacing-small();
     font-size: 2rem;
   }
   .note-icon {
@@ -115,7 +116,7 @@
 }
 
 .note--big {
-  .margin(y, big);
+  .margin(y, medium);
   .margin(y, layout);
   .font--big();
   &.note--background {
@@ -125,6 +126,7 @@
     .list-space(big);
   }
   .note-title {
+    .spacing-small();
     font-size: 3rem;
   }
   .note-icon {
@@ -136,12 +138,10 @@
 
 .note--background {
   border-radius: .5em;
-  border-width: 0;
+  border-width: 1px;
   border-style: solid;
   border-color: transparent;
 }
-
-// special
 
 .note--squared {
   border-radius: 0;

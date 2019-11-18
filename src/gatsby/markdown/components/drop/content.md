@@ -1,6 +1,6 @@
 ---
 type: "Components"
-core: true
+badge: "Core"
 parent: "Drop"
 title: "Content"
 date: "2000-04-01"
@@ -12,7 +12,7 @@ date: "2000-04-01"
 | Drop uses card to style it's content, refer to [card's content](/core/card/content) for a complete **API**.
 
 <demo>
-  <demovanilla src="vanilla/core/drop/usage-card">
+  <demovanilla src="vanilla/components/drop/usage-card">
   </demovanilla>
 </demo>
 
@@ -24,7 +24,7 @@ date: "2000-04-01"
 Use `li.custom` to override styles applied by `.list.list--drop`.
 
 <demo>
-  <demovanilla src="vanilla/core/drop/usage-list">
+  <demovanilla src="vanilla/components/drop/usage-list">
   </demovanilla>
 </demo>
 
@@ -33,6 +33,6 @@ Use `li.custom` to override styles applied by `.list.list--drop`.
 You can set vertical overflow using `.drop--overflow-y` in `.drop`.
 
 <demo>
-  <demovanilla src="vanilla/core/drop/overflow-y">
+  <demovanilla src="vanilla/components/drop/overflow-y">
   </demovanilla>
 </demo>

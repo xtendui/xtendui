@@ -1,6 +1,6 @@
 ---
 type: "Components"
-core: true
+badge: "Core"
 parent: "Form"
 title: "Other"
 ---
@@ -10,7 +10,7 @@ title: "Other"
 You can use `legend`.
 
 <demo>
-  <demovanilla src="vanilla/core/form/legend">
+  <demovanilla src="vanilla/components/form/legend">
   </demovanilla>
 </demo>
 
@@ -19,7 +19,7 @@ You can use `legend`.
 You can use `fieldset`.
 
 <demo>
-  <demovanilla src="vanilla/core/form/fieldset">
+  <demovanilla src="vanilla/components/form/fieldset">
   </demovanilla>
 </demo>
 
@@ -28,6 +28,6 @@ You can use `fieldset`.
 Use `.form-note` to make a form note.
 
 <demo>
-  <demovanilla src="vanilla/core/form/text">
+  <demovanilla src="vanilla/components/form/text">
   </demovanilla>
 </demo>

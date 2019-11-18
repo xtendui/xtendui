@@ -1,7 +1,7 @@
 ---
 
 type: "Components"
-core: false
+badge: "Addons"
 parent: "Scroll"
 title: "Scroll"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."

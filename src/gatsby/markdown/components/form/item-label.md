@@ -1,6 +1,6 @@
 ---
 type: "Components"
-core: true
+badge: "Core"
 parent: "Form"
 title: "Item and Label"
 date: "2000-04-01"
@@ -20,7 +20,7 @@ Use this markup to create a **form label** and **form item**.
 </script>
 
 <demo>
-  <demovanilla src="vanilla/core/form/item-label" name="item and label">
+  <demovanilla src="vanilla/components/form/item-label" name="item and label">
   </demovanilla>
 </demo>
 
@@ -67,8 +67,8 @@ Classes for assigning variant (e.g.: border / background / font colors).
 </div>
 
 <demo>
-  <demovanilla src="vanilla/core/form/variant-default">
+  <demovanilla src="vanilla/components/form/variant-default">
   </demovanilla>
-  <demovanilla src="vanilla/core/form/variant-inverse">
+  <demovanilla src="vanilla/components/form/variant-inverse">
   </demovanilla>
 </demo>

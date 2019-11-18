@@ -1,6 +1,6 @@
 ---
 type: "Components"
-core: true
+badge: "Core"
 parent: "Card"
 title: "Card"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
@@ -43,6 +43,6 @@ Use this markup to create a **card**.
 You can make interactive cards with `button.card` or `a.card`.
 
 <demo>
-  <demovanilla src="vanilla/core/card/usage">
+  <demovanilla src="vanilla/components/card/usage">
   </demovanilla>
 </demo>

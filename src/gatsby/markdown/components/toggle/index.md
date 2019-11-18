@@ -1,6 +1,6 @@
 ---
 type: "Components"
-core: true
+badge: "Core"
 parent: "Toggle"
 title: "Toggle"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
@@ -65,6 +65,6 @@ new Xt.Toggle(document.querySelector('.my-toggle'), {
 You can animate with javascript instead of css, just use [toggle events](/core/toggle/@TODO) and remember to set `durationOn: Milliseconds` and `durationOff: Milliseconds`.
 
 <demo>
-  <demovanilla src="vanilla/core/toggle/javascript">
+  <demovanilla src="vanilla/components/toggle/javascript">
   </demovanilla>
 </demo>

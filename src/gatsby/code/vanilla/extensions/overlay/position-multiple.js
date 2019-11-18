@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list--default list-space--small align-items--center demo-source-from">
+<div class="list list--default list-space--small align-items-center demo-source-from">
   <div data-xt-overlay>
     <button type="button" class="btn btn--primary">
       position multiple

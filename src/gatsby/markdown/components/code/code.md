@@ -1,6 +1,6 @@
 ---
 type: "Components"
-core: false
+badge: "Addons"
 parent: "Code"
 title: "Code"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
