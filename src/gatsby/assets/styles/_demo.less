@@ -83,8 +83,10 @@ pre {
   transition-property: border-color;
   transition-duration: @time-medium;
   transition-timing-function: @bez-out;
-  .gatsby_demo_tabs_right {
+  .gatsby_demo_tabs {
     overflow: hidden;
+  }
+  .gatsby_demo_tabs_right {
     > * {
       opacity: 0;
       transform: translateY(1.5rem);
@@ -116,6 +118,15 @@ pre {
         &:active, &.active {
           border-color: @gray-300 !important;
         }
+      }
+    }
+  }
+  @media (hover: none) {
+    .gatsby_demo_tabs_right {
+      > * {
+        opacity: 1 !important;
+        .transform-none() !important;
+        .transition-none() !important;
       }
     }
   }
@@ -209,6 +220,9 @@ pre {
       .list--default();
       .list-space(micro);
     }
+    .gatsby_demo_tabs_right {
+      flex-wrap: nowrap;
+    }
     .padding(y, 7px);
     .padding(x, small);
     .btn {
@@ -282,26 +296,27 @@ table {
 }
 
 #toggle--open-full {
+  position: fixed;
+  z-index: @index-overlay;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: @white;
   @media @min-md {
-    // disable
-    position: static;
-    z-index: initial;
-    top: auto;
-    left: auto;
-    bottom: auto;
-    right: auto;
-    width: auto;
-    height: auto;
-    > .backdrop {
-      display: none !important;
-    }
+    margin-left: @gatsby_site_article_sidebar_width;
   }
   .btn-close {
     .btn--primary();
     .btn--squared();
     font-size: 15px;
   }
-  position: relative;
+  .gatsby_demo_tabs_right {
+    padding-right: 5rem;
+  }
+  .btn--open-full {
+    display: none !important;
+  }
 }
 
 #toggle--open-full-content {
@@ -309,12 +324,6 @@ table {
   min-height: 100vh;
   pre {
     max-height: none;
-  }
-  .gatsby_demo_tabs_right {
-    padding-right: 5rem;
-  }
-  .btn--open-full {
-    display: none !important;
   }
 }
 

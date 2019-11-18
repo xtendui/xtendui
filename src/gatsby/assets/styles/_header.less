@@ -4,9 +4,7 @@
 
 // .gatsby_site_article_sidebar
 
-@gatsby_site_article_sidebar_width--md: 30rem;
-@gatsby_site_article_sidebar_width--lg: 30rem;
-@gatsby_site_article_sidebar_width--xl: 30rem;
+@gatsby_site_article_sidebar_width: 30rem;
 
 .gatsby_site_article_sidebar {
   position: fixed;
@@ -20,13 +18,7 @@
     .sticky--disable();
   }
   @media @min-md {
-    width: @gatsby_site_article_sidebar_width--md;
-  }
-  @media @min-lg {
-    width: @gatsby_site_article_sidebar_width--lg;
-  }
-  @media @min-xl {
-    width: @gatsby_site_article_sidebar_width--xl;
+    width: @gatsby_site_article_sidebar_width;
   }
   overflow-x: hidden;
   overflow-y: scroll;

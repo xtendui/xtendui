@@ -84,14 +84,6 @@ const populateBlock = function() {
       makeFullscreen(el.nextSibling)
     })
   }
-  document.querySelector('#toggle--open-full-trigger').addEventListener('on.xt', function(e) {
-    // @FIX on.xt and off.xt event bubbles
-    if (this === e.target) {
-      const inner = document.querySelector('#toggle--open-full-inner')
-      // inner
-      inner.classList.add('display-none')
-    }
-  })
   document.querySelector('#toggle--open-full-trigger').addEventListener('off.xt', function(e) {
     // @FIX on.xt and off.xt event bubbles
     if (this === e.target) {
@@ -102,8 +94,6 @@ const populateBlock = function() {
       for (const el of listingToggles) {
         el.classList.remove('active')
       }
-      // inner
-      inner.classList.remove('display-none')
       // populate source
       const container = content.querySelector('.gatsby_demo')
       if (container.dataset.isFullscreenOnly) {
@@ -139,6 +129,7 @@ const populateBlock = function() {
 
 const populateDemo = function(container, i) {
   const items = container.querySelectorAll('.gatsby_demo_item')
+  const demos = document.querySelectorAll('.gatsby_demo')
   // multiple elements
   container.prepend(Xt.createElement('<div class="gatsby_demo_tabs"><div class="gatsby_demo_tabs_left"></div><div class="gatsby_demo_tabs_right"></div></div>'))
   container
@@ -262,7 +253,6 @@ const populateDemo = function(container, i) {
   // .btn--prev-demo
   container.querySelector('.btn--prev-demo').addEventListener('click', function() {
     const listingToggles = document.querySelectorAll('[data-gatsby-listing-toggle]')
-    const demos = document.querySelectorAll('.gatsby_demo')
     const self = Xt.get('xt-toggle', container)
     if (!listingToggles.length) {
       if (self.currentIndex > 0) {
@@ -272,8 +262,17 @@ const populateDemo = function(container, i) {
           if (demos[i].contains(this)) {
             let prev = i - 1
             prev = prev >= 0 ? prev : demos.length - 1
-            document.scrollingElement.scrollTo(0, document.scrollingElement.scrollTop - this.closest('.gatsby_demo').offsetTop + demos[prev].offsetTop)
+            let currentOffset
+            let prevOffset = demos[prev].offsetTop
             demos[prev].querySelector('.gatsby_demo_tabs_left .btn:last-child').dispatchEvent(new CustomEvent('on.xt'))
+            if (document.querySelector('#toggle--open-full-trigger').classList.contains('active')) {
+              currentOffset = document.querySelector('[data-xt-origin="toggle--open-full-content"]').offsetTop
+              document.querySelector('#toggle--open-full-trigger').dispatchEvent(new CustomEvent('off.xt'))
+              makeFullscreen(demos[prev].closest('.gatsby_demo'))
+            } else {
+              currentOffset = this.closest('.gatsby_demo').offsetTop
+            }
+            document.scrollingElement.scrollTo(0, document.scrollingElement.scrollTop - currentOffset + prevOffset)
           }
         }
       }
@@ -292,7 +291,6 @@ const populateDemo = function(container, i) {
   // .btn--next-demo
   container.querySelector('.btn--next-demo').addEventListener('click', function() {
     const listingToggles = document.querySelectorAll('[data-gatsby-listing-toggle]')
-    const demos = document.querySelectorAll('.gatsby_demo')
     const self = Xt.get('xt-toggle', container)
     if (!listingToggles.length) {
       if (self.currentIndex < self.getGroups().length - 1) {
@@ -302,8 +300,17 @@ const populateDemo = function(container, i) {
           if (demos[i].contains(this)) {
             let next = i + 1
             next = next < demos.length ? next : 0
-            document.scrollingElement.scrollTo(0, document.scrollingElement.scrollTop - this.closest('.gatsby_demo').offsetTop + demos[next].offsetTop)
+            let currentOffset
+            let nextOffset = demos[next].offsetTop
             demos[next].querySelector('.gatsby_demo_tabs_left .btn:first-child').dispatchEvent(new CustomEvent('on.xt'))
+            if (document.querySelector('#toggle--open-full-trigger').classList.contains('active')) {
+              currentOffset = document.querySelector('[data-xt-origin="toggle--open-full-content"]').offsetTop
+              document.querySelector('#toggle--open-full-trigger').dispatchEvent(new CustomEvent('off.xt'))
+              makeFullscreen(demos[next].closest('.gatsby_demo'))
+            } else {
+              currentOffset = this.closest('.gatsby_demo').offsetTop
+            }
+            document.scrollingElement.scrollTo(0, document.scrollingElement.scrollTop - currentOffset + nextOffset)
           }
         }
       }
