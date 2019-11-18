@@ -1650,8 +1650,9 @@ class Toggle {
           }
         }
       }
-      // listener dispatch
+      // @FIX loop when listening and triggering from outside
       if (!obj[type].event || obj[type].event.type !== 'on.xt') {
+        // listener dispatch
         el.dispatchEvent(new CustomEvent('on.xt', { bubbles: true, detail: obj[type].detail }))
       }
     } else if (actionCurrent === 'Off') {
@@ -1668,8 +1669,9 @@ class Toggle {
       if (type === 'targets' || type === 'targetsInner') {
         self.specialClose(actionCurrent, el)
       }
-      // listener dispatch
+      // @FIX loop when listening and triggering from outside
       if (!obj[type].event || obj[type].event.type !== 'off.xt') {
+        // listener dispatch
         el.dispatchEvent(new CustomEvent('off.xt', { bubbles: true, detail: obj[type].detail }))
       }
     }

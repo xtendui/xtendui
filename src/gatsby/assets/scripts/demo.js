@@ -262,9 +262,21 @@ const populateDemo = function(container, i) {
   // .btn--prev-demo
   container.querySelector('.btn--prev-demo').addEventListener('click', function() {
     const listingToggles = document.querySelectorAll('[data-gatsby-listing-toggle]')
+    const demos = document.querySelectorAll('.gatsby_demo')
     const self = Xt.get('xt-toggle', container)
-    if (!listingToggles.length || self.currentIndex < self.getGroups().length - 1) {
-      self.goToPrev()
+    if (!listingToggles.length) {
+      if (self.currentIndex > 0) {
+        self.goToPrev()
+      } else {
+        for (let i = 0; i < demos.length; i++) {
+          if (demos[i].contains(this)) {
+            let prev = i - 1
+            prev = prev >= 0 ? prev : demos.length - 1
+            document.scrollingElement.scrollTo(0, document.scrollingElement.scrollTop - this.closest('.gatsby_demo').offsetTop + demos[prev].offsetTop)
+            demos[prev].querySelector('.gatsby_demo_tabs_left .btn:last-child').dispatchEvent(new CustomEvent('on.xt'))
+          }
+        }
+      }
     } else {
       for (let i = 0; i < listingToggles.length; i++) {
         if (listingToggles[i].classList.contains('active')) {
@@ -280,9 +292,21 @@ const populateDemo = function(container, i) {
   // .btn--next-demo
   container.querySelector('.btn--next-demo').addEventListener('click', function() {
     const listingToggles = document.querySelectorAll('[data-gatsby-listing-toggle]')
+    const demos = document.querySelectorAll('.gatsby_demo')
     const self = Xt.get('xt-toggle', container)
-    if (!listingToggles.length || self.currentIndex < self.getGroups().length - 1) {
-      self.goToNext()
+    if (!listingToggles.length) {
+      if (self.currentIndex < self.getGroups().length - 1) {
+        self.goToNext()
+      } else {
+        for (let i = 0; i < demos.length; i++) {
+          if (demos[i].contains(this)) {
+            let next = i + 1
+            next = next < demos.length ? next : 0
+            document.scrollingElement.scrollTo(0, document.scrollingElement.scrollTop - this.closest('.gatsby_demo').offsetTop + demos[next].offsetTop)
+            demos[next].querySelector('.gatsby_demo_tabs_left .btn:first-child').dispatchEvent(new CustomEvent('on.xt'))
+          }
+        }
+      }
     } else {
       for (let i = 0; i < listingToggles.length; i++) {
         if (listingToggles[i].classList.contains('active')) {

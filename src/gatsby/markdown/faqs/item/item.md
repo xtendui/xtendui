@@ -1,7 +1,7 @@
 ---
 type: "Faqs"
-parent: "Test"
-title: "Item"
+parent: "Item"
+title: "Item test"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 demos: [
   "vanilla/demos/test/vanilla",
