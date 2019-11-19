@@ -31,7 +31,7 @@ class DemoReact extends React.Component {
           }
         `}
         render={data => (
-          <div className="gatsby_demo_item gatsby_demo_preview" data-name={name || demo.name.split('-').pop()} data-inline={src}>
+          <div className="gatsby_demo_item gatsby_demo_preview" data-name={name || demo.name.split('-').join(' ')} data-inline={src}>
             {children}
             <script type="text/plain">
               <demo.Component></demo.Component>

@@ -170,7 +170,7 @@ const populateDemo = function(container, i) {
         .split('/')
         .pop()
         .split('-')
-        .pop()
+        .join(' ')
     }
     name = item.getAttribute('data-name') ? item.getAttribute('data-name') : name
     if (!name) {
