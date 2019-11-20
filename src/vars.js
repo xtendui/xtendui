@@ -43,15 +43,6 @@ gsap.registerEase('easePenguinInOut', function(progress) {
 })
 
 //
-// optionsGlobal
-//
-
-Xt.optionsGlobal['xt-slider'] = {
-  wheel: {},
-  drag: {},
-}
-
-//
 // vars
 //
 
@@ -73,6 +64,15 @@ const vars = {
   easePenguinOut: 'easePenguinOut',
   easePenguinInOut: 'easePenguinInOut',
   easeLinear: 'linear',
+}
+
+//
+// optionsGlobal
+//
+
+Xt.optionsGlobal['xt-slider'] = {
+  wheel: {},
+  drag: {},
 }
 
 //
