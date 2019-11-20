@@ -7,11 +7,6 @@ import gsap from 'gsap'
 Xt.mount.push({
   matches: '.demo--test-iframe',
   mount: function(object) {
-    // vars
-
-    const timeHide = Xt.vars.timeSmall
-    const easeLinear = Xt.vars.easeLinear
-
     // init
 
     let self = new Xt.Slider(object, {
@@ -27,11 +22,11 @@ Xt.mount.push({
       // on slider
       const spinner = self.object.querySelectorAll('.spinner svg:nth-child(1) circle')
       const timeline = gsap.timeline({ overwrite: false })
-      timeline.to(spinner, { duration: timeHide / 1000, strokeDashoffset: 628, ease: easeLinear, autoRound: false })
+      timeline.to(spinner, { duration: Xt.vars.timeSmall, strokeDashoffset: 628, ease: Xt.vars.easeLinear, autoRound: false })
       timeline.to(spinner, {
-        duration: self.options.auto.time / 1000 - timeHide / 1000,
+        duration: self.options.auto.time - Xt.vars.timeSmall,
         strokeDashoffset: 0,
-        ease: easeLinear,
+        ease: Xt.vars.easeLinear,
         autoRound: false,
       })
       // on elements
@@ -40,7 +35,7 @@ Xt.mount.push({
         const fillers = element.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
           gsap.set(filler, { height: 0, top: '100%' })
-          gsap.to(filler, { duration: self.options.auto.time / 1000, height: '100%', top: 0, ease: easeLinear })
+          gsap.to(filler, { duration: self.options.auto.time, height: '100%', top: 0, ease: Xt.vars.easeLinear })
         }
       }
       // on targets
@@ -49,7 +44,7 @@ Xt.mount.push({
         const fillers = target.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
           gsap.set(filler, { width: 0, left: 0 })
-          gsap.to(filler, { duration: self.options.auto.time / 1000, width: '100%', left: 0, ease: easeLinear })
+          gsap.to(filler, { duration: self.options.auto.time, width: '100%', left: 0, ease: Xt.vars.easeLinear })
         }
       }
     }
@@ -60,7 +55,7 @@ Xt.mount.push({
       for (const element of elements) {
         const fillers = element.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
-          gsap.to(filler, { duration: timeHide / 1000, height: 0, top: 0, ease: easeLinear })
+          gsap.to(filler, { duration: Xt.vars.timeSmall, height: 0, top: 0, ease: Xt.vars.easeLinear })
         }
       }
       // on targets
@@ -68,7 +63,7 @@ Xt.mount.push({
       for (const target of targets) {
         const fillers = target.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
-          gsap.to(filler, { duration: timeHide / 1000, width: 0, left: '100%', ease: easeLinear })
+          gsap.to(filler, { duration: Xt.vars.timeSmall, width: 0, left: '100%', ease: Xt.vars.easeLinear })
         }
       }
     }
@@ -76,13 +71,13 @@ Xt.mount.push({
     const eventAutoPause = function() {
       // on slider
       const spinner = self.object.querySelectorAll('.spinner svg:nth-child(1) circle')
-      gsap.to(spinner, { duration: timeHide / 1000, strokeDashoffset: 628, ease: easeLinear, autoRound: false })
+      gsap.to(spinner, { duration: Xt.vars.timeSmall, strokeDashoffset: 628, ease: Xt.vars.easeLinear, autoRound: false })
       // on elements
       const elements = self.elements.filter(x => self.hasCurrent(x))
       for (const element of elements) {
         const fillers = element.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
-          gsap.to(filler, { duration: timeHide / 1000, height: 0, top: '100%', ease: easeLinear })
+          gsap.to(filler, { duration: Xt.vars.timeSmall, height: 0, top: '100%', ease: Xt.vars.easeLinear })
         }
       }
       // on targets
@@ -90,7 +85,7 @@ Xt.mount.push({
       for (const target of targets) {
         const fillers = target.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
-          gsap.to(filler, { duration: timeHide / 1000, width: 0, left: 0, ease: easeLinear })
+          gsap.to(filler, { duration: Xt.vars.timeSmall, width: 0, left: 0, ease: Xt.vars.easeLinear })
         }
       }
     }

@@ -6,19 +6,11 @@ import gsap from 'gsap'
 Xt.mount.push({
   matches: '.demo--slider--toggle-js',
   mount: function(object) {
-    // vars
-
-    const time = Xt.vars.timeBig
-    const timeMask = Xt.vars.timeBig
-    const timeContent = Xt.vars.timeBig
-    const sizeContent = 100
-    const easeOut = Xt.vars.easeOut
-
     // init
 
     let self = new Xt.Slider(object, {
-      durationOn: time,
-      durationOff: time,
+      durationOn: Xt.vars.timeMedium,
+      durationOff: Xt.vars.timeMedium,
       instant: false,
     })
 
@@ -38,7 +30,7 @@ Xt.mount.push({
       // content
       const contents = target.querySelectorAll('.card-item > *')
       for (const content of contents) {
-        gsap.set(content, { translateX: sizeContent * ratio * direction, opacity: 1 })
+        gsap.set(content, { translateX: 100 * ratio * direction, opacity: 1 })
       }
     }
 
@@ -46,13 +38,13 @@ Xt.mount.push({
       const target = self.targets.filter(x => self.hasCurrent(x))[0]
       // mask
       gsap.set(target, { translateX: -self.detail.xPosOld + 'px' })
-      gsap.to(target, { duration: timeMask / 1000, translateX: 0, opacity: 1, ease: easeOut })
+      gsap.to(target, { duration: Xt.vars.timeMedium, translateX: 0, opacity: 1, ease: Xt.vars.easeOut })
       gsap.set(self.dragger, { translateX: self.detail.xPosOld })
-      gsap.to(self.dragger, { duration: timeMask / 1000, translateX: 0, ease: easeOut })
+      gsap.to(self.dragger, { duration: Xt.vars.timeMedium, translateX: 0, ease: Xt.vars.easeOut })
       // content
       const contents = target.querySelectorAll('.card-item > *')
       for (const content of contents) {
-        gsap.to(content, { duration: timeContent / 1000, translateX: 0, opacity: 1, ease: easeOut })
+        gsap.to(content, { duration: Xt.vars.timeMedium, translateX: 0, opacity: 1, ease: Xt.vars.easeOut })
       }
     }
 
@@ -73,26 +65,26 @@ Xt.mount.push({
         }
         if (self.initial) {
           // mask
-          gsap.set(tr, { translateX: 0, opacity: 1, ease: easeOut })
-          gsap.set(self.dragger, { translateX: 0, ease: easeOut })
+          gsap.set(tr, { translateX: 0, opacity: 1, ease: Xt.vars.easeOut })
+          gsap.set(self.dragger, { translateX: 0, ease: Xt.vars.easeOut })
           // content
           const contents = tr.querySelectorAll('.card-item > *')
           for (const content of contents) {
-            gsap.set(content, { translateX: 0, opacity: 1, ease: easeOut })
+            gsap.set(content, { translateX: 0, opacity: 1, ease: Xt.vars.easeOut })
           }
         } else {
           // setup
           gsap.set(tr, { opacity: 0 })
           // mask
           gsap.set(tr, { translateX: -xMax * direction })
-          gsap.to(tr, { duration: timeMask / 1000, translateX: 0, opacity: 1, ease: easeOut })
+          gsap.to(tr, { duration: Xt.vars.timeMedium, translateX: 0, opacity: 1, ease: Xt.vars.easeOut })
           gsap.set(self.dragger, { translateX: xMax * direction })
-          gsap.to(self.dragger, { duration: timeMask / 1000, translateX: 0, ease: easeOut })
+          gsap.to(self.dragger, { duration: Xt.vars.timeMedium, translateX: 0, ease: Xt.vars.easeOut })
           // content
           const contents = tr.querySelectorAll('.card-item > *')
           for (const content of contents) {
-            gsap.set(content, { translateX: sizeContent * direction, opacity: 0 })
-            gsap.to(content, { duration: timeContent / 1000, translateX: 0, opacity: 1, ease: easeOut })
+            gsap.set(content, { translateX: 100 * direction, opacity: 0 })
+            gsap.to(content, { duration: Xt.vars.timeMedium, translateX: 0, opacity: 1, ease: Xt.vars.easeOut })
           }
         }
       }
@@ -109,12 +101,12 @@ Xt.mount.push({
           direction = -1
         }
         // mask
-        gsap.to(tr, { duration: timeMask / 1000, translateX: xMax * direction, opacity: 0, ease: easeOut })
-        gsap.to(self.dragger, { duration: timeMask / 1000, translateX: -xMax * direction, ease: easeOut })
+        gsap.to(tr, { duration: Xt.vars.timeMedium, translateX: xMax * direction, opacity: 0, ease: Xt.vars.easeOut })
+        gsap.to(self.dragger, { duration: Xt.vars.timeMedium, translateX: -xMax * direction, ease: Xt.vars.easeOut })
         // content
         const contents = tr.querySelectorAll('.card-item > *')
         for (const content of contents) {
-          gsap.to(content, { duration: timeContent / 1000, translateX: -sizeContent * direction, opacity: 0, ease: easeOut })
+          gsap.to(content, { duration: Xt.vars.timeMedium, translateX: -100 * direction, opacity: 0, ease: Xt.vars.easeOut })
         }
       }
     }

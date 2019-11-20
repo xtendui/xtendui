@@ -5,12 +5,7 @@ import gsap from 'gsap'
 Xt.mount.push({
   matches: '.demo--loader--js-spinner',
   mount: function(object) {
-    // vars
-
-    const time = Xt.vars.timeGiant
-    const easeLinear = Xt.vars.easeLinear
-
-    // timeout
+    // init
 
     function loaderTimeout() {
       const spinner = object.querySelectorAll('.spinner svg:nth-child(1) circle')
@@ -19,8 +14,8 @@ Xt.mount.push({
         object.classList.add('active')
         object.classList.remove('out')
         gsap.set(spinner, { strokeDashoffset: 628 })
-        gsap.to(spinner, { duration: time / 1000, strokeDashoffset: 0, ease: easeLinear, autoRound: false })
-        setTimeout(loaderTimeout, time)
+        gsap.to(spinner, { duration: Xt.vars.timeGiant, strokeDashoffset: 0, ease: Xt.vars.easeLinear, autoRound: false })
+        setTimeout(loaderTimeout, Xt.vars.timeGiant)
       } else {
         object.classList.remove('active')
         object.classList.add('out')

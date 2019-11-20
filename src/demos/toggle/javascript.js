@@ -6,21 +6,11 @@ import gsap from 'gsap'
 Xt.mount.push({
   matches: '.demo--toggle-js',
   mount: function(object) {
-    // vars
-
-    const time = Xt.vars.timeBig
-    const delay = 0
-    const size = 15
-    const easeIn = Xt.vars.easeIn
-    const easeOut = Xt.vars.easeOut
-
     // init
 
     let self = new Xt.Toggle(object, {
-      durationOn: time,
-      durationOff: time,
-      delayOn: delay,
-      delayOff: delay,
+      durationOn: Xt.vars.timeBig,
+      durationOff: Xt.vars.timeBig,
     })
 
     // activation
@@ -31,11 +21,11 @@ Xt.mount.push({
       if (target === e.target) {
         gsap.set(target, { opacity: 0 })
         if (!target.classList.contains('inverse')) {
-          gsap.set(target, { translateX: -size })
+          gsap.set(target, { translateX: -15 })
         } else {
-          gsap.set(target, { translateX: size })
+          gsap.set(target, { translateX: 15 })
         }
-        gsap.to(target, { duration: time / 1000, translateX: 0, opacity: 1, ease: easeIn })
+        gsap.to(target, { duration: Xt.vars.timeBig, translateX: 0, opacity: 1, ease: Xt.vars.easeIn })
       }
     }
 
@@ -44,9 +34,9 @@ Xt.mount.push({
       // @FIX on.xt and off.xt event bubbles
       if (target === e.target) {
         if (!target.classList.contains('inverse')) {
-          gsap.to(target, { duration: time / 1000, translateX: size, opacity: 0, ease: easeOut })
+          gsap.to(target, { duration: Xt.vars.timeBig, translateX: 15, opacity: 0, ease: Xt.vars.easeOut })
         } else {
-          gsap.to(target, { duration: time / 1000, translateX: -size, opacity: 0, ease: easeOut })
+          gsap.to(target, { duration: Xt.vars.timeBig, translateX: -15, opacity: 0, ease: Xt.vars.easeOut })
         }
       }
     }

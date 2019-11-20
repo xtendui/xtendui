@@ -6,11 +6,6 @@ import gsap from 'gsap'
 Xt.mount.push({
   matches: '.demo--toggle-progress',
   mount: function(object) {
-    // vars
-
-    const timeHide = Xt.vars.timeSmall
-    const easeLinear = Xt.vars.easeLinear
-
     // init
 
     let self = new Xt.Toggle(object, {
@@ -28,8 +23,8 @@ Xt.mount.push({
       for (const element of elements) {
         const fillers = element.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
-          gsap.set(filler, { height: 0, top: '100%', ease: easeLinear })
-          gsap.to(filler, { duration: self.options.auto.time / 1000, height: '100%', top: 0, ease: easeLinear })
+          gsap.set(filler, { height: 0, top: '100%', ease: Xt.vars.easeLinear })
+          gsap.to(filler, { duration: self.options.auto.time, height: '100%', top: 0, ease: Xt.vars.easeLinear })
         }
       }
       // on targets
@@ -37,8 +32,8 @@ Xt.mount.push({
       for (const target of targets) {
         const fillers = target.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
-          gsap.set(filler, { width: 0, left: 0, ease: easeLinear })
-          gsap.to(filler, { duration: self.options.auto.time / 1000, width: '100%', left: 0, ease: easeLinear })
+          gsap.set(filler, { width: 0, left: 0, ease: Xt.vars.easeLinear })
+          gsap.to(filler, { duration: self.options.auto.time, width: '100%', left: 0, ease: Xt.vars.easeLinear })
         }
       }
     }
@@ -49,7 +44,7 @@ Xt.mount.push({
       for (const element of elements) {
         const fillers = element.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
-          gsap.to(filler, { duration: timeHide / 1000, height: 0, top: 0, ease: easeLinear })
+          gsap.to(filler, { duration: Xt.vars.timeSmall, height: 0, top: 0, ease: Xt.vars.easeLinear })
         }
       }
       // on targets
@@ -57,7 +52,7 @@ Xt.mount.push({
       for (const target of targets) {
         const fillers = target.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
-          gsap.to(filler, { duration: timeHide / 1000, width: 0, left: '100%', ease: easeLinear })
+          gsap.to(filler, { duration: Xt.vars.timeSmall, width: 0, left: '100%', ease: Xt.vars.easeLinear })
         }
       }
     }
@@ -68,7 +63,7 @@ Xt.mount.push({
       for (const element of elements) {
         const fillers = element.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
-          gsap.to(filler, { duration: timeHide / 1000, height: 0, top: '100%', ease: easeLinear })
+          gsap.to(filler, { duration: Xt.vars.timeSmall, height: 0, top: '100%', ease: Xt.vars.easeLinear })
         }
       }
       // on targets
@@ -76,7 +71,7 @@ Xt.mount.push({
       for (const target of targets) {
         const fillers = target.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
-          gsap.to(filler, { duration: timeHide / 1000, width: 0, left: 0, ease: easeLinear })
+          gsap.to(filler, { duration: Xt.vars.timeSmall, width: 0, left: 0, ease: Xt.vars.easeLinear })
         }
       }
     }

@@ -6,6 +6,8 @@ import BezierEasing from 'bezier-easing'
 // gsap
 //
 
+gsap.globalTimeline.timeScale(1000)
+
 gsap.defaults({
   overwrite: 'auto',
 })
