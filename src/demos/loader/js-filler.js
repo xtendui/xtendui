@@ -1,10 +1,6 @@
 import { Xt } from 'xtend-library'
 import 'xtend-library/src/vars.js'
-import { TweenMax } from 'gsap/TweenMax'
-
-/**
- * .demo--loader--js-filler
- */
+import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '.demo--loader--js-filler',
@@ -21,8 +17,8 @@ Xt.mount.push({
       if (object.dataset.loaderActive === 'true') {
         object.classList.add('active')
         object.classList.remove('out')
-        TweenMax.set(filler, { width: 0 })
-        TweenMax.to(filler, time / 1000, { width: '100%', ease: easeLinear })
+        gsap.set(filler, { width: 0 })
+        gsap.to(filler, { duration: time / 1000, width: '100%', ease: easeLinear })
         setTimeout(loaderTimeout, time)
       } else {
         object.classList.remove('active')

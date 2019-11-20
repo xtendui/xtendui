@@ -1,7 +1,3 @@
-/**
- * .demo--scroll-container--block
- */
-
 const scrollContainerBlock = document.querySelectorAll('.demo--scroll-container--block > *')
 
 if (scrollContainerBlock.length) {

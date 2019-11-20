@@ -1,10 +1,6 @@
 import { Xt } from 'xtend-library'
 import 'xtend-library/src/vars.js'
-import { TweenMax } from 'gsap/TweenMax'
-
-/**
- * .demo--loader--js-spinner
- */
+import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '.demo--loader--js-spinner',
@@ -22,8 +18,8 @@ Xt.mount.push({
       if (object.dataset.loaderActive === 'true') {
         object.classList.add('active')
         object.classList.remove('out')
-        TweenMax.set(spinner, { strokeDashoffset: 628 })
-        TweenMax.to(spinner, time / 1000, { strokeDashoffset: 0, ease: easeLinear, autoRound: false })
+        gsap.set(spinner, { strokeDashoffset: 628 })
+        gsap.to(spinner, { duration: time / 1000, strokeDashoffset: 0, ease: easeLinear, autoRound: false })
         setTimeout(loaderTimeout, time)
       } else {
         object.classList.remove('active')

@@ -1,7 +1,7 @@
 import { Xt } from 'xtend-library'
 import 'xtend-library/src/vars.js'
 import 'xtend-library/src/addons/slider/slider.js'
-import { TweenMax } from 'gsap/TweenMax'
+import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '.demo--slider--toggle-js',
@@ -33,26 +33,26 @@ Xt.mount.push({
         direction = -1
       }
       // mask
-      TweenMax.set(target, { x: -self.detail.xPos + 'px', opacity: 1 })
-      TweenMax.set(self.dragger, { x: self.detail.xPos })
+      gsap.set(target, { translateX: -self.detail.xPos + 'px', opacity: 1 })
+      gsap.set(self.dragger, { translateX: self.detail.xPos })
       // content
       const contents = target.querySelectorAll('.card-item > *')
       for (const content of contents) {
-        TweenMax.set(content, { x: sizeContent * ratio * direction, opacity: 1 })
+        gsap.set(content, { translateX: sizeContent * ratio * direction, opacity: 1 })
       }
     }
 
     const eventDragReset = function() {
       const target = self.targets.filter(x => self.hasCurrent(x))[0]
       // mask
-      TweenMax.set(target, { x: -self.detail.xPosOld + 'px' })
-      TweenMax.to(target, timeMask / 1000, { x: 0, opacity: 1, ease: easeOut })
-      TweenMax.set(self.dragger, { x: self.detail.xPosOld })
-      TweenMax.to(self.dragger, timeMask / 1000, { x: 0, ease: easeOut })
+      gsap.set(target, { translateX: -self.detail.xPosOld + 'px' })
+      gsap.to(target, { duration: timeMask / 1000, translateX: 0, opacity: 1, ease: easeOut })
+      gsap.set(self.dragger, { translateX: self.detail.xPosOld })
+      gsap.to(self.dragger, { duration: timeMask / 1000, translateX: 0, ease: easeOut })
       // content
       const contents = target.querySelectorAll('.card-item > *')
       for (const content of contents) {
-        TweenMax.to(content, timeContent / 1000, { x: 0, opacity: 1, ease: easeOut })
+        gsap.to(content, { duration: timeContent / 1000, translateX: 0, opacity: 1, ease: easeOut })
       }
     }
 
@@ -73,26 +73,26 @@ Xt.mount.push({
         }
         if (self.initial) {
           // mask
-          TweenMax.set(tr, { x: 0, opacity: 1, ease: easeOut })
-          TweenMax.set(self.dragger, { x: 0, ease: easeOut })
+          gsap.set(tr, { translateX: 0, opacity: 1, ease: easeOut })
+          gsap.set(self.dragger, { translateX: 0, ease: easeOut })
           // content
           const contents = tr.querySelectorAll('.card-item > *')
           for (const content of contents) {
-            TweenMax.set(content, { x: 0, opacity: 1, ease: easeOut })
+            gsap.set(content, { translateX: 0, opacity: 1, ease: easeOut })
           }
         } else {
           // setup
-          TweenMax.set(tr, { opacity: 0 })
+          gsap.set(tr, { opacity: 0 })
           // mask
-          TweenMax.set(tr, { x: -xMax * direction })
-          TweenMax.to(tr, timeMask / 1000, { x: 0, opacity: 1, ease: easeOut })
-          TweenMax.set(self.dragger, { x: xMax * direction })
-          TweenMax.to(self.dragger, timeMask / 1000, { x: 0, ease: easeOut })
+          gsap.set(tr, { translateX: -xMax * direction })
+          gsap.to(tr, { duration: timeMask / 1000, translateX: 0, opacity: 1, ease: easeOut })
+          gsap.set(self.dragger, { translateX: xMax * direction })
+          gsap.to(self.dragger, { duration: timeMask / 1000, translateX: 0, ease: easeOut })
           // content
           const contents = tr.querySelectorAll('.card-item > *')
           for (const content of contents) {
-            TweenMax.set(content, { x: sizeContent * direction, opacity: 0 })
-            TweenMax.to(content, timeContent / 1000, { x: 0, opacity: 1, ease: easeOut })
+            gsap.set(content, { translateX: sizeContent * direction, opacity: 0 })
+            gsap.to(content, { duration: timeContent / 1000, translateX: 0, opacity: 1, ease: easeOut })
           }
         }
       }
@@ -109,12 +109,12 @@ Xt.mount.push({
           direction = -1
         }
         // mask
-        TweenMax.to(tr, timeMask / 1000, { x: xMax * direction, opacity: 0, ease: easeOut })
-        TweenMax.to(self.dragger, timeMask / 1000, { x: -xMax * direction, ease: easeOut })
+        gsap.to(tr, { duration: timeMask / 1000, translateX: xMax * direction, opacity: 0, ease: easeOut })
+        gsap.to(self.dragger, { duration: timeMask / 1000, translateX: -xMax * direction, ease: easeOut })
         // content
         const contents = tr.querySelectorAll('.card-item > *')
         for (const content of contents) {
-          TweenMax.to(content, timeContent / 1000, { x: -sizeContent * direction, opacity: 0, ease: easeOut })
+          gsap.to(content, { duration: timeContent / 1000, translateX: -sizeContent * direction, opacity: 0, ease: easeOut })
         }
       }
     }

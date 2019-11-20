@@ -1,10 +1,6 @@
 import { Xt } from 'xtend-library'
 import 'xtend-library/src/addons/scroll/scroll.js'
-import { TweenMax } from 'gsap/TweenMax'
-
-/**
- * .demo--parallax-title
- */
+import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '.demo--parallax-title',
@@ -20,8 +16,8 @@ Xt.mount.push({
 
     const eventChange = function() {
       const el = this
-      TweenMax.set(el, { transformOrigin: 'left center' })
-      TweenMax.set(el, { opacity: self.detail.ratioInverse, scale: 0.9 + 0.1 * self.detail.ratioInverse })
+      gsap.set(el, { transformOrigin: 'left center' })
+      gsap.set(el, { opacity: self.detail.ratioInverse, scale: 0.9 + 0.1 * self.detail.ratioInverse })
     }
 
     for (const el of self.elements) {
@@ -39,10 +35,6 @@ Xt.mount.push({
     }
   },
 })
-
-/**
- * .demo--parallax-img
- */
 
 Xt.mount.push({
   matches: '.demo--parallax-img',
@@ -58,7 +50,7 @@ Xt.mount.push({
 
     const eventChange = function() {
       const el = this
-      TweenMax.set(el, { y: 100 * self.detail.ratio, opacity: self.detail.ratioInverse })
+      gsap.set(el, { translateY: 100 * self.detail.ratio, opacity: self.detail.ratioInverse })
     }
 
     for (const el of self.elements) {
@@ -77,10 +69,6 @@ Xt.mount.push({
   },
 })
 
-/**
- * .demo--parallax-footer
- */
-
 Xt.mount.push({
   matches: '.demo--parallax-footer',
   mount: function(object) {
@@ -95,7 +83,7 @@ Xt.mount.push({
 
     const eventChange = function() {
       const el = this
-      TweenMax.set(el, { opacity: self.detail.ratio, scale: 0.9 + 0.1 * self.detail.ratio })
+      gsap.set(el, { opacity: self.detail.ratio, scale: 0.9 + 0.1 * self.detail.ratio })
     }
 
     for (const el of self.elements) {

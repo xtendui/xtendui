@@ -1,9 +1,5 @@
 import { Xt } from 'xtend-library'
 
-/**
- * #demo--toggle-restart
- */
-
 Xt.mount.push({
   matches: '#demo--toggle-restart',
   mount: function(object) {

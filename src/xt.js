@@ -959,12 +959,13 @@ if (typeof window !== 'undefined') {
   Xt.animCss(object, ['backgroundColor', 'borderColor', 'boxShadow'])
   // event
   const animCss = Xt.animCss(object, ['backgroundColor', 'borderColor', 'boxShadow'])
-  TweenMax.set(object, {
+  gsap.set(object, {
     backgroundColor: animCss.backgroundColor.current,
     borderColor: animCss.borderColor.current,
     boxShadow: animCss.boxShadow.current
   })
-  TweenMax.to(object, 1, {
+  gsap.to(object, {
+    duration: 1,
     backgroundColor: animCss.backgroundColor.final,
     borderColor: animCss.borderColor.final,
     boxShadow: animCss.boxShadow.final,

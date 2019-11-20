@@ -54,16 +54,14 @@ $ npm install bezier-easing
 ```
 
 ```
-import 'gsap/TweenMax';
-import 'gsap/ScrollToPlugin';
+import gsap from 'gsap'
 import 'bezier-easing';
 ```
 
 With cdn include [cdn](https://cdnjs.com/libraries/gsap) and [bezier-easing](https://www.jsdelivr.com/package/npm/bezier-easing):
 
 ```
-<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/plugins/ScrollToPlugin.min.js"></script>
+@TODO gsap 3 cdn
 <script src="//cdn.jsdelivr.net/npm/bezier-easing@2.1.0/dist/bezier-easing.min.js"></script>
 ```
 

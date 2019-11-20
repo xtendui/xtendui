@@ -1,6 +1,53 @@
 import { Xt } from 'xtend-library'
-import { Ease, Power0 } from 'gsap/TweenMax'
+import gsap from 'gsap'
 import BezierEasing from 'bezier-easing'
+
+//
+// gsap
+//
+
+gsap.defaults({
+  overwrite: 'auto',
+})
+
+gsap.registerEase('easeCheetah', function(progress) {
+  const easing = BezierEasing(0.14, 0.63, 0, 1)
+  return easing(progress)
+})
+
+gsap.registerEase('easeTiger', function(progress) {
+  const easing = BezierEasing(0.77, 0, 0.17, 1)
+  return easing(progress)
+})
+
+gsap.registerEase('easeCat', function(progress) {
+  const easing = BezierEasing(0.77, 0, 0.17, 1)
+  return easing(progress)
+})
+
+gsap.registerEase('easePenguinIn', function(progress) {
+  const easing = BezierEasing(0.36, 0, 0, 1)
+  return easing(progress)
+})
+
+gsap.registerEase('easePenguinOut', function(progress) {
+  const easing = BezierEasing(1, 0, 0.64, 1)
+  return easing(progress)
+})
+
+gsap.registerEase('easePenguinInOut', function(progress) {
+  const easing = BezierEasing(0.68, 0.13, 0.25, 1)
+  return easing(progress)
+})
+
+//
+// optionsGlobal
+//
+
+Xt.optionsGlobal['xt-slider'] = {
+  wheel: {},
+  drag: {},
+}
 
 //
 // vars
@@ -14,25 +61,16 @@ const vars = {
   timeBig: 1000,
   timeGiant: 2000,
   // ease
-  easeIn: new Ease(BezierEasing(0.14, 0.63, 0, 1)),
-  easeOut: new Ease(BezierEasing(0.14, 0.63, 0, 1)),
-  easeInOut: new Ease(BezierEasing(0.14, 0.63, 0, 1)),
-  easeCheetah: new Ease(BezierEasing(0.14, 0.63, 0, 1)),
-  easeTiger: new Ease(BezierEasing(0.96, 0.1, 0.14, 0.88)),
-  easeCat: new Ease(BezierEasing(0.77, 0, 0.17, 1)),
-  easePenguinIn: new Ease(BezierEasing(0.36, 0, 0, 1)),
-  easePenguinOut: new Ease(BezierEasing(1, 0, 0.64, 1)),
-  easePenguinInOut: new Ease(BezierEasing(0.68, 0.13, 0.25, 1)),
-  easeLinear: Power0.easeNone,
-}
-
-//
-// optionsGlobal
-//
-
-Xt.optionsGlobal['xt-slider'] = {
-  wheel: {},
-  drag: {},
+  easeIn: 'easeCheetah',
+  easeOut: 'easeCheetah',
+  easeInOut: 'easeCheetah',
+  easeCheetah: 'easeCheetah',
+  easeTiger: 'easeTiger',
+  easeCat: 'easeCat',
+  easePenguinIn: 'easePenguinIn',
+  easePenguinOut: 'easePenguinOut',
+  easePenguinInOut: 'easePenguinInOut',
+  easeLinear: 'linear',
 }
 
 //

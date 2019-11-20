@@ -1,10 +1,6 @@
 import { Xt } from 'xtend-library'
 import 'xtend-library/src/addons/animation/mouse-follow.js'
 
-/**
- * .demo--loader--mouse-filler
- */
-
 Xt.mount.push({
   matches: '.demo--loader--mouse-filler',
   mount: function(object) {

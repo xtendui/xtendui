@@ -1,11 +1,7 @@
 import { Xt } from 'xtend-library'
 import 'xtend-library/src/vars.js'
 import 'xtend-library/src/core/toggle/toggle.js'
-import { TweenMax } from 'gsap/TweenMax'
-
-/**
- * .demo--toggle-js
- */
+import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '.demo--toggle-js',
@@ -33,13 +29,13 @@ Xt.mount.push({
       const target = this
       // @FIX on.xt and off.xt event bubbles
       if (target === e.target) {
-        TweenMax.set(target, { opacity: 0 })
+        gsap.set(target, { opacity: 0 })
         if (!target.classList.contains('inverse')) {
-          TweenMax.set(target, { x: -size })
+          gsap.set(target, { translateX: -size })
         } else {
-          TweenMax.set(target, { x: size })
+          gsap.set(target, { translateX: size })
         }
-        TweenMax.to(target, time / 1000, { x: 0, opacity: 1, ease: easeIn })
+        gsap.to(target, { duration: time / 1000, translateX: 0, opacity: 1, ease: easeIn })
       }
     }
 
@@ -48,9 +44,9 @@ Xt.mount.push({
       // @FIX on.xt and off.xt event bubbles
       if (target === e.target) {
         if (!target.classList.contains('inverse')) {
-          TweenMax.to(target, time / 1000, { x: size, opacity: 0, ease: easeOut })
+          gsap.to(target, { duration: time / 1000, translateX: size, opacity: 0, ease: easeOut })
         } else {
-          TweenMax.to(target, time / 1000, { x: -size, opacity: 0, ease: easeOut })
+          gsap.to(target, { duration: time / 1000, translateX: -size, opacity: 0, ease: easeOut })
         }
       }
     }

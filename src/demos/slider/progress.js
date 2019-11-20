@@ -2,7 +2,7 @@ import { Xt } from 'xtend-library'
 import 'xtend-library/src/vars.js'
 import 'xtend-library/src/addons/slider/slider.js'
 import 'xtend-library/src/addons/animation/mouse-follow.js'
-import { TweenMax, TimelineMax } from 'gsap/TweenMax'
+import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '.demo--slider--progress',
@@ -26,9 +26,10 @@ Xt.mount.push({
     const eventAutoStart = function() {
       // on slider
       const spinner = self.object.querySelectorAll('.spinner svg:nth-child(1) circle')
-      const timeline = new TimelineMax()
-      timeline.to(spinner, timeHide / 1000, { strokeDashoffset: 628, ease: easeLinear, autoRound: false })
-      timeline.to(spinner, self.options.auto.time / 1000 - timeHide / 1000, {
+      const timeline = gsap.timeline({ overwrite: false })
+      timeline.to(spinner, { duration: timeHide / 1000, strokeDashoffset: 628, ease: easeLinear, autoRound: false })
+      timeline.to(spinner, {
+        duration: self.options.auto.time / 1000 - timeHide / 1000,
         strokeDashoffset: 0,
         ease: easeLinear,
         autoRound: false,
@@ -38,8 +39,8 @@ Xt.mount.push({
       for (const element of elements) {
         const fillers = element.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
-          TweenMax.set(filler, { height: 0, top: '100%' })
-          TweenMax.to(filler, self.options.auto.time / 1000, { height: '100%', top: 0, ease: easeLinear })
+          gsap.set(filler, { height: 0, top: '100%' })
+          gsap.to(filler, { duration: self.options.auto.time / 1000, height: '100%', top: 0, ease: easeLinear })
         }
       }
       // on targets
@@ -47,8 +48,8 @@ Xt.mount.push({
       for (const target of targets) {
         const fillers = target.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
-          TweenMax.set(filler, { width: 0, left: 0 })
-          TweenMax.to(filler, self.options.auto.time / 1000, { width: '100%', left: 0, ease: easeLinear })
+          gsap.set(filler, { width: 0, left: 0 })
+          gsap.to(filler, { duration: self.options.auto.time / 1000, width: '100%', left: 0, ease: easeLinear })
         }
       }
     }
@@ -59,7 +60,7 @@ Xt.mount.push({
       for (const element of elements) {
         const fillers = element.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
-          TweenMax.to(filler, timeHide / 1000, { height: 0, top: 0, ease: easeLinear })
+          gsap.to(filler, { duration: timeHide / 1000, height: 0, top: 0, ease: easeLinear })
         }
       }
       // on targets
@@ -67,7 +68,7 @@ Xt.mount.push({
       for (const target of targets) {
         const fillers = target.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
-          TweenMax.to(filler, timeHide / 1000, { width: 0, left: '100%', ease: easeLinear })
+          gsap.to(filler, { duration: timeHide / 1000, width: 0, left: '100%', ease: easeLinear })
         }
       }
     }
@@ -75,13 +76,13 @@ Xt.mount.push({
     const eventAutoPause = function() {
       // on slider
       const spinner = self.object.querySelectorAll('.spinner svg:nth-child(1) circle')
-      TweenMax.to(spinner, timeHide / 1000, { strokeDashoffset: 628, ease: easeLinear, autoRound: false })
+      gsap.to(spinner, { duration: timeHide / 1000, strokeDashoffset: 628, ease: easeLinear, autoRound: false })
       // on elements
       const elements = self.elements.filter(x => self.hasCurrent(x))
       for (const element of elements) {
         const fillers = element.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
-          TweenMax.to(filler, timeHide / 1000, { height: 0, top: '100%', ease: easeLinear })
+          gsap.to(filler, { duration: timeHide / 1000, height: 0, top: '100%', ease: easeLinear })
         }
       }
       // on targets
@@ -89,7 +90,7 @@ Xt.mount.push({
       for (const target of targets) {
         const fillers = target.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
-          TweenMax.to(filler, timeHide / 1000, { width: 0, left: 0, ease: easeLinear })
+          gsap.to(filler, { duration: timeHide / 1000, width: 0, left: 0, ease: easeLinear })
         }
       }
     }
