@@ -1,3 +1,34 @@
+# [0.11.0](https://github.com/minimit/xtend-library/compare/v0.10.0...v0.11.0) (2019-11-22)
+
+
+### Bug Fixes
+
+* aria labeledby ([bb0d728](https://github.com/minimit/xtend-library/commit/bb0d728267697162d3c707683e139661c735ab3a))
+* fix demos name + refactor css classes gatsby ([ed2f24d](https://github.com/minimit/xtend-library/commit/ed2f24d628f3a116ad0b8ae8321712fd17fb47e8))
+* fix demos name + refactor css classes gatsby ([8f8ba5f](https://github.com/minimit/xtend-library/commit/8f8ba5f9a8ffa6208aee768f2eec88ea7f6f0a6e))
+* fix drop animation instant ([8a1863c](https://github.com/minimit/xtend-library/commit/8a1863c8abcb82c1713624e520b6c4faeee7a66d))
+* fix loader overflow and border-radius + various fixes slider and js animations ([f15bdbf](https://github.com/minimit/xtend-library/commit/f15bdbf541e73138b3ceb901403459f20863faa3))
+* various fixes ([71b3cbb](https://github.com/minimit/xtend-library/commit/71b3cbbfd94e3f624bc686d335a4a512f8ab2481))
+* **docs:** fix multiple initializations demos ([3cc7429](https://github.com/minimit/xtend-library/commit/3cc7429e8ef65f8e0b92c1e17272bf36cb7c8f13))
+* **js:** gsap 3 ([13a8e01](https://github.com/minimit/xtend-library/commit/13a8e01d59accca9f87183e74fef4ddd16607536))
+* **js:** revision xt vars demos ([4e44041](https://github.com/minimit/xtend-library/commit/4e44041de113c40adcb2c85e9e630314154c755f))
+* **js:** revision xt vars demos ([c7d082a](https://github.com/minimit/xtend-library/commit/c7d082a5269d55ee62c29e249ba9d4bf01733eff))
+* **slider:** fix drag wrap initial activation + no links pointer events none on active ([697fc83](https://github.com/minimit/xtend-library/commit/697fc833f73399e365703a6d4bf2360b865cc9d2))
+
+
+### Features
+
+* js vars ([d056b74](https://github.com/minimit/xtend-library/commit/d056b7474cf99df1d92f9a7134d523a865e4b9d4))
+* **card:** new features card ([4bd2306](https://github.com/minimit/xtend-library/commit/4bd230697da40f4cc52835ac2e8d75d7f6229a56))
+* **card:** WIP card component ([da7dd9a](https://github.com/minimit/xtend-library/commit/da7dd9a6c2bb2949ffce6a8efacb69c5b6fbaa66))
+* **card:** WIP card component ([4d3e7b5](https://github.com/minimit/xtend-library/commit/4d3e7b552caedaf1d19c50b46939d2b02eb7901d))
+* **card:** WIP card component ([5d84614](https://github.com/minimit/xtend-library/commit/5d846149b580bc84d0c62dfad9a635ea6211ae7c))
+* **card:** WIP card component ([ee219c8](https://github.com/minimit/xtend-library/commit/ee219c8bfdb50777ecbf3fecda47f64f41fa4773))
+* **card:** WIP card component ([146bef5](https://github.com/minimit/xtend-library/commit/146bef56ac0882fee283615760a6ec466e2bc2fa))
+* **css:** card + refactor border-radius + fixes + doc listing ([dfe9bbd](https://github.com/minimit/xtend-library/commit/dfe9bbd94655ea003fc577241c58be2eee988731))
+* reduced motion + global options ([90a3450](https://github.com/minimit/xtend-library/commit/90a345008a5e9701fe782bc75d5e76a19edd9a57))
+* **note:** added note and removed alerts ([84ae49a](https://github.com/minimit/xtend-library/commit/84ae49af1d8f969fb1b18471700a333ae8845ae0))
+
 # [0.10.0](https://github.com/minimit/xtend-library/compare/v0.9.0...v0.10.0) (2019-10-11)
 
 
