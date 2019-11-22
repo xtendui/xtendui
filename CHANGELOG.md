@@ -1,3 +1,10 @@
+## [0.11.1](https://github.com/minimit/xtend-library/compare/v0.11.0...v0.11.1) (2019-11-22)
+
+
+### Bug Fixes
+
+* **packaging:** fix semantic release rollback ([735ea31](https://github.com/minimit/xtend-library/commit/735ea31835a7f11e655c0d4ece93bd59c6fb2eab))
+
 # [0.11.0](https://github.com/minimit/xtend-library/compare/v0.10.0...v0.11.0) (2019-11-22)
 
 
