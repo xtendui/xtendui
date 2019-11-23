@@ -1,7 +1,7 @@
 ---
 
 type: "Components"
-badge: "Addons"
+badge: "Extensions"
 parent: "Slider"
 title: "Drag"
 ---

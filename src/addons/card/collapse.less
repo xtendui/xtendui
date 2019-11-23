@@ -1,0 +1,40 @@
+@import '~xtend-library/src/addons/card/collapse-setup.less';
+
+/**
+ * card--collapse
+ */
+
+// size
+
+.card--small {
+  .card--collapse& {
+    > .card-inner > .card-content {
+      padding: 1.5rem 2rem;
+    }
+    .card-contents({
+      .list-space(small);
+    });
+  }
+}
+
+.card--medium {
+  .card--collapse& {
+    > .card-inner > .card-content {
+      padding: 2rem 2.5rem;
+    }
+    .card-contents({
+      .list-space(medium);
+    });
+  }
+}
+
+.card--big {
+  .card--collapse& {
+    > .card-inner > .card-content {
+      padding: 3rem 3.5rem;
+    }
+    .card-contents({
+      .list-space(big);
+    });
+  }
+}

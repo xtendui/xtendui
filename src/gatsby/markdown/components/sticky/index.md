@@ -1,7 +1,7 @@
 ---
 
 type: "Components"
-badge: "Addons"
+badge: "Extensions"
 parent: "Sticky"
 title: "Sticky"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."

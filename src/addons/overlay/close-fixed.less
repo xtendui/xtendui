@@ -1,0 +1,31 @@
+@import '~xtend-library/src/addons/overlay/close-fixed.less';
+
+/**
+ * overlay-close--fixed
+ */
+
+.overlay-close--fixed {
+  .btn-close {
+    top: 0;
+    right: 0;
+    .btn--primary();
+    .btn--squared();
+  }
+}
+
+// default on .overlay-screen
+
+.overlay-screen {
+  .overlay-close--fixed();
+}
+
+// default on .overlay mobile
+
+.overlay {
+  @media @max-sm {
+    .overlay-close--fixed();
+    .btn-close {
+      top: auto;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 ---
 type: "Components"
-badge: "Addons"
+badge: "Extensions"
 parent: "Animation"
 title: "Propagate Interaction"
 ---
