@@ -10,6 +10,6 @@ title: "Spinner"
 `.loader--spinner`.
 
 <demo>
-  <demovanilla src="vanilla/demos/loader/spinner">
+  <demovanilla src="vanilla/components/loader/spinner">
   </demovanilla>
 </demo>

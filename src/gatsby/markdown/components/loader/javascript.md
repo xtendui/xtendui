@@ -8,11 +8,11 @@ title: "Javascript"
 ##Javascript
 
 <demo>
-  <demovanilla src="vanilla/demos/loader/js-spinner">
+  <demovanilla src="vanilla/components/loader/js-spinner">
   </demovanilla>
 </demo>
 
 <demo>
-  <demovanilla src="vanilla/demos/loader/js-filler">
+  <demovanilla src="vanilla/components/loader/js-filler">
   </demovanilla>
 </demo>

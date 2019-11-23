@@ -83,7 +83,7 @@ let self = new Xt.Scroll(document.documentElement, {
 ###Inline
 
 <demo>
-  <demovanilla src="vanilla/demos/test/vanilla" name="test vanilla">
+  <demovanilla src="vanilla/components/test/vanilla" name="test vanilla">
     <div class="gatsby_demo_text">
       test vanilla <strong>strong</strong> <code>code</code>
     </div>
@@ -113,20 +113,20 @@ let self = new Xt.Scroll(document.documentElement, {
 ##Card
 
 <demo>
-  <demovanilla src="vanilla/demos/test/test-card-content">
+  <demovanilla src="vanilla/components/test/test-card-content">
   </demovanilla>
 </demo>
 
 ##Overlay
 
 <demo>
-  <demovanilla src="vanilla/demos/test/test-overlay-content">
+  <demovanilla src="vanilla/components/test/test-overlay-content">
   </demovanilla>
 </demo>
 
 ###Slider
 
 <demo>
-  <demovanilla src="vanilla/demos/test/test-slider-content">
+  <demovanilla src="vanilla/components/test/test-slider-content">
   </demovanilla>
 </demo>

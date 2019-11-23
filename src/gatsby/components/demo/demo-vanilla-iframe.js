@@ -13,7 +13,7 @@ class DemoVanillaIframe extends React.Component {
     const seo = {}
     seo.title = demo.name
     seo.description = 'Demo'
-    demo.type = demo.type === 'core' ? 'demos' : demo.type
+    demo.type = demo.type === 'components' ? 'demos' : demo.type
     return (
       <StaticQuery
         query={graphql`

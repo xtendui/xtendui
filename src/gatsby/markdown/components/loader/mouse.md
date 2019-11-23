@@ -10,11 +10,11 @@ title: "Mouse"
 `.loader--mouse`
 
 <demo>
-  <demovanilla src="vanilla/demos/loader/mouse-spinner">
+  <demovanilla src="vanilla/components/loader/mouse-spinner">
   </demovanilla>
 </demo>
 
 <demo>
-  <demovanilla src="vanilla/demos/loader/mouse-filler">
+  <demovanilla src="vanilla/components/loader/mouse-filler">
   </demovanilla>
 </demo>
