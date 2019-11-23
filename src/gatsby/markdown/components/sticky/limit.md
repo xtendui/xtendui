@@ -1,5 +1,3 @@
----
-
 type: "Components"
 badge: "Extensions"
 parent: "Sticky"

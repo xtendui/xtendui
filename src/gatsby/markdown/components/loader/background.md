@@ -1,5 +1,4 @@
 ---
-
 type: "Components"
 badge: "Extensions"
 parent: "Loader"

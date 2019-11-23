@@ -19,7 +19,7 @@ To use this component import the **less** and **js** files accordingly:
 import 'xtend-library/src/core/overlay/overlay.js'
 ```
 
-Or just [import core](/core/setup/#@TODO).
+Or just [import core](/components/setup/#@TODO).
 
 ##Usage
 

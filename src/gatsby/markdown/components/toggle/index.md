@@ -15,7 +15,7 @@ To use this component import the **js** files accordingly:
 import 'xtend-library/src/core/toggle/toggle.js'
 ```
 
-Or just [import core](/core/setup/#@TODO).
+Or just [import core](/components/setup/#@TODO).
 
 ##Usage
 
