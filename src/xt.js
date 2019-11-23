@@ -408,9 +408,9 @@ if (typeof window !== 'undefined') {
           // remember Xt.focus
           Xt.focus.current = document.activeElement
         }
-        if (!document.documentElement.classList.contains('xt-focus')) {
-          // html.xt-focus
-          document.documentElement.classList.add('xt-focus')
+        if (!document.documentElement.classList.contains('xt-focus-visible')) {
+          // html.xt-focus-visible
+          document.documentElement.classList.add('xt-focus-visible')
           // switch mode
           Xt.focus.off()
         }
@@ -426,9 +426,9 @@ if (typeof window !== 'undefined') {
         // remember Xt.focus
         Xt.focus.current = e.target
       }
-      if (document.documentElement.classList.contains('xt-focus')) {
-        // html.xt-focus
-        document.documentElement.classList.remove('xt-focus')
+      if (document.documentElement.classList.contains('xt-focus-visible')) {
+        // html.xt-focus-visible
+        document.documentElement.classList.remove('xt-focus-visible')
         // switch mode
         Xt.focus.on()
       }

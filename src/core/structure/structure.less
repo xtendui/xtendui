@@ -144,21 +144,20 @@ body {
  * to disable focus add html.xt-focus-disable class
  */
 
-html.xt-focus:not(.xt-focus-disable) {
-  // custom focus
+html.xt-focus-visible:not(.xt-focus-disable) {
   :focus {
     outline-color: rgb(77, 144, 254);
   }
-  // disable focus on forms
-  input, select, textarea {
+  // custom focus on forms
+  input:not([type="checkbox"]):not([type="radio"]), select, textarea {
     &:focus {
-      outline: 0;
+      outline: none;
     }
   }
   /*
-  // custom focus checkbox and radio
+  // custom focus for checkbox and radio
   input[type="checkbox"], input[type="radio"] {
-    &:focus ~ .form-label:before {
+    &:focus, &:focus ~ .form-label:before {
       outline-color: rgb(77, 144, 254);
       outline-offset: -2px;
       outline-style: auto;

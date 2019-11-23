@@ -108,9 +108,8 @@ input, select, textarea {
   }
 }
 
-html:not(.xt-focus), html.xt-focus-disable {
-  // focus disable
+html:not(.xt-focus-visible), html.xt-focus-disable {
   :focus {
-    outline: 0;
+    outline: none;
   }
 }
