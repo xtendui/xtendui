@@ -20,3 +20,25 @@ import 'xtend-library/src/core/overlay/overlay.js'
 ```
 
 Or just [import extensions](/components/setup/#@TODO).
+
+##Usage
+
+Use this markup to create a **spinner loader**.
+
+<script type="text/plain" class="language-markup">
+  <div class="loader loader--spinner">
+    <div class="spinner">
+      <svg viewBox="0 0 250 250"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"/></svg><svg viewBox="0 0 250 250" preserveAspectRatio="xMinYMin meet"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"/></svg>
+    </div>
+  </div>
+</script>
+
+Use this markup to create a **filler loader**.
+
+<script type="text/plain" class="language-markup">
+  <span class="loader loader--x">
+    <span class="filler">
+      <span></span><span></span>
+    </span>
+  </span>
+</script>

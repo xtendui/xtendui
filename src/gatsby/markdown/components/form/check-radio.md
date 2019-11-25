@@ -31,7 +31,7 @@ Use this markup to create a **unstyled** **checkbox** or **radio**.
 </script>
 
 [[noteError]]
-| Checkbox and radio must be inside [form group](/core/form/group) to have default styles.
+| Checkbox and radio must be inside [form group](/components/form/group) to have default styles.
 
 ###Modes
 
@@ -69,7 +69,7 @@ Use this markup to create a **styled** **checkbox** or **radio**.
 </script>
 
 [[noteError]]
-| Checkbox and radio must be inside [form group](/core/form/group) to have default styles.
+| Checkbox and radio must be inside [form group](/components/form/group) to have default styles.
 
 ###Modes
 

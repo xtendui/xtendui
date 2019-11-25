@@ -8,7 +8,7 @@ date: "2000-04-01"
 
 ##Custom
 
-As it's done with `.card-title`, you can add as many classes for content as you like inside `.card-block` and style them inside [variant](/core/card/option#variant) or [size](/core/card/option#size).
+As it's done with `.card-title`, you can add as many classes for content as you like inside `.card-block` and style them inside [variant](/components/card/option#variant) or [size](/components/card/option#size).
 
 ##Block
 
@@ -38,7 +38,7 @@ You can add custom `.card-block` modifiers and style them as you like (e.g.: `.c
 
 Sequential `.card-item` stack vertically.
 
-They have a separator automatically styled with [variants](/core/card/option#variant). Just be sure to style `.card-item--{variant}` as in the **card.less** to not break css specificity.
+They have a separator automatically styled with [variants](/components/card/option#variant). Just be sure to style `.card-item--{variant}` as in the **card.less** to not break css specificity.
 
 <script type="text/plain" class="language-markup">
   <div class="card card--default">

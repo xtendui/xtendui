@@ -58,7 +58,7 @@ You can use this markup to create an **overlay** with **no toggle**.
 ##Javascript
 
 [[noteDefault]]
-| Overlay uses toggle for logic, refer to [toggle page](/core/toggle#@TODO) for a complete **API**.
+| Overlay uses toggle for logic, refer to [toggle page](/components/toggle#@TODO) for a complete **API**.
 
 ###Initialization
 

@@ -29,11 +29,11 @@ In css you can use `.form-label({});` and `.form-items({});` to style all `.form
 If you want to customize singularly `.form-item` or `.form-label` use the class `.xt-custom`.
 
 [[noteError]]
-| Form label and item must be inside [form group](/core/form/group) to have default styles.
+| Form label and item must be inside [form group](/components/form/group) to have default styles.
 
 ##Size
 
-Size is done with **em** so it's relative to the container element. To set `.form-item` and `.form-label` size use [form group](/core/form/group#size).
+Size is done with **em** so it's relative to the container element. To set `.form-item` and `.form-label` size use [form group](/components/form/group#size).
 
 ##Variant
 

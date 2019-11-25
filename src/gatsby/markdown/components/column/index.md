@@ -19,4 +19,4 @@ Use this markup to create a **column**.
 
 Columns specify a size relative to how many columns you have in a row (**by default 12**).
 
-Columns are placed in a column/row layout using [row](/core/row).
+Columns are placed in a column/row layout using [row](/components/row).

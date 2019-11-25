@@ -6,7 +6,8 @@ title: "Other"
 date: "2000-10-01"
 ---
 
-Overlay uses card to style it's content, refer to [card page](/core/card/other) for complete card's other.
+[[noteDefault]]
+| Overlay uses card to style it's content, refer to [card's other](/components/card/other) for a complete **API**.
 
 ##Disable
 

@@ -44,7 +44,7 @@ Use this markup to create a **drop**.
 ##Javascript
 
 [[noteDefault]]
-| Drop uses toggle for logic, refer to [toggle page](/core/toggle#@TODO) for a complete **API**.
+| Drop uses toggle for logic, refer to [toggle page](/components/toggle#@TODO) for a complete **API**.
 
 ###Initialization
 

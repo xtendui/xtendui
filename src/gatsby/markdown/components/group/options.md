@@ -7,7 +7,7 @@ date: "2000-02-01"
 ---
 
 [[noteDefault]]
-| Group uses list to style it's content, refer to [list's options](/core/list/option) for a complete **API**.
+| Group uses list to style it's content, refer to [list's options](/components/list/option) for a complete **API**.
 
 ##Variant
 
