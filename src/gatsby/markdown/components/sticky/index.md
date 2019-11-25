@@ -7,6 +7,20 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 categories: ["400-Presentation"]
 ---
 
+##Setup
+
+To use this component import the **less** and **js** files accordingly:
+
+```less
+@import '~xtend-library/src/extensions/sticky/sticky.less';
+```
+
+```jsx
+import 'xtend-library/src/extensions/sticky/sticky.js'
+```
+
+Or just [import extensions](/components/setup/#@TODO).
+
 ##Usage
 
 Use this markup to create a **sticky**.
@@ -19,13 +33,29 @@ Use this markup to create a **sticky**.
   </div>
 </script>
 
-You can initialize **sticky** by javascript omitting `[data-xt-sticky]`.
+[[noteDefault]]
+| It's recomended to style and animate a inner div <code>[data-xt-xticky] > div</code> when using <strong>sticky component</strong>.
 
+##Javascript
+
+@TODO
+
+###Initialization
+
+Initialize automatically within markup with `[data-xt-sticky]`.
+
+Or initialize with javascript:
 
 ```jsx
-let self = new Xt.Sticky(document.querySelector('.my-sticky'), {
+new Xt.Sticky(document.querySelector('.my-sticky'), {
+  // options
 });
 ```
 
-[[noteDefault]]
-| It's recomended to style and animate a inner div <code>[data-xt-xticky] > div</code> when using <strong>sticky component</strong>.
+###Options
+
+@TODO tables options
+
+###Events
+
+@TODO tables events

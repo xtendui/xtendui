@@ -2,14 +2,15 @@
 type: "Components"
 badge: "Extensions"
 parent: "Scroll"
-title: "Parallax"
+title: "Other"
+date: "2000-10-01"
 ---
 
-###Delay
+##Delay
 
 Use events `'change.xt.scroll'` inside you can use the values of `self.detail.ratio` `self.detail.ratioInverse` `self.detail.ratioDouble`.
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/demos/scroll/parallax">
+  <div class="gatsby_demo_item" data-iframe="iframe/components/scroll/parallax">
   </div>
 </demo>

@@ -22,7 +22,7 @@ demo.htmlSource = `
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
-                  <div class="card-title">1</h1>
+                  <div class="card-title">1</div>
                   <button type="button" class="btn btn--default xt-ignore" data-xt-nav="-1" title="Previous slide">
                     <span class="icon-xt-chevron-left"></span>
                   </button>
@@ -45,7 +45,7 @@ demo.htmlSource = `
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
-                  <div class="card-title">2</h1>
+                  <div class="card-title">2</div>
                   <button type="button" class="btn btn--default xt-ignore" data-xt-nav="-1" title="Previous slide">
                     <span class="icon-xt-chevron-left"></span>
                   </button>
@@ -68,7 +68,7 @@ demo.htmlSource = `
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
-                  <div class="card-title">3</h1>
+                  <div class="card-title">3</div>
                   <button type="button" class="btn btn--default xt-ignore" data-xt-nav="-1" title="Previous slide">
                     <span class="icon-xt-chevron-left"></span>
                   </button>
@@ -91,7 +91,7 @@ demo.htmlSource = `
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
-                  <div class="card-title">4</h1>
+                  <div class="card-title">4</div>
                   <button type="button" class="btn btn--default xt-ignore" data-xt-nav="-1" title="Previous slide">
                     <span class="icon-xt-chevron-left"></span>
                   </button>
@@ -114,7 +114,7 @@ demo.htmlSource = `
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
-                  <div class="card-title">5</h1>
+                  <div class="card-title">5</div>
                   <button type="button" class="btn btn--default xt-ignore" data-xt-nav="-1" title="Previous slide">
                     <span class="icon-xt-chevron-left"></span>
                   </button>
@@ -138,7 +138,7 @@ demo.htmlSource = `
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
-                  <div class="card-title">6</h1>
+                  <div class="card-title">6</div>
                   <button type="button" class="btn btn--default xt-ignore" data-xt-nav="-1" title="Previous slide">
                     <span class="icon-xt-chevron-left"></span>
                   </button>

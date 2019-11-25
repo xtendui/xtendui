@@ -7,25 +7,47 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 categories: ["400-Presentation"]
 ---
 
-##Usage
+##Setup
 
-Use this markup to create a **scroll**.
+To use this component import the **less** and **js** files accordingly:
 
-<script type="text/plain" class="language-markup">
-  <div data-xt-scroll>
-    <div class="scroll">
-      <!-- content -->
-    </div>
-  </div>
-</script>
-
-You can initialize **scroll** by javascript omitting `[data-xt-scroll]`.
+```less
+@import '~xtend-library/src/extensions/scroll/scroll.less';
+```
 
 ```jsx
-let self = new Xt.Scroll(document.documentElement, {
-});
+import 'xtend-library/src/extensions/scroll/scroll.js'
 ```
+
+Or just [import extensions](/components/setup/#@TODO).
+
+##Usage
+
+@TODO
 
 [[noteDefault]]
 | It's recomended to animate the scroll elements with <code>animation</code> instead of <code>transition</code> because of <a href="{% link faq.html %}#browsers-bugs-fixed-position">this bug</a>.
 
+##Javascript
+
+@TODO
+
+###Initialization
+
+Initialize automatically within markup with `[data-xt-scroll]`.
+
+Or initialize with javascript:
+
+```jsx
+new Xt.Scroll(document.querySelector('.my-scroll'), {
+  // options
+});
+```
+
+###Options
+
+@TODO tables options
+
+###Events
+
+@TODO tables events

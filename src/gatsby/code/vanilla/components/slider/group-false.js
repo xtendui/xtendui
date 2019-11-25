@@ -22,7 +22,7 @@ demo.htmlSource = `
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
-                  <div class="card-title">1</h1>
+                  <div class="card-title">1</div>
                 </div>
               </div>
             </div>
@@ -39,7 +39,7 @@ demo.htmlSource = `
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
-                  <div class="card-title">2</h1>
+                  <div class="card-title">2</div>
                 </div>
               </div>
             </div>
@@ -56,7 +56,7 @@ demo.htmlSource = `
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
-                  <div class="card-title">3</h1>
+                  <div class="card-title">3</div>
                 </div>
               </div>
             </div>
@@ -73,7 +73,7 @@ demo.htmlSource = `
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
-                  <div class="card-title">4</h1>
+                  <div class="card-title">4</div>
                 </div>
               </div>
             </div>
@@ -91,7 +91,7 @@ demo.htmlSource = `
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
-                  <div class="card-title">5</h1>
+                  <div class="card-title">5</div>
                 </div>
               </div>
             </div>
@@ -109,7 +109,7 @@ demo.htmlSource = `
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
-                  <div class="card-title">6</h1>
+                  <div class="card-title">6</div>
                 </div>
               </div>
             </div>

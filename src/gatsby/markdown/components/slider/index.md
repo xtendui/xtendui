@@ -7,9 +7,23 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 categories: ["400-Presentation"]
 ---
 
+##Setup
+
+To use this component import the **less** and **js** files accordingly:
+
+```less
+@import '~xtend-library/src/extensions/slider/slider.less';
+```
+
+```jsx
+import 'xtend-library/src/extensions/slider/slider.js'
+```
+
+Or just [import extensions](/components/setup/#@TODO).
+
 ##Usage
 
-Use this markup to create a **drop**.
+Use this markup to create a **slider**.
 
 <script type="text/plain" class="language-markup">
   <div class="slider" data-xt-slider>
@@ -43,9 +57,26 @@ Use this markup to create a **drop**.
 [[noteDefault]]
 | `slider-pagination[data-xt-pag].xt-ignore` is essential to the functioning of the slider, so if you don't want to show it add `.display-none`.
 
-You can initialize **slider** by javascript omitting `[data-xt-slider]`.
+##Javascript
+
+@TODO
+
+###Initialization
+
+Initialize automatically within markup with `[data-xt-slider]`.
+
+Or initialize with javascript:
 
 ```jsx
-let self = new Xt.Slider(document.querySelector('.my-slider'), {
+new Xt.Slider(document.querySelector('.my-slider'), {
+  // options
 });
 ```
+
+###Options
+
+@TODO tables options
+
+###Events
+
+@TODO tables events

@@ -15,10 +15,6 @@ To use this component import the **less** and **js** files accordingly:
 @import '~xtend-library/src/extensions/loader/loader.less';
 ```
 
-```jsx
-import 'xtend-library/src/core/overlay/overlay.js'
-```
-
 Or just [import extensions](/components/setup/#@TODO).
 
 ##Usage

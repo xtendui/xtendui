@@ -7,7 +7,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 demos: [
   "vanilla/components/test/vanilla",
   "react/demos/test/react",
-  "iframe/demos/test/vanilla-iframe",
-  "iframe/demos/test/react-iframe"
+  "iframe/components/test/vanilla-iframe",
+  "iframe/components/test/react-iframe"
 ]
 ---
