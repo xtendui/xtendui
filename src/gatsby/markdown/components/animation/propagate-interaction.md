@@ -3,7 +3,6 @@ type: "Components"
 badge: "Extensions"
 parent: "Animation"
 title: "Propagate Interaction"
-badge: "Addons"
 ---
 
 ##Usage
