@@ -1,9 +1,10 @@
 import path from 'path'
 const spinner = require('components/snippets/spinner').default
 
-const dirs = path.dirname(__filename).split('/')
+const filename = __filename.replace(/\\/g, '/')
+const dirs = path.dirname(filename ).split('/')
 export const demo = {
-  name: path.basename(__filename, '.js'),
+  name: path.basename(filename, '.js'),
   component: dirs.pop(),
   type: dirs.pop(),
 }
