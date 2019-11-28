@@ -14,14 +14,14 @@
 
 .drop {
   > .drop-inner {
-    border-radius: 4px;
+    border-radius: .5em;
     > .drop-content {
       > .list, > .list-block {
         .padding(y, 1.3rem); // vertical space
         min-width: 18rem;
       }
     }
-    > .drop-design {
+    > .drop-design, > .drop-content {
       border-width: 1px;
       border-style: solid;
       border-color: transparent;
@@ -52,8 +52,8 @@
   > .drop-inner {
     .text-inverse();
     > .drop-design {
-      border-color: @gray-800;
-      background: @gray-800;
+      border-color: @accent--dark;
+      background: @accent;
       box-shadow: @shadow-dark;
     }
   }

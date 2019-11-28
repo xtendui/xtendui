@@ -21,7 +21,7 @@ date: "2000-04-01"
 [[noteDefault]]
 | Drop uses list to style it's content, refer to [list's content](/components/list/content) for a complete **API**.
 
-Use `li.custom` to override styles applied by `.list.list--drop`.
+Use `li.xt-custom` to override styles applied by `.list.list--drop`.
 
 <demo>
   <demovanilla src="vanilla/components/drop/usage-list">
