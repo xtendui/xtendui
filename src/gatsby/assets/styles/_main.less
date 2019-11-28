@@ -66,7 +66,6 @@
   position: relative;
   .container-space();
   .padding(y, giant);
-  border-bottom: 1px solid @gray-200;
   background: @gray-100;
   p {
     .font--big();
@@ -143,6 +142,9 @@
   .flex-auto();
   .container-space();
   .padding(y, giant);
+  z-index: @index-sticky + 1;
+  border-top: 1px solid @gray-200;
+  background: @white;
 }
 
 .gatsby_site_article_foot {

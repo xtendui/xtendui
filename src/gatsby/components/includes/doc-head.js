@@ -9,7 +9,7 @@ class DocHead extends React.Component {
     const postsAdiacentFiltered = page.postsAdiacent.posts.filter(x => !x.post.frontmatter.demos)
     return (
       <div>
-        <header className="gatsby_site_article_hero">
+        <header className="gatsby_site_article_hero indicator">
           <div className="gatsby_site_article_hero_content">
             <h1>
               {page.post.frontmatter.parent && page.post.frontmatter.parent !== page.post.frontmatter.title ? (

@@ -10,15 +10,6 @@ require('prism-themes/themes/prism-base16-ateliersulphurpool.light.css')
 Prism.manual = true
 
 /**
- * xt-smooth
- */
-
-/*
-require('xtend-library/src/core/smooth/smooth.js')
-new Xt.Smooth(document.scrollingElement)
-*/
-
-/**
  * formatCode
  */
 

@@ -1,4 +1,51 @@
 import { Xt } from 'xtend-library'
+import gsap from 'gsap'
+
+/**
+ * xt-smooth
+ */
+
+/*
+new Xt.Smooth(document.scrollingElement)
+*/
+
+/**
+ * xt-scroll
+ */
+
+/*
+Xt.mount.push({
+  matches: '.gatsby_site_article_hero',
+  mount: function(object) {
+    // init
+
+    let self = new Xt.Scroll(object, {
+      sticky: 'fixed',
+    })
+
+    // change
+
+    const eventChange = function() {
+      const el = this
+      gsap.set(el, { translateY: -self.detail.ratio * 200 })
+    }
+
+    for (const el of self.elements) {
+      el.addEventListener('change.xt.scroll', eventChange)
+    }
+
+    // unmount
+
+    return function unmount() {
+      for (const el of self.elements) {
+        el.removeEventListener('change.xt.scroll', eventChange)
+      }
+      self.destroy()
+      self = null
+    }
+  },
+})
+*/
 
 //
 // makeDocument
