@@ -6,10 +6,6 @@ title: "Content"
 date: "2000-04-01"
 ---
 
-##Custom
-
-As it's done with `.card-title`, you can add as many classes for content as you like inside `.card-block` and style them inside [variant](/components/card/option#variant) or [size](/components/card/option#size).
-
 ##Block
 
 You can add custom `.card-block` modifiers and style them as you like (e.g.: `.card-block--custom`).
