@@ -4,7 +4,7 @@ badge: "Core"
 parent: "Overlay"
 title: "Overlay"
 description: "Component to create modals and menus that opens over the content, activable by interactions."
-categories: ["300-Interaction"]
+categories: ["100-Core"]
 ---
 
 ##Setup

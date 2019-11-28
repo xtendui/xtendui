@@ -208,7 +208,7 @@ Template.propTypes = {
       htmlAst: PropTypes.object.isRequired,
       frontmatter: PropTypes.shape({
         type: PropTypes.string.isRequired,
-        badge: PropTypes.string.isRequired,
+        badge: PropTypes.string,
         parent: PropTypes.string,
         title: PropTypes.string.isRequired,
         description: PropTypes.string,

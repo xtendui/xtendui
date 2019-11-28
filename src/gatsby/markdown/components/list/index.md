@@ -4,7 +4,7 @@ badge: "Core"
 parent: "List"
 title: "List"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-categories: ["200-Layout"]
+categories: ["100-Core"]
 ---
 
 ##Usage

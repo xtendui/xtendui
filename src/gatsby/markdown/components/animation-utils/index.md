@@ -1,9 +1,8 @@
 ---
 type: "Components"
 badge: "Core"
-parent: "Animation"
-title: "Animation"
+parent: "Animation Utils"
+title: "Animation Utils"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-categories: ["000-General"]
-date: "2000-11-01"
+categories: ["400-Extensions"]
 ---
