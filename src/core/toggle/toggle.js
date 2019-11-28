@@ -416,14 +416,15 @@ class Toggle {
         if (!options.off) {
           el.addEventListener('off.xt', onHandler)
         }
-        // @FIX prevents click on touch until clicked two times
-        if (events.includes('mouseenter') || events.includes('mousehover')) {
-          const touchLinksStartHandler = Xt.dataStorage.put(
-            el,
-            'touchend.touchfix' + '.' + self.namespace,
-            self.eventTouchLinksStartHandler.bind(self).bind(self, el)
-          )
-          el.addEventListener('touchend', touchLinksStartHandler)
+        // @FIX prevents click links on click until clicked two times
+        const withLinkStartHandler = Xt.dataStorage.put(
+          el,
+          'touchend.touchfix' + '.' + self.namespace,
+          self.eventWithLinkStartHandler.bind(self).bind(self, el)
+        )
+        el.addEventListener('touchend', withLinkStartHandler)
+        if (!events.includes('mouseenter') && !events.includes('mousehover')) {
+          el.addEventListener('mouseup', withLinkStartHandler)
         }
       }
       // event off
@@ -679,28 +680,28 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
-  eventTouchLinksStartHandler(el, e) {
+  eventWithLinkStartHandler(el, e) {
     const self = this
-    // event touchLinks
-    const touchLinksHandler = Xt.dataStorage.put(el, 'click.touchfix' + '.' + self.namespace, self.eventTouchLinksHandler.bind(self).bind(self, el))
-    el.addEventListener('click', touchLinksHandler)
-    // event touchReset
-    const touchResetHandler = Xt.dataStorage.put(el, 'off.touchfix' + '.' + self.namespace, self.eventTouchLinksResetHandler.bind(self).bind(self, el))
-    el.addEventListener('off.xt', touchResetHandler)
+    // event link
+    const withLinkHandler = Xt.dataStorage.put(el, 'click.touchfix' + '.' + self.namespace, self.eventWithLinkHandler.bind(self).bind(self, el))
+    el.addEventListener('click', withLinkHandler)
+    // event reset
+    const withLinkResetHandler = Xt.dataStorage.put(el, 'off.touchfix' + '.' + self.namespace, self.eventWithLinkResetHandler.bind(self).bind(self, el))
+    el.addEventListener('off.xt', withLinkResetHandler)
   }
 
   /**
    * remove prevents click on touch until clicked two times
    * @param {Node|HTMLElement|EventTarget|Window} el
    */
-  eventTouchLinksEndHandler(el) {
+  eventWithLinkEndHandler(el) {
     const self = this
-    // event touchLinks
-    const touchLinksHandler = Xt.dataStorage.get(el, 'click.touchfix' + '.' + self.namespace)
-    el.removeEventListener('click', touchLinksHandler)
-    // event touchReset
-    const touchResetHandler = Xt.dataStorage.get(el, 'off.touchfix' + '.' + self.namespace)
-    el.removeEventListener('off.xt', touchResetHandler)
+    // event link
+    const withLinkHandler = Xt.dataStorage.get(el, 'click.touchfix' + '.' + self.namespace)
+    el.removeEventListener('click', withLinkHandler)
+    // event reset
+    const withLinkResetHandler = Xt.dataStorage.get(el, 'off.touchfix' + '.' + self.namespace)
+    el.removeEventListener('off.xt', withLinkResetHandler)
   }
 
   /**
@@ -708,15 +709,15 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
-  eventTouchLinksHandler(el, e) {
+  eventWithLinkHandler(el, e) {
     const self = this
-    if (!Xt.dataStorage.get(el, self.componentNamespace + 'TouchLinksDone')) {
-      Xt.dataStorage.set(el, self.componentNamespace + 'TouchLinksDone', true)
+    if (!Xt.dataStorage.get(el, self.componentNamespace + 'WithLinkDone')) {
+      Xt.dataStorage.set(el, self.componentNamespace + 'WithLinkDone', true)
       // prevent default
       e.preventDefault()
     } else {
-      self.eventTouchLinksEndHandler(el)
-      Xt.dataStorage.remove(el, self.componentNamespace + 'TouchLinksDone')
+      self.eventWithLinkEndHandler(el)
+      Xt.dataStorage.remove(el, self.componentNamespace + 'WithLinkDone')
     }
   }
 
@@ -725,10 +726,10 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
-  eventTouchLinksResetHandler(el, e) {
+  eventWithLinkResetHandler(el, e) {
     const self = this
-    self.eventTouchLinksEndHandler(el)
-    Xt.dataStorage.remove(el, self.componentNamespace + 'TouchLinksDone')
+    self.eventWithLinkEndHandler(el)
+    Xt.dataStorage.remove(el, self.componentNamespace + 'WithLinkDone')
   }
 
   /**
@@ -1184,7 +1185,7 @@ class Toggle {
       const elementsInner = Xt.queryAll(element, options.elementsInner)
       const targetsInner = Xt.queryAll(targets, options.targetsInner)
       // [disabled]
-      if (options.min === options.max) {
+      if (options.autodisable && options.min === options.max) {
         for (const disable of groupElements) {
           disable.setAttribute('disabled', 'disabled')
         }
@@ -1243,7 +1244,7 @@ class Toggle {
         element.blur() // @FIX :focus styles
       }
       // [disabled]
-      if (options.min === options.max) {
+      if (options.autodisable && options.min === options.max) {
         for (const disable of groupElements) {
           disable.removeAttribute('disabled')
         }
@@ -2710,6 +2711,7 @@ Toggle.optionsDefaultSuper = {
   classInverse: 'inverse',
   eventLimit: '.event-limit',
   autoclose: false,
+  autodisable: true,
   onBlock: false,
   offBlock: false,
   loop: true,

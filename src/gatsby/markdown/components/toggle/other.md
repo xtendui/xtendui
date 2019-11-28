@@ -1,14 +1,14 @@
 ---
 type: "Components"
 badge: "Core"
-parent: "Drop"
+parent: "Toggle"
 title: "Other"
 date: "2000-10-01"
 ---
 
 ##Event
 
-You can specify **on** and **off** events for the drop. Fore example `on: 'mouseenter'` `off: 'mouseleave'`. Default is `on: 'click'`.
+You can specify **on** and **off** events for the toggle. Fore example `on: 'mouseenter'` `off: 'mouseleave'`. Default is `on: 'click'`.
 
 <div class="table--scroll">
 
@@ -20,7 +20,7 @@ You can specify **on** and **off** events for the drop. Fore example `on: 'mouse
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/drop/event">
+  <demovanilla src="vanilla/components/toggle/event">
   </demovanilla>
 </demo>
 
@@ -31,42 +31,26 @@ You can have links that triggers after toggle. Remember to use `autodisable: fal
 If the toggle is on <code>"on": "mouseenter"</code> or <code>"on": "mousehover"</code> the link gets activated on the second touch event on touch devices.
 
 <demo>
-  <demovanilla src="vanilla/components/drop/with-link">
+  <demovanilla src="vanilla/components/toggle/with-link">
   </demovanilla>
-  <demovanilla src="vanilla/components/drop/with-link-hover">
-  </demovanilla>
-</demo>
-
-##Static
-
-Use `.drop-container--static` to position relative to closest element with `position: relative;`.
-
-<demo>
-  <demovanilla src="vanilla/components/drop/static">
+  <demovanilla src="vanilla/components/toggle/with-link-hover">
   </demovanilla>
 </demo>
 
-##Disable
+##Keyboard
 
-To disable drop use `.drop--disable` useful within media queries.
+Use `keyboard: { selector: 'object' }` or `keyboard: { selector : QuerySelector }` to enable keyboard navigation on focus.
 
 <demo>
-  <demovanilla src="vanilla/components/drop/disable">
+  <demovanilla src="vanilla/components/toggle/usability-keyboard">
   </demovanilla>
 </demo>
 
-##Backdrop
+##Aria
 
-Use `data-xt-drop='{ backdrop: true }'` to have a backdrop when drop opens.
-
-<demo>
-  <demovanilla src="vanilla/components/drop/backdrop">
-  </demovanilla>
-</demo>
-
-##Nested
+Use `aria: false` to disable aria generation, or granularly see @TODO.
 
 <demo>
-  <demovanilla src="vanilla/components/drop/nested">
+  <demovanilla src="vanilla/components/toggle/usability-aria">
   </demovanilla>
 </demo>

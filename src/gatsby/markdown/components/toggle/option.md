@@ -50,29 +50,6 @@ You can specify classes to toggle with `class: 'my-class-0 my-class-1'`. Toggled
   </demovanilla>
 </demo>
 
-##Event
-
-You can specify **on** and **off** events for the toggle.
-
-<div class="table--scroll">
-
-|                         | Syntax                                    | Default                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `on: String`                              | `'click'`                     | Set event to listen for activation           |
-| Option                  | `off: String`                             | `false`                       | Set event to listen for deactivation if not present `options.on` deactivate when already activated          |
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/toggle/event">
-  </demovanilla>
-  <demovanilla src="vanilla/components/toggle/links">
-    <div class="gatsby_demo_text">
-      If you set <code>"on": "mouseenter"</code> or <code>"on": "mousehover"</code>, when the <strong>element</strong> have links on the tag or inside, they automatically get triggered only on double click when using touch devices.
-    </div>
-  </demovanilla>
-</demo>
-
 ##Group
 
 If you need to toggle **multiple targets** with the **same element** assign `data-xt-group` to **elements** and the associated targets **targets**. Group's additional elements aren't counted for min and max.
@@ -189,23 +166,5 @@ You can use a function for <code>delayOn</code> and <code>delayOff</code> for ex
   <demovanilla src="vanilla/components/toggle/timing-delay-fnc">
   </demovanilla>
   <demovanilla src="vanilla/components/toggle/timing-instant">
-  </demovanilla>
-</demo>
-
-##Keyboard
-
-Use `keyboard: { selector: 'object' }` or `keyboard: { selector : QuerySelector }` to enable keyboard navigation on focus.
-
-<demo>
-  <demovanilla src="vanilla/components/toggle/usability-keyboard">
-  </demovanilla>
-</demo>
-
-##Aria
-
-Use `aria: false` to disable aria generation, or granularly see @TODO.
-
-<demo>
-  <demovanilla src="vanilla/components/toggle/usability-aria">
   </demovanilla>
 </demo>
