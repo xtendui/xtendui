@@ -528,10 +528,10 @@ class Toggle {
         keyboard.addEventListener('blur', keyboardBlurHandler)
       }
     }
-    // autoclose
-    if (options.autoclose) {
-      const autocloseHandler = Xt.dataStorage.put(window, 'autoclose' + '.' + self.namespace, self.eventautocloseHandler.bind(self))
-      addEventListener('autoclose.xt', autocloseHandler)
+    // autoClose
+    if (options.autoClose) {
+      const autoCloseHandler = Xt.dataStorage.put(window, 'autoClose' + '.' + self.namespace, self.eventAutoCloseHandler.bind(self))
+      addEventListener('autoClose.xt', autoCloseHandler)
     }
     // images
     for (const el of self.elements.filter(x => !x.classList.contains('xt-clone'))) {
@@ -846,10 +846,10 @@ class Toggle {
   }
 
   /**
-   * autoclose handler
+   * autoClose handler
    * @param {Event} e
    */
-  eventautocloseHandler(e) {
+  eventAutoCloseHandler(e) {
     const self = this
     // restart
     const currents = self.getCurrents()
@@ -1185,7 +1185,7 @@ class Toggle {
       const elementsInner = Xt.queryAll(element, options.elementsInner)
       const targetsInner = Xt.queryAll(targets, options.targetsInner)
       // [disabled]
-      if (options.autodisable && options.min === options.max) {
+      if (options.autoDisable && options.min === options.max) {
         for (const disable of groupElements) {
           disable.setAttribute('disabled', 'disabled')
         }
@@ -1244,7 +1244,7 @@ class Toggle {
         element.blur() // @FIX :focus styles
       }
       // [disabled]
-      if (options.autodisable && options.min === options.max) {
+      if (options.autoDisable && options.min === options.max) {
         for (const disable of groupElements) {
           disable.removeAttribute('disabled')
         }
@@ -2650,7 +2650,7 @@ class Toggle {
   destroy(weak = false) {
     const self = this
     // stop queue
-    self.queueStopAll() // @FIX autoclose with appendTo outside ajax
+    self.queueStopAll() // @FIX autoClose with appendTo outside ajax
     // stop auto
     self.eventAutoStop()
     // remove events
@@ -2710,8 +2710,8 @@ Toggle.optionsDefaultSuper = {
   classInitial: 'initial',
   classInverse: 'inverse',
   eventLimit: '.event-limit',
-  autoclose: false,
-  autodisable: true,
+  autoClose: false,
+  autoDisable: true,
   onBlock: false,
   offBlock: false,
   loop: true,

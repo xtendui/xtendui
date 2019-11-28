@@ -10,7 +10,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="list list--default list-space--small align-items-center"
-     data-xt-toggle="{ min: 1, on: 'mouseenter', off: 'mouseleave', autodisable: false }">
+     data-xt-toggle="{ min: 1, on: 'mouseenter', off: 'mouseleave', autoDisable: false }">
   <a href="#toggle-with-link-2" class="btn btn--default">
     Toggle 0
   </a>

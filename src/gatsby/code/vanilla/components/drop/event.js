@@ -10,7 +10,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="list list--default list-space--small align-items-center demo-source-from">
-  <div class="drop-container" data-xt-drop="{ on: 'mouseenter', off: 'mouseleave' }">
+  <div class="drop-container" data-xt-drop="{ on: 'mouseenter', off: 'mouseleave', closeOutside: false }">
     <button type="button" class="btn btn--primary">
       mouseenter
     </button>

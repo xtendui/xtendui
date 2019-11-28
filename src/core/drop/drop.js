@@ -52,7 +52,7 @@ Drop.optionsDefault = {
   max: 1,
   class: 'active active-drop',
   eventLimit: '.event-limit, .drop',
-  autoclose: true,
+  autoClose: true,
   closeOutside: 'body',
   closeInside: '.drop-dismiss, .card--drop > .card-inner > .btn-close, :scope > .backdrop',
   ariaControls: ':scope > a, :scope > button',

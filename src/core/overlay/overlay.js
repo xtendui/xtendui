@@ -59,7 +59,7 @@ Overlay.optionsDefault = {
   max: 1,
   class: 'active active-overlay',
   eventLimit: '.event-limit, .card--overlay > .card-inner > .card-content',
-  autoclose: true,
+  autoClose: true,
   appendTo: 'body',
   backdrop: 'targets',
   classHtml: 'xt-overlay',

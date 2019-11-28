@@ -26,7 +26,7 @@ You can specify **on** and **off** events for the toggle. Fore example `on: 'mou
 
 ##Link
 
-You can have links that triggers after toggle. Remember to use `autodisable: false`.
+You can have links that triggers after toggle. Remember to use `autoDisable: false`.
 
 If the toggle is on <code>"on": "mouseenter"</code> or <code>"on": "mousehover"</code> the link gets activated on the second touch event on touch devices.
 

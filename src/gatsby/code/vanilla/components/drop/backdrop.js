@@ -40,7 +40,7 @@ demo.htmlSource = `
     </div>
   </div>
   
-  <div class="drop-container" data-xt-drop="{ on: 'mouseenter', off: 'mouseleave', backdrop: true }">
+  <div class="drop-container" data-xt-drop="{ on: 'mouseenter', off: 'mouseleave', closeOutside: 'body', backdrop: true }">
     <button type="button" class="btn btn--primary">
       mouseenter
     </button>

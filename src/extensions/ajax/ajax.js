@@ -219,8 +219,8 @@ class Ajax extends Xt.Toggle {
     // location
     self.locationFrom = self.locationTo || self.locationFrom // fix fast change page
     self.locationTo = new URL(url, location)
-    // autoclose
-    dispatchEvent(new CustomEvent('autoclose.xt'))
+    // autoClose
+    dispatchEvent(new CustomEvent('autoClose.xt'))
     // dispatch
     const detail = self.eDetailSet()
     self.object.dispatchEvent(new CustomEvent('request.xt.ajax', { detail: detail }))
