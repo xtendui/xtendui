@@ -19,7 +19,15 @@ To use this component import the **less** and **js** files accordingly:
 import 'xtend-library/src/core/overlay/overlay.js'
 ```
 
-Or just [import core](/components/setup/#usage).
+Or just import **core**:
+
+```less
+@import '~xtend-library/src/xtend-core.less';
+```
+
+```jsx
+import 'xtend-library/src/xtend-core.js'
+```
 
 ##Usage
 
@@ -55,12 +63,7 @@ You can use this markup to create an **overlay** with **no toggle**.
 [[noteError]]
 | Overlays are moved to **body** to prevent **z-index** problems. Style and query overlay's content accordingly.
 
-##Javascript
-
-[[noteDefault]]
-| Overlay uses toggle for logic, refer to [toggle page](/components/toggle#@TODO) for a complete **API**.
-
-###Initialization
+##Initialization
 
 Initialize automatically within markup with `[data-xt-overlay]`.
 
@@ -71,11 +74,3 @@ new Xt.Overlay(document.querySelector('.my-overlay'), {
   // options
 });
 ```
-
-###Options
-
-@TODO tables options
-
-###Events
-
-@TODO tables events

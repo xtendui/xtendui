@@ -19,7 +19,15 @@ To use this component import the **less** and **js** files accordingly:
 import 'xtend-library/src/extensions/slider/slider.js'
 ```
 
-Or just [import extensions](/components/setup/#usage).
+Or just import **extensions**:
+
+```less
+@import '~xtend-library/src/xtend-extensions.less';
+```
+
+```jsx
+import 'xtend-library/src/xtend-extensions.js'
+```
 
 ##Usage
 
@@ -57,11 +65,7 @@ Use this markup to create a **slider**.
 [[noteDefault]]
 | `slider-pagination[data-xt-pag].xt-ignore` is essential to the functioning of the slider, so if you don't want to show it add `.display-none`.
 
-##Javascript
-
-@TODO
-
-###Initialization
+##Initialization
 
 Initialize automatically within markup with `[data-xt-slider]`.
 
@@ -72,11 +76,3 @@ new Xt.Slider(document.querySelector('.my-slider'), {
   // options
 });
 ```
-
-###Options
-
-@TODO tables options
-
-###Events
-
-@TODO tables events

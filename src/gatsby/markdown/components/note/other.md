@@ -8,7 +8,7 @@ date: "2000-10-01"
 
 #Muted
 
-Example of muted note with `.muted` @TODO link.
+Example of muted note with `.muted`.
 
 <demo>
   <demovanilla src="vanilla/components/note/muted">
@@ -17,7 +17,7 @@ Example of muted note with `.muted` @TODO link.
 
 #Close
 
-Usage of `.btn--close` @TODO link.
+Usage of `.btn-close`.
 
 <demo>
   <demovanilla src="vanilla/components/note/close-background">

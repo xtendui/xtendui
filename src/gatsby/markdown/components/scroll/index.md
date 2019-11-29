@@ -19,7 +19,15 @@ To use this component import the **less** and **js** files accordingly:
 import 'xtend-library/src/extensions/scroll/scroll.js'
 ```
 
-Or just [import extensions](/components/setup/#usage).
+Or just import **extensions**:
+
+```less
+@import '~xtend-library/src/xtend-extensions.less';
+```
+
+```jsx
+import 'xtend-library/src/xtend-extensions.js'
+```
 
 ##Usage
 
@@ -28,11 +36,7 @@ Or just [import extensions](/components/setup/#usage).
 [[noteDefault]]
 | It's recomended to animate the scroll elements with <code>animation</code> instead of <code>transition</code> because of <a href="{% link faq.html %}#browsers-bugs-fixed-position">this bug</a>.
 
-##Javascript
-
-@TODO
-
-###Initialization
+##Initialization
 
 Initialize automatically within markup with `[data-xt-scroll]`.
 
@@ -43,11 +47,3 @@ new Xt.Scroll(document.querySelector('.my-scroll'), {
   // options
 });
 ```
-
-###Options
-
-@TODO tables options
-
-###Events
-
-@TODO tables events

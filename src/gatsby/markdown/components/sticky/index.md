@@ -19,7 +19,15 @@ To use this component import the **less** and **js** files accordingly:
 import 'xtend-library/src/extensions/sticky/sticky.js'
 ```
 
-Or just [import extensions](/components/setup/#usage).
+Or just import **extensions**:
+
+```less
+@import '~xtend-library/src/xtend-extensions.less';
+```
+
+```jsx
+import 'xtend-library/src/xtend-extensions.js'
+```
 
 ##Usage
 
@@ -36,11 +44,7 @@ Use this markup to create a **sticky**.
 [[noteDefault]]
 | It's recomended to style and animate a inner div <code>[data-xt-xticky] > div</code> when using <strong>sticky component</strong>.
 
-##Javascript
-
-@TODO
-
-###Initialization
+##Initialization
 
 Initialize automatically within markup with `[data-xt-sticky]`.
 
@@ -51,11 +55,3 @@ new Xt.Sticky(document.querySelector('.my-sticky'), {
   // options
 });
 ```
-
-###Options
-
-@TODO tables options
-
-###Events
-
-@TODO tables events

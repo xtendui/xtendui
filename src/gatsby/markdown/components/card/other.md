@@ -17,7 +17,7 @@ Disable card's variant styles with `.card--disable`.
 
 ##Close
 
-Usage of `.btn--close` @TODO link.
+Usage of `.btn-close`.
 
 <demo>
   <demovanilla src="vanilla/components/card/close">

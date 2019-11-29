@@ -15,7 +15,11 @@ To use this component import the **less** and **js** files accordingly:
 @import '~xtend-library/src/extensions/loader/loader.less';
 ```
 
-Or just [import extensions](/components/setup/#usage).
+Or just import **extensions**:
+
+```less
+@import '~xtend-library/src/xtend-extensions.less';
+```
 
 ##Usage
 

@@ -19,7 +19,15 @@ To use this component import the **less** and **js** files accordingly:
 import 'xtend-library/src/core/drop/drop.js'
 ```
 
-Or just [import core](/components/setup/#usage).
+Or just import **core**:
+
+```less
+@import '~xtend-library/src/xtend-core.less';
+```
+
+```jsx
+import 'xtend-library/src/xtend-core.js'
+```
 
 ##Usage
 
@@ -41,12 +49,7 @@ Use this markup to create a **drop**.
   </div>
 </script>
 
-##Javascript
-
-[[noteDefault]]
-| Drop uses toggle for logic, refer to [toggle page](/components/toggle#@TODO) for a complete **API**.
-
-###Initialization
+##Initialization
 
 Initialize automatically within markup with `[data-xt-drop]`.
 
@@ -57,11 +60,3 @@ new Xt.Drop(document.querySelector('.my-drop'), {
   // options
 });
 ```
-
-###Options
-
-@TODO tables options
-
-###Events
-
-@TODO tables events
