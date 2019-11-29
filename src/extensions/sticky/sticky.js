@@ -435,12 +435,13 @@ Sticky.optionsDefault = {
   max: 'Infinity',
   instant: true,
   class: 'active active-sticky',
+  aria: false,
+  // sticky only
   sticky: true,
   position: 'top',
   limit: { bottom: 'Infinity' },
   contain: false,
   hide: false,
-  aria: false,
 }
 Xt.optionsGlobal[Sticky.componentName] = {}
 

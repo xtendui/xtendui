@@ -14,8 +14,8 @@ You can specify **min** and **max** concurrent activations. The **min** option i
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `min: Number`                             | `0`                           | Minimum number of active elements           |
-| Option                  | `max: Number`                             | `1`                           | Maximum number of active elements           |
+| Option                  | `min:Number`                             | `0`                           | Minimum number of active elements           |
+| Option                  | `max:Number`                             | `1`                           | Maximum number of active elements           |
 
 </div>
 

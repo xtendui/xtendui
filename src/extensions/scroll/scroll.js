@@ -307,13 +307,14 @@ Scroll.optionsDefault = {
   class: 'fade',
   classIn: 'fade-in',
   classOut: 'fade-out',
+  aria: false,
+  // scroll only
   sticky: false,
   distance: '20%',
   trigger: '100%',
   start: '100%',
   end: false,
   fallback: 100,
-  aria: false,
 }
 Xt.optionsGlobal[Scroll.componentName] = {}
 
