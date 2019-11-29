@@ -19,7 +19,7 @@ To use this component import the **less** and **js** files accordingly:
 import 'xtend-library/src/extensions/slider/slider.js'
 ```
 
-Or just [import extensions](/components/setup/#@TODO).
+Or just [import extensions](/components/setup/#usage).
 
 ##Usage
 

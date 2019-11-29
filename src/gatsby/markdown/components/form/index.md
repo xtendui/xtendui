@@ -15,4 +15,4 @@ To use this component import the **less** files accordingly:
 @import '~xtend-library/src/core/form/form.less';
 ```
 
-Or just [import core](/components/setup/#@TODO).
+Or just [import core](/components/setup/#usage).

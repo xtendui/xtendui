@@ -1,117 +1,150 @@
-# Setup
-
 ## Installation
 
 You can install with one of the following:
 * download: [latest release](https://github.com/minimit/xtend-library/releases/latest)
 * clone: `git clone https://github.com/minimit/xtend-library.git`
-* [yarn](https://yarnpkg.com/): `yarn add xtend-library --save`
-* [npm](https://www.npmjs.com/): `npm install xtend-library --save`
+* [npm](https://www.npmjs.com/): `npm install --save xtend-library`
 
 ## Usage
 
+We have some boilerplate setup projects to start a project:
+
+* [vanilla boilerplate](https://github.com/minimit/xtend-theme-vanilla)
+
+### Webpack
+
+This library is made to be used by [webpack](https://github.com/webpack). In essence you have to setup webpack's resolve to be able to import the scripts and styles from the `node_modules/xtend-library` or from your custom folder if present.
+
+```jsx
+  resolve: {
+    alias: {
+      // resolve xtend-library js and less
+      'xtend-library': [
+        path.resolve(__dirname, './dist/xtend-library'),
+        path.resolve(__dirname, './node_modules/xtend-library'),
+      ],
+    },
+  },
+  module: {
+    unsafeCache: false,
+```
+
 ### Css
 
-@TODO css usage
+You need to import the **reset** file as first import:
+
+```less
+@import '~xtend-library/src/xtend-reset.less'; // always first loaded
+```
+
+Then you can import the components you need as described in the docs, just be sure to import the library as reference first: `@import (reference) '~xtend-library/src/xtend-core.less';`.
+
+Or just import all core/extensions/addons as needed:
+
+```less
+@import '~xtend-library/src/xtend-core.less';
+@import '~xtend-library/src/xtend-extensions.less';
+@import '~xtend-library/src/xtend-addons.less';
+```
 
 ### Js
 
-@TODO js usage
-
-<!---
-You need to add [core-js](https://github.com/zloirock/core-js):
+You need to import [core-js](https://github.com/zloirock/core-js):
 
 ```Shell
+npm install --save core-js regenerator-runtime
+```
+
+```jsx
 import 'core-js'
 import 'regenerator-runtime/runtime'
 ```
 
-Add the required scripts to your html:
+You need to import the **polyfills** files and the **main** js:
 
-```
+```jsx
 import 'xtend-library/src/polyfill.js'
-import 'xtend-library/src/polyfill-old.js' // optional, use this only if you need old browsers support: ie11
 import { Xt } from 'xtend-library'
-import 'xtend-library/src/xtend-core.js' // optional, you can import xtend-library/src/core one by one
-import 'xtend-library/src/xtend-addons.js' // optional, you can import xtend-library/src/addons one by one
-import 'xtend-library/src/xtend-extensions.js' // optional, you can import xtend-library/src/extension one by one
 ```
 
-@TODO linkare a https://github.com/minimit/xtend-theme-vanilla per webpack resolve e forkare css e js e https://github.com/minimit/xtend-theme-vanilla/blob/master/.browserslistrc
+Then you can import the components you need as described in the docs.
 
-```Less
+Or just import all core/extensions/addons as needed:
+
+```jsx
+import 'xtend-library/src/xtend-core.js'
+import 'xtend-library/src/xtend-extensions.js'
+import 'xtend-library/src/xtend-addons.js'
 ```
 
-### Animation
+### Gsap
 
-This library uses [gsap](https://github.com/greensock/GreenSock-JS) and [bezier-easing](https://github.com/gre/bezier-easing) for javascript animations.
+This library in the demos uses [gsap](https://github.com/greensock/GreenSock-JS) and [bezier-easing](https://github.com/gre/bezier-easing) for javascript animations.
 
 With npm install and import [gsap](https://www.npmjs.com/package/gsap) and [bezier-easing](https://www.npmjs.com/package/bezier-easing):
 
 ```
-$ npm install gsap
-$ npm install bezier-easing
+$ npm install --save gsap
+$ npm install --save bezier-easing
 ```
+
+And import them:
 
 ```
 import gsap from 'gsap'
 import 'bezier-easing';
 ```
 
-With cdn include [cdn](https://cdnjs.com/libraries/gsap) and [bezier-easing](https://www.jsdelivr.com/package/npm/bezier-easing):
+## Script
 
-```
-@TODO gsap 3 cdn
-<script src="//cdn.jsdelivr.net/npm/bezier-easing@2.1.0/dist/bezier-easing.min.js"></script>
-```
+If you prefer to import the library from script tag (**not recommended**)
 
--->
+Include [core-js](https://cdnjs.com/libraries/core-js) and [cdn](https://cdnjs.com/libraries/gsap) and [bezier-easing](https://www.jsdelivr.com/package/npm/bezier-easing).
 
-## Browser Usage
-
-With this method you can't modify the styles or the javascript. Use the recommended [Usage](#usage) instead.
-
-Copy the `/dist` folder in your project.
-
-Add the required styles to your html:
+Copy the `/dist` folder in your project and add the required styles to your html:
 
 ```HTML
 <link rel="stylesheet" href="dist/xtend.min.css"/>
 ```
 
-Add the required scripts to your html:
+Add the required scripts to your html
 
 ```HTML
-<script src="dist/xtend.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/core-js/2.6.9/shim.min.js"></script>
+<script src="dist/xtend-core.js"></script>
+<!-- or <script src="dist/xtend-core-extensions.js"></script> -->
+<!-- or <script src="dist/xtend-core-extensions-addons.js"></script> -->
 ```
 
-# Prepare
+## Browser support
 
-* Install required npm packages with `npm install`
-* Use `npm run prepare` to compile the `/dist` folder
+Supported browsers are as follow: **explorer 12**, **firefox 38**, **opera 25**, **safari 10**, **chrome 38**.
 
-# Documentation
+If you want to support old browsers since Internet Explorer 11, import the polyfills:
+
+```jsx
+import 'xtend-library/src/polyfill-old.js'
+```
+
+And add this browser list:
+
+```Shell
+IE 11
+```
+
+## Documentation
 
 We use gatsby to serve the docs:
 
 * Install required npm packages with `npm install`
 * Use `npm run build` to build the docs in `/public`
-* Use `npm run dev` to serve a develop version, docs will be served to `http://127.0.0.1:8888/`
-* Use `npm run serve`to serve a production version, docs will be served to `http://127.0.0.1:8888/`
+* Use `npm run dev` to serve a develop version
+* Use `npm run serve`to serve a production version
 
-## Browser support
-
-Supported browsers are as follow: explorer 12, firefox 38, opera 25, safari 10, chrome 38.
-
-# Acknowledgements
+## Acknowledgements
 
 * Icons with [feather icons](https://github.com/feathericons/feather)
-<!--
-* Images with [picsum](https://picsum.photos/)
-<img class="full" src="https://picsum.photos/1200" alt=""/>
--->
-# Copyright
+
+## Copyright
 
 Licensed under [MIT license](https://github.com/minimit/xtend-library/blob/master/LICENSE).
 Docs licensed under [CC BY 3.0](https://github.com/minimit/xtend-library/blob/master/LICENSE-DOCS).

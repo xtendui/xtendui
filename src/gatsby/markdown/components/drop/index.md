@@ -19,7 +19,7 @@ To use this component import the **less** and **js** files accordingly:
 import 'xtend-library/src/core/drop/drop.js'
 ```
 
-Or just [import core](/components/setup/#@TODO).
+Or just [import core](/components/setup/#usage).
 
 ##Usage
 

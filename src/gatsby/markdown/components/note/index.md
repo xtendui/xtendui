@@ -15,7 +15,7 @@ To use this component import the **less** files accordingly:
 @import '~xtend-library/src/core/note/note.less';
 ```
 
-Or just [import core](/components/setup/#@TODO).
+Or just [import core](/components/setup/#usage).
 
 ##Usage
 
