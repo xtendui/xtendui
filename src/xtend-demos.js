@@ -12,7 +12,7 @@ if (typeof window !== 'undefined') {
   require('xtend-library/src/demos/slider/toggle-js.js')
   require('xtend-library/src/demos/test/vanilla-iframe.js')
   require('xtend-library/src/demos/test/vanilla.js')
-  require('xtend-library/src/demos/toggle/javascript.js')
+  require('xtend-library/src/demos/toggle/animation-js.js')
   require('xtend-library/src/demos/toggle/multilevel.js')
   require('xtend-library/src/demos/toggle/progress.js')
   require('xtend-library/src/demos/toggle/start.js')

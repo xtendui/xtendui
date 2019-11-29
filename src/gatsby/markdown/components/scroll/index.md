@@ -38,7 +38,7 @@ import 'xtend-library/src/xtend-extensions.js'
 
 ##Initialization
 
-Initialize automatically within markup with `[data-xt-scroll]`.
+Initialize automatically within markup with `[data-xt-scroll="{ <options> }"]`.
 
 Or initialize with javascript:
 
@@ -47,3 +47,5 @@ new Xt.Scroll(document.querySelector('.my-scroll'), {
   // options
 });
 ```
+
+For options and events visit the [api page](/components/scroll/api).

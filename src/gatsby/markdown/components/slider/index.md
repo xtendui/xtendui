@@ -67,7 +67,7 @@ Use this markup to create a **slider**.
 
 ##Initialization
 
-Initialize automatically within markup with `[data-xt-slider]`.
+Initialize automatically within markup with `[data-xt-slider="{ <options> }"]`.
 
 Or initialize with javascript:
 
@@ -76,3 +76,5 @@ new Xt.Slider(document.querySelector('.my-slider'), {
   // options
 });
 ```
+
+For options and events visit the [api page](/components/slider/api).

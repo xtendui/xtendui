@@ -46,7 +46,7 @@ Use this markup to create a **sticky**.
 
 ##Initialization
 
-Initialize automatically within markup with `[data-xt-sticky]`.
+Initialize automatically within markup with `[data-xt-sticky="{ <options> }"]`.
 
 Or initialize with javascript:
 
@@ -55,3 +55,5 @@ new Xt.Sticky(document.querySelector('.my-sticky'), {
   // options
 });
 ```
+
+For options and events visit the [api page](/components/sticky/api).

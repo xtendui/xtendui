@@ -37,6 +37,15 @@ If the toggle is on <code>"on": "mouseenter"</code> or <code>"on": "mousehover"<
   </demovanilla>
 </demo>
 
+##Animation
+
+You can animate with javascript instead of css, just use [toggle events](/components/toggle/api#events) and remember to set `durationOn: Milliseconds` and `durationOff: Milliseconds`.
+
+<demo>
+  <demovanilla src="vanilla/components/toggle/animation-js">
+  </demovanilla>
+</demo>
+
 ##Keyboard
 
 Use `keyboard: { selector: 'object' }` or `keyboard: { selector : QuerySelector }` to enable keyboard navigation on focus.

@@ -3,6 +3,7 @@ type: "Components"
 badge: "Extensions"
 parent: "Slider"
 title: "Other"
+date: "2000-10-01"
 ---
 
 ##Other
