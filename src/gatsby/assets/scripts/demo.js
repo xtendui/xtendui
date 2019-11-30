@@ -110,8 +110,17 @@ const populateBlock = function() {
       requestAnimationFrame(function() {
         dispatchEvent(new CustomEvent('resize', { detail: { force: true } }))
       })
+      // set hash
+      window.history.pushState('', '/', window.location.pathname)
     }
   })
+  // get hash
+  if (window.location.hash) {
+    const demo = document.querySelector(window.location.hash)
+    if (demo) {
+      demo.querySelector('.btn--open-full').classList.add('active')
+    }
+  }
 }
 
 /**
@@ -230,6 +239,13 @@ const populateDemo = function(container, i) {
   for (const btnOpenFull of container.querySelectorAll('.btn--open-full')) {
     btnOpenFull.addEventListener('click', function() {
       makeFullscreen(container)
+    })
+    requestAnimationFrame(function() {
+      if (btnOpenFull.classList.contains('active')) {
+        requestAnimationFrame(function() {
+          makeFullscreen(container)
+        })
+      }
     })
   }
   // gatsby_demo_tabs_left
@@ -374,6 +390,8 @@ const makeFullscreen = function(container) {
   requestAnimationFrame(function() {
     dispatchEvent(new CustomEvent('resize', { detail: { force: true } }))
   })
+  // set hash
+  window.location.hash = container.getAttribute('id')
 }
 
 /**
