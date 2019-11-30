@@ -404,6 +404,9 @@ class Toggle {
     const checkHandler = Xt.dataStorage.put(window, 'resize.check' + '.' + self.namespace, self.eventStatusHandler.bind(self).bind(self))
     addEventListener('resize', checkHandler)
     self.eventStatusHandler()
+    // reinit
+    const reinitHandler = Xt.dataStorage.put(self.object, 'reinit' + '.' + self.namespace, self.eventReinitHandler.bind(self).bind(self))
+    self.object.addEventListener('reinit.xt', reinitHandler)
     // event
     for (const el of self.elements) {
       // event on
@@ -2640,6 +2643,25 @@ class Toggle {
     // enable
     self.disabled = false
     self.object.classList.remove('xt-disabled')
+  }
+
+  /**
+   * reinit
+   * @param {Event} e
+   */
+  eventReinitHandler(e) {
+    const self = this
+    // reinit
+    if (!self.initial) {
+      Xt.eventDelay(
+        e,
+        self.object,
+        function() {
+          self.initLogic()
+        },
+        self.componentNamespace + 'Reinit'
+      )
+    }
   }
 
   //

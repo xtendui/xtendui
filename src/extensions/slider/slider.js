@@ -441,9 +441,6 @@ class Slider extends Xt.Toggle {
     // resize
     const resizeHandler = Xt.dataStorage.put(window, 'resize' + '.' + self.namespace, self.eventReinitHandler.bind(self).bind(self))
     addEventListener('resize', resizeHandler)
-    // reinit
-    const reinitHandler = Xt.dataStorage.put(self.object, 'reinit' + '.' + self.namespace, self.eventReinitHandler.bind(self).bind(self))
-    self.object.addEventListener('reinit.xt', reinitHandler)
   }
 
   //
@@ -587,25 +584,6 @@ class Slider extends Xt.Toggle {
     const self = this
     // logic
     self.logicDrag(dragger, e)
-  }
-
-  /**
-   * reinit
-   * @param {Event} e
-   */
-  eventReinitHandler(e) {
-    const self = this
-    // reinit
-    if (!self.initial) {
-      Xt.eventDelay(
-        e,
-        self.object,
-        function() {
-          self.initLogic()
-        },
-        self.componentNamespace + 'Resize'
-      )
-    }
   }
 
   //

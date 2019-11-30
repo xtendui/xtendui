@@ -50,13 +50,6 @@ Set to `groupMq: false` to disable automatic grouping of slides.
   </demovanilla>
 </demo>
 
-##Auto
-
-<demo>
-  <demovanilla src="vanilla/components/slider/auto">
-  </demovanilla>
-</demo>
-
 ##Navigation
 
 You can add navigation with `[data-xt-nav="+-Number"].xt-ignore` where `+-Number` is the amount to change the slider when clicked.
@@ -166,13 +159,18 @@ You can disable the drag transform position while dragging the **drag.dragger** 
   </demovanilla>
 </demo>
 
-##False
-
 Use `drag: false` to disable drag. You need to use the slider in **toggle mode**, so with `.toggle-block` on the slides.
 
 <demo>
   <demovanilla src="vanilla/components/slider/toggle-css">
   </demovanilla>
   <demovanilla src="vanilla/components/slider/toggle-js">
+  </demovanilla>
+</demo>
+
+##Auto
+
+<demo>
+  <demovanilla src="vanilla/components/slider/auto">
   </demovanilla>
 </demo>
