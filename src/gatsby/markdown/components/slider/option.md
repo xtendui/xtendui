@@ -136,9 +136,6 @@ With `drag: { wrap: true, overflow: false }` you don't have the drag overflow on
 <demo>
   <demovanilla src="vanilla/components/slider/wrap-left">
   </demovanilla>
-</demo>
-
-<demo>
   <demovanilla src="vanilla/components/slider/wrap-right">
   </demovanilla>
 </demo>
@@ -176,11 +173,6 @@ Use `drag: false` to disable drag. You need to use the slider in **toggle mode**
 <demo>
   <demovanilla src="vanilla/components/slider/toggle-css">
   </demovanilla>
-</demo>
-
-Custom drag animation with `drag: false` and javascript events.
-
-<demo>
   <demovanilla src="vanilla/components/slider/toggle-js">
   </demovanilla>
 </demo>

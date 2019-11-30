@@ -541,6 +541,15 @@ const populateInline = function(item) {
       targets: '.gatsby_demo_code_body_item',
       min: 1,
     })
+    // @FIX reinit
+    item.addEventListener('on.xt', function(e) {
+      // @FIX on.xt and off.xt event bubbles
+      if (this === e.target) {
+        for (const component of item.querySelectorAll('[data-xt-name]')) {
+          component.dispatchEvent(new CustomEvent('reinit.xt'))
+        }
+      }
+    })
   }
 }
 

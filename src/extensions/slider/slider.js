@@ -37,7 +37,6 @@ class Slider extends Xt.Toggle {
     // autoHeight
     if (options.autoHeight) {
       self.autoHeight = self.object.querySelector(options.autoHeight)
-      self.autoHeight.classList.add('xt-autoHeight')
     }
     // initSliderGroup
     self.initSliderGroup()
@@ -77,7 +76,7 @@ class Slider extends Xt.Toggle {
       self.targets = self.targets.filter(x => !x.classList.contains('xt-wrap'))
     }
     // width
-    const draggerWidth = self.dragger ? self.dragger.offsetWidth : self.object.offsetWidth
+    let draggerWidth = self.dragger ? self.dragger.offsetWidth : self.object.offsetWidth
     let draggerWidthAvailable = 0
     // draggerWidthAvailable
     if (options.groupMq) {
@@ -95,6 +94,7 @@ class Slider extends Xt.Toggle {
     self.groupMq.push([])
     let currentCount = draggerWidthAvailable
     let totalCount = draggerWidth
+    let doneFirst = false
     for (const target of self.targets) {
       let targetWidth = target.offsetWidth
       if (targetWidth === 0) {
@@ -116,6 +116,12 @@ class Slider extends Xt.Toggle {
         currentCount = draggerWidthAvailable
         currentCount -= targetWidth
       }
+      // @FIX when dragger not :visible with draggerWidth === 0 groups of 1 slide
+      if (draggerWidth === 0 && doneFirst) {
+        self.groupMq.push([])
+        currentGroup = self.groupMq.length - 1
+      }
+      doneFirst = true
       // assign group
       self.groupMq[currentGroup].push(target)
       target.setAttribute('data-xt-group', self.namespace + '-' + currentGroup)
@@ -433,8 +439,11 @@ class Slider extends Xt.Toggle {
       }
     }
     // resize
-    const resizeHandler = Xt.dataStorage.put(window, 'resize' + '.' + self.namespace, self.eventResizeHandler.bind(self).bind(self))
+    const resizeHandler = Xt.dataStorage.put(window, 'resize' + '.' + self.namespace, self.eventReinitHandler.bind(self).bind(self))
     addEventListener('resize', resizeHandler)
+    // reinit
+    const reinitHandler = Xt.dataStorage.put(self.object, 'reinit' + '.' + self.namespace, self.eventReinitHandler.bind(self).bind(self))
+    self.object.addEventListener('reinit.xt', reinitHandler)
   }
 
   //
@@ -581,10 +590,10 @@ class Slider extends Xt.Toggle {
   }
 
   /**
-   * resize
+   * reinit
    * @param {Event} e
    */
-  eventResizeHandler(e) {
+  eventReinitHandler(e) {
     const self = this
     // reinit
     if (!self.initial) {
@@ -627,6 +636,9 @@ class Slider extends Xt.Toggle {
       slideHeight = groupHeight > slideHeight ? groupHeight : slideHeight
       slideHeight += 'px'
       if (self.autoHeight.style.height !== slideHeight) {
+        if (!self.initial) {
+          self.autoHeight.classList.add('xt-autoHeight')
+        }
         self.autoHeight.style.height = slideHeight
         // listener dispatch
         const detail = self.eDetailSet()

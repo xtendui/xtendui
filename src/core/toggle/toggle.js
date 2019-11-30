@@ -177,6 +177,8 @@ class Toggle {
     let currents = 0
     self.initial = true
     self.currentIndex = null
+    // component
+    self.object.setAttribute('data-xt-name', self.componentName)
     // @FIX set namespace for next frame
     for (const el of self.elements) {
       el.setAttribute('data-xt-namespace', self.namespace)
@@ -188,7 +190,7 @@ class Toggle {
       for (const element of elements) {
         // reset
         const found = self.initReset(element, saveCurrents)
-        if (found) {
+        if (found && currents < options.max) {
           // initial
           currents++
           // reactivate
