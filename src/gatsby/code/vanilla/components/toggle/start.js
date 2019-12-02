@@ -17,6 +17,7 @@ demo.htmlSource = `
 
 <div class="list list--default list-space--small align-items-center"
      data-xt-toggle="{ class: 'active', min: 3, max: 3 }">
+     
   <button type="button" class="btn btn--default" data-xt-group="0">
     Group 0
   </button>
@@ -32,6 +33,7 @@ demo.htmlSource = `
   <button type="button" class="btn btn--default active" data-xt-group="1">
     Group 1
   </button>
+  
   <div class="note note--default note--background toggle-block">
     Target 0
   </div>
@@ -50,5 +52,6 @@ demo.htmlSource = `
   <div class="note note--default note--background toggle-block" data-xt-group="1">
     Group 1
   </div>
+  
 </div>
 `
