@@ -11,8 +11,8 @@ date: "2000-01-01"
 
 You can install with one of the following:
 * download: [latest release](https://github.com/minimit/xtend-library/releases/latest)
-* clone: `git clone https://github.com/minimit/xtend-library.git`
 * [npm](https://www.npmjs.com/): `npm install --save xtend-library`
+* clone (**@next release on master**): `git clone https://github.com/minimit/xtend-library.git`
 
 ## Usage
 
@@ -112,17 +112,21 @@ Include [core-js](https://cdnjs.com/libraries/core-js) and [cdn](https://cdnjs.c
 
 Copy the `/dist` folder in your project and add the required styles to your html:
 
-<script type="text/plain" class="language-markup">
+<pre class="language-markup">
+<code class="language-markup">
 <link rel="stylesheet" href="dist/xtend.min.css"/>
-</script>
+</code>
+</pre>
 
 Add the required scripts to your html
 
-<script type="text/plain" class="language-markup">
+<pre class="language-markup">
+<code class="language-markup">
 <script src="dist/xtend-core.js"></script>
 <!-- or <script src="dist/xtend-core-extensions.js"></script> -->
 <!-- or <script src="dist/xtend-core-extensions-addons.js"></script> -->
-</script>
+</code>
+</pre>
 
 ## Browser support
 

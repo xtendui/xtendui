@@ -2,8 +2,8 @@
 
 You can install with one of the following:
 * download: [latest release](https://github.com/minimit/xtend-library/releases/latest)
-* clone: `git clone https://github.com/minimit/xtend-library.git`
 * [npm](https://www.npmjs.com/): `npm install --save xtend-library`
+* clone (**@next release on master**): `git clone https://github.com/minimit/xtend-library.git`
 
 ## Usage
 
