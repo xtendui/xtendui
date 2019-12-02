@@ -3,51 +3,21 @@ type: "Components"
 badge: "Extensions"
 parent: "Sticky"
 title: "API"
-date: "2000-12-01"
+date: "2000-01-01"
 ---
 
-[[noteDefault]]
-| Sticky uses toggle for logic, refer to [toggle page](/components/toggle/api) for a complete **API**.
+##Initialization
 
-###Options
+Initialize automatically within markup with `[data-xt-sticky="{ <options> }"]`.
 
-These are the default options for **Sticky**:
+Or initialize with javascript:
 
-```js
-{
-  elements: false,
-  targets: false,
-  on: 'scroll resize',
-  min: 0,
-  max: 'Infinity',
-  instant: true,
-  class: 'active active-sticky',
-  aria: false,
-  // sticky only
-  sticky: true,
-  position: 'top',
-  limit: { bottom: 'Infinity' },
-  contain: false,
-  hide: false,
-}
+```jsx
+new Xt.Sticky(document.querySelector('.my-sticky'), {
+  // options
+});
 ```
 
-<div class="table--scroll">
-
-|                         | Syntax                                    | Default                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `sticky:String`                          | `false`        | Sticky mode 'absolute' or 'fixed' or 'fixed-always'            |
-| Option                  | `position:String`                          | `'top'`        | Position 'top' or 'bottom'            |
-| Option                  | `limit.top:Number|Query`                          | `false`        | Limit top sticky to pixel or query           |
-| Option                  | `limit.bottom:Number|Query`                          | `'Infinity'`        | Limit bottom sticky to pixel or query            |
-| Option                  | `contain.top:Query`                          | `false`        | Contain top sticky to query            |
-| Option                  | `contain.bottom:Query`                          | `false`        | Contain bottom sticky to query            |
-| Option                  | `hide:String`                          | `false`        | Hide sticky on 'up' or 'down'            |
-
-</div>
-
-Other options are inherited from [toggle options](/components/toggle/api#options).
-
-###Events
+##Events
 
 @TODO tables events

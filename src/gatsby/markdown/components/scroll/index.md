@@ -35,17 +35,3 @@ import 'xtend-library/src/xtend-extensions.js'
 
 [[noteDefault]]
 | It's recomended to animate the scroll elements with <code>animation</code> instead of <code>transition</code> because of <a href="{% link faq.html %}#browsers-bugs-fixed-position">this bug</a>.
-
-##Initialization
-
-Initialize automatically within markup with `[data-xt-scroll="{ <options> }"]`.
-
-Or initialize with javascript:
-
-```jsx
-new Xt.Scroll(document.querySelector('.my-scroll'), {
-  // options
-});
-```
-
-For options and events visit the [api page](/components/scroll/api).

@@ -43,17 +43,3 @@ Use this markup to create a **sticky**.
 
 [[noteDefault]]
 | It's recomended to style and animate a inner div <code>[data-xt-xticky] > div</code> when using <strong>sticky component</strong>.
-
-##Initialization
-
-Initialize automatically within markup with `[data-xt-sticky="{ <options> }"]`.
-
-Or initialize with javascript:
-
-```jsx
-new Xt.Sticky(document.querySelector('.my-sticky'), {
-  // options
-});
-```
-
-For options and events visit the [api page](/components/sticky/api).

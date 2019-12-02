@@ -2745,6 +2745,7 @@ Toggle.optionsDefaultSuper = {
   delayOff: false,
   durationOn: false,
   durationOff: false,
+  navigation: false,
   keyboard: {
     selector: false,
   },

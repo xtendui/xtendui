@@ -7,7 +7,7 @@ date: "2000-04-01"
 ---
 
 [[noteDefault]]
-| Overlay uses card to style it's content, refer to [card's content](/components/card/content) for a complete **API**.
+| Overlay uses card to style it's content, refer to [card's content](/components/card/content) for all **content**.
 
 ##Block
 

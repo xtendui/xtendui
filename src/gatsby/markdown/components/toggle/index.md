@@ -43,17 +43,3 @@ You can use this markup to create a **toggle** with **no targets**.
     <!-- content -->
   </button>
 </script>
-
-##Initialization
-
-Initialize automatically within markup with `[data-xt-toggle="{ <options> }"]`.
-
-Or initialize with javascript:
-
-```jsx
-new Xt.Toggle(document.querySelector('.my-toggle'), {
-  // options
-});
-```
-
-For options and events visit the [api page](/components/toggle/api).

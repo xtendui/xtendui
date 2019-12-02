@@ -48,17 +48,3 @@ Use this markup to create a **drop**.
     </div>
   </div>
 </script>
-
-##Initialization
-
-Initialize automatically within markup with `[data-xt-drop="{ <options> }"]`.
-
-Or initialize with javascript:
-
-```jsx
-new Xt.Drop(document.querySelector('.my-drop'), {
-  // options
-});
-```
-
-For options and events visit the [api page](/components/drop/api).

@@ -6,6 +6,9 @@ title: "Option"
 date: "2000-02-01"
 ---
 
+[[noteDefault]]
+| Drop uses toggle for logic, refer to [toggle's option](/components/toggle/option) for all **options**.
+
 ##Variant
 
 Classes for assigning variant (e.g.: border / background / font colors).
@@ -30,11 +33,29 @@ Classes for assigning position.
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.drop--{position}`                        | `.drop--bottom` `.drop--top` `.drop--left` `.drop--right` `.drop--center` etc.. |
-| Mixin                   | `.drop--{position}()`                      | `.drop--bottom()` `.drop--top()` `.drop--left()` `.drop--right()` `.drop--center()` etc.. |
+| Class                   | `.drop--{position}`                        | `.drop--bottom` `.drop--top` `.drop--left` `.drop--right` `.drop--center` `.drop--before` `.drop--after` |
+| Mixin                   | `.drop--{position}()`                      | `.drop--bottom()` `.drop--top()` `.drop--left()` `.drop--right()` `.drop--center()` `.drop--before()` `.drop--after()` |
 
         
 <demo>
   <demovanilla src="vanilla/components/drop/position">
+  </demovanilla>
+</demo>
+
+##Event
+
+You can specify **on** and **off** events for the drop. Fore example `on: 'mouseenter'` `off: 'mouseleave'`. Default is `on: 'click'`.
+
+<div class="table--scroll">
+
+|                         | Syntax                                    | Default                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `on: String`                              | `'click'`                     | Set event to listen for activation           |
+| Option                  | `off: String`                             | `false`                       | Set event to listen for deactivation if not present `options.on` deactivate when already activated          |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/drop/event">
   </demovanilla>
 </demo>

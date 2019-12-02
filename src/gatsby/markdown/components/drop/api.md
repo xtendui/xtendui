@@ -3,35 +3,21 @@ type: "Components"
 badge: "Core"
 parent: "Drop"
 title: "API"
-date: "2000-12-01"
+date: "2000-01-01"
 ---
 
-[[noteDefault]]
-| Drop uses toggle for logic, refer to [toggle page](/components/toggle/api) for a complete **API**.
+##Initialization
 
-###Options
+Initialize automatically within markup with `[data-xt-drop="{ <options> }"]`.
 
-These are the default options for **Drop**:
+Or initialize with javascript:
 
-```js
-{
-  elements: false,
-  targets: ':scope > .drop',
-  elementsInner: ':scope > a, :scope > button',
-  on: 'click',
-  min: 0,
-  max: 1,
-  class: 'active active-drop',
-  eventLimit: '.event-limit, .drop',
-  autoClose: true,
-  closeOutside: 'body',
-  closeInside: '.drop-dismiss, .card--drop > .card-inner > .btn-close, :scope > .backdrop',
-  ariaControls: ':scope > a, :scope > button',
-}
+```jsx
+new Xt.Drop(document.querySelector('.my-drop'), {
+  // options
+});
 ```
 
-Other options are inherited from [toggle options](/components/toggle/api#options).
-
-###Events
+##Events
 
 @TODO tables events

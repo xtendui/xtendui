@@ -6,21 +6,12 @@ title: "Other"
 date: "2000-10-01"
 ---
 
-##Event
+##Group
 
-You can specify **on** and **off** events for the toggle. Fore example `on: 'mouseenter'` `off: 'mouseleave'`. Default is `on: 'click'`.
-
-<div class="table--scroll">
-
-|                         | Syntax                                    | Default                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `on: String`                              | `'click'`                     | Set event to listen for activation           |
-| Option                  | `off: String`                             | `false`                       | Set event to listen for deactivation if not present `options.on` deactivate when already activated          |
-
-</div>
+If you need to toggle **multiple targets** with the **same element** assign `data-xt-group` to **elements** and the associated targets **targets**. Group's additional elements aren't counted for min and max.
 
 <demo>
-  <demovanilla src="vanilla/components/toggle/event">
+  <demovanilla src="vanilla/components/toggle/group">
   </demovanilla>
 </demo>
 

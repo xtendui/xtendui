@@ -7,7 +7,10 @@ date: "2000-02-01"
 ---
 
 [[noteDefault]]
-| Overlay uses card to style it's content, refer to [card's options](/components/card/option) for a complete **API**.
+| Overlay uses card to style it's content, refer to [card's option](/components/card/option) for all **option**.
+
+[[noteDefault]]
+| Overlay uses toggle for logic, refer to [toggle's option](/components/toggle/option) for all **options**.
 
 ##Preset
 

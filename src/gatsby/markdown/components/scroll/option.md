@@ -6,9 +6,12 @@ title: "Option"
 date: "2000-02-01"
 ---
 
+[[noteDefault]]
+| Scroll uses toggle for logic, refer to [toggle's option](/components/toggle/option) for all **options**.
+
 ##Mode
 
-You can set scroll mode with **less mixins**.
+You can set scroll mode.
 
 <demo>
   <div class="gatsby_demo_item" data-iframe="iframe/components/scroll/mode-infinite">
@@ -23,20 +26,19 @@ You can set scroll mode with **less mixins**.
   </div>
 </demo>
 
-##Direction
-
-Animate with inverse `.inverse` or `self.detail.inverse`.
-
-<demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/scroll/direction">
-  </div>
-</demo>
-
 ##Distance
 
 Use `distance: Number` activation and deactivation distance. For percent use `distance: 'Number%'`.
 
 The default **distance** is `distance: '20%'`.
+
+<div class="table--scroll">
+
+|                         | Syntax                                    | Default                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `distance:Number|Percent`                          | `'20%'`        | Activation distance from window's top and bottom            |
+
+</div>
 
 <demo>
   <div class="gatsby_demo_item" data-iframe="iframe/components/scroll/distance">
@@ -47,7 +49,42 @@ The default **distance** is `distance: '20%'`.
 
 You can use a function for `delayOn` and `delayOff` for example `function(current, total) {return Math.min((total - current) * 150, 300)}`.
 
+<div class="table--scroll">
+
+|                         | Syntax                                    | Default                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `delayOn:Milliseconds|Function`                          | `false`        | Activation delay            |
+| Option                  | `delayOff:Milliseconds|Function`                          | `false`        | Deactivation delay            |
+
+</div>
 <demo>
   <div class="gatsby_demo_item" data-iframe="iframe/components/scroll/delay">
   </div>
 </demo>
+
+##Sticky
+
+<div class="table--scroll">
+
+|                         | Syntax                                    | Default                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `sticky:String`                          | `false`        | Sticky mode 'absolute' or 'fixed' or 'fixed-always'            |
+
+</div>
+
+@TODO demo
+
+##Position
+
+<div class="table--scroll">
+
+|                         | Syntax                                    | Default                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `trigger:Number|Percent`                          | `'100%'`        | Activation trigger distance viewport's top and bottom            |
+| Option                  | `start:Number|Percent`                          | `'100%'`        | Activation start distance viewport's top and bottom           |
+| Option                  | `end:Number|Percent`                          | `false`        | Activation end distance viewport's top and bottom            |
+| Option                  | `fallback:Number|Percent`                          | `100`        | Fallback distance when too close to the start and end of the page            |
+
+</div>
+
+@TODO demo

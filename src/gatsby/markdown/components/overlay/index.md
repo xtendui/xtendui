@@ -62,17 +62,3 @@ You can use this markup to create an **overlay** with **no toggle**.
 
 [[noteError]]
 | Overlays are moved to **body** to prevent **z-index** problems. Style and query overlay's content accordingly.
-
-##Initialization
-
-Initialize automatically within markup with `[data-xt-overlay="{ <options> }"]`.
-
-Or initialize with javascript:
-
-```jsx
-new Xt.Overlay(document.querySelector('.my-overlay'), {
-  // options
-});
-```
-
-For options and events visit the [api page](/components/overlay/api).
