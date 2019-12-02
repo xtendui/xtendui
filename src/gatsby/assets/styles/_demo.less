@@ -328,6 +328,18 @@ table {
   .btn--open-full {
     display: none !important;
   }
+  // animation
+  &.active {
+    .anim-y.active();
+    opacity: .5 !important;
+    .gatsby_demo_item.populated {
+      .anim-y.active();
+      animation-delay: @time-small;
+    }
+  }
+  &.out {
+    .anim-y-inverse.out();
+  }
 }
 
 #toggle--open-full-content {

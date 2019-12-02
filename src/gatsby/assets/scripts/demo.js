@@ -372,7 +372,7 @@ const makeFullscreen = function(container) {
   toggle.dispatchEvent(new CustomEvent('on.xt'))
   // move code block
   container.before(
-    Xt.createElement('<div class="xt-ignore" data-xt-origin="toggle--open-full-content" style="height: ' + container.clientHeight + 'px"></div>')
+    Xt.createElement('<div class="gatsby_demo xt-ignore" data-xt-origin="toggle--open-full-content" style="height: ' + container.offsetHeight + 'px"></div>')
   )
   if (!container.dataset.isFullscreenOnly) {
     container.classList.add('xt-ignore', 'xt-ignore--once') // @FIX ignore once for mount when moving
