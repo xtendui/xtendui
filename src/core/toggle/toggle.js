@@ -252,7 +252,14 @@ class Toggle {
     let found = false
     // reset
     const reset = function(elReset) {
-      if (elReset.classList.contains(self.classes[0])) {
+      let isActive = false
+      for (const c of self.classes) {
+        if (elReset.classList.contains(c)) {
+          isActive = true
+          break
+        }
+      }
+      if (isActive) {
         elReset.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesInitial, ...self.classesInverse)
         Xt.dataStorage.remove(elReset, self.componentNamespace + 'Initial')
         if (saveCurrents) {

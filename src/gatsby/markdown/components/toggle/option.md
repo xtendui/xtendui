@@ -6,6 +6,24 @@ title: "Option"
 date: "2000-02-01"
 ---
 
+##Min and Max
+
+You can specify **min** and **max** concurrent activations. The **min** option is fulfilled on initialization, the **max** options deactivates the first activated when max is reached.
+
+<div class="table--scroll">
+
+|                         | Syntax                                    | Default                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `min:Number`                          | `0`        | Minimum number of concurrent elements activated            |
+| Option                  | `max:Number`                          | `1`        | Maximum number of concurrent elements activated            |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/toggle/minmax">
+  </demovanilla>
+</demo>
+
 ##Class
 
 You can specify classes to toggle with `class: 'my-class-0 my-class-1'`. Toggled class is by default `.active`.
@@ -26,10 +44,12 @@ You can specify classes to toggle with `class: 'my-class-0 my-class-1'`. Toggled
 <demo>
   <demovanilla src="vanilla/components/toggle/class">
   </demovanilla>
+</demo>
+
+You can start with toggled elements and targets just by adding <strong>one of the classes</strong> to the <strong>elements</strong> or <strong>targets</strong>.
+
+<demo>
   <demovanilla src="vanilla/components/toggle/start">
-    <div class="gatsby_demo_text">
-      You can start with toggled elements and targets just by adding the <strong>first class</strong> to the <strong>elements</strong> or <strong>targets</strong>. Following this activation the <strong>min</strong> option will take effect.
-    </div>
   </demovanilla>
 </demo>
 
@@ -49,24 +69,6 @@ You can specify **on** and **off** events for the toggle. Fore example `on: 'mou
 
 <demo>
   <demovanilla src="vanilla/components/toggle/event">
-  </demovanilla>
-</demo>
-
-##Min and Max
-
-You can specify **min** and **max** concurrent activations. The **min** option is fulfilled on initialization, the **max** options deactivates the first activated when max is reached.
-
-<div class="table--scroll">
-
-|                         | Syntax                                    | Default                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `min:Number`                          | `0`        | Minimum number of concurrent elements activated            |
-| Option                  | `max:Number`                          | `1`        | Maximum number of concurrent elements activated            |
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/toggle/minmax">
   </demovanilla>
 </demo>
 

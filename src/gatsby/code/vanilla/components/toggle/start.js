@@ -29,7 +29,7 @@ demo.htmlSource = `
   <button type="button" class="btn btn--default active">
     Toggle 1
   </button>
-  <button type="button" class="btn btn--default" data-xt-group="1">
+  <button type="button" class="btn btn--default active" data-xt-group="1">
     Group 1
   </button>
   <div class="note note--default note--background toggle-block">
