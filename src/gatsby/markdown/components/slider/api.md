@@ -105,11 +105,6 @@ Set to `groupMq: false` to disable automatic grouping of slides.
 
 You can disable the drag transform position while dragging the **drag.dragger** with `drag: { drag: false }`.
 
-<demo>
-  <demovanilla src="vanilla/components/slider/transform-false">
-  </demovanilla>
-</demo>
-
 Use `drag: false` to disable drag. You need to use the slider in **toggle mode**, so with `.toggle-block` on the slides.
 
 <demo>
