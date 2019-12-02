@@ -10,7 +10,8 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list--default list-space--small align-items-center demo-source-from">
+<div class="list list--default list-space--small align-items-center">
+
   <div data-xt-overlay>
     <button type="button" class="btn btn--primary">
       block
@@ -82,5 +83,6 @@ demo.htmlSource = `
       </div>
     </div>
   </div>
+  
 </div>
 `

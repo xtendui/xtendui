@@ -9,7 +9,8 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list--default list-space--small align-items-center demo-source-from">
+<div class="list list--default list-space--small align-items-center">
+
   <button type="button" class="btn btn--default caret" data-xt-toggle>
     caret
   </button>
@@ -25,5 +26,6 @@ demo.htmlSource = `
   <button type="button" class="btn btn--default caret caret--horizontal caret--inverse" data-xt-toggle>
     horizontal inverse
   </button>
+  
 </div>
 `

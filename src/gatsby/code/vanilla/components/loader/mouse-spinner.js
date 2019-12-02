@@ -10,7 +10,8 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list--default list-space--small align-items-center justify-content-center demo-source-from">
+<div class="list list--default list-space--small align-items-center justify-content-center">
+
   <div class="card card--default">
     <div class="card-design"></div>
     <div class="card-inner">
@@ -27,5 +28,6 @@ demo.htmlSource = `
       </div>
     </div>
   </div>
+  
 </div>
 `

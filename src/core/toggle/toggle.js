@@ -410,16 +410,11 @@ class Toggle {
     // event
     for (const el of self.elements) {
       // event on
+      const onHandler = Xt.dataStorage.put(el, options.on + '.' + self.namespace, self.eventOnHandler.bind(self).bind(self, el))
       if (options.on) {
-        const onHandler = Xt.dataStorage.put(el, options.on + '.' + self.namespace, self.eventOnHandler.bind(self).bind(self, el))
         const events = [...options.on.split(' ')]
         for (const event of events) {
           el.addEventListener(event, onHandler)
-        }
-        el.addEventListener('on.xt', onHandler)
-        // @FIX off.xt toggle
-        if (!options.off) {
-          el.addEventListener('off.xt', onHandler)
         }
         // @FIX prevents click links on click until clicked two times
         const withLinkStartHandler = Xt.dataStorage.put(
@@ -432,15 +427,20 @@ class Toggle {
           el.addEventListener('mouseup', withLinkStartHandler)
         }
       }
+      el.addEventListener('on.xt', onHandler)
+      // @FIX off.xt toggle
+      if (!options.off) {
+        el.addEventListener('off.xt', onHandler)
+      }
       // event off
+      const offHandler = Xt.dataStorage.put(el, options.off + '.' + self.namespace, self.eventOffHandler.bind(self).bind(self, el))
       if (options.off) {
-        const offHandler = Xt.dataStorage.put(el, options.off + '.' + self.namespace, self.eventOffHandler.bind(self).bind(self, el))
         const events = [...options.off.split(' ')]
         for (const event of events) {
           el.addEventListener(event, offHandler)
         }
-        el.addEventListener('off.xt', offHandler)
       }
+      el.addEventListener('off.xt', offHandler)
     }
     // listener
     for (const tr of self.targets) {

@@ -9,7 +9,7 @@ date: "2000-10-01"
 [[noteDefault]]
 | Overlay uses card to style it's content, refer to [card's other](/components/card/other) for all **other**.
 
-##Nested
+##Nested and unique mode
 
 <demo>
   <demovanilla src="vanilla/components/overlay/nested">

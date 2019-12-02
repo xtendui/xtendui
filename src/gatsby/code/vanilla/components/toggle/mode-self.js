@@ -9,12 +9,15 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list--default list-space--small align-items-center demo-source-from">
+<div class="list list--default list-space--small align-items-center">
+
   <button type="button" class="btn btn--default" data-xt-toggle>
     Toggle
   </button>
+  
   <button type="button" class="btn btn--default" data-xt-toggle>
     Toggle
   </button>
+  
 </div>
 `
