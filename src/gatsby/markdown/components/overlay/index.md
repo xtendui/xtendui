@@ -49,15 +49,13 @@ Use this markup to create an **overlay**.
 You can use this markup to create an **overlay** with **no toggle**.
 
 <script type="text/plain" class="language-markup">
-  <div data-xt-overlay>
-    <div class="overlay active" id="overlay--custom">
-      <div class="overlay-container">
-        <div class="overlay-inner">
-          <!-- content -->
-        </div>
-      </div>
+<div class="overlay active" id="overlay--custom" data-xt-overlay="{ on: false }">
+  <div class="overlay-container">
+    <div class="overlay-inner">
+      <!-- content -->
     </div>
   </div>
+</div>
 </script>
 
 [[noteError]]

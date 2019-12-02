@@ -54,7 +54,7 @@ Drop.optionsDefault = {
   eventLimit: '.event-limit, .drop',
   autoClose: true,
   closeOutside: 'body',
-  closeInside: '.drop-dismiss, .card--drop > .card-inner > .btn-close, :scope > .backdrop',
+  closeInside: '.drop-dismiss, .btn-close, .backdrop',
   ariaControls: ':scope > a, :scope > button',
 }
 Xt.optionsGlobal[Drop.componentName] = {}

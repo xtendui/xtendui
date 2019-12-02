@@ -1615,6 +1615,7 @@ class Toggle {
       self.specialCenter(el, before, after)
       self.specialMiddle(el, before, after)
       self.specialCollapse(actionCurrent, el, before, after)
+      self.specialBackdrop(actionCurrent, obj)
       if (type === 'targets' || (!self.targets.length && type === 'elements')) {
         // @FIX when standalone
         // appendTo
@@ -1628,7 +1629,7 @@ class Toggle {
           appendToTarget.appendChild(el)
         }
       }
-      if (type === 'targets' || type === 'targetsInner') {
+      if (type === 'targets' || type === 'targetsInner' || el === self.object) {
         self.specialClose(actionCurrent, el, obj.elements.queueEls[0])
       }
       // aria
@@ -1672,7 +1673,7 @@ class Toggle {
         .getPropertyValue('content')
         .replace(/['"]+/g, '')
       self.specialCollapse(actionCurrent, el, before, after)
-      if (type === 'targets' || type === 'targetsInner') {
+      if (type === 'targets' || type === 'targetsInner' || el === self.object) {
         self.specialClose(actionCurrent, el)
       }
       // @FIX loop when listening and triggering from outside
@@ -1857,7 +1858,6 @@ class Toggle {
     const options = self.options
     if (actionCurrent === 'On') {
       // special
-      self.specialBackdrop(actionCurrent, obj)
       self.specialClassHtml(actionCurrent)
       self.specialScrollbar(actionCurrent)
       // focus
@@ -2250,7 +2250,8 @@ class Toggle {
   eventSpecialCloseInsideHandler(checkEl, single, e) {
     const self = this
     // prevent closing when nested and moved (ex: overlay)
-    if (!Xt.contains(self.targets, checkEl)) {
+    const checkContainer = self.targets.length ? self.targets : Xt.arrSingle(self.object)
+    if (!Xt.contains(checkContainer, checkEl)) {
       return
     }
     // handler
