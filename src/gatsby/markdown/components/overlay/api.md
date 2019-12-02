@@ -27,6 +27,8 @@ new Xt.Overlay(document.querySelector('.my-overlay'), {
 
 You can start with toggled elements and targets just by adding **one of the classes** to the **elements** or **targets**.
 
+It's recommended to use `active-overlay` on overlay otherwise the overlay flashes visible on page load.
+
 <div class="table--scroll">
 
 |                         | Syntax                                    | Default                       | Description                   |

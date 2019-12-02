@@ -20,13 +20,3 @@ import 'xtend-library/src/extensions/animation/propagate-interaction.js'
   </button>
 </script>
 -->
-
-##Javascript
-
-###Options
-
-@TODO tables options
-
-###Events
-
-@TODO tables events

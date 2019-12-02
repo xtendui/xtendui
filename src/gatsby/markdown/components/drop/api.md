@@ -23,38 +23,19 @@ new Xt.Drop(document.querySelector('.my-drop'), {
 
 ##Option
 
-###Variant
+###Class
 
-Classes for assigning variant (e.g.: border / background / font colors).
+You can start with toggled elements and targets just by adding **one of the classes** to the **elements** or **targets**.
+
+It's recommended to use `active-drop` on drops otherwise the overlay flashes visible on page load.
 
 <div class="table--scroll">
 
-|                         | Syntax                                    | Example                       |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.drop--{variant}`                        | `.drop--default` `.drop--primary` |
-| Mixin                   | `.drop--{variant}()`                      | `.drop--default()` `.drop--primary()`         |
+|                         | Syntax                                    | Default                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `class:String`                          | `active active-drop`        | Class name for activation            |
 
 </div>
-
-<demo>
-  <demovanilla src="vanilla/components/drop/variant">
-  </demovanilla>
-</demo>
-
-###Position
-
-Classes for assigning position.
-
-|                         | Syntax                                    | Example                       |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.drop--{position}`                        | `.drop--bottom` `.drop--top` `.drop--left` `.drop--right` `.drop--center` `.drop--before` `.drop--after` |
-| Mixin                   | `.drop--{position}()`                      | `.drop--bottom()` `.drop--top()` `.drop--left()` `.drop--right()` `.drop--center()` `.drop--before()` `.drop--after()` |
-
-        
-<demo>
-  <demovanilla src="vanilla/components/drop/position">
-  </demovanilla>
-</demo>
 
 ###Event
 
