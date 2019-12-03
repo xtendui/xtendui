@@ -2463,7 +2463,7 @@ class Toggle {
     const options = self.options
     // backdrop
     if (options.backdrop) {
-      const elements = typeof options.backdrop === 'string' && obj[options.backdrop] ? Xt.arrSingle(obj[options.backdrop].queueEls) : Xt.arrSingle(self.object)
+      const elements = obj['targets'] ? Xt.arrSingle(obj['targets'].queueEls) : Xt.arrSingle(self.object)
       for (const element of elements) {
         if (actionCurrent === 'On') {
           const backdrops = element.querySelectorAll('.backdrop')

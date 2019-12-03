@@ -61,7 +61,7 @@ Overlay.optionsDefault = {
   eventLimit: '.event-limit, .card-content',
   autoClose: true,
   appendTo: 'body',
-  backdrop: 'targets',
+  backdrop: true,
   classHtml: 'xt-overlay',
   closeInside: '.overlay-dismiss, .btn-close, .backdrop',
   scrollbar: true,
