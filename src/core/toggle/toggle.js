@@ -1536,7 +1536,10 @@ class Toggle {
     // stop all obj in queues
     if (self.detail) {
       // @FIX not already initialized
-      const actions = [{ current: 'On', other: 'Off' }, { current: 'Off', other: 'On' }]
+      const actions = [
+        { current: 'On', other: 'Off' },
+        { current: 'Off', other: 'On' },
+      ]
       for (const action of actions) {
         const queue = self.detail['queue' + action.current]
         for (const obj in queue) {
@@ -1755,7 +1758,7 @@ class Toggle {
       self.specialCollapse('Reset', el, before, after)
       // listener dispatch
       if (!obj[type].event || obj[type].event.type !== 'ondone.xt') {
-        el.dispatchEvent(new CustomEvent('ondone.xt', {bubbles: true, detail: obj[type].detail}))
+        el.dispatchEvent(new CustomEvent('ondone.xt', { bubbles: true, detail: obj[type].detail }))
       }
     } else if (actionCurrent === 'Off') {
       // reset
@@ -1801,7 +1804,7 @@ class Toggle {
       }
       // listener dispatch
       if (!obj[type].event || obj[type].event.type !== 'offdone.xt') {
-        el.dispatchEvent(new CustomEvent('offdone.xt', {bubbles: true, detail: obj[type].detail}))
+        el.dispatchEvent(new CustomEvent('offdone.xt', { bubbles: true, detail: obj[type].detail }))
       }
     }
     // queue
@@ -1929,7 +1932,7 @@ class Toggle {
     }
     // prevent default if not loop
     const max = self.getGroups().length - 1
-    const delta = -e.deltaY || -e.detail || e.wheelDelta || e.wheelDeltaY
+    const delta = -e.deltaY || -e.detail
     if ((delta > 0 && self.currentIndex > 0) || (delta < 0 && self.currentIndex < max - 1)) {
       // prevent wheel
       e.preventDefault()
@@ -1951,7 +1954,7 @@ class Toggle {
       return
     }
     // delta
-    let delta = -e.deltaY || -e.detail || e.wheelDelta || e.wheelDeltaY
+    let delta = -e.deltaY || -e.detail
     if (delta === 0) {
       return
     }
@@ -2475,7 +2478,7 @@ class Toggle {
             backdrop.addEventListener(
               eWheel,
               function(e) {
-                const delta = -e.deltaY || -e.detail || e.wheelDelta || e.wheelDeltaY
+                const delta = -e.deltaY || -e.detail
                 element.scrollTop -= delta
               },
               Xt.passiveSupported ? { passive: false } : false
@@ -2698,8 +2701,7 @@ class Toggle {
                   const events = key.split('.')[0].split(' ')
                   for (const event of events) {
                     element.removeEventListener(event, handler)
-                    element.removeEventListener(event, handler, true)
-                    element.removeEventListener(event, handler, { passive: true })
+                    element.removeEventListener(event, handler, Xt.passiveSupported ? { passive: true } : true)
                     Xt.dataStorage.remove(element, key)
                   }
                 }

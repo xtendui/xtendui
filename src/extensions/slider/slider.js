@@ -421,7 +421,7 @@ class Slider extends Xt.Toggle {
       )
       const events = ['mousedown', 'touchstart']
       for (const event of events) {
-        dragger.addEventListener(event, dragstartHandler, Xt.passiveSupported ? { passive: true } : false)
+        dragger.addEventListener(event, dragstartHandler)
       }
       // grab
       if (!self.disabled) {
@@ -546,7 +546,7 @@ class Slider extends Xt.Toggle {
     const dragHandler = Xt.dataStorage.put(dragger, 'mousemove touchmove' + '.' + self.namespace, self.eventDragHandler.bind(self).bind(self, dragger))
     const events = ['mousemove', 'touchmove']
     for (const event of events) {
-      dragger.addEventListener(event, dragHandler)
+      dragger.addEventListener(event, dragHandler, Xt.passiveSupported ? { passive: true } : true)
     }
     // logic
     self.logicDragstart(dragger, e)
@@ -569,7 +569,7 @@ class Slider extends Xt.Toggle {
     const dragHandler = Xt.dataStorage.get(dragger, 'mousemove touchmove' + '.' + self.namespace)
     const eventsmove = ['mousemove', 'touchmove']
     for (const event of eventsmove) {
-      dragger.removeEventListener(event, dragHandler)
+      dragger.removeEventListener(event, dragHandler, Xt.passiveSupported ? { passive: true } : true)
     }
     // logic
     self.logicDragend(dragger, e)
