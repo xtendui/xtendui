@@ -30,7 +30,7 @@ If the toggle is on <code>"on": "mouseenter"</code> or <code>"on": "mousehover"<
 
 ##Backdrop
 
-Use `data-xt-drop='{ backdrop: true }'` to have a backdrop when drop opens.
+Use `data-xt-drop='{ backdrop: 'targets' }'` to have a backdrop when drop opens.
 
 <demo>
   <demovanilla src="vanilla/components/drop/backdrop">

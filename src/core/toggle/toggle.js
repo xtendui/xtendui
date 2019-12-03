@@ -2250,33 +2250,33 @@ class Toggle {
 
   /**
    * specialClose on handler
-   * @param {Node|HTMLElement|EventTarget|Window} checkEl
+   * @param {Node|HTMLElement|EventTarget|Window} closeElement
    * @param {Node|HTMLElement|EventTarget|Window} single
    * @param {Event} e
    */
-  eventSpecialCloseInsideHandler(checkEl, single, e) {
+  eventSpecialCloseInsideHandler(closeElement, single, e) {
     const self = this
     // prevent closing when nested and moved (ex: overlay)
     const checkContainer = self.targets.length ? self.targets : Xt.arrSingle(self.object)
-    if (!Xt.contains(checkContainer, checkEl)) {
+    if (!Xt.contains(checkContainer, closeElement)) {
       return
     }
     // handler
-    if (Xt.contains(Xt.arrSingle(checkEl), e.target)) {
+    if (Xt.contains(Xt.arrSingle(closeElement), e.target)) {
       self.eventOff(single)
     }
   }
 
   /**
    * specialClose off handler
-   * @param {Node|HTMLElement|EventTarget|Window} checkEl
+   * @param {Node|HTMLElement|EventTarget|Window} closeElement
    * @param {Node|HTMLElement|EventTarget|Window} single
    * @param {Event} e
    */
-  eventSpecialCloseOutsideHandler(checkEl, single, e) {
+  eventSpecialCloseOutsideHandler(closeElement, single, e) {
     const self = this
     // handler
-    if (!Xt.contains(Xt.arrSingle(checkEl), e.target)) {
+    if (!Xt.contains(Xt.arrSingle(closeElement), e.target)) {
       self.eventOff(single)
     }
   }

@@ -7,12 +7,12 @@
   position: relative;
   // z-index
   &.active {
-    &, > .drop {
+    &, > .drop > .drop-inner {
       z-index: @index-drop;
     }
   }
   &.out {
-    &, > .drop {
+    &, > .drop > .drop-inner {
       z-index: @index-drop - 1;
     }
   }

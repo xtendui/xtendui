@@ -105,31 +105,35 @@
     animation-duration: @time-medium + @time-small; // needed for .out animation timing, put max animation time
   }
   &.active {
-    > .drop > .drop-inner {
-      > .drop-design {
-        .anim-zoom.active();
+    > .drop {
+      > .drop-inner {
+        > .drop-design {
+          .anim-zoom.active();
+        }
+        > .drop-content {
+          .anim-y.active();
+          animation-delay: @time-small;
+        }
       }
-      > .drop-content {
-        .anim-y.active();
-        animation-delay: @time-small;
+      > .backdrop {
+        .backdrop.active();
       }
-    }
-    > .backdrop {
-      .backdrop.active();
     }
   }
   &.out {
-    > .drop > .drop-inner {
-      > .drop-design {
-        .anim-zoom.out();
-        animation-delay: @time-small;
+    > .drop {
+      > .drop-inner {
+        > .drop-design {
+          .anim-zoom.out();
+          animation-delay: @time-small;
+        }
+        > .drop-content {
+          .anim-y.out();
+        }
       }
-      > .drop-content {
-        .anim-y.out();
+      > .backdrop {
+        .backdrop.out();
       }
-    }
-    > .backdrop {
-      .backdrop.out();
     }
   }
 }
