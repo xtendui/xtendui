@@ -159,7 +159,7 @@ class Toggle {
     // targets
     if (options.targets) {
       let arr = Array.from(self.container.querySelectorAll(options.targets))
-      // arr = arr.filter(x => !x.parentElement.closest(options.targets)); // filter out parent
+      // arr = arr.filter(x => !x.parentElement.closest(options.targets)) // filter out parent
       arr = arr.filter(x => !x.closest('.xt-ignore')) // filter out ignore
       self.targets = arr
       self.destroyElements.push(...self.targets)

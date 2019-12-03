@@ -306,20 +306,20 @@ class Sticky extends Xt.Toggle {
       /*
       if (!checkTop) {
         if (!el.classList.contains('sticky--top')) {
-          el.classList.add('sticky--top');
+          el.classList.add('sticky--top')
         }
       } else {
         if (el.classList.contains('sticky--top')) {
-          el.classList.remove('sticky--top');
+          el.classList.remove('sticky--top')
         }
       }
       if (!checkBottom) {
         if (!el.classList.contains('sticky--bottom')) {
-          el.classList.add('sticky--bottom');
+          el.classList.add('sticky--bottom')
         }
       } else {
         if (el.classList.contains('sticky--bottom')) {
-          el.classList.remove('sticky--bottom');
+          el.classList.remove('sticky--bottom')
         }
       }
       */

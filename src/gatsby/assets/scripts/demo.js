@@ -32,9 +32,9 @@ const formatCode = function(source) {
   }
   // filter meta
   /*
-  let meta = text.match(/\/\/##START([\S\s]*?)\/\/##END/);
+  let meta = text.match(/\/\/##START([\S\s]*?)\/\/##END/)
   if (meta) {
-    text = meta[1];
+    text = meta[1]
   }
   */
   // remove tabs
@@ -195,10 +195,10 @@ const populateDemo = function(container, i) {
     })
     clipboard.on('success', function(e) {
       e.clearSelection()
-      // $(e.trigger).attr('data-original-title', 'Done').tooltip('show');
+      // $(e.trigger).attr('data-original-title', 'Done').tooltip('show')
     })
     clipboard.on('error', function(e) {
-      // $(e.trigger).attr('data-original-title', 'Error: copy manually').tooltip('show');
+      // $(e.trigger).attr('data-original-title', 'Error: copy manually').tooltip('show')
     })
     // inject iframe
     if (item.getAttribute('data-iframe')) {

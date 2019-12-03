@@ -339,7 +339,7 @@ class Slider extends Xt.Toggle {
             pos = draggerWidth - slideLeft - slideWidth
           }
         }
-        // console.debug(pos, draggerWidth, slideWidth, slide);
+        // console.debug(pos, draggerWidth, slideWidth, slide)
         // save pos
         for (const target of targets) {
           Xt.dataStorage.set(target, self.componentNamespace + 'GroupPos', pos)
@@ -482,7 +482,7 @@ class Slider extends Xt.Toggle {
    * @param {Event} e
    */
   eventImgFixHandler(e) {
-    e.preventDefault();
+    e.preventDefault()
   }
 
   /**
