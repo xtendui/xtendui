@@ -22,7 +22,7 @@ We have some boilerplate setup projects to start a project:
 
 ### Webpack
 
-This library is made to be used by [webpack](https://github.com/webpack). In essence you have to setup webpack's resolve to be able to import the scripts and styles from the `node_modules/xtend-library` or from your custom folder if present.
+This library is made to be used by [webpack](https://github.com/webpack). In essence you have to setup webpack's resolve to be able to import the scripts and styles from the `node_modules/xtend-library` or from your custom folder if present (`./dist/xtend-library` in this case).
 
 ```jsx
   resolve: {
@@ -37,6 +37,8 @@ This library is made to be used by [webpack](https://github.com/webpack). In ess
   module: {
     unsafeCache: false,
 ```
+
+With this setup you can **fork** css and js files inside `./dist/xtend-library` and the webpack resolver will load files from it or fallback to `./node_modules/xtend-library`.
 
 ### Css
 

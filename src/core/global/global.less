@@ -1,6 +1,18 @@
-/*
- * colors
+@import '~xtend-library/src/core/global/_global.less';
+
+/**
+ * vars
  */
+
+// generate class: [false], [true] non responsive only, [sm, md, lg] responsive @breakpoints
+
+@generate-util: sm, md, lg;
+@generate-flex: true;
+@generate-margin: false;
+@generate-padding: false;
+
+// colors
+// USAGE: background: @white;
 
 @white: #fff;
 @black: #000;
@@ -37,22 +49,20 @@
 @grad-dark: @gray-800 33%, darken(@gray-800, 2%) 100%;
 @grad-accent: @accent 33%, @accent--dark 100%;
 
-/**
- * spacing
- */
+// spacing
+// USAGE: .margin(x, small); .margin(y, small); .margin(all, small); .margin-remove(all, small);
+// USAGE: .padding(x, small); .padding(y, small); .padding(all, small);
 
 @margins: auto auto, none 0, micro .25rem, tiny .5rem, small 1rem, medium 2rem, big 4rem, giant 6rem, huge 12rem;
 @paddings: auto auto, none 0, micro .25rem, tiny .5rem, small 1rem, medium 2rem, big 4rem, giant 6rem, huge 12rem;
 
-/**
- * order
- */
+// order
+// USAGE: .order(1); // eval to -2
 
 @orders: -3, -2, -1, 0, 1, 2, 3;
 
-/**
- * z-index
- */
+// z-index
+// USAGE: z-index: @index-base;
 
 @index-base: 0;
 @index-active: 2;
@@ -66,9 +76,7 @@
 @index-btn-close: 700;
 @index-last: 701;
 
-/**
- * breakpoints
- */
+// breakpoints
 
 @breakpoints: xs, sm, md, lg, xl; // if you change this change also variables names below
 @breakpoint-xs: 576px;

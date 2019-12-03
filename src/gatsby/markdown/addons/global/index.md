@@ -1,10 +1,9 @@
 ---
 type: "Addons"
 badge: "Addons"
-parent: "Structure"
-title: "Jump to Content"
+parent: "Global"
+title: "Global"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-demos: [
-  "iframe/addons/structure/jump-to-content"
-]
+categories: ["100-Core"]
+date: "2000-01-01"
 ---

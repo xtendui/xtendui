@@ -1,9 +1,8 @@
 ---
 type: "Components"
-badge: "Core"
-parent: "Structure"
-title: "Structure"
+parent: "Animation"
+title: "Animation"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-categories: ["000-Intro"]
-date: "2000-02-01"
+categories: ["100-Core"]
 ---
+
