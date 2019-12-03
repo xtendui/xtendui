@@ -6,7 +6,6 @@ Xt.mount.push({
     // event
 
     function click() {
-      console.log(document.querySelector('#overlay--nested'))
       document.querySelector('#overlay--nested').dispatchEvent(new CustomEvent('on.xt'))
     }
 
