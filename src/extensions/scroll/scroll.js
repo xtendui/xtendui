@@ -34,7 +34,7 @@ class Scroll extends Xt.Toggle {
         // sticky container
         let container = el.closest('.xt-container')
         if (!container) {
-          container = Xt.createElement('<div class="xt-container"></div>')
+          container = Xt.createElement('<div class="xt-container xt-fixed-check"></div>')
           el.before(container)
           el.classList.add('xt-ignore', 'xt-ignore--once') // @FIX ignore once for mount when moving
           container.append(el)
@@ -55,7 +55,7 @@ class Scroll extends Xt.Toggle {
         }
         self.targets.push(target)
         // sticky
-        el.classList.add('xt-sticky')
+        el.classList.add('xt-fixed', 'xt-sticky')
         if (options.sticky === 'absolute') {
           el.classList.add('xt-sticky--absolute')
         } else if (options.sticky === 'fixed') {
@@ -64,7 +64,7 @@ class Scroll extends Xt.Toggle {
           el.classList.add('xt-sticky--fixed-always')
         }
         if (target) {
-          target.classList.add('xt-sticky')
+          target.classList.add('xt-fixed', 'xt-sticky')
           if (options.sticky === 'absolute') {
             target.classList.add('xt-sticky--absolute')
           } else if (options.sticky === 'fixed') {

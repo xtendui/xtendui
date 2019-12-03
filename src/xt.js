@@ -747,7 +747,7 @@ if (typeof window !== 'undefined') {
       if (Xt.normalizeWidth(element.clientWidth) === '') {
         // only if full width
         prop = 'paddingRight'
-      } else if (style.right) {
+      } else if (parseFloat(style.right) === 0) {
         // only if right position
         prop = 'right'
       }
