@@ -33,10 +33,6 @@
   }
 }
 
-.overflow-style(@mode: none) {
-  -webkit-overflow-scrolling: touch;
-}
-
 .design-setup() {
   content: '';
   position: absolute;
@@ -57,14 +53,14 @@
   }
 }
 
-.user-select-none() {
+.user-select--none() {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
 
-.user-select-text() {
+.user-select--text() {
   -webkit-user-select: text;
   -moz-user-select: text;
   -ms-user-select: text;
@@ -231,79 +227,44 @@
   }
 }
 
-// block
+// alignment
 
-.block(@breakpoint: none) when (@breakpoint = none) {
-  display: block;
-  width: 100%;
-}
-
-.block(@breakpoint: none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    display: block;
-    width: 100%;
-  }
-}
-
-// btn alignment
-
-.btn--left(@breakpoint: none) when (@breakpoint = none) {
+.align-left(@breakpoint: none) when (@breakpoint = none) {
   text-align: left;
+  justify-content: flex-start;
 }
 
-.btn--left(@breakpoint: none) when (default()) {
+.align-left(@breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     text-align: left;
+    justify-content: flex-start;
   }
 }
 
-.btn--center(@breakpoint: none) when (@breakpoint = none) {
+.align-center(@breakpoint: none) when (@breakpoint = none) {
   text-align: center;
+  justify-content: center;
 }
 
-.btn--center(@breakpoint: none) when (default()) {
+.align-center(@breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     text-align: center;
+    justify-content: center;
   }
 }
 
-.btn--right(@breakpoint: none) when (@breakpoint = none) {
+.align-right(@breakpoint: none) when (@breakpoint = none) {
   text-align: right;
+  justify-content: flex-end;
 }
 
-.btn--right(@breakpoint: none) when (default()) {
+.align-right(@breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     text-align: right;
-  }
-}
-
-// text-align
-
-.text-align(@val, @breakpoint: none) when (@breakpoint = none) {
-  text-align: @val;
-}
-
-.text-align(@val, @breakpoint: none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    text-align: @val;
-  }
-}
-
-// float
-
-.float(@val, @breakpoint: none) when (@breakpoint = none) {
-  float: @val;
-}
-
-.float(@val, @breakpoint: none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    float: @val;
+    justify-content: flex-end;
   }
 }
 
@@ -317,19 +278,6 @@
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     display: @val;
-  }
-}
-
-// visibility
-
-.visibility(@val, @breakpoint: none) when (@breakpoint = none) {
-  visibility: @val;
-}
-
-.visibility(@val, @breakpoint: none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    visibility: @val;
   }
 }
 
@@ -386,11 +334,11 @@
       .clearfix {
         .clearfix() !important;
       }
-      .user-select-none {
-        .user-select-none() !important;
+      .user-select--none {
+        .user-select--none() !important;
       }
-      .user-select-text {
-        .user-select-text() !important;
+      .user-select--text {
+        .user-select--text() !important;
       }
       .sr-only {
         .sr-only() !important;
@@ -450,28 +398,18 @@
       .full-y {
         .full-y() !important;
       }
-      // block
-      .block {
-        .block() !important;
+      // alignment
+      .align-left {
+        .align-left() !important;
       }
-      // btn alignment
-      .btn--left {
-        .btn--left() !important;
+      .align-center {
+        .align-center() !important;
       }
-      .btn--center {
-        .btn--center() !important;
+      .align-right {
+        .align-right() !important;
       }
-      .btn--right {
-        .btn--right() !important;
-      }
-      // text-align
-      .generate-text-align(@breakpoint);
-      // float
-      .generate-float(@breakpoint);
       // display
       .generate-display(@breakpoint);
-      // visibility
-      .generate-visibility(@breakpoint);
       // order
       .generate-order(@breakpoint);
     }
@@ -492,28 +430,18 @@
         .full-y--@{breakpoint} {
           .full-y() !important;
         }
-        // block
-        .block--@{breakpoint} {
-          .block() !important;
+        // alignment
+        .align-left--@{breakpoint} {
+          .align-left() !important;
         }
-        // btn alignment
-        .btn--left--@{breakpoint} {
-          .btn--left() !important;
+        .align-center--@{breakpoint} {
+          .align-center() !important;
         }
-        .btn--center--@{breakpoint} {
-          .btn--center() !important;
+        .align-right--@{breakpoint} {
+          .align-right() !important;
         }
-        .btn--right--@{breakpoint} {
-          .btn--right() !important;
-        }
-        // text-align
-        .generate-text-align(@breakpoint);
-        // float
-        .generate-float(@breakpoint);
         // display
         .generate-display(@breakpoint);
-        // visibility
-        .generate-visibility(@breakpoint);
         // order
         .generate-order(@breakpoint);
       }
@@ -533,44 +461,6 @@
 
   }
 
-  // generate-text-align
-
-  @text-align-arr: left, right, center;
-
-  .generate-text-align(@breakpoint: none, @i: length(@text-align-arr)) when (@i > 0) {
-    .generate-text-align(@breakpoint, @i - 1);
-    @val: extract(@text-align-arr, @i);
-    & when (@breakpoint = none) {
-      .text-align-@{val} {
-        .text-align(@val) !important;
-      }
-    }
-    & when not (@breakpoint = none) {
-      .text-align-@{val}--@{breakpoint} {
-        .text-align(@val) !important;
-      }
-    }
-  }
-
-  // generate-float
-
-  @float-arr: left, right, none;
-
-  .generate-float(@breakpoint: none, @i: length(@float-arr)) when (@i > 0) {
-    .generate-float(@breakpoint, @i - 1);
-    @val: extract(@float-arr, @i);
-    & when (@breakpoint = none) {
-      .float-@{val} {
-        .float(@val) !important;
-      }
-    }
-    & when not (@breakpoint = none) {
-      .float-@{val}--@{breakpoint} {
-        .float(@val) !important;
-      }
-    }
-  }
-
   // generate-display
 
   @display-arr: none, block, inline-block, flex, inline-flex;
@@ -586,25 +476,6 @@
     & when not (@breakpoint = none) {
       .display-@{val}--@{breakpoint} {
         .display(@val) !important;
-      }
-    }
-  }
-
-  // generate-visibility
-
-  @visibility-arr: hidden, visible;
-
-  .generate-visibility(@breakpoint: none, @i: length(@visibility-arr)) when (@i > 0) {
-    .generate-visibility(@breakpoint, @i - 1);
-    @val: extract(@visibility-arr, @i);
-    & when (@breakpoint = none) {
-      .visibility-@{val} {
-        .visibility(@val) !important;
-      }
-    }
-    & when not (@breakpoint = none) {
-      .visibility-@{val}--@{breakpoint} {
-        .visibility(@val) !important;
       }
     }
   }

@@ -58,7 +58,7 @@ class DocHead extends React.Component {
                           if (nextAdiacent.frontmatter.parent !== nextAdiacent.frontmatter.title) {
                             return (
                               <div key={index}>
-                                <Link to={markdownSlug(nextAdiacent)} className="btn btn--right">
+                                <Link to={markdownSlug(nextAdiacent)} className="btn align-right">
                                   {nextAdiacent.frontmatter.title}
                                   <span className="icon-arrow-right icon--right"></span>
                                 </Link>

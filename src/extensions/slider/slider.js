@@ -397,7 +397,7 @@ class Slider extends Xt.Toggle {
     for (const slide of self.targets) {
       // disable links not active slide
       if (options.jump) {
-        slide.classList.add('links--none')
+        slide.classList.add('links-none')
       }
       // slide on
       const slideOnHandler = Xt.dataStorage.put(slide, 'on' + '.' + self.namespace, self.eventSlideOnHandler.bind(self).bind(self, dragger, slide))
@@ -640,19 +640,19 @@ class Slider extends Xt.Toggle {
       // drag position
       dragger.style.transform = 'translateX(' + self.detail.xPos + 'px)'
       // disable dragger
-      dragger.classList.add('pointer-events--none')
+      dragger.classList.add('pointer-events-none')
       for (const nav of self.navs) {
-        nav.classList.add('pointer-events--none')
+        nav.classList.add('pointer-events-none')
       }
       Xt.animTimeout(dragger, function() {
-        dragger.classList.remove('pointer-events--none')
+        dragger.classList.remove('pointer-events-none')
         for (const nav of self.navs) {
-          nav.classList.remove('pointer-events--none')
+          nav.classList.remove('pointer-events-none')
         }
       })
       // disable links
       dragger.classList.remove('jumps--none')
-      dragger.classList.remove('links--none')
+      dragger.classList.remove('links-none')
       // drag wrap
       if (self.dragger && options.drag.wrap) {
         if (!self.initial) {
@@ -677,7 +677,7 @@ class Slider extends Xt.Toggle {
     }
     // disable links not active slide
     if (options.jump) {
-      slide.classList.remove('links--none')
+      slide.classList.remove('links-none')
     }
   }
 
@@ -692,7 +692,7 @@ class Slider extends Xt.Toggle {
     const slide = e.target
     // disable links not active slide
     if (options.jump) {
-      slide.classList.add('links--none')
+      slide.classList.add('links-none')
     }
     // only one call per group
     const targets = self.getTargets(slide)
@@ -779,9 +779,9 @@ class Slider extends Xt.Toggle {
     // friction
     if (Math.abs(self.detail.xVelocity) > options.drag.frictionLimit) {
       // disable dragger
-      dragger.classList.add('pointer-events--none')
+      dragger.classList.add('pointer-events-none')
       for (const nav of self.navs) {
-        nav.classList.add('pointer-events--none')
+        nav.classList.add('pointer-events-none')
       }
       // drag
       self.logicDrag(dragger, e, true)
@@ -791,7 +791,7 @@ class Slider extends Xt.Toggle {
       })
     } else {
       // disable links
-      dragger.classList.remove('links--none')
+      dragger.classList.remove('links-none')
       dragger.classList.remove('jumps--none')
       // dragend
       requestAnimationFrame(self.logicDragfrictionend.bind(self).bind(e, dragger))
@@ -855,7 +855,7 @@ class Slider extends Xt.Toggle {
     const xDist = xPos - xPosCurrent
     if (Math.abs(xDist) > options.drag.linkThreshold) {
       // disable links
-      dragger.classList.add('links--none')
+      dragger.classList.add('links-none')
       dragger.classList.add('jumps--none')
     }
     // overflow
@@ -962,9 +962,9 @@ class Slider extends Xt.Toggle {
       // disable drag and links
       Xt.animTimeout(dragger, function() {
         // disable dragger
-        dragger.classList.remove('pointer-events--none')
+        dragger.classList.remove('pointer-events-none')
         for (const nav of self.navs) {
-          nav.classList.remove('pointer-events--none')
+          nav.classList.remove('pointer-events-none')
         }
       })
       // drag position
