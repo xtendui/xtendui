@@ -6,7 +6,7 @@ import BezierEasing from 'bezier-easing'
 // gsap
 //
 
-gsap.globalTimeline.timeScale(1000)
+gsap.globalTimeline.timeScale(1000) // milliseconds instead of seconds
 
 gsap.defaults({
   overwrite: 'auto',

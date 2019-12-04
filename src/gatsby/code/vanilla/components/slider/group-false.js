@@ -18,7 +18,7 @@ demo.htmlSource = `
       <li class="slide col-6 col-4--sm">
         <div class="slide-inner">
 
-          <div class="card card--slide text-align-center">
+          <div class="card card--slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -35,7 +35,7 @@ demo.htmlSource = `
       <li class="slide col-6 col-4--sm">
         <div class="slide-inner">
 
-          <div class="card card--slide text-align-center">
+          <div class="card card--slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -52,7 +52,7 @@ demo.htmlSource = `
       <li class="slide col-6 col-4--sm">
         <div class="slide-inner">
 
-          <div class="card card--slide text-align-center">
+          <div class="card card--slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -69,7 +69,7 @@ demo.htmlSource = `
       <li class="slide col-6 col-4--sm">
         <div class="slide-inner">
 
-          <div class="card card--slide text-align-center">
+          <div class="card card--slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -87,7 +87,7 @@ demo.htmlSource = `
       <li class="slide col-6 col-4--sm">
         <div class="slide-inner">
 
-          <div class="card card--slide text-align-center">
+          <div class="card card--slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -104,7 +104,7 @@ demo.htmlSource = `
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card--slide text-align-center"
+          <div class="card card--slide align-center"
             style="height: 15rem">
             <div class="card-design"></div>
             <div class="card-inner">

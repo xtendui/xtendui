@@ -10,11 +10,17 @@ date: "2000-01-01"
 
 ##Vars
 
-Here are the explanation for some global vars:
+Most of the variables are inside `~xtend-library/src/core/global/global.less`, specific component variables are inside the component's less files.
 
 ###Generate
 
 Within `@generate-` vars you have a boolean or a list of breakpoints. With a boolean you activate/deactivate **classes generation**, with a breakpoint you also activate classes generation **for that breakpoint**.
+
+###Colors
+
+Colors variables. `@accent` is the accent color, usually used by **primary** variants but not necessarily. `@text-inverse` is for text on dark backgrounds.
+
+There are also shadow and gradient variables.
 
 ###Spacing
 
@@ -29,6 +35,18 @@ You have also spacing **margin** and **padding** vars that you can use with a **
 | Mixin                   | `.padding({position}, {size})`            | `.padding(y, small)` etc..          |
 
 </div>
+
+###Order
+
+See [order utils](/components/global#utils-order).
+
+###Z-Index
+
+All z-index used in the library, you can change the values but it's better to keep the sequential z-index order the same.
+
+###Breakpoints
+
+The breakpoints are used on media queries and many components, be sure to list all breakpoints inside the variable `@breakpoints`.
 
 ###Media queries
 
@@ -46,7 +64,7 @@ You can edit media queries and breakpoints.
 
 ##Styles
 
-Here are the explanation for some global styles:
+The global styles that don't belongs to a component are all here.
 
 ###Scrollbar
 
@@ -61,7 +79,7 @@ To disable focus feeback globally add `html.xt-focus-disable` class.
 ##Utils
 
 [[noteError]]
-| For using utils classes with **breakpoint** you need to abilitate the breakpoint in [@generate](/components/global#vars-generate).
+| When using **utils classes** with **breakpoints** you need to set the class breakpoint generation with [@generate](/components/global#vars-generate).
 
 ###Various
 

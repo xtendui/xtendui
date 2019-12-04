@@ -16,7 +16,7 @@ class Component extends React.Component {
             <li className="slide col-6 col-4--sm">
               <div className="slide-inner">
 
-                <div className="card card--slide text-align-center">
+                <div className="card card--slide align-center">
                   <div className="card-design"></div>
                   <div className="card-inner">
                     <div className="card-content">
@@ -38,7 +38,7 @@ class Component extends React.Component {
             <li className="slide col-6 col-4--sm">
               <div className="slide-inner">
 
-                <div className="card card--slide text-align-center">
+                <div className="card card--slide align-center">
                   <div className="card-design"></div>
                   <div className="card-inner">
                     <div className="card-content">
@@ -60,7 +60,7 @@ class Component extends React.Component {
             <li className="slide col-6 col-4--sm">
               <div className="slide-inner">
 
-                <div className="card card--slide text-align-center">
+                <div className="card card--slide align-center">
                   <div className="card-design"></div>
                   <div className="card-inner">
                     <div className="card-content">
@@ -82,7 +82,7 @@ class Component extends React.Component {
             <li className="slide col-6 col-4--sm">
               <div className="slide-inner">
 
-                <div className="card card--slide text-align-center">
+                <div className="card card--slide align-center">
                   <div className="card-design"></div>
                   <div className="card-inner">
                     <div className="card-content">
@@ -104,7 +104,7 @@ class Component extends React.Component {
             <li className="slide col-6 col-4--sm">
               <div className="slide-inner">
 
-                <div className="card card--slide text-align-center">
+                <div className="card card--slide align-center">
                   <div className="card-design"></div>
                   <div className="card-inner">
                     <div className="card-content">
@@ -126,7 +126,7 @@ class Component extends React.Component {
             <li className="slide col-12">
               <div className="slide-inner">
 
-                <div className="card card--slide text-align-center"
+                <div className="card card--slide align-center"
                      style={{ height: '15rem' }}>
                   <div className="card-design"></div>
                   <div className="card-inner">
