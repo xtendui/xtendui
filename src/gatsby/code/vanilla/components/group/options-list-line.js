@@ -13,20 +13,15 @@ demo.htmlSource = `
   <div class="list list--default flex-auto">
     <div class="group-inner">
       <button type="button" class="btn btn--primary">
-        Lorem ipsum
+        Lorem
       </button>
     </div>
     <div class="group-inner">
       <button type="button" class="btn btn--default">
-        Dolor sit
+        ipsum
       </button>
     </div>
-    <div class="group-inner">
-      <button type="button" class="btn btn--default">
-        amet
-      </button>
-    </div>
-  <input type="text" class="form-item form-item--default" />
+    <input type="text" class="form-item form-item--default" />
   </div>
 </div>
 `

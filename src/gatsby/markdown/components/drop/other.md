@@ -6,15 +6,6 @@ title: "Other"
 date: "2000-10-01"
 ---
 
-##Static
-
-Use `.drop-container--static` to position relative to closest element with `position: relative;`.
-
-<demo>
-  <demovanilla src="vanilla/components/drop/static">
-  </demovanilla>
-</demo>
-
 ##Link
 
 You can have links that triggers after toggle. Remember to use `autoDisable: false`.
@@ -28,27 +19,56 @@ If the toggle is on <code>"on": "mouseenter"</code> or <code>"on": "mousehover"<
   </demovanilla>
 </demo>
 
+##Static
+
+<div class="table--scroll">
+
+|                         | Class                                     | Mixin                         | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.drop-container--static`                | `.drop-container--static()`        | Position relative to closest element with `position: relative;`.            |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/drop/static">
+  </demovanilla>
+</demo>
+
 ##Backdrop
 
-Use `data-xt-drop='{ backdrop: true }'` to have a backdrop when drop opens.
+<div class="table--scroll">
+
+|                         | Syntax                                    | Default                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `backdrop:Boolean`                              | `false`                     | Generate backdrop on targets or on object if no targets           |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/drop/backdrop">
   </demovanilla>
 </demo>
 
-##Nested
-
-<demo>
-  <demovanilla src="vanilla/components/drop/nested">
-  </demovanilla>
-</demo>
-
 ##Disable
 
-To disable drop use `.drop--disable` useful within media queries.
+<div class="table--scroll">
+
+|                         | Class                                     | Mixin                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.drop--disable`                | `.drop--disable()`        | Disable drop, useful within media queries            |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/drop/disable">
+  </demovanilla>
+</demo>
+
+##Nested
+
+Test with nested drops.
+
+<demo>
+  <demovanilla src="vanilla/components/drop/nested">
   </demovanilla>
 </demo>

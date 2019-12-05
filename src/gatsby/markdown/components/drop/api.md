@@ -45,8 +45,8 @@ You can specify **on** and **off** events for the drop. Fore example `on: 'mouse
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `on: String`                              | `'click'`                     | Set event to listen for activation           |
-| Option                  | `off: String`                             | `false`                       | Set event to listen for deactivation if not present `options.on` deactivate when already activated          |
+| Option                  | `on:String`                              | `'click'`                     | Set event to listen for activation           |
+| Option                  | `off:String`                             | `false`                       | Set event to listen for deactivation if not present `options.on` deactivate when already activated          |
 
 </div>
 

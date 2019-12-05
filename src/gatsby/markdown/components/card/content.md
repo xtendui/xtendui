@@ -102,6 +102,14 @@ To stack `.card-item` horizontally use `.card-item-nested` and `.card-group` wit
 
 If you want full width assets use `.card-asset`.
 
+<div class="table--scroll">
+
+|                         | Class                                     | Mixin                         | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.card-asset`                | Not Possible        | Full width block with responsive full assets            |
+
+</div>
+
 <script type="text/plain" class="language-markup">
   <div class="card card--default">
     <div class="card-design"></div>
@@ -125,6 +133,14 @@ If you want full width assets use `.card-asset`.
 ##Overflow
 
 You can set vertical overflow using `.card--overflow-y` in `.card-inner` or `.card-block`.
+
+<div class="table--scroll">
+
+|                         | Class                                     | Mixin                         | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.card--overflow-y`                | `.card--overflow-y()`        | Vertical overflow with max-height and scrollbar            |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/card/overflow-y">

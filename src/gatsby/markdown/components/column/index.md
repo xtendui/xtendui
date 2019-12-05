@@ -12,7 +12,7 @@ categories: ["100-Core"]
 Use this markup to create a **column**.
 
 <script type="text/plain" class="language-markup">
-  <div class="col">
+  <div class="col-12 col-6--sm col-4--md">
     <!-- content -->
   </div>
 </script>

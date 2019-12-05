@@ -32,6 +32,14 @@ Use `li.xt-custom` to override styles applied by `.list.list--drop`.
 
 You can set vertical overflow using `.drop--overflow-y` in `.drop`.
 
+<div class="table--scroll">
+
+|                         | Class                                     | Mixin                         | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.drop--overflow-y`                | `.drop--overflow-y()`        | Vertical overflow with max-height and scrollbar            |
+
+</div>
+
 <demo>
   <demovanilla src="vanilla/components/drop/overflow-y">
   </demovanilla>

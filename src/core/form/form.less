@@ -13,15 +13,17 @@
  * fieldset
  */
 
-fieldset + fieldset {
-  .margin(top, big);
+fieldset, .fieldset {
+  & + & {
+    .margin(top, big);
+  }
 }
 
 /**
  * legend
  */
 
-legend {
+legend, .legend {
   .full();
   .h4();
   .header--line();
@@ -70,7 +72,7 @@ form, .form {
   .form-groups({ .form-group--big(); });
 }
 
-// special
+// mode
 
 .form-group--row {
   @media @min-sm {

@@ -12,17 +12,12 @@ demo.htmlSource = `
 <div class="group">
   <div class="group-inner">
     <button type="button" class="btn btn--primary">
-      Lorem ipsum
+      Lorem
     </button>
   </div>
   <div class="group-inner">
     <button type="button" class="btn btn--default">
-      Dolor sit
-    </button>
-  </div>
-  <div class="group-inner">
-    <button type="button" class="btn btn--default">
-      amet
+      ipsum
     </button>
   </div>
 </div>
