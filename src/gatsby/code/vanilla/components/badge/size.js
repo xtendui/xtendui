@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list--default list-space-small align-items-center">
+<div class="list list--default list-space--small align-items-center">
 
   <div class="badge badge--default badge--small">
     Lorem ipsum

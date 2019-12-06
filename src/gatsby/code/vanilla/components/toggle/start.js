@@ -15,7 +15,7 @@ demo.htmlSource = `
 
 <br/><br/>
 
-<div class="list list--default list-space-small align-items-center"
+<div class="list list--default list-space--small align-items-center"
      data-xt-toggle="{ class: 'active', min: 3, max: 3 }">
      
   <button type="button" class="btn btn--default" data-xt-group="0">

@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="row row-space-small">
+<div class="row row-space--small">
   <div class="col-4"></div>
   <div class="col-8"></div>
   <div class="col-12 col-8--sm"></div>

@@ -42,8 +42,8 @@
 
 // list-space
 
-.list-space-y(@name, @breakpoint: none) when (@breakpoint = none) {
-  @arr: ~"list-space-@{name}";
+.list-space--y(@name, @breakpoint: none) when (@breakpoint = none) {
+  @arr: ~"list-space--@{name}";
   @vertical: extract(@@arr, 1);
   margin-top: -@vertical;
   margin-bottom: -@vertical;
@@ -53,8 +53,8 @@
   }
 }
 
-.list-space-y(@name, @breakpoint: none) when (default()) {
-  @arr: ~"list-space-@{name}";
+.list-space--y(@name, @breakpoint: none) when (default()) {
+  @arr: ~"list-space--@{name}";
   @vertical: extract(@@arr, 1);
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -67,8 +67,8 @@
   }
 }
 
-.list-space-x(@name, @breakpoint: none) when (@breakpoint = none) {
-  @arr: ~"list-space-@{name}";
+.list-space--x(@name, @breakpoint: none) when (@breakpoint = none) {
+  @arr: ~"list-space--@{name}";
   @horizontal: extract(@@arr, 2);
   margin-left: -@horizontal;
   margin-right: -@horizontal;
@@ -78,8 +78,8 @@
   }
 }
 
-.list-space-x(@name, @breakpoint: none) when (default()) {
-  @arr: ~"list-space-@{name}";
+.list-space--x(@name, @breakpoint: none) when (default()) {
+  @arr: ~"list-space--@{name}";
   @horizontal: extract(@@arr, 2);
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -93,7 +93,7 @@
 }
 
 .list-space(@name, @breakpoint: none) when (@breakpoint = none) {
-  @arr: ~"list-space-@{name}";
+  @arr: ~"list-space--@{name}";
   @vertical: extract(@@arr, 1);
   @horizontal: extract(@@arr, 2);
   margin: -@vertical -@horizontal;
@@ -103,7 +103,7 @@
 }
 
 .list-space(@name, @breakpoint: none) when (default()) {
-  @arr: ~"list-space-@{name}";
+  @arr: ~"list-space--@{name}";
   @vertical: extract(@@arr, 1);
   @horizontal: extract(@@arr, 2);
   @query-min: 'min-@{breakpoint}';
@@ -155,24 +155,24 @@
     .generate-list-space(@breakpoint, @i - 1);
     @name: extract(@list-spaces, @i);
     & when (@breakpoint = none) {
-      .list-space-y-@{name} {
-        .list-space-y(@name) !important;
+      .list-space--y-@{name} {
+        .list-space--y(@name) !important;
       }
-      .list-space-x-@{name} {
-        .list-space-x(@name) !important;
+      .list-space--x-@{name} {
+        .list-space--x(@name) !important;
       }
-      .list-space-@{name} {
+      .list-space--@{name} {
         .list-space(@name) !important;
       }
     }
     & when not (@breakpoint = none) {
-      .list-space-y-@{name}--@{breakpoint} {
-        .list-space-y(@name) !important;
+      .list-space--y-@{name}--@{breakpoint} {
+        .list-space--y(@name) !important;
       }
-      .list-space-x-@{name}--@{breakpoint} {
-        .list-space-x(@name) !important;
+      .list-space--x-@{name}--@{breakpoint} {
+        .list-space--x(@name) !important;
       }
-      .list-space-@{name}--@{breakpoint} {
+      .list-space--@{name}--@{breakpoint} {
         .list-space(@name) !important;
       }
     }

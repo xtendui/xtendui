@@ -15,7 +15,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div data-xt-scroll="{ elements: '.scroll-container > *', distance: 0 }">
-  <div class="list list--default list-space-medium scroll-container demo--scroll-container--distance">
+  <div class="list list--default list-space--medium scroll-container demo--scroll-container--distance">
 
     <div class="card card--default">
       <div class="card-design"></div>

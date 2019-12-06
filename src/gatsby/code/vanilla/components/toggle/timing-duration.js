@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list--default list-space-small align-items-center"
+<div class="list list--default list-space--small align-items-center"
      data-xt-toggle="{ durationOn: 1000, durationOff: 1000 }">
   <button type="button" class="btn btn--default">
     Toggle 0
@@ -33,7 +33,7 @@ demo.htmlSource = `
 
 <br>
 
-<div class="list list--default list-space-small align-items-center"
+<div class="list list--default list-space--small align-items-center"
      data-xt-toggle="{ on: 'mouseenter', off: 'mouseleave', durationOn: 1000, durationOff: 1000 }">
   <button type="button" class="btn btn--default">
     Toggle 0

@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list--default list-space-small align-items-center">
+<div class="list list--default list-space--small align-items-center">
 
   <div data-xt-overlay>
     <button type="button" class="btn btn--primary">

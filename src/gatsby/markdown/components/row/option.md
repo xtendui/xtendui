@@ -14,8 +14,8 @@ Row **automatically** add horizontal and vertical spacing to the contents. You c
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.row-space-{size}`                      | `.row-space-small`           |
-| Class responsive        | `.row-space-{size}--{breakpoint}`         | `.row-space-small--sm`        |
+| Class                   | `.row-space--{size}`                      | `.row-space--small`           |
+| Class responsive        | `.row-space--{size}--{breakpoint}`         | `.row-space--small--sm`        |
 | Mixin                   | `.row-space({size})`                      | `.row-space(small)`           |
 | Mixin responsive min    | `.row-space({size}, {breakpoint})`        | `.row-space(small, sm)`       |
 
@@ -25,10 +25,10 @@ Row **automatically** add horizontal and vertical spacing to the contents. You c
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.row-space-x-{size}`                      | `.row-space-x-small`           |
-| Class responsive        | `.row-space-x-{size}--{breakpoint}`         | `.row-space-x-small--sm`        |
-| Mixin                   | `.row-space-x({size})`                      | `.row-space-x(small)`           |
-| Mixin responsive min    | `.row-space-x({size}, {breakpoint})`        | `.row-space-x(small, sm)`       |
+| Class                   | `.row-space--x-{size}`                      | `.row-space--x-small`           |
+| Class responsive        | `.row-space--x-{size}--{breakpoint}`         | `.row-space--x-small--sm`        |
+| Mixin                   | `.row-space--x({size})`                      | `.row-space--x(small)`           |
+| Mixin responsive min    | `.row-space--x({size}, {breakpoint})`        | `.row-space--x(small, sm)`       |
 
 </div>
 
@@ -36,10 +36,10 @@ Row **automatically** add horizontal and vertical spacing to the contents. You c
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.row-space-y-{size}`                      | `.row-space-y-small`           |
-| Class responsive        | `.row-space-y-{size}--{breakpoint}`         | `.row-space-y-small--sm`        |
-| Mixin                   | `.row-space-y({size})`                      | `.row-space-y(small)`           |
-| Mixin responsive min    | `.row-space-y({size}, {breakpoint})`        | `.row-space-y(small, sm)`       |
+| Class                   | `.row-space--y-{size}`                      | `.row-space--y-small`           |
+| Class responsive        | `.row-space--y-{size}--{breakpoint}`         | `.row-space--y-small--sm`        |
+| Mixin                   | `.row-space--y({size})`                      | `.row-space--y(small)`           |
+| Mixin responsive min    | `.row-space--y({size}, {breakpoint})`        | `.row-space--y(small, sm)`       |
 
 </div>
 
