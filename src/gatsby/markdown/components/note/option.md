@@ -46,6 +46,14 @@ Classes for assigning size (e.g.: padding or font size).
 
 Use `.note-list` to make a list block inside contents.
 
+<script type="text/plain" class="language-markup">
+  <div class="note note--default">
+    <div class="note-list">
+      <!-- content -->
+    </div>
+  </div>
+</script>
+
 <demo>
   <demovanilla src="vanilla/components/note/block">
   </demovanilla>

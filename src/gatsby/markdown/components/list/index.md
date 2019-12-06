@@ -7,6 +7,20 @@ description: "Flex lists to space any element with margins, also spaces vertical
 categories: ["100-Core"]
 ---
 
+##Setup
+
+To use this component import the **less** files accordingly:
+
+```less
+@import '~xtend-library/src/core/list/list.less';
+```
+
+Or just import **core**:
+
+```less
+@import '~xtend-library/src/xtend-core.less';
+```
+
 ##Usage
 
 Use this markup to create a **row list**.

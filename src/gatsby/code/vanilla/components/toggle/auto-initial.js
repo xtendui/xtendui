@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list--default list-space--small align-items-center"
+<div class="list list--default list-space-small align-items-center"
      data-xt-toggle="{ auto: { time: 2000, initial: false } }">
   <button type="button" class="btn btn--default active">
     Toggle 0

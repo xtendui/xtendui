@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list--default list-space--small align-items-center">
+<div class="list list--default list-space-small align-items-center">
 
   <div class="drop-container" data-xt-drop="{ backdrop: true }">
     <button type="button" class="btn btn--primary">

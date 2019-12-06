@@ -77,7 +77,7 @@ To disable focus feeback globally add `html.xt-focus-disable` class.
 ##Utils
 
 [[noteError]]
-| When using **utils classes** with **breakpoints** you need to set the class breakpoint generation with [@generate](/components/global#vars-generate).
+| When using **utils classes** with **breakpoints** you need to set the class breakpoint generation with [@generate](/components/global/css#vars-generate).
 
 ###Various
 
@@ -248,18 +248,24 @@ Classes and mixins for setting **flex** properties.
 
 </div>
 
-For available **{value}** see [row](/components/row/option).
+For available **{value}** see [list](/components/list/option) or [row](/components/row/option).
 
 <div class="table--scroll">
 
 |                         | Syntax                                    | Mixin                         | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Util                  | `.flex-direction-{value}`                | `.flex-direction({value}, {breakpoint})`           | Set flex direction            |
-| Util                  | `.flex-wrap-{value}`                | `.flex-wrap({value}, {breakpoint})`           | Set flex wrap            |
-| Util                  | `.justify-content-{value}`                | `.justify-content({value}, {breakpoint})`           | Set justify content            |
-| Util                  | `.align-items-{value}`                | `.align-items({value}, {breakpoint})`           | Set align items            |
-| Util                  | `.align-content-{value}`                | `.align-content({value}, {breakpoint})`           | Set align content            |
-| Util                  | `.align-self-{value}`                | `.align-self({value}, {breakpoint})`           | Set align self            |
+| Util                  | `.flex-direction-{value}`                | `.flex-direction({value})`           | Set flex direction            |
+| Util                  | `.flex-direction-{value}--{breakpoint}`                | `.flex-direction({value}, {breakpoint})`           | Set flex direction            |
+| Util                  | `.flex-wrap-{value}`                | `.flex-wrap({value})`           | Set flex wrap            |
+| Util                  | `.flex-wrap-{value}--{breakpoint}`                | `.flex-wrap({value}, {breakpoint})`           | Set flex wrap            |
+| Util                  | `.justify-content-{value}`                | `.justify-content({value})`           | Set justify content            |
+| Util                  | `.justify-content-{value}--{breakpoint}`                | `.justify-content({value}, {breakpoint})`           | Set justify content            |
+| Util                  | `.align-items-{value}`                | `.align-items({value})`           | Set align items            |
+| Util                  | `.align-items-{value}--{breakpoint}`                | `.align-items({value}, {breakpoint})`           | Set align items            |
+| Util                  | `.align-content-{value}`                | `.align-content({value})`           | Set align content            |
+| Util                  | `.align-content-{value}--{breakpoint}`                | `.align-content({value}, {breakpoint})`           | Set align content            |
+| Util                  | `.align-self-{value}`                | `.align-self({value})`           | Set align self            |
+| Util                  | `.align-self-{value}--{breakpoint}`                | `.align-self({value}, {breakpoint})`           | Set align self            |
 
 </div>
 

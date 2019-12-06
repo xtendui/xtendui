@@ -14,10 +14,32 @@ Row **automatically** add horizontal and vertical spacing to the contents. You c
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.row-space--{size}`                      | `.row-space--small`           |
-| Class responsive        | `.row-space--{size}--{breakpoint}`         | `.row-space--small--sm`        |
+| Class                   | `.row-space-{size}`                      | `.row-space-small`           |
+| Class responsive        | `.row-space-{size}--{breakpoint}`         | `.row-space-small--sm`        |
 | Mixin                   | `.row-space({size})`                      | `.row-space(small)`           |
 | Mixin responsive min    | `.row-space({size}, {breakpoint})`        | `.row-space(small, sm)`       |
+
+</div>
+
+<div class="table--scroll">
+
+|                         | Syntax                                    | Example                       |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Class                   | `.row-space-x-{size}`                      | `.row-space-x-small`           |
+| Class responsive        | `.row-space-x-{size}--{breakpoint}`         | `.row-space-x-small--sm`        |
+| Mixin                   | `.row-space-x({size})`                      | `.row-space-x(small)`           |
+| Mixin responsive min    | `.row-space-x({size}, {breakpoint})`        | `.row-space-x(small, sm)`       |
+
+</div>
+
+<div class="table--scroll">
+
+|                         | Syntax                                    | Example                       |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Class                   | `.row-space-y-{size}`                      | `.row-space-y-small`           |
+| Class responsive        | `.row-space-y-{size}--{breakpoint}`         | `.row-space-y-small--sm`        |
+| Mixin                   | `.row-space-y({size})`                      | `.row-space-y(small)`           |
+| Mixin responsive min    | `.row-space-y({size}, {breakpoint})`        | `.row-space-y(small, sm)`       |
 
 </div>
 
@@ -38,9 +60,25 @@ Row **automatically** add horizontal and vertical spacing to the contents. You c
   </demovanilla>
 </demo>
 
-##Direction
+##Flex util
+
+[[noteError]]
+| When using **utils classes** with **breakpoints** you need to set the class breakpoint generation with `@generate-row`.
+
+###Direction
 
 Set children's direction inside the flexbox.
+
+<div class="table--scroll">
+
+|                         | Syntax                                    | Example                       |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Class                   | `.flex-direction-{value}`                        | `.flex-direction-column`                   |
+| Class responsive        | `.flex-direction-{value}--{breakpoint}`           | `.flex-direction-column--sm`                |
+| Mixin                   | `.flex-direction({value})`                        | `.flex-direction(column)`                   |
+| Mixin responsive min    | `.flex-direction({value}, {breakpoint})`          | `.flex-direction(column, sm)`               |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/row/direction-row" mode="grid">
@@ -53,9 +91,20 @@ Set children's direction inside the flexbox.
   </demovanilla>
 </demo>
 
-##Wrap
+###Wrap
 
 Set children's wrapping inside the flexbox.
+
+<div class="table--scroll">
+
+|                         | Syntax                                    | Example                       |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Class                   | `.flex-wrap-{value}`                        | `.flex-wrap-nowrap`                   |
+| Class responsive        | `.flex-wrap-{value}--{breakpoint}`           | `.flex-wrap-nowrap--sm`                |
+| Mixin                   | `.flex-wrap({value})`                        | `.flex-wrap(nowrap)`                   |
+| Mixin responsive min    | `.flex-wrap({value}, {breakpoint})`          | `.flex-wrap(nowrap, sm)`               |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/row/wrap" mode="grid">
@@ -66,9 +115,20 @@ Set children's wrapping inside the flexbox.
   </demovanilla>
 </demo>
 
-##Justify content
+###Justify content
 
 Set children's horizontal alignment inside the flexbox.
+
+<div class="table--scroll">
+
+|                         | Syntax                                    | Example                       |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Class                   | `.justify-content-{value}`                        | `.justify-content-center`                   |
+| Class responsive        | `.justify-content-{value}--{breakpoint}`           | `.justify-content-center--sm`                |
+| Mixin                   | `.justify-content({value})`                        | `.justify-content(center)`                   |
+| Mixin responsive min    | `.justify-content({value}, {breakpoint})`          | `.justify-content(center, sm)`               |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/row/justify-start" mode="grid">
@@ -85,9 +145,20 @@ Set children's horizontal alignment inside the flexbox.
   </demovanilla>
 </demo>
 
-##Align items
+###Align items
 
 Set children's vertical alignment inside the flexbox.
+
+<div class="table--scroll">
+
+|                         | Syntax                                    | Example                       |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Class                   | `.align-items-{value}`                        | `.align-items-center`                   |
+| Class responsive        | `.align-items-{value}--{breakpoint}`           | `.align-items-center--sm`                |
+| Mixin                   | `.align-items({value})`                        | `.align-items(center)`                   |
+| Mixin responsive min    | `.align-items({value}, {breakpoint})`          | `.align-items(center, sm)`               |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/row/items-start" mode="grid">
@@ -102,9 +173,20 @@ Set children's vertical alignment inside the flexbox.
   </demovanilla>
 </demo>
 
-##Align content
+###Align content
 
 Set children's vertical alignment inside the flexbox.
+
+<div class="table--scroll">
+
+|                         | Syntax                                    | Example                       |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Class                   | `.align-content-{value}`                        | `.align-content-center`                   |
+| Class responsive        | `.align-content-{value}--{breakpoint}`           | `.align-content-center--sm`                |
+| Mixin                   | `.align-content({value})`                        | `.align-content(center)`                   |
+| Mixin responsive min    | `.align-content({value}, {breakpoint})`          | `.align-content(center, sm)`               |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/row/content-start" mode="grid">
@@ -121,10 +203,21 @@ Set children's vertical alignment inside the flexbox.
   </demovanilla>
 </demo>
 
-##Align self
+###Align self
 
 Set item's vertical alignment inside the flexbox.
 If set to **auto** computes to the parent's `align-items` value.
+
+<div class="table--scroll">
+
+|                         | Syntax                                    | Example                       |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Class                   | `.align-self-{value}`                        | `.align-self-center`                   |
+| Class responsive        | `.align-self-{value}--{breakpoint}`           | `.align-self-center--sm`                |
+| Mixin                   | `.align-self({value})`                        | `.align-self(center)`                   |
+| Mixin responsive min    | `.align-self({value}, {breakpoint})`          | `.align-self(center, sm)`               |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/row/self-start" mode="grid">
@@ -141,7 +234,7 @@ If set to **auto** computes to the parent's `align-items` value.
   </demovanilla>
 </demo>
 
-##Order
+###Order
 
 Set item's order inside the flexbox.
 

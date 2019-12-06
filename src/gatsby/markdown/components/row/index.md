@@ -7,6 +7,20 @@ description: "Flex row to space any element with paddings, also spaces verticall
 categories: ["100-Core"]
 ---
 
+##Setup
+
+To use this component import the **less** files accordingly:
+
+```less
+@import '~xtend-library/src/core/row/row.less';
+```
+
+Or just import **core**:
+
+```less
+@import '~xtend-library/src/xtend-core.less';
+```
+
 ##Usage
 
 Use this markup to create a **row**.
