@@ -3,6 +3,6 @@ type: "Addons"
 badge: "Addons"
 parent: "Link"
 title: "Link"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+description: "Global link styles."
 categories: ["100-Core"]
 ---
