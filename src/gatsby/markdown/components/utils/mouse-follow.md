@@ -1,6 +1,6 @@
 ---
 type: "Components"
 badge: "Extensions"
-parent: "Animation Utils"
+parent: "Utils"
 title: "Mouse Follow"
 ---

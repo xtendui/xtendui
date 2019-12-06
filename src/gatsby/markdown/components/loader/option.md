@@ -8,6 +8,14 @@ date: "2000-02-01"
 
 ##Spinner
 
+<div class="table--scroll">
+
+|                         | Class                                     | Mixin                         | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.loader--spinner`                | Not Possible        | Style setup for loader spinner            |
+
+</div>
+
 <demo>
   <demovanilla src="vanilla/components/loader/spinner">
   </demovanilla>
@@ -79,6 +87,14 @@ Loader size with `.loader--y`.
 
 Loader that follow mouse with `.loader--mouse` and javascript.
 
+<div class="table--scroll">
+
+|                         | Class                                     | Mixin                         | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.loader--mouse`                | `.loader--mouse()`        | Style setup for loader that follow mouse            |
+
+</div>
+
 <demo>
   <demovanilla src="vanilla/components/loader/mouse-spinner">
   </demovanilla>
@@ -89,6 +105,14 @@ Loader that follow mouse with `.loader--mouse` and javascript.
 ##Background
 
 Use `.loader--background` to add the background.
+
+<div class="table--scroll">
+
+|                         | Class                                     | Mixin                         | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.loader--background`                | `.loader--background()`        | Loader with background            |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/loader/background-spinner">

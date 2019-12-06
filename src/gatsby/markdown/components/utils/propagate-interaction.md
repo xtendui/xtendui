@@ -1,14 +1,14 @@
 ---
 type: "Components"
 badge: "Extensions"
-parent: "Animation Utils"
+parent: "Utils"
 title: "Propagate Interaction"
 ---
 
 ##Usage
 <!--
 ```jsx
-import 'xtend-library/src/extensions/animation/propagate-interaction.js'
+import 'xtend-library/src/extensions/utils/propagate-interaction.js'
 ```
 
 <script type="text/plain" class="language-markup">

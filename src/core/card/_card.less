@@ -125,11 +125,11 @@
 
 & when not (@generate-card-group = false) {
 
-  // generate-card--horizontal-responsive
+  // generate-card-horizontal-responsive
 
-  .generate-card--horizontal-responsive();
-  .generate-card--horizontal-responsive(@i: length(@generate-card-group)) when (@i > 0) {
-    .generate-card--horizontal-responsive(@i - 1);
+  .generate-card-horizontal-responsive();
+  .generate-card-horizontal-responsive(@i: length(@generate-card-group)) when (@i > 0) {
+    .generate-card-horizontal-responsive(@i - 1);
     @breakpoint: extract(@generate-card-group, @i);
     & when (@breakpoint = none) {
       .card-group {
@@ -156,11 +156,11 @@
 
 & when not (@generate-box-horizontal = false) {
 
-  // generate-card--horizontal-responsive
+  // generate-card-horizontal-responsive
 
-  .generate-card--horizontal-responsive();
-  .generate-card--horizontal-responsive(@i: length(@generate-box-horizontal)) when (@i > 0) {
-    .generate-card--horizontal-responsive(@i - 1);
+  .generate-card-horizontal-responsive();
+  .generate-card-horizontal-responsive(@i: length(@generate-box-horizontal)) when (@i > 0) {
+    .generate-card-horizontal-responsive(@i - 1);
     @breakpoint: extract(@generate-box-horizontal, @i);
     & when (@breakpoint = none) {
       .card--horizontal {

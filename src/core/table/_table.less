@@ -57,9 +57,9 @@
 
   // generate-table-scroll-responsive
 
-  .generate-card--horizontal-responsive();
-  .generate-card--horizontal-responsive(@i: length(@generate-table--scroll)) when (@i > 0) {
-    .generate-card--horizontal-responsive(@i - 1);
+  .generate-card-horizontal-responsive();
+  .generate-card-horizontal-responsive(@i: length(@generate-table--scroll)) when (@i > 0) {
+    .generate-card-horizontal-responsive(@i - 1);
     @breakpoint: extract(@generate-table--scroll, @i);
     & when not (@breakpoint = none) {
       @query-max: 'max-@{breakpoint}';
