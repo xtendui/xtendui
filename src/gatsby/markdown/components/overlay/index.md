@@ -3,7 +3,7 @@ type: "Components"
 badge: "Core"
 parent: "Overlay"
 title: "Overlay"
-description: "Component to create modals and menus that opens over the content, activable by interactions."
+description: "Used when you need to display any content over the main page, not only modals."
 categories: ["100-Core"]
 ---
 

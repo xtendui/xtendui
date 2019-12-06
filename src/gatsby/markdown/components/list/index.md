@@ -3,7 +3,7 @@ type: "Components"
 badge: "Core"
 parent: "List"
 title: "List"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+description: "Flex lists to space any element with margins, also spaces vertically."
 categories: ["100-Core"]
 ---
 

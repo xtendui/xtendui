@@ -3,7 +3,7 @@ type: "Components"
 badge: "Extensions"
 parent: "Slider"
 title: "Slider"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+description: "Customizable sliders with custom animation and interaction."
 categories: ["400-Extensions"]
 ---
 

@@ -3,7 +3,7 @@ type: "Components"
 badge: "Core"
 parent: "Note"
 title: "Note"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+description: "Text and block to present note and alerts to the user."
 categories: ["100-Core"]
 ---
 

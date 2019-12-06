@@ -3,7 +3,7 @@ type: "Components"
 badge: "Core"
 parent: "Group"
 title: "Group"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+description: "Css component to group up buttons and form inputs."
 categories: ["100-Core"]
 ---
 

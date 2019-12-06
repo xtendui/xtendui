@@ -3,7 +3,7 @@ type: "Components"
 badge: "Core"
 parent: "Button"
 title: "Button"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+description: "Simple and extensible button styles."
 categories: ["100-Core"]
 ---
 

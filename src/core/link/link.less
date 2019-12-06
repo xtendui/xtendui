@@ -19,21 +19,6 @@
 }
 
 /**
- * text-inverse
- */
-
-.text-inverse {
-  // link color
-  a, .btn--link {
-    color: @text-inverse;
-    text-decoration: underline;
-    &:hover, &.hover, &:active, &.active {
-      color: @text-inverse--dark;
-    }
-  }
-}
-
-/**
  * link
  */
 
@@ -55,5 +40,18 @@ a, .btn--link {
     transition-property: color, background, opacity;
     transition-duration: @time-medium;
     transition-timing-function: @bez-in;
+  }
+}
+
+// text-inverse
+
+.text-inverse {
+  // link color
+  a, .btn--link {
+    color: @text-inverse;
+    text-decoration: underline;
+    &:hover, &.hover, &:active, &.active {
+      color: @text-inverse--dark;
+    }
   }
 }

@@ -3,7 +3,7 @@ type: "Components"
 badge: "Core"
 parent: "Link"
 title: "Link"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+description: "Global link styles."
 categories: ["100-Core"]
 ---
 
@@ -29,4 +29,8 @@ Use this markup to create a **link**.
   <a href="#">
     <!-- content -->
   </a>
+
+  <button type="button" class="btn btn--link">
+    <!-- content -->
+  </button>
 </script>

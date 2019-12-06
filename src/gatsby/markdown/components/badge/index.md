@@ -3,7 +3,7 @@ type: "Components"
 badge: "Core"
 parent: "Badge"
 title: "Badge"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+description: "Badge component for showing very short messages."
 categories: ["100-Core"]
 ---
 

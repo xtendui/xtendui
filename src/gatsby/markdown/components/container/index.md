@@ -3,7 +3,7 @@ type: "Components"
 badge: "Core"
 parent: "Container"
 title: "Container"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+description: "Component for containing layout with a max width and adding spacing on the side."
 categories: ["100-Core"]
 ---
 

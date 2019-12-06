@@ -3,7 +3,7 @@ type: "Components"
 badge: "Extensions"
 parent: "Sticky"
 title: "Sticky"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+description: "Sticky elements with complex interactions."
 categories: ["400-Extensions"]
 ---
 

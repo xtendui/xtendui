@@ -3,7 +3,7 @@ type: "Components"
 badge: "Core"
 parent: "Row"
 title: "Row"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+description: "Flex row to space any element with paddings, also spaces vertically."
 categories: ["100-Core"]
 ---
 

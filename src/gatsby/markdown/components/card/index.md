@@ -3,7 +3,7 @@ type: "Components"
 badge: "Core"
 parent: "Card"
 title: "Card"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+description: "Generic component to display content in a box."
 categories: ["100-Core"]
 ---
 

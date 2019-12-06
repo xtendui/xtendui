@@ -3,7 +3,7 @@ type: "Components"
 badge: "Core"
 parent: "Drop"
 title: "Drop"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+description: "Highly customizable dropdowns that can contain anything you want."
 categories: ["100-Core"]
 ---
 

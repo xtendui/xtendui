@@ -3,7 +3,7 @@ type: "Components"
 badge: "Extensions"
 parent: "Scroll"
 title: "Scroll"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+description: "Content animation when you scroll the page, fade in elements, parallax."
 categories: ["400-Extensions"]
 ---
 
