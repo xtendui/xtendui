@@ -503,39 +503,39 @@
  * @generate-flex
  */
 
-// flex-none
+// flex--none
 
-.flex-none(@breakpoint: none) when (@breakpoint = none) {
+.flex--none(@breakpoint: none) when (@breakpoint = none) {
   flex: 1 1 0%; // % needed ie11
 }
 
-.flex-none(@breakpoint: none) when (default()) {
+.flex--none(@breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     flex: 1 1 0%; // % needed ie11
   }
 }
 
-// flex-auto
+// flex--auto
 
-.flex-auto(@breakpoint: none) when (@breakpoint = none) {
+.flex--auto(@breakpoint: none) when (@breakpoint = none) {
   flex: 1 1 auto;
 }
 
-.flex-auto(@breakpoint: none) when (default()) {
+.flex--auto(@breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     flex: 1 1 auto;
   }
 }
 
-// flex-full
+// flex--full
 
-.flex-full(@breakpoint: none) when (@breakpoint = none) {
+.flex--full(@breakpoint: none) when (@breakpoint = none) {
   flex: 1 1 100%;
 }
 
-.flex-full(@breakpoint: none) when (default()) {
+.flex--full(@breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     flex: 1 1 100%;
@@ -658,198 +658,198 @@
 
   .generate-flex-util(@breakpoint: none) {
     & when (@breakpoint = none) {
-      .flex-none {
-        .flex-none() !important;
+      .flex--none {
+        .flex--none() !important;
       }
-      .flex-auto {
-        .flex-auto() !important;
+      .flex--auto {
+        .flex--auto() !important;
       }
-      .flex-full {
-        .flex-full() !important;
+      .flex--full {
+        .flex--full() !important;
       }
-      .flex-direction-row {
+      .flex-direction--row {
         .flex-direction(row) !important;
       }
-      .flex-direction-row-reverse {
+      .flex-direction--row-reverse {
         .flex-direction(row-reverse) !important;
       }
-      .flex-direction-column {
+      .flex-direction--column {
         .flex-direction(column) !important;
       }
-      .flex-direction-column-reverse {
+      .flex-direction--column-reverse {
         .flex-direction(column-reverse) !important;
       }
-      .flex-wrap-wrap {
+      .flex-wrap--wrap {
         .flex-wrap(wrap) !important;
       }
-      .flex-wrap-wrap-reverse {
+      .flex-wrap--wrap-reverse {
         .flex-wrap(wrap-reverse) !important;
       }
-      .flex-wrap-nowrap {
+      .flex-wrap--nowrap {
         .flex-wrap(nowrap) !important;
       }
-      .justify-content-flex-start {
+      .justify-content--flex-start {
         .justify-content(flex-start) !important;
       }
-      .justify-content-flex-end {
+      .justify-content--flex-end {
         .justify-content(flex-end) !important;
       }
-      .justify-content-center {
+      .justify-content--center {
         .justify-content(center) !important;
       }
-      .justify-content-space-between {
+      .justify-content--space-between {
         .justify-content(space-between) !important;
       }
-      .justify-content-space-around {
+      .justify-content--space-around {
         .justify-content(space-around) !important;
       }
-      .align-items-flex-start {
+      .align-items--flex-start {
         .align-items(flex-start) !important;
       }
-      .align-items-flex-end {
+      .align-items--flex-end {
         .align-items(flex-end) !important;
       }
-      .align-items-center {
+      .align-items--center {
         .align-items(center) !important;
       }
-      .align-items-baseline {
+      .align-items--baseline {
         .align-items(baseline) !important;
       }
-      .align-items-stretch {
+      .align-items--stretch {
         .align-items(stretch) !important;
       }
-      .align-content-flex-start {
+      .align-content--flex-start {
         .align-content(flex-start) !important;
       }
-      .align-content-flex-end {
+      .align-content--flex-end {
         .align-content(flex-end) !important;
       }
-      .align-content-center {
+      .align-content--center {
         .align-content(center) !important;
       }
-      .align-content-space-between {
+      .align-content--space-between {
         .align-content(space-between) !important;
       }
-      .align-content-space-around {
+      .align-content--space-around {
         .align-content(space-around) !important;
       }
-      .align-content-stretch {
+      .align-content--stretch {
         .align-content(stretch) !important;
       }
-      .align-self-flex-start {
+      .align-self--flex-start {
         .align-self(flex-start) !important;
       }
-      .align-self-flex-end {
+      .align-self--flex-end {
         .align-self(flex-end) !important;
       }
-      .align-self-center {
+      .align-self--center {
         .align-self(center) !important;
       }
-      .align-self-baseline {
+      .align-self--baseline {
         .align-self(baseline) !important;
       }
-      .align-self-stretch {
+      .align-self--stretch {
         .align-self(stretch) !important;
       }
-      .align-self-auto {
+      .align-self--auto {
         .align-self(auto) !important;
       }
     }
     & when not (@breakpoint = none) {
-      .flex-none--@{breakpoint} {
-        .flex-none() !important;
+      .flex--none--@{breakpoint} {
+        .flex--none() !important;
       }
-      .flex-auto--@{breakpoint} {
-        .flex-auto() !important;
+      .flex--auto--@{breakpoint} {
+        .flex--auto() !important;
       }
-      .flex-full--@{breakpoint} {
-        .flex-full() !important;
+      .flex--full--@{breakpoint} {
+        .flex--full() !important;
       }
-      .flex-direction-row--@{breakpoint} {
+      .flex-direction--row--@{breakpoint} {
         .flex-direction(row) !important;
       }
-      .flex-direction-row-reverse--@{breakpoint} {
+      .flex-direction--row-reverse--@{breakpoint} {
         .flex-direction(row-reverse) !important;
       }
-      .flex-direction-column--@{breakpoint} {
+      .flex-direction--column--@{breakpoint} {
         .flex-direction(column) !important;
       }
-      .flex-direction-column-reverse--@{breakpoint} {
+      .flex-direction--column-reverse--@{breakpoint} {
         .flex-direction(column-reverse) !important;
       }
-      .flex-wrap-wrap--@{breakpoint} {
+      .flex-wrap--wrap--@{breakpoint} {
         .flex-wrap(wrap) !important;
       }
-      .flex-wrap-wrap-reverse--@{breakpoint} {
+      .flex-wrap--wrap-reverse--@{breakpoint} {
         .flex-wrap(wrap-reverse) !important;
       }
-      .flex-wrap-nowrap--@{breakpoint} {
+      .flex-wrap--nowrap--@{breakpoint} {
         .flex-wrap(nowrap) !important;
       }
-      .justify-content-flex-start--@{breakpoint} {
+      .justify-content--flex-start--@{breakpoint} {
         .justify-content(flex-start) !important;
       }
-      .justify-content-flex-end--@{breakpoint} {
+      .justify-content--flex-end--@{breakpoint} {
         .justify-content(flex-end) !important;
       }
-      .justify-content-center--@{breakpoint} {
+      .justify-content--center--@{breakpoint} {
         .justify-content(center) !important;
       }
-      .justify-content-space-between--@{breakpoint} {
+      .justify-content--space-between--@{breakpoint} {
         .justify-content(space-between) !important;
       }
-      .justify-content-space-around--@{breakpoint} {
+      .justify-content--space-around--@{breakpoint} {
         .justify-content(space-around) !important;
       }
-      .align-items-flex-start--@{breakpoint} {
+      .align-items--flex-start--@{breakpoint} {
         .align-items(flex-start) !important;
       }
-      .align-items-flex-end--@{breakpoint} {
+      .align-items--flex-end--@{breakpoint} {
         .align-items(flex-end) !important;
       }
-      .align-items-center--@{breakpoint} {
+      .align-items--center--@{breakpoint} {
         .align-items(center) !important;
       }
-      .align-items-baseline--@{breakpoint} {
+      .align-items--baseline--@{breakpoint} {
         .align-items(baseline) !important;
       }
-      .align-items-stretch--@{breakpoint} {
+      .align-items--stretch--@{breakpoint} {
         .align-items(stretch) !important;
       }
-      .align-content-flex-start--@{breakpoint} {
+      .align-content--flex-start--@{breakpoint} {
         .align-content(flex-start) !important;
       }
-      .align-content-flex-end--@{breakpoint} {
+      .align-content--flex-end--@{breakpoint} {
         .align-content(flex-end) !important;
       }
-      .align-content-center--@{breakpoint} {
+      .align-content--center--@{breakpoint} {
         .align-content(center) !important;
       }
-      .align-content-space-between--@{breakpoint} {
+      .align-content--space-between--@{breakpoint} {
         .align-content(space-between) !important;
       }
-      .align-content-space-around--@{breakpoint} {
+      .align-content--space-around--@{breakpoint} {
         .align-content(space-around) !important;
       }
-      .align-content-stretch--@{breakpoint} {
+      .align-content--stretch--@{breakpoint} {
         .align-content(stretch) !important;
       }
-      .align-self-auto--@{breakpoint} {
+      .align-self--auto--@{breakpoint} {
         .align-self(auto) !important;
       }
-      .align-self-flex-start--@{breakpoint} {
+      .align-self--flex-start--@{breakpoint} {
         .align-self(flex-start) !important;
       }
-      .align-self-flex-end--@{breakpoint} {
+      .align-self--flex-end--@{breakpoint} {
         .align-self(flex-end) !important;
       }
-      .align-self-center--@{breakpoint} {
+      .align-self--center--@{breakpoint} {
         .align-self(center) !important;
       }
-      .align-self-baseline--@{breakpoint} {
+      .align-self--baseline--@{breakpoint} {
         .align-self(baseline) !important;
       }
-      .align-self-stretch--@{breakpoint} {
+      .align-self--stretch--@{breakpoint} {
         .align-self(stretch) !important;
       }
     }
@@ -1022,22 +1022,22 @@
 
   // layout
 
-  .m-y-layout {
+  .m-y--layout {
     .margin(y, layout) !important;
   }
-  .m-x-layout {
+  .m-x--layout {
     .margin(x, layout) !important;
   }
-  .m-top-layout {
+  .m-top--layout {
     .margin(top, layout) !important;
   }
-  .m-bottom-layout {
+  .m-bottom--layout {
     .margin(bottom, layout) !important;
   }
-  .m-left-layout {
+  .m-left--layout {
     .margin(left, layout) !important;
   }
-  .m-right-layout {
+  .m-right--layout {
     .margin(right, layout) !important;
   }
 
@@ -1070,21 +1070,21 @@
     @size: extract(@margin, 2);
     & when (@breakpoint = none) {
       & when (@pos = none) {
-        .m-@{name} {
+        .m--@{name} {
           .margin(@pos, @name, @breakpoint) !important;
         }
         & when not (@size = auto) and not (@size = 0) {
-          .m-@{name}-remove {
+          .m-remove-@{name} {
             .margin-remove(@pos, @name, @breakpoint) !important;
           }
         }
       }
       & when not (@pos = none) {
-        .m@{pos}-@{name} {
+        .m-@{pos}--@{name} {
           .margin(@pos, @name, @breakpoint) !important;
         }
         & when not (@size = auto) and not (@size = 0) {
-          .m@{pos}-@{name}-remove {
+          .m-remove-@{pos}--@{name} {
             .margin-remove(@pos, @name, @breakpoint) !important;
           }
         }
@@ -1092,21 +1092,21 @@
     }
     & when not (@breakpoint = none) {
       & when (@pos = none) {
-        .m-@{name}-@{breakpoint} {
+        .m--@{name}--@{breakpoint} {
           .margin(@pos, @name) !important;
         }
         & when not (@size = auto) and not (@size = 0) {
-          .m-@{name}-remove-@{breakpoint} {
+          .m-remove--@{name}--@{breakpoint} {
             .margin-remove(@pos, @name) !important;
           }
         }
       }
       & when not (@pos = none) {
-        .m@{pos}-@{name}-@{breakpoint} {
+        .m-@{pos}--@{name}--@{breakpoint} {
           .margin(@pos, @name) !important;
         }
         & when not (@size = auto) and not (@size = 0) {
-          .m@{pos}-@{name}-remove-@{breakpoint} {
+          .m-remove-@{pos}--@{name}--@{breakpoint} {
             .margin-remove(@pos, @name) !important;
           }
         }
@@ -1236,22 +1236,22 @@
 
   // layout
 
-  .p-y-layout {
+  .p-y--layout {
     .padding(y, layout) !important;
   }
-  .p-x-layout {
+  .p-x--layout {
     .padding(x, layout) !important;
   }
-  .p-top-layout {
+  .p-top--layout {
     .padding(top, layout) !important;
   }
-  .p-bottom-layout {
+  .p-bottom--layout {
     .padding(bottom, layout) !important;
   }
-  .p-left-layout {
+  .p-left--layout {
     .padding(left, layout) !important;
   }
-  .p-right-layout {
+  .p-right--layout {
     .padding(right, layout) !important;
   }
 
@@ -1284,24 +1284,24 @@
     @size: extract(@padding, 2);
     & when (@breakpoint = none) {
       & when (@pos = none) {
-        .p-@{name} {
+        .p--@{name} {
           .padding(@pos, @name, @breakpoint) !important;
         }
       }
       & when not (@pos = none) {
-        .p@{pos}-@{name} {
+        .p-@{pos}--@{name} {
           .padding(@pos, @name, @breakpoint) !important;
         }
       }
     }
     & when not (@breakpoint = none) {
       & when (@pos = none) {
-        .p-@{name}-@{breakpoint} {
+        .p--@{name}--@{breakpoint} {
           .padding(@pos, @name) !important;
         }
       }
       & when not (@pos = none) {
-        .p@{pos}-@{name}-@{breakpoint} {
+        .p-@{pos}--@{name}--@{breakpoint} {
           .padding(@pos, @name) !important;
         }
       }

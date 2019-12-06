@@ -58,5 +58,5 @@ You can use this markup to create an **overlay** with **unique mode**.
 </div>
 </script>
 
-[[noteError]]
+[[noteDefault]]
 | Overlays are moved to **body** to prevent **z-index** problems. Style and query overlay's content accordingly.

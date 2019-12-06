@@ -29,7 +29,7 @@ demo.htmlSource = `
             </button>
           </li>
           <li class="xt-custom">
-            <button type="button" class="flex-auto btn btn--default btn--small btn--wide btn--squared">
+            <button type="button" class="flex--auto btn btn--default btn--small btn--wide btn--squared">
               Dolor sit
             </button>
           </li>

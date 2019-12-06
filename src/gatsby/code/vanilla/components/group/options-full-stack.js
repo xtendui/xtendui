@@ -10,7 +10,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="group full">
-  <div class="group-inner flex-auto">
+  <div class="group-inner flex--auto">
     <button type="button" class="btn btn--primary">
       Lorem
     </button>

@@ -22,17 +22,48 @@ There are also shadow and gradient variables.
 
 ###Spacing
 
-You have also spacing **margin** and **padding** vars that you can use with a **mixin** to have well-established spacing everywhere. Available positions are: `left` `right` `top` `bottom` `x` `y` `all`.
+You have also spacing **margin** and **padding** vars that you can use with a **mixin** to have well-established spacing everywhere.
+
+Available positions are: `left` `right` `top` `bottom` `x` `y` `all`.
+
+Available sizes are: `layout` `auto` `none` `micro` `tiny` `small` `medium` `big` `giant` `huge`.
 
 <div class="table--scroll">
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
+| Class                   | `.m-{position}--{size}`                      | `.m-y--small`           |
+| Class responsive        | `.m-{position}--{size}--{breakpoint}`         | `.m-y--small--sm`        |
 | Mixin                   | `.margin({position}, {size})`             | `.margin(y, small)` etc..           |
-| Mixin                   | `.margin-remove({position}, {size})`      | `.margin-remove(y, small)` etc..    |
-| Mixin                   | `.padding({position}, {size})`            | `.padding(y, small)` etc..          |
+| Mixin responsive min    | `.margin({position}, {size}, {breakpoint})`        | `.margin(y, small, sm)`       |
 
 </div>
+
+<div class="table--scroll">
+
+|                         | Syntax                                    | Example                       |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Class                   | `.m-remove-{position}--{size}`                      | `.m-y-remove--small`           |
+| Class responsive        | `.m-remove-{position}--{size}--{breakpoint}`         | `.m-y-remove--small--sm`        |
+| Mixin                   | `.margin-remove({position}, {size})`             | `.margin-remove(y, small)` etc..           |
+| Mixin responsive min    | `.margin-remove({position}, {size}, {breakpoint})`        | `.margin-remove(y, small, sm)`       |
+
+</div>
+
+<div class="table--scroll">
+
+|                         | Syntax                                    | Example                       |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Class                   | `.p-{position}--{size}`                      | `.p-y--small`           |
+| Class responsive        | `.p-{position}--{size}--{breakpoint}`         | `.p-y--small--sm`        |
+| Mixin                   | `.padding({position}, {size})`             | `.padding(y, small)` etc..           |
+| Mixin responsive min    | `.padding({position}, {size}, {breakpoint})`        | `.padding(y, small, sm)`       |
+
+</div>
+
+[[noteDefault]]
+| When using **spacing classes** with **breakpoints** you need to set the class breakpoint generation with `@generate-margin` and `@generate-padding`.
+``
 
 ###Order
 
@@ -75,9 +106,6 @@ Apply focus styles to `html.xt-focus-visible` to style focus only when user inte
 To disable focus feeback globally add `html.xt-focus-disable` class.
 
 ##Utils
-
-[[noteError]]
-| When using **utils classes** with **breakpoints** you need to set the class breakpoint generation with [@generate](/components/global/css#vars-generate).
 
 ###Various
 
@@ -241,8 +269,8 @@ Classes and mixins for setting **flex** properties.
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.flex-{type}`                           | `.flex-auto`                |
-| Class responsive        | `.flex-{type}--{breakpoint}`             | `.flex-auto--sm`                |
+| Class                   | `.flex-{type}`                           | `.flex--auto`                |
+| Class responsive        | `.flex-{type}--{breakpoint}`             | `.flex--auto--sm`                |
 | Mixin                   | `.flex({type})`                          | `.flex(auto)`                     |
 | Mixin responsive min    | `.flex({type}{breakpoint})`            | `.flex(auto, sm)`                |
 
@@ -268,4 +296,7 @@ For available **{value}** see [list](/components/list/option) or [row](/componen
 | Util                  | `.align-self-{value}--{breakpoint}`                | `.align-self({value}, {breakpoint})`           | Set align self            |
 
 </div>
+
+[[noteDefault]]
+| When using **flex util classes** with **breakpoints** you need to set the class breakpoint generation with `@generate-flex`.
 
