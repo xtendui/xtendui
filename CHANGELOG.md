@@ -1,3 +1,23 @@
+# [0.12.0](https://github.com/minimit/xtend-library/compare/v0.11.1...v0.12.0) (2019-12-09)
+
+
+### Bug Fixes
+
+* **backdrop:** fix backdrop and closeInside drop ([5470bbd](https://github.com/minimit/xtend-library/commit/5470bbd709095d1de99da09c442e98bdc995b36f))
+* **core:** add on and off events also if options on and off are false + overlay nested demo with unique mode + typo demos ([ffbf5e8](https://github.com/minimit/xtend-library/commit/ffbf5e86880aa0b603f52b5c112584f1b8990373))
+* **overlay:** fixed single mode overlay ([31dc3d7](https://github.com/minimit/xtend-library/commit/31dc3d72b8a905b7c6dafbb57741d3510f587c78))
+* **scroll:** no xt-fixed on scroll ([3b2e31a](https://github.com/minimit/xtend-library/commit/3b2e31ada43970d962732df2658ecec5fa57b9f1))
+* **toggle:** fix active starting classes ([c4dde4d](https://github.com/minimit/xtend-library/commit/c4dde4df404bdd6a935c32e13a5cf1e1760dcd53))
+* backdrop always on targets ([72f3a28](https://github.com/minimit/xtend-library/commit/72f3a28b2b151f3ff1d51722bbc7b2a11ccdf2e4))
+* fix drop options ([2985ed9](https://github.com/minimit/xtend-library/commit/2985ed9d6dbb4833954b3d29d1b1d4e3b6896e34))
+* fix js scrollbarSpaceOn style right ([1e57ff3](https://github.com/minimit/xtend-library/commit/1e57ff35693119a7ce0b8f1da0edfa33a4e4037a))
+* fix slider initial when not visible + slider autoheight on initial + demos reinit on visible ([62869eb](https://github.com/minimit/xtend-library/commit/62869ebab774d796ebd72ddaea3f2f3d12a97f90))
+
+
+### Features
+
+* **toggle:** toggle and drop with link with demos ([59a1c14](https://github.com/minimit/xtend-library/commit/59a1c14b6d9a6159e46a872180ad6daea96489f9))
+
 ## [0.11.1](https://github.com/minimit/xtend-library/compare/v0.11.0...v0.11.1) (2019-11-22)
 
 
