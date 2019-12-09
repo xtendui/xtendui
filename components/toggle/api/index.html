@@ -1,0 +1,1183 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link href="/styles.d5a87dfcb13e0112c11e.css" rel="stylesheet" type="text/css"/><meta name="generator" content="Gatsby 2.18.2"/><title data-react-helmet="true">API — Toggle — Xtend</title><meta data-react-helmet="true" name="description" content="Xtend advanded frontend library"/><meta data-react-helmet="true" property="og:title" content="API — Toggle"/><meta data-react-helmet="true" property="og:description" content="Xtend advanded frontend library"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="Riccardo Caroli"/><meta data-react-helmet="true" name="twitter:title" content="API — Toggle"/><meta data-react-helmet="true" name="twitter:description" content="Xtend advanded frontend library"/><link rel="icon" href="/icons/icon-48x48.png?v=f917a0155efffb97b4d3d8ba95c4e663"/><link rel="manifest" href="/manifest.webmanifest"/><meta name="theme-color" content="#7567f8"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=f917a0155efffb97b4d3d8ba95c4e663"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=f917a0155efffb97b4d3d8ba95c4e663"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=f917a0155efffb97b4d3d8ba95c4e663"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=f917a0155efffb97b4d3d8ba95c4e663"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=f917a0155efffb97b4d3d8ba95c4e663"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=f917a0155efffb97b4d3d8ba95c4e663"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=f917a0155efffb97b4d3d8ba95c4e663"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=f917a0155efffb97b4d3d8ba95c4e663"/><link as="script" rel="preload" href="/styles-c216217bb6c367b196aa.js"/><link as="script" rel="preload" href="/component---src-gatsby-components-templates-doc-page-js-8aaf8573f95ce51d3318.js"/><link as="script" rel="preload" href="/commons-3355a73f0cd4ec6f2947.js"/><link as="script" rel="preload" href="/app-8f590de63b778133c559.js"/><link as="script" rel="preload" href="/webpack-runtime-f0a3dc66865dd5373491.js"/><link as="fetch" rel="preload" href="/page-data/components/toggle/api/page-data.json" crossorigin="anonymous"/></head><body><noscript id="gatsby-noscript">This app works best with JavaScript enabled.</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group" id="gatsby-focus-wrapper"><div class="gatsby_site_wrapper"><div class="gatsby_site_main"><div class="gatsby_site_main_inner"><div class="gatsby_site_article_sidebar"><header class="gatsby_site_header"><nav class="gatsby_site_header_inner"><div><div class="gatsby_site_header_logo_outer"><div class="gatsby_site_header_logo"><a title="Home" class="gatsby_logo-icon
+                                  " href="/"><img src="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMV9jb3B5IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMC42MSA5LjEyIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmxvZ28td2hpdGU8L3RpdGxlPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTMuNjksMy40MSw1LjI5LjQ3aDJMNC44Miw0LjcsNy4zNyw5aC0yTDMuNjksNiwyLDlIMEwyLjU1LDQuNy4wNi40N2gyWiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTkuOSwxLjFWMi42NkgxMVYzLjlIOS45VjcuMDdhLjc1Ljc1LDAsMCwwLC4xMy41LjcuNywwLDAsMCwuNTIuMTUsMi41MywyLjUzLDAsMCwwLC41LDBWOWEzLjI2LDMuMjYsMCwwLDEtMSwuMTYsMS42MSwxLjYxLDAsMCwxLTEuODEtMS44VjMuOUg3LjI4VjIuNjZoLjkzVjEuMVoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xNC43Myw5LjEyYTMuMTIsMy4xMiwwLDAsMS0yLjI3LS44NkEzLjA1LDMuMDUsMCwwLDEsMTEuNTksNlY1LjgyQTMuNzcsMy43NywwLDAsMSwxMiw0LjExLDIuNjcsMi42NywwLDAsMSwxMywzYTMsMywwLDAsMSwxLjU1LS40MSwyLjY0LDIuNjQsMCwwLDEsMiwuODIsMy4zNSwzLjM1LDAsMCwxLC43NSwyLjMzdi42OWgtNGExLjYsMS42LDAsMCwwLC41LDEsMS40NywxLjQ3LDAsMCwwLDEsLjM3QTEuNzksMS43OSwwLDAsMCwxNi4zNyw3bC44NC45M2EyLjY2LDIuNjYsMCwwLDEtMSwuODVBMy4zNywzLjM3LDAsMCwxLDE0LjczLDkuMTJabS0uMTktNS4yMWExLjA1LDEuMDUsMCwwLDAtLjgyLjM0LDEuNzcsMS43NywwLDAsMC0uNCwxaDIuMzZWNS4wOWExLjIyLDEuMjIsMCwwLDAtLjMxLS44N0ExLjA2LDEuMDYsMCwwLDAsMTQuNTQsMy45MVoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yMCwyLjY2bC4wNS43M2EyLjI0LDIuMjQsMCwwLDEsMS44Mi0uODUsMS44MywxLjgzLDAsMCwxLDEuNS41OSwyLjc5LDIuNzksMCwwLDEsLjUxLDEuNzdWOUgyMi4xNVY1YTEuMTEsMS4xMSwwLDAsMC0uMjQtLjc5LDEuMDYsMS4wNiwwLDAsMC0uNzgtLjI0LDEuMTYsMS4xNiwwLDAsMC0xLjA3LjYxVjlIMTguMzdWMi42NloiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNC45LDUuNzhhMy44NCwzLjg0LDAsMCwxLC42Ni0yLjM2LDIuMTcsMi4xNywwLDAsMSwxLjgyLS44OCwxLjk0LDEuOTQsMCwwLDEsMS41My42OVYwaDEuN1Y5SDI5LjA4TDI5LDguMzNhMiwyLDAsMCwxLTEuNjMuNzksMi4xNywyLjE3LDAsMCwxLTEuOC0uODhBNCw0LDAsMCwxLDI0LjksNS43OFptMS42OS4xM2EyLjUsMi41LDAsMCwwLC4zMSwxLjM3LDEsMSwwLDAsMCwuOS40NywxLjE0LDEuMTQsMCwwLDAsMS4xMS0uNjZWNC41OGExLjEyLDEuMTIsMCwwLDAtMS4xLS42NkMyNywzLjkyLDI2LjU5LDQuNTgsMjYuNTksNS45MVoiLz48L3N2Zz4K" alt="Xtend"/></a></div><div><div class="gatsby_site_header_top_social"><a href="https://github.com/minimit/xtend-library" target="_blank" rel="noopener" class="btn gatsby_btn--site_header_top_social" title="Github"><span class="icon-github icon--big"></span></a><a href="https://www.npmjs.com/package/xtend-library" target="_blank" rel="noopener" class="btn gatsby_btn--site_header_top_social" title="Npm"><span class="icon-npm icon--big"></span></a></div></div></div></div><div><div class="gatsby_site_header_links"><a class="btn gatsby_btn--site_header_link current" href="/components">Components</a><a class="btn gatsby_btn--site_header_link " href="/addons">Addons</a><a class="btn gatsby_btn--site_header_link " href="/themes">Themes</a><a class="btn gatsby_btn--site_header_link " href="/faqs">Faqs</a></div></div></nav></header><nav class="gatsby_site_header_listing"><div><div class="gatsby_site_header_cat"><div class="gatsby_cat--site_article_sidebar ">Intro</div><div class="gatsby_site_header_sub active "><div class="gatsby_site_header_item"><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/setup">Setup</a></div></div></div></div></div><div><div class="gatsby_site_header_cat"><div class="gatsby_cat--site_article_sidebar ">Core</div><div class="gatsby_site_header_sub active "><div class="gatsby_site_header_item"><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/global">Global</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/animation">Animation</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/badge">Badge</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/button">Button</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/card">Card</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/column">Column</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/container">Container</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/drop">Drop</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/form">Form</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/group">Group</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/icon">Icon</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/link">Link</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/list">List</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/note">Note</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/overlay">Overlay</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/row">Row</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/table">Table</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub current" href="/components/toggle">Toggle</a><div class="gatsby_site_header_adiacent active"><div class="gatsby_site_header_item"><div><a aria-current="page" class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--adiacent active" href="/components/toggle/api">API</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--adiacent " href="/components/toggle/mode">Mode</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--adiacent " href="/components/toggle/other">Other</a></div></div></div></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/typography">Typography</a></div></div></div></div></div><div><div class="gatsby_site_header_cat"><div class="gatsby_cat--site_article_sidebar ">Extensions</div><div class="gatsby_site_header_sub active "><div class="gatsby_site_header_item"><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/ajax">Ajax</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/code">Code</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/loader">Loader</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/scroll">Scroll</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/separator">Separator</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/slider">Slider</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/smooth">Smooth</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/sticky">Sticky</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/utils">Utils</a></div></div></div></div></div></nav></div><div class="gatsby_site_article"><div id="toggle--open-full-trigger" data-xt-toggle="{ targets: &#x27;#toggle--open-full&#x27;, closeInside: &#x27;:scope &gt; .btn-close&#x27;, classHtml: &#x27;toggle--open-full--open&#x27; }"></div><div class="toggle-block" id="toggle--open-full"><div class="btn btn-close" aria-label="Close"></div><div class="card-content" id="toggle--open-full-content"></div></div><main class="gatsby_site_article_inner" id="toggle--open-full-inner"><div><header class="gatsby_site_article_hero"><div class="gatsby_site_article_hero_content"><h1><span>API<!-- --> <em>Toggle</em></span><div class="badge badge--default badge--small">Core</div></h1></div><nav class="gatsby_site_article_hero_links"><div class="row"><div><div><a class="btn" href="/components/toggle"><span class="icon-arrow-left icon--left"></span>Toggle</a></div></div><div><div><a class="btn align-right" href="/components/toggle/mode">Mode<span class="icon-arrow-right icon--right"></span></a></div></div></div></nav></header></div><article class="gatsby_site_article_content"><div><h2>Initialization</h2>
+<p>Initialize automatically within markup with <code>[data-xt-toggle=&quot;{ &lt;options&gt; }&quot;]</code>.</p>
+<p>Or initialize with javascript:</p>
+<pre><code class="language-jsx">new Xt.Toggle(document.querySelector(&#x27;.my-toggle&#x27;), {
+  // options
+});
+</code></pre>
+<h2>Option</h2>
+<h3>Class</h3>
+<p>You can specify classes to toggle with <code>class: &#x27;my-class-0 my-class-1&#x27;</code>. Toggled class is by default <code>.active</code>.</p>
+<div class="table--scroll">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>Syntax</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td>Option</td><td><code>class:String</code></td><td><code>active</code></td><td>Class name for activation</td></tr><tr><td>Option</td><td><code>classIn:String</code></td><td><code>in</code></td><td>Class name for in animation</td></tr><tr><td>Option</td><td><code>classOut:String</code></td><td><code>out</code></td><td>Class name for out animation</td></tr><tr><td>Option</td><td><code>classInitial:String</code></td><td><code>initial</code></td><td>Class name for initialization</td></tr><tr><td>Option</td><td><code>classInverse:String</code></td><td><code>inverse</code></td><td>Class name for inverse direction activation</td></tr></tbody></table>
+</div>
+<div class="gatsby_demo">
+  <div class="gatsby_demo_item gatsby_demo_preview" data-name="class" data-inline="vanilla/components/toggle/class">
+  <script type="text/plain" data-lang="html">
+<div class="list list--default list-space--small align-items-center"
+     data-xt-toggle="{ class: 'active demo--toggle-custom-class' }">
+     
+  <button type="button" class="btn btn--default">
+    Toggle
+  </button>
+  
+  <div class="note note--default note--background toggle-block">
+    Target
+  </div>
+  
+</div>
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div><div class="gatsby_demo_source xt-ignore" data-lang="less">.demo--toggle-custom-class {
+  color: red !important;
+}
+</div></div>
+</div>
+<p>You can start with toggled elements and targets just by adding <strong>one of the classes</strong> to the <strong>elements</strong> or <strong>targets</strong>.</p>
+<div class="gatsby_demo">
+  <div class="gatsby_demo_item gatsby_demo_preview" data-name="start" data-inline="vanilla/components/toggle/start">
+  <script type="text/plain" data-lang="html">
+<button type="button" class="btn btn--primary" id="demo--toggle-restart">
+  Restart
+</button>
+
+<br/><br/>
+
+<div class="list list--default list-space--small align-items-center"
+     data-xt-toggle="{ class: 'active', min: 3, max: 3 }">
+     
+  <button type="button" class="btn btn--default" data-xt-group="0">
+    Group 0
+  </button>
+  <button type="button" class="btn btn--default">
+    Toggle 0
+  </button>
+  <button type="button" class="btn btn--default" data-xt-group="0">
+    Group 0
+  </button>
+  <button type="button" class="btn btn--default active">
+    Toggle 1
+  </button>
+  <button type="button" class="btn btn--default active" data-xt-group="1">
+    Group 1
+  </button>
+  
+  <div class="note note--default note--background toggle-block">
+    Target 0
+  </div>
+  <div class="note note--default note--background toggle-block" data-xt-group="0">
+    Group 0
+  </div>
+  <div class="note note--default note--background toggle-block" data-xt-group="1">
+    Group 1
+  </div>
+  <div class="note note--default note--background toggle-block" data-xt-group="0">
+    Group 0
+  </div>
+  <div class="note note--default note--background toggle-block">
+    Target 1
+  </div>
+  <div class="note note--default note--background toggle-block" data-xt-group="1">
+    Group 1
+  </div>
+  
+</div>
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div><div class="gatsby_demo_source xt-ignore" data-lang="js">import { Xt } from 'xtend-library'
+
+Xt.mount.push({
+  matches: '#demo--toggle-restart',
+  mount: function(object) {
+    // click
+
+    const eventClick = function() {
+      // restart
+      const toggles = document.querySelectorAll('[data-xt-toggle]')
+      for (const toggle of toggles) {
+        const self = Xt.get('xt-toggle', toggle)
+        self.initStart()
+      }
+    }
+
+    object.addEventListener('click', eventClick)
+
+    // unmount
+
+    return function unmount() {
+      object.removeEventListener('click', eventClick)
+    }
+  },
+})
+</div></div>
+</div>
+<h3>Min and Max</h3>
+<p>You can specify <strong>min</strong> and <strong>max</strong> concurrent activations. The <strong>min</strong> option is fulfilled on initialization, the <strong>max</strong> options deactivates the first activated when max is reached.</p>
+<div class="table--scroll">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>Syntax</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td>Option</td><td><code>min:Number</code></td><td><code>0</code></td><td>Minimum number of concurrent elements activated</td></tr><tr><td>Option</td><td><code>max:Number</code></td><td><code>1</code></td><td>Maximum number of concurrent elements activated</td></tr></tbody></table>
+</div>
+<div class="gatsby_demo">
+  <div class="gatsby_demo_item gatsby_demo_preview" data-name="minmax" data-inline="vanilla/components/toggle/minmax">
+  <script type="text/plain" data-lang="html">
+<div class="list list--default list-space--small align-items-center"
+     data-xt-toggle="{ min: 2, max: 2 }">
+  <button type="button" class="btn btn--default">
+    Toggle 0
+  </button>
+  <button type="button" class="btn btn--default">
+    Toggle 1
+  </button>
+  <button type="button" class="btn btn--default">
+    Toggle 2
+  </button>
+  <button type="button" class="btn btn--default">
+    Toggle 3
+  </button>
+  <div class="note note--default note--background toggle-block">
+    Target 0
+  </div>
+  <div class="note note--default note--background toggle-block">
+    Target 1
+  </div>
+  <div class="note note--default note--background toggle-block">
+    Target 2
+  </div>
+  <div class="note note--default note--background toggle-block">
+    Target 3
+  </div>
+</div>
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
+</div>
+<h3>Event</h3>
+<p>You can specify <strong>on</strong> and <strong>off</strong> events for the toggle. Fore example <code>on: &#x27;mouseenter&#x27;</code> <code>off: &#x27;mouseleave&#x27;</code>. Default is <code>on: &#x27;click&#x27;</code>.</p>
+<div class="table--scroll">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>Syntax</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td>Option</td><td><code>on:String</code></td><td><code>click</code></td><td>Activation event to attach to elements</td></tr><tr><td>Option</td><td><code>off:String</code></td><td><code>false</code></td><td>Dectivation event to attach to elements</td></tr><tr><td>Option</td><td><code>eventLimit:Query</code></td><td><code>.event-limit</code></td><td>Limit events inside self.object</td></tr></tbody></table>
+</div>
+<div class="gatsby_demo">
+  <div class="gatsby_demo_item gatsby_demo_preview" data-name="event" data-inline="vanilla/components/toggle/event">
+  <script type="text/plain" data-lang="html">
+<div class="list list--default list-space--small align-items-center"
+     data-xt-toggle="{ min: 1, on: 'mouseenter', off: 'mouseleave' }">
+  <button type="button" class="btn btn--default">
+    Toggle 0
+  </button>
+  <button type="button" class="btn btn--default">
+    Toggle 1
+  </button>
+  <button type="button" class="btn btn--default">
+    Toggle 2
+  </button>
+  <button type="button" class="btn btn--default">
+    Toggle 3
+  </button>
+  <div class="note note--default note--background toggle-block">
+    Target 0
+  </div>
+  <div class="note note--default note--background toggle-block">
+    Target 1
+  </div>
+  <div class="note note--default note--background toggle-block">
+    Target 2
+  </div>
+  <div class="note note--default note--background toggle-block">
+    Target 3
+  </div>
+</div>
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
+</div>
+<h3>Jump</h3>
+<p>Use <code>jump: true</code> to enable clicking on a <strong>target</strong> to jump to them.</p>
+<div class="table--scroll">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>Syntax</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td>Option</td><td><code>jump:Boolean</code></td><td><code>false</code></td><td>Clicking on targets triggers activation</td></tr></tbody></table>
+</div>
+<div class="gatsby_demo">
+  <div class="gatsby_demo_item gatsby_demo_preview" data-name="jump" data-inline="vanilla/components/toggle/jump">
+  <script type="text/plain" data-lang="html">
+<div class="list list--default list-space--small align-items-center"
+     data-xt-toggle="{ targets: '.demo--toggle-jump', instant: true, jump: true }">
+  <button type="button" class="btn btn--default">
+    Toggle 0
+  </button>
+  <button type="button" class="btn btn--default">
+    Toggle 1
+  </button>
+  <button type="button" class="btn btn--default">
+    Toggle 2
+  </button>
+  <div class="note note--default note--background demo--toggle-jump">
+    Target 0
+  </div>
+  <div class="note note--default note--background demo--toggle-jump">
+    Target 1
+  </div>
+  <div class="note note--default note--background demo--toggle-jump">
+    Target 2
+  </div>
+</div>
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div><div class="gatsby_demo_source xt-ignore" data-lang="less">.demo--toggle-jump {
+  .animation-none() !important; // disable default animation
+  // animation
+  opacity: .5 !important;
+  transition-property: opacity;
+  transition-duration: @time-medium;
+  transition-timing-function: @bez-out;
+  &.active {
+    opacity: 1 !important;
+    transition-property: opacity;
+    transition-duration: @time-medium;
+    transition-timing-function: @bez-in;
+  }
+}
+</div></div>
+</div>
+<h3>Navigation</h3>
+<p>You can add navigation with <code>navigation: QuerySelector</code>, set the amount to add (<code>+1</code>) or remove (<code>-1</code>) to the current activation index with <code>[data-xt-nav=&quot;value&quot;]</code>.</p>
+<div class="table--scroll">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>Syntax</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td>Option</td><td><code>navigation:Query</code></td><td><code>false</code></td><td>Query for navigation elements</td></tr></tbody></table>
+</div>
+<div class="gatsby_demo">
+  <div class="gatsby_demo_item gatsby_demo_preview" data-name="navigation" data-inline="vanilla/components/toggle/navigation">
+  <script type="text/plain" data-lang="html">
+<div class="list list--default list-space--small align-items-center"
+     data-xt-toggle="{ navigation: '[data-xt-nav]' }">
+  <button type="button" class="btn btn--default">
+    Toggle 0
+  </button>
+  <button type="button" class="btn btn--default">
+    Toggle 1
+  </button>
+  <button type="button" class="btn btn--default">
+    Toggle 2
+  </button>
+  <button type="button" class="btn btn--default">
+    Toggle 3
+  </button>
+  <button type="button" class="btn btn--default xt-ignore" data-xt-nav="-1" title="Previous slide">
+    <span class="icon-xt-chevron-left"></span>
+  </button>
+  <button type="button" class="btn btn--default xt-ignore" data-xt-nav="1" title="Next slide">
+    <span class="icon-xt-chevron-right"></span>
+  </button>
+  <div class="note note--default note--background toggle-block">
+    Target 0
+  </div>
+  <div class="note note--default note--background toggle-block">
+    Target 1
+  </div>
+  <div class="note note--default note--background toggle-block">
+    Target 2
+  </div>
+  <div class="note note--default note--background toggle-block">
+    Target 3
+  </div>
+</div>
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
+</div>
+<h3>Loop</h3>
+<p>Use <code>loop: false</code> to disable looping on activation.</p>
+<div class="table--scroll">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>Syntax</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td>Option</td><td><code>loop:Boolean</code></td><td><code>true</code></td><td>Loop activation</td></tr></tbody></table>
+</div>
+<h3>Timing</h3>
+<p>Activation/deactivation automatically waits for the <strong>duration</strong> of animations and transitions on <code>.active</code> and <code>.out</code>.</p>
+<p>You can use a function for <code>delayOn</code> and <code>delayOff</code> for example <code>function(current, total) {return Math.min((total - current) * 150, 300)}</code>.</p>
+<div class="table--scroll">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>Syntax</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td>Option</td><td><code>delayOn:Milliseconds|Function</code></td><td><code>false</code></td><td>Activation delay</td></tr><tr><td>Option</td><td><code>delayOff:Milliseconds|Function</code></td><td><code>false</code></td><td>Deactivation delay</td></tr><tr><td>Option</td><td><code>durationOn:Milliseconds</code></td><td><code>false</code></td><td>Activation duration</td></tr><tr><td>Option</td><td><code>durationOff:Milliseconds</code></td><td><code>false</code></td><td>Deactivation duration</td></tr><tr><td>Option</td><td><code>instant: Boolean|Object</code></td><td><code>{ elements: true, targets: false, elementsInner: true, targetsInner: false }</code></td><td>Set instant activation and deactivation</td></tr></tbody></table>
+</div>
+<div class="gatsby_demo">
+  <div class="gatsby_demo_item gatsby_demo_preview" data-name="timing duration" data-inline="vanilla/components/toggle/timing-duration">
+  <script type="text/plain" data-lang="html">
+<div class="list list--default list-space--small align-items-center"
+     data-xt-toggle="{ durationOn: 1000, durationOff: 1000 }">
+  <button type="button" class="btn btn--default">
+    Toggle 0
+  </button>
+  <button type="button" class="btn btn--default">
+    Toggle 1
+  </button>
+  <button type="button" class="btn btn--default">
+    Toggle 2
+  </button>
+  <div class="note note--default note--background toggle-block">
+    Target 0
+  </div>
+  <div class="note note--default note--background toggle-block">
+    Target 1
+  </div>
+  <div class="note note--default note--background toggle-block">
+    Target 2
+  </div>
+</div>
+
+<br>
+
+<div class="list list--default list-space--small align-items-center"
+     data-xt-toggle="{ on: 'mouseenter', off: 'mouseleave', durationOn: 1000, durationOff: 1000 }">
+  <button type="button" class="btn btn--default">
+    Toggle 0
+  </button>
+  <button type="button" class="btn btn--default">
+    Toggle 1
+  </button>
+  <button type="button" class="btn btn--default">
+    Toggle 2
+  </button>
+  <div class="note note--default note--background toggle-block">
+    Target 0
+  </div>
+  <div class="note note--default note--background toggle-block">
+    Target 1
+  </div>
+  <div class="note note--default note--background toggle-block">
+    Target 2
+  </div>
+</div>
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
+  <div class="gatsby_demo_item gatsby_demo_preview" data-name="timing delay" data-inline="vanilla/components/toggle/timing-delay">
+  <script type="text/plain" data-lang="html">
+<div class="list list--default list-space--small align-items-center"
+     data-xt-toggle="{ delayOn: 500, delayOff: 500 }">
+  <button type="button" class="btn btn--default">
+    Toggle 0
+  </button>
+  <button type="button" class="btn btn--default">
+    Toggle 1
+  </button>
+  <button type="button" class="btn btn--default">
+    Toggle 2
+  </button>
+  <div class="note note--default note--background toggle-block">
+    Target 0
+  </div>
+  <div class="note note--default note--background toggle-block">
+    Target 1
+  </div>
+  <div class="note note--default note--background toggle-block">
+    Target 2
+  </div>
+</div>
+
+<br>
+
+<div class="list list--default list-space--small align-items-center"
+     data-xt-toggle="{ on: 'mouseenter', off: 'mouseleave', delayOn: 500, delayOff: 500 }">
+  <button type="button" class="btn btn--default">
+    Toggle 0
+  </button>
+  <button type="button" class="btn btn--default">
+    Toggle 1
+  </button>
+  <button type="button" class="btn btn--default">
+    Toggle 2
+  </button>
+  <div class="note note--default note--background toggle-block">
+    Target 0
+  </div>
+  <div class="note note--default note--background toggle-block">
+    Target 1
+  </div>
+  <div class="note note--default note--background toggle-block">
+    Target 2
+  </div>
+</div>
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
+  <div class="gatsby_demo_item gatsby_demo_preview" data-name="timing delay fnc" data-inline="vanilla/components/toggle/timing-delay-fnc">
+  <script type="text/plain" data-lang="html">
+<div class="list list--default list-space--small align-items-center demo--toggle-timing-delay-fnc">
+  <button type="button" class="btn btn--default">
+    Toggle 0
+  </button>
+  <button type="button" class="btn btn--default" data-xt-group="0">
+    Group 0
+  </button>
+  <button type="button" class="btn btn--default" data-xt-group="1">
+    Group 1
+  </button>
+  <div class="note note--default note--background toggle-block">
+    Target 0
+  </div>
+  <div class="note note--default note--background toggle-block" data-xt-group="0">
+    Group 0a
+  </div>
+  <div class="note note--default note--background toggle-block" data-xt-group="1">
+    Group 1a
+  </div>
+  <div class="note note--default note--background toggle-block" data-xt-group="0">
+    Group 0b
+  </div>
+  <div class="note note--default note--background toggle-block" data-xt-group="1">
+    Group 1b
+  </div>
+  <div class="note note--default note--background toggle-block" data-xt-group="0">
+    Group 0c
+  </div>
+  <div class="note note--default note--background toggle-block" data-xt-group="1">
+    Group 1c
+  </div>
+</div>
+
+<br>
+
+<div class="list list--default list-space--small align-items-center demo--toggle-timing-delay-fnc--hover">
+  <button type="button" class="btn btn--default">
+    Toggle 0
+  </button>
+  <button type="button" class="btn btn--default" data-xt-group="0">
+    Group 0
+  </button>
+  <button type="button" class="btn btn--default" data-xt-group="1">
+    Group 1
+  </button>
+  <div class="note note--default note--background toggle-block">
+    Target 0
+  </div>
+  <div class="note note--default note--background toggle-block" data-xt-group="0">
+    Group 0a
+  </div>
+  <div class="note note--default note--background toggle-block" data-xt-group="1">
+    Group 1a
+  </div>
+  <div class="note note--default note--background toggle-block" data-xt-group="0">
+    Group 0b
+  </div>
+  <div class="note note--default note--background toggle-block" data-xt-group="1">
+    Group 1b
+  </div>
+  <div class="note note--default note--background toggle-block" data-xt-group="0">
+    Group 0c
+  </div>
+  <div class="note note--default note--background toggle-block" data-xt-group="1">
+    Group 1c
+  </div>
+</div>
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div><div class="gatsby_demo_source xt-ignore" data-lang="js">import { Xt } from 'xtend-library'
+
+Xt.mount.push({
+  matches: '.demo--toggle-timing-delay-fnc',
+  mount: function(object) {
+    // init
+
+    let self = new Xt.Toggle(object, {
+      delayOn: function(current) {
+        return Math.min(current * 150, 300)
+      },
+      delayOff: function(current, total) {
+        return Math.min((total - current) * 150, 300)
+      },
+    })
+
+    // unmount
+
+    return function unmount() {
+      self.destroy()
+      self = null
+    }
+  },
+})
+
+Xt.mount.push({
+  matches: '.demo--toggle-timing-delay-fnc--hover',
+  mount: function(object) {
+    // init
+
+    let self = new Xt.Toggle(object, {
+      on: 'mouseenter',
+      off: 'mouseleave',
+      delayOn: function(current) {
+        return Math.min(current * 150, 300)
+      },
+      delayOff: function(current, total) {
+        return Math.min((total - current) * 150, 300)
+      },
+    })
+
+    // unmount
+
+    return function unmount() {
+      self.destroy()
+      self = null
+    }
+  },
+})
+</div></div>
+  <div class="gatsby_demo_item gatsby_demo_preview" data-name="timing instant" data-inline="vanilla/components/toggle/timing-instant">
+  <script type="text/plain" data-lang="html">
+<div class="list list--default list-space--small align-items-center"
+     data-xt-toggle="{ instant: true }">
+  <button type="button" class="btn btn--default">
+    Toggle 0
+  </button>
+  <button type="button" class="btn btn--default">
+    Toggle 1
+  </button>
+  <button type="button" class="btn btn--default">
+    Toggle 2
+  </button>
+  <div class="note note--default note--background toggle-block">
+    Target 0
+  </div>
+  <div class="note note--default note--background toggle-block">
+    Target 1
+  </div>
+  <div class="note note--default note--background toggle-block">
+    Target 2
+  </div>
+</div>
+
+<br>
+
+<div class="list list--default list-space--small align-items-center"
+     data-xt-toggle="{ on: 'mouseenter', off: 'mouseleave', instant: { elements: true, targets: true } }">
+  <button type="button" class="btn btn--default">
+    Toggle 0
+  </button>
+  <button type="button" class="btn btn--default">
+    Toggle 1
+  </button>
+  <button type="button" class="btn btn--default">
+    Toggle 2
+  </button>
+  <div class="note note--default note--background toggle-block">
+    Target 0
+  </div>
+  <div class="note note--default note--background toggle-block">
+    Target 1
+  </div>
+  <div class="note note--default note--background toggle-block">
+    Target 2
+  </div>
+</div>
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
+</div>
+<h3>Auto</h3>
+<div class="table--scroll">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>Syntax</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td>Option</td><td><code>auto.time:Milliseconds</code></td><td><code>false</code></td><td>Automatic activation time</td></tr><tr><td>Option</td><td><code>auto.initial:Boolean</code></td><td><code>true</code></td><td>Automatic activation on initial</td></tr><tr><td>Option</td><td><code>auto.step:Number</code></td><td><code>1</code></td><td>Automatic activation steps</td></tr><tr><td>Option</td><td><code>auto.inverse:Boolean</code></td><td><code>false</code></td><td>Automatic activation inverse order</td></tr><tr><td>Option</td><td><code>auto.pause:Query</code></td><td><code>false</code></td><td>Elements that pause automatic on mouseenter</td></tr></tbody></table>
+</div>
+<div class="custom-block note note--default note--background"><div class="custom-block-body"><p>Auto doesn&#x27;t run if the toggle is <code>display: none</code>.</p></div></div>
+<div class="gatsby_demo">
+  <div class="gatsby_demo_item gatsby_demo_preview" data-name="auto initial" data-inline="vanilla/components/toggle/auto-initial">
+  <script type="text/plain" data-lang="html">
+<div class="list list--default list-space--small align-items-center"
+     data-xt-toggle="{ auto: { time: 2000, initial: false } }">
+  <button type="button" class="btn btn--default active">
+    Toggle 0
+  </button>
+  <button type="button" class="btn btn--default">
+    Toggle 1
+  </button>
+  <button type="button" class="btn btn--default">
+    Toggle 2
+  </button>
+  <button type="button" class="btn btn--default">
+    Toggle 3
+  </button>
+  <div class="note note--default note--background toggle-block">
+    Target 0
+  </div>
+  <div class="note note--default note--background toggle-block">
+    Target 1
+  </div>
+  <div class="note note--default note--background toggle-block">
+    Target 2
+  </div>
+  <div class="note note--default note--background toggle-block">
+    Target 3
+  </div>
+</div>
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
+  <div class="gatsby_demo_item gatsby_demo_preview" data-name="auto step" data-inline="vanilla/components/toggle/auto-step">
+  <script type="text/plain" data-lang="html">
+<div class="list list--default list-space--small align-items-center"
+     data-xt-toggle="{ auto: { time: 2000, step: 3 } }">
+  <button type="button" class="btn btn--default">
+    Toggle 0
+  </button>
+  <button type="button" class="btn btn--default">
+    Toggle 1
+  </button>
+  <button type="button" class="btn btn--default">
+    Toggle 2
+  </button>
+  <button type="button" class="btn btn--default">
+    Toggle 3
+  </button>
+  <div class="note note--default note--background toggle-block">
+    Target 0
+  </div>
+  <div class="note note--default note--background toggle-block">
+    Target 1
+  </div>
+  <div class="note note--default note--background toggle-block">
+    Target 2
+  </div>
+  <div class="note note--default note--background toggle-block">
+    Target 3
+  </div>
+</div>
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
+  <div class="gatsby_demo_item gatsby_demo_preview" data-name="auto inverse" data-inline="vanilla/components/toggle/auto-inverse">
+  <script type="text/plain" data-lang="html">
+  <div class="list list--default list-space--small align-items-center"
+       data-xt-toggle="{ auto: { time: 2000, inverse: true } }">
+    <button type="button" class="btn btn--default">
+      Toggle 0
+    </button>
+    <button type="button" class="btn btn--default">
+      Toggle 1
+    </button>
+    <button type="button" class="btn btn--default">
+      Toggle 2
+    </button>
+    <button type="button" class="btn btn--default">
+      Toggle 3
+    </button>
+    <div class="note note--default note--background toggle-block">
+      Target 0
+    </div>
+    <div class="note note--default note--background toggle-block">
+      Target 1
+    </div>
+    <div class="note note--default note--background toggle-block">
+      Target 2
+    </div>
+    <div class="note note--default note--background toggle-block">
+      Target 3
+    </div>
+  </div>
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
+  <div class="gatsby_demo_item gatsby_demo_preview" data-name="auto pause" data-inline="vanilla/components/toggle/auto-pause">
+  <script type="text/plain" data-lang="html">
+<div class="list list--default list-space--small align-items-center"
+     data-xt-toggle="{ auto: { time: 2000, pause: ':scope > button, .toggle-block' } }">
+  <button type="button" class="btn btn--default">
+    Toggle 0
+  </button>
+  <button type="button" class="btn btn--default">
+    Toggle 1
+  </button>
+  <button type="button" class="btn btn--default">
+    Toggle 2
+  </button>
+  <button type="button" class="btn btn--default">
+    Toggle 3
+  </button>
+  <div class="note note--default note--background toggle-block">
+    Target 0
+  </div>
+  <div class="note note--default note--background toggle-block">
+    Target 1
+  </div>
+  <div class="note note--default note--background toggle-block">
+    Target 2
+  </div>
+  <div class="note note--default note--background toggle-block">
+    Target 3
+  </div>
+</div>
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
+  <div class="gatsby_demo_item gatsby_demo_preview" data-name="auto minmax" data-inline="vanilla/components/toggle/auto-minmax">
+  <script type="text/plain" data-lang="html">
+<div class="list list--default list-space--small align-items-center"
+     data-xt-toggle="{ min: 1, max: 2, auto: { time: 2000 } }">
+  <button type="button" class="btn btn--default">
+    Toggle 0
+  </button>
+  <button type="button" class="btn btn--default">
+    Toggle 1
+  </button>
+  <button type="button" class="btn btn--default active">
+    Toggle 2
+  </button>
+  <button type="button" class="btn btn--default">
+    Toggle 3
+  </button>
+  <div class="note note--default note--background toggle-block">
+    Target 0
+  </div>
+  <div class="note note--default note--background toggle-block">
+    Target 1
+  </div>
+  <div class="note note--default note--background toggle-block">
+    Target 2
+  </div>
+  <div class="note note--default note--background toggle-block">
+    Target 3
+  </div>
+</div>
+</div>
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
+  <div class="gatsby_demo_item gatsby_demo_preview" data-name="progress" data-inline="vanilla/components/toggle/progress">
+    <div class="gatsby_demo_text">
+      Use <a href="/core/toggle/@TODO">auto events</a>.
+    </div>
+  <script type="text/plain" data-lang="html">
+<div class="list list--default list-space--small align-items-center demo--toggle-progress">
+  <button type="button" class="btn btn--default">
+    <span>
+      Toggle 0
+    </span>
+    <span class="loader loader--y loader--js">
+        <span class="filler">
+          <span></span><span></span>
+        </span>
+      </span>
+  </button>
+  <button type="button" class="btn btn--default">
+    <span>
+      Toggle 1
+    </span>
+    <span class="loader loader--y loader--js">
+        <span class="filler">
+          <span></span><span></span>
+        </span>
+      </span>
+  </button>
+  <button type="button" class="btn btn--default">
+    <span>
+      Toggle 2
+    </span>
+    <span class="loader loader--y loader--js">
+        <span class="filler">
+          <span></span><span></span>
+        </span>
+      </span>
+  </button>
+  <button type="button" class="btn btn--default">
+    <span>
+      Toggle 3
+    </span>
+    <span class="loader loader--y loader--js">
+        <span class="filler">
+          <span></span><span></span>
+        </span>
+      </span>
+  </button>
+  <div class="note note--default note--background toggle-block">
+    Target 0
+    <div class="loader loader--x loader-size--bottom loader--js">
+      <div class="filler">
+        <span></span><span></span>
+      </div>
+    </div>
+  </div>
+  <div class="note note--default note--background toggle-block">
+    Target 1
+    <div class="loader loader--x loader-size--bottom loader--js">
+      <div class="filler">
+        <span></span><span></span>
+      </div>
+    </div>
+  </div>
+  <div class="note note--default note--background toggle-block">
+    Target 2
+    <div class="loader loader--x loader-size--bottom loader--js">
+      <div class="filler">
+        <span></span><span></span>
+      </div>
+    </div>
+  </div>
+  <div class="note note--default note--background toggle-block">
+    Target 3
+    <span class="loader loader--x loader-size--bottom loader--js">
+      <span class="filler">
+        <span></span><span></span>
+      </span>
+    </span>
+  </div>
+</div>
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div><div class="gatsby_demo_source xt-ignore" data-lang="js">import { Xt } from 'xtend-library'
+import 'xtend-library/src/vars.js'
+import 'xtend-library/src/core/toggle/toggle.js'
+import gsap from 'gsap'
+
+Xt.mount.push({
+  matches: '.demo--toggle-progress',
+  mount: function(object) {
+    // init
+
+    let self = new Xt.Toggle(object, {
+      auto: {
+        time: 2000,
+        pause: ':scope > button',
+      },
+    })
+
+    // auto
+
+    const eventAutoStart = function() {
+      // on elements
+      const elements = self.elements.filter(x => self.hasCurrent(x))
+      for (const element of elements) {
+        const fillers = element.querySelectorAll('.filler span:nth-child(1)')
+        for (const filler of fillers) {
+          gsap.set(filler, { height: 0, top: '100%', ease: Xt.vars.easeLinear })
+          gsap.to(filler, { duration: self.options.auto.time, height: '100%', top: 0, ease: Xt.vars.easeLinear })
+        }
+      }
+      // on targets
+      const targets = self.targets.filter(x => self.hasCurrent(x))
+      for (const target of targets) {
+        const fillers = target.querySelectorAll('.filler span:nth-child(1)')
+        for (const filler of fillers) {
+          gsap.set(filler, { width: 0, left: 0, ease: Xt.vars.easeLinear })
+          gsap.to(filler, { duration: self.options.auto.time, width: '100%', left: 0, ease: Xt.vars.easeLinear })
+        }
+      }
+    }
+
+    const eventAutoStop = function() {
+      // on elements
+      const elements = self.elements.filter(x => self.hasCurrent(x))
+      for (const element of elements) {
+        const fillers = element.querySelectorAll('.filler span:nth-child(1)')
+        for (const filler of fillers) {
+          gsap.to(filler, { duration: Xt.vars.timeSmall, height: 0, top: 0, ease: Xt.vars.easeLinear })
+        }
+      }
+      // on targets
+      const targets = self.targets.filter(x => self.hasCurrent(x))
+      for (const target of targets) {
+        const fillers = target.querySelectorAll('.filler span:nth-child(1)')
+        for (const filler of fillers) {
+          gsap.to(filler, { duration: Xt.vars.timeSmall, width: 0, left: '100%', ease: Xt.vars.easeLinear })
+        }
+      }
+    }
+
+    const eventAutoPause = function() {
+      // on elements
+      const elements = self.elements.filter(x => self.hasCurrent(x))
+      for (const element of elements) {
+        const fillers = element.querySelectorAll('.filler span:nth-child(1)')
+        for (const filler of fillers) {
+          gsap.to(filler, { duration: Xt.vars.timeSmall, height: 0, top: '100%', ease: Xt.vars.easeLinear })
+        }
+      }
+      // on targets
+      const targets = self.targets.filter(x => self.hasCurrent(x))
+      for (const target of targets) {
+        const fillers = target.querySelectorAll('.filler span:nth-child(1)')
+        for (const filler of fillers) {
+          gsap.to(filler, { duration: Xt.vars.timeSmall, width: 0, left: 0, ease: Xt.vars.easeLinear })
+        }
+      }
+    }
+
+    self.object.addEventListener('start.xt.auto', eventAutoStart)
+    self.object.addEventListener('stop.xt.auto', eventAutoStop)
+    self.object.addEventListener('pause.xt.auto', eventAutoPause)
+
+    // unmount
+
+    return function unmount() {
+      self.object.removeEventListener('start.xt.auto', eventAutoStart)
+      self.object.removeEventListener('stop.xt.auto', eventAutoStop)
+      self.object.removeEventListener('pause.xt.auto', eventAutoPause)
+      self.destroy()
+      self = null
+    }
+  },
+})
+</div></div>
+</div>
+<h3>Other</h3>
+<div class="table--scroll">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>Syntax</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td>Option</td><td><code>instant:Object</code></td><td><code>{ elements: true, targets: false, elementsInner: true, targetsInner: false }</code></td><td>Instant activation instead of waiting for delay and animations</td></tr><tr><td>Option</td><td><code>autoClose:Boolean</code></td><td><code>false</code></td><td>Close automatically on <code>autoClose.xt</code> event</td></tr><tr><td>Option</td><td><code>autoDisable:Boolean</code></td><td><code>true</code></td><td>Disable automatically when cannot be activated</td></tr><tr><td>Option</td><td><code>onBlock:Milliseconds</code></td><td><code>true</code></td><td>Block concurrent activation events</td></tr><tr><td>Option</td><td><code>offBlock:Milliseconds</code></td><td><code>true</code></td><td>Block concurrent deactivation events</td></tr><tr><td>Option</td><td><code>imageLoadedInit:Boolean</code></td><td><code>false</code></td><td>Reinit on image loaded</td></tr><tr><td>Option</td><td><code>keyboard.selector:Boolean</code></td><td><code>false</code></td><td>Elements that triggers the events</td></tr><tr><td>Option</td><td><code>aria.tabindex:Boolean</code></td><td><code>true</code></td><td>Inject aria tabindex attributes</td></tr><tr><td>Option</td><td><code>aria.controls:Boolean</code></td><td><code>true</code></td><td>Inject aria controls attributes</td></tr><tr><td>Option</td><td><code>aria.labelledby:Boolean</code></td><td><code>true</code></td><td>Inject aria labelledby attributes</td></tr></tbody></table>
+</div>
+<h2>Events</h2>
+<p>@TODO tables events</p></div></article><footer class="gatsby_site_footer"><div class="gatsby_site_footer_bottom"><div class="container full"><div class="row gatsby_site_footer_bottom_row"><div><a title="Home" class="gatsby_logo-icon
+                                    " href="/"><img src="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMV9jb3B5IiBkYXRhLW5hbWU9IkxheWVyIDEgY29weSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMjIuMDEgMTUuMzUiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojMzczYTQ0O30uY2xzLTJ7ZmlsbDojOTY5YmFkO308L3N0eWxlPjwvZGVmcz48dGl0bGU+aWNvbi1ibGFjazwvdGl0bGU+PHBvbHlsaW5lIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSIxNS42IDAgMjIuMDEgMCAyMi4wMSAyLjg2IDE3LjQxIDIuODYgMTcuNDEgMTUuMzUgMTUuNiAxNS4zNSIvPjxwb2x5bGluZSBjbGFzcz0iY2xzLTEiIHBvaW50cz0iNi44NCAxMC4xNSA0LjI2IDE1LjM1IDAgMTUuMzUgNC40IDcuNjEgMC4xMiAwIDQuMzMgMCA2Ljg0IDUuMSIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIxMy41OCAwIDExLjk3IDIuODYgMTMuNzEgMi44NiAxMy43MSAxNS4zNSAxNS42IDE1LjM1IDE1LjYgMCAxMy41OCAwIi8+PHBvbHlnb24gY2xhc3M9ImNscy0yIiBwb2ludHM9IjkuMzUgMCA5LjE4IDAuMzQgNi44NCA1LjEgNi44NCAxMC4xNSA5LjQzIDE1LjM1IDEzLjcgMTUuMzUgOS4yOSA3LjYxIDExLjk3IDIuODYgMTMuNTggMCA5LjM1IDAiLz48L3N2Zz4=" alt="Xtend"/></a></div><div>Site and docs licensed<!-- --> <a href="https://github.com/minimit/xtend-library/blob/master/LICENSE-DOCS" target="_blank" rel="noopener">CC BY 3.0</a> <span class="separator separator--dash"></span> <!-- -->Xtend<!-- --> v<!-- -->0.12.0<!-- --> licensed<!-- --> <a href="https://github.com/minimit/minimit/blob/master/LICENSE" target="_blank" rel="noopener">MIT</a><br/></div><div class="gatsby_site_footer_bottom_right">© 2018 – <!-- -->2019<!-- --> <!-- -->Riccardo Caroli</div></div></div></div></footer></main></div></div></div></div></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/components/toggle/api";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-8f590de63b778133c559.js"],"component---src-gatsby-components-templates-doc-listing-js":["/component---src-gatsby-components-templates-doc-listing-js-150a507a1a0b06902e37.js"],"component---src-gatsby-components-templates-doc-page-js":["/component---src-gatsby-components-templates-doc-page-js-8aaf8573f95ce51d3318.js"],"component---src-gatsby-components-pages-404-js":["/component---src-gatsby-components-pages-404-js-987fae751a792911727d.js"],"component---src-gatsby-components-pages-index-js":["/component---src-gatsby-components-pages-index-js-448b3ae4f591f7c09047.js"],"component---src-gatsby-code-iframe-addons-structure-jump-to-content-js":["/component---src-gatsby-code-iframe-addons-structure-jump-to-content-js-7d542f85805ed63833bc.js"],"component---src-gatsby-code-iframe-components-scroll-delay-js":["/component---src-gatsby-code-iframe-components-scroll-delay-js-8ecba31987709aa4f884.js"],"component---src-gatsby-code-iframe-components-scroll-direction-js":["/component---src-gatsby-code-iframe-components-scroll-direction-js-bbe85a5ba4daf8ee32e0.js"],"component---src-gatsby-code-iframe-components-scroll-distance-js":["/component---src-gatsby-code-iframe-components-scroll-distance-js-207a2dcd4638cf3d52c1.js"],"component---src-gatsby-code-iframe-components-scroll-mode-block-js":["/component---src-gatsby-code-iframe-components-scroll-mode-block-js-0dcae54c68754e36d1de.js"],"component---src-gatsby-code-iframe-components-scroll-mode-infinite-js":["/component---src-gatsby-code-iframe-components-scroll-mode-infinite-js-087bd4bac6025432626f.js"],"component---src-gatsby-code-iframe-components-scroll-mode-responsive-js":["/component---src-gatsby-code-iframe-components-scroll-mode-responsive-js-28e3f41a3d4df6e43780.js"],"component---src-gatsby-code-iframe-components-scroll-mode-scroll-js":["/component---src-gatsby-code-iframe-components-scroll-mode-scroll-js-8ba5e78f98e5962ea4ad.js"],"component---src-gatsby-code-iframe-components-scroll-mode-visible-js":["/component---src-gatsby-code-iframe-components-scroll-mode-visible-js-5215e9c9e9a3c1298cb6.js"],"component---src-gatsby-code-iframe-components-scroll-parallax-js":["/component---src-gatsby-code-iframe-components-scroll-parallax-js-b52e63f0bddad6a49849.js"],"component---src-gatsby-code-iframe-components-sticky-contain-bottom-js":["/component---src-gatsby-code-iframe-components-sticky-contain-bottom-js-8ff3559ac56c731eeff5.js"],"component---src-gatsby-code-iframe-components-sticky-contain-top-js":["/component---src-gatsby-code-iframe-components-sticky-contain-top-js-dfadc8b58abd30314ac9.js"],"component---src-gatsby-code-iframe-components-sticky-disable-js":["/component---src-gatsby-code-iframe-components-sticky-disable-js-c10dedb25d0ce4fa4230.js"],"component---src-gatsby-code-iframe-components-sticky-hide-js":["/component---src-gatsby-code-iframe-components-sticky-hide-js-c330e7b649d2ae58f811.js"],"component---src-gatsby-code-iframe-components-sticky-limit-js":["/component---src-gatsby-code-iframe-components-sticky-limit-js-6404bd1870b71ad51758.js"],"component---src-gatsby-code-iframe-components-sticky-mode-absolute-js":["/component---src-gatsby-code-iframe-components-sticky-mode-absolute-js-35d4861ac12ca42592c7.js"],"component---src-gatsby-code-iframe-components-sticky-mode-fixed-always-js":["/component---src-gatsby-code-iframe-components-sticky-mode-fixed-always-js-d690c4e3b0a6970bd91d.js"],"component---src-gatsby-code-iframe-components-sticky-mode-fixed-js":["/component---src-gatsby-code-iframe-components-sticky-mode-fixed-js-7e9f1529d9a0e22d41ba.js"],"component---src-gatsby-code-iframe-components-sticky-position-js":["/component---src-gatsby-code-iframe-components-sticky-position-js-e4138fc3e8d9b14e2752.js"],"component---src-gatsby-code-iframe-components-sticky-showhide-bottom-js":["/component---src-gatsby-code-iframe-components-sticky-showhide-bottom-js-b0658f7fc227c4c5ca50.js"],"component---src-gatsby-code-iframe-components-sticky-showhide-hide-js":["/component---src-gatsby-code-iframe-components-sticky-showhide-hide-js-5ed854a54b2a4fecbf4a.js"],"component---src-gatsby-code-iframe-components-sticky-showhide-top-js":["/component---src-gatsby-code-iframe-components-sticky-showhide-top-js-89a140495a2a6748942a.js"],"component---src-gatsby-code-iframe-components-test-react-iframe-js":["/component---src-gatsby-code-iframe-components-test-react-iframe-js-c5b83da1855d16d18c7e.js"],"component---src-gatsby-code-iframe-components-test-vanilla-iframe-js":["/component---src-gatsby-code-iframe-components-test-vanilla-iframe-js-b9ff115137bee5173d32.js"]};/*]]>*/</script><script src="/webpack-runtime-f0a3dc66865dd5373491.js" async=""></script><script src="/app-8f590de63b778133c559.js" async=""></script><script src="/commons-3355a73f0cd4ec6f2947.js" async=""></script><script src="/component---src-gatsby-components-templates-doc-page-js-8aaf8573f95ce51d3318.js" async=""></script><script src="/styles-c216217bb6c367b196aa.js" async=""></script></body></html>
