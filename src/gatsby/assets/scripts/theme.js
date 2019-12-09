@@ -1,4 +1,51 @@
 import { Xt } from 'xtend-library'
+import gsap from 'gsap'
+
+/**
+ * xt-smooth
+ */
+
+/*
+new Xt.Smooth(document.scrollingElement)
+*/
+
+/**
+ * xt-scroll
+ */
+
+Xt.mount.push({
+  matches: '.gatsby_site_article_hero_content',
+  mount: function(object) {
+    // init
+
+    let self = new Xt.Scroll(object, {
+      sticky: 'fixed',
+      end: 350,
+    })
+
+    // change
+
+    const eventChange = function() {
+      const el = this
+      gsap.set(el, { transformOrigin: 'left top' })
+      gsap.set(el, { opacity: self.detail.ratioInverse, scale: 0.9 + 0.1 * self.detail.ratioInverse })
+    }
+
+    for (const el of self.elements) {
+      el.addEventListener('change.xt.scroll', eventChange)
+    }
+
+    // unmount
+
+    return function unmount() {
+      for (const el of self.elements) {
+        el.removeEventListener('change.xt.scroll', eventChange)
+      }
+      self.destroy()
+      self = null
+    }
+  },
+})
 
 //
 // makeDocument
@@ -48,7 +95,7 @@ const makeDocument = function() {
   if (docs) {
     const tables = docs.querySelectorAll('table')
     for (const table of tables) {
-      table.classList.add('table', 'table--small', 'table--border', 'table--stripe', 'gatbsy_table')
+      table.classList.add('table', 'table--border', 'table--stripe', 'gatbsy_table')
       for (const el of table.querySelectorAll('tr td:first-child')) {
         el.outerHTML = el.outerHTML.replace(/(<\s*\/?\s*)td(\s*([^>]*)?\s*>)/gi, '$1th$2') // regex replace tagname
         el.setAttribute('scope', 'row')

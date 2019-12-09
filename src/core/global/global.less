@@ -1,0 +1,190 @@
+@import '~xtend-library/src/core/global/_global.less';
+
+/**
+ * vars
+ */
+
+// generate class: [false], [true] non responsive only, [sm, md, lg] responsive @breakpoints
+
+@generate-util: sm, md, lg;
+@generate-flex: true;
+@generate-margin: false;
+@generate-padding: false;
+
+// colors
+// USAGE: background: @white;
+
+@white: #fff;
+@black: #000;
+
+@gray-100: #f8fafe;
+@gray-200: #eff4fd;
+@gray-200--dark: darken(@gray-200, 5%);
+@gray-300: #d6e1f6;
+@gray-500: #7a7e8e;
+@gray-800: #373944;
+
+@accent: #7567f8;
+@accent--dark: darken(@accent, 5%);
+
+@text: @gray-800;
+@text--dark: @black;
+@text-inverse: fade(@white, 90%);
+@text-inverse--dark: @white;
+
+@success: #179922;
+@error: #bc1d1f;
+
+// shadow
+// USAGE: box-shadow: @shadow-light;
+
+@shadow-light: 0 .1rem 1rem fade(@gray-300, 40%), 0 .2rem 2rem fade(@gray-300, 80%);
+@shadow-dark: 0 .1rem 1rem fade(@gray-800, 20%), 0 .2rem 2rem fade(@gray-800, 40%);
+@shadow-accent: 0 .1rem 1rem fade(@accent--dark, 20%), 0 .2rem 2rem fade(@accent--dark, 40%);
+
+// gradient
+// USAGE: background: linear-gradient(135deg, @grad-light);
+
+@grad-light: @gray-100 33%, darken(@gray-100, 2%) 100%;
+@grad-dark: @gray-800 33%, darken(@gray-800, 2%) 100%;
+@grad-accent: @accent 33%, @accent--dark 100%;
+
+// spacing
+// USAGE: .margin(x, small); .margin(y, small); .margin(all, small); .margin-remove(all, small);
+// USAGE: .padding(x, small); .padding(y, small); .padding(all, small);
+
+@margins: auto auto, none 0, micro .25rem, tiny .5rem, small 1rem, medium 2rem, big 4rem, giant 6rem, huge 12rem;
+@paddings: auto auto, none 0, micro .25rem, tiny .5rem, small 1rem, medium 2rem, big 4rem, giant 6rem, huge 12rem;
+
+// order
+// USAGE: .order(1); // eval to -2
+
+@orders: -3, -2, -1, 0, 1, 2, 3;
+
+// z-index
+// USAGE: z-index: @index-base;
+
+@index-base: 0;
+@index-active: 2;
+@index-loader: 11;
+@index-sticky: 500; // @index-sticky by javascript 100 and decreses with sequential sticky
+@index-top: 501;
+@index-indicator: 510;
+@index-backdrop: 530;
+@index-drop: 550;
+@index-overlay: 600;
+@index-btn-close: 700;
+@index-last: 701;
+
+// breakpoints
+
+@breakpoints: xs, sm, md, lg, xl; // if you change this change also variables names below
+@breakpoint-xs: 576px;
+@breakpoint-sm: 768px;
+@breakpoint-md: 992px;
+@breakpoint-lg: 1200px;
+@breakpoint-xl: 1500px;
+
+// @media queries
+// USAGE: @media @min-sm and @max-md {}
+
+@min-xs: ~'(min-width:'(@breakpoint-xs)~')';
+@max-xs: ~'(max-width:'(@breakpoint-xs - 1)~')';
+@min-sm: ~'(min-width:'(@breakpoint-sm)~')';
+@max-sm: ~'(max-width:'(@breakpoint-sm - 1)~')';
+@min-md: ~'(min-width:'(@breakpoint-md)~')';
+@max-md: ~'(max-width:'(@breakpoint-md - 1)~')';
+@min-lg: ~'(min-width:'(@breakpoint-lg)~')';
+@max-lg: ~'(max-width:'(@breakpoint-lg - 1)~')';
+@min-xl: ~'(min-width:'(@breakpoint-xl)~')';
+@max-xl: ~'(max-width:'(@breakpoint-xl - 1)~')';
+
+/**
+ * background
+ */
+
+body {
+  background: @gray-200;
+}
+
+/**
+ * scrollbar
+ */
+
+.overflow-style(@mode: none) {
+  -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+    background: transparent;
+    @media (hover: none) {
+      display: none;
+    }
+  }
+  & when (@mode = none) {
+    &::-webkit-scrollbar-thumb {
+      background: fade(@gray-800, 30%);
+      &:hover {
+        background: fade(@gray-800, 60%);
+      }
+    }
+  }
+  & when (@mode = inner) {
+    &::-webkit-scrollbar-thumb {
+      background: fade(@gray-800, 20%);
+      &:hover {
+        background: fade(@gray-800, 40%);
+      }
+    }
+  }
+}
+
+/**
+ * selection
+ */
+
+::selection {
+  background-color: @accent--dark !important;
+  color: @white !important;
+}
+
+/**
+ * focus
+ * to disable focus add html.xt-focus-disable class
+ */
+
+html.xt-focus-visible:not(.xt-focus-disable) {
+  :focus {
+    outline-color: rgb(77, 144, 254);
+  }
+  // custom focus on forms
+  input:not([type="checkbox"]):not([type="radio"]), select, textarea {
+    &:focus {
+      outline: none;
+    }
+  }
+  /*
+  // custom focus for checkbox and radio
+  input[type="checkbox"], input[type="radio"] {
+    &:focus, &:focus ~ .form-label:before {
+      outline-color: rgb(77, 144, 254);
+      outline-offset: -2px;
+      outline-style: auto;
+      outline-width: 5px;
+    }
+  }
+  */
+}
+
+/**
+ * disabled
+ */
+
+[disabled], .disabled {
+  cursor: default;
+  pointer-events: none;
+  // when not .active also graphic changes
+  &:not(.active) {
+    opacity: .75;
+  }
+}

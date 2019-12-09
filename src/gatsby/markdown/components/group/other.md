@@ -8,7 +8,7 @@ date: "2000-10-01"
 
 ##Full
 
-Use `.full` to have full width fluid group. Use `.group-inner.flex-auto` to expand groups.
+Use `.full` to have full width fluid group. Use `.group-inner.flex--auto` to expand groups.
 
 <demo>
   <demovanilla src="vanilla/components/group/options-full-line">

@@ -11,14 +11,16 @@ require('./build/js.js')
 
 // webpack config
 
-exports.onCreateWebpackConfig = ({ getConfig, stage }) => {
-  const config = getConfig()
-  // https://github.com/gatsbyjs/gatsby/issues/11934
-  if (stage.startsWith('develop') && config.resolve) {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      'react-dom': '@hot-loader/react-dom'
-    }
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+  if (stage.startsWith('develop')) {
+    actions.setWebpackConfig({
+      // https://github.com/gatsbyjs/gatsby/issues/11934
+      resolve: {
+        alias: {
+          'react-dom': '@hot-loader/react-dom',
+        },
+      },
+    })
   }
 }
 
@@ -36,9 +38,7 @@ exports.createPages = ({ actions, graphql }) => {
   */
   return graphql(`
     {
-      allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
-      ) {
+      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
         edges {
           node {
             frontmatter {
@@ -65,8 +65,8 @@ exports.createPages = ({ actions, graphql }) => {
         context: {
           type: node.frontmatter.type, // for query($type: String) { // put also on return graphql
           parent: node.frontmatter.parent, // for query($parent: String) { // put also on return graphql
-          title: node.frontmatter.title // for query($title: String) { // put also on return graphql
-        }
+          title: node.frontmatter.title, // for query($title: String) { // put also on return graphql
+        },
       })
       /* COMMENTED CATEGORIES AND TAGS
       if (node.frontmatter.tags) {

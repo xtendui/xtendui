@@ -3,8 +3,8 @@ type: "Components"
 badge: "Core"
 parent: "Toggle"
 title: "Toggle"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-categories: ["300-Interaction"]
+description: "Toggle is the main js component that toggle classes, it's inherited by many other js components."
+categories: ["100-Core"]
 ---
 
 ##Setup
@@ -15,7 +15,11 @@ To use this component import the **js** files accordingly:
 import 'xtend-library/src/core/toggle/toggle.js'
 ```
 
-Or just [import core](/core/setup/#@TODO).
+Or just import **core**:
+
+```jsx
+import 'xtend-library/src/xtend-core.js'
+```
 
 ##Usage
 
@@ -39,32 +43,3 @@ You can use this markup to create a **toggle** with **no targets**.
     <!-- content -->
   </button>
 </script>
-
-##Javascript
-
-###Initialization
-
-Initialize automatically within markup with `[data-xt-toggle]`.
-
-Or initialize with javascript:
-
-```jsx
-new Xt.Toggle(document.querySelector('.my-toggle'), {
-  // options
-});
-```
-
-###Options
-
-@TODO tables options
-
-###Events
-
-@TODO tables events
-
-You can animate with javascript instead of css, just use [toggle events](/core/toggle/@TODO) and remember to set `durationOn: Milliseconds` and `durationOff: Milliseconds`.
-
-<demo>
-  <demovanilla src="vanilla/components/toggle/javascript">
-  </demovanilla>
-</demo>

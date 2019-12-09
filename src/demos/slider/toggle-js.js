@@ -1,6 +1,6 @@
 import { Xt } from 'xtend-library'
 import 'xtend-library/src/vars.js'
-import 'xtend-library/src/addons/slider/slider.js'
+import 'xtend-library/src/extensions/slider/slider.js'
 import gsap from 'gsap'
 
 Xt.mount.push({

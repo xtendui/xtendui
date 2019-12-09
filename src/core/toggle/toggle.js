@@ -159,7 +159,7 @@ class Toggle {
     // targets
     if (options.targets) {
       let arr = Array.from(self.container.querySelectorAll(options.targets))
-      // arr = arr.filter(x => !x.parentElement.closest(options.targets)); // filter out parent
+      // arr = arr.filter(x => !x.parentElement.closest(options.targets)) // filter out parent
       arr = arr.filter(x => !x.closest('.xt-ignore')) // filter out ignore
       self.targets = arr
       self.destroyElements.push(...self.targets)
@@ -177,6 +177,8 @@ class Toggle {
     let currents = 0
     self.initial = true
     self.currentIndex = null
+    // component
+    self.object.setAttribute('data-xt-name', self.componentName)
     // @FIX set namespace for next frame
     for (const el of self.elements) {
       el.setAttribute('data-xt-namespace', self.namespace)
@@ -188,7 +190,7 @@ class Toggle {
       for (const element of elements) {
         // reset
         const found = self.initReset(element, saveCurrents)
-        if (found) {
+        if (found && currents < options.max) {
           // initial
           currents++
           // reactivate
@@ -250,7 +252,14 @@ class Toggle {
     let found = false
     // reset
     const reset = function(elReset) {
-      if (elReset.classList.contains(self.classes[0])) {
+      let isActive = false
+      for (const c of self.classes) {
+        if (elReset.classList.contains(c)) {
+          isActive = true
+          break
+        }
+      }
+      if (isActive) {
         elReset.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesInitial, ...self.classesInverse)
         Xt.dataStorage.remove(elReset, self.componentNamespace + 'Initial')
         if (saveCurrents) {
@@ -402,39 +411,43 @@ class Toggle {
     const checkHandler = Xt.dataStorage.put(window, 'resize.check' + '.' + self.namespace, self.eventStatusHandler.bind(self).bind(self))
     addEventListener('resize', checkHandler)
     self.eventStatusHandler()
+    // reinit
+    const reinitHandler = Xt.dataStorage.put(self.object, 'reinit' + '.' + self.namespace, self.eventReinitHandler.bind(self).bind(self))
+    self.object.addEventListener('reinit.xt', reinitHandler)
     // event
     for (const el of self.elements) {
       // event on
+      const onHandler = Xt.dataStorage.put(el, options.on + '.' + self.namespace, self.eventOnHandler.bind(self).bind(self, el))
       if (options.on) {
-        const onHandler = Xt.dataStorage.put(el, options.on + '.' + self.namespace, self.eventOnHandler.bind(self).bind(self, el))
         const events = [...options.on.split(' ')]
         for (const event of events) {
           el.addEventListener(event, onHandler)
         }
-        el.addEventListener('on.xt', onHandler)
-        // @FIX off.xt toggle
-        if (!options.off) {
-          el.addEventListener('off.xt', onHandler)
-        }
-        // @FIX prevents click on touch until clicked two times
-        if (events.includes('mouseenter') || events.includes('mousehover')) {
-          const touchLinksStartHandler = Xt.dataStorage.put(
-            el,
-            'touchend.touchfix' + '.' + self.namespace,
-            self.eventTouchLinksStartHandler.bind(self).bind(self, el)
-          )
-          el.addEventListener('touchend', touchLinksStartHandler)
+        // @FIX prevents click links on click until clicked two times
+        const withLinkStartHandler = Xt.dataStorage.put(
+          el,
+          'touchend.touchfix' + '.' + self.namespace,
+          self.eventWithLinkStartHandler.bind(self).bind(self, el)
+        )
+        el.addEventListener('touchend', withLinkStartHandler)
+        if (!events.includes('mouseenter') && !events.includes('mousehover')) {
+          el.addEventListener('mouseup', withLinkStartHandler)
         }
       }
+      el.addEventListener('on.xt', onHandler)
+      // @FIX off.xt toggle
+      if (!options.off) {
+        el.addEventListener('off.xt', onHandler)
+      }
       // event off
+      const offHandler = Xt.dataStorage.put(el, options.off + '.' + self.namespace, self.eventOffHandler.bind(self).bind(self, el))
       if (options.off) {
-        const offHandler = Xt.dataStorage.put(el, options.off + '.' + self.namespace, self.eventOffHandler.bind(self).bind(self, el))
         const events = [...options.off.split(' ')]
         for (const event of events) {
           el.addEventListener(event, offHandler)
         }
-        el.addEventListener('off.xt', offHandler)
       }
+      el.addEventListener('off.xt', offHandler)
     }
     // listener
     for (const tr of self.targets) {
@@ -527,10 +540,10 @@ class Toggle {
         keyboard.addEventListener('blur', keyboardBlurHandler)
       }
     }
-    // autoclose
-    if (options.autoclose) {
-      const autocloseHandler = Xt.dataStorage.put(window, 'autoclose' + '.' + self.namespace, self.eventautocloseHandler.bind(self))
-      addEventListener('autoclose.xt', autocloseHandler)
+    // autoClose
+    if (options.autoClose) {
+      const autoCloseHandler = Xt.dataStorage.put(window, 'autoClose' + '.' + self.namespace, self.eventAutoCloseHandler.bind(self))
+      addEventListener('autoClose.xt', autoCloseHandler)
     }
     // images
     for (const el of self.elements.filter(x => !x.classList.contains('xt-clone'))) {
@@ -679,28 +692,28 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
-  eventTouchLinksStartHandler(el, e) {
+  eventWithLinkStartHandler(el, e) {
     const self = this
-    // event touchLinks
-    const touchLinksHandler = Xt.dataStorage.put(el, 'click.touchfix' + '.' + self.namespace, self.eventTouchLinksHandler.bind(self).bind(self, el))
-    el.addEventListener('click', touchLinksHandler)
-    // event touchReset
-    const touchResetHandler = Xt.dataStorage.put(el, 'off.touchfix' + '.' + self.namespace, self.eventTouchLinksResetHandler.bind(self).bind(self, el))
-    el.addEventListener('off.xt', touchResetHandler)
+    // event link
+    const withLinkHandler = Xt.dataStorage.put(el, 'click.touchfix' + '.' + self.namespace, self.eventWithLinkHandler.bind(self).bind(self, el))
+    el.addEventListener('click', withLinkHandler)
+    // event reset
+    const withLinkResetHandler = Xt.dataStorage.put(el, 'off.touchfix' + '.' + self.namespace, self.eventWithLinkResetHandler.bind(self).bind(self, el))
+    el.addEventListener('off.xt', withLinkResetHandler)
   }
 
   /**
    * remove prevents click on touch until clicked two times
    * @param {Node|HTMLElement|EventTarget|Window} el
    */
-  eventTouchLinksEndHandler(el) {
+  eventWithLinkEndHandler(el) {
     const self = this
-    // event touchLinks
-    const touchLinksHandler = Xt.dataStorage.get(el, 'click.touchfix' + '.' + self.namespace)
-    el.removeEventListener('click', touchLinksHandler)
-    // event touchReset
-    const touchResetHandler = Xt.dataStorage.get(el, 'off.touchfix' + '.' + self.namespace)
-    el.removeEventListener('off.xt', touchResetHandler)
+    // event link
+    const withLinkHandler = Xt.dataStorage.get(el, 'click.touchfix' + '.' + self.namespace)
+    el.removeEventListener('click', withLinkHandler)
+    // event reset
+    const withLinkResetHandler = Xt.dataStorage.get(el, 'off.touchfix' + '.' + self.namespace)
+    el.removeEventListener('off.xt', withLinkResetHandler)
   }
 
   /**
@@ -708,15 +721,15 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
-  eventTouchLinksHandler(el, e) {
+  eventWithLinkHandler(el, e) {
     const self = this
-    if (!Xt.dataStorage.get(el, self.componentNamespace + 'TouchLinksDone')) {
-      Xt.dataStorage.set(el, self.componentNamespace + 'TouchLinksDone', true)
+    if (!Xt.dataStorage.get(el, self.componentNamespace + 'WithLinkDone')) {
+      Xt.dataStorage.set(el, self.componentNamespace + 'WithLinkDone', true)
       // prevent default
       e.preventDefault()
     } else {
-      self.eventTouchLinksEndHandler(el)
-      Xt.dataStorage.remove(el, self.componentNamespace + 'TouchLinksDone')
+      self.eventWithLinkEndHandler(el)
+      Xt.dataStorage.remove(el, self.componentNamespace + 'WithLinkDone')
     }
   }
 
@@ -725,10 +738,10 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
-  eventTouchLinksResetHandler(el, e) {
+  eventWithLinkResetHandler(el, e) {
     const self = this
-    self.eventTouchLinksEndHandler(el)
-    Xt.dataStorage.remove(el, self.componentNamespace + 'TouchLinksDone')
+    self.eventWithLinkEndHandler(el)
+    Xt.dataStorage.remove(el, self.componentNamespace + 'WithLinkDone')
   }
 
   /**
@@ -845,10 +858,10 @@ class Toggle {
   }
 
   /**
-   * autoclose handler
+   * autoClose handler
    * @param {Event} e
    */
-  eventautocloseHandler(e) {
+  eventAutoCloseHandler(e) {
     const self = this
     // restart
     const currents = self.getCurrents()
@@ -1184,7 +1197,7 @@ class Toggle {
       const elementsInner = Xt.queryAll(element, options.elementsInner)
       const targetsInner = Xt.queryAll(targets, options.targetsInner)
       // [disabled]
-      if (options.min === options.max) {
+      if (options.autoDisable && options.min === options.max) {
         for (const disable of groupElements) {
           disable.setAttribute('disabled', 'disabled')
         }
@@ -1243,7 +1256,7 @@ class Toggle {
         element.blur() // @FIX :focus styles
       }
       // [disabled]
-      if (options.min === options.max) {
+      if (options.autoDisable && options.min === options.max) {
         for (const disable of groupElements) {
           disable.removeAttribute('disabled')
         }
@@ -1523,7 +1536,10 @@ class Toggle {
     // stop all obj in queues
     if (self.detail) {
       // @FIX not already initialized
-      const actions = [{ current: 'On', other: 'Off' }, { current: 'Off', other: 'On' }]
+      const actions = [
+        { current: 'On', other: 'Off' },
+        { current: 'Off', other: 'On' },
+      ]
       for (const action of actions) {
         const queue = self.detail['queue' + action.current]
         for (const obj in queue) {
@@ -1609,6 +1625,7 @@ class Toggle {
       self.specialCenter(el, before, after)
       self.specialMiddle(el, before, after)
       self.specialCollapse(actionCurrent, el, before, after)
+      self.specialBackdrop(actionCurrent, obj)
       if (type === 'targets' || (!self.targets.length && type === 'elements')) {
         // @FIX when standalone
         // appendTo
@@ -1622,7 +1639,7 @@ class Toggle {
           appendToTarget.appendChild(el)
         }
       }
-      if (type === 'targets' || type === 'targetsInner') {
+      if (type === 'targets' || type === 'targetsInner' || el === self.object) {
         self.specialClose(actionCurrent, el, obj.elements.queueEls[0])
       }
       // aria
@@ -1666,7 +1683,7 @@ class Toggle {
         .getPropertyValue('content')
         .replace(/['"]+/g, '')
       self.specialCollapse(actionCurrent, el, before, after)
-      if (type === 'targets' || type === 'targetsInner') {
+      if (type === 'targets' || type === 'targetsInner' || el === self.object) {
         self.specialClose(actionCurrent, el)
       }
       // @FIX loop when listening and triggering from outside
@@ -1741,7 +1758,7 @@ class Toggle {
       self.specialCollapse('Reset', el, before, after)
       // listener dispatch
       if (!obj[type].event || obj[type].event.type !== 'ondone.xt') {
-        el.dispatchEvent(new CustomEvent('ondone.xt', {bubbles: true, detail: obj[type].detail}))
+        el.dispatchEvent(new CustomEvent('ondone.xt', { bubbles: true, detail: obj[type].detail }))
       }
     } else if (actionCurrent === 'Off') {
       // reset
@@ -1787,7 +1804,7 @@ class Toggle {
       }
       // listener dispatch
       if (!obj[type].event || obj[type].event.type !== 'offdone.xt') {
-        el.dispatchEvent(new CustomEvent('offdone.xt', {bubbles: true, detail: obj[type].detail}))
+        el.dispatchEvent(new CustomEvent('offdone.xt', { bubbles: true, detail: obj[type].detail }))
       }
     }
     // queue
@@ -1851,7 +1868,6 @@ class Toggle {
     const options = self.options
     if (actionCurrent === 'On') {
       // special
-      self.specialBackdrop(actionCurrent, obj)
       self.specialClassHtml(actionCurrent)
       self.specialScrollbar(actionCurrent)
       // focus
@@ -1916,7 +1932,7 @@ class Toggle {
     }
     // prevent default if not loop
     const max = self.getGroups().length - 1
-    const delta = -e.deltaY || -e.detail || e.wheelDelta || e.wheelDeltaY
+    const delta = -e.deltaY || -e.detail
     if ((delta > 0 && self.currentIndex > 0) || (delta < 0 && self.currentIndex < max - 1)) {
       // prevent wheel
       e.preventDefault()
@@ -1938,7 +1954,7 @@ class Toggle {
       return
     }
     // delta
-    let delta = -e.deltaY || -e.detail || e.wheelDelta || e.wheelDeltaY
+    let delta = -e.deltaY || -e.detail
     if (delta === 0) {
       return
     }
@@ -2237,32 +2253,33 @@ class Toggle {
 
   /**
    * specialClose on handler
-   * @param {Node|HTMLElement|EventTarget|Window} checkEl
+   * @param {Node|HTMLElement|EventTarget|Window} closeElement
    * @param {Node|HTMLElement|EventTarget|Window} single
    * @param {Event} e
    */
-  eventSpecialCloseInsideHandler(checkEl, single, e) {
+  eventSpecialCloseInsideHandler(closeElement, single, e) {
     const self = this
     // prevent closing when nested and moved (ex: overlay)
-    if (!Xt.contains(self.targets, checkEl)) {
+    const checkContainer = self.targets.length ? self.targets : Xt.arrSingle(self.object)
+    if (!Xt.contains(checkContainer, closeElement)) {
       return
     }
     // handler
-    if (Xt.contains(Xt.arrSingle(checkEl), e.target)) {
+    if (Xt.contains(Xt.arrSingle(closeElement), e.target)) {
       self.eventOff(single)
     }
   }
 
   /**
    * specialClose off handler
-   * @param {Node|HTMLElement|EventTarget|Window} checkEl
+   * @param {Node|HTMLElement|EventTarget|Window} closeElement
    * @param {Node|HTMLElement|EventTarget|Window} single
    * @param {Event} e
    */
-  eventSpecialCloseOutsideHandler(checkEl, single, e) {
+  eventSpecialCloseOutsideHandler(closeElement, single, e) {
     const self = this
     // handler
-    if (!Xt.contains(Xt.arrSingle(checkEl), e.target)) {
+    if (!Xt.contains(Xt.arrSingle(closeElement), e.target)) {
       self.eventOff(single)
     }
   }
@@ -2449,7 +2466,7 @@ class Toggle {
     const options = self.options
     // backdrop
     if (options.backdrop) {
-      const elements = typeof options.backdrop === 'string' && obj[options.backdrop] ? Xt.arrSingle(obj[options.backdrop].queueEls) : Xt.arrSingle(self.object)
+      const elements = obj['targets'] ? Xt.arrSingle(obj['targets'].queueEls) : Xt.arrSingle(self.object)
       for (const element of elements) {
         if (actionCurrent === 'On') {
           const backdrops = element.querySelectorAll('.backdrop')
@@ -2461,7 +2478,7 @@ class Toggle {
             backdrop.addEventListener(
               eWheel,
               function(e) {
-                const delta = -e.deltaY || -e.detail || e.wheelDelta || e.wheelDeltaY
+                const delta = -e.deltaY || -e.detail
                 element.scrollTop -= delta
               },
               Xt.passiveSupported ? { passive: false } : false
@@ -2639,6 +2656,25 @@ class Toggle {
     self.object.classList.remove('xt-disabled')
   }
 
+  /**
+   * reinit
+   * @param {Event} e
+   */
+  eventReinitHandler(e) {
+    const self = this
+    // reinit
+    if (!self.initial) {
+      Xt.eventDelay(
+        e,
+        self.object,
+        function() {
+          self.initLogic()
+        },
+        self.componentNamespace + 'Reinit'
+      )
+    }
+  }
+
   //
   // destroy
   //
@@ -2649,7 +2685,7 @@ class Toggle {
   destroy(weak = false) {
     const self = this
     // stop queue
-    self.queueStopAll() // @FIX autoclose with appendTo outside ajax
+    self.queueStopAll() // @FIX autoClose with appendTo outside ajax
     // stop auto
     self.eventAutoStop()
     // remove events
@@ -2665,8 +2701,7 @@ class Toggle {
                   const events = key.split('.')[0].split(' ')
                   for (const event of events) {
                     element.removeEventListener(event, handler)
-                    element.removeEventListener(event, handler, true)
-                    element.removeEventListener(event, handler, { passive: true })
+                    element.removeEventListener(event, handler, Xt.passiveSupported ? { passive: true } : true)
                     Xt.dataStorage.remove(element, key)
                   }
                 }
@@ -2709,7 +2744,8 @@ Toggle.optionsDefaultSuper = {
   classInitial: 'initial',
   classInverse: 'inverse',
   eventLimit: '.event-limit',
-  autoclose: false,
+  autoClose: false,
+  autoDisable: true,
   onBlock: false,
   offBlock: false,
   loop: true,
@@ -2719,6 +2755,7 @@ Toggle.optionsDefaultSuper = {
   delayOff: false,
   durationOn: false,
   durationOff: false,
+  navigation: false,
   keyboard: {
     selector: false,
   },

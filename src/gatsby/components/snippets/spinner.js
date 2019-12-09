@@ -1,4 +1,3 @@
-// USAGE:
 // const spinner = require('components/snippets/spinner').default
 // ${spinner({})}
 

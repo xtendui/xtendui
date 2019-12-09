@@ -3,8 +3,8 @@ type: "Components"
 badge: "Core"
 parent: "Note"
 title: "Note"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-categories: ["100-Content"]
+description: "Text and block to present note and alerts to the user."
+categories: ["100-Core"]
 ---
 
 ##Setup
@@ -15,7 +15,11 @@ To use this component import the **less** files accordingly:
 @import '~xtend-library/src/core/note/note.less';
 ```
 
-Or just [import core](/core/setup/#@TODO).
+Or just import **core**:
+
+```less
+@import '~xtend-library/src/xtend-core.less';
+```
 
 ##Usage
 

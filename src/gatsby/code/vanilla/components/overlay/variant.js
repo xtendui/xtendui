@@ -1,14 +1,16 @@
 import path from 'path'
 
-const dirs = path.dirname(__filename).split('/')
+const filename = __filename.replace(/\\/g, '/')
+const dirs = path.dirname(filename).split('/')
 export const demo = {
-  name: path.basename(__filename, '.js'),
+  name: path.basename(filename, '.js'),
   component: dirs.pop(),
   type: dirs.pop(),
 }
 
 demo.htmlSource = `
-<div class="list list--default list-space--small align-items-center demo-source-from">
+<div class="list list--default list-space--small align-items-center">
+
   <div data-xt-overlay>
     <button type="button" class="btn btn--primary">
       overlay
@@ -44,7 +46,7 @@ demo.htmlSource = `
   
   <div data-xt-overlay>
     <button type="button" class="btn btn--primary">
-      default
+      overlay + default
     </button>
     <div class="overlay">
       <div class="overlay-container">
@@ -77,7 +79,7 @@ demo.htmlSource = `
   
   <div data-xt-overlay>
     <button type="button" class="btn btn--primary">
-      primary
+      overlay + primary
     </button>
     <div class="overlay">
       <div class="overlay-container">
@@ -110,7 +112,7 @@ demo.htmlSource = `
   
   <div data-xt-overlay>
     <button type="button" class="btn btn--primary">
-      white
+      overlay + white
     </button>
     <div class="overlay">
       <div class="overlay-container">
@@ -140,5 +142,6 @@ demo.htmlSource = `
       </div>
     </div>
   </div>
+  
 </div>
 `

@@ -3,8 +3,8 @@ type: "Components"
 badge: "Core"
 parent: "Form"
 title: "Form"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-categories: ["100-Content"]
+description: "Form styles with multiple layouts, custom checkbox/radio, and more."
+categories: ["100-Core"]
 ---
 
 ##Setup
@@ -15,4 +15,8 @@ To use this component import the **less** files accordingly:
 @import '~xtend-library/src/core/form/form.less';
 ```
 
-Or just [import core](/core/setup/#@TODO).
+Or just import **core**:
+
+```less
+@import '~xtend-library/src/xtend-core.less';
+```

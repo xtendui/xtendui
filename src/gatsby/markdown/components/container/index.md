@@ -3,8 +3,8 @@ type: "Components"
 badge: "Core"
 parent: "Container"
 title: "Container"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-categories: ["200-Layout"]
+description: "Component for containing layout with a max width and adding spacing on the side."
+categories: ["100-Core"]
 ---
 
 ##Setup
@@ -15,7 +15,11 @@ To use this component import the **less** files accordingly:
 @import '~xtend-library/src/core/container/container.less';
 ```
 
-Or just [import core](/core/setup/#@TODO).
+Or just import **core**:
+
+```less
+@import '~xtend-library/src/xtend-core.less';
+```
 
 ##Usage
 

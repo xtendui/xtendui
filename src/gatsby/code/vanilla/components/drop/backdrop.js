@@ -1,14 +1,16 @@
 import path from 'path'
 
-const dirs = path.dirname(__filename).split('/')
+const filename = __filename.replace(/\\/g, '/')
+const dirs = path.dirname(filename).split('/')
 export const demo = {
-  name: path.basename(__filename, '.js'),
+  name: path.basename(filename, '.js'),
   component: dirs.pop(),
   type: dirs.pop(),
 }
 
 demo.htmlSource = `
-<div class="list list--default list-space--small align-items-center demo-source-from">
+<div class="list list--default list-space--small align-items-center">
+
   <div class="drop-container" data-xt-drop="{ backdrop: true }">
     <button type="button" class="btn btn--primary">
       bottom left
@@ -68,5 +70,6 @@ demo.htmlSource = `
       </div>
     </div>
   </div>
+  
 </div>
 `

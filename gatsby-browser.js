@@ -7,8 +7,8 @@
 let sidebarArticleScrolltop = 0
 
 exports.onPreRouteUpdate = () => {
-  // autoclose
-  window.dispatchEvent(new CustomEvent('autoclose.xt')) // autoclose xt
+  // autoClose
+  window.dispatchEvent(new CustomEvent('autoClose.xt')) // autoClose xt
   // sidebarArticleScrolltop
   const sidebarArticle = document.querySelector('.gatsby_site_article_sidebar')
   if (sidebarArticle) {

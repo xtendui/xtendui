@@ -25,9 +25,10 @@ With multiple mode, the **targets** activated are the ones with the same index o
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `elements: QuerySelector`                 | `':scope > a, :scope > button'`          | Elements query selector inside toggle           |
-| Option                  | `targets: QuerySelector`                  | `':scope > [class^="toggle-"], :scope > [class*=" toggle-"]'`       | Targets query selector inside toggle           |
-
+| Option                  | `elements:Query`                          | `:scope > a, :scope > button`        | Elements that triggers the events            |
+| Option                  | `targets:Query`                           | `:scope > [class^="toggle-"], :scope > [class*=" toggle-"]`      | Targets that gets activated on events by the elements           |
+| Option                  | `elementsInner:Query`                          | `false`        | Additional query inside elements that gets activated on events            |
+| Option                  | `targetsInner:Query`                          | `false`        | Additional query inside targets that gets activated on events            |
 </div>
 
 Use `:scope` when using descendant selector on root (e.g. `:scope > *`).

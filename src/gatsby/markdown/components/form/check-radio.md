@@ -6,47 +6,9 @@ title: "Check and Radio"
 date: "2000-05-01"
 ---
 
-##Unstyled
+##Usage
 
-###Usage
-
-Use this markup to create a **unstyled** **checkbox** or **radio**.
-
-<script type="text/plain" class="language-markup">
-  <form>
-    <div class="form-group">
-      <input type="checkbox" id="checkbox-unstyled" class="unstyled">
-      <label class="form-label" for="checkbox-unstyled">
-        <!-- content -->
-      </label>
-    </div>
-
-    <div class="form-group">
-      <input type="radio" id="radio-unstyled" name="radio-unstyled" class="unstyled">
-      <label class="form-label" for="radio-unstyled">
-        <!-- content -->
-      </label>
-    </div>
-  </form>
-</script>
-
-[[noteError]]
-| Checkbox and radio must be inside [form group](/core/form/group) to have default styles.
-
-###Modes
-
-<demo>
-  <demovanilla src="vanilla/components/form/check-radio-unstyled-block">
-  </demovanilla>
-  <demovanilla src="vanilla/components/form/check-radio-unstyled-inline">
-  </demovanilla>
-  <demovanilla src="vanilla/components/form/check-radio-unstyled-disabled">
-  </demovanilla>
-</demo>
-
-##Styled
-
-###Usage
+###Styled
 
 Use this markup to create a **styled** **checkbox** or **radio**.
 
@@ -68,10 +30,8 @@ Use this markup to create a **styled** **checkbox** or **radio**.
   </form>
 </script>
 
-[[noteError]]
-| Checkbox and radio must be inside [form group](/core/form/group) to have default styles.
-
-###Modes
+[[noteDefault]]
+| Checkbox and radio must be inside [form group](/components/form/group) to have default styles.
 
 <demo>
   <demovanilla src="vanilla/components/form/check-radio-styled-block">
@@ -82,27 +42,32 @@ Use this markup to create a **styled** **checkbox** or **radio**.
   </demovanilla>
 </demo>
 
-##Fake
-
-###Usage
+###Fake
 
 Use this markup to create a **fake** **styled** **checkbox** or **radio**.
 
+<div class="table--scroll">
+
+|                         | Class                                     | Mixin                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.checkbox`                 | `.checkbox()`        | Set up fake styled checkbox            |
+| Option                  | `.radio`                 | `.radio()`        | Set up fake styled radio            |
+
+</div>
+
 <script type="text/plain" class="language-markup">
   <div class="form-group">
-    <div class="checkbox-styled">
+    <div class="checkbox">
       <!-- content -->
     </div>
   </div>
 
   <div class="form-group">
-    <div class="radio-styled">
+    <div class="radio">
       <!-- content -->
     </div>
   </div>
 </script>
-
-###Modes
 
 <demo>
   <demovanilla src="vanilla/components/form/check-radio-fake-block">
@@ -110,5 +75,47 @@ Use this markup to create a **fake** **styled** **checkbox** or **radio**.
   <demovanilla src="vanilla/components/form/check-radio-fake-inline">
   </demovanilla>
   <demovanilla src="vanilla/components/form/check-radio-fake-disabled">
+  </demovanilla>
+</demo>
+
+###Unstyled
+
+Use this markup to create a **unstyled** **checkbox** or **radio**.
+
+<div class="table--scroll">
+
+|                         | Class                                     | Mixin                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.unstyled`                 | Not Possible        | Set up unstyled checkbox and radio            |
+
+</div>
+
+<script type="text/plain" class="language-markup">
+  <form>
+    <div class="form-group">
+      <input type="checkbox" id="checkbox-unstyled" class="unstyled">
+      <label class="form-label" for="checkbox-unstyled">
+        <!-- content -->
+      </label>
+    </div>
+
+    <div class="form-group">
+      <input type="radio" id="radio-unstyled" name="radio-unstyled" class="unstyled">
+      <label class="form-label" for="radio-unstyled">
+        <!-- content -->
+      </label>
+    </div>
+  </form>
+</script>
+
+[[noteDefault]]
+| Checkbox and radio must be inside [form group](/components/form/group) to have default styles.
+
+<demo>
+  <demovanilla src="vanilla/components/form/check-radio-unstyled-block">
+  </demovanilla>
+  <demovanilla src="vanilla/components/form/check-radio-unstyled-inline">
+  </demovanilla>
+  <demovanilla src="vanilla/components/form/check-radio-unstyled-disabled">
   </demovanilla>
 </demo>

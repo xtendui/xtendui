@@ -408,9 +408,9 @@ if (typeof window !== 'undefined') {
           // remember Xt.focus
           Xt.focus.current = document.activeElement
         }
-        if (!document.documentElement.classList.contains('xt-focus')) {
-          // html.xt-focus
-          document.documentElement.classList.add('xt-focus')
+        if (!document.documentElement.classList.contains('xt-focus-visible')) {
+          // html.xt-focus-visible
+          document.documentElement.classList.add('xt-focus-visible')
           // switch mode
           Xt.focus.off()
         }
@@ -426,9 +426,9 @@ if (typeof window !== 'undefined') {
         // remember Xt.focus
         Xt.focus.current = e.target
       }
-      if (document.documentElement.classList.contains('xt-focus')) {
-        // html.xt-focus
-        document.documentElement.classList.remove('xt-focus')
+      if (document.documentElement.classList.contains('xt-focus-visible')) {
+        // html.xt-focus-visible
+        document.documentElement.classList.remove('xt-focus-visible')
         // switch mode
         Xt.focus.on()
       }
@@ -669,10 +669,10 @@ if (typeof window !== 'undefined') {
   }
 
   /**
-   * autoclose inside Element
+   * autoClose inside Element
    * @param {Node|HTMLElement|EventTarget|Window} el Element container
    */
-  Xt.autoclose = function(el) {
+  Xt.autoClose = function(el) {
     const query = '[data-xt-namespace^="drop-xt-"]'
     for (const drop of el.querySelectorAll(query)) {
       drop.dispatchEvent(new CustomEvent('off.xt'))
@@ -747,7 +747,7 @@ if (typeof window !== 'undefined') {
       if (Xt.normalizeWidth(element.clientWidth) === '') {
         // only if full width
         prop = 'paddingRight'
-      } else if (style.right) {
+      } else if (parseFloat(style.right) === 0) {
         // only if right position
         prop = 'right'
       }

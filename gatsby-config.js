@@ -27,7 +27,7 @@ module.exports = {
         short_name: 'docs',
         start_url: '/',
         background_color: '#ffffff',
-        theme_color: '#fa1664',
+        theme_color: '#7567f8',
         display: 'minimal-ui',
         icon: 'src/gatsby/assets/images/favicon.png',
       },
@@ -63,7 +63,7 @@ module.exports = {
       resolve: 'gatsby-plugin-page-creator',
       options: {
         path: './src/gatsby/code/',
-        ignore: ['inline/**/**', '**/*.source.js?(x)'],
+        ignore: ['vanilla/**/**'],
       },
     },
     // remark

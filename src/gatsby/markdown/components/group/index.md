@@ -3,8 +3,8 @@ type: "Components"
 badge: "Core"
 parent: "Group"
 title: "Group"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-categories: ["100-Content"]
+description: "Css component to group up buttons and form inputs."
+categories: ["100-Core"]
 ---
 
 ##Setup
@@ -15,7 +15,11 @@ To use this component import the **less** files accordingly:
 @import '~xtend-library/src/core/group/group.less';
 ```
 
-Or just [import core](/core/setup/#@TODO).
+Or just import **core**:
+
+```less
+@import '~xtend-library/src/xtend-core.less';
+```
 
 ##Usage
 

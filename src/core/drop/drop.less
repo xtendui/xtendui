@@ -14,14 +14,14 @@
 
 .drop {
   > .drop-inner {
-    border-radius: 4px;
+    border-radius: .5em;
     > .drop-content {
       > .list, > .list-block {
         .padding(y, 1.3rem); // vertical space
         min-width: 18rem;
       }
     }
-    > .drop-design {
+    > .drop-design, > .drop-content {
       border-width: 1px;
       border-style: solid;
       border-color: transparent;
@@ -52,8 +52,8 @@
   > .drop-inner {
     .text-inverse();
     > .drop-design {
-      border-color: @gray-800;
-      background: @gray-800;
+      border-color: @accent--dark;
+      background: @accent;
       box-shadow: @shadow-dark;
     }
   }
@@ -105,31 +105,35 @@
     animation-duration: @time-medium + @time-small; // needed for .out animation timing, put max animation time
   }
   &.active {
-    > .drop > .drop-inner {
-      > .drop-design {
-        .anim-zoom.active();
+    > .drop {
+      > .drop-inner {
+        > .drop-design {
+          .anim-zoom.active();
+        }
+        > .drop-content {
+          .anim-y.active();
+          animation-delay: @time-small;
+        }
       }
-      > .drop-content {
-        .anim-y.active();
-        animation-delay: @time-small;
+      > .backdrop {
+        .backdrop.active();
       }
-    }
-    > .backdrop {
-      .backdrop.active();
     }
   }
   &.out {
-    > .drop > .drop-inner {
-      > .drop-design {
-        .anim-zoom.out();
-        animation-delay: @time-small;
+    > .drop {
+      > .drop-inner {
+        > .drop-design {
+          .anim-zoom.out();
+          animation-delay: @time-small;
+        }
+        > .drop-content {
+          .anim-y.out();
+        }
       }
-      > .drop-content {
-        .anim-y.out();
+      > .backdrop {
+        .backdrop.out();
       }
-    }
-    > .backdrop {
-      .backdrop.out();
     }
   }
 }

@@ -1,12 +1,33 @@
 ---
-
 type: "Components"
-badge: "Addons"
+badge: "Extensions"
 parent: "Sticky"
 title: "Sticky"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-categories: ["400-Presentation"]
+description: "Sticky elements with complex interactions."
+categories: ["400-Extensions"]
 ---
+
+##Setup
+
+To use this component import the **less** and **js** files accordingly:
+
+```less
+@import '~xtend-library/src/extensions/sticky/sticky.less';
+```
+
+```jsx
+import 'xtend-library/src/extensions/sticky/sticky.js'
+```
+
+Or just import **extensions**:
+
+```less
+@import '~xtend-library/src/xtend-extensions.less';
+```
+
+```jsx
+import 'xtend-library/src/xtend-extensions.js'
+```
 
 ##Usage
 
@@ -19,14 +40,6 @@ Use this markup to create a **sticky**.
     </div>
   </div>
 </script>
-
-You can initialize **sticky** by javascript omitting `[data-xt-sticky]`.
-
-
-```jsx
-let self = new Xt.Sticky(document.querySelector('.my-sticky'), {
-});
-```
 
 [[noteDefault]]
 | It's recomended to style and animate a inner div <code>[data-xt-xticky] > div</code> when using <strong>sticky component</strong>.

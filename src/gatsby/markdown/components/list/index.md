@@ -3,9 +3,23 @@ type: "Components"
 badge: "Core"
 parent: "List"
 title: "List"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-categories: ["200-Layout"]
+description: "Flex lists to space any element with margins, also spaces vertically."
+categories: ["100-Core"]
 ---
+
+##Setup
+
+To use this component import the **less** files accordingly:
+
+```less
+@import '~xtend-library/src/core/list/list.less';
+```
+
+Or just import **core**:
+
+```less
+@import '~xtend-library/src/xtend-core.less';
+```
 
 ##Usage
 

@@ -1,8 +1,9 @@
 import path from 'path'
 
-const dirs = path.dirname(__filename).split('/')
+const filename = __filename.replace(/\\/g, '/')
+const dirs = path.dirname(filename).split('/')
 export const demo = {
-  name: path.basename(__filename, '.js'),
+  name: path.basename(filename, '.js'),
   component: dirs.pop(),
   type: dirs.pop(),
 }
@@ -12,17 +13,12 @@ demo.htmlSource = `
   data-xt-propagate-interaction="{ targets: '.btn' }">
   <div class="group-inner">
     <div class="btn btn--primary">
-      Lorem ipsum
+      Lorem
     </div>
   </div>
   <div class="group-inner">
     <div class="btn btn--default">
-      Dolor sit
-    </div>
-  </div>
-  <div class="group-inner">
-    <div class="btn btn--default">
-      amet
+      ipsum
     </div>
   </div>
 </button>

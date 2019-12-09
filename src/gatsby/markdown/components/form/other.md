@@ -7,7 +7,13 @@ title: "Other"
 
 ##Legend
 
-You can use `legend`.
+<div class="table--scroll">
+
+|                         | Tag                                     | Class                                     | Mixin                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `legend` | `.legend`                 | `.legend()`        | Legend styles            |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/form/legend">
@@ -16,18 +22,32 @@ You can use `legend`.
 
 ##Fieldset
 
-You can use `fieldset`.
+<div class="table--scroll">
+
+|                         | Tag                                     | Class                                     | Mixin                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `fieldset` | `.fieldset`                 | `.fieldset()`        | Fieldset styles            |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/form/fieldset">
   </demovanilla>
 </demo>
 
-##Text
+##Note
 
-Use `.form-note` to make a form note.
+Form note uses the [note component](/components/note).
+
+<div class="table--scroll">
+
+|                         | Class                                     | Mixin                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.form-note`                 | `.form-note()`        | Form note styles            |
+
+</div>
 
 <demo>
-  <demovanilla src="vanilla/components/form/text">
+  <demovanilla src="vanilla/components/form/note">
   </demovanilla>
 </demo>

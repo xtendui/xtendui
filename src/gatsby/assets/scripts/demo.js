@@ -10,15 +10,6 @@ require('prism-themes/themes/prism-base16-ateliersulphurpool.light.css')
 Prism.manual = true
 
 /**
- * xt-smooth
- */
-
-/*
-require('xtend-library/src/core/smooth/smooth.js')
-new Xt.Smooth(document.scrollingElement)
-*/
-
-/**
  * formatCode
  */
 
@@ -26,7 +17,7 @@ const formatCode = function(source) {
   let text = source.innerHTML
   // replace
   const lang = source.getAttribute('data-lang')
-  if (lang !== 'less' && !source.classList.contains('language-less')) {
+  if (lang !== 'less' && !source.classList.contains('language-less') && lang !== 'js' && !source.classList.contains('language-js')) {
     // replace quote entities
     text = text.replace(/&quot;/g, '"')
     // replace entities
@@ -41,9 +32,9 @@ const formatCode = function(source) {
   }
   // filter meta
   /*
-  let meta = text.match(/\/\/##START([\S\s]*?)\/\/##END/);
+  let meta = text.match(/\/\/##START([\S\s]*?)\/\/##END/)
   if (meta) {
-    text = meta[1];
+    text = meta[1]
   }
   */
   // remove tabs
@@ -119,8 +110,17 @@ const populateBlock = function() {
       requestAnimationFrame(function() {
         dispatchEvent(new CustomEvent('resize', { detail: { force: true } }))
       })
+      // set hash
+      window.history.pushState('', '/', window.location.pathname)
     }
   })
+  // get hash
+  if (window.location.hash) {
+    const demo = document.querySelector(window.location.hash)
+    if (demo) {
+      demo.querySelector('.btn--open-full').classList.add('active')
+    }
+  }
 }
 
 /**
@@ -195,10 +195,10 @@ const populateDemo = function(container, i) {
     })
     clipboard.on('success', function(e) {
       e.clearSelection()
-      // $(e.trigger).attr('data-original-title', 'Done').tooltip('show');
+      // $(e.trigger).attr('data-original-title', 'Done').tooltip('show')
     })
     clipboard.on('error', function(e) {
-      // $(e.trigger).attr('data-original-title', 'Error: copy manually').tooltip('show');
+      // $(e.trigger).attr('data-original-title', 'Error: copy manually').tooltip('show')
     })
     // inject iframe
     if (item.getAttribute('data-iframe')) {
@@ -239,6 +239,13 @@ const populateDemo = function(container, i) {
   for (const btnOpenFull of container.querySelectorAll('.btn--open-full')) {
     btnOpenFull.addEventListener('click', function() {
       makeFullscreen(container)
+    })
+    requestAnimationFrame(function() {
+      if (btnOpenFull.classList.contains('active')) {
+        requestAnimationFrame(function() {
+          makeFullscreen(container)
+        })
+      }
     })
   }
   // gatsby_demo_tabs_left
@@ -365,7 +372,7 @@ const makeFullscreen = function(container) {
   toggle.dispatchEvent(new CustomEvent('on.xt'))
   // move code block
   container.before(
-    Xt.createElement('<div class="xt-ignore" data-xt-origin="toggle--open-full-content" style="height: ' + container.clientHeight + 'px"></div>')
+    Xt.createElement('<div class="gatsby_demo xt-ignore" data-xt-origin="toggle--open-full-content" style="height: ' + container.offsetHeight + 'px"></div>')
   )
   if (!container.dataset.isFullscreenOnly) {
     container.classList.add('xt-ignore', 'xt-ignore--once') // @FIX ignore once for mount when moving
@@ -383,6 +390,8 @@ const makeFullscreen = function(container) {
   requestAnimationFrame(function() {
     dispatchEvent(new CustomEvent('resize', { detail: { force: true } }))
   })
+  // set hash
+  window.location.hash = container.getAttribute('id')
 }
 
 /**
@@ -531,6 +540,15 @@ const populateInline = function(item) {
       elements: '.gatsby_demo_code_tabs_left .btn',
       targets: '.gatsby_demo_code_body_item',
       min: 1,
+    })
+    // @FIX reinit
+    item.addEventListener('on.xt', function(e) {
+      // @FIX on.xt and off.xt event bubbles
+      if (this === e.target) {
+        for (const component of item.querySelectorAll('[data-xt-name]')) {
+          component.dispatchEvent(new CustomEvent('reinit.xt'))
+        }
+      }
     })
   }
 }

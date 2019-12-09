@@ -7,11 +7,7 @@ date: "2000-04-01"
 ---
 
 [[noteDefault]]
-| Overlay uses card to style it's content, refer to [card's content](/core/card/content) for a complete **API**.
-
-##Custom
-
-As it's done with `.card-title`, you can add as many classes for content as you like inside `.card-block` and style them inside [variant](/core/card/option#variant) or [size](/core/card/option#size).
+| Overlay uses card to style it's content, refer to [card's content](/components/card/content) for all **content**.
 
 ##Block
 
@@ -42,7 +38,7 @@ You can add custom `.card-block` modifiers and style them as you like (e.g.: `.c
 
 Sequential `.card-item` stack vertically.
 
-They have a separator automatically styled with [variants](/core/card/option#variant). Just be sure to style `.card-item--{variant}` as in the **card.less** to not break css specificity.
+They have a separator automatically styled with [variants](/components/card/option#variant). Just be sure to style `.card-item--{variant}` as in the **card.less** to not break css specificity.
 
 <script type="text/plain" class="language-markup">
   <div class="card card--overlay">

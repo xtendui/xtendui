@@ -24,20 +24,22 @@ Use this markup to create a **form label** and **form item**.
   </demovanilla>
 </demo>
 
-In css you can use `.form-label({});` and `.form-items({});` to style all `.form-label:not(.xt-custom)` and `.form-item:not(.xt-custom)`.
-
 If you want to customize singularly `.form-item` or `.form-label` use the class `.xt-custom`.
 
-[[noteError]]
-| Form label and item must be inside [form group](/core/form/group) to have default styles.
+In css you can use `.form-labels({});` and `.form-items({});` to style all `.form-label:not(.xt-custom)` and `.form-item:not(.xt-custom)`.
+
+[[noteDefault]]
+| Form label and item must be inside [form group](/components/form/group) to have default styles.
 
 ##Size
 
-Size is done with **em** so it's relative to the container element. To set `.form-item` and `.form-label` size use [form group](/core/form/group#size).
+Size is done with **em** so it's relative to the container element. To set `.form-item` and `.form-label` size use [form group](/components/form/group#size).
 
 ##Variant
 
 Classes for assigning variant (e.g.: border / background / font colors).
+
+You can set the size globally on **form**.
 
 <div class="table--scroll">
 
@@ -48,6 +50,8 @@ Classes for assigning variant (e.g.: border / background / font colors).
 
 </div>
 
+Or granularly on **form label**.
+
 <div class="table--scroll">
 
 |                         | Syntax                                    | Example                       |
@@ -56,6 +60,8 @@ Classes for assigning variant (e.g.: border / background / font colors).
 | Mixin                   | `.form-label--{variant}()`                | `.form-label--default()` `.form-label--inverse()` |
 
 </div>
+
+And granularly on **form item**.
 
 <div class="table--scroll">
 

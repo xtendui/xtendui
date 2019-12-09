@@ -1,5 +1,6 @@
 ---
 type: "Faqs"
+badge: "Faqs"
 parent: "Test"
 title: "Test"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
@@ -8,7 +9,32 @@ categories: ["100-Test"]
 
 ##Markdown
 
-Lorem ipsum `dolor sit` amet, *consectetur* **adipiscing** elit. Nam in [laoreet tellus](/core/group/button), nec commodo massa. Aenean ut ex at ex pellentesque efficitur.
+<div class="table--scroll">
+
+|                         | Syntax                                    | Example                       |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Class                   | `.drop--{variant}`                        | `.drop--default` `.drop--primary` |
+| Mixin                   | `.drop--{variant}()`                      | `.drop--default()` `.drop--primary()`         |
+
+</div>
+
+<div class="table--scroll">
+
+|                         | Syntax                                    | Default                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `class:String`                          | `active active-overlay`        | Class name for activation            |
+
+</div>
+
+<div class="table--scroll">
+
+|                         | Class                                     | Mixin                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.drop-container--static`                 | `.drop-container--static()`        | Position relative to closest element with `position: relative;`.            |
+
+</div>
+
+Lorem ipsum `dolor sit` amet, *consectetur* **adipiscing** elit. Nam in [laoreet tellus](/components/group/button), nec commodo massa. Aenean ut ex at ex pellentesque efficitur.
 
 Maecenas pulvinar mauris eget pharetra elementum. Sed sit amet ultrices metus, vitae cursus metus. Proin tristique finibus pretium. Morbi sit amet magna faucibus, luctus enim tempor, dignissim quam. Nam a ornare quam, varius cursus felis. Fusce nunc lacus, iaculis vel cursus non, facilisis id quam.
 
@@ -83,7 +109,7 @@ let self = new Xt.Scroll(document.documentElement, {
 ###Inline
 
 <demo>
-  <demovanilla src="vanilla/demos/test/vanilla" name="test vanilla">
+  <demovanilla src="vanilla/components/test/vanilla" name="test vanilla">
     <div class="gatsby_demo_text">
       test vanilla <strong>strong</strong> <code>code</code>
     </div>
@@ -98,14 +124,14 @@ let self = new Xt.Scroll(document.documentElement, {
 ###Iframe
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/demos/test/vanilla-iframe" data-name="test vanilla frame">
+  <div class="gatsby_demo_item" data-iframe="iframe/components/test/vanilla-iframe" data-name="test vanilla frame">
     <div class="gatsby_demo_text">
-      <a href="/iframe/demos/test/vanilla-iframe">test vanilla iframe</a>
+      <a href="/iframe/components/test/vanilla-iframe">test vanilla iframe</a>
     </div>
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/demos/test/react-iframe" data-name="test react iframe">
+  <div class="gatsby_demo_item" data-iframe="iframe/components/test/react-iframe" data-name="test react iframe">
     <div class="gatsby_demo_text">
-      <a href="/iframe/demos/test/react-iframe">test react iframe</a>
+      <a href="/iframe/components/test/react-iframe">test react iframe</a>
     </div>
   </div>
 </demo>
@@ -113,20 +139,20 @@ let self = new Xt.Scroll(document.documentElement, {
 ##Card
 
 <demo>
-  <demovanilla src="vanilla/demos/test/test-card-content">
+  <demovanilla src="vanilla/components/test/test-card-content">
   </demovanilla>
 </demo>
 
 ##Overlay
 
 <demo>
-  <demovanilla src="vanilla/demos/test/test-overlay-content">
+  <demovanilla src="vanilla/components/test/test-overlay-content">
   </demovanilla>
 </demo>
 
 ###Slider
 
 <demo>
-  <demovanilla src="vanilla/demos/test/test-slider-content">
+  <demovanilla src="vanilla/components/test/test-slider-content">
   </demovanilla>
 </demo>

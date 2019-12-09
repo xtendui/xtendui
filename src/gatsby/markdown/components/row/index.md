@@ -3,9 +3,23 @@ type: "Components"
 badge: "Core"
 parent: "Row"
 title: "Row"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-categories: ["200-Layout"]
+description: "Flex row to space any element with paddings, also spaces vertically."
+categories: ["100-Core"]
 ---
+
+##Setup
+
+To use this component import the **less** files accordingly:
+
+```less
+@import '~xtend-library/src/core/row/row.less';
+```
+
+Or just import **core**:
+
+```less
+@import '~xtend-library/src/xtend-core.less';
+```
 
 ##Usage
 

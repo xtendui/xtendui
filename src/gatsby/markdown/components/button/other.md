@@ -8,4 +8,4 @@ date: "2000-10-01"
 
 ##Group
 
-Refer to [Group's button](/core/group/button).
+Refer to [Group's button](/components/group#usage-button).

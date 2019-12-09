@@ -19,7 +19,7 @@ You can add custom `.card-block` modifiers and style them as you like (e.g.: `.c
 
 Sequential `.card-item` stack vertically.
 
-They have a separator automatically styled with [variants](/core/card/option#variant). Just be sure to style `.card-item--{variant}` as in the **card.less** to not break css specificity.
+They have a separator automatically styled with [variants](/components/card/option#variant). Just be sure to style `.card-item--{variant}` as in the **card.less** to not break css specificity.
 
 <demo>
   <demovanilla src="vanilla/components/card/horizontal-multiple">
@@ -30,6 +30,14 @@ They have a separator automatically styled with [variants](/core/card/option#var
 
 If you want full width assets use `.card-asset`.
 
+<div class="table--scroll">
+
+|                         | Class                                     | Mixin                         | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.card-asset`                | Not Possible        | Full width block with responsive full assets            |
+
+</div>
+
 <demo>
   <demovanilla src="vanilla/components/card/horizontal-asset">
   </demovanilla>
@@ -38,6 +46,14 @@ If you want full width assets use `.card-asset`.
 ##Overflow
 
 You can set vertical overflow using `.card--overflow-y` in `.card-inner` or `.card-block`.
+
+<div class="table--scroll">
+
+|                         | Class                                     | Mixin                         | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.card--overflow-y`                | `.card--overflow-y()`        | Vertical overflow with max-height and scrollbar            |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/card/horizontal-overflow-y">

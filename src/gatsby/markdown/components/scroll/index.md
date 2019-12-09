@@ -1,32 +1,37 @@
 ---
-
 type: "Components"
-badge: "Addons"
+badge: "Extensions"
 parent: "Scroll"
 title: "Scroll"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-categories: ["400-Presentation"]
+description: "Content animation when you scroll the page, fade in elements, parallax."
+categories: ["400-Extensions"]
 ---
+
+##Setup
+
+To use this component import the **less** and **js** files accordingly:
+
+```less
+@import '~xtend-library/src/extensions/scroll/scroll.less';
+```
+
+```jsx
+import 'xtend-library/src/extensions/scroll/scroll.js'
+```
+
+Or just import **extensions**:
+
+```less
+@import '~xtend-library/src/xtend-extensions.less';
+```
+
+```jsx
+import 'xtend-library/src/xtend-extensions.js'
+```
 
 ##Usage
 
-Use this markup to create a **scroll**.
-
-<script type="text/plain" class="language-markup">
-  <div data-xt-scroll>
-    <div class="scroll">
-      <!-- content -->
-    </div>
-  </div>
-</script>
-
-You can initialize **scroll** by javascript omitting `[data-xt-scroll]`.
-
-```jsx
-let self = new Xt.Scroll(document.documentElement, {
-});
-```
+@TODO
 
 [[noteDefault]]
 | It's recomended to animate the scroll elements with <code>animation</code> instead of <code>transition</code> because of <a href="{% link faq.html %}#browsers-bugs-fixed-position">this bug</a>.
-

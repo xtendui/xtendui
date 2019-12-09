@@ -6,43 +6,67 @@ title: "Other"
 date: "2000-10-01"
 ---
 
-##Event
+##Link
 
-You can specify **on** and **off** events for the drop. Fore example `on: 'mouseenter'` `off: 'mouseleave'`. Default is `on: 'click'`.
+You can have links that triggers after toggle. Remember to use `autoDisable: false`.
+
+If the toggle is on <code>"on": "mouseenter"</code> or <code>"on": "mousehover"</code> the link gets activated on the second touch event on touch devices.
 
 <demo>
-  <demovanilla src="vanilla/components/drop/event">
+  <demovanilla src="vanilla/components/drop/with-link">
+  </demovanilla>
+  <demovanilla src="vanilla/components/drop/with-link-hover">
   </demovanilla>
 </demo>
 
 ##Static
 
-Use `.drop-container--static` to position relative to closest element with `position: relative;`.
+<div class="table--scroll">
+
+|                         | Class                                     | Mixin                         | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.drop-container--static`                | `.drop-container--static()`        | Position relative to closest element with `position: relative;`.            |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/drop/static">
   </demovanilla>
 </demo>
 
-##Disable
-
-To disable drop use `.drop--disable` useful within media queries.
-
-<demo>
-  <demovanilla src="vanilla/components/drop/disable">
-  </demovanilla>
-</demo>
-
 ##Backdrop
 
-Use `data-xt-drop='{ backdrop: true }'` to have a backdrop when drop opens.
+<div class="table--scroll">
+
+|                         | Syntax                                    | Default                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `backdrop:Boolean`                              | `false`                     | Generate backdrop on targets or on object if no targets           |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/drop/backdrop">
   </demovanilla>
 </demo>
 
+##Disable
+
+<div class="table--scroll">
+
+|                         | Class                                     | Mixin                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.drop--disable`                | `.drop--disable()`        | Disable drop, useful within media queries            |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/drop/disable">
+  </demovanilla>
+</demo>
+
 ##Nested
+
+Test with nested drops.
 
 <demo>
   <demovanilla src="vanilla/components/drop/nested">

@@ -1,8 +1,9 @@
 import path from 'path'
 
-const dirs = path.dirname(__filename).split('/')
+const filename = __filename.replace(/\\/g, '/')
+const dirs = path.dirname(filename).split('/')
 export const demo = {
-  name: path.basename(__filename, '.js'),
+  name: path.basename(filename, '.js'),
   component: dirs.pop(),
   type: dirs.pop(),
 }
@@ -10,8 +11,8 @@ export const demo = {
 demo.htmlSource = `
 <div class="form">
   <div class="form-group">
-    <input type="checkbox" class="unstyled" id="checkcard-block-unstyled" checked>
-    <label class="form-label" for="checkcard-block-unstyled">
+    <input type="checkbox" class="unstyled" id="check-block-unstyled" checked>
+    <label class="form-label" for="check-block-unstyled">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
     </label>
   </div>

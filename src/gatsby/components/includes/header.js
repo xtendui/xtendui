@@ -53,18 +53,12 @@ class Header extends React.Component {
                 Components
               </Link>
               <Link
-                to="/extensions"
+                to="/addons"
                 className={`btn gatsby_btn--site_header_link ${
-                  page && page.post
-                    ? markdownSlug(page.post) === '/' + 'extensions'
-                      ? 'active'
-                      : page.post.frontmatter.type === 'Extensions'
-                      ? 'current'
-                      : ''
-                    : ''
+                  page && page.post ? (markdownSlug(page.post) === '/' + 'addons' ? 'active' : page.post.frontmatter.type === 'Addons' ? 'current' : '') : ''
                 }`}
               >
-                Extensions
+                Addons
               </Link>
               <Link
                 to="/themes"

@@ -6,10 +6,6 @@ title: "Content"
 date: "2000-04-01"
 ---
 
-##Custom
-
-As it's done with `.card-title`, you can add as many classes for content as you like inside `.card-block` and style them inside [variant](/core/card/option#variant) or [size](/core/card/option#size).
-
 ##Block
 
 You can add custom `.card-block` modifiers and style them as you like (e.g.: `.card-block--custom`).
@@ -38,7 +34,7 @@ You can add custom `.card-block` modifiers and style them as you like (e.g.: `.c
 
 Sequential `.card-item` stack vertically.
 
-They have a separator automatically styled with [variants](/core/card/option#variant). Just be sure to style `.card-item--{variant}` as in the **card.less** to not break css specificity.
+They have a separator automatically styled with [variants](/components/card/option#variant). Just be sure to style `.card-item--{variant}` as in the **card.less** to not break css specificity.
 
 <script type="text/plain" class="language-markup">
   <div class="card card--default">
@@ -106,6 +102,14 @@ To stack `.card-item` horizontally use `.card-item-nested` and `.card-group` wit
 
 If you want full width assets use `.card-asset`.
 
+<div class="table--scroll">
+
+|                         | Class                                     | Mixin                         | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.card-asset`                | Not Possible        | Full width block with responsive full assets            |
+
+</div>
+
 <script type="text/plain" class="language-markup">
   <div class="card card--default">
     <div class="card-design"></div>
@@ -129,6 +133,14 @@ If you want full width assets use `.card-asset`.
 ##Overflow
 
 You can set vertical overflow using `.card--overflow-y` in `.card-inner` or `.card-block`.
+
+<div class="table--scroll">
+
+|                         | Class                                     | Mixin                         | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.card--overflow-y`                | `.card--overflow-y()`        | Vertical overflow with max-height and scrollbar            |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/card/overflow-y">

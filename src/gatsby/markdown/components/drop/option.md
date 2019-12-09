@@ -6,7 +6,7 @@ title: "Option"
 date: "2000-02-01"
 ---
 
-##Variant
+###Variant
 
 Classes for assigning variant (e.g.: border / background / font colors).
 
@@ -24,14 +24,14 @@ Classes for assigning variant (e.g.: border / background / font colors).
   </demovanilla>
 </demo>
 
-##Position
+###Position
 
 Classes for assigning position.
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.drop--{position}`                        | `.drop--bottom` `.drop--top` `.drop--left` `.drop--right` `.drop--center` etc.. |
-| Mixin                   | `.drop--{position}()`                      | `.drop--bottom()` `.drop--top()` `.drop--left()` `.drop--right()` `.drop--center()` etc.. |
+| Class                   | `.drop--{position}`                        | `.drop--bottom` `.drop--top` `.drop--left` `.drop--right` `.drop--center` `.drop--before` `.drop--after` |
+| Mixin                   | `.drop--{position}()`                      | `.drop--bottom()` `.drop--top()` `.drop--left()` `.drop--right()` `.drop--center()` `.drop--before()` `.drop--after()` |
 
         
 <demo>

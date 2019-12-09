@@ -21,6 +21,22 @@ Lists **automatically** add horizontal and vertical spacing to the contents. You
 
 </div>
 
+`{direction}` can be `x` or `y`.
+
+<div class="table--scroll">
+
+|                         | Syntax                                    | Example                       |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Class                   | `.list-space-{direction}--{size}`                      | `.list-space-{direction}--small`           |
+| Class responsive        | `.list-space-{direction}--{size}--{breakpoint}`         | `.list-space-{direction}--small--sm`        |
+| Mixin                   | `.list-space-{direction}({size})`                      | `.list-space-{direction}(small)`           |
+| Mixin responsive min    | `.list-space-{direction}({size}, {breakpoint})`        | `.list-space-{direction}(small, sm)`       |
+
+</div>
+
+[[noteDefault]]
+| When using **list space classes** with **breakpoints** you need to set the class breakpoint generation with `@generate-list`.
+
 <demo>
   <demovanilla src="vanilla/components/list/space-none">
   </demovanilla>
@@ -38,9 +54,25 @@ Lists **automatically** add horizontal and vertical spacing to the contents. You
   </demovanilla>
 </demo>
 
-##Direction
+##Flex util
+
+[[noteDefault]]
+| When using **flex util classes** with **breakpoints** you need to set the class breakpoint generation with `@generate-flex`.
+
+###Direction
 
 Set children's direction inside the flexbox.
+
+<div class="table--scroll">
+
+|                         | Syntax                                    | Example                       |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Class                   | `.flex-direction--{value}`                        | `.flex-direction--column`                   |
+| Class responsive        | `.flex-direction--{value}--{breakpoint}`           | `.flex-direction--column--sm`                |
+| Mixin                   | `.flex-direction({value})`                        | `.flex-direction(column)`                   |
+| Mixin responsive min    | `.flex-direction({value}, {breakpoint})`          | `.flex-direction(column, sm)`               |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/list/direction-row">
@@ -53,9 +85,20 @@ Set children's direction inside the flexbox.
   </demovanilla>
 </demo>
 
-##Wrap
+###Wrap
 
 Set children's wrapping inside the flexbox.
+
+<div class="table--scroll">
+
+|                         | Syntax                                    | Example                       |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Class                   | `.flex-wrap--{value}`                        | `.flex-wrap--nowrap`                   |
+| Class responsive        | `.flex-wrap--{value}--{breakpoint}`           | `.flex-wrap--nowrap--sm`                |
+| Mixin                   | `.flex-wrap({value})`                        | `.flex-wrap(nowrap)`                   |
+| Mixin responsive min    | `.flex-wrap({value}, {breakpoint})`          | `.flex-wrap(nowrap, sm)`               |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/list/wrap">
@@ -66,9 +109,20 @@ Set children's wrapping inside the flexbox.
   </demovanilla>
 </demo>
 
-##Justify content
+###Justify content
 
 Set children's horizontal alignment inside the flexbox.
+
+<div class="table--scroll">
+
+|                         | Syntax                                    | Example                       |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Class                   | `.justify-content--{value}`                        | `.justify-content--center`                   |
+| Class responsive        | `.justify-content--{value}--{breakpoint}`           | `.justify-content--center--sm`                |
+| Mixin                   | `.justify-content({value})`                        | `.justify-content(center)`                   |
+| Mixin responsive min    | `.justify-content({value}, {breakpoint})`          | `.justify-content(center, sm)`               |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/list/justify-start">
@@ -85,9 +139,20 @@ Set children's horizontal alignment inside the flexbox.
   </demovanilla>
 </demo>
 
-##Align items
+###Align items
 
 Set children's vertical alignment inside the flexbox.
+
+<div class="table--scroll">
+
+|                         | Syntax                                    | Example                       |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Class                   | `.align-items--{value}`                        | `.align-items--center`                   |
+| Class responsive        | `.align-items--{value}--{breakpoint}`           | `.align-items--center--sm`                |
+| Mixin                   | `.align-items({value})`                        | `.align-items(center)`                   |
+| Mixin responsive min    | `.align-items({value}, {breakpoint})`          | `.align-items(center, sm)`               |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/list/items-start">
@@ -102,9 +167,20 @@ Set children's vertical alignment inside the flexbox.
   </demovanilla>
 </demo>
 
-##Align content
+###Align content
 
 Set children's vertical alignment inside the flexbox.
+
+<div class="table--scroll">
+
+|                         | Syntax                                    | Example                       |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Class                   | `.align-content--{value}`                        | `.align-content--center`                   |
+| Class responsive        | `.align-content--{value}--{breakpoint}`           | `.align-content--center--sm`                |
+| Mixin                   | `.align-content({value})`                        | `.align-content(center)`                   |
+| Mixin responsive min    | `.align-content({value}, {breakpoint})`          | `.align-content(center, sm)`               |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/list/content-start">
@@ -121,10 +197,21 @@ Set children's vertical alignment inside the flexbox.
   </demovanilla>
 </demo>
 
-##Align self
+###Align self
 
 Set item's vertical alignment inside the flexbox.
 If set to **auto** computes to the parent's `align-items` value.
+
+<div class="table--scroll">
+
+|                         | Syntax                                    | Example                       |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Class                   | `.align-self--{value}`                        | `.align-self--center`                   |
+| Class responsive        | `.align-self--{value}--{breakpoint}`           | `.align-self--center--sm`                |
+| Mixin                   | `.align-self({value})`                        | `.align-self(center)`                   |
+| Mixin responsive min    | `.align-self({value}, {breakpoint})`          | `.align-self(center, sm)`               |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/list/self-start">
@@ -141,7 +228,7 @@ If set to **auto** computes to the parent's `align-items` value.
   </demovanilla>
 </demo>
 
-##Order
+###Order
 
 Set item's order inside the flexbox.
 
@@ -149,10 +236,10 @@ Set item's order inside the flexbox.
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.order-{number}`                        | `.order-1`                   |
-| Class responsive        | `.order-{number}--{breakpoint}`           | `.order-1--sm`                |
-| Mixin                   | `.order({number})`                        | `.order(1)`                   |
-| Mixin responsive min    | `.order({number}, {breakpoint})`          | `.order(1, sm)`               |
+| Class                   | `.order-{value}`                        | `.order-1`                   |
+| Class responsive        | `.order-{value}--{breakpoint}`           | `.order-1--sm`                |
+| Mixin                   | `.order({value})`                        | `.order(1)`                   |
+| Mixin responsive min    | `.order({value}, {breakpoint})`          | `.order(1, sm)`               |
 
 </div>
 

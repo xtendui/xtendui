@@ -1,8 +1,9 @@
 import path from 'path'
 
-const dirs = path.dirname(__filename).split('/')
+const filename = __filename.replace(/\\/g, '/')
+const dirs = path.dirname(filename).split('/')
 export const demo = {
-  name: path.basename(__filename, '.js'),
+  name: path.basename(filename, '.js'),
   component: dirs.pop(),
   type: dirs.pop(),
 }
@@ -10,20 +11,15 @@ export const demo = {
 demo.htmlSource = `
 <div class="group">
   <div class="group-inner">
-    <button type="button" class="btn btn--primary">
-      Lorem ipsum
+    <button type="button" class="btn btn--default">
+      Lorem
     </button>
   </div>
   <div class="group-inner">
-    <button type="button" class="btn btn--default">
-      Dolor sit
+    <button type="button" class="btn btn--primary">
+      ipsum
     </button>
   </div>
   <input type="text" class="form-item form-item--default" />
-  <div class="group-inner">
-    <button type="button" class="btn btn--default">
-      amet
-    </button>
-  </div>
 </div>
 `

@@ -1,16 +1,37 @@
 ---
-
 type: "Components"
-badge: "Addons"
+badge: "Extensions"
 parent: "Slider"
 title: "Slider"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-categories: ["400-Presentation"]
+description: "Customizable sliders with custom animation and interaction."
+categories: ["400-Extensions"]
 ---
+
+##Setup
+
+To use this component import the **less** and **js** files accordingly:
+
+```less
+@import '~xtend-library/src/extensions/slider/slider.less';
+```
+
+```jsx
+import 'xtend-library/src/extensions/slider/slider.js'
+```
+
+Or just import **extensions**:
+
+```less
+@import '~xtend-library/src/xtend-extensions.less';
+```
+
+```jsx
+import 'xtend-library/src/xtend-extensions.js'
+```
 
 ##Usage
 
-Use this markup to create a **drop**.
+Use this markup to create a **slider**.
 
 <script type="text/plain" class="language-markup">
   <div class="slider" data-xt-slider>
@@ -43,10 +64,3 @@ Use this markup to create a **drop**.
 
 [[noteDefault]]
 | `slider-pagination[data-xt-pag].xt-ignore` is essential to the functioning of the slider, so if you don't want to show it add `.display-none`.
-
-You can initialize **slider** by javascript omitting `[data-xt-slider]`.
-
-```jsx
-let self = new Xt.Slider(document.querySelector('.my-slider'), {
-});
-```
