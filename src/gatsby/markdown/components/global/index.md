@@ -8,7 +8,7 @@ categories: ["100-Core"]
 date: "2000-01-01"
 ---
 
-##Setup
+## Setup
 
 To use this component import the **less** files accordingly:
 
@@ -22,6 +22,6 @@ Or just import **core**:
 @import '~xtend-library/src/xtend-core.less';
 ```
 
-##Theming
+## Theming
 
 For an explanation of the css file content see [global css](/components/global/css).

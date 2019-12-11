@@ -9,7 +9,7 @@ date: "2000-01-01"
 [[noteDefault]]
 | Scroll uses toggle for logic, refer to [toggle's API](/components/toggle/api) for all **API**.
 
-##Initialization
+## Initialization
 
 Initialize automatically within markup with `[data-xt-scroll="{ <options> }"]`.
 
@@ -21,9 +21,9 @@ new Xt.Scroll(document.querySelector('.my-scroll'), {
 });
 ```
 
-##Option
+## Option
 
-###Mode
+### Mode
 
 You can set scroll mode.
 
@@ -40,7 +40,7 @@ You can set scroll mode.
   </div>
 </demo>
 
-###Distance
+### Distance
 
 Use `distance: Number` activation and deactivation distance. For percent use `distance: 'Number%'`.
 
@@ -59,7 +59,7 @@ The default **distance** is `distance: '20%'`.
   </div>
 </demo>
 
-###Delay
+### Delay
 
 You can use a function for `delayOn` and `delayOff` for example `function(current, total) {return Math.min((total - current) * 150, 300)}`.
 
@@ -76,7 +76,7 @@ You can use a function for `delayOn` and `delayOff` for example `function(curren
   </div>
 </demo>
 
-###Sticky
+### Sticky
 
 <div class="table--scroll">
 
@@ -88,7 +88,7 @@ You can use a function for `delayOn` and `delayOff` for example `function(curren
 
 @TODO demo
 
-###Position
+### Position
 
 <div class="table--scroll">
 
@@ -103,6 +103,6 @@ You can use a function for `delayOn` and `delayOff` for example `function(curren
 
 @TODO demo
 
-##Events
+## Events
 
 @TODO tables events

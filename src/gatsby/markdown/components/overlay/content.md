@@ -9,7 +9,7 @@ date: "2000-04-01"
 [[noteDefault]]
 | Overlay uses card to style it's content, refer to [card's content](/components/card/content) for all **content**.
 
-##Block
+## Block
 
 You can add custom `.card-block` modifiers and style them as you like (e.g.: `.card-block--custom`).
 
@@ -34,7 +34,7 @@ You can add custom `.card-block` modifiers and style them as you like (e.g.: `.c
   </demovanilla>
 </demo>
 
-##Multiple
+## Multiple
 
 Sequential `.card-item` stack vertically.
 
@@ -54,7 +54,7 @@ They have a separator automatically styled with [variants](/components/card/opti
         <div class="card-block card-item">
           <!-- content -->
         </div>
-  
+
       </div>
     </div>
   </div>
@@ -65,9 +65,9 @@ They have a separator automatically styled with [variants](/components/card/opti
   </demovanilla>
 </demo>
 
-##Group
+## Group
 
-To stack `.card-item` horizontally use `.card-item-nested` and `.card-group` with responsive classes if you need them. 
+To stack `.card-item` horizontally use `.card-item-nested` and `.card-group` with responsive classes if you need them.
 
 <div class="table--scroll">
 
@@ -93,7 +93,7 @@ To stack `.card-item` horizontally use `.card-item-nested` and `.card-group` wit
              <!-- content -->
           </div>
         </div>
-  
+
       </div>
     </div>
   </div>
@@ -104,7 +104,7 @@ To stack `.card-item` horizontally use `.card-item-nested` and `.card-group` wit
   </demovanilla>
 </demo>
 
-##Asset
+## Asset
 
 If you want full width assets use `.card-asset`.
 
@@ -129,7 +129,7 @@ If you want full width assets use `.card-asset`.
   </demovanilla>
 </demo>
 
-##Overflow
+## Overflow
 
 You can set vertical overflow using `.card--overflow-y` in `.card-inner` or `.card-block`.
 

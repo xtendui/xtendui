@@ -6,7 +6,7 @@ title: "Option"
 date: "2000-02-01"
 ---
 
-##Variant
+## Variant
 
 Classes for assigning variant (e.g.: border / background / font colors).
 
@@ -31,7 +31,7 @@ On containers use `.text-inverse` to have white buttons (needs `color: inherit`)
   </demovanilla>
 </demo>
 
-##Size
+## Size
 
 Classes for assigning size (e.g.: padding or font size).
 

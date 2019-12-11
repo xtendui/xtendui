@@ -7,7 +7,7 @@ description: "Form styles with multiple layouts, custom checkbox/radio, and more
 categories: ["100-Core"]
 ---
 
-##Setup
+## Setup
 
 To use this component import the **less** files accordingly:
 

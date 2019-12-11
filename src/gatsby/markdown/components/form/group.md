@@ -6,7 +6,7 @@ title: "Group"
 date: "2000-03-01"
 ---
 
-##Usage
+## Usage
 
 Use this markup to create a **form group**.
 
@@ -25,11 +25,11 @@ In css you can use `.form-groups({});` to style all `.form-group:not(.xt-custom)
 [[noteDefault]]
 | Form group must be inside `form` or `.form` to have default styles.
 
-##Mode
+## Mode
 
 There are several form group mode to change the form layout. They aren't just less classes to apply, but they need major markup formatting.
 
-###Normal
+### Normal
 
 <script type="text/plain" class="language-markup">
 <form>
@@ -47,7 +47,7 @@ There are several form group mode to change the form layout. They aren't just le
   </demovanilla>
 </demo>
 
-###Horizontal
+### Horizontal
 
 Horizontal label and input, by default not on mobile, you can edit the media queries in `~xtend-library/src/core/form/form.less`.
 
@@ -63,7 +63,7 @@ Horizontal label and input, by default not on mobile, you can edit the media que
       </div>
     </div>
   </div>
-  
+
   <div class="form-group">
     <div class="form-group--horizontal">
       <div class="col-12 col-3--sm">
@@ -158,7 +158,7 @@ Inline **form input** and **form label**, by default not on mobile, you can edit
   </demovanilla>
 </demo>
 
-##Size
+## Size
 
 Classes for assigning size (e.g.: padding or font size).
 

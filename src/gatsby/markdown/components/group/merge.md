@@ -6,7 +6,7 @@ title: "Merge"
 date: "2000-05-01"
 ---
 
-##Merge
+## Merge
 
 You can merge buttons in a single interactive object.
 
@@ -17,7 +17,7 @@ Use this markup to merge multiple `.btn` in one `[button]` as line.
 
 <script type="text/plain" class="language-markup">
   <button type="button" class="group">
-  
+
     <div class="group-inner">
       <div class="btn btn--default">
         <!-- content -->
@@ -29,7 +29,7 @@ Use this markup to merge multiple `.btn` in one `[button]` as line.
         <!-- content -->
       </div>
     </div>
-    
+
   </button>
 </script>
 
@@ -42,7 +42,7 @@ Use this markup to merge multiple `.btn` in one `[button]` as stack.
 
 <script type="text/plain" class="language-markup">
   <button type="button" class="group">
-  
+
     <div class="group-inner">
       <div class="btn btn--default">
         <!-- content -->

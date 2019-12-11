@@ -6,7 +6,7 @@ description: "Js animations with gsap, Css animations and transition util with c
 categories: ["100-Core"]
 ---
 
-##Setup
+## Setup
 
 To use this component import the **less** files accordingly:
 
@@ -20,6 +20,6 @@ Or just import **core**:
 @import '~xtend-library/src/xtend-core.less';
 ```
 
-##Theming
+## Theming
 
 For an explanation of the css file content see [animation css](/components/animation/css).

@@ -6,21 +6,21 @@ title: "Css"
 date: "2000-02-01"
 ---
 
-##Vars
+## Vars
 
 Most of the variables are inside `~xtend-library/src/core/global/global.less`, specific component variables are inside the component's less files.
 
-###Generate
+### Generate
 
 Within `@generate-` vars you have a boolean or a list of breakpoints. With a boolean you activate/deactivate **classes generation**, with a breakpoint you also activate classes generation **for that breakpoint**.
 
-###Colors
+### Colors
 
 Colors variables. `@accent` is the accent color, usually used by **primary** variants but not necessarily. `@text-inverse` is for text on dark backgrounds.
 
 There are also shadow and gradient variables.
 
-###Spacing
+### Spacing
 
 You have also spacing **margin** and **padding** vars that you can use with a **mixin** to have well-established spacing everywhere.
 
@@ -65,19 +65,19 @@ Available sizes are: `layout` `auto` `none` `micro` `tiny` `small` `medium` `big
 | When using **spacing classes** with **breakpoints** you need to set the class breakpoint generation with `@generate-margin` and `@generate-padding`.
 ``
 
-###Order
+### Order
 
 See [order utils](/components/global#utils-order).
 
-###Z-Index
+### Z-Index
 
 All z-index used in the library, you can change the values but it's better to keep the sequential z-index order the same.
 
-###Breakpoints
+### Breakpoints
 
 The breakpoints are used on media queries and many components, be sure to list all breakpoints inside the variable `@breakpoints`.
 
-###Media queries
+### Media queries
 
 You can edit media queries and breakpoints.
 
@@ -91,23 +91,23 @@ You can edit media queries and breakpoints.
 
 </div>
 
-##Styles
+## Styles
 
 The global styles that don't belongs to a component are all here.
 
-###Scrollbar
+### Scrollbar
 
 Within `.overflow-style` mixin you have the scrollbar styles, you can setup different modes for example `@mode: inner`.
 
-###Focus
+### Focus
 
 Apply focus styles to `html.xt-focus-visible` to style focus only when user interaction with keyboard occurred (similar to [:focus-visible](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible)).
 
 To disable focus feeback globally add `html.xt-focus-disable` class.
 
-##Utils
+## Utils
 
-###Various
+### Various
 
 <div class="table--scroll">
 
@@ -125,7 +125,7 @@ To disable focus feeback globally add `html.xt-focus-disable` class.
 
 </div>
 
-###Toggle
+### Toggle
 
 Toggle utils are useful with [toggle](/components/toggle) to show/hide **targets**.
 
@@ -144,7 +144,7 @@ Toggle utils are useful with [toggle](/components/toggle) to show/hide **targets
 
 </div>
 
-###Animation
+### Animation
 
 <div class="table--scroll">
 
@@ -158,7 +158,7 @@ Toggle utils are useful with [toggle](/components/toggle) to show/hide **targets
 
 </div>
 
-###Responsive
+### Responsive
 
 Classes and mixins for making an image size responsive with max size, the element will be large as the parent until it's original size is reached.
 
@@ -184,7 +184,7 @@ Classes and mixins for making an image size responsive with max size, the elemen
 
 </div>
 
-###Full
+### Full
 
 Classes and mixins for making an element (ex: img, .btn, etc..) size responsive with full size, the element will always be of the size of the parent.
 
@@ -210,7 +210,7 @@ Classes and mixins for making an element (ex: img, .btn, etc..) size responsive 
 
 </div>
 
-###Align
+### Align
 
 Classes and mixins for setting an element (ex: div, .btn, etc..) alignment. It works with **flex** elements and children **inline** or **inline-block** elements.
 
@@ -227,7 +227,7 @@ Classes and mixins for setting an element (ex: div, .btn, etc..) alignment. It w
 
 </div>
 
-###Display
+### Display
 
 Classes and mixins for setting display styles. Useful if you want to show/hide an element on media queries.
 
@@ -244,7 +244,7 @@ Classes and mixins for setting display styles. Useful if you want to show/hide a
 
 </div>
 
-###Order
+### Order
 
 Classes and mixins for setting **flex** childs order. The **num** evals to the index of the `@orders` variable.
 
@@ -259,7 +259,7 @@ Classes and mixins for setting **flex** childs order. The **num** evals to the i
 
 </div>
 
-###Flex
+### Flex
 
 Classes and mixins for setting **flex** properties.
 

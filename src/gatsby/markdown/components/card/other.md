@@ -6,7 +6,7 @@ title: "Other"
 date: "2000-10-01"
 ---
 
-##Close
+## Close
 
 Usage of `.btn-close` inside card.
 
@@ -15,7 +15,7 @@ Usage of `.btn-close` inside card.
   </demovanilla>
 </demo>
 
-##Disable
+## Disable
 
 Disable card's variant styles with `.card--disable`.
 

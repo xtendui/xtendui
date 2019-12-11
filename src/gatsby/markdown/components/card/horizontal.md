@@ -6,7 +6,7 @@ title: "Horizontal"
 date: "2000-05-01"
 ---
 
-##Block
+## Block
 
 You can add custom `.card-block` modifiers and style them as you like (e.g.: `.card-block--custom`).
 
@@ -15,7 +15,7 @@ You can add custom `.card-block` modifiers and style them as you like (e.g.: `.c
   </demovanilla>
 </demo>
 
-##Multiple
+## Multiple
 
 Sequential `.card-item` stack vertically.
 
@@ -26,7 +26,7 @@ They have a separator automatically styled with [variants](/components/card/opti
   </demovanilla>
 </demo>
 
-##Asset
+## Asset
 
 If you want full width assets use `.card-asset`.
 
@@ -43,7 +43,7 @@ If you want full width assets use `.card-asset`.
   </demovanilla>
 </demo>
 
-##Overflow
+## Overflow
 
 You can set vertical overflow using `.card--overflow-y` in `.card-inner` or `.card-block`.
 

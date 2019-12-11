@@ -6,7 +6,7 @@ title: "Other"
 date: "2000-10-01"
 ---
 
-##Group
+## Group
 
 If you need to toggle **multiple targets** with the **same element** assign `data-xt-group` to **elements** and the associated targets **targets**. Group's additional elements aren't counted for min and max.
 
@@ -15,7 +15,7 @@ If you need to toggle **multiple targets** with the **same element** assign `dat
   </demovanilla>
 </demo>
 
-##Link
+## Link
 
 You can have links that triggers after toggle. Remember to use `autoDisable: false`.
 
@@ -28,7 +28,7 @@ If the toggle is on <code>"on": "mouseenter"</code> or <code>"on": "mousehover"<
   </demovanilla>
 </demo>
 
-##Animation
+## Animation
 
 You can animate with javascript instead of css, just use [toggle events](/components/toggle/api#events) and remember to set `durationOn: Milliseconds` and `durationOff: Milliseconds`.
 
@@ -37,7 +37,7 @@ You can animate with javascript instead of css, just use [toggle events](/compon
   </demovanilla>
 </demo>
 
-##Keyboard
+## Keyboard
 
 Use `keyboard: { selector: 'object' }` or `keyboard: { selector : QuerySelector }` to enable keyboard navigation on focus.
 
@@ -46,7 +46,7 @@ Use `keyboard: { selector: 'object' }` or `keyboard: { selector : QuerySelector 
   </demovanilla>
 </demo>
 
-##Aria
+## Aria
 
 Use `aria: false` to disable aria generation, or granularly see @TODO.
 

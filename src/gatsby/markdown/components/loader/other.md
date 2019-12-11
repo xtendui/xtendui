@@ -6,7 +6,7 @@ title: "Other"
 date: "2000-10-01"
 ---
 
-##Javascript
+## Javascript
 
 Example loader spinner show and hide **with javascript**.
 

@@ -7,7 +7,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 categories: ["100-Test"]
 ---
 
-##Markdown
+## Markdown
 
 <div class="table--scroll">
 
@@ -51,7 +51,7 @@ Sed gravida massa in commodo eleifend. Curabitur ac pellentesque nisl. Nunc ut p
   <a href="#" class="btn btn--default">
     <!-- content -->
   </a>
-  
+
   <button type="button" class="btn btn--default">
     <!-- content -->
   </button>
@@ -81,7 +81,7 @@ let self = new Xt.Scroll(document.documentElement, {
 });
 ```
 
-##Tables
+## Tables
 
 <div class="table--scroll">
 
@@ -94,7 +94,7 @@ let self = new Xt.Scroll(document.documentElement, {
 
 </div>
 
-##Demo
+## Demo
 
 <demo>
   <div class="gatsby_demo-inline">
@@ -106,7 +106,7 @@ let self = new Xt.Scroll(document.documentElement, {
   </div>
 </demo>
 
-###Inline
+### Inline
 
 <demo>
   <demovanilla src="vanilla/components/test/vanilla" name="test vanilla">
@@ -121,7 +121,7 @@ let self = new Xt.Scroll(document.documentElement, {
   </demoreact>
 </demo>
 
-###Iframe
+### Iframe
 
 <demo>
   <div class="gatsby_demo_item" data-iframe="iframe/components/test/vanilla-iframe" data-name="test vanilla frame">
@@ -136,21 +136,21 @@ let self = new Xt.Scroll(document.documentElement, {
   </div>
 </demo>
 
-##Card
+## Card
 
 <demo>
   <demovanilla src="vanilla/components/test/test-card-content">
   </demovanilla>
 </demo>
 
-##Overlay
+## Overlay
 
 <demo>
   <demovanilla src="vanilla/components/test/test-overlay-content">
   </demovanilla>
 </demo>
 
-###Slider
+### Slider
 
 <demo>
   <demovanilla src="vanilla/components/test/test-slider-content">

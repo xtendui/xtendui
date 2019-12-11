@@ -7,7 +7,7 @@ description: "Sticky elements with complex interactions."
 categories: ["400-Extensions"]
 ---
 
-##Setup
+## Setup
 
 To use this component import the **less** and **js** files accordingly:
 
@@ -29,7 +29,7 @@ Or just import **extensions**:
 import 'xtend-library/src/xtend-extensions.js'
 ```
 
-##Usage
+## Usage
 
 Use this markup to create a **sticky**.
 

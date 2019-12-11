@@ -6,7 +6,7 @@ title: "API"
 date: "2000-01-01"
 ---
 
-##Initialization
+## Initialization
 
 Initialize automatically within markup with `[data-xt-toggle="{ <options> }"]`.
 
@@ -18,9 +18,9 @@ new Xt.Toggle(document.querySelector('.my-toggle'), {
 });
 ```
 
-##Option
+## Option
 
-###Class
+### Class
 
 You can specify classes to toggle with `class: 'my-class-0 my-class-1'`. Toggled class is by default `.active`.
 
@@ -48,7 +48,7 @@ You can start with toggled elements and targets just by adding **one of the clas
   </demovanilla>
 </demo>
 
-###Min and Max
+### Min and Max
 
 You can specify **min** and **max** concurrent activations. The **min** option is fulfilled on initialization, the **max** options deactivates the first activated when max is reached.
 
@@ -66,7 +66,7 @@ You can specify **min** and **max** concurrent activations. The **min** option i
   </demovanilla>
 </demo>
 
-###Event
+### Event
 
 You can specify **on** and **off** events for the toggle. Fore example `on: 'mouseenter'` `off: 'mouseleave'`. Default is `on: 'click'`.
 
@@ -85,7 +85,7 @@ You can specify **on** and **off** events for the toggle. Fore example `on: 'mou
   </demovanilla>
 </demo>
 
-###Jump
+### Jump
 
 Use `jump: true` to enable clicking on a **target** to jump to them.
 
@@ -102,7 +102,7 @@ Use `jump: true` to enable clicking on a **target** to jump to them.
   </demovanilla>
 </demo>
 
-###Navigation
+### Navigation
 
 You can add navigation with `navigation: QuerySelector`, set the amount to add (`+1`) or remove (`-1`) to the current activation index with `[data-xt-nav="value"]`.
 
@@ -119,7 +119,7 @@ You can add navigation with `navigation: QuerySelector`, set the amount to add (
   </demovanilla>
 </demo>
 
-###Loop
+### Loop
 
 Use `loop: false` to disable looping on activation.
 
@@ -131,7 +131,7 @@ Use `loop: false` to disable looping on activation.
 
 </div>
 
-###Timing
+### Timing
 
 Activation/deactivation automatically waits for the <strong>duration</strong> of animations and transitions on <code>.active</code> and <code>.out</code>.
 
@@ -160,7 +160,7 @@ You can use a function for <code>delayOn</code> and <code>delayOff</code> for ex
   </demovanilla>
 </demo>
 
-###Auto
+### Auto
 
 <div class="table--scroll">
 
@@ -195,7 +195,7 @@ You can use a function for <code>delayOn</code> and <code>delayOff</code> for ex
   </demovanilla>
 </demo>
 
-###Other
+### Other
 
 <div class="table--scroll">
 
@@ -214,6 +214,6 @@ You can use a function for <code>delayOn</code> and <code>delayOff</code> for ex
 
 </div>
 
-##Events
+## Events
 
 @TODO tables events

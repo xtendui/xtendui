@@ -5,7 +5,7 @@ parent: "Utils"
 title: "Propagate Interaction"
 ---
 
-##Usage
+## Usage
 <!--
 ```jsx
 import 'xtend-library/src/extensions/utils/propagate-interaction.js'

@@ -6,7 +6,7 @@ title: "Other"
 date: "2000-10-01"
 ---
 
-##Full
+## Full
 
 Use `.full` to have full width fluid container.
 

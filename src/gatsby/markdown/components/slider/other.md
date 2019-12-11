@@ -6,7 +6,7 @@ title: "Other"
 date: "2000-10-01"
 ---
 
-##No overflow
+## No overflow
 
 Slider automatically disable when not overflowing or by adding manually `.slider.slider--nooverflow`.
 
@@ -15,7 +15,7 @@ Slider automatically disable when not overflowing or by adding manually `.slider
   </demovanilla>
 </demo>
 
-##Expand
+## Expand
 
 To disable and expand a slider use `.slider.slider--expand` also within media queries.
 
@@ -24,7 +24,7 @@ To disable and expand a slider use `.slider.slider--expand` also within media qu
   </demovanilla>
 </demo>
 
-##Disable
+## Disable
 
 To disable slider use `.slider.slider--disable` also within media queries.
 
@@ -33,7 +33,7 @@ To disable slider use `.slider.slider--disable` also within media queries.
   </demovanilla>
 </demo>
 
-##@TODO
+## @TODO
 
 Use events `'start.xt.auto'` `'stop.xt.auto'` `'pause.xt.auto'`.
 

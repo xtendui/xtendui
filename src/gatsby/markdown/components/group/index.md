@@ -7,7 +7,7 @@ description: "Css component to group up buttons and form inputs."
 categories: ["100-Core"]
 ---
 
-##Setup
+## Setup
 
 To use this component import the **less** files accordingly:
 
@@ -21,23 +21,23 @@ Or just import **core**:
 @import '~xtend-library/src/xtend-core.less';
 ```
 
-##Usage
+## Usage
 
-###Button
+### Button
 
 Use this markup to create a **button group as line**.
 
 <script type="text/plain" class="language-markup">
   <div class="group">
-  
+
     <button type="button" class="btn btn--default">
       <!-- content -->
     </button>
-    
+
     <button type="button" class="btn btn--default">
       <!-- content -->
     </button>
-    
+
   </div>
 </script>
 
@@ -50,7 +50,7 @@ Use this markup to create a button group as stack.
 
 <script type="text/plain" class="language-markup">
   <div class="group">
-  
+
     <div class="group-inner">
       <button type="button" class="btn btn--default">
         <!-- content -->
@@ -68,13 +68,13 @@ Use this markup to create a button group as stack.
   </demovanilla>
 </demo>
 
-###Input
+### Input
 
 Use this markup to create a input group as line.
 
 <script type="text/plain" class="language-markup">
   <div class="group">
-  
+
     <div class="group-inner">
       <button type="button" class="btn btn--default">
         <!-- content -->
@@ -95,7 +95,7 @@ Use this markup to create a input group as stack.
 
 <script type="text/plain" class="language-markup">
   <div class="group">
-  
+
     <div class="group-inner">
       <button type="button" class="btn btn--default">
         <!-- content -->
@@ -106,7 +106,7 @@ Use this markup to create a input group as stack.
     </div>
 
     <input type="text" class="form-item">
-    
+
   </div>
 </script>
 

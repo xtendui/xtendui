@@ -7,7 +7,7 @@ description: "Used when you need to display any content over the main page, not 
 categories: ["100-Core"]
 ---
 
-##Setup
+## Setup
 
 To use this component import the **less** and **js** files accordingly:
 
@@ -29,7 +29,7 @@ Or just import **core**:
 import 'xtend-library/src/xtend-core.js'
 ```
 
-##Usage
+## Usage
 
 Use this markup to create an **overlay**.
 

@@ -6,7 +6,7 @@ title: "Option"
 date: "2000-02-01"
 ---
 
-##Space
+## Space
 
 Lists **automatically** add horizontal and vertical spacing to the contents. You can **specify a different one** with this classes/mixins.
 
@@ -54,12 +54,12 @@ Lists **automatically** add horizontal and vertical spacing to the contents. You
   </demovanilla>
 </demo>
 
-##Flex util
+## Flex util
 
 [[noteDefault]]
 | When using **flex util classes** with **breakpoints** you need to set the class breakpoint generation with `@generate-flex`.
 
-###Direction
+### Direction
 
 Set children's direction inside the flexbox.
 
@@ -85,7 +85,7 @@ Set children's direction inside the flexbox.
   </demovanilla>
 </demo>
 
-###Wrap
+### Wrap
 
 Set children's wrapping inside the flexbox.
 
@@ -109,7 +109,7 @@ Set children's wrapping inside the flexbox.
   </demovanilla>
 </demo>
 
-###Justify content
+### Justify content
 
 Set children's horizontal alignment inside the flexbox.
 
@@ -139,7 +139,7 @@ Set children's horizontal alignment inside the flexbox.
   </demovanilla>
 </demo>
 
-###Align items
+### Align items
 
 Set children's vertical alignment inside the flexbox.
 
@@ -167,7 +167,7 @@ Set children's vertical alignment inside the flexbox.
   </demovanilla>
 </demo>
 
-###Align content
+### Align content
 
 Set children's vertical alignment inside the flexbox.
 
@@ -197,7 +197,7 @@ Set children's vertical alignment inside the flexbox.
   </demovanilla>
 </demo>
 
-###Align self
+### Align self
 
 Set item's vertical alignment inside the flexbox.
 If set to **auto** computes to the parent's `align-items` value.
@@ -228,7 +228,7 @@ If set to **auto** computes to the parent's `align-items` value.
   </demovanilla>
 </demo>
 
-###Order
+### Order
 
 Set item's order inside the flexbox.
 
@@ -250,4 +250,4 @@ Set item's order inside the flexbox.
   <demovanilla src="vanilla/components/list/order">
   </demovanilla>
 </demo>
-  
+

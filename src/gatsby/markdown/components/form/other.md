@@ -5,7 +5,7 @@ parent: "Form"
 title: "Other"
 ---
 
-##Legend
+## Legend
 
 <div class="table--scroll">
 
@@ -20,7 +20,7 @@ title: "Other"
   </demovanilla>
 </demo>
 
-##Fieldset
+## Fieldset
 
 <div class="table--scroll">
 
@@ -35,7 +35,7 @@ title: "Other"
   </demovanilla>
 </demo>
 
-##Note
+## Note
 
 Form note uses the [note component](/components/note).
 

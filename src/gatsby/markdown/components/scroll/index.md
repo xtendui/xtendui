@@ -7,7 +7,7 @@ description: "Content animation when you scroll the page, fade in elements, para
 categories: ["400-Extensions"]
 ---
 
-##Setup
+## Setup
 
 To use this component import the **less** and **js** files accordingly:
 
@@ -29,7 +29,7 @@ Or just import **extensions**:
 import 'xtend-library/src/xtend-extensions.js'
 ```
 
-##Usage
+## Usage
 
 @TODO
 

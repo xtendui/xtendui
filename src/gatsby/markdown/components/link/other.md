@@ -6,7 +6,7 @@ title: "Other"
 date: "2000-10-01"
 ---
 
-##Underline
+## Underline
 
 Links with the tag `a` are styled with link underline styles. To have a `a` tag without underline (ex: buttons) use `.link-none()`.
 
@@ -24,7 +24,7 @@ Links with the tag `a` are styled with link underline styles. To have a `a` tag 
   </demovanilla>
 </demo>
 
-##Inverse
+## Inverse
 
 Links under `.text-inverse` are styled accordingly.
 

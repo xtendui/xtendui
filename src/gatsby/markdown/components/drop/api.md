@@ -9,7 +9,7 @@ date: "2000-01-01"
 [[noteDefault]]
 | Drop uses toggle for logic, refer to [toggle's API](/components/toggle/api) for all **API**.
 
-##Initialization
+## Initialization
 
 Initialize automatically within markup with `[data-xt-drop="{ <options> }"]`.
 
@@ -21,9 +21,9 @@ new Xt.Drop(document.querySelector('.my-drop'), {
 });
 ```
 
-##Option
+## Option
 
-###Class
+### Class
 
 You can start with toggled elements and targets just by adding **one of the classes** to the **elements** or **targets**.
 
@@ -37,7 +37,7 @@ It's recommended to use `active-drop` on drops otherwise the overlay flashes vis
 
 </div>
 
-###Event
+### Event
 
 You can specify **on** and **off** events for the drop. Fore example `on: 'mouseenter'` `off: 'mouseleave'`. Default is `on: 'click'`.
 
@@ -55,6 +55,6 @@ You can specify **on** and **off** events for the drop. Fore example `on: 'mouse
   </demovanilla>
 </demo>
 
-##Events
+## Events
 
 @TODO tables events

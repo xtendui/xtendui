@@ -7,7 +7,7 @@ description: "Simple and extensible button styles."
 categories: ["100-Core"]
 ---
 
-##Setup
+## Setup
 
 To use this component import the **less** files accordingly:
 
@@ -21,7 +21,7 @@ Or just import **core**:
 @import '~xtend-library/src/xtend-core.less';
 ```
 
-##Usage
+## Usage
 
 Use this markup to create a **button**.
 
@@ -29,7 +29,7 @@ Use this markup to create a **button**.
   <a href="#" class="btn btn--default">
     <!-- content -->
   </a>
-  
+
   <button type="button" class="btn btn--default">
     <!-- content -->
   </button>

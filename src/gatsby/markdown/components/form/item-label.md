@@ -6,7 +6,7 @@ title: "Item and Label"
 date: "2000-04-01"
 ---
 
-##Usage
+## Usage
 
 Use this markup to create a **form label** and **form item**.
 
@@ -31,11 +31,11 @@ In css you can use `.form-labels({});` and `.form-items({});` to style all `.for
 [[noteDefault]]
 | Form label and item must be inside [form group](/components/form/group) to have default styles.
 
-##Size
+## Size
 
 Size is done with **em** so it's relative to the container element. To set `.form-item` and `.form-label` size use [form group](/components/form/group#size).
 
-##Variant
+## Variant
 
 Classes for assigning variant (e.g.: border / background / font colors).
 

@@ -6,7 +6,7 @@ title: "Other"
 date: "2000-10-01"
 ---
 
-##Direction
+## Direction
 
 Animate with inverse `.inverse` or `self.detail.inverse`.
 
@@ -15,7 +15,7 @@ Animate with inverse `.inverse` or `self.detail.inverse`.
   </div>
 </demo>
 
-##@TODO
+## @TODO
 
 Use events `'change.xt.scroll'` inside you can use the values of `self.detail.ratio` `self.detail.ratioInverse` `self.detail.ratioDouble`.
 

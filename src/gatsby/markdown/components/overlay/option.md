@@ -9,7 +9,7 @@ date: "2000-02-01"
 [[noteDefault]]
 | Overlay uses card to style it's content, refer to [card's option](/components/card/option) for all **option**.
 
-##Preset
+## Preset
 
 Overlay's card preset is `.card--overlay`. This preset gives overlay's card default variant and size
 
@@ -27,7 +27,7 @@ Overlay's card preset is `.card--overlay`. This preset gives overlay's card defa
   </demovanilla>
 </demo>
 
-##Variant
+## Variant
 
 You can extend the `.card--overlay` preset with other's card variants. Use this classes for assigning variant (e.g.: border / background / font colors).
 
@@ -45,7 +45,7 @@ You can extend the `.card--overlay` preset with other's card variants. Use this 
   </demovanilla>
 </demo>
 
-##Size
+## Size
 
 You can extend the `.card--overlay` preset with other's card sizes. Use this classes for assigning size (e.g.: padding or font size).
 
@@ -63,7 +63,7 @@ You can extend the `.card--overlay` preset with other's card sizes. Use this cla
   </demovanilla>
 </demo>
 
-##Overlay Size
+## Overlay Size
 
 Classes for assigning overlay **max-width**.
 

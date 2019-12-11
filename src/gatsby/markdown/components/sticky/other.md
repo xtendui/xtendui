@@ -6,7 +6,7 @@ title: "Other"
 date: "2000-10-01"
 ---
 
-##Show and Hide
+## Show and Hide
 
 To show or hide content when sticky activates use `.show-sticky` or `.hide-sticky`.
 
@@ -19,7 +19,7 @@ To show or hide content when sticky activates use `.show-sticky` or `.hide-stick
   </div>
 </demo>
 
-###Disable
+### Disable
 
 To disable sticky use `.sticky--disable` useful within media queries.
 

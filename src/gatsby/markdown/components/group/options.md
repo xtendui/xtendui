@@ -9,7 +9,7 @@ date: "2000-02-01"
 [[noteDefault]]
 | Group uses list to style it's content, refer to [list's options](/components/list/option) for all **option**.
 
-##Variant
+## Variant
 
 Classes for assigning variant (e.g.: border / background / font colors).
 
@@ -32,7 +32,7 @@ Classes for assigning variant (e.g.: border / background / font colors).
   </demovanilla>
 </demo>
 
-##List
+## List
 
 Space group elements with list's options.
 

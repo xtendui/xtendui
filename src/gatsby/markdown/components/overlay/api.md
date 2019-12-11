@@ -9,7 +9,7 @@ date: "2000-01-01"
 [[noteDefault]]
 | Overlay uses toggle for logic, refer to [toggle's API](/components/toggle/api) for all **API**.
 
-##Initialization
+## Initialization
 
 Initialize automatically within markup with `[data-xt-overlay="{ <options> }"]`.
 
@@ -21,9 +21,9 @@ new Xt.Overlay(document.querySelector('.my-overlay'), {
 });
 ```
 
-##Option
+## Option
 
-###Class
+### Class
 
 You can start with toggled elements and targets just by adding **one of the classes** to the **elements** or **targets**.
 
@@ -37,6 +37,6 @@ It's recommended to use `active-overlay` on overlay otherwise the overlay flashe
 
 </div>
 
-##Events
+## Events
 
 @TODO tables events

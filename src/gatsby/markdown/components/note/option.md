@@ -6,7 +6,7 @@ title: "Option"
 date: "2000-02-01"
 ---
 
-##Variant
+## Variant
 
 Classes for assigning variant (e.g.: border / background / font colors).
 
@@ -24,7 +24,7 @@ Classes for assigning variant (e.g.: border / background / font colors).
   </demovanilla>
 </demo>
 
-##Size
+## Size
 
 Classes for assigning size (e.g.: padding or font size).
 

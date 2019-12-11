@@ -7,7 +7,7 @@ description: "Toggle is the main js component that toggle classes, it's inherite
 categories: ["100-Core"]
 ---
 
-##Setup
+## Setup
 
 To use this component import the **js** files accordingly:
 
@@ -21,7 +21,7 @@ Or just import **core**:
 import 'xtend-library/src/xtend-core.js'
 ```
 
-##Usage
+## Usage
 
 Use this markup to create a **toggle**.
 

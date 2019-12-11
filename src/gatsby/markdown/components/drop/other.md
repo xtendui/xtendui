@@ -6,7 +6,7 @@ title: "Other"
 date: "2000-10-01"
 ---
 
-##Link
+## Link
 
 You can have links that triggers after toggle. Remember to use `autoDisable: false`.
 
@@ -19,7 +19,7 @@ If the toggle is on <code>"on": "mouseenter"</code> or <code>"on": "mousehover"<
   </demovanilla>
 </demo>
 
-##Static
+## Static
 
 <div class="table--scroll">
 
@@ -34,7 +34,7 @@ If the toggle is on <code>"on": "mouseenter"</code> or <code>"on": "mousehover"<
   </demovanilla>
 </demo>
 
-##Backdrop
+## Backdrop
 
 <div class="table--scroll">
 
@@ -49,7 +49,7 @@ If the toggle is on <code>"on": "mouseenter"</code> or <code>"on": "mousehover"<
   </demovanilla>
 </demo>
 
-##Disable
+## Disable
 
 <div class="table--scroll">
 
@@ -64,7 +64,7 @@ If the toggle is on <code>"on": "mouseenter"</code> or <code>"on": "mousehover"<
   </demovanilla>
 </demo>
 
-##Nested
+## Nested
 
 Test with nested drops.
 

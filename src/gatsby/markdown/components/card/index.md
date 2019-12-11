@@ -7,7 +7,7 @@ description: "Generic component to display content in a box."
 categories: ["100-Core"]
 ---
 
-##Setup
+## Setup
 
 To use this component import the **less** files accordingly:
 
@@ -21,7 +21,7 @@ Or just import **core**:
 @import '~xtend-library/src/xtend-core.less';
 ```
 
-##Usage
+## Usage
 
 Use this markup to create a **card**.
 
@@ -34,7 +34,7 @@ Use this markup to create a **card**.
         <div class="card-asset">
           <!-- content -->
         </div>
-  
+
         <div class="card-block card-item">
           <!-- content -->
         </div>

@@ -6,7 +6,7 @@ title: "Option"
 date: "2000-02-01"
 ---
 
-##Spinner
+## Spinner
 
 <div class="table--scroll">
 
@@ -21,9 +21,9 @@ date: "2000-02-01"
   </demovanilla>
 </demo>
 
-##Filler
+## Filler
 
-###Direction
+### Direction
 
 <div class="table--scroll">
 
@@ -41,7 +41,7 @@ date: "2000-02-01"
   </demovanilla>
 </demo>
 
-###Size
+### Size
 
 Loader size with `.loader--x`.
 
@@ -83,7 +83,7 @@ Loader size with `.loader--y`.
   </demovanilla>
 </demo>
 
-##Mouse
+## Mouse
 
 Loader that follow mouse with `.loader--mouse` and javascript.
 
@@ -102,7 +102,7 @@ Loader that follow mouse with `.loader--mouse` and javascript.
   </demovanilla>
 </demo>
 
-##Background
+## Background
 
 Use `.loader--background` to add the background.
 

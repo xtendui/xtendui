@@ -6,9 +6,9 @@ title: "Check and Radio"
 date: "2000-05-01"
 ---
 
-##Usage
+## Usage
 
-###Styled
+### Styled
 
 Use this markup to create a **styled** **checkbox** or **radio**.
 
@@ -42,7 +42,7 @@ Use this markup to create a **styled** **checkbox** or **radio**.
   </demovanilla>
 </demo>
 
-###Fake
+### Fake
 
 Use this markup to create a **fake** **styled** **checkbox** or **radio**.
 
@@ -78,7 +78,7 @@ Use this markup to create a **fake** **styled** **checkbox** or **radio**.
   </demovanilla>
 </demo>
 
-###Unstyled
+### Unstyled
 
 Use this markup to create a **unstyled** **checkbox** or **radio**.
 

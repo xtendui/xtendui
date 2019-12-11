@@ -6,7 +6,7 @@ title: "Option"
 date: "2000-02-01"
 ---
 
-##Size
+## Size
 
 You can set **column's width** specifying a number between 1 and 12, for example `.col-6` will take 50% width.
 
@@ -30,7 +30,7 @@ Use `.col-auto` to fit the column inside the available width.
   </demovanilla>
 </demo>
 
-###Custom
+### Custom
 
 Use `.col-custom` to set column width to a custom value.
 

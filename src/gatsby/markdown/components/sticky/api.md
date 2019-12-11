@@ -9,7 +9,7 @@ date: "2000-01-01"
 [[noteDefault]]
 | Sticky uses toggle for logic, refer to [toggle's API](/components/toggle/api) for all **API**.
 
-##Initialization
+## Initialization
 
 Initialize automatically within markup with `[data-xt-sticky="{ <options> }"]`.
 
@@ -21,7 +21,7 @@ new Xt.Sticky(document.querySelector('.my-sticky'), {
 });
 ```
 
-###Mode
+### Mode
 
 <div class="table--scroll">
 
@@ -40,7 +40,7 @@ new Xt.Sticky(document.querySelector('.my-sticky'), {
   </div>
 </demo>
 
-###Limit
+### Limit
 
 The default **limit** for `limit: { top: Element }` is the element's own position, for `limit: { bottom: Element }` is Infinity.
 
@@ -58,7 +58,7 @@ The default **limit** for `limit: { top: Element }` is the element's own positio
   </div>
 </demo>
 
-###Position
+### Position
 
 The default **position** is `position: 'top'` you can also use `position: 'bottom'`.
 
@@ -74,7 +74,7 @@ The default **position** is `position: 'top'` you can also use `position: 'botto
   <div class="gatsby_demo_item" data-iframe="iframe/components/sticky/position"></div>
 </demo>
 
-###Hide
+### Hide
 
 To hide the sticky when scrolling down or up use `hide: 'down'` or `hide: 'up'`. Here's a complex example with hide behaviour.
 
@@ -91,7 +91,7 @@ To hide the sticky when scrolling down or up use `hide: 'down'` or `hide: 'up'`.
   </div>
 </demo>
 
-###Contain
+### Contain
 
 Use the `contain: {}` option to stack consecutive sticky elements. with `contain: { top: Element }` you stack the sticky to a previous element, with `contain: { bottom: Element }` you stack the sticky to a next element. The two solutions brings **different stacking effects**.
 
@@ -111,6 +111,6 @@ Use the `contain: {}` option to stack consecutive sticky elements. with `contain
   </div>
 </demo>
 
-##Events
+## Events
 
 @TODO tables events

@@ -7,7 +7,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 categories: ["400-Extensions"]
 ---
 
-##Setup
+## Setup
 
 To use this component import the **less** and **js** files accordingly:
 
@@ -21,7 +21,7 @@ Or just import **extensions**:
 @import '~xtend-library/src/xtend-extensions.less';
 ```
 
-##Usage
+## Usage
 
 Use this markup to create a **spinner loader**.
 

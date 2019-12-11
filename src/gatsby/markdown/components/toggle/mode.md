@@ -6,7 +6,7 @@ title: "Mode"
 date: "2000-01-01"
 ---
 
-##Self
+## Self
 
 You can make an html element toggle itself.
 
@@ -15,7 +15,7 @@ You can make an html element toggle itself.
   </demovanilla>
 </demo>
 
-##Multiple
+## Multiple
 
 You can create a toggle with **mutiple** mode by assigning the toggle to a container element, elements and targets must be inside the container.
 
@@ -40,7 +40,7 @@ Use `:scope` when using descendant selector on root (e.g. `:scope > *`).
   </demovanilla>
 </demo>
 
-##Unique
+## Unique
 
 The **unique** mode is useful when triggering **targets outside the scope** of the toggle.
 

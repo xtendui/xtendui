@@ -9,7 +9,7 @@ date: "2000-01-01"
 [[noteDefault]]
 | Slider uses toggle for logic, refer to [toggle's API](/components/toggle/api) for all **API**.
 
-##Initialization
+## Initialization
 
 Initialize automatically within markup with `[data-xt-slider="{ <options> }"]`.
 
@@ -21,9 +21,9 @@ new Xt.Slider(document.querySelector('.my-slider'), {
 });
 ```
 
-##Option
+## Option
 
-###Align
+### Align
 
 <div class="table--scroll">
 
@@ -42,7 +42,7 @@ new Xt.Slider(document.querySelector('.my-slider'), {
   </demovanilla>
 </demo>
 
-###Contain
+### Contain
 
 <div class="table--scroll">
 
@@ -61,7 +61,7 @@ new Xt.Slider(document.querySelector('.my-slider'), {
   </demovanilla>
 </demo>
 
-###Group
+### Group
 
 With `groupMq: { MediaQuery: Number }` you set a decimal number from 0 to 1 to group the slides with a factor of the **drag.dragger** width available.
 
@@ -89,7 +89,7 @@ Set to `groupMq: false` to disable automatic grouping of slides.
   </demovanilla>
 </demo>
 
-###Drag
+### Drag
 
 <div class="table--scroll">
 
@@ -114,7 +114,7 @@ Use `drag: false` to disable drag. You need to use the slider in **toggle mode**
   </demovanilla>
 </demo>
 
-####Friction
+### Friction
 
 You can set friction with `drag: { friction: Function }`, for example `function(velocity) {return Math.pow(velocity, 0.9)}`.
 
@@ -135,7 +135,7 @@ You can disable friction with `drag: { friction: false }`.
   </demovanilla>
 </demo>
 
-####Overflow
+### Overflow
 
 You can set overflow with `drag: { overflow: Function }`, for example `function(overflow) {return Math.pow(overflow, 0.73)}`.
 
@@ -147,7 +147,7 @@ You can set overflow with `drag: { overflow: Function }`, for example `function(
 
 </div>
 
-####Wrap
+### Wrap
 
 You can wrap the slides with `drag: { wrap: true }`.
 
@@ -185,7 +185,7 @@ With `drag: { wrap: true, overflow: false }` you don't have the drag overflow on
   </demovanilla>
 </demo>
 
-###Pagination
+### Pagination
 
 You can add pagination with `[data-xt-pag].xt-ignore` it gets cloned inside the closest `.slider-pagination`.
 
@@ -219,7 +219,7 @@ Inside it you can use this strings that gets populated with variables:
   </demovanilla>
 </demo>
 
-###Navigation
+### Navigation
 
 You can add navigation with `[data-xt-nav="+-Number"].xt-ignore` where `+-Number` is the amount to change the slider when clicked.
 
@@ -245,7 +245,7 @@ You can add navigation with `[data-xt-nav="+-Number"].xt-ignore` where `+-Number
   </demovanilla>
 </demo>
 
-###Wheel
+### Wheel
 
 Use `wheel: { selector: 'object' }` or `wheel: { selector: QuerySelector }` to enable mousewheel navigation.
 
@@ -254,7 +254,7 @@ Use `wheel: { selector: 'object' }` or `wheel: { selector: QuerySelector }` to e
   </demovanilla>
 </demo>
 
-###Auto
+### Auto
 
 <div class="table--scroll">
 
@@ -273,7 +273,7 @@ Use `wheel: { selector: 'object' }` or `wheel: { selector: QuerySelector }` to e
   </demovanilla>
 </demo>
 
-###Other
+### Other
 
 <div class="table--scroll">
 
@@ -288,6 +288,6 @@ Use `wheel: { selector: 'object' }` or `wheel: { selector: QuerySelector }` to e
   </demovanilla>
 </demo>
 
-##Events
+## Events
 
 @TODO tables events

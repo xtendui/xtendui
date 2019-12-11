@@ -6,6 +6,6 @@ title: "Other"
 date: "2000-10-01"
 ---
 
-##Group
+## Group
 
 Refer to [Group's button](/components/group#usage-button).

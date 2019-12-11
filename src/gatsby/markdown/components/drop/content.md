@@ -6,7 +6,7 @@ title: "Content"
 date: "2000-04-01"
 ---
 
-##Card
+## Card
 
 [[noteDefault]]
 | Drop uses card to style it's content, refer to [card's content](/components/card/content) for all **content**.
@@ -16,7 +16,7 @@ date: "2000-04-01"
   </demovanilla>
 </demo>
 
-##List
+## List
 
 [[noteDefault]]
 | Drop uses list to style it's content, refer to [list's content](/components/list/content) for all **content**.
@@ -28,7 +28,7 @@ Use `li.xt-custom` to override styles applied by `.list.list--drop`.
   </demovanilla>
 </demo>
 
-##Overflow
+## Overflow
 
 You can set vertical overflow using `.drop--overflow-y` in `.drop`.
 

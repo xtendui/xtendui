@@ -7,7 +7,7 @@ description: "Responsive columns classes/mixins, also support custom size."
 categories: ["100-Core"]
 ---
 
-##Usage
+## Usage
 
 Use this markup to create a **column**.
 
