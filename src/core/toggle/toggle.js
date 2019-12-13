@@ -1251,9 +1251,10 @@ class Toggle {
       const targets = self.getTargets(element)
       const elementsInner = Xt.queryAll(element, options.elementsInner)
       const targetsInner = Xt.queryAll(targets, options.targetsInner)
+      // @FIX sometimes blur is undefined
       if (element.blur) {
-        // @FIX sometimes blur is undefined
-        element.blur() // @FIX :focus styles
+        // @FIX :focus styles
+        element.blur()
       }
       // [disabled]
       if (options.autoDisable && options.min === options.max) {
