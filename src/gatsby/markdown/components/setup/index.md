@@ -7,12 +7,13 @@ categories: ["000-Intro"]
 date: "2000-01-01"
 ---
 
+# WIP pre 1.0 version: api changing fast
+
 ## Installation
 
-You can install with one of the following:
-* download: [latest release](https://github.com/minimit/xtend-library/releases/latest)
-* [npm](https://www.npmjs.com/): `npm install --save xtend-library`
-* clone: `git clone https://github.com/minimit/xtend-library.git`
+```Shell
+npm install xtend-library --save
+```
 
 ## Usage
 
