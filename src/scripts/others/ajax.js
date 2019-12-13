@@ -70,7 +70,7 @@ class Ajax extends Core {
     self.groupUrl = [];
     for (let element of self.elements) {
       // populate
-      let url = element.getAttribute('href').split('#')[0];
+      let url = element.getAttribute('href');
       if (!self.groupUrl[url]) {
         self.groupUrl[url] = [];
       }
@@ -93,8 +93,8 @@ class Ajax extends Core {
     if (elements.length) {
       let found = false;
       for (let element of self.elements) {
-        let loc = location.pathname + location.search;
-        let url = element.pathname + element.search;
+        let loc = location.pathname + location.search + location.hash;
+        let url = element.pathname + element.search + element.hash;
         if (url !== '') {
           if (loc === url) {
             found = true;
@@ -119,7 +119,7 @@ class Ajax extends Core {
       url = history.state.url;
     } else {
       // detect from url location (absolute url without domain name)
-      url = location.pathname + location.search;
+      url = location.pathname + location.search + location.hash;
     }
     // set pushstate
     if (!self.locationFrom) {
@@ -198,8 +198,11 @@ class Ajax extends Core {
     let options = self.options;
     // url
     if (element) {
-      url = element.getAttribute('href').split('#')[0];
+      url = element.getAttribute('href');
     }
+    let arr = url.split('#');
+    url = arr[0];
+    self.hash = arr[1];
     // location
     self.locationFrom = self.locationTo || self.locationFrom; // fix fast change page
     self.locationTo = new URL(url, location);
@@ -320,10 +323,16 @@ class Ajax extends Core {
    * history pushstate
    */
   pushState(url, title) {
+    let self = this;
     // push object state
     if (!history.state || !history.state.url || history.state.url !== url) {
       document.title = title;
       history.pushState({'url': url, 'title': title}, title, url);
+      if (self.hash) {
+        requestAnimationFrame( function () {
+          location.hash = '#' + self.hash;
+        })
+      }
     } else {
       document.title = history.state.title;
     }
