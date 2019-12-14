@@ -14,9 +14,14 @@ class Toggle {
     self.optionsCustom = optionsCustom
     self.componentName = self.constructor.componentName
     self.componentNamespace = self.componentName.replace(/^[^a-z]+|[ ,#_:.-]+/gi, '')
-    Xt.checkDefined(self, function() {
-      self.init()
-    })
+    const old = Xt.get(self.componentName, self.object)
+    if (old) {
+      // @@@@@@@@@@@@@
+      console.log('destroy old', self.object)
+      old.destroy()
+    }
+    Xt.set(self.componentName, self.object, self)
+    self.init()
   }
 
   //
@@ -177,6 +182,8 @@ class Toggle {
     let currents = 0
     self.initial = true
     self.currentIndex = null
+    // [disabled]
+    self.destroyDisabled()
     // component
     self.object.setAttribute('data-xt-name', self.componentName)
     // @FIX set namespace for next frame
@@ -2663,22 +2670,55 @@ class Toggle {
    */
   eventReinitHandler(e) {
     const self = this
-    // reinit
-    if (!self.initial) {
-      Xt.eventDelay(
-        e,
-        self.object,
-        function() {
-          self.initLogic()
-        },
-        self.componentNamespace + 'Reinit'
-      )
+    // @FIX on.xt and off.xt event bubbles
+    if (self.object === e.target) {
+      // reinit
+      if (!self.initial) {
+        Xt.eventDelay(
+          e,
+          self.object,
+          function() {
+            // @@@@@@@@@@@@@
+            /*
+            const old = Xt.get(self.componentName, self.object)
+            console.log(old)
+            if (old) {
+              old.destroy(true)
+            }
+            Xt.set(self.componentName, self.object, self)
+            self.init()
+            */
+            /*
+            self.initLogic()
+            console.log(self.object)
+            //self.eventStatusHandler()
+            self.initStart(true) // THIS OR ERROR ON DEMOS OVERLAY
+            */
+              self.initLogic()
+          },
+          self.componentNamespace + 'Reinit'
+        )
+      }
     }
   }
 
   //
   // destroy
   //
+
+  /**
+   * destroy disabled
+   */
+
+  destroyDisabled() {
+    const self = this
+    const options = self.options
+    if (options.autoDisable) {
+      for (const el of self.elements) {
+        el.removeAttribute('disabled')
+      }
+    }
+  }
 
   /**
    * destroy
@@ -2689,6 +2729,8 @@ class Toggle {
     self.queueStopAll() // @FIX autoClose with appendTo outside ajax
     // stop auto
     self.eventAutoStop()
+    // [disabled]
+    self.destroyDisabled()
     // remove events
     if (self.destroyElements) {
       for (const element of self.destroyElements) {

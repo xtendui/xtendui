@@ -55,7 +55,9 @@ class Layout extends React.Component {
                     <DocFullscreen />
                     <main className="gatsby_site_article_inner" id="toggle--open-full-inner">
                       {page ? <DocHead page={page} /> : null}
-                      <article className="gatsby_site_article_content">{children}</article>
+                      <article className="gatsby_site_article_content">
+                        <div className="gatsby_site_article_content_inner">{children}</div>
+                      </article>
                       {page && page.post.frontmatter.type !== page.post.frontmatter.title ? <DocFoot page={page} /> : null}
                       <Footer site={data} seo={seo} />
                     </main>

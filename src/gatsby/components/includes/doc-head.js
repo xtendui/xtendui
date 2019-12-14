@@ -11,17 +11,19 @@ class DocHead extends React.Component {
       <div>
         <header className="gatsby_site_article_hero">
           <div className="gatsby_site_article_hero_content">
-            <h1>
-              {page.post.frontmatter.parent && page.post.frontmatter.parent !== page.post.frontmatter.title ? (
-                <span>
-                  {page.post.frontmatter.title} <em>{page.post.frontmatter.parent}</em>
-                </span>
-              ) : (
-                <span>{page.post.frontmatter.title}</span>
-              )}
-              {page.post.frontmatter.badge ? <div className="badge badge--default badge--small">{page.post.frontmatter.badge}</div> : null}
-            </h1>
-            {page.post.frontmatter.description ? <p>{page.post.frontmatter.description}</p> : null}
+            <div className="gatsby_site_article_hero_content_inner">
+              <h1>
+                {page.post.frontmatter.parent && page.post.frontmatter.parent !== page.post.frontmatter.title ? (
+                  <span>
+                    {page.post.frontmatter.title} <em>{page.post.frontmatter.parent}</em>
+                  </span>
+                ) : (
+                  <span>{page.post.frontmatter.title}</span>
+                )}
+                {page.post.frontmatter.badge ? <div className="badge badge--default badge--small">{page.post.frontmatter.badge}</div> : null}
+              </h1>
+              {page.post.frontmatter.description ? <p>{page.post.frontmatter.description}</p> : null}
+            </div>
           </div>
           {page.post.frontmatter.parent ? (
             <nav className="gatsby_site_article_hero_links">

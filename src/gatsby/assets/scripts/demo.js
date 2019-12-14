@@ -375,6 +375,7 @@ const makeFullscreen = function(container) {
     Xt.createElement('<div class="gatsby_demo xt-ignore" data-xt-origin="toggle--open-full-content" style="height: ' + container.offsetHeight + 'px"></div>')
   )
   if (!container.dataset.isFullscreenOnly) {
+    // @@@@@@@@@@@@@
     container.classList.add('xt-ignore', 'xt-ignore--once') // @FIX ignore once for mount when moving
   }
   content.append(container)
@@ -385,7 +386,9 @@ const makeFullscreen = function(container) {
       initializeIframe(container, item)
     }
   }
-  container.querySelector('.gatsby_demo_item.active').dispatchEvent(new CustomEvent('on.xt'))
+  Xt.animTimeout(container.closest('#toggle--open-full'), function() {
+    container.querySelector('.gatsby_demo_item.active').dispatchEvent(new CustomEvent('ondone.xt'))
+  })
   // trigger resize
   requestAnimationFrame(function() {
     dispatchEvent(new CustomEvent('resize', { detail: { force: true } }))
@@ -542,10 +545,12 @@ const populateInline = function(item) {
       min: 1,
     })
     // @FIX reinit
-    item.addEventListener('on.xt', function(e) {
+    item.addEventListener('ondone.xt', function(e) {
       // @FIX on.xt and off.xt event bubbles
       if (this === e.target) {
         for (const component of item.querySelectorAll('[data-xt-name]')) {
+          // @@@@@@@@@@@@@
+          console.log(component)
           component.dispatchEvent(new CustomEvent('reinit.xt'))
         }
       }

@@ -63,18 +63,7 @@ class Slider extends Xt.Toggle {
     // @FIX disable slider if not overflowing
     self.object.classList.remove('slider--nooverflow')
     // drag wrap
-    if (self.dragger && options.drag.wrap) {
-      // clear elements
-      for (const el of self.elements.filter(x => x.classList.contains('xt-wrap'))) {
-        el.remove()
-      }
-      self.elements = self.elements.filter(x => !x.classList.contains('xt-wrap'))
-      // clear targets
-      for (const tr of self.targets.filter(x => x.classList.contains('xt-wrap'))) {
-        tr.remove()
-      }
-      self.targets = self.targets.filter(x => !x.classList.contains('xt-wrap'))
-    }
+    self.destroyWraps()
     // width
     let draggerWidth = self.dragger ? self.dragger.offsetWidth : self.object.offsetWidth
     let draggerWidthAvailable = 0
@@ -224,59 +213,53 @@ class Slider extends Xt.Toggle {
       return false
     }
     // generate elements
-    if (options.pagination) {
-      const pags = self.object.querySelectorAll(options.pagination)
-      if (!pags.length) {
-        console.error('Error: Xt.Slider pagination not found for', self.object)
-      }
-      // pags
-      self.pags = self.pags ? self.pags : []
-      for (const [z, pag] of pags.entries()) {
-        // clean
-        if (self.pags[z]) {
-          for (const oldPag of self.pags[z]) {
-            oldPag.remove()
+    const pags = self.object.querySelectorAll(options.pagination)
+    if (!pags.length) {
+      console.error('Error: Xt.Slider pagination not found for', self.object)
+    }
+    // clean pags
+    self.destroyPags()
+    // pags
+    self.pags = self.pags ? self.pags : []
+    for (const [z, pag] of pags.entries()) {
+      // vars
+      const cloned = pag.querySelector('[data-xt-pag]')
+      cloned.classList.add('xt-ignore')
+      const container = cloned.parentNode
+      const arr = self.groupMq
+      // populate
+      self.pags[z] = []
+      for (const [i, group] of arr.entries()) {
+        const item = document.createElement('div') // needed to set innerHTML instead of outerHTML to do html.search also attributes
+        const clone = cloned.cloneNode(true)
+        clone.classList.remove('xt-ignore')
+        clone.classList.add('xt-clone')
+        item.appendChild(clone)
+        let html = item.innerHTML
+        if (html.search(new RegExp('xt-content', 'ig')) !== -1) {
+          let replace = ''
+          for (const slide of group) {
+            replace += slide.querySelector('.slide-pagination-content').innerHTML
           }
+          html = html.replace(new RegExp('xt-content', 'ig'), replace)
         }
-        // vars
-        const cloned = pag.querySelector('[data-xt-pag]')
-        cloned.classList.add('xt-ignore')
-        const container = cloned.parentNode
-        const arr = self.groupMq
-        // populate
-        self.pags[z] = []
-        for (const [i, group] of arr.entries()) {
-          const item = document.createElement('div') // needed to set innerHTML instead of outerHTML to do html.search also attributes
-          const clone = cloned.cloneNode(true)
-          clone.classList.remove('xt-ignore')
-          clone.classList.add('xt-clone')
-          item.appendChild(clone)
-          let html = item.innerHTML
-          if (html.search(new RegExp('xt-content', 'ig')) !== -1) {
-            let replace = ''
-            for (const slide of group) {
-              replace += slide.querySelector('.slide-pagination-content').innerHTML
-            }
-            html = html.replace(new RegExp('xt-content', 'ig'), replace)
-          }
-          if (html.search(new RegExp('xt-num', 'ig')) !== -1) {
-            html = html.replace(new RegExp('xt-num', 'ig'), (i - self.groupMqFirst.length + 1).toString())
-          }
-          if (html.search(new RegExp('xt-tot', 'ig')) !== -1) {
-            html = html.replace(new RegExp('xt-tot', 'ig'), self.groupMqInitial.length.toString())
-          }
-          item.innerHTML = html
-          item.children[0].setAttribute('data-xt-group', group[0].getAttribute('data-xt-group'))
-          container.insertBefore(item.children[0], cloned)
-          item.remove()
-          self.pags[z][i] = container.querySelectorAll('[data-xt-pag].xt-clone')[i]
-          // drag wrap
-          if (self.dragger && options.drag.wrap) {
-            const min = self.groupMqFirst.length
-            const max = self.groupMqFirst.length + self.groupMqInitial.length - 1
-            if (i < min || i > max) {
-              self.pags[z][i].classList.add('xt-clone', 'xt-wrap', 'display-none')
-            }
+        if (html.search(new RegExp('xt-num', 'ig')) !== -1) {
+          html = html.replace(new RegExp('xt-num', 'ig'), (i - self.groupMqFirst.length + 1).toString())
+        }
+        if (html.search(new RegExp('xt-tot', 'ig')) !== -1) {
+          html = html.replace(new RegExp('xt-tot', 'ig'), self.groupMqInitial.length.toString())
+        }
+        item.innerHTML = html
+        item.children[0].setAttribute('data-xt-group', group[0].getAttribute('data-xt-group'))
+        container.insertBefore(item.children[0], cloned)
+        item.remove()
+        self.pags[z][i] = container.querySelectorAll('[data-xt-pag].xt-clone')[i]
+        // drag wrap
+        if (self.dragger && options.drag.wrap) {
+          const min = self.groupMqFirst.length
+          const max = self.groupMqFirst.length + self.groupMqInitial.length - 1
+          if (i < min || i > max) {
+            self.pags[z][i].classList.add('xt-clone', 'xt-wrap', 'display-none')
           }
         }
       }
@@ -439,7 +422,7 @@ class Slider extends Xt.Toggle {
       }
     }
     // resize
-    const resizeHandler = Xt.dataStorage.put(window, 'resize' + '.' + self.namespace, self.eventReinitHandler.bind(self).bind(self))
+    const resizeHandler = Xt.dataStorage.put(window, 'resize' + '.' + self.namespace, self.eventResizeHandler.bind(self).bind(self))
     addEventListener('resize', resizeHandler)
   }
 
@@ -584,6 +567,25 @@ class Slider extends Xt.Toggle {
     const self = this
     // logic
     self.logicDrag(dragger, e)
+  }
+
+  /**
+   * resize
+   * @param {Event} e
+   */
+  eventResizeHandler(e) {
+    const self = this
+    // reinit
+    if (!self.initial) {
+      Xt.eventDelay(
+        e,
+        self.object,
+        function() {
+          self.initLogic()
+        },
+        self.componentNamespace + 'Reinit'
+      )
+    }
   }
 
   //
@@ -982,6 +984,60 @@ class Slider extends Xt.Toggle {
       }
     }
   }
+
+  //
+  // destroy
+  //
+
+  /**
+   * destroy pagination
+   */
+  destroyPags() {
+    const self = this
+    // clean pagination
+    if (self.pags && self.pags.length) {
+      for (const pag of self.pags) {
+        for (const oldPag of pag) {
+          oldPag.remove()
+        }
+      }
+    }
+  }
+
+  /**
+   * destroy wraps
+   */
+  destroyWraps() {
+    const self = this
+    const options = self.options
+    // drag wrap
+    if (self.dragger && options.drag.wrap) {
+      // clear elements
+      for (const el of self.elements.filter(x => x.classList.contains('xt-wrap'))) {
+        el.remove()
+      }
+      self.elements = self.elements.filter(x => !x.classList.contains('xt-wrap'))
+      // clear targets
+      for (const tr of self.targets.filter(x => x.classList.contains('xt-wrap'))) {
+        tr.remove()
+      }
+      self.targets = self.targets.filter(x => !x.classList.contains('xt-wrap'))
+    }
+  }
+
+  /**
+   * destroy
+   */
+  destroy(weak = false) {
+    const self = this
+    console.log(self.object)
+    // clean pagination
+    self.destroyPags()
+    // clean wraps
+    self.destroyWraps()
+    // super
+    super.destroy()
+  }
 }
 
 //
@@ -997,6 +1053,7 @@ Slider.optionsDefault = {
   max: 1,
   instant: true,
   class: 'active active-slider',
+  autoDisable: false,
   loop: true,
   jump: true,
   imageLoadedInit: true,

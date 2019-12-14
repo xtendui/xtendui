@@ -125,7 +125,13 @@ if (typeof window !== 'undefined') {
             if (destroy) {
               Xt.unmount.push({
                 object: el,
-                unmount: destroy,
+                unmount:
+                  destroy &&
+                  function() {
+                    Xt.unmount.filter(function(x) {
+                      return x.object !== el
+                    })
+                  },
               })
             }
           })
