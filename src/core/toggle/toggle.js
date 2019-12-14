@@ -14,14 +14,7 @@ class Toggle {
     self.optionsCustom = optionsCustom
     self.componentName = self.constructor.componentName
     self.componentNamespace = self.componentName.replace(/^[^a-z]+|[ ,#_:.-]+/gi, '')
-    const old = Xt.get(self.componentName, self.object)
-    if (old) {
-      // @@@@@@@@@@@@@
-      console.log('destroy old', self.object)
-      old.destroy()
-    }
-    Xt.set(self.componentName, self.object, self)
-    self.init()
+    Xt.destroyAndInit(self)
   }
 
   //
@@ -898,7 +891,7 @@ class Toggle {
         self.object,
         'xt' + self.componentNamespace + 'imageLoadedInit' + 'Timeout',
         setTimeout(function() {
-          self.initLogic()
+          self.reinit()
         }, Xt.imageLoadedDelay)
       )
     }
@@ -2678,28 +2671,33 @@ class Toggle {
           e,
           self.object,
           function() {
-            // @@@@@@@@@@@@@
-            /*
-            const old = Xt.get(self.componentName, self.object)
-            console.log(old)
-            if (old) {
-              old.destroy(true)
-            }
-            Xt.set(self.componentName, self.object, self)
-            self.init()
-            */
-            /*
-            self.initLogic()
-            console.log(self.object)
-            //self.eventStatusHandler()
-            self.initStart(true) // THIS OR ERROR ON DEMOS OVERLAY
-            */
-              self.initLogic()
+            self.reinit()
           },
           self.componentNamespace + 'Reinit'
         )
       }
     }
+  }
+
+  //
+  // util
+  //
+
+  /**
+   * status handler
+   */
+  reinit() {
+    const self = this
+    self.initLogic()
+  }
+
+  /**
+   * status handler
+   * @param {Boolean} saveCurrents
+   */
+  restart(saveCurrents = false) {
+    const self = this
+    self.initStart(saveCurrents)
   }
 
   //

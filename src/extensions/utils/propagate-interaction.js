@@ -12,9 +12,7 @@ class PropagateInteraction {
     const self = this
     self.object = object
     self.optionsCustom = optionsCustom
-    Xt.checkDefined(self, function() {
-      self.init()
-    })
+    Xt.destroyAndInit(self)
   }
 
   //

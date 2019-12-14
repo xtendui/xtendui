@@ -581,7 +581,7 @@ class Slider extends Xt.Toggle {
         e,
         self.object,
         function() {
-          self.initLogic()
+          self.reinit()
         },
         self.componentNamespace + 'Reinit'
       )

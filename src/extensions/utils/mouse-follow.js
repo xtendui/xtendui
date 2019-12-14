@@ -13,9 +13,7 @@ class MouseFollow {
     self.object = object
     self.container = container
     self.optionsCustom = optionsCustom
-    Xt.checkDefined(self, function() {
-      self.init()
-    })
+    Xt.destroyAndInit(self)
   }
 
   //

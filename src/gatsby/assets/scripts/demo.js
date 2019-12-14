@@ -375,7 +375,6 @@ const makeFullscreen = function(container) {
     Xt.createElement('<div class="gatsby_demo xt-ignore" data-xt-origin="toggle--open-full-content" style="height: ' + container.offsetHeight + 'px"></div>')
   )
   if (!container.dataset.isFullscreenOnly) {
-    // @@@@@@@@@@@@@
     container.classList.add('xt-ignore', 'xt-ignore--once') // @FIX ignore once for mount when moving
   }
   content.append(container)
@@ -549,8 +548,6 @@ const populateInline = function(item) {
       // @FIX on.xt and off.xt event bubbles
       if (this === e.target) {
         for (const component of item.querySelectorAll('[data-xt-name]')) {
-          // @@@@@@@@@@@@@
-          console.log(component)
           component.dispatchEvent(new CustomEvent('reinit.xt'))
         }
       }

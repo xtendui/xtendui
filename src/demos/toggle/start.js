@@ -10,7 +10,7 @@ Xt.mount.push({
       const toggles = document.querySelectorAll('[data-xt-toggle]')
       for (const toggle of toggles) {
         const self = Xt.get('xt-toggle', toggle)
-        self.initStart()
+        self.restart()
       }
     }
 

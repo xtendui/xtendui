@@ -193,19 +193,18 @@ if (typeof window !== 'undefined') {
   }
 
   /**
-   * check defined component
+   * destroy component if defined and set
    * @param {Object} self Component self
    * @param {Function} fnc Component init
    */
-  Xt.checkDefined = function(self, fnc) {
+  Xt.destroyAndInit = function(self) {
     // @FIX multiple initializations
-    const alreadyDefinedInstance = Xt.get(self.componentName, self.object)
-    if (!alreadyDefinedInstance) {
-      Xt.set(self.componentName, self.object, self)
-      fnc()
-    } else {
-      return alreadyDefinedInstance
+    const old = Xt.get(self.componentName, self.object)
+    if (old) {
+      old.destroy()
     }
+    Xt.set(self.componentName, self.object, self)
+    self.init()
   }
 
   //
