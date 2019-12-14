@@ -2663,19 +2663,16 @@ class Toggle {
    */
   eventReinitHandler(e) {
     const self = this
-    // @FIX on.xt and off.xt event bubbles
-    if (self.object === e.target) {
-      // reinit
-      if (!self.initial) {
-        Xt.eventDelay(
-          e,
-          self.object,
-          function() {
-            self.reinit()
-          },
-          self.componentNamespace + 'Reinit'
-        )
-      }
+    // reinit
+    if (!self.initial) {
+      Xt.eventDelay(
+        e,
+        self.object,
+        function() {
+          self.reinit()
+        },
+        self.componentNamespace + 'Reinit'
+      )
     }
   }
 
