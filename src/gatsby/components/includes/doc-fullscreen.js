@@ -6,7 +6,7 @@ class DocFullscreen extends React.Component {
       <>
         <div
           id="toggle--open-full-trigger"
-          data-xt-toggle="{ targets: '#toggle--open-full', closeInside: ':scope > .btn-close', classHtml: 'toggle--open-full--open' }"
+          data-xt-toggle="{ targets: '#toggle--open-full', closeInside: ':scope > .btn-close', classHtml: 'toggle--open-full--open', autoClose: true, scrollbar: true }"
         ></div>
         <div className="toggle-block" id="toggle--open-full">
           <div className="btn btn-close" aria-label="Close"></div>

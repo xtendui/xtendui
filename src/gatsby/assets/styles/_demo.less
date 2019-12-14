@@ -16,7 +16,7 @@ html.gatsby_iframe-full {
 
 html.gatsby_iframe-inside {
   body {
-    .overflow-style(@mode: inner);
+    .overflow-style(@mode: none);
     background: @white !important;
   }
 }
@@ -130,9 +130,6 @@ pre {
       }
     }
   }
-  .btn--prev-demo, .btn--next-demo {
-    display: none;
-  }
   #toggle--open-full & {
     border: 0 !important;
     .btn--prev-demo, .btn--next-demo {
@@ -142,6 +139,11 @@ pre {
       .btn--prev-demo, .btn--next-demo {
         display: none;
       }
+    }
+    .gatsby_demo_item {
+      overflow-x: hidden;
+      overflow-y: scroll;
+      .overflow-style(@mode: none);
     }
     .gatsby_demo_tabs_right {
       > * {
@@ -340,10 +342,6 @@ table {
   &.active {
     .anim-y.active();
     opacity: .5 !important;
-    .gatsby_demo_item.populated {
-      .anim-y.active();
-      animation-delay: @time-small;
-    }
   }
   &.out {
     .anim-y-inverse.out();
@@ -352,7 +350,7 @@ table {
 
 #toggle--open-full-content {
   display: flex;
-  min-height: 100vh;
+  height: 100vh;
   pre {
     max-height: none;
   }

@@ -113,15 +113,15 @@ body {
 
 .overflow-style(@mode: none) {
   -webkit-overflow-scrolling: touch;
-  &::-webkit-scrollbar {
-    height: 8px;
-    width: 8px;
-    background: transparent;
-    @media (hover: none) {
-      display: none;
-    }
-  }
   & when (@mode = none) {
+    &::-webkit-scrollbar {
+      height: 8px;
+      width: 8px;
+      background: @gray-200;
+      @media (hover: none) {
+        display: none;
+      }
+    }
     &::-webkit-scrollbar-thumb {
       background: fade(@gray-800, 30%);
       &:hover {
@@ -130,6 +130,14 @@ body {
     }
   }
   & when (@mode = inner) {
+    &::-webkit-scrollbar {
+      height: 8px;
+      width: 8px;
+      background: transparent;
+      @media (hover: none) {
+        display: none;
+      }
+    }
     &::-webkit-scrollbar-thumb {
       background: fade(@gray-800, 20%);
       &:hover {

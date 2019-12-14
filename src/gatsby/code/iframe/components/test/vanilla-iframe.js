@@ -15,6 +15,10 @@ export const demo = {
 }
 
 demo.htmlSource = `
+<br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/>
 <div class="slider demo--test-iframe">
   <div class="loader loader--spinner loader--mouse loader--js">
     <span class="spinner">

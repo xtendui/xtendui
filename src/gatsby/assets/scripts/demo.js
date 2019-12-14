@@ -119,6 +119,7 @@ const populateBlock = function() {
     const demo = document.querySelector(window.location.hash)
     if (demo) {
       demo.querySelector('.btn--open-full').classList.add('active')
+      document.scrollingElement.scrollTo(0, document.scrollingElement.scrollTop + demo.offsetTop)
     }
   }
 }
