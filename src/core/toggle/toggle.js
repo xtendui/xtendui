@@ -501,9 +501,9 @@ class Toggle {
         jump.addEventListener('click', jumpHandler, true) // @FIX useCapture or it gets the click from elements inside the target
         // jump
         if (!self.disabled) {
-          jump.classList.add('jump')
+          jump.classList.add('xt-jump')
         } else {
-          jump.classList.remove('jump')
+          jump.classList.remove('xt-jump')
         }
       }
     }
@@ -1446,7 +1446,7 @@ class Toggle {
       return
     }
     // check disabled
-    if (el.closest('.jumps--none')) {
+    if (el.closest('.xt-jumps--none')) {
       return
     }
     // jump

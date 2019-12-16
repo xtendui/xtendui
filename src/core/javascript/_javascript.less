@@ -12,23 +12,29 @@
 }
 
 /**
- * jump
+ * xt-
  */
 
-.jump {
+.xt-pointer-events--none {
+  pointer-events: none;
+}
+
+.xt-links--none {
+  a&, a {
+    pointer-events: none;
+  }
+}
+
+.xt-jump {
   &:not(.active) {
     cursor: pointer;
   }
-  &.jumps--none, .jumps--none & {
+  &.xt-jumps--none, .xt-jumps--none & {
     cursor: inherit;
   }
 }
 
-/**
- * grab
- */
-
-.grab {
+.xt-grab {
   .user-select--none();
   cursor: grab;
   a, img {
@@ -42,10 +48,6 @@
     user-select: none;
   }
 }
-
-/**
- * xt-
- */
 
 .xt-disable {
   &:after {

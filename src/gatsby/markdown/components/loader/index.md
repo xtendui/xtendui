@@ -9,7 +9,7 @@ categories: ["400-Extensions"]
 
 ## Setup
 
-To use this component import the **less** and **js** files accordingly:
+To use this component import the **less** files accordingly:
 
 ```less
 @import '~xtend-library/src/extensions/loader/loader.less';

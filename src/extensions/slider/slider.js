@@ -380,7 +380,7 @@ class Slider extends Xt.Toggle {
     for (const slide of self.targets) {
       // disable links not active slide
       if (options.jump) {
-        slide.classList.add('links-none')
+        slide.classList.add('xt-links--none')
       }
       // slide on
       const slideOnHandler = Xt.dataStorage.put(slide, 'on' + '.' + self.namespace, self.eventSlideOnHandler.bind(self).bind(self, dragger, slide))
@@ -406,11 +406,11 @@ class Slider extends Xt.Toggle {
       for (const event of events) {
         dragger.addEventListener(event, dragstartHandler)
       }
-      // grab
+      // xt-grab
       if (!self.disabled) {
-        dragger.classList.add('grab')
+        dragger.classList.add('xt-grab')
       } else {
-        dragger.classList.remove('grab')
+        dragger.classList.remove('xt-grab')
       }
       // wheel
       if (options.wheel && options.wheel.selector) {
@@ -642,19 +642,19 @@ class Slider extends Xt.Toggle {
       // drag position
       dragger.style.transform = 'translateX(' + self.detail.xPos + 'px)'
       // disable dragger
-      dragger.classList.add('pointer-events-none')
+      dragger.classList.add('xt-pointer-events--none')
       for (const nav of self.navs) {
-        nav.classList.add('pointer-events-none')
+        nav.classList.add('xt-pointer-events--none')
       }
       Xt.animTimeout(dragger, function() {
-        dragger.classList.remove('pointer-events-none')
+        dragger.classList.remove('xt-pointer-events--none')
         for (const nav of self.navs) {
-          nav.classList.remove('pointer-events-none')
+          nav.classList.remove('xt-pointer-events--none')
         }
       })
       // disable links
-      dragger.classList.remove('jumps--none')
-      dragger.classList.remove('links-none')
+      dragger.classList.remove('xt-jumps--none')
+      dragger.classList.remove('xt-links--none')
       // drag wrap
       if (self.dragger && options.drag.wrap) {
         if (!self.initial) {
@@ -679,7 +679,7 @@ class Slider extends Xt.Toggle {
     }
     // disable links not active slide
     if (options.jump) {
-      slide.classList.remove('links-none')
+      slide.classList.remove('xt-links--none')
     }
   }
 
@@ -694,7 +694,7 @@ class Slider extends Xt.Toggle {
     const slide = e.target
     // disable links not active slide
     if (options.jump) {
-      slide.classList.add('links-none')
+      slide.classList.add('xt-links--none')
     }
     // only one call per group
     const targets = self.getTargets(slide)
@@ -781,9 +781,9 @@ class Slider extends Xt.Toggle {
     // friction
     if (Math.abs(self.detail.xVelocity) > options.drag.frictionLimit) {
       // disable dragger
-      dragger.classList.add('pointer-events-none')
+      dragger.classList.add('xt-pointer-events--none')
       for (const nav of self.navs) {
-        nav.classList.add('pointer-events-none')
+        nav.classList.add('xt-pointer-events--none')
       }
       // drag
       self.logicDrag(dragger, e, true)
@@ -793,8 +793,8 @@ class Slider extends Xt.Toggle {
       })
     } else {
       // disable links
-      dragger.classList.remove('links-none')
-      dragger.classList.remove('jumps--none')
+      dragger.classList.remove('xt-links--none')
+      dragger.classList.remove('xt-jumps--none')
       // dragend
       requestAnimationFrame(self.logicDragfrictionend.bind(self).bind(e, dragger))
     }
@@ -857,8 +857,8 @@ class Slider extends Xt.Toggle {
     const xDist = xPos - xPosCurrent
     if (Math.abs(xDist) > options.drag.linkThreshold) {
       // disable links
-      dragger.classList.add('links-none')
-      dragger.classList.add('jumps--none')
+      dragger.classList.add('xt-links--none')
+      dragger.classList.add('xt-jumps--none')
     }
     // overflow
     if (options.drag.overflow) {
@@ -964,9 +964,9 @@ class Slider extends Xt.Toggle {
       // disable drag and links
       Xt.animTimeout(dragger, function() {
         // disable dragger
-        dragger.classList.remove('pointer-events-none')
+        dragger.classList.remove('xt-pointer-events--none')
         for (const nav of self.navs) {
-          nav.classList.remove('pointer-events-none')
+          nav.classList.remove('xt-pointer-events--none')
         }
       })
       // drag position
