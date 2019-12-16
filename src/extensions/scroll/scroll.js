@@ -103,9 +103,7 @@ class Scroll extends Xt.Toggle {
       for (const event of events) {
         addEventListener(event, scrollHandler, Xt.passiveSupported ? { passive: true } : false)
       }
-      requestAnimationFrame(function() {
-        self.eventScrollHandler(null, true)
-      })
+      self.eventScrollHandler(null, true)
     }
   }
 

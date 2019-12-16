@@ -99,9 +99,7 @@ class Sticky extends Xt.Toggle {
       for (const event of events) {
         addEventListener(event, stickyHandler, Xt.passiveSupported ? { passive: true } : false)
       }
-      requestAnimationFrame(function() {
-        self.eventStickyHandler(null, true)
-      })
+      self.eventStickyHandler(null, true)
     }
     // autoClose
     const autoCloseHandler = Xt.dataStorage.put(self.object, 'hide' + '.' + self.namespace, Xt.autoClose.bind(self, self.object))
@@ -325,7 +323,7 @@ class Sticky extends Xt.Toggle {
       */
       // set add
       if (add !== Xt.dataStorage.get(el, self.componentNamespace + 'AddOld')) {
-        el.style.top = add + 'px'
+        el.style[options.position] = add + 'px'
       }
       // fix position fixed width 100% of parent
       const width = Xt.normalizeWidth(tr.clientWidth)

@@ -74,23 +74,6 @@ The default **position** is `position: 'top'` you can also use `position: 'botto
   <div class="gatsby_demo_item" data-iframe="iframe/components/sticky/position"></div>
 </demo>
 
-### Hide
-
-To hide the sticky when scrolling down or up use `hide: 'down'` or `hide: 'up'`. Here's a complex example with hide behaviour.
-
-<div class="table--scroll">
-
-|                         | Syntax                                    | Default                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `hide:String`                          | `false`        | Hide sticky on 'up' or 'down'            |
-
-</div>
-
-<demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/sticky/hide">
-  </div>
-</demo>
-
 ### Contain
 
 Use the `contain: {}` option to stack consecutive sticky elements. with `contain: { top: Element }` you stack the sticky to a previous element, with `contain: { bottom: Element }` you stack the sticky to a next element. The two solutions brings **different stacking effects**.
@@ -108,6 +91,23 @@ Use the `contain: {}` option to stack consecutive sticky elements. with `contain
   <div class="gatsby_demo_item" data-iframe="iframe/components/sticky/contain-top">
   </div>
   <div class="gatsby_demo_item" data-iframe="iframe/components/sticky/contain-bottom">
+  </div>
+</demo>
+
+### Hide
+
+To hide the sticky when scrolling down or up use `hide: 'down'` or `hide: 'up'`. Here's a complex example with hide behaviour.
+
+<div class="table--scroll">
+
+|                         | Syntax                                    | Default                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `hide:String`                          | `false`        | Hide sticky on 'up' or 'down'            |
+
+</div>
+
+<demo>
+  <div class="gatsby_demo_item" data-iframe="iframe/components/sticky/hide">
   </div>
 </demo>
 
