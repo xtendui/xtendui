@@ -12,7 +12,6 @@ class Demo extends React.Component {
   componentDidMount() {
     // fix demo index when changing page
     let index = parseFloat(document.documentElement.getAttribute('data-demo-index') || 0)
-    console.log(index)
     populateDemo(this.demoRef.current, index)
     index++
     document.documentElement.setAttribute('data-demo-index', index.toString())

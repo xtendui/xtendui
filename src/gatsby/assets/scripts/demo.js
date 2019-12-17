@@ -371,6 +371,9 @@ const makeFullscreen = function(container) {
     })
   }
   toggle.dispatchEvent(new CustomEvent('on.xt'))
+  toggle.addEventListener('init.xt', function(e) {
+    toggle.dispatchEvent(new CustomEvent('on.xt'))
+  })
   // move code block
   container.before(
     Xt.createElement('<div class="gatsby_demo xt-ignore" data-xt-origin="toggle--open-full-content" style="height: ' + container.offsetHeight + 'px"></div>')
