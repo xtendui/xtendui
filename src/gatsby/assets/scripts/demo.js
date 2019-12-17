@@ -115,8 +115,8 @@ const populateBlock = function() {
     }
   })
   // get hash
-  if (window.location.hash) {
-    const demo = document.querySelector(window.location.hash)
+  if (location.hash) {
+    const demo = document.querySelector(location.hash)
     if (demo) {
       demo.querySelector('.btn--open-full').classList.add('active')
       document.scrollingElement.scrollTo(0, document.scrollingElement.scrollTop + demo.offsetTop)
@@ -386,15 +386,19 @@ const makeFullscreen = function(container) {
       initializeIframe(container, item)
     }
   }
-  Xt.animTimeout(container.closest('#toggle--open-full'), function() {
-    container.querySelector('.gatsby_demo_item.active').dispatchEvent(new CustomEvent('ondone.xt'))
-  })
+  const full = container.closest('#toggle--open-full')
+  if (full) {
+    container.querySelector('.gatsby_demo_item.active').dispatchEvent(new CustomEvent('on.xt', { detail: { skip: true } }))
+    Xt.animTimeout(full, function() {
+      container.querySelector('.gatsby_demo_item.active').dispatchEvent(new CustomEvent('ondone.xt', { detail: { skip: true } }))
+    })
+  }
   // trigger resize
   requestAnimationFrame(function() {
     dispatchEvent(new CustomEvent('resize', { detail: { force: true } }))
   })
   // set hash
-  window.location.hash = container.getAttribute('id')
+  location.hash = container.getAttribute('id')
 }
 
 /**

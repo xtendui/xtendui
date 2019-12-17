@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import { populateDemo } from 'assets/scripts/demo'
 
-let demoIndex = 0
+window.demoIndex = 0
 
 class Demo extends React.Component {
   constructor(props) {
@@ -12,8 +12,8 @@ class Demo extends React.Component {
   }
 
   componentDidMount() {
-    populateDemo(this.demoRef.current, demoIndex)
-    demoIndex++
+    populateDemo(this.demoRef.current, window.demoIndex)
+    window.demoIndex++
   }
 
   render() {
