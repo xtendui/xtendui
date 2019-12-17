@@ -30,7 +30,7 @@ class DocHead extends React.Component {
               <div className="row">
                 <div>
                   {page.post.frontmatter.parent === page.post.frontmatter.title ? (
-                    <Link to={kebabCase(page.post.frontmatter.type)} className="btn">
+                    <Link to={'/' + kebabCase(page.post.frontmatter.type)} className="btn">
                       <span className="icon-arrow-left icon--left"></span>
                       {page.post.frontmatter.type}
                     </Link>
