@@ -130,8 +130,6 @@ const populateBlock = function() {
 
 const populateDemo = function(container, i) {
   const items = container.querySelectorAll('.gatsby_demo_item')
-  const demos = document.querySelectorAll('.gatsby_demo')
-  const listingToggles = document.querySelectorAll('[data-gatsby-listing-toggle]')
   // multiple elements
   container.prepend(Xt.createElement('<div class="gatsby_demo_tabs"><div class="gatsby_demo_tabs_left"></div><div class="gatsby_demo_tabs_right"></div></div>'))
   container
@@ -261,6 +259,8 @@ const populateDemo = function(container, i) {
   })
   // hide navigation if not needed
   let count
+  const demos = document.querySelectorAll('.gatsby_demo')
+  const listingToggles = document.querySelectorAll('[data-gatsby-listing-toggle]')
   if (!listingToggles.length) {
     count = document.querySelectorAll('.gatsby_demo').length
   } else {
@@ -273,10 +273,10 @@ const populateDemo = function(container, i) {
   // .btn--prev-demo
   container.querySelector('.btn--prev-demo').addEventListener('click', function() {
     const self = Xt.get('xt-toggle', container)
-    if (!listingToggles.length) {
-      if (self.currentIndex > 0) {
-        self.goToPrev()
-      } else {
+    if (self.currentIndex > 0) {
+      self.goToPrev()
+    } else {
+      if (!listingToggles.length) {
         for (let i = 0; i < demos.length; i++) {
           if (demos[i].contains(this)) {
             let prev = i - 1
@@ -294,15 +294,15 @@ const populateDemo = function(container, i) {
             document.scrollingElement.scrollTo(0, document.scrollingElement.scrollTop - currentOffset + prevOffset)
           }
         }
-      }
-    } else {
-      for (let i = 0; i < listingToggles.length; i++) {
-        if (listingToggles[i].classList.contains('active')) {
-          let prev = i - 1
-          prev = prev >= 0 ? prev : listingToggles.length - 1
-          document.querySelector('#toggle--open-full-trigger').dispatchEvent(new CustomEvent('off.xt'))
-          listingToggles[prev].dispatchEvent(new CustomEvent('click'))
-          break
+      } else {
+        for (let i = 0; i < listingToggles.length; i++) {
+          if (listingToggles[i].classList.contains('active')) {
+            let prev = i - 1
+            prev = prev >= 0 ? prev : listingToggles.length - 1
+            document.querySelector('#toggle--open-full-trigger').dispatchEvent(new CustomEvent('off.xt'))
+            listingToggles[prev].dispatchEvent(new CustomEvent('click'))
+            break
+          }
         }
       }
     }
@@ -310,10 +310,10 @@ const populateDemo = function(container, i) {
   // .btn--next-demo
   container.querySelector('.btn--next-demo').addEventListener('click', function() {
     const self = Xt.get('xt-toggle', container)
-    if (!listingToggles.length) {
-      if (self.currentIndex < self.getGroups().length - 1) {
-        self.goToNext()
-      } else {
+    if (self.currentIndex < self.getGroups().length - 1) {
+      self.goToNext()
+    } else {
+      if (!listingToggles.length) {
         for (let i = 0; i < demos.length; i++) {
           if (demos[i].contains(this)) {
             let next = i + 1
@@ -331,15 +331,15 @@ const populateDemo = function(container, i) {
             document.scrollingElement.scrollTo(0, document.scrollingElement.scrollTop - currentOffset + nextOffset)
           }
         }
-      }
-    } else {
-      for (let i = 0; i < listingToggles.length; i++) {
-        if (listingToggles[i].classList.contains('active')) {
-          let next = i + 1
-          next = next < listingToggles.length ? next : 0
-          document.querySelector('#toggle--open-full-trigger').dispatchEvent(new CustomEvent('off.xt'))
-          listingToggles[next].dispatchEvent(new CustomEvent('click'))
-          break
+      } else {
+        for (let i = 0; i < listingToggles.length; i++) {
+          if (listingToggles[i].classList.contains('active')) {
+            let next = i + 1
+            next = next < listingToggles.length ? next : 0
+            document.querySelector('#toggle--open-full-trigger').dispatchEvent(new CustomEvent('off.xt'))
+            listingToggles[next].dispatchEvent(new CustomEvent('click'))
+            break
+          }
         }
       }
     }
