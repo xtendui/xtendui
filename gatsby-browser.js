@@ -8,7 +8,7 @@ let sidebarArticleScrolltop = 0
 
 exports.onPreRouteUpdate = () => {
   // fix demo index when changing page
-  window.demoIndex = 0
+  document.documentElement.setAttribute('data-demo-index', '0')
   // autoClose
   window.dispatchEvent(new CustomEvent('autoClose.xt')) // autoClose xt
   // sidebarArticleScrolltop

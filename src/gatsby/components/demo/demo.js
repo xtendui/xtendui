@@ -3,8 +3,6 @@ import PropTypes from 'prop-types'
 
 import { populateDemo } from 'assets/scripts/demo'
 
-window.demoIndex = 0
-
 class Demo extends React.Component {
   constructor(props) {
     super(props)
@@ -12,8 +10,12 @@ class Demo extends React.Component {
   }
 
   componentDidMount() {
-    populateDemo(this.demoRef.current, window.demoIndex)
-    window.demoIndex++
+    // fix demo index when changing page
+    let index = parseFloat(document.documentElement.getAttribute('data-demo-index') || 0)
+    console.log(index)
+    populateDemo(this.demoRef.current, index)
+    index++
+    document.documentElement.setAttribute('data-demo-index', index.toString())
   }
 
   render() {
