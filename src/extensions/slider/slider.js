@@ -1030,7 +1030,6 @@ class Slider extends Xt.Toggle {
    */
   destroy(weak = false) {
     const self = this
-    console.log(self.object)
     // clean pagination
     self.destroyPags()
     // clean wraps
