@@ -40,6 +40,22 @@ new Xt.Sticky(document.querySelector('.my-sticky'), {
   </div>
 </demo>
 
+### Position
+
+The default **position** is `position: 'top'` you can also use `position: 'bottom'`.
+
+<div class="table--scroll">
+
+|                         | Syntax                                    | Default                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `position:String`                          | `'top'`        | Position 'top' or 'bottom'            |
+
+</div>
+
+<demo>
+  <div class="gatsby_demo_item" data-iframe="iframe/components/sticky/position"></div>
+</demo>
+
 ### Limit
 
 The default **limit** for `limit: { top: Element }` is the element's own position, for `limit: { bottom: Element }` is Infinity.
@@ -56,22 +72,6 @@ The default **limit** for `limit: { top: Element }` is the element's own positio
 <demo>
   <div class="gatsby_demo_item" data-iframe="iframe/components/sticky/limit">
   </div>
-</demo>
-
-### Position
-
-The default **position** is `position: 'top'` you can also use `position: 'bottom'`.
-
-<div class="table--scroll">
-
-|                         | Syntax                                    | Default                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `position:String`                          | `'top'`        | Position 'top' or 'bottom'            |
-
-</div>
-
-<demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/sticky/position"></div>
 </demo>
 
 ### Contain
