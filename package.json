@@ -21,7 +21,8 @@
     "deploy": "npm run build && gh-pages -d public",
     "release": "npx semantic-release --no-ci",
     "release:dry": "npx semantic-release --dry-run",
-    "prepare": "webpack --progress --colors"
+    "prepare": "webpack --progress --colors",
+    "preinstall": "npx npm-force-resolutions"
   },
   "dependencies": {
     "bezier-easing": "^2.1.0",
