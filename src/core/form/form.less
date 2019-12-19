@@ -187,12 +187,12 @@ form, .form {
 }
 
 .form-item-inverse {
-  border-color: fade(@gray-800, 20%);
-  background-color: fade(@gray-800, 20%); // @FIX no background: or it overrides background-image
+  border-color: fade(@gray-900, 25%);
+  background-color: fade(@gray-900, 25%); // @FIX no background: or it overrides background-image
   color: @text-inverse-dark;
   &:focus, &.active {
-    border-color: fade(@gray-800, 40%);
-    background-color: fade(@gray-800, 40%); // @FIX no background: or it overrides background-image
+    border-color: fade(@gray-900, 50%);
+    background-color: fade(@gray-900, 50%); // @FIX no background: or it overrides background-image
   }
   // placeholder
   &:-ms-input-placeholder {
@@ -239,7 +239,7 @@ form, .form {
 .form-item {
   select:not([multiple])& {
     @select-arrow-color: @text-inverse;
-    @select-space-color: fade(@gray-800, 20%);
+    @select-space-color: fade(@gray-900, 25%);
     background-image: linear-gradient(45deg, transparent 50%, @select-arrow-color 50%), linear-gradient(135deg, @select-arrow-color 50%, transparent 50%), linear-gradient(to right, @select-space-color, @select-space-color);
   }
   select[multiple]& {

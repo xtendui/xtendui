@@ -10,7 +10,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="form form-default">
-  <div class="form-group" style="padding: 1rem 1.5rem; background: #7567f8;">
+  <div class="form-group" style="padding: 1rem 1.5rem; background: #0078ff;">
     <label class="form-label form-label-inverse xt-custom">
       Custom
     </label>

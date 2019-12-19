@@ -27,7 +27,7 @@ module.exports = {
         short_name: 'docs',
         start_url: '/',
         background_color: '#ffffff',
-        theme_color: '#7567f8',
+        theme_color: '#0078ff',
         display: 'minimal-ui',
         icon: 'src/gatsby/assets/images/favicon.png',
       },

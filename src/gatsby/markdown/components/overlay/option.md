@@ -9,7 +9,7 @@ date: "2000-02-01"
 [[notePrimary]]
 | Overlay uses card to style it's content, refer to [card's option](/components/card/option) for all **option**.
 
-## Preset
+## Card Preset
 
 Overlay's card preset is `.card-overlay`. This preset gives overlay's card default variant and size
 
@@ -23,11 +23,11 @@ Overlay's card preset is `.card-overlay`. This preset gives overlay's card defau
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/overlay/preset">
+  <demovanilla src="vanilla/components/overlay/card-preset">
   </demovanilla>
 </demo>
 
-## Variant
+## Card Variant
 
 You can extend the `.card-overlay` preset with other's card variants. Use this classes for assigning variant (e.g.: border / background / font colors).
 
@@ -41,25 +41,7 @@ You can extend the `.card-overlay` preset with other's card variants. Use this c
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/overlay/variant">
-  </demovanilla>
-</demo>
-
-## Size
-
-Classes for assigning overlay **max-width**.
-
-<div class="table-scroll">
-
-|                         | Syntax                                    | Example                       |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.overlay-{size}`                        | `.overlay-small`             |
-| Mixin                   | `.overlay-size({size})`                   | `.overlay-size(small)`         |
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/overlay/size">
+  <demovanilla src="vanilla/components/overlay/card-variant">
   </demovanilla>
 </demo>
 
@@ -78,5 +60,23 @@ You can extend the `.card-overlay` preset with other's card sizes. Use this clas
 
 <demo>
   <demovanilla src="vanilla/components/overlay/card-size">
+  </demovanilla>
+</demo>
+
+## Size
+
+Classes for assigning overlay **max-width**.
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Example                       |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Class                   | `.overlay-{size}`                        | `.overlay-small`             |
+| Mixin                   | `.overlay-size({size})`                   | `.overlay-size(small)`         |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/overlay/size">
   </demovanilla>
 </demo>
