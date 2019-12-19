@@ -4,35 +4,44 @@
  * group
  */
 
-.group {
-  border-radius: .5em;
-  border-width: 1px;
-  border-style: solid;
-  border-color: transparent;
-}
-
 // variant
 
 .group-default {
-  .group-collapse();
-  .form-item {
-    border-color: @gray-300 !important;
-  }
+  @group-border-width: 2px;
+  @group-border-radius: .5em;
+  border-radius: @group-border-radius;
+  border-width: @group-border-width;
+  border-style: solid;
+  border-color: transparent;
+  // content
   .group-inner {
-    > * {
+    > .btn {
+      border-width: @group-border-width;
       border-color: @gray-300 !important;
+      &:hover, &.hover, &:active, &.active {
+        border-color: @gray-300-dark !important;
+      }
+    }
+    > .form-item {
+      border-width: @group-border-width;
+      border-color: @gray-300 !important;
+      &:focus, &.active {
+        border-color: @gray-300-dark !important;
+      }
     }
   }
-}
-
-// special
-
-.group-collapse {
+  // collapse border
   .group-inner {
-    margin-left: -1px;
-    margin-right: -1px;
-    > * + * {
-      margin-top: -1px;
+    &:not(:last-child) {
+      margin-right: -@group-border-width;
     }
+    > * + * {
+      margin-top: -@group-border-width;
+    }
+  }
+  // list
+  > .list {
+    .list-space(small) !important;
+    flex-wrap: nowrap;
   }
 }

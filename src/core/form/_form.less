@@ -42,6 +42,9 @@
 
 .form-item {
   .full();
+  &:focus, &.active {
+    z-index: @index-active;
+  }
 }
 
 // textarea

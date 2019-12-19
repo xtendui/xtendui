@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="group">
+<div class="group group-default">
   <div class="group-inner">
     <button type="button" class="btn btn-primary">
       Lorem
@@ -18,6 +18,8 @@ demo.htmlSource = `
       ipsum
     </button>
   </div>
-  <input type="text" class="form-item form-item-default" />
+  <div class="group-inner">
+    <input type="text" class="form-item form-item-default" />
+  </div>
 </div>
 `

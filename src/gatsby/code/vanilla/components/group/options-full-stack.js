@@ -9,15 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="group full">
-  <div class="group-inner flex-auto">
-    <button type="button" class="btn btn-primary">
-      Lorem
-    </button>
-    <button type="button" class="btn btn-default">
-      ipsum
-    </button>
-  </div>
+<div class="group group-default full">
   <div class="group-inner">
     <button type="button" class="btn btn-primary">
       Lorem
@@ -25,6 +17,9 @@ demo.htmlSource = `
     <button type="button" class="btn btn-default">
       ipsum
     </button>
+  </div>
+  <div class="group-inner flex-auto">
+    <input type="text" class="form-item form-item-default" />
   </div>
 </div>
 `
