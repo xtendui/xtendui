@@ -29,7 +29,7 @@ You can start with toggled elements and targets just by adding **one of the clas
 
 It's recommended to use `active-drop` on drops otherwise the overlay flashes visible on page load.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -41,7 +41,7 @@ It's recommended to use `active-drop` on drops otherwise the overlay flashes vis
 
 You can specify **on** and **off** events for the drop. Fore example `on: 'mouseenter'` `off: 'mouseleave'`. Default is `on: 'click'`.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |

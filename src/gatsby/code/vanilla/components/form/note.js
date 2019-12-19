@@ -10,7 +10,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="form">
-  <div class="form-group form-group--small xt-custom">
+  <div class="form-group form-group-small xt-custom">
     <label class="form-label">
       Small
     </label>
@@ -19,8 +19,8 @@ demo.htmlSource = `
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis.
     </div>
   </div>
-  
-  <div class="form-group form-group--medium xt-custom">
+
+  <div class="form-group form-group-medium xt-custom">
     <label class="form-label">
       Medium
     </label>
@@ -29,8 +29,8 @@ demo.htmlSource = `
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis.
     </div>
   </div>
-  
-  <div class="form-group form-group--big xt-custom">
+
+  <div class="form-group form-group-big xt-custom">
     <label class="form-label">
       Big
     </label>

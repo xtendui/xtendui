@@ -10,19 +10,19 @@ export const demo = {
 
 demo.htmlSource = `
 <div data-xt-overlay>
-  <button type="button" class="btn btn--primary">
+  <button type="button" class="btn btn-primary">
     group
   </button>
   <div class="overlay">
     <div class="overlay-container">
       <div class="overlay-inner">
-          
-        <div class="card card--overlay">
+
+        <div class="card card-overlay">
           <div class="card-design"></div>
           <div class="card-inner">
             <div class="btn btn-close" aria-label="Close"></div>
             <div class="card-content">
-              <div class="card-item-nested card-item card-group--sm">
+              <div class="card-item-nested card-item card-group-sm">
                 <div class="card-block card-item">
                   <div class="card-title">Lorem ipsum</div>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
@@ -49,7 +49,7 @@ demo.htmlSource = `
             </div>
           </div>
         </div>
-        
+
       </div>
     </div>
   </div>

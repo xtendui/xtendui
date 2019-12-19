@@ -53,7 +53,7 @@ class Layout extends React.Component {
                   <DocSidebar site={data} seo={seo} page={page} />
                   <div className="gatsby_site_article">
                     <DocFullscreen />
-                    <main className="gatsby_site_article_inner" id="toggle--open-full-inner">
+                    <main className="gatsby_site_article_inner" id="toggle_open-full-inner">
                       {page ? <DocHead page={page} /> : null}
                       <article className="gatsby_site_article_content">
                         <div className="gatsby_site_article_content_inner">{children}</div>

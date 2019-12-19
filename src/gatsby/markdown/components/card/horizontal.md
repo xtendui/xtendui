@@ -8,7 +8,7 @@ date: "2000-05-01"
 
 ## Block
 
-You can add custom `.card-block` modifiers and style them as you like (e.g.: `.card-block--head`).
+You can add custom `.card-block` modifiers and style them as you like (e.g.: `.card-block-head`).
 
 <demo>
   <demovanilla src="vanilla/components/card/horizontal-block">
@@ -19,7 +19,7 @@ You can add custom `.card-block` modifiers and style them as you like (e.g.: `.c
 
 Sequential `.card-item` stack vertically.
 
-They have a separator automatically styled with [variants](/components/card/option#variant). Just be sure to style `.card-item--{variant}` as in the **card.less** to not break css specificity.
+They have a separator automatically styled with [variants](/components/card/option#variant). Just be sure to style `.card-item-{variant}` as in the **card.less** to not break css specificity.
 
 <demo>
   <demovanilla src="vanilla/components/card/horizontal-multiple">
@@ -30,7 +30,7 @@ They have a separator automatically styled with [variants](/components/card/opti
 
 If you want full width assets use `.card-asset`.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Class                                     | Mixin                         | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -45,13 +45,13 @@ If you want full width assets use `.card-asset`.
 
 ## Overflow
 
-You can set vertical overflow using `.card--overflow-y` in `.card-inner` or `.card-block`.
+You can set vertical overflow using `.card-overflow-y` in `.card-inner` or `.card-block`.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Class                                     | Mixin                         | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `.card--overflow-y`                | `.card--overflow-y()`        | Vertical overflow with max-height and scrollbar            |
+| Option                  | `.card-overflow-y`                | `.card-overflow-y()`        | Vertical overflow with max-height and scrollbar            |
 
 </div>
 

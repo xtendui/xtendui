@@ -9,35 +9,35 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="form form--default">
+<div class="form form-default">
   <div class="form-group" style="padding: 1rem 1.5rem; background: #7567f8;">
-    <label class="form-label form-label--inverse xt-custom">
+    <label class="form-label form-label-inverse xt-custom">
       Custom
     </label>
-    <input type="text" class="form-item form-item--inverse xt-custom" placeholder="Input">
+    <input type="text" class="form-item form-item-inverse xt-custom" placeholder="Input">
   </div>
-  
+
   <div class="form-group">
     <label class="form-label">
       Input
     </label>
     <input type="text" class="form-item" placeholder="Input">
   </div>
-  
+
   <div class="form-group">
     <label class="form-label">
       File
     </label>
     <input type="file" class="form-item">
   </div>
-  
+
   <div class="form-group">
     <label class="form-label">
       Textarea
     </label>
     <textarea class="form-item" placeholder="Textarea"></textarea>
   </div>
-  
+
   <div class="form-group">
     <label class="form-label">
       Select
@@ -48,7 +48,7 @@ demo.htmlSource = `
       <option>Test</option>
     </select>
   </div>
-  
+
   <div class="form-group">
     <label class="form-label">
       Select multiple

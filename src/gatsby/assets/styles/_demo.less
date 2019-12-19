@@ -30,7 +30,7 @@ html.gatsby_iframe-inside {
  */
 
 svg {
-  .font-sans--semibold();
+  .font-sans-semibold();
   font-size: 1.8rem;
   text-transform: uppercase;
 }
@@ -40,7 +40,7 @@ svg {
  */
 
 .gatsby_demo-cols {
-  [class^='col-'], [class*=' col-'], [class^='demo--col-'], [class*=' demo--col-'] {
+  [class^='col-'], [class*=' col-'], [class^='demo_col-'], [class*=' demo_col-'] {
     &:before {
       position: relative;
       float: left;
@@ -50,7 +50,7 @@ svg {
       border: 1px solid darken(@gray-200, 5%);
       background: @gray-200;
       content: attr(data-index);
-      .font-sans--semibold();
+      .font-sans-semibold();
       font-size: 12px;
       color: @accent;
       line-height: 1.8;
@@ -130,13 +130,13 @@ pre {
       }
     }
   }
-  #toggle--open-full & {
+  #toggle_open-full & {
     border: 0 !important;
-    .btn--prev-demo, .btn--next-demo {
+    .btn-prev-demo, .btn-next-demo {
       display: inline-flex;
     }
     @media @max-sm {
-      .btn--prev-demo, .btn--next-demo {
+      .btn-prev-demo, .btn-next-demo {
         display: none;
       }
     }
@@ -162,7 +162,7 @@ pre {
     }
     .gatsby_demo_code {
       .toggle-block();
-      #toggle--open-full & {
+      #toggle_open-full & {
         position: absolute;
         z-index: 4;
         width: 100%;
@@ -230,7 +230,7 @@ pre {
     justify-content: space-between;
     > * {
       .list();
-      .list--default();
+      .list-default();
       .list-space(micro);
     }
     .padding(y, 7px);
@@ -263,7 +263,7 @@ pre {
   }
   // text
   .gatsby_demo_text {
-    .font--small();
+    .font-small();
     .padding(y, small);
     .padding(x, medium);
     border-bottom: 1px solid @gray-200;
@@ -311,12 +311,12 @@ table {
 .gatsby_demo, .gatsby_demo_item, .gatsby_demo_item_wrapper, .gatsby_demo_item_wrapper iframe {
   display: flex;
   flex-direction: column;
-  #toggle--open-full & {
-    .flex--full();
+  #toggle_open-full & {
+    .flex-full();
   }
 }
 
-#toggle--open-full {
+#toggle_open-full {
   position: fixed;
   z-index: @index-overlay;
   top: 0;
@@ -328,14 +328,14 @@ table {
     margin-left: @gatsby_site_article_sidebar_width;
   }
   .btn-close {
-    .btn--primary();
-    .btn--squared();
+    .btn-primary();
+    .btn-squared();
     font-size: 15px;
   }
   .gatsby_demo_tabs_right {
     padding-right: 5rem;
   }
-  .btn--open-full {
+  .btn-open-full {
     display: none !important;
   }
   // animation
@@ -348,7 +348,7 @@ table {
   }
 }
 
-#toggle--open-full-content {
+#toggle_open-full-content {
   display: flex;
   height: 100vh;
   pre {
@@ -357,7 +357,7 @@ table {
 }
 
 
-html.toggle--open-full--open {
+html.toggle_open-full-open {
   body {
     overflow-y: hidden !important;
   }

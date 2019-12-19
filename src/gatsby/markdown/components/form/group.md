@@ -54,22 +54,22 @@ Horizontal label and input, by default not on mobile, you can edit the media que
 <script type="text/plain" class="language-markup">
 <form>
   <div class="form-group">
-    <div class="form-group--horizontal">
-      <div class="col-12 col-3--sm">
+    <div class="form-group-horizontal">
+      <div class="col-12 col-3-sm">
         <!-- content -->
       </div>
-      <div class="col-12 col-9--sm">
+      <div class="col-12 col-9-sm">
         <!-- content -->
       </div>
     </div>
   </div>
 
   <div class="form-group">
-    <div class="form-group--horizontal">
-      <div class="col-12 col-3--sm">
+    <div class="form-group-horizontal">
+      <div class="col-12 col-3-sm">
         <!-- content -->
       </div>
-      <div class="col-12 col-9--sm">
+      <div class="col-12 col-9-sm">
         <!-- content -->
       </div>
     </div>
@@ -90,13 +90,13 @@ For columns sizes see [column page](/components/column).
 
 <script type="text/plain" class="language-markup">
 <form>
-  <div class="form-group--row">
-    <div class="col-12 col-3--sm">
+  <div class="form-group-row">
+    <div class="col-12 col-3-sm">
       <div class="form-group">
         <!-- content -->
       </div>
     </div>
-    <div class="col-12 col-9--sm">
+    <div class="col-12 col-9-sm">
       <div class="form-group">
         <!-- content -->
       </div>
@@ -116,7 +116,7 @@ Inline **form group**, by default not on mobile, you can edit the media queries 
 
 <script type="text/plain" class="language-markup">
 <form>
-  <div class="form-group--inline">
+  <div class="form-group-inline">
     <div class="form-group">
         <!-- content -->
     </div>
@@ -138,14 +138,14 @@ Inline **form input** and **form label**, by default not on mobile, you can edit
 
 <script type="text/plain" class="language-markup">
 <form>
-  <div class="form-group--inline">
+  <div class="form-group-inline">
     <div class="form-group">
-      <div class="form-group--inline">
+      <div class="form-group-inline">
         <!-- content -->
       </div>
     </div>
     <div class="form-group">
-      <div class="form-group--inline">
+      <div class="form-group-inline">
         <!-- content -->
       </div>
     </div>
@@ -164,23 +164,23 @@ Classes for assigning size (e.g.: padding or font size).
 
 You can set the size globally on **form**.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.form--{size}`                        | `.form--small` `.form--medium` `.form--big`     |
-| Mixin                   | `.form--{size}()`                      | `.form--small()` `.form--medium()` `.form--big()`     |
+| Class                   | `.form-{size}`                        | `.form-small` `.form-medium` `.form-big`     |
+| Mixin                   | `.form-{size}()`                      | `.form-small()` `.form-medium()` `.form-big()`     |
 
 </div>
 
 Or granularly on **form group**.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.form-group--{size}`                        | `.form-group--small` `.form-group--medium` `.form-group--big`     |
-| Mixin                   | `.form-group--{size}()`                      | `.form-group--small()` `.form-group--medium()` `.form-group--big()`     |
+| Class                   | `.form-group-{size}`                        | `.form-group-small` `.form-group-medium` `.form-group-big`     |
+| Mixin                   | `.form-group-{size}()`                      | `.form-group-small()` `.form-group-medium()` `.form-group-big()`     |
 
 </div>
 

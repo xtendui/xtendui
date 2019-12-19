@@ -45,7 +45,7 @@ class DocSidebar extends React.Component {
                           <div key={z}>
                             <Link
                               to={markdownSlug(post)}
-                              className={`btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub ${
+                              className={`btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub ${
                                 markdownSlug(page.post) === markdownSlug(post)
                                   ? 'active'
                                   : page.post.frontmatter.parent === post.frontmatter.parent
@@ -64,7 +64,7 @@ class DocSidebar extends React.Component {
                                         <div key={i}>
                                           <Link
                                             to={markdownSlug(adiacent)}
-                                            className={`btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--adiacent ${
+                                            className={`btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--adiacent ${
                                               page.post.frontmatter.title === adiacent.frontmatter.title ? 'active' : ''
                                             }`}
                                           >

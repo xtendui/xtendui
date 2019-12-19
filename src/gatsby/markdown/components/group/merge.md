@@ -13,19 +13,19 @@ You can merge buttons in a single interactive object.
 Use this markup to merge multiple `.btn` in one `[button]` as line.
 
 [[noteDefault]]
-| Needs [propagate-interaction](/components/animation-utils/propagate-interaction) extension
+| Needs [propagate-interaction](/components/utils/propagate-interaction) extension
 
 <script type="text/plain" class="language-markup">
   <button type="button" class="group">
 
     <div class="group-inner">
-      <div class="btn btn--default">
+      <div class="btn btn-default">
         <!-- content -->
       </div>
     </div>
 
     <div class="group-inner">
-      <div class="btn btn--default">
+      <div class="btn btn-default">
         <!-- content -->
       </div>
     </div>
@@ -44,10 +44,10 @@ Use this markup to merge multiple `.btn` in one `[button]` as stack.
   <button type="button" class="group">
 
     <div class="group-inner">
-      <div class="btn btn--default">
+      <div class="btn btn-default">
         <!-- content -->
       </div>
-      <div class="btn btn--default">
+      <div class="btn btn-default">
         <!-- content -->
       </div>
     </div>

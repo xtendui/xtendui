@@ -10,9 +10,9 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="form">
-  <div class="form-group--inline">
+  <div class="form-group-inline">
     <div class="form-group">
-      <div class="form-group--inline">
+      <div class="form-group-inline">
         <label class="form-label">
           Lorem
         </label>
@@ -20,7 +20,7 @@ demo.htmlSource = `
       </div>
     </div>
     <div class="form-group">
-      <div class="form-group--inline">
+      <div class="form-group-inline">
         <label class="form-label">
           Lorem Ipsum
         </label>
@@ -28,10 +28,10 @@ demo.htmlSource = `
       </div>
     </div>
   </div>
-  
-  <div class="form-group--inline">
+
+  <div class="form-group-inline">
     <div class="form-group">
-      <div class="form-group--inline">
+      <div class="form-group-inline">
         <label class="form-label">
           Lorem
         </label>
@@ -39,7 +39,7 @@ demo.htmlSource = `
       </div>
     </div>
     <div class="form-group">
-      <div class="form-group--inline">
+      <div class="form-group-inline">
         <label class="form-label">
           Lorem Ipsum
         </label>

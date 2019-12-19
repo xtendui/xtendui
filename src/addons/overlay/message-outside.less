@@ -1,8 +1,8 @@
 /**
- * overlay-message--outside
+ * overlay-message-outside
  */
 
-.overlay-message--outside {
+.overlay-message-outside {
   position: fixed;
   z-index: @index-overlay !important;
   top: 50%;
@@ -11,23 +11,23 @@
   @media @max-sm {
     display: none;
   }
-  .overlay-position--left & {
+  .overlay-position-left & {
     right: 0;
   }
-  .overlay-position--right & {
+  .overlay-position-right & {
     left: 0;
   }
   // animation
-  .overlay-position--left.active & {
+  .overlay-position-left.active & {
     .anim-x-inverse.active();
   }
-  .overlay-position--left.out & {
+  .overlay-position-left.out & {
     .anim-x.out();
   }
-  .overlay-position--right.active & {
+  .overlay-position-right.active & {
     .anim-x.active();
   }
-  .overlay-position--right.out & {
+  .overlay-position-right.out & {
     .anim-x-inverse.out();
   }
 }

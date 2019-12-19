@@ -26,7 +26,7 @@ fieldset, .fieldset {
 legend, .legend {
   .full();
   .h4();
-  .header--line();
+  .header-line();
 }
 
 /**
@@ -35,8 +35,8 @@ legend, .legend {
 
 form, .form {
   // default options
-  .form--default(); // .form-label .form-item
-  .form--medium(); // .form-group
+  .form-default(); // .form-label .form-item
+  .form-medium(); // .form-group
 }
 
 /**
@@ -45,43 +45,43 @@ form, .form {
 
 // size
 
-.form-group--small {
+.form-group-small {
   .margin(bottom, 1em);
   font-size: 1.1rem;
 }
 
-.form--small {
-  .form-groups({ .form-group--small(); });
+.form-small {
+  .form-groups({ .form-group-small(); });
 }
 
-.form-group--medium {
+.form-group-medium {
   .margin(bottom, 1.5em);
   font-size: 1.3rem;
 }
 
-.form--medium {
-  .form-groups({ .form-group--medium(); });
+.form-medium {
+  .form-groups({ .form-group-medium(); });
 }
 
-.form-group--big {
+.form-group-big {
   .margin(bottom, 1.5em);
   font-size: 1.5rem;
 }
 
-.form--big {
-  .form-groups({ .form-group--big(); });
+.form-big {
+  .form-groups({ .form-group-big(); });
 }
 
 // mode
 
-.form-group--row {
+.form-group-row {
   @media @min-sm {
     display: flex;
     .row-space-x(medium);
   }
 }
 
-.form-group--horizontal {
+.form-group-horizontal {
   @media @min-sm {
     display: flex;
     .row-space-x(medium);
@@ -93,7 +93,7 @@ form, .form {
   }
 }
 
-.form-group--inline {
+.form-group-inline {
   @media @min-sm {
     display: flex;
     flex-wrap: wrap;
@@ -111,7 +111,7 @@ form, .form {
 
 .form-label {
   .margin(bottom, 1em); // size in em inherit .form-group size
-  .font-sans--semibold();
+  .font-sans-semibold();
   font-size: 1em; // size in em inherit .form-group size
   line-height: 1.2;
   letter-spacing: .025em;
@@ -120,20 +120,20 @@ form, .form {
 
 // variant
 
-.form-label--default {
+.form-label-default {
   color: @gray-500;
 }
 
-.form--default {
-  .form-labels({ .form-label--default(); });
+.form-default {
+  .form-labels({ .form-label-default(); });
 }
 
-.form-label--inverse {
+.form-label-inverse {
   color: @text-inverse;
 }
 
-.form--inverse {
-  .form-labels({ .form-label--inverse(); });
+.form-inverse {
+  .form-labels({ .form-label-inverse(); });
 }
 
 /**
@@ -146,20 +146,20 @@ form, .form {
   border-style: solid;
   border-color: transparent;
   padding: .75em 1.2em; // size in em inherit .form-group size
-  .font-sans--regular();
+  .font-sans-regular();
   font-size: 1em; // size in em inherit .form-group size
   line-height: 1.4;
 }
 
 // variant
 
-.form-item--default {
+.form-item-default {
   border-color: @gray-200;
   background-color: @gray-200; // @FIX no background: or it overrides background-image
   color: @text;
   &:focus, &.active {
-    border-color: @gray-200--dark;
-    background-color: @gray-200--dark; // @FIX no background: or it overrides background-image
+    border-color: @gray-200-dark;
+    background-color: @gray-200-dark; // @FIX no background: or it overrides background-image
   }
   // placeholder
   &:-ms-input-placeholder {
@@ -182,14 +182,14 @@ form, .form {
   }
 }
 
-.form--default {
-  .form-items({ .form-item--default(); });
+.form-default {
+  .form-items({ .form-item-default(); });
 }
 
-.form-item--inverse {
+.form-item-inverse {
   border-color: fade(@gray-800, 20%);
   background-color: fade(@gray-800, 20%); // @FIX no background: or it overrides background-image
-  color: @text-inverse--dark;
+  color: @text-inverse-dark;
   &:focus, &.active {
     border-color: fade(@gray-800, 40%);
     background-color: fade(@gray-800, 40%); // @FIX no background: or it overrides background-image
@@ -215,8 +215,8 @@ form, .form {
   }
 }
 
-.form--inverse {
-  .form-items({ .form-item--inverse(); });
+.form-inverse {
+  .form-items({ .form-item-inverse(); });
 }
 
 // animation
@@ -259,7 +259,7 @@ form, .form {
 .checkradio-label {
   .margin(all, none); // reset .form-label
   .padding(left, small); // space from checkbox/radio
-  .font-sans--regular();
+  .font-sans-regular();
   font-size: 1em;
   line-height: 1.2;
   letter-spacing: 0;
@@ -392,8 +392,8 @@ input[type="radio"]:not(.unstyled) {
 
 .form-note {
   .note();
-  .note--default();
-  .note--small();
+  .note-default();
+  .note-small();
   .muted();
 }
 

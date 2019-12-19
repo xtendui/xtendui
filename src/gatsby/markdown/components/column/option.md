@@ -12,12 +12,12 @@ You can set **column's width** specifying a number between 1 and 12, for example
 
 Use `.col-auto` to fit the column inside the available width.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
 | Class                   | `.col-{number}`                           | `.col-1` `.col-2` `.col-3` etc..                |
-| Class responsive        | `.col-{number}--{breakpoint}`             | `.col-1-sm` `.col-2--sm` `.col-3--sm` etc..                |
+| Class responsive        | `.col-{number}-{breakpoint}`             | `.col-1-sm` `.col-2-sm` `.col-3-sm` etc..                |
 | Mixin                   | `.col({number})`                          | `.col(1)` `.col(2)` `.col(3)` etc..                     |
 | Mixin responsive min    | `.col({number}, {breakpoint})`            | `.col(1, sm)` `.col(2, sm)` `.col(3, sm)` etc..                 |
 
@@ -34,7 +34,7 @@ Use `.col-auto` to fit the column inside the available width.
 
 Use `.col-custom` to set column width to a custom value.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |

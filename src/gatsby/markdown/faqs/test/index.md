@@ -9,16 +9,16 @@ categories: ["100-Test"]
 
 ## Markdown
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.drop--{variant}`                        | `.drop--default` `.drop--primary` |
-| Mixin                   | `.drop--{variant}()`                      | `.drop--default()` `.drop--primary()`         |
+| Class                   | `.drop-{variant}`                        | `.drop-default` `.drop-primary` |
+| Mixin                   | `.drop-{variant}()`                      | `.drop-default()` `.drop-primary()`         |
 
 </div>
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -26,11 +26,11 @@ categories: ["100-Test"]
 
 </div>
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Class                                     | Mixin                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `.drop-container--static`                 | `.drop-container--static()`        | Position relative to closest element with `position: relative;`.            |
+| Option                  | `.drop-container-static`                 | `.drop-container-static()`        | Position relative to closest element with `position: relative;`.            |
 
 </div>
 
@@ -48,11 +48,11 @@ Sed gravida massa in commodo eleifend. Curabitur ac pellentesque nisl. Nunc ut p
 | With **multiple mode** you **can't** specify targets with **#id**.
 
 <script type="text/plain" class="language-markup">
-  <a href="#" class="btn btn--default">
+  <a href="#" class="btn btn-default">
     <!-- content -->
   </a>
 
-  <button type="button" class="btn btn--default">
+  <button type="button" class="btn btn-default">
     <!-- content -->
   </button>
 </script>
@@ -83,12 +83,12 @@ let self = new Xt.Scroll(document.documentElement, {
 
 ## Tables
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
 | Class                   | `.col-{number}`                           | `.col-6`                      |
-| Class responsive        | `.col-{number}--{breakpoint}`              | `.col-6--sm`                   |
+| Class responsive        | `.col-{number}-{breakpoint}`              | `.col-6-sm`                   |
 | Mixin                   | `.col({number})`                          | `.col(6)`                     |
 | Mixin responsive min    | `.col({number}, {breakpoint})`            | `.col(6, sm)`                 |
 

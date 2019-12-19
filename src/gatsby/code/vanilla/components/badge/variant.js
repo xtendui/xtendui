@@ -9,23 +9,23 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list--default list-space--small align-items-center">
+<div class="list list-default list-space-small align-items-center">
 
-  <div class="badge badge--default">
+  <div class="badge badge-default">
     Lorem ipsum
   </div>
-  
-  <div class="badge badge--primary">
+
+  <div class="badge badge-primary">
     Lorem ipsum
   </div>
-  
-  <div class="badge badge--success">
+
+  <div class="badge badge-success">
     Lorem ipsum
   </div>
-  
-  <div class="badge badge--error">
+
+  <div class="badge badge-error">
     Lorem ipsum
   </div>
-  
+
 </div>
 `

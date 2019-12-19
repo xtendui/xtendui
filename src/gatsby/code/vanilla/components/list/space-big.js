@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<ul class="list list--default list-space--big">
+<ul class="list list-default list-space-big">
   <li>
     <button type="button">
       Lorem Ipsum

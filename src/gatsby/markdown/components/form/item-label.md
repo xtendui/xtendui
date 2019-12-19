@@ -41,34 +41,34 @@ Classes for assigning variant (e.g.: border / background / font colors).
 
 You can set the size globally on **form**.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.form--{variant}`                        | `.form--default` `.form-inverse` |
-| Mixin                   | `.form--{variant}()`                      | `.form--default()` `.form-inverse()` |
+| Class                   | `.form-{variant}`                        | `.form-default` `.form-inverse` |
+| Mixin                   | `.form-{variant}()`                      | `.form-default()` `.form-inverse()` |
 
 </div>
 
 Or granularly on **form label**.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.form-label--{variant}`                  | `.form-label--default` `.form-label--inverse` |
-| Mixin                   | `.form-label--{variant}()`                | `.form-label--default()` `.form-label--inverse()` |
+| Class                   | `.form-label-{variant}`                  | `.form-label-default` `.form-label-inverse` |
+| Mixin                   | `.form-label-{variant}()`                | `.form-label-default()` `.form-label-inverse()` |
 
 </div>
 
 And granularly on **form item**.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.form-item--{variant}`                  | `.form-item--default` `.form-item--inverse` |
-| Mixin                   | `.form-item--{variant}()`                | `.form-item--default()` `.form-item--inverse()` |
+| Class                   | `.form-item-{variant}`                  | `.form-item-default` `.form-item-inverse` |
+| Mixin                   | `.form-item-{variant}()`                | `.form-item-default()` `.form-item-inverse()` |
 
 </div>
 

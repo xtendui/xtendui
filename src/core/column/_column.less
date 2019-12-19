@@ -6,7 +6,7 @@
 
 
 .col-auto(@breakpoint: none) when (@breakpoint = none) {
-  .flex--none();
+  .flex-none();
   max-width: none;
   width: auto;
 }
@@ -14,7 +14,7 @@
 .col-auto(@breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    .flex--none();
+    .flex-none();
     max-width: none;
     width: auto;
   }
@@ -74,7 +74,7 @@
       }
     }
     & when not (@breakpoint = none) {
-      .col-@{i}--@{breakpoint} {
+      .col-@{i}-@{breakpoint} {
         .col(@i) !important;
       }
     }
@@ -95,7 +95,7 @@
       @query-min: 'min-@{breakpoint}';
       @media @@query-min {
         // grid
-        .col-auto--@{breakpoint} {
+        .col-auto-@{breakpoint} {
           .col-auto() !important;
         }
         .generate-grid(@breakpoint) !important;

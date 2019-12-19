@@ -22,7 +22,7 @@
 
 // size
 
-.icon--tiny {
+.icon-tiny {
   font-size: @icon-tiny;
   img& {
     width: auto;
@@ -34,7 +34,7 @@
   margin-bottom: calc((1em - @icon-tiny) / 2);
 }
 
-.icon--small {
+.icon-small {
   font-size: @icon-small;
   img& {
     width: auto;
@@ -46,7 +46,7 @@
   margin-bottom: calc((1em - @icon-small) / 2);
 }
 
-.icon--medium {
+.icon-medium {
   font-size: @icon-medium;
   img& {
     width: auto;
@@ -58,7 +58,7 @@
   margin-bottom: calc((1em - @icon-medium) / 2);
 }
 
-.icon--big {
+.icon-big {
   font-size: @icon-big;
   img& {
     width: auto;
@@ -70,7 +70,7 @@
   margin-bottom: calc((1em - @icon-big) / 2);
 }
 
-.icon--giant {
+.icon-giant {
   font-size: @icon-giant;
   img& {
     width: auto;
@@ -84,11 +84,11 @@
 
 // space
 
-.icon--left {
+.icon-left {
   .margin(right, 1rem);
 }
 
-.icon--right {
+.icon-right {
   .margin(left, 1rem);
 }
 
@@ -98,12 +98,12 @@
 
 // font-face
 
-@icons-xt--family: 'xtend';
-@icons-xt--path: 'icons/xtend';
+@icons-xt-family: 'xtend';
+@icons-xt-path: 'icons/xtend';
 
 @font-face {
-  font-family: @icons-xt--family;
-  src: url('@{icons-xt--path}.ttf') format('truetype'), url('@{icons-xt--path}.woff') format('woff'), url('@{icons-xt--path}.svg#xtend') format('svg');
+  font-family: @icons-xt-family;
+  src: url('@{icons-xt-path}.ttf') format('truetype'), url('@{icons-xt-path}.woff') format('woff'), url('@{icons-xt-path}.svg#xtend') format('svg');
   font-weight: normal;
   font-style: normal;
 }

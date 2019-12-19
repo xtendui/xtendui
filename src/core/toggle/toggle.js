@@ -1446,7 +1446,7 @@ class Toggle {
       return
     }
     // check disabled
-    if (el.closest('.xt-jumps--none')) {
+    if (el.closest('.xt-jumps-none')) {
       return
     }
     // jump
@@ -1636,7 +1636,7 @@ class Toggle {
           if (!appendOrigin) {
             el.before(Xt.createElement('<div class="xt-ignore" data-xt-origin="' + self.namespace + '"></div>'))
           }
-          el.classList.add('xt-ignore', 'xt-ignore--once') // @FIX ignore once for mount when moving
+          el.classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
           appendToTarget.appendChild(el)
         }
       }
@@ -1771,7 +1771,7 @@ class Toggle {
         if (options.appendTo) {
           const appendOrigin = document.querySelector('[data-xt-origin="' + self.namespace + '"]')
           if (appendOrigin) {
-            el.classList.add('xt-ignore', 'xt-ignore--once') // @FIX ignore once for mount when moving
+            el.classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
             appendOrigin.before(el)
             appendOrigin.remove()
           } else {
@@ -2506,7 +2506,7 @@ class Toggle {
   specialCenter(el, before, after) {
     const self = this
     // specialCenter
-    if (before === 'xt-drop--center') {
+    if (before === 'xt-drop-center') {
       const add = self.object.clientWidth
       const remove = el.clientWidth
       el.style.left = (add - remove) / 2 + 'px'
@@ -2522,7 +2522,7 @@ class Toggle {
   specialMiddle(el, before, after) {
     const self = this
     // specialMiddle
-    if (after === 'xt-drop--middle') {
+    if (after === 'xt-drop-middle') {
       const add = self.object.clientHeight
       const remove = el.clientHeight
       el.style.top = (add - remove) / 2 + 'px'

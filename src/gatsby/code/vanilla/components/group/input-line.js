@@ -11,15 +11,15 @@ export const demo = {
 demo.htmlSource = `
 <div class="group">
   <div class="group-inner">
-    <button type="button" class="btn btn--default">
+    <button type="button" class="btn btn-default">
       Lorem
     </button>
   </div>
   <div class="group-inner">
-    <button type="button" class="btn btn--primary">
+    <button type="button" class="btn btn-primary">
       ipsum
     </button>
   </div>
-  <input type="text" class="form-item form-item--default" />
+  <input type="text" class="form-item form-item-default" />
 </div>
 `

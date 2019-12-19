@@ -19,18 +19,18 @@
 
 @gray-100: #f8fafe;
 @gray-200: #eff4fd;
-@gray-200--dark: darken(@gray-200, 5%);
+@gray-200-dark: darken(@gray-200, 5%);
 @gray-300: #d6e1f6;
 @gray-500: #7a7e8e;
 @gray-800: #373944;
 
 @accent: #7567f8;
-@accent--dark: darken(@accent, 5%);
+@accent-dark: darken(@accent, 5%);
 
 @text: @gray-800;
-@text--dark: @black;
+@text-dark: @black;
 @text-inverse: fade(@white, 90%);
-@text-inverse--dark: @white;
+@text-inverse-dark: @white;
 
 @success: #179922;
 @error: #bc1d1f;
@@ -40,14 +40,14 @@
 
 @shadow-light: 0 .1rem 1rem fade(@gray-300, 40%), 0 .2rem 2rem fade(@gray-300, 80%);
 @shadow-dark: 0 .1rem 1rem fade(@gray-800, 20%), 0 .2rem 2rem fade(@gray-800, 40%);
-@shadow-accent: 0 .1rem 1rem fade(@accent--dark, 20%), 0 .2rem 2rem fade(@accent--dark, 40%);
+@shadow-accent: 0 .1rem 1rem fade(@accent-dark, 20%), 0 .2rem 2rem fade(@accent-dark, 40%);
 
 // gradient
 // USAGE: background: linear-gradient(135deg, @grad-light);
 
 @grad-light: @gray-100 33%, darken(@gray-100, 2%) 100%;
 @grad-dark: @gray-800 33%, darken(@gray-800, 2%) 100%;
-@grad-accent: @accent 33%, @accent--dark 100%;
+@grad-accent: @accent 33%, @accent-dark 100%;
 
 // spacing
 // USAGE: .margin(x, small); .margin(y, small); .margin(all, small); .margin-remove(all, small);
@@ -152,7 +152,7 @@ body {
  */
 
 ::selection {
-  background-color: @accent--dark !important;
+  background-color: @accent-dark !important;
   color: @white !important;
 }
 

@@ -7,7 +7,7 @@ title: "Other"
 
 ## Legend
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Tag                                     | Class                                     | Mixin                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -22,7 +22,7 @@ title: "Other"
 
 ## Fieldset
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Tag                                     | Class                                     | Mixin                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -39,7 +39,7 @@ title: "Other"
 
 Form note uses the [note component](/components/note).
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Class                                     | Mixin                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |

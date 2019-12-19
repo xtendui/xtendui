@@ -18,7 +18,7 @@ demo.htmlSource = `
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card--slide card--primary card--small align-center">
+          <div class="card card-slide card-primary card-small align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -27,7 +27,7 @@ demo.htmlSource = `
                 </div>
 
                 <div class="card-block card-item">
-                  <div class="card card--default card--medium">
+                  <div class="card card-default card-medium">
                     <div class="card-design"></div>
                     <div class="card-inner">
                       <div class="btn btn-close" aria-label="Close"></div>
@@ -44,9 +44,9 @@ demo.htmlSource = `
                     </div>
                   </div>
                 </div>
-                
+
                 <div class="card-block card-item">
-                  <div class="card card--default card--white card--big">
+                  <div class="card card-default card-white card-big">
                     <div class="card-design"></div>
                     <div class="card-inner">
                       <div class="btn btn-close" aria-label="Close"></div>
@@ -65,7 +65,7 @@ demo.htmlSource = `
                     </div>
                   </div>
                 </div>
-                
+
               </div>
             </div>
           </div>
@@ -73,10 +73,10 @@ demo.htmlSource = `
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide card--primary card--big align-center">
+          <div class="card card-slide card-primary card-big align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -90,10 +90,10 @@ demo.htmlSource = `
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide card--primary card--big align-center">
+          <div class="card card-slide card-primary card-big align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -106,12 +106,12 @@ demo.htmlSource = `
 
         </div>
       </li>
-      
+
     </ul>
   </div>
 
   <nav class="slider-pagination">
-    <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
+    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
     </button>
   </nav>
 

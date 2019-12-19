@@ -10,17 +10,17 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list--default list-space--small align-items-center">
+<div class="list list-default list-space-small align-items-center">
 
   <div data-xt-overlay>
-    <button type="button" class="btn btn--primary">
+    <button type="button" class="btn btn-primary">
       block
     </button>
     <div class="overlay">
       <div class="overlay-container">
         <div class="overlay-inner">
-            
-          <div class="card card--overlay">
+
+          <div class="card card-overlay">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="btn btn-close" aria-label="Close"></div>
@@ -28,7 +28,7 @@ demo.htmlSource = `
                 <div class="card-asset">
                   ${img({})}
                 </div>
-                <div class="card-block card-item card--overflow-y">
+                <div class="card-block card-item card-overflow-y">
                   <div class="card-title">Lorem ipsum</div>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
                     ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
@@ -42,23 +42,23 @@ demo.htmlSource = `
               </div>
             </div>
           </div>
-          
+
         </div>
       </div>
     </div>
   </div>
-  
+
   <div data-xt-overlay>
-    <button type="button" class="btn btn--primary">
+    <button type="button" class="btn btn-primary">
       inner
     </button>
     <div class="overlay">
       <div class="overlay-container">
         <div class="overlay-inner">
-            
-          <div class="card card--overlay">
+
+          <div class="card card-overlay">
             <div class="card-design"></div>
-            <div class="card-inner card--overflow-y">
+            <div class="card-inner card-overflow-y">
               <div class="btn btn-close" aria-label="Close"></div>
               <div class="card-content">
                 <div class="card-asset">
@@ -78,11 +78,11 @@ demo.htmlSource = `
               </div>
             </div>
           </div>
-          
+
         </div>
       </div>
     </div>
   </div>
-  
+
 </div>
 `

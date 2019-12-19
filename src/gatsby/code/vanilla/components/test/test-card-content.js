@@ -12,11 +12,11 @@ export const demo = {
 demo.htmlSource = `
 <div class="row">
   <div class="col-12">
-    <button type="button" class="card card--primary card--big">
+    <button type="button" class="card card-primary card-big">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
-          <div class="card-block card-block--head">
+          <div class="card-block card-block-head">
             <div class="card-title">Lorem ipsum</div>
           </div>
           <div class="card-item-nested card-item card-group">

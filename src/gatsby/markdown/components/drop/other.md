@@ -8,7 +8,7 @@ date: "2000-10-01"
 
 ## Link
 
-You can have links that triggers after toggle. Remember to use `autoDisable: false`.
+You can have **element's link** that trigger after toggle. Remember to use `autoDisable: false`.
 
 If the toggle is on <code>"on": "mouseenter"</code> or <code>"on": "mousehover"</code> the link gets activated on the second touch event on touch devices.
 
@@ -21,11 +21,11 @@ If the toggle is on <code>"on": "mouseenter"</code> or <code>"on": "mousehover"<
 
 ## Static
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Class                                     | Mixin                         | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `.drop-container--static`                | `.drop-container--static()`        | Position relative to closest element with `position: relative;`.            |
+| Option                  | `.drop-container-static`                | `.drop-container-static()`        | Position relative to closest element with `position: relative;`.            |
 
 </div>
 
@@ -36,7 +36,7 @@ If the toggle is on <code>"on": "mouseenter"</code> or <code>"on": "mousehover"<
 
 ## Backdrop
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -51,11 +51,11 @@ If the toggle is on <code>"on": "mouseenter"</code> or <code>"on": "mousehover"<
 
 ## Disable
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Class                                     | Mixin                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `.drop--disable`                | `.drop--disable()`        | Disable drop, useful within media queries            |
+| Option                  | `.drop-disable`                | `.drop-disable()`        | Disable drop, useful within media queries            |
 
 </div>
 

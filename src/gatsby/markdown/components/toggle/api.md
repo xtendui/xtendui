@@ -24,7 +24,7 @@ new Xt.Toggle(document.querySelector('.my-toggle'), {
 
 You can specify classes to toggle with `class: 'my-class-0 my-class-1'`. Toggled class is by default `.active`.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -52,7 +52,7 @@ You can start with toggled elements and targets just by adding **one of the clas
 
 You can specify **min** and **max** concurrent activations. The **min** option is fulfilled on initialization, the **max** options deactivates the first activated when max is reached.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -70,7 +70,7 @@ You can specify **min** and **max** concurrent activations. The **min** option i
 
 You can specify **on** and **off** events for the toggle. Fore example `on: 'mouseenter'` `off: 'mouseleave'`. Default is `on: 'click'`.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -89,7 +89,7 @@ You can specify **on** and **off** events for the toggle. Fore example `on: 'mou
 
 Use `jump: true` to enable clicking on a **target** to jump to them.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -106,7 +106,7 @@ Use `jump: true` to enable clicking on a **target** to jump to them.
 
 You can add navigation with `navigation: QuerySelector`, set the amount to add (`+1`) or remove (`-1`) to the current activation index with `[data-xt-nav="value"]`.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -123,7 +123,7 @@ You can add navigation with `navigation: QuerySelector`, set the amount to add (
 
 Use `loop: false` to disable looping on activation.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -137,7 +137,7 @@ Activation/deactivation automatically waits for the <strong>duration</strong> of
 
 You can use a function for <code>delayOn</code> and <code>delayOff</code> for example <code>function(current, total) {return Math.min((total - current) * 150, 300)}</code>.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -162,7 +162,7 @@ You can use a function for <code>delayOn</code> and <code>delayOff</code> for ex
 
 ### Auto
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -197,7 +197,7 @@ You can use a function for <code>delayOn</code> and <code>delayOff</code> for ex
 
 ### Other
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |

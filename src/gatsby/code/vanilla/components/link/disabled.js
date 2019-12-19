@@ -9,15 +9,15 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<button type="button" class="btn btn--primary" disabled>
+<button type="button" class="btn btn-primary" disabled>
   primary
 </button>
 
-<button type="button" class="btn btn--text" disabled>
+<button type="button" class="btn btn-text" disabled>
   text
 </button>
 
-<button type="button" class="btn btn--link" disabled>
+<button type="button" class="btn btn-link" disabled>
   link
 </button>
 `

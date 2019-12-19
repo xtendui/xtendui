@@ -38,7 +38,7 @@ Use this markup to create a **drop**.
     <button type="button">
       <!-- content -->
     </button>
-    <div class="drop drop--default">
+    <div class="drop drop-default">
       <div class="drop-inner">
         <div class="drop-design"></div>
         <div class="drop-content">

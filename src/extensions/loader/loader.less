@@ -74,13 +74,13 @@
 
 // direction
 
-.loader--x {
+.loader-x {
   .filler {
     span:nth-child(1) {
       width: 0;
       background: linear-gradient(90deg, @grad-accent);
       box-shadow: @shadow-accent;
-      animation: anim-loader--x @time-medium * 2 infinite @bez-in;
+      animation: anim-loader-x @time-medium * 2 infinite @bez-in;
     }
     span:nth-child(2) {
       background: fade(@accent, 5%);
@@ -88,13 +88,13 @@
   }
 }
 
-.loader--y {
+.loader-y {
   .filler {
     span:nth-child(1) {
       height: 0;
       background: linear-gradient(0deg, @grad-accent);
       box-shadow: @shadow-accent;
-      animation: anim-loader--y @time-medium * 2 infinite @bez-in;
+      animation: anim-loader-y @time-medium * 2 infinite @bez-in;
     }
     span:nth-child(2) {
       background: fade(@accent, 5%);
@@ -102,7 +102,7 @@
   }
 }
 
-@keyframes anim-loader--x {
+@keyframes anim-loader-x {
   0% {
     left: 0;
     width: 0;
@@ -118,7 +118,7 @@
   }
 }
 
-@keyframes anim-loader--y {
+@keyframes anim-loader-y {
   0% {
     top: 100%;
     height: 0;
@@ -136,26 +136,26 @@
 
 // size
 
-.loader-size--x, .loader-size--top, .loader-size--bottom {
+.loader-size-x, .loader-size-top, .loader-size-bottom {
   .filler {
     height: 3px;
   }
 }
 
-.loader-size--y, .loader-size--left, .loader-size--right {
+.loader-size-y, .loader-size-left, .loader-size-right {
   .filler {
     width: 3px;
   }
 }
 
-.loader-size--x {
+.loader-size-x {
   .filler {
     left: 25%;
     right: 25%;
   }
 }
 
-.loader-size--y {
+.loader-size-y {
   .filler {
     top: 25%;
     bottom: 25%;
@@ -164,7 +164,7 @@
 
 // background
 
-.loader--background {
+.loader-background {
   background: fade(@white, 80%);
 }
 
@@ -201,14 +201,14 @@
 
 // mouse
 
-.loader--mouse {
+.loader-mouse {
   // spinner
-  .loader--spinner& {
+  .loader-spinner& {
     margin-top: -30px;
     margin-left: 5px;
   }
   // x
-  .loader--x& {
+  .loader-x& {
     margin-top: 0px;
     margin-left: 0px;
     .filler {
@@ -221,7 +221,7 @@
 
 // js
 
-.loader--js {
+.loader-js {
   // disable animations
   .spinner {
     circle {

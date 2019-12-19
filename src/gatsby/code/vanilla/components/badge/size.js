@@ -9,19 +9,19 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list--default list-space--small align-items-center">
+<div class="list list-default list-space-small align-items-center">
 
-  <div class="badge badge--default badge--small">
+  <div class="badge badge-default badge-small">
     Lorem ipsum
   </div>
-  
-  <div class="badge badge--default badge--medium">
+
+  <div class="badge badge-default badge-medium">
     Lorem ipsum
   </div>
-  
-  <div class="badge badge--default badge--big">
+
+  <div class="badge badge-default badge-big">
     Lorem ipsum
   </div>
-  
+
 </div>
 `

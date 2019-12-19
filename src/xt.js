@@ -802,12 +802,12 @@ if (typeof window !== 'undefined') {
    * @param {Node|HTMLElement|EventTarget|Window} el
    */
   Xt.ignoreOnce = function(el) {
-    if (el.classList.contains('xt-ignore--once')) {
+    if (el.classList.contains('xt-ignore-once')) {
       requestAnimationFrame(function() {
         // @FIX react when componentDidMount
         requestAnimationFrame(function() {
           // @FIX react when componentDidMount
-          el.classList.remove('xt-ignore', 'xt-ignore--once')
+          el.classList.remove('xt-ignore', 'xt-ignore-once')
         })
       })
     }

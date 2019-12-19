@@ -9,18 +9,18 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list--default list-space--small align-items-center">
+<div class="list list-default list-space-small align-items-center">
 
   <div class="drop-container" data-xt-drop>
-    <button type="button" class="btn btn--primary">
+    <button type="button" class="btn btn-primary">
       default
     </button>
-    <div class="drop drop--default">
+    <div class="drop drop-default">
       <div class="drop-inner">
         <div class="drop-design"></div>
         <div class="drop-content">
-        
-          <div class="card card--drop">
+
+          <div class="card card-drop">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="btn btn-close" aria-label="Close"></div>
@@ -37,17 +37,17 @@ demo.htmlSource = `
       </div>
     </div>
   </div>
-  
+
   <div class="drop-container" data-xt-drop>
-    <button type="button" class="btn btn--primary">
+    <button type="button" class="btn btn-primary">
       primary
     </button>
-    <div class="drop drop--primary">
+    <div class="drop drop-primary">
       <div class="drop-inner">
         <div class="drop-design"></div>
         <div class="drop-content">
-        
-          <div class="card card--drop card--primary">
+
+          <div class="card card-drop card-primary">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="btn btn-close" aria-label="Close"></div>
@@ -64,6 +64,6 @@ demo.htmlSource = `
       </div>
     </div>
   </div>
-  
+
 </div>
 `

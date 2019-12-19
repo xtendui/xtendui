@@ -1,4 +1,4 @@
-.demo--slider--toggle-css {
+.demo_slider-toggle-css {
   .slides-inner {
     overflow: hidden;
     // dragger animations
@@ -24,7 +24,7 @@
       .anim-x-inverse.active();
       animation-duration: @time-medium;
       &:after {
-        animation-name: demo--slider--toggle-css--in;
+        animation-name: demo_slider-toggle-css-in;
         animation-duration: @time-medium;
         animation-timing-function: @bez-in;
         transform: translateX(-100%);
@@ -33,7 +33,7 @@
         .anim-x.active();
         animation-duration: @time-medium;
         &:after {
-          animation-name: demo--slider--toggle-css-in-inverse;
+          animation-name: demo_slider-toggle-css-in-inverse;
           animation-duration: @time-medium;
           animation-timing-function: @bez-in;
           transform: translateX(100%);
@@ -44,7 +44,7 @@
       .anim-x-inverse.out();
       animation-duration: @time-medium;
       &:after {
-        animation-name: demo--slider--toggle-css--out;
+        animation-name: demo_slider-toggle-css-out;
         animation-duration: @time-medium;
         animation-timing-function: @bez-out;
         transform: translateX(0);
@@ -53,7 +53,7 @@
         .anim-x.out();
         animation-duration: @time-medium;
         &:after {
-          animation-name: demo--slider--toggle-css-out-inverse;
+          animation-name: demo_slider-toggle-css-out-inverse;
           animation-duration: @time-medium;
           animation-timing-function: @bez-out;
           transform: translateX(0);
@@ -63,7 +63,7 @@
   }
 }
 
-@keyframes demo--slider--toggle-css--in {
+@keyframes demo_slider-toggle-css-in {
   0% {
     transform: translateX(0);
   }
@@ -72,7 +72,7 @@
   }
 }
 
-@keyframes demo--slider--toggle-css-in-inverse {
+@keyframes demo_slider-toggle-css-in-inverse {
   0% {
     transform: translateX(0);
   }
@@ -81,7 +81,7 @@
   }
 }
 
-@keyframes demo--slider--toggle-css--out {
+@keyframes demo_slider-toggle-css-out {
   0% {
     transform: translateX(100%);
   }
@@ -90,7 +90,7 @@
   }
 }
 
-@keyframes demo--slider--toggle-css-out-inverse {
+@keyframes demo_slider-toggle-css-out-inverse {
   0% {
     transform: translateX(-100%);
   }

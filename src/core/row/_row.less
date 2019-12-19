@@ -19,7 +19,7 @@
 // row-space
 
 .row-space-y(@name, @breakpoint: none) when (@breakpoint = none) {
-  @arr: ~"row-space--@{name}";
+  @arr: ~"row-space-@{name}";
   @vertical: extract(@@arr, 1);
   margin-top: -@vertical;
   margin-bottom: -@vertical;
@@ -30,7 +30,7 @@
 }
 
 .row-space-y(@name, @breakpoint: none) when (default()) {
-  @arr: ~"row-space--@{name}";
+  @arr: ~"row-space-@{name}";
   @vertical: extract(@@arr, 1);
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -44,7 +44,7 @@
 }
 
 .row-space-x(@name, @breakpoint: none) when (@breakpoint = none) {
-  @arr: ~"row-space--@{name}";
+  @arr: ~"row-space-@{name}";
   @horizontal: extract(@@arr, 2);
   margin-left: -@horizontal;
   margin-right: -@horizontal;
@@ -55,7 +55,7 @@
 }
 
 .row-space-x(@name, @breakpoint: none) when (default()) {
-  @arr: ~"row-space--@{name}";
+  @arr: ~"row-space-@{name}";
   @horizontal: extract(@@arr, 2);
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -69,7 +69,7 @@
 }
 
 .row-space(@name, @breakpoint: none) when (@breakpoint = none) {
-  @arr: ~"row-space--@{name}";
+  @arr: ~"row-space-@{name}";
   @vertical: extract(@@arr, 1);
   @horizontal: extract(@@arr, 2);
   margin: -@vertical -@horizontal;
@@ -79,7 +79,7 @@
 }
 
 .row-space(@name, @breakpoint: none) when (default()) {
-  @arr: ~"row-space--@{name}";
+  @arr: ~"row-space-@{name}";
   @vertical: extract(@@arr, 1);
   @horizontal: extract(@@arr, 2);
   @query-min: 'min-@{breakpoint}';
@@ -131,24 +131,24 @@
     .generate-row-space(@breakpoint, @i - 1);
     @name: extract(@row-spaces, @i);
     & when (@breakpoint = none) {
-      .row-space-y--@{name} {
+      .row-space-y-@{name} {
         .row-space-y(@name) !important;
       }
-      .row-space-x--@{name} {
+      .row-space-x-@{name} {
         .row-space-x(@name) !important;
       }
-      .row-space--@{name} {
+      .row-space-@{name} {
         .row-space(@name) !important;
       }
     }
     & when not (@breakpoint = none) {
-      .row-space-y--@{name}--@{breakpoint} {
+      .row-space-y-@{name}-@{breakpoint} {
         .row-space-y(@name) !important;
       }
-      .row-space-x--@{name}--@{breakpoint} {
+      .row-space-x-@{name}-@{breakpoint} {
         .row-space-x(@name) !important;
       }
-      .row-space--@{name}--@{breakpoint} {
+      .row-space-@{name}-@{breakpoint} {
         .row-space(@name) !important;
       }
     }

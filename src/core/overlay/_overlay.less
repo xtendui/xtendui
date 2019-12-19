@@ -43,7 +43,7 @@
 
 // special
 
-.overlay--disable {
+.overlay-disable {
   .xt-disable();
   display: flex !important;
   overflow: initial !important;
@@ -67,14 +67,14 @@
       .overlay-design {
         display: none;
       }
-      .card--overlay {
-        .card--disable();
+      .card-overlay {
+        .card-disable();
       }
       .btn-close {
         display: none !important;
       }
     }
-    .overlay-inner, .card--overlay > .card-inner > .card-content {
+    .overlay-inner, .card-overlay > .card-inner > .card-content {
       max-width: none;
     }
   }
@@ -88,10 +88,9 @@
  */
 
 .overlay-size(@name) {
-  // .by-key(@generate-overlay-size, @name);
-  @arr: ~"overlay--@{name}";
+  @arr: ~"overlay-@{name}";
   @val: @@arr;
-  .overlay-inner, .card--overlay > .card-inner > .card-content {
+  .overlay-inner, .card-overlay > .card-inner > .card-content {
     max-width: @val;
   }
 }
@@ -100,7 +99,7 @@
 .generate-overlay-size(@i: length(@generate-overlay-size)) when (@i > 0) {
   .generate-overlay-size(@i - 1);
   @name: extract(@generate-overlay-size, @i);
-  .overlay--@{name} {
+  .overlay-@{name} {
     .overlay-size(@name) !important;
   }
 }

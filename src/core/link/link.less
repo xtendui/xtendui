@@ -22,17 +22,17 @@
  * link
  */
 
-a, .btn--link {
+a, .btn-link {
   .link-underline();
   color: @accent;
   &:hover, &.hover, &:active, &.active {
-    color: @accent--dark;
+    color: @accent-dark;
   }
 }
 
 // animation
 
-a, .btn--link {
+a, .btn-link {
   transition-property: color, background, opacity;
   transition-duration: @time-medium;
   transition-timing-function: @bez-out;
@@ -47,11 +47,11 @@ a, .btn--link {
 
 .text-inverse {
   // link color
-  a, .btn--link {
+  a, .btn-link {
     color: @text-inverse;
     text-decoration: underline;
     &:hover, &.hover, &:active, &.active {
-      color: @text-inverse--dark;
+      color: @text-inverse-dark;
     }
   }
 }

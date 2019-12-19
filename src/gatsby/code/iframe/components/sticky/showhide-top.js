@@ -15,7 +15,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="sticky-0" data-xt-sticky>
-  <div class="card card--primary card--squared">
+  <div class="card card-primary card-squared">
     <div class="card-design"></div>
     <div class="card-inner">
       <div class="card-content">
@@ -27,7 +27,7 @@ demo.htmlSource = `
   </div>
 </div>
 
-<div class="card card--default card--squared">
+<div class="card card-default card-squared">
   <div class="card-design"></div>
   <div class="card-inner">
     <div class="card-content">
@@ -41,7 +41,7 @@ demo.htmlSource = `
 
 <div class="sticky-1"
      data-xt-sticky="{ contain: { top: '.sticky-0:not(.xt-clone)' } }">
-  <div class="card card--primary card--squared">
+  <div class="card card-primary card-squared">
     <div class="card-design"></div>
     <div class="card-inner">
       <div class="card-content">
@@ -53,7 +53,7 @@ demo.htmlSource = `
   </div>
 </div>
 
-<div class="card card--default card--squared">
+<div class="card card-default card-squared">
   <div class="card-design"></div>
   <div class="card-inner">
     <div class="card-content">
@@ -67,7 +67,7 @@ demo.htmlSource = `
 
 <div class="sticky-2"
      data-xt-sticky="{ contain: { top: '.sticky-0:not(.xt-clone), .sticky-1:not(.xt-clone)' } }">
-  <div class="card card--primary card--squared">
+  <div class="card card-primary card-squared">
     <div class="card-design"></div>
     <div class="card-inner">
       <div class="card-content">

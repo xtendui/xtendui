@@ -35,7 +35,7 @@ class Template extends React.Component {
                           <div className="gatsby_listing_column" key={i}>
                             <button
                               type="button"
-                              className="card card--primary card--small card--full card--collapse gatsby_listing_item"
+                              className="card card-primary card-small card-full card-collapse gatsby_listing_item"
                               data-gatsby-listing-toggle
                             >
                               <div className="card-design"></div>

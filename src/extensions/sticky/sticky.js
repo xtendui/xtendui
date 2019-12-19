@@ -32,7 +32,7 @@ class Sticky extends Xt.Toggle {
       if (!container) {
         container = Xt.createElement('<div class="xt-container xt-fixed-check"></div>')
         el.before(container)
-        el.classList.add('xt-ignore', 'xt-ignore--once') // @FIX ignore once for mount when moving
+        el.classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
         container.append(el)
       }
       el.style[options.position] = '0px'
@@ -41,7 +41,7 @@ class Sticky extends Xt.Toggle {
       if (!target) {
         target = el.cloneNode(true)
         target.classList.add('xt-clone', 'xt-ignore')
-        target.classList.remove('xt-ignore--once') // @FIX ignore once for mount when moving
+        target.classList.remove('xt-ignore-once') // @FIX ignore once for mount when moving
         for (const elId of target.querySelectorAll('[id]')) {
           elId.setAttribute('id', elId.getAttribute('id') + '-clone')
         }
@@ -54,20 +54,20 @@ class Sticky extends Xt.Toggle {
       // sticky
       el.classList.add('xt-fixed', 'xt-sticky')
       if (options.sticky === 'absolute') {
-        el.classList.add('xt-sticky--absolute')
+        el.classList.add('xt-sticky-absolute')
       } else if (options.sticky === 'fixed') {
-        el.classList.add('xt-sticky--fixed')
+        el.classList.add('xt-sticky-fixed')
       } else if (options.sticky === 'fixed-always') {
-        el.classList.add('xt-sticky--fixed-always')
+        el.classList.add('xt-sticky-fixed-always')
       }
       if (target) {
         target.classList.add('xt-fixed', 'xt-sticky')
         if (options.sticky === 'absolute') {
-          target.classList.add('xt-sticky--absolute')
+          target.classList.add('xt-sticky-absolute')
         } else if (options.sticky === 'fixed') {
-          target.classList.add('xt-sticky--fixed')
+          target.classList.add('xt-sticky-fixed')
         } else if (options.sticky === 'fixed-always') {
-          target.classList.add('xt-sticky--fixed-always')
+          target.classList.add('xt-sticky-fixed-always')
         }
       }
       // hide
@@ -144,7 +144,7 @@ class Sticky extends Xt.Toggle {
     for (const tr of self.targets) {
       const el = self.getElements(tr)[0]
       // show element if is hiding on focus
-      if (el.classList.contains('sticky--hide')) {
+      if (el.classList.contains('sticky-hide')) {
         const active = el.contains(e.target)
         if (active) {
           el.style.top = '0px'
@@ -269,8 +269,8 @@ class Sticky extends Xt.Toggle {
         // hide
         if (hide) {
           add = -heightEl
-          if (!el.classList.contains('sticky--hide')) {
-            el.classList.add('sticky--hide')
+          if (!el.classList.contains('sticky-hide')) {
+            el.classList.add('sticky-hide')
             // autoClose
             dispatchEvent(new CustomEvent('autoClose.xt'))
             // listener dispatch
@@ -278,8 +278,8 @@ class Sticky extends Xt.Toggle {
             el.dispatchEvent(new CustomEvent('hide.xt.sticky', { bubbles: true, detail: detail }))
           }
         } else {
-          if (el.classList.contains('sticky--hide')) {
-            el.classList.remove('sticky--hide')
+          if (el.classList.contains('sticky-hide')) {
+            el.classList.remove('sticky-hide')
             // listener dispatch
             const detail = self.eDetailSet(e)
             el.dispatchEvent(new CustomEvent('show.xt.sticky', { bubbles: true, detail: detail }))
@@ -292,32 +292,32 @@ class Sticky extends Xt.Toggle {
       }
       // anim
       if (anim && (addTop || !addBottom) && self.detail.scrollTopOld !== undefined) {
-        if (!el.classList.contains('sticky--moving')) {
-          el.classList.add('sticky--moving')
+        if (!el.classList.contains('sticky-moving')) {
+          el.classList.add('sticky-moving')
         }
       } else {
-        if (el.classList.contains('sticky--moving')) {
-          el.classList.remove('sticky--moving')
+        if (el.classList.contains('sticky-moving')) {
+          el.classList.remove('sticky-moving')
         }
       }
       // top and bottom
       /*
       if (!checkTop) {
-        if (!el.classList.contains('sticky--top')) {
-          el.classList.add('sticky--top')
+        if (!el.classList.contains('sticky-top')) {
+          el.classList.add('sticky-top')
         }
       } else {
-        if (el.classList.contains('sticky--top')) {
-          el.classList.remove('sticky--top')
+        if (el.classList.contains('sticky-top')) {
+          el.classList.remove('sticky-top')
         }
       }
       if (!checkBottom) {
-        if (!el.classList.contains('sticky--bottom')) {
-          el.classList.add('sticky--bottom')
+        if (!el.classList.contains('sticky-bottom')) {
+          el.classList.add('sticky-bottom')
         }
       } else {
-        if (el.classList.contains('sticky--bottom')) {
-          el.classList.remove('sticky--bottom')
+        if (el.classList.contains('sticky-bottom')) {
+          el.classList.remove('sticky-bottom')
         }
       }
       */
@@ -358,7 +358,7 @@ class Sticky extends Xt.Toggle {
         for (const el of elements) {
           const add = Xt.dataStorage.get(el, self.componentNamespace + 'Add')
           if (add) {
-            // if sticky--hide get real add
+            // if sticky-hide get real add
             const style = getComputedStyle(el)
             if (style.display !== 'none') {
               val += add

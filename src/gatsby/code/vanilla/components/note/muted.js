@@ -9,19 +9,19 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="note note--default muted">
+<div class="note note-default muted">
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
 </div>
 
-<div class="note note--primary muted">
+<div class="note note-primary muted">
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
 </div>
 
-<div class="note note--success muted">
+<div class="note note-success muted">
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
 </div>
 
-<div class="note note--error muted">
+<div class="note note-error muted">
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
 </div>
 `

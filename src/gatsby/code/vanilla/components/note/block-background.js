@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="note note--default note--small note--background">
+<div class="note note-default note-small note-background">
   <div class="note-list">
     <div>
       <div class="note-icon">
@@ -23,7 +23,7 @@ demo.htmlSource = `
   </div>
 </div>
 
-<div class="note note--default note--medium note--background">
+<div class="note note-default note-medium note-background">
   <div class="note-list">
     <div>
       <div class="note-icon">
@@ -37,7 +37,7 @@ demo.htmlSource = `
   </div>
 </div>
 
-<div class="note note--default note--big note--background">
+<div class="note note-default note-big note-background">
   <div class="note-list">
     <div>
       <div class="note-icon">

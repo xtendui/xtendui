@@ -5,7 +5,7 @@
 .caret {
   .icon-xt(@content: @icon-xt-chevron-down, @size: @icon-small);
   &:after {
-    .icon--right();
+    .icon-right();
   }
   // activation
   &.active {
@@ -20,7 +20,7 @@
     }
   }
   // inverse
-  &.caret--inverse {
+  &.caret-inverse {
     .icon-xt(@content: @icon-xt-chevron-up, @size: @icon-small);
     &.active {
       .icon-xt(@content: @icon-xt-chevron-down, @size: @icon-small);
@@ -35,7 +35,7 @@
     }
   }
   // horizontal
-  &.caret--horizontal {
+  &.caret-horizontal {
     .icon-xt(@content: @icon-xt-chevron-right, @size: @icon-small);
     &.active {
       .icon-xt(@content: @icon-xt-chevron-left, @size: @icon-small);
@@ -49,13 +49,13 @@
       }
     }
     // inverse
-    &.caret--inverse {
+    &.caret-inverse {
       .icon-xt(@content: @icon-xt-chevron-left, @size: @icon-small, @position: before);
       &:after {
         content: '';
       }
       &:before {
-        .icon--left();
+        .icon-left();
       }
       &.active {
         .icon-xt(@content: @icon-xt-chevron-right, @size: @icon-small, @position: before);

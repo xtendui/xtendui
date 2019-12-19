@@ -43,7 +43,7 @@
 
 // special
 
-.drop-container--static {
+.drop-container-static {
   position: static;
   > .drop, > .drop > .drop-inner {
     width: 100%;
@@ -52,123 +52,123 @@
 
 // before + after
 
-.drop--before() {
+.drop-before() {
   padding: @drop-space;
   left: auto;
   right: 100%;
 }
 
-.drop.drop--before {
-  .drop--before() !important;
+.drop.drop-before {
+  .drop-before() !important;
 }
 
-.drop--after() {
+.drop-after() {
   padding: @drop-space;
   left: 100%;
   right: auto;
 }
 
-.drop.drop--after {
-  .drop--after() !important;
+.drop.drop-after {
+  .drop-after() !important;
 }
 
 // left + right
 
-.drop--left() {
+.drop-left() {
   padding: @drop-space 0;
   left: 0;
   right: auto;
 }
 
-.drop.drop--left {
-  .drop--left() !important;
+.drop.drop-left {
+  .drop-left() !important;
 }
 
-.drop--right() {
+.drop-right() {
   padding: @drop-space 0;
   left: auto;
   right: 0;
 }
 
-.drop.drop--right {
-  .drop--right() !important;
+.drop.drop-right {
+  .drop-right() !important;
 }
 
 // bottom + top
 
-.drop--bottom() {
+.drop-bottom() {
   padding: @drop-space 0;
   top: 100%;
   bottom: auto;
 }
 
-.drop.drop--bottom {
-  .drop--bottom() !important;
+.drop.drop-bottom {
+  .drop-bottom() !important;
 }
 
-.drop--top() {
+.drop-top() {
   padding: @drop-space 0;
   top: auto;
   bottom: 100%;
 }
 
-.drop.drop--top {
-  .drop--top() !important;
+.drop.drop-top {
+  .drop-top() !important;
 }
 
 // center
 
-.drop--center() {
+.drop-center() {
   &:before {
     display: none;
-    content: 'xt-drop--center';
+    content: 'xt-drop-center';
   }
 }
 
-.drop.drop--center {
-  .drop--center() !important;
+.drop.drop-center {
+  .drop-center() !important;
 }
 
 // middle
 
-.drop--middle() {
+.drop-middle() {
   padding-top: 0;
   padding-bottom: 0;
   &:after {
     display: none;
-    content: 'xt-drop--middle';
+    content: 'xt-drop-middle';
   }
 }
 
-.drop.drop--middle {
-  .drop--middle() !important;
+.drop.drop-middle {
+  .drop-middle() !important;
 }
 
 // contain
 
-.drop--contain-bottom() {
-  .drop--middle();
+.drop-contain-bottom() {
+  .drop-middle();
   top: auto;
   bottom: 0;
 }
 
-.drop.drop--contain-bottom {
-  .drop--contain-bottom() !important;
+.drop.drop-contain-bottom {
+  .drop-contain-bottom() !important;
 }
 
-.drop--contain-top() {
-  .drop--middle();
+.drop-contain-top() {
+  .drop-middle();
   top: 0;
   bottom: auto;
 }
 
-.drop.drop--contain-top {
-  .drop--contain-top() !important;
+.drop.drop-contain-top {
+  .drop-contain-top() !important;
 }
 
-// .drop--disable
+// .drop-disable
 
-.drop--disable {
+.drop-disable {
   .xt-disable();
   position: static;
   z-index: initial;

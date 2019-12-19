@@ -4,8 +4,8 @@ const spinner = require('components/snippets/spinner').default
 class Component extends React.Component {
   render() {
     return (
-      <div className="slider demo--test-iframe">
-        <div className="loader loader--spinner loader--mouse loader--js">
+      <div className="slider demo_test-iframe">
+        <div className="loader loader-spinner loader-mouse loader-js">
           <span className="spinner" dangerouslySetInnerHTML={{ __html: spinner({}) }}>
           </span>
         </div>
@@ -13,17 +13,17 @@ class Component extends React.Component {
         <div className="slides">
           <ul className="slides-inner">
 
-            <li className="slide col-6 col-4--sm">
+            <li className="slide col-6 col-4-sm">
               <div className="slide-inner">
 
-                <div className="card card--slide align-center">
+                <div className="card card-slide align-center">
                   <div className="card-design"></div>
                   <div className="card-inner">
                     <div className="card-content">
                       <div className="card-block card-item">
                         <div className="card-title">1</div>
                       </div>
-                      <div className="loader loader--x loader-size--bottom loader--js">
+                      <div className="loader loader-x loader-size-bottom loader-js">
                         <div className="filler">
                           <span></span><span></span>
                         </div>
@@ -35,17 +35,17 @@ class Component extends React.Component {
               </div>
             </li>
 
-            <li className="slide col-6 col-4--sm">
+            <li className="slide col-6 col-4-sm">
               <div className="slide-inner">
 
-                <div className="card card--slide align-center">
+                <div className="card card-slide align-center">
                   <div className="card-design"></div>
                   <div className="card-inner">
                     <div className="card-content">
                       <div className="card-block card-item">
                         <div className="card-title">2</div>
                       </div>
-                      <div className="loader loader--x loader-size--bottom loader--js">
+                      <div className="loader loader-x loader-size-bottom loader-js">
                         <div className="filler">
                           <span></span><span></span>
                         </div>
@@ -57,17 +57,17 @@ class Component extends React.Component {
               </div>
             </li>
 
-            <li className="slide col-6 col-4--sm">
+            <li className="slide col-6 col-4-sm">
               <div className="slide-inner">
 
-                <div className="card card--slide align-center">
+                <div className="card card-slide align-center">
                   <div className="card-design"></div>
                   <div className="card-inner">
                     <div className="card-content">
                       <div className="card-block card-item">
                         <div className="card-title">3</div>
                       </div>
-                      <div className="loader loader--x loader-size--bottom loader--js">
+                      <div className="loader loader-x loader-size-bottom loader-js">
                         <div className="filler">
                           <span></span><span></span>
                         </div>
@@ -79,17 +79,17 @@ class Component extends React.Component {
               </div>
             </li>
 
-            <li className="slide col-6 col-4--sm">
+            <li className="slide col-6 col-4-sm">
               <div className="slide-inner">
 
-                <div className="card card--slide align-center">
+                <div className="card card-slide align-center">
                   <div className="card-design"></div>
                   <div className="card-inner">
                     <div className="card-content">
                       <div className="card-block card-item">
                         <div className="card-title">4</div>
                       </div>
-                      <div className="loader loader--x loader-size--bottom loader--js">
+                      <div className="loader loader-x loader-size-bottom loader-js">
                         <div className="filler">
                           <span></span><span></span>
                         </div>
@@ -101,17 +101,17 @@ class Component extends React.Component {
               </div>
             </li>
 
-            <li className="slide col-6 col-4--sm">
+            <li className="slide col-6 col-4-sm">
               <div className="slide-inner">
 
-                <div className="card card--slide align-center">
+                <div className="card card-slide align-center">
                   <div className="card-design"></div>
                   <div className="card-inner">
                     <div className="card-content">
                       <div className="card-block card-item">
                         <div className="card-title">5</div>
                       </div>
-                      <div className="loader loader--x loader-size--bottom loader--js">
+                      <div className="loader loader-x loader-size-bottom loader-js">
                         <div className="filler">
                           <span></span><span></span>
                         </div>
@@ -126,7 +126,7 @@ class Component extends React.Component {
             <li className="slide col-12">
               <div className="slide-inner">
 
-                <div className="card card--slide align-center"
+                <div className="card card-slide align-center"
                      style={{ height: '15rem' }}>
                   <div className="card-design"></div>
                   <div className="card-inner">
@@ -134,7 +134,7 @@ class Component extends React.Component {
                       <div className="card-block card-item">
                         <div className="card-title">6</div>
                       </div>
-                      <div className="loader loader--x loader-size--bottom loader--js">
+                      <div className="loader loader-x loader-size-bottom loader-js">
                         <div className="filler">
                           <span></span><span></span>
                         </div>
@@ -150,8 +150,8 @@ class Component extends React.Component {
         </div>
 
         <nav className="slider-pagination">
-          <button type="button" className="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
-            <span className="loader loader--y loader--js">
+          <button type="button" className="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
+            <span className="loader loader-y loader-js">
               <span className="filler">
                 <span></span><span></span>
               </span>

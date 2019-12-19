@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<ul class="list-block list--default">
+<ul class="list-block list-default">
   <li>
     Lorem ipsum dolor sit amet.
   </li>

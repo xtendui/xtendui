@@ -26,7 +26,7 @@ Or just import **core**:
 Use this markup to create a **row list**.
 
 <script type="text/plain" class="language-markup">
-  <ul class="list list--default">
+  <ul class="list list-default">
     <li><!-- content --></li>
     <li><!-- content --></li>
     <li><!-- content --></li>
@@ -36,7 +36,7 @@ Use this markup to create a **row list**.
 Use this markup to create a **column list**.
 
 <script type="text/plain" class="language-markup">
-  <ul class="list-block list--default">
+  <ul class="list-block list-default">
     <li><!-- content --></li>
     <li><!-- content --></li>
     <li><!-- content --></li>

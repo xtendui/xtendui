@@ -10,12 +10,12 @@ date: "2000-02-01"
 
 Classes for assigning variant (e.g.: border / background / font colors).
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.btn--{variant}`                        | `.btn--default` `.btn--primary` `.btn--text` `.btn--link` |
-| Mixin                   | `.btn--{variant}()`                      | `.btn--default()` `.btn--primary()`  `.btn--text()` `.btn--link()`   |
+| Class                   | `.btn-{variant}`                        | `.btn-default` `.btn-primary` `.btn-text` `.btn-link` |
+| Mixin                   | `.btn-{variant}()`                      | `.btn-default()` `.btn-primary()`  `.btn-text()` `.btn-link()`   |
 
 </div>
 
@@ -39,8 +39,8 @@ Sizes uses `em` padding that depends on font size.
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.btn--{size}`                        | `.btn--tiny` `.btn--small` `.btn--medium` `.btn--big` `.btn--giant` |
-| Mixin                   | `.btn--{size}()`                      | `.btn--tiny()` `.btn--small()`  `.btn--medium()` `.btn--big()` `.btn--giant()`   |
+| Class                   | `.btn-{size}`                        | `.btn-tiny` `.btn-small` `.btn-medium` `.btn-big` `.btn-giant` |
+| Mixin                   | `.btn-{size}()`                      | `.btn-tiny()` `.btn-small()`  `.btn-medium()` `.btn-big()` `.btn-giant()`   |
 
 <demo>
   <demovanilla src="vanilla/components/button/size">

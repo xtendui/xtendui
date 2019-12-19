@@ -15,7 +15,7 @@
   background: linear-gradient(-90deg, @grad-accent);
   color: @white;
   @media @max-md {
-    .sticky--disable();
+    .sticky-disable();
   }
   @media @min-md {
     width: @gatsby_site_article_sidebar_width;
@@ -51,9 +51,9 @@
   .list-space(tiny);
 }
 
-.gatsby_btn--site_header_top_social {
+.gatsby_btn-site_header_top_social {
   .link-none();
-  .btn--nodesign();
+  .btn-nodesign();
   padding: 0;
   border-radius: 0;
   color: @text-inverse;
@@ -61,7 +61,7 @@
   text-transform: uppercase;
   opacity: 0.8;
   &:hover, &.hover, &:active, &.active {
-    color: @text-inverse--dark;
+    color: @text-inverse-dark;
     opacity: 1;
   }
   &:active, &.active {
@@ -76,17 +76,17 @@
   border-bottom: 1px solid fade(@gray-800, 20%);
 }
 
-.gatsby_btn--site_header_link {
+.gatsby_btn-site_header_link {
   .full();
   .link-none();
-  .btn--noborder();
+  .btn-noborder();
   box-shadow: none !important;
   margin-top: 2px;
   margin-bottom: 2px;
   padding: .4em .75em;
   border-color: transparent;
   background: transparent;
-  .font-sans--semibold();
+  .font-sans-semibold();
   font-size: 1.3rem;
   color: fade(@white, 50%);
   line-height: 1;
@@ -94,12 +94,12 @@
   &:hover, &.hover {
     border-color: transparent;
     background: fade(@gray-800, 20%);
-    color: @text-inverse--dark;
+    color: @text-inverse-dark;
   }
   &:active, &.active, &.current {
     border-color: transparent;
     background: fade(@gray-800, 40%);
-    color: @text-inverse--dark;
+    color: @text-inverse-dark;
   }
 }
 
@@ -153,7 +153,7 @@
   color: fade(@white, 80%);
 }
 
-.gatsby_btn--site_article_sidebar {
+.gatsby_btn-site_article_sidebar {
   .full();
   .link-none();
   box-shadow: none !important;
@@ -161,7 +161,7 @@
   padding: .3em .5em;
   border-color: transparent;
   background: transparent;
-  .font-sans--regular();
+  .font-sans-regular();
   font-size: 1.2rem;
   color: fade(@white, 50%);
   line-height: 1;
@@ -169,11 +169,11 @@
   &:hover, &.hover {
     border-color: transparent;
     background: fade(@gray-800, 20%);
-    color: @text-inverse--dark;
+    color: @text-inverse-dark;
   }
   &:active, &.active, &.current {
     border-color: transparent;
     background: fade(@gray-800, 40%);
-    color: @text-inverse--dark;
+    color: @text-inverse-dark;
   }
 }

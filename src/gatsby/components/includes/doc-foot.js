@@ -36,7 +36,7 @@ class DocHead extends React.Component {
                   <div className="gatsby_listing_column">
                     <Link
                       to={'/components/' + kebabCase(page.post.frontmatter.parent)}
-                      className="card card--primary card--small card--full card--collapse gatsby_listing_item"
+                      className="card card-primary card-small card-full card-collapse gatsby_listing_item"
                     >
                       <div className="card-design"></div>
                       <div className="card-inner">
@@ -58,7 +58,7 @@ class DocHead extends React.Component {
                   <div className="gatsby_listing_column">
                     <Link
                       to={'/extensions/' + kebabCase(page.post.frontmatter.parent)}
-                      className="card card--primary card--small card--full card--collapse gatsby_listing_item"
+                      className="card card-primary card-small card-full card-collapse gatsby_listing_item"
                     >
                       <div className="card-design"></div>
                       <div className="card-inner">
@@ -80,7 +80,7 @@ class DocHead extends React.Component {
                   <div className="gatsby_listing_column">
                     <Link
                       to={'/themes/' + kebabCase(page.post.frontmatter.parent)}
-                      className="card card--primary card--small card--full card--collapse gatsby_listing_item"
+                      className="card card-primary card-small card-full card-collapse gatsby_listing_item"
                     >
                       <div className="card-design"></div>
                       <div className="card-inner">
@@ -99,7 +99,7 @@ class DocHead extends React.Component {
 
                 {page.post.frontmatter.type !== 'Faqs' && postsFaqs.length ? (
                   <div className="gatsby_listing_column">
-                    <Link to={'/faqs/'} className="card card--primary card--small card--full card--collapse gatsby_listing_item">
+                    <Link to={'/faqs/'} className="card card-primary card-small card-full card-collapse gatsby_listing_item">
                       <div className="card-design"></div>
                       <div className="card-inner">
                         <div className="card-content">

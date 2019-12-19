@@ -15,11 +15,11 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list--default">
-  <div class="demo--parallax-title">
+<div class="list list-default">
+  <div class="demo_parallax-title">
     <h1>Parallax Title</h1>
   </div>
-  <div class="demo--parallax-img">
+  <div class="demo_parallax-img">
      ${img({ classes: 'full', width: 1000, height: 150 })}
   </div>
 </div>
@@ -29,7 +29,7 @@ demo.htmlSource = `
 <br/><br/><br/><br/><br/><br/>
 <br/><br/><br/><br/><br/><br/>
 
-<div class="demo--parallax-footer">
+<div class="demo_parallax-footer">
   <h4>Parallax Footer</h4>
 </div>
 `

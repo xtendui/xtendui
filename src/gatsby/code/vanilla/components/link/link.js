@@ -9,11 +9,11 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list--default list-space--small align-items-center">
+<div class="list list-default list-space-small align-items-center">
   <a href="#">
     link
   </a>
-  
+
   <a href="#" class="link-none">
     link
   </a>

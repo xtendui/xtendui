@@ -20,7 +20,7 @@ class DocHead extends React.Component {
                 ) : (
                   <span>{page.post.frontmatter.title}</span>
                 )}
-                {page.post.frontmatter.badge ? <div className="badge badge--default badge--small">{page.post.frontmatter.badge}</div> : null}
+                {page.post.frontmatter.badge ? <div className="badge badge-default badge-small">{page.post.frontmatter.badge}</div> : null}
               </h1>
               {page.post.frontmatter.description ? <p>{page.post.frontmatter.description}</p> : null}
             </div>
@@ -31,7 +31,7 @@ class DocHead extends React.Component {
                 <div>
                   {page.post.frontmatter.parent === page.post.frontmatter.title ? (
                     <Link to={'/' + kebabCase(page.post.frontmatter.type)} className="btn">
-                      <span className="icon-arrow-left icon--left"></span>
+                      <span className="icon-arrow-left icon-left"></span>
                       {page.post.frontmatter.type}
                     </Link>
                   ) : (
@@ -40,7 +40,7 @@ class DocHead extends React.Component {
                         return (
                           <div key={i}>
                             <Link to={markdownSlug(adiacent)} className="btn">
-                              <span className="icon-arrow-left icon--left"></span>
+                              <span className="icon-arrow-left icon-left"></span>
                               {adiacent.frontmatter.title}
                             </Link>
                           </div>
@@ -62,7 +62,7 @@ class DocHead extends React.Component {
                               <div key={index}>
                                 <Link to={markdownSlug(nextAdiacent)} className="btn align-right">
                                   {nextAdiacent.frontmatter.title}
-                                  <span className="icon-arrow-right icon--right"></span>
+                                  <span className="icon-arrow-right icon-right"></span>
                                 </Link>
                               </div>
                             )

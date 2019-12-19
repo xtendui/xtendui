@@ -26,7 +26,7 @@ Or just import **core**:
 Use this markup to create a **card**.
 
 <script type="text/plain" class="language-markup">
-  <div class="card card--default">
+  <div class="card card-default">
     <div class="card-design"></div>
     <div class="card-inner">
       <div class="card-content">

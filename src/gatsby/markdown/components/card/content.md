@@ -8,15 +8,15 @@ date: "2000-04-01"
 
 ## Block
 
-You can add custom `.card-block` modifiers and style them as you like (e.g.: `.card-block--head`).
+You can add custom `.card-block` modifiers and style them as you like (e.g.: `.card-block-head`).
 
 <script type="text/plain" class="language-markup">
-  <div class="card card--default">
+  <div class="card card-default">
     <div class="card-design"></div>
     <div class="card-inner">
       <div class="card-content">
 
-        <div class="card-block card-block--head">
+        <div class="card-block card-block-head">
           <!-- content -->
         </div>
 
@@ -34,10 +34,10 @@ You can add custom `.card-block` modifiers and style them as you like (e.g.: `.c
 
 Sequential `.card-item` stack vertically.
 
-They have a separator automatically styled with [variants](/components/card/option#variant). Just be sure to style `.card-item--{variant}` as in the **card.less** to not break css specificity.
+They have a separator automatically styled with [variants](/components/card/option#variant). Just be sure to style `.card-item-{variant}` as in the **card.less** to not break css specificity.
 
 <script type="text/plain" class="language-markup">
-  <div class="card card--default">
+  <div class="card card-default">
     <div class="card-design"></div>
     <div class="card-inner">
       <div class="card-content">
@@ -64,17 +64,17 @@ They have a separator automatically styled with [variants](/components/card/opti
 
 To stack `.card-item` horizontally use `.card-item-nested` and `.card-group` with responsive classes if you need them.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
 | Class                   | `.card-group`                           | `.card-group`                      |
-| Class responsive        | `.card-group--{breakpoint}`              | `.card-group--sm`                   |
+| Class responsive        | `.card-group-{breakpoint}`              | `.card-group-sm`                   |
 
 </div>
 
 <script type="text/plain" class="language-markup">
-  <div class="card card--default">
+  <div class="card card-default">
     <div class="card-design"></div>
     <div class="card-inner">
       <div class="card-content">
@@ -102,7 +102,7 @@ To stack `.card-item` horizontally use `.card-item-nested` and `.card-group` wit
 
 If you want full width assets use `.card-asset`.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Class                                     | Mixin                         | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -111,7 +111,7 @@ If you want full width assets use `.card-asset`.
 </div>
 
 <script type="text/plain" class="language-markup">
-  <div class="card card--default">
+  <div class="card card-default">
     <div class="card-design"></div>
     <div class="card-inner">
       <div class="card-content">
@@ -132,13 +132,13 @@ If you want full width assets use `.card-asset`.
 
 ## Overflow
 
-You can set vertical overflow using `.card--overflow-y` in `.card-inner` or `.card-block`.
+You can set vertical overflow using `.card-overflow-y` in `.card-inner` or `.card-block`.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Class                                     | Mixin                         | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `.card--overflow-y`                | `.card--overflow-y()`        | Vertical overflow with max-height and scrollbar            |
+| Option                  | `.card-overflow-y`                | `.card-overflow-y()`        | Vertical overflow with max-height and scrollbar            |
 
 </div>
 

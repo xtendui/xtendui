@@ -18,7 +18,7 @@ date: "2000-10-01"
 
 ## Disable
 
-To disable overlay use `.overlay--disable` useful within media queries.
+To disable overlay use `.overlay-disable` useful within media queries.
 
 <demo>
   <demovanilla src="vanilla/components/overlay/disable">

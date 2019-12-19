@@ -75,11 +75,11 @@ const populateBlock = function() {
       makeFullscreen(el.nextSibling)
     })
   }
-  document.querySelector('#toggle--open-full-trigger').addEventListener('off.xt', function(e) {
+  document.querySelector('#toggle_open-full-trigger').addEventListener('off.xt', function(e) {
     // @FIX on.xt and off.xt event bubbles
     if (this === e.target) {
-      const content = document.querySelector('#toggle--open-full-content')
-      const inner = document.querySelector('#toggle--open-full-inner')
+      const content = document.querySelector('#toggle_open-full-content')
+      const inner = document.querySelector('#toggle_open-full-inner')
       // toggles
       const listingToggles = document.querySelectorAll('[data-gatsby-listing-toggle]')
       for (const el of listingToggles) {
@@ -102,8 +102,8 @@ const populateBlock = function() {
         }
       }
       // move code block
-      const appendOrigin = document.querySelector('[data-xt-origin="toggle--open-full-content"]')
-      content.childNodes[0].classList.add('xt-ignore', 'xt-ignore--once') // @FIX ignore once for mount when moving
+      const appendOrigin = document.querySelector('[data-xt-origin="toggle_open-full-content"]')
+      content.childNodes[0].classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
       appendOrigin.before(content.childNodes[0])
       appendOrigin.remove()
       // trigger resize
@@ -118,7 +118,7 @@ const populateBlock = function() {
   if (location.hash) {
     const demo = document.querySelector(location.hash)
     if (demo) {
-      demo.querySelector('.btn--open-full').classList.add('active')
+      demo.querySelector('.btn-open-full').classList.add('active')
       document.scrollingElement.scrollTo(0, document.scrollingElement.scrollTop + demo.offsetTop)
     }
   }
@@ -136,28 +136,28 @@ const populateDemo = function(container, i) {
     .querySelector('.gatsby_demo_tabs_right')
     .append(
       Xt.createElement(
-        '<button type="button" class="btn btn--text btn--tiny btn--prev-demo" aria-label="Previous"><span class="icon-arrow-left icon--big"></span></button>'
+        '<button type="button" class="btn btn-text btn-tiny btn-prev-demo" aria-label="Previous"><span class="icon-arrow-left icon-big"></span></button>'
       )
     )
   container
     .querySelector('.gatsby_demo_tabs_right')
     .append(
       Xt.createElement(
-        '<button type="button" class="btn btn--text btn--tiny btn--next-demo" aria-label="Next"><span class="icon-arrow-right icon--big"></span></button>'
+        '<button type="button" class="btn btn-text btn-tiny btn-next-demo" aria-label="Next"><span class="icon-arrow-right icon-big"></span></button>'
       )
     )
   container
     .querySelector('.gatsby_demo_tabs_right')
     .append(
       Xt.createElement(
-        '<button type="button" class="btn btn--text btn--tiny btn--show-code" aria-label="Toggle Code"><span class="icon-code icon--big"></span></button>'
+        '<button type="button" class="btn btn-text btn-tiny btn-show-code" aria-label="Toggle Code"><span class="icon-code icon-big"></span></button>'
       )
     )
   container
     .querySelector('.gatsby_demo_tabs_right')
     .append(
       Xt.createElement(
-        '<button type="button" class="btn btn--text btn--tiny btn--open-full" aria-label="Toggle Fullscreen"><span class="icon-maximize icon--big"></span></button>'
+        '<button type="button" class="btn btn-text btn-tiny btn-open-full" aria-label="Toggle Fullscreen"><span class="icon-maximize icon-big"></span></button>'
       )
     )
   // loop items
@@ -179,15 +179,15 @@ const populateDemo = function(container, i) {
         name = 'demo #' + k
       }
     }
-    container.querySelector('.gatsby_demo_tabs_left').append(Xt.createElement('<button type="button" class="btn btn--text btn--tiny">' + name + '</button>'))
+    container.querySelector('.gatsby_demo_tabs_left').append(Xt.createElement('<button type="button" class="btn btn-text btn-tiny">' + name + '</button>'))
     // tabs
     item.prepend(
       Xt.createElement(
-        '<div class="gatsby_demo_code"><div class="gatsby_demo_code_inner"><div class="gatsby_demo_code_tabs"><div class="gatsby_demo_code_tabs_left"></div><div class="gatsby_demo_code_tabs_right"><button type="button" class="btn btn--text btn--tiny btn--clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="gatsby_demo_code_body"></div></div></div>'
+        '<div class="gatsby_demo_code"><div class="gatsby_demo_code_inner"><div class="gatsby_demo_code_tabs"><div class="gatsby_demo_code_tabs_left"></div><div class="gatsby_demo_code_tabs_right"><button type="button" class="btn btn-text btn-tiny btn-clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="gatsby_demo_code_body"></div></div></div>'
       )
     )
     // https://github.com/zenorocha/clipboard.js/
-    const clipboard = new ClipboardJS('.btn--clipboard', {
+    const clipboard = new ClipboardJS('.btn-clipboard', {
       target: function(trigger) {
         return trigger.closest('.gatsby_demo').querySelector('.gatsby_demo_item.active .gatsby_demo_code_body_item.active .hljs')
       },
@@ -218,12 +218,12 @@ const populateDemo = function(container, i) {
           sourceTo.innerHTML = item.querySelector('script[type="text/plain"]').innerHTML
           // .gatsby_demo-cols
           if (sourceTo.classList.contains('gatsby_demo-cols')) {
-            for (const [i, el] of sourceTo.querySelectorAll("[class^='col-'], [class*=' col-'], [class^='demo--col-'], [class*=' demo--col-']").entries()) {
+            for (const [i, el] of sourceTo.querySelectorAll("[class^='col-'], [class*=' col-'], [class^='demo_col-'], [class*=' demo_col-']").entries()) {
               el.setAttribute('data-index', i.toString())
             }
           }
           if (sourceTo.classList.contains('gatsby_demo-cols-nested')) {
-            for (const [i, el] of sourceTo.querySelectorAll("[class^='col-'], [class*=' col-'], [class^='demo--col-'], [class*=' demo--col-']").entries()) {
+            for (const [i, el] of sourceTo.querySelectorAll("[class^='col-'], [class*=' col-'], [class^='demo_col-'], [class*=' demo_col-']").entries()) {
               el.setAttribute('data-index', i.toString())
             }
           }
@@ -235,7 +235,7 @@ const populateDemo = function(container, i) {
   const demoId = 'gatsby_demo_' + i
   container.setAttribute('id', demoId)
   // makeFullscreen
-  for (const btnOpenFull of container.querySelectorAll('.btn--open-full')) {
+  for (const btnOpenFull of container.querySelectorAll('.btn-open-full')) {
     btnOpenFull.addEventListener('click', function() {
       makeFullscreen(container)
     })
@@ -249,12 +249,12 @@ const populateDemo = function(container, i) {
   }
   // gatsby_demo_tabs_left
   new Xt.Toggle(container, {
-    elements: '.gatsby_demo_tabs_left .btn:not(.btn--prev-demo):not(.btn--next-demo)',
+    elements: '.gatsby_demo_tabs_left .btn:not(.btn-prev-demo):not(.btn-next-demo)',
     targets: '.gatsby_demo_item',
     min: 1,
   })
-  // .btn--show-code
-  new Xt.Toggle(container.querySelector('.btn--show-code'), {
+  // .btn-show-code
+  new Xt.Toggle(container.querySelector('.btn-show-code'), {
     targets: '#' + demoId + ' .gatsby_demo_code',
   })
   // hide navigation if not needed
@@ -267,11 +267,11 @@ const populateDemo = function(container, i) {
     count = listingToggles.length
   }
   if (count < 2) {
-    container.querySelector('.btn--prev-demo').classList.add('display-none')
-    container.querySelector('.btn--next-demo').classList.add('display-none')
+    container.querySelector('.btn-prev-demo').classList.add('display-none')
+    container.querySelector('.btn-next-demo').classList.add('display-none')
   }
-  // .btn--prev-demo
-  container.querySelector('.btn--prev-demo').addEventListener('click', function() {
+  // .btn-prev-demo
+  container.querySelector('.btn-prev-demo').addEventListener('click', function() {
     const self = Xt.get('xt-toggle', container)
     if (self.currentIndex > 0) {
       self.goToPrev()
@@ -284,9 +284,9 @@ const populateDemo = function(container, i) {
             let currentOffset
             let prevOffset = demos[prev].offsetTop
             demos[prev].querySelector('.gatsby_demo_tabs_left .btn:last-child').dispatchEvent(new CustomEvent('on.xt'))
-            if (document.querySelector('#toggle--open-full-trigger').classList.contains('active')) {
-              currentOffset = document.querySelector('[data-xt-origin="toggle--open-full-content"]').offsetTop
-              document.querySelector('#toggle--open-full-trigger').dispatchEvent(new CustomEvent('off.xt'))
+            if (document.querySelector('#toggle_open-full-trigger').classList.contains('active')) {
+              currentOffset = document.querySelector('[data-xt-origin="toggle_open-full-content"]').offsetTop
+              document.querySelector('#toggle_open-full-trigger').dispatchEvent(new CustomEvent('off.xt'))
               makeFullscreen(demos[prev].closest('.gatsby_demo'))
             } else {
               currentOffset = this.closest('.gatsby_demo').offsetTop
@@ -299,7 +299,7 @@ const populateDemo = function(container, i) {
           if (listingToggles[i].classList.contains('active')) {
             let prev = i - 1
             prev = prev >= 0 ? prev : listingToggles.length - 1
-            document.querySelector('#toggle--open-full-trigger').dispatchEvent(new CustomEvent('off.xt'))
+            document.querySelector('#toggle_open-full-trigger').dispatchEvent(new CustomEvent('off.xt'))
             listingToggles[prev].dispatchEvent(new CustomEvent('click'))
             break
           }
@@ -307,8 +307,8 @@ const populateDemo = function(container, i) {
       }
     }
   })
-  // .btn--next-demo
-  container.querySelector('.btn--next-demo').addEventListener('click', function() {
+  // .btn-next-demo
+  container.querySelector('.btn-next-demo').addEventListener('click', function() {
     const self = Xt.get('xt-toggle', container)
     if (self.currentIndex < self.getGroups().length - 1) {
       self.goToNext()
@@ -321,9 +321,9 @@ const populateDemo = function(container, i) {
             let currentOffset
             let nextOffset = demos[next].offsetTop
             demos[next].querySelector('.gatsby_demo_tabs_left .btn:first-child').dispatchEvent(new CustomEvent('on.xt'))
-            if (document.querySelector('#toggle--open-full-trigger').classList.contains('active')) {
-              currentOffset = document.querySelector('[data-xt-origin="toggle--open-full-content"]').offsetTop
-              document.querySelector('#toggle--open-full-trigger').dispatchEvent(new CustomEvent('off.xt'))
+            if (document.querySelector('#toggle_open-full-trigger').classList.contains('active')) {
+              currentOffset = document.querySelector('[data-xt-origin="toggle_open-full-content"]').offsetTop
+              document.querySelector('#toggle_open-full-trigger').dispatchEvent(new CustomEvent('off.xt'))
               makeFullscreen(demos[next].closest('.gatsby_demo'))
             } else {
               currentOffset = this.closest('.gatsby_demo').offsetTop
@@ -336,7 +336,7 @@ const populateDemo = function(container, i) {
           if (listingToggles[i].classList.contains('active')) {
             let next = i + 1
             next = next < listingToggles.length ? next : 0
-            document.querySelector('#toggle--open-full-trigger').dispatchEvent(new CustomEvent('off.xt'))
+            document.querySelector('#toggle_open-full-trigger').dispatchEvent(new CustomEvent('off.xt'))
             listingToggles[next].dispatchEvent(new CustomEvent('click'))
             break
           }
@@ -351,8 +351,8 @@ const populateDemo = function(container, i) {
  */
 
 const makeFullscreen = function(container) {
-  const toggle = document.querySelector('#toggle--open-full-trigger')
-  const content = document.querySelector('#toggle--open-full-content')
+  const toggle = document.querySelector('#toggle_open-full-trigger')
+  const content = document.querySelector('#toggle_open-full-content')
   // toggles
   const listingToggle = container.previousSibling
   if (listingToggle instanceof Element && listingToggle.getAttribute('data-gatsby-listing-toggle')) {
@@ -376,10 +376,10 @@ const makeFullscreen = function(container) {
   })
   // move code block
   container.before(
-    Xt.createElement('<div class="gatsby_demo xt-ignore" data-xt-origin="toggle--open-full-content" style="height: ' + container.offsetHeight + 'px"></div>')
+    Xt.createElement('<div class="gatsby_demo xt-ignore" data-xt-origin="toggle_open-full-content" style="height: ' + container.offsetHeight + 'px"></div>')
   )
   if (!container.dataset.isFullscreenOnly) {
-    container.classList.add('xt-ignore', 'xt-ignore--once') // @FIX ignore once for mount when moving
+    container.classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
   }
   content.append(container)
   // populate iframe
@@ -389,7 +389,7 @@ const makeFullscreen = function(container) {
       initializeIframe(container, item)
     }
   }
-  const full = container.closest('#toggle--open-full')
+  const full = container.closest('#toggle_open-full')
   if (full) {
     container.querySelector('.gatsby_demo_item.active').dispatchEvent(new CustomEvent('on.xt', { detail: { skip: true } }))
     Xt.animTimeout(full, function() {
@@ -420,7 +420,7 @@ const initializeIframe = function(container, item) {
       .append(
         Xt.createElement(
           '\n' +
-            '    <div class="loader loader--spinner">\n' +
+            '    <div class="loader loader-spinner">\n' +
             '      <div class="spinner">\n' +
             '        <svg viewBox="0 0 250 250"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"></circle></svg><svg viewBox="0 0 250 250" preserveAspectRatio="xMinYMin meet"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"></circle></svg>\n' +
             '      </div>\n' +
@@ -581,7 +581,7 @@ const populateSources = function(item, element, z) {
   }
   // populate tabs
   item.querySelector('.gatsby_demo_code_body').append(Xt.createElement('<div class="gatsby_demo_code_body_item"><pre class="noedit"><code></code></pre></div>'))
-  item.querySelector('.gatsby_demo_code_tabs_left').append(Xt.createElement('<button type="button" class="btn btn--text btn--tiny">' + lang + '</button>'))
+  item.querySelector('.gatsby_demo_code_tabs_left').append(Xt.createElement('<button type="button" class="btn btn-text btn-tiny">' + lang + '</button>'))
   // format code
   const itemInside = item.querySelectorAll('.gatsby_demo_code_body .gatsby_demo_code_body_item')[z]
   const codeInside = itemInside.querySelector('pre code')

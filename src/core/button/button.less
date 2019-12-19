@@ -9,49 +9,49 @@
   border-width: 1px;
   border-style: solid;
   border-color: transparent;
-  .font-sans--semibold();
+  .font-sans-semibold();
   line-height: 1.2;
   letter-spacing: .025em;
   text-transform: uppercase;
   // default options
-  .btn--medium();
+  .btn-medium();
 }
 
 // variant
 
-.btn--default {
+.btn-default {
   .link-none();
   border-color: @gray-200;
   background: @gray-200;
   color: @text;
   &:hover, &.hover, &:active, &.active {
-    border-color: @gray-200--dark;
-    background: @gray-200--dark;
-    color: @text--dark;
+    border-color: @gray-200-dark;
+    background: @gray-200-dark;
+    color: @text-dark;
   }
   &:active, &.active {
     box-shadow: @shadow-light;
   }
 }
 
-.btn--primary {
+.btn-primary {
   .link-none();
   border-color: @accent;
   background: @accent;
   color: @text-inverse;
   &:hover, &.hover, &:active, &.active {
-    border-color: @accent--dark;
-    background: @accent--dark;
-    color: @text-inverse--dark;
+    border-color: @accent-dark;
+    background: @accent-dark;
+    color: @text-inverse-dark;
   }
   &:active, &.active {
     box-shadow: @shadow-accent;
   }
 }
 
-.btn--text {
+.btn-text {
   .link-none();
-  .btn--nodesign();
+  .btn-nodesign();
   color: inherit;
   &:hover, &.hover, &:active, &.active {
     color: inherit;
@@ -59,9 +59,9 @@
   }
 }
 
-.btn--link {
-  .btn--none();
-  .btn--nodesign();
+.btn-link {
+  .btn-none();
+  .btn-nodesign();
   // reset
   font-family: inherit !important;
   font-style: inherit !important;
@@ -72,34 +72,34 @@
 
 // size
 
-.btn--tiny {
+.btn-tiny {
   padding: .5em 1em;
   font-size: 10px;
 }
 
-.btn--small {
+.btn-small {
   padding: .6em 1.2em;
   font-size: 1.2rem;
 }
 
-.btn--medium {
+.btn-medium {
   padding: .6em 1.2em;
   font-size: 1.335rem; // @FIX odd rem with .035 added
 }
 
-.btn--big {
+.btn-big {
   padding: .6em 1.2em;
   font-size: 1.4rem;
 }
 
-.btn--giant {
+.btn-giant {
   padding: .6em 1.2em;
   font-size: 1.535rem; // @FIX odd rem with .035 added
 }
 
 // special
 
-.btn--nodesign {
+.btn-nodesign {
   border-color: transparent;
   background: transparent;
   &:hover, &.hover, &:active, &.active {
@@ -111,60 +111,60 @@
   }
 }
 
-.btn--squared {
+.btn-squared {
   border-radius: 0;
 }
 
-.btn--noborder {
+.btn-noborder {
   border: 0;
 }
 
-.btn--tall {
+.btn-tall {
   padding-top: .9em;
   padding-bottom: .9em;
 }
 
-.btn--short {
+.btn-short {
   padding-top: .3em;
   padding-bottom: .3em;
 }
 
-.btn--wide {
+.btn-wide {
   padding-left: 1.8em;
   padding-right: 1.8em;
 }
 
-.btn--narrow {
+.btn-narrow {
   padding-left: .6em;
   padding-right: .6em;
 }
 
-.btn--none {
-  .btn--nodesign();
-  .btn--squared();
+.btn-none {
+  .btn-nodesign();
+  .btn-squared();
   padding: 0;
 }
 
-.btn--none-x {
-  .btn--nodesign();
-  .btn--squared();
+.btn-none-x {
+  .btn-nodesign();
+  .btn-squared();
   padding-left: 0;
   padding-right: 0;
 }
 
-.btn--none-y {
-  .btn--nodesign();
-  .btn--squared();
+.btn-none-y {
+  .btn-nodesign();
+  .btn-squared();
   padding-top: 0;
   padding-bottom: 0;
 }
 
-.btn--icon {
+.btn-icon {
   line-height: 1;
   padding: .8em .8em;
 }
 
-.btn--transform {
+.btn-transform {
   letter-spacing: 0;
   text-transform: none;
 }
@@ -189,7 +189,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  .btn--text();
-  .btn--icon();
+  .btn-text();
+  .btn-icon();
   .icon-xt(@content: @icon-xt-close, @size: @icon-medium);
 }

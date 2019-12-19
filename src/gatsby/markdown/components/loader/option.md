@@ -8,11 +8,11 @@ date: "2000-02-01"
 
 ## Spinner
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Class                                     | Mixin                         | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `.loader--spinner`                | Not Possible        | Style setup for loader spinner            |
+| Option                  | `.loader-spinner`                | Not Possible        | Style setup for loader spinner            |
 
 </div>
 
@@ -25,12 +25,12 @@ date: "2000-02-01"
 
 ### Direction
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.loader--{direction}`                   | `.loader--x` `.loader--y`             |
-| Mixin                   | `.loader--{direction}()`                 | `.loader--x()` `.loader--y()`         |
+| Class                   | `.loader-{direction}`                   | `.loader-x` `.loader-y`             |
+| Mixin                   | `.loader-{direction}()`                 | `.loader-x()` `.loader-y()`         |
 
 </div>
 
@@ -43,14 +43,14 @@ date: "2000-02-01"
 
 ### Size
 
-Loader size with `.loader--x`.
+Loader size with `.loader-x`.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.loader-{size}--{direction}`             | `.loader-size--x` `.loader-size--top` `.loader-size--bottom`          |
-| Mixin                   | `.loader-{size}--{direction}()`           | `.loader-size--x()` `.loader-size--top()` `.loader-size--bottom()`     |
+| Class                   | `.loader-{size}-{direction}`             | `.loader-size-x` `.loader-size-top` `.loader-size-bottom`          |
+| Mixin                   | `.loader-{size}-{direction}()`           | `.loader-size-x()` `.loader-size-top()` `.loader-size-bottom()`     |
 
 </div>
 
@@ -63,14 +63,14 @@ Loader size with `.loader--x`.
   </demovanilla>
 </demo>
 
-Loader size with `.loader--y`.
+Loader size with `.loader-y`.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.loader-{size}--{direction}`             | `.loader-size--y` `.loader-size--left` `.loader-size--right`          |
-| Mixin                   | `.loader-{size}--{direction}()`           | `.loader-size--y()` `.loader-size--left()` `.loader-size--right()`         |
+| Class                   | `.loader-{size}-{direction}`             | `.loader-size-y` `.loader-size-left` `.loader-size-right`          |
+| Mixin                   | `.loader-{size}-{direction}()`           | `.loader-size-y()` `.loader-size-left()` `.loader-size-right()`         |
 
 </div>
 
@@ -85,13 +85,13 @@ Loader size with `.loader--y`.
 
 ## Mouse
 
-Loader that follow mouse with `.loader--mouse` and javascript.
+Loader that follow mouse with `.loader-mouse` and javascript.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Class                                     | Mixin                         | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `.loader--mouse`                | `.loader--mouse()`        | Style setup for loader that follow mouse            |
+| Option                  | `.loader-mouse`                | `.loader-mouse()`        | Style setup for loader that follow mouse            |
 
 </div>
 
@@ -104,13 +104,13 @@ Loader that follow mouse with `.loader--mouse` and javascript.
 
 ## Background
 
-Use `.loader--background` to add the background.
+Use `.loader-background` to add the background.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Class                                     | Mixin                         | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `.loader--background`                | `.loader--background()`        | Loader with background            |
+| Option                  | `.loader-background`                | `.loader-background()`        | Loader with background            |
 
 </div>
 

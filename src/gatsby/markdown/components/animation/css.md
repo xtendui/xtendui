@@ -14,7 +14,7 @@ In the file there are css time and bezier vars.
 
 You have some basic css animation classes/mixins:
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Mixin                         | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |

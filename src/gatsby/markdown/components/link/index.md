@@ -30,7 +30,7 @@ Use this markup to create a **link**.
     <!-- content -->
   </a>
 
-  <button type="button" class="btn btn--link">
+  <button type="button" class="btn btn-link">
     <!-- content -->
   </button>
 </script>

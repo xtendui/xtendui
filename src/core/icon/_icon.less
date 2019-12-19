@@ -2,7 +2,7 @@
  * icon
  */
 
-.icon--base() {
+.icon-base() {
   display: inline-block;
   vertical-align: middle;
   align-items: center;
@@ -28,8 +28,8 @@
  */
 
 .icon-xt {
-  .icon--base();
-  font-family: @icons-xt--family;
+  .icon-base();
+  font-family: @icons-xt-family;
 }
 
 [class^='icon-xt-'], [class*=' icon-xt-'] {
@@ -50,7 +50,7 @@
 
 .icon-theme {
   & when not (@icons-theme--family = none) {
-    .icon--base();
+    .icon-base();
     font-family: @icons-theme--family;
   }
 }

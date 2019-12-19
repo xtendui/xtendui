@@ -10,12 +10,12 @@ date: "2000-02-01"
 
 Lists **automatically** add horizontal and vertical spacing to the contents. You can **specify a different one** with this classes/mixins.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.list-space--{size}`                     | `.list-space--small`          |
-| Class responsive        | `.list-space--{size}--{breakpoint}`        | `.list-space--small--sm`       |
+| Class                   | `.list-space-{size}`                     | `.list-space-small`          |
+| Class responsive        | `.list-space-{size}-{breakpoint}`        | `.list-space-small-sm`       |
 | Mixin                   | `.list-space({size})`                     | `.list-space(small)`          |
 | Mixin responsive min    | `.list-space({size}, {breakpoint})`       | `.list-space(small, sm)`      |
 
@@ -23,12 +23,12 @@ Lists **automatically** add horizontal and vertical spacing to the contents. You
 
 `{direction}` can be `x` or `y`.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.list-space-{direction}--{size}`                      | `.list-space-{direction}--small`           |
-| Class responsive        | `.list-space-{direction}--{size}--{breakpoint}`         | `.list-space-{direction}--small--sm`        |
+| Class                   | `.list-space-{direction}-{size}`                      | `.list-space-{direction}-small`           |
+| Class responsive        | `.list-space-{direction}-{size}-{breakpoint}`         | `.list-space-{direction}-small-sm`        |
 | Mixin                   | `.list-space-{direction}({size})`                      | `.list-space-{direction}(small)`           |
 | Mixin responsive min    | `.list-space-{direction}({size}, {breakpoint})`        | `.list-space-{direction}(small, sm)`       |
 
@@ -63,12 +63,12 @@ Lists **automatically** add horizontal and vertical spacing to the contents. You
 
 Set children's direction inside the flexbox.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.flex-direction--{value}`                        | `.flex-direction--column`                   |
-| Class responsive        | `.flex-direction--{value}--{breakpoint}`           | `.flex-direction--column--sm`                |
+| Class                   | `.flex-direction-{value}`                        | `.flex-direction-column`                   |
+| Class responsive        | `.flex-direction-{value}-{breakpoint}`           | `.flex-direction-column-sm`                |
 | Mixin                   | `.flex-direction({value})`                        | `.flex-direction(column)`                   |
 | Mixin responsive min    | `.flex-direction({value}, {breakpoint})`          | `.flex-direction(column, sm)`               |
 
@@ -89,12 +89,12 @@ Set children's direction inside the flexbox.
 
 Set children's wrapping inside the flexbox.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.flex-wrap--{value}`                        | `.flex-wrap--nowrap`                   |
-| Class responsive        | `.flex-wrap--{value}--{breakpoint}`           | `.flex-wrap--nowrap--sm`                |
+| Class                   | `.flex-wrap-{value}`                        | `.flex-wrap-nowrap`                   |
+| Class responsive        | `.flex-wrap-{value}-{breakpoint}`           | `.flex-wrap-nowrap-sm`                |
 | Mixin                   | `.flex-wrap({value})`                        | `.flex-wrap(nowrap)`                   |
 | Mixin responsive min    | `.flex-wrap({value}, {breakpoint})`          | `.flex-wrap(nowrap, sm)`               |
 
@@ -113,12 +113,12 @@ Set children's wrapping inside the flexbox.
 
 Set children's horizontal alignment inside the flexbox.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.justify-content--{value}`                        | `.justify-content--center`                   |
-| Class responsive        | `.justify-content--{value}--{breakpoint}`           | `.justify-content--center--sm`                |
+| Class                   | `.justify-content-{value}`                        | `.justify-content-center`                   |
+| Class responsive        | `.justify-content-{value}-{breakpoint}`           | `.justify-content-center-sm`                |
 | Mixin                   | `.justify-content({value})`                        | `.justify-content(center)`                   |
 | Mixin responsive min    | `.justify-content({value}, {breakpoint})`          | `.justify-content(center, sm)`               |
 
@@ -143,12 +143,12 @@ Set children's horizontal alignment inside the flexbox.
 
 Set children's vertical alignment inside the flexbox.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.align-items--{value}`                        | `.align-items--center`                   |
-| Class responsive        | `.align-items--{value}--{breakpoint}`           | `.align-items--center--sm`                |
+| Class                   | `.align-items-{value}`                        | `.align-items-center`                   |
+| Class responsive        | `.align-items-{value}-{breakpoint}`           | `.align-items-center-sm`                |
 | Mixin                   | `.align-items({value})`                        | `.align-items(center)`                   |
 | Mixin responsive min    | `.align-items({value}, {breakpoint})`          | `.align-items(center, sm)`               |
 
@@ -171,12 +171,12 @@ Set children's vertical alignment inside the flexbox.
 
 Set children's vertical alignment inside the flexbox.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.align-content--{value}`                        | `.align-content--center`                   |
-| Class responsive        | `.align-content--{value}--{breakpoint}`           | `.align-content--center--sm`                |
+| Class                   | `.align-content-{value}`                        | `.align-content-center`                   |
+| Class responsive        | `.align-content-{value}-{breakpoint}`           | `.align-content-center-sm`                |
 | Mixin                   | `.align-content({value})`                        | `.align-content(center)`                   |
 | Mixin responsive min    | `.align-content({value}, {breakpoint})`          | `.align-content(center, sm)`               |
 
@@ -202,12 +202,12 @@ Set children's vertical alignment inside the flexbox.
 Set item's vertical alignment inside the flexbox.
 If set to **auto** computes to the parent's `align-items` value.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.align-self--{value}`                        | `.align-self--center`                   |
-| Class responsive        | `.align-self--{value}--{breakpoint}`           | `.align-self--center--sm`                |
+| Class                   | `.align-self-{value}`                        | `.align-self-center`                   |
+| Class responsive        | `.align-self-{value}-{breakpoint}`           | `.align-self-center-sm`                |
 | Mixin                   | `.align-self({value})`                        | `.align-self(center)`                   |
 | Mixin responsive min    | `.align-self({value}, {breakpoint})`          | `.align-self(center, sm)`               |
 
@@ -232,12 +232,12 @@ If set to **auto** computes to the parent's `align-items` value.
 
 Set item's order inside the flexbox.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
 | Class                   | `.order-{value}`                        | `.order-1`                   |
-| Class responsive        | `.order-{value}--{breakpoint}`           | `.order-1--sm`                |
+| Class responsive        | `.order-{value}-{breakpoint}`           | `.order-1-sm`                |
 | Mixin                   | `.order({value})`                        | `.order(1)`                   |
 | Mixin responsive min    | `.order({value}, {breakpoint})`          | `.order(1, sm)`               |
 

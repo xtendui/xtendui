@@ -21,7 +21,7 @@ You can create a toggle with **mutiple** mode by assigning the toggle to a conta
 
 With multiple mode, the **targets** activated are the ones with the same index of the toggled **element**.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |

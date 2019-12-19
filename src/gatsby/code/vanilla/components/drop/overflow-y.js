@@ -10,14 +10,14 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="drop-container" data-xt-drop>
-  <button type="button" class="btn btn--primary">
+  <button type="button" class="btn btn-primary">
     overflow-y
   </button>
-  <div class="drop drop--default drop--center drop--middle drop--overflow-y">
+  <div class="drop drop-default drop-center drop-middle drop-overflow-y">
     <div class="drop-inner">
       <div class="drop-design"></div>
       <div class="drop-content">
-        <ul class="list list--drop">
+        <ul class="list list-drop">
           <li>
             <button type="button">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit

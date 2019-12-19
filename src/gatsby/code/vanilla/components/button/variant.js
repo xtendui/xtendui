@@ -9,20 +9,20 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list--default list-space--small align-items-center">
-  <button type="button" class="btn btn--default">
+<div class="list list-default list-space-small align-items-center">
+  <button type="button" class="btn btn-default">
     default
   </button>
 
-  <button type="button" class="btn btn--primary">
+  <button type="button" class="btn btn-primary">
     primary
   </button>
 
-  <button type="button" class="btn btn--text">
+  <button type="button" class="btn btn-text">
     text
   </button>
 
-  <button type="button" class="btn btn--link">
+  <button type="button" class="btn btn-link">
     link
   </button>
 </div>

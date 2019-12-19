@@ -46,7 +46,7 @@ Use this markup to create a **styled** **checkbox** or **radio**.
 
 Use this markup to create a **fake** **styled** **checkbox** or **radio**.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Class                                     | Mixin                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -82,7 +82,7 @@ Use this markup to create a **fake** **styled** **checkbox** or **radio**.
 
 Use this markup to create a **unstyled** **checkbox** or **radio**.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Class                                     | Mixin                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |

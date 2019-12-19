@@ -3,7 +3,7 @@ import 'xtend-library/src/extensions/scroll/scroll.js'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '.demo--parallax-title',
+  matches: '.demo_parallax-title',
   mount: function(object) {
     // init
 
@@ -37,7 +37,7 @@ Xt.mount.push({
 })
 
 Xt.mount.push({
-  matches: '.demo--parallax-img',
+  matches: '.demo_parallax-img',
   mount: function(object) {
     // init
 
@@ -70,7 +70,7 @@ Xt.mount.push({
 })
 
 Xt.mount.push({
-  matches: '.demo--parallax-footer',
+  matches: '.demo_parallax-footer',
   mount: function(object) {
     // init
 

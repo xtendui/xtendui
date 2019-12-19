@@ -1,7 +1,7 @@
 import { Xt } from 'xtend-library'
 
 Xt.mount.push({
-  matches: '#demo--toggle-restart',
+  matches: '#demo_toggle-restart',
   mount: function(object) {
     // click
 

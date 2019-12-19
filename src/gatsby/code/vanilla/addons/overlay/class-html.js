@@ -9,16 +9,16 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list--default list-space--small align-items-center justify-content-center overlay-class-html">
-  <div data-xt-overlay="{ classHtml: 'overlay-class-html--top' }">
-    <button type="button" class="btn btn--primary">
+<div class="list list-default list-space-small align-items-center justify-content-center overlay-class-html">
+  <div data-xt-overlay="{ classHtml: 'overlay-class-html-top' }">
+    <button type="button" class="btn btn-primary">
       default
     </button>
     <div class="overlay">
       <div class="overlay-container">
         <div class="overlay-inner">
-        
-          <div class="card card--overlay">
+
+          <div class="card card-overlay">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="btn btn-close" aria-label="Close"></div>
@@ -37,21 +37,21 @@ demo.htmlSource = `
               </div>
             </div>
           </div>
-          
+
         </div>
       </div>
     </div>
   </div>
-  
-  <div data-xt-overlay="{ classHtml: 'overlay-class-html--left' }">
-    <button type="button" class="btn btn--primary">
+
+  <div data-xt-overlay="{ classHtml: 'overlay-class-html-left' }">
+    <button type="button" class="btn btn-primary">
       position left
     </button>
-    <div class="overlay overlay-position overlay-position--left">
+    <div class="overlay overlay-position overlay-position-left">
       <div class="overlay-container">
         <div class="overlay-inner">
-        
-          <div class="card card--overlay">
+
+          <div class="card card-overlay">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="btn btn-close" aria-label="Close"></div>
@@ -70,22 +70,22 @@ demo.htmlSource = `
               </div>
             </div>
           </div>
-          
+
         </div>
       </div>
     </div>
   </div>
 
   <div
-    data-xt-overlay="{ classHtml: 'overlay-class-html--right' }">
-    <button type="button" class="btn btn--primary">
+    data-xt-overlay="{ classHtml: 'overlay-class-html-right' }">
+    <button type="button" class="btn btn-primary">
       position right
     </button>
-    <div class="overlay overlay-position overlay-position--right">
+    <div class="overlay overlay-position overlay-position-right">
       <div class="overlay-container">
         <div class="overlay-inner">
-        
-          <div class="card card--overlay">
+
+          <div class="card card-overlay">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="btn btn-close" aria-label="Close"></div>
@@ -104,7 +104,7 @@ demo.htmlSource = `
               </div>
             </div>
           </div>
-          
+
         </div>
       </div>
     </div>

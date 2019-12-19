@@ -4,7 +4,7 @@ import 'xtend-library/src/core/toggle/toggle.js'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '.demo--toggle-js',
+  matches: '.demo_toggle-js',
   mount: function(object) {
     // init
 

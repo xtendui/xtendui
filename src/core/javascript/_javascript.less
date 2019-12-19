@@ -15,11 +15,11 @@
  * xt-
  */
 
-.xt-pointer-events--none {
+.xt-pointer-events-none {
   pointer-events: none;
 }
 
-.xt-links--none {
+.xt-links-none {
   a&, a {
     pointer-events: none;
   }
@@ -29,13 +29,13 @@
   &:not(.active) {
     cursor: pointer;
   }
-  &.xt-jumps--none, .xt-jumps--none & {
+  &.xt-jumps-none, .xt-jumps-none & {
     cursor: inherit;
   }
 }
 
 .xt-grab {
-  .user-select--none();
+  .user-select-none();
   cursor: grab;
   a, img {
     // prevent browser drag
@@ -125,7 +125,7 @@ html.xt-scrollbar {
   }
 }
 
-.xt-indicator--trigger {
+.xt-indicator-trigger {
   right: 100px;
   background-color: purple;
   &:before {
@@ -135,7 +135,7 @@ html.xt-scrollbar {
   }
 }
 
-.xt-indicator--start {
+.xt-indicator-start {
   background-color: red;
   &:before {
     content: 'start';
@@ -144,7 +144,7 @@ html.xt-scrollbar {
   }
 }
 
-.xt-indicator--end {
+.xt-indicator-end {
   background-color: blue;
   &:before {
     content: 'end';
@@ -153,7 +153,7 @@ html.xt-scrollbar {
   }
 }
 
-.xt-indicator--start-real {
+.xt-indicator-start-real {
   background-color: red;
   opacity: .3;
   z-index: @index-indicator - 1;
@@ -164,7 +164,7 @@ html.xt-scrollbar {
   }
 }
 
-.xt-indicator--end-real {
+.xt-indicator-end-real {
   background-color: blue;
   opacity: .3;
   z-index: @index-indicator - 1;

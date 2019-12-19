@@ -17,7 +17,7 @@ If you need to toggle **multiple targets** with the **same element** assign `dat
 
 ## Link
 
-You can have links that triggers after toggle. Remember to use `autoDisable: false`.
+You can have **element's link** that trigger after toggle. Remember to use `autoDisable: false`.
 
 If the toggle is on <code>"on": "mouseenter"</code> or <code>"on": "mousehover"</code> the link gets activated on the second touch event on touch devices.
 

@@ -9,11 +9,11 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<ul class="list-block list--default">
+<ul class="list-block list-default">
   <li>
-    <ul class="list list--default">
+    <ul class="list list-default">
       <li>
-        <ul class="list-block list--default">
+        <ul class="list-block list-default">
           <li>
             Lorem ipsum dolor sit amet.
           </li>
@@ -34,7 +34,7 @@ demo.htmlSource = `
     </ul>
   </li>
   <li>
-    <ul class="list list--default">
+    <ul class="list list-default">
       <li>
         Lorem ipsum dolor sit amet.
       </li>

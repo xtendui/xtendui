@@ -15,17 +15,17 @@ demo.htmlSource = `
   <div class="slides">
     <ul class="slides-inner">
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
                   <div class="card-title slide-pagination-content">1</div>
                   <nav class="slider-pagination">
-                    <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
+                    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
                     </button>
                   </nav>
                 </div>
@@ -36,17 +36,17 @@ demo.htmlSource = `
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
                   <div class="card-title slide-pagination-content">2</div>
                   <nav class="slider-pagination">
-                    <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
+                    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
                     </button>
                   </nav>
                 </div>
@@ -57,17 +57,17 @@ demo.htmlSource = `
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
                   <div class="card-title slide-pagination-content">3</div>
                   <nav class="slider-pagination">
-                    <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
+                    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
                     </button>
                   </nav>
                 </div>
@@ -78,17 +78,17 @@ demo.htmlSource = `
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
                   <div class="card-title slide-pagination-content">4</div>
                   <nav class="slider-pagination">
-                    <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
+                    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
                     </button>
                   </nav>
                 </div>
@@ -99,17 +99,17 @@ demo.htmlSource = `
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
                   <div class="card-title slide-pagination-content">5</div>
                   <nav class="slider-pagination">
-                    <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
+                    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
                     </button>
                   </nav>
                 </div>
@@ -123,7 +123,7 @@ demo.htmlSource = `
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center"
+          <div class="card card-slide align-center"
             style="height: 15rem">
             <div class="card-design"></div>
             <div class="card-inner">
@@ -142,7 +142,7 @@ demo.htmlSource = `
   </div>
 
   <nav class="slider-pagination">
-    <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
+    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
       xt-num of xt-tot : xt-content
     </button>
   </nav>

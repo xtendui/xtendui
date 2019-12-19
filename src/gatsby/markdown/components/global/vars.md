@@ -28,34 +28,34 @@ Available positions are: `left` `right` `top` `bottom` `x` `y` `all`.
 
 Available sizes are: `layout` `auto` `none` `micro` `tiny` `small` `medium` `big` `giant` `huge`.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.m-{position}--{size}`                      | `.m-y--small`           |
-| Class responsive        | `.m-{position}--{size}--{breakpoint}`         | `.m-y--small--sm`        |
+| Class                   | `.m-{position}-{size}`                      | `.m-y-small`           |
+| Class responsive        | `.m-{position}-{size}-{breakpoint}`         | `.m-y-small-sm`        |
 | Mixin                   | `.margin({position}, {size})`             | `.margin(y, small)` etc..           |
 | Mixin responsive min    | `.margin({position}, {size}, {breakpoint})`        | `.margin(y, small, sm)`       |
 
 </div>
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.m-remove-{position}--{size}`                      | `.m-y-remove--small`           |
-| Class responsive        | `.m-remove-{position}--{size}--{breakpoint}`         | `.m-y-remove--small--sm`        |
+| Class                   | `.m-remove-{position}-{size}`                      | `.m-y-remove-small`           |
+| Class responsive        | `.m-remove-{position}-{size}-{breakpoint}`         | `.m-y-remove-small-sm`        |
 | Mixin                   | `.margin-remove({position}, {size})`             | `.margin-remove(y, small)` etc..           |
 | Mixin responsive min    | `.margin-remove({position}, {size}, {breakpoint})`        | `.margin-remove(y, small, sm)`       |
 
 </div>
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.p-{position}--{size}`                      | `.p-y--small`           |
-| Class responsive        | `.p-{position}--{size}--{breakpoint}`         | `.p-y--small--sm`        |
+| Class                   | `.p-{position}-{size}`                      | `.p-y-small`           |
+| Class responsive        | `.p-{position}-{size}-{breakpoint}`         | `.p-y-small-sm`        |
 | Mixin                   | `.padding({position}, {size})`             | `.padding(y, small)` etc..           |
 | Mixin responsive min    | `.padding({position}, {size}, {breakpoint})`        | `.padding(y, small, sm)`       |
 
@@ -63,11 +63,10 @@ Available sizes are: `layout` `auto` `none` `micro` `tiny` `small` `medium` `big
 
 [[noteDefault]]
 | When using **spacing classes** with **breakpoints** you need to set the class breakpoint generation with `@generate-margin` and `@generate-padding`.
-``
 
 ### Order
 
-See [order utils](/components/global#utils-order).
+See [order utils](/components/global/utils#utils-order).
 
 ### Z-Index
 
@@ -81,7 +80,7 @@ The breakpoints are used on media queries and many components, be sure to list a
 
 You can edit media queries and breakpoints.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |

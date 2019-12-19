@@ -12,11 +12,11 @@ Cards are used in various components by using a **preset** to assign card's defa
 
 You can use card's presets outside the normal scope, for example to style a card like an overlay card.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.card--{preset}`                         | `.card--overlay` `.card--slide` `.card--drop` |
+| Class                   | `.card-{preset}`                         | `.card-overlay` `.card-slide` `.card-drop` |
 | Mixin                   | Not possible                              | Not possible                  |
 
 </div>
@@ -30,12 +30,12 @@ You can use card's presets outside the normal scope, for example to style a card
 
 Classes for assigning variant (e.g.: border / background / font colors).
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.card--{variant}`                        | `.card--default` `.card--primary` `.card--white` |
-| Mixin                   | `.card--{variant}()`                      | `.card--default()` `.card--primary()` `.card--white()`         |
+| Class                   | `.card-{variant}`                        | `.card-default` `.card-primary` `.card-white` |
+| Mixin                   | `.card-{variant}()`                      | `.card-default()` `.card-primary()` `.card-white()`         |
 
 </div>
 
@@ -48,12 +48,12 @@ Classes for assigning variant (e.g.: border / background / font colors).
 
 Classes for assigning size (e.g.: padding or font size).
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.card--{size}`                           | `.card--small` `.card--medium` `.card--big`|
-| Mixin                   | `.card--{size}()`                         | `.card--small()` `.card--medium()` `.card--big()`         |
+| Class                   | `.card-{size}`                           | `.card-small` `.card-medium` `.card-big`|
+| Mixin                   | `.card-{size}()`                         | `.card-small()` `.card-medium()` `.card-big()`         |
 
 </div>
 

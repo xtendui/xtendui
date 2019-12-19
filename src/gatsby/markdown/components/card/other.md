@@ -17,13 +17,13 @@ Usage of `.btn-close` inside card.
 
 ## Disable
 
-Disable card's variant styles with `.card--disable`.
+Disable card's variant styles with `.card-disable`.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Class                                     | Mixin                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `.card--disable`                | `.card--disable()`        | Disable card, useful within media queries            |
+| Option                  | `.card-disable`                | `.card-disable()`        | Disable card, useful within media queries            |
 
 </div>
 

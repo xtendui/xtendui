@@ -10,14 +10,14 @@ export const demo = {
 
 demo.htmlSource = `
 <div data-xt-overlay>
-  <button type="button" class="btn btn--primary">
+  <button type="button" class="btn btn-primary">
     multiple
   </button>
   <div class="overlay">
     <div class="overlay-container">
       <div class="overlay-inner">
-          
-        <div class="card card--overlay">
+
+        <div class="card card-overlay">
           <div class="card-design"></div>
           <div class="card-inner">
             <div class="btn btn-close" aria-label="Close"></div>
@@ -47,7 +47,7 @@ demo.htmlSource = `
             </div>
           </div>
         </div>
-        
+
       </div>
     </div>
   </div>

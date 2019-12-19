@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<ul class="list list--default" style="flex-direction: column-reverse">
+<ul class="list list-default" style="flex-direction: column-reverse">
   <li>
     <button type="button">
       Lorem Ipsum

@@ -9,28 +9,28 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list--default list-space--small align-items-center">
-  <button type="button" class="btn btn--default">
+<div class="list list-default list-space-small align-items-center">
+  <button type="button" class="btn btn-default">
     default
   </button>
 
-  <button type="button" class="btn btn--default btn--tiny">
+  <button type="button" class="btn btn-default btn-tiny">
     tiny
   </button>
-  
-  <button type="button" class="btn btn--default btn--small">
+
+  <button type="button" class="btn btn-default btn-small">
     small
   </button>
 
-  <button type="button" class="btn btn--default btn--medium">
+  <button type="button" class="btn btn-default btn-medium">
     medium
   </button>
 
-  <button type="button" class="btn btn--default btn--big">
+  <button type="button" class="btn btn-default btn-big">
     big
   </button>
 
-  <button type="button" class="btn btn--default btn--giant">
+  <button type="button" class="btn btn-default btn-giant">
     giant
   </button>
 </div>

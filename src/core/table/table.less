@@ -10,13 +10,13 @@
 
 // generate class: [false], [true] non responsive only, [sm, md, lg] responsive @breakpoints
 
-@generate-table--scroll: sm, md;
+@generate-table-scroll: sm, md;
 
 /**
  * tables
  */
 
-.table, .table--scroll {
+.table, .table-scroll {
   .margin(bottom, layout) !important;
   .margin(bottom, medium);
 }
@@ -29,7 +29,7 @@
   }
   th {
     .padding(all, small);
-    .font-sans--semibold();
+    .font-sans-semibold();
     font-size: 11px;
     line-height: 1.4;
     letter-spacing: .025em;
@@ -69,18 +69,18 @@
   }
 }
 
-// .table--narrow
+// .table-narrow
 
-.table--narrow {
+.table-narrow {
   th, td {
     .padding(x, layout);
     background: transparent;
   }
 }
 
-// .table--small
+// .table-small
 
-.table--small {
+.table-small {
   th {
     .padding(all, small);
   }
@@ -90,9 +90,9 @@
   }
 }
 
-// .table--stripe
+// .table-stripe
 
-.table--stripe {
+.table-stripe {
   tbody tr:nth-of-type(odd) {
     background: @gray-100;
   }
@@ -101,16 +101,16 @@
   }
 }
 
-// .table--border
+// .table-border
 
-.table--border {
+.table-border {
   border-radius: .5em;
   border: 3px solid @gray-200;
 }
 
-// .table--responsive
+// .table-responsive
 
-.table--responsive {
+.table-responsive {
   @media @max-sm {
     border-top: @table-border--width solid @gray-200;
     thead, th {

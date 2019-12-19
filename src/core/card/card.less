@@ -22,7 +22,7 @@
   }
   .card-title {
     .spacing-small();
-    .font-sans--semibold();
+    .font-sans-semibold();
     line-height: 1.2;
     letter-spacing: 0;
     text-transform: none;
@@ -42,45 +42,45 @@
     }
   });
   // default options
-  .card--medium();
+  .card-medium();
 }
 
 // preset
 
-.card--overlay {
+.card-overlay {
   // default options
-  .card--big();
-  .card--white();
+  .card-big();
+  .card-white();
   // special
-  .card-block--head {
-    background: @gray-200--dark;
+  .card-block-head {
+    background: @gray-200-dark;
   }
 }
 
-.card--slide {
+.card-slide {
   // default options
-  .card--big();
-  .card--default();
+  .card-big();
+  .card-default();
   // special
-  .card-block--head {
-    background: @gray-200--dark;
+  .card-block-head {
+    background: @gray-200-dark;
   }
 }
 
-.card--drop {
+.card-drop {
   width: 40rem;
   // default options
-  .card--small();
-  .card--white();
+  .card-small();
+  .card-white();
   // special
-  .card-block--head {
-    background: @gray-200--dark;
+  .card-block-head {
+    background: @gray-200-dark;
   }
 }
 
 // variant
 
-.card--default {
+.card-default {
   color: @text;
   > .card-design {
     border-color: @gray-200;
@@ -88,26 +88,26 @@
   }
   .card-contents({
     > .card-item {
-      .card-item--default();
+      .card-item-default();
     }
   });
   // preset
-  .card--overlay& {
+  .card-overlay& {
     > .card-design {
       box-shadow: @shadow-light;
     }
   }
   // special
-  .card-block--head {
-    background: @gray-200--dark;
+  .card-block-head {
+    background: @gray-200-dark;
   }
   // interactive
   a&, button& {
     &:hover, &.hover, &:active, &.active {
-      color: @text--dark;
+      color: @text-dark;
       > .card-design {
-        border-color: @gray-200--dark;
-        background: @gray-200--dark;
+        border-color: @gray-200-dark;
+        background: @gray-200-dark;
       }
     }
     &:active, &.active {
@@ -118,7 +118,7 @@
   }
 }
 
-.card-item--default {
+.card-item-default {
   & + .card-item {
     &:before {
       background: fade(@gray-800, 10%);
@@ -126,7 +126,7 @@
   }
 }
 
-.card--primary {
+.card-primary {
   .text-inverse();
   > .card-design {
     border-color: @accent;
@@ -134,26 +134,26 @@
   }
   .card-contents({
     > .card-item {
-      .card-item--primary();
+      .card-item-primary();
     }
   });
   // preset
-  .card--overlay& {
+  .card-overlay& {
     > .card-design {
       box-shadow: @shadow-accent;
     }
   }
   // special
-  .card-block--head {
-    background: @accent--dark;;
+  .card-block-head {
+    background: @accent-dark;;
   }
   // interactive
   a&, button& {
     &:hover, &.hover, &:active, &.active {
-      color: @text-inverse--dark;
+      color: @text-inverse-dark;
       > .card-design {
-        border-color: @accent--dark;
-        background: @accent--dark;
+        border-color: @accent-dark;
+        background: @accent-dark;
       }
     }
     &:active, &.active {
@@ -164,7 +164,7 @@
   }
 }
 
-.card-item--primary {
+.card-item-primary {
   & + .card-item {
     &:before {
       background: fade(@gray-200, 10%);
@@ -172,7 +172,7 @@
   }
 }
 
-.card--white {
+.card-white {
   color: @text;
   > .card-design {
     border-color: @white;
@@ -180,11 +180,11 @@
   }
   .card-contents({
     > .card-item {
-      .card-item--white();
+      .card-item-white();
     }
   });
   // preset
-  .card--overlay& {
+  .card-overlay& {
     > .card-design {
       box-shadow: @shadow-light;
     }
@@ -192,7 +192,7 @@
   // interactive
   a&, button& {
     &:hover, &.hover, &:active, &.active {
-      color: @text--dark;
+      color: @text-dark;
       > .card-design {
         border-color: @white;
         background: @white;
@@ -206,7 +206,7 @@
   }
 }
 
-.card-item--white {
+.card-item-white {
   & + .card-item {
     &:before {
       background: fade(@gray-800, 10%);
@@ -216,61 +216,61 @@
 
 // size
 
-.card-block.card-block--small {
-  .font--small();
+.card-block.card-block-small {
+  .font-small();
   padding: 1.5rem 2rem;
   .card-title {
     font-size: 1.7rem;
   }
 }
 
-.card--small {
+.card-small {
   .card-block {
-    .card-block.card-block--small();
+    .card-block.card-block-small();
   }
 }
 
-.card-block.card-block--medium {
-  .font--medium();
+.card-block.card-block-medium {
+  .font-medium();
   padding: 2rem 2.5rem;
   .card-title {
     font-size: 2rem;
   }
 }
 
-.card--medium {
+.card-medium {
   .card-block {
-    .card-block.card-block--medium();
+    .card-block.card-block-medium();
   }
 }
 
-.card-block.card-block--big {
-  .font--big();
+.card-block.card-block-big {
+  .font-big();
   padding: 3rem 3.5rem;
   .card-title {
     font-size: 3rem;
   }
 }
 
-.card--big {
+.card-big {
   .card-block {
-    .card-block.card-block--big();
+    .card-block.card-block-big();
   }
 }
 
 // special
 
-.card--nodesign {
+.card-nodesign {
   > .card-design {
     display: none;
   }
 }
 
-.card--squared {
+.card-squared {
   border-radius: 0;
 }
 
-.card--noborder {
+.card-noborder {
   > .card-design {
     border: 0;
   }
@@ -292,7 +292,7 @@
   }
 }
 
-.card--horizontal {
+.card-horizontal {
   .card-contents({
     > .card-item {
       & + .card-item {
@@ -308,14 +308,14 @@
   });
 }
 
-.card--overflow-y {
+.card-overflow-y {
   overflow-x: hidden;
   overflow-y: auto;
   max-height: 30rem;
   .overflow-style(@mode: inner);
 }
 
-.card--disable {
+.card-disable {
   color: @text !important;
   &, .card-item {
     opacity: 1 !important;

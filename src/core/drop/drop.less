@@ -28,13 +28,13 @@
     }
   }
   // default options
-  .drop--left();
-  .drop--bottom();
+  .drop-left();
+  .drop-bottom();
 }
 
 // variant
 
-.drop--default {
+.drop-default {
   > .drop-inner {
     color: @text;
     > .drop-design {
@@ -43,34 +43,34 @@
       box-shadow: @shadow-light;
     }
   }
-  > .drop-inner > .drop-content > .list--drop {
-    .list-btns({ .btn--text() });
+  > .drop-inner > .drop-content > .list-drop {
+    .list-btns({ .btn-text() });
   }
 }
 
-.drop--primary {
+.drop-primary {
   > .drop-inner {
     .text-inverse();
     > .drop-design {
-      border-color: @accent--dark;
+      border-color: @accent-dark;
       background: @accent;
       box-shadow: @shadow-dark;
     }
   }
-  > .drop-inner > .drop-content > .list--drop {
-    .list-btns({ .btn--text() });
+  > .drop-inner > .drop-content > .list-drop {
+    .list-btns({ .btn-text() });
   }
 }
 
 // special
 
-.drop--squared {
+.drop-squared {
   > .drop-inner {
     border-radius: 0;
   }
 }
 
-.drop--noborder {
+.drop-noborder {
   > .drop-inner {
     > .drop-design {
       border: 0;
@@ -80,7 +80,7 @@
 
 // special
 
-.drop--disable {
+.drop-disable {
   // disable custom animation
   > .drop > .drop-inner {
     > .drop-content {
@@ -90,7 +90,7 @@
   }
 }
 
-.drop--overflow-y {
+.drop-overflow-y {
   > .drop-inner > .drop-content {
     overflow-y: auto;
     max-height: 25rem;

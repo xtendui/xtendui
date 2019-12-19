@@ -12,12 +12,12 @@ demo.htmlSource = `
 <button type="button" class="group"
   data-xt-propagate-interaction="{ targets: '.btn' }">
   <div class="group-inner">
-    <div class="btn btn--primary">
+    <div class="btn btn-primary">
       Lorem
     </div>
   </div>
   <div class="group-inner">
-    <div class="btn btn--default">
+    <div class="btn btn-default">
       ipsum
     </div>
   </div>

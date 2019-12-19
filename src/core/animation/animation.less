@@ -17,9 +17,9 @@
 @bez-cheetah: ~'cubic-bezier(0.14, 0.63, 0, 1)';
 @bez-tiger: ~'cubic-bezier(0.96, 0.1, 0.14, 0.88)';
 @bez-cat: ~'cubic-bezier(0.77, 0, 0.17, 1)';
-@bez-penguin--in: ~'cubic-bezier(0.36, 0, 0, 1)';
-@bez-penguin--out: ~'cubic-bezier(1, 0, 0.64, 1)';
-@bez-penguin--in-out: ~'cubic-bezier(0.68, 0.13, 0.25, 1)';
+@bez-penguin-in: ~'cubic-bezier(0.36, 0, 0, 1)';
+@bez-penguin-out: ~'cubic-bezier(1, 0, 0.64, 1)';
+@bez-penguin-in-out: ~'cubic-bezier(0.68, 0.13, 0.25, 1)';
 
 @bez-in: @bez-cheetah;
 @bez-out: @bez-cheetah;
@@ -34,21 +34,21 @@
 .anim-opacity {
   &.active {
     opacity: 0;
-    animation-name: anim-opacity--in;
+    animation-name: anim-opacity-in;
     animation-duration: @time-medium;
     animation-timing-function: @bez-in;
     animation-fill-mode: forwards;
   }
   &.out {
     opacity: 1;
-    animation-name: anim-opacity--out;
+    animation-name: anim-opacity-out;
     animation-duration: @time-medium;
     animation-timing-function: @bez-out;
     animation-fill-mode: forwards;
   }
 }
 
-@keyframes anim-opacity--in {
+@keyframes anim-opacity-in {
   0% {
     opacity: 0;
   }
@@ -57,7 +57,7 @@
   }
 }
 
-@keyframes anim-opacity--out {
+@keyframes anim-opacity-out {
   0% {
     opacity: 1;
   }
@@ -71,21 +71,21 @@
 .anim-zoom {
   &.active {
     opacity: 0;
-    animation-name: anim-zoom--in;
+    animation-name: anim-zoom-in;
     animation-duration: @time-medium;
     animation-timing-function: @bez-in;
     animation-fill-mode: forwards;
   }
   &.out {
     opacity: 1;
-    animation-name: anim-zoom--out;
+    animation-name: anim-zoom-out;
     animation-duration: @time-medium;
     animation-timing-function: @bez-out;
     animation-fill-mode: forwards;
   }
 }
 
-@keyframes anim-zoom--in {
+@keyframes anim-zoom-in {
   0% {
     opacity: 0;
     transform: scale(.75, .75);
@@ -96,7 +96,7 @@
   }
 }
 
-@keyframes anim-zoom--out {
+@keyframes anim-zoom-out {
   0% {
     opacity: 1;
     transform: scale(1);
@@ -112,21 +112,21 @@
 .anim-y {
   &.active {
     opacity: 0;
-    animation-name: anim-y--in;
+    animation-name: anim-y-in;
     animation-duration: @time-medium;
     animation-timing-function: @bez-in;
     animation-fill-mode: forwards;
   }
   &.out {
     opacity: 1;
-    animation-name: anim-y--out;
+    animation-name: anim-y-out;
     animation-duration: @time-medium;
     animation-timing-function: @bez-out;
     animation-fill-mode: forwards;
   }
 }
 
-@keyframes anim-y--in {
+@keyframes anim-y-in {
   0% {
     opacity: 0;
     transform: translateY(-1.5rem);
@@ -137,7 +137,7 @@
   }
 }
 
-@keyframes anim-y--out {
+@keyframes anim-y-out {
   0% {
     opacity: 1;
     transform: translateY(0);
@@ -153,21 +153,21 @@
 .anim-y-inverse {
   &.active {
     opacity: 0;
-    animation-name: anim-y-inverse--in;
+    animation-name: anim-y-inverse-in;
     animation-duration: @time-medium;
     animation-timing-function: @bez-in;
     animation-fill-mode: forwards;
   }
   &.out {
     opacity: 1;
-    animation-name: anim-y-inverse--out;
+    animation-name: anim-y-inverse-out;
     animation-duration: @time-medium;
     animation-timing-function: @bez-out;
     animation-fill-mode: forwards;
   }
 }
 
-@keyframes anim-y-inverse--in {
+@keyframes anim-y-inverse-in {
   0% {
     opacity: 0;
     transform: translateY(1.5rem);
@@ -178,7 +178,7 @@
   }
 }
 
-@keyframes anim-y-inverse--out {
+@keyframes anim-y-inverse-out {
   0% {
     opacity: 1;
     transform: translateY(0);
@@ -194,21 +194,21 @@
 .anim-x {
   &.active {
     opacity: 0;
-    animation-name: anim-x--in;
+    animation-name: anim-x-in;
     animation-duration: @time-medium;
     animation-timing-function: @bez-in;
     animation-fill-mode: forwards;
   }
   &.out {
     opacity: 1;
-    animation-name: anim-x--out;
+    animation-name: anim-x-out;
     animation-duration: @time-medium;
     animation-timing-function: @bez-out;
     animation-fill-mode: forwards;
   }
 }
 
-@keyframes anim-x--in {
+@keyframes anim-x-in {
   0% {
     opacity: 0;
     transform: translateX(-1.5rem);
@@ -219,7 +219,7 @@
   }
 }
 
-@keyframes anim-x--out {
+@keyframes anim-x-out {
   0% {
     opacity: 1;
     transform: translateX(0);
@@ -235,21 +235,21 @@
 .anim-x-inverse {
   &.active {
     opacity: 0;
-    animation-name: anim-x-inverse--in;
+    animation-name: anim-x-inverse-in;
     animation-duration: @time-medium;
     animation-timing-function: @bez-in;
     animation-fill-mode: forwards;
   }
   &.out {
     opacity: 1;
-    animation-name: anim-x-inverse--out;
+    animation-name: anim-x-inverse-out;
     animation-duration: @time-medium;
     animation-timing-function: @bez-out;
     animation-fill-mode: forwards;
   }
 }
 
-@keyframes anim-x-inverse--in {
+@keyframes anim-x-inverse-in {
   0% {
     opacity: 0;
     transform: translateX(1.5rem);
@@ -260,7 +260,7 @@
   }
 }
 
-@keyframes anim-x-inverse--out {
+@keyframes anim-x-inverse-out {
   0% {
     opacity: 1;
     transform: translateX(0);

@@ -17,7 +17,7 @@ demo.htmlSource = `
 <br><br><br><br><br><br><br>
 
 <div data-xt-sticky> <!-- defaults to "position": "top" -->
-  <div class="card card--primary card--squared">
+  <div class="card card-primary card-squared">
       <div class="card-design"></div>
       <div class="card-inner">
       <div class="card-content">
@@ -29,7 +29,7 @@ demo.htmlSource = `
   </div>
 </div>
 
-<div class="card card--default card--squared">
+<div class="card card-default card-squared">
       <div class="card-design"></div>
       <div class="card-inner">
     <div class="card-content">
@@ -42,7 +42,7 @@ demo.htmlSource = `
 </div>
 
 <div data-xt-sticky="{ position: 'bottom' }">
-  <div class="card card--primary card--squared">
+  <div class="card card-primary card-squared">
       <div class="card-design"></div>
       <div class="card-inner">
       <div class="card-content">

@@ -11,15 +11,15 @@ export const demo = {
 demo.htmlSource = `
 <h4>Line</h4>
 
-<div class="group group-number group-number-line group--default">
+<div class="group group-number group-number-line group-default">
     <div class="group-inner">
-      <button type="button" class="btn btn--default group-number-remove">
+      <button type="button" class="btn btn-default group-number-remove">
         -
       </button>
     </div>
   <input type="number" class="form-item" value="3" min="1" max="100" step="2">
   <div class="group-inner">
-      <button type="button" class="btn btn--default group-number-add">
+      <button type="button" class="btn btn-default group-number-add">
         +
       </button>
     </div>
@@ -27,13 +27,13 @@ demo.htmlSource = `
 
 <h4>Stack</h4>
 
-<div class="group group-number group-number-stack group--default">
+<div class="group group-number group-number-stack group-default">
   <input type="number" class="form-item" value="3" min="1" max="100" step="2">
   <div class="group-inner">
-      <button type="button" class="btn btn--default btn--short btn--narrow group-number-add">
+      <button type="button" class="btn btn-default btn-short btn-narrow group-number-add">
         +
       </button>
-      <button type="button" class="btn btn--default btn--short btn--narrow group-number-remove">
+      <button type="button" class="btn btn-default btn-short btn-narrow group-number-remove">
         -
       </button>
     </div>

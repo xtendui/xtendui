@@ -15,57 +15,57 @@
   }
 }
 
-// .table--middle
+// .table-middle
 
-.table--middle {
+.table-middle {
   th, td {
     vertical-align: middle;
   }
 }
 
-// .table--center
+// .table-center
 
-.table--center {
+.table-center {
   th, td {
     text-align: center;
   }
 }
 
-// .table--right
+// .table-right
 
-.table--right {
+.table-right {
   th:not(:nth-child(1)), td:not(:nth-child(1)) {
     text-align: right;
   }
 }
 
-// .table--scroll
+// .table-scroll
 
-.table--scroll {
+.table-scroll {
   .full();
   overflow-x: auto;
   .overflow-style(@mode: inner);
 }
 
 /**
- * @generate-table--scroll
+ * @generate-table-scroll
  */
 
 // generate
 
-& when not (@generate-table--scroll = false) {
+& when not (@generate-table-scroll = false) {
 
   // generate-table-scroll-responsive
 
   .generate-card-horizontal-responsive();
-  .generate-card-horizontal-responsive(@i: length(@generate-table--scroll)) when (@i > 0) {
+  .generate-card-horizontal-responsive(@i: length(@generate-table-scroll)) when (@i > 0) {
     .generate-card-horizontal-responsive(@i - 1);
-    @breakpoint: extract(@generate-table--scroll, @i);
+    @breakpoint: extract(@generate-table-scroll, @i);
     & when not (@breakpoint = none) {
       @query-max: 'max-@{breakpoint}';
       @media @@query-max {
-        .table--scroll--@{breakpoint} {
-          .table--scroll() !important;
+        .table-scroll-@{breakpoint} {
+          .table-scroll() !important;
         }
       }
     }

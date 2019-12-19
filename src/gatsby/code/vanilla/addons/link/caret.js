@@ -9,23 +9,23 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list--default list-space--small align-items-center">
+<div class="list list-default list-space-small align-items-center">
 
-  <button type="button" class="btn btn--default caret" data-xt-toggle>
+  <button type="button" class="btn btn-default caret" data-xt-toggle>
     caret
   </button>
-  
-  <button type="button" class="btn btn--default caret caret--inverse" data-xt-toggle>
+
+  <button type="button" class="btn btn-default caret caret-inverse" data-xt-toggle>
     caret inverse
   </button>
-  
-  <button type="button" class="btn btn--default caret caret--horizontal" data-xt-toggle>
+
+  <button type="button" class="btn btn-default caret caret-horizontal" data-xt-toggle>
     horizontal
   </button>
-  
-  <button type="button" class="btn btn--default caret caret--horizontal caret--inverse" data-xt-toggle>
+
+  <button type="button" class="btn btn-default caret caret-horizontal caret-inverse" data-xt-toggle>
     horizontal inverse
   </button>
-  
+
 </div>
 `

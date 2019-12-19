@@ -8,7 +8,7 @@
   justify-content: center;
   position: relative;
   width: 100%;
-  .flex--auto();
+  .flex-auto();
   z-index: @index-base; // fix :before negative z-index
   a& {
     .link-none() !important;
@@ -51,13 +51,13 @@
 }
 
 .card-item {
-  .flex--full();
+  .flex-full();
   position: relative;
   display: inline-block;
 }
 
 .card-asset {
-  .flex--full();
+  .flex-full();
   position: relative;
   overflow: hidden;
   > * {
@@ -85,7 +85,7 @@
   padding: 0 !important;
 }
 
-.card--horizontal {
+.card-horizontal {
   > .card-inner > .card-content {
     flex-direction: row;
     flex-wrap: nowrap;
@@ -110,8 +110,8 @@
   }
 }
 
-.card--disable {
-  .card--nodesign();
+.card-disable {
+  .card-nodesign();
   .card-block {
     padding: 0 !important;
   }
@@ -133,13 +133,13 @@
     @breakpoint: extract(@generate-card-group, @i);
     & when (@breakpoint = none) {
       .card-group {
-        .card--group() !important;
+        .card-group() !important;
       }
     }
     & when not (@breakpoint = none) {
       @query-min: 'min-@{breakpoint}';
       @media @@query-min {
-        .card-group--@{breakpoint} {
+        .card-group-@{breakpoint} {
           .card-group() !important;
         }
       }
@@ -163,15 +163,15 @@
     .generate-card-horizontal-responsive(@i - 1);
     @breakpoint: extract(@generate-box-horizontal, @i);
     & when (@breakpoint = none) {
-      .card--horizontal {
-        .card--horizontal() !important;
+      .card-horizontal {
+        .card-horizontal() !important;
       }
     }
     & when not (@breakpoint = none) {
       @query-min: 'min-@{breakpoint}';
       @media @@query-min {
-        .card--horizontal--@{breakpoint} {
-          .card--horizontal() !important;
+        .card-horizontal-@{breakpoint} {
+          .card-horizontal() !important;
         }
       }
     }

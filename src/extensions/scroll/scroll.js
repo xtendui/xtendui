@@ -36,7 +36,7 @@ class Scroll extends Xt.Toggle {
         if (!container) {
           container = Xt.createElement('<div class="xt-container xt-fixed-check"></div>')
           el.before(container)
-          el.classList.add('xt-ignore', 'xt-ignore--once') // @FIX ignore once for mount when moving
+          el.classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
           container.append(el)
         }
         // sticky clone
@@ -44,7 +44,7 @@ class Scroll extends Xt.Toggle {
         if (!target) {
           target = el.cloneNode(true)
           target.classList.add('xt-clone', 'xt-ignore')
-          target.classList.remove('xt-ignore--once') // @FIX ignore once for mount when moving
+          target.classList.remove('xt-ignore-once') // @FIX ignore once for mount when moving
           for (const elId of target.querySelectorAll('[id]')) {
             elId.setAttribute('id', elId.getAttribute('id') + '-clone')
           }
@@ -57,34 +57,34 @@ class Scroll extends Xt.Toggle {
         // sticky
         el.classList.add('xt-fixed', 'xt-sticky')
         if (options.sticky === 'absolute') {
-          el.classList.add('xt-sticky--absolute')
+          el.classList.add('xt-sticky-absolute')
         } else if (options.sticky === 'fixed') {
-          el.classList.add('xt-sticky--fixed')
+          el.classList.add('xt-sticky-fixed')
         } else if (options.sticky === 'fixed-always') {
-          el.classList.add('xt-sticky--fixed-always')
+          el.classList.add('xt-sticky-fixed-always')
         }
         if (target) {
           target.classList.add('xt-fixed', 'xt-sticky')
           if (options.sticky === 'absolute') {
-            target.classList.add('xt-sticky--absolute')
+            target.classList.add('xt-sticky-absolute')
           } else if (options.sticky === 'fixed') {
-            target.classList.add('xt-sticky--fixed')
+            target.classList.add('xt-sticky-fixed')
           } else if (options.sticky === 'fixed-always') {
-            target.classList.add('xt-sticky--fixed-always')
+            target.classList.add('xt-sticky-fixed-always')
           }
         }
       }
       // indicator
       if (el.classList.contains('indicator')) {
-        const indicatorTrigger = Xt.createElement('<div class="xt-ignore xt-indicator xt-indicator--trigger"></div>')
+        const indicatorTrigger = Xt.createElement('<div class="xt-ignore xt-indicator xt-indicator-trigger"></div>')
         document.body.append(indicatorTrigger)
-        const indicatorStart = Xt.createElement('<div class="xt-ignore xt-indicator xt-indicator--start"></div>')
+        const indicatorStart = Xt.createElement('<div class="xt-ignore xt-indicator xt-indicator-start"></div>')
         document.body.append(indicatorStart)
-        const indicatorEnd = Xt.createElement('<div class="xt-ignore xt-indicator xt-indicator--end"></div>')
+        const indicatorEnd = Xt.createElement('<div class="xt-ignore xt-indicator xt-indicator-end"></div>')
         document.body.append(indicatorEnd)
-        const indicatorStartReal = Xt.createElement('<div class="xt-ignore xt-indicator xt-indicator--start-real"></div>')
+        const indicatorStartReal = Xt.createElement('<div class="xt-ignore xt-indicator xt-indicator-start-real"></div>')
         document.body.append(indicatorStartReal)
-        const indicatorEndReal = Xt.createElement('<div class="xt-ignore xt-indicator xt-indicator--end-real"></div>')
+        const indicatorEndReal = Xt.createElement('<div class="xt-ignore xt-indicator xt-indicator-end-real"></div>')
         document.body.append(indicatorEndReal)
       }
     }
@@ -162,7 +162,7 @@ class Scroll extends Xt.Toggle {
     // loop
     for (const el of self.elements) {
       const tr = self.getTargets(el)[0]
-      if (!el.classList.contains('scroll--block') && Xt.visible(el) && tr.offsetParent) {
+      if (!el.classList.contains('scroll-block') && Xt.visible(el) && tr.offsetParent) {
         // filter out document.documentElement
         // vars
         let changed = false
@@ -221,9 +221,9 @@ class Scroll extends Xt.Toggle {
         } else {
           // outside
           changed = self.checkOff(el)
-          el.classList.add('scroll--visible')
+          el.classList.add('scroll-visible')
           if (changed) {
-            el.classList.add('scroll--once')
+            el.classList.add('scroll-once')
             currentsOff.push(el)
             cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'ScrollFrame'))
             Xt.dataStorage.set(
@@ -255,15 +255,15 @@ class Scroll extends Xt.Toggle {
         }
         // indicator
         if (el.classList.contains('indicator')) {
-          const triggerEl = document.body.querySelector('.xt-indicator--trigger')
+          const triggerEl = document.body.querySelector('.xt-indicator-trigger')
           triggerEl.style.top = self.detail.trigger + 'px'
-          const startEl = document.body.querySelector('.xt-indicator--start')
+          const startEl = document.body.querySelector('.xt-indicator-start')
           startEl.style.top = self.detail.start - scrollTop + 'px'
-          const endEl = document.body.querySelector('.xt-indicator--end')
+          const endEl = document.body.querySelector('.xt-indicator-end')
           endEl.style.top = self.detail.end - scrollTop + 'px'
-          const startRealEl = document.body.querySelector('.xt-indicator--start-real')
+          const startRealEl = document.body.querySelector('.xt-indicator-start-real')
           startRealEl.style.top = self.detail.startReal - scrollTop + 'px'
-          const endRealEl = document.body.querySelector('.xt-indicator--end-real')
+          const endRealEl = document.body.querySelector('.xt-indicator-end-real')
           endRealEl.style.top = self.detail.endReal - scrollTop + 'px'
         }
         // dispatch

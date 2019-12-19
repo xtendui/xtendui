@@ -9,17 +9,17 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list--default list-space--small align-items-center">
+<div class="list list-default list-space-small align-items-center">
 
   <div data-xt-overlay>
-    <button type="button" class="btn btn--primary">
+    <button type="button" class="btn btn-primary">
       position left
     </button>
-    <div class="overlay overlay-position overlay-position--left">
+    <div class="overlay overlay-position overlay-position-left">
       <div class="overlay-container">
         <div class="overlay-inner">
-            
-            <div class="card card--overlay">
+
+            <div class="card card-overlay">
               <div class="card-design"></div>
               <div class="card-inner">
                 <div class="btn btn-close" aria-label="Close"></div>
@@ -38,21 +38,21 @@ demo.htmlSource = `
                 </div>
               </div>
             </div>
-            
+
         </div>
       </div>
     </div>
   </div>
 
   <div data-xt-overlay>
-    <button type="button" class="btn btn--primary">
+    <button type="button" class="btn btn-primary">
       position right
     </button>
-    <div class="overlay overlay-position overlay-position--right">
+    <div class="overlay overlay-position overlay-position-right">
       <div class="overlay-container">
         <div class="overlay-inner">
-            
-            <div class="card card--overlay">
+
+            <div class="card card-overlay">
               <div class="card-design"></div>
               <div class="card-inner">
                 <div class="btn btn-close" aria-label="Close"></div>
@@ -71,11 +71,11 @@ demo.htmlSource = `
                 </div>
               </div>
             </div>
-            
+
         </div>
       </div>
     </div>
   </div>
-  
+
 </div>
 `

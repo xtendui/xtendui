@@ -10,17 +10,17 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list--default list-space--small align-items-center">
+<div class="list list-default list-space-small align-items-center">
 
   <div data-xt-overlay>
-    <button type="button" class="btn btn--primary">
+    <button type="button" class="btn btn-primary">
       screen
     </button>
     <div class="overlay overlay-screen">
       <div class="overlay-container">
         <div class="overlay-inner">
 
-            <div class="card card--overlay">
+            <div class="card card-overlay">
               <div class="card-design"></div>
               <div class="card-inner">
                 <div class="btn btn-close" aria-label="Close"></div>
@@ -46,14 +46,14 @@ demo.htmlSource = `
   </div>
 
   <div data-xt-overlay>
-    <button type="button" class="btn btn--primary">
+    <button type="button" class="btn btn-primary">
       screen image
     </button>
-    <div class="overlay overlay-screen overlay--full">
+    <div class="overlay overlay-screen overlay-full">
       <div class="overlay-container">
         <div class="overlay-inner">
 
-          <div class="card card--overlay">
+          <div class="card card-overlay">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="btn btn-close" aria-label="Close"></div>
@@ -71,14 +71,14 @@ demo.htmlSource = `
   </div>
 
   <div data-xt-overlay>
-    <button type="button" class="btn btn--primary">
+    <button type="button" class="btn btn-primary">
       screen multiple
     </button>
     <div class="overlay overlay-screen">
       <div class="overlay-container">
         <div class="overlay-inner">
 
-          <div class="card card--overlay">
+          <div class="card card-overlay">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="btn btn-close" aria-label="Close"></div>

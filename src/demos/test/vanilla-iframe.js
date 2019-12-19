@@ -5,7 +5,7 @@ import 'xtend-library/src/extensions/utils/mouse-follow.js'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '.demo--test-iframe',
+  matches: '.demo_test-iframe',
   mount: function(object) {
     // init
 
@@ -96,12 +96,12 @@ Xt.mount.push({
 
     // MouseFollow
 
-    const mouseFollowObject = document.querySelector('.loader--mouse')
+    const mouseFollowObject = document.querySelector('.loader-mouse')
     const mouseFollowContainer = object
 
     let mouseFollow = new Xt.MouseFollow(mouseFollowObject, mouseFollowContainer, {
       mouseCheck: function() {
-        return !this.object.classList.contains('loader--disable') || this.object.classList.contains('loader--js')
+        return !this.object.classList.contains('loader-disable') || this.object.classList.contains('loader-js')
       },
     })
 

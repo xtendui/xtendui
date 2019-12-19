@@ -6,13 +6,13 @@
 
 @import (css) url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
 
-.font-sans--regular() {
+.font-sans-regular() {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
-.font-sans--semibold() {
+.font-sans-semibold() {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 600;
   font-style: normal;
@@ -44,8 +44,8 @@ html {
 }
 
 body {
-  .font-sans--regular();
-  .font--medium();
+  .font-sans-regular();
+  .font-medium();
   color: @text;
   font-variant-ligatures: none;
 }
@@ -89,7 +89,7 @@ body {
 
 h1, .h1 {
   .spacing-medium();
-  .font-sans--semibold();
+  .font-sans-semibold();
   font-size: 4rem;
   line-height: 1;
   letter-spacing: 0;
@@ -98,7 +98,7 @@ h1, .h1 {
 
 h2, .h2 {
   .spacing-medium();
-  .font-sans--semibold();
+  .font-sans-semibold();
   font-size: 3.5rem;
   line-height: 1.2;
   letter-spacing: 0;
@@ -107,7 +107,7 @@ h2, .h2 {
 
 h3, .h3 {
   .spacing-medium();
-  .font-sans--semibold();
+  .font-sans-semibold();
   font-size: 2.5rem;
   line-height: 1.2;
   letter-spacing: 0;
@@ -116,7 +116,7 @@ h3, .h3 {
 
 h4, .h4 {
   .spacing-medium();
-  .font-sans--semibold();
+  .font-sans-semibold();
   font-size: 2rem;
   line-height: 1.2;
   letter-spacing: 0;
@@ -125,7 +125,7 @@ h4, .h4 {
 
 h5, .h5 {
   .spacing-medium();
-  .font-sans--semibold();
+  .font-sans-semibold();
   font-size: 1.7rem;
   line-height: 1.2;
   letter-spacing: 0;
@@ -134,7 +134,7 @@ h5, .h5 {
 
 h6, .h6 {
   .spacing-medium();
-  .font-sans--semibold();
+  .font-sans-semibold();
   font-size: 13px;
   line-height: 1.4;
   letter-spacing: .025em;
@@ -149,7 +149,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   }
 }
 
-.header--block {
+.header-block {
   .spacing-medium();
   .padding(y, small);
   .padding(x, medium);
@@ -158,14 +158,14 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   text-align: center;
 }
 
-.header--line {
+.header-line {
   .spacing-medium();
   .padding(bottom, small);
   border-bottom: 3px solid @gray-200;
 }
 
 /*
-.header--line {
+.header-line {
   display: flex;
   position: relative;
   flex-wrap: nowrap;
@@ -199,7 +199,7 @@ p {
 }
 
 strong {
-  .font-sans--semibold();
+  .font-sans-semibold();
 }
 
 small {
@@ -210,17 +210,17 @@ small {
   opacity: .5;
 }
 
-.font--small {
+.font-small {
   font-size: 1.3rem;
   line-height: 1.6;
 }
 
-.font--medium {
+.font-medium {
   font-size: 1.5rem;
   line-height: 1.6;
 }
 
-.font--big {
+.font-big {
   font-size: 1.7rem;
   line-height: 1.6;
 }
@@ -301,19 +301,19 @@ ul {
 dl {
   .margin(bottom, medium);
   .margin(bottom, layout);
-  .dl--block();
+  .dl-block();
   line-height: 1.6;
   dt {
-    .font-sans--semibold();
+    .font-sans-semibold();
   }
   dd {
-    .font-sans--regular();
+    .font-sans-regular();
   }
 }
 
-// .dl--block
+// .dl-block
 
-.dl--block {
+.dl-block {
   dt {
     .padding(top, small);
   }
@@ -322,9 +322,9 @@ dl {
   }
 }
 
-// .dl--line
+// .dl-line
 
-.dl--line {
+.dl-line {
   dt {
     .padding(top, tiny);
   }
@@ -334,9 +334,9 @@ dl {
   }
 }
 
-// .dl--horizontal
+// .dl-horizontal
 
-.dl--horizontal {
+.dl-horizontal {
   text-align: left;
   dt {
     .padding(top, tiny);

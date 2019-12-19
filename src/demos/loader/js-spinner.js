@@ -3,7 +3,7 @@ import 'xtend-library/src/vars.js'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '.demo--loader--js-spinner',
+  matches: '.demo_loader-js-spinner',
   mount: function(object) {
     // init
 

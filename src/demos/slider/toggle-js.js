@@ -4,7 +4,7 @@ import 'xtend-library/src/extensions/slider/slider.js'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '.demo--slider--toggle-js',
+  matches: '.demo_slider-toggle-js',
   mount: function(object) {
     // init
 

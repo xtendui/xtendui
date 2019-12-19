@@ -10,12 +10,12 @@ date: "2000-02-01"
 
 Classes for assigning variant (e.g.: border / background / font colors).
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.badge--{variant}`                        | `.badge--default` `.badge--primary` `.badge--success` `.badge--error` |
-| Mixin                   | `.badge--{variant}()`                      | `.badge--default()` `.badge--primary()`  `.badge--success()` `.badge--error()`   |
+| Class                   | `.badge-{variant}`                        | `.badge-default` `.badge-primary` `.badge-success` `.badge-error` |
+| Mixin                   | `.badge-{variant}()`                      | `.badge-default()` `.badge-primary()`  `.badge-success()` `.badge-error()`   |
 
 </div>
 
@@ -28,12 +28,12 @@ Classes for assigning variant (e.g.: border / background / font colors).
 
 Classes for assigning size (e.g.: padding or font size).
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.badge--{size}`                           | `.badge--small` `.badge--medium` `.badge--big`|
-| Mixin                   | `.badge--{size}()`                         | `.badge--small()` `.badge--medium()`  `.badge--big()`   |
+| Class                   | `.badge-{size}`                           | `.badge-small` `.badge-medium` `.badge-big`|
+| Mixin                   | `.badge-{size}()`                         | `.badge-small()` `.badge-medium()`  `.badge-big()`   |
 
 </div>
 

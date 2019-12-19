@@ -10,8 +10,8 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="row">
-  <div class="col-12 col-6--sm">
-    <div class="card card--default">
+  <div class="col-12 col-6-sm">
+    <div class="card card-default">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="btn btn-close" aria-label="Close"></div>
@@ -24,9 +24,9 @@ demo.htmlSource = `
       </div>
     </div>
   </div>
-  
-  <div class="col-12 col-6--sm">
-    <div class="card card--default">
+
+  <div class="col-12 col-6-sm">
+    <div class="card card-default">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="btn btn-close" aria-label="Close"></div>

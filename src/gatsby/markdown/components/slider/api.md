@@ -25,7 +25,7 @@ new Xt.Slider(document.querySelector('.my-slider'), {
 
 ### Align
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -44,7 +44,7 @@ new Xt.Slider(document.querySelector('.my-slider'), {
 
 ### Contain
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -69,7 +69,7 @@ With `groupMq: { MediaQuery: Number }` you set a decimal number from 0 to 1 to g
 
 By default it's set to `groupMq: { 'all': 0.8 }`.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -91,7 +91,7 @@ Set to `groupMq: false` to disable automatic grouping of slides.
 
 ### Drag
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -120,7 +120,7 @@ You can set friction with `drag: { friction: Function }`, for example `function(
 
 You can disable friction with `drag: { friction: false }`.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -139,7 +139,7 @@ You can disable friction with `drag: { friction: false }`.
 
 You can set overflow with `drag: { overflow: Function }`, for example `function(overflow) {return Math.pow(overflow, 0.73)}`.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -163,7 +163,7 @@ You can set `drag: { wrap: Number }` where `Number` is how many times to cover t
 
 It's useful sometimes if the wrap isn't long enough when dragging.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -195,7 +195,7 @@ Inside it you can use this strings that gets populated with variables:
 - `xt-tot` replaced with pagination's total slides
 - `xt-content` replaced with slide's `.slide-pagination-content` **innerHTML**.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -205,7 +205,7 @@ Inside it you can use this strings that gets populated with variables:
 
 <script type="text/plain" class="language-markup">
   <nav class="slider-pagination">
-    <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
+    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
       xt-num of xt-tot
     </button>
   </nav>
@@ -223,7 +223,7 @@ Inside it you can use this strings that gets populated with variables:
 
 You can add navigation with `[data-xt-nav="+-Number"].xt-ignore` where `+-Number` is the amount to change the slider when clicked.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -232,10 +232,10 @@ You can add navigation with `[data-xt-nav="+-Number"].xt-ignore` where `+-Number
 </div>
 
 <script type="text/plain" class="language-markup">
-  <button type="button" class="btn btn--default xt-ignore" data-xt-nav="-1" title="Previous slide">
+  <button type="button" class="btn btn-default xt-ignore" data-xt-nav="-1" title="Previous slide">
     <span class="icon-xt-chevron-left"></span>
   </button>
-  <button type="button" class="btn btn--default xt-ignore" data-xt-nav="1" title="Next slide">
+  <button type="button" class="btn btn-default xt-ignore" data-xt-nav="1" title="Next slide">
     <span class="icon-xt-chevron-right"></span>
   </button>
 </script>
@@ -256,7 +256,7 @@ Use `wheel: { selector: 'object' }` or `wheel: { selector: QuerySelector }` to e
 
 ### Auto
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -275,7 +275,7 @@ Use `wheel: { selector: 'object' }` or `wheel: { selector: QuerySelector }` to e
 
 ### Other
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |

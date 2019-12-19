@@ -10,14 +10,14 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="drop-container" data-xt-drop>
-  <button type="button" class="btn btn--primary">
+  <button type="button" class="btn btn-primary">
     Toggle
   </button>
-  <div class="drop drop--default">
+  <div class="drop drop-default">
     <div class="drop-inner">
       <div class="drop-design"></div>
       <div class="drop-content">
-        <ul class="list list--drop">
+        <ul class="list list-drop">
           <li>
             <a href="#">
               Lorem Ipsum
@@ -29,7 +29,7 @@ demo.htmlSource = `
             </button>
           </li>
           <li class="xt-custom">
-            <button type="button" class="flex--auto btn btn--default btn--small btn--wide btn--squared">
+            <button type="button" class="flex-auto btn btn-default btn-small btn-wide btn-squared">
               Dolor sit
             </button>
           </li>

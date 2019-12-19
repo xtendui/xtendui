@@ -26,15 +26,15 @@ Or just import **core**:
 Use this markup to create a **button**.
 
 <script type="text/plain" class="language-markup">
-  <a href="#" class="btn btn--default">
+  <a href="#" class="btn btn-default">
     <!-- content -->
   </a>
 
-  <button type="button" class="btn btn--default">
+  <button type="button" class="btn btn-default">
     <!-- content -->
   </button>
 
-  <div class="btn btn--default">
+  <div class="btn btn-default">
     <!-- content -->
   </div>
 </script>

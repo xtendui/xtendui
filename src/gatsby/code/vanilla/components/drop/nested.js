@@ -10,14 +10,14 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="drop-container" data-xt-drop>
-  <button type="button" class="btn btn--primary">
+  <button type="button" class="btn btn-primary">
     Toggle
   </button>
-  <div class="drop drop--default">
+  <div class="drop drop-default">
     <div class="drop-inner">
       <div class="drop-design"></div>
       <div class="drop-content">
-        <ul class="list list--drop">
+        <ul class="list list-drop">
           <li>
             <button type="button">
               Lorem ipsum dolor
@@ -32,11 +32,11 @@ demo.htmlSource = `
             <button type="button">
               Toggle
             </button>
-            <div class="drop drop--primary drop--after drop--middle">
+            <div class="drop drop-primary drop-after drop-middle">
               <div class="drop-inner">
                 <div class="drop-design"></div>
                 <div class="drop-content">
-                  <ul class="list list--drop">
+                  <ul class="list list-drop">
                     <li>
                       <button type="button">
                         Lorem ipsum dolor
@@ -51,11 +51,11 @@ demo.htmlSource = `
                       <button type="button">
                         Toggle
                       </button>
-                      <div class="drop drop--default drop--center drop--middle">
+                      <div class="drop drop-default drop-center drop-middle">
                         <div class="drop-inner">
                           <div class="drop-design"></div>
                           <div class="drop-content">
-                            <ul class="list list--drop">
+                            <ul class="list list-drop">
                               <li>
                                 <button type="button">
                                   Lorem ipsum dolor

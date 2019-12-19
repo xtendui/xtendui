@@ -25,11 +25,11 @@ class Header extends React.Component {
               </div>
               <div>
                 <div className="gatsby_site_header_top_social">
-                  <a href={site.site.siteMetadata.github} target="_blank" rel="noopener" className="btn gatsby_btn--site_header_top_social" title="Github">
-                    <span className="icon-github icon--big"></span>
+                  <a href={site.site.siteMetadata.github} target="_blank" rel="noopener" className="btn gatsby_btn-site_header_top_social" title="Github">
+                    <span className="icon-github icon-big"></span>
                   </a>
-                  <a href={site.site.siteMetadata.npm} target="_blank" rel="noopener" className="btn gatsby_btn--site_header_top_social" title="Npm">
-                    <span className="icon-npm icon--big"></span>
+                  <a href={site.site.siteMetadata.npm} target="_blank" rel="noopener" className="btn gatsby_btn-site_header_top_social" title="Npm">
+                    <span className="icon-npm icon-big"></span>
                   </a>
                 </div>
               </div>
@@ -40,7 +40,7 @@ class Header extends React.Component {
             <div className="gatsby_site_header_links">
               <Link
                 to="/components"
-                className={`btn gatsby_btn--site_header_link ${
+                className={`btn gatsby_btn-site_header_link ${
                   page && page.post
                     ? markdownSlug(page.post) === '/' + 'components'
                       ? 'active'
@@ -54,7 +54,7 @@ class Header extends React.Component {
               </Link>
               <Link
                 to="/addons"
-                className={`btn gatsby_btn--site_header_link ${
+                className={`btn gatsby_btn-site_header_link ${
                   page && page.post ? (markdownSlug(page.post) === '/' + 'addons' ? 'active' : page.post.frontmatter.type === 'Addons' ? 'current' : '') : ''
                 }`}
               >
@@ -62,7 +62,7 @@ class Header extends React.Component {
               </Link>
               <Link
                 to="/themes"
-                className={`btn gatsby_btn--site_header_link ${
+                className={`btn gatsby_btn-site_header_link ${
                   page && page.post ? (markdownSlug(page.post) === '/' + 'themes' ? 'active' : page.post.frontmatter.type === 'Theme' ? 'current' : '') : ''
                 }`}
               >
@@ -70,7 +70,7 @@ class Header extends React.Component {
               </Link>
               <Link
                 to="/faqs"
-                className={`btn gatsby_btn--site_header_link ${
+                className={`btn gatsby_btn-site_header_link ${
                   page && page.post ? (markdownSlug(page.post) === '/' + 'faqs' ? 'active' : page.post.frontmatter.type === 'Faqs' ? 'current' : '') : ''
                 }`}
               >

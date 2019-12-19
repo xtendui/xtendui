@@ -17,11 +17,11 @@ demo.htmlSource = `
     </label>
     <input type="text" class="form-item">
     <div class="form-label-addon">
-      <a href="#" class="btn btn--primary btn--text">
-        btn--text
+      <a href="#" class="btn btn-primary btn-text">
+        btn-text
       </a>
-      <a href="#" class="btn btn--link">
-        btn--link
+      <a href="#" class="btn btn-link">
+        btn-link
       </a>
     </div>
   </div>

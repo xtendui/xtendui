@@ -10,7 +10,7 @@ date: "2000-10-01"
 
 Links with the tag `a` are styled with link underline styles. To have a `a` tag without underline (ex: buttons) use `.link-none()`.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Class                                     | Mixin                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -28,7 +28,7 @@ Links with the tag `a` are styled with link underline styles. To have a `a` tag 
 
 Links under `.text-inverse` are styled accordingly.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Class                                     | Mixin                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |

@@ -21,7 +21,7 @@ To show or hide content when sticky activates use `.show-sticky` or `.hide-stick
 
 ### Disable
 
-To disable sticky use `.sticky--disable` useful within media queries.
+To disable sticky use `.sticky-disable` useful within media queries.
 
 <demo>
   <div class="gatsby_demo_item" data-iframe="iframe/components/sticky/disable">

@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<ul class="list list--default">
+<ul class="list list-default">
   <li class="order-2">
     <button type="button">
       Lorem Ipsum
@@ -20,7 +20,7 @@ demo.htmlSource = `
       Dolor sit
     </button>
   </li>
-  <li class="order-0 order-3--sm">
+  <li class="order-0 order-3-sm">
     <button type="button">
       Amet
     </button>

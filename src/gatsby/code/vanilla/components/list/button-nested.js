@@ -9,11 +9,11 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<ul class="list-block list--default">
+<ul class="list-block list-default">
   <li>
-    <ul class="list list--default">
+    <ul class="list list-default">
       <li>
-        <ul class="list-block list--default">
+        <ul class="list-block list-default">
           <li>
             <a href="#">
               Lorem Ipsum
@@ -25,7 +25,7 @@ demo.htmlSource = `
             </button>
           </li>
           <li class="xt-custom">
-            <button type="button" class="btn btn--primary btn--tiny">
+            <button type="button" class="btn btn-primary btn-tiny">
               Amet
             </button>
           </li>
@@ -37,14 +37,14 @@ demo.htmlSource = `
         </button>
       </li>
       <li class="xt-custom">
-        <button type="button" class="btn btn--primary btn--tiny">
+        <button type="button" class="btn btn-primary btn-tiny">
           Amet
         </button>
       </li>
     </ul>
   </li>
   <li>
-    <ul class="list list--default">
+    <ul class="list list-default">
       <li>
         <a href="#">
           Lorem Ipsum
@@ -56,7 +56,7 @@ demo.htmlSource = `
         </button>
       </li>
       <li class="xt-custom">
-        <button type="button" class="btn btn--primary btn--tiny">
+        <button type="button" class="btn btn-primary btn-tiny">
           Amet
         </button>
       </li>

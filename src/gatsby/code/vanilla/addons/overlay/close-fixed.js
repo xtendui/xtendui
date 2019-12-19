@@ -9,17 +9,17 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list--default list-space--small align-items-center justify-content-center">
+<div class="list list-default list-space-small align-items-center justify-content-center">
 
   <div data-xt-overlay>
-    <button type="button" class="btn btn--primary">
+    <button type="button" class="btn btn-primary">
       toggle
     </button>
-    <div class="overlay overlay-close--fixed">
+    <div class="overlay overlay-close-fixed">
       <div class="overlay-container">
         <div class="overlay-inner">
-        
-          <div class="card card--overlay">
+
+          <div class="card card-overlay">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="btn btn-close" aria-label="Close"></div>
@@ -66,21 +66,21 @@ demo.htmlSource = `
               </div>
             </div>
           </div>
-        
+
         </div>
       </div>
     </div>
   </div>
-  
+
   <div data-xt-overlay>
-    <button type="button" class="btn btn--primary">
+    <button type="button" class="btn btn-primary">
       default on mobile
     </button>
     <div class="overlay">
       <div class="overlay-container">
         <div class="overlay-inner">
-        
-          <div class="card card--overlay">
+
+          <div class="card card-overlay">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="btn btn-close" aria-label="Close"></div>
@@ -127,21 +127,21 @@ demo.htmlSource = `
               </div>
             </div>
           </div>
-        
+
         </div>
       </div>
     </div>
   </div>
-  
+
   <div data-xt-overlay>
-    <button type="button" class="btn btn--primary">
+    <button type="button" class="btn btn-primary">
       default on screen
     </button>
     <div class="overlay overlay-screen">
       <div class="overlay-container">
         <div class="overlay-inner">
-        
-          <div class="card card--overlay">
+
+          <div class="card card-overlay">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="btn btn-close" aria-label="Close"></div>
@@ -188,11 +188,11 @@ demo.htmlSource = `
               </div>
             </div>
           </div>
-        
+
         </div>
       </div>
     </div>
   </div>
-  
+
 </div>
 `

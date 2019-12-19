@@ -46,7 +46,7 @@ Use `distance: Number` activation and deactivation distance. For percent use `di
 
 The default **distance** is `distance: '20%'`.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -63,7 +63,7 @@ The default **distance** is `distance: '20%'`.
 
 You can use a function for `delayOn` and `delayOff` for example `function(current, total) {return Math.min((total - current) * 150, 300)}`.
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -78,7 +78,7 @@ You can use a function for `delayOn` and `delayOff` for example `function(curren
 
 ### Sticky
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -90,7 +90,7 @@ You can use a function for `delayOn` and `delayOff` for example `function(curren
 
 ### Position
 
-<div class="table--scroll">
+<div class="table-scroll">
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
