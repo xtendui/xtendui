@@ -27,14 +27,14 @@ Lists **automatically** add horizontal and vertical spacing to the contents. You
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.list-space-{direction}-{size}`                      | `.list-space-{direction}-small`           |
-| Class responsive        | `.list-space-{direction}-{size}-{breakpoint}`         | `.list-space-{direction}-small-sm`        |
-| Mixin                   | `.list-space-{direction}({size})`                      | `.list-space-{direction}(small)`           |
-| Mixin responsive min    | `.list-space-{direction}({size}, {breakpoint})`        | `.list-space-{direction}(small, sm)`       |
+| Class                   | `.list-space-{direction}-{size}`                      | `.list-space-x-small`           |
+| Class responsive        | `.list-space-{direction}-{size}-{breakpoint}`         | `.list-space-x-small-sm`        |
+| Mixin                   | `.list-space-{direction}({size})`                      | `.list-space-x(small)`           |
+| Mixin responsive min    | `.list-space-{direction}({size}, {breakpoint})`        | `.list-space-x(small, sm)`       |
 
 </div>
 
-[[noteDefault]]
+[[notePrimary]]
 | When using **list space classes** with **breakpoints** you need to set the class breakpoint generation with `@generate-list`.
 
 <demo>
@@ -56,7 +56,7 @@ Lists **automatically** add horizontal and vertical spacing to the contents. You
 
 ## Flex util
 
-[[noteDefault]]
+[[notePrimary]]
 | When using **flex util classes** with **breakpoints** you need to set the class breakpoint generation with `@generate-flex`.
 
 ### Direction
@@ -243,7 +243,7 @@ Set item's order inside the flexbox.
 
 </div>
 
-[[noteDefault]]
+[[notePrimary]]
 | By default orders from `.order-0` to `.order-2` are negative values.
 
 <demo>

@@ -28,7 +28,7 @@ If you want to customize singularly `.form-item` or `.form-label` use the class 
 
 In css you can use `.form-labels({});` and `.form-items({});` to style all `.form-label:not(.xt-custom)` and `.form-item:not(.xt-custom)`.
 
-[[noteDefault]]
+[[notePrimary]]
 | Form label and item must be inside [form group](/components/form/group) to have default styles.
 
 ## Size

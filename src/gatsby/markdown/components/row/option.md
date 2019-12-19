@@ -27,14 +27,14 @@ Row **automatically** add horizontal and vertical spacing to the contents. You c
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.row-space-{direction}-{size}`                      | `.row-space-{direction}-small`           |
-| Class responsive        | `.row-space-{direction}-{size}-{breakpoint}`         | `.row-space-{direction}-small-sm`        |
-| Mixin                   | `.row-space-{direction}({size})`                      | `.row-space-{direction}(small)`           |
-| Mixin responsive min    | `.row-space-{direction}({size}, {breakpoint})`        | `.row-space-{direction}(small, sm)`       |
+| Class                   | `.row-space-{direction}-{size}`                      | `.row-space-x-small`           |
+| Class responsive        | `.row-space-{direction}-{size}-{breakpoint}`         | `.row-space-x-small-sm`        |
+| Mixin                   | `.row-space-{direction}({size})`                      | `.row-space-x(small)`           |
+| Mixin responsive min    | `.row-space-{direction}({size}, {breakpoint})`        | `.row-space-x(small, sm)`       |
 
 </div>
 
-[[noteDefault]]
+[[notePrimary]]
 | When using **row space classes** with **breakpoints** you need to set the class breakpoint generation with `@generate-row`.
 
 <demo>
@@ -56,7 +56,7 @@ Row **automatically** add horizontal and vertical spacing to the contents. You c
 
 ## Flex util
 
-[[noteDefault]]
+[[notePrimary]]
 | When using **flex util classes** with **breakpoints** you need to set the class breakpoint generation with `@generate-flex`.
 
 ### Direction
@@ -243,7 +243,7 @@ Set item's order inside the flexbox.
 
 </div>
 
-[[noteDefault]]
+[[notePrimary]]
 | By default orders from `.order-0` to `.order-2` are negative values.
 
 <demo>

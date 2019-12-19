@@ -6,7 +6,7 @@ title: "Other"
 date: "2000-10-01"
 ---
 
-[[noteDefault]]
+[[notePrimary]]
 | Overlay uses card to style it's content, refer to [card's other](/components/card/other) for all **other**.
 
 ## Nested and unique mode

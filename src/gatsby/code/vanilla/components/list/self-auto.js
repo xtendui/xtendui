@@ -9,19 +9,19 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<ul class="list list-default" style="align-items: center">
+<ul class="list list-default align-items-center">
   <li>
-    <button type="button" class="btn btn-default" style="height: 100px">
+    <button type="button" style="height: 100px">
       Lorem Ipsum
     </button>
   </li>
   <li>
-    <button type="button" class="btn btn-default" style="align-self: auto">
+    <button type="button" class="align-self-auto">
       Dolor sit
     </button>
   </li>
   <li>
-    <button type="button" class="btn btn-default" style="align-self: auto">
+    <button type="button" class="align-self-auto">
       Amet
     </button>
   </li>

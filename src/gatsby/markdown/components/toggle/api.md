@@ -174,7 +174,7 @@ You can use a function for <code>delayOn</code> and <code>delayOff</code> for ex
 
 </div>
 
-[[noteDefault]]
+[[notePrimary]]
 | Auto doesn't run if the toggle is `display: none`.
 
 <demo>

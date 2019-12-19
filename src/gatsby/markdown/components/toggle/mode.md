@@ -44,7 +44,7 @@ Use `:scope` when using descendant selector on root (e.g. `:scope > *`).
 
 The **unique** mode is useful when triggering **targets outside the scope** of the toggle.
 
-[[noteDefault]]
+[[notePrimary]]
 | To activate **unique mode** you **need** to specify targets with **#id**.
 
 <demo>

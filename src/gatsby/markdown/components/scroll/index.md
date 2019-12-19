@@ -33,5 +33,5 @@ import 'xtend-library/src/xtend-extensions.js'
 
 @TODO
 
-[[noteDefault]]
+[[notePrimary]]
 | It's recomended to animate the scroll elements with <code>animation</code> instead of <code>transition</code> because of <a href="{% link faq.html %}#browsers-bugs-fixed-position">this bug</a>.

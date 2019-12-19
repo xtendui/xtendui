@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<ul class="list list-default" style="flex-wrap: wrap-reverse">
+<ul class="list list-default flex-wrap-wrap-reverse">
   <li>
     <button type="button">
       Lorem Ipsum

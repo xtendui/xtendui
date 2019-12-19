@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<ul class="list list-default" style="height: 150px; align-items: center">
+<ul class="list list-default align-items-center" style="height: 150px;">
   <li>
     <button type="button">
       Lorem Ipsum

@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<ul class="row" style="flex-direction: column">
+<ul class="row flex-direction-column">
   <li>
     Lorem ipsum dolor sit amet.
   </li>

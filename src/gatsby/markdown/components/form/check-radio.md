@@ -30,7 +30,7 @@ Use this markup to create a **styled** **checkbox** or **radio**.
   </form>
 </script>
 
-[[noteDefault]]
+[[notePrimary]]
 | Checkbox and radio must be inside [form group](/components/form/group) to have default styles.
 
 <demo>
@@ -108,7 +108,7 @@ Use this markup to create a **unstyled** **checkbox** or **radio**.
   </form>
 </script>
 
-[[noteDefault]]
+[[notePrimary]]
 | Checkbox and radio must be inside [form group](/components/form/group) to have default styles.
 
 <demo>

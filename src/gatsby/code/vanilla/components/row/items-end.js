@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="row" style="height: 150px; align-items: flex-end">
+<div class="row align-items-flex-end" style="height: 150px;">
   <div class="col-4"></div>
   <div class="col-8"></div>
   <div class="col-8"></div>

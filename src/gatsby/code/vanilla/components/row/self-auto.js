@@ -9,10 +9,10 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="row" style="align-items: center">
+<div class="row align-items-center">
   <div class="col-4" style="height: 100px"></div>
-  <div class="col-8" style="align-self: auto"></div>
+  <div class="col-8 align-self-auto"></div>
   <div class="col-8" style="height: 100px"></div>
-  <div class="col-4" style="align-self: auto"></div>
+  <div class="col-4 align-self-auto"></div>
 </div>
 `

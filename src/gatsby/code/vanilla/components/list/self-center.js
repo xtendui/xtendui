@@ -11,17 +11,17 @@ export const demo = {
 demo.htmlSource = `
 <ul class="list list-default">
   <li>
-    <button type="button" class="btn btn-default" style="height: 100px">
+    <button type="button" style="height: 100px">
       Lorem Ipsum
     </button>
   </li>
   <li>
-    <button type="button" class="btn btn-default" style="align-self: center">
+    <button type="button" class="align-self-center">
       Dolor sit
     </button>
   </li>
   <li>
-    <button type="button" class="btn btn-default" style="align-self: center">
+    <button type="button" class="align-self-center">
       Amet
     </button>
   </li>

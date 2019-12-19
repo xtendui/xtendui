@@ -6,7 +6,7 @@ title: "Options"
 date: "2000-02-01"
 ---
 
-[[noteDefault]]
+[[notePrimary]]
 | Group uses list to style it's content, refer to [list's options](/components/list/option) for all **option**.
 
 ## Variant

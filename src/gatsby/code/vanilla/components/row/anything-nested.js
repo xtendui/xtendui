@@ -13,7 +13,7 @@ demo.htmlSource = `
   <li>
     <ul class="row">
       <li>
-        <ul class="row" style="flex-direction: column">
+        <ul class="row flex-direction-column">
           <li>
             Lorem ipsum dolor sit amet.
           </li>

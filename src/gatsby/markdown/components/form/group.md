@@ -22,7 +22,7 @@ If you want to customize form's group singularly use the class `.form-group.xt-c
 
 In css you can use `.form-groups({});` to style all `.form-group:not(.xt-custom)`.
 
-[[noteDefault]]
+[[notePrimary]]
 | Form group must be inside `form` or `.form` to have default styles.
 
 ## Mode

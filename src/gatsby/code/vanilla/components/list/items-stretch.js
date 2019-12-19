@@ -9,49 +9,49 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<ul class="list list-default" style="height: 150px; align-items: stretch">
+<ul class="list list-default align-items-stretch" style="height: 150px;">
   <li>
-    <button type="button" style="align-self: stretch">
+    <button type="button" class="align-self-stretch">
       Lorem Ipsum
     </button>
   </li>
   <li>
-    <button type="button" style="align-self: stretch">
+    <button type="button" class="align-self-stretch">
       Dolor sit
     </button>
   </li>
   <li>
-    <button type="button" style="align-self: stretch">
+    <button type="button" class="align-self-stretch">
       Amet
     </button>
   </li>
   <li>
-    <button type="button" style="align-self: stretch">
+    <button type="button" class="align-self-stretch">
       Lorem Ipsum
     </button>
   </li>
   <li>
-    <button type="button" style="align-self: stretch">
+    <button type="button" class="align-self-stretch">
       Dolor sit
     </button>
   </li>
   <li>
-    <button type="button" style="align-self: stretch">
+    <button type="button" class="align-self-stretch">
       Amet
     </button>
   </li>
   <li>
-    <button type="button" style="align-self: stretch">
+    <button type="button" class="align-self-stretch">
       Lorem Ipsum
     </button>
   </li>
   <li>
-    <button type="button" style="align-self: stretch">
+    <button type="button" class="align-self-stretch">
       Dolor sit
     </button>
   </li>
   <li>
-    <button type="button" style="align-self: stretch">
+    <button type="button" class="align-self-stretch">
       Amet
     </button>
   </li>

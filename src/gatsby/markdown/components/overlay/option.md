@@ -6,7 +6,7 @@ title: "Option"
 date: "2000-02-01"
 ---
 
-[[noteDefault]]
+[[notePrimary]]
 | Overlay uses card to style it's content, refer to [card's option](/components/card/option) for all **option**.
 
 ## Preset

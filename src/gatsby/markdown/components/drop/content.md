@@ -8,7 +8,7 @@ date: "2000-04-01"
 
 ## Card
 
-[[noteDefault]]
+[[notePrimary]]
 | Drop uses card to style it's content, refer to [card's content](/components/card/content) for all **content**.
 
 <demo>
@@ -18,7 +18,7 @@ date: "2000-04-01"
 
 ## List
 
-[[noteDefault]]
+[[notePrimary]]
 | Drop uses list to style it's content, refer to [list's content](/components/list/content) for all **content**.
 
 Use `li.xt-custom` to override styles applied by `.list.list-drop`.

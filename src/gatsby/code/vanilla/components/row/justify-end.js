@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="row" style="justify-content: flex-end">
+<div class="row justify-content-flex-end">
   <div class="col-2"></div>
   <div class="col-4"></div>
 </div>

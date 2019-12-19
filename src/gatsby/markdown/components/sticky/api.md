@@ -6,7 +6,7 @@ title: "API"
 date: "2000-01-01"
 ---
 
-[[noteDefault]]
+[[notePrimary]]
 | Sticky uses toggle for logic, refer to [toggle's API](/components/toggle/api) for all **API**.
 
 ## Initialization

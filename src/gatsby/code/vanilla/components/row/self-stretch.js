@@ -11,8 +11,8 @@ export const demo = {
 demo.htmlSource = `
 <div class="row">
   <div class="col-4" style="height: 100px"></div>
-  <div class="col-8" style="align-self: stretch"></div>
+  <div class="col-8 align-self-stretch"></div>
   <div class="col-8" style="height: 100px"></div>
-  <div class="col-4" style="align-self: stretch"></div>
+  <div class="col-4 align-self-stretch"></div>
 </div>
 `

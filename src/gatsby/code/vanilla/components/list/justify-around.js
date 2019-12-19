@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<ul class="list list-default" style="justify-content: space-around">
+<ul class="list list-default justify-content-space-around">
   <li>
     <button type="button">
       Lorem Ipsum

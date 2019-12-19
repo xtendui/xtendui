@@ -6,7 +6,7 @@ title: "API"
 date: "2000-01-01"
 ---
 
-[[noteDefault]]
+[[notePrimary]]
 | Slider uses toggle for logic, refer to [toggle's API](/components/toggle/api) for all **API**.
 
 ## Initialization
@@ -151,7 +151,7 @@ You can set overflow with `drag: { overflow: Function }`, for example `function(
 
 You can wrap the slides with `drag: { wrap: true }`.
 
-[[noteDefault]]
+[[notePrimary]]
 | With `drag: { wrap: true }` you have to set `loop: true` and you can't use `contain: true`
 
 <demo>
@@ -211,7 +211,7 @@ Inside it you can use this strings that gets populated with variables:
   </nav>
 </script>
 
-[[noteDefault]]
+[[notePrimary]]
 | `slider-pagination[data-xt-pag].xt-ignore` is essential to the functioning of the slider, so if you don't want to show it add `.display-none`.
 
 <demo>

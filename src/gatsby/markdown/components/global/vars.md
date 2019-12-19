@@ -61,7 +61,7 @@ Available sizes are: `layout` `auto` `none` `micro` `tiny` `small` `medium` `big
 
 </div>
 
-[[noteDefault]]
+[[notePrimary]]
 | When using **spacing classes** with **breakpoints** you need to set the class breakpoint generation with `@generate-margin` and `@generate-padding`.
 
 ### Order

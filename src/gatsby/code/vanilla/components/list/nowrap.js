@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<ul class="list list-default" style="flex-wrap: nowrap">
+<ul class="list list-default flex-wrap-nowrap">
   <li>
     <button type="button">
       Lorem Ipsum

@@ -162,6 +162,9 @@ Classes and mixins for setting **flex** childs order. The **num** evals to the i
 
 Classes and mixins for setting **flex** properties.
 
+[[notePrimary]]
+| When using **flex util classes** with **breakpoints** you need to set the class breakpoint generation with `@generate-flex`.
+
 **{type}** can be `none` `auto` `full`.
 
 <div class="table-scroll">
@@ -195,7 +198,3 @@ For available **{value}** see [list](/components/list/option) or [row](/componen
 | Util                  | `.align-self-{value}-{breakpoint}`                | `.align-self({value}, {breakpoint})`           | Set align self            |
 
 </div>
-
-[[noteDefault]]
-| When using **flex util classes** with **breakpoints** you need to set the class breakpoint generation with `@generate-flex`.
-
