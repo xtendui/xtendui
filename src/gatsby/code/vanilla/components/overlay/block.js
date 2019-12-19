@@ -16,13 +16,13 @@ demo.htmlSource = `
   <div class="overlay">
     <div class="overlay-container">
       <div class="overlay-inner">
-          
+
         <div class="card card--overlay">
           <div class="card-design"></div>
           <div class="card-inner">
             <div class="btn btn-close" aria-label="Close"></div>
             <div class="card-content">
-              <div class="card-block card-block--custom">
+              <div class="card-block card-block--head">
                 <div class="card-title">Lorem ipsum</div>
               </div>
               <div class="card-block card-item">
@@ -39,7 +39,7 @@ demo.htmlSource = `
             </div>
           </div>
         </div>
-        
+
       </div>
     </div>
   </div>

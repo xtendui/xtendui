@@ -8,7 +8,7 @@ date: "2000-05-01"
 
 ## Block
 
-You can add custom `.card-block` modifiers and style them as you like (e.g.: `.card-block--custom`).
+You can add custom `.card-block` modifiers and style them as you like (e.g.: `.card-block--head`).
 
 <demo>
   <demovanilla src="vanilla/components/card/horizontal-block">

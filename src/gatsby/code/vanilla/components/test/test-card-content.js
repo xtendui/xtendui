@@ -16,7 +16,7 @@ demo.htmlSource = `
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
-          <div class="card-block card-block--custom">
+          <div class="card-block card-block--head">
             <div class="card-title">Lorem ipsum</div>
           </div>
           <div class="card-item-nested card-item card-group">

@@ -51,12 +51,20 @@
   // default options
   .card--big();
   .card--white();
+  // special
+  .card-block--head {
+    background: @gray-200--dark;
+  }
 }
 
 .card--slide {
   // default options
   .card--big();
   .card--default();
+  // special
+  .card-block--head {
+    background: @gray-200--dark;
+  }
 }
 
 .card--drop {
@@ -64,6 +72,10 @@
   // default options
   .card--small();
   .card--white();
+  // special
+  .card-block--head {
+    background: @gray-200--dark;
+  }
 }
 
 // variant
@@ -84,6 +96,10 @@
     > .card-design {
       box-shadow: @shadow-light;
     }
+  }
+  // special
+  .card-block--head {
+    background: @gray-200--dark;
   }
   // interactive
   a&, button& {
@@ -126,6 +142,10 @@
     > .card-design {
       box-shadow: @shadow-accent;
     }
+  }
+  // special
+  .card-block--head {
+    background: @accent--dark;;
   }
   // interactive
   a&, button& {

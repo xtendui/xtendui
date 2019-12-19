@@ -11,7 +11,7 @@ date: "2000-04-01"
 
 ## Block
 
-You can add custom `.card-block` modifiers and style them as you like (e.g.: `.card-block--custom`).
+You can add custom `.card-block` modifiers and style them as you like (e.g.: `.card-block--head`).
 
 <script type="text/plain" class="language-markup">
   <div class="card card--overlay">
@@ -20,7 +20,7 @@ You can add custom `.card-block` modifiers and style them as you like (e.g.: `.c
       <div class="btn btn-close" aria-label="Close"></div>
       <div class="card-content">
 
-        <div class="card-block card-block--custom">
+        <div class="card-block card-block--head">
           <!-- content -->
         </div>
 
