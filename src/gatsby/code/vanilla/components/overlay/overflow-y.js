@@ -26,7 +26,7 @@ demo.htmlSource = `
               <div class="btn btn-close" aria-label="Close"></div>
               <div class="card-content">
                 <div class="card-asset">
-                  ${img({})}
+                  ${img({ classes: 'media-cover' })}
                 </div>
                 <div class="card-block card-item card-overflow-y">
                   <div class="card-title">Lorem ipsum</div>
@@ -62,7 +62,7 @@ demo.htmlSource = `
               <div class="btn btn-close" aria-label="Close"></div>
               <div class="card-content">
                 <div class="card-asset">
-                  ${img({})}
+                  ${img({ classes: 'media-cover' })}
                 </div>
                 <div class="card-block card-item">
                   <div class="card-title">Lorem ipsum</div>

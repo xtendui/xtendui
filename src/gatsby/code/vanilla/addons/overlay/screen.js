@@ -59,7 +59,7 @@ demo.htmlSource = `
               <div class="btn btn-close" aria-label="Close"></div>
               <div class="card-content">
                 <div class="card-asset">
-                  ${img({ classes: 'full', width: 1200, height: 1200 })}
+                  ${img({ classes: 'media-cover', ratio: '100%' })}
                 </div>
               </div>
             </div>

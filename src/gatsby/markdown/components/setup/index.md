@@ -152,6 +152,10 @@ And add this browser list:
 IE 11
 ```
 
+### Media with Object fit
+
+If you want to support [old browsers](https://caniuse.com/#feat=object-fit), use [object-fit polyfills](https://github.com/fregante/object-fit-images).
+
 ## Documentation
 
 We use gatsby to serve the docs:

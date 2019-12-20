@@ -44,7 +44,7 @@ demo.htmlSource = `
             </div>
           </div>
           <div class="card-asset">
-            ${img({})}
+            ${img({ classes: 'media-cover' })}
           </div>
         </div>
       </div>
@@ -85,7 +85,7 @@ demo.htmlSource = `
           </div>
         </div>
         <div class="card-asset">
-          ${img({})}
+          ${img({ classes: 'media-cover' })}
         </div>
       </div>
     </button>

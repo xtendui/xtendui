@@ -17,7 +17,7 @@ demo.htmlSource = `
       <div class="card-inner">
         <div class="card-content">
           <div class="card-asset">
-            ${img({})}
+            ${img({ classes: 'media-cover' })}
           </div>
           <div class="card-block card-item">
             <div class="card-title">Lorem ipsum</div>
@@ -38,7 +38,7 @@ demo.htmlSource = `
       <div class="card-inner">
         <div class="card-content">
           <div class="card-asset">
-            ${img({})}
+            ${img({ classes: 'media-cover' })}
           </div>
           <div class="card-block card-item">
             <div class="card-title">Lorem ipsum</div>
