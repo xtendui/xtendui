@@ -447,7 +447,7 @@ const initializeIframe = function(container, item) {
           if (item.dataset.iframeLoadCall) {
             delete item.dataset.iframeLoadCall
             const iframe = item.querySelector('iframe')
-            item.classList.remove('populated-iframe', 'loaded')
+            item.classList.remove('loaded')
             unloadIframe(iframe)
           }
         }
