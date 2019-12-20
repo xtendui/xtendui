@@ -40,9 +40,14 @@ You need to import the **reset** file as first import:
 @import '~xtend-library/src/xtend-reset.less'; // always first loaded
 ```
 
-Then you can import the components you need as described in the docs, just be sure to import the library as reference first: `@import (reference) '~xtend-library/src/xtend-core.less';`.
+Then you can import the **components you need** as described in the docs:
 
-Or just import all core/extensions/addons as needed:
+```less
+@import (reference) '~xtend-library/src/xtend-core.less'; // be sure to import the library as reference first
+@import '~xtend-library/src/extensions/slider/slider.less';
+```
+
+Or just import **all core/extensions/addons** as needed (preferred method):
 
 ```less
 @import '~xtend-library/src/xtend-core.less';
