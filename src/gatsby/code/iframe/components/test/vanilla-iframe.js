@@ -8,17 +8,13 @@ const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
 export const demo = {
   container: true,
-  full: false,
+  full: true,
   name: path.basename(filename, '.js'),
   component: dirs.pop(),
   type: dirs.pop(),
 }
 
 demo.htmlSource = `
-<br/><br/><br/><br/><br/><br/>
-<br/><br/><br/><br/><br/><br/>
-<br/><br/><br/><br/><br/><br/>
-<br/><br/><br/><br/><br/><br/>
 <div class="slider demo_test-iframe">
   <div class="loader loader-spinner loader-mouse loader-js">
     <span class="spinner">
