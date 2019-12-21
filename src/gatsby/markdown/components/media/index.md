@@ -34,30 +34,3 @@ Set the **aspect ratio** with css `padding-bottom`.
     </div>
   </div>
 </script>
-
-## Object fit
-
-Give `.media` one of this options:
-
-<div class="table-scroll">
-
-|                         | Class                                     | Mixin                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `.media-cover`                 | `.media-cover()`        | object-fit with cover            |
-| Option                  | `.media-cover`                 | `.media-cover()`        | object-fit with cover            |
-| Option                  | `.media-scale-down`                 | `.media-scale-down()`        | object-fit with scale-down            |
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/media/none">
-  </demovanilla>
-  <demovanilla src="vanilla/components/media/cover">
-  </demovanilla>
-  <demovanilla src="vanilla/components/media/contain">
-  </demovanilla>
-</demo>
-
-## Browser support
-
-If you want to support [old browsers](https://caniuse.com/#feat=object-fit), use [object-fit polyfills](https://github.com/fregante/object-fit-images).
