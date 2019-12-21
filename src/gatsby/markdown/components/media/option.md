@@ -17,6 +17,7 @@ Give `.media` one of this options:
 | Option                  | `.media-cover`                 | `.media-cover()`        | object-fit with cover            |
 | Option                  | `.media-cover`                 | `.media-cover()`        | object-fit with cover            |
 | Option                  | `.media-scale-down`                 | `.media-scale-down()`        | object-fit with scale-down            |
+| Option                  | `.media-fill`                 | `.media-fill()`        | object-fit with fill            |
 
 </div>
 
