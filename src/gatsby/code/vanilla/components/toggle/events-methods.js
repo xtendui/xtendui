@@ -9,20 +9,26 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-default list-space-small align-items-center">
-  <button type="button" class="btn btn-primary" id="demo_toggle-events-first">
-    First
+<div class="list list-default list-space-tiny align-items-center">
+  <button type="button" class="btn btn-primary btn-tiny" id="demo_toggle-events-first">
+    Activate 1st
   </button>
-  <button type="button" class="btn btn-primary" id="demo_toggle-events-reinit">
+  <button type="button" class="btn btn-primary btn-tiny" id="demo_toggle-events-add">
+    Add
+  </button>
+  <button type="button" class="btn btn-primary btn-tiny" id="demo_toggle-events-remove">
+    Remove
+  </button>
+  <button type="button" class="btn btn-primary btn-tiny" id="demo_toggle-events-reinit">
     Reinit
   </button>
-  <button type="button" class="btn btn-primary" id="demo_toggle-events-restart">
+  <button type="button" class="btn btn-primary btn-tiny" id="demo_toggle-events-restart">
     Restart
   </button>
-  <button type="button" class="btn btn-primary" id="demo_toggle-events-destroy">
+  <button type="button" class="btn btn-primary btn-tiny" id="demo_toggle-events-destroy">
     Destroy
   </button>
-  <button type="button" class="btn btn-primary" id="demo_toggle-events-unmount">
+  <button type="button" class="btn btn-primary btn-tiny" id="demo_toggle-events-unmount">
     Unmount
   </button>
 </div>

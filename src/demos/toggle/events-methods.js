@@ -5,7 +5,9 @@ Xt.mount.push({
   mount: function(object) {
     // init
 
-    let self = new Xt.Toggle(object, {})
+    let self = new Xt.Toggle(object, {
+      min: 1
+    })
 
     // log
 
@@ -28,11 +30,46 @@ Xt.mount.push({
     const firstBtn = document.querySelector('#demo_toggle-events-first')
 
     const firstFnc = function() {
-      logAdd('<strong>first</strong>')
+      logAdd('<strong>activate 1st</strong>')
       object.querySelector('button').dispatchEvent(new CustomEvent('on.xt'))
     }
 
     firstBtn.addEventListener('click', firstFnc)
+
+    // add
+
+    const addBtn = document.querySelector('#demo_toggle-events-add')
+
+    const addFnc = function() {
+      logAdd('<strong>add</strong>')
+      const index = self.elements.length
+      // element
+      const el = '<button type="button" class="btn btn-default">Toggle ' + index + '</button>'
+      self.elements[self.elements.length - 1].after(Xt.createElement(el))
+      // target
+      const tr = '<div class="note note-default note-background toggle-block">Target ' + index + '</div>'
+      self.targets[self.targets.length - 1].after(Xt.createElement(tr))
+      // reinit
+      reinitFnc()
+    }
+
+    addBtn.addEventListener('click', addFnc)
+
+    // remove
+
+    const removeBtn = document.querySelector('#demo_toggle-events-remove')
+
+    const removeFnc = function() {
+      logAdd('<strong>remove</strong>')
+      // element
+      self.elements[self.elements.length - 1].remove()
+      // element
+      self.targets[self.targets.length - 1].remove()
+      // reinit
+      reinitFnc()
+    }
+
+    removeBtn.addEventListener('click', removeFnc)
 
     // reinit
 
