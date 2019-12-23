@@ -2733,7 +2733,6 @@ class Toggle {
     self.destroyDisabled()
     // remove events
     if (self.destroyElements) {
-      console.log(self.destroyElements)
       for (const element of self.destroyElements) {
         const storages = Xt.dataStorage.getAll(element)
         if (storages) {
@@ -2744,6 +2743,7 @@ class Toggle {
                 if (typeof handler === 'function') {
                   const events = key.split('/')[0].split(' ')
                   for (const event of events) {
+                    //console.debug(event, element.innerHTML)
                     element.removeEventListener(event, handler)
                     element.removeEventListener(event, handler, Xt.passiveSupported ? { passive: true } : true)
                     Xt.dataStorage.remove(element, key)
