@@ -6,7 +6,7 @@ Xt.mount.push({
     // init
 
     let self = new Xt.Toggle(object, {
-      min: 1
+      min: 1,
     })
 
     // log
