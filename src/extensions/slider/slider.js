@@ -383,23 +383,23 @@ class Slider extends Xt.Toggle {
         slide.classList.add('xt-links-none')
       }
       // slide on
-      const slideOnHandler = Xt.dataStorage.put(slide, 'on' + '.' + self.namespace, self.eventSlideOnHandler.bind(self).bind(self, dragger, slide))
+      const slideOnHandler = Xt.dataStorage.put(slide, 'on' + '/' + self.namespace, self.eventSlideOnHandler.bind(self).bind(self, dragger, slide))
       slide.addEventListener('on.xt', slideOnHandler, true) // @FIX useCapture for custom events order on re-init
       // slide off
-      const slideOffHandler = Xt.dataStorage.put(slide, 'off' + '.' + self.namespace, self.eventSlideOffHandler.bind(self).bind(self, dragger, slide))
+      const slideOffHandler = Xt.dataStorage.put(slide, 'off' + '/' + self.namespace, self.eventSlideOffHandler.bind(self).bind(self, dragger, slide))
       slide.addEventListener('off.xt', slideOffHandler, true) // @FIX useCapture for custom events order on re-init
     }
     // dragger
     if (options.drag) {
       // @FIX prevent firefox image dragging
       for (const img of self.dragger.querySelectorAll('img')) {
-        let imgFixHandler = Xt.dataStorage.put(img, 'mousedown' + '.' + self.namespace, self.eventImgFixHandler.bind(self))
+        let imgFixHandler = Xt.dataStorage.put(img, 'mousedown' + '/' + self.namespace, self.eventImgFixHandler.bind(self))
         img.addEventListener('mousedown', imgFixHandler)
       }
       // drag start
       const dragstartHandler = Xt.dataStorage.put(
         dragger,
-        'mousedown touchstart' + '.' + self.namespace,
+        'mousedown touchstart' + '/' + self.namespace,
         self.eventDragstartHandler.bind(self).bind(self, dragger)
       )
       const events = ['mousedown', 'touchstart']
@@ -422,7 +422,7 @@ class Slider extends Xt.Toggle {
       }
     }
     // resize
-    const resizeHandler = Xt.dataStorage.put(window, 'resize' + '.' + self.namespace, self.eventResizeHandler.bind(self).bind(self))
+    const resizeHandler = Xt.dataStorage.put(window, 'resize' + '/' + self.namespace, self.eventResizeHandler.bind(self).bind(self))
     addEventListener('resize', resizeHandler)
   }
 
@@ -490,7 +490,7 @@ class Slider extends Xt.Toggle {
           self.eventDragstart(dragger, e)
         }
         // drag end
-        const dragendHandler = Xt.dataStorage.put(dragger, 'mouseup touchend' + '.' + self.namespace, self.eventDragendHandler.bind(self).bind(self, dragger))
+        const dragendHandler = Xt.dataStorage.put(dragger, 'mouseup touchend' + '/' + self.namespace, self.eventDragendHandler.bind(self).bind(self, dragger))
         const events = ['mouseup', 'touchend']
         for (const event of events) {
           addEventListener(event, dragendHandler)
@@ -526,7 +526,7 @@ class Slider extends Xt.Toggle {
   eventDragstart(dragger, e) {
     const self = this
     // event move
-    const dragHandler = Xt.dataStorage.put(dragger, 'mousemove touchmove' + '.' + self.namespace, self.eventDragHandler.bind(self).bind(self, dragger))
+    const dragHandler = Xt.dataStorage.put(dragger, 'mousemove touchmove' + '/' + self.namespace, self.eventDragHandler.bind(self).bind(self, dragger))
     const events = ['mousemove', 'touchmove']
     for (const event of events) {
       dragger.addEventListener(event, dragHandler, Xt.passiveSupported ? { passive: true } : true)
@@ -543,13 +543,13 @@ class Slider extends Xt.Toggle {
   eventDragend(dragger, e) {
     const self = this
     // event off
-    const dragendHandler = Xt.dataStorage.get(dragger, 'mouseup touchend' + '.' + self.namespace)
+    const dragendHandler = Xt.dataStorage.get(dragger, 'mouseup touchend' + '/' + self.namespace)
     const eventsoff = ['mouseup', 'touchend']
     for (const event of eventsoff) {
       removeEventListener(event, dragendHandler)
     }
     // event move
-    const dragHandler = Xt.dataStorage.get(dragger, 'mousemove touchmove' + '.' + self.namespace)
+    const dragHandler = Xt.dataStorage.get(dragger, 'mousemove touchmove' + '/' + self.namespace)
     const eventsmove = ['mousemove', 'touchmove']
     for (const event of eventsmove) {
       dragger.removeEventListener(event, dragHandler, Xt.passiveSupported ? { passive: true } : true)

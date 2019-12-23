@@ -6,6 +6,13 @@ title: "API"
 date: "2000-01-01"
 ---
 
+## Events and Methods
+
+[[noteDefault]]
+| Drop uses toggle for logic, refer to [toggle's Events and Methods](/components/toggle/api#events-and-methods).
+
+
+
 ## Initialization
 
 Initialize automatically within markup with `[data-xt-drop="{ <options> }"]`.
@@ -40,7 +47,7 @@ Use this markup to create a **drop**.
 
 ## Options
 
-[[notePrimary]]
+[[noteDefault]]
 | Drop uses toggle for logic, refer to [toggle's options](/components/toggle/api#options).
 
 ### Class
@@ -74,8 +81,3 @@ You can specify **on** and **off** events for the drop. Fore example `on: 'mouse
   <demovanilla src="vanilla/components/drop/event">
   </demovanilla>
 </demo>
-
-## Events and Methods
-
-[[notePrimary]]
-| Drop uses toggle for logic, refer to [toggle's Events and Methods](/components/toggle/api#events-and-methods).

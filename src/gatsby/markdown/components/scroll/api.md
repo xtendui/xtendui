@@ -6,6 +6,13 @@ title: "API"
 date: "2000-01-01"
 ---
 
+## Events and Methods
+
+[[noteDefault]]
+| Scroll uses toggle for logic, refer to [toggle's Events and Methods](/components/toggle/api#events-and-methods).
+
+
+
 ## Initialization
 
 Initialize automatically within markup with `[data-xt-scroll="{ <options> }"]`.
@@ -27,7 +34,7 @@ new Xt.Scroll(document.querySelector('#my-scroll'), {
 
 ## Options
 
-[[notePrimary]]
+[[noteDefault]]
 | Scroll uses toggle for logic, refer to [toggle's options](/components/toggle/api#options).
 
 ### Mode
@@ -109,8 +116,3 @@ You can use a function for `delayOn` and `delayOff` for example `function(curren
 </div>
 
 @TODO demo
-
-## Events and Methods
-
-[[notePrimary]]
-| Scroll uses toggle for logic, refer to [toggle's Events and Methods](/components/toggle/api#events-and-methods).

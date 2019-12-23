@@ -6,6 +6,13 @@ title: "API"
 date: "2000-01-01"
 ---
 
+## Events and Methods
+
+[[noteDefault]]
+| Overlay uses toggle for logic, refer to [toggle's Events and Methods](/components/toggle/api#events-and-methods).
+
+
+
 ## Initialization
 
 Initialize automatically within markup with `[data-xt-overlay="{ <options> }"]`.
@@ -52,7 +59,7 @@ You can use this markup to create an **overlay** with **unique mode**.
 
 ## Options
 
-[[notePrimary]]
+[[noteDefault]]
 | Overlay uses toggle for logic, refer to [toggle's options](/components/toggle/api#options).
 
 ### Class
@@ -68,8 +75,3 @@ It's recommended to use `active-overlay` on overlay otherwise the overlay flashe
 | Option                  | `class:String`                          | `active active-overlay`        | Class name for activation            |
 
 </div>
-
-## Events and Methods
-
-[[notePrimary]]
-| Overlay uses toggle for logic, refer to [toggle's Events and Methods](/components/toggle/api#events-and-methods).

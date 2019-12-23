@@ -94,7 +94,7 @@ class Sticky extends Xt.Toggle {
     const options = self.options
     // event on
     if (options.on) {
-      const stickyHandler = Xt.dataStorage.put(window, options.on + '.' + self.namespace, self.eventStickyHandler.bind(self))
+      const stickyHandler = Xt.dataStorage.put(window, options.on + '/' + self.namespace, self.eventStickyHandler.bind(self))
       const events = [...options.on.split(' ')]
       for (const event of events) {
         addEventListener(event, stickyHandler, Xt.passiveSupported ? { passive: true } : false)
@@ -102,10 +102,10 @@ class Sticky extends Xt.Toggle {
       self.eventStickyHandler(null, true)
     }
     // autoClose
-    const autoCloseHandler = Xt.dataStorage.put(self.object, 'hide' + '.' + self.namespace, Xt.autoClose.bind(self, self.object))
+    const autoCloseHandler = Xt.dataStorage.put(self.object, 'hide' + '/' + self.namespace, Xt.autoClose.bind(self, self.object))
     self.object.addEventListener('hide.xt.sticky', autoCloseHandler)
     // focusin
-    const focusInHandler = Xt.dataStorage.put(document, 'focusin' + '.' + self.namespace, self.eventFocusInHandler.bind(self))
+    const focusInHandler = Xt.dataStorage.put(document, 'focusin' + '/' + self.namespace, self.eventFocusInHandler.bind(self))
     document.addEventListener('focusin', focusInHandler, Xt.passiveSupported ? { passive: true } : false)
   }
 

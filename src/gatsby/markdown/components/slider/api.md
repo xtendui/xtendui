@@ -6,6 +6,13 @@ title: "API"
 date: "2000-01-01"
 ---
 
+## Events and Methods
+
+[[noteDefault]]
+| Slider uses toggle for logic, refer to [toggle's Events and Methods](/components/toggle/api#events-and-methods).
+
+
+
 ## Initialization
 
 Initialize automatically within markup with `[data-xt-slider="{ <options> }"]`.
@@ -56,7 +63,7 @@ Use this markup to create a **slider**.
 
 ## Options
 
-[[notePrimary]]
+[[noteDefault]]
 | Slider uses toggle for logic, refer to [toggle's options](/components/toggle/api#options).
 
 ### Align
@@ -323,8 +330,3 @@ Use `wheel: { selector: 'object' }` or `wheel: { selector: QuerySelector }` to e
   <demovanilla src="vanilla/components/slider/other">
   </demovanilla>
 </demo>
-
-## Events and Methods
-
-[[notePrimary]]
-| Slider uses toggle for logic, refer to [toggle's Events and Methods](/components/toggle/api#events-and-methods).

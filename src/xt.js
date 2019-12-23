@@ -222,8 +222,8 @@ if (typeof window !== 'undefined') {
      * set key/obj pair on element's map
      * @param {Node|HTMLElement|EventTarget|Window} el
      * @param {String} key
-     * @param {Object|Function} obj
-     * @returns {Object|Function}
+     * @param {*} obj
+     * @returns {*}
      */
     set: function(el, key, obj) {
       // new map if not already there
@@ -241,8 +241,8 @@ if (typeof window !== 'undefined') {
      * put key/obj pair on element's map, return old if exist already
      * @param {Node|HTMLElement|EventTarget|Window} el
      * @param {String} key
-     * @param {Object|Function} obj
-     * @returns {Object|Function}
+     * @param {*} obj
+     * @returns {*}
      */
     put: function(el, key, obj) {
       // new map if not already there
@@ -265,7 +265,7 @@ if (typeof window !== 'undefined') {
      * get obj from key on element's map
      * @param {Node|HTMLElement|EventTarget|Window} el
      * @param {String} key
-     * @returns {Object|Function}
+     * @returns {*}
      */
     get: function(el, key) {
       const getEl = this._storage.get(el)
@@ -280,7 +280,7 @@ if (typeof window !== 'undefined') {
     /**
      * get all obj/key on element's map
      * @param {Node|HTMLElement|EventTarget|Window} el
-     * @returns {Object|Function}
+     * @returns {*}
      */
     getAll: function(el) {
       const getEl = this._storage.get(el)
@@ -379,10 +379,10 @@ if (typeof window !== 'undefined') {
      */
     on: function() {
       // event key
-      const focusChangeKeyHandler = Xt.dataStorage.put(document, 'keyup.focus', Xt.focus.changeKey)
+      const focusChangeKeyHandler = Xt.dataStorage.put(document, 'keyup/focus', Xt.focus.changeKey)
       document.addEventListener('keyup', focusChangeKeyHandler)
       // event mouse
-      const focusChangeOtherHandler = Xt.dataStorage.get(document, 'mousedown touchstart pointerdown.focus')
+      const focusChangeOtherHandler = Xt.dataStorage.get(document, 'mousedown touchstart pointerdown/focus')
       document.removeEventListener('mousedown', focusChangeOtherHandler)
       document.removeEventListener('touchstart', focusChangeOtherHandler)
       document.removeEventListener('pointerdown', focusChangeOtherHandler)
@@ -393,10 +393,10 @@ if (typeof window !== 'undefined') {
      */
     off: function() {
       // event
-      const focusChangeKeyHandler = Xt.dataStorage.get(document, 'keyup.focus')
+      const focusChangeKeyHandler = Xt.dataStorage.get(document, 'keyup/focus')
       document.removeEventListener('keyup', focusChangeKeyHandler)
       // event mouse
-      const focusChangeOtherHandler = Xt.dataStorage.put(document, 'mousedown touchstart pointerdown.focus', Xt.focus.changeOther)
+      const focusChangeOtherHandler = Xt.dataStorage.put(document, 'mousedown touchstart pointerdown/focus', Xt.focus.changeOther)
       document.addEventListener('mousedown', focusChangeOtherHandler)
       document.addEventListener('touchstart', focusChangeOtherHandler, Xt.passiveSupported ? { passive: true } : false)
       document.addEventListener('pointerdown', focusChangeOtherHandler, Xt.passiveSupported ? { passive: true } : false)
@@ -465,7 +465,7 @@ if (typeof window !== 'undefined') {
         Xt.focusLimit.first = Xt.focusLimit.focusables[0]
         Xt.focusLimit.last = Xt.focusLimit.focusables[Xt.focusLimit.focusables.length - 1]
         // event
-        const focusLimitHandler = Xt.dataStorage.put(document, 'keyup.focusLimit', Xt.focusLimit.limit.bind(this))
+        const focusLimitHandler = Xt.dataStorage.put(document, 'keyup/focusLimit', Xt.focusLimit.limit.bind(this))
         document.addEventListener('keyup', focusLimitHandler)
       }
     },
@@ -690,7 +690,7 @@ if (typeof window !== 'undefined') {
    */
   Xt.setScrollbarWidth = function(force = false) {
     if (Xt.scrollbarWidth === undefined) {
-      const scrollbarWidthHandler = Xt.dataStorage.put(window, 'resize.scrollbar', Xt.setScrollbarWidth.bind(this, true))
+      const scrollbarWidthHandler = Xt.dataStorage.put(window, 'resize/scrollbar', Xt.setScrollbarWidth.bind(this, true))
       addEventListener('resize', scrollbarWidthHandler)
     }
     if (force || Xt.scrollbarWidth === undefined) {

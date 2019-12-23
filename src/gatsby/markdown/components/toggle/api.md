@@ -6,6 +6,65 @@ title: "API"
 date: "2000-01-01"
 ---
 
+## Events and Methods
+
+Trigger events this way:
+
+```jsx
+document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('on.xt'))
+```
+
+Listen to events this way:
+
+```jsx
+document.querySelector('#my-element-or-target').addEventListener('on.xt', function(e) {
+  // add this check on events with bubbles: true
+  if (this === e.target) {
+    // logic
+  }
+})
+```
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | DOM Element                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Event                   | `on.xt`       | `elements` `targets` | Activation event (`bubbles: true`)             |
+| Event                   | `off.xt`      | `elements` `targets` | Deactivation event (`bubbles: true`)            |
+| Event                   | `ondone.xt`           | `elements` `targets` | Activation event after delay and duration (`bubbles: true`)             |
+| Event                   | `offdone.xt`           | `elements` `targets` | Deactivation event after delay and duration (`bubbles: true`)             |
+| Event                   | `imageLoaded.xt`           | `elements` `targets` | Images loaded event (`bubbles: true`)            |
+| Event                   | `init.xt`           | `object` | Init event             |
+| Event                   | `start.xt.auto`           | `object` | Auto start event             |
+| Event                   | `stop.xt.auto`           | `object` | Auto stop event             |
+| Event                   | `pause.xt.auto`           | `object` | Auto pause event             |
+
+</div>
+
+Trigger methods this way:
+
+```jsx
+const self = Xt.get('xt-toggle', document.querySelector('#my-toggle'))
+self.destroy()
+```
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Method                  | `self.reinit(saveCurrents:Boolean)`       | Reinitialize component and save currents as initial (default: `true`)             |
+| Method                  | `self.restart(saveCurrents:Boolean)`      | Restart component and save currents as initial (default: `false`)             |
+| Method                  | `self.destroy(unmount:Boolean)`           | Destroy component and unmount (default: `true`)            |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/toggle/events-methods">
+  </demovanilla>
+</demo>
+
+
+
 ## Initialization
 
 Initialize automatically within markup with `[data-xt-toggle="{ <options> }"]`.
@@ -315,60 +374,3 @@ Use `aria: false` to disable aria generation, or granularly see @TODO.
 | Option                  | `aria.labelledby:Boolean`                          | `true`        | Inject aria labelledby attributes            |
 
 </div>
-
-## Events and Methods
-
-Trigger events this way:
-
-```jsx
-document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('on.xt'))
-```
-
-Listen to events this way:
-
-```jsx
-document.querySelector('#my-element-or-target').addEventListener('on.xt', function(e) {
-  // add this check on events with bubbles: true
-  if (this === e.target) {
-    // logic
-  }
-})
-```
-
-<div class="table-scroll">
-
-|                         | Syntax                                    | DOM Element                    | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `on.xt`       | `elements` `targets` | Activation event (`bubbles: true`)             |
-| Event                   | `off.xt`      | `elements` `targets` | Deactivation event (`bubbles: true`)            |
-| Event                   | `ondone.xt`           | `elements` `targets` | Activation event after delay and duration (`bubbles: true`)             |
-| Event                   | `offdone.xt`           | `elements` `targets` | Deactivation event after delay and duration (`bubbles: true`)             |
-| Event                   | `imageLoaded.xt`           | `elements` `targets` | Images loaded event (`bubbles: true`)            |
-| Event                   | `init.xt`           | `object` | Init event             |
-| Event                   | `start.xt.auto`           | `object` | Auto start event             |
-| Event                   | `stop.xt.auto`           | `object` | Auto stop event             |
-| Event                   | `pause.xt.auto`           | `object` | Auto pause event             |
-
-</div>
-
-Trigger methods this way:
-
-```jsx
-const self = Xt.get('xt-toggle', document.querySelector('#my-toggle'))
-self.destroy()
-```
-
-<div class="table-scroll">
-
-|                         | Syntax                                    | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Method                  | `self.reinit(saveCurrents:Boolean)`       | Reinitialize component and save currents as initial (default: `true`)             |
-| Method                  | `self.restart(saveCurrents:Boolean)`      | Restart component and save currents as initial (default: `false`)             |
-| Method                  | `self.destroy(unmount:Boolean)`           | Destroy component and unmount (default: `true`)            |
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/toggle/events-methods">
-  </demovanilla>
-</demo>

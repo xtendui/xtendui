@@ -6,6 +6,13 @@ title: "API"
 date: "2000-01-01"
 ---
 
+## Events and Methods
+
+[[noteDefault]]
+| Sticky uses toggle for logic, refer to [toggle's Events and Methods](/components/toggle/api#events-and-methods).
+
+
+
 ## Initialization
 
 Initialize automatically within markup with `[data-xt-sticky="{ <options> }"]`.
@@ -35,7 +42,7 @@ Use this markup to create a **sticky**.
 
 ## Options
 
-[[notePrimary]]
+[[noteDefault]]
 | Sticky uses toggle for logic, refer to [toggle's options](/components/toggle/api#options).
 
 ### Mode
@@ -127,8 +134,3 @@ To hide the sticky when scrolling down or up use `hide: 'down'` or `hide: 'up'`.
   <div class="gatsby_demo_item" data-iframe="iframe/components/sticky/hide">
   </div>
 </demo>
-
-## Events and Methods
-
-[[notePrimary]]
-| Sticky uses toggle for logic, refer to [toggle's Events and Methods](/components/toggle/api#events-and-methods).
