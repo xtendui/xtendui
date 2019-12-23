@@ -6,9 +6,6 @@ title: "API"
 date: "2000-01-01"
 ---
 
-[[notePrimary]]
-| Slider uses toggle for logic, refer to [toggle's API](/components/toggle/api) for all **API**.
-
 ## Initialization
 
 Initialize automatically within markup with `[data-xt-slider="{ <options> }"]`.
@@ -16,12 +13,51 @@ Initialize automatically within markup with `[data-xt-slider="{ <options> }"]`.
 Or initialize with javascript:
 
 ```jsx
-new Xt.Slider(document.querySelector('.my-slider'), {
+new Xt.Slider(document.querySelector('#my-slider'), {
   // options
 });
 ```
 
-## Option
+## Usage
+
+Use this markup to create a **slider**.
+
+<script type="text/plain" class="language-markup">
+  <div class="slider" data-xt-slider>
+
+    <div class="slides">
+      <ul class="slides-inner">
+
+        <li class="slide">
+          <div class="slide-inner">
+            <!-- content -->
+          </div>
+        </li>
+
+        <li class="slide">
+          <div class="slide-inner">
+            <!-- content -->
+          </div>
+        </li>
+
+      </ul>
+    </div>
+
+    <nav class="slider-pagination">
+      <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
+      </button>
+    </nav>
+
+  </div>
+</script>
+
+[[notePrimary]]
+| `slider-pagination[data-xt-pag].xt-ignore` is essential to the functioning of the slider, so if you don't want to show it add `.display-none`.
+
+## Options
+
+[[notePrimary]]
+| Slider uses toggle for logic, refer to [toggle's options](/components/toggle/api#options).
 
 ### Align
 
@@ -288,6 +324,7 @@ Use `wheel: { selector: 'object' }` or `wheel: { selector: QuerySelector }` to e
   </demovanilla>
 </demo>
 
-## Events
+## Events and Methods
 
-@TODO tables events
+[[notePrimary]]
+| Slider uses toggle for logic, refer to [toggle's Events and Methods](/components/toggle/api#events-and-methods).

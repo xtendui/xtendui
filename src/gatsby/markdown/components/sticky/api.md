@@ -6,9 +6,6 @@ title: "API"
 date: "2000-01-01"
 ---
 
-[[notePrimary]]
-| Sticky uses toggle for logic, refer to [toggle's API](/components/toggle/api) for all **API**.
-
 ## Initialization
 
 Initialize automatically within markup with `[data-xt-sticky="{ <options> }"]`.
@@ -16,10 +13,30 @@ Initialize automatically within markup with `[data-xt-sticky="{ <options> }"]`.
 Or initialize with javascript:
 
 ```jsx
-new Xt.Sticky(document.querySelector('.my-sticky'), {
+new Xt.Sticky(document.querySelector('#my-sticky'), {
   // options
 });
 ```
+
+## Usage
+
+Use this markup to create a **sticky**.
+
+<script type="text/plain" class="language-markup">
+  <div data-xt-xticky>
+    <div>
+      <!-- content -->
+    </div>
+  </div>
+</script>
+
+[[notePrimary]]
+| It's recomended to style and animate a inner div <code>[data-xt-xticky] > div</code> when using <strong>sticky component</strong>.
+
+## Options
+
+[[notePrimary]]
+| Sticky uses toggle for logic, refer to [toggle's options](/components/toggle/api#options).
 
 ### Mode
 
@@ -111,6 +128,7 @@ To hide the sticky when scrolling down or up use `hide: 'down'` or `hide: 'up'`.
   </div>
 </demo>
 
-## Events
+## Events and Methods
 
-@TODO tables events
+[[notePrimary]]
+| Sticky uses toggle for logic, refer to [toggle's Events and Methods](/components/toggle/api#events-and-methods).

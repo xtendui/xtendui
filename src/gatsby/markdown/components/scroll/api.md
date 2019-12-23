@@ -6,9 +6,6 @@ title: "API"
 date: "2000-01-01"
 ---
 
-[[notePrimary]]
-| Scroll uses toggle for logic, refer to [toggle's API](/components/toggle/api) for all **API**.
-
 ## Initialization
 
 Initialize automatically within markup with `[data-xt-scroll="{ <options> }"]`.
@@ -16,12 +13,22 @@ Initialize automatically within markup with `[data-xt-scroll="{ <options> }"]`.
 Or initialize with javascript:
 
 ```jsx
-new Xt.Scroll(document.querySelector('.my-scroll'), {
+new Xt.Scroll(document.querySelector('#my-scroll'), {
   // options
 });
 ```
 
-## Option
+## Usage
+
+@TODO
+
+[[notePrimary]]
+| It's recomended to animate the scroll elements with <code>animation</code> instead of <code>transition</code> because of <a href="{% link faq.html %}#browsers-bugs-fixed-position">this bug</a>.
+
+## Options
+
+[[notePrimary]]
+| Scroll uses toggle for logic, refer to [toggle's options](/components/toggle/api#options).
 
 ### Mode
 
@@ -103,6 +110,7 @@ You can use a function for `delayOn` and `delayOff` for example `function(curren
 
 @TODO demo
 
-## Events
+## Events and Methods
 
-@TODO tables events
+[[notePrimary]]
+| Scroll uses toggle for logic, refer to [toggle's Events and Methods](/components/toggle/api#events-and-methods).

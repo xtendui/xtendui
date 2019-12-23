@@ -13,12 +13,88 @@ Initialize automatically within markup with `[data-xt-toggle="{ <options> }"]`.
 Or initialize with javascript:
 
 ```jsx
-new Xt.Toggle(document.querySelector('.my-toggle'), {
+new Xt.Toggle(document.querySelector('#my-toggle'), {
   // options
 });
 ```
 
-## Option
+## Usage
+
+### Self
+
+You can use this markup to create a **toggle** with **no targets**.
+
+<script type="text/plain" class="language-markup">
+  <button type="button" data-xt-toggle>
+    <!-- content -->
+  </button>
+</script>
+
+<demo>
+  <demovanilla src="vanilla/components/toggle/self">
+  </demovanilla>
+</demo>
+
+### Multiple
+
+You can create a toggle with **mutiple** mode by assigning the toggle to a container element, elements and targets must be inside the container.
+
+With multiple mode, the **targets** activated are the ones with the same index of the toggled **element**.
+
+<script type="text/plain" class="language-markup">
+  <div  data-xt-toggle="{ elements: '.my-elements', targets: '.my-targets' }">
+    <button type="button" class="my-elements">
+      <!-- content -->
+    </button>
+    <div class="toggle-block" class="my-targets">
+      <!-- content -->
+    </div>
+  </div>
+</script>
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Default                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `elements:Query`                          | `:scope > a, :scope > button`        | Elements that triggers the events            |
+| Option                  | `targets:Query`                           | `:scope > [class^="toggle-"], :scope > [class*=" toggle-"]`      | Targets that gets activated on events by the elements           |
+| Option                  | `elementsInner:Query`                          | `false`        | Additional query inside elements that gets activated on events            |
+| Option                  | `targetsInner:Query`                          | `false`        | Additional query inside targets that gets activated on events            |
+</div>
+
+Use `:scope` when using descendant selector on root (e.g. `:scope > *`).
+
+<demo>
+  <demovanilla src="vanilla/components/toggle/multiple-default">
+  </demovanilla>
+  <demovanilla src="vanilla/components/toggle/multiple-custom">
+  </demovanilla>
+</demo>
+
+### Unique
+
+The **unique** mode is useful when triggering **targets outside the scope** of the toggle.
+
+[[notePrimary]]
+| To activate **unique mode** you **need** to specify targets with **#id**.
+
+<script type="text/plain" class="language-markup">
+  <button type="button" data-xt-toggle="{ targets: '#my-target' }">
+    <!-- content -->
+  </button>
+  <div class="toggle-block" id="my-target">
+    <!-- content -->
+  </div>
+</script>
+
+<demo>
+  <demovanilla src="vanilla/components/toggle/unique-single">
+  </demovanilla>
+  <demovanilla src="vanilla/components/toggle/unique-same">
+  </demovanilla>
+</demo>
+
+## Options
 
 ### Class
 
@@ -42,6 +118,14 @@ You can specify classes to toggle with `class: 'my-class-0 my-class-1'`. Toggled
 </demo>
 
 You can start with toggled elements and targets just by adding **one of the classes** to the **elements** or **targets**.
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Default                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `class:String`                          | `active active-toggle`        | Class name for activation            |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/toggle/start">
@@ -195,6 +279,24 @@ You can use a function for <code>delayOn</code> and <code>delayOff</code> for ex
   </demovanilla>
 </demo>
 
+### Keyboard
+
+Use `keyboard: { selector: 'object' }` or `keyboard: { selector : QuerySelector }` to enable keyboard navigation on focus.
+
+<demo>
+  <demovanilla src="vanilla/components/toggle/usability-keyboard">
+  </demovanilla>
+</demo>
+
+### Aria
+
+Use `aria: false` to disable aria generation, or granularly see @TODO.
+
+<demo>
+  <demovanilla src="vanilla/components/toggle/usability-aria">
+  </demovanilla>
+</demo>
+
 ### Other
 
 <div class="table-scroll">
@@ -214,6 +316,59 @@ You can use a function for <code>delayOn</code> and <code>delayOff</code> for ex
 
 </div>
 
-## Events
+## Events and Methods
 
-@TODO tables events
+Trigger events this way:
+
+```jsx
+document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('on.xt'))
+```
+
+Listen to events this way:
+
+```jsx
+document.querySelector('#my-element-or-target').addEventListener('on.xt', function(e) {
+  // add this check on events with bubbles: true
+  if (this === e.target) {
+    // logic
+  }
+})
+```
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | DOM Element                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Event                   | `on.xt`       | `elements` `targets` | Activation event (`bubbles: true`)             |
+| Event                   | `off.xt`      | `elements` `targets` | Deactivation event (`bubbles: true`)            |
+| Event                   | `ondone.xt`           | `elements` `targets` | Activation event after delay and duration (`bubbles: true`)             |
+| Event                   | `offdone.xt`           | `elements` `targets` | Deactivation event after delay and duration (`bubbles: true`)             |
+| Event                   | `imageLoaded.xt`           | `elements` `targets` | Images loaded event (`bubbles: true`)            |
+| Event                   | `init.xt`           | `object` | Init event             |
+| Event                   | `start.xt.auto`           | `object` | Auto start event             |
+| Event                   | `stop.xt.auto`           | `object` | Auto stop event             |
+| Event                   | `pause.xt.auto`           | `object` | Auto pause event             |
+
+</div>
+
+Trigger methods this way:
+
+```jsx
+const self = Xt.get('xt-toggle', document.querySelector('#my-toggle'))
+self.destroy()
+```
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Method                  | `self.reinit(saveCurrents:Boolean)`       | Reinitialize component and save currents as initial (default: `true`)             |
+| Method                  | `self.restart(saveCurrents:Boolean)`      | Restart component and save currents as initial (default: `false`)             |
+| Method                  | `self.destroy(unmount:Boolean)`           | Destroy component and unmount (default: `true`)            |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/toggle/events-methods">
+  </demovanilla>
+</demo>

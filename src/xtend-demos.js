@@ -14,8 +14,8 @@ if (typeof window !== 'undefined') {
   require('xtend-library/src/demos/test/vanilla-iframe.js')
   require('xtend-library/src/demos/test/vanilla.js')
   require('xtend-library/src/demos/toggle/animation-js.js')
+  require('xtend-library/src/demos/toggle/events-methods.js')
   require('xtend-library/src/demos/toggle/multilevel.js')
   require('xtend-library/src/demos/toggle/progress.js')
-  require('xtend-library/src/demos/toggle/start.js')
   require('xtend-library/src/demos/toggle/timing-delay-fnc.js')
 }

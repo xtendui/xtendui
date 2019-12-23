@@ -6,9 +6,6 @@ title: "API"
 date: "2000-01-01"
 ---
 
-[[notePrimary]]
-| Drop uses toggle for logic, refer to [toggle's API](/components/toggle/api) for all **API**.
-
 ## Initialization
 
 Initialize automatically within markup with `[data-xt-drop="{ <options> }"]`.
@@ -16,12 +13,35 @@ Initialize automatically within markup with `[data-xt-drop="{ <options> }"]`.
 Or initialize with javascript:
 
 ```jsx
-new Xt.Drop(document.querySelector('.my-drop'), {
+new Xt.Drop(document.querySelector('#my-drop'), {
   // options
 });
 ```
 
-## Option
+## Usage
+
+Use this markup to create a **drop**.
+
+<script type="text/plain" class="language-markup">
+  <div class="drop-container" data-xt-drop>
+    <button type="button">
+      <!-- content -->
+    </button>
+    <div class="drop drop-default">
+      <div class="drop-inner">
+        <div class="drop-design"></div>
+        <div class="drop-content">
+          <!-- content -->
+        </div>
+      </div>
+    </div>
+  </div>
+</script>
+
+## Options
+
+[[notePrimary]]
+| Drop uses toggle for logic, refer to [toggle's options](/components/toggle/api#options).
 
 ### Class
 
@@ -55,6 +75,7 @@ You can specify **on** and **off** events for the drop. Fore example `on: 'mouse
   </demovanilla>
 </demo>
 
-## Events
+## Events and Methods
 
-@TODO tables events
+[[notePrimary]]
+| Drop uses toggle for logic, refer to [toggle's Events and Methods](/components/toggle/api#events-and-methods).

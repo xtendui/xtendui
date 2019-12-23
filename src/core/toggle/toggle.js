@@ -101,12 +101,13 @@ class Toggle {
 
   /**
    * init logic
+   * @param {Boolean} saveCurrents
    */
-  initLogic() {
+  initLogic(saveCurrents = true) {
     const self = this
     self.initScope()
     self.initAria()
-    self.initStart(true)
+    self.initStart(saveCurrents)
   }
 
   /**
@@ -2683,9 +2684,9 @@ class Toggle {
   /**
    * status handler
    */
-  reinit() {
+  reinit(saveCurrents = true) {
     const self = this
-    self.initLogic()
+    self.initLogic(saveCurrents)
   }
 
   /**
@@ -2718,7 +2719,7 @@ class Toggle {
   /**
    * destroy
    */
-  destroy(weak = false) {
+  destroy(unmount = true) {
     const self = this
     // stop queue
     self.queueStopAll() // @FIX autoClose with appendTo outside ajax
@@ -2749,8 +2750,8 @@ class Toggle {
         }
       }
     }
-    // not weak destroy
-    if (!weak) {
+    // unmount
+    if (unmount) {
       Xt.remove(self.componentName, self.object)
       if (self.unmount) {
         self.unmount()
@@ -2776,7 +2777,7 @@ Toggle.optionsDefaultSuper = {
   max: 1,
   instant: { elements: true, targets: false, elementsInner: true, targetsInner: false },
   // defaults
-  class: 'active',
+  class: 'active active-toggle',
   classIn: 'in',
   classOut: 'out',
   classInitial: 'initial',

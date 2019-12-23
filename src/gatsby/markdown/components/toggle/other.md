@@ -36,21 +36,3 @@ You can animate with javascript instead of css, just use [toggle events](/compon
   <demovanilla src="vanilla/components/toggle/animation-js">
   </demovanilla>
 </demo>
-
-## Keyboard
-
-Use `keyboard: { selector: 'object' }` or `keyboard: { selector : QuerySelector }` to enable keyboard navigation on focus.
-
-<demo>
-  <demovanilla src="vanilla/components/toggle/usability-keyboard">
-  </demovanilla>
-</demo>
-
-## Aria
-
-Use `aria: false` to disable aria generation, or granularly see @TODO.
-
-<demo>
-  <demovanilla src="vanilla/components/toggle/usability-aria">
-  </demovanilla>
-</demo>

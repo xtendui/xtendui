@@ -28,35 +28,3 @@ Or just import **core**:
 ```jsx
 import 'xtend-library/src/xtend-core.js'
 ```
-
-## Usage
-
-Use this markup to create an **overlay**.
-
-<script type="text/plain" class="language-markup">
-  <button type="button" data-xt-overlay="{ targets: '#overlay_custom' }">
-    <!-- content -->
-  </button>
-  <div class="overlay" id="overlay-custom">
-    <div class="overlay-container">
-      <div class="overlay-inner">
-        <!-- content -->
-      </div>
-    </div>
-  </div>
-</script>
-
-You can use this markup to create an **overlay** with **unique mode**.
-
-<script type="text/plain" class="language-markup">
-<div class="overlay active" id="overlay_custom" data-xt-overlay="{ on: false }">
-  <div class="overlay-container">
-    <div class="overlay-inner">
-      <!-- content -->
-    </div>
-  </div>
-</div>
-</script>
-
-[[notePrimary]]
-| Overlays are moved to **body** to prevent **z-index** problems. Style and query overlay's content accordingly.
