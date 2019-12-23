@@ -59,11 +59,12 @@
   // animation
   .gatsby_make-line_container {
     .gatsby_make-line_line:after {
-      left: 0;
+      left: 100%;
       width: 0;
       opacity: 0;
       transition-property: all;
       transition-duration: @time-medium;
+      transition-delay: initial;
       transition-timing-function: @bez-out;
     }
   }
@@ -75,7 +76,8 @@
         opacity: 1;
         transition-property: all;
         transition-duration: @time-medium;
-        transition-timing-function: @bez-out;
+        transition-delay: @time-small;
+        transition-timing-function: @bez-in;
       }
     }
   }
@@ -101,16 +103,18 @@
     opacity: 0;
     transition-property: all;
     transition-duration: @time-medium;
+    transition-delay: @time-small;
     transition-timing-function: @bez-out;
   }
   &:hover, &.hover, &:active, &.active {
     a {
-      color: @accent !important;
+      color: @gray-500 !important;
     }
     .gatsby_site_article_anchor {
       opacity: 1;
       transition-property: all;
       transition-duration: @time-medium;
+      transition-delay: initial;
       transition-timing-function: @bez-in;
     }
   }
