@@ -73,9 +73,14 @@ Xt.mount.push({
     // events
 
     const events = function(e) {
-      logAdd('toggle event: <strong>' + e.type + '</strong> > <strong>' + e.target.innerHTML + '</strong>')
+      let str = 'toggle event: <strong>' + e.type + '</strong>'
+      if (!e.target.querySelector('*')) {
+        str += ' > <strong>' + e.target.innerHTML + '</strong>'
+      }
+      logAdd(str)
     }
 
+    object.addEventListener('init.xt', events)
     object.addEventListener('on.xt', events)
     object.addEventListener('off.xt', events)
 

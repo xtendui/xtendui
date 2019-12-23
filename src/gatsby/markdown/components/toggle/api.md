@@ -53,7 +53,7 @@ self.destroy()
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
 | Method                  | `self.reinit(saveCurrents:Boolean)`       | Reinitialize component and save currents as initial (default: `true`)             |
-| Method                  | `self.restart(saveCurrents:Boolean)`      | Restart component and save currents as initial (default: `false`)             |
+| Method                  | `self.restart()`                          | Restart component to initial             |
 | Method                  | `self.destroy(unmount:Boolean)`           | Destroy component and unmount (default: `true`)            |
 
 </div>

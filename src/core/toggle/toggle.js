@@ -2695,11 +2695,10 @@ class Toggle {
 
   /**
    * status handler
-   * @param {Boolean} saveCurrents
    */
-  restart(saveCurrents = false) {
+  restart() {
     const self = this
-    self.initStart(saveCurrents)
+    self.initStart()
   }
 
   //
