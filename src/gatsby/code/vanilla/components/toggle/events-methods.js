@@ -11,7 +11,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-default list-space-small align-items-center">
   <button type="button" class="btn btn-primary" id="demo_toggle-events-first">
-    Activate first
+    First
   </button>
   <button type="button" class="btn btn-primary" id="demo_toggle-events-reinit">
     Reinit
