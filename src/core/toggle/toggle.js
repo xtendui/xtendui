@@ -2722,7 +2722,7 @@ class Toggle {
   /**
    * destroy
    */
-  destroy(unmount = true) {
+  destroy() {
     const self = this
     // stop queue
     self.queueStopAll() // @FIX autoClose with appendTo outside ajax
@@ -2730,6 +2730,9 @@ class Toggle {
     self.eventAutoStop()
     // [disabled]
     self.destroyDisabled()
+    // listener dispatch
+    const detail = self.eDetailSet()
+    self.object.dispatchEvent(new CustomEvent('destroy.xt', { detail: detail }))
     // remove events
     if (self.destroyElements) {
       for (const element of self.destroyElements) {
@@ -2754,14 +2757,9 @@ class Toggle {
         }
       }
     }
-    // unmount
-    if (unmount) {
-      Xt.remove(self.componentName, self.object)
-      if (self.unmount) {
-        self.unmount()
-      }
-      delete this
-    }
+    // remove
+    Xt.remove(self.componentName, self.object)
+    delete this
   }
 }
 

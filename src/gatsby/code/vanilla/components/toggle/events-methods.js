@@ -10,6 +10,9 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="list list-default list-space-small align-items-center">
+  <button type="button" class="btn btn-primary" id="demo_toggle-events-first">
+    Activate first
+  </button>
   <button type="button" class="btn btn-primary" id="demo_toggle-events-reinit">
     Reinit
   </button>
@@ -19,8 +22,8 @@ demo.htmlSource = `
   <button type="button" class="btn btn-primary" id="demo_toggle-events-destroy">
     Destroy
   </button>
-  <button type="button" class="btn btn-primary" id="demo_toggle-events-first">
-    Activate first
+  <button type="button" class="btn btn-primary" id="demo_toggle-events-unmount">
+    Unmount
   </button>
 </div>
 
