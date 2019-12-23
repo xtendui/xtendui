@@ -134,6 +134,8 @@ Xt.mount.push({
 
     const unmount = function unmount() {
       firstBtn.removeEventListener('click', firstFnc)
+      addBtn.removeEventListener('click', addFnc)
+      removeBtn.removeEventListener('click', removeFnc)
       reinitBtn.removeEventListener('click', reinitFnc)
       restartBtn.removeEventListener('click', restartFnc)
       destroyBtn.removeEventListener('click', destroyFnc)
