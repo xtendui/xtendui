@@ -10,10 +10,10 @@ date: "2000-01-01"
 
 Initialize automatically within markup with `[data-xt-slider="{ <options> }"]`.
 
-Or initialize with javascript:
+Or initialize with javascript (object is the DOM element you assigned the component):
 
 ```jsx
-new Xt.Slider(document.querySelector('#my-slider'), {
+new Xt.Slider(document.querySelector('#my-slider-object'), {
   // options
 });
 ```
@@ -321,9 +321,6 @@ Use `wheel: { selector: 'object' }` or `wheel: { selector: QuerySelector }` to e
 
 ## Events and Methods
 
-[[noteDefault]]
-| Slider uses toggle for logic, refer to [toggle's Events and Methods](/components/toggle/api#events-and-methods).
-
 Trigger events this way:
 
 ```jsx
@@ -360,10 +357,10 @@ document.querySelector('#my-element-or-target').addEventListener('on.xt', functi
 
 </div>
 
-Trigger methods this way:
+Trigger methods this way (object is the DOM element you assigned the component):
 
 ```jsx
-const self = Xt.get('xt-slider', document.querySelector('#my-slider'))
+const self = Xt.get('xt-slider', document.querySelector('#my-slider-object'))
 self.destroy()
 ```
 

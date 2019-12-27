@@ -10,10 +10,10 @@ date: "2000-01-01"
 
 Initialize automatically within markup with `[data-xt-toggle="{ <options> }"]`.
 
-Or initialize with javascript:
+Or initialize with javascript (object is the DOM element you assigned the component):
 
 ```jsx
-new Xt.Toggle(document.querySelector('#my-toggle'), {
+new Xt.Toggle(document.querySelector('#my-toggle-object'), {
   // options
 });
 ```
@@ -351,10 +351,10 @@ document.querySelector('#my-element-or-target').addEventListener('on.xt', functi
 
 </div>
 
-Trigger methods this way:
+Trigger methods this way (object is the DOM element you assigned the component):
 
 ```jsx
-const self = Xt.get('xt-toggle', document.querySelector('#my-toggle'))
+const self = Xt.get('xt-toggle', document.querySelector('#my-toggle-object'))
 self.destroy()
 ```
 

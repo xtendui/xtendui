@@ -241,6 +241,7 @@ const populateDemo = function(container, i) {
     })
     requestAnimationFrame(function() {
       if (btnOpenFull.classList.contains('active')) {
+        btnOpenFull.classList.remove('active')
         requestAnimationFrame(function() {
           makeFullscreen(container)
         })

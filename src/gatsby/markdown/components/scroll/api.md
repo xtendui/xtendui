@@ -6,21 +6,14 @@ title: "API"
 date: "2000-01-01"
 ---
 
-## Events and Methods
-
-[[noteDefault]]
-| Scroll uses toggle for logic, refer to [toggle's Events and Methods](/components/toggle/api#events-and-methods).
-
-
-
 ## Initialization
 
 Initialize automatically within markup with `[data-xt-scroll="{ <options> }"]`.
 
-Or initialize with javascript:
+Or initialize with javascript (object is the DOM element you assigned the component):
 
 ```jsx
-new Xt.Scroll(document.querySelector('#my-scroll'), {
+new Xt.Scroll(document.querySelector('#my-scroll-object'), {
   // options
 });
 ```
@@ -116,3 +109,41 @@ You can use a function for `delayOn` and `delayOff` for example `function(curren
 </div>
 
 @TODO demo
+
+## Events and Methods
+
+Listen to events this way:
+
+```jsx
+document.querySelector('#my-element').addEventListener('change.xt.scroll', function(e) {
+  // add this check on events with bubbles: true
+  if (this === e.target) {
+    // logic
+  }
+})
+```
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | DOM Element                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Event                   | `change.xt.scroll`       | `elements` | Computation event (`bubbles: true`)             |
+
+</div>
+
+Trigger methods this way (object is the DOM element you assigned the component):
+
+```jsx
+const self = Xt.get('xt-scroll', document.querySelector('#my-scroll-object'))
+self.destroy()
+```
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Method                  | `self.reinit(saveCurrents:Boolean)`       | Reinitialize component and save currents as initial (default: `true`)             |
+| Method                  | `self.restart()`                          | Restart component to initial             |
+| Method                  | `self.destroy()`              | Destroy component            |
+
+</div>

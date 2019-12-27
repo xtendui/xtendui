@@ -6,21 +6,14 @@ title: "API"
 date: "2000-01-01"
 ---
 
-## Events and Methods
-
-[[noteDefault]]
-| Sticky uses toggle for logic, refer to [toggle's Events and Methods](/components/toggle/api#events-and-methods).
-
-
-
 ## Initialization
 
 Initialize automatically within markup with `[data-xt-sticky="{ <options> }"]`.
 
-Or initialize with javascript:
+Or initialize with javascript (object is the DOM element you assigned the component):
 
 ```jsx
-new Xt.Sticky(document.querySelector('#my-sticky'), {
+new Xt.Sticky(document.querySelector('#my-sticky-object'), {
   // options
 });
 ```
@@ -134,3 +127,43 @@ To hide the sticky when scrolling down or up use `hide: 'down'` or `hide: 'up'`.
   <div class="gatsby_demo_item" data-iframe="iframe/components/sticky/hide">
   </div>
 </demo>
+
+## Events and Methods
+
+Listen to events this way:
+
+```jsx
+document.querySelector('#my-element').addEventListener('change.xt.scroll', function(e) {
+  // add this check on events with bubbles: true
+  if (this === e.target) {
+    // logic
+  }
+})
+```
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | DOM Element                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Event                   | `change.xt.scroll`       | `elements` | Computation event (`bubbles: true`)             |
+| Event                   | `show.xt.sticky`       | `elements` | Show event (`bubbles: true`)             |
+| Event                   | `hide.xt.sticky`       | `elements` | Hide event (`bubbles: true`)             |
+
+</div>
+
+Trigger methods this way (object is the DOM element you assigned the component):
+
+```jsx
+const self = Xt.get('xt-sticky', document.querySelector('#my-sticky-object'))
+self.destroy()
+```
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Method                  | `self.reinit(saveCurrents:Boolean)`       | Reinitialize component and save currents as initial (default: `true`)             |
+| Method                  | `self.restart()`                          | Restart component to initial             |
+| Method                  | `self.destroy()`              | Destroy component            |
+
+</div>

@@ -6,21 +6,14 @@ title: "API"
 date: "2000-01-01"
 ---
 
-## Events and Methods
-
-[[noteDefault]]
-| Drop uses toggle for logic, refer to [toggle's Events and Methods](/components/toggle/api#events-and-methods).
-
-
-
 ## Initialization
 
 Initialize automatically within markup with `[data-xt-drop="{ <options> }"]`.
 
-Or initialize with javascript:
+Or initialize with javascript (object is the DOM element you assigned the component):
 
 ```jsx
-new Xt.Drop(document.querySelector('#my-drop'), {
+new Xt.Drop(document.querySelector('#my-drop-object'), {
   // options
 });
 ```
@@ -81,3 +74,52 @@ You can specify **on** and **off** events for the drop. Fore example `on: 'mouse
   <demovanilla src="vanilla/components/drop/event">
   </demovanilla>
 </demo>
+
+## Events and Methods
+
+Trigger events this way:
+
+```jsx
+document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('on.xt'))
+```
+
+Listen to events this way:
+
+```jsx
+document.querySelector('#my-element-or-target').addEventListener('on.xt', function(e) {
+  // add this check on events with bubbles: true
+  if (this === e.target) {
+    // logic
+  }
+})
+```
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | DOM Element                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Event                   | `on.xt`       | `elements` `targets` | Activation event (`bubbles: true`)             |
+| Event                   | `off.xt`      | `elements` `targets` | Deactivation event (`bubbles: true`)            |
+| Event                   | `ondone.xt`           | `elements` `targets` | Activation event after delay and duration (`bubbles: true`)             |
+| Event                   | `offdone.xt`           | `elements` `targets` | Deactivation event after delay and duration (`bubbles: true`)             |
+| Event                   | `imageLoaded.xt`           | `elements` `targets` | Images loaded event (`bubbles: true`)            |
+| Event                   | `init.xt`           | `object` | Init event             |
+
+</div>
+
+Trigger methods this way (object is the DOM element you assigned the component):
+
+```jsx
+const self = Xt.get('xt-drop', document.querySelector('#my-drop-object'))
+self.destroy()
+```
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Method                  | `self.reinit(saveCurrents:Boolean)`       | Reinitialize component and save currents as initial (default: `true`)             |
+| Method                  | `self.restart()`                          | Restart component to initial             |
+| Method                  | `self.destroy()`              | Destroy component            |
+
+</div>
