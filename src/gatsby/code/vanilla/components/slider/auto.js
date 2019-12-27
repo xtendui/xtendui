@@ -100,24 +100,6 @@ demo.htmlSource = `
         </div>
       </li>
 
-      <li class="slide col-12">
-        <div class="slide-inner">
-
-          <div class="card card-slide align-center"
-            style="height: 15rem">
-            <div class="card-design"></div>
-            <div class="card-inner">
-              <div class="card-content">
-                <div class="card-block card-item">
-                  <div class="card-title">6</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </li>
-
     </ul>
   </div>
 

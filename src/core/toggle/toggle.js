@@ -412,6 +412,9 @@ class Toggle {
     const checkHandler = Xt.dataStorage.put(window, 'resize/check' + '/' + self.namespace, self.eventStatusHandler.bind(self).bind(self))
     addEventListener('resize', checkHandler)
     self.eventStatusHandler()
+    // restart
+    const restartHandler = Xt.dataStorage.put(self.object, 'restart' + '/' + self.namespace, self.eventRestartHandler.bind(self).bind(self))
+    self.object.addEventListener('restart.xt', restartHandler)
     // reinit
     const reinitHandler = Xt.dataStorage.put(self.object, 'reinit' + '/' + self.namespace, self.eventReinitHandler.bind(self).bind(self))
     self.object.addEventListener('reinit.xt', reinitHandler)
@@ -2664,22 +2667,23 @@ class Toggle {
   }
 
   /**
+   * restart
+   * @param {Event} e
+   */
+  eventRestartHandler(e) {
+    const self = this
+    // reinit
+    self.restart()
+  }
+
+  /**
    * reinit
    * @param {Event} e
    */
   eventReinitHandler(e) {
     const self = this
     // reinit
-    if (!self.initial) {
-      Xt.eventDelay(
-        e,
-        self.object,
-        function() {
-          self.reinit()
-        },
-        self.componentNamespace + 'Reinit'
-      )
-    }
+    self.reinit()
   }
 
   //

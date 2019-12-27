@@ -552,7 +552,7 @@ const populateInline = function(item) {
       targets: '.gatsby_demo_code_body_item',
       min: 1,
     })
-    // @FIX reinit
+    // @FIX reinit because changing tabs makes demo visible so need reinit
     item.addEventListener('ondone.xt', function(e) {
       // @FIX on.xt and off.xt event bubbles
       if (this === e.target) {

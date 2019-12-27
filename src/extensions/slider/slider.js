@@ -150,7 +150,6 @@ class Slider extends Xt.Toggle {
         }
         const cloneSlide = function(slide) {
           const cloned = slide.cloneNode(true)
-          Xt.dataStorage.set(cloned, 'xt' + self.componentNamespace + 'cloneSource', slide)
           cloned.classList.add('xt-clone', 'xt-wrap')
           cloned.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesInitial, ...self.classesInverse)
           return cloned
@@ -290,19 +289,9 @@ class Slider extends Xt.Toggle {
         let slideHeightTemp = 0
         // vars
         for (const target of targets) {
-          const cloneSource = Xt.dataStorage.get(target, 'xt' + self.componentNamespace + 'cloneSource')
           slideLeft = target.offsetLeft < slideLeft ? slide.offsetLeft : slideLeft
-          if (cloneSource) {
-            // @FIX xt-wrap clone offsetWidth on resize
-            const w = cloneSource.offsetWidth
-            slideWidth += w
-            target.children[0].style.width = w + 'px'
-            // @FIX xt-wrap clone offsetHeight on autoHeight
-            slideHeightTemp = cloneSource.children[0].offsetHeight
-          } else {
-            slideWidth += target.offsetWidth
-            slideHeightTemp = target.children[0].offsetHeight
-          }
+          slideWidth += target.offsetWidth
+          slideHeightTemp = target.children[0].offsetHeight
           slidesWidth += slideWidth
           slideHeight = slideHeightTemp > slideHeight ? slideHeightTemp : slideHeight
         }
@@ -593,7 +582,7 @@ class Slider extends Xt.Toggle {
         function() {
           self.reinit()
         },
-        self.componentNamespace + 'Reinit'
+        self.componentNamespace + 'Resize'
       )
     }
   }
