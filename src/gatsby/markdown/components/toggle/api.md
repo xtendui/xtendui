@@ -63,8 +63,6 @@ self.destroy()
   </demovanilla>
 </demo>
 
-
-
 ## Initialization
 
 Initialize automatically within markup with `[data-xt-toggle="{ <options> }"]`.

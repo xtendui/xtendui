@@ -376,18 +376,27 @@ class Slider extends Xt.Toggle {
     const self = this
     const options = self.options
     const dragger = self.dragger
+    // elements
+    for (const el of self.elements) {
+      // event on
+      const slideOnHandler = Xt.dataStorage.put(el, 'on' + '/' + self.namespace, self.eventSlideOnHandler.bind(self).bind(self, dragger, el))
+      el.addEventListener('on.xt', slideOnHandler, true) // @FIX useCapture for custom events order on re-init
+      // event off
+      const slideOffHandler = Xt.dataStorage.put(el, 'off' + '/' + self.namespace, self.eventSlideOffHandler.bind(self).bind(self, dragger, el))
+      el.addEventListener('off.xt', slideOffHandler, true) // @FIX useCapture for custom events order on re-init
+    }
     // targets
-    for (const slide of self.targets) {
+    for (const tr of self.targets) {
       // disable links not active slide
       if (options.jump) {
-        slide.classList.add('xt-links-none')
+        tr.classList.add('xt-links-none')
       }
-      // slide on
-      const slideOnHandler = Xt.dataStorage.put(slide, 'on' + '/' + self.namespace, self.eventSlideOnHandler.bind(self).bind(self, dragger, slide))
-      slide.addEventListener('on.xt', slideOnHandler, true) // @FIX useCapture for custom events order on re-init
-      // slide off
-      const slideOffHandler = Xt.dataStorage.put(slide, 'off' + '/' + self.namespace, self.eventSlideOffHandler.bind(self).bind(self, dragger, slide))
-      slide.addEventListener('off.xt', slideOffHandler, true) // @FIX useCapture for custom events order on re-init
+      // event on
+      const slideOnHandler = Xt.dataStorage.put(tr, 'on' + '/' + self.namespace, self.eventSlideOnHandler.bind(self).bind(self, dragger, tr))
+      tr.addEventListener('on.xt', slideOnHandler, true) // @FIX useCapture for custom events order on re-init
+      // event off
+      const slideOffHandler = Xt.dataStorage.put(tr, 'off' + '/' + self.namespace, self.eventSlideOffHandler.bind(self).bind(self, dragger, tr))
+      tr.addEventListener('off.xt', slideOffHandler, true) // @FIX useCapture for custom events order on re-init
     }
     // dragger
     if (options.drag) {
@@ -433,14 +442,15 @@ class Slider extends Xt.Toggle {
   /**
    * slide on handler
    * @param {Node|HTMLElement|EventTarget|Window} dragger
-   * @param {Node|HTMLElement|EventTarget|Window} slide
+   * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
-  eventSlideOnHandler(dragger, slide, e) {
+  eventSlideOnHandler(dragger, el, e) {
     const self = this
     // handler
     // @FIX on.xt and off.xt event bubbles
-    if (slide === e.target) {
+    if (el === e.target) {
+      // event
       self.eventSlideOn(dragger, e)
     }
   }
@@ -600,7 +610,8 @@ class Slider extends Xt.Toggle {
   eventSlideOn(dragger, e) {
     const self = this
     const options = self.options
-    const slide = e.target
+    // @FIX targets handler
+    const slide = self.getTargets(e.target)[0]
     // only one call per group
     if (Xt.dataStorage.get(slide, self.componentNamespace + 'SlideOnDone')) {
       return
@@ -1030,10 +1041,17 @@ class Slider extends Xt.Toggle {
    */
   destroy(weak = false) {
     const self = this
+    const dragger = self.dragger
     // clean pagination
     self.destroyPags()
     // clean wraps
     self.destroyWraps()
+    // links
+    dragger.classList.remove('xt-links-none')
+    // links
+    dragger.classList.add('xt-jumps-none')
+    // grab
+    dragger.classList.remove('xt-grab')
     // super
     super.destroy()
   }

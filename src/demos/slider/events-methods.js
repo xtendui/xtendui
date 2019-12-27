@@ -1,18 +1,18 @@
 import { Xt } from 'xtend-library'
 
 Xt.mount.push({
-  matches: '#demo_toggle-events',
+  matches: '#demo_slider-events',
   mount: function(object) {
     // init
 
-    let self = new Xt.Toggle(object, {
-      min: 1,
+    let self = new Xt.Slider(object, {
+      align: 'center',
     })
 
     // log
 
     let logTimeout
-    const log = document.querySelector('#demo_toggle-events-log')
+    const log = document.querySelector('#demo_slider-events-log')
 
     const logAdd = function(text) {
       log.innerHTML += text + '<br/>'
@@ -27,7 +27,7 @@ Xt.mount.push({
 
     // first element
 
-    const firstEl = document.querySelector('#demo_toggle-events-first-element')
+    const firstEl = document.querySelector('#demo_slider-events-first-element')
 
     const firstElFnc = function() {
       logAdd('<strong>1st element</strong>')
@@ -38,28 +38,40 @@ Xt.mount.push({
 
     // first target
 
-    const firstTr = document.querySelector('#demo_toggle-events-first-target')
+    const firstTr = document.querySelector('#demo_slider-events-first-target')
 
     const firstTrFnc = function() {
       logAdd('<strong>1st target</strong>')
-      object.querySelector('.toggle-block').dispatchEvent(new CustomEvent('on.xt'))
+      object.querySelector('.slide').dispatchEvent(new CustomEvent('on.xt'))
     }
 
     firstTr.addEventListener('click', firstTrFnc)
 
     // add
 
-    const addBtn = document.querySelector('#demo_toggle-events-add')
+    const addBtn = document.querySelector('#demo_slider-events-add')
 
     const addFnc = function() {
       logAdd('<strong>add</strong>')
-      // element
-      const elIndex = self.elements.length
-      const el = `<button type="button" class="btn btn-default">Toggle ${elIndex}</button>`
-      self.elements[self.elements.length - 1].after(Xt.createElement(el))
       // target
-      const trIndex = self.targets.length
-      const tr = `<div class="note note-default note-background toggle-block">Target ${trIndex}</div>`
+      const trIndex = self.targets.length + 1
+      const tr = `
+      <li class="slide col-12">
+        <div class="slide-inner">
+
+          <div class="card card-slide align-center">
+            <div class="card-design"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-block card-item">
+                  <div class="card-title">${trIndex}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </li>`
       self.targets[self.targets.length - 1].after(Xt.createElement(tr))
       // reinit
       reinitFnc()
@@ -69,7 +81,7 @@ Xt.mount.push({
 
     // remove
 
-    const removeBtn = document.querySelector('#demo_toggle-events-remove')
+    const removeBtn = document.querySelector('#demo_slider-events-remove')
 
     const removeFnc = function() {
       logAdd('<strong>remove</strong>')
@@ -85,7 +97,7 @@ Xt.mount.push({
 
     // reinit
 
-    const reinitBtn = document.querySelector('#demo_toggle-events-reinit')
+    const reinitBtn = document.querySelector('#demo_slider-events-reinit')
 
     const reinitFnc = function() {
       logAdd('<strong>reinit</strong>')
@@ -96,7 +108,7 @@ Xt.mount.push({
 
     // restart
 
-    const restartBtn = document.querySelector('#demo_toggle-events-restart')
+    const restartBtn = document.querySelector('#demo_slider-events-restart')
 
     const restartFnc = function() {
       logAdd('<strong>restart</strong>')
@@ -107,7 +119,7 @@ Xt.mount.push({
 
     // destroy
 
-    const destroyBtn = document.querySelector('#demo_toggle-events-destroy')
+    const destroyBtn = document.querySelector('#demo_slider-events-destroy')
 
     const destroyFnc = function() {
       logAdd('<strong>destroy</strong>')
@@ -118,7 +130,7 @@ Xt.mount.push({
 
     // unmount
 
-    const unmountBtn = document.querySelector('#demo_toggle-events-unmount')
+    const unmountBtn = document.querySelector('#demo_slider-events-unmount')
 
     const unmountFnc = function() {
       logAdd('<strong>unmount</strong>')

@@ -10,8 +10,11 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="list list-default list-space-tiny align-items-center">
-  <button type="button" class="btn btn-primary btn-tiny" id="demo_toggle-events-first">
-    Activate 1st
+  <button type="button" class="btn btn-primary btn-tiny" id="demo_toggle-events-first-element">
+    1st element
+  </button>
+  <button type="button" class="btn btn-primary btn-tiny" id="demo_toggle-events-first-target">
+    1st target
   </button>
   <button type="button" class="btn btn-primary btn-tiny" id="demo_toggle-events-add">
     Add

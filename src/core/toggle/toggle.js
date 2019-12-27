@@ -415,7 +415,7 @@ class Toggle {
     // reinit
     const reinitHandler = Xt.dataStorage.put(self.object, 'reinit' + '/' + self.namespace, self.eventReinitHandler.bind(self).bind(self))
     self.object.addEventListener('reinit.xt', reinitHandler)
-    // event
+    // targets
     for (const el of self.elements) {
       // event on
       const onHandler = Xt.dataStorage.put(el, options.on + '/' + self.namespace, self.eventOnHandler.bind(self).bind(self, el))
@@ -456,20 +456,17 @@ class Toggle {
         el.addEventListener('off.xt', offHandlerCustom)
       }
     }
-    // listener
+    // targets
     for (const tr of self.targets) {
-      const el = self.getElements(tr)[0]
-      if (el) {
-        // event
-        const onHandler = Xt.dataStorage.put(tr, options.on + '/' + self.namespace, self.eventOnHandler.bind(self).bind(self, el))
-        tr.addEventListener('on.xt', onHandler)
-        if (options.off) {
-          const offHandlerCustom = Xt.dataStorage.put(tr, 'off.xt' + '/' + self.namespace, self.eventOffHandler.bind(self).bind(self, el))
-          tr.addEventListener('off.xt', offHandlerCustom)
-        } else {
-          const offHandlerCustom = Xt.dataStorage.put(tr, 'off.xt' + '/' + self.namespace, self.eventOnHandler.bind(self).bind(self, el))
-          tr.addEventListener('off.xt', offHandlerCustom)
-        }
+      // event
+      const onHandler = Xt.dataStorage.put(tr, options.on + '/' + self.namespace, self.eventOnHandler.bind(self).bind(self, tr))
+      tr.addEventListener('on.xt', onHandler)
+      if (options.off) {
+        const offHandlerCustom = Xt.dataStorage.put(tr, 'off.xt' + '/' + self.namespace, self.eventOffHandler.bind(self).bind(self, tr))
+        tr.addEventListener('off.xt', offHandlerCustom)
+      } else {
+        const offHandlerCustom = Xt.dataStorage.put(tr, 'off.xt' + '/' + self.namespace, self.eventOnHandler.bind(self).bind(self, tr))
+        tr.addEventListener('off.xt', offHandlerCustom)
       }
     }
     // auto
@@ -628,11 +625,13 @@ class Toggle {
     ) {
       // @FIX filter triggered from library (use only in library)
       if (!e || !e.detail || !e.detail.skip) {
+        // @FIX targets handler
+        const el = self.getElements(element)[0]
         // event block
         if (options.onBlock) {
           const now = new Date().getTime()
-          const old = Xt.dataStorage.get(element, self.componentNamespace + 'EventBlock' + e.type) || 0
-          Xt.dataStorage.set(element, self.componentNamespace + 'EventBlock' + e.type, now)
+          const old = Xt.dataStorage.get(el, self.componentNamespace + 'EventBlock' + e.type) || 0
+          Xt.dataStorage.set(el, self.componentNamespace + 'EventBlock' + e.type, now)
           if (now - old < options.onBlock) {
             return
           }
@@ -642,13 +641,13 @@ class Toggle {
           const eventLimit = self.container.querySelectorAll(options.eventLimit)
           if (eventLimit.length) {
             if (!Xt.contains(eventLimit, e.target) || e.target.closest('.event-force')) {
-              self.eventOn(element, false, e)
+              self.eventOn(el, false, e)
             }
           } else {
-            self.eventOn(element, false, e)
+            self.eventOn(el, false, e)
           }
         } else {
-          self.eventOn(element, false, e)
+          self.eventOn(el, false, e)
         }
       }
     }
@@ -667,13 +666,15 @@ class Toggle {
       element === e.target || // @FIX on.xt and off.xt event bubbles
       element.contains(e.target) // @FIX on.xt and off.xt event bubbles (use only in library)
     ) {
+      // @FIX targets handler
+      const el = self.getElements(element)[0]
       // @FIX filter triggered from library (use only in library)
       if (!e || !e.detail || !e.detail.skip) {
         // event block
         if (options.offBlock) {
           const now = new Date().getTime()
-          const old = Xt.dataStorage.get(element, self.componentNamespace + 'EventBlock' + e.type) || 0
-          Xt.dataStorage.set(element, self.componentNamespace + 'EventBlock' + e.type, now)
+          const old = Xt.dataStorage.get(el, self.componentNamespace + 'EventBlock' + e.type) || 0
+          Xt.dataStorage.set(el, self.componentNamespace + 'EventBlock' + e.type, now)
           if (now - old < options.offBlock) {
             return
           }
@@ -683,13 +684,13 @@ class Toggle {
           const eventLimit = self.container.querySelectorAll(options.eventLimit)
           if (eventLimit.length) {
             if (!Xt.contains(eventLimit, e.target) || e.target.closest('.event-force')) {
-              self.eventOff(element, false, e)
+              self.eventOff(el, false, e)
             }
           } else {
-            self.eventOff(element, false, e)
+            self.eventOff(el, false, e)
           }
         } else {
-          self.eventOff(element, false, e)
+          self.eventOff(el, false, e)
         }
       }
     }
