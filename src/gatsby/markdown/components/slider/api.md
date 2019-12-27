@@ -253,15 +253,6 @@ You can wrap the slides with `drag: { wrap: true }`.
 [[notePrimary]]
 | With `drag: { wrap: true }` you have to set `loop: true` and you can't use `contain: true`
 
-<demo>
-  <demovanilla src="vanilla/components/slider/wrap">
-  </demovanilla>
-</demo>
-
-You can set `drag: { wrap: Number }` where `Number` is how many times to cover the **drag.dragger** with wrap (setting `1` is the same as `true`).
-
-It's useful sometimes if the wrap isn't long enough when dragging.
-
 <div class="table-scroll">
 
 |                         | Syntax                                    | Default                       | Description                   |
@@ -271,16 +262,20 @@ It's useful sometimes if the wrap isn't long enough when dragging.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/slider/wrap-number">
+  <demovanilla src="vanilla/components/slider/wrap">
   </demovanilla>
-</demo>
-
-With `drag: { wrap: true, overflow: false }` you don't have the drag overflow on wrap.
-
-<demo>
   <demovanilla src="vanilla/components/slider/wrap-left">
   </demovanilla>
   <demovanilla src="vanilla/components/slider/wrap-right">
+  </demovanilla>
+</demo>
+
+Use `drag: { overflow: false }` to not have the drag overflow on wrap.
+
+You can set `drag: { wrap: Number }` where `Number` is how many times to cover the **drag.dragger** with wrap (setting `1` is the same as `true`).
+
+<demo>
+  <demovanilla src="vanilla/components/slider/wrap-overflow">
   </demovanilla>
 </demo>
 

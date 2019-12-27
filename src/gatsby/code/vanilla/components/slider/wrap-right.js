@@ -10,7 +10,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="slider"
-     data-xt-slider="{ align: 'right', drag: { wrap: true, overflow: false } }">
+     data-xt-slider="{ align: 'right', drag: { wrap: true } }">
 
   <div class="slides">
     <ul class="slides-inner">

@@ -1052,6 +1052,14 @@ class Slider extends Xt.Toggle {
     dragger.classList.add('xt-jumps-none')
     // grab
     dragger.classList.remove('xt-grab')
+    // height
+    self.autoHeight.style.height = ''
+    // drag
+    dragger.classList.add('transition-none')
+    dragger.style.transform = ''
+    requestAnimationFrame(function() {
+      dragger.classList.remove('transition-none')
+    })
     // super
     super.destroy()
   }

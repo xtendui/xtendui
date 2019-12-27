@@ -7,6 +7,7 @@ Xt.mount.push({
 
     let self = new Xt.Slider(object, {
       align: 'center',
+      drag: { wrap: true },
     })
 
     // log
@@ -31,7 +32,8 @@ Xt.mount.push({
 
     const firstElFnc = function() {
       logAdd('<strong>1st element</strong>')
-      object.querySelector('button').dispatchEvent(new CustomEvent('on.xt'))
+      const elements = self.elements.filter(x => !x.classList.contains('xt-wrap'))
+      elements[0].dispatchEvent(new CustomEvent('on.xt'))
     }
 
     firstEl.addEventListener('click', firstElFnc)
@@ -42,7 +44,8 @@ Xt.mount.push({
 
     const firstTrFnc = function() {
       logAdd('<strong>1st target</strong>')
-      object.querySelector('.slide').dispatchEvent(new CustomEvent('on.xt'))
+      const targets = self.targets.filter(x => !x.classList.contains('xt-wrap'))
+      targets[0].dispatchEvent(new CustomEvent('on.xt'))
     }
 
     firstTr.addEventListener('click', firstTrFnc)
@@ -52,29 +55,34 @@ Xt.mount.push({
     const addBtn = document.querySelector('#demo_slider-events-add')
 
     const addFnc = function() {
-      logAdd('<strong>add</strong>')
-      // target
-      const trIndex = self.targets.length + 1
-      const tr = `
-      <li class="slide col-12">
-        <div class="slide-inner">
-
-          <div class="card card-slide align-center">
-            <div class="card-design"></div>
-            <div class="card-inner">
-              <div class="card-content">
-                <div class="card-block card-item">
-                  <div class="card-title">${trIndex}</div>
+      clearTimeout(parseFloat(object.dataset.reinitTimeout))
+      object.dataset.reinitTimeout = setTimeout(function() {
+        logAdd('<strong>add</strong>')
+        // targets
+        const targets = self.targets.filter(x => !x.classList.contains('xt-wrap'))
+        const trIndex = targets.length + 1
+        const tr = `
+        <li class="slide col-12">
+          <div class="slide-inner">
+  
+            <div class="card card-slide align-center">
+              <div class="card-design"></div>
+              <div class="card-inner">
+                <div class="card-content">
+                  <div class="card-block card-item">
+                    <div class="card-title">${trIndex}</div>
+                  </div>
                 </div>
               </div>
             </div>
+  
           </div>
-
-        </div>
-      </li>`
-      self.targets[self.targets.length - 1].after(Xt.createElement(tr))
-      // reinit
-      reinitFnc()
+        </li>`
+        targets[targets.length - 1].after(Xt.createElement(tr))
+        // reinit
+        logAdd('<strong>reinit</strong>')
+        self.reinit()
+      }, 1000).toString()
     }
 
     addBtn.addEventListener('click', addFnc)
@@ -84,13 +92,21 @@ Xt.mount.push({
     const removeBtn = document.querySelector('#demo_slider-events-remove')
 
     const removeFnc = function() {
-      logAdd('<strong>remove</strong>')
-      // element
-      self.elements[self.elements.length - 1].remove()
-      // element
-      self.targets[self.targets.length - 1].remove()
-      // reinit
-      reinitFnc()
+      clearTimeout(parseFloat(object.dataset.reinitTimeout))
+      object.dataset.reinitTimeout = setTimeout(function() {
+        logAdd('<strong>remove</strong>')
+        if (self.elements.length > 1 && self.targets.length > 1) {
+          // elements
+          const elements = self.elements.filter(x => !x.classList.contains('xt-wrap'))
+          elements[elements.length - 1].remove()
+          // targets
+          const targets = self.targets.filter(x => !x.classList.contains('xt-wrap'))
+          targets[targets.length - 1].remove()
+          // reinit
+          logAdd('<strong>reinit</strong>')
+          self.reinit()
+        }
+      }, 1000).toString()
     }
 
     removeBtn.addEventListener('click', removeFnc)
@@ -100,8 +116,11 @@ Xt.mount.push({
     const reinitBtn = document.querySelector('#demo_slider-events-reinit')
 
     const reinitFnc = function() {
-      logAdd('<strong>reinit</strong>')
-      self.reinit()
+      clearTimeout(parseFloat(object.dataset.reinitTimeout))
+      object.dataset.reinitTimeout = setTimeout(function() {
+        logAdd('<strong>reinit</strong>')
+        self.reinit()
+      }, 1000).toString()
     }
 
     reinitBtn.addEventListener('click', reinitFnc)

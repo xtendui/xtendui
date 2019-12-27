@@ -346,7 +346,7 @@ class Toggle {
           if (options.aria === true || options.aria.labelledby) {
             const els = self.getElements(tr)
             let str = ' '
-            str += tr.getAttribute('aria-labelledby') || ''
+            str += ''
             for (const el of els) {
               const ariaEls = Xt.queryAll(el, options.ariaControls)
               const ariaEl = ariaEls.length ? ariaEls[0] : el
@@ -363,7 +363,7 @@ class Toggle {
             const ariaEl = ariaEls.length ? ariaEls[0] : el
             // controls
             let str = ' '
-            str += ariaEl.getAttribute('aria-controls') || ''
+            str += ''
             for (const tr of trs) {
               str += ' ' + tr.getAttribute('id')
             }

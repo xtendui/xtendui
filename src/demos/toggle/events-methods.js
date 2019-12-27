@@ -31,7 +31,8 @@ Xt.mount.push({
 
     const firstElFnc = function() {
       logAdd('<strong>1st element</strong>')
-      object.querySelector('button').dispatchEvent(new CustomEvent('on.xt'))
+      const elements = self.elements
+      elements[0].dispatchEvent(new CustomEvent('on.xt'))
     }
 
     firstEl.addEventListener('click', firstElFnc)
@@ -42,7 +43,8 @@ Xt.mount.push({
 
     const firstTrFnc = function() {
       logAdd('<strong>1st target</strong>')
-      object.querySelector('.toggle-block').dispatchEvent(new CustomEvent('on.xt'))
+      const targets = self.targets
+      targets[0].dispatchEvent(new CustomEvent('on.xt'))
     }
 
     firstTr.addEventListener('click', firstTrFnc)
@@ -52,17 +54,23 @@ Xt.mount.push({
     const addBtn = document.querySelector('#demo_toggle-events-add')
 
     const addFnc = function() {
-      logAdd('<strong>add</strong>')
-      // element
-      const elIndex = self.elements.length
-      const el = `<button type="button" class="btn btn-default">Toggle ${elIndex}</button>`
-      self.elements[self.elements.length - 1].after(Xt.createElement(el))
-      // target
-      const trIndex = self.targets.length
-      const tr = `<div class="note note-default note-background toggle-block">Target ${trIndex}</div>`
-      self.targets[self.targets.length - 1].after(Xt.createElement(tr))
-      // reinit
-      reinitFnc()
+      clearTimeout(parseFloat(object.dataset.reinitTimeout))
+      object.dataset.reinitTimeout = setTimeout(function() {
+        logAdd('<strong>add</strong>')
+        // elements
+        const elements = self.elements
+        const elIndex = elements.length
+        const el = `<button type="button" class="btn btn-default">Toggle ${elIndex}</button>`
+        elements[elements.length - 1].after(Xt.createElement(el))
+        // targets
+        const targets = self.targets
+        const trIndex = targets.length
+        const tr = `<div class="note note-default note-background toggle-block">Target ${trIndex}</div>`
+        targets[targets.length - 1].after(Xt.createElement(tr))
+        // reinit
+        logAdd('<strong>reinit</strong>')
+        self.reinit()
+      }, 1000).toString()
     }
 
     addBtn.addEventListener('click', addFnc)
@@ -72,13 +80,21 @@ Xt.mount.push({
     const removeBtn = document.querySelector('#demo_toggle-events-remove')
 
     const removeFnc = function() {
-      logAdd('<strong>remove</strong>')
-      // element
-      self.elements[self.elements.length - 1].remove()
-      // element
-      self.targets[self.targets.length - 1].remove()
-      // reinit
-      reinitFnc()
+      clearTimeout(parseFloat(object.dataset.reinitTimeout))
+      object.dataset.reinitTimeout = setTimeout(function() {
+        if (self.elements.length > 1 && self.targets.length > 1) {
+          logAdd('<strong>remove</strong>')
+          // element
+          const elements = self.elements
+          elements[elements.length - 1].remove()
+          // element
+          const targets = self.targets
+          targets[targets.length - 1].remove()
+          // reinit
+          logAdd('<strong>reinit</strong>')
+          self.reinit()
+        }
+      }, 1000).toString()
     }
 
     removeBtn.addEventListener('click', removeFnc)
@@ -88,8 +104,11 @@ Xt.mount.push({
     const reinitBtn = document.querySelector('#demo_toggle-events-reinit')
 
     const reinitFnc = function() {
-      logAdd('<strong>reinit</strong>')
-      self.reinit()
+      clearTimeout(parseFloat(object.dataset.reinitTimeout))
+      object.dataset.reinitTimeout = setTimeout(function() {
+        logAdd('<strong>reinit</strong>')
+        self.reinit()
+      }, 1000).toString()
     }
 
     reinitBtn.addEventListener('click', reinitFnc)
