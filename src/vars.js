@@ -64,6 +64,7 @@ const vars = {
   easePenguinOut: 'easePenguinOut',
   easePenguinInOut: 'easePenguinInOut',
   easeLinear: 'linear',
+  easeSineInOut: 'Sine.easeInOut',
 }
 
 //

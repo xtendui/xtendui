@@ -44,7 +44,7 @@ demo.htmlSource = `
             </div>
           </div>
           <div class="card-asset">
-            ${img({ classes: 'media-cover' })}
+            ${img({ classes: 'media-cover', ratio: '37.5%' })}
           </div>
         </div>
       </div>

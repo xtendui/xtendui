@@ -65,7 +65,7 @@ demo.htmlSource = `
 
               </div>
               <div class="card-asset">
-                ${img({ classes: 'media-cover' })}
+                ${img({ classes: 'media-cover', ratio: '37.5%' })}
               </div>
             </div>
           </button>
@@ -155,7 +155,7 @@ demo.htmlSource = `
                 </div>
 
                 <div class="card-asset">
-                  ${img({ classes: 'media-cover' })}
+                  ${img({ classes: 'media-cover', ratio: '37.5%' })}
                 </div>
 
               </div>
@@ -181,7 +181,7 @@ demo.htmlSource = `
               <div class="btn btn-close" aria-label="Close"></div>
               <div class="card-content">
                 <div class="card-asset">
-                  ${img({ classes: 'media-cover' })}
+                  ${img({ classes: 'media-cover', ratio: '37.5%' })}
                 </div>
                 <div class="card-block card-item card-overflow-y">
                   <div class="card-title">Lorem ipsum</div>
