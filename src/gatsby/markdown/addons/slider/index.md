@@ -1,6 +1,6 @@
 ---
-type: "Themes"
-badge: "Themes"
+type: "Addons"
+badge: "Addons"
 parent: "Slider"
 title: "Slider"
 description: "Customizable sliders with custom animation and interaction."

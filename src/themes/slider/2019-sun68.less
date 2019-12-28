@@ -1,4 +1,6 @@
 
+@import '~xtend-library/src/addons/slider/navigation-sides.less';
+
 .demo_2019-sun68 {
   background: @black;
   .slides-inner {
@@ -48,59 +50,10 @@
       text-align: left;
     }
   }
-}
-
-.slider-navigation-side {
-  position: absolute;
-  top: 0;
-  width: 5rem;
-  height: 100%;
-  color: @white;
-  // animation
-  transition-property: opacity, color;
-  transition-duration: @time-small;
-  transition-timing-function: @bez-in-out;
-  .slider.xt-disabled & {
-    display: none;
-  }
-  &:active {
-    color: @black;
-  }
-  @media @min-md {
-    width: 10rem;
-    cursor: none;
-    opacity: 0;
-    &.active {
-      opacity: 1;
+  .slider-navigation-sides {
+    color: @white;
+    &:active {
+      color: @black;
     }
-    &.out {
-      opacity: 0;
-    }
-  }
-}
-
-.slider-navigation-side-prev {
-  left: 0;
-}
-
-.slider-navigation-side-next {
-  right: 0;
-}
-
-.slider-navigation-side-btn {
-  padding: 0;
-  line-height: 0;
-  @media @max-md {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -1rem;
-    margin-left: -1rem;
-    font-size: 2rem;
-    .transform-none() !important;
-  }
-  @media @min-md {
-    font-size: 4rem;
-    .mouse-follow() !important;
   }
 }

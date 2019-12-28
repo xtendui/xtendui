@@ -75,11 +75,10 @@ const populateBlock = function() {
       makeFullscreen(el.nextSibling)
     })
   }
-  document.querySelector('#toggle_open-full-trigger').addEventListener('off.xt', function(e) {
+  document.querySelector('#toggle_open-full').addEventListener('offdone.xt', function(e) {
     // @FIX on.xt and off.xt event bubbles
     if (this === e.target) {
       const content = document.querySelector('#toggle_open-full-content')
-      const inner = document.querySelector('#toggle_open-full-inner')
       // toggles
       const listingToggles = document.querySelectorAll('[data-gatsby-listing-toggle]')
       for (const el of listingToggles) {
@@ -392,9 +391,13 @@ const makeFullscreen = function(container) {
   }
   const full = container.closest('#toggle_open-full')
   if (full) {
-    container.querySelector('.gatsby_demo_item.active').dispatchEvent(new CustomEvent('on.xt', { detail: { skip: true } }))
+    const item = container.querySelector('.gatsby_demo_item.active')
+    // @FIX slider errors on fullscreen when instant item opening
+    delete item.dataset.fixinitial
+    // dispatch
+    item.dispatchEvent(new CustomEvent('on.xt', { detail: { skip: true } }))
     Xt.animTimeout(full, function() {
-      container.querySelector('.gatsby_demo_item.active').dispatchEvent(new CustomEvent('ondone.xt', { detail: { skip: true } }))
+      item.dispatchEvent(new CustomEvent('ondone.xt', { detail: { skip: true } }))
     })
   }
   // set hash
@@ -553,9 +556,13 @@ const populateInline = function(item) {
     item.addEventListener('ondone.xt', function(e) {
       // @FIX on.xt and off.xt event bubbles
       if (this === e.target) {
-        for (const component of item.querySelectorAll('[data-xt-name]')) {
-          component.dispatchEvent(new CustomEvent('reinit.xt'))
+        // @FIX slider errors on fullscreen when instant item opening
+        if (item.dataset.fixinitial) {
+          for (const component of item.querySelectorAll('[data-xt-name]')) {
+            component.dispatchEvent(new CustomEvent('reinit.xt'))
+          }
         }
+        item.dataset.fixinitial = 'true'
       }
     })
   }

@@ -79,14 +79,14 @@ demo.htmlSource = `
     </button>
   </nav>
 
-  <div class="slider-navigation-side slider-navigation-side-prev" data-xt-nav="-1" aria-label="previous slide">
-    <div class="slider-navigation-side-btn">
+  <div class="slider-navigation-sides slider-navigation-sides-prev" data-xt-nav="-1" aria-label="previous slide">
+    <div class="slider-navigation-sides-btn">
       <span><span class="icon-xt-chevron-left"></span></span>
     </div>
   </div>
 
-  <div class="slider-navigation-side slider-navigation-side-next" data-xt-nav="1" aria-label="next slide">
-    <div class="slider-navigation-side-btn">
+  <div class="slider-navigation-sides slider-navigation-sides-next" data-xt-nav="1" aria-label="next slide">
+    <div class="slider-navigation-sides-btn">
       <span><span class="icon-xt-chevron-right"></span></span>
     </div>
   </div>
