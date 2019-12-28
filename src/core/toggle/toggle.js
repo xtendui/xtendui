@@ -1908,8 +1908,10 @@ class Toggle {
       if (options.auto && options.auto.time) {
         self.eventAutoStart()
       }
-      // initial
-      self.initial = false
+      // initial after raf set initial false after on.xt custom listeners
+      requestAnimationFrame(function() {
+        self.initial = false
+      })
     } else if (actionCurrent === 'Off') {
       // special
       self.specialBackdrop(actionCurrent, obj)

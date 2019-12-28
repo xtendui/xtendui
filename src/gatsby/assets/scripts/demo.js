@@ -389,15 +389,18 @@ const makeFullscreen = function(container) {
       initializeIframe(container, item)
     }
   }
+  // trigger custom reinit
   const full = container.closest('#toggle_open-full')
   if (full) {
     const item = container.querySelector('.gatsby_demo_item.active')
-    // @FIX slider errors on fullscreen when instant item opening
-    delete item.dataset.fixinitial
-    // dispatch
-    item.dispatchEvent(new CustomEvent('on.xt', { detail: { skip: true } }))
+    item.dispatchEvent(new CustomEvent('on.xt'))
     Xt.animTimeout(full, function() {
-      item.dispatchEvent(new CustomEvent('ondone.xt', { detail: { skip: true } }))
+      // @FIX two raf or slider gives error with reinit.xt
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() {
+          item.dispatchEvent(new CustomEvent('ondone.xt'))
+        })
+      })
     })
   }
   // set hash
@@ -547,7 +550,7 @@ const populateInline = function(item) {
         el.style.display = 'none'
       }
     }
-    new Xt.Toggle(item, {
+    const self = new Xt.Toggle(item, {
       elements: '.gatsby_demo_code_tabs_left .btn',
       targets: '.gatsby_demo_code_body_item',
       min: 1,
@@ -556,13 +559,11 @@ const populateInline = function(item) {
     item.addEventListener('ondone.xt', function(e) {
       // @FIX on.xt and off.xt event bubbles
       if (this === e.target) {
-        // @FIX slider errors on fullscreen when instant item opening
-        if (item.dataset.fixinitial) {
+        if (!self.initial) {
           for (const component of item.querySelectorAll('[data-xt-name]')) {
             component.dispatchEvent(new CustomEvent('reinit.xt'))
           }
         }
-        item.dataset.fixinitial = 'true'
       }
     })
   }
