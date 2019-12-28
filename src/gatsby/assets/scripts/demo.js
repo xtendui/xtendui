@@ -397,10 +397,6 @@ const makeFullscreen = function(container) {
       container.querySelector('.gatsby_demo_item.active').dispatchEvent(new CustomEvent('ondone.xt', { detail: { skip: true } }))
     })
   }
-  // trigger resize
-  requestAnimationFrame(function() {
-    dispatchEvent(new CustomEvent('resize', { detail: { force: true } }))
-  })
   // set hash
   location.hash = container.getAttribute('id')
 }

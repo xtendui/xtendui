@@ -614,15 +614,17 @@ class Slider extends Xt.Toggle {
       let slideHeight = slide.children[0].offsetHeight
       const groupHeight = Xt.dataStorage.get(slide, self.componentNamespace + 'GroupHeight')
       slideHeight = groupHeight > slideHeight ? groupHeight : slideHeight
-      slideHeight += 'px'
-      if (self.autoHeight.style.height !== slideHeight) {
-        if (!self.initial) {
-          self.autoHeight.classList.add('xt-autoHeight')
+      if (slideHeight > 0) {
+        slideHeight += 'px'
+        if (self.autoHeight.style.height !== slideHeight) {
+          if (!self.initial) {
+            self.autoHeight.classList.add('xt-autoHeight')
+          }
+          self.autoHeight.style.height = slideHeight
+          // listener dispatch
+          const detail = self.eDetailSet()
+          slide.dispatchEvent(new CustomEvent('autoHeight.xt', { bubbles: true, detail: detail }))
         }
-        self.autoHeight.style.height = slideHeight
-        // listener dispatch
-        const detail = self.eDetailSet()
-        slide.dispatchEvent(new CustomEvent('autoHeight.xt', { bubbles: true, detail: detail }))
       }
     }
     // val
