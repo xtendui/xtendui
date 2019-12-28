@@ -30,7 +30,7 @@ class Template extends React.Component {
                             <div className="card-inner">
                               <div className="card-content">
                                 <div className="card-block card-item">
-                                  <div className="card-title">{post.frontmatter.title}</div>
+                                  <div className="card-title">{post.frontmatter.title.split('-').join(' ')}</div>
                                   <p>{post.frontmatter.description}</p>
                                 </div>
                               </div>

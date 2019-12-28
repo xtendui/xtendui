@@ -42,7 +42,7 @@ class Template extends React.Component {
                               <div className="card-inner">
                                 <div className="card-content">
                                   <div className="card-block card-item">
-                                    <div className="card-title">{adiacent.frontmatter.title}</div>
+                                    <div className="card-title">{adiacent.frontmatter.title.split('-').join(' ')}</div>
                                     <p>{adiacent.frontmatter.description}</p>
                                   </div>
                                 </div>

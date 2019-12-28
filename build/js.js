@@ -61,3 +61,17 @@ jsDemosGlob.on('end', function(filepath) {
     if (err) console.log(err)
   })
 })
+
+let jsThemes = `if (typeof window !== 'undefined') {\n`
+const jsThemesGlob = new glob.Glob('src/themes/**/*.js', function(er, files) {
+  for (const file of files) {
+    jsThemes += `  require('xtend-library/${file}')\n`
+  }
+  jsThemes += '}'
+  jsThemes += '\n'
+})
+jsThemesGlob.on('end', function(filepath) {
+  writeFile('./src/xtend-themes.js', jsThemes, function(err) {
+    if (err) console.log(err)
+  })
+})

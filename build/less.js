@@ -50,3 +50,15 @@ lessDemosGlob.on('end', function(filepath) {
     if (err) console.log(err)
   })
 })
+
+let lessThemes = ''
+const lessThemesGlob = new glob.Glob('src/themes/**/*.less', { ignore: ['**/_*.less'] }, function(er, files) {
+  for (const file of files) {
+    lessThemes += `@import '~xtend-library/${file}';\n`
+  }
+})
+lessThemesGlob.on('end', function(filepath) {
+  writeFile('./src/xtend-themes.less', lessThemes, function(err) {
+    if (err) console.log(err)
+  })
+})

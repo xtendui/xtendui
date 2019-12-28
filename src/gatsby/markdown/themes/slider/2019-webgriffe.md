@@ -1,8 +1,10 @@
 ---
 type: "Themes"
 badge: "Themes"
-parent: "Test"
-title: "Test"
+parent: "Slider"
+title: "2019-webgriffe"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-categories: ["400-Presentation"]
+demos: [
+  "iframe/themes/slider/2019-webgriffe"
+]
 ---

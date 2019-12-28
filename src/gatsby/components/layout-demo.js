@@ -8,6 +8,7 @@ import 'xtend-library/src/xtend-core.js'
 import 'xtend-library/src/xtend-extensions.js'
 import 'xtend-library/src/xtend-addons.js'
 import 'xtend-library/src/xtend-demos.js'
+import 'xtend-library/src/xtend-themes.js'
 
 import { makeDocument } from 'assets/scripts/theme.js'
 import ResizeSensor from 'assets/scripts/ResizeSensor.js'
