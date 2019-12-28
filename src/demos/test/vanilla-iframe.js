@@ -1,7 +1,7 @@
 import { Xt } from 'xtend-library'
 import 'xtend-library/src/vars.js'
 import 'xtend-library/src/extensions/slider/slider.js'
-import 'xtend-library/src/extensions/utils/mouse-follow.js'
+import 'xtend-library/src/core/animation/mouse-follow.js'
 import gsap from 'gsap'
 
 Xt.mount.push({
@@ -94,12 +94,11 @@ Xt.mount.push({
     self.object.addEventListener('stop.xt.auto', eventAutoStop)
     self.object.addEventListener('pause.xt.auto', eventAutoPause)
 
-    // MouseFollow
+    // mousefollow
 
     const mouseFollowObject = document.querySelector('.loader-mouse')
     const mouseFollowContainer = object
-
-    let mouseFollow = new Xt.MouseFollow(mouseFollowObject, mouseFollowContainer, {
+    const mouseFollow = new Xt.MouseFollow(mouseFollowObject, mouseFollowContainer, {
       mouseCheck: function() {
         return !this.object.classList.contains('loader-disable') || this.object.classList.contains('loader-js')
       },

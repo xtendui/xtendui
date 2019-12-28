@@ -645,14 +645,8 @@ class Slider extends Xt.Toggle {
       dragger.style.transform = 'translateX(' + self.detail.xPos + 'px)'
       // disable dragger
       dragger.classList.add('xt-pointer-events-none')
-      for (const nav of self.navs) {
-        nav.classList.add('xt-pointer-events-none')
-      }
       Xt.animTimeout(dragger, function() {
         dragger.classList.remove('xt-pointer-events-none')
-        for (const nav of self.navs) {
-          nav.classList.remove('xt-pointer-events-none')
-        }
       })
       // disable links
       dragger.classList.remove('xt-jumps-none')
@@ -784,9 +778,6 @@ class Slider extends Xt.Toggle {
     if (Math.abs(self.detail.xVelocity) > options.drag.frictionLimit) {
       // disable dragger
       dragger.classList.add('xt-pointer-events-none')
-      for (const nav of self.navs) {
-        nav.classList.add('xt-pointer-events-none')
-      }
       // drag
       self.logicDrag(dragger, e, true)
       // loop
@@ -967,9 +958,6 @@ class Slider extends Xt.Toggle {
       Xt.animTimeout(dragger, function() {
         // disable dragger
         dragger.classList.remove('xt-pointer-events-none')
-        for (const nav of self.navs) {
-          nav.classList.remove('xt-pointer-events-none')
-        }
       })
       // drag position
       if (self.initial) {

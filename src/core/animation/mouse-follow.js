@@ -48,9 +48,11 @@ class MouseFollow {
     }
     // position
     Xt.friction(self.object, {
-      x: e.clientX + self.width / 2,
-      y: e.clientY + self.height / 2,
+      x: e.clientX - self.width / 2,
+      y: e.clientY - self.height / 2,
     })
+    // listener dispatch
+    self.object.dispatchEvent(new CustomEvent('mouseenter.xt'))
   }
 
   /**
@@ -73,6 +75,8 @@ class MouseFollow {
         y: e.clientY - self.height / 2,
         friction: false,
       })
+      // listener dispatch
+      self.object.dispatchEvent(new CustomEvent('mouseenter.xt'))
     }
   }
 
@@ -86,6 +90,8 @@ class MouseFollow {
       // class
       self.object.classList.remove('active')
       self.object.classList.add('out')
+      // listener dispatch
+      self.object.dispatchEvent(new CustomEvent('mouseleave.xt'))
     }
   }
 
