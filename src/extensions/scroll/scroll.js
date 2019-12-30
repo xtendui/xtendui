@@ -101,7 +101,7 @@ class Scroll extends Xt.Toggle {
       const scrollHandler = Xt.dataStorage.put(window, options.on + '/' + self.namespace, self.eventScrollHandler.bind(self))
       const events = [...options.on.split(' ')]
       for (const event of events) {
-        addEventListener(event, scrollHandler, Xt.passiveSupported ? { passive: true } : false)
+        addEventListener(event, scrollHandler, Xt.passiveSupported ? { passive: true } : null)
       }
       self.eventScrollHandler(null, true)
     }
@@ -127,7 +127,7 @@ class Scroll extends Xt.Toggle {
           // handler
           self.eventScroll(e, initial)
         },
-        self.componentNamespace + 'Resize'
+        self.componentNamespace + 'Scroll'
       )
     }
   }

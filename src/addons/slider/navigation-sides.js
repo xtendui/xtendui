@@ -12,14 +12,14 @@ Xt.mount.push({
 
     // enter
 
-    mouseFollowObject.addEventListener('mouseenter.xt', function () {
+    mouseFollowObject.addEventListener('mouseenter.xt', function() {
       mouseFollowContainer.classList.add('active')
       mouseFollowContainer.classList.remove('out')
     })
 
     // leave
 
-    mouseFollowObject.addEventListener('mouseleave.xt', function () {
+    mouseFollowObject.addEventListener('mouseleave.xt', function() {
       mouseFollowContainer.classList.remove('active')
       mouseFollowContainer.classList.add('out')
       Xt.animTimeout(mouseFollowContainer, function() {

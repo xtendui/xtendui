@@ -398,8 +398,8 @@ if (typeof window !== 'undefined') {
       // event mouse
       const focusChangeOtherHandler = Xt.dataStorage.put(document, 'mousedown touchstart pointerdown/focus', Xt.focus.changeOther)
       document.addEventListener('mousedown', focusChangeOtherHandler)
-      document.addEventListener('touchstart', focusChangeOtherHandler, Xt.passiveSupported ? { passive: true } : false)
-      document.addEventListener('pointerdown', focusChangeOtherHandler, Xt.passiveSupported ? { passive: true } : false)
+      document.addEventListener('touchstart', focusChangeOtherHandler, Xt.passiveSupported ? { passive: true } : null)
+      document.addEventListener('pointerdown', focusChangeOtherHandler, Xt.passiveSupported ? { passive: true } : null)
     },
 
     /**

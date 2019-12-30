@@ -23,16 +23,21 @@ class Slider extends Xt.Toggle {
   initScope() {
     const self = this
     const options = self.options
+    // dragger
+    if (options.drag && options.drag.dragger) {
+      self.dragger = self.object.querySelector(options.drag.dragger)
+      self.destroyElements.push(self.dragger)
+    }
+    // @FIX performances
+    self.detail.objectWidth = self.object.offsetWidth
+    if (self.dragger) {
+      self.detail.draggerWidth = self.dragger.offsetWidth
+    }
     // targets
     self.initScopeTargets()
     // only one call per group
     for (const slide of self.targets) {
       Xt.dataStorage.remove(slide, self.componentNamespace + 'SlideOnDone')
-    }
-    // dragger
-    if (options.drag && options.drag.dragger) {
-      self.dragger = self.object.querySelector(options.drag.dragger)
-      self.destroyElements.push(self.dragger)
     }
     // autoHeight
     if (options.autoHeight) {
@@ -68,7 +73,7 @@ class Slider extends Xt.Toggle {
     // drag wrap
     self.destroyWraps()
     // width
-    let draggerWidth = self.dragger ? self.dragger.offsetWidth : self.object.offsetWidth
+    let draggerWidth = self.dragger ? self.detail.draggerWidth : self.detail.objectWidth
     let draggerWidthAvailable = 0
     // draggerWidthAvailable
     if (options.groupMq) {
@@ -279,7 +284,7 @@ class Slider extends Xt.Toggle {
       Xt.dataStorage.remove(slide, self.componentNamespace + 'GroupPosDone')
     }
     // set pos
-    const draggerWidth = self.dragger.offsetWidth
+    const draggerWidth = self.detail.draggerWidth
     // slides pos
     let slidesWidth = 0
     for (const slide of self.targets) {
@@ -405,7 +410,7 @@ class Slider extends Xt.Toggle {
       )
       const events = ['mousedown', 'touchstart']
       for (const event of events) {
-        dragger.addEventListener(event, dragstartHandler)
+        dragger.addEventListener(event, dragstartHandler, Xt.passiveSupported ? { passive: true } : null)
       }
       // xt-grab
       if (!self.disabled) {
@@ -439,20 +444,26 @@ class Slider extends Xt.Toggle {
    */
   eventSlideOnHandler(dragger, el, e) {
     const self = this
-    // handler
-    self.eventSlideOn(dragger, e)
+    // useCapture delegation
+    if (self.elements.includes(el) || self.targets.includes(el)) {
+      // handler
+      self.eventSlideOn(dragger, el, e)
+    }
   }
 
   /**
    * slide off handler
    * @param {Node|HTMLElement|EventTarget|Window} dragger
-   * @param {Node|HTMLElement|EventTarget|Window} slide
+   * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
-  eventSlideOffHandler(dragger, slide, e) {
+  eventSlideOffHandler(dragger, el, e) {
     const self = this
-    // handler
-    self.eventSlideOff(dragger, e)
+    // useCapture delegation
+    if (self.elements.includes(el) || self.targets.includes(el)) {
+      // handler
+      self.eventSlideOff(dragger, el, e)
+    }
   }
 
   /**
@@ -524,7 +535,7 @@ class Slider extends Xt.Toggle {
     const dragHandler = Xt.dataStorage.put(dragger, 'mousemove touchmove' + '/' + self.namespace, self.eventDragHandler.bind(self).bind(self, dragger))
     const events = ['mousemove', 'touchmove']
     for (const event of events) {
-      dragger.addEventListener(event, dragHandler, Xt.passiveSupported ? { passive: true } : true)
+      dragger.addEventListener(event, dragHandler, Xt.passiveSupported ? { passive: true } : null)
     }
     // logic
     self.logicDragstart(dragger, e)
@@ -547,7 +558,7 @@ class Slider extends Xt.Toggle {
     const dragHandler = Xt.dataStorage.get(dragger, 'mousemove touchmove' + '/' + self.namespace)
     const eventsmove = ['mousemove', 'touchmove']
     for (const event of eventsmove) {
-      dragger.removeEventListener(event, dragHandler, Xt.passiveSupported ? { passive: true } : true)
+      dragger.removeEventListener(event, dragHandler, Xt.passiveSupported ? { passive: true } : null)
     }
     // logic
     self.logicDragend(dragger, e)
@@ -576,7 +587,14 @@ class Slider extends Xt.Toggle {
         e,
         self.object,
         function() {
-          self.reinit()
+          // @FIX performances
+          const detail = self.dragger ? self.detail.draggerWidth : self.detail.objectWidth
+          const val = self.dragger ? self.dragger.offsetWidth : self.object.offsetWidth
+          if (detail !== val) {
+            //console.debug(self.object, detail, val)
+            self.dragger ? (self.detail.draggerWidth = val) : (self.detail.objectWidth = val)
+            self.reinit()
+          }
         },
         self.componentNamespace + 'Resize'
       )
@@ -590,20 +608,25 @@ class Slider extends Xt.Toggle {
   /**
    * slide on
    * @param {Node|HTMLElement|EventTarget|Window} dragger
+   * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
-  eventSlideOn(dragger, e) {
+  eventSlideOn(dragger, el, e) {
     const self = this
     const options = self.options
     // @FIX targets handler
-    const slide = self.getTargets(e.target)[0]
+    const slides = self.getTargets(el)
+    const slide = slides[0]
     // only one call per group
     if (Xt.dataStorage.get(slide, self.componentNamespace + 'SlideOnDone')) {
       return
     }
-    const targets = self.getTargets(slide)
-    for (const target of targets) {
+    for (const target of slides) {
       Xt.dataStorage.set(target, self.componentNamespace + 'SlideOnDone', true)
+      // disable links not active slide
+      if (options.jump) {
+        target.classList.remove('xt-links-none')
+      }
     }
     // autoHeight
     if (self.autoHeight) {
@@ -669,29 +692,31 @@ class Slider extends Xt.Toggle {
         }
       }
     }
-    // disable links not active slide
-    if (options.jump) {
-      slide.classList.remove('xt-links-none')
-    }
   }
 
   /**
    * slide off
    * @param {Node|HTMLElement|EventTarget|Window} dragger
+   * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
-  eventSlideOff(dragger, e) {
+  eventSlideOff(dragger, el, e) {
     const self = this
     const options = self.options
-    const slide = e.target
-    // disable links not active slide
-    if (options.jump) {
-      slide.classList.add('xt-links-none')
-    }
+    // @FIX targets handler
+    const slides = self.getTargets(el)
+    const slide = slides[0]
     // only one call per group
-    const targets = self.getTargets(slide)
-    for (const target of targets) {
+    if (Xt.dataStorage.get(slide, self.componentNamespace + 'SlideOffDone')) {
+      return
+    }
+    for (const target of slides) {
+      Xt.dataStorage.set(target, self.componentNamespace + 'SlideOffDone', true)
       Xt.dataStorage.remove(target, self.componentNamespace + 'SlideOnDone')
+      // disable links not active slide
+      if (options.jump) {
+        target.classList.add('xt-links-none')
+      }
     }
   }
 
@@ -914,7 +939,7 @@ class Slider extends Xt.Toggle {
       }
     }
     // activate or reset
-    const draggerWidth = self.dragger.offsetWidth
+    const draggerWidth = self.detail.draggerWidth
     const xDist = self.detail.xPosReal - xPosCurrent
     if (Math.abs(xDist) > options.drag.threshold) {
       // get nearest

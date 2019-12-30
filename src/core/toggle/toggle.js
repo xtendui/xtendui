@@ -105,6 +105,7 @@ class Toggle {
    */
   initLogic(saveCurrents = true) {
     const self = this
+    // init
     self.initScope()
     self.initAria()
     self.initStart(saveCurrents)
@@ -115,6 +116,8 @@ class Toggle {
    */
   initScope() {
     const self = this
+    // @FIX performances
+    self.detail.objectWidth = self.object.offsetWidth
     // elements
     self.initScopeElements()
     // targets
@@ -596,15 +599,15 @@ class Toggle {
       const eWheel = 'onwheel' in wheel ? 'wheel' : wheel.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll'
       // wheel
       const wheelHandler = Xt.dataStorage.put(wheel, eWheel + '/' + self.namespace, self.eventWheelHandler.bind(self))
-      wheel.addEventListener(eWheel, wheelHandler, Xt.passiveSupported ? { passive: false } : false)
+      wheel.addEventListener(eWheel, wheelHandler, Xt.passiveSupported ? { passive: false } : null)
       // stop
       const wheelStopHandler = Xt.dataStorage.put(wheel, eWheel + '.stop' + '/' + self.namespace, self.eventWheelStop.bind(self))
-      wheel.addEventListener('stop.wheel.xt', wheelStopHandler, Xt.passiveSupported ? { passive: false } : false)
+      wheel.addEventListener('stop.wheel.xt', wheelStopHandler, Xt.passiveSupported ? { passive: false } : null)
       // block
       if (options.wheel.block) {
         const block = wheel.parentNode
         const wheelBlockHandler = Xt.dataStorage.put(block, eWheel + '.block' + '/' + self.namespace, self.eventWheelBlockHandler.bind(self))
-        block.addEventListener(eWheel, wheelBlockHandler, Xt.passiveSupported ? { passive: false } : false)
+        block.addEventListener(eWheel, wheelBlockHandler, Xt.passiveSupported ? { passive: false } : null)
       }
     }
   }
@@ -626,6 +629,7 @@ class Toggle {
       // @FIX targets handler
       const el = self.getElements(element)[0]
       // event block
+      //console.log(el)
       if (options.onBlock) {
         const now = new Date().getTime()
         const old = Xt.dataStorage.get(el, self.componentNamespace + 'EventBlock' + e.type) || 0
@@ -634,7 +638,7 @@ class Toggle {
           return
         }
       }
-      // on handler
+      // handler
       if (options.eventLimit) {
         const eventLimit = self.container.querySelectorAll(options.eventLimit)
         if (eventLimit.length) {
@@ -671,7 +675,7 @@ class Toggle {
           return
         }
       }
-      // off handler
+      // handler
       if (options.eventLimit) {
         const eventLimit = self.container.querySelectorAll(options.eventLimit)
         if (eventLimit.length) {
@@ -2483,7 +2487,7 @@ class Toggle {
                 const delta = -e.deltaY || -e.detail
                 element.scrollTop -= delta
               },
-              Xt.passiveSupported ? { passive: false } : false
+              Xt.passiveSupported ? { passive: false } : null
             )
           }
         } else if (actionCurrent === 'Off') {
@@ -2614,9 +2618,16 @@ class Toggle {
       e,
       self.object,
       function() {
-        self.eventStatus()
+        // @FIX performances
+        const detail = self.detail.objectWidth
+        const val = self.object.offsetWidth
+        if (detail !== val) {
+          //console.debug(self.object, detail, val)
+          self.detail.objectWidth = val
+          self.eventStatus()
+        }
       },
-      self.componentNamespace + 'Resize'
+      self.componentNamespace + 'Status'
     )
   }
 
@@ -2659,16 +2670,6 @@ class Toggle {
   }
 
   /**
-   * restart
-   * @param {Event} e
-   */
-  eventRestartHandler(e) {
-    const self = this
-    // reinit
-    self.restart()
-  }
-
-  /**
    * reinit
    * @param {Event} e
    */
@@ -2676,6 +2677,16 @@ class Toggle {
     const self = this
     // reinit
     self.reinit()
+  }
+
+  /**
+   * restart
+   * @param {Event} e
+   */
+  eventRestartHandler(e) {
+    const self = this
+    // reinit
+    self.restart()
   }
 
   //
@@ -2744,7 +2755,7 @@ class Toggle {
                   for (const event of events) {
                     //console.debug(event, element.innerHTML)
                     element.removeEventListener(event, handler)
-                    element.removeEventListener(event, handler, Xt.passiveSupported ? { passive: true } : true)
+                    element.removeEventListener(event, handler, Xt.passiveSupported ? { passive: true } : null)
                     Xt.dataStorage.remove(element, key)
                   }
                 }

@@ -104,9 +104,7 @@ const populateBlock = function() {
     appendOrigin.before(content.childNodes[0])
     appendOrigin.remove()
     // trigger resize
-    requestAnimationFrame(function() {
-      dispatchEvent(new CustomEvent('resize', { detail: { force: true } }))
-    })
+    dispatchEvent(new CustomEvent('resize', { detail: { force: true } }))
     // set hash
     window.history.pushState('', '/', window.location.pathname)
   })
