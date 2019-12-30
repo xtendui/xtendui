@@ -8,14 +8,14 @@ Xt.mount.push({
   mount: function(object) {
     // init
 
-    const self = new Xt.Toggle(object, {
+    let self = new Xt.Toggle(object, {
       auto: {
         time: 2000,
         pause: ':scope > button',
       },
     })
 
-    // auto
+    // start auto
 
     const eventAutoStart = function() {
       // on elements
@@ -38,6 +38,10 @@ Xt.mount.push({
       }
     }
 
+    self.object.addEventListener('start.xt.auto', eventAutoStart)
+
+    // stop auto
+
     const eventAutoStop = function() {
       // on elements
       const elements = self.elements.filter(x => self.hasCurrent(x))
@@ -56,6 +60,10 @@ Xt.mount.push({
         }
       }
     }
+
+    self.object.addEventListener('stop.xt.auto', eventAutoStop)
+
+    // pause auto
 
     const eventAutoPause = function() {
       // on elements
@@ -76,18 +84,14 @@ Xt.mount.push({
       }
     }
 
-    self.object.addEventListener('start.xt.auto', eventAutoStart)
-    self.object.addEventListener('stop.xt.auto', eventAutoStop)
     self.object.addEventListener('pause.xt.auto', eventAutoPause)
 
     // unmount
 
-    return function unmount() {
-      self.object.removeEventListener('start.xt.auto', eventAutoStart)
-      self.object.removeEventListener('stop.xt.auto', eventAutoStop)
-      self.object.removeEventListener('pause.xt.auto', eventAutoPause)
+    const unmount = function() {
       self.destroy()
       self = null
     }
+    return unmount
   },
 })

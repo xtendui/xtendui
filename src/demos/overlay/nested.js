@@ -10,11 +10,5 @@ Xt.mount.push({
     }
 
     object.addEventListener('click', click)
-
-    // unmount
-
-    return function unmount() {
-      object.removeEventListener('click', click)
-    }
   },
 })

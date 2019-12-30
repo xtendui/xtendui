@@ -5,7 +5,7 @@ Xt.mount.push({
   mount: function(object) {
     // init
 
-    const self = new Xt.Toggle(object, {
+    let self = new Xt.Toggle(object, {
       min: 1,
     })
 
@@ -167,7 +167,7 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = function unmount() {
+    const unmount = function() {
       firstEl.removeEventListener('click', firstElFnc)
       firstTr.removeEventListener('click', firstTrFnc)
       addBtn.removeEventListener('click', addFnc)

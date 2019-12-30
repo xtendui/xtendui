@@ -76,42 +76,39 @@ const populateBlock = function() {
     })
   }
   document.querySelector('#toggle_open-full').addEventListener('offdone.xt', function(e) {
-    // @FIX on.xt and off.xt event bubbles
-    if (this === e.target) {
-      const content = document.querySelector('#toggle_open-full-content')
-      // toggles
-      const listingToggles = document.querySelectorAll('[data-gatsby-listing-toggle]')
-      for (const el of listingToggles) {
-        el.classList.remove('active')
-      }
-      // populate source
-      const container = content.querySelector('.gatsby_demo')
-      if (container.dataset.isFullscreenOnly) {
-        const sourceTo = content.querySelector('.gatsby_demo_source_populate')
-        if (sourceTo) {
-          sourceTo.innerHTML = ''
-        }
-        for (const item of content.querySelectorAll('.gatsby_demo_item')) {
-          if (item.getAttribute('data-iframe-fullscreen')) {
-            delete item.dataset.iframeLoadCall
-            item.classList.remove('populated-iframe', 'loaded')
-            item.removeAttribute('data-iframe')
-            item.querySelector('.gatsby_demo_item_wrapper').remove()
-          }
-        }
-      }
-      // move code block
-      const appendOrigin = document.querySelector('[data-xt-origin="toggle_open-full-content"]')
-      content.childNodes[0].classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
-      appendOrigin.before(content.childNodes[0])
-      appendOrigin.remove()
-      // trigger resize
-      requestAnimationFrame(function() {
-        dispatchEvent(new CustomEvent('resize', { detail: { force: true } }))
-      })
-      // set hash
-      window.history.pushState('', '/', window.location.pathname)
+    const content = document.querySelector('#toggle_open-full-content')
+    // toggles
+    const listingToggles = document.querySelectorAll('[data-gatsby-listing-toggle]')
+    for (const el of listingToggles) {
+      el.classList.remove('active')
     }
+    // populate source
+    const container = content.querySelector('.gatsby_demo')
+    if (container.dataset.isFullscreenOnly) {
+      const sourceTo = content.querySelector('.gatsby_demo_source_populate')
+      if (sourceTo) {
+        sourceTo.innerHTML = ''
+      }
+      for (const item of content.querySelectorAll('.gatsby_demo_item')) {
+        if (item.getAttribute('data-iframe-fullscreen')) {
+          delete item.dataset.iframeLoadCall
+          item.classList.remove('populated-iframe', 'loaded')
+          item.removeAttribute('data-iframe')
+          item.querySelector('.gatsby_demo_item_wrapper').remove()
+        }
+      }
+    }
+    // move code block
+    const appendOrigin = document.querySelector('[data-xt-origin="toggle_open-full-content"]')
+    content.childNodes[0].classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
+    appendOrigin.before(content.childNodes[0])
+    appendOrigin.remove()
+    // trigger resize
+    requestAnimationFrame(function() {
+      dispatchEvent(new CustomEvent('resize', { detail: { force: true } }))
+    })
+    // set hash
+    window.history.pushState('', '/', window.location.pathname)
   })
   // get hash
   if (location.hash) {
@@ -272,7 +269,7 @@ const populateDemo = function(container, i) {
   }
   // .btn-prev-demo
   container.querySelector('.btn-prev-demo').addEventListener('click', function() {
-    const self = Xt.get('xt-toggle', container)
+    let self = Xt.get('xt-toggle', container)
     if (self.currentIndex > 0) {
       self.goToPrev()
     } else {
@@ -309,7 +306,7 @@ const populateDemo = function(container, i) {
   })
   // .btn-next-demo
   container.querySelector('.btn-next-demo').addEventListener('click', function() {
-    const self = Xt.get('xt-toggle', container)
+    let self = Xt.get('xt-toggle', container)
     if (self.currentIndex < self.getGroups().length - 1) {
       self.goToNext()
     } else {
@@ -435,24 +432,18 @@ const initializeIframe = function(container, item) {
     if (!item.dataset.iframeLoadEvents) {
       item.dataset.iframeLoadEvents = 'true'
       item.addEventListener('on.xt', function(e) {
-        // @FIX on.xt and off.xt event bubbles
-        if (this === e.target) {
-          if (!item.dataset.iframeLoadCall) {
-            item.dataset.iframeLoadCall = 'true'
-            const iframe = item.querySelector('iframe')
-            loadIframe(iframe)
-          }
+        if (!item.dataset.iframeLoadCall) {
+          item.dataset.iframeLoadCall = 'true'
+          const iframe = item.querySelector('iframe')
+          loadIframe(iframe)
         }
       })
       item.addEventListener('off.xt', function(e) {
-        // @FIX on.xt and off.xt event bubbles
-        if (this === e.target) {
-          if (item.dataset.iframeLoadCall) {
-            delete item.dataset.iframeLoadCall
-            const iframe = item.querySelector('iframe')
-            item.classList.remove('loaded')
-            unloadIframe(iframe)
-          }
+        if (item.dataset.iframeLoadCall) {
+          delete item.dataset.iframeLoadCall
+          const iframe = item.querySelector('iframe')
+          item.classList.remove('loaded')
+          unloadIframe(iframe)
         }
       })
     }
@@ -550,19 +541,16 @@ const populateInline = function(item) {
         el.style.display = 'none'
       }
     }
-    const self = new Xt.Toggle(item, {
+    let self = new Xt.Toggle(item, {
       elements: '.gatsby_demo_code_tabs_left .btn',
       targets: '.gatsby_demo_code_body_item',
       min: 1,
     })
     // @FIX reinit because changing tabs makes demo visible so need reinit
     item.addEventListener('ondone.xt', function(e) {
-      // @FIX on.xt and off.xt event bubbles
-      if (this === e.target) {
-        if (!self.initial) {
-          for (const component of item.querySelectorAll('[data-xt-name]')) {
-            component.dispatchEvent(new CustomEvent('reinit.xt'))
-          }
+      if (!self.initial) {
+        for (const component of item.querySelectorAll('[data-xt-name]')) {
+          component.dispatchEvent(new CustomEvent('reinit.xt'))
         }
       }
     })

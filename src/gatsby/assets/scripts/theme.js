@@ -18,7 +18,7 @@ Xt.mount.push({
   mount: function(object) {
     // init
 
-    const self = new Xt.Scroll(object, {
+    let self = new Xt.Scroll(object, {
       sticky: 'fixed',
       end: 350,
     })
@@ -37,13 +37,11 @@ Xt.mount.push({
 
     // unmount
 
-    return function unmount() {
-      for (const el of self.elements) {
-        el.removeEventListener('change.xt.scroll', eventChange)
-      }
+    const unmount = function() {
       self.destroy()
       self = null
     }
+    return unmount
   },
 })
 

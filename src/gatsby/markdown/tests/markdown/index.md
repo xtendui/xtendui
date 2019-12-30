@@ -77,8 +77,7 @@ body {
 ```
 
 ```jsx
-const self = new Xt.Scroll(document.documentElement, {
-});
+console.log('test')
 ```
 
 ## Tables

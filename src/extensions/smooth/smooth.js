@@ -56,13 +56,14 @@ Xt.mount.push({
 
     // init
 
-    const self = new Xt.Smooth(object, options)
+    let self = new Xt.Smooth(object, options)
 
     // unmount
 
-    return function unmount() {
+    const unmount = function() {
       self.destroy()
       self = null
     }
+    return unmount
   },
 })

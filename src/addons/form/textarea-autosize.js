@@ -103,13 +103,14 @@ Xt.mount.push({
 
     // init
 
-    const self = new Xt.TextareaAutosize(object, options)
+    let self = new Xt.TextareaAutosize(object, options)
 
     // unmount
 
-    return function unmount() {
+    const unmount = function() {
       self.destroy()
       self = null
     }
+    return unmount
   },
 })

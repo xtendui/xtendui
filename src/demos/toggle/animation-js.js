@@ -8,49 +8,49 @@ Xt.mount.push({
   mount: function(object) {
     // init
 
-    const self = new Xt.Toggle(object, {
+    let self = new Xt.Toggle(object, {
       durationOn: Xt.vars.timeBig,
       durationOff: Xt.vars.timeBig,
     })
 
-    // activation
+    // on
 
     const eventOn = function(e) {
       const target = this
-      // @FIX on.xt and off.xt event bubbles
-      if (target === e.target) {
-        gsap.set(target, { opacity: 0 })
-        if (!target.classList.contains('inverse')) {
-          gsap.set(target, { translateX: -15 })
-        } else {
-          gsap.set(target, { translateX: 15 })
-        }
-        gsap.to(target, { duration: Xt.vars.timeBig, translateX: 0, opacity: 1, ease: Xt.vars.easeIn })
+      gsap.set(target, { opacity: 0 })
+      if (!target.classList.contains('inverse')) {
+        gsap.set(target, { translateX: -15 })
+      } else {
+        gsap.set(target, { translateX: 15 })
       }
-    }
-
-    const eventOff = function(e) {
-      const target = this
-      // @FIX on.xt and off.xt event bubbles
-      if (target === e.target) {
-        if (!target.classList.contains('inverse')) {
-          gsap.to(target, { duration: Xt.vars.timeBig, translateX: 15, opacity: 0, ease: Xt.vars.easeOut })
-        } else {
-          gsap.to(target, { duration: Xt.vars.timeBig, translateX: -15, opacity: 0, ease: Xt.vars.easeOut })
-        }
-      }
+      gsap.to(target, { duration: Xt.vars.timeBig, translateX: 0, opacity: 1, ease: Xt.vars.easeIn })
     }
 
     for (const tr of self.targets) {
       tr.addEventListener('on.xt', eventOn)
+    }
+
+    // off
+
+    const eventOff = function(e) {
+      const target = this
+      if (!target.classList.contains('inverse')) {
+        gsap.to(target, { duration: Xt.vars.timeBig, translateX: 15, opacity: 0, ease: Xt.vars.easeOut })
+      } else {
+        gsap.to(target, { duration: Xt.vars.timeBig, translateX: -15, opacity: 0, ease: Xt.vars.easeOut })
+      }
+    }
+
+    for (const tr of self.targets) {
       tr.addEventListener('off.xt', eventOff)
     }
 
     // unmount
 
-    return function unmount() {
+    const unmount = function() {
       self.destroy()
       self = null
     }
+    return unmount
   },
 })

@@ -5,7 +5,7 @@ Xt.mount.push({
   mount: function(object) {
     // init
 
-    const self = new Xt.Scroll(object, {
+    let self = new Xt.Scroll(object, {
       elements: ':scope > *',
       delayOn: function(current) {
         return Math.min(current * 75, 300)
@@ -18,9 +18,10 @@ Xt.mount.push({
 
     // unmount
 
-    return function unmount() {
+    const unmount = function() {
       self.destroy()
       self = null
     }
+    return unmount
   },
 })

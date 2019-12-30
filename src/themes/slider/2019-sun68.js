@@ -14,7 +14,7 @@ Xt.mount.push({
 
     // slider
 
-    const self = new Xt.Slider(object, {
+    let self = new Xt.Slider(object, {
       auto: {
         time: 6000,
       },
@@ -30,7 +30,7 @@ Xt.mount.push({
 
     // drag
 
-    self.dragger.addEventListener('drag.xt.slider', function(e) {
+    const eventDrag = function(e) {
       const target = self.targets.filter(x => x.classList.contains('active'))[0]
       const ratio = Math.abs(self.detail.xStart - self.detail.xCurrent) / target.clientWidth
       const imgSize = self.dragger.offsetWidth / 6
@@ -47,23 +47,27 @@ Xt.mount.push({
       // img
       const img = target.querySelector('.slide_img_inner')
       gsap.set(img, { translateX: -imgSize * ratio * direction, opacity: 1 - ratio + 0.5 })
-    })
+    }
+
+    self.dragger.addEventListener('drag.xt.slider', eventDrag)
 
     // dragend
 
-    self.dragger.addEventListener('dragreset.xt.slider', function(e) {
+    const eventDragReset = function(e) {
       const target = self.targets.filter(x => x.classList.contains('active'))[0]
       // img
       const img = target.querySelector('.slide_img_inner')
       gsap.to(img, { duration: timeImg, translateX: 0, opacity: 1, scale: 1, ease: Xt.vars.easeCheetah })
-    })
+    }
+
+    self.dragger.addEventListener('dragreset.xt.slider', eventDragReset)
 
     // on
 
-    self.object.addEventListener('on.xt', function(e) {
+    const eventOn = function(e) {
       const tr = e.target
-      if (self.targets.includes(tr)) {
-        // event bubbles
+      // useCapture delegation
+      if (e.detail.self.targets.includes(tr)) {
         const img = tr.querySelector('.slide_img_inner')
         if (self.initial) {
           gsap.set(img, { translateX: 0, opacity: 1, scale: 1 })
@@ -74,14 +78,16 @@ Xt.mount.push({
           })
         }
       }
-    })
+    }
+
+    self.object.addEventListener('on.xt', eventOn, true)
 
     // off
 
-    self.object.addEventListener('off.xt', function(e) {
+    const eventOff = function(e) {
       const tr = e.target
-      if (self.targets.includes(tr)) {
-        // event bubbles
+      // useCapture delegation
+      if (e.detail.self.targets.includes(tr)) {
         const imgSize = self.dragger.offsetWidth / 6
         // direction
         let direction = 1
@@ -94,13 +100,16 @@ Xt.mount.push({
           gsap.set(img, { translateX: 0, opacity: 1, scale: 1 })
         })
       }
-    })
+    }
+
+    self.object.addEventListener('off.xt', eventOff, true)
 
     // unmount
 
-    return function unmount() {
+    const unmount = function() {
       self.destroy()
       self = null
     }
+    return unmount
   },
 })

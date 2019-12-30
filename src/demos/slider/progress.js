@@ -9,14 +9,14 @@ Xt.mount.push({
   mount: function(object) {
     // init
 
-    const self = new Xt.Slider(object, {
+    let self = new Xt.Slider(object, {
       auto: {
         time: 4000,
         pause: '[data-xt-pag]',
       },
     })
 
-    // auto
+    // start auto
 
     const eventAutoStart = function() {
       // on slider
@@ -49,6 +49,10 @@ Xt.mount.push({
       }
     }
 
+    self.object.addEventListener('start.xt.auto', eventAutoStart)
+
+    // stop auto
+
     const eventAutoStop = function() {
       // on elements
       const elements = self.elements.filter(x => self.hasCurrent(x))
@@ -67,6 +71,10 @@ Xt.mount.push({
         }
       }
     }
+
+    self.object.addEventListener('stop.xt.auto', eventAutoStop)
+
+    // pause auto
 
     const eventAutoPause = function() {
       // on slider
@@ -90,15 +98,13 @@ Xt.mount.push({
       }
     }
 
-    self.object.addEventListener('start.xt.auto', eventAutoStart)
-    self.object.addEventListener('stop.xt.auto', eventAutoStop)
     self.object.addEventListener('pause.xt.auto', eventAutoPause)
 
     // mousefollow
 
     const mouseFollowObject = document.querySelector('.loader-mouse')
     const mouseFollowContainer = object
-    const mouseFollow = new Xt.MouseFollow(mouseFollowObject, mouseFollowContainer, {
+    let mouseFollow = new Xt.MouseFollow(mouseFollowObject, mouseFollowContainer, {
       mouseCheck: function() {
         return !this.object.classList.contains('loader-disable') || this.object.classList.contains('loader-js')
       },
@@ -106,14 +112,12 @@ Xt.mount.push({
 
     // unmount
 
-    return function unmount() {
-      self.object.removeEventListener('start.xt.auto', eventAutoStart)
-      self.object.removeEventListener('stop.xt.auto', eventAutoStop)
-      self.object.removeEventListener('pause.xt.auto', eventAutoPause)
+    const unmount = function() {
       self.destroy()
       self = null
       mouseFollow.destroy()
       mouseFollow = null
     }
+    return unmount
   },
 })

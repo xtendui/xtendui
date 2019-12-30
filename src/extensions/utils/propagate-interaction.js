@@ -133,13 +133,14 @@ Xt.mount.push({
 
     // init
 
-    const self = new Xt.PropagateInteraction(object, options)
+    let self = new Xt.PropagateInteraction(object, options)
 
     // unmount
 
-    return function unmount() {
+    const unmount = function() {
       self.destroy()
       self = null
     }
+    return unmount
   },
 })

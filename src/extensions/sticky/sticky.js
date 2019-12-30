@@ -120,13 +120,13 @@ class Sticky extends Xt.Toggle {
    */
   eventStickyHandler(e = null, initial = false) {
     const self = this
-    // handler
     // @FIX filter triggered from library (use only in library)
     if (!e || !e.detail || !e.detail.skip) {
       Xt.eventDelay(
         e,
         self.object,
         function() {
+          // handler
           self.eventSticky(e, initial)
         },
         self.componentNamespace + 'Resize'
@@ -275,14 +275,14 @@ class Sticky extends Xt.Toggle {
             dispatchEvent(new CustomEvent('autoClose.xt'))
             // listener dispatch
             const detail = self.eDetailSet(e)
-            el.dispatchEvent(new CustomEvent('hide.xt.sticky', { bubbles: true, detail: detail }))
+            el.dispatchEvent(new CustomEvent('hide.xt.sticky', { detail: detail }))
           }
         } else {
           if (el.classList.contains('sticky-hide')) {
             el.classList.remove('sticky-hide')
             // listener dispatch
             const detail = self.eDetailSet(e)
-            el.dispatchEvent(new CustomEvent('show.xt.sticky', { bubbles: true, detail: detail }))
+            el.dispatchEvent(new CustomEvent('show.xt.sticky', { detail: detail }))
           }
         }
       } else {
@@ -332,7 +332,7 @@ class Sticky extends Xt.Toggle {
       }
       // dispatch
       const detail = self.eDetailSet()
-      el.dispatchEvent(new CustomEvent('change.xt.sticky', { bubbles: true, detail: detail }))
+      el.dispatchEvent(new CustomEvent('change.xt.sticky', { detail: detail }))
       // save for direction
       Xt.dataStorage.set(el, self.componentNamespace + 'AddOld', add)
     }
@@ -463,13 +463,14 @@ Xt.mount.push({
 
     // init
 
-    const self = new Xt.Sticky(object, options)
+    let self = new Xt.Sticky(object, options)
 
     // unmount
 
-    return function unmount() {
+    const unmount = function() {
       self.destroy()
       self = null
     }
+    return unmount
   },
 })

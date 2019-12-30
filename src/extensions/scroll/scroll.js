@@ -118,13 +118,13 @@ class Scroll extends Xt.Toggle {
    */
   eventScrollHandler(e = null, initial = false) {
     const self = this
-    // handler
     // @FIX filter triggered from library (use only in library)
     if (!e || !e.detail || !e.detail.skip) {
       Xt.eventDelay(
         e,
         self.object,
         function() {
+          // handler
           self.eventScroll(e, initial)
         },
         self.componentNamespace + 'Resize'
@@ -273,7 +273,7 @@ class Scroll extends Xt.Toggle {
           self.componentNamespace + 'ScrollDispatchFrame',
           requestAnimationFrame(function() {
             const detail = self.eDetailSet()
-            el.dispatchEvent(new CustomEvent('change.xt.scroll', { bubbles: true, detail: detail }))
+            el.dispatchEvent(new CustomEvent('change.xt.scroll', { detail: detail }))
           })
         )
       }
@@ -336,13 +336,14 @@ Xt.mount.push({
 
     // init
 
-    const self = new Xt.Scroll(object, options)
+    let self = new Xt.Scroll(object, options)
 
     // unmount
 
-    return function unmount() {
+    const unmount = function() {
       self.destroy()
       self = null
     }
+    return unmount
   },
 })

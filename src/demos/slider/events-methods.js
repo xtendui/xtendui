@@ -5,7 +5,7 @@ Xt.mount.push({
   mount: function(object) {
     // init
 
-    const self = new Xt.Slider(object, {
+    let self = new Xt.Slider(object, {
       align: 'center',
       drag: { wrap: true },
     })
@@ -179,7 +179,7 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = function unmount() {
+    const unmount = function() {
       firstEl.removeEventListener('click', firstElFnc)
       firstTr.removeEventListener('click', firstTrFnc)
       addBtn.removeEventListener('click', addFnc)

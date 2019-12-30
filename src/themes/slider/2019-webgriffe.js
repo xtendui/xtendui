@@ -7,7 +7,7 @@ Xt.mount.push({
   mount: function(object) {
     // slider
 
-    const self = new Xt.Slider(object, {
+    let self = new Xt.Slider(object, {
       durationOn: Xt.vars.timeGiant,
       durationOff: Xt.vars.timeGiant,
       loop: true,
@@ -82,46 +82,43 @@ Xt.mount.push({
     // targets
 
     self.object.addEventListener('on.xt', function(e) {
-      // @FIX on.xt and off.xt event bubbles
-      if (Xt.contains(self.targets, e.target)) {
-        let tr = e.target
-        if (self.targets.includes(tr)) {
-          // event bubbles
-          let tween = !self.initial
-          if (self.initial) {
-            // siteBackground
-            /*
-            let backgrounds = document.querySelector('.site_backgrounds')
-            backgrounds.innerHTML = ''
-            for (let [i, target] of self.targets.entries()) {
-              // backgrounds
-              Xt.dataStorage.set(target, 'backgroundDone', true)
-              let generated = Xt.createElement('<div class="slider_background" data-index="' + i + '"></div>')
-              backgrounds.append(generated)
-              let left = target.getAttribute('data-light')
-              let right = target.getAttribute('data-dark')
-              generated.style.background = 'linear-gradient(140deg, ' + left + ' 0%, ' + right + ' 100%)'
-              generated.setAttribute('data-light', left)
-              generated.setAttribute('data-dark', right)
-            }
-            */
-          }
-          // parallax
-          sliderParallax(true)
-          // background
+      let tr = e.target
+      // useCapture delegation
+      if (e.detail.self.targets.includes(tr)) {
+        let tween = !self.initial
+        if (self.initial) {
+          // siteBackground
           /*
-          let background = document.querySelectorAll('.slider_background[data-index="' + self.currentIndex + '"]')
-          if (tween) {
-            for (let [i, target] of self.targets.entries()) {
-              let background = document.querySelectorAll('.slider_background[data-index="' + i + '"]')
-              gsap.to(background, { duration: Xt.vars.timeGiant, opacity: 0, ease: Xt.vars.easeCheetah })
-            }
-            gsap.to(background, { duration: Xt.vars.timeGiant, opacity: 1, ease: Xt.vars.easeCheetah })
-          } else {
-            gsap.set(background, { opacity: 1 })
+          let backgrounds = document.querySelector('.site_backgrounds')
+          backgrounds.innerHTML = ''
+          for (let [i, target] of self.targets.entries()) {
+            // backgrounds
+            Xt.dataStorage.set(target, 'backgroundDone', true)
+            let generated = Xt.createElement('<div class="slider_background" data-index="' + i + '"></div>')
+            backgrounds.append(generated)
+            let left = target.getAttribute('data-light')
+            let right = target.getAttribute('data-dark')
+            generated.style.background = 'linear-gradient(140deg, ' + left + ' 0%, ' + right + ' 100%)'
+            generated.setAttribute('data-light', left)
+            generated.setAttribute('data-dark', right)
           }
           */
         }
+        // parallax
+        sliderParallax(true)
+        // background
+        /*
+        let background = document.querySelectorAll('.slider_background[data-index="' + self.currentIndex + '"]')
+        if (tween) {
+          for (let [i, target] of self.targets.entries()) {
+            let background = document.querySelectorAll('.slider_background[data-index="' + i + '"]')
+            gsap.to(background, { duration: Xt.vars.timeGiant, opacity: 0, ease: Xt.vars.easeCheetah })
+          }
+          gsap.to(background, { duration: Xt.vars.timeGiant, opacity: 1, ease: Xt.vars.easeCheetah })
+        } else {
+          gsap.set(background, { opacity: 1 })
+        }
+        */
       }
     })
 
@@ -179,9 +176,10 @@ Xt.mount.push({
 
     // unmount
 
-    return function unmount() {
+    const unmount = function() {
       self.destroy()
       self = null
     }
+    return unmount
   },
 })

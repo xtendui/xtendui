@@ -8,7 +8,7 @@ Xt.mount.push({
 
     const mouseFollowObject = object
     const mouseFollowContainer = mouseFollowObject.closest('.slider-navigation-sides')
-    const mouseFollow = new Xt.MouseFollow(mouseFollowObject, mouseFollowContainer)
+    let mouseFollow = new Xt.MouseFollow(mouseFollowObject, mouseFollowContainer)
 
     // enter
 
@@ -29,9 +29,10 @@ Xt.mount.push({
 
     // unmount
 
-    return function unmount() {
+    const unmount = function() {
       mouseFollow.destroy()
       mouseFollow = null
     }
+    return unmount
   },
 })

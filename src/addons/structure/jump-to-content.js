@@ -23,8 +23,9 @@ Xt.mount.push({
 
     // unmount
 
-    return function unmount() {
+    const unmount = function() {
       document.removeEventListener('focusin', documentFocusIn)
     }
+    return unmount
   },
 })

@@ -437,11 +437,7 @@ class Slider extends Xt.Toggle {
   eventSlideOnHandler(dragger, el, e) {
     const self = this
     // handler
-    // @FIX on.xt and off.xt event bubbles
-    if (el === e.target) {
-      // event
-      self.eventSlideOn(dragger, e)
-    }
+    self.eventSlideOn(dragger, e)
   }
 
   /**
@@ -453,10 +449,7 @@ class Slider extends Xt.Toggle {
   eventSlideOffHandler(dragger, slide, e) {
     const self = this
     // handler
-    // @FIX on.xt and off.xt event bubbles
-    if (slide === e.target) {
-      self.eventSlideOff(dragger, e)
-    }
+    self.eventSlideOff(dragger, e)
   }
 
   /**
@@ -623,7 +616,7 @@ class Slider extends Xt.Toggle {
           self.autoHeight.style.height = slideHeight
           // listener dispatch
           const detail = self.eDetailSet()
-          slide.dispatchEvent(new CustomEvent('autoHeight.xt', { bubbles: true, detail: detail }))
+          slide.dispatchEvent(new CustomEvent('autoHeight.xt', { detail: detail }))
         }
       }
     }
@@ -1125,13 +1118,14 @@ Xt.mount.push({
 
     // init
 
-    const self = new Xt.Slider(object, options)
+    let self = new Xt.Slider(object, options)
 
     // unmount
 
-    return function unmount() {
+    const unmount = function() {
       self.destroy()
       self = null
     }
+    return unmount
   },
 })

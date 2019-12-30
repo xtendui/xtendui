@@ -134,27 +134,36 @@ Listen to events this way:
 
 ```jsx
 document.querySelector('#my-element').addEventListener('change.xt.scroll', function(e) {
-  // add this check on events with bubbles: true
-  if (this === e.target) {
+  // logic
+})
+```
+
+Listen to events delegation with **useCapture** this way:
+
+```jsx
+document.querySelector('#my-object').addEventListener('change.xt.scroll', function(e) {
+  const el = e.target
+  // useCapture delegation
+  if (e.detail.self.elements.includes(el)) {
     // logic
   }
-})
+}, true)
 ```
 
 <div class="table-scroll">
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `change.xt.scroll`       | `elements` | Computation event (`bubbles: true`)             |
-| Event                   | `show.xt.sticky`       | `elements` | Show event (`bubbles: true`)             |
-| Event                   | `hide.xt.sticky`       | `elements` | Hide event (`bubbles: true`)             |
+| Event                   | `change.xt.scroll`       | `elements` | Computation event             |
+| Event                   | `show.xt.sticky`       | `elements` | Show event             |
+| Event                   | `hide.xt.sticky`       | `elements` | Hide event             |
 
 </div>
 
 Trigger methods this way (object is the DOM element you assigned the component):
 
 ```jsx
-const self = Xt.get('xt-sticky', document.querySelector('#my-sticky-object'))
+let self = Xt.get('xt-sticky', document.querySelector('#my-sticky-object'))
 self.destroy()
 ```
 

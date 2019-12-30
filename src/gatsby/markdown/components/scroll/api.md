@@ -116,25 +116,34 @@ Listen to events this way:
 
 ```jsx
 document.querySelector('#my-element').addEventListener('change.xt.scroll', function(e) {
-  // add this check on events with bubbles: true
-  if (this === e.target) {
+  // logic
+})
+```
+
+Listen to events delegation with **useCapture** this way:
+
+```jsx
+document.querySelector('#my-object').addEventListener('change.xt.scroll', function(e) {
+  const el = e.target
+  // useCapture delegation
+  if (e.detail.self.elements.includes(el)) {
     // logic
   }
-})
+}, true)
 ```
 
 <div class="table-scroll">
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `change.xt.scroll`       | `elements` | Computation event (`bubbles: true`)             |
+| Event                   | `change.xt.scroll`       | `elements` | Computation event             |
 
 </div>
 
 Trigger methods this way (object is the DOM element you assigned the component):
 
 ```jsx
-const self = Xt.get('xt-scroll', document.querySelector('#my-scroll-object'))
+let self = Xt.get('xt-scroll', document.querySelector('#my-scroll-object'))
 self.destroy()
 ```
 

@@ -5,26 +5,29 @@ Xt.mount.push({
   mount: function(object) {
     // init
 
-    const self = new Xt.Toggle(object, {
+    let self = new Xt.Toggle(object, {
       elements: '.multilevel-tab-reset, .multilevel-tab .multilevel-list button',
       targets: '.multilevel-tab',
       min: 1,
     })
 
-    // btnReset
+    // click
+
+    const eventClick = function(e) {
+      object.querySelector('.multilevel-tab-reset').dispatchEvent(new CustomEvent('on.xt'))
+    }
 
     const btns = object.querySelectorAll('.multilevel-reset')
     for (const btn of btns) {
-      btn.addEventListener('click', function() {
-        object.querySelector('.multilevel-tab-reset').dispatchEvent(new CustomEvent('on.xt'))
-      })
+      btn.addEventListener('click', eventClick)
     }
 
     // unmount
 
-    return function unmount() {
+    const unmount = function() {
       self.destroy()
       self = null
     }
+    return unmount
   },
 })

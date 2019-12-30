@@ -5,7 +5,7 @@ Xt.mount.push({
   mount: function(object) {
     // init
 
-    const self = new Xt.Toggle(object, {
+    let self = new Xt.Toggle(object, {
       delayOn: function(current) {
         return Math.min(current * 150, 300)
       },
@@ -16,10 +16,11 @@ Xt.mount.push({
 
     // unmount
 
-    return function unmount() {
+    const unmount = function() {
       self.destroy()
       self = null
     }
+    return unmount
   },
 })
 
@@ -28,7 +29,7 @@ Xt.mount.push({
   mount: function(object) {
     // init
 
-    const self = new Xt.Toggle(object, {
+    let self = new Xt.Toggle(object, {
       on: 'mouseenter',
       off: 'mouseleave',
       delayOn: function(current) {
@@ -41,9 +42,10 @@ Xt.mount.push({
 
     // unmount
 
-    return function unmount() {
+    const unmount = function() {
       self.destroy()
       self = null
     }
+    return unmount
   },
 })

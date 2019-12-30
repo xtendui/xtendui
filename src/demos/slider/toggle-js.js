@@ -8,7 +8,7 @@ Xt.mount.push({
   mount: function(object) {
     // init
 
-    const self = new Xt.Slider(object, {
+    let self = new Xt.Slider(object, {
       durationOn: Xt.vars.timeMedium,
       durationOff: Xt.vars.timeMedium,
       instant: false,
@@ -17,46 +17,49 @@ Xt.mount.push({
     // drag
 
     const eventDrag = function() {
-      const target = self.targets.filter(x => self.hasCurrent(x))[0]
-      const ratio = Math.abs(self.detail.xStart - self.detail.xCurrent) / target.clientWidth
+      const tr = self.targets.filter(x => self.hasCurrent(x))[0]
+      const ratio = Math.abs(self.detail.xStart - self.detail.xCurrent) / tr.clientWidth
       // direction
       let direction = 1
       if (self.detail.xStart - self.detail.xCurrent > 0) {
         direction = -1
       }
       // mask
-      gsap.set(target, { translateX: -self.detail.xPos + 'px', opacity: 1 })
+      gsap.set(tr, { translateX: -self.detail.xPos + 'px', opacity: 1 })
       gsap.set(self.dragger, { translateX: self.detail.xPos })
       // content
-      const contents = target.querySelectorAll('.card-item > *')
+      const contents = tr.querySelectorAll('.card-item > *')
       for (const content of contents) {
         gsap.set(content, { translateX: 100 * ratio * direction, opacity: 1 })
       }
     }
 
+    self.dragger.addEventListener('drag.xt.slider', eventDrag)
+
+    // dragreset
+
     const eventDragReset = function() {
-      const target = self.targets.filter(x => self.hasCurrent(x))[0]
+      const tr = self.targets.filter(x => self.hasCurrent(x))[0]
       // mask
-      gsap.set(target, { translateX: -self.detail.xPosOld + 'px' })
-      gsap.to(target, { duration: Xt.vars.timeMedium, translateX: 0, opacity: 1, ease: Xt.vars.easeOut })
+      gsap.set(tr, { translateX: -self.detail.xPosOld + 'px' })
+      gsap.to(tr, { duration: Xt.vars.timeMedium, translateX: 0, opacity: 1, ease: Xt.vars.easeOut })
       gsap.set(self.dragger, { translateX: self.detail.xPosOld })
       gsap.to(self.dragger, { duration: Xt.vars.timeMedium, translateX: 0, ease: Xt.vars.easeOut })
       // content
-      const contents = target.querySelectorAll('.card-item > *')
+      const contents = tr.querySelectorAll('.card-item > *')
       for (const content of contents) {
         gsap.to(content, { duration: Xt.vars.timeMedium, translateX: 0, opacity: 1, ease: Xt.vars.easeOut })
       }
     }
 
-    self.dragger.addEventListener('drag.xt.slider', eventDrag)
     self.dragger.addEventListener('dragreset.xt.slider', eventDragReset)
 
-    // activation
+    // on
 
     const eventOn = function(e) {
       const tr = e.target
-      if (self.targets.includes(tr)) {
-        // event bubbles
+      // useCapture delegation
+      if (e.detail.self.targets.includes(tr)) {
         const xMax = tr.clientWidth
         // direction
         let direction = 1
@@ -90,10 +93,14 @@ Xt.mount.push({
       }
     }
 
+    self.object.addEventListener('on.xt', eventOn, true)
+
+    // off
+
     const eventOff = function(e) {
       const tr = e.target
-      if (self.targets.includes(tr)) {
-        // event bubbles
+      // useCapture delegation
+      if (e.detail.self.targets.includes(tr)) {
         const xMax = tr.clientWidth
         // direction
         let direction = 1
@@ -111,18 +118,14 @@ Xt.mount.push({
       }
     }
 
-    self.object.addEventListener('on.xt', eventOn)
-    self.object.addEventListener('off.xt', eventOff)
+    self.object.addEventListener('off.xt', eventOff, true)
 
     // unmount
 
-    return function unmount() {
-      self.dragger.removeEventListener('drag.xt.slider', eventDrag)
-      self.dragger.removeEventListener('dragreset.xt.slider', eventDragReset)
-      self.object.removeEventListener('on.xt', eventOn)
-      self.object.removeEventListener('off.xt', eventOff)
+    const unmount = function() {
       self.destroy()
       self = null
     }
+    return unmount
   },
 })

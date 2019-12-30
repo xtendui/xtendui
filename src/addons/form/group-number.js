@@ -34,7 +34,7 @@ Xt.mount.push({
       }
       // set value
       input.value = val
-      input.dispatchEvent(new CustomEvent('change', { bubbles: true, detail: { skip: true } }))
+      input.dispatchEvent(new CustomEvent('change', { detail: { skip: true } }))
     }
 
     // init

@@ -268,7 +268,7 @@ class Toggle {
         }
         // listener dispatch
         const detail = self.eDetailSet()
-        elReset.dispatchEvent(new CustomEvent('off.xt', { bubbles: true, detail: detail }))
+        elReset.dispatchEvent(new CustomEvent('off.xt', { detail: detail }))
       }
       return found
     }
@@ -621,37 +621,31 @@ class Toggle {
   eventOnHandler(element, e) {
     const self = this
     const options = self.options
-    // handler
-    if (
-      element === e.target || // @FIX on.xt and off.xt event bubbles
-      element.contains(e.target) // @FIX on.xt and off.xt event bubbles (use only in library)
-    ) {
-      // @FIX filter triggered from library (use only in library)
-      if (!e || !e.detail || !e.detail.skip) {
-        // @FIX targets handler
-        const el = self.getElements(element)[0]
-        // event block
-        if (options.onBlock) {
-          const now = new Date().getTime()
-          const old = Xt.dataStorage.get(el, self.componentNamespace + 'EventBlock' + e.type) || 0
-          Xt.dataStorage.set(el, self.componentNamespace + 'EventBlock' + e.type, now)
-          if (now - old < options.onBlock) {
-            return
-          }
+    // @FIX filter triggered from library (use only in library)
+    if (!e || !e.detail || !e.detail.skip) {
+      // @FIX targets handler
+      const el = self.getElements(element)[0]
+      // event block
+      if (options.onBlock) {
+        const now = new Date().getTime()
+        const old = Xt.dataStorage.get(el, self.componentNamespace + 'EventBlock' + e.type) || 0
+        Xt.dataStorage.set(el, self.componentNamespace + 'EventBlock' + e.type, now)
+        if (now - old < options.onBlock) {
+          return
         }
-        // on handler
-        if (options.eventLimit) {
-          const eventLimit = self.container.querySelectorAll(options.eventLimit)
-          if (eventLimit.length) {
-            if (!Xt.contains(eventLimit, e.target) || e.target.closest('.event-force')) {
-              self.eventOn(el, false, e)
-            }
-          } else {
+      }
+      // on handler
+      if (options.eventLimit) {
+        const eventLimit = self.container.querySelectorAll(options.eventLimit)
+        if (eventLimit.length) {
+          if (!Xt.contains(eventLimit, e.target) || e.target.closest('.event-force')) {
             self.eventOn(el, false, e)
           }
         } else {
           self.eventOn(el, false, e)
         }
+      } else {
+        self.eventOn(el, false, e)
       }
     }
   }
@@ -664,37 +658,31 @@ class Toggle {
   eventOffHandler(element, e) {
     const self = this
     const options = self.options
-    // handler
-    if (
-      element === e.target || // @FIX on.xt and off.xt event bubbles
-      element.contains(e.target) // @FIX on.xt and off.xt event bubbles (use only in library)
-    ) {
-      // @FIX targets handler
-      const el = self.getElements(element)[0]
-      // @FIX filter triggered from library (use only in library)
-      if (!e || !e.detail || !e.detail.skip) {
-        // event block
-        if (options.offBlock) {
-          const now = new Date().getTime()
-          const old = Xt.dataStorage.get(el, self.componentNamespace + 'EventBlock' + e.type) || 0
-          Xt.dataStorage.set(el, self.componentNamespace + 'EventBlock' + e.type, now)
-          if (now - old < options.offBlock) {
-            return
-          }
+    // @FIX targets handler
+    const el = self.getElements(element)[0]
+    // @FIX filter triggered from library (use only in library)
+    if (!e || !e.detail || !e.detail.skip) {
+      // event block
+      if (options.offBlock) {
+        const now = new Date().getTime()
+        const old = Xt.dataStorage.get(el, self.componentNamespace + 'EventBlock' + e.type) || 0
+        Xt.dataStorage.set(el, self.componentNamespace + 'EventBlock' + e.type, now)
+        if (now - old < options.offBlock) {
+          return
         }
-        // off handler
-        if (options.eventLimit) {
-          const eventLimit = self.container.querySelectorAll(options.eventLimit)
-          if (eventLimit.length) {
-            if (!Xt.contains(eventLimit, e.target) || e.target.closest('.event-force')) {
-              self.eventOff(el, false, e)
-            }
-          } else {
+      }
+      // off handler
+      if (options.eventLimit) {
+        const eventLimit = self.container.querySelectorAll(options.eventLimit)
+        if (eventLimit.length) {
+          if (!Xt.contains(eventLimit, e.target) || e.target.closest('.event-force')) {
             self.eventOff(el, false, e)
           }
         } else {
           self.eventOff(el, false, e)
         }
+      } else {
+        self.eventOff(el, false, e)
       }
     }
   }
@@ -765,6 +753,7 @@ class Toggle {
     // @FIX filter triggered from library (use only in library)
     if (!e || !e.detail || !e.detail.skip) {
       if (!self.detail.autoPaused) {
+        // handler
         self.eventAutoPause()
         // paused
         self.detail.autoPaused = true
@@ -781,6 +770,7 @@ class Toggle {
     // @FIX filter triggered from library (use only in library)
     if (!e || !e.detail || !e.detail.skip) {
       if (self.detail.autoPaused) {
+        // handler
         self.eventAutoStart()
         // paused
         self.detail.autoPaused = false
@@ -895,7 +885,7 @@ class Toggle {
     // listener dispatch
     const detail = self.eDetailSet()
     detail.deferred = deferred
-    el.dispatchEvent(new CustomEvent('imageLoaded.xt', { bubbles: true, detail: detail }))
+    el.dispatchEvent(new CustomEvent('imageLoaded.xt', { detail: detail }))
     // imageLoadedInit
     if (options.imageLoadedInit && deferred) {
       clearTimeout(Xt.dataStorage.get(self.object, 'xt' + self.componentNamespace + 'imageLoadedInit' + 'Timeout'))
@@ -1680,7 +1670,7 @@ class Toggle {
       // @FIX loop when listening and triggering from outside
       if (!obj[type].event || obj[type].event.type !== 'on.xt') {
         // listener dispatch
-        el.dispatchEvent(new CustomEvent('on.xt', { bubbles: true, detail: obj[type].detail }))
+        el.dispatchEvent(new CustomEvent('on.xt', { detail: obj[type].detail }))
       }
     } else if (actionCurrent === 'Off') {
       // deactivate
@@ -1699,7 +1689,7 @@ class Toggle {
       // @FIX loop when listening and triggering from outside
       if (!obj[type].event || obj[type].event.type !== 'off.xt') {
         // listener dispatch
-        el.dispatchEvent(new CustomEvent('off.xt', { bubbles: true, detail: obj[type].detail }))
+        el.dispatchEvent(new CustomEvent('off.xt', { detail: obj[type].detail }))
       }
     }
     // queue
@@ -1768,7 +1758,7 @@ class Toggle {
       self.specialCollapse('Reset', el, before, after)
       // listener dispatch
       if (!obj[type].event || obj[type].event.type !== 'ondone.xt') {
-        el.dispatchEvent(new CustomEvent('ondone.xt', { bubbles: true, detail: obj[type].detail }))
+        el.dispatchEvent(new CustomEvent('ondone.xt', { detail: obj[type].detail }))
       }
     } else if (actionCurrent === 'Off') {
       // reset
@@ -1814,7 +1804,7 @@ class Toggle {
       }
       // listener dispatch
       if (!obj[type].event || obj[type].event.type !== 'offdone.xt') {
-        el.dispatchEvent(new CustomEvent('offdone.xt', { bubbles: true, detail: obj[type].detail }))
+        el.dispatchEvent(new CustomEvent('offdone.xt', { detail: obj[type].detail }))
       }
     }
     // queue
@@ -2842,13 +2832,14 @@ Xt.mount.push({
 
     // init
 
-    const self = new Xt.Toggle(object, options)
+    let self = new Xt.Toggle(object, options)
 
     // unmount
 
-    return function unmount() {
+    const unmount = function() {
       self.destroy()
       self = null
     }
+    return unmount
   },
 })

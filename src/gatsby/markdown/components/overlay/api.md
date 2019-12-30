@@ -81,22 +81,39 @@ Listen to events this way:
 
 ```jsx
 document.querySelector('#my-element-or-target').addEventListener('on.xt', function(e) {
-  // add this check on events with bubbles: true
-  if (this === e.target) {
+  // logic
+})
+```
+
+Listen to events delegation with **useCapture** this way:
+
+```jsx
+document.querySelector('#my-object').addEventListener('on.xt', function(e) {
+  const el = e.target
+  // useCapture delegation
+  if (e.detail.self.elements.includes(el)) {
     // logic
   }
-})
+}, true)
+
+document.querySelector('#my-object').addEventListener('on.xt', function(e) {
+  const tr = e.target
+  // useCapture delegation
+  if (e.detail.self.targets.includes(tr)) {
+    // logic
+  }
+}, true)
 ```
 
 <div class="table-scroll">
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `on.xt`       | `elements` `targets` | Activation event (`bubbles: true`)             |
-| Event                   | `off.xt`      | `elements` `targets` | Deactivation event (`bubbles: true`)            |
-| Event                   | `ondone.xt`           | `elements` `targets` | Activation event after delay and duration (`bubbles: true`)             |
-| Event                   | `offdone.xt`           | `elements` `targets` | Deactivation event after delay and duration (`bubbles: true`)             |
-| Event                   | `imageLoaded.xt`           | `elements` `targets` | Images loaded event (`bubbles: true`)            |
+| Event                   | `on.xt`       | `elements` `targets` | Activation event             |
+| Event                   | `off.xt`      | `elements` `targets` | Deactivation event            |
+| Event                   | `ondone.xt`           | `elements` `targets` | Activation event after delay and duration             |
+| Event                   | `offdone.xt`           | `elements` `targets` | Deactivation event after delay and duration             |
+| Event                   | `imageLoaded.xt`           | `elements` `targets` | Images loaded event            |
 | Event                   | `init.xt`           | `object` | Init event             |
 
 </div>
