@@ -116,8 +116,6 @@ class Toggle {
    */
   initScope() {
     const self = this
-    // @FIX performances
-    self.detail.objectWidth = self.object.offsetWidth
     // elements
     self.initScopeElements()
     // targets
@@ -2613,22 +2611,18 @@ class Toggle {
    */
   eventStatusHandler(e = null) {
     const self = this
-    // handler
-    Xt.eventDelay(
-      e,
-      self.object,
-      function() {
-        // @FIX performances
-        const detail = self.detail.objectWidth
-        const val = self.object.offsetWidth
-        if (detail !== val) {
-          //console.debug(self.object, detail, val)
-          self.detail.objectWidth = val
+    // triggering e.detail.inside
+    if (!e || !e.detail || !e.detail.inside || e.detail.inside.contains(self.object)) {
+      Xt.eventDelay(
+        e,
+        self.object,
+        function() {
+          // handler
           self.eventStatus()
-        }
-      },
-      self.componentNamespace + 'Status'
-    )
+        },
+        self.componentNamespace + 'Status'
+      )
+    }
   }
 
   /**

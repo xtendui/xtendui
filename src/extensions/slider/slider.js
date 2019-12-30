@@ -428,8 +428,8 @@ class Slider extends Xt.Toggle {
       }
     }
     // resize
-    const resizeHandler = Xt.dataStorage.put(window, 'resize' + '/' + self.namespace, self.eventResizeHandler.bind(self).bind(self))
-    addEventListener('resize', resizeHandler)
+    const reinitHandler = Xt.dataStorage.put(window, 'resize' + '/' + self.namespace, self.eventReinitHandler.bind(self).bind(self))
+    addEventListener('resize', reinitHandler)
   }
 
   //
@@ -576,27 +576,21 @@ class Slider extends Xt.Toggle {
   }
 
   /**
-   * resize
+   * reinit
    * @param {Event} e
    */
-  eventResizeHandler(e) {
+  eventReinitHandler(e) {
     const self = this
-    // reinit
-    if (!self.initial) {
+    // triggering e.detail.inside
+    if (!e || !e.detail || !e.detail.inside || e.detail.inside.contains(self.object)) {
       Xt.eventDelay(
         e,
         self.object,
         function() {
-          // @FIX performances
-          const detail = self.dragger ? self.detail.draggerWidth : self.detail.objectWidth
-          const val = self.dragger ? self.dragger.offsetWidth : self.object.offsetWidth
-          if (detail !== val) {
-            //console.debug(self.object, detail, val)
-            self.dragger ? (self.detail.draggerWidth = val) : (self.detail.objectWidth = val)
-            self.reinit()
-          }
+          // handler
+          self.reinit()
         },
-        self.componentNamespace + 'Resize'
+        self.componentNamespace + 'Reinit'
       )
     }
   }

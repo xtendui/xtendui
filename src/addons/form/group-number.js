@@ -6,6 +6,7 @@ Xt.mount.push({
     // methods
 
     function inputNumberChange(step, e) {
+      // @FIX filter triggered from library (use only in library)
       if (!e || !e.detail || !e.detail.skip) {
         const input = object.querySelector('input')
         let val = parseFloat(input.value)

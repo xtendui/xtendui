@@ -100,11 +100,13 @@ const populateBlock = function() {
     }
     // move code block
     const appendOrigin = document.querySelector('[data-xt-origin="toggle_open-full-content"]')
-    content.childNodes[0].classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
-    appendOrigin.before(content.childNodes[0])
+    const moving = content.childNodes[0]
+    moving.classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
+    appendOrigin.before(moving)
     appendOrigin.remove()
-    // trigger resize
-    dispatchEvent(new CustomEvent('resize', { detail: { force: true } }))
+    // @FIX reinit because changing tabs or going fullscreen
+    // triggering e.detail.inside
+    dispatchEvent(new CustomEvent('resize', { detail: { force: true, inside: moving.querySelector('.gatsby_demo_item.active .gatsby_demo_source') } }))
     // set hash
     window.history.pushState('', '/', window.location.pathname)
   })
@@ -544,12 +546,11 @@ const populateInline = function(item) {
       targets: '.gatsby_demo_code_body_item',
       min: 1,
     })
-    // @FIX reinit because changing tabs makes demo visible so need reinit
+    // @FIX reinit because changing tabs or going fullscreen
     item.addEventListener('ondone.xt', function(e) {
       if (!self.initial) {
-        for (const component of item.querySelectorAll('[data-xt-name]')) {
-          component.dispatchEvent(new CustomEvent('reinit.xt'))
-        }
+        // triggering e.detail.inside
+        dispatchEvent(new CustomEvent('resize', { detail: { force: true, inside: item.querySelector('.gatsby_demo_item.active .gatsby_demo_source') } }))
       }
     })
   }
