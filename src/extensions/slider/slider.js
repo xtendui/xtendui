@@ -44,7 +44,10 @@ class Slider extends Xt.Toggle {
     self.initSliderPags()
     // initSliderPos
     if (self.dragger) {
-      self.initSliderPos()
+      // @FIX raf because needs to execute initStart before calculating positions
+      requestAnimationFrame(function() {
+        self.initSliderPos()
+      })
     }
     // elements
     self.initScopeElements()
