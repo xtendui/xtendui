@@ -42,13 +42,13 @@ Xt.mount.push({
       const tr = self.targets.filter(x => self.hasCurrent(x))[0]
       // mask
       gsap.set(tr, { translateX: -self.detail.xPosOld + 'px' })
-      gsap.to(tr, { duration: Xt.vars.timeMedium, translateX: 0, opacity: 1, ease: Xt.vars.easeOut })
+      gsap.to(tr, { translateX: 0, opacity: 1, duration: Xt.vars.timeMedium, ease: Xt.vars.easeOut })
       gsap.set(self.dragger, { translateX: self.detail.xPosOld })
-      gsap.to(self.dragger, { duration: Xt.vars.timeMedium, translateX: 0, ease: Xt.vars.easeOut })
+      gsap.to(self.dragger, { translateX: 0, duration: Xt.vars.timeMedium, ease: Xt.vars.easeOut })
       // content
       const contents = tr.querySelectorAll('.card-item > *')
       for (const content of contents) {
-        gsap.to(content, { duration: Xt.vars.timeMedium, translateX: 0, opacity: 1, ease: Xt.vars.easeOut })
+        gsap.to(content, { translateX: 0, opacity: 1, duration: Xt.vars.timeMedium, ease: Xt.vars.easeOut })
       }
     }
 
@@ -80,14 +80,14 @@ Xt.mount.push({
           gsap.set(tr, { opacity: 0 })
           // mask
           gsap.set(tr, { translateX: -xMax * direction })
-          gsap.to(tr, { duration: Xt.vars.timeMedium, translateX: 0, opacity: 1, ease: Xt.vars.easeOut })
+          gsap.to(tr, { translateX: 0, opacity: 1, duration: Xt.vars.timeMedium, ease: Xt.vars.easeOut })
           gsap.set(self.dragger, { translateX: xMax * direction })
-          gsap.to(self.dragger, { duration: Xt.vars.timeMedium, translateX: 0, ease: Xt.vars.easeOut })
+          gsap.to(self.dragger, { translateX: 0, duration: Xt.vars.timeMedium, ease: Xt.vars.easeOut })
           // content
           const contents = tr.querySelectorAll('.card-item > *')
           for (const content of contents) {
             gsap.set(content, { translateX: 100 * direction, opacity: 0 })
-            gsap.to(content, { duration: Xt.vars.timeMedium, translateX: 0, opacity: 1, ease: Xt.vars.easeOut })
+            gsap.to(content, { translateX: 0, opacity: 1, duration: Xt.vars.timeMedium, ease: Xt.vars.easeOut })
           }
         }
       }
@@ -108,12 +108,12 @@ Xt.mount.push({
           direction = -1
         }
         // mask
-        gsap.to(tr, { duration: Xt.vars.timeMedium, translateX: xMax * direction, opacity: 0, ease: Xt.vars.easeOut })
-        gsap.to(self.dragger, { duration: Xt.vars.timeMedium, translateX: -xMax * direction, ease: Xt.vars.easeOut })
+        gsap.to(tr, { translateX: xMax * direction, opacity: 0, duration: Xt.vars.timeMedium, ease: Xt.vars.easeOut })
+        gsap.to(self.dragger, { translateX: -xMax * direction, duration: Xt.vars.timeMedium, ease: Xt.vars.easeOut })
         // content
         const contents = tr.querySelectorAll('.card-item > *')
         for (const content of contents) {
-          gsap.to(content, { duration: Xt.vars.timeMedium, translateX: -100 * direction, opacity: 0, ease: Xt.vars.easeOut })
+          gsap.to(content, { translateX: -100 * direction, opacity: 0, duration: Xt.vars.timeMedium, ease: Xt.vars.easeOut })
         }
       }
     }

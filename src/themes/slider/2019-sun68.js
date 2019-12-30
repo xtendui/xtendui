@@ -57,7 +57,7 @@ Xt.mount.push({
       const target = self.targets.filter(x => x.classList.contains('active'))[0]
       // img
       const img = target.querySelector('.slide_img_inner')
-      gsap.to(img, { duration: timeImg, translateX: 0, opacity: 1, scale: 1, ease: Xt.vars.easeCheetah })
+      gsap.to(img, { translateX: 0, opacity: 1, scale: 1, duration: timeImg, ease: Xt.vars.easeCheetah })
     }
 
     self.dragger.addEventListener('dragreset.xt.slider', eventDragReset)
@@ -71,10 +71,10 @@ Xt.mount.push({
         const img = tr.querySelector('.slide_img_inner')
         if (self.initial) {
           gsap.set(img, { translateX: 0, opacity: 1, scale: 1 })
-          gsap.to(img, { duration: timeImgZoom, scale: zoomImg, ease: Xt.vars.easeSineInOut, repeat: -1, yoyo: true })
+          gsap.to(img, { scale: zoomImg, duration: timeImgZoom, ease: Xt.vars.easeSineInOut, repeat: -1, yoyo: true })
         } else {
-          gsap.to(img, { duration: timeImg, translateX: 0, opacity: 1, ease: Xt.vars.easeCheetah }).eventCallback('onComplete', function() {
-            gsap.to(img, { duration: timeImgZoom, scale: zoomImg, ease: Xt.vars.easeSineInOut, repeat: -1, yoyo: true })
+          gsap.to(img, { translateX: 0, opacity: 1, duration: timeImg, ease: Xt.vars.easeCheetah }).eventCallback('onComplete', function() {
+            gsap.to(img, { scale: zoomImg, duration: timeImgZoom, ease: Xt.vars.easeSineInOut, repeat: -1, yoyo: true })
           })
         }
       }
@@ -96,7 +96,7 @@ Xt.mount.push({
         }
         // img
         const img = tr.querySelector('.slide_img_inner')
-        gsap.to(img, { duration: timeImg, x: imgSize * direction, opacity: 0.5, ease: Xt.vars.easeCheetah }).eventCallback('onComplete', function() {
+        gsap.to(img, { x: imgSize * direction, opacity: 0.5, duration: timeImg, ease: Xt.vars.easeCheetah }).eventCallback('onComplete', function() {
           gsap.set(img, { translateX: 0, opacity: 1, scale: 1 })
         })
       }

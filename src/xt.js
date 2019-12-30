@@ -967,14 +967,14 @@ if (typeof window !== 'undefined') {
   gsap.set(object, {
     backgroundColor: animCss.backgroundColor.current,
     borderColor: animCss.borderColor.current,
-    boxShadow: animCss.boxShadow.current
+    boxShadow: animCss.boxShadow.current,
   })
   gsap.to(object, {
-    duration: 1,
     backgroundColor: animCss.backgroundColor.final,
     borderColor: animCss.borderColor.final,
     boxShadow: animCss.boxShadow.final,
-    ease: easeIn
+    duration: Xt.vars.timeSmall,
+    ease: Xt.vars.easeLinear,
   })
   */
   Xt.animCss = function(element, properties) {

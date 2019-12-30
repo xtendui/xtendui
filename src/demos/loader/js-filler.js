@@ -14,7 +14,7 @@ Xt.mount.push({
         object.classList.add('active')
         object.classList.remove('out')
         gsap.set(filler, { width: 0 })
-        gsap.to(filler, { duration: Xt.vars.timeGiant, width: '100%', ease: Xt.vars.easeLinear })
+        gsap.to(filler, { width: '100%', duration: Xt.vars.timeGiant, ease: Xt.vars.easeLinear })
         setTimeout(loaderTimeout, Xt.vars.timeGiant)
       } else {
         object.classList.remove('active')
