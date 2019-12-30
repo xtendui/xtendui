@@ -5,7 +5,7 @@ Xt.mount.push({
   mount: function(object) {
     // init
 
-    let self = new Xt.Toggle(object, {
+    const self = new Xt.Toggle(object, {
       delayOn: function(current) {
         return Math.min(current * 150, 300)
       },
@@ -28,7 +28,7 @@ Xt.mount.push({
   mount: function(object) {
     // init
 
-    let self = new Xt.Toggle(object, {
+    const self = new Xt.Toggle(object, {
       on: 'mouseenter',
       off: 'mouseleave',
       delayOn: function(current) {

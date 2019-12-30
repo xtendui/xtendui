@@ -1,8 +1,10 @@
 ---
-type: "Themes"
-badge: "Themes"
-parent: "Test"
-title: "Test"
+type: "Faqs"
+badge: "Faqs"
+parent: "Demos"
+title: "Vanilla Iframe"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-categories: ["100-Test"]
+demos: [
+  "iframe/components/test/vanilla-iframe"
+]
 ---

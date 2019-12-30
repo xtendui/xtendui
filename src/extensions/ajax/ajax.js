@@ -400,7 +400,7 @@ Xt.mount.push({
 
     // init
 
-    let self = new Xt.Ajax(object, options)
+    const self = new Xt.Ajax(object, options)
 
     // unmount
 

@@ -336,7 +336,7 @@ Xt.mount.push({
 
     // init
 
-    let self = new Xt.Scroll(object, options)
+    const self = new Xt.Scroll(object, options)
 
     // unmount
 

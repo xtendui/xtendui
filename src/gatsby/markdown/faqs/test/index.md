@@ -77,7 +77,7 @@ body {
 ```
 
 ```jsx
-let self = new Xt.Scroll(document.documentElement, {
+const self = new Xt.Scroll(document.documentElement, {
 });
 ```
 

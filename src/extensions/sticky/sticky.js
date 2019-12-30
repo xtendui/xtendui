@@ -463,7 +463,7 @@ Xt.mount.push({
 
     // init
 
-    let self = new Xt.Sticky(object, options)
+    const self = new Xt.Sticky(object, options)
 
     // unmount
 

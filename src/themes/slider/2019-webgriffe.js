@@ -7,7 +7,7 @@ Xt.mount.push({
   mount: function(object) {
     // slider
 
-    let self = new Xt.Slider(object, {
+    const self = new Xt.Slider(object, {
       durationOn: Xt.vars.timeGiant,
       durationOff: Xt.vars.timeGiant,
       loop: true,

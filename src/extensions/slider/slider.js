@@ -1125,7 +1125,7 @@ Xt.mount.push({
 
     // init
 
-    let self = new Xt.Slider(object, options)
+    const self = new Xt.Slider(object, options)
 
     // unmount
 

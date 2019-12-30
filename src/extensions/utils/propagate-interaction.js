@@ -133,7 +133,7 @@ Xt.mount.push({
 
     // init
 
-    let self = new Xt.PropagateInteraction(object, options)
+    const self = new Xt.PropagateInteraction(object, options)
 
     // unmount
 

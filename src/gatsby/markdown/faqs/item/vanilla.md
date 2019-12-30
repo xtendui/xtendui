@@ -1,10 +1,10 @@
 ---
-type: "Themes"
-badge: "Themes"
-parent: "Test"
-title: "React"
+type: "Faqs"
+badge: "Faqs"
+parent: "Demos"
+title: "Vanilla"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 demos: [
-  "react/demos/test/react"
+  "vanilla/components/test/vanilla"
 ]
 ---

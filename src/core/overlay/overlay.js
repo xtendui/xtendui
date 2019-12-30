@@ -89,7 +89,7 @@ Xt.mount.push({
 
     // init
 
-    let self = new Xt.Overlay(object, options)
+    const self = new Xt.Overlay(object, options)
 
     // unmount
 

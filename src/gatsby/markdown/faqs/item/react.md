@@ -1,10 +1,10 @@
 ---
-type: "Themes"
-badge: "Themes"
-parent: "Test"
-title: "Iframe"
+type: "Faqs"
+badge: "Faqs"
+parent: "Demos"
+title: "React"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 demos: [
-  "iframe/components/scroll/mode-infinite"
+  "react/demos/test/react"
 ]
 ---

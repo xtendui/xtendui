@@ -5,7 +5,7 @@ Xt.mount.push({
   mount: function(object) {
     // init
 
-    let self = new Xt.Slider(object, {
+    const self = new Xt.Slider(object, {
       align: 'center',
       drag: { wrap: true },
     })
@@ -64,7 +64,7 @@ Xt.mount.push({
         const tr = `
         <li class="slide col-12">
           <div class="slide-inner">
-  
+
             <div class="card card-slide align-center">
               <div class="card-design"></div>
               <div class="card-inner">
@@ -75,7 +75,7 @@ Xt.mount.push({
                 </div>
               </div>
             </div>
-  
+
           </div>
         </li>`
         targets[targets.length - 1].after(Xt.createElement(tr))

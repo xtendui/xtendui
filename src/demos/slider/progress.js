@@ -9,7 +9,7 @@ Xt.mount.push({
   mount: function(object) {
     // init
 
-    let self = new Xt.Slider(object, {
+    const self = new Xt.Slider(object, {
       auto: {
         time: 4000,
         pause: '[data-xt-pag]',

@@ -35,7 +35,7 @@ Use this markup to create an **overlay**.
   </div>
 </script>
 
-You can use this markup to create an **overlay** with **unique mode**.
+You can use this markup to create an **overlay** with **unique mode** (without toggle).
 
 <script type="text/plain" class="language-markup">
 <div class="overlay active" id="overlay_custom" data-xt-overlay="{ on: false }">

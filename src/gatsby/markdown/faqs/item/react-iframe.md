@@ -1,10 +1,10 @@
 ---
-type: "Themes"
-badge: "Themes"
-parent: "Test"
-title: "Vanilla"
+type: "Faqs"
+badge: "Faqs"
+parent: "Demos"
+title: "React Iframe"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 demos: [
-  "vanilla/components/slider/progress"
+  "iframe/components/test/react-iframe"
 ]
 ---

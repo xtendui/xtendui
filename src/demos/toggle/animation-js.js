@@ -8,7 +8,7 @@ Xt.mount.push({
   mount: function(object) {
     // init
 
-    let self = new Xt.Toggle(object, {
+    const self = new Xt.Toggle(object, {
       durationOn: Xt.vars.timeBig,
       durationOff: Xt.vars.timeBig,
     })

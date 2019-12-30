@@ -2842,7 +2842,7 @@ Xt.mount.push({
 
     // init
 
-    let self = new Xt.Toggle(object, options)
+    const self = new Xt.Toggle(object, options)
 
     // unmount
 
