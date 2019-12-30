@@ -1,10 +1,10 @@
 ---
-type: "Faqs"
-badge: "Faqs"
-parent: "Demos"
-title: "React"
+type: "Tests"
+badge: "Tests"
+parent: "Listing"
+title: "Vanilla Iframe"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 demos: [
-  "react/demos/test/react"
+  "iframe/components/test/vanilla-iframe"
 ]
 ---

@@ -1,8 +1,10 @@
 ---
-type: "Faqs"
-badge: "Faqs"
-parent: "Demos"
-title: "Demos"
+type: "Tests"
+badge: "Tests"
+parent: "Listing"
+title: "Vanilla"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-categories: ["100-Test"]
+demos: [
+  "vanilla/components/test/vanilla"
+]
 ---

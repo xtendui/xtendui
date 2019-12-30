@@ -26,7 +26,7 @@ class DocHead extends React.Component {
         x.post.frontmatter.title !== x.post.frontmatter.parent &&
         x.post.frontmatter.title !== x.post.frontmatter.type
     )
-    return postsExtensions.length ? (
+    return (
       <div>
         <footer className="gatsby_site_article_foot">
           <div className="gatsby_listing_group">
@@ -119,7 +119,7 @@ class DocHead extends React.Component {
           </div>
         </footer>
       </div>
-    ) : null
+    )
   }
 }
 
