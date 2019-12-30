@@ -1,9 +1,9 @@
 ---
-type: "Components"
+type: "Introduction"
 parent: "Setup"
 title: "Setup"
 description: "Installation instruction and compilation."
-categories: ["000-Intro"]
+categories: ["000-Introduction"]
 date: "2000-01-01"
 ---
 

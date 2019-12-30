@@ -39,6 +39,14 @@ class Header extends React.Component {
           <div>
             <div className="gatsby_site_header_links">
               <Link
+                to="/introduction"
+                className={`btn gatsby_btn-site_header_link ${
+                  page && page.post ? (markdownSlug(page.post) === '/' + 'introduction' ? 'active' : page.post.frontmatter.type === 'Introduction' ? 'current' : '') : ''
+                }`}
+              >
+                Introduction
+              </Link>
+              <Link
                 to="/components"
                 className={`btn gatsby_btn-site_header_link ${
                   page && page.post
@@ -67,14 +75,6 @@ class Header extends React.Component {
                 }`}
               >
                 Themes
-              </Link>
-              <Link
-                to="/faqs"
-                className={`btn gatsby_btn-site_header_link ${
-                  page && page.post ? (markdownSlug(page.post) === '/' + 'faqs' ? 'active' : page.post.frontmatter.type === 'Faqs' ? 'current' : '') : ''
-                }`}
-              >
-                Faqs
               </Link>
             </div>
           </div>
