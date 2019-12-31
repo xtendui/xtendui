@@ -627,7 +627,6 @@ class Toggle {
       // @FIX targets handler
       const el = self.getElements(element)[0]
       // event block
-      //console.log(el)
       if (options.onBlock) {
         const now = new Date().getTime()
         const old = Xt.dataStorage.get(el, self.componentNamespace + 'EventBlock' + e.type) || 0
@@ -782,13 +781,15 @@ class Toggle {
 
   /**
    * jump handler
-   * @param {Node|HTMLElement|EventTarget|Window} el
+   * @param {Node|HTMLElement|EventTarget|Window} tr
    * @param {Event} e
    */
-  eventJumpHandler(el, e) {
+  eventJumpHandler(tr, e) {
     const self = this
     // handler
-    self.eventJump(el, e)
+    if (self.targets.includes(tr)) {
+      self.eventJump(tr, e)
+    }
   }
 
   /**
@@ -1437,21 +1438,21 @@ class Toggle {
 
   /**
    * jump
-   * @param {Node|HTMLElement|EventTarget|Window} el
+   * @param {Node|HTMLElement|EventTarget|Window} tr
    * @param {Event} e
    */
-  eventJump(el, e) {
+  eventJump(tr, e) {
     const self = this
     // disabled
     if (self.disabled && !self.initial) {
       return
     }
     // check disabled
-    if (el.closest('.xt-jumps-none')) {
+    if (tr.closest('.xt-jumps-none')) {
       return
     }
     // jump
-    const element = self.getTargets(el)[0]
+    const element = self.getElements(tr)[0]
     if (self.checkOn(element)) {
       self.eventOn(element)
     }

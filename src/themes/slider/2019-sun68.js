@@ -96,9 +96,11 @@ Xt.mount.push({
         }
         // img
         const img = tr.querySelector('.slide_img_inner')
-        gsap.to(img, { x: imgSize * direction, opacity: 0.5, scale: 1, duration: timeImg, ease: Xt.vars.easeCheetah }).eventCallback('onComplete', function() {
-          gsap.set(img, { translateX: 0, opacity: 1 })
-        })
+        gsap
+          .to(img, { translateX: imgSize * direction, opacity: 0.5, scale: 1, duration: timeImg, ease: Xt.vars.easeCheetah })
+          .eventCallback('onComplete', function() {
+            gsap.set(img, { translateX: 0, opacity: 1 })
+          })
       }
     }
 
