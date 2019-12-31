@@ -105,18 +105,13 @@ const populateBlock = function() {
     moving.classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
     appendOrigin.before(moving)
     appendOrigin.remove()
+    // triggering e.detail.inside
+    requestAnimationFrame(function () {
+      dispatchEvent(new CustomEvent('resize', { detail: { force: true, inside: moving.querySelector('.gatsby_demo_source') } }))
+    })
     // set hash
     window.history.pushState('', '/', window.location.pathname)
   })
-  // get hash
-  if (location.hash) {
-    const item = document.querySelector('[id="' + kebabCase(location.hash) + '"]')
-    if (item) {
-      const demo = item.closest('.gatsby_demo')
-      demo.querySelector('.btn-open-full').classList.add('active')
-      document.scrollingElement.scrollTo(0, document.scrollingElement.scrollTop + demo.offsetTop)
-    }
-  }
 }
 
 /**
@@ -241,6 +236,16 @@ const populateDemo = function(container, i) {
       }
     })
   }
+  // get hash
+  if (location.hash) {
+    const item = document.querySelector('[id="' + kebabCase(location.hash) + '"]')
+    if (item) {
+      const demo = item.closest('.gatsby_demo')
+      demo.querySelector('.btn-open-full').classList.add('active')
+      document.scrollingElement.scrollTo(0, demo.offsetTop)
+      item.classList.add('active')
+    }
+  }
   // gatsby_demo_tabs_left
   const self = new Xt.Toggle(container, {
     elements: '.gatsby_demo_tabs_left .btn',
@@ -249,9 +254,9 @@ const populateDemo = function(container, i) {
   })
   for (const item of items) {
     item.addEventListener('ondone.xt', function(e) {
-      // triggering e.detail.inside
       if (!self.initial) {
-        dispatchEvent(new CustomEvent('resize', { detail: { force: true, inside: item.querySelector('.gatsby_demo_item.active .gatsby_demo_source') } }))
+        // triggering e.detail.inside
+        dispatchEvent(new CustomEvent('resize', { detail: { force: true, inside: item.querySelector('.gatsby_demo_source') } }))
       }
       if (document.querySelector('#toggle_open-full-trigger').classList.contains('active')) {
         // set hash
