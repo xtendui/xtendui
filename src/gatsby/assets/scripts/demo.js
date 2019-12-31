@@ -1,6 +1,7 @@
 import Prism from 'prismjs'
 import ClipboardJS from 'clipboard'
 import { Xt } from 'xtend-library'
+import kebabCase from 'lodash.kebabcase'
 
 require('prismjs/plugins/unescaped-markup/prism-unescaped-markup')
 require('prismjs/plugins/unescaped-markup/prism-unescaped-markup.css')
@@ -104,16 +105,14 @@ const populateBlock = function() {
     moving.classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
     appendOrigin.before(moving)
     appendOrigin.remove()
-    // @FIX reinit because changing tabs or going fullscreen
-    // triggering e.detail.inside
-    dispatchEvent(new CustomEvent('resize', { detail: { force: true, inside: moving.querySelector('.gatsby_demo_item.active .gatsby_demo_source') } }))
     // set hash
     window.history.pushState('', '/', window.location.pathname)
   })
   // get hash
   if (location.hash) {
-    const demo = document.querySelector(location.hash)
-    if (demo) {
+    const item = document.querySelector('[id="' + kebabCase(location.hash) + '"]')
+    if (item) {
+      const demo = item.closest('.gatsby_demo')
       demo.querySelector('.btn-open-full').classList.add('active')
       document.scrollingElement.scrollTo(0, document.scrollingElement.scrollTop + demo.offsetTop)
     }
@@ -168,6 +167,7 @@ const populateDemo = function(container, i) {
         .join(' ')
     }
     name = item.getAttribute('data-name') ? item.getAttribute('data-name') : name
+    item.setAttribute('id', kebabCase(name))
     if (!name) {
       if (items.length === 1) {
         name = 'demo'
@@ -227,9 +227,6 @@ const populateDemo = function(container, i) {
       }
     }
   }
-  // toggle code
-  const demoId = 'gatsby_demo_' + i
-  container.setAttribute('id', demoId)
   // makeFullscreen
   for (const btnOpenFull of container.querySelectorAll('.btn-open-full')) {
     btnOpenFull.addEventListener('click', function() {
@@ -245,12 +242,26 @@ const populateDemo = function(container, i) {
     })
   }
   // gatsby_demo_tabs_left
-  new Xt.Toggle(container, {
-    elements: '.gatsby_demo_tabs_left .btn:not(.btn-prev-demo):not(.btn-next-demo)',
+  const self = new Xt.Toggle(container, {
+    elements: '.gatsby_demo_tabs_left .btn',
     targets: '.gatsby_demo_item',
     min: 1,
   })
+  for (const item of items) {
+    item.addEventListener('ondone.xt', function(e) {
+      // triggering e.detail.inside
+      if (!self.initial) {
+        dispatchEvent(new CustomEvent('resize', { detail: { force: true, inside: item.querySelector('.gatsby_demo_item.active .gatsby_demo_source') } }))
+      }
+      if (document.querySelector('#toggle_open-full-trigger').classList.contains('active')) {
+        // set hash
+        location.hash = item.getAttribute('id')
+      }
+    })
+  }
   // .btn-show-code
+  const demoId = 'gatsby_demo_' + i
+  container.setAttribute('id', demoId)
   new Xt.Toggle(container.querySelector('.btn-show-code'), {
     targets: '#' + demoId + ' .gatsby_demo_code',
   })
@@ -350,6 +361,7 @@ const populateDemo = function(container, i) {
 const makeFullscreen = function(container) {
   const toggle = document.querySelector('#toggle_open-full-trigger')
   const content = document.querySelector('#toggle_open-full-content')
+  const item = container.querySelector('.gatsby_demo_item.active')
   // toggles
   const listingToggle = container.previousSibling
   if (listingToggle instanceof Element && listingToggle.getAttribute('data-gatsby-listing-toggle')) {
@@ -389,7 +401,6 @@ const makeFullscreen = function(container) {
   // trigger custom reinit
   const full = container.closest('#toggle_open-full')
   if (full) {
-    const item = container.querySelector('.gatsby_demo_item.active')
     item.dispatchEvent(new CustomEvent('on.xt'))
     Xt.animTimeout(full, function() {
       // @FIX two raf or slider gives error with reinit.xt
@@ -400,8 +411,6 @@ const makeFullscreen = function(container) {
       })
     })
   }
-  // set hash
-  location.hash = container.getAttribute('id')
 }
 
 /**
@@ -541,17 +550,10 @@ const populateInline = function(item) {
         el.style.display = 'none'
       }
     }
-    let self = new Xt.Toggle(item, {
+    new Xt.Toggle(item, {
       elements: '.gatsby_demo_code_tabs_left .btn',
       targets: '.gatsby_demo_code_body_item',
       min: 1,
-    })
-    // @FIX reinit because changing tabs or going fullscreen
-    item.addEventListener('ondone.xt', function(e) {
-      if (!self.initial) {
-        // triggering e.detail.inside
-        dispatchEvent(new CustomEvent('resize', { detail: { force: true, inside: item.querySelector('.gatsby_demo_item.active .gatsby_demo_source') } }))
-      }
     })
   }
 }
