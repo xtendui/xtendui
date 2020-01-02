@@ -372,11 +372,11 @@ class Slider extends Xt.Toggle {
     // elements
     for (const el of self.elements) {
       // event on
-      const slideOnHandler = Xt.dataStorage.put(el, 'on.slider' + '/' + self.namespace, self.eventSlideOnHandler.bind(self).bind(self, dragger, el))
-      el.addEventListener('on.xt', slideOnHandler, true) // @FIX useCapture for custom events order on re-init
+      const slideonHandler = Xt.dataStorage.put(el, 'on.slider' + '/' + self.namespace, self.eventSlideonHandler.bind(self).bind(self, dragger, el))
+      el.addEventListener('on.xt', slideonHandler, true) // @FIX useCapture for custom events order on re-init
       // event off
-      const slideOffHandler = Xt.dataStorage.put(el, 'off.slider' + '/' + self.namespace, self.eventSlideOffHandler.bind(self).bind(self, dragger, el))
-      el.addEventListener('off.xt', slideOffHandler, true) // @FIX useCapture for custom events order on re-init
+      const slideoffHandler = Xt.dataStorage.put(el, 'off.slider' + '/' + self.namespace, self.eventSlideoffHandler.bind(self).bind(self, dragger, el))
+      el.addEventListener('off.xt', slideoffHandler, true) // @FIX useCapture for custom events order on re-init
     }
     // targets
     for (const tr of self.targets) {
@@ -385,18 +385,18 @@ class Slider extends Xt.Toggle {
         tr.classList.add('xt-links-none')
       }
       // event on
-      const slideOnHandler = Xt.dataStorage.put(tr, 'on.slider' + '/' + self.namespace, self.eventSlideOnHandler.bind(self).bind(self, dragger, tr))
-      tr.addEventListener('on.xt', slideOnHandler, true) // @FIX useCapture for custom events order on re-init
+      const slideonHandler = Xt.dataStorage.put(tr, 'on.slider' + '/' + self.namespace, self.eventSlideonHandler.bind(self).bind(self, dragger, tr))
+      tr.addEventListener('on.xt', slideonHandler, true) // @FIX useCapture for custom events order on re-init
       // event off
-      const slideOffHandler = Xt.dataStorage.put(tr, 'off.slider' + '/' + self.namespace, self.eventSlideOffHandler.bind(self).bind(self, dragger, tr))
-      tr.addEventListener('off.xt', slideOffHandler, true) // @FIX useCapture for custom events order on re-init
+      const slideoffHandler = Xt.dataStorage.put(tr, 'off.slider' + '/' + self.namespace, self.eventSlideoffHandler.bind(self).bind(self, dragger, tr))
+      tr.addEventListener('off.xt', slideoffHandler, true) // @FIX useCapture for custom events order on re-init
     }
     // dragger
     if (options.drag) {
       // @FIX prevent firefox image dragging
       for (const img of self.dragger.querySelectorAll('img')) {
-        let imgFixHandler = Xt.dataStorage.put(img, 'mousedown' + '/' + self.namespace, self.eventImgFixHandler.bind(self))
-        img.addEventListener('mousedown', imgFixHandler)
+        let imgnodragHandler = Xt.dataStorage.put(img, 'mousedown' + '/' + self.namespace, self.eventImgnodragHandler.bind(self))
+        img.addEventListener('mousedown', imgnodragHandler)
       }
       // drag start
       const dragstartHandler = Xt.dataStorage.put(
@@ -438,12 +438,12 @@ class Slider extends Xt.Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
-  eventSlideOnHandler(dragger, el, e) {
+  eventSlideonHandler(dragger, el, e) {
     const self = this
     // useCapture delegation
     if (self.elements.includes(el) || self.targets.includes(el)) {
       // handler
-      self.eventSlideOn(dragger, el, e)
+      self.eventSlideon(dragger, el, e)
     }
   }
 
@@ -453,12 +453,12 @@ class Slider extends Xt.Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
-  eventSlideOffHandler(dragger, el, e) {
+  eventSlideoffHandler(dragger, el, e) {
     const self = this
     // useCapture delegation
     if (self.elements.includes(el) || self.targets.includes(el)) {
       // handler
-      self.eventSlideOff(dragger, el, e)
+      self.eventSlideoff(dragger, el, e)
     }
   }
 
@@ -466,7 +466,7 @@ class Slider extends Xt.Toggle {
    * drag fix handler
    * @param {Event} e
    */
-  eventImgFixHandler(e) {
+  eventImgnodragHandler(e) {
     e.preventDefault()
   }
 
@@ -601,7 +601,7 @@ class Slider extends Xt.Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
-  eventSlideOn(dragger, el, e) {
+  eventSlideon(dragger, el, e) {
     const self = this
     const options = self.options
     // disabled
@@ -612,12 +612,12 @@ class Slider extends Xt.Toggle {
     const slides = self.getTargets(el)
     const slide = slides[0]
     // only one call per group
-    if (Xt.dataStorage.get(slide, self.componentNamespace + 'SlideOnDone')) {
+    if (Xt.dataStorage.get(slide, self.componentNamespace + 'SlideonDone')) {
       return
     }
-    Xt.dataStorage.set(slide, self.componentNamespace + 'SlideOnDone', true)
+    Xt.dataStorage.set(slide, self.componentNamespace + 'SlideonDone', true)
     requestAnimationFrame(function() {
-      Xt.dataStorage.remove(slide, self.componentNamespace + 'SlideOnDone')
+      Xt.dataStorage.remove(slide, self.componentNamespace + 'SlideonDone')
     })
     // disable links not active slide
     for (const target of slides) {
@@ -684,9 +684,11 @@ class Slider extends Xt.Toggle {
             function() {
               if (self.currentIndex < min) {
                 self.initial = true
+                self.initialContinue = true
                 self.goToIndex(max + self.currentIndex - min + 1, true) // wrap around xt-wrap items
               } else if (self.currentIndex > max) {
                 self.initial = true
+                self.initialContinue = true
                 self.goToIndex(min + self.currentIndex - max - 1, true) // wrap around xt-wrap items
               }
             },
@@ -703,19 +705,19 @@ class Slider extends Xt.Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
-  eventSlideOff(dragger, el, e) {
+  eventSlideoff(dragger, el, e) {
     const self = this
     const options = self.options
     // @FIX targets handler
     const slides = self.getTargets(el)
     const slide = slides[0]
     // only one call per group
-    if (Xt.dataStorage.get(slide, self.componentNamespace + 'SlideOffDone')) {
+    if (Xt.dataStorage.get(slide, self.componentNamespace + 'SlideoffDone')) {
       return
     }
-    Xt.dataStorage.set(slide, self.componentNamespace + 'SlideOffDone', true)
+    Xt.dataStorage.set(slide, self.componentNamespace + 'SlideoffDone', true)
     requestAnimationFrame(function() {
-      Xt.dataStorage.remove(slide, self.componentNamespace + 'SlideOffDone')
+      Xt.dataStorage.remove(slide, self.componentNamespace + 'SlideoffDone')
     })
     // disable links not active slide
     for (const target of slides) {

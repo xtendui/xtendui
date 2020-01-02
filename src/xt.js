@@ -15,7 +15,7 @@ Xt.currents = {} // Xt currents based on namespace (so shared between Xt objects
 Xt.optionsGlobal = {}
 Xt.resizeDelay = 100
 Xt.scrollDelay = false
-Xt.mediaLoadedDelay = 50
+Xt.medialoadedDelay = 50
 Xt.focusables = 'a, button, details, input, iframe, select, textarea'
 
 //

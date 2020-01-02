@@ -88,7 +88,7 @@ Xt.mount.push({
         const targets = self.targets.filter(x => !x.classList.contains('xt-wrap'))
         const trIndex = targets.length + 1
         const tr = `
-        <li class="slide col-12">
+        <li class="slide col-6 col-4-sm">
           <div class="slide-inner">
 
             <div class="card card-slide align-center">

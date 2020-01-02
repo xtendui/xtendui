@@ -285,6 +285,25 @@ Use `wheel: { selector: 'object' }` or `wheel: { selector: QuerySelector }` to e
   </demovanilla>
 </demo>
 
+### Auto
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Default                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `auto.time:Milliseconds`                          | `false`        | Automatic activation time            |
+| Option                  | `auto.initial:Boolean`                          | `true`        | Automatic activation on initial            |
+| Option                  | `auto.step:Number`                          | `1`        | Automatic activation steps            |
+| Option                  | `auto.inverse:Boolean`                          | `false`        | Automatic activation inverse order            |
+| Option                  | `auto.pause:Query`                          | `false`        | Elements that pause automatic on mouseenter            |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/slider/auto">
+  </demovanilla>
+</demo>
+
 ### Other
 
 <div class="table-scroll">

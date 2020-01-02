@@ -178,6 +178,7 @@ class Toggle {
     // initial
     let currents = 0
     self.initial = true
+    self.initialContinue = false
     self.currentIndex = null
     // [disabled]
     self.destroyDisabled()
@@ -229,13 +230,13 @@ class Toggle {
           self.initialCurrents = self.getCurrents().slice(0)
         })
       }
-      // auto
-      if (options.auto && options.auto.time) {
-        self.eventAutostart()
-      }
-      // no currents reset initial
+      // no currents
       if (currents === 0) {
         self.initial = false
+        // auto
+        if (options.auto && options.auto.time) {
+          self.eventAutostart()
+        }
       }
     }
     // init events
@@ -433,19 +434,19 @@ class Toggle {
           el.addEventListener(event, onHandler)
         }
         // @FIX prevents click links on click until clicked two times
-        const withLinkStartTouchHandler = Xt.dataStorage.put(
+        const withlinkStartTouchHandler = Xt.dataStorage.put(
           el,
           'touchend.withlink' + '/' + self.namespace,
-          self.eventWithLinkStartHandler.bind(self).bind(self, el)
+          self.eventWithlinkStartHandler.bind(self).bind(self, el)
         )
-        el.addEventListener('touchend', withLinkStartTouchHandler)
+        el.addEventListener('touchend', withlinkStartTouchHandler)
         if (!events.includes('mouseenter') && !events.includes('mousehover')) {
-          const withLinkStartMouseHandler = Xt.dataStorage.put(
+          const withlinkStartMouseHandler = Xt.dataStorage.put(
             el,
             'mouseup.withlink' + '/' + self.namespace,
-            self.eventWithLinkStartHandler.bind(self).bind(self, el)
+            self.eventWithlinkStartHandler.bind(self).bind(self, el)
           )
-          el.addEventListener('mouseup', withLinkStartMouseHandler)
+          el.addEventListener('mouseup', withlinkStartMouseHandler)
         }
         // active
         Xt.dataStorage.put(el, 'active.withlink' + '/' + self.namespace, el.classList.contains(self.classes[0]))
@@ -487,7 +488,7 @@ class Toggle {
       const autostopHandler = Xt.dataStorage.put(self.object, 'autostop' + '/' + self.namespace, self.eventAutostop.bind(self))
       self.object.addEventListener('autostop.trigger.xt', autostopHandler)
       // focus auto
-      const focusHandler = Xt.dataStorage.put(window, 'focus' + '/' + self.namespace, self.eventAutoResumeHandler.bind(self))
+      const focusHandler = Xt.dataStorage.put(window, 'focus' + '/' + self.namespace, self.eventAutoresumeHandler.bind(self))
       addEventListener('focus', focusHandler)
       // blur auto
       const blurHandler = Xt.dataStorage.put(window, 'blur' + '/' + self.namespace, self.eventAutopauseHandler.bind(self))
@@ -505,10 +506,10 @@ class Toggle {
               el.addEventListener(event, autopauseOnHandler)
             }
             // resume
-            const autoResumeOnHandler = Xt.dataStorage.put(el, 'mouseleave blur' + '/' + self.namespace, self.eventAutoResumeHandler.bind(self))
+            const autoresumeOnHandler = Xt.dataStorage.put(el, 'mouseleave blur' + '/' + self.namespace, self.eventAutoresumeHandler.bind(self))
             const eventsResume = ['mouseleave', 'blur']
             for (const event of eventsResume) {
-              el.addEventListener(event, autoResumeOnHandler)
+              el.addEventListener(event, autoresumeOnHandler)
             }
           }
         }
@@ -545,19 +546,19 @@ class Toggle {
       for (const keyboard of keyboards) {
         keyboard.setAttribute('tabindex', '0')
         // focus
-        const keyboardFocusHandler = Xt.dataStorage.put(
+        const keyboardfocusHandler = Xt.dataStorage.put(
           keyboard,
           'focus.keyboard' + '/' + self.namespace,
-          self.eventKeyboardFocusHandler.bind(self).bind(self, keyboard)
+          self.eventKeyboardfocusHandler.bind(self).bind(self, keyboard)
         )
-        keyboard.addEventListener('focus', keyboardFocusHandler)
+        keyboard.addEventListener('focus', keyboardfocusHandler)
         // blur
-        const keyboardBlurHandler = Xt.dataStorage.put(
+        const keyboardblurHandler = Xt.dataStorage.put(
           keyboard,
           'blur.keyboard' + '/' + self.namespace,
-          self.eventKeyboardBlurHandler.bind(self).bind(self, keyboard)
+          self.eventKeyboardblurHandler.bind(self).bind(self, keyboard)
         )
-        keyboard.addEventListener('blur', keyboardBlurHandler)
+        keyboard.addEventListener('blur', keyboardblurHandler)
       }
     }
     // autoclose
@@ -570,13 +571,13 @@ class Toggle {
       const imgs = el.querySelectorAll('img')
       self.destroyElements.push(...imgs)
       for (const img of imgs) {
-        if (!Xt.dataStorage.get(img, self.componentNamespace + 'MediaLoadedDone')) {
-          Xt.dataStorage.set(img, self.componentNamespace + 'MediaLoadedDone', true)
+        if (!Xt.dataStorage.get(img, self.componentNamespace + 'MedialoadedDone')) {
+          Xt.dataStorage.set(img, self.componentNamespace + 'MedialoadedDone', true)
           if (!img.complete) {
-            const mediaLoadedHandler = Xt.dataStorage.put(img, 'load' + '/' + self.namespace, self.eventMediaLoadedHandler.bind(self).bind(self, el, true))
-            img.addEventListener('load', mediaLoadedHandler)
+            const medialoadedHandler = Xt.dataStorage.put(img, 'load' + '/' + self.namespace, self.eventMedialoadedHandler.bind(self).bind(self, el, true))
+            img.addEventListener('load', medialoadedHandler)
           } else {
-            self.eventMediaLoadedHandler(el, false)
+            self.eventMedialoadedHandler(el, false)
           }
         }
       }
@@ -585,13 +586,13 @@ class Toggle {
       const imgs = tr.querySelectorAll('img')
       self.destroyElements.push(...imgs)
       for (const img of imgs) {
-        if (!Xt.dataStorage.get(img, self.componentNamespace + 'MediaLoadedDone')) {
-          Xt.dataStorage.set(img, self.componentNamespace + 'MediaLoadedDone', true)
+        if (!Xt.dataStorage.get(img, self.componentNamespace + 'MedialoadedDone')) {
+          Xt.dataStorage.set(img, self.componentNamespace + 'MedialoadedDone', true)
           if (!img.complete) {
-            const mediaLoadedHandler = Xt.dataStorage.put(img, 'load' + '/' + self.namespace, self.eventMediaLoadedHandler.bind(self).bind(self, tr, true))
-            img.addEventListener('load', mediaLoadedHandler)
+            const medialoadedHandler = Xt.dataStorage.put(img, 'load' + '/' + self.namespace, self.eventMedialoadedHandler.bind(self).bind(self, tr, true))
+            img.addEventListener('load', medialoadedHandler)
           } else {
-            self.eventMediaLoadedHandler(tr, false)
+            self.eventMedialoadedHandler(tr, false)
           }
         }
       }
@@ -610,12 +611,12 @@ class Toggle {
       const wheelHandler = Xt.dataStorage.put(wheel, eWheel + '/' + self.namespace, self.eventWheelHandler.bind(self))
       wheel.addEventListener(eWheel, wheelHandler, { passive: false })
       // stop
-      const wheelstopHandler = Xt.dataStorage.put(wheel, eWheel + '.stop' + '/' + self.namespace, self.eventWheelStop.bind(self))
+      const wheelstopHandler = Xt.dataStorage.put(wheel, eWheel + '.stop' + '/' + self.namespace, self.eventWheelstop.bind(self))
       wheel.addEventListener('wheelstop.trigger.xt', wheelstopHandler, { passive: false })
       // block
       if (options.wheel.block) {
         const block = wheel.parentNode
-        const wheelblockHandler = Xt.dataStorage.put(block, eWheel + '.block' + '/' + self.namespace, self.eventWheelBlockHandler.bind(self))
+        const wheelblockHandler = Xt.dataStorage.put(block, eWheel + '.block' + '/' + self.namespace, self.eventWheelblockHandler.bind(self))
         block.addEventListener(eWheel, wheelblockHandler, { passive: false })
       }
     }
@@ -698,31 +699,30 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
-  eventWithLinkStartHandler(el, e) {
+  eventWithlinkStartHandler(el, e) {
     const self = this
     // active
     Xt.dataStorage.put(el, 'active.withlink' + '/' + self.namespace, el.classList.contains(self.classes[0]))
     // event link
-    const withLinkHandler = Xt.dataStorage.put(el, 'click.withlink' + '/' + self.namespace, self.eventWithLinkHandler.bind(self).bind(self, el))
-    el.addEventListener('click', withLinkHandler)
+    const withlinkHandler = Xt.dataStorage.put(el, 'click.withlink' + '/' + self.namespace, self.eventWithlinkHandler.bind(self).bind(self, el))
+    el.addEventListener('click', withlinkHandler)
     // event reset
-    console.log(el)
-    const withLinkResetHandler = Xt.dataStorage.put(el, 'off.withlink' + '/' + self.namespace, self.eventWithLinkResetHandler.bind(self).bind(self, el))
-    el.addEventListener('off.xt', withLinkResetHandler)
+    const withlinkResetHandler = Xt.dataStorage.put(el, 'off.withlink' + '/' + self.namespace, self.eventWithlinkResetHandler.bind(self).bind(self, el))
+    el.addEventListener('off.xt', withlinkResetHandler)
   }
 
   /**
    * remove prevents click on touch until clicked two times
    * @param {Node|HTMLElement|EventTarget|Window} el
    */
-  eventWithLinkEndHandler(el) {
+  eventWithlinkEndHandler(el) {
     const self = this
     // event link
-    const withLinkHandler = Xt.dataStorage.get(el, 'click.withlink' + '/' + self.namespace)
-    el.removeEventListener('click', withLinkHandler)
+    const withlinkHandler = Xt.dataStorage.get(el, 'click.withlink' + '/' + self.namespace)
+    el.removeEventListener('click', withlinkHandler)
     // event reset
-    const withLinkResetHandler = Xt.dataStorage.get(el, 'off.withlink' + '/' + self.namespace)
-    el.removeEventListener('off.xt', withLinkResetHandler)
+    const withlinkResetHandler = Xt.dataStorage.get(el, 'off.withlink' + '/' + self.namespace)
+    el.removeEventListener('off.xt', withlinkResetHandler)
   }
 
   /**
@@ -730,16 +730,16 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
-  eventWithLinkHandler(el, e) {
+  eventWithlinkHandler(el, e) {
     const self = this
     const active = Xt.dataStorage.get(el, 'active.withlink' + '/' + self.namespace)
-    if (!active && !Xt.dataStorage.get(el, self.componentNamespace + 'WithLinkDone')) {
-      Xt.dataStorage.set(el, self.componentNamespace + 'WithLinkDone', true)
+    if (!active && !Xt.dataStorage.get(el, self.componentNamespace + 'WithlinkDone')) {
+      Xt.dataStorage.set(el, self.componentNamespace + 'WithlinkDone', true)
       // prevent default
       e.preventDefault()
     } else {
-      self.eventWithLinkEndHandler(el)
-      Xt.dataStorage.remove(el, self.componentNamespace + 'WithLinkDone')
+      self.eventWithlinkEndHandler(el)
+      Xt.dataStorage.remove(el, self.componentNamespace + 'WithlinkDone')
       Xt.dataStorage.remove(el, 'active.withlink' + '/' + self.namespace)
     }
   }
@@ -749,11 +749,10 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
-  eventWithLinkResetHandler(el, e) {
+  eventWithlinkResetHandler(el, e) {
     const self = this
-    console.log(el)
-    self.eventWithLinkEndHandler(el)
-    Xt.dataStorage.remove(el, self.componentNamespace + 'WithLinkDone')
+    self.eventWithlinkEndHandler(el)
+    Xt.dataStorage.remove(el, self.componentNamespace + 'WithlinkDone')
     Xt.dataStorage.remove(el, 'active.withlink' + '/' + self.namespace)
   }
 
@@ -775,7 +774,7 @@ class Toggle {
    * auto resume handler
    * @param {Event} e
    */
-  eventAutoResumeHandler(e) {
+  eventAutoresumeHandler(e) {
     const self = this
     if (self.detail.autopaused) {
       // handler
@@ -814,7 +813,7 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
-  eventKeyboardFocusHandler(el, e) {
+  eventKeyboardfocusHandler(el, e) {
     const self = this
     // handler
     const keyboardHandler = Xt.dataStorage.put(document, 'keyup.keyboard' + '/' + self.namespace, self.eventKeyboardHandler.bind(self))
@@ -826,7 +825,7 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
-  eventKeyboardBlurHandler(el, e) {
+  eventKeyboardblurHandler(el, e) {
     const self = this
     // handler
     const keyboardHandler = Xt.dataStorage.get(document, 'keyup.keyboard' + '/' + self.namespace)
@@ -885,11 +884,11 @@ class Toggle {
   }
 
   /**
-   * mediaLoaded
+   * medialoaded
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Boolean} deferred
    */
-  eventMediaLoadedHandler(el, deferred = true) {
+  eventMedialoadedHandler(el, deferred = true) {
     const self = this
     const options = self.options
     // class
@@ -900,13 +899,13 @@ class Toggle {
     el.dispatchEvent(new CustomEvent('medialoaded.xt', { detail: detail }))
     // mediaLoadedReinit
     if (options.mediaLoadedReinit && deferred) {
-      clearTimeout(Xt.dataStorage.get(self.object, 'xt' + self.componentNamespace + 'MediaLoadedInit' + 'Timeout'))
+      clearTimeout(Xt.dataStorage.get(self.object, 'xt' + self.componentNamespace + 'MedialoadedInit' + 'Timeout'))
       Xt.dataStorage.set(
         self.object,
-        'xt' + self.componentNamespace + 'MediaLoadedInit' + 'Timeout',
+        'xt' + self.componentNamespace + 'MedialoadedInit' + 'Timeout',
         setTimeout(function() {
           self.reinit()
-        }, Xt.mediaLoadedDelay)
+        }, Xt.medialoadedDelay)
       )
     }
   }
@@ -1376,7 +1375,7 @@ class Toggle {
       // auto
       const time = options.auto.time
       // not when nothing activated
-      if (self.currentIndex !== null && (!self.initial || options.auto.initial)) {
+      if (self.currentIndex !== null && (!self.initial || self.initialContinue || options.auto.initial)) {
         // not when initial
         Xt.dataStorage.set(
           self.object,
@@ -1900,6 +1899,7 @@ class Toggle {
       // initial after raf set initial false after on.xt custom listeners
       requestAnimationFrame(function() {
         self.initial = false
+        self.initialContinue = false
       })
     } else if (actionCurrent === 'Off') {
       // special
@@ -1918,14 +1918,14 @@ class Toggle {
    */
   eventWheelHandler(e) {
     const self = this
-    self.eventWheelSmooth(e)
+    self.eventWheelsmooth(e)
   }
 
   /**
    * wheel block handler
    * @param {Event} e
    */
-  eventWheelBlockHandler(e) {
+  eventWheelblockHandler(e) {
     const self = this
     // disabled
     if (self.disabled && !self.initial) {
@@ -1946,7 +1946,7 @@ class Toggle {
    * @param {Event} e
    */
 
-  eventWheelSmooth(e) {
+  eventWheelsmooth(e) {
     const self = this
     const options = self.options
     let el = self.detail.wheel
@@ -2104,7 +2104,7 @@ class Toggle {
       detail.wheelX = -self.detail.wheelCurrent
       self.detail.wheel.dispatchEvent(new CustomEvent('wheelstart.xt', { detail: detail }))
       // friction
-      self.eventFrictionSmooth(el, min, max)
+      self.eventFrictionsmooth(el, min, max)
     }
   }
 
@@ -2115,7 +2115,7 @@ class Toggle {
    * @param {Number} max Maximum value
    */
 
-  eventFrictionSmooth(el, min, max) {
+  eventFrictionsmooth(el, min, max) {
     const self = this
     const options = self.options
     // disabled
@@ -2155,12 +2155,12 @@ class Toggle {
     ) {
       // frictionLimit
       // friction
-      cancelAnimationFrame(Xt.dataStorage.get(self.detail.wheel, self.componentNamespace + 'WheelSmoothFrame'))
+      cancelAnimationFrame(Xt.dataStorage.get(self.detail.wheel, self.componentNamespace + 'WheelsmoothFrame'))
       Xt.dataStorage.set(
         self.detail.wheel,
-        self.componentNamespace + 'WheelSmoothFrame',
+        self.componentNamespace + 'WheelsmoothFrame',
         requestAnimationFrame(function() {
-          self.eventFrictionSmooth(el, min, max)
+          self.eventFrictionsmooth(el, min, max)
         })
       )
       // dispatch
@@ -2183,10 +2183,10 @@ class Toggle {
    * event wheel stop for Xt
    */
 
-  eventWheelStop() {
+  eventWheelstop() {
     const self = this
     const el = self.detail.wheel
-    cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'WheelSmoothFrame'))
+    cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'WheelsmoothFrame'))
     self.detail.wheelMoving = false
   }
 
@@ -2209,12 +2209,12 @@ class Toggle {
         const closeElements = el.querySelectorAll(options.closeInside)
         requestAnimationFrame(function() {
           for (const closeElement of closeElements) {
-            const specialCloseInsideHandler = Xt.dataStorage.put(
+            const specialcloseinsideHandler = Xt.dataStorage.put(
               closeElement,
               'click.close' + '/' + self.namespace,
-              self.eventSpecialCloseInsideHandler.bind(self).bind(self, closeElement, single)
+              self.eventSpecialcloseinsideHandler.bind(self).bind(self, closeElement, single)
             )
-            closeElement.addEventListener('click', specialCloseInsideHandler)
+            closeElement.addEventListener('click', specialcloseinsideHandler)
           }
         })
       }
@@ -2223,12 +2223,12 @@ class Toggle {
         const closeElements = document.querySelectorAll(options.closeOutside)
         requestAnimationFrame(function() {
           for (const closeElement of closeElements) {
-            const specialCloseOutsideHandler = Xt.dataStorage.put(
+            const specialcloseoutsideHandler = Xt.dataStorage.put(
               closeElement,
               'click.close' + '/' + self.namespace,
-              self.eventSpecialCloseOutsideHandler.bind(self).bind(self, el, single)
+              self.eventSpecialcloseoutsideHandler.bind(self).bind(self, el, single)
             )
-            closeElement.addEventListener('click', specialCloseOutsideHandler)
+            closeElement.addEventListener('click', specialcloseoutsideHandler)
           }
         })
       }
@@ -2237,16 +2237,16 @@ class Toggle {
       if (options.closeInside) {
         const closeElements = el.querySelectorAll(options.closeInside)
         for (const closeElement of closeElements) {
-          const specialCloseInsideHandler = Xt.dataStorage.get(closeElement, 'click.close' + '/' + self.namespace)
-          closeElement.removeEventListener('click', specialCloseInsideHandler)
+          const specialcloseinsideHandler = Xt.dataStorage.get(closeElement, 'click.close' + '/' + self.namespace)
+          closeElement.removeEventListener('click', specialcloseinsideHandler)
         }
       }
       // closeOutside
       if (options.closeOutside) {
         const closeElements = document.querySelectorAll(options.closeOutside)
         for (const closeElement of closeElements) {
-          const specialCloseOutsideHandler = Xt.dataStorage.get(closeElement, 'click.close' + '/' + self.namespace)
-          closeElement.removeEventListener('click', specialCloseOutsideHandler)
+          const specialcloseoutsideHandler = Xt.dataStorage.get(closeElement, 'click.close' + '/' + self.namespace)
+          closeElement.removeEventListener('click', specialcloseoutsideHandler)
         }
       }
     }
@@ -2258,7 +2258,7 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} single
    * @param {Event} e
    */
-  eventSpecialCloseInsideHandler(closeElement, single, e) {
+  eventSpecialcloseinsideHandler(closeElement, single, e) {
     const self = this
     // prevent closing when nested and moved (ex: overlay)
     const checkContainer = self.targets.length ? self.targets : Xt.arrSingle(self.object)
@@ -2277,7 +2277,7 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} single
    * @param {Event} e
    */
-  eventSpecialCloseOutsideHandler(closeElement, single, e) {
+  eventSpecialcloseoutsideHandler(closeElement, single, e) {
     const self = this
     // handler
     if (!Xt.contains(Xt.arrSingle(closeElement), e.target)) {

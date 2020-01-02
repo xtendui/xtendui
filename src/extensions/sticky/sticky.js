@@ -102,7 +102,7 @@ class Sticky extends Xt.Toggle {
       self.eventStickyHandler(null, true)
     }
     // focusin
-    const focusInHandler = Xt.dataStorage.put(document, 'focusin' + '/' + self.namespace, self.eventFocusInHandler.bind(self))
+    const focusInHandler = Xt.dataStorage.put(document, 'focusin' + '/' + self.namespace, self.eventFocusinHandler.bind(self))
     document.addEventListener('focusin', focusInHandler, { passive: true })
   }
 
@@ -132,7 +132,7 @@ class Sticky extends Xt.Toggle {
    * element focusin handler
    * @param {Event} e
    */
-  eventFocusInHandler(e) {
+  eventFocusinHandler(e) {
     const self = this
     // handler
     for (const tr of self.targets) {
@@ -195,8 +195,8 @@ class Sticky extends Xt.Toggle {
         }
       }
       // scroll
-      let top = self.eventStickyPos(options.limit.top || self.targets, scrollTop, topTr)
-      let bottom = self.eventStickyPos(options.limit.bottom, scrollTop, Infinity)
+      let top = self.eventStickypos(options.limit.top || self.targets, scrollTop, topTr)
+      let bottom = self.eventStickypos(options.limit.bottom, scrollTop, Infinity)
       if (options.position === 'top') {
         bottom -= heightTr
       }
@@ -209,7 +209,7 @@ class Sticky extends Xt.Toggle {
       let addBottom = 0
       if (options.contain) {
         if (options.contain.top) {
-          const addTopObj = self.eventStickyHeight(options.contain.top)
+          const addTopObj = self.eventStickyheight(options.contain.top)
           addTop = addTopObj.val
           if (addTop !== null && addTop > topTr) {
             add = addTop
@@ -221,7 +221,7 @@ class Sticky extends Xt.Toggle {
           }
         }
         if (options.contain.bottom) {
-          addBottom = self.eventStickyPos(options.contain.bottom)
+          addBottom = self.eventStickypos(options.contain.bottom)
           if (addBottom !== null && addBottom < heightEl + addTop) {
             add = addBottom - heightEl
             anim = false
@@ -341,7 +341,7 @@ class Sticky extends Xt.Toggle {
    * @param {Number} scrollTop Window's scrollTop
    * @returns {Number} value Option's position (px)
    */
-  eventStickyPos(option, scrollTop = 0, val = null) {
+  eventStickypos(option, scrollTop = 0, val = null) {
     if (!isNaN(parseFloat(option))) {
       val = option
     } else {
@@ -384,7 +384,7 @@ class Sticky extends Xt.Toggle {
    * @param {Number} val Default value
    * @returns {Object} obj Option's height (px) and if found hide element
    */
-  eventStickyHeight(option, val = null) {
+  eventStickyheight(option, val = null) {
     const self = this
     // logic
     let foundHide = false

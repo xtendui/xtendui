@@ -5,7 +5,7 @@ Xt.mount.push({
   mount: function(object) {
     // event
 
-    const documentFocusIn = function(e) {
+    const documentFocusin = function(e) {
       const active = object.contains(e.target)
       if (active) {
         object.classList.remove('sr-only')
@@ -19,12 +19,12 @@ Xt.mount.push({
       }
     }
 
-    document.addEventListener('focusin', documentFocusIn)
+    document.addEventListener('focusin', documentFocusin)
 
     // unmount
 
     const unmount = function() {
-      document.removeEventListener('focusin', documentFocusIn)
+      document.removeEventListener('focusin', documentFocusin)
     }
     return unmount
   },
