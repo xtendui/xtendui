@@ -441,14 +441,14 @@ const initializeIframe = function(container, item) {
     // load
     if (!item.dataset.iframeLoadEvents) {
       item.dataset.iframeLoadEvents = 'true'
-      item.addEventListener('on.xt', function(e) {
+      item.addEventListener('ondone.xt', function(e) {
         if (!item.dataset.iframeLoadCall) {
           item.dataset.iframeLoadCall = 'true'
           const iframe = item.querySelector('iframe')
           loadIframe(iframe)
         }
       })
-      item.addEventListener('off.xt', function(e) {
+      item.addEventListener('offdone.xt', function(e) {
         if (item.dataset.iframeLoadCall) {
           delete item.dataset.iframeLoadCall
           const iframe = item.querySelector('iframe')
