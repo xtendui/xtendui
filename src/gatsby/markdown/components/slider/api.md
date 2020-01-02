@@ -317,6 +317,8 @@ document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('o
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Event                   | `on.trigger.xt`       | `elements` `targets` | Activation event             |
 | Event                   | `off.trigger.xt`      | `elements` `targets` | Deactivation event            |
+| Event                   | `autostart.trigger.xt`           | `object` | Auto start event             |
+| Event                   | `autostop.trigger.xt`           | `object` | Auto stop event             |
 | Event                   | `reinit.trigger.xt`           | `object` | Reinitialize component and save currents as initial             |
 | Event                   | `restart.trigger.xt`           | `object` | Restart component to initial             |
 

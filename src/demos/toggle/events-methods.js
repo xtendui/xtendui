@@ -7,6 +7,10 @@ Xt.mount.push({
 
     let self = new Xt.Toggle(object, {
       min: 1,
+      auto: {
+        time: 2000,
+        initial: false,
+      },
     })
 
     // log
@@ -48,6 +52,28 @@ Xt.mount.push({
     }
 
     firstTr.addEventListener('click', firstTrFnc)
+
+    // autostart
+
+    const autostartEl = document.querySelector('#demo_toggle-events-autostart')
+
+    const autstartFnc = function() {
+      logAdd('<strong>autostart</strong>')
+      self.object.dispatchEvent(new CustomEvent('autostart.trigger.xt'))
+    }
+
+    autostartEl.addEventListener('click', autstartFnc)
+
+    // autostop
+
+    const autostopEl = document.querySelector('#demo_toggle-events-autostop')
+
+    const autostopFnc = function() {
+      logAdd('<strong>autostop</strong>')
+      self.object.dispatchEvent(new CustomEvent('autostop.trigger.xt'))
+    }
+
+    autostopEl.addEventListener('click', autostopFnc)
 
     // add
 

@@ -16,6 +16,12 @@ demo.htmlSource = `
   <button type="button" class="btn btn-primary btn-tiny" id="demo_slider-events-first-target">
     1st target
   </button>
+  <button type="button" class="btn btn-primary btn-tiny" id="demo_toggle-events-autostart">
+    Autostart
+  </button>
+  <button type="button" class="btn btn-primary btn-tiny" id="demo_toggle-events-autostop">
+    Autostop
+  </button>
   <button type="button" class="btn btn-primary btn-tiny" id="demo_slider-events-add">
     Add
   </button>

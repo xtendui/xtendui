@@ -11,7 +11,7 @@ export const demo = {
 demo.htmlSource = `
   <div class="list list-default list-space-small align-items-center"
        data-xt-toggle="{ auto: { time: 2000, inverse: true } }">
-    <button type="button" class="btn btn-default">
+    <button type="button" class="btn btn-default active">
       Toggle 0
     </button>
     <button type="button" class="btn btn-default">

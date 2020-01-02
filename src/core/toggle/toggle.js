@@ -229,11 +229,13 @@ class Toggle {
           self.initialCurrents = self.getCurrents().slice(0)
         })
       }
+      // auto
+      if (options.auto && options.auto.time) {
+        self.eventAutoStart()
+      }
+      // no currents reset initial
       if (currents === 0) {
         self.initial = false
-        if (options.auto && options.auto.initial) {
-          self.eventAutoStart()
-        }
       }
     }
     // init events
@@ -421,7 +423,7 @@ class Toggle {
     // reinit
     const reinitHandler = Xt.dataStorage.put(self.object, 'reinit' + '/' + self.namespace, self.eventReinitHandler.bind(self).bind(self))
     self.object.addEventListener('reinit.trigger.xt', reinitHandler)
-    // targets
+    // elements
     for (const el of self.elements) {
       // event on
       const onHandler = Xt.dataStorage.put(el, options.on + '/' + self.namespace, self.eventOnHandler.bind(self).bind(self, el))
@@ -477,6 +479,11 @@ class Toggle {
     }
     // auto
     if (options.auto && options.auto.time) {
+      // event
+      const autoStartHandler = Xt.dataStorage.put(self.object, 'autostart' + '/' + self.namespace, self.eventAutoStart.bind(self))
+      self.object.addEventListener('autostart.trigger.xt', autoStartHandler)
+      const autoStopHandler = Xt.dataStorage.put(self.object, 'autostop' + '/' + self.namespace, self.eventAutoStop.bind(self))
+      self.object.addEventListener('autostop.trigger.xt', autoStopHandler)
       // focus auto
       const focusHandler = Xt.dataStorage.put(window, 'focus' + '/' + self.namespace, self.eventAutoResumeHandler.bind(self))
       addEventListener('focus', focusHandler)
@@ -484,7 +491,7 @@ class Toggle {
       const blurHandler = Xt.dataStorage.put(window, 'blur' + '/' + self.namespace, self.eventAutoPauseHandler.bind(self))
       addEventListener('blur', blurHandler)
       // autoPause
-      if (options.auto && options.auto.pause) {
+      if (options.auto.pause) {
         const autoPauseEls = self.object.querySelectorAll(options.auto.pause)
         if (autoPauseEls.length) {
           self.destroyElements.push(...autoPauseEls)
@@ -1359,16 +1366,14 @@ class Toggle {
       clearInterval(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutoStartInterval'))
       // auto
       const time = options.auto.time
-      if (
-        self.currentIndex !== null && // not when nothing activated
-        (!self.initial || options.auto.initial)
-      ) {
+      // not when nothing activated
+      if (self.currentIndex !== null && (!self.initial || options.auto.initial)) {
         // not when initial
         Xt.dataStorage.set(
           self.object,
           self.componentNamespace + 'AutoStartInterval',
+          // interval because can become :visible
           setInterval(function() {
-            // interval because can become :visible
             if (Xt.visible(self.object)) {
               // auto
               if (getComputedStyle(self.object).pointerEvents !== 'none') {
