@@ -15,7 +15,7 @@ Xt.currents = {} // Xt currents based on namespace (so shared between Xt objects
 Xt.optionsGlobal = {}
 Xt.resizeDelay = 100
 Xt.scrollDelay = false
-Xt.imageLoadedDelay = 50
+Xt.mediaLoadedDelay = 50
 Xt.focusables = 'a, button, details, input, iframe, select, textarea'
 
 //
@@ -671,17 +671,6 @@ if (typeof window !== 'undefined') {
     const div = document.createElement('div')
     div.innerHTML = str.trim()
     return div.firstChild
-  }
-
-  /**
-   * autoClose inside Element
-   * @param {Node|HTMLElement|EventTarget|Window} el Element container
-   */
-  Xt.autoClose = function(el) {
-    const query = '[data-xt-namespace^="drop-xt-"]'
-    for (const drop of el.querySelectorAll(query)) {
-      drop.dispatchEvent(new CustomEvent('off.trigger.xt'))
-    }
   }
 
   /**

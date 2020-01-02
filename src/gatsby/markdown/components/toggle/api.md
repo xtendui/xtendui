@@ -308,7 +308,7 @@ Use `aria: false` to disable aria generation, or granularly see @TODO.
 | Option                  | `autoDisable:Boolean`                          | `true`        | Disable automatically when cannot be activated             |
 | Option                  | `onBlock:Milliseconds`                          | `true`        | Block concurrent activation events            |
 | Option                  | `offBlock:Milliseconds`                          | `true`        | Block concurrent deactivation events            |
-| Option                  | `imageLoadedInit:Boolean`                          | `false`        | Reinit on image loaded            |
+| Option                  | `mediaLoadedReinit:Boolean`                          | `false`        | Reinit on media loaded            |
 | Option                  | `keyboard.selector:Boolean`                          | `false`        | Elements that triggers the events            |
 | Option                  | `aria.tabindex:Boolean`                          | `true`        | Inject aria tabindex attributes            |
 | Option                  | `aria.controls:Boolean`                          | `true`        | Inject aria controls attributes            |
@@ -377,7 +377,7 @@ document.querySelector('#my-object').addEventListener('on.xt', function(e) {
 | Event                   | `off.xt`      | `elements` `targets` | Deactivation event            |
 | Event                   | `ondone.xt`           | `elements` `targets` | Activation event after delay and duration             |
 | Event                   | `offdone.xt`           | `elements` `targets` | Deactivation event after delay and duration             |
-| Event                   | `imageloaded.xt`           | `elements` `targets` | Images loaded event            |
+| Event                   | `medialoaded.xt`           | `elements` `targets` | Images loaded event            |
 | Event                   | `init.xt`           | `object` | Init event             |
 | Event                   | `autostart.xt`           | `object` | Auto start event             |
 | Event                   | `autostop.xt`           | `object` | Auto stop event             |

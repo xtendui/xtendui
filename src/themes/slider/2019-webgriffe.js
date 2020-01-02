@@ -131,10 +131,10 @@ Xt.mount.push({
     self.object.addEventListener('autostart.xt', function(e) {
       // not first less time
       if (!self.initial && !self.object.dataset.autoTime) {
-        self.eventAutoStop()
+        self.eventAutostop()
         self.options.auto.time = self.options.auto.timeChange
         self.object.dataset.autoTime = 'true'
-        self.eventAutoStart()
+        self.eventAutostart()
         return false
       }
       // on elements

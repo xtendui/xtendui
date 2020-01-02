@@ -18,7 +18,7 @@ Xt.mount.push({
 
     // start auto
 
-    const eventAutoStart = function() {
+    const eventAutostart = function() {
       // on slider
       const spinner = self.object.querySelectorAll('.spinner svg:nth-child(1) circle')
       const timeline = gsap.timeline({ overwrite: false })
@@ -44,11 +44,11 @@ Xt.mount.push({
       }
     }
 
-    self.object.addEventListener('autostart.xt', eventAutoStart)
+    self.object.addEventListener('autostart.xt', eventAutostart)
 
     // stop auto
 
-    const eventAutoStop = function() {
+    const eventAutostop = function() {
       // on elements
       const elements = self.elements.filter(x => self.hasCurrent(x))
       for (const element of elements) {
@@ -67,11 +67,11 @@ Xt.mount.push({
       }
     }
 
-    self.object.addEventListener('autostop.xt', eventAutoStop)
+    self.object.addEventListener('autostop.xt', eventAutostop)
 
     // pause auto
 
-    const eventAutoPause = function() {
+    const eventAutopause = function() {
       // on slider
       const spinner = self.object.querySelectorAll('.spinner svg:nth-child(1) circle')
       gsap.to(spinner, { strokeDashoffset: 628, duration: Xt.vars.timeSmall, ease: Xt.vars.easeLinear, autoRound: false })
@@ -93,7 +93,7 @@ Xt.mount.push({
       }
     }
 
-    self.object.addEventListener('autopause.xt', eventAutoPause)
+    self.object.addEventListener('autopause.xt', eventAutopause)
 
     // mousefollow
 

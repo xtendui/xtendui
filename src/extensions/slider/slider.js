@@ -372,10 +372,10 @@ class Slider extends Xt.Toggle {
     // elements
     for (const el of self.elements) {
       // event on
-      const slideOnHandler = Xt.dataStorage.put(el, 'on/slider' + '/' + self.namespace, self.eventSlideOnHandler.bind(self).bind(self, dragger, el))
+      const slideOnHandler = Xt.dataStorage.put(el, 'on.slider' + '/' + self.namespace, self.eventSlideOnHandler.bind(self).bind(self, dragger, el))
       el.addEventListener('on.xt', slideOnHandler, true) // @FIX useCapture for custom events order on re-init
       // event off
-      const slideOffHandler = Xt.dataStorage.put(el, 'off/slider' + '/' + self.namespace, self.eventSlideOffHandler.bind(self).bind(self, dragger, el))
+      const slideOffHandler = Xt.dataStorage.put(el, 'off.slider' + '/' + self.namespace, self.eventSlideOffHandler.bind(self).bind(self, dragger, el))
       el.addEventListener('off.xt', slideOffHandler, true) // @FIX useCapture for custom events order on re-init
     }
     // targets
@@ -385,10 +385,10 @@ class Slider extends Xt.Toggle {
         tr.classList.add('xt-links-none')
       }
       // event on
-      const slideOnHandler = Xt.dataStorage.put(tr, 'on/slider' + '/' + self.namespace, self.eventSlideOnHandler.bind(self).bind(self, dragger, tr))
+      const slideOnHandler = Xt.dataStorage.put(tr, 'on.slider' + '/' + self.namespace, self.eventSlideOnHandler.bind(self).bind(self, dragger, tr))
       tr.addEventListener('on.xt', slideOnHandler, true) // @FIX useCapture for custom events order on re-init
       // event off
-      const slideOffHandler = Xt.dataStorage.put(tr, 'off/slider' + '/' + self.namespace, self.eventSlideOffHandler.bind(self).bind(self, dragger, tr))
+      const slideOffHandler = Xt.dataStorage.put(tr, 'off.slider' + '/' + self.namespace, self.eventSlideOffHandler.bind(self).bind(self, dragger, tr))
       tr.addEventListener('off.xt', slideOffHandler, true) // @FIX useCapture for custom events order on re-init
     }
     // dragger
@@ -749,7 +749,7 @@ class Slider extends Xt.Toggle {
       self.detail.xStart = e.touches[0].clientX
     }
     // auto
-    self.eventAutoPause()
+    self.eventAutopause()
     // prevent dragging animation
     dragger.classList.add('duration-none')
     // logic
@@ -782,7 +782,7 @@ class Slider extends Xt.Toggle {
       self.detail.xCurrent = e.touches[0].clientX
     }
     // auto
-    self.eventAutoStart()
+    self.eventAutostart()
     // logic
     self.logicDragfriction(dragger, e)
     // listener dispatch
@@ -1090,7 +1090,7 @@ Slider.optionsDefault = {
   autoDisable: false,
   loop: true,
   jump: true,
-  imageLoadedInit: true,
+  mediaLoadedReinit: true,
   navigation: '[data-xt-nav]',
   wheel: {
     selector: false,

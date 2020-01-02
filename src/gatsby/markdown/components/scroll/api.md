@@ -139,7 +139,7 @@ document.querySelector('#my-object').addEventListener('change.xt', function(e) {
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Event                   | `change.xt`       | `elements` | Computation event             |
-| Event                   | `imageloaded.xt`           | `elements` `targets` | Images loaded event            |
+| Event                   | `medialoaded.xt`           | `elements` `targets` | Images loaded event            |
 | Event                   | `init.xt`           | `object` | Init event             |
 
 </div>

@@ -128,7 +128,7 @@ document.querySelector('#my-object').addEventListener('on.xt', function(e) {
 | Event                   | `off.xt`      | `elements` `targets` | Deactivation event            |
 | Event                   | `ondone.xt`           | `elements` `targets` | Activation event after delay and duration             |
 | Event                   | `offdone.xt`           | `elements` `targets` | Deactivation event after delay and duration             |
-| Event                   | `imageloaded.xt`           | `elements` `targets` | Images loaded event            |
+| Event                   | `medialoaded.xt`           | `elements` `targets` | Images loaded event            |
 | Event                   | `init.xt`           | `object` | Init event             |
 
 </div>
