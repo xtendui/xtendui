@@ -101,7 +101,7 @@ class Scroll extends Xt.Toggle {
       const scrollHandler = Xt.dataStorage.put(window, options.on + '/' + self.namespace, self.eventScrollHandler.bind(self))
       const events = [...options.on.split(' ')]
       for (const event of events) {
-        addEventListener(event, scrollHandler, Xt.passiveSupported ? { passive: true } : null)
+        addEventListener(event, scrollHandler, { passive: true })
       }
       self.eventScrollHandler(null, true)
     }
@@ -118,18 +118,15 @@ class Scroll extends Xt.Toggle {
    */
   eventScrollHandler(e = null, initial = false) {
     const self = this
-    // @FIX filter triggered from library (use only in library)
-    if (!e || !e.detail || !e.detail.skip) {
-      Xt.eventDelay(
-        e,
-        self.object,
-        function() {
-          // handler
-          self.eventScroll(e, initial)
-        },
-        self.componentNamespace + 'Scroll'
-      )
-    }
+    Xt.eventDelay(
+      e,
+      self.object,
+      function() {
+        // handler
+        self.eventScroll(e, initial)
+      },
+      self.componentNamespace + 'Scroll'
+    )
   }
 
   //
@@ -273,7 +270,7 @@ class Scroll extends Xt.Toggle {
           self.componentNamespace + 'ScrollDispatchFrame',
           requestAnimationFrame(function() {
             const detail = self.eDetailSet()
-            el.dispatchEvent(new CustomEvent('change.xt.scroll', { detail: detail }))
+            el.dispatchEvent(new CustomEvent('change.xt', { detail: detail }))
           })
         )
       }

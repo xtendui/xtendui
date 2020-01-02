@@ -71,11 +71,26 @@ It's recommended to use `active-overlay` on overlay otherwise the overlay flashe
 
 ## Events and Methods
 
+### Trigger
+
 Trigger events this way:
 
 ```jsx
-document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('on.xt'))
+document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('on.trigger.xt'))
 ```
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | DOM Element                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Event                   | `on.trigger.xt`       | `elements` `targets` | Activation event             |
+| Event                   | `off.trigger.xt`      | `elements` `targets` | Deactivation event            |
+| Event                   | `reinit.trigger.xt`           | `object` | Reinitialize component and save currents as initial             |
+| Event                   | `restart.trigger.xt`           | `object` | Restart component to initial             |
+
+</div>
+
+### Listen
 
 Listen to events this way:
 
@@ -113,12 +128,14 @@ document.querySelector('#my-object').addEventListener('on.xt', function(e) {
 | Event                   | `off.xt`      | `elements` `targets` | Deactivation event            |
 | Event                   | `ondone.xt`           | `elements` `targets` | Activation event after delay and duration             |
 | Event                   | `offdone.xt`           | `elements` `targets` | Deactivation event after delay and duration             |
-| Event                   | `imageLoaded.xt`           | `elements` `targets` | Images loaded event            |
+| Event                   | `imageloaded.xt`           | `elements` `targets` | Images loaded event            |
 | Event                   | `init.xt`           | `object` | Init event             |
 
 </div>
 
-Trigger methods this way (object is the DOM element you assigned the component):
+### Methods
+
+Call methods this way (object is the DOM element you assigned the component):
 
 ```jsx
 const self = Xt.get('xt-overlay', document.querySelector('#my-overlay-object'))
@@ -129,8 +146,8 @@ self.destroy()
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Method                  | `self.reinit(saveCurrents:Boolean)`       | Reinitialize component and save currents as initial (default: `true`)             |
 | Method                  | `self.restart()`                          | Restart component to initial             |
+| Method                  | `self.reinit(saveCurrents:Boolean)`       | Reinitialize component and save currents as initial (default: `true`)             |
 | Method                  | `self.destroy()`              | Destroy component            |
 
 </div>

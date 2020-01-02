@@ -38,7 +38,7 @@ Xt.mount.push({
       }
     }
 
-    self.object.addEventListener('start.xt.auto', eventAutoStart)
+    self.object.addEventListener('autostart.xt', eventAutoStart)
 
     // stop auto
 
@@ -61,7 +61,7 @@ Xt.mount.push({
       }
     }
 
-    self.object.addEventListener('stop.xt.auto', eventAutoStop)
+    self.object.addEventListener('autostop.xt', eventAutoStop)
 
     // pause auto
 
@@ -84,7 +84,7 @@ Xt.mount.push({
       }
     }
 
-    self.object.addEventListener('pause.xt.auto', eventAutoPause)
+    self.object.addEventListener('autopause.xt', eventAutoPause)
 
     // unmount
 

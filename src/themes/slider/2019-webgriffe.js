@@ -69,12 +69,12 @@ Xt.mount.push({
       }
     }
 
-    self.dragger.addEventListener('drag.xt.slider', function(e) {
+    self.dragger.addEventListener('drag.xt', function(e) {
       // parallax
       sliderParallax()
     })
 
-    self.dragger.addEventListener('dragreset.xt.slider', function(e) {
+    self.dragger.addEventListener('dragreset.xt', function(e) {
       // parallax
       sliderParallax(true)
     })
@@ -128,7 +128,7 @@ Xt.mount.push({
 
     // auto start
 
-    self.object.addEventListener('start.xt.auto', function(e) {
+    self.object.addEventListener('autostart.xt', function(e) {
       // not first less time
       if (!self.initial && !self.object.dataset.autoTime) {
         self.eventAutoStop()
@@ -150,7 +150,7 @@ Xt.mount.push({
 
     // auto stop
 
-    self.object.addEventListener('stop.xt.auto', function(e) {
+    self.object.addEventListener('autostop.xt', function(e) {
       // on elements
       let elements = self.elements.filter(x => x.classList.contains('active'))
       for (let element of elements) {
@@ -163,7 +163,7 @@ Xt.mount.push({
 
     // auto pause
 
-    self.object.addEventListener('pause.xt.auto', function(e) {
+    self.object.addEventListener('autopause.xt', function(e) {
       // on elements
       let elements = self.elements.filter(x => x.classList.contains('active'))
       for (let element of elements) {

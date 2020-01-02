@@ -49,7 +49,7 @@ demo.htmlSource = `
         </div>
       </li>
 
-      <li class="slide col-6 col-4-sm">
+      <li class="slide col-6 col-4-sm active">
         <div class="slide-inner">
 
           <div class="card card-slide align-center">

@@ -125,13 +125,12 @@ if (typeof window !== 'undefined') {
             if (destroy) {
               Xt.unmount.push({
                 object: el,
-                unmount:
-                  destroy &&
-                  function() {
-                    Xt.unmount.filter(function(x) {
-                      return x.object !== el
-                    })
-                  },
+                unmount: destroy,
+                unmountRemove: function() {
+                  Xt.unmount.filter(function(x) {
+                    return x.object !== el
+                  })
+                },
               })
             }
           })
@@ -156,6 +155,7 @@ if (typeof window !== 'undefined') {
         }
         // call
         obj.unmount(obj)
+        obj.unmountRemove()
       }
     }
   }
@@ -398,8 +398,8 @@ if (typeof window !== 'undefined') {
       // event mouse
       const focusChangeOtherHandler = Xt.dataStorage.put(document, 'mousedown touchstart pointerdown/focus', Xt.focus.changeOther)
       document.addEventListener('mousedown', focusChangeOtherHandler)
-      document.addEventListener('touchstart', focusChangeOtherHandler, Xt.passiveSupported ? { passive: true } : null)
-      document.addEventListener('pointerdown', focusChangeOtherHandler, Xt.passiveSupported ? { passive: true } : null)
+      document.addEventListener('touchstart', focusChangeOtherHandler, { passive: true })
+      document.addEventListener('pointerdown', focusChangeOtherHandler, { passive: true })
     },
 
     /**
@@ -680,7 +680,7 @@ if (typeof window !== 'undefined') {
   Xt.autoClose = function(el) {
     const query = '[data-xt-namespace^="drop-xt-"]'
     for (const drop of el.querySelectorAll(query)) {
-      drop.dispatchEvent(new CustomEvent('off.xt'))
+      drop.dispatchEvent(new CustomEvent('off.trigger.xt'))
     }
   }
 
@@ -1031,25 +1031,6 @@ if (typeof window !== 'undefined') {
      * height: calc(var(--vh, 1vh) * 100);
      */
     document.documentElement.style.setProperty('--vh', Xt.windowHeight * 0.01 + 'px')
-  }
-
-  /**
-   * passive events
-   * https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Safely_detecting_option_support
-   */
-
-  Xt.passiveSupported = false
-
-  try {
-    const options = {
-      get passive() {
-        Xt.passiveSupported = true
-      },
-    }
-    addEventListener('test', options, options)
-    removeEventListener('test', options, options)
-  } catch (err) {
-    Xt.passiveSupported = false
   }
 
   //

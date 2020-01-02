@@ -304,7 +304,7 @@ Use `aria: false` to disable aria generation, or granularly see @TODO.
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `instant:Object`                          | `{ elements: true, targets: false, elementsInner: true, targetsInner: false }`        | Instant activation instead of waiting for delay and animations             |
-| Option                  | `autoClose:Boolean`                          | `false`        | Close automatically on `autoClose.xt` event            |
+| Option                  | `autoClose:Boolean`                          | `false`        | Close automatically on `autoclose.xt` event            |
 | Option                  | `autoDisable:Boolean`                          | `true`        | Disable automatically when cannot be activated             |
 | Option                  | `onBlock:Milliseconds`                          | `true`        | Block concurrent activation events            |
 | Option                  | `offBlock:Milliseconds`                          | `true`        | Block concurrent deactivation events            |
@@ -318,11 +318,26 @@ Use `aria: false` to disable aria generation, or granularly see @TODO.
 
 ## Events and Methods
 
+### Trigger
+
 Trigger events this way:
 
 ```jsx
-document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('on.xt'))
+document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('on.trigger.xt'))
 ```
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | DOM Element                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Event                   | `on.trigger.xt`       | `elements` `targets` | Activation event             |
+| Event                   | `off.trigger.xt`      | `elements` `targets` | Deactivation event            |
+| Event                   | `reinit.trigger.xt`           | `object` | Reinitialize component and save currents as initial             |
+| Event                   | `restart.trigger.xt`           | `object` | Restart component to initial             |
+
+</div>
+
+### Listen
 
 Listen to events this way:
 
@@ -360,15 +375,17 @@ document.querySelector('#my-object').addEventListener('on.xt', function(e) {
 | Event                   | `off.xt`      | `elements` `targets` | Deactivation event            |
 | Event                   | `ondone.xt`           | `elements` `targets` | Activation event after delay and duration             |
 | Event                   | `offdone.xt`           | `elements` `targets` | Deactivation event after delay and duration             |
-| Event                   | `imageLoaded.xt`           | `elements` `targets` | Images loaded event            |
+| Event                   | `imageloaded.xt`           | `elements` `targets` | Images loaded event            |
 | Event                   | `init.xt`           | `object` | Init event             |
-| Event                   | `start.xt.auto`           | `object` | Auto start event             |
-| Event                   | `stop.xt.auto`           | `object` | Auto stop event             |
-| Event                   | `pause.xt.auto`           | `object` | Auto pause event             |
+| Event                   | `autostart.xt`           | `object` | Auto start event             |
+| Event                   | `autostop.xt`           | `object` | Auto stop event             |
+| Event                   | `autopause.xt`           | `object` | Auto pause event             |
 
 </div>
 
-Trigger methods this way (object is the DOM element you assigned the component):
+### Methods
+
+Call methods this way (object is the DOM element you assigned the component):
 
 ```jsx
 const self = Xt.get('xt-toggle', document.querySelector('#my-toggle-object'))
@@ -379,8 +396,8 @@ self.destroy()
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Method                  | `self.reinit(saveCurrents:Boolean)`       | Reinitialize component and save currents as initial (default: `true`)             |
 | Method                  | `self.restart()`                          | Restart component to initial             |
+| Method                  | `self.reinit(saveCurrents:Boolean)`       | Reinitialize component and save currents as initial (default: `true`)             |
 | Method                  | `self.destroy()`              | Destroy component            |
 
 </div>

@@ -296,10 +296,10 @@ const populateDemo = function(container, i) {
             prev = prev >= 0 ? prev : demos.length - 1
             let currentOffset
             let prevOffset = demos[prev].offsetTop
-            demos[prev].querySelector('.gatsby_demo_tabs_left .btn:last-child').dispatchEvent(new CustomEvent('on.xt'))
+            demos[prev].querySelector('.gatsby_demo_tabs_left .btn:last-child').dispatchEvent(new CustomEvent('on.trigger.xt'))
             if (document.querySelector('#toggle_open-full-trigger').classList.contains('active')) {
               currentOffset = document.querySelector('[data-xt-origin="toggle_open-full-content"]').offsetTop
-              document.querySelector('#toggle_open-full-trigger').dispatchEvent(new CustomEvent('off.xt'))
+              document.querySelector('#toggle_open-full-trigger').dispatchEvent(new CustomEvent('off.trigger.xt'))
               makeFullscreen(demos[prev].closest('.gatsby_demo'))
             } else {
               currentOffset = this.closest('.gatsby_demo').offsetTop
@@ -312,7 +312,7 @@ const populateDemo = function(container, i) {
           if (listingToggles[i].classList.contains('active')) {
             let prev = i - 1
             prev = prev >= 0 ? prev : listingToggles.length - 1
-            document.querySelector('#toggle_open-full-trigger').dispatchEvent(new CustomEvent('off.xt'))
+            document.querySelector('#toggle_open-full-trigger').dispatchEvent(new CustomEvent('off.trigger.xt'))
             listingToggles[prev].dispatchEvent(new CustomEvent('click'))
             break
           }
@@ -333,10 +333,10 @@ const populateDemo = function(container, i) {
             next = next < demos.length ? next : 0
             let currentOffset
             let nextOffset = demos[next].offsetTop
-            demos[next].querySelector('.gatsby_demo_tabs_left .btn:first-child').dispatchEvent(new CustomEvent('on.xt'))
+            demos[next].querySelector('.gatsby_demo_tabs_left .btn:first-child').dispatchEvent(new CustomEvent('on.x.triggert'))
             if (document.querySelector('#toggle_open-full-trigger').classList.contains('active')) {
               currentOffset = document.querySelector('[data-xt-origin="toggle_open-full-content"]').offsetTop
-              document.querySelector('#toggle_open-full-trigger').dispatchEvent(new CustomEvent('off.xt'))
+              document.querySelector('#toggle_open-full-trigger').dispatchEvent(new CustomEvent('off.trigger.xt'))
               makeFullscreen(demos[next].closest('.gatsby_demo'))
             } else {
               currentOffset = this.closest('.gatsby_demo').offsetTop
@@ -349,7 +349,7 @@ const populateDemo = function(container, i) {
           if (listingToggles[i].classList.contains('active')) {
             let next = i + 1
             next = next < listingToggles.length ? next : 0
-            document.querySelector('#toggle_open-full-trigger').dispatchEvent(new CustomEvent('off.xt'))
+            document.querySelector('#toggle_open-full-trigger').dispatchEvent(new CustomEvent('off.trigger.xt'))
             listingToggles[next].dispatchEvent(new CustomEvent('click'))
             break
           }
@@ -384,9 +384,9 @@ const makeFullscreen = function(container) {
       }
     })
   }
-  toggle.dispatchEvent(new CustomEvent('on.xt'))
+  toggle.dispatchEvent(new CustomEvent('on.trigger.xt'))
   toggle.addEventListener('init.xt', function(e) {
-    toggle.dispatchEvent(new CustomEvent('on.xt'))
+    toggle.dispatchEvent(new CustomEvent('on.trigger.xt'))
   })
   // move code block
   container.before(
@@ -406,14 +406,10 @@ const makeFullscreen = function(container) {
   // trigger custom reinit
   const full = container.closest('#toggle_open-full')
   if (full) {
-    item.dispatchEvent(new CustomEvent('on.xt'))
+    item.dispatchEvent(new CustomEvent('on.trigger.xt'))
     Xt.animTimeout(full, function() {
-      // @FIX two raf or slider gives error with reinit.xt
-      requestAnimationFrame(function() {
-        requestAnimationFrame(function() {
-          item.dispatchEvent(new CustomEvent('ondone.xt'))
-        })
-      })
+      // @FIX two raf or slider gives error with reinit
+      item.dispatchEvent(new CustomEvent('ondone.xt'))
     })
   }
 }

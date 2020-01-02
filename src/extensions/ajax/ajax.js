@@ -150,15 +150,12 @@ class Ajax extends Xt.Toggle {
    * @param {Event} e
    */
   eventOnHandler(element, e) {
-    // @FIX filter triggered from library (use only in library)
-    if (!e || !e.detail || !e.detail.skip) {
-      // not when opening in new tab
-      if (e.metaKey || e.ctrlKey) {
-        return
-      }
-      // prevent links (needed for xt-ajax to go to links and propagate event if inside targets)
-      e.preventDefault()
+    // not when opening in new tab
+    if (e.metaKey || e.ctrlKey) {
+      return
     }
+    // prevent links (needed for xt-ajax to go to links and propagate event if inside targets)
+    e.preventDefault()
     // super
     super.eventOnHandler(element, e)
   }
@@ -220,10 +217,10 @@ class Ajax extends Xt.Toggle {
     self.locationFrom = self.locationTo || self.locationFrom // fix fast change page
     self.locationTo = new URL(url, location)
     // autoClose
-    dispatchEvent(new CustomEvent('autoClose.xt'))
+    dispatchEvent(new CustomEvent('autoclose.trigger.xt'))
     // dispatch
     const detail = self.eDetailSet()
-    self.object.dispatchEvent(new CustomEvent('request.xt.ajax', { detail: detail }))
+    self.object.dispatchEvent(new CustomEvent('request.xt', { detail: detail }))
     // duration
     self.detail.requestDate = new Date()
     clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AjaxDurationTimeout'))
@@ -260,7 +257,7 @@ class Ajax extends Xt.Toggle {
     const self = this
     // dispatch
     const detail = self.eDetailSet()
-    self.object.dispatchEvent(new CustomEvent('response.xt.ajax', { detail: detail }))
+    self.object.dispatchEvent(new CustomEvent('response.xt', { detail: detail }))
     // duration
     self.detail.requestDuration -= new Date() - date
     if (self.detail.requestDuration > 0) {
@@ -316,7 +313,7 @@ class Ajax extends Xt.Toggle {
     replace = null
     // dispatch
     const detail = self.eDetailSet()
-    self.object.dispatchEvent(new CustomEvent('replace.xt.ajax', { detail: detail }))
+    self.object.dispatchEvent(new CustomEvent('replace.xt', { detail: detail }))
     // reinit
     if (!self.initial && date === self.detail.requestDate) {
       // fix fast change page
@@ -343,7 +340,7 @@ class Ajax extends Xt.Toggle {
     self.initStart()
     // dispatch
     const detail = self.eDetailSet()
-    self.object.dispatchEvent(new CustomEvent('replace.xt.ajax', { detail: detail }))
+    self.object.dispatchEvent(new CustomEvent('replace.xt', { detail: detail }))
   }
 
   /**

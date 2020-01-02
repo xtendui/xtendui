@@ -35,8 +35,6 @@ To disable slider use `.slider.slider-disable` also within media queries.
 
 ## @TODO
 
-Use events `'start.xt.auto'` `'stop.xt.auto'` `'pause.xt.auto'`.
-
 <demo>
   <demovanilla src="vanilla/components/slider/progress">
   </demovanilla>

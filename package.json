@@ -27,8 +27,10 @@
   "dependencies": {
     "bezier-easing": "^2.1.0",
     "classlist.js": "^1.1.20150312",
+    "core-js": "^2.6.10",
     "gsap": "^3.0.1",
     "relaxed-json": "^1.0.3",
+    "regenerator-runtime": "^0.13.3",
     "url-polyfill": "^1.1.7"
   },
   "devDependencies": {

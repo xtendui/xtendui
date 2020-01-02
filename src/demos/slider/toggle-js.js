@@ -34,7 +34,7 @@ Xt.mount.push({
       }
     }
 
-    self.dragger.addEventListener('drag.xt.slider', eventDrag)
+    self.dragger.addEventListener('drag.xt', eventDrag)
 
     // dragreset
 
@@ -52,7 +52,7 @@ Xt.mount.push({
       }
     }
 
-    self.dragger.addEventListener('dragreset.xt.slider', eventDragReset)
+    self.dragger.addEventListener('dragreset.xt', eventDragReset)
 
     // on
 

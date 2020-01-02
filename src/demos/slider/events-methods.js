@@ -33,7 +33,7 @@ Xt.mount.push({
     const firstElFnc = function() {
       logAdd('<strong>1st element</strong>')
       const elements = self.elements.filter(x => !x.classList.contains('xt-wrap'))
-      elements[0].dispatchEvent(new CustomEvent('on.xt'))
+      elements[0].dispatchEvent(new CustomEvent('on.trigger.xt'))
     }
 
     firstEl.addEventListener('click', firstElFnc)
@@ -45,7 +45,7 @@ Xt.mount.push({
     const firstTrFnc = function() {
       logAdd('<strong>1st target</strong>')
       const targets = self.targets.filter(x => !x.classList.contains('xt-wrap'))
-      targets[0].dispatchEvent(new CustomEvent('on.xt'))
+      targets[0].dispatchEvent(new CustomEvent('on.trigger.xt'))
     }
 
     firstTr.addEventListener('click', firstTrFnc)

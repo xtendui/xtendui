@@ -112,10 +112,12 @@ You can use a function for `delayOn` and `delayOff` for example `function(curren
 
 ## Events and Methods
 
+### Listen
+
 Listen to events this way:
 
 ```jsx
-document.querySelector('#my-element').addEventListener('change.xt.scroll', function(e) {
+document.querySelector('#my-element').addEventListener('change.xt', function(e) {
   // logic
 })
 ```
@@ -123,7 +125,7 @@ document.querySelector('#my-element').addEventListener('change.xt.scroll', funct
 Listen to events delegation with **useCapture** this way:
 
 ```jsx
-document.querySelector('#my-object').addEventListener('change.xt.scroll', function(e) {
+document.querySelector('#my-object').addEventListener('change.xt', function(e) {
   const el = e.target
   // useCapture delegation
   if (e.detail.self.elements.includes(el)) {
@@ -136,11 +138,15 @@ document.querySelector('#my-object').addEventListener('change.xt.scroll', functi
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `change.xt.scroll`       | `elements` | Computation event             |
+| Event                   | `change.xt`       | `elements` | Computation event             |
+| Event                   | `imageloaded.xt`           | `elements` `targets` | Images loaded event            |
+| Event                   | `init.xt`           | `object` | Init event             |
 
 </div>
 
-Trigger methods this way (object is the DOM element you assigned the component):
+### Methods
+
+Call methods this way (object is the DOM element you assigned the component):
 
 ```jsx
 let self = Xt.get('xt-scroll', document.querySelector('#my-scroll-object'))
@@ -151,8 +157,8 @@ self.destroy()
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Method                  | `self.reinit(saveCurrents:Boolean)`       | Reinitialize component and save currents as initial (default: `true`)             |
 | Method                  | `self.restart()`                          | Restart component to initial             |
+| Method                  | `self.reinit(saveCurrents:Boolean)`       | Reinitialize component and save currents as initial (default: `true`)             |
 | Method                  | `self.destroy()`              | Destroy component            |
 
 </div>

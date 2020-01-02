@@ -97,16 +97,13 @@ class Sticky extends Xt.Toggle {
       const stickyHandler = Xt.dataStorage.put(window, options.on + '/' + self.namespace, self.eventStickyHandler.bind(self))
       const events = [...options.on.split(' ')]
       for (const event of events) {
-        addEventListener(event, stickyHandler, Xt.passiveSupported ? { passive: true } : null)
+        addEventListener(event, stickyHandler, { passive: true })
       }
       self.eventStickyHandler(null, true)
     }
-    // autoClose
-    const autoCloseHandler = Xt.dataStorage.put(self.object, 'hide' + '/' + self.namespace, Xt.autoClose.bind(self, self.object))
-    self.object.addEventListener('hide.xt.sticky', autoCloseHandler)
     // focusin
     const focusInHandler = Xt.dataStorage.put(document, 'focusin' + '/' + self.namespace, self.eventFocusInHandler.bind(self))
-    document.addEventListener('focusin', focusInHandler, Xt.passiveSupported ? { passive: true } : null)
+    document.addEventListener('focusin', focusInHandler, { passive: true })
   }
 
   //
@@ -120,18 +117,15 @@ class Sticky extends Xt.Toggle {
    */
   eventStickyHandler(e = null, initial = false) {
     const self = this
-    // @FIX filter triggered from library (use only in library)
-    if (!e || !e.detail || !e.detail.skip) {
-      Xt.eventDelay(
-        e,
-        self.object,
-        function() {
-          // handler
-          self.eventSticky(e, initial)
-        },
-        self.componentNamespace + 'Sticky'
-      )
-    }
+    Xt.eventDelay(
+      e,
+      self.object,
+      function() {
+        // handler
+        self.eventSticky(e, initial)
+      },
+      self.componentNamespace + 'Sticky'
+    )
   }
 
   /**
@@ -272,17 +266,17 @@ class Sticky extends Xt.Toggle {
           if (!el.classList.contains('sticky-hide')) {
             el.classList.add('sticky-hide')
             // autoClose
-            dispatchEvent(new CustomEvent('autoClose.xt'))
+            dispatchEvent(new CustomEvent('autoclose.trigger.xt', { detail: { inside: el } }))
             // listener dispatch
             const detail = self.eDetailSet(e)
-            el.dispatchEvent(new CustomEvent('hide.xt.sticky', { detail: detail }))
+            el.dispatchEvent(new CustomEvent('hide.xt', { detail: detail }))
           }
         } else {
           if (el.classList.contains('sticky-hide')) {
             el.classList.remove('sticky-hide')
             // listener dispatch
             const detail = self.eDetailSet(e)
-            el.dispatchEvent(new CustomEvent('show.xt.sticky', { detail: detail }))
+            el.dispatchEvent(new CustomEvent('show.xt', { detail: detail }))
           }
         }
       } else {
@@ -332,7 +326,7 @@ class Sticky extends Xt.Toggle {
       }
       // dispatch
       const detail = self.eDetailSet()
-      el.dispatchEvent(new CustomEvent('change.xt.sticky', { detail: detail }))
+      el.dispatchEvent(new CustomEvent('change.xt', { detail: detail }))
       // save for direction
       Xt.dataStorage.set(el, self.componentNamespace + 'AddOld', add)
     }

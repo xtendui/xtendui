@@ -10,7 +10,7 @@ exports.onPreRouteUpdate = () => {
   // fix demo index when changing page
   document.documentElement.setAttribute('data-demo-index', '0')
   // autoClose
-  window.dispatchEvent(new CustomEvent('autoClose.xt')) // autoClose xt
+  dispatchEvent(new CustomEvent('autoclose.trigger.xt'))
   // sidebarArticleScrolltop
   const sidebarArticle = document.querySelector('.gatsby_site_article_sidebar')
   if (sidebarArticle) {

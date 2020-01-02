@@ -32,7 +32,7 @@ Xt.mount.push({
     }
 
     for (const el of self.elements) {
-      el.addEventListener('change.xt.scroll', eventChange)
+      el.addEventListener('change.xt', eventChange)
     }
 
     // unmount

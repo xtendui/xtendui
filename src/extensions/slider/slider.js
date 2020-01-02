@@ -372,10 +372,10 @@ class Slider extends Xt.Toggle {
     // elements
     for (const el of self.elements) {
       // event on
-      const slideOnHandler = Xt.dataStorage.put(el, 'on' + '/' + self.namespace, self.eventSlideOnHandler.bind(self).bind(self, dragger, el))
+      const slideOnHandler = Xt.dataStorage.put(el, 'on/slider' + '/' + self.namespace, self.eventSlideOnHandler.bind(self).bind(self, dragger, el))
       el.addEventListener('on.xt', slideOnHandler, true) // @FIX useCapture for custom events order on re-init
       // event off
-      const slideOffHandler = Xt.dataStorage.put(el, 'off' + '/' + self.namespace, self.eventSlideOffHandler.bind(self).bind(self, dragger, el))
+      const slideOffHandler = Xt.dataStorage.put(el, 'off/slider' + '/' + self.namespace, self.eventSlideOffHandler.bind(self).bind(self, dragger, el))
       el.addEventListener('off.xt', slideOffHandler, true) // @FIX useCapture for custom events order on re-init
     }
     // targets
@@ -385,10 +385,10 @@ class Slider extends Xt.Toggle {
         tr.classList.add('xt-links-none')
       }
       // event on
-      const slideOnHandler = Xt.dataStorage.put(tr, 'on' + '/' + self.namespace, self.eventSlideOnHandler.bind(self).bind(self, dragger, tr))
+      const slideOnHandler = Xt.dataStorage.put(tr, 'on/slider' + '/' + self.namespace, self.eventSlideOnHandler.bind(self).bind(self, dragger, tr))
       tr.addEventListener('on.xt', slideOnHandler, true) // @FIX useCapture for custom events order on re-init
       // event off
-      const slideOffHandler = Xt.dataStorage.put(tr, 'off' + '/' + self.namespace, self.eventSlideOffHandler.bind(self).bind(self, dragger, tr))
+      const slideOffHandler = Xt.dataStorage.put(tr, 'off/slider' + '/' + self.namespace, self.eventSlideOffHandler.bind(self).bind(self, dragger, tr))
       tr.addEventListener('off.xt', slideOffHandler, true) // @FIX useCapture for custom events order on re-init
     }
     // dragger
@@ -406,7 +406,7 @@ class Slider extends Xt.Toggle {
       )
       const events = ['mousedown', 'touchstart']
       for (const event of events) {
-        dragger.addEventListener(event, dragstartHandler, Xt.passiveSupported ? { passive: true } : null)
+        dragger.addEventListener(event, dragstartHandler, { passive: true })
       }
       // xt-grab
       if (!self.disabled) {
@@ -531,7 +531,7 @@ class Slider extends Xt.Toggle {
     const dragHandler = Xt.dataStorage.put(dragger, 'mousemove touchmove' + '/' + self.namespace, self.eventDragHandler.bind(self).bind(self, dragger))
     const events = ['mousemove', 'touchmove']
     for (const event of events) {
-      dragger.addEventListener(event, dragHandler, Xt.passiveSupported ? { passive: true } : null)
+      dragger.addEventListener(event, dragHandler, { passive: true })
     }
     // logic
     self.logicDragstart(dragger, e)
@@ -554,7 +554,7 @@ class Slider extends Xt.Toggle {
     const dragHandler = Xt.dataStorage.get(dragger, 'mousemove touchmove' + '/' + self.namespace)
     const eventsmove = ['mousemove', 'touchmove']
     for (const event of eventsmove) {
-      dragger.removeEventListener(event, dragHandler, Xt.passiveSupported ? { passive: true } : null)
+      dragger.removeEventListener(event, dragHandler, { passive: true })
     }
     // logic
     self.logicDragend(dragger, e)
@@ -604,6 +604,10 @@ class Slider extends Xt.Toggle {
   eventSlideOn(dragger, el, e) {
     const self = this
     const options = self.options
+    // disabled
+    if (self.disabled) {
+      return
+    }
     // @FIX targets handler
     const slides = self.getTargets(el)
     const slide = slides[0]
@@ -635,7 +639,7 @@ class Slider extends Xt.Toggle {
           self.autoHeight.style.height = slideHeight
           // listener dispatch
           const detail = self.eDetailSet()
-          slide.dispatchEvent(new CustomEvent('autoHeight.xt', { detail: detail }))
+          slide.dispatchEvent(new CustomEvent('autoheight.xt', { detail: detail }))
         }
       }
     }
@@ -754,7 +758,7 @@ class Slider extends Xt.Toggle {
     // listener dispatch
     if (!self.initial) {
       const detail = self.eDetailSet(e)
-      dragger.dispatchEvent(new CustomEvent('dragstart.xt.slider', { detail: detail }))
+      dragger.dispatchEvent(new CustomEvent('dragstart.xt', { detail: detail }))
     }
   }
 
@@ -784,7 +788,7 @@ class Slider extends Xt.Toggle {
     // listener dispatch
     if (!self.initial) {
       const detail = self.eDetailSet(e)
-      dragger.dispatchEvent(new CustomEvent('dragend.xt.slider', { detail: detail }))
+      dragger.dispatchEvent(new CustomEvent('dragend.xt', { detail: detail }))
     }
   }
 
@@ -920,7 +924,7 @@ class Slider extends Xt.Toggle {
     // listener dispatch
     if (!self.initial) {
       const detail = self.eDetailSet(e)
-      dragger.dispatchEvent(new CustomEvent('drag.xt.slider', { detail: detail }))
+      dragger.dispatchEvent(new CustomEvent('drag.xt', { detail: detail }))
     }
   }
 
@@ -991,7 +995,7 @@ class Slider extends Xt.Toggle {
       // listener dispatch
       if (!self.initial) {
         const detail = self.eDetailSet(e)
-        dragger.dispatchEvent(new CustomEvent('dragreset.xt.slider', { detail: detail }))
+        dragger.dispatchEvent(new CustomEvent('dragreset.xt', { detail: detail }))
       }
     }
   }

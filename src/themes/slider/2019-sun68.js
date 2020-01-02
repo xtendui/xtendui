@@ -49,7 +49,7 @@ Xt.mount.push({
       gsap.set(img, { translateX: -imgSize * ratio * direction, opacity: 1 - ratio + 0.5 })
     }
 
-    self.dragger.addEventListener('drag.xt.slider', eventDrag)
+    self.dragger.addEventListener('drag.xt', eventDrag)
 
     // dragend
 
@@ -60,7 +60,7 @@ Xt.mount.push({
       gsap.to(img, { translateX: 0, opacity: 1, duration: timeImg, ease: Xt.vars.easeCheetah })
     }
 
-    self.dragger.addEventListener('dragreset.xt.slider', eventDragReset)
+    self.dragger.addEventListener('dragreset.xt', eventDragReset)
 
     // on
 
