@@ -1051,7 +1051,9 @@ class Slider extends Xt.Toggle {
     // clean wraps
     self.destroyWraps()
     // autoHeight
-    self.autoHeight.style.height = ''
+    if (self.autoHeight) {
+      self.autoHeight.style.height = ''
+    }
     // dragger
     if (dragger) {
       // links
@@ -1060,13 +1062,13 @@ class Slider extends Xt.Toggle {
       dragger.classList.add('xt-jumps-none')
       // grab
       dragger.classList.remove('xt-grab')
+      // drag
+      dragger.classList.add('transition-none')
+      dragger.style.transform = ''
+      requestAnimationFrame(function() {
+        dragger.classList.remove('transition-none')
+      })
     }
-    // drag
-    dragger.classList.add('transition-none')
-    dragger.style.transform = ''
-    requestAnimationFrame(function() {
-      dragger.classList.remove('transition-none')
-    })
     // super
     super.destroy()
   }
