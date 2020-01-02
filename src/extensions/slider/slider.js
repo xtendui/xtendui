@@ -35,10 +35,6 @@ class Slider extends Xt.Toggle {
     }
     // targets
     self.initScopeTargets()
-    // only one call per group
-    for (const slide of self.targets) {
-      Xt.dataStorage.remove(slide, self.componentNamespace + 'SlideOnDone')
-    }
     // autoHeight
     if (options.autoHeight) {
       self.autoHeight = self.object.querySelector(options.autoHeight)
@@ -939,13 +935,6 @@ class Slider extends Xt.Toggle {
     const xPosCurrent = self.detail.xPosCurrent || 0
     // prevent dragging animation
     dragger.classList.remove('duration-none')
-    // only one call per group
-    const currents = self.getCurrents()
-    for (const current of currents) {
-      for (const target of self.getTargets(current)) {
-        Xt.dataStorage.remove(target, self.componentNamespace + 'SlideOnDone')
-      }
-    }
     // activate or reset
     const draggerWidth = self.detail.draggerWidth
     const xDist = self.detail.xPosReal - xPosCurrent
