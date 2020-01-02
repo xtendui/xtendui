@@ -106,7 +106,7 @@ const populateBlock = function() {
     appendOrigin.before(moving)
     appendOrigin.remove()
     // triggering e.detail.inside
-    requestAnimationFrame(function () {
+    requestAnimationFrame(function() {
       dispatchEvent(new CustomEvent('resize', { detail: { force: true, inside: moving.querySelector('.gatsby_demo_source') } }))
     })
     // set hash
