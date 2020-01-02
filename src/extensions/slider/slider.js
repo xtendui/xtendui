@@ -1046,14 +1046,17 @@ class Slider extends Xt.Toggle {
     self.destroyPags()
     // clean wraps
     self.destroyWraps()
-    // links
-    dragger.classList.remove('xt-links-none')
-    // links
-    dragger.classList.add('xt-jumps-none')
-    // grab
-    dragger.classList.remove('xt-grab')
-    // height
+    // autoHeight
     self.autoHeight.style.height = ''
+    // dragger
+    if (dragger) {
+      // links
+      dragger.classList.remove('xt-links-none')
+      // links
+      dragger.classList.add('xt-jumps-none')
+      // grab
+      dragger.classList.remove('xt-grab')
+    }
     // drag
     dragger.classList.add('transition-none')
     dragger.style.transform = ''
