@@ -6,10 +6,13 @@ Xt.mount.push({
     // methods
 
     function inputNumberChange(step, e) {
-      const input = object.querySelector('input')
-      let val = parseFloat(input.value)
-      val = val + step
-      inputNumberValidate.bind(object)(val)
+      // trigger external events and skip internal events
+      if (!e || !e.detail || !e.detail.skip) {
+        const input = object.querySelector('input')
+        let val = parseFloat(input.value)
+        val = val + step
+        inputNumberValidate.bind(object)(val)
+      }
     }
 
     function inputNumberValidate(val) {
@@ -32,6 +35,7 @@ Xt.mount.push({
       }
       // set value
       input.value = val
+      // trigger external events and skip internal events
       input.dispatchEvent(new CustomEvent('change', { detail: { skip: true } }))
     }
 
