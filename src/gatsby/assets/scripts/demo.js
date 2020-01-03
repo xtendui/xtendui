@@ -410,12 +410,6 @@ const makeFullscreen = function(container) {
   const full = container.closest('#toggle_open-full')
   if (full) {
     item.dispatchEvent(new CustomEvent('on.xt'))
-    /*
-    Xt.animTimeout(full, function() {
-      // @FIX two raf or slider gives error with reinit
-      item.dispatchEvent(new CustomEvent('ondone.xt'))
-    })
-    */
   }
 }
 
