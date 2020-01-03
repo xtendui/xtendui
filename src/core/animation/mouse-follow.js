@@ -114,6 +114,8 @@ class MouseFollow {
     Xt.remove(self.componentName, self.object)
     Xt.remove(self.componentName, self.container)
   }
+
+  //
 }
 
 //

@@ -135,6 +135,8 @@ class Toggle {
       arr = arr.filter(x => !x.closest('.xt-ignore')) // filter out ignore
       self.elements = arr
       self.destroyElements.push(...self.elements)
+      // reset namespace
+      Xt.dataStorage.remove(self.namespace, 'xtNamespaceDone')
     }
     // xtend unique mode
     if (!self.elements.length) {
@@ -148,12 +150,10 @@ class Toggle {
           self.elements = arr
           self.destroyElements.push(...self.elements)
         }
+        // reset namespace
+        Xt.dataStorage.remove(self.namespace, 'xtNamespaceDone')
       })
     }
-    // reset namespace
-    requestAnimationFrame(function() {
-      Xt.dataStorage.remove(self.namespace, 'xtNamespaceDone')
-    })
     // set self
     for (const el of self.elements) {
       Xt.set(self.componentName, el, self)
@@ -187,6 +187,7 @@ class Toggle {
   initStart(saveCurrents = false) {
     const self = this
     const options = self.options
+    // status
     self.eventStatusHandler()
     // initial
     let currents = 0
@@ -433,13 +434,6 @@ class Toggle {
     // status
     const checkHandler = Xt.dataStorage.put(window, 'resize/check' + '/' + self.namespace, self.eventStatusHandler.bind(self).bind(self))
     addEventListener('resize', checkHandler)
-    self.eventStatusHandler()
-    // restart
-    const restartHandler = Xt.dataStorage.put(self.object, 'restart' + '/' + self.namespace, self.eventRestartHandler.bind(self).bind(self))
-    self.object.addEventListener('restart.trigger.xt', restartHandler)
-    // reinit
-    const reinitHandler = Xt.dataStorage.put(self.object, 'reinit' + '/' + self.namespace, self.eventReinitHandler.bind(self).bind(self))
-    self.object.addEventListener('reinit.trigger.xt', reinitHandler)
     // elements
     for (const el of self.elements) {
       // event on
@@ -2643,64 +2637,74 @@ class Toggle {
     self.object.classList.remove('xt-disable')
   }
 
-  /**
-   * reinit
-   * @param {Event} e
-   */
-  eventReinitHandler(e) {
-    const self = this
-    // reinit
-    self.reinit()
-  }
-
-  /**
-   * restart
-   * @param {Event} e
-   */
-  eventRestartHandler(e) {
-    const self = this
-    // restart
-    self.restart()
-  }
-
   //
   // util
   //
 
   /**
-   * status handler
+   * reinit handler
+   * @param {Event} e
+   */
+  eventReinitHandler(e) {
+    const self = this
+    // triggering e.detail.inside
+    if (!e || !e.detail || !e.detail.inside || e.detail.inside.contains(self.object)) {
+      Xt.eventDelay(
+        e,
+        self.object,
+        function() {
+          // handler
+          self.reinit()
+        },
+        self.componentNamespace + 'Reinit'
+      )
+    }
+  }
+
+  /**
+   * reinit
+   * @param {Boolean} saveCurrents
    */
   reinit(saveCurrents = true) {
     const self = this
-    // handler
+    // reinit
+    self.destroy()
     self.initLogic(saveCurrents)
+    // listener dispatch
+    self.object.dispatchEvent(new CustomEvent('reinit.xt'))
   }
 
   /**
-   * status handler
+   * restart handler
+   * @param {Event} e
+   */
+  eventRestartHandler(e) {
+    const self = this
+    // handler
+    self.restart()
+  }
+
+  /**
+   * restart
    */
   restart() {
     const self = this
-    // handler
+    // reset namespace
+    Xt.dataStorage.remove(self.namespace, 'xtNamespaceDone')
+    // restart
     self.initStart()
+    // listener dispatch
+    self.object.dispatchEvent(new CustomEvent('restart.xt'))
   }
 
-  //
-  // destroy
-  //
-
   /**
-   * destroy disabled
+   * destroy handler
+   * @param {Event} e
    */
-
-  destroyDisabled() {
+  eventDestroyHandler(e) {
     const self = this
-    const options = self.options
-    if (options.autoDisable) {
-      for (const el of self.elements) {
-        el.removeAttribute('disabled')
-      }
-    }
+    // handler
+    self.destroy()
   }
 
   /**
@@ -2714,8 +2718,6 @@ class Toggle {
     self.eventAutostop()
     // [disabled]
     self.destroyDisabled()
-    // listener dispatch
-    self.object.dispatchEvent(new CustomEvent('destroy.xt'))
     // remove events
     if (self.destroyElements) {
       for (const element of self.destroyElements) {
@@ -2743,8 +2745,6 @@ class Toggle {
     }
     // disable
     self.disable()
-    // reset namespace
-    Xt.dataStorage.remove(self.namespace, 'xtNamespace')
     // set self
     Xt.remove(self.componentName, self.object)
     for (const el of self.elements) {
@@ -2753,9 +2753,27 @@ class Toggle {
     for (const tr of self.targets) {
       Xt.remove(self.componentName, tr)
     }
+    // listener dispatch
+    self.object.dispatchEvent(new CustomEvent('destroy.xt'))
     // delete
     delete this
   }
+
+  /**
+   * destroy disabled
+   */
+
+  destroyDisabled() {
+    const self = this
+    const options = self.options
+    if (options.autoDisable) {
+      for (const el of self.elements) {
+        el.removeAttribute('disabled')
+      }
+    }
+  }
+
+  //
 }
 
 //

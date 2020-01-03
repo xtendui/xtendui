@@ -44,6 +44,8 @@ class Overlay extends Xt.Toggle {
       }
     }
   }
+
+  //
 }
 
 //

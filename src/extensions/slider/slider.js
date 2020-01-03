@@ -571,26 +571,6 @@ class Slider extends Xt.Toggle {
     self.logicDrag(dragger, e)
   }
 
-  /**
-   * reinit
-   * @param {Event} e
-   */
-  eventReinitHandler(e) {
-    const self = this
-    // triggering e.detail.inside
-    if (!e || !e.detail || !e.detail.inside || e.detail.inside.contains(self.object)) {
-      Xt.eventDelay(
-        e,
-        self.object,
-        function() {
-          // handler
-          self.reinit()
-        },
-        self.componentNamespace + 'Reinit'
-      )
-    }
-  }
-
   //
   // event
   //
@@ -998,8 +978,41 @@ class Slider extends Xt.Toggle {
   }
 
   //
-  // destroy
+  // util
   //
+
+  /**
+   * destroy
+   */
+  destroy(weak = false) {
+    const self = this
+    const dragger = self.dragger
+    // clean pagination
+    self.destroyPags()
+    // clean wraps
+    self.destroyWraps()
+    // autoHeight
+    if (self.autoHeight) {
+      self.autoHeight.style.height = ''
+    }
+    // dragger
+    if (dragger) {
+      // links
+      dragger.classList.remove('xt-links-none')
+      // links
+      dragger.classList.add('xt-jumps-none')
+      // grab
+      dragger.classList.remove('xt-grab')
+      // drag
+      dragger.classList.add('transition-none')
+      dragger.style.transform = ''
+      requestAnimationFrame(function() {
+        dragger.classList.remove('transition-none')
+      })
+    }
+    // super
+    super.destroy()
+  }
 
   /**
    * destroy pagination
@@ -1037,38 +1050,7 @@ class Slider extends Xt.Toggle {
     }
   }
 
-  /**
-   * destroy
-   */
-  destroy(weak = false) {
-    const self = this
-    const dragger = self.dragger
-    // clean pagination
-    self.destroyPags()
-    // clean wraps
-    self.destroyWraps()
-    // autoHeight
-    if (self.autoHeight) {
-      self.autoHeight.style.height = ''
-    }
-    // dragger
-    if (dragger) {
-      // links
-      dragger.classList.remove('xt-links-none')
-      // links
-      dragger.classList.add('xt-jumps-none')
-      // grab
-      dragger.classList.remove('xt-grab')
-      // drag
-      dragger.classList.add('transition-none')
-      dragger.style.transform = ''
-      requestAnimationFrame(function() {
-        dragger.classList.remove('transition-none')
-      })
-    }
-    // super
-    super.destroy()
-  }
+  //
 }
 
 //

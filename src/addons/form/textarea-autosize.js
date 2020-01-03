@@ -60,7 +60,7 @@ class TextareaAutosize {
   }
 
   //
-  // destroy
+  // util
   //
 
   /**
@@ -81,6 +81,8 @@ class TextareaAutosize {
     Xt.remove(self.componentName, self.object)
     Xt.remove(self.componentName, form)
   }
+
+  //
 }
 
 //

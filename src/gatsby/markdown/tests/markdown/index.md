@@ -77,7 +77,7 @@ body {
 ```
 
 ```jsx
-console.log('test')
+const test = 'test'
 ```
 
 ## Tables

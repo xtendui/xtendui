@@ -94,7 +94,7 @@ class PropagateInteraction {
   }
 
   //
-  // destroy
+  // util
   //
 
   /**
@@ -113,6 +113,8 @@ class PropagateInteraction {
       Xt.remove(self.componentName, tr)
     }
   }
+
+  //
 }
 
 //

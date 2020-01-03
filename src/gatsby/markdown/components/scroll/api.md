@@ -137,7 +137,7 @@ self = null
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
 | Method                  | `self.restart()`                          | Restart component to initial             |
-| Method                  | `self.reinit(saveCurrents:Boolean)`       | Reinitialize component and save currents as initial (default: `true`)             |
+| Method                  | `self.reinit(saveCurrents:Boolean)`       | Reinit component and save currents as initial (default: `true`)             |
 | Method                  | `self.destroy()`              | Destroy component            |
 
 </div>
@@ -174,5 +174,8 @@ object.addEventListener('change.xt', function(e) {
 | Event                   | `change.xt`       | `elements` | Computation event             |
 | Event                   | `medialoaded.xt`           | `elements` `targets` | Images loaded event            |
 | Event                   | `init.xt`           | `object` | Init event             |
+| Event                   | `restart.xt`           | `object` | Restart event             |
+| Event                   | `reinit.xt`           | `object` | Reinit event             |
+| Event                   | `destroy.xt`           | `object` | Destroy event             |
 
 </div>

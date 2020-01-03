@@ -351,6 +351,8 @@ class Ajax extends Xt.Toggle {
       document.title = history.state.title
     }
   }
+
+  //
 }
 
 //

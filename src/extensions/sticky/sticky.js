@@ -409,6 +409,8 @@ class Sticky extends Xt.Toggle {
     }
     return { val: val, foundHide: foundHide }
   }
+
+  //
 }
 
 //

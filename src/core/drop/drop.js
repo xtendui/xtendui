@@ -36,6 +36,8 @@ class Drop extends Xt.Toggle {
       }
     }
   }
+
+  //
 }
 
 //

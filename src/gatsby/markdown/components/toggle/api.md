@@ -342,7 +342,7 @@ self = null
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
 | Method                  | `self.restart()`                          | Restart component to initial             |
-| Method                  | `self.reinit(saveCurrents:Boolean)`       | Reinitialize component and save currents as initial (default: `true`)             |
+| Method                  | `self.reinit(saveCurrents:Boolean)`       | Reinit component and save currents as initial (default: `true`)             |
 | Method                  | `self.destroy()`              | Destroy component            |
 
 </div>
@@ -363,8 +363,6 @@ document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('o
 | Event                   | `off.trigger.xt`      | `elements` `targets` | Deactivation event            |
 | Event                   | `autostart.trigger.xt`           | `object` | Auto start event             |
 | Event                   | `autostop.trigger.xt`           | `object` | Auto stop event             |
-| Event                   | `reinit.trigger.xt`           | `object` | Reinitialize component and save currents as initial             |
-| Event                   | `restart.trigger.xt`           | `object` | Restart component to initial             |
 
 </div>
 
@@ -410,10 +408,13 @@ object.addEventListener('on.xt', function(e) {
 | Event                   | `ondone.xt`           | `elements` `targets` | Activation event after delay and duration             |
 | Event                   | `offdone.xt`           | `elements` `targets` | Deactivation event after delay and duration             |
 | Event                   | `medialoaded.xt`           | `elements` `targets` | Images loaded event            |
-| Event                   | `init.xt`           | `object` | Init event             |
 | Event                   | `autostart.xt`           | `object` | Auto start event             |
 | Event                   | `autostop.xt`           | `object` | Auto stop event             |
 | Event                   | `autopause.xt`           | `object` | Auto pause event             |
+| Event                   | `init.xt`           | `object` | Init event             |
+| Event                   | `restart.xt`           | `object` | Restart event             |
+| Event                   | `reinit.xt`           | `object` | Reinit event             |
+| Event                   | `destroy.xt`           | `object` | Destroy event             |
 
 </div>
 
