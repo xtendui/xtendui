@@ -8,14 +8,40 @@ date: "2000-01-01"
 
 ## Initialization
 
-Initialize automatically within markup with `[data-xt-overlay="{ <options> }"]`.
+Initialize automatically within markup with `[data-xt-overlay="{ <options> }"]` on the **object**:
 
-Or initialize with javascript (object is the DOM element you assigned the component):
+[[noteDefault]]
+| **Object** is the DOM element you want to assign the component.
 
-```jsx
+Or initialize with javascript:
+
+```js
 let self = new Xt.Overlay(document.querySelector('#my-object'), {
   // options
 });
+```
+
+Or inizialize with **mutation observer** (preferred method):
+
+```js
+Xt.mount.push({
+  matches: '#my-object',
+  mount: function(object) {
+    // init
+
+    let self = new Xt.Overlay(object, {
+      // options
+    });
+
+    // unmount
+
+    const unmount = function() {
+      self.destroy()
+      self = null
+    }
+    return unmount
+  }
+})
 ```
 
 ## Usage
@@ -85,7 +111,7 @@ It's recommended to use `active-overlay` on overlay otherwise the overlay flashe
 
 Call methods this way (object is the DOM element you assigned the component):
 
-```jsx
+```js
 let self = Xt.get('xt-overlay', document.querySelector('#my-object'))
 self.destroy()
 self = null
@@ -105,7 +131,7 @@ self = null
 
 Trigger events this way:
 
-```jsx
+```js
 document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('on.trigger.xt'))
 ```
 
@@ -122,33 +148,32 @@ document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('o
 
 Listen to events this way:
 
-```jsx
-document.querySelector('#my-element-or-target').addEventListener('on.xt', function(e) {
+```js
+const eventOn = function(e) {
   // logic
-})
+}
+
+document.querySelector('#my-element-or-target').addEventListener('on.xt', eventOn)
 ```
 
 Listen to events delegation with **useCapture** this way:
 
-```jsx
+```js
 let object = document.querySelector('#my-object')
 let self = Xt.get('xt-overlay', object)
 
-object.addEventListener('on.xt', function(e) {
+const eventOn = function(e) {
   const el = e.target
   // useCapture delegation
   if (self.elements.includes(el)) {
     // logic
   }
-}, true)
-
-object.addEventListener('on.xt', function(e) {
-  const tr = e.target
-  // useCapture delegation
   if (self.targets.includes(tr)) {
     // logic
   }
-}, true)
+}
+
+object.addEventListener('on.xt', eventOn, true)
 ```
 
 <div class="table-scroll">

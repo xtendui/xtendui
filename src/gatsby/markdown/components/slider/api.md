@@ -8,14 +8,40 @@ date: "2000-01-01"
 
 ## Initialization
 
-Initialize automatically within markup with `[data-xt-slider="{ <options> }"]`.
+Initialize automatically within markup with `[data-xt-slider="{ <options> }"]` on the **object**:
 
-Or initialize with javascript (object is the DOM element you assigned the component):
+[[noteDefault]]
+| **Object** is the DOM element you want to assign the component.
 
-```jsx
+Or initialize with javascript:
+
+```js
 let self = new Xt.Slider(document.querySelector('#my-object'), {
   // options
 });
+```
+
+Or inizialize with **mutation observer** (preferred method):
+
+```js
+Xt.mount.push({
+  matches: '#my-object',
+  mount: function(object) {
+    // init
+
+    let self = new Xt.Slider(object, {
+      // options
+    });
+
+    // unmount
+
+    const unmount = function() {
+      self.destroy()
+      self = null
+    }
+    return unmount
+  }
+})
 ```
 
 ## Usage
@@ -331,11 +357,63 @@ Use `wheel: { selector: 'object' }` or `wheel: { selector: QuerySelector }` to e
 
 </div>
 
+### Properties
+
+Access properties this way inside events:
+
+```js
+let object = document.querySelector('#my-object')
+let self = Xt.get('xt-slider', object)
+
+console.debug(self.elements)
+```
+
+<div class="table-scroll">
+
+|                         | Syntax                                   | Description                   |
+| ----------------------- | ---------------------------------------- | ----------------------------- |
+| Event                   | `object:Node`       | Object node             |
+| Event                   | `elements:Array`       | Elements nodes             |
+| Event                   | `targets:Array`       | Targets nodes            |
+| Event                   | `initial:Boolean`       | If first activation             |
+| Event                   | `dragger:Node`       | Dragger node             |
+| Event                   | `wheel:Node`       | Wheel node             |
+
+</div>
+
+#### Drag
+
+Here are the main drag properties inside `self.detail`:
+
+<div class="table-scroll">
+
+|                         | Syntax                                   | Description                   |
+| ----------------------- | ---------------------------------------- | ----------------------------- |
+| Event                   | `detail.dragStart:Number`       | Drag starting position             |
+| Event                   | `detail.dragCurrent:Number`       | Drag current position             |
+| Event                   | `detail.dragPos:Number`       | Drag distance from dragStart to dragCurrent with computation             |
+| Event                   | `detail.dragPosOld:Number`       | Drag distance from dragStart to dragCurrent with computation on the previous frame             |
+
+</div>
+
+#### Wheel
+
+Here are the main wheel properties inside `self.detail`:
+
+<div class="table-scroll">
+
+|                         | Syntax                                   | Description                   |
+| ----------------------- | ---------------------------------------- | ----------------------------- |
+| Event                   | `detail.wheelCurrent:Number`       | Wheel current scroll position             |
+| Event                   | `detail.wheelEnd:Number`       | Wheel end scroll position             |
+
+</div>
+
 ### Methods
 
 Call methods this way (object is the DOM element you assigned the component):
 
-```jsx
+```js
 const self = Xt.get('xt-slider', document.querySelector('#my-object'))
 self.destroy()
 self = null
@@ -355,10 +433,9 @@ self = null
 
 Trigger events this way:
 
-```jsx
+```js
 document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('on.trigger.xt'))
 ```
-
 
 <div class="table-scroll">
 
@@ -375,33 +452,32 @@ document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('o
 
 Listen to events this way:
 
-```jsx
-document.querySelector('#my-element-or-target').addEventListener('on.xt', function(e) {
+```js
+const eventOn = function(e) {
   // logic
-})
+}
+
+document.querySelector('#my-element-or-target').addEventListener('on.xt', eventOn)
 ```
 
 Listen to events delegation with **useCapture** this way:
 
-```jsx
+```js
 let object = document.querySelector('#my-object')
 let self = Xt.get('xt-slider', object)
 
-object.addEventListener('on.xt', function(e) {
+const eventOn = function(e) {
   const el = e.target
   // useCapture delegation
   if (self.elements.includes(el)) {
     // logic
   }
-}, true)
-
-object.addEventListener('on.xt', function(e) {
-  const tr = e.target
-  // useCapture delegation
   if (self.targets.includes(tr)) {
     // logic
   }
-}, true)
+}
+
+object.addEventListener('on.xt', eventOn, true)
 ```
 
 <div class="table-scroll">
@@ -416,9 +492,14 @@ object.addEventListener('on.xt', function(e) {
 | Event                   | `autostart.xt`           | `object` | Auto start event             |
 | Event                   | `autostop.xt`           | `object` | Auto stop event             |
 | Event                   | `autopause.xt`           | `object` | Auto pause event             |
+| Event                   | `autoheight.xt`           | `targets` | Autoheight event             |
 | Event                   | `wheelstart.xt`           | `wheel` | Wheel start event             |
-| Event                   | `wheel.xt`           | `wheel` | Wheel event             |
 | Event                   | `wheelend.xt`           | `wheel` | Wheel end event             |
+| Event                   | `wheel.xt`           | `wheel` | Wheel event             |
+| Event                   | `dragstart.xt`           | `dragger` | Drag start event             |
+| Event                   | `dragend.xt`           | `dragger` | Drag end event             |
+| Event                   | `drag.xt`           | `dragger` | Drag event             |
+| Event                   | `dragreset.xt`           | `dragger` | Drag reset event             |
 | Event                   | `init.xt`           | `object` | Init event             |
 | Event                   | `restart.xt`           | `object` | Restart event             |
 | Event                   | `reinit.xt`           | `object` | Reinit event             |

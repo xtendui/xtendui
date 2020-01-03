@@ -32,11 +32,11 @@ Xt.mount.push({
 
     const eventDrag = function(e) {
       const target = self.targets.filter(x => x.classList.contains('active'))[0]
-      const ratio = Math.abs(self.detail.xStart - self.detail.xCurrent) / target.clientWidth
+      const ratio = Math.abs(self.detail.dragStart - self.detail.dragCurrent) / target.clientWidth
       const imgSize = self.dragger.offsetWidth / 6
       // direction
       let direction = 1
-      if (self.detail.xStart - self.detail.xCurrent > 0) {
+      if (self.detail.dragStart - self.detail.dragCurrent > 0) {
         direction = -1
       }
       // others

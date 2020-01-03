@@ -45,7 +45,7 @@ Xt.mount.push({
       // tween
       tween = self.initial ? !self.initial : tween
       for (let [i, target] of self.targets.entries()) {
-        let dist = -target.offsetLeft - self.detail.xPos
+        let dist = -target.offsetLeft - self.detail.dragPos
         // content
         let contents = target.querySelectorAll('.slider_text')
         let contentPos = Math.floor(dist * contentFactor)

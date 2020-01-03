@@ -23,6 +23,8 @@ class Toggle {
 
   /**
    * init
+   * @param {Node|HTMLElement|EventTarget|Window} object Base node
+   * @param {Object} optionsCustom User options
    */
   init(object = false, optionsCustom = false) {
     const self = this
@@ -133,6 +135,7 @@ class Toggle {
     if (options.elements) {
       let arr = Array.from(Xt.arrSingle(self.container.querySelectorAll(options.elements)))
       arr = arr.filter(x => !x.closest('.xt-ignore')) // filter out ignore
+      arr = arr.filter(x => !x.closest('[data-xt-nav]')) // filter out nav
       self.elements = arr
       self.destroyElements.push(...self.elements)
       // reset namespace
@@ -609,7 +612,7 @@ class Toggle {
     }
     // wheel
     if (options.wheel && options.wheel.selector) {
-      const wheel = (self.detail.wheel =
+      const wheel = (self.wheel =
         options.wheel.selector === 'object'
           ? self.object
           : options.wheel.selector === 'scrollingElement'
@@ -1459,11 +1462,12 @@ class Toggle {
       return
     }
     // nav
-    let index = 0
-    if (self.currentIndex !== null) {
-      index = self.currentIndex + parseFloat(nav.getAttribute('data-xt-nav'))
+    const step = parseFloat(nav.getAttribute('data-xt-nav'))
+    if (step < 0) {
+      self.goToPrev(-step, true)
+    } else {
+      self.goToNext(step, true)
     }
-    self.goToIndex(index, true)
   }
 
   //
@@ -1933,7 +1937,7 @@ class Toggle {
   eventWheelsmooth(e) {
     const self = this
     const options = self.options
-    let el = self.detail.wheel
+    let el = self.wheel
     // disabled
     if (self.disabled && !self.initial) {
       return
@@ -2006,8 +2010,8 @@ class Toggle {
         self.goToPrev(1)
       }
       // listener dispatch
-      self.detail.wheel.dispatchEvent(new CustomEvent('wheelstart.xt'))
-      self.detail.wheel.dispatchEvent(new CustomEvent('wheelend.xt'))
+      self.wheel.dispatchEvent(new CustomEvent('wheelstart.xt'))
+      self.wheel.dispatchEvent(new CustomEvent('wheelend.xt'))
       // return
       return
     }
@@ -2083,7 +2087,7 @@ class Toggle {
     if (!self.detail.wheelMoving) {
       self.detail.wheelMoving = true
       // listener dispatch
-      self.detail.wheel.dispatchEvent(new CustomEvent('wheelstart.xt', { detail: { wheelX: -self.detail.wheelCurrent } }))
+      self.wheel.dispatchEvent(new CustomEvent('wheelstart.xt', { detail: { wheelX: -self.detail.wheelCurrent } }))
       // friction
       self.eventFrictionsmooth(el, min, max)
     }
@@ -2136,23 +2140,23 @@ class Toggle {
     ) {
       // frictionLimit
       // friction
-      cancelAnimationFrame(Xt.dataStorage.get(self.detail.wheel, self.componentNamespace + 'WheelsmoothFrame'))
+      cancelAnimationFrame(Xt.dataStorage.get(self.wheel, self.componentNamespace + 'WheelsmoothFrame'))
       Xt.dataStorage.set(
-        self.detail.wheel,
+        self.wheel,
         self.componentNamespace + 'WheelsmoothFrame',
         requestAnimationFrame(function() {
           self.eventFrictionsmooth(el, min, max)
         })
       )
       // listener dispatch
-      self.detail.wheel.dispatchEvent(new CustomEvent('wheel.xt', { detail: { wheelX: -self.detail.wheelCurrent } }))
+      self.wheel.dispatchEvent(new CustomEvent('wheel.xt', { detail: { wheelX: -self.detail.wheelCurrent } }))
     } else {
       // moving
       self.detail.wheelMoving = false
       // vars
       self.detail.wheelEnd = false
       // listener dispatch
-      self.detail.wheel.dispatchEvent(new CustomEvent('wheelend.xt', { detail: { wheelX: -self.detail.wheelCurrent } }))
+      self.wheel.dispatchEvent(new CustomEvent('wheelend.xt', { detail: { wheelX: -self.detail.wheelCurrent } }))
     }
   }
 
@@ -2162,7 +2166,7 @@ class Toggle {
 
   eventWheelstop() {
     const self = this
-    const el = self.detail.wheel
+    const el = self.wheel
     cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'WheelsmoothFrame'))
     self.detail.wheelMoving = false
   }
@@ -2668,7 +2672,6 @@ class Toggle {
   reinit(saveCurrents = true) {
     const self = this
     // reinit
-    self.destroy()
     self.initLogic(saveCurrents)
     // listener dispatch
     self.object.dispatchEvent(new CustomEvent('reinit.xt'))

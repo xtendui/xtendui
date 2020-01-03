@@ -9,24 +9,24 @@ Xt.mount.push({
     // init
 
     let self = new Xt.Slider(object, {
+      instant: false,
       durationOn: Xt.vars.timeMedium,
       durationOff: Xt.vars.timeMedium,
-      instant: false,
     })
 
     // drag
 
     const eventDrag = function() {
       const tr = self.targets.filter(x => self.hasCurrent(x))[0]
-      const ratio = Math.abs(self.detail.xStart - self.detail.xCurrent) / tr.clientWidth
+      const ratio = Math.abs(self.detail.dragStart - self.detail.dragCurrent) / tr.clientWidth
       // direction
       let direction = 1
-      if (self.detail.xStart - self.detail.xCurrent > 0) {
+      if (self.detail.dragStart - self.detail.dragCurrent > 0) {
         direction = -1
       }
       // mask
-      gsap.set(tr, { translateX: -self.detail.xPos + 'px', opacity: 1 })
-      gsap.set(self.dragger, { translateX: self.detail.xPos })
+      gsap.set(tr, { translateX: -self.detail.dragPos + 'px', opacity: 1 })
+      gsap.set(self.dragger, { translateX: self.detail.dragPos })
       // content
       const contents = tr.querySelectorAll('.card-item > *')
       for (const content of contents) {
@@ -41,9 +41,9 @@ Xt.mount.push({
     const eventDragReset = function() {
       const tr = self.targets.filter(x => self.hasCurrent(x))[0]
       // mask
-      gsap.set(tr, { translateX: -self.detail.xPosOld + 'px' })
+      gsap.set(tr, { translateX: -self.detail.dragPosOld + 'px' })
       gsap.to(tr, { translateX: 0, opacity: 1, duration: Xt.vars.timeMedium, ease: Xt.vars.easeOut })
-      gsap.set(self.dragger, { translateX: self.detail.xPosOld })
+      gsap.set(self.dragger, { translateX: self.detail.dragPosOld })
       gsap.to(self.dragger, { translateX: 0, duration: Xt.vars.timeMedium, ease: Xt.vars.easeOut })
       // content
       const contents = tr.querySelectorAll('.card-item > *')
@@ -68,11 +68,14 @@ Xt.mount.push({
         }
         if (self.initial) {
           // mask
+          gsap.killTweensOf(tr)
           gsap.set(tr, { translateX: 0, opacity: 1, ease: Xt.vars.easeOut })
+          gsap.killTweensOf(self.dragger)
           gsap.set(self.dragger, { translateX: 0, ease: Xt.vars.easeOut })
           // content
           const contents = tr.querySelectorAll('.card-item > *')
           for (const content of contents) {
+            gsap.killTweensOf(content)
             gsap.set(content, { translateX: 0, opacity: 1, ease: Xt.vars.easeOut })
           }
         } else {

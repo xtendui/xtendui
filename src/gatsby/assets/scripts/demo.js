@@ -18,26 +18,20 @@ const formatCode = function(source) {
   let text = source.innerHTML
   // replace
   const lang = source.getAttribute('data-lang')
-  if (lang !== 'less' && !source.classList.contains('language-less') && lang !== 'js' && !source.classList.contains('language-js')) {
+  // search html tags
+  var re = /<[^>]*>/g
+  text = text.replace(re, function(match, g1, g2) {
     // replace quote entities
-    text = text.replace(/&quot;/g, '"')
+    match = match.replace(/&quot;/g, '"')
     // replace entities
-    text = text
+    match = match
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
-    // replace json quotes
-    // text = text.replace(/("{)/g, '\'{').replace(/(}")/g, '}\'')
     // replace empty quotes
-    text = text.replace(/=""/g, '')
-  }
-  // filter meta
-  /*
-  let meta = text.match(/\/\/##START([\S\s]*?)\/\/##END/)
-  if (meta) {
-    text = meta[1]
-  }
-  */
+    match = match.replace(/=""/g, '')
+    return match
+  })
   // remove tabs
   const arr = text.split('\n')
   let search = arr[0]
@@ -253,7 +247,8 @@ const populateDemo = function(container, i) {
     min: 1,
   })
   for (const item of items) {
-    item.addEventListener('ondone.xt', function(e) {
+    // don't use ondone.xt it brings bugs to slider toggle-js
+    item.addEventListener('on.xt', function(e) {
       if (!self.initial) {
         // triggering e.detail.inside
         dispatchEvent(new CustomEvent('resize', { detail: { force: true, inside: item.querySelector('.gatsby_demo_source') } }))
@@ -407,10 +402,6 @@ const makeFullscreen = function(container) {
   const full = container.closest('#toggle_open-full')
   if (full) {
     item.dispatchEvent(new CustomEvent('on.trigger.xt'))
-    Xt.animTimeout(full, function() {
-      // @FIX two raf or slider gives error with reinit
-      item.dispatchEvent(new CustomEvent('ondone.xt'))
-    })
   }
 }
 

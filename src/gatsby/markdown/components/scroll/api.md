@@ -8,14 +8,40 @@ date: "2000-01-01"
 
 ## Initialization
 
-Initialize automatically within markup with `[data-xt-scroll="{ <options> }"]`.
+Initialize automatically within markup with `[data-xt-scroll="{ <options> }"]` on the **object**:
 
-Or initialize with javascript (object is the DOM element you assigned the component):
+[[noteDefault]]
+| **Object** is the DOM element you want to assign the component.
 
-```jsx
+Or initialize with javascript:
+
+```js
 let self = new Xt.Scroll(document.querySelector('#my-object'), {
   // options
 });
+```
+
+Or inizialize with **mutation observer** (preferred method):
+
+```js
+Xt.mount.push({
+  matches: '#my-object',
+  mount: function(object) {
+    // init
+
+    let self = new Xt.Scroll(object, {
+      // options
+    });
+
+    // unmount
+
+    const unmount = function() {
+      self.destroy()
+      self = null
+    }
+    return unmount
+  }
+})
 ```
 
 ## Usage
@@ -126,7 +152,7 @@ You can use a function for `delayOn` and `delayOff` for example `function(curren
 
 Call methods this way (object is the DOM element you assigned the component):
 
-```jsx
+```js
 let self = Xt.get('xt-scroll', document.querySelector('#my-object'))
 self.destroy()
 self = null
@@ -146,25 +172,29 @@ self = null
 
 Listen to events this way:
 
-```jsx
-document.querySelector('#my-element').addEventListener('change.xt', function(e) {
+```js
+const eventChange = function(e) {
   // logic
-})
+}
+
+document.querySelector('#my-element').addEventListener('change.xt', eventChange)
 ```
 
 Listen to events delegation with **useCapture** this way:
 
-```jsx
+```js
 let object = document.querySelector('#my-object')
 let self = Xt.get('xt-scroll', object)
 
-object.addEventListener('change.xt', function(e) {
+const eventChange = function(e) {
   const el = e.target
   // useCapture delegation
   if (self.elements.includes(el)) {
     // logic
   }
-}, true)
+}
+
+object.addEventListener('change.xt', eventChange, true)
 ```
 
 <div class="table-scroll">
