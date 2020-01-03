@@ -26,6 +26,8 @@ class TextareaAutosize {
     const self = this
     // options
     self.options = Xt.merge([self.constructor.optionsDefault, self.optionsCustom])
+    // class
+    self.object.classList.add('textarea-autosize')
     // key
     self.object.addEventListener('keydown', self.keychange.bind(self))
     self.object.addEventListener('keyup', self.keychange.bind(self))
@@ -33,6 +35,8 @@ class TextareaAutosize {
     const form = self.object.closest('form')
     if (form) {
       form.addEventListener('reset', self.keychange.bind(self))
+      // set self
+      Xt.set(self.componentName, form, self)
     }
     // initial
     self.keychange.bind(self)()
@@ -64,14 +68,18 @@ class TextareaAutosize {
    */
   destroy() {
     const self = this
-    // key
-    self.object.removeEventListener('keydown', self.keychange.bind(self))
-    self.object.removeEventListener('keyup', self.keychange.bind(self))
-    // form
+    // class
+    self.object.classList.remove('textarea-autosize')
+    // remove events
     const form = self.object.closest('form')
     if (form) {
       form.removeEventListener('reset', self.keychange.bind(self))
     }
+    self.object.removeEventListener('keydown', self.keychange.bind(self))
+    self.object.removeEventListener('keyup', self.keychange.bind(self))
+    // set self
+    Xt.remove(self.componentName, self.object)
+    Xt.remove(self.componentName, form)
   }
 }
 

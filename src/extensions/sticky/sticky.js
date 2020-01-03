@@ -268,15 +268,13 @@ class Sticky extends Xt.Toggle {
             // autoclose
             dispatchEvent(new CustomEvent('autoclose.trigger.xt', { detail: { inside: el } }))
             // listener dispatch
-            const detail = self.eDetailSet(e)
-            el.dispatchEvent(new CustomEvent('hide.xt', { detail: detail }))
+            el.dispatchEvent(new CustomEvent('hide.xt'))
           }
         } else {
           if (el.classList.contains('sticky-hide')) {
             el.classList.remove('sticky-hide')
             // listener dispatch
-            const detail = self.eDetailSet(e)
-            el.dispatchEvent(new CustomEvent('show.xt', { detail: detail }))
+            el.dispatchEvent(new CustomEvent('show.xt'))
           }
         }
       } else {
@@ -325,8 +323,7 @@ class Sticky extends Xt.Toggle {
         el.style.width = width
       }
       // listener dispatch
-      const detail = self.eDetailSet()
-      el.dispatchEvent(new CustomEvent('change.xt', { detail: detail }))
+      el.dispatchEvent(new CustomEvent('change.xt'))
       // save for direction
       Xt.dataStorage.set(el, self.componentNamespace + 'AddOld', add)
     }

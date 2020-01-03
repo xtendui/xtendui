@@ -269,8 +269,7 @@ class Scroll extends Xt.Toggle {
           el,
           self.componentNamespace + 'ScrollDispatchFrame',
           requestAnimationFrame(function() {
-            const detail = self.eDetailSet()
-            el.dispatchEvent(new CustomEvent('change.xt', { detail: detail }))
+            el.dispatchEvent(new CustomEvent('change.xt'))
           })
         )
       }

@@ -13,7 +13,7 @@ Initialize automatically within markup with `[data-xt-overlay="{ <options> }"]`.
 Or initialize with javascript (object is the DOM element you assigned the component):
 
 ```jsx
-new Xt.Overlay(document.querySelector('#my-overlay-object'), {
+let self = new Xt.Overlay(document.querySelector('#my-object'), {
   // options
 });
 ```
@@ -71,6 +71,36 @@ It's recommended to use `active-overlay` on overlay otherwise the overlay flashe
 
 ## Events and Methods
 
+### Util
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | DOM Element                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Event                   | `let self = Xt.get('xt-overlay', {DOM element})`       | `object` `elements` `targets` | Get object self for this component class             |
+
+</div>
+
+### Methods
+
+Call methods this way (object is the DOM element you assigned the component):
+
+```jsx
+let self = Xt.get('xt-overlay', document.querySelector('#my-object'))
+self.destroy()
+self = null
+```
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Method                  | `self.restart()`                          | Restart component to initial             |
+| Method                  | `self.reinit(saveCurrents:Boolean)`       | Reinitialize component and save currents as initial (default: `true`)             |
+| Method                  | `self.destroy()`              | Destroy component            |
+
+</div>
+
 ### Trigger
 
 Trigger events this way:
@@ -103,18 +133,21 @@ document.querySelector('#my-element-or-target').addEventListener('on.xt', functi
 Listen to events delegation with **useCapture** this way:
 
 ```jsx
-document.querySelector('#my-object').addEventListener('on.xt', function(e) {
+let object = document.querySelector('#my-object')
+let self = Xt.get('xt-overlay', object)
+
+object.addEventListener('on.xt', function(e) {
   const el = e.target
   // useCapture delegation
-  if (e.detail.self.elements.includes(el)) {
+  if (self.elements.includes(el)) {
     // logic
   }
 }, true)
 
-document.querySelector('#my-object').addEventListener('on.xt', function(e) {
+object.addEventListener('on.xt', function(e) {
   const tr = e.target
   // useCapture delegation
-  if (e.detail.self.targets.includes(tr)) {
+  if (self.targets.includes(tr)) {
     // logic
   }
 }, true)
@@ -130,24 +163,5 @@ document.querySelector('#my-object').addEventListener('on.xt', function(e) {
 | Event                   | `offdone.xt`           | `elements` `targets` | Deactivation event after delay and duration             |
 | Event                   | `medialoaded.xt`           | `elements` `targets` | Images loaded event            |
 | Event                   | `init.xt`           | `object` | Init event             |
-
-</div>
-
-### Methods
-
-Call methods this way (object is the DOM element you assigned the component):
-
-```jsx
-const self = Xt.get('xt-overlay', document.querySelector('#my-overlay-object'))
-self.destroy()
-```
-
-<div class="table-scroll">
-
-|                         | Syntax                                    | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Method                  | `self.restart()`                          | Restart component to initial             |
-| Method                  | `self.reinit(saveCurrents:Boolean)`       | Reinitialize component and save currents as initial (default: `true`)             |
-| Method                  | `self.destroy()`              | Destroy component            |
 
 </div>

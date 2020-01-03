@@ -13,7 +13,7 @@ Initialize automatically within markup with `[data-xt-scroll="{ <options> }"]`.
 Or initialize with javascript (object is the DOM element you assigned the component):
 
 ```jsx
-new Xt.Scroll(document.querySelector('#my-scroll-object'), {
+let self = new Xt.Scroll(document.querySelector('#my-object'), {
   // options
 });
 ```
@@ -112,6 +112,36 @@ You can use a function for `delayOn` and `delayOff` for example `function(curren
 
 ## Events and Methods
 
+### Util
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | DOM Element                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Event                   | `let self = Xt.get('xt-scroll', {DOM element})`       | `object` `elements` `targets` | Get object self for this component class             |
+
+</div>
+
+### Methods
+
+Call methods this way (object is the DOM element you assigned the component):
+
+```jsx
+let self = Xt.get('xt-scroll', document.querySelector('#my-object'))
+self.destroy()
+self = null
+```
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Method                  | `self.restart()`                          | Restart component to initial             |
+| Method                  | `self.reinit(saveCurrents:Boolean)`       | Reinitialize component and save currents as initial (default: `true`)             |
+| Method                  | `self.destroy()`              | Destroy component            |
+
+</div>
+
 ### Listen
 
 Listen to events this way:
@@ -125,10 +155,13 @@ document.querySelector('#my-element').addEventListener('change.xt', function(e) 
 Listen to events delegation with **useCapture** this way:
 
 ```jsx
-document.querySelector('#my-object').addEventListener('change.xt', function(e) {
+let object = document.querySelector('#my-object')
+let self = Xt.get('xt-scroll', object)
+
+object.addEventListener('change.xt', function(e) {
   const el = e.target
   // useCapture delegation
-  if (e.detail.self.elements.includes(el)) {
+  if (self.elements.includes(el)) {
     // logic
   }
 }, true)
@@ -141,24 +174,5 @@ document.querySelector('#my-object').addEventListener('change.xt', function(e) {
 | Event                   | `change.xt`       | `elements` | Computation event             |
 | Event                   | `medialoaded.xt`           | `elements` `targets` | Images loaded event            |
 | Event                   | `init.xt`           | `object` | Init event             |
-
-</div>
-
-### Methods
-
-Call methods this way (object is the DOM element you assigned the component):
-
-```jsx
-let self = Xt.get('xt-scroll', document.querySelector('#my-scroll-object'))
-self.destroy()
-```
-
-<div class="table-scroll">
-
-|                         | Syntax                                    | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Method                  | `self.restart()`                          | Restart component to initial             |
-| Method                  | `self.reinit(saveCurrents:Boolean)`       | Reinitialize component and save currents as initial (default: `true`)             |
-| Method                  | `self.destroy()`              | Destroy component            |
 
 </div>

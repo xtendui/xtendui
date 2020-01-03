@@ -136,11 +136,12 @@ class Toggle {
       self.elements = arr
       self.destroyElements.push(...self.elements)
     }
+    // xtend unique mode
     if (!self.elements.length) {
       self.elements = Xt.arrSingle(self.object)
-      // @FIX set namespace for next frame
+      // set namespace for next frame
       requestAnimationFrame(function() {
-        let arr = Array.from(Xt.arrSingle(document.querySelectorAll('[data-xt-namespace="' + self.namespace + '"]')))
+        let arr = Xt.dataStorage.get(self.namespace, 'xtNamespace')
         arr = arr.filter(x => !x.closest('.xt-ignore')) // filter out ignore
         if (arr.length) {
           // fix when using shadow dom doesn't query deep
@@ -148,6 +149,14 @@ class Toggle {
           self.destroyElements.push(...self.elements)
         }
       })
+    }
+    // reset namespace
+    requestAnimationFrame(function() {
+      Xt.dataStorage.remove(self.namespace, 'xtNamespaceDone')
+    })
+    // set self
+    for (const el of self.elements) {
+      Xt.set(self.componentName, el, self)
     }
   }
 
@@ -164,6 +173,10 @@ class Toggle {
       arr = arr.filter(x => !x.closest('.xt-ignore')) // filter out ignore
       self.targets = arr
       self.destroyElements.push(...self.targets)
+    }
+    // set self
+    for (const tr of self.targets) {
+      Xt.set(self.componentName, tr, self)
     }
   }
 
@@ -182,11 +195,16 @@ class Toggle {
     self.currentIndex = null
     // [disabled]
     self.destroyDisabled()
-    // component
-    self.object.setAttribute('data-xt-name', self.componentName)
-    // @FIX set namespace for next frame
+    // reset namespace
+    if (!Xt.dataStorage.get(self.namespace, 'xtNamespaceDone')) {
+      Xt.dataStorage.set(self.namespace, 'xtNamespace', [])
+      Xt.dataStorage.set(self.namespace, 'xtNamespaceDone', true)
+    }
+    // set namespace for next frame
     for (const el of self.elements) {
-      el.setAttribute('data-xt-namespace', self.namespace)
+      let arr = Xt.dataStorage.get(self.namespace, 'xtNamespace')
+      arr.push(el)
+      Xt.dataStorage.set(self.namespace, 'xtNamespace', arr)
     }
     // automatic initial currents
     const elements = self.getGroups()
@@ -243,8 +261,7 @@ class Toggle {
     self.initEvents()
     // listener dispatch
     requestAnimationFrame(function() {
-      const detail = self.eDetailSet()
-      self.object.dispatchEvent(new CustomEvent('init.xt', { detail: detail }))
+      self.object.dispatchEvent(new CustomEvent('init.xt'))
     })
   }
 
@@ -273,8 +290,7 @@ class Toggle {
           found = true
         }
         // listener dispatch
-        const detail = self.eDetailSet()
-        elReset.dispatchEvent(new CustomEvent('off.xt', { detail: detail }))
+        elReset.dispatchEvent(new CustomEvent('off.xt'))
       }
       return found
     }
@@ -895,9 +911,7 @@ class Toggle {
     // class
     el.classList.add('xt-medialoaded')
     // listener dispatch
-    const detail = self.eDetailSet()
-    detail.deferred = deferred
-    el.dispatchEvent(new CustomEvent('medialoaded.xt', { detail: detail }))
+    el.dispatchEvent(new CustomEvent('medialoaded.xt', { detail: { deferred: deferred } }))
     // mediaLoadedReinit
     if (options.mediaLoadedReinit && deferred) {
       clearTimeout(Xt.dataStorage.get(self.object, 'xt' + self.componentNamespace + 'MedialoadedInit' + 'Timeout'))
@@ -1125,19 +1139,6 @@ class Toggle {
   }
 
   /**
-   * set e detail
-   * @param {Event} e
-   */
-  eDetailSet(e = null) {
-    // e.detail
-    const detail = e && e.detail && typeof e.detail === 'object' ? e.detail : {}
-    // detail
-    detail.self = this
-    // return
-    return detail
-  }
-
-  /**
    * activate element
    * @param {Node|HTMLElement|EventTarget|Window} el Elements to be activated
    */
@@ -1220,12 +1221,10 @@ class Toggle {
         // deactivate old
         self.eventOff(currents[0])
       }
-      // detail
-      const detail = self.eDetailSet(e)
       // queue obj
       const actionCurrent = 'On'
       const actionOther = 'Off'
-      self.eventQueue(actionCurrent, detail, groupElements, targets, elementsInner, targetsInner, e)
+      self.eventQueue(actionCurrent, groupElements, targets, elementsInner, targetsInner, e)
       // queue run
       for (const type in self.detail['queue' + actionCurrent][0]) {
         self.queueStart(actionCurrent, actionOther, type, 0, true)
@@ -1282,12 +1281,10 @@ class Toggle {
       if (!self.getCurrents().length) {
         self.eventAutostop()
       }
-      // detail
-      const detail = self.eDetailSet(e)
       // queue obj
       const actionCurrent = 'Off'
       const actionOther = 'On'
-      self.eventQueue(actionCurrent, detail, groupElements, targets, elementsInner, targetsInner, e)
+      self.eventQueue(actionCurrent, groupElements, targets, elementsInner, targetsInner, e)
       // if queue too big
       if (self.detail['queue' + actionCurrent].length > options.max) {
         // remove queue on and done other queue
@@ -1311,40 +1308,35 @@ class Toggle {
   /**
    * element on
    * @param {String} actionCurrent
-   * @param {Event} detail
    * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} groupElements
    * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} targets
    * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} elementsInner
    * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} targetsInner
    * @param {Event} e
    */
-  eventQueue(actionCurrent, detail, groupElements, targets, elementsInner, targetsInner, e) {
+  eventQueue(actionCurrent, groupElements, targets, elementsInner, targetsInner, e) {
     const self = this
     const options = self.options
     // populate
     const obj = {}
     obj.elements = {
-      detail: detail,
       queueEls: groupElements,
       event: e,
     }
     if (targets.length) {
       obj.targets = {
-        detail: detail,
         queueEls: targets,
         event: e,
       }
     }
     if (elementsInner.length) {
       obj.elementsInner = {
-        detail: detail,
         queueEls: elementsInner,
         event: e,
       }
     }
     if (targetsInner.length) {
       obj.targetsInner = {
-        detail: detail,
         queueEls: targetsInner,
         event: e,
       }
@@ -1399,8 +1391,7 @@ class Toggle {
         // listener dispatch
         requestAnimationFrame(function() {
           // @FIX event called before removing classes
-          const detail = self.eDetailSet()
-          self.object.dispatchEvent(new CustomEvent('autostart.xt', { detail: detail }))
+          self.object.dispatchEvent(new CustomEvent('autostart.xt'))
         })
       }
     }
@@ -1417,8 +1408,7 @@ class Toggle {
       // clear
       clearInterval(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutostartInterval'))
       // listener dispatch
-      const detail = self.eDetailSet()
-      self.object.dispatchEvent(new CustomEvent('autostop.xt', { detail: detail }))
+      self.object.dispatchEvent(new CustomEvent('autostop.xt'))
     }
   }
 
@@ -1437,8 +1427,7 @@ class Toggle {
       // clear
       clearInterval(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutostartInterval'))
       // listener dispatch
-      const detail = self.eDetailSet()
-      self.object.dispatchEvent(new CustomEvent('autopause.xt', { detail: detail }))
+      self.object.dispatchEvent(new CustomEvent('autopause.xt'))
     }
   }
 
@@ -1677,7 +1666,7 @@ class Toggle {
         }
       }
       // listener dispatch
-      el.dispatchEvent(new CustomEvent('on.xt', { detail: obj[type].detail }))
+      el.dispatchEvent(new CustomEvent('on.xt'))
     } else if (actionCurrent === 'Off') {
       // deactivate
       self.deactivate(el)
@@ -1693,7 +1682,7 @@ class Toggle {
         self.specialClose(actionCurrent, el)
       }
       // listener dispatch
-      el.dispatchEvent(new CustomEvent('off.xt', { detail: obj[type].detail }))
+      el.dispatchEvent(new CustomEvent('off.xt'))
     }
     // queue
     if (!skipQueue) {
@@ -1760,7 +1749,7 @@ class Toggle {
         .replace(/['"]+/g, '')
       self.specialCollapse('Reset', el, before, after)
       // listener dispatch
-      el.dispatchEvent(new CustomEvent('ondone.xt', { detail: obj[type].detail }))
+      el.dispatchEvent(new CustomEvent('ondone.xt'))
     } else if (actionCurrent === 'Off') {
       // reset
       el.classList.remove(...self.classesOut)
@@ -1804,7 +1793,7 @@ class Toggle {
         }
       }
       // listener dispatch
-      el.dispatchEvent(new CustomEvent('offdone.xt', { detail: obj[type].detail }))
+      el.dispatchEvent(new CustomEvent('offdone.xt'))
     }
     // queue
     if (!skipQueue) {
@@ -2023,9 +2012,8 @@ class Toggle {
         self.goToPrev(1)
       }
       // listener dispatch
-      const detail = self.eDetailSet(e)
-      self.detail.wheel.dispatchEvent(new CustomEvent('wheelstart.xt', { detail: detail }))
-      self.detail.wheel.dispatchEvent(new CustomEvent('wheelend.xt', { detail: detail }))
+      self.detail.wheel.dispatchEvent(new CustomEvent('wheelstart.xt'))
+      self.detail.wheel.dispatchEvent(new CustomEvent('wheelend.xt'))
       // return
       return
     }
@@ -2101,9 +2089,7 @@ class Toggle {
     if (!self.detail.wheelMoving) {
       self.detail.wheelMoving = true
       // listener dispatch
-      const detail = self.eDetailSet()
-      detail.wheelX = -self.detail.wheelCurrent
-      self.detail.wheel.dispatchEvent(new CustomEvent('wheelstart.xt', { detail: detail }))
+      self.detail.wheel.dispatchEvent(new CustomEvent('wheelstart.xt', { detail: { wheelX: -self.detail.wheelCurrent } }))
       // friction
       self.eventFrictionsmooth(el, min, max)
     }
@@ -2165,18 +2151,14 @@ class Toggle {
         })
       )
       // listener dispatch
-      const detail = self.eDetailSet()
-      detail.wheelX = -self.detail.wheelCurrent
-      self.detail.wheel.dispatchEvent(new CustomEvent('wheel.xt', { detail: detail }))
+      self.detail.wheel.dispatchEvent(new CustomEvent('wheel.xt', { detail: { wheelX: -self.detail.wheelCurrent } }))
     } else {
       // moving
       self.detail.wheelMoving = false
       // vars
       self.detail.wheelEnd = false
       // listener dispatch
-      const detail = self.eDetailSet()
-      detail.wheelX = -self.detail.wheelCurrent
-      self.detail.wheel.dispatchEvent(new CustomEvent('wheelend.xt', { detail: detail }))
+      self.detail.wheel.dispatchEvent(new CustomEvent('wheelend.xt', { detail: { wheelX: -self.detail.wheelCurrent } }))
     }
   }
 
@@ -2690,6 +2672,7 @@ class Toggle {
    */
   reinit(saveCurrents = true) {
     const self = this
+    // handler
     self.initLogic(saveCurrents)
   }
 
@@ -2698,6 +2681,7 @@ class Toggle {
    */
   restart() {
     const self = this
+    // handler
     self.initStart()
   }
 
@@ -2731,8 +2715,7 @@ class Toggle {
     // [disabled]
     self.destroyDisabled()
     // listener dispatch
-    const detail = self.eDetailSet()
-    self.object.dispatchEvent(new CustomEvent('destroy.xt', { detail: detail }))
+    self.object.dispatchEvent(new CustomEvent('destroy.xt'))
     // remove events
     if (self.destroyElements) {
       for (const element of self.destroyElements) {
@@ -2760,8 +2743,17 @@ class Toggle {
     }
     // disable
     self.disable()
-    // remove
+    // reset namespace
+    Xt.dataStorage.remove(self.namespace, 'xtNamespace')
+    // set self
     Xt.remove(self.componentName, self.object)
+    for (const el of self.elements) {
+      Xt.remove(self.componentName, el)
+    }
+    for (const tr of self.targets) {
+      Xt.remove(self.componentName, tr)
+    }
+    // delete
     delete this
   }
 }

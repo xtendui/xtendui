@@ -203,7 +203,9 @@ if (typeof window !== 'undefined') {
     if (old) {
       old.destroy()
     }
+    // set self
     Xt.set(self.componentName, self.object, self)
+    // init
     self.init()
   }
 

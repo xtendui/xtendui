@@ -47,16 +47,22 @@
   }
 }
 
-// textarea
+/**
+ * textarea
+ */
 
 .form-item {
-  textarea {
-    overflow: hidden;
-    resize: none;
+  textarea& {
+    &.textarea-autosize {
+      overflow: hidden;
+      resize: none;
+    }
   }
 }
 
-// select
+/**
+ * select
+ */
 
 .form-item {
   select:not([multiple])& {

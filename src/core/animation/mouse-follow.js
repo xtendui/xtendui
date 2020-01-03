@@ -31,6 +31,8 @@ class MouseFollow {
     self.container.addEventListener('mousemove', self.mousemove.bind(self))
     self.container.addEventListener('mouseenter', self.mouseenter.bind(self))
     self.container.addEventListener('mouseleave', self.mouseleave.bind(self))
+    // set self
+    Xt.set(self.componentName, self.container, self)
   }
 
   //
@@ -104,9 +106,13 @@ class MouseFollow {
    */
   destroy() {
     const self = this
+    // remove events
     self.container.removeEventListener('mousemove', self.mousemove.bind(self))
     self.container.removeEventListener('mouseenter', self.mouseenter.bind(self))
     self.container.removeEventListener('mouseleave', self.mouseleave.bind(self))
+    // set self
+    Xt.remove(self.componentName, self.object)
+    Xt.remove(self.componentName, self.container)
   }
 }
 

@@ -638,8 +638,7 @@ class Slider extends Xt.Toggle {
           }
           self.autoHeight.style.height = slideHeight
           // listener dispatch
-          const detail = self.eDetailSet()
-          slide.dispatchEvent(new CustomEvent('autoheight.xt', { detail: detail }))
+          slide.dispatchEvent(new CustomEvent('autoheight.xt'))
         }
       }
     }
@@ -759,8 +758,7 @@ class Slider extends Xt.Toggle {
     self.detail.xVelocityNext = null
     // listener dispatch
     if (!self.initial) {
-      const detail = self.eDetailSet(e)
-      dragger.dispatchEvent(new CustomEvent('dragstart.xt', { detail: detail }))
+      dragger.dispatchEvent(new CustomEvent('dragstart.xt'))
     }
   }
 
@@ -789,8 +787,7 @@ class Slider extends Xt.Toggle {
     self.logicDragfriction(dragger, e)
     // listener dispatch
     if (!self.initial) {
-      const detail = self.eDetailSet(e)
-      dragger.dispatchEvent(new CustomEvent('dragend.xt', { detail: detail }))
+      dragger.dispatchEvent(new CustomEvent('dragend.xt'))
     }
   }
 
@@ -925,8 +922,7 @@ class Slider extends Xt.Toggle {
     }
     // listener dispatch
     if (!self.initial) {
-      const detail = self.eDetailSet(e)
-      dragger.dispatchEvent(new CustomEvent('drag.xt', { detail: detail }))
+      dragger.dispatchEvent(new CustomEvent('drag.xt'))
     }
   }
 
@@ -996,8 +992,7 @@ class Slider extends Xt.Toggle {
       }
       // listener dispatch
       if (!self.initial) {
-        const detail = self.eDetailSet(e)
-        dragger.dispatchEvent(new CustomEvent('dragreset.xt', { detail: detail }))
+        dragger.dispatchEvent(new CustomEvent('dragreset.xt'))
       }
     }
   }

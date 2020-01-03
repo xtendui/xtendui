@@ -126,8 +126,7 @@ class Ajax extends Xt.Toggle {
     self.initEvents()
     // listener dispatch
     requestAnimationFrame(function() {
-      const detail = self.eDetailSet()
-      self.object.dispatchEvent(new CustomEvent('init.xt', { detail: detail }))
+      self.object.dispatchEvent(new CustomEvent('init.xt'))
     })
   }
 
@@ -220,8 +219,7 @@ class Ajax extends Xt.Toggle {
     // autoclose
     dispatchEvent(new CustomEvent('autoclose.trigger.xt'))
     // listener dispatch
-    const detail = self.eDetailSet()
-    self.object.dispatchEvent(new CustomEvent('request.xt', { detail: detail }))
+    self.object.dispatchEvent(new CustomEvent('request.xt'))
     // duration
     self.detail.requestDate = new Date()
     clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AjaxDurationTimeout'))
@@ -257,8 +255,7 @@ class Ajax extends Xt.Toggle {
   ajaxResponse(element, url, request, date) {
     const self = this
     // listener dispatch
-    const detail = self.eDetailSet()
-    self.object.dispatchEvent(new CustomEvent('response.xt', { detail: detail }))
+    self.object.dispatchEvent(new CustomEvent('response.xt'))
     // duration
     self.detail.requestDuration -= new Date() - date
     if (self.detail.requestDuration > 0) {
@@ -313,8 +310,7 @@ class Ajax extends Xt.Toggle {
     html = null
     replace = null
     // listener dispatch
-    const detail = self.eDetailSet()
-    self.object.dispatchEvent(new CustomEvent('replace.xt', { detail: detail }))
+    self.object.dispatchEvent(new CustomEvent('replace.xt'))
     // reinit
     if (!self.initial && date === self.detail.requestDate) {
       // fix fast change page
@@ -340,8 +336,7 @@ class Ajax extends Xt.Toggle {
     // reinit currents
     self.initStart()
     // listener dispatch
-    const detail = self.eDetailSet()
-    self.object.dispatchEvent(new CustomEvent('replace.xt', { detail: detail }))
+    self.object.dispatchEvent(new CustomEvent('replace.xt'))
   }
 
   /**
