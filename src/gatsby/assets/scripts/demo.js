@@ -106,6 +106,14 @@ const populateBlock = function() {
     // set hash
     window.history.pushState('', '/', window.location.pathname)
   })
+  // trigger fullscreen or change tabs
+  document.querySelector('#toggle_open-full').addEventListener('ondone.xt', function(e) {
+    const content = document.querySelector('#toggle_open-full-content')
+    // triggering e.detail.inside
+    requestAnimationFrame(function() {
+      dispatchEvent(new CustomEvent('resize', { detail: { force: true, inside: content.querySelector('.gatsby_demo_source') } }))
+    })
+  })
 }
 
 /**
@@ -247,7 +255,7 @@ const populateDemo = function(container, i) {
     min: 1,
   })
   for (const item of items) {
-    // don't use ondone.xt it brings bugs to slider toggle-js
+    // trigger fullscreen or change tabs
     item.addEventListener('on.xt', function(e) {
       if (!self.initial) {
         // triggering e.detail.inside
@@ -398,10 +406,16 @@ const makeFullscreen = function(container) {
       initializeIframe(container, item)
     }
   }
-  // trigger custom reinit
+  // trigger fullscreen or change tabs
   const full = container.closest('#toggle_open-full')
   if (full) {
-    item.dispatchEvent(new CustomEvent('on.trigger.xt'))
+    item.dispatchEvent(new CustomEvent('on.xt'))
+    /*
+    Xt.animTimeout(full, function() {
+      // @FIX two raf or slider gives error with reinit
+      item.dispatchEvent(new CustomEvent('ondone.xt'))
+    })
+    */
   }
 }
 
