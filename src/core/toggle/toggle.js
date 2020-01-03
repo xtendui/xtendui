@@ -791,8 +791,9 @@ class Toggle {
    */
   eventJumpHandler(tr, e) {
     const self = this
-    // handler
+    // useCapture delegation
     if (self.targets.includes(tr)) {
+      // handler
       self.eventJump(tr, e)
     }
   }
@@ -2021,7 +2022,7 @@ class Toggle {
       } else if (delta > 0) {
         self.goToPrev(1)
       }
-      // dispatch
+      // listener dispatch
       const detail = self.eDetailSet(e)
       self.detail.wheel.dispatchEvent(new CustomEvent('wheelstart.xt', { detail: detail }))
       self.detail.wheel.dispatchEvent(new CustomEvent('wheelend.xt', { detail: detail }))
@@ -2099,7 +2100,7 @@ class Toggle {
     // moving
     if (!self.detail.wheelMoving) {
       self.detail.wheelMoving = true
-      // dispatch
+      // listener dispatch
       const detail = self.eDetailSet()
       detail.wheelX = -self.detail.wheelCurrent
       self.detail.wheel.dispatchEvent(new CustomEvent('wheelstart.xt', { detail: detail }))
@@ -2163,7 +2164,7 @@ class Toggle {
           self.eventFrictionsmooth(el, min, max)
         })
       )
-      // dispatch
+      // listener dispatch
       const detail = self.eDetailSet()
       detail.wheelX = -self.detail.wheelCurrent
       self.detail.wheel.dispatchEvent(new CustomEvent('wheel.xt', { detail: detail }))
@@ -2172,7 +2173,7 @@ class Toggle {
       self.detail.wheelMoving = false
       // vars
       self.detail.wheelEnd = false
-      // dispatch
+      // listener dispatch
       const detail = self.eDetailSet()
       detail.wheelX = -self.detail.wheelCurrent
       self.detail.wheel.dispatchEvent(new CustomEvent('wheelend.xt', { detail: detail }))

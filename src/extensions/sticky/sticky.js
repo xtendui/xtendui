@@ -324,7 +324,7 @@ class Sticky extends Xt.Toggle {
       if (el.style.width !== width) {
         el.style.width = width
       }
-      // dispatch
+      // listener dispatch
       const detail = self.eDetailSet()
       el.dispatchEvent(new CustomEvent('change.xt', { detail: detail }))
       // save for direction

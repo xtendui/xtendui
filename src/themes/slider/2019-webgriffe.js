@@ -84,7 +84,7 @@ Xt.mount.push({
     self.object.addEventListener('on.xt', function(e) {
       let tr = e.target
       // useCapture delegation
-      if (e.detail.self.targets.includes(tr)) {
+      if (self.targets.includes(tr)) {
         let tween = !self.initial
         if (self.initial) {
           // siteBackground

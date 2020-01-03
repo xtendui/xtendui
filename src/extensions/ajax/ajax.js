@@ -219,7 +219,7 @@ class Ajax extends Xt.Toggle {
     self.locationTo = new URL(url, location)
     // autoclose
     dispatchEvent(new CustomEvent('autoclose.trigger.xt'))
-    // dispatch
+    // listener dispatch
     const detail = self.eDetailSet()
     self.object.dispatchEvent(new CustomEvent('request.xt', { detail: detail }))
     // duration
@@ -256,7 +256,7 @@ class Ajax extends Xt.Toggle {
    */
   ajaxResponse(element, url, request, date) {
     const self = this
-    // dispatch
+    // listener dispatch
     const detail = self.eDetailSet()
     self.object.dispatchEvent(new CustomEvent('response.xt', { detail: detail }))
     // duration
@@ -312,7 +312,7 @@ class Ajax extends Xt.Toggle {
     // garbage collector
     html = null
     replace = null
-    // dispatch
+    // listener dispatch
     const detail = self.eDetailSet()
     self.object.dispatchEvent(new CustomEvent('replace.xt', { detail: detail }))
     // reinit
@@ -339,7 +339,7 @@ class Ajax extends Xt.Toggle {
     }
     // reinit currents
     self.initStart()
-    // dispatch
+    // listener dispatch
     const detail = self.eDetailSet()
     self.object.dispatchEvent(new CustomEvent('replace.xt', { detail: detail }))
   }

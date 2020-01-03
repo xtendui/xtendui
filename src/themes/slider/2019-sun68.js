@@ -67,7 +67,7 @@ Xt.mount.push({
     const eventOn = function(e) {
       const tr = e.target
       // useCapture delegation
-      if (e.detail.self.targets.includes(tr)) {
+      if (self.targets.includes(tr)) {
         const img = tr.querySelector('.slide_img_inner')
         if (self.initial) {
           gsap.set(img, { translateX: 0, opacity: 1, scale: 1 })
@@ -87,7 +87,7 @@ Xt.mount.push({
     const eventOff = function(e) {
       const tr = e.target
       // useCapture delegation
-      if (e.detail.self.targets.includes(tr)) {
+      if (self.targets.includes(tr)) {
         const imgSize = self.dragger.offsetWidth / 6
         // direction
         let direction = 1

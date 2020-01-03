@@ -59,7 +59,7 @@ Xt.mount.push({
     const eventOn = function(e) {
       const tr = e.target
       // useCapture delegation
-      if (e.detail.self.targets.includes(tr)) {
+      if (self.targets.includes(tr)) {
         const xMax = tr.clientWidth
         // direction
         let direction = 1
@@ -100,7 +100,7 @@ Xt.mount.push({
     const eventOff = function(e) {
       const tr = e.target
       // useCapture delegation
-      if (e.detail.self.targets.includes(tr)) {
+      if (self.targets.includes(tr)) {
         const xMax = tr.clientWidth
         // direction
         let direction = 1
