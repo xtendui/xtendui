@@ -1,15 +1,67 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link href="/styles.8438b74b087543bac750.css" rel="stylesheet" type="text/css"/><meta name="generator" content="Gatsby 2.18.2"/><title data-react-helmet="true">API — Slider — Xtend</title><meta data-react-helmet="true" name="description" content="Xtend advanded frontend library"/><meta data-react-helmet="true" property="og:title" content="API — Slider"/><meta data-react-helmet="true" property="og:description" content="Xtend advanded frontend library"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="Riccardo Caroli"/><meta data-react-helmet="true" name="twitter:title" content="API — Slider"/><meta data-react-helmet="true" name="twitter:description" content="Xtend advanded frontend library"/><link rel="icon" href="/icons/icon-48x48.png?v=f917a0155efffb97b4d3d8ba95c4e663"/><link rel="manifest" href="/manifest.webmanifest"/><meta name="theme-color" content="#7567f8"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=f917a0155efffb97b4d3d8ba95c4e663"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=f917a0155efffb97b4d3d8ba95c4e663"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=f917a0155efffb97b4d3d8ba95c4e663"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=f917a0155efffb97b4d3d8ba95c4e663"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=f917a0155efffb97b4d3d8ba95c4e663"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=f917a0155efffb97b4d3d8ba95c4e663"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=f917a0155efffb97b4d3d8ba95c4e663"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=f917a0155efffb97b4d3d8ba95c4e663"/><link as="script" rel="preload" href="/styles-a93d3cc85c9fccbe4565.js"/><link as="script" rel="preload" href="/component---src-gatsby-components-templates-doc-page-js-00e5099ed5778d842a72.js"/><link as="script" rel="preload" href="/commons-29385396fbf7183bed9e.js"/><link as="script" rel="preload" href="/app-d3a48fbf99fb2011df04.js"/><link as="script" rel="preload" href="/webpack-runtime-2879b4de809792907027.js"/><link as="fetch" rel="preload" href="/page-data/components/slider/api/page-data.json" crossorigin="anonymous"/></head><body><noscript id="gatsby-noscript">This app works best with JavaScript enabled.</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group" id="gatsby-focus-wrapper"><div class="gatsby_site_wrapper"><div class="gatsby_site_main"><div class="gatsby_site_main_inner"><div class="gatsby_site_article_sidebar"><header class="gatsby_site_header"><nav class="gatsby_site_header_inner"><div><div class="gatsby_site_header_logo_outer"><div class="gatsby_site_header_logo"><a title="Home" class="gatsby_logo-icon
-                                  " href="/"><img src="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMV9jb3B5IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMC42MSA5LjEyIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmxvZ28td2hpdGU8L3RpdGxlPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTMuNjksMy40MSw1LjI5LjQ3aDJMNC44Miw0LjcsNy4zNyw5aC0yTDMuNjksNiwyLDlIMEwyLjU1LDQuNy4wNi40N2gyWiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTkuOSwxLjFWMi42NkgxMVYzLjlIOS45VjcuMDdhLjc1Ljc1LDAsMCwwLC4xMy41LjcuNywwLDAsMCwuNTIuMTUsMi41MywyLjUzLDAsMCwwLC41LDBWOWEzLjI2LDMuMjYsMCwwLDEtMSwuMTYsMS42MSwxLjYxLDAsMCwxLTEuODEtMS44VjMuOUg3LjI4VjIuNjZoLjkzVjEuMVoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xNC43Myw5LjEyYTMuMTIsMy4xMiwwLDAsMS0yLjI3LS44NkEzLjA1LDMuMDUsMCwwLDEsMTEuNTksNlY1LjgyQTMuNzcsMy43NywwLDAsMSwxMiw0LjExLDIuNjcsMi42NywwLDAsMSwxMywzYTMsMywwLDAsMSwxLjU1LS40MSwyLjY0LDIuNjQsMCwwLDEsMiwuODIsMy4zNSwzLjM1LDAsMCwxLC43NSwyLjMzdi42OWgtNGExLjYsMS42LDAsMCwwLC41LDEsMS40NywxLjQ3LDAsMCwwLDEsLjM3QTEuNzksMS43OSwwLDAsMCwxNi4zNyw3bC44NC45M2EyLjY2LDIuNjYsMCwwLDEtMSwuODVBMy4zNywzLjM3LDAsMCwxLDE0LjczLDkuMTJabS0uMTktNS4yMWExLjA1LDEuMDUsMCwwLDAtLjgyLjM0LDEuNzcsMS43NywwLDAsMC0uNCwxaDIuMzZWNS4wOWExLjIyLDEuMjIsMCwwLDAtLjMxLS44N0ExLjA2LDEuMDYsMCwwLDAsMTQuNTQsMy45MVoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yMCwyLjY2bC4wNS43M2EyLjI0LDIuMjQsMCwwLDEsMS44Mi0uODUsMS44MywxLjgzLDAsMCwxLDEuNS41OSwyLjc5LDIuNzksMCwwLDEsLjUxLDEuNzdWOUgyMi4xNVY1YTEuMTEsMS4xMSwwLDAsMC0uMjQtLjc5LDEuMDYsMS4wNiwwLDAsMC0uNzgtLjI0LDEuMTYsMS4xNiwwLDAsMC0xLjA3LjYxVjlIMTguMzdWMi42NloiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNC45LDUuNzhhMy44NCwzLjg0LDAsMCwxLC42Ni0yLjM2LDIuMTcsMi4xNywwLDAsMSwxLjgyLS44OCwxLjk0LDEuOTQsMCwwLDEsMS41My42OVYwaDEuN1Y5SDI5LjA4TDI5LDguMzNhMiwyLDAsMCwxLTEuNjMuNzksMi4xNywyLjE3LDAsMCwxLTEuOC0uODhBNCw0LDAsMCwxLDI0LjksNS43OFptMS42OS4xM2EyLjUsMi41LDAsMCwwLC4zMSwxLjM3LDEsMSwwLDAsMCwuOS40NywxLjE0LDEuMTQsMCwwLDAsMS4xMS0uNjZWNC41OGExLjEyLDEuMTIsMCwwLDAtMS4xLS42NkMyNywzLjkyLDI2LjU5LDQuNTgsMjYuNTksNS45MVoiLz48L3N2Zz4K" alt="Xtend"/></a></div><div><div class="gatsby_site_header_top_social"><a href="https://github.com/minimit/xtend-library" target="_blank" rel="noopener" class="btn gatsby_btn--site_header_top_social" title="Github"><span class="icon-github icon--big"></span></a><a href="https://www.npmjs.com/package/xtend-library" target="_blank" rel="noopener" class="btn gatsby_btn--site_header_top_social" title="Npm"><span class="icon-npm icon--big"></span></a></div></div></div></div><div><div class="gatsby_site_header_links"><a class="btn gatsby_btn--site_header_link current" href="/components">Components</a><a class="btn gatsby_btn--site_header_link " href="/addons">Addons</a><a class="btn gatsby_btn--site_header_link " href="/themes">Themes</a><a class="btn gatsby_btn--site_header_link " href="/faqs">Faqs</a></div></div></nav></header><nav class="gatsby_site_header_listing"><div><div class="gatsby_site_header_cat"><div class="gatsby_cat--site_article_sidebar ">Intro</div><div class="gatsby_site_header_sub active "><div class="gatsby_site_header_item"><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/setup">Setup</a></div></div></div></div></div><div><div class="gatsby_site_header_cat"><div class="gatsby_cat--site_article_sidebar ">Core</div><div class="gatsby_site_header_sub active "><div class="gatsby_site_header_item"><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/global">Global</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/animation">Animation</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/badge">Badge</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/button">Button</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/card">Card</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/column">Column</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/container">Container</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/drop">Drop</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/form">Form</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/group">Group</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/icon">Icon</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/link">Link</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/list">List</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/note">Note</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/overlay">Overlay</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/row">Row</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/table">Table</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/toggle">Toggle</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/typography">Typography</a></div></div></div></div></div><div><div class="gatsby_site_header_cat"><div class="gatsby_cat--site_article_sidebar ">Extensions</div><div class="gatsby_site_header_sub active "><div class="gatsby_site_header_item"><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/ajax">Ajax</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/code">Code</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/loader">Loader</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/scroll">Scroll</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/separator">Separator</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub current" href="/components/slider">Slider</a><div class="gatsby_site_header_adiacent active"><div class="gatsby_site_header_item"><div><a aria-current="page" class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--adiacent active" href="/components/slider/api">API</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--adiacent " href="/components/slider/other">Other</a></div></div></div></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/smooth">Smooth</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/sticky">Sticky</a></div><div><a class="btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub " href="/components/utils">Utils</a></div></div></div></div></div></nav></div><div class="gatsby_site_article"><div id="toggle--open-full-trigger" data-xt-toggle="{ targets: &#x27;#toggle--open-full&#x27;, closeInside: &#x27;:scope &gt; .btn-close&#x27;, classHtml: &#x27;toggle--open-full--open&#x27;, autoClose: true, scrollbar: true }"></div><div class="toggle-block" id="toggle--open-full"><div class="btn btn-close" aria-label="Close"></div><div class="card-content" id="toggle--open-full-content"></div></div><main class="gatsby_site_article_inner" id="toggle--open-full-inner"><div><header class="gatsby_site_article_hero"><div class="gatsby_site_article_hero_content"><div class="gatsby_site_article_hero_content_inner"><h1><span>API<!-- --> <em>Slider</em></span><div class="badge badge--default badge--small">Extensions</div></h1></div></div><nav class="gatsby_site_article_hero_links"><div class="row"><div><div><a class="btn" href="/components/slider"><span class="icon-arrow-left icon--left"></span>Slider</a></div></div><div><div><a class="btn align-right" href="/components/slider/other">Other<span class="icon-arrow-right icon--right"></span></a></div></div></div></nav></header></div><article class="gatsby_site_article_content"><div class="gatsby_site_article_content_inner"><div><div class="custom-block note note--default note--background"><div class="custom-block-body"><p>Slider uses toggle for logic, refer to <a href="/components/toggle/api">toggle&#x27;s API</a> for all <strong>API</strong>.</p></div></div>
-<h2>Initialization</h2>
-<p>Initialize automatically within markup with <code>[data-xt-slider=&quot;{ &lt;options&gt; }&quot;]</code>.</p>
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link href="/styles.0772ac5b3ce224ce7f2c.css" rel="stylesheet" type="text/css"/><meta name="generator" content="Gatsby 2.18.2"/><title data-react-helmet="true">API — Slider — Xtend</title><meta data-react-helmet="true" name="description" content="Xtend advanded frontend library"/><meta data-react-helmet="true" property="og:title" content="API — Slider"/><meta data-react-helmet="true" property="og:description" content="Xtend advanded frontend library"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="Riccardo Caroli"/><meta data-react-helmet="true" name="twitter:title" content="API — Slider"/><meta data-react-helmet="true" name="twitter:description" content="Xtend advanded frontend library"/><link rel="icon" href="/icons/icon-48x48.png?v=f917a0155efffb97b4d3d8ba95c4e663"/><link rel="manifest" href="/manifest.webmanifest"/><meta name="theme-color" content="#0078ff"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=f917a0155efffb97b4d3d8ba95c4e663"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=f917a0155efffb97b4d3d8ba95c4e663"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=f917a0155efffb97b4d3d8ba95c4e663"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=f917a0155efffb97b4d3d8ba95c4e663"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=f917a0155efffb97b4d3d8ba95c4e663"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=f917a0155efffb97b4d3d8ba95c4e663"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=f917a0155efffb97b4d3d8ba95c4e663"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=f917a0155efffb97b4d3d8ba95c4e663"/><link as="script" rel="preload" href="/styles-360519e3782d403ac433.js"/><link as="script" rel="preload" href="/component---src-gatsby-components-templates-doc-page-js-f5675cf80b510d0dc442.js"/><link as="script" rel="preload" href="/commons-9dfe4dd89fc62505f104.js"/><link as="script" rel="preload" href="/app-830e4fe924fa3880f86d.js"/><link as="script" rel="preload" href="/webpack-runtime-162c7c5ec5f0f84254c9.js"/><link as="fetch" rel="preload" href="/page-data\components\slider\api\page-data.json" crossorigin="anonymous"/></head><body><noscript id="gatsby-noscript">This app works best with JavaScript enabled.</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group" id="gatsby-focus-wrapper"><div class="gatsby_site_wrapper"><div class="gatsby_site_main"><div class="gatsby_site_main_inner"><div class="gatsby_site_article_sidebar"><header class="gatsby_site_header"><nav class="gatsby_site_header_inner"><div><div class="gatsby_site_header_logo_outer"><div class="gatsby_site_header_logo"><a title="Home" class="gatsby_logo-icon
+                                  " href="/"><img src="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMV9jb3B5IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMC42MSA5LjEyIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmxvZ28td2hpdGU8L3RpdGxlPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTMuNjksMy40MSw1LjI5LjQ3aDJMNC44Miw0LjcsNy4zNyw5aC0yTDMuNjksNiwyLDlIMEwyLjU1LDQuNy4wNi40N2gyWiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTkuOSwxLjFWMi42NkgxMVYzLjlIOS45VjcuMDdhLjc1Ljc1LDAsMCwwLC4xMy41LjcuNywwLDAsMCwuNTIuMTUsMi41MywyLjUzLDAsMCwwLC41LDBWOWEzLjI2LDMuMjYsMCwwLDEtMSwuMTYsMS42MSwxLjYxLDAsMCwxLTEuODEtMS44VjMuOUg3LjI4VjIuNjZoLjkzVjEuMVoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xNC43Myw5LjEyYTMuMTIsMy4xMiwwLDAsMS0yLjI3LS44NkEzLjA1LDMuMDUsMCwwLDEsMTEuNTksNlY1LjgyQTMuNzcsMy43NywwLDAsMSwxMiw0LjExLDIuNjcsMi42NywwLDAsMSwxMywzYTMsMywwLDAsMSwxLjU1LS40MSwyLjY0LDIuNjQsMCwwLDEsMiwuODIsMy4zNSwzLjM1LDAsMCwxLC43NSwyLjMzdi42OWgtNGExLjYsMS42LDAsMCwwLC41LDEsMS40NywxLjQ3LDAsMCwwLDEsLjM3QTEuNzksMS43OSwwLDAsMCwxNi4zNyw3bC44NC45M2EyLjY2LDIuNjYsMCwwLDEtMSwuODVBMy4zNywzLjM3LDAsMCwxLDE0LjczLDkuMTJabS0uMTktNS4yMWExLjA1LDEuMDUsMCwwLDAtLjgyLjM0LDEuNzcsMS43NywwLDAsMC0uNCwxaDIuMzZWNS4wOWExLjIyLDEuMjIsMCwwLDAtLjMxLS44N0ExLjA2LDEuMDYsMCwwLDAsMTQuNTQsMy45MVoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yMCwyLjY2bC4wNS43M2EyLjI0LDIuMjQsMCwwLDEsMS44Mi0uODUsMS44MywxLjgzLDAsMCwxLDEuNS41OSwyLjc5LDIuNzksMCwwLDEsLjUxLDEuNzdWOUgyMi4xNVY1YTEuMTEsMS4xMSwwLDAsMC0uMjQtLjc5LDEuMDYsMS4wNiwwLDAsMC0uNzgtLjI0LDEuMTYsMS4xNiwwLDAsMC0xLjA3LjYxVjlIMTguMzdWMi42NloiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNC45LDUuNzhhMy44NCwzLjg0LDAsMCwxLC42Ni0yLjM2LDIuMTcsMi4xNywwLDAsMSwxLjgyLS44OCwxLjk0LDEuOTQsMCwwLDEsMS41My42OVYwaDEuN1Y5SDI5LjA4TDI5LDguMzNhMiwyLDAsMCwxLTEuNjMuNzksMi4xNywyLjE3LDAsMCwxLTEuOC0uODhBNCw0LDAsMCwxLDI0LjksNS43OFptMS42OS4xM2EyLjUsMi41LDAsMCwwLC4zMSwxLjM3LDEsMSwwLDAsMCwuOS40NywxLjE0LDEuMTQsMCwwLDAsMS4xMS0uNjZWNC41OGExLjEyLDEuMTIsMCwwLDAtMS4xLS42NkMyNywzLjkyLDI2LjU5LDQuNTgsMjYuNTksNS45MVoiLz48L3N2Zz4K" alt="Xtend"/></a></div><div><div class="gatsby_site_header_top_social"><a href="https://github.com/minimit/xtend-library" target="_blank" rel="noopener" class="btn gatsby_btn-site_header_top_social" title="Github"><span class="icon-github icon-big"></span></a><a href="https://www.npmjs.com/package/xtend-library" target="_blank" rel="noopener" class="btn gatsby_btn-site_header_top_social" title="Npm"><span class="icon-npm icon-big"></span></a></div></div></div></div><div><div class="gatsby_site_header_links"><a class="btn gatsby_btn-site_header_link " href="/introduction">Introduction</a><a class="btn gatsby_btn-site_header_link current" href="/components">Components</a><a class="btn gatsby_btn-site_header_link " href="/addons">Addons</a><a class="btn gatsby_btn-site_header_link " href="/themes">Themes</a></div></div></nav></header><nav class="gatsby_site_header_listing"><div><div class="gatsby_site_header_cat"><div class="gatsby_cat--site_article_sidebar ">Core</div><div class="gatsby_site_header_sub active "><div class="gatsby_site_header_item"><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/components/global">Global</a></div><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/components/animation">Animation</a></div><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/components/badge">Badge</a></div><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/components/button">Button</a></div><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/components/card">Card</a></div><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/components/column">Column</a></div><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/components/container">Container</a></div><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/components/drop">Drop</a></div><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/components/form">Form</a></div><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/components/group">Group</a></div><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/components/icon">Icon</a></div><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/components/link">Link</a></div><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/components/list">List</a></div><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/components/media">Media</a></div><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/components/note">Note</a></div><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/components/overlay">Overlay</a></div><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/components/row">Row</a></div><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/components/table">Table</a></div><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/components/toggle">Toggle</a></div><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/components/typography">Typography</a></div></div></div></div></div><div><div class="gatsby_site_header_cat"><div class="gatsby_cat--site_article_sidebar ">Extensions</div><div class="gatsby_site_header_sub active "><div class="gatsby_site_header_item"><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/components/ajax">Ajax</a></div><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/components/loader">Loader</a></div><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/components/scroll">Scroll</a></div><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/components/separator">Separator</a></div><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub current" href="/components/slider">Slider</a><div class="gatsby_site_header_adiacent active"><div class="gatsby_site_header_item"><div><a aria-current="page" class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--adiacent active" href="/components/slider/api">API</a></div><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--adiacent " href="/components/slider/other">Other</a></div></div></div></div><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/components/smooth">Smooth</a></div><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/components/sticky">Sticky</a></div><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/components/utils">Utils</a></div></div></div></div></div></nav></div><div class="gatsby_site_article"><div id="toggle_open-full-trigger" data-xt-toggle="{ targets: &#x27;#toggle_open-full&#x27;, closeInside: &#x27;:scope &gt; .btn-close&#x27;, autoClose: true, scrollbar: true }"></div><div class="toggle-block" id="toggle_open-full"><div class="btn btn-close" aria-label="Close"></div><div class="card-content" id="toggle_open-full-content"></div></div><main class="gatsby_site_article_inner" id="toggle_open-full-inner"><div><header class="gatsby_site_article_hero"><div class="gatsby_site_article_hero_content"><div class="gatsby_site_article_hero_content_inner"><h1><span>API<!-- --> <em>Slider</em></span><div class="badge badge-default badge-small">Extensions</div></h1></div></div><nav class="gatsby_site_article_hero_links"><div class="gatsby_site_article_hero_links_inner"><div class="row"><div><div><a class="btn" href="/components/slider"><span class="icon-arrow-left icon-left"></span>Slider</a></div></div><div><div><a class="btn align-right" href="/components/slider/other">Other<span class="icon-arrow-right icon-right"></span></a></div></div></div></div></nav></header></div><article class="gatsby_site_article_content"><div class="gatsby_site_article_content_inner"><div><h2>Initialization</h2>
+<p>Initialize automatically within markup with <code>[data-xt-slider=&quot;{ &lt;options&gt; }&quot;]</code> on the <strong>object</strong>:</p>
+<div class="custom-block note note-default note-background"><div class="custom-block-body"><p><strong>Object</strong> is the DOM element you want to assign the component.</p></div></div>
 <p>Or initialize with javascript:</p>
-<pre><code class="language-jsx">new Xt.Slider(document.querySelector(&#x27;.my-slider&#x27;), {
+<pre><code class="language-js">let self = new Xt.Slider(document.querySelector(&#x27;#my-object&#x27;), {
   // options
 });
 </code></pre>
-<h2>Option</h2>
+<p>Or inizialize with <strong>mutation observer</strong> (preferred method):</p>
+<pre><code class="language-js">Xt.mount.push({
+  matches: &#x27;#my-object&#x27;,
+  mount: function(object) {
+    // init
+
+    let self = new Xt.Slider(object, {
+      // options
+    });
+
+    // unmount
+
+    const unmount = function() {
+      self.destroy()
+      self = null
+    }
+    return unmount
+  }
+})
+</code></pre>
+<h2>Usage</h2>
+<p>Use this markup to create a <strong>slider</strong>.</p>
+<script type="text/plain" class="language-markup">
+  &lt;div class=&quot;slider&quot; data-xt-slider&gt;
+
+    &lt;div class=&quot;slides&quot;&gt;
+      &lt;ul class=&quot;slides-inner&quot;&gt;
+
+        &lt;li class=&quot;slide&quot;&gt;
+          &lt;div class=&quot;slide-inner&quot;&gt;
+            &lt;!-- content --&gt;
+          &lt;/div&gt;
+        &lt;/li&gt;
+
+        &lt;li class=&quot;slide&quot;&gt;
+          &lt;div class=&quot;slide-inner&quot;&gt;
+            &lt;!-- content --&gt;
+          &lt;/div&gt;
+        &lt;/li&gt;
+
+      &lt;/ul&gt;
+    &lt;/div&gt;
+
+    &lt;nav class=&quot;slider-pagination&quot;&gt;
+      &lt;button type=&quot;button&quot; class=&quot;btn btn-default xt-ignore&quot; data-xt-pag title=&quot;Slide xt-num&quot;&gt;
+      &lt;/button&gt;
+    &lt;/nav&gt;
+
+  &lt;/div&gt;
+</script>
+<div class="custom-block note note-primary note-background"><div class="custom-block-body"><p><code>slider-pagination[data-xt-pag].xt-ignore</code> is essential to the functioning of the slider, so if you don&#x27;t want to show it add <code>.display-none</code>.</p></div></div>
+<h2>Options</h2>
+<div class="custom-block note note-default note-background"><div class="custom-block-body"><p>Slider uses toggle for logic, refer to <a href="/components/toggle/api#options">toggle&#x27;s options</a>.</p></div></div>
 <h3>Align</h3>
-<div class="table--scroll">
+<div class="table-scroll">
 
 
 
@@ -38,10 +90,10 @@
   <div class="slides">
     <ul class="slides-inner">
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -55,10 +107,10 @@
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -72,10 +124,10 @@
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -89,10 +141,10 @@
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -106,10 +158,10 @@
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -126,7 +178,7 @@
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center"
+          <div class="card card-slide align-center"
             style="height: 15rem">
             <div class="card-design"></div>
             <div class="card-inner">
@@ -145,7 +197,7 @@
   </div>
 
   <nav class="slider-pagination">
-    <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
+    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
     </button>
   </nav>
 
@@ -159,10 +211,10 @@
   <div class="slides">
     <ul class="slides-inner">
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -176,10 +228,10 @@
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -193,10 +245,10 @@
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -210,10 +262,10 @@
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -227,10 +279,10 @@
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -247,7 +299,7 @@
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center"
+          <div class="card card-slide align-center"
             style="height: 15rem">
             <div class="card-design"></div>
             <div class="card-inner">
@@ -266,7 +318,7 @@
   </div>
 
   <nav class="slider-pagination">
-    <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
+    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
     </button>
   </nav>
 
@@ -280,10 +332,10 @@
   <div class="slides">
     <ul class="slides-inner">
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -297,10 +349,10 @@
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -314,10 +366,10 @@
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -331,10 +383,10 @@
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -348,10 +400,10 @@
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -368,7 +420,7 @@
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center"
+          <div class="card card-slide align-center"
             style="height: 15rem">
             <div class="card-design"></div>
             <div class="card-inner">
@@ -387,7 +439,7 @@
   </div>
 
   <nav class="slider-pagination">
-    <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
+    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
     </button>
   </nav>
 
@@ -395,7 +447,7 @@
 </script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
 </div>
 <h3>Contain</h3>
-<div class="table--scroll">
+<div class="table-scroll">
 
 
 
@@ -424,10 +476,10 @@
   <div class="slides">
     <ul class="slides-inner">
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -441,10 +493,10 @@
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -458,10 +510,10 @@
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -475,10 +527,10 @@
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -492,10 +544,10 @@
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -512,7 +564,7 @@
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center"
+          <div class="card card-slide align-center"
             style="height: 15rem">
             <div class="card-design"></div>
             <div class="card-inner">
@@ -531,7 +583,7 @@
   </div>
 
   <nav class="slider-pagination">
-    <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
+    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
     </button>
   </nav>
 
@@ -545,10 +597,10 @@
   <div class="slides">
     <ul class="slides-inner">
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -562,10 +614,10 @@
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -579,10 +631,10 @@
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -596,10 +648,10 @@
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -613,10 +665,10 @@
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -633,7 +685,7 @@
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center"
+          <div class="card card-slide align-center"
             style="height: 15rem">
             <div class="card-design"></div>
             <div class="card-inner">
@@ -652,7 +704,7 @@
   </div>
 
   <nav class="slider-pagination">
-    <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
+    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
     </button>
   </nav>
 
@@ -666,10 +718,10 @@
   <div class="slides">
     <ul class="slides-inner">
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -683,10 +735,10 @@
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -700,10 +752,10 @@
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -717,10 +769,10 @@
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -734,10 +786,10 @@
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -754,7 +806,7 @@
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center"
+          <div class="card card-slide align-center"
             style="height: 15rem">
             <div class="card-design"></div>
             <div class="card-inner">
@@ -773,7 +825,7 @@
   </div>
 
   <nav class="slider-pagination">
-    <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
+    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
     </button>
   </nav>
 
@@ -784,7 +836,7 @@
 <p>With <code>groupMq: { MediaQuery: Number }</code> you set a decimal number from 0 to 1 to group the slides with a factor of the <strong>drag.dragger</strong> width available.</p>
 <p><code>MediaQuery</code> is a media query, you can have multiple, for example <code>groupMq: { &#x27;all&#x27;: 1, &#x27;(min-width: 768px)&#x27;: 0.8 }</code>.</p>
 <p>By default it&#x27;s set to <code>groupMq: { &#x27;all&#x27;: 0.8 }</code>.</p>
-<div class="table--scroll">
+<div class="table-scroll">
 
 
 
@@ -813,10 +865,10 @@
   <div class="slides">
     <ul class="slides-inner">
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -830,10 +882,10 @@
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -847,10 +899,10 @@
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -864,10 +916,10 @@
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -881,10 +933,10 @@
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -901,7 +953,7 @@
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center"
+          <div class="card card-slide align-center"
             style="height: 15rem">
             <div class="card-design"></div>
             <div class="card-inner">
@@ -919,7 +971,7 @@
   </div>
 
   <nav class="slider-pagination">
-    <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
+    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
     </button>
   </nav>
 
@@ -936,10 +988,10 @@
   <div class="slides">
     <ul class="slides-inner">
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -953,10 +1005,10 @@
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -970,10 +1022,10 @@
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -987,10 +1039,10 @@
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -1005,10 +1057,10 @@
       </li>
 
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -1025,7 +1077,7 @@
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center"
+          <div class="card card-slide align-center"
             style="height: 15rem">
             <div class="card-design"></div>
             <div class="card-inner">
@@ -1044,7 +1096,7 @@
   </div>
 
   <nav class="slider-pagination">
-    <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
+    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
     </button>
   </nav>
 
@@ -1052,7 +1104,7 @@
 </script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
 </div>
 <h3>Drag</h3>
-<div class="table--scroll">
+<div class="table-scroll">
 
 
 
@@ -1101,7 +1153,7 @@
 <div class="gatsby_demo">
   <div class="gatsby_demo_item gatsby_demo_preview" data-name="toggle css" data-inline="vanilla/components/slider/toggle-css">
   <script type="text/plain" data-lang="html">
-<div class="slider demo--slider--toggle-css"
+<div class="slider demo_slider-toggle-css"
      data-xt-slider="{ instant: false, drag: false }">
 
   <div class="slides">
@@ -1110,7 +1162,7 @@
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -1127,7 +1179,7 @@
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -1144,7 +1196,7 @@
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -1161,7 +1213,7 @@
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -1178,7 +1230,7 @@
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -1195,7 +1247,7 @@
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center"
+          <div class="card card-slide align-center"
             style="height: 15rem">
             <div class="card-design"></div>
             <div class="card-inner">
@@ -1214,12 +1266,12 @@
   </div>
 
   <nav class="slider-pagination">
-    <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
+    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
     </button>
   </nav>
 
 </div>
-</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div><div class="gatsby_demo_source xt-ignore" data-lang="less">.demo--slider--toggle-css {
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div><div class="gatsby_demo_source xt-ignore" data-lang="less">.demo_slider-toggle-css {
   .slides-inner {
     overflow: hidden;
     // dragger animations
@@ -1245,7 +1297,7 @@
       .anim-x-inverse.active();
       animation-duration: @time-medium;
       &:after {
-        animation-name: demo--slider--toggle-css--in;
+        animation-name: demo_slider-toggle-css-in;
         animation-duration: @time-medium;
         animation-timing-function: @bez-in;
         transform: translateX(-100%);
@@ -1254,7 +1306,7 @@
         .anim-x.active();
         animation-duration: @time-medium;
         &:after {
-          animation-name: demo--slider--toggle-css-in-inverse;
+          animation-name: demo_slider-toggle-css-in-inverse;
           animation-duration: @time-medium;
           animation-timing-function: @bez-in;
           transform: translateX(100%);
@@ -1265,7 +1317,7 @@
       .anim-x-inverse.out();
       animation-duration: @time-medium;
       &:after {
-        animation-name: demo--slider--toggle-css--out;
+        animation-name: demo_slider-toggle-css-out;
         animation-duration: @time-medium;
         animation-timing-function: @bez-out;
         transform: translateX(0);
@@ -1274,7 +1326,7 @@
         .anim-x.out();
         animation-duration: @time-medium;
         &:after {
-          animation-name: demo--slider--toggle-css-out-inverse;
+          animation-name: demo_slider-toggle-css-out-inverse;
           animation-duration: @time-medium;
           animation-timing-function: @bez-out;
           transform: translateX(0);
@@ -1284,7 +1336,7 @@
   }
 }
 
-@keyframes demo--slider--toggle-css--in {
+@keyframes demo_slider-toggle-css-in {
   0% {
     transform: translateX(0);
   }
@@ -1293,7 +1345,7 @@
   }
 }
 
-@keyframes demo--slider--toggle-css-in-inverse {
+@keyframes demo_slider-toggle-css-in-inverse {
   0% {
     transform: translateX(0);
   }
@@ -1302,7 +1354,7 @@
   }
 }
 
-@keyframes demo--slider--toggle-css--out {
+@keyframes demo_slider-toggle-css-out {
   0% {
     transform: translateX(100%);
   }
@@ -1311,7 +1363,7 @@
   }
 }
 
-@keyframes demo--slider--toggle-css-out-inverse {
+@keyframes demo_slider-toggle-css-out-inverse {
   0% {
     transform: translateX(-100%);
   }
@@ -1322,7 +1374,7 @@
 </div></div>
   <div class="gatsby_demo_item gatsby_demo_preview" data-name="toggle js" data-inline="vanilla/components/slider/toggle-js">
   <script type="text/plain" data-lang="html">
-<div class="slider demo--slider--toggle-js">
+<div class="slider demo_slider-toggle-js">
 
   <div class="slides">
     <ul class="slides-inner">
@@ -1330,7 +1382,7 @@
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -1347,7 +1399,7 @@
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -1364,7 +1416,7 @@
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -1381,7 +1433,7 @@
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -1398,7 +1450,7 @@
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -1415,7 +1467,7 @@
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center"
+          <div class="card card-slide align-center"
             style="height: 15rem">
             <div class="card-design"></div>
             <div class="card-inner">
@@ -1434,12 +1486,12 @@
   </div>
 
   <nav class="slider-pagination">
-    <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
+    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
     </button>
   </nav>
 
 </div>
-</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div><div class="gatsby_demo_source xt-ignore" data-lang="less">.demo--slider--toggle-js {
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div><div class="gatsby_demo_source xt-ignore" data-lang="less">.demo_slider-toggle-js {
   .slides-inner {
     overflow: hidden;
     // dragger animations
@@ -1455,59 +1507,62 @@ import 'xtend-library/src/extensions/slider/slider.js'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '.demo--slider--toggle-js',
+  matches: '.demo_slider-toggle-js',
   mount: function(object) {
     // init
 
     let self = new Xt.Slider(object, {
+      instant: false,
       durationOn: Xt.vars.timeMedium,
       durationOff: Xt.vars.timeMedium,
-      instant: false,
     })
 
     // drag
 
     const eventDrag = function() {
-      const target = self.targets.filter(x => self.hasCurrent(x))[0]
-      const ratio = Math.abs(self.detail.xStart - self.detail.xCurrent) / target.clientWidth
+      const tr = self.targets.filter(x => self.hasCurrent(x))[0]
+      const ratio = Math.abs(self.detail.dragStart - self.detail.dragCurrent) / tr.clientWidth
       // direction
       let direction = 1
-      if (self.detail.xStart - self.detail.xCurrent > 0) {
+      if (self.detail.dragStart - self.detail.dragCurrent > 0) {
         direction = -1
       }
       // mask
-      gsap.set(target, { translateX: -self.detail.xPos + 'px', opacity: 1 })
-      gsap.set(self.dragger, { translateX: self.detail.xPos })
+      gsap.set(tr, { translateX: -self.detail.dragPos + 'px', opacity: 1 })
+      gsap.set(self.dragger, { translateX: self.detail.dragPos })
       // content
-      const contents = target.querySelectorAll('.card-item > *')
+      const contents = tr.querySelectorAll('.card-item > *')
       for (const content of contents) {
         gsap.set(content, { translateX: 100 * ratio * direction, opacity: 1 })
       }
     }
 
+    self.dragger.addEventListener('drag.xt', eventDrag)
+
+    // dragreset
+
     const eventDragReset = function() {
-      const target = self.targets.filter(x => self.hasCurrent(x))[0]
+      const tr = self.targets.filter(x => self.hasCurrent(x))[0]
       // mask
-      gsap.set(target, { translateX: -self.detail.xPosOld + 'px' })
-      gsap.to(target, { duration: Xt.vars.timeMedium, translateX: 0, opacity: 1, ease: Xt.vars.easeOut })
-      gsap.set(self.dragger, { translateX: self.detail.xPosOld })
-      gsap.to(self.dragger, { duration: Xt.vars.timeMedium, translateX: 0, ease: Xt.vars.easeOut })
+      gsap.set(tr, { translateX: -self.detail.dragPosOld + 'px' })
+      gsap.to(tr, { translateX: 0, opacity: 1, duration: Xt.vars.timeMedium, ease: Xt.vars.easeOut })
+      gsap.set(self.dragger, { translateX: self.detail.dragPosOld })
+      gsap.to(self.dragger, { translateX: 0, duration: Xt.vars.timeMedium, ease: Xt.vars.easeOut })
       // content
-      const contents = target.querySelectorAll('.card-item > *')
+      const contents = tr.querySelectorAll('.card-item > *')
       for (const content of contents) {
-        gsap.to(content, { duration: Xt.vars.timeMedium, translateX: 0, opacity: 1, ease: Xt.vars.easeOut })
+        gsap.to(content, { translateX: 0, opacity: 1, duration: Xt.vars.timeMedium, ease: Xt.vars.easeOut })
       }
     }
 
-    self.dragger.addEventListener('drag.xt.slider', eventDrag)
-    self.dragger.addEventListener('dragreset.xt.slider', eventDragReset)
+    self.dragger.addEventListener('dragreset.xt', eventDragReset)
 
-    // activation
+    // on
 
     const eventOn = function(e) {
       const tr = e.target
+      // useCapture delegation
       if (self.targets.includes(tr)) {
-        // event bubbles
         const xMax = tr.clientWidth
         // direction
         let direction = 1
@@ -1516,11 +1571,14 @@ Xt.mount.push({
         }
         if (self.initial) {
           // mask
+          gsap.killTweensOf(tr)
           gsap.set(tr, { translateX: 0, opacity: 1, ease: Xt.vars.easeOut })
+          gsap.killTweensOf(self.dragger)
           gsap.set(self.dragger, { translateX: 0, ease: Xt.vars.easeOut })
           // content
           const contents = tr.querySelectorAll('.card-item > *')
           for (const content of contents) {
+            gsap.killTweensOf(content)
             gsap.set(content, { translateX: 0, opacity: 1, ease: Xt.vars.easeOut })
           }
         } else {
@@ -1528,23 +1586,27 @@ Xt.mount.push({
           gsap.set(tr, { opacity: 0 })
           // mask
           gsap.set(tr, { translateX: -xMax * direction })
-          gsap.to(tr, { duration: Xt.vars.timeMedium, translateX: 0, opacity: 1, ease: Xt.vars.easeOut })
+          gsap.to(tr, { translateX: 0, opacity: 1, duration: Xt.vars.timeMedium, ease: Xt.vars.easeOut })
           gsap.set(self.dragger, { translateX: xMax * direction })
-          gsap.to(self.dragger, { duration: Xt.vars.timeMedium, translateX: 0, ease: Xt.vars.easeOut })
+          gsap.to(self.dragger, { translateX: 0, duration: Xt.vars.timeMedium, ease: Xt.vars.easeOut })
           // content
           const contents = tr.querySelectorAll('.card-item > *')
           for (const content of contents) {
             gsap.set(content, { translateX: 100 * direction, opacity: 0 })
-            gsap.to(content, { duration: Xt.vars.timeMedium, translateX: 0, opacity: 1, ease: Xt.vars.easeOut })
+            gsap.to(content, { translateX: 0, opacity: 1, duration: Xt.vars.timeMedium, ease: Xt.vars.easeOut })
           }
         }
       }
     }
 
+    self.object.addEventListener('on.xt', eventOn, true)
+
+    // off
+
     const eventOff = function(e) {
       const tr = e.target
+      // useCapture delegation
       if (self.targets.includes(tr)) {
-        // event bubbles
         const xMax = tr.clientWidth
         // direction
         let direction = 1
@@ -1552,29 +1614,25 @@ Xt.mount.push({
           direction = -1
         }
         // mask
-        gsap.to(tr, { duration: Xt.vars.timeMedium, translateX: xMax * direction, opacity: 0, ease: Xt.vars.easeOut })
-        gsap.to(self.dragger, { duration: Xt.vars.timeMedium, translateX: -xMax * direction, ease: Xt.vars.easeOut })
+        gsap.to(tr, { translateX: xMax * direction, opacity: 0, duration: Xt.vars.timeMedium, ease: Xt.vars.easeOut })
+        gsap.to(self.dragger, { translateX: -xMax * direction, duration: Xt.vars.timeMedium, ease: Xt.vars.easeOut })
         // content
         const contents = tr.querySelectorAll('.card-item > *')
         for (const content of contents) {
-          gsap.to(content, { duration: Xt.vars.timeMedium, translateX: -100 * direction, opacity: 0, ease: Xt.vars.easeOut })
+          gsap.to(content, { translateX: -100 * direction, opacity: 0, duration: Xt.vars.timeMedium, ease: Xt.vars.easeOut })
         }
       }
     }
 
-    self.object.addEventListener('on.xt', eventOn)
-    self.object.addEventListener('off.xt', eventOff)
+    self.object.addEventListener('off.xt', eventOff, true)
 
     // unmount
 
-    return function unmount() {
-      self.dragger.removeEventListener('drag.xt.slider', eventDrag)
-      self.dragger.removeEventListener('dragreset.xt.slider', eventDragReset)
-      self.object.removeEventListener('on.xt', eventOn)
-      self.object.removeEventListener('off.xt', eventOff)
+    const unmount = function() {
       self.destroy()
       self = null
     }
+    return unmount
   },
 })
 </div></div>
@@ -1582,7 +1640,7 @@ Xt.mount.push({
 <h3>Friction</h3>
 <p>You can set friction with <code>drag: { friction: Function }</code>, for example <code>function(velocity) {return Math.pow(velocity, 0.9)}</code>.</p>
 <p>You can disable friction with <code>drag: { friction: false }</code>.</p>
-<div class="table--scroll">
+<div class="table-scroll">
 
 
 
@@ -1623,10 +1681,10 @@ Xt.mount.push({
   <div class="slides">
     <ul class="slides-inner">
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -1640,10 +1698,10 @@ Xt.mount.push({
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -1657,10 +1715,10 @@ Xt.mount.push({
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -1674,10 +1732,10 @@ Xt.mount.push({
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -1691,10 +1749,10 @@ Xt.mount.push({
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -1711,7 +1769,7 @@ Xt.mount.push({
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center"
+          <div class="card card-slide align-center"
             style="height: 15rem">
             <div class="card-design"></div>
             <div class="card-inner">
@@ -1730,7 +1788,7 @@ Xt.mount.push({
   </div>
 
   <nav class="slider-pagination">
-    <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
+    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
     </button>
   </nav>
 
@@ -1739,7 +1797,7 @@ Xt.mount.push({
 </div>
 <h3>Overflow</h3>
 <p>You can set overflow with <code>drag: { overflow: Function }</code>, for example <code>function(overflow) {return Math.pow(overflow, 0.73)}</code>.</p>
-<div class="table--scroll">
+<div class="table-scroll">
 
 
 
@@ -1761,133 +1819,8 @@ Xt.mount.push({
 </div>
 <h3>Wrap</h3>
 <p>You can wrap the slides with <code>drag: { wrap: true }</code>.</p>
-<div class="custom-block note note--default note--background"><div class="custom-block-body"><p>With <code>drag: { wrap: true }</code> you have to set <code>loop: true</code> and you can&#x27;t use <code>contain: true</code></p></div></div>
-<div class="gatsby_demo">
-  <div class="gatsby_demo_item gatsby_demo_preview" data-name="wrap" data-inline="vanilla/components/slider/wrap">
-  <script type="text/plain" data-lang="html">
-<div class="slider"
-     data-xt-slider="{ drag: { wrap: true } }">
-
-  <div class="slides">
-    <ul class="slides-inner">
-
-      <li class="slide col-6 col-4--sm">
-        <div class="slide-inner">
-
-          <div class="card card--slide align-center">
-            <div class="card-design"></div>
-            <div class="card-inner">
-              <div class="card-content">
-                <div class="card-block card-item">
-                  <div class="card-title">1</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </li>
-
-      <li class="slide col-6 col-4--sm">
-        <div class="slide-inner">
-
-          <div class="card card--slide align-center">
-            <div class="card-design"></div>
-            <div class="card-inner">
-              <div class="card-content">
-                <div class="card-block card-item">
-                  <div class="card-title">2</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </li>
-
-      <li class="slide col-6 col-4--sm">
-        <div class="slide-inner">
-
-          <div class="card card--slide align-center">
-            <div class="card-design"></div>
-            <div class="card-inner">
-              <div class="card-content">
-                <div class="card-block card-item">
-                  <div class="card-title">3</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </li>
-
-      <li class="slide col-6 col-4--sm">
-        <div class="slide-inner">
-
-          <div class="card card--slide align-center">
-            <div class="card-design"></div>
-            <div class="card-inner">
-              <div class="card-content">
-                <div class="card-block card-item">
-                  <div class="card-title">4</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </li>
-
-      <li class="slide col-6 col-4--sm">
-        <div class="slide-inner">
-
-          <div class="card card--slide align-center">
-            <div class="card-design"></div>
-            <div class="card-inner">
-              <div class="card-content">
-                <div class="card-block card-item">
-                  <div class="card-title">5</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </li>
-
-      <li class="slide col-12">
-        <div class="slide-inner">
-
-          <div class="card card--slide align-center"
-            style="height: 15rem">
-            <div class="card-design"></div>
-            <div class="card-inner">
-              <div class="card-content">
-                <div class="card-block card-item">
-                  <div class="card-title">6</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </li>
-
-    </ul>
-  </div>
-
-  <nav class="slider-pagination">
-    <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
-    </button>
-  </nav>
-
-</div>
-</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
-</div>
-<p>You can set <code>drag: { wrap: Number }</code> where <code>Number</code> is how many times to cover the <strong>drag.dragger</strong> with wrap (setting <code>1</code> is the same as <code>true</code>).</p>
-<p>It&#x27;s useful sometimes if the wrap isn&#x27;t long enough when dragging.</p>
-<div class="table--scroll">
+<div class="custom-block note note-primary note-background"><div class="custom-block-body"><p>With <code>drag: { wrap: true }</code> you have to set <code>loop: true</code> and you can&#x27;t use <code>contain: true</code></p></div></div>
+<div class="table-scroll">
 
 
 
@@ -1908,18 +1841,18 @@ Xt.mount.push({
 <table><thead><tr><th></th><th>Syntax</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td>Option</td><td><code>drag.wrap:Boolean</code></td><td><code>false</code></td><td>Wrap slides on start and end</td></tr></tbody></table>
 </div>
 <div class="gatsby_demo">
-  <div class="gatsby_demo_item gatsby_demo_preview" data-name="wrap number" data-inline="vanilla/components/slider/wrap-number">
+  <div class="gatsby_demo_item gatsby_demo_preview" data-name="wrap" data-inline="vanilla/components/slider/wrap">
   <script type="text/plain" data-lang="html">
 <div class="slider"
-     data-xt-slider="{ drag: { wrap: 2 } }">
+     data-xt-slider="{ drag: { wrap: true } }">
 
   <div class="slides">
     <ul class="slides-inner">
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -1933,10 +1866,10 @@ Xt.mount.push({
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -1950,10 +1883,10 @@ Xt.mount.push({
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -1967,10 +1900,10 @@ Xt.mount.push({
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -1984,10 +1917,10 @@ Xt.mount.push({
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -2004,7 +1937,7 @@ Xt.mount.push({
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center"
+          <div class="card card-slide align-center"
             style="height: 15rem">
             <div class="card-design"></div>
             <div class="card-inner">
@@ -2023,27 +1956,24 @@ Xt.mount.push({
   </div>
 
   <nav class="slider-pagination">
-    <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
+    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
     </button>
   </nav>
 
 </div>
 </script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
-</div>
-<p>With <code>drag: { wrap: true, overflow: false }</code> you don&#x27;t have the drag overflow on wrap.</p>
-<div class="gatsby_demo">
   <div class="gatsby_demo_item gatsby_demo_preview" data-name="wrap left" data-inline="vanilla/components/slider/wrap-left">
   <script type="text/plain" data-lang="html">
 <div class="slider"
-     data-xt-slider="{ align: 'left', drag: { wrap: true, overflow: false } }">
+     data-xt-slider="{ align: 'left', drag: { wrap: true } }">
 
   <div class="slides">
     <ul class="slides-inner">
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -2057,10 +1987,10 @@ Xt.mount.push({
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -2074,10 +2004,10 @@ Xt.mount.push({
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -2091,10 +2021,10 @@ Xt.mount.push({
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -2108,10 +2038,10 @@ Xt.mount.push({
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -2128,7 +2058,7 @@ Xt.mount.push({
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center"
+          <div class="card card-slide align-center"
             style="height: 15rem">
             <div class="card-design"></div>
             <div class="card-inner">
@@ -2147,7 +2077,7 @@ Xt.mount.push({
   </div>
 
   <nav class="slider-pagination">
-    <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
+    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
     </button>
   </nav>
 
@@ -2156,15 +2086,15 @@ Xt.mount.push({
   <div class="gatsby_demo_item gatsby_demo_preview" data-name="wrap right" data-inline="vanilla/components/slider/wrap-right">
   <script type="text/plain" data-lang="html">
 <div class="slider"
-     data-xt-slider="{ align: 'right', drag: { wrap: true, overflow: false } }">
+     data-xt-slider="{ align: 'right', drag: { wrap: true } }">
 
   <div class="slides">
     <ul class="slides-inner">
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -2178,10 +2108,10 @@ Xt.mount.push({
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -2195,10 +2125,10 @@ Xt.mount.push({
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -2212,10 +2142,10 @@ Xt.mount.push({
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -2229,10 +2159,10 @@ Xt.mount.push({
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -2249,7 +2179,7 @@ Xt.mount.push({
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center"
+          <div class="card card-slide align-center"
             style="height: 15rem">
             <div class="card-design"></div>
             <div class="card-inner">
@@ -2268,7 +2198,132 @@ Xt.mount.push({
   </div>
 
   <nav class="slider-pagination">
-    <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
+    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
+    </button>
+  </nav>
+
+</div>
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
+</div>
+<p>Use <code>drag: { overflow: false }</code> to not have the drag overflow on wrap.</p>
+<p>You can set <code>drag: { wrap: Number }</code> where <code>Number</code> is how many times to cover the <strong>drag.dragger</strong> with wrap (setting <code>1</code> is the same as <code>true</code>).</p>
+<div class="gatsby_demo">
+  <div class="gatsby_demo_item gatsby_demo_preview" data-name="wrap overflow" data-inline="vanilla/components/slider/wrap-overflow">
+  <script type="text/plain" data-lang="html">
+<div class="slider"
+     data-xt-slider="{ drag: { wrap: 2, overflow: false } }">
+
+  <div class="slides">
+    <ul class="slides-inner">
+
+      <li class="slide col-6 col-4-sm">
+        <div class="slide-inner">
+
+          <div class="card card-slide align-center">
+            <div class="card-design"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-block card-item">
+                  <div class="card-title">1</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </li>
+
+      <li class="slide col-6 col-4-sm">
+        <div class="slide-inner">
+
+          <div class="card card-slide align-center">
+            <div class="card-design"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-block card-item">
+                  <div class="card-title">2</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </li>
+
+      <li class="slide col-6 col-4-sm">
+        <div class="slide-inner">
+
+          <div class="card card-slide align-center">
+            <div class="card-design"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-block card-item">
+                  <div class="card-title">3</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </li>
+
+      <li class="slide col-6 col-4-sm">
+        <div class="slide-inner">
+
+          <div class="card card-slide align-center">
+            <div class="card-design"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-block card-item">
+                  <div class="card-title">4</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </li>
+
+      <li class="slide col-6 col-4-sm">
+        <div class="slide-inner">
+
+          <div class="card card-slide align-center">
+            <div class="card-design"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-block card-item">
+                  <div class="card-title">5</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </li>
+
+      <li class="slide col-12">
+        <div class="slide-inner">
+
+          <div class="card card-slide align-center"
+            style="height: 15rem">
+            <div class="card-design"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-block card-item">
+                  <div class="card-title">6</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
+  <nav class="slider-pagination">
+    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
     </button>
   </nav>
 
@@ -2283,7 +2338,7 @@ Xt.mount.push({
 <li><code>xt-tot</code> replaced with pagination&#x27;s total slides</li>
 <li><code>xt-content</code> replaced with slide&#x27;s <code>.slide-pagination-content</code> <strong>innerHTML</strong>.</li>
 </ul>
-<div class="table--scroll">
+<div class="table-scroll">
 
 
 
@@ -2305,12 +2360,12 @@ Xt.mount.push({
 </div>
 <script type="text/plain" class="language-markup">
   &lt;nav class=&quot;slider-pagination&quot;&gt;
-    &lt;button type=&quot;button&quot; class=&quot;btn btn--default xt-ignore&quot; data-xt-pag title=&quot;Slide xt-num&quot;&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-default xt-ignore&quot; data-xt-pag title=&quot;Slide xt-num&quot;&gt;
       xt-num of xt-tot
     &lt;/button&gt;
   &lt;/nav&gt;
 </script>
-<div class="custom-block note note--default note--background"><div class="custom-block-body"><p><code>slider-pagination[data-xt-pag].xt-ignore</code> is essential to the functioning of the slider, so if you don&#x27;t want to show it add <code>.display-none</code>.</p></div></div>
+<div class="custom-block note note-primary note-background"><div class="custom-block-body"><p><code>slider-pagination[data-xt-pag].xt-ignore</code> is essential to the functioning of the slider, so if you don&#x27;t want to show it add <code>.display-none</code>.</p></div></div>
 <div class="gatsby_demo">
   <div class="gatsby_demo_item gatsby_demo_preview" data-name="pagination" data-inline="vanilla/components/slider/pagination">
   <script type="text/plain" data-lang="html">
@@ -2320,17 +2375,17 @@ Xt.mount.push({
   <div class="slides">
     <ul class="slides-inner">
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
                   <div class="card-title slide-pagination-content">1</div>
                   <nav class="slider-pagination">
-                    <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
+                    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
                     </button>
                   </nav>
                 </div>
@@ -2341,17 +2396,17 @@ Xt.mount.push({
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
                   <div class="card-title slide-pagination-content">2</div>
                   <nav class="slider-pagination">
-                    <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
+                    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
                     </button>
                   </nav>
                 </div>
@@ -2362,17 +2417,17 @@ Xt.mount.push({
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
                   <div class="card-title slide-pagination-content">3</div>
                   <nav class="slider-pagination">
-                    <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
+                    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
                     </button>
                   </nav>
                 </div>
@@ -2383,17 +2438,17 @@ Xt.mount.push({
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
                   <div class="card-title slide-pagination-content">4</div>
                   <nav class="slider-pagination">
-                    <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
+                    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
                     </button>
                   </nav>
                 </div>
@@ -2404,17 +2459,17 @@ Xt.mount.push({
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
                   <div class="card-title slide-pagination-content">5</div>
                   <nav class="slider-pagination">
-                    <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
+                    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
                     </button>
                   </nav>
                 </div>
@@ -2428,7 +2483,7 @@ Xt.mount.push({
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center"
+          <div class="card card-slide align-center"
             style="height: 15rem">
             <div class="card-design"></div>
             <div class="card-inner">
@@ -2447,7 +2502,7 @@ Xt.mount.push({
   </div>
 
   <nav class="slider-pagination">
-    <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
+    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
       xt-num of xt-tot : xt-content
     </button>
   </nav>
@@ -2457,7 +2512,7 @@ Xt.mount.push({
 </div>
 <h3>Navigation</h3>
 <p>You can add navigation with <code>[data-xt-nav=&quot;+-Number&quot;].xt-ignore</code> where <code>+-Number</code> is the amount to change the slider when clicked.</p>
-<div class="table--scroll">
+<div class="table-scroll">
 
 
 
@@ -2478,10 +2533,10 @@ Xt.mount.push({
 <table><thead><tr><th></th><th>Syntax</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td>Option</td><td><code>navigation:Query</code></td><td><code>[data-xt-nav]</code></td><td>Query for navigation elements</td></tr></tbody></table>
 </div>
 <script type="text/plain" class="language-markup">
-  &lt;button type=&quot;button&quot; class=&quot;btn btn--default xt-ignore&quot; data-xt-nav=&quot;-1&quot; title=&quot;Previous slide&quot;&gt;
+  &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; data-xt-nav=&quot;-1&quot; title=&quot;Previous slide&quot;&gt;
     &lt;span class=&quot;icon-xt-chevron-left&quot;&gt;&lt;/span&gt;
   &lt;/button&gt;
-  &lt;button type=&quot;button&quot; class=&quot;btn btn--default xt-ignore&quot; data-xt-nav=&quot;1&quot; title=&quot;Next slide&quot;&gt;
+  &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; data-xt-nav=&quot;1&quot; title=&quot;Next slide&quot;&gt;
     &lt;span class=&quot;icon-xt-chevron-right&quot;&gt;&lt;/span&gt;
   &lt;/button&gt;
 </script>
@@ -2494,19 +2549,19 @@ Xt.mount.push({
   <div class="slides">
     <ul class="slides-inner">
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
                   <div class="card-title">1</div>
-                  <button type="button" class="btn btn--default xt-ignore" data-xt-nav="-1" title="Previous slide">
+                  <button type="button" class="btn btn-default" data-xt-nav="-1" title="Previous slide">
                     <span class="icon-xt-chevron-left"></span>
                   </button>
-                  <button type="button" class="btn btn--default xt-ignore" data-xt-nav="1" title="Next slide">
+                  <button type="button" class="btn btn-default" data-xt-nav="1" title="Next slide">
                     <span class="icon-xt-chevron-right"></span>
                   </button>
                 </div>
@@ -2517,19 +2572,19 @@ Xt.mount.push({
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
                   <div class="card-title">2</div>
-                  <button type="button" class="btn btn--default xt-ignore" data-xt-nav="-1" title="Previous slide">
+                  <button type="button" class="btn btn-default" data-xt-nav="-1" title="Previous slide">
                     <span class="icon-xt-chevron-left"></span>
                   </button>
-                  <button type="button" class="btn btn--default xt-ignore" data-xt-nav="1" title="Next slide">
+                  <button type="button" class="btn btn-default" data-xt-nav="1" title="Next slide">
                     <span class="icon-xt-chevron-right"></span>
                   </button>
                 </div>
@@ -2540,19 +2595,19 @@ Xt.mount.push({
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
                   <div class="card-title">3</div>
-                  <button type="button" class="btn btn--default xt-ignore" data-xt-nav="-1" title="Previous slide">
+                  <button type="button" class="btn btn-default" data-xt-nav="-1" title="Previous slide">
                     <span class="icon-xt-chevron-left"></span>
                   </button>
-                  <button type="button" class="btn btn--default xt-ignore" data-xt-nav="1" title="Next slide">
+                  <button type="button" class="btn btn-default" data-xt-nav="1" title="Next slide">
                     <span class="icon-xt-chevron-right"></span>
                   </button>
                 </div>
@@ -2563,19 +2618,19 @@ Xt.mount.push({
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
                   <div class="card-title">4</div>
-                  <button type="button" class="btn btn--default xt-ignore" data-xt-nav="-1" title="Previous slide">
+                  <button type="button" class="btn btn-default" data-xt-nav="-1" title="Previous slide">
                     <span class="icon-xt-chevron-left"></span>
                   </button>
-                  <button type="button" class="btn btn--default xt-ignore" data-xt-nav="1" title="Next slide">
+                  <button type="button" class="btn btn-default" data-xt-nav="1" title="Next slide">
                     <span class="icon-xt-chevron-right"></span>
                   </button>
                 </div>
@@ -2586,19 +2641,19 @@ Xt.mount.push({
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
                   <div class="card-title">5</div>
-                  <button type="button" class="btn btn--default xt-ignore" data-xt-nav="-1" title="Previous slide">
+                  <button type="button" class="btn btn-default" data-xt-nav="-1" title="Previous slide">
                     <span class="icon-xt-chevron-left"></span>
                   </button>
-                  <button type="button" class="btn btn--default xt-ignore" data-xt-nav="1" title="Next slide">
+                  <button type="button" class="btn btn-default" data-xt-nav="1" title="Next slide">
                     <span class="icon-xt-chevron-right"></span>
                   </button>
                 </div>
@@ -2612,17 +2667,17 @@ Xt.mount.push({
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center"
+          <div class="card card-slide align-center"
             style="height: 15rem">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
                   <div class="card-title">6</div>
-                  <button type="button" class="btn btn--default xt-ignore" data-xt-nav="-1" title="Previous slide">
+                  <button type="button" class="btn btn-default" data-xt-nav="-1" title="Previous slide">
                     <span class="icon-xt-chevron-left"></span>
                   </button>
-                  <button type="button" class="btn btn--default xt-ignore" data-xt-nav="1" title="Next slide">
+                  <button type="button" class="btn btn-default" data-xt-nav="1" title="Next slide">
                     <span class="icon-xt-chevron-right"></span>
                   </button>
                 </div>
@@ -2636,15 +2691,15 @@ Xt.mount.push({
     </ul>
   </div>
 
-  
+
   <nav class="slider-pagination">
-    <button type="button" class="btn btn--default xt-ignore" data-xt-nav="-1" title="Previous slide">
-      <span class="icon-xt-chevron-left icon--left"></span> prev
+    <button type="button" class="btn btn-default" data-xt-nav="-1" title="Previous slide">
+      <span class="icon-xt-chevron-left icon-left"></span> prev
     </button>
-    <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
+    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
     </button>
-    <button type="button" class="btn btn--default xt-ignore" data-xt-nav="1" title="Next slide">
-      next <span class="icon-xt-chevron-right icon--right"></span>
+    <button type="button" class="btn btn-default" data-xt-nav="1" title="Next slide">
+      next <span class="icon-xt-chevron-right icon-right"></span>
     </button>
   </nav>
 
@@ -2662,10 +2717,10 @@ Xt.mount.push({
   <div class="slides">
     <ul class="slides-inner">
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -2679,10 +2734,10 @@ Xt.mount.push({
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -2696,10 +2751,10 @@ Xt.mount.push({
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -2713,10 +2768,10 @@ Xt.mount.push({
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -2730,10 +2785,10 @@ Xt.mount.push({
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -2750,7 +2805,7 @@ Xt.mount.push({
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center"
+          <div class="card card-slide align-center"
             style="height: 15rem">
             <div class="card-design"></div>
             <div class="card-inner">
@@ -2769,7 +2824,7 @@ Xt.mount.push({
   </div>
 
   <nav class="slider-pagination">
-    <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
+    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
     </button>
   </nav>
 
@@ -2777,7 +2832,7 @@ Xt.mount.push({
 </script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
 </div>
 <h3>Auto</h3>
-<div class="table--scroll">
+<div class="table-scroll">
 
 
 
@@ -2830,10 +2885,10 @@ Xt.mount.push({
   <div class="slides">
     <ul class="slides-inner">
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -2847,10 +2902,10 @@ Xt.mount.push({
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -2864,10 +2919,10 @@ Xt.mount.push({
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -2881,10 +2936,10 @@ Xt.mount.push({
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -2898,10 +2953,10 @@ Xt.mount.push({
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -2915,29 +2970,11 @@ Xt.mount.push({
         </div>
       </li>
 
-      <li class="slide col-12">
-        <div class="slide-inner">
-
-          <div class="card card--slide align-center"
-            style="height: 15rem">
-            <div class="card-design"></div>
-            <div class="card-inner">
-              <div class="card-content">
-                <div class="card-block card-item">
-                  <div class="card-title">6</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </li>
-      
     </ul>
   </div>
 
   <nav class="slider-pagination">
-    <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
+    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
     </button>
   </nav>
 
@@ -2945,7 +2982,7 @@ Xt.mount.push({
 </script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
 </div>
 <h3>Other</h3>
-<div class="table--scroll">
+<div class="table-scroll">
 
 
 
@@ -2974,10 +3011,10 @@ Xt.mount.push({
   <div class="slides">
     <ul class="slides-inner">
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -2991,10 +3028,10 @@ Xt.mount.push({
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -3011,7 +3048,7 @@ Xt.mount.push({
       <li class="slide col-6 col-4-sm active">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -3025,10 +3062,10 @@ Xt.mount.push({
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -3042,10 +3079,10 @@ Xt.mount.push({
         </div>
       </li>
 
-      <li class="slide col-6 col-4--sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -3062,7 +3099,7 @@ Xt.mount.push({
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card--slide align-center"
+          <div class="card card-slide align-center"
             style="height: 15rem">
             <div class="card-design"></div>
             <div class="card-inner">
@@ -3081,13 +3118,756 @@ Xt.mount.push({
   </div>
 
   <nav class="slider-pagination">
-    <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
+    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
     </button>
   </nav>
 
 </div>
 </script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
 </div>
-<h2>Events</h2>
-<p>@TODO tables events</p></div></div></article><footer class="gatsby_site_footer"><div class="gatsby_site_footer_bottom"><div class="container full"><div class="row gatsby_site_footer_bottom_row"><div><a title="Home" class="gatsby_logo-icon
-                                    " href="/"><img src="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMV9jb3B5IiBkYXRhLW5hbWU9IkxheWVyIDEgY29weSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMjIuMDEgMTUuMzUiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojMzczYTQ0O30uY2xzLTJ7ZmlsbDojOTY5YmFkO308L3N0eWxlPjwvZGVmcz48dGl0bGU+aWNvbi1ibGFjazwvdGl0bGU+PHBvbHlsaW5lIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSIxNS42IDAgMjIuMDEgMCAyMi4wMSAyLjg2IDE3LjQxIDIuODYgMTcuNDEgMTUuMzUgMTUuNiAxNS4zNSIvPjxwb2x5bGluZSBjbGFzcz0iY2xzLTEiIHBvaW50cz0iNi44NCAxMC4xNSA0LjI2IDE1LjM1IDAgMTUuMzUgNC40IDcuNjEgMC4xMiAwIDQuMzMgMCA2Ljg0IDUuMSIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIxMy41OCAwIDExLjk3IDIuODYgMTMuNzEgMi44NiAxMy43MSAxNS4zNSAxNS42IDE1LjM1IDE1LjYgMCAxMy41OCAwIi8+PHBvbHlnb24gY2xhc3M9ImNscy0yIiBwb2ludHM9IjkuMzUgMCA5LjE4IDAuMzQgNi44NCA1LjEgNi44NCAxMC4xNSA5LjQzIDE1LjM1IDEzLjcgMTUuMzUgOS4yOSA3LjYxIDExLjk3IDIuODYgMTMuNTggMCA5LjM1IDAiLz48L3N2Zz4=" alt="Xtend"/></a></div><div>Site and docs licensed<!-- --> <a href="https://github.com/minimit/xtend-library/blob/master/LICENSE-DOCS" target="_blank" rel="noopener">CC BY 3.0</a> <span class="separator separator--dash"></span> <!-- -->Xtend<!-- --> v<!-- -->0.12.0<!-- --> licensed<!-- --> <a href="https://github.com/minimit/minimit/blob/master/LICENSE" target="_blank" rel="noopener">MIT</a><br/></div><div class="gatsby_site_footer_bottom_right">© 2018 – <!-- -->2019<!-- --> <!-- -->Riccardo Caroli</div></div></div></div></footer></main></div></div></div></div></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/components/slider/api";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-d3a48fbf99fb2011df04.js"],"component---src-gatsby-components-templates-doc-listing-js":["/component---src-gatsby-components-templates-doc-listing-js-3bac8e984242e474cebf.js"],"component---src-gatsby-components-templates-doc-page-js":["/component---src-gatsby-components-templates-doc-page-js-00e5099ed5778d842a72.js"],"component---src-gatsby-components-pages-404-js":["/component---src-gatsby-components-pages-404-js-65f22a4d877b57e24f41.js"],"component---src-gatsby-components-pages-index-js":["/component---src-gatsby-components-pages-index-js-ef919ae16b8434d064e6.js"],"component---src-gatsby-code-iframe-addons-structure-jump-to-content-js":["/component---src-gatsby-code-iframe-addons-structure-jump-to-content-js-7d542f85805ed63833bc.js"],"component---src-gatsby-code-iframe-components-scroll-delay-js":["/component---src-gatsby-code-iframe-components-scroll-delay-js-8ecba31987709aa4f884.js"],"component---src-gatsby-code-iframe-components-scroll-direction-js":["/component---src-gatsby-code-iframe-components-scroll-direction-js-bbe85a5ba4daf8ee32e0.js"],"component---src-gatsby-code-iframe-components-scroll-distance-js":["/component---src-gatsby-code-iframe-components-scroll-distance-js-207a2dcd4638cf3d52c1.js"],"component---src-gatsby-code-iframe-components-scroll-mode-block-js":["/component---src-gatsby-code-iframe-components-scroll-mode-block-js-0dcae54c68754e36d1de.js"],"component---src-gatsby-code-iframe-components-scroll-mode-infinite-js":["/component---src-gatsby-code-iframe-components-scroll-mode-infinite-js-087bd4bac6025432626f.js"],"component---src-gatsby-code-iframe-components-scroll-mode-responsive-js":["/component---src-gatsby-code-iframe-components-scroll-mode-responsive-js-28e3f41a3d4df6e43780.js"],"component---src-gatsby-code-iframe-components-scroll-mode-scroll-js":["/component---src-gatsby-code-iframe-components-scroll-mode-scroll-js-8ba5e78f98e5962ea4ad.js"],"component---src-gatsby-code-iframe-components-scroll-mode-visible-js":["/component---src-gatsby-code-iframe-components-scroll-mode-visible-js-5215e9c9e9a3c1298cb6.js"],"component---src-gatsby-code-iframe-components-scroll-parallax-js":["/component---src-gatsby-code-iframe-components-scroll-parallax-js-b52e63f0bddad6a49849.js"],"component---src-gatsby-code-iframe-components-sticky-contain-bottom-js":["/component---src-gatsby-code-iframe-components-sticky-contain-bottom-js-8ff3559ac56c731eeff5.js"],"component---src-gatsby-code-iframe-components-sticky-contain-top-js":["/component---src-gatsby-code-iframe-components-sticky-contain-top-js-dfadc8b58abd30314ac9.js"],"component---src-gatsby-code-iframe-components-sticky-disable-js":["/component---src-gatsby-code-iframe-components-sticky-disable-js-c10dedb25d0ce4fa4230.js"],"component---src-gatsby-code-iframe-components-sticky-hide-js":["/component---src-gatsby-code-iframe-components-sticky-hide-js-c330e7b649d2ae58f811.js"],"component---src-gatsby-code-iframe-components-sticky-limit-js":["/component---src-gatsby-code-iframe-components-sticky-limit-js-6404bd1870b71ad51758.js"],"component---src-gatsby-code-iframe-components-sticky-mode-absolute-js":["/component---src-gatsby-code-iframe-components-sticky-mode-absolute-js-35d4861ac12ca42592c7.js"],"component---src-gatsby-code-iframe-components-sticky-mode-fixed-always-js":["/component---src-gatsby-code-iframe-components-sticky-mode-fixed-always-js-d690c4e3b0a6970bd91d.js"],"component---src-gatsby-code-iframe-components-sticky-mode-fixed-js":["/component---src-gatsby-code-iframe-components-sticky-mode-fixed-js-7e9f1529d9a0e22d41ba.js"],"component---src-gatsby-code-iframe-components-sticky-position-js":["/component---src-gatsby-code-iframe-components-sticky-position-js-e4138fc3e8d9b14e2752.js"],"component---src-gatsby-code-iframe-components-sticky-showhide-bottom-js":["/component---src-gatsby-code-iframe-components-sticky-showhide-bottom-js-b0658f7fc227c4c5ca50.js"],"component---src-gatsby-code-iframe-components-sticky-showhide-hide-js":["/component---src-gatsby-code-iframe-components-sticky-showhide-hide-js-5ed854a54b2a4fecbf4a.js"],"component---src-gatsby-code-iframe-components-sticky-showhide-top-js":["/component---src-gatsby-code-iframe-components-sticky-showhide-top-js-89a140495a2a6748942a.js"],"component---src-gatsby-code-iframe-components-test-react-iframe-js":["/component---src-gatsby-code-iframe-components-test-react-iframe-js-c5b83da1855d16d18c7e.js"],"component---src-gatsby-code-iframe-components-test-vanilla-iframe-js":["/component---src-gatsby-code-iframe-components-test-vanilla-iframe-js-fa35cdf27b9b75ef5f61.js"]};/*]]>*/</script><script src="/webpack-runtime-2879b4de809792907027.js" async=""></script><script src="/app-d3a48fbf99fb2011df04.js" async=""></script><script src="/commons-29385396fbf7183bed9e.js" async=""></script><script src="/component---src-gatsby-components-templates-doc-page-js-00e5099ed5778d842a72.js" async=""></script><script src="/styles-a93d3cc85c9fccbe4565.js" async=""></script></body></html>
+<h2>Events and Methods</h2>
+<h3>Util</h3>
+<div class="table-scroll">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>Syntax</th><th>DOM Element</th><th>Description</th></tr></thead><tbody><tr><td>Event</td><td><code>let self = Xt.get(&#x27;xt-slider&#x27;, {DOM element})</code></td><td><code>object</code> <code>elements</code> <code>targets</code></td><td>Get object self for this component class</td></tr></tbody></table>
+</div>
+<h3>Properties</h3>
+<p>Access properties this way inside events:</p>
+<pre><code class="language-js">let object = document.querySelector(&#x27;#my-object&#x27;)
+let self = Xt.get(&#x27;xt-slider&#x27;, object)
+
+console.debug(self.elements)
+</code></pre>
+<div class="table-scroll">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>Syntax</th><th>Description</th></tr></thead><tbody><tr><td>Event</td><td><code>object:Node</code></td><td>Object node</td></tr><tr><td>Event</td><td><code>elements:Array</code></td><td>Elements nodes</td></tr><tr><td>Event</td><td><code>targets:Array</code></td><td>Targets nodes</td></tr><tr><td>Event</td><td><code>initial:Boolean</code></td><td>If first activation</td></tr><tr><td>Event</td><td><code>dragger:Node</code></td><td>Dragger node</td></tr><tr><td>Event</td><td><code>wheel:Node</code></td><td>Wheel node</td></tr></tbody></table>
+</div>
+<h4>Drag</h4>
+<p>Here are the main drag properties inside <code>self.detail</code>:</p>
+<div class="table-scroll">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>Syntax</th><th>Description</th></tr></thead><tbody><tr><td>Event</td><td><code>detail.dragStart:Number</code></td><td>Drag starting position</td></tr><tr><td>Event</td><td><code>detail.dragCurrent:Number</code></td><td>Drag current position</td></tr><tr><td>Event</td><td><code>detail.dragPos:Number</code></td><td>Drag distance from dragStart to dragCurrent with computation</td></tr><tr><td>Event</td><td><code>detail.dragPosOld:Number</code></td><td>Drag distance from dragStart to dragCurrent with computation on the previous frame</td></tr></tbody></table>
+</div>
+<h4>Wheel</h4>
+<p>Here are the main wheel properties inside <code>self.detail</code>:</p>
+<div class="table-scroll">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>Syntax</th><th>Description</th></tr></thead><tbody><tr><td>Event</td><td><code>detail.wheelCurrent:Number</code></td><td>Wheel current scroll position</td></tr><tr><td>Event</td><td><code>detail.wheelEnd:Number</code></td><td>Wheel end scroll position</td></tr></tbody></table>
+</div>
+<h3>Methods</h3>
+<p>Call methods this way (object is the DOM element you assigned the component):</p>
+<pre><code class="language-js">const self = Xt.get(&#x27;xt-slider&#x27;, document.querySelector(&#x27;#my-object&#x27;))
+self.destroy()
+self = null
+</code></pre>
+<div class="table-scroll">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>Syntax</th><th>Description</th></tr></thead><tbody><tr><td>Method</td><td><code>self.restart()</code></td><td>Restart component to initial</td></tr><tr><td>Method</td><td><code>self.reinit(saveCurrents:Boolean)</code></td><td>Reinit component and save currents as initial (default: <code>true</code>)</td></tr><tr><td>Method</td><td><code>self.destroy()</code></td><td>Destroy component</td></tr></tbody></table>
+</div>
+<h3>Trigger</h3>
+<p>Trigger events this way:</p>
+<pre><code class="language-js">document.querySelector(&#x27;#my-element-or-target&#x27;).dispatchEvent(new CustomEvent(&#x27;on.trigger.xt&#x27;))
+</code></pre>
+<div class="table-scroll">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>Syntax</th><th>DOM Element</th><th>Description</th></tr></thead><tbody><tr><td>Event</td><td><code>on.trigger.xt</code></td><td><code>elements</code> <code>targets</code></td><td>Activation event</td></tr><tr><td>Event</td><td><code>off.trigger.xt</code></td><td><code>elements</code> <code>targets</code></td><td>Deactivation event</td></tr><tr><td>Event</td><td><code>autostart.trigger.xt</code></td><td><code>object</code></td><td>Auto start event</td></tr><tr><td>Event</td><td><code>autostop.trigger.xt</code></td><td><code>object</code></td><td>Auto stop event</td></tr></tbody></table>
+</div>
+<h3>Listen</h3>
+<p>Listen to events this way:</p>
+<pre><code class="language-js">const eventOn = function(e) {
+  // logic
+}
+
+document.querySelector(&#x27;#my-element-or-target&#x27;).addEventListener(&#x27;on.xt&#x27;, eventOn)
+</code></pre>
+<p>Listen to events delegation with <strong>useCapture</strong> this way:</p>
+<pre><code class="language-js">let object = document.querySelector(&#x27;#my-object&#x27;)
+let self = Xt.get(&#x27;xt-slider&#x27;, object)
+
+const eventOn = function(e) {
+  const el = e.target
+  // useCapture delegation
+  if (self.elements.includes(el)) {
+    // logic
+  }
+  if (self.targets.includes(tr)) {
+    // logic
+  }
+}
+
+object.addEventListener(&#x27;on.xt&#x27;, eventOn, true)
+</code></pre>
+<div class="table-scroll">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>Syntax</th><th>DOM Element</th><th>Description</th></tr></thead><tbody><tr><td>Event</td><td><code>on.xt</code></td><td><code>elements</code> <code>targets</code></td><td>Activation event</td></tr><tr><td>Event</td><td><code>off.xt</code></td><td><code>elements</code> <code>targets</code></td><td>Deactivation event</td></tr><tr><td>Event</td><td><code>ondone.xt</code></td><td><code>elements</code> <code>targets</code></td><td>Activation event after delay and duration</td></tr><tr><td>Event</td><td><code>offdone.xt</code></td><td><code>elements</code> <code>targets</code></td><td>Deactivation event after delay and duration</td></tr><tr><td>Event</td><td><code>medialoaded.xt</code></td><td><code>elements</code> <code>targets</code></td><td>Images loaded event</td></tr><tr><td>Event</td><td><code>autostart.xt</code></td><td><code>object</code></td><td>Auto start event</td></tr><tr><td>Event</td><td><code>autostop.xt</code></td><td><code>object</code></td><td>Auto stop event</td></tr><tr><td>Event</td><td><code>autopause.xt</code></td><td><code>object</code></td><td>Auto pause event</td></tr><tr><td>Event</td><td><code>autoheight.xt</code></td><td><code>targets</code></td><td>Autoheight event</td></tr><tr><td>Event</td><td><code>wheelstart.xt</code></td><td><code>wheel</code></td><td>Wheel start event</td></tr><tr><td>Event</td><td><code>wheelend.xt</code></td><td><code>wheel</code></td><td>Wheel end event</td></tr><tr><td>Event</td><td><code>wheel.xt</code></td><td><code>wheel</code></td><td>Wheel event</td></tr><tr><td>Event</td><td><code>dragstart.xt</code></td><td><code>dragger</code></td><td>Drag start event</td></tr><tr><td>Event</td><td><code>dragend.xt</code></td><td><code>dragger</code></td><td>Drag end event</td></tr><tr><td>Event</td><td><code>drag.xt</code></td><td><code>dragger</code></td><td>Drag event</td></tr><tr><td>Event</td><td><code>dragreset.xt</code></td><td><code>dragger</code></td><td>Drag reset event</td></tr><tr><td>Event</td><td><code>init.xt</code></td><td><code>object</code></td><td>Init event</td></tr><tr><td>Event</td><td><code>restart.xt</code></td><td><code>object</code></td><td>Restart event</td></tr><tr><td>Event</td><td><code>reinit.xt</code></td><td><code>object</code></td><td>Reinit event</td></tr><tr><td>Event</td><td><code>destroy.xt</code></td><td><code>object</code></td><td>Destroy event</td></tr></tbody></table>
+</div>
+<h3>Demo</h3>
+<div class="gatsby_demo">
+  <div class="gatsby_demo_item gatsby_demo_preview" data-name="events methods" data-inline="vanilla/components/slider/events-methods">
+  <script type="text/plain" data-lang="html">
+<div class="list list-default list-space-tiny align-items-center">
+  <button type="button" class="btn btn-primary btn-tiny" id="demo_slider-events-first-element">
+    1st element
+  </button>
+  <button type="button" class="btn btn-primary btn-tiny" id="demo_slider-events-first-target">
+    1st target
+  </button>
+  <button type="button" class="btn btn-primary btn-tiny" id="demo_toggle-events-autostart">
+    Autostart
+  </button>
+  <button type="button" class="btn btn-primary btn-tiny" id="demo_toggle-events-autostop">
+    Autostop
+  </button>
+  <button type="button" class="btn btn-primary btn-tiny" id="demo_slider-events-add">
+    Add
+  </button>
+  <button type="button" class="btn btn-primary btn-tiny" id="demo_slider-events-remove">
+    Remove
+  </button>
+  <button type="button" class="btn btn-primary btn-tiny" id="demo_slider-events-reinit">
+    Reinit
+  </button>
+  <button type="button" class="btn btn-primary btn-tiny" id="demo_slider-events-restart">
+    Restart
+  </button>
+  <button type="button" class="btn btn-primary btn-tiny" id="demo_slider-events-destroy">
+    Destroy
+  </button>
+  <button type="button" class="btn btn-primary btn-tiny" id="demo_slider-events-unmount">
+    Unmount
+  </button>
+</div>
+
+<br/>
+
+<div class="slider" id="demo_slider-events">
+
+  <div class="slides">
+    <ul class="slides-inner">
+
+      <li class="slide col-6 col-4-sm">
+        <div class="slide-inner">
+
+          <div class="card card-slide align-center">
+            <div class="card-design"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-block card-item">
+                  <div class="card-title">1</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </li>
+
+      <li class="slide col-6 col-4-sm">
+        <div class="slide-inner">
+
+          <div class="card card-slide align-center">
+            <div class="card-design"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-block card-item">
+                  <div class="card-title">2</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </li>
+
+      <li class="slide col-6 col-4-sm active">
+        <div class="slide-inner">
+
+          <div class="card card-slide align-center">
+            <div class="card-design"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-block card-item">
+                  <div class="card-title">3</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </li>
+
+      <li class="slide col-6 col-4-sm">
+        <div class="slide-inner">
+
+          <div class="card card-slide align-center">
+            <div class="card-design"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-block card-item">
+                  <div class="card-title">4</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </li>
+
+      <li class="slide col-6 col-4-sm">
+        <div class="slide-inner">
+
+          <div class="card card-slide align-center">
+            <div class="card-design"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-block card-item">
+                  <div class="card-title">5</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
+  <nav class="slider-pagination">
+    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
+    </button>
+  </nav>
+
+</div>
+
+<br/>
+
+<div class="card card-default card-small">
+  <div class="card-design"></div>
+  <div class="card-inner">
+    <div class="card-content">
+      <div class="card-block card-item card-overflow-y" id="demo_slider-events-log">
+      </div>
+    </div>
+  </div>
+</div>
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div><div class="gatsby_demo_source xt-ignore" data-lang="js">import { Xt } from 'xtend-library'
+
+Xt.mount.push({
+  matches: '#demo_slider-events',
+  mount: function(object) {
+    // init
+
+    let self = new Xt.Slider(object, {
+      auto: {
+        time: 2000,
+        initial: false,
+      },
+      align: 'center',
+      drag: { wrap: true },
+    })
+
+    // log
+
+    let logTimeout
+    const log = document.querySelector('#demo_slider-events-log')
+
+    const logAdd = function(text) {
+      log.innerHTML += text + '<br/>'
+      // scroll
+      log.scrollTo(0, log.scrollHeight)
+      // hr
+      clearTimeout(logTimeout)
+      logTimeout = setTimeout(function() {
+        log.innerHTML += '<hr/>'
+      }, 1000)
+    }
+
+    // first element
+
+    const firstEl = document.querySelector('#demo_slider-events-first-element')
+
+    const firstElFnc = function() {
+      logAdd('<strong>1st element</strong>')
+      const elements = self.elements.filter(x => !x.classList.contains('xt-wrap'))
+      elements[0].dispatchEvent(new CustomEvent('on.trigger.xt'))
+    }
+
+    firstEl.addEventListener('click', firstElFnc)
+
+    // first target
+
+    const firstTr = document.querySelector('#demo_slider-events-first-target')
+
+    const firstTrFnc = function() {
+      logAdd('<strong>1st target</strong>')
+      const targets = self.targets.filter(x => !x.classList.contains('xt-wrap'))
+      targets[0].dispatchEvent(new CustomEvent('on.trigger.xt'))
+    }
+
+    firstTr.addEventListener('click', firstTrFnc)
+
+    // autostart
+
+    const autostartEl = document.querySelector('#demo_toggle-events-autostart')
+
+    const autstartFnc = function() {
+      logAdd('<strong>autostart</strong>')
+      self.object.dispatchEvent(new CustomEvent('autostart.trigger.xt'))
+    }
+
+    autostartEl.addEventListener('click', autstartFnc)
+
+    // autostop
+
+    const autostopEl = document.querySelector('#demo_toggle-events-autostop')
+
+    const autostopFnc = function() {
+      logAdd('<strong>autostop</strong>')
+      self.object.dispatchEvent(new CustomEvent('autostop.trigger.xt'))
+    }
+
+    autostopEl.addEventListener('click', autostopFnc)
+
+    // add
+
+    const addBtn = document.querySelector('#demo_slider-events-add')
+
+    const addFnc = function() {
+      clearTimeout(parseFloat(object.dataset.reinitTimeout))
+      object.dataset.reinitTimeout = setTimeout(function() {
+        logAdd('<strong>add</strong>')
+        // targets
+        const targets = self.targets.filter(x => !x.classList.contains('xt-wrap'))
+        const trIndex = targets.length + 1
+        const tr = `
+        <li class="slide col-6 col-4-sm">
+          <div class="slide-inner">
+
+            <div class="card card-slide align-center">
+              <div class="card-design"></div>
+              <div class="card-inner">
+                <div class="card-content">
+                  <div class="card-block card-item">
+                    <div class="card-title">${trIndex}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </li>`
+        targets[targets.length - 1].after(Xt.createElement(tr))
+        // reinit
+        logAdd('<strong>reinit</strong>')
+        self.reinit()
+      }, 1000).toString()
+    }
+
+    addBtn.addEventListener('click', addFnc)
+
+    // remove
+
+    const removeBtn = document.querySelector('#demo_slider-events-remove')
+
+    const removeFnc = function() {
+      clearTimeout(parseFloat(object.dataset.reinitTimeout))
+      object.dataset.reinitTimeout = setTimeout(function() {
+        logAdd('<strong>remove</strong>')
+        if (self.elements.length > 1 && self.targets.length > 1) {
+          // elements
+          const elements = self.elements.filter(x => !x.classList.contains('xt-wrap'))
+          elements[elements.length - 1].remove()
+          // targets
+          const targets = self.targets.filter(x => !x.classList.contains('xt-wrap'))
+          targets[targets.length - 1].remove()
+          // reinit
+          logAdd('<strong>reinit</strong>')
+          self.reinit()
+        }
+      }, 1000).toString()
+    }
+
+    removeBtn.addEventListener('click', removeFnc)
+
+    // reinit
+
+    const reinitBtn = document.querySelector('#demo_slider-events-reinit')
+
+    const reinitFnc = function() {
+      clearTimeout(parseFloat(object.dataset.reinitTimeout))
+      object.dataset.reinitTimeout = setTimeout(function() {
+        logAdd('<strong>reinit</strong>')
+        self.reinit()
+      }, 1000).toString()
+    }
+
+    reinitBtn.addEventListener('click', reinitFnc)
+
+    // restart
+
+    const restartBtn = document.querySelector('#demo_slider-events-restart')
+
+    const restartFnc = function() {
+      logAdd('<strong>restart</strong>')
+      self.restart()
+    }
+
+    restartBtn.addEventListener('click', restartFnc)
+
+    // destroy
+
+    const destroyBtn = document.querySelector('#demo_slider-events-destroy')
+
+    const destroyFnc = function() {
+      logAdd('<strong>destroy</strong>')
+      self.destroy()
+    }
+
+    destroyBtn.addEventListener('click', destroyFnc)
+
+    // unmount
+
+    const unmountBtn = document.querySelector('#demo_slider-events-unmount')
+
+    const unmountFnc = function() {
+      logAdd('<strong>unmount</strong>')
+      unmount()
+    }
+
+    unmountBtn.addEventListener('click', unmountFnc)
+
+    // events
+
+    const events = function(e) {
+      let str = 'event <strong>' + e.type + '</strong>'
+      if (e.target.getAttribute('title')) {
+        str += ' from <strong>' + e.target.getAttribute('title') + '</strong>'
+      } else if (e.target.querySelector('.card-title')) {
+        str += ' from <strong>' + e.target.querySelector('.card-title').innerHTML + '</strong>'
+      } else if (!e.target.querySelector('*')) {
+        str += ' from <strong>' + e.target.innerHTML + '</strong>'
+      }
+      logAdd(str)
+    }
+
+    object.addEventListener('init.xt', events)
+    object.addEventListener('destroy.xt', events)
+    object.addEventListener('on.xt', events)
+    object.addEventListener('off.xt', events)
+
+    // unmount
+
+    const unmount = function() {
+      firstEl.removeEventListener('click', firstElFnc)
+      firstTr.removeEventListener('click', firstTrFnc)
+      addBtn.removeEventListener('click', addFnc)
+      removeBtn.removeEventListener('click', removeFnc)
+      reinitBtn.removeEventListener('click', reinitFnc)
+      restartBtn.removeEventListener('click', restartFnc)
+      destroyBtn.removeEventListener('click', destroyFnc)
+      unmountBtn.removeEventListener('click', unmountFnc)
+      object.removeEventListener('init.xt', events)
+      object.removeEventListener('destroy.xt', events)
+      object.removeEventListener('on.xt', events)
+      object.removeEventListener('off.xt', events)
+      self.destroy()
+      self = null
+    }
+    return unmount
+  },
+})
+</div></div>
+</div></div></div></article><div><footer class="gatsby_site_article_foot"><div class="gatsby_site_article_foot_inner"><div class="gatsby_listing_group"><div class="gatsby_listing_items"><div class="row"><div class="gatsby_listing_column"><a class="card card-primary card-small card-full card-collapse gatsby_listing_item" href="/introduction"><div class="card-design"></div><div class="card-inner"><div class="card-content"><div class="card-block card-item"><div class="card-title">Have bugs or problems?</div><p>Read the <strong>Introduction</strong> pages</p></div></div></div></a></div><div class="gatsby_listing_column"><a class="card card-primary card-small card-full card-collapse gatsby_listing_item" href="/addons/slider"><div class="card-design"></div><div class="card-inner"><div class="card-content"><div class="card-block card-item"><div class="card-title">Visit the Addons page</div><p>There <!-- -->is<!-- --> <!-- -->1<!-- --> <strong>addons</strong> for<!-- --> <!-- -->Slider</p></div></div></div></a></div><div class="gatsby_listing_column"><a class="card card-primary card-small card-full card-collapse gatsby_listing_item" href="/themes/slider"><div class="card-design"></div><div class="card-inner"><div class="card-content"><div class="card-block card-item"><div class="card-title">Visit the Theme page</div><p>There <!-- -->are<!-- --> <!-- -->2<!-- --> <strong>themes</strong> for <!-- -->Slider</p></div></div></div></a></div></div></div></div></div></footer></div><footer class="gatsby_site_footer"><div class="gatsby_site_footer_bottom"><div class="container full"><div class="gatsby_site_footer_inner"><div class="row gatsby_site_footer_bottom_row"><div><a title="Home" class="gatsby_logo-icon
+                                      " href="/"><img src="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMV9jb3B5IiBkYXRhLW5hbWU9IkxheWVyIDEgY29weSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMjIuMDEgMTUuMzUiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojMzczYTQ0O30uY2xzLTJ7ZmlsbDojOTY5YmFkO308L3N0eWxlPjwvZGVmcz48dGl0bGU+aWNvbi1ibGFjazwvdGl0bGU+PHBvbHlsaW5lIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSIxNS42IDAgMjIuMDEgMCAyMi4wMSAyLjg2IDE3LjQxIDIuODYgMTcuNDEgMTUuMzUgMTUuNiAxNS4zNSIvPjxwb2x5bGluZSBjbGFzcz0iY2xzLTEiIHBvaW50cz0iNi44NCAxMC4xNSA0LjI2IDE1LjM1IDAgMTUuMzUgNC40IDcuNjEgMC4xMiAwIDQuMzMgMCA2Ljg0IDUuMSIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIxMy41OCAwIDExLjk3IDIuODYgMTMuNzEgMi44NiAxMy43MSAxNS4zNSAxNS42IDE1LjM1IDE1LjYgMCAxMy41OCAwIi8+PHBvbHlnb24gY2xhc3M9ImNscy0yIiBwb2ludHM9IjkuMzUgMCA5LjE4IDAuMzQgNi44NCA1LjEgNi44NCAxMC4xNSA5LjQzIDE1LjM1IDEzLjcgMTUuMzUgOS4yOSA3LjYxIDExLjk3IDIuODYgMTMuNTggMCA5LjM1IDAiLz48L3N2Zz4=" alt="Xtend"/></a></div><div>Site and docs licensed<!-- --> <a href="https://github.com/minimit/xtend-library/blob/master/LICENSE-DOCS" target="_blank" rel="noopener">CC BY 3.0</a> <span class="separator separator-dash"></span> <!-- -->Xtend<!-- --> v<!-- -->0.12.0<!-- --> licensed<!-- --> <a href="https://github.com/minimit/minimit/blob/master/LICENSE" target="_blank" rel="noopener">MIT</a><br/></div><div class="gatsby_site_footer_bottom_right">© 2018 – <!-- -->2020<!-- --> <!-- -->Riccardo Caroli</div></div></div></div></div></footer></main></div></div></div></div></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/components/slider/api";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-830e4fe924fa3880f86d.js"],"component---src-gatsby-components-templates-doc-listing-js":["/component---src-gatsby-components-templates-doc-listing-js-92e23370b1f6ca0ea306.js"],"component---src-gatsby-components-templates-doc-page-js":["/component---src-gatsby-components-templates-doc-page-js-f5675cf80b510d0dc442.js"],"component---src-gatsby-components-pages-404-js":["/component---src-gatsby-components-pages-404-js-74e06ea7b761ad1730f7.js"],"component---src-gatsby-components-pages-index-js":["/component---src-gatsby-components-pages-index-js-1142dbb2d9dc843f7c8f.js"],"component---src-gatsby-code-iframe-addons-structure-jump-to-content-js":["/component---src-gatsby-code-iframe-addons-structure-jump-to-content-js-f1dc831998c0dea735e3.js"],"component---src-gatsby-code-iframe-components-scroll-delay-js":["/component---src-gatsby-code-iframe-components-scroll-delay-js-86befe99a0f91bc63297.js"],"component---src-gatsby-code-iframe-components-scroll-direction-js":["/component---src-gatsby-code-iframe-components-scroll-direction-js-1c8e78b56724df966f31.js"],"component---src-gatsby-code-iframe-components-scroll-distance-js":["/component---src-gatsby-code-iframe-components-scroll-distance-js-3110d7c58b7bdccccefa.js"],"component---src-gatsby-code-iframe-components-scroll-mode-block-js":["/component---src-gatsby-code-iframe-components-scroll-mode-block-js-1261a36c4b46649ae7b4.js"],"component---src-gatsby-code-iframe-components-scroll-mode-infinite-js":["/component---src-gatsby-code-iframe-components-scroll-mode-infinite-js-45d4574803987e70f937.js"],"component---src-gatsby-code-iframe-components-scroll-mode-responsive-js":["/component---src-gatsby-code-iframe-components-scroll-mode-responsive-js-2087dec4c7b126ae8a78.js"],"component---src-gatsby-code-iframe-components-scroll-mode-scroll-js":["/component---src-gatsby-code-iframe-components-scroll-mode-scroll-js-821c993028457a644e8b.js"],"component---src-gatsby-code-iframe-components-scroll-mode-visible-js":["/component---src-gatsby-code-iframe-components-scroll-mode-visible-js-09bdae5ac9072300ca91.js"],"component---src-gatsby-code-iframe-components-scroll-parallax-js":["/component---src-gatsby-code-iframe-components-scroll-parallax-js-8ade87d79dd0ac2b9bec.js"],"component---src-gatsby-code-iframe-components-sticky-contain-bottom-js":["/component---src-gatsby-code-iframe-components-sticky-contain-bottom-js-3de6d5d202900e7c769a.js"],"component---src-gatsby-code-iframe-components-sticky-contain-top-js":["/component---src-gatsby-code-iframe-components-sticky-contain-top-js-82176f854a997419917e.js"],"component---src-gatsby-code-iframe-components-sticky-disable-js":["/component---src-gatsby-code-iframe-components-sticky-disable-js-d4c63912d39f4e07ff46.js"],"component---src-gatsby-code-iframe-components-sticky-hide-js":["/component---src-gatsby-code-iframe-components-sticky-hide-js-bdbf58256b8201ed7cca.js"],"component---src-gatsby-code-iframe-components-sticky-limit-js":["/component---src-gatsby-code-iframe-components-sticky-limit-js-dcfe13855a6601bdfcbd.js"],"component---src-gatsby-code-iframe-components-sticky-mode-absolute-js":["/component---src-gatsby-code-iframe-components-sticky-mode-absolute-js-45880e1e6aab6fe60089.js"],"component---src-gatsby-code-iframe-components-sticky-mode-fixed-always-js":["/component---src-gatsby-code-iframe-components-sticky-mode-fixed-always-js-54831e2b2f96440a3e32.js"],"component---src-gatsby-code-iframe-components-sticky-mode-fixed-js":["/component---src-gatsby-code-iframe-components-sticky-mode-fixed-js-c52ac19b3520ea303ee4.js"],"component---src-gatsby-code-iframe-components-sticky-position-js":["/component---src-gatsby-code-iframe-components-sticky-position-js-e2f00ea4a13c85956a11.js"],"component---src-gatsby-code-iframe-components-sticky-showhide-bottom-js":["/component---src-gatsby-code-iframe-components-sticky-showhide-bottom-js-4521b57f6df4a7b22a0f.js"],"component---src-gatsby-code-iframe-components-sticky-showhide-hide-js":["/component---src-gatsby-code-iframe-components-sticky-showhide-hide-js-9d25d7dbf88fad8baf0f.js"],"component---src-gatsby-code-iframe-components-sticky-showhide-top-js":["/component---src-gatsby-code-iframe-components-sticky-showhide-top-js-e00084016d76de753106.js"],"component---src-gatsby-code-iframe-components-test-react-iframe-js":["/component---src-gatsby-code-iframe-components-test-react-iframe-js-f8ab81a1b2045c791c8a.js"],"component---src-gatsby-code-iframe-components-test-vanilla-iframe-js":["/component---src-gatsby-code-iframe-components-test-vanilla-iframe-js-647a3bf90fb787756aa4.js"],"component---src-gatsby-code-iframe-themes-slider-2019-sun-68-js":["/component---src-gatsby-code-iframe-themes-slider-2019-sun-68-js-cc13c814e5268b3330ec.js"],"component---src-gatsby-code-iframe-themes-slider-2019-webgriffe-js":["/component---src-gatsby-code-iframe-themes-slider-2019-webgriffe-js-b3cb8f11295ad079b6eb.js"]};/*]]>*/</script><script src="/webpack-runtime-162c7c5ec5f0f84254c9.js" async=""></script><script src="/app-830e4fe924fa3880f86d.js" async=""></script><script src="/commons-9dfe4dd89fc62505f104.js" async=""></script><script src="/component---src-gatsby-components-templates-doc-page-js-f5675cf80b510d0dc442.js" async=""></script><script src="/styles-360519e3782d403ac433.js" async=""></script></body></html>
