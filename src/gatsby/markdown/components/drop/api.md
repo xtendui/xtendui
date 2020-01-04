@@ -3,107 +3,13 @@ type: "Components"
 badge: "Core"
 parent: "Drop"
 title: "API"
-date: "2000-01-01"
+date: "2000-12-01"
 ---
 
-## Initialization
+[[notePrimary]]
+| Drop uses toggle for logic, refer to [toggle's API](/components/toggle/api).
 
-Initialize automatically within markup with `[data-xt-drop="{ <options> }"]` on the **object**:
-
-[[noteDefault]]
-| **Object** is the DOM element you want to assign the component.
-
-Or initialize with javascript:
-
-```js
-let self = new Xt.Drop(document.querySelector('#my-object'), {
-  // options
-});
-```
-
-Or inizialize with **mutation observer** (preferred method):
-
-```js
-Xt.mount.push({
-  matches: '#my-object',
-  mount: function(object) {
-    // init
-
-    let self = new Xt.Drop(object, {
-      // options
-    });
-
-    // unmount
-
-    const unmount = function() {
-      self.destroy()
-      self = null
-    }
-    return unmount
-  }
-})
-```
-
-## Usage
-
-Use this markup to create a **drop**.
-
-<script type="text/plain" class="language-markup">
-  <div class="drop-container" data-xt-drop>
-    <button type="button">
-      <!-- content -->
-    </button>
-    <div class="drop drop-default">
-      <div class="drop-inner">
-        <div class="drop-design"></div>
-        <div class="drop-content">
-          <!-- content -->
-        </div>
-      </div>
-    </div>
-  </div>
-</script>
-
-## Options
-
-[[noteDefault]]
-| Drop uses toggle for logic, refer to [toggle's options](/components/toggle/api#options).
-
-### Class
-
-You can start with toggled elements and targets just by adding **one of the classes** to the **elements** or **targets**.
-
-It's recommended to use `active-drop` on drops otherwise the overlay flashes visible on page load.
-
-<div class="table-scroll">
-
-|                         | Syntax                                    | Default                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `class:String`                          | `active active-drop`        | Class name for activation            |
-
-</div>
-
-### Event
-
-You can specify **on** and **off** events for the drop. Fore example `on: 'mouseenter'` `off: 'mouseleave'`. Default is `on: 'click'`.
-
-<div class="table-scroll">
-
-|                         | Syntax                                    | Default                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `on:String`                              | `'click'`                     | Set event to listen for activation           |
-| Option                  | `off:String`                             | `false`                       | Set event to listen for deactivation if not present `options.on` deactivate when already activated          |
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/drop/event">
-  </demovanilla>
-</demo>
-
-## Events and Methods
-
-### Util
+## Util
 
 <div class="table-scroll">
 
@@ -113,7 +19,7 @@ You can specify **on** and **off** events for the drop. Fore example `on: 'mouse
 
 </div>
 
-### Methods
+## Methods
 
 Call methods this way (object is the DOM element you assigned the component):
 
@@ -133,7 +39,7 @@ self = null
 
 </div>
 
-### Trigger
+## Trigger
 
 Trigger events this way:
 
@@ -150,7 +56,7 @@ document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('o
 
 </div>
 
-### Listen
+## Listen
 
 Listen to events this way:
 
@@ -195,5 +101,29 @@ object.addEventListener('on.xt', eventOn, true)
 | Event                   | `restart.xt`           | `object` | Restart event             |
 | Event                   | `reinit.xt`           | `object` | Reinit event             |
 | Event                   | `destroy.xt`           | `object` | Destroy event             |
+
+</div>
+
+## Properties
+
+Access properties this way inside events:
+
+```js
+let object = document.querySelector('#my-object')
+let self = Xt.get('xt-drop', object)
+
+console.debug(self.elements)
+```
+
+Here are the main properties inside `self`:
+
+<div class="table-scroll">
+
+|                         | Syntax                                   | Description                   |
+| ----------------------- | ---------------------------------------- | ----------------------------- |
+| Event                   | `object:Node`       | Object node             |
+| Event                   | `elements:Array`       | Elements nodes             |
+| Event                   | `targets:Array`       | Targets nodes            |
+| Event                   | `initial:Boolean`       | If first activation             |
 
 </div>

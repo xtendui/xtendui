@@ -2,11 +2,11 @@
 type: "Components"
 badge: "Core"
 parent: "Drop"
-title: "Option"
+title: "Option Css"
 date: "2000-02-01"
 ---
 
-### Variant
+## Variant
 
 Classes for assigning variant (e.g.: border / background / font colors).
 
@@ -24,7 +24,7 @@ Classes for assigning variant (e.g.: border / background / font colors).
   </demovanilla>
 </demo>
 
-### Position
+## Position
 
 Classes for assigning position.
 

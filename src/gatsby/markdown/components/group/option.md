@@ -2,7 +2,7 @@
 type: "Components"
 badge: "Core"
 parent: "Group"
-title: "Options"
+title: "Option"
 date: "2000-02-01"
 ---
 

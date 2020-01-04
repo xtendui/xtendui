@@ -28,3 +28,48 @@ Or just import **extensions**:
 ```jsx
 import 'xtend-library/src/xtend-extensions.js'
 ```
+
+## Usage
+
+@TODO
+
+[[notePrimary]]
+| It's recomended to animate the scroll elements with <code>animation</code> instead of <code>transition</code> because of <a href="{% link faq.html %}#browsers-bugs-fixed-position">this bug</a>.
+
+## Initialization
+
+Initialize automatically within markup with `[data-xt-scroll="{ <options> }"]` on the **object**:
+
+[[noteDefault]]
+| **Object** is the DOM element you want to assign the component.
+
+Or initialize with javascript:
+
+```js
+let self = new Xt.Scroll(document.querySelector('#my-object'), {
+  // options
+})
+```
+
+Or inizialize with **mutation observer** (preferred method):
+
+```js
+Xt.mount.push({
+  matches: '#my-object',
+  mount: function(object) {
+    // init
+
+    let self = new Xt.Scroll(object, {
+      // options
+    })
+
+    // unmount
+
+    const unmount = function() {
+      self.destroy()
+      self = null
+    }
+    return unmount
+  }
+})
+```
