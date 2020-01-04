@@ -30,7 +30,7 @@ Use `.col-auto` to fit the column inside the available width.
   </demovanilla>
 </demo>
 
-### Custom
+#### Custom
 
 Use `.col-custom` to set column width to a custom value.
 

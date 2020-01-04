@@ -21,7 +21,7 @@ We have some boilerplate setup projects to start a project:
 
 * [vanilla boilerplate](https://github.com/minimit/xtend-theme-vanilla)
 
-### Webpack
+#### Webpack
 
 This library is made to be used by [webpack](https://github.com/webpack). In essence you have to setup webpack's resolve to be able to import the scripts and styles from the `node_modules/xtend-library` or from your custom folder if present (`./dist/xtend-library` in this case).
 
@@ -41,7 +41,7 @@ This library is made to be used by [webpack](https://github.com/webpack). In ess
 
 With this setup you can **fork** css and js files inside `./dist/xtend-library` and the webpack resolver will load files from it or fallback to `./node_modules/xtend-library`.
 
-### Css
+#### Css
 
 You need to import the **reset** file as first import:
 
@@ -64,7 +64,7 @@ Or just import **all core/extensions/addons** as needed (preferred method):
 @import '~xtend-library/src/xtend-addons.less';
 ```
 
-### Js
+#### Js
 
 You need to import [core-js](https://github.com/zloirock/core-js):
 
@@ -94,7 +94,7 @@ import 'xtend-library/src/xtend-extensions.js'
 import 'xtend-library/src/xtend-addons.js'
 ```
 
-### Gsap
+#### Gsap
 
 This library in the demos uses [gsap](https://github.com/greensock/GreenSock-JS) and [bezier-easing](https://github.com/gre/bezier-easing) for javascript animations.
 
@@ -152,7 +152,7 @@ And add this browser list:
 IE 11
 ```
 
-### Media with Object fit
+#### Media with Object fit
 
 If you want to support [old browsers](https://caniuse.com/#feat=object-fit), use [object-fit polyfills](https://github.com/fregante/object-fit-images).
 

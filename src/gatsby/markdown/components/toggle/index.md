@@ -27,7 +27,7 @@ import 'xtend-library/src/xtend-core.js'
 
 ## Usage
 
-### Self
+#### Self
 
 You can use this markup to create a **toggle** with **no targets**.
 
@@ -42,7 +42,7 @@ You can use this markup to create a **toggle** with **no targets**.
   </demovanilla>
 </demo>
 
-### Multiple
+#### Multiple
 
 You can create a toggle with **mutiple** mode by assigning the toggle to a container element, elements and targets must be inside the container.
 
@@ -78,7 +78,7 @@ Use `:scope` when using descendant selector on root (e.g. `:scope > *`).
   </demovanilla>
 </demo>
 
-### Unique
+#### Unique
 
 The **unique** mode is useful when triggering **targets outside the scope** of the toggle.
 

@@ -29,7 +29,7 @@ In css you can use `.form-groups({});` to style all `.form-group:not(.xt-custom)
 
 There are several form group mode to change the form layout. They aren't just less classes to apply, but they need major markup formatting.
 
-### Normal
+#### Normal
 
 <script type="text/plain" class="language-markup">
 <form>
@@ -47,7 +47,7 @@ There are several form group mode to change the form layout. They aren't just le
   </demovanilla>
 </demo>
 
-### Horizontal
+#### Horizontal
 
 Horizontal label and input, by default not on mobile, you can edit the media queries in `~xtend-library/src/core/form/form.less`.
 

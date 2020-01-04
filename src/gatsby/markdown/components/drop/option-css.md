@@ -33,8 +33,15 @@ Classes for assigning position.
 | Class                   | `.drop-{position}`                        | `.drop-bottom` `.drop-top` `.drop-left` `.drop-right` `.drop-center` `.drop-before` `.drop-after` |
 | Mixin                   | `.drop-{position}()`                      | `.drop-bottom()` `.drop-top()` `.drop-left()` `.drop-right()` `.drop-center()` `.drop-before()` `.drop-after()` |
 
-
 <demo>
-  <demovanilla src="vanilla/components/drop/position">
+  <demovanilla src="vanilla/components/drop/left">
+  </demovanilla>
+  <demovanilla src="vanilla/components/drop/right">
+  </demovanilla>
+  <demovanilla src="vanilla/components/drop/center">
+  </demovanilla>
+  <demovanilla src="vanilla/components/drop/before">
+  </demovanilla>
+  <demovanilla src="vanilla/components/drop/after">
   </demovanilla>
 </demo>

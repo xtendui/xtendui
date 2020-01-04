@@ -6,7 +6,7 @@ title: "Content"
 date: "2000-04-01"
 ---
 
-### Anything
+#### Anything
 
 You can use list to space childrens like [row](/components/row/content) does. But the childrens are spaced with **margin** instead of **padding**.
 
@@ -19,7 +19,7 @@ You can use list to space childrens like [row](/components/row/content) does. Bu
   </demovanilla>
 </demo>
 
-### Button
+#### Button
 
 In css you can use `.list-btns({});` to style all `> li:not(.xt-custom) > .btn`.
 

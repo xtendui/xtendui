@@ -23,7 +23,7 @@ date: "2000-02-01"
 
 ## Filler
 
-### Direction
+#### Direction
 
 <div class="table-scroll">
 
@@ -41,7 +41,7 @@ date: "2000-02-01"
   </demovanilla>
 </demo>
 
-### Size
+#### Size
 
 Loader size with `.loader-x`.
 

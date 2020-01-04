@@ -29,7 +29,7 @@ You have some basic css animation classes/mixins:
 
 You can also set collapse transition, and `prefers-reduced-motion: reduce` makes instant animation and transitions for users who have set **prefer reduced motion** in the OS.
 
-### Example Transition
+#### Example Transition
 
 We recomend to use transitions this way:
 
@@ -52,7 +52,7 @@ We recomend to use transitions this way:
 }
 ```
 
-### Example Animation
+#### Example Animation
 
 We recomend to use animations this way:
 
@@ -67,7 +67,7 @@ We recomend to use animations this way:
 
 ## Utils
 
-### Delay
+#### Delay
 
 There is a mixin for generating transition and animation delays on multiple items on the same selector with `nth-child`.
 

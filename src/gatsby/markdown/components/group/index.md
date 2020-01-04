@@ -23,7 +23,7 @@ Or just import **core**:
 
 ## Usage
 
-### Button
+#### Button
 
 Use this markup to create a **button group as line**.
 
@@ -68,7 +68,7 @@ Use this markup to create a button group as stack.
   </demovanilla>
 </demo>
 
-### Input
+#### Input
 
 Use this markup to create a input group as line.
 

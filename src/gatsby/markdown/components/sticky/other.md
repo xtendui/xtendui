@@ -19,7 +19,7 @@ To show or hide content when sticky activates use `.show-sticky` or `.hide-stick
   </div>
 </demo>
 
-### Disable
+#### Disable
 
 To disable sticky use `.sticky-disable` useful within media queries.
 

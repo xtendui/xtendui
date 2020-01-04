@@ -105,7 +105,7 @@ const test = 'test'
   </div>
 </demo>
 
-### Inline
+#### Inline
 
 <demo>
   <demovanilla src="vanilla/components/test/vanilla" name="test vanilla">
@@ -120,7 +120,7 @@ const test = 'test'
   </demoreact>
 </demo>
 
-### Iframe
+#### Iframe
 
 <demo>
   <div class="gatsby_demo_item" data-iframe="iframe/components/test/vanilla-iframe" data-name="test vanilla frame">
@@ -149,7 +149,7 @@ const test = 'test'
   </demovanilla>
 </demo>
 
-### Slider
+#### Slider
 
 <demo>
   <demovanilla src="vanilla/components/test/test-slider-content">
