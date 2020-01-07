@@ -138,7 +138,7 @@ Xt.mount.push({
         return false
       }
       // on elements
-      let elements = self.elements.filter(x => x.classList.contains('active'))
+      let elements = self.elements.filter(x => self.hasCurrent(x))
       for (let element of elements) {
         let fillers = element.querySelectorAll('.filler span:nth-child(2)')
         for (let filler of fillers) {
@@ -152,7 +152,7 @@ Xt.mount.push({
 
     self.object.addEventListener('autostop.xt', function(e) {
       // on elements
-      let elements = self.elements.filter(x => x.classList.contains('active'))
+      let elements = self.elements.filter(x => self.hasCurrent(x))
       for (let element of elements) {
         let fillers = element.querySelectorAll('.filler span:nth-child(2)')
         for (let filler of fillers) {
@@ -165,7 +165,7 @@ Xt.mount.push({
 
     self.object.addEventListener('autopause.xt', function(e) {
       // on elements
-      let elements = self.elements.filter(x => x.classList.contains('active'))
+      let elements = self.elements.filter(x => self.hasCurrent(x))
       for (let element of elements) {
         let fillers = element.querySelectorAll('.filler span:nth-child(2)')
         for (let filler of fillers) {

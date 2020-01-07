@@ -31,7 +31,7 @@ Xt.mount.push({
     // drag
 
     const eventDrag = function(e) {
-      const target = self.targets.filter(x => x.classList.contains('active'))[0]
+      const target = self.targets.filter(x => self.hasCurrent(x))[0]
       const ratio = Math.abs(self.detail.dragStart - self.detail.dragCurrent) / target.clientWidth
       const imgSize = self.dragger.offsetWidth / 6
       // direction
@@ -40,7 +40,7 @@ Xt.mount.push({
         direction = -1
       }
       // others
-      for (const tr of self.targets.filter(x => !x.classList.contains('active'))) {
+      for (const tr of self.targets.filter(x => !self.hasCurrent(x))) {
         const img = tr.querySelector('.slide_img_inner')
         gsap.set(img, { translateX: imgSize * direction - imgSize * ratio * direction, opacity: ratio + 0.5 })
       }
@@ -54,7 +54,7 @@ Xt.mount.push({
     // dragend
 
     const eventDragReset = function(e) {
-      const target = self.targets.filter(x => x.classList.contains('active'))[0]
+      const target = self.targets.filter(x => self.hasCurrent(x))[0]
       // img
       const img = target.querySelector('.slide_img_inner')
       gsap.to(img, { translateX: 0, opacity: 1, duration: timeImg, ease: Xt.vars.easeCheetah })
