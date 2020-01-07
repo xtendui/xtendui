@@ -57,7 +57,7 @@ class Template extends React.Component {
                                   } else if (type === 'react') {
                                     return <DemoReact src={demo} key={i}></DemoReact>
                                   } else if (type === 'iframe') {
-                                    return <div className="gatsby_demo_item" data-iframe-fullscreen={demo} key={i}></div>
+                                    return <div className="gatsby_demo_item" data-iframe={demo} key={i}></div>
                                   }
                                 })}
                               </Demo>

@@ -194,8 +194,6 @@ const populateDemo = function(container, i) {
     })
     // inject iframe
     if (item.getAttribute('data-iframe')) {
-      const id = 'iframe' + i + k
-      item.setAttribute('data-iframe-id', id)
       initializeIframe(container, item)
     } else if (!item.getAttribute('data-iframe-fullscreen')) {
       populateInline(item)
@@ -422,7 +420,7 @@ const initializeIframe = function(container, item) {
     container.dataset.isFullscreenOnly = 'true'
     item.classList.add('populated-iframe')
     const src = '/' + item.getAttribute('data-iframe')
-    const id = item.getAttribute('data-iframe-id')
+    const id = item.getAttribute('id')
     item.append(Xt.createElement('<div class="gatsby_demo_item_wrapper"><iframe data-src="' + src + '" name="' + id + '"></iframe></div>'))
     item
       .querySelector('.gatsby_demo_item_wrapper')
@@ -528,7 +526,7 @@ const populateIframe = function(item, iframe, htmlSource, jsxSource, cssSource, 
       populateSources(item, el, z)
       el.remove()
     }
-    new Xt.Toggle(item, {
+    new Xt.Toggle(item.querySelector('.gatsby_demo_code_inner'), {
       elements: '.gatsby_demo_code_tabs_left .btn',
       targets: '.gatsby_demo_code_body_item',
       min: 1,
@@ -550,7 +548,7 @@ const populateInline = function(item) {
         el.style.display = 'none'
       }
     }
-    new Xt.Toggle(item, {
+    new Xt.Toggle(item.querySelector('.gatsby_demo_code_inner'), {
       elements: '.gatsby_demo_code_tabs_left .btn',
       targets: '.gatsby_demo_code_body_item',
       min: 1,
