@@ -205,7 +205,7 @@ Use `keyboard: { selector: 'object' }` or `keyboard: { selector: QuerySelector }
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `instant:Object`                          | `{ elements: true, targets: false, elementsInner: true, targetsInner: false }`        | Instant activation instead of waiting for delay and animations             |
-| Option                  | `autoClose:Boolean`                          | `false`        | Close automatically on `autoclose.xt` event            |
+| Option                  | `autoClose:Boolean`                          | `false`        | Close automatically on `autoclose.trigger.xt` event            |
 | Option                  | `autoDisable:Boolean`                          | `true`        | Disable automatically when cannot be activated             |
 | Option                  | `onBlock:Milliseconds`                          | `true`        | Block concurrent activation events            |
 | Option                  | `offBlock:Milliseconds`                          | `true`        | Block concurrent deactivation events            |

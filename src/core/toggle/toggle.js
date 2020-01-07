@@ -887,8 +887,8 @@ class Toggle {
    */
   eventAutocloseHandler(e) {
     const self = this
-    // triggering e.detail.inside
-    if (!e || !e.detail || !e.detail.inside || e.detail.inside.contains(self.object)) {
+    // triggering e.detail.container
+    if (!e || !e.detail || !e.detail.container || e.detail.container.contains(self.object)) {
       // handler
       const currents = self.getCurrents()
       for (const current of currents) {
@@ -1068,12 +1068,12 @@ class Toggle {
 
   /**
    * if element or target is in current (so shared between Xt objects)
-   * @param {Node|HTMLElement|EventTarget|Window} element To be checked
+   * @param {Node|HTMLElement|EventTarget|Window} el To be checked
    */
-  hasCurrent(element) {
+  hasCurrent(el) {
     const self = this
     // hasCurrent
-    const groupElements = self.getElements(element)
+    const groupElements = self.getElements(el)
     return Xt.currents[self.namespace].filter(x => x === groupElements[0]).length
   }
 
@@ -2589,8 +2589,8 @@ class Toggle {
    */
   eventStatusHandler(e = null) {
     const self = this
-    // triggering e.detail.inside
-    if (!e || !e.detail || !e.detail.inside || e.detail.inside.contains(self.object)) {
+    // triggering e.detail.container
+    if (!e || !e.detail || !e.detail.container || e.detail.container.contains(self.object)) {
       Xt.eventDelay(
         e,
         self.object,
@@ -2651,8 +2651,8 @@ class Toggle {
    */
   eventReinitHandler(e) {
     const self = this
-    // triggering e.detail.inside
-    if (!e || !e.detail || !e.detail.inside || e.detail.inside.contains(self.object)) {
+    // triggering e.detail.container
+    if (!e || !e.detail || !e.detail.container || e.detail.container.contains(self.object)) {
       Xt.eventDelay(
         e,
         self.object,

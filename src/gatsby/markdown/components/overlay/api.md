@@ -33,11 +33,21 @@ self = null
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Method                  | `self.restart()`                          | Restart component to initial             |
+| Method                  | `self.getElements(el:Node)`                          | Get elements from element or target             |
+| Method                  | `self.getTargets(el:Node)`                          | Get targets from element or target             |
+| Method                  | `self.hasCurrent(el:Node)`                          | Returns `true` or `false` if element or target is activated             |
 | Method                  | `self.reinit(saveCurrents:Boolean)`       | Reinit component and save currents as initial (default: `true`)             |
+| Method                  | `self.restart()`                          | Restart component to initial             |
 | Method                  | `self.destroy()`              | Destroy component            |
 
 </div>
+
+You can get activated elements or targets this way:
+
+```js
+self.elements.filter(x => self.hasCurrent(x))
+self.targets.filter(x => self.hasCurrent(x))
+```
 
 ## Trigger
 
@@ -53,8 +63,12 @@ document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('o
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Event                   | `on.trigger.xt`       | `elements` `targets` | Activation event             |
 | Event                   | `off.trigger.xt`      | `elements` `targets` | Deactivation event            |
+| Event                   | `autoclose.trigger.xt`           | `window` | Autclose all components with `autoClose: true` option             |
 
 </div>
+
+[[noteDefault]]
+| For triggering and listening the **resize event**, refer to [global's js](/components/global/js#events-resize).
 
 ## Listen
 

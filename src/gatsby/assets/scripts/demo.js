@@ -99,9 +99,9 @@ const populateBlock = function() {
     moving.classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
     appendOrigin.before(moving)
     appendOrigin.remove()
-    // triggering e.detail.inside
+    // triggering e.detail.container
     requestAnimationFrame(function() {
-      dispatchEvent(new CustomEvent('resize', { detail: { force: true, inside: moving.querySelector('.gatsby_demo_source') } }))
+      dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: moving.querySelector('.gatsby_demo_source') } }))
     })
     // set hash
     window.history.pushState('', '/', window.location.pathname)
@@ -109,9 +109,9 @@ const populateBlock = function() {
   // trigger fullscreen or change tabs
   document.querySelector('#toggle_open-full').addEventListener('ondone.xt', function(e) {
     const content = document.querySelector('#toggle_open-full-content')
-    // triggering e.detail.inside
+    // triggering e.detail.container
     requestAnimationFrame(function() {
-      dispatchEvent(new CustomEvent('resize', { detail: { force: true, inside: content.querySelector('.gatsby_demo_source') } }))
+      dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: content.querySelector('.gatsby_demo_source') } }))
     })
   })
 }
@@ -256,8 +256,8 @@ const populateDemo = function(container, i) {
     // trigger fullscreen or change tabs
     item.addEventListener('on.xt', function(e) {
       if (!self.initial) {
-        // triggering e.detail.inside
-        dispatchEvent(new CustomEvent('resize', { detail: { force: true, inside: item.querySelector('.gatsby_demo_source') } }))
+        // triggering e.detail.container
+        dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: item.querySelector('.gatsby_demo_source') } }))
       }
       if (document.querySelector('#toggle_open-full-trigger').classList.contains('active')) {
         // set hash
