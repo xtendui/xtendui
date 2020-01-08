@@ -39,7 +39,7 @@ demo.htmlSource = `
   </div>
 </div>
 
-<div class="drop-container demo_drop-disable-sm" data-xt-drop>
+<div class="drop-container demo--drop-disable-sm" data-xt-drop>
   <button type="button" class="btn btn-primary">
     Toggle
   </button>

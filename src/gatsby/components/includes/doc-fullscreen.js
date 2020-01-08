@@ -5,12 +5,12 @@ class DocFullscreen extends React.Component {
     return (
       <>
         <div
-          id="toggle_open-full-trigger"
-          data-xt-toggle="{ targets: '#toggle_open-full', closeInside: ':scope > .btn-close', autoClose: true, scrollbar: true }"
+          id="gatbsy_open-full-trigger"
+          data-xt-toggle="{ targets: '#gatbsy_open-full', closeInside: ':scope > .btn-close', autoClose: true, scrollbar: true }"
         ></div>
-        <div className="toggle-block" id="toggle_open-full">
+        <div className="toggle-block" id="gatbsy_open-full">
           <div className="btn btn-close" aria-label="Close"></div>
-          <div className="card-content" id="toggle_open-full-content"></div>
+          <div className="card-content" id="gatbsy_open-full-content"></div>
         </div>
       </>
     )

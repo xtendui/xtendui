@@ -1,7 +1,7 @@
 import { Xt } from 'xtend-library'
 
 Xt.mount.push({
-  matches: '.demo_toggle-timing-delay-fnc',
+  matches: '.demo--toggle-timing-delay-fnc',
   mount: function(object) {
     // init
 
@@ -25,7 +25,7 @@ Xt.mount.push({
 })
 
 Xt.mount.push({
-  matches: '.demo_toggle-timing-delay-fnc--hover',
+  matches: '.demo--toggle-timing-delay-fnc--hover',
   mount: function(object) {
     // init
 

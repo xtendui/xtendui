@@ -10,41 +10,41 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="list list-default list-space-tiny align-items-center">
-  <button type="button" class="btn btn-primary btn-tiny" id="demo_slider-events-first-element">
+  <button type="button" class="btn btn-primary btn-tiny" id="demo--slider-events-first-element">
     1st element
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo_slider-events-first-target">
+  <button type="button" class="btn btn-primary btn-tiny" id="demo--slider-events-first-target">
     1st target
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo_toggle-events-autostart">
+  <button type="button" class="btn btn-primary btn-tiny" id="demo--toggle-events-autostart">
     Autostart
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo_toggle-events-autostop">
+  <button type="button" class="btn btn-primary btn-tiny" id="demo--toggle-events-autostop">
     Autostop
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo_slider-events-add">
+  <button type="button" class="btn btn-primary btn-tiny" id="demo--slider-events-add">
     Add
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo_slider-events-remove">
+  <button type="button" class="btn btn-primary btn-tiny" id="demo--slider-events-remove">
     Remove
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo_slider-events-reinit">
+  <button type="button" class="btn btn-primary btn-tiny" id="demo--slider-events-reinit">
     Reinit
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo_slider-events-restart">
+  <button type="button" class="btn btn-primary btn-tiny" id="demo--slider-events-restart">
     Restart
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo_slider-events-destroy">
+  <button type="button" class="btn btn-primary btn-tiny" id="demo--slider-events-destroy">
     Destroy
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo_slider-events-unmount">
+  <button type="button" class="btn btn-primary btn-tiny" id="demo--slider-events-unmount">
     Unmount
   </button>
 </div>
 
 <br/>
 
-<div class="slider" id="demo_slider-events">
+<div class="slider" id="demo--slider-events">
 
   <div class="slides">
     <ul class="slides-inner">
@@ -150,7 +150,7 @@ demo.htmlSource = `
   <div class="card-design"></div>
   <div class="card-inner">
     <div class="card-content">
-      <div class="card-block card-item card-overflow-y" id="demo_slider-events-log">
+      <div class="card-block card-item card-overflow-y" id="demo--slider-events-log">
       </div>
     </div>
   </div>

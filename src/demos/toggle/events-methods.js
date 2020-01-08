@@ -1,7 +1,7 @@
 import { Xt } from 'xtend-library'
 
 Xt.mount.push({
-  matches: '#demo_toggle-events',
+  matches: '#demo--toggle-events',
   mount: function(object) {
     // init
 
@@ -16,7 +16,7 @@ Xt.mount.push({
     // log
 
     let logTimeout
-    const log = document.querySelector('#demo_toggle-events-log')
+    const log = document.querySelector('#demo--toggle-events-log')
 
     const logAdd = function(text) {
       log.innerHTML += text + '<br/>'
@@ -31,7 +31,7 @@ Xt.mount.push({
 
     // first element
 
-    const firstEl = document.querySelector('#demo_toggle-events-first-element')
+    const firstEl = document.querySelector('#demo--toggle-events-first-element')
 
     const firstElFnc = function() {
       logAdd('<strong>1st element</strong>')
@@ -43,7 +43,7 @@ Xt.mount.push({
 
     // first target
 
-    const firstTr = document.querySelector('#demo_toggle-events-first-target')
+    const firstTr = document.querySelector('#demo--toggle-events-first-target')
 
     const firstTrFnc = function() {
       logAdd('<strong>1st target</strong>')
@@ -55,7 +55,7 @@ Xt.mount.push({
 
     // autostart
 
-    const autostartEl = document.querySelector('#demo_toggle-events-autostart')
+    const autostartEl = document.querySelector('#demo--toggle-events-autostart')
 
     const autstartFnc = function() {
       logAdd('<strong>autostart</strong>')
@@ -66,7 +66,7 @@ Xt.mount.push({
 
     // autostop
 
-    const autostopEl = document.querySelector('#demo_toggle-events-autostop')
+    const autostopEl = document.querySelector('#demo--toggle-events-autostop')
 
     const autostopFnc = function() {
       logAdd('<strong>autostop</strong>')
@@ -77,7 +77,7 @@ Xt.mount.push({
 
     // add
 
-    const addBtn = document.querySelector('#demo_toggle-events-add')
+    const addBtn = document.querySelector('#demo--toggle-events-add')
 
     const addFnc = function() {
       clearTimeout(parseFloat(object.dataset.reinitTimeout))
@@ -103,7 +103,7 @@ Xt.mount.push({
 
     // remove
 
-    const removeBtn = document.querySelector('#demo_toggle-events-remove')
+    const removeBtn = document.querySelector('#demo--toggle-events-remove')
 
     const removeFnc = function() {
       clearTimeout(parseFloat(object.dataset.reinitTimeout))
@@ -127,7 +127,7 @@ Xt.mount.push({
 
     // reinit
 
-    const reinitBtn = document.querySelector('#demo_toggle-events-reinit')
+    const reinitBtn = document.querySelector('#demo--toggle-events-reinit')
 
     const reinitFnc = function() {
       clearTimeout(parseFloat(object.dataset.reinitTimeout))
@@ -141,7 +141,7 @@ Xt.mount.push({
 
     // restart
 
-    const restartBtn = document.querySelector('#demo_toggle-events-restart')
+    const restartBtn = document.querySelector('#demo--toggle-events-restart')
 
     const restartFnc = function() {
       logAdd('<strong>restart</strong>')
@@ -152,7 +152,7 @@ Xt.mount.push({
 
     // destroy
 
-    const destroyBtn = document.querySelector('#demo_toggle-events-destroy')
+    const destroyBtn = document.querySelector('#demo--toggle-events-destroy')
 
     const destroyFnc = function() {
       logAdd('<strong>destroy</strong>')
@@ -163,7 +163,7 @@ Xt.mount.push({
 
     // unmount
 
-    const unmountBtn = document.querySelector('#demo_toggle-events-unmount')
+    const unmountBtn = document.querySelector('#demo--toggle-events-unmount')
 
     const unmountFnc = function() {
       logAdd('<strong>unmount</strong>')

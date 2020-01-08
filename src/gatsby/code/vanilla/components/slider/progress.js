@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="slider demo_slider-progress">
+<div class="slider demo--slider-progress">
   <div class="loader loader-spinner loader-mouse loader-js">
     <span class="spinner">
       ${spinner({})}

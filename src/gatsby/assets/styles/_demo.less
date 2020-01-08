@@ -40,7 +40,7 @@ svg {
  */
 
 .gatsby_demo-cols {
-  [class^='col-'], [class*=' col-'], [class^='demo_col-'], [class*=' demo_col-'] {
+  [class^='col-'], [class*=' col-'], [class^='demo--col-'], [class*=' demo--col-'] {
     &:before {
       position: relative;
       float: left;
@@ -130,7 +130,7 @@ pre {
       }
     }
   }
-  #toggle_open-full & {
+  #gatbsy_open-full & {
     border: 0 !important;
     .btn-prev-demo, .btn-next-demo {
       display: inline-flex;
@@ -163,7 +163,7 @@ pre {
     }
     .gatsby_demo_code {
       .toggle-block();
-      #toggle_open-full & {
+      #gatbsy_open-full & {
         position: absolute;
         z-index: 4;
         width: 100%;
@@ -312,13 +312,13 @@ table {
 .gatsby_demo, .gatsby_demo_item, .gatsby_demo_item_wrapper, .gatsby_demo_item_wrapper iframe {
   display: flex;
   flex-direction: column;
-  #toggle_open-full & {
+  #gatbsy_open-full & {
     .flex-full();
     width: 100%;
   }
 }
 
-#toggle_open-full {
+#gatbsy_open-full {
   position: fixed;
   z-index: @index-overlay;
   top: 0;
@@ -342,7 +342,7 @@ table {
   }
 }
 
-#toggle_open-full-content {
+#gatbsy_open-full-content {
   display: flex;
   height: 100vh;
   pre {

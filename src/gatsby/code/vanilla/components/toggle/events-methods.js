@@ -10,41 +10,41 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="list list-default list-space-tiny align-items-center">
-  <button type="button" class="btn btn-primary btn-tiny" id="demo_toggle-events-first-element">
+  <button type="button" class="btn btn-primary btn-tiny" id="demo--toggle-events-first-element">
     1st element
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo_toggle-events-first-target">
+  <button type="button" class="btn btn-primary btn-tiny" id="demo--toggle-events-first-target">
     1st target
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo_toggle-events-autostart">
+  <button type="button" class="btn btn-primary btn-tiny" id="demo--toggle-events-autostart">
     Autostart
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo_toggle-events-autostop">
+  <button type="button" class="btn btn-primary btn-tiny" id="demo--toggle-events-autostop">
     Autostop
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo_toggle-events-add">
+  <button type="button" class="btn btn-primary btn-tiny" id="demo--toggle-events-add">
     Add
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo_toggle-events-remove">
+  <button type="button" class="btn btn-primary btn-tiny" id="demo--toggle-events-remove">
     Remove
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo_toggle-events-reinit">
+  <button type="button" class="btn btn-primary btn-tiny" id="demo--toggle-events-reinit">
     Reinit
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo_toggle-events-restart">
+  <button type="button" class="btn btn-primary btn-tiny" id="demo--toggle-events-restart">
     Restart
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo_toggle-events-destroy">
+  <button type="button" class="btn btn-primary btn-tiny" id="demo--toggle-events-destroy">
     Destroy
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo_toggle-events-unmount">
+  <button type="button" class="btn btn-primary btn-tiny" id="demo--toggle-events-unmount">
     Unmount
   </button>
 </div>
 
 <br/>
 
-<div class="list list-default list-space-small align-items-center" id="demo_toggle-events">
+<div class="list list-default list-space-small align-items-center" id="demo--toggle-events">
 
   <button type="button" class="btn btn-default">
     Toggle 0
@@ -74,7 +74,7 @@ demo.htmlSource = `
   <div class="card-design"></div>
   <div class="card-inner">
     <div class="card-content">
-      <div class="card-block card-item card-overflow-y" id="demo_toggle-events-log">
+      <div class="card-block card-item card-overflow-y" id="demo--toggle-events-log">
       </div>
     </div>
   </div>

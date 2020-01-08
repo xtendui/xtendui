@@ -4,7 +4,7 @@ import 'xtend-library/src/core/toggle/toggle.js'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '.demo_toggle-progress',
+  matches: '.demo--toggle-progress',
   mount: function(object) {
     // init
 

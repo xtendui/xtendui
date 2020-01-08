@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-default list-space-small align-items-center demo_toggle-js">
+<div class="list list-default list-space-small align-items-center demo--toggle-js">
   <button type="button" class="btn btn-default">
     Toggle 0
   </button>

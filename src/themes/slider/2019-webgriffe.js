@@ -3,7 +3,7 @@ import 'xtend-library/src/vars.js'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '.demo_2019-webgriffe',
+  matches: '.demo--2019-webgriffe',
   mount: function(object) {
     // slider
 

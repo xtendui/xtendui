@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="slider demo_slider-toggle-js">
+<div class="slider demo--slider-toggle-js">
 
   <div class="slides">
     <ul class="slides-inner">

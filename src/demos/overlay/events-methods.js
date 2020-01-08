@@ -1,7 +1,7 @@
 import { Xt } from 'xtend-library'
 
 Xt.mount.push({
-  matches: '#demo_overlay-events, #demo_overlay-events-alt',
+  matches: '#demo--overlay-events, #demo--overlay-events-alt',
   mount: function(object) {
     // init
 
@@ -12,7 +12,7 @@ Xt.mount.push({
     // log
 
     let logTimeout
-    const log = document.querySelector('#demo_overlay-events-log')
+    const log = document.querySelector('#demo--overlay-events-log')
 
     const logAdd = function(text) {
       log.innerHTML += text + '<br/>'
@@ -27,7 +27,7 @@ Xt.mount.push({
 
     // first element
 
-    const firstEl = document.querySelector('#demo_overlay-events-first-element')
+    const firstEl = document.querySelector('#demo--overlay-events-first-element')
 
     const firstElFnc = function() {
       logAdd('<strong>1st element</strong>')
@@ -39,7 +39,7 @@ Xt.mount.push({
 
     // first target
 
-    const firstTr = document.querySelector('#demo_overlay-events-first-target')
+    const firstTr = document.querySelector('#demo--overlay-events-first-target')
 
     const firstTrFnc = function() {
       logAdd('<strong>1st target</strong>')
@@ -51,7 +51,7 @@ Xt.mount.push({
 
     // reinit
 
-    const reinitBtn = document.querySelector('#demo_overlay-events-reinit')
+    const reinitBtn = document.querySelector('#demo--overlay-events-reinit')
 
     const reinitFnc = function() {
       clearTimeout(parseFloat(object.dataset.reinitTimeout))
@@ -65,7 +65,7 @@ Xt.mount.push({
 
     // restart
 
-    const restartBtn = document.querySelector('#demo_overlay-events-restart')
+    const restartBtn = document.querySelector('#demo--overlay-events-restart')
 
     const restartFnc = function() {
       logAdd('<strong>restart</strong>')
@@ -76,7 +76,7 @@ Xt.mount.push({
 
     // destroy
 
-    const destroyBtn = document.querySelector('#demo_overlay-events-destroy')
+    const destroyBtn = document.querySelector('#demo--overlay-events-destroy')
 
     const destroyFnc = function() {
       logAdd('<strong>destroy</strong>')
@@ -87,7 +87,7 @@ Xt.mount.push({
 
     // unmount
 
-    const unmountBtn = document.querySelector('#demo_overlay-events-unmount')
+    const unmountBtn = document.querySelector('#demo--overlay-events-unmount')
 
     const unmountFnc = function() {
       logAdd('<strong>unmount</strong>')

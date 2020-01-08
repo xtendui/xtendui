@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="slider demo_slider-toggle-css"
+<div class="slider demo--slider-toggle-css"
      data-xt-slider="{ instant: false, drag: false }">
 
   <div class="slides">

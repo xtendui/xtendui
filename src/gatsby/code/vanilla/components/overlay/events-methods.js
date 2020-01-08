@@ -10,22 +10,22 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="list list-default list-space-tiny align-items-center">
-  <button type="button" class="btn btn-primary btn-tiny" id="demo_overlay-events-first-element">
+  <button type="button" class="btn btn-primary btn-tiny" id="demo--overlay-events-first-element">
     1st element
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo_overlay-events-first-target">
+  <button type="button" class="btn btn-primary btn-tiny" id="demo--overlay-events-first-target">
     1st target
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo_overlay-events-reinit">
+  <button type="button" class="btn btn-primary btn-tiny" id="demo--overlay-events-reinit">
     Reinit
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo_overlay-events-restart">
+  <button type="button" class="btn btn-primary btn-tiny" id="demo--overlay-events-restart">
     Restart
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo_overlay-events-destroy">
+  <button type="button" class="btn btn-primary btn-tiny" id="demo--overlay-events-destroy">
     Destroy
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo_overlay-events-unmount">
+  <button type="button" class="btn btn-primary btn-tiny" id="demo--overlay-events-unmount">
     Unmount
   </button>
 </div>
@@ -33,10 +33,10 @@ demo.htmlSource = `
 <br/>
 
 <div class="list list-default list-space-tiny align-items-center">
-  <button type="button" class="btn btn-primary" id="demo_overlay-events">
+  <button type="button" class="btn btn-primary" id="demo--overlay-events">
     Open Overlay
   </button>
-  <button type="button" class="btn btn-primary" id="demo_overlay-events-alt">
+  <button type="button" class="btn btn-primary" id="demo--overlay-events-alt">
     Open Same Overlay
   </button>
 </div>
@@ -76,7 +76,7 @@ demo.htmlSource = `
   <div class="card-design"></div>
   <div class="card-inner">
     <div class="card-content">
-      <div class="card-block card-item card-overflow-y" id="demo_overlay-events-log">
+      <div class="card-block card-item card-overflow-y" id="demo--overlay-events-log">
       </div>
     </div>
   </div>

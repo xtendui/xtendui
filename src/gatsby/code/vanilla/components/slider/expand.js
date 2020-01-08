@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="slider demo_slider-expand"
+<div class="slider demo--slider-expand"
      data-xt-slider>
 
   <div class="slides">

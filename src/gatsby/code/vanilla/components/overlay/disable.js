@@ -10,10 +10,10 @@ export const demo = {
 
 demo.htmlSource = `
 <div data-xt-overlay>
-  <button type="button" class="btn btn-primary demo_overlay-disable-btn">
+  <button type="button" class="btn btn-primary demo--overlay-disable-btn">
     Toggle
   </button>
-  <div class="overlay demo_overlay-disable">
+  <div class="overlay demo--overlay-disable">
     <div class="overlay-container">
       <div class="overlay-inner">
 

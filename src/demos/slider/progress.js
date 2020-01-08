@@ -5,7 +5,7 @@ import 'xtend-library/src/core/animation/mouse-follow.js'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '.demo_slider-progress',
+  matches: '.demo--slider-progress',
   mount: function(object) {
     // init
 
