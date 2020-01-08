@@ -22,7 +22,7 @@
  * link
  */
 
-a, .btn-link {
+a:not(.btn), .btn-link {
   .link-underline();
   color: @accent;
   &:hover, &.hover, &:active, &.active {
@@ -32,7 +32,7 @@ a, .btn-link {
 
 // animation
 
-a, .btn-link {
+a:not(.btn), .btn-link {
   transition-property: color, background, opacity;
   transition-duration: @time-medium;
   transition-timing-function: @bez-out;
@@ -47,7 +47,7 @@ a, .btn-link {
 
 .text-inverse {
   // link color
-  a, .btn-link {
+  a:not(.btn), .btn-link {
     color: @text-inverse;
     text-decoration: underline;
     &:hover, &.hover, &:active, &.active {
