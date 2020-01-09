@@ -2101,8 +2101,8 @@ class Core {
       el = elFinal;
     }
     // delta
-    let delta = -e.deltaY || -e.detail || e.wheelDelta || e.wheelDeltaY;
-    if (delta === 0) {
+    let delta = -e.deltaY || e.wheelDeltaY;
+    if (!delta) { // when no delta or delta = 0
       return;
     }
     if (e.deltaMode === 1) {
