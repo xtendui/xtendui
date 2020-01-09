@@ -1921,7 +1921,7 @@ class Toggle {
     }
     // prevent default if not loop
     const max = self.getGroups().length - 1
-    const delta = -e.deltaY || -e.detail
+    const delta = -e.deltaY || e.wheelDeltaY
     if ((delta > 0 && self.currentIndex > 0) || (delta < 0 && self.currentIndex < max - 1)) {
       // prevent wheel
       e.preventDefault()
@@ -1943,8 +1943,8 @@ class Toggle {
       return
     }
     // delta
-    let delta = -e.deltaY || -e.detail
-    if (delta === 0) {
+    let delta = -e.deltaY || e.wheelDeltaY
+    if (!delta) { // when no delta or delta = 0
       return
     }
     // if document.scrollingElement scroll current overflow scroll
@@ -2460,10 +2460,10 @@ class Toggle {
             backdrop.addEventListener(
               eWheel,
               function(e) {
-                const delta = -e.deltaY || -e.detail
+                const delta = -e.deltaY || e.wheelDeltaY
                 element.scrollTop -= delta
               },
-              { passive: false }
+              { passive: true }
             )
           }
         } else if (actionCurrent === 'Off') {
