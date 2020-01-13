@@ -17,18 +17,18 @@
 @white: #fff;
 @black: #000;
 
-@gray-100: #f8fafe;
-@gray-200: #eff4fd;
-@gray-200-dark: darken(@gray-200, 5%);
-@gray-300: #d6e1f6;
-@gray-300-dark: darken(@gray-300, 5%);
-@gray-500: #7a7e8e;
-@gray-900: #021a46;
+@shade-100: #f8fafe;
+@shade-200: #eff4fd;
+@shade-200-dark: darken(@shade-200, 5%);
+@shade-300: #d6e1f6;
+@shade-300-dark: darken(@shade-300, 5%);
+@shade-500: #7a7e8e;
+@shade-900: #021a46;
 
 @accent: #0078ff;
 @accent-dark: darken(@accent, 5%);
 
-@text: @gray-900;
+@text: @shade-900;
 @text-dark: @black;
 @text-inverse: fade(@white, 90%);
 @text-inverse-dark: @white;
@@ -39,15 +39,15 @@
 // shadow
 // USAGE: box-shadow: @shadow-light;
 
-@shadow-light: 0 .1rem 1rem fade(@gray-300, 40%), 0 .2rem 2rem fade(@gray-300, 80%);
-@shadow-dark: 0 .1rem 1rem fade(@gray-900, 20%), 0 .2rem 2rem fade(@gray-900, 40%);
+@shadow-light: 0 .1rem 1rem fade(@shade-300, 40%), 0 .2rem 2rem fade(@shade-300, 80%);
+@shadow-dark: 0 .1rem 1rem fade(@shade-900, 20%), 0 .2rem 2rem fade(@shade-900, 40%);
 @shadow-accent: 0 .1rem 1rem fade(@accent-dark, 20%), 0 .2rem 2rem fade(@accent-dark, 40%);
 
 // gradient
 // USAGE: background: linear-gradient(135deg, @grad-light);
 
-@grad-light: @gray-100 33%, darken(@gray-100, 2%) 100%;
-@grad-dark: @gray-900 33%, darken(@gray-900, 2%) 100%;
+@grad-light: @shade-100 33%, darken(@shade-100, 2%) 100%;
+@grad-dark: @shade-900 33%, darken(@shade-900, 2%) 100%;
 @grad-accent: @accent 33%, @accent-dark 100%;
 
 // spacing
@@ -105,7 +105,7 @@
  */
 
 body {
-  background: @gray-200;
+  background: @shade-200;
 }
 
 /**
@@ -118,15 +118,15 @@ body {
     &::-webkit-scrollbar {
       height: 8px;
       width: 8px;
-      background: @gray-200;
+      background: @shade-200;
       @media (hover: none) {
         display: none;
       }
     }
     &::-webkit-scrollbar-thumb {
-      background: fade(@gray-900, 25%);
+      background: fade(@shade-900, 25%);
       &:hover {
-        background: fade(@gray-900, 50%);
+        background: fade(@shade-900, 50%);
       }
     }
   }
@@ -140,9 +140,9 @@ body {
       }
     }
     &::-webkit-scrollbar-thumb {
-      background: fade(@gray-900, 25%);
+      background: fade(@shade-900, 25%);
       &:hover {
-        background: fade(@gray-900, 50%);
+        background: fade(@shade-900, 50%);
       }
     }
   }

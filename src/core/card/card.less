@@ -53,7 +53,7 @@
   .card-white();
   // special
   .card-block-head {
-    background: @gray-200-dark;
+    background: @shade-200-dark;
   }
 }
 
@@ -63,7 +63,7 @@
   .card-default();
   // special
   .card-block-head {
-    background: @gray-200-dark;
+    background: @shade-200-dark;
   }
 }
 
@@ -74,7 +74,7 @@
   .card-white();
   // special
   .card-block-head {
-    background: @gray-200-dark;
+    background: @shade-200-dark;
   }
 }
 
@@ -83,8 +83,8 @@
 .card-default {
   color: @text;
   > .card-design {
-    border-color: @gray-200;
-    background: @gray-200;
+    border-color: @shade-200;
+    background: @shade-200;
   }
   .card-contents({
     > .card-item {
@@ -99,15 +99,15 @@
   }
   // special
   .card-block-head {
-    background: @gray-200-dark;
+    background: @shade-200-dark;
   }
   // interactive
   a&, button& {
     &:hover, &.hover, &:active, &.active {
       color: @text-dark;
       > .card-design {
-        border-color: @gray-200-dark;
-        background: @gray-200-dark;
+        border-color: @shade-200-dark;
+        background: @shade-200-dark;
       }
     }
     &:active, &.active {
@@ -121,7 +121,7 @@
 .card-item-default {
   & + .card-item {
     &:before {
-      background: fade(@gray-900, 10%);
+      background: fade(@shade-900, 10%);
     }
   }
 }
@@ -167,7 +167,7 @@
 .card-item-primary {
   & + .card-item {
     &:before {
-      background: fade(@gray-200, 10%);
+      background: fade(@shade-200, 10%);
     }
   }
 }
@@ -209,7 +209,7 @@
 .card-item-white {
   & + .card-item {
     &:before {
-      background: fade(@gray-900, 10%);
+      background: fade(@shade-900, 10%);
     }
   }
 }

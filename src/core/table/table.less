@@ -25,7 +25,7 @@
 
 .table {
   tr {
-    border-bottom: @table-border--width solid @gray-200;
+    border-bottom: @table-border--width solid @shade-200;
   }
   th {
     .padding(all, small);
@@ -43,7 +43,7 @@
   // tfoot
   tfoot {
     .padding(y, big) !important;
-    background: @gray-200;
+    background: @shade-200;
     th {
       .reset-text();
     }
@@ -94,7 +94,7 @@
 
 .table-stripe {
   tbody tr:nth-of-type(odd) {
-    background: @gray-100;
+    background: @shade-100;
   }
   tbody tr:nth-of-type(even) {
     background: transparent;
@@ -105,14 +105,14 @@
 
 .table-border {
   border-radius: .5em;
-  border: 3px solid @gray-200;
+  border: 3px solid @shade-200;
 }
 
 // .table-responsive
 
 .table-responsive {
   @media @max-sm {
-    border-top: @table-border--width solid @gray-200;
+    border-top: @table-border--width solid @shade-200;
     thead, th {
       display: none;
     }

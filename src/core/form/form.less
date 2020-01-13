@@ -121,7 +121,7 @@ form, .form {
 // variant
 
 .form-label-default {
-  color: @gray-500;
+  color: @shade-500;
 }
 
 .form-default {
@@ -154,31 +154,31 @@ form, .form {
 // variant
 
 .form-item-default {
-  border-color: @gray-200;
-  background-color: @gray-200; // @FIX no background: or it overrides background-image
+  border-color: @shade-200;
+  background-color: @shade-200; // @FIX no background: or it overrides background-image
   color: @text;
   &:focus, &.active {
-    border-color: @gray-200-dark;
-    background-color: @gray-200-dark; // @FIX no background: or it overrides background-image
+    border-color: @shade-200-dark;
+    background-color: @shade-200-dark; // @FIX no background: or it overrides background-image
   }
   // placeholder
   &:-ms-input-placeholder {
-    color: @gray-500;
+    color: @shade-500;
   }
   &:-moz-placeholder {
-    color: @gray-500;
+    color: @shade-500;
   }
   &::-webkit-input-placeholder {
-    color: @gray-500;
+    color: @shade-500;
   }
   &::-ms-input-placeholder {
-    color: @gray-500;
+    color: @shade-500;
   }
   &::-moz-placeholder {
-    color: @gray-500;
+    color: @shade-500;
   }
   &::placeholder {
-    color: @gray-500;
+    color: @shade-500;
   }
 }
 
@@ -187,12 +187,12 @@ form, .form {
 }
 
 .form-item-inverse {
-  border-color: fade(@gray-900, 25%);
-  background-color: fade(@gray-900, 25%); // @FIX no background: or it overrides background-image
+  border-color: fade(@shade-900, 25%);
+  background-color: fade(@shade-900, 25%); // @FIX no background: or it overrides background-image
   color: @text-inverse-dark;
   &:focus, &.active {
-    border-color: fade(@gray-900, 50%);
-    background-color: fade(@gray-900, 50%); // @FIX no background: or it overrides background-image
+    border-color: fade(@shade-900, 50%);
+    background-color: fade(@shade-900, 50%); // @FIX no background: or it overrides background-image
   }
   // placeholder
   &:-ms-input-placeholder {
@@ -249,7 +249,7 @@ form, .form {
 .form-item {
   select:not([multiple])& {
     @select-arrow-color: @text-inverse;
-    @select-space-color: fade(@gray-900, 25%);
+    @select-space-color: fade(@shade-900, 25%);
     background-image: linear-gradient(45deg, transparent 50%, @select-arrow-color 50%), linear-gradient(135deg, @select-arrow-color 50%, transparent 50%), linear-gradient(to right, @select-space-color, @select-space-color);
   }
   select[multiple]& {
@@ -278,11 +278,11 @@ form, .form {
   &.disabled {
     opacity: 1;
     &:before {
-      background: darken(@gray-200, 2.5%) !important;
-      border: 1px solid darken(@gray-200, 2.5%) !important;
+      background: darken(@shade-200, 2.5%) !important;
+      border: 1px solid darken(@shade-200, 2.5%) !important;
     }
     &:after {
-      color: darken(@gray-200, 25%) !important;
+      color: darken(@shade-200, 25%) !important;
     }
   }
 }
@@ -296,8 +296,8 @@ form, .form {
     height: 1.8rem;
   }
   &:before {
-    background: @gray-200;
-    border: 1px solid @gray-300;
+    background: @shade-200;
+    border: 1px solid @shade-300;
   }
   &:after {
     color: @accent;
