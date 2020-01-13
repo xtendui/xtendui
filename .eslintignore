@@ -1,3 +1,7 @@
-**/*.min.js
+*.less
+*.css
+*.min.js
 /_gh_pages/
-
+polyfill.js
+polyfill-old.js
+ResizeSensor.js

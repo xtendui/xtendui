@@ -2,7 +2,7 @@ import { Xt } from 'xtend-library'
 
 Xt.mount.push({
   matches: '.multilevel',
-  mount: function(object) {
+  mount: object => {
     // init
 
     let self = new Xt.Toggle(object, {
@@ -13,7 +13,7 @@ Xt.mount.push({
 
     // click
 
-    const eventClick = function(e) {
+    const eventClick = e => {
       object.querySelector('.multilevel-tab-reset').dispatchEvent(new CustomEvent('on.trigger.xt'))
     }
 
@@ -24,7 +24,7 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = function() {
+    const unmount = () => {
       self.destroy()
       self = null
     }

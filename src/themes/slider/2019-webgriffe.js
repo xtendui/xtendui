@@ -4,7 +4,7 @@ import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '.demo--2019-webgriffe',
-  mount: function(object) {
+  mount: object => {
     // slider
 
     let self = new Xt.Slider(object, {
@@ -69,19 +69,19 @@ Xt.mount.push({
       }
     }
 
-    self.dragger.addEventListener('drag.xt', function(e) {
+    self.dragger.addEventListener('drag.xt', e => {
       // parallax
       sliderParallax()
     })
 
-    self.dragger.addEventListener('dragreset.xt', function(e) {
+    self.dragger.addEventListener('dragreset.xt', e => {
       // parallax
       sliderParallax(true)
     })
 
     // targets
 
-    self.object.addEventListener('on.xt', function(e) {
+    self.object.addEventListener('on.xt', e => {
       let tr = e.target
       // useCapture delegation
       if (self.targets.includes(tr)) {
@@ -128,7 +128,7 @@ Xt.mount.push({
 
     // auto start
 
-    self.object.addEventListener('autostart.xt', function(e) {
+    self.object.addEventListener('autostart.xt', e => {
       // not first less time
       if (!self.initial && !self.object.dataset.autoTime) {
         self.eventAutostop()
@@ -150,7 +150,7 @@ Xt.mount.push({
 
     // auto stop
 
-    self.object.addEventListener('autostop.xt', function(e) {
+    self.object.addEventListener('autostop.xt', e => {
       // on elements
       let elements = self.elements.filter(x => self.hasCurrent(x))
       for (let element of elements) {
@@ -163,7 +163,7 @@ Xt.mount.push({
 
     // auto pause
 
-    self.object.addEventListener('autopause.xt', function(e) {
+    self.object.addEventListener('autopause.xt', e => {
       // on elements
       let elements = self.elements.filter(x => self.hasCurrent(x))
       for (let element of elements) {
@@ -176,7 +176,7 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = function() {
+    const unmount = () => {
       self.destroy()
       self = null
     }

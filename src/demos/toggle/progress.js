@@ -5,7 +5,7 @@ import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '.demo--toggle-progress',
-  mount: function(object) {
+  mount: object => {
     // init
 
     let self = new Xt.Toggle(object, {
@@ -17,7 +17,7 @@ Xt.mount.push({
 
     // start auto
 
-    const eventAutostart = function() {
+    const eventAutostart = () => {
       // on elements
       const elements = self.elements.filter(x => self.hasCurrent(x))
       for (const element of elements) {
@@ -42,7 +42,7 @@ Xt.mount.push({
 
     // stop auto
 
-    const eventAutostop = function() {
+    const eventAutostop = () => {
       // on elements
       const elements = self.elements.filter(x => self.hasCurrent(x))
       for (const element of elements) {
@@ -65,7 +65,7 @@ Xt.mount.push({
 
     // pause auto
 
-    const eventAutopause = function() {
+    const eventAutopause = () => {
       // on elements
       const elements = self.elements.filter(x => self.hasCurrent(x))
       for (const element of elements) {
@@ -88,7 +88,7 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = function() {
+    const unmount = () => {
       self.destroy()
       self = null
     }

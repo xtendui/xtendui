@@ -4,7 +4,7 @@ import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '.demo--loader-js-spinner',
-  mount: function(object) {
+  mount: object => {
     // init
 
     function loaderTimeout() {

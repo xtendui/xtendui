@@ -1,7 +1,7 @@
 // const img = require('components/snippets/img').default
 // ${img({ classes: 'media-cover', ratio: '37.5%' })}
 
-export default function({ classes = '', ratio = null, height = null }) {
+export default ({ classes = '', ratio = null, height = null }) => {
   return `<div class="media-container" style="
     ${ratio ? 'padding-bottom:' + ratio : ''}
     ${height ? 'height:' + height : ''}

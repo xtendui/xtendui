@@ -59,7 +59,7 @@ self.targets.filter(x => self.hasCurrent(x))
 Listen to events this way:
 
 ```js
-const eventChange = function(e) {
+const eventChange = (e) => {
   // logic
 }
 
@@ -72,13 +72,13 @@ Listen to events delegation with **useCapture** this way:
 let object = document.querySelector('#my-object')
 let self = Xt.get('xt-scroll', object)
 
-const eventChange = function(e) {
-  const el = e.target
+const eventChange = (e) => {
+  const element = e.target
   // useCapture delegation
-  if (self.elements.includes(el)) {
+  if (self.elements.includes(element)) {
     // logic
   }
-  if (self.targets.includes(tr)) {
+  if (self.targets.includes(element)) {
     // logic
   }
 }

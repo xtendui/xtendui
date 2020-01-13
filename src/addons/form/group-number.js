@@ -2,7 +2,7 @@ import { Xt } from 'xtend-library'
 
 Xt.mount.push({
   matches: '.group-number',
-  mount: function(object) {
+  mount: object => {
     // methods
 
     function inputNumberChange(step, e) {

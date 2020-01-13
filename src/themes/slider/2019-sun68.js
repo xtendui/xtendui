@@ -5,7 +5,7 @@ import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '.demo--2019-sun68',
-  mount: function(object) {
+  mount: object => {
     // vars
 
     const timeImg = 750
@@ -30,7 +30,7 @@ Xt.mount.push({
 
     // drag
 
-    const eventDrag = function(e) {
+    const eventDrag = e => {
       const target = self.targets.filter(x => self.hasCurrent(x))[0]
       const ratio = Math.abs(self.detail.dragStart - self.detail.dragCurrent) / target.clientWidth
       const imgSize = self.dragger.offsetWidth / 6
@@ -53,7 +53,7 @@ Xt.mount.push({
 
     // dragend
 
-    const eventDragReset = function(e) {
+    const eventDragReset = e => {
       const target = self.targets.filter(x => self.hasCurrent(x))[0]
       // img
       const img = target.querySelector('.slide_img_inner')
@@ -64,7 +64,7 @@ Xt.mount.push({
 
     // on
 
-    const eventOn = function(e) {
+    const eventOn = e => {
       const tr = e.target
       // useCapture delegation
       if (self.targets.includes(tr)) {
@@ -73,7 +73,7 @@ Xt.mount.push({
           gsap.set(img, { translateX: 0, opacity: 1, scale: 1 })
           gsap.to(img, { scale: zoomImg, duration: timeImgZoom, ease: Xt.vars.easeSineInOut, repeat: -1, yoyo: true })
         } else {
-          gsap.to(img, { translateX: 0, opacity: 1, duration: timeImg, ease: Xt.vars.easeCheetah }).eventCallback('onComplete', function() {
+          gsap.to(img, { translateX: 0, opacity: 1, duration: timeImg, ease: Xt.vars.easeCheetah }).eventCallback('onComplete', () => {
             gsap.to(img, { scale: zoomImg, duration: timeImgZoom, ease: Xt.vars.easeSineInOut, repeat: -1, yoyo: true })
           })
         }
@@ -84,7 +84,7 @@ Xt.mount.push({
 
     // off
 
-    const eventOff = function(e) {
+    const eventOff = e => {
       const tr = e.target
       // useCapture delegation
       if (self.targets.includes(tr)) {
@@ -98,7 +98,7 @@ Xt.mount.push({
         const img = tr.querySelector('.slide_img_inner')
         gsap
           .to(img, { translateX: imgSize * direction, opacity: 0.5, scale: 1, duration: timeImg, ease: Xt.vars.easeCheetah })
-          .eventCallback('onComplete', function() {
+          .eventCallback('onComplete', () => {
             gsap.set(img, { translateX: 0, opacity: 1 })
           })
       }
@@ -108,7 +108,7 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = function() {
+    const unmount = () => {
       self.destroy()
       self = null
     }

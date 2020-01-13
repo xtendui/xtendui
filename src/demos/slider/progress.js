@@ -6,7 +6,7 @@ import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '.demo--slider-progress',
-  mount: function(object) {
+  mount: object => {
     // init
 
     let self = new Xt.Slider(object, {
@@ -18,7 +18,7 @@ Xt.mount.push({
 
     // start auto
 
-    const eventAutostart = function() {
+    const eventAutostart = () => {
       // on slider
       const spinner = self.object.querySelectorAll('.spinner svg:nth-child(1) circle')
       const timeline = gsap.timeline({ overwrite: false })
@@ -48,7 +48,7 @@ Xt.mount.push({
 
     // stop auto
 
-    const eventAutostop = function() {
+    const eventAutostop = () => {
       // on elements
       const elements = self.elements.filter(x => self.hasCurrent(x))
       for (const element of elements) {
@@ -71,7 +71,7 @@ Xt.mount.push({
 
     // pause auto
 
-    const eventAutopause = function() {
+    const eventAutopause = () => {
       // on slider
       const spinner = self.object.querySelectorAll('.spinner svg:nth-child(1) circle')
       gsap.to(spinner, { strokeDashoffset: 628, duration: Xt.vars.timeSmall, ease: Xt.vars.easeLinear, autoRound: false })
@@ -100,14 +100,14 @@ Xt.mount.push({
     const mouseFollowObject = document.querySelector('.loader-mouse')
     const mouseFollowContainer = object
     let mouseFollow = new Xt.MouseFollow(mouseFollowObject, mouseFollowContainer, {
-      mouseCheck: function() {
-        return !this.object.classList.contains('loader-disable') || this.object.classList.contains('loader-js')
+      mouseCheck: () => {
+        return !mouseFollow.object.classList.contains('loader-disable') || mouseFollow.object.classList.contains('loader-js')
       },
     })
 
     // unmount
 
-    const unmount = function() {
+    const unmount = () => {
       self.destroy()
       self = null
       mouseFollow.destroy()

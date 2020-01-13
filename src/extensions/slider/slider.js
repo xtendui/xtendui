@@ -46,7 +46,7 @@ class Slider extends Xt.Toggle {
     // initSliderPos
     if (self.dragger) {
       // @FIX raf because needs to execute initStart before calculating positions
-      requestAnimationFrame(function() {
+      requestAnimationFrame(() => {
         self.initSliderPos()
       })
     }
@@ -124,7 +124,7 @@ class Slider extends Xt.Toggle {
     self.detail.fixNegativeMargin = self.groupMq[0][0].offsetLeft
     // @FIX disable slider if not overflowing
     if (totalCount >= 0) {
-      const afterInitDisable = function() {
+      const afterInitDisable = () => {
         // disable
         self.object.classList.add('slider-nooverflow')
         self.disable()
@@ -152,14 +152,14 @@ class Slider extends Xt.Toggle {
         if (options.contain) {
           console.error('Error: Xt.Slider cannot use "contain": true when using "drag": {"wrap": true}', self.object)
         }
-        const cloneSlide = function(slide) {
+        const cloneSlide = slide => {
           const cloned = slide.cloneNode(true)
           cloned.classList.add('xt-clone', 'xt-wrap')
           cloned.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesInitial, ...self.classesInverse)
           return cloned
         }
         // wrapLast
-        const wrapLastFunction = function() {
+        const wrapLastFunction = () => {
           let wrapLastCount = draggerWidth
           for (const [i, group] of self.groupMqInitial.entries()) {
             wrapLast.push([])
@@ -178,7 +178,7 @@ class Slider extends Xt.Toggle {
         }
         wrapLastFunction()
         // wrapFirst
-        const wrapFirstFunction = function() {
+        const wrapFirstFunction = () => {
           let wrapFirstCount = draggerWidth
           for (const [i, group] of self.groupMqInitial.reverse().entries()) {
             wrapFirst.unshift([])
@@ -596,9 +596,10 @@ class Slider extends Xt.Toggle {
       return
     }
     Xt.dataStorage.set(slide, self.componentNamespace + 'SlideonDone', true)
-    requestAnimationFrame(function() {
+    requestAnimationFrame(() => {
       Xt.dataStorage.remove(slide, self.componentNamespace + 'SlideonDone')
     })
+    console.log(slides.length, slide)
     // disable links not active slide
     for (const target of slides) {
       if (options.jump) {
@@ -632,7 +633,7 @@ class Slider extends Xt.Toggle {
       if (self.initial) {
         // prevent alignment animation
         dragger.classList.add('duration-none')
-        requestAnimationFrame(function() {
+        requestAnimationFrame(() => {
           dragger.classList.remove('duration-none')
         })
       }
@@ -643,7 +644,7 @@ class Slider extends Xt.Toggle {
       for (const nav of self.navs) {
         nav.classList.add('xt-pointer-events-none')
       }
-      Xt.animTimeout(dragger, function() {
+      Xt.animTimeout(dragger, () => {
         dragger.classList.remove('xt-pointer-events-none')
         for (const nav of self.navs) {
           nav.classList.remove('xt-pointer-events-none')
@@ -660,7 +661,7 @@ class Slider extends Xt.Toggle {
           // @FIX wrap with initial
           Xt.animTimeout(
             dragger,
-            function() {
+            () => {
               if (self.currentIndex < min) {
                 self.initial = true
                 self.initialContinue = true
@@ -695,7 +696,7 @@ class Slider extends Xt.Toggle {
       return
     }
     Xt.dataStorage.set(slide, self.componentNamespace + 'SlideoffDone', true)
-    requestAnimationFrame(function() {
+    requestAnimationFrame(() => {
       Xt.dataStorage.remove(slide, self.componentNamespace + 'SlideoffDone')
     })
     // disable links not active slide
@@ -789,7 +790,7 @@ class Slider extends Xt.Toggle {
       // drag
       self.logicDrag(dragger, e, true)
       // loop
-      requestAnimationFrame(function() {
+      requestAnimationFrame(() => {
         self.logicDragfriction(dragger, e)
       })
     } else {
@@ -955,7 +956,7 @@ class Slider extends Xt.Toggle {
       self.detail.dragPosOld = self.detail.dragPos
       self.detail.dragPos = self.detail.dragPosCurrent
       // disable drag and links
-      Xt.animTimeout(dragger, function() {
+      Xt.animTimeout(dragger, () => {
         // disable dragger
         dragger.classList.remove('xt-pointer-events-none')
         for (const nav of self.navs) {
@@ -1006,7 +1007,7 @@ class Slider extends Xt.Toggle {
       // drag
       dragger.classList.add('transition-none')
       dragger.style.transform = ''
-      requestAnimationFrame(function() {
+      requestAnimationFrame(() => {
         dragger.classList.remove('transition-none')
       })
     }
@@ -1078,7 +1079,7 @@ Slider.optionsDefault = {
     transform: true,
     horizontal: true,
     factor: 1,
-    friction: function(delta) {
+    friction: delta => {
       return delta / 9
     },
     frictionLimit: 1.5,
@@ -1102,11 +1103,11 @@ Slider.optionsDefault = {
     threshold: 50,
     linkThreshold: 50,
     factor: 1,
-    friction: function(velocity) {
+    friction: velocity => {
       return Math.pow(velocity, 0.9)
     },
     frictionLimit: 1.5,
-    overflow: function(overflow) {
+    overflow: overflow => {
       return Math.pow(overflow, 0.73)
     },
     timeLimit: 25,
@@ -1126,7 +1127,7 @@ Xt.Slider = Slider
 
 Xt.mount.push({
   matches: '[data-' + Xt.Slider.componentName + ']',
-  mount: function(object) {
+  mount: object => {
     // vars
 
     const optionsMarkup = object.getAttribute('data-' + Xt.Slider.componentName)
@@ -1138,7 +1139,7 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = function() {
+    const unmount = () => {
       self.destroy()
       self = null
     }

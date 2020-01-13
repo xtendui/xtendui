@@ -15,7 +15,7 @@ new Xt.Smooth(document.scrollingElement)
 
 Xt.mount.push({
   matches: '.gatsby_site_article_hero_content',
-  mount: function(object) {
+  mount: object => {
     // init
 
     let self = new Xt.Scroll(object, {
@@ -25,8 +25,8 @@ Xt.mount.push({
 
     // change
 
-    const eventChange = function() {
-      const el = this
+    const eventChange = e => {
+      const el = e.target
       gsap.set(el, { transformOrigin: 'left top' })
       gsap.set(el, { opacity: self.detail.ratioInverse, scale: 0.9 + 0.1 * self.detail.ratioInverse })
     }
@@ -37,7 +37,7 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = function() {
+    const unmount = () => {
       self.destroy()
       self = null
     }
@@ -49,7 +49,7 @@ Xt.mount.push({
 // makeDocument
 //
 
-const makeDocument = function() {
+const makeDocument = () => {
   // .gatsby_make-line
   for (const el of document.querySelectorAll('.gatsby_site_article_content_inner > * > h2, .gatsby_site_article_content_inner > * > h3')) {
     el.classList.add('gatsby_make-line')

@@ -125,7 +125,7 @@ class Ajax extends Xt.Toggle {
     // init events
     self.initEvents()
     // listener dispatch
-    requestAnimationFrame(function() {
+    requestAnimationFrame(() => {
       self.object.dispatchEvent(new CustomEvent('init.xt'))
     })
   }
@@ -171,7 +171,7 @@ class Ajax extends Xt.Toggle {
       // reinit currents
       self.initStart()
       // request set
-      requestAnimationFrame(function() {
+      requestAnimationFrame(() => {
         self.ajaxRequest(null, history.state.url)
       })
     }
@@ -226,15 +226,15 @@ class Ajax extends Xt.Toggle {
     if (self.detail.request) {
       self.detail.request.abort()
     } // fix fast change page
-    requestAnimationFrame(function() {
+    requestAnimationFrame(() => {
       self.detail.requestDuration = options.duration || Xt.animTime(self.queryElement)
       // call
       const request = new XMLHttpRequest()
       request.open('GET', url, true)
-      request.onload = function() {
+      request.onload = () => {
         self.ajaxResponse(element, url, request, self.detail.requestDate)
       }
-      request.onerror = function() {
+      request.onerror = () => {
         self.ajaxResponse(element, url, request, self.detail.requestDate)
       }
       if (Xt.debug === true) {
@@ -262,7 +262,7 @@ class Ajax extends Xt.Toggle {
       Xt.dataStorage.set(
         self.object,
         self.componentNamespace + 'AjaxDurationTimeout',
-        setTimeout(function() {
+        setTimeout(() => {
           // request
           if (request.status >= 200 && request.status <= 300) {
             self.ajaxSuccess(element, url, request, date)
@@ -314,7 +314,7 @@ class Ajax extends Xt.Toggle {
     // reinit
     if (!self.initial && date === self.detail.requestDate) {
       // fix fast change page
-      requestAnimationFrame(function() {
+      requestAnimationFrame(() => {
         self.initial = true
         self.init()
       })
@@ -387,7 +387,7 @@ Xt.Ajax = Ajax
 
 Xt.mount.push({
   matches: '[data-' + Xt.Ajax.componentName + ']',
-  mount: function(object) {
+  mount: object => {
     // vars
 
     const optionsMarkup = object.getAttribute('data-' + Xt.Ajax.componentName)
@@ -399,7 +399,7 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = function() {
+    const unmount = () => {
       self.destroy()
       self = null
     }

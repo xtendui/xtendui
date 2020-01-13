@@ -3,7 +3,7 @@ import 'xtend-library/src/core/animation/mouse-follow.js'
 
 Xt.mount.push({
   matches: '.slider-navigation-sides-btn',
-  mount: function(object) {
+  mount: object => {
     // mousefollow
 
     const mouseFollowObject = object
@@ -12,24 +12,24 @@ Xt.mount.push({
 
     // enter
 
-    mouseFollowObject.addEventListener('mouseenter.xt', function() {
+    mouseFollowObject.addEventListener('mouseenter.xt', () => {
       mouseFollowContainer.classList.add('active')
       mouseFollowContainer.classList.remove('out')
     })
 
     // leave
 
-    mouseFollowObject.addEventListener('mouseleave.xt', function() {
+    mouseFollowObject.addEventListener('mouseleave.xt', () => {
       mouseFollowContainer.classList.remove('active')
       mouseFollowContainer.classList.add('out')
-      Xt.animTimeout(mouseFollowContainer, function() {
+      Xt.animTimeout(mouseFollowContainer, () => {
         mouseFollowContainer.classList.remove('out')
       })
     })
 
     // unmount
 
-    const unmount = function() {
+    const unmount = () => {
       mouseFollow.destroy()
       mouseFollow = null
     }

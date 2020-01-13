@@ -120,7 +120,7 @@ class Sticky extends Xt.Toggle {
     Xt.eventDelay(
       e,
       self.object,
-      function() {
+      () => {
         // handler
         self.eventSticky(e, initial)
       },
@@ -448,7 +448,7 @@ Xt.Sticky = Sticky
 
 Xt.mount.push({
   matches: '[data-' + Xt.Sticky.componentName + ']',
-  mount: function(object) {
+  mount: object => {
     // vars
 
     const optionsMarkup = object.getAttribute('data-' + Xt.Sticky.componentName)
@@ -460,7 +460,7 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = function() {
+    const unmount = () => {
       self.destroy()
       self = null
     }

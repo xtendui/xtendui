@@ -121,7 +121,7 @@ Or inizialize with **mutation observer** (preferred method):
 ```js
 Xt.mount.push({
   matches: '#my-object',
-  mount: function(object) {
+  mount: object => {
     // init
 
     let self = new Xt.Toggle(object, {
@@ -130,7 +130,7 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = function() {
+    const unmount = () => {
       self.destroy()
       self = null
     }

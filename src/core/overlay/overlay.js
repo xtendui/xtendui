@@ -83,7 +83,7 @@ Xt.Overlay = Overlay
 
 Xt.mount.push({
   matches: '[data-' + Xt.Overlay.componentName + ']',
-  mount: function(object) {
+  mount: object => {
     // vars
 
     const optionsMarkup = object.getAttribute('data-' + Xt.Overlay.componentName)
@@ -95,7 +95,7 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = function() {
+    const unmount = () => {
       self.destroy()
       self = null
     }

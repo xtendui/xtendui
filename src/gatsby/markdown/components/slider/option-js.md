@@ -102,7 +102,7 @@ Use `drag: false` to disable drag. You need to use the slider in **toggle mode**
 
 ## Friction
 
-You can set friction with `drag: { friction: Function }`, for example `function(velocity) {return Math.pow(velocity, 0.9)}`.
+You can set friction with `drag: { friction: Function }`, for example `(velocity) => {return Math.pow(velocity, 0.9)}`.
 
 You can disable friction with `drag: { friction: false }`.
 
@@ -123,7 +123,7 @@ You can disable friction with `drag: { friction: false }`.
 
 ## Overflow
 
-You can set overflow with `drag: { overflow: Function }`, for example `function(overflow) {return Math.pow(overflow, 0.73)}`.
+You can set overflow with `drag: { overflow: Function }`, for example `(overflow) => {return Math.pow(overflow, 0.73)}`.
 
 <div class="table-scroll">
 

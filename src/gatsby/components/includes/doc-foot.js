@@ -85,8 +85,7 @@ class DocHead extends React.Component {
                             <div className="card-block card-item">
                               <div className="card-title">Visit the Addons page</div>
                               <p>
-                                There {postsAddons.length === 1 ? 'is' : 'are'} {postsAddons.length} <strong>addons</strong> for{' '}
-                                {page.post.frontmatter.parent}
+                                There {postsAddons.length === 1 ? 'is' : 'are'} {postsAddons.length} <strong>addons</strong> for {page.post.frontmatter.parent}
                               </p>
                             </div>
                           </div>
