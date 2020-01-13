@@ -230,9 +230,10 @@ const populateDemo = function(container, i) {
     requestAnimationFrame(function() {
       if (btnOpenFull.classList.contains('active')) {
         btnOpenFull.classList.remove('active')
-        requestAnimationFrame(function() {
+        // @FIX after much time because otherwise the component isn't initialized before moving with xt-ignore
+        setTimeout(function() {
           makeFullscreen(container)
-        })
+        }, 1000)
       }
     })
   }
@@ -367,7 +368,6 @@ const populateDemo = function(container, i) {
 const makeFullscreen = function(container) {
   const toggle = document.querySelector('#gatbsy_open-full-trigger')
   const content = document.querySelector('#gatbsy_open-full-content')
-  const item = container.querySelector('.gatsby_demo_item.active')
   // toggles
   const listingToggle = container.previousSibling
   if (listingToggle instanceof Element && listingToggle.getAttribute('data-gatsby-listing-toggle')) {
@@ -405,6 +405,7 @@ const makeFullscreen = function(container) {
     }
   }
   // trigger fullscreen or change tabs
+  const item = container.querySelector('.gatsby_demo_item.active')
   const full = container.closest('#gatbsy_open-full')
   if (full) {
     item.dispatchEvent(new CustomEvent('on.xt'))
