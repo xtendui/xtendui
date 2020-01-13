@@ -22,7 +22,7 @@
  * link
  */
 
-a:not(.btn), .btn-link {
+a, .btn-link {
   .link-underline();
   color: @accent;
   &:hover, &.hover, &:active, &.active {
@@ -32,7 +32,7 @@ a:not(.btn), .btn-link {
 
 // animation
 
-a:not(.btn), .btn-link {
+a, .btn-link {
   transition-property: color, background, opacity;
   transition-duration: @time-medium;
   transition-timing-function: @bez-out;

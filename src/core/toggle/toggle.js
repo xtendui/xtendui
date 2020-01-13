@@ -1944,7 +1944,8 @@ class Toggle {
     }
     // delta
     let delta = -e.deltaY || e.wheelDeltaY
-    if (!delta) { // when no delta or delta = 0
+    // when no delta or delta = 0
+    if (!delta) {
       return
     }
     // if document.scrollingElement scroll current overflow scroll
