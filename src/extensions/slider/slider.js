@@ -599,7 +599,6 @@ class Slider extends Xt.Toggle {
     requestAnimationFrame(() => {
       Xt.dataStorage.remove(slide, self.componentNamespace + 'SlideonDone')
     })
-    console.log(slides.length, slide)
     // disable links not active slide
     for (const target of slides) {
       if (options.jump) {
