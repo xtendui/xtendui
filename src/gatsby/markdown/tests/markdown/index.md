@@ -7,6 +7,12 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 categories: ["100-Test"]
 ---
 
+## Demos
+
+[events-methods](/components/slider/api#events-methods)
+[progress](/components/slider/other#progress)
+[toggle-js](/components/slider/option-js#toggle-js)
+
 ## Markdown
 
 <div class="table-scroll">
