@@ -16,8 +16,6 @@ Prism.manual = true
 
 const formatCode = source => {
   let text = source.innerHTML
-  // replace
-  const lang = source.getAttribute('data-lang')
   // search html tags
   var re = /<[^>]*>/g
   text = text.replace(re, (match, g1, g2) => {
