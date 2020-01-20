@@ -72,7 +72,6 @@ const populateBlock = function() {
   }
   document.querySelector('#gatbsy_open-full').addEventListener('offdone.xt', function(e) {
     const content = document.querySelector('#gatbsy_open-full-content')
-    content.querySelector('.btn-open-full').classList.remove('active')
     // toggles
     const listingToggles = document.querySelectorAll('[data-gatsby-listing-toggle]')
     for (const el of listingToggles) {
@@ -100,20 +99,18 @@ const populateBlock = function() {
     moving.classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
     appendOrigin.before(moving)
     appendOrigin.remove()
-    // ccccc
     // triggering e.detail.container
-    console.log('bbb');
-    dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: moving.querySelector('.gatsby_demo_source') } }))
+    requestAnimationFrame(function() {
+      dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: moving.querySelector('.gatsby_demo_source') } }))
+    })
     // set hash
     window.history.pushState('', '/', window.location.pathname)
   })
   // trigger fullscreen or change tabs
   document.querySelector('#gatbsy_open-full').addEventListener('ondone.xt', function(e) {
     const content = document.querySelector('#gatbsy_open-full-content')
-    // ccccc
     // triggering e.detail.container
-    console.log('ccc');
-    requestAnimationFrame(function () {
+    requestAnimationFrame(function() {
       dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: content.querySelector('.gatsby_demo_source') } }))
     })
   })
@@ -225,6 +222,21 @@ const populateDemo = function(container, i) {
       }
     }
   }
+  // makeFullscreen
+  for (const btnOpenFull of container.querySelectorAll('.btn-open-full')) {
+    btnOpenFull.addEventListener('click', function() {
+      makeFullscreen(container)
+    })
+    requestAnimationFrame(function() {
+      if (btnOpenFull.classList.contains('active')) {
+        btnOpenFull.classList.remove('active')
+        // @FIX after much time because otherwise the component isn't initialized before moving with xt-ignore
+        setTimeout(function() {
+          makeFullscreen(container)
+        }, 1000)
+      }
+    })
+  }
   // get hash
   if (location.hash) {
     const item = document.querySelector('[id="' + kebabCase(location.hash) + '"]')
@@ -244,17 +256,13 @@ const populateDemo = function(container, i) {
   for (const item of items) {
     // trigger fullscreen or change tabs
     item.addEventListener('on.xt', function(e) {
+      if (!self.initial) {
+        // triggering e.detail.container
+        dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: item.querySelector('.gatsby_demo_source') } }))
+      }
       if (document.querySelector('#gatbsy_open-full-trigger').classList.contains('active')) {
         // set hash
         location.hash = item.getAttribute('id')
-      }
-    })
-    item.addEventListener('ondone.xt', function(e) {
-      if (!self.initial) {
-        // ccccc
-        // triggering e.detail.container
-        console.log('aaaa');
-        dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: item.querySelector('.gatsby_demo_source') } }))
       }
     })
   }
@@ -351,20 +359,6 @@ const populateDemo = function(container, i) {
       }
     }
   })
-  // makeFullscreen
-  for (const btnOpenFull of container.querySelectorAll('.btn-open-full')) {
-    btnOpenFull.addEventListener('click', function() {
-      makeFullscreen(container)
-    })
-    if (btnOpenFull.classList.contains('active')) {
-      btnOpenFull.classList.remove('active')
-      // ccccc
-      // @FIX after much time because otherwise the component isn't initialized before moving with xt-ignore
-      setTimeout(function() {
-        makeFullscreen(container)
-      }, 5000)
-    }
-  }
 }
 
 /**
