@@ -3,7 +3,7 @@ type: "Components"
 badge: "Extensions"
 parent: "Slider"
 title: "Option js"
-date: "2000-01-01"
+date: "2000-02-05"
 ---
 
 [[notePrimary]]

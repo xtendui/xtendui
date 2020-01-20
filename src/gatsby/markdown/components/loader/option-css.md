@@ -2,7 +2,7 @@
 type: "Components"
 badge: "Extensions"
 parent: "Loader"
-title: "Option"
+title: "Option Css"
 date: "2000-02-01"
 ---
 

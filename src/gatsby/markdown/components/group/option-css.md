@@ -2,7 +2,7 @@
 type: "Components"
 badge: "Core"
 parent: "Group"
-title: "Option"
+title: "Option Css"
 date: "2000-02-01"
 ---
 
@@ -11,7 +11,7 @@ date: "2000-02-01"
 
 ## Variant
 
-Classes for assigning variant (e.g.: border / background / font colors).
+Classes for assigning variant (e.g.: border / background / font colors). Add or remove selectors at your discretion
 
 <div class="table-scroll">
 

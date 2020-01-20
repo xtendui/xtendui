@@ -2,7 +2,7 @@
 type: "Components"
 badge: "Core"
 parent: "Overlay"
-title: "Option"
+title: "Option Css"
 date: "2000-02-01"
 ---
 
@@ -65,7 +65,7 @@ You can extend the `.card-overlay` preset with other's card sizes. Use this clas
 
 ## Size
 
-Classes for assigning overlay **max-width**.
+Set overlay size with this classes. They are generated with `@generate-overlay-size`.
 
 <div class="table-scroll">
 

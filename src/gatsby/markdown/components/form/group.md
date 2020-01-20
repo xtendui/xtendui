@@ -82,7 +82,7 @@ Horizontal label and input, by default not on mobile, you can edit the media que
   </demovanilla>
 </demo>
 
-###Row
+#### Row
 
 Multiple columns of `.form-group`, by default not on mobile, you can edit the media queries in `~xtend-library/src/core/form/form.less`.
 
@@ -110,7 +110,7 @@ For columns sizes see [column page](/components/column).
   </demovanilla>
 </demo>
 
-###Inline Group
+#### Inline Group
 
 Inline **form group**, by default not on mobile, you can edit the media queries in `~xtend-library/src/core/form/form.less`.
 
@@ -132,7 +132,7 @@ Inline **form group**, by default not on mobile, you can edit the media queries 
   </demovanilla>
 </demo>
 
-###Inline multipe
+#### Inline multipe
 
 Inline **form input** and **form label**, by default not on mobile, you can edit the media queries in `~xtend-library/src/core/form/form.less`.
 
@@ -160,7 +160,7 @@ Inline **form input** and **form label**, by default not on mobile, you can edit
 
 ## Size
 
-Classes for assigning size (e.g.: padding or font size).
+Classes for assigning size (e.g.: padding or font size). Add or remove selectors at your discretion
 
 You can set the size globally on **form**.
 

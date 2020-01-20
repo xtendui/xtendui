@@ -2,13 +2,13 @@
 type: "Components"
 badge: "Core"
 parent: "Note"
-title: "Option"
+title: "Option Css"
 date: "2000-02-01"
 ---
 
 ## Variant
 
-Classes for assigning variant (e.g.: border / background / font colors).
+Classes for assigning variant (e.g.: border / background / font colors). Add or remove selectors at your discretion
 
 <div class="table-scroll">
 
@@ -26,7 +26,7 @@ Classes for assigning variant (e.g.: border / background / font colors).
 
 ## Size
 
-Classes for assigning size (e.g.: padding or font size).
+Classes for assigning size (e.g.: padding or font size). Add or remove selectors at your discretion
 
 <div class="table-scroll">
 
