@@ -9,6 +9,15 @@ categories: ["100-Test"]
 
 ## Demos
 
+<demo>
+  <demovanilla src="vanilla/components/slider/events-methods">
+  </demovanilla>
+  <demovanilla src="vanilla/components/slider/progress">
+  </demovanilla>
+  <demovanilla src="vanilla/components/slider/toggle-js">
+  </demovanilla>
+</demo>
+
 [events-methods](/components/slider/api#events-methods)
 [progress](/components/slider/other#progress)
 [toggle-js](/components/slider/option-js#toggle-js)
