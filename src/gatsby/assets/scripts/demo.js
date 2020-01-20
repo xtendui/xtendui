@@ -98,20 +98,24 @@ const populateBlock = function() {
     const moving = content.childNodes[0]
     moving.classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
     appendOrigin.before(moving)
-    appendOrigin.remove()
-    // triggering e.detail.container
+    // @FIX demo fullscreen
     requestAnimationFrame(function() {
-      dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: moving.querySelector('.gatsby_demo_source') } }))
+      const current = appendOrigin.previousSibling.querySelector('.gatsby_demo_item.active')
+      // triggering e.detail.container
+      dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: current } }))
+      appendOrigin.remove()
     })
     // set hash
     window.history.pushState('', '/', window.location.pathname)
   })
   // trigger fullscreen or change tabs
   document.querySelector('#gatbsy_open-full').addEventListener('ondone.xt', function(e) {
-    const content = document.querySelector('#gatbsy_open-full-content')
-    // triggering e.detail.container
+    // @FIX demo fullscreen
     requestAnimationFrame(function() {
-      dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: content.querySelector('.gatsby_demo_source') } }))
+      const content = document.querySelector('#gatbsy_open-full-content')
+      const current = content.querySelector('.gatsby_demo_item.active')
+      // triggering e.detail.container
+      dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: current } }))
     })
   })
 }
@@ -230,10 +234,10 @@ const populateDemo = function(container, i) {
     requestAnimationFrame(function() {
       if (btnOpenFull.classList.contains('active')) {
         btnOpenFull.classList.remove('active')
-        // @FIX after much time because otherwise the component isn't initialized before moving with xt-ignore
+        // @FIX demo fullscreen
         setTimeout(function() {
           makeFullscreen(container)
-        }, 1000)
+        }, 3000)
       }
     })
   }
@@ -256,6 +260,7 @@ const populateDemo = function(container, i) {
   for (const item of items) {
     // trigger fullscreen or change tabs
     item.addEventListener('on.xt', function(e) {
+      // @FIX demo fullscreen
       if (!self.initial) {
         // triggering e.detail.container
         dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: item.querySelector('.gatsby_demo_source') } }))
