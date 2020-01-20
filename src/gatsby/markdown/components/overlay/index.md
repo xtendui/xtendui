@@ -29,6 +29,9 @@ Or just import **core**:
 import 'xtend-library/src/xtend-core.js'
 ```
 
+[[noteDefault]]
+| To modify a **less** or **js** file add [webpack resolve](/introduction/setup#usage-webpack) and fork the file copying it in your project.
+
 ## Usage
 
 Use this markup to create an **overlay**.

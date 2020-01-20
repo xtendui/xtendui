@@ -64,6 +64,8 @@ Or just import **all core/extensions/addons** as needed (preferred method):
 @import '~xtend-library/src/xtend-addons.less';
 ```
 
+To modify a **less** or **js** file add [webpack resolve](/introduction/setup#usage-webpack) and fork the file copying it in your project.
+
 #### Js
 
 You need to import [core-js](https://github.com/zloirock/core-js):
@@ -93,6 +95,8 @@ import 'xtend-library/src/xtend-core.js'
 import 'xtend-library/src/xtend-extensions.js'
 import 'xtend-library/src/xtend-addons.js'
 ```
+
+To modify a **less** or **js** file add [webpack resolve](/introduction/setup#usage-webpack) and fork the file copying it in your project.
 
 #### Gsap
 

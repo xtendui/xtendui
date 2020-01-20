@@ -8,7 +8,7 @@ date: "2000-03-01"
 
 ## Events
 
-### Resize
+#### Resize
 
 We use a special resize handler that manages `resize` **only if the height of the window changes**, to force it also on window width change use `e.detail.force`:
 

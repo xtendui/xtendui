@@ -51,7 +51,7 @@ Xt.mount.push({
 
 const makeDocument = () => {
   // .gatsby_make-line
-  for (const el of document.querySelectorAll('.gatsby_site_article_content_inner > * > h2, .gatsby_site_article_content_inner > * > h3')) {
+  for (const el of document.querySelectorAll('.gatsby_site_article_content_inner > * > h2, .gatsby_site_article_content_inner > * > h4')) {
     el.classList.add('gatsby_make-line')
   }
   for (const el of document.querySelectorAll('.gatsby_make-line')) {
@@ -59,11 +59,11 @@ const makeDocument = () => {
     el.innerHTML = '<span class="gatsby_make-line_container">' + el.innerHTML + '</span>'
   }
   // .gatsby_make-anchor
-  for (const el of document.querySelectorAll('.gatsby_site_article_content_inner > * > h2, .gatsby_site_article_content_inner > * > h3')) {
+  for (const el of document.querySelectorAll('.gatsby_site_article_content_inner > * > h2, .gatsby_site_article_content_inner > * > h4')) {
     el.classList.add('gatsby_make-line')
-    // previous h2 if h3
+    // previous h2 if h4
     let prevElement
-    if (el.tagName === 'H3') {
+    if (el.tagName === 'H4') {
       prevElement = el
       while (prevElement.previousElementSibling) {
         if (prevElement.tagName === 'H2') {
