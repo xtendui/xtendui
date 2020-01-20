@@ -121,7 +121,7 @@ class Scroll extends Xt.Toggle {
     Xt.eventDelay(
       e,
       self.object,
-      function() {
+      () => {
         // handler
         self.eventScroll(e, initial)
       },
@@ -200,7 +200,7 @@ class Scroll extends Xt.Toggle {
             Xt.dataStorage.set(
               el,
               self.componentNamespace + 'ScrollFrame',
-              requestAnimationFrame(function() {
+              requestAnimationFrame(() => {
                 // initial
                 if (initial) {
                   Xt.dataStorage.set(el, self.componentNamespace + 'Initial', true)
@@ -226,7 +226,7 @@ class Scroll extends Xt.Toggle {
             Xt.dataStorage.set(
               el,
               self.componentNamespace + 'ScrollFrame',
-              requestAnimationFrame(function() {
+              requestAnimationFrame(() => {
                 // initial
                 if (initial) {
                   Xt.dataStorage.set(el, self.componentNamespace + 'Initial', true)
@@ -268,7 +268,7 @@ class Scroll extends Xt.Toggle {
         Xt.dataStorage.set(
           el,
           self.componentNamespace + 'ScrollDispatchFrame',
-          requestAnimationFrame(function() {
+          requestAnimationFrame(() => {
             el.dispatchEvent(new CustomEvent('change.xt'))
           })
         )
@@ -279,7 +279,7 @@ class Scroll extends Xt.Toggle {
     Xt.dataStorage.set(
       self.object,
       self.componentNamespace + 'ScrollDispatchFrame',
-      requestAnimationFrame(function() {
+      requestAnimationFrame(() => {
         self.detail.scrollTopOld = scrollTop
       })
     )
@@ -326,7 +326,7 @@ Xt.Scroll = Scroll
 
 Xt.mount.push({
   matches: '[data-' + Scroll.componentName + ']',
-  mount: function(object) {
+  mount: object => {
     // vars
 
     const optionsMarkup = object.getAttribute('data-' + Xt.Scroll.componentName)
@@ -338,7 +338,7 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = function() {
+    const unmount = () => {
       self.destroy()
       self = null
     }

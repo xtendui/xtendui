@@ -53,7 +53,7 @@ class TextareaAutosize {
     const self = this
     self.object.style.height = '5px'
     self.object.style.height = self.object.scrollHeight + 'px' // fixes both safari RAF and form reset
-    requestAnimationFrame(function() {
+    requestAnimationFrame(() => {
       self.object.style.height = '5px' // fixes both safari RAF and form reset
       self.object.style.height = self.object.scrollHeight + 'px'
     })
@@ -105,7 +105,7 @@ Xt.TextareaAutosize = TextareaAutosize
 
 Xt.mount.push({
   matches: '[data-' + Xt.TextareaAutosize.componentName + ']',
-  mount: function(object) {
+  mount: object => {
     // vars
 
     const optionsMarkup = object.getAttribute('data-' + Xt.TextareaAutosize.componentName)
@@ -117,7 +117,7 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = function() {
+    const unmount = () => {
       self.destroy()
       self = null
     }

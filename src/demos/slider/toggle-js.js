@@ -5,7 +5,7 @@ import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '.demo--slider-toggle-js',
-  mount: function(object) {
+  mount: object => {
     // init
 
     let self = new Xt.Slider(object, {
@@ -16,7 +16,7 @@ Xt.mount.push({
 
     // drag
 
-    const eventDrag = function() {
+    const eventDrag = () => {
       const tr = self.targets.filter(x => self.hasCurrent(x))[0]
       const ratio = Math.abs(self.detail.dragStart - self.detail.dragCurrent) / tr.clientWidth
       // direction
@@ -38,7 +38,7 @@ Xt.mount.push({
 
     // dragreset
 
-    const eventDragReset = function() {
+    const eventDragReset = () => {
       const tr = self.targets.filter(x => self.hasCurrent(x))[0]
       // mask
       gsap.set(tr, { translateX: -self.detail.dragPosOld + 'px' })
@@ -56,7 +56,7 @@ Xt.mount.push({
 
     // on
 
-    const eventOn = function(e) {
+    const eventOn = e => {
       const tr = e.target
       // useCapture delegation
       if (self.targets.includes(tr)) {
@@ -100,7 +100,7 @@ Xt.mount.push({
 
     // off
 
-    const eventOff = function(e) {
+    const eventOff = e => {
       const tr = e.target
       // useCapture delegation
       if (self.targets.includes(tr)) {
@@ -125,7 +125,7 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = function() {
+    const unmount = () => {
       self.destroy()
       self = null
     }

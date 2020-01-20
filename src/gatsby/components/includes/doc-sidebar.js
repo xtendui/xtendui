@@ -85,7 +85,7 @@ class DocSidebar extends React.Component {
                 </div>
               </div>
             ))}
-        </nav>
+          </nav>
         ) : null}
       </div>
     )

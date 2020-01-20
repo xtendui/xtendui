@@ -1,4 +1,4 @@
-const cssSource = function(demo, nameOverride, type = '.less') {
+const cssSource = (demo, nameOverride, type = '.less') => {
   if (demo.type === 'demos') {
     return require(`!!raw-loader!xtend-library/src/${demo.type}/${demo.component}/${nameOverride ? nameOverride : demo.name}${type}`).default
   } else {
@@ -6,7 +6,7 @@ const cssSource = function(demo, nameOverride, type = '.less') {
   }
 }
 
-const jsSource = function(demo, nameOverride, type = '.js') {
+const jsSource = (demo, nameOverride, type = '.js') => {
   if (demo.type === 'demos') {
     return require(`!!raw-loader!xtend-library/src/${demo.type}/${demo.component}/${nameOverride ? nameOverride : demo.name}${type}`).default
   } else {
@@ -14,7 +14,7 @@ const jsSource = function(demo, nameOverride, type = '.js') {
   }
 }
 
-const jsxSource = function(demo, nameOverride, type = '.jsx') {
+const jsxSource = (demo, nameOverride, type = '.jsx') => {
   if (demo.type === 'demos') {
     return require(`!!raw-loader!xtend-library/src/${demo.type}/${demo.component}/${nameOverride ? nameOverride : demo.name}${type}`).default
   } else {

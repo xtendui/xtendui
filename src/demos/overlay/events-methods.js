@@ -2,7 +2,7 @@ import { Xt } from 'xtend-library'
 
 Xt.mount.push({
   matches: '#demo--overlay-events, #demo--overlay-events-alt',
-  mount: function(object) {
+  mount: object => {
     // init
 
     let self = new Xt.Overlay(object, {
@@ -14,13 +14,13 @@ Xt.mount.push({
     let logTimeout
     const log = document.querySelector('#demo--overlay-events-log')
 
-    const logAdd = function(text) {
+    const logAdd = text => {
       log.innerHTML += text + '<br/>'
       // scroll
       log.scrollTo(0, log.scrollHeight)
       // hr
       clearTimeout(logTimeout)
-      logTimeout = setTimeout(function() {
+      logTimeout = setTimeout(() => {
         log.innerHTML += '<hr/>'
       }, 1000)
     }
@@ -29,7 +29,7 @@ Xt.mount.push({
 
     const firstEl = document.querySelector('#demo--overlay-events-first-element')
 
-    const firstElFnc = function() {
+    const firstElFnc = () => {
       logAdd('<strong>1st element</strong>')
       const elements = self.elements
       elements[0].dispatchEvent(new CustomEvent('on.trigger.xt'))
@@ -41,7 +41,7 @@ Xt.mount.push({
 
     const firstTr = document.querySelector('#demo--overlay-events-first-target')
 
-    const firstTrFnc = function() {
+    const firstTrFnc = () => {
       logAdd('<strong>1st target</strong>')
       const targets = self.targets
       targets[0].dispatchEvent(new CustomEvent('on.trigger.xt'))
@@ -53,9 +53,9 @@ Xt.mount.push({
 
     const reinitBtn = document.querySelector('#demo--overlay-events-reinit')
 
-    const reinitFnc = function() {
+    const reinitFnc = () => {
       clearTimeout(parseFloat(object.dataset.reinitTimeout))
-      object.dataset.reinitTimeout = setTimeout(function() {
+      object.dataset.reinitTimeout = setTimeout(() => {
         logAdd('<strong>reinit</strong>')
         self.reinit()
       }, 1000).toString()
@@ -67,7 +67,7 @@ Xt.mount.push({
 
     const restartBtn = document.querySelector('#demo--overlay-events-restart')
 
-    const restartFnc = function() {
+    const restartFnc = () => {
       logAdd('<strong>restart</strong>')
       self.restart()
     }
@@ -78,7 +78,7 @@ Xt.mount.push({
 
     const destroyBtn = document.querySelector('#demo--overlay-events-destroy')
 
-    const destroyFnc = function() {
+    const destroyFnc = () => {
       logAdd('<strong>destroy</strong>')
       self.destroy()
     }
@@ -89,7 +89,7 @@ Xt.mount.push({
 
     const unmountBtn = document.querySelector('#demo--overlay-events-unmount')
 
-    const unmountFnc = function() {
+    const unmountFnc = () => {
       logAdd('<strong>unmount</strong>')
       unmount()
     }
@@ -98,7 +98,7 @@ Xt.mount.push({
 
     // events
 
-    const events = function(e) {
+    const events = e => {
       let str = 'event <strong>' + e.type + '</strong>'
       if (e.target.getAttribute('title')) {
         str += ' from <strong>' + e.target.getAttribute('title') + '</strong>'
@@ -117,7 +117,7 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = function() {
+    const unmount = () => {
       firstEl.removeEventListener('click', firstElFnc)
       firstTr.removeEventListener('click', firstTrFnc)
       reinitBtn.removeEventListener('click', reinitFnc)

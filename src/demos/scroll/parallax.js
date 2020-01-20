@@ -4,7 +4,7 @@ import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '.demo--parallax-title',
-  mount: function(object) {
+  mount: object => {
     // init
 
     let self = new Xt.Scroll(object, {
@@ -14,8 +14,8 @@ Xt.mount.push({
 
     // change
 
-    const eventChange = function() {
-      const el = this
+    const eventChange = e => {
+      const el = e.target
       gsap.set(el, { transformOrigin: 'left center' })
       gsap.set(el, { opacity: self.detail.ratioInverse, scale: 0.9 + 0.1 * self.detail.ratioInverse })
     }
@@ -26,7 +26,7 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = function() {
+    const unmount = () => {
       self.destroy()
       self = null
     }
@@ -36,7 +36,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '.demo--parallax-img',
-  mount: function(object) {
+  mount: object => {
     // init
 
     let self = new Xt.Scroll(object, {
@@ -46,8 +46,8 @@ Xt.mount.push({
 
     // change
 
-    const eventChange = function() {
-      const el = this
+    const eventChange = e => {
+      const el = e.target
       gsap.set(el, { translateY: 100 * self.detail.ratio, opacity: self.detail.ratioInverse })
     }
 
@@ -57,7 +57,7 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = function() {
+    const unmount = () => {
       self.destroy()
       self = null
     }
@@ -67,7 +67,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '.demo--parallax-footer',
-  mount: function(object) {
+  mount: object => {
     // init
 
     let self = new Xt.Scroll(object, {
@@ -77,8 +77,8 @@ Xt.mount.push({
 
     // change
 
-    const eventChange = function() {
-      const el = this
+    const eventChange = e => {
+      const el = e.target
       gsap.set(el, { opacity: self.detail.ratio, scale: 0.9 + 0.1 * self.detail.ratio })
     }
 
@@ -88,7 +88,7 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = function() {
+    const unmount = () => {
       self.destroy()
       self = null
     }

@@ -145,7 +145,7 @@ class Toggle {
     if (!self.elements.length) {
       self.elements = Xt.arrSingle(self.object)
       // set namespace for next frame
-      requestAnimationFrame(function() {
+      requestAnimationFrame(() => {
         let arr = Xt.dataStorage.get(self.namespace, 'xtNamespace')
         arr = arr.filter(x => !x.closest('.xt-ignore')) // filter out ignore
         if (arr.length) {
@@ -221,7 +221,7 @@ class Toggle {
           // initial
           currents++
           // reactivate
-          requestAnimationFrame(function() {
+          requestAnimationFrame(() => {
             // activate
             self.eventOn(element, true)
           })
@@ -239,7 +239,7 @@ class Toggle {
         // initial
         currents++
         // activate
-        requestAnimationFrame(function() {
+        requestAnimationFrame(() => {
           for (let i = start; i < todo; i++) {
             self.eventOn(self.elements[i], true)
           }
@@ -248,7 +248,7 @@ class Toggle {
       // initial
       self.setCurrents([])
       if (saveCurrents) {
-        requestAnimationFrame(function() {
+        requestAnimationFrame(() => {
           self.initialCurrents = self.getCurrents().slice(0)
         })
       }
@@ -264,7 +264,7 @@ class Toggle {
     // init events
     self.initEvents()
     // listener dispatch
-    requestAnimationFrame(function() {
+    requestAnimationFrame(() => {
       self.object.dispatchEvent(new CustomEvent('init.xt'))
     })
   }
@@ -279,7 +279,7 @@ class Toggle {
     const self = this
     let found = false
     // reset
-    const reset = function(elReset) {
+    const reset = elReset => {
       let isActive = false
       for (const c of self.classes) {
         if (elReset.classList.contains(c)) {
@@ -915,7 +915,7 @@ class Toggle {
       Xt.dataStorage.set(
         self.object,
         'xt' + self.componentNamespace + 'MedialoadedInit' + 'Timeout',
-        setTimeout(function() {
+        setTimeout(() => {
           self.reinit()
         }, Xt.medialoadedDelay)
       )
@@ -1269,7 +1269,7 @@ class Toggle {
         }
       }
       // currentIndex after a frame for sequential events
-      requestAnimationFrame(function() {
+      requestAnimationFrame(() => {
         if (self.getCurrents().length === 0) {
           self.currentIndex = null
         }
@@ -1371,7 +1371,7 @@ class Toggle {
           self.object,
           self.componentNamespace + 'AutostartInterval',
           // interval because can become :visible
-          setInterval(function() {
+          setInterval(() => {
             if (Xt.visible(self.object)) {
               // auto
               if (getComputedStyle(self.object).pointerEvents !== 'none') {
@@ -1386,7 +1386,7 @@ class Toggle {
           }, time)
         )
         // listener dispatch
-        requestAnimationFrame(function() {
+        requestAnimationFrame(() => {
           // @FIX event called before removing classes
           self.object.dispatchEvent(new CustomEvent('autostart.xt'))
         })
@@ -1579,7 +1579,7 @@ class Toggle {
         Xt.dataStorage.set(
           el,
           self.componentNamespace + 'DelayTimeout',
-          setTimeout(function() {
+          setTimeout(() => {
             self.queueDelayDone(actionCurrent, actionOther, obj, el, type)
           }, delay)
         )
@@ -1716,7 +1716,7 @@ class Toggle {
       Xt.dataStorage.set(
         el,
         self.componentNamespace + 'AnimTimeout',
-        setTimeout(function() {
+        setTimeout(() => {
           self.queueAnimDone(actionCurrent, actionOther, obj, el, type)
         }, duration)
       )
@@ -1885,7 +1885,7 @@ class Toggle {
         self.eventAutostart()
       }
       // initial after raf set initial false after on.xt custom listeners
-      requestAnimationFrame(function() {
+      requestAnimationFrame(() => {
         self.initial = false
         self.initialContinue = false
       })
@@ -2145,7 +2145,7 @@ class Toggle {
       Xt.dataStorage.set(
         self.wheel,
         self.componentNamespace + 'WheelsmoothFrame',
-        requestAnimationFrame(function() {
+        requestAnimationFrame(() => {
           self.eventFrictionsmooth(el, min, max)
         })
       )
@@ -2189,7 +2189,7 @@ class Toggle {
       // closeInside
       if (options.closeInside) {
         const closeElements = el.querySelectorAll(options.closeInside)
-        requestAnimationFrame(function() {
+        requestAnimationFrame(() => {
           for (const closeElement of closeElements) {
             const specialcloseinsideHandler = Xt.dataStorage.put(
               closeElement,
@@ -2203,7 +2203,7 @@ class Toggle {
       // closeOutside
       if (options.closeOutside) {
         const closeElements = document.querySelectorAll(options.closeOutside)
-        requestAnimationFrame(function() {
+        requestAnimationFrame(() => {
           for (const closeElement of closeElements) {
             const specialcloseoutsideHandler = Xt.dataStorage.put(
               closeElement,
@@ -2282,7 +2282,7 @@ class Toggle {
           Xt.dataStorage.set(
             el,
             self.componentNamespace + 'CollapseFrame',
-            requestAnimationFrame(function() {
+            requestAnimationFrame(() => {
               el.classList.add('xt-hide', 'trans-anim-none')
               el.style.height = 'auto'
               const h = el.clientHeight + 'px'
@@ -2291,7 +2291,7 @@ class Toggle {
               Xt.dataStorage.set(
                 el,
                 self.componentNamespace + 'CollapseFrame',
-                requestAnimationFrame(function() {
+                requestAnimationFrame(() => {
                   el.classList.remove('xt-hide', 'trans-anim-none')
                   el.style.height = h
                 })
@@ -2304,7 +2304,7 @@ class Toggle {
           Xt.dataStorage.set(
             el,
             self.componentNamespace + 'CollapseFrame',
-            requestAnimationFrame(function() {
+            requestAnimationFrame(() => {
               el.classList.add('xt-hide', 'trans-anim-none')
               el.style.width = 'auto'
               const w = el.clientHeight + 'px'
@@ -2314,7 +2314,7 @@ class Toggle {
                 .set(
                   el,
                   self.componentNamespace + 'CollapseFrame',
-                  requestAnimationFrame(function() {
+                  requestAnimationFrame(() => {
                     el.classList.remove('xt-hide', 'trans-anim-none')
                     el.style.width = w
                   })
@@ -2330,14 +2330,14 @@ class Toggle {
           Xt.dataStorage.set(
             el,
             self.componentNamespace + 'CollapseFrame',
-            requestAnimationFrame(function() {
+            requestAnimationFrame(() => {
               el.classList.remove('xt-hide', 'trans-anim-none')
               el.style.height = h
               cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'))
               Xt.dataStorage.set(
                 el,
                 self.componentNamespace + 'CollapseFrame',
-                requestAnimationFrame(function() {
+                requestAnimationFrame(() => {
                   el.style.height = '0'
                 })
               )
@@ -2350,14 +2350,14 @@ class Toggle {
           Xt.dataStorage.put(
             el,
             self.componentNamespace + 'CollapseFrame',
-            requestAnimationFrame(function() {
+            requestAnimationFrame(() => {
               el.classList.remove('xt-hide', 'trans-anim-none')
               el.style.width = w
               cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'))
               Xt.dataStorage.put(
                 el,
                 self.componentNamespace + 'CollapseFrame',
-                requestAnimationFrame(function() {
+                requestAnimationFrame(() => {
                   el.style.width = '0'
                 })
               )
@@ -2460,7 +2460,7 @@ class Toggle {
             const eWheel = 'onwheel' in backdrop ? 'wheel' : backdrop.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll'
             backdrop.addEventListener(
               eWheel,
-              function(e) {
+              e => {
                 const delta = -e.deltaY || e.wheelDeltaY
                 element.scrollTop -= delta
               },
@@ -2595,7 +2595,7 @@ class Toggle {
       Xt.eventDelay(
         e,
         self.object,
-        function() {
+        () => {
           // handler
           self.eventStatus()
         },
@@ -2657,7 +2657,7 @@ class Toggle {
       Xt.eventDelay(
         e,
         self.object,
-        function() {
+        () => {
           // handler
           self.reinit()
         },
@@ -2844,7 +2844,7 @@ Xt.Toggle = Toggle
 
 Xt.mount.push({
   matches: '[data-' + Xt.Toggle.componentName + ']',
-  mount: function(object) {
+  mount: object => {
     // vars
 
     const optionsMarkup = object.getAttribute('data-' + Xt.Toggle.componentName)
@@ -2856,7 +2856,7 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = function() {
+    const unmount = () => {
       self.destroy()
       self = null
     }

@@ -28,7 +28,7 @@ Smooth.optionsDefault = {
     transform: false,
     horizontal: false,
     factor: 1,
-    friction: function(delta) {
+    friction: delta => {
       return delta / 9
     },
     frictionLimit: 1.5,
@@ -48,7 +48,7 @@ Xt.Smooth = Smooth
 
 Xt.mount.push({
   matches: '[data-' + Xt.Smooth.componentName + ']',
-  mount: function(object) {
+  mount: object => {
     // vars
 
     const optionsMarkup = object.getAttribute('data-' + Xt.Smooth.componentName)
@@ -60,7 +60,7 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = function() {
+    const unmount = () => {
       self.destroy()
       self = null
     }

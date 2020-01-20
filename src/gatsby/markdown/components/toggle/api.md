@@ -73,7 +73,7 @@ document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('o
 Listen to events this way:
 
 ```js
-const eventOn = function(e) {
+const eventOn = (e) => {
   // logic
 }
 
@@ -86,13 +86,13 @@ Listen to events delegation with **useCapture** this way:
 let object = document.querySelector('#my-object')
 let self = Xt.get('xt-toggle', object)
 
-const eventOn = function(e) {
-  const el = e.target
+const eventOn = (e) => {
+  const element = e.target
   // useCapture delegation
-  if (self.elements.includes(el)) {
+  if (self.elements.includes(element)) {
     // logic
   }
-  if (self.targets.includes(tr)) {
+  if (self.targets.includes(element)) {
     // logic
   }
 }

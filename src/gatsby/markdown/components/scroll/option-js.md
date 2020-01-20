@@ -47,7 +47,7 @@ The default **distance** is `distance: '20%'`.
 
 ## Delay
 
-You can use a function for `delayOn` and `delayOff` for example `function(current, total) {return Math.min((total - current) * 150, 300)}`.
+You can use a function for `delayOn` and `delayOff` for example `(current, total) => {return Math.min((total - current) * 150, 300)}`.
 
 <div class="table-scroll">
 

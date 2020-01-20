@@ -12,32 +12,32 @@ gsap.defaults({
   overwrite: 'auto',
 })
 
-gsap.registerEase('easeCheetah', function(progress) {
+gsap.registerEase('easeCheetah', progress => {
   const easing = BezierEasing(0.14, 0.63, 0, 1)
   return easing(progress)
 })
 
-gsap.registerEase('easeTiger', function(progress) {
+gsap.registerEase('easeTiger', progress => {
   const easing = BezierEasing(0.77, 0, 0.17, 1)
   return easing(progress)
 })
 
-gsap.registerEase('easeCat', function(progress) {
+gsap.registerEase('easeCat', progress => {
   const easing = BezierEasing(0.77, 0, 0.17, 1)
   return easing(progress)
 })
 
-gsap.registerEase('easePenguinIn', function(progress) {
+gsap.registerEase('easePenguinIn', progress => {
   const easing = BezierEasing(0.36, 0, 0, 1)
   return easing(progress)
 })
 
-gsap.registerEase('easePenguinOut', function(progress) {
+gsap.registerEase('easePenguinOut', progress => {
   const easing = BezierEasing(1, 0, 0.64, 1)
   return easing(progress)
 })
 
-gsap.registerEase('easePenguinInOut', function(progress) {
+gsap.registerEase('easePenguinInOut', progress => {
   const easing = BezierEasing(0.68, 0.13, 0.25, 1)
   return easing(progress)
 })

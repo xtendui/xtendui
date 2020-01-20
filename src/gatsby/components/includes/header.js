@@ -41,7 +41,13 @@ class Header extends React.Component {
               <Link
                 to="/introduction"
                 className={`btn gatsby_btn-site_header_link ${
-                  page && page.post ? (markdownSlug(page.post) === '/' + 'introduction' ? 'active' : page.post.frontmatter.type === 'Introduction' ? 'current' : '') : ''
+                  page && page.post
+                    ? markdownSlug(page.post) === '/' + 'introduction'
+                      ? 'active'
+                      : page.post.frontmatter.type === 'Introduction'
+                      ? 'current'
+                      : ''
+                    : ''
                 }`}
               >
                 Introduction

@@ -2,7 +2,7 @@ import { Xt } from 'xtend-library'
 
 Xt.mount.push({
   matches: '#overlay-nested-toggle',
-  mount: function(object) {
+  mount: object => {
     // event
 
     function click() {

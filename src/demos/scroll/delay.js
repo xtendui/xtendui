@@ -2,15 +2,15 @@ import { Xt } from 'xtend-library'
 
 Xt.mount.push({
   matches: '.demo--scroll-container--delay',
-  mount: function(object) {
+  mount: object => {
     // init
 
     let self = new Xt.Scroll(object, {
       elements: ':scope > *',
-      delayOn: function(current) {
+      delayOn: current => {
         return Math.min(current * 75, 300)
       },
-      delayOff: function(current, total) {
+      delayOff: (current, total) => {
         return Math.min((total - current) * 75, 300)
       },
       distance: '20%',
@@ -18,7 +18,7 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = function() {
+    const unmount = () => {
       self.destroy()
       self = null
     }

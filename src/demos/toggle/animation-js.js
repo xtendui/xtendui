@@ -5,7 +5,7 @@ import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '.demo--toggle-js',
-  mount: function(object) {
+  mount: object => {
     // init
 
     let self = new Xt.Toggle(object, {
@@ -15,8 +15,8 @@ Xt.mount.push({
 
     // on
 
-    const eventOn = function(e) {
-      const target = this
+    const eventOn = e => {
+      const target = e.target
       gsap.set(target, { opacity: 0 })
       if (!target.classList.contains('inverse')) {
         gsap.set(target, { translateX: -15 })
@@ -32,8 +32,8 @@ Xt.mount.push({
 
     // off
 
-    const eventOff = function(e) {
-      const target = this
+    const eventOff = e => {
+      const target = e.target
       if (!target.classList.contains('inverse')) {
         gsap.to(target, { translateX: 15, opacity: 0, duration: Xt.vars.timeBig, ease: Xt.vars.easeOut })
       } else {
@@ -47,7 +47,7 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = function() {
+    const unmount = () => {
       self.destroy()
       self = null
     }

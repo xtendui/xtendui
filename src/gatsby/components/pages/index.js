@@ -25,7 +25,10 @@ class Page extends React.Component {
           <li>focused on interactions and animations</li>
           <li>focused on working speed, quality and customization</li>
           <li>highly customizzable library for who wants to customize the css without many variables or mixins</li>
-          <li>includes core styles not to be modified and a separate smart theme template for custom styles, easy to use, extensible, intelligible code, contextualized code</li>
+          <li>
+            includes core styles not to be modified and a separate smart theme template for custom styles, easy to use, extensible, intelligible code,
+            contextualized code
+          </li>
           <li>automatic aria attributes</li>
           <li>style real css, not a list of variables</li>
         </ul>

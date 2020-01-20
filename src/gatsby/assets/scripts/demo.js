@@ -14,13 +14,13 @@ Prism.manual = true
  * formatCode
  */
 
-const formatCode = function(source) {
+const formatCode = source => {
   let text = source.innerHTML
   // replace
   const lang = source.getAttribute('data-lang')
   // search html tags
   var re = /<[^>]*>/g
-  text = text.replace(re, function(match, g1, g2) {
+  text = text.replace(re, (match, g1, g2) => {
     // replace quote entities
     match = match.replace(/&quot;/g, '"')
     // replace entities
@@ -53,7 +53,7 @@ const formatCode = function(source) {
  * populateBlock
  */
 
-const populateBlock = function() {
+const populateBlock = () => {
   for (const el of document.querySelectorAll('script[type="text/plain"][class*="language-"]')) {
     const language = el.getAttribute('class')
     el.after(Xt.createElement('<pre class="' + language + '"><code class="' + language + '">' + el.innerHTML + '</code></pre>'))
@@ -66,11 +66,11 @@ const populateBlock = function() {
   }
   // overlay fullscreen
   for (const el of document.querySelectorAll('[data-gatsby-listing-toggle]')) {
-    el.addEventListener('click', function() {
+    el.addEventListener('click', () => {
       makeFullscreen(el.nextSibling)
     })
   }
-  document.querySelector('#gatbsy_open-full').addEventListener('offdone.xt', function(e) {
+  document.querySelector('#gatbsy_open-full').addEventListener('offdone.xt', e => {
     const content = document.querySelector('#gatbsy_open-full-content')
     // toggles
     const listingToggles = document.querySelectorAll('[data-gatsby-listing-toggle]')
@@ -99,7 +99,7 @@ const populateBlock = function() {
     moving.classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
     appendOrigin.before(moving)
     // @FIX demo fullscreen
-    requestAnimationFrame(function() {
+    requestAnimationFrame(() => {
       const current = appendOrigin.previousSibling.querySelector('.gatsby_demo_item.active')
       // triggering e.detail.container
       dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: current } }))
@@ -109,9 +109,9 @@ const populateBlock = function() {
     window.history.pushState('', '/', window.location.pathname)
   })
   // trigger fullscreen or change tabs
-  document.querySelector('#gatbsy_open-full').addEventListener('ondone.xt', function(e) {
+  document.querySelector('#gatbsy_open-full').addEventListener('ondone.xt', e => {
     // @FIX demo fullscreen
-    requestAnimationFrame(function() {
+    requestAnimationFrame(() => {
       const content = document.querySelector('#gatbsy_open-full-content')
       const current = content.querySelector('.gatsby_demo_item.active')
       // triggering e.detail.container
@@ -124,7 +124,7 @@ const populateBlock = function() {
  * populateDemo
  */
 
-const populateDemo = function(container, i) {
+const populateDemo = (container, i) => {
   const items = container.querySelectorAll('.gatsby_demo_item')
   // multiple elements
   container.prepend(Xt.createElement('<div class="gatsby_demo_tabs"><div class="gatsby_demo_tabs_left"></div><div class="gatsby_demo_tabs_right"></div></div>'))
@@ -185,15 +185,15 @@ const populateDemo = function(container, i) {
     )
     // https://github.com/zenorocha/clipboard.js/
     const clipboard = new ClipboardJS('.btn-clipboard', {
-      target: function(trigger) {
+      target: trigger => {
         return trigger.closest('.gatsby_demo').querySelector('.gatsby_demo_item.active .gatsby_demo_code_body_item.active .hljs')
       },
     })
-    clipboard.on('success', function(e) {
+    clipboard.on('success', e => {
       e.clearSelection()
       // $(e.trigger).attr('data-original-title', 'Done').tooltip('show')
     })
-    clipboard.on('error', function(e) {
+    clipboard.on('error', e => {
       // $(e.trigger).attr('data-original-title', 'Error: copy manually').tooltip('show')
     })
     // inject iframe
@@ -208,7 +208,7 @@ const populateDemo = function(container, i) {
       if (getComputedStyle(sourceTo).display === 'inline-flex') {
         container.dataset.isFullscreenOnly = 'true'
       } else {
-        requestAnimationFrame(function() {
+        requestAnimationFrame(() => {
           // @FIX multiple initializations
           sourceTo.innerHTML = item.querySelector('script[type="text/plain"]').innerHTML
           // .gatsby_demo-cols
@@ -228,14 +228,14 @@ const populateDemo = function(container, i) {
   }
   // makeFullscreen
   for (const btnOpenFull of container.querySelectorAll('.btn-open-full')) {
-    btnOpenFull.addEventListener('click', function() {
+    btnOpenFull.addEventListener('click', () => {
       makeFullscreen(container)
     })
-    requestAnimationFrame(function() {
+    requestAnimationFrame(() => {
       if (btnOpenFull.classList.contains('active')) {
         btnOpenFull.classList.remove('active')
         // @FIX demo fullscreen
-        setTimeout(function() {
+        setTimeout(() => {
           makeFullscreen(container)
         }, 3000)
       }
@@ -258,12 +258,13 @@ const populateDemo = function(container, i) {
     min: 1,
   })
   for (const item of items) {
-    // trigger fullscreen or change tabs
-    item.addEventListener('on.xt', function(e) {
-      // @FIX demo fullscreen
+    // @FIX demo fullscreen
+    item.addEventListener('on.xt', e => {
       if (!self.initial) {
         // triggering e.detail.container
-        dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: item.querySelector('.gatsby_demo_source') } }))
+        requestAnimationFrame(() => {
+          dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: item.querySelector('.gatsby_demo_source') } }))
+        })
       }
       if (document.querySelector('#gatbsy_open-full-trigger').classList.contains('active')) {
         // set hash
@@ -291,14 +292,15 @@ const populateDemo = function(container, i) {
     container.querySelector('.btn-next-demo').classList.add('display-none')
   }
   // .btn-prev-demo
-  container.querySelector('.btn-prev-demo').addEventListener('click', function() {
+  container.querySelector('.btn-prev-demo').addEventListener('click', e => {
+    const element = e.currentTarget
     let self = Xt.get('xt-toggle', container)
     if (self.currentIndex > 0) {
       self.goToPrev()
     } else {
       if (!listingToggles.length) {
         for (let i = 0; i < demos.length; i++) {
-          if (demos[i].contains(this)) {
+          if (demos[i].contains(element)) {
             let prev = i - 1
             prev = prev >= 0 ? prev : demos.length - 1
             let currentOffset
@@ -309,7 +311,7 @@ const populateDemo = function(container, i) {
               document.querySelector('#gatbsy_open-full-trigger').dispatchEvent(new CustomEvent('off.trigger.xt'))
               makeFullscreen(demos[prev].closest('.gatsby_demo'))
             } else {
-              currentOffset = this.closest('.gatsby_demo').offsetTop
+              currentOffset = element.closest('.gatsby_demo').offsetTop
             }
             document.scrollingElement.scrollTo(0, document.scrollingElement.scrollTop - currentOffset + prevOffset)
           }
@@ -328,14 +330,15 @@ const populateDemo = function(container, i) {
     }
   })
   // .btn-next-demo
-  container.querySelector('.btn-next-demo').addEventListener('click', function() {
+  container.querySelector('.btn-next-demo').addEventListener('click', e => {
+    const element = e.currentTarget
     let self = Xt.get('xt-toggle', container)
     if (self.currentIndex < self.getGroups().length - 1) {
       self.goToNext()
     } else {
       if (!listingToggles.length) {
         for (let i = 0; i < demos.length; i++) {
-          if (demos[i].contains(this)) {
+          if (demos[i].contains(element)) {
             let next = i + 1
             next = next < demos.length ? next : 0
             let currentOffset
@@ -346,7 +349,7 @@ const populateDemo = function(container, i) {
               document.querySelector('#gatbsy_open-full-trigger').dispatchEvent(new CustomEvent('off.trigger.xt'))
               makeFullscreen(demos[next].closest('.gatsby_demo'))
             } else {
-              currentOffset = this.closest('.gatsby_demo').offsetTop
+              currentOffset = element.closest('.gatsby_demo').offsetTop
             }
             document.scrollingElement.scrollTo(0, document.scrollingElement.scrollTop - currentOffset + nextOffset)
           }
@@ -370,7 +373,7 @@ const populateDemo = function(container, i) {
  * makeFullscreen
  */
 
-const makeFullscreen = function(container) {
+const makeFullscreen = container => {
   const toggle = document.querySelector('#gatbsy_open-full-trigger')
   const content = document.querySelector('#gatbsy_open-full-content')
   // toggles
@@ -383,7 +386,7 @@ const makeFullscreen = function(container) {
   for (const item of items) {
     const sourceTo = item.querySelector('.gatsby_demo_source_populate')
     // populate source
-    requestAnimationFrame(function() {
+    requestAnimationFrame(() => {
       // requestAnimationFrame fixes errors
       if (sourceTo && container.dataset.isFullscreenOnly) {
         sourceTo.innerHTML = item.querySelector('script[type="text/plain"]').innerHTML
@@ -391,7 +394,7 @@ const makeFullscreen = function(container) {
     })
   }
   toggle.dispatchEvent(new CustomEvent('on.trigger.xt'))
-  toggle.addEventListener('init.xt', function(e) {
+  toggle.addEventListener('init.xt', e => {
     toggle.dispatchEvent(new CustomEvent('on.trigger.xt'))
   })
   // move code block
@@ -421,7 +424,7 @@ const makeFullscreen = function(container) {
  * Iframe
  */
 
-const initializeIframe = function(container, item) {
+const initializeIframe = (container, item) => {
   if (item.getAttribute('data-iframe') && !item.classList.contains('populated-iframe')) {
     container.dataset.isFullscreenOnly = 'true'
     item.classList.add('populated-iframe')
@@ -444,14 +447,14 @@ const initializeIframe = function(container, item) {
     // load
     if (!item.dataset.iframeLoadEvents) {
       item.dataset.iframeLoadEvents = 'true'
-      item.addEventListener('ondone.xt', function(e) {
+      item.addEventListener('ondone.xt', e => {
         if (!item.dataset.iframeLoadCall) {
           item.dataset.iframeLoadCall = 'true'
           const iframe = item.querySelector('iframe')
           loadIframe(iframe)
         }
       })
-      item.addEventListener('offdone.xt', function(e) {
+      item.addEventListener('offdone.xt', e => {
         if (item.dataset.iframeLoadCall) {
           delete item.dataset.iframeLoadCall
           const iframe = item.querySelector('iframe')
@@ -463,16 +466,16 @@ const initializeIframe = function(container, item) {
   }
 }
 
-const loadIframe = function(iframe) {
+const loadIframe = iframe => {
   iframe.setAttribute('src', iframe.getAttribute('data-src'))
 }
 
-const unloadIframe = function(iframe) {
+const unloadIframe = iframe => {
   iframe.removeAttribute('src')
 }
 
 if (typeof window !== 'undefined') {
-  window.initIframe = function(name, htmlSource, jsxSource, cssSource, jsSource) {
+  window.initIframe = (name, htmlSource, jsxSource, cssSource, jsSource) => {
     const src = 'iframe[name="' + name + '"]'
     const iframes = document.querySelectorAll(src)
     for (const iframe of iframes) {
@@ -481,7 +484,7 @@ if (typeof window !== 'undefined') {
       item.classList.add('loaded')
     }
   }
-  window.resizeIframe = function(name) {
+  window.resizeIframe = name => {
     const src = 'iframe[name="' + name + '"]'
     const iframes = document.querySelectorAll(src)
     for (const iframe of iframes) {
@@ -510,7 +513,7 @@ if (typeof window !== 'undefined') {
   }
 }
 
-const populateIframe = function(item, iframe, htmlSource, jsxSource, cssSource, jsSource) {
+const populateIframe = (item, iframe, htmlSource, jsxSource, cssSource, jsSource) => {
   if (!item.classList.contains('populated')) {
     item.classList.add('populated')
     // inject code
@@ -544,7 +547,7 @@ const populateIframe = function(item, iframe, htmlSource, jsxSource, cssSource, 
  * inline
  */
 
-const populateInline = function(item) {
+const populateInline = item => {
   if (!item.classList.contains('populated')) {
     item.classList.add('populated')
     const els = item.querySelectorAll('[data-lang]')
@@ -566,7 +569,7 @@ const populateInline = function(item) {
  * sources
  */
 
-const populateSources = function(item, element, z) {
+const populateSources = (item, element, z) => {
   let lang = element.getAttribute('data-lang')
   // set text
   if (lang === 'language-markup') {

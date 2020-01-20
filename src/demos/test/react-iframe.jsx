@@ -3,11 +3,7 @@ const spinner = require('components/snippets/spinner').default
 
 class Component extends React.Component {
   render() {
-    return (
-      <div>
-        React Iframe
-      </div>
-    )
+    return <div>React Iframe</div>
   }
 }
 

@@ -2,10 +2,10 @@ import { Xt } from 'xtend-library'
 
 Xt.mount.push({
   matches: '.jump-to-content',
-  mount: function(object) {
+  mount: object => {
     // event
 
-    const documentFocusin = function(e) {
+    const documentFocusin = e => {
       const active = object.contains(e.target)
       if (active) {
         object.classList.remove('sr-only')
@@ -13,7 +13,7 @@ Xt.mount.push({
         Xt.animTimeoutClear(object)
       } else {
         object.classList.remove('active')
-        Xt.animTimeout(object, function() {
+        Xt.animTimeout(object, () => {
           object.classList.add('sr-only')
         })
       }
@@ -23,7 +23,7 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = function() {
+    const unmount = () => {
       document.removeEventListener('focusin', documentFocusin)
     }
     return unmount

@@ -1,7 +1,7 @@
 const scrollContainerBlock = document.querySelectorAll('.demo--scroll-container-block > *')
 
 if (scrollContainerBlock.length) {
-  setTimeout(function() {
+  setTimeout(() => {
     // after 2 seconds
     for (const el of scrollContainerBlock) {
       el.classList.add('scroll-block')

@@ -32,15 +32,15 @@ if (typeof window !== 'undefined') {
    * ready
    * @param {Function} fnc Function to execute on dom ready
    */
-  Xt.ready = function(fnc) {
+  Xt.ready = fnc => {
     if (document.readyState === 'complete') {
-      requestAnimationFrame(function() {
+      requestAnimationFrame(() => {
         fnc()
       })
     } else {
-      document.addEventListener('readystatechange', function() {
+      document.addEventListener('readystatechange', () => {
         if (document.readyState === 'complete') {
-          requestAnimationFrame(function() {
+          requestAnimationFrame(() => {
             fnc()
           })
         }
@@ -51,7 +51,7 @@ if (typeof window !== 'undefined') {
   /**
    * init
    */
-  Xt.ready(function() {
+  Xt.ready(() => {
     Xt.stickyIndex = 500
     Xt.setScrollbarWidth()
     Xt.windowHeightSet()
@@ -72,7 +72,7 @@ if (typeof window !== 'undefined') {
   /**
    * observer
    */
-  Xt.observer = new MutationObserver(function(mutationsList) {
+  Xt.observer = new MutationObserver(mutationsList => {
     for (const mutation of mutationsList) {
       if (mutation.type === 'childList') {
         // added
@@ -95,7 +95,7 @@ if (typeof window !== 'undefined') {
    * mountCheck
    * @param {Node|HTMLElement|EventTarget|Window} added
    */
-  Xt.mountCheck = function(added = document.documentElement) {
+  Xt.mountCheck = (added = document.documentElement) => {
     const addedIgnore = added.closest('.xt-ignore')
     if (addedIgnore) {
       Xt.ignoreOnce(addedIgnore) // @FIX ignore once for mount when moving
@@ -119,15 +119,15 @@ if (typeof window !== 'undefined') {
             continue
           }
           // call
-          requestAnimationFrame(function() {
+          requestAnimationFrame(() => {
             // @FIX react when componentDidMount
             const destroy = obj.mount(el, i, obj.matches) // object, index, matches
             if (destroy) {
               Xt.unmount.push({
                 object: el,
                 unmount: destroy,
-                unmountRemove: function() {
-                  Xt.unmount.filter(function(x) {
+                unmountRemove: () => {
+                  Xt.unmount.filter(x => {
                     return x.object !== el
                   })
                 },
@@ -143,7 +143,7 @@ if (typeof window !== 'undefined') {
    * unmountCheck
    * @param {Node|HTMLElement|EventTarget|Window} removed
    */
-  Xt.unmountCheck = function(removed = document.documentElement) {
+  Xt.unmountCheck = (removed = document.documentElement) => {
     if (removed.closest('.xt-ignore')) {
       return
     }
@@ -170,7 +170,7 @@ if (typeof window !== 'undefined') {
    * @param {Node|HTMLElement|EventTarget|Window} element Component's element
    * @param {Object} self Component' self
    */
-  Xt.set = function(name, element, self) {
+  Xt.set = (name, element, self) => {
     Xt.dataStorage.set(element, name, self)
   }
 
@@ -179,7 +179,7 @@ if (typeof window !== 'undefined') {
    * @param {String} name Component name
    * @param {Node|HTMLElement|EventTarget|Window} element Component's element
    */
-  Xt.get = function(name, element) {
+  Xt.get = (name, element) => {
     return Xt.dataStorage.get(element, name)
   }
 
@@ -188,7 +188,7 @@ if (typeof window !== 'undefined') {
    * @param {String} name Component name
    * @param {Node|HTMLElement|EventTarget|Window} element Component's element
    */
-  Xt.remove = function(name, element) {
+  Xt.remove = (name, element) => {
     return Xt.dataStorage.remove(element, name)
   }
 
@@ -197,7 +197,7 @@ if (typeof window !== 'undefined') {
    * @param {Object} self Component self
    * @param {Function} fnc Component init
    */
-  Xt.destroyAndInit = function(self) {
+  Xt.destroyAndInit = self => {
     // @FIX multiple initializations
     const old = Xt.get(self.componentName, self.object)
     if (old) {
@@ -227,13 +227,13 @@ if (typeof window !== 'undefined') {
      * @param {*} obj
      * @returns {*}
      */
-    set: function(el, key, obj) {
+    set: (el, key, obj) => {
       // new map if not already there
-      if (!this._storage.has(el)) {
-        this._storage.set(el, new Map())
+      if (!Xt.dataStorage._storage.has(el)) {
+        Xt.dataStorage._storage.set(el, new Map())
       }
       // set
-      const getEl = this._storage.get(el)
+      const getEl = Xt.dataStorage._storage.get(el)
       getEl.set(key, obj)
       // return
       return getEl.get(key)
@@ -246,13 +246,13 @@ if (typeof window !== 'undefined') {
      * @param {*} obj
      * @returns {*}
      */
-    put: function(el, key, obj) {
+    put: (el, key, obj) => {
       // new map if not already there
-      if (!this._storage.has(el)) {
-        this._storage.set(el, new Map())
+      if (!Xt.dataStorage._storage.has(el)) {
+        Xt.dataStorage._storage.set(el, new Map())
       }
       // return if already set
-      const getEl = this._storage.get(el)
+      const getEl = Xt.dataStorage._storage.get(el)
       const getKey = getEl.get(key)
       if (getKey) {
         return getKey
@@ -269,8 +269,8 @@ if (typeof window !== 'undefined') {
      * @param {String} key
      * @returns {*}
      */
-    get: function(el, key) {
-      const getEl = this._storage.get(el)
+    get: (el, key) => {
+      const getEl = Xt.dataStorage._storage.get(el)
       // null if empty
       if (!getEl) {
         return null
@@ -284,8 +284,8 @@ if (typeof window !== 'undefined') {
      * @param {Node|HTMLElement|EventTarget|Window} el
      * @returns {*}
      */
-    getAll: function(el) {
-      const getEl = this._storage.get(el)
+    getAll: el => {
+      const getEl = Xt.dataStorage._storage.get(el)
       // null if empty
       if (!getEl) {
         return null
@@ -300,9 +300,9 @@ if (typeof window !== 'undefined') {
      * @param {String} key
      * @returns {Boolean}
      */
-    has: function(el, key) {
+    has: (el, key) => {
       // return
-      return this._storage.get(el).has(key)
+      return Xt.dataStorage._storage.get(el).has(key)
     },
 
     /**
@@ -311,8 +311,8 @@ if (typeof window !== 'undefined') {
      * @param {String} key
      * @returns {Boolean}
      */
-    remove: function(el, key) {
-      const getEl = this._storage.get(el)
+    remove: (el, key) => {
+      const getEl = Xt.dataStorage._storage.get(el)
       // null if empty
       if (!getEl) {
         return null
@@ -321,7 +321,7 @@ if (typeof window !== 'undefined') {
       const ret = getEl.delete(key)
       // remove storage if empty
       if (getEl.size === false) {
-        this._storage.delete(el)
+        Xt.dataStorage._storage.delete(el)
       }
       // return
       return ret
@@ -343,7 +343,7 @@ if (typeof window !== 'undefined') {
      * get scrollbar currents
      * @returns {Array} Currents
      */
-    get: function() {
+    get: () => {
       return Xt.scrollbar.currents
     },
 
@@ -351,7 +351,7 @@ if (typeof window !== 'undefined') {
      * add scrollbar currents
      * @param {Node|HTMLElement|EventTarget|Window} el Elements to be deactivated
      */
-    add: function(el) {
+    add: el => {
       Xt.scrollbar.currents.push(el)
     },
 
@@ -359,7 +359,7 @@ if (typeof window !== 'undefined') {
      * remove scrollbar currents
      * @param {Node|HTMLElement|EventTarget|Window} el Elements to be deactivated
      */
-    remove: function(el) {
+    remove: el => {
       Xt.scrollbar.currents = Xt.scrollbar.currents.filter(x => x !== el)
     },
   }
@@ -379,7 +379,7 @@ if (typeof window !== 'undefined') {
     /**
      * enable focus change events
      */
-    on: function() {
+    on: () => {
       // event key
       const focusChangeKeyHandler = Xt.dataStorage.put(document, 'keyup/focus', Xt.focus.changeKey)
       document.addEventListener('keyup', focusChangeKeyHandler)
@@ -393,7 +393,7 @@ if (typeof window !== 'undefined') {
     /**
      * disable focus change events
      */
-    off: function() {
+    off: () => {
       // event
       const focusChangeKeyHandler = Xt.dataStorage.get(document, 'keyup/focus')
       document.removeEventListener('keyup', focusChangeKeyHandler)
@@ -408,7 +408,7 @@ if (typeof window !== 'undefined') {
      * focus change on key events
      * @param {Event} e Event
      */
-    changeKey: function(e) {
+    changeKey: e => {
       const code = e.keyCode ? e.keyCode : e.which
       if (code === 9) {
         if (!Xt.focus.block) {
@@ -428,7 +428,7 @@ if (typeof window !== 'undefined') {
      * focus change on other events
      * @param {Event} e Event
      */
-    changeOther: function(e) {
+    changeOther: e => {
       if (!Xt.focus.block) {
         // remember Xt.focus
         Xt.focus.current = e.target
@@ -442,7 +442,7 @@ if (typeof window !== 'undefined') {
     },
   }
 
-  requestAnimationFrame(function() {
+  requestAnimationFrame(() => {
     Xt.focus.on()
   })
 
@@ -456,7 +456,7 @@ if (typeof window !== 'undefined') {
      * activate focusLimit to an element
      * @param {Node|HTMLElement|EventTarget|Window} el Element
      */
-    on: function(el) {
+    on: el => {
       Xt.focus.block = true
       el.focus()
       // @FIX Xt.focus when clicking and not used tab before
@@ -475,7 +475,7 @@ if (typeof window !== 'undefined') {
     /**
      * deactivate focusLimit to an element
      */
-    off: function() {
+    off: () => {
       Xt.focus.block = false
       Xt.focus.current.focus()
       // event
@@ -487,7 +487,7 @@ if (typeof window !== 'undefined') {
      * limit even on focus when activated
      * @param {Event} e Event
      */
-    limit: function(e) {
+    limit: e => {
       const code = e.keyCode ? e.keyCode : e.which
       if (code === 9) {
         if (!Xt.focusLimit.focusables.includes(document.activeElement)) {
@@ -508,7 +508,7 @@ if (typeof window !== 'undefined') {
   // util to friction values
   //
 
-  Xt.friction = function(el, obj) {
+  Xt.friction = (el, obj) => {
     let xCurrent = Xt.getTranslate(el)[0]
     let yCurrent = Xt.getTranslate(el)[1]
     let xDist = obj.x - xCurrent
@@ -518,7 +518,7 @@ if (typeof window !== 'undefined') {
     if (obj.friction === false) {
       fncFriction = false
     } else if (obj.friction === undefined) {
-      fncFriction = function(delta) {
+      fncFriction = delta => {
         return delta / 9
       }
     } else {
@@ -528,7 +528,7 @@ if (typeof window !== 'undefined') {
       xCurrent += fncFriction(Math.abs(xDist)) * Math.sign(xDist)
       yCurrent += fncFriction(Math.abs(yDist)) * Math.sign(yDist)
       // set
-      requestAnimationFrame(function() {
+      requestAnimationFrame(() => {
         el.style.transform = 'translateX(' + xCurrent + 'px) translateY(' + yCurrent + 'px)'
       })
     } else {
@@ -547,7 +547,7 @@ if (typeof window !== 'undefined') {
         Xt.dataStorage.set(
           el,
           'xtFrictionFrame',
-          requestAnimationFrame(function() {
+          requestAnimationFrame(() => {
             Xt.friction(el, obj)
           })
         )
@@ -570,7 +570,7 @@ if (typeof window !== 'undefined') {
   Xt.getTranslate(el)[1]; // for translateY
   */
 
-  Xt.getTranslate = function(element) {
+  Xt.getTranslate = element => {
     const transArr = []
     const style = getComputedStyle(element)
     const transform = style.transform
@@ -591,7 +591,7 @@ if (typeof window !== 'undefined') {
    * @param {Node|HTMLElement|EventTarget|Window} target Element to check if contained
    * @return {Boolean}
    */
-  Xt.contains = function(elements, target) {
+  Xt.contains = (elements, target) => {
     let result = false
     for (const el of elements) {
       if (el.contains(target)) {
@@ -605,7 +605,7 @@ if (typeof window !== 'undefined') {
    * Get unique id
    * @returns {String} Unique id
    */
-  Xt.getuniqueId = function() {
+  Xt.getuniqueId = () => {
     Xt.uid = Xt.uid !== undefined ? Xt.uid : 0
     return 'xt-' + Xt.uid++
   }
@@ -614,7 +614,7 @@ if (typeof window !== 'undefined') {
    * Get unique number
    * @returns {Number} Unique number
    */
-  Xt.getStickyIndex = function() {
+  Xt.getStickyIndex = () => {
     return Xt.stickyIndex--
   }
 
@@ -623,7 +623,7 @@ if (typeof window !== 'undefined') {
    * @param {Array} arr Array of objects to merge
    * @returns {Object} Merged object
    */
-  Xt.merge = function(arr) {
+  Xt.merge = arr => {
     const final = {}
     for (const obj of arr) {
       if (obj) {
@@ -651,7 +651,7 @@ if (typeof window !== 'undefined') {
    * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} el
    * @returns {NodeList|Array}
    */
-  Xt.arrSingle = function(el) {
+  Xt.arrSingle = el => {
     if (!el) {
       return []
     }
@@ -669,7 +669,7 @@ if (typeof window !== 'undefined') {
    * @param {String} str Html string (only 1 root html tag)
    * @return {Node} HTML elements
    */
-  Xt.createElement = function(str) {
+  Xt.createElement = str => {
     const div = document.createElement('div')
     div.innerHTML = str.trim()
     return div.firstChild
@@ -679,7 +679,7 @@ if (typeof window !== 'undefined') {
    * Set scrollbar width of document
    * @param {Boolean} force Force recalc
    */
-  Xt.setScrollbarWidth = function(force = false) {
+  Xt.setScrollbarWidth = (force = false) => {
     if (Xt.scrollbarWidth === undefined) {
       const scrollbarWidthHandler = Xt.dataStorage.put(window, 'resize/scrollbar', Xt.setScrollbarWidth.bind(this, true))
       addEventListener('resize', scrollbarWidthHandler)
@@ -713,7 +713,7 @@ if (typeof window !== 'undefined') {
    * @param {Number|String} width
    * @returns {String} Value in px
    */
-  Xt.normalizeWidth = function(width) {
+  Xt.normalizeWidth = width => {
     width = parseFloat(width)
     if (width + Xt.scrollbarWidth >= window.innerWidth) {
       width = ''
@@ -727,7 +727,7 @@ if (typeof window !== 'undefined') {
    * fix scrollbar spacing when changing overflow adding padding
    * @param {Array|Node|HTMLElement|EventTarget|Window} container
    */
-  Xt.scrollbarSpaceOn = function(container) {
+  Xt.scrollbarSpaceOn = container => {
     const width = Xt.scrollbarWidth
     container.style.paddingRight = width + 'px'
     // backdrop
@@ -753,9 +753,9 @@ if (typeof window !== 'undefined') {
         val = old !== '' ? val - parseFloat(old) : val
         const str = 'calc(' + val + 'px + ' + width + 'px)'
         element.classList.add('transition-none')
-        requestAnimationFrame(function() {
+        requestAnimationFrame(() => {
           element.style[prop] = str
-          requestAnimationFrame(function() {
+          requestAnimationFrame(() => {
             element.classList.remove('transition-none')
           })
         })
@@ -767,7 +767,7 @@ if (typeof window !== 'undefined') {
    * fix scrollbar spacing when changing overflow adding padding
    * @param {Array|Node|HTMLElement|EventTarget|Window} container
    */
-  Xt.scrollbarSpaceOff = function(container) {
+  Xt.scrollbarSpaceOff = container => {
     container.style.paddingRight = ''
     // backdrop
     const backdrops = container.querySelectorAll('.backdrop')
@@ -778,10 +778,10 @@ if (typeof window !== 'undefined') {
     const elements = container.querySelectorAll('.xt-fixed')
     for (const element of elements) {
       element.classList.add('transition-none')
-      requestAnimationFrame(function() {
+      requestAnimationFrame(() => {
         element.style.right = ''
         element.style.paddingRight = ''
-        requestAnimationFrame(function() {
+        requestAnimationFrame(() => {
           element.classList.remove('transition-none')
         })
       })
@@ -792,11 +792,11 @@ if (typeof window !== 'undefined') {
    * ignoreOnce
    * @param {Node|HTMLElement|EventTarget|Window} el
    */
-  Xt.ignoreOnce = function(el) {
+  Xt.ignoreOnce = el => {
     if (el.classList.contains('xt-ignore-once')) {
-      requestAnimationFrame(function() {
+      requestAnimationFrame(() => {
         // @FIX react when componentDidMount
-        requestAnimationFrame(function() {
+        requestAnimationFrame(() => {
           // @FIX react when componentDidMount
           el.classList.remove('xt-ignore', 'xt-ignore-once')
         })
@@ -810,7 +810,7 @@ if (typeof window !== 'undefined') {
    * @param {Number} timing Force duration in milliseconds
    * @returns {Number} Time in milliseconds
    */
-  Xt.animTime = function(el, timing = null) {
+  Xt.animTime = (el, timing = null) => {
     if (timing || timing === 0) {
       return timing
     } else {
@@ -830,7 +830,7 @@ if (typeof window !== 'undefined') {
    * @param {Function} func Function to execute after transition or animation
    * @param {String} suffix Timeout suffix
    */
-  Xt.animTimeout = function(el, func, suffix = '') {
+  Xt.animTimeout = (el, func, suffix = '') => {
     clearTimeout(Xt.dataStorage.get(el, 'xtAnimTimeout' + suffix))
     Xt.dataStorage.set(el, 'xtAnimTimeout' + suffix, setTimeout(func, Xt.animTime(el)))
   }
@@ -840,7 +840,7 @@ if (typeof window !== 'undefined') {
    * @param {Node|HTMLElement|EventTarget|Window} el Element animating
    * @param {String} suffix Timeout suffix
    */
-  Xt.animTimeoutClear = function(el, suffix = '') {
+  Xt.animTimeoutClear = (el, suffix = '') => {
     clearTimeout(Xt.dataStorage.get(el, 'xtAnimTimeout' + suffix))
   }
 
@@ -849,7 +849,7 @@ if (typeof window !== 'undefined') {
    * @param {Number|String} num Number to check
    * @returns {Number}
    */
-  Xt.windowPercent = function(num) {
+  Xt.windowPercent = num => {
     if (typeof num === 'string' || num instanceof String) {
       if (num.indexOf('%') !== -1) {
         num = (Xt.windowHeight * parseFloat(num)) / 100
@@ -864,7 +864,7 @@ if (typeof window !== 'undefined') {
    * @param {String} query Query for querySelectorAll
    * @returns {Array}
    */
-  Xt.queryAll = function(element, query) {
+  Xt.queryAll = (element, query) => {
     if (!query) {
       return []
     }
@@ -886,7 +886,7 @@ if (typeof window !== 'undefined') {
    * @param {Node|HTMLElement|EventTarget|Window} el Element animating
    * @returns {Boolean}
    */
-  Xt.visible = function(el) {
+  Xt.visible = el => {
     return !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length)
   }
 
@@ -898,7 +898,7 @@ if (typeof window !== 'undefined') {
    * @param {String} prefix Timeout prefix
    * @param {Boolean} instant If instant
    */
-  Xt.eventDelay = function(e, element, func, prefix = '', instant = false) {
+  Xt.eventDelay = (e, element, func, prefix = '', instant = false) => {
     const container = document.documentElement
     if (e && e.type && (e.type === 'resize' || e.type === 'scroll')) {
       const delay = e.detail !== undefined && e.detail.delay !== undefined ? e.detail.delay : instant ? 0 : Xt[e.type + 'Delay']
@@ -916,7 +916,7 @@ if (typeof window !== 'undefined') {
         Xt.dataStorage.set(
           container,
           'xtEventDelayFrame',
-          requestAnimationFrame(function() {
+          requestAnimationFrame(() => {
             Xt.dataStorage.set(container, 'xtEventDelay', window.innerWidth)
           })
         )
@@ -930,7 +930,7 @@ if (typeof window !== 'undefined') {
         Xt.dataStorage.set(
           element,
           'xt' + e.type + prefix + 'Timeout',
-          setTimeout(function() {
+          setTimeout(() => {
             // func
             func(e)
           }, delay)
@@ -968,7 +968,7 @@ if (typeof window !== 'undefined') {
     ease: Xt.vars.easeLinear,
   })
   */
-  Xt.animCss = function(element, properties) {
+  Xt.animCss = (element, properties) => {
     let isInitial = false
     // save style
     let style = Xt.dataStorage.get(element, 'xtAnimCssStyle')
@@ -1003,11 +1003,11 @@ if (typeof window !== 'undefined') {
    * vindow height value only on width resize to fix mobile window height changes
    */
 
-  addEventListener('resize', function(e) {
+  addEventListener('resize', e => {
     Xt.eventDelay(
       e,
       document.documentElement,
-      function() {
+      () => {
         Xt.windowHeightSet()
       },
       'xtWindowHeight' + 'Resize',
@@ -1015,7 +1015,7 @@ if (typeof window !== 'undefined') {
     )
   })
 
-  Xt.windowHeightSet = function() {
+  Xt.windowHeightSet = () => {
     Xt.windowHeight = window.innerHeight
     /* https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
      * height: 100vh;

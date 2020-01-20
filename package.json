@@ -22,6 +22,7 @@
     "release": "npx semantic-release --no-ci",
     "release:dry": "npx semantic-release --dry-run",
     "prepare": "webpack --progress --colors",
+    "lint": "eslint src/** --fix",
     "preinstall": "npx npm-force-resolutions"
   },
   "dependencies": {
