@@ -6,6 +6,24 @@ title: "Other"
 date: "2000-10-01"
 ---
 
+## Special
+
+<div class="table-scroll">
+
+|                         | Class                                     | Mixin                         | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.drop-disable`                | `.drop-disable()`        | Disable drop, useful within media queries            |
+| Option                  | `.drop-squared`                | `.drop-squared()`        | No border-radius on drop            |
+| Option                  | `.drop-noborder`                | `.drop-noborder()`        | No border on drop            |
+| Option                  | `.drop-nospace`                | `.drop-nospace()`        | No space on drop            |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/drop/disable">
+  </demovanilla>
+</demo>
+
 ## Link
 
 You can have **element's link** that trigger after toggle. Remember to use `autoDisable: false`.
@@ -46,21 +64,6 @@ If the toggle is on <code>"on": "mouseenter"</code> or <code>"on": "mousehover"<
 
 <demo>
   <demovanilla src="vanilla/components/drop/backdrop">
-  </demovanilla>
-</demo>
-
-## Disable
-
-<div class="table-scroll">
-
-|                         | Class                                     | Mixin                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `.drop-disable`                | `.drop-disable()`        | Disable drop, useful within media queries            |
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/drop/disable">
   </demovanilla>
 </demo>
 

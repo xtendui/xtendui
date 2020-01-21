@@ -15,21 +15,21 @@ Slider automatically disable when not overflowing or by adding manually `.slider
   </demovanilla>
 </demo>
 
-## Expand
-
-To disable and expand a slider use `.slider.slider-expand` also within media queries.
-
-<demo>
-  <demovanilla src="vanilla/components/slider/expand">
-  </demovanilla>
-</demo>
-
 ## Disable
 
 To disable slider use `.slider.slider-disable` also within media queries.
 
 <demo>
   <demovanilla src="vanilla/components/slider/disable">
+  </demovanilla>
+</demo>
+
+## Expand
+
+To disable and expand a slider use `.slider.slider-expand` also within media queries.
+
+<demo>
+  <demovanilla src="vanilla/components/slider/expand">
   </demovanilla>
 </demo>
 
