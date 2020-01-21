@@ -12,9 +12,9 @@
 }
 
 .link-none() {
-  text-decoration: none;
+  text-decoration: none !important;
   &:hover, &.hover, &:active, &.active {
-    text-decoration: none;
+    text-decoration: none !important;
   }
 }
 
@@ -47,7 +47,7 @@ a, .btn-link {
 
 .text-inverse {
   // link color
-  a:not(.btn), .btn-link {
+  a, .btn-link {
     color: @text-inverse;
     text-decoration: underline;
     &:hover, &.hover, &:active, &.active {
