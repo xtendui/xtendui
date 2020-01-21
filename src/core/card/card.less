@@ -20,13 +20,6 @@
     border-style: solid;
     border-color: transparent;
   }
-  .card-title {
-    .spacing-small();
-    .font-sans-semibold();
-    line-height: 1.2;
-    letter-spacing: 0;
-    text-transform: none;
-  }
   .card-contents({
     > .card-item {
       & + .card-item {
@@ -220,7 +213,8 @@
   .font-small();
   padding: 1.5rem 2rem;
   .card-title {
-    font-size: 1.7rem;
+    .h4();
+    .spacing-small();
   }
 }
 
@@ -234,7 +228,8 @@
   .font-medium();
   padding: 2rem 2.5rem;
   .card-title {
-    font-size: 2rem;
+    .h3();
+    .spacing-small();
   }
 }
 
@@ -248,7 +243,8 @@
   .font-big();
   padding: 3rem 3.5rem;
   .card-title {
-    font-size: 3rem;
+    .h2();
+    .spacing-small();
   }
 }
 
