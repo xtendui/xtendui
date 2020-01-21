@@ -4,13 +4,6 @@
  * decoration
  */
 
-.link-underline() {
-  text-decoration: underline;
-  &:hover, &.hover, &:active, &.active {
-    text-decoration: underline;
-  }
-}
-
 .link-none() {
   text-decoration: none !important;
   &:hover, &.hover, &:active, &.active {
@@ -23,10 +16,11 @@
  */
 
 a, .btn-link {
-  .link-underline();
   color: @accent;
+  text-decoration: underline;
   &:hover, &.hover, &:active, &.active {
     color: @accent-dark;
+    text-decoration: underline;
   }
 }
 

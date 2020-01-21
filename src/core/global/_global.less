@@ -296,11 +296,8 @@
   .generate-utils(@breakpoint: none) {
     & when (@breakpoint = none) {
       // links
-      .link-underline {
-        .link-underline() !important;
-      }
       .link-none {
-        .link-none() !important;
+        .link-none();
       }
       // various
       .reset-text {

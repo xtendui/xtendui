@@ -14,7 +14,6 @@ Links with the tag `a` are styled with link underline styles. To have a `a` tag 
 
 |                         | Class                                     | Mixin                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `.link-underline`                 | `.link-underline()`        | Apply link underline styles            |
 | Option                  | `.link-none`                 | `.link-none()`        | Remove link underline styles            |
 
 </div>
