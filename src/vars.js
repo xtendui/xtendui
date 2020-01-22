@@ -1,16 +1,19 @@
 import { Xt } from 'xtend-library'
 import gsap from 'gsap'
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin.js'
 import BezierEasing from 'bezier-easing'
 
 //
 // gsap
 //
 
-gsap.globalTimeline.timeScale(1000) // milliseconds instead of seconds
-
 gsap.defaults({
   overwrite: 'auto',
 })
+
+gsap.globalTimeline.timeScale(1000) // milliseconds instead of seconds
+
+gsap.registerPlugin(ScrollToPlugin)
 
 gsap.registerEase('easeCheetah', progress => {
   const easing = BezierEasing(0.14, 0.63, 0, 1)
