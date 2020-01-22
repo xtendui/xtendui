@@ -67,7 +67,11 @@ const vars = {
   easePenguinOut: 'easePenguinOut',
   easePenguinInOut: 'easePenguinInOut',
   easeLinear: 'linear',
+  easeSineIn: 'Sine.easeIn',
+  easeSineOut: 'Sine.easeOut',
   easeSineInOut: 'Sine.easeInOut',
+  easeQuintIn: 'Quint.easeIn',
+  easeQuintOut: 'Quint.easeOut',
   easeQuintInOut: 'Quint.easeInOut',
 }
 
