@@ -43,11 +43,11 @@ Xt.mount.push({
       // others
       for (const tr of self.targets.filter(x => !self.hasCurrent(x))) {
         const img = tr.querySelector('.slide_img_inner')
-        gsap.set(img, { translateX: imgSize * direction - imgSize * ratio * direction, opacity: ratio + 0.5 })
+        gsap.set(img, { x: imgSize * direction - imgSize * ratio * direction, opacity: ratio + 0.5 })
       }
       // img
       const img = target.querySelector('.slide_img_inner')
-      gsap.set(img, { translateX: -imgSize * ratio * direction, opacity: 1 - ratio + 0.5 })
+      gsap.set(img, { x: -imgSize * ratio * direction, opacity: 1 - ratio + 0.5 })
     }
 
     self.dragger.addEventListener('drag.xt', eventDrag)
@@ -58,7 +58,7 @@ Xt.mount.push({
       const target = self.targets.filter(x => self.hasCurrent(x))[0]
       // img
       const img = target.querySelector('.slide_img_inner')
-      gsap.to(img, { translateX: 0, opacity: 1, duration: timeImg, ease: Xt.vars.easeCheetah })
+      gsap.to(img, { x: 0, opacity: 1, duration: timeImg, ease: Xt.vars.easeCheetah })
     }
 
     self.dragger.addEventListener('dragreset.xt', eventDragReset)
@@ -71,10 +71,10 @@ Xt.mount.push({
       if (self.targets.includes(tr)) {
         const img = tr.querySelector('.slide_img_inner')
         if (self.initial) {
-          gsap.set(img, { translateX: 0, opacity: 1, scale: 1 })
+          gsap.set(img, { x: 0, opacity: 1, scale: 1 })
           gsap.to(img, { scale: zoomImg, duration: timeImgZoom, ease: Xt.vars.easeSineInOut, repeat: -1, yoyo: true })
         } else {
-          gsap.to(img, { translateX: 0, opacity: 1, duration: timeImg, ease: Xt.vars.easeCheetah }).eventCallback('onComplete', () => {
+          gsap.to(img, { x: 0, opacity: 1, duration: timeImg, ease: Xt.vars.easeCheetah }).eventCallback('onComplete', () => {
             gsap.to(img, { scale: zoomImg, duration: timeImgZoom, ease: Xt.vars.easeSineInOut, repeat: -1, yoyo: true })
           })
         }
@@ -98,9 +98,9 @@ Xt.mount.push({
         // img
         const img = tr.querySelector('.slide_img_inner')
         gsap
-          .to(img, { translateX: imgSize * direction, opacity: 0.5, scale: 1, duration: timeImg, ease: Xt.vars.easeCheetah })
+          .to(img, { x: imgSize * direction, opacity: 0.5, scale: 1, duration: timeImg, ease: Xt.vars.easeCheetah })
           .eventCallback('onComplete', () => {
-            gsap.set(img, { translateX: 0, opacity: 1 })
+            gsap.set(img, { x: 0, opacity: 1 })
           })
       }
     }

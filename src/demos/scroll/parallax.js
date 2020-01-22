@@ -48,7 +48,7 @@ Xt.mount.push({
 
     const eventChange = e => {
       const el = e.target
-      gsap.set(el, { translateY: 100 * self.detail.ratio, opacity: self.detail.ratioInverse })
+      gsap.set(el, { y: 100 * self.detail.ratio, opacity: self.detail.ratioInverse })
     }
 
     for (const el of self.elements) {

@@ -19,11 +19,11 @@ Xt.mount.push({
       const target = e.target
       gsap.set(target, { opacity: 0 })
       if (!target.classList.contains('inverse')) {
-        gsap.set(target, { translateX: -15 })
+        gsap.set(target, { x: -15 })
       } else {
-        gsap.set(target, { translateX: 15 })
+        gsap.set(target, { x: 15 })
       }
-      gsap.to(target, { translateX: 0, opacity: 1, duration: Xt.vars.timeBig, ease: Xt.vars.easeIn })
+      gsap.to(target, { x: 0, opacity: 1, duration: Xt.vars.timeBig, ease: Xt.vars.easeIn })
     }
 
     for (const tr of self.targets) {
@@ -35,9 +35,9 @@ Xt.mount.push({
     const eventOff = e => {
       const target = e.target
       if (!target.classList.contains('inverse')) {
-        gsap.to(target, { translateX: 15, opacity: 0, duration: Xt.vars.timeBig, ease: Xt.vars.easeOut })
+        gsap.to(target, { x: 15, opacity: 0, duration: Xt.vars.timeBig, ease: Xt.vars.easeOut })
       } else {
-        gsap.to(target, { translateX: -15, opacity: 0, duration: Xt.vars.timeBig, ease: Xt.vars.easeOut })
+        gsap.to(target, { x: -15, opacity: 0, duration: Xt.vars.timeBig, ease: Xt.vars.easeOut })
       }
     }
 
