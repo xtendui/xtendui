@@ -26,12 +26,12 @@ Xt.mount.push({
     // start auto
 
     const eventAutostart = () => {
-      // on slider
+      // slider
       const spinner = self.object.querySelectorAll('.spinner svg:nth-child(1) circle')
       const timeline = gsap.timeline({ overwrite: false })
       timeline.to(spinner, { strokeDashoffset: 628, duration: spinnerTime, ease: spinnerEase, autoRound: false })
       timeline.to(spinner, { strokeDashoffset: 0, duration: self.options.auto.time - spinnerTime, ease: spinnerEase, autoRound: false })
-      // on elements
+      // elements
       const elements = self.elements.filter(x => self.hasCurrent(x))
       for (const element of elements) {
         const fillers = element.querySelectorAll('.filler span:nth-child(1)')
@@ -40,7 +40,7 @@ Xt.mount.push({
           gsap.to(filler, { height: '100%', top: 0, duration: self.options.auto.time, ease: fillerEase })
         }
       }
-      // on targets
+      // targets
       const targets = self.targets.filter(x => self.hasCurrent(x))
       for (const target of targets) {
         const fillers = target.querySelectorAll('.filler span:nth-child(1)')
@@ -56,7 +56,7 @@ Xt.mount.push({
     // stop auto
 
     const eventAutostop = () => {
-      // on elements
+      // elements
       const elements = self.elements.filter(x => self.hasCurrent(x))
       for (const element of elements) {
         const fillers = element.querySelectorAll('.filler span:nth-child(1)')
@@ -64,7 +64,7 @@ Xt.mount.push({
           gsap.to(filler, { height: 0, top: 0, duration: fillerTime, ease: fillerEase })
         }
       }
-      // on targets
+      // targets
       const targets = self.targets.filter(x => self.hasCurrent(x))
       for (const target of targets) {
         const fillers = target.querySelectorAll('.filler span:nth-child(1)')
@@ -79,10 +79,10 @@ Xt.mount.push({
     // pause auto
 
     const eventAutopause = () => {
-      // on slider
+      // slider
       const spinner = self.object.querySelectorAll('.spinner svg:nth-child(1) circle')
       gsap.to(spinner, { strokeDashoffset: 628, duration: spinnerTime, ease: spinnerEase, autoRound: false })
-      // on elements
+      // elements
       const elements = self.elements.filter(x => self.hasCurrent(x))
       for (const element of elements) {
         const fillers = element.querySelectorAll('.filler span:nth-child(1)')
@@ -90,7 +90,7 @@ Xt.mount.push({
           gsap.to(filler, { height: 0, top: '100%', duration: fillerTime, ease: fillerEase })
         }
       }
-      // on targets
+      // targets
       const targets = self.targets.filter(x => self.hasCurrent(x))
       for (const target of targets) {
         const fillers = target.querySelectorAll('.filler span:nth-child(1)')
