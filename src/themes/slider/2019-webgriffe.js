@@ -3,6 +3,8 @@ import 'xtend-library/src/vars.js'
 import 'xtend-library/src/extensions/slider/slider.js'
 import gsap from 'gsap'
 
+// @TODO RIFARE TUTTE VARIABILI FUNZIONI ETC COME SUN68
+
 Xt.mount.push({
   matches: '.demo--2019-webgriffe',
   mount: object => {

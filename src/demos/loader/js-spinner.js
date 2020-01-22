@@ -5,6 +5,11 @@ import gsap from 'gsap'
 Xt.mount.push({
   matches: '.demo--loader-js-spinner',
   mount: object => {
+    // vars
+
+    const spinnerTime = Xt.vars.timeGiant
+    const spinnerEase = Xt.vars.easeLinear
+
     // init
 
     function loaderTimeout() {
@@ -14,8 +19,8 @@ Xt.mount.push({
         object.classList.add('active')
         object.classList.remove('out')
         gsap.set(spinner, { strokeDashoffset: 628 })
-        gsap.to(spinner, { strokeDashoffset: 0, duration: Xt.vars.timeGiant, ease: Xt.vars.easeLinear, autoRound: false })
-        setTimeout(loaderTimeout, Xt.vars.timeGiant)
+        gsap.to(spinner, { strokeDashoffset: 0, duration: spinnerTime, ease: spinnerEase, autoRound: false })
+        setTimeout(loaderTimeout, spinnerTime)
       } else {
         object.classList.remove('active')
         object.classList.add('out')

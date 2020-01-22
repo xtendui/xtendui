@@ -9,9 +9,11 @@ Xt.mount.push({
   mount: object => {
     // vars
 
-    const timeImg = 750
-    const timeImgZoom = 6000
-    const zoomImg = 1.1
+    const imgTime = 750
+    const imgEase = Xt.vars.easeCheetah
+    const imgZoom = 1.1
+    const imgZoomTime = 6000
+    const imgZoomEase = Xt.vars.easeSineInOut
 
     // slider
 
@@ -42,7 +44,7 @@ Xt.mount.push({
       }
       // others
       for (const tr of self.targets.filter(x => !self.hasCurrent(x))) {
-        const img = tr.querySelector('.slide_img_inner')
+        const img = target.querySelector('.slide_img_inner')
         gsap.set(img, { x: imgSize * direction - imgSize * ratio * direction, opacity: ratio + 0.5 })
       }
       // img
@@ -58,7 +60,7 @@ Xt.mount.push({
       const target = self.targets.filter(x => self.hasCurrent(x))[0]
       // img
       const img = target.querySelector('.slide_img_inner')
-      gsap.to(img, { x: 0, opacity: 1, duration: timeImg, ease: Xt.vars.easeCheetah })
+      gsap.to(img, { x: 0, opacity: 1, duration: imgTime, ease: imgEase })
     }
 
     self.dragger.addEventListener('dragreset.xt', eventDragReset)
@@ -66,16 +68,16 @@ Xt.mount.push({
     // on
 
     const eventOn = e => {
-      const tr = e.target
+      const target = e.target
       // useCapture delegation
-      if (self.targets.includes(tr)) {
-        const img = tr.querySelector('.slide_img_inner')
+      if (self.targets.includes(target)) {
+        const img = target.querySelector('.slide_img_inner')
         if (self.initial) {
           gsap.set(img, { x: 0, opacity: 1, scale: 1 })
-          gsap.to(img, { scale: zoomImg, duration: timeImgZoom, ease: Xt.vars.easeSineInOut, repeat: -1, yoyo: true })
+          gsap.to(img, { scale: imgZoom, duration: imgZoomTime, ease: imgZoomEase, repeat: -1, yoyo: true })
         } else {
-          gsap.to(img, { x: 0, opacity: 1, duration: timeImg, ease: Xt.vars.easeCheetah }).eventCallback('onComplete', () => {
-            gsap.to(img, { scale: zoomImg, duration: timeImgZoom, ease: Xt.vars.easeSineInOut, repeat: -1, yoyo: true })
+          gsap.to(img, { x: 0, opacity: 1, duration: imgTime, ease: imgEase }).eventCallback('onComplete', () => {
+            gsap.to(img, { scale: imgZoom, duration: imgZoomTime, ease: imgZoomEase, repeat: -1, yoyo: true })
           })
         }
       }
@@ -86,22 +88,20 @@ Xt.mount.push({
     // off
 
     const eventOff = e => {
-      const tr = e.target
+      const target = e.target
       // useCapture delegation
-      if (self.targets.includes(tr)) {
+      if (self.targets.includes(target)) {
         const imgSize = self.dragger.offsetWidth / 6
         // direction
         let direction = 1
-        if (tr.classList.contains('inverse')) {
+        if (target.classList.contains('inverse')) {
           direction = -1
         }
         // img
-        const img = tr.querySelector('.slide_img_inner')
-        gsap
-          .to(img, { x: imgSize * direction, opacity: 0.5, scale: 1, duration: timeImg, ease: Xt.vars.easeCheetah })
-          .eventCallback('onComplete', () => {
-            gsap.set(img, { x: 0, opacity: 1 })
-          })
+        const img = target.querySelector('.slide_img_inner')
+        gsap.to(img, { x: imgSize * direction, opacity: 0.5, scale: 1, duration: imgTime, ease: imgEase }).eventCallback('onComplete', () => {
+          gsap.set(img, { x: 0, opacity: 1 })
+        })
       }
     }
 

@@ -5,6 +5,11 @@ import gsap from 'gsap'
 Xt.mount.push({
   matches: '.demo--loader-js-filler',
   mount: object => {
+    // vars
+
+    const fillerTime = Xt.vars.timeGiant
+    const fillerEase = Xt.vars.easeLinear
+
     // init
 
     function loaderTimeout() {
@@ -14,8 +19,8 @@ Xt.mount.push({
         object.classList.add('active')
         object.classList.remove('out')
         gsap.set(filler, { width: 0 })
-        gsap.to(filler, { width: '100%', duration: Xt.vars.timeGiant, ease: Xt.vars.easeLinear })
-        setTimeout(loaderTimeout, Xt.vars.timeGiant)
+        gsap.to(filler, { width: '100%', duration: fillerTime, ease: fillerEase })
+        setTimeout(loaderTimeout, fillerTime)
       } else {
         object.classList.remove('active')
         object.classList.add('out')
