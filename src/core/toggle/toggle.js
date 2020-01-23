@@ -273,8 +273,8 @@ class Toggle {
   /**
    * init reset element activation
    * @param {Node|HTMLElement|EventTarget|Window} el Element to check and reset
-   * @returns {Boolean} if element was activated
    * @param {Boolean} saveCurrents
+   * @returns {Boolean} if element was activated
    */
   initReset(el, saveCurrents = false) {
     const self = this
@@ -2513,8 +2513,37 @@ class Toggle {
   }
 
   //
-  // goto
+  // index
   //
+
+  /**
+   * get next index
+   * @param {Number} amount
+   * @param {Boolean} loop
+   * @returns {Number} index
+   */
+  getNextIndex(amount = 1, loop = null) {
+    const self = this
+    // logic
+    let index = 0
+    if (self.currentIndex !== null) {
+      index = self.currentIndex + amount
+    }
+    return self.getNumIndex(index, loop)
+  }
+
+  /**
+   * get next element
+   * @param {Number} amount
+   * @param {Boolean} loop
+   * @returns {Number} index
+   */
+  getNext(amount = 1, loop = null) {
+    const self = this
+    // logic
+    const i = self.getNextIndex(amount, loop)
+    return self.getGroups()[i]
+  }
 
   /**
    * activate next element
@@ -2524,13 +2553,38 @@ class Toggle {
    */
   goToNext(amount = 1, force = false, loop = null) {
     const self = this
-    // goToIndex
-    let index = 0
-    if (self.currentIndex !== null) {
-      index = self.currentIndex + amount
-    }
+    // goToNum
     self.detail.inverseForce = false
-    self.goToIndex(index, force, loop)
+    self.goToNum(self.getNextIndex(amount, loop), force, loop)
+  }
+
+  /**
+   * get prev index
+   * @param {Number} amount
+   * @param {Boolean} loop
+   * @returns {Number} index
+   */
+  getPrevIndex(amount = 1, loop = null) {
+    const self = this
+    // logic
+    let index = self.getGroups().length - 1
+    if (self.currentIndex !== null) {
+      index = self.currentIndex - amount
+    }
+    return self.getNumIndex(index, loop)
+  }
+
+  /**
+   * get prev element
+   * @param {Number} amount
+   * @param {Boolean} loop
+   * @returns {Number} index
+   */
+  getPrev(amount = 1, loop = null) {
+    const self = this
+    // logic
+    const i = self.getPrevIndex(amount, loop)
+    return self.getGroups()[i]
   }
 
   /**
@@ -2541,22 +2595,18 @@ class Toggle {
    */
   goToPrev(amount = 1, force = false, loop = null) {
     const self = this
-    // goToIndex
-    let index = self.getGroups().length - 1
-    if (self.currentIndex !== null) {
-      index = self.currentIndex - amount
-    }
+    // goToNum
     self.detail.inverseForce = true
-    self.goToIndex(index, force, loop)
+    self.goToNum(self.getPrevIndex(amount, loop), force, loop)
   }
 
   /**
    * activate index element
    * @param {Number} index
-   * @param {Boolean} force
    * @param {Boolean} loop
+   * @returns {Number} index
    */
-  goToIndex(index, force = false, loop = null) {
+  getNumIndex(index, loop = null) {
     const self = this
     const options = self.options
     // check
@@ -2576,9 +2626,34 @@ class Toggle {
         index = 0
       }
     }
+    // element
+    return index
+  }
+
+  /**
+   * get prev element
+   * @param {Number} index
+   * @param {Boolean} loop
+   * @returns {Element} element
+   */
+  getNum(index = 1, loop = null) {
+    const self = this
+    // logic
+    const i = self.getNumIndex(index, loop)
+    return self.getGroups()[i]
+  }
+
+  /**
+   * activate number element
+   * @param {Number} index
+   * @param {Boolean} force
+   * @param {Boolean} loop
+   */
+  goToNum(index, force = false, loop = null) {
+    const self = this
     // go
-    const current = self.getGroups()[index]
-    self.eventOn(current, force)
+    const el = self.getNum(index, loop)
+    self.eventOn(el, force)
   }
 
   //

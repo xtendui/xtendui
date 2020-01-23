@@ -664,11 +664,11 @@ class Slider extends Xt.Toggle {
               if (self.currentIndex < min) {
                 self.initial = true
                 self.initialContinue = true
-                self.goToIndex(max + self.currentIndex - min + 1, true) // wrap around xt-wrap items
+                self.goToNum(max + self.currentIndex - min + 1, true) // wrap around xt-wrap items
               } else if (self.currentIndex > max) {
                 self.initial = true
                 self.initialContinue = true
-                self.goToIndex(min + self.currentIndex - max - 1, true) // wrap around xt-wrap items
+                self.goToNum(min + self.currentIndex - max - 1, true) // wrap around xt-wrap items
               }
             },
             'wrap'
@@ -947,8 +947,8 @@ class Slider extends Xt.Toggle {
           self.goToPrev(1, true)
         }
       } else {
-        // goToIndex
-        self.goToIndex(found, true)
+        // goToNum
+        self.goToNum(found, true)
       }
     } else {
       // val
