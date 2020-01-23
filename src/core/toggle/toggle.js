@@ -112,6 +112,7 @@ class Toggle {
     self.initScope()
     self.initAria()
     self.initStart(saveCurrents)
+    self.eventStatus()
   }
 
   /**
@@ -2679,16 +2680,6 @@ class Toggle {
   }
 
   /**
-   * restart handler
-   * @param {Event} e
-   */
-  eventRestartHandler(e) {
-    const self = this
-    // handler
-    self.restart()
-  }
-
-  /**
    * restart
    */
   restart() {
@@ -2699,16 +2690,6 @@ class Toggle {
     self.initStart()
     // listener dispatch
     self.object.dispatchEvent(new CustomEvent('restart.xt'))
-  }
-
-  /**
-   * destroy handler
-   * @param {Event} e
-   */
-  eventDestroyHandler(e) {
-    const self = this
-    // handler
-    self.destroy()
   }
 
   /**

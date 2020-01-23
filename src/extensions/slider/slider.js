@@ -978,6 +978,43 @@ class Slider extends Xt.Toggle {
   }
 
   //
+  // status
+  //
+
+  /**
+   * disable
+   */
+  disable() {
+    super.disable()
+    const self = this
+    // disable
+    if (self.dragger) {
+      self.dragger.classList.add('transition-none')
+      requestAnimationFrame(() => {
+        self.dragger.style.transform = ''
+      })
+    }
+    if (self.autoHeight) {
+      self.autoHeight.classList.remove('xt-autoHeight')
+      requestAnimationFrame(() => {
+        self.autoHeight.style.height = ''
+      })
+    }
+  }
+
+  /**
+   * disable
+   */
+  enable() {
+    super.enable()
+    const self = this
+    // enable
+    if (self.dragger) {
+      self.dragger.classList.remove('transition-none')
+    }
+  }
+
+  //
   // util
   //
 
