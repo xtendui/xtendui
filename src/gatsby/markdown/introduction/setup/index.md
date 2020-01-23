@@ -150,7 +150,7 @@ If you want to support old browsers since Internet Explorer 11, import the polyf
 import 'xtend-library/src/polyfill-old.js'
 ```
 
-And add this browser list:
+And add this to browser list in **.browserslistrc**:
 
 ```Shell
 IE 11
