@@ -2,6 +2,8 @@
 @copyright (c) 2018 - 2019 Riccardo Caroli
 @license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */
 
+import 'core-js'
+import 'regenerator-runtime/runtime'
 import 'xtend-library/src/polyfill.js'
 import 'xtend-library/src/polyfill-old.js'
 import { Xt } from 'xtend-library'
