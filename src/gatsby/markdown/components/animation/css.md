@@ -40,14 +40,14 @@ We recomend to use transitions this way:
   transition-property: all;
   transition-duration: @time-medium;
   transition-delay: initial;
-  transition-timing-function: @bez-out;
+  transition-timing-function: @ease-out;
   &:hover, &.hover, &:active, &.active {
     opacity: 1;
     transform: translateX(0);
     transition-property: all;
     transition-duration: @time-medium;
     transition-delay: initial;
-    transition-timing-function: @bez-in;
+    transition-timing-function: @ease-in;
   }
 }
 ```

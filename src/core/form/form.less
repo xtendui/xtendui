@@ -224,11 +224,11 @@ form, .form {
 .form-item {
   transition-property: color, border, background-color;
   transition-duration: @time-giant;
-  transition-timing-function: @bez-out;
+  transition-timing-function: @ease-out;
   &:focus, &.active {
     transition-property: color, border, background-color;
     transition-duration: @time-giant;
-    transition-timing-function: @bez-in;
+    transition-timing-function: @ease-in;
   }
 }
 
@@ -365,14 +365,14 @@ input[type="radio"]:not(.unstyled) {
     transform: scale(.9, .9);
     transition-property: all;
     transition-duration: @time-medium;
-    transition-timing-function: @bez-out;
+    transition-timing-function: @ease-out;
   }
   &:after {
     opacity: 0 !important;
     transform: scale(.9, .5);
     transition-property: all;
     transition-duration: @time-medium;
-    transition-timing-function: @bez-out;
+    transition-timing-function: @ease-out;
   }
   &.focus, &:focus {
     &:before {
@@ -384,14 +384,14 @@ input[type="radio"]:not(.unstyled) {
       transform: scale(1, 1);
       transition-property: all;
       transition-duration: @time-medium;
-      transition-timing-function: @bez-in;
+      transition-timing-function: @ease-in;
     }
     &:after {
       opacity: 1 !important;
       transform: scale(1, 1);
       transition-property: all;
       transition-duration: @time-medium;
-      transition-timing-function: @bez-in;
+      transition-timing-function: @ease-in;
     }
   }
 }

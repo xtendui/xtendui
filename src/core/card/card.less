@@ -326,32 +326,32 @@
   a&, button& {
     transition-property: all;
     transition-duration: @time-medium;
-    transition-timing-function: @bez-out;
+    transition-timing-function: @ease-out;
     > .card-design {
       transition-property: all;
       transition-duration: @time-medium;
-      transition-timing-function: @bez-out;
+      transition-timing-function: @ease-out;
     }
     .card-block.card-item {
       transition-property: transform;
       transition-duration: @time-medium;
-      transition-timing-function: @bez-out;
+      transition-timing-function: @ease-out;
     }
     &:hover, &.hover, &:active, &.active {
       transform: translateY(-.5rem) scale(1.03, 1.05);
       transition-property: all;
       transition-duration: @time-medium;
-      transition-timing-function: @bez-in;
+      transition-timing-function: @ease-in;
       > .card-design {
         transition-property: all;
         transition-duration: @time-medium;
-        transition-timing-function: @bez-in;
+        transition-timing-function: @ease-in;
       }
       .card-block.card-item {
         transform: scale(0.97, 0.95);
         transition-property: transform;
         transition-duration: @time-medium;
-        transition-timing-function: @bez-in;
+        transition-timing-function: @ease-in;
       }
     }
   }

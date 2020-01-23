@@ -19,7 +19,7 @@
   img {
     transition-property: opacity;
     transition-duration: @time-small;
-    transition-timing-function: @bez-out;
+    transition-timing-function: @ease-out;
   }
   &:hover, &.hover, &:active {
     img {
@@ -65,7 +65,7 @@
       transition-property: all;
       transition-duration: @time-medium;
       transition-delay: initial;
-      transition-timing-function: @bez-out;
+      transition-timing-function: @ease-out;
     }
   }
   &:hover, &.hover, &:active, &.active {
@@ -77,7 +77,7 @@
         transition-property: all;
         transition-duration: @time-medium;
         transition-delay: @time-small;
-        transition-timing-function: @bez-in;
+        transition-timing-function: @ease-in;
       }
     }
   }
@@ -104,7 +104,7 @@
     transition-property: all;
     transition-duration: @time-medium;
     transition-delay: @time-small;
-    transition-timing-function: @bez-out;
+    transition-timing-function: @ease-out;
   }
   &:hover, &.hover, &:active, &.active {
     a {
@@ -115,7 +115,7 @@
       transition-property: all;
       transition-duration: @time-medium;
       transition-delay: initial;
-      transition-timing-function: @bez-in;
+      transition-timing-function: @ease-in;
     }
   }
 }

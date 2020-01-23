@@ -21,7 +21,7 @@ gsap.registerEase('easeCheetah', progress => {
 })
 
 gsap.registerEase('easeTiger', progress => {
-  const easing = BezierEasing(0.77, 0, 0.17, 1)
+  const easing = BezierEasing(0.96, 0.1, 0.14, 0.88)
   return easing(progress)
 })
 
@@ -30,17 +30,12 @@ gsap.registerEase('easeCat', progress => {
   return easing(progress)
 })
 
-gsap.registerEase('easePenguinIn', progress => {
+gsap.registerEase('easeDog', progress => {
   const easing = BezierEasing(0.36, 0, 0, 1)
   return easing(progress)
 })
 
-gsap.registerEase('easePenguinOut', progress => {
-  const easing = BezierEasing(1, 0, 0.64, 1)
-  return easing(progress)
-})
-
-gsap.registerEase('easePenguinInOut', progress => {
+gsap.registerEase('easePenguin', progress => {
   const easing = BezierEasing(0.68, 0.13, 0.25, 1)
   return easing(progress)
 })
@@ -57,15 +52,6 @@ const vars = {
   timeBig: 1000,
   timeGiant: 2000,
   // ease
-  easeIn: 'easeCheetah',
-  easeOut: 'easeCheetah',
-  easeInOut: 'easeCheetah',
-  easeCheetah: 'easeCheetah',
-  easeTiger: 'easeTiger',
-  easeCat: 'easeCat',
-  easePenguinIn: 'easePenguinIn',
-  easePenguinOut: 'easePenguinOut',
-  easePenguinInOut: 'easePenguinInOut',
   easeLinear: 'linear',
   easeSineIn: 'Sine.easeIn',
   easeSineOut: 'Sine.easeOut',
@@ -73,6 +59,13 @@ const vars = {
   easeQuintIn: 'Quint.easeIn',
   easeQuintOut: 'Quint.easeOut',
   easeQuintInOut: 'Quint.easeInOut',
+  easeIn: 'easeCheetah',
+  easeOut: 'easeCheetah',
+  easeCheetah: 'easeCheetah',
+  easeTiger: 'easeTiger',
+  easeCat: 'easeCat',
+  easeDog: 'easeDog',
+  easePenguin: 'easePenguin',
 }
 
 //

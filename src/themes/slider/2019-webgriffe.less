@@ -26,7 +26,7 @@
       transform: translateX(0);
       transition-property: opacity;
       transition-duration: @time-big;
-      transition-timing-function: @bez-cheetah;
+      transition-timing-function: @ease-cheetah;
     }
     @media @max-md {
       .slider_img--inner picture {
@@ -34,7 +34,7 @@
         transform: translateY(1.5rem);
         transition-property: opacity, transform;
         transition-duration: @time-big;
-        transition-timing-function: @bez-out;
+        transition-timing-function: @ease-out;
       }
     }
     &.initial {
@@ -49,7 +49,7 @@
         opacity: 1;
         transition-property: opacity;
         transition-duration: @time-medium;
-        transition-timing-function: @bez-cheetah;
+        transition-timing-function: @ease-cheetah;
       }
       @media @max-md {
         .slider_img--inner picture {
@@ -57,7 +57,7 @@
           transform: translateY(0);
           transition-property: opacity, transform;
           transition-duration: @time-big;
-          transition-timing-function: @bez-in;
+          transition-timing-function: @ease-in;
           transition-delay: @time-medium;
         }
       }

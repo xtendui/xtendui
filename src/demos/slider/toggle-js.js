@@ -9,9 +9,9 @@ Xt.mount.push({
     // vars
 
     const maskTime = Xt.vars.timeMedium
-    const maskEase = Xt.vars.easePenguinInOut
+    const maskEase = Xt.vars.easePenguin
     const contentTime = Xt.vars.timeMedium
-    const contentEase = Xt.vars.easePenguinInOut
+    const contentEase = Xt.vars.easePenguin
 
     // init
 
