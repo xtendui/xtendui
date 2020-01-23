@@ -8,15 +8,16 @@ Xt.mount.push({
   mount: object => {
     // vars
 
-    const targetTime = Xt.vars.timeBig
+    const targetTimeIn = Xt.vars.timeBig
+    const targetTimeOut = Xt.vars.timeBig
     const targetEaseIn = Xt.vars.easeIn
     const targetEaseOut = Xt.vars.easeOut
 
     // init
 
     let self = new Xt.Toggle(object, {
-      durationOn: targetTime,
-      durationOff: targetTime,
+      durationOn: Xt.vars.timeBig,
+      durationOff: Xt.vars.timeBig,
     })
 
     // on
@@ -29,7 +30,7 @@ Xt.mount.push({
       } else {
         gsap.set(target, { x: 15 })
       }
-      gsap.to(target, { x: 0, opacity: 1, duration: targetTime, ease: targetEaseIn })
+      gsap.to(target, { x: 0, opacity: 1, duration: targetTimeIn, ease: targetEaseIn })
     }
 
     for (const tr of self.targets) {
@@ -41,9 +42,9 @@ Xt.mount.push({
     const eventOff = e => {
       const target = e.target
       if (!target.classList.contains('inverse')) {
-        gsap.to(target, { x: 15, opacity: 0, duration: targetTime, ease: targetEaseOut })
+        gsap.to(target, { x: 15, opacity: 0, duration: targetTimeOut, ease: targetEaseOut })
       } else {
-        gsap.to(target, { x: -15, opacity: 0, duration: targetTime, ease: targetEaseOut })
+        gsap.to(target, { x: -15, opacity: 0, duration: targetTimeOut, ease: targetEaseOut })
       }
     }
 

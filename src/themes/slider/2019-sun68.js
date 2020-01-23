@@ -9,8 +9,11 @@ Xt.mount.push({
   mount: object => {
     // vars
 
-    const contentTime = 750
-    const contentEase = Xt.vars.easeCheetah
+    const contentTimeIn = 750
+    const contentTimeOut = 750
+    const contentEaseIn = Xt.vars.easeCheetah
+    const contentEaseOut = Xt.vars.easeCheetah
+
     const contentZoom = 1.1
     const contentZoomTime = 6000
     const contentZoomEase = Xt.vars.easeSineInOut
@@ -60,7 +63,7 @@ Xt.mount.push({
       const target = self.targets.filter(x => self.hasCurrent(x))[0]
       // content
       const content = target.querySelector('.slide_other_inner')
-      gsap.to(content, { x: 0, opacity: 1, duration: contentTime, ease: contentEase })
+      gsap.to(content, { x: 0, opacity: 1, duration: contentTimeIn, ease: contentEaseIn })
     }
 
     self.dragger.addEventListener('dragreset.xt', eventDragReset)
@@ -76,7 +79,7 @@ Xt.mount.push({
           gsap.set(content, { x: 0, opacity: 1, scale: 1 })
           gsap.to(content, { scale: contentZoom, duration: contentZoomTime, ease: contentZoomEase, repeat: -1, yoyo: true })
         } else {
-          gsap.to(content, { x: 0, opacity: 1, duration: contentTime, ease: contentEase }).eventCallback('onComplete', () => {
+          gsap.to(content, { x: 0, opacity: 1, duration: contentTimeIn, ease: contentEaseIn }).eventCallback('onComplete', () => {
             gsap.to(content, { scale: contentZoom, duration: contentZoomTime, ease: contentZoomEase, repeat: -1, yoyo: true })
           })
         }
@@ -99,7 +102,7 @@ Xt.mount.push({
         }
         // content
         const content = target.querySelector('.slide_img_inner')
-        gsap.to(content, { x: size * direction, opacity: 0.5, scale: 1, duration: contentTime, ease: contentEase }).eventCallback('onComplete', () => {
+        gsap.to(content, { x: size * direction, opacity: 0.5, scale: 1, duration: contentTimeOut, ease: contentEaseOut }).eventCallback('onComplete', () => {
           gsap.set(content, { x: 0, opacity: 1 })
         })
       }
