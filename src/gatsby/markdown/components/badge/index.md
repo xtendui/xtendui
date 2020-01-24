@@ -29,7 +29,15 @@ Or just import **core**:
 Use this markup to create a **note**.
 
 <script type="text/plain" class="language-markup">
-  <div class="badge badge-default">
-    <!-- content -->
+  <div class="badge-container">
+  
+      <div class="badge badge-default">
+        <!-- content -->
+      </div>
+      
+      <div class="badge badge-default">
+        <!-- content -->
+      </div>
+      
   </div>
 </script>
