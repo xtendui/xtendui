@@ -2601,7 +2601,7 @@ class Toggle {
   }
 
   /**
-   * activate index element
+   * get number index
    * @param {Number} index
    * @param {Boolean} loop
    * @returns {Number} index
@@ -2631,7 +2631,7 @@ class Toggle {
   }
 
   /**
-   * get prev element
+   * get number element
    * @param {Number} index
    * @param {Boolean} loop
    * @returns {Element} element
