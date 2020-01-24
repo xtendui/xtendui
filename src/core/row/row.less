@@ -28,5 +28,8 @@
   flex-wrap: wrap;
   flex-direction: row;
   // default options
-  .row-space(big);
+  .row-space(medium);
+  @media @min-sm {
+    .row-space(big);
+  }
 }
