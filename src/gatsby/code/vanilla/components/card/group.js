@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="row">
+<div class="row row-default">
   <div class="col-12">
     <button type="button" class="card card-default">
       <div class="card-design"></div>

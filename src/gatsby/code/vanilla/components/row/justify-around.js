@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="row justify-content-space-around">
+<div class="row row-default justify-content-space-around">
   <div class="col-2"></div>
   <div class="col-4"></div>
 </div>

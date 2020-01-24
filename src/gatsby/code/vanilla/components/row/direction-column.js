@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="row flex-direction-column">
+<div class="row row-default flex-direction-column">
   <div class="col-4"></div>
   <div class="col-8"></div>
   <div class="col-12 col-8-sm"></div>

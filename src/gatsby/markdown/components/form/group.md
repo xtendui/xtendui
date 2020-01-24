@@ -160,7 +160,7 @@ Inline **form input** and **form label**, by default not on mobile, you can edit
 
 ## Size
 
-Classes for assigning size (e.g.: padding or font size). Add or remove selectors at your discretion
+Classes for assigning size (e.g.: padding or font size). Add or remove selectors at your discretion.
 
 You can set the size globally on **form**.
 

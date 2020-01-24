@@ -6,6 +6,19 @@ title: "Option Css"
 date: "2000-02-01"
 ---
 
+## Variant
+
+Classes for assigning variant (e.g.: space). Add or remove selectors at your discretion.
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Example                       |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Class                   | `.row-{variant}`                        | `.row-default` |
+| Mixin                   | `.row-{variant}()`                      | `.row-default()`  |
+
+</div>
+
 ## Space
 
 Row **automatically** add horizontal and vertical spacing to the contents. You can **specify a different one** with this classes/mixins.

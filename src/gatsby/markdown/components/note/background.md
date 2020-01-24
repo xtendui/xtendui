@@ -10,7 +10,7 @@ Use `.note-background` to style the note with an internal padding and background
 
 ## Variant
 
-Classes for assigning variant (e.g.: border / background / font colors). Add or remove selectors at your discretion
+Classes for assigning variant (e.g.: border / background / color). Add or remove selectors at your discretion.
 
 <div class="table-scroll">
 
@@ -28,7 +28,7 @@ Classes for assigning variant (e.g.: border / background / font colors). Add or 
 
 ## Size
 
-Classes for assigning size (e.g.: padding or font size). Add or remove selectors at your discretion
+Classes for assigning size (e.g.: padding or font size). Add or remove selectors at your discretion.
 
 <div class="table-scroll">
 

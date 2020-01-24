@@ -29,7 +29,7 @@ Overlay's card preset is `.card-overlay`. This preset gives overlay's card defau
 
 ## Card Variant
 
-You can extend the `.card-overlay` preset with other's card variants. Use this classes for assigning variant (e.g.: border / background / font colors).
+Classes for assigning variant (e.g.: border / background / color). Add or remove selectors at your discretion.
 
 <div class="table-scroll">
 
@@ -47,7 +47,7 @@ You can extend the `.card-overlay` preset with other's card variants. Use this c
 
 ## Card Size
 
-You can extend the `.card-overlay` preset with other's card sizes. Use this classes for assigning size (e.g.: padding or font size).
+Classes for assigning size (e.g.: padding or font size). Add or remove selectors at your discretion.
 
 <div class="table-scroll">
 

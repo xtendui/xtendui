@@ -9,9 +9,9 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="row">
+<div class="row row-default">
   <div class="col-4">
-    <div class="row">
+    <div class="row row-default">
       <div class="col-4"></div>
       <div class="col-8"></div>
       <div class="col-8"></div>
@@ -19,7 +19,7 @@ demo.htmlSource = `
     </div>
   </div>
   <div class="col-8">
-    <div class="row">
+    <div class="row row-default">
       <div class="col-12 col-8-sm"></div>
       <div class="col-12 col-4-sm"></div>
       <div class="col-auto"></div>

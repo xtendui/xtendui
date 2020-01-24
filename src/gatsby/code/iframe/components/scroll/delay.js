@@ -14,7 +14,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="row scroll-container demo--scroll-container--delay">
+<div class="row row-default scroll-container demo--scroll-container--delay">
 
   <div class="col-12 col-6-sm">
     <div class="card card-default">

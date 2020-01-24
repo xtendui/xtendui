@@ -24,12 +24,9 @@
  * row
  */
 
-.row {
-  flex-wrap: wrap;
-  flex-direction: row;
-  // default options
+// variant
+
+.row-default {
   .row-space(medium);
-  @media @min-sm {
-    .row-space(big);
-  }
+  .row-space(big, sm);
 }

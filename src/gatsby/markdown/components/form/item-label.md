@@ -37,7 +37,7 @@ Size is done with **em** so it's relative to the container element. To set `.for
 
 ## Variant
 
-Classes for assigning variant (e.g.: border / background / font colors). Add or remove selectors at your discretion
+Classes for assigning variant (e.g.: border / background / color). Add or remove selectors at your discretion.
 
 You can set the size globally on **form**.
 
