@@ -8,7 +8,7 @@ Xt.mount.push({
     // vars
 
     const spinnerTime = Xt.vars.timeGiant
-    const spinnerEase = Xt.vars.easeLinear
+    const spinnerEase = 'linear'
 
     // init
 

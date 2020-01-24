@@ -54,7 +54,7 @@ Xt.mount.push({
         let contentPos = Math.floor(dist * contentFactor)
         for (let content of contents) {
           if (tween) {
-            gsap.to(content, { x: contentPos, duration: Xt.vars.timeGiant, ease: Xt.vars.easeCheetah })
+            gsap.to(content, { x: contentPos, duration: Xt.vars.timeGiant, ease: 'cheetah' })
           } else {
             gsap.set(content, { x: contentPos })
           }
@@ -64,7 +64,7 @@ Xt.mount.push({
         let imgPos = Math.floor(dist * imgFactor)
         for (let img of imgs) {
           if (tween) {
-            gasp.to(img, { x: imgPos, duration: Xt.vars.timeGiant, ease: Xt.vars.easeCheetah })
+            gasp.to(img, { x: imgPos, duration: Xt.vars.timeGiant, ease: 'cheetah' })
           } else {
             gasp.set(img, { x: imgPos })
           }
@@ -115,9 +115,9 @@ Xt.mount.push({
         if (tween) {
           for (let [i, target] of self.targets.entries()) {
             let background = document.querySelectorAll('.slider_background[data-index="' + i + '"]')
-            gsap.to(background, { opacity: 0, duration: Xt.vars.timeGiant, ease: Xt.vars.easeCheetah })
+            gsap.to(background, { opacity: 0, duration: Xt.vars.timeGiant, ease: 'cheetah' })
           }
-          gsap.to(background, { opacity: 1, duration: Xt.vars.timeGiant, ease: Xt.vars.easeCheetah })
+          gsap.to(background, { opacity: 1, duration: Xt.vars.timeGiant, ease: 'cheetah' })
         } else {
           gsap.set(background, { opacity: 1 })
         }

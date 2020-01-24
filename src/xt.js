@@ -965,7 +965,7 @@ if (typeof window !== 'undefined') {
     borderColor: animCss.borderColor.final,
     boxShadow: animCss.boxShadow.final,
     duration: Xt.vars.timeSmall,
-    ease: Xt.vars.easeLinear,
+    ease: 'linear',
   })
   */
   Xt.animCss = (element, properties) => {

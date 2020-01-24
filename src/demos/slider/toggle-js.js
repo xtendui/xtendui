@@ -8,20 +8,20 @@ Xt.mount.push({
   mount: object => {
     // vars
 
-    const maskTimeIn = Xt.vars.timeMedium
-    const maskTimeOut = Xt.vars.timeMedium
-    const maskEaseIn = Xt.vars.easePenguin
-    const maskEaseOut = Xt.vars.easePenguin
+    const maskTimeOn = Xt.vars.timeMedium
+    const maskTimeOff = Xt.vars.timeMedium
+    const maskEaseOn = 'cheetah'
+    const maskEaseOff = 'cheetah'
 
-    const contentTimeIn = Xt.vars.timeMedium
-    const contentTimeOut = Xt.vars.timeMedium
-    const contentEaseIn = Xt.vars.easePenguin
-    const contentEaseOut = Xt.vars.easePenguin
+    const contentTimeOn = Xt.vars.timeMedium
+    const contentTimeOff = Xt.vars.timeMedium
+    const contentEaseOn = 'cheetah'
+    const contentEaseOff = 'cheetah'
 
     // init
 
     let self = new Xt.Slider(object, {
-      instant: false,
+      instant: true,
       durationOn: Xt.vars.timeMedium,
       durationOff: Xt.vars.timeMedium,
     })
@@ -54,13 +54,13 @@ Xt.mount.push({
       const target = self.targets.filter(x => self.hasCurrent(x))[0]
       // mask
       gsap.set(self.dragger, { x: self.detail.dragPosOld })
-      gsap.to(self.dragger, { x: 0, duration: maskTimeIn, ease: maskEaseIn })
+      gsap.to(self.dragger, { x: 0, duration: maskTimeOn, ease: maskEaseOn })
       gsap.set(target, { x: -self.detail.dragPosOld })
-      gsap.to(target, { x: 0, opacity: 1, duration: maskTimeIn, ease: maskEaseIn })
+      gsap.to(target, { x: 0, opacity: 1, duration: maskTimeOn, ease: maskEaseOn })
       // content
       const contents = target.querySelectorAll('.card-item > *')
       for (const content of contents) {
-        gsap.to(content, { x: 0, opacity: 1, duration: contentTimeIn, ease: contentEaseIn })
+        gsap.to(content, { x: 0, opacity: 1, duration: contentTimeOn, ease: contentEaseOn })
       }
     }
 
@@ -81,28 +81,28 @@ Xt.mount.push({
         if (self.initial) {
           // mask
           gsap.killTweensOf(self.dragger)
-          gsap.set(self.dragger, { x: 0, ease: maskEaseIn })
+          gsap.set(self.dragger, { x: 0, ease: maskEaseOn })
           gsap.killTweensOf(target)
-          gsap.set(target, { x: 0, opacity: 1, ease: maskEaseIn })
+          gsap.set(target, { x: 0, opacity: 1, ease: maskEaseOn })
           // content
           const contents = target.querySelectorAll('.card-item > *')
           for (const content of contents) {
             gsap.killTweensOf(content)
-            gsap.set(content, { x: 0, opacity: 1, ease: contentEaseIn })
+            gsap.set(content, { x: 0, opacity: 1, ease: contentEaseOn })
           }
         } else {
           // setup
           gsap.set(target, { opacity: 0 })
           // mask
           gsap.set(self.dragger, { x: xMax * direction })
-          gsap.to(self.dragger, { x: 0, duration: maskTimeIn, ease: maskEaseIn })
+          gsap.to(self.dragger, { x: 0, duration: maskTimeOn, ease: maskEaseOn })
           gsap.set(target, { x: -xMax * direction })
-          gsap.to(target, { x: 0, opacity: 1, duration: maskTimeIn, ease: maskEaseIn })
+          gsap.to(target, { x: 0, opacity: 1, duration: maskTimeOn, ease: maskEaseOn })
           // content
           const contents = target.querySelectorAll('.card-item > *')
           for (const content of contents) {
             gsap.set(content, { x: 100 * direction, opacity: 0 })
-            gsap.to(content, { x: 0, opacity: 1, duration: contentTimeIn, ease: contentEaseIn })
+            gsap.to(content, { x: 0, opacity: 1, duration: contentTimeOn, ease: contentEaseOn })
           }
         }
       }
@@ -123,12 +123,12 @@ Xt.mount.push({
           direction = -1
         }
         // mask
-        gsap.to(self.dragger, { x: -xMax * direction, duration: maskTimeOut, ease: maskEaseOut })
-        gsap.to(target, { x: xMax * direction, opacity: 0, duration: maskTimeOut, ease: maskEaseOut })
+        gsap.to(self.dragger, { x: -xMax * direction, duration: maskTimeOff, ease: maskEaseOff })
+        gsap.to(target, { x: xMax * direction, opacity: 0, duration: maskTimeOff, ease: maskEaseOff })
         // content
         const contents = target.querySelectorAll('.card-item > *')
         for (const content of contents) {
-          gsap.to(content, { x: -100 * direction, opacity: 0, duration: contentTimeOut, ease: contentEaseOut })
+          gsap.to(content, { x: -100 * direction, opacity: 0, duration: contentTimeOff, ease: contentEaseOff })
         }
       }
     }

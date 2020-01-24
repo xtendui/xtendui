@@ -12,16 +12,27 @@
 @time-big: 1000ms;
 @time-giant: 2000ms;
 
-// beziers
-
-@ease-in: @ease-cheetah;
-@ease-out: @ease-cheetah;
+// ease
 
 @ease-cheetah: ~'cubic-bezier(0.14, 0.63, 0, 1)';
 @ease-tiger: ~'cubic-bezier(0.96, 0.1, 0.14, 0.88)';
 @ease-cat: ~'cubic-bezier(0.77, 0, 0.17, 1)';
 @ease-dog: ~'cubic-bezier(0.36, 0, 0, 1)';
 @ease-penguin: ~'cubic-bezier(0.68, 0.13, 0.25, 1)';
+@ease-in: @ease-cheetah;
+@ease-out: @ease-cheetah;
+
+/*
+// browsers ease: can be 'In' or 'Out' or 'InOut', see https://easings.net/
+linear
+easeInOutSine
+easeInOutQuad
+easeInOutCubic
+easeInOutQuart
+easeInOutQuint
+easeInOutExpo
+easeInOutCirc
+*/
 
 /**
  * transition

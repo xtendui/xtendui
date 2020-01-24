@@ -15,27 +15,27 @@ gsap.globalTimeline.timeScale(1000) // milliseconds instead of seconds
 
 gsap.registerPlugin(ScrollToPlugin)
 
-gsap.registerEase('easeCheetah', progress => {
+gsap.registerEase('cheetah', progress => {
   const easing = BezierEasing(0.14, 0.63, 0, 1)
   return easing(progress)
 })
 
-gsap.registerEase('easeTiger', progress => {
+gsap.registerEase('tiger', progress => {
   const easing = BezierEasing(0.96, 0.1, 0.14, 0.88)
   return easing(progress)
 })
 
-gsap.registerEase('easeCat', progress => {
+gsap.registerEase('cat', progress => {
   const easing = BezierEasing(0.77, 0, 0.17, 1)
   return easing(progress)
 })
 
-gsap.registerEase('easeDog', progress => {
+gsap.registerEase('dog', progress => {
   const easing = BezierEasing(0.36, 0, 0, 1)
   return easing(progress)
 })
 
-gsap.registerEase('easePenguin', progress => {
+gsap.registerEase('penguin', progress => {
   const easing = BezierEasing(0.68, 0.13, 0.25, 1)
   return easing(progress)
 })
@@ -51,28 +51,32 @@ const vars = {
   timeMedium: 500,
   timeBig: 1000,
   timeGiant: 2000,
-  // ease
-  easeLinear: 'linear',
-  easeExpoIn: 'Expo.easeIn',
-  easeExpoOut: 'Expo.easeOut',
-  easeExpoInOut: 'Expo.easeInOut',
-  easeSineIn: 'Sine.easeIn',
-  easeSineOut: 'Sine.easeOut',
-  easeSineInOut: 'Sine.easeInOut',
-  easeQuartIn: 'Quart.easeIn',
-  easeQuartOut: 'Quart.easeOut',
-  easeQuartInOut: 'Quart.easeInOut',
-  easeQuintIn: 'Quint.easeIn',
-  easeQuintOut: 'Quint.easeOut',
-  easeQuintInOut: 'Quint.easeInOut',
-  easeIn: 'easeCheetah',
-  easeOut: 'easeCheetah',
-  easeCheetah: 'easeCheetah',
-  easeTiger: 'easeTiger',
-  easeCat: 'easeCat',
-  easeDog: 'easeDog',
-  easePenguin: 'easePenguin',
 }
+
+/*
+// eases
+'cheetah'
+'tiger'
+'cat'
+'dog'
+'penguin',
+// gsap ease: can be 'in' or 'out' or 'inOut', see https://easings.net/ and https://greensock.com/docs/v3/Eases
+'power1.out'
+'power2.out'
+'power3.out'
+'power4.out'
+'linear',
+'sine.out',
+'quad.out',
+'cubic.out',
+'quart.out',
+'quint.out',
+'expo.out',
+'circ.out',
+'back.out(number from 1 to 4)',
+'elastic.out(number from 1 to 2.5, number from 0.1 to 1)',
+'bounce.out',
+*/
 
 //
 // optionsGlobal

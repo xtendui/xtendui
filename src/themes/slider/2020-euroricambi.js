@@ -11,36 +11,37 @@ Xt.mount.push({
   mount: object => {
     // vars
 
-    const assetMaskTimeIn = Xt.vars.timeBig
-    const assetMaskTimeOut = Xt.vars.timeMedium
-    const assetMaskEaseIn = Xt.vars.easeExpoOut
-    const assetMaskEaseOut = Xt.vars.easeExpoInOut
+    const assetMaskTimeOn = Xt.vars.timeBig
+    const assetMaskTimeOff = Xt.vars.timeMedium
+    const assetMaskEaseOn = 'expo.out'
+    const assetMaskEaseOff = 'expo.inOut'
 
     const assetZoom = 0.1
-    const assetTimeIn = Xt.vars.timeBig
-    const assetTimeOut = Xt.vars.timeSmall
-    const assetEaseIn = Xt.vars.easeQuartOut
-    const assetEaseOut = Xt.vars.easeQuartInOut
+    const assetTimeOn = Xt.vars.timeBig
+    const assetTimeOff = Xt.vars.timeSmall
+    const assetEaseOn = 'quart.out'
+    const assetEaseOff = 'quart.inOut'
 
     const cardContentX = 25
-    const cardContentTimeIn = Xt.vars.timeBig
-    const cardContentTimeOut = Xt.vars.timeSmall
-    const cardContentEaseIn = Xt.vars.easeCheetah
-    const cardContentEaseOut = Xt.vars.easeCheetah
+    const cardContentTimeOn = Xt.vars.timeBig
+    const cardContentTimeOff = Xt.vars.timeSmall
+    const cardContentEaseOn = 'cheetah'
+    const cardContentEaseOff = 'cheetah'
 
-    const cardTimeIn = Xt.vars.timeBig
-    const cardEaseIn = Xt.vars.easeExpoOut
+    const cardTimeOn = Xt.vars.timeBig
+    const cardEaseOn = 'expo.out'
 
     // slider
 
     let self = new Xt.Slider(object, {
-      instant: false,
+      instant: true,
       durationOn: Xt.vars.timeBig,
       durationOff: Xt.vars.timeMedium,
+      /*
       auto: {
         time: 4500,
         pause: '[data-xt-pag], [data-xt-nav], .slider_card .btn',
-      },
+      },*/
       autoHeight: false,
       groupMq: false,
       drag: {
@@ -93,20 +94,20 @@ Xt.mount.push({
         const xFull = tr.clientWidth
         const xCurrent = (xMax * self.detail.dragPosOld) / xFull
         gsap.set(assetMask, { x: xCurrent })
-        gsap.to(assetMask, { x: 0, duration: assetMaskTimeIn, ease: assetMaskEaseIn })
+        gsap.to(assetMask, { x: 0, duration: assetMaskTimeOn, ease: assetMaskEaseOn })
         const assetMaskInner = assetMask.querySelector('.media-inner')
         gsap.set(assetMaskInner, { x: -xCurrent })
-        gsap.to(assetMaskInner, { x: 0, opacity: 1, duration: assetMaskTimeIn, ease: assetMaskEaseIn })
+        gsap.to(assetMaskInner, { x: 0, opacity: 1, duration: assetMaskTimeOn, ease: assetMaskEaseOn })
       }
       // asset
       const assets = tr.querySelectorAll('.slider_img img')
       for (const asset of assets) {
-        gsap.to(asset, { scale: 1, duration: assetTimeIn, ease: assetEaseIn })
+        gsap.to(asset, { scale: 1, duration: assetTimeOn, ease: assetEaseOn })
       }
       // cardContent
       const cardContents = tr.querySelectorAll('.slider_card .card-item')
       for (const cardContent of cardContents) {
-        gsap.to(cardContent, { opacity: 1, x: 0, duration: cardContentTimeIn, ease: cardContentEaseIn })
+        gsap.to(cardContent, { opacity: 1, x: 0, duration: cardContentTimeOn, ease: cardContentEaseOn })
       }
     }
 
@@ -151,28 +152,28 @@ Xt.mount.push({
           for (const assetMask of assetMasks) {
             const xMax = assetMask.clientWidth
             gsap.set(assetMask, { x: xMax * direction })
-            gsap.to(assetMask, { x: 0, duration: assetMaskTimeIn, ease: assetMaskEaseIn })
+            gsap.to(assetMask, { x: 0, duration: assetMaskTimeOn, ease: assetMaskEaseOn })
             const assetMaskInner = assetMask.querySelector('.media-inner')
             gsap.set(assetMaskInner, { x: -xMax * direction })
-            gsap.to(assetMaskInner, { x: 0, opacity: 1, duration: assetMaskTimeIn, ease: assetMaskEaseIn })
+            gsap.to(assetMaskInner, { x: 0, opacity: 1, duration: assetMaskTimeOn, ease: assetMaskEaseOn })
           }
           // asset
           const assets = tr.querySelectorAll('.slider_img img')
           for (const asset of assets) {
             gsap.set(asset, { scale: 1 + assetZoom })
-            gsap.to(asset, { scale: 1, duration: assetTimeIn, ease: assetEaseIn })
+            gsap.to(asset, { scale: 1, duration: assetTimeOn, ease: assetEaseOn })
           }
           // cardContent
           const cardContents = tr.querySelectorAll('.slider_card .card-item')
           for (const cardContent of cardContents) {
             gsap.set(cardContent, { opacity: 0, x: cardContentX * direction })
-            gsap.to(cardContent, { opacity: 1, x: 0, duration: cardContentTimeIn, ease: cardContentEaseIn })
+            gsap.to(cardContent, { opacity: 1, x: 0, duration: cardContentTimeOn, ease: cardContentEaseOn })
           }
           // card
           const card = tr.querySelector('.slider_card > .card')
           const cardHeight = card.clientHeight
           gsap.set(card, { height: Xt.dataStorage.get(self.object, 'cardHeight') || cardHeight })
-          gsap.to(card, { height: cardHeight, duration: cardTimeIn, ease: cardEaseIn })
+          gsap.to(card, { height: cardHeight, duration: cardTimeOn, ease: cardEaseOn })
         }
       }
     }
@@ -194,19 +195,19 @@ Xt.mount.push({
         const assetMasks = tr.querySelectorAll('.slider_img .media-container')
         for (const assetMask of assetMasks) {
           const xMax = assetMask.clientWidth
-          gsap.to(assetMask, { x: -xMax * direction, duration: assetMaskTimeOut, ease: assetMaskEaseOut })
+          gsap.to(assetMask, { x: -xMax * direction, duration: assetMaskTimeOff, ease: assetMaskEaseOff })
           const assetMaskInner = assetMask.querySelector('.media-inner')
-          gsap.to(assetMaskInner, { x: xMax * direction, opacity: 0, duration: assetMaskTimeOut, ease: assetMaskEaseOut })
+          gsap.to(assetMaskInner, { x: xMax * direction, opacity: 0, duration: assetMaskTimeOff, ease: assetMaskEaseOff })
         }
         // asset
         const assets = tr.querySelectorAll('.slider_img img')
         for (const asset of assets) {
-          gsap.to(asset, { scale: 1, duration: assetTimeOut, ease: assetEaseOut })
+          gsap.to(asset, { scale: 1, duration: assetTimeOff, ease: assetEaseOff })
         }
         // cardContent
         const cardContents = tr.querySelectorAll('.slider_card .card-item')
         for (const cardContent of cardContents) {
-          gsap.to(cardContent, { opacity: 0, x: -cardContentX * direction, duration: cardContentTimeOut, ease: cardContentEaseOut })
+          gsap.to(cardContent, { opacity: 0, x: -cardContentX * direction, duration: cardContentTimeOff, ease: cardContentEaseOff })
         }
         // card
         const card = tr.querySelector('.slider_card > .card')
