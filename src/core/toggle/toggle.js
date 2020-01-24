@@ -1489,9 +1489,22 @@ class Toggle {
     // queue start
     const obj = self.detail['queue' + actionCurrent][index]
     if (obj && obj[type] && !obj[type].done) {
-      const objOther = self.detail['queue' + actionOther][self.detail['queue' + actionOther].length - 1]
+      const queueOther = self.detail['queue' + actionOther]
+      const objOther = queueOther[queueOther.length - 1]
+      /*
+      if (objOther) {
+        if (objOther[type]) {
+          console.debug(actionCurrent, type, objOther[type].done)
+        } else {
+          console.debug(actionCurrent, type, 'no obj type')
+        }
+      } else {
+        console.debug(actionCurrent, type, 'no obj')
+      }
+      */
       if (!objOther || !objOther[type] || objOther[type].done) {
-        if (typeof options.instant !== 'object' && options.instant === true) {
+        // @FIX if initial must be instant, fixes queue
+        if (self.initial || (typeof options.instant !== 'object' && options.instant === true)) {
           obj[type].instant = true
         } else if (typeof options.instant === 'object' && options.instant[type]) {
           obj[type].instantType = true

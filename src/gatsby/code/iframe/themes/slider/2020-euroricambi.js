@@ -66,7 +66,7 @@ demo.htmlSource = `
                             </div>
 
                             <div class="slider_card">
-                                <div class="card card-default">
+                                <div class="card card-white">
                                     <div class="card-design"></div>
                                     <div class="card-inner">
                                         <div class="card-content">
@@ -121,7 +121,7 @@ demo.htmlSource = `
                             </div>
 
                             <div class="slider_card">
-                                <div class="card card-default">
+                                <div class="card card-white">
                                     <div class="card-design"></div>
                                     <div class="card-inner">
                                         <div class="card-content">
@@ -176,7 +176,7 @@ demo.htmlSource = `
                             </div>
 
                             <div class="slider_card">
-                                <div class="card card-default">
+                                <div class="card card-white">
                                     <div class="card-design"></div>
                                     <div class="card-inner">
                                         <div class="card-content">

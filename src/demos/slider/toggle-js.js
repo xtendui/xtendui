@@ -21,7 +21,7 @@ Xt.mount.push({
     // init
 
     let self = new Xt.Slider(object, {
-      instant: true,
+      instant: false,
       durationOn: Xt.vars.timeMedium,
       durationOff: Xt.vars.timeMedium,
     })

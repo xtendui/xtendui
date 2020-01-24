@@ -34,14 +34,13 @@ Xt.mount.push({
     // slider
 
     let self = new Xt.Slider(object, {
-      instant: true,
+      instant: false,
       durationOn: Xt.vars.timeBig,
       durationOff: Xt.vars.timeMedium,
-      /*
       auto: {
         time: 4500,
         pause: '[data-xt-pag], [data-xt-nav], .slider_card .btn',
-      },*/
+      },
       autoHeight: false,
       groupMq: false,
       drag: {
