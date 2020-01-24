@@ -3,7 +3,7 @@ type: "Components"
 badge: "Core"
 parent: "Note"
 title: "Background"
-date: "2000-05-01"
+date: "2019-05-01"
 ---
 
 Use `.note-background` to style the note with an internal padding and background.

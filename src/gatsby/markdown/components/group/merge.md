@@ -3,7 +3,7 @@ type: "Components"
 badge: "Core"
 parent: "Group"
 title: "Merge"
-date: "2000-05-01"
+date: "2019-05-01"
 ---
 
 ## Merge

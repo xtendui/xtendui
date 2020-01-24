@@ -4,7 +4,7 @@ parent: "Setup"
 title: "Setup"
 description: "Installation instruction and compilation."
 categories: ["000-Introduction"]
-date: "2000-01-01"
+date: "2018-01-01"
 ---
 
 # WIP pre 1.0 version: api changing fast

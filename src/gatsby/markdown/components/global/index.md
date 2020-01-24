@@ -5,7 +5,7 @@ parent: "Global"
 title: "Global"
 description: "Global variables, styles and utils."
 categories: ["100-Core"]
-date: "2000-01-01"
+date: "2018-01-01"
 ---
 
 ## Setup

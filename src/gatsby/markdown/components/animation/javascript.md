@@ -3,7 +3,7 @@ type: "Components"
 badge: "Core"
 parent: "Animation"
 title: "Javascript"
-date: "2000-05-01"
+date: "2000-08-01"
 ---
 
 ## Usage

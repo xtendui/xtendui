@@ -111,7 +111,7 @@ export const query = graphql`
     }
     postsAdiacent: allMarkdownRemark(
       filter: { frontmatter: { type: { eq: $type }, parent: { eq: $parent } } }
-      sort: { fields: [frontmatter___date, frontmatter___title], order: ASC }
+      sort: { fields: [frontmatter___date, frontmatter___title], order: [DESC, ASC] }
     ) {
       posts: edges {
         post: node {

@@ -3,7 +3,7 @@ type: "Components"
 badge: "Core"
 parent: "Card"
 title: "Horizontal"
-date: "2000-05-01"
+date: "2019-05-15"
 ---
 
 ## Block

@@ -3,7 +3,7 @@ type: "Components"
 badge: "Core"
 parent: "Column"
 title: "Option Css"
-date: "2000-02-01"
+date: "2019-12-01"
 ---
 
 ## Size

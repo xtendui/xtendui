@@ -3,7 +3,7 @@ type: "Components"
 badge: "Extensions"
 parent: "Sticky"
 title: "Other"
-date: "2000-10-01"
+date: "2019-03-15"
 ---
 
 ## Show and Hide

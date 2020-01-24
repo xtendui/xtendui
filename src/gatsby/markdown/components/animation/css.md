@@ -3,7 +3,7 @@ type: "Components"
 badge: "Core"
 parent: "Animation"
 title: "Css"
-date: "2000-02-01"
+date: "2019-12-01"
 ---
 
 ## Vars

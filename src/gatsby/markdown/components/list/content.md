@@ -3,7 +3,7 @@ type: "Components"
 badge: "Core"
 parent: "List"
 title: "Content"
-date: "2000-04-01"
+date: "2019-06-01"
 ---
 
 #### Anything

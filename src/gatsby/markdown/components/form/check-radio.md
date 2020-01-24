@@ -3,7 +3,7 @@ type: "Components"
 badge: "Core"
 parent: "Form"
 title: "Check and Radio"
-date: "2000-05-01"
+date: "2019-06-01"
 ---
 
 ## Usage

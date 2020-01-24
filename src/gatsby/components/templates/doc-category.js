@@ -63,7 +63,7 @@ export default Template
 
 export const query = graphql`
   query($category: String!) {
-    categories: allMarkdownRemark(sort: {fields: [frontmatter___date], order: ASC}) {
+    categories: allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
       category: group(field: frontmatter___categories) {
         title: fieldValue
       }

@@ -4,5 +4,5 @@ parent: "Faqs"
 title: "Faqs"
 description: "Frequently asked questions."
 categories: ["000-Introduction"]
-date: "2000-10-01"
+date: "2019-03-15"
 ---
