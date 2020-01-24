@@ -6,12 +6,10 @@ Xt.mount.push({
     // init
 
     let self = new Xt.Slider(object, {
-      /*
       auto: {
         time: 2000,
         initial: false,
       },
-       */
       align: 'center',
       drag: { wrap: true },
     })

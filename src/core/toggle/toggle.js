@@ -1364,7 +1364,8 @@ class Toggle {
       // clear
       clearInterval(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutostartInterval'))
       // auto
-      const time = options.auto.time
+      const time =
+        self.initial || self.initialContinue ? (options.auto.timeInitial !== false ? options.auto.timeInitial : options.auto.time) : options.auto.time
       // not when nothing activated
       if (self.currentIndex !== null && (!self.initial || self.initialContinue || options.auto.initial)) {
         // not when initial
@@ -1374,9 +1375,8 @@ class Toggle {
           // interval because can become :visible
           setInterval(() => {
             if (Xt.visible(self.object)) {
-              // auto
+              // not when disabled
               if (getComputedStyle(self.object).pointerEvents !== 'none') {
-                // not when disabled
                 if (options.auto.inverse) {
                   self.goToPrev(options.auto.step, true)
                 } else {
@@ -1576,7 +1576,9 @@ class Toggle {
       // delay fnc
       clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'DelayTimeout'))
       clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'))
-      if (delay) {
+      if (!delay) {
+        self.queueDelayDone(actionCurrent, actionOther, obj, el, type)
+      } else {
         Xt.dataStorage.set(
           el,
           self.componentNamespace + 'DelayTimeout',
@@ -1584,8 +1586,6 @@ class Toggle {
             self.queueDelayDone(actionCurrent, actionOther, obj, el, type)
           }, delay)
         )
-      } else {
-        self.queueDelayDone(actionCurrent, actionOther, obj, el, type)
       }
       // queue done
       if (obj[type].instant) {
@@ -2875,6 +2875,7 @@ Toggle.optionsDefaultSuper = {
   },
   auto: {
     time: false,
+    timeInitial: false,
     initial: true,
     step: 1,
     inverse: false,

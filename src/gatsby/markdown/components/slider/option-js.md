@@ -242,6 +242,7 @@ Use `wheel: { selector: 'object' }` or `wheel: { selector: QuerySelector }` to e
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `auto.time:Milliseconds`                          | `false`        | Automatic activation time            |
+| Option                  | `auto.timeInitial:Milliseconds`                          | `false`        | Automatic activation time on initial            |
 | Option                  | `auto.initial:Boolean`                          | `true`        | Automatic activation on initial            |
 | Option                  | `auto.step:Number`                          | `1`        | Automatic activation steps            |
 | Option                  | `auto.inverse:Boolean`                          | `false`        | Automatic activation inverse order            |
