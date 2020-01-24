@@ -1,0 +1,142 @@
+@import '~xtend-library/src/extensions/slider/slider.less';
+
+.demo--2020-euroricambi {
+  .margin(y, giant);
+  .slides-inner {
+    overflow: hidden;
+    // dragger animations
+    .transition-none() !important;
+    // disable dragger
+    .transform-none() !important;
+    .slide {
+      .toggle-block();
+    }
+  }
+  .slide {
+    .col(12);
+  }
+  .slide_item {
+    position: relative;
+  }
+  .slide-pagination-content {
+    display: none;
+  }
+  // pagination
+  .slider-pagination {
+    .list();
+    .list-space(giant);
+    align-items: center;
+    justify-content: center;
+    .padding(bottom, big);
+    @media @max-sm {
+      justify-content: space-between;
+    }
+  }
+  [data-xt-pag].btn {
+    .btn-text();
+    .btn-big();
+    .btn-tall();
+    .btn-narrow();
+    @media @max-sm {
+      &:not(.active):not(.out) {
+        display: none;
+      }
+      &.active, &.out {
+        .anim-y-inverse.active();
+      }
+    }
+  }
+  .btn--pagination-fake--prev {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-15%);
+  }
+  .btn--pagination-fake--next {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(15%);
+  }
+  // navigation
+  [data-xt-nav].btn {
+    @media @max-sm {
+      z-index: 2;
+      background: @white;
+      box-shadow: 0 0 2rem fade(@white, 100%), 0 0 4rem fade(@white, 100%), 0 0 6rem fade(@white, 100%);
+    }
+    .btn-tiny();
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    line-height: 1;
+  }
+}
+
+.slider_card {
+  @media @max-sm {
+    .container-space-remove();
+  }
+  @media @min-sm {
+    position: absolute;
+    bottom: 2.5rem;
+    right: 2.5rem;
+    width: 49rem;
+  }
+  > .card {
+    .card-squared();
+    align-items: flex-end;
+  }
+}
+
+.slider_card_inner {
+  overflow: hidden;
+}
+
+.slider_img {
+  position: relative;
+  .media-container {
+    overflow: hidden;
+  }
+  .media-inner {
+    overflow: hidden;
+  }
+}
+
+.slider_img_background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: @shade-300;
+}
+
+.slider_imgs--desktop {
+  > .row {
+    .row-space-y(none); // @FIX add row vertical space..
+  }
+  @media @max-sm {
+    display: none;
+  }
+  .slider_img {
+    .media-container {
+      height: 49rem;
+    }
+  }
+}
+
+.slider_imgs--mobile {
+  .container-space-remove();
+  @media @min-sm {
+    display: none;
+  }
+  .slider_img {
+    .media-container {
+      height: 25rem;
+    }
+  }
+}
