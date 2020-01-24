@@ -1,0 +1,49 @@
+@import '~xtend-library/src/extensions/slider/slider.less';
+
+.demo--2020-brands {
+  .margin(y, giant);
+  .slides-inner {
+    .row-space(none);
+    // dragger animations
+    transition-duration: 25000ms; // same as js
+    transition-timing-function: linear;
+    // disable dragger
+    cursor: default;
+    pointer-events: none;
+  }
+  .slide_item {
+    .list();
+    .list-space(giant);
+    flex-wrap: nowrap;
+  }
+  .slide_text {
+    .font-sans-semibold();
+    font-size: 12px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    @media @min-sm {
+      font-size: 1.6rem;
+    }
+  }
+  // horizontal gradient
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 4rem;
+    background: linear-gradient(90deg, @white 0%, fade(@white, 0%) 100%);
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 4rem;
+    background: linear-gradient(90deg, fade(@white, 0%) 0%, @white 100%);
+  }
+}
