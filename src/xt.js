@@ -13,9 +13,9 @@ Xt.mount = []
 Xt.unmount = []
 Xt.currents = {} // Xt currents based on namespace (so shared between Xt objects)
 Xt.optionsGlobal = {}
-Xt.resizeDelay = 1000
+Xt.resizeDelay = 200
 Xt.scrollDelay = false
-Xt.medialoadedDelay = 50
+Xt.medialoadedDelay = 200
 Xt.focusables = 'a, button, details, input, iframe, select, textarea'
 
 //
