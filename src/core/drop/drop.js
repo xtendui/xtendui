@@ -47,11 +47,12 @@ class Drop extends Xt.Toggle {
 Drop.componentName = 'xt-drop'
 Drop.optionsDefault = {
   elements: false,
-  targets: ':scope > .drop',
   elementsInner: ':scope > a, :scope > button',
+  targets: ':scope > .drop',
   on: 'click',
   min: 0,
   max: 1,
+  instant: { elements: false, elementsInner: true },
   class: 'active active-drop',
   eventLimit: '.event-limit, .drop',
   autoClose: true,

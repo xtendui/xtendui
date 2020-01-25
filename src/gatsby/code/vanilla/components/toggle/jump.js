@@ -10,7 +10,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="list list-default list-space-small align-items-center"
-     data-xt-toggle="{ targets: '.demo--toggle-jump', instant: true, jump: true }">
+     data-xt-toggle="{ targets: '.demo--toggle-jump', jump: true }">
   <button type="button" class="btn btn-default">
     Toggle 0
   </button>

@@ -135,11 +135,11 @@ You can use a function for <code>delayOn</code> and <code>delayOff</code> for ex
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `instant:Boolean|Object`                 | `{ elements: true, elementsInner: true }`     | Set instant activation and deactivation          |
 | Option                  | `delayOn:Milliseconds|Function`                          | `false`        | Activation delay            |
 | Option                  | `delayOff:Milliseconds|Function`                          | `false`        | Deactivation delay            |
 | Option                  | `durationOn:Milliseconds`                          | `false`        | Activation duration            |
 | Option                  | `durationOff:Milliseconds`                          | `false`        | Deactivation duration            |
-| Option                  | `instant: Boolean|Object`                 | `{ elements: true, targets: false, elementsInner: true, targetsInner: false }`     | Set instant activation and deactivation          |
 
 </div>
 
@@ -205,7 +205,6 @@ Use `keyboard: { selector: 'object' }` or `keyboard: { selector: QuerySelector }
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `instant:Object`                          | `{ elements: true, targets: false, elementsInner: true, targetsInner: false }`        | Instant activation instead of waiting for delay and animations             |
 | Option                  | `autoClose:Boolean`                          | `false`        | Close automatically on `autoclose.trigger.xt` event            |
 | Option                  | `autoDisable:Boolean`                          | `true`        | Disable automatically when cannot be activated             |
 | Option                  | `onBlock:Milliseconds`                          | `true`        | Block concurrent activation events            |
