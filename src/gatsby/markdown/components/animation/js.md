@@ -2,8 +2,8 @@
 type: "Components"
 badge: "Core"
 parent: "Animation"
-title: "Javascript"
-date: "2000-08-01"
+title: "Js"
+date: "2019-06-01"
 ---
 
 ## Usage

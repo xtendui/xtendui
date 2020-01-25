@@ -3,7 +3,7 @@ type: "Components"
 badge: "Core"
 parent: "Global"
 title: "Js"
-date: "2019-05-01"
+date: "2019-06-01"
 ---
 
 ## Events
