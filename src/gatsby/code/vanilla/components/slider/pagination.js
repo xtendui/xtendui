@@ -130,6 +130,10 @@ demo.htmlSource = `
               <div class="card-content">
                 <div class="card-block card-item">
                   <div class="card-title slide-pagination-content">6</div>
+                  <nav class="slider-pagination">
+                    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
+                    </button>
+                  </nav>
                 </div>
               </div>
             </div>

@@ -384,12 +384,7 @@ class Slider extends Xt.Toggle {
       if (options.jump) {
         tr.classList.add('xt-links-none')
       }
-      // event on
-      const slideonHandler = Xt.dataStorage.put(tr, 'on.slider' + '/' + self.namespace, self.eventSlideonHandler.bind(self).bind(self, dragger, tr))
-      tr.addEventListener('on.xt', slideonHandler, true) // @FIX useCapture for custom events order on re-init
-      // event off
-      const slideoffHandler = Xt.dataStorage.put(tr, 'off.slider' + '/' + self.namespace, self.eventSlideoffHandler.bind(self).bind(self, dragger, tr))
-      tr.addEventListener('off.xt', slideoffHandler, true) // @FIX useCapture for custom events order on re-init
+      // not event on and event off for targets because not needed and bugs pagination inside targets
     }
     // dragger
     if (options.drag) {
@@ -441,7 +436,7 @@ class Slider extends Xt.Toggle {
   eventSlideonHandler(dragger, el, e) {
     const self = this
     // useCapture delegation
-    if (self.elements.includes(el) || self.targets.includes(el)) {
+    if (self.elements.includes(el)) {
       // handler
       self.eventSlideon(dragger, el, e)
     }
@@ -456,7 +451,7 @@ class Slider extends Xt.Toggle {
   eventSlideoffHandler(dragger, el, e) {
     const self = this
     // useCapture delegation
-    if (self.elements.includes(el) || self.targets.includes(el)) {
+    if (self.elements.includes(el)) {
       // handler
       self.eventSlideoff(dragger, el, e)
     }
