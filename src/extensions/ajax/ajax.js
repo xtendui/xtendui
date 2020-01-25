@@ -101,11 +101,9 @@ class Ajax extends Xt.Toggle {
         }
       }
       if (!found) {
-        // initial
         self.initial = false
       }
     } else {
-      // initial
       self.initial = false
     }
     // detect url

@@ -9,7 +9,7 @@ Xt.mount.push({
 
     let self = new Xt.Slider(object, {
       auto: {
-        time: 25000, // same as css
+        time: 4000, // same as css
         timeInitial: 0,
       },
       align: 'left',

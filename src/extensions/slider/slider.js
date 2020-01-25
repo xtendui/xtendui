@@ -629,7 +629,7 @@ class Slider extends Xt.Toggle {
       // prevent alignment animation
       dragger.classList.remove('duration-none')
       // initial or resizing
-      if (self.initial) {
+      if (self.initial || self.initialContinue) {
         // prevent alignment animation
         dragger.classList.add('duration-none')
         requestAnimationFrame(() => {
@@ -654,7 +654,7 @@ class Slider extends Xt.Toggle {
       dragger.classList.remove('xt-links-none')
       // drag wrap
       if (self.dragger && options.drag.wrap) {
-        if (!self.initial) {
+        if (!self.initial && !self.initialContinue) {
           const min = self.groupMqFirst.length
           const max = self.groupMqFirst.length + self.groupMqInitial.length - 1
           // @FIX wrap with initial
@@ -761,8 +761,6 @@ class Slider extends Xt.Toggle {
     } else if (e.touches && e.touches.length) {
       self.detail.dragCurrent = e.touches[0].clientX
     }
-    // auto
-    self.eventAutostart()
     // logic
     self.logicDragfriction(dragger, e)
     // listener dispatch

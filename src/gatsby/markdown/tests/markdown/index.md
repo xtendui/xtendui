@@ -20,6 +20,17 @@ categories: ["100-Test"]
   </demovanilla>
 </demo>
 
+<demo>
+  <demovanilla src="vanilla/components/toggle/timing-delay-fnc">
+  </demovanilla>
+  <demovanilla src="vanilla/components/drop/variant">
+  </demovanilla>
+  <demovanilla src="vanilla/components/drop/event">
+  </demovanilla>
+  <demovanilla src="vanilla/components/drop/backdrop">
+  </demovanilla>
+</demo>
+
 ## Markdown
 
 <div class="table-scroll">

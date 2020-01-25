@@ -1362,7 +1362,7 @@ class Toggle {
       // paused
       self.detail.autopaused = false
       // clear
-      clearInterval(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutostartInterval'))
+      clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutostartTimeout'))
       // auto
       const time =
         self.initial || self.initialContinue ? (options.auto.timeInitial !== false ? options.auto.timeInitial : options.auto.time) : options.auto.time
@@ -1371,17 +1371,20 @@ class Toggle {
         // not when initial
         Xt.dataStorage.set(
           self.object,
-          self.componentNamespace + 'AutostartInterval',
-          // interval because can become :visible
-          setInterval(() => {
+          self.componentNamespace + 'AutostartTimeout',
+          // timeout
+          setTimeout(() => {
             if (Xt.visible(self.object)) {
               // not when disabled
               if (getComputedStyle(self.object).pointerEvents !== 'none') {
-                if (options.auto.inverse) {
-                  self.goToPrev(options.auto.step, true)
-                } else {
-                  self.goToNext(options.auto.step, true)
-                }
+                // @FIX initial and initialContinue after raf because after on.xt custom listeners
+                requestAnimationFrame(() => {
+                  if (options.auto.inverse) {
+                    self.goToPrev(options.auto.step, true)
+                  } else {
+                    self.goToNext(options.auto.step, true)
+                  }
+                })
               }
             }
           }, time)
@@ -1404,7 +1407,7 @@ class Toggle {
     // stop
     if (options.auto && options.auto.time) {
       // clear
-      clearInterval(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutostartInterval'))
+      clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutostartTimeout'))
       // listener dispatch
       self.object.dispatchEvent(new CustomEvent('autostop.xt'))
     }
@@ -1423,7 +1426,7 @@ class Toggle {
     // pause
     if (options.auto && options.auto.time) {
       // clear
-      clearInterval(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutostartInterval'))
+      clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutostartTimeout'))
       // listener dispatch
       self.object.dispatchEvent(new CustomEvent('autopause.xt'))
     }
@@ -1898,7 +1901,7 @@ class Toggle {
       if (options.auto && options.auto.time) {
         self.eventAutostart()
       }
-      // initial after raf set initial false after on.xt custom listeners
+      // @FIX initial and initialContinue after raf because after on.xt custom listeners
       requestAnimationFrame(() => {
         self.initial = false
         self.initialContinue = false
