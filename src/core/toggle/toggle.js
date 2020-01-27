@@ -196,7 +196,7 @@ class Toggle {
     // initial
     let currents = 0
     self.initial = true
-    self.initialContinue = false
+    self.continue = false
     self.currentIndex = null
     // [disabled]
     self.destroyDisabled()
@@ -1365,9 +1365,9 @@ class Toggle {
       clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutostartTimeout'))
       // auto
       const time =
-        self.initial || self.initialContinue ? (options.auto.timeInitial !== false ? options.auto.timeInitial : options.auto.time) : options.auto.time
+        self.initial || self.continue ? (options.auto.timeInitial !== false ? options.auto.timeInitial : options.auto.time) : options.auto.time
       // not when nothing activated
-      if (self.currentIndex !== null && (!self.initial || self.initialContinue || options.auto.initial)) {
+      if (self.currentIndex !== null && (!self.initial || self.continue || options.auto.initial)) {
         // not when initial
         Xt.dataStorage.set(
           self.object,
@@ -1377,7 +1377,7 @@ class Toggle {
             if (Xt.visible(self.object)) {
               // not when disabled
               if (getComputedStyle(self.object).pointerEvents !== 'none') {
-                // @FIX initial and initialContinue after raf because after on.xt custom listeners
+                // @FIX initial and continue after raf because after on.xt custom listeners
                 requestAnimationFrame(() => {
                   if (options.auto.inverse) {
                     self.goToPrev(options.auto.step, true)
@@ -1901,10 +1901,10 @@ class Toggle {
       if (options.auto && options.auto.time) {
         self.eventAutostart()
       }
-      // @FIX initial and initialContinue after raf because after on.xt custom listeners
+      // @FIX initial and continue after raf because after on.xt custom listeners
       requestAnimationFrame(() => {
         self.initial = false
-        self.initialContinue = false
+        self.continue = false
       })
     } else if (actionCurrent === 'Off') {
       // special

@@ -624,7 +624,7 @@ class Slider extends Xt.Toggle {
       // prevent alignment animation
       dragger.classList.remove('duration-none')
       // initial or resizing
-      if (self.initial || self.initialContinue) {
+      if (self.initial || self.continue) {
         // prevent alignment animation
         dragger.classList.add('duration-none')
         requestAnimationFrame(() => {
@@ -649,7 +649,7 @@ class Slider extends Xt.Toggle {
       dragger.classList.remove('xt-links-none')
       // drag wrap
       if (self.dragger && options.drag.wrap) {
-        if (!self.initial && !self.initialContinue) {
+        if (!self.initial && !self.continue) {
           const min = self.groupMqFirst.length
           const max = self.groupMqFirst.length + self.groupMqInitial.length - 1
           // @FIX wrap with initial
@@ -658,11 +658,11 @@ class Slider extends Xt.Toggle {
             () => {
               if (self.currentIndex < min) {
                 self.initial = true
-                self.initialContinue = true
+                self.continue = true
                 self.goToNum(max + self.currentIndex - min + 1, true) // wrap around xt-wrap items
               } else if (self.currentIndex > max) {
                 self.initial = true
-                self.initialContinue = true
+                self.continue = true
                 self.goToNum(min + self.currentIndex - max - 1, true) // wrap around xt-wrap items
               }
             },
