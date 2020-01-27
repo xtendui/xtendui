@@ -9,7 +9,6 @@ Xt.mount.push({
 
     let self = new Xt.Slider(object, {
       auto: {
-        time: 4000, // same as css
         timeInitial: 0,
       },
       align: 'left',
@@ -19,6 +18,23 @@ Xt.mount.push({
         wrap: true,
       },
     })
+
+    // on
+
+    const eventOn = e => {
+      const tr = e.target
+      // useCapture delegation
+      if (self.targets.includes(tr)) {
+        // set auto time
+        const draggerWidth = self.dragger.offsetWidth
+        const slideWidth = tr.offsetWidth
+        const time = (draggerWidth / slideWidth) * 100000
+        self.options.auto.time = time
+        self.object.querySelector('.slides-inner').style.transitionDuration = time + 'ms'
+      }
+    }
+
+    self.object.addEventListener('on.xt', eventOn, true)
 
     // unmount
 

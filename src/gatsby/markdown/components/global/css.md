@@ -112,6 +112,8 @@ To disable focus feeback globally add `html.xt-focus-disable` class.
 
 |                         | Syntax                                    | Mixin                         | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Util                  | `.pointer-events-none`                               | `.pointer-events-none()`                | No pointer events            |
+| Util                  | `.pointer-events-auto`                               | `.pointer-events-auto()`                | Auto pointer events            |
 | Util                  | `.reset-text`                               | `.reset-text()`                | Reset text styles to inherit            |
 | Util                  | `.text-capitalize`                               | `.text-capitalize()`                | Lowercase text and capitalize first letter            |
 | Util                  | `.design-setup`                               | `.design-setup()`                | Util for components design setup            |

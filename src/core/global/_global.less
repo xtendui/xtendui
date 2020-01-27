@@ -4,6 +4,14 @@
 
 // various
 
+.pointer-events-none() {
+  pointer-events: none;
+}
+
+.pointer-events-auto() {
+  pointer-events: auto;
+}
+
 .reset-text() {
   font-family: inherit;
   font-style: inherit;
@@ -300,6 +308,12 @@
         .link-none();
       }
       // various
+      .pointer-events-none {
+        .pointer-events-none() !important;
+      }
+      .pointer-events-auto {
+        .pointer-events-auto() !important;
+      }
       .reset-text {
         .reset-text() !important;
       }
