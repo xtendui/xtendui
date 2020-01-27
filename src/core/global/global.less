@@ -39,9 +39,10 @@
 // shadow
 // USAGE: box-shadow: @shadow-light;
 
-@shadow-light: 0 .1rem 1rem fade(@shade-300, 40%), 0 .2rem 2rem fade(@shade-300, 80%);
-@shadow-dark: 0 .1rem 1rem fade(@shade-900, 20%), 0 .2rem 2rem fade(@shade-900, 40%);
-@shadow-accent: 0 .1rem 1rem fade(@accent-dark, 20%), 0 .2rem 2rem fade(@accent-dark, 40%);
+@shadow-none: 0 .25rem .5rem transparent, 0 .75rem 1.5rem transparent;
+@shadow-light: 0 .25rem .5rem fade(@shade-300, 40%), 0 .75rem 1.5rem fade(@shade-300, 80%);
+@shadow-dark: 0 .25rem .5rem fade(@shade-900, 20%), 0 .75rem 1.5rem fade(@shade-900, 40%);
+@shadow-accent: 0 .25rem .5rem fade(@accent-dark, 20%), 0 .75rem 1.5rem fade(@accent-dark, 40%);
 
 // gradient
 // USAGE: background: linear-gradient(135deg, @grad-light);
@@ -79,7 +80,8 @@
 
 // breakpoints
 
-@breakpoints: xs, sm, md, lg, xl; // if you change this change also variables names below
+@breakpoints: xxs, xs, sm, md, lg, xl; // if you change this change also variables names below
+@breakpoint-xxs: 370px;
 @breakpoint-xs: 576px;
 @breakpoint-sm: 768px;
 @breakpoint-md: 992px;
@@ -89,6 +91,8 @@
 // @media queries
 // USAGE: @media @min-sm and @max-md {}
 
+@min-xxs: ~'(min-width:'(@breakpoint-xxs)~')';
+@max-xxs: ~'(max-width:'(@breakpoint-xxs - 1)~')';
 @min-xs: ~'(min-width:'(@breakpoint-xs)~')';
 @max-xs: ~'(max-width:'(@breakpoint-xs - 1)~')';
 @min-sm: ~'(min-width:'(@breakpoint-sm)~')';

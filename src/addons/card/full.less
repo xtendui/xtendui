@@ -3,13 +3,15 @@
  */
 
 .card-full {
-  color: @text;
-  > .card-design {
-    border-color: transparent;
-    background: transparent;
-  }
   > .card-inner > .card-content {
     padding: 0 !important;
+  }
+  &:not(:hover):not(.hover):not(:active):not(.active) {
+    color: @text;
+    > .card-design {
+      border-color: transparent;
+      background: transparent;
+    }
   }
 }
 

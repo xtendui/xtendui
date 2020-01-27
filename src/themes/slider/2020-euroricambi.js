@@ -25,8 +25,8 @@ Xt.mount.push({
     const cardContentX = 25
     const cardContentTimeOn = Xt.vars.timeBig
     const cardContentTimeOff = Xt.vars.timeSmall
-    const cardContentEaseOn = 'cheetah'
-    const cardContentEaseOff = 'cheetah'
+    const cardContentEaseOn = 'expo.out'
+    const cardContentEaseOff = 'expo.inOut'
 
     const cardTimeOn = Xt.vars.timeBig
     const cardEaseOn = 'expo.out'
@@ -34,7 +34,7 @@ Xt.mount.push({
     // slider
 
     let self = new Xt.Slider(object, {
-      instant: false,
+      instant: { elements: true, elementsInner: true },
       durationOn: Xt.vars.timeBig,
       durationOff: Xt.vars.timeMedium,
       auto: {

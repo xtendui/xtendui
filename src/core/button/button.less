@@ -24,13 +24,16 @@
   border-color: @shade-200;
   background: @shade-200;
   color: @text;
-  &:hover, &.hover, &:active, &.active {
-    border-color: @shade-200-dark;
-    background: @shade-200-dark;
+  &:hover, &.hover {
     color: @text-dark;
+    box-shadow: @shadow-light;
+    transform: translateY(-.25rem);
   }
   &:active, &.active {
-    box-shadow: @shadow-light;
+    border-color: @shade-200-dark;
+    background: @shade-200-dark;
+    box-shadow: @shadow-none;
+    transform: none;
   }
 }
 
@@ -39,13 +42,17 @@
   border-color: @accent;
   background: @accent;
   color: @text-inverse;
-  &:hover, &.hover, &:active, &.active {
+  &:hover, &.hover {
+    color: @text-inverse-dark;
+    box-shadow: @shadow-accent;
+    transform: translateY(-.25rem);
+  }
+  &:active, &.active {
     border-color: @accent-dark;
     background: @accent-dark;
     color: @text-inverse-dark;
-  }
-  &:active, &.active {
-    box-shadow: @shadow-accent;
+    box-shadow: @shadow-none;
+    transform: none;
   }
 }
 
@@ -53,9 +60,15 @@
   .link-none();
   .btn-nodesign();
   color: inherit;
-  &:hover, &.hover, &:active, &.active {
+  &:hover, &.hover {
     color: inherit;
     opacity: .75;
+    transform: translateY(-.25rem);
+  }
+  &:active, &.active {
+    color: inherit;
+    opacity: 1;
+    transform: none;
   }
 }
 
@@ -102,12 +115,12 @@
 .btn-nodesign {
   border-color: transparent;
   background: transparent;
+  .transform-none();
   &:hover, &.hover, &:active, &.active {
     border-color: transparent;
     background: transparent;
-  }
-  &:active, &.active {
     box-shadow: none;
+    .transform-none();
   }
 }
 
@@ -175,7 +188,12 @@
   transition-property: all;
   transition-duration: @time-medium;
   transition-timing-function: @ease-out;
-  &:hover, &.hover, &:active, &.active {
+  &:hover, &.hover {
+    transition-property: all;
+    transition-duration: @time-medium;
+    transition-timing-function: @ease-in;
+  }
+  &:active, &.active {
     transition-property: all;
     transition-duration: @time-medium;
     transition-timing-function: @ease-in;

@@ -393,14 +393,6 @@ Xt.mount.push({
 
     // init
 
-    let self = new Xt.Ajax(object, options)
-
-    // unmount
-
-    const unmount = () => {
-      self.destroy()
-      self = null
-    }
-    return unmount
+    new Xt.Ajax(object, options)
   },
 })

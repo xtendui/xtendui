@@ -96,16 +96,17 @@
   }
   // interactive
   a&, button& {
-    &:hover, &.hover, &:active, &.active {
+    &:hover, &.hover {
+      color: @text-dark;
+      > .card-design {
+        box-shadow: @shadow-light;
+      }
+    }
+    &:active, &.active {
       color: @text-dark;
       > .card-design {
         border-color: @shade-200-dark;
         background: @shade-200-dark;
-      }
-    }
-    &:active, &.active {
-      > .card-design {
-        box-shadow: @shadow-light;
       }
     }
   }
@@ -142,16 +143,17 @@
   }
   // interactive
   a&, button& {
-    &:hover, &.hover, &:active, &.active {
+    &:hover, &.hover {
+      color: @text-inverse-dark;
+      > .card-design {
+        box-shadow: @shadow-accent;
+      }
+    }
+    &:active, &.active {
       color: @text-inverse-dark;
       > .card-design {
         border-color: @accent-dark;
         background: @accent-dark;
-      }
-    }
-    &:active, &.active {
-      > .card-design {
-        box-shadow: @shadow-accent;
       }
     }
   }
@@ -184,16 +186,17 @@
   }
   // interactive
   a&, button& {
-    &:hover, &.hover, &:active, &.active {
+    &:hover, &.hover {
+      color: @text-dark;
+      > .card-design {
+        box-shadow: @shadow-light;
+      }
+    }
+    &:active, &.active {
       color: @text-dark;
       > .card-design {
         border-color: @white;
         background: @white;
-      }
-    }
-    &:active, &.active {
-      > .card-design {
-        box-shadow: @shadow-light;
       }
     }
   }
@@ -332,13 +335,8 @@
       transition-duration: @time-medium;
       transition-timing-function: @ease-out;
     }
-    .card-block.card-item {
-      transition-property: transform;
-      transition-duration: @time-medium;
-      transition-timing-function: @ease-out;
-    }
-    &:hover, &.hover, &:active, &.active {
-      transform: translateY(-.5rem) scale(1.03, 1.05);
+    &:hover, &.hover {
+      transform: translateY(-.5rem);
       transition-property: all;
       transition-duration: @time-medium;
       transition-timing-function: @ease-in;
@@ -347,9 +345,14 @@
         transition-duration: @time-medium;
         transition-timing-function: @ease-in;
       }
-      .card-block.card-item {
-        transform: scale(0.97, 0.95);
-        transition-property: transform;
+    }
+    &:active, &.active {
+      transform: none;
+      transition-property: all;
+      transition-duration: @time-medium;
+      transition-timing-function: @ease-in;
+      > .card-design {
+        transition-property: all;
         transition-duration: @time-medium;
         transition-timing-function: @ease-in;
       }
