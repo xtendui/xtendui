@@ -47,11 +47,17 @@
 
 .drop-container-static {
   position: static;
-  > .drop, > .drop > .drop-inner {
+  > .drop {
     width: 100%;
-  }
-  > .drop > .drop-inner > .drop-content {
-    max-width: none;
+    > .drop-inner {
+      width: 100%;
+      > .drop-content {
+        max-width: none;
+      }
+    }
+    // @FIX no horizontal drop position
+    left: auto !important;
+    right: auto !important;
   }
 }
 
