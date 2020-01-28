@@ -3,6 +3,7 @@
  */
 
 .card {
+  .link-none();
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,9 +11,6 @@
   width: 100%;
   .flex-auto();
   z-index: @index-base; // fix :before negative z-index
-  a& {
-    .link-none();
-  }
   a&, button& {
     &:hover, &.hover, &:active, &.active {
       z-index: @index-active;
