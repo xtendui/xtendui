@@ -1,3 +1,10 @@
+## [0.13.1](https://github.com/minimit/xtend-library/compare/v0.13.0...v0.13.1) (2020-01-28)
+
+
+### Bug Fixes
+
+* fix packaging force-resolution ([443d288](https://github.com/minimit/xtend-library/commit/443d288f2833401c8504e3f0fcc1a28132141c9f))
+
 # [0.13.0](https://github.com/minimit/xtend-library/compare/v0.12.0...v0.13.0) (2020-01-28)
 
 
