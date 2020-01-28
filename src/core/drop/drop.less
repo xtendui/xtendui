@@ -102,6 +102,14 @@
   }
 }
 
+.drop-overflow-x {
+  > .drop-inner > .drop-content {
+    overflow-x: auto;
+    max-width: 25rem;
+    .overflow-style(@mode: inner);
+  }
+}
+
 // animation
 
 .drop-container {

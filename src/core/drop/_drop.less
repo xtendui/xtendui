@@ -30,6 +30,7 @@
 
 .drop {
   position: absolute;
+  animation-duration: inherit; // needed for .out animation time and backdrop animation time
   > .drop-inner {
     position: relative;
     z-index: @index-base; // fix :before negative z-index
@@ -48,6 +49,9 @@
   position: static;
   > .drop, > .drop > .drop-inner {
     width: 100%;
+  }
+  > .drop > .drop-inner > .drop-content {
+    max-width: none;
   }
 }
 

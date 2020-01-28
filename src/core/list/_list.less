@@ -28,6 +28,12 @@
 
 // selectors
 
+.list-items(@rules) {
+  > li:not(.xt-custom) {
+    @rules();
+  }
+}
+
 .list-btns(@rules) {
   > li:not(.xt-custom) {
     > a, > button {

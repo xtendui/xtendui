@@ -30,17 +30,21 @@ Use `li.xt-custom` to override styles applied by `.list.list-drop`.
 
 ## Overflow
 
-You can set vertical overflow using `.drop-overflow-y` in `.drop`.
+You can set overflow using `.drop-overflow-y` and/or `.drop-overflow-x` in `.drop`.
 
 <div class="table-scroll">
 
 |                         | Class                                     | Mixin                         | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `.drop-overflow-y`                | `.drop-overflow-y()`        | Vertical overflow with max-height and scrollbar            |
+| Option                  | `.drop-overflow-x`                | `.drop-overflow-x()`        | Horizontal overflow with max-width and scrollbar            |
 
 </div>
 
 <demo>
   <demovanilla src="vanilla/components/drop/overflow-y">
   </demovanilla>
+  <demovanilla src="vanilla/components/drop/overflow-x">
+  </demovanilla>
 </demo>
+
