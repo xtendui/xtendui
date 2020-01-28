@@ -37,17 +37,11 @@ We recomend to use transitions this way:
 .my-element {
   opacity: 0;
   transform: translateX(-1.5rem);
-  transition-property: all;
-  transition-duration: @time-medium;
-  transition-delay: initial;
-  transition-timing-function: @ease-out;
+  transition: all @time-medium @ease-out initial;
   &:hover, &.hover, &:active, &.active {
     opacity: 1;
     transform: translateX(0);
-    transition-property: all;
-    transition-duration: @time-medium;
-    transition-delay: initial;
-    transition-timing-function: @ease-in;
+    transition: all @time-medium @ease-in initial;
   }
 }
 ```

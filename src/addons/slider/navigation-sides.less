@@ -5,9 +5,7 @@
   height: 100%;
   color: @black;
   // animation
-  transition-property: opacity, color;
-  transition-duration: @time-small;
-  transition-timing-function: @ease-out;
+  transition: opacity @time-small @ease-out, color @time-small @ease-out;
   .slider.xt-disable & {
     display: none;
   }

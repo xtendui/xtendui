@@ -185,18 +185,12 @@
 // animation
 
 .btn {
-  transition-property: all;
-  transition-duration: @time-medium;
-  transition-timing-function: @ease-out;
+  transition: all @time-medium @ease-out, transform @time-small @ease-out;
   &:hover, &.hover {
-    transition-property: all;
-    transition-duration: @time-medium;
-    transition-timing-function: @ease-in;
+    transition: all @time-medium @ease-in, transform @time-small @ease-in;
   }
   &:active, &.active {
-    transition-property: all;
-    transition-duration: @time-medium;
-    transition-timing-function: @ease-in;
+    transition: all @time-medium @ease-in, transform @time-small @ease-in;
   }
 }
 

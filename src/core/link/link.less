@@ -27,13 +27,9 @@ a, .btn-link {
 // animation
 
 a, .btn-link {
-  transition-property: color, background, opacity;
-  transition-duration: @time-medium;
-  transition-timing-function: @ease-out;
+  transition: color @time-medium @ease-out, background @time-medium @ease-out, opacity @time-medium @ease-out;
   &:hover, &.hover, &:active, &.active {
-    transition-property: color, background, opacity;
-    transition-duration: @time-medium;
-    transition-timing-function: @ease-in;
+    transition: color @time-medium @ease-in, background @time-medium @ease-in, opacity @time-medium @ease-in;
   }
 }
 

@@ -327,34 +327,22 @@
 
 .card {
   a&, button& {
-    transition-property: all;
-    transition-duration: @time-medium;
-    transition-timing-function: @ease-out;
+    transition: all @time-medium @ease-out;
     > .card-design {
-      transition-property: all;
-      transition-duration: @time-medium;
-      transition-timing-function: @ease-out;
+      transition: all @time-medium @ease-out;
     }
     &:hover, &.hover {
       transform: translateY(-.5rem);
-      transition-property: all;
-      transition-duration: @time-medium;
-      transition-timing-function: @ease-in;
+      transition: all @time-medium @ease-in;
       > .card-design {
-        transition-property: all;
-        transition-duration: @time-medium;
-        transition-timing-function: @ease-in;
+        transition: all @time-medium @ease-in;
       }
     }
     &:active, &.active {
       transform: none;
-      transition-property: all;
-      transition-duration: @time-medium;
-      transition-timing-function: @ease-in;
+      transition: all @time-medium @ease-in;
       > .card-design {
-        transition-property: all;
-        transition-duration: @time-medium;
-        transition-timing-function: @ease-in;
+        transition: all @time-medium @ease-in;
       }
     }
   }

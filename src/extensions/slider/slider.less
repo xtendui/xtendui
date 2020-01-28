@@ -11,9 +11,7 @@
   .full();
   &.xt-autoHeight {
     // autoHeight animations
-    transition-property: height;
-    transition-duration: 750ms;
-    transition-timing-function: @ease-out;
+    transition: height 750ms @ease-out;
   }
 }
 
@@ -23,9 +21,7 @@
   flex-wrap: nowrap;
   align-items: flex-start;
   // dragger animations
-  transition-property: transform;
-  transition-duration: 750ms;
-  transition-timing-function: @ease-out;
+  transition: transform 750ms @ease-out;
 }
 
 // pagination

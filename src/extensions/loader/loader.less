@@ -173,28 +173,20 @@
 .loader {
   &.active {
     opacity: 1;
-    transition-property: opacity;
-    transition-duration: @time-small;
-    transition-timing-function: @ease-in;
+    transition: opacity @time-small @ease-in;
     .spinner, .filler {
       opacity: 1;
       transform: scale(1);
-      transition-property: opacity, transform;
-      transition-duration: @time-small;
-      transition-timing-function: @ease-in;
+      transition: opacity @time-small @ease-in, transform @time-small @ease-in;
     }
   }
   &.out {
     opacity: 0;
-    transition-property: opacity;
-    transition-duration: @time-small;
-    transition-timing-function: @ease-out;
+    transition: opacity @time-small @ease-out;
     .spinner, .filler {
       opacity: 0;
       transform: scale(.75, .75);
-      transition-property: opacity, transform;
-      transition-duration: @time-small;
-      transition-timing-function: @ease-out;
+      transition: opacity @time-small @ease-out, transform @time-small @ease-out;
     }
   }
 }

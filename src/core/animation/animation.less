@@ -288,16 +288,10 @@ easeInOutCirc
 
 .collapse-height, .collapse-width {
   &.active {
-    transition-property: height, width;
-    transition-duration: @time-small;
-    transition-delay: initial;
-    transition-timing-function: @ease-in;
+    transition: height @time-small @ease-in, width @time-small @ease-in;
   }
   &.out {
-    transition-property: height, width;
-    transition-duration: @time-small;
-    transition-delay: initial;
-    transition-timing-function: @ease-out;
+    transition: height @time-small @ease-out, width @time-small @ease-out;
   }
 }
 

@@ -6,11 +6,9 @@
  */
 
 .sticky-moving {
-  transition-property: all;
-  transition-duration: @time-medium;
-  transition-timing-function: @ease-out;
+  transition: all @time-medium @ease-out;
   &.inverse {
-    transition-timing-function: @ease-in;
+    transition: all @time-medium @ease-in;
   }
 }
 

@@ -2,13 +2,9 @@
   .animation-none() !important; // disable default animation
   // animation
   opacity: .5 !important;
-  transition-property: opacity;
-  transition-duration: @time-medium;
-  transition-timing-function: @ease-out;
+  transition: opacity @time-medium @ease-out;
   &.active {
     opacity: 1 !important;
-    transition-property: opacity;
-    transition-duration: @time-medium;
-    transition-timing-function: @ease-in;
+    transition: opacity @time-medium @ease-in;
   }
 }

@@ -222,13 +222,9 @@ form, .form {
 // animation
 
 .form-item {
-  transition-property: color, border, background-color;
-  transition-duration: @time-giant;
-  transition-timing-function: @ease-out;
+  transition: color @time-giant @ease-out, border @time-giant @ease-out, background-color @time-giant @ease-out;
   &:focus, &.active {
-    transition-property: color, border, background-color;
-    transition-duration: @time-giant;
-    transition-timing-function: @ease-in;
+    transition: color @time-giant @ease-in, border @time-giant @ease-in, background-color @time-giant @ease-in;
   }
 }
 
@@ -363,16 +359,12 @@ input[type="radio"]:not(.unstyled) {
 .checkbox, .radio {
   &:before {
     transform: scale(.9, .9);
-    transition-property: all;
-    transition-duration: @time-medium;
-    transition-timing-function: @ease-out;
+    transition: all @time-medium @ease-out;
   }
   &:after {
     opacity: 0 !important;
     transform: scale(.9, .5);
-    transition-property: all;
-    transition-duration: @time-medium;
-    transition-timing-function: @ease-out;
+    transition: all @time-medium @ease-out;
   }
   &.focus, &:focus {
     &:before {
@@ -382,16 +374,12 @@ input[type="radio"]:not(.unstyled) {
   &.active {
     &:before {
       transform: scale(1, 1);
-      transition-property: all;
-      transition-duration: @time-medium;
-      transition-timing-function: @ease-in;
+      transition: all @time-medium @ease-in;
     }
     &:after {
       opacity: 1 !important;
       transform: scale(1, 1);
-      transition-property: all;
-      transition-duration: @time-medium;
-      transition-timing-function: @ease-in;
+      transition: all @time-medium @ease-in;
     }
   }
 }
