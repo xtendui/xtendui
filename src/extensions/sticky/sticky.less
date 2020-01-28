@@ -6,7 +6,14 @@
  */
 
 .sticky-moving {
-  transition-property: top;
+  transition-property: all;
   transition-duration: @time-medium;
   transition-timing-function: @ease-out;
+  &.inverse {
+    transition-timing-function: @ease-in;
+  }
+}
+
+.sticky-hide {
+  opacity: 0;
 }
