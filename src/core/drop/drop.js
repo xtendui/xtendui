@@ -82,6 +82,14 @@ Xt.mount.push({
 
     // init
 
-    new Xt.Drop(object, options)
+    let self = new Xt.Drop(object, options)
+
+    // unmount
+
+    const unmount = () => {
+      self.destroy()
+      self = null
+    }
+    return unmount
   },
 })

@@ -2925,6 +2925,14 @@ Xt.mount.push({
 
     // init
 
-    new Xt.Toggle(object, options)
+    let self = new Xt.Toggle(object, options)
+
+    // unmount
+
+    const unmount = () => {
+      self.destroy()
+      self = null
+    }
+    return unmount
   },
 })
