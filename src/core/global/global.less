@@ -118,6 +118,7 @@ body {
 
 .overflow-style(@mode: none) {
   -webkit-overflow-scrolling: touch;
+  overflow-anchor: none; // prevent scroll event on DOM height change
   & when (@mode = none) {
     &::-webkit-scrollbar {
       height: 8px;
