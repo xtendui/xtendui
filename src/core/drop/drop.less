@@ -105,14 +105,13 @@
 // animation
 
 .drop-container {
-  &, > .drop {
-    animation-duration: @time-medium + @time-small; // needed for .out animation time and backdrop animation time, put max animation time
-  }
+  animation-duration: @time-medium + @time-small; // needed for .out animation time and backdrop animation time, put max animation time
   &.active {
     > .drop {
       > .drop-inner {
         > .drop-design {
           .anim-zoom.active();
+          animation-delay: initial;
         }
         > .drop-content {
           .anim-y.active();
@@ -133,6 +132,7 @@
         }
         > .drop-content {
           .anim-y.out();
+          animation-delay: initial;
         }
       }
       > .backdrop {

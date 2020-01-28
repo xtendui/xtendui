@@ -64,10 +64,12 @@
 .overlay {
   animation-duration: @time-medium + @time-small; // needed for .out animation time and backdrop animation time, put max animation time
   &.active {
-    .card-overlay > .card-design {
-      .anim-zoom.active();
-    }
+    .card-overlay > .card-design,
     .card-overlay > .card-inner > * {
+      .anim-zoom.active();
+      animation-delay: initial;
+    }
+    .card-overlay > .card-inner > .card-content {
       .anim-y.active();
       animation-delay: @time-small;
     }
@@ -76,12 +78,14 @@
     }
   }
   &.out {
-    .card-overlay > .card-design {
+    .card-overlay > .card-design,
+    .card-overlay > .card-inner > * {
       .anim-zoom.out();
       animation-delay: @time-small;
     }
-    .card-overlay > .card-inner > * {
+    .card-overlay > .card-inner > .card-content {
       .anim-y.out();
+      animation-delay: initial;
     }
     > .backdrop {
       .backdrop.out();
