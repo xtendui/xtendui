@@ -103,7 +103,7 @@
         "@semantic-release/exec",
         {
           "prepareCmd": "npm run prepare",
-          "successCmd": "npm run deploy && git pull"
+          "successCmd": "git pull"
         }
       ],
       [
