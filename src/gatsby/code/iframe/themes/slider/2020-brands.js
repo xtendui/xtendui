@@ -90,6 +90,82 @@ demo.htmlSource = `
     </nav>
 
 </div>
+
+<div class="slider demo--2020-brands demo--2020-brands--constant">
+
+    <div class="slides">
+        <ul class="slides-inner">
+
+            <li class="slide">
+                <div class="slide-inner">
+                    <div class="slide_item">
+                        <div class="slide_text">
+                            Lorem
+                        </div>
+                        <div class="slide_text">
+                            ipsum
+                        </div>
+                        <div class="slide_text">
+                            dolor sit amet
+                        </div>
+                        <div class="slide_text">
+                            consectetur
+                        </div>
+                        <div class="slide_text">
+                            adipiscing elit
+                        </div>
+                        <div class="slide_text">
+                            Nunc
+                        </div>
+                        <div class="slide_text">
+                            tempus
+                        </div>
+                        <div class="slide_text">
+                            laoreet
+                        </div>
+                        <div class="slide_text">
+                            leo sit amet iaculis
+                        </div>
+                        <div class="slide_text">
+                            Lorem
+                        </div>
+                        <div class="slide_text">
+                            ipsum
+                        </div>
+                        <div class="slide_text">
+                            dolor sit amet
+                        </div>
+                        <div class="slide_text">
+                            consectetur
+                        </div>
+                        <div class="slide_text">
+                            adipiscing elit
+                        </div>
+                        <div class="slide_text">
+                            Nunc
+                        </div>
+                        <div class="slide_text">
+                            tempus
+                        </div>
+                        <div class="slide_text">
+                            laoreet
+                        </div>
+                        <div class="slide_text">
+                            leo sit amet iaculis
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+
+    <nav class="slider-pagination display-none">
+        <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
+        </button>
+    </nav>
+
+</div>
 `
 
 class Page extends React.Component {

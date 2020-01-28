@@ -28,7 +28,12 @@ Xt.mount.push({
         // set auto time
         const draggerWidth = self.dragger.offsetWidth
         const slideWidth = tr.offsetWidth
-        const time = (draggerWidth / slideWidth) * 100000
+        let time
+        if (object.classList.contains('demo--2020-brands--constant')) {
+          time = (slideWidth / draggerWidth) * 50000
+        } else {
+          time = (draggerWidth / slideWidth) * 100000
+        }
         self.options.auto.time = time
         self.object.querySelector('.slides-inner').style.transitionDuration = time + 'ms'
       }
