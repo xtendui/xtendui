@@ -1,3 +1,46 @@
+# [0.13.0](https://github.com/minimit/xtend-library/compare/v0.12.0...v0.13.0) (2020-01-28)
+
+
+### Bug Fixes
+
+* **css:** inline-flex vertical align + group border ([51e43b5](https://github.com/minimit/xtend-library/commit/51e43b598afaf9c02e645e01a7e31042d017f7d2))
+* **css:** links inverse styles ([878fedc](https://github.com/minimit/xtend-library/commit/878fedc903dfb763f15d39231ccbff51b88edf10))
+* **demo:** fix demo iframe load ([87bacb8](https://github.com/minimit/xtend-library/commit/87bacb83aa623b2d3cbd66b498e0298d495be9c7))
+* **demos:** fix demos iframe not loading on theme and not switching ([6912403](https://github.com/minimit/xtend-library/commit/6912403804fe31a740edb02c509b8bf82fd7c34a))
+* **docs:** fix demo fullscreen initialization ([9be72f6](https://github.com/minimit/xtend-library/commit/9be72f6d3a6e3a0194522601aac77c405d979a0d))
+* **docs:** fix docs demo fullscreen + addons slider-navigation-sides ([d728306](https://github.com/minimit/xtend-library/commit/d7283064449155548b84850f1bad0730b1c2181e))
+* **docs:** fix fullscreen demo ([a9792be](https://github.com/minimit/xtend-library/commit/a9792be30fe0944621ba578eba8f6c65d41c70cf))
+* **drop:** fix drop-container-static horizontal position ([fb659d4](https://github.com/minimit/xtend-library/commit/fb659d4a459353c4dea27c7eb6a12989061e71e4))
+* **form:** fix group-number ([4825764](https://github.com/minimit/xtend-library/commit/4825764798c21f3b347f6c937100d9f2cf1a2405))
+* **js:** fix auto on wrap initial + no camel case events ([43b0b65](https://github.com/minimit/xtend-library/commit/43b0b65827bd2f235590c5baba17c6159944e015))
+* **js:** fix auto timeout instead of interval + fix raf auto ([17bc19d](https://github.com/minimit/xtend-library/commit/17bc19da34b1c030e950d2959ce6ae86afae608d))
+* **js:** fix destroy and internal events ([20b20d3](https://github.com/minimit/xtend-library/commit/20b20d310b7b5b8e20b7e8b8eaa6d06577decbcf))
+* **js:** fix destroy and internal events ([1c53479](https://github.com/minimit/xtend-library/commit/1c53479cc5e2f0f43f165cfc0ff73acf25aeb9be))
+* **js:** fix toggle check status + fix slider event status ([964506a](https://github.com/minimit/xtend-library/commit/964506a4749989e7b7a4d07c90f66e5c755e80f7))
+* **js:** fix toggle init after raf + fix demos slider fullscreen ([efc7fa9](https://github.com/minimit/xtend-library/commit/efc7fa954cb3cd9ad94259b6c81838b229934eeb))
+* **js:** fix toggle nav filter + refactor wheel vars + fix reinit no destroy + fix slider toggle-js kill tweens + refactor slider drag vars + docs fix demos html chars + WIP docs slider properties ([f05acc7](https://github.com/minimit/xtend-library/commit/f05acc73c1fb08a039dbd96a61793baaef854294))
+* **js:** fix toggle queue instant initial run ([78ebe3e](https://github.com/minimit/xtend-library/commit/78ebe3e7fccc9126c9f08a4a90ca36b3fbe24c92))
+* **js:** revision events-methods ([45f3453](https://github.com/minimit/xtend-library/commit/45f3453220b24b3879d7f51e525c32e128b9026b))
+* **js:** revision events-methods ([3111b36](https://github.com/minimit/xtend-library/commit/3111b3656bdb3831ded41dd7b64a4059de78224b))
+* **js:** revision restart ([9d3ee97](https://github.com/minimit/xtend-library/commit/9d3ee979833a07697d79d91d69cf8a137e4a89db))
+* **js:** scrolltoplugin and updated gsap ([15f4d38](https://github.com/minimit/xtend-library/commit/15f4d38579a4d028feeea9f69ff687a6ce5932a5))
+* **js:** WIP fix destroy and demos fullscreen ([987deb3](https://github.com/minimit/xtend-library/commit/987deb3144572354d14d9b84926e66ba77b39f1b))
+* **js:** WIP fix destroy and demos fullscreen ([aad5b94](https://github.com/minimit/xtend-library/commit/aad5b94c07fc0fa8895f78f1b68db5dadc02161f))
+* **slider:** destroy drag ([edee7d5](https://github.com/minimit/xtend-library/commit/edee7d5cec15d1d3b015bf53ddd1bbc6decefd69))
+* **slider:** destroy errors ([cc8d4cd](https://github.com/minimit/xtend-library/commit/cc8d4cd608b31b5da9b1c5cfae6c352c862d0355))
+* **slider:** fix autoheight with toggle-block ([0affb2d](https://github.com/minimit/xtend-library/commit/0affb2d52fb6ca726104e34e49bde74a89888bee))
+* **slider:** fix slider jump + fix slider navigation disabled + refactor slide on only one call ([e559150](https://github.com/minimit/xtend-library/commit/e559150e0c4220bf7da41545e01990f6896fb73d))
+* **slider:** fix slider positions on reinit ([aa105ef](https://github.com/minimit/xtend-library/commit/aa105ef16610cd32486f6f2f393461c0f2e7e1d2))
+* **slider:** refactor only one call per group ([83d9d56](https://github.com/minimit/xtend-library/commit/83d9d566688e29a76e30c4c1cf02ba6eb68f48f7))
+* **smooth:** fix wheel delta not horizontal ([1cdf172](https://github.com/minimit/xtend-library/commit/1cdf172156412c9703051490710e577270baaa72))
+* **sticky:** various fixes sticky and scroll ([5b7ce58](https://github.com/minimit/xtend-library/commit/5b7ce580c4578e34800ceaaee7066e01c0230144))
+
+
+### Features
+
+* **js:** toggle utils index revision ([c0ee815](https://github.com/minimit/xtend-library/commit/c0ee8150c7566c67d11823b107a58698bf81aa87))
+* **toggle:** options auto timeInitial ([6120959](https://github.com/minimit/xtend-library/commit/61209594d34314d19a42f97790e00a56f6db9198))
+
 # [0.12.0](https://github.com/minimit/xtend-library/compare/v0.11.1...v0.12.0) (2019-12-09)
 
 
