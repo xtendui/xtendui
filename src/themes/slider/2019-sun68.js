@@ -57,7 +57,7 @@ Xt.mount.push({
 
     self.dragger.addEventListener('drag.xt', eventDrag)
 
-    // dragend
+    // dragreset
 
     const eventDragReset = e => {
       const target = self.targets.filter(x => self.hasCurrent(x))[0]
