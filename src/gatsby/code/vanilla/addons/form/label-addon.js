@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<form>
+<form class="form-default">
 
   <div class="form-group">
     <label class="form-label">

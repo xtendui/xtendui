@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="form">
+<form class="form-default">
   <div class="form-group-inline">
     <div class="form-group">
       <input type="checkbox" class="unstyled" id="checkbox-inline-unstyled" checked>
@@ -32,5 +32,5 @@ demo.htmlSource = `
       </label>
     </div>
   </div>
-</div>
+</form>
 `

@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="form">
+<form class="form-default">
   <div class="row row-form">
     <div class="col-12 col-3-sm">
       <div class="form-group">
@@ -47,5 +47,5 @@ demo.htmlSource = `
       </div>
     </div>
   </div>
-</div>
+</form>
 `

@@ -292,12 +292,12 @@ dl {
   .margin(bottom, medium);
   .margin(bottom, layout);
   .dl-block();
-  line-height: 1.6;
+  line-height: 1.6 !important;
   dt {
-    .font-sans-semibold();
+    .font-sans-regular();
   }
   dd {
-    .font-sans-regular();
+    .font-sans-semibold();
   }
 }
 
@@ -316,11 +316,11 @@ dl {
 
 .dl-line {
   dt {
-    .padding(top, tiny);
+    .padding(top, none);
   }
   dd {
+    .padding(top, none);
     .padding(left, small);
-    .padding(top, tiny);
   }
 }
 

@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="form">
+<form class="form-default">
   <fieldset>
 
     <div class="form-group">
@@ -54,8 +54,8 @@ demo.htmlSource = `
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
       </label>
     </div>
-  
+
   </fieldset>
 
-</div>
+</form>
 `

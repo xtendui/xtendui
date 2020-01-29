@@ -9,23 +9,13 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="form">
-  <div class="form-group-inline">
-    <div class="form-group">
-      <div class="form-group-inline">
-        <label class="form-label">
-          Lorem
-        </label>
-        <input type="text" class="form-item">
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="form-group-inline">
-        <label class="form-label">
-          Lorem Ipsum
-        </label>
-        <input type="text" class="form-item">
-      </div>
+<form class="form-default">
+  <div class="form-group">
+    <div class="form-group-inline">
+      <label class="form-label">
+        Lorem
+      </label>
+      <input type="text" class="form-item">
     </div>
   </div>
 
@@ -47,5 +37,5 @@ demo.htmlSource = `
       </div>
     </div>
   </div>
-</div>
+</form>
 `

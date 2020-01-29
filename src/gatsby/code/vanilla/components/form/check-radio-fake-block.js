@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="form">
+<form class="form-default">
   <div data-xt-toggle="{ elements: '.radio', min: 1 }">
     <div class="form-group">
       <button type="button" class="checkbox active" data-xt-toggle="{ elements: false }">
@@ -29,5 +29,5 @@ demo.htmlSource = `
       </button>
     </div>
   </div>
-</div>
+</form>
 `

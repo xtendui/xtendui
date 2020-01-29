@@ -11,7 +11,7 @@ date: "2019-08-01"
 Use this markup to create a **form label** and **form item**.
 
 <script type="text/plain" class="language-markup">
-  <form>
+  <form class="form-default">
     <label class="form-label">
       <!-- content -->
     </label>

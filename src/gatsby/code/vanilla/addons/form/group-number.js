@@ -11,7 +11,7 @@ export const demo = {
 demo.htmlSource = `
 <h4>Line</h4>
 
-<div class="form">
+<form class="form-default">
   <div class="group group-default group-number group-number-line">
     <div class="group-inner">
       <button type="button" class="btn btn-default group-number-remove">
@@ -27,11 +27,11 @@ demo.htmlSource = `
       </button>
     </div>
   </div>
-</div>
+</form>
 
 <h4>Stack</h4>
 
-<div class="form">
+<form class="form-default">
   <div class="group group-default group-number group-number-stack">
     <div class="group-inner">
       <input type="number" class="form-item" value="3" min="1" max="100" step="2">
@@ -45,5 +45,5 @@ demo.htmlSource = `
       </button>
     </div>
   </div>
-</div>
+</form>
 `

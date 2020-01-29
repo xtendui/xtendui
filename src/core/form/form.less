@@ -30,18 +30,18 @@ legend, .legend {
 }
 
 /**
- * form
- */
-
-form, .form {
-  // default options
-  .form-default(); // .form-label .form-item
-  .form-medium(); // .form-group
-}
-
-/**
  * form-group
  */
+
+// set size of variant
+
+.form-default {
+  .form-groups({ .form-group-medium(); });
+}
+
+.form-inverse {
+  .form-groups({ .form-group-medium(); });
+}
 
 // size
 
@@ -111,22 +111,24 @@ form, .form {
   text-transform: uppercase;
 }
 
+// set label of variant
+
+.form-default {
+  .form-labels({ .form-label-default(); });
+}
+
+.form-inverse {
+  .form-labels({ .form-label-inverse(); });
+}
+
 // variant
 
 .form-label-default {
   color: @shade-500;
 }
 
-.form-default {
-  .form-labels({ .form-label-default(); });
-}
-
 .form-label-inverse {
   color: @text-inverse;
-}
-
-.form-inverse {
-  .form-labels({ .form-label-inverse(); });
 }
 
 /**

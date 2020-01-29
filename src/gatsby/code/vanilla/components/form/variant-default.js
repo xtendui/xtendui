@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="form form-default">
+<form class="form-default">
   <div class="form-group" style="padding: 1rem 1.5rem; background: #0078ff;">
     <label class="form-label form-label-inverse xt-custom">
       Custom
@@ -60,5 +60,5 @@ demo.htmlSource = `
       <option>Test</option>
     </select>
   </div>
-</div>
+</form>
 `

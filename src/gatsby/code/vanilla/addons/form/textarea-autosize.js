@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<form>
+<form class="form-default">
 
   <div class="form-group">
     <label class="form-label">
@@ -17,6 +17,6 @@ demo.htmlSource = `
     </label>
     <textarea class="form-item" data-xt-textarea-autosize></textarea>
   </div>
-  
+
 </form>
 `

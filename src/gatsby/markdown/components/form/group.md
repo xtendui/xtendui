@@ -11,7 +11,7 @@ date: "2019-11-01"
 Use this markup to create a **form group**.
 
 <script type="text/plain" class="language-markup">
-  <form>
+  <form class="form-default">
     <div class="form-group">
       <!-- content -->
     </div>
@@ -32,14 +32,14 @@ There are several form group mode to change the form layout. They aren't just le
 #### Normal
 
 <script type="text/plain" class="language-markup">
-<form>
-  <div class="form-group">
-    <!-- content -->
-  </div>
-  <div class="form-group">
-    <!-- content -->
-  </div>
-</form>
+  <form class="form-default">
+    <div class="form-group">
+      <!-- content -->
+    </div>
+    <div class="form-group">
+      <!-- content -->
+    </div>
+  </form>
 </script>
 
 <demo>
@@ -52,7 +52,7 @@ There are several form group mode to change the form layout. They aren't just le
 Horizontal label and input, by default not on mobile, you can edit the media queries in `~xtend-library/src/core/form/form.less`.
 
 <script type="text/plain" class="language-markup">
-<form>
+<form class="form-default">
   <div class="form-group">
     <div class="form-group-horizontal">
       <div class="col-12 col-3-sm">
@@ -89,7 +89,7 @@ Multiple columns of `.form-group`, by default not on mobile, you can edit the me
 For columns sizes see [column page](/components/column).
 
 <script type="text/plain" class="language-markup">
-<form>
+<form class="form-default">
   <div class="row row-form">
     <div class="col-12 col-3-sm">
       <div class="form-group">
@@ -115,7 +115,7 @@ For columns sizes see [column page](/components/column).
 Inline **form group**, by default not on mobile, you can edit the media queries in `~xtend-library/src/core/form/form.less`.
 
 <script type="text/plain" class="language-markup">
-<form>
+<form class="form-default">
   <div class="form-group-inline">
     <div class="form-group">
         <!-- content -->
@@ -137,7 +137,7 @@ Inline **form group**, by default not on mobile, you can edit the media queries 
 Inline **form input** and **form label**, by default not on mobile, you can edit the media queries in `~xtend-library/src/core/form/form.less`.
 
 <script type="text/plain" class="language-markup">
-<form>
+<form class="form-default">
   <div class="form-group-inline">
     <div class="form-group">
       <div class="form-group-inline">

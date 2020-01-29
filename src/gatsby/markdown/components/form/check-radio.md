@@ -13,7 +13,7 @@ date: "2019-06-01"
 Use this markup to create a **styled** **checkbox** or **radio**.
 
 <script type="text/plain" class="language-markup">
-  <form>
+  <form class="form-default">
     <div class="form-group">
       <input type="checkbox" id="checkbox-styled">
       <label class="form-label" for="checkbox-styled">
@@ -91,7 +91,7 @@ Use this markup to create a **unstyled** **checkbox** or **radio**.
 </div>
 
 <script type="text/plain" class="language-markup">
-  <form>
+  <form class="form-default">
     <div class="form-group">
       <input type="checkbox" id="checkbox-unstyled" class="unstyled">
       <label class="form-label" for="checkbox-unstyled">

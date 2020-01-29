@@ -29,28 +29,28 @@ Or just import **core**:
 Use this markup to create a **note**.
 
 <script type="text/plain" class="language-markup">
-    <div class="breadcrumbs">
-        <div class="container">
-            <div class="breadcrumbs-inner">
-                <nav class="list">
-                    <a href="/" class="btn">
-                        <!-- content -->
-                    </a>
-                    <span class="separator separator-slash"></span>
-                    <a href="/link" class="btn">
-                        <!-- content -->
-                    </a>
-                    <span class="separator separator-slash"></span>
-                    <div class="btn" disabled>
-                        <!-- content -->
-                    </div>
-                </nav>
-            </div>
-            <h1 class="breadcrumbs-title">
-                <!-- content -->
-            </h1>
-        </div>
+  <div class="breadcrumbs">
+    <div class="container">
+      <div class="breadcrumbs-inner">
+        <nav class="list">
+          <a href="/" class="btn">
+            <!-- content -->
+          </a>
+          <span class="separator separator-slash"></span>
+          <a href="/link" class="btn">
+            <!-- content -->
+          </a>
+          <span class="separator separator-slash"></span>
+          <div class="btn" disabled>
+            <!-- content -->
+          </div>
+        </nav>
+      </div>
+      <h1 class="breadcrumbs-title">
+        <!-- content -->
+      </h1>
     </div>
+  </div>
 </script>
 
 <demo>
