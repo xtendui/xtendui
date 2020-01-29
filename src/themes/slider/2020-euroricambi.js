@@ -171,8 +171,11 @@ Xt.mount.push({
           // card
           const card = tr.querySelector('.slider_card > .card')
           const cardHeight = card.clientHeight
-          gsap.set(card, { height: Xt.dataStorage.get(self.object, 'cardHeight') || cardHeight })
-          gsap.to(card, { height: cardHeight, duration: cardTimeOn, ease: cardEaseOn })
+          //gsap.set(card, { height: Xt.dataStorage.get(self.object, 'cardHeight') || cardHeight })
+          //gsap.to(card, { height: cardHeight, duration: cardTimeOn, ease: cardEaseOn })
+          var tl = gsap.timeline()
+          tl.set(card, { height: Xt.dataStorage.get(self.object, 'cardHeight') || cardHeight })
+          tl.to(card, { height: cardHeight, duration: cardTimeOn, ease: cardEaseOn })
         }
       }
     }

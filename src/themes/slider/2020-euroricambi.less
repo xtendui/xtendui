@@ -1,7 +1,7 @@
 @import '~xtend-library/src/extensions/slider/slider.less';
 
 .demo--2020-euroricambi {
-  .margin(y, giant);
+  .padding(y, giant);
   .slides-inner {
     overflow: hidden;
     // dragger animations
@@ -27,7 +27,7 @@
     .list-space(giant);
     align-items: center;
     justify-content: center;
-    .padding(bottom, big);
+    .padding(bottom, medium);
     @media @max-sm {
       justify-content: space-between;
     }
@@ -38,7 +38,7 @@
     .btn-tall();
     .btn-narrow();
     @media @max-sm {
-      &:not(.active):not(.out) {
+      &:not(.active) {
         display: none;
       }
       &.active, &.out {

@@ -10,25 +10,32 @@ categories: ["100-Test"]
 ## Demos
 
 <demo>
+  <demovanilla src="vanilla/components/slider/toggle-js">
+  </demovanilla>
+  <demovanilla src="vanilla/components/slider/toggle-css">
+  </demovanilla>
   <demovanilla src="vanilla/components/slider/events-methods">
   </demovanilla>
   <demovanilla src="vanilla/components/slider/progress">
   </demovanilla>
-  <demovanilla src="vanilla/components/slider/toggle-css">
-  </demovanilla>
-  <demovanilla src="vanilla/components/slider/toggle-js">
-  </demovanilla>
 </demo>
 
 <demo>
-  <demovanilla src="vanilla/components/toggle/timing-delay-fnc">
-  </demovanilla>
   <demovanilla src="vanilla/components/drop/variant">
   </demovanilla>
   <demovanilla src="vanilla/components/drop/event">
   </demovanilla>
   <demovanilla src="vanilla/components/drop/backdrop">
   </demovanilla>
+  <demovanilla src="vanilla/components/toggle/timing-delay-fnc">
+  </demovanilla>
+</demo>
+
+<demo>
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/slider/2020-euroricambi">
+  </div>
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/slider/2019-sun68">
+  </div>
 </demo>
 
 ## Markdown
