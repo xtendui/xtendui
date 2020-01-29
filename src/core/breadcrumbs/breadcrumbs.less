@@ -1,0 +1,50 @@
+@import '~xtend-library/src/core/breadcrumbs/_breadcrumbs.less';
+
+/**
+ * breadcrumbs
+ */
+
+.breadcrumbs-background {
+  .padding(y, big);
+}
+
+.breadcrumbs-background {
+  background: @shade-300;
+}
+
+.breadcrumbs-inner {
+  > .list {
+    .list-space(tiny);
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  .btn {
+    .btn-text();
+    .padding(x, none);
+    // ellipsis
+    display: inline-block;
+    max-width: 20rem;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    // hide last on mobile
+    &:last-child {
+      @media @max-sm {
+        display: none;
+      }
+    }
+  }
+  .separator {
+    // hide last on mobile
+    &:nth-last-child(2) {
+      @media @max-sm {
+        display: none;
+      }
+    }
+  }
+}
+
+.breadcrumbs-title {
+  .h2();
+  .spacing-tiny();
+}
