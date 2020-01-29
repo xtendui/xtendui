@@ -11,8 +11,8 @@ Xt.mount.push({
 
     const contentTimeOn = Xt.vars.timeBig
     const contentTimeOff = Xt.vars.timeBig
-    const contentEaseOn = 'cheetah'
-    const contentEaseOff = 'cheetah'
+    const contentEaseOn = 'expo.out'
+    const contentEaseOff = 'expo.inOut'
 
     const contentZoom = 1.1
     const contentZoomTime = Xt.vars.timeGiant * 3
@@ -57,7 +57,7 @@ Xt.mount.push({
 
     self.dragger.addEventListener('drag.xt', eventDrag)
 
-    // dragend
+    // dragreset
 
     const eventDragReset = e => {
       const target = self.targets.filter(x => self.hasCurrent(x))[0]
