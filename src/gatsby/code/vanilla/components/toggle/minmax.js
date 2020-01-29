@@ -10,7 +10,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="list list-default list-space-small align-items-center"
-     data-xt-toggle="{ min: 2, max: 2 }">
+     data-xt-toggle="{ min: 2, max: 2, autoDisable: true }">
   <button type="button" class="btn btn-default">
     Toggle 0
   </button>

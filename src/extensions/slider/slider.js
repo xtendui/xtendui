@@ -1096,7 +1096,6 @@ Slider.optionsDefault = {
   max: 1,
   instant: true,
   class: 'active active-slider',
-  autoDisable: false,
   loop: true,
   jump: true,
   mediaLoadedReinit: true,

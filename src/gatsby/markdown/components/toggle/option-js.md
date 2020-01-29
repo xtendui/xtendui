@@ -44,7 +44,7 @@ You can start with toggled elements and targets just by adding **one of the clas
 
 ## Min and Max
 
-You can specify **min** and **max** concurrent activations. The **min** option is fulfilled on initialization, the **max** options deactivates the first activated when max is reached.
+You can specify `min` and `max` concurrent activations. The `min` option is fulfilled on initialization, the `max` options deactivates the first activated when max is reached.
 
 <div class="table-scroll">
 
@@ -52,6 +52,7 @@ You can specify **min** and **max** concurrent activations. The **min** option i
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `min:Number`                          | `0`        | Minimum number of concurrent elements activated            |
 | Option                  | `max:Number`                          | `1`        | Maximum number of concurrent elements activated            |
+| Option                  | `autoDisable:Boolean`                          | `false`        | Disable automatically when cannot be activated             |
 
 </div>
 
@@ -194,6 +195,14 @@ You can use a function for <code>delayOn</code> and <code>delayOff</code> for ex
 
 Use `keyboard: { selector: 'object' }` or `keyboard: { selector: QuerySelector }` to enable keyboard navigation on focus.
 
+<div class="table-scroll">
+
+|                         | Syntax                                    | Default                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `keyboard.selector:Boolean`                          | `false`        | Elements that triggers the events            |
+
+</div>
+
 <demo>
   <demovanilla src="vanilla/components/toggle/usability-keyboard">
   </demovanilla>
@@ -206,11 +215,9 @@ Use `keyboard: { selector: 'object' }` or `keyboard: { selector: QuerySelector }
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `autoClose:Boolean`                          | `false`        | Close automatically on `autoclose.trigger.xt` event            |
-| Option                  | `autoDisable:Boolean`                          | `true`        | Disable automatically when cannot be activated             |
-| Option                  | `onBlock:Milliseconds`                          | `true`        | Block concurrent activation events            |
-| Option                  | `offBlock:Milliseconds`                          | `true`        | Block concurrent deactivation events            |
+| Option                  | `onBlock:Milliseconds`                          | `true`        | Block concurrent activation events for some time            |
+| Option                  | `offBlock:Milliseconds`                          | `true`        | Block concurrent deactivation events for some time            |
 | Option                  | `mediaLoadedReinit:Boolean`                          | `false`        | Reinit on media loaded            |
-| Option                  | `keyboard.selector:Boolean`                          | `false`        | Elements that triggers the events            |
 | Option                  | `aria:Object|false`                          | `Object`        | Inject aria attributes            |
 | Option                  | `aria.tabindex:Boolean`                          | `true`        | Inject aria tabindex attributes            |
 | Option                  | `aria.controls:Boolean`                          | `true`        | Inject aria controls attributes            |

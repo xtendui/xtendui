@@ -2875,7 +2875,7 @@ Toggle.optionsDefaultSuper = {
   classInverse: 'inverse',
   eventLimit: '.event-limit',
   autoClose: false,
-  autoDisable: true,
+  autoDisable: false,
   onBlock: false,
   offBlock: false,
   loop: true,

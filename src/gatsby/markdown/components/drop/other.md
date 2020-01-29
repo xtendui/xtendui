@@ -26,7 +26,7 @@ date: "2019-03-15"
 
 ## Link
 
-You can have **element's link** that trigger after toggle. Remember to use `autoDisable: false`.
+You can have **element's link** that trigger after toggle.
 
 If the toggle is on <code>"on": "mouseenter"</code> or <code>"on": "mousehover"</code> the link gets activated on the second touch event on touch devices.
 
