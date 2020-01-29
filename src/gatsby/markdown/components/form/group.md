@@ -90,7 +90,7 @@ For columns sizes see [column page](/components/column).
 
 <script type="text/plain" class="language-markup">
 <form>
-  <div class="form-group-row">
+  <div class="row row-form">
     <div class="col-12 col-3-sm">
       <div class="form-group">
         <!-- content -->

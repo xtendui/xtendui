@@ -15,7 +15,7 @@
 
 fieldset, .fieldset {
   & + & {
-    .margin(top, big);
+    .margin(top, medium);
   }
 }
 
@@ -46,8 +46,8 @@ form, .form {
 // size
 
 .form-group-small {
-  .margin(bottom, 1em);
-  font-size: 1.1rem;
+  .margin(bottom, .75em);
+  font-size: 1.2rem;
 }
 
 .form-small {
@@ -55,8 +55,8 @@ form, .form {
 }
 
 .form-group-medium {
-  .margin(bottom, 1.5em);
-  font-size: 1.3rem;
+  .margin(bottom, 1em);
+  font-size: 1.4rem;
 }
 
 .form-medium {
@@ -64,8 +64,8 @@ form, .form {
 }
 
 .form-group-big {
-  .margin(bottom, 1.5em);
-  font-size: 1.5rem;
+  .margin(bottom, 1em);
+  font-size: 1.6rem;
 }
 
 .form-big {
@@ -73,13 +73,6 @@ form, .form {
 }
 
 // mode
-
-.form-group-row {
-  @media @min-sm {
-    display: flex;
-    .row-space-x(medium);
-  }
-}
 
 .form-group-horizontal {
   @media @min-sm {
@@ -112,7 +105,7 @@ form, .form {
 .form-label {
   .margin(bottom, 1em); // size in em inherit .form-group size
   .font-sans-semibold();
-  font-size: 1em; // size in em inherit .form-group size
+  font-size: 0.9em; // size in em inherit .form-group size
   line-height: 1.2;
   letter-spacing: .025em;
   text-transform: uppercase;
@@ -222,9 +215,9 @@ form, .form {
 // animation
 
 .form-item {
-  transition: color @time-giant @ease-out, border @time-giant @ease-out, background-color @time-giant @ease-out;
+  transition: color @time-medium @ease-out, border @time-medium @ease-out, background-color @time-medium @ease-out;
   &:focus, &.active {
-    transition: color @time-giant @ease-in, border @time-giant @ease-in, background-color @time-giant @ease-in;
+    transition: color @time-medium @ease-in, border @time-medium @ease-in, background-color @time-medium @ease-in;
   }
 }
 
@@ -266,8 +259,8 @@ form, .form {
   .margin(all, none); // reset .form-label
   .padding(left, small); // space from checkbox/radio
   .font-sans-regular();
-  font-size: 1em;
-  line-height: 1.2;
+  font-size: 0.9em; // size in em inherit .form-group size
+  line-height: 1.4;
   letter-spacing: 0;
   text-transform: none;
   // disabled

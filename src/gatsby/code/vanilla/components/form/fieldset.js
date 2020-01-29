@@ -11,23 +11,23 @@ export const demo = {
 demo.htmlSource = `
 <div class="form">
   <fieldset>
-  
+
     <div class="form-group">
       <label class="form-label">
         Lorem
       </label>
       <input type="text" class="form-item">
     </div>
-    
+
     <div class="form-group">
       <label class="form-label">
         Lorem Ipsum
       </label>
       <input type="text" class="form-item">
     </div>
-    
+
   </fieldset>
-  
+
   <fieldset>
 
     <div class="form-group">
@@ -36,14 +36,26 @@ demo.htmlSource = `
       </label>
       <input type="text" class="form-item">
     </div>
-    
+
     <div class="form-group">
       <label class="form-label">
         Lorem Ipsum
       </label>
       <input type="text" class="form-item">
     </div>
-    
+
   </fieldset>
+
+  <fieldset>
+
+    <div class="form-group">
+      <input type="checkbox" id="check-block-styled" checked>
+      <label class="form-label" for="check-block-styled">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
+      </label>
+    </div>
+  
+  </fieldset>
+
 </div>
 `

@@ -10,6 +10,8 @@ date: "2019-12-01"
 
 Classes for assigning variant (e.g.: space). Add or remove selectors at your discretion.
 
+`{variant}` can be `default`, `form`.
+
 <div class="table-scroll">
 
 |                         | Syntax                                    | Example                       |
@@ -23,6 +25,8 @@ Classes for assigning variant (e.g.: space). Add or remove selectors at your dis
 
 Row **automatically** add horizontal and vertical spacing to the contents. You can **specify a different one** with this classes/mixins.
 
+`{size}` can be `none`, `micro`, `tiny`, `small`, `medium`, `big`, `giant`, `huge`.
+
 <div class="table-scroll">
 
 |                         | Syntax                                    | Example                       |
@@ -34,7 +38,7 @@ Row **automatically** add horizontal and vertical spacing to the contents. You c
 
 </div>
 
-`{direction}` can be `x` or `y`.
+`{direction}` can be `x`, `y`.
 
 <div class="table-scroll">
 
