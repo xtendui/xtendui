@@ -11,3 +11,27 @@
 // column
 
 @columns: 12;
+
+/**
+ * column
+ */
+
+// variant
+
+.col-form-label {
+  .col(3);
+}
+
+.col-form-item {
+  .col(9);
+}
+
+.col-form-double {
+  .col(12);
+  &:nth-child(1) {
+    .col(3, sm);
+  }
+  &:nth-child(2) {
+    .col(9, sm);
+  }
+}

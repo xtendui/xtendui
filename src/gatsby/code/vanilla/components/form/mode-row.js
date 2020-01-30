@@ -11,7 +11,7 @@ export const demo = {
 demo.htmlSource = `
 <form class="form-default">
   <div class="row row-form">
-    <div class="col-12 col-3-sm">
+    <div class="col-form-double">
       <div class="form-group">
         <label class="form-label">
           Lorem
@@ -19,7 +19,7 @@ demo.htmlSource = `
         <input type="text" class="form-item">
       </div>
     </div>
-    <div class="col-12 col-9-sm">
+    <div class="col-form-double">
       <div class="form-group">
         <label class="form-label">
           Lorem Ipsum
@@ -30,7 +30,7 @@ demo.htmlSource = `
   </div>
 
   <div class="row row-form">
-    <div class="col-12 col-3-sm">
+    <div class="col-form-double">
       <div class="form-group">
         <label class="form-label">
           Lorem
@@ -38,7 +38,7 @@ demo.htmlSource = `
         <input type="text" class="form-item">
       </div>
     </div>
-    <div class="col-12 col-9-sm">
+    <div class="col-form-double">
       <div class="form-group">
         <label class="form-label">
           Lorem Ipsum

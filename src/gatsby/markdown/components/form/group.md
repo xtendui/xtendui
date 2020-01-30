@@ -23,7 +23,7 @@ If you want to customize form's group singularly use the class `.form-group.xt-c
 In css you can use `.form-groups({});` to style all `.form-group:not(.xt-custom)`.
 
 [[notePrimary]]
-| Form group must be inside `form` or `.form` to have default styles.
+| Form group must be inside `.form-default` or another form variant to have default styles.
 
 ## Mode
 
@@ -42,6 +42,14 @@ There are several form group mode to change the form layout. They aren't just le
   </form>
 </script>
 
+<div class="table-scroll">
+
+|                         | Class                                     | Mixin                         | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.form-group`                | `.form-group()`        | Form group            | |
+
+</div>
+
 <demo>
   <demovanilla src="vanilla/components/form/mode-normal">
   </demovanilla>
@@ -49,16 +57,16 @@ There are several form group mode to change the form layout. They aren't just le
 
 #### Horizontal
 
-Horizontal label and input, by default not on mobile, you can edit the media queries in `~xtend-library/src/core/form/form.less`.
+Horizontal label and input, add or remove selectors at your discretion.
 
 <script type="text/plain" class="language-markup">
 <form class="form-default">
   <div class="form-group">
     <div class="form-group-horizontal">
-      <div class="col-12 col-3-sm">
+      <div class="col-form-label">
         <!-- content -->
       </div>
-      <div class="col-12 col-9-sm">
+      <div class="col-form-item">
         <!-- content -->
       </div>
     </div>
@@ -66,16 +74,25 @@ Horizontal label and input, by default not on mobile, you can edit the media que
 
   <div class="form-group">
     <div class="form-group-horizontal">
-      <div class="col-12 col-3-sm">
+      <div class="col-form-label">
         <!-- content -->
       </div>
-      <div class="col-12 col-9-sm">
+      <div class="col-form-item">
         <!-- content -->
       </div>
     </div>
   </div>
 </form>
 </script>
+
+<div class="table-scroll">
+
+|                         | Class                                     | Mixin                         | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.form-group-horizontal`                | `.form-group-horizontal()`        | Form group horizontal            |
+| Option                  | `.form-group-horizontal-sm`                | `.form-group-horizontal-sm()`        | Form group horizontal responsive            |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/form/mode-horizontal">
@@ -84,19 +101,19 @@ Horizontal label and input, by default not on mobile, you can edit the media que
 
 #### Row
 
-Multiple columns of `.form-group`, by default not on mobile, you can edit the media queries in `~xtend-library/src/core/form/form.less`.
+Multiple columns of `.form-group`, add or remove selectors at your discretion.
 
 For columns sizes see [column page](/components/column).
 
 <script type="text/plain" class="language-markup">
 <form class="form-default">
   <div class="row row-form">
-    <div class="col-12 col-3-sm">
+    <div class="col-form-double">
       <div class="form-group">
         <!-- content -->
       </div>
     </div>
-    <div class="col-12 col-9-sm">
+    <div class="col-form-double">
       <div class="form-group">
         <!-- content -->
       </div>
@@ -104,15 +121,23 @@ For columns sizes see [column page](/components/column).
   </div>
 </form>
 </script>
+
+<div class="table-scroll">
+
+|                         | Class                                     | Mixin                         | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.col-form-double`                | `.col-form-double()`        | Form with double columns            |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/form/mode-row">
   </demovanilla>
 </demo>
 
-#### Inline Group
+#### Inline
 
-Inline **form group**, by default not on mobile, you can edit the media queries in `~xtend-library/src/core/form/form.less`.
+Inline **form group**, add or remove selectors at your discretion.
 
 <script type="text/plain" class="language-markup">
 <form class="form-default">
@@ -127,14 +152,21 @@ Inline **form group**, by default not on mobile, you can edit the media queries 
 </form>
 </script>
 
+<div class="table-scroll">
+
+|                         | Class                                     | Mixin                         | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.form-group-inline`                | `.form-group-inline()`        | Form group inline            |
+| Option                  | `.form-group-inline-sm`                | `.form-group-inline-sm()`        | Form group inline responsive           |
+
+</div>
+
 <demo>
-  <demovanilla src="vanilla/components/form/mode-inline-group">
+  <demovanilla src="vanilla/components/form/mode-inline">
   </demovanilla>
 </demo>
 
-#### Inline multipe
-
-Inline **form input** and **form label**, by default not on mobile, you can edit the media queries in `~xtend-library/src/core/form/form.less`.
+Inline **form input** and **form label**.
 
 <script type="text/plain" class="language-markup">
 <form class="form-default">
@@ -154,7 +186,7 @@ Inline **form input** and **form label**, by default not on mobile, you can edit
 </script>
 
 <demo>
-  <demovanilla src="vanilla/components/form/mode-inline-multiple">
+  <demovanilla src="vanilla/components/form/mode-inline-inner">
   </demovanilla>
 </demo>
 
