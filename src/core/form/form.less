@@ -33,6 +33,16 @@ legend, .legend {
  * form-group
  */
 
+// set variant (for specificity must be before classes used)
+
+.form-default {
+  .form-groups({ .form-group-medium(); });
+}
+
+.form-inverse {
+  .form-groups({ .form-group-medium(); });
+}
+
 // size
 
 .form-group-small {
@@ -109,6 +119,16 @@ legend, .legend {
   text-transform: uppercase;
 }
 
+// set variant (for specificity must be before classes used)
+
+.form-default {
+  .form-labels({ .form-label-default(); });
+}
+
+.form-inverse {
+  .form-labels({ .form-label-inverse(); });
+}
+
 // variant
 
 .form-label-default {
@@ -124,8 +144,7 @@ legend, .legend {
  */
 
 .form-item {
-  border-radius: .5em;
-  border-width: 1px;
+  border-width: 0;
   border-style: solid;
   border-color: transparent;
   padding: .75em 1.2em; // size in em inherit .form-group size
@@ -134,9 +153,21 @@ legend, .legend {
   line-height: 1.4;
 }
 
+// set variant (for specificity must be before classes used)
+
+.form-inverse {
+  .form-items({ .form-item-inverse(); });
+}
+
+.form-default {
+  .form-items({ .form-item-default(); });
+}
+
 // variant
 
 .form-item-default {
+  border-radius: .5em;
+  border-width: 1px;
   border-color: @shade-200;
   background-color: @shade-200; // @FIX no background: or it overrides background-image
   color: @text;
@@ -165,21 +196,15 @@ legend, .legend {
   }
 }
 
-.form-default {
-  // size
-  .form-groups({ .form-group-medium(); });
-  // label
-  .form-labels({ .form-label-default(); });
-  // variant
-  .form-items({ .form-item-default(); });
-}
-
 .form-item-inverse {
-  border-color: fade(@shade-900, 25%);
+  border-radius: 0;
+  border-width: 0;
+  border-bottom-width: 2px;
+  border-color: transparent;
   background-color: fade(@shade-900, 25%); // @FIX no background: or it overrides background-image
   color: @text-inverse-dark;
   &:focus, &.active {
-    border-color: fade(@shade-900, 50%);
+    border-color: @white;
     background-color: fade(@shade-900, 50%); // @FIX no background: or it overrides background-image
   }
   // placeholder
@@ -201,15 +226,6 @@ legend, .legend {
   &::placeholder {
     color: @text-inverse;
   }
-}
-
-.form-inverse {
-  // size
-  .form-groups({ .form-group-medium(); });
-  // label
-  .form-labels({ .form-label-inverse(); });
-  // variant
-  .form-items({ .form-item-inverse(); });
 }
 
 // animation
