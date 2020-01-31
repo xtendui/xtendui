@@ -388,7 +388,7 @@ class Slider extends Xt.Toggle {
     }
     // dragger
     if (options.drag) {
-      // @FIX prevent firefox image dragging
+      // @FIX prevent dragging links and images
       for (const img of self.dragger.querySelectorAll('img')) {
         let imgnodragHandler = Xt.dataStorage.put(img, 'mousedown' + '/' + self.namespace, self.eventImgnodragHandler.bind(self))
         img.addEventListener('mousedown', imgnodragHandler)
