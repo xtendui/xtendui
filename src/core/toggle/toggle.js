@@ -533,7 +533,7 @@ class Toggle {
     if (options.jump) {
       for (const jump of self.targets) {
         const jumpHandler = Xt.dataStorage.put(jump, 'click.jump' + '/' + self.namespace, self.eventJumpHandler.bind(self).bind(self, jump))
-        jump.addEventListener('click', jumpHandler)
+        jump.addEventListener('click', jumpHandler, true) // @FIX elements inside targets (slider pagination)
         // jump
         if (!self.disabled) {
           jump.classList.add('xt-jump')
