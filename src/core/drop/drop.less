@@ -113,8 +113,8 @@
 // animation
 
 .drop-container {
-  animation-duration: @time-medium + @time-small; // needed for .out animation time and backdrop animation time, put max animation time
   &.active {
+    animation-duration: @time-medium + @time-small; // needed for animation time and backdrop animation time, put max animation time
     > .drop {
       > .drop-inner {
         > .drop-design {
@@ -132,6 +132,7 @@
     }
   }
   &.out {
+    animation-duration: @time-medium + @time-small; // needed for animation time and backdrop animation time, put max animation time
     > .drop {
       > .drop-inner {
         > .drop-design {
@@ -148,4 +149,42 @@
       }
     }
   }
+  /*
+  &.active {
+    animation-duration: @time-medium + @time-small; // needed for animation time and backdrop animation time, put max animation time
+    > .drop {
+      > .drop-inner {
+        > .drop-design {
+          .anim-y.active();
+          animation-delay: initial;
+        }
+        > .drop-content {
+          .anim-y.active();
+          animation-delay: @time-small;
+        }
+      }
+      > .backdrop {
+        .backdrop.active();
+      }
+    }
+  }
+  &.out {
+    animation-duration: @time-medium + @time-small; // needed for animation time and backdrop animation time, put max animation time
+    > .drop {
+      > .drop-inner {
+        > .drop-design {
+          .anim-y.out();
+          animation-delay: @time-small;
+        }
+        > .drop-content {
+          .anim-y.out();
+          animation-delay: initial;
+        }
+      }
+      > .backdrop {
+        .backdrop.out();
+      }
+    }
+  }
+  */
 }

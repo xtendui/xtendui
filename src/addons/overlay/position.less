@@ -24,8 +24,8 @@
 // animation
 
 .overlay-position {
-  animation-duration: @time-medium + @time-small; // needed for .out animation time and backdrop animation time, put max animation time
   &.active {
+    animation-duration: @time-medium + @time-small; // needed for animation time and backdrop animation time, put max animation time
     &.overlay-position-left {
       .card-overlay > .card-design,
       .card-overlay > .card-inner > * {
@@ -50,6 +50,7 @@
     }
   }
   &.out {
+    animation-duration: @time-medium + @time-small; // needed for animation time and backdrop animation time, put max animation time
     &.overlay-position-left {
       .card-overlay > .card-design,
       .card-overlay > .card-inner > * {

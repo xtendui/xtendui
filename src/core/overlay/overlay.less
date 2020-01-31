@@ -62,8 +62,8 @@
 // animation
 
 .overlay {
-  animation-duration: @time-medium + @time-small; // needed for .out animation time and backdrop animation time, put max animation time
   &.active {
+    animation-duration: @time-medium + @time-small; // needed for animation time and backdrop animation time, put max animation time
     .card-overlay > .card-design,
     .card-overlay > .card-inner > * {
       .anim-zoom.active();
@@ -78,6 +78,7 @@
     }
   }
   &.out {
+    animation-duration: @time-medium + @time-small; // needed for animation time and backdrop animation time, put max animation time
     .card-overlay > .card-design,
     .card-overlay > .card-inner > * {
       .anim-zoom.out();
@@ -91,4 +92,36 @@
       .backdrop.out();
     }
   }
+  /*
+  &.active {
+    animation-duration: @time-medium + @time-small; // needed for animation time and backdrop animation time, put max animation time
+    .card-overlay > .card-design,
+    .card-overlay > .card-inner > * {
+      .anim-y.active();
+      animation-delay: initial;
+    }
+    .card-overlay > .card-inner > .card-content {
+      .anim-y.active();
+      animation-delay: @time-small;
+    }
+    > .backdrop {
+      .backdrop.active();
+    }
+  }
+  &.out {
+    animation-duration: @time-medium + @time-small; // needed for animation time and backdrop animation time, put max animation time
+    .card-overlay > .card-design,
+    .card-overlay > .card-inner > * {
+      .anim-y.out();
+      animation-delay: @time-small;
+    }
+    .card-overlay > .card-inner > .card-content {
+      .anim-y.out();
+      animation-delay: initial;
+    }
+    > .backdrop {
+      .backdrop.out();
+    }
+  }
+   */
 }
