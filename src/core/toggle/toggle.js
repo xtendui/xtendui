@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import RJSON from 'relaxed-json'
 import { Xt } from 'xtend-library'
 

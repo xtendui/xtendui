@@ -373,10 +373,10 @@ class Slider extends Xt.Toggle {
     for (const el of self.elements) {
       // event on
       const slideonHandler = Xt.dataStorage.put(el, 'on.slider' + '/' + self.namespace, self.eventSlideonHandler.bind(self).bind(self, dragger, el))
-      el.addEventListener('on.xt', slideonHandler)
+      el.addEventListener('on.xt', slideonHandler, true)
       // event off
       const slideoffHandler = Xt.dataStorage.put(el, 'off.slider' + '/' + self.namespace, self.eventSlideoffHandler.bind(self).bind(self, dragger, el))
-      el.addEventListener('off.xt', slideoffHandler)
+      el.addEventListener('off.xt', slideoffHandler, true)
     }
     // targets
     for (const tr of self.targets) {
@@ -971,6 +971,10 @@ class Slider extends Xt.Toggle {
       dragger.style.transform = 'translateX(' + self.detail.dragPosCurrent + 'px)'
       if (self.initial) {
         self.dragger.classList.remove('transition-none')
+      }
+      // auto
+      if (options.auto && options.auto.time) {
+        self.eventAutostart()
       }
       // listener dispatch
       if (!self.initial) {
