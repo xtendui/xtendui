@@ -829,10 +829,12 @@ if (typeof window !== 'undefined') {
    * @param {Node|HTMLElement|EventTarget|Window} el Element animating
    * @param {Function} func Function to execute after transition or animation
    * @param {String} suffix Timeout suffix
+   * @param {Number} timing Optional force time
    */
-  Xt.animTimeout = (el, func, suffix = '') => {
+  Xt.animTimeout = (el, func, suffix = '', timing = null) => {
     clearTimeout(Xt.dataStorage.get(el, 'xtAnimTimeout' + suffix))
-    Xt.dataStorage.set(el, 'xtAnimTimeout' + suffix, setTimeout(func, Xt.animTime(el)))
+    timing = timing || timing === 0 ? timing : Xt.animTime(el)
+    Xt.dataStorage.set(el, 'xtAnimTimeout' + suffix, setTimeout(func, timing))
   }
 
   /**
@@ -922,7 +924,7 @@ if (typeof window !== 'undefined') {
         )
       }
       // delay
-      if (delay === 0) {
+      if (!delay) {
         // func
         func(e)
       } else {

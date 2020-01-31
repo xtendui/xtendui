@@ -112,7 +112,6 @@ class Toggle {
     self.initScope()
     self.initAria()
     self.initStart(saveCurrents)
-    self.eventStatus()
   }
 
   /**
@@ -1285,10 +1284,10 @@ class Toggle {
       self.eventQueue(actionCurrent, groupElements, targets, elementsInner, targetsInner, e)
       // if queue too big
       if (self.detail['queue' + actionCurrent].length > options.max) {
-        // remove queue on and done other queue
+        // remove queue and stop
         const removedOn = self.detail['queue' + actionOther].shift()
         self.queueStop(actionOther, actionCurrent, removedOn)
-        // remove queue off and done other queue
+        // remove queue and stop
         const removedOff = self.detail['queue' + actionCurrent].shift()
         self.queueStop(actionCurrent, actionOther, removedOff)
       }
@@ -1554,10 +1553,12 @@ class Toggle {
         { current: 'Off', other: 'On' },
       ]
       for (const action of actions) {
-        const queue = self.detail['queue' + action.current]
-        for (const obj in queue) {
-          self.queueStop(action.current, action.other, obj)
-        }
+        // @FIX slider resize multiple queues
+        // @FIX autoclose with appendTo outside ajax
+        // remove queue and stop
+        const removed = self.detail['queue' + action.current].shift()
+        self.queueStop(action.current, action.other, removed)
+        self.detail['queue' + action.current] = []
       }
     }
   }
@@ -1681,7 +1682,9 @@ class Toggle {
         }
       }
       // listener dispatch
-      el.dispatchEvent(new CustomEvent('on.xt'))
+      if (!skipQueue) {
+        el.dispatchEvent(new CustomEvent('on.xt'))
+      }
     } else if (actionCurrent === 'Off') {
       // deactivate
       self.deactivate(el)
@@ -1697,7 +1700,9 @@ class Toggle {
         self.specialClose(actionCurrent, el)
       }
       // listener dispatch
-      el.dispatchEvent(new CustomEvent('off.xt'))
+      if (!skipQueue) {
+        el.dispatchEvent(new CustomEvent('off.xt'))
+      }
     }
     // queue
     if (!skipQueue) {
@@ -1764,7 +1769,9 @@ class Toggle {
         .replace(/['"]+/g, '')
       self.specialCollapse('Reset', el, before, after)
       // listener dispatch
-      el.dispatchEvent(new CustomEvent('ondone.xt'))
+      if (!skipQueue) {
+        el.dispatchEvent(new CustomEvent('ondone.xt'))
+      }
     } else if (actionCurrent === 'Off') {
       // reset
       el.classList.remove(...self.classesOut)
@@ -1808,7 +1815,9 @@ class Toggle {
         }
       }
       // listener dispatch
-      el.dispatchEvent(new CustomEvent('offdone.xt'))
+      if (!skipQueue) {
+        el.dispatchEvent(new CustomEvent('offdone.xt'))
+      }
     }
     // queue
     if (!skipQueue) {
@@ -2701,7 +2710,7 @@ class Toggle {
    */
   eventStatus() {
     const self = this
-    // check disabled
+    // status
     if (
       self.object instanceof HTMLElement && // @FIX not on window
       getComputedStyle(self.object, ':after')
@@ -2709,8 +2718,19 @@ class Toggle {
         .replace(/['"]+/g, '') === 'xt-disable'
     ) {
       self.disable()
-    } else if (self.disabled) {
+    } else {
       self.enable()
+    }
+  }
+
+  /**
+   * enable
+   */
+  enable() {
+    const self = this
+    if (self.disabled) {
+      // enable
+      self.disabled = false
     }
   }
 
@@ -2719,19 +2739,10 @@ class Toggle {
    */
   disable() {
     const self = this
-    // disable
-    self.disabled = true
-    self.object.classList.add('xt-disable')
-  }
-
-  /**
-   * disable
-   */
-  enable() {
-    const self = this
-    // enable
-    self.disabled = false
-    self.object.classList.remove('xt-disable')
+    if (!self.disabled) {
+      // disable
+      self.disabled = true
+    }
   }
 
   //
@@ -2750,8 +2761,13 @@ class Toggle {
         e,
         self.object,
         () => {
-          // handler
-          self.reinit()
+          // @FIX multiple calls coming from resize
+          if (!self.initial) {
+            // destroy
+            self.destroy()
+            // handler
+            self.reinit()
+          }
         },
         self.componentNamespace + 'Reinit'
       )
@@ -2788,10 +2804,12 @@ class Toggle {
    */
   destroy() {
     const self = this
-    // stop queue
-    self.queueStopAll() // @FIX autoclose with appendTo outside ajax
     // stop auto
     self.eventAutostop()
+    // stop queue
+    self.queueStopAll()
+    // disable
+    self.disable()
     // [disabled]
     self.destroyDisabled()
     // remove events
@@ -2819,8 +2837,6 @@ class Toggle {
         }
       }
     }
-    // disable
-    self.disable()
     // set self
     Xt.remove(self.componentName, self.object)
     for (const el of self.elements) {

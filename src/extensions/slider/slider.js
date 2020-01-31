@@ -638,12 +638,17 @@ class Slider extends Xt.Toggle {
       for (const nav of self.navs) {
         nav.classList.add('xt-pointer-events-none')
       }
-      Xt.animTimeout(dragger, () => {
-        dragger.classList.remove('xt-pointer-events-none')
-        for (const nav of self.navs) {
-          nav.classList.remove('xt-pointer-events-none')
-        }
-      })
+      Xt.animTimeout(
+        dragger,
+        () => {
+          dragger.classList.remove('xt-pointer-events-none')
+          for (const nav of self.navs) {
+            nav.classList.remove('xt-pointer-events-none')
+          }
+        },
+        'draggerDisable',
+        self.initial ? 0 : self.options.durationOn
+      )
       // disable links
       dragger.classList.remove('xt-jumps-none')
       dragger.classList.remove('xt-links-none')
@@ -948,13 +953,17 @@ class Slider extends Xt.Toggle {
       self.detail.dragPosOld = self.detail.dragPos
       self.detail.dragPos = self.detail.dragPosCurrent
       // disable drag and links
-      Xt.animTimeout(dragger, () => {
-        // disable dragger
-        dragger.classList.remove('xt-pointer-events-none')
-        for (const nav of self.navs) {
-          nav.classList.remove('xt-pointer-events-none')
-        }
-      })
+      Xt.animTimeout(
+        dragger,
+        () => {
+          dragger.classList.remove('xt-pointer-events-none')
+          for (const nav of self.navs) {
+            nav.classList.remove('xt-pointer-events-none')
+          }
+        },
+        'draggerDisable',
+        self.initial ? 0 : self.options.durationOn
+      )
       // drag position
       if (self.initial) {
         self.dragger.classList.add('transition-none')
@@ -977,20 +986,16 @@ class Slider extends Xt.Toggle {
   /**
    * disable
    */
-  disable() {
-    super.disable()
+  enable() {
+    super.enable()
     const self = this
-    // disable
-    if (self.dragger) {
-      self.dragger.classList.add('transition-none')
+    const dragger = self.dragger
+    // enable
+    if (dragger) {
+      // dragger
+      dragger.classList.add('transition-none')
       requestAnimationFrame(() => {
-        self.dragger.style.transform = ''
-      })
-    }
-    if (self.autoHeight) {
-      self.autoHeight.classList.remove('xt-autoHeight')
-      requestAnimationFrame(() => {
-        self.autoHeight.style.height = ''
+        dragger.classList.remove('transition-none')
       })
     }
   }
@@ -998,12 +1003,35 @@ class Slider extends Xt.Toggle {
   /**
    * disable
    */
-  enable() {
-    super.enable()
+  disable() {
+    super.disable()
     const self = this
-    // enable
-    if (self.dragger) {
-      self.dragger.classList.remove('transition-none')
+    const dragger = self.dragger
+    // disable
+    if (dragger) {
+      // autoHeight
+      if (self.autoHeight) {
+        self.autoHeight.style.height = ''
+      }
+      // grab
+      dragger.classList.remove('xt-grab')
+      // links
+      dragger.classList.remove('xt-links-none')
+      // jump
+      dragger.classList.add('xt-jumps-none')
+      // dragger
+      dragger.classList.add('transition-none')
+      dragger.style.transform = ''
+      requestAnimationFrame(() => {
+        dragger.classList.remove('transition-none')
+      })
+    }
+    if (self.autoHeight) {
+      // autoHeight
+      self.autoHeight.classList.remove('xt-autoHeight')
+      requestAnimationFrame(() => {
+        self.autoHeight.style.height = ''
+      })
     }
   }
 
@@ -1016,30 +1044,10 @@ class Slider extends Xt.Toggle {
    */
   destroy(weak = false) {
     const self = this
-    const dragger = self.dragger
     // clean pagination
     self.destroyPags()
     // clean wraps
     self.destroyWraps()
-    // autoHeight
-    if (self.autoHeight) {
-      self.autoHeight.style.height = ''
-    }
-    // dragger
-    if (dragger) {
-      // links
-      dragger.classList.remove('xt-links-none')
-      // links
-      dragger.classList.add('xt-jumps-none')
-      // grab
-      dragger.classList.remove('xt-grab')
-      // drag
-      dragger.classList.add('transition-none')
-      dragger.style.transform = ''
-      requestAnimationFrame(() => {
-        dragger.classList.remove('transition-none')
-      })
-    }
     // super
     super.destroy()
   }
@@ -1098,7 +1106,7 @@ Slider.optionsDefault = {
   class: 'active active-slider',
   loop: true,
   jump: true,
-  mediaLoadedReinit: true,
+  mediaLoadedReinit: false,
   navigation: '[data-xt-nav]',
   wheel: {
     selector: false,
