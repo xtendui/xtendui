@@ -1,3 +1,12 @@
+## [0.13.2](https://github.com/minimit/xtend-library/compare/v0.13.1...v0.13.2) (2020-02-03)
+
+
+### Bug Fixes
+
+* **js:** fixes component destroy ([956b5b9](https://github.com/minimit/xtend-library/commit/956b5b961b6368f4fbb28aa124cb7754cff1ed6e))
+* **slider:** fix dragreset auto ([113abc0](https://github.com/minimit/xtend-library/commit/113abc02379dcd95b66b1216eda4948e61d05778))
+* **slider:** fix slider resize multiple queues + minor changes ([eb2e493](https://github.com/minimit/xtend-library/commit/eb2e4930aa318d183b10fbcebf56655fc852624d))
+
 ## [0.13.1](https://github.com/minimit/xtend-library/compare/v0.13.0...v0.13.1) (2020-01-28)
 
 
