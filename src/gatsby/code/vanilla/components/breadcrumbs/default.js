@@ -14,7 +14,7 @@ demo.htmlSource = `
     <div class="container">
 
       <div class="breadcrumbs-inner">
-        <nav class="list">
+        <ul class="list">
           <li itemscope itemprop="itemListElement" itemtype="https://schema.org/ListItem">
             <a href="/" class="btn">
               <span itemprop="name">
@@ -43,7 +43,7 @@ demo.htmlSource = `
             </a>
             <meta itemprop="position" content="3">
           </li>
-        </nav>
+        </ul>
       </div>
 
     </div>
