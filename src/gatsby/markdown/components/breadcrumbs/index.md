@@ -54,6 +54,8 @@ Use this markup to create a **note**.
 </script>
 
 <demo>
-  <demovanilla src="vanilla/components/breadcrumbs/usage">
+  <demovanilla src="vanilla/components/breadcrumbs/default">
+  </demovanilla>
+  <demovanilla src="vanilla/components/breadcrumbs/background-title">
   </demovanilla>
 </demo>
