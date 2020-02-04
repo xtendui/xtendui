@@ -27,6 +27,8 @@ categories: ["100-Test"]
   </demovanilla>
   <demovanilla src="vanilla/components/drop/backdrop">
   </demovanilla>
+  <demovanilla src="vanilla/components/overlay/nested">
+  </demovanilla>
   <demovanilla src="vanilla/components/toggle/timing-delay-fnc">
   </demovanilla>
 </demo>

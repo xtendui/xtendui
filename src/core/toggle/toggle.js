@@ -2261,11 +2261,17 @@ class Toggle {
    */
   eventSpecialcloseinsideHandler(closeElement, single, e) {
     const self = this
+    /*
     // prevent closing when nested and moved (ex: overlay)
     const checkContainer = self.targets.length ? self.targets : Xt.arrSingle(self.object)
     if (!Xt.contains(checkContainer, closeElement)) {
       return
     }
+    // handler
+    if (Xt.contains(Xt.arrSingle(closeElement), e.target)) {
+      self.eventOff(single)
+    }
+    */
     // handler
     if (Xt.contains([self.object, ...self.elements, ...self.targets], e.target)) {
       self.eventOff(single)
