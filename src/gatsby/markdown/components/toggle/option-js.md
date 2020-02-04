@@ -69,9 +69,9 @@ You can specify **on** and **off** events for the toggle. Fore example `on: 'mou
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `on:String`                          | `click`        | Activation event to attach to elements            |
+| Option                  | `on:String`                          | `'click'`        | Activation event to attach to elements            |
 | Option                  | `off:String`                          | `false`        | Dectivation event to attach to elements            |
-| Option                  | `eventLimit:Query`                          | `.event-limit`        | Limit events inside self.object            |
+| Option                  | `eventLimit:Query`                          | `'.event-limit'`        | Limit events inside self.object            |
 
 </div>
 
@@ -214,10 +214,16 @@ Use `keyboard: { selector: 'object' }` or `keyboard: { selector: QuerySelector }
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `classHtml:String`                          | `false`        | Close automatically on `autoclose.trigger.xt` event            |
 | Option                  | `autoClose:Boolean`                          | `false`        | Close automatically on `autoclose.trigger.xt` event            |
+| Option                  | `closeOutside:Query`                          | `false`        | Query Node outside to close on click            |
+| Option                  | `closeInside:Query`                          | `false`        | Query Node inside to close on click            |
 | Option                  | `onBlock:Milliseconds`                          | `true`        | Block concurrent activation events for some time            |
 | Option                  | `offBlock:Milliseconds`                          | `true`        | Block concurrent deactivation events for some time            |
 | Option                  | `mediaLoadedReinit:Boolean`                          | `false`        | Reinit on media loaded            |
+| Option                  | `appendTo:Query`                          | `false`        | Append targets to Node on activation            |
+| Option                  | `scrollbar:Boolean`                          | `false`        | Hide body scrollbars on activation            |
+| Option                  | `focusLimit:Boolean`                          | `false`        | Limit focus on activation            |
 | Option                  | `aria:Object|false`                          | `Object`        | Inject aria attributes            |
 | Option                  | `aria.tabindex:Boolean`                          | `true`        | Inject aria tabindex attributes            |
 | Option                  | `aria.controls:Boolean`                          | `true`        | Inject aria controls attributes            |

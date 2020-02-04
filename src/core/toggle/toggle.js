@@ -2235,7 +2235,7 @@ class Toggle {
             const specialcloseoutsideHandler = Xt.dataStorage.put(
               closeElement,
               'click.close' + '/' + self.namespace,
-              self.eventSpecialcloseoutsideHandler.bind(self).bind(self, el, single)
+              self.eventSpecialcloseoutsideHandler.bind(self).bind(self, single)
             )
             closeElement.addEventListener('click', specialcloseoutsideHandler)
           }
@@ -2275,21 +2275,20 @@ class Toggle {
       return
     }
     // handler
-    if (Xt.contains(Xt.arrSingle(closeElement), e.target)) {
+    if (Xt.contains([self.object, ...self.elements, ...self.targets], e.target)) {
       self.eventOff(single)
     }
   }
 
   /**
    * specialClose off handler
-   * @param {Node|HTMLElement|EventTarget|Window} closeElement
    * @param {Node|HTMLElement|EventTarget|Window} single
    * @param {Event} e
    */
-  eventSpecialcloseoutsideHandler(closeElement, single, e) {
+  eventSpecialcloseoutsideHandler(single, e) {
     const self = this
     // handler
-    if (!Xt.contains(Xt.arrSingle(closeElement), e.target)) {
+    if (!Xt.contains([self.object, ...self.elements, ...self.targets], e.target)) {
       self.eventOff(single)
     }
   }

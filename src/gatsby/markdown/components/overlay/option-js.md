@@ -22,3 +22,18 @@ It's recommended to use `active-overlay` on overlay otherwise the overlay flashe
 | Option                  | `class:String`                          | `active active-overlay`        | Class name for activation            |
 
 </div>
+
+## Other
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Default                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `classHtml:String`                          | `'xt-overlay'`        | Close automatically on `autoclose.trigger.xt` event            |
+| Option                  | `autoClose:Boolean`                          | `true`        | Close automatically on `autoclose.trigger.xt` event            |
+| Option                  | `closeInside:Query`                          | `'.overlay-dismiss, .btn-close, .backdrop'`        | Query Node inside to close on click            |
+| Option                  | `appendTo:Query`                          | `'body'`        | Append targets to Node on activation            |
+| Option                  | `scrollbar:Boolean`                          | `true`        | Hide body scrollbars on activation            |
+| Option                  | `focusLimit:Boolean`                          | `true`        | Limit focus on activation            |
+
+</div>
