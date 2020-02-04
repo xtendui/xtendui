@@ -1683,9 +1683,7 @@ class Toggle {
         }
       }
       // listener dispatch
-      if (!skipQueue) {
-        el.dispatchEvent(new CustomEvent('on.xt'))
-      }
+      el.dispatchEvent(new CustomEvent('on.xt'))
     } else if (actionCurrent === 'Off') {
       // deactivate
       self.deactivate(el)
@@ -1701,9 +1699,7 @@ class Toggle {
         self.specialClose(actionCurrent, el)
       }
       // listener dispatch
-      if (!skipQueue) {
-        el.dispatchEvent(new CustomEvent('off.xt'))
-      }
+      el.dispatchEvent(new CustomEvent('off.xt'))
     }
     // queue
     if (!skipQueue) {
@@ -1770,9 +1766,7 @@ class Toggle {
         .replace(/['"]+/g, '')
       self.specialCollapse('Reset', el, before, after)
       // listener dispatch
-      if (!skipQueue) {
-        el.dispatchEvent(new CustomEvent('ondone.xt'))
-      }
+      el.dispatchEvent(new CustomEvent('ondone.xt'))
     } else if (actionCurrent === 'Off') {
       // reset
       el.classList.remove(...self.classesOut)
@@ -1816,9 +1810,7 @@ class Toggle {
         }
       }
       // listener dispatch
-      if (!skipQueue) {
-        el.dispatchEvent(new CustomEvent('offdone.xt'))
-      }
+      el.dispatchEvent(new CustomEvent('offdone.xt'))
     }
     // queue
     if (!skipQueue) {
