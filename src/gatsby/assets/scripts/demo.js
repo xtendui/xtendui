@@ -70,6 +70,10 @@ const populateBlock = () => {
   }
   document.querySelector('#gatbsy_open-full').addEventListener('offdone.xt', e => {
     const content = document.querySelector('#gatbsy_open-full-content')
+    // btnOpenFull
+    for (const btn of document.querySelectorAll('.btn-open-full.active')) {
+      btn.classList.remove('active')
+    }
     // toggles
     const listingToggles = document.querySelectorAll('[data-gatsby-listing-toggle]')
     for (const el of listingToggles) {
@@ -229,15 +233,6 @@ const populateDemo = (container, i) => {
     btnOpenFull.addEventListener('click', () => {
       makeFullscreen(container)
     })
-    requestAnimationFrame(() => {
-      if (btnOpenFull.classList.contains('active')) {
-        btnOpenFull.classList.remove('active')
-        // @FIX demo fullscreen
-        setTimeout(() => {
-          makeFullscreen(container)
-        }, 3000)
-      }
-    })
   }
   // get hash
   if (location.hash) {
@@ -371,7 +366,7 @@ const populateDemo = (container, i) => {
  * makeFullscreen
  */
 
-const makeFullscreen = container => {
+const makeFullscreen = (container, skipIgnore = false) => {
   const toggle = document.querySelector('#gatbsy_open-full-trigger')
   const content = document.querySelector('#gatbsy_open-full-content')
   // toggles
@@ -399,7 +394,7 @@ const makeFullscreen = container => {
   container.before(
     Xt.createElement('<div class="gatsby_demo xt-ignore" data-xt-origin="gatbsy_open-full-content" style="height: ' + container.offsetHeight + 'px"></div>')
   )
-  if (!container.dataset.isFullscreenOnly) {
+  if (!container.dataset.isFullscreenOnly && !skipIgnore) {
     container.classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
   }
   content.append(container)
@@ -411,11 +406,13 @@ const makeFullscreen = container => {
     }
   }
   // trigger fullscreen or change tabs
-  const item = container.querySelector('.gatsby_demo_item.active')
-  const full = container.closest('#gatbsy_open-full')
-  if (full) {
-    item.dispatchEvent(new CustomEvent('on.xt'))
-  }
+  requestAnimationFrame(() => {
+    const item = container.querySelector('.gatsby_demo_item.active')
+    const full = container.closest('#gatbsy_open-full')
+    if (full) {
+      item.dispatchEvent(new CustomEvent('on.xt'))
+    }
+  })
 }
 
 /**
@@ -600,4 +597,4 @@ const populateSources = (item, element, z) => {
   Prism.highlightElement(codeInside)
 }
 
-export { populateBlock, populateDemo }
+export { populateBlock, populateDemo, makeFullscreen }

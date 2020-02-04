@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { populateDemo } from 'assets/scripts/demo'
+import { populateDemo, makeFullscreen } from 'assets/scripts/demo'
 
 class Demo extends React.Component {
   constructor(props) {
@@ -10,11 +10,19 @@ class Demo extends React.Component {
   }
 
   componentDidMount() {
+    const container = this.demoRef.current
     // fix demo index when changing page
     let index = parseFloat(document.documentElement.getAttribute('data-demo-index') || 0)
-    populateDemo(this.demoRef.current, index)
+    populateDemo(container, index)
     index++
     document.documentElement.setAttribute('data-demo-index', index.toString())
+    // @FIX demo fullscreen
+    for (const btnOpenFull of container.querySelectorAll('.btn-open-full')) {
+      if (btnOpenFull.classList.contains('active')) {
+        makeFullscreen(container, true)
+        break
+      }
+    }
   }
 
   render() {
