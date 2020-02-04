@@ -2213,7 +2213,7 @@ class Toggle {
             const specialcloseinsideHandler = Xt.dataStorage.put(
               closeElement,
               'click.close' + '/' + self.namespace,
-              self.eventSpecialcloseinsideHandler.bind(self).bind(self, closeElement, single)
+              self.eventSpecialcloseinsideHandler.bind(self).bind(self, single)
             )
             closeElement.addEventListener('click', specialcloseinsideHandler)
           }
@@ -2255,11 +2255,10 @@ class Toggle {
 
   /**
    * specialClose on handler
-   * @param {Node|HTMLElement|EventTarget|Window} closeElement
    * @param {Node|HTMLElement|EventTarget|Window} single
    * @param {Event} e
    */
-  eventSpecialcloseinsideHandler(closeElement, single, e) {
+  eventSpecialcloseinsideHandler(single, e) {
     const self = this
     /*
     // prevent closing when nested and moved (ex: overlay)
