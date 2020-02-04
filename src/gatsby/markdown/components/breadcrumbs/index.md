@@ -26,7 +26,7 @@ Or just import **core**:
 
 ## Usage
 
-Use this markup to create a **note**.
+Use this markup to create a **breadcrumb**.
 
 <script type="text/plain" class="language-markup">
   <div class="breadcrumbs">
@@ -52,6 +52,37 @@ Use this markup to create a **note**.
     </div>
   </div>
 </script>
+
+Use this markup to add **json-ld** metadata to **breadcrumb**.
+
+```html
+<script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+          {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "/"
+          },
+          {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacinia rutrum ornare",
+              "item": "/"
+          },
+          {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Destination",
+              "item": "/"
+          }
+      ]
+  }
+</script>
+```
 
 <demo>
   <demovanilla src="vanilla/components/breadcrumbs/default">

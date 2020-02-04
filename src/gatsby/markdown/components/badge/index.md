@@ -26,7 +26,7 @@ Or just import **core**:
 
 ## Usage
 
-Use this markup to create a **note**.
+Use this markup to create a **badge**.
 
 <script type="text/plain" class="language-markup">
   <div class="badge-container">
