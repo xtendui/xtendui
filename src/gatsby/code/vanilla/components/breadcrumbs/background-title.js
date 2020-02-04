@@ -9,39 +9,29 @@ export const demo = {
 }
 
 demo.htmlSource = `
-  <div class="breadcrumbs breadcrumbs-background"
-       itemscope itemtype="https://schema.org/BreadcrumbList">
+  <div class="breadcrumbs breadcrumbs-background">
     <div class="container">
 
       <div class="breadcrumbs-inner">
         <ul class="list">
-          <li itemscope itemprop="itemListElement" itemtype="https://schema.org/ListItem">
+          <li>
             <a href="/" class="btn">
-              <span itemprop="name">
-                Home
-              </span>
+              Home
             </a>
-            <meta itemprop="position" content="1">
           </li>
           <li>
             <span class="separator separator-slash"></span>
           </li>
-          <li itemscope itemprop="itemListElement" itemtype="https://schema.org/ListItem">
+          <li>
             <a href="/" class="btn">
-              <span itemprop="name">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacinia rutrum ornare
-              </span>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacinia rutrum ornare
             </a>
-            <meta itemprop="position" content="2">
           </li>
           <span class="separator separator-slash"></span>
-          <li itemscope itemprop="itemListElement" itemtype="https://schema.org/ListItem">
+          <li>
             <a role="button" class="btn" disabled>
-              <span itemprop="name">
-                  Destination
-              </span>
+              Destination
             </a>
-            <meta itemprop="position" content="3">
           </li>
         </ul>
       </div>
@@ -52,4 +42,31 @@ demo.htmlSource = `
 
     </div>
   </div>
+
+  <script type="application/ld+json">
+      {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+              {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "/"
+              },
+              {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacinia rutrum ornare",
+                  "item": "/"
+              },
+              {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "Destination",
+                  "item": "/"
+              }
+          ]
+      }
+  </script>
 `
