@@ -51,6 +51,7 @@ const vars = {
   timeMedium: 500,
   timeBig: 1000,
   timeGiant: 2000,
+  timeHuge: 4000,
 }
 
 /*
@@ -97,6 +98,7 @@ if (window.matchMedia('(prefers-reduced-motion: reduce), (update: slow)').matche
   vars.timeMedium = 0
   vars.timeBig = 0
   vars.timeGiant = 0
+  vars.timeHuge = 0
   Xt.optionsGlobal['xt-slider'].wheel.friction = false
   Xt.optionsGlobal['xt-slider'].drag.friction = false
 }
