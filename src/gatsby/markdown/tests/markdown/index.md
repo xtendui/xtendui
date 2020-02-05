@@ -91,8 +91,8 @@ Sed gravida massa in commodo eleifend. Curabitur ac pellentesque nisl. Nunc ut p
 </script>
 
 ```
-$ mkdir -p xtend-library/
-$ cp -r node_modules/xtend-library/dist/ xtend-library/
+mkdir -p xtend-library/
+cp -r node_modules/xtend-library/dist/ xtend-library/
 ```
 
 ```less

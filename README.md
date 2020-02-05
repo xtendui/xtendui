@@ -96,15 +96,7 @@ This library in the demos uses [gsap](https://github.com/greensock/GreenSock-JS)
 With npm install and import [gsap](https://www.npmjs.com/package/gsap) and [bezier-easing](https://www.npmjs.com/package/bezier-easing):
 
 ```
-$ npm install --save gsap
-$ npm install --save bezier-easing
-```
-
-And import them:
-
-```
-import gsap from 'gsap'
-import 'bezier-easing';
+npm install --save gsap bezier-easing
 ```
 
 ## Script
