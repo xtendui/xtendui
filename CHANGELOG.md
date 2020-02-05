@@ -1,3 +1,15 @@
+## [0.13.3](https://github.com/minimit/xtend-library/compare/v0.13.2...v0.13.3) (2020-02-05)
+
+
+### Bug Fixes
+
+* **css:** added css padding and margin variables ([f7051af](https://github.com/minimit/xtend-library/commit/f7051af39c5e65a7bfa5a93f00512400898776b5))
+* **docs:** fix fullscreen demo on page load ([f29258d](https://github.com/minimit/xtend-library/commit/f29258d083c71ba43ec593c3de74f562f6f43ebf))
+* **overlay:** fix overlay unique mode ([7a1d1ed](https://github.com/minimit/xtend-library/commit/7a1d1ed3511fa9fbfef83605ba17a4514c6e0c34))
+* **overlay:** fix overlay unique mode ([d822c28](https://github.com/minimit/xtend-library/commit/d822c2839425ee690135f4c190ca869b30a3709f))
+* **sticky:** xt-clone sticky pointer events none ([c1e2e21](https://github.com/minimit/xtend-library/commit/c1e2e21bb9e9d0c221f9faa1bbbf73362f95dcf3))
+* **toggle:** revision closeoutside within targets ([a29ba6f](https://github.com/minimit/xtend-library/commit/a29ba6f34c3481e2081068f99876f36d57da7664))
+
 ## [0.13.2](https://github.com/minimit/xtend-library/compare/v0.13.1...v0.13.2) (2020-02-03)
 
 
