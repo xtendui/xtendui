@@ -60,11 +60,6 @@
   }
   // navigation
   [data-xt-nav].btn {
-    @media @max-sm {
-      z-index: 2;
-      background: @white;
-      box-shadow: 0 0 2rem fade(@white, 100%), 0 0 4rem fade(@white, 100%), 0 0 6rem fade(@white, 100%);
-    }
     .btn-tiny();
     justify-content: center;
     align-items: center;
@@ -72,7 +67,11 @@
     width: 4.5rem;
     height: 4.5rem;
     border-radius: 50%;
+    background: @white;
     line-height: 1;
+    [class^='icon-'], [class*=' icon-'] {
+      .icon-small();
+    }
   }
 }
 
