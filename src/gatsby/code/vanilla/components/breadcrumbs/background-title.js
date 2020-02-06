@@ -13,21 +13,23 @@ demo.htmlSource = `
     <div class="container">
 
       <div class="breadcrumbs-inner">
-        <ul class="list">
+        <ol class="breadcrumbs-list">
           <li>
             <a href="/" class="btn">
               Home
             </a>
           </li>
           <li>
-            <span class="separator separator-slash"></span>
+            <span class="separator"></span>
           </li>
           <li>
             <a href="/" class="btn">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacinia rutrum ornare
             </a>
           </li>
-          <span class="separator separator-slash"></span>
+          <li>
+            <span class="separator"></span>
+          </li>
           <li>
             <a role="button" class="btn" disabled>
               Destination
