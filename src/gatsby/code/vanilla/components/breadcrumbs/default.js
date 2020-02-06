@@ -15,7 +15,7 @@ demo.htmlSource = `
       <div class="breadcrumbs-inner">
         <ol class="breadcrumbs-list">
           <li>
-            <a href="/" class="btn">
+            <a href="#" class="btn">
               Home
             </a>
           </li>
@@ -23,7 +23,7 @@ demo.htmlSource = `
             <span class="separator"></span>
           </li>
           <li>
-            <a href="/" class="btn">
+            <a href="#" class="btn">
               Lorem ipsum dolor sit amet
             </a>
           </li>
