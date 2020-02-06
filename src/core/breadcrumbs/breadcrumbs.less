@@ -1,3 +1,5 @@
+@import '~xtend-library/src/extensions/separator/separator.less';
+
 /**
  * breadcrumbs
  */
@@ -14,12 +16,6 @@
   .btn {
     .btn-text();
     .padding(x, none);
-    // ellipsis
-    display: inline;
-    max-width: 20rem;
-    overflow-x: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
   }
   .separator {
     .separator-slash();
@@ -28,13 +24,16 @@
 
 .breadcrumbs-list {
   .list-reset();
-  > li {
-    display: inline;
-  }
   // ellipsis
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  > li {
+    display: inline;
+  }
+  .btn {
+    display: inline;
+  }
 }
 
 .breadcrumbs-title {

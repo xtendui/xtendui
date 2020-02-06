@@ -24,7 +24,7 @@ demo.htmlSource = `
           </li>
           <li>
             <a href="/" class="btn">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacinia rutrum ornare
+              Lorem ipsum dolor sit amet
             </a>
           </li>
           <li>
@@ -32,7 +32,7 @@ demo.htmlSource = `
           </li>
           <li>
             <a role="button" class="btn" disabled>
-              Destination
+              Lorem ipsum
             </a>
           </li>
         </ul>
