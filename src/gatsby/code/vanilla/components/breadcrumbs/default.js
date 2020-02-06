@@ -31,9 +31,9 @@ demo.htmlSource = `
             <span class="separator"></span>
           </li>
           <li>
-            <a role="button" class="btn" disabled>
+            <div class="btn">
               Lorem ipsum
-            </a>
+            </div>
           </li>
         </ul>
       </div>
