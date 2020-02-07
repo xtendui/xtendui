@@ -1,4 +1,4 @@
-# WIP pre 1.0 version: api changing fast!
+# WIP pre 1.0 version: api changing fast
 
 
 ## Installation
