@@ -83,25 +83,6 @@ Loader size with `.loader-y`.
   </demovanilla>
 </demo>
 
-## Mouse
-
-Loader that follow mouse with `.loader-mouse` and javascript.
-
-<div class="table-scroll">
-
-|                         | Class                                     | Mixin                         | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `.loader-mouse`                | `.loader-mouse()`        | Style setup for loader that follow mouse            |
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/loader/mouse-spinner">
-  </demovanilla>
-  <demovanilla src="vanilla/components/loader/mouse-filler">
-  </demovanilla>
-</demo>
-
 ## Background
 
 Use `.loader-background` to add the background.

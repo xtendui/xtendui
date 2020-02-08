@@ -1,12 +1,8 @@
 ---
 type: "Addons"
 badge: "Addons"
-parent: "Form"
-title: "Textarea Autosize"
+parent: "Loader"
+title: "Loader"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+categories: ["400-Extensions"]
 ---
-
-<demo>
-  <demovanilla src="vanilla/addons/form/textarea-autosize">
-  </demovanilla>
-</demo>

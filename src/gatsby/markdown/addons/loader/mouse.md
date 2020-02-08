@@ -1,12 +1,11 @@
 ---
 type: "Addons"
 badge: "Addons"
-parent: "Form"
-title: "Textarea Autosize"
+parent: "Loader"
+title: "Mouse"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+demos: [
+  "vanilla/addons/loader/mouse-spinner",
+  "vanilla/addons/loader/mouse-filler"
+]
 ---
-
-<demo>
-  <demovanilla src="vanilla/addons/form/textarea-autosize">
-  </demovanilla>
-</demo>

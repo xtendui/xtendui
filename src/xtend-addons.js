@@ -1,4 +1,5 @@
 if (typeof window !== 'undefined') {
+  require('xtend-library/src/addons/animation/mouse-follow.js')
   require('xtend-library/src/addons/animation/ripple.js')
   require('xtend-library/src/addons/form/textarea-autosize.js')
   require('xtend-library/src/addons/group/group-expand.js')
