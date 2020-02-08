@@ -136,7 +136,6 @@ class Ripple {
     removeEventListener('mouseup', self.eventEnd.bind(self))
     // set self
     Xt.remove(self.componentName, self.object)
-    Xt.remove(self.componentName, form)
   }
 
   //
