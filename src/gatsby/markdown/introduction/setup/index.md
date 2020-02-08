@@ -100,9 +100,7 @@ To modify a **less** or **js** file add [webpack resolve](/introduction/setup#us
 
 #### Gsap
 
-This library in the demos uses [gsap](https://github.com/greensock/GreenSock-JS) and [bezier-easing](https://github.com/gre/bezier-easing) for javascript animations.
-
-With npm install and import [gsap](https://www.npmjs.com/package/gsap) and [bezier-easing](https://www.npmjs.com/package/bezier-easing):
+This library in the demos uses [gsap](https://github.com/greensock/GSAP) and [bezier-easing](https://github.com/gre/bezier-easing) for javascript animations.
 
 ```
 npm install --save gsap bezier-easing
