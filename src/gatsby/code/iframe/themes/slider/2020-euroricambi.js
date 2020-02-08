@@ -153,13 +153,13 @@ demo.htmlSource = `
 
                             <div class="slider_imgs--desktop">
                                 <div class="row row-default">
-                                    <div class="col-12 col-8-sm">
+                                    <div class="col-12 col-6-sm">
                                         <div class="slider_img">
                                             <div class="slider_img_background"></div>
                                             ${img({ classes: 'media-cover' })}
                                         </div>
                                     </div>
-                                    <div class="col-12 col-4-sm">
+                                    <div class="col-12 col-6-sm">
                                         <div class="slider_img">
                                             <div class="slider_img_background"></div>
                                             ${img({ classes: 'media-cover' })}
