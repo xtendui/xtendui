@@ -2,10 +2,6 @@
  * form-group
  */
 
-.form-group {
-  position: relative;
-}
-
 // selectors
 
 .form-groups(@rules) {
@@ -41,6 +37,7 @@
  */
 
 .form-item {
+  display: block;
   .full();
   &:focus, &.active {
     z-index: @index-active;

@@ -15,7 +15,7 @@
 
 fieldset, .fieldset {
   & + & {
-    .margin(top, small);
+    .margin(top, medium);
   }
 }
 
@@ -33,20 +33,26 @@ legend, .legend {
  * form-group
  */
 
+.form-group {
+  position: relative;
+}
+
 // set variant (for specificity must be before classes used)
 
 .form-default {
+  .margin-remove(bottom, 1.5rem); // same as form-groups margin
   .form-groups({ .form-group-medium(); });
 }
 
 .form-inverse {
+  .margin-remove(bottom, 1.5rem); // same as form-groups margin
   .form-groups({ .form-group-medium(); });
 }
 
 // size
 
 .form-group-small {
-  .margin(bottom, .75em);
+  .margin(bottom, 1.5rem);
   font-size: 1.2rem;
 }
 
@@ -55,7 +61,7 @@ legend, .legend {
 }
 
 .form-group-medium {
-  .margin(bottom, 1em);
+  .margin(bottom, 1.5rem);
   font-size: 1.4rem;
 }
 
@@ -64,7 +70,7 @@ legend, .legend {
 }
 
 .form-group-big {
-  .margin(bottom, 1em);
+  .margin(bottom, 1.5rem);
   font-size: 1.6rem;
 }
 
@@ -402,6 +408,8 @@ input[type="radio"]:not(.unstyled) {
   .note-default();
   .note-small();
   .muted();
+  .margin(y, small);
+  .margin(y, layout);
 }
 
 /**
