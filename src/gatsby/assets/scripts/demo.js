@@ -271,6 +271,12 @@ const populateDemo = (container, i) => {
   new Xt.Toggle(container.querySelector('.btn-show-code'), {
     targets: '#' + demoId + ' .gatsby_demo_code',
   })
+  document.querySelector('#' + demoId + ' .gatsby_demo_code').addEventListener('on.xt', e => {
+    e.target.closest('.gatsby_demo_item').classList.add('active-code')
+  })
+  document.querySelector('#' + demoId + ' .gatsby_demo_code').addEventListener('off.xt', e => {
+    e.target.closest('.gatsby_demo_item').classList.remove('active-code')
+  })
   // hide navigation if not needed
   let count
   const demos = document.querySelectorAll('.gatsby_demo')
