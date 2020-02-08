@@ -92,8 +92,8 @@ class Ripple {
       const left = x - size / 2
       // animate
       gsap.set(ripple, { height: size, width: size, top: top, left: left, scale: 1, opacity: 0 })
-      gsap.to(ripple, { opacity: 1, duration: Xt.vars.timeSmall, ease: 'penguin' })
-      gsap.to(ripple, { scale: scaleFinal, duration: Xt.vars.timeMedium, ease: 'penguin' })
+      gsap.to(ripple, { opacity: 1, duration: Xt.vars.timeTiny, ease: 'penguin' })
+      gsap.to(ripple, { scale: scaleFinal, duration: Xt.vars.timeSmall, ease: 'penguin' })
     }
   }
 
@@ -107,7 +107,7 @@ class Ripple {
     if (!options.onlyInside || e.target.closest(options.onlyInside)) {
       const ripple = self.rippleContainer.querySelector('.ripple:last-child')
       if (ripple) {
-        gsap.to(ripple, { opacity: 0, duration: Xt.vars.timeMedium, ease: 'penguin', delay: Xt.vars.timeTiny }).eventCallback('onComplete', () => {
+        gsap.to(ripple, { opacity: 0, duration: Xt.vars.timeSmall, ease: 'penguin', delay: Xt.vars.timeMini }).eventCallback('onComplete', () => {
           //ripple.remove()
         })
       }

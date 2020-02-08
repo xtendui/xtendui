@@ -23,13 +23,13 @@
     .slider_text a {
       opacity: .5;
       transform: translateX(0);
-      transition: opacity @time-big @ease-cheetah;
+      transition: opacity @time-medium @ease-cheetah;
     }
     @media @max-md {
       .slider_img--inner picture {
         opacity: 0;
         transform: translateY(1.5rem);
-        transition: opacity @time-big @ease-cheetah, transform @time-big @ease-cheetah;
+        transition: opacity @time-medium @ease-cheetah, transform @time-medium @ease-cheetah;
       }
     }
     &.initial {
@@ -42,13 +42,13 @@
     &.active, &:not(.active):hover {
       .slider_text a {
         opacity: 1;
-        transition: opacity @time-medium @ease-cheetah;
+        transition: opacity @time-small @ease-cheetah;
       }
       @media @max-md {
         .slider_img--inner picture {
           opacity: 1;
           transform: translateY(0);
-          transition: opacity @time-big @ease-cheetah @time-medium, transform @time-big @ease-cheetah @time-medium;
+          transition: opacity @time-medium @ease-cheetah @time-small, transform @time-medium @ease-cheetah @time-small;
         }
       }
     }

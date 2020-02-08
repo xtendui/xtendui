@@ -145,9 +145,9 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
     <button type="button" class="btn btn-primary">
-      big
+      large
     </button>
-    <div class="overlay overlay-big">
+    <div class="overlay overlay-large">
       <div class="overlay-container">
         <div class="overlay-inner">
 
@@ -178,9 +178,9 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
     <button type="button" class="btn btn-primary">
-      giant
+      big
     </button>
-    <div class="overlay overlay-giant">
+    <div class="overlay overlay-big">
       <div class="overlay-container">
         <div class="overlay-inner">
 

@@ -25,7 +25,7 @@
 
 .overlay-position {
   &.active {
-    animation-duration: @time-medium + @time-small; // needed for animation time and backdrop animation time, put max animation time
+    animation-duration: @time-small + @time-tiny; // needed for animation time and backdrop animation time, put max animation time
     &.overlay-position-left {
       .card-overlay > .card-design,
       .card-overlay > .card-inner > * {
@@ -34,7 +34,7 @@
       }
       .card-overlay > .card-inner > .card-content {
         .anim-x.active();
-        animation-delay: @time-small;
+        animation-delay: @time-tiny;
       }
     }
     &.overlay-position-right {
@@ -45,17 +45,17 @@
       }
       .card-overlay > .card-inner > .card-content {
         .anim-x-inverse.active();
-        animation-delay: @time-small;
+        animation-delay: @time-tiny;
       }
     }
   }
   &.out {
-    animation-duration: @time-medium + @time-small; // needed for animation time and backdrop animation time, put max animation time
+    animation-duration: @time-small + @time-tiny; // needed for animation time and backdrop animation time, put max animation time
     &.overlay-position-left {
       .card-overlay > .card-design,
       .card-overlay > .card-inner > * {
         .anim-x-inverse.out();
-        animation-delay: @time-small;
+        animation-delay: @time-tiny;
       }
       .card-overlay > .card-inner > .card-content {
         .anim-x-inverse.out();
@@ -66,7 +66,7 @@
       .card-overlay > .card-design,
       .card-overlay > .card-inner > * {
         .anim-x.out();
-        animation-delay: @time-small;
+        animation-delay: @time-tiny;
       }
       .card-overlay > .card-inner > .card-content {
         .anim-x.out();

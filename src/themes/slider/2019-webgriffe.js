@@ -11,8 +11,8 @@ Xt.mount.push({
     // slider
 
     let self = new Xt.Slider(object, {
-      durationOn: Xt.vars.timeGiant,
-      durationOff: Xt.vars.timeGiant,
+      durationOn: Xt.vars.timeBig,
+      durationOff: Xt.vars.timeBig,
       loop: true,
       auto: {
         time: 12000,
@@ -54,7 +54,7 @@ Xt.mount.push({
         let contentPos = Math.floor(dist * contentFactor)
         for (let content of contents) {
           if (tween) {
-            gsap.to(content, { x: contentPos, duration: Xt.vars.timeGiant, ease: 'cheetah' })
+            gsap.to(content, { x: contentPos, duration: Xt.vars.timeBig, ease: 'cheetah' })
           } else {
             gsap.set(content, { x: contentPos })
           }
@@ -64,7 +64,7 @@ Xt.mount.push({
         let imgPos = Math.floor(dist * imgFactor)
         for (let img of imgs) {
           if (tween) {
-            gasp.to(img, { x: imgPos, duration: Xt.vars.timeGiant, ease: 'cheetah' })
+            gasp.to(img, { x: imgPos, duration: Xt.vars.timeBig, ease: 'cheetah' })
           } else {
             gasp.set(img, { x: imgPos })
           }
@@ -115,9 +115,9 @@ Xt.mount.push({
         if (tween) {
           for (let [i, target] of self.targets.entries()) {
             let background = document.querySelectorAll('.slider_background[data-index="' + i + '"]')
-            gsap.to(background, { opacity: 0, duration: Xt.vars.timeGiant, ease: 'cheetah' })
+            gsap.to(background, { opacity: 0, duration: Xt.vars.timeBig, ease: 'cheetah' })
           }
-          gsap.to(background, { opacity: 1, duration: Xt.vars.timeGiant, ease: 'cheetah' })
+          gsap.to(background, { opacity: 1, duration: Xt.vars.timeBig, ease: 'cheetah' })
         } else {
           gsap.set(background, { opacity: 1 })
         }
@@ -159,7 +159,7 @@ Xt.mount.push({
       for (let element of elements) {
         let fillers = element.querySelectorAll('.filler span:nth-child(2)')
         for (let filler of fillers) {
-          gsap.to(filler, { width: 0, left: 0, duration: Xt.vars.timeSmall })
+          gsap.to(filler, { width: 0, left: 0, duration: Xt.vars.timeTiny })
         }
       }
     })
@@ -172,7 +172,7 @@ Xt.mount.push({
       for (let element of elements) {
         let fillers = element.querySelectorAll('.filler span:nth-child(2)')
         for (let filler of fillers) {
-          gsap.to(filler, { width: 0, left: 0, duration: Xt.vars.timeSmall })
+          gsap.to(filler, { width: 0, left: 0, duration: Xt.vars.timeTiny })
         }
       }
     })

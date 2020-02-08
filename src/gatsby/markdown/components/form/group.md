@@ -200,8 +200,8 @@ You can set the size globally on **form**.
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.form-{size}`                        | `.form-small` `.form-medium` `.form-big`     |
-| Mixin                   | `.form-{size}()`                      | `.form-small()` `.form-medium()` `.form-big()`     |
+| Class                   | `.form-{size}`                        | `.form-small` `.form-medium` `.form-large`     |
+| Mixin                   | `.form-{size}()`                      | `.form-small()` `.form-medium()` `.form-large()`     |
 
 </div>
 
@@ -211,8 +211,8 @@ Or granularly on **form group**.
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.form-group-{size}`                        | `.form-group-small` `.form-group-medium` `.form-group-big`     |
-| Mixin                   | `.form-group-{size}()`                      | `.form-group-small()` `.form-group-medium()` `.form-group-big()`     |
+| Class                   | `.form-group-{size}`                        | `.form-group-small` `.form-group-medium` `.form-group-large`     |
+| Mixin                   | `.form-group-{size}()`                      | `.form-group-small()` `.form-group-medium()` `.form-group-large()`     |
 
 </div>
 
@@ -221,6 +221,6 @@ Or granularly on **form group**.
   </demovanilla>
   <demovanilla src="vanilla/components/form/group-medium">
   </demovanilla>
-  <demovanilla src="vanilla/components/form/group-big">
+  <demovanilla src="vanilla/components/form/group-large">
   </demovanilla>
 </demo>

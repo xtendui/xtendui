@@ -971,7 +971,7 @@ if (typeof window !== 'undefined') {
     backgroundColor: animCss.backgroundColor.final,
     borderColor: animCss.borderColor.final,
     boxShadow: animCss.boxShadow.final,
-    duration: Xt.vars.timeSmall,
+    duration: Xt.vars.timeTiny,
     ease: 'linear',
   })
   */

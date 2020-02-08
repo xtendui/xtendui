@@ -9,9 +9,9 @@ Xt.mount.push({
   mount: object => {
     // vars
 
-    const spinnerTime = Xt.vars.timeSmall
+    const spinnerTime = Xt.vars.timeTiny
     const spinnerEase = 'linear'
-    const fillerTime = Xt.vars.timeSmall
+    const fillerTime = Xt.vars.timeTiny
     const fillerEase = 'linear'
 
     // init

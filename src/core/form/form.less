@@ -69,13 +69,13 @@ legend, .legend {
   .form-groups({ .form-group-medium(); });
 }
 
-.form-group-big {
+.form-group-large {
   .margin(bottom, 1.5rem);
   font-size: 1.6rem;
 }
 
-.form-big {
-  .form-groups({ .form-group-big(); });
+.form-large {
+  .form-groups({ .form-group-large(); });
 }
 
 // mode
@@ -237,9 +237,9 @@ legend, .legend {
 // animation
 
 .form-item {
-  transition: color @time-medium @ease-out, border @time-medium @ease-out, background-color @time-medium @ease-out;
+  transition: color @time-small @ease-out, border @time-small @ease-out, background-color @time-small @ease-out;
   &:focus, &.active {
-    transition: color @time-medium @ease-in, border @time-medium @ease-in, background-color @time-medium @ease-in;
+    transition: color @time-small @ease-in, border @time-small @ease-in, background-color @time-small @ease-in;
   }
 }
 
@@ -374,12 +374,12 @@ input[type="radio"]:not(.unstyled) {
 .checkbox, .radio {
   &:before {
     transform: scale(.9, .9);
-    transition: all @time-medium @ease-out;
+    transition: all @time-small @ease-out;
   }
   &:after {
     opacity: 0 !important;
     transform: scale(.9, .5);
-    transition: all @time-medium @ease-out;
+    transition: all @time-small @ease-out;
   }
   &.focus, &:focus {
     &:before {
@@ -389,12 +389,12 @@ input[type="radio"]:not(.unstyled) {
   &.active {
     &:before {
       transform: scale(1, 1);
-      transition: all @time-medium @ease-in;
+      transition: all @time-small @ease-in;
     }
     &:after {
       opacity: 1 !important;
       transform: scale(1, 1);
-      transition: all @time-medium @ease-in;
+      transition: all @time-small @ease-in;
     }
   }
 }

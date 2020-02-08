@@ -46,11 +46,14 @@ gsap.registerEase('penguin', progress => {
 
 const vars = {
   // time
-  timeTiny: 100,
-  timeSmall: 250,
-  timeMedium: 500,
-  timeBig: 1000,
-  timeGiant: 2000,
+  timeMicro: 50,
+  timeMini: 100,
+  timeTiny: 250,
+  timeSmall: 500,
+  timeMedium: 750,
+  timeLarge: 1000,
+  timeBig: 2000,
+  timeGiant: 3000,
   timeHuge: 4000,
 }
 
@@ -93,9 +96,12 @@ Xt.optionsGlobal['xt-slider'] = {
 //
 
 if (window.matchMedia('(prefers-reduced-motion: reduce), (update: slow)').matches) {
+  vars.timeMicro = 0
+  vars.timeMini = 0
   vars.timeTiny = 0
   vars.timeSmall = 0
   vars.timeMedium = 0
+  vars.timeLarge = 0
   vars.timeBig = 0
   vars.timeGiant = 0
   vars.timeHuge = 0

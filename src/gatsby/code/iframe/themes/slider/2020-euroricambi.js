@@ -73,7 +73,7 @@ demo.htmlSource = `
                                             <div class="card-block card-item">
                                                 <h3 class="card-title">Slide 1</h3>
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacinia rutrum ornare.</p>
-                                                <a href="#" class="btn btn-primary btn-giant">
+                                                <a href="#" class="btn btn-primary btn-big">
                                                     Discover
                                                 </a>
                                             </div>
@@ -128,7 +128,7 @@ demo.htmlSource = `
                                             <div class="card-block card-item">
                                                 <h3 class="card-title">Slide 2</h3>
                                                 <p>Lorem ipsum dolor sit amet</p>
-                                                <a href="#" class="btn btn-primary btn-giant">
+                                                <a href="#" class="btn btn-primary btn-big">
                                                     Discover
                                                 </a>
                                             </div>
@@ -183,7 +183,7 @@ demo.htmlSource = `
                                             <div class="card-block card-item">
                                                 <h3 class="card-title">Slide 3</h3>
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacinia rutrum ornare.</p>
-                                                <a href="#" class="btn btn-primary btn-giant">
+                                                <a href="#" class="btn btn-primary btn-big">
                                                     Discover
                                                 </a>
                                             </div>

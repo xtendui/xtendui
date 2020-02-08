@@ -26,10 +26,10 @@ class Header extends React.Component {
               <div>
                 <div className="gatsby_site_header_top_social">
                   <a href={site.site.siteMetadata.github} target="_blank" rel="noopener" className="btn gatsby_btn-site_header_top_social" title="Github">
-                    <span className="icon-github icon-big"></span>
+                    <span className="icon-github icon-large"></span>
                   </a>
                   <a href={site.site.siteMetadata.npm} target="_blank" rel="noopener" className="btn gatsby_btn-site_header_top_social" title="Npm">
-                    <span className="icon-npm icon-big"></span>
+                    <span className="icon-npm icon-large"></span>
                   </a>
                 </div>
               </div>

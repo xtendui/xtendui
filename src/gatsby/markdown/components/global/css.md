@@ -26,7 +26,7 @@ You have also spacing **margin** and **padding** vars that you can use with a **
 
 Available positions are: `left` `right` `top` `bottom` `x` `y` `all`.
 
-Available sizes are: `layout` `auto` `none` `micro` `tiny` `small` `medium` `big` `giant` `huge`.
+Available sizes are: `layout` `auto` `none` `micro` `mini` `tiny` `small` `medium` `large` `big` `giant` `huge`.
 
 <div class="table-scroll">
 

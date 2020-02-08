@@ -25,7 +25,7 @@ Classes for assigning variant (e.g.: space). Add or remove selectors at your dis
 
 Row **automatically** add horizontal and vertical spacing to the contents. You can **specify a different one** with this classes/mixins.
 
-`{size}` can be `none`, `micro`, `tiny`, `small`, `medium`, `big`, `giant`, `huge`.
+`{size}` can be `none`, `mini`, `tiny`, `small`, `medium`, `large`, `big`, `giant`.
 
 <div class="table-scroll">
 
@@ -57,17 +57,19 @@ Row **automatically** add horizontal and vertical spacing to the contents. You c
 <demo>
   <demovanilla src="vanilla/components/row/space-none" mode="grid">
   </demovanilla>
+  <demovanilla src="vanilla/components/row/space-mini" mode="grid">
+  </demovanilla>
   <demovanilla src="vanilla/components/row/space-tiny" mode="grid">
   </demovanilla>
   <demovanilla src="vanilla/components/row/space-small" mode="grid">
   </demovanilla>
   <demovanilla src="vanilla/components/row/space-medium" mode="grid">
   </demovanilla>
+  <demovanilla src="vanilla/components/row/space-large" mode="grid">
+  </demovanilla>
   <demovanilla src="vanilla/components/row/space-big" mode="grid">
   </demovanilla>
   <demovanilla src="vanilla/components/row/space-giant" mode="grid">
-  </demovanilla>
-  <demovanilla src="vanilla/components/row/space-huge" mode="grid">
   </demovanilla>
 </demo>
 

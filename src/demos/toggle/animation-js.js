@@ -8,16 +8,16 @@ Xt.mount.push({
   mount: object => {
     // vars
 
-    const targetTimeOn = Xt.vars.timeBig
-    const targetTimeOff = Xt.vars.timeBig
+    const targetTimeOn = Xt.vars.timeLarge
+    const targetTimeOff = Xt.vars.timeLarge
     const targetEaseOn = 'cheetah'
     const targetEaseOff = 'cheetah'
 
     // init
 
     let self = new Xt.Toggle(object, {
-      durationOn: Xt.vars.timeBig,
-      durationOff: Xt.vars.timeBig,
+      durationOn: Xt.vars.timeLarge,
+      durationOff: Xt.vars.timeLarge,
     })
 
     // on

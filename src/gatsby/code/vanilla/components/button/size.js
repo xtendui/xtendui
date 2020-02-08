@@ -26,12 +26,12 @@ demo.htmlSource = `
     medium
   </button>
 
-  <button type="button" class="btn btn-default btn-big">
-    big
+  <button type="button" class="btn btn-default btn-large">
+    large
   </button>
 
-  <button type="button" class="btn btn-default btn-giant">
-    giant
+  <button type="button" class="btn btn-default btn-big">
+    big
   </button>
 </div>
 `

@@ -32,8 +32,8 @@ Classes for assigning size (e.g.: padding or font size). Add or remove selectors
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.note-{size}`                           | `.note-small` `.note-medium` `.note-big`|
-| Mixin                   | `.note-{size}()`                         | `.note-small()` `.note-medium()`  `.note-big()`   |
+| Class                   | `.note-{size}`                           | `.note-small` `.note-medium` `.note-large`|
+| Mixin                   | `.note-{size}()`                         | `.note-small()` `.note-medium()`  `.note-large()`   |
 
 </div>
 

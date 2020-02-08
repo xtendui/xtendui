@@ -9,8 +9,8 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<form class="form-default form-big">
-  <div class="form-group form-group-big xt-custom">
+<form class="form-default form-large">
+  <div class="form-group form-group-large xt-custom">
     <label class="form-label">
       Custom
     </label>
@@ -62,22 +62,22 @@ demo.htmlSource = `
   </div>
 
   <div class="form-group">
-    <input type="checkbox" id="check-block-big" checked>
-    <label class="form-label" for="check-block-big">
+    <input type="checkbox" id="check-block-large" checked>
+    <label class="form-label" for="check-block-large">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
     </label>
   </div>
 
   <div class="form-group">
-    <input type="radio" id="radio-block-big-0" name="radio-block-big" checked>
-    <label class="form-label" for="radio-block-big-0">
+    <input type="radio" id="radio-block-large-0" name="radio-block-large" checked>
+    <label class="form-label" for="radio-block-large-0">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
     </label>
   </div>
 
   <div class="form-group">
-    <input type="radio" id="radio-block-big-1" name="radio-block-big">
-    <label class="form-label" for="radio-block-big-1">
+    <input type="radio" id="radio-block-large-1" name="radio-block-large">
+    <label class="form-label" for="radio-block-large-1">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
     </label>
   </div>

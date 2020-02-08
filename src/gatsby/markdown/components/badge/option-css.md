@@ -32,8 +32,8 @@ Classes for assigning size (e.g.: padding or font size). Add or remove selectors
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.badge-{size}`                           | `.badge-small` `.badge-medium` `.badge-big`|
-| Mixin                   | `.badge-{size}()`                         | `.badge-small()` `.badge-medium()`  `.badge-big()`   |
+| Class                   | `.badge-{size}`                           | `.badge-small` `.badge-medium` `.badge-large`|
+| Mixin                   | `.badge-{size}()`                         | `.badge-small()` `.badge-medium()`  `.badge-large()`   |
 
 </div>
 

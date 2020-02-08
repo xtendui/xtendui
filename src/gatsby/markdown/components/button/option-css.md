@@ -39,8 +39,8 @@ Sizes uses `em` padding that depends on font size.
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.btn-{size}`                        | `.btn-tiny` `.btn-small` `.btn-medium` `.btn-big` `.btn-giant` |
-| Mixin                   | `.btn-{size}()`                      | `.btn-tiny()` `.btn-small()`  `.btn-medium()` `.btn-big()` `.btn-giant()`   |
+| Class                   | `.btn-{size}`                        | `.btn-tiny` `.btn-small` `.btn-medium` `.btn-large` `.btn-big` |
+| Mixin                   | `.btn-{size}()`                      | `.btn-tiny()` `.btn-small()`  `.btn-medium()` `.btn-large()` `.btn-big()`   |
 
 <demo>
   <demovanilla src="vanilla/components/button/size">

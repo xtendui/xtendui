@@ -13,12 +13,12 @@ demo.htmlSource = `
   <div class="form-group">
     <div class="group">
       <div class="group-inner">
-        <button type="button" class="btn btn-default btn-big">
+        <button type="button" class="btn btn-default btn-large">
           Lorem
         </button>
       </div>
       <div class="group-inner">
-        <button type="button" class="btn btn-primary btn-big">
+        <button type="button" class="btn btn-primary btn-large">
           ipsum
         </button>
       </div>

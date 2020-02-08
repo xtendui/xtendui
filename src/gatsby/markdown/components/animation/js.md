@@ -20,4 +20,4 @@ In `~xtend-library/src/vars.js` there are js variables for animation beziers and
 import 'xtend-library/src/vars.js'
 ```
 
-And access the variables this way: `Xt.vars.timeGiant`, `'linear'`.
+And access the variables this way: `Xt.vars.timeBig`, `'linear'`.

@@ -80,7 +80,7 @@ pre {
   .margin(bottom, layout);
   // animations
   border: 3px solid @shade-200;
-  transition: border-color @time-medium @ease-out;
+  transition: border-color @time-small @ease-out;
   .gatsby_demo_tabs {
     overflow: hidden;
   }
@@ -88,7 +88,7 @@ pre {
     > * {
       opacity: 0;
       transform: translateY(1.5rem);
-      transition: opacity @time-medium @ease-in, transform @time-medium @ease-in;
+      transition: opacity @time-small @ease-in, transform @time-small @ease-in;
       transition-delay: 0ms; // @start + @child * @increment
       .nth-child(@child: 3, @start: 150ms, @increment: 0ms, @decrement: 50ms, {
         @transition-delay();
@@ -97,12 +97,12 @@ pre {
   }
   &:hover, &:focus-within {
     border-color: @shade-300;
-    transition: border-color @time-medium @ease-in;
+    transition: border-color @time-small @ease-in;
     .gatsby_demo_tabs_right {
       > * {
         opacity: 1;
         transform: translateY(0);
-        transition: opacity @time-medium @ease-in, transform @time-medium @ease-in;
+        transition: opacity @time-small @ease-in, transform @time-small @ease-in;
       }
     }
     .gatsby_demo_tabs, .gatsby_demo_code_tabs {
@@ -228,7 +228,7 @@ pre {
     > * {
       .list();
       .list-default();
-      .list-space(micro);
+      .list-space(mini);
     }
     .padding(y, 7px);
     .padding(x, small);
@@ -285,10 +285,10 @@ table {
 
 .gatbsy_table {
   border-color: @shade-200;
-  transition: border-color @time-medium @ease-out;
+  transition: border-color @time-small @ease-out;
   &:hover, &.hover, &:active, &.active {
     border-color: @shade-300;
-    transition: border-color @time-medium @ease-in;
+    transition: border-color @time-small @ease-in;
   }
 }
 

@@ -134,28 +134,28 @@ const populateDemo = (container, i) => {
     .querySelector('.gatsby_demo_tabs_right')
     .append(
       Xt.createElement(
-        '<button type="button" class="btn btn-text btn-tiny btn-prev-demo" aria-label="Previous"><span class="icon-arrow-left icon-big"></span></button>'
+        '<button type="button" class="btn btn-text btn-tiny btn-prev-demo" aria-label="Previous"><span class="icon-arrow-left icon-large"></span></button>'
       )
     )
   container
     .querySelector('.gatsby_demo_tabs_right')
     .append(
       Xt.createElement(
-        '<button type="button" class="btn btn-text btn-tiny btn-next-demo" aria-label="Next"><span class="icon-arrow-right icon-big"></span></button>'
+        '<button type="button" class="btn btn-text btn-tiny btn-next-demo" aria-label="Next"><span class="icon-arrow-right icon-large"></span></button>'
       )
     )
   container
     .querySelector('.gatsby_demo_tabs_right')
     .append(
       Xt.createElement(
-        '<button type="button" class="btn btn-text btn-tiny btn-show-code" aria-label="Toggle Code"><span class="icon-code icon-big"></span></button>'
+        '<button type="button" class="btn btn-text btn-tiny btn-show-code" aria-label="Toggle Code"><span class="icon-code icon-large"></span></button>'
       )
     )
   container
     .querySelector('.gatsby_demo_tabs_right')
     .append(
       Xt.createElement(
-        '<button type="button" class="btn btn-text btn-tiny btn-open-full" aria-label="Toggle Fullscreen"><span class="icon-maximize icon-big"></span></button>'
+        '<button type="button" class="btn btn-text btn-tiny btn-open-full" aria-label="Toggle Fullscreen"><span class="icon-maximize icon-large"></span></button>'
       )
     )
   // loop items

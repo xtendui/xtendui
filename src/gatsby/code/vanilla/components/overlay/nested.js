@@ -13,7 +13,7 @@ demo.htmlSource = `
   Toggle with API
 </button>
 
-<div class="overlay overlay-big" id="overlay-nested"
+<div class="overlay overlay-large" id="overlay-nested"
   data-xt-overlay="{ on: false, instant: false }">
   <div class="overlay-container">
     <div class="overlay-inner">
