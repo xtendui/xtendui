@@ -1,10 +1,10 @@
 ---
 type: "Addons"
 badge: "Addons"
-parent: "Form"
+parent: "Group"
 title: "Group Expand"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 demos: [
-  "vanilla/addons/form/group-expand"
+  "vanilla/addons/group/group-expand"
 ]
 ---
