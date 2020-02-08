@@ -14,7 +14,7 @@
 // loader
 
 .loader.loader-mouse {
-  .mouse-follow() !important;
+  .mouse-follow();
   .filler, .spinner {
     display: block;
     position: relative;
@@ -36,12 +36,12 @@
   .loader.out();
   // disable on touch
   @media (hover: none) {
-    .loader.active() !important;
-    position: absolute !important;
-    top: 50% !important;
-    left: 50% !important;
-    margin-top: -13px !important;
-    margin-left: -13px !important;
-    transform: none !important;
+    .loader.active();
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -13px;
+    margin-left: -13px;
+    transform: none;
   }
 }
