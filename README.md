@@ -124,20 +124,6 @@ Add the required scripts to your html
 
 Supported browsers are as follow: **explorer 12**, **firefox 38**, **opera 25**, **safari 10**, **chrome 38**.
 
-If you want to support old browsers since Internet Explorer 11, import the polyfills:
-
-```jsx
-import 'xtend-library/src/polyfill-old.js'
-```
-
-And use this in **.browserslistrc**:
-
-```Shell
-> 2%
-IE 11
-not op_mini all
-```
-
 #### Media with Object fit
 
 If you want to support [old browsers](https://caniuse.com/#feat=object-fit), use [object-fit polyfills](https://github.com/fregante/object-fit-images).

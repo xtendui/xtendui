@@ -26,12 +26,10 @@
   },
   "dependencies": {
     "bezier-easing": "^2.1.0",
-    "classlist.js": "^1.1.20150312",
     "core-js": "^2.6.10",
     "gsap": "^3.0.5",
     "regenerator-runtime": "^0.13.3",
-    "relaxed-json": "^1.0.3",
-    "url-polyfill": "^1.1.7"
+    "relaxed-json": "^1.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",
