@@ -11,18 +11,18 @@ export const demo = {
 demo.htmlSource = `
 <form class="form-default">
   <div class="form-group">
-    <div class="group">
+    <div class="group group-expand">
+
+      <div class="group-inner flex-auto">
+        <input type="text" class="form-item" placeholder="Insert search query">
+      </div>
+
       <div class="group-inner">
-        <button type="button" class="btn btn-primary">
-          Lorem
-        </button>
         <button type="button" class="btn btn-default">
-          ipsum
+          Search
         </button>
       </div>
-      <div class="group-inner">
-        <input type="text" class="form-item" />
-      </div>
+
     </div>
   </div>
 </div>

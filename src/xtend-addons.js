@@ -1,4 +1,5 @@
 if (typeof window !== 'undefined') {
+  require('xtend-library/src/addons/form/group-expand.js')
   require('xtend-library/src/addons/form/group-number.js')
   require('xtend-library/src/addons/form/textarea-autosize.js')
   require('xtend-library/src/addons/slider/navigation-sides.js')

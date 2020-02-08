@@ -3,7 +3,7 @@ type: "Components"
 badge: "Core"
 parent: "Form"
 title: "Item and Label"
-date: "2019-08-01"
+date: "2019-11-01"
 ---
 
 ## Usage
@@ -12,17 +12,14 @@ Use this markup to create a **form label** and **form item**.
 
 <script type="text/plain" class="language-markup">
   <form class="form-default">
-    <label class="form-label">
-      <!-- content -->
-    </label>
-    <input type="text" class="form-item">
+    <div class="form-group">
+      <label class="form-label">
+        <!-- content -->
+      </label>
+      <input type="text" class="form-item">
+    </div>
   </form>
 </script>
-
-<demo>
-  <demovanilla src="vanilla/components/form/item-label" name="item and label">
-  </demovanilla>
-</demo>
 
 If you want to customize singularly `.form-item` or `.form-label` use the class `.xt-custom`.
 
@@ -30,6 +27,11 @@ In css you can use `.form-labels({});` and `.form-items({});` to style all `.for
 
 [[notePrimary]]
 | Form label and item must be inside [form group](/components/form/group) to have default styles.
+
+<demo>
+  <demovanilla src="vanilla/components/form/item-label" name="item and label">
+  </demovanilla>
+</demo>
 
 ## Size
 
