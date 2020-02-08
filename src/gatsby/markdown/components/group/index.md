@@ -44,11 +44,6 @@ Use this markup to create a **button group as line**.
   </div>
 </script>
 
-<demo>
-  <demovanilla src="vanilla/components/group/button-line">
-  </demovanilla>
-</demo>
-
 Use this markup to create a button group as stack.
 
 <script type="text/plain" class="language-markup">
@@ -67,6 +62,8 @@ Use this markup to create a button group as stack.
 </script>
 
 <demo>
+  <demovanilla src="vanilla/components/group/button-line">
+  </demovanilla>
   <demovanilla src="vanilla/components/group/button-stack">
   </demovanilla>
 </demo>
@@ -95,11 +92,6 @@ Use this markup to create a input group as line.
 </div>
 </script>
 
-<demo>
-  <demovanilla src="vanilla/components/group/input-line">
-  </demovanilla>
-</demo>
-
 Use this markup to create a input group as stack.
 
 <script type="text/plain" class="language-markup">
@@ -126,6 +118,8 @@ Use this markup to create a input group as stack.
 </script>
 
 <demo>
+  <demovanilla src="vanilla/components/group/input-line">
+  </demovanilla>
   <demovanilla src="vanilla/components/group/input-stack">
   </demovanilla>
 </demo>

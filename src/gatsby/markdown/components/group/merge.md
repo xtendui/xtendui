@@ -33,11 +33,6 @@ Use this markup to merge multiple `.btn` in one `[button]` as line.
   </button>
 </script>
 
-<demo>
-  <demovanilla src="vanilla/components/group/merge-line">
-  </demovanilla>
-</demo>
-
 Use this markup to merge multiple `.btn` in one `[button]` as stack.
 
 <script type="text/plain" class="language-markup">
@@ -56,6 +51,8 @@ Use this markup to merge multiple `.btn` in one `[button]` as stack.
 </script>
 
 <demo>
+  <demovanilla src="vanilla/components/group/merge-line">
+  </demovanilla>
   <demovanilla src="vanilla/components/group/merge-stack">
   </demovanilla>
 </demo>

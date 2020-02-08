@@ -13,9 +13,6 @@ Use `.full` to have full width fluid group. Use `.group-inner.flex-auto` to expa
 <demo>
   <demovanilla src="vanilla/components/group/options-full-line">
   </demovanilla>
-</demo>
-
-<demo>
   <demovanilla src="vanilla/components/group/options-full-stack">
   </demovanilla>
 </demo>
