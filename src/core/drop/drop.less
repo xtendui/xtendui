@@ -114,7 +114,7 @@
 
 .drop-container {
   &.active {
-    animation-duration: @time-medium + @time-small; // needed for animation time and backdrop animation time, put max animation time
+    animation-duration: @time-small + @time-tiny; // needed for animation time and backdrop animation time, put max animation time
     > .drop {
       > .drop-inner {
         > .drop-design {
@@ -123,7 +123,7 @@
         }
         > .drop-content {
           .anim-y.active();
-          animation-delay: @time-small;
+          animation-delay: @time-tiny;
         }
       }
       > .backdrop {
@@ -132,12 +132,12 @@
     }
   }
   &.out {
-    animation-duration: @time-medium + @time-small; // needed for animation time and backdrop animation time, put max animation time
+    animation-duration: @time-small + @time-tiny; // needed for animation time and backdrop animation time, put max animation time
     > .drop {
       > .drop-inner {
         > .drop-design {
           .anim-zoom.out();
-          animation-delay: @time-small;
+          animation-delay: @time-tiny;
         }
         > .drop-content {
           .anim-y.out();
@@ -151,7 +151,7 @@
   }
   /*
   &.active {
-    animation-duration: @time-medium + @time-small; // needed for animation time and backdrop animation time, put max animation time
+    animation-duration: @time-small + @time-tiny; // needed for animation time and backdrop animation time, put max animation time
     > .drop {
       > .drop-inner {
         > .drop-design {
@@ -160,7 +160,7 @@
         }
         > .drop-content {
           .anim-y.active();
-          animation-delay: @time-small;
+          animation-delay: @time-tiny;
         }
       }
       > .backdrop {
@@ -169,12 +169,12 @@
     }
   }
   &.out {
-    animation-duration: @time-medium + @time-small; // needed for animation time and backdrop animation time, put max animation time
+    animation-duration: @time-small + @time-tiny; // needed for animation time and backdrop animation time, put max animation time
     > .drop {
       > .drop-inner {
         > .drop-design {
           .anim-y.out();
-          animation-delay: @time-small;
+          animation-delay: @time-tiny;
         }
         > .drop-content {
           .anim-y.out();

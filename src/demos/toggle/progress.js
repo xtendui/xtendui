@@ -8,7 +8,7 @@ Xt.mount.push({
   mount: object => {
     // vars
 
-    const fillerTime = Xt.vars.timeSmall
+    const fillerTime = Xt.vars.timeTiny
     const fillerEase = 'linear'
 
     // init

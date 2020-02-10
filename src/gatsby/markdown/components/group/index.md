@@ -44,11 +44,6 @@ Use this markup to create a **button group as line**.
   </div>
 </script>
 
-<demo>
-  <demovanilla src="vanilla/components/group/button-line">
-  </demovanilla>
-</demo>
-
 Use this markup to create a button group as stack.
 
 <script type="text/plain" class="language-markup">
@@ -67,6 +62,8 @@ Use this markup to create a button group as stack.
 </script>
 
 <demo>
+  <demovanilla src="vanilla/components/group/button-line">
+  </demovanilla>
   <demovanilla src="vanilla/components/group/button-stack">
   </demovanilla>
 </demo>
@@ -76,44 +73,53 @@ Use this markup to create a button group as stack.
 Use this markup to create a input group as line.
 
 <script type="text/plain" class="language-markup">
-  <div class="group">
+<form class="form-default">
+  <div class="form-group">
+    <div class="group">
 
-    <div class="group-inner">
-      <button type="button" class="btn btn-default">
-        <!-- content -->
-      </button>
+      <div class="group-inner">
+        <button type="button" class="btn btn-default">
+          <!-- content -->
+        </button>
+      </div>
+
+      <div class="group-inner">
+        <input type="text" class="form-item">
+      </div>
+
     </div>
-
-    <input type="text" class="form-item">
-
   </div>
+</div>
+</script>
+
+Use this markup to create a input group as stack.
+
+<script type="text/plain" class="language-markup">
+<form class="form-default">
+  <div class="form-group">
+    <div class="group">
+
+      <div class="group-inner">
+        <button type="button" class="btn btn-default">
+          <!-- content -->
+        </button>
+        <button type="button" class="btn btn-default">
+          <!-- content -->
+        </button>
+      </div>
+
+      <div class="group-inner">
+        <input type="text" class="form-item">
+      </div>
+
+    </div>
+  </div>
+</div>
 </script>
 
 <demo>
   <demovanilla src="vanilla/components/group/input-line">
   </demovanilla>
-</demo>
-
-Use this markup to create a input group as stack.
-
-<script type="text/plain" class="language-markup">
-  <div class="group">
-
-    <div class="group-inner">
-      <button type="button" class="btn btn-default">
-        <!-- content -->
-      </button>
-      <button type="button" class="btn btn-default">
-        <!-- content -->
-      </button>
-    </div>
-
-    <input type="text" class="form-item">
-
-  </div>
-</script>
-
-<demo>
   <demovanilla src="vanilla/components/group/input-stack">
   </demovanilla>
 </demo>

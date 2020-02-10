@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import RehypeReact from 'rehype-react'
+import { markdownSlug } from 'components/snippets/markdown-slug.js'
 
 import SEO from 'components/seo'
 import Layout from 'components/layout'
@@ -63,7 +64,21 @@ class Template extends React.Component {
                               </Demo>
                             ) : null}
                           </div>
-                        ) : null
+                        ) : (
+                          <div className="gatsby_listing_column" key={i}>
+                            <Link to={markdownSlug(adiacent)} className="card card-primary card-small card-full card-collapse gatsby_listing_item">
+                              <div className="card-design"></div>
+                              <div className="card-inner">
+                                <div className="card-content">
+                                  <div className="card-block card-item">
+                                    <div className="card-title">{adiacent.frontmatter.title.split('-').join(' ')}</div>
+                                    <p>{adiacent.frontmatter.description}</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </Link>
+                          </div>
+                        )
                       ) : null
                     )}
                   </div>

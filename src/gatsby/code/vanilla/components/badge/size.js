@@ -19,7 +19,7 @@ demo.htmlSource = `
     Lorem ipsum
   </div>
 
-  <div class="badge badge-default badge-big">
+  <div class="badge badge-default badge-large">
     Lorem ipsum
   </div>
 

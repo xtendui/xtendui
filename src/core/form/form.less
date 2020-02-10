@@ -15,7 +15,7 @@
 
 fieldset, .fieldset {
   & + & {
-    .margin(top, small);
+    .margin(top, medium);
   }
 }
 
@@ -33,20 +33,26 @@ legend, .legend {
  * form-group
  */
 
+.form-group {
+  position: relative;
+}
+
 // set variant (for specificity must be before classes used)
 
 .form-default {
+  .margin-remove(bottom, 1.5rem); // same as form-groups margin
   .form-groups({ .form-group-medium(); });
 }
 
 .form-inverse {
+  .margin-remove(bottom, 1.5rem); // same as form-groups margin
   .form-groups({ .form-group-medium(); });
 }
 
 // size
 
 .form-group-small {
-  .margin(bottom, .75em);
+  .margin(bottom, 1.5rem);
   font-size: 1.2rem;
 }
 
@@ -55,7 +61,7 @@ legend, .legend {
 }
 
 .form-group-medium {
-  .margin(bottom, 1em);
+  .margin(bottom, 1.5rem);
   font-size: 1.4rem;
 }
 
@@ -63,13 +69,13 @@ legend, .legend {
   .form-groups({ .form-group-medium(); });
 }
 
-.form-group-big {
-  .margin(bottom, 1em);
+.form-group-large {
+  .margin(bottom, 1.5rem);
   font-size: 1.6rem;
 }
 
-.form-big {
-  .form-groups({ .form-group-big(); });
+.form-large {
+  .form-groups({ .form-group-large(); });
 }
 
 // mode
@@ -155,12 +161,12 @@ legend, .legend {
 
 // set variant (for specificity must be before classes used)
 
-.form-inverse {
-  .form-items({ .form-item-inverse(); });
-}
-
 .form-default {
   .form-items({ .form-item-default(); });
+}
+
+.form-inverse {
+  .form-items({ .form-item-inverse(); });
 }
 
 // variant
@@ -231,9 +237,9 @@ legend, .legend {
 // animation
 
 .form-item {
-  transition: color @time-medium @ease-out, border @time-medium @ease-out, background-color @time-medium @ease-out;
+  transition: color @time-small @ease-out, border @time-small @ease-out, background-color @time-small @ease-out;
   &:focus, &.active {
-    transition: color @time-medium @ease-in, border @time-medium @ease-in, background-color @time-medium @ease-in;
+    transition: color @time-small @ease-in, border @time-small @ease-in, background-color @time-small @ease-in;
   }
 }
 
@@ -368,12 +374,12 @@ input[type="radio"]:not(.unstyled) {
 .checkbox, .radio {
   &:before {
     transform: scale(.9, .9);
-    transition: all @time-medium @ease-out;
+    transition: all @time-small @ease-out;
   }
   &:after {
     opacity: 0 !important;
     transform: scale(.9, .5);
-    transition: all @time-medium @ease-out;
+    transition: all @time-small @ease-out;
   }
   &.focus, &:focus {
     &:before {
@@ -383,12 +389,12 @@ input[type="radio"]:not(.unstyled) {
   &.active {
     &:before {
       transform: scale(1, 1);
-      transition: all @time-medium @ease-in;
+      transition: all @time-small @ease-in;
     }
     &:after {
       opacity: 1 !important;
       transform: scale(1, 1);
-      transition: all @time-medium @ease-in;
+      transition: all @time-small @ease-in;
     }
   }
 }
@@ -402,6 +408,8 @@ input[type="radio"]:not(.unstyled) {
   .note-default();
   .note-small();
   .muted();
+  .margin(y, small);
+  .margin(y, layout);
 }
 
 /**

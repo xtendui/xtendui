@@ -9,19 +9,23 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="group group-default full">
-  <div class="group-inner">
-    <button type="button" class="btn btn-primary">
-      Lorem
-    </button>
-  </div>
-  <div class="group-inner">
-    <button type="button" class="btn btn-default">
-      ipsum
-    </button>
-  </div>
-  <div class="group-inner flex-auto">
-    <input type="text" class="form-item form-item-default" />
+<form class="form-default">
+  <div class="form-group">
+    <div class="group full">
+      <div class="group-inner">
+        <button type="button" class="btn btn-primary">
+          Lorem
+        </button>
+      </div>
+      <div class="group-inner">
+        <button type="button" class="btn btn-default">
+          ipsum
+        </button>
+      </div>
+      <div class="group-inner flex-auto">
+        <input type="text" class="form-item" />
+      </div>
+    </div>
   </div>
 </div>
 `

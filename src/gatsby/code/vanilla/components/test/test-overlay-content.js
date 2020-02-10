@@ -94,11 +94,11 @@ demo.htmlSource = `
                 </div>
 
                 <div class="card-item-nested card-item card-group">
-                  <div class="card-block card-item card-block-big">
+                  <div class="card-block card-item card-block-large">
                     <div class="card-title">Lorem ipsum</div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
                   </div>
-                  <div class="card-block card-item card-block-big">
+                  <div class="card-block card-item card-block-large">
                     <div class="card-title">Lorem ipsum</div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
                   </div>
@@ -134,7 +134,7 @@ demo.htmlSource = `
                 </div>
 
                 <div class="card-block card-item">
-                  <div class="card card-default card-white card-big">
+                  <div class="card card-default card-white card-large">
                     <div class="card-design"></div>
                     <div class="card-inner">
                       <div class="btn btn-close" aria-label="Close"></div>

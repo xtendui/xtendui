@@ -18,5 +18,12 @@ demo.htmlSource = `
     <textarea class="form-item" data-xt-textarea-autosize></textarea>
   </div>
 
+  <div class="form-group">
+    <label class="form-label">
+      Textarea autosize js
+    </label>
+    <textarea class="form-item demo--textarea-autosize"></textarea>
+  </div>
+
 </form>
 `

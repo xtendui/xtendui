@@ -905,10 +905,13 @@ if (typeof window !== 'undefined') {
     if (e && e.type && (e.type === 'resize' || e.type === 'scroll')) {
       const delay = e.detail !== undefined && e.detail.delay !== undefined ? e.detail.delay : instant ? 0 : Xt[e.type + 'Delay']
       if (e.type === 'resize') {
+        const w = window.innerWidth
+        const h = window.innerHeight
         // multiple calls check
         if (
           (e.detail === undefined || e.detail.force === undefined) && // not when setting delay on event
-          window.innerWidth === Xt.dataStorage.get(container, 'xtEventDelay')
+          Xt.dataStorage.get(container, 'xtEventDelayWidth') === w && // when width changes
+          (window.matchMedia('(hover: none)').matches || Xt.dataStorage.get(container, 'xtEventDelayHeight') === h) // when height changes not touch
         ) {
           // only width no height because it changes on scroll on mobile
           return
@@ -919,7 +922,8 @@ if (typeof window !== 'undefined') {
           container,
           'xtEventDelayFrame',
           requestAnimationFrame(() => {
-            Xt.dataStorage.set(container, 'xtEventDelay', window.innerWidth)
+            Xt.dataStorage.set(container, 'xtEventDelayWidth', w)
+            Xt.dataStorage.set(container, 'xtEventDelayHeight', h)
           })
         )
       }
@@ -944,7 +948,8 @@ if (typeof window !== 'undefined') {
     }
   }
 
-  Xt.dataStorage.set(document.documentElement, 'xtEventDelay', window.innerWidth)
+  Xt.dataStorage.set(document.documentElement, 'xtEventDelayWidth', window.innerWidth)
+  Xt.dataStorage.set(document.documentElement, 'xtEventDelayHeight', window.innerHeight)
 
   /**
    * animate css properties
@@ -966,7 +971,7 @@ if (typeof window !== 'undefined') {
     backgroundColor: animCss.backgroundColor.final,
     borderColor: animCss.borderColor.final,
     boxShadow: animCss.boxShadow.final,
-    duration: Xt.vars.timeSmall,
+    duration: Xt.vars.timeTiny,
     ease: 'linear',
   })
   */

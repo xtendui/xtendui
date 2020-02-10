@@ -1,7 +1,7 @@
 import { Xt } from 'xtend-library'
 import 'xtend-library/src/vars.js'
 import 'xtend-library/src/extensions/slider/slider.js'
-import 'xtend-library/src/core/animation/mouse-follow.js'
+import 'xtend-library/src/addons/animation/mouse-follow.js'
 import gsap from 'gsap'
 
 Xt.mount.push({
@@ -9,9 +9,9 @@ Xt.mount.push({
   mount: object => {
     // vars
 
-    const spinnerTime = Xt.vars.timeSmall
+    const spinnerTime = Xt.vars.timeTiny
     const spinnerEase = 'linear'
-    const fillerTime = Xt.vars.timeSmall
+    const fillerTime = Xt.vars.timeTiny
     const fillerEase = 'linear'
 
     // init

@@ -35,8 +35,6 @@ class TextareaAutosize {
     const form = self.object.closest('form')
     if (form) {
       form.addEventListener('reset', self.keychange.bind(self))
-      // set self
-      Xt.set(self.componentName, form, self)
     }
     // initial
     self.keychange.bind(self)()
@@ -79,7 +77,6 @@ class TextareaAutosize {
     self.object.removeEventListener('keyup', self.keychange.bind(self))
     // set self
     Xt.remove(self.componentName, self.object)
-    Xt.remove(self.componentName, form)
   }
 
   //

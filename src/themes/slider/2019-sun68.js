@@ -9,13 +9,13 @@ Xt.mount.push({
   mount: object => {
     // vars
 
-    const contentTimeOn = Xt.vars.timeBig
-    const contentTimeOff = Xt.vars.timeBig
+    const contentTimeOn = Xt.vars.timeLarge
+    const contentTimeOff = Xt.vars.timeLarge
     const contentEaseOn = 'expo.out'
     const contentEaseOff = 'expo.inOut'
 
     const contentZoom = 1.1
-    const contentZoomTime = Xt.vars.timeGiant * 3
+    const contentZoomTime = Xt.vars.timeBig * 3
     const contentZoomEase = 'sine.inOut'
 
     // slider

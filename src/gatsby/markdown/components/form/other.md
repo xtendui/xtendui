@@ -52,3 +52,7 @@ Form note uses the [note component](/components/note).
   <demovanilla src="vanilla/components/form/note">
   </demovanilla>
 </demo>
+
+## Group
+
+Refer to [Group page](/components/group#usage-input).

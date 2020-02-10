@@ -1,0 +1,28 @@
+/**
+ * vars
+ */
+
+@ripple-opacity: .1;
+@ripple-background: @shade-900;
+
+/**
+ * ripple
+ */
+
+.ripple-container {
+  overflow: hidden;
+  pointer-events: none;
+  border-radius: inherit;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: @ripple-opacity;
+  .ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: @ripple-background;
+  }
+}

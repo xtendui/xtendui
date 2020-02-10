@@ -73,7 +73,7 @@ demo.htmlSource = `
                                             <div class="card-block card-item">
                                                 <h3 class="card-title">Slide 1</h3>
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacinia rutrum ornare.</p>
-                                                <a href="#" class="btn btn-primary btn-giant">
+                                                <a href="#" class="btn btn-primary btn-big">
                                                     Discover
                                                 </a>
                                             </div>
@@ -128,7 +128,7 @@ demo.htmlSource = `
                                             <div class="card-block card-item">
                                                 <h3 class="card-title">Slide 2</h3>
                                                 <p>Lorem ipsum dolor sit amet</p>
-                                                <a href="#" class="btn btn-primary btn-giant">
+                                                <a href="#" class="btn btn-primary btn-big">
                                                     Discover
                                                 </a>
                                             </div>
@@ -153,13 +153,13 @@ demo.htmlSource = `
 
                             <div class="slider_imgs--desktop">
                                 <div class="row row-default">
-                                    <div class="col-12 col-8-sm">
+                                    <div class="col-12 col-6-sm">
                                         <div class="slider_img">
                                             <div class="slider_img_background"></div>
                                             ${img({ classes: 'media-cover' })}
                                         </div>
                                     </div>
-                                    <div class="col-12 col-4-sm">
+                                    <div class="col-12 col-6-sm">
                                         <div class="slider_img">
                                             <div class="slider_img_background"></div>
                                             ${img({ classes: 'media-cover' })}
@@ -183,7 +183,7 @@ demo.htmlSource = `
                                             <div class="card-block card-item">
                                                 <h3 class="card-title">Slide 3</h3>
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacinia rutrum ornare.</p>
-                                                <a href="#" class="btn btn-primary btn-giant">
+                                                <a href="#" class="btn btn-primary btn-big">
                                                     Discover
                                                 </a>
                                             </div>

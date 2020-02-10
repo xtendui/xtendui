@@ -42,7 +42,7 @@
 
 .card-overlay {
   // default options
-  .card-big();
+  .card-large();
   .card-white();
   // special
   .card-block-head {
@@ -52,7 +52,7 @@
 
 .card-slide {
   // default options
-  .card-big();
+  .card-large();
   .card-default();
   // special
   .card-block-head {
@@ -220,7 +220,7 @@
   padding: 1.5rem 2rem;
   .card-title {
     .h4();
-    .spacing-small();
+    .spacing-tiny();
   }
 }
 
@@ -245,18 +245,18 @@
   }
 }
 
-.card-block.card-block-big {
+.card-block.card-block-large {
   .font-big();
   padding: 3rem 3.5rem;
   .card-title {
     .h2();
-    .spacing-small();
+    .spacing-medium();
   }
 }
 
-.card-big {
+.card-large {
   .card-block {
-    .card-block.card-block-big();
+    .card-block.card-block-large();
   }
 }
 
@@ -330,22 +330,22 @@
 
 .card {
   a&, button& {
-    transition: all @time-medium @ease-out;
+    transition: all @time-small @ease-out;
     > .card-design {
-      transition: all @time-medium @ease-out;
+      transition: all @time-small @ease-out;
     }
     &:hover, &.hover {
       transform: translateY(-.5rem);
-      transition: all @time-medium @ease-in;
+      transition: all @time-small @ease-in;
       > .card-design {
-        transition: all @time-medium @ease-in;
+        transition: all @time-small @ease-in;
       }
     }
     &:active, &.active {
       transform: none;
-      transition: all @time-medium @ease-in;
+      transition: all @time-small @ease-in;
       > .card-design {
-        transition: all @time-medium @ease-in;
+        transition: all @time-small @ease-in;
       }
     }
   }

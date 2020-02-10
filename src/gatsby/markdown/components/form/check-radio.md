@@ -46,15 +46,6 @@ Use this markup to create a **styled** **checkbox** or **radio**.
 
 Use this markup to create a **fake** **styled** **checkbox** or **radio**.
 
-<div class="table-scroll">
-
-|                         | Class                                     | Mixin                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `.checkbox`                 | `.checkbox()`        | Set up fake styled checkbox            |
-| Option                  | `.radio`                 | `.radio()`        | Set up fake styled radio            |
-
-</div>
-
 <script type="text/plain" class="language-markup">
   <div class="form-group">
     <div class="checkbox">
@@ -69,6 +60,15 @@ Use this markup to create a **fake** **styled** **checkbox** or **radio**.
   </div>
 </script>
 
+<div class="table-scroll">
+
+|                         | Class                                     | Mixin                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.checkbox`                 | `.checkbox()`        | Set up fake styled checkbox            |
+| Option                  | `.radio`                 | `.radio()`        | Set up fake styled radio            |
+
+</div>
+
 <demo>
   <demovanilla src="vanilla/components/form/check-radio-fake-block">
   </demovanilla>
@@ -81,14 +81,6 @@ Use this markup to create a **fake** **styled** **checkbox** or **radio**.
 #### Unstyled
 
 Use this markup to create a **unstyled** **checkbox** or **radio**.
-
-<div class="table-scroll">
-
-|                         | Class                                     | Mixin                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `.unstyled`                 | Not Possible        | Set up unstyled checkbox and radio            |
-
-</div>
 
 <script type="text/plain" class="language-markup">
   <form class="form-default">
@@ -107,6 +99,14 @@ Use this markup to create a **unstyled** **checkbox** or **radio**.
     </div>
   </form>
 </script>
+
+<div class="table-scroll">
+
+|                         | Class                                     | Mixin                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.unstyled`                 | Not Possible        | Set up unstyled checkbox and radio            |
+
+</div>
 
 [[notePrimary]]
 | Checkbox and radio must be inside [form group](/components/form/group) to have default styles.

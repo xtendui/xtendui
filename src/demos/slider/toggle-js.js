@@ -8,13 +8,13 @@ Xt.mount.push({
   mount: object => {
     // vars
 
-    const maskTimeOn = Xt.vars.timeMedium
-    const maskTimeOff = Xt.vars.timeMedium
+    const maskTimeOn = Xt.vars.timeSmall
+    const maskTimeOff = Xt.vars.timeSmall
     const maskEaseOn = 'cheetah'
     const maskEaseOff = 'cheetah'
 
-    const contentTimeOn = Xt.vars.timeMedium
-    const contentTimeOff = Xt.vars.timeMedium
+    const contentTimeOn = Xt.vars.timeSmall
+    const contentTimeOff = Xt.vars.timeSmall
     const contentEaseOn = 'cheetah'
     const contentEaseOff = 'cheetah'
 
@@ -22,8 +22,8 @@ Xt.mount.push({
 
     let self = new Xt.Slider(object, {
       instant: { elements: true, elementsInner: true },
-      durationOn: Xt.vars.timeMedium,
-      durationOff: Xt.vars.timeMedium,
+      durationOn: Xt.vars.timeSmall,
+      durationOff: Xt.vars.timeSmall,
     })
 
     // drag

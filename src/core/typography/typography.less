@@ -59,27 +59,51 @@ body {
   .margin(bottom, none);
 }
 
+.spacing-mini {
+  .margin(top, mini);
+  .margin(bottom, micro);
+  .margin(y, layout);
+}
+
 .spacing-tiny {
+  .margin(top, tiny);
+  .margin(bottom, mini);
+  .margin(y, layout);
+}
+
+.spacing-small {
   .margin(top, small);
   .margin(bottom, tiny);
   .margin(y, layout);
 }
 
-.spacing-small {
+.spacing-medium {
   .margin(top, medium);
   .margin(bottom, small);
   .margin(y, layout);
 }
 
-.spacing-medium {
-  .margin(top, big);
+.spacing-large {
+  .margin(top, large);
   .margin(bottom, medium);
   .margin(y, layout);
 }
 
 .spacing-big {
+  .margin(top, big);
+  .margin(bottom, large);
+  .margin(y, layout);
+}
+
+.spacing-giant {
   .margin(top, giant);
   .margin(bottom, big);
+  .margin(y, layout);
+}
+
+.spacing-huge {
+  .margin(top, huge);
+  .margin(bottom, giant);
   .margin(y, layout);
 }
 
@@ -88,7 +112,7 @@ body {
  */
 
 h1, .h1 {
-  .spacing-medium();
+  .spacing-large();
   .font-sans-semibold();
   font-size: 4rem;
   line-height: 1.2;
@@ -97,7 +121,7 @@ h1, .h1 {
 }
 
 h2, .h2 {
-  .spacing-medium();
+  .spacing-large();
   .font-sans-semibold();
   font-size: 3.5rem;
   line-height: 1.2;
@@ -106,7 +130,7 @@ h2, .h2 {
 }
 
 h3, .h3 {
-  .spacing-medium();
+  .spacing-large();
   .font-sans-semibold();
   font-size: 2.5rem;
   line-height: 1.2;
@@ -190,6 +214,11 @@ small {
   line-height: 1.6;
 }
 
+.font-mini {
+  font-size: 12px;
+  line-height: 1.6;
+}
+
 .font-tiny {
   font-size: 1.3rem;
   line-height: 1.6;
@@ -205,13 +234,23 @@ small {
   line-height: 1.6;
 }
 
-.font-big {
+.font-large {
   font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+.font-big {
+  font-size: 1.7rem;
   line-height: 1.6;
 }
 
 .font-giant {
   font-size: 1.8rem;
+  line-height: 1.4;
+}
+
+.font-huge {
+  font-size: 1.9rem;
   line-height: 1.4;
 }
 

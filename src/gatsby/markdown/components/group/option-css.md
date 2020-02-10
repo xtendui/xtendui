@@ -25,9 +25,6 @@ Classes for assigning variant (e.g.: border / background / color). Add or remove
 <demo>
   <demovanilla src="vanilla/components/group/options-variant-line">
   </demovanilla>
-</demo>
-
-<demo>
   <demovanilla src="vanilla/components/group/options-variant-stack">
   </demovanilla>
 </demo>
@@ -39,9 +36,6 @@ Space group elements with list's options.
 <demo>
   <demovanilla src="vanilla/components/group/options-list-line">
   </demovanilla>
-</demo>
-
-<demo>
   <demovanilla src="vanilla/components/group/options-list-stack">
   </demovanilla>
 </demo>

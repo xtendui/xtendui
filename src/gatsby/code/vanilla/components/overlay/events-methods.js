@@ -41,7 +41,7 @@ demo.htmlSource = `
   </button>
 </div>
 
-<div class="overlay overlay-big" id="overlay-nested">
+<div class="overlay overlay-large" id="overlay-nested">
   <div class="overlay-container">
     <div class="overlay-inner">
 

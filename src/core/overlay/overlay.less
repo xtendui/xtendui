@@ -11,12 +11,12 @@
 
 // size
 
-@generate-overlay-size: tiny, small, medium, big, giant, full; // overlay internal spacing
+@generate-overlay-size: tiny, small, medium, large, big, full; // overlay internal spacing
 @overlay-tiny: @breakpoint-xs - 60;
 @overlay-small: @breakpoint-sm - 60;
 @overlay-medium: @breakpoint-md - 60;
-@overlay-big: @breakpoint-lg - 60;
-@overlay-giant: @breakpoint-xl - 60;
+@overlay-large: @breakpoint-lg - 60;
+@overlay-big: @breakpoint-xl - 60;
 @overlay-full: none;
 
 /**
@@ -33,7 +33,7 @@
     border-color: transparent;
   }
   .btn-close {
-    .btn-giant();
+    .btn-big();
     .btn-icon();
   }
   // default on mobile
@@ -63,7 +63,7 @@
 
 .overlay {
   &.active {
-    animation-duration: @time-medium + @time-small; // needed for animation time and backdrop animation time, put max animation time
+    animation-duration: @time-small + @time-tiny; // needed for animation time and backdrop animation time, put max animation time
     .card-overlay > .card-design,
     .card-overlay > .card-inner > * {
       .anim-zoom.active();
@@ -71,18 +71,18 @@
     }
     .card-overlay > .card-inner > .card-content {
       .anim-y.active();
-      animation-delay: @time-small;
+      animation-delay: @time-tiny;
     }
     > .backdrop {
       .backdrop.active();
     }
   }
   &.out {
-    animation-duration: @time-medium + @time-small; // needed for animation time and backdrop animation time, put max animation time
+    animation-duration: @time-small + @time-tiny; // needed for animation time and backdrop animation time, put max animation time
     .card-overlay > .card-design,
     .card-overlay > .card-inner > * {
       .anim-zoom.out();
-      animation-delay: @time-small;
+      animation-delay: @time-tiny;
     }
     .card-overlay > .card-inner > .card-content {
       .anim-y.out();
@@ -94,7 +94,7 @@
   }
   /*
   &.active {
-    animation-duration: @time-medium + @time-small; // needed for animation time and backdrop animation time, put max animation time
+    animation-duration: @time-small + @time-tiny; // needed for animation time and backdrop animation time, put max animation time
     .card-overlay > .card-design,
     .card-overlay > .card-inner > * {
       .anim-y.active();
@@ -102,18 +102,18 @@
     }
     .card-overlay > .card-inner > .card-content {
       .anim-y.active();
-      animation-delay: @time-small;
+      animation-delay: @time-tiny;
     }
     > .backdrop {
       .backdrop.active();
     }
   }
   &.out {
-    animation-duration: @time-medium + @time-small; // needed for animation time and backdrop animation time, put max animation time
+    animation-duration: @time-small + @time-tiny; // needed for animation time and backdrop animation time, put max animation time
     .card-overlay > .card-design,
     .card-overlay > .card-inner > * {
       .anim-y.out();
-      animation-delay: @time-small;
+      animation-delay: @time-tiny;
     }
     .card-overlay > .card-inner > .card-content {
       .anim-y.out();

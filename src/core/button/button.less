@@ -100,12 +100,12 @@
   font-size: 1.335rem; // @FIX odd rem with .035 added
 }
 
-.btn-big {
+.btn-large {
   padding: .6em 1.2em;
   font-size: 1.4rem;
 }
 
-.btn-giant {
+.btn-big {
   padding: .6em 1.2em;
   font-size: 1.535rem; // @FIX odd rem with .035 added
 }
@@ -185,12 +185,12 @@
 // animation
 
 .btn {
-  transition: all @time-medium @ease-out, transform @time-small @ease-out;
+  transition: all @time-small @ease-out, transform @time-tiny @ease-out;
   &:hover, &.hover {
-    transition: all @time-medium @ease-in, transform @time-small @ease-in;
+    transition: all @time-small @ease-in, transform @time-tiny @ease-in;
   }
   &:active, &.active {
-    transition: all @time-medium @ease-in, transform @time-small @ease-in;
+    transition: all @time-small @ease-in, transform @time-tiny @ease-in;
   }
 }
 
@@ -198,7 +198,7 @@
 
 .btn-close {
   cursor: pointer;
-  position: absolute;
+  position: absolute !important;
   top: 0;
   right: 0;
   .btn-text();

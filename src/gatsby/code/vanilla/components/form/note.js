@@ -30,9 +30,9 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="form-group form-group-big xt-custom">
+  <div class="form-group form-group-large xt-custom">
     <label class="form-label">
-      Big
+      Large
     </label>
     <input type="text" class="form-item">
     <div class="form-note">

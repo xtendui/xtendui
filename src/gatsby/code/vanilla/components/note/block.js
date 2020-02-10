@@ -37,7 +37,7 @@ demo.htmlSource = `
   </div>
 </div>
 
-<div class="note note-default note-big">
+<div class="note note-default note-large">
   <div class="note-list">
     <div>
       <div class="note-icon">
@@ -45,7 +45,7 @@ demo.htmlSource = `
       </div>
     </div>
     <div>
-      <div class="note-title">Big</div>
+      <div class="note-title">Large</div>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
     </div>
   </div>

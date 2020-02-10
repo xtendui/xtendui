@@ -53,8 +53,8 @@ Classes for assigning size (e.g.: padding or font size). Add or remove selectors
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.card-{size}`                           | `.card-small` `.card-medium` `.card-big`|
-| Mixin                   | `.card-{size}()`                         | `.card-small()` `.card-medium()` `.card-big()`         |
+| Class                   | `.card-{size}`                           | `.card-small` `.card-medium` `.card-large`|
+| Mixin                   | `.card-{size}()`                         | `.card-small()` `.card-medium()` `.card-large()`         |
 
 </div>
 

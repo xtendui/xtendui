@@ -10,7 +10,7 @@ export const demo = {
 
 demo.htmlSource = `
 <form class="form-default form-small">
-  <div class="form-group form-group-big xt-custom">
+  <div class="form-group form-group-large xt-custom">
     <label class="form-label">
       Custom
     </label>

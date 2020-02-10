@@ -13,25 +13,27 @@ demo.htmlSource = `
     <div class="container">
 
       <div class="breadcrumbs-inner">
-        <ul class="list">
+        <ol class="breadcrumbs-list">
           <li>
-            <a href="/" class="btn">
+            <a href="#" class="btn">
               Home
             </a>
           </li>
           <li>
-            <span class="separator separator-slash"></span>
+            <span class="separator"></span>
           </li>
           <li>
-            <a href="/" class="btn">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacinia rutrum ornare
+            <a href="#" class="btn">
+              Lorem ipsum dolor sit amet
             </a>
           </li>
-          <span class="separator separator-slash"></span>
           <li>
-            <a role="button" class="btn" disabled>
-              Destination
-            </a>
+            <span class="separator"></span>
+          </li>
+          <li>
+            <div class="btn">
+              Lorem ipsum
+            </div>
           </li>
         </ul>
       </div>

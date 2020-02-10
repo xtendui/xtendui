@@ -1,10 +1,10 @@
-@import '~xtend-library/src/core/breadcrumbs/_breadcrumbs.less';
+@import '~xtend-library/src/extensions/separator/separator.less';
 
 /**
  * breadcrumbs
  */
 
-.breadcrumbs-background {
+.breadcrumbs {
   .padding(y, big);
 }
 
@@ -13,34 +13,29 @@
 }
 
 .breadcrumbs-inner {
-  > .list {
-    .list-space(tiny);
-    flex-wrap: nowrap;
-    align-items: center;
-  }
   .btn {
     .btn-text();
     .padding(x, none);
-    // ellipsis
-    display: inline-block;
-    max-width: 20rem;
-    overflow-x: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    // hide last on mobile
-    &:last-child {
-      @media @max-sm {
-        display: none;
-      }
-    }
+  }
+  div.btn {
+    .pointer-events-none();
   }
   .separator {
-    // hide last on mobile
-    &:nth-last-child(2) {
-      @media @max-sm {
-        display: none;
-      }
-    }
+    .separator-slash();
+  }
+}
+
+.breadcrumbs-list {
+  .list-reset();
+  // ellipsis
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  > li {
+    display: inline;
+  }
+  .btn {
+    display: inline;
   }
 }
 

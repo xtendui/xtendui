@@ -85,7 +85,7 @@ demo.htmlSource = `
       <div class="overlay-container">
         <div class="overlay-inner">
 
-          <div class="card card-overlay card-big">
+          <div class="card card-overlay card-large">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="btn btn-close" aria-label="Close"></div>

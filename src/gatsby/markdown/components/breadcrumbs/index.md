@@ -65,19 +65,18 @@ Use this markup to add **json-ld** metadata to **breadcrumb**.
               "@type": "ListItem",
               "position": 1,
               "name": "Home",
-              "item": "/"
+              "item": "#"
           },
           {
               "@type": "ListItem",
               "position": 2,
-              "name": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacinia rutrum ornare",
-              "item": "/"
+              "name": "Lorem ipsum dolor sit amet",
+              "item": "#"
           },
           {
               "@type": "ListItem",
               "position": 3,
-              "name": "Destination",
-              "item": "/"
+              "name": "Lorem ipsum"
           }
       ]
   }

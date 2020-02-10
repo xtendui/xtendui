@@ -76,7 +76,7 @@
     > .row > * {
       opacity: 0;
       transform: translateY(1.5rem);
-      transition: opacity @time-medium @ease-in, transform @time-medium @ease-in;
+      transition: opacity @time-small @ease-in, transform @time-small @ease-in;
       transition-delay: 150ms; // @start + @child * @increment
       .nth-child(@child: 3, @start: 0ms, @increment: 50ms, @decrement: 0ms, {
         @transition-delay();
@@ -89,7 +89,7 @@
       > .row > * {
         opacity: 1;
         transform: translateY(0);
-        transition: opacity @time-medium @ease-in, transform @time-medium @ease-in;
+        transition: opacity @time-small @ease-in, transform @time-small @ease-in;
       }
     }
   }
@@ -160,7 +160,7 @@
 
 .gatsby_listing {
   > .row {
-    .row-space(huge);
+    .row-space(large);
   }
 }
 
@@ -171,18 +171,19 @@
 .gatsby_listing_title {
   .h6();
   .header-block();
-  .spacing-big();
+  .spacing-large();
 }
 
 .gatsby_listing_items {
   > .row {
-    .row-space-y(big);
-    .row-space-x(giant);
+    .row-space(large);
+    align-items: stretch;
   }
 }
 
 .gatsby_listing_column {
   .col(12);
-  .col(4, sm);
+  .col(6, sm);
+  .col(4, lg);
 }
 

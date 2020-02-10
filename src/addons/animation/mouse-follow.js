@@ -31,8 +31,6 @@ class MouseFollow {
     self.container.addEventListener('mousemove', self.mousemove.bind(self))
     self.container.addEventListener('mouseenter', self.mouseenter.bind(self))
     self.container.addEventListener('mouseleave', self.mouseleave.bind(self))
-    // set self
-    Xt.set(self.componentName, self.container, self)
   }
 
   //
@@ -112,7 +110,6 @@ class MouseFollow {
     self.container.removeEventListener('mouseleave', self.mouseleave.bind(self))
     // set self
     Xt.remove(self.componentName, self.object)
-    Xt.remove(self.componentName, self.container)
   }
 
   //

@@ -11,32 +11,32 @@ Xt.mount.push({
   mount: object => {
     // vars
 
-    const assetMaskTimeOn = Xt.vars.timeBig
-    const assetMaskTimeOff = Xt.vars.timeMedium
+    const assetMaskTimeOn = Xt.vars.timeLarge
+    const assetMaskTimeOff = Xt.vars.timeSmall
     const assetMaskEaseOn = 'expo.out'
     const assetMaskEaseOff = 'expo.inOut'
 
     const assetZoom = 0.1
-    const assetTimeOn = Xt.vars.timeBig
-    const assetTimeOff = Xt.vars.timeSmall
+    const assetTimeOn = Xt.vars.timeLarge
+    const assetTimeOff = Xt.vars.timeTiny
     const assetEaseOn = 'quart.out'
     const assetEaseOff = 'quart.inOut'
 
     const cardContentX = 25
-    const cardContentTimeOn = Xt.vars.timeBig
-    const cardContentTimeOff = Xt.vars.timeSmall
+    const cardContentTimeOn = Xt.vars.timeLarge
+    const cardContentTimeOff = Xt.vars.timeTiny
     const cardContentEaseOn = 'expo.out'
     const cardContentEaseOff = 'expo.inOut'
 
-    const cardTimeOn = Xt.vars.timeBig
+    const cardTimeOn = Xt.vars.timeLarge
     const cardEaseOn = 'expo.out'
 
     // slider
 
     let self = new Xt.Slider(object, {
       instant: { elements: true, elementsInner: true },
-      durationOn: Xt.vars.timeBig,
-      durationOff: Xt.vars.timeMedium,
+      durationOn: Xt.vars.timeLarge,
+      durationOff: Xt.vars.timeSmall,
       auto: {
         time: 4500,
         pause: '[data-xt-pag], [data-xt-nav], .slider_card .btn',

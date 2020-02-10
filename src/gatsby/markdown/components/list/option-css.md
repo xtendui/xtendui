@@ -57,17 +57,19 @@ Lists **automatically** add horizontal and vertical spacing to the contents. You
 <demo>
   <demovanilla src="vanilla/components/list/space-none">
   </demovanilla>
+  <demovanilla src="vanilla/components/list/space-mini">
+  </demovanilla>
   <demovanilla src="vanilla/components/list/space-tiny">
   </demovanilla>
   <demovanilla src="vanilla/components/list/space-small">
   </demovanilla>
   <demovanilla src="vanilla/components/list/space-medium">
   </demovanilla>
+  <demovanilla src="vanilla/components/list/space-large">
+  </demovanilla>
   <demovanilla src="vanilla/components/list/space-big">
   </demovanilla>
   <demovanilla src="vanilla/components/list/space-giant">
-  </demovanilla>
-  <demovanilla src="vanilla/components/list/space-huge">
   </demovanilla>
 </demo>
 
