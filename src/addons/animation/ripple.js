@@ -34,10 +34,6 @@ class Ripple {
     // on
     self.object.addEventListener('mousedown', self.eventStart.bind(self))
     self.object.addEventListener('touchstart', self.eventStart.bind(self))
-    // off
-    self.object.addEventListener('mouseup', self.eventEnd.bind(self))
-    self.object.addEventListener('touchend', self.eventEnd.bind(self))
-    addEventListener('mouseup', self.eventEnd.bind(self))
   }
 
   //
@@ -93,6 +89,10 @@ class Ripple {
       self.sizeFinal = sizeFinal
       self.scaleFinal = scaleFinal
       self.object.dispatchEvent(new CustomEvent('ripple.on.xt'))
+      // off
+      self.offListener = self.eventEnd.bind(self)
+      addEventListener('mouseup', self.offListener)
+      addEventListener('touchend', self.offListener)
     }
   }
 
@@ -102,11 +102,11 @@ class Ripple {
   eventEnd(e) {
     const self = this
     const options = self.options
-    // check if inside onlyInside
-    if (!options.onlyInside || e.target.closest(options.onlyInside)) {
-      // listener dispatch
-      self.object.dispatchEvent(new CustomEvent('ripple.off.xt'))
-    }
+    // off
+    removeEventListener('mouseup', self.offListener)
+    removeEventListener('touchend', self.offListener)
+    // listener dispatch
+    self.object.dispatchEvent(new CustomEvent('ripple.off.xt'))
   }
 
   //
@@ -125,9 +125,8 @@ class Ripple {
     self.object.removeEventListener('mousedown', self.eventStart.bind(self))
     self.object.removeEventListener('touchstart', self.eventStart.bind(self))
     // off
-    self.object.removeEventListener('mouseup', self.eventEnd.bind(self))
-    self.object.removeEventListener('touchend', self.eventEnd.bind(self))
-    removeEventListener('mouseup', self.eventEnd.bind(self))
+    removeEventListener('mouseup', self.offListener)
+    removeEventListener('touchend', self.offListener)
     // set self
     Xt.remove(self.componentName, self.object)
   }
