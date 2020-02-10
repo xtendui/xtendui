@@ -16,9 +16,9 @@ Xt.mount.push({
       const ripple = self.rippleContainer.querySelector('.ripple:last-child')
       // animate
       if (ripple) {
-        gsap.set(ripple, {height: self.size, width: self.size, top: self.top, left: self.left, scale: 1, opacity: 0})
-        gsap.to(ripple, {opacity: 1, duration: Xt.vars.timeTiny, ease: 'penguin'})
-        gsap.to(ripple, {scale: self.scaleFinal, duration: Xt.vars.timeSmall, ease: 'penguin'})
+        gsap.set(ripple, { height: self.size, width: self.size, top: self.top, left: self.left, scale: 1, opacity: 0 })
+        gsap.to(ripple, { opacity: 1, duration: Xt.vars.timeTiny, ease: 'penguin' })
+        gsap.to(ripple, { scale: self.scaleFinal, duration: Xt.vars.timeSmall, ease: 'penguin' })
       }
     }
 
