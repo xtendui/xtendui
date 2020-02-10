@@ -1,3 +1,14 @@
+## [0.13.4](https://github.com/minimit/xtend-library/compare/v0.13.3...v0.13.4) (2020-02-10)
+
+
+### Bug Fixes
+
+* **css:** revision breadcrumbs ([f773849](https://github.com/minimit/xtend-library/commit/f773849e0fb30c2a4a83a2996b9bc3752345784f))
+* **css:** revision breadcrumbs ([4e46e90](https://github.com/minimit/xtend-library/commit/4e46e90e30a85960ba83ee446bba616217da2518))
+* **css:** revision breadcrumbs ([b312b21](https://github.com/minimit/xtend-library/commit/b312b219b0715f75f031d728e9f8c9c6e383c436))
+* **docs:** listing revision ([5e574f0](https://github.com/minimit/xtend-library/commit/5e574f04dc717be5f3e6c49feee6b3d3607fbe8a))
+* **js:** removed ie11 support ([fd756cc](https://github.com/minimit/xtend-library/commit/fd756ccef74a4e77d9fb7c51066f8e5599017796))
+
 ## [0.13.3](https://github.com/minimit/xtend-library/compare/v0.13.2...v0.13.3) (2020-02-05)
 
 
