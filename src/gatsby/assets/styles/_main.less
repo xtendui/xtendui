@@ -71,8 +71,7 @@
   }
   // animations
   overflow: hidden;
-  .gatsby_site_article_hero_links {
-    .anim-opacity.out();
+  .gatsby_site_article_hero_links_inner {
     > .row > * {
       opacity: 0;
       transform: translateY(1.5rem);
@@ -84,8 +83,7 @@
     }
   }
   &:hover, &:focus-within {
-    .gatsby_site_article_hero_links {
-      .anim-opacity.active();
+    .gatsby_site_article_hero_links_inner {
       > .row > * {
         opacity: 1;
         transform: translateY(0);
