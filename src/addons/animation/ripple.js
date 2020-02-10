@@ -30,7 +30,6 @@ class Ripple {
     self.options = Xt.merge([self.constructor.optionsDefault, self.optionsCustom])
     // generate
     if (!self.rippleContainer) {
-      self.object.classList.add('ripple-element')
       self.object.append(Xt.createElement('<div class="ripple-container"></div>'))
       self.rippleContainer = self.object.querySelector(':scope > .ripple-container')
     }
@@ -124,7 +123,6 @@ class Ripple {
   destroy() {
     const self = this
     // generate
-    self.object.classList.remove('ripple-element')
     self.object.querySelector(':scope > .ripple-container').remove()
     // remove events
     // on
@@ -148,7 +146,7 @@ class Ripple {
 Ripple.componentName = 'xt-ripple'
 Ripple.optionsDefault = {
   sizeFactor: 0.1,
-  onlyInside: 'a, button',
+  onlyInside: 'a, button, .btn',
 }
 Xt.optionsGlobal[Ripple.componentName] = {}
 
