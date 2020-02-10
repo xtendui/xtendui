@@ -9,8 +9,6 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<h3 class="align-center">data attribute initialization</h3>
-
 <form class="form-default">
 
   <div class="form-group">
@@ -20,15 +18,9 @@ demo.htmlSource = `
     <textarea class="form-item" data-xt-textarea-autosize></textarea>
   </div>
 
-</form>
-
-<h3 class="align-center">js class initialization</h3>
-
-<form class="form-default">
-
   <div class="form-group">
     <label class="form-label">
-      Textarea autosize
+      Textarea autosize js
     </label>
     <textarea class="form-item demo--textarea-autosize"></textarea>
   </div>

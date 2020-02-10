@@ -1,7 +1,5 @@
 import { Xt } from 'xtend-library'
 import RJSON from 'relaxed-json'
-import 'xtend-library/src/vars.js'
-import gsap from 'gsap'
 
 class Ripple {
   /**
@@ -55,7 +53,6 @@ class Ripple {
     // check if inside onlyInside
     if (!options.onlyInside || e.target.closest(options.onlyInside)) {
       self.rippleContainer.append(Xt.createElement('<div class="ripple"></div>'))
-      const ripple = self.rippleContainer.querySelector('.ripple:last-child')
       // @FIX prevent dragging links and images
       if (e.type === 'mousedown') {
         e.preventDefault()
@@ -89,10 +86,13 @@ class Ripple {
       }
       const top = y - size / 2
       const left = x - size / 2
-      // animate
-      gsap.set(ripple, { height: size, width: size, top: top, left: left, scale: 1, opacity: 0 })
-      gsap.to(ripple, { opacity: 1, duration: Xt.vars.timeTiny, ease: 'penguin' })
-      gsap.to(ripple, { scale: scaleFinal, duration: Xt.vars.timeSmall, ease: 'penguin' })
+      // listener dispatch
+      self.size = size
+      self.top = top
+      self.left = left
+      self.sizeFinal = sizeFinal
+      self.scaleFinal = scaleFinal
+      self.object.dispatchEvent(new CustomEvent('ripple.on.xt'))
     }
   }
 
@@ -104,12 +104,8 @@ class Ripple {
     const options = self.options
     // check if inside onlyInside
     if (!options.onlyInside || e.target.closest(options.onlyInside)) {
-      const ripple = self.rippleContainer.querySelector('.ripple:last-child')
-      if (ripple) {
-        gsap.to(ripple, { opacity: 0, duration: Xt.vars.timeSmall, ease: 'penguin', delay: Xt.vars.timeMini }).eventCallback('onComplete', () => {
-          //ripple.remove()
-        })
-      }
+      // listener dispatch
+      self.object.dispatchEvent(new CustomEvent('ripple.off.xt'))
     }
   }
 

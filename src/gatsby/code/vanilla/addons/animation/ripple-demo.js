@@ -9,53 +9,6 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<h3 class="align-center">data attribute initialization</h3>
-
-<div class="list list-default list-space-small align-items-center justify-content-center">
-
-  <button type="button" class="btn btn-default" data-xt-ripple>
-    default
-  </button>
-
-  <div class="row row-default">
-
-    <div class="col-12 col-6-sm">
-      <button type="button" class="card card-default" data-xt-ripple>
-        <div class="card-design"></div>
-        <div class="card-inner">
-          <div class="card-content">
-            <div class="card-block card-item">
-              <div class="card-title">Lorem ipsum dolor sit amet</div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
-            </div>
-          </div>
-        </div>
-      </button>
-    </div>
-
-    <div class="col-12 col-6-sm">
-      <div class="card card-default" data-xt-ripple>
-        <div class="card-design"></div>
-        <div class="card-inner">
-          <div class="card-content">
-            <div class="card-block card-item">
-              <div class="card-title">Lorem ipsum dolor sit amet</div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
-              <button type="button" class="btn btn-default" data-xt-ripple>
-                default
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-</div>
-
-<h3 class="align-center">js class initialization</h3>
-
 <div class="list list-default list-space-small align-items-center justify-content-center demo--ripple-default">
 
   <button type="button" class="btn btn-default">
