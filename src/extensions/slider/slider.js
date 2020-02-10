@@ -1153,7 +1153,6 @@ Slider.optionsDefault = {
     timeLimit: 25,
   },
 }
-Xt.optionsGlobal[Slider.componentName] = {}
 
 //
 // export

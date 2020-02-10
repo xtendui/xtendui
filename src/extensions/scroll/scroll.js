@@ -312,7 +312,6 @@ Scroll.optionsDefault = {
   end: false,
   fallback: 100,
 }
-Xt.optionsGlobal[Scroll.componentName] = {}
 
 //
 // export

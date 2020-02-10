@@ -60,7 +60,6 @@ Drop.optionsDefault = {
   closeInside: '.drop-dismiss, .btn-close, .backdrop',
   ariaControls: ':scope > a, :scope > button',
 }
-Xt.optionsGlobal[Drop.componentName] = {}
 
 //
 // export

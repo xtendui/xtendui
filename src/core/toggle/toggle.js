@@ -2916,7 +2916,6 @@ Toggle.optionsDefaultSuper = {
     labelledby: true,
   },
 }
-Xt.optionsGlobal[Toggle.componentName] = {}
 
 //
 // export

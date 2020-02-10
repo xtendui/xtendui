@@ -143,7 +143,6 @@ Ripple.optionsDefault = {
   sizeFactor: 0.1,
   onlyInside: 'a, button, .btn',
 }
-Xt.optionsGlobal[Ripple.componentName] = {}
 
 //
 // export
