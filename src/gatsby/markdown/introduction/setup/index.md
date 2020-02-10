@@ -56,12 +56,11 @@ Then you can import the **components you need** as described in the docs:
 @import '~xtend-library/src/extensions/slider/slider.less';
 ```
 
-Or just import **all core/extensions/addons** as needed (preferred method):
+Or just import **all core** and **extensions** and **addons** needed (preferred method):
 
 ```less
 @import '~xtend-library/src/xtend-core.less';
-@import '~xtend-library/src/xtend-extensions.less';
-@import '~xtend-library/src/xtend-addons.less';
+@import '~xtend-library/src/extensions/slider/slider.less';
 ```
 
 To modify a **less** or **js** file add [webpack resolve](/introduction/setup#usage-webpack) and fork the file copying it in your project.
@@ -86,14 +85,17 @@ import 'xtend-library/src/polyfill.js'
 import { Xt } from 'xtend-library'
 ```
 
-Then you can import the components you need as described in the docs.
+Then you can import the **components you need** as described in the docs:
 
-Or just import all core/extensions/addons as needed:
+```jsx
+import 'xtend-library/src/extensions/slider/slider.js'
+```
+
+Or just import **all core** and **extensions** and **addons** needed (preferred method):
 
 ```jsx
 import 'xtend-library/src/xtend-core.js'
-import 'xtend-library/src/xtend-extensions.js'
-import 'xtend-library/src/xtend-addons.js'
+import 'xtend-library/src/extensions/slider/slider.js'
 ```
 
 To modify a **less** or **js** file add [webpack resolve](/introduction/setup#usage-webpack) and fork the file copying it in your project.
