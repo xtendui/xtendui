@@ -1,3 +1,12 @@
+## [0.13.5](https://github.com/minimit/xtend-library/compare/v0.13.4...v0.13.5) (2020-02-11)
+
+
+### Bug Fixes
+
+* **css:** fix select multiple with padding for mobile ([960f082](https://github.com/minimit/xtend-library/commit/960f0820380fa3887cd2fb8147596f5bfd2e6ece))
+* **css:** fix select multiple with padding for mobile ([d123e87](https://github.com/minimit/xtend-library/commit/d123e870df26e387746ffae421b804e6e82cbb14))
+* **js:** removed optionsGlobal ([a4f1c1e](https://github.com/minimit/xtend-library/commit/a4f1c1eb0d4ed99cd55991ca50db6a3eb12ce374))
+
 ## [0.13.4](https://github.com/minimit/xtend-library/compare/v0.13.3...v0.13.4) (2020-02-10)
 
 
