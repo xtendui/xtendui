@@ -104,7 +104,7 @@ class Ripple {
     const options = self.options
     // off
     removeEventListener('mouseup', self.offListener)
-    removeEventListener('touchend', self.offListener, { passive: true })
+    removeEventListener('touchend', self.offListener)
     // listener dispatch
     self.object.dispatchEvent(new CustomEvent('ripple.off.xt'))
   }
@@ -126,7 +126,7 @@ class Ripple {
     self.object.removeEventListener('touchstart', self.eventStart.bind(self), { passive: true })
     // off
     removeEventListener('mouseup', self.offListener)
-    removeEventListener('touchend', self.offListener, { passive: true })
+    removeEventListener('touchend', self.offListener)
     // set self
     Xt.remove(self.componentName, self.object)
   }

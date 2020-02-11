@@ -2823,7 +2823,6 @@ class Toggle {
                     //console.debug(event, element.innerHTML)
                     element.removeEventListener(event, handler)
                     element.removeEventListener(event, handler, true)
-                    element.removeEventListener(event, handler, { passive: true })
                     Xt.dataStorage.remove(element, key)
                   }
                 }

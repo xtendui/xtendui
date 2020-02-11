@@ -549,7 +549,7 @@ class Slider extends Xt.Toggle {
     const dragHandler = Xt.dataStorage.get(dragger, 'mousemove touchmove' + '/' + self.namespace)
     const eventsmove = ['mousemove', 'touchmove']
     for (const event of eventsmove) {
-      dragger.removeEventListener(event, dragHandler, { passive: true })
+      dragger.removeEventListener(event, dragHandler)
     }
     // logic
     self.logicDragend(dragger, e)
