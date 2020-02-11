@@ -419,7 +419,7 @@ class Slider extends Xt.Toggle {
       }
     }
     // resize
-    const reinitHandler = Xt.dataStorage.put(window, 'resize' + '/' + self.namespace, self.eventReinitHandler.bind(self).bind(self))
+    const reinitHandler = Xt.dataStorage.put(window, 'resize.reinit' + '/' + self.namespace, self.eventReinitHandler.bind(self).bind(self))
     addEventListener('resize', reinitHandler)
   }
 

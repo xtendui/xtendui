@@ -2760,8 +2760,7 @@ class Toggle {
         () => {
           // @FIX multiple calls coming from resize
           if (!self.initial) {
-            // destroy
-            self.destroy()
+            // do not destroy or it duplicate events (ex: slider nav)
             // handler
             self.reinit()
           }
