@@ -22,8 +22,7 @@
     "release": "npx semantic-release --no-ci",
     "release:dry": "npx semantic-release --dry-run",
     "lint": "eslint src/** --fix",
-    "prepare": "webpack --progress --colors",
-    "preinstall": "npx npm-force-resolutions"
+    "prepare": "webpack --progress --colors"
   },
   "dependencies": {
     "bezier-easing": "^2.1.0",
