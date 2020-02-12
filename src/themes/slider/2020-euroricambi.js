@@ -217,6 +217,36 @@ Xt.mount.push({
 
     self.object.addEventListener('off.xt', eventOff, true)
 
+    // on elements
+
+    const eventOnElements = e => {
+      const el = e.target
+      // useCapture delegation
+      if (self.elements.includes(el)) {
+        // move scroll centering el
+        const inner = self.object.querySelector('.slider-pagination_inner')
+        const scroll = self.object.querySelector('.slider-pagination_scroll')
+        if (inner.offsetWidth < scroll.offsetWidth) {
+          const widthInner = inner.offsetWidth
+          const widthScroll = scroll.offsetWidth
+          const leftEl = el.offsetLeft
+          const widthEl = el.offsetWidth
+          let final = widthInner / 2 - leftEl
+          // contain initial
+          final = leftEl + widthEl / 2 > widthInner / 2 ? final - widthEl / 2 : 0
+          // contain final
+          final = leftEl + widthEl / 2 < widthScroll - widthInner / 2 ? final : -widthScroll + widthInner
+          // set
+          scroll.style.left = final + 'px'
+        } else {
+          // set
+          scroll.style.left = ''
+        }
+      }
+    }
+
+    self.object.addEventListener('on.xt', eventOnElements, true)
+
     // unmount
 
     const unmount = () => {
