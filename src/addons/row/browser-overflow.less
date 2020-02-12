@@ -1,0 +1,11 @@
+.row-browser-overflow {
+  @media (hover: none) {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    .overflow-style(@mode: inner);
+    > * {
+      .col-custom(33rem) !important;
+    }
+  }
+}

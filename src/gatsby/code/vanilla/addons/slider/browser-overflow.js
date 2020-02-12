@@ -10,7 +10,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="slider slider-browser-overflow"
-     data-xt-slider="{ align: 'left' }">
+     data-xt-slider>
 
   <div class="slides">
     <ul class="slides-inner">
