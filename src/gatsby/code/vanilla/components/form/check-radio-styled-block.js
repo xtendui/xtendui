@@ -11,24 +11,28 @@ export const demo = {
 demo.htmlSource = `
 <form class="form-default">
   <div class="form-group">
-    <input type="checkbox" id="check-block-styled" checked>
-    <label class="form-label" for="check-block-styled">
+    <input type="checkbox" id="checkbox-block" checked>
+    <label class="form-label" for="checkbox-block">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
     </label>
   </div>
 
   <div class="form-group">
-    <input type="radio" id="radio-block-styled-0" name="radio-block-styled" checked>
-    <label class="form-label" for="radio-block-styled-0">
+    <input type="radio" id="radio-block-0" name="radio-block" checked>
+    <label class="form-label" for="radio-block-0">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
     </label>
   </div>
 
   <div class="form-group">
-    <input type="radio" id="radio-block-styled-1" name="radio-block-styled">
-    <label class="form-label" for="radio-block-styled-1">
+    <input type="radio" id="radio-block-1" name="radio-block">
+    <label class="form-label" for="radio-block-1">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
     </label>
   </div>
+
+  <button type="submit" class="btn btn-primary">
+    submit
+  </button>
 </form>
 `

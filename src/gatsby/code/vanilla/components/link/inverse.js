@@ -9,7 +9,8 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-default list-space-small align-items-center text-inverse" style="padding: 1rem 1.5rem; background: #0078ff;">
+<div class="list list-default list-space-small align-items-center text-inverse"
+  style="padding: 1rem 1.5rem; background: #0078ff;">
   <a href="#">
     link
   </a>

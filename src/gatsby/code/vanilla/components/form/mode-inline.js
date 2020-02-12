@@ -33,5 +33,9 @@ demo.htmlSource = `
       <input type="text" class="form-item">
     </div>
   </div>
+
+  <button type="submit" class="btn btn-primary">
+    submit
+  </button>
 </form>
 `

@@ -30,6 +30,10 @@ demo.htmlSource = `
         </button>
       </div>
     </div>
+
+    <button type="submit" class="btn btn-primary">
+      submit
+    </button>
   </div>
 </form>
 `

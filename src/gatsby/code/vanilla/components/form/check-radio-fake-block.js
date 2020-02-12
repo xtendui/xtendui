@@ -28,6 +28,10 @@ demo.htmlSource = `
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
       </button>
     </div>
+
+    <button type="submit" class="btn btn-primary">
+      submit
+    </button>
   </div>
 </form>
 `

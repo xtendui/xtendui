@@ -267,7 +267,7 @@ Use `wheel: { selector: 'object' }` or `wheel: { selector: QuerySelector }` to e
 | Option                  | `loop:Boolean`                          | `true`        | Loop activation            |
 | Option                  | `jump:Boolean`                          | `false`        | Clicking on targets triggers activation            |
 | Option                  | `autoHeight:Query`                          | `.slides`        | Elements to automaticaly height            |
-| Option                  | `keepHeight:Query`                          | `false`        | Elements to set height on initialization and keep that height            |
+| Option                  | `keepHeight:Query`                          | `false`        | Elements to keep height            |
 
 </div>
 

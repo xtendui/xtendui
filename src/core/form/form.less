@@ -40,12 +40,10 @@ legend, .legend {
 // set variant (for specificity must be before classes used)
 
 .form-default {
-  .margin-remove(bottom, 1.5rem); // same as form-groups margin
   .form-groups({ .form-group-medium(); });
 }
 
 .form-inverse {
-  .margin-remove(bottom, 1.5rem); // same as form-groups margin
   .form-groups({ .form-group-medium(); });
 }
 
@@ -58,6 +56,10 @@ legend, .legend {
 
 .form-small {
   .form-groups({ .form-group-small(); });
+  button[type='submit'] {
+    .btn-medium();
+    .btn-wide();
+  }
 }
 
 .form-group-medium {
@@ -67,6 +69,10 @@ legend, .legend {
 
 .form-medium {
   .form-groups({ .form-group-medium(); });
+  button[type='submit'] {
+    .btn-large();
+    .btn-wide();
+  }
 }
 
 .form-group-large {
@@ -76,6 +82,10 @@ legend, .legend {
 
 .form-large {
   .form-groups({ .form-group-large(); });
+  button[type='submit'] {
+    .btn-big();
+    .btn-wide();
+  }
 }
 
 // mode
@@ -234,6 +244,17 @@ legend, .legend {
   }
 }
 
+// validation
+
+.form-item {
+  &.valid {
+    border-color: @success !important;
+  }
+  &.invalid {
+    border-color: @error !important;
+  }
+}
+
 // animation
 
 .form-item {
@@ -365,6 +386,21 @@ input[type="radio"]:not(.unstyled) {
   // disabled
   &:disabled ~ .form-label {
     .checkradio-label.disabled();
+  }
+}
+
+// validation
+
+input[type="checkbox"], input[type="radio"] {
+  &.valid {
+    & ~ .form-label:before {
+      border-color: @success !important;
+    }
+  }
+  &.invalid {
+    & ~ .form-label:before {
+      border-color: @error !important;
+    }
   }
 }
 

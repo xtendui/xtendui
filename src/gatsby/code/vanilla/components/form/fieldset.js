@@ -57,5 +57,15 @@ demo.htmlSource = `
 
   </fieldset>
 
+  </fieldset>
+
+  <fieldset>
+
+    <button type="submit" class="btn btn-primary">
+      submit
+    </button>
+
+  </fieldset>
+
 </form>
 `

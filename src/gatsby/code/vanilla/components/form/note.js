@@ -39,5 +39,9 @@ demo.htmlSource = `
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis.
     </div>
   </div>
+
+  <button type="submit" class="btn btn-primary">
+    submit
+  </button>
 </form>
 `

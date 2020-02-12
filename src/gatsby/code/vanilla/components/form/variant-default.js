@@ -60,5 +60,9 @@ demo.htmlSource = `
       <option>Test</option>
     </select>
   </div>
+
+  <button type="submit" class="btn btn-primary">
+    submit
+  </button>
 </form>
 `

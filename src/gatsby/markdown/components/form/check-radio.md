@@ -119,3 +119,12 @@ Use this markup to create a **unstyled** **checkbox** or **radio**.
   <demovanilla src="vanilla/components/form/check-radio-unstyled-disabled">
   </demovanilla>
 </demo>
+
+## Validation
+
+Validation with html attributes.
+
+<demo>
+  <demovanilla src="vanilla/components/form/check-radio-validation">
+  </demovanilla>
+</demo>

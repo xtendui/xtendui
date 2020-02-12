@@ -41,5 +41,9 @@ demo.htmlSource = `
     </label>
     <input type="text" class="form-item">
   </div>
+
+  <button type="submit" class="btn btn-primary">
+    submit
+  </button>
 </form>
 `
