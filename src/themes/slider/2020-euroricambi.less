@@ -35,16 +35,35 @@
   }
   // pagination wrap
   .slider-pagination_inner {
+    position: relative;
     max-width: 40rem;
     overflow: hidden;
     white-space: nowrap;
     [data-xt-pag] {
       .margin(x, mini);
     }
+    &:before, &:after {
+      content: '';
+      pointer-events: none;
+      position: absolute;
+      z-index: @index-active + 1;
+      top: 0;
+      bottom: 0;
+      width: 30px;
+    }
+    &:before {
+      left: 0;
+      background: linear-gradient(-90deg, fade(@white, 0%) 0%, @white 100%);
+    }
+    &:after {
+      right: 0;
+      background: linear-gradient(90deg, fade(@white, 0%) 0%, @white 100%);
+    }
   }
   .slider-pagination_scroll {
     display: inline-block;
     position: relative;
+    .padding(x, 30px);
     transition: left 750ms @ease-out;
   }
   // navigation
