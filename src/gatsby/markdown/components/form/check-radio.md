@@ -124,6 +124,9 @@ Use this markup to create a **unstyled** **checkbox** or **radio**.
 
 Validation with html attributes.
 
+[[notePrimary]]
+| Form validation must be inside `form` or `.form` to work.
+
 <demo>
   <demovanilla src="vanilla/components/form/check-radio-validation">
   </demovanilla>

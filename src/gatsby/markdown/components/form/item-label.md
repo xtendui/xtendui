@@ -85,6 +85,9 @@ And granularly on **form item**.
 
 Validation with html attributes.
 
+[[notePrimary]]
+| Form validation must be inside `form` or `.form` to work.
+
 <demo>
   <demovanilla src="vanilla/components/form/validation">
   </demovanilla>
