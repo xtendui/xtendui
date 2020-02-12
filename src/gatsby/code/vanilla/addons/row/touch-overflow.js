@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="row row-default row-browser-overflow"
+<div class="row row-default row-touch-overflow"
     style="align-items: stretch;">
 
   <div class="col-12 col-8-sm">

@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="slider slider-browser-overflow"
+<div class="slider slider-touch-overflow"
      data-xt-slider>
 
   <div class="slides">
