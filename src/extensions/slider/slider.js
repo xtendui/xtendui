@@ -35,9 +35,12 @@ class Slider extends Xt.Toggle {
     }
     // targets
     self.initScopeTargets()
-    // autoHeight
+    // autoHeight and keepHeight
     if (options.autoHeight) {
       self.autoHeight = self.object.querySelector(options.autoHeight)
+    }
+    if (options.keepHeight) {
+      self.keepHeight = self.object.querySelector(options.keepHeight)
     }
     // initSliderGroup
     self.initSliderGroup()
@@ -600,22 +603,31 @@ class Slider extends Xt.Toggle {
         target.classList.remove('xt-links-none')
       }
     }
-    // autoHeight
-    if (self.autoHeight) {
-      let slideHeight = slide.children[0].offsetHeight
-      const groupHeight = Xt.dataStorage.get(slide, self.componentNamespace + 'GroupHeight')
-      slideHeight = groupHeight > slideHeight ? groupHeight : slideHeight
-      if (slideHeight > 0) {
-        slideHeight += 'px'
-        if (self.autoHeight.style.height !== slideHeight) {
-          if (!self.initial) {
-            self.autoHeight.classList.add('xt-autoHeight')
+    // autoHeight and keepHeight
+    if (self.autoHeight || (self.keepHeight && self.initial)) {
+      requestAnimationFrame(() => {
+        let slideHeight = slide.children[0].offsetHeight
+        const groupHeight = Xt.dataStorage.get(slide, self.componentNamespace + 'GroupHeight')
+        slideHeight = groupHeight > slideHeight ? groupHeight : slideHeight
+        if (slideHeight > 0) {
+          slideHeight += 'px'
+          if (self.autoHeight) {
+            if (self.autoHeight.style.height !== slideHeight) {
+              if (!self.initial) {
+                self.autoHeight.classList.add('xt-autoHeight')
+              }
+              self.autoHeight.style.height = slideHeight
+              // listener dispatch
+              slide.dispatchEvent(new CustomEvent('autoheight.xt'))
+            }
           }
-          self.autoHeight.style.height = slideHeight
-          // listener dispatch
-          slide.dispatchEvent(new CustomEvent('autoheight.xt'))
+          if (self.keepHeight) {
+            if (self.initial) {
+              self.keepHeight.style.height = slideHeight
+            }
+          }
         }
-      }
+      })
     }
     // val
     self.detail.dragPos = self.detail.dragPosCurrent = self.detail.dragPosReal = Xt.dataStorage.get(slide, self.componentNamespace + 'GroupPos')
@@ -1013,10 +1025,6 @@ class Slider extends Xt.Toggle {
     const dragger = self.dragger
     // disable
     if (dragger) {
-      // autoHeight
-      if (self.autoHeight) {
-        self.autoHeight.style.height = ''
-      }
       // grab
       dragger.classList.remove('xt-grab')
       // links
@@ -1035,6 +1043,12 @@ class Slider extends Xt.Toggle {
       self.autoHeight.classList.remove('xt-autoHeight')
       requestAnimationFrame(() => {
         self.autoHeight.style.height = ''
+      })
+    }
+    if (self.keepHeight) {
+      // keepHeight
+      requestAnimationFrame(() => {
+        self.keepHeight.style.height = ''
       })
     }
   }
@@ -1132,14 +1146,15 @@ Slider.optionsDefault = {
   },
   // slider only
   autoHeight: '.slides',
+  keepHeight: false,
   groupMq: { all: 0.8 },
   align: 'center',
   contain: false,
   pagination: '.slider-pagination',
   drag: {
     drag: true,
-    wrap: false,
     dragger: '.slides-inner',
+    wrap: false,
     threshold: 50,
     linkThreshold: 50,
     factor: 1,
