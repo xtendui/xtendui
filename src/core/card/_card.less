@@ -4,9 +4,7 @@
 
 .card {
   .link-none();
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-block;
   position: relative;
   width: 100%;
   .flex-auto();
@@ -23,9 +21,14 @@
 
 .card-inner {
   .full();
+  // @FIX full height and card-block empty spaces
+  display: flex;
+  flex-direction: column;
   > .card-content {
+    .full();
     display: flex;
     flex-direction: column;
+    justify-content: center;
   }
   // radius
   &, & > * {
@@ -43,23 +46,27 @@
   }
 }
 
+.card-block {
+  .full()
+}
+
 .card-design {
   .design-setup();
   border-radius: inherit;
 }
 
 .card-item {
-  .flex-full();
-  position: relative;
+  .full();
   display: inline-block;
+  position: relative;
 }
 
 .card-asset {
-  .flex-full();
-  position: relative;
+  .full();
   overflow: hidden;
+  position: relative;
   > * {
-    width: 100%;
+    .full();
     height: auto;
   }
 }

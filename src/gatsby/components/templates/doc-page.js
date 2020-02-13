@@ -64,7 +64,7 @@ class Template extends React.Component {
                               </Demo>
                             ) : null}
                           </div>
-                        ) : (
+                        ) : adiacent.frontmatter.type === 'Addons' || adiacent.frontmatter.type === 'Themes' ? (
                           <div className="gatsby_listing_column" key={i}>
                             <Link to={markdownSlug(adiacent)} className="card card-primary card-small card-full card-collapse gatsby_listing_item">
                               <div className="card-design"></div>
@@ -78,7 +78,7 @@ class Template extends React.Component {
                               </div>
                             </Link>
                           </div>
-                        )
+                        ) : null
                       ) : null
                     )}
                   </div>
