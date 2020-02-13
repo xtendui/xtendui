@@ -1,3 +1,10 @@
+## [0.13.7](https://github.com/minimit/xtend-library/compare/v0.13.6...v0.13.7) (2020-02-13)
+
+
+### Bug Fixes
+
+* **cards:** revision css cards centering ([84d6958](https://github.com/minimit/xtend-library/commit/84d69584e45c804beac8831ec5615fd96b4ef5f1))
+
 ## [0.13.6](https://github.com/minimit/xtend-library/compare/v0.13.5...v0.13.6) (2020-02-13)
 
 
