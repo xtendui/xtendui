@@ -1,3 +1,18 @@
+## [0.13.6](https://github.com/minimit/xtend-library/compare/v0.13.5...v0.13.6) (2020-02-13)
+
+
+### Bug Fixes
+
+* **js:** passive event listener remove ([19402a6](https://github.com/minimit/xtend-library/commit/19402a61df4c97fdd5589f0c2648305ac1c2368a))
+* **js:** ripple touch passive listener ([1518143](https://github.com/minimit/xtend-library/commit/151814357c4f44356ebf3e33b4ce2199be08e25a))
+* **slider:** fix slider do not destroy on resize ([9774e17](https://github.com/minimit/xtend-library/commit/9774e174d1890d4e82a4ebe9afc318bd036f0a2a))
+* **slider:** slider keepHeight ([7aa900d](https://github.com/minimit/xtend-library/commit/7aa900d3200952b0c077e81e8ccea0f91c5baeaa))
+
+
+### Reverts
+
+* Revert "fix(js): removed ie11 support" ([49d3139](https://github.com/minimit/xtend-library/commit/49d3139e28727a9b677745c37c93006a2e64bfda))
+
 ## [0.13.5](https://github.com/minimit/xtend-library/compare/v0.13.4...v0.13.5) (2020-02-11)
 
 
