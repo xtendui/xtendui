@@ -89,6 +89,8 @@ Validation with html attributes.
 | Form validation must be inside `form` or `.form` to work.
 
 <demo>
-  <demovanilla src="vanilla/components/form/validation">
+  <demovanilla src="vanilla/components/form/validation-default">
+  </demovanilla>
+  <demovanilla src="vanilla/components/form/validation-inverse">
   </demovanilla>
 </demo>
