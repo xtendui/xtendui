@@ -55,3 +55,24 @@
     .icon-small();
   }
 }
+
+// other
+
+.slider-touch-overflow {
+  @media (hover: none) {
+    .xt-disable();
+    .slides {
+      overflow-x: auto;
+      overflow-y: hidden;
+      .overflow-style(@mode: inner);
+    }
+    .slides-inner {
+      cursor: auto !important; // no grab cursor
+      .transition-none() !important;
+      .transform-none() !important;
+    }
+    .slider-pagination {
+      display: none !important;
+    }
+  }
+}

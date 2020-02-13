@@ -34,3 +34,17 @@
 .row-form {
   .row-space-x(medium);
 }
+
+// other
+
+.row-touch-overflow {
+  @media (hover: none) {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    .overflow-style(@mode: inner);
+    > * {
+      .col-custom(30rem) !important;
+    }
+  }
+}
