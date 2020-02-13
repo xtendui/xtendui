@@ -244,9 +244,9 @@ legend, .legend {
   }
 }
 
-// validation
 
 .form-item {
+  // validation
   &.valid {
     border-color: @success !important;
   }
@@ -280,9 +280,16 @@ legend, .legend {
 
 .form-item {
   select:not([multiple])& {
-    @select-arrow-color: @text-inverse;
-    @select-space-color: fade(@shade-900, 25%);
-    background-image: linear-gradient(45deg, transparent 50%, @select-arrow-color 50%), linear-gradient(135deg, @select-arrow-color 50%, transparent 50%), linear-gradient(to right, @select-space-color, @select-space-color);
+    .form-item-default&, .form-default & {
+      @select-arrow-color: @text;
+      @select-space-color: fade(@shade-900, 10%);
+      background-image: linear-gradient(45deg, transparent 50%, @select-arrow-color 50%), linear-gradient(135deg, @select-arrow-color 50%, transparent 50%), linear-gradient(to right, @select-space-color, @select-space-color);
+    }
+    .form-item-inverse&, .form-inverse & {
+      @select-arrow-color: @text-inverse;
+      @select-space-color: fade(@shade-900, 10%);
+      background-image: linear-gradient(45deg, transparent 50%, @select-arrow-color 50%), linear-gradient(135deg, @select-arrow-color 50%, transparent 50%), linear-gradient(to right, @select-space-color, @select-space-color);
+    }
   }
   select[multiple]& {
     option {
