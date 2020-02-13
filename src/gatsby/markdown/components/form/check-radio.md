@@ -120,6 +120,39 @@ Use this markup to create a **unstyled** **checkbox** or **radio**.
   </demovanilla>
 </demo>
 
+## Variant
+
+Classes for assigning variant (e.g.: border / background / color). Add or remove selectors at your discretion.
+
+You can set the size globally on **form**.
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Example                       |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Class                   | `.form-{variant}`                        | `.form-default` `.form-inverse` |
+| Mixin                   | `.form-{variant}()`                      | `.form-default()` `.form-inverse()` |
+
+</div>
+
+Or granularly on **form label**.
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Example                       |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Class                   | `.form-label-{variant}`                  | `.form-label-default` `.form-label-inverse` |
+| Mixin                   | `.form-label-{variant}()`                | `.form-label-default()` `.form-label-inverse()` |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/form/check-radio-variant-default">
+  </demovanilla>
+  <demovanilla src="vanilla/components/form/check-radio-variant-inverse">
+  </demovanilla>
+</demo>
+
 ## Validation
 
 Validation with html attributes.
@@ -128,6 +161,8 @@ Validation with html attributes.
 | Form validation must be inside `form` or `.form` to work.
 
 <demo>
-  <demovanilla src="vanilla/components/form/check-radio-validation">
+  <demovanilla src="vanilla/components/form/check-radio-validation-default">
+  </demovanilla>
+  <demovanilla src="vanilla/components/form/check-radio-validation-inverse">
   </demovanilla>
 </demo>

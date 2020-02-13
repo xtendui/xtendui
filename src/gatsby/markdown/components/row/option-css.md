@@ -269,4 +269,3 @@ Set item's order inside the flexbox.
   <demovanilla src="vanilla/components/row/order" mode="grid">
   </demovanilla>
 </demo>
-

@@ -12,7 +12,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="row row-default">
   <div class="col-12 col-6-sm">
-    <button type="button" class="card card-default card-collapse">
+    <a role="button" class="card card-default card-collapse">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
@@ -48,11 +48,11 @@ demo.htmlSource = `
           </div>
         </div>
       </div>
-    </button>
+    </a>
   </div>
 
   <div class="col-12 col-6-sm">
-    <button type="button" class="card card-default card-collapse">
+    <a role="button" class="card card-default card-collapse">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-block card-block-head">
@@ -88,7 +88,7 @@ demo.htmlSource = `
           ${img({ classes: 'media-cover', ratio: '37.5%' })}
         </div>
       </div>
-    </button>
+    </a>
   </div>
 </div>
 `

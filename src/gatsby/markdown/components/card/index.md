@@ -47,7 +47,7 @@ Use this markup to create a **card**.
   </div>
 </script>
 
-You can make interactive cards with `button.card` or `a.card`.
+You can make interactive cards with `a.card`.
 
 <demo>
   <demovanilla src="vanilla/components/card/usage">

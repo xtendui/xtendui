@@ -4,8 +4,9 @@
 
 .card {
   .link-none();
-  display: inline-block;
   position: relative;
+  display: flex;
+  align-items: center;
   width: 100%;
   .flex-auto();
   z-index: @index-base; // fix :before negative z-index
@@ -73,7 +74,7 @@
 
 // full height
 
-.card, .card-inner, .card-content {
+.card-inner, .card-content {
   height: 100%;
 }
 

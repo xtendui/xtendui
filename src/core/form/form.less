@@ -210,6 +210,13 @@ legend, .legend {
   &::placeholder {
     color: @shade-500;
   }
+  // validation
+  &.valid {
+    border-color: @success !important;
+  }
+  &.invalid {
+    border-color: @error !important;
+  }
 }
 
 .form-item-inverse {
@@ -242,11 +249,7 @@ legend, .legend {
   &::placeholder {
     color: @text-inverse;
   }
-}
-
-// validation
-
-.form-item {
+  // validation
   &.valid {
     border-color: @success !important;
   }
@@ -280,9 +283,16 @@ legend, .legend {
 
 .form-item {
   select:not([multiple])& {
-    @select-arrow-color: @text-inverse;
-    @select-space-color: fade(@shade-900, 25%);
-    background-image: linear-gradient(45deg, transparent 50%, @select-arrow-color 50%), linear-gradient(135deg, @select-arrow-color 50%, transparent 50%), linear-gradient(to right, @select-space-color, @select-space-color);
+    &.form-item.form-item-default, .form-default & {
+      @select-arrow-color: @text;
+      @select-space-color: fade(@shade-900, 10%);
+      background-image: linear-gradient(45deg, transparent 50%, @select-arrow-color 50%), linear-gradient(135deg, @select-arrow-color 50%, transparent 50%), linear-gradient(to right, @select-space-color, @select-space-color);
+    }
+    &.form-item.form-item-inverse, .form-inverse & {
+      @select-arrow-color: @text-inverse;
+      @select-space-color: fade(@shade-900, 10%);
+      background-image: linear-gradient(45deg, transparent 50%, @select-arrow-color 50%), linear-gradient(135deg, @select-arrow-color 50%, transparent 50%), linear-gradient(to right, @select-space-color, @select-space-color);
+    }
   }
   select[multiple]& {
     option {
@@ -305,16 +315,12 @@ legend, .legend {
   line-height: 1.4;
   letter-spacing: 0;
   text-transform: none;
-  // disabled
-  &.disabled {
-    opacity: 1;
-    &:before {
-      background: darken(@shade-200, 2.5%) !important;
-      border: 1px solid darken(@shade-200, 2.5%) !important;
-    }
-    &:after {
-      color: darken(@shade-200, 25%) !important;
-    }
+  // variant
+  &.form-label.form-label-default, .form-default & {
+    color: @text;
+  }
+  &.form-label.form-label-inverse, .form-inverse & {
+    color: @text-inverse;
   }
 }
 
@@ -326,12 +332,24 @@ legend, .legend {
     width: 1.8rem;
     height: 1.8rem;
   }
-  &:before {
-    background: @shade-200;
-    border: 1px solid @shade-300;
+  // variant
+  &.form-label.form-label-default, .form-default & {
+    &:before {
+      background: @shade-300;
+      border: 1px solid @shade-300;
+    }
+    &:after {
+      color: @accent;
+    }
   }
-  &:after {
-    color: @accent;
+  &.form-label.form-label-inverse, .form-inverse & {
+    &:before {
+      background: fade(@shade-900, 25%);
+      border: 1px solid fade(@shade-900, 50%);
+    }
+    &:after {
+      color: @white;
+    }
   }
 }
 
@@ -370,7 +388,7 @@ input[type="checkbox"]:not(.unstyled) {
   }
   // disabled
   &:disabled ~ .form-label {
-    .checkradio-label.disabled();
+    .disabled();
   }
 }
 
@@ -385,7 +403,7 @@ input[type="radio"]:not(.unstyled) {
   }
   // disabled
   &:disabled ~ .form-label {
-    .checkradio-label.disabled();
+    .disabled();
   }
 }
 

@@ -15,6 +15,15 @@ Slider automatically disable when not overflowing or by adding manually `.slider
   </demovanilla>
 </demo>
 
+## Touch Overflow
+
+Use `.slider-touch-overflow` to have browser overflow on touch devices.
+
+<demo>
+  <demovanilla src="vanilla/components/slider/touch-overflow">
+  </demovanilla>
+</demo>
+
 ## Disable
 
 To disable slider use `.slider.slider-disable` also within media queries.

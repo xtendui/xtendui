@@ -26,6 +26,13 @@ demo.htmlSource = `
 
   <div class="form-group">
     <label class="form-label">
+      Disabled
+    </label>
+    <input type="text" class="form-item" placeholder="Input" disabled>
+  </div>
+
+  <div class="form-group">
+    <label class="form-label">
       File
     </label>
     <input type="file" class="form-item">

@@ -9,12 +9,14 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<form class="form-default">
-  <div class="form-group" style="padding: 1rem 1.5rem; background: #0078ff;">
-    <label class="form-label form-label-inverse xt-custom">
+<form class="form-inverse"
+  style="padding: 1rem 1.5rem; background: #0078ff;">
+  <div class="form-group"
+    style="padding: 1rem 1.5rem; background: #ffffff;">
+    <label class="form-label form-label-default xt-custom">
       Custom
     </label>
-    <input type="text" class="form-item form-item-inverse xt-custom" placeholder="Input" required>
+    <input type="text" class="form-item form-item-default xt-custom" placeholder="Input" required>
   </div>
 
   <fieldset>
@@ -111,9 +113,9 @@ demo.htmlSource = `
   <fieldset>
 
     <div class="form-group">
-      <input type="checkbox" id="check" name="check"
+      <input type="checkbox" id="check-validation-inverse" name="check-validation-inverse"
         required>
-      <label class="form-label" for="check">
+      <label class="form-label" for="check-validation-inverse">
         Acconsento all’utilizzo dei miei dati in linea con la <a href="#" target="_blank">privacy policy</a>
       </label>
     </div>
@@ -123,17 +125,17 @@ demo.htmlSource = `
   <fieldset>
 
     <div class="form-group">
-      <input type="radio" id="radio-0" name="radio"
+      <input type="radio" id="radio-validation-inverse-0" name="radio-validation-inverse"
         required>
-      <label class="form-label" for="radio-0">
+      <label class="form-label" for="radio-validation-inverse-0">
         Radio 0
       </label>
     </div>
 
     <div class="form-group">
-      <input type="radio" id="radio-1" name="radio"
+      <input type="radio" id="radio-validation-inverse-1" name="radio-validation-inverse"
         required>
-      <label class="form-label" for="radio-1">
+      <label class="form-label" for="radio-validation-inverse-1">
         Radio 1
       </label>
     </div>

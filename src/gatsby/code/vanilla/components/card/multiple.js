@@ -11,7 +11,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="row row-default">
   <div class="col-12">
-    <button type="button" class="card card-default">
+    <a role="button" class="card card-default">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
@@ -25,7 +25,7 @@ demo.htmlSource = `
           </div>
         </div>
       </div>
-    </button>
+    </a>
   </div>
 </div>
 `

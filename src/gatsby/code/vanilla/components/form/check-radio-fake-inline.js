@@ -10,7 +10,8 @@ export const demo = {
 
 demo.htmlSource = `
 <form class="form-default">
-  <div data-xt-toggle="{ elements: '.radio', min: 1 }">
+  <div
+    data-xt-toggle="{ elements: '.radio', min: 1 }">
     <div class="form-group-inline">
       <div class="form-group">
         <button type="button" class="checkbox active" data-xt-toggle="{ elements: false }">

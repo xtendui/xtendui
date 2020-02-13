@@ -34,11 +34,7 @@ class Template extends React.Component {
                       adiacent.frontmatter.parent !== adiacent.frontmatter.title ? (
                         adiacent.frontmatter.demos ? (
                           <div className="gatsby_listing_column" key={i}>
-                            <button
-                              type="button"
-                              className="card card-primary card-small card-full card-collapse gatsby_listing_item"
-                              data-gatsby-listing-toggle
-                            >
+                            <a role="button" className="card card-primary card-small card-full card-collapse gatsby_listing_item" data-gatsby-listing-toggle>
                               <div className="card-design"></div>
                               <div className="card-inner">
                                 <div className="card-content">
@@ -48,7 +44,7 @@ class Template extends React.Component {
                                   </div>
                                 </div>
                               </div>
-                            </button>
+                            </a>
                             {adiacent.frontmatter.demos ? (
                               <Demo>
                                 {adiacent.frontmatter.demos.map((demo, i) => {
