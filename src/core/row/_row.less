@@ -11,6 +11,14 @@
   justify-content: flex-start;
 }
 
+.row-stretch {
+  align-items: stretch;
+  > * {
+    display: flex;
+    align-items: stretch;
+  }
+}
+
 /**
  * @generate-row
  */

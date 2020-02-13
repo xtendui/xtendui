@@ -20,7 +20,7 @@ demo.htmlSource = `
       <div class="overlay-container">
         <div class="overlay-inner">
 
-          <button type="button" class="card card-overlay card-primary card-small">
+          <a role="button" class="card card-overlay card-primary card-small">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="btn btn-close" aria-label="Close"></div>
@@ -68,7 +68,7 @@ demo.htmlSource = `
                 ${img({ classes: 'media-cover', ratio: '37.5%' })}
               </div>
             </div>
-          </button>
+          </a>
 
         </div>
       </div>
