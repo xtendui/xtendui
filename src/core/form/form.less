@@ -210,6 +210,13 @@ legend, .legend {
   &::placeholder {
     color: @shade-500;
   }
+  // validation
+  &.valid {
+    border-color: @success !important;
+  }
+  &.invalid {
+    border-color: @error !important;
+  }
 }
 
 .form-item-inverse {
@@ -242,10 +249,6 @@ legend, .legend {
   &::placeholder {
     color: @text-inverse;
   }
-}
-
-
-.form-item {
   // validation
   &.valid {
     border-color: @success !important;
