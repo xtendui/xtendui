@@ -82,7 +82,7 @@
     "remark-grid-tables": "^1.7.1",
     "semantic-release": "^15.13.3",
     "terser-webpack-plugin": "^1.4.1",
-    "webpack": "^5.0.0-beta.12",
+    "webpack": "^4.41.6",
     "webpack-cli": "^3.3.10",
     "write": "^1.0.3"
   },
