@@ -3,5 +3,6 @@
 # https://github.com/ai/browserslist
 
 > 2%
-IE 11
+not dead
 not op_mini all
+ie >= 11

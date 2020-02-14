@@ -35,9 +35,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",
-    "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
-    "@babel/plugin-transform-arrow-functions": "^7.2.0",
-    "@babel/plugin-transform-for-of": "^7.0.0",
     "@babel/preset-env": "^7.7.1",
     "@hot-loader/react-dom": "^16.11.0",
     "@semantic-release/changelog": "^3.0.6",
@@ -85,7 +82,7 @@
     "remark-grid-tables": "^1.7.1",
     "semantic-release": "^15.13.3",
     "terser-webpack-plugin": "^1.4.1",
-    "webpack": "^4.41.2",
+    "webpack": "^5.0.0-beta.12",
     "webpack-cli": "^3.3.10",
     "write": "^1.0.3"
   },
