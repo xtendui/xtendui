@@ -1,3 +1,10 @@
+## [0.13.9](https://github.com/minimit/xtend-library/compare/v0.13.8...v0.13.9) (2020-02-14)
+
+
+### Bug Fixes
+
+* webpack ([737f37b](https://github.com/minimit/xtend-library/commit/737f37b55b1f99966d3e8e3eb0c64688942722ce))
+
 ## [0.13.8](https://github.com/minimit/xtend-library/compare/v0.13.7...v0.13.8) (2020-02-14)
 
 
