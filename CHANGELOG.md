@@ -1,3 +1,11 @@
+## [0.13.10](https://github.com/minimit/xtend-library/compare/v0.13.9...v0.13.10) (2020-02-14)
+
+
+### Bug Fixes
+
+* ignore dist ([ea64ab6](https://github.com/minimit/xtend-library/commit/ea64ab6e1990847b2c79086bd84212f8a8fbe92c))
+* npmignore ([412e21d](https://github.com/minimit/xtend-library/commit/412e21d007ef270b5d340ce964c7b502e5c30679))
+
 ## [0.13.9](https://github.com/minimit/xtend-library/compare/v0.13.8...v0.13.9) (2020-02-14)
 
 
