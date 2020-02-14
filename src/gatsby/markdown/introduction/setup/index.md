@@ -67,13 +67,13 @@ To modify a **less** or **js** file add [webpack resolve](/introduction/setup#us
 
 #### Js
 
-You need to import [relaxed-json](https://www.npmjs.com/package/relaxed-json):
+You need to install [relaxed-json](https://www.npmjs.com/package/relaxed-json):
 
 ```Shell
 npm install --save relaxed-json
 ```
 
-You need to import [core-js](https://github.com/zloirock/core-js):
+You need to install and import [core-js](https://github.com/zloirock/core-js):
 
 ```Shell
 npm install --save core-js regenerator-runtime
@@ -113,30 +113,6 @@ This library in the demos uses [gsap](https://github.com/greensock/GSAP) and [be
 ```
 npm install --save gsap bezier-easing
 ```
-
-## Script
-
-If you prefer to import the library from script tag (**not recommended**)
-
-Include [core-js](https://cdnjs.com/libraries/core-js) and [cdn](https://cdnjs.com/libraries/gsap) and [bezier-easing](https://www.jsdelivr.com/package/npm/bezier-easing).
-
-Copy the `/dist` folder in your project and add the required styles to your html:
-
-<pre class="language-markup">
-<code class="language-markup">
-<link rel="stylesheet" href="dist/xtend.min.css"/>
-</code>
-</pre>
-
-Add the required scripts to your html
-
-<pre class="language-markup">
-<code class="language-markup">
-<script src="dist/xtend-core.js"></script>
-<!-- or <script src="dist/xtend-core-extensions.js"></script> -->
-<!-- or <script src="dist/xtend-core-extensions-addons.js"></script> -->
-</code>
-</pre>
 
 ## Browser support
 
