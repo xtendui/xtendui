@@ -59,6 +59,12 @@ To modify a **less** or **js** file add [webpack resolve](/introduction/setup#us
 
 #### Js
 
+You need to import [relaxed-json](https://www.npmjs.com/package/relaxed-json):
+
+```Shell
+npm install --save relaxed-json
+```
+
 You need to import [core-js](https://github.com/zloirock/core-js):
 
 ```Shell
