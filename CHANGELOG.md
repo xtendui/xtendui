@@ -1,3 +1,12 @@
+## [0.13.11](https://github.com/minimit/xtend-library/compare/v0.13.10...v0.13.11) (2020-02-17)
+
+
+### Bug Fixes
+
+* fix slider and mousefollow ([8b0b2e9](https://github.com/minimit/xtend-library/commit/8b0b2e9822d69303241d47b1f3103d064c132871))
+* fix slider and mousefollow ([d729db5](https://github.com/minimit/xtend-library/commit/d729db5af8e557bf3094b356ae9e039537c70766))
+* npmignore ([547b59b](https://github.com/minimit/xtend-library/commit/547b59bb6e62a2d4bd4f1d6372240c04b5541de8))
+
 ## [0.13.10](https://github.com/minimit/xtend-library/compare/v0.13.9...v0.13.10) (2020-02-14)
 
 
