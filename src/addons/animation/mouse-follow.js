@@ -52,7 +52,7 @@ class MouseFollow {
       y: e.clientY - self.height / 2,
     })
     // listener dispatch
-    self.object.dispatchEvent(new CustomEvent('mouseenter.xt'))
+    self.object.dispatchEvent(new CustomEvent('mousemove.xt.mousefollow'))
   }
 
   /**
@@ -82,7 +82,7 @@ class MouseFollow {
         friction: false,
       })
       // listener dispatch
-      self.object.dispatchEvent(new CustomEvent('mouseenter.xt'))
+      self.object.dispatchEvent(new CustomEvent('mouseenter.xt.mousefollow'))
     }
   }
 
@@ -97,8 +97,11 @@ class MouseFollow {
       self.object.classList.remove('active')
       self.object.classList.remove('in')
       self.object.classList.add('out')
+      Xt.animTimeout(self.object, () => {
+        self.object.classList.remove('out')
+      })
       // listener dispatch
-      self.object.dispatchEvent(new CustomEvent('mouseleave.xt'))
+      self.object.dispatchEvent(new CustomEvent('mouseleave.xt.mousefollow'))
     }
   }
 
