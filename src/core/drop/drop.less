@@ -113,21 +113,36 @@
 // animation
 
 .drop-container {
-  &.active {
+  > .drop {
+    > .drop-inner {
+      > .drop-design {
+        opacity: 0;
+        transform: scale(.75, .75);
+      }
+      > .drop-content {
+        opacity: 0;
+        transform: translateY(-1.5rem);
+      }
+    }
+  }
+  &.in {
     animation-duration: @time-small + @time-tiny; // needed for animation time and backdrop animation time, put max animation time
     > .drop {
       > .drop-inner {
         > .drop-design {
-          .anim-zoom.active();
-          animation-delay: initial;
+          opacity: 1;
+          transform: none;
+          transition: transform @time-medium @ease-in, opacity @time-medium @ease-in;
         }
         > .drop-content {
-          .anim-y.active();
-          animation-delay: @time-tiny;
+          opacity: 1;
+          transform: none;
+          transition: transform @time-medium @ease-in, opacity @time-medium @ease-in;
+          transition-delay: @time-tiny;
         }
       }
       > .backdrop {
-        .backdrop.active();
+        .backdrop.in();
       }
     }
   }
@@ -136,12 +151,15 @@
     > .drop {
       > .drop-inner {
         > .drop-design {
-          .anim-zoom.out();
-          animation-delay: @time-tiny;
+          opacity: 0;
+          transform: scale(.75, .75);
+          transition: transform @time-small @ease-out, opacity @time-small @ease-out;
+          transition-delay: @time-tiny;
         }
         > .drop-content {
-          .anim-y.out();
-          animation-delay: initial;
+          opacity: 0;
+          transform: translateY(1.5rem);
+          transition: transform @time-small @ease-out, opacity @time-small @ease-out;
         }
       }
       > .backdrop {
@@ -149,42 +167,4 @@
       }
     }
   }
-  /*
-  &.active {
-    animation-duration: @time-small + @time-tiny; // needed for animation time and backdrop animation time, put max animation time
-    > .drop {
-      > .drop-inner {
-        > .drop-design {
-          .anim-y.active();
-          animation-delay: initial;
-        }
-        > .drop-content {
-          .anim-y.active();
-          animation-delay: @time-tiny;
-        }
-      }
-      > .backdrop {
-        .backdrop.active();
-      }
-    }
-  }
-  &.out {
-    animation-duration: @time-small + @time-tiny; // needed for animation time and backdrop animation time, put max animation time
-    > .drop {
-      > .drop-inner {
-        > .drop-design {
-          .anim-y.out();
-          animation-delay: @time-tiny;
-        }
-        > .drop-content {
-          .anim-y.out();
-          animation-delay: initial;
-        }
-      }
-      > .backdrop {
-        .backdrop.out();
-      }
-    }
-  }
-  */
 }

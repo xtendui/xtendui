@@ -18,14 +18,15 @@
     left: 0;
   }
   // animation
-  .overlay-position-left.active & {
-    .anim-x-inverse.active();
+  opacity: 0;
+  .overlay-position-left.in & {
+    .anim-x-inverse.in();
   }
   .overlay-position-left.out & {
     .anim-x.out();
   }
-  .overlay-position-right.active & {
-    .anim-x.active();
+  .overlay-position-right.in & {
+    .anim-x.in();
   }
   .overlay-position-right.out & {
     .anim-x-inverse.out();

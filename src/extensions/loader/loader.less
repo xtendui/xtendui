@@ -170,8 +170,15 @@
 
 // animation
 
-.loader {
-  &.active {
+.loader.animated {
+  opacity: 0;
+  transition: opacity @time-tiny @ease-out;
+  .spinner, .filler {
+    opacity: 0;
+    transform: scale(.75, .75);
+    transition: opacity @time-tiny @ease-out, transform @time-tiny @ease-out;
+  }
+  &.in {
     opacity: 1;
     transition: opacity @time-tiny @ease-in;
     .spinner, .filler {
@@ -209,10 +216,3 @@
   }
 }
 
-// .media-loaded
-
-.media-loaded {
-  .loader {
-    .loader.out();
-  }
-}

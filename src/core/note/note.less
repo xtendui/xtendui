@@ -150,16 +150,8 @@
 // animation
 
 .note {
-  &.active {
-    .anim-x.active();
-    &.inverse {
-      .anim-x-inverse.active();
-    }
-  }
-  &.out {
-    .anim-x.out();
-    &.inverse {
-      .anim-x-inverse.out();
-    }
+  .anim-x();
+  &.inverse {
+    .anim-x-inverse();
   }
 }

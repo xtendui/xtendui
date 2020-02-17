@@ -1144,7 +1144,13 @@ class Toggle {
     const self = this
     // activate
     el.classList.add(...self.classes)
-    el.classList.add(...self.classesIn)
+    el.classList.remove(...self.classesIn)
+    requestAnimationFrame(() => {
+      // @FIX in animation double raf
+      requestAnimationFrame(() => {
+        el.classList.add(...self.classesIn)
+      })
+    })
     el.classList.remove(...self.classesOut)
     if (self.initial || Xt.dataStorage.get(el, self.componentNamespace + 'Initial')) {
       el.classList.add(...self.classesInitial)
@@ -1174,6 +1180,16 @@ class Toggle {
     } else {
       el.classList.add(...self.classesInverse)
     }
+  }
+
+  /**
+   * deactivate element done
+   * @param {Node|HTMLElement|EventTarget|Window} el Elements to be deactivated
+   */
+  deactivateDone(el) {
+    const self = this
+    // activate
+    el.classList.remove(...self.classesOut)
   }
 
   //
@@ -1685,7 +1701,7 @@ class Toggle {
       // listener dispatch
       el.dispatchEvent(new CustomEvent('on.xt'))
     } else if (actionCurrent === 'Off') {
-      // deactivate
+      // activate
       self.deactivate(el)
       // special
       const before = getComputedStyle(el, ':before')
@@ -1755,8 +1771,6 @@ class Toggle {
     const self = this
     const options = self.options
     if (actionCurrent === 'On') {
-      // reset
-      el.classList.remove(...self.classesIn)
       // special
       const before = getComputedStyle(el, ':before')
         .getPropertyValue('content')
@@ -1768,8 +1782,8 @@ class Toggle {
       // listener dispatch
       el.dispatchEvent(new CustomEvent('ondone.xt'))
     } else if (actionCurrent === 'Off') {
-      // reset
-      el.classList.remove(...self.classesOut)
+      // activate
+      self.deactivateDone(el)
       // special
       if (type === 'targets' || (!self.targets.length && type === 'elements')) {
         // @FIX when standalone

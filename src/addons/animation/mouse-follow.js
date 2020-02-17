@@ -68,6 +68,12 @@ class MouseFollow {
       self.height = rect.height
       // class
       self.object.classList.add('active')
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          // @FIX in animation double raf
+          self.object.classList.add('in')
+        })
+      })
       self.object.classList.remove('out')
       // initial
       Xt.friction(self.object, {
@@ -89,6 +95,7 @@ class MouseFollow {
     if (!options.mouseCheck || options.mouseCheck.call(self)) {
       // class
       self.object.classList.remove('active')
+      self.object.classList.remove('in')
       self.object.classList.add('out')
       // listener dispatch
       self.object.dispatchEvent(new CustomEvent('mouseleave.xt'))

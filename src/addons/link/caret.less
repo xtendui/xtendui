@@ -8,44 +8,44 @@
     .icon-right();
   }
   // activation
-  &.active {
+  &.in {
     .icon-xt(@content: @icon-xt-chevron-up, @size: @icon-small);
     &:after {
-      .anim-y-inverse.active();
+      .anim-y-inverse.in();
     }
   }
   &.out {
     &:after {
-      .anim-y.active();
+      .anim-y.in();
     }
   }
   // inverse
   &.caret-inverse {
     .icon-xt(@content: @icon-xt-chevron-up, @size: @icon-small);
-    &.active {
+    &.in {
       .icon-xt(@content: @icon-xt-chevron-down, @size: @icon-small);
       &:after {
-        .anim-y.active();
+        .anim-y.in();
       }
     }
     &.out {
       &:after {
-        .anim-y-inverse.active();
+        .anim-y-inverse.in();
       }
     }
   }
   // horizontal
   &.caret-horizontal {
     .icon-xt(@content: @icon-xt-chevron-right, @size: @icon-small);
-    &.active {
+    &.in {
       .icon-xt(@content: @icon-xt-chevron-left, @size: @icon-small);
       &:after {
-        .anim-x-inverse.active();
+        .anim-x-inverse.in();
       }
     }
     &.out {
       &:after {
-        .anim-x.active();
+        .anim-x.in();
       }
     }
     // inverse
@@ -57,15 +57,15 @@
       &:before {
         .icon-left();
       }
-      &.active {
+      &.in {
         .icon-xt(@content: @icon-xt-chevron-right, @size: @icon-small, @position: before);
         &:before {
-          .anim-x.active();
+          .anim-x.in();
         }
       }
       &.out {
         &:before {
-          .anim-x-inverse.active();
+          .anim-x-inverse.in();
         }
       }
     }
