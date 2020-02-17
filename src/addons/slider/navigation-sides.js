@@ -12,7 +12,7 @@ Xt.mount.push({
 
     // enter
 
-    mouseFollowObject.addEventListener('mouseenter.xt.mousefollow', () => {
+    mouseFollowContainer.addEventListener('mouseenter.xt.mousefollow', () => {
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           // @FIX in animation double raf
@@ -24,7 +24,7 @@ Xt.mount.push({
 
     // leave
 
-    mouseFollowObject.addEventListener('mouseleave.xt.mousefollow', () => {
+    mouseFollowContainer.addEventListener('mouseleave.xt.mousefollow', () => {
       mouseFollowContainer.classList.remove('active')
       mouseFollowContainer.classList.remove('in')
       mouseFollowContainer.classList.add('out')
