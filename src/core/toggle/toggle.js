@@ -1146,10 +1146,7 @@ class Toggle {
     el.classList.add(...self.classes)
     el.classList.remove(...self.classesIn)
     requestAnimationFrame(() => {
-      // @FIX in animation double raf
-      requestAnimationFrame(() => {
-        el.classList.add(...self.classesIn)
-      })
+      el.classList.add(...self.classesIn)
     })
     el.classList.remove(...self.classesOut)
     if (self.initial || Xt.dataStorage.get(el, self.componentNamespace + 'Initial')) {

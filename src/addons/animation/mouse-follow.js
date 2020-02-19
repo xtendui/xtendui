@@ -69,10 +69,7 @@ class MouseFollow {
       // class
       self.object.classList.add('active')
       requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          // @FIX in animation double raf
-          self.object.classList.add('in')
-        })
+        self.object.classList.add('in')
       })
       self.object.classList.remove('out')
       // initial

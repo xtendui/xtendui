@@ -14,10 +14,7 @@ Xt.mount.push({
 
     mouseFollowContainer.addEventListener('mouseenter.xt.mousefollow', () => {
       requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          // @FIX in animation double raf
-          mouseFollowContainer.classList.add('in')
-        })
+        mouseFollowContainer.classList.add('in')
       })
       mouseFollowContainer.classList.remove('out')
     })
