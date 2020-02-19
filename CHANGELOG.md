@@ -1,3 +1,10 @@
+## [0.13.12](https://github.com/minimit/xtend-library/compare/v0.13.11...v0.13.12) (2020-02-19)
+
+
+### Bug Fixes
+
+* **js:** fix medialoaded not xt-clone but xt-ignore ([49162cc](https://github.com/minimit/xtend-library/commit/49162cce4d396f46031a76e2dbf431061d4d5d8e))
+
 ## [0.13.11](https://github.com/minimit/xtend-library/compare/v0.13.10...v0.13.11) (2020-02-17)
 
 
