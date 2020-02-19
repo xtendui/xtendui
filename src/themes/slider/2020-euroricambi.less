@@ -34,9 +34,11 @@
   // pagination wrap
   .slider-pagination_inner {
     position: relative;
-    max-width: 40rem;
     overflow: hidden;
     white-space: nowrap;
+    .slider-cards--logos& {
+      max-width: none;
+    }
     [data-xt-pag] {
       .margin(x, mini);
     }
@@ -70,6 +72,9 @@
     font-size: 10px;
     [class^='icon-'], [class*=' icon-'] {
       .icon-medium();
+    }
+    .slider--nonav& {
+      display: none;
     }
   }
   // content
