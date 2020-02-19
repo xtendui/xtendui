@@ -1,3 +1,10 @@
+## [0.13.13](https://github.com/minimit/xtend-library/compare/v0.13.12...v0.13.13) (2020-02-19)
+
+
+### Bug Fixes
+
+* fix animations ([dadbc77](https://github.com/minimit/xtend-library/commit/dadbc778e4e97bbcaa09fd3ec9d6c70f2dbea8a1))
+
 ## [0.13.12](https://github.com/minimit/xtend-library/compare/v0.13.11...v0.13.12) (2020-02-19)
 
 
