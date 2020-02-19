@@ -581,7 +581,7 @@ class Toggle {
       addEventListener('autoclose.trigger.xt', autocloseHandler)
     }
     // media
-    for (const el of self.elements.filter(x => !x.classList.contains('xt-clone'))) {
+    for (const el of self.elements.filter(x => !x.classList.contains('xt-ignore'))) {
       const imgs = el.querySelectorAll('img')
       self.destroyElements.push(...imgs)
       for (const img of imgs) {
@@ -596,7 +596,7 @@ class Toggle {
         }
       }
     }
-    for (const tr of self.targets.filter(x => !x.classList.contains('xt-clone'))) {
+    for (const tr of self.targets.filter(x => !x.classList.contains('xt-ignore'))) {
       const imgs = tr.querySelectorAll('img')
       self.destroyElements.push(...imgs)
       for (const img of imgs) {
