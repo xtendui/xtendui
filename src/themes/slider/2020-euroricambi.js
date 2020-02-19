@@ -227,25 +227,32 @@ Xt.mount.push({
         const inner = self.object.querySelector('.slider-pagination_inner')
         const scroll = self.object.querySelector('.slider-pagination_scroll')
         if (inner.offsetWidth < scroll.offsetWidth) {
-          const widthInner = inner.offsetWidth
-          const widthScroll = scroll.offsetWidth
-          const leftEl = el.offsetLeft
-          const widthEl = el.offsetWidth
-          let final = widthInner / 2 - leftEl
-          // contain initial
-          final = leftEl + widthEl / 2 > widthInner / 2 ? final - widthEl / 2 : 0
-          // contain final
-          final = leftEl + widthEl / 2 < widthScroll - widthInner / 2 ? final : -widthScroll + widthInner
-          // set
-          scroll.style.left = final + 'px'
+          self.object.classList.remove('slider--nonav')
+          if (e.type === 'on.xt') {
+            const widthInner = inner.offsetWidth
+            const widthScroll = scroll.offsetWidth
+            const leftEl = el.offsetLeft
+            const widthEl = el.offsetWidth
+            let final = widthInner / 2 - leftEl
+            // contain initial
+            final = leftEl + widthEl / 2 > widthInner / 2 ? final - widthEl / 2 : 0
+            // contain final
+            final = leftEl + widthEl / 2 < widthScroll - widthInner / 2 ? final : -widthScroll + widthInner
+            // set
+            scroll.style.left = final + 'px'
+          }
         } else {
-          // set
-          scroll.style.left = ''
+          if (e.type === 'on.xt') {
+            self.object.classList.add('slider--nonav')
+            // set
+            scroll.style.left = ''
+          }
         }
       }
     }
 
     self.object.addEventListener('on.xt', eventOnElements, true)
+    self.object.addEventListener('medialoaded.xt', eventOnElements, true)
 
     // unmount
 
