@@ -8,6 +8,7 @@
   display: flex;
   align-items: center;
   width: 100%;
+  height: 100%;
   .flex-auto();
   z-index: @index-base; // fix :before negative z-index
   a&, button& {
@@ -44,6 +45,14 @@
   }
   &, & > .card-content {
     border-radius: inherit;
+  }
+}
+
+.card-between {
+  .card-inner {
+    > .card-content {
+      justify-content: space-between;
+    }
   }
 }
 

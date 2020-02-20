@@ -10,6 +10,8 @@ date: "2019-03-15"
 
 Use `.row-stretch` to stretch vertically columns.
 
+Use `.card-between` to justify vertically with `space-between`.
+
 <demo>
   <demovanilla src="vanilla/components/row/stretch">
   </demovanilla>
