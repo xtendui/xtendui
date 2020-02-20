@@ -1,3 +1,10 @@
+## [0.13.14](https://github.com/minimit/xtend-library/compare/v0.13.13...v0.13.14) (2020-02-20)
+
+
+### Bug Fixes
+
+* **js:** fix reinit with destroy + events namespaces ([e61785a](https://github.com/minimit/xtend-library/commit/e61785a41b04b93ed131afe18c0235474be6aa88))
+
 ## [0.13.13](https://github.com/minimit/xtend-library/compare/v0.13.12...v0.13.13) (2020-02-19)
 
 
