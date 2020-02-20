@@ -9,7 +9,7 @@ Xt.mount.push({
   mount: object => {
     // vars
 
-    const scrollWindowFactor = 0.2;
+    const scrollWindowFactor = 0.2
     const items = object.querySelectorAll('input, select, textarea')
     let raf
 
