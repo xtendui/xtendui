@@ -9,7 +9,9 @@ Xt.mount.push({
   mount: object => {
     // vars
 
+    const scrollWindowFactor = 0.2;
     const items = object.querySelectorAll('input, select, textarea')
+    let raf
 
     // valid
 
@@ -31,6 +33,11 @@ Xt.mount.push({
       const item = e.target
       item.classList.remove('valid')
       item.classList.add('invalid')
+      // scroll to views
+      cancelAnimationFrame(raf)
+      raf = requestAnimationFrame(() => {
+        window.scrollTo(window.scrollX, window.scrollY - Xt.windowHeight * scrollWindowFactor);
+      })
     }
 
     for (const item of items) {
