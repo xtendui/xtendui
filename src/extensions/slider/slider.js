@@ -375,10 +375,10 @@ class Slider extends Xt.Toggle {
     // elements
     for (const el of self.elements) {
       // event on
-      const slideonHandler = Xt.dataStorage.put(el, 'on.slider' + '/' + self.namespace, self.eventSlideonHandler.bind(self).bind(self, dragger, el))
+      const slideonHandler = Xt.dataStorage.put(el, 'on/slider' + '/' + self.namespace, self.eventSlideonHandler.bind(self).bind(self, dragger, el))
       el.addEventListener('on.xt', slideonHandler, true)
       // event off
-      const slideoffHandler = Xt.dataStorage.put(el, 'off.slider' + '/' + self.namespace, self.eventSlideoffHandler.bind(self).bind(self, dragger, el))
+      const slideoffHandler = Xt.dataStorage.put(el, 'off/slider' + '/' + self.namespace, self.eventSlideoffHandler.bind(self).bind(self, dragger, el))
       el.addEventListener('off.xt', slideoffHandler, true)
     }
     // targets
@@ -393,13 +393,13 @@ class Slider extends Xt.Toggle {
     if (options.drag) {
       // @FIX prevent dragging links and images
       for (const img of self.dragger.querySelectorAll('img')) {
-        let imgnodragHandler = Xt.dataStorage.put(img, 'mousedown' + '/' + self.namespace, self.eventImgnodragHandler.bind(self))
+        let imgnodragHandler = Xt.dataStorage.put(img, 'mousedown/drag' + '/' + self.namespace, self.eventImgnodragHandler.bind(self))
         img.addEventListener('mousedown', imgnodragHandler)
       }
       // drag start
       const dragstartHandler = Xt.dataStorage.put(
         dragger,
-        'mousedown touchstart' + '/' + self.namespace,
+        'mousedown touchstart/drag' + '/' + self.namespace,
         self.eventDragstartHandler.bind(self).bind(self, dragger)
       )
       const events = ['mousedown', 'touchstart']
@@ -422,7 +422,7 @@ class Slider extends Xt.Toggle {
       }
     }
     // resize
-    const reinitHandler = Xt.dataStorage.put(window, 'resize.reinit' + '/' + self.namespace, self.eventReinitHandler.bind(self).bind(self))
+    const reinitHandler = Xt.dataStorage.put(window, 'resize/reinit' + '/' + self.namespace, self.eventReinitHandler.bind(self).bind(self))
     addEventListener('resize', reinitHandler)
   }
 
@@ -490,7 +490,7 @@ class Slider extends Xt.Toggle {
           self.eventDragstart(dragger, e)
         }
         // drag end
-        const dragendHandler = Xt.dataStorage.put(dragger, 'mouseup touchend' + '/' + self.namespace, self.eventDragendHandler.bind(self).bind(self, dragger))
+        const dragendHandler = Xt.dataStorage.put(dragger, 'mouseup touchend/drag' + '/' + self.namespace, self.eventDragendHandler.bind(self).bind(self, dragger))
         const events = ['mouseup', 'touchend']
         for (const event of events) {
           addEventListener(event, dragendHandler)
@@ -526,7 +526,7 @@ class Slider extends Xt.Toggle {
   eventDragstart(dragger, e) {
     const self = this
     // event move
-    const dragHandler = Xt.dataStorage.put(dragger, 'mousemove touchmove' + '/' + self.namespace, self.eventDragHandler.bind(self).bind(self, dragger))
+    const dragHandler = Xt.dataStorage.put(dragger, 'mousemove touchmove/drag' + '/' + self.namespace, self.eventDragHandler.bind(self).bind(self, dragger))
     const events = ['mousemove', 'touchmove']
     for (const event of events) {
       dragger.addEventListener(event, dragHandler, { passive: true })
@@ -543,13 +543,13 @@ class Slider extends Xt.Toggle {
   eventDragend(dragger, e) {
     const self = this
     // event off
-    const dragendHandler = Xt.dataStorage.get(dragger, 'mouseup touchend' + '/' + self.namespace)
+    const dragendHandler = Xt.dataStorage.get(dragger, 'mouseup touchend/drag' + '/' + self.namespace)
     const eventsoff = ['mouseup', 'touchend']
     for (const event of eventsoff) {
       removeEventListener(event, dragendHandler)
     }
     // event move
-    const dragHandler = Xt.dataStorage.get(dragger, 'mousemove touchmove' + '/' + self.namespace)
+    const dragHandler = Xt.dataStorage.get(dragger, 'mousemove touchmove/drag' + '/' + self.namespace)
     const eventsmove = ['mousemove', 'touchmove']
     for (const event of eventsmove) {
       dragger.removeEventListener(event, dragHandler)

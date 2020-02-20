@@ -102,7 +102,7 @@ class Sticky extends Xt.Toggle {
       self.eventStickyHandler(null, true)
     }
     // focusin
-    const focusInHandler = Xt.dataStorage.put(document, 'focusin' + '/' + self.namespace, self.eventFocusinHandler.bind(self))
+    const focusInHandler = Xt.dataStorage.put(document, 'focusin/sticky' + '/' + self.namespace, self.eventFocusinHandler.bind(self))
     document.addEventListener('focusin', focusInHandler, { passive: true })
   }
 
