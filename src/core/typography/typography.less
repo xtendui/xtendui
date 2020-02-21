@@ -272,7 +272,7 @@ ul, ol {
   .margin(bottom, medium);
   padding-left: 2rem;
   > li {
-    .margin(bottom, medium);
+    .margin(bottom, small);
   }
   > ul, > ol {
     .margin(y, medium);
@@ -297,14 +297,17 @@ ol {
 
 /*
 ul {
-  list-style: none;
+  .margin(bottom, layout);
   padding-left: 0;
+  list-style: none;
+  line-height: 1.6;
   > li {
-    padding-left: 42px;
+    .margin(y, layout);
+    padding-left: 2.5em;
     background-image: url('../../assets/images/list-style-image-squared.svg');
-    background-size: 24px auto;
-    background-position: left 6px;
     background-repeat: no-repeat;
+    background-size: 1.5em auto;
+    background-position: left top;
   }
 }
 */
