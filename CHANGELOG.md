@@ -1,3 +1,18 @@
+## [0.13.15](https://github.com/minimit/xtend-library/compare/v0.13.14...v0.13.15) (2020-02-24)
+
+
+### Bug Fixes
+
+* **cards:** fix card height and card-between ([d20ccf4](https://github.com/minimit/xtend-library/commit/d20ccf4467c42661d3252b203332cf6bc9cdfdd0))
+* **docs:** demos fullscreen links hash ([30be326](https://github.com/minimit/xtend-library/commit/30be32619e4a43162eda95e5fd6bb1b06ca34c66))
+* **form:** form scroll into view ([d785337](https://github.com/minimit/xtend-library/commit/d7853374ec55956ccc87ea3edaecde565d26b270))
+* **form:** form scroll into view ([e98553a](https://github.com/minimit/xtend-library/commit/e98553aec930056abf227d2c3550209e902e874b))
+* **toggle:** medialoaded optional ([f9cc4af](https://github.com/minimit/xtend-library/commit/f9cc4aff7eda47550ed24d19324ecb1b8816a099))
+* ie11 polyfills ([eaad702](https://github.com/minimit/xtend-library/commit/eaad7020997fe465ea628f32ed642cb95c46c31d))
+* slider animation ([f644efb](https://github.com/minimit/xtend-library/commit/f644efb7487adba5e21e648842b24bfb22c4eea9))
+* slider animation ([8929067](https://github.com/minimit/xtend-library/commit/8929067d71612c95368127267485b34610048874))
+* various css fixes ([e4248ea](https://github.com/minimit/xtend-library/commit/e4248eac550ae8aabde5b080cde299f87d8d81f4))
+
 ## [0.13.14](https://github.com/minimit/xtend-library/compare/v0.13.13...v0.13.14) (2020-02-20)
 
 
