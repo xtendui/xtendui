@@ -220,7 +220,8 @@ Use `keyboard: { selector: 'object' }` or `keyboard: { selector: QuerySelector }
 | Option                  | `closeInside:Query`                          | `false`        | Query Node inside to close on click            |
 | Option                  | `onBlock:Milliseconds`                          | `true`        | Block concurrent activation events for some time            |
 | Option                  | `offBlock:Milliseconds`                          | `true`        | Block concurrent deactivation events for some time            |
-| Option                  | `mediaLoadedReinit:Boolean`                          | `false`        | Reinit on media loaded            |
+| Option                  | `mediaLoaded:Boolean`                          | `false`        | Media loaded classes on elements and targets            |
+| Option                  | `mediaLoadedReinit:Boolean`                          | `false`        | Reinit component on media loaded elements and targets            |
 | Option                  | `appendTo:Query`                          | `false`        | Append targets to Node on activation            |
 | Option                  | `scrollbar:Boolean`                          | `false`        | Hide body scrollbars on activation            |
 | Option                  | `focusLimit:Boolean`                          | `false`        | Limit focus on activation            |

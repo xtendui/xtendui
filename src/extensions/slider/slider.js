@@ -1124,7 +1124,6 @@ Slider.optionsDefault = {
   class: 'active active-slider',
   loop: true,
   jump: true,
-  mediaLoadedReinit: false,
   navigation: '[data-xt-nav]',
   wheel: {
     selector: false,

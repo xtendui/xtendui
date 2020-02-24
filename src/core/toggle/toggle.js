@@ -580,33 +580,35 @@ class Toggle {
       const autocloseHandler = Xt.dataStorage.put(window, 'autoclose' + '/' + self.namespace, self.eventAutocloseHandler.bind(self))
       addEventListener('autoclose.trigger.xt', autocloseHandler)
     }
-    // media
-    for (const el of self.elements.filter(x => !x.classList.contains('xt-ignore'))) {
-      const imgs = el.querySelectorAll('img')
-      self.destroyElements.push(...imgs)
-      for (const img of imgs) {
-        if (!Xt.dataStorage.get(img, self.componentNamespace + 'MedialoadedDone')) {
-          Xt.dataStorage.set(img, self.componentNamespace + 'MedialoadedDone', true)
-          if (!img.complete) {
-            const medialoadedHandler = Xt.dataStorage.put(img, 'load/media' + '/' + self.namespace, self.eventMedialoadedHandler.bind(self).bind(self, el, true))
-            img.addEventListener('load', medialoadedHandler)
-          } else {
-            self.eventMedialoadedHandler(el, false)
+    // mediaLoaded
+    if (options.mediaLoaded) {
+      for (const el of self.elements.filter(x => !x.classList.contains('xt-ignore'))) {
+        const imgs = el.querySelectorAll('img')
+        self.destroyElements.push(...imgs)
+        for (const img of imgs) {
+          if (!Xt.dataStorage.get(img, self.componentNamespace + 'MedialoadedDone')) {
+            Xt.dataStorage.set(img, self.componentNamespace + 'MedialoadedDone', true)
+            if (!img.complete) {
+              const medialoadedHandler = Xt.dataStorage.put(img, 'load/media' + '/' + self.namespace, self.eventMedialoadedHandler.bind(self).bind(self, el, true))
+              img.addEventListener('load', medialoadedHandler)
+            } else {
+              self.eventMedialoadedHandler(el)
+            }
           }
         }
       }
-    }
-    for (const tr of self.targets.filter(x => !x.classList.contains('xt-ignore'))) {
-      const imgs = tr.querySelectorAll('img')
-      self.destroyElements.push(...imgs)
-      for (const img of imgs) {
-        if (!Xt.dataStorage.get(img, self.componentNamespace + 'MedialoadedDone')) {
-          Xt.dataStorage.set(img, self.componentNamespace + 'MedialoadedDone', true)
-          if (!img.complete) {
-            const medialoadedHandler = Xt.dataStorage.put(img, 'load/media' + '/' + self.namespace, self.eventMedialoadedHandler.bind(self).bind(self, tr, true))
-            img.addEventListener('load', medialoadedHandler)
-          } else {
-            self.eventMedialoadedHandler(tr, false)
+      for (const tr of self.targets.filter(x => !x.classList.contains('xt-ignore'))) {
+        const imgs = tr.querySelectorAll('img')
+        self.destroyElements.push(...imgs)
+        for (const img of imgs) {
+          if (!Xt.dataStorage.get(img, self.componentNamespace + 'MedialoadedDone')) {
+            Xt.dataStorage.set(img, self.componentNamespace + 'MedialoadedDone', true)
+            if (!img.complete) {
+              const medialoadedHandler = Xt.dataStorage.put(img, 'load/media' + '/' + self.namespace, self.eventMedialoadedHandler.bind(self).bind(self, tr, true))
+              img.addEventListener('load', medialoadedHandler)
+            } else {
+              self.eventMedialoadedHandler(tr)
+            }
           }
         }
       }
@@ -903,7 +905,7 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Boolean} deferred
    */
-  eventMedialoadedHandler(el, deferred = true) {
+  eventMedialoadedHandler(el, deferred = false) {
     const self = this
     const options = self.options
     // class
@@ -2902,6 +2904,7 @@ Toggle.optionsDefaultSuper = {
   offBlock: false,
   loop: true,
   jump: false,
+  mediaLoaded: false,
   mediaLoadedReinit: false,
   delayOn: false,
   delayOff: false,
