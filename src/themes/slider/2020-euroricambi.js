@@ -76,7 +76,7 @@ Xt.mount.push({
       // cardContent
       const cardContents = tr.querySelectorAll('.slider_card .card-item')
       for (const cardContent of cardContents) {
-        gsap.set(cardContent, { opacity: 1 - ratio, x: cardContentX * ratio * direction })
+        gsap.set(cardContent, { x: cardContentX * ratio * direction, opacity: 1 - ratio })
       }
     }
 
@@ -106,7 +106,7 @@ Xt.mount.push({
       // cardContent
       const cardContents = tr.querySelectorAll('.slider_card .card-item')
       for (const cardContent of cardContents) {
-        gsap.to(cardContent, { opacity: 1, x: 0, duration: cardContentTimeOn, ease: cardContentEaseOn })
+        gsap.to(cardContent, { x: 0, opacity: 1, duration: cardContentTimeOn, ease: cardContentEaseOn })
       }
     }
 
@@ -143,7 +143,7 @@ Xt.mount.push({
           const cardContents = tr.querySelectorAll('.slider_card .card-item')
           for (const cardContent of cardContents) {
             gsap.killTweensOf(cardContent)
-            gsap.set(cardContent, { opacity: 1, x: 0 })
+            gsap.set(cardContent, { x: 0, opacity: 1 })
           }
         } else {
           // assetMask
@@ -164,8 +164,8 @@ Xt.mount.push({
           // cardContent
           const cardContents = tr.querySelectorAll('.slider_card .card-item')
           for (const cardContent of cardContents) {
-            gsap.set(cardContent, { opacity: 0, x: cardContentX * direction })
-            gsap.to(cardContent, { opacity: 1, x: 0, duration: cardContentTimeOn, ease: cardContentEaseOn })
+            gsap.set(cardContent, { x: cardContentX * direction, opacity: 0 })
+            gsap.to(cardContent, { x: 0, opacity: 1, duration: cardContentTimeOn, ease: cardContentEaseOn })
           }
           // card
           const card = tr.querySelector('.slider_card > .card')
@@ -204,7 +204,7 @@ Xt.mount.push({
         // cardContent
         const cardContents = tr.querySelectorAll('.slider_card .card-item')
         for (const cardContent of cardContents) {
-          gsap.to(cardContent, { opacity: 0, x: -cardContentX * direction, duration: cardContentTimeOff, ease: cardContentEaseOff })
+          gsap.to(cardContent, {  x: -cardContentX * direction, opacity: 0, duration: cardContentTimeOff, ease: cardContentEaseOff })
         }
         // card
         const card = tr.querySelector('.slider_card > .card')
