@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { populateDemo, makeFullscreen } from 'assets/scripts/demo'
+import { populateDemo, makeFullscreen, demoHash } from 'assets/scripts/demo'
 
 class Demo extends React.Component {
   constructor(props) {
@@ -19,7 +19,8 @@ class Demo extends React.Component {
     // @FIX demo fullscreen
     for (const btnOpenFull of container.querySelectorAll('.btn-open-full')) {
       if (btnOpenFull.classList.contains('active')) {
-        makeFullscreen(container, true)
+        //makeFullscreen(container, true)
+        demoHash()
         break
       }
     }

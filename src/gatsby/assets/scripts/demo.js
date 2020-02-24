@@ -11,6 +11,31 @@ require('prism-themes/themes/prism-base16-ateliersulphurpool.light.css')
 Prism.manual = true
 
 /**
+ * demoHash
+ */
+
+let ignoreHash = false
+
+const demoHash = e => {
+  // call offdone.xt
+  document.querySelector('#gatbsy_open-full-trigger').dispatchEvent(new CustomEvent('off.trigger.xt'))
+  // set hash cancel
+  cancelAnimationFrame(Xt.dataStorage.get(document, 'gatbsy_open-full-raf'))
+  // check hash
+  if (location.hash) {
+    const item = document.querySelector('[id="' + kebabCase(location.hash) + '"]')
+    if (item) {
+      const demo = item.closest('.gatsby_demo')
+      if (demo) {
+        makeFullscreen(demo)
+      }
+    }
+  }
+}
+
+addEventListener('hashchange', demoHash)
+
+/**
  * formatCode
  */
 
@@ -108,7 +133,14 @@ const populateBlock = () => {
       appendOrigin.remove()
     })
     // set hash
-    window.history.pushState('', '/', window.location.pathname)
+    cancelAnimationFrame(Xt.dataStorage.get(document, 'gatbsy_open-full-raf'))
+    Xt.dataStorage.set(
+      document,
+      'gatbsy_open-full-raf',
+      requestAnimationFrame(() => {
+        location.hash = ''
+      })
+    )
   })
   // trigger fullscreen or change tabs
   document.querySelector('#gatbsy_open-full').addEventListener('ondone.xt', e => {
@@ -170,14 +202,10 @@ const populateDemo = (container, i) => {
         .join(' ')
     }
     name = item.getAttribute('data-name') ? item.getAttribute('data-name') : name
-    item.setAttribute('id', kebabCase(name))
     if (!name) {
-      if (items.length === 1) {
-        name = 'demo'
-      } else {
-        name = 'demo #' + k
-      }
+      name = k
     }
+    item.setAttribute('id', 'demo-' + kebabCase(name))
     container.querySelector('.gatsby_demo_tabs_left').append(Xt.createElement('<button type="button" class="btn btn-text btn-tiny">' + name + '</button>'))
     // tabs
     item.prepend(
@@ -228,10 +256,10 @@ const populateDemo = (container, i) => {
       }
     }
   }
-  // makeFullscreen
+  // set hash
   for (const btnOpenFull of container.querySelectorAll('.btn-open-full')) {
     btnOpenFull.addEventListener('click', () => {
-      makeFullscreen(container)
+      location.hash = container.querySelector('.gatsby_demo_item.active').getAttribute('id')
     })
   }
   // get hash
@@ -259,6 +287,7 @@ const populateDemo = (container, i) => {
           dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: item.querySelector('.gatsby_demo_source') } }))
         })
       }
+      // only if demo opened
       if (document.querySelector('#gatbsy_open-full-trigger').classList.contains('active')) {
         // set hash
         location.hash = item.getAttribute('id')
@@ -304,11 +333,9 @@ const populateDemo = (container, i) => {
             prev = prev >= 0 ? prev : demos.length - 1
             let currentOffset
             let prevOffset = demos[prev].offsetTop
-            demos[prev].querySelector('.gatsby_demo_tabs_left .btn:last-child').dispatchEvent(new CustomEvent('on.trigger.xt'))
             if (document.querySelector('#gatbsy_open-full-trigger').classList.contains('active')) {
               currentOffset = document.querySelector('[data-xt-origin="gatbsy_open-full-content"]').offsetTop
-              document.querySelector('#gatbsy_open-full-trigger').dispatchEvent(new CustomEvent('off.trigger.xt'))
-              makeFullscreen(demos[prev].closest('.gatsby_demo'))
+              location.hash = demos[prev].querySelector('.gatsby_demo_item.active').getAttribute('id')
             } else {
               currentOffset = element.closest('.gatsby_demo').offsetTop
             }
@@ -320,8 +347,7 @@ const populateDemo = (container, i) => {
           if (listingToggles[i].classList.contains('active')) {
             let prev = i - 1
             prev = prev >= 0 ? prev : listingToggles.length - 1
-            document.querySelector('#gatbsy_open-full-trigger').dispatchEvent(new CustomEvent('off.trigger.xt'))
-            listingToggles[prev].dispatchEvent(new CustomEvent('click'))
+            location.hash = listingToggles[prev].parentNode.querySelector('.gatsby_demo .gatsby_demo_item.active').getAttribute('id')
             break
           }
         }
@@ -342,11 +368,9 @@ const populateDemo = (container, i) => {
             next = next < demos.length ? next : 0
             let currentOffset
             let nextOffset = demos[next].offsetTop
-            demos[next].querySelector('.gatsby_demo_tabs_left .btn:first-child').dispatchEvent(new CustomEvent('on.x.triggert'))
             if (document.querySelector('#gatbsy_open-full-trigger').classList.contains('active')) {
               currentOffset = document.querySelector('[data-xt-origin="gatbsy_open-full-content"]').offsetTop
-              document.querySelector('#gatbsy_open-full-trigger').dispatchEvent(new CustomEvent('off.trigger.xt'))
-              makeFullscreen(demos[next].closest('.gatsby_demo'))
+              location.hash = demos[next].querySelector('.gatsby_demo_item.active').getAttribute('id')
             } else {
               currentOffset = element.closest('.gatsby_demo').offsetTop
             }
@@ -358,8 +382,7 @@ const populateDemo = (container, i) => {
           if (listingToggles[i].classList.contains('active')) {
             let next = i + 1
             next = next < listingToggles.length ? next : 0
-            document.querySelector('#gatbsy_open-full-trigger').dispatchEvent(new CustomEvent('off.trigger.xt'))
-            listingToggles[next].dispatchEvent(new CustomEvent('click'))
+            location.hash = listingToggles[next].parentNode.querySelector('.gatsby_demo .gatsby_demo_item.active').getAttribute('id')
             break
           }
         }
@@ -603,4 +626,4 @@ const populateSources = (item, element, z) => {
   Prism.highlightElement(codeInside)
 }
 
-export { populateBlock, populateDemo, makeFullscreen }
+export { populateBlock, populateDemo, makeFullscreen, demoHash }
