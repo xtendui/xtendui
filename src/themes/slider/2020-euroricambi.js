@@ -149,11 +149,10 @@ Xt.mount.push({
           // assetMask
           const assetMasks = tr.querySelectorAll('.slider_img .media-container')
           for (const assetMask of assetMasks) {
-            const xMax = assetMask.clientWidth
-            gsap.set(assetMask, { x: xMax * direction })
+            gsap.set(assetMask, { x: 100 * direction + '%' })
             gsap.to(assetMask, { x: 0, duration: assetMaskTimeOn, ease: assetMaskEaseOn })
             const assetMaskInner = assetMask.querySelector('.media-inner')
-            gsap.set(assetMaskInner, { x: -xMax * direction })
+            gsap.set(assetMaskInner, { x: -100 * direction + '%' })
             gsap.to(assetMaskInner, { x: 0, opacity: 1, duration: assetMaskTimeOn, ease: assetMaskEaseOn })
           }
           // asset
@@ -193,10 +192,9 @@ Xt.mount.push({
         // assetMask
         const assetMasks = tr.querySelectorAll('.slider_img .media-container')
         for (const assetMask of assetMasks) {
-          const xMax = assetMask.clientWidth
-          gsap.to(assetMask, { x: -xMax * direction, duration: assetMaskTimeOff, ease: assetMaskEaseOff })
+          gsap.to(assetMask, { x: -100 * direction + '%', duration: assetMaskTimeOff, ease: assetMaskEaseOff })
           const assetMaskInner = assetMask.querySelector('.media-inner')
-          gsap.to(assetMaskInner, { x: xMax * direction, opacity: 0, duration: assetMaskTimeOff, ease: assetMaskEaseOff })
+          gsap.to(assetMaskInner, { x: 100 * direction + '%', opacity: 0, duration: assetMaskTimeOff, ease: assetMaskEaseOff })
         }
         // asset
         const assets = tr.querySelectorAll('.slider_img img')
