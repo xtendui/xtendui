@@ -76,7 +76,7 @@ npm install --save relaxed-json
 You need to install and import [core-js](https://github.com/zloirock/core-js):
 
 ```Shell
-npm install --save core-js regenerator-runtime
+npm install --save core-js@2 regenerator-runtime
 ```
 
 ```jsx
