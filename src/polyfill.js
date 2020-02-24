@@ -18,6 +18,9 @@ if (typeof window !== 'undefined') {
         enumerable: true,
         writable: true,
         value: function remove() {
+          if (this.parentNode === null) {
+            return;
+          }
           this.parentNode.removeChild(this);
         }
       });
