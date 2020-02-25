@@ -5,7 +5,7 @@ import 'xtend-library/src/addons/slider/navigation-sides.js'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '.demo--2019-sun68',
+  matches: '.demo--slider--2019-sun68',
   mount: object => {
     // vars
 

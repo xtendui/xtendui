@@ -6,7 +6,7 @@ import gsap from 'gsap'
 // @TODO RIFARE TUTTE VARIABILI FUNZIONI ETC COME SUN68
 
 Xt.mount.push({
-  matches: '.demo--2019-webgriffe',
+  matches: '.demo--slider--2019-webgriffe',
   mount: object => {
     // slider
 

@@ -15,7 +15,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="slider demo--2020-brands">
+<div class="slider demo--slider--2020-brands">
 
     <div class="slides">
         <ul class="slides-inner">
@@ -91,7 +91,7 @@ demo.htmlSource = `
 
 </div>
 
-<div class="slider demo--2020-brands demo--2020-brands--constant">
+<div class="slider demo--slider--2020-brands demo--slider--2020-brands--constant">
 
     <div class="slides">
         <ul class="slides-inner">

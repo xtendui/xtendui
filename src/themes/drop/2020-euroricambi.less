@@ -1,0 +1,77 @@
+@import '~xtend-library/src/core/drop/drop.less';
+
+.demo--drop--2020-euroricambi {
+  .drop-container {
+    > .drop {
+      > .drop-inner {
+        .collapse-height();
+        opacity: 0;
+        transform: translateY(-1rem);
+        > .drop-content {
+          opacity: 0;
+          transform: translateY(.5rem);
+        }
+      }
+    }
+    &.in {
+      animation-duration: @time-medium; // needed for animation time and backdrop animation time, put max animation time
+      > .drop {
+        > .drop-inner {
+          opacity: 1;
+          transform: none;
+          transition: height @time-medium @ease-in, transform @time-medium @ease-in, opacity @time-tiny @ease-in;
+          > .drop-content {
+            opacity: 1;
+            transform: none;
+            transition: transform @time-medium @ease-in, opacity @time-medium @ease-in;
+          }
+        }
+        > .backdrop {
+          .backdrop.in();
+        }
+      }
+    }
+    &.out {
+      animation-duration: @time-small; // needed for animation time and backdrop animation time, put max animation time
+      > .drop {
+        > .drop-inner {
+          opacity: 0;
+          transform: translateY(1rem);
+          transition: height @time-small @ease-out, transform @time-small @ease-out, opacity @time-tiny @ease-out @time-tiny;
+          > .drop-content {
+            opacity: 0;
+            transform: translateY(-1rem);
+            transition: transform @time-small @ease-out, opacity @time-small @ease-out;
+          }
+        }
+        > .backdrop {
+          .backdrop.out();
+        }
+      }
+    }
+    // .drop-top
+    > .drop.drop-top > .drop-inner {
+      transform: translateY(1rem);
+      > .drop {
+        > .drop-inner {
+          > .drop-content {
+            transform: translateY(-1rem);
+          }
+        }
+      }
+      &.in {
+        transform: none;
+      }
+      &.out {
+        transform: translateY(-1rem);
+        > .drop {
+          > .drop-inner {
+            > .drop-content {
+              transform: translateY(1rem);
+            }
+          }
+        }
+      }
+    }
+  }
+}

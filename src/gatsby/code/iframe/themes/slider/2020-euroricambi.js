@@ -15,7 +15,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="slider demo--2020-euroricambi">
+<div class="slider demo--slider--2020-euroricambi">
 
     <nav class="slider-pagination">
         <div>
