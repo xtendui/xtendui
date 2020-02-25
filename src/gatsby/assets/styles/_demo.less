@@ -2,6 +2,21 @@
  * demo
  */
 
+#gatsby_body-inner {
+  position: relative;
+  height: 100vh;
+}
+
+html.gatsby_iframe-inside {
+  body {
+    .overflow-style(@mode: none);
+    background: @white !important;
+  }
+  #gatsby_body-inner {
+    height: initial;
+  }
+}
+
 html.gatsby_iframe-container {
   #gatsby_body-inner {
     //.padding(y, big);
@@ -13,18 +28,6 @@ html.gatsby_iframe-full {
   body {
     overflow: hidden !important;
   }
-}
-
-html.gatsby_iframe-inside {
-  body {
-    .overflow-style(@mode: none);
-    background: @white !important;
-  }
-}
-
-#gatsby_body-inner {
-  position: relative;
-  height: 100vh;
 }
 
 /**
