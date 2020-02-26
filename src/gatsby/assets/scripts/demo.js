@@ -33,7 +33,9 @@ const demoHash = e => {
   }
 }
 
-addEventListener('hashchange', demoHash)
+if (typeof window !== 'undefined') {
+  addEventListener('hashchange', demoHash)
+}
 
 /**
  * formatCode
