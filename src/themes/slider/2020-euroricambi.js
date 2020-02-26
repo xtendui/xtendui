@@ -31,6 +31,8 @@ Xt.mount.push({
     const cardTimeOn = Xt.vars.timeLarge
     const cardEaseOn = 'expo.out'
 
+    const fixDelayOn = 100
+
     // slider
 
     let self = new Xt.Slider(object, {
@@ -150,28 +152,28 @@ Xt.mount.push({
           const assetMasks = tr.querySelectorAll('.slider_img .media-container')
           for (const assetMask of assetMasks) {
             gsap.set(assetMask, { x: 100 * direction + '%' })
-            gsap.to(assetMask, { x: 0, duration: assetMaskTimeOn, ease: assetMaskEaseOn })
+            gsap.to(assetMask, { x: 0, duration: assetMaskTimeOn, ease: assetMaskEaseOn, delay: fixDelayOn })
             const assetMaskInner = assetMask.querySelector('.media-inner')
             gsap.set(assetMaskInner, { x: -100 * direction + '%' })
-            gsap.to(assetMaskInner, { x: 0, opacity: 1, duration: assetMaskTimeOn, ease: assetMaskEaseOn })
+            gsap.to(assetMaskInner, { x: 0, opacity: 1, duration: assetMaskTimeOn, ease: assetMaskEaseOn, delay: fixDelayOn })
           }
           // asset
           const assets = tr.querySelectorAll('.slider_img img')
           for (const asset of assets) {
             gsap.set(asset, { scale: 1 + assetZoom })
-            gsap.to(asset, { scale: 1, duration: assetTimeOn, ease: assetEaseOn })
+            gsap.to(asset, { scale: 1, duration: assetTimeOn, ease: assetEaseOn, delay: fixDelayOn })
           }
           // cardContent
           const cardContents = tr.querySelectorAll('.slider_card .card-item')
           for (const cardContent of cardContents) {
             gsap.set(cardContent, { x: cardContentX * direction, opacity: 0 })
-            gsap.to(cardContent, { x: 0, opacity: 1, duration: cardContentTimeOn, ease: cardContentEaseOn })
+            gsap.to(cardContent, { x: 0, opacity: 1, duration: cardContentTimeOn, ease: cardContentEaseOn, delay: fixDelayOn })
           }
           // card
           const card = tr.querySelector('.slider_card > .card')
           const cardHeight = card.clientHeight
           gsap.set(card, { height: Xt.dataStorage.get(self.object, 'cardHeight') || cardHeight })
-          gsap.to(card, { height: cardHeight, duration: cardTimeOn, ease: cardEaseOn })
+          gsap.to(card, { height: cardHeight, duration: cardTimeOn, ease: cardEaseOn, delay: fixDelayOn })
         }
       }
     }
