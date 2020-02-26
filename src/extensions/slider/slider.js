@@ -242,10 +242,15 @@ class Slider extends Xt.Toggle {
         clone.classList.add('xt-clone')
         item.appendChild(clone)
         let html = item.innerHTML
+        let classes = []
         if (html.search(new RegExp('xt-content', 'ig')) !== -1) {
           let replace = ''
           for (const slide of group) {
             replace += slide.querySelector('.slide-pagination-content').innerHTML
+            const attr = slide.querySelector('[data-slide-pagination-class]')
+            if (attr) {
+              classes.push(attr.getAttribute('data-slide-pagination-class'))
+            }
           }
           html = html.replace(new RegExp('xt-content', 'ig'), replace)
         }
@@ -256,6 +261,7 @@ class Slider extends Xt.Toggle {
           html = html.replace(new RegExp('xt-tot', 'ig'), self.groupMqInitial.length.toString())
         }
         item.innerHTML = html
+        item.children[0].classList.add(...classes)
         item.children[0].setAttribute('data-xt-group', group[0].getAttribute('data-xt-group'))
         container.insertBefore(item.children[0], cloned)
         item.remove()

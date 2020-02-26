@@ -175,6 +175,7 @@ Inside it you can use this strings that gets populated with variables:
 - `xt-num` replaced with pagination's number slide
 - `xt-tot` replaced with pagination's total slides
 - `xt-content` replaced with slide's `.slide-pagination-content` **innerHTML**.
+- Classes added with slide's `[data-slide-pagination-class]` **value**.
 
 <div class="table-scroll">
 
