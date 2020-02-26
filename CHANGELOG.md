@@ -1,3 +1,11 @@
+## [0.13.17](https://github.com/minimit/xtend-library/compare/v0.13.16...v0.13.17) (2020-02-26)
+
+
+### Bug Fixes
+
+* deploy ([8cc2618](https://github.com/minimit/xtend-library/commit/8cc26184ea727aea218d02dc96e6db72a6bfc6b4))
+* media-19-9 + slider-nodrag + slider sun68 ([a9b7826](https://github.com/minimit/xtend-library/commit/a9b782621c33243cc3df6ee0b4f65170aff5fa19))
+
 ## [0.13.16](https://github.com/minimit/xtend-library/compare/v0.13.15...v0.13.16) (2020-02-26)
 
 
