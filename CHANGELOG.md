@@ -1,3 +1,13 @@
+## [0.13.16](https://github.com/minimit/xtend-library/compare/v0.13.15...v0.13.16) (2020-02-26)
+
+
+### Bug Fixes
+
+* **demo:** fix iframe demos ([eaddc84](https://github.com/minimit/xtend-library/commit/eaddc847b3e1983d41b0d674e02932cc5f36b414))
+* fix euroricambi performances slider animation ([23687a2](https://github.com/minimit/xtend-library/commit/23687a2952b16ce93d8de9359d73e26a0749e11f))
+* **scroll:** little fix scroll ([6b909b2](https://github.com/minimit/xtend-library/commit/6b909b2d2560008807aca2bdd3994ad48e8f6cc1))
+* **slider:** slider data-slide-pagination-class ([2a93d08](https://github.com/minimit/xtend-library/commit/2a93d081d642dcdd1b84cdbbc769cc9ad179030f))
+
 ## [0.13.15](https://github.com/minimit/xtend-library/compare/v0.13.14...v0.13.15) (2020-02-24)
 
 
