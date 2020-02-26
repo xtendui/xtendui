@@ -6,9 +6,13 @@ title: "Other"
 date: "2019-03-15"
 ---
 
+## No drag
+
+Disable slider drag and cursor grab with `.slider-nodrag`.
+
 ## No overflow
 
-Slider automatically disable when not overflowing or by adding manually `.slider.slider-nooverflow`.
+Slider automatically disable when not overflowing or by adding manually `.slider-nooverflow`.
 
 <demo>
   <demovanilla src="vanilla/components/slider/no-overflow">
@@ -26,7 +30,7 @@ Use `.slider-touch-overflow` to have browser overflow on touch devices.
 
 ## Disable
 
-To disable slider use `.slider.slider-disable` also within media queries.
+To disable slider use `.slider-disable` also within media queries.
 
 <demo>
   <demovanilla src="vanilla/components/slider/disable">
@@ -35,7 +39,7 @@ To disable slider use `.slider.slider-disable` also within media queries.
 
 ## Expand
 
-To disable and expand a slider use `.slider.slider-expand` also within media queries.
+To disable and expand a slider use `.slider-expand` also within media queries.
 
 <demo>
   <demovanilla src="vanilla/components/slider/expand">

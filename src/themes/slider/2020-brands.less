@@ -1,14 +1,12 @@
 @import '~xtend-library/src/extensions/slider/slider.less';
 
 .demo--slider--2020-brands {
+  .slider-nodrag();
   .margin(y, giant);
   .slides-inner {
     .row-space(none);
     // dragger animations
     transition-timing-function: linear;
-    // disable dragger
-    cursor: default;
-    pointer-events: none;
   }
   .slide_item {
     .list();

@@ -45,7 +45,7 @@ Xt.mount.push({
       if (self.detail.dragStart - self.detail.dragCurrent > 0) {
         direction = -1
       }
-      // others
+      // content others
       for (const tr of self.targets.filter(x => !self.hasCurrent(x))) {
         const other = tr.querySelector('.slide_img_inner')
         gsap.set(other, { x: size * direction - size * ratio * direction, opacity: ratio + 0.5 })
@@ -62,7 +62,7 @@ Xt.mount.push({
     const eventDragReset = e => {
       const target = self.targets.filter(x => self.hasCurrent(x))[0]
       // content
-      const content = target.querySelector('.slide_other_inner')
+      const content = target.querySelector('.slide_img_inner')
       gsap.to(content, { x: 0, opacity: 1, duration: contentTimeOn, ease: contentEaseOn })
     }
 
@@ -74,6 +74,7 @@ Xt.mount.push({
       const target = e.target
       // useCapture delegation
       if (self.targets.includes(target)) {
+        // content
         const content = target.querySelector('.slide_img_inner')
         if (self.initial) {
           gsap.set(content, { x: 0, opacity: 1, scale: 1 })

@@ -33,3 +33,18 @@ Give `.media` one of this options:
 
 [[notePrimary]]
 | If you want to support [old browsers](https://caniuse.com/#feat=object-fit), use [object-fit polyfills](https://github.com/fregante/object-fit-images).
+
+## Aspect ratio
+
+<div class="table-scroll">
+
+|                         | Class                                     | Mixin                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.media-16-9`                 | `.media-none()`        | Video and iframes with aspect ratio 16/9            |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/media/16-9">
+  </demovanilla>
+</demo>
