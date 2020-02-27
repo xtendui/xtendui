@@ -28,8 +28,7 @@ Xt.mount.push({
         // set auto time
         const draggerWidth = self.dragger.offsetWidth
         const slideWidth = tr.offsetWidth
-        let time
-        time = slideWidth * 25
+        let time = slideWidth * 25
         if (object.classList.contains('demo--slider--2020-brands--factor')) {
           time = (draggerWidth / slideWidth) * 100000 // faster the less horizontal space
         }
