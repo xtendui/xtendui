@@ -941,16 +941,16 @@
   margin-top: @val;
   margin-bottom: @val;
 }
-.print-margin(@pos, @val, @breakpoint) when (@pos = l) {
+.print-margin(@pos, @val, @breakpoint) when (@pos = left) {
   margin-left: @val;
 }
-.print-margin(@pos, @val, @breakpoint) when (@pos = r) {
+.print-margin(@pos, @val, @breakpoint) when (@pos = right) {
   margin-right: @val;
 }
-.print-margin(@pos, @val, @breakpoint) when (@pos = t) {
+.print-margin(@pos, @val, @breakpoint) when (@pos = top) {
   margin-top: @val;
 }
-.print-margin(@pos, @val, @breakpoint) when (@pos = b) {
+.print-margin(@pos, @val, @breakpoint) when (@pos = bottom) {
   margin-bottom: @val;
 }
 
@@ -999,16 +999,16 @@
   margin-top: -@val;
   margin-bottom: -@val;
 }
-.print-margin-remove(@pos, @val, @breakpoint) when (@pos = l) {
+.print-margin-remove(@pos, @val, @breakpoint) when (@pos = left) {
   margin-left: -@val;
 }
-.print-margin-remove(@pos, @val, @breakpoint) when (@pos = r) {
+.print-margin-remove(@pos, @val, @breakpoint) when (@pos = right) {
   margin-right: -@val;
 }
-.print-margin-remove(@pos, @val, @breakpoint) when (@pos = t) {
+.print-margin-remove(@pos, @val, @breakpoint) when (@pos = top) {
   margin-top: -@val;
 }
-.print-margin-remove(@pos, @val, @breakpoint) when (@pos = b) {
+.print-margin-remove(@pos, @val, @breakpoint) when (@pos = bottom) {
   margin-bottom: -@val;
 }
 
@@ -1016,7 +1016,7 @@
 
 & when not (@generate-margin = false) {
 
-  @margin-arr: all, x, y, l, r, t, b;
+  @margin-arr: all, x, y, left, right, top, bottom;
 
   // layout
 
@@ -1161,22 +1161,22 @@
       padding-bottom: 0;
     }
   }
-  & when (@size = layout) and (@pos = l) {
+  & when (@size = layout) and (@pos = left) {
     &:first-child {
       padding-left: 0;
     }
   }
-  & when (@size = layout) and (@pos = r) {
+  & when (@size = layout) and (@pos = right) {
     &:last-child {
       padding-right: 0;
     }
   }
-  & when (@size = layout) and (@pos = t) {
+  & when (@size = layout) and (@pos = top) {
     &:first-child {
       padding-top: 0;
     }
   }
-  & when (@size = layout) and (@pos = b) {
+  & when (@size = layout) and (@pos = bottom) {
     &:last-child {
       padding-bottom: 0;
     }
@@ -1217,16 +1217,16 @@
   padding-top: @val;
   padding-bottom: @val;
 }
-.print-padding(@pos, @val, @breakpoint) when (@pos = l) {
+.print-padding(@pos, @val, @breakpoint) when (@pos = left) {
   padding-left: @val;
 }
-.print-padding(@pos, @val, @breakpoint) when (@pos = r) {
+.print-padding(@pos, @val, @breakpoint) when (@pos = right) {
   padding-right: @val;
 }
-.print-padding(@pos, @val, @breakpoint) when (@pos = t) {
+.print-padding(@pos, @val, @breakpoint) when (@pos = top) {
   padding-top: @val;
 }
-.print-padding(@pos, @val, @breakpoint) when (@pos = b) {
+.print-padding(@pos, @val, @breakpoint) when (@pos = bottom) {
   padding-bottom: @val;
 }
 
@@ -1234,7 +1234,7 @@
 
 & when not (@generate-padding = false) {
 
-  @padding-arr: all, x, y, l, r, t, b;
+  @padding-arr: all, x, y, left, right, top, bottom;
 
   // layout
 
