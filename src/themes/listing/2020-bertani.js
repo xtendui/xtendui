@@ -90,9 +90,9 @@ Xt.mount.push({
 
     const eventEnter = e => {
       // img
-      const img = link.querySelector('.parallax_img')
+      const img = link.querySelector('.media-container')
       gsap.to(img, { scale: 1 - imgScale, duration: Xt.vars.timeMedium, ease: 'expo.out' })
-      const imgInner = link.querySelector('.parallax_img_inner')
+      const imgInner = link.querySelector('.media-inner')
       gsap.to(imgInner, { scale: 1 + imgScale, duration: Xt.vars.timeMedium, ease: 'expo.out' })
       // text
       const text = object.querySelector('.btn--line_text')
@@ -110,9 +110,9 @@ Xt.mount.push({
 
     const eventLeave = e => {
       // img
-      const img = link.querySelector('.parallax_img')
+      const img = link.querySelector('.media-container')
       gsap.to(img, { scale: 1, duration: Xt.vars.timeMedium, ease: 'expo.inOut' })
-      const imgInner = link.querySelector('.parallax_img_inner')
+      const imgInner = link.querySelector('.media-inner')
       gsap.to(imgInner, { scale: 1, duration: Xt.vars.timeMedium, ease: 'expo.inOut' })
       // text
       const text = object.querySelector('.btn--line_text')

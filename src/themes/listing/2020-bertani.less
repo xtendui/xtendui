@@ -34,7 +34,10 @@
     z-index: 1;
     .col(12);
     .col-custom(40%, sm);
-    .parallax_item--big & {
+  }
+
+  .parallax_item--big {
+    .parallax_img_col {
       .col-custom(55%, sm);
     }
   }
@@ -65,7 +68,10 @@
 
   .parallax_content {
     .padding(x, giant);
-    .parallax_item--align-right & {
+  }
+
+  .parallax_item--align-right {
+    .parallax_content {
       text-align: right;
     }
   }
@@ -81,6 +87,13 @@
     line-height: 2.5;
   }
 
+  .parallax_item--desc-right {
+    .parallax_desc {
+      .padding(left, 6rem);
+      .margin-remove(right, 18rem);
+    }
+  }
+
   .parallax_item--right {
     .parallax_img_col {
       .order(2, sm);
@@ -91,13 +104,6 @@
     .parallax_title {
       .margin(left, 0);
       .margin-remove(right, 12rem);
-    }
-  }
-
-  .parallax_item--desc-right {
-    .parallax_desc {
-      .padding(left, 6rem);
-      .margin-remove(right, 18rem);
     }
   }
 
