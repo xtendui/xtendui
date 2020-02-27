@@ -23,58 +23,58 @@ demo.htmlSource = `
             <li class="slide">
                 <div class="slide-inner">
                     <div class="slide_item">
-                        <div class="slide_text">
+                        <div class="slide_content">
                             Lorem
                         </div>
-                        <div class="slide_text">
+                        <div class="slide_content">
                             ipsum
                         </div>
-                        <div class="slide_text">
+                        <div class="slide_content">
                             dolor sit amet
                         </div>
-                        <div class="slide_text">
+                        <div class="slide_content">
                             consectetur
                         </div>
-                        <div class="slide_text">
+                        <div class="slide_content">
                             adipiscing elit
                         </div>
-                        <div class="slide_text">
+                        <div class="slide_content">
                             Nunc
                         </div>
-                        <div class="slide_text">
+                        <div class="slide_content">
                             tempus
                         </div>
-                        <div class="slide_text">
+                        <div class="slide_content">
                             laoreet
                         </div>
-                        <div class="slide_text">
+                        <div class="slide_content">
                             leo sit amet iaculis
                         </div>
-                        <div class="slide_text">
+                        <div class="slide_content">
                             Lorem
                         </div>
-                        <div class="slide_text">
+                        <div class="slide_content">
                             ipsum
                         </div>
-                        <div class="slide_text">
+                        <div class="slide_content">
                             dolor sit amet
                         </div>
-                        <div class="slide_text">
+                        <div class="slide_content">
                             consectetur
                         </div>
-                        <div class="slide_text">
+                        <div class="slide_content">
                             adipiscing elit
                         </div>
-                        <div class="slide_text">
+                        <div class="slide_content">
                             Nunc
                         </div>
-                        <div class="slide_text">
+                        <div class="slide_content">
                             tempus
                         </div>
-                        <div class="slide_text">
+                        <div class="slide_content">
                             laoreet
                         </div>
-                        <div class="slide_text">
+                        <div class="slide_content">
                             leo sit amet iaculis
                         </div>
                     </div>
@@ -91,7 +91,7 @@ demo.htmlSource = `
 
 </div>
 
-<div class="slider demo--slider--2020-brands demo--slider--2020-brands--constant">
+<div class="slider demo--slider--2020-brands demo--slider--2020-brands--factor">
 
     <div class="slides">
         <ul class="slides-inner">
@@ -99,37 +99,37 @@ demo.htmlSource = `
             <li class="slide">
                 <div class="slide-inner">
                     <div class="slide_item">
-                        <div class="slide_text">
+                        <div class="slide_content">
                             Lorem
                         </div>
-                        <div class="slide_text">
+                        <div class="slide_content">
                             ipsum
                         </div>
-                        <div class="slide_text">
+                        <div class="slide_content">
                             dolor sit amet
                         </div>
-                        <div class="slide_text">
+                        <div class="slide_content">
                             consectetur
                         </div>
-                        <div class="slide_text">
+                        <div class="slide_content">
                             adipiscing elit
                         </div>
-                        <div class="slide_text">
+                        <div class="slide_content">
                             Nunc
                         </div>
-                        <div class="slide_text">
+                        <div class="slide_content">
                             tempus
                         </div>
-                        <div class="slide_text">
+                        <div class="slide_content">
                             laoreet
                         </div>
-                        <div class="slide_text">
+                        <div class="slide_content">
                             leo sit amet iaculis
                         </div>
-                        <div class="slide_text">
+                        <div class="slide_content">
                             Lorem
                         </div>
-                        <div class="slide_text">
+                        <div class="slide_content">
                             ipsum
                         </div>
                         <div class="slide_text">
