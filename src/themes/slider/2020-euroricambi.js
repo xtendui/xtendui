@@ -37,7 +37,7 @@ Xt.mount.push({
 
     let self = new Xt.Slider(object, {
       instant: { elements: true, elementsInner: true },
-      durationOn: Xt.vars.timeLarge,
+      durationOn: Xt.vars.timeLarge + fixDelayOn,
       durationOff: Xt.vars.timeSmall,
       auto: {
         time: 4500,
