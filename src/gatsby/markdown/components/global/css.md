@@ -24,7 +24,7 @@ There are also shadow and gradient variables.
 
 You have also spacing **margin** and **padding** vars that you can use with a **mixin** to have well-established spacing everywhere.
 
-Available positions are: `left` `right` `top` `bottom` `x` `y` `all`.
+Available positions are: `all` `x` `y` `l` `r` `t` `b`.
 
 Available sizes are: `layout` `auto` `none` `micro` `mini` `tiny` `small` `medium` `large` `big` `giant` `huge`.
 

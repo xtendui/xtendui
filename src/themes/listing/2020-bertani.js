@@ -71,7 +71,7 @@ Xt.mount.push({
       object.appendChild(wrapper);
     }
 
-    // append
+    // prepend
 
     if (!object.querySelector('.btn--line_line')) {
       object.prepend(Xt.createElement('<span class="btn--line_line"></span>'))
