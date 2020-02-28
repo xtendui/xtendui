@@ -102,8 +102,7 @@
       [
         "@semantic-release/exec",
         {
-          "publishCmd": "npm run pack",
-          "successCmd": "npm run deploy"
+          "publishCmd": "npm run pack"
         }
       ],
       [
