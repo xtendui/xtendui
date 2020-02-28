@@ -2020,6 +2020,11 @@ class Toggle {
       }
       el = elFinal
     }
+    // stop old when changing wheel target
+    if (self.wheelTarget !== el) {
+      self.eventWheelstop()
+    }
+    self.wheelTarget = el
     // delta
     if (e.deltaMode === 1) {
       // deltaMode 1: by lines

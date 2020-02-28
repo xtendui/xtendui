@@ -14,9 +14,7 @@ Prism.manual = true
  * demoHash
  */
 
-let ignoreHash = false
-
-const demoHash = e => {
+const demoHash = (e, skipIgnore = false) => {
   // call offdone.xt
   document.querySelector('#gatbsy_open-full-trigger').dispatchEvent(new CustomEvent('off.trigger.xt'))
   // set hash cancel
@@ -27,7 +25,7 @@ const demoHash = e => {
     if (item) {
       const demo = item.closest('.gatsby_demo')
       if (demo) {
-        makeFullscreen(demo)
+        makeFullscreen(demo, skipIgnore)
       }
     }
   }

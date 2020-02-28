@@ -24,12 +24,6 @@ html.gatsby_iframe-container {
   }
 }
 
-html.gatsby_iframe-full {
-  body {
-    overflow: hidden !important;
-  }
-}
-
 /**
  * svg
  */
@@ -161,6 +155,9 @@ pre {
     .toggle-flex();
     .gatsby_demo_item_wrapper {
       position: relative;
+      #gatbsy_open-full & {
+        height: auto !important;
+      }
     }
     .gatsby_demo_code {
       .toggle-block();

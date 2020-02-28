@@ -259,6 +259,13 @@ Use `wheel: { selector: 'object' }` or `wheel: { selector: QuerySelector }` to e
   </demovanilla>
 </demo>
 
+Use the [api](/components/slider/api#listen) and listen to events to make auto progress indicators.
+
+<demo>
+  <demovanilla src="vanilla/components/slider/progress">
+  </demovanilla>
+</demo>
+
 ## Other
 
 <div class="table-scroll">

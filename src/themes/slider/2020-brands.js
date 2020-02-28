@@ -26,13 +26,11 @@ Xt.mount.push({
       // useCapture delegation
       if (self.targets.includes(tr)) {
         // set auto time
-        const draggerWidth = self.dragger.offsetWidth
         const slideWidth = tr.offsetWidth
-        let time
-        if (object.classList.contains('demo--slider--2020-brands--constant')) {
-          time = (slideWidth / draggerWidth) * 50000
-        } else {
-          time = (draggerWidth / slideWidth) * 100000
+        const draggerWidth = self.dragger.offsetWidth
+        let time = slideWidth * 25
+        if (object.classList.contains('demo--slider--2020-brands--factor')) {
+          time = (draggerWidth / slideWidth) * 100000 // faster the less horizontal space
         }
         self.options.auto.time = time
         self.object.querySelector('.slides-inner').style.transitionDuration = time + 'ms'

@@ -933,18 +933,12 @@
 .print-margin(@pos, @val, @breakpoint) when (@pos = all) {
   margin: @val;
 }
-.print-margin(@pos, @val, @breakpoint) when (@pos = y) {
-  margin-top: @val;
-  margin-bottom: @val;
-}
 .print-margin(@pos, @val, @breakpoint) when (@pos = x) {
   margin-left: @val;
   margin-right: @val;
 }
-.print-margin(@pos, @val, @breakpoint) when (@pos = top) {
+.print-margin(@pos, @val, @breakpoint) when (@pos = y) {
   margin-top: @val;
-}
-.print-margin(@pos, @val, @breakpoint) when (@pos = bottom) {
   margin-bottom: @val;
 }
 .print-margin(@pos, @val, @breakpoint) when (@pos = left) {
@@ -952,6 +946,12 @@
 }
 .print-margin(@pos, @val, @breakpoint) when (@pos = right) {
   margin-right: @val;
+}
+.print-margin(@pos, @val, @breakpoint) when (@pos = top) {
+  margin-top: @val;
+}
+.print-margin(@pos, @val, @breakpoint) when (@pos = bottom) {
+  margin-bottom: @val;
 }
 
 // margin-remove
@@ -991,18 +991,12 @@
 .print-margin-remove(@pos, @val, @breakpoint) when (@pos = all) {
   margin: -@val;
 }
-.print-margin-remove(@pos, @val, @breakpoint) when (@pos = y) {
-  margin-top: -@val;
-  margin-bottom: -@val;
-}
 .print-margin-remove(@pos, @val, @breakpoint) when (@pos = x) {
   margin-left: -@val;
   margin-right: -@val;
 }
-.print-margin-remove(@pos, @val, @breakpoint) when (@pos = top) {
+.print-margin-remove(@pos, @val, @breakpoint) when (@pos = y) {
   margin-top: -@val;
-}
-.print-margin-remove(@pos, @val, @breakpoint) when (@pos = bottom) {
   margin-bottom: -@val;
 }
 .print-margin-remove(@pos, @val, @breakpoint) when (@pos = left) {
@@ -1011,32 +1005,42 @@
 .print-margin-remove(@pos, @val, @breakpoint) when (@pos = right) {
   margin-right: -@val;
 }
+.print-margin-remove(@pos, @val, @breakpoint) when (@pos = top) {
+  margin-top: -@val;
+}
+.print-margin-remove(@pos, @val, @breakpoint) when (@pos = bottom) {
+  margin-bottom: -@val;
+}
 
 // generate
 
 & when not (@generate-margin = false) {
 
-  @margin-arr: none, y, x, t, b, l, r;
+  @margin-arr: all, x, y, left, right, top, bottom;
 
   // layout
 
-  .m-y-layout {
+  .m-all-layout {
     .margin(y, layout) !important;
+    .margin(x, layout) !important;
   }
   .m-x-layout {
     .margin(x, layout) !important;
   }
-  .m-top-layout {
-    .margin(top, layout) !important;
+  .m-y-layout {
+    .margin(y, layout) !important;
   }
-  .m-bottom-layout {
-    .margin(bottom, layout) !important;
-  }
-  .m-left-layout {
+  .m-l-layout {
     .margin(left, layout) !important;
   }
-  .m-right-layout {
+  .m-r-layout {
     .margin(right, layout) !important;
+  }
+  .m-t-layout {
+    .margin(top, layout) !important;
+  }
+  .m-b-layout {
+    .margin(bottom, layout) !important;
   }
 
   // generate-margins
@@ -1141,14 +1145,6 @@
     .loop-padding(@pos, @size, @breakpoint);
   }
   // layout
-  & when (@size = layout) and (@pos = y) {
-    &:first-child {
-      padding-top: 0;
-    }
-    &:last-child {
-      padding-bottom: 0;
-    }
-  }
   & when (@size = layout) and (@pos = x) {
     &:first-child {
       padding-left: 0;
@@ -1157,12 +1153,10 @@
       padding-right: 0;
     }
   }
-  & when (@size = layout) and (@pos = top) {
+  & when (@size = layout) and (@pos = y) {
     &:first-child {
       padding-top: 0;
     }
-  }
-  & when (@size = layout) and (@pos = bottom) {
     &:last-child {
       padding-bottom: 0;
     }
@@ -1175,6 +1169,16 @@
   & when (@size = layout) and (@pos = right) {
     &:last-child {
       padding-right: 0;
+    }
+  }
+  & when (@size = layout) and (@pos = top) {
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+  & when (@size = layout) and (@pos = bottom) {
+    &:last-child {
+      padding-bottom: 0;
     }
   }
 }
@@ -1205,18 +1209,12 @@
 .print-padding(@pos, @val, @breakpoint) when (@pos = all) {
   padding: @val;
 }
-.print-padding(@pos, @val, @breakpoint) when (@pos = y) {
-  padding-top: @val;
-  padding-bottom: @val;
-}
 .print-padding(@pos, @val, @breakpoint) when (@pos = x) {
   padding-left: @val;
   padding-right: @val;
 }
-.print-padding(@pos, @val, @breakpoint) when (@pos = top) {
+.print-padding(@pos, @val, @breakpoint) when (@pos = y) {
   padding-top: @val;
-}
-.print-padding(@pos, @val, @breakpoint) when (@pos = bottom) {
   padding-bottom: @val;
 }
 .print-padding(@pos, @val, @breakpoint) when (@pos = left) {
@@ -1225,32 +1223,42 @@
 .print-padding(@pos, @val, @breakpoint) when (@pos = right) {
   padding-right: @val;
 }
+.print-padding(@pos, @val, @breakpoint) when (@pos = top) {
+  padding-top: @val;
+}
+.print-padding(@pos, @val, @breakpoint) when (@pos = bottom) {
+  padding-bottom: @val;
+}
 
 // generate
 
 & when not (@generate-padding = false) {
 
-  @padding-arr: none, y, x, t, b, l, r;
+  @padding-arr: all, x, y, left, right, top, bottom;
 
   // layout
 
-  .p-y-layout {
+  .p-all-layout {
     .padding(y, layout) !important;
+    .padding(x, layout) !important;
   }
   .p-x-layout {
     .padding(x, layout) !important;
   }
-  .p-top-layout {
-    .padding(top, layout) !important;
+  .p-y-layout {
+    .padding(y, layout) !important;
   }
-  .p-bottom-layout {
-    .padding(bottom, layout) !important;
-  }
-  .p-left-layout {
+  .p-l-layout {
     .padding(left, layout) !important;
   }
-  .p-right-layout {
+  .p-r-layout {
     .padding(right, layout) !important;
+  }
+  .p-t-layout {
+    .padding(top, layout) !important;
+  }
+  .p-b-layout {
+    .padding(bottom, layout) !important;
   }
 
   // generate-paddings
