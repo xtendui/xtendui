@@ -1,3 +1,60 @@
+## [0.13.37](https://github.com/minimit/xtend-library/compare/v0.13.36...v0.13.37) (2020-02-28)
+
+
+### Bug Fixes
+
+* ci removed semantic release exec ([a2604cb](https://github.com/minimit/xtend-library/commit/a2604cb09d06c9a7fd90c8e4c0c27e4d0078e05e))
+
+## [0.13.36](https://github.com/minimit/xtend-library/compare/v0.13.35...v0.13.36) (2020-02-28)
+
+
+### Bug Fixes
+
+* ci ([6f5cda9](https://github.com/minimit/xtend-library/commit/6f5cda99264133136aed9ccfa10c4e2534229a27))
+
+## [0.13.35](https://github.com/minimit/xtend-library/compare/v0.13.34...v0.13.35) (2020-02-28)
+
+
+### Bug Fixes
+
+* ci ([04f4b92](https://github.com/minimit/xtend-library/commit/04f4b92bba8e682bad484ca69db8dbc466009568))
+
+## [0.13.34](https://github.com/minimit/xtend-library/compare/v0.13.33...v0.13.34) (2020-02-28)
+
+
+### Bug Fixes
+
+* ci ([0fa93c1](https://github.com/minimit/xtend-library/commit/0fa93c16daf0c1581f4d78feba70278683064168))
+
+## [0.13.33](https://github.com/minimit/xtend-library/compare/v0.13.32...v0.13.33) (2020-02-28)
+
+
+### Bug Fixes
+
+* ci ([b6cc6c3](https://github.com/minimit/xtend-library/commit/b6cc6c30f62ecdcc2848107a73c3bbb0e14db527))
+* ci ([915d3ce](https://github.com/minimit/xtend-library/commit/915d3cec39a24f2e9eab190d112828ee2d424bc0))
+
+## [0.13.32](https://github.com/minimit/xtend-library/compare/v0.13.31...v0.13.32) (2020-02-28)
+
+
+### Bug Fixes
+
+* skip ci ([b12fa91](https://github.com/minimit/xtend-library/commit/b12fa91117495f8d634840a98275b7d9a66ff012))
+
+## [0.13.31](https://github.com/minimit/xtend-library/compare/v0.13.30...v0.13.31) (2020-02-28)
+
+
+### Bug Fixes
+
+* semantic-release exec ([318f65c](https://github.com/minimit/xtend-library/commit/318f65cf4023cc960411662ba0145136f7d96d16))
+
+## [0.13.30](https://github.com/minimit/xtend-library/compare/v0.13.29...v0.13.30) (2020-02-28)
+
+
+### Bug Fixes
+
+* npmignore dist ([c512a05](https://github.com/minimit/xtend-library/commit/c512a055e6d02ebe6f617c41454f936a22eec963))
+
 ## [0.13.29](https://github.com/minimit/xtend-library/compare/v0.13.28...v0.13.29) (2020-02-28)
 
 

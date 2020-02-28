@@ -1,6 +1,6 @@
 {
   "name": "xtend-library",
-  "version": "0.13.29",
+  "version": "0.13.37",
   "description": "Frontend library",
   "homepage": "http://getxtend.com/",
   "license": "MIT",
@@ -12,9 +12,6 @@
     "components",
     "vanilla"
   ],
-  "files": [
-    "/dist"
-  ],
   "main": "dist/xtend.min.js",
   "module": "src/xt.js",
   "scripts": {
@@ -25,7 +22,8 @@
     "deploy": "npm run build && gh-pages -d public",
     "release": "npx semantic-release --no-ci",
     "release:dry": "npx semantic-release --dry-run",
-    "lint": "eslint src/** --fix"
+    "lint": "eslint src/** --fix",
+    "prepublishOnly": "npm run pack"
   },
   "dependencies": {
     "bezier-easing": "^2.1.0",
@@ -42,7 +40,6 @@
     "@hot-loader/react-dom": "^16.11.0",
     "@semantic-release/changelog": "^3.0.6",
     "@semantic-release/commit-analyzer": "^6.1.0",
-    "@semantic-release/exec": "^3.3.2",
     "@semantic-release/git": "^7.0.8",
     "@semantic-release/github": "^5.5.8",
     "@semantic-release/release-notes-generator": "^7.3.5",
@@ -99,12 +96,6 @@
       "@semantic-release/release-notes-generator",
       "@semantic-release/changelog",
       "@semantic-release/npm",
-      [
-        "@semantic-release/exec",
-        {
-          "publishCmd": "npm run pack"
-        }
-      ],
       [
         "@semantic-release/git",
         {
