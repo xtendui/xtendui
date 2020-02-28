@@ -8,15 +8,20 @@ on:
 jobs:
   build:
 
+    if: "! contains(toJSON(github.event.commits.*.msg), '[skip-ci]')"
+
     runs-on: ubuntu-latest
 
     steps:
+
     - name: Checkout
       uses: actions/checkout@v2
       with:
         persist-credentials: false
+
     - name: Npm Install
       run: npm ci
+
     - name: Semantic Release
       uses: cycjimmy/semantic-release-action@v2
       with:
@@ -30,8 +35,10 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.semantic_release_github_token }}
         NPM_TOKEN: ${{ secrets.semantic_release_npm_token }}
+
     - name: Build
       run: npm run build
+      
     - name: Github Pages
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:

@@ -22,7 +22,8 @@
     "deploy": "npm run build && gh-pages -d public",
     "release": "npx semantic-release --no-ci",
     "release:dry": "npx semantic-release --dry-run",
-    "lint": "eslint src/** --fix"
+    "lint": "eslint src/** --fix",
+    "prepare": "npm run pack"
   },
   "dependencies": {
     "bezier-easing": "^2.1.0",
