@@ -1,3 +1,16 @@
+## [0.13.18](https://github.com/minimit/xtend-library/compare/v0.13.17...v0.13.18) (2020-02-28)
+
+
+### Bug Fixes
+
+* fix docs fullscreen makefullscreen + others ([e61e466](https://github.com/minimit/xtend-library/commit/e61e466f8dd737f3abbd02a243f718e49eac33d2))
+* little fix euroricambi slider duration ([2a4e980](https://github.com/minimit/xtend-library/commit/2a4e980fa51170a71af3164280316b33426cc567))
+* test github actions ([c993add](https://github.com/minimit/xtend-library/commit/c993add9b4cad3f616e942079ffe19d3e2c2d53f))
+* test github actions ([a6ed495](https://github.com/minimit/xtend-library/commit/a6ed495bd0f102a9219563d875ad9f02a24a2ac1))
+* test github actions ([ad1b633](https://github.com/minimit/xtend-library/commit/ad1b63310bb88af619edb6635c5c1e5ed471c37d))
+* test github actions ([db83ff9](https://github.com/minimit/xtend-library/commit/db83ff9dcffa05535e1d50695614b3297ecd8a4e))
+* **wheel:** stop wheel when changing targets ([fcc1314](https://github.com/minimit/xtend-library/commit/fcc131420243a7f494beae9755f467f5162cdf54))
+
 ## [0.13.17](https://github.com/minimit/xtend-library/compare/v0.13.16...v0.13.17) (2020-02-26)
 
 
