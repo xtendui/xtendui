@@ -206,7 +206,7 @@ Xt.mount.push({
         // cardContent
         const cardContents = tr.querySelectorAll('.slider_card .card-item')
         for (const cardContent of cardContents) {
-          gsap.to(cardContent, {  x: -cardContentX * direction, opacity: 0, duration: cardContentTimeOff, ease: cardContentEaseOff })
+          gsap.to(cardContent, { x: -cardContentX * direction, opacity: 0, duration: cardContentTimeOff, ease: cardContentEaseOff })
         }
         // card
         const card = tr.querySelector('.slider_card > .card')

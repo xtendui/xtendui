@@ -36,7 +36,7 @@ Xt.mount.push({
       // scroll to views
       cancelAnimationFrame(raf)
       raf = requestAnimationFrame(() => {
-        window.scrollTo(window.scrollX, window.scrollY - Xt.windowHeight * scrollWindowFactor);
+        window.scrollTo(window.scrollX, window.scrollY - Xt.windowHeight * scrollWindowFactor)
       })
     }
 

@@ -64,11 +64,11 @@ Xt.mount.push({
     // wrap
 
     if (!object.querySelector('.btn--line_text')) {
-      const wrapper = Xt.createElement('<span class="btn--line_text"></span>');
+      const wrapper = Xt.createElement('<span class="btn--line_text"></span>')
       while (object.firstChild) {
-        wrapper.appendChild(object.firstChild);
+        wrapper.appendChild(object.firstChild)
       }
-      object.appendChild(wrapper);
+      object.appendChild(wrapper)
     }
 
     // prepend

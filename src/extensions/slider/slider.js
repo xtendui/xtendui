@@ -496,7 +496,11 @@ class Slider extends Xt.Toggle {
           self.eventDragstart(dragger, e)
         }
         // drag end
-        const dragendHandler = Xt.dataStorage.put(dragger, 'mouseup touchend/drag' + '/' + self.namespace, self.eventDragendHandler.bind(self).bind(self, dragger))
+        const dragendHandler = Xt.dataStorage.put(
+          dragger,
+          'mouseup touchend/drag' + '/' + self.namespace,
+          self.eventDragendHandler.bind(self).bind(self, dragger)
+        )
         const events = ['mouseup', 'touchend']
         for (const event of events) {
           addEventListener(event, dragendHandler)
