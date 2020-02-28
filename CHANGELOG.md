@@ -1,3 +1,10 @@
+## [0.13.37](https://github.com/minimit/xtend-library/compare/v0.13.36...v0.13.37) (2020-02-28)
+
+
+### Bug Fixes
+
+* ci removed semantic release exec ([a2604cb](https://github.com/minimit/xtend-library/commit/a2604cb09d06c9a7fd90c8e4c0c27e4d0078e05e))
+
 ## [0.13.36](https://github.com/minimit/xtend-library/compare/v0.13.35...v0.13.36) (2020-02-28)
 
 
