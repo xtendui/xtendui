@@ -23,7 +23,7 @@
     "release": "npx semantic-release --no-ci",
     "release:dry": "npx semantic-release --dry-run",
     "lint": "eslint src/** --fix",
-    "prepublish": "npm run pack"
+    "prepare": "npm run pack"
   },
   "dependencies": {
     "bezier-easing": "^2.1.0",
