@@ -1,5 +1,6 @@
 # WIP pre 1.0 version: api changing fast
 
+test semantic release
 
 ## Installation
 
