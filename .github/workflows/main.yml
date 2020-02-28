@@ -37,3 +37,5 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.github_pages_github_token }}
         BRANCH: gh-pages
         FOLDER: public
+        GIT_CONFIG_NAME: minimit
+        GIT_CONFIG_EMAIL: beaver82@gmail.com
