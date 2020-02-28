@@ -12,9 +12,6 @@
     "components",
     "vanilla"
   ],
-  "files": [
-    "/dist"
-  ],
   "main": "dist/xtend.min.js",
   "module": "src/xt.js",
   "scripts": {
