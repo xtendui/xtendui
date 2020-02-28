@@ -10,7 +10,7 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: npm install
+    - name: Install
       run: npm ci
     - name: Semantic Release
       uses: cycjimmy/semantic-release-action@v2
@@ -18,10 +18,15 @@ jobs:
         extra_plugins: |
             @semantic-release/changelog
             @semantic-release/commit-analyzer
-            @semantic-release/exec
             @semantic-release/git
             @semantic-release/github
             @semantic-release/release-notes-generator
       env:
         GITHUB_TOKEN: ${{ secrets.semantic_release_github_token }}
         NPM_TOKEN: ${{ secrets.semantic_release_npm_token }}
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        ACCESS_TOKEN: ${{ secrets.semantic_release_github_token }}
+        BRANCH: gh-pages
+        FOLDER: public
