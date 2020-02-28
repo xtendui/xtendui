@@ -1,3 +1,10 @@
+## [0.13.28](https://github.com/minimit/xtend-library/compare/v0.13.27...v0.13.28) (2020-02-28)
+
+
+### Bug Fixes
+
+* test github actions ([7a9bddb](https://github.com/minimit/xtend-library/commit/7a9bddb077042a9dc3f2b6c3397c5a7baeb4ece6))
+
 ## [0.13.27](https://github.com/minimit/xtend-library/compare/v0.13.26...v0.13.27) (2020-02-28)
 
 
