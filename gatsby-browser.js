@@ -24,4 +24,11 @@ exports.onRouteUpdate = () => {
   if (sidebarArticle) {
     sidebarArticle.scrollTop = sidebarArticleScrolltop
   }
+  // @FIX popstate #gatbsy_open-full
+  for (const link of document.querySelectorAll('.gatsby_btn-site_article_sidebar.active')) {
+    link.addEventListener('click', e => {
+      e.preventDefault()
+      location.hash = ''
+    })
+  }
 }
