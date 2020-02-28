@@ -1,6 +1,6 @@
 {
   "name": "xtend-library",
-  "version": "0.13.32",
+  "version": "0.13.29",
   "description": "Frontend library",
   "homepage": "http://getxtend.com/",
   "license": "MIT",
@@ -22,8 +22,7 @@
     "deploy": "npm run build && gh-pages -d public",
     "release": "npx semantic-release --no-ci",
     "release:dry": "npx semantic-release --dry-run",
-    "lint": "eslint src/** --fix",
-    "prepare": "npm run pack"
+    "lint": "eslint src/** --fix"
   },
   "dependencies": {
     "bezier-easing": "^2.1.0",
@@ -100,7 +99,8 @@
       [
         "@semantic-release/exec",
         {
-          "publishCmd": "npm run pack"
+          "publishCmd": "npm run pack",
+          "successCmd": "rm dist/*.min.css rm dist/*.min.js rm dist/*.map"
         }
       ],
       [
