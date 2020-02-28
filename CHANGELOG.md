@@ -1,3 +1,10 @@
+## [0.13.38](https://github.com/minimit/xtend-library/compare/v0.13.37...v0.13.38) (2020-02-28)
+
+
+### Bug Fixes
+
+* ci ([2958049](https://github.com/minimit/xtend-library/commit/29580496801a4c28b9519d572686d8401f49ee46))
+
 ## [0.13.37](https://github.com/minimit/xtend-library/compare/v0.13.36...v0.13.37) (2020-02-28)
 
 
