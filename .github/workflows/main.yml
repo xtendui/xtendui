@@ -12,7 +12,7 @@ jobs:
       uses: actions/checkout@v2
     - name: Install
       run: npm ci
-    - name: Semantic Release
+    - name: Release
       uses: cycjimmy/semantic-release-action@v2
       with:
         extra_plugins: |
@@ -27,6 +27,6 @@ jobs:
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
-        ACCESS_TOKEN: ${{ secrets.semantic_release_github_token }}
+        ACCESS_TOKEN: ${{ secrets.github_pages_github_token }}
         BRANCH: gh-pages
         FOLDER: public
