@@ -99,8 +99,7 @@
       [
         "@semantic-release/exec",
         {
-          "publishCmd": "npm run pack",
-          "successCmd": "rm dist/*.min.css rm dist/*.min.js rm dist/*.map"
+          "publishCmd": "npm run pack"
         }
       ],
       [
