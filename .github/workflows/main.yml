@@ -20,10 +20,6 @@ jobs:
             @semantic-release/git
             @semantic-release/github
             @semantic-release/release-notes-generator
-            terser-webpack-plugin
-            optimize-css-assets-webpack-plugin
-            mini-css-extract-plugin
-            webpack
       env:
         GITHUB_TOKEN: ${{ secrets.semantic_release_github_token }}
         NPM_TOKEN: ${{ secrets.semantic_release_npm_token }}

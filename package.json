@@ -1,6 +1,6 @@
 {
   "name": "xtend-library",
-  "version": "0.13.22",
+  "version": "0.13.18",
   "description": "Frontend library",
   "homepage": "http://getxtend.com/",
   "license": "MIT",
@@ -11,6 +11,9 @@
     "library",
     "components",
     "vanilla"
+  ],
+  "files": [
+     "/dist"
   ],
   "main": "dist/xtend.min.js",
   "module": "src/xt.js",
@@ -99,6 +102,7 @@
       [
         "@semantic-release/exec",
         {
+          "publishCmd": "npm run pack",
           "successCmd": "npm run deploy"
         }
       ],
@@ -108,11 +112,8 @@
           "assets": [
             "package.json",
             "package-lock.json",
-            "_config.yml",
             "CHANGELOG.md",
-            "dist/**/*.*",
-            "src/**/*.*",
-            "src/docs/assets/**/*.*"
+            "dist/**/*.*"
           ],
           "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
         }
