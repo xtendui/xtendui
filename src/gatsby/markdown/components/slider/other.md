@@ -45,10 +45,3 @@ Use `.slider-touch-overflow` to have browser overflow on touch devices.
   <demovanilla src="vanilla/components/slider/touch-overflow">
   </demovanilla>
 </demo>
-
-## @TODO
-
-<demo>
-  <demovanilla src="vanilla/components/slider/progress">
-  </demovanilla>
-</demo>

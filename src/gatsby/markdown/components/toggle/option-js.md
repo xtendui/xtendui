@@ -184,10 +184,12 @@ You can use a function for <code>delayOn</code> and <code>delayOff</code> for ex
   </demovanilla>
   <demovanilla src="vanilla/components/toggle/auto-minmax">
   </demovanilla>
+</demo>
+
+Use the [api](/components/toggle/api#listen) and listen to events to make auto progress indicators.
+
+<demo>
   <demovanilla src="vanilla/components/toggle/progress">
-    <div class="gatsby_demo_text">
-      Use <a href="/core/toggle/@TODO">auto events</a>.
-    </div>
   </demovanilla>
 </demo>
 

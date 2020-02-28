@@ -133,8 +133,7 @@ demo.htmlSource = `
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card-slide align-center"
-            style="height: 15rem">
+          <div class="card card-slide align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
