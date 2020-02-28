@@ -1,3 +1,10 @@
+## [0.13.31](https://github.com/minimit/xtend-library/compare/v0.13.30...v0.13.31) (2020-02-28)
+
+
+### Bug Fixes
+
+* semantic-release exec ([318f65c](https://github.com/minimit/xtend-library/commit/318f65cf4023cc960411662ba0145136f7d96d16))
+
 ## [0.13.30](https://github.com/minimit/xtend-library/compare/v0.13.29...v0.13.30) (2020-02-28)
 
 
