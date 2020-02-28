@@ -29,8 +29,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.semantic_release_github_token }}
         NPM_TOKEN: ${{ secrets.semantic_release_npm_token }}
-    - name: Deploy
-      run: npm run deploy
+    - name: Build
+      run: npm run build
     - name: Github Pages
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
