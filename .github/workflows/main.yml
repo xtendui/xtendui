@@ -22,7 +22,6 @@ jobs:
         extra_plugins: |
             @semantic-release/changelog
             @semantic-release/commit-analyzer
-            @semantic-release/exec
             @semantic-release/git
             @semantic-release/github
             @semantic-release/release-notes-generator
