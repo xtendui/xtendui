@@ -157,7 +157,6 @@ demo.htmlSource = `
     </ul>
   </div>
 
-
   <nav class="slider-pagination">
     <button type="button" class="btn btn-default" data-xt-nav="-1" title="Previous slide">
       <span class="icon-xt-chevron-left icon-left"></span> prev

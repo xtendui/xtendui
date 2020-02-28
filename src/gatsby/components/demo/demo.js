@@ -20,7 +20,7 @@ class Demo extends React.Component {
     for (const btnOpenFull of container.querySelectorAll('.btn-open-full')) {
       if (btnOpenFull.classList.contains('active')) {
         //makeFullscreen(container, true)
-        demoHash()
+        demoHash(null, true)
         break
       }
     }
