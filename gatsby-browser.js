@@ -4,25 +4,25 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-let sidebarArticleScrolltop = 0
+let keepSidebarScroll = 0
 
 exports.onPreRouteUpdate = () => {
   // fix demo index when changing page
   document.documentElement.setAttribute('data-demo-index', '0')
   // autoclose
   dispatchEvent(new CustomEvent('autoclose.trigger.xt'))
-  // sidebarArticleScrolltop
+  // keepSidebarScroll
   const sidebarArticle = document.querySelector('.gatsby_site_article_sidebar')
   if (sidebarArticle) {
-    sidebarArticleScrolltop = sidebarArticle.scrollTop
+    keepSidebarScroll = sidebarArticle.scrollTop
   }
 }
 
 exports.onRouteUpdate = () => {
-  // sidebarArticleScrolltop
+  // keepSidebarScroll
   const sidebarArticle = document.querySelector('.gatsby_site_article_sidebar')
   if (sidebarArticle) {
-    sidebarArticle.scrollTop = sidebarArticleScrolltop
+    sidebarArticle.scrollTop = keepSidebarScroll
   }
   // @FIX popstate #gatbsy_open-full
   for (const link of document.querySelectorAll('.gatsby_btn-site_article_sidebar.active')) {
