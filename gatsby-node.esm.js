@@ -30,12 +30,6 @@ exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
   const docPageTemplate = path.resolve('src/gatsby/components/templates/doc-page.js')
   const docListingTemplate = path.resolve('src/gatsby/components/templates/doc-listing.js')
-  /* COMMENTED CATEGORIES AND TAGS
-  const tagTemplate = path.resolve(`src/gatsby/components/templates/doc-tag.js`)
-  const categoryTemplate = path.resolve(`src/gatsby/components/templates/doc-category.js`)
-  const tagSet = new Set()
-  const categorySet = new Set()
-  */
   return graphql(`
     {
       allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
@@ -68,38 +62,6 @@ exports.createPages = ({ actions, graphql }) => {
           title: node.frontmatter.title, // for query($title: String) { // put also on return graphql
         },
       })
-      /* COMMENTED CATEGORIES AND TAGS
-      if (node.frontmatter.tags) {
-        node.frontmatter.tags.forEach(tag => {
-          tagSet.add(tag)
-        });
-      }
-      if (node.frontmatter.categories) {
-        node.frontmatter.categories.forEach(category => {
-          categorySet.add(category)
-        })
-      }
-      const tagList = Array.from(tagSet)
-      tagList.forEach(tag => {
-        createPage({
-          path: `/tags/${kebabCase(tag)}/`,
-          component: tagTemplate,
-          context: {
-            tag
-          }
-        })
-      })
-      const categoryList = Array.from(categorySet)
-      categoryList.forEach(category => {
-        createPage({
-          path: `/docs/${kebabCase(category)}/`,
-          component: categoryTemplate,
-          context: {
-            category
-          }
-        })
-      })
-      */
     })
   })
 }
