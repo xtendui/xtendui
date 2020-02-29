@@ -28,7 +28,9 @@ exports.onRouteUpdate = () => {
   for (const link of document.querySelectorAll('.gatsby_btn-site_article_sidebar.active')) {
     link.addEventListener('click', e => {
       e.preventDefault()
-      location.hash = ''
+      // no location.hash or page scroll to top
+      history.pushState({}, '', '#')
+      document.querySelector('#gatbsy_open-full-trigger').dispatchEvent(new CustomEvent('off.trigger.xt'))
     })
   }
 }
