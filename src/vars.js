@@ -40,6 +40,38 @@ gsap.registerEase('penguin', progress => {
   return easing(progress)
 })
 
+/*
+//
+// eases
+//
+
+// custom
+
+'cheetah'
+'tiger'
+'cat'
+'dog'
+'penguin'
+
+// gsap ease: can be 'in' or 'out' or 'inOut', see https://easings.net/ and https://greensock.com/docs/v3/Eases
+
+'power1.out'
+'power2.out'
+'power3.out'
+'power4.out'
+'linear',
+'sine.out'
+'quad.out'
+'cubic.out'
+'quart.out'
+'quint.out'
+'expo.out'
+'circ.out'
+'back.out(number from 1 to 4)'
+'elastic.out(number from 1 to 2.5, number from 0.1 to 1)'
+'bounce.out'
+*/
+
 //
 // vars
 //
@@ -56,31 +88,6 @@ const vars = {
   timeGiant: 3000,
   timeHuge: 4000,
 }
-
-/*
-// eases
-'cheetah'
-'tiger'
-'cat'
-'dog'
-'penguin',
-// gsap ease: can be 'in' or 'out' or 'inOut', see https://easings.net/ and https://greensock.com/docs/v3/Eases
-'power1.out'
-'power2.out'
-'power3.out'
-'power4.out'
-'linear',
-'sine.out',
-'quad.out',
-'cubic.out',
-'quart.out',
-'quint.out',
-'expo.out',
-'circ.out',
-'back.out(number from 1 to 4)',
-'elastic.out(number from 1 to 2.5, number from 0.1 to 1)',
-'bounce.out',
-*/
 
 //
 // optionsGlobal
