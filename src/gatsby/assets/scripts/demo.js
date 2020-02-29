@@ -16,7 +16,6 @@ Prism.manual = true
  * demoHash
  */
 
-
 const demoHash = (e, skipIgnore = false) => {
   // call offdone.xt
   document.querySelector('#gatbsy_open-full-trigger').dispatchEvent(new CustomEvent('off.trigger.xt'))
@@ -30,6 +29,8 @@ const demoHash = (e, skipIgnore = false) => {
       if (demo) {
         makeFullscreen(demo, skipIgnore)
       }
+      // trigger fullscreen or change tabs
+      item.dispatchEvent(new CustomEvent('on.trigger.xt'))
     }
   }
 }
@@ -331,7 +332,7 @@ const populateDemo = (container, i) => {
   // .btn-prev-demo
   container.querySelector('.btn-prev-demo').addEventListener('click', e => {
     const element = e.currentTarget
-    let self = Xt.get('xt-toggle', container)
+    const self = Xt.get('xt-toggle', container)
     if (self.currentIndex > 0) {
       self.goToPrev()
     } else {
@@ -350,6 +351,9 @@ const populateDemo = (container, i) => {
               currentOffset = element.closest('.gatsby_demo').offsetTop
             }
             document.scrollingElement.scrollTo(0, document.scrollingElement.scrollTop - currentOffset + prevOffset)
+            // activate demo last
+            const s = Xt.get('xt-toggle', demos[prev])
+            s.goToNum(-1)
           }
         }
       } else {
@@ -368,7 +372,7 @@ const populateDemo = (container, i) => {
   // .btn-next-demo
   container.querySelector('.btn-next-demo').addEventListener('click', e => {
     const element = e.currentTarget
-    let self = Xt.get('xt-toggle', container)
+    const self = Xt.get('xt-toggle', container)
     if (self.currentIndex < self.getGroups().length - 1) {
       self.goToNext()
     } else {
@@ -387,6 +391,9 @@ const populateDemo = (container, i) => {
               currentOffset = element.closest('.gatsby_demo').offsetTop
             }
             document.scrollingElement.scrollTo(0, document.scrollingElement.scrollTop - currentOffset + nextOffset)
+            // activate demo first
+            const s = Xt.get('xt-toggle', demos[next])
+            s.goToNum(0)
           }
         }
       } else {
@@ -447,14 +454,6 @@ const makeFullscreen = (container, skipIgnore = false) => {
       initializeIframe(container, item)
     }
   }
-  // trigger fullscreen or change tabs
-  requestAnimationFrame(() => {
-    const item = container.querySelector('.gatsby_demo_item.active')
-    const full = container.closest('#gatbsy_open-full')
-    if (full) {
-      item.dispatchEvent(new CustomEvent('on.xt'))
-    }
-  })
 }
 
 /**
