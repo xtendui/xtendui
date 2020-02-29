@@ -132,12 +132,12 @@
         > .drop-design {
           opacity: 1;
           transform: none;
-          transition: transform @time-medium @ease-in, opacity @time-medium @ease-in;
+          transition: transform @time-medium @ease-on, opacity @time-medium @ease-on;
         }
         > .drop-content {
           opacity: 1;
           transform: none;
-          transition: transform @time-medium @ease-in, opacity @time-medium @ease-in;
+          transition: transform @time-medium @ease-on, opacity @time-medium @ease-on;
           transition-delay: @time-tiny;
         }
       }
@@ -153,13 +153,13 @@
         > .drop-design {
           opacity: 0;
           transform: scale(.75, .75);
-          transition: transform @time-small @ease-out, opacity @time-small @ease-out;
+          transition: transform @time-small @ease-off, opacity @time-small @ease-off;
           transition-delay: @time-tiny;
         }
         > .drop-content {
           opacity: 0;
           transform: translateY(1.5rem);
-          transition: transform @time-small @ease-out, opacity @time-small @ease-out;
+          transition: transform @time-small @ease-off, opacity @time-small @ease-off;
         }
       }
       > .backdrop {

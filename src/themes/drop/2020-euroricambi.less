@@ -20,11 +20,11 @@
         > .drop-inner {
           opacity: 1;
           transform: none;
-          transition: height @time-medium @ease-in, transform @time-medium @ease-in, opacity @time-tiny @ease-in;
+          transition: height @time-medium @ease-on, transform @time-medium @ease-on, opacity @time-tiny @ease-on;
           > .drop-content {
             opacity: 1;
             transform: none;
-            transition: transform @time-medium @ease-in, opacity @time-medium @ease-in;
+            transition: transform @time-medium @ease-on, opacity @time-medium @ease-on;
           }
         }
         > .backdrop {
@@ -38,11 +38,11 @@
         > .drop-inner {
           opacity: 0;
           transform: translateY(1rem);
-          transition: height @time-small @ease-out, transform @time-small @ease-out, opacity @time-tiny @ease-out @time-tiny;
+          transition: height @time-small @ease-off, transform @time-small @ease-off, opacity @time-tiny @ease-off @time-tiny;
           > .drop-content {
             opacity: 0;
             transform: translateY(-1rem);
-            transition: transform @time-small @ease-out, opacity @time-small @ease-out;
+            transition: transform @time-small @ease-off, opacity @time-small @ease-off;
           }
         }
         > .backdrop {

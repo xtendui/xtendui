@@ -75,7 +75,7 @@
     > .row > * {
       opacity: 0;
       transform: translateY(1.5rem);
-      transition: opacity @time-small @ease-in, transform @time-small @ease-in;
+      transition: opacity @time-small @ease-on, transform @time-small @ease-on;
       transition-delay: 150ms; // @start + @child * @increment
       .nth-child(@child: 3, @start: 0ms, @increment: 50ms, @decrement: 0ms, {
         @transition-delay();
@@ -87,7 +87,7 @@
       > .row > * {
         opacity: 1;
         transform: translateY(0);
-        transition: opacity @time-small @ease-in, transform @time-small @ease-in;
+        transition: opacity @time-small @ease-on, transform @time-small @ease-on;
       }
     }
   }

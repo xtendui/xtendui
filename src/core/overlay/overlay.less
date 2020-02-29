@@ -77,12 +77,12 @@
     .card-overlay > .card-inner > * {
       opacity: 1;
       transform: scale(1);
-      transition: transform @time-medium @ease-in, opacity @time-medium @ease-in;
+      transition: transform @time-medium @ease-on, opacity @time-medium @ease-on;
     }
     .card-overlay > .card-inner > .card-content {
       opacity: 1;
       transform: none;
-      transition: transform @time-medium @ease-in, opacity @time-medium @ease-in;
+      transition: transform @time-medium @ease-on, opacity @time-medium @ease-on;
       transition-delay: @time-tiny;
     }
     > .backdrop {
@@ -95,13 +95,13 @@
     .card-overlay > .card-inner > * {
       opacity: 0;
       transform: scale(.75, .75);
-      transition: transform @time-small @ease-out, opacity @time-small @ease-out;
+      transition: transform @time-small @ease-off, opacity @time-small @ease-off;
       transition-delay: @time-tiny;
     }
     .card-overlay > .card-inner > .card-content {
       opacity: 0;
       transform: translateY(1.5rem);
-      transition: transform @time-small @ease-out, opacity @time-small @ease-out;
+      transition: transform @time-small @ease-off, opacity @time-small @ease-off;
     }
     > .backdrop {
       .backdrop.out();

@@ -184,12 +184,12 @@
 // animation
 
 .btn {
-  transition: all @time-small @ease-out, transform @time-tiny @ease-out;
+  transition: all @time-small @ease-off, transform @time-tiny @ease-off;
   &:hover, &.hover {
-    transition: all @time-small @ease-in, transform @time-tiny @ease-in;
+    transition: all @time-small @ease-on, transform @time-tiny @ease-on;
   }
   &:active, &.active {
-    transition: all @time-small @ease-in, transform @time-tiny @ease-in;
+    transition: all @time-small @ease-on, transform @time-tiny @ease-on;
   }
 }
 

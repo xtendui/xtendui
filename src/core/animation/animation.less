@@ -23,8 +23,8 @@
 @ease-cat: ~'cubic-bezier(0.77, 0, 0.17, 1)';
 @ease-dog: ~'cubic-bezier(0.36, 0, 0, 1)';
 @ease-penguin: ~'cubic-bezier(0.68, 0.13, 0.25, 1)';
-@ease-in: @ease-out-quint;
-@ease-out: @ease-in-out-quint;
+@ease-on: @ease-out-quint;
+@ease-off: @ease-in-out-quint;
 
 @ease-in-sine: cubic-bezier(0.470, 0.000, 0.745, 0.715);
 @ease-out-sine: cubic-bezier(0.390, 0.575, 0.565, 1.000);
@@ -69,14 +69,14 @@
     opacity: 0;
     animation-name: anim-y-in;
     animation-duration: @time-small;
-    animation-timing-function: @ease-in;
+    animation-timing-function: @ease-on;
     animation-fill-mode: forwards;
   }
   &.out {
     opacity: 1;
     animation-name: anim-y-out;
     animation-duration: @time-small;
-    animation-timing-function: @ease-out;
+    animation-timing-function: @ease-off;
     animation-fill-mode: forwards;
   }
 }
@@ -110,14 +110,14 @@
     opacity: 0;
     animation-name: anim-y-inverse-in;
     animation-duration: @time-small;
-    animation-timing-function: @ease-in;
+    animation-timing-function: @ease-on;
     animation-fill-mode: forwards;
   }
   &.out {
     opacity: 1;
     animation-name: anim-y-inverse-out;
     animation-duration: @time-small;
-    animation-timing-function: @ease-out;
+    animation-timing-function: @ease-off;
     animation-fill-mode: forwards;
   }
 }
@@ -151,14 +151,14 @@
     opacity: 0;
     animation-name: anim-x-in;
     animation-duration: @time-small;
-    animation-timing-function: @ease-in;
+    animation-timing-function: @ease-on;
     animation-fill-mode: forwards;
   }
   &.out {
     opacity: 1;
     animation-name: anim-x-out;
     animation-duration: @time-small;
-    animation-timing-function: @ease-out;
+    animation-timing-function: @ease-off;
     animation-fill-mode: forwards;
   }
 }
@@ -192,14 +192,14 @@
     opacity: 0;
     animation-name: anim-x-inverse-in;
     animation-duration: @time-small;
-    animation-timing-function: @ease-in;
+    animation-timing-function: @ease-on;
     animation-fill-mode: forwards;
   }
   &.out {
     opacity: 1;
     animation-name: anim-x-inverse-out;
     animation-duration: @time-small;
-    animation-timing-function: @ease-out;
+    animation-timing-function: @ease-off;
     animation-fill-mode: forwards;
   }
 }
@@ -234,10 +234,10 @@
 
 .collapse-height, .collapse-width {
   &.in {
-    transition: height @time-medium @ease-out, width @time-medium @ease-out;
+    transition: height @time-medium @ease-off, width @time-medium @ease-off;
   }
   &.out {
-    transition: height @time-medium @ease-out, width @time-medium @ease-out;
+    transition: height @time-medium @ease-off, width @time-medium @ease-off;
   }
 }
 
