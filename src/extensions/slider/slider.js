@@ -1167,10 +1167,13 @@ Slider.optionsDefault = {
     threshold: 50,
     linkThreshold: 50,
     factor: 1,
+    friction: false,
+    /*
     friction: velocity => {
-      return Math.pow(velocity, 0.9)
+      return Math.pow(velocity, 0.95)
     },
     frictionLimit: 1.5,
+    */
     overflow: overflow => {
       return Math.pow(overflow, 0.73)
     },

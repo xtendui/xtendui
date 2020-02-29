@@ -93,8 +93,10 @@ const populateBlock = () => {
   }
   // overlay fullscreen
   for (const el of document.querySelectorAll('[data-gatsby-listing-toggle]')) {
-    el.addEventListener('click', () => {
-      makeFullscreen(el.nextSibling)
+    el.addEventListener('click', e => {
+      e.preventDefault()
+      location.hash = el.nextSibling.querySelector('.gatsby_demo_item ').getAttribute('id')
+      cancelAnimationFrame(Xt.dataStorage.get(document, 'gatbsy_open-full-raf'))
     })
   }
   document.querySelector('#gatbsy_open-full').addEventListener('offdone.xt', e => {

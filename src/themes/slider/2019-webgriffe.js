@@ -29,7 +29,6 @@ Xt.mount.push({
       groupMq: false,
       drag: {
         wrap: true,
-        friction: false,
       },
     })
 

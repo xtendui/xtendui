@@ -14,7 +14,7 @@ Xt.mount.push({
     const assetMaskTimeOn = Xt.vars.timeLarge
     const assetMaskTimeOff = Xt.vars.timeSmall
     const assetMaskEaseOn = 'expo.out'
-    const assetMaskEaseOff = 'expo.inOut'
+    const assetMaskEaseOff = 'quart.out'
 
     const assetZoom = 0.1
     const assetTimeOn = Xt.vars.timeLarge
@@ -45,9 +45,6 @@ Xt.mount.push({
       },
       autoHeight: false,
       groupMq: false,
-      drag: {
-        friction: false,
-      },
     })
 
     // drag
