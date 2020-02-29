@@ -62,9 +62,9 @@
 .gatsby_site_article_hero {
   position: relative;
   .container-space();
-  .padding(top, giant);
-  .padding(bottom, 8rem);
-  background: @shade-100;
+  .padding(y, giant);
+  .padding(y, huge, lg);
+  background: linear-gradient(180deg, @shade-300 0%, @white 66%);
   p {
     .font-big();
     color: @shade-500;
@@ -101,7 +101,7 @@
   h1 {
     em {
       .font-sans-regular();
-      color: @shade-300;
+      color: @shade-300-dark;
     }
   }
 }
@@ -111,8 +111,6 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(180deg, @grad-light);
-  border-bottom: 1px solid @shade-200;
   .container-space();
   .padding(y, small);
   .row {
@@ -132,7 +130,6 @@
   .container-space();
   .padding(y, giant);
   z-index: @index-sticky + 1;
-  border-top: 1px solid @shade-200;
   background: @white;
 }
 
@@ -147,9 +144,9 @@
 }
 
 .gatsby_site_article_foot {
-  border-top: 1px solid @shade-200;
   .container-space();
   .padding(y, big);
+  background: linear-gradient(-180deg, @white 33%, @shade-300 100%);
 }
 
 /**
@@ -167,7 +164,7 @@
 }
 
 .gatsby_listing_title {
-  .h6();
+  .h5();
   .header-block();
   .spacing-large();
 }

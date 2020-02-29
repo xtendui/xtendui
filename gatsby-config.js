@@ -80,16 +80,16 @@ module.exports = {
             options: {
               blocks: {
                 noteDefault: {
-                  classes: 'note note-default note-background',
+                  classes: 'note note-default note-background gatbsy_note',
                 },
                 notePrimary: {
-                  classes: 'note note-primary note-background',
+                  classes: 'note note-primary note-background gatbsy_note',
                 },
                 noteError: {
-                  classes: 'note note-error note-background',
+                  classes: 'note note-error note-background gatbsy_note',
                 },
                 noteSuccess: {
-                  classes: 'note note-success note-background',
+                  classes: 'note note-success note-background gatbsy_note',
                 },
               },
             },

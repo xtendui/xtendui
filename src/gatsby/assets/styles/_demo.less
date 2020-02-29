@@ -77,6 +77,9 @@ pre {
 .gatsby_demo {
   .margin(bottom, medium);
   .margin(bottom, layout);
+  pre {
+    border-width: 0 !important;
+  }
   // animations
   border: 3px solid @shade-200;
   transition: border-color @time-small @ease-off;
@@ -95,7 +98,7 @@ pre {
     }
   }
   &:hover, &:focus-within {
-    border-color: @shade-300;
+    border-color: @shade-200-dark;
     transition: border-color @time-small @ease-on;
     .gatsby_demo_tabs_right {
       > * {
@@ -107,7 +110,7 @@ pre {
     .gatsby_demo_tabs, .gatsby_demo_code_tabs {
       .btn {
         &:active, &.active {
-          border-color: @shade-300 !important;
+          border-color: @shade-200-dark !important;
         }
       }
     }
@@ -219,8 +222,7 @@ pre {
   }
   // tabs
   .gatsby_demo_tabs, .gatsby_demo_code_tabs, .gatsby_demo_code_body {
-    background: @shade-100;
-    border-bottom: 1px solid @shade-200;
+    background: @shade-200;
   }
   .gatsby_demo_tabs, .gatsby_demo_code_tabs {
     position: relative;
@@ -232,8 +234,7 @@ pre {
       .list-default();
       .list-space(mini);
     }
-    .padding(y, 7px);
-    .padding(x, small);
+    .padding(all, 7px);
     .btn {
       border-width: 3px;
       padding: .5em .75em;
@@ -289,9 +290,13 @@ table {
   border-color: @shade-200;
   transition: border-color @time-small @ease-off;
   &:hover, &.hover, &:active, &.active {
-    border-color: @shade-300;
+    border-color: @shade-200-dark;
     transition: border-color @time-small @ease-on;
   }
+}
+
+.gatbsy_note {
+  border-radius: 0;
 }
 
 // theme
