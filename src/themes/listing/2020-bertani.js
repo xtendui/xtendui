@@ -13,13 +13,7 @@ Xt.mount.push({
   mount: function(object) {
     // init
 
-    let self = new Xt.Smooth(document.scrollingElement, {
-      wheel: {
-        friction: delta => {
-          return delta / 11
-        },
-      },
-    })
+    let self = new Xt.Smooth(document.scrollingElement, {})
 
     // unmount
 

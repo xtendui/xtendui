@@ -519,7 +519,7 @@ if (typeof window !== 'undefined') {
       fncFriction = false
     } else if (obj.friction === undefined) {
       fncFriction = delta => {
-        return delta / 9
+        return delta / 11
       }
     } else {
       fncFriction = obj.friction
