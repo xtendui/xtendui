@@ -1,3 +1,10 @@
+## [0.13.41](https://github.com/minimit/xtend-library/compare/v0.13.40...v0.13.41) (2020-03-02)
+
+
+### Bug Fixes
+
+* test deploy ([7f47414](https://github.com/minimit/xtend-library/commit/7f474142c7328ef41d1fcdf2e24a0c1352868872))
+
 ## [0.13.40](https://github.com/minimit/xtend-library/compare/v0.13.39...v0.13.40) (2020-03-02)
 
 
