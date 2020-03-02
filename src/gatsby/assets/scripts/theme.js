@@ -14,7 +14,7 @@ new Xt.Smooth(document.scrollingElement)
  */
 
 Xt.mount.push({
-  matches: '.gatsby_site_article_hero_content',
+  matches: '.gatsby_site_article_hero_content_inner',
   mount: object => {
     // init
 
