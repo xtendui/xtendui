@@ -2,7 +2,7 @@
 type: "Introduction"
 parent: "Setup"
 title: "Setup"
-description: "Installation instruction and compilation."
+description: "Setup and compilation instructions."
 categories: ["000-Introduction"]
 date: "2018-01-01"
 ---

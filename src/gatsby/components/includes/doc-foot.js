@@ -39,9 +39,9 @@ class DocHead extends React.Component {
                       <div className="card-inner">
                         <div className="card-content">
                           <div className="card-block card-item">
-                            <div className="card-title">Have bugs or problems?</div>
+                            <div className="card-title">Setup or other problems?</div>
                             <p>
-                              Read the <strong>Introduction</strong> pages
+                              Visit the <strong>Introduction</strong> page.
                             </p>
                           </div>
                         </div>
@@ -63,7 +63,7 @@ class DocHead extends React.Component {
                             <div className="card-title">Visit the Components page</div>
                             <p>
                               There {postsComponents.length === 1 ? 'is' : 'are'} {postsComponents.length} <strong>pages</strong> for{' '}
-                              {page.post.frontmatter.parent}
+                              {page.post.frontmatter.parent}.
                             </p>
                           </div>
                         </div>
@@ -84,7 +84,7 @@ class DocHead extends React.Component {
                           <div className="card-block card-item">
                             <div className="card-title">Visit the Addons page</div>
                             <p>
-                              There {postsAddons.length === 1 ? 'is' : 'are'} {postsAddons.length} <strong>addons</strong> for {page.post.frontmatter.parent}
+                              There {postsAddons.length === 1 ? 'is' : 'are'} {postsAddons.length} <strong>addons</strong> for {page.post.frontmatter.parent}.
                             </p>
                           </div>
                         </div>
@@ -105,7 +105,7 @@ class DocHead extends React.Component {
                           <div className="card-block card-item">
                             <div className="card-title">Visit the Theme page</div>
                             <p>
-                              There {postsThemes.length === 1 ? 'is' : 'are'} {postsThemes.length} <strong>themes</strong> for {page.post.frontmatter.parent}
+                              There {postsThemes.length === 1 ? 'is' : 'are'} {postsThemes.length} <strong>themes</strong> for {page.post.frontmatter.parent}.
                             </p>
                           </div>
                         </div>

@@ -43,18 +43,35 @@ class DocSidebar extends React.Component {
                       {category.posts.map(({ post }, z) =>
                         post.frontmatter.parent === post.frontmatter.title ? (
                           <div key={z}>
-                            <Link
-                              to={markdownSlug(post)}
-                              className={`btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub ${
-                                markdownSlug(page.post) === markdownSlug(post)
-                                  ? 'active'
-                                  : page.post.frontmatter.parent === post.frontmatter.parent
-                                  ? 'current'
-                                  : ''
-                              }`}
-                            >
-                              {post.frontmatter.title}
-                            </Link>
+                            {post.frontmatter.link ? (
+                              <a
+                                href={post.frontmatter.link}
+                                target="_blank"
+                                rel="noopener"
+                                className={`btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub ${
+                                  markdownSlug(page.post) === markdownSlug(post)
+                                    ? 'active'
+                                    : page.post.frontmatter.parent === post.frontmatter.parent
+                                    ? 'current'
+                                    : ''
+                                }`}
+                              >
+                                {post.frontmatter.title}
+                              </a>
+                            ) : (
+                              <Link
+                                to={markdownSlug(post)}
+                                className={`btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub ${
+                                  markdownSlug(page.post) === markdownSlug(post)
+                                    ? 'active'
+                                    : page.post.frontmatter.parent === post.frontmatter.parent
+                                    ? 'current'
+                                    : ''
+                                }`}
+                              >
+                                {post.frontmatter.title}
+                              </Link>
+                            )}
                             {post.frontmatter.parent === page.post.frontmatter.parent ? (
                               <div className="gatsby_site_header_adiacent active">
                                 <div className="gatsby_site_header_item">

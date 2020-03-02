@@ -23,7 +23,21 @@ class Template extends React.Component {
                 <div className="gatsby_listing_items">
                   <div className="row">
                     {category.posts.map(({ post }, z) =>
-                      post.frontmatter.parent === post.frontmatter.title ? (
+                      post.frontmatter.link ? (
+                        <div className="gatsby_listing_column" key={z}>
+                          <a href={post.frontmatter.link} target="_blank" rel="noopener" className="card card-primary card-small card-full card-collapse gatsby_listing_item">
+                            <div className="card-design"></div>
+                            <div className="card-inner">
+                              <div className="card-content">
+                                <div className="card-block card-item">
+                                  <div className="card-title">{post.frontmatter.title.split('-').join(' ')}</div>
+                                  <p>{post.frontmatter.description}</p>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      ) : post.frontmatter.parent === post.frontmatter.title ? (
                         <div className="gatsby_listing_column" key={z}>
                           <Link to={markdownSlug(post)} className="card card-primary card-small card-full card-collapse gatsby_listing_item">
                             <div className="card-design"></div>
@@ -31,7 +45,7 @@ class Template extends React.Component {
                               <div className="card-content">
                                 <div className="card-block card-item">
                                   <div className="card-title">{post.frontmatter.title.split('-').join(' ')}</div>
-                                  <p>{post.frontmatter.description}</p>
+                                  <p>{post.frontmatter.description}</p>{post.frontmatter.link}
                                 </div>
                               </div>
                             </div>
@@ -64,6 +78,7 @@ export const query = graphql`
               parent
               title
               description
+              link
             }
           }
         }
