@@ -15,13 +15,73 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-default list-space-small align-items-center">
+<div class="list list-default list-space-small align-items-center demo--2020-euroricambi-collapse">
+
+  <div class="drop-container" data-xt-drop="{ targetsInner: ':scope > .drop-inner' }">
+    <button type="button" class="btn btn-primary">
+      drop
+    </button>
+    <div class="drop drop-default">
+      <div class="drop-inner">
+        <div class="drop-design"></div>
+        <div class="drop-content">
+          <ul class="list list-drop">
+            <li>
+              <button type="button">
+                Lorem ipsum dolor
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                Dolor sit
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                Amet
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="drop-container" data-xt-drop="{ targetsInner: ':scope > .drop-inner' }">
+    <button type="button" class="btn btn-primary">
+      drop card
+    </button>
+    <div class="drop drop-default">
+      <div class="drop-inner">
+        <div class="drop-design"></div>
+        <div class="drop-content">
+
+          <div class="card card-drop">
+            <div class="card-design"></div>
+            <div class="card-inner">
+              <div class="btn btn-close" aria-label="Close"></div>
+              <div class="card-content">
+                <div class="card-block card-item">
+                  <div class="card-title">Primary</div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+                  <a href="#" class="btn btn-primary">
+                    Button
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div data-xt-overlay>
     <button type="button" class="btn btn-primary">
-      default
+      overlay
     </button>
-    <div class="overlay demo--overlay--2020-euroricambi">
+    <div class="overlay demo--2020-euroricambi-collapse">
       <div class="overlay-container">
         <div class="overlay-inner">
 
@@ -52,9 +112,9 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
     <button type="button" class="btn btn-primary">
-      left
+      overlay position
     </button>
-    <div class="overlay overlay-position overlay-position-left demo--overlay--2020-euroricambi">
+    <div class="overlay overlay-position overlay-position-left demo--2020-euroricambi-collapse">
       <div class="overlay-container">
         <div class="overlay-inner">
 

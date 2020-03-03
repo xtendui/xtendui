@@ -7,7 +7,7 @@ import gsap from 'gsap'
 // https://tympanus.net/Development/SlideOutBoxMenu/
 
 Xt.mount.push({
-  matches: '.demo--slider--2020-euroricambi',
+  matches: '.demo--2020-euroricambi-slider',
   mount: object => {
     // vars
 

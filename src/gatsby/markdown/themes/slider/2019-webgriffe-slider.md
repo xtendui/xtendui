@@ -1,11 +1,11 @@
 ---
 type: "Themes"
 badge: "Themes"
-parent: "Button"
-title: "2020-bertani-listing"
+parent: "Slider"
+title: "2019-webgriffe-slider"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-date: "2020-02-27"
+date: "2019-06-01"
 demos: [
-  "iframe/themes/listing/2020-bertani-listing"
+  "iframe/themes/slider/2019-webgriffe-slider"
 ]
 ---

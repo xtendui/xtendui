@@ -1,11 +1,11 @@
 ---
 type: "Themes"
 badge: "Themes"
-parent: "Scroll"
-title: "2020-bertani-listing"
+parent: "Drop"
+title: "2020-euroricambi-collapse"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-date: "2020-02-27"
+date: "2020-01-24"
 demos: [
-  "iframe/themes/listing/2020-bertani-listing"
+  "iframe/themes/animation/2020-euroricambi-collapse"
 ]
 ---

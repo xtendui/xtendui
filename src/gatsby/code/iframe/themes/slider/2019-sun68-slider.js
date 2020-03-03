@@ -15,7 +15,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="slider demo--slider--2019-sun68">
+<div class="slider demo--2019-sun68-slider">
 
   <div class="slides">
     <ul class="slides-inner">

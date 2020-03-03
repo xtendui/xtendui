@@ -9,7 +9,7 @@ import gsap from 'gsap'
  */
 
 Xt.mount.push({
-  matches: '.demo--listing--2020-bertani',
+  matches: '.demo--2020-bertani-listing',
   mount: function(object) {
     // init
 
@@ -30,7 +30,7 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '.demo--listing--2020-bertani a, .demo--listing--2020-bertani button',
+  matches: '.demo--2020-bertani-listing a, .demo--2020-bertani-listing button',
   mount: function(object) {
     // init
 
@@ -53,7 +53,7 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '.demo--listing--2020-bertani .btn--line',
+  matches: '.demo--2020-bertani-listing .btn--line',
   mount: function(object) {
     // wrap
 
@@ -130,7 +130,7 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '.demo--listing--2020-bertani .parallax_item',
+  matches: '.demo--2020-bertani-listing .parallax_item',
   mount: function(object) {
     // vars
 
