@@ -13,7 +13,7 @@ Xt.mount.push({
   mount: function(object) {
     // init
 
-    let self = new Xt.Smooth(document.scrollingElement, {})
+    let self = new Xt.Smooth(object, {})
 
     // unmount
 
