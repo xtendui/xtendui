@@ -59,6 +59,7 @@ exports.createPages = ({ actions, graphql }) => {
         context: {
           type: node.frontmatter.type, // for query($type: String) { // put also on return graphql
           parent: node.frontmatter.parent, // for query($parent: String) { // put also on return graphql
+          parents: '/' + node.frontmatter.parent + '/', // for query($parents: String) { // put also on return graphql
           title: node.frontmatter.title, // for query($title: String) { // put also on return graphql
         },
       })

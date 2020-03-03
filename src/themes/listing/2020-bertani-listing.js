@@ -134,7 +134,7 @@ Xt.mount.push({
   mount: function(object) {
     // vars
 
-    const imgY = 200
+    const imgY = 150
 
     // init
 

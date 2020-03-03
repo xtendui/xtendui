@@ -67,7 +67,7 @@ class Template extends React.Component {
 export default Template
 
 export const query = graphql`
-  query($title: String!, $type: String, $parent: String) {
+  query($title: String!, $type: String, $parent: String, $parents: String) {
     categories: allMarkdownRemark(filter: { frontmatter: { type: { eq: $type } } }, sort: { fields: [frontmatter___date, frontmatter___title], order: ASC }) {
       category: group(field: frontmatter___categories) {
         title: fieldValue
@@ -97,7 +97,7 @@ export const query = graphql`
       }
     }
     postsAdiacent: allMarkdownRemark(
-      filter: { frontmatter: { type: { eq: $type }, parent: { eq: $parent } } }
+      filter: { frontmatter: { type: { eq: $type }, parent: { regex: $parents } } }
       sort: { fields: [frontmatter___date, frontmatter___title], order: [DESC, ASC] }
     ) {
       posts: edges {
