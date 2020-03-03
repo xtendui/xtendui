@@ -13,6 +13,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
       with:
+        ref: ${{ github.head_ref }}
         persist-credentials: false
     - name: Npm Install
       run: npm ci
