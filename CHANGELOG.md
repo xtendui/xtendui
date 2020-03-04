@@ -1,3 +1,10 @@
+## [0.13.45](https://github.com/minimit/xtend-library/compare/v0.13.44...v0.13.45) (2020-03-04)
+
+
+### Bug Fixes
+
+* **js:** fix smooth removed click event on ([05e3fba](https://github.com/minimit/xtend-library/commit/05e3fba70eb8663401f9f5cd6ad1ada119bb7b36))
+
 ## [0.13.44](https://github.com/minimit/xtend-library/compare/v0.13.43...v0.13.44) (2020-03-03)
 
 
