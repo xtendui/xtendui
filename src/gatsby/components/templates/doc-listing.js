@@ -25,12 +25,22 @@ class Template extends React.Component {
                     {category.posts.map(({ post }, z) =>
                       post.frontmatter.link ? (
                         <div className="gatsby_listing_column" key={z}>
-                          <a href={post.frontmatter.link} target="_blank" rel="noopener" className="card card-primary card-small card-full card-collapse gatsby_listing_item">
+                          <a
+                            href={post.frontmatter.link}
+                            target="_blank"
+                            rel="noopener"
+                            className="card card-primary card-small card-full card-collapse gatsby_listing_item"
+                          >
                             <div className="card-design"></div>
                             <div className="card-inner">
                               <div className="card-content">
                                 <div className="card-block card-item">
-                                  <div className="card-title">{post.frontmatter.title.split('-').join(' ')}</div>
+                                  <div className="card-title">
+                                    {post.frontmatter.title
+                                      .split('-')
+                                      .map((item, index) => (index ? item.charAt(0).toUpperCase() + item.slice(1).toLowerCase() : item))
+                                      .join(' ')}
+                                  </div>
                                   <p>{post.frontmatter.description}</p>
                                 </div>
                               </div>
@@ -44,8 +54,14 @@ class Template extends React.Component {
                             <div className="card-inner">
                               <div className="card-content">
                                 <div className="card-block card-item">
-                                  <div className="card-title">{post.frontmatter.title.split('-').join(' ')}</div>
-                                  <p>{post.frontmatter.description}</p>{post.frontmatter.link}
+                                  <div className="card-title">
+                                    {post.frontmatter.title
+                                      .split('-')
+                                      .map((item, index) => (index ? item.charAt(0).toUpperCase() + item.slice(1).toLowerCase() : item))
+                                      .join(' ')}
+                                  </div>
+                                  <p>{post.frontmatter.description}</p>
+                                  {post.frontmatter.link}
                                 </div>
                               </div>
                             </div>
@@ -67,7 +83,7 @@ class Template extends React.Component {
 export default Template
 
 export const query = graphql`
-  query($title: String!, $type: String, $parent: String) {
+  query($title: String!, $type: String, $parent: String, $parents: String) {
     categories: allMarkdownRemark(filter: { frontmatter: { type: { eq: $type } } }, sort: { fields: [frontmatter___date, frontmatter___title], order: ASC }) {
       category: group(field: frontmatter___categories) {
         title: fieldValue
@@ -97,7 +113,7 @@ export const query = graphql`
       }
     }
     postsAdiacent: allMarkdownRemark(
-      filter: { frontmatter: { type: { eq: $type }, parent: { eq: $parent } } }
+      filter: { frontmatter: { type: { eq: $type }, parent: { regex: $parents } } }
       sort: { fields: [frontmatter___date, frontmatter___title], order: [DESC, ASC] }
     ) {
       posts: edges {

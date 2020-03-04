@@ -1,0 +1,140 @@
+@import (reference) '~xtend-library/src/xtend-core.less';
+@import '~xtend-library/src/extensions/slider/slider.less';
+
+.demo--2020-euroricambi-slider {
+  .padding(y, medium);
+  .slides-inner {
+    overflow: hidden;
+    .transition-none() !important;
+    .transform-none() !important;
+    .slide {
+      .toggle-block();
+    }
+  }
+  .slide {
+    .col(12);
+  }
+  .slide_item {
+    position: relative;
+  }
+  .slide-pagination-content {
+    display: none;
+  }
+  // pagination
+  .slider-pagination {
+    .container-space();
+    .list-space(mini);
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    .padding(bottom, big);
+  }
+  [data-xt-pag].btn {
+    .btn-default();
+  }
+  // pagination wrap
+  .slider-pagination_inner {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    .slider-cards--logos& {
+      max-width: none;
+    }
+    [data-xt-pag] {
+      .margin(x, mini);
+    }
+    &:before, &:after {
+      content: '';
+      pointer-events: none;
+      position: absolute;
+      z-index: @index-active + 1;
+      top: 0;
+      bottom: 0;
+      width: 30px;
+    }
+    &:before {
+      left: 0;
+      background: linear-gradient(-90deg, fade(@white, 0%) 0%, @white 100%);
+    }
+    &:after {
+      right: 0;
+      background: linear-gradient(90deg, fade(@white, 0%) 0%, @white 100%);
+    }
+  }
+  .slider-pagination_scroll {
+    display: inline-block;
+    position: relative;
+    .padding(x, 30px);
+    transition: left 750ms @ease-off;
+  }
+  // navigation
+  [data-xt-nav].btn {
+    .btn-default();
+    font-size: 10px;
+    [class^='icon-'], [class*=' icon-'] {
+      .icon-medium();
+    }
+    .slider--nonav& {
+      display: none;
+    }
+  }
+  // content
+  .slider_card {
+    @media @max-sm {
+      .container-space-remove();
+    }
+    @media @min-sm {
+      position: absolute;
+      bottom: 2.5rem;
+      right: 2.5rem;
+      width: 49rem;
+    }
+    > .card {
+      align-items: flex-end;
+    }
+  }
+  .slider_card_inner {
+    overflow: hidden;
+  }
+  .slider_img {
+    position: relative;
+    .media-container {
+      overflow: hidden;
+    }
+    .media-inner {
+      overflow: hidden;
+    }
+  }
+  .slider_img_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: @shade-300;
+  }
+  .slider_imgs--desktop {
+    > .row {
+      .row-space-y(none); // @FIX add row vertical space..
+    }
+    @media @max-sm {
+      display: none;
+    }
+    .slider_img {
+      .media-container {
+        height: 49rem;
+      }
+    }
+  }
+  .slider_imgs--mobile {
+    .container-space-remove();
+    @media @min-sm {
+      display: none;
+    }
+    .slider_img {
+      .media-container {
+        height: 25rem;
+      }
+    }
+  }
+}

@@ -39,7 +39,12 @@ class Template extends React.Component {
                               <div className="card-inner">
                                 <div className="card-content">
                                   <div className="card-block card-item">
-                                    <div className="card-title">{adiacent.frontmatter.title.split('-').join(' ')}</div>
+                                    <div className="card-title">
+                                      {adiacent.frontmatter.title
+                                        .split('-')
+                                        .map((item, index) => (index ? item.charAt(0).toUpperCase() + item.slice(1).toLowerCase() : item))
+                                        .join(' ')}
+                                    </div>
                                     <p>{adiacent.frontmatter.description}</p>
                                   </div>
                                 </div>
@@ -67,7 +72,12 @@ class Template extends React.Component {
                               <div className="card-inner">
                                 <div className="card-content">
                                   <div className="card-block card-item">
-                                    <div className="card-title">{adiacent.frontmatter.title.split('-').join(' ')}</div>
+                                    <div className="card-title">
+                                      {adiacent.frontmatter.title
+                                        .split('-')
+                                        .map((item, index) => (index ? item.charAt(0).toUpperCase() + item.slice(1).toLowerCase() : item))
+                                        .join(' ')}
+                                    </div>
                                     <p>{adiacent.frontmatter.description}</p>
                                   </div>
                                 </div>
@@ -92,7 +102,7 @@ class Template extends React.Component {
 export default Template
 
 export const query = graphql`
-  query($title: String!, $type: String, $parent: String) {
+  query($title: String!, $type: String, $parent: String, $parents: String) {
     categories: allMarkdownRemark(filter: { frontmatter: { type: { eq: $type } } }, sort: { fields: [frontmatter___date, frontmatter___title], order: ASC }) {
       category: group(field: frontmatter___categories) {
         title: fieldValue
@@ -122,7 +132,7 @@ export const query = graphql`
       }
     }
     postsAdiacent: allMarkdownRemark(
-      filter: { frontmatter: { type: { eq: $type }, parent: { eq: $parent } } }
+      filter: { frontmatter: { type: { eq: $type }, parent: { regex: $parents } } }
       sort: { fields: [frontmatter___date, frontmatter___title], order: [DESC, ASC] }
     ) {
       posts: edges {

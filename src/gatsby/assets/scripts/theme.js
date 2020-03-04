@@ -6,7 +6,22 @@ import gsap from 'gsap'
  */
 
 /*
-new Xt.Smooth(document.scrollingElement)
+Xt.mount.push({
+  matches: 'html',
+  mount: function(object) {
+    // init
+
+    let self = new Xt.Smooth(object, {})
+
+    // unmount
+
+    const unmount = function() {
+      self.destroy()
+      self = null
+    }
+    return unmount
+  },
+})
 */
 
 /**

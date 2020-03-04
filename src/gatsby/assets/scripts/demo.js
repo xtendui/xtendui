@@ -1,4 +1,4 @@
-import gsap from 'gsap/index'
+import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin.js'
 import Prism from 'prismjs'
 import ClipboardJS from 'clipboard'
@@ -18,19 +18,21 @@ Prism.manual = true
 
 const demoHash = (e, skipIgnore = false) => {
   // call offdone.xt
-  document.querySelector('#gatbsy_open-full-trigger').dispatchEvent(new CustomEvent('off.trigger.xt'))
-  // set hash cancel
-  cancelAnimationFrame(Xt.dataStorage.get(document, 'gatbsy_open-full-raf'))
-  // check hash
-  if (location.hash) {
-    const item = document.querySelector('[id="' + kebabCase(location.hash) + '"]')
-    if (item) {
-      const demo = item.closest('.gatsby_demo')
-      if (demo) {
-        makeFullscreen(demo, skipIgnore)
+  if (document.querySelector('#gatbsy_open-full-trigger')) {
+    document.querySelector('#gatbsy_open-full-trigger').dispatchEvent(new CustomEvent('off.trigger.xt'))
+    // set hash cancel
+    cancelAnimationFrame(Xt.dataStorage.get(document, 'gatbsy_open-full-raf'))
+    // check hash
+    if (location.hash) {
+      const item = document.querySelector('[id="' + kebabCase(location.hash) + '"]')
+      if (item) {
+        const demo = item.closest('.gatsby_demo')
+        if (demo) {
+          makeFullscreen(demo, skipIgnore)
+        }
+        // trigger fullscreen or change tabs
+        item.dispatchEvent(new CustomEvent('on.trigger.xt'))
       }
-      // trigger fullscreen or change tabs
-      item.dispatchEvent(new CustomEvent('on.trigger.xt'))
     }
   }
 }

@@ -21,6 +21,7 @@ class Smooth extends Xt.Toggle {
 Smooth.componentName = 'xt-smooth'
 Smooth.optionsDefault = {
   class: false,
+  on: false,
   wheel: {
     selector: 'scrollingElement',
     block: false,
