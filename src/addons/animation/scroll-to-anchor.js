@@ -12,7 +12,10 @@ Xt.mount.push({
       if (object.hash) {
         const target = document.querySelector(object.hash)
         if (target) {
+          // prevent location.hash
           e.preventDefault()
+          // no location.hash or page scrolls
+          history.pushState({}, '', object.hash)
           // stop xt-smooth if present
           const self = Xt.get('xt-smooth', object)
           if (self) {
