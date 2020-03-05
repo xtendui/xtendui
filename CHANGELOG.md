@@ -1,3 +1,11 @@
+## [0.13.46](https://github.com/minimit/xtend-library/compare/v0.13.45...v0.13.46) (2020-03-05)
+
+
+### Bug Fixes
+
+* fix ie11 slider error ([2794243](https://github.com/minimit/xtend-library/commit/279424319ba7f37aca17a42c1b220eb2e5dd04c8))
+* **css:** fix sticky moving animation ([2a87c16](https://github.com/minimit/xtend-library/commit/2a87c1642cf52d491fb50ff4df6d2de688536514))
+
 ## [0.13.45](https://github.com/minimit/xtend-library/compare/v0.13.44...v0.13.45) (2020-03-04)
 
 
