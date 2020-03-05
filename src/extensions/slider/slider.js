@@ -261,7 +261,9 @@ class Slider extends Xt.Toggle {
           html = html.replace(new RegExp('xt-tot', 'ig'), self.groupMqInitial.length.toString())
         }
         item.innerHTML = html
-        item.children[0].classList.add(...classes)
+        if (classes.length) {
+          item.children[0].classList.add(...classes)
+        }
         item.children[0].setAttribute('data-xt-group', group[0].getAttribute('data-xt-group'))
         container.insertBefore(item.children[0], cloned)
         item.remove()
