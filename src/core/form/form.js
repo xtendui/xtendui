@@ -29,14 +29,19 @@ Xt.mount.push({
 
     // invalid
 
+    const eventScroll = e => {
+      window.scrollTo(window.scrollX, window.scrollY - Xt.windowHeight * scrollWindowFactor)
+    }
+
     const eventInvalid = e => {
       const item = e.target
       item.classList.remove('valid')
       item.classList.add('invalid')
       // scroll to views
+      addEventListener('scroll', eventScroll)
       cancelAnimationFrame(raf)
       raf = requestAnimationFrame(() => {
-        window.scrollTo(window.scrollX, window.scrollY - Xt.windowHeight * scrollWindowFactor)
+        removeEventListener('scroll', eventScroll)
       })
     }
 
