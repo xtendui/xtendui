@@ -1,3 +1,10 @@
+## [0.13.47](https://github.com/minimit/xtend-library/compare/v0.13.46...v0.13.47) (2020-03-25)
+
+
+### Bug Fixes
+
+* fix form validation scroll ([79b798d](https://github.com/minimit/xtend-library/commit/79b798d6b54071866940c021b6c494f06edd86be))
+
 ## [0.13.46](https://github.com/minimit/xtend-library/compare/v0.13.45...v0.13.46) (2020-03-05)
 
 
