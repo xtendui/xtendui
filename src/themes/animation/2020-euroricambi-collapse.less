@@ -8,6 +8,24 @@
    * drop
    */
 
+  .drop-default {
+    > .drop-inner {
+      box-shadow: @shadow-light;
+      > .drop-design {
+        box-shadow: none;
+      }
+    }
+  }
+
+  .drop-primary {
+    > .drop-inner {
+      box-shadow: @shadow-dark;
+      > .drop-design {
+        box-shadow: none;
+      }
+    }
+  }
+
   .drop-container {
     .drop-container-noanim();
     > .drop {

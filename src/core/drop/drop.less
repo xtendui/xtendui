@@ -137,8 +137,7 @@
         > .drop-content {
           opacity: 1;
           transform: none;
-          transition: transform @time-medium @ease-on, opacity @time-medium @ease-on;
-          transition-delay: @time-tiny;
+          transition: transform @time-medium @ease-on @time-tiny, opacity @time-medium @ease-on @time-tiny;
         }
       }
     }
@@ -150,8 +149,7 @@
         > .drop-design {
           opacity: 0;
           transform: scale(.75, .75);
-          transition: transform @time-small @ease-off, opacity @time-small @ease-off;
-          transition-delay: @time-tiny;
+          transition: transform @time-small @ease-off @time-tiny, opacity @time-small @ease-off @time-tiny;
         }
         > .drop-content {
           opacity: 0;

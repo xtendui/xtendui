@@ -82,8 +82,7 @@
     .card-overlay > .card-inner > .card-content {
       opacity: 1;
       transform: none;
-      transition: transform @time-medium @ease-on, opacity @time-medium @ease-on;
-      transition-delay: @time-tiny;
+      transition: transform @time-medium @ease-on @time-tiny, opacity @time-medium @ease-on @time-tiny;
     }
   }
   &.out {
@@ -92,8 +91,7 @@
     .card-overlay > .card-inner > * {
       opacity: 0;
       transform: scale(.75, .75);
-      transition: transform @time-small @ease-off, opacity @time-small @ease-off;
-      transition-delay: @time-tiny;
+      transition: transform @time-small @ease-off @time-tiny, opacity @time-small @ease-off @time-tiny;
     }
     .card-overlay > .card-inner > .card-content {
       opacity: 0;
