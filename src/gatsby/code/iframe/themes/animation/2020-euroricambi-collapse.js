@@ -1,6 +1,5 @@
 import React from 'react'
 import path from 'path'
-const img = require('components/snippets/img').default
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 

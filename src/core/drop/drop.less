@@ -141,9 +141,6 @@
           transition-delay: @time-tiny;
         }
       }
-      > .backdrop {
-        .backdrop.in();
-      }
     }
   }
   &.out {
@@ -162,8 +159,61 @@
           transition: transform @time-small @ease-off, opacity @time-small @ease-off;
         }
       }
+    }
+  }
+  // backdrop
+  &.in {
+    > .drop {
+      > .backdrop {
+        .backdrop.in();
+      }
+    }
+  }
+  &.out {
+    > .drop {
       > .backdrop {
         .backdrop.out();
+      }
+    }
+  }
+}
+
+.drop-container-noanim {
+  > .drop {
+    > .drop-inner {
+      > .drop-design {
+        opacity: 1;
+        .transform-none();
+      }
+      > .drop-content {
+        opacity: 1;
+        .transform-none();
+      }
+    }
+  }
+  &.in {
+    > .drop {
+      > .drop-inner {
+        > .drop-design {
+          .transition-none();
+        }
+        > .drop-content {
+          .transition-none();
+        }
+      }
+    }
+  }
+  &.out {
+    > .drop {
+      > .drop-inner {
+        > .drop-design {
+          opacity: 1;
+          .transition-none();
+        }
+        > .drop-content {
+          opacity: 1;
+          .transition-none();
+        }
       }
     }
   }

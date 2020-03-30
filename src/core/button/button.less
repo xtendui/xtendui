@@ -27,14 +27,12 @@
   &:hover, &.hover {
     color: @text-dark;
     box-shadow: @shadow-light;
-    transform: translateY(-.25rem);
   }
   &:active, &.active {
     border-color: @shade-200-dark;
     background: @shade-200-dark;
     color: @text-dark;
     box-shadow: @shadow-none;
-    transform: none;
   }
 }
 
@@ -46,30 +44,26 @@
   &:hover, &.hover {
     color: @text-inverse-dark;
     box-shadow: @shadow-accent;
-    transform: translateY(-.25rem);
   }
   &:active, &.active {
     border-color: @accent-dark;
     background: @accent-dark;
     color: @text-inverse-dark;
     box-shadow: @shadow-none;
-    transform: none;
   }
 }
 
 .btn-text {
   .link-none();
-  .btn-nodesign();
+  .btn-nodesign() !important;
   color: inherit;
   &:hover, &.hover {
     color: inherit;
     opacity: .75;
-    transform: none;
   }
   &:active, &.active {
     color: inherit;
     opacity: 1;
-    transform: none;
   }
 }
 
@@ -185,12 +179,14 @@
 // animation
 
 .btn {
-  transition: all @time-small @ease-off, transform @time-tiny @ease-off;
+  transition: border @time-small @ease-off, background @time-small @ease-off, color @time-small @ease-off, box-shadow @time-small @ease-off, transform @time-tiny @ease-off;
   &:hover, &.hover {
-    transition: all @time-small @ease-on, transform @time-tiny @ease-on;
+    transform: translateY(-.25rem);
+    transition: border @time-small @ease-on, background @time-small @ease-on, color @time-small @ease-on, box-shadow @time-small @ease-on, transform @time-tiny @ease-on;
   }
   &:active, &.active {
-    transition: all @time-small @ease-on, transform @time-tiny @ease-on;
+    transform: none;
+    transition: border @time-small @ease-on, background @time-small @ease-on, color @time-small @ease-on, box-shadow @time-small @ease-on, transform @time-tiny @ease-on;
   }
 }
 
