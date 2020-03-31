@@ -6,6 +6,10 @@ title: "Other"
 date: "2019-03-15"
 ---
 
+## Stretch
+
+Refer to [Row page](/components/row/other#stretch).
+
 ## Special
 
 <div class="table-scroll">

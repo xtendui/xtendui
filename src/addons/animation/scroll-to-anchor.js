@@ -9,13 +9,14 @@ Xt.mount.push({
     // click
 
     const eventClick = e => {
-      if (object.hash) {
+      const loc = new URL(object.getAttribute('href'), location)
+      if (loc.hash && loc.pathname === location.pathname) {
         const target = document.querySelector(object.hash)
         if (target) {
           // prevent location.hash
           e.preventDefault()
           // no location.hash or page scrolls
-          history.pushState({}, '', object.hash)
+          history.pushState({}, '', loc.hash)
           // stop xt-smooth if present
           const self = Xt.get('xt-smooth', object)
           if (self) {
