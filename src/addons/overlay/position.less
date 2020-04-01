@@ -33,6 +33,7 @@
 // animation
 
 .overlay-position {
+  .overlay-noanim();
   &.overlay-position-left {
     .card-overlay > .card-design,
     .card-overlay > .card-inner > * {
@@ -98,6 +99,40 @@
         transform: translateX(125%);
         transition: transform @time-small @ease-off, opacity @time-tiny @ease-off @time-tiny;
       }
+    }
+  }
+}
+
+.overlay-position-noanim {
+  .card-overlay > .card-design,
+  .card-overlay > .card-inner > * {
+    opacity: 1;
+  }
+  .card-overlay > .card-inner > .card-content {
+    opacity: 1;
+  }
+  &.in {
+    .card-overlay > .card-design,
+    .card-overlay > .card-inner > * {
+      .transform-none();
+      .transition-none();
+    }
+    .card-overlay > .card-inner > .card-content {
+      .transform-none();
+      .transition-none();
+    }
+  }
+  &.out {
+    .card-overlay > .card-design,
+    .card-overlay > .card-inner > * {
+      opacity: 1;
+      .transform-none();
+      .transition-none();
+    }
+    .card-overlay > .card-inner > .card-content {
+      opacity: 1;
+      .transform-none();
+      .transition-none();
     }
   }
 }

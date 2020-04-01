@@ -20,6 +20,7 @@
     border-style: solid;
     border-color: transparent;
   }
+  // line
   .card-contents({
     > .card-item {
       & + .card-item {
@@ -79,9 +80,14 @@
     border-color: @shade-200;
     background: @shade-200;
   }
+  // line
   .card-contents({
     > .card-item {
-      .card-item-default();
+      & + .card-item {
+        &:before {
+          background: fade(@shade-900, 10%);
+        }
+      }
     }
   });
   // preset
@@ -113,23 +119,20 @@
   }
 }
 
-.card-item-default {
-  & + .card-item {
-    &:before {
-      background: fade(@shade-900, 10%);
-    }
-  }
-}
-
 .card-primary {
   .text-inverse();
   > .card-design {
     border-color: @accent;
     background: @accent;
   }
+  // line
   .card-contents({
     > .card-item {
-      .card-item-primary();
+      & + .card-item {
+        &:before {
+          background: fade(@shade-200, 10%);
+        }
+      }
     }
   });
   // preset
@@ -161,23 +164,20 @@
   }
 }
 
-.card-item-primary {
-  & + .card-item {
-    &:before {
-      background: fade(@shade-200, 10%);
-    }
-  }
-}
-
 .card-white {
   color: @text;
   > .card-design {
     border-color: @white;
     background: @white;
   }
+  // line
   .card-contents({
     > .card-item {
-      .card-item-white();
+      & + .card-item {
+        &:before {
+          background: fade(@shade-900, 10%);
+        }
+      }
     }
   });
   // preset
@@ -201,14 +201,6 @@
         background: @shade-100;
         box-shadow: none;
       }
-    }
-  }
-}
-
-.card-item-white {
-  & + .card-item {
-    &:before {
-      background: fade(@shade-900, 10%);
     }
   }
 }
@@ -281,6 +273,7 @@
 // special
 
 .card-group {
+  // line
   > .card-item {
     & + .card-item {
       &:before {
@@ -295,6 +288,7 @@
 }
 
 .card-horizontal {
+  // line
   .card-contents({
     > .card-item {
       & + .card-item {

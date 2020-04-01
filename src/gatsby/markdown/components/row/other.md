@@ -8,12 +8,10 @@ date: "2019-03-15"
 
 ## Stretch
 
-Use `.row-stretch` to stretch vertically columns.
-
-Use `.card-between` to justify vertically with `space-between`.
+Use `.row-stretch` to stretch vertically columns. You can space with `margin-<position>: auto;` on `.card-block`, or use flex utils on `.card-content`.
 
 <demo>
-  <demovanilla src="vanilla/components/row/stretch">
+  <demovanilla src="vanilla/components/row/stretch-card">
   </demovanilla>
 </demo>
 

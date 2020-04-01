@@ -1,5 +1,3 @@
-import gsap from 'gsap'
-import { ScrollToPlugin } from 'gsap/ScrollToPlugin.js'
 import Prism from 'prismjs'
 import ClipboardJS from 'clipboard'
 import { Xt } from 'xtend-library'
