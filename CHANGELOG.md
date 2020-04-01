@@ -1,3 +1,11 @@
+## [0.13.48](https://github.com/minimit/xtend-library/compare/v0.13.47...v0.13.48) (2020-04-01)
+
+
+### Bug Fixes
+
+* **drop:** fix drop-container-static position ([4ddbe96](https://github.com/minimit/xtend-library/commit/4ddbe96cdcb116d589764bb7e7883866e22a435b))
+* fix scroll-to-anchor when different page same hash + revision card-block custom ([bc575a4](https://github.com/minimit/xtend-library/commit/bc575a456c2e4e882c1beffe4becf926116fc002))
+
 ## [0.13.47](https://github.com/minimit/xtend-library/compare/v0.13.46...v0.13.47) (2020-03-25)
 
 
