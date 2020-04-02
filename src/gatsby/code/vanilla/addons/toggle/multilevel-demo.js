@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="demo--multilevel-default">
+<div class="demo--multilevel">
   <div class="multilevel">
 
     <nav role="navigation" class="multilevel-tab">

@@ -10,5 +10,6 @@ if (typeof window !== 'undefined') {
   require('xtend-library/src/addons/group/group-number.js')
   require('xtend-library/src/addons/slider/navigation-sides.js')
   require('xtend-library/src/addons/test.js')
+  require('xtend-library/src/addons/toggle/multilevel-demo.js')
   require('xtend-library/src/addons/toggle/multilevel.js')
 }
