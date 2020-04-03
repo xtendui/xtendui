@@ -17,9 +17,11 @@ Xt.mount.push({
 
     const eventChange = e => {
       const item = e.target
-      item.classList.add('valid')
-      item.classList.remove('invalid')
-      item.checkValidity()
+      if (item.dataset.xtValidate === 'true') {
+        item.classList.add('valid')
+        item.classList.remove('invalid')
+        item.checkValidity()
+      }
     }
 
     for (const item of items) {
@@ -37,6 +39,7 @@ Xt.mount.push({
       const item = e.target
       item.classList.remove('valid')
       item.classList.add('invalid')
+      item.dataset.xtValidate = 'true'
       // scroll to views
       addEventListener('scroll', eventScroll)
       cancelAnimationFrame(raf)
@@ -45,8 +48,15 @@ Xt.mount.push({
       })
     }
 
+    const eventSubmit = e => {
+      for (const item of items) {
+        delete item.dataset.xtValidate
+      }
+    }
+
     for (const item of items) {
       item.addEventListener('invalid', eventInvalid)
+      item.addEventListener('submit', eventSubmit)
     }
   },
 })
