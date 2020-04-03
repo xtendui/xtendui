@@ -1,4 +1,9 @@
-.demo--multilevel-default {
+@import (reference) '~xtend-library/src/xtend-core.less';
+@import '~xtend-library/src/core/button/button.less';
+@import '~xtend-library/src/core/typography/typography.less';
+@import '~xtend-library/src/addons/link/caret.less';
+
+.demo--multilevel {
 
   // content
 
@@ -11,10 +16,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
-
-  .multilevel-reset {
-    .caret.caret-horizontal.caret-inverse();
   }
 
   .multilevel-list {
@@ -37,18 +38,8 @@
     }
   }
 
-  // toggle
-
-  .multilevel-body {
-    .full();
-    .toggle-block();
-    // animation
-    .anim-x();
-    animation-duration: @time-tiny;
-    &.inverse {
-      .anim-x-inverse();
-      animation-duration: @time-tiny;
-    }
+  .multilevel-reset {
+    .caret.caret-horizontal.caret-inverse();
   }
 
   .multilevel-tab {

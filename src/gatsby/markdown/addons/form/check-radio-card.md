@@ -1,10 +1,10 @@
 ---
 type: "Addons"
 badge: "Addons"
-parent: "Toggle"
-title: "Multilevel"
+parent: "Form"
+title: "Check radio card"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 demos: [
-  "vanilla/addons/toggle/multilevel-demo"
+  "vanilla/addons/form/check-radio-card-demo"
 ]
 ---

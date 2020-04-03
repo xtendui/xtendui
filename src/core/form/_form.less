@@ -27,7 +27,7 @@
  */
 
 .form-label {
-  display: block;
+  display: inline-block;
   position: relative;
   cursor: pointer;
 }
@@ -118,6 +118,38 @@ input[type="checkbox"]:not(.unstyled) {
 input[type="radio"]:not(.unstyled) {
   & ~ .form-label {
     .radio();
+  }
+}
+
+// pseudo
+
+input[type="checkbox"]:not(.unstyled) {
+  // focus
+  &:focus ~ .form-label {
+    .checkbox.focus();
+  }
+  // active
+  &:checked ~ .form-label {
+    .checkbox.active();
+  }
+  // disabled
+  &:disabled ~ .form-label {
+    .disabled();
+  }
+}
+
+input[type="radio"]:not(.unstyled) {
+  // focus
+  &:focus ~ .form-label {
+    .radio.focus();
+  }
+  // active
+  &:checked ~ .form-label {
+    .radio.active();
+  }
+  // disabled
+  &:disabled ~ .form-label {
+    .disabled();
   }
 }
 
