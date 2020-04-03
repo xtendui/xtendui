@@ -323,7 +323,7 @@
 // animation
 
 .card {
-  a&, button& {
+  a&, button&, label& {
     transition: all @time-small @ease-off;
     > .card-design {
       transition: all @time-small @ease-off;
@@ -335,7 +335,7 @@
         transition: all @time-small @ease-on;
       }
     }
-    &:active, &.active {
+    &:active, &.active, input[type="checkbox"]:not(.unstyled):checked ~ &, input[type="radio"]:not(.unstyled):checked ~ & {
       transform: none;
       transition: all @time-small @ease-on;
       > .card-design {

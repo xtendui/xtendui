@@ -15,6 +15,9 @@
     &:not(.disabled) {
       cursor: pointer;
     }
+    // label
+    .form-label();
+    .checkradio-label();
     // check and radio styled design
     &:before, &:after {
       content: '';
@@ -57,6 +60,10 @@
     &:checked ~ * .form-label {
       .demo--checkradio-card .checkbox-card.active();
     }
+    &:checked ~ * .card-design {
+      border-width: 2px;
+      border-color: @accent;
+    }
     // disabled
     &:disabled ~ * .form-label {
       .disabled();
@@ -71,6 +78,10 @@
     // active
     &:checked ~ * .form-label {
       .demo--checkradio-card .radio-card.active();
+    }
+    &:checked ~ * .card-design {
+      border-width: 2px;
+      border-color: @accent;
     }
     // disabled
     &:disabled ~ * .form-label {
