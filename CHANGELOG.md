@@ -1,3 +1,14 @@
+## [0.13.49](https://github.com/minimit/xtend-library/compare/v0.13.48...v0.13.49) (2020-04-03)
+
+
+### Bug Fixes
+
+* **form:** fix form validate core ([cb77cf6](https://github.com/minimit/xtend-library/commit/cb77cf6b20be7db70370915594aa5ea6582817e2))
+* **toggle:** fix multilevel addon ([1958286](https://github.com/minimit/xtend-library/commit/19582861f6704443cb2b69b0c72d6f2f1a8c1952))
+* **toggle:** fix multilevel addon ([08e5fd6](https://github.com/minimit/xtend-library/commit/08e5fd6dfe5115c39d98b6af7582a3127e0cc4cd))
+* **toggle:** fix multilevel addon ([23769bf](https://github.com/minimit/xtend-library/commit/23769bf8bfe37d91fd657df1fd9886cbf52eb809))
+* **toggle:** fix multilevel addon ([e060d4b](https://github.com/minimit/xtend-library/commit/e060d4bb37fea54540809b202e07502ca96bc513))
+
 ## [0.13.48](https://github.com/minimit/xtend-library/compare/v0.13.47...v0.13.48) (2020-04-01)
 
 
