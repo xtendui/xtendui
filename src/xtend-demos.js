@@ -23,4 +23,5 @@ if (typeof window !== 'undefined') {
   require('xtend-library/src/demos/toggle/multilevel-demo.js')
   require('xtend-library/src/demos/toggle/progress.js')
   require('xtend-library/src/demos/toggle/timing-delay-fnc.js')
+  require('xtend-library/src/demos/utils/google-locator-demo.js')
 }

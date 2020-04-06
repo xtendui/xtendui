@@ -789,6 +789,21 @@ if (typeof window !== 'undefined') {
   }
 
   /**
+   * addScript
+   * @param {String} url
+   * @param {Function} callback
+   */
+  Xt.addScript = (url, callback) => {
+    const script = document.createElement('script')
+    if (callback) {
+      script.onload = callback
+    }
+    script.type = 'text/javascript'
+    script.src = url
+    document.body.appendChild(script)
+  }
+
+  /**
    * ignoreOnce
    * @param {Node|HTMLElement|EventTarget|Window} el
    */

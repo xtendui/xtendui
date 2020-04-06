@@ -1,0 +1,338 @@
+
+/**
+ * xtend extension: googlelocator
+ */
+
+.googlelocator {
+  display: flex;
+  flex-wrap: wrap;
+  @media @max-sm {
+    flex-flow: column;
+  }
+  .flex-auto();
+  @media @min-sm {
+    min-height: 100vh;
+  }
+}
+
+// .googlelocator_main
+
+.googlelocator_main {
+  position: relative;
+  .flex-auto();
+  min-height: 100%;
+  @media @max-sm {
+    .sr-only();
+    height: 100vh;
+    // hide map
+    visibility: hidden;
+    pointer-events: none;
+    position: fixed; // @FIX no absolute or bugs search
+    z-index: -1;
+    top: -100vh;
+    left: -100vw;
+    opacity: 0;
+  }
+  @media @min-sm {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    padding-left: 35rem;
+  }
+  @media @min-md {
+    padding-left: 40rem;
+  }
+  @media @min-lg {
+    padding-left: 45rem;
+  }
+}
+
+.googlelocator_main_inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.googlelocator_main_map {
+  width: 100%;
+  height: 100%;
+}
+
+// .googlelocator_aside
+
+.googlelocator_aside {
+  position: relative;
+  z-index: 1;
+  @media @min-sm {
+    width: 35rem;
+    min-height: 100%;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  }
+  @media @min-md {
+    width: 40rem;
+  }
+  @media @min-lg {
+    width: 45rem;
+  }
+}
+
+.googlelocator_aside_head {
+  position: relative;
+  .btn-locate-store-outer {
+    position: relative;
+    width: auto;
+  }
+  padding: 3rem;
+  background-color: @shade-200;
+  input {
+    padding: 1em 1.2em;
+    border-color: @white !important;
+  }
+  button[type="submit"] {
+    padding: 1rem 1.6rem !important;
+    font-size: 2rem !important;
+  }
+}
+
+.googlelocator_aside_body {
+  position: relative;
+  padding: 3rem;
+  .checkout & {
+    padding: 0 !important;
+  }
+}
+
+// result
+
+.googlelocator_result {
+  display: none;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid @shade-200;
+  font-size: 1.3rem;
+}
+
+[data-xt-googlelocator-result-initial] {
+  display: block;
+}
+
+&.found {
+  .googlelocator_result {
+    display: none;
+  }
+  [data-xt-googlelocator-result-founds] {
+    display: block;
+  }
+}
+
+&.noplace {
+  .googlelocator_result {
+    display: none;
+  }
+  [data-xt-googlelocator-result-noplace] {
+    display: block;
+  }
+}
+
+&.empty {
+  .googlelocator_result {
+    display: none;
+  }
+  [data-xt-googlelocator-result-empty] {
+    display: block;
+  }
+}
+
+&.error {
+  .googlelocator_result {
+    display: none;
+  }
+  [data-xt-googlelocator-result-error] {
+    display: block;
+  }
+}
+
+// special
+
+.googlelocator_repeat {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 2rem;
+}
+
+.googlelocator_locate {
+  .link-none();
+  > span {
+    font-size: 1.8em;
+  }
+  color: @shade-200;
+  border-color: @white;
+  background: @white;
+  &:hover, &.hover, &:active, &.active {
+    color: @accent;
+    border-color: @white;
+    background: @white;
+  }
+}
+
+// .googlelocator_item
+
+.googlelocator_item {
+  .list();
+  flex-wrap: nowrap;
+  height: auto !important;
+  align-items: center;
+  justify-content: space-between;
+  .padding(top, 2rem);
+  .padding(bottom, 1rem);
+  border-bottom: 1px solid @shade-200;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  &.active {
+    border-bottom: 1px solid @black;
+  }
+  .form-label {
+    padding-left: 4rem !important;
+  }
+  input[type="radio"]:not(.unstyled) ~ .form-label {
+    &:before, &:after {
+      top: 50%;
+      margin-top: -.8rem;
+    }
+  }
+}
+
+.googlelocator_item_content {
+  cursor: pointer;
+}
+
+.googlelocator_item_name {
+  .full();
+  .h5();
+}
+
+.googlelocator_item_address {
+  .full();
+  font-size: 1.3rem;
+  line-height: 1.4;
+}
+
+.googlelocator_item_additional {
+  .full();
+  font-size: 1.3rem;
+  line-height: 1.4;
+}
+
+.googlelocator_item_directions {
+  .link-none();
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: column;
+  color: #C4C6CA !important;
+  line-height: 1.4;
+  text-align: center;
+  white-space: nowrap;
+  .googlelocator_item_directions_icon {
+    font-size: 3rem;
+    color: #C4C6CA !important;
+    transition-property: color;
+    transition-duration: @time-medium;
+    transition-timing-function: @ease-on
+  }
+  &:hover, &.hover, &:active, &.active {
+    .googlelocator_item_directions_icon {
+      color: @accent !important;
+    }
+  }
+}
+
+// reset infoWindow
+
+.gm-style {
+  .gm-style-iw-c {
+    box-shadow: none !important;
+    border: 0 !important;
+    background: transparent !important;
+  }
+  .gm-style-iw-t {
+    &:after {
+      display: none !important;
+    }
+  }
+  .gm-style-iw {
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+  .gm-style-iw > div {
+    overflow: visible !important;
+  }
+  .gm-style-iw + div {
+    display: none !important;
+  }
+}
+
+// custom infoWindow
+
+@googlelocator-arrow-size: 10px;
+
+.gm-style {
+  .googlelocator_item {
+    .text-inverse();
+    margin-bottom: @googlelocator-arrow-size - 2px;
+    .padding(x, 2rem);
+    border: 0;
+    background: @accent !important;
+    color: @white;
+    box-shadow: @shadow-light;
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      margin-left: -@googlelocator-arrow-size;
+      border-left: @googlelocator-arrow-size solid transparent;
+      border-right: @googlelocator-arrow-size solid transparent;
+      border-top: @googlelocator-arrow-size solid @accent;
+    }
+  }
+  .googlelocator_item_name {
+    color: @white !important;
+  }
+  .googlelocator_item_directions {
+    color: @white !important;
+    .googlelocator_item_directions_icon {
+      color: @white !important;
+    }
+    &:hover, &.hover, &:active, &.active {
+      .googlelocator_item_directions_icon {
+        color: @white !important;
+      }
+    }
+  }
+}
+
+// custom infoWindow close
+
+.gm-style {
+  .gm-style-iw-d + button {
+    width: 3rem !important;
+    height: 3rem !important;
+    background: @accent-dark !important;
+    border-bottom-left-radius: 1rem;
+    font-size: 25px;
+    color: @white !important;
+    line-height: 0;
+    text-align: center;
+    opacity: 1 !important;
+    &:before {
+      content: '×';
+      position: relative;
+      top: -2px;
+    }
+    img {
+      display: none !important;
+    }
+  }
+}

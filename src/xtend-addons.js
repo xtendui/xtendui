@@ -8,4 +8,5 @@ if (typeof window !== 'undefined') {
   require('xtend-library/src/addons/slider/navigation-sides.js')
   require('xtend-library/src/addons/test.js')
   require('xtend-library/src/addons/toggle/multilevel.js')
+  require('xtend-library/src/addons/utils/google-locator.js')
 }
