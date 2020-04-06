@@ -10,7 +10,7 @@ export const demo = {
 
 demo.htmlSource = `
 <form class="form-default">
-  <div class="form-group">
+  <div class="form-group form-group-last">
     <div class="group full">
       <div class="group-inner">
         <button type="button" class="btn btn-primary">
@@ -25,5 +25,5 @@ demo.htmlSource = `
       </div>
     </div>
   </div>
-</div>
+</form>
 `

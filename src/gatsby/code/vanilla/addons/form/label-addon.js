@@ -11,7 +11,7 @@ export const demo = {
 demo.htmlSource = `
 <form class="form-default">
 
-  <div class="form-group">
+  <div class="form-group form-group-last">
     <label class="form-label">
       Label
     </label>

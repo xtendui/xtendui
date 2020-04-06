@@ -175,6 +175,25 @@ demo.htmlSource = `
     </div>
   </div>
 
+  <form class="form-default form-small flex-full"
+        data-xt-toggle="{ targets: '.group' }">
+    <div class="form-group form-group-last">
+      <button type="button" class="btn btn-primary">
+        group
+      </button>
+      <div class="group group-default">
+        <div class="group-inner">
+          <button type="button" class="btn btn-default btn-large">
+            ipsum
+          </button>
+        </div>
+        <div class="group-inner">
+          <input type="text" class="form-item" />
+        </div>
+      </div>
+    </button>
+  </form>
+
 </div>
 `
 

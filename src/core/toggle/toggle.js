@@ -2348,7 +2348,7 @@ class Toggle {
             requestAnimationFrame(() => {
               el.classList.add('xt-hide', 'trans-anim-none')
               el.style.width = 'auto'
-              const w = el.clientHeight + 'px'
+              const w = el.clientWidth + 'px'
               el.style.width = '0'
               cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'))
               Xt.dataStorage

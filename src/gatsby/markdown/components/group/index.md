@@ -89,7 +89,7 @@ Use this markup to create a input group as line.
 
     </div>
   </div>
-</div>
+</form>
 </script>
 
 Use this markup to create a input group as stack.
@@ -114,7 +114,7 @@ Use this markup to create a input group as stack.
 
     </div>
   </div>
-</div>
+</form>
 </script>
 
 <demo>
