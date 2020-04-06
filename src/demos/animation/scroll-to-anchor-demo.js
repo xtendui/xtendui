@@ -18,7 +18,7 @@ Xt.mount.push({
           // no location.hash or page scrolls
           history.pushState({}, '', loc.hash)
           // stop xt-smooth if present
-          const self = Xt.get('xt-smooth', object)
+          const self = Xt.get('xt-smooth', document)
           if (self) {
             self.eventWheelstop()
           }
