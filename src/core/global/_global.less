@@ -113,12 +113,6 @@
   }
 }
 
-.toggle-none() {
-  &.active, &.out {
-    display: none;
-  }
-}
-
 .toggle-visible() {
   visibility: hidden;
   opacity: 0;
@@ -129,9 +123,15 @@
 }
 
 .toggle-hidden() {
-  &.active, &.out {
+  &.in-done {
     visibility: hidden;
     opacity: 0;
+  }
+}
+
+.toggle-inverse() {
+  &.in-done {
+    display: none;
   }
 }
 
@@ -345,6 +345,9 @@
       .toggle-block {
         .toggle-block() !important;
       }
+      .toggle-inverse {
+        .toggle-inverse() !important;
+      }
       .toggle-flex {
         .toggle-flex() !important;
       }
@@ -356,9 +359,6 @@
       }
       .toggle-inline-block {
         .toggle-inline-block() !important;
-      }
-      .toggle-none {
-        .toggle-none() !important;
       }
       .toggle-visible {
         .toggle-visible() !important;

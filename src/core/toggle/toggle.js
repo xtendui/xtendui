@@ -70,6 +70,7 @@ class Toggle {
     // classes
     self.classes = self.options.class ? [...self.options.class.split(' ')] : []
     self.classesIn = self.options.classIn ? [...self.options.classIn.split(' ')] : []
+    self.classesInDone = self.options.classInDone ? [...self.options.classInDone.split(' ')] : []
     self.classesOut = self.options.classOut ? [...self.options.classOut.split(' ')] : []
     self.classesInitial = self.options.classInitial ? [...self.options.classInitial.split(' ')] : []
     self.classesInverse = self.options.classInverse ? [...self.options.classInverse.split(' ')] : []
@@ -289,7 +290,7 @@ class Toggle {
         }
       }
       if (isActive) {
-        elReset.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesInitial, ...self.classesInverse)
+        elReset.classList.remove(...self.classes, ...self.classesIn, ...self.classesInDone, ...self.classesOut, ...self.classesInitial, ...self.classesInverse)
         Xt.dataStorage.remove(elReset, self.componentNamespace + 'Initial')
         if (saveCurrents) {
           found = true
@@ -1147,10 +1148,11 @@ class Toggle {
     // activate
     el.classList.add(...self.classes)
     el.classList.remove(...self.classesIn)
+    el.classList.remove(...self.classesInDone)
+    el.classList.remove(...self.classesOut)
     requestAnimationFrame(() => {
       el.classList.add(...self.classesIn)
     })
-    el.classList.remove(...self.classesOut)
     if (self.initial || Xt.dataStorage.get(el, self.componentNamespace + 'Initial')) {
       el.classList.add(...self.classesInitial)
     }
@@ -1162,6 +1164,16 @@ class Toggle {
   }
 
   /**
+   * activate element done
+   * @param {Node|HTMLElement|EventTarget|Window} el Elements to be deactivated
+   */
+  activateDone(el) {
+    const self = this
+    // activate
+    el.classList.add(...self.classesInDone)
+  }
+
+  /**
    * deactivate element
    * @param {Node|HTMLElement|EventTarget|Window} el Elements to be deactivated
    */
@@ -1170,7 +1182,11 @@ class Toggle {
     // activate
     el.classList.remove(...self.classes)
     el.classList.remove(...self.classesIn)
-    el.classList.add(...self.classesOut)
+    el.classList.remove(...self.classesInDone)
+    el.classList.remove(...self.classesOut)
+    requestAnimationFrame(() => {
+      el.classList.add(...self.classesOut)
+    })
     if (!self.initial && !Xt.dataStorage.get(el, self.componentNamespace + 'Initial')) {
       el.classList.remove(...self.classesInitial)
     }
@@ -1718,7 +1734,9 @@ class Toggle {
     }
     // queue
     if (!skipQueue) {
-      self.queueAnim(actionCurrent, actionOther, obj, el, type)
+      requestAnimationFrame(() => {
+        self.queueAnim(actionCurrent, actionOther, obj, el, type)
+      })
       // queue done
       if (obj[type].instantType) {
         const els = obj[type].queueEls
@@ -1770,6 +1788,8 @@ class Toggle {
     const self = this
     const options = self.options
     if (actionCurrent === 'On') {
+      // activate
+      self.activateDone(el)
       // special
       const before = getComputedStyle(el, ':before')
         .getPropertyValue('content')
@@ -2899,6 +2919,7 @@ Toggle.optionsDefaultSuper = {
   // defaults
   class: 'active active-toggle',
   classIn: 'in',
+  classInDone: 'in-done',
   classOut: 'out',
   classInitial: 'initial',
   classInverse: 'inverse',

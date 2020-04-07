@@ -6,6 +6,17 @@ title: "Other"
 date: "2019-03-15"
 ---
 
+## Toggles
+
+The toggle class utils are this, they toggle on activation the `display` or `visibility` property: `.toggle-block` `.toggle-flex` `.toggle-inline-flex` `.toggle-inline` `.toggle-visible` `.toggle-hidden`.
+
+You can make a target inverse toggle (`display: none` when active), just use `.toggle-inverse`:
+
+<demo>
+  <demovanilla src="vanilla/components/toggle/inverse">
+  </demovanilla>
+</demo>
+
 ## Group
 
 If you need to toggle **multiple targets** with the **same element** assign `data-xt-group` to **elements** and the associated targets **targets**. Group's additional elements aren't counted for min and max.
@@ -19,7 +30,7 @@ If you need to toggle **multiple targets** with the **same element** assign `dat
 
 You can have **element's link** that trigger after toggle.
 
-If the toggle is on <code>"on": "mouseenter"</code> or <code>"on": "mousehover"</code> the link gets activated on the second touch event on touch devices.
+If the toggle is on `"on": "mouseenter"` or `"on": "mousehover"` the link gets activated on the second touch event on touch devices.
 
 <demo>
   <demovanilla src="vanilla/components/toggle/with-link">
