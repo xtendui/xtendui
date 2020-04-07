@@ -1,3 +1,1802 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link href="/styles.02810402ef34b612701d.css" rel="stylesheet" type="text/css"/><meta name="generator" content="Gatsby 2.19.19"/><title data-react-helmet="true">Slider — Customizable sliders with custom animation and interaction. — Xtend</title><meta data-react-helmet="true" name="description" content="Xtend advanded frontend library"/><meta data-react-helmet="true" property="og:title" content="Slider — Customizable sliders with custom animation and interaction."/><meta data-react-helmet="true" property="og:description" content="Xtend advanded frontend library"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="Riccardo Caroli"/><meta data-react-helmet="true" name="twitter:title" content="Slider — Customizable sliders with custom animation and interaction."/><meta data-react-helmet="true" name="twitter:description" content="Xtend advanded frontend library"/><link rel="icon" href="/icons/icon-48x48.png?v=9a1070f1751ac45afa639773a714e9c2"/><link rel="manifest" href="/manifest.webmanifest"/><meta name="theme-color" content="#0078ff"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=9a1070f1751ac45afa639773a714e9c2"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=9a1070f1751ac45afa639773a714e9c2"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=9a1070f1751ac45afa639773a714e9c2"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=9a1070f1751ac45afa639773a714e9c2"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=9a1070f1751ac45afa639773a714e9c2"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=9a1070f1751ac45afa639773a714e9c2"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=9a1070f1751ac45afa639773a714e9c2"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=9a1070f1751ac45afa639773a714e9c2"/><link as="script" rel="preload" href="/webpack-runtime-5218029def3da0196256.js"/><link as="script" rel="preload" href="/app-eb8207310f313ee7247c.js"/><link as="script" rel="preload" href="/styles-32fb5a27f2bd870622cd.js"/><link as="script" rel="preload" href="/commons-b02097b2237ea45fb25d.js"/><link as="script" rel="preload" href="/component---src-gatsby-components-templates-doc-page-js-b6bb64982e0b0cecb566.js"/><link as="fetch" rel="preload" href="/page-data/themes/slider/page-data.json" crossorigin="anonymous"/></head><body><noscript id="gatsby-noscript">This app works best with JavaScript enabled.</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="gatsby_site_wrapper"><div class="gatsby_site_main"><div class="gatsby_site_main_inner"><div class="gatsby_site_article_sidebar"><header class="gatsby_site_header"><nav class="gatsby_site_header_inner"><div><div class="gatsby_site_header_logo_outer"><div class="gatsby_site_header_logo"><a title="Home" class="gatsby_logo-icon
-                                  " href="/"><img src="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMV9jb3B5IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMC42MSA5LjEyIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmxvZ28td2hpdGU8L3RpdGxlPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTMuNjksMy40MSw1LjI5LjQ3aDJMNC44Miw0LjcsNy4zNyw5aC0yTDMuNjksNiwyLDlIMEwyLjU1LDQuNy4wNi40N2gyWiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTkuOSwxLjFWMi42NkgxMVYzLjlIOS45VjcuMDdhLjc1Ljc1LDAsMCwwLC4xMy41LjcuNywwLDAsMCwuNTIuMTUsMi41MywyLjUzLDAsMCwwLC41LDBWOWEzLjI2LDMuMjYsMCwwLDEtMSwuMTYsMS42MSwxLjYxLDAsMCwxLTEuODEtMS44VjMuOUg3LjI4VjIuNjZoLjkzVjEuMVoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xNC43Myw5LjEyYTMuMTIsMy4xMiwwLDAsMS0yLjI3LS44NkEzLjA1LDMuMDUsMCwwLDEsMTEuNTksNlY1LjgyQTMuNzcsMy43NywwLDAsMSwxMiw0LjExLDIuNjcsMi42NywwLDAsMSwxMywzYTMsMywwLDAsMSwxLjU1LS40MSwyLjY0LDIuNjQsMCwwLDEsMiwuODIsMy4zNSwzLjM1LDAsMCwxLC43NSwyLjMzdi42OWgtNGExLjYsMS42LDAsMCwwLC41LDEsMS40NywxLjQ3LDAsMCwwLDEsLjM3QTEuNzksMS43OSwwLDAsMCwxNi4zNyw3bC44NC45M2EyLjY2LDIuNjYsMCwwLDEtMSwuODVBMy4zNywzLjM3LDAsMCwxLDE0LjczLDkuMTJabS0uMTktNS4yMWExLjA1LDEuMDUsMCwwLDAtLjgyLjM0LDEuNzcsMS43NywwLDAsMC0uNCwxaDIuMzZWNS4wOWExLjIyLDEuMjIsMCwwLDAtLjMxLS44N0ExLjA2LDEuMDYsMCwwLDAsMTQuNTQsMy45MVoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yMCwyLjY2bC4wNS43M2EyLjI0LDIuMjQsMCwwLDEsMS44Mi0uODUsMS44MywxLjgzLDAsMCwxLDEuNS41OSwyLjc5LDIuNzksMCwwLDEsLjUxLDEuNzdWOUgyMi4xNVY1YTEuMTEsMS4xMSwwLDAsMC0uMjQtLjc5LDEuMDYsMS4wNiwwLDAsMC0uNzgtLjI0LDEuMTYsMS4xNiwwLDAsMC0xLjA3LjYxVjlIMTguMzdWMi42NloiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNC45LDUuNzhhMy44NCwzLjg0LDAsMCwxLC42Ni0yLjM2LDIuMTcsMi4xNywwLDAsMSwxLjgyLS44OCwxLjk0LDEuOTQsMCwwLDEsMS41My42OVYwaDEuN1Y5SDI5LjA4TDI5LDguMzNhMiwyLDAsMCwxLTEuNjMuNzksMi4xNywyLjE3LDAsMCwxLTEuOC0uODhBNCw0LDAsMCwxLDI0LjksNS43OFptMS42OS4xM2EyLjUsMi41LDAsMCwwLC4zMSwxLjM3LDEsMSwwLDAsMCwuOS40NywxLjE0LDEuMTQsMCwwLDAsMS4xMS0uNjZWNC41OGExLjEyLDEuMTIsMCwwLDAtMS4xLS42NkMyNywzLjkyLDI2LjU5LDQuNTgsMjYuNTksNS45MVoiLz48L3N2Zz4K" alt="Xtend"/></a></div><div><div class="gatsby_site_header_top_social"><a href="https://github.com/minimit/xtend-library" target="_blank" rel="noopener" class="btn gatsby_btn-site_header_top_social" title="Github"><span class="icon-github icon-large"></span></a><a href="https://www.npmjs.com/package/xtend-library" target="_blank" rel="noopener" class="btn gatsby_btn-site_header_top_social" title="Npm"><span class="icon-npm icon-large"></span></a></div></div></div></div><div><div class="gatsby_site_header_links"><a class="btn gatsby_btn-site_header_link " href="/introduction">Introduction</a><a class="btn gatsby_btn-site_header_link " href="/components">Components</a><a class="btn gatsby_btn-site_header_link " href="/addons">Addons</a><a class="btn gatsby_btn-site_header_link " href="/themes">Themes</a></div></div></nav></header><nav class="gatsby_site_header_listing"><div><div class="gatsby_site_header_cat"><div class="gatsby_cat--site_article_sidebar ">Core</div><div class="gatsby_site_header_sub active "><div class="gatsby_site_header_item"><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/themes/button">Button</a></div><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/themes/drop">Drop</a></div><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/themes/overlay">Overlay</a></div></div></div></div></div><div><div class="gatsby_site_header_cat"><div class="gatsby_cat--site_article_sidebar current">Extensions</div><div class="gatsby_site_header_sub active active"><div class="gatsby_site_header_item"><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/themes/scroll">Scroll</a></div><div><a aria-current="page" class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub active" href="/themes/slider">Slider</a><div class="gatsby_site_header_adiacent active"><div class="gatsby_site_header_item"></div></div></div><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/themes/smooth">Smooth</a></div></div></div></div></div></nav></div><div class="gatsby_site_article"><div id="gatbsy_open-full-trigger" data-xt-toggle="{ targets: &#x27;#gatbsy_open-full&#x27;, closeInside: &#x27;:scope &gt; .btn-close&#x27;, autoClose: true, scrollbar: true }"></div><div class="toggle-block" id="gatbsy_open-full"><div class="btn btn-close" aria-label="Close"></div><div class="card-content" id="gatbsy_open-full-content"></div></div><main class="gatsby_site_article_inner" id="gatbsy_open-full-inner"><div><header class="gatsby_site_article_hero"><div class="gatsby_site_article_hero_content"><div class="gatsby_site_article_hero_content_inner"><h1><span>Slider</span><div class="badge badge-default badge-small">Themes</div></h1><p>Customizable sliders with custom animation and interaction.</p></div></div><nav class="gatsby_site_article_hero_links"><div class="gatsby_site_article_hero_links_inner"><div class="row"><div><a class="btn" href="/themes"><span class="icon-arrow-left icon-left"></span>Themes</a></div><div></div></div></div></nav></header></div><article class="gatsby_site_article_content"><div class="gatsby_site_article_content_inner"><div class="gatsby_listing"><div class="row"><div class="gatsby_listing_group"><div class="gatsby_listing_items"><div class="row"><div class="gatsby_listing_column"><a role="button" class="card card-primary card-small card-full card-collapse gatsby_listing_item" data-gatsby-listing-toggle="true"><div class="card-design"></div><div class="card-inner"><div class="card-content"><div class="card-block card-item"><div class="card-title">2020 Brands Slider</div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis.</p></div></div></div></a><div class="gatsby_demo"><div class="gatsby_demo_item" data-iframe="iframe/themes/slider/2020-brands-slider"></div></div></div><div class="gatsby_listing_column"><a role="button" class="card card-primary card-small card-full card-collapse gatsby_listing_item" data-gatsby-listing-toggle="true"><div class="card-design"></div><div class="card-inner"><div class="card-content"><div class="card-block card-item"><div class="card-title">2020 Euroricambi Slider</div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis.</p></div></div></div></a><div class="gatsby_demo"><div class="gatsby_demo_item" data-iframe="iframe/themes/slider/2020-euroricambi-slider"></div></div></div><div class="gatsby_listing_column"><a role="button" class="card card-primary card-small card-full card-collapse gatsby_listing_item" data-gatsby-listing-toggle="true"><div class="card-design"></div><div class="card-inner"><div class="card-content"><div class="card-block card-item"><div class="card-title">2019 Sun68 Slider</div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis.</p></div></div></div></a><div class="gatsby_demo"><div class="gatsby_demo_item" data-iframe="iframe/themes/slider/2019-sun68-slider"></div></div></div><div class="gatsby_listing_column"><a role="button" class="card card-primary card-small card-full card-collapse gatsby_listing_item" data-gatsby-listing-toggle="true"><div class="card-design"></div><div class="card-inner"><div class="card-content"><div class="card-block card-item"><div class="card-title">2019 Webgriffe Slider</div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis.</p></div></div></div></a><div class="gatsby_demo"><div class="gatsby_demo_item" data-iframe="iframe/themes/slider/2019-webgriffe-slider"></div></div></div></div></div></div></div></div><div></div></div></article><footer class="gatsby_site_article_foot"><div class="gatsby_site_article_foot_inner"><div class="gatsby_listing_group"><div class="gatsby_listing_items"><div class="row"><div class="gatsby_listing_column"><a class="card card-primary card-small card-full card-collapse gatsby_listing_item" href="/introduction"><div class="card-design"></div><div class="card-inner"><div class="card-content"><div class="card-block card-item"><div class="card-title">Setup or other problems?</div><p>Visit the <strong>Introduction</strong> page.</p></div></div></div></a></div><div class="gatsby_listing_column"><a class="card card-primary card-small card-full card-collapse gatsby_listing_item" href="/components/slider"><div class="card-design"></div><div class="card-inner"><div class="card-content"><div class="card-block card-item"><div class="card-title">Visit the Components page</div><p>There <!-- -->are<!-- --> <!-- -->3<!-- --> <strong>pages</strong> for<!-- --> <!-- -->Slider<!-- -->.</p></div></div></div></a></div><div class="gatsby_listing_column"><a class="card card-primary card-small card-full card-collapse gatsby_listing_item" href="/addons/slider"><div class="card-design"></div><div class="card-inner"><div class="card-content"><div class="card-block card-item"><div class="card-title">Visit the Addons page</div><p>There <!-- -->is<!-- --> <!-- -->1<!-- --> <strong>addons</strong> for <!-- -->Slider<!-- -->.</p></div></div></div></a></div></div></div></div></div></footer><footer class="gatsby_site_footer"><div class="gatsby_site_footer_bottom"><div class="container full"><div class="gatsby_site_footer_inner"><div class="row gatsby_site_footer_bottom_row"><div><a title="Home" class="gatsby_logo-icon
-                                      " href="/"><img src="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMV9jb3B5IiBkYXRhLW5hbWU9IkxheWVyIDEgY29weSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMjIuMDEgMTUuMzUiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojMzczYTQ0O30uY2xzLTJ7ZmlsbDojOTY5YmFkO308L3N0eWxlPjwvZGVmcz48dGl0bGU+aWNvbi1ibGFjazwvdGl0bGU+PHBvbHlsaW5lIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSIxNS42IDAgMjIuMDEgMCAyMi4wMSAyLjg2IDE3LjQxIDIuODYgMTcuNDEgMTUuMzUgMTUuNiAxNS4zNSIvPjxwb2x5bGluZSBjbGFzcz0iY2xzLTEiIHBvaW50cz0iNi44NCAxMC4xNSA0LjI2IDE1LjM1IDAgMTUuMzUgNC40IDcuNjEgMC4xMiAwIDQuMzMgMCA2Ljg0IDUuMSIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIxMy41OCAwIDExLjk3IDIuODYgMTMuNzEgMi44NiAxMy43MSAxNS4zNSAxNS42IDE1LjM1IDE1LjYgMCAxMy41OCAwIi8+PHBvbHlnb24gY2xhc3M9ImNscy0yIiBwb2ludHM9IjkuMzUgMCA5LjE4IDAuMzQgNi44NCA1LjEgNi44NCAxMC4xNSA5LjQzIDE1LjM1IDEzLjcgMTUuMzUgOS4yOSA3LjYxIDExLjk3IDIuODYgMTMuNTggMCA5LjM1IDAiLz48L3N2Zz4=" alt="Xtend"/></a></div><div>Site and docs licensed<!-- --> <a href="https://github.com/minimit/xtend-library/blob/master/LICENSE-DOCS" target="_blank" rel="noopener">CC BY 3.0</a> <span class="separator separator-dash"></span> <!-- -->Xtend<!-- --> v<!-- -->0.13.49<!-- --> licensed<!-- --> <a href="https://github.com/minimit/minimit/blob/master/LICENSE" target="_blank" rel="noopener">MIT</a><br/></div><div class="gatsby_site_footer_bottom_right">© 2018 – <!-- -->2020<!-- --> <!-- -->Riccardo Caroli</div></div></div></div></div></footer></main></div></div></div></div></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/themes/slider";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-eb8207310f313ee7247c.js"],"component---src-gatsby-components-templates-doc-listing-js":["/component---src-gatsby-components-templates-doc-listing-js-40b3fc1ae927f998c237.js"],"component---src-gatsby-components-templates-doc-page-js":["/component---src-gatsby-components-templates-doc-page-js-b6bb64982e0b0cecb566.js"],"component---src-gatsby-components-pages-404-js":["/component---src-gatsby-components-pages-404-js-61790278deee9ed7df07.js"],"component---src-gatsby-components-pages-index-js":["/component---src-gatsby-components-pages-index-js-9b0925f9efd0a41c8c3e.js"],"component---src-gatsby-code-iframe-addons-animation-scroll-to-anchor-js":["/component---src-gatsby-code-iframe-addons-animation-scroll-to-anchor-js-8d9a432c0da92bf7c50a.js"],"component---src-gatsby-code-iframe-addons-global-jump-to-content-js":["/component---src-gatsby-code-iframe-addons-global-jump-to-content-js-b74fb1492559f5fd449d.js"],"component---src-gatsby-code-iframe-addons-global-sticky-footer-js":["/component---src-gatsby-code-iframe-addons-global-sticky-footer-js-16110e850c9e55c401be.js"],"component---src-gatsby-code-iframe-components-scroll-delay-js":["/component---src-gatsby-code-iframe-components-scroll-delay-js-da9b0e73beee21e92513.js"],"component---src-gatsby-code-iframe-components-scroll-direction-js":["/component---src-gatsby-code-iframe-components-scroll-direction-js-5dc83cd362c0bc939aff.js"],"component---src-gatsby-code-iframe-components-scroll-distance-js":["/component---src-gatsby-code-iframe-components-scroll-distance-js-a7d4c34029222c56d6cb.js"],"component---src-gatsby-code-iframe-components-scroll-mode-block-js":["/component---src-gatsby-code-iframe-components-scroll-mode-block-js-1e3bf4c3262d6fe07788.js"],"component---src-gatsby-code-iframe-components-scroll-mode-infinite-js":["/component---src-gatsby-code-iframe-components-scroll-mode-infinite-js-bbfe25752d6525341777.js"],"component---src-gatsby-code-iframe-components-scroll-mode-responsive-js":["/component---src-gatsby-code-iframe-components-scroll-mode-responsive-js-1bd57a22ae7cd9796018.js"],"component---src-gatsby-code-iframe-components-scroll-mode-scroll-js":["/component---src-gatsby-code-iframe-components-scroll-mode-scroll-js-c0949075eb328f367e13.js"],"component---src-gatsby-code-iframe-components-scroll-mode-visible-js":["/component---src-gatsby-code-iframe-components-scroll-mode-visible-js-509a5eeea535d6b77a5c.js"],"component---src-gatsby-code-iframe-components-scroll-parallax-js":["/component---src-gatsby-code-iframe-components-scroll-parallax-js-f1e22b00f4f55431de2b.js"],"component---src-gatsby-code-iframe-components-sticky-contain-bottom-js":["/component---src-gatsby-code-iframe-components-sticky-contain-bottom-js-23d3ad0bc662e43d3127.js"],"component---src-gatsby-code-iframe-components-sticky-contain-top-js":["/component---src-gatsby-code-iframe-components-sticky-contain-top-js-4446229f9c7c74bcf402.js"],"component---src-gatsby-code-iframe-components-sticky-disable-js":["/component---src-gatsby-code-iframe-components-sticky-disable-js-c09b8c0743737a5658b6.js"],"component---src-gatsby-code-iframe-components-sticky-hide-js":["/component---src-gatsby-code-iframe-components-sticky-hide-js-8e62331f82b5abae1eb4.js"],"component---src-gatsby-code-iframe-components-sticky-limit-js":["/component---src-gatsby-code-iframe-components-sticky-limit-js-35a7768f881595816a85.js"],"component---src-gatsby-code-iframe-components-sticky-mode-absolute-js":["/component---src-gatsby-code-iframe-components-sticky-mode-absolute-js-5fbcce9372659039789b.js"],"component---src-gatsby-code-iframe-components-sticky-mode-fixed-always-js":["/component---src-gatsby-code-iframe-components-sticky-mode-fixed-always-js-98bc47b5755057ac411b.js"],"component---src-gatsby-code-iframe-components-sticky-mode-fixed-js":["/component---src-gatsby-code-iframe-components-sticky-mode-fixed-js-c7c5491d1a40de85451b.js"],"component---src-gatsby-code-iframe-components-sticky-position-js":["/component---src-gatsby-code-iframe-components-sticky-position-js-b649db4e982b77682515.js"],"component---src-gatsby-code-iframe-components-sticky-showhide-bottom-js":["/component---src-gatsby-code-iframe-components-sticky-showhide-bottom-js-8ce359d491f265f20649.js"],"component---src-gatsby-code-iframe-components-sticky-showhide-hide-js":["/component---src-gatsby-code-iframe-components-sticky-showhide-hide-js-cc7dc89cf23fce7b1a2b.js"],"component---src-gatsby-code-iframe-components-sticky-showhide-top-js":["/component---src-gatsby-code-iframe-components-sticky-showhide-top-js-9836bc519617ea166af5.js"],"component---src-gatsby-code-iframe-components-test-react-iframe-js":["/component---src-gatsby-code-iframe-components-test-react-iframe-js-a19676cb0f34df5a0eef.js"],"component---src-gatsby-code-iframe-components-test-vanilla-iframe-js":["/component---src-gatsby-code-iframe-components-test-vanilla-iframe-js-8a37776a4da96262128d.js"],"component---src-gatsby-code-iframe-themes-animation-2020-bertani-listing-js":["/component---src-gatsby-code-iframe-themes-animation-2020-bertani-listing-js-7eeebe29849138baed1d.js"],"component---src-gatsby-code-iframe-themes-animation-2020-euroricambi-collapse-js":["/component---src-gatsby-code-iframe-themes-animation-2020-euroricambi-collapse-js-4a678854b52d380ded68.js"],"component---src-gatsby-code-iframe-themes-slider-2019-sun-68-slider-js":["/component---src-gatsby-code-iframe-themes-slider-2019-sun-68-slider-js-91b453f41d1a7c941a1c.js"],"component---src-gatsby-code-iframe-themes-slider-2019-webgriffe-slider-js":["/component---src-gatsby-code-iframe-themes-slider-2019-webgriffe-slider-js-7cc8fab077c4e2a6b6d7.js"],"component---src-gatsby-code-iframe-themes-slider-2020-brands-slider-js":["/component---src-gatsby-code-iframe-themes-slider-2020-brands-slider-js-a0675c8a3f162aa7bed5.js"],"component---src-gatsby-code-iframe-themes-slider-2020-euroricambi-slider-js":["/component---src-gatsby-code-iframe-themes-slider-2020-euroricambi-slider-js-8b1e65cb98404622d7cd.js"]};/*]]>*/</script><script src="/component---src-gatsby-components-templates-doc-page-js-b6bb64982e0b0cecb566.js" async=""></script><script src="/commons-b02097b2237ea45fb25d.js" async=""></script><script src="/styles-32fb5a27f2bd870622cd.js" async=""></script><script src="/app-eb8207310f313ee7247c.js" async=""></script><script src="/webpack-runtime-5218029def3da0196256.js" async=""></script></body></html>
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link href="/styles.2d32eb564cb3d902cf5e.css" rel="stylesheet" type="text/css"/><meta name="generator" content="Gatsby 2.19.19"/><title data-react-helmet="true">Slider — Customizable sliders with custom animation and interaction. — Xtend</title><meta data-react-helmet="true" name="description" content="Xtend advanded frontend library"/><meta data-react-helmet="true" property="og:title" content="Slider — Customizable sliders with custom animation and interaction."/><meta data-react-helmet="true" property="og:description" content="Xtend advanded frontend library"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="Riccardo Caroli"/><meta data-react-helmet="true" name="twitter:title" content="Slider — Customizable sliders with custom animation and interaction."/><meta data-react-helmet="true" name="twitter:description" content="Xtend advanded frontend library"/><link rel="icon" href="/icons/icon-48x48.png?v=9a1070f1751ac45afa639773a714e9c2"/><link rel="manifest" href="/manifest.webmanifest"/><meta name="theme-color" content="#0078ff"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=9a1070f1751ac45afa639773a714e9c2"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=9a1070f1751ac45afa639773a714e9c2"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=9a1070f1751ac45afa639773a714e9c2"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=9a1070f1751ac45afa639773a714e9c2"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=9a1070f1751ac45afa639773a714e9c2"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=9a1070f1751ac45afa639773a714e9c2"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=9a1070f1751ac45afa639773a714e9c2"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=9a1070f1751ac45afa639773a714e9c2"/><link as="script" rel="preload" href="/webpack-runtime-87fda801166554a6b536.js"/><link as="script" rel="preload" href="/app-2e148b7baeb4316f1fea.js"/><link as="script" rel="preload" href="/styles-07d23080d4a96a7e6711.js"/><link as="script" rel="preload" href="/commons-4c80d88a2496de1f96e5.js"/><link as="script" rel="preload" href="/component---src-gatsby-components-templates-doc-page-js-817df1cf56863344a96f.js"/><link as="fetch" rel="preload" href="/page-data/themes/slider/page-data.json" crossorigin="anonymous"/></head><body><noscript id="gatsby-noscript">This app works best with JavaScript enabled.</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="gatsby_site_wrapper"><div class="gatsby_site_main"><div class="gatsby_site_main_inner"><div class="gatsby_site_article_sidebar"><header class="gatsby_site_header"><nav class="gatsby_site_header_inner"><div><div class="gatsby_site_header_logo_outer"><div class="gatsby_site_header_logo"><a title="Home" class="gatsby_logo-icon
+                                  " href="/"><img src="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMV9jb3B5IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMC42MSA5LjEyIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmxvZ28td2hpdGU8L3RpdGxlPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTMuNjksMy40MSw1LjI5LjQ3aDJMNC44Miw0LjcsNy4zNyw5aC0yTDMuNjksNiwyLDlIMEwyLjU1LDQuNy4wNi40N2gyWiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTkuOSwxLjFWMi42NkgxMVYzLjlIOS45VjcuMDdhLjc1Ljc1LDAsMCwwLC4xMy41LjcuNywwLDAsMCwuNTIuMTUsMi41MywyLjUzLDAsMCwwLC41LDBWOWEzLjI2LDMuMjYsMCwwLDEtMSwuMTYsMS42MSwxLjYxLDAsMCwxLTEuODEtMS44VjMuOUg3LjI4VjIuNjZoLjkzVjEuMVoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xNC43Myw5LjEyYTMuMTIsMy4xMiwwLDAsMS0yLjI3LS44NkEzLjA1LDMuMDUsMCwwLDEsMTEuNTksNlY1LjgyQTMuNzcsMy43NywwLDAsMSwxMiw0LjExLDIuNjcsMi42NywwLDAsMSwxMywzYTMsMywwLDAsMSwxLjU1LS40MSwyLjY0LDIuNjQsMCwwLDEsMiwuODIsMy4zNSwzLjM1LDAsMCwxLC43NSwyLjMzdi42OWgtNGExLjYsMS42LDAsMCwwLC41LDEsMS40NywxLjQ3LDAsMCwwLDEsLjM3QTEuNzksMS43OSwwLDAsMCwxNi4zNyw3bC44NC45M2EyLjY2LDIuNjYsMCwwLDEtMSwuODVBMy4zNywzLjM3LDAsMCwxLDE0LjczLDkuMTJabS0uMTktNS4yMWExLjA1LDEuMDUsMCwwLDAtLjgyLjM0LDEuNzcsMS43NywwLDAsMC0uNCwxaDIuMzZWNS4wOWExLjIyLDEuMjIsMCwwLDAtLjMxLS44N0ExLjA2LDEuMDYsMCwwLDAsMTQuNTQsMy45MVoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yMCwyLjY2bC4wNS43M2EyLjI0LDIuMjQsMCwwLDEsMS44Mi0uODUsMS44MywxLjgzLDAsMCwxLDEuNS41OSwyLjc5LDIuNzksMCwwLDEsLjUxLDEuNzdWOUgyMi4xNVY1YTEuMTEsMS4xMSwwLDAsMC0uMjQtLjc5LDEuMDYsMS4wNiwwLDAsMC0uNzgtLjI0LDEuMTYsMS4xNiwwLDAsMC0xLjA3LjYxVjlIMTguMzdWMi42NloiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNC45LDUuNzhhMy44NCwzLjg0LDAsMCwxLC42Ni0yLjM2LDIuMTcsMi4xNywwLDAsMSwxLjgyLS44OCwxLjk0LDEuOTQsMCwwLDEsMS41My42OVYwaDEuN1Y5SDI5LjA4TDI5LDguMzNhMiwyLDAsMCwxLTEuNjMuNzksMi4xNywyLjE3LDAsMCwxLTEuOC0uODhBNCw0LDAsMCwxLDI0LjksNS43OFptMS42OS4xM2EyLjUsMi41LDAsMCwwLC4zMSwxLjM3LDEsMSwwLDAsMCwuOS40NywxLjE0LDEuMTQsMCwwLDAsMS4xMS0uNjZWNC41OGExLjEyLDEuMTIsMCwwLDAtMS4xLS42NkMyNywzLjkyLDI2LjU5LDQuNTgsMjYuNTksNS45MVoiLz48L3N2Zz4K" alt="Xtend"/></a></div><div><div class="gatsby_site_header_top_social"><a href="https://github.com/minimit/xtend-library" target="_blank" rel="noopener" class="btn gatsby_btn-site_header_top_social" title="Github"><span class="icon-github icon-large"></span></a><a href="https://www.npmjs.com/package/xtend-library" target="_blank" rel="noopener" class="btn gatsby_btn-site_header_top_social" title="Npm"><span class="icon-npm icon-large"></span></a></div></div></div></div><div><div class="gatsby_site_header_links"><a class="btn gatsby_btn-site_header_link " href="/introduction">Introduction</a><a class="btn gatsby_btn-site_header_link " href="/components">Components</a><a class="btn gatsby_btn-site_header_link " href="/addons">Addons</a><a class="btn gatsby_btn-site_header_link " href="/themes">Themes</a></div></div></nav></header><nav class="gatsby_site_header_listing"><div><div class="gatsby_site_header_cat"><div class="gatsby_cat--site_article_sidebar ">Core</div><div class="gatsby_site_header_sub active "><div class="gatsby_site_header_item"><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/themes/button">Button</a></div><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/themes/drop">Drop</a></div><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/themes/group">Group</a></div><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/themes/overlay">Overlay</a></div></div></div></div></div><div><div class="gatsby_site_header_cat"><div class="gatsby_cat--site_article_sidebar current">Extensions</div><div class="gatsby_site_header_sub active active"><div class="gatsby_site_header_item"><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/themes/scroll">Scroll</a></div><div><a aria-current="page" class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub active" href="/themes/slider">Slider</a><div class="gatsby_site_header_adiacent active"><div class="gatsby_site_header_item"></div></div></div><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/themes/smooth">Smooth</a></div></div></div></div></div></nav></div><div class="gatsby_site_article"><div id="gatbsy_open-full-trigger" data-xt-toggle="{ targets: &#x27;#gatbsy_open-full&#x27;, closeInside: &#x27;:scope &gt; .btn-close&#x27;, autoClose: true, scrollbar: true }"></div><div class="toggle-block" id="gatbsy_open-full"><div class="btn btn-close" aria-label="Close"></div><div class="card-content" id="gatbsy_open-full-content"></div></div><main class="gatsby_site_article_inner" id="gatbsy_open-full-inner"><div><header class="gatsby_site_article_hero"><div class="gatsby_site_article_hero_content"><div class="gatsby_site_article_hero_content_inner"><h1><span>Slider</span><div class="badge badge-default badge-small">Themes</div></h1><p>Customizable sliders with custom animation and interaction.</p></div></div><nav class="gatsby_site_article_hero_links"><div class="gatsby_site_article_hero_links_inner"><div class="row"><div><a class="btn" href="/themes"><span class="icon-arrow-left icon-left"></span>Themes</a></div><div></div></div></div></nav></header></div><article class="gatsby_site_article_content"><div class="gatsby_site_article_content_inner"><div class="gatsby_listing"><div class="row"><div class="gatsby_listing_group"><div class="gatsby_listing_items"><div class="row"><div class="gatsby_listing_column"><a role="button" class="card card-primary card-small card-full card-collapse gatsby_listing_item" data-gatsby-listing-toggle="true"><div class="card-design"></div><div class="card-inner"><div class="card-content"><div class="card-block card-item"><div class="card-title">2020 Brands Slider</div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis.</p></div></div></div></a><div class="gatsby_demo"><div class="gatsby_demo_item gatsby_demo_preview" data-name="2020 brands slider" data-inline="vanilla/themes/slider/2020-brands-slider"><script type="text/plain" data-lang="html">
+<div class="slider demo--2020-brands-slider">
+
+    <div class="slides">
+        <ul class="slides-inner">
+
+            <li class="slide">
+                <div class="slide-inner">
+                    <div class="slide_item">
+                        <div class="slide_content">
+                            Lorem
+                        </div>
+                        <div class="slide_content">
+                            ipsum
+                        </div>
+                        <div class="slide_content">
+                            dolor sit amet
+                        </div>
+                        <div class="slide_content">
+                            consectetur
+                        </div>
+                        <div class="slide_content">
+                            adipiscing elit
+                        </div>
+                        <div class="slide_content">
+                            Nunc
+                        </div>
+                        <div class="slide_content">
+                            tempus
+                        </div>
+                        <div class="slide_content">
+                            laoreet
+                        </div>
+                        <div class="slide_content">
+                            leo sit amet iaculis
+                        </div>
+                        <div class="slide_content">
+                            Lorem
+                        </div>
+                        <div class="slide_content">
+                            ipsum
+                        </div>
+                        <div class="slide_content">
+                            dolor sit amet
+                        </div>
+                        <div class="slide_content">
+                            consectetur
+                        </div>
+                        <div class="slide_content">
+                            adipiscing elit
+                        </div>
+                        <div class="slide_content">
+                            Nunc
+                        </div>
+                        <div class="slide_content">
+                            tempus
+                        </div>
+                        <div class="slide_content">
+                            laoreet
+                        </div>
+                        <div class="slide_content">
+                            leo sit amet iaculis
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+
+    <nav class="slider-pagination display-none">
+        <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
+        </button>
+    </nav>
+
+</div>
+
+<div class="slider demo--2020-brands-slider demo--2020-brands-slider--factor">
+
+    <div class="slides">
+        <ul class="slides-inner">
+
+            <li class="slide">
+                <div class="slide-inner">
+                    <div class="slide_item">
+                        <div class="slide_content">
+                            Lorem
+                        </div>
+                        <div class="slide_content">
+                            ipsum
+                        </div>
+                        <div class="slide_content">
+                            dolor sit amet
+                        </div>
+                        <div class="slide_content">
+                            consectetur
+                        </div>
+                        <div class="slide_content">
+                            adipiscing elit
+                        </div>
+                        <div class="slide_content">
+                            Nunc
+                        </div>
+                        <div class="slide_content">
+                            tempus
+                        </div>
+                        <div class="slide_content">
+                            laoreet
+                        </div>
+                        <div class="slide_content">
+                            leo sit amet iaculis
+                        </div>
+                        <div class="slide_content">
+                            Lorem
+                        </div>
+                        <div class="slide_content">
+                            ipsum
+                        </div>
+                        <div class="slide_content">
+                            dolor sit amet
+                        </div>
+                        <div class="slide_content">
+                            consectetur
+                        </div>
+                        <div class="slide_content">
+                            adipiscing elit
+                        </div>
+                        <div class="slide_content">
+                            Nunc
+                        </div>
+                        <div class="slide_content">
+                            tempus
+                        </div>
+                        <div class="slide_content">
+                            laoreet
+                        </div>
+                        <div class="slide_content">
+                            leo sit amet iaculis
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+
+    <nav class="slider-pagination display-none">
+        <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
+        </button>
+    </nav>
+
+</div>
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div><div class="gatsby_demo_source xt-ignore" data-lang="less">@import (reference) '~xtend-library/src/xtend-core.less';
+@import '~xtend-library/src/extensions/slider/slider.less';
+
+.demo--2020-brands-slider {
+  .slider-nodrag();
+  .margin(y, giant);
+  .slides-inner {
+    .row-space(none);
+    // dragger animations
+    transition-timing-function: linear;
+  }
+  .slide_item {
+    .list();
+    .list-space(giant);
+    flex-wrap: nowrap;
+  }
+  .slide_content {
+    .font-sans-semibold();
+    font-size: 12px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    @media @min-sm {
+      font-size: 1.6rem;
+    }
+  }
+  // horizontal gradient
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 4rem;
+    background: linear-gradient(90deg, @white 0%, fade(@white, 0%) 100%);
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 4rem;
+    background: linear-gradient(90deg, fade(@white, 0%) 0%, @white 100%);
+  }
+}
+</div><div class="gatsby_demo_source xt-ignore" data-lang="js">import { Xt } from 'xtend-library'
+import 'xtend-library/src/vars.js'
+import 'xtend-library/src/extensions/slider/slider.js'
+
+Xt.mount.push({
+  matches: '.demo--2020-brands-slider',
+  mount: object => {
+    // slider
+
+    let self = new Xt.Slider(object, {
+      auto: {
+        timeInitial: 0,
+      },
+      align: 'left',
+      groupMq: false,
+      autoHeight: false,
+      drag: {
+        wrap: true,
+      },
+    })
+
+    // on
+
+    const eventOn = e => {
+      const tr = e.target
+      // useCapture delegation
+      if (self.targets.includes(tr)) {
+        // set auto time
+        const slideWidth = tr.offsetWidth
+        const draggerWidth = self.dragger.offsetWidth
+        let time = slideWidth * 25
+        if (object.classList.contains('demo--2020-brands-slider--factor')) {
+          time = (draggerWidth / slideWidth) * 100000 // faster the less horizontal space
+        }
+        self.options.auto.time = time
+        self.object.querySelector('.slides-inner').style.transitionDuration = time + 'ms'
+      }
+    }
+
+    self.object.addEventListener('on.xt', eventOn, true)
+
+    // unmount
+
+    const unmount = () => {
+      self.destroy()
+      self = null
+    }
+    return unmount
+  },
+})
+</div></div></div></div><div class="gatsby_listing_column"><a role="button" class="card card-primary card-small card-full card-collapse gatsby_listing_item" data-gatsby-listing-toggle="true"><div class="card-design"></div><div class="card-inner"><div class="card-content"><div class="card-block card-item"><div class="card-title">2020 Euroricambi Slider</div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis.</p></div></div></div></a><div class="gatsby_demo"><div class="gatsby_demo_item gatsby_demo_preview" data-name="2020 euroricambi slider" data-inline="vanilla/themes/slider/2020-euroricambi-slider"><script type="text/plain" data-lang="html">
+<div class="slider demo--2020-euroricambi-slider">
+
+    <nav class="slider-pagination">
+        <div>
+            <button type="button" class="btn btn-circle" data-xt-nav="-1" title="Previous slide">
+                <span class="icon-arrow-left"></span>
+            </button>
+        </div>
+        <div class="slider-pagination_inner">
+            <div class="slider-pagination_scroll">
+                <button type="button" class="btn xt-ignore" data-xt-pag title="Slide xt-num">
+                    xt-content
+                </button>
+            </div>
+        </div>
+        <div>
+            <button type="button" class="btn btn-circle" data-xt-nav="1" title="Next slide">
+                <span class="icon-arrow-right"></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="slides">
+        <ul class="slides-inner">
+
+            <li class="slide">
+                <div class="container">
+                    <div class="slide-inner">
+                        <div class="slide_item">
+
+                            <div class="slide-pagination-content">
+                                Slide 1
+                            </div>
+
+                            <div class="slider_imgs--desktop">
+                                <div class="row row-default">
+                                    <div class="col-12 col-8-sm">
+                                        <div class="slider_img">
+                                            <div class="slider_img_background"></div>
+                                            <div class="media-container" style=""><div class="media-inner"><img class="media media-cover" src="/img.svg" alt="" loading="lazy"/></div></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-4-sm">
+                                        <div class="slider_img">
+                                            <div class="slider_img_background"></div>
+                                            <div class="media-container" style=""><div class="media-inner"><img class="media media-cover" src="/img.svg" alt="" loading="lazy"/></div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="slider_imgs--mobile">
+                                <div class="slider_img">
+                                    <div class="slider_img_background"></div>
+                                    <div class="media-container" style=""><div class="media-inner"><img class="media media-cover" src="/img.svg" alt="" loading="lazy"/></div></div>
+                                </div>
+                            </div>
+
+                            <div class="slider_card">
+                                <div class="card card-white">
+                                    <div class="card-design"></div>
+                                    <div class="card-inner">
+                                        <div class="card-content">
+                                            <div class="card-block card-item">
+                                                <h3 class="card-title">Slide 1</h3>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacinia rutrum ornare.</p>
+                                                <a href="#" class="btn btn-primary btn-big">
+                                                    Discover
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="slide">
+                <div class="container">
+                    <div class="slide-inner">
+                        <div class="slide_item">
+
+                            <div class="slide-pagination-content">
+                                Slide 2
+                            </div>
+
+                            <div class="slider_imgs--desktop">
+                                <div class="row row-default">
+                                    <div class="col-12 col-8-sm">
+                                        <div class="slider_img">
+                                            <div class="slider_img_background"></div>
+                                            <div class="media-container" style=""><div class="media-inner"><img class="media media-cover" src="/img.svg" alt="" loading="lazy"/></div></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-4-sm">
+                                        <div class="slider_img">
+                                            <div class="slider_img_background"></div>
+                                            <div class="media-container" style=""><div class="media-inner"><img class="media media-cover" src="/img.svg" alt="" loading="lazy"/></div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="slider_imgs--mobile">
+                                <div class="slider_img">
+                                    <div class="slider_img_background"></div>
+                                    <div class="media-container" style=""><div class="media-inner"><img class="media media-cover" src="/img.svg" alt="" loading="lazy"/></div></div>
+                                </div>
+                            </div>
+
+                            <div class="slider_card">
+                                <div class="card card-white">
+                                    <div class="card-design"></div>
+                                    <div class="card-inner">
+                                        <div class="card-content">
+                                            <div class="card-block card-item">
+                                                <h3 class="card-title">Slide 2</h3>
+                                                <p>Lorem ipsum dolor sit amet</p>
+                                                <a href="#" class="btn btn-primary btn-big">
+                                                    Discover
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="slide">
+                <div class="container">
+                    <div class="slide-inner">
+                        <div class="slide_item">
+
+                            <div class="slide-pagination-content">
+                                Slide 3
+                            </div>
+
+                            <div class="slider_imgs--desktop">
+                                <div class="row row-default">
+                                    <div class="col-12 col-8-sm">
+                                        <div class="slider_img">
+                                            <div class="slider_img_background"></div>
+                                            <div class="media-container" style=""><div class="media-inner"><img class="media media-cover" src="/img.svg" alt="" loading="lazy"/></div></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-4-sm">
+                                        <div class="slider_img">
+                                            <div class="slider_img_background"></div>
+                                            <div class="media-container" style=""><div class="media-inner"><img class="media media-cover" src="/img.svg" alt="" loading="lazy"/></div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="slider_imgs--mobile">
+                                <div class="slider_img">
+                                    <div class="slider_img_background"></div>
+                                    <div class="media-container" style=""><div class="media-inner"><img class="media media-cover" src="/img.svg" alt="" loading="lazy"/></div></div>
+                                </div>
+                            </div>
+
+                            <div class="slider_card">
+                                <div class="card card-white">
+                                    <div class="card-design"></div>
+                                    <div class="card-inner">
+                                        <div class="card-content">
+                                            <div class="card-block card-item">
+                                                <h3 class="card-title">Slide 3</h3>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacinia rutrum ornare.</p>
+                                                <a href="#" class="btn btn-primary btn-big">
+                                                    Discover
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="slide">
+                <div class="container">
+                    <div class="slide-inner">
+                        <div class="slide_item">
+
+                            <div class="slide-pagination-content">
+                                Slide 4
+                            </div>
+
+                            <div class="slider_imgs--desktop">
+                                <div class="row row-default">
+                                    <div class="col-12 col-8-sm">
+                                        <div class="slider_img">
+                                            <div class="slider_img_background"></div>
+                                            <div class="media-container" style=""><div class="media-inner"><img class="media media-cover" src="/img.svg" alt="" loading="lazy"/></div></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-4-sm">
+                                        <div class="slider_img">
+                                            <div class="slider_img_background"></div>
+                                            <div class="media-container" style=""><div class="media-inner"><img class="media media-cover" src="/img.svg" alt="" loading="lazy"/></div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="slider_imgs--mobile">
+                                <div class="slider_img">
+                                    <div class="slider_img_background"></div>
+                                    <div class="media-container" style=""><div class="media-inner"><img class="media media-cover" src="/img.svg" alt="" loading="lazy"/></div></div>
+                                </div>
+                            </div>
+
+                            <div class="slider_card">
+                                <div class="card card-white">
+                                    <div class="card-design"></div>
+                                    <div class="card-inner">
+                                        <div class="card-content">
+                                            <div class="card-block card-item">
+                                                <h3 class="card-title">Slide 4</h3>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacinia rutrum ornare.</p>
+                                                <a href="#" class="btn btn-primary btn-big">
+                                                    Discover
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="slide">
+                <div class="container">
+                    <div class="slide-inner">
+                        <div class="slide_item">
+
+                            <div class="slide-pagination-content">
+                                Slide 5
+                            </div>
+
+                            <div class="slider_imgs--desktop">
+                                <div class="row row-default">
+                                    <div class="col-12 col-8-sm">
+                                        <div class="slider_img">
+                                            <div class="slider_img_background"></div>
+                                            <div class="media-container" style=""><div class="media-inner"><img class="media media-cover" src="/img.svg" alt="" loading="lazy"/></div></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-4-sm">
+                                        <div class="slider_img">
+                                            <div class="slider_img_background"></div>
+                                            <div class="media-container" style=""><div class="media-inner"><img class="media media-cover" src="/img.svg" alt="" loading="lazy"/></div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="slider_imgs--mobile">
+                                <div class="slider_img">
+                                    <div class="slider_img_background"></div>
+                                    <div class="media-container" style=""><div class="media-inner"><img class="media media-cover" src="/img.svg" alt="" loading="lazy"/></div></div>
+                                </div>
+                            </div>
+
+                            <div class="slider_card">
+                                <div class="card card-white">
+                                    <div class="card-design"></div>
+                                    <div class="card-inner">
+                                        <div class="card-content">
+                                            <div class="card-block card-item">
+                                                <h3 class="card-title">Slide 5</h3>
+                                                <p>Lorem ipsum dolor sit amet</p>
+                                                <a href="#" class="btn btn-primary btn-big">
+                                                    Discover
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+
+</div>
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div><div class="gatsby_demo_source xt-ignore" data-lang="less">@import (reference) '~xtend-library/src/xtend-core.less';
+@import '~xtend-library/src/extensions/slider/slider.less';
+
+.demo--2020-euroricambi-slider {
+  .padding(y, medium);
+  .slides-inner {
+    overflow: hidden;
+    .transition-none() !important;
+    .transform-none() !important;
+    .slide {
+      .toggle-block();
+    }
+  }
+  .slide {
+    .col(12);
+  }
+  .slide_item {
+    position: relative;
+  }
+  .slide-pagination-content {
+    display: none;
+  }
+  // pagination
+  .slider-pagination {
+    .container-space();
+    .list-space(mini);
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    .padding(bottom, big);
+  }
+  [data-xt-pag].btn {
+    .btn-default();
+  }
+  // pagination wrap
+  .slider-pagination_inner {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    .slider-cards--logos& {
+      max-width: none;
+    }
+    [data-xt-pag] {
+      .margin(x, mini);
+    }
+    &:before, &:after {
+      content: '';
+      pointer-events: none;
+      position: absolute;
+      z-index: @index-active + 1;
+      top: 0;
+      bottom: 0;
+      width: 30px;
+    }
+    &:before {
+      left: 0;
+      background: linear-gradient(-90deg, fade(@white, 0%) 0%, @white 100%);
+    }
+    &:after {
+      right: 0;
+      background: linear-gradient(90deg, fade(@white, 0%) 0%, @white 100%);
+    }
+  }
+  .slider-pagination_scroll {
+    display: inline-block;
+    position: relative;
+    .padding(x, 30px);
+    transition: left 750ms @ease-off;
+  }
+  // navigation
+  [data-xt-nav].btn {
+    .btn-default();
+    font-size: 10px;
+    [class^='icon-'], [class*=' icon-'] {
+      .icon-medium();
+    }
+    .slider--nonav& {
+      display: none;
+    }
+  }
+  // content
+  .slider_card {
+    @media @max-sm {
+      .container-space-remove();
+    }
+    @media @min-sm {
+      position: absolute;
+      bottom: 2.5rem;
+      right: 2.5rem;
+      width: 49rem;
+    }
+    > .card {
+      align-items: flex-end;
+    }
+  }
+  .slider_card_inner {
+    overflow: hidden;
+  }
+  .slider_img {
+    position: relative;
+    .media-container {
+      overflow: hidden;
+    }
+    .media-inner {
+      overflow: hidden;
+    }
+  }
+  .slider_img_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: @shade-300;
+  }
+  .slider_imgs--desktop {
+    > .row {
+      .row-space-y(none); // @FIX add row vertical space..
+    }
+    @media @max-sm {
+      display: none;
+    }
+    .slider_img {
+      .media-container {
+        height: 49rem;
+      }
+    }
+  }
+  .slider_imgs--mobile {
+    .container-space-remove();
+    @media @min-sm {
+      display: none;
+    }
+    .slider_img {
+      .media-container {
+        height: 25rem;
+      }
+    }
+  }
+}
+</div><div class="gatsby_demo_source xt-ignore" data-lang="js">import { Xt } from 'xtend-library'
+import 'xtend-library/src/vars.js'
+import 'xtend-library/src/extensions/slider/slider.js'
+import gsap from 'gsap'
+
+// https://tympanus.net/Development/PageFlipLayout/
+// https://tympanus.net/Development/SlideOutBoxMenu/
+
+Xt.mount.push({
+  matches: '.demo--2020-euroricambi-slider',
+  mount: object => {
+    // vars
+
+    const assetMaskTimeOn = Xt.vars.timeLarge
+    const assetMaskTimeOff = Xt.vars.timeSmall
+    const assetMaskEaseOn = 'expo.out'
+    const assetMaskEaseOff = 'quart.out'
+
+    const assetZoom = 0.1
+    const assetTimeOn = Xt.vars.timeLarge
+    const assetTimeOff = Xt.vars.timeTiny
+    const assetEaseOn = 'quart.out'
+    const assetEaseOff = 'quart.inOut'
+
+    const cardContentX = 25
+    const cardContentTimeOn = Xt.vars.timeLarge
+    const cardContentTimeOff = Xt.vars.timeTiny
+    const cardContentEaseOn = 'expo.out'
+    const cardContentEaseOff = 'expo.inOut'
+
+    const cardTimeOn = Xt.vars.timeLarge
+    const cardEaseOn = 'expo.out'
+
+    const fixDelayOn = 100
+
+    // slider
+
+    let self = new Xt.Slider(object, {
+      instant: { elements: true, elementsInner: true },
+      durationOn: Xt.vars.timeLarge + fixDelayOn,
+      durationOff: Xt.vars.timeSmall,
+      auto: {
+        time: 4500,
+        pause: '[data-xt-pag], [data-xt-nav], .slider_card .btn',
+      },
+      autoHeight: false,
+      groupMq: false,
+    })
+
+    // drag
+
+    const eventDrag = () => {
+      const tr = self.targets.filter(x => self.hasCurrent(x))[0]
+      const ratio = Math.abs(self.detail.dragStart - self.detail.dragCurrent) / tr.clientWidth
+      // direction
+      let direction = 1
+      if (self.detail.dragStart - self.detail.dragCurrent > 0) {
+        direction = -1
+      }
+      // assetMask
+      const assetMasks = tr.querySelectorAll('.slider_img .media-container')
+      for (const assetMask of assetMasks) {
+        const xMax = assetMask.clientWidth
+        const xFull = tr.clientWidth
+        const xCurrent = (xMax * self.detail.dragPos) / xFull
+        gsap.set(assetMask, { x: xCurrent })
+        const assetMaskInner = assetMask.querySelector('.media-inner')
+        gsap.set(assetMaskInner, { x: -xCurrent, opacity: 1 })
+      }
+      // assetBackground
+      const assetBackgrounds = tr.querySelectorAll('.slider_img_background')
+      for (const assetBackground of assetBackgrounds) {
+        gsap.set(assetBackground, { opacity: 1 - ratio })
+      }
+      // cardContent
+      const cardContents = tr.querySelectorAll('.slider_card .card-item')
+      for (const cardContent of cardContents) {
+        gsap.set(cardContent, { x: cardContentX * ratio * direction, opacity: 1 - ratio })
+      }
+    }
+
+    self.dragger.addEventListener('drag.xt', eventDrag)
+
+    // dragreset
+
+    const eventDragReset = () => {
+      const tr = self.targets.filter(x => self.hasCurrent(x))[0]
+      // assetMask
+      const assetMasks = tr.querySelectorAll('.slider_img .media-container')
+      for (const assetMask of assetMasks) {
+        const xMax = assetMask.clientWidth
+        const xFull = tr.clientWidth
+        const xCurrent = (xMax * self.detail.dragPosOld) / xFull
+        gsap.set(assetMask, { x: xCurrent })
+        gsap.to(assetMask, { x: 0, duration: assetMaskTimeOn, ease: assetMaskEaseOn })
+        const assetMaskInner = assetMask.querySelector('.media-inner')
+        gsap.set(assetMaskInner, { x: -xCurrent })
+        gsap.to(assetMaskInner, { x: 0, opacity: 1, duration: assetMaskTimeOn, ease: assetMaskEaseOn })
+      }
+      // asset
+      const assets = tr.querySelectorAll('.slider_img img')
+      for (const asset of assets) {
+        gsap.to(asset, { scale: 1, duration: assetTimeOn, ease: assetEaseOn })
+      }
+      // cardContent
+      const cardContents = tr.querySelectorAll('.slider_card .card-item')
+      for (const cardContent of cardContents) {
+        gsap.to(cardContent, { x: 0, opacity: 1, duration: cardContentTimeOn, ease: cardContentEaseOn })
+      }
+    }
+
+    self.dragger.addEventListener('dragreset.xt', eventDragReset)
+
+    // on
+
+    const eventOn = e => {
+      const tr = e.target
+      // useCapture delegation
+      if (self.targets.includes(tr)) {
+        // direction
+        let direction = 1
+        if (tr.classList.contains('inverse')) {
+          direction = -1
+        }
+        if (self.initial) {
+          // assetMask
+          const assetMasks = tr.querySelectorAll('.slider_img .media-container')
+          for (const assetMask of assetMasks) {
+            gsap.killTweensOf(assetMask)
+            gsap.set(assetMask, { x: 0 })
+            const assetMaskInner = assetMask.querySelector('.media-inner')
+            gsap.killTweensOf(assetMaskInner)
+            gsap.set(assetMaskInner, { x: 0, opacity: 1 })
+          }
+          // asset
+          const assets = tr.querySelectorAll('.slider_img img')
+          for (const asset of assets) {
+            gsap.killTweensOf(asset)
+            gsap.set(asset, { scale: 1 })
+          }
+          // cardContent
+          const cardContents = tr.querySelectorAll('.slider_card .card-item')
+          for (const cardContent of cardContents) {
+            gsap.killTweensOf(cardContent)
+            gsap.set(cardContent, { x: 0, opacity: 1 })
+          }
+        } else {
+          // assetMask
+          const assetMasks = tr.querySelectorAll('.slider_img .media-container')
+          for (const assetMask of assetMasks) {
+            gsap.set(assetMask, { x: 100 * direction + '%' })
+            gsap.to(assetMask, { x: 0, duration: assetMaskTimeOn, ease: assetMaskEaseOn, delay: fixDelayOn })
+            const assetMaskInner = assetMask.querySelector('.media-inner')
+            gsap.set(assetMaskInner, { x: -100 * direction + '%' })
+            gsap.to(assetMaskInner, { x: 0, opacity: 1, duration: assetMaskTimeOn, ease: assetMaskEaseOn, delay: fixDelayOn })
+          }
+          // asset
+          const assets = tr.querySelectorAll('.slider_img img')
+          for (const asset of assets) {
+            gsap.set(asset, { scale: 1 + assetZoom })
+            gsap.to(asset, { scale: 1, duration: assetTimeOn, ease: assetEaseOn, delay: fixDelayOn })
+          }
+          // cardContent
+          const cardContents = tr.querySelectorAll('.slider_card .card-item')
+          for (const cardContent of cardContents) {
+            gsap.set(cardContent, { x: cardContentX * direction, opacity: 0 })
+            gsap.to(cardContent, { x: 0, opacity: 1, duration: cardContentTimeOn, ease: cardContentEaseOn, delay: fixDelayOn })
+          }
+          // card
+          const card = tr.querySelector('.slider_card > .card')
+          const cardHeight = card.clientHeight
+          gsap.set(card, { height: Xt.dataStorage.get(self.object, 'cardHeight') || cardHeight })
+          gsap.to(card, { height: cardHeight, duration: cardTimeOn, ease: cardEaseOn, delay: fixDelayOn })
+        }
+      }
+    }
+
+    self.object.addEventListener('on.xt', eventOn, true)
+
+    // off
+
+    const eventOff = e => {
+      const tr = e.target
+      // useCapture delegation
+      if (self.targets.includes(tr)) {
+        // direction
+        let direction = 1
+        if (tr.classList.contains('inverse')) {
+          direction = -1
+        }
+        // assetMask
+        const assetMasks = tr.querySelectorAll('.slider_img .media-container')
+        for (const assetMask of assetMasks) {
+          gsap.to(assetMask, { x: -100 * direction + '%', duration: assetMaskTimeOff, ease: assetMaskEaseOff })
+          const assetMaskInner = assetMask.querySelector('.media-inner')
+          gsap.to(assetMaskInner, { x: 100 * direction + '%', opacity: 0, duration: assetMaskTimeOff, ease: assetMaskEaseOff })
+        }
+        // asset
+        const assets = tr.querySelectorAll('.slider_img img')
+        for (const asset of assets) {
+          gsap.to(asset, { scale: 1, duration: assetTimeOff, ease: assetEaseOff })
+        }
+        // cardContent
+        const cardContents = tr.querySelectorAll('.slider_card .card-item')
+        for (const cardContent of cardContents) {
+          gsap.to(cardContent, { x: -cardContentX * direction, opacity: 0, duration: cardContentTimeOff, ease: cardContentEaseOff })
+        }
+        // card
+        const card = tr.querySelector('.slider_card > .card')
+        gsap.set(card, { height: '' })
+        Xt.dataStorage.set(self.object, 'cardHeight', card.clientHeight)
+      }
+    }
+
+    self.object.addEventListener('off.xt', eventOff, true)
+
+    // on elements
+
+    const eventOnElements = e => {
+      const el = e.target
+      // useCapture delegation
+      if (self.elements.includes(el)) {
+        // move scroll centering el
+        const inner = self.object.querySelector('.slider-pagination_inner')
+        const scroll = self.object.querySelector('.slider-pagination_scroll')
+        if (inner.offsetWidth < scroll.offsetWidth) {
+          self.object.classList.remove('slider--nonav')
+          if (e.type === 'on.xt') {
+            const widthInner = inner.offsetWidth
+            const widthScroll = scroll.offsetWidth
+            const leftEl = el.offsetLeft
+            const widthEl = el.offsetWidth
+            let final = widthInner / 2 - leftEl
+            // contain initial
+            final = leftEl + widthEl / 2 > widthInner / 2 ? final - widthEl / 2 : 0
+            // contain final
+            final = leftEl + widthEl / 2 < widthScroll - widthInner / 2 ? final : -widthScroll + widthInner
+            // set
+            scroll.style.left = final + 'px'
+          }
+        } else {
+          if (e.type === 'on.xt') {
+            self.object.classList.add('slider--nonav')
+            // set
+            scroll.style.left = ''
+          }
+        }
+      }
+    }
+
+    self.object.addEventListener('on.xt', eventOnElements, true)
+    self.object.addEventListener('medialoaded.xt', eventOnElements, true)
+
+    // unmount
+
+    const unmount = () => {
+      self.destroy()
+      self = null
+    }
+    return unmount
+  },
+})
+</div></div></div></div><div class="gatsby_listing_column"><a role="button" class="card card-primary card-small card-full card-collapse gatsby_listing_item" data-gatsby-listing-toggle="true"><div class="card-design"></div><div class="card-inner"><div class="card-content"><div class="card-block card-item"><div class="card-title">2019 Sun68 Slider</div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis.</p></div></div></div></a><div class="gatsby_demo"><div class="gatsby_demo_item gatsby_demo_preview" data-name="2019 sun68 slider" data-inline="vanilla/themes/slider/2019-sun68-slider"><script type="text/plain" data-lang="html">
+<div class="slider demo--2019-sun68-slider">
+
+  <div class="slides">
+    <ul class="slides-inner">
+
+      <li class="slide">
+        <div class="slide-inner">
+          <a href="#" class="slide_item">
+            <div class="slide_img">
+              <div class="slide_img_inner">
+                <div class="media-container" style="height:100%"><div class="media-inner"><img class="media media-cover" src="/img.svg" alt="" loading="lazy"/></div></div>
+              </div>
+            </div>
+            <div class="slide_content">
+              <div class="container full">
+                <h2>Lorem ipsum</h2>
+              </div>
+            </div>
+          </a>
+        </div>
+      </li>
+
+      <li class="slide">
+        <div class="slide-inner">
+          <a href="#" class="slide_item">
+            <div class="slide_img">
+              <div class="slide_img_inner">
+                <div class="media-container" style="height:100%"><div class="media-inner"><img class="media media-cover" src="/img.svg" alt="" loading="lazy"/></div></div>
+              </div>
+            </div>
+            <div class="slide_content">
+              <div class="container full">
+                <h2>Dolor sit amet</h2>
+              </div>
+            </div>
+          </a>
+        </div>
+      </li>
+
+      <li class="slide">
+        <div class="slide-inner">
+          <a href="#" class="slide_item">
+            <div class="slide_img">
+              <div class="slide_img_inner">
+                <div class="media-container" style="height:100%"><div class="media-inner"><img class="media media-cover" src="/img.svg" alt="" loading="lazy"/></div></div>
+              </div>
+            </div>
+            <div class="slide_content">
+              <div class="container full">
+                <h2>Consectetur adipiscing elit</h2>
+              </div>
+            </div>
+          </a>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
+  <nav class="slider-pagination">
+    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
+    </button>
+  </nav>
+
+  <div class="slider-navigation-sides slider-navigation-sides-prev" data-xt-nav="-1" aria-label="previous slide">
+    <div class="slider-navigation-sides-btn">
+      <span><span class="icon-xt-chevron-left"></span></span>
+    </div>
+  </div>
+
+  <div class="slider-navigation-sides slider-navigation-sides-next" data-xt-nav="1" aria-label="next slide">
+    <div class="slider-navigation-sides-btn">
+      <span><span class="icon-xt-chevron-right"></span></span>
+    </div>
+  </div>
+
+</div>
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div><div class="gatsby_demo_source xt-ignore" data-lang="less">@import (reference) '~xtend-library/src/xtend-core.less';
+@import '~xtend-library/src/extensions/slider/slider.less';
+@import '~xtend-library/src/addons/slider/navigation-sides.less';
+
+.demo--2019-sun68-slider {
+  background: @black;
+  .slides-inner {
+    .row-space(none);
+  }
+  .slide {
+    .col(12);
+  }
+  .slider-navigation {
+    color: @white;
+  }
+  .slider-pagination {
+    display: none;
+  }
+  .slide_item {
+    .link-none();
+    display: block;
+  }
+  .slide_img {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 60rem;
+    max-height: 600px;
+    @media @min-sm {
+      max-height: 120rem;
+    }
+  }
+  .slide_img_inner {
+    width: 100%;
+    height: 100%;
+  }
+  .slide_content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    .padding(y, big);
+    color: @white;
+    text-align: center;
+    @media @min-sm {
+      justify-content: flex-start;
+      text-align: left;
+    }
+  }
+  .slider-navigation-sides {
+    color: @white;
+    &:active {
+      color: @black;
+    }
+  }
+}
+</div><div class="gatsby_demo_source xt-ignore" data-lang="js">import { Xt } from 'xtend-library'
+import 'xtend-library/src/vars.js'
+import 'xtend-library/src/extensions/slider/slider.js'
+import 'xtend-library/src/addons/slider/navigation-sides.js'
+import gsap from 'gsap'
+
+Xt.mount.push({
+  matches: '.demo--2019-sun68-slider',
+  mount: object => {
+    // vars
+
+    const contentTimeOn = Xt.vars.timeLarge
+    const contentTimeOff = Xt.vars.timeLarge
+    const contentEaseOn = 'expo.out'
+    const contentEaseOff = 'expo.out'
+
+    const contentZoom = 1.1
+    const contentZoomTime = Xt.vars.timeBig * 3
+    const contentZoomEase = 'sine.inOut'
+
+    // slider
+
+    let self = new Xt.Slider(object, {
+      auto: {
+        time: 6000,
+      },
+      align: 'left',
+      autoHeight: false,
+      groupMq: false,
+      drag: {
+        wrap: true,
+        overflow: false,
+      },
+    })
+
+    // drag
+
+    const eventDrag = e => {
+      const target = self.targets.filter(x => self.hasCurrent(x))[0]
+      const ratio = Math.abs(self.detail.dragStart - self.detail.dragCurrent) / target.clientWidth
+      const size = self.dragger.offsetWidth / 6
+      // direction
+      let direction = 1
+      if (self.detail.dragStart - self.detail.dragCurrent > 0) {
+        direction = -1
+      }
+      // content others
+      for (const tr of self.targets.filter(x => !self.hasCurrent(x))) {
+        const other = tr.querySelector('.slide_img_inner')
+        gsap.set(other, { x: -size * ratio * direction + size * direction, opacity: ratio + 0.5 })
+      }
+      // content
+      const content = target.querySelector('.slide_img_inner')
+      gsap.set(content, { x: -size * ratio * direction, opacity: 1 - ratio + 0.5 })
+    }
+
+    self.dragger.addEventListener('drag.xt', eventDrag)
+
+    // dragreset
+
+    const eventDragReset = e => {
+      const target = self.targets.filter(x => self.hasCurrent(x))[0]
+      // content others
+      for (const tr of self.targets.filter(x => !self.hasCurrent(x))) {
+        const other = tr.querySelector('.slide_img_inner')
+        gsap.to(other, { x: 0, opacity: 0.5, duration: contentTimeOn, ease: contentEaseOn })
+      }
+      // content
+      const content = target.querySelector('.slide_img_inner')
+      gsap.to(content, { x: 0, opacity: 1, duration: contentTimeOn, ease: contentEaseOn })
+    }
+
+    self.dragger.addEventListener('dragreset.xt', eventDragReset)
+
+    // on
+
+    const eventOn = e => {
+      const target = e.target
+      // useCapture delegation
+      if (self.targets.includes(target)) {
+        if (self.initial) {
+          // content
+          const content = target.querySelector('.slide_img_inner')
+          gsap.set(content, { x: 0, opacity: 1, scale: 1 })
+          gsap.to(content, { scale: contentZoom, duration: contentZoomTime, ease: contentZoomEase, repeat: -1, yoyo: true })
+        } else {
+          // content
+          const content = target.querySelector('.slide_img_inner')
+          gsap.to(content, { x: 0, opacity: 1, duration: contentTimeOn, ease: contentEaseOn }).eventCallback('onComplete', () => {
+            gsap.to(content, { scale: contentZoom, duration: contentZoomTime, ease: contentZoomEase, repeat: -1, yoyo: true })
+          })
+        }
+      }
+    }
+
+    self.object.addEventListener('on.xt', eventOn, true)
+
+    // off
+
+    const eventOff = e => {
+      const target = e.target
+      // useCapture delegation
+      if (self.targets.includes(target)) {
+        const size = self.dragger.offsetWidth / 6
+        // direction
+        let direction = 1
+        if (target.classList.contains('inverse')) {
+          direction = -1
+        }
+        // content
+        const content = target.querySelector('.slide_img_inner')
+        gsap.to(content, { x: size * direction, opacity: 0.5, scale: 1, duration: contentTimeOff, ease: contentEaseOff }).eventCallback('onComplete', () => {
+          gsap.set(content, { x: 0, opacity: 1 })
+        })
+      }
+    }
+
+    self.object.addEventListener('off.xt', eventOff, true)
+
+    // unmount
+
+    const unmount = () => {
+      self.destroy()
+      self = null
+    }
+    return unmount
+  },
+})
+</div></div></div></div><div class="gatsby_listing_column"><a role="button" class="card card-primary card-small card-full card-collapse gatsby_listing_item" data-gatsby-listing-toggle="true"><div class="card-design"></div><div class="card-inner"><div class="card-content"><div class="card-block card-item"><div class="card-title">2019 Webgriffe Slider</div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis.</p></div></div></div></a><div class="gatsby_demo"><div class="gatsby_demo_item gatsby_demo_preview" data-name="2019 webgriffe slider" data-inline="vanilla/themes/slider/2019-webgriffe-slider"><script type="text/plain" data-lang="html">
+<div class="slider demo--2019-webgriffe-slider">
+
+  <div class="slides">
+    <ul class="slides-inner">
+
+      <li class="slide"
+        data-light="#3E3E3E" data-dark="#000000">
+        <div class="slide-inner">
+          <div class="slide_content">
+            <div class="slide_content_inner">
+
+              <div class="slider_text">
+                <div class="slider_text_inner">
+                  <a href="#">
+                    <h1 class="h1-slider anim-block_outer">
+                      <span class="anim-block">
+                        <span class="anim-block_line"></span>
+                        <span class="anim-block_inner">
+                            <span>E-Commerce Solutions</span>
+                        </span>
+                      </span>
+                      <span class="anim-block">
+                        <span class="anim-block_line"></span>
+                        <span class="anim-block_inner">
+                            <span>to Grow your Business</span>
+                        </span>
+                      </span>
+                    </h1>
+                    <h2 class="h2-slider anim-desc_outer">
+                      <span class="anim-desc">
+                        Our services
+                      </span>
+                    </h2>
+                  </a>
+                  <div class="loader--js">
+                    <a href="#" class="spinner">
+                      <svg viewBox="0 0 250 250"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"/></svg><svg viewBox="0 0 250 250" preserveAspectRatio="xMinYMin meet"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"/></svg>
+                      <span class="spinner-icon icon-chevron-down"></span>
+                      <span class="spinner-text">
+                      Read More
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="slide"
+        data-light="#3E3E3E" data-dark="#000000">
+        <div class="slide-inner">
+          <div class="slide_content">
+            <div class="slide_content_inner">
+
+              <div class="slider_text">
+                <div class="slider_text_inner">
+                  <a href="#">
+                    <h1 class="h1-slider">
+                      E-Commerce Solutions<br/>to Grow your Business
+                    </h1>
+                    <h2 class="h2-sliderr">
+                      Our services
+                    </h2>
+                  </a>
+                  <div class="loader--js">
+                    <a href="#" class="spinner">
+                      <svg viewBox="0 0 250 250"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"/></svg><svg viewBox="0 0 250 250" preserveAspectRatio="xMinYMin meet"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"/></svg>
+                      <span class="spinner-icon icon-chevron-down"></span>
+                      <span class="spinner-text">
+                      Read More
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
+  <div class="slider-pagination-container">
+      <nav class="slider-pagination">
+          <button type="button" class="xt-ignore" data-xt-pag>
+            <span class="loader loader--x loader--js">
+              <span class="filler">
+                <span></span><span></span>
+              </span>
+            </span>
+          </button>
+      </nav>
+  </div>
+
+</div>
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div><div class="gatsby_demo_source xt-ignore" data-lang="less">@import (reference) '~xtend-library/src/xtend-core.less';
+@import '~xtend-library/src/extensions/slider/slider.less';
+
+// structure
+
+.demo--2019-webgriffe-slider {
+  position: relative;
+  z-index: 1;
+  background: #3E3E3E;
+  // slides
+  .slides_inner {
+    .row();
+    flex-wrap: nowrap;
+    align-items: flex-start;
+  }
+  .slide {
+    .col(12);
+    .container {
+      @media @min-sm {
+        padding-right: 0 !important;
+      }
+    }
+    // animation
+    .slider_text a {
+      opacity: .5;
+      transform: translateX(0);
+      transition: opacity @time-medium @ease-cheetah;
+    }
+    @media @max-md {
+      .slider_img--inner picture {
+        opacity: 0;
+        transform: translateY(1.5rem);
+        transition: opacity @time-medium @ease-cheetah, transform @time-medium @ease-cheetah;
+      }
+    }
+    &.initial {
+      .slider_text a,
+      .slider_img--inner picture {
+        .transition-none() !important;
+      }
+    }
+    .slider--disable&,
+    &.active, &:not(.active):hover {
+      .slider_text a {
+        opacity: 1;
+        transition: opacity @time-small @ease-cheetah;
+      }
+      @media @max-md {
+        .slider_img--inner picture {
+          opacity: 1;
+          transform: translateY(0);
+          transition: opacity @time-medium @ease-cheetah @time-small, transform @time-medium @ease-cheetah @time-small;
+        }
+      }
+    }
+  }
+  .slide_content {
+    display: flex;
+    align-items: flex-start;
+    .align-items(center, md);
+    position: relative;
+    .padding(y, 120px);
+    /*
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    */
+  }
+  .h1-slider {
+    .spacing-small();
+    .font-sans-semibold();
+    font-size: 5.8rem !important;
+    line-height: 1;
+    letter-spacing: 0;
+    text-transform: none;
+    @media @min-sm {
+      font-size: 8rem !important;
+    }
+  }
+  .h2-slider {
+    .margin(top, 0) !important;
+    .margin(bottom, 0) !important;
+    max-width: 60rem;
+    .font-sans-semibold();
+    font-size: 20px !important;
+    color: fade(@text, 75%);
+    line-height: 1.4;
+    letter-spacing: 0;
+    text-transform: none;
+    @media @max-sm {
+      font-size: 16px !important;
+    }
+  }
+  /*
+  .h3-slider {
+    .margin(top, 0) !important;
+    .margin(bottom, small) !important;
+    .font-sans-semibold();
+    font-size: 2.7rem !important;
+    color: fade(@text, 75%);
+    line-height: 1;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  */
+}
+
+// text
+
+.demo--2019-webgriffe-slider {
+  .slide_content_inner {
+    .xt-container {
+      z-index: 1;
+    }
+    > .xt-container {
+      position: absolute;
+    }
+  }
+  .slider_text {
+    position: relative;
+    z-index: 2;
+    line-height: 1.2;
+    > .xt-container {
+      z-index: 2;
+    }
+    .slider-expand & {
+      .transform-none() !important;
+    }
+    a {
+      .link-none();
+      .slider-expand & {
+        .transform-none() !important;
+      }
+      .slider-disable & {
+        pointer-events: none;
+      }
+    }
+    // fix width sticky
+    .slider_text_inner {
+      .slider-expand & {
+        .transform-none() !important;
+      }
+    }
+  }
+}
+
+// img
+
+.demo--2019-webgriffe-slider {
+  .slider_img {
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    width: 100vw !important;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    @media @min-lg {
+      width: 95vw !important;
+    }
+    @media @min-xl {
+      width: 90vw !important;
+    }
+    display: flex;
+    @media @max-md {
+      align-items: flex-end;
+      justify-content: center;
+    }
+    @media @min-md {
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .slider--expand & {
+      .transform-none() !important;
+    }
+    .slider_img--inner {
+      position: absolute;
+      bottom: 0;
+      height: 100%;
+      @media @max-md {
+        picture {
+          display: flex;
+          align-items: flex-end;
+        }
+        picture {
+          height: 100%;
+        }
+        img {
+          width: auto;
+          height: 60%;
+        }
+      }
+      @media @min-md {
+        img {
+          width: auto;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+// loader
+
+.demo--2019-webgriffe-slider {
+  .loader--js {
+    position: absolute;
+    bottom: -40px;
+    left: -3px;
+    margin-top: 50px;
+    .spinner {
+      width: 43px;
+      height: 43px;
+      @media @min-md {
+        width: 50px;
+        height: 50px;
+      }
+      circle {
+        stroke-width: 0;
+        stroke: transparent;
+      }
+      svg:nth-child(1) {
+        circle {
+          fill: fade(@black, 10%);
+        }
+      }
+      .spinner-icon {
+        display: block;
+        position: absolute;
+        top: 22px;
+        left: 14px;
+        font-size: 8px;
+        @media @min-md {
+          top: 25px;
+          left: 17px;
+        }
+        color: @white;
+        line-height: 0;
+        .active& {
+          animation: demo--2019-webgriffe-slider_bounce 2s infinite;
+          animation-delay: 1s;
+        }
+      }
+      .spinner-text {
+        position: absolute;
+        top: 20px;
+        left: 50px;
+        .font-sans-semibold();
+        font-size: 17px;
+        white-space: nowrap;
+      }
+    }
+  }
+  // animation
+  .loader--js {
+    display: none;
+  }
+  @media @max-md {
+    &.active {
+      .loader--js {
+        display: block;
+      }
+    }
+  }
+}
+
+@keyframes demo--2019-webgriffe-slider_bounce {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
+  80% {
+    transform: translateY(3px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+</div><div class="gatsby_demo_source xt-ignore" data-lang="js">import { Xt } from 'xtend-library'
+import 'xtend-library/src/vars.js'
+import 'xtend-library/src/extensions/slider/slider.js'
+import gsap from 'gsap'
+
+// @TODO RIFARE TUTTE VARIABILI FUNZIONI ETC COME SUN68
+
+Xt.mount.push({
+  matches: '.demo--2019-webgriffe-slider',
+  mount: object => {
+    // slider
+
+    let self = new Xt.Slider(object, {
+      durationOn: Xt.vars.timeBig,
+      durationOff: Xt.vars.timeBig,
+      loop: true,
+      auto: {
+        time: 12000,
+        timeChange: 6000,
+        pause: '.slider_text',
+      },
+      wheel: {
+        selector: '.slides-inner',
+        friction: false,
+      },
+      align: 'left',
+      contain: false,
+      autoHeight: false,
+      groupMq: false,
+      drag: {
+        wrap: true,
+      },
+    })
+
+    // drag
+
+    function sliderParallax(tween = false) {
+      // vars
+      let contentFactor = 0.2
+      if (window.matchMedia('(max-width: 991px)').matches) {
+        contentFactor = 0
+      }
+      let imgFactor = 0
+      if (window.matchMedia('(max-width: 991px)').matches) {
+        imgFactor = -0.4
+      }
+      // tween
+      tween = self.initial ? !self.initial : tween
+      for (let [i, target] of self.targets.entries()) {
+        let dist = -target.offsetLeft - self.detail.dragPos
+        // content
+        let contents = target.querySelectorAll('.slider_text')
+        let contentPos = Math.floor(dist * contentFactor)
+        for (let content of contents) {
+          if (tween) {
+            gsap.to(content, { x: contentPos, duration: Xt.vars.timeBig, ease: 'cheetah' })
+          } else {
+            gsap.set(content, { x: contentPos })
+          }
+        }
+        // img
+        let imgs = target.querySelectorAll('.slider_img')
+        let imgPos = Math.floor(dist * imgFactor)
+        for (let img of imgs) {
+          if (tween) {
+            gasp.to(img, { x: imgPos, duration: Xt.vars.timeBig, ease: 'cheetah' })
+          } else {
+            gasp.set(img, { x: imgPos })
+          }
+        }
+      }
+    }
+
+    self.dragger.addEventListener('drag.xt', e => {
+      // parallax
+      sliderParallax()
+    })
+
+    self.dragger.addEventListener('dragreset.xt', e => {
+      // parallax
+      sliderParallax(true)
+    })
+
+    // targets
+
+    self.object.addEventListener('on.xt', e => {
+      let tr = e.target
+      // useCapture delegation
+      if (self.targets.includes(tr)) {
+        let tween = !self.initial
+        if (self.initial) {
+          // siteBackground
+          /*
+          let backgrounds = document.querySelector('.site_backgrounds')
+          backgrounds.innerHTML = ''
+          for (let [i, target] of self.targets.entries()) {
+            // backgrounds
+            Xt.dataStorage.set(target, 'backgroundDone', true)
+            let generated = Xt.createElement('<div class="slider_background" data-index="' + i + '"></div>')
+            backgrounds.append(generated)
+            let left = target.getAttribute('data-light')
+            let right = target.getAttribute('data-dark')
+            generated.style.background = 'linear-gradient(140deg, ' + left + ' 0%, ' + right + ' 100%)'
+            generated.setAttribute('data-light', left)
+            generated.setAttribute('data-dark', right)
+          }
+          */
+        }
+        // parallax
+        sliderParallax(true)
+        // background
+        /*
+        let background = document.querySelectorAll('.slider_background[data-index="' + self.currentIndex + '"]')
+        if (tween) {
+          for (let [i, target] of self.targets.entries()) {
+            let background = document.querySelectorAll('.slider_background[data-index="' + i + '"]')
+            gsap.to(background, { opacity: 0, duration: Xt.vars.timeBig, ease: 'cheetah' })
+          }
+          gsap.to(background, { opacity: 1, duration: Xt.vars.timeBig, ease: 'cheetah' })
+        } else {
+          gsap.set(background, { opacity: 1 })
+        }
+        */
+      }
+    })
+
+    //////////////////////
+    // progress
+    //////////////////////
+
+    // auto start
+
+    self.object.addEventListener('autostart.xt', e => {
+      // not first less time
+      if (!self.initial && !self.object.dataset.autoTime) {
+        self.eventAutostop()
+        self.options.auto.time = self.options.auto.timeChange
+        self.object.dataset.autoTime = 'true'
+        self.eventAutostart()
+        return false
+      }
+      // on elements
+      let elements = self.elements.filter(x => self.hasCurrent(x))
+      for (let element of elements) {
+        let fillers = element.querySelectorAll('.filler span:nth-child(2)')
+        for (let filler of fillers) {
+          gsap.set(filler, { width: 0, left: 0 })
+          gsap.to(filler, { width: '100%', left: 0, duration: self.options.auto.time / 1000 })
+        }
+      }
+    })
+
+    // auto stop
+
+    self.object.addEventListener('autostop.xt', e => {
+      // on elements
+      let elements = self.elements.filter(x => self.hasCurrent(x))
+      for (let element of elements) {
+        let fillers = element.querySelectorAll('.filler span:nth-child(2)')
+        for (let filler of fillers) {
+          gsap.to(filler, { width: 0, left: 0, duration: Xt.vars.timeTiny })
+        }
+      }
+    })
+
+    // auto pause
+
+    self.object.addEventListener('autopause.xt', e => {
+      // on elements
+      let elements = self.elements.filter(x => self.hasCurrent(x))
+      for (let element of elements) {
+        let fillers = element.querySelectorAll('.filler span:nth-child(2)')
+        for (let filler of fillers) {
+          gsap.to(filler, { width: 0, left: 0, duration: Xt.vars.timeTiny })
+        }
+      }
+    })
+
+    // unmount
+
+    const unmount = () => {
+      self.destroy()
+      self = null
+    }
+    return unmount
+  },
+})
+</div></div></div></div></div></div></div></div></div><div></div></div></article><footer class="gatsby_site_article_foot"><div class="gatsby_site_article_foot_inner"><div class="gatsby_listing_group"><div class="gatsby_listing_items"><div class="row"><div class="gatsby_listing_column"><a class="card card-primary card-small card-full card-collapse gatsby_listing_item" href="/introduction"><div class="card-design"></div><div class="card-inner"><div class="card-content"><div class="card-block card-item"><div class="card-title">Setup or other problems?</div><p>Visit the <strong>Introduction</strong> page.</p></div></div></div></a></div><div class="gatsby_listing_column"><a class="card card-primary card-small card-full card-collapse gatsby_listing_item" href="/components/slider"><div class="card-design"></div><div class="card-inner"><div class="card-content"><div class="card-block card-item"><div class="card-title">Visit the Components page</div><p>There <!-- -->are<!-- --> <!-- -->3<!-- --> <strong>pages</strong> for<!-- --> <!-- -->Slider<!-- -->.</p></div></div></div></a></div><div class="gatsby_listing_column"><a class="card card-primary card-small card-full card-collapse gatsby_listing_item" href="/addons/slider"><div class="card-design"></div><div class="card-inner"><div class="card-content"><div class="card-block card-item"><div class="card-title">Visit the Addons page</div><p>There <!-- -->is<!-- --> <!-- -->1<!-- --> <strong>addons</strong> for <!-- -->Slider<!-- -->.</p></div></div></div></a></div></div></div></div></div></footer><footer class="gatsby_site_footer"><div class="gatsby_site_footer_bottom"><div class="container full"><div class="gatsby_site_footer_inner"><div class="row gatsby_site_footer_bottom_row"><div><a title="Home" class="gatsby_logo-icon
+                                      " href="/"><img src="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMV9jb3B5IiBkYXRhLW5hbWU9IkxheWVyIDEgY29weSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMjIuMDEgMTUuMzUiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojMzczYTQ0O30uY2xzLTJ7ZmlsbDojOTY5YmFkO308L3N0eWxlPjwvZGVmcz48dGl0bGU+aWNvbi1ibGFjazwvdGl0bGU+PHBvbHlsaW5lIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSIxNS42IDAgMjIuMDEgMCAyMi4wMSAyLjg2IDE3LjQxIDIuODYgMTcuNDEgMTUuMzUgMTUuNiAxNS4zNSIvPjxwb2x5bGluZSBjbGFzcz0iY2xzLTEiIHBvaW50cz0iNi44NCAxMC4xNSA0LjI2IDE1LjM1IDAgMTUuMzUgNC40IDcuNjEgMC4xMiAwIDQuMzMgMCA2Ljg0IDUuMSIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIxMy41OCAwIDExLjk3IDIuODYgMTMuNzEgMi44NiAxMy43MSAxNS4zNSAxNS42IDE1LjM1IDE1LjYgMCAxMy41OCAwIi8+PHBvbHlnb24gY2xhc3M9ImNscy0yIiBwb2ludHM9IjkuMzUgMCA5LjE4IDAuMzQgNi44NCA1LjEgNi44NCAxMC4xNSA5LjQzIDE1LjM1IDEzLjcgMTUuMzUgOS4yOSA3LjYxIDExLjk3IDIuODYgMTMuNTggMCA5LjM1IDAiLz48L3N2Zz4=" alt="Xtend"/></a></div><div>Site and docs licensed<!-- --> <a href="https://github.com/minimit/xtend-library/blob/master/LICENSE-DOCS" target="_blank" rel="noopener">CC BY 3.0</a> <span class="separator separator-dash"></span> <!-- -->Xtend<!-- --> v<!-- -->0.13.50<!-- --> licensed<!-- --> <a href="https://github.com/minimit/minimit/blob/master/LICENSE" target="_blank" rel="noopener">MIT</a><br/></div><div class="gatsby_site_footer_bottom_right">© 2018 – <!-- -->2020<!-- --> <!-- -->Riccardo Caroli</div></div></div></div></div></footer></main></div></div></div></div></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/themes/slider";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-2e148b7baeb4316f1fea.js"],"component---src-gatsby-components-templates-doc-listing-js":["/component---src-gatsby-components-templates-doc-listing-js-c2433805e1dc0994d8ac.js"],"component---src-gatsby-components-templates-doc-page-js":["/component---src-gatsby-components-templates-doc-page-js-817df1cf56863344a96f.js"],"component---src-gatsby-components-pages-404-js":["/component---src-gatsby-components-pages-404-js-48d7bdc0556fefdee108.js"],"component---src-gatsby-components-pages-index-js":["/component---src-gatsby-components-pages-index-js-9f9b1620945263c32658.js"],"component---src-gatsby-code-iframe-addons-global-jump-to-content-js":["/component---src-gatsby-code-iframe-addons-global-jump-to-content-js-daceee07f0fcf4e2b8b4.js"],"component---src-gatsby-code-iframe-addons-global-sticky-footer-js":["/component---src-gatsby-code-iframe-addons-global-sticky-footer-js-67b68e31037ee2eacbbc.js"],"component---src-gatsby-code-iframe-components-scroll-delay-js":["/component---src-gatsby-code-iframe-components-scroll-delay-js-7415cbbd7c639a2d78c9.js"],"component---src-gatsby-code-iframe-components-scroll-direction-js":["/component---src-gatsby-code-iframe-components-scroll-direction-js-d4169c9f9b4c541071a4.js"],"component---src-gatsby-code-iframe-components-scroll-distance-js":["/component---src-gatsby-code-iframe-components-scroll-distance-js-789d7079f61043e18e91.js"],"component---src-gatsby-code-iframe-components-scroll-mode-block-js":["/component---src-gatsby-code-iframe-components-scroll-mode-block-js-b636141368b35808fff3.js"],"component---src-gatsby-code-iframe-components-scroll-mode-infinite-js":["/component---src-gatsby-code-iframe-components-scroll-mode-infinite-js-bbd485df156723793c0a.js"],"component---src-gatsby-code-iframe-components-scroll-mode-responsive-js":["/component---src-gatsby-code-iframe-components-scroll-mode-responsive-js-8a0ea657cd9b495a29a3.js"],"component---src-gatsby-code-iframe-components-scroll-mode-scroll-js":["/component---src-gatsby-code-iframe-components-scroll-mode-scroll-js-7cb4a0d962c5c8a240ef.js"],"component---src-gatsby-code-iframe-components-scroll-mode-visible-js":["/component---src-gatsby-code-iframe-components-scroll-mode-visible-js-fc284dc0e61861e48960.js"],"component---src-gatsby-code-iframe-components-scroll-parallax-js":["/component---src-gatsby-code-iframe-components-scroll-parallax-js-d34829935735346d0cd8.js"],"component---src-gatsby-code-iframe-components-sticky-contain-bottom-js":["/component---src-gatsby-code-iframe-components-sticky-contain-bottom-js-d16db735dcb5ba133489.js"],"component---src-gatsby-code-iframe-components-sticky-contain-top-js":["/component---src-gatsby-code-iframe-components-sticky-contain-top-js-66d4374b9e97a9acf3dc.js"],"component---src-gatsby-code-iframe-components-sticky-disable-js":["/component---src-gatsby-code-iframe-components-sticky-disable-js-9d4a6287f94b2d656587.js"],"component---src-gatsby-code-iframe-components-sticky-hide-js":["/component---src-gatsby-code-iframe-components-sticky-hide-js-f7fe3d0095e8cda7214c.js"],"component---src-gatsby-code-iframe-components-sticky-limit-js":["/component---src-gatsby-code-iframe-components-sticky-limit-js-2c45cf4be603ce330e98.js"],"component---src-gatsby-code-iframe-components-sticky-mode-absolute-js":["/component---src-gatsby-code-iframe-components-sticky-mode-absolute-js-f3a682c32ee82f041e0f.js"],"component---src-gatsby-code-iframe-components-sticky-mode-fixed-always-js":["/component---src-gatsby-code-iframe-components-sticky-mode-fixed-always-js-249d82822a1fc79bcdf7.js"],"component---src-gatsby-code-iframe-components-sticky-mode-fixed-js":["/component---src-gatsby-code-iframe-components-sticky-mode-fixed-js-509016adb3dbccd676da.js"],"component---src-gatsby-code-iframe-components-sticky-position-js":["/component---src-gatsby-code-iframe-components-sticky-position-js-a2247073a7b08698e444.js"],"component---src-gatsby-code-iframe-components-sticky-showhide-bottom-js":["/component---src-gatsby-code-iframe-components-sticky-showhide-bottom-js-b419baaf3b200c41804e.js"],"component---src-gatsby-code-iframe-components-sticky-showhide-hide-js":["/component---src-gatsby-code-iframe-components-sticky-showhide-hide-js-9d3cc3b3865fa68bf0c8.js"],"component---src-gatsby-code-iframe-components-sticky-showhide-top-js":["/component---src-gatsby-code-iframe-components-sticky-showhide-top-js-23b5b6490195a7dddb8b.js"],"component---src-gatsby-code-iframe-components-test-react-iframe-js":["/component---src-gatsby-code-iframe-components-test-react-iframe-js-5e19cc231838c54399de.js"],"component---src-gatsby-code-iframe-components-test-vanilla-iframe-js":["/component---src-gatsby-code-iframe-components-test-vanilla-iframe-js-e15ebbcecb31ae6b73f6.js"],"component---src-gatsby-code-iframe-demos-animation-scroll-to-anchor-js":["/component---src-gatsby-code-iframe-demos-animation-scroll-to-anchor-js-829f819b224e2321e123.js"],"component---src-gatsby-code-iframe-demos-utils-google-locator-js":["/component---src-gatsby-code-iframe-demos-utils-google-locator-js-dd49303d159f8599d126.js"]};/*]]>*/</script><script src="/component---src-gatsby-components-templates-doc-page-js-817df1cf56863344a96f.js" async=""></script><script src="/commons-4c80d88a2496de1f96e5.js" async=""></script><script src="/styles-07d23080d4a96a7e6711.js" async=""></script><script src="/app-2e148b7baeb4316f1fea.js" async=""></script><script src="/webpack-runtime-87fda801166554a6b536.js" async=""></script></body></html>
