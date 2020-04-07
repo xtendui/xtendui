@@ -1,3 +1,10 @@
+## [0.13.50](https://github.com/minimit/xtend-library/compare/v0.13.49...v0.13.50) (2020-04-07)
+
+
+### Bug Fixes
+
+* **toggle:** toggle inverse and fix animdone timing ([a3366e9](https://github.com/minimit/xtend-library/commit/a3366e99ca0eea185fcec9f0e674e048d66b5ac2))
+
 ## [0.13.49](https://github.com/minimit/xtend-library/compare/v0.13.48...v0.13.49) (2020-04-03)
 
 
