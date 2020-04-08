@@ -246,10 +246,12 @@ class Googlelocator {
     // order locations
     options.formatData.sort(self, self.locations)
     // markers
-    if (self.cluster) {
-      self.cluster.clearMarkers()
+    if (options.map.cluster) {
+      if (self.cluster) {
+        self.cluster.clearMarkers()
+      }
+      self.cluster = new MarkerClusterer(self.map, self.locations, options.map.cluster)
     }
-    self.cluster = new MarkerClusterer(self.map, self.locations, options.map.cluster)
     // populate
     if (self.locations.length) {
       if (self.resultElement) {
@@ -471,36 +473,46 @@ Googlelocator.optionsDefault = {
       lat: 40.72308,
       lng: -73.98434,
       name: 'Restaurant 1',
-      address: 'Via Foo, 19 - 35141 Padova PD',
+      address: 'Via Foo, 19 - 35141 City PD',
       additional: '<a href="tel:000000000">000000000</a><br/><a href="mailto:test@test.com">test@test.com</a>',
+      type: ['restaurant'],
+      fav: true,
     },
     {
       lat: 40.724705,
       lng: -73.986611,
       name: 'School 1',
-      address: 'Via Foo, 19 - 35141 Padova PD',
+      address: 'Via Foo, 19 - 35141 City PD',
       additional: '<a href="tel:000000000">000000000</a><br/><a href="mailto:test@test.com">test@test.com</a>',
+      type: ['school'],
+      fav: true,
     },
     {
       lat: 40.724165,
       lng: -73.983883,
       name: 'School 2',
-      address: 'Via Foo, 19 - 35141 Padova PD',
+      address: 'Via Foo, 19 - 35141 City PD',
       additional: '<a href="tel:000000000">000000000</a><br/><a href="mailto:test@test.com">test@test.com</a>',
+      type: ['school'],
+      fav: false,
     },
     {
       lat: 40.721819,
       lng: -73.991358,
       name: 'Restaurant 2',
-      address: 'Via Foo, 19 - 35141 Padova PD',
+      address: 'Via Foo, 19 - 35141 City PD',
       additional: '<a href="tel:000000000">000000000</a><br/><a href="mailto:test@test.com">test@test.com</a>',
+      type: ['restaurant'],
+      fav: false,
     },
     {
       lat: 40.732056,
       lng: -73.998683,
       name: 'School 3',
-      address: 'Via Foo, 19 - 35141 Padova PD',
+      address: 'Via Foo, 19 - 35141 City PD',
       additional: '<a href="tel:000000000">000000000</a><br/><a href="mailto:test@test.com">test@test.com</a>',
+      type: ['school'],
+      fav: false,
     },
   ],
   map: {
@@ -514,6 +526,10 @@ Googlelocator.optionsDefault = {
     streetViewControl: false,
     rotateControl: false,
     fullscreenControl: false,
+    cluster: {
+      minimumClusterSize: 5,
+      imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m',
+    },
   },
   infoWindow: {
     maxWidth: 350,

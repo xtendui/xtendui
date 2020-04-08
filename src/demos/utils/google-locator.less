@@ -1,6 +1,5 @@
-
 /**
- * xtend extension: googlelocator
+ * googlelocator
  */
 
 .googlelocator {
@@ -85,7 +84,7 @@
     width: auto;
   }
   padding: 3rem;
-  background-color: @shade-200;
+  border-bottom: 1px solid @shade-200;
   input {
     padding: 1em 1.2em;
     border-color: @white !important;
@@ -192,15 +191,6 @@
   text-transform: uppercase;
   &.active {
     border-bottom: 1px solid @black;
-  }
-  .form-label {
-    padding-left: 4rem !important;
-  }
-  input[type="radio"]:not(.unstyled) ~ .form-label {
-    &:before, &:after {
-      top: 50%;
-      margin-top: -.8rem;
-    }
   }
 }
 
