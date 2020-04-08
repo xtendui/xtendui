@@ -1,3 +1,10 @@
+## [0.13.51](https://github.com/minimit/xtend-library/compare/v0.13.50...v0.13.51) (2020-04-08)
+
+
+### Bug Fixes
+
+* **toggle:** fix toggle off ([6065f23](https://github.com/minimit/xtend-library/commit/6065f233dfbe441e29da593da9642e44f4d5ec08))
+
 ## [0.13.50](https://github.com/minimit/xtend-library/compare/v0.13.49...v0.13.50) (2020-04-07)
 
 
