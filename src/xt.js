@@ -793,7 +793,7 @@ if (typeof window !== 'undefined') {
    * @param {String} url
    * @param {Function} callback
    */
-  Xt.addScript = (url, callback) => {
+  Xt.addScript = (url, callback = null) => {
     if (!document.querySelector('script[src="' + url + '"]')) {
       const script = document.createElement('script')
       if (callback) {
