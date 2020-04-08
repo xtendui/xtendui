@@ -794,13 +794,15 @@ if (typeof window !== 'undefined') {
    * @param {Function} callback
    */
   Xt.addScript = (url, callback) => {
-    const script = document.createElement('script')
-    if (callback) {
-      script.onload = callback
+    if (!document.querySelector('script[src="' + url + '"]')) {
+      const script = document.createElement('script')
+      if (callback) {
+        script.onload = callback
+      }
+      script.type = 'text/javascript'
+      script.src = url
+      document.body.appendChild(script)
     }
-    script.type = 'text/javascript'
-    script.src = url
-    document.body.appendChild(script)
   }
 
   /**
