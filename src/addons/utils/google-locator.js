@@ -517,7 +517,7 @@ Googlelocator.optionsDefault = {
   ],
   map: {
     center: { lat: 0, lng: 0 },
-    zoom: 2.5,
+    zoom: 2,
     zoomMin: 14,
     scrollwheel: false,
     zoomControl: true,

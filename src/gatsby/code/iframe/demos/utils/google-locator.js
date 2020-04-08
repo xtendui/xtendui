@@ -26,8 +26,8 @@ demo.htmlSource = `
             <input type="text" class="form-item" placeholder="Search"
                    data-xt-googlelocator-search-input>
             <span class="group-inner">
-              <button type="button" class="btn googlelocator_locate" data-xt-googlelocator-locate-btn="Locate">
-                <span class="icon-xt-locate"></span>
+              <button type="button" class="btn btn-default" data-xt-googlelocator-locate-btn="Locate">
+                <span class="icon-xt-locate icon-big"></span>
               </button>
             </span>
             <span class="group-inner">

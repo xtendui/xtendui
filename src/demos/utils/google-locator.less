@@ -20,18 +20,6 @@
   position: relative;
   .flex-auto();
   min-height: 100%;
-  @media @max-sm {
-    .sr-only();
-    height: 100vh;
-    // hide map
-    visibility: hidden;
-    pointer-events: none;
-    position: fixed; // @FIX no absolute or bugs search
-    z-index: -1;
-    top: -100vh;
-    left: -100vw;
-    opacity: 0;
-  }
   @media @min-sm {
     position: fixed;
     top: 0;
@@ -45,6 +33,18 @@
   }
   @media @min-lg {
     padding-left: 45rem;
+  }
+  // hide map on mobile
+  @media @max-sm {
+    .sr-only();
+    height: 100vh;
+    visibility: hidden;
+    pointer-events: none;
+    position: fixed; // @FIX no absolute or bugs search
+    z-index: -1;
+    top: -100vh;
+    left: -100vw;
+    opacity: 0;
   }
 }
 
@@ -85,22 +85,11 @@
   }
   padding: 3rem;
   border-bottom: 1px solid @shade-200;
-  input {
-    padding: 1em 1.2em;
-    border-color: @white !important;
-  }
-  button[type="submit"] {
-    padding: 1rem 1.6rem !important;
-    font-size: 2rem !important;
-  }
 }
 
 .googlelocator_aside_body {
   position: relative;
   padding: 3rem;
-  .checkout & {
-    padding: 0 !important;
-  }
 }
 
 // result
@@ -161,21 +150,6 @@
   left: 2rem;
 }
 
-.googlelocator_locate {
-  .link-none();
-  > span {
-    font-size: 1.8em;
-  }
-  color: @shade-200;
-  border-color: @white;
-  background: @white;
-  &:hover, &.hover, &:active, &.active {
-    color: @accent;
-    border-color: @white;
-    background: @white;
-  }
-}
-
 // .googlelocator_item
 
 .googlelocator_item {
@@ -217,25 +191,6 @@
 
 .googlelocator_item_directions {
   .link-none();
-  display: flex;
-  flex-wrap: wrap;
-  flex-flow: column;
-  color: #C4C6CA !important;
-  line-height: 1.4;
-  text-align: center;
-  white-space: nowrap;
-  .googlelocator_item_directions_icon {
-    font-size: 3rem;
-    color: #C4C6CA !important;
-    transition-property: color;
-    transition-duration: @time-medium;
-    transition-timing-function: @ease-on
-  }
-  &:hover, &.hover, &:active, &.active {
-    .googlelocator_item_directions_icon {
-      color: @accent !important;
-    }
-  }
 }
 
 // reset infoWindow
