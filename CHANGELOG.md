@@ -1,3 +1,15 @@
+## [0.13.52](https://github.com/minimit/xtend-library/compare/v0.13.51...v0.13.52) (2020-04-09)
+
+
+### Bug Fixes
+
+* xt animOn and animOff + fix loader animated ([174e2ce](https://github.com/minimit/xtend-library/commit/174e2cefc11ab04c4724b560aa2059e1c41c963c))
+* **slider:** fix loop drag with positions near the end ([e040d0e](https://github.com/minimit/xtend-library/commit/e040d0e3eeffbded2a6c304986b686f8e5857338))
+* fix defaults xt  addscript ([e604e93](https://github.com/minimit/xtend-library/commit/e604e93da3da6357102279c880562bcf03d28991))
+* icons new woff2 load ([e843abe](https://github.com/minimit/xtend-library/commit/e843abef91f0989fbb2b56c25ae349d71d9148aa))
+* little fixes googlelocator ([42b7777](https://github.com/minimit/xtend-library/commit/42b7777a75076f2ac8f14d68d8771f7902be34fb))
+* xt.addscript only one time ([835376c](https://github.com/minimit/xtend-library/commit/835376cb73150b4eb7d01ec01fa6044b79950c79))
+
 ## [0.13.51](https://github.com/minimit/xtend-library/compare/v0.13.50...v0.13.51) (2020-04-08)
 
 
