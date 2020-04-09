@@ -75,7 +75,7 @@ document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('o
 Listen to events this way:
 
 ```js
-const eventOn = (e) => {
+const eventOn = e => {
   // logic
 }
 
@@ -88,7 +88,7 @@ Listen to events delegation with **useCapture** this way:
 let object = document.querySelector('#my-object')
 let self = Xt.get('xt-overlay', object)
 
-const eventOn = (e) => {
+const eventOn = e => {
   const element = e.target
   // useCapture delegation
   if (self.elements.includes(element)) {

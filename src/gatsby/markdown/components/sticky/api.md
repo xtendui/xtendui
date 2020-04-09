@@ -59,7 +59,7 @@ self.targets.filter(x => self.hasCurrent(x))
 Listen to events this way:
 
 ```js
-const eventChange = (e) => {
+const eventChange = e => {
   // logic
 }
 
@@ -72,7 +72,7 @@ Listen to events delegation with **useCapture** this way:
 let object = document.querySelector('#my-object')
 let self = Xt.get('xt-sticky', object)
 
-const eventChange = (e) => {
+const eventChange = e => {
   const element = e.target
   // useCapture delegation
   if (self.elements.includes(element)) {
