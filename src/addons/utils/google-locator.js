@@ -422,8 +422,7 @@ class Googlelocator {
    */
   loaderShow() {
     const self = this
-    self.loaderElement.classList.add('active')
-    self.loaderElement.classList.remove('out')
+    Xt.animOn(self.loaderElement)
   }
 
   /**
@@ -431,11 +430,7 @@ class Googlelocator {
    */
   loaderHide() {
     const self = this
-    self.loaderElement.classList.remove('active')
-    self.loaderElement.classList.add('out')
-    Xt.animTimeout(self.loaderElement, function() {
-      self.loaderElement.classList.remove('out')
-    })
+    Xt.animOff(self.loaderElement)
   }
 
   //

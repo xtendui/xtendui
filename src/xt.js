@@ -864,6 +864,39 @@ if (typeof window !== 'undefined') {
   }
 
   /**
+   * animation on classes
+   * @param {Node|HTMLElement|EventTarget|Window} el Element animating
+   * @param {String} suffix Timeout suffix
+   */
+  Xt.animOn = (el, suffix = '') => {
+    el.classList.add('active')
+    el.classList.remove('out')
+    requestAnimationFrame(() => {
+      el.classList.add('in')
+    })
+  }
+
+  /**
+   * animation off classes
+   * @param {Node|HTMLElement|EventTarget|Window} el Element animating
+   * @param {String} suffix Timeout suffix
+   * @param {Number} timing Optional force time
+   */
+  Xt.animOff = (el, suffix = '', timing = null) => {
+    el.classList.remove('active')
+    el.classList.remove('in')
+    el.classList.add('out')
+    Xt.animTimeout(
+      el,
+      () => {
+        el.classList.remove('out')
+      },
+      suffix,
+      timing
+    )
+  }
+
+  /**
    * return window percent if percent string
    * @param {Number|String} num Number to check
    * @returns {Number}

@@ -16,14 +16,12 @@ Xt.mount.push({
       const filler = object.querySelectorAll('.filler span:nth-child(1)')
       object.dataset.loaderActive = object.dataset.loaderActive === 'true' ? 'false' : 'true'
       if (object.dataset.loaderActive === 'true') {
-        object.classList.add('active')
-        object.classList.remove('out')
+        Xt.animOn(object)
         gsap.set(filler, { width: 0 })
         gsap.to(filler, { width: '100%', duration: fillerTime, ease: fillerEase })
         setTimeout(loaderTimeout, fillerTime)
       } else {
-        object.classList.remove('active')
-        object.classList.add('out')
+        Xt.animOff(object)
         Xt.animTimeout(object, loaderTimeout)
       }
     }

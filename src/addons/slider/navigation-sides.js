@@ -13,21 +13,13 @@ Xt.mount.push({
     // enter
 
     mouseFollowContainer.addEventListener('mouseenter.xt.mousefollow', () => {
-      requestAnimationFrame(() => {
-        mouseFollowContainer.classList.add('in')
-      })
-      mouseFollowContainer.classList.remove('out')
+      Xt.animOn(mouseFollowContainer)
     })
 
     // leave
 
     mouseFollowContainer.addEventListener('mouseleave.xt.mousefollow', () => {
-      mouseFollowContainer.classList.remove('active')
-      mouseFollowContainer.classList.remove('in')
-      mouseFollowContainer.classList.add('out')
-      Xt.animTimeout(mouseFollowContainer, () => {
-        mouseFollowContainer.classList.remove('out')
-      })
+      Xt.animOff(mouseFollowContainer)
     })
 
     // unmount
