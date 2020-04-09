@@ -1,5 +1,6 @@
 import React from 'react'
 import path from 'path'
+const spinner = require('components/snippets/spinner').default
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -129,7 +130,10 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div data-xt-googlelocator-loader>
+  <div class="loader loader-spinner loader-background toggle-block" data-xt-googlelocator-loader>
+    <div class="spinner">
+      ${spinner({})}
+    </div>
   </div>
 </div>
 `

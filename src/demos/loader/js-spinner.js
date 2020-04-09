@@ -16,14 +16,12 @@ Xt.mount.push({
       const spinner = object.querySelectorAll('.spinner svg:nth-child(1) circle')
       object.dataset.loaderActive = object.dataset.loaderActive === 'true' ? 'false' : 'true'
       if (object.dataset.loaderActive === 'true') {
-        object.classList.add('active')
-        object.classList.remove('out')
+        Xt.animOn(object)
         gsap.set(spinner, { strokeDashoffset: 628 })
         gsap.to(spinner, { strokeDashoffset: 0, duration: spinnerTime, ease: spinnerEase, autoRound: false })
         setTimeout(loaderTimeout, spinnerTime)
       } else {
-        object.classList.remove('active')
-        object.classList.add('out')
+        Xt.animOff(object)
         Xt.animTimeout(object, loaderTimeout)
       }
     }

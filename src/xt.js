@@ -793,14 +793,16 @@ if (typeof window !== 'undefined') {
    * @param {String} url
    * @param {Function} callback
    */
-  Xt.addScript = (url, callback) => {
-    const script = document.createElement('script')
-    if (callback) {
-      script.onload = callback
+  Xt.addScript = (url, callback = null) => {
+    if (!document.querySelector('script[src="' + url + '"]')) {
+      const script = document.createElement('script')
+      if (callback) {
+        script.onload = callback
+      }
+      script.type = 'text/javascript'
+      script.src = url
+      document.body.appendChild(script)
     }
-    script.type = 'text/javascript'
-    script.src = url
-    document.body.appendChild(script)
   }
 
   /**
@@ -859,6 +861,39 @@ if (typeof window !== 'undefined') {
    */
   Xt.animTimeoutClear = (el, suffix = '') => {
     clearTimeout(Xt.dataStorage.get(el, 'xtAnimTimeout' + suffix))
+  }
+
+  /**
+   * animation on classes
+   * @param {Node|HTMLElement|EventTarget|Window} el Element animating
+   * @param {String} suffix Timeout suffix
+   */
+  Xt.animOn = (el, suffix = '') => {
+    el.classList.add('active')
+    el.classList.remove('out')
+    requestAnimationFrame(() => {
+      el.classList.add('in')
+    })
+  }
+
+  /**
+   * animation off classes
+   * @param {Node|HTMLElement|EventTarget|Window} el Element animating
+   * @param {String} suffix Timeout suffix
+   * @param {Number} timing Optional force time
+   */
+  Xt.animOff = (el, suffix = '', timing = null) => {
+    el.classList.remove('active')
+    el.classList.remove('in')
+    el.classList.add('out')
+    Xt.animTimeout(
+      el,
+      () => {
+        el.classList.remove('out')
+      },
+      suffix,
+      timing
+    )
   }
 
   /**

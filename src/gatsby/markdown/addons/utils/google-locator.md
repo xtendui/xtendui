@@ -10,3 +10,5 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
   <div class="gatsby_demo_item" data-iframe="iframe/demos/utils/google-locator">
   </div>
 </demo>
+
+Switch API and activate "Maps API" "Places API" "Geolocation API"

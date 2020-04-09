@@ -390,12 +390,12 @@ class Slider extends Xt.Toggle {
       el.addEventListener('off.xt', slideoffHandler, true)
     }
     // targets
-    for (const tr of self.targets) {
-      // disable links not active slide
-      if (options.jump) {
+    // not event on and event off for targets because not needed and bugs pagination inside targets
+    // disable links not active slide
+    if (options.jump) {
+      for (const tr of self.targets) {
         tr.classList.add('xt-links-none')
       }
-      // not event on and event off for targets because not needed and bugs pagination inside targets
     }
     // dragger
     if (options.drag) {
@@ -610,8 +610,8 @@ class Slider extends Xt.Toggle {
       Xt.dataStorage.remove(slide, self.componentNamespace + 'SlideonDone')
     })
     // disable links not active slide
-    for (const target of slides) {
-      if (options.jump) {
+    if (options.jump) {
+      for (const target of slides) {
         target.classList.remove('xt-links-none')
       }
     }
@@ -674,8 +674,8 @@ class Slider extends Xt.Toggle {
         self.initial ? 0 : self.options.durationOn
       )
       // disable links
-      dragger.classList.remove('xt-jumps-none')
       dragger.classList.remove('xt-links-none')
+      dragger.classList.remove('xt-jumps-none')
       // drag wrap
       if (self.dragger && options.drag.wrap) {
         if (!self.initial && !self.continue) {
@@ -723,8 +723,8 @@ class Slider extends Xt.Toggle {
       Xt.dataStorage.remove(slide, self.componentNamespace + 'SlideoffDone')
     })
     // disable links not active slide
-    for (const target of slides) {
-      if (options.jump) {
+    if (options.jump) {
+      for (const target of slides) {
         target.classList.add('xt-links-none')
       }
     }
@@ -816,8 +816,10 @@ class Slider extends Xt.Toggle {
       })
     } else {
       // disable links
-      dragger.classList.remove('xt-links-none')
-      dragger.classList.remove('xt-jumps-none')
+      requestAnimationFrame(() => {
+        dragger.classList.remove('xt-links-none')
+        dragger.classList.remove('xt-jumps-none')
+      })
       // dragend
       requestAnimationFrame(self.logicDragfrictionend.bind(self).bind(e, dragger))
     }
@@ -945,18 +947,24 @@ class Slider extends Xt.Toggle {
     if (Math.abs(dragDist) > options.drag.threshold) {
       // get nearest
       let found = self.currentIndex
-      for (const [i, group] of self.groupMq.entries()) {
-        for (const slideCheck of group) {
-          let check
-          if (options.align === 'center') {
-            check = self.detail.dragPos - draggerWidth / 2 + slideCheck.offsetLeft
-          } else if (options.align === 'left') {
-            check = self.detail.dragPos + slideCheck.offsetLeft
-          } else if (options.align === 'right') {
-            check = self.detail.dragPos - draggerWidth + slideCheck.offsetLeft + slideCheck.offsetWidth
-          }
-          if (check < 0 && Xt.visible(slideCheck)) {
-            found = i
+      if (found === 0 && dragDist > 0) {
+        found = self.groupMq.length - 1
+      } else if (found === self.groupMq.length - 1 && dragDist < 0) {
+        found = 0
+      } else {
+        for (const [i, group] of self.groupMq.entries()) {
+          for (const slideCheck of group) {
+            let check
+            if (options.align === 'center') {
+              check = self.detail.dragPos - draggerWidth / 2 + slideCheck.offsetLeft
+            } else if (options.align === 'left') {
+              check = self.detail.dragPos + slideCheck.offsetLeft
+            } else if (options.align === 'right') {
+              check = self.detail.dragPos - draggerWidth + slideCheck.offsetLeft + slideCheck.offsetWidth
+            }
+            if (check < 0 && Xt.visible(slideCheck)) {
+              found = i
+            }
           }
         }
       }

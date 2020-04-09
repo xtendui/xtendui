@@ -67,11 +67,7 @@ class MouseFollow {
       self.width = rect.width
       self.height = rect.height
       // class
-      self.object.classList.add('active')
-      requestAnimationFrame(() => {
-        self.object.classList.add('in')
-      })
-      self.object.classList.remove('out')
+      Xt.animOn(self.object)
       // initial
       Xt.friction(self.object, {
         x: e.clientX - self.width / 2,
@@ -91,12 +87,7 @@ class MouseFollow {
     const options = self.options
     if (!options.mouseCheck || options.mouseCheck.call(self)) {
       // class
-      self.object.classList.remove('active')
-      self.object.classList.remove('in')
-      self.object.classList.add('out')
-      Xt.animTimeout(self.object, () => {
-        self.object.classList.remove('out')
-      })
+      Xt.animOff(self.object)
       // listener dispatch
       self.container.dispatchEvent(new CustomEvent('mouseleave.xt.mousefollow'))
     }
