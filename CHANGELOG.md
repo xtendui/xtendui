@@ -1,3 +1,10 @@
+## [0.13.55](https://github.com/minimit/xtend-library/compare/v0.13.54...v0.13.55) (2020-04-14)
+
+
+### Bug Fixes
+
+* **addons:** revision googlelocator from euroricambi ([1e8ed9b](https://github.com/minimit/xtend-library/commit/1e8ed9b2a5d3b2a04528d321f131c3a2ff7eec2c))
+
 ## [0.13.54](https://github.com/minimit/xtend-library/compare/v0.13.53...v0.13.54) (2020-04-14)
 
 
