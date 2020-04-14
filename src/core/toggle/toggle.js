@@ -1558,6 +1558,7 @@ class Toggle {
       if (obj[type].done) {
         for (const el of obj[type].queueEls) {
           // clear timeout and frame
+          cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'AnimFrame'))
           cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'))
           clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'DelayTimeout'))
           clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'))
@@ -1731,9 +1732,14 @@ class Toggle {
     }
     // queue
     if (!skipQueue) {
-      requestAnimationFrame(() => {
-        self.queueAnim(actionCurrent, actionOther, obj, el, type)
-      })
+      cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'AnimFrame'))
+      Xt.dataStorage.set(
+        self.wheel,
+        self.componentNamespace + 'AnimFrame',
+        requestAnimationFrame(() => {
+          self.queueAnim(actionCurrent, actionOther, obj, el, type)
+        })
+      )
       // queue done
       if (obj[type].instantType) {
         const els = obj[type].queueEls
