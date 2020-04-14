@@ -1,3 +1,10 @@
+## [0.13.53](https://github.com/minimit/xtend-library/compare/v0.13.52...v0.13.53) (2020-04-14)
+
+
+### Bug Fixes
+
+* **toggle:** fix collapse toggle ([ea056bc](https://github.com/minimit/xtend-library/commit/ea056bc4a69627900202a660f779a9b4b36f0a1b))
+
 ## [0.13.52](https://github.com/minimit/xtend-library/compare/v0.13.51...v0.13.52) (2020-04-09)
 
 
