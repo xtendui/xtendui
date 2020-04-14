@@ -2336,98 +2336,76 @@ class Toggle {
     if (el instanceof HTMLElement) {
       if (actionCurrent === 'On') {
         if (before === 'xt-collapse-height') {
+          el.classList.remove('collapse-reset')
+          el.classList.add('trans-anim-none')
+          el.style.height = 'auto'
+          const h = el.clientHeight + 'px'
+          el.style.height = '0'
+          el.classList.remove('trans-anim-none')
           cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'))
           Xt.dataStorage.set(
             el,
             self.componentNamespace + 'CollapseFrame',
             requestAnimationFrame(() => {
-              el.classList.add('xt-hide', 'trans-anim-none')
-              el.style.height = 'auto'
-              const h = el.clientHeight + 'px'
-              el.style.height = '0'
-              cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'))
-              Xt.dataStorage.set(
-                el,
-                self.componentNamespace + 'CollapseFrame',
-                requestAnimationFrame(() => {
-                  el.classList.remove('xt-hide', 'trans-anim-none')
-                  el.style.height = h
-                })
-              )
+              el.style.height = h
             })
           )
         }
         if (after === 'xt-collapse-width') {
+          el.classList.remove('collapse-reset')
+          el.classList.add('trans-anim-none')
+          el.style.width = 'auto'
+          const w = el.clientWidth + 'px'
+          el.style.width = '0'
+          el.classList.remove('trans-anim-none')
           cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'))
           Xt.dataStorage.set(
             el,
             self.componentNamespace + 'CollapseFrame',
             requestAnimationFrame(() => {
-              el.classList.add('xt-hide', 'trans-anim-none')
-              el.style.width = 'auto'
-              const w = el.clientWidth + 'px'
-              el.style.width = '0'
-              cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'))
-              Xt.dataStorage
-                .set(
-                  el,
-                  self.componentNamespace + 'CollapseFrame',
-                  requestAnimationFrame(() => {
-                    el.classList.remove('xt-hide', 'trans-anim-none')
-                    el.style.width = w
-                  })
-                )
-                .toString()
+              el.style.width = w
             })
           )
         }
       } else if (actionCurrent === 'Off') {
         if (before === 'xt-collapse-height') {
+          el.classList.remove('collapse-reset')
+          el.classList.add('trans-anim-none')
           const h = el.offsetHeight + 'px'
+          el.style.height = h
+          el.classList.remove('trans-anim-none')
           cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'))
           Xt.dataStorage.set(
             el,
             self.componentNamespace + 'CollapseFrame',
             requestAnimationFrame(() => {
-              el.classList.remove('xt-hide', 'trans-anim-none')
-              el.style.height = h
-              cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'))
-              Xt.dataStorage.set(
-                el,
-                self.componentNamespace + 'CollapseFrame',
-                requestAnimationFrame(() => {
-                  el.style.height = '0'
-                })
-              )
+              el.style.height = '0'
             })
           )
         }
         if (after === 'xt-collapse-width') {
+          el.classList.remove('collapse-reset')
+          el.classList.add('trans-anim-none')
           const w = el.offsetWidth + 'px'
+          el.style.width = w
+          el.classList.remove('trans-anim-none')
           cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'))
           Xt.dataStorage.put(
             el,
             self.componentNamespace + 'CollapseFrame',
             requestAnimationFrame(() => {
-              el.classList.remove('xt-hide', 'trans-anim-none')
-              el.style.width = w
-              cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'))
-              Xt.dataStorage.put(
-                el,
-                self.componentNamespace + 'CollapseFrame',
-                requestAnimationFrame(() => {
-                  el.style.width = '0'
-                })
-              )
+              el.style.width = '0'
             })
           )
         }
       } else if (actionCurrent === 'Reset') {
         if (before === 'xt-collapse-height') {
           el.style.height = 'inherit'
+          el.classList.add('collapse-reset')
         }
         if (after === 'xt-collapse-width') {
           el.style.width = 'inherit'
+          el.classList.add('collapse-reset')
         }
       }
     }
