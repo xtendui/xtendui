@@ -388,7 +388,7 @@ class Googlelocator {
     self.position = self.map.getCenter()
     self.viewport = null
     self.radius = null
-    if (!empty || options.emptySearchBounds) {
+    if (!empty || options.seachMapBounds) {
       self.radius = google.maps.geometry.spherical.computeDistanceBetween(self.position, self.map.getBounds().getNorthEast())
     }
     self.submit()
@@ -487,7 +487,7 @@ Googlelocator.componentName = 'xt-googlelocator'
 Googlelocator.optionsDefault = {
   initialLocate: false,
   initialSearch: false,
-  emptySearchBounds: false,
+  seachMapBounds: false,
   markers: [
     {
       lat: 40.72308,

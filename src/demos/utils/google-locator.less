@@ -146,23 +146,24 @@
 .googlelocator_repeat {
   position: absolute;
   z-index: 2;
-  top: 50%;
+  top: 2rem;
   left: 2rem;
 }
 
-// .googlelocator_item
+// .googlelocator_items
+
+.googlelocator_items {
+  .margin(top, medium);
+  > .list-block {
+    .list-space(medium);
+  }
+}
 
 .googlelocator_item {
-  .list();
-  flex-wrap: nowrap;
-  height: auto !important;
-  align-items: center;
-  justify-content: space-between;
-  .padding(top, 2rem);
-  .padding(bottom, 1rem);
-  border-bottom: 1px solid @shade-200;
-  &.active {
-    border-bottom: 1px solid @black;
+  > .list {
+    .list-space(small);
+    flex-wrap: nowrap;
+    align-items: center;
   }
 }
 
@@ -227,13 +228,10 @@
 
 .gm-style {
   .googlelocator_item {
-    .text-inverse();
     margin-bottom: @googlelocator-arrow-size - 2px;
-    .padding(x, 2rem);
-    border: 0;
-    background: @accent !important;
-    color: @white;
+    background: @white;
     box-shadow: @shadow-light;
+    .padding(all, 2rem);
     &:before {
       content: '';
       position: absolute;
@@ -245,32 +243,20 @@
       border-top: @googlelocator-arrow-size solid @accent;
     }
   }
-  .googlelocator_item_name {
-    color: @white !important;
-  }
-  .googlelocator_item_directions {
-    color: @white !important;
-    .googlelocator_item_directions_icon {
-      color: @white !important;
-    }
-    &:hover, &.hover, &:active, &.active {
-      .googlelocator_item_directions_icon {
-        color: @white !important;
-      }
-    }
-  }
 }
 
 // custom infoWindow close
 
 .gm-style {
   .gm-style-iw-d + button {
+    top: 0 !important;
+    right: 0 !important;
     width: 3rem !important;
     height: 3rem !important;
-    background: @accent-dark !important;
+    background: @shade-200-dark !important;
     border-bottom-left-radius: 1rem;
     font-size: 25px;
-    color: @white !important;
+    color: @black !important;
     line-height: 0;
     text-align: center;
     opacity: 1 !important;
