@@ -1,3 +1,10 @@
+## [0.13.54](https://github.com/minimit/xtend-library/compare/v0.13.53...v0.13.54) (2020-04-14)
+
+
+### Bug Fixes
+
+* fix responsive and full auto width and height ([cc5df3d](https://github.com/minimit/xtend-library/commit/cc5df3d6226d68cae4b8f6e0a9c21e2ce091a4e7))
+
 ## [0.13.53](https://github.com/minimit/xtend-library/compare/v0.13.52...v0.13.53) (2020-04-14)
 
 
