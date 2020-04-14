@@ -68,20 +68,26 @@ class Googlelocator {
         if (place.geometry) {
           // place
           self.position = place.geometry.location
-          self.submit(false, true)
+          self.viewport = place.geometry.viewport
+          self.radius = null
+          self.submit()
           return
         }
       }
       // locate prediction
       if (self.locateCache && self.locateCache.value === self.searchInput.value) {
         self.position = self.locateCache.position
-        self.submit(false, true)
+        self.viewport = null
+        self.radius = null
+        self.submit()
         return
       }
       // cached prediction
       if (self.predictionCache && self.predictionCache.value === self.searchInput.value) {
         self.position = self.predictionCache.position
-        self.submit(false, true)
+        self.viewport = self.predictionCache.viewport
+        self.radius = null
+        self.submit()
         return
       }
       // new prediction
@@ -93,8 +99,10 @@ class Googlelocator {
             place = results
             self.searchInput.value = place.formatted_address
             self.position = place.geometry.location
-            self.predictionCache = { value: self.searchInput.value, position: self.position }
-            self.submit(false, true)
+            self.viewport = place.geometry.viewport
+            self.radius = null
+            self.predictionCache = { value: self.searchInput.value, position: self.position, viewport: self.viewport }
+            self.submit()
             placesPreview.remove()
           })
         } else {
@@ -112,7 +120,7 @@ class Googlelocator {
     if (options.elements.repeat) {
       self.repeatElement = self.object.querySelector(options.elements.repeat)
       if (self.repeatElement) {
-        self.repeatElement.addEventListener('click', self.submitCurrent.bind(self))
+        self.repeatElement.addEventListener('click', self.submitCurrent.bind(self).bind(self, false))
       }
     }
     // initialSearch
@@ -120,7 +128,7 @@ class Googlelocator {
       google.maps.event.addListenerOnce(self.map, 'idle', function() {
         self.map.setCenter(options.map.center)
         self.map.setZoom(options.map.zoom)
-        self.submitCurrent()
+        self.submitCurrent(true)
       })
     }
     // locate
@@ -149,6 +157,7 @@ class Googlelocator {
 
   /**
    * searchSubmit
+   * @param {Event} e
    */
   searchSubmit(e) {
     const self = this
@@ -161,13 +170,14 @@ class Googlelocator {
       if (self.searchInput.value === '') {
         self.map.setCenter(options.map.center)
         self.map.setZoom(options.map.zoom)
-        self.submitCurrent()
+        self.submitCurrent(true)
       }
     }
   }
 
   /**
    * searchClick
+   * @param {Event} e
    */
   searchClick(e) {
     const self = this
@@ -178,7 +188,7 @@ class Googlelocator {
     if (self.searchInput.value === '') {
       self.map.setCenter(options.map.center)
       self.map.setZoom(options.map.zoom)
-      self.submitCurrent()
+      self.submitCurrent(true)
     } else {
       // submit triggers places autocomplete
       google.maps.event.trigger(self.search, 'place_changed')
@@ -188,13 +198,13 @@ class Googlelocator {
   /**
    * submit
    */
-  submit(radius) {
+  submit() {
     const self = this
     const options = self.options
     // fix .getBounds not ready
     if (!self.map.getBounds()) {
       google.maps.event.addListenerOnce(self.map, 'bounds_changed', function() {
-        self.submit(radius)
+        self.submit()
       })
       return false
     }
@@ -213,8 +223,10 @@ class Googlelocator {
     let index = 0
     let markers = options.markers
     const bounds = new google.maps.LatLngBounds()
-    const r = radius || options.radiusDefault
     self.info = new google.maps.InfoWindow(options.infoWindow)
+    if (Xt.debug === true) {
+      console.debug('xt-googlelocator viewport and radius:', self.viewport, self.radius)
+    }
     for (const marker of markers) {
       if (!self.filters.length || self.filterMarker(marker)) {
         const latLng = new google.maps.LatLng(
@@ -222,7 +234,7 @@ class Googlelocator {
           options.formatData.lng ? options.formatData.lng(self, marker) : marker.lng
         )
         const distance = google.maps.geometry.spherical.computeDistanceBetween(self.position, latLng)
-        if (distance <= r) {
+        if ((!self.viewport || self.viewport.contains(latLng)) && (!self.radius || distance <= self.radius)) {
           const loc = new google.maps.Marker({
             map: self.map,
             position: latLng,
@@ -273,9 +285,6 @@ class Googlelocator {
         self.resultElement.classList.remove('found')
         self.resultElement.classList.remove('error')
       }
-      // map
-      self.map.setCenter(options.map.center)
-      self.map.setZoom(options.map.zoom)
     }
     // debug
     if (Xt.debug === true) {
@@ -303,6 +312,7 @@ class Googlelocator {
 
   /**
    * filterMarker
+   * @param {Object} marker
    */
   filterMarker(marker) {
     const self = this
@@ -321,6 +331,8 @@ class Googlelocator {
 
   /**
    * populateItem
+   * @param {Object} loc
+   * @param {Number} index
    */
   populateItem(loc, index) {
     const self = this
@@ -330,7 +342,7 @@ class Googlelocator {
     cloned.innerHTML = self.itemsTemplate.innerHTML
     cloned = cloned.querySelector(':scope > *')
     cloned.classList.add('xt-googlelocator-clone')
-    cloned.setAttribute('data-xt-googlelocator-index', index)
+    cloned.setAttribute('data-xt-googlelocator-index', index.toString())
     // append clone
     self.itemsContainer.append(cloned)
     // populate clone
@@ -349,6 +361,7 @@ class Googlelocator {
 
   /**
    * populateInfo
+   * @param {Object} loc
    */
   populateInfo(loc) {
     const self = this
@@ -364,23 +377,31 @@ class Googlelocator {
 
   /**
    * submitCurrent
+   * @param {Event} e
+   * @param {Boolean} empty
    */
-  submitCurrent() {
+  submitCurrent(empty = false, e = null) {
     const self = this
+    const options = self.options
     // position
     self.searchInput.value = ''
     self.position = self.map.getCenter()
-    const radius = google.maps.geometry.spherical.computeDistanceBetween(self.position, self.map.getBounds().getNorthEast())
-    self.submit(radius)
+    self.viewport = null
+    self.radius = null
+    if (!empty || options.emptySearchBounds) {
+      self.radius = google.maps.geometry.spherical.computeDistanceBetween(self.position, self.map.getBounds().getNorthEast())
+    }
+    self.submit()
   }
 
   /**
    * locate
+   * @param {Boolean} initial
    */
-  locate(init = false) {
+  locate(initial = false) {
     const self = this
     // loader
-    if (!init) {
+    if (!initial) {
       self.loaderShow()
     }
     // locate
@@ -389,6 +410,7 @@ class Googlelocator {
 
   /**
    * locateSuccess
+   * @param {Object} pos
    */
   locateSuccess(pos) {
     const self = this
@@ -397,6 +419,8 @@ class Googlelocator {
     // position
     self.searchInput.value = self.locateElement.getAttribute('data-xt-googlelocator-locate-btn')
     self.position = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude)
+    self.viewport = null
+    self.radius = null
     self.locateCache = { value: self.searchInput.value, position: self.position }
     if (Xt.debug === true) {
       console.debug('xt-googlelocator locate:', pos, self.position)
@@ -408,6 +432,7 @@ class Googlelocator {
 
   /**
    * locateError
+   * @param {String} error
    */
   locateError(error) {
     const self = this
@@ -449,7 +474,7 @@ class Googlelocator {
       self.locateElement.removeEventListener('click', self.locate.bind(self))
     }
     if (self.repeatElement) {
-      self.repeatElement.removeEventListener('click', self.submitCurrent.bind(self))
+      self.repeatElement.removeEventListener('click', self.submitCurrent.bind(self).bind(self, false))
     }
   }
 }
@@ -462,7 +487,7 @@ Googlelocator.componentName = 'xt-googlelocator'
 Googlelocator.optionsDefault = {
   initialLocate: false,
   initialSearch: false,
-  radiusDefault: 25000,
+  emptySearchBounds: false,
   markers: [
     {
       lat: 40.72308,
@@ -512,7 +537,7 @@ Googlelocator.optionsDefault = {
   ],
   map: {
     center: { lat: 0, lng: 0 },
-    zoom: 2,
+    zoom: 2.5,
     zoomMin: 14,
     scrollwheel: false,
     zoomControl: true,

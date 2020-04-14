@@ -98,12 +98,12 @@ class Scroll extends Xt.Toggle {
     const options = self.options
     // event on
     if (options.on) {
-      const scrollHandler = Xt.dataStorage.put(window, options.on + '/' + self.namespace, self.eventScrollHandler.bind(self))
+      const scrollHandler = Xt.dataStorage.put(window, options.on + '/' + self.namespace, self.eventScrollHandler.bind(self).bind(self, false))
       const events = [...options.on.split(' ')]
       for (const event of events) {
         addEventListener(event, scrollHandler, { passive: true })
       }
-      self.eventScrollHandler(null, true)
+      self.eventScrollHandler(true)
     }
   }
 
@@ -116,7 +116,7 @@ class Scroll extends Xt.Toggle {
    * @param {Event} e
    * @param {Boolean} initial
    */
-  eventScrollHandler(e = null, initial = false) {
+  eventScrollHandler(initial = false, e = null) {
     const self = this
     Xt.eventDelay(
       e,
