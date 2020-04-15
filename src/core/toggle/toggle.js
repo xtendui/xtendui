@@ -1150,6 +1150,7 @@ class Toggle {
     el.classList.remove(...self.classesIn)
     el.classList.remove(...self.classesInDone)
     el.classList.remove(...self.classesOut)
+    // keep the same level of raf as others
     requestAnimationFrame(() => {
       el.classList.add(...self.classesIn)
     })
@@ -1732,6 +1733,7 @@ class Toggle {
     }
     // queue
     if (!skipQueue) {
+      // keep the same level of raf as others
       cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'AnimFrame'))
       Xt.dataStorage.set(
         self.wheel,
@@ -2348,6 +2350,7 @@ class Toggle {
           const h = el.clientHeight + 'px'
           el.style.height = '0'
           el.classList.remove('trans-anim-none')
+          // keep the same level of raf as others
           cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'))
           Xt.dataStorage.set(
             el,
@@ -2364,6 +2367,7 @@ class Toggle {
           const w = el.clientWidth + 'px'
           el.style.width = '0'
           el.classList.remove('trans-anim-none')
+          // keep the same level of raf as others
           cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'))
           Xt.dataStorage.set(
             el,
@@ -2380,6 +2384,7 @@ class Toggle {
           const h = el.offsetHeight + 'px'
           el.style.height = h
           el.classList.remove('trans-anim-none')
+          // keep the same level of raf as others
           cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'))
           Xt.dataStorage.set(
             el,
@@ -2395,6 +2400,7 @@ class Toggle {
           const w = el.offsetWidth + 'px'
           el.style.width = w
           el.classList.remove('trans-anim-none')
+          // keep the same level of raf as others
           cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'))
           Xt.dataStorage.put(
             el,
