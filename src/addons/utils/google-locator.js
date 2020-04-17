@@ -223,7 +223,9 @@ class Googlelocator {
     let index = 0
     let markers = options.markers
     const bounds = new google.maps.LatLngBounds()
-    self.info = new google.maps.InfoWindow(options.infoWindow)
+    if (options.infoWindow) {
+      self.info = new google.maps.InfoWindow(options.infoWindow)
+    }
     if (Xt.debug === true) {
       console.debug('xt-googlelocator viewport and radius:', self.viewport, self.radius)
     }
@@ -240,6 +242,7 @@ class Googlelocator {
             position: latLng,
             title: marker.name,
             icon: marker.icon || options.map.icon,
+            animation: marker.animation || options.map.animation,
             distance: distance,
             marker: marker,
             index: index,
@@ -247,7 +250,7 @@ class Googlelocator {
           bounds.extend(latLng)
           self.locations.push(loc)
           loc.addListener('click', function() {
-            self.populateInfo(loc)
+            self.populateInfo(loc, 'marker')
           })
           index++
         }
@@ -355,23 +358,52 @@ class Googlelocator {
     }
     // info
     cloned.addEventListener('click', function() {
-      self.populateInfo(loc)
+      self.populateInfo(loc, 'result')
     })
   }
 
   /**
    * populateInfo
    * @param {Object} loc
+   * @param {String} type
    */
-  populateInfo(loc) {
+  populateInfo(loc, type) {
     const self = this
     const options = self.options
+    // stop animation
+    if (self.animatingLoc) {
+      self.animatingLoc.setAnimation(null)
+      self.animatingLoc = null
+    }
+    // animation
+    const anim = type === 'marker' ? options.events.animateMarkerClick : type === 'result' ? options.events.animateMarkerResultClick : null
+    if (anim) {
+      loc.setAnimation(anim)
+      self.animatingLoc = loc
+    }
     // populate
+    const old = self.itemsContainer.querySelector('[data-xt-googlelocator-index].active')
+    if (old) {
+      old.classList.remove('active')
+    }
     const item = self.itemsContainer.querySelector('[data-xt-googlelocator-index="' + loc.index + '"]')
-    const content = options.formatData.info(self, loc, item)
-    if (content) {
-      self.info.setContent(content)
-      self.info.open(self.map, loc)
+    if (item) {
+      item.focus()
+      item.classList.add('active')
+    }
+    if (options.infoWindow) {
+      const info = type === 'marker' ? options.events.infoWindowMarkerClick : type === 'result' ? options.events.infoWindowMarkerResultClick : null
+      if (info) {
+        if (item) {
+          const content = options.formatData.info(self, loc, item)
+          if (content) {
+            self.info.setContent(content)
+            self.info.open(self.map, loc)
+          }
+        }
+      } else {
+        self.info.close(self.map)
+      }
     }
   }
 
@@ -488,6 +520,12 @@ Googlelocator.optionsDefault = {
   initialLocate: false,
   initialSearch: false,
   seachMapBounds: false,
+  events: {
+    animateMarkerClick: false,
+    animateMarkerResultClick: false,
+    infoWindowMarkerClick: true,
+    infoWindowMarkerResultClick: false,
+  },
   markers: [
     {
       lat: 40.72308,
@@ -551,9 +589,7 @@ Googlelocator.optionsDefault = {
       imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m',
     },
   },
-  infoWindow: {
-    maxWidth: 350,
-  },
+  infoWindow: {},
   elements: {
     loader: '[data-xt-googlelocator-loader]',
     searchInput: '[data-xt-googlelocator-search-input]',

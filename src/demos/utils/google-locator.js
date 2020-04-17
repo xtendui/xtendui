@@ -12,7 +12,12 @@ window.demoGooglelocator = function() {
       // init
 
       let self = new Xt.Googlelocator(object, {
+        events: {
+          animateMarkerResultClick: google.maps.Animation.BOUNCE,
+          infoWindowMarkerClick: true,
+        },
         map: {
+          animation: google.maps.Animation.DROP,
           mapTypeId: google.maps.MapTypeId.ROADMAP,
           zoomControlOptions: {
             position: google.maps.ControlPosition.RIGHT_CENTER,
