@@ -1,3 +1,11 @@
+## [0.13.57](https://github.com/minimit/xtend-library/compare/v0.13.56...v0.13.57) (2020-04-17)
+
+
+### Bug Fixes
+
+* googlelocator events ([a0f1ce1](https://github.com/minimit/xtend-library/commit/a0f1ce18edcd06bcf321f76bf1b4613d422063cb))
+* googlelocator revision marker and infowindow ([619608b](https://github.com/minimit/xtend-library/commit/619608b2bc78112372b608c80fbbd1e865f6e67e))
+
 ## [0.13.56](https://github.com/minimit/xtend-library/compare/v0.13.55...v0.13.56) (2020-04-17)
 
 
