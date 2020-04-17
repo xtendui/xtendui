@@ -15,7 +15,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="googlelocator googlelocator-default">
+<div class="googlelocator demo--googlelocator">
 
   <div class="googlelocator_aside">
 
