@@ -17,7 +17,6 @@ window.demoGooglelocator = function() {
           infoWindowMarkerClick: true,
         },
         map: {
-          animation: google.maps.Animation.DROP,
           mapTypeId: google.maps.MapTypeId.ROADMAP,
           zoomControlOptions: {
             position: google.maps.ControlPosition.RIGHT_CENTER,
