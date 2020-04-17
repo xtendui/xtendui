@@ -93,28 +93,26 @@ demo.htmlSource = `
         places found
       </div>
 
-      <div class="googlelocator_items">
-        <div class="list-block" data-xt-googlelocator-items>
+      <div class="googlelocator_items" data-xt-googlelocator-items>
 
-          <script type="text/x-template">
-            <div class="googlelocator_item">
-              <div class="list">
-                <div class="googlelocator_item_content">
-                  <div class="googlelocator_item_name" data-xt-googlelocator-data="name"></div>
-                  <address class="googlelocator_item_address" data-xt-googlelocator-data="address"></address>
-                  <div class="googlelocator_item_additional" data-xt-googlelocator-data="additional"></div>
-                </div>
-                <a href="#" target="_blank" class="googlelocator_item_directions" title="directions" data-xt-googlelocator-data="direction">
-                  <span class="googlelocator_item_directions_icon">
-                    <span class="icon-xt-search icon-big"></span>
-                  </span>
-                  <span data-xt-googlelocator-data="distance"></span>
-                </a>
+        <script type="text/x-template">
+          <div class="googlelocator_item" tabindex="-1">
+            <div class="list">
+              <div class="googlelocator_item_content">
+                <div class="googlelocator_item_name" data-xt-googlelocator-data="name"></div>
+                <address class="googlelocator_item_address" data-xt-googlelocator-data="address"></address>
+                <div class="googlelocator_item_additional" data-xt-googlelocator-data="additional"></div>
               </div>
+              <a href="#" target="_blank" class="googlelocator_item_directions" title="directions" data-xt-googlelocator-data="direction">
+                <span class="googlelocator_item_directions_icon">
+                  <span class="icon-xt-search icon-big"></span>
+                </span>
+                <span data-xt-googlelocator-data="distance"></span>
+              </a>
             </div>
-          </script>
+          </div>
+        </script>
 
-        </div>
       </div>
 
     </div>

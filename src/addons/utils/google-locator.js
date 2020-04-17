@@ -382,14 +382,24 @@ class Googlelocator {
       self.animatingLoc = loc
     }
     // populate
-    const info = type === 'marker' ? options.events.infoWindowMarkerClick : type === 'result' ? options.events.infoWindowMarkerResultClick : null
+    const old = self.itemsContainer.querySelector('[data-xt-googlelocator-index].active')
+    if (old) {
+      old.classList.remove('active')
+    }
+    const item = self.itemsContainer.querySelector('[data-xt-googlelocator-index="' + loc.index + '"]')
+    if (item) {
+      item.focus()
+      item.classList.add('active')
+    }
     if (options.infoWindow) {
+      const info = type === 'marker' ? options.events.infoWindowMarkerClick : type === 'result' ? options.events.infoWindowMarkerResultClick : null
       if (info) {
-        const item = self.itemsContainer.querySelector('[data-xt-googlelocator-index="' + loc.index + '"]')
-        const content = options.formatData.info(self, loc, item)
-        if (content) {
-          self.info.setContent(content)
-          self.info.open(self.map, loc)
+        if (item) {
+          const content = options.formatData.info(self, loc, item)
+          if (content) {
+            self.info.setContent(content)
+            self.info.open(self.map, loc)
+          }
         }
       } else {
         self.info.close(self.map)

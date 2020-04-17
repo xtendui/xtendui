@@ -157,12 +157,10 @@
 
   .googlelocator_items {
     .margin(top, medium);
-    > .list-block {
-      .list-space(medium);
-    }
   }
 
   .googlelocator_item {
+    .padding(y, small);
     > .list {
       .list-space(small);
       flex-wrap: nowrap;
@@ -171,8 +169,15 @@
     }
   }
 
-  .googlelocator_item_content {
+  .googlelocator_items .googlelocator_item {
+    // activation when clicking marker
     cursor: pointer;
+    border: 1px solid transparent;
+    transition: border @time-medium @ease-off;
+    &.active {
+      border-bottom: 2px solid @accent;
+      transition: border @time-medium @ease-on;
+    }
   }
 
   .googlelocator_item_name {
