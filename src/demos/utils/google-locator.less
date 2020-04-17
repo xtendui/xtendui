@@ -167,6 +167,7 @@
       .list-space(small);
       flex-wrap: nowrap;
       align-items: center;
+      justify-content: space-between;
     }
   }
 
@@ -223,6 +224,11 @@
       border-radius: 0;
       box-shadow: @shadow-light;
       background: @white;
+      // scroll
+      overflow-x: hidden !important;
+      overflow-y: auto !important;
+      max-height: 15rem !important;
+      .overflow-style(@mode: inner);
     }
     // close
     .gm-style-iw-d + button {
