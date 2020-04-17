@@ -381,16 +381,19 @@ class Googlelocator {
       loc.setAnimation(anim)
       self.animatingLoc = loc
     }
-    // populate
+    // activation
+    const item = self.itemsContainer.querySelector('[data-xt-googlelocator-index="' + loc.index + '"]')
     const old = self.itemsContainer.querySelector('[data-xt-googlelocator-index].active')
     if (old) {
       old.classList.remove('active')
     }
-    const item = self.itemsContainer.querySelector('[data-xt-googlelocator-index="' + loc.index + '"]')
-    if (item) {
-      item.focus()
-      item.classList.add('active')
+    if (type === 'marker') {
+      if (item) {
+        item.focus()
+        item.classList.add('active')
+      }
     }
+    // infowindow
     if (options.infoWindow) {
       const info = type === 'marker' ? options.events.infoWindowMarkerClick : type === 'result' ? options.events.infoWindowMarkerResultClick : null
       if (info) {
