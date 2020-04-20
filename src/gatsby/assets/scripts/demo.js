@@ -99,7 +99,7 @@ const populateBlock = () => {
       cancelAnimationFrame(Xt.dataStorage.get(document, 'gatbsy_open-full-raf'))
     })
   }
-  document.querySelector('#gatbsy_open-full').addEventListener('offdone.xt', e => {
+  document.querySelector('#gatbsy_open-full').addEventListener('off.xt', e => {
     const content = document.querySelector('#gatbsy_open-full-content')
     // btnOpenFull
     for (const btn of document.querySelectorAll('.btn-open-full.active')) {
@@ -132,12 +132,10 @@ const populateBlock = () => {
     moving.classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
     appendOrigin.before(moving)
     // @FIX demo fullscreen
-    requestAnimationFrame(() => {
-      const current = appendOrigin.previousSibling.querySelector('.gatsby_demo_item.active')
-      // triggering e.detail.container
-      dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: current } }))
-      appendOrigin.remove()
-    })
+    const current = appendOrigin.previousSibling.querySelector('.gatsby_demo_item.active')
+    // triggering e.detail.container
+    dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: current } }))
+    appendOrigin.remove()
     // set hash
     cancelAnimationFrame(Xt.dataStorage.get(document, 'gatbsy_open-full-raf'))
     Xt.dataStorage.set(
@@ -150,14 +148,12 @@ const populateBlock = () => {
     )
   })
   // trigger fullscreen or change tabs
-  document.querySelector('#gatbsy_open-full').addEventListener('ondone.xt', e => {
+  document.querySelector('#gatbsy_open-full').addEventListener('on.xt', e => {
     // @FIX demo fullscreen
-    requestAnimationFrame(() => {
-      const content = document.querySelector('#gatbsy_open-full-content')
-      const current = content.querySelector('.gatsby_demo_item.active')
-      // triggering e.detail.container
-      dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: current } }))
-    })
+    const content = document.querySelector('#gatbsy_open-full-content')
+    const current = content.querySelector('.gatsby_demo_item.active')
+    // triggering e.detail.container
+    dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: current } }))
   })
 }
 
