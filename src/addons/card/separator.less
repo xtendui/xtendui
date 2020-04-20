@@ -1,0 +1,109 @@
+@import (reference) '~xtend-library/src/xtend-core.less';
+@import '~xtend-library/src/core/card/card.less';
+@import '~xtend-library/src/core/media/media.less';
+
+/**
+ * card lines
+ */
+
+.card {
+  .card-separator& {
+    > .card-inner > .card-content {
+      > .card-item {
+        & + .card-item {
+          &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: auto;
+            left: 0;
+            right: 0;
+            width: auto;
+            height: 1px;
+          }
+        }
+      }
+    }
+    > .card-inner > .card-content > .card-item-nested {
+      > .card-item {
+        & + .card-item {
+          &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: auto;
+            width: 1px;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+// variant
+
+.card-default {
+  .card-separator& {
+    .card-contents({
+      > .card-item {
+        & + .card-item {
+          &:before {
+            background: fade(@shade-900, 10%);
+          }
+        }
+      }
+    });
+  }
+}
+
+.card-primary {
+  .card-separator& {
+    .card-contents({
+      > .card-item {
+        & + .card-item {
+          &:before {
+            background: fade(@shade-200, 10%);
+          }
+        }
+      }
+    });
+  }
+}
+
+.card-white {
+  .card-separator& {
+    .card-contents({
+      > .card-item {
+        & + .card-item {
+          &:before {
+            background: fade(@shade-900, 10%);
+          }
+        }
+      }
+    });
+  }
+}
+
+// special
+
+.card-group, .card-horizontal {
+  .card-separator& {
+    .card-contents({
+      > .card-item {
+        & + .card-item {
+          &:before {
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: auto;
+            width: 1px;
+            height: auto;
+          }
+        }
+      }
+    });
+  }
+}

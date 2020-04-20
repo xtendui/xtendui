@@ -11,34 +11,7 @@ date: "2019-06-01"
 
 ## Block
 
-You can add custom `.card-block` modifiers and style them as you like (e.g.: `.card-block-head`).
-
-<script type="text/plain" class="language-markup">
-  <div class="card card-overlay">
-    <div class="card-design"></div>
-    <div class="card-inner">
-      <div class="btn btn-close" aria-label="Close"></div>
-      <div class="card-content">
-
-        <div class="card-block card-block-head">
-          <!-- content -->
-        </div>
-
-      </div>
-    </div>
-  </div>
-</script>
-
-<demo>
-  <demovanilla src="vanilla/components/overlay/block">
-  </demovanilla>
-</demo>
-
-## Multiple
-
-Sequential `.card-item` stack vertically.
-
-They have a separator automatically styled with [variants](/components/card/option#variant). Just be sure to style `.card-item-{variant}` as in the **card.less** to not break css specificity.
+Sequential `.card-block` stack vertically.
 
 <script type="text/plain" class="language-markup">
   <div class="card card-overlay">
@@ -62,6 +35,33 @@ They have a separator automatically styled with [variants](/components/card/opti
 
 <demo>
   <demovanilla src="vanilla/components/overlay/multiple">
+  </demovanilla>
+</demo>
+
+You can add custom `.card-block` modifiers and style them as you like (e.g.: `.card-block-head`).
+
+<script type="text/plain" class="language-markup">
+  <div class="card card-overlay">
+    <div class="card-design"></div>
+    <div class="card-inner">
+      <div class="btn btn-close" aria-label="Close"></div>
+      <div class="card-content">
+
+        <div class="card-block card-block-head">
+          <!-- content -->
+        </div>
+
+        <div class="card-block card-item">
+          <!-- content -->
+        </div>
+
+      </div>
+    </div>
+  </div>
+</script>
+
+<demo>
+  <demovanilla src="vanilla/components/overlay/block">
   </demovanilla>
 </demo>
 

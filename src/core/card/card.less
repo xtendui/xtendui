@@ -20,21 +20,6 @@
     border-style: solid;
     border-color: transparent;
   }
-  // line
-  .card-contents({
-    > .card-item {
-      & + .card-item {
-        &:before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 1px;
-        }
-      }
-    }
-  });
   // default options
   .card-medium();
 }
@@ -80,16 +65,6 @@
     border-color: @shade-200;
     background: @shade-200;
   }
-  // line
-  .card-contents({
-    > .card-item {
-      & + .card-item {
-        &:before {
-          background: fade(@shade-900, 10%);
-        }
-      }
-    }
-  });
   // preset
   .card-overlay& {
     > .card-design {
@@ -125,16 +100,6 @@
     border-color: @accent;
     background: @accent;
   }
-  // line
-  .card-contents({
-    > .card-item {
-      & + .card-item {
-        &:before {
-          background: fade(@shade-200, 10%);
-        }
-      }
-    }
-  });
   // preset
   .card-overlay& {
     > .card-design {
@@ -170,16 +135,6 @@
     border-color: @white;
     background: @white;
   }
-  // line
-  .card-contents({
-    > .card-item {
-      & + .card-item {
-        &:before {
-          background: fade(@shade-900, 10%);
-        }
-      }
-    }
-  });
   // preset
   .card-overlay& {
     > .card-design {
@@ -271,38 +226,6 @@
 }
 
 // special
-
-.card-group {
-  // line
-  > .card-item {
-    & + .card-item {
-      &:before {
-        left: 0;
-        bottom: 0;
-        right: auto;
-        width: 1px;
-        height: auto;
-      }
-    }
-  }
-}
-
-.card-horizontal {
-  // line
-  .card-contents({
-    > .card-item {
-      & + .card-item {
-        &:before {
-          left: 0;
-          bottom: 0;
-          right: auto;
-          width: 1px;
-          height: auto;
-        }
-      }
-    }
-  });
-}
 
 .card-overflow-y {
   overflow-x: hidden;

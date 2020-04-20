@@ -8,21 +8,17 @@ date: "2019-05-15"
 
 ## Block
 
+Sequential `.card-block` stack vertically.
+
+<demo>
+  <demovanilla src="vanilla/components/card/horizontal-multiple">
+  </demovanilla>
+</demo>
+
 You can add custom `.card-block` modifiers and style them as you like (e.g.: `.card-block-head`).
 
 <demo>
   <demovanilla src="vanilla/components/card/horizontal-block">
-  </demovanilla>
-</demo>
-
-## Multiple
-
-Sequential `.card-item` stack vertically.
-
-They have a separator automatically styled with [variants](/components/card/option#variant). Just be sure to style `.card-item-{variant}` as in the **card.less** to not break css specificity.
-
-<demo>
-  <demovanilla src="vanilla/components/card/horizontal-multiple">
   </demovanilla>
 </demo>
 
