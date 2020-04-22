@@ -39,19 +39,14 @@ Xt.mount.push({
       const target = self.targets.filter(x => self.hasCurrent(x))[0]
       const ratio = Math.abs(self.detail.dragStart - self.detail.dragCurrent) / target.clientWidth
       const size = self.dragger.offsetWidth / 6
-      // direction
-      let direction = 1
-      if (self.detail.dragStart - self.detail.dragCurrent > 0) {
-        direction = -1
-      }
       // content others
       for (const tr of self.targets.filter(x => !self.hasCurrent(x))) {
         const other = tr.querySelector('.slide_img_inner')
-        gsap.set(other, { x: -size * ratio * direction + size * direction, opacity: ratio + 0.5 })
+        gsap.set(other, { x: size * ratio * self.direction - size * self.direction, opacity: ratio + 0.5 })
       }
       // content
       const content = target.querySelector('.slide_img_inner')
-      gsap.set(content, { x: -size * ratio * direction, opacity: 1 - ratio + 0.5 })
+      gsap.set(content, { x: size * ratio * self.direction, opacity: 1 - ratio + 0.5 })
     }
 
     self.dragger.addEventListener('drag.xt', eventDrag)
@@ -102,16 +97,13 @@ Xt.mount.push({
       // useCapture delegation
       if (self.targets.includes(target)) {
         const size = self.dragger.offsetWidth / 6
-        // direction
-        let direction = 1
-        if (target.classList.contains('inverse')) {
-          direction = -1
-        }
         // content
         const content = target.querySelector('.slide_img_inner')
-        gsap.to(content, { x: size * direction, opacity: 0.5, scale: 1, duration: contentTimeOff, ease: contentEaseOff }).eventCallback('onComplete', () => {
-          gsap.set(content, { x: 0, opacity: 1 })
-        })
+        gsap
+          .to(content, { x: size * self.direction, opacity: 0.5, scale: 1, duration: contentTimeOff, ease: contentEaseOff })
+          .eventCallback('onComplete', () => {
+            gsap.set(content, { x: 0, opacity: 1 })
+          })
       }
     }
 

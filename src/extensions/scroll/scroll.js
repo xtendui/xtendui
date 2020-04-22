@@ -155,7 +155,7 @@ class Scroll extends Xt.Toggle {
     const scrollTop = scrollingElement.scrollTop
     const windowHeight = Xt.windowHeight
     // direction
-    self.detail.inverseForce = scrollTop < self.detail.scrollTopOld
+    self.inverse = scrollTop < self.detail.scrollTopOld
     // loop
     for (const el of self.elements) {
       const tr = self.getTargets(el)[0]
@@ -244,7 +244,7 @@ class Scroll extends Xt.Toggle {
         }
         // direction
         if (changed) {
-          if (self.detail.inverseForce) {
+          if (self.inverse) {
             el.classList.add('inverse')
           } else {
             el.classList.remove('inverse')

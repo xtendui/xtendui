@@ -159,6 +159,7 @@ Here are the main properties inside `self`:
 | Event                   | `elements:Array`       | Elements nodes             |
 | Event                   | `targets:Array`       | Targets nodes            |
 | Event                   | `initial:Boolean`       | If first activation             |
+| Event                   | `direction:Number`       | Direction `1` or `-1`            |
 
 </div>
 

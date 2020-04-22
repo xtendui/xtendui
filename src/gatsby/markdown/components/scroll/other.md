@@ -8,7 +8,7 @@ date: "2019-03-15"
 
 ## Direction
 
-Animate with inverse `.inverse` or `self.detail.inverse`.
+Animate with inverse `.inverse` or `self.direction`.
 
 <demo>
   <div class="gatsby_demo_item" data-iframe="iframe/components/scroll/direction">

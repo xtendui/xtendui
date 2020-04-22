@@ -52,11 +52,6 @@ Xt.mount.push({
     const eventDrag = () => {
       const tr = self.targets.filter(x => self.hasCurrent(x))[0]
       const ratio = Math.abs(self.detail.dragStart - self.detail.dragCurrent) / tr.clientWidth
-      // direction
-      let direction = 1
-      if (self.detail.dragStart - self.detail.dragCurrent > 0) {
-        direction = -1
-      }
       // assetMask
       const assetMasks = tr.querySelectorAll('.slider_img .media-container')
       for (const assetMask of assetMasks) {
@@ -75,7 +70,7 @@ Xt.mount.push({
       // cardContent
       const cardContents = tr.querySelectorAll('.slider_card .card-item')
       for (const cardContent of cardContents) {
-        gsap.set(cardContent, { x: cardContentX * ratio * direction, opacity: 1 - ratio })
+        gsap.set(cardContent, { x: cardContentX * ratio * self.direction, opacity: 1 - ratio })
       }
     }
 
@@ -117,11 +112,6 @@ Xt.mount.push({
       const tr = e.target
       // useCapture delegation
       if (self.targets.includes(tr)) {
-        // direction
-        let direction = 1
-        if (tr.classList.contains('inverse')) {
-          direction = -1
-        }
         if (self.initial) {
           // assetMask
           const assetMasks = tr.querySelectorAll('.slider_img .media-container')
@@ -148,10 +138,10 @@ Xt.mount.push({
           // assetMask
           const assetMasks = tr.querySelectorAll('.slider_img .media-container')
           for (const assetMask of assetMasks) {
-            gsap.set(assetMask, { x: 100 * direction + '%' })
+            gsap.set(assetMask, { x: 100 * self.direction + '%' })
             gsap.to(assetMask, { x: 0, duration: assetMaskTimeOn, ease: assetMaskEaseOn, delay: fixDelayOn })
             const assetMaskInner = assetMask.querySelector('.media-inner')
-            gsap.set(assetMaskInner, { x: -100 * direction + '%' })
+            gsap.set(assetMaskInner, { x: -100 * self.direction + '%' })
             gsap.to(assetMaskInner, { x: 0, opacity: 1, duration: assetMaskTimeOn, ease: assetMaskEaseOn, delay: fixDelayOn })
           }
           // asset
@@ -163,7 +153,7 @@ Xt.mount.push({
           // cardContent
           const cardContents = tr.querySelectorAll('.slider_card .card-item')
           for (const cardContent of cardContents) {
-            gsap.set(cardContent, { x: cardContentX * direction, opacity: 0 })
+            gsap.set(cardContent, { x: cardContentX * self.direction, opacity: 0 })
             gsap.to(cardContent, { x: 0, opacity: 1, duration: cardContentTimeOn, ease: cardContentEaseOn, delay: fixDelayOn })
           }
           // card
@@ -183,17 +173,12 @@ Xt.mount.push({
       const tr = e.target
       // useCapture delegation
       if (self.targets.includes(tr)) {
-        // direction
-        let direction = 1
-        if (tr.classList.contains('inverse')) {
-          direction = -1
-        }
         // assetMask
         const assetMasks = tr.querySelectorAll('.slider_img .media-container')
         for (const assetMask of assetMasks) {
-          gsap.to(assetMask, { x: -100 * direction + '%', duration: assetMaskTimeOff, ease: assetMaskEaseOff })
+          gsap.to(assetMask, { x: -100 * self.direction + '%', duration: assetMaskTimeOff, ease: assetMaskEaseOff })
           const assetMaskInner = assetMask.querySelector('.media-inner')
-          gsap.to(assetMaskInner, { x: 100 * direction + '%', opacity: 0, duration: assetMaskTimeOff, ease: assetMaskEaseOff })
+          gsap.to(assetMaskInner, { x: 100 * self.direction + '%', opacity: 0, duration: assetMaskTimeOff, ease: assetMaskEaseOff })
         }
         // asset
         const assets = tr.querySelectorAll('.slider_img img')
@@ -203,7 +188,7 @@ Xt.mount.push({
         // cardContent
         const cardContents = tr.querySelectorAll('.slider_card .card-item')
         for (const cardContent of cardContents) {
-          gsap.to(cardContent, { x: -cardContentX * direction, opacity: 0, duration: cardContentTimeOff, ease: cardContentEaseOff })
+          gsap.to(cardContent, { x: -cardContentX * self.direction, opacity: 0, duration: cardContentTimeOff, ease: cardContentEaseOff })
         }
         // card
         const card = tr.querySelector('.slider_card > .card')

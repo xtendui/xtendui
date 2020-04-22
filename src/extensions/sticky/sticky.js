@@ -175,7 +175,7 @@ class Sticky extends Xt.Toggle {
     const scrollHeight = scrollingElement.scrollHeight
     const scrollTop = scrollingElement.scrollTop
     // direction
-    self.detail.inverseForce = scrollTop < self.detail.scrollTopOld
+    self.inverse = scrollTop < self.detail.scrollTopOld
     // loop
     for (const el of self.elements) {
       const tr = self.getTargets(el)[0]
@@ -185,12 +185,12 @@ class Sticky extends Xt.Toggle {
       const topTr = tr.getBoundingClientRect().top
       // hide
       if (options.hide === 'down') {
-        if (!self.detail.inverseForce) {
+        if (!self.inverse) {
           addHide = heightTr
         }
       }
       if (options.hide === 'up') {
-        if (self.detail.inverseForce) {
+        if (self.inverse) {
           addHide = heightTr
         }
       }
@@ -392,12 +392,12 @@ class Sticky extends Xt.Toggle {
       if (elements.length) {
         for (const el of elements) {
           if (el.classList.contains('sticky-hide--down') && el.classList.contains(self.classes[0])) {
-            if (self.detail.inverseForce) {
+            if (self.inverse) {
               val += el.clientHeight
               foundHide = true
             }
           } else if (el.classList.contains('sticky-hide--up') && el.classList.contains(self.classes[0])) {
-            if (!self.detail.inverseForce) {
+            if (!self.inverse) {
               val += el.clientHeight
               foundHide = true
             }

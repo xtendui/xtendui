@@ -170,6 +170,7 @@ Here are the main properties inside `self`:
 | Event                   | `targets:Array`       | Targets nodes            |
 | Event                   | `initial:Boolean`       | If first activation             |
 | Event                   | `continue:Boolean`       | If continue activation (wrap)             |
+| Event                   | `direction:Number`       | Direction `1` or `-1`            |
 | Event                   | `dragger:Node`       | Dragger node             |
 | Event                   | `wheel:Node`       | Wheel node             |
 

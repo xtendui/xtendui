@@ -34,10 +34,10 @@ categories: ["100-Test"]
 </demo>
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/slider/2020-euroricambi">
-  </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/slider/2019-sun68">
-  </div>
+  <demovanilla src="vanilla/themes/slider/2020-euroricambi-slider">
+  </demovanilla>
+  <demovanilla src="vanilla/themes/slider/2019-sun68-slider">
+  </demovanilla>
 </demo>
 
 ## Markdown

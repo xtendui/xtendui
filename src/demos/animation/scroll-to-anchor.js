@@ -21,13 +21,5 @@ Xt.mount.push({
     }
 
     self.object.addEventListener('change.xt.scrolltoanchor', eventChange)
-
-    // unmount
-
-    const unmount = () => {
-      self.destroy()
-      self = null
-    }
-    return unmount
   },
 })

@@ -914,6 +914,8 @@ class Slider extends Xt.Toggle {
     self.detail.dragCurrent = self.detail.dragCurrentReal - (self.detail.dragPosReal - dragPos) // dragCurrent when overflowing
     self.detail.dragPosOld = self.detail.dragPos
     self.detail.dragPos = dragPos
+    self.direction = self.detail.dragStart - self.detail.dragCurrent < 0 ? -1 : 1
+    self.inverse = self.direction === -1
     // drag position
     if (self.initial) {
       self.dragger.classList.add('transition-none')

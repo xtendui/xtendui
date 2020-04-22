@@ -40,12 +40,13 @@ class Toggle {
     self.elements = []
     self.targets = []
     self.currentIndex = null
+    self.direction = null
+    self.inverse = null
     self.initialCurrents = []
     self.detail = {}
     self.disabled = false
     self.detail.queueOn = []
     self.detail.queueOff = []
-    self.detail.inverse = false
     self.detail.autopaused = false
     self.destroyElements = [document, window, self.object]
     // init
@@ -1134,8 +1135,8 @@ class Toggle {
         break
       }
     }
-    self.detail.inverse = self.detail.inverseForce !== null ? self.detail.inverseForce : self.currentIndex > index
-    self.detail.inverseForce = null
+    self.direction = self.inverse !== null ? self.inverse ? -1 : 1 : self.currentIndex > index ? -1 : 1
+    self.inverse = null
     self.currentIndex = index
   }
 
@@ -1157,7 +1158,7 @@ class Toggle {
     if (self.initial || Xt.dataStorage.get(el, self.componentNamespace + 'Initial')) {
       el.classList.add(...self.classesInitial)
     }
-    if (!self.detail.inverse) {
+    if (self.direction === 1) {
       el.classList.remove(...self.classesInverse)
     } else {
       el.classList.add(...self.classesInverse)
@@ -1188,7 +1189,7 @@ class Toggle {
     if (!self.initial && !Xt.dataStorage.get(el, self.componentNamespace + 'Initial')) {
       el.classList.remove(...self.classesInitial)
     }
-    if (!self.detail.inverse) {
+    if (self.direction === 1) {
       el.classList.remove(...self.classesInverse)
     } else {
       el.classList.add(...self.classesInverse)
@@ -2601,7 +2602,7 @@ class Toggle {
   goToNext(amount = 1, force = false, loop = null) {
     const self = this
     // goToNum
-    self.detail.inverseForce = false
+    self.inverse = false
     self.goToNum(self.getNextIndex(amount, loop), force, loop)
   }
 
@@ -2643,7 +2644,7 @@ class Toggle {
   goToPrev(amount = 1, force = false, loop = null) {
     const self = this
     // goToNum
-    self.detail.inverseForce = true
+    self.inverse = true
     self.goToNum(self.getPrevIndex(amount, loop), force, loop)
   }
 
