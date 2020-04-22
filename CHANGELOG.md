@@ -1,3 +1,11 @@
+## [0.13.59](https://github.com/minimit/xtend-library/compare/v0.13.58...v0.13.59) (2020-04-22)
+
+
+### Bug Fixes
+
+* **media:** removed media background color ([b6cb3cd](https://github.com/minimit/xtend-library/commit/b6cb3cd1ffd8f9b6349441711e87fbc452e23282))
+* **toggle:** fix slider and toggle direction ([eae6550](https://github.com/minimit/xtend-library/commit/eae65508e1a3ddd929adb952eb61bdb50132e856))
+
 ## [0.13.58](https://github.com/minimit/xtend-library/compare/v0.13.57...v0.13.58) (2020-04-17)
 
 
