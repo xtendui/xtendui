@@ -70,7 +70,7 @@ Xt.mount.push({
       // cardContent
       const cardContents = tr.querySelectorAll('.slider_card .card-item')
       for (const cardContent of cardContents) {
-        gsap.set(cardContent, { x: cardContentX * ratio * self.direction, opacity: 1 - ratio })
+        gsap.set(cardContent, { x: -cardContentX * ratio * self.direction, opacity: 1 - ratio })
       }
     }
 
