@@ -226,6 +226,47 @@
   }
 }
 
+// anim-zoom
+
+.anim-zoom {
+  &.in {
+    opacity: 0;
+    animation-name: anim-zoom-in;
+    animation-duration: @time-small;
+    animation-timing-function: @ease-on;
+    animation-fill-mode: forwards;
+  }
+  &.out {
+    opacity: 1;
+    animation-name: anim-zoom-out;
+    animation-duration: @time-small;
+    animation-timing-function: @ease-off;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes anim-zoom-in {
+  0% {
+    opacity: 0;
+    transform: scale(1.2, 1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes anim-zoom-out {
+  0% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2, 1.2);
+  }
+}
+
 /**
  * custom
  */
