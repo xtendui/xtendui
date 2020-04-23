@@ -299,6 +299,10 @@ legend, .legend {
     }
   }
   select[multiple]& {
+    max-height: 10rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    .overflow-style(@mode: inner);
     option {
       padding: .5rem 1rem;
     }

@@ -1737,7 +1737,7 @@ class Toggle {
       // keep the same level of raf as others
       cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'AnimFrame'))
       Xt.dataStorage.set(
-        self.wheel,
+        el,
         self.componentNamespace + 'AnimFrame',
         requestAnimationFrame(() => {
           self.queueAnim(actionCurrent, actionOther, obj, el, type)
