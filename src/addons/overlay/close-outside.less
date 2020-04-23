@@ -8,14 +8,15 @@
  */
 
 .overlay-close-outside {
-  .btn-close {
+  .card > .card-inner > .btn-close {
     .btn-primary() !important;
     .btn-squared() !important;
+    top: 0 !important;
     left: 100% !important;
     right: auto !important;
   }
   &.overlay-position-right {
-    .btn-close {
+    .card > .card-inner > .btn-close {
       left: auto !important;
       right: 100% !important;
     }

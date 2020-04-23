@@ -27,11 +27,6 @@ date: "2019-03-15"
 
 </div>
 
-<demo>
-  <demovanilla src="vanilla/components/drop/disable">
-  </demovanilla>
-</demo>
-
 ## Group
 
 Refer to [Group page](/components/group#usage-button).

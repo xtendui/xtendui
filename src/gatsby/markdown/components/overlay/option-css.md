@@ -11,7 +11,7 @@ date: "2019-12-01"
 
 ## Card Preset
 
-Overlay's card preset is `.card-overlay`. This preset gives overlay's card default variant and size
+Overlay's card preset is `.card-overlay`. This preset gives overlay's card default variant and size, you can use it in combination with card's variants.
 
 <div class="table-scroll">
 
