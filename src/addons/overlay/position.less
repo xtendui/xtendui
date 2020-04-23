@@ -35,8 +35,7 @@
 .overlay-position {
   .overlay-noanim();
   &.overlay-position-left {
-    .card-overlay > .card-design,
-    .card-overlay > .card-inner > * {
+    .card-overlay > .card-design {
       opacity: 0;
       transform: translateX(-100%);
     }
@@ -46,8 +45,7 @@
     }
   }
   &.overlay-position-right {
-    .card-overlay > .card-design,
-    .card-overlay > .card-inner > * {
+    .card-overlay > .card-design {
       opacity: 0;
       transform: translateX(100%);
     }
@@ -59,8 +57,7 @@
   &.in {
     animation-duration: @time-medium; // needed for animation time and backdrop animation time, put max animation time
     &.overlay-position {
-      .card-overlay > .card-design,
-      .card-overlay > .card-inner > * {
+      .card-overlay > .card-design {
         opacity: 1;
         transform: none;
         transition: transform @time-medium @ease-on, opacity @time-tiny @ease-on;
@@ -75,8 +72,7 @@
   &.out {
     animation-duration: @time-small; // needed for animation time and backdrop animation time, put max animation time
     &.overlay-position-left {
-      .card-overlay > .card-design,
-      .card-overlay > .card-inner > * {
+      .card-overlay > .card-design {
         opacity: 0;
         transform: translateX(-100%);
         transition: transform @time-small @ease-off, opacity @time-tiny @ease-off @time-tiny;
@@ -88,8 +84,7 @@
       }
     }
     &.overlay-position-right {
-      .card-overlay > .card-design,
-      .card-overlay > .card-inner > * {
+      .card-overlay > .card-design {
         opacity: 0;
         transform: translateX(100%);
         transition: transform @time-small @ease-off, opacity @time-tiny @ease-off @time-tiny;
@@ -104,16 +99,14 @@
 }
 
 .overlay-position-noanim {
-  .card-overlay > .card-design,
-  .card-overlay > .card-inner > * {
+  .card-overlay > .card-design {
     opacity: 1;
   }
   .card-overlay > .card-inner > .card-content {
     opacity: 1;
   }
   &.in {
-    .card-overlay > .card-design,
-    .card-overlay > .card-inner > * {
+    .card-overlay > .card-design {
       .transform-none();
       .transition-none();
     }
@@ -123,8 +116,7 @@
     }
   }
   &.out {
-    .card-overlay > .card-design,
-    .card-overlay > .card-inner > * {
+    .card-overlay > .card-design {
       opacity: 1;
       .transform-none();
       .transition-none();

@@ -79,7 +79,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
     <button type="button" class="btn btn-primary">
-      big
+      large
     </button>
     <div class="overlay">
       <div class="overlay-container">

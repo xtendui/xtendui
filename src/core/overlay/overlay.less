@@ -49,7 +49,7 @@
 
 .overlay-disable {
   // disable custom animation
-  .overlay-inner, .card-overlay > .card-inner > * {
+  .overlay-inner {
     opacity: 1 !important;
     .trans-anim-none() !important;
   }
@@ -58,8 +58,7 @@
 // animation
 
 .overlay {
-  .card-overlay > .card-design,
-  .card-overlay > .card-inner > * {
+  .card-overlay > .card-design {
     opacity: 0;
     transform: scale(.75, .75);
   }
@@ -69,8 +68,7 @@
   }
   &.in {
     animation-duration: @time-small + @time-tiny; // needed for animation time and backdrop animation time, put max animation time
-    .card-overlay > .card-design,
-    .card-overlay > .card-inner > * {
+    .card-overlay > .card-design {
       opacity: 1;
       transform: scale(1);
       transition: transform @time-medium @ease-on, opacity @time-medium @ease-on;
@@ -83,8 +81,7 @@
   }
   &.out {
     animation-duration: @time-small + @time-tiny; // needed for animation time and backdrop animation time, put max animation time
-    .card-overlay > .card-design,
-    .card-overlay > .card-inner > * {
+    .card-overlay > .card-design {
       opacity: 0;
       transform: scale(.75, .75);
       transition: transform @time-small @ease-off @time-tiny, opacity @time-small @ease-off @time-tiny;
@@ -109,16 +106,14 @@
 }
 
 .overlay-noanim {
-  .card-overlay > .card-design,
-  .card-overlay > .card-inner > * {
+  .card-overlay > .card-design {
     opacity: 1;
   }
   .card-overlay > .card-inner > .card-content {
     opacity: 1;
   }
   &.in {
-    .card-overlay > .card-design,
-    .card-overlay > .card-inner > * {
+    .card-overlay > .card-design {
       .transform-none();
       .transition-none();
     }
@@ -128,8 +123,7 @@
     }
   }
   &.out {
-    .card-overlay > .card-design,
-    .card-overlay > .card-inner > * {
+    .card-overlay > .card-design {
       opacity: 1;
       .transform-none();
       .transition-none();
