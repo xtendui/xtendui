@@ -46,6 +46,7 @@ html {
 body {
   .font-sans-regular();
   .font-medium();
+  .line-height-medium();
   color: @text;
   font-variant-ligatures: none;
 }
@@ -114,8 +115,8 @@ body {
 h1, .h1 {
   .spacing-large();
   .font-sans-semibold();
+  .line-height-tiny();
   font-size: 4rem;
-  line-height: 1.2;
   letter-spacing: 0;
   text-transform: none;
 }
@@ -123,8 +124,8 @@ h1, .h1 {
 h2, .h2 {
   .spacing-large();
   .font-sans-semibold();
+  .line-height-tiny();
   font-size: 3.5rem;
-  line-height: 1.2;
   letter-spacing: 0;
   text-transform: none;
 }
@@ -132,8 +133,8 @@ h2, .h2 {
 h3, .h3 {
   .spacing-large();
   .font-sans-semibold();
+  .line-height-tiny();
   font-size: 2.5rem;
-  line-height: 1.2;
   letter-spacing: 0;
   text-transform: none;
 }
@@ -141,8 +142,8 @@ h3, .h3 {
 h4, .h4 {
   .spacing-medium();
   .font-sans-semibold();
+  .line-height-small();
   font-size: 2rem;
-  line-height: 1.4;
   letter-spacing: 0;
   text-transform: none;
 }
@@ -150,8 +151,8 @@ h4, .h4 {
 h5, .h5 {
   .spacing-medium();
   .font-sans-semibold();
+  .line-height-small();
   font-size: 1.7rem;
-  line-height: 1.4;
   letter-spacing: 0;
   text-transform: none;
 }
@@ -159,8 +160,8 @@ h5, .h5 {
 h6, .h6 {
   .spacing-medium();
   .font-sans-semibold();
+  .line-height-small();
   font-size: 13px;
-  line-height: 1.4;
   letter-spacing: .025em;
   text-transform: uppercase;
 }
@@ -208,49 +209,64 @@ small {
   opacity: .5;
 }
 
+// font
+
 .font-micro {
   font-size: 11px;
-  line-height: 1.6;
 }
 
 .font-mini {
   font-size: 12px;
-  line-height: 1.6;
 }
 
 .font-tiny {
   font-size: 1.3rem;
-  line-height: 1.6;
 }
 
 .font-small {
   font-size: 1.4rem;
-  line-height: 1.6;
 }
 
 .font-medium {
   font-size: 1.5rem;
-  line-height: 1.6;
 }
 
 .font-large {
   font-size: 1.6rem;
-  line-height: 1.6;
 }
 
 .font-big {
   font-size: 1.7rem;
-  line-height: 1.6;
 }
 
 .font-giant {
   font-size: 1.8rem;
-  line-height: 1.6;
 }
 
 .font-huge {
   font-size: 1.9rem;
+}
+
+// line-height
+
+.line-height-tiny {
+  line-height: 1.2;
+}
+
+.line-height-small {
+  line-height: 1.4;
+}
+
+.line-height-medium {
   line-height: 1.6;
+}
+
+.line-height-large {
+  line-height: 1.8;
+}
+
+.line-height-big {
+  line-height: 2;
 }
 
 // text-inverse
@@ -299,7 +315,6 @@ ul {
   .margin(bottom, layout);
   padding-left: 0;
   list-style: none;
-  line-height: 1.6;
   > li {
     .margin(y, layout);
     padding-left: 2.5em;
@@ -333,7 +348,6 @@ dl {
   .margin(bottom, medium);
   .margin(bottom, layout);
   .dl-block();
-  line-height: 1.6 !important;
   dt {
     .font-sans-regular();
   }
@@ -419,7 +433,7 @@ pre {
     background: transparent !important;
     .font-monospace();
     font-size: 1.2rem !important;
-    line-height: 1.6 !important;
+    .line-height-medium(); !important;
     white-space: pre-wrap !important;
   }
   // animation
