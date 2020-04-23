@@ -1,3 +1,14 @@
+## [0.13.60](https://github.com/minimit/xtend-library/compare/v0.13.59...v0.13.60) (2020-04-23)
+
+
+### Bug Fixes
+
+* **card:** card no more centered content ([65e6f4b](https://github.com/minimit/xtend-library/commit/65e6f4b42d1e9a4533e787c85d02871672a86313))
+* **toggle:** fix wheel smooth sizes client instead of offset ([cb57d77](https://github.com/minimit/xtend-library/commit/cb57d773668aefa26ef2f32955b88fbcc2fff8ce))
+* overlay btn close revision ([ad0907c](https://github.com/minimit/xtend-library/commit/ad0907c30e700b5c8d396512b8f0dc929128c9a3))
+* overlay btn close revision ([835f656](https://github.com/minimit/xtend-library/commit/835f6560c45bdd9512f0fadc01316995fcf183bb))
+* **typography:** line height classes ([f210adc](https://github.com/minimit/xtend-library/commit/f210adcbd248fd2b2f808e2fc98f7e5c7100bfd8))
+
 ## [0.13.59](https://github.com/minimit/xtend-library/compare/v0.13.58...v0.13.59) (2020-04-22)
 
 
