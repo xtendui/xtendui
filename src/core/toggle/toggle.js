@@ -2058,9 +2058,9 @@ class Toggle {
     } else if (e.deltaMode === 2) {
       // deltaMode 2: by pages
       if (options.wheel.horizontal) {
-        delta *= el.offsetWidth
+        delta *= el.clientWidth
       } else {
-        delta *= el.offsetHeight
+        delta *= el.clientHeight
       }
     }
     // factor
@@ -2086,22 +2086,22 @@ class Toggle {
     if (!self.detail.wheelMax) {
       if (!options.wheel.transform) {
         if (options.wheel.horizontal) {
-          max = el.scrollWidth - el.offsetWidth
+          max = el.scrollWidth - el.clientWidth
         } else {
-          max = el.scrollHeight - el.offsetHeight
+          max = el.scrollHeight - el.clientHeight
         }
       } else {
         let full = 0
         if (options.wheel.horizontal) {
           for (const child of el.children) {
-            full += child.offsetWidth
+            full += child.clientWidth
           }
-          max = full - el.offsetWidth
+          max = full - el.clientWidth
         } else {
           for (const child of el.children) {
-            full += child.offsetHeight
+            full += child.clientHeight
           }
-          max = full - el.offsetHeight
+          max = full - el.clientHeight
         }
       }
     }
