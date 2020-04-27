@@ -1619,8 +1619,15 @@ class Toggle {
             delay = delay(count, tot - 1)
           }
         } else {
-          delay = queueInitial ? 0 : delay
+          delay = queueInitial && !options.delayInitial ? 0 : delay
         }
+      }
+      if (actionCurrent === 'On') {
+        // listener dispatch
+        el.dispatchEvent(new CustomEvent('ondelay.xt'))
+      } else if (actionCurrent === 'Off') {
+        // listener dispatch
+        el.dispatchEvent(new CustomEvent('offdelay.xt'))
       }
       // delay fnc
       clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'DelayTimeout'))
@@ -2922,6 +2929,7 @@ Toggle.optionsDefaultSuper = {
   mediaLoadedReinit: false,
   delayOn: false,
   delayOff: false,
+  delayInitial: true,
   durationOn: false,
   durationOff: false,
   navigation: false,

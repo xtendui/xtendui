@@ -139,6 +139,7 @@ You can use a function for <code>delayOn</code> and <code>delayOff</code> for ex
 | Option                  | `instant:Boolean|Object`                 | `{ elements: true, elementsInner: true }`     | Set instant activation and deactivation          |
 | Option                  | `delayOn:Milliseconds|Function`                          | `false`        | Activation delay            |
 | Option                  | `delayOff:Milliseconds|Function`                          | `false`        | Deactivation delay            |
+| Option                  | `delayInitial:Boolean`                          | `true`        | Initial activation delay            |
 | Option                  | `durationOn:Milliseconds`                          | `false`        | Activation duration            |
 | Option                  | `durationOff:Milliseconds`                          | `false`        | Deactivation duration            |
 
