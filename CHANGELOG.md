@@ -1,3 +1,10 @@
+## [0.13.64](https://github.com/minimit/xtend-library/compare/v0.13.63...v0.13.64) (2020-04-27)
+
+
+### Bug Fixes
+
+* bumo scroll ([ee1d241](https://github.com/minimit/xtend-library/commit/ee1d2412778e7593eb60152c4304d43aabf35e2e))
+
 ## [0.13.63](https://github.com/minimit/xtend-library/compare/v0.13.62...v0.13.63) (2020-04-27)
 
 
