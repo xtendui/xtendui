@@ -114,31 +114,21 @@
 }
 
 .overlay-noanim {
-  .card-overlay > .card-design {
-    opacity: 1;
-  }
-  .card-overlay > .card-inner > .card-content {
-    opacity: 1;
-  }
   &.in {
+    animation-duration: initial; // needed for animation time and backdrop animation time, put max animation time
     .card-overlay > .card-design {
-      .transform-none();
       .transition-none();
     }
     .card-overlay > .card-inner > .card-content {
-      .transform-none();
       .transition-none();
     }
   }
   &.out {
+    animation-duration: initial; // needed for animation time and backdrop animation time, put max animation time
     .card-overlay > .card-design {
-      opacity: 1;
-      .transform-none();
       .transition-none();
     }
     .card-overlay > .card-inner > .card-content {
-      opacity: 1;
-      .transform-none();
       .transition-none();
     }
   }

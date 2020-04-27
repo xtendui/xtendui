@@ -177,19 +177,8 @@
 }
 
 .drop-container-noanim {
-  > .drop {
-    > .drop-inner {
-      > .drop-design {
-        opacity: 1;
-        .transform-none();
-      }
-      > .drop-content {
-        opacity: 1;
-        .transform-none();
-      }
-    }
-  }
   &.in {
+    animation-duration: initial; // needed for animation time and backdrop animation time, put max animation time
     > .drop {
       > .drop-inner {
         > .drop-design {
@@ -202,14 +191,13 @@
     }
   }
   &.out {
+    animation-duration: initial; // needed for animation time and backdrop animation time, put max animation time
     > .drop {
       > .drop-inner {
         > .drop-design {
-          opacity: 1;
           .transition-none();
         }
         > .drop-content {
-          opacity: 1;
           .transition-none();
         }
       }
