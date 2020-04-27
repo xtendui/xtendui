@@ -1,7 +1,9 @@
+@import '~xtend-library/src/extensions/loader/loader.less';
 @import '~xtend-library/src/addons/animation/mouse-follow.less';
 
 .demo--slider-progress {
   .loader-mouse {
+    .mouse-follow() !important;
     // disable on touch
     @media (hover: none) {
       top: 100% !important;

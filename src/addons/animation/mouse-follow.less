@@ -10,38 +10,3 @@
   bottom: auto;
   right: auto;
 }
-
-// loader
-
-.loader.loader-mouse {
-  .mouse-follow();
-  .filler, .spinner {
-    display: block;
-    position: relative;
-  }
-  // spinner
-  .loader-spinner& {
-    margin-top: -5px;
-    margin-left: 30px;
-  }
-  // x
-  .loader-x& {
-    margin-top: -5px;
-    margin-left: 40px;
-    .filler {
-      width: 60px;
-    }
-  }
-  // animation
-  .loader-animated();
-  // disable on touch
-  @media (hover: none) {
-    .loader-animated.in();
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -13px;
-    margin-left: -13px;
-    transform: none;
-  }
-}
