@@ -218,7 +218,7 @@ class Scroll extends Xt.Toggle {
         } else {
           // outside
           changed = self.checkOff(el)
-          el.classList.add('scroll-visible')
+          el.classList.add('scroll-outside')
           if (changed) {
             el.classList.add('scroll-done')
             currentsOff.push(el)
