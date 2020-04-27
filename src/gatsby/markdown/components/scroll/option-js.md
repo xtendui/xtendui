@@ -11,7 +11,7 @@ date: "2019-10-01"
 
 ## Mode
 
-You can set scroll mode.
+You can set scroll mode with css selectors.
 
 <demo>
   <div class="gatsby_demo_item" data-iframe="iframe/components/scroll/mode-infinite">
