@@ -1,0 +1,12 @@
+.demo--scroll-container--outside-once > * {
+  &.scroll-visible:not(.scroll-done) {
+    opacity: 0;
+    .transition-none() !important; // fix animation on links
+    &.fade {
+      .anim-x.in();
+    }
+    &.fade-out {
+      .anim-x.out();
+    }
+  }
+}

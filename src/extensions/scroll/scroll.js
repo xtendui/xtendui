@@ -220,7 +220,7 @@ class Scroll extends Xt.Toggle {
           changed = self.checkOff(el)
           el.classList.add('scroll-visible')
           if (changed) {
-            el.classList.add('scroll-once')
+            el.classList.add('scroll-done')
             currentsOff.push(el)
             cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'ScrollFrame'))
             Xt.dataStorage.set(

@@ -16,9 +16,13 @@ You can set scroll mode.
 <demo>
   <div class="gatsby_demo_item" data-iframe="iframe/components/scroll/mode-infinite">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/scroll/mode-scroll">
+  <div class="gatsby_demo_item" data-iframe="iframe/components/scroll/mode-once">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/scroll/mode-visible">
+  <div class="gatsby_demo_item" data-iframe="iframe/components/scroll/mode-inside">
+  </div>
+  <div class="gatsby_demo_item" data-iframe="iframe/components/scroll/mode-outside">
+  </div>
+  <div class="gatsby_demo_item" data-iframe="iframe/components/scroll/mode-outside-once">
   </div>
   <div class="gatsby_demo_item" data-iframe="iframe/components/scroll/mode-responsive">
   </div>
