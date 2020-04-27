@@ -1,3 +1,11 @@
+## [0.13.63](https://github.com/minimit/xtend-library/compare/v0.13.62...v0.13.63) (2020-04-27)
+
+
+### Bug Fixes
+
+* **slider:** slider removed nav disable with  pointer events none ([e989317](https://github.com/minimit/xtend-library/commit/e9893178f9527e8904da02f99535d5c3789b2536))
+* revision navigation sides addon slider ([36195a9](https://github.com/minimit/xtend-library/commit/36195a98daa89888e4259fa6652da9e074bf99a8))
+
 ## [0.13.62](https://github.com/minimit/xtend-library/compare/v0.13.61...v0.13.62) (2020-04-27)
 
 
