@@ -9,7 +9,7 @@
 .slider-navigation-sides {
   position: absolute;
   top: 0;
-  width: 5rem;
+  width: 6rem;
   height: 100%;
   color: @black;
   // animation
@@ -44,16 +44,19 @@
 .slider-navigation-sides-btn {
   padding: 0;
   line-height: 0;
-  @media @max-md {
+  font-size: 2rem;
+  @media @min-md {
+    font-size: 4rem;
+  }
+  @media (hover: none) {
     position: absolute;
     top: 50%;
     left: 50%;
     margin-top: -1rem;
     margin-left: -1rem;
-    font-size: 2rem;
     .transform-none() !important;
   }
-  @media @min-md {
+  @media (hover: hover) {
     font-size: 4rem;
     .mouse-follow() !important;
   }
