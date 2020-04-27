@@ -1,3 +1,10 @@
+## [0.13.62](https://github.com/minimit/xtend-library/compare/v0.13.61...v0.13.62) (2020-04-27)
+
+
+### Bug Fixes
+
+* **toggle:** added ondelay.xt offdelay.xt delayInitial ([332b3b4](https://github.com/minimit/xtend-library/commit/332b3b44ab4df94fea04b768f1928e33ba191755))
+
 ## [0.13.61](https://github.com/minimit/xtend-library/compare/v0.13.60...v0.13.61) (2020-04-24)
 
 
