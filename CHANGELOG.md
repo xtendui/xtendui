@@ -1,3 +1,11 @@
+## [0.13.66](https://github.com/minimit/xtend-library/compare/v0.13.65...v0.13.66) (2020-04-28)
+
+
+### Bug Fixes
+
+* **toggle:** refactor toggle initial classes ([c2a6f15](https://github.com/minimit/xtend-library/commit/c2a6f152427f4a58f1b8b76fad1f49c448766887))
+* **toggle:** refactor toggle initial classes ([6fb236a](https://github.com/minimit/xtend-library/commit/6fb236a40e25659133d583d10f8ec953fead3ed8))
+
 ## [0.13.65](https://github.com/minimit/xtend-library/compare/v0.13.64...v0.13.65) (2020-04-27)
 
 
