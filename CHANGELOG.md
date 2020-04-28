@@ -1,3 +1,10 @@
+## [0.13.67](https://github.com/minimit/xtend-library/compare/v0.13.66...v0.13.67) (2020-04-28)
+
+
+### Bug Fixes
+
+* revision addon navigation sides + revision xt.friction ([29af388](https://github.com/minimit/xtend-library/commit/29af3886baf072edc0016d8e654a9a94333e3871))
+
 ## [0.13.66](https://github.com/minimit/xtend-library/compare/v0.13.65...v0.13.66) (2020-04-28)
 
 
