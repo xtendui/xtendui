@@ -514,16 +514,7 @@ if (typeof window !== 'undefined') {
     let xDist = obj.x - xCurrent
     let yDist = obj.y - yCurrent
     // momentum
-    let fncFriction
-    if (obj.friction === false) {
-      fncFriction = false
-    } else if (obj.friction === undefined) {
-      fncFriction = delta => {
-        return delta / 11
-      }
-    } else {
-      fncFriction = obj.friction
-    }
+    let fncFriction = obj.friction
     if (fncFriction) {
       xCurrent += fncFriction(Math.abs(xDist)) * Math.sign(xDist)
       yCurrent += fncFriction(Math.abs(yDist)) * Math.sign(yDist)

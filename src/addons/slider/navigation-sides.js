@@ -8,7 +8,9 @@ Xt.mount.push({
 
     const mouseFollowObject = object
     const mouseFollowContainer = mouseFollowObject.closest('.slider-navigation-sides')
-    let mouseFollow = new Xt.MouseFollow(mouseFollowObject, mouseFollowContainer)
+    let mouseFollow = new Xt.MouseFollow(mouseFollowObject, mouseFollowContainer, {
+      friction: false,
+    })
 
     // enter
 

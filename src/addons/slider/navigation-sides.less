@@ -10,9 +10,19 @@
   cursor: none;
   position: absolute;
   top: 0;
-  width: 6rem;
+  width: 5rem;
   height: 100%;
   color: @black;
+  // disable
+  .slider.xt-disable & {
+    display: none;
+  }
+  // animation
+  transition: color @time-tiny @ease-off;
+  &:active {
+    color: @accent;
+    transition: color @time-tiny @ease-on;
+  }
   // not touch
   @media (hover: hover) {
     width: 10rem;
@@ -23,15 +33,6 @@
     &.out {
       opacity: 0;
     }
-  }
-  // disable
-  .slider.xt-disable & {
-    display: none;
-  }
-  // animation
-  transition: opacity @time-tiny @ease-off, color @time-tiny @ease-off;
-  &:active {
-    color: @accent;
   }
 }
 
@@ -49,7 +50,6 @@
   font-size: 2rem;
   // not touch
   @media (hover: hover) {
-    font-size: 4rem;
     .mouse-follow() !important;
   }
   // touch

@@ -42,15 +42,20 @@ class MouseFollow {
    */
   mousemove(e) {
     const self = this
+    const options = self.options
     // fix initial
     if (self.width === undefined) {
       self.mouseenter(e)
     }
     // position
-    Xt.friction(self.object, {
-      x: e.clientX - self.width / 2,
-      y: e.clientY - self.height / 2,
-    })
+    Xt.friction(
+      self.object,
+      {
+        x: e.clientX - self.width / 2,
+        y: e.clientY - self.height / 2,
+      },
+      options.friction
+    )
     // listener dispatch
     self.container.dispatchEvent(new CustomEvent('mousemove.xt.mousefollow'))
   }
@@ -72,7 +77,6 @@ class MouseFollow {
       Xt.friction(self.object, {
         x: e.clientX - self.width / 2,
         y: e.clientY - self.height / 2,
-        friction: false,
       })
       // listener dispatch
       self.container.dispatchEvent(new CustomEvent('mouseenter.xt.mousefollow'))
@@ -118,7 +122,11 @@ class MouseFollow {
 //
 
 MouseFollow.componentName = 'xt-mouse-follow'
-MouseFollow.optionsDefault = {}
+MouseFollow.optionsDefault = {
+  friction: delta => {
+    return delta / 11
+  },
+}
 
 //
 // export

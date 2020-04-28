@@ -2204,10 +2204,9 @@ class Toggle {
     // loop
     if (
       self.detail.wheelCurrent > min &&
-      self.detail.wheelCurrent < max && // limit
+      self.detail.wheelCurrent < max &&
       deltaAbs >= options.wheel.frictionLimit
     ) {
-      // frictionLimit
       // friction
       cancelAnimationFrame(Xt.dataStorage.get(self.wheel, self.componentNamespace + 'WheelsmoothFrame'))
       Xt.dataStorage.set(
