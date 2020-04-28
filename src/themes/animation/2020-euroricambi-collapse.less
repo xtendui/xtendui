@@ -27,6 +27,8 @@
     }
   }
 
+  // animation
+
   .drop-container {
     .drop-container-noanim();
     > .drop {
@@ -70,11 +72,28 @@
         }
       }
     }
+    // backdrop
+    &.in {
+      > .drop {
+        > .backdrop {
+          .backdrop.in();
+        }
+      }
+    }
+    &.out {
+      > .drop {
+        > .backdrop {
+          .backdrop.out();
+        }
+      }
+    }
   }
 
   /**
     * overlay
     */
+
+  // animation
 
   .overlay-position& {
     .overlay-position-noanim();
@@ -83,7 +102,7 @@
   .overlay& {
     .overlay-noanim();
     .collapse-height();
-    .card-overlay {
+    .card-overlay > .card-design {
       opacity: 0;
       transform: translateY(-2rem);
     }
@@ -91,13 +110,10 @@
       opacity: 0;
       transform: translateY(-2.5rem);
     }
-    > .backdrop {
-      opacity: @backdrop-opacity;
-      height: 0;
-    }
     &.in {
+      animation-duration: @time-medium; // needed for animation time and backdrop animation time, put max animation time
       transition: height @time-medium @ease-on;
-      .card-overlay {
+      .card-overlay > .card-design {
         opacity: 1;
         transform: none;
         transition: transform @time-medium @ease-on, opacity @time-tiny @ease-on;
@@ -107,16 +123,11 @@
         transform: none;
         transition: transform @time-medium @ease-on, opacity @time-tiny @ease-on;
       }
-      > .backdrop {
-        opacity: @backdrop-opacity;
-        height: 100vh;
-        transition: height @time-medium @ease-on, width @time-medium @ease-on;
-        .animation-none();
-      }
     }
     &.out {
+      animation-duration: @time-small; // needed for animation time and backdrop animation time, put max animation time
       transition: height @time-small @ease-off, width @time-small @ease-off;
-      .card-overlay {
+      .card-overlay > .card-design {
         opacity: 0;
         transform: translateY(2rem);
         transition: transform @time-small @ease-off, opacity @time-tiny @ease-off @time-tiny;
@@ -126,11 +137,16 @@
         transform: translateY(2.5rem);
         transition: transform @time-small @ease-off, opacity @time-tiny @ease-off @time-tiny;
       }
+    }
+    // backdrop and btn-close
+    &.in {
       > .backdrop {
-        opacity: @backdrop-opacity;
-        height: 0;
-        transition: height @time-small @ease-off;
-        .animation-none();
+        .backdrop.in();
+      }
+    }
+    &.out {
+      > .backdrop {
+        .backdrop.out();
       }
     }
   }

@@ -617,29 +617,27 @@ class Slider extends Xt.Toggle {
     }
     // autoHeight and keepHeight
     if (self.autoHeight || (self.keepHeight && self.initial)) {
-      requestAnimationFrame(() => {
-        let slideHeight = slide.children[0].offsetHeight
-        const groupHeight = Xt.dataStorage.get(slide, self.componentNamespace + 'GroupHeight')
-        slideHeight = groupHeight > slideHeight ? groupHeight : slideHeight
-        if (slideHeight > 0) {
-          slideHeight += 'px'
-          if (self.autoHeight) {
-            if (self.autoHeight.style.height !== slideHeight) {
-              if (!self.initial) {
-                self.autoHeight.classList.add('xt-autoHeight')
-              }
-              self.autoHeight.style.height = slideHeight
-              // listener dispatch
-              slide.dispatchEvent(new CustomEvent('autoheight.xt'))
+      let slideHeight = slide.children[0].offsetHeight
+      const groupHeight = Xt.dataStorage.get(slide, self.componentNamespace + 'GroupHeight')
+      slideHeight = groupHeight > slideHeight ? groupHeight : slideHeight
+      if (slideHeight > 0) {
+        slideHeight += 'px'
+        if (self.autoHeight) {
+          if (self.autoHeight.style.height !== slideHeight) {
+            if (!self.initial) {
+              self.autoHeight.classList.add('xt-autoHeight')
             }
-          }
-          if (self.keepHeight) {
-            if (self.initial) {
-              self.keepHeight.style.height = slideHeight
-            }
+            self.autoHeight.style.height = slideHeight
+            // listener dispatch
+            slide.dispatchEvent(new CustomEvent('autoheight.xt'))
           }
         }
-      })
+        if (self.keepHeight) {
+          if (self.initial) {
+            self.keepHeight.style.height = slideHeight
+          }
+        }
+      }
     }
     // val
     self.detail.dragPos = self.detail.dragPosCurrent = self.detail.dragPosReal = Xt.dataStorage.get(slide, self.componentNamespace + 'GroupPos')

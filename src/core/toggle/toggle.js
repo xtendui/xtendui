@@ -240,7 +240,7 @@ class Toggle {
           todo += start
         }
         // initial
-        currents++
+        currents += todo
         // activate
         requestAnimationFrame(() => {
           for (let i = start; i < todo; i++) {
@@ -291,13 +291,12 @@ class Toggle {
         }
       }
       if (isActive) {
-        elReset.classList.remove(...self.classes, ...self.classesIn, ...self.classesInDone, ...self.classesOut, ...self.classesInitial, ...self.classesInverse)
-        Xt.dataStorage.remove(elReset, self.componentNamespace + 'Initial')
         if (saveCurrents) {
           found = true
         }
-        // listener dispatch
-        elReset.dispatchEvent(new CustomEvent('off.xt'))
+        requestAnimationFrame(() => {
+          elReset.classList.remove(...self.classes, ...self.classesIn, ...self.classesInDone, ...self.classesOut, ...self.classesInitial, ...self.classesInverse)
+        })
       }
       return found
     }
@@ -464,8 +463,7 @@ class Toggle {
           )
           el.addEventListener('mouseup', withlinkStartMouseHandler)
         }
-        // active
-        Xt.dataStorage.put(el, 'active/withlink' + '/' + self.namespace, el.classList.contains(self.classes[0]))
+        Xt.dataStorage.put(el, 'active/withlink' + '/' + self.namespace, self.hasCurrent(el))
       }
       const onHandlerCustom = Xt.dataStorage.put(el, 'on' + '/' + self.namespace, self.eventOnHandler.bind(self).bind(self, el))
       el.addEventListener('on.trigger.xt', onHandlerCustom)
@@ -720,7 +718,7 @@ class Toggle {
   eventWithlinkStartHandler(el, e) {
     const self = this
     // active
-    Xt.dataStorage.put(el, 'active/withlink' + '/' + self.namespace, el.classList.contains(self.classes[0]))
+    Xt.dataStorage.put(el, 'active/withlink' + '/' + self.namespace, self.hasCurrent(el))
     // event link
     const withlinkHandler = Xt.dataStorage.put(el, 'click/withlink' + '/' + self.namespace, self.eventWithlinkHandler.bind(self).bind(self, el))
     el.addEventListener('click', withlinkHandler)
@@ -1155,7 +1153,7 @@ class Toggle {
     requestAnimationFrame(() => {
       el.classList.add(...self.classesIn)
     })
-    if (self.initial || Xt.dataStorage.get(el, self.componentNamespace + 'Initial')) {
+    if (self.initial) {
       el.classList.add(...self.classesInitial)
     }
     if (self.direction === 1) {
@@ -1186,7 +1184,7 @@ class Toggle {
     el.classList.remove(...self.classesIn)
     el.classList.remove(...self.classesInDone)
     el.classList.add(...self.classesOut)
-    if (!self.initial && !Xt.dataStorage.get(el, self.componentNamespace + 'Initial')) {
+    if (!self.initial) {
       el.classList.remove(...self.classesInitial)
     }
     if (self.direction === 1) {

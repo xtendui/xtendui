@@ -117,19 +117,44 @@
   &.in {
     animation-duration: initial; // needed for animation time and backdrop animation time, put max animation time
     .card-overlay > .card-design {
-      .transition-none();
+      opacity: 1;
+      .trans-anim-none();
     }
     .card-overlay > .card-inner > .card-content {
-      .transition-none();
+      opacity: 1;
+      .trans-anim-none();
     }
   }
   &.out {
     animation-duration: initial; // needed for animation time and backdrop animation time, put max animation time
     .card-overlay > .card-design {
-      .transition-none();
+      opacity: 1;
+      .trans-anim-none();
     }
     .card-overlay > .card-inner > .card-content {
-      .transition-none();
+      opacity: 1;
+      .trans-anim-none();
+    }
+  }
+  // backdrop and btn-close
+  &.in {
+    > .backdrop {
+      opacity: 1;
+      .trans-anim-none();
+    }
+    .card-overlay > .card-inner > .btn-close {
+      opacity: 1;
+      .trans-anim-none();
+    }
+  }
+  &.out {
+    > .backdrop {
+      opacity: 1;
+      .trans-anim-none();
+    }
+    .card-overlay > .card-inner > .btn-close {
+      opacity: 1;
+      .trans-anim-none();
     }
   }
 }
