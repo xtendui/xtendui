@@ -1,3 +1,11 @@
+## [0.13.68](https://github.com/minimit/xtend-library/compare/v0.13.67...v0.13.68) (2020-04-29)
+
+
+### Bug Fixes
+
+* **breadcrumbs:** fix breadcrumbs usage and markup ([e8b905f](https://github.com/minimit/xtend-library/commit/e8b905f318bae1ecb76ee05e46cd72b483446b8d))
+* **breadcrumbs:** fix breadcrumbs usage and markup ([ba13f11](https://github.com/minimit/xtend-library/commit/ba13f1168df7f03a08b02533b872be48a2eb9ea4))
+
 ## [0.13.67](https://github.com/minimit/xtend-library/compare/v0.13.66...v0.13.67) (2020-04-28)
 
 
