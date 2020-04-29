@@ -6,8 +6,8 @@
   display: inline-block;
   position: relative;
   .margin(x, tiny);
-  font-size: .8em;
-  vertical-align: middle;
+  font-size: 1em;
+  vertical-align: baseline;
 }
 
 .separator-dash {
@@ -19,6 +19,12 @@
 .separator-slash {
   &:after {
     content: '/';
+  }
+}
+
+.separator-backslash {
+  &:after {
+    content: '\\';
   }
 }
 

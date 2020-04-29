@@ -32,23 +32,20 @@ Use this markup to create a **breadcrumb**.
   <div class="breadcrumbs">
     <div class="container">
       <div class="breadcrumbs-inner">
-        <nav class="list">
+        <nav class="breadcrumbs-list">
           <a href="/" class="btn">
             <!-- content -->
           </a>
-          <span class="separator separator-slash"></span>
+          <span class="separator"></span>
           <a href="/link" class="btn">
             <!-- content -->
           </a>
-          <span class="separator separator-slash"></span>
-          <div class="btn" disabled>
+          <span class="separator"></span>
+          <div class="btn">
             <!-- content -->
           </div>
         </nav>
       </div>
-      <h1 class="breadcrumbs-title">
-        <!-- content -->
-      </h1>
     </div>
   </div>
 </script>
