@@ -273,7 +273,11 @@ pre {
   }
   // .gatsby_demo_source
   .gatsby_demo_source {
+    overflow: hidden;
     .padding(all, medium);
+    #gatbsy_open-full & {
+      .padding(all, giant);
+    }
   }
   .gatsby_demo_source {
     &:not(.gatsby_demo_source--from) {

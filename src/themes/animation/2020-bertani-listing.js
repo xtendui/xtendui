@@ -153,7 +153,7 @@ Xt.mount.push({
       const img = el.querySelector('.parallax_img_col')
       gsap.set(img, { y: imgY * (self.detail.ratio - 0.5) })
       // imgInner
-      const imgInner = el.querySelector('.parallax_img img')
+      const imgInner = el.querySelector('.parallax_img_col img')
       gsap.set(imgInner, { scale: 1.1 - 0.1 * self.detail.ratio })
     }
 
