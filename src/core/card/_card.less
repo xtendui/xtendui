@@ -26,10 +26,11 @@
   display: flex;
   flex-direction: column;
   > .card-content {
-    .full();
     display: flex;
     flex-direction: column;
     justify-content: center;
+    // @FIX card alignment stretch
+    .flex-full();
   }
   // radius
   &, & > * {
@@ -48,7 +49,6 @@
 }
 
 .card-block {
-  .full()
 }
 
 .card-design {
@@ -57,15 +57,14 @@
 }
 
 .card-item {
-  .full();
   display: inline-block;
   position: relative;
 }
 
 .card-asset {
-  .full();
   overflow: hidden;
   position: relative;
+  .flex-full();
   > * {
     .full();
     height: auto;
