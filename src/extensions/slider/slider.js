@@ -615,13 +615,13 @@ class Slider extends Xt.Toggle {
         target.classList.remove('xt-links-none')
       }
     }
+    // val
+    self.detail.dragPos = self.detail.dragPosCurrent = self.detail.dragPosReal = Xt.dataStorage.get(slide, self.componentNamespace + 'GroupPos')
     // autoHeight and keepHeight
     if (self.autoHeight || (self.keepHeight && self.initial)) {
       let slideHeight = slide.children[0].offsetHeight
       const groupHeight = Xt.dataStorage.get(slide, self.componentNamespace + 'GroupHeight')
       slideHeight = groupHeight > slideHeight ? groupHeight : slideHeight
-      //slideHeight -= self.autoHeight.children[0].offsetTop
-      //console.log(self.autoHeight, self.autoHeight.children[0].offsetTop)
       if (slideHeight > 0) {
         slideHeight += 'px'
         if (self.autoHeight) {
@@ -641,8 +641,6 @@ class Slider extends Xt.Toggle {
         }
       }
     }
-    // val
-    self.detail.dragPos = self.detail.dragPosCurrent = self.detail.dragPosReal = Xt.dataStorage.get(slide, self.componentNamespace + 'GroupPos')
     // dragger
     if (dragger) {
       // prevent alignment animation
