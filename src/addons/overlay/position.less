@@ -92,6 +92,25 @@
       }
     }
   }
+  // backdrop and btn-close
+  &.in {
+    > .backdrop {
+      .backdrop.in();
+    }
+    .card-overlay > .card-inner > .btn-close {
+      .anim-zoom.in();
+      animation-delay: @time-medium;
+    }
+  }
+  &.out {
+    > .backdrop {
+      .backdrop.out();
+    }
+    .card-overlay > .card-inner > .btn-close {
+      .anim-zoom.out();
+      animation-delay: initial;
+    }
+  }
 }
 
 .overlay-position-noanim {
