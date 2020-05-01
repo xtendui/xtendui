@@ -216,7 +216,7 @@ const populateDemo = (container, i) => {
     // https://github.com/zenorocha/clipboard.js/
     const clipboard = new ClipboardJS('.btn-clipboard', {
       target: trigger => {
-        return trigger.closest('.gatsby_demo').querySelector('.gatsby_demo_item.active .gatsby_demo_code_body_item.active .hljs')
+        return trigger.closest('.gatsby_demo').querySelector('.gatsby_demo_item.active .gatsby_demo_code.active .gatsby_demo_code_body_item.active pre code')
       },
     })
     clipboard.on('success', e => {
