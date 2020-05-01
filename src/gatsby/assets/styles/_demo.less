@@ -34,14 +34,63 @@ html.gatsby_iframe-container {
 }
 
 /**
+ * code
+ */
+
+code {
+  margin: -.1em .1em;
+  padding: .2em .35em;
+  border-radius: 0;
+  background: fade(@shade-300, 75%) !important;
+  .font-monospace();
+  font-size: .8em;
+  color: @text;
+}
+
+// pre
+
+pre {
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  .overflow-style(@mode: inner);
+  .margin(y, medium) !important;
+  .margin(y, layout) !important;
+  .padding(y, small) !important;
+  .padding(x, small) !important;
+  width: 100%;
+  border-radius: 0;
+  border-width: 0;
+  border-style: solid;
+  border: 3px solid @shade-200;
+  background: @shade-200 !important;
+  line-height: 0 !important;
+  code {
+    width: 100%;
+    background: transparent !important;
+    .font-monospace();
+    font-size: 1.2rem !important;
+    .line-height-medium() !important;
+    white-space: pre-wrap !important;
+  }
+  // animation
+  transition: border-color @time-small @ease-off;
+  &:hover, &.hover, &:active, &.active {
+    border-color: @shade-200-dark;
+    transition: border-color @time-small @ease-on;
+  }
+}
+
+/**
  * svg
  */
 
+/* WTF is this
 svg {
   .font-sans-semibold();
   font-size: 1.8rem;
   text-transform: uppercase;
 }
+*/
 
 /**
  * .gatsby_demo-cols
@@ -89,7 +138,7 @@ pre {
   pre {
     border-width: 0 !important;
   }
-  // animations
+  // animation
   border: 3px solid @shade-200;
   transition: border-color @time-small @ease-off;
   .gatsby_demo_tabs {
