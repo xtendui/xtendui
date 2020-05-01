@@ -4,7 +4,9 @@ badge: "Addons"
 parent: "Form"
 title: "Check radio card"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-demos: [
-  "vanilla/demos/form/check-radio-card"
-]
 ---
+
+<demo>
+  <demovanilla src="vanilla/demos/form/check-radio-card">
+  </demovanilla>
+</demo>
