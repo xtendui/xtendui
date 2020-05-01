@@ -93,8 +93,8 @@ Xt.mount.push({
       gsap.to(text, { x: lineX, duration: Xt.vars.timeMedium, delay: Xt.vars.timeSmall, ease: 'expo.out' })
       // line
       const line = object.querySelector('.btn--line_line')
-      gsap.set(line, { width: 0, x: -lineWidthMax })
-      gsap.to(line, { width: lineWidthMax, x: -lineWidthMax + lineWidth, duration: Xt.vars.timeSmall, ease: 'expo.in' })
+      gsap.set(line, { width: 0, x: -lineWidthMax, opacity: lineOpacity , overwrite: true })
+      gsap.to(line, { width: lineWidthMax, x: -lineWidthMax + lineWidth, opacity: 1, duration: Xt.vars.timeSmall, ease: 'expo.in' })
       gsap.to(line, { width: lineWidth + lineX, x: 0, opacity: 1, duration: Xt.vars.timeMedium, delay: Xt.vars.timeSmall, ease: 'expo.out' })
     }
 
@@ -113,7 +113,7 @@ Xt.mount.push({
       gsap.to(text, { x: 0, duration: Xt.vars.timeMedium, ease: 'expo.inOut' })
       // line
       const line = object.querySelector('.btn--line_line')
-      gsap.to(line, { width: lineWidth, x: 0, opacity: lineOpacity, duration: Xt.vars.timeMedium, ease: 'expo.inOut' })
+      gsap.to(line, { width: lineWidth, x: 0, opacity: lineOpacity, duration: Xt.vars.timeMedium, ease: 'expo.inOut', overwrite: true })
     }
 
     link.addEventListener('mouseleave', eventLeave)
