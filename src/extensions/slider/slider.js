@@ -620,6 +620,8 @@ class Slider extends Xt.Toggle {
       let slideHeight = slide.children[0].offsetHeight
       const groupHeight = Xt.dataStorage.get(slide, self.componentNamespace + 'GroupHeight')
       slideHeight = groupHeight > slideHeight ? groupHeight : slideHeight
+      //slideHeight -= self.autoHeight.children[0].offsetTop
+      //console.log(self.autoHeight, self.autoHeight.children[0].offsetTop)
       if (slideHeight > 0) {
         slideHeight += 'px'
         if (self.autoHeight) {
