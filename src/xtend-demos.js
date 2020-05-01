@@ -1,4 +1,5 @@
 if (typeof window !== 'undefined') {
+  require('xtend-library/src/demos/animation/2019-xtend.js')
   require('xtend-library/src/demos/animation/2020-bertani-listing.js')
   require('xtend-library/src/demos/animation/2020-euroricambi-collapse.js')
   require('xtend-library/src/demos/animation/ripple.js')
@@ -10,6 +11,7 @@ if (typeof window !== 'undefined') {
   require('xtend-library/src/demos/loader/js-spinner.js')
   require('xtend-library/src/demos/loader/mouse-filler.js')
   require('xtend-library/src/demos/loader/mouse-spinner.js')
+  require('xtend-library/src/demos/overlay/2019-position-slide.js')
   require('xtend-library/src/demos/overlay/events-methods.js')
   require('xtend-library/src/demos/overlay/nested.js')
   require('xtend-library/src/demos/scroll/delay.js')

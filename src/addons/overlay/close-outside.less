@@ -8,17 +8,19 @@
  */
 
 .overlay-close-outside {
-  .card-overlay > .card-inner > .btn-close {
-    .btn-primary() !important;
-    .btn-squared() !important;
-    top: 0 !important;
-    left: 100% !important;
-    right: auto !important;
-  }
-  &.overlay-position-right {
+  &:not(.overlay-screen) {
     .card-overlay > .card-inner > .btn-close {
-      left: auto !important;
-      right: 100% !important;
+      .btn-primary();
+      .btn-squared();
+      top: 0;
+      left: 100%;
+      right: auto;
+    }
+    &.overlay-position-right {
+      .card-overlay > .card-inner > .btn-close {
+        left: auto;
+        right: 100%;
+      }
     }
   }
 }

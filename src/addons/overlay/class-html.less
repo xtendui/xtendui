@@ -7,18 +7,14 @@
  * overlay-class-html
  */
 
-.overlay-class-html { // @NOTICE DO NOT APPLY to selector with descendants with position: fixed;
+.overlay-class-html { // @NOTICE DO NOT APPLY to selector with descendants with position: fixed; or it bugs position: fixed;
   transition: transform @time-small @ease-off;
-  html.overlay-class-html-top & {
-    transform: translateY(3rem);
-    transition-timing-function: @ease-on;
-  }
   html.overlay-class-html-left & {
-    transform: translateX(3rem);
+    transform: translateX(4rem);
     transition-timing-function: @ease-on;
   }
   html.overlay-class-html-right & {
-    transform: translateX(-3rem);
+    transform: translateX(-4rem);
     transition-timing-function: @ease-on;
   }
 }

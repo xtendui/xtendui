@@ -77,7 +77,7 @@ demo.htmlSource = `
                                 <button type="button" class="btn btn-primary">
                                   drop backdrop
                                 </button>
-                                <div class="drop drop-default drop-bottom drop-left">
+                                <div class="drop drop-default drop-top">
                                   <div class="drop-inner">
                                     <div class="drop-design"></div>
                                     <div class="drop-content">

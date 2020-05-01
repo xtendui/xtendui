@@ -1,4 +1,5 @@
 import path from 'path'
+const img = require('components/snippets/img').default
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -9,12 +10,12 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-default list-space-small align-items-center justify-content-center overlay-class-html">
-  <div data-xt-overlay="{ classHtml: 'overlay-class-html-left' }">
+<div class="list list-default list-space-small align-items-center demo--2019-position-slide">
+  <div data-xt-overlay>
     <button type="button" class="btn btn-primary">
-      position left
+      overlay position left
     </button>
-    <div class="overlay overlay-position overlay-position-left">
+    <div class="overlay overlay-position overlay-position-left demo--2019-position-slide">
       <div class="overlay-container">
         <div class="overlay-inner">
 
@@ -43,12 +44,11 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div
-    data-xt-overlay="{ classHtml: 'overlay-class-html-right' }">
+  <div data-xt-overlay>
     <button type="button" class="btn btn-primary">
-      position right
+      overlay position right
     </button>
-    <div class="overlay overlay-position overlay-position-right">
+    <div class="overlay overlay-position overlay-position-right demo--2019-position-slide">
       <div class="overlay-container">
         <div class="overlay-inner">
 

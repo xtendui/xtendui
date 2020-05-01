@@ -16,7 +16,7 @@
 .card {
   border-radius: .5em;
   > .card-design {
-    border-width: 0;
+    border-width: 1px;
     border-style: solid;
     border-color: transparent;
   }
@@ -68,7 +68,7 @@
 .card-default {
   color: @text;
   > .card-design {
-    border-color: @shade-200;
+    border-color: @shade-200-dark;
     background: @shade-200;
   }
   // preset
@@ -103,7 +103,7 @@
 .card-primary {
   .text-inverse();
   > .card-design {
-    border-color: @accent;
+    border-color: @accent-dark;
     background: @accent;
   }
   // preset
@@ -138,7 +138,7 @@
 .card-white {
   color: @text;
   > .card-design {
-    border-color: @white;
+    border-color: @shade-200;
     background: @white;
   }
   // preset

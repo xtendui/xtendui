@@ -10,6 +10,36 @@ categories: ["100-Test"]
 ## Demos
 
 <demo>
+  <demovanilla src="vanilla/components/drop/variant">
+  </demovanilla>
+  <demovanilla src="vanilla/components/drop/event">
+  </demovanilla>
+  <demovanilla src="vanilla/components/drop/backdrop">
+  </demovanilla>
+</demo>
+
+<demo>
+  <demovanilla src="vanilla/components/overlay/nested">
+  </demovanilla>
+  <demovanilla src="vanilla/addons/overlay/position">
+  </demovanilla>
+</demo>
+
+<demo>
+  <demovanilla src="vanilla/demos/animation/2019-xtend">
+  </demovanilla>
+  <demovanilla src="vanilla/demos/animation/2020-euroricambi-collapse">
+  </demovanilla>
+  <div class="gatsby_demo_item" data-iframe="iframe/demos/animation/2020-bertani-listing">
+  </div>
+</demo>
+
+<demo>
+  <demovanilla src="vanilla/components/toggle/timing-delay-fnc">
+  </demovanilla>
+</demo>
+  
+<demo>
   <demovanilla src="vanilla/components/slider/toggle-js">
   </demovanilla>
   <demovanilla src="vanilla/components/slider/toggle-css">
@@ -17,19 +47,6 @@ categories: ["100-Test"]
   <demovanilla src="vanilla/components/slider/events-methods">
   </demovanilla>
   <demovanilla src="vanilla/components/slider/progress">
-  </demovanilla>
-</demo>
-
-<demo>
-  <demovanilla src="vanilla/components/drop/variant">
-  </demovanilla>
-  <demovanilla src="vanilla/components/drop/event">
-  </demovanilla>
-  <demovanilla src="vanilla/components/drop/backdrop">
-  </demovanilla>
-  <demovanilla src="vanilla/components/overlay/nested">
-  </demovanilla>
-  <demovanilla src="vanilla/components/toggle/timing-delay-fnc">
   </demovanilla>
 </demo>
 

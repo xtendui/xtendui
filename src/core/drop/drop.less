@@ -38,7 +38,7 @@
   > .drop-inner {
     color: @text;
     > .drop-design {
-      border-color: @shade-300;
+      border-color: @shade-200;
       background: @white;
       box-shadow: @shadow-light;
     }
@@ -117,27 +117,23 @@
     > .drop-inner {
       > .drop-design {
         opacity: 0;
-        transform: scale(.75, .75);
       }
       > .drop-content {
         opacity: 0;
-        transform: translateY(-1.5rem);
       }
     }
   }
   &.in {
-    animation-duration: @time-small + @time-tiny; // needed for animation time and backdrop animation time, put max animation time
+    animation-duration: @time-medium + @time-tiny; // needed for animation time and backdrop animation time, put max animation time
     > .drop {
       > .drop-inner {
         > .drop-design {
           opacity: 1;
-          transform: none;
-          transition: transform @time-medium @ease-on, opacity @time-medium @ease-on;
+          transition: opacity @time-medium @ease-on;
         }
         > .drop-content {
           opacity: 1;
-          transform: none;
-          transition: transform @time-medium @ease-on @time-tiny, opacity @time-medium @ease-on @time-tiny;
+          transition: opacity @time-medium @ease-on @time-tiny;
         }
       }
     }
@@ -148,79 +144,12 @@
       > .drop-inner {
         > .drop-design {
           opacity: 0;
-          transform: scale(.75, .75);
-          transition: transform @time-small @ease-off @time-tiny, opacity @time-small @ease-off @time-tiny;
+          transition: opacity @time-small @ease-off @time-tiny;
         }
         > .drop-content {
           opacity: 0;
-          transform: translateY(1.5rem);
-          transition: transform @time-small @ease-off, opacity @time-small @ease-off;
+          transition: opacity @time-small @ease-off;
         }
-      }
-    }
-  }
-  // backdrop
-  &.in {
-    > .drop {
-      > .backdrop {
-        .backdrop.in();
-      }
-    }
-  }
-  &.out {
-    > .drop {
-      > .backdrop {
-        .backdrop.out();
-      }
-    }
-  }
-}
-
-.drop-container-noanim {
-  &.in {
-    animation-duration: initial; // needed for animation time and backdrop animation time, put max animation time
-    > .drop {
-      > .drop-inner {
-        > .drop-design {
-          opacity: 1;
-          .trans-anim-none();
-        }
-        > .drop-content {
-          opacity: 1;
-          .trans-anim-none();
-        }
-      }
-    }
-  }
-  &.out {
-    animation-duration: initial; // needed for animation time and backdrop animation time, put max animation time
-    > .drop {
-      > .drop-inner {
-        > .drop-design {
-          opacity: 1;
-          .trans-anim-none();
-        }
-        > .drop-content {
-          opacity: 1;
-          .trans-anim-none();
-        }
-      }
-    }
-  }
-  // backdrop
-  &.in {
-    > .drop {
-      > .backdrop {
-        opacity: 1;
-        .trans-anim-none();
-      }
-    }
-  }
-  &.out {
-    > .drop {
-      > .backdrop {
-        opacity: 1;
-        .trans-anim-none();
       }
     }
   }
