@@ -1,7 +1,7 @@
 import { Xt } from 'xtend-library'
 import 'xtend-library/src/vars.js'
 import 'xtend-library/src/extensions/scroll/scroll.js'
-import 'xtend-library/src/extensions/utils/propagate-interaction.js'
+import 'xtend-library/src/addons/animation/propagate-interaction.js'
 import gsap from 'gsap'
 
 /**
