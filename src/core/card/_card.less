@@ -5,30 +5,29 @@
 .card {
   .link-none();
   position: relative;
+  .flex-full();
   display: flex;
+  align-items: center;
   width: 100%;
   height: 100%;
-  .flex-auto();
   z-index: @index-base; // fix :before negative z-index
   a&, button& {
     &:hover, &.hover, &:active, &.active {
       z-index: @index-active;
     }
   }
-  .card-contents({
-    height: 100%;
-  });
 }
 
 .card-inner {
   .full();
+  height: 100%;
   // @FIX full height and card-block empty spaces
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   > .card-content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    height: 100%;
     // @FIX card alignment stretch
     .flex-full();
   }
@@ -69,12 +68,6 @@
     .full();
     height: auto;
   }
-}
-
-// full height
-
-.card-inner, .card-content {
-  height: 100%;
 }
 
 // selectors
