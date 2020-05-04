@@ -1,3 +1,10 @@
+## [0.13.70](https://github.com/minimit/xtend-library/compare/v0.13.69...v0.13.70) (2020-05-04)
+
+
+### Bug Fixes
+
+* **card:** fix ie11 card ([0fb3507](https://github.com/minimit/xtend-library/commit/0fb35075f764c51c6d3e2bac81f03711c80799ef))
+
 ## [0.13.69](https://github.com/minimit/xtend-library/compare/v0.13.68...v0.13.69) (2020-05-04)
 
 
