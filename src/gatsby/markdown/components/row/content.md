@@ -3,10 +3,14 @@ type: "Components"
 badge: "Core"
 parent: "Row"
 title: "Content"
-date: "2019-06-01"
+date: "2019-12-15"
 ---
 
-#### Anything
+## Columns
+
+Refer to [Column](/components/column).
+
+## Anything
 
 You can use list to space childrens like [list](/components/list/content) does. But the childrens are spaced with **padding** instead of **margin**.
 
@@ -18,7 +22,3 @@ You can use list to space childrens like [list](/components/list/content) does. 
   <demovanilla src="vanilla/components/row/anything-nested">
   </demovanilla>
 </demo>
-
-#### Columns
-
-Refer to [Column](/components/column/option).

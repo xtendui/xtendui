@@ -52,24 +52,9 @@ If the toggle is on <code>"on": "mouseenter"</code> or <code>"on": "mousehover"<
   </demovanilla>
 </demo>
 
-## Backdrop
-
-<div class="table-scroll">
-
-|                         | Syntax                                    | Default                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `backdrop:Boolean`                              | `false`                     | Generate backdrop on targets or on object if no targets           |
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/drop/backdrop">
-  </demovanilla>
-</demo>
-
 ## Nested
 
-Test with nested drops.
+You can nest drops this way .
 
 <demo>
   <demovanilla src="vanilla/components/drop/nested">

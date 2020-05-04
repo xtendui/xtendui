@@ -42,6 +42,21 @@ You can specify **on** and **off** events for the drop. Fore example `on: 'mouse
   </demovanilla>
 </demo>
 
+## Backdrop
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Default                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `backdrop:Boolean`                              | `false`                     | Generate backdrop on targets or on object if no targets           |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/drop/backdrop">
+  </demovanilla>
+</demo>
+
 ## Other
 
 <div class="table-scroll">

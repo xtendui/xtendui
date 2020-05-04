@@ -49,9 +49,18 @@
 
 .overlay-disable {
   // disable custom animation
-  .overlay-inner {
-    opacity: 1 !important;
-    .trans-anim-none() !important;
+  .card-overlay {
+    > .card-design {
+      opacity: 1 !important;
+    }
+    > .btn-close {
+      opacity: 1 !important;
+    }
+    > .card-inner {
+      > .card-block,  > .card-content {
+        opacity: 1 !important;
+      }
+    }
   }
 }
 
