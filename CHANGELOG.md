@@ -1,3 +1,19 @@
+## [0.13.69](https://github.com/minimit/xtend-library/compare/v0.13.68...v0.13.69) (2020-05-04)
+
+
+### Bug Fixes
+
+* **card:** fix card styles generic full size ([a560497](https://github.com/minimit/xtend-library/commit/a560497e3cde1aa46ddc59e5401a94be24375a70))
+* **card:** refactor card interactive ([9862d2d](https://github.com/minimit/xtend-library/commit/9862d2d9af965fcfd386c60e1a4a2c0c6819e741))
+* **card:** refactor cards addons and core ([d02b1f6](https://github.com/minimit/xtend-library/commit/d02b1f68aa6fc0d3cd2df1cf87cb8d71548631b4))
+* **card:** refactor cards btn-close + full + other ([afb7f13](https://github.com/minimit/xtend-library/commit/afb7f13b851bdc665efb678416b28488ad0cba4f))
+* **css:** overflow style classes ([75da058](https://github.com/minimit/xtend-library/commit/75da05860ea007acfd61889775f5a9bd903a0015))
+* **css:** overflow style classes ([15aefd6](https://github.com/minimit/xtend-library/commit/15aefd6e4cea826bc22dd81f9508661fc3ed107e))
+* general refactor default animations ([52f803d](https://github.com/minimit/xtend-library/commit/52f803d3a737c7c166c141bb327b9c02c2f13144))
+* **overlay:** fix overlay position backdrop animation ([01039f8](https://github.com/minimit/xtend-library/commit/01039f83c74e69406c3dbadd5b4a0751f0ea2093))
+* **slider:** fix slider display slides ([f0bcb85](https://github.com/minimit/xtend-library/commit/f0bcb850fc53d4c7fea4c087791f20daf1ecaf0c))
+* **slider:** fix slider display slides ([25d56e4](https://github.com/minimit/xtend-library/commit/25d56e40fed5d024d8ca3e7e30e6fd564d4afeec))
+
 ## [0.13.68](https://github.com/minimit/xtend-library/compare/v0.13.67...v0.13.68) (2020-04-29)
 
 
