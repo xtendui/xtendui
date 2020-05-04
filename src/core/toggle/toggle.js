@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import RJSON from 'relaxed-json'
 import { Xt } from 'xtend-library'
 
@@ -295,7 +294,14 @@ class Toggle {
           found = true
         }
         requestAnimationFrame(() => {
-          elReset.classList.remove(...self.classes, ...self.classesIn, ...self.classesInDone, ...self.classesOut, ...self.classesInitial, ...self.classesInverse)
+          elReset.classList.remove(
+            ...self.classes,
+            ...self.classesIn,
+            ...self.classesInDone,
+            ...self.classesOut,
+            ...self.classesInitial,
+            ...self.classesInverse
+          )
         })
       }
       return found
@@ -589,7 +595,11 @@ class Toggle {
           if (!Xt.dataStorage.get(img, self.componentNamespace + 'MedialoadedDone')) {
             Xt.dataStorage.set(img, self.componentNamespace + 'MedialoadedDone', true)
             if (!img.complete) {
-              const medialoadedHandler = Xt.dataStorage.put(img, 'load/media' + '/' + self.namespace, self.eventMedialoadedHandler.bind(self).bind(self, el, true))
+              const medialoadedHandler = Xt.dataStorage.put(
+                img,
+                'load/media' + '/' + self.namespace,
+                self.eventMedialoadedHandler.bind(self).bind(self, el, true)
+              )
               img.addEventListener('load', medialoadedHandler)
             } else {
               self.eventMedialoadedHandler(el)
@@ -604,7 +614,11 @@ class Toggle {
           if (!Xt.dataStorage.get(img, self.componentNamespace + 'MedialoadedDone')) {
             Xt.dataStorage.set(img, self.componentNamespace + 'MedialoadedDone', true)
             if (!img.complete) {
-              const medialoadedHandler = Xt.dataStorage.put(img, 'load/media' + '/' + self.namespace, self.eventMedialoadedHandler.bind(self).bind(self, tr, true))
+              const medialoadedHandler = Xt.dataStorage.put(
+                img,
+                'load/media' + '/' + self.namespace,
+                self.eventMedialoadedHandler.bind(self).bind(self, tr, true)
+              )
               img.addEventListener('load', medialoadedHandler)
             } else {
               self.eventMedialoadedHandler(tr)
@@ -1133,7 +1147,7 @@ class Toggle {
         break
       }
     }
-    self.direction = self.inverse !== null ? self.inverse ? -1 : 1 : self.currentIndex > index ? -1 : 1
+    self.direction = self.inverse !== null ? (self.inverse ? -1 : 1) : self.currentIndex > index ? -1 : 1
     self.inverse = null
     self.currentIndex = index
   }
@@ -1392,8 +1406,7 @@ class Toggle {
       // clear
       clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutostartTimeout'))
       // auto
-      const time =
-        self.initial || self.continue ? (options.auto.timeInitial !== false ? options.auto.timeInitial : options.auto.time) : options.auto.time
+      const time = self.initial || self.continue ? (options.auto.timeInitial !== false ? options.auto.timeInitial : options.auto.time) : options.auto.time
       // not when nothing activated
       if (self.currentIndex !== null && (!self.initial || self.continue || options.auto.initial)) {
         // not when initial
@@ -2202,11 +2215,7 @@ class Toggle {
       }
     }
     // loop
-    if (
-      self.detail.wheelCurrent > min &&
-      self.detail.wheelCurrent < max &&
-      deltaAbs >= options.wheel.frictionLimit
-    ) {
+    if (self.detail.wheelCurrent > min && self.detail.wheelCurrent < max && deltaAbs >= options.wheel.frictionLimit) {
       // friction
       cancelAnimationFrame(Xt.dataStorage.get(self.wheel, self.componentNamespace + 'WheelsmoothFrame'))
       Xt.dataStorage.set(
@@ -2791,7 +2800,7 @@ class Toggle {
           // @FIX multiple calls coming from resize
           if (!self.initial) {
             // handler
-            self.destroy();
+            self.destroy()
             self.reinit()
           }
         },
