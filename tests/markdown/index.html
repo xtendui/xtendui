@@ -1,5 +1,1312 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link href="/styles.a18a8982044cca33548b.css" rel="stylesheet" type="text/css"/><meta name="generator" content="Gatsby 2.19.19"/><title data-react-helmet="true">Markdown — Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis. — Xtend</title><meta data-react-helmet="true" name="description" content="Xtend advanded frontend library"/><meta data-react-helmet="true" property="og:title" content="Markdown — Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."/><meta data-react-helmet="true" property="og:description" content="Xtend advanded frontend library"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="Riccardo Caroli"/><meta data-react-helmet="true" name="twitter:title" content="Markdown — Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."/><meta data-react-helmet="true" name="twitter:description" content="Xtend advanded frontend library"/><link rel="icon" href="/icons/icon-48x48.png?v=9a1070f1751ac45afa639773a714e9c2"/><link rel="manifest" href="/manifest.webmanifest"/><meta name="theme-color" content="#0078ff"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=9a1070f1751ac45afa639773a714e9c2"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=9a1070f1751ac45afa639773a714e9c2"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=9a1070f1751ac45afa639773a714e9c2"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=9a1070f1751ac45afa639773a714e9c2"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=9a1070f1751ac45afa639773a714e9c2"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=9a1070f1751ac45afa639773a714e9c2"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=9a1070f1751ac45afa639773a714e9c2"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=9a1070f1751ac45afa639773a714e9c2"/><link as="script" rel="preload" href="/webpack-runtime-4d1f34c994a753582300.js"/><link as="script" rel="preload" href="/app-f1d2b9d8fd0bd79b541c.js"/><link as="script" rel="preload" href="/styles-898995100a3ce2557b8d.js"/><link as="script" rel="preload" href="/commons-fc5c1a64ade1dfd4c384.js"/><link as="script" rel="preload" href="/component---src-gatsby-components-templates-doc-page-js-8ee40d98bc8c418789eb.js"/><link as="fetch" rel="preload" href="/page-data/tests/markdown/page-data.json" crossorigin="anonymous"/></head><body><noscript id="gatsby-noscript">This app works best with JavaScript enabled.</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="gatsby_site_wrapper"><div class="gatsby_site_main"><div class="gatsby_site_main_inner"><div class="gatsby_site_article_sidebar"><header class="gatsby_site_header"><nav class="gatsby_site_header_inner"><div><div class="gatsby_site_header_logo_outer"><div class="gatsby_site_header_logo"><a title="Home" class="gatsby_logo-icon
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link href="/styles.7bc7d29f587af9f02786.css" rel="stylesheet" type="text/css"/><meta name="generator" content="Gatsby 2.19.19"/><title data-react-helmet="true">Markdown — Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis. — Xtend</title><meta data-react-helmet="true" name="description" content="Xtend advanded frontend library"/><meta data-react-helmet="true" property="og:title" content="Markdown — Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."/><meta data-react-helmet="true" property="og:description" content="Xtend advanded frontend library"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="Riccardo Caroli"/><meta data-react-helmet="true" name="twitter:title" content="Markdown — Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."/><meta data-react-helmet="true" name="twitter:description" content="Xtend advanded frontend library"/><link rel="icon" href="/icons/icon-48x48.png?v=9a1070f1751ac45afa639773a714e9c2"/><link rel="manifest" href="/manifest.webmanifest"/><meta name="theme-color" content="#0078ff"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=9a1070f1751ac45afa639773a714e9c2"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=9a1070f1751ac45afa639773a714e9c2"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=9a1070f1751ac45afa639773a714e9c2"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=9a1070f1751ac45afa639773a714e9c2"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=9a1070f1751ac45afa639773a714e9c2"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=9a1070f1751ac45afa639773a714e9c2"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=9a1070f1751ac45afa639773a714e9c2"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=9a1070f1751ac45afa639773a714e9c2"/><link as="script" rel="preload" href="/webpack-runtime-cb0e0516603e21502bd7.js"/><link as="script" rel="preload" href="/app-b67210d417476e5ce459.js"/><link as="script" rel="preload" href="/styles-43a93477079719ae3730.js"/><link as="script" rel="preload" href="/commons-6c0e28d0725f937b40b5.js"/><link as="script" rel="preload" href="/component---src-gatsby-components-templates-doc-page-js-d42e98643078572316db.js"/><link as="fetch" rel="preload" href="/page-data/tests/markdown/page-data.json" crossorigin="anonymous"/></head><body><noscript id="gatsby-noscript">This app works best with JavaScript enabled.</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="gatsby_site_wrapper"><div class="gatsby_site_main"><div class="gatsby_site_main_inner"><div class="gatsby_site_article_sidebar"><header class="gatsby_site_header"><nav class="gatsby_site_header_inner"><div><div class="gatsby_site_header_logo_outer"><div class="gatsby_site_header_logo"><a title="Home" class="gatsby_logo-icon
                                   " href="/"><img src="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMV9jb3B5IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMC42MSA5LjEyIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmxvZ28td2hpdGU8L3RpdGxlPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTMuNjksMy40MSw1LjI5LjQ3aDJMNC44Miw0LjcsNy4zNyw5aC0yTDMuNjksNiwyLDlIMEwyLjU1LDQuNy4wNi40N2gyWiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTkuOSwxLjFWMi42NkgxMVYzLjlIOS45VjcuMDdhLjc1Ljc1LDAsMCwwLC4xMy41LjcuNywwLDAsMCwuNTIuMTUsMi41MywyLjUzLDAsMCwwLC41LDBWOWEzLjI2LDMuMjYsMCwwLDEtMSwuMTYsMS42MSwxLjYxLDAsMCwxLTEuODEtMS44VjMuOUg3LjI4VjIuNjZoLjkzVjEuMVoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xNC43Myw5LjEyYTMuMTIsMy4xMiwwLDAsMS0yLjI3LS44NkEzLjA1LDMuMDUsMCwwLDEsMTEuNTksNlY1LjgyQTMuNzcsMy43NywwLDAsMSwxMiw0LjExLDIuNjcsMi42NywwLDAsMSwxMywzYTMsMywwLDAsMSwxLjU1LS40MSwyLjY0LDIuNjQsMCwwLDEsMiwuODIsMy4zNSwzLjM1LDAsMCwxLC43NSwyLjMzdi42OWgtNGExLjYsMS42LDAsMCwwLC41LDEsMS40NywxLjQ3LDAsMCwwLDEsLjM3QTEuNzksMS43OSwwLDAsMCwxNi4zNyw3bC44NC45M2EyLjY2LDIuNjYsMCwwLDEtMSwuODVBMy4zNywzLjM3LDAsMCwxLDE0LjczLDkuMTJabS0uMTktNS4yMWExLjA1LDEuMDUsMCwwLDAtLjgyLjM0LDEuNzcsMS43NywwLDAsMC0uNCwxaDIuMzZWNS4wOWExLjIyLDEuMjIsMCwwLDAtLjMxLS44N0ExLjA2LDEuMDYsMCwwLDAsMTQuNTQsMy45MVoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yMCwyLjY2bC4wNS43M2EyLjI0LDIuMjQsMCwwLDEsMS44Mi0uODUsMS44MywxLjgzLDAsMCwxLDEuNS41OSwyLjc5LDIuNzksMCwwLDEsLjUxLDEuNzdWOUgyMi4xNVY1YTEuMTEsMS4xMSwwLDAsMC0uMjQtLjc5LDEuMDYsMS4wNiwwLDAsMC0uNzgtLjI0LDEuMTYsMS4xNiwwLDAsMC0xLjA3LjYxVjlIMTguMzdWMi42NloiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNC45LDUuNzhhMy44NCwzLjg0LDAsMCwxLC42Ni0yLjM2LDIuMTcsMi4xNywwLDAsMSwxLjgyLS44OCwxLjk0LDEuOTQsMCwwLDEsMS41My42OVYwaDEuN1Y5SDI5LjA4TDI5LDguMzNhMiwyLDAsMCwxLTEuNjMuNzksMi4xNywyLjE3LDAsMCwxLTEuOC0uODhBNCw0LDAsMCwxLDI0LjksNS43OFptMS42OS4xM2EyLjUsMi41LDAsMCwwLC4zMSwxLjM3LDEsMSwwLDAsMCwuOS40NywxLjE0LDEuMTQsMCwwLDAsMS4xMS0uNjZWNC41OGExLjEyLDEuMTIsMCwwLDAtMS4xLS42NkMyNywzLjkyLDI2LjU5LDQuNTgsMjYuNTksNS45MVoiLz48L3N2Zz4K" alt="Xtend"/></a></div><div><div class="gatsby_site_header_top_social"><a href="https://github.com/minimit/xtend-library" target="_blank" rel="noopener" class="btn gatsby_btn-site_header_top_social" title="Github"><span class="icon-github icon-large"></span></a><a href="https://www.npmjs.com/package/xtend-library" target="_blank" rel="noopener" class="btn gatsby_btn-site_header_top_social" title="Npm"><span class="icon-npm icon-large"></span></a></div></div></div></div><div><div class="gatsby_site_header_links"><a class="btn gatsby_btn-site_header_link " href="/introduction">Introduction</a><a class="btn gatsby_btn-site_header_link " href="/components">Components</a><a class="btn gatsby_btn-site_header_link " href="/addons">Addons</a><a class="btn gatsby_btn-site_header_link " href="/themes">Themes</a></div></div></nav></header><nav class="gatsby_site_header_listing"><div><div class="gatsby_site_header_cat"><div class="gatsby_cat--site_article_sidebar current">Test</div><div class="gatsby_site_header_sub active active"><div class="gatsby_site_header_item"><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/tests/listing">Listing</a></div><div><a aria-current="page" class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub active" href="/tests/markdown">Markdown</a><div class="gatsby_site_header_adiacent active"><div class="gatsby_site_header_item"></div></div></div></div></div></div></div></nav></div><div class="gatsby_site_article"><div id="gatbsy_open-full-trigger" data-xt-toggle="{ targets: &#x27;#gatbsy_open-full&#x27;, closeInside: &#x27;:scope &gt; .btn-close&#x27;, autoClose: true, scrollbar: true }"></div><div class="toggle-block" id="gatbsy_open-full"><div class="btn btn-close" aria-label="Close"></div><div class="card-content" id="gatbsy_open-full-content"></div></div><main class="gatsby_site_article_inner" id="gatbsy_open-full-inner"><div><header class="gatsby_site_article_hero"><div class="gatsby_site_article_hero_content"><div class="gatsby_site_article_hero_content_inner"><h1><span>Markdown</span><div class="badge badge-default badge-small">Tests</div></h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis.</p></div></div><nav class="gatsby_site_article_hero_links"><div class="gatsby_site_article_hero_links_inner"><div class="row"><div><a class="btn" href="/tests"><span class="icon-arrow-left icon-left"></span>Tests</a></div><div></div></div></div></nav></header></div><article class="gatsby_site_article_content"><div class="gatsby_site_article_content_inner"><div class="gatsby_listing"><div class="row"><div class="gatsby_listing_group"><div class="gatsby_listing_items"><div class="row"></div></div></div></div></div><div><h2>Demos</h2>
+<div class="gatsby_demo">
+  <div class="gatsby_demo_item gatsby_demo_preview" data-name="variant" data-inline="vanilla/components/drop/variant">
+  <script type="text/plain" data-lang="html">
+<div class="list list-default list-space-small align-items-center">
+
+  <div class="drop-container" data-xt-drop>
+    <button type="button" class="btn btn-primary">
+      default
+    </button>
+    <div class="drop drop-default">
+      <div class="drop-inner">
+        <div class="drop-design"></div>
+        <div class="drop-content">
+          <ul class="list list-drop">
+            <li>
+              <button type="button">
+                Lorem ipsum dolor
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                Dolor sit
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                Amet
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="drop-container" data-xt-drop>
+    <button type="button" class="btn btn-primary">
+      primary
+    </button>
+    <div class="drop drop-primary">
+      <div class="drop-inner">
+        <div class="drop-design"></div>
+        <div class="drop-content">
+          <ul class="list list-drop">
+            <li>
+              <button type="button">
+                Lorem ipsum dolor
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                Dolor sit
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                Amet
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
+  <div class="gatsby_demo_item gatsby_demo_preview" data-name="event" data-inline="vanilla/components/drop/event">
+  <script type="text/plain" data-lang="html">
+<div class="list list-default list-space-small align-items-center">
+
+  <div class="drop-container" data-xt-drop="{ on: 'mouseenter', off: 'mouseleave', closeOutside: false }">
+    <button type="button" class="btn btn-primary">
+      mouseenter
+    </button>
+    <div class="drop drop-default">
+      <div class="drop-inner">
+        <div class="drop-design"></div>
+        <div class="drop-content">
+          <ul class="list list-drop">
+            <li>
+              <button type="button">
+                Lorem ipsum dolor
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                Dolor sit
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                Amet
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
+  <div class="gatsby_demo_item gatsby_demo_preview" data-name="backdrop" data-inline="vanilla/components/drop/backdrop">
+  <script type="text/plain" data-lang="html">
+<div class="list list-default list-space-small align-items-center">
+
+  <div class="drop-container" data-xt-drop="{ backdrop: true }">
+    <button type="button" class="btn btn-primary">
+      bottom left
+    </button>
+    <div class="drop drop-default drop-bottom drop-left">
+      <div class="drop-inner">
+        <div class="drop-design"></div>
+        <div class="drop-content">
+          <ul class="list list-drop">
+            <li>
+              <button type="button">
+                Lorem ipsum dolor
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                Dolor sit
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                Amet
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="drop-container" data-xt-drop="{ on: 'mouseenter', off: 'mouseleave', backdrop: true }">
+    <button type="button" class="btn btn-primary">
+      mouseenter
+    </button>
+    <div class="drop drop-default drop-bottom drop-left">
+      <div class="drop-inner">
+        <div class="drop-design"></div>
+        <div class="drop-content">
+          <ul class="list list-drop">
+            <li>
+              <button type="button">
+                Lorem ipsum dolor
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                Dolor sit
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                Amet
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
+</div>
+<div class="gatsby_demo">
+  <div class="gatsby_demo_item gatsby_demo_preview" data-name="nested" data-inline="vanilla/components/overlay/nested">
+  <script type="text/plain" data-lang="html">
+<button type="button" class="btn btn-primary" id="overlay-nested-toggle">
+  Toggle with API
+</button>
+
+<div class="overlay overlay-large" id="overlay-nested"
+  data-xt-overlay="{ on: false, instant: false }">
+  <div class="overlay-container">
+    <div class="overlay-inner">
+
+      <div class="card card-overlay">
+        <div class="card-design"></div>
+        <div class="btn btn-close" aria-label="Close"></div>
+        <div class="card-inner">
+          <div class="card-content">
+            <div class="card-block card-item">
+              <div class="card-title">Lorem ipsum</div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+              <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                justo.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+              <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                justo.</p>
+
+              <div data-xt-overlay>
+                <button type="button" class="btn btn-primary">
+                  Toggle
+                </button>
+                <div class="overlay overlay-small">
+                  <div class="overlay-container">
+                    <div class="overlay-inner">
+
+                      <div class="card card-overlay">
+                        <div class="card-design"></div>
+                        <div class="btn btn-close" aria-label="Close"></div>
+                        <div class="card-inner">
+                          <div class="card-content">
+                            <div class="card-block card-item">
+                              <div class="card-title">Lorem ipsum</div>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                                ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                              <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                                justo.</p>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                                ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                              <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                                justo.</p>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                                ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                              <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                                justo.</p>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                                ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                              <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                                justo.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                                  ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                                <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                                  justo.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                                  ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                                <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                                  justo.</p>
+                              <div class="drop-container" data-xt-drop="{ backdrop: true }">
+                                <button type="button" class="btn btn-primary">
+                                  drop backdrop
+                                </button>
+                                <div class="drop drop-default drop-top">
+                                  <div class="drop-inner">
+                                    <div class="drop-design"></div>
+                                    <div class="drop-content">
+                                      <ul class="list list-drop">
+                                        <li>
+                                          <button type="button" class="btn btn-default">
+                                            Lorem ipsum dolor
+                                          </button>
+                                        </li>
+                                        <li>
+                                          <button type="button" class="btn btn-default">
+                                            Dolor sit
+                                          </button>
+                                        </li>
+                                        <li>
+                                          <button type="button" class="btn btn-default">
+                                            Amet
+                                          </button>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div><div class="gatsby_demo_source xt-ignore" data-lang="js">import { Xt } from 'xtend-library'
+
+Xt.mount.push({
+  matches: '#overlay-nested-toggle',
+  mount: object => {
+    // event
+
+    function click() {
+      document.querySelector('#overlay-nested').dispatchEvent(new CustomEvent('on.trigger.xt'))
+    }
+
+    object.addEventListener('click', click)
+  },
+})
+</div></div>
+  <div class="gatsby_demo_item gatsby_demo_preview" data-name="position" data-inline="vanilla/addons/overlay/position">
+  <script type="text/plain" data-lang="html">
+<div class="list list-default list-space-small align-items-center">
+
+  <div data-xt-overlay>
+    <button type="button" class="btn btn-primary">
+      position left
+    </button>
+    <div class="overlay overlay-position overlay-position-left">
+      <div class="overlay-container">
+        <div class="overlay-inner">
+
+            <div class="card card-overlay">
+              <div class="card-design"></div>
+              <div class="btn btn-close" aria-label="Close"></div>
+              <div class="card-inner">
+                <div class="card-content">
+                  <div class="card-block card-item">
+                    <div class="card-title">Lorem ipsum</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                      ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                    <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                      justo.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                      ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                    <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                      justo.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-xt-overlay>
+    <button type="button" class="btn btn-primary">
+      position right
+    </button>
+    <div class="overlay overlay-position overlay-position-right">
+      <div class="overlay-container">
+        <div class="overlay-inner">
+
+            <div class="card card-overlay">
+              <div class="card-design"></div>
+              <div class="btn btn-close" aria-label="Close"></div>
+              <div class="card-inner">
+                <div class="card-content">
+                  <div class="card-block card-item">
+                    <div class="card-title">Lorem ipsum</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                      ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                    <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                      justo.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                      ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                    <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                      justo.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div><div class="gatsby_demo_source xt-ignore" data-lang="less">@import '~xtend-library/src/addons/overlay/position.less';</div></div>
+</div>
+<div class="gatsby_demo">
+  <div class="gatsby_demo_item gatsby_demo_preview" data-name="2019 xtend" data-inline="vanilla/demos/animation/2019-xtend">
+  <script type="text/plain" data-lang="html">
+<div class="list list-default list-space-small align-items-center demo--2019-xtend">
+
+  <button type="button" class="btn btn-default">
+    button
+  </button>
+
+  <button type="button" class="btn btn-primary">
+    button primary
+  </button>
+
+  <button type="button" class="btn btn-text">
+    button text
+  </button>
+
+  <button type="button" class="btn btn-link">
+    button link
+  </button>
+
+  <div class="drop-container" data-xt-drop="{ targetsInner: ':scope > .drop-inner' }">
+    <button type="button" class="btn btn-primary">
+      drop
+    </button>
+    <div class="drop drop-default">
+      <div class="drop-inner">
+        <div class="drop-design"></div>
+        <div class="drop-content">
+          <ul class="list list-drop">
+            <li>
+              <button type="button">
+                Lorem ipsum dolor
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                Dolor sit
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                Amet
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="drop-container" data-xt-drop="{ targetsInner: ':scope > .drop-inner' }">
+    <button type="button" class="btn btn-primary">
+      drop card
+    </button>
+    <div class="drop drop-default">
+      <div class="drop-inner">
+        <div class="drop-design"></div>
+        <div class="drop-content">
+
+          <div class="card card-drop">
+            <div class="card-design"></div>
+            <div class="btn btn-close" aria-label="Close"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-block card-item">
+                  <div class="card-title">Primary</div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+                  <a href="#" class="btn btn-primary">
+                    Button
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-xt-overlay>
+    <button type="button" class="btn btn-primary">
+      overlay
+    </button>
+    <div class="overlay demo--2019-xtend">
+      <div class="overlay-container">
+        <div class="overlay-inner">
+
+          <div class="card card-overlay">
+            <div class="card-design"></div>
+            <div class="btn btn-close" aria-label="Close"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-block card-item">
+                  <div class="card-title">Lorem ipsum</div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                    ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                  <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                    justo.</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                    ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                  <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                    justo.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-xt-overlay>
+    <button type="button" class="btn btn-primary">
+      overlay screen
+    </button>
+    <div class="overlay overlay-screen demo--2019-xtend">
+      <div class="overlay-container">
+        <div class="overlay-inner">
+
+            <div class="card card-overlay">
+              <div class="card-design"></div>
+              <div class="btn btn-close" aria-label="Close"></div>
+              <div class="card-inner">
+                <div class="card-content">
+                  <div class="card-asset">
+                    <div class="media-container" style="padding-bottom:100%"><div class="media-inner"><img class="media media-cover" src="/img.svg" alt="" loading="lazy"/></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-xt-overlay>
+    <button type="button" class="btn btn-primary">
+      overlay position
+    </button>
+    <div class="overlay overlay-position overlay-position-left demo--2019-xtend">
+      <div class="overlay-container">
+        <div class="overlay-inner">
+
+          <div class="card card-overlay">
+            <div class="card-design"></div>
+            <div class="btn btn-close" aria-label="Close"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-block card-item">
+                  <div class="card-title">Lorem ipsum</div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                    ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                  <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                    justo.</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                    ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                  <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                    justo.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="row row-default">
+
+  <div class="col-12 col-6-sm">
+    <a role="button" class="card card-default demo--2019-xtend">
+      <div class="card-design"></div>
+      <div class="card-inner">
+        <div class="card-content">
+          <div class="card-block card-item">
+            <div class="card-title">Default</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="col-12 col-6-sm">
+    <a role="button" class="card card-primary demo--2019-xtend">
+      <div class="card-design"></div>
+      <div class="card-inner">
+        <div class="card-content">
+          <div class="card-block card-item">
+            <div class="card-title">Primary</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="col-12 col-6-sm">
+    <a role="button" class="card card-white demo--2019-xtend">
+      <div class="card-design"></div>
+      <div class="card-inner">
+        <div class="card-content">
+          <div class="card-block card-item">
+            <div class="card-title">White</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+</div>
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div><div class="gatsby_demo_source xt-ignore" data-lang="less">@import (reference) '~xtend-library/src/xtend-core.less';
+@import '~xtend-library/src/core/card/card.less';
+@import '~xtend-library/src/core/drop/drop.less';
+@import '~xtend-library/src/core/overlay/overlay.less';
+@import '~xtend-library/src/addons/card/interactive.less';
+@import '~xtend-library/src/addons/overlay/position.less';
+@import '~xtend-library/src/addons/overlay/screen.less';
+
+.demo--2019-xtend {
+  /**
+   * button
+   */
+
+  // variant
+
+  .btn-default {
+    &:hover, &.hover {
+      transform: translateY(-.25rem);
+      box-shadow: @shadow-light;
+    }
+    &:active, &.active {
+      transform: none;
+      box-shadow: @shadow-none;
+    }
+  }
+
+  .btn-primary {
+    &:hover, &.hover {
+      transform: translateY(-.25rem);
+      box-shadow: @shadow-accent;
+    }
+    &:active, &.active {
+      transform: none;
+      box-shadow: @shadow-none;
+    }
+  }
+
+  // animation
+
+  .btn {
+    transition: border @time-small @ease-off, background @time-small @ease-off, color @time-small @ease-off, box-shadow @time-small @ease-off, transform @time-tiny @ease-off;
+    &:hover, &.hover {
+      transition: border @time-small @ease-on, background @time-small @ease-on, color @time-small @ease-on, box-shadow @time-small @ease-on, transform @time-tiny @ease-on;
+    }
+    &:active, &.active {
+      transition: border @time-small @ease-on, background @time-small @ease-on, color @time-small @ease-on, box-shadow @time-small @ease-on, transform @time-tiny @ease-on;
+    }
+  }
+
+  /**
+   * drop
+   */
+
+  // animation
+
+  .drop-container {
+    > .drop {
+      > .drop-inner {
+        > .drop-design {
+          opacity: 0;
+          transform: scale(.75, .75);
+        }
+        > .drop-content {
+          opacity: 0;
+          transform: translateY(-1.5rem);
+        }
+      }
+    }
+    &.in {
+      animation-duration: @time-small + @time-tiny; // needed for animation time and backdrop animation time, put max animation time
+      > .drop {
+        > .drop-inner {
+          > .drop-design {
+            opacity: 1;
+            transform: none;
+            transition: transform @time-medium @ease-on, opacity @time-medium @ease-on;
+          }
+          > .drop-content {
+            opacity: 1;
+            transform: none;
+            transition: transform @time-medium @ease-on @time-tiny, opacity @time-medium @ease-on @time-tiny;
+          }
+        }
+      }
+    }
+    &.out {
+      animation-duration: @time-small + @time-tiny; // needed for animation time and backdrop animation time, put max animation time
+      > .drop {
+        > .drop-inner {
+          > .drop-design {
+            opacity: 0;
+            transform: scale(.75, .75);
+            transition: transform @time-small @ease-off @time-tiny, opacity @time-small @ease-off @time-tiny;
+          }
+          > .drop-content {
+            opacity: 0;
+            transform: translateY(1.5rem);
+            transition: transform @time-small @ease-off, opacity @time-small @ease-off;
+          }
+        }
+      }
+    }
+  }
+
+  /**
+    * overlay
+    */
+
+  // animation
+
+  .overlay& {
+    .card-overlay {
+      > .card-design {
+        opacity: 0;
+        transform: scale(.75, .75);
+      }
+      > .btn-close {
+        opacity: 0;
+      }
+      > .card-inner {
+        > .card-block,  > .card-content {
+          opacity: 0;
+          transform: translateY(-1.5rem);
+        }
+      }
+    }
+    &.in {
+      animation-duration: @time-medium + @time-tiny; // needed for animation time and backdrop animation time, put max animation time
+      .card-overlay {
+        > .card-design {
+          opacity: 1;
+          transform: scale(1);
+          transition: transform @time-medium @ease-on, opacity @time-medium @ease-on;
+        }
+        > .btn-close {
+          // use animation to not override .btn transitions
+          .anim-zoom.in();
+          animation-delay: @time-medium;
+        }
+        > .card-inner {
+          > .card-block,  > .card-content {
+            opacity: 1;
+            transform: none;
+            transition: transform @time-medium @ease-on @time-tiny, opacity @time-medium @ease-on @time-tiny;
+          }
+        }
+      }
+    }
+    &.out {
+      animation-duration: @time-small + @time-tiny; // needed for animation time and backdrop animation time, put max animation time
+      .card-overlay {
+        > .card-design {
+          opacity: 0;
+          transform: scale(.75, .75);
+          transition: transform @time-small @ease-off @time-tiny, opacity @time-small @ease-off @time-tiny;
+        }
+        > .btn-close {
+          // use animation to not override .btn transitions
+          .anim-zoom.out();
+          animation-delay: initial;
+        }
+        > .card-inner {
+          > .card-block,  > .card-content {
+            opacity: 0;
+            transform: translateY(1.5rem);
+            transition: transform @time-small @ease-off, opacity @time-small @ease-off;
+          }
+        }
+      }
+    }
+  }
+
+  /**
+   * card
+   */
+
+  // variant
+
+  .card-default& {
+    // interactive
+    a&, button& {
+      &:hover, &.hover {
+        > .card-design {
+          box-shadow: @shadow-light;
+        }
+      }
+      &:active, &.active {
+        > .card-design {
+          box-shadow: none;
+        }
+      }
+    }
+  }
+
+  .card-primary& {
+    // interactive
+    a&, button& {
+      &:hover, &.hover {
+        > .card-design {
+          box-shadow: @shadow-accent;
+        }
+      }
+      &:active, &.active {
+        > .card-design {
+          box-shadow: none;
+        }
+      }
+    }
+  }
+
+  .card-white& {
+    // interactive
+    a&, button& {
+      &:hover, &.hover {
+        > .card-design {
+          box-shadow: @shadow-light;
+        }
+      }
+      &:active, &.active {
+        > .card-design {
+          box-shadow: none;
+        }
+      }
+    }
+  }
+
+  // animation
+
+  .card& {
+    a&, button&, label& {
+      transition: all @time-small @ease-off;
+      > .card-design {
+        transition: all @time-small @ease-off;
+      }
+      &:hover, &.hover {
+        transform: translateY(-.5rem);
+        transition: all @time-small @ease-on;
+        > .card-design {
+          transition: all @time-small @ease-on;
+        }
+      }
+      &:active, &.active, input[type="checkbox"]:not(.unstyled):checked ~ &, input[type="radio"]:not(.unstyled):checked ~ & {
+        transform: none;
+        transition: all @time-small @ease-on;
+        > .card-design {
+          transition: all @time-small @ease-on;
+        }
+      }
+    }
+  }
+
+}
+</div><div class="gatsby_demo_source xt-ignore" data-lang="js">import { Xt } from 'xtend-library'
+import 'xtend-library/src/core/drop/drop.js'
+import 'xtend-library/src/core/overlay/overlay.js'
+</div></div>
+  <div class="gatsby_demo_item gatsby_demo_preview" data-name="2020 euroricambi collapse" data-inline="vanilla/demos/animation/2020-euroricambi-collapse">
+  <script type="text/plain" data-lang="html">
+<div class="list list-default list-space-small align-items-center demo--2020-euroricambi-collapse">
+
+  <div class="drop-container" data-xt-drop="{ targetsInner: ':scope > .drop-inner' }">
+    <button type="button" class="btn btn-primary">
+      drop
+    </button>
+    <div class="drop drop-default">
+      <div class="drop-inner">
+        <div class="drop-design"></div>
+        <div class="drop-content">
+          <ul class="list list-drop">
+            <li>
+              <button type="button">
+                Lorem ipsum dolor
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                Dolor sit
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                Amet
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="drop-container" data-xt-drop="{ targetsInner: ':scope > .drop-inner' }">
+    <button type="button" class="btn btn-primary">
+      drop card
+    </button>
+    <div class="drop drop-default">
+      <div class="drop-inner">
+        <div class="drop-design"></div>
+        <div class="drop-content">
+
+          <div class="card card-drop">
+            <div class="card-design"></div>
+            <div class="btn btn-close" aria-label="Close"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-block card-item">
+                  <div class="card-title">Primary</div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+                  <a href="#" class="btn btn-primary">
+                    Button
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-xt-overlay>
+    <button type="button" class="btn btn-primary">
+      overlay
+    </button>
+    <div class="overlay demo--2020-euroricambi-collapse">
+      <div class="overlay-container">
+        <div class="overlay-inner">
+
+          <div class="card card-overlay">
+            <div class="card-design"></div>
+            <div class="btn btn-close" aria-label="Close"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-block card-item">
+                  <div class="card-title">Lorem ipsum</div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                    ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                  <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                    justo.</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                    ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                  <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                    justo.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-xt-overlay>
+    <button type="button" class="btn btn-primary">
+      overlay screen
+    </button>
+    <div class="overlay overlay-screen demo--2020-euroricambi-collapse">
+      <div class="overlay-container">
+        <div class="overlay-inner">
+
+            <div class="card card-overlay">
+              <div class="card-design"></div>
+              <div class="btn btn-close" aria-label="Close"></div>
+              <div class="card-inner">
+                <div class="card-content">
+                  <div class="card-asset">
+                    <div class="media-container" style="padding-bottom:100%"><div class="media-inner"><img class="media media-cover" src="/img.svg" alt="" loading="lazy"/></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-xt-overlay>
+    <button type="button" class="btn btn-primary">
+      overlay position
+    </button>
+    <div class="overlay overlay-position overlay-position-left demo--2020-euroricambi-collapse">
+      <div class="overlay-container">
+        <div class="overlay-inner">
+
+          <div class="card card-overlay">
+            <div class="card-design"></div>
+            <div class="btn btn-close" aria-label="Close"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-block card-item">
+                  <div class="card-title">Lorem ipsum</div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                    ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                  <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                    justo.</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                    ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                  <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                    justo.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form class="form-default form-small flex-full"
+        data-xt-toggle="{ elements: '.form-group > .btn', targets: '.group' }">
+    <div class="form-group form-group-last">
+      <button type="button" class="btn btn-primary">
+        group
+      </button>
+      <div class="group group-default">
+        <div class="group-inner">
+          <button type="button" class="btn btn-default btn-large">
+            ipsum
+          </button>
+        </div>
+        <div class="group-inner">
+          <input type="text" class="form-item" />
+        </div>
+      </div>
+    </button>
+  </form>
+
+</div>
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div><div class="gatsby_demo_source xt-ignore" data-lang="less">@import (reference) '~xtend-library/src/xtend-core.less';
+@import '~xtend-library/src/core/drop/drop.less';
+@import '~xtend-library/src/core/overlay/overlay.less';
+@import '~xtend-library/src/addons/overlay/position.less';
+@import '~xtend-library/src/addons/overlay/screen.less';
+
+.demo--2020-euroricambi-collapse {
+  /**
+   * drop
+   */
+
+  .drop-default {
+    > .drop-inner {
+      box-shadow: @shadow-light;
+      > .drop-design {
+        box-shadow: none;
+      }
+    }
+  }
+
+  .drop-primary {
+    > .drop-inner {
+      box-shadow: @shadow-dark;
+      > .drop-design {
+        box-shadow: none;
+      }
+    }
+  }
+
+  // animation
+
+  .drop-container {
+    > .drop {
+      > .drop-inner {
+        .collapse-height();
+        opacity: 0;
+        transform: translateY(-1rem);
+        > .drop-content {
+          opacity: 0;
+          transform: translateY(-1.5rem);
+        }
+      }
+    }
+    &.in {
+      animation-duration: @time-medium; // needed for animation time and backdrop animation time, put max animation time
+      > .drop {
+        > .drop-inner {
+          opacity: 1;
+          transform: none;
+          transition: height @time-medium @ease-on, transform @time-medium @ease-on, opacity @time-tiny @ease-on;
+          > .drop-content {
+            opacity: 1;
+            transform: none;
+            transition: transform @time-medium @ease-on, opacity @time-medium @ease-on;
+          }
+        }
+      }
+    }
+    &.out {
+      animation-duration: @time-small; // needed for animation time and backdrop animation time, put max animation time
+      > .drop {
+        > .drop-inner {
+          opacity: 0;
+          transform: translateY(1rem);
+          transition: height @time-small @ease-off, transform @time-small @ease-off, opacity @time-tiny @ease-off @time-tiny;
+          > .drop-content {
+            opacity: 0;
+            transform: translateY(1.5rem);
+            transition: transform @time-small @ease-off, opacity @time-small @ease-off;
+          }
+        }
+      }
+    }
+  }
+
+  /**
+    * overlay
+    */
+
+  // animation
+
+  .overlay& {
+    .collapse-height();
+    .card-overlay {
+      > .card-design {
+        opacity: 0;
+        transform: translateY(-2rem);
+      }
+      > .btn-close {
+        opacity: 0;
+      }
+      > .card-inner {
+        > .card-block,  > .card-content {
+          opacity: 0;
+          transform: translateY(-2.5rem);
+        }
+      }
+    }
+    &.in {
+      animation-duration: @time-medium; // needed for animation time and backdrop animation time, put max animation time
+      transition: height @time-medium @ease-on;
+      .card-overlay {
+        > .card-design {
+          opacity: 1;
+          transform: none;
+          transition: transform @time-medium @ease-on, opacity @time-tiny @ease-on;
+        }
+        > .btn-close {
+          // use animation to not override .btn transitions
+          .anim-zoom.in();
+          animation-delay: @time-medium;
+        }
+        > .card-inner {
+          > .card-block,  > .card-content {
+            opacity: 1;
+            transform: none;
+            transition: transform @time-medium @ease-on, opacity @time-tiny @ease-on;
+          }
+        }
+      }
+    }
+    &.out {
+      animation-duration: @time-small; // needed for animation time and backdrop animation time, put max animation time
+      transition: height @time-small @ease-off, width @time-small @ease-off;
+      .card-overlay {
+        > .card-design {
+          opacity: 0;
+          transform: translateY(2rem);
+          transition: transform @time-small @ease-off, opacity @time-tiny @ease-off @time-tiny;
+        }
+        > .btn-close {
+          // use animation to not override .btn transitions
+          .anim-zoom.out();
+          animation-delay: initial;
+        }
+        > .card-inner {
+          > .card-block,  > .card-content {
+            opacity: 0;
+            transform: translateY(2.5rem);
+            transition: transform @time-small @ease-off, opacity @time-tiny @ease-off @time-tiny;
+          }
+        }
+      }
+    }
+  }
+
+  /**
+   * group
+   */
+
+  .group {
+    .collapse-width();
+  }
+}
+</div><div class="gatsby_demo_source xt-ignore" data-lang="js">import { Xt } from 'xtend-library'
+import 'xtend-library/src/core/drop/drop.js'
+import 'xtend-library/src/core/overlay/overlay.js'
+</div></div>
+  <div class="gatsby_demo_item" data-iframe="iframe/demos/animation/2020-bertani-listing">
+  </div>
+</div>
+<div class="gatsby_demo">
+  <div class="gatsby_demo_item gatsby_demo_preview" data-name="timing delay fnc" data-inline="vanilla/components/toggle/timing-delay-fnc">
+  <script type="text/plain" data-lang="html">
+<div class="list list-default list-space-small align-items-center demo--toggle-timing-delay-fnc">
+  <button type="button" class="btn btn-default">
+    Toggle 0
+  </button>
+  <button type="button" class="btn btn-default" data-xt-group="0">
+    Group 0
+  </button>
+  <button type="button" class="btn btn-default" data-xt-group="1">
+    Group 1
+  </button>
+  <div class="note note-default note-background toggle-block">
+    Target 0
+  </div>
+  <div class="note note-default note-background toggle-block" data-xt-group="0">
+    Group 0a
+  </div>
+  <div class="note note-default note-background toggle-block" data-xt-group="1">
+    Group 1a
+  </div>
+  <div class="note note-default note-background toggle-block" data-xt-group="0">
+    Group 0b
+  </div>
+  <div class="note note-default note-background toggle-block" data-xt-group="1">
+    Group 1b
+  </div>
+  <div class="note note-default note-background toggle-block" data-xt-group="0">
+    Group 0c
+  </div>
+  <div class="note note-default note-background toggle-block" data-xt-group="1">
+    Group 1c
+  </div>
+</div>
+
+<br>
+
+<div class="list list-default list-space-small align-items-center demo--toggle-timing-delay-fnc--hover">
+  <button type="button" class="btn btn-default">
+    Toggle 0
+  </button>
+  <button type="button" class="btn btn-default" data-xt-group="0">
+    Group 0
+  </button>
+  <button type="button" class="btn btn-default" data-xt-group="1">
+    Group 1
+  </button>
+  <div class="note note-default note-background toggle-block">
+    Target 0
+  </div>
+  <div class="note note-default note-background toggle-block" data-xt-group="0">
+    Group 0a
+  </div>
+  <div class="note note-default note-background toggle-block" data-xt-group="1">
+    Group 1a
+  </div>
+  <div class="note note-default note-background toggle-block" data-xt-group="0">
+    Group 0b
+  </div>
+  <div class="note note-default note-background toggle-block" data-xt-group="1">
+    Group 1b
+  </div>
+  <div class="note note-default note-background toggle-block" data-xt-group="0">
+    Group 0c
+  </div>
+  <div class="note note-default note-background toggle-block" data-xt-group="1">
+    Group 1c
+  </div>
+</div>
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div><div class="gatsby_demo_source xt-ignore" data-lang="js">import { Xt } from 'xtend-library'
+
+Xt.mount.push({
+  matches: '.demo--toggle-timing-delay-fnc',
+  mount: object => {
+    // init
+
+    let self = new Xt.Toggle(object, {
+      delayOn: current => {
+        return Math.min(current * 150, 300)
+      },
+      delayOff: (current, total) => {
+        return Math.min((total - current) * 150, 300)
+      },
+    })
+
+    // unmount
+
+    const unmount = () => {
+      self.destroy()
+      self = null
+    }
+    return unmount
+  },
+})
+
+Xt.mount.push({
+  matches: '.demo--toggle-timing-delay-fnc--hover',
+  mount: object => {
+    // init
+
+    let self = new Xt.Toggle(object, {
+      on: 'mouseenter',
+      off: 'mouseleave',
+      delayOn: current => {
+        return Math.min(current * 150, 300)
+      },
+      delayOff: (current, total) => {
+        return Math.min((total - current) * 150, 300)
+      },
+    })
+
+    // unmount
+
+    const unmount = () => {
+      self.destroy()
+      self = null
+    }
+    return unmount
+  },
+})
+</div></div>
+</div>
+  
 <div class="gatsby_demo">
   <div class="gatsby_demo_item gatsby_demo_preview" data-name="toggle js" data-inline="vanilla/components/slider/toggle-js">
   <script type="text/plain" data-lang="html">
@@ -1159,426 +2466,7 @@ Xt.mount.push({
 </div></div>
 </div>
 <div class="gatsby_demo">
-  <div class="gatsby_demo_item gatsby_demo_preview" data-name="variant" data-inline="vanilla/components/drop/variant">
-  <script type="text/plain" data-lang="html">
-<div class="list list-default list-space-small align-items-center">
-
-  <div class="drop-container" data-xt-drop>
-    <button type="button" class="btn btn-primary">
-      default
-    </button>
-    <div class="drop drop-default">
-      <div class="drop-inner">
-        <div class="drop-design"></div>
-        <div class="drop-content">
-          <ul class="list list-drop">
-            <li>
-              <button type="button">
-                Lorem ipsum dolor
-              </button>
-            </li>
-            <li>
-              <button type="button">
-                Dolor sit
-              </button>
-            </li>
-            <li>
-              <button type="button">
-                Amet
-              </button>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="drop-container" data-xt-drop>
-    <button type="button" class="btn btn-primary">
-      primary
-    </button>
-    <div class="drop drop-primary">
-      <div class="drop-inner">
-        <div class="drop-design"></div>
-        <div class="drop-content">
-          <ul class="list list-drop">
-            <li>
-              <button type="button">
-                Lorem ipsum dolor
-              </button>
-            </li>
-            <li>
-              <button type="button">
-                Dolor sit
-              </button>
-            </li>
-            <li>
-              <button type="button">
-                Amet
-              </button>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</div>
-</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
-  <div class="gatsby_demo_item gatsby_demo_preview" data-name="event" data-inline="vanilla/components/drop/event">
-  <script type="text/plain" data-lang="html">
-<div class="list list-default list-space-small align-items-center">
-
-  <div class="drop-container" data-xt-drop="{ on: 'mouseenter', off: 'mouseleave', closeOutside: false }">
-    <button type="button" class="btn btn-primary">
-      mouseenter
-    </button>
-    <div class="drop drop-default">
-      <div class="drop-inner">
-        <div class="drop-design"></div>
-        <div class="drop-content">
-          <ul class="list list-drop">
-            <li>
-              <button type="button">
-                Lorem ipsum dolor
-              </button>
-            </li>
-            <li>
-              <button type="button">
-                Dolor sit
-              </button>
-            </li>
-            <li>
-              <button type="button">
-                Amet
-              </button>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</div>
-</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
-  <div class="gatsby_demo_item gatsby_demo_preview" data-name="backdrop" data-inline="vanilla/components/drop/backdrop">
-  <script type="text/plain" data-lang="html">
-<div class="list list-default list-space-small align-items-center">
-
-  <div class="drop-container" data-xt-drop="{ backdrop: true }">
-    <button type="button" class="btn btn-primary">
-      bottom left
-    </button>
-    <div class="drop drop-default drop-bottom drop-left">
-      <div class="drop-inner">
-        <div class="drop-design"></div>
-        <div class="drop-content">
-          <ul class="list list-drop">
-            <li>
-              <button type="button">
-                Lorem ipsum dolor
-              </button>
-            </li>
-            <li>
-              <button type="button">
-                Dolor sit
-              </button>
-            </li>
-            <li>
-              <button type="button">
-                Amet
-              </button>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="drop-container" data-xt-drop="{ on: 'mouseenter', off: 'mouseleave', backdrop: true }">
-    <button type="button" class="btn btn-primary">
-      mouseenter
-    </button>
-    <div class="drop drop-default drop-bottom drop-left">
-      <div class="drop-inner">
-        <div class="drop-design"></div>
-        <div class="drop-content">
-          <ul class="list list-drop">
-            <li>
-              <button type="button">
-                Lorem ipsum dolor
-              </button>
-            </li>
-            <li>
-              <button type="button">
-                Dolor sit
-              </button>
-            </li>
-            <li>
-              <button type="button">
-                Amet
-              </button>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</div>
-</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
-  <div class="gatsby_demo_item gatsby_demo_preview" data-name="nested" data-inline="vanilla/components/overlay/nested">
-  <script type="text/plain" data-lang="html">
-<button type="button" class="btn btn-primary" id="overlay-nested-toggle">
-  Toggle with API
-</button>
-
-<div class="overlay overlay-large" id="overlay-nested"
-  data-xt-overlay="{ on: false, instant: false }">
-  <div class="overlay-container">
-    <div class="overlay-inner">
-
-      <div class="card card-overlay">
-        <div class="card-design"></div>
-        <div class="card-inner">
-          <div class="btn btn-close" aria-label="Close"></div>
-          <div class="card-content">
-            <div class="card-block card-item">
-              <div class="card-title">Lorem ipsum</div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
-                ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
-              <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
-                justo.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
-                ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
-              <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
-                justo.</p>
-
-              <div data-xt-overlay>
-                <button type="button" class="btn btn-primary">
-                  Toggle
-                </button>
-                <div class="overlay overlay-small">
-                  <div class="overlay-container">
-                    <div class="overlay-inner">
-
-                      <div class="card card-overlay">
-                        <div class="card-design"></div>
-                        <div class="card-inner">
-                          <div class="btn btn-close" aria-label="Close"></div>
-                          <div class="card-content">
-                            <div class="card-block card-item">
-                              <div class="card-title">Lorem ipsum</div>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
-                                ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
-                              <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
-                                justo.</p>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
-                                ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
-                              <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
-                                justo.</p>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
-                                ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
-                              <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
-                                justo.</p>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
-                                ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
-                              <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
-                                justo.</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
-                                  ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
-                                <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
-                                  justo.</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
-                                  ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
-                                <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
-                                  justo.</p>
-                              <div class="drop-container" data-xt-drop="{ backdrop: true }">
-                                <button type="button" class="btn btn-primary">
-                                  drop backdrop
-                                </button>
-                                <div class="drop drop-default drop-bottom drop-left">
-                                  <div class="drop-inner">
-                                    <div class="drop-design"></div>
-                                    <div class="drop-content">
-                                      <ul class="list list-drop">
-                                        <li>
-                                          <button type="button" class="btn btn-default">
-                                            Lorem ipsum dolor
-                                          </button>
-                                        </li>
-                                        <li>
-                                          <button type="button" class="btn btn-default">
-                                            Dolor sit
-                                          </button>
-                                        </li>
-                                        <li>
-                                          <button type="button" class="btn btn-default">
-                                            Amet
-                                          </button>
-                                        </li>
-                                      </ul>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div><div class="gatsby_demo_source xt-ignore" data-lang="js">import { Xt } from 'xtend-library'
-
-Xt.mount.push({
-  matches: '#overlay-nested-toggle',
-  mount: object => {
-    // event
-
-    function click() {
-      document.querySelector('#overlay-nested').dispatchEvent(new CustomEvent('on.trigger.xt'))
-    }
-
-    object.addEventListener('click', click)
-  },
-})
-</div></div>
-  <div class="gatsby_demo_item gatsby_demo_preview" data-name="timing delay fnc" data-inline="vanilla/components/toggle/timing-delay-fnc">
-  <script type="text/plain" data-lang="html">
-<div class="list list-default list-space-small align-items-center demo--toggle-timing-delay-fnc">
-  <button type="button" class="btn btn-default">
-    Toggle 0
-  </button>
-  <button type="button" class="btn btn-default" data-xt-group="0">
-    Group 0
-  </button>
-  <button type="button" class="btn btn-default" data-xt-group="1">
-    Group 1
-  </button>
-  <div class="note note-default note-background toggle-block">
-    Target 0
-  </div>
-  <div class="note note-default note-background toggle-block" data-xt-group="0">
-    Group 0a
-  </div>
-  <div class="note note-default note-background toggle-block" data-xt-group="1">
-    Group 1a
-  </div>
-  <div class="note note-default note-background toggle-block" data-xt-group="0">
-    Group 0b
-  </div>
-  <div class="note note-default note-background toggle-block" data-xt-group="1">
-    Group 1b
-  </div>
-  <div class="note note-default note-background toggle-block" data-xt-group="0">
-    Group 0c
-  </div>
-  <div class="note note-default note-background toggle-block" data-xt-group="1">
-    Group 1c
-  </div>
-</div>
-
-<br>
-
-<div class="list list-default list-space-small align-items-center demo--toggle-timing-delay-fnc--hover">
-  <button type="button" class="btn btn-default">
-    Toggle 0
-  </button>
-  <button type="button" class="btn btn-default" data-xt-group="0">
-    Group 0
-  </button>
-  <button type="button" class="btn btn-default" data-xt-group="1">
-    Group 1
-  </button>
-  <div class="note note-default note-background toggle-block">
-    Target 0
-  </div>
-  <div class="note note-default note-background toggle-block" data-xt-group="0">
-    Group 0a
-  </div>
-  <div class="note note-default note-background toggle-block" data-xt-group="1">
-    Group 1a
-  </div>
-  <div class="note note-default note-background toggle-block" data-xt-group="0">
-    Group 0b
-  </div>
-  <div class="note note-default note-background toggle-block" data-xt-group="1">
-    Group 1b
-  </div>
-  <div class="note note-default note-background toggle-block" data-xt-group="0">
-    Group 0c
-  </div>
-  <div class="note note-default note-background toggle-block" data-xt-group="1">
-    Group 1c
-  </div>
-</div>
-</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div><div class="gatsby_demo_source xt-ignore" data-lang="js">import { Xt } from 'xtend-library'
-
-Xt.mount.push({
-  matches: '.demo--toggle-timing-delay-fnc',
-  mount: object => {
-    // init
-
-    let self = new Xt.Toggle(object, {
-      delayOn: current => {
-        return Math.min(current * 150, 300)
-      },
-      delayOff: (current, total) => {
-        return Math.min((total - current) * 150, 300)
-      },
-    })
-
-    // unmount
-
-    const unmount = () => {
-      self.destroy()
-      self = null
-    }
-    return unmount
-  },
-})
-
-Xt.mount.push({
-  matches: '.demo--toggle-timing-delay-fnc--hover',
-  mount: object => {
-    // init
-
-    let self = new Xt.Toggle(object, {
-      on: 'mouseenter',
-      off: 'mouseleave',
-      delayOn: current => {
-        return Math.min(current * 150, 300)
-      },
-      delayOff: (current, total) => {
-        return Math.min((total - current) * 150, 300)
-      },
-    })
-
-    // unmount
-
-    const unmount = () => {
-      self.destroy()
-      self = null
-    }
-    return unmount
-  },
-})
-</div></div>
-</div>
-<div class="gatsby_demo">
-  <div class="gatsby_demo_item gatsby_demo_preview" data-name="2020 euroricambi slider" data-inline="vanilla/themes/slider/2020-euroricambi-slider">
+  <div class="gatsby_demo_item gatsby_demo_preview" data-name="2020 euroricambi slider" data-inline="vanilla/demos/slider/2020-euroricambi-slider">
   <script type="text/plain" data-lang="html">
 <div class="slider demo--2020-euroricambi-slider">
 
@@ -1888,7 +2776,6 @@ Xt.mount.push({
 @import '~xtend-library/src/extensions/slider/slider.less';
 
 .demo--2020-euroricambi-slider {
-  .padding(y, medium);
   .slides-inner {
     overflow: hidden;
     .transition-none() !important;
@@ -1997,7 +2884,7 @@ Xt.mount.push({
     left: 0;
     right: 0;
     bottom: 0;
-    background: @shade-300;
+    background: @shade-200;
   }
   .slider_imgs--desktop {
     > .row {
@@ -2076,25 +2963,25 @@ Xt.mount.push({
     // drag
 
     const eventDrag = () => {
-      const tr = self.targets.filter(x => self.hasCurrent(x))[0]
-      const ratio = Math.abs(self.detail.dragStart - self.detail.dragCurrent) / tr.clientWidth
+      const target = self.targets.filter(x => self.hasCurrent(x))[0]
+      const ratio = Math.abs(self.detail.dragStart - self.detail.dragCurrent) / target.clientWidth
       // assetMask
-      const assetMasks = tr.querySelectorAll('.slider_img .media-container')
+      const assetMasks = target.querySelectorAll('.slider_img .media-container')
       for (const assetMask of assetMasks) {
         const xMax = assetMask.clientWidth
-        const xFull = tr.clientWidth
+        const xFull = target.clientWidth
         const xCurrent = (xMax * self.detail.dragPos) / xFull
         gsap.set(assetMask, { x: xCurrent })
         const assetMaskInner = assetMask.querySelector('.media-inner')
         gsap.set(assetMaskInner, { x: -xCurrent, opacity: 1 })
       }
       // assetBackground
-      const assetBackgrounds = tr.querySelectorAll('.slider_img_background')
+      const assetBackgrounds = target.querySelectorAll('.slider_img_background')
       for (const assetBackground of assetBackgrounds) {
         gsap.set(assetBackground, { opacity: 1 - ratio })
       }
       // cardContent
-      const cardContents = tr.querySelectorAll('.slider_card .card-item')
+      const cardContents = target.querySelectorAll('.slider_card .card-item')
       for (const cardContent of cardContents) {
         gsap.set(cardContent, { x: -cardContentX * ratio * self.direction, opacity: 1 - ratio })
       }
@@ -2105,12 +2992,12 @@ Xt.mount.push({
     // dragreset
 
     const eventDragReset = () => {
-      const tr = self.targets.filter(x => self.hasCurrent(x))[0]
+      const target = self.targets.filter(x => self.hasCurrent(x))[0]
       // assetMask
-      const assetMasks = tr.querySelectorAll('.slider_img .media-container')
+      const assetMasks = target.querySelectorAll('.slider_img .media-container')
       for (const assetMask of assetMasks) {
         const xMax = assetMask.clientWidth
-        const xFull = tr.clientWidth
+        const xFull = target.clientWidth
         const xCurrent = (xMax * self.detail.dragPosOld) / xFull
         gsap.set(assetMask, { x: xCurrent })
         gsap.to(assetMask, { x: 0, duration: assetMaskTimeOn, ease: assetMaskEaseOn })
@@ -2119,12 +3006,12 @@ Xt.mount.push({
         gsap.to(assetMaskInner, { x: 0, opacity: 1, duration: assetMaskTimeOn, ease: assetMaskEaseOn })
       }
       // asset
-      const assets = tr.querySelectorAll('.slider_img img')
+      const assets = target.querySelectorAll('.slider_img img')
       for (const asset of assets) {
         gsap.to(asset, { scale: 1, duration: assetTimeOn, ease: assetEaseOn })
       }
       // cardContent
-      const cardContents = tr.querySelectorAll('.slider_card .card-item')
+      const cardContents = target.querySelectorAll('.slider_card .card-item')
       for (const cardContent of cardContents) {
         gsap.to(cardContent, { x: 0, opacity: 1, duration: cardContentTimeOn, ease: cardContentEaseOn })
       }
@@ -2135,12 +3022,12 @@ Xt.mount.push({
     // on
 
     const eventOn = e => {
-      const tr = e.target
+      const target = e.target
       // useCapture delegation
-      if (self.targets.includes(tr)) {
+      if (self.targets.includes(target)) {
         if (self.initial) {
           // assetMask
-          const assetMasks = tr.querySelectorAll('.slider_img .media-container')
+          const assetMasks = target.querySelectorAll('.slider_img .media-container')
           for (const assetMask of assetMasks) {
             gsap.killTweensOf(assetMask)
             gsap.set(assetMask, { x: 0 })
@@ -2149,20 +3036,20 @@ Xt.mount.push({
             gsap.set(assetMaskInner, { x: 0, opacity: 1 })
           }
           // asset
-          const assets = tr.querySelectorAll('.slider_img img')
+          const assets = target.querySelectorAll('.slider_img img')
           for (const asset of assets) {
             gsap.killTweensOf(asset)
             gsap.set(asset, { scale: 1 })
           }
           // cardContent
-          const cardContents = tr.querySelectorAll('.slider_card .card-item')
+          const cardContents = target.querySelectorAll('.slider_card .card-item')
           for (const cardContent of cardContents) {
             gsap.killTweensOf(cardContent)
             gsap.set(cardContent, { x: 0, opacity: 1 })
           }
         } else {
           // assetMask
-          const assetMasks = tr.querySelectorAll('.slider_img .media-container')
+          const assetMasks = target.querySelectorAll('.slider_img .media-container')
           for (const assetMask of assetMasks) {
             gsap.set(assetMask, { x: 100 * self.direction + '%' })
             gsap.to(assetMask, { x: 0, duration: assetMaskTimeOn, ease: assetMaskEaseOn, delay: fixDelayOn })
@@ -2171,19 +3058,19 @@ Xt.mount.push({
             gsap.to(assetMaskInner, { x: 0, opacity: 1, duration: assetMaskTimeOn, ease: assetMaskEaseOn, delay: fixDelayOn })
           }
           // asset
-          const assets = tr.querySelectorAll('.slider_img img')
+          const assets = target.querySelectorAll('.slider_img img')
           for (const asset of assets) {
             gsap.set(asset, { scale: 1 + assetZoom })
             gsap.to(asset, { scale: 1, duration: assetTimeOn, ease: assetEaseOn, delay: fixDelayOn })
           }
           // cardContent
-          const cardContents = tr.querySelectorAll('.slider_card .card-item')
+          const cardContents = target.querySelectorAll('.slider_card .card-item')
           for (const cardContent of cardContents) {
             gsap.set(cardContent, { x: cardContentX * self.direction, opacity: 0 })
             gsap.to(cardContent, { x: 0, opacity: 1, duration: cardContentTimeOn, ease: cardContentEaseOn, delay: fixDelayOn })
           }
           // card
-          const card = tr.querySelector('.slider_card > .card')
+          const card = target.querySelector('.slider_card > .card')
           const cardHeight = card.clientHeight
           gsap.set(card, { height: Xt.dataStorage.get(self.object, 'cardHeight') || cardHeight })
           gsap.to(card, { height: cardHeight, duration: cardTimeOn, ease: cardEaseOn, delay: fixDelayOn })
@@ -2196,28 +3083,28 @@ Xt.mount.push({
     // off
 
     const eventOff = e => {
-      const tr = e.target
+      const target = e.target
       // useCapture delegation
-      if (self.targets.includes(tr)) {
+      if (self.targets.includes(target)) {
         // assetMask
-        const assetMasks = tr.querySelectorAll('.slider_img .media-container')
+        const assetMasks = target.querySelectorAll('.slider_img .media-container')
         for (const assetMask of assetMasks) {
           gsap.to(assetMask, { x: -100 * self.direction + '%', duration: assetMaskTimeOff, ease: assetMaskEaseOff })
           const assetMaskInner = assetMask.querySelector('.media-inner')
           gsap.to(assetMaskInner, { x: 100 * self.direction + '%', opacity: 0, duration: assetMaskTimeOff, ease: assetMaskEaseOff })
         }
         // asset
-        const assets = tr.querySelectorAll('.slider_img img')
+        const assets = target.querySelectorAll('.slider_img img')
         for (const asset of assets) {
           gsap.to(asset, { scale: 1, duration: assetTimeOff, ease: assetEaseOff })
         }
         // cardContent
-        const cardContents = tr.querySelectorAll('.slider_card .card-item')
+        const cardContents = target.querySelectorAll('.slider_card .card-item')
         for (const cardContent of cardContents) {
           gsap.to(cardContent, { x: -cardContentX * self.direction, opacity: 0, duration: cardContentTimeOff, ease: cardContentEaseOff })
         }
         // card
-        const card = tr.querySelector('.slider_card > .card')
+        const card = target.querySelector('.slider_card > .card')
         gsap.set(card, { height: '' })
         Xt.dataStorage.set(self.object, 'cardHeight', card.clientHeight)
       }
@@ -2272,7 +3159,7 @@ Xt.mount.push({
   },
 })
 </div></div>
-  <div class="gatsby_demo_item gatsby_demo_preview" data-name="2019 sun68 slider" data-inline="vanilla/themes/slider/2019-sun68-slider">
+  <div class="gatsby_demo_item gatsby_demo_preview" data-name="2019 sun68 slider" data-inline="vanilla/demos/slider/2019-sun68-slider">
   <script type="text/plain" data-lang="html">
 <div class="slider demo--2019-sun68-slider">
 
@@ -2533,6 +3420,368 @@ Xt.mount.push({
 })
 </div></div>
 </div>
+<div class="gatsby_demo">
+  <div class="gatsby_demo_item gatsby_demo_preview" data-name="test card content" data-inline="vanilla/components/test/test-card-content">
+  <script type="text/plain" data-lang="html">
+<div class="row row-default">
+  <div class="col-12">
+    <div class="card card-primary card-large">
+      <div class="card-design"></div>
+      <div class="card-inner">
+        <div class="card-content">
+          <div class="card-block card-block-head">
+            <div class="card-title">Lorem ipsum</div>
+          </div>
+          <div class="card-item-nested card-item card-group">
+            <div class="card-block card-item">
+              <div class="card-title">Lorem ipsum</div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+            </div>
+            <div class="card-block card-item">
+              <div class="card-title">Lorem ipsum</div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+            </div>
+          </div>
+          <div class="card-block card-item">
+            <div class="card-title">Lorem ipsum</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+          </div>
+          <div class="card-item-nested card-item card-group">
+            <div class="card-block card-item">
+              <div class="card-title">Lorem ipsum</div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+            </div>
+            <div class="card-block card-item">
+              <div class="card-title">Lorem ipsum</div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+            </div>
+          </div>
+          <div class="card-asset">
+            <div class="media-container" style="padding-bottom:37.5%"><div class="media-inner"><img class="media media-cover" src="/img.svg" alt="" loading="lazy"/></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
+  <div class="gatsby_demo_item gatsby_demo_preview" data-name="test overlay content" data-inline="vanilla/components/test/test-overlay-content">
+  <script type="text/plain" data-lang="html">
+<div class="list list-default list-space-small align-items-center">
+
+  <div data-xt-overlay>
+    <button type="button" class="btn btn-primary">
+      variant and size
+    </button>
+    <div class="overlay">
+      <div class="overlay-container">
+        <div class="overlay-inner">
+
+          <div class="card card-overlay card-primary card-small">
+            <div class="card-design"></div>
+            <div class="btn btn-close" aria-label="Close"></div>
+            <div class="card-inner">
+
+              <div class="card-content">
+
+                <div class="card-block card-block-head">
+                  <div class="card-title">Lorem ipsum</div>
+                </div>
+
+                <div class="card-item-nested card-item card-group">
+
+                  <div class="card-block card-item">
+                    <div class="card-title">Lorem ipsum</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+                  </div>
+
+                  <div class="card-block card-item">
+                    <div class="card-title">Lorem ipsum</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+                  </div>
+
+                </div>
+
+                <div class="card-block card-item">
+                  <div class="card-title">Lorem ipsum</div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+                </div>
+
+                <div class="card-item-nested card-item card-group">
+
+                  <div class="card-block card-item">
+                    <div class="card-title">Lorem ipsum</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+                  </div>
+
+                  <div class="card-block card-item">
+                    <div class="card-title">Lorem ipsum</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+                  </div>
+
+                  <div class="card-asset">
+                    <div class="media-container" style="padding-bottom:37.5%"><div class="media-inner"><img class="media media-cover" src="/img.svg" alt="" loading="lazy"/></div></div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-xt-overlay>
+    <button type="button" class="btn btn-primary">
+      nested and collapse
+    </button>
+    <div class="overlay">
+      <div class="overlay-container">
+        <div class="overlay-inner">
+
+          <div class="card card-overlay card-primary card-small card-collapse">
+            <div class="card-design"></div>
+            <div class="btn btn-close" aria-label="Close"></div>
+            <div class="card-inner">
+
+              <div class="card-block card-block-head">
+                <div class="card-title">Lorem ipsum</div>
+              </div>
+
+              <div class="card-content">
+
+                <div class="card-item-nested card-item card-group">
+                  <div class="card-block card-item">
+                    <div class="card-title">Lorem ipsum</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+                  </div>
+                  <div class="card-block card-item">
+                    <div class="card-title">Lorem ipsum</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+                  </div>
+                </div>
+
+                <div class="card-block card-item">
+                  <div class="card-title">Default</div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+                </div>
+
+                <div class="card-block card-item">
+                  <div class="card-title">Default</div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+                </div>
+
+                <div class="card-block card-item">
+                  <div class="card card-default card-medium">
+                    <div class="card-design"></div>
+                    <div class="btn btn-close" aria-label="Close"></div>
+                    <div class="card-inner">
+                      <div class="card-content">
+                        <div class="card-block card-item">
+                          <div class="card-title">Lorem Ipsum</div>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+                        </div>
+                        <div class="card-block card-item">
+                          <div class="card-title">Lorem Ipsum</div>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card-block card-item">
+                  <div class="card card-default card-white card-large">
+                    <div class="card-design"></div>
+                    <div class="btn btn-close" aria-label="Close"></div>
+                    <div class="card-inner">
+                      <div class="card-content">
+                        <div class="card-item-nested card-item card-group">
+                          <div class="card-block card-item">
+                            <div class="card-title">Lorem ipsum</div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+                          </div>
+                          <div class="card-block card-item">
+                            <div class="card-title">Lorem ipsum</div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="card-asset">
+                <div class="media-container" style="padding-bottom:37.5%"><div class="media-inner"><img class="media media-cover" src="/img.svg" alt="" loading="lazy"/></div></div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-xt-overlay>
+    <button type="button" class="btn btn-primary">
+      horizontal and overflow
+    </button>
+    <div class="overlay overlay-full">
+      <div class="overlay-container">
+        <div class="overlay-inner">
+
+          <div class="card card-overlay card-horizontal-sm">
+            <div class="card-design"></div>
+            <div class="btn btn-close" aria-label="Close"></div>
+            <div class="card-inner">
+              <div class="card-content">
+
+                <div class="card-asset">
+                  <div class="media-container" style="padding-bottom:37.5%"><div class="media-inner"><img class="media media-cover" src="/img.svg" alt="" loading="lazy"/></div></div>
+                </div>
+
+                <div class="card-block card-item card-overflow-y">
+                  <div class="card-title">Lorem ipsum</div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+                </div>
+
+                <div class="card-block card-item card-overflow-y">
+                  <div class="card-title">Lorem ipsum</div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
+  <div class="gatsby_demo_item gatsby_demo_preview" data-name="test slider content" data-inline="vanilla/components/test/test-slider-content">
+  <script type="text/plain" data-lang="html">
+<div class="slider"
+     data-xt-slider="{ align: 'center' }">
+
+  <div class="slides">
+    <ul class="slides-inner">
+
+      <li class="slide col-12">
+        <div class="slide-inner">
+
+          <div class="card card-slide card-primary card-small align-center">
+            <div class="card-design"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-block card-item">
+                  <div class="card-title">1</h1>
+                </div>
+
+                <div class="card-block card-item">
+                  <div class="card card-default card-medium">
+                    <div class="card-design"></div>
+                    <div class="btn btn-close" aria-label="Close"></div>
+                    <div class="card-inner">
+                      <div class="card-content">
+                        <div class="card-block card-item">
+                          <div class="card-title">Lorem Ipsum</div>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+                        </div>
+                        <div class="card-block card-item">
+                          <div class="card-title">Lorem Ipsum</div>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card-block card-item">
+                  <div class="card card-default card-white card-large">
+                    <div class="card-design"></div>
+                    <div class="btn btn-close" aria-label="Close"></div>
+                    <div class="card-inner">
+                      <div class="card-content">
+                        <div class="card-item-nested card-item card-group">
+                          <div class="card-block card-item">
+                            <div class="card-title">Lorem ipsum</div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+                          </div>
+                          <div class="card-block card-item">
+                            <div class="card-title">Lorem ipsum</div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </li>
+
+      <li class="slide col-6 col-4-sm">
+        <div class="slide-inner">
+
+          <div class="card card-slide card-primary card-large align-center">
+            <div class="card-design"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-block card-item">
+                  <div class="card-title">2</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </li>
+
+      <li class="slide col-6 col-4-sm">
+        <div class="slide-inner">
+
+          <div class="card card-slide card-primary card-large align-center">
+            <div class="card-design"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-block card-item">
+                  <div class="card-title">3</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
+  <nav class="slider-pagination">
+    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
+    </button>
+  </nav>
+
+</div>
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
+</div>
 <h2>Markdown</h2>
 <div class="table-scroll">
 
@@ -2717,366 +3966,5 @@ export default Component
       <a href="/iframe/components/test/react-iframe">test react iframe</a>
     </div>
   </div>
-</div>
-<h2>Card</h2>
-<div class="gatsby_demo">
-  <div class="gatsby_demo_item gatsby_demo_preview" data-name="test card content" data-inline="vanilla/components/test/test-card-content">
-  <script type="text/plain" data-lang="html">
-<div class="row row-default">
-  <div class="col-12">
-    <a role="button" class="card card-primary card-large">
-      <div class="card-design"></div>
-      <div class="card-inner">
-        <div class="card-content">
-          <div class="card-block card-block-head">
-            <div class="card-title">Lorem ipsum</div>
-          </div>
-          <div class="card-item-nested card-item card-group">
-            <div class="card-block card-item">
-              <div class="card-title">Lorem ipsum</div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
-            </div>
-            <div class="card-block card-item">
-              <div class="card-title">Lorem ipsum</div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
-            </div>
-          </div>
-          <div class="card-block card-item">
-            <div class="card-title">Lorem ipsum</div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
-          </div>
-          <div class="card-item-nested card-item card-group">
-            <div class="card-block card-item">
-              <div class="card-title">Lorem ipsum</div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
-            </div>
-            <div class="card-block card-item">
-              <div class="card-title">Lorem ipsum</div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
-            </div>
-          </div>
-          <div class="card-asset">
-            <div class="media-container" style="padding-bottom:37.5%"><div class="media-inner"><img class="media media-cover" src="/img.svg" alt="" loading="lazy"/></div></div>
-          </div>
-        </div>
-      </div>
-    </a>
-  </div>
-</div>
-</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
-</div>
-<h2>Overlay</h2>
-<div class="gatsby_demo">
-  <div class="gatsby_demo_item gatsby_demo_preview" data-name="test overlay content" data-inline="vanilla/components/test/test-overlay-content">
-  <script type="text/plain" data-lang="html">
-<div class="list list-default list-space-small align-items-center">
-
-  <div data-xt-overlay>
-    <button type="button" class="btn btn-primary">
-      variant and size
-    </button>
-    <div class="overlay">
-      <div class="overlay-container">
-        <div class="overlay-inner">
-
-          <a role="button" class="card card-overlay card-primary card-small">
-            <div class="card-design"></div>
-            <div class="card-inner">
-              <div class="btn btn-close" aria-label="Close"></div>
-              <div class="card-content">
-
-                <div class="card-block card-block-head">
-                  <div class="card-title">Lorem ipsum</div>
-                </div>
-
-                <div class="card-item-nested card-item card-group">
-
-                  <div class="card-block card-item">
-                    <div class="card-title">Lorem ipsum</div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
-                  </div>
-
-                  <div class="card-block card-item">
-                    <div class="card-title">Lorem ipsum</div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
-                  </div>
-
-                </div>
-
-                <div class="card-block card-item">
-                  <div class="card-title">Lorem ipsum</div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
-                </div>
-
-                <div class="card-item-nested card-item card-group">
-
-                  <div class="card-block card-item">
-                    <div class="card-title">Lorem ipsum</div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
-                  </div>
-
-                  <div class="card-block card-item">
-                    <div class="card-title">Lorem ipsum</div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
-                  </div>
-
-                </div>
-
-              </div>
-              <div class="card-asset">
-                <div class="media-container" style="padding-bottom:37.5%"><div class="media-inner"><img class="media media-cover" src="/img.svg" alt="" loading="lazy"/></div></div>
-              </div>
-            </div>
-          </a>
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div data-xt-overlay>
-    <button type="button" class="btn btn-primary">
-      nested and collapse
-    </button>
-    <div class="overlay">
-      <div class="overlay-container">
-        <div class="overlay-inner">
-
-          <div class="card card-overlay card-primary card-small card-collapse">
-            <div class="card-design"></div>
-            <div class="card-inner">
-              <div class="btn btn-close" aria-label="Close"></div>
-              <div class="card-content">
-
-                <div class="card-block card-block-head">
-                  <div class="card-title">Lorem ipsum</div>
-                </div>
-
-                <div class="card-item-nested card-item card-group">
-                  <div class="card-block card-item card-block-large">
-                    <div class="card-title">Lorem ipsum</div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
-                  </div>
-                  <div class="card-block card-item card-block-large">
-                    <div class="card-title">Lorem ipsum</div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
-                  </div>
-                </div>
-
-                <div class="card-block card-item card-block-small">
-                  <div class="card-title">Default</div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
-                </div>
-
-                <div class="card-block card-item card-block-small">
-                  <div class="card-title">Default</div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
-                </div>
-
-                <div class="card-block card-item">
-                  <div class="card card-default card-medium">
-                    <div class="card-design"></div>
-                    <div class="card-inner">
-                      <div class="btn btn-close" aria-label="Close"></div>
-                      <div class="card-content">
-                        <div class="card-block card-item">
-                          <div class="card-title">Lorem Ipsum</div>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
-                        </div>
-                        <div class="card-block card-item">
-                          <div class="card-title">Lorem Ipsum</div>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="card-block card-item">
-                  <div class="card card-default card-white card-large">
-                    <div class="card-design"></div>
-                    <div class="card-inner">
-                      <div class="btn btn-close" aria-label="Close"></div>
-                      <div class="card-content">
-                        <div class="card-item-nested card-item card-group">
-                          <div class="card-block card-item">
-                            <div class="card-title">Lorem ipsum</div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
-                          </div>
-                          <div class="card-block card-item">
-                            <div class="card-title">Lorem ipsum</div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="card-asset">
-                  <div class="media-container" style="padding-bottom:37.5%"><div class="media-inner"><img class="media media-cover" src="/img.svg" alt="" loading="lazy"/></div></div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div data-xt-overlay>
-    <button type="button" class="btn btn-primary">
-      horizontal and overflow
-    </button>
-    <div class="overlay overlay-full">
-      <div class="overlay-container">
-        <div class="overlay-inner">
-
-          <div class="card card-overlay card-horizontal-sm">
-            <div class="card-design"></div>
-            <div class="card-inner">
-              <div class="btn btn-close" aria-label="Close"></div>
-              <div class="card-content">
-                <div class="card-asset">
-                  <div class="media-container" style="padding-bottom:37.5%"><div class="media-inner"><img class="media media-cover" src="/img.svg" alt="" loading="lazy"/></div></div>
-                </div>
-                <div class="card-block card-item card-overflow-y">
-                  <div class="card-title">Lorem ipsum</div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
-                </div>
-                <div class="card-block card-item card-overflow-y">
-                  <div class="card-title">Lorem ipsum</div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-</div>
-</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
-</div>
-<h4>Slider</h4>
-<div class="gatsby_demo">
-  <div class="gatsby_demo_item gatsby_demo_preview" data-name="test slider content" data-inline="vanilla/components/test/test-slider-content">
-  <script type="text/plain" data-lang="html">
-<div class="slider"
-     data-xt-slider="{ align: 'center' }">
-
-  <div class="slides">
-    <ul class="slides-inner">
-
-      <li class="slide col-12">
-        <div class="slide-inner">
-
-          <div class="card card-slide card-primary card-small align-center">
-            <div class="card-design"></div>
-            <div class="card-inner">
-              <div class="card-content">
-                <div class="card-block card-item">
-                  <div class="card-title">1</h1>
-                </div>
-
-                <div class="card-block card-item">
-                  <div class="card card-default card-medium">
-                    <div class="card-design"></div>
-                    <div class="card-inner">
-                      <div class="btn btn-close" aria-label="Close"></div>
-                      <div class="card-content">
-                        <div class="card-block card-item">
-                          <div class="card-title">Lorem Ipsum</div>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
-                        </div>
-                        <div class="card-block card-item">
-                          <div class="card-title">Lorem Ipsum</div>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="card-block card-item">
-                  <div class="card card-default card-white card-large">
-                    <div class="card-design"></div>
-                    <div class="card-inner">
-                      <div class="btn btn-close" aria-label="Close"></div>
-                      <div class="card-content">
-                        <div class="card-item-nested card-item card-group">
-                          <div class="card-block card-item">
-                            <div class="card-title">Lorem ipsum</div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
-                          </div>
-                          <div class="card-block card-item">
-                            <div class="card-title">Lorem ipsum</div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </li>
-
-      <li class="slide col-6 col-4-sm">
-        <div class="slide-inner">
-
-          <div class="card card-slide card-primary card-large align-center">
-            <div class="card-design"></div>
-            <div class="card-inner">
-              <div class="card-content">
-                <div class="card-block card-item">
-                  <div class="card-title">2</h1>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </li>
-
-      <li class="slide col-6 col-4-sm">
-        <div class="slide-inner">
-
-          <div class="card card-slide card-primary card-large align-center">
-            <div class="card-design"></div>
-            <div class="card-inner">
-              <div class="card-content">
-                <div class="card-block card-item">
-                  <div class="card-title">3</h1>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </li>
-
-    </ul>
-  </div>
-
-  <nav class="slider-pagination">
-    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
-    </button>
-  </nav>
-
-</div>
-</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
 </div></div></div></article><footer class="gatsby_site_article_foot"><div class="gatsby_site_article_foot_inner"><div class="gatsby_listing_group"><div class="gatsby_listing_items"><div class="row"><div class="gatsby_listing_column"><a class="card card-primary card-small card-full card-collapse gatsby_listing_item" href="/introduction"><div class="card-design"></div><div class="card-inner"><div class="card-content"><div class="card-block card-item"><div class="card-title">Setup or other problems?</div><p>Visit the <strong>Introduction</strong> page.</p></div></div></div></a></div></div></div></div></div></footer><footer class="gatsby_site_footer"><div class="gatsby_site_footer_bottom"><div class="container full"><div class="gatsby_site_footer_inner"><div class="row gatsby_site_footer_bottom_row"><div><a title="Home" class="gatsby_logo-icon
-                                      " href="/"><img src="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMV9jb3B5IiBkYXRhLW5hbWU9IkxheWVyIDEgY29weSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMjIuMDEgMTUuMzUiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojMzczYTQ0O30uY2xzLTJ7ZmlsbDojOTY5YmFkO308L3N0eWxlPjwvZGVmcz48dGl0bGU+aWNvbi1ibGFjazwvdGl0bGU+PHBvbHlsaW5lIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSIxNS42IDAgMjIuMDEgMCAyMi4wMSAyLjg2IDE3LjQxIDIuODYgMTcuNDEgMTUuMzUgMTUuNiAxNS4zNSIvPjxwb2x5bGluZSBjbGFzcz0iY2xzLTEiIHBvaW50cz0iNi44NCAxMC4xNSA0LjI2IDE1LjM1IDAgMTUuMzUgNC40IDcuNjEgMC4xMiAwIDQuMzMgMCA2Ljg0IDUuMSIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIxMy41OCAwIDExLjk3IDIuODYgMTMuNzEgMi44NiAxMy43MSAxNS4zNSAxNS42IDE1LjM1IDE1LjYgMCAxMy41OCAwIi8+PHBvbHlnb24gY2xhc3M9ImNscy0yIiBwb2ludHM9IjkuMzUgMCA5LjE4IDAuMzQgNi44NCA1LjEgNi44NCAxMC4xNSA5LjQzIDE1LjM1IDEzLjcgMTUuMzUgOS4yOSA3LjYxIDExLjk3IDIuODYgMTMuNTggMCA5LjM1IDAiLz48L3N2Zz4=" alt="Xtend"/></a></div><div>Site and docs licensed<!-- --> <a href="https://github.com/minimit/xtend-library/blob/master/LICENSE-DOCS" target="_blank" rel="noopener">CC BY 3.0</a> <span class="separator separator-dash"></span> <!-- -->Xtend<!-- --> v<!-- -->0.13.68<!-- --> licensed<!-- --> <a href="https://github.com/minimit/minimit/blob/master/LICENSE" target="_blank" rel="noopener">MIT</a><br/></div><div class="gatsby_site_footer_bottom_right">© 2018 – <!-- -->2020<!-- --> <!-- -->Riccardo Caroli</div></div></div></div></div></footer></main></div></div></div></div></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/tests/markdown";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-f1d2b9d8fd0bd79b541c.js"],"component---src-gatsby-components-templates-doc-listing-js":["/component---src-gatsby-components-templates-doc-listing-js-abadc01a1ee5dd31d4b5.js"],"component---src-gatsby-components-templates-doc-page-js":["/component---src-gatsby-components-templates-doc-page-js-8ee40d98bc8c418789eb.js"],"component---src-gatsby-components-pages-404-js":["/component---src-gatsby-components-pages-404-js-10f623170f3140333617.js"],"component---src-gatsby-components-pages-index-js":["/component---src-gatsby-components-pages-index-js-08924d90cc550185a5a9.js"],"component---src-gatsby-code-iframe-addons-global-jump-to-content-js":["/component---src-gatsby-code-iframe-addons-global-jump-to-content-js-daceee07f0fcf4e2b8b4.js"],"component---src-gatsby-code-iframe-addons-global-sticky-footer-js":["/component---src-gatsby-code-iframe-addons-global-sticky-footer-js-67b68e31037ee2eacbbc.js"],"component---src-gatsby-code-iframe-components-scroll-delay-js":["/component---src-gatsby-code-iframe-components-scroll-delay-js-7415cbbd7c639a2d78c9.js"],"component---src-gatsby-code-iframe-components-scroll-direction-js":["/component---src-gatsby-code-iframe-components-scroll-direction-js-d4169c9f9b4c541071a4.js"],"component---src-gatsby-code-iframe-components-scroll-distance-js":["/component---src-gatsby-code-iframe-components-scroll-distance-js-789d7079f61043e18e91.js"],"component---src-gatsby-code-iframe-components-scroll-mode-block-js":["/component---src-gatsby-code-iframe-components-scroll-mode-block-js-b636141368b35808fff3.js"],"component---src-gatsby-code-iframe-components-scroll-mode-infinite-js":["/component---src-gatsby-code-iframe-components-scroll-mode-infinite-js-bbd485df156723793c0a.js"],"component---src-gatsby-code-iframe-components-scroll-mode-inside-js":["/component---src-gatsby-code-iframe-components-scroll-mode-inside-js-bd24c774f8e18f68f535.js"],"component---src-gatsby-code-iframe-components-scroll-mode-once-js":["/component---src-gatsby-code-iframe-components-scroll-mode-once-js-bc7425675ea668549fe1.js"],"component---src-gatsby-code-iframe-components-scroll-mode-outside-once-js":["/component---src-gatsby-code-iframe-components-scroll-mode-outside-once-js-a3b4bc270e58d3b4541f.js"],"component---src-gatsby-code-iframe-components-scroll-mode-outside-js":["/component---src-gatsby-code-iframe-components-scroll-mode-outside-js-a1877211bdc3b6b4984e.js"],"component---src-gatsby-code-iframe-components-scroll-mode-responsive-js":["/component---src-gatsby-code-iframe-components-scroll-mode-responsive-js-4bedcec03dabec2f1ba6.js"],"component---src-gatsby-code-iframe-components-scroll-parallax-js":["/component---src-gatsby-code-iframe-components-scroll-parallax-js-30b66206d361b2f5ae59.js"],"component---src-gatsby-code-iframe-components-sticky-contain-bottom-js":["/component---src-gatsby-code-iframe-components-sticky-contain-bottom-js-13b6aa08b0bf11c3ecd2.js"],"component---src-gatsby-code-iframe-components-sticky-contain-top-js":["/component---src-gatsby-code-iframe-components-sticky-contain-top-js-8d921f926e3b88df27f9.js"],"component---src-gatsby-code-iframe-components-sticky-disable-js":["/component---src-gatsby-code-iframe-components-sticky-disable-js-c9134a0a71de38c22f00.js"],"component---src-gatsby-code-iframe-components-sticky-hide-js":["/component---src-gatsby-code-iframe-components-sticky-hide-js-80f8744d8542079b83fc.js"],"component---src-gatsby-code-iframe-components-sticky-limit-js":["/component---src-gatsby-code-iframe-components-sticky-limit-js-21b71793317253e39d81.js"],"component---src-gatsby-code-iframe-components-sticky-mode-absolute-js":["/component---src-gatsby-code-iframe-components-sticky-mode-absolute-js-a58c51337f808120fb10.js"],"component---src-gatsby-code-iframe-components-sticky-mode-fixed-always-js":["/component---src-gatsby-code-iframe-components-sticky-mode-fixed-always-js-b0f3524a392bfb5ca261.js"],"component---src-gatsby-code-iframe-components-sticky-mode-fixed-js":["/component---src-gatsby-code-iframe-components-sticky-mode-fixed-js-0f65013074bb8cb33a28.js"],"component---src-gatsby-code-iframe-components-sticky-position-js":["/component---src-gatsby-code-iframe-components-sticky-position-js-639893e33c30f55028f2.js"],"component---src-gatsby-code-iframe-components-sticky-showhide-bottom-js":["/component---src-gatsby-code-iframe-components-sticky-showhide-bottom-js-116795ca49d2e5293b25.js"],"component---src-gatsby-code-iframe-components-sticky-showhide-hide-js":["/component---src-gatsby-code-iframe-components-sticky-showhide-hide-js-154b3f22f353cbb2a406.js"],"component---src-gatsby-code-iframe-components-sticky-showhide-top-js":["/component---src-gatsby-code-iframe-components-sticky-showhide-top-js-bd536317ee4809ca97b0.js"],"component---src-gatsby-code-iframe-components-test-react-iframe-js":["/component---src-gatsby-code-iframe-components-test-react-iframe-js-a900f1262c3ec6a26c37.js"],"component---src-gatsby-code-iframe-components-test-vanilla-iframe-js":["/component---src-gatsby-code-iframe-components-test-vanilla-iframe-js-e7e78374094772a84f67.js"],"component---src-gatsby-code-iframe-demos-animation-scroll-to-anchor-js":["/component---src-gatsby-code-iframe-demos-animation-scroll-to-anchor-js-d3c780490bb21fdc90e1.js"],"component---src-gatsby-code-iframe-demos-utils-google-locator-js":["/component---src-gatsby-code-iframe-demos-utils-google-locator-js-4d0c791a17b90cbae8af.js"]};/*]]>*/</script><script src="/component---src-gatsby-components-templates-doc-page-js-8ee40d98bc8c418789eb.js" async=""></script><script src="/commons-fc5c1a64ade1dfd4c384.js" async=""></script><script src="/styles-898995100a3ce2557b8d.js" async=""></script><script src="/app-f1d2b9d8fd0bd79b541c.js" async=""></script><script src="/webpack-runtime-4d1f34c994a753582300.js" async=""></script></body></html>
+                                      " href="/"><img src="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMV9jb3B5IiBkYXRhLW5hbWU9IkxheWVyIDEgY29weSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMjIuMDEgMTUuMzUiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojMzczYTQ0O30uY2xzLTJ7ZmlsbDojOTY5YmFkO308L3N0eWxlPjwvZGVmcz48dGl0bGU+aWNvbi1ibGFjazwvdGl0bGU+PHBvbHlsaW5lIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSIxNS42IDAgMjIuMDEgMCAyMi4wMSAyLjg2IDE3LjQxIDIuODYgMTcuNDEgMTUuMzUgMTUuNiAxNS4zNSIvPjxwb2x5bGluZSBjbGFzcz0iY2xzLTEiIHBvaW50cz0iNi44NCAxMC4xNSA0LjI2IDE1LjM1IDAgMTUuMzUgNC40IDcuNjEgMC4xMiAwIDQuMzMgMCA2Ljg0IDUuMSIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIxMy41OCAwIDExLjk3IDIuODYgMTMuNzEgMi44NiAxMy43MSAxNS4zNSAxNS42IDE1LjM1IDE1LjYgMCAxMy41OCAwIi8+PHBvbHlnb24gY2xhc3M9ImNscy0yIiBwb2ludHM9IjkuMzUgMCA5LjE4IDAuMzQgNi44NCA1LjEgNi44NCAxMC4xNSA5LjQzIDE1LjM1IDEzLjcgMTUuMzUgOS4yOSA3LjYxIDExLjk3IDIuODYgMTMuNTggMCA5LjM1IDAiLz48L3N2Zz4=" alt="Xtend"/></a></div><div>Site and docs licensed<!-- --> <a href="https://github.com/minimit/xtend-library/blob/master/LICENSE-DOCS" target="_blank" rel="noopener">CC BY 3.0</a> <span class="separator separator-dash"></span> <!-- -->Xtend<!-- --> v<!-- -->0.13.69<!-- --> licensed<!-- --> <a href="https://github.com/minimit/minimit/blob/master/LICENSE" target="_blank" rel="noopener">MIT</a><br/></div><div class="gatsby_site_footer_bottom_right">© 2018 – <!-- -->2020<!-- --> <!-- -->Riccardo Caroli</div></div></div></div></div></footer></main></div></div></div></div></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/tests/markdown";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-b67210d417476e5ce459.js"],"component---src-gatsby-components-templates-doc-listing-js":["/component---src-gatsby-components-templates-doc-listing-js-8a4d3c736d92ef458e91.js"],"component---src-gatsby-components-templates-doc-page-js":["/component---src-gatsby-components-templates-doc-page-js-d42e98643078572316db.js"],"component---src-gatsby-components-pages-404-js":["/component---src-gatsby-components-pages-404-js-854e437b8b9704bcff26.js"],"component---src-gatsby-components-pages-index-js":["/component---src-gatsby-components-pages-index-js-742794ecac5a07199e79.js"],"component---src-gatsby-code-iframe-addons-global-jump-to-content-js":["/component---src-gatsby-code-iframe-addons-global-jump-to-content-js-daceee07f0fcf4e2b8b4.js"],"component---src-gatsby-code-iframe-addons-global-sticky-footer-js":["/component---src-gatsby-code-iframe-addons-global-sticky-footer-js-67b68e31037ee2eacbbc.js"],"component---src-gatsby-code-iframe-components-scroll-delay-js":["/component---src-gatsby-code-iframe-components-scroll-delay-js-7415cbbd7c639a2d78c9.js"],"component---src-gatsby-code-iframe-components-scroll-direction-js":["/component---src-gatsby-code-iframe-components-scroll-direction-js-d4169c9f9b4c541071a4.js"],"component---src-gatsby-code-iframe-components-scroll-distance-js":["/component---src-gatsby-code-iframe-components-scroll-distance-js-789d7079f61043e18e91.js"],"component---src-gatsby-code-iframe-components-scroll-mode-block-js":["/component---src-gatsby-code-iframe-components-scroll-mode-block-js-b636141368b35808fff3.js"],"component---src-gatsby-code-iframe-components-scroll-mode-infinite-js":["/component---src-gatsby-code-iframe-components-scroll-mode-infinite-js-bbd485df156723793c0a.js"],"component---src-gatsby-code-iframe-components-scroll-mode-inside-js":["/component---src-gatsby-code-iframe-components-scroll-mode-inside-js-bd24c774f8e18f68f535.js"],"component---src-gatsby-code-iframe-components-scroll-mode-once-js":["/component---src-gatsby-code-iframe-components-scroll-mode-once-js-bc7425675ea668549fe1.js"],"component---src-gatsby-code-iframe-components-scroll-mode-outside-once-js":["/component---src-gatsby-code-iframe-components-scroll-mode-outside-once-js-a3b4bc270e58d3b4541f.js"],"component---src-gatsby-code-iframe-components-scroll-mode-outside-js":["/component---src-gatsby-code-iframe-components-scroll-mode-outside-js-a1877211bdc3b6b4984e.js"],"component---src-gatsby-code-iframe-components-scroll-mode-responsive-js":["/component---src-gatsby-code-iframe-components-scroll-mode-responsive-js-4bedcec03dabec2f1ba6.js"],"component---src-gatsby-code-iframe-components-scroll-parallax-js":["/component---src-gatsby-code-iframe-components-scroll-parallax-js-30b66206d361b2f5ae59.js"],"component---src-gatsby-code-iframe-components-sticky-contain-bottom-js":["/component---src-gatsby-code-iframe-components-sticky-contain-bottom-js-13b6aa08b0bf11c3ecd2.js"],"component---src-gatsby-code-iframe-components-sticky-contain-top-js":["/component---src-gatsby-code-iframe-components-sticky-contain-top-js-8d921f926e3b88df27f9.js"],"component---src-gatsby-code-iframe-components-sticky-disable-js":["/component---src-gatsby-code-iframe-components-sticky-disable-js-c9134a0a71de38c22f00.js"],"component---src-gatsby-code-iframe-components-sticky-hide-js":["/component---src-gatsby-code-iframe-components-sticky-hide-js-80f8744d8542079b83fc.js"],"component---src-gatsby-code-iframe-components-sticky-limit-js":["/component---src-gatsby-code-iframe-components-sticky-limit-js-21b71793317253e39d81.js"],"component---src-gatsby-code-iframe-components-sticky-mode-absolute-js":["/component---src-gatsby-code-iframe-components-sticky-mode-absolute-js-a58c51337f808120fb10.js"],"component---src-gatsby-code-iframe-components-sticky-mode-fixed-always-js":["/component---src-gatsby-code-iframe-components-sticky-mode-fixed-always-js-b0f3524a392bfb5ca261.js"],"component---src-gatsby-code-iframe-components-sticky-mode-fixed-js":["/component---src-gatsby-code-iframe-components-sticky-mode-fixed-js-0f65013074bb8cb33a28.js"],"component---src-gatsby-code-iframe-components-sticky-position-js":["/component---src-gatsby-code-iframe-components-sticky-position-js-639893e33c30f55028f2.js"],"component---src-gatsby-code-iframe-components-sticky-showhide-bottom-js":["/component---src-gatsby-code-iframe-components-sticky-showhide-bottom-js-116795ca49d2e5293b25.js"],"component---src-gatsby-code-iframe-components-sticky-showhide-hide-js":["/component---src-gatsby-code-iframe-components-sticky-showhide-hide-js-154b3f22f353cbb2a406.js"],"component---src-gatsby-code-iframe-components-sticky-showhide-top-js":["/component---src-gatsby-code-iframe-components-sticky-showhide-top-js-bd536317ee4809ca97b0.js"],"component---src-gatsby-code-iframe-components-test-react-iframe-js":["/component---src-gatsby-code-iframe-components-test-react-iframe-js-a900f1262c3ec6a26c37.js"],"component---src-gatsby-code-iframe-components-test-vanilla-iframe-js":["/component---src-gatsby-code-iframe-components-test-vanilla-iframe-js-e7e78374094772a84f67.js"],"component---src-gatsby-code-iframe-demos-animation-2020-bertani-listing-js":["/component---src-gatsby-code-iframe-demos-animation-2020-bertani-listing-js-ddfa9b104cf27665ae6f.js"],"component---src-gatsby-code-iframe-demos-animation-scroll-to-anchor-js":["/component---src-gatsby-code-iframe-demos-animation-scroll-to-anchor-js-a19c6977ecc1cb701a47.js"],"component---src-gatsby-code-iframe-demos-utils-google-locator-js":["/component---src-gatsby-code-iframe-demos-utils-google-locator-js-b0d8615bf0c230b96649.js"]};/*]]>*/</script><script src="/component---src-gatsby-components-templates-doc-page-js-d42e98643078572316db.js" async=""></script><script src="/commons-6c0e28d0725f937b40b5.js" async=""></script><script src="/styles-43a93477079719ae3730.js" async=""></script><script src="/app-b67210d417476e5ce459.js" async=""></script><script src="/webpack-runtime-cb0e0516603e21502bd7.js" async=""></script></body></html>
