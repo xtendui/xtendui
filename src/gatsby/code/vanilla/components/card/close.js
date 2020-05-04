@@ -26,7 +26,7 @@ demo.htmlSource = `
   </div>
 
   <div class="col-12 col-6-sm">
-    <div class="card card-default">
+    <div class="card card-primary">
       <div class="card-design"></div>
       <div class="btn btn-close" aria-label="Close"></div>
       <div class="card-inner">

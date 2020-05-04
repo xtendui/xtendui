@@ -17,7 +17,7 @@ Sequential `.card-block` stack vertically.
 
 You can add custom `.card-block` modifiers and style them as you like (e.g.: `.card-block-head`).
 
-If you put it **outside** `.card-content` it will be rendered vertially.
+If you put it **outside** `.card-content` it will be rendered vertically.
 
 <demo>
   <demovanilla src="vanilla/components/card/horizontal-block">
@@ -28,7 +28,7 @@ If you put it **outside** `.card-content` it will be rendered vertially.
 
 If you want full width assets use `.card-asset`.
 
-If you put it **outside** `.card-content` it will be rendered vertially.
+If you put it **outside** `.card-content` it will be rendered vertically.
 
 <div class="table-scroll">
 
