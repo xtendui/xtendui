@@ -5,15 +5,15 @@
 // .gatsby_site_footer_bottom
 
 .gatsby_site_footer_bottom {
-  .padding(top, medium);
-  .padding(bottom, medium);
+  .padding(y, medium);
+  .padding(y, big, sm);
   background: linear-gradient(-180deg, @white 0%, @shade-200 100%);
   .gatsby_site_article_foot + .gatsby_site_footer & {
     background: @shade-200;
   }
   font-size: 12px;
-  .separator {
-    vertical-align: text-top;
+  @media @max-sm {
+    font-size: 11px;
   }
   a {
     .font-sans-semibold();
@@ -29,17 +29,10 @@
 
 .gatsby_site_footer_bottom_row {
   .flex-auto();
-  @media @max-sm {
-    .row-space(tiny);
-    flex-direction: column;
-    justify-content: center;
-    line-height: 1.8;
-    text-align: center;
-  }
-  @media @min-sm {
-    .row-space(small);
-    justify-content: space-between;
-  }
+  .row-space(tiny);
+  .row-space(small, sm);
+  align-items: center;
+  justify-content: space-between;
 }
 
 .gatsby_site_footer_bottom_right {

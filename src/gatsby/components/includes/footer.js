@@ -14,16 +14,6 @@ class Footer extends React.Component {
             <div className="gatsby_site_footer_inner">
               <div className="row gatsby_site_footer_bottom_row">
                 <div>
-                  <Link
-                    to="/"
-                    title="Home"
-                    className={`gatsby_logo-icon
-                                      ${seo.title.toLowerCase() === 'home' ? 'active' : ''}`}
-                  >
-                    <img src={logoIcon} alt={site.site.siteMetadata.title} />
-                  </Link>
-                </div>
-                <div>
                   Site and docs licensed{' '}
                   <a href="https://github.com/minimit/xtend-library/blob/master/LICENSE-DOCS" target="_blank" rel="noopener">
                     CC BY 3.0
@@ -35,7 +25,17 @@ class Footer extends React.Component {
                   <br />
                 </div>
                 <div className="gatsby_site_footer_bottom_right">
-                  © 2018 – {new Date().getFullYear()} {site.site.siteMetadata.author}
+                  © 2018 <span className="separator separator-dash"></span> {new Date().getFullYear()} {site.site.siteMetadata.author}
+                </div>
+                <div>
+                  <Link
+                    to="/"
+                    title="Home"
+                    className={`gatsby_logo-icon
+                                      ${seo.title.toLowerCase() === 'home' ? 'active' : ''}`}
+                  >
+                    <img src={logoIcon} alt={site.site.siteMetadata.title} />
+                  </Link>
                 </div>
               </div>
             </div>
