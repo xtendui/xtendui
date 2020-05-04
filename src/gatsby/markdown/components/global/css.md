@@ -96,6 +96,15 @@ The global styles that don't belongs to a component are all here.
 
 #### Scrollbar
 
+<div class="table-scroll">
+
+|                         | Syntax                                    | Mixin                         | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Util                  | `.overflow-style`                               | `.overflow-style()`                | Overflow scrollbar style            |
+| Util                  | `.overflow-style-inner`                               | `.overflow-style(@mode: inner)`                | Overflow scrollbar style with mode inner            |
+
+</div>
+
 Within `.overflow-style` mixin you have the scrollbar styles, you can setup different modes for example `@mode: inner`.
 
 #### Focus
