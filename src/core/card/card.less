@@ -16,16 +16,9 @@
 .card {
   border-radius: .5em;
   > .card-design {
-    border-width: 0;
+    border-width: 1px;
     border-style: solid;
     border-color: transparent;
-  }
-  // .btn-close
-  > .card-inner > .btn-close {
-    top: 2rem;
-    right: 2rem;
-    .btn-big();
-    .btn-icon();
   }
   // default options
   .card-medium();
@@ -37,13 +30,15 @@
   // default options
   .card-white();
   .card-medium();
+  > .card-design {
+    box-shadow: @shadow-light;
+  }
   .card-block {
     padding: 2em 2em !important;
     @media @min-sm {
       padding: 3em 3em !important;
     }
   }
-  // special
   .card-block-head {
     background: @shade-200-dark;
   }
@@ -53,7 +48,6 @@
   // default options
   .card-default();
   .card-large();
-  // special
   .card-block-head {
     background: @shade-200-dark;
   }
@@ -64,7 +58,6 @@
   // default options
   .card-white();
   .card-small();
-  // special
   .card-block-head {
     background: @shade-200-dark;
   }
@@ -78,32 +71,8 @@
     border-color: @shade-200;
     background: @shade-200;
   }
-  // preset
-  .card-overlay& {
-    > .card-design {
-      box-shadow: @shadow-light;
-    }
-  }
-  // special
   .card-block-head {
     background: @shade-200-dark;
-  }
-  // interactive
-  a&, button& {
-    &:hover, &.hover {
-      color: @text-dark;
-      > .card-design {
-        box-shadow: @shadow-light;
-      }
-    }
-    &:active, &.active {
-      color: @text-dark;
-      > .card-design {
-        border-color: @shade-200-dark;
-        background: @shade-200-dark;
-        box-shadow: none;
-      }
-    }
   }
 }
 
@@ -113,32 +82,8 @@
     border-color: @accent;
     background: @accent;
   }
-  // preset
-  .card-overlay& {
-    > .card-design {
-      box-shadow: @shadow-accent;
-    }
-  }
-  // special
   .card-block-head {
     background: @accent-dark;
-  }
-  // interactive
-  a&, button& {
-    &:hover, &.hover {
-      color: @text-inverse-dark;
-      > .card-design {
-        box-shadow: @shadow-accent;
-      }
-    }
-    &:active, &.active {
-      color: @text-inverse-dark;
-      > .card-design {
-        border-color: @accent-dark;
-        background: @accent-dark;
-        box-shadow: none;
-      }
-    }
   }
 }
 
@@ -148,78 +93,46 @@
     border-color: @white;
     background: @white;
   }
-  // preset
-  .card-overlay& {
-    > .card-design {
-      box-shadow: @shadow-light;
-    }
-  }
-  // interactive
-  a&, button& {
-    &:hover, &.hover {
-      color: @text-dark;
-      > .card-design {
-        box-shadow: @shadow-light;
-      }
-    }
-    &:active, &.active {
-      color: @text-dark;
-      > .card-design {
-        border-color: @shade-200;
-        background: @shade-200;
-        box-shadow: none;
-      }
-    }
+  .card-block-head {
+    background: @shade-200;
   }
 }
 
 // size
 
-.card-block.card-block-small {
-  .font-small();
-  .line-height-medium();
-  padding: 2em 2.5em;
-  .card-title {
-    .h4();
-    .spacing-tiny();
-  }
-}
-
 .card-small {
   .card-block {
-    .card-block.card-block-small();
-  }
-}
-
-.card-block.card-block-medium {
-  .font-medium();
-  .line-height-medium();
-  padding: 2em 2.5em;
-  .card-title {
-    .h3();
-    .spacing-small();
+    .font-small();
+    .line-height-medium();
+    padding: 2em 2.5em;
+    .card-title {
+      .h4();
+      .spacing-tiny();
+    }
   }
 }
 
 .card-medium {
   .card-block {
-    .card-block.card-block-medium();
-  }
-}
-
-.card-block.card-block-large {
-  .font-big();
-  .line-height-medium();
-  padding: 2em 2.5em;
-  .card-title {
-    .h2();
-    .spacing-medium();
+    .font-medium();
+    .line-height-medium();
+    padding: 2em 2.5em;
+    .card-title {
+      .h3();
+      .spacing-small();
+    }
   }
 }
 
 .card-large {
   .card-block {
-    .card-block.card-block-large();
+    .font-big();
+    .line-height-medium();
+    padding: 2em 2.5em;
+    .card-title {
+      .h2();
+      .spacing-medium();
+    }
   }
 }
 
@@ -263,20 +176,15 @@
 
 .card {
   a&, button&, label& {
-    transition: all @time-small @ease-off;
     > .card-design {
       transition: all @time-small @ease-off;
     }
     &:hover, &.hover {
-      transform: translateY(-.5rem);
-      transition: all @time-small @ease-on;
       > .card-design {
         transition: all @time-small @ease-on;
       }
     }
     &:active, &.active, input[type="checkbox"]:not(.unstyled):checked ~ &, input[type="radio"]:not(.unstyled):checked ~ & {
-      transform: none;
-      transition: all @time-small @ease-on;
       > .card-design {
         transition: all @time-small @ease-on;
       }

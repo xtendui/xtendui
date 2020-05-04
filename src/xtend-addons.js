@@ -1,5 +1,6 @@
 if (typeof window !== 'undefined') {
   require('xtend-library/src/addons/animation/mouse-follow.js')
+  require('xtend-library/src/addons/animation/propagate-interaction.js')
   require('xtend-library/src/addons/animation/ripple.js')
   require('xtend-library/src/addons/animation/scroll-to-anchor.js')
   require('xtend-library/src/addons/form/textarea-autosize.js')

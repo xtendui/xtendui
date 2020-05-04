@@ -45,9 +45,11 @@ demo.htmlSource = `
               item.setCustomValidity(constraints[1]);
           }
       }
-      document.querySelectorAll('.demo--validation-custom').forEach(function (item) {
-          item.addEventListener('input', validationCustom);
-      });
+      var items = document.querySelectorAll('.demo--validation-custom')
+      for (var i = 0; i < items.length; i++) {
+        var item = items[i];
+        item.addEventListener('input', validationCustom);
+      }
     </script>
 
     <div class="form-group">
@@ -142,7 +144,7 @@ demo.htmlSource = `
 
   <fieldset>
 
-    <button type="submit" class="btn btn-primary btn-big btn-tall">
+    <button type="submit" class="btn btn-primary btn-big">
       Invia
     </button>
 

@@ -22,11 +22,11 @@ Xt.mount.push({
     // on
 
     const eventOn = e => {
-      const tr = e.target
+      const target = e.target
       // useCapture delegation
-      if (self.targets.includes(tr)) {
+      if (self.targets.includes(target)) {
         // set auto time
-        const slideWidth = tr.offsetWidth
+        const slideWidth = target.offsetWidth
         const draggerWidth = self.dragger.offsetWidth
         let time = slideWidth * 25
         if (object.classList.contains('demo--2020-brands-slider--factor')) {

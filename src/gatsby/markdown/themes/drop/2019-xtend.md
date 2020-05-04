@@ -1,11 +1,11 @@
 ---
 type: "Themes"
 badge: "Themes"
-parent: "Slider"
-title: "2019-webgriffe-slider"
+parent: "Drop"
+title: "2019-xtend"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-date: "2019-06-01"
+date: "2019-10-10"
 demos: [
-  "vanilla/themes/slider/2019-webgriffe-slider"
+  "vanilla/demos/animation/2019-xtend"
 ]
 ---

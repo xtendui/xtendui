@@ -164,9 +164,6 @@ legend, .legend {
  */
 
 .form-item {
-  border-width: 0;
-  border-style: solid;
-  border-color: transparent;
   padding: .75em 1.2em; // size in em inherit .form-group size
   .font-sans-regular();
   .line-height-small();
@@ -188,12 +185,14 @@ legend, .legend {
 .form-item-default {
   border-radius: .5em;
   border-width: 1px;
-  border-color: @shade-200;
+  border-style: solid;
+  border-color: @shade-200-dark;
   background-color: @shade-200; // @FIX no background: or it overrides background-image
   color: @text;
   &:focus, &.active {
     border-color: @shade-200-dark;
     background-color: @shade-200-dark; // @FIX no background: or it overrides background-image
+    color: @text;
   }
   // placeholder
   &:-ms-input-placeholder {
@@ -226,6 +225,7 @@ legend, .legend {
 .form-item-inverse {
   border-radius: 0;
   border-width: 0;
+  border-style: solid;
   border-bottom-width: 2px;
   border-color: transparent;
   background-color: fade(@shade-900, 25%); // @FIX no background: or it overrides background-image
@@ -233,6 +233,7 @@ legend, .legend {
   &:focus, &.active {
     border-color: @white;
     background-color: fade(@shade-900, 50%); // @FIX no background: or it overrides background-image
+    color: @text-inverse-dark;
   }
   // placeholder
   &:-ms-input-placeholder {
@@ -343,8 +344,8 @@ legend, .legend {
   // variant
   &.form-label.form-label-default, .form-default & {
     &:before {
-      background: @shade-300;
-      border: 1px solid @shade-300;
+      background: @shade-200;
+      border: 1px solid @shade-200-dark;
     }
     &:after {
       color: @accent;

@@ -46,10 +46,3 @@ Use this markup to create a **card**.
     </div>
   </div>
 </script>
-
-You can make interactive cards with `a.card`.
-
-<demo>
-  <demovanilla src="vanilla/components/card/usage">
-  </demovanilla>
-</demo>

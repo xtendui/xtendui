@@ -24,7 +24,7 @@ You can merge buttons in a single interactive object.
 Use this markup to merge multiple `.btn` in one `[button]` as line.
 
 [[notePrimary]]
-| Needs [propagate-interaction](/components/utils/propagate-interaction) extension
+| Needs [propagate-interaction](/addons/animation/propagate-interaction) extension
 
 <script type="text/plain" class="language-markup">
   <button type="button" class="group">

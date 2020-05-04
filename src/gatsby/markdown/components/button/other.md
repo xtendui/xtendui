@@ -22,7 +22,6 @@ date: "2019-03-15"
 | Option                  | `.btn-none`                | `.btn-none()`        | No spacing on button (disables design and border also)           |
 | Option                  | `.btn-none-x`                | `.btn-none-x()`        | No horizontal spacing on button (disables design and border also)           |
 | Option                  | `.btn-none-y`                | `.btn-none-y()`        | No vertical spacing on button (disables design and border also)           |
-| Option                  | `.btn-transform`                | `.btn-transform()`        | Special text on button           |
 | Option                  | `.btn-icon`                | `.btn-icon()`        | Special squared spacing on button with icon content           |
 
 </div>

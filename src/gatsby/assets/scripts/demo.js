@@ -110,20 +110,17 @@ const populateBlock = () => {
     for (const el of listingToggles) {
       el.classList.remove('active')
     }
-    // populate source
+    // iframe
     const container = content.querySelector('.gatsby_demo')
     if (container.dataset.isFullscreenOnly) {
+      // populate iframe
+      for (const item of container.querySelectorAll('.gatsby_demo_item')) {
+        item.classList.remove('loaded')
+      }
+      // populate source
       const sourceTo = content.querySelector('.gatsby_demo_source_populate')
       if (sourceTo) {
         sourceTo.innerHTML = ''
-      }
-      for (const item of content.querySelectorAll('.gatsby_demo_item')) {
-        if (item.getAttribute('data-iframe-fullscreen')) {
-          delete item.dataset.iframeLoadCall
-          item.classList.remove('populated-iframe', 'loaded')
-          item.removeAttribute('data-iframe')
-          item.querySelector('.gatsby_demo_item_wrapper').remove()
-        }
       }
     }
     // move code block
@@ -219,7 +216,7 @@ const populateDemo = (container, i) => {
     // https://github.com/zenorocha/clipboard.js/
     const clipboard = new ClipboardJS('.btn-clipboard', {
       target: trigger => {
-        return trigger.closest('.gatsby_demo').querySelector('.gatsby_demo_item.active .gatsby_demo_code_body_item.active .hljs')
+        return trigger.closest('.gatsby_demo').querySelector('.gatsby_demo_item.active .gatsby_demo_code.active .gatsby_demo_code_body_item.active pre code')
       },
     })
     clipboard.on('success', e => {
@@ -459,7 +456,7 @@ const makeFullscreen = (container, skipIgnore = false) => {
  */
 
 const initializeIframe = (container, item) => {
-  if (item.getAttribute('data-iframe') && !item.classList.contains('populated-iframe')) {
+  if (!item.classList.contains('populated-iframe')) {
     container.dataset.isFullscreenOnly = 'true'
     item.classList.add('populated-iframe')
     const src = '/' + item.getAttribute('data-iframe')

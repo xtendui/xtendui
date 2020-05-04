@@ -4,7 +4,9 @@ badge: "Addons"
 parent: "Card"
 title: "Separator"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-demos: [
-  "vanilla/addons/card/separator"
-]
 ---
+
+<demo>
+  <demovanilla src="vanilla/addons/card/separator">
+  </demovanilla>
+</demo>

@@ -21,20 +21,18 @@
 
 .btn-default {
   .link-none();
-  border-color: @shade-300;
-  background: @shade-300;
+  border-color: @shade-200;
+  background: @shade-200;
   color: @text;
   &:hover, &.hover {
+    border-color: @shade-200-dark;
+    background: @shade-200;
     color: @text-dark;
-    box-shadow: @shadow-light;
-    opacity: 1;
   }
   &:active, &.active {
-    border-color: @shade-300-dark;
-    background: @shade-300-dark;
+    border-color: @shade-200-dark;
+    background: @shade-200-dark;
     color: @text-dark;
-    box-shadow: @shadow-none;
-    opacity: 1;
   }
 }
 
@@ -44,41 +42,39 @@
   background: @accent;
   color: @text-inverse;
   &:hover, &.hover {
+    border-color: @accent-dark;
+    background: @accent;
     color: @text-inverse-dark;
-    box-shadow: @shadow-accent;
-    opacity: 1;
   }
   &:active, &.active {
     border-color: @accent-dark;
     background: @accent-dark;
     color: @text-inverse-dark;
-    box-shadow: @shadow-none;
-    opacity: 1;
   }
 }
 
 .btn-text {
   .link-none();
   .btn-nodesign();
+  .btn-noeffect();
   color: inherit;
   &:hover, &.hover {
     color: inherit;
-    opacity: .75;
   }
   &:active, &.active {
     color: inherit;
-    opacity: 1;
   }
 }
 
 .btn-link {
-  .btn-nodesign() !important;
+  .btn-nodesign();
+  .btn-noeffect();
   // reset
-  font-family: inherit !important;
-  font-style: inherit !important;
-  font-weight: inherit !important;
-  letter-spacing: inherit !important;
-  text-transform: inherit !important;
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
 }
 
 // size
@@ -94,8 +90,8 @@
 }
 
 .btn-medium {
-  padding: .6em 1.2em;
-  font-size: 1.335rem; // @FIX odd rem with .035 added
+  padding: .625em 1.225em; // @FIX odd rem with .025 added
+  font-size: 1.3rem;
 }
 
 .btn-large {
@@ -104,8 +100,8 @@
 }
 
 .btn-big {
-  padding: .6em 1.2em;
-  font-size: 1.535rem; // @FIX odd rem with .035 added
+  padding: .625em 1.225em; // @FIX odd rem with .025 added
+  font-size: 1.5rem;
 }
 
 // special
@@ -113,11 +109,17 @@
 .btn-nodesign {
   border-color: transparent;
   background: transparent;
-  .transform-none();
+  box-shadow: none;
   &:hover, &.hover, &:active, &.active {
     border-color: transparent;
     background: transparent;
     box-shadow: none;
+  }
+}
+
+.btn-noeffect {
+  .transform-none();
+  &:hover, &.hover, &:active, &.active {
     .transform-none();
   }
 }
@@ -131,8 +133,8 @@
 }
 
 .btn-tall {
-  padding-top: 1.5em;
-  padding-bottom: 1.5em;
+  padding-top: .9em;
+  padding-bottom: .9em;
 }
 
 .btn-short {
@@ -141,8 +143,8 @@
 }
 
 .btn-wide {
-  padding-left: 2em;
-  padding-right: 2em;
+  padding-left: 1.8em;
+  padding-right: 1.8em;
 }
 
 .btn-narrow {
@@ -170,11 +172,6 @@
   padding-bottom: 0;
 }
 
-.btn-transform {
-  letter-spacing: 0;
-  text-transform: none;
-}
-
 .btn-icon {
   line-height: 1;
   padding: .8em .8em;
@@ -183,14 +180,12 @@
 // animation
 
 .btn {
-  transition: border @time-small @ease-off, background @time-small @ease-off, color @time-small @ease-off, box-shadow @time-small @ease-off, transform @time-tiny @ease-off;
+  transition: border @time-small @ease-off, background @time-small @ease-off, color @time-small @ease-off, transform @time-small @ease-off;
   &:hover, &.hover {
-    transform: translateY(-.25rem);
-    transition: border @time-small @ease-on, background @time-small @ease-on, color @time-small @ease-on, box-shadow @time-small @ease-on, transform @time-tiny @ease-on;
+    transition: border @time-small @ease-on, background @time-small @ease-on, color @time-small @ease-on, transform @time-small @ease-on;
   }
   &:active, &.active {
-    transform: none;
-    transition: border @time-small @ease-on, background @time-small @ease-on, color @time-small @ease-on, box-shadow @time-small @ease-on, transform @time-tiny @ease-on;
+    transition: border @time-small @ease-on, background @time-small @ease-on, color @time-small @ease-on, transform @time-small @ease-on;
   }
 }
 
@@ -199,9 +194,10 @@
 .btn-close {
   cursor: pointer;
   position: absolute !important;
-  top: 0;
-  right: 0;
+  top: 2rem;
+  right: 2rem;
   .btn-text();
+  .btn-big();
   .btn-icon();
   .icon-xt(@content: @icon-xt-close, @size: @icon-medium);
 }

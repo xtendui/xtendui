@@ -16,8 +16,8 @@ Sequential `.card-block` stack vertically.
 <script type="text/plain" class="language-markup">
   <div class="card card-overlay">
     <div class="card-design"></div>
+    <div class="btn btn-close" aria-label="Close"></div>
     <div class="card-inner">
-      <div class="btn btn-close" aria-label="Close"></div>
       <div class="card-content">
 
         <div class="card-block card-item">
@@ -43,8 +43,8 @@ You can add custom `.card-block` modifiers and style them as you like (e.g.: `.c
 <script type="text/plain" class="language-markup">
   <div class="card card-overlay">
     <div class="card-design"></div>
+    <div class="btn btn-close" aria-label="Close"></div>
     <div class="card-inner">
-      <div class="btn btn-close" aria-label="Close"></div>
       <div class="card-content">
 
         <div class="card-block card-block-head">
@@ -81,8 +81,8 @@ To stack `.card-item` horizontally use `.card-item-nested` and `.card-group` wit
 <script type="text/plain" class="language-markup">
   <div class="card card-overlay">
     <div class="card-design"></div>
+    <div class="btn btn-close" aria-label="Close"></div>
     <div class="card-inner">
-      <div class="btn btn-close" aria-label="Close"></div>
       <div class="card-content">
 
         <div class="card-item-nested card-item card-group">
@@ -111,8 +111,8 @@ If you want full width assets use `.card-asset`.
 <script type="text/plain" class="language-markup">
   <div class="card card-overlay">
     <div class="card-design"></div>
+    <div class="btn btn-close" aria-label="Close"></div>
     <div class="card-inner">
-      <div class="btn btn-close" aria-label="Close"></div>
       <div class="card-content">
 
         <div class="card-asset">

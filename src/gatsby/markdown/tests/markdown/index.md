@@ -10,6 +10,36 @@ categories: ["100-Test"]
 ## Demos
 
 <demo>
+  <demovanilla src="vanilla/components/drop/variant">
+  </demovanilla>
+  <demovanilla src="vanilla/components/drop/event">
+  </demovanilla>
+  <demovanilla src="vanilla/components/drop/backdrop">
+  </demovanilla>
+</demo>
+
+<demo>
+  <demovanilla src="vanilla/components/overlay/nested">
+  </demovanilla>
+  <demovanilla src="vanilla/addons/overlay/position">
+  </demovanilla>
+</demo>
+
+<demo>
+  <demovanilla src="vanilla/demos/animation/2019-xtend">
+  </demovanilla>
+  <demovanilla src="vanilla/demos/animation/2020-euroricambi-collapse">
+  </demovanilla>
+  <div class="gatsby_demo_item" data-iframe="iframe/demos/animation/2020-bertani-listing">
+  </div>
+</demo>
+
+<demo>
+  <demovanilla src="vanilla/components/toggle/timing-delay-fnc">
+  </demovanilla>
+</demo>
+  
+<demo>
   <demovanilla src="vanilla/components/slider/toggle-js">
   </demovanilla>
   <demovanilla src="vanilla/components/slider/toggle-css">
@@ -21,22 +51,18 @@ categories: ["100-Test"]
 </demo>
 
 <demo>
-  <demovanilla src="vanilla/components/drop/variant">
+  <demovanilla src="vanilla/demos/slider/2020-euroricambi-slider">
   </demovanilla>
-  <demovanilla src="vanilla/components/drop/event">
-  </demovanilla>
-  <demovanilla src="vanilla/components/drop/backdrop">
-  </demovanilla>
-  <demovanilla src="vanilla/components/overlay/nested">
-  </demovanilla>
-  <demovanilla src="vanilla/components/toggle/timing-delay-fnc">
+  <demovanilla src="vanilla/demos/slider/2019-sun68-slider">
   </demovanilla>
 </demo>
 
 <demo>
-  <demovanilla src="vanilla/themes/slider/2020-euroricambi-slider">
+  <demovanilla src="vanilla/components/test/test-card-content">
   </demovanilla>
-  <demovanilla src="vanilla/themes/slider/2019-sun68-slider">
+  <demovanilla src="vanilla/components/test/test-overlay-content">
+  </demovanilla>
+  <demovanilla src="vanilla/components/test/test-slider-content">
   </demovanilla>
 </demo>
 
@@ -166,25 +192,4 @@ const test = 'test'
       <a href="/iframe/components/test/react-iframe">test react iframe</a>
     </div>
   </div>
-</demo>
-
-## Card
-
-<demo>
-  <demovanilla src="vanilla/components/test/test-card-content">
-  </demovanilla>
-</demo>
-
-## Overlay
-
-<demo>
-  <demovanilla src="vanilla/components/test/test-overlay-content">
-  </demovanilla>
-</demo>
-
-#### Slider
-
-<demo>
-  <demovanilla src="vanilla/components/test/test-slider-content">
-  </demovanilla>
 </demo>

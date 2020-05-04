@@ -1,0 +1,84 @@
+@import (reference) '~xtend-library/src/xtend-core.less';
+@import '~xtend-library/src/core/card/card.less';
+@import '~xtend-library/src/core/media/media.less';
+
+/**
+ * card interactive
+ */
+
+// variant
+
+.card-default {
+  a&, button& {
+    &:hover, &.hover {
+      color: @text-dark;
+      > .card-design {
+        border-color: @shade-200-dark;
+        background: @shade-200;
+      }
+      .card-block-head {
+        background: @shade-200-dark;
+      }
+    }
+    &:active, &.active {
+      color: @text-dark;
+      > .card-design {
+        border-color: @shade-200-dark;
+        background: @shade-200-dark;
+      }
+      .card-block-head {
+        background: @shade-200-dark;
+      }
+    }
+  }
+}
+
+.card-primary {
+  a&, button& {
+    &:hover, &.hover {
+      color: @text-inverse-dark;
+      > .card-design {
+        border-color: @accent-dark;
+        background: @accent;
+      }
+      .card-block-head {
+        background: @accent-dark;
+      }
+    }
+    &:active, &.active {
+      color: @text-inverse-dark;
+      > .card-design {
+        border-color: @accent-dark;
+        background: @accent-dark;
+      }
+      .card-block-head {
+        background: @accent-dark;
+      }
+    }
+  }
+}
+
+.card-white {
+  a&, button& {
+    &:hover, &.hover {
+      color: @text-dark;
+      > .card-design {
+        border-color: @shade-200;
+        background: @white;
+      }
+      .card-block-head {
+        background: @shade-200;
+      }
+    }
+    &:active, &.active {
+      color: @text-dark;
+      > .card-design {
+        border-color: @shade-200;
+        background: @shade-200;
+      }
+      .card-block-head {
+        background: @shade-200;
+      }
+    }
+  }
+}

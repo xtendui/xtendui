@@ -2,11 +2,17 @@
 @import '~xtend-library/src/core/card/card.less';
 @import '~xtend-library/src/core/media/media.less';
 
-@import '~xtend-library/src/addons/card/_collapse.less';
-
 /**
  * card-collapse
  */
+
+.card-collapse {
+  .card-contents({
+    > .card-item {
+      padding: 0 !important;
+    }
+  });
+}
 
 // size
 

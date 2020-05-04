@@ -12,13 +12,13 @@ export const demo = {
 demo.htmlSource = `
 <div class="row row-default">
   <div class="col-12 col-6-sm">
-    <a role="button" class="card card-default card-separator">
+    <div class="card card-default card-separator">
       <div class="card-design"></div>
       <div class="card-inner">
+        <div class="card-block card-block-head">
+          <div class="card-title">Lorem ipsum</div>
+        </div>
         <div class="card-content">
-          <div class="card-block card-block-head">
-            <div class="card-title">Lorem ipsum</div>
-          </div>
           <div class="card-block card-item">
             <div class="card-title">Lorem ipsum</div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
@@ -33,22 +33,22 @@ demo.htmlSource = `
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
             </div>
           </div>
-          <div class="card-asset">
-            ${img({ classes: 'media-cover', ratio: '37.5%' })}
-          </div>
+        </div>
+        <div class="card-asset">
+          ${img({ classes: 'media-cover', ratio: '37.5%' })}
         </div>
       </div>
-    </a>
+    </div>
   </div>
 
   <div class="col-12 col-6-sm">
-    <a role="button" class="card card-primary card-separator">
+    <div class="card card-primary card-separator">
       <div class="card-design"></div>
       <div class="card-inner">
+        <div class="card-block card-block-head">
+          <div class="card-title">Lorem ipsum</div>
+        </div>
         <div class="card-content">
-          <div class="card-block card-block-head">
-            <div class="card-title">Lorem ipsum</div>
-          </div>
           <div class="card-block card-item">
             <div class="card-title">Lorem ipsum</div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
@@ -63,12 +63,33 @@ demo.htmlSource = `
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
             </div>
           </div>
+        </div>
+        <div class="card-asset">
+          ${img({ classes: 'media-cover', ratio: '37.5%' })}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12">
+    <div class="card card-default card-horizontal-sm card-separator">
+      <div class="card-design"></div>
+      <div class="card-inner">
+        <div class="card-content">
           <div class="card-asset">
             ${img({ classes: 'media-cover', ratio: '37.5%' })}
           </div>
+          <div class="card-block card-item">
+            <div class="card-title">Lorem ipsum</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+          </div>
+          <div class="card-block card-item">
+            <div class="card-title">Lorem ipsum</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+          </div>
         </div>
       </div>
-    </a>
+    </div>
   </div>
 </div>
 `
