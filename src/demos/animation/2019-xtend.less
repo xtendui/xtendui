@@ -113,13 +113,13 @@
         opacity: 0;
         transform: scale(.75, .75);
       }
+      > .btn-close {
+        opacity: 0;
+      }
       > .card-inner {
-        > .card-content {
+        > .card-block,  > .card-content {
           opacity: 0;
           transform: translateY(-1.5rem);
-        }
-        > .btn-close {
-          opacity: 0;
         }
       }
     }
@@ -131,16 +131,16 @@
           transform: scale(1);
           transition: transform @time-medium @ease-on, opacity @time-medium @ease-on;
         }
+        > .btn-close {
+          // use animation to not override .btn transitions
+          .anim-zoom.in();
+          animation-delay: @time-medium;
+        }
         > .card-inner {
-          > .card-content {
+          > .card-block,  > .card-content {
             opacity: 1;
             transform: none;
             transition: transform @time-medium @ease-on @time-tiny, opacity @time-medium @ease-on @time-tiny;
-          }
-          > .btn-close {
-            // use animation to not override .btn transitions
-            .anim-zoom.in();
-            animation-delay: @time-medium;
           }
         }
       }
@@ -153,16 +153,16 @@
           transform: scale(.75, .75);
           transition: transform @time-small @ease-off @time-tiny, opacity @time-small @ease-off @time-tiny;
         }
+        > .btn-close {
+          // use animation to not override .btn transitions
+          .anim-zoom.out();
+          animation-delay: initial;
+        }
         > .card-inner {
-          > .card-content {
+          > .card-block,  > .card-content {
             opacity: 0;
             transform: translateY(1.5rem);
             transition: transform @time-small @ease-off, opacity @time-small @ease-off;
-          }
-          > .btn-close {
-            // use animation to not override .btn transitions
-            .anim-zoom.out();
-            animation-delay: initial;
           }
         }
       }

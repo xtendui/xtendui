@@ -17,10 +17,10 @@ demo.htmlSource = `
       <label for="check-card-0" class="card card-default align-center">
         <div class="card-design"></div>
         <div class="card-inner">
+          <div class="card-asset">
+            <div class="media-container" style="padding-bottom:37.5%"><div class="media-inner"><img class="media media-cover" src="/img.svg" alt loading="lazy"/></div></div>
+          </div>
           <div class="card-content">
-            <div class="card-asset">
-              <div class="media-container" style="padding-bottom:37.5%"><div class="media-inner"><img class="media media-cover" src="/img.svg" alt loading="lazy"/></div></div>
-            </div>
             <div class="card-block card-item">
               <div class="card-title">Lorem ipsum</div>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
@@ -36,10 +36,10 @@ demo.htmlSource = `
       <label for="check-card-1" class="card card-default align-center">
         <div class="card-design"></div>
         <div class="card-inner">
+          <div class="card-asset">
+            <div class="media-container" style="padding-bottom:37.5%"><div class="media-inner"><img class="media media-cover" src="/img.svg" alt loading="lazy"/></div></div>
+          </div>
           <div class="card-content">
-            <div class="card-asset">
-              <div class="media-container" style="padding-bottom:37.5%"><div class="media-inner"><img class="media media-cover" src="/img.svg" alt loading="lazy"/></div></div>
-            </div>
             <div class="card-block card-item">
               <div class="card-title">Lorem ipsum</div>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
@@ -55,10 +55,10 @@ demo.htmlSource = `
       <label for="radio-card-0" class="card card-default align-center">
         <div class="card-design"></div>
         <div class="card-inner">
+          <div class="card-asset">
+            <div class="media-container" style="padding-bottom:37.5%"><div class="media-inner"><img class="media media-cover" src="/img.svg" alt loading="lazy"/></div></div>
+          </div>
           <div class="card-content">
-            <div class="card-asset">
-              <div class="media-container" style="padding-bottom:37.5%"><div class="media-inner"><img class="media media-cover" src="/img.svg" alt loading="lazy"/></div></div>
-            </div>
             <div class="card-block card-item">
               <div class="card-title">Lorem ipsum</div>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
@@ -74,10 +74,10 @@ demo.htmlSource = `
       <label for="radio-card-1" class="card card-default align-center">
         <div class="card-design"></div>
         <div class="card-inner">
+          <div class="card-asset">
+            <div class="media-container" style="padding-bottom:37.5%"><div class="media-inner"><img class="media media-cover" src="/img.svg" alt loading="lazy"/></div></div>
+          </div>
           <div class="card-content">
-            <div class="card-asset">
-              <div class="media-container" style="padding-bottom:37.5%"><div class="media-inner"><img class="media media-cover" src="/img.svg" alt loading="lazy"/></div></div>
-            </div>
             <div class="card-block card-item">
               <div class="card-title">Lorem ipsum</div>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>

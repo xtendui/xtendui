@@ -62,11 +62,11 @@
     > .card-design {
       opacity: 0;
     }
+    > .btn-close {
+      opacity: 0;
+    }
     > .card-inner {
-      > .card-content {
-        opacity: 0;
-      }
-      > .btn-close {
+      > .card-block,  > .card-content {
         opacity: 0;
       }
     }
@@ -78,15 +78,15 @@
         opacity: 1;
         transition: opacity @time-medium @ease-on;
       }
+      > .btn-close {
+        // use animation to not override .btn transitions
+        .anim-zoom.in();
+        animation-delay: @time-medium;
+      }
       > .card-inner {
-        > .card-content {
+        > .card-block,  > .card-content {
           opacity: 1;
           transition: opacity @time-medium @ease-on @time-tiny;
-        }
-        > .btn-close {
-          // use animation to not override .btn transitions
-          .anim-zoom.in();
-          animation-delay: @time-medium;
         }
       }
     }
@@ -98,15 +98,15 @@
         opacity: 0;
         transition: opacity @time-small @ease-off @time-tiny;
       }
+      > .btn-close {
+        // use animation to not override .btn transitions
+        .anim-zoom.out();
+        animation-delay: initial;
+      }
       > .card-inner {
-        > .card-content {
+        > .card-block,  > .card-content {
           opacity: 0;
           transition: opacity @time-small @ease-off;
-        }
-        > .btn-close {
-          // use animation to not override .btn transitions
-          .anim-zoom.out();
-          animation-delay: initial;
         }
       }
     }

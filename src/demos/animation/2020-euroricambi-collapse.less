@@ -86,13 +86,13 @@
         opacity: 0;
         transform: translateY(-2rem);
       }
+      > .btn-close {
+        opacity: 0;
+      }
       > .card-inner {
-        > .card-content {
+        > .card-block,  > .card-content {
           opacity: 0;
           transform: translateY(-2.5rem);
-        }
-        > .btn-close {
-          opacity: 0;
         }
       }
     }
@@ -105,16 +105,16 @@
           transform: none;
           transition: transform @time-medium @ease-on, opacity @time-tiny @ease-on;
         }
+        > .btn-close {
+          // use animation to not override .btn transitions
+          .anim-zoom.in();
+          animation-delay: @time-medium;
+        }
         > .card-inner {
-          > .card-content {
+          > .card-block,  > .card-content {
             opacity: 1;
             transform: none;
             transition: transform @time-medium @ease-on, opacity @time-tiny @ease-on;
-          }
-          > .btn-close {
-            // use animation to not override .btn transitions
-            .anim-zoom.in();
-            animation-delay: @time-medium;
           }
         }
       }
@@ -128,16 +128,16 @@
           transform: translateY(2rem);
           transition: transform @time-small @ease-off, opacity @time-tiny @ease-off @time-tiny;
         }
+        > .btn-close {
+          // use animation to not override .btn transitions
+          .anim-zoom.out();
+          animation-delay: initial;
+        }
         > .card-inner {
-          > .card-content {
+          > .card-block,  > .card-content {
             opacity: 0;
             transform: translateY(2.5rem);
             transition: transform @time-small @ease-off, opacity @time-tiny @ease-off @time-tiny;
-          }
-          > .btn-close {
-            // use animation to not override .btn transitions
-            .anim-zoom.out();
-            animation-delay: initial;
           }
         }
       }

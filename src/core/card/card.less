@@ -30,13 +30,15 @@
   // default options
   .card-white();
   .card-medium();
+  > .card-design {
+    box-shadow: @shadow-light;
+  }
   .card-block {
     padding: 2em 2em !important;
     @media @min-sm {
       padding: 3em 3em !important;
     }
   }
-  // special
   .card-block-head {
     background: @shade-200-dark;
   }
@@ -46,7 +48,6 @@
   // default options
   .card-default();
   .card-large();
-  // special
   .card-block-head {
     background: @shade-200-dark;
   }
@@ -57,7 +58,6 @@
   // default options
   .card-white();
   .card-small();
-  // special
   .card-block-head {
     background: @shade-200-dark;
   }
@@ -71,13 +71,6 @@
     border-color: @shade-200;
     background: @shade-200;
   }
-  // preset
-  .card-overlay& {
-    > .card-design {
-      box-shadow: @shadow-light;
-    }
-  }
-  // special
   .card-block-head {
     background: @shade-200-dark;
   }
@@ -89,11 +82,17 @@
         border-color: @shade-200-dark;
         background: @shade-200;
       }
+      .card-block-head {
+        background: @shade-200-dark;
+      }
     }
     &:active, &.active {
       color: @text-dark;
       > .card-design {
         border-color: @shade-200-dark;
+        background: @shade-200-dark;
+      }
+      .card-block-head {
         background: @shade-200-dark;
       }
     }
@@ -106,13 +105,6 @@
     border-color: @accent;
     background: @accent;
   }
-  // preset
-  .card-overlay& {
-    > .card-design {
-      box-shadow: @shadow-accent;
-    }
-  }
-  // special
   .card-block-head {
     background: @accent-dark;
   }
@@ -124,11 +116,17 @@
         border-color: @accent-dark;
         background: @accent;
       }
+      .card-block-head {
+        background: @accent-dark;
+      }
     }
     &:active, &.active {
       color: @text-inverse-dark;
       > .card-design {
         border-color: @accent-dark;
+        background: @accent-dark;
+      }
+      .card-block-head {
         background: @accent-dark;
       }
     }
@@ -141,11 +139,8 @@
     border-color: @white;
     background: @white;
   }
-  // preset
-  .card-overlay& {
-    > .card-design {
-      box-shadow: @shadow-light;
-    }
+  .card-block-head {
+    background: @shade-200;
   }
   // interactive
   a&, button& {
@@ -155,11 +150,17 @@
         border-color: @shade-200;
         background: @white;
       }
+      .card-block-head {
+        background: @shade-200;
+      }
     }
     &:active, &.active {
       color: @text-dark;
       > .card-design {
         border-color: @shade-200;
+        background: @shade-200;
+      }
+      .card-block-head {
         background: @shade-200;
       }
     }
@@ -168,51 +169,39 @@
 
 // size
 
-.card-block.card-block-small {
-  .font-small();
-  .line-height-medium();
-  padding: 2em 2.5em;
-  .card-title {
-    .h4();
-    .spacing-tiny();
-  }
-}
-
 .card-small {
   .card-block {
-    .card-block.card-block-small();
-  }
-}
-
-.card-block.card-block-medium {
-  .font-medium();
-  .line-height-medium();
-  padding: 2em 2.5em;
-  .card-title {
-    .h3();
-    .spacing-small();
+    .font-small();
+    .line-height-medium();
+    padding: 2em 2.5em;
+    .card-title {
+      .h4();
+      .spacing-tiny();
+    }
   }
 }
 
 .card-medium {
   .card-block {
-    .card-block.card-block-medium();
-  }
-}
-
-.card-block.card-block-large {
-  .font-big();
-  .line-height-medium();
-  padding: 2em 2.5em;
-  .card-title {
-    .h2();
-    .spacing-medium();
+    .font-medium();
+    .line-height-medium();
+    padding: 2em 2.5em;
+    .card-title {
+      .h3();
+      .spacing-small();
+    }
   }
 }
 
 .card-large {
   .card-block {
-    .card-block.card-block-large();
+    .font-big();
+    .line-height-medium();
+    padding: 2em 2.5em;
+    .card-title {
+      .h2();
+      .spacing-medium();
+    }
   }
 }
 

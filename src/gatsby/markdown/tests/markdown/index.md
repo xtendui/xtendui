@@ -57,6 +57,15 @@ categories: ["100-Test"]
   </demovanilla>
 </demo>
 
+<demo>
+  <demovanilla src="vanilla/components/test/test-card-content">
+  </demovanilla>
+  <demovanilla src="vanilla/components/test/test-overlay-content">
+  </demovanilla>
+  <demovanilla src="vanilla/components/test/test-slider-content">
+  </demovanilla>
+</demo>
+
 ## Markdown
 
 <div class="table-scroll">
@@ -183,25 +192,4 @@ const test = 'test'
       <a href="/iframe/components/test/react-iframe">test react iframe</a>
     </div>
   </div>
-</demo>
-
-## Card
-
-<demo>
-  <demovanilla src="vanilla/components/test/test-card-content">
-  </demovanilla>
-</demo>
-
-## Overlay
-
-<demo>
-  <demovanilla src="vanilla/components/test/test-overlay-content">
-  </demovanilla>
-</demo>
-
-#### Slider
-
-<demo>
-  <demovanilla src="vanilla/components/test/test-slider-content">
-  </demovanilla>
 </demo>

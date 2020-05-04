@@ -13,24 +13,15 @@
     > .card-inner > .card-content {
       padding: 0 !important;
     }
-    &:not(:hover):not(.hover):not(:active):not(.active) {
-      color: @text;
-      > .card-design {
-        border-color: transparent;
-        background: transparent;
-      }
+    // variant
+    color: @text;
+    > .card-design {
+      border-color: transparent;
+      background: transparent;
     }
-  }
-}
-
-// variant
-
-.card-primary {
-  .card-full& {
-    &:not(:hover):not(.hover):not(:active):not(.active) {
-      .card-block-head {
-        background: @shade-200-dark;
-      }
+    // special
+    .card-block-head {
+      background: @shade-200-dark;
     }
   }
 }
