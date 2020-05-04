@@ -9,7 +9,8 @@
 // variant
 
 .card-default {
-  a& {
+  // interactive
+  a&, label& {
     &:hover, &.hover {
       color: @text-dark;
       > .card-design {
@@ -34,7 +35,8 @@
 }
 
 .card-primary {
-  a& {
+  // interactive
+  a&, label& {
     &:hover, &.hover {
       color: @text-inverse-dark;
       > .card-design {
@@ -59,7 +61,8 @@
 }
 
 .card-white {
-  a& {
+  // interactive
+  a&, label& {
     &:hover, &.hover {
       color: @text-dark;
       > .card-design {
@@ -78,6 +81,27 @@
       }
       .card-block-head {
         background: @shade-200;
+      }
+    }
+  }
+}
+
+// animation
+
+.card {
+  // interactive
+  a&, label& {
+    > .card-design {
+      transition: all @time-small @ease-off;
+    }
+    &:hover, &.hover {
+      > .card-design {
+        transition: all @time-small @ease-on;
+      }
+    }
+    &:active, &.active, input[type="checkbox"]:not(.unstyled):checked ~ &, input[type="radio"]:not(.unstyled):checked ~ & {
+      > .card-design {
+        transition: all @time-small @ease-on;
       }
     }
   }

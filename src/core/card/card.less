@@ -171,23 +171,3 @@
     .trans-anim-none() !important;
   }
 }
-
-// animation
-
-.card {
-  a&, button&, label& {
-    > .card-design {
-      transition: all @time-small @ease-off;
-    }
-    &:hover, &.hover {
-      > .card-design {
-        transition: all @time-small @ease-on;
-      }
-    }
-    &:active, &.active, input[type="checkbox"]:not(.unstyled):checked ~ &, input[type="radio"]:not(.unstyled):checked ~ & {
-      > .card-design {
-        transition: all @time-small @ease-on;
-      }
-    }
-  }
-}
