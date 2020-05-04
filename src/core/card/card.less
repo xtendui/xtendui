@@ -68,7 +68,7 @@
 .card-default {
   color: @text;
   > .card-design {
-    border-color: @shade-200-dark;
+    border-color: @shade-200;
     background: @shade-200;
   }
   // preset
@@ -86,7 +86,8 @@
     &:hover, &.hover {
       color: @text-dark;
       > .card-design {
-        box-shadow: @shadow-light;
+        border-color: @shade-200-dark;
+        background: @shade-200;
       }
     }
     &:active, &.active {
@@ -94,7 +95,6 @@
       > .card-design {
         border-color: @shade-200-dark;
         background: @shade-200-dark;
-        box-shadow: none;
       }
     }
   }
@@ -103,7 +103,7 @@
 .card-primary {
   .text-inverse();
   > .card-design {
-    border-color: @accent-dark;
+    border-color: @accent;
     background: @accent;
   }
   // preset
@@ -121,7 +121,8 @@
     &:hover, &.hover {
       color: @text-inverse-dark;
       > .card-design {
-        box-shadow: @shadow-accent;
+        border-color: @accent-dark;
+        background: @accent;
       }
     }
     &:active, &.active {
@@ -129,7 +130,6 @@
       > .card-design {
         border-color: @accent-dark;
         background: @accent-dark;
-        box-shadow: none;
       }
     }
   }
@@ -138,7 +138,7 @@
 .card-white {
   color: @text;
   > .card-design {
-    border-color: @shade-200;
+    border-color: @white;
     background: @white;
   }
   // preset
@@ -152,7 +152,8 @@
     &:hover, &.hover {
       color: @text-dark;
       > .card-design {
-        box-shadow: @shadow-light;
+        border-color: @shade-200;
+        background: @white;
       }
     }
     &:active, &.active {
@@ -160,7 +161,6 @@
       > .card-design {
         border-color: @shade-200;
         background: @shade-200;
-        box-shadow: none;
       }
     }
   }
@@ -256,20 +256,15 @@
 
 .card {
   a&, button&, label& {
-    transition: all @time-small @ease-off;
     > .card-design {
       transition: all @time-small @ease-off;
     }
     &:hover, &.hover {
-      transform: translateY(-.5rem);
-      transition: all @time-small @ease-on;
       > .card-design {
         transition: all @time-small @ease-on;
       }
     }
     &:active, &.active, input[type="checkbox"]:not(.unstyled):checked ~ &, input[type="radio"]:not(.unstyled):checked ~ & {
-      transform: none;
-      transition: all @time-small @ease-on;
       > .card-design {
         transition: all @time-small @ease-on;
       }

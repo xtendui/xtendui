@@ -44,7 +44,7 @@ demo.htmlSource = `
       <div class="card-inner">
         <div class="card-content">
           <div class="card-block card-item">
-            <div class="card-title">A</div>
+            <div class="card-title">Link</div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
           </div>
         </div>

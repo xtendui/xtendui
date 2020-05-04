@@ -1,4 +1,5 @@
 @import (reference) '~xtend-library/src/xtend-core.less';
+@import '~xtend-library/src/core/card/card.less';
 @import '~xtend-library/src/core/drop/drop.less';
 @import '~xtend-library/src/core/overlay/overlay.less';
 @import '~xtend-library/src/addons/overlay/position.less';
@@ -163,6 +164,85 @@
             .anim-zoom.out();
             animation-delay: initial;
           }
+        }
+      }
+    }
+  }
+
+  /**
+   * card
+   */
+
+  // variant
+
+  .card-default& {
+    // interactive
+    a&, button& {
+      &:hover, &.hover {
+        > .card-design {
+          box-shadow: @shadow-light;
+        }
+      }
+      &:active, &.active {
+        > .card-design {
+          box-shadow: none;
+        }
+      }
+    }
+  }
+
+  .card-primary& {
+    // interactive
+    a&, button& {
+      &:hover, &.hover {
+        > .card-design {
+          box-shadow: @shadow-accent;
+        }
+      }
+      &:active, &.active {
+        > .card-design {
+          box-shadow: none;
+        }
+      }
+    }
+  }
+
+  .card-white& {
+    // interactive
+    a&, button& {
+      &:hover, &.hover {
+        > .card-design {
+          box-shadow: @shadow-light;
+        }
+      }
+      &:active, &.active {
+        > .card-design {
+          box-shadow: none;
+        }
+      }
+    }
+  }
+
+  // animation
+
+  .card& {
+    a&, button&, label& {
+      transition: all @time-small @ease-off;
+      > .card-design {
+        transition: all @time-small @ease-off;
+      }
+      &:hover, &.hover {
+        transform: translateY(-.5rem);
+        transition: all @time-small @ease-on;
+        > .card-design {
+          transition: all @time-small @ease-on;
+        }
+      }
+      &:active, &.active, input[type="checkbox"]:not(.unstyled):checked ~ &, input[type="radio"]:not(.unstyled):checked ~ & {
+        transform: none;
+        transition: all @time-small @ease-on;
+        > .card-design {
+          transition: all @time-small @ease-on;
         }
       }
     }

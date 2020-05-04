@@ -180,3 +180,39 @@
   .col(4, lg);
 }
 
+.gatsby_listing_item {
+  // interactive
+  a&, button& {
+    &:hover, &.hover {
+      > .card-design {
+        box-shadow: @shadow-accent;
+      }
+    }
+    &:active, &.active {
+      > .card-design {
+        box-shadow: none;
+      }
+    }
+  }
+  // animation
+  a&, button&, label& {
+    transition: all @time-small @ease-off;
+    > .card-design {
+      transition: all @time-small @ease-off;
+    }
+    &:hover, &.hover {
+      transform: translateY(-.5rem);
+      transition: all @time-small @ease-on;
+      > .card-design {
+        transition: all @time-small @ease-on;
+      }
+    }
+    &:active, &.active, input[type="checkbox"]:not(.unstyled):checked ~ &, input[type="radio"]:not(.unstyled):checked ~ & {
+      transform: none;
+      transition: all @time-small @ease-on;
+      > .card-design {
+        transition: all @time-small @ease-on;
+      }
+    }
+  }
+}
