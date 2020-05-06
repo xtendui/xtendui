@@ -336,10 +336,11 @@ legend, .legend {
 // styled
 
 .checkbox, .radio {
-  padding-left: 3rem;
+  padding-left: 26px;
   &:before, &:after {
-    width: 1.8rem;
-    height: 1.8rem;
+    top: 2px;
+    width: 16px;
+    height: 16px;
   }
   // variant
   &.form-label.form-label-default, .form-default & {
@@ -407,9 +408,20 @@ input[type="checkbox"], input[type="radio"] {
     transition: all @time-small @ease-off;
   }
   &:after {
-    opacity: 0 !important;
+    opacity: 0;
     transform: scale(.9, .5);
     transition: all @time-small @ease-off;
+  }
+  &.active {
+    &:before {
+      transform: scale(1, 1);
+      transition: all @time-small @ease-on;
+    }
+    &:after {
+      opacity: 1;
+      transform: scale(1, 1);
+      transition: all @time-small @ease-on;
+    }
   }
   &.focus, &:focus {
     &.form-label.form-label-default, .form-default & {
@@ -421,17 +433,6 @@ input[type="checkbox"], input[type="radio"] {
       &:before {
         border: 1px solid @shade-900;
       }
-    }
-  }
-  &.active {
-    &:before {
-      transform: scale(1, 1);
-      transition: all @time-small @ease-on;
-    }
-    &:after {
-      opacity: 1 !important;
-      transform: scale(1, 1);
-      transition: all @time-small @ease-on;
     }
   }
 }
