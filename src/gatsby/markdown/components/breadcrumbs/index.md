@@ -29,7 +29,7 @@ Or just import **core**:
 Use this markup to create a **breadcrumb**.
 
 <script type="text/plain" class="language-markup">
-  <div class="breadcrumbs">
+  <nav class="breadcrumbs">
     <div class="container">
       <div class="breadcrumbs-inner">
         <nav class="breadcrumbs-list">
@@ -47,7 +47,7 @@ Use this markup to create a **breadcrumb**.
         </nav>
       </div>
     </div>
-  </div>
+  </nav>
 </script>
 
 Use this markup to add **json-ld** metadata to **breadcrumb**.

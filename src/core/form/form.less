@@ -412,8 +412,15 @@ input[type="checkbox"], input[type="radio"] {
     transition: all @time-small @ease-off;
   }
   &.focus, &:focus {
-    &:before {
-      border: 1px solid @accent;
+    &.form-label.form-label-default, .form-default & {
+      &:before {
+        border: 1px solid @accent;
+      }
+    }
+    &.form-label.form-label-inverse, .form-inverse & {
+      &:before {
+        border: 1px solid @shade-900;
+      }
     }
   }
   &.active {
