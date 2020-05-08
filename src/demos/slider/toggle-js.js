@@ -8,22 +8,22 @@ Xt.mount.push({
   mount: object => {
     // vars
 
-    const maskTimeOn = Xt.vars.timeSmall
-    const maskTimeOff = Xt.vars.timeSmall
-    const maskEaseOn = 'cheetah'
-    const maskEaseOff = 'cheetah'
+    const maskTimeOn = Xt.vars.timeLarge
+    const maskTimeOff = Xt.vars.timeLarge
+    const maskEaseOn = 'quart.inOut'
+    const maskEaseOff = 'quart.inOut'
 
-    const contentTimeOn = Xt.vars.timeSmall
-    const contentTimeOff = Xt.vars.timeSmall
-    const contentEaseOn = 'cheetah'
-    const contentEaseOff = 'cheetah'
+    const contentTimeOn = Xt.vars.timeLarge
+    const contentTimeOff = Xt.vars.timeLarge
+    const contentEaseOn = 'quart.inOut'
+    const contentEaseOff = 'quart.inOut'
 
     // init
 
     let self = new Xt.Slider(object, {
       instant: { elements: true, elementsInner: true },
-      durationOn: Xt.vars.timeSmall,
-      durationOff: Xt.vars.timeSmall,
+      durationOn: Xt.vars.timeLarge,
+      durationOff: Xt.vars.timeLarge,
     })
 
     // drag
@@ -47,14 +47,12 @@ Xt.mount.push({
     const eventDragReset = () => {
       const target = self.targets.filter(x => self.hasCurrent(x))[0]
       // mask
-      gsap.set(self.dragger, { x: self.detail.dragPosOld })
-      gsap.to(self.dragger, { x: 0, duration: maskTimeOn, ease: maskEaseOn })
-      gsap.set(target, { x: -self.detail.dragPosOld })
-      gsap.to(target, { x: 0, opacity: 1, duration: maskTimeOn, ease: maskEaseOn })
+      gsap.to(self.dragger, { x: 0, duration: maskTimeOff, ease: maskEaseOff })
+      gsap.to(target, { x: 0, opacity: 1, duration: maskTimeOff, ease: maskEaseOff })
       // content
       const contents = target.querySelectorAll('.card-item > *')
       for (const content of contents) {
-        gsap.to(content, { x: 0, opacity: 1, duration: contentTimeOn, ease: contentEaseOn })
+        gsap.to(content, { x: 0, opacity: 1, duration: contentTimeOff, ease: contentEaseOff })
       }
     }
 
