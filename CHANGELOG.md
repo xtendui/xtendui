@@ -1,3 +1,12 @@
+## [0.13.71](https://github.com/minimit/xtend-library/compare/v0.13.70...v0.13.71) (2020-05-08)
+
+
+### Bug Fixes
+
+* **slider:** WIP refactor slider ratio ([94d68df](https://github.com/minimit/xtend-library/commit/94d68df98bddcbe6612384ef41b72bfa50c45706))
+* **slider:** WIP refactor slider ratio ([bd46553](https://github.com/minimit/xtend-library/commit/bd46553b000f3000d560aee777ebf88ed37b370e))
+* dl fixes ([b95f085](https://github.com/minimit/xtend-library/commit/b95f0855cad1bc21f2fa9d9b06ab87765daa4f27))
+
 ## [0.13.70](https://github.com/minimit/xtend-library/compare/v0.13.69...v0.13.70) (2020-05-04)
 
 
