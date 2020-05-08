@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="slider demo--2020-euroricambi-slider">
+<div class="slider demo--2020-euroricambi-cards">
 
     <nav class="slider-pagination">
         <div>

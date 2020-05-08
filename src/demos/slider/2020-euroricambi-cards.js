@@ -7,7 +7,7 @@ import gsap from 'gsap'
 // https://tympanus.net/Development/SlideOutBoxMenu/
 
 Xt.mount.push({
-  matches: '.demo--2020-euroricambi-slider',
+  matches: '.demo--2020-euroricambi-cards',
   mount: object => {
     // vars
 
@@ -16,7 +16,7 @@ Xt.mount.push({
     const assetMaskEaseOn = 'expo.out'
     const assetMaskEaseOff = 'quart.out'
 
-    const assetZoom = 0.1
+    const assetZoom = 0.2
     const assetTimeOn = Xt.vars.timeLarge
     const assetTimeOff = Xt.vars.timeTiny
     const assetEaseOn = 'quart.out'
@@ -62,6 +62,11 @@ Xt.mount.push({
       const assetBackgrounds = target.querySelectorAll('.slider_img_background')
       for (const assetBackground of assetBackgrounds) {
         gsap.set(assetBackground, { opacity: self.detail.dragRatioInverse })
+      }
+      // asset
+      const assets = target.querySelectorAll('.slider_img img')
+      for (const asset of assets) {
+        gsap.set(asset, { scale: 1 + assetZoom * self.detail.dragRatio })
       }
       // cardContent
       const cardContents = target.querySelectorAll('.slider_card .card-item')
@@ -182,7 +187,7 @@ Xt.mount.push({
         // asset
         const assets = target.querySelectorAll('.slider_img img')
         for (const asset of assets) {
-          gsap.to(asset, { scale: 1, duration: assetTimeOff, ease: assetEaseOff })
+          gsap.to(asset, { scale: 1 + assetZoom, duration: assetTimeOff, ease: assetEaseOff })
         }
         // cardContent
         const cardContents = target.querySelectorAll('.slider_card .card-item')

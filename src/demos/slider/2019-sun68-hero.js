@@ -5,7 +5,7 @@ import 'xtend-library/src/addons/slider/navigation-sides.js'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '.demo--2019-sun68-slider',
+  matches: '.demo--2019-sun68-hero',
   mount: object => {
     // vars
 
@@ -14,7 +14,7 @@ Xt.mount.push({
     const contentEaseOn = 'expo.out'
     const contentEaseOff = 'expo.out'
 
-    const contentZoom = 1.1
+    const contentZoom = 0.2
     const contentZoomTime = Xt.vars.timeBig * 3
     const contentZoomEase = 'sine.inOut'
 
@@ -78,12 +78,12 @@ Xt.mount.push({
           if (!self.detail.dragging) {
             gsap.set(content, { x: 0, opacity: 1, scale: 1 })
           }
-          gsap.to(content, { scale: contentZoom, duration: contentZoomTime, ease: contentZoomEase, repeat: -1, yoyo: true })
+          gsap.to(content, { scale: 1 + contentZoom, duration: contentZoomTime, ease: contentZoomEase, repeat: -1, yoyo: true })
         } else {
           // content
           const content = target.querySelector('.slide_img_inner')
           gsap.to(content, { x: 0, opacity: 1, duration: contentTimeOn, ease: contentEaseOn }).eventCallback('onComplete', () => {
-            gsap.to(content, { scale: contentZoom, duration: contentZoomTime, ease: contentZoomEase, repeat: -1, yoyo: true })
+            gsap.to(content, { scale: 1 + contentZoom, duration: contentZoomTime, ease: contentZoomEase, repeat: -1, yoyo: true })
           })
         }
       }

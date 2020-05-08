@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="slider demo--2020-brands-slider">
+<div class="slider demo--2020-brands-infinite">
 
     <div class="slides">
         <ul class="slides-inner">
@@ -85,7 +85,7 @@ demo.htmlSource = `
 
 </div>
 
-<div class="slider demo--2020-brands-slider demo--2020-brands-slider--factor">
+<div class="slider demo--2020-brands-infinite demo--2020-brands-infinite--factor">
 
     <div class="slides">
         <ul class="slides-inner">

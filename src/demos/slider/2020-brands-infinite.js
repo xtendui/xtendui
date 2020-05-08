@@ -3,7 +3,7 @@ import 'xtend-library/src/vars.js'
 import 'xtend-library/src/extensions/slider/slider.js'
 
 Xt.mount.push({
-  matches: '.demo--2020-brands-slider',
+  matches: '.demo--2020-brands-infinite',
   mount: object => {
     // slider
 
@@ -29,7 +29,7 @@ Xt.mount.push({
         const slideWidth = target.offsetWidth
         const draggerWidth = self.dragger.offsetWidth
         let time = slideWidth * 25
-        if (object.classList.contains('demo--2020-brands-slider--factor')) {
+        if (object.classList.contains('demo--2020-brands-infinite--factor')) {
           time = (draggerWidth / slideWidth) * 100000 // faster the less horizontal space
         }
         self.options.auto.time = time

@@ -51,9 +51,9 @@ categories: ["100-Test"]
 </demo>
 
 <demo>
-  <demovanilla src="vanilla/demos/slider/2020-euroricambi-slider">
+  <demovanilla src="vanilla/demos/slider/2020-euroricambi-cards">
   </demovanilla>
-  <demovanilla src="vanilla/demos/slider/2019-sun68-slider">
+  <demovanilla src="vanilla/demos/slider/2019-sun68-hero">
   </demovanilla>
 </demo>
 

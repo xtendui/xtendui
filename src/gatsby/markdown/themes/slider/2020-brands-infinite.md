@@ -2,10 +2,10 @@
 type: "Themes"
 badge: "Themes"
 parent: "Slider"
-title: "2019-sun68-slider"
+title: "2020-brands-infinite"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-date: "2019-09-01"
+date: "2020-01-25"
 demos: [
-  "vanilla/demos/slider/2019-sun68-slider"
+  "vanilla/demos/slider/2020-brands-infinite"
 ]
 ---
