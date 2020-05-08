@@ -1,3 +1,10 @@
+## [0.13.72](https://github.com/minimit/xtend-library/compare/v0.13.71...v0.13.72) (2020-05-08)
+
+
+### Bug Fixes
+
+* **slider:** refactor slider names ([cd8b157](https://github.com/minimit/xtend-library/commit/cd8b15708ac9dd8afe0597cadd4a29a4fa4a9761))
+
 ## [0.13.71](https://github.com/minimit/xtend-library/compare/v0.13.70...v0.13.71) (2020-05-08)
 
 
