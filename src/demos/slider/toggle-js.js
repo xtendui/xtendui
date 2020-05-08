@@ -30,14 +30,13 @@ Xt.mount.push({
 
     const eventDrag = () => {
       const target = self.targets.filter(x => self.hasCurrent(x))[0]
-      const ratio = Math.abs(self.detail.dragStart - self.detail.dragCurrent) / target.clientWidth
       // mask
       gsap.set(target, { x: -self.detail.dragPos, opacity: 1 })
       gsap.set(self.dragger, { x: self.detail.dragPos })
       // content
       const contents = target.querySelectorAll('.card-item > *')
       for (const content of contents) {
-        gsap.set(content, { x: -100 * ratio * self.direction, opacity: 1 })
+        gsap.set(content, { x: -100 * self.detail.dragRatio * self.direction, opacity: 1 })
       }
     }
 
@@ -81,17 +80,21 @@ Xt.mount.push({
             gsap.set(content, { x: 0, opacity: 1, ease: contentEaseOn })
           }
         } else {
-          // setup
-          gsap.set(target, { opacity: 0 })
-          // mask
-          gsap.set(self.dragger, { x: xMax * self.direction })
+          if (!self.detail.dragging) {
+            // setup
+            gsap.set(target, { opacity: 0 })
+            // mask
+            gsap.set(self.dragger, { x: xMax * self.direction })
+            gsap.set(target, { x: -xMax * self.direction })
+          }
           gsap.to(self.dragger, { x: 0, duration: maskTimeOn, ease: maskEaseOn })
-          gsap.set(target, { x: -xMax * self.direction })
           gsap.to(target, { x: 0, opacity: 1, duration: maskTimeOn, ease: maskEaseOn })
           // content
           const contents = target.querySelectorAll('.card-item > *')
           for (const content of contents) {
-            gsap.set(content, { x: 100 * self.direction, opacity: 0 })
+            if (!self.detail.dragging) {
+              gsap.set(content, { x: 100 * self.direction, opacity: 0 })
+            }
             gsap.to(content, { x: 0, opacity: 1, duration: contentTimeOn, ease: contentEaseOn })
           }
         }

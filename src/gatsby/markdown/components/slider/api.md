@@ -182,6 +182,9 @@ Here are the main drag properties inside `self.detail`:
 
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
+| Event                   | `detail.draggerWidth:Number`       | Dragger width             |
+| Event                   | `detail.dragRatio:Number`       | Drag ratio from 0 to 1             |
+| Event                   | `detail.dragRatioInverse:Number`       | Drag ratio inverse from 1 to 0             |
 | Event                   | `detail.dragStart:Number`       | Drag starting position             |
 | Event                   | `detail.dragCurrent:Number`       | Drag current position             |
 | Event                   | `detail.dragPos:Number`       | Drag distance from dragStart to dragCurrent with computation             |

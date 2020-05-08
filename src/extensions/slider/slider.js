@@ -752,6 +752,8 @@ class Slider extends Xt.Toggle {
     // logic
     self.detail.dragVelocity = null
     self.detail.dragVelocityNext = null
+    // dragging
+    self.detail.dragging = true
     // listener dispatch
     if (!self.initial) {
       dragger.dispatchEvent(new CustomEvent('dragstart.xt'))
@@ -779,10 +781,6 @@ class Slider extends Xt.Toggle {
     }
     // logic
     self.logicDragfriction(dragger, e)
-    // listener dispatch
-    if (!self.initial) {
-      dragger.dispatchEvent(new CustomEvent('dragend.xt'))
-    }
   }
 
   /**
@@ -903,6 +901,8 @@ class Slider extends Xt.Toggle {
     self.detail.dragCurrent = self.detail.dragCurrentReal - (self.detail.dragPosReal - dragPos) // dragCurrent when overflowing
     self.detail.dragPosOld = self.detail.dragPos
     self.detail.dragPos = dragPos
+    self.detail.dragRatio = Math.abs(self.detail.dragStart - self.detail.dragCurrent) / self.detail.draggerWidth
+    self.detail.dragRatioInverse = 1 - self.detail.dragRatio
     self.direction = self.detail.dragStart - self.detail.dragCurrent < 0 ? -1 : 1
     self.inverse = self.direction === -1
     // drag position
@@ -1000,6 +1000,12 @@ class Slider extends Xt.Toggle {
       if (!self.initial) {
         dragger.dispatchEvent(new CustomEvent('dragreset.xt'))
       }
+    }
+    // dragging
+    self.detail.dragging = false
+    // listener dispatch
+    if (!self.initial) {
+      dragger.dispatchEvent(new CustomEvent('dragend.xt'))
     }
   }
 
