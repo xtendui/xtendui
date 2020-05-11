@@ -7,7 +7,6 @@ import gsap from 'gsap'
 Xt.mount.push({
   matches: '.demo--2020-bertani-hero',
   mount: object => {
-    console.log(object)
     // vars
 
     const assetMaskTimeOn = Xt.vars.timeLarge

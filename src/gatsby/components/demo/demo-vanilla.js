@@ -9,6 +9,7 @@ class DemoVanilla extends React.Component {
     const { src, children, name, mode } = this.props
     const demo = require('../../code/' + src + '.js').demo
     demo.type = demo.type === 'components' ? 'demos' : demo.type
+    demo.full = demo.full ? ' gatsby_demo_item--full' : ''
     return (
       <StaticQuery
         query={graphql`
@@ -23,7 +24,7 @@ class DemoVanilla extends React.Component {
           }
         `}
         render={data => (
-          <div className="gatsby_demo_item gatsby_demo_preview" data-name={name || demo.name.split('-').join(' ')} data-inline={src}>
+          <div className={'gatsby_demo_item gatsby_demo_preview' + demo.full} data-name={name || demo.name.split('-').join(' ')} data-inline={src}>
             {children}
             <script type="text/plain" data-lang="html" dangerouslySetInnerHTML={{ __html: demo.htmlSource }} />
             <div
