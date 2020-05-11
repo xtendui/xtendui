@@ -1,0 +1,81 @@
+@import (reference) '~xtend-library/src/xtend-core.less';
+@import '~xtend-library/src/extensions/slider/slider.less';
+@import '~xtend-library/src/addons/slider/navigation-sides.less';
+
+.demo--2020-bertani-hero {
+  position: relative;
+  background: @shade-200;
+  .slides-inner {
+    .row-space(none);
+    .transition-none() !important;
+    .transform-none() !important;
+  }
+  .slide {
+    position: relative;
+    .col(12);
+    &.active {
+      z-index: 9;
+    }
+    &.next {
+      z-index: 10;
+    }
+    &:not(.active) {
+      position: absolute;
+    }
+  }
+  .slider-pagination {
+    display: none;
+  }
+  // item
+  .slide_item {
+    .link-none();
+    .full();
+    display: block;
+    overflow: hidden;
+  }
+  .slide_item_img {
+    .media-container {
+      height: 55rem;
+      @media @min-md {
+        height: 65rem;
+      }
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: 2;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      height: 75%;
+      background: linear-gradient(180deg, fade(@black, 0%) 0%, fade(@black, 30%) 100%);
+    }
+  }
+  .slide_item_text {
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .slide_item_text_inner {
+    .text-inverse();
+    .padding(right, big);
+    .padding(y, giant);
+    .padding(y, huge, md);
+    max-width: 80rem;
+  }
+  // slider-navigation-sides
+  .slider-navigation-sides {
+    z-index: 10;
+    color: @white;
+    &:active {
+      color: fade(@white, 50%);
+    }
+  }
+  .slider-navigation-sides-btn {
+    @media (hover: none) {
+      margin-left: -1.5rem;
+    }
+  }
+}
