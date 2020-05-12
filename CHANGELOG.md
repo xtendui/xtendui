@@ -1,3 +1,11 @@
+## [0.13.75](https://github.com/minimit/xtend-library/compare/v0.13.74...v0.13.75) (2020-05-12)
+
+
+### Bug Fixes
+
+* fix destroy google locator and events other addons ([dcdbbc9](https://github.com/minimit/xtend-library/commit/dcdbbc94e9676501a82aa399d814a1d6e2500ee4))
+* fix destroy google locator and events other addons ([f74ea42](https://github.com/minimit/xtend-library/commit/f74ea4274db1d1415d3505f8bde886e6976321a4))
+
 ## [0.13.74](https://github.com/minimit/xtend-library/compare/v0.13.73...v0.13.74) (2020-05-12)
 
 
