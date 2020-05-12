@@ -1,3 +1,10 @@
+## [0.13.74](https://github.com/minimit/xtend-library/compare/v0.13.73...v0.13.74) (2020-05-12)
+
+
+### Bug Fixes
+
+* media ([b186a2f](https://github.com/minimit/xtend-library/commit/b186a2f5abe4f8d83ff9634a66683dfea2c43a2e))
+
 ## [0.13.73](https://github.com/minimit/xtend-library/compare/v0.13.72...v0.13.73) (2020-05-12)
 
 
