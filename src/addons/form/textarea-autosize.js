@@ -77,6 +77,8 @@ class TextareaAutosize {
     self.object.removeEventListener('keyup', self.keychange.bind(self))
     // set self
     Xt.remove(self.componentName, self.object)
+    // listener dispatch
+    self.object.dispatchEvent(new CustomEvent('destroy.xt'))
   }
 
   //

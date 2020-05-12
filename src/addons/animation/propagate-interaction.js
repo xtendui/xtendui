@@ -112,6 +112,8 @@ class PropagateInteraction {
     for (const tr of self.targets) {
       Xt.remove(self.componentName, tr)
     }
+    // listener dispatch
+    self.object.dispatchEvent(new CustomEvent('destroy.xt'))
   }
 
   //

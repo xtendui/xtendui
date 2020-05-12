@@ -112,6 +112,8 @@ class MouseFollow {
     self.container.removeEventListener('mouseleave', self.mouseleave.bind(self))
     // set self
     Xt.remove(self.componentName, self.object)
+    // listener dispatch
+    self.object.dispatchEvent(new CustomEvent('destroy.xt'))
   }
 
   //

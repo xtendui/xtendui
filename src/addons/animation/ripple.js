@@ -129,6 +129,8 @@ class Ripple {
     removeEventListener('touchend', self.offListener)
     // set self
     Xt.remove(self.componentName, self.object)
+    // listener dispatch
+    self.object.dispatchEvent(new CustomEvent('destroy.xt'))
   }
 
   //

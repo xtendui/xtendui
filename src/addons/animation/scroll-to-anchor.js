@@ -86,6 +86,8 @@ class ScrollToAnchor {
     removeEventListener('hashchange', self.change.bind(self).bind(self, true))
     // set self
     Xt.remove(self.componentName, self.object)
+    // listener dispatch
+    self.object.dispatchEvent(new CustomEvent('destroy.xt'))
   }
 
   //

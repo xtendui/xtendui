@@ -36,6 +36,7 @@ class Googlelocator {
     // js options
     self.options = Xt.merge([self.constructor.optionsDefault, self.optionsJs])
     // vars
+    self.locateCache = null
     self.loaderElement = self.object.querySelector(self.options.elements.loader)
     self.itemsTemplate = self.object.querySelector(self.options.elements.itemsTemplate)
     self.itemsContainer = self.object.querySelector(self.options.elements.itemsContainer)
@@ -222,6 +223,7 @@ class Googlelocator {
     self.locations = []
     let index = 0
     let markers = options.markers
+    console.log(markers)
     const bounds = new google.maps.LatLngBounds()
     if (options.infoWindow) {
       self.info = new google.maps.InfoWindow(options.infoWindow)
@@ -257,6 +259,7 @@ class Googlelocator {
       }
     }
     // populate items for infowindow BEFORE sort order locations
+    console.log(self.locations)
     self.populateItems()
     // order locations
     options.formatData.sort(self, self.locations)
@@ -502,6 +505,17 @@ class Googlelocator {
    */
   destroy() {
     const self = this
+    // google
+    /*
+    self.map = new google.maps.Map(self.mapElement, options.map)
+    self.searchInput = self.object.querySelector(self.options.elements.searchInput)
+    self.search = new google.maps.places.Autocomplete(self.searchInput)
+     */
+    // remove old
+    const removes = self.object.querySelectorAll('.xt-googlelocator-clone')
+    for (const remove of removes) {
+      remove.remove()
+    }
     // events
     self.searchBtn.removeEventListener('click', self.searchClick.bind(self))
     self.searchInput.removeEventListener('keypress', self.searchSubmit.bind(self))
@@ -511,6 +525,10 @@ class Googlelocator {
     if (self.repeatElement) {
       self.repeatElement.removeEventListener('click', self.submitCurrent.bind(self).bind(self, false))
     }
+    // set self
+    Xt.remove(self.componentName, self.object)
+    // listener dispatch
+    self.object.dispatchEvent(new CustomEvent('destroy.xt'))
   }
 }
 
