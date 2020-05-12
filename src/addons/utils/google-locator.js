@@ -223,7 +223,6 @@ class Googlelocator {
     self.locations = []
     let index = 0
     let markers = options.markers
-    console.log(markers)
     const bounds = new google.maps.LatLngBounds()
     if (options.infoWindow) {
       self.info = new google.maps.InfoWindow(options.infoWindow)
@@ -259,7 +258,6 @@ class Googlelocator {
       }
     }
     // populate items for infowindow BEFORE sort order locations
-    console.log(self.locations)
     self.populateItems()
     // order locations
     options.formatData.sort(self, self.locations)
@@ -505,12 +503,6 @@ class Googlelocator {
    */
   destroy() {
     const self = this
-    // google
-    /*
-    self.map = new google.maps.Map(self.mapElement, options.map)
-    self.searchInput = self.object.querySelector(self.options.elements.searchInput)
-    self.search = new google.maps.places.Autocomplete(self.searchInput)
-     */
     // remove old
     const removes = self.object.querySelectorAll('.xt-googlelocator-clone')
     for (const remove of removes) {
