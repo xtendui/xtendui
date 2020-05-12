@@ -1,3 +1,11 @@
+## [0.13.73](https://github.com/minimit/xtend-library/compare/v0.13.72...v0.13.73) (2020-05-12)
+
+
+### Bug Fixes
+
+* revision media + table ([0b072eb](https://github.com/minimit/xtend-library/commit/0b072eb5a9d8178c1e3ec90b845f26e143722441))
+* revision slider navigation button + revision xt.friction ([f1d1be0](https://github.com/minimit/xtend-library/commit/f1d1be0d777104c9f65795f754626e890b7d4c2a))
+
 ## [0.13.72](https://github.com/minimit/xtend-library/compare/v0.13.71...v0.13.72) (2020-05-08)
 
 
