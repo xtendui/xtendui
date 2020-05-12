@@ -504,11 +504,16 @@ if (typeof window !== 'undefined') {
   }
 
   //
-  // friction
-  // util to friction values
+  // util
   //
 
-  Xt.friction = (el, obj) => {
+  /**
+   * friction
+   * @param {Node|HTMLElement|EventTarget|Window} el Element
+   * @param {Object} obj Object with x and y values
+   * @param {Boolean} transform Use transforms instead of position
+   */
+  Xt.friction = (el, obj, transform = false) => {
     let xCurrent = Xt.getTranslate(el)[0]
     let yCurrent = Xt.getTranslate(el)[1]
     let xDist = obj.x - xCurrent
@@ -520,21 +525,31 @@ if (typeof window !== 'undefined') {
       yCurrent += fncFriction(Math.abs(yDist)) * Math.sign(yDist)
       // set
       requestAnimationFrame(() => {
-        el.style.transform = 'translateX(' + xCurrent + 'px) translateY(' + yCurrent + 'px)'
+        if (transform) {
+          el.style.transform = 'translateX(' + xCurrent + 'px) translateY(' + yCurrent + 'px)'
+        } else {
+          el.style.top = yCurrent + 'px'
+          el.style.left = xCurrent + 'px'
+        }
       })
     } else {
       xCurrent = obj.x
       yCurrent = obj.y
       // set
-      el.style.transform = 'translateX(' + xCurrent + 'px) translateY(' + yCurrent + 'px)'
+      if (transform) {
+        el.style.transform = 'translateX(' + xCurrent + 'px) translateY(' + yCurrent + 'px)'
+      } else {
+        el.style.top = yCurrent + 'px'
+        el.style.left = xCurrent + 'px'
+      }
     }
     // loop
     if (fncFriction) {
-      const frictionLimit = obj.frictionLimit || 1.5
+      const frictionLimit = obj.frictionLimit ? obj.frictionLimit : 1.5
       xDist = obj.x - xCurrent
       yDist = obj.y - yCurrent
       cancelAnimationFrame(Xt.dataStorage.get(el, 'xtFrictionFrame'))
-      if (Math.abs(xDist) >= frictionLimit || Math.abs(yDist >= frictionLimit)) {
+      if (Math.abs(xDist) >= frictionLimit || Math.abs(yDist) >= frictionLimit) {
         Xt.dataStorage.set(
           el,
           'xtFrictionFrame',
@@ -545,10 +560,6 @@ if (typeof window !== 'undefined') {
       }
     }
   }
-
-  //
-  // util
-  //
 
   /**
    * Return translate values https://gist.github.com/aderaaij/a6b666bf756b2db1596b366da921755d

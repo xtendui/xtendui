@@ -26,6 +26,15 @@ categories: ["100-Test"]
 </demo>
 
 <demo>
+  <demovanilla src="vanilla/demos/slider/2020-bertani-hero">
+  </demovanilla>
+  <demovanilla src="vanilla/demos/slider/2020-euroricambi-cards">
+  </demovanilla>
+  <demovanilla src="vanilla/demos/slider/2019-sun68-hero">
+  </demovanilla>
+</demo>
+
+<demo>
   <demovanilla src="vanilla/demos/animation/2019-xtend">
   </demovanilla>
   <demovanilla src="vanilla/demos/animation/2020-euroricambi-collapse">
@@ -47,13 +56,6 @@ categories: ["100-Test"]
   <demovanilla src="vanilla/components/slider/events-methods">
   </demovanilla>
   <demovanilla src="vanilla/components/slider/progress">
-  </demovanilla>
-</demo>
-
-<demo>
-  <demovanilla src="vanilla/demos/slider/2020-euroricambi-cards">
-  </demovanilla>
-  <demovanilla src="vanilla/demos/slider/2019-sun68-hero">
   </demovanilla>
 </demo>
 
