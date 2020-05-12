@@ -9,18 +9,18 @@ Xt.mount.push({
   mount: object => {
     // vars
 
-    const assetMaskTimeOn = Xt.vars.timeLarge
-    const assetMaskTimeOff = Xt.vars.timeLarge
-    const assetMaskEaseOn = 'quart.inOut'
-    const assetMaskEaseOff = 'quart.inOut'
+    const assetMaskTimeOn = Xt.vars.timeBig
+    const assetMaskTimeOff = Xt.vars.timeBig
+    const assetMaskEaseOn = 'quint.inOut'
+    const assetMaskEaseOff = 'quint.inOut'
 
     const assetZoom = 0.25
-    const assetTimeOn = Xt.vars.timeLarge
-    const assetEaseOn = 'quart.inOut'
+    const assetTimeOn = Xt.vars.timeBig
+    const assetEaseOn = 'quint.inOut'
 
     const contentX = 50
-    const contentTimeOn = Xt.vars.timeLarge
-    const contentEaseOn = 'quart.inOut'
+    const contentTimeOn = Xt.vars.timeBig
+    const contentEaseOn = 'quint.inOut'
 
     // slider
 

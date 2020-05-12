@@ -17,12 +17,6 @@
   .slider.xt-disable & {
     display: none;
   }
-  // animation
-  transition: color @time-tiny @ease-off;
-  &:active {
-    color: @accent;
-    transition: color @time-tiny @ease-on;
-  }
   // not touch
   @media (hover: hover) {
     width: 10rem;
@@ -32,6 +26,17 @@
     }
     &.out {
       opacity: 0;
+    }
+  }
+  // animation
+  .slider-navigation-sides-btn {
+    transition: opacity @time-small @ease-off, transform @time-small @ease-off;
+  }
+  &:active {
+    .slider-navigation-sides-btn {
+      opacity: .75;
+      transform: scale(0.8, 0.8);
+      transition: opacity @time-small @ease-on, transform @time-small @ease-on;
     }
   }
 }
@@ -50,13 +55,13 @@
   font-size: 2rem;
   // not touch
   @media (hover: hover) {
-    .mouse-follow() !important;
+    .mouse-follow();
   }
   // touch
   @media (hover: none) {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 50% !important;
+    left: 50% !important;
     margin-top: -1rem;
     margin-left: -1rem;
     .transform-none() !important;

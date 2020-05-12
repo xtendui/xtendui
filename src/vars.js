@@ -84,9 +84,9 @@ const vars = {
   timeSmall: 500,
   timeMedium: 750,
   timeLarge: 1000,
-  timeBig: 2000,
-  timeGiant: 3000,
-  timeHuge: 4000,
+  timeBig: 1500,
+  timeGiant: 2000,
+  timeHuge: 3000,
 }
 
 //
