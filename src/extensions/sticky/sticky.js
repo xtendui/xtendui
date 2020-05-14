@@ -334,8 +334,8 @@ class Sticky extends Xt.Toggle {
   /**
    * get position of option
    * @param {String|Number|Element} option
-   * @param {Number} val Default value
    * @param {Number} scrollTop Window's scrollTop
+   * @param {Number} val Default value
    * @returns {Number} value Option's position (px)
    */
   eventStickypos(option, scrollTop = 0, val = null) {

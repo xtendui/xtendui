@@ -717,7 +717,7 @@ if (typeof window !== 'undefined') {
    */
   Xt.normalizeWidth = width => {
     width = parseFloat(width)
-    if (width + Xt.scrollbarWidth >= window.innerWidth) {
+    if (!width || width + Xt.scrollbarWidth >= window.innerWidth) {
       width = ''
     } else {
       width += 'px'
