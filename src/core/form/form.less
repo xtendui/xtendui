@@ -318,7 +318,6 @@ legend, .legend {
 
 .checkradio-label {
   .margin(all, none); // reset .form-label
-  .padding(left, small); // space from checkbox/radio
   .font-sans-regular();
   .line-height-small();
   font-size: 0.9em; // size in em inherit .form-group size
@@ -336,7 +335,9 @@ legend, .legend {
 // styled
 
 .checkbox, .radio {
-  padding-left: 26px;
+  .form-label();
+  .checkradio-label() !important;
+  padding-left: 26px !important;
   &:before, &:after {
     top: 2px;
     width: 16px;
@@ -383,6 +384,14 @@ legend, .legend {
     content: @icon-xt-circle;
     font-size: 50%;
   }
+}
+
+// unstyled
+
+.checkradio-label-unstyled {
+  .checkradio-label() !important;
+  .padding(left, small) !important; // space from checkbox/radio
+  top: -2px !important;
 }
 
 // validation

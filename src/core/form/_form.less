@@ -81,9 +81,6 @@
   &:not(.disabled) {
     cursor: pointer;
   }
-  // label
-  .form-label();
-  .checkradio-label();
   // check and radio styled design
   &:before, &:after {
     content: '';
@@ -163,6 +160,6 @@ input[type="checkbox"].unstyled, input[type="radio"].unstyled {
     overflow: hidden;
   }
   & ~ .form-label {
-    .checkradio-label();
+    .checkradio-label-unstyled() !important;
   }
 }
