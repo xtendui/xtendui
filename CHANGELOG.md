@@ -1,3 +1,10 @@
+## [0.13.76](https://github.com/minimit/xtend-library/compare/v0.13.75...v0.13.76) (2020-05-14)
+
+
+### Bug Fixes
+
+* revision checkradio label ([4d6f48c](https://github.com/minimit/xtend-library/commit/4d6f48c901f87c1de33692d8cf870d3b9274975a))
+
 ## [0.13.75](https://github.com/minimit/xtend-library/compare/v0.13.74...v0.13.75) (2020-05-12)
 
 
