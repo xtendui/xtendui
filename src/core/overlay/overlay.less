@@ -48,17 +48,13 @@
 // special
 
 .overlay-disable {
-  // disable custom animation
+  // disable animation
   .card-overlay {
-    > .card-design {
-      opacity: 1 !important;
-    }
-    > .btn-close {
-      opacity: 1 !important;
-    }
     > .card-inner {
       > .card-block,  > .card-content {
         opacity: 1 !important;
+        .transform-none() !important;
+        .trans-anim-none() !important;
       }
     }
   }
