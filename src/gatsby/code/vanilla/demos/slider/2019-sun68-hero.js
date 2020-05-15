@@ -18,12 +18,12 @@ demo.htmlSource = `
       <li class="slide">
         <div class="slide-inner">
           <a href="#" class="slide_item">
-            <div class="slide_img">
-              <div class="slide_img_inner">
+            <div class="slide_item_asset">
+              <div class="slide_item_asset_inner">
                 ${img({ classes: 'media-cover', height: '100%' })}
               </div>
             </div>
-            <div class="slide_content">
+            <div class="slide_item_content">
               <div class="container full">
                 <h2>Lorem ipsum</h2>
               </div>
@@ -35,12 +35,12 @@ demo.htmlSource = `
       <li class="slide">
         <div class="slide-inner">
           <a href="#" class="slide_item">
-            <div class="slide_img">
-              <div class="slide_img_inner">
+            <div class="slide_item_asset">
+              <div class="slide_item_asset_inner">
                 ${img({ classes: 'media-cover', height: '100%' })}
               </div>
             </div>
-            <div class="slide_content">
+            <div class="slide_item_content">
               <div class="container full">
                 <h2>Dolor sit amet</h2>
               </div>
@@ -52,12 +52,12 @@ demo.htmlSource = `
       <li class="slide">
         <div class="slide-inner">
           <a href="#" class="slide_item">
-            <div class="slide_img">
-              <div class="slide_img_inner">
+            <div class="slide_item_asset">
+              <div class="slide_item_asset_inner">
                 ${img({ classes: 'media-cover', height: '100%' })}
               </div>
             </div>
-            <div class="slide_content">
+            <div class="slide_item_content">
               <div class="container full">
                 <h2>Consectetur adipiscing elit</h2>
               </div>

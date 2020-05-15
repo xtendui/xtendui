@@ -91,7 +91,7 @@ Xt.mount.push({
           gsap.set(assetMaskInner, { x: -100 * self.detail.dragRatioInverse * self.direction / 2 + '%' })
         }
         // asset
-        const assets = next.querySelectorAll('.slide_item_img img')
+        const assets = next.querySelectorAll('.slide_item_asset img')
         for (const asset of assets) {
           gsap.set(asset, { scale: 1 + assetZoom * self.detail.dragRatioInverse })
         }
@@ -149,7 +149,7 @@ Xt.mount.push({
             gsap.set(assetMaskInner, { x: 0 })
           }
           // asset
-          const assets = tr.querySelectorAll('.slide_item_img img')
+          const assets = tr.querySelectorAll('.slide_item_asset img')
           for (const asset of assets) {
             gsap.killTweensOf(asset)
             gsap.set(asset, { scale: 1 })
@@ -175,7 +175,7 @@ Xt.mount.push({
             gsap.to(assetMaskInner, { x: 0, duration: assetMaskTimeOn, ease: assetMaskEaseOn })
           }
           // asset
-          const assets = tr.querySelectorAll('.slide_item_img img')
+          const assets = tr.querySelectorAll('.slide_item_asset img')
           for (const asset of assets) {
             if (!self.detail.dragging) {
               gsap.set(asset, {scale: 1 + assetZoom})

@@ -44,31 +44,31 @@ demo.htmlSource = `
                                 Slide 1
                             </div>
 
-                            <div class="slider_imgs--desktop">
+                            <div class="slide_item_imgs--desktop">
                                 <div class="row row-default">
                                     <div class="col-12 col-8-sm">
-                                        <div class="slider_img">
-                                            <div class="slider_img_background"></div>
+                                        <div class="slide_item_img">
+                                            <div class="slide_item_img_background"></div>
                                             ${img({ classes: 'media-cover' })}
                                         </div>
                                     </div>
                                     <div class="col-12 col-4-sm">
-                                        <div class="slider_img">
-                                            <div class="slider_img_background"></div>
+                                        <div class="slide_item_img">
+                                            <div class="slide_item_img_background"></div>
                                             ${img({ classes: 'media-cover' })}
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="slider_imgs--mobile">
-                                <div class="slider_img">
-                                    <div class="slider_img_background"></div>
+                            <div class="slide_item_imgs--mobile">
+                                <div class="slide_item_img">
+                                    <div class="slide_item_img_background"></div>
                                     ${img({ classes: 'media-cover' })}
                                 </div>
                             </div>
 
-                            <div class="slider_card">
+                            <div class="slide_item_card">
                                 <div class="card card-white">
                                     <div class="card-design"></div>
                                     <div class="card-inner">
@@ -99,31 +99,31 @@ demo.htmlSource = `
                                 Slide 2
                             </div>
 
-                            <div class="slider_imgs--desktop">
+                            <div class="slide_item_imgs--desktop">
                                 <div class="row row-default">
                                     <div class="col-12 col-8-sm">
-                                        <div class="slider_img">
-                                            <div class="slider_img_background"></div>
+                                        <div class="slide_item_img">
+                                            <div class="slide_item_img_background"></div>
                                             ${img({ classes: 'media-cover' })}
                                         </div>
                                     </div>
                                     <div class="col-12 col-4-sm">
-                                        <div class="slider_img">
-                                            <div class="slider_img_background"></div>
+                                        <div class="slide_item_img">
+                                            <div class="slide_item_img_background"></div>
                                             ${img({ classes: 'media-cover' })}
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="slider_imgs--mobile">
-                                <div class="slider_img">
-                                    <div class="slider_img_background"></div>
+                            <div class="slide_item_imgs--mobile">
+                                <div class="slide_item_img">
+                                    <div class="slide_item_img_background"></div>
                                     ${img({ classes: 'media-cover' })}
                                 </div>
                             </div>
 
-                            <div class="slider_card">
+                            <div class="slide_item_card">
                                 <div class="card card-white">
                                     <div class="card-design"></div>
                                     <div class="card-inner">
@@ -154,31 +154,31 @@ demo.htmlSource = `
                                 Slide 3
                             </div>
 
-                            <div class="slider_imgs--desktop">
+                            <div class="slide_item_imgs--desktop">
                                 <div class="row row-default">
                                     <div class="col-12 col-8-sm">
-                                        <div class="slider_img">
-                                            <div class="slider_img_background"></div>
+                                        <div class="slide_item_img">
+                                            <div class="slide_item_img_background"></div>
                                             ${img({ classes: 'media-cover' })}
                                         </div>
                                     </div>
                                     <div class="col-12 col-4-sm">
-                                        <div class="slider_img">
-                                            <div class="slider_img_background"></div>
+                                        <div class="slide_item_img">
+                                            <div class="slide_item_img_background"></div>
                                             ${img({ classes: 'media-cover' })}
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="slider_imgs--mobile">
-                                <div class="slider_img">
-                                    <div class="slider_img_background"></div>
+                            <div class="slide_item_imgs--mobile">
+                                <div class="slide_item_img">
+                                    <div class="slide_item_img_background"></div>
                                     ${img({ classes: 'media-cover' })}
                                 </div>
                             </div>
 
-                            <div class="slider_card">
+                            <div class="slide_item_card">
                                 <div class="card card-white">
                                     <div class="card-design"></div>
                                     <div class="card-inner">
@@ -209,31 +209,31 @@ demo.htmlSource = `
                                 Slide 4
                             </div>
 
-                            <div class="slider_imgs--desktop">
+                            <div class="slide_item_imgs--desktop">
                                 <div class="row row-default">
                                     <div class="col-12 col-8-sm">
-                                        <div class="slider_img">
-                                            <div class="slider_img_background"></div>
+                                        <div class="slide_item_img">
+                                            <div class="slide_item_img_background"></div>
                                             ${img({ classes: 'media-cover' })}
                                         </div>
                                     </div>
                                     <div class="col-12 col-4-sm">
-                                        <div class="slider_img">
-                                            <div class="slider_img_background"></div>
+                                        <div class="slide_item_img">
+                                            <div class="slide_item_img_background"></div>
                                             ${img({ classes: 'media-cover' })}
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="slider_imgs--mobile">
-                                <div class="slider_img">
-                                    <div class="slider_img_background"></div>
+                            <div class="slide_item_imgs--mobile">
+                                <div class="slide_item_img">
+                                    <div class="slide_item_img_background"></div>
                                     ${img({ classes: 'media-cover' })}
                                 </div>
                             </div>
 
-                            <div class="slider_card">
+                            <div class="slide_item_card">
                                 <div class="card card-white">
                                     <div class="card-design"></div>
                                     <div class="card-inner">
@@ -264,31 +264,31 @@ demo.htmlSource = `
                                 Slide 5
                             </div>
 
-                            <div class="slider_imgs--desktop">
+                            <div class="slide_item_imgs--desktop">
                                 <div class="row row-default">
                                     <div class="col-12 col-8-sm">
-                                        <div class="slider_img">
-                                            <div class="slider_img_background"></div>
+                                        <div class="slide_item_img">
+                                            <div class="slide_item_img_background"></div>
                                             ${img({ classes: 'media-cover' })}
                                         </div>
                                     </div>
                                     <div class="col-12 col-4-sm">
-                                        <div class="slider_img">
-                                            <div class="slider_img_background"></div>
+                                        <div class="slide_item_img">
+                                            <div class="slide_item_img_background"></div>
                                             ${img({ classes: 'media-cover' })}
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="slider_imgs--mobile">
-                                <div class="slider_img">
-                                    <div class="slider_img_background"></div>
+                            <div class="slide_item_imgs--mobile">
+                                <div class="slide_item_img">
+                                    <div class="slide_item_img_background"></div>
                                     ${img({ classes: 'media-cover' })}
                                 </div>
                             </div>
 
-                            <div class="slider_card">
+                            <div class="slide_item_card">
                                 <div class="card card-white">
                                     <div class="card-design"></div>
                                     <div class="card-inner">

@@ -40,11 +40,11 @@ Xt.mount.push({
       const size = self.dragger.offsetWidth / 6
       // content others
       for (const tr of self.targets.filter(x => !self.hasCurrent(x))) {
-        const other = tr.querySelector('.slide_img_inner')
+        const other = tr.querySelector('.slide_item_asset_inner')
         gsap.set(other, { x: size * self.detail.dragRatio * self.direction - size * self.direction, opacity: self.detail.dragRatio + 0.5 })
       }
       // content
-      const content = target.querySelector('.slide_img_inner')
+      const content = target.querySelector('.slide_item_asset_inner')
       gsap.set(content, { x: size * self.detail.dragRatio * self.direction, opacity: self.detail.dragRatioInverse + 0.5 })
     }
 
@@ -56,11 +56,11 @@ Xt.mount.push({
       const target = self.targets.filter(x => self.hasCurrent(x))[0]
       // content others
       for (const tr of self.targets.filter(x => !self.hasCurrent(x))) {
-        const other = tr.querySelector('.slide_img_inner')
+        const other = tr.querySelector('.slide_item_asset_inner')
         gsap.to(other, { x: 0, opacity: 0.5, duration: contentTimeOff, ease: contentEaseOff })
       }
       // content
-      const content = target.querySelector('.slide_img_inner')
+      const content = target.querySelector('.slide_item_asset_inner')
       gsap.to(content, { x: 0, opacity: 1, duration: contentTimeOff, ease: contentEaseOff })
     }
 
@@ -74,14 +74,14 @@ Xt.mount.push({
       if (self.targets.includes(target)) {
         if (self.initial) {
           // content
-          const content = target.querySelector('.slide_img_inner')
+          const content = target.querySelector('.slide_item_asset_inner')
           if (!self.detail.dragging) {
             gsap.set(content, { x: 0, opacity: 1, scale: 1 })
           }
           gsap.to(content, { scale: 1 + contentZoom, duration: contentZoomTime, ease: contentZoomEase, repeat: -1, yoyo: true })
         } else {
           // content
-          const content = target.querySelector('.slide_img_inner')
+          const content = target.querySelector('.slide_item_asset_inner')
           gsap.to(content, { x: 0, opacity: 1, duration: contentTimeOn, ease: contentEaseOn }).eventCallback('onComplete', () => {
             gsap.to(content, { scale: 1 + contentZoom, duration: contentZoomTime, ease: contentZoomEase, repeat: -1, yoyo: true })
           })
@@ -99,7 +99,7 @@ Xt.mount.push({
       if (self.targets.includes(target)) {
         const size = self.detail.draggerWidth / 6
         // content
-        const content = target.querySelector('.slide_img_inner')
+        const content = target.querySelector('.slide_item_asset_inner')
         gsap
           .to(content, { x: size * self.direction, opacity: 0.5, scale: 1, duration: contentTimeOff, ease: contentEaseOff })
           .eventCallback('onComplete', () => {

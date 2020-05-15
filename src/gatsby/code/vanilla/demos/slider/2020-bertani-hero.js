@@ -19,7 +19,7 @@ demo.htmlSource = `
         <div class="slide-inner">
           <a href="#" class="slide_item">
             <div class="slide_item_inner">
-              <div class="slide_item_img">
+              <div class="slide_item_asset">
                 ${img({ classes: 'media-cover' })}
               </div>
               <div class="slide_item_text">
@@ -38,7 +38,7 @@ demo.htmlSource = `
         <div class="slide-inner">
           <a href="#" class="slide_item">
             <div class="slide_item_inner">
-              <div class="slide_item_img">
+              <div class="slide_item_asset">
                 ${img({ classes: 'media-cover' })}
               </div>
               <div class="slide_item_text">
@@ -57,7 +57,7 @@ demo.htmlSource = `
         <div class="slide-inner">
           <a href="#" class="slide_item">
             <div class="slide_item_inner">
-              <div class="slide_item_img">
+              <div class="slide_item_asset">
                 ${img({ classes: 'media-cover' })}
               </div>
               <div class="slide_item_text">
