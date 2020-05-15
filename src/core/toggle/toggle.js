@@ -2727,11 +2727,16 @@ class Toggle {
    */
   eventStatusHandler(e = null) {
     const self = this
+    // check
+    let check = self.object
+    if (self.mode === 'unique') {
+      check = self.targets[0]
+    }
     // triggering e.detail.container
-    if (!e || !e.detail || !e.detail.container || e.detail.container.contains(self.object)) {
+    if (!e || !e.detail || !e.detail.container || e.detail.container.contains(check)) {
       Xt.eventDelay(
         e,
-        self.object,
+        check,
         () => {
           // handler
           self.eventStatus()
@@ -2746,10 +2751,15 @@ class Toggle {
    */
   eventStatus() {
     const self = this
+    // check
+    let check = self.object
+    if (self.mode === 'unique') {
+      check = self.targets[0]
+    }
     // status
     if (
-      self.object instanceof HTMLElement && // @FIX not on window
-      getComputedStyle(self.object, ':after')
+      check instanceof HTMLElement && // @FIX not on window
+      getComputedStyle(check, ':after')
         .getPropertyValue('content')
         .replace(/['"]+/g, '') === 'xt-disable'
     ) {
@@ -2775,7 +2785,16 @@ class Toggle {
    */
   disable() {
     const self = this
+    const options = self.options
     if (!self.disabled) {
+      // closeOnDisable
+      if (options.closeOnDisable) {
+        self.object.dispatchEvent(new CustomEvent('off.trigger.xt'))
+      }
+      // stop auto
+      self.eventAutostop()
+      // stop queue
+      self.queueStopAll()
       // disable
       self.disabled = true
     }
@@ -2839,10 +2858,6 @@ class Toggle {
    */
   destroy() {
     const self = this
-    // stop auto
-    self.eventAutostop()
-    // stop queue
-    self.queueStopAll()
     // disable
     self.disable()
     // [disabled]
@@ -2925,8 +2940,14 @@ Toggle.optionsDefaultSuper = {
   classInitial: 'initial',
   classInverse: 'inverse',
   eventLimit: '.event-limit',
-  autoClose: false,
   autoDisable: false,
+  autoClose: false,
+  appendTo: false,
+  backdrop: false,
+  classHtml: false,
+  closeInside: false,
+  closeOnDisable: false,
+  scrollbar: false,
   onBlock: false,
   offBlock: false,
   loop: true,
