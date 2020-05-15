@@ -126,26 +126,17 @@ body {
       }
     }
     &::-webkit-scrollbar-thumb {
-      background: fade(@shade-900, 25%);
-      &:hover {
-        background: fade(@shade-900, 50%);
-      }
+      background: fade(@shade-900, 50%);
     }
   }
   & when (@mode = inner) {
     &::-webkit-scrollbar {
-      height: 8px;
-      width: 8px;
+      height: 4px;
+      width: 4px;
       background: transparent;
-      @media (hover: none) {
-        display: none;
-      }
     }
     &::-webkit-scrollbar-thumb {
-      background: fade(@shade-900, 25%);
-      &:hover {
-        background: fade(@shade-900, 50%);
-      }
+      background: fade(@shade-900, 50%);
     }
   }
 }
