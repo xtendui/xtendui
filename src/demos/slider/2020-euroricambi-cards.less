@@ -95,7 +95,7 @@
   .slide_item_card_inner {
     overflow: hidden;
   }
-  .slide_item_img {
+  .slide_item_asset {
     position: relative;
     .media-container {
       overflow: hidden;
@@ -104,7 +104,7 @@
       overflow: hidden;
     }
   }
-  .slide_item_img_background {
+  .slide_item_asset_background {
     position: absolute;
     top: 0;
     left: 0;
@@ -112,25 +112,25 @@
     bottom: 0;
     background: @shade-200;
   }
-  .slide_item_imgs--desktop {
+  .slide_item_assets--desktop {
     > .row {
       .row-space-y(none); // @FIX add row vertical space..
     }
     @media @max-sm {
       display: none;
     }
-    .slide_item_img {
+    .slide_item_asset {
       .media-container {
         height: 49rem;
       }
     }
   }
-  .slide_item_imgs--mobile {
+  .slide_item_assets--mobile {
     .container-space-remove();
     @media @min-sm {
       display: none;
     }
-    .slide_item_img {
+    .slide_item_asset {
       .media-container {
         height: 25rem;
       }
