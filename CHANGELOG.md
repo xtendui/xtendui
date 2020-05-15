@@ -1,3 +1,10 @@
+## [0.13.78](https://github.com/minimit/xtend-library/compare/v0.13.77...v0.13.78) (2020-05-15)
+
+
+### Bug Fixes
+
+* fix overlay disable z-index ([8bf8771](https://github.com/minimit/xtend-library/commit/8bf8771e547e98944ad2c65ccf3b2d1a4f63df98))
+
 ## [0.13.77](https://github.com/minimit/xtend-library/compare/v0.13.76...v0.13.77) (2020-05-15)
 
 
