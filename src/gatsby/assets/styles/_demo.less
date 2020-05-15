@@ -277,6 +277,12 @@ pre {
 
 .gatsby_demo_item {
   position: relative;
+  > * {
+    z-index: 2;
+    &.gatsby_demo_source {
+      z-index: 1;
+    }
+  }
   .toggle-flex() !important;
   .gatsby_demo_item_wrapper {
     position: relative;
