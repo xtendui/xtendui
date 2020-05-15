@@ -1,3 +1,11 @@
+## [0.13.77](https://github.com/minimit/xtend-library/compare/v0.13.76...v0.13.77) (2020-05-15)
+
+
+### Bug Fixes
+
+* minor fixes overlay close fixed and overlay screen and sticky width ([7ab83dd](https://github.com/minimit/xtend-library/commit/7ab83dd99f04fdd66c2f99c645a6ec10614aae77))
+* revision disabled css and js ([4cfc481](https://github.com/minimit/xtend-library/commit/4cfc4810ec3fa74f11464582c01725b5589d4d3b))
+
 ## [0.13.76](https://github.com/minimit/xtend-library/compare/v0.13.75...v0.13.76) (2020-05-14)
 
 
