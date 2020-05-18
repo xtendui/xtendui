@@ -15,6 +15,20 @@
   @ease-off: @ease-in-out-quint;
 
   /**
+   * collapse
+   */
+
+  .collapse-height {
+    .collapse-height();
+    &.in {
+      transition: height @time-medium @ease-off, width @time-medium @ease-off;
+    }
+    &.out {
+      transition: height @time-medium @ease-off, width @time-medium @ease-off;
+    }
+  }
+
+  /**
    * drop
    */
 

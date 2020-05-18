@@ -273,12 +273,21 @@
 
 // collapse
 
-.collapse-height, .collapse-width {
+.collapse-height {
   &.in {
-    transition: height @time-medium @ease-off, width @time-medium @ease-off;
+    transition: height @time-medium @ease-off;
   }
   &.out {
-    transition: height @time-medium @ease-off, width @time-medium @ease-off;
+    transition: height @time-medium @ease-off;
+  }
+}
+
+.collapse-width {
+  &.in {
+    transition: width @time-medium @ease-off;
+  }
+  &.out {
+    transition: width @time-medium @ease-off;
   }
 }
 
