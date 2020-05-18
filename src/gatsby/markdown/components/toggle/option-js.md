@@ -217,16 +217,18 @@ Use `keyboard: { selector: 'object' }` or `keyboard: { selector: QuerySelector }
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `classHtml:String`                          | `false`        | Close automatically on `autoclose.trigger.xt` event            |
+
 | Option                  | `autoClose:Boolean`                          | `false`        | Close automatically on `autoclose.trigger.xt` event            |
-| Option                  | `closeOutside:Query`                          | `false`        | Query Node outside to close on click            |
+| Option                  | `appendTo:Query`                          | `false`        | Append targets to Node on activation            |
+| Option                  | `classHtml:String`                          | `false`        | Class to add to html element on activation            |
 | Option                  | `closeInside:Query`                          | `false`        | Query Node inside to close on click            |
+| Option                  | `closeOutside:Query`                          | `false`        | Query Node outside to close on click            |
+| Option                  | `closeOnDisable:Boolean`                          | `false`        | Automatically close on disable            |
+| Option                  | `scrollbar:Boolean`                          | `false`        | Hide body scrollbars on activation            |
 | Option                  | `onBlock:Milliseconds`                          | `true`        | Block concurrent activation events for some time            |
 | Option                  | `offBlock:Milliseconds`                          | `true`        | Block concurrent deactivation events for some time            |
 | Option                  | `mediaLoaded:Boolean`                          | `false`        | Media loaded classes on elements and targets            |
 | Option                  | `mediaLoadedReinit:Boolean`                          | `false`        | Reinit component on media loaded elements and targets            |
-| Option                  | `appendTo:Query`                          | `false`        | Append targets to Node on activation            |
-| Option                  | `scrollbar:Boolean`                          | `false`        | Hide body scrollbars on activation            |
 | Option                  | `focusLimit:Boolean`                          | `false`        | Limit focus on activation            |
 | Option                  | `aria:Object|false`                          | `Object`        | Inject aria attributes            |
 | Option                  | `aria.tabindex:Boolean`                          | `true`        | Inject aria tabindex attributes            |
