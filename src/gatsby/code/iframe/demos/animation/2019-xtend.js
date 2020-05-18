@@ -1,16 +1,37 @@
+import React from 'react'
 import path from 'path'
 const img = require('components/snippets/img').default
+
+import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
 export const demo = {
+  container: true,
+  full: false,
   name: path.basename(filename, '.js'),
   component: dirs.pop(),
   type: dirs.pop(),
 }
 
 demo.htmlSource = `
-<div class="list list-default list-space-small align-items-center demo--2020-euroricambi-collapse">
+<div class="list list-default list-space-small align-items-center demo--2019-xtend">
+
+  <button type="button" class="btn btn-default">
+    button
+  </button>
+
+  <button type="button" class="btn btn-primary">
+    button primary
+  </button>
+
+  <button type="button" class="btn btn-text">
+    button text
+  </button>
+
+  <button type="button" class="btn btn-link">
+    button link
+  </button>
 
   <div class="drop-container" data-xt-drop="{ targetsInner: ':scope > .drop-inner' }">
     <button type="button" class="btn btn-primary">
@@ -76,7 +97,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       overlay
     </button>
-    <div class="overlay demo--2020-euroricambi-collapse">
+    <div class="overlay demo--2019-xtend">
       <div class="overlay-container">
         <div class="overlay-inner">
 
@@ -109,7 +130,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       overlay screen
     </button>
-    <div class="overlay overlay-screen demo--2020-euroricambi-collapse">
+    <div class="overlay overlay-screen demo--2019-xtend">
       <div class="overlay-container">
         <div class="overlay-inner">
 
@@ -134,7 +155,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       overlay position
     </button>
-    <div class="overlay overlay-position overlay-position-left demo--2020-euroricambi-collapse">
+    <div class="overlay overlay-position overlay-position-left demo--2019-xtend">
       <div class="overlay-container">
         <div class="overlay-inner">
 
@@ -163,24 +184,59 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <form class="form-default form-small flex-full"
-        data-xt-toggle="{ elements: '.form-group > .btn', targets: '.group' }">
-    <div class="form-group form-group-last">
-      <button type="button" class="btn btn-primary">
-        group
-      </button>
-      <div class="group group-default">
-        <div class="group-inner">
-          <button type="button" class="btn btn-default btn-large">
-            ipsum
-          </button>
-        </div>
-        <div class="group-inner">
-          <input type="text" class="form-item" />
+</div>
+
+<div class="row row-default">
+
+  <div class="col-12 col-6-sm">
+    <a role="button" class="card card-default demo--2019-xtend">
+      <div class="card-design"></div>
+      <div class="card-inner">
+        <div class="card-content">
+          <div class="card-block card-item">
+            <div class="card-title">Default</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+          </div>
         </div>
       </div>
-    </button>
-  </form>
+    </a>
+  </div>
+
+  <div class="col-12 col-6-sm">
+    <a role="button" class="card card-primary demo--2019-xtend">
+      <div class="card-design"></div>
+      <div class="card-inner">
+        <div class="card-content">
+          <div class="card-block card-item">
+            <div class="card-title">Primary</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="col-12 col-6-sm">
+    <a role="button" class="card card-white demo--2019-xtend">
+      <div class="card-design"></div>
+      <div class="card-inner">
+        <div class="card-content">
+          <div class="card-block card-item">
+            <div class="card-title">White</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
 
 </div>
 `
+
+class Page extends React.Component {
+  render() {
+    return <DemoVanillaIframe demo={demo} />
+  }
+}
+
+export default Page

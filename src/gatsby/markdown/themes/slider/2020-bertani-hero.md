@@ -6,6 +6,6 @@ title: "2020-bertani-hero"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 date: "2020-05-11"
 demos: [
-  "vanilla/demos/slider/2020-bertani-hero"
+  "iframe/demos/slider/2020-bertani-hero"
 ]
 ---
