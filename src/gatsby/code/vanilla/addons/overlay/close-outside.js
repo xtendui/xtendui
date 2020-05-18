@@ -47,31 +47,6 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
     <button type="button" class="btn btn-primary">
-      screen
-    </button>
-    <div class="overlay overlay-screen overlay-close-outside">
-      <div class="overlay-container">
-        <div class="overlay-inner">
-
-          <div class="card card-overlay">
-            <div class="card-design"></div>
-            <div class="btn btn-close" aria-label="Close"></div>
-            <div class="card-inner">
-              <div class="card-content">
-                <div class="card-asset">
-                  ${img({ classes: 'media-cover', ratio: '100%' })}
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div data-xt-overlay>
-    <button type="button" class="btn btn-primary">
       position left
     </button>
     <div class="overlay overlay-position overlay-position-left overlay-close-outside">
