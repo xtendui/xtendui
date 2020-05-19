@@ -1,3 +1,16 @@
+## [0.13.79](https://github.com/minimit/xtend-library/compare/v0.13.78...v0.13.79) (2020-05-19)
+
+
+### Bug Fixes
+
+* **overlay:** revision overlay mobile ([84c7cdf](https://github.com/minimit/xtend-library/commit/84c7cdff4693c1a327e7340a32261c6662e93b47))
+* **slider:** elements disabled like nav on animation change ([0ed9a7d](https://github.com/minimit/xtend-library/commit/0ed9a7d001b404c5f391af9b442adb290a440804))
+
+
+### Reverts
+
+* Revert "fix(slider): slider removed nav disable with  pointer events none" ([a1020ee](https://github.com/minimit/xtend-library/commit/a1020ee263e5d799d6a8a37c3124c1a0644bc893))
+
 ## [0.13.78](https://github.com/minimit/xtend-library/compare/v0.13.77...v0.13.78) (2020-05-15)
 
 
