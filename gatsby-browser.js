@@ -19,6 +19,8 @@ exports.onPreRouteUpdate = () => {
 }
 
 exports.onRouteUpdate = () => {
+  // scroll top
+  document.scrollingElement.scrollTop = 0
   // keepSidebarScroll
   const sidebarArticle = document.querySelector('.gatsby_site_article_sidebar')
   if (sidebarArticle) {
