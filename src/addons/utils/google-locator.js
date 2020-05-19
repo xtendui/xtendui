@@ -116,7 +116,6 @@ class Googlelocator {
         }
       })
     })
-
     // submitCurrent
     if (options.elements.repeat) {
       self.repeatElement = self.object.querySelector(options.elements.repeat)
@@ -150,6 +149,8 @@ class Googlelocator {
         }
       }
     }
+    // listener dispatch
+    self.object.dispatchEvent(new CustomEvent('init.xt.googlelocator'))
   }
 
   //
