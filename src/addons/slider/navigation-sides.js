@@ -1,6 +1,10 @@
 import { Xt } from 'xtend-library'
 import 'xtend-library/src/addons/animation/mouse-follow.js'
 
+/**
+ * slider-navigation-sides
+ */
+
 Xt.mount.push({
   matches: '.slider-navigation-sides-btn',
   mount: object => {

@@ -1,5 +1,9 @@
 import { Xt } from 'xtend-library'
 
+/**
+ * group-expand
+ */
+
 Xt.mount.push({
   matches: '.group-expand',
   mount: object => {

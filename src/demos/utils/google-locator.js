@@ -1,6 +1,10 @@
 import { Xt } from 'xtend-library'
 import 'xtend-library/src/addons/utils/google-locator.js'
 
+/**
+ * googlelocator
+ */
+
 Xt.addScript(
   'https://maps.googleapis.com/maps/api/js?key=AIzaSyDSZt9TUgS20QyAbAAL-X3tJIKVLEaCrts&v=3&libraries=places,geometry&language=en&&region=US&callback=demoGooglelocator'
 )
