@@ -60,7 +60,7 @@ Overlay.optionsDefault = {
   min: 0,
   max: 1,
   class: 'active active-overlay',
-  eventLimit: '.event-limit, .card-content',
+  eventLimit: '.event-limit, .card-overlay > .card-inner > .card-content',
   autoClose: true,
   appendTo: 'body',
   backdrop: true,
