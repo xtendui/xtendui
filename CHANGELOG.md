@@ -1,3 +1,10 @@
+## [0.13.80](https://github.com/minimit/xtend-library/compare/v0.13.79...v0.13.80) (2020-05-20)
+
+
+### Bug Fixes
+
+* fix overlay event limit when inside card + minor ([90d70db](https://github.com/minimit/xtend-library/commit/90d70dbe45b3e2c997ec292bdf2cb428de4b6841))
+
 ## [0.13.79](https://github.com/minimit/xtend-library/compare/v0.13.78...v0.13.79) (2020-05-19)
 
 
