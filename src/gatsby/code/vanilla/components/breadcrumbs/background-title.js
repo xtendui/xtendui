@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-  <nav class="breadcrumbs breadcrumbs-background">
+  <div class="breadcrumbs breadcrumbs-background">
     <div class="container">
 
       <div class="breadcrumbs-inner">
@@ -33,5 +33,5 @@ demo.htmlSource = `
       </h1>
 
     </div>
-  </nav>
+  </div>
 `

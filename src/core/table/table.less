@@ -28,6 +28,7 @@
     border-bottom: @table-border--width solid @shade-200;
   }
   th {
+    vertical-align: bottom;
     .padding(x, tiny);
     .padding(y, tiny);
     .font-sans-semibold();
@@ -37,6 +38,7 @@
     text-transform: uppercase;
   }
   td {
+    vertical-align: top;
     .padding(x, tiny);
     .padding(y, tiny);
     .line-height-small();
@@ -52,10 +54,10 @@
     tr {
       border: 0;
       th, td {
+        vertical-align: top;
         .padding(y, tiny) !important;
         .padding(x, medium) !important;
         text-align: right;
-        vertical-align: top;
       }
       &:first-child {
         th, td {
