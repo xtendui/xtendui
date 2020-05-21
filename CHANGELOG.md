@@ -1,3 +1,10 @@
+## [0.13.81](https://github.com/minimit/xtend-library/compare/v0.13.80...v0.13.81) (2020-05-21)
+
+
+### Bug Fixes
+
+* ul ol styles ([51ac75f](https://github.com/minimit/xtend-library/commit/51ac75fed9f90de3aaf231891b37fba6966e7bad))
+
 ## [0.13.80](https://github.com/minimit/xtend-library/compare/v0.13.79...v0.13.80) (2020-05-20)
 
 
