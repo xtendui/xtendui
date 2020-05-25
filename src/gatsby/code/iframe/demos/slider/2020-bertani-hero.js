@@ -1,6 +1,7 @@
 import React from 'react'
 import path from 'path'
 const img = require('components/snippets/img').default
+const imgAlt = require('components/snippets/img').alt
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -44,7 +45,7 @@ demo.htmlSource = `
           <a href="#" class="slide_item">
             <div class="slide_item_inner">
               <div class="slide_item_asset">
-                ${img({ classes: 'media-cover' })}
+                ${imgAlt({ classes: 'media-cover' })}
               </div>
               <div class="slide_item_text">
                 <div class="container">
@@ -64,6 +65,25 @@ demo.htmlSource = `
             <div class="slide_item_inner">
               <div class="slide_item_asset">
                 ${img({ classes: 'media-cover' })}
+              </div>
+              <div class="slide_item_text">
+                <div class="container">
+                  <div class="slide_item_text_inner">
+                    <h2 class="h1">Consectetur adipiscing elit</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </li>
+
+      <li class="slide">
+        <div class="slide-inner">
+          <a href="#" class="slide_item">
+            <div class="slide_item_inner">
+              <div class="slide_item_asset">
+                ${imgAlt({ classes: 'media-cover' })}
               </div>
               <div class="slide_item_text">
                 <div class="container">
