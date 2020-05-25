@@ -3,7 +3,7 @@ type: "Components"
 badge: "Core"
 parent: "Drop"
 title: "Content"
-date: "2019-12-15"
+date: "2019-10-01"
 ---
 
 ## Card

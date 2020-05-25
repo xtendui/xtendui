@@ -3,7 +3,7 @@ type: "Components"
 badge: "Core"
 parent: "Drop"
 title: "Option Js"
-date: "2019-10-01"
+date: "2019-11-01"
 ---
 
 [[notePrimary]]
