@@ -1,3 +1,10 @@
+## [0.13.82](https://github.com/minimit/xtend-library/compare/v0.13.81...v0.13.82) (2020-05-25)
+
+
+### Bug Fixes
+
+* media height full ([7cf647a](https://github.com/minimit/xtend-library/commit/7cf647a1b2f8b79968b65336dabcdc44297338a4))
+
 ## [0.13.81](https://github.com/minimit/xtend-library/compare/v0.13.80...v0.13.81) (2020-05-21)
 
 
