@@ -23,6 +23,14 @@ import { makeDocument } from 'assets/scripts/theme.js'
 
 import 'assets/styles/theme.less'
 
+if (module.hot) {
+  module.hot.addStatusHandler(status => {
+    if (status === 'apply') {
+      window.location.reload();
+    }
+  });
+}
+
 class Layout extends React.Component {
   componentDidMount() {
     populateBlock()
