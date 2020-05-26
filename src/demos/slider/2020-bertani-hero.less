@@ -13,10 +13,14 @@
   .slide {
     position: relative;
     .col(12);
-    &.active {
+    // activation
+    display: none;
+    &.active, &.out {
+      display: block;
       z-index: 9;
     }
     &.next {
+      display: block;
       z-index: 10;
     }
     &:not(.active) {

@@ -26,8 +26,8 @@ Xt.mount.push({
 
     let self = new Xt.Slider(object, {
       instant: true,
-      durationOn: Xt.vars.timeLarge,
-      durationOff: Xt.vars.timeLarge,
+      durationOn: Xt.vars.timeBig,
+      durationOff: Xt.vars.timeBig,
       auto: {
         //time: 4500,
         pause: '[data-xt-pag], [data-xt-nav]',
@@ -35,7 +35,7 @@ Xt.mount.push({
       autoHeight: false,
       groupMq: false,
       drag: {
-        duration: Xt.vars.timeLarge,
+        duration: Xt.vars.timeBig,
         overflow: false,
       },
     })

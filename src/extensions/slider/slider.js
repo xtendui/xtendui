@@ -295,7 +295,7 @@ class Slider extends Xt.Toggle {
     // slides pos
     let slidesWidth = 0
     for (const slide of self.targets) {
-      if (!Xt.dataStorage.get(slide, self.componentNamespace + 'GroupPosDone') && Xt.visible(slide)) {
+      if (!Xt.dataStorage.get(slide, self.componentNamespace + 'GroupPosDone')) {
         // vars
         const targets = self.getTargets(slide)
         let slideLeft = Infinity
@@ -326,7 +326,7 @@ class Slider extends Xt.Toggle {
             pos = draggerWidth - slideLeft - slideWidth
           }
         }
-        // console.debug(pos, draggerWidth, slideWidth, slide)
+        //console.debug(pos, draggerWidth, slideWidth, slide)
         // save pos
         for (const target of targets) {
           Xt.dataStorage.set(target, self.componentNamespace + 'GroupPos', pos)
@@ -951,36 +951,46 @@ class Slider extends Xt.Toggle {
     // prevent dragging animation
     dragger.classList.remove('duration-none')
     // activate or reset
-    const draggerWidth = self.detail.draggerWidth
     const dragDist = self.detail.dragPosReal - dragPosCurrent
-    if (Math.abs(dragDist) > options.drag.threshold) {
+    const direction = Math.sign(dragDist)
+    const dragDistAbs = Math.abs(dragDist)
+    if (dragDistAbs > options.drag.threshold) {
       // get nearest
       let found = self.currentIndex
-      if (found === 0 && dragDist > 0) {
+      if (found === 0 && direction > 0) {
         found = self.groupMq.length - 1
-      } else if (found === self.groupMq.length - 1 && dragDist < 0) {
+      } else if (found === self.groupMq.length - 1 && direction < 0) {
         found = 0
       } else {
-        for (const [i, group] of self.groupMq.entries()) {
-          for (const slideCheck of group) {
-            let check
-            if (options.align === 'center') {
-              check = self.detail.dragPos - draggerWidth / 2 + slideCheck.offsetLeft
-            } else if (options.align === 'left') {
-              check = self.detail.dragPos + slideCheck.offsetLeft
-            } else if (options.align === 'right') {
-              check = self.detail.dragPos - draggerWidth + slideCheck.offsetLeft + slideCheck.offsetWidth
+        const findNext = () => {
+          let dist = 0
+          if (direction > 0) {
+            for (let i = self.currentIndex; i < self.groupMq.length; i++) {
+              const group = self.groupMq[i]
+              const pos = Xt.dataStorage.get(group[0], self.componentNamespace + 'GroupPos')
+              dist += Math.abs(pos)
+              if (dragDistAbs <= dist) {
+                return i
+              }
             }
-            if (check < 0 && Xt.visible(slideCheck)) {
-              found = i
+          } else {
+            for (let i = self.currentIndex; i >= 0; i--) {
+              const group = self.groupMq[i]
+              const pos = Xt.dataStorage.get(group[0], self.componentNamespace + 'GroupPos')
+              dist += Math.abs(pos)
+              if (dragDistAbs <= dist) {
+                return i
+              }
             }
           }
         }
+        found = findNext()
+        //console.debug(found)
       }
       // goTo with force
       if (found === self.currentIndex) {
         // change at least one
-        if (Math.sign(dragDist) < 0) {
+        if (direction < 0) {
           self.goToNext(1, true)
         } else {
           self.goToPrev(1, true)

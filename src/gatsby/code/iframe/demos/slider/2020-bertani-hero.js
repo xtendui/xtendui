@@ -88,7 +88,7 @@ demo.htmlSource = `
               <div class="slide_item_text">
                 <div class="container">
                   <div class="slide_item_text_inner">
-                    <h2 class="h1">Consectetur adipiscing elit</h2>
+                    <h2 class="h1">Nam iaculis magna eu consectetur condimentum</h2>
                   </div>
                 </div>
               </div>
