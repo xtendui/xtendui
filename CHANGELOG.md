@@ -1,3 +1,10 @@
+## [0.13.83](https://github.com/minimit/xtend-library/compare/v0.13.82...v0.13.83) (2020-05-26)
+
+
+### Bug Fixes
+
+* fix media safari stretching ([58fbc26](https://github.com/minimit/xtend-library/commit/58fbc26bc964ad52e6c08b6f0e495f639b27ba29))
+
 ## [0.13.82](https://github.com/minimit/xtend-library/compare/v0.13.81...v0.13.82) (2020-05-25)
 
 
