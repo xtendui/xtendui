@@ -24,9 +24,12 @@ demo.htmlSource = `
       <li class="slide">
         <div class="slide-inner">
           <a href="#" class="slide_item">
+            <div class="slide_item_cover"></div>
             <div class="slide_item_inner">
               <div class="slide_item_asset">
-                ${img({ classes: 'media-cover' })}
+                <div class="slide_item_asset_inner">
+                  ${img({ classes: 'media-cover' })}
+                </div>
               </div>
             </div>
           </a>
@@ -36,9 +39,12 @@ demo.htmlSource = `
       <li class="slide">
         <div class="slide-inner">
           <a href="#" class="slide_item">
+            <div class="slide_item_cover"></div>
             <div class="slide_item_inner">
               <div class="slide_item_asset">
-                ${imgAlt({ classes: 'media-cover' })}
+                <div class="slide_item_asset_inner">
+                  ${imgAlt({ classes: 'media-cover' })}
+                </div>
               </div>
             </div>
           </a>
@@ -48,9 +54,12 @@ demo.htmlSource = `
       <li class="slide">
         <div class="slide-inner">
           <a href="#" class="slide_item">
+            <div class="slide_item_cover"></div>
             <div class="slide_item_inner">
               <div class="slide_item_asset">
-                ${img({ classes: 'media-cover' })}
+                <div class="slide_item_asset_inner">
+                  ${img({ classes: 'media-cover' })}
+                </div>
               </div>
             </div>
           </a>
@@ -60,9 +69,12 @@ demo.htmlSource = `
       <li class="slide">
         <div class="slide-inner">
           <a href="#" class="slide_item">
+            <div class="slide_item_cover"></div>
             <div class="slide_item_inner">
               <div class="slide_item_asset">
-                ${imgAlt({ classes: 'media-cover' })}
+                <div class="slide_item_asset_inner">
+                  ${imgAlt({ classes: 'media-cover' })}
+                </div>
               </div>
             </div>
           </a>
