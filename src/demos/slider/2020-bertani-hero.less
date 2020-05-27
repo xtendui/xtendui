@@ -30,7 +30,7 @@
   .slider-pagination {
     display: none;
   }
-  // item
+  // .slide_item
   .slide_item {
     .link-none();
     .full();
@@ -39,10 +39,8 @@
   }
   .slide_item_asset {
     .media-container {
-      height: 55rem;
-      @media @min-md {
-        height: 65rem;
-      }
+      height: 100vh;
+      height: calc(var(--vh, 1vh) * 100);
     }
     &:before {
       content: '';

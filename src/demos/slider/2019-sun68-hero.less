@@ -16,6 +16,7 @@
   .slider-pagination {
     display: none;
   }
+  // .slide_item
   .slide_item {
     .link-none();
     display: block;
@@ -24,11 +25,8 @@
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: 60rem;
-    max-height: 600px;
-    @media @min-sm {
-      max-height: 120rem;
-    }
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
   }
   .slide_item_asset_inner {
     width: 100%;

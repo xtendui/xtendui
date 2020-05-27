@@ -116,6 +116,7 @@ const populateBlock = () => {
       // populate iframe
       for (const item of container.querySelectorAll('.gatsby_demo_item')) {
         item.classList.remove('loaded')
+        item.dispatchEvent(new CustomEvent('offdone.xt'))
       }
       // populate source
       const sourceTo = content.querySelector('.gatsby_demo_source_populate')
@@ -227,10 +228,12 @@ const populateDemo = (container, i) => {
       // $(e.trigger).attr('data-original-title', 'Error: copy manually').tooltip('show')
     })
     // inject iframe
-    if (item.getAttribute('data-iframe')) {
-      initializeIframe(container, item)
-    } else if (!item.getAttribute('data-iframe-fullscreen')) {
-      populateInline(item)
+    if (!item.getAttribute('data-iframe-fullscreen')) {
+      if (item.getAttribute('data-iframe')) {
+        initializeIframe(container, item)
+      } else {
+        populateInline(item)
+      }
     }
     // populate source
     const sourceTo = item.querySelector('.gatsby_demo_source_populate')
@@ -447,6 +450,7 @@ const makeFullscreen = (container, skipIgnore = false) => {
     if (item.getAttribute('data-iframe-fullscreen')) {
       item.setAttribute('data-iframe', item.getAttribute('data-iframe-fullscreen'))
       initializeIframe(container, item)
+      item.dispatchEvent(new CustomEvent('ondone.xt'))
     }
   }
 }

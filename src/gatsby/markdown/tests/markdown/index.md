@@ -34,21 +34,21 @@ categories: ["100-Test"]
 </demo>
 
 <demo>
-  <demovanilla src="iframe/demos/slider/2020-aniyeby-hero">
-  </demovanilla>
-  <demovanilla src="iframe/demos/slider/2020-bertani-hero">
-  </demovanilla>
-  <demovanilla src="iframe/demos/slider/2020-euroricambi-cards">
-  </demovanilla>
-  <demovanilla src="iframe/demos/slider/2019-sun68-hero">
-  </demovanilla>
+  <div class="gatsby_demo_item" data-iframe="iframe/demos/slider/2020-aniyeby-hero">
+  </div>
+  <div class="gatsby_demo_item" data-iframe="iframe/demos/slider/2020-bertani-hero">
+  </div>
+  <div class="gatsby_demo_item" data-iframe="iframe/demos/slider/2020-euroricambi-cards">
+  </div>
+  <div class="gatsby_demo_item" data-iframe="iframe/demos/slider/2019-sun68-hero">
+  </div>
 </demo>
 
 <demo>
-  <demovanilla src="iframe/demos/animation/2019-xtend">
-  </demovanilla>
-  <demovanilla src="iframe/demos/animation/2020-euroricambi-collapse">
-  </demovanilla>
+  <div class="gatsby_demo_item" data-iframe="iframe/demos/animation/2019-xtend">
+  </div>
+  <div class="gatsby_demo_item" data-iframe="iframe/demos/animation/2020-euroricambi-collapse">
+  </div>
   <div class="gatsby_demo_item" data-iframe="iframe/demos/animation/2020-bertani-listing">
   </div>
 </demo>
