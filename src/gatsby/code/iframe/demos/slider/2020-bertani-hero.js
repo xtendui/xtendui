@@ -31,7 +31,9 @@ demo.htmlSource = `
               <div class="slide_item_text">
                 <div class="container">
                   <div class="slide_item_text_inner">
-                    <h1 class="h1">Lorem ipsum</h1>
+                    <h2 class="h1">
+                      Lorem ipsum
+                    </h2>
                   </div>
                 </div>
               </div>
@@ -50,7 +52,9 @@ demo.htmlSource = `
               <div class="slide_item_text">
                 <div class="container">
                   <div class="slide_item_text_inner">
-                    <h2 class="h1">Dolor sit amet</h2>
+                    <h2 class="h1">
+                      Dolor sit amet
+                    </h2>
                   </div>
                 </div>
               </div>
@@ -69,7 +73,9 @@ demo.htmlSource = `
               <div class="slide_item_text">
                 <div class="container">
                   <div class="slide_item_text_inner">
-                    <h2 class="h1">Consectetur adipiscing elit</h2>
+                    <h2 class="h1">
+                      Consectetur adipiscing elit
+                    </h2>
                   </div>
                 </div>
               </div>
@@ -88,7 +94,9 @@ demo.htmlSource = `
               <div class="slide_item_text">
                 <div class="container">
                   <div class="slide_item_text_inner">
-                    <h2 class="h1">Nam iaculis magna eu consectetur condimentum</h2>
+                    <h2 class="h1">
+                      Nam iaculis magna eu consectetur condimentum
+                    </h2>
                   </div>
                 </div>
               </div>

@@ -31,7 +31,9 @@ demo.htmlSource = `
             </div>
             <div class="slide_item_content">
               <div class="container full">
-                <h2>Lorem ipsum</h2>
+                <h2 class="h2">
+                  Lorem ipsum
+                </h2>
               </div>
             </div>
           </a>
@@ -48,7 +50,9 @@ demo.htmlSource = `
             </div>
             <div class="slide_item_content">
               <div class="container full">
-                <h2>Dolor sit amet</h2>
+                <h2 class="h2">
+                  Dolor sit amet
+                </h2>
               </div>
             </div>
           </a>
@@ -65,7 +69,9 @@ demo.htmlSource = `
             </div>
             <div class="slide_item_content">
               <div class="container full">
-                <h2>Consectetur adipiscing elit</h2>
+                <h2 class="h2">
+                  Consectetur adipiscing elit
+                </h2>
               </div>
             </div>
           </a>
@@ -82,7 +88,9 @@ demo.htmlSource = `
             </div>
             <div class="slide_item_content">
               <div class="container full">
-                <h2>Nam iaculis magna eu consectetur condimentum</h2>
+                <h2 class="h2">
+                  Nam iaculis magna eu consectetur condimentum
+                </h2>
               </div>
             </div>
           </a>
