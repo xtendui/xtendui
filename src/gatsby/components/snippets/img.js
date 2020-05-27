@@ -4,11 +4,11 @@
 export const alt = ({ classes = '', ratio = null, height = null }) => {
   return `<div class="media-container"${
     ratio ? ' style="padding-bottom:' + ratio + '"' : height ? ' style="height:' + height + '"' : ''
-  }><div class="media-inner"><img class="media ${classes}" src="/img-alt.svg" alt="" loading="lazy"/></div></div>`
+  }><div class="media-inner"><img class="media ${classes}" src="/img-alt.svg" alt=""/></div></div>`
 }
 
 export default ({ classes = '', ratio = null, height = null }) => {
   return `<div class="media-container"${
     ratio ? ' style="padding-bottom:' + ratio + '"' : height ? ' style="height:' + height + '"' : ''
-  }><div class="media-inner"><img class="media ${classes}" src="/img.svg" alt="" loading="lazy"/></div></div>`
+  }><div class="media-inner"><img class="media ${classes}" src="/img.svg" alt=""/></div></div>`
 }

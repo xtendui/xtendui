@@ -34,6 +34,8 @@ categories: ["100-Test"]
 </demo>
 
 <demo>
+  <demovanilla src="iframe/demos/slider/2020-aniyeby-hero">
+  </demovanilla>
   <demovanilla src="iframe/demos/slider/2020-bertani-hero">
   </demovanilla>
   <demovanilla src="iframe/demos/slider/2020-euroricambi-cards">

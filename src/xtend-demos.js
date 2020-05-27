@@ -18,6 +18,7 @@ if (typeof window !== 'undefined') {
   require('xtend-library/src/demos/scroll/mode-block.js')
   require('xtend-library/src/demos/scroll/parallax.js')
   require('xtend-library/src/demos/slider/2019-sun68-hero.js')
+  require('xtend-library/src/demos/slider/2020-aniyeby-hero.js')
   require('xtend-library/src/demos/slider/2020-bertani-hero.js')
   require('xtend-library/src/demos/slider/2020-brands-infinite.js')
   require('xtend-library/src/demos/slider/2020-euroricambi-cards.js')

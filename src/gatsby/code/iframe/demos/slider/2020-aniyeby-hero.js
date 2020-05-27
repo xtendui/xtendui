@@ -16,7 +16,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="slider demo--2019-sun68-hero">
+<div class="slider demo--2020-aniyeby-hero">
 
   <div class="slides">
     <ul class="slides-inner">
@@ -24,16 +24,9 @@ demo.htmlSource = `
       <li class="slide">
         <div class="slide-inner">
           <a href="#" class="slide_item">
-            <div class="slide_item_asset">
-              <div class="slide_item_asset_inner">
-                ${img({ classes: 'media-cover', height: '100%' })}
-              </div>
-            </div>
-            <div class="slide_item_content">
-              <div class="container full">
-                <h2 class="h1">
-                  Lorem ipsum
-                </h2>
+            <div class="slide_item_inner">
+              <div class="slide_item_asset">
+                ${img({ classes: 'media-cover' })}
               </div>
             </div>
           </a>
@@ -43,16 +36,9 @@ demo.htmlSource = `
       <li class="slide">
         <div class="slide-inner">
           <a href="#" class="slide_item">
-            <div class="slide_item_asset">
-              <div class="slide_item_asset_inner">
-                ${imgAlt({ classes: 'media-cover', height: '100%' })}
-              </div>
-            </div>
-            <div class="slide_item_content">
-              <div class="container full">
-                <h2 class="h1">
-                  Dolor sit amet
-                </h2>
+            <div class="slide_item_inner">
+              <div class="slide_item_asset">
+                ${imgAlt({ classes: 'media-cover' })}
               </div>
             </div>
           </a>
@@ -62,16 +48,9 @@ demo.htmlSource = `
       <li class="slide">
         <div class="slide-inner">
           <a href="#" class="slide_item">
-            <div class="slide_item_asset">
-              <div class="slide_item_asset_inner">
-                ${img({ classes: 'media-cover', height: '100%' })}
-              </div>
-            </div>
-            <div class="slide_item_content">
-              <div class="container full">
-                <h2 class="h1">
-                  Consectetur adipiscing elit
-                </h2>
+            <div class="slide_item_inner">
+              <div class="slide_item_asset">
+                ${img({ classes: 'media-cover' })}
               </div>
             </div>
           </a>
@@ -81,16 +60,9 @@ demo.htmlSource = `
       <li class="slide">
         <div class="slide-inner">
           <a href="#" class="slide_item">
-            <div class="slide_item_asset">
-              <div class="slide_item_asset_inner">
-                ${imgAlt({ classes: 'media-cover', height: '100%' })}
-              </div>
-            </div>
-            <div class="slide_item_content">
-              <div class="container full">
-                <h2 class="h1">
-                  Nam iaculis magna eu consectetur condimentum
-                </h2>
+            <div class="slide_item_inner">
+              <div class="slide_item_asset">
+                ${imgAlt({ classes: 'media-cover' })}
               </div>
             </div>
           </a>
@@ -100,7 +72,7 @@ demo.htmlSource = `
     </ul>
   </div>
 
-  <nav class="slider-pagination">
+  <nav class="slider-pagination display-none">
     <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
     </button>
   </nav>
@@ -127,4 +99,3 @@ class Page extends React.Component {
 }
 
 export default Page
-
