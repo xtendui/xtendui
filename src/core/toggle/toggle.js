@@ -1942,7 +1942,8 @@ class Toggle {
       self.specialClassHtml(actionCurrent)
       // focus
       if (options.focusLimit) {
-        Xt.focusLimit.off()
+        const el = obj.targets ? obj.targets.queueEls[0] : obj.elements.queueEls[0]
+        Xt.focusLimit.off(el)
       }
     }
   }

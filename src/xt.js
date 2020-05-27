@@ -453,15 +453,15 @@ if (typeof window !== 'undefined') {
 
   Xt.focusLimit = {
     /**
+     * properties
+     */
+    actives: [],
+
+    /**
      * activate focusLimit to an element
      * @param {Node|HTMLElement|EventTarget|Window} el Element
      */
     on: el => {
-      Xt.focus.block = true
-      // @FIX Xt.focus when clicking and not used tab before
-      Xt.focus.current = Xt.focus.current ? Xt.focus.current : document.activeElement
-      // focus
-      el.focus()
       // vars
       Xt.focusLimit.focusables = Array.from(el.querySelectorAll(Xt.focusables)).filter(x => x.matches(':not([disabled]), :not([tabindex="-1"])'))
       if (Xt.focusLimit.focusables.length) {
@@ -471,17 +471,32 @@ if (typeof window !== 'undefined') {
         const focusLimitHandler = Xt.dataStorage.put(document, 'keydown/focusLimit', Xt.focusLimit.limit.bind(this))
         document.addEventListener('keydown', focusLimitHandler)
       }
+      // @FIX Xt.focus when clicking and not used tab before
+      Xt.focus.current = Xt.focus.current ? Xt.focus.current : document.activeElement
+      // actives
+      Xt.focus.block = true
+      Xt.focusLimit.actives.push(el)
     },
 
     /**
      * deactivate focusLimit to an element
+     * @param {Node|HTMLElement|EventTarget|Window} el Element
      */
-    off: () => {
-      Xt.focus.block = false
-      Xt.focus.current.focus()
+    off: el => {
       // event
       const focusLimitHandler = Xt.dataStorage.get(document, 'keydown/focusLimit')
       document.removeEventListener('keydown', focusLimitHandler)
+      // actives
+      Xt.focusLimit.actives = Xt.focusLimit.actives.filter(x => x !== el)
+      if (Xt.focusLimit.actives.length) {
+        const active = Xt.focusLimit.actives[Xt.focusLimit.actives.length - 1]
+        Xt.focusLimit.actives = Xt.focusLimit.actives.filter(x => x !== active)
+        console.log(active)
+        Xt.focusLimit.on(active)
+      } else {
+        Xt.focus.block = false
+        Xt.focus.current.focus()
+      }
     },
 
     /**
