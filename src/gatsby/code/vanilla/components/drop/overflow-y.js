@@ -75,12 +75,12 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       card
     </button>
-    <div class="drop drop-primary drop-overflow-y">
+    <div class="drop drop-default drop-overflow-y">
       <div class="drop-inner">
         <div class="drop-design"></div>
         <div class="drop-content">
 
-          <div class="card card-drop card-primary">
+          <div class="card card-drop">
             <div class="card-design"></div>
             <div class="btn btn-close" aria-label="Close"></div>
             <div class="card-inner">

@@ -16,7 +16,7 @@ Xt.optionsGlobal = {}
 Xt.resizeDelay = 1000
 Xt.scrollDelay = false
 Xt.medialoadedDelay = 500
-Xt.focusables = 'a, button, details, input, iframe, select, textarea'
+Xt.focusables = 'a, button, details, input, iframe, select, textarea, .btn-close'
 
 //
 // call only if in browser mode
@@ -385,9 +385,9 @@ if (typeof window !== 'undefined') {
       document.addEventListener('keyup', focusChangeKeyHandler)
       // event mouse
       const focusChangeOtherHandler = Xt.dataStorage.get(document, 'mousedown touchstart pointerdown/focus')
-      document.removeEventListener('mousedown', focusChangeOtherHandler)
-      document.removeEventListener('touchstart', focusChangeOtherHandler)
-      document.removeEventListener('pointerdown', focusChangeOtherHandler)
+      document.removeEventListener('mousedown', focusChangeOtherHandler, true)
+      document.removeEventListener('touchstart', focusChangeOtherHandler, true)
+      document.removeEventListener('pointerdown', focusChangeOtherHandler, true)
     },
 
     /**
@@ -399,9 +399,9 @@ if (typeof window !== 'undefined') {
       document.removeEventListener('keyup', focusChangeKeyHandler)
       // event mouse
       const focusChangeOtherHandler = Xt.dataStorage.put(document, 'mousedown touchstart pointerdown/focus', Xt.focus.changeOther)
-      document.addEventListener('mousedown', focusChangeOtherHandler)
-      document.addEventListener('touchstart', focusChangeOtherHandler, { passive: true })
-      document.addEventListener('pointerdown', focusChangeOtherHandler, { passive: true })
+      document.addEventListener('mousedown', focusChangeOtherHandler, true)
+      document.addEventListener('touchstart', focusChangeOtherHandler, { capture: true, passive: true })
+      document.addEventListener('pointerdown', focusChangeOtherHandler, { capture: true, passive: true })
     },
 
     /**
@@ -458,17 +458,18 @@ if (typeof window !== 'undefined') {
      */
     on: el => {
       Xt.focus.block = true
-      el.focus()
       // @FIX Xt.focus when clicking and not used tab before
       Xt.focus.current = Xt.focus.current ? Xt.focus.current : document.activeElement
+      // focus
+      el.focus()
       // vars
       Xt.focusLimit.focusables = Array.from(el.querySelectorAll(Xt.focusables)).filter(x => x.matches(':not([disabled]), :not([tabindex="-1"])'))
       if (Xt.focusLimit.focusables.length) {
         Xt.focusLimit.first = Xt.focusLimit.focusables[0]
         Xt.focusLimit.last = Xt.focusLimit.focusables[Xt.focusLimit.focusables.length - 1]
         // event
-        const focusLimitHandler = Xt.dataStorage.put(document, 'keyup/focusLimit', Xt.focusLimit.limit.bind(this))
-        document.addEventListener('keyup', focusLimitHandler)
+        const focusLimitHandler = Xt.dataStorage.put(document, 'keydown/focusLimit', Xt.focusLimit.limit.bind(this))
+        document.addEventListener('keydown', focusLimitHandler)
       }
     },
 
@@ -479,8 +480,8 @@ if (typeof window !== 'undefined') {
       Xt.focus.block = false
       Xt.focus.current.focus()
       // event
-      const focusLimitHandler = Xt.dataStorage.get(document, 'keyup.focusLimit')
-      document.removeEventListener('keyup', focusLimitHandler)
+      const focusLimitHandler = Xt.dataStorage.get(document, 'keydown/focusLimit')
+      document.removeEventListener('keydown', focusLimitHandler)
     },
 
     /**

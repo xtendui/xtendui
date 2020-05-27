@@ -2273,6 +2273,15 @@ class Toggle {
               self.eventSpecialcloseinsideHandler.bind(self).bind(self, single)
             )
             closeElement.addEventListener('click', specialcloseinsideHandler)
+            // focusable
+            const specialcloseinsideKeydownHandler = Xt.dataStorage.put(
+              closeElement,
+              'keydown/close' + '/' + self.namespace,
+              self.eventSpecialcloseinsideKeydownHandler.bind(self).bind(self, closeElement)
+            )
+            closeElement.addEventListener('keydown', specialcloseinsideKeydownHandler)
+            closeElement.setAttribute('tabindex', '0')
+            closeElement.setAttribute('role', 'button')
           }
         })
       }
@@ -2297,6 +2306,11 @@ class Toggle {
         for (const closeElement of closeElements) {
           const specialcloseinsideHandler = Xt.dataStorage.get(closeElement, 'click/close' + '/' + self.namespace)
           closeElement.removeEventListener('click', specialcloseinsideHandler)
+          // focusable
+          const specialcloseinsideKeydownHandler = Xt.dataStorage.get(closeElement, 'keydown/close' + '/' + self.namespace)
+          closeElement.removeEventListener('keydown', specialcloseinsideKeydownHandler)
+          closeElement.removeAttribute('tabindex')
+          closeElement.removeAttribute('role')
         }
       }
       // closeOutside
@@ -2331,6 +2345,18 @@ class Toggle {
     // handler
     if (Xt.contains([self.object, ...self.elements, ...self.targets], e.target)) {
       self.eventOff(single)
+    }
+  }
+
+  /**
+   * specialClose keydown handler
+   * @param {Node|HTMLElement|EventTarget|Window} closeElement
+   * @param {Event} e
+   */
+  eventSpecialcloseinsideKeydownHandler(closeElement, e) {
+    const code = e.keyCode ? e.keyCode : e.which
+    if (code === 13 || code === 32) {
+      closeElement.dispatchEvent(new CustomEvent('click'))
     }
   }
 
