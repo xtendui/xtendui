@@ -24,12 +24,10 @@ demo.htmlSource = `
       <li class="slide">
         <div class="slide-inner">
           <a href="#" class="slide_item">
-            <div class="slide_item_asset">
-              <div class="slide_item_asset_inner">
-                ${img({ classes: 'media-cover', height: '100%' })}
-              </div>
+            <div class="slide_asset">
+              ${img({ classes: 'media-cover', height: '100%' })}
             </div>
-            <div class="slide_item_content">
+            <div class="slide_content">
               <div class="container full">
                 <h2 class="h1">
                   Lorem ipsum
@@ -43,12 +41,10 @@ demo.htmlSource = `
       <li class="slide">
         <div class="slide-inner">
           <a href="#" class="slide_item">
-            <div class="slide_item_asset">
-              <div class="slide_item_asset_inner">
-                ${imgAlt({ classes: 'media-cover', height: '100%' })}
-              </div>
+            <div class="slide_asset">
+              ${imgAlt({ classes: 'media-cover', height: '100%' })}
             </div>
-            <div class="slide_item_content">
+            <div class="slide_content">
               <div class="container full">
                 <h2 class="h1">
                   Dolor sit amet
@@ -62,12 +58,10 @@ demo.htmlSource = `
       <li class="slide">
         <div class="slide-inner">
           <a href="#" class="slide_item">
-            <div class="slide_item_asset">
-              <div class="slide_item_asset_inner">
-                ${img({ classes: 'media-cover', height: '100%' })}
-              </div>
+            <div class="slide_asset">
+              ${img({ classes: 'media-cover', height: '100%' })}
             </div>
-            <div class="slide_item_content">
+            <div class="slide_content">
               <div class="container full">
                 <h2 class="h1">
                   Consectetur adipiscing elit
@@ -81,12 +75,10 @@ demo.htmlSource = `
       <li class="slide">
         <div class="slide-inner">
           <a href="#" class="slide_item">
-            <div class="slide_item_asset">
-              <div class="slide_item_asset_inner">
-                ${imgAlt({ classes: 'media-cover', height: '100%' })}
-              </div>
+            <div class="slide_asset">
+              ${imgAlt({ classes: 'media-cover', height: '100%' })}
             </div>
-            <div class="slide_item_content">
+            <div class="slide_content">
               <div class="container full">
                 <h2 class="h1">
                   Nam iaculis magna eu consectetur condimentum

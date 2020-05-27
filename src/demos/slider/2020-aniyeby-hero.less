@@ -34,8 +34,9 @@
     .link-none();
     .full();
     display: block;
+    overflow: hidden;
   }
-  .slide_item_cover {
+  .slide_cover {
     pointer-events: none;
     position: absolute;
     z-index: @index-active;
@@ -45,8 +46,7 @@
     bottom: 0;
     background: @accent-dark;
   }
-  .slide_item_asset {
-    overflow: hidden;
+  .slide_asset {
     .media-container {
       height: 100vh;
       height: calc(var(--vh, 1vh) * 100);

@@ -23,13 +23,11 @@ demo.htmlSource = `
 
       <li class="slide">
         <div class="slide-inner">
+          <div class="slide_cover"></div>
           <a href="#" class="slide_item">
-            <div class="slide_item_cover"></div>
-            <div class="slide_item_inner">
-              <div class="slide_item_asset">
-                <div class="slide_item_asset_inner">
-                  ${img({ classes: 'media-cover' })}
-                </div>
+            <div class="slide_inner">
+              <div class="slide_asset">
+                ${img({ classes: 'media-cover' })}
               </div>
             </div>
           </a>
@@ -38,13 +36,11 @@ demo.htmlSource = `
 
       <li class="slide">
         <div class="slide-inner">
+          <div class="slide_cover"></div>
           <a href="#" class="slide_item">
-            <div class="slide_item_cover"></div>
-            <div class="slide_item_inner">
-              <div class="slide_item_asset">
-                <div class="slide_item_asset_inner">
-                  ${imgAlt({ classes: 'media-cover' })}
-                </div>
+            <div class="slide_inner">
+              <div class="slide_asset">
+                ${imgAlt({ classes: 'media-cover' })}
               </div>
             </div>
           </a>
@@ -53,13 +49,11 @@ demo.htmlSource = `
 
       <li class="slide">
         <div class="slide-inner">
+          <div class="slide_cover"></div>
           <a href="#" class="slide_item">
-            <div class="slide_item_cover"></div>
-            <div class="slide_item_inner">
-              <div class="slide_item_asset">
-                <div class="slide_item_asset_inner">
-                  ${img({ classes: 'media-cover' })}
-                </div>
+            <div class="slide_inner">
+              <div class="slide_asset">
+                ${img({ classes: 'media-cover' })}
               </div>
             </div>
           </a>
@@ -68,13 +62,11 @@ demo.htmlSource = `
 
       <li class="slide">
         <div class="slide-inner">
+          <div class="slide_cover"></div>
           <a href="#" class="slide_item">
-            <div class="slide_item_cover"></div>
-            <div class="slide_item_inner">
-              <div class="slide_item_asset">
-                <div class="slide_item_asset_inner">
-                  ${imgAlt({ classes: 'media-cover' })}
-                </div>
+            <div class="slide_inner">
+              <div class="slide_asset">
+                ${imgAlt({ classes: 'media-cover' })}
               </div>
             </div>
           </a>

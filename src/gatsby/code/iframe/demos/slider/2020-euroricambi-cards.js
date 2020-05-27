@@ -54,31 +54,31 @@ demo.htmlSource = `
                 Lorem ipsum
               </div>
 
-              <div class="slide_item_assets--desktop">
+              <div class="slide_assets--desktop">
                 <div class="row row-default">
                   <div class="col-12 col-8-sm">
-                    <div class="slide_item_asset">
-                      <div class="slide_item_asset_background"></div>
+                    <div class="slide_asset">
+                      <div class="slide_asset_background"></div>
                       ${img({ classes: 'media-cover' })}
                     </div>
                   </div>
                   <div class="col-12 col-4-sm">
-                    <div class="slide_item_asset">
-                      <div class="slide_item_asset_background"></div>
+                    <div class="slide_asset">
+                      <div class="slide_asset_background"></div>
                       ${img({ classes: 'media-cover' })}
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div class="slide_item_assets--mobile">
-                <div class="slide_item_asset">
-                  <div class="slide_item_asset_background"></div>
+              <div class="slide_assets--mobile">
+                <div class="slide_asset">
+                  <div class="slide_asset_background"></div>
                   ${img({ classes: 'media-cover' })}
                 </div>
               </div>
 
-              <div class="slide_item_card">
+              <div class="slide_card">
                 <div class="card card-white">
                   <div class="card-design"></div>
                   <div class="card-inner">
@@ -113,31 +113,31 @@ demo.htmlSource = `
                 Dolor sit amet
               </div>
 
-              <div class="slide_item_assets--desktop">
+              <div class="slide_assets--desktop">
                 <div class="row row-default">
                   <div class="col-12 col-8-sm">
-                    <div class="slide_item_asset">
-                      <div class="slide_item_asset_background"></div>
+                    <div class="slide_asset">
+                      <div class="slide_asset_background"></div>
                       ${imgAlt({ classes: 'media-cover' })}
                     </div>
                   </div>
                   <div class="col-12 col-4-sm">
-                    <div class="slide_item_asset">
-                      <div class="slide_item_asset_background"></div>
+                    <div class="slide_asset">
+                      <div class="slide_asset_background"></div>
                       ${imgAlt({ classes: 'media-cover' })}
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div class="slide_item_assets--mobile">
-                <div class="slide_item_asset">
-                  <div class="slide_item_asset_background"></div>
+              <div class="slide_assets--mobile">
+                <div class="slide_asset">
+                  <div class="slide_asset_background"></div>
                   ${imgAlt({ classes: 'media-cover' })}
                 </div>
               </div>
 
-              <div class="slide_item_card">
+              <div class="slide_card">
                 <div class="card card-white">
                   <div class="card-design"></div>
                   <div class="card-inner">
@@ -172,31 +172,31 @@ demo.htmlSource = `
                 Consectetur adipiscing elit
               </div>
 
-              <div class="slide_item_assets--desktop">
+              <div class="slide_assets--desktop">
                 <div class="row row-default">
                   <div class="col-12 col-8-sm">
-                    <div class="slide_item_asset">
-                      <div class="slide_item_asset_background"></div>
+                    <div class="slide_asset">
+                      <div class="slide_asset_background"></div>
                       ${img({ classes: 'media-cover' })}
                     </div>
                   </div>
                   <div class="col-12 col-4-sm">
-                    <div class="slide_item_asset">
-                      <div class="slide_item_asset_background"></div>
+                    <div class="slide_asset">
+                      <div class="slide_asset_background"></div>
                       ${img({ classes: 'media-cover' })}
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div class="slide_item_assets--mobile">
-                <div class="slide_item_asset">
-                  <div class="slide_item_asset_background"></div>
+              <div class="slide_assets--mobile">
+                <div class="slide_asset">
+                  <div class="slide_asset_background"></div>
                   ${img({ classes: 'media-cover' })}
                 </div>
               </div>
 
-              <div class="slide_item_card">
+              <div class="slide_card">
                 <div class="card card-white">
                   <div class="card-design"></div>
                   <div class="card-inner">
@@ -231,31 +231,31 @@ demo.htmlSource = `
                 Nam iaculis magna eu consectetur condimentum
               </div>
 
-              <div class="slide_item_assets--desktop">
+              <div class="slide_assets--desktop">
                 <div class="row row-default">
                   <div class="col-12 col-8-sm">
-                    <div class="slide_item_asset">
-                      <div class="slide_item_asset_background"></div>
+                    <div class="slide_asset">
+                      <div class="slide_asset_background"></div>
                       ${imgAlt({ classes: 'media-cover' })}
                     </div>
                   </div>
                   <div class="col-12 col-4-sm">
-                    <div class="slide_item_asset">
-                      <div class="slide_item_asset_background"></div>
+                    <div class="slide_asset">
+                      <div class="slide_asset_background"></div>
                       ${imgAlt({ classes: 'media-cover' })}
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div class="slide_item_assets--mobile">
-                <div class="slide_item_asset">
-                  <div class="slide_item_asset_background"></div>
+              <div class="slide_assets--mobile">
+                <div class="slide_asset">
+                  <div class="slide_asset_background"></div>
                   ${imgAlt({ classes: 'media-cover' })}
                 </div>
               </div>
 
-              <div class="slide_item_card">
+              <div class="slide_card">
                 <div class="card card-white">
                   <div class="card-design"></div>
                   <div class="card-inner">

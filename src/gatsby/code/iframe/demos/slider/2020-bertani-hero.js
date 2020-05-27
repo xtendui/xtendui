@@ -24,13 +24,13 @@ demo.htmlSource = `
       <li class="slide">
         <div class="slide-inner">
           <a href="#" class="slide_item">
-            <div class="slide_item_inner">
-              <div class="slide_item_asset">
+            <div class="slide_inner">
+              <div class="slide_asset">
                 ${img({ classes: 'media-cover' })}
               </div>
-              <div class="slide_item_text">
+              <div class="slide_text">
                 <div class="container">
-                  <div class="slide_item_text_inner">
+                  <div class="slide_text_inner">
                     <h2 class="h1">
                       Lorem ipsum
                     </h2>
@@ -45,13 +45,13 @@ demo.htmlSource = `
       <li class="slide">
         <div class="slide-inner">
           <a href="#" class="slide_item">
-            <div class="slide_item_inner">
-              <div class="slide_item_asset">
+            <div class="slide_inner">
+              <div class="slide_asset">
                 ${imgAlt({ classes: 'media-cover' })}
               </div>
-              <div class="slide_item_text">
+              <div class="slide_text">
                 <div class="container">
-                  <div class="slide_item_text_inner">
+                  <div class="slide_text_inner">
                     <h2 class="h1">
                       Dolor sit amet
                     </h2>
@@ -66,13 +66,13 @@ demo.htmlSource = `
       <li class="slide">
         <div class="slide-inner">
           <a href="#" class="slide_item">
-            <div class="slide_item_inner">
-              <div class="slide_item_asset">
+            <div class="slide_inner">
+              <div class="slide_asset">
                 ${img({ classes: 'media-cover' })}
               </div>
-              <div class="slide_item_text">
+              <div class="slide_text">
                 <div class="container">
-                  <div class="slide_item_text_inner">
+                  <div class="slide_text_inner">
                     <h2 class="h1">
                       Consectetur adipiscing elit
                     </h2>
@@ -87,13 +87,13 @@ demo.htmlSource = `
       <li class="slide">
         <div class="slide-inner">
           <a href="#" class="slide_item">
-            <div class="slide_item_inner">
-              <div class="slide_item_asset">
+            <div class="slide_inner">
+              <div class="slide_asset">
                 ${imgAlt({ classes: 'media-cover' })}
               </div>
-              <div class="slide_item_text">
+              <div class="slide_text">
                 <div class="container">
-                  <div class="slide_item_text_inner">
+                  <div class="slide_text_inner">
                     <h2 class="h1">
                       Nam iaculis magna eu consectetur condimentum
                     </h2>

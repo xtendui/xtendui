@@ -37,7 +37,7 @@
     display: block;
     overflow: hidden;
   }
-  .slide_item_asset {
+  .slide_asset {
     .media-container {
       height: 100vh;
       height: calc(var(--vh, 1vh) * 100);
@@ -53,18 +53,17 @@
       background: linear-gradient(180deg, fade(@black, 0%) 0%, fade(@black, 30%) 100%);
     }
   }
-  .slide_item_text {
+  .slide_text {
     position: absolute;
     z-index: 3;
     bottom: 0;
     left: 0;
     right: 0;
   }
-  .slide_item_text_inner {
+  .slide_text_inner {
     .text-inverse();
     .padding(right, big);
     .padding(y, giant);
-    .padding(y, huge, md);
     max-width: 80rem;
   }
   // .slider-navigation-sides
