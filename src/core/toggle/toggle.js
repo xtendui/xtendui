@@ -2335,6 +2335,7 @@ class Toggle {
   eventSpecialcloseinsideKeydownHandler(closeElement, e) {
     const code = e.keyCode ? e.keyCode : e.which
     if (code === 13 || code === 32) {
+      e.preventDefault()
       closeElement.dispatchEvent(new CustomEvent('click'))
     }
   }
