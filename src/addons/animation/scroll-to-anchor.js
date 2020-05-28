@@ -46,13 +46,14 @@ class ScrollToAnchor {
     const loc = new URL(self.object.getAttribute('href'), location)
     if (loc.hash && loc.pathname === location.pathname) {
       if (!hashchange || location.hash === self.object.hash) {
-        self.target = document.querySelector(self.object.hash.toString())
+        const hash = hashchange ? loc.hash : self.object.hash.toString()
+        self.target = document.querySelector(hash)
         if (self.target) {
           self.scrollAdd = 0
           // prevent location.hash
           e.preventDefault()
           // no location.hash or page scrolls
-          if (!hashchange) {
+          if (location.hash !== self.object.hash) {
             history.pushState({}, '', loc.hash)
           }
           // stop xt-smooth if present

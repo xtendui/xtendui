@@ -27,7 +27,7 @@ demo.htmlSource = `
 
               <div class="card-content">
 
-                <div class="card-block card-block-head">
+                <div class="card-block card-block-intro">
                   <div class="card-title">Lorem ipsum</div>
                 </div>
 
@@ -90,7 +90,7 @@ demo.htmlSource = `
             <div class="btn btn-close" aria-label="Close"></div>
             <div class="card-inner">
 
-              <div class="card-block card-block-head">
+              <div class="card-block card-block-intro">
                 <div class="card-title">Lorem ipsum</div>
               </div>
 

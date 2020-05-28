@@ -17,7 +17,7 @@ demo.htmlSource = `
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
-          <div class="card-block card-block-head">
+          <div class="card-block card-block-intro">
             <div class="card-title">Lorem ipsum</div>
           </div>
           <div class="card-block card-item">
@@ -47,7 +47,7 @@ demo.htmlSource = `
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
-          <div class="card-block card-block-head">
+          <div class="card-block card-block-intro">
             <div class="card-title">Lorem ipsum</div>
           </div>
           <div class="card-block card-item">

@@ -1690,6 +1690,12 @@ class Toggle {
       self.specialMiddle(el, before, after)
       self.specialCollapse(actionCurrent, el, before, after)
       self.specialBackdrop(actionCurrent, obj)
+      self.specialClassHtml(actionCurrent)
+      self.specialScrollbar(actionCurrent)
+      if (options.focusLimit) {
+        const el = obj.targets ? obj.targets.queueEls[0] : obj.elements.queueEls[0]
+        Xt.focusLimit.on(el)
+      }
       if (type === 'targets' || (!self.targets.length && type === 'elements')) {
         // @FIX when standalone
         // appendTo
@@ -1746,6 +1752,11 @@ class Toggle {
       self.specialCollapse(actionCurrent, el, before, after)
       if (type === 'targets' || type === 'targetsInner' || el === self.object) {
         self.specialClose(actionCurrent, el)
+      }
+      self.specialClassHtml(actionCurrent)
+      if (options.focusLimit) {
+        const el = obj.targets ? obj.targets.queueEls[0] : obj.elements.queueEls[0]
+        Xt.focusLimit.off(el)
       }
       // listener dispatch
       el.dispatchEvent(new CustomEvent('off.xt'))
@@ -1903,11 +1914,6 @@ class Toggle {
           done++
         }
       }
-      // one done
-      if (done === 1) {
-        // queue progress
-        self.queueProgress(actionCurrent, obj)
-      }
       // queue
       self.queueStart(actionOther, actionCurrent, type, self.detail['queue' + actionOther].length - 1)
       // all done
@@ -1916,33 +1922,6 @@ class Toggle {
         self.detail['queue' + actionCurrent].pop()
         // queue complete
         self.queueComplete(actionCurrent, obj)
-      }
-    }
-  }
-
-  /**
-   * logic to execute on queue first progress
-   * @param {String} actionCurrent Current action
-   * @param {Object} obj Queue object
-   */
-  queueProgress(actionCurrent, obj) {
-    const self = this
-    const options = self.options
-    if (actionCurrent === 'On') {
-      // special
-      self.specialClassHtml(actionCurrent)
-      self.specialScrollbar(actionCurrent)
-      // focus
-      if (options.focusLimit) {
-        const el = obj.targets ? obj.targets.queueEls[0] : obj.elements.queueEls[0]
-        Xt.focusLimit.on(el)
-      }
-    } else if (actionCurrent === 'Off') {
-      // special
-      self.specialClassHtml(actionCurrent)
-      // focus
-      if (options.focusLimit) {
-        Xt.focusLimit.off()
       }
     }
   }
@@ -2273,6 +2252,15 @@ class Toggle {
               self.eventSpecialcloseinsideHandler.bind(self).bind(self, single)
             )
             closeElement.addEventListener('click', specialcloseinsideHandler)
+            // focusable
+            const specialcloseinsideKeydownHandler = Xt.dataStorage.put(
+              closeElement,
+              'keydown/close' + '/' + self.namespace,
+              self.eventSpecialcloseinsideKeydownHandler.bind(self).bind(self, closeElement)
+            )
+            closeElement.addEventListener('keydown', specialcloseinsideKeydownHandler)
+            closeElement.setAttribute('tabindex', '0')
+            closeElement.setAttribute('role', 'button')
           }
         })
       }
@@ -2297,6 +2285,11 @@ class Toggle {
         for (const closeElement of closeElements) {
           const specialcloseinsideHandler = Xt.dataStorage.get(closeElement, 'click/close' + '/' + self.namespace)
           closeElement.removeEventListener('click', specialcloseinsideHandler)
+          // focusable
+          const specialcloseinsideKeydownHandler = Xt.dataStorage.get(closeElement, 'keydown/close' + '/' + self.namespace)
+          closeElement.removeEventListener('keydown', specialcloseinsideKeydownHandler)
+          closeElement.removeAttribute('tabindex')
+          closeElement.removeAttribute('role')
         }
       }
       // closeOutside
@@ -2331,6 +2324,19 @@ class Toggle {
     // handler
     if (Xt.contains([self.object, ...self.elements, ...self.targets], e.target)) {
       self.eventOff(single)
+    }
+  }
+
+  /**
+   * specialClose keydown handler
+   * @param {Node|HTMLElement|EventTarget|Window} closeElement
+   * @param {Event} e
+   */
+  eventSpecialcloseinsideKeydownHandler(closeElement, e) {
+    const code = e.keyCode ? e.keyCode : e.which
+    if (code === 13 || code === 32) {
+      e.preventDefault()
+      closeElement.dispatchEvent(new CustomEvent('click'))
     }
   }
 
@@ -2792,7 +2798,7 @@ class Toggle {
         self.object.dispatchEvent(new CustomEvent('off.trigger.xt'))
       }
       // stop auto
-      self.eventAutostop()
+      clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutostartTimeout'))
       // stop queue
       self.queueStopAll()
       // disable
@@ -2874,7 +2880,6 @@ class Toggle {
                 if (typeof handler === 'function') {
                   const events = key.split('/')[0].split(' ')
                   for (const event of events) {
-                    //console.debug(event, element.innerHTML)
                     element.removeEventListener(event, handler)
                     element.removeEventListener(event, handler, true)
                     Xt.dataStorage.remove(element, key)

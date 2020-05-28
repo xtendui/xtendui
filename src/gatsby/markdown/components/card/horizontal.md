@@ -15,7 +15,7 @@ Sequential `.card-block` stack vertically.
   </demovanilla>
 </demo>
 
-You can add custom `.card-block` modifiers and style them as you like (e.g.: `.card-block-head`).
+You can add custom `.card-block` modifiers and style them as you like (e.g.: `.card-block-intro`).
 
 If you put it **outside** `.card-content` it will be rendered vertically.
 

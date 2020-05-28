@@ -8,7 +8,7 @@ export const Xt = {}
 // vars
 //
 
-Xt.debug = false
+Xt.debug = process.env.NODE_ENV === 'development'
 Xt.mount = []
 Xt.unmount = []
 Xt.currents = {} // Xt currents based on namespace (so shared between Xt objects)
@@ -16,7 +16,7 @@ Xt.optionsGlobal = {}
 Xt.resizeDelay = 1000
 Xt.scrollDelay = false
 Xt.medialoadedDelay = 500
-Xt.focusables = 'a, button, details, input, iframe, select, textarea'
+Xt.focusables = 'a, button, details, input, iframe, select, textarea, .btn-close'
 
 //
 // call only if in browser mode
@@ -379,24 +379,30 @@ if (typeof window !== 'undefined') {
     /**
      * enable focus change events
      */
-    on: () => {
+    on: (keepAll = false) => {
       // event key
       const focusChangeKeyHandler = Xt.dataStorage.put(document, 'keyup/focus', Xt.focus.changeKey)
       document.addEventListener('keyup', focusChangeKeyHandler)
-      // event mouse
-      const focusChangeOtherHandler = Xt.dataStorage.get(document, 'mousedown touchstart pointerdown/focus')
-      document.removeEventListener('mousedown', focusChangeOtherHandler)
-      document.removeEventListener('touchstart', focusChangeOtherHandler)
-      document.removeEventListener('pointerdown', focusChangeOtherHandler)
+      // @FIX switch mode
+      if (!keepAll) {
+        // event mouse
+        const focusChangeOtherHandler = Xt.dataStorage.get(document, 'mousedown touchstart pointerdown/focus')
+        document.removeEventListener('mousedown', focusChangeOtherHandler, true)
+        document.removeEventListener('touchstart', focusChangeOtherHandler, true)
+        document.removeEventListener('pointerdown', focusChangeOtherHandler, true)
+      }
     },
 
     /**
      * disable focus change events
      */
-    off: () => {
-      // event
-      const focusChangeKeyHandler = Xt.dataStorage.get(document, 'keyup/focus')
-      document.removeEventListener('keyup', focusChangeKeyHandler)
+    off: (keepAll = false) => {
+      // @FIX switch mode
+      if (!keepAll) {
+        // event
+        const focusChangeKeyHandler = Xt.dataStorage.get(document, 'keyup/focus')
+        document.removeEventListener('keyup', focusChangeKeyHandler)
+      }
       // event mouse
       const focusChangeOtherHandler = Xt.dataStorage.put(document, 'mousedown touchstart pointerdown/focus', Xt.focus.changeOther)
       document.addEventListener('mousedown', focusChangeOtherHandler)
@@ -418,7 +424,7 @@ if (typeof window !== 'undefined') {
         if (!document.documentElement.classList.contains('xt-focus-visible')) {
           // html.xt-focus-visible
           document.documentElement.classList.add('xt-focus-visible')
-          // switch mode
+          // @FIX switch mode
           Xt.focus.off()
         }
       }
@@ -436,7 +442,7 @@ if (typeof window !== 'undefined') {
       if (document.documentElement.classList.contains('xt-focus-visible')) {
         // html.xt-focus-visible
         document.documentElement.classList.remove('xt-focus-visible')
-        // switch mode
+        // @FIX switch mode
         Xt.focus.on()
       }
     },
@@ -453,34 +459,54 @@ if (typeof window !== 'undefined') {
 
   Xt.focusLimit = {
     /**
+     * properties
+     */
+    actives: [],
+
+    /**
      * activate focusLimit to an element
      * @param {Node|HTMLElement|EventTarget|Window} el Element
      */
     on: el => {
-      Xt.focus.block = true
-      el.focus()
-      // @FIX Xt.focus when clicking and not used tab before
-      Xt.focus.current = Xt.focus.current ? Xt.focus.current : document.activeElement
       // vars
       Xt.focusLimit.focusables = Array.from(el.querySelectorAll(Xt.focusables)).filter(x => x.matches(':not([disabled]), :not([tabindex="-1"])'))
       if (Xt.focusLimit.focusables.length) {
         Xt.focusLimit.first = Xt.focusLimit.focusables[0]
         Xt.focusLimit.last = Xt.focusLimit.focusables[Xt.focusLimit.focusables.length - 1]
         // event
-        const focusLimitHandler = Xt.dataStorage.put(document, 'keyup/focusLimit', Xt.focusLimit.limit.bind(this))
-        document.addEventListener('keyup', focusLimitHandler)
+        const focusLimitHandler = Xt.dataStorage.put(document, 'keydown/focusLimit', Xt.focusLimit.limit.bind(this))
+        document.addEventListener('keydown', focusLimitHandler)
       }
+      // @FIX Xt.focus when clicking and not used tab before
+      Xt.focus.current = Xt.focus.current ? Xt.focus.current : document.activeElement
+      // @FIX switch mode
+      Xt.focus.off(true)
+      // actives
+      Xt.focus.block = true
+      Xt.focusLimit.actives.push(el)
     },
 
     /**
      * deactivate focusLimit to an element
+     * @param {Node|HTMLElement|EventTarget|Window} el Element
      */
-    off: () => {
-      Xt.focus.block = false
-      Xt.focus.current.focus()
+    off: el => {
       // event
-      const focusLimitHandler = Xt.dataStorage.get(document, 'keyup.focusLimit')
-      document.removeEventListener('keyup', focusLimitHandler)
+      const focusLimitHandler = Xt.dataStorage.get(document, 'keydown/focusLimit')
+      document.removeEventListener('keydown', focusLimitHandler)
+      // actives
+      Xt.focusLimit.actives = Xt.focusLimit.actives.filter(x => x !== el)
+      if (Xt.focusLimit.actives.length) {
+        const active = Xt.focusLimit.actives[Xt.focusLimit.actives.length - 1]
+        Xt.focusLimit.actives = Xt.focusLimit.actives.filter(x => x !== active)
+        Xt.focusLimit.on(active)
+      } else {
+        // @FIX switch mode
+        Xt.focus.on()
+        // actives
+        Xt.focus.block = false
+        Xt.focus.current.focus()
+      }
     },
 
     /**
@@ -1055,6 +1081,19 @@ if (typeof window !== 'undefined') {
       }
       return obj
     }
+  }
+
+  /**
+   * debug console warning on img without loading attribute
+   */
+
+  if (Xt.debug) {
+    Xt.mount.push({
+      matches: 'img:not([loading]):not([src^="data:"])',
+      mount: object => {
+        console.warn('Xt.debug: detected an image without "loading" attribute.\nTo suppress warning set "Xt.debug = false" or set production mode.', object)
+      },
+    })
   }
 
   /**

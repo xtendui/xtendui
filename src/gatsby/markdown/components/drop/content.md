@@ -6,16 +6,6 @@ title: "Content"
 date: "2019-10-01"
 ---
 
-## Card
-
-[[notePrimary]]
-| Drop uses card to style it's content, refer to [card's content](/components/card/content) for all **content**.
-
-<demo>
-  <demovanilla src="vanilla/components/drop/usage-card">
-  </demovanilla>
-</demo>
-
 ## List
 
 [[notePrimary]]
@@ -25,6 +15,16 @@ Use `li.xt-custom` to override styles applied by `.list.list-drop`.
 
 <demo>
   <demovanilla src="vanilla/components/drop/usage-list">
+  </demovanilla>
+</demo>
+
+## Card
+
+[[notePrimary]]
+| Drop uses card to style it's content, refer to [card's content](/components/card/content) for all **content**.
+
+<demo>
+  <demovanilla src="vanilla/components/drop/usage-card">
   </demovanilla>
 </demo>
 

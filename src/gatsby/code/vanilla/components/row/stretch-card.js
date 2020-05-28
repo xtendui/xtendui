@@ -17,7 +17,7 @@ demo.htmlSource = `
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content" style="justify-content: flex-start;">
-          <div class="card-block card-block-head">
+          <div class="card-block card-block-intro">
             <div class="card-title">Lorem ipsum</div>
           </div>
           <div class="card-block card-item">
@@ -35,7 +35,7 @@ demo.htmlSource = `
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content" style="justify-content: flex-start;">
-          <div class="card-block card-block-head">
+          <div class="card-block card-block-intro">
             <div class="card-title">Lorem ipsum</div>
           </div>
           <div class="card-block card-item">
@@ -53,7 +53,7 @@ demo.htmlSource = `
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
-          <div class="card-block card-block-head">
+          <div class="card-block card-block-intro">
             <div class="card-title">Lorem ipsum</div>
           </div>
           <div class="card-block card-item" style="margin-top: auto;">
@@ -71,7 +71,7 @@ demo.htmlSource = `
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
-          <div class="card-block card-block-head">
+          <div class="card-block card-block-intro">
             <div class="card-title">Lorem ipsum</div>
           </div>
           <div class="card-block card-item" style="margin-top: auto;">

@@ -14,10 +14,13 @@ Xt.mount.push({
     // change
 
     const eventChange = e => {
-      const distanceY = 0
-      const posY = self.target.offsetTop - self.scrollAdd - distanceY
-      const durationY = Xt.vars.timeLarge
-      gsap.to(window, { scrollTo: posY, duration: durationY, ease: 'quart.out' })
+      // @FIX double initialization don't know why it does
+      if (self.target) {
+        const distanceY = 0
+        const posY = self.target.offsetTop - self.scrollAdd - distanceY
+        const durationY = Xt.vars.timeLarge
+        gsap.to(window, { scrollTo: posY, duration: durationY, ease: 'quart.inOut' })
+      }
     }
 
     self.object.addEventListener('change.xt.scrolltoanchor', eventChange)

@@ -101,6 +101,22 @@ const populateBlock = () => {
   }
   document.querySelector('#gatbsy_open-full').addEventListener('off.xt', e => {
     const content = document.querySelector('#gatbsy_open-full-content')
+    // iframe
+    const container = content.querySelector('.gatsby_demo')
+    if (container.dataset.isFullscreenOnly) {
+      // populate iframe
+      for (const item of container.querySelectorAll('.gatsby_demo_item.active')) {
+        if (item.getAttribute('data-iframe-fullscreen')) {
+          item.classList.remove('loaded')
+          item.dispatchEvent(new CustomEvent('offdone.xt'))
+        }
+      }
+      // populate source
+      const sourceTo = content.querySelector('.gatsby_demo_source_populate')
+      if (sourceTo) {
+        sourceTo.innerHTML = ''
+      }
+    }
     // btnOpenFull
     for (const btn of document.querySelectorAll('.btn-open-full.active')) {
       btn.classList.remove('active')
@@ -109,19 +125,6 @@ const populateBlock = () => {
     const listingToggles = document.querySelectorAll('[data-gatsby-listing-toggle]')
     for (const el of listingToggles) {
       el.classList.remove('active')
-    }
-    // iframe
-    const container = content.querySelector('.gatsby_demo')
-    if (container.dataset.isFullscreenOnly) {
-      // populate iframe
-      for (const item of container.querySelectorAll('.gatsby_demo_item')) {
-        item.classList.remove('loaded')
-      }
-      // populate source
-      const sourceTo = content.querySelector('.gatsby_demo_source_populate')
-      if (sourceTo) {
-        sourceTo.innerHTML = ''
-      }
     }
     // move code block
     const appendOrigin = document.querySelector('[data-xt-origin="gatbsy_open-full-content"]')
@@ -227,10 +230,12 @@ const populateDemo = (container, i) => {
       // $(e.trigger).attr('data-original-title', 'Error: copy manually').tooltip('show')
     })
     // inject iframe
-    if (item.getAttribute('data-iframe')) {
-      initializeIframe(container, item)
-    } else if (!item.getAttribute('data-iframe-fullscreen')) {
-      populateInline(item)
+    if (!item.getAttribute('data-iframe-fullscreen')) {
+      if (item.getAttribute('data-iframe')) {
+        initializeIframe(container, item)
+      } else {
+        populateInline(item)
+      }
     }
     // populate source
     const sourceTo = item.querySelector('.gatsby_demo_source_populate')
@@ -419,7 +424,7 @@ const makeFullscreen = (container, skipIgnore = false) => {
     listingToggle.classList.add('active')
   }
   // populate
-  const items = container.querySelectorAll('.gatsby_demo_item')
+  const items = container.querySelectorAll('.gatsby_demo_item.active')
   for (const item of items) {
     const sourceTo = item.querySelector('.gatsby_demo_source_populate')
     // populate source
@@ -443,10 +448,11 @@ const makeFullscreen = (container, skipIgnore = false) => {
   }
   content.append(container)
   // populate iframe
-  for (const item of container.querySelectorAll('.gatsby_demo_item')) {
+  for (const item of container.querySelectorAll('.gatsby_demo_item.active')) {
     if (item.getAttribute('data-iframe-fullscreen')) {
       item.setAttribute('data-iframe', item.getAttribute('data-iframe-fullscreen'))
       initializeIframe(container, item)
+      item.dispatchEvent(new CustomEvent('ondone.xt'))
     }
   }
 }
@@ -520,7 +526,7 @@ if (typeof window !== 'undefined') {
     const iframes = document.querySelectorAll(src)
     for (const iframe of iframes) {
       const container = iframe.closest('.gatsby_demo')
-      const wrappers = container.querySelectorAll('.gatsby_demo_item_wrapper')
+      const wrappers = container.querySelectorAll('.gatsby_demo_item.active .gatsby_demo_item_wrapper')
       if (iframe) {
         const iframeFull = iframe.contentWindow.document.documentElement.classList.contains('gatsby_iframe-full')
         if (iframeFull) {

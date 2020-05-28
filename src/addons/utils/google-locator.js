@@ -229,7 +229,7 @@ class Googlelocator {
       self.info = new google.maps.InfoWindow(options.infoWindow)
     }
     if (Xt.debug === true) {
-      console.debug('xt-googlelocator viewport and radius:', self.viewport, self.radius)
+      console.debug('Xt.debug: xt-googlelocator viewport and radius.', self.viewport, self.radius)
     }
     for (const marker of markers) {
       if (!self.filters.length || self.filterMarker(marker)) {
@@ -293,7 +293,7 @@ class Googlelocator {
     }
     // debug
     if (Xt.debug === true) {
-      console.debug('xt-googlelocator locations:', self.locations)
+      console.debug('Xt.debug: xt-googlelocator locations.', self.locations)
     }
     // listener dispatch
     self.object.dispatchEvent(new CustomEvent('change.xt.googlelocator'))
@@ -460,7 +460,7 @@ class Googlelocator {
     self.radius = null
     self.locateCache = { value: self.searchInput.value, position: self.position }
     if (Xt.debug === true) {
-      console.debug('xt-googlelocator locate:', pos, self.position)
+      console.debug('Xt.debug: xt-googlelocator locate.', pos, self.position)
     }
     // submit on zoom only one time
     self.map.setCenter(self.position)

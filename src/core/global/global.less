@@ -65,7 +65,7 @@
 
 @index-base: 0;
 @index-active: 2;
-@index-loader: 11;
+@index-top: 40;
 @index-btn-close: 50;
 @index-sticky: 500; // @index-sticky by javascript 100 and decreses with sequential sticky
 @index-top: 501;
@@ -83,7 +83,7 @@
 @breakpoint-sm: 768px;
 @breakpoint-md: 992px;
 @breakpoint-lg: 1200px;
-@breakpoint-xl: 1500px;
+@breakpoint-xl: 1600px;
 
 // @media queries
 // USAGE: @media @min-sm and @max-md {}
@@ -115,7 +115,6 @@ body {
 
 .overflow-style(@mode: none) {
   -webkit-overflow-scrolling: touch;
-  overflow-anchor: none; // prevent scroll event on DOM height change
   & when (@mode = none) {
     &::-webkit-scrollbar {
       height: 8px;

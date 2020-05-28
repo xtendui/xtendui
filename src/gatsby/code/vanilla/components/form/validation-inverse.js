@@ -89,7 +89,7 @@ demo.htmlSource = `
     </label>
     <select class="form-item"
       required>
-      <option selected disabled></option>
+      <option selected>Select an option</option>
       <option>Test</option>
       <option>Test</option>
       <option>Test</option>
