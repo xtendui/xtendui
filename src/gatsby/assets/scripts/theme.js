@@ -35,7 +35,7 @@ Xt.mount.push({
 
     let self = new Xt.Scroll(object, {
       sticky: 'fixed',
-      end: 350,
+      end: 250,
     })
 
     // change
@@ -95,8 +95,8 @@ const makeDocument = () => {
     id += el.textContent.replace(/\s+/g, '-').toLowerCase()
     // gatsby_make-anchor
     el.setAttribute('id', id)
-    el.innerHTML = '<a href="#' + id + '" aria-label="Anchor to ' + el.textContent + '" tabindex="-1">' + el.innerHTML + '</a>'
     el.classList.add('gatsby_make-anchor')
+    el.innerHTML = '<a href="#' + id + '" aria-label="Anchor to ' + el.textContent + '" tabindex="-1">' + el.innerHTML + '</a>'
     el.append(
       Xt.createElement(
         '<span class="gatsby_site_article_anchor"><span class="btn btn-default"><span class="icon-link" aria-hidden="true"></span></span></span>'
