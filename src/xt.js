@@ -379,29 +379,35 @@ if (typeof window !== 'undefined') {
     /**
      * enable focus change events
      */
-    on: () => {
+    on: (keepAll = false) => {
       // event key
       const focusChangeKeyHandler = Xt.dataStorage.put(document, 'keyup/focus', Xt.focus.changeKey)
       document.addEventListener('keyup', focusChangeKeyHandler)
-      // event mouse
-      const focusChangeOtherHandler = Xt.dataStorage.get(document, 'mousedown touchstart pointerdown/focus')
-      document.removeEventListener('mousedown', focusChangeOtherHandler, true)
-      document.removeEventListener('touchstart', focusChangeOtherHandler, true)
-      document.removeEventListener('pointerdown', focusChangeOtherHandler, true)
+      // @FIX switch mode
+      if (!keepAll) {
+        // event mouse
+        const focusChangeOtherHandler = Xt.dataStorage.get(document, 'mousedown touchstart pointerdown/focus')
+        document.removeEventListener('mousedown', focusChangeOtherHandler, true)
+        document.removeEventListener('touchstart', focusChangeOtherHandler, true)
+        document.removeEventListener('pointerdown', focusChangeOtherHandler, true)
+      }
     },
 
     /**
      * disable focus change events
      */
-    off: () => {
-      // event
-      const focusChangeKeyHandler = Xt.dataStorage.get(document, 'keyup/focus')
-      document.removeEventListener('keyup', focusChangeKeyHandler)
+    off: (keepAll = false) => {
+      // @FIX switch mode
+      if (!keepAll) {
+        // event
+        const focusChangeKeyHandler = Xt.dataStorage.get(document, 'keyup/focus')
+        document.removeEventListener('keyup', focusChangeKeyHandler)
+      }
       // event mouse
       const focusChangeOtherHandler = Xt.dataStorage.put(document, 'mousedown touchstart pointerdown/focus', Xt.focus.changeOther)
-      document.addEventListener('mousedown', focusChangeOtherHandler, true)
-      document.addEventListener('touchstart', focusChangeOtherHandler, { capture: true, passive: true })
-      document.addEventListener('pointerdown', focusChangeOtherHandler, { capture: true, passive: true })
+      document.addEventListener('mousedown', focusChangeOtherHandler)
+      document.addEventListener('touchstart', focusChangeOtherHandler, { passive: true })
+      document.addEventListener('pointerdown', focusChangeOtherHandler, { passive: true })
     },
 
     /**
@@ -414,11 +420,12 @@ if (typeof window !== 'undefined') {
         if (!Xt.focus.block) {
           // remember Xt.focus
           Xt.focus.current = document.activeElement
+          console.log(Xt.focus.current)
         }
         if (!document.documentElement.classList.contains('xt-focus-visible')) {
           // html.xt-focus-visible
           document.documentElement.classList.add('xt-focus-visible')
-          // switch mode
+          // @FIX switch mode
           Xt.focus.off()
         }
       }
@@ -432,11 +439,12 @@ if (typeof window !== 'undefined') {
       if (!Xt.focus.block) {
         // remember Xt.focus
         Xt.focus.current = e.target
+        console.log(Xt.focus.current)
       }
       if (document.documentElement.classList.contains('xt-focus-visible')) {
         // html.xt-focus-visible
         document.documentElement.classList.remove('xt-focus-visible')
-        // switch mode
+        // @FIX switch mode
         Xt.focus.on()
       }
     },
@@ -473,6 +481,9 @@ if (typeof window !== 'undefined') {
       }
       // @FIX Xt.focus when clicking and not used tab before
       Xt.focus.current = Xt.focus.current ? Xt.focus.current : document.activeElement
+      console.log(Xt.focus.current)
+      // @FIX switch mode
+      Xt.focus.off(true)
       // actives
       Xt.focus.block = true
       Xt.focusLimit.actives.push(el)
@@ -494,8 +505,12 @@ if (typeof window !== 'undefined') {
         console.log(active)
         Xt.focusLimit.on(active)
       } else {
+        // @FIX switch mode
+        Xt.focus.on()
+        // actives
         Xt.focus.block = false
         Xt.focus.current.focus()
+        console.log(Xt.focus.current)
       }
     },
 
