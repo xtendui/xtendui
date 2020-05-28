@@ -2798,7 +2798,7 @@ class Toggle {
         self.object.dispatchEvent(new CustomEvent('off.trigger.xt'))
       }
       // stop auto
-      self.eventAutostop()
+      clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutostartTimeout'))
       // stop queue
       self.queueStopAll()
       // disable
