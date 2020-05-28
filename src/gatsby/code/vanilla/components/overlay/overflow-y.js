@@ -14,7 +14,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
     <button type="button" class="btn btn-primary">
-      block
+      inner
     </button>
     <div class="overlay">
       <div class="overlay-container">
@@ -23,12 +23,13 @@ demo.htmlSource = `
           <div class="card card-overlay">
             <div class="card-design"></div>
             <div class="btn btn-close" aria-label="Close"></div>
-            <div class="card-inner">
+            <div class="card-inner card-overflow-y">
+              <div class="btn btn-close" aria-label="Close"></div>
               <div class="card-content">
                 <div class="card-asset">
                   ${img({ classes: 'media-cover', ratio: '37.5%' })}
                 </div>
-                <div class="card-block card-item card-overflow-y">
+                <div class="card-block card-item">
                   <div class="card-title">Lorem ipsum</div>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
                     ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
@@ -50,7 +51,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
     <button type="button" class="btn btn-primary">
-      inner
+      block
     </button>
     <div class="overlay">
       <div class="overlay-container">
@@ -59,13 +60,12 @@ demo.htmlSource = `
           <div class="card card-overlay">
             <div class="card-design"></div>
             <div class="btn btn-close" aria-label="Close"></div>
-            <div class="card-inner card-overflow-y">
-              <div class="btn btn-close" aria-label="Close"></div>
+            <div class="card-inner">
               <div class="card-content">
                 <div class="card-asset">
                   ${img({ classes: 'media-cover', ratio: '37.5%' })}
                 </div>
-                <div class="card-block card-item">
+                <div class="card-block card-item card-overflow-y">
                   <div class="card-title">Lorem ipsum</div>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
                     ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>

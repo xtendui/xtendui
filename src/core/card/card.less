@@ -24,6 +24,16 @@
   .card-medium();
 }
 
+// custom blocks
+
+.card-block-intro {
+  background: fade(@black, 10%);
+}
+
+.card-block-side {
+  background: fade(@black, 10%);
+}
+
 // preset
 
 .card-overlay {
@@ -39,18 +49,12 @@
       padding: 3em 3em !important;
     }
   }
-  .card-block-head {
-    background: @shade-200-dark;
-  }
 }
 
 .card-slide {
   // default options
   .card-default();
   .card-large();
-  .card-block-head {
-    background: @shade-200-dark;
-  }
 }
 
 .card-drop {
@@ -58,9 +62,6 @@
   // default options
   .card-white();
   .card-small();
-  .card-block-head {
-    background: @shade-200-dark;
-  }
 }
 
 // variant
@@ -71,9 +72,6 @@
     border-color: @shade-200;
     background: @shade-200;
   }
-  .card-block-head {
-    background: @shade-200-dark;
-  }
 }
 
 .card-primary {
@@ -82,9 +80,6 @@
     border-color: @accent;
     background: @accent;
   }
-  .card-block-head {
-    background: @accent-dark;
-  }
 }
 
 .card-white {
@@ -92,9 +87,6 @@
   > .card-design {
     border-color: @white;
     background: @white;
-  }
-  .card-block-head {
-    background: @shade-200;
   }
 }
 
