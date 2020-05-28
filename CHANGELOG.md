@@ -1,3 +1,19 @@
+## [0.13.84](https://github.com/minimit/xtend-library/compare/v0.13.83...v0.13.84) (2020-05-28)
+
+
+### Bug Fixes
+
+* **card:** revision cards demos ([38102e7](https://github.com/minimit/xtend-library/commit/38102e7973d027773f72371ea6d4f34baba4a9a6))
+* **slider:** fix slider position values on drag ([894c6b3](https://github.com/minimit/xtend-library/commit/894c6b3e9fc961b02ed73e3dd06c9598fc4851ab))
+* **toggle:** fix autostop on disable destroy ([a884b42](https://github.com/minimit/xtend-library/commit/a884b4247ffc63bc1ffe63e9b826bb9670dcffb4))
+* **toggle:** fix toggle focus limit with overlay ([d245cf5](https://github.com/minimit/xtend-library/commit/d245cf52e7b34e8e6d2ecb22b7302d4f8829d270))
+* **toggle:** fix toggle focus limit with overlay ([fa51519](https://github.com/minimit/xtend-library/commit/fa51519bb7f180db6271e9cc2a6b29a0e3a60a8c))
+* **toggle:** removed queueprogress and moved actions to delay done ([3e4730f](https://github.com/minimit/xtend-library/commit/3e4730f4c1ea51225e6978ff33d9b1e941799a22))
+* **toggle:** removed queueprogress and moved actions to delay done ([7b697ac](https://github.com/minimit/xtend-library/commit/7b697ac8ffc43ae976ebd07c8d76bbbfc9e3a8e8))
+* **xt:** fix focuslimit final ([2f7b752](https://github.com/minimit/xtend-library/commit/2f7b7529277a612cd3ddfd7c1955de7a33ccc755))
+* revision border radius ([d437397](https://github.com/minimit/xtend-library/commit/d437397c2ae729bd84f6fe064d3ff2e81d6afb08))
+* scroll to anchor fix final ([22c80a8](https://github.com/minimit/xtend-library/commit/22c80a820043cc4589c3a239b13c2abea4b151dd))
+
 ## [0.13.83](https://github.com/minimit/xtend-library/compare/v0.13.82...v0.13.83) (2020-05-26)
 
 
