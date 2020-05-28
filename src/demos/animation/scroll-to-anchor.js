@@ -19,18 +19,10 @@ Xt.mount.push({
         const distanceY = 0
         const posY = self.target.offsetTop - self.scrollAdd - distanceY
         const durationY = Xt.vars.timeLarge
-        gsap.to(window, { scrollTo: posY, duration: durationY, ease: 'quart.out' })
+        gsap.to(window, { scrollTo: posY, duration: durationY, ease: 'quart.inOut' })
       }
     }
 
     self.object.addEventListener('change.xt.scrolltoanchor', eventChange)
-
-    // unmount
-
-    const unmount = () => {
-      self.destroy()
-      self = null
-    }
-    return unmount
   },
 })

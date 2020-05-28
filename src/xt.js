@@ -8,7 +8,7 @@ export const Xt = {}
 // vars
 //
 
-Xt.debug = false
+Xt.debug = process.env.NODE_ENV === 'development'
 Xt.mount = []
 Xt.unmount = []
 Xt.currents = {} // Xt currents based on namespace (so shared between Xt objects)
@@ -1071,6 +1071,19 @@ if (typeof window !== 'undefined') {
       }
       return obj
     }
+  }
+
+  /**
+   * debug console warning on img without loading attribute
+   */
+
+  if (Xt.debug) {
+    Xt.mount.push({
+      matches: 'img:not([loading]):not([src^="data:"])',
+      mount: object => {
+        console.warn('Xt.debug: detected an image without "loading" attribute.\nTo suppress warning set "Xt.debug = false" or set production mode.', object)
+      },
+    })
   }
 
   /**

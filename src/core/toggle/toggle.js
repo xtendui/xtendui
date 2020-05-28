@@ -2880,7 +2880,6 @@ class Toggle {
                 if (typeof handler === 'function') {
                   const events = key.split('/')[0].split(' ')
                   for (const event of events) {
-                    //console.debug(event, element.innerHTML)
                     element.removeEventListener(event, handler)
                     element.removeEventListener(event, handler, true)
                     Xt.dataStorage.remove(element, key)

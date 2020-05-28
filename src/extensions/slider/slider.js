@@ -326,7 +326,6 @@ class Slider extends Xt.Toggle {
             pos = draggerWidth - slideLeft - slideWidth
           }
         }
-        //console.debug(pos, draggerWidth, slideWidth, slide)
         // save pos
         for (const target of targets) {
           Xt.dataStorage.set(target, self.componentNamespace + 'GroupPos', pos)
@@ -985,7 +984,6 @@ class Slider extends Xt.Toggle {
           }
         }
         found = findNext()
-        //console.debug(found)
       }
       // goTo with force
       if (found === self.currentIndex) {

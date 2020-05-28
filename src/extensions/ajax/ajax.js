@@ -236,7 +236,7 @@ class Ajax extends Xt.Toggle {
         self.ajaxResponse(element, url, request, self.detail.requestDate)
       }
       if (Xt.debug === true) {
-        console.debug('xt-ajax request:', url)
+        console.debug('Xt.debug: xt-ajax request.', url)
       }
       request.send()
       self.detail.request = request
@@ -291,7 +291,7 @@ class Ajax extends Xt.Toggle {
     const options = self.options
     // debug
     if (Xt.debug === true) {
-      console.debug('xt-ajax request success:', url)
+      console.debug('Xt.debug: xt-ajax request success.', url)
     }
     // set substitute
     let html = document.createElement('html')
@@ -329,7 +329,7 @@ class Ajax extends Xt.Toggle {
     const self = this
     // debug
     if (Xt.debug === true) {
-      console.debug('xt-ajax request failed:', url)
+      console.debug('Xt.debug: xt-ajax request failed.', url)
     }
     // reinit currents
     self.initStart()

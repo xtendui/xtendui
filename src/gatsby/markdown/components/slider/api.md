@@ -155,8 +155,7 @@ Access properties this way inside events:
 ```js
 let object = document.querySelector('#my-object')
 let self = Xt.get('xt-slider', object)
-
-console.debug(self.elements)
+const elements = self.elements
 ```
 
 Here are the main properties inside `self`:
