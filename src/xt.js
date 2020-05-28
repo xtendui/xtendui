@@ -420,7 +420,6 @@ if (typeof window !== 'undefined') {
         if (!Xt.focus.block) {
           // remember Xt.focus
           Xt.focus.current = document.activeElement
-          console.log(Xt.focus.current)
         }
         if (!document.documentElement.classList.contains('xt-focus-visible')) {
           // html.xt-focus-visible
@@ -439,7 +438,6 @@ if (typeof window !== 'undefined') {
       if (!Xt.focus.block) {
         // remember Xt.focus
         Xt.focus.current = e.target
-        console.log(Xt.focus.current)
       }
       if (document.documentElement.classList.contains('xt-focus-visible')) {
         // html.xt-focus-visible
@@ -481,7 +479,6 @@ if (typeof window !== 'undefined') {
       }
       // @FIX Xt.focus when clicking and not used tab before
       Xt.focus.current = Xt.focus.current ? Xt.focus.current : document.activeElement
-      console.log(Xt.focus.current)
       // @FIX switch mode
       Xt.focus.off(true)
       // actives
@@ -502,7 +499,6 @@ if (typeof window !== 'undefined') {
       if (Xt.focusLimit.actives.length) {
         const active = Xt.focusLimit.actives[Xt.focusLimit.actives.length - 1]
         Xt.focusLimit.actives = Xt.focusLimit.actives.filter(x => x !== active)
-        console.log(active)
         Xt.focusLimit.on(active)
       } else {
         // @FIX switch mode
@@ -510,7 +506,6 @@ if (typeof window !== 'undefined') {
         // actives
         Xt.focus.block = false
         Xt.focus.current.focus()
-        console.log(Xt.focus.current)
       }
     },
 
