@@ -1,3 +1,10 @@
+## [0.13.86](https://github.com/minimit/xtend-library/compare/v0.13.85...v0.13.86) (2020-05-29)
+
+
+### Bug Fixes
+
+* xt debug setting ([fe94f4b](https://github.com/minimit/xtend-library/commit/fe94f4be75194dc7f551e097ade325ea804ada0c))
+
 ## [0.13.85](https://github.com/minimit/xtend-library/compare/v0.13.84...v0.13.85) (2020-05-29)
 
 
