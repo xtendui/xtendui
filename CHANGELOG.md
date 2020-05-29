@@ -1,3 +1,10 @@
+## [0.13.85](https://github.com/minimit/xtend-library/compare/v0.13.84...v0.13.85) (2020-05-29)
+
+
+### Bug Fixes
+
+* fix gatsby serve window ([3c57061](https://github.com/minimit/xtend-library/commit/3c570619a40516babe59e5cb5d417dee0c3aa811))
+
 ## [0.13.84](https://github.com/minimit/xtend-library/compare/v0.13.83...v0.13.84) (2020-05-28)
 
 
