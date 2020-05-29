@@ -16,7 +16,7 @@ import ResizeSensor from 'assets/scripts/ResizeSensor.js'
 
 import 'assets/styles/theme.less'
 
-if (window.self === window.top) {
+if (typeof window !== 'undefined' && window.self === window.top) {
   if (module.hot) {
     module.hot.addStatusHandler(status => {
       if (status === 'apply') {
