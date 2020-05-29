@@ -1087,14 +1087,19 @@ if (typeof window !== 'undefined') {
    * debug console warning on img without loading attribute
    */
 
-  if (Xt.debug) {
-    Xt.mount.push({
-      matches: 'img:not([loading]):not([src^="data:"])',
-      mount: object => {
-        console.warn('Xt.debug: detected an image without "loading" attribute.\nTo suppress warning set "Xt.debug = false" or set production mode.', object)
-      },
-    })
-  }
+  requestAnimationFrame(() => {
+    if (Xt.debug) {
+      Xt.mount.push({
+        matches: 'img:not([loading]):not([src^="data:"])',
+        mount: object => {
+          console.warn(
+            'Xt.debug: detected an image without "loading" attribute.\nTo suppress warning set "Xt.debug = false" or set node environment to production.',
+            object
+          )
+        },
+      })
+    }
+  })
 
   /**
    * Xt.windowHeight
