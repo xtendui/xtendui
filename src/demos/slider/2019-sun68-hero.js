@@ -10,8 +10,8 @@ Xt.mount.push({
     // vars
 
     const contentTimeOn = Xt.vars.timeLarge
-    const contentTimeOff = Xt.vars.timeLarge
     const contentEaseOn = 'expo.out'
+    const contentTimeOff = Xt.vars.timeLarge
     const contentEaseOff = 'expo.out'
 
     const contentZoom = 0.2

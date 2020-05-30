@@ -9,8 +9,8 @@ Xt.mount.push({
     // vars
 
     const targetTimeOn = Xt.vars.timeLarge
-    const targetTimeOff = Xt.vars.timeLarge
     const targetEaseOn = 'cheetah'
+    const targetTimeOff = Xt.vars.timeLarge
     const targetEaseOff = 'cheetah'
 
     // init

@@ -9,13 +9,13 @@ Xt.mount.push({
     // vars
 
     const maskTimeOn = Xt.vars.timeLarge
-    const maskTimeOff = Xt.vars.timeLarge
     const maskEaseOn = 'quart.inOut'
+    const maskTimeOff = Xt.vars.timeLarge
     const maskEaseOff = 'quart.inOut'
 
     const contentTimeOn = Xt.vars.timeLarge
-    const contentTimeOff = Xt.vars.timeLarge
     const contentEaseOn = 'quart.inOut'
+    const contentTimeOff = Xt.vars.timeLarge
     const contentEaseOff = 'quart.inOut'
 
     // init

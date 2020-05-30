@@ -10,8 +10,8 @@ Xt.mount.push({
     // vars
 
     const assetMaskTimeOn = Xt.vars.timeBig
-    const assetMaskTimeOff = Xt.vars.timeBig
     const assetMaskEaseOn = 'quint.inOut'
+    const assetMaskTimeOff = Xt.vars.timeBig
     const assetMaskEaseOff = 'quint.inOut'
 
     const assetZoom = 0.25

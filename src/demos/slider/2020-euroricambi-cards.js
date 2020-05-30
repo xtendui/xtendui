@@ -3,29 +3,26 @@ import 'xtend-library/src/vars.js'
 import 'xtend-library/src/extensions/slider/slider.js'
 import gsap from 'gsap'
 
-// https://tympanus.net/Development/PageFlipLayout/
-// https://tympanus.net/Development/SlideOutBoxMenu/
-
 Xt.mount.push({
   matches: '.demo--2020-euroricambi-cards',
   mount: object => {
     // vars
 
     const assetMaskTimeOn = Xt.vars.timeLarge
-    const assetMaskTimeOff = Xt.vars.timeSmall
     const assetMaskEaseOn = 'expo.out'
+    const assetMaskTimeOff = Xt.vars.timeSmall
     const assetMaskEaseOff = 'quart.out'
 
     const assetZoom = 0.2
     const assetTimeOn = Xt.vars.timeLarge
-    const assetTimeOff = Xt.vars.timeTiny
     const assetEaseOn = 'quart.out'
+    const assetTimeOff = Xt.vars.timeTiny
     const assetEaseOff = 'quart.inOut'
 
     const cardContentX = 25
     const cardContentTimeOn = Xt.vars.timeLarge
-    const cardContentTimeOff = Xt.vars.timeTiny
     const cardContentEaseOn = 'expo.out'
+    const cardContentTimeOff = Xt.vars.timeTiny
     const cardContentEaseOff = 'expo.inOut'
 
     const cardTimeOn = Xt.vars.timeLarge
