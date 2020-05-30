@@ -695,11 +695,13 @@ class Slider extends Xt.Toggle {
               if (self.currentIndex < min) {
                 self.initial = true
                 self.continue = true
-                self.goToNum(max + self.currentIndex - min + 1, true) // wrap around xt-wrap items
+                // wrap around xt-wrap items
+                self.goToNum(max + self.currentIndex - min + 1, true)
               } else if (self.currentIndex > max) {
                 self.initial = true
                 self.continue = true
-                self.goToNum(min + self.currentIndex - max - 1, true) // wrap around xt-wrap items
+                // wrap around xt-wrap items
+                self.goToNum(min + self.currentIndex - max - 1, true)
               }
             },
             'wrap',
@@ -1032,9 +1034,7 @@ class Slider extends Xt.Toggle {
         self.dragger.classList.remove('transition-none')
       }
       // auto
-      if (options.auto && options.auto.time) {
-        self.eventAutostart()
-      }
+      self.eventAutostart()
       // listener dispatch
       if (!self.initial) {
         dragger.dispatchEvent(new CustomEvent('dragreset.xt'))

@@ -23,58 +23,64 @@ demo.htmlSource = `
         <div class="slide-inner">
           <div class="slide_item">
             <div class="slide_content">
-              Lorem
+              One
             </div>
             <div class="slide_content">
-              ipsum
+              Two
             </div>
             <div class="slide_content">
-              dolor sit amet
+              Three
             </div>
             <div class="slide_content">
-              consectetur
+              Four
             </div>
             <div class="slide_content">
-              adipiscing elit
+              Five
             </div>
             <div class="slide_content">
-              Nunc
+              Six
             </div>
             <div class="slide_content">
-              tempus
+              Seven
             </div>
             <div class="slide_content">
-              laoreet
+              Eight
             </div>
             <div class="slide_content">
-              leo sit amet iaculis
+              Nine
             </div>
             <div class="slide_content">
-              Lorem
+              Ten
             </div>
             <div class="slide_content">
-              ipsum
+              Eleven
             </div>
             <div class="slide_content">
-              dolor sit amet
+              Twelve
             </div>
             <div class="slide_content">
-              consectetur
+              Thirteen
             </div>
             <div class="slide_content">
-              adipiscing elit
+              Fourteen
             </div>
             <div class="slide_content">
-              Nunc
+              Fifteen
             </div>
             <div class="slide_content">
-              tempus
+              Sixteen
             </div>
             <div class="slide_content">
-              laoreet
+              Seventeen
             </div>
             <div class="slide_content">
-              leo sit amet iaculis
+              Eighteen
+            </div>
+            <div class="slide_content">
+              Nineteen
+            </div>
+            <div class="slide_content">
+              Twenty
             </div>
           </div>
         </div>
@@ -99,66 +105,64 @@ demo.htmlSource = `
         <div class="slide-inner">
           <div class="slide_item">
             <div class="slide_content">
-              Lorem
+              One
             </div>
             <div class="slide_content">
-              ipsum
+              Two
             </div>
             <div class="slide_content">
-              dolor sit amet
+              Three
             </div>
             <div class="slide_content">
-              consectetur
+              Four
             </div>
             <div class="slide_content">
-              adipiscing elit
+              Five
             </div>
             <div class="slide_content">
-              Nunc
+              Six
             </div>
             <div class="slide_content">
-              tempus
+              Seven
             </div>
             <div class="slide_content">
-              laoreet
+              Eight
             </div>
             <div class="slide_content">
-              leo sit amet iaculis
+              Nine
             </div>
             <div class="slide_content">
-              Lorem
+              Ten
             </div>
             <div class="slide_content">
-              ipsum
+              Eleven
             </div>
             <div class="slide_content">
-              dolor sit amet
+              Twelve
             </div>
             <div class="slide_content">
-              consectetur
+              Thirteen
             </div>
             <div class="slide_content">
-              adipiscing elit
+              Fourteen
             </div>
             <div class="slide_content">
-              Nunc
+              Fifteen
             </div>
             <div class="slide_content">
-              tempus
+              Sixteen
             </div>
             <div class="slide_content">
-              laoreet
+              Seventeen
             </div>
             <div class="slide_content">
-              leo sit amet iaculis
+              Eighteen
             </div>
             <div class="slide_content">
+              Nineteen
             </div>
             <div class="slide_content">
-            </div>
-            <div class="slide_content">
-            </div>
-            <div class="slide_content">
+              Twenty
             </div>
           </div>
         </div>

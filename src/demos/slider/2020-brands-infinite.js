@@ -11,6 +11,7 @@ Xt.mount.push({
     let self = new Xt.Slider(object, {
       auto: {
         initial: true,
+        time: 10000, // will change this later
       },
       align: 'left',
       groupMq: false,
@@ -47,33 +48,33 @@ Xt.mount.push({
 
     self.object.addEventListener('on.xt', eventOn, true)
 
-    // autoPause
+    // eventPause
 
     const eventPause = e => {
-      // pause auto
-      self.object.dispatchEvent(new CustomEvent('autostop.trigger.xt'))
       // pause tween
       const tweens = gsap.getTweensOf(self.dragger)
       for (const tween of tweens) {
         tween.pause()
       }
+      // pause auto
+      self.object.dispatchEvent(new CustomEvent('autopause.trigger.xt'))
     }
 
     self.object.addEventListener('mouseenter', eventPause, true)
 
-    // autoResume
+    // eventResume
 
-    const autoResume = e => {
-      // pause auto
-      self.object.dispatchEvent(new CustomEvent('autostart.trigger.xt'))
+    const eventResume = e => {
       // pause tween
       const tweens = gsap.getTweensOf(self.dragger)
       for (const tween of tweens) {
         tween.play()
       }
+      // pause auto
+      self.object.dispatchEvent(new CustomEvent('autoresume.trigger.xt'))
     }
 
-    self.object.addEventListener('mouseleave', autoResume, true)
+    self.object.addEventListener('mouseleave', eventResume, true)
 
     // unmount
 
