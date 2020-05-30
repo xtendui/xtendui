@@ -1400,15 +1400,15 @@ class Toggle {
       return
     }
     // start
-    if (options.auto && options.auto.time) {
+    if (options.auto && options.auto.time && !self.continue) {
       // paused
       self.detail.autopaused = false
       // clear
       clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutostartTimeout'))
       // auto
-      const time = self.initial || self.continue ? (options.auto.timeInitial !== false ? options.auto.timeInitial : options.auto.time) : options.auto.time
+      const time = self.initial ? (options.auto.timeInitial !== false ? options.auto.timeInitial : options.auto.time) : options.auto.time
       // not when nothing activated
-      if (self.currentIndex !== null && (!self.initial || self.continue || options.auto.initial)) {
+      if (self.currentIndex !== null && (!self.initial || options.auto.initial)) {
         // not when initial
         Xt.dataStorage.set(
           self.object,
@@ -1446,7 +1446,7 @@ class Toggle {
     const self = this
     const options = self.options
     // stop
-    if (options.auto && options.auto.time) {
+    if (options.auto && options.auto.time && !self.continue) {
       // clear
       clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutostartTimeout'))
       // listener dispatch
@@ -1461,7 +1461,7 @@ class Toggle {
     const self = this
     const options = self.options
     // disabled
-    if (self.disabled && !self.initial) {
+    if (self.disabled && !self.initial && !self.continue) {
       return
     }
     // pause
@@ -1937,7 +1937,10 @@ class Toggle {
     if (actionCurrent === 'On') {
       // auto
       if (options.auto && options.auto.time) {
-        self.eventAutostart()
+        // @FIX raf to fix when setting manually self.options.auto.time on on.xt custom listeners (brands-infinite)
+        requestAnimationFrame(() => {
+          self.eventAutostart()
+        })
       }
       // @FIX initial and continue after raf because after on.xt custom listeners
       requestAnimationFrame(() => {

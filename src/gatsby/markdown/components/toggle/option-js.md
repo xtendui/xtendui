@@ -172,7 +172,7 @@ You can use a function for <code>delayOn</code> and <code>delayOff</code> for ex
 </div>
 
 [[notePrimary]]
-| Auto doesn't run if the toggle is `display: none`.
+| Auto doesn't run if the toggle is `display: none`. Start it manually when visible when using [toggle events](/components/toggle/api#trigger).
 
 <demo>
   <demovanilla src="vanilla/components/toggle/auto-initial">
@@ -217,7 +217,6 @@ Use `keyboard: { selector: 'object' }` or `keyboard: { selector: QuerySelector }
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-
 | Option                  | `autoClose:Boolean`                          | `false`        | Close automatically on `autoclose.trigger.xt` event            |
 | Option                  | `appendTo:Query`                          | `false`        | Append targets to Node on activation            |
 | Option                  | `classHtml:String`                          | `false`        | Class to add to html element on activation            |

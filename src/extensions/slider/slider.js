@@ -684,6 +684,8 @@ class Slider extends Xt.Toggle {
         if (!self.initial && !self.continue) {
           const min = self.groupMqFirst.length
           const max = self.groupMqFirst.length + self.groupMqInitial.length - 1
+          // @FIX always start auto before self.continue = true
+          self.eventAutostart()
           // @FIX wrap with initial
           Xt.animTimeout(
             dragger,

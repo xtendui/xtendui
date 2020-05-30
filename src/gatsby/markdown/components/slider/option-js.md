@@ -250,7 +250,7 @@ Use `wheel: { selector: 'object' }` or `wheel: { selector: QuerySelector }` to e
 </div>
 
 [[notePrimary]]
-| Auto doesn't run if the slider is `display: none`.
+| Auto doesn't run if the slider is `display: none`. Start it manually when visible when using [slider events](/components/slider/api#trigger).
 
 <demo>
   <demovanilla src="vanilla/components/slider/auto">
