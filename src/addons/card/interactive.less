@@ -74,16 +74,16 @@
   // interactive
   a&, label& {
     > .card-design {
-      transition: all @time-small @ease-off;
+      transition: all @time-small @ease-leave;
     }
     &:hover, &.hover {
       > .card-design {
-        transition: all @time-small @ease-on;
+        transition: all @time-small @ease-enter;
       }
     }
     &:active, &.active, input[type="checkbox"]:not(.unstyled):checked ~ &, input[type="radio"]:not(.unstyled):checked ~ & {
       > .card-design {
-        transition: all @time-small @ease-on;
+        transition: all @time-small @ease-enter;
       }
     }
   }

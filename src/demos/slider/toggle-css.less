@@ -26,7 +26,7 @@
       &:after {
         animation-name: demo--slider-toggle-css-in;
         animation-duration: @time-small;
-        animation-timing-function: @ease-on;
+        animation-timing-function: @ease-enter;
         transform: translateX(-100%);
       }
       &.inverse {
@@ -35,7 +35,7 @@
         &:after {
           animation-name: demo--slider-toggle-css-in-inverse;
           animation-duration: @time-small;
-          animation-timing-function: @ease-on;
+          animation-timing-function: @ease-enter;
           transform: translateX(100%);
         }
       }
@@ -46,7 +46,7 @@
       &:after {
         animation-name: demo--slider-toggle-css-out;
         animation-duration: @time-small;
-        animation-timing-function: @ease-off;
+        animation-timing-function: @ease-leave;
         transform: translateX(0);
       }
       &.inverse {
@@ -55,7 +55,7 @@
         &:after {
           animation-name: demo--slider-toggle-css-out-inverse;
           animation-duration: @time-small;
-          animation-timing-function: @ease-off;
+          animation-timing-function: @ease-leave;
           transform: translateX(0);
         }
       }

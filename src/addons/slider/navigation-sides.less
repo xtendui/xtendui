@@ -31,13 +31,13 @@
   }
   // animation
   .slider-navigation-sides-btn {
-    transition: opacity @time-small @ease-off, transform @time-small @ease-off;
+    transition: opacity @time-small @ease-leave, transform @time-small @ease-leave;
   }
   &:active {
     .slider-navigation-sides-btn {
       opacity: .75;
       transform: scale(0.8, 0.8);
-      transition: opacity @time-small @ease-on, transform @time-small @ease-on;
+      transition: opacity @time-small @ease-enter, transform @time-small @ease-enter;
     }
   }
 }

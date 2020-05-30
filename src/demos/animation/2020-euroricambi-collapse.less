@@ -11,8 +11,8 @@
 
   // ease
 
-  @ease-on: @ease-out-quint;
-  @ease-off: @ease-in-out-quint;
+  @ease-enter: @ease-out-quint;
+  @ease-leave: @ease-in-out-quint;
 
   /**
    * drop
@@ -56,11 +56,11 @@
         > .drop-inner {
           opacity: 1;
           transform: none;
-          transition: height @time-medium @ease-on, transform @time-medium @ease-on, opacity @time-tiny @ease-on;
+          transition: height @time-medium @ease-enter, transform @time-medium @ease-enter, opacity @time-tiny @ease-enter;
           > .drop-content {
             opacity: 1;
             transform: none;
-            transition: transform @time-medium @ease-on, opacity @time-medium @ease-on;
+            transition: transform @time-medium @ease-enter, opacity @time-medium @ease-enter;
           }
         }
       }
@@ -71,11 +71,11 @@
         > .drop-inner {
           opacity: 0;
           transform: translateY(1rem);
-          transition: height @time-small @ease-off, transform @time-small @ease-off, opacity @time-tiny @ease-off @time-tiny;
+          transition: height @time-small @ease-leave, transform @time-small @ease-leave, opacity @time-tiny @ease-leave @time-tiny;
           > .drop-content {
             opacity: 0;
             transform: translateY(1.5rem);
-            transition: transform @time-small @ease-off, opacity @time-small @ease-off;
+            transition: transform @time-small @ease-leave, opacity @time-small @ease-leave;
           }
         }
       }
@@ -107,12 +107,12 @@
     }
     &.in {
       animation-duration: @time-medium; // needed for animation time and backdrop animation time, put max animation time
-      transition: height @time-medium @ease-on;
+      transition: height @time-medium @ease-enter;
       .card-overlay {
         > .card-design {
           opacity: 1;
           transform: none;
-          transition: transform @time-medium @ease-on, opacity @time-tiny @ease-on;
+          transition: transform @time-medium @ease-enter, opacity @time-tiny @ease-enter;
         }
         > .btn-close {
           // use animation to not override .btn transitions
@@ -123,19 +123,19 @@
           > .card-block,  > .card-content {
             opacity: 1;
             transform: none;
-            transition: transform @time-medium @ease-on, opacity @time-tiny @ease-on;
+            transition: transform @time-medium @ease-enter, opacity @time-tiny @ease-enter;
           }
         }
       }
     }
     &.out {
       animation-duration: @time-small; // needed for animation time and backdrop animation time, put max animation time
-      transition: height @time-small @ease-off, width @time-small @ease-off;
+      transition: height @time-small @ease-leave, width @time-small @ease-leave;
       .card-overlay {
         > .card-design {
           opacity: 0;
           transform: translateY(2rem);
-          transition: transform @time-small @ease-off, opacity @time-tiny @ease-off @time-tiny;
+          transition: transform @time-small @ease-leave, opacity @time-tiny @ease-leave @time-tiny;
         }
         > .btn-close {
           // use animation to not override .btn transitions
@@ -146,7 +146,7 @@
           > .card-block,  > .card-content {
             opacity: 0;
             transform: translateY(2.5rem);
-            transition: transform @time-small @ease-off, opacity @time-tiny @ease-off @time-tiny;
+            transition: transform @time-small @ease-leave, opacity @time-tiny @ease-leave @time-tiny;
           }
         }
       }
@@ -160,10 +160,10 @@
   .group {
     .collapse-width();
     &.in {
-      transition: width @time-medium @ease-off;
+      transition: width @time-medium @ease-leave;
     }
     &.out {
-      transition: width @time-medium @ease-off;
+      transition: width @time-medium @ease-leave;
     }
   }
 }
