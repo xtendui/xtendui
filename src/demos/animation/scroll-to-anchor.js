@@ -16,7 +16,7 @@ Xt.mount.push({
     const eventChange = e => {
       // @FIX double initialization don't know why it does
       if (self.target) {
-        const distanceY = 0
+        const distanceY = 50
         const posY = self.target.offsetTop - self.scrollAdd - distanceY
         const durationY = Xt.vars.timeLarge
         gsap.to(window, { scrollTo: posY, duration: durationY, ease: 'quart.inOut' })
