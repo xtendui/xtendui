@@ -970,7 +970,7 @@ class Slider extends Xt.Toggle {
               const group = self.groupMq[i]
               const pos = Xt.dataStorage.get(group[0], self.componentNamespace + 'GroupPos')
               dist += Math.abs(pos)
-              if (self.detail.dragPos <= dist) {
+              if (dragPosCurrent <= dist) {
                 return i
               }
             }
@@ -979,7 +979,7 @@ class Slider extends Xt.Toggle {
               const group = self.groupMq[i]
               const pos = Xt.dataStorage.get(group[0], self.componentNamespace + 'GroupPos')
               dist += Math.abs(pos)
-              if (self.detail.dragPos <= dist) {
+              if (dragPosCurrent <= dist) {
                 return i
               }
             }
