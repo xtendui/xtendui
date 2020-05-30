@@ -1393,7 +1393,6 @@ class Toggle {
               if (getComputedStyle(self.object).pointerEvents !== 'none') {
                 // @FIX initial and continue after raf because after on.xt custom listeners
                 requestAnimationFrame(() => {
-                  console.log(time, self.currentIndex)
                   if (options.auto.inverse) {
                     self.goToPrev(options.auto.step, true)
                   } else {
@@ -1440,7 +1439,6 @@ class Toggle {
     }
     // pause
     if (options.auto && options.auto.time) {
-      console.log('ccccc')
       // pause
       self.detail.autopauseDate = new Date().getTime()
       // clear
@@ -1462,7 +1460,6 @@ class Toggle {
     }
     // pause
     if (options.auto && options.auto.time) {
-      console.log(self.object)
       // resume
       const timeDiff = Math.abs(self.detail.autostartDate - self.detail.autopauseDate)
       self.eventAutostart(timeDiff)
