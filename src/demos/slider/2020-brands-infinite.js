@@ -6,6 +6,13 @@ import gsap from 'gsap'
 Xt.mount.push({
   matches: '.demo--2020-brands-infinite--factor',
   mount: object => {
+    // vars
+
+    const timeScaleTimeOn = Xt.vars.timeMedium
+    const timeScaleTimeOff = Xt.vars.timeMedium
+    const timeScaleEaseOn = 'quint.in'
+    const timeScaleEaseOff = 'quint.out'
+
     // slider
 
     let self = new Xt.Slider(object, {
@@ -24,7 +31,7 @@ Xt.mount.push({
       const target = e.target
       // useCapture delegation
       if (self.targets.includes(target)) {
-        // set auto time depending on content
+        // time depending on target and dragger width
         const slideWidth = target.offsetWidth
         const draggerWidth = self.dragger.offsetWidth
         let time = slideWidth * 25 // constant speed
@@ -32,7 +39,6 @@ Xt.mount.push({
           time = (draggerWidth / slideWidth) * 10000 // faster the less horizontal space
         }
         // animate
-        console.log(self.currentIndex, self.continue, time)
         if (self.continue) {
           gsap.set(self.dragger, { x: self.detail.dragPosCurrent })
         } else {
@@ -51,7 +57,8 @@ Xt.mount.push({
       // pause tween
       const tweens = gsap.getTweensOf(self.dragger)
       for (const tween of tweens) {
-        tween.pause()
+        gsap.to(tween, { timeScale: 0, duration: timeScaleTimeOff, ease: timeScaleEaseOff })
+        // or instant: tween.pause()
       }
     }
 
@@ -63,7 +70,8 @@ Xt.mount.push({
       // resume tween
       const tweens = gsap.getTweensOf(self.dragger)
       for (const tween of tweens) {
-        tween.play()
+        gsap.to(tween, { timeScale: 1, duration: timeScaleTimeOn, ease: timeScaleEaseOn })
+        // or instant: tween.play()
       }
     }
 
