@@ -15,7 +15,7 @@ Xt.mount.push({
     const contentEaseOff = 'expo.out'
 
     const contentZoom = 0.2
-    const contentZoomTime = Xt.vars.timeBig * 3
+    const contentZoomTime = Xt.vars.timeBig * 4
     const contentZoomEase = 'sine.inOut'
 
     // slider

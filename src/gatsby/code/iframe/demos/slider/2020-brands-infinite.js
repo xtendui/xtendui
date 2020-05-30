@@ -152,6 +152,14 @@ demo.htmlSource = `
             <div class="slide_content">
               leo sit amet iaculis
             </div>
+            <div class="slide_content">
+            </div>
+            <div class="slide_content">
+            </div>
+            <div class="slide_content">
+            </div>
+            <div class="slide_content">
+            </div>
           </div>
         </div>
       </li>

@@ -163,7 +163,6 @@ You can use a function for <code>delayOn</code> and <code>delayOff</code> for ex
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `auto.time:Milliseconds`                          | `false`        | Automatic activation time            |
-| Option                  | `auto.timeInitial:Milliseconds`                          | `false`        | Automatic activation time on initial            |
 | Option                  | `auto.initial:Boolean`                          | `true`        | Automatic activation on initial            |
 | Option                  | `auto.step:Number`                          | `1`        | Automatic activation steps            |
 | Option                  | `auto.inverse:Boolean`                          | `false`        | Automatic activation inverse order            |

@@ -50,7 +50,6 @@ class ScrollToAnchor {
       if (!hashchange || location.hash === self.object.hash) {
         const hash = hashchange ? loc.hash : self.object.hash.toString()
         self.target = document.querySelector(hash)
-        console.log(hash, self.target)
         if (self.target) {
           // prevent location.hash
           if (e) {

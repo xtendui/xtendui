@@ -500,6 +500,12 @@ class Toggle {
         tr.addEventListener('off.trigger.xt', offHandlerCustom)
       }
     }
+    // focus
+    const focusHandler = Xt.dataStorage.put(window, 'focus/auto' + '/' + self.namespace, self.eventAutoresumeHandler.bind(self))
+    addEventListener('focus', focusHandler)
+    // blur
+    const blurHandler = Xt.dataStorage.put(window, 'blur/auto' + '/' + self.namespace, self.eventAutopauseHandler.bind(self))
+    addEventListener('blur', blurHandler)
     // auto
     if (options.auto && options.auto.time) {
       // event
@@ -507,12 +513,6 @@ class Toggle {
       self.object.addEventListener('autostart.trigger.xt', autostartHandler)
       const autostopHandler = Xt.dataStorage.put(self.object, 'autostop' + '/' + self.namespace, self.eventAutostop.bind(self))
       self.object.addEventListener('autostop.trigger.xt', autostopHandler)
-      // focus auto
-      const focusHandler = Xt.dataStorage.put(window, 'focus/auto' + '/' + self.namespace, self.eventAutoresumeHandler.bind(self))
-      addEventListener('focus', focusHandler)
-      // blur auto
-      const blurHandler = Xt.dataStorage.put(window, 'blur/auto' + '/' + self.namespace, self.eventAutopauseHandler.bind(self))
-      addEventListener('blur', blurHandler)
       // autopause
       if (options.auto.pause) {
         const autopauseEls = self.object.querySelectorAll(options.auto.pause)
@@ -793,6 +793,7 @@ class Toggle {
   eventAutopauseHandler(e) {
     const self = this
     if (!self.detail.autopaused) {
+      console.log('ccccc')
       // handler
       self.eventAutopause()
       // paused
@@ -807,6 +808,7 @@ class Toggle {
   eventAutoresumeHandler(e) {
     const self = this
     if (self.detail.autopaused) {
+      console.log(self.object)
       // handler
       self.eventAutostart()
       // paused
@@ -1406,7 +1408,7 @@ class Toggle {
       // clear
       clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutostartTimeout'))
       // auto
-      const time = self.initial ? (options.auto.timeInitial !== false ? options.auto.timeInitial : options.auto.time) : options.auto.time
+      const time = options.auto.time
       // not when nothing activated
       if (self.currentIndex !== null && (!self.initial || options.auto.initial)) {
         // not when initial
@@ -1430,9 +1432,9 @@ class Toggle {
             }
           }, time)
         )
-        // listener dispatch
+        // @FIX event called before removing classes
         requestAnimationFrame(() => {
-          // @FIX event called before removing classes
+          // listener dispatch
           self.object.dispatchEvent(new CustomEvent('autostart.xt'))
         })
       }
@@ -2974,7 +2976,6 @@ Toggle.optionsDefaultSuper = {
   },
   auto: {
     time: false,
-    timeInitial: false,
     initial: true,
     step: 1,
     inverse: false,

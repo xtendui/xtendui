@@ -81,15 +81,15 @@ Set to `groupMq: false` to disable automatic grouping of slides.
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `drag.drag:Boolean`                          | `true`        | Enable or disable drag             |
 | Option                  | `drag.dragger:Query`                          | `'.slides-inner'`        | Query for dragger element             |
+| Option                  | `drag.manualPosition:Boolean`                          | `false`        | Manual dragger position            |
+| Option                  | `drag.duration:Number|Boolean`                          | `false`        | Drag change time needed when using js animations            |
 | Option                  | `drag.threshold:Number`                          | `50`        | Minumim drag size for starting drag             |
 | Option                  | `drag.linkThreshold:Number`                          | `50`        | Maximum drag size for clicking links             |
 | Option                  | `drag.factor:Number`                          | `1`        | Factor multiplier for drag             |
 
-</div>
 
-Use `drag: false` to disable drag. You need to use the slider in **toggle mode**, so with `.toggle-block` on the slides.
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/slider/toggle-css">
@@ -241,7 +241,6 @@ Use `wheel: { selector: 'object' }` or `wheel: { selector: QuerySelector }` to e
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `auto.time:Milliseconds`                          | `false`        | Automatic activation time            |
-| Option                  | `auto.timeInitial:Milliseconds`                          | `false`        | Automatic activation time on initial            |
 | Option                  | `auto.initial:Boolean`                          | `true`        | Automatic activation on initial            |
 | Option                  | `auto.step:Number`                          | `1`        | Automatic activation steps            |
 | Option                  | `auto.inverse:Boolean`                          | `false`        | Automatic activation inverse order            |

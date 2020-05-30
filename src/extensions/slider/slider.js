@@ -653,7 +653,9 @@ class Slider extends Xt.Toggle {
         })
       }
       // drag position
-      dragger.style.transform = 'translateX(' + self.detail.dragPos + 'px)'
+      if (!options.drag.manualPosition) {
+        dragger.style.transform = 'translateX(' + self.detail.dragPos + 'px)'
+      }
       // disable dragger
       dragger.classList.add('xt-pointer-events-none')
       for (const nav of self.navs) {
@@ -700,7 +702,8 @@ class Slider extends Xt.Toggle {
                 self.goToNum(min + self.currentIndex - max - 1, true) // wrap around xt-wrap items
               }
             },
-            'wrap'
+            'wrap',
+            self.options.drag.duration
           )
         }
       }
@@ -928,7 +931,7 @@ class Slider extends Xt.Toggle {
     if (self.initial) {
       self.dragger.classList.add('transition-none')
     }
-    if (options.drag.drag) {
+    if (!options.drag.manualPosition) {
       dragger.style.transform = 'translateX(' + self.detail.dragPos + 'px)'
     }
     if (self.initial) {
@@ -1022,7 +1025,9 @@ class Slider extends Xt.Toggle {
       if (self.initial) {
         self.dragger.classList.add('transition-none')
       }
-      dragger.style.transform = 'translateX(' + self.detail.dragPosCurrent + 'px)'
+      if (!options.drag.manualPosition) {
+        dragger.style.transform = 'translateX(' + self.detail.dragPosCurrent + 'px)'
+      }
       if (self.initial) {
         self.dragger.classList.remove('transition-none')
       }
@@ -1199,9 +1204,10 @@ Slider.optionsDefault = {
   contain: false,
   pagination: '.slider-pagination',
   drag: {
-    drag: true,
     dragger: '.slides-inner',
     wrap: false,
+    manualPosition: false,
+    duration: false,
     threshold: 50,
     linkThreshold: 50,
     factor: 1,

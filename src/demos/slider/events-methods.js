@@ -191,7 +191,7 @@ Xt.mount.push({
       if (e.target.getAttribute('title')) {
         str += ' from <strong>' + e.target.getAttribute('title') + '</strong>'
       } else if (e.target.querySelector('.card-title')) {
-        str += ' from <strong>' + e.target.querySelector('.card-title').innerHTML + '</strong>'
+        str += ' from <strong> Target ' + e.target.querySelector('.card-title').innerHTML + '</strong>'
       } else if (!e.target.querySelector('*')) {
         str += ' from <strong>' + e.target.innerHTML + '</strong>'
       }
@@ -200,8 +200,8 @@ Xt.mount.push({
 
     object.addEventListener('init.xt', events)
     object.addEventListener('destroy.xt', events)
-    object.addEventListener('on.xt', events)
-    object.addEventListener('off.xt', events)
+    document.addEventListener('on.xt', events, true)
+    document.addEventListener('off.xt', events, true)
 
     // unmount
 
@@ -216,8 +216,8 @@ Xt.mount.push({
       unmountBtn.removeEventListener('click', unmountFnc)
       object.removeEventListener('init.xt', events)
       object.removeEventListener('destroy.xt', events)
-      object.removeEventListener('on.xt', events)
-      object.removeEventListener('off.xt', events)
+      document.removeEventListener('on.xt', events, true)
+      document.removeEventListener('off.xt', events, true)
       self.destroy()
       self = null
     }
