@@ -9,10 +9,6 @@ Xt.mount.push({
     // slider
 
     let self = new Xt.Slider(object, {
-      auto: {
-        initial: true,
-        time: 10000, // will change this later
-      },
       align: 'left',
       groupMq: false,
       autoHeight: false,
@@ -35,13 +31,14 @@ Xt.mount.push({
         if (object.classList.contains('demo--2020-brands-infinite--factor')) {
           time = (draggerWidth / slideWidth) * 10000 // faster the less horizontal space
         }
-        self.options.auto.time = time
-        self.options.drag.duration = time
         // animate
+        console.log(self.currentIndex, self.continue, time)
         if (self.continue) {
-          gsap.set(self.dragger, { x: self.detail.dragPosCurrent, overwrite: true })
+          gsap.set(self.dragger, { x: self.detail.dragPosCurrent })
         } else {
-          gsap.to(self.dragger, { x: self.detail.dragPosCurrent, duration: time, ease: 'linear', overwrite: true })
+          gsap.to(self.dragger, { x: self.detail.dragPosCurrent, duration: time, ease: 'linear' }).eventCallback('onComplete', () => {
+            self.goToNext()
+          })
         }
       }
     }
@@ -56,8 +53,6 @@ Xt.mount.push({
       for (const tween of tweens) {
         tween.pause()
       }
-      // pause auto
-      self.object.dispatchEvent(new CustomEvent('autopause.trigger.xt'))
     }
 
     self.object.addEventListener('mouseenter', eventPause, true)
@@ -65,13 +60,11 @@ Xt.mount.push({
     // eventResume
 
     const eventResume = e => {
-      // pause tween
+      // resume tween
       const tweens = gsap.getTweensOf(self.dragger)
       for (const tween of tweens) {
         tween.play()
       }
-      // pause auto
-      self.object.dispatchEvent(new CustomEvent('autoresume.trigger.xt'))
     }
 
     self.object.addEventListener('mouseleave', eventResume, true)
