@@ -1363,6 +1363,28 @@ class Toggle {
   }
 
   /**
+   * auto
+   */
+  eventAuto() {
+    const self = this
+    const options = self.options
+    // auto
+    if (Xt.visible(self.object)) {
+      // not when disabled
+      if (getComputedStyle(self.object).pointerEvents !== 'none') {
+        // @FIX initial and continue after raf because after on.xt custom listeners
+        requestAnimationFrame(() => {
+          if (options.auto.inverse) {
+            self.goToPrev(options.auto.step, true)
+          } else {
+            self.goToNext(options.auto.step, true)
+          }
+        })
+      }
+    }
+  }
+
+  /**
    * auto start
    * @param {Number|Boolean} time Force automatic time
    */
@@ -1388,19 +1410,7 @@ class Toggle {
           self.componentNamespace + 'AutoTimeout',
           // timeout
           setTimeout(() => {
-            if (Xt.visible(self.object)) {
-              // not when disabled
-              if (getComputedStyle(self.object).pointerEvents !== 'none') {
-                // @FIX initial and continue after raf because after on.xt custom listeners
-                requestAnimationFrame(() => {
-                  if (options.auto.inverse) {
-                    self.goToPrev(options.auto.step, true)
-                  } else {
-                    self.goToNext(options.auto.step, true)
-                  }
-                })
-              }
-            }
+            self.eventAuto()
           }, time)
         )
         // @FIX event called before removing classes

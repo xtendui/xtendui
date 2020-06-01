@@ -684,31 +684,38 @@ class Slider extends Xt.Toggle {
       // drag wrap
       if (self.dragger && options.drag.wrap) {
         if (!self.initial && !self.continue) {
-          const min = self.groupMqFirst.length
-          const max = self.groupMqFirst.length + self.groupMqInitial.length - 1
-          // @FIX always start auto before self.continue = true
-          self.eventAutostart()
-          // @FIX wrap with initial
+          // @FIX wrap around xt-wrap items
           Xt.animTimeout(
             dragger,
             () => {
-              if (self.currentIndex < min) {
-                self.initial = true
-                self.continue = true
-                // wrap around xt-wrap items
-                self.goToNum(max + self.currentIndex - min + 1, true)
-              } else if (self.currentIndex > max) {
-                self.initial = true
-                self.continue = true
-                // wrap around xt-wrap items
-                self.goToNum(min + self.currentIndex - max - 1, true)
-              }
+              self.eventWrap()
             },
             'wrap',
             self.options.drag.duration
           )
         }
       }
+    }
+  }
+
+  /**
+   * wrap
+   */
+  eventWrap() {
+    const self = this
+    // wrap around xt-wrap items
+    const min = self.groupMqFirst.length
+    const max = self.groupMqFirst.length + self.groupMqInitial.length - 1
+    if (self.currentIndex < min) {
+      self.initial = true
+      self.continue = true
+      console.log('wrapping')
+      self.goToNum(max + self.currentIndex - min + 1, true)
+    } else if (self.currentIndex > max) {
+      self.initial = true
+      self.continue = true
+      console.log('wrapping')
+      self.goToNum(min + self.currentIndex - max - 1, true)
     }
   }
 

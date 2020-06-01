@@ -40,9 +40,13 @@ Xt.mount.push({
         }
         // animate
         if (self.continue) {
+          console.log('set')
           gsap.set(self.dragger, { x: self.detail.dragPosCurrent })
+          self.eventWrap()
         } else {
+          console.log('to')
           gsap.to(self.dragger, { x: self.detail.dragPosCurrent, duration: time, ease: 'linear' }).eventCallback('onComplete', () => {
+            console.log('next')
             self.goToNext()
           })
         }
@@ -63,6 +67,7 @@ Xt.mount.push({
     }
 
     self.object.addEventListener('mouseenter', eventPause, true)
+    addEventListener('blur', eventPause)
 
     // eventResume
 
@@ -76,10 +81,13 @@ Xt.mount.push({
     }
 
     self.object.addEventListener('mouseleave', eventResume, true)
+    addEventListener('focus', eventResume)
 
     // unmount
 
     const unmount = () => {
+      removeEventListener('blur', eventPause)
+      removeEventListener('focus', eventResume)
       self.destroy()
       self = null
     }
