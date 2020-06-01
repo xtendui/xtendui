@@ -39,9 +39,9 @@ Xt.mount.push({
       const target = self.targets.filter(x => self.hasCurrent(x))[0]
       const size = self.dragger.offsetWidth / 6
       // content others
-      for (const tr of self.targets.filter(x => !self.hasCurrent(x))) {
-        const other = tr.querySelector('.slide_asset .media-container')
-        gsap.set(other, { x: size * self.detail.dragRatio * self.direction - size * self.direction, opacity: self.detail.dragRatio + 0.5 })
+      for (const other of self.targets.filter(x => !self.hasCurrent(x))) {
+        const contentOther = other.querySelector('.slide_asset .media-container')
+        gsap.set(contentOther, { x: size * self.detail.dragRatio * self.direction - size * self.direction, opacity: self.detail.dragRatio + 0.5 })
       }
       // content
       const content = target.querySelector('.slide_asset .media-container')
@@ -55,9 +55,9 @@ Xt.mount.push({
     const eventDragReset = e => {
       const target = self.targets.filter(x => self.hasCurrent(x))[0]
       // content others
-      for (const tr of self.targets.filter(x => !self.hasCurrent(x))) {
-        const other = tr.querySelector('.slide_asset .media-container')
-        gsap.to(other, { x: 0, opacity: 0.5, duration: contentTimeOff, ease: contentEaseOff })
+      for (const other of self.targets.filter(x => !self.hasCurrent(x))) {
+        const contentOther = other.querySelector('.slide_asset .media-container')
+        gsap.to(contentOther, { x: 0, opacity: 0.5, duration: contentTimeOff, ease: contentEaseOff })
       }
       // content
       const content = target.querySelector('.slide_asset .media-container')

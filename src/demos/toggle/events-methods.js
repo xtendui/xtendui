@@ -86,13 +86,13 @@ Xt.mount.push({
         // elements
         const elements = self.elements
         const elIndex = elements.length
-        const el = `<button type="button" class="btn btn-default">Toggle ${elIndex}</button>`
-        elements[elements.length - 1].after(Xt.createElement(el))
+        const strEl = `<button type="button" class="btn btn-default">Toggle ${elIndex}</button>`
+        elements[elements.length - 1].after(Xt.createElement(strEl))
         // targets
         const targets = self.targets
-        const trIndex = targets.length
-        const tr = `<div class="note note-default note-background toggle-block">Target ${trIndex}</div>`
-        targets[targets.length - 1].after(Xt.createElement(tr))
+        const indexTr = targets.length
+        const strTr = `<div class="note note-default note-background toggle-block">Target ${indexTr}</div>`
+        targets[targets.length - 1].after(Xt.createElement(strTr))
         // reinit
         logAdd('<strong>reinit</strong>')
         self.reinit()

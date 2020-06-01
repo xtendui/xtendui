@@ -148,17 +148,17 @@ Xt.mount.push({
     // change
 
     const eventChange = function() {
-      const el = this
+      const element = this
       // img
-      const img = el.querySelector('.parallax_img_col')
+      const img = element.querySelector('.parallax_img_col')
       gsap.set(img, { y: imgY * (self.detail.ratio - 0.5) })
       // imgInner
-      const imgInner = el.querySelector('.parallax_img_col img')
+      const imgInner = element.querySelector('.parallax_img_col img')
       gsap.set(imgInner, { scale: 1.1 - 0.1 * self.detail.ratio })
     }
 
-    for (const el of self.elements) {
-      el.addEventListener('change.xt', eventChange)
+    for (const element of self.elements) {
+      element.addEventListener('change.xt', eventChange)
     }
 
     // unmount

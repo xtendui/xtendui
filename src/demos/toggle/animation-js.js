@@ -33,8 +33,8 @@ Xt.mount.push({
       gsap.to(target, { x: 0, opacity: 1, duration: targetTimeOn, ease: targetEaseOn })
     }
 
-    for (const tr of self.targets) {
-      tr.addEventListener('on.xt', eventOn)
+    for (const target of self.targets) {
+      target.addEventListener('on.xt', eventOn)
     }
 
     // off
@@ -48,8 +48,8 @@ Xt.mount.push({
       }
     }
 
-    for (const tr of self.targets) {
-      tr.addEventListener('off.xt', eventOff)
+    for (const target of self.targets) {
+      target.addEventListener('off.xt', eventOff)
     }
 
     // unmount

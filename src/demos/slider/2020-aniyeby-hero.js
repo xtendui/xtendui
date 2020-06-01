@@ -45,9 +45,9 @@ Xt.mount.push({
     // drag
 
     const eventDrag = () => {
-      const tr = self.targets.filter(x => self.hasCurrent(x))[0]
+      const target = self.targets.filter(x => self.hasCurrent(x))[0]
       // cover
-      const assetCover = tr.querySelector('.slide_cover')
+      const assetCover = target.querySelector('.slide_cover')
       gsap.set(assetCover, { x: 100 * self.detail.dragRatioInverse * self.direction + '%' })
     }
 
@@ -56,9 +56,9 @@ Xt.mount.push({
     // dragreset
 
     const eventDragReset = () => {
-      const tr = self.targets.filter(x => self.hasCurrent(x))[0]
+      const target = self.targets.filter(x => self.hasCurrent(x))[0]
       // cover
-      const assetCover = tr.querySelector('.slide_cover')
+      const assetCover = target.querySelector('.slide_cover')
       gsap.to(assetCover, { x: 100 * self.direction + '%', duration: assetCoverTimeOff, ease: assetCoverEaseOff })
     }
 
@@ -67,39 +67,39 @@ Xt.mount.push({
     // on
 
     const eventOn = e => {
-      const tr = e.target
+      const target = e.target
       // useCapture delegation
-      if (self.targets.includes(tr)) {
+      if (self.targets.includes(target)) {
         if (self.initial) {
           // cover
-          const assetCover = tr.querySelector('.slide_cover')
+          const assetCover = target.querySelector('.slide_cover')
           gsap.killTweensOf(assetCover)
           gsap.set(assetCover, { x: 100 * self.direction + '%' })
           // assetMask
-          const assetMask = tr.querySelector('.slide_item')
+          const assetMask = target.querySelector('.slide_item')
           gsap.killTweensOf(assetMask)
           gsap.set(assetMask, { x: 0 })
           const assetMaskInner = assetMask.querySelector('.slide_inner')
           gsap.killTweensOf(assetMaskInner)
           gsap.set(assetMaskInner, { x: 0 })
           // asset
-          const asset = tr.querySelector('.slide_item img')
+          const asset = target.querySelector('.slide_item img')
           gsap.killTweensOf(asset)
           gsap.set(asset, { scale: 1 })
         } else {
           // cover
-          const assetCover = tr.querySelector('.slide_cover')
+          const assetCover = target.querySelector('.slide_cover')
           gsap.set(assetCover, { x: 100 * self.direction + '%' })
           gsap.to(assetCover, { x: -100 * self.direction + '%', duration: assetCoverTimeOn, ease: assetCoverEaseOn })
           // assetMask
-          const assetMask = tr.querySelector('.slide_item')
+          const assetMask = target.querySelector('.slide_item')
           gsap.set(assetMask, { x: 100 * self.direction + '%' })
           gsap.to(assetMask, { x: 0, duration: assetMaskTimeOn, ease: assetMaskEaseOn })
           const assetMaskInner = assetMask.querySelector('.slide_inner')
           gsap.set(assetMaskInner, { x: -100 * self.direction + '%' })
           gsap.to(assetMaskInner, { x: 0, duration: assetMaskTimeOn, ease: assetMaskEaseOn })
           // asset
-          const asset = tr.querySelector('.slide_item img')
+          const asset = target.querySelector('.slide_item img')
           gsap.set(asset, { scale: 1 + assetZoom })
           gsap.to(asset, { scale: 1, duration: assetTimeOn, ease: assetEaseOn, delay: assetDelayOn })
         }
@@ -111,14 +111,14 @@ Xt.mount.push({
     // on
 
     const eventOff = e => {
-      const tr = e.target
+      const target = e.target
       // useCapture delegation
-      if (self.targets.includes(tr)) {
+      if (self.targets.includes(target)) {
         // cover
-        const assetCover = tr.querySelector('.slide_cover')
+        const assetCover = target.querySelector('.slide_cover')
         gsap.to(assetCover, { x: -100 * self.direction + '%', duration: assetCoverTimeOff, ease: assetCoverEaseOff })
         // assetMask
-        const assetMask = tr.querySelector('.slide_item')
+        const assetMask = target.querySelector('.slide_item')
         gsap.to(assetMask, { x: -100 * self.direction + '%', duration: assetMaskTimeOff, ease: assetMaskEaseOff })
         const assetMaskInner = assetMask.querySelector('.slide_inner')
         gsap.to(assetMaskInner, { x: 100 * self.direction + '%', duration: assetMaskTimeOff, ease: assetMaskEaseOff })

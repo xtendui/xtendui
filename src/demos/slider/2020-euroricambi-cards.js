@@ -203,9 +203,9 @@ Xt.mount.push({
     // on elements
 
     const eventOnElements = e => {
-      const el = e.target
+      const element = e.target
       // useCapture delegation
-      if (self.elements.includes(el)) {
+      if (self.elements.includes(element)) {
         // move scroll centering el
         const inner = self.object.querySelector('.slider-pagination_inner')
         const scroll = self.object.querySelector('.slider-pagination_scroll')
@@ -214,8 +214,8 @@ Xt.mount.push({
           if (e.type === 'on.xt') {
             const widthInner = inner.offsetWidth
             const widthScroll = scroll.offsetWidth
-            const leftEl = el.offsetLeft
-            const widthEl = el.offsetWidth
+            const leftEl = element.offsetLeft
+            const widthEl = element.offsetWidth
             let final = widthInner / 2 - leftEl
             // contain initial
             final = leftEl + widthEl / 2 > widthInner / 2 ? final - widthEl / 2 : 0

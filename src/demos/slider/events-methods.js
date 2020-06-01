@@ -86,8 +86,8 @@ Xt.mount.push({
         logAdd('<strong>add</strong>')
         // targets
         const targets = self.targets.filter(x => !x.classList.contains('xt-wrap'))
-        const trIndex = targets.length + 1
-        const tr = `
+        const indexTr = targets.length + 1
+        const strTr = `
         <li class="slide col-6 col-4-sm">
           <div class="slide-inner">
 
@@ -96,7 +96,7 @@ Xt.mount.push({
               <div class="card-inner">
                 <div class="card-content">
                   <div class="card-block card-item">
-                    <div class="card-title">${trIndex}</div>
+                    <div class="card-title">${indexTr}</div>
                   </div>
                 </div>
               </div>
@@ -104,7 +104,7 @@ Xt.mount.push({
 
           </div>
         </li>`
-        targets[targets.length - 1].after(Xt.createElement(tr))
+        targets[targets.length - 1].after(Xt.createElement(strTr))
         // reinit
         logAdd('<strong>reinit</strong>')
         self.reinit()

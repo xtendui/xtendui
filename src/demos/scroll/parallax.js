@@ -20,8 +20,8 @@ Xt.mount.push({
       gsap.set(element, { opacity: self.detail.ratioInverse, scale: 0.9 + 0.1 * self.detail.ratioInverse })
     }
 
-    for (const el of self.elements) {
-      el.addEventListener('change.xt', eventChange)
+    for (const element of self.elements) {
+      element.addEventListener('change.xt', eventChange)
     }
 
     // unmount
@@ -51,8 +51,8 @@ Xt.mount.push({
       gsap.set(element, { y: 100 * self.detail.ratio, opacity: self.detail.ratioInverse })
     }
 
-    for (const el of self.elements) {
-      el.addEventListener('change.xt', eventChange)
+    for (const element of self.elements) {
+      element.addEventListener('change.xt', eventChange)
     }
 
     // unmount
@@ -82,8 +82,8 @@ Xt.mount.push({
       gsap.set(element, { opacity: self.detail.ratio, scale: 0.9 + 0.1 * self.detail.ratio })
     }
 
-    for (const el of self.elements) {
-      el.addEventListener('change.xt', eventChange)
+    for (const element of self.elements) {
+      element.addEventListener('change.xt', eventChange)
     }
 
     // unmount
