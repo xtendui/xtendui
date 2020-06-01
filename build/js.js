@@ -12,8 +12,8 @@ const jsCoreGlob = new glob.Glob('src/core/**/*.js', (er, files) => {
   jsCore += '}'
   jsCore += '\n'
 })
-jsCoreGlob.on('end', (filepath) => {
-  writeFile('./src/xtend-core.js', jsCore, (err) => {
+jsCoreGlob.on('end', filepath => {
+  writeFile('./src/xtend-core.js', jsCore, err => {
     if (err) console.log(err)
   })
 })
@@ -27,8 +27,8 @@ const jsAddonsGlob = new glob.Glob('src/addons/**/*.js', (er, files) => {
   jsAddons += '}'
   jsAddons += '\n'
 })
-jsAddonsGlob.on('end', (filepath) => {
-  writeFile('./src/xtend-addons.js', jsAddons, (err) => {
+jsAddonsGlob.on('end', filepath => {
+  writeFile('./src/xtend-addons.js', jsAddons, err => {
     if (err) console.log(err)
   })
 })
@@ -42,22 +42,22 @@ const jsExtensionsGlob = new glob.Glob('src/extensions/**/*.js', (er, files) => 
   jsExtensions += '}'
   jsExtensions += '\n'
 })
-jsExtensionsGlob.on('end', (filepath) => {
-  writeFile('./src/xtend-extensions.js', jsExtensions, (err) => {
+jsExtensionsGlob.on('end', filepath => {
+  writeFile('./src/xtend-extensions.js', jsExtensions, err => {
     if (err) console.log(err)
   })
 })
 
 let jsDemos = `if (typeof window !== 'undefined') {\n`
-const jsDemosGlob = new glob.Glob('src/demos/**/*.js', (er, files) => {
+const jsDemosGlob = new glob.Glob('src/gatsby/demos/**/*.js', (er, files) => {
   for (const file of files) {
     jsDemos += `  require('xtend-library/${file}')\n`
   }
   jsDemos += '}'
   jsDemos += '\n'
 })
-jsDemosGlob.on('end', (filepath) => {
-  writeFile('./src/xtend-demos.js', jsDemos, (err) => {
+jsDemosGlob.on('end', filepath => {
+  writeFile('./src/xtend-demos.js', jsDemos, err => {
     if (err) console.log(err)
   })
 })

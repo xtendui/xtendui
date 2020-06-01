@@ -13,7 +13,9 @@ class DemoReactIframe extends React.Component {
     const seo = {}
     seo.title = demo.name
     seo.description = 'Demo'
-    demo.type = 'demos/'+ demo.type
+    if (demo.type !== 'addons') {
+      demo.type = 'gatsby/demos/' + demo.type
+    }
     demo.Component = require(`xtend-library/src/${demo.type}/${demo.component}/${demo.name}.jsx`).default
     return (
       <StaticQuery

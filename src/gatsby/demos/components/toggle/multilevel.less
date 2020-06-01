@@ -3,12 +3,10 @@
 @import '~xtend-library/src/core/typography/typography.less';
 @import '~xtend-library/src/addons/link/caret.less';
 
-/**
- * multilevel
- */
-
 .demo--multilevel {
-
+  /**
+  * multilevel
+  */
   .multilevel-title-wrapper {
     .full();
     .margin(y, layout) !important;
@@ -19,7 +17,6 @@
     align-items: center;
     justify-content: space-between;
   }
-
   .multilevel-list {
     // btn
     .list-btns({
@@ -39,11 +36,9 @@
       }
     }
   }
-
   .multilevel-reset {
     .caret.caret-horizontal.caret-inverse();
   }
-
   .multilevel-tab {
     .full();
     .toggle-block();
@@ -55,5 +50,4 @@
       animation-duration: @time-tiny;
     }
   }
-
 }

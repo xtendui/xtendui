@@ -7,6 +7,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 ---
 
 <demo>
-  <demovanilla src="vanilla/addons/animation/ripple">
+  <demovanilla src="vanilla/components/animation/ripple">
   </demovanilla>
 </demo>
