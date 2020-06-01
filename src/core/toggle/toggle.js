@@ -46,6 +46,7 @@ class Toggle {
     self.disabled = false
     self.detail.queueOn = []
     self.detail.queueOff = []
+    self.detail.autopaused = false
     self.destroyElements = [document, window, self.object]
     // init
     self.initVars()
@@ -1399,7 +1400,6 @@ class Toggle {
       clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutoTimeout'))
       // auto
       time = time ? time : options.auto.time
-      self.detail.autostartDate = new Date().getTime()
       // not when nothing activated
       if (self.currentIndex !== null && (!self.initial || options.auto.initial)) {
         // not when initial
@@ -1447,12 +1447,14 @@ class Toggle {
     }
     // pause
     if (options.auto && options.auto.time && !self.wrap) {
-      // pause
-      self.detail.autopauseDate = new Date().getTime()
-      // clear
-      clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutoTimeout'))
-      // listener dispatch
-      self.object.dispatchEvent(new CustomEvent('autopause.xt'))
+      if (!self.detail.autopaused) {
+        // paused
+        self.detail.autopaused = true
+        // clear
+        clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutoTimeout'))
+        // listener dispatch
+        self.object.dispatchEvent(new CustomEvent('autopause.xt'))
+      }
     }
   }
 
@@ -1468,11 +1470,14 @@ class Toggle {
     }
     // pause
     if (options.auto && options.auto.time && !self.wrap) {
-      // resume
-      const timeDiff = Math.abs(self.detail.autostartDate - self.detail.autopauseDate)
-      self.eventAutostart(timeDiff)
-      // listener dispatch
-      self.object.dispatchEvent(new CustomEvent('autoresume.xt'))
+      if (self.detail.autopaused) {
+        // paused
+        self.detail.autopaused = false
+        // resume
+        self.eventAutostart()
+        // listener dispatch
+        self.object.dispatchEvent(new CustomEvent('autoresume.xt'))
+      }
     }
   }
   /**
