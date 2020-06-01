@@ -194,7 +194,7 @@ class Toggle {
     const options = self.options
     // status
     self.eventStatusHandler()
-    // initial
+    // vars
     let currents = 0
     self.initial = true
     self.wrap = false
@@ -256,9 +256,10 @@ class Toggle {
       }
       // no currents
       if (currents === 0) {
-        self.initial = false
         // auto
         self.eventAutostart()
+        // vars
+        self.initial = false
       }
     }
     // init events
@@ -1946,11 +1947,11 @@ class Toggle {
     if (actionCurrent === 'On') {
       // @FIX after raf because after on.xt custom listeners
       requestAnimationFrame(() => {
+        // auto
+        self.eventAutostart()
         // reset
         self.initial = false
         self.wrap = false
-        // auto
-        self.eventAutostart()
       })
     } else if (actionCurrent === 'Off') {
       // special

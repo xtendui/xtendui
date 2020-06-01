@@ -206,6 +206,6 @@ Here are the main wheel properties inside `self.detail`:
 ## Demo
 
 <demo>
-  <demovanilla src="vanilla/components/slider/events-methods">
-  </demovanilla>
+  <div class="gatsby_demo_item" data-iframe="iframe/components/slider/events-methods">
+  </div>
 </demo>

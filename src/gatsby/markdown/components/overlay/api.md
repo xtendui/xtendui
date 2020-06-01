@@ -144,6 +144,6 @@ Here are the main properties inside `self`:
 ## Demo
 
 <demo>
-  <demovanilla src="vanilla/components/overlay/events-methods">
-  </demovanilla>
+  <div class="gatsby_demo_item" data-iframe="iframe/components/overlay/events-methods">
+  </div>
 </demo>

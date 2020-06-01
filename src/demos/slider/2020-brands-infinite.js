@@ -35,9 +35,9 @@ Xt.mount.push({
         // time depending on target and dragger width
         const slideWidth = target.offsetWidth
         const draggerWidth = self.dragger.offsetWidth
-        let time = slideWidth * 25 // constant speed
+        let time = slideWidth * 15 // constant speed
         if (object.classList.contains('demo--2020-brands-infinite--factor')) {
-          time = (draggerWidth / slideWidth) * 100000 // faster the less horizontal space
+          time = (draggerWidth / slideWidth) * 50000 // faster or slower depending on horizontal space
         }
         // animate
         if (self.initial) {

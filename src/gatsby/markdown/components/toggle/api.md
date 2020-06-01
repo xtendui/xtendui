@@ -165,6 +165,6 @@ Here are the main properties inside `self`:
 ## Demo
 
 <demo>
-  <demovanilla src="vanilla/components/toggle/events-methods">
-  </demovanilla>
+  <div class="gatsby_demo_item" data-iframe="iframe/components/toggle/events-methods">
+  </div>
 </demo>

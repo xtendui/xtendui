@@ -9,7 +9,7 @@ const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
 export const demo = {
   container: false,
-  full: false,
+  full: true,
   name: path.basename(filename, '.js'),
   component: dirs.pop(),
   type: dirs.pop(),
@@ -59,6 +59,12 @@ demo.htmlSource = `
             <a href="#test-link-10" class="slide_content">
               Ten
             </a>
+            <a href="#test-link-11" class="slide_content">
+              Eleven
+            </a>
+            <a href="#test-link-12" class="slide_content">
+              Twelve
+            </a>
           </div>
         </div>
       </li>
@@ -74,7 +80,7 @@ demo.htmlSource = `
 </div>
 
 <div class="h5 header-block">
-  Faster the less horizontal space
+  Faster or slower depending on horizontal space
 </div>
 
 <div class="slider demo--2020-brands-infinite demo--2020-brands-infinite--text demo--2020-brands-infinite--factor">
@@ -114,6 +120,12 @@ demo.htmlSource = `
             </a>
             <a href="#test-link-10" class="slide_content">
               Ten
+            </a>
+            <a href="#test-link-11" class="slide_content">
+              Eleven
+            </a>
+            <a href="#test-link-12" class="slide_content">
+              Twelve
             </a>
           </div>
         </div>

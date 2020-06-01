@@ -10,23 +10,8 @@ categories: ["100-Test"]
 ## Demos
 
 <demo>
-  <demovanilla src="vanilla/components/drop/event">
-  </demovanilla>
-  <demovanilla src="vanilla/components/drop/backdrop">
-  </demovanilla>
-  <demovanilla src="vanilla/components/drop/with-link">
-  </demovanilla>
-  <demovanilla src="vanilla/components/drop/with-link-hover">
-  </demovanilla>
-  <demovanilla src="vanilla/components/overlay/nested">
-  </demovanilla>
-  <demovanilla src="vanilla/addons/overlay/position">
-  </demovanilla>
-</demo>
-
-<demo>
-  <demovanilla src="vanilla/components/slider/events-methods">
-  </demovanilla>
+  <div class="gatsby_demo_item" data-iframe="iframe/components/slider/events-methods">
+  </div>
   <demovanilla src="vanilla/components/slider/toggle-js">
   </demovanilla>
   <demovanilla src="vanilla/components/slider/progress">
@@ -55,6 +40,21 @@ categories: ["100-Test"]
   </div>
   <div class="gatsby_demo_item" data-iframe="iframe/demos/animation/2020-bertani-listing">
   </div>
+</demo>
+
+<demo>
+  <demovanilla src="vanilla/components/drop/event">
+  </demovanilla>
+  <demovanilla src="vanilla/components/drop/backdrop">
+  </demovanilla>
+  <demovanilla src="vanilla/components/drop/with-link">
+  </demovanilla>
+  <demovanilla src="vanilla/components/drop/with-link-hover">
+  </demovanilla>
+  <demovanilla src="vanilla/components/overlay/nested">
+  </demovanilla>
+  <demovanilla src="vanilla/addons/overlay/position">
+  </demovanilla>
 </demo>
 
 <demo>
