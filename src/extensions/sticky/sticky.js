@@ -162,7 +162,7 @@ class Sticky extends Xt.Toggle {
     const self = this
     const options = self.options
     // disabled
-    if (self.disabled && !self.initial) {
+    if (self.disabled) {
       return
     }
     // vars

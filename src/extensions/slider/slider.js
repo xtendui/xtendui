@@ -755,7 +755,7 @@ class Slider extends Xt.Toggle {
   logicDragstart(dragger, e) {
     const self = this
     // disabled
-    if (self.disabled && !self.initial) {
+    if (self.disabled) {
       return
     }
     // save event
@@ -789,7 +789,7 @@ class Slider extends Xt.Toggle {
   logicDragend(dragger, e) {
     const self = this
     // disabled
-    if (self.disabled && !self.initial) {
+    if (self.disabled) {
       return
     }
     // save event
@@ -849,7 +849,7 @@ class Slider extends Xt.Toggle {
     const self = this
     const options = self.options
     // disabled
-    if (self.disabled && !self.initial) {
+    if (self.disabled) {
       return
     }
     // save event

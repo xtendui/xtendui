@@ -1207,7 +1207,7 @@ class Toggle {
     const self = this
     const options = self.options
     // disabled
-    if (self.disabled && !self.initial) {
+    if (self.disabled) {
       return false
     }
     // toggle
@@ -1261,7 +1261,7 @@ class Toggle {
     const self = this
     const options = self.options
     // disabled
-    if (self.disabled && !self.initial) {
+    if (self.disabled) {
       return false
     }
     // toggle
@@ -1391,7 +1391,7 @@ class Toggle {
     const self = this
     const options = self.options
     // disabled
-    if (self.disabled && !self.initial) {
+    if (self.disabled) {
       return
     }
     // start
@@ -1443,7 +1443,7 @@ class Toggle {
     const self = this
     const options = self.options
     // disabled
-    if (self.disabled && !self.initial) {
+    if (self.disabled) {
       return
     }
     // pause
@@ -1467,7 +1467,7 @@ class Toggle {
     const self = this
     const options = self.options
     // disabled
-    if (self.disabled && !self.initial) {
+    if (self.disabled) {
       return
     }
     // pause
@@ -1490,7 +1490,7 @@ class Toggle {
   eventJump(tr, e) {
     const self = this
     // disabled
-    if (self.disabled && !self.initial) {
+    if (self.disabled) {
       return
     }
     // check disabled
@@ -1512,7 +1512,7 @@ class Toggle {
   eventNav(nav, e) {
     const self = this
     // disabled
-    if (self.disabled && !self.initial) {
+    if (self.disabled) {
       return
     }
     // nav
@@ -1979,7 +1979,7 @@ class Toggle {
   eventWheelblockHandler(e) {
     const self = this
     // disabled
-    if (self.disabled && !self.initial) {
+    if (self.disabled) {
       return
     }
     // prevent default if not loop
@@ -2002,7 +2002,7 @@ class Toggle {
     const options = self.options
     let el = self.wheel
     // disabled
-    if (self.disabled && !self.initial) {
+    if (self.disabled) {
       return
     }
     // delta
@@ -2173,7 +2173,7 @@ class Toggle {
     const self = this
     const options = self.options
     // disabled
-    if (self.disabled && !self.initial) {
+    if (self.disabled) {
       return
     }
     // vars
