@@ -16,6 +16,11 @@ export const demo = {
 }
 
 demo.htmlSource = `
+
+<div class="h5 header-block">
+  Constant speed
+</div>
+
 <div class="slider demo--2020-brands-infinite demo--2020-brands-infinite--text">
 
   <div class="slides">
@@ -68,6 +73,10 @@ demo.htmlSource = `
 
 </div>
 
+<div class="h5 header-block">
+  Faster the less horizontal space
+</div>
+
 <div class="slider demo--2020-brands-infinite demo--2020-brands-infinite--text demo--2020-brands-infinite--factor">
 
   <div class="slides">
@@ -118,6 +127,10 @@ demo.htmlSource = `
     </button>
   </nav>
 
+</div>
+
+<div class="h5 header-block">
+  Images
 </div>
 
 <div class="slider demo--2020-brands-infinite demo--2020-brands-infinite--img">
