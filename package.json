@@ -23,7 +23,7 @@
     "release": "npx semantic-release --no-ci",
     "release:dry": "npx semantic-release --dry-run",
     "lint": "eslint src/** --fix",
-    "prepublishOnly": "npm run lint & npm run pack"
+    "prepublishOnly": "npm run pack"
   },
   "dependencies": {
     "@google/markerclusterer": "^2.0.8",
