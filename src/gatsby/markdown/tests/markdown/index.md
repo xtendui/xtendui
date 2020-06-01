@@ -10,11 +10,13 @@ categories: ["100-Test"]
 ## Demos
 
 <demo>
-  <demovanilla src="vanilla/components/drop/variant">
-  </demovanilla>
   <demovanilla src="vanilla/components/drop/event">
   </demovanilla>
   <demovanilla src="vanilla/components/drop/backdrop">
+  </demovanilla>
+  <demovanilla src="vanilla/components/drop/with-link">
+  </demovanilla>
+  <demovanilla src="vanilla/components/drop/with-link-hover">
   </demovanilla>
   <demovanilla src="vanilla/components/overlay/nested">
   </demovanilla>
@@ -34,6 +36,8 @@ categories: ["100-Test"]
 </demo>
 
 <demo>
+  <div class="gatsby_demo_item" data-iframe="iframe/demos/slider/2020-brands-infinite">
+  </div>
   <div class="gatsby_demo_item" data-iframe="iframe/demos/slider/2020-aniyeby-hero">
   </div>
   <div class="gatsby_demo_item" data-iframe="iframe/demos/slider/2020-bertani-hero">
