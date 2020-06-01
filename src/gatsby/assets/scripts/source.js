@@ -1,5 +1,4 @@
 const cssSource = (demo, nameOverride, type = '.less') => {
-  console.log(demo)
   if (demo.type !== 'addons') {
     return require(`!!raw-loader!xtend-library/src/${demo.type}/${demo.component}/${nameOverride ? nameOverride : demo.name}${type}`).default
   } else {

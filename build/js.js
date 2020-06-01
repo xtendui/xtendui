@@ -49,7 +49,7 @@ jsExtensionsGlob.on('end', filepath => {
 })
 
 let jsDemos = `if (typeof window !== 'undefined') {\n`
-const jsDemosGlob = new glob.Glob('src/gatsby/demos/**/*.js', (er, files) => {
+const jsDemosGlob = new glob.Glob('src/private/demos/**/*.js', (er, files) => {
   for (const file of files) {
     jsDemos += `  require('xtend-library/${file}')\n`
   }

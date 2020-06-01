@@ -154,42 +154,23 @@ const test = 'test'
 
 ## Demo
 
+
 <demo>
   <div class="gatsby_demo-inline">
-    <div class="gatsby_demo_item gatsby_demo_preview" data-name="vanilla">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="inline">
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
         Inline
       </div>
     </div>
   </div>
-</demo>
-
-#### Inline
-
-<demo>
-  <demovanilla src="vanilla/components/test/vanilla" name="test vanilla">
+  <demovanilla src="vanilla/components/test/demo-vanilla" name="demo vanilla">
     <div class="gatsby_demo_text">
       test vanilla <strong>strong</strong> <code>code</code>
     </div>
   </demovanilla>
-  <demoreact src="vanilla/components/test/react" name="test react">
+  <div class="gatsby_demo_item" data-iframe="iframe/components/test/demo-vanilla-iframe" data-name="demo vanilla frame">
     <div class="gatsby_demo_text">
-      test react <strong>strong</strong> <code>code</code>
-    </div>
-  </demoreact>
-</demo>
-
-#### Iframe
-
-<demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/test/vanilla-iframe" data-name="test vanilla frame">
-    <div class="gatsby_demo_text">
-      <a href="/iframe/components/test/vanilla-iframe">test vanilla iframe</a>
-    </div>
-  </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/test/react-iframe" data-name="test react iframe">
-    <div class="gatsby_demo_text">
-      <a href="/iframe/components/test/react-iframe">test react iframe</a>
+      <a href="/iframe/components/test/demo-vanilla-iframe">test vanilla iframe</a>
     </div>
   </div>
 </demo>

@@ -14,7 +14,7 @@ class DemoVanillaIframe extends React.Component {
     seo.title = demo.name
     seo.description = 'Demo'
     if (demo.type !== 'addons') {
-      demo.type = 'gatsby/demos/' + demo.type
+      demo.type = 'private/demos/' + demo.type
     }
     return (
       <StaticQuery

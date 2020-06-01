@@ -40,7 +40,7 @@ lessExtensionsGlob.on('end', filepath => {
 })
 
 let lessDemos = ''
-const lessDemosGlob = new glob.Glob('src/gatsby/demos/**/*.less', { ignore: ['**/_*.less'] }, (er, files) => {
+const lessDemosGlob = new glob.Glob('src/private/demos/**/*.less', { ignore: ['**/_*.less'] }, (er, files) => {
   for (const file of files) {
     lessDemos += `@import '~xtend-library/${file}';\n`
   }
