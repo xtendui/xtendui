@@ -1,0 +1,10 @@
+.demo--toggle-jump {
+  .animation-none() !important; // disable default animation
+  // animation
+  opacity: .5 !important;
+  transition: opacity @time-small @ease-out;
+  &.active {
+    opacity: 1 !important;
+    transition: opacity @time-small @ease-in;
+  }
+}

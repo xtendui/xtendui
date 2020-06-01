@@ -645,7 +645,7 @@ class Slider extends Xt.Toggle {
       // prevent alignment animation
       dragger.classList.remove('duration-none')
       // initial or resizing
-      if (self.initial || self.continue) {
+      if (self.initial || self.wrap) {
         // prevent alignment animation
         dragger.classList.add('duration-none')
         requestAnimationFrame(() => {
@@ -653,7 +653,9 @@ class Slider extends Xt.Toggle {
         })
       }
       // drag position
-      dragger.style.transform = 'translateX(' + self.detail.dragPos + 'px)'
+      if (!options.drag.manual) {
+        dragger.style.transform = 'translateX(' + self.detail.dragPos + 'px)'
+      }
       // disable dragger
       dragger.classList.add('xt-pointer-events-none')
       for (const nav of self.navs) {
@@ -680,28 +682,33 @@ class Slider extends Xt.Toggle {
       dragger.classList.remove('xt-links-none')
       dragger.classList.remove('xt-jumps-none')
       // drag wrap
-      if (self.dragger && options.drag.wrap) {
-        if (!self.initial && !self.continue) {
-          const min = self.groupMqFirst.length
-          const max = self.groupMqFirst.length + self.groupMqInitial.length - 1
-          // @FIX wrap with initial
-          Xt.animTimeout(
-            dragger,
-            () => {
-              if (self.currentIndex < min) {
-                self.initial = true
-                self.continue = true
-                self.goToNum(max + self.currentIndex - min + 1, true) // wrap around xt-wrap items
-              } else if (self.currentIndex > max) {
-                self.initial = true
-                self.continue = true
-                self.goToNum(min + self.currentIndex - max - 1, true) // wrap around xt-wrap items
-              }
-            },
-            'wrap'
-          )
-        }
+      if (self.dragger && options.drag.wrap && !options.drag.manual && !self.wrap) {
+        // @FIX wrap around xt-wrap items
+        Xt.animTimeout(
+          dragger,
+          () => {
+            self.eventWrap()
+          },
+          'wrap'
+        )
       }
+    }
+  }
+
+  /**
+   * wrap
+   */
+  eventWrap() {
+    const self = this
+    // wrap around xt-wrap items
+    const min = self.groupMqFirst.length
+    const max = self.groupMqFirst.length + self.groupMqInitial.length - 1
+    if (self.currentIndex < min) {
+      self.wrap = true
+      self.goToNum(max + self.currentIndex - min + 1, true)
+    } else if (self.currentIndex > max) {
+      self.wrap = true
+      self.goToNum(min + self.currentIndex - max - 1, true)
     }
   }
 
@@ -745,7 +752,7 @@ class Slider extends Xt.Toggle {
   logicDragstart(dragger, e) {
     const self = this
     // disabled
-    if (self.disabled && !self.initial) {
+    if (self.disabled) {
       return
     }
     // save event
@@ -779,7 +786,7 @@ class Slider extends Xt.Toggle {
   logicDragend(dragger, e) {
     const self = this
     // disabled
-    if (self.disabled && !self.initial) {
+    if (self.disabled) {
       return
     }
     // save event
@@ -839,7 +846,7 @@ class Slider extends Xt.Toggle {
     const self = this
     const options = self.options
     // disabled
-    if (self.disabled && !self.initial) {
+    if (self.disabled) {
       return
     }
     // save event
@@ -926,7 +933,7 @@ class Slider extends Xt.Toggle {
     if (self.initial) {
       self.dragger.classList.add('transition-none')
     }
-    if (options.drag.drag) {
+    if (!options.drag.manual) {
       dragger.style.transform = 'translateX(' + self.detail.dragPos + 'px)'
     }
     if (self.initial) {
@@ -968,7 +975,7 @@ class Slider extends Xt.Toggle {
               const group = self.groupMq[i]
               const pos = Xt.dataStorage.get(group[0], self.componentNamespace + 'GroupPos')
               dist += Math.abs(pos)
-              if (dragDistAbs <= dist) {
+              if (dragPosCurrent <= dist) {
                 return i
               }
             }
@@ -977,7 +984,7 @@ class Slider extends Xt.Toggle {
               const group = self.groupMq[i]
               const pos = Xt.dataStorage.get(group[0], self.componentNamespace + 'GroupPos')
               dist += Math.abs(pos)
-              if (dragDistAbs <= dist) {
+              if (dragPosCurrent <= dist) {
                 return i
               }
             }
@@ -1020,14 +1027,14 @@ class Slider extends Xt.Toggle {
       if (self.initial) {
         self.dragger.classList.add('transition-none')
       }
-      dragger.style.transform = 'translateX(' + self.detail.dragPosCurrent + 'px)'
+      if (!options.drag.manual) {
+        dragger.style.transform = 'translateX(' + self.detail.dragPosCurrent + 'px)'
+      }
       if (self.initial) {
         self.dragger.classList.remove('transition-none')
       }
       // auto
-      if (options.auto && options.auto.time) {
-        self.eventAutostart()
-      }
+      self.eventAutostart()
       // listener dispatch
       if (!self.initial) {
         dragger.dispatchEvent(new CustomEvent('dragreset.xt'))
@@ -1186,6 +1193,9 @@ Slider.optionsDefault = {
   keyboard: {
     selector: '.slides',
   },
+  auto: {
+    pause: '[data-xt-pag], [data-xt-nav], .btn',
+  },
   aria: {
     labelledby: false,
   },
@@ -1197,9 +1207,9 @@ Slider.optionsDefault = {
   contain: false,
   pagination: '.slider-pagination',
   drag: {
-    drag: true,
     dragger: '.slides-inner',
     wrap: false,
+    manual: false,
     threshold: 50,
     linkThreshold: 50,
     factor: 1,

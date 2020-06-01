@@ -41,6 +41,8 @@ This library is made to be used by [webpack](https://github.com/webpack). In ess
 
 With this setup you can **fork** css and js files inside `./dist/xtend-library` and the webpack resolver will load files from it or fallback to `./node_modules/xtend-library`.
 
+**IMPORTANT** do not fork the files inside `./core/demos` they can change anytime
+
 #### Css
 
 You need to import the **reset** file as first import:

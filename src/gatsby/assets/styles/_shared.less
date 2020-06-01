@@ -17,7 +17,7 @@
   }
   // animation
   img {
-    transition: opacity @time-tiny @ease-off;
+    transition: opacity @time-tiny @ease-out;
   }
   &:hover, &.hover, &:active {
     img {
@@ -60,7 +60,7 @@
       left: 100%;
       width: 0;
       opacity: 0;
-      transition: all @time-tiny @ease-off initial;
+      transition: all @time-tiny @ease-out initial;
     }
   }
   &:hover, &.hover, &:active, &.active {
@@ -69,7 +69,7 @@
         left: 0;
         width: 100%;
         opacity: 1;
-        transition: all @time-tiny @ease-on @time-tiny;
+        transition: all @time-tiny @ease-in @time-tiny;
       }
     }
   }
@@ -93,12 +93,12 @@
   // animation
   .gatsby_site_article_anchor {
     opacity: 0;
-    transition: all @time-small @ease-off, @time-tiny;
+    transition: all @time-small @ease-out, @time-tiny;
   }
   &:hover, &.hover, &:active, &.active {
     .gatsby_site_article_anchor {
       opacity: 1;
-      transition: all @time-small @ease-on initial;
+      transition: all @time-small @ease-in initial;
     }
   }
 }

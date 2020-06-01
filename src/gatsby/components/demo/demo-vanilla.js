@@ -8,7 +8,9 @@ class DemoVanilla extends React.Component {
   render() {
     const { src, children, name, mode } = this.props
     const demo = require('../../code/' + src + '.js').demo
-    demo.type = demo.type === 'components' ? 'demos' : demo.type
+    if (demo.type !== 'addons') {
+      demo.type = 'gatsby/demos/' + demo.type
+    }
     return (
       <StaticQuery
         query={graphql`

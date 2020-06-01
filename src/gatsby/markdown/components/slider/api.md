@@ -167,8 +167,8 @@ Here are the main properties inside `self`:
 | Event                   | `object:Node`       | Object node             |
 | Event                   | `elements:Array`       | Elements nodes             |
 | Event                   | `targets:Array`       | Targets nodes            |
-| Event                   | `initial:Boolean`       | If first activation             |
-| Event                   | `continue:Boolean`       | If continue activation (wrap)             |
+| Option                  | `initial:Boolean`       | If initial or reset activation            |
+| Event                   | `wrap:Boolean`       | If wrap activation             |
 | Event                   | `direction:Number`       | Direction `1` or `-1`            |
 | Event                   | `dragger:Node`       | Dragger node             |
 | Event                   | `wheel:Node`       | Wheel node             |
@@ -181,6 +181,7 @@ Here are the main drag properties inside `self.detail`:
 
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
+| Event                   | `detail.dragging:Boolean`       | Returns true when slider is being dragged or just being dragged             |
 | Event                   | `detail.draggerWidth:Number`       | Dragger width             |
 | Event                   | `detail.dragRatio:Number`       | Drag ratio from 0 to 1             |
 | Event                   | `detail.dragRatioInverse:Number`       | Drag ratio inverse from 1 to 0             |
@@ -205,6 +206,6 @@ Here are the main wheel properties inside `self.detail`:
 ## Demo
 
 <demo>
-  <demovanilla src="vanilla/components/slider/events-methods">
-  </demovanilla>
+  <div class="gatsby_demo_item" data-iframe="iframe/components/slider/events-methods">
+  </div>
 </demo>

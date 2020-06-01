@@ -80,7 +80,7 @@ class Ajax extends Xt.Toggle {
     const self = this
     // initial
     self.initial = true
-    self.continue = false
+    self.wrap = false
     self.currentIndex = null
     // automatic initial currents
     const elements = self.getGroups()
@@ -226,7 +226,7 @@ class Ajax extends Xt.Toggle {
     } // fix fast change page
     requestAnimationFrame(() => {
       self.detail.requestDuration = options.duration || Xt.animTime(self.queryElement)
-      // call
+      // request
       const request = new XMLHttpRequest()
       request.open('GET', url, true)
       request.onload = () => {
@@ -235,9 +235,11 @@ class Ajax extends Xt.Toggle {
       request.onerror = () => {
         self.ajaxResponse(element, url, request, self.detail.requestDate)
       }
+      // debug
       if (Xt.debug === true) {
-        console.debug('Xt.debug: xt-ajax request.', url)
+        console.debug('Xt.debug: xt-ajax request', url)
       }
+      // send
       request.send()
       self.detail.request = request
     })
@@ -291,7 +293,7 @@ class Ajax extends Xt.Toggle {
     const options = self.options
     // debug
     if (Xt.debug === true) {
-      console.debug('Xt.debug: xt-ajax request success.', url)
+      console.debug('Xt.debug: xt-ajax request success', url)
     }
     // set substitute
     let html = document.createElement('html')
@@ -329,7 +331,7 @@ class Ajax extends Xt.Toggle {
     const self = this
     // debug
     if (Xt.debug === true) {
-      console.debug('Xt.debug: xt-ajax request failed.', url)
+      console.debug('Xt.debug: xt-ajax request failed', url)
     }
     // reinit currents
     self.initStart()

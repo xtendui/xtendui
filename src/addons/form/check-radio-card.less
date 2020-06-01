@@ -152,13 +152,13 @@
 
   .checkbox-card, .radio-card {
     &:before {
-      transform: scale(.9, .9);
-      transition: all @time-small @ease-off;
+      transform: scale(.9);
+      transition: all @time-small @ease-out;
     }
     &:after {
       opacity: 0 !important;
-      transform: scale(.9, .5);
-      transition: all @time-small @ease-off;
+      transform: scale(.9);
+      transition: all @time-small @ease-out;
     }
     &.focus, &:focus {
       &:before {
@@ -168,13 +168,13 @@
     &.active {
       &:before {
         background: @accent;
-        transform: scale(1, 1);
-        transition: all @time-small @ease-on;
+        transform: scale(1);
+        transition: all @time-small @ease-in;
       }
       &:after {
         opacity: 1 !important;
-        transform: scale(1, 1);
-        transition: all @time-small @ease-on;
+        transform: scale(1);
+        transition: all @time-small @ease-in;
       }
     }
   }

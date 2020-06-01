@@ -1,0 +1,82 @@
+@import (reference) '~xtend-library/src/xtend-core.less';
+@import '~xtend-library/src/extensions/slider/slider.less';
+@import '~xtend-library/src/addons/slider/navigation-sides.less';
+
+.demo--2020-bertani-hero {
+  /**
+   * slider
+   */
+
+  position: relative;
+  background: @shade-200;
+  .slides-inner {
+    .row-space(none);
+    // dragger animations
+    .transition-none() !important;
+    .transform-none() !important;
+  }
+  .slide {
+    position: relative;
+    .col(12);
+    // activation
+    display: none;
+    &.active, &.out {
+      display: block;
+      z-index: @index-active;
+    }
+    &.next {
+      display: block;
+      z-index: @index-active + 1;
+    }
+    &:not(.active) {
+      position: absolute;
+    }
+  }
+  .slider-pagination {
+    display: none;
+  }
+
+  // .slide_item
+
+  .slide_item {
+    .link-none();
+    .full();
+    display: block;
+    overflow: hidden;
+  }
+  .slide_asset {
+    .media-container {
+      height: 100vh;
+      height: calc(var(--vh, 1vh) * 100);
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: 2;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      height: 75%;
+      background: linear-gradient(180deg, fade(@black, 0%) 0%, fade(@black, 30%) 100%);
+    }
+  }
+  .slide_text {
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .slide_text_inner {
+    .text-inverse();
+    .padding(right, big);
+    .padding(y, giant);
+    max-width: 80rem;
+  }
+
+  // .slider-navigation-sides
+
+  .slider-navigation-sides {
+    color: @white;
+  }
+}

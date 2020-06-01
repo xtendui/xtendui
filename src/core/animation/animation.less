@@ -23,8 +23,8 @@
 @ease-cat: ~'cubic-bezier(0.77, 0, 0.17, 1)';
 @ease-dog: ~'cubic-bezier(0.36, 0, 0, 1)';
 @ease-penguin: ~'cubic-bezier(0.68, 0.13, 0.25, 1)';
-@ease-on: @ease-out-quad;
-@ease-off: @ease-in-out-quad;
+@ease-in: @ease-out-quad;
+@ease-out: @ease-in-out-quad;
 
 @ease-in-sine: cubic-bezier(0.470, 0.000, 0.745, 0.715);
 @ease-out-sine: cubic-bezier(0.390, 0.575, 0.565, 1.000);
@@ -69,14 +69,14 @@
     opacity: 0;
     animation-name: anim-y-in;
     animation-duration: @time-small;
-    animation-timing-function: @ease-on;
+    animation-timing-function: @ease-in;
     animation-fill-mode: forwards;
   }
   &.out {
     opacity: 1;
     animation-name: anim-y-out;
     animation-duration: @time-small;
-    animation-timing-function: @ease-off;
+    animation-timing-function: @ease-out;
     animation-fill-mode: forwards;
   }
 }
@@ -110,14 +110,14 @@
     opacity: 0;
     animation-name: anim-y-inverse-in;
     animation-duration: @time-small;
-    animation-timing-function: @ease-on;
+    animation-timing-function: @ease-in;
     animation-fill-mode: forwards;
   }
   &.out {
     opacity: 1;
     animation-name: anim-y-inverse-out;
     animation-duration: @time-small;
-    animation-timing-function: @ease-off;
+    animation-timing-function: @ease-out;
     animation-fill-mode: forwards;
   }
 }
@@ -151,14 +151,14 @@
     opacity: 0;
     animation-name: anim-x-in;
     animation-duration: @time-small;
-    animation-timing-function: @ease-on;
+    animation-timing-function: @ease-in;
     animation-fill-mode: forwards;
   }
   &.out {
     opacity: 1;
     animation-name: anim-x-out;
     animation-duration: @time-small;
-    animation-timing-function: @ease-off;
+    animation-timing-function: @ease-out;
     animation-fill-mode: forwards;
   }
 }
@@ -192,14 +192,14 @@
     opacity: 0;
     animation-name: anim-x-inverse-in;
     animation-duration: @time-small;
-    animation-timing-function: @ease-on;
+    animation-timing-function: @ease-in;
     animation-fill-mode: forwards;
   }
   &.out {
     opacity: 1;
     animation-name: anim-x-inverse-out;
     animation-duration: @time-small;
-    animation-timing-function: @ease-off;
+    animation-timing-function: @ease-out;
     animation-fill-mode: forwards;
   }
 }
@@ -233,14 +233,14 @@
     opacity: 0;
     animation-name: anim-zoom-in;
     animation-duration: @time-small;
-    animation-timing-function: @ease-on;
+    animation-timing-function: @ease-in;
     animation-fill-mode: forwards;
   }
   &.out {
     opacity: 1;
     animation-name: anim-zoom-out;
     animation-duration: @time-small;
-    animation-timing-function: @ease-off;
+    animation-timing-function: @ease-out;
     animation-fill-mode: forwards;
   }
 }
@@ -248,22 +248,22 @@
 @keyframes anim-zoom-in {
   0% {
     opacity: 0;
-    transform: scale(1.2, 1.2);
+    transform: scale(1.2);
   }
   100% {
     opacity: 1;
-    transform: scale(1, 1);
+    transform: scale(1);
   }
 }
 
 @keyframes anim-zoom-out {
   0% {
     opacity: 1;
-    transform: scale(1, 1);
+    transform: scale(1);
   }
   100% {
     opacity: 0;
-    transform: scale(1.2, 1.2);
+    transform: scale(1.2);
   }
 }
 
@@ -275,19 +275,19 @@
 
 .collapse-height {
   &.in {
-    transition: height @time-medium @ease-off;
+    transition: height @time-medium @ease-out;
   }
   &.out {
-    transition: height @time-medium @ease-off;
+    transition: height @time-medium @ease-out;
   }
 }
 
 .collapse-width {
   &.in {
-    transition: width @time-medium @ease-off;
+    transition: width @time-medium @ease-out;
   }
   &.out {
-    transition: width @time-medium @ease-off;
+    transition: width @time-medium @ease-out;
   }
 }
 

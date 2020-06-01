@@ -15,40 +15,40 @@ demo.htmlSource = `
       Toggle 0
     </span>
     <span class="loader loader-y loader-js">
-        <span class="filler">
-          <span></span><span></span>
-        </span>
+      <span class="filler">
+        <span></span><span></span>
       </span>
+    </span>
   </button>
   <button type="button" class="btn btn-default">
     <span>
       Toggle 1
     </span>
     <span class="loader loader-y loader-js">
-        <span class="filler">
-          <span></span><span></span>
-        </span>
+      <span class="filler">
+        <span></span><span></span>
       </span>
+    </span>
   </button>
   <button type="button" class="btn btn-default">
     <span>
       Toggle 2
     </span>
     <span class="loader loader-y loader-js">
-        <span class="filler">
-          <span></span><span></span>
-        </span>
+      <span class="filler">
+        <span></span><span></span>
       </span>
+    </span>
   </button>
   <button type="button" class="btn btn-default">
     <span>
       Toggle 3
     </span>
     <span class="loader loader-y loader-js">
-        <span class="filler">
-          <span></span><span></span>
-        </span>
+      <span class="filler">
+        <span></span><span></span>
       </span>
+    </span>
   </button>
   <div class="note note-default note-background toggle-block">
     Target 0

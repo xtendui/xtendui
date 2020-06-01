@@ -14,6 +14,22 @@ Prism.manual = true
  * demoHash
  */
 
+const scrollToItem = () => {
+  const top = document.querySelector('[data-xt-origin="gatbsy_open-full-content"]').offsetTop
+  if (top !== 0) {
+    const distanceY = 50
+    // add space
+    let scrollAdd = 0
+    // sticky space
+    const stickys = document.querySelectorAll('.xt-sticky.xt-clone.active')
+    for (const sticky of stickys) {
+      scrollAdd += sticky.clientHeight
+    }
+    // scroll
+    document.scrollingElement.scrollTo(0, top - scrollAdd - distanceY)
+  }
+}
+
 const demoHash = (e, skipIgnore = false) => {
   // call offdone.xt
   if (document.querySelector('#gatbsy_open-full-trigger')) {
@@ -28,6 +44,7 @@ const demoHash = (e, skipIgnore = false) => {
         if (demo) {
           makeFullscreen(demo, skipIgnore)
         }
+        scrollToItem()
         // trigger fullscreen or change tabs
         item.dispatchEvent(new CustomEvent('on.trigger.xt'))
       }
@@ -101,6 +118,8 @@ const populateBlock = () => {
   }
   document.querySelector('#gatbsy_open-full').addEventListener('off.xt', e => {
     const content = document.querySelector('#gatbsy_open-full-content')
+    // scrollToItem
+    scrollToItem()
     // iframe
     const container = content.querySelector('.gatsby_demo')
     if (container.dataset.isFullscreenOnly) {
@@ -275,10 +294,6 @@ const populateDemo = (container, i) => {
       const demo = item.closest('.gatsby_demo')
       demo.querySelector('.btn-open-full').classList.add('active')
       item.classList.add('active')
-      const top = demo.offsetTop
-      if (top !== 0) {
-        document.scrollingElement.scrollTo(0, demo.offsetTop)
-      }
     }
   }
   // gatsby_demo_tabs_left

@@ -194,10 +194,10 @@ class Toggle {
     const options = self.options
     // status
     self.eventStatusHandler()
-    // initial
+    // vars
     let currents = 0
     self.initial = true
-    self.continue = false
+    self.wrap = false
     self.currentIndex = null
     // [disabled]
     self.destroyDisabled()
@@ -256,11 +256,10 @@ class Toggle {
       }
       // no currents
       if (currents === 0) {
-        self.initial = false
         // auto
-        if (options.auto && options.auto.time) {
-          self.eventAutostart()
-        }
+        self.eventAutostart()
+        // vars
+        self.initial = false
       }
     }
     // init events
@@ -502,17 +501,21 @@ class Toggle {
     }
     // auto
     if (options.auto && options.auto.time) {
+      // focus
+      const focusHandler = Xt.dataStorage.put(window, 'focus/auto' + '/' + self.namespace, self.eventAutoresume.bind(self))
+      addEventListener('focus', focusHandler)
+      // blur
+      const blurHandler = Xt.dataStorage.put(window, 'blur/auto' + '/' + self.namespace, self.eventAutopause.bind(self))
+      addEventListener('blur', blurHandler)
       // event
       const autostartHandler = Xt.dataStorage.put(self.object, 'autostart' + '/' + self.namespace, self.eventAutostart.bind(self))
       self.object.addEventListener('autostart.trigger.xt', autostartHandler)
       const autostopHandler = Xt.dataStorage.put(self.object, 'autostop' + '/' + self.namespace, self.eventAutostop.bind(self))
       self.object.addEventListener('autostop.trigger.xt', autostopHandler)
-      // focus auto
-      const focusHandler = Xt.dataStorage.put(window, 'focus/auto' + '/' + self.namespace, self.eventAutoresumeHandler.bind(self))
-      addEventListener('focus', focusHandler)
-      // blur auto
-      const blurHandler = Xt.dataStorage.put(window, 'blur/auto' + '/' + self.namespace, self.eventAutopauseHandler.bind(self))
-      addEventListener('blur', blurHandler)
+      const autopauseHandler = Xt.dataStorage.put(self.object, 'autopause' + '/' + self.namespace, self.eventAutopause.bind(self))
+      self.object.addEventListener('autopause.trigger.xt', autopauseHandler)
+      const autoresumeHandler = Xt.dataStorage.put(self.object, 'autoresume' + '/' + self.namespace, self.eventAutoresume.bind(self))
+      self.object.addEventListener('autoresume.trigger.xt', autoresumeHandler)
       // autopause
       if (options.auto.pause) {
         const autopauseEls = self.object.querySelectorAll(options.auto.pause)
@@ -520,13 +523,13 @@ class Toggle {
           self.destroyElements.push(...autopauseEls)
           for (const el of autopauseEls) {
             // pause
-            const autopauseOnHandler = Xt.dataStorage.put(el, 'mouseenter focus/auto' + '/' + self.namespace, self.eventAutopauseHandler.bind(self))
+            const autopauseOnHandler = Xt.dataStorage.put(el, 'mouseenter focus/auto' + '/' + self.namespace, self.eventAutopause.bind(self))
             const eventsPause = ['mouseenter', 'focus']
             for (const event of eventsPause) {
               el.addEventListener(event, autopauseOnHandler)
             }
             // resume
-            const autoresumeOnHandler = Xt.dataStorage.put(el, 'mouseleave blur/auto' + '/' + self.namespace, self.eventAutoresumeHandler.bind(self))
+            const autoresumeOnHandler = Xt.dataStorage.put(el, 'mouseleave blur/auto' + '/' + self.namespace, self.eventAutoresume.bind(self))
             const eventsResume = ['mouseleave', 'blur']
             for (const event of eventsResume) {
               el.addEventListener(event, autoresumeOnHandler)
@@ -784,34 +787,6 @@ class Toggle {
     self.eventWithlinkEndHandler(el)
     Xt.dataStorage.remove(el, self.componentNamespace + 'WithlinkDone')
     Xt.dataStorage.remove(el, 'active/withlink' + '/' + self.namespace)
-  }
-
-  /**
-   * auto pause handler
-   * @param {Event} e
-   */
-  eventAutopauseHandler(e) {
-    const self = this
-    if (!self.detail.autopaused) {
-      // handler
-      self.eventAutopause()
-      // paused
-      self.detail.autopaused = true
-    }
-  }
-
-  /**
-   * auto resume handler
-   * @param {Event} e
-   */
-  eventAutoresumeHandler(e) {
-    const self = this
-    if (self.detail.autopaused) {
-      // handler
-      self.eventAutostart()
-      // paused
-      self.detail.autopaused = false
-    }
   }
 
   /**
@@ -1233,15 +1208,13 @@ class Toggle {
     const self = this
     const options = self.options
     // disabled
-    if (self.disabled && !self.initial) {
+    if (self.disabled) {
       return false
     }
     // toggle
     if (force || (self.checkOn(element) && (!e || !e.type || e.type !== 'off.trigger.xt'))) {
       // auto
-      if (options.auto && options.auto.time) {
-        self.eventAutostop()
-      }
+      self.eventAutostop()
       // on
       const groupElements = self.getElements(element)
       self.addCurrent(groupElements[0])
@@ -1289,7 +1262,7 @@ class Toggle {
     const self = this
     const options = self.options
     // disabled
-    if (self.disabled && !self.initial) {
+    if (self.disabled) {
       return false
     }
     // toggle
@@ -1390,49 +1363,57 @@ class Toggle {
   }
 
   /**
-   * auto start
+   * auto
    */
-  eventAutostart() {
+  eventAuto() {
+    const self = this
+    const options = self.options
+    // auto
+    if (Xt.visible(self.object)) {
+      // not when disabled
+      if (getComputedStyle(self.object).pointerEvents !== 'none') {
+        // @FIX after raf because after on.xt custom listeners
+        requestAnimationFrame(() => {
+          if (options.auto.inverse) {
+            self.goToPrev(options.auto.step, true)
+          } else {
+            self.goToNext(options.auto.step, true)
+          }
+        })
+      }
+    }
+  }
+
+  /**
+   * auto start
+   * @param {Event} e
+   */
+  eventAutostart(e = null) {
     const self = this
     const options = self.options
     // disabled
-    if (self.disabled && !self.initial) {
+    if (self.disabled) {
       return
     }
     // start
-    if (options.auto && options.auto.time) {
-      // paused
-      self.detail.autopaused = false
-      // clear
-      clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutostartTimeout'))
-      // auto
-      const time = self.initial || self.continue ? (options.auto.timeInitial !== false ? options.auto.timeInitial : options.auto.time) : options.auto.time
+    if (options.auto && options.auto.time && !self.wrap) {
       // not when nothing activated
-      if (self.currentIndex !== null && (!self.initial || self.continue || options.auto.initial)) {
-        // not when initial
+      if (self.currentIndex !== null && (!self.initial || options.auto.initial)) {
+        // clear
+        clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutoTimeout'))
+        // auto
+        const time = options.auto.time
+        // timeout
         Xt.dataStorage.set(
           self.object,
-          self.componentNamespace + 'AutostartTimeout',
-          // timeout
+          self.componentNamespace + 'AutoTimeout',
           setTimeout(() => {
-            if (Xt.visible(self.object)) {
-              // not when disabled
-              if (getComputedStyle(self.object).pointerEvents !== 'none') {
-                // @FIX initial and continue after raf because after on.xt custom listeners
-                requestAnimationFrame(() => {
-                  if (options.auto.inverse) {
-                    self.goToPrev(options.auto.step, true)
-                  } else {
-                    self.goToNext(options.auto.step, true)
-                  }
-                })
-              }
-            }
+            self.eventAuto()
           }, time)
         )
-        // listener dispatch
+        // @FIX event called before removing classes
         requestAnimationFrame(() => {
-          // @FIX event called before removing classes
+          // listener dispatch
           self.object.dispatchEvent(new CustomEvent('autostart.xt'))
         })
       }
@@ -1441,35 +1422,73 @@ class Toggle {
 
   /**
    * auto stop
+   * @param {Event} e
    */
-  eventAutostop() {
+  eventAutostop(e = null) {
     const self = this
     const options = self.options
     // stop
-    if (options.auto && options.auto.time) {
+    if (options.auto && options.auto.time && !self.wrap) {
       // clear
-      clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutostartTimeout'))
+      clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutoTimeout'))
       // listener dispatch
       self.object.dispatchEvent(new CustomEvent('autostop.xt'))
     }
   }
 
   /**
-   * auto stop
+   * auto pause
+   * @param {Event} e
    */
-  eventAutopause() {
+  eventAutopause(e = null) {
     const self = this
     const options = self.options
     // disabled
-    if (self.disabled && !self.initial) {
+    if (self.disabled) {
       return
     }
     // pause
-    if (options.auto && options.auto.time) {
-      // clear
-      clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutostartTimeout'))
-      // listener dispatch
-      self.object.dispatchEvent(new CustomEvent('autopause.xt'))
+    if (options.auto && options.auto.time && !self.wrap) {
+      if (!self.detail.autopaused) {
+        // paused
+        self.detail.autopaused = true
+        // clear
+        clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutoTimeout'))
+        // debug
+        if (Xt.debug === true) {
+          console.debug('Xt.debug: auto pause', self.object)
+        }
+        // listener dispatch
+        self.object.dispatchEvent(new CustomEvent('autopause.xt'))
+      }
+    }
+  }
+
+  /**
+   * auto resume
+   * @param {Event} e
+   */
+  eventAutoresume(e = null) {
+    const self = this
+    const options = self.options
+    // disabled
+    if (self.disabled) {
+      return
+    }
+    // pause
+    if (options.auto && options.auto.time && !self.wrap) {
+      if (self.detail.autopaused) {
+        // paused
+        self.detail.autopaused = false
+        // resume
+        self.eventAutostart()
+        // debug
+        if (Xt.debug === true) {
+          console.debug('Xt.debug: auto resume', self.object)
+        }
+        // listener dispatch
+        self.object.dispatchEvent(new CustomEvent('autoresume.xt'))
+      }
     }
   }
 
@@ -1481,7 +1500,7 @@ class Toggle {
   eventJump(tr, e) {
     const self = this
     // disabled
-    if (self.disabled && !self.initial) {
+    if (self.disabled) {
       return
     }
     // check disabled
@@ -1503,7 +1522,7 @@ class Toggle {
   eventNav(nav, e) {
     const self = this
     // disabled
-    if (self.disabled && !self.initial) {
+    if (self.disabled) {
       return
     }
     // nav
@@ -1935,14 +1954,13 @@ class Toggle {
     const self = this
     const options = self.options
     if (actionCurrent === 'On') {
-      // auto
-      if (options.auto && options.auto.time) {
-        self.eventAutostart()
-      }
-      // @FIX initial and continue after raf because after on.xt custom listeners
+      // @FIX after raf because after on.xt custom listeners
       requestAnimationFrame(() => {
+        // auto
+        self.eventAutostart()
+        // reset
         self.initial = false
-        self.continue = false
+        self.wrap = false
       })
     } else if (actionCurrent === 'Off') {
       // special
@@ -1971,7 +1989,7 @@ class Toggle {
   eventWheelblockHandler(e) {
     const self = this
     // disabled
-    if (self.disabled && !self.initial) {
+    if (self.disabled) {
       return
     }
     // prevent default if not loop
@@ -1994,7 +2012,7 @@ class Toggle {
     const options = self.options
     let el = self.wheel
     // disabled
-    if (self.disabled && !self.initial) {
+    if (self.disabled) {
       return
     }
     // delta
@@ -2165,7 +2183,7 @@ class Toggle {
     const self = this
     const options = self.options
     // disabled
-    if (self.disabled && !self.initial) {
+    if (self.disabled) {
       return
     }
     // vars
@@ -2798,7 +2816,7 @@ class Toggle {
         self.object.dispatchEvent(new CustomEvent('off.trigger.xt'))
       }
       // stop auto
-      clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutostartTimeout'))
+      clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutoTimeout'))
       // stop queue
       self.queueStopAll()
       // disable
@@ -2971,7 +2989,6 @@ Toggle.optionsDefaultSuper = {
   },
   auto: {
     time: false,
-    timeInitial: false,
     initial: true,
     step: 1,
     inverse: false,

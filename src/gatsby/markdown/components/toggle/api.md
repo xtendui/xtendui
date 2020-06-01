@@ -157,7 +157,7 @@ Here are the main properties inside `self`:
 | Event                   | `object:Node`       | Object node             |
 | Event                   | `elements:Array`       | Elements nodes             |
 | Event                   | `targets:Array`       | Targets nodes            |
-| Event                   | `initial:Boolean`       | If first activation             |
+| Option                  | `initial:Boolean`       | If initial or reset activation            |
 | Event                   | `direction:Number`       | Direction `1` or `-1`            |
 
 </div>
@@ -165,6 +165,6 @@ Here are the main properties inside `self`:
 ## Demo
 
 <demo>
-  <demovanilla src="vanilla/components/toggle/events-methods">
-  </demovanilla>
+  <div class="gatsby_demo_item" data-iframe="iframe/components/toggle/events-methods">
+  </div>
 </demo>

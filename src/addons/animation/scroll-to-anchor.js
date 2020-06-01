@@ -29,6 +29,8 @@ class ScrollToAnchor {
     self.object.addEventListener('click', self.change.bind(self).bind(self, false))
     // hash
     addEventListener('hashchange', self.change.bind(self).bind(self, true))
+    // initial
+    self.change.bind(self).bind(self, true)()
   }
 
   //
@@ -49,9 +51,10 @@ class ScrollToAnchor {
         const hash = hashchange ? loc.hash : self.object.hash.toString()
         self.target = document.querySelector(hash)
         if (self.target) {
-          self.scrollAdd = 0
           // prevent location.hash
-          e.preventDefault()
+          if (e) {
+            e.preventDefault()
+          }
           // no location.hash or page scrolls
           if (location.hash !== self.object.hash) {
             history.pushState({}, '', loc.hash)
@@ -61,6 +64,8 @@ class ScrollToAnchor {
           if (smooth) {
             smooth.eventWheelstop()
           }
+          // add space
+          self.scrollAdd = 0
           // sticky space
           const stickys = document.querySelectorAll('.xt-sticky.xt-clone.active')
           for (const sticky of stickys) {

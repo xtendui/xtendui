@@ -15,7 +15,9 @@ class DemoReact extends React.Component {
       type: dirs.pop(),
     }
     demo.name = src.split('/').pop()
-    demo.type = demo.type === 'components' ? 'demos' : demo.type
+    if (demo.type !== 'addons') {
+      demo.type = 'gatsby/demos/' + demo.type
+    }
     demo.Component = require(`xtend-library/src/${demo.type}/${demo.component}/${demo.name}.jsx`).default
     return (
       <StaticQuery

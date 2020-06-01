@@ -1,0 +1,262 @@
+/**
+ * googlelocator
+ */
+
+.demo--googlelocator {
+
+  &.googlelocator {
+    display: flex;
+    flex-wrap: wrap;
+    @media @max-sm {
+      flex-flow: column;
+    }
+    .flex-auto();
+    @media @min-sm {
+      min-height: 100vh;
+    }
+  }
+
+  // .googlelocator_main
+
+  .googlelocator_main {
+    position: relative;
+    .flex-auto();
+    min-height: 100%;
+    @media @min-sm {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      padding-left: 35rem;
+    }
+    @media @min-md {
+      padding-left: 40rem;
+    }
+    @media @min-lg {
+      padding-left: 45rem;
+    }
+    // hide map on mobile
+    @media @max-sm {
+      .sr-only();
+      height: 100vh;
+      visibility: hidden;
+      pointer-events: none;
+      position: fixed; // @FIX no absolute or bugs search
+      z-index: -1;
+      top: -100vh;
+      left: -100vw;
+      opacity: 0;
+    }
+  }
+
+  .googlelocator_main_inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .googlelocator_main_map {
+    width: 100%;
+    height: 100%;
+  }
+
+  // .googlelocator_aside
+
+  .googlelocator_aside {
+    position: relative;
+    z-index: 1;
+    @media @min-sm {
+      width: 35rem;
+      min-height: 100%;
+      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+    }
+    @media @min-md {
+      width: 40rem;
+    }
+    @media @min-lg {
+      width: 45rem;
+    }
+  }
+
+  .googlelocator_aside_head {
+    position: relative;
+    .btn-locate-store-outer {
+      position: relative;
+      width: auto;
+    }
+    padding: 3rem;
+    border-bottom: 1px solid @shade-200;
+  }
+
+  .googlelocator_aside_body {
+    position: relative;
+    padding: 3rem;
+
+    // result
+
+    .googlelocator_result {
+      display: none;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid @shade-200;
+      font-size: 1.3rem;
+    }
+
+    [data-xt-googlelocator-result-initial] {
+      display: block;
+    }
+
+    &.found {
+      .googlelocator_result {
+        display: none;
+      }
+      [data-xt-googlelocator-result-founds] {
+        display: block;
+      }
+    }
+
+    &.noplace {
+      .googlelocator_result {
+        display: none;
+      }
+      [data-xt-googlelocator-result-noplace] {
+        display: block;
+      }
+    }
+
+    &.empty {
+      .googlelocator_result {
+        display: none;
+      }
+      [data-xt-googlelocator-result-empty] {
+        display: block;
+      }
+    }
+
+    &.error {
+      .googlelocator_result {
+        display: none;
+      }
+      [data-xt-googlelocator-result-error] {
+        display: block;
+      }
+    }
+
+  }
+
+  // special
+
+  .googlelocator_repeat {
+    position: absolute;
+    z-index: 2;
+    top: 2rem;
+    left: 2rem;
+  }
+
+  // .googlelocator_items
+
+  .googlelocator_items {
+    .margin(top, medium);
+  }
+
+  .googlelocator_item {
+    .padding(y, small);
+    > .list {
+      .list-space(small);
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  .googlelocator_items .googlelocator_item {
+    // activation when clicking marker
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: border @time-medium @ease-out;
+    &.active {
+      border-bottom: 1px solid @accent;
+      transition: border @time-medium @ease-in;
+    }
+  }
+
+  .googlelocator_item_name {
+    .full();
+    .h5();
+  }
+
+  .googlelocator_item_address {
+    .full();
+    font-size: 1.3rem;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .googlelocator_item_additional {
+    .full();
+    font-size: 1.3rem;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .googlelocator_item_directions {
+    .link-none();
+    font-size: 1.3rem;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  // infoWindow
+
+  .gm-style {
+    // reset
+    .gm-style-iw-d {
+      overflow: visible !important;
+      max-width: none !important;
+      max-height: none !important;
+    }
+    // arrow
+    .gm-style-iw-t {
+      &:after {
+        box-shadow: @shadow-light;
+        background: @white;
+      }
+    }
+    // box
+    .gm-style-iw-c {
+      .padding(all, 2rem) !important;
+      border: 0;
+      border-radius: 0;
+      box-shadow: @shadow-light;
+      background: @white;
+      // scroll
+      overflow-x: hidden !important;
+      overflow-y: auto !important;
+      max-height: 15rem !important;
+      .overflow-style(@mode: inner);
+    }
+    // close
+    .gm-style-iw-d + button {
+      top: 0 !important;
+      right: 0 !important;
+      width: 3rem !important;
+      height: 3rem !important;
+      background: @shade-200-dark !important;
+      border-bottom-left-radius: 1rem;
+      font-size: 25px;
+      color: @black !important;
+      line-height: 0;
+      text-align: center;
+      opacity: 1 !important;
+      &:before {
+        content: '×';
+        position: relative;
+        top: -2px;
+      }
+      img {
+        display: none !important;
+      }
+    }
+  }
+
+}
