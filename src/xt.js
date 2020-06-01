@@ -8,27 +8,31 @@ export const Xt = {}
 // https://www.gatsbyjs.org/docs/debugging-html-builds/#how-to-check-if-code-classlanguage-textwindowcode-is-defined
 //
 
+//
+// vars
+//
+
+Xt.debug = process.env.NODE_ENV === 'development'
+Xt.mount = []
+Xt.unmount = []
+Xt.currents = {} // Xt currents based on namespace (so shared between Xt objects)
+Xt.optionsGlobal = {}
+Xt.resizeDelay = 1000
+Xt.scrollDelay = false
+Xt.medialoadedDelay = 500
+Xt.focusables = 'a, button, details, input, iframe, select, textarea, .btn-close'
+
 if (typeof window !== 'undefined') {
   //
-  // vars
+  // debug
   //
 
-  Xt.debug = process.env.NODE_ENV === 'development'
   if (window.self === window.top) {
     if (Xt.debug) {
       console.debug('%cXt.debug activated, to suppress set "Xt.debug = false" or set production mode', 'font-weight:bold;')
     }
   }
-  Xt.mount = []
-  Xt.unmount = []
-  Xt.currents = {} // Xt currents based on namespace (so shared between Xt objects)
-  Xt.optionsGlobal = {}
-  Xt.resizeDelay = 1000
-  Xt.scrollDelay = false
-  Xt.medialoadedDelay = 500
-  Xt.focusables = 'a, button, details, input, iframe, select, textarea, .btn-close'
 
-  //
   //
   // initialization
   //
