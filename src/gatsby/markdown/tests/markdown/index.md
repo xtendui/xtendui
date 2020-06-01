@@ -21,24 +21,24 @@ categories: ["100-Test"]
 </demo>
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/demos/slider/2020-brands-infinite">
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/slider/2020-brands-infinite">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/demos/slider/2020-aniyeby-hero">
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/slider/2020-aniyeby-hero">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/demos/slider/2020-bertani-hero">
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/slider/2020-bertani-hero">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/demos/slider/2020-euroricambi-cards">
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/slider/2020-euroricambi-cards">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/demos/slider/2019-sun68-hero">
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/slider/2019-sun68-hero">
   </div>
 </demo>
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/demos/animation/2019-xtend">
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/animation/2019-xtend">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/demos/animation/2020-euroricambi-collapse">
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/animation/2020-euroricambi-collapse">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/demos/animation/2020-bertani-listing">
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/animation/2020-bertani-listing">
   </div>
 </demo>
 
@@ -172,7 +172,7 @@ const test = 'test'
       test vanilla <strong>strong</strong> <code>code</code>
     </div>
   </demovanilla>
-  <demoreact src="react/demos/test/react" name="test react">
+  <demoreact src="vanilla/components/test/react" name="test react">
     <div class="gatsby_demo_text">
       test react <strong>strong</strong> <code>code</code>
     </div>
