@@ -682,7 +682,7 @@ class Slider extends Xt.Toggle {
       dragger.classList.remove('xt-links-none')
       dragger.classList.remove('xt-jumps-none')
       // drag wrap
-      if (self.dragger && options.drag.wrap) {
+      if (self.dragger && options.drag.wrap && !options.drag.manual) {
         if (!self.initial && !self.continue) {
           // @FIX wrap around xt-wrap items
           Xt.animTimeout(
@@ -690,8 +690,7 @@ class Slider extends Xt.Toggle {
             () => {
               self.eventWrap()
             },
-            'wrap',
-            self.options.drag.duration
+            'wrap'
           )
         }
       }
@@ -1214,7 +1213,6 @@ Slider.optionsDefault = {
     dragger: '.slides-inner',
     wrap: false,
     manualPosition: false,
-    duration: false,
     threshold: 50,
     linkThreshold: 50,
     factor: 1,
