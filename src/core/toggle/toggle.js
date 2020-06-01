@@ -1407,7 +1407,6 @@ class Toggle {
           self.object,
           self.componentNamespace + 'AutoTimeout',
           setTimeout(() => {
-            console.log('cccc')
             self.eventAuto()
           }, time)
         )
