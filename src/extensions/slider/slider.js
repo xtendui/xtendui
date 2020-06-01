@@ -653,7 +653,7 @@ class Slider extends Xt.Toggle {
         })
       }
       // drag position
-      if (!options.drag.manualPosition) {
+      if (!options.drag.manual) {
         dragger.style.transform = 'translateX(' + self.detail.dragPos + 'px)'
       }
       // disable dragger
@@ -685,6 +685,7 @@ class Slider extends Xt.Toggle {
       if (self.dragger && options.drag.wrap && !options.drag.manual) {
         if (!self.initial && !self.wrap) {
           // @FIX wrap around xt-wrap items
+          console.log('ccc')
           Xt.animTimeout(
             dragger,
             () => {
@@ -710,12 +711,15 @@ class Slider extends Xt.Toggle {
       self.wrap = true
       console.log('wrapping')
       self.goToNum(max + self.currentIndex - min + 1, true)
+      return true
     } else if (self.currentIndex > max) {
       self.initial = true
       self.wrap = true
       console.log('wrapping')
       self.goToNum(min + self.currentIndex - max - 1, true)
+      return true
     }
+    return false
   }
 
   /**
@@ -939,7 +943,7 @@ class Slider extends Xt.Toggle {
     if (self.initial) {
       self.dragger.classList.add('transition-none')
     }
-    if (!options.drag.manualPosition) {
+    if (!options.drag.manual) {
       dragger.style.transform = 'translateX(' + self.detail.dragPos + 'px)'
     }
     if (self.initial) {
@@ -1033,7 +1037,7 @@ class Slider extends Xt.Toggle {
       if (self.initial) {
         self.dragger.classList.add('transition-none')
       }
-      if (!options.drag.manualPosition) {
+      if (!options.drag.manual) {
         dragger.style.transform = 'translateX(' + self.detail.dragPosCurrent + 'px)'
       }
       if (self.initial) {
@@ -1212,7 +1216,7 @@ Slider.optionsDefault = {
   drag: {
     dragger: '.slides-inner',
     wrap: false,
-    manualPosition: false,
+    manual: false,
     threshold: 50,
     linkThreshold: 50,
     factor: 1,

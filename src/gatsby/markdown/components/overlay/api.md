@@ -137,7 +137,7 @@ Here are the main properties inside `self`:
 | Event                   | `object:Node`       | Object node             |
 | Event                   | `elements:Array`       | Elements nodes             |
 | Event                   | `targets:Array`       | Targets nodes            |
-| Event                   | `initial:Boolean`       | If first activation             |
+| Option                  | `initial:Boolean`       | If initial or reset activation            |
 
 </div>
 

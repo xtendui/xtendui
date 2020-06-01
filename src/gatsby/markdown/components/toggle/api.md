@@ -157,7 +157,7 @@ Here are the main properties inside `self`:
 | Event                   | `object:Node`       | Object node             |
 | Event                   | `elements:Array`       | Elements nodes             |
 | Event                   | `targets:Array`       | Targets nodes            |
-| Option                  | `initial:Boolean`       | Inside events use to check if it's an initial activation (or reset)            |
+| Option                  | `initial:Boolean`       | If initial or reset activation            |
 | Event                   | `direction:Number`       | Direction `1` or `-1`            |
 
 </div>

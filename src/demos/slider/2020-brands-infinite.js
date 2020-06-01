@@ -20,7 +20,7 @@ Xt.mount.push({
       groupMq: false,
       autoHeight: false,
       drag: {
-        manualPosition: true,
+        manual: true,
         wrap: true,
       },
     })
@@ -42,12 +42,14 @@ Xt.mount.push({
         if (self.wrap) {
           console.log('set')
           gsap.set(self.dragger, { x: self.detail.dragPosCurrent })
-          self.eventWrap()
         } else {
           console.log('to')
           gsap.to(self.dragger, { x: self.detail.dragPosCurrent, duration: time, ease: 'linear' }).eventCallback('onComplete', () => {
             console.log('next')
-            self.goToNext()
+            self.eventWrap()
+            requestAnimationFrame(() => {
+              self.goToNext()
+            })
           })
         }
       }

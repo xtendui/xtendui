@@ -82,7 +82,7 @@ Set to `groupMq: false` to disable automatic grouping of slides.
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `drag.dragger:Query`                          | `'.slides-inner'`        | Query for dragger element             |
-| Option                  | `drag.manualPosition:Boolean`                          | `false`        | Manual dragger position            |
+| Option                  | `drag.manual:Boolean`                          | `false`        | Manual dragger position            |
 | Option                  | `drag.threshold:Number`                          | `50`        | Minumim drag size for starting drag             |
 | Option                  | `drag.linkThreshold:Number`                          | `50`        | Maximum drag size for clicking links             |
 | Option                  | `drag.factor:Number`                          | `1`        | Factor multiplier for drag             |
