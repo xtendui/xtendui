@@ -1,3 +1,10 @@
+## [0.13.90](https://github.com/minimit/xtend-library/compare/v0.13.89...v0.13.90) (2020-06-01)
+
+
+### Bug Fixes
+
+* refactor docs demos fix gatbsy build outside gatsby folder + removed react demos fix gatsby build ([048ec29](https://github.com/minimit/xtend-library/commit/048ec290c94ece9d67d6477bde69926e6310d60d))
+
 ## [0.13.89](https://github.com/minimit/xtend-library/compare/v0.13.88...v0.13.89) (2020-06-01)
 
 
