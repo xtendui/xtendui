@@ -196,7 +196,7 @@ class Toggle {
     // initial
     let currents = 0
     self.initial = true
-    self.continue = false
+    self.wrap = false
     self.currentIndex = null
     // [disabled]
     self.destroyDisabled()
@@ -1372,7 +1372,7 @@ class Toggle {
     if (Xt.visible(self.object)) {
       // not when disabled
       if (getComputedStyle(self.object).pointerEvents !== 'none') {
-        // @FIX initial and continue after raf because after on.xt custom listeners
+        // @FIX initial and wrap after raf because after on.xt custom listeners
         requestAnimationFrame(() => {
           if (options.auto.inverse) {
             self.goToPrev(options.auto.step, true)
@@ -1396,7 +1396,7 @@ class Toggle {
       return
     }
     // start
-    if (options.auto && options.auto.time && !self.continue) {
+    if (options.auto && options.auto.time && !self.wrap) {
       // clear
       clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutoTimeout'))
       // auto
@@ -1429,7 +1429,7 @@ class Toggle {
     const self = this
     const options = self.options
     // stop
-    if (options.auto && options.auto.time && !self.continue) {
+    if (options.auto && options.auto.time && !self.wrap) {
       // clear
       clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutoTimeout'))
       // listener dispatch
@@ -1444,7 +1444,7 @@ class Toggle {
     const self = this
     const options = self.options
     // disabled
-    if (self.disabled && !self.initial && !self.continue) {
+    if (self.disabled && !self.initial && !self.wrap) {
       return
     }
     // pause
@@ -1465,7 +1465,7 @@ class Toggle {
     const self = this
     const options = self.options
     // disabled
-    if (self.disabled && !self.initial && !self.continue) {
+    if (self.disabled && !self.initial && !self.wrap) {
       return
     }
     // pause
@@ -1946,10 +1946,10 @@ class Toggle {
           self.eventAutostart()
         })
       }
-      // @FIX initial and continue after raf because after on.xt custom listeners
+      // @FIX initial and wrap after raf because after on.xt custom listeners
       requestAnimationFrame(() => {
         self.initial = false
-        self.continue = false
+        self.wrap = false
       })
     } else if (actionCurrent === 'Off') {
       // special

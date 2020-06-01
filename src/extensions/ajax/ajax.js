@@ -80,7 +80,7 @@ class Ajax extends Xt.Toggle {
     const self = this
     // initial
     self.initial = true
-    self.continue = false
+    self.wrap = false
     self.currentIndex = null
     // automatic initial currents
     const elements = self.getGroups()

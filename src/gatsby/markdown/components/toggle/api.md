@@ -158,7 +158,6 @@ Here are the main properties inside `self`:
 | Event                   | `elements:Array`       | Elements nodes             |
 | Event                   | `targets:Array`       | Targets nodes            |
 | Option                  | `initial:Boolean`       | Inside events use to check if it's an initial activation (or reset)            |
-| Option                  | `continue:Boolean`    | Inside events use to check if it's a continue activation(wrap)            |
 | Event                   | `direction:Number`       | Direction `1` or `-1`            |
 
 </div>

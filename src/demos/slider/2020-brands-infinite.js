@@ -39,7 +39,7 @@ Xt.mount.push({
           time = (draggerWidth / slideWidth) * 10000 // faster the less horizontal space
         }
         // animate
-        if (self.continue) {
+        if (self.wrap) {
           console.log('set')
           gsap.set(self.dragger, { x: self.detail.dragPosCurrent })
           self.eventWrap()
