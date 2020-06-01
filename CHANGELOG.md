@@ -1,3 +1,10 @@
+## [0.13.92](https://github.com/minimit/xtend-library/compare/v0.13.91...v0.13.92) (2020-06-01)
+
+
+### Bug Fixes
+
+* prepublish with build instead of actions ([ba398c1](https://github.com/minimit/xtend-library/commit/ba398c1b9a5402c2f17216be95ad1a4659cb32dd))
+
 ## [0.13.91](https://github.com/minimit/xtend-library/compare/v0.13.90...v0.13.91) (2020-06-01)
 
 
