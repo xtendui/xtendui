@@ -1372,7 +1372,7 @@ class Toggle {
     if (Xt.visible(self.object)) {
       // not when disabled
       if (getComputedStyle(self.object).pointerEvents !== 'none') {
-        // @FIX initial and wrap after raf because after on.xt custom listeners
+        // @FIX after raf because after on.xt custom listeners
         requestAnimationFrame(() => {
           if (options.auto.inverse) {
             self.goToPrev(options.auto.step, true)
@@ -1939,15 +1939,13 @@ class Toggle {
     const self = this
     const options = self.options
     if (actionCurrent === 'On') {
-      // auto
-      if (options.auto && options.auto.time) {
-        // @FIX raf to fix when setting manually self.options.auto.time on on.xt custom listeners (brands-infinite)
-        requestAnimationFrame(() => {
-          self.eventAutostart()
-        })
-      }
-      // @FIX initial and wrap after raf because after on.xt custom listeners
+      // @FIX after raf because after on.xt custom listeners
       requestAnimationFrame(() => {
+        // auto
+        if (options.auto && options.auto.time) {
+          self.eventAutostart()
+        }
+        // vars
         self.initial = false
         self.wrap = false
       })
