@@ -1193,6 +1193,9 @@ Slider.optionsDefault = {
   keyboard: {
     selector: '.slides',
   },
+  auto: {
+    pause: '[data-xt-pag], [data-xt-nav], .btn',
+  },
   aria: {
     labelledby: false,
   },

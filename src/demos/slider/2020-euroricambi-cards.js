@@ -37,8 +37,7 @@ Xt.mount.push({
       durationOn: Xt.vars.timeLarge + fixDelayOn,
       durationOff: Xt.vars.timeSmall,
       auto: {
-        time: 4500,
-        pause: '[data-xt-pag], [data-xt-nav], .slide_card .btn',
+        time: 4000,
       },
       autoHeight: false,
       groupMq: false,

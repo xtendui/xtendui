@@ -31,8 +31,7 @@ Xt.mount.push({
       durationOn: Xt.vars.timeBig,
       durationOff: Xt.vars.timeBig,
       auto: {
-        //time: 4500,
-        pause: '[data-xt-pag], [data-xt-nav]',
+        time: 4000,
       },
       autoHeight: false,
       groupMq: false,

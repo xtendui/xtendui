@@ -19,7 +19,6 @@ Xt.mount.push({
     let self = new Xt.Slider(object, {
       auto: {
         time: 4000,
-        pause: '[data-xt-pag]',
       },
     })
 

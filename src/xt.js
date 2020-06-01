@@ -4,26 +4,31 @@
 
 export const Xt = {}
 
-//
-// vars
-//
-
-Xt.debug = process.env.NODE_ENV === 'development'
-Xt.mount = []
-Xt.unmount = []
-Xt.currents = {} // Xt currents based on namespace (so shared between Xt objects)
-Xt.optionsGlobal = {}
-Xt.resizeDelay = 1000
-Xt.scrollDelay = false
-Xt.medialoadedDelay = 500
-Xt.focusables = 'a, button, details, input, iframe, select, textarea, .btn-close'
-
-//
 // call only if in browser mode
 // https://www.gatsbyjs.org/docs/debugging-html-builds/#how-to-check-if-code-classlanguage-textwindowcode-is-defined
 //
 
 if (typeof window !== 'undefined') {
+  //
+  // vars
+  //
+
+  Xt.debug = process.env.NODE_ENV === 'development'
+  if (window.self === window.top) {
+    if (Xt.debug) {
+      console.debug('%cXt.debug activated, to suppress set "Xt.debug = false" or set production mode', 'font-weight:bold;')
+    }
+  }
+  Xt.mount = []
+  Xt.unmount = []
+  Xt.currents = {} // Xt currents based on namespace (so shared between Xt objects)
+  Xt.optionsGlobal = {}
+  Xt.resizeDelay = 1000
+  Xt.scrollDelay = false
+  Xt.medialoadedDelay = 500
+  Xt.focusables = 'a, button, details, input, iframe, select, textarea, .btn-close'
+
+  //
   //
   // initialization
   //
@@ -1091,7 +1096,7 @@ if (typeof window !== 'undefined') {
     Xt.mount.push({
       matches: 'img:not([loading]):not([src^="data:"])',
       mount: object => {
-        console.warn('Xt.debug: detected an image without "loading" attribute.\nTo suppress warning set "Xt.debug = false" or set production mode.', object)
+        console.warn('Xt.debug: detected an image without "loading" attribute', object)
       },
     })
   }

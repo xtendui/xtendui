@@ -1454,6 +1454,10 @@ class Toggle {
         self.detail.autopaused = true
         // clear
         clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutoTimeout'))
+        // debug
+        if (Xt.debug === true) {
+          console.debug('Xt.debug: auto pause', self.object)
+        }
         // listener dispatch
         self.object.dispatchEvent(new CustomEvent('autopause.xt'))
       }
@@ -1478,11 +1482,16 @@ class Toggle {
         self.detail.autopaused = false
         // resume
         self.eventAutostart()
+        // debug
+        if (Xt.debug === true) {
+          console.debug('Xt.debug: auto resume', self.object)
+        }
         // listener dispatch
         self.object.dispatchEvent(new CustomEvent('autoresume.xt'))
       }
     }
   }
+
   /**
    * jump
    * @param {Node|HTMLElement|EventTarget|Window} tr

@@ -8,7 +8,7 @@ Xt.mount.push({
     let self = new Xt.Toggle(object, {
       min: 1,
       auto: {
-        time: 2000,
+        time: 4000,
         initial: false,
       },
     })

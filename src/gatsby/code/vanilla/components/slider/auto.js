@@ -10,7 +10,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="slider"
-     data-xt-slider="{ auto: { time: 2000, pause: '.slide, .slider-pagination' } }">
+     data-xt-slider="{ auto: { time: 2000 } }">
 
   <div class="slides">
     <ul class="slides-inner">
