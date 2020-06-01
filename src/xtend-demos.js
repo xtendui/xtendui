@@ -1,6 +1,6 @@
 if (typeof window !== 'undefined') {
-  require('xtend-library/src/gatsby/demos/addons/animation/scroll-to-anchor.js')
   require('xtend-library/src/gatsby/demos/components/animation/ripple.js')
+  require('xtend-library/src/gatsby/demos/components/animation/scroll-to-anchor.js')
   require('xtend-library/src/gatsby/demos/components/form/textarea-autosize.js')
   require('xtend-library/src/gatsby/demos/components/global/google-locator.js')
   require('xtend-library/src/gatsby/demos/components/group/merge-line.js')
