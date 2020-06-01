@@ -152,12 +152,12 @@
 
   .checkbox-card, .radio-card {
     &:before {
-      transform: scale(.9, .9);
+      transform: scale(.9);
       transition: all @time-small @ease-out;
     }
     &:after {
       opacity: 0 !important;
-      transform: scale(.9, .5);
+      transform: scale(.9);
       transition: all @time-small @ease-out;
     }
     &.focus, &:focus {
@@ -168,12 +168,12 @@
     &.active {
       &:before {
         background: @accent;
-        transform: scale(1, 1);
+        transform: scale(1);
         transition: all @time-small @ease-in;
       }
       &:after {
         opacity: 1 !important;
-        transform: scale(1, 1);
+        transform: scale(1);
         transition: all @time-small @ease-in;
       }
     }

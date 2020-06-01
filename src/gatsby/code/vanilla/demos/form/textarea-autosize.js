@@ -20,7 +20,7 @@ demo.htmlSource = `
 
   <div class="form-group form-group-last">
     <label class="form-label">
-      Textarea autosize js
+      Textarea autosize js initialization
     </label>
     <textarea class="form-item demo--textarea-autosize"></textarea>
   </div>

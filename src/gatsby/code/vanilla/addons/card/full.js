@@ -13,7 +13,7 @@ demo.htmlSource = `
 <div class="row row-default">
 
   <div class="col-12 col-6-sm">
-    <div class="card card-default card-collapse card-full">
+    <a role="button" class="card card-default card-collapse card-full">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
@@ -39,7 +39,7 @@ demo.htmlSource = `
           </div>
         </div>
       </div>
-    </div>
+    </a>
   </div>
 
   <div class="col-12 col-6-sm">
@@ -73,7 +73,7 @@ demo.htmlSource = `
   </div>
 
   <div class="col-12">
-    <div class="card card-default card-horizontal-sm card-collapse card-full">
+    <a role="button" class="card card-default card-horizontal-sm card-collapse card-full">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
@@ -90,7 +90,7 @@ demo.htmlSource = `
           </div>
         </div>
       </div>
-    </div>
+    </a>
   </div>
 
 </div>

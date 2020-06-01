@@ -15,6 +15,10 @@ export const demo = {
 }
 
 demo.htmlSource = `
+<div class="h5 header-block">
+  Button
+</div>
+
 <div class="list list-default list-space-small align-items-center demo--2019-xtend">
 
   <button type="button" class="btn btn-default">
@@ -32,6 +36,14 @@ demo.htmlSource = `
   <button type="button" class="btn btn-link">
     button link
   </button>
+
+</div>
+
+<div class="h5 header-block">
+  Drop
+</div>
+
+<div class="list list-default list-space-small align-items-center demo--2019-xtend">
 
   <div class="drop-container" data-xt-drop="{ targetsInner: ':scope > .drop-inner' }">
     <button type="button" class="btn btn-primary">
@@ -92,6 +104,14 @@ demo.htmlSource = `
       </div>
     </div>
   </div>
+
+</div>
+
+<div class="h5 header-block">
+  Overlay
+</div>
+
+<div class="list list-default list-space-small align-items-center demo--2019-xtend">
 
   <div data-xt-overlay>
     <button type="button" class="btn btn-primary">
@@ -184,6 +204,10 @@ demo.htmlSource = `
     </div>
   </div>
 
+</div>
+
+<div class="h5 header-block">
+  Card
 </div>
 
 <div class="row row-default">

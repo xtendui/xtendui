@@ -413,22 +413,22 @@ input[type="checkbox"], input[type="radio"] {
 
 .checkbox, .radio {
   &:before {
-    transform: scale(.9, .9);
+    transform: scale(.9);
     transition: all @time-small @ease-out;
   }
   &:after {
     opacity: 0;
-    transform: scale(.9, .5);
+    transform: scale(.9);
     transition: all @time-small @ease-out;
   }
   &.active {
     &:before {
-      transform: scale(1, 1);
+      transform: scale(1);
       transition: all @time-small @ease-in;
     }
     &:after {
       opacity: 1;
-      transform: scale(1, 1);
+      transform: scale(1);
       transition: all @time-small @ease-in;
     }
   }

@@ -16,7 +16,6 @@ export const demo = {
 }
 
 demo.htmlSource = `
-
 <div class="h5 header-block">
   Constant speed
 </div>

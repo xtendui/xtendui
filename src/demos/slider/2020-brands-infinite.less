@@ -2,6 +2,19 @@
 @import '~xtend-library/src/extensions/slider/slider.less';
 
 .demo--2020-brands-infinite {
+  /**
+   * vars
+   */
+
+  // ease
+
+  @ease-in: @ease-out-quint;
+  @ease-out: @ease-out-quint;
+
+  /**
+   * slider
+   */
+
   .padding(y, medium);
   .slides-inner {
     // dragger animations
@@ -22,7 +35,9 @@
       justify-content: center;
     }
   }
+
   // .demo--2020-brands-infinite--img
+
   .demo--2020-brands-infinite--img& {
     .slides-inner {
       .row-space(medium); // same as .slide_item
@@ -35,12 +50,14 @@
       // animation
       transition: transform @time-small @ease-out;
       &:hover, &.hover, &:active, &.active {
-        transform: scale(1.2, 1.2);
+        transform: scale(1.05);
         transition: transform @time-small @ease-in;
       }
     }
   }
+
   // .demo--2020-brands-infinite--text
+
   .demo--2020-brands-infinite--text& {
     .slides-inner {
       .row-space(giant); // same as .slide_item

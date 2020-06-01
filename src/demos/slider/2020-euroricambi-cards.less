@@ -2,6 +2,10 @@
 @import '~xtend-library/src/extensions/slider/slider.less';
 
 .demo--2020-euroricambi-cards {
+  /**
+   * slider
+   */
+
   .slides-inner {
     overflow: hidden;
     // dragger animations
@@ -18,7 +22,9 @@
   .slide-pagination-content {
     display: none;
   }
+
   // pagination
+
   .slider-pagination {
     .container-space();
     .list-space(mini);
@@ -30,7 +36,9 @@
   [data-xt-pag].btn {
     .btn-default();
   }
+
   // pagination wrap
+
   .slider-pagination_inner {
     position: relative;
     overflow: hidden;
@@ -65,7 +73,9 @@
     .padding(x, 30px);
     transition: left 750ms @ease-out;
   }
+
   // navigation
+
   [data-xt-nav].btn {
     .btn-default();
     font-size: 10px;
@@ -76,7 +86,9 @@
       display: none;
     }
   }
+
   // .slide_item
+
   .slide_card {
     @media @max-sm {
       .container-space-remove();

@@ -15,6 +15,10 @@ export const demo = {
 }
 
 demo.htmlSource = `
+<div class="h5 header-block">
+  Drop
+</div>
+
 <div class="list list-default list-space-small align-items-center demo--2020-euroricambi-collapse">
 
   <div class="drop-container" data-xt-drop="{ targetsInner: ':scope > .drop-inner' }">
@@ -76,6 +80,14 @@ demo.htmlSource = `
       </div>
     </div>
   </div>
+
+</div>
+
+<div class="h5 header-block">
+  Overlay
+</div>
+
+<div class="list list-default list-space-small align-items-center demo--2020-euroricambi-collapse">
 
   <div data-xt-overlay>
     <button type="button" class="btn btn-primary">
@@ -167,6 +179,14 @@ demo.htmlSource = `
       </div>
     </div>
   </div>
+
+</div>
+
+<div class="h5 header-block">
+  Group
+</div>
+
+<div class="list list-default list-space-small align-items-center demo--2020-euroricambi-collapse">
 
   <form class="form-default form-small flex-full"
         data-xt-toggle="{ elements: '.form-group > .btn', targets: '.group' }">
