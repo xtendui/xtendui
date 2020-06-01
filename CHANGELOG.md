@@ -1,3 +1,35 @@
+## [0.13.87](https://github.com/minimit/xtend-library/compare/v0.13.86...v0.13.87) (2020-06-01)
+
+
+### Bug Fixes
+
+* fix autostart on actiovation after reset ([2277217](https://github.com/minimit/xtend-library/commit/22772172f0f2ed674fb7741d1e9eb5bad8e368a5))
+* fix slider auto pause without resume missing time ([be15229](https://github.com/minimit/xtend-library/commit/be15229425f4a7850b15dfbd1fead2b833503b23))
+* fix slider auto pause without resume missing time ([02445b0](https://github.com/minimit/xtend-library/commit/02445b0821f8b72f9197b795fff8a9ddaf7a3fa3))
+* fix slider auto pause without resume missing time ([e1a1138](https://github.com/minimit/xtend-library/commit/e1a1138b0b37ce494800a369eba45072126cbf92))
+* fix slider auto with wrap and continue ([0240fff](https://github.com/minimit/xtend-library/commit/0240ffff61434d00f65f0b55591c4dfaa06c27a1))
+* fix toggle auto before initial false ([68fae59](https://github.com/minimit/xtend-library/commit/68fae5944ee9e259fa9a2db9486a58b8cd02c600))
+* manualPosition final with gsap ([4b623cc](https://github.com/minimit/xtend-library/commit/4b623cc4c98905eba731c31dcd496bb1b690cdb5))
+* manualPosition final with gsap ([eae8d41](https://github.com/minimit/xtend-library/commit/eae8d41e432de5a9f4ade46f668765b43aa3506d))
+* refactor demos folder with addons themes and components ([18f0da3](https://github.com/minimit/xtend-library/commit/18f0da30572b2e8992d95a01b9effc74f2a1a4c7))
+* refactor docs structure sources ([6c2e0d2](https://github.com/minimit/xtend-library/commit/6c2e0d2e1b2547900a29611cd75901b9a94db9f6))
+* refactor ease in and out instead of enter and leave ([e4ef2d0](https://github.com/minimit/xtend-library/commit/e4ef2d0895d3759c5a395db3857a326346ab9c4b))
+* revision auto vars ([ede988a](https://github.com/minimit/xtend-library/commit/ede988a48b00ed4ae9d41d3a4cc9f02bb2022252))
+* revision check disabled without initial ([40c95e2](https://github.com/minimit/xtend-library/commit/40c95e29f51c844fe7845a069d69c75a09190a57))
+* revision toggle auto pause and resume ([6382f85](https://github.com/minimit/xtend-library/commit/6382f8559e0d9dda680001a09a6e287465810d34))
+* revision Xt.debug + fix euroricambi slider + auto.pause defaults ([e3dd42d](https://github.com/minimit/xtend-library/commit/e3dd42d56c9e155bf1bd1d3ebd33e39478adbc5c))
+* slider brands final with gsap ([03ce3c4](https://github.com/minimit/xtend-library/commit/03ce3c48333e9dc59e55e7a0b7c16864eed41e3d))
+* slider brands final with gsap timescale ([f6279dd](https://github.com/minimit/xtend-library/commit/f6279dd72c55a20d29a3da5b181568beaa728725))
+* slider brands final with gsap timescale ([300fe96](https://github.com/minimit/xtend-library/commit/300fe9657054819b1d13ee99d289670c596328fc))
+* slider brands with images and links ([31dae47](https://github.com/minimit/xtend-library/commit/31dae4780c88bd97a69f27fb8bed9ebff6511613))
+* slider overflow revision + others ([09e793c](https://github.com/minimit/xtend-library/commit/09e793cc2e1340a8be15cf95d168ed784ec197b2))
+* **slider:** slider brands resize fix ([bdf9689](https://github.com/minimit/xtend-library/commit/bdf96893ba8b3d54b8e1ec1bd83d1c2ed667b8ce))
+* WIP brands resize ([67b4835](https://github.com/minimit/xtend-library/commit/67b48351aad85f60771eee5c49b034ab94ee1299))
+* WIP refactor slider brands + removed timeInitial + blur focus also without auto + fix event methods demos + slider manualPosition + drag.duration + removed drag boolean ([351c912](https://github.com/minimit/xtend-library/commit/351c912599532945c69460caa62707428bf0e313))
+* **css:** refactor ease less names ([ebecdd7](https://github.com/minimit/xtend-library/commit/ebecdd704c4411b2c8ee21ab831bf82156edb6b2))
+* **slider:** fix refactor drag ([c05ed00](https://github.com/minimit/xtend-library/commit/c05ed002163aec054b85c8c2522acbca509b05cd))
+* **slider:** fix slider positions dragend ([2abc8ec](https://github.com/minimit/xtend-library/commit/2abc8ec2b52f81d4640e3b09581daa23f935ed91))
+
 ## [0.13.86](https://github.com/minimit/xtend-library/compare/v0.13.85...v0.13.86) (2020-05-29)
 
 
