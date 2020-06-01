@@ -72,7 +72,7 @@
     .card-overlay {
       > .card-design {
         opacity: 1;
-        transition: opacity @time-medium @ease-enter;
+        transition: opacity @time-medium @ease-in;
       }
       > .btn-close {
         // use animation to not override .btn transitions
@@ -82,7 +82,7 @@
       > .card-inner {
         > .card-block,  > .card-content {
           opacity: 1;
-          transition: opacity @time-medium @ease-enter @time-tiny;
+          transition: opacity @time-medium @ease-in @time-tiny;
         }
       }
     }
@@ -92,7 +92,7 @@
     .card-overlay {
       > .card-design {
         opacity: 0;
-        transition: opacity @time-small @ease-leave @time-tiny;
+        transition: opacity @time-small @ease-out @time-tiny;
       }
       > .btn-close {
         // use animation to not override .btn transitions
@@ -102,7 +102,7 @@
       > .card-inner {
         > .card-block,  > .card-content {
           opacity: 0;
-          transition: opacity @time-small @ease-leave;
+          transition: opacity @time-small @ease-out;
         }
       }
     }

@@ -36,10 +36,10 @@
     .slide_content {
       .col-custom(300px);
       // animation
-      transition: transform @time-small @ease-leave;
+      transition: transform @time-small @ease-out;
       &:hover, &.hover, &:active, &.active {
         transform: scale(1.2, 1.2);
-        transition: transform @time-small @ease-enter;
+        transition: transform @time-small @ease-in;
       }
     }
   }
@@ -61,10 +61,10 @@
         font-size: 1.6rem;
       }
       // animation
-      transition: color @time-small @ease-leave;
+      transition: color @time-small @ease-out;
       &:hover, &.hover, &:active, &.active {
         color: @accent !important;
-        transition: color @time-small @ease-enter;
+        transition: color @time-small @ease-in;
       }
     }
     // gradient on left and right

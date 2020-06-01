@@ -8,13 +8,13 @@
  */
 
 .overlay-class-html { // @NOTICE DO NOT APPLY to selector with descendants with position: fixed; or it bugs position: fixed;
-  transition: transform @time-small @ease-leave;
+  transition: transform @time-small @ease-out;
   html.overlay-class-html-left & {
     transform: translateX(4rem);
-    transition-timing-function: @ease-enter;
+    transition-timing-function: @ease-in;
   }
   html.overlay-class-html-right & {
     transform: translateX(-4rem);
-    transition-timing-function: @ease-enter;
+    transition-timing-function: @ease-in;
   }
 }

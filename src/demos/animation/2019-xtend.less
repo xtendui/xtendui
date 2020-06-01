@@ -13,8 +13,8 @@
 
   // ease
 
-  @ease-enter: @ease-out-quint;
-  @ease-leave: @ease-in-out-quint;
+  @ease-in: @ease-out-quint;
+  @ease-out: @ease-in-out-quint;
 
   /**
    * button
@@ -47,12 +47,12 @@
   // animation
 
   .btn {
-    transition: border @time-small @ease-leave, background @time-small @ease-leave, color @time-small @ease-leave, box-shadow @time-small @ease-leave, transform @time-tiny @ease-leave;
+    transition: border @time-small @ease-out, background @time-small @ease-out, color @time-small @ease-out, box-shadow @time-small @ease-out, transform @time-tiny @ease-out;
     &:hover, &.hover {
-      transition: border @time-small @ease-enter, background @time-small @ease-enter, color @time-small @ease-enter, box-shadow @time-small @ease-enter, transform @time-tiny @ease-enter;
+      transition: border @time-small @ease-in, background @time-small @ease-in, color @time-small @ease-in, box-shadow @time-small @ease-in, transform @time-tiny @ease-in;
     }
     &:active, &.active {
-      transition: border @time-small @ease-enter, background @time-small @ease-enter, color @time-small @ease-enter, box-shadow @time-small @ease-enter, transform @time-tiny @ease-enter;
+      transition: border @time-small @ease-in, background @time-small @ease-in, color @time-small @ease-in, box-shadow @time-small @ease-in, transform @time-tiny @ease-in;
     }
   }
 
@@ -82,12 +82,12 @@
           > .drop-design {
             opacity: 1;
             transform: none;
-            transition: transform @time-medium @ease-enter, opacity @time-medium @ease-enter;
+            transition: transform @time-medium @ease-in, opacity @time-medium @ease-in;
           }
           > .drop-content {
             opacity: 1;
             transform: none;
-            transition: transform @time-medium @ease-enter @time-tiny, opacity @time-medium @ease-enter @time-tiny;
+            transition: transform @time-medium @ease-in @time-tiny, opacity @time-medium @ease-in @time-tiny;
           }
         }
       }
@@ -99,12 +99,12 @@
           > .drop-design {
             opacity: 0;
             transform: scale(.75, .75);
-            transition: transform @time-small @ease-leave @time-tiny, opacity @time-small @ease-leave @time-tiny;
+            transition: transform @time-small @ease-out @time-tiny, opacity @time-small @ease-out @time-tiny;
           }
           > .drop-content {
             opacity: 0;
             transform: translateY(1.5rem);
-            transition: transform @time-small @ease-leave, opacity @time-small @ease-leave;
+            transition: transform @time-small @ease-out, opacity @time-small @ease-out;
           }
         }
       }
@@ -139,7 +139,7 @@
         > .card-design {
           opacity: 1;
           transform: scale(1);
-          transition: transform @time-medium @ease-enter, opacity @time-medium @ease-enter;
+          transition: transform @time-medium @ease-in, opacity @time-medium @ease-in;
         }
         > .btn-close {
           // use animation to not override .btn transitions
@@ -150,7 +150,7 @@
           > .card-block,  > .card-content {
             opacity: 1;
             transform: none;
-            transition: transform @time-medium @ease-enter @time-tiny, opacity @time-medium @ease-enter @time-tiny;
+            transition: transform @time-medium @ease-in @time-tiny, opacity @time-medium @ease-in @time-tiny;
           }
         }
       }
@@ -161,7 +161,7 @@
         > .card-design {
           opacity: 0;
           transform: scale(.75, .75);
-          transition: transform @time-small @ease-leave @time-tiny, opacity @time-small @ease-leave @time-tiny;
+          transition: transform @time-small @ease-out @time-tiny, opacity @time-small @ease-out @time-tiny;
         }
         > .btn-close {
           // use animation to not override .btn transitions
@@ -172,7 +172,7 @@
           > .card-block,  > .card-content {
             opacity: 0;
             transform: translateY(1.5rem);
-            transition: transform @time-small @ease-leave, opacity @time-small @ease-leave;
+            transition: transform @time-small @ease-out, opacity @time-small @ease-out;
           }
         }
       }
@@ -238,22 +238,22 @@
   .card& {
     // interactive
     a&, label& {
-      transition: all @time-small @ease-leave;
+      transition: all @time-small @ease-out;
       > .card-design {
-        transition: all @time-small @ease-leave;
+        transition: all @time-small @ease-out;
       }
       &:hover, &.hover {
         transform: translateY(-.5rem);
-        transition: all @time-small @ease-enter;
+        transition: all @time-small @ease-in;
         > .card-design {
-          transition: all @time-small @ease-enter;
+          transition: all @time-small @ease-in;
         }
       }
       &:active, &.active, input[type="checkbox"]:not(.unstyled):checked ~ &, input[type="radio"]:not(.unstyled):checked ~ & {
         transform: none;
-        transition: all @time-small @ease-enter;
+        transition: all @time-small @ease-in;
         > .card-design {
-          transition: all @time-small @ease-enter;
+          transition: all @time-small @ease-in;
         }
       }
     }

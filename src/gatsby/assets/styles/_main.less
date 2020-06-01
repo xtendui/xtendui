@@ -74,7 +74,7 @@
     > .row > * {
       opacity: 0;
       transform: translateY(1.5rem);
-      transition: opacity @time-small @ease-enter, transform @time-small @ease-enter;
+      transition: opacity @time-small @ease-in, transform @time-small @ease-in;
       transition-delay: 150ms; // @start + @child * @increment
       .nth-child(@child: 3, @start: 0ms, @increment: 50ms, @decrement: 0ms, {
         @transition-delay();
@@ -86,7 +86,7 @@
       > .row > * {
         opacity: 1;
         transform: translateY(0);
-        transition: opacity @time-small @ease-enter, transform @time-small @ease-enter;
+        transition: opacity @time-small @ease-in, transform @time-small @ease-in;
       }
     }
   }
@@ -199,22 +199,22 @@
   }
   // animation
   a&, label& {
-    transition: all @time-small @ease-leave;
+    transition: all @time-small @ease-out;
     > .card-design {
-      transition: all @time-small @ease-leave;
+      transition: all @time-small @ease-out;
     }
     &:hover, &.hover {
       transform: translateY(-.5rem);
-      transition: all @time-small @ease-enter;
+      transition: all @time-small @ease-in;
       > .card-design {
-        transition: all @time-small @ease-enter;
+        transition: all @time-small @ease-in;
       }
     }
     &:active, &.active, input[type="checkbox"]:not(.unstyled):checked ~ &, input[type="radio"]:not(.unstyled):checked ~ & {
       transform: none;
-      transition: all @time-small @ease-enter;
+      transition: all @time-small @ease-in;
       > .card-design {
-        transition: all @time-small @ease-enter;
+        transition: all @time-small @ease-in;
       }
     }
   }

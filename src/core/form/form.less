@@ -266,9 +266,9 @@ legend, .legend {
 // animation
 
 .form-item {
-  transition: color @time-small @ease-leave, border @time-small @ease-leave, background-color @time-small @ease-leave;
+  transition: color @time-small @ease-out, border @time-small @ease-out, background-color @time-small @ease-out;
   &:focus, &.active {
-    transition: color @time-small @ease-enter, border @time-small @ease-enter, background-color @time-small @ease-enter;
+    transition: color @time-small @ease-in, border @time-small @ease-in, background-color @time-small @ease-in;
   }
 }
 
@@ -414,22 +414,22 @@ input[type="checkbox"], input[type="radio"] {
 .checkbox, .radio {
   &:before {
     transform: scale(.9, .9);
-    transition: all @time-small @ease-leave;
+    transition: all @time-small @ease-out;
   }
   &:after {
     opacity: 0;
     transform: scale(.9, .5);
-    transition: all @time-small @ease-leave;
+    transition: all @time-small @ease-out;
   }
   &.active {
     &:before {
       transform: scale(1, 1);
-      transition: all @time-small @ease-enter;
+      transition: all @time-small @ease-in;
     }
     &:after {
       opacity: 1;
       transform: scale(1, 1);
-      transition: all @time-small @ease-enter;
+      transition: all @time-small @ease-in;
     }
   }
   &.focus, &:focus {

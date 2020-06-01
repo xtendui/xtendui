@@ -45,13 +45,13 @@
           > .card-design {
             opacity: 1;
             transform: none;
-            transition: transform @time-medium @ease-enter, opacity @time-tiny @ease-enter;
+            transition: transform @time-medium @ease-in, opacity @time-tiny @ease-in;
           }
           > .card-inner {
             > .card-block,  > .card-content {
               opacity: 1;
               transform: none;
-              transition: transform @time-medium @ease-enter, opacity @time-tiny @ease-enter;
+              transition: transform @time-medium @ease-in, opacity @time-tiny @ease-in;
             }
           }
         }
@@ -64,13 +64,13 @@
           > .card-design {
             opacity: 0;
             transform: translateX(-100%);
-            transition: transform @time-small @ease-leave, opacity @time-tiny @ease-leave @time-tiny;
+            transition: transform @time-small @ease-out, opacity @time-tiny @ease-out @time-tiny;
           }
           > .card-inner {
             > .card-block,  > .card-content {
               opacity: 0;
               transform: translateX(-125%);
-              transition: transform @time-small @ease-leave, opacity @time-tiny @ease-leave @time-tiny;
+              transition: transform @time-small @ease-out, opacity @time-tiny @ease-out @time-tiny;
             }
           }
         }
@@ -80,13 +80,13 @@
           > .card-design {
             opacity: 0;
             transform: translateX(100%);
-            transition: transform @time-small @ease-leave, opacity @time-tiny @ease-leave @time-tiny;
+            transition: transform @time-small @ease-out, opacity @time-tiny @ease-out @time-tiny;
           }
           > .card-inner {
             > .card-block,  > .card-content {
               opacity: 0;
               transform: translateX(125%);
-              transition: transform @time-small @ease-leave, opacity @time-tiny @ease-leave @time-tiny;
+              transition: transform @time-small @ease-out, opacity @time-tiny @ease-out @time-tiny;
             }
           }
         }

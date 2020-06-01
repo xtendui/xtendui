@@ -180,12 +180,12 @@
 // animation
 
 .btn {
-  transition: border @time-small @ease-leave, background @time-small @ease-leave, color @time-small @ease-leave, transform @time-small @ease-leave;
+  transition: border @time-small @ease-out, background @time-small @ease-out, color @time-small @ease-out, transform @time-small @ease-out;
   &:hover, &.hover {
-    transition: border @time-small @ease-enter, background @time-small @ease-enter, color @time-small @ease-enter, transform @time-small @ease-enter;
+    transition: border @time-small @ease-in, background @time-small @ease-in, color @time-small @ease-in, transform @time-small @ease-in;
   }
   &:active, &.active {
-    transition: border @time-small @ease-enter, background @time-small @ease-enter, color @time-small @ease-enter, transform @time-small @ease-enter;
+    transition: border @time-small @ease-in, background @time-small @ease-in, color @time-small @ease-in, transform @time-small @ease-in;
   }
 }
 
