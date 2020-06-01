@@ -42,6 +42,9 @@ Xt.mount.push({
       },
       autoHeight: false,
       groupMq: false,
+      drag: {
+        overflow: false,
+      },
     })
 
     // drag
