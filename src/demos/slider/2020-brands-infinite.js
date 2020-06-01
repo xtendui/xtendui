@@ -39,13 +39,19 @@ Xt.mount.push({
           time = (draggerWidth / slideWidth) * 10000 // faster the less horizontal space
         }
         // animate
+        if (self.initial) {
+          // current dragging position
+          // @TODO console.log('reset', self.detail.dragStart)
+          // @TODO gsap.set(self.dragger, { x: self.detail.dragStart })
+        }
         if (self.wrap) {
-          console.log('set')
-          gsap.set(self.dragger, { x: self.detail.dragPosCurrent })
+          // end dragging position instant
+          //console.log('set', self.detail.dragPos)
+          gsap.set(self.dragger, { x: self.detail.dragPos })
         } else {
-          console.log('to')
-          gsap.to(self.dragger, { x: self.detail.dragPosCurrent, duration: time, ease: 'linear' }).eventCallback('onComplete', () => {
-            console.log('next')
+          // end dragging position
+          gsap.to(self.dragger, { x: self.detail.dragPos, duration: time, ease: 'linear' }).eventCallback('onComplete', () => {
+            //console.log('next', self.detail.dragPos)
             // wrap before changing slide if needed, needed with drag.wrap = true
             self.eventWrap()
             requestAnimationFrame(() => {
@@ -66,7 +72,6 @@ Xt.mount.push({
       const tweens = gsap.getTweensOf(self.dragger)
       for (const tween of tweens) {
         gsap.to(tween, { timeScale: 0, duration: timeScaleTimeOff, ease: timeScaleEaseOff })
-        // or instant: tween.pause()
       }
     }
 
@@ -80,7 +85,6 @@ Xt.mount.push({
       const tweens = gsap.getTweensOf(self.dragger)
       for (const tween of tweens) {
         gsap.to(tween, { timeScale: 1, duration: timeScaleTimeOn, ease: timeScaleEaseOn })
-        // or instant: tween.play()
       }
     }
 

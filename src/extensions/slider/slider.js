@@ -615,7 +615,10 @@ class Slider extends Xt.Toggle {
       }
     }
     // val
+    // @TODO self.detail.dragStart = self.detail.dragPosOld = self.detail.dragPos
+    // @TODO console.log('start', self.currentIndex, self.detail.dragStart, slide)
     self.detail.dragPos = self.detail.dragPosCurrent = self.detail.dragPosReal = Xt.dataStorage.get(slide, self.componentNamespace + 'GroupPos')
+    // @TODO console.log('pos', self.detail.dragPos, self.currentIndex, slide)
     // autoHeight and keepHeight
     if (self.autoHeight || (self.keepHeight && self.initial)) {
       let slideHeight = slide.children[0].offsetHeight
@@ -706,11 +709,9 @@ class Slider extends Xt.Toggle {
     const max = self.groupMqFirst.length + self.groupMqInitial.length - 1
     if (self.currentIndex < min) {
       self.wrap = true
-      console.log('wrapping')
       self.goToNum(max + self.currentIndex - min + 1, true)
     } else if (self.currentIndex > max) {
       self.wrap = true
-      console.log('wrapping')
       self.goToNum(min + self.currentIndex - max - 1, true)
     }
   }
