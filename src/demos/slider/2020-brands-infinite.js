@@ -46,8 +46,10 @@ Xt.mount.push({
           console.log('to')
           gsap.to(self.dragger, { x: self.detail.dragPosCurrent, duration: time, ease: 'linear' }).eventCallback('onComplete', () => {
             console.log('next')
+            // wrap before changing slide if needed, needed with drag.wrap = true
             self.eventWrap()
             requestAnimationFrame(() => {
+              // go to next slide
               self.goToNext()
             })
           })

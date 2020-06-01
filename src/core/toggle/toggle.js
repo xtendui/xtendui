@@ -1212,9 +1212,7 @@ class Toggle {
     // toggle
     if (force || (self.checkOn(element) && (!e || !e.type || e.type !== 'off.trigger.xt'))) {
       // auto
-      if (options.auto && options.auto.time) {
-        self.eventAutostop()
-      }
+      self.eventAutostop()
       // on
       const groupElements = self.getElements(element)
       self.addCurrent(groupElements[0])
@@ -1444,11 +1442,11 @@ class Toggle {
     const self = this
     const options = self.options
     // disabled
-    if (self.disabled && !self.initial && !self.wrap) {
+    if (self.disabled && !self.initial) {
       return
     }
     // pause
-    if (options.auto && options.auto.time) {
+    if (options.auto && options.auto.time && !self.wrap) {
       // pause
       self.detail.autopauseDate = new Date().getTime()
       // clear
@@ -1465,11 +1463,11 @@ class Toggle {
     const self = this
     const options = self.options
     // disabled
-    if (self.disabled && !self.initial && !self.wrap) {
+    if (self.disabled && !self.initial) {
       return
     }
     // pause
-    if (options.auto && options.auto.time) {
+    if (options.auto && options.auto.time && !self.wrap) {
       // resume
       const timeDiff = Math.abs(self.detail.autostartDate - self.detail.autopauseDate)
       self.eventAutostart(timeDiff)
@@ -1942,10 +1940,8 @@ class Toggle {
       // @FIX after raf because after on.xt custom listeners
       requestAnimationFrame(() => {
         // auto
-        if (options.auto && options.auto.time) {
-          self.eventAutostart()
-        }
-        // vars
+        self.eventAutostart()
+        // reset
         self.initial = false
         self.wrap = false
       })

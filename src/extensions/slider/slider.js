@@ -682,18 +682,16 @@ class Slider extends Xt.Toggle {
       dragger.classList.remove('xt-links-none')
       dragger.classList.remove('xt-jumps-none')
       // drag wrap
-      if (self.dragger && options.drag.wrap && !options.drag.manual) {
-        if (!self.initial && !self.wrap) {
-          // @FIX wrap around xt-wrap items
-          console.log('ccc')
-          Xt.animTimeout(
-            dragger,
-            () => {
-              self.eventWrap()
-            },
-            'wrap'
-          )
-        }
+      if (self.dragger && options.drag.wrap && !options.drag.manual && !self.wrap) {
+        // @FIX wrap around xt-wrap items
+        console.log('ccc')
+        Xt.animTimeout(
+          dragger,
+          () => {
+            self.eventWrap()
+          },
+          'wrap'
+        )
       }
     }
   }
@@ -707,19 +705,14 @@ class Slider extends Xt.Toggle {
     const min = self.groupMqFirst.length
     const max = self.groupMqFirst.length + self.groupMqInitial.length - 1
     if (self.currentIndex < min) {
-      self.initial = true
       self.wrap = true
       console.log('wrapping')
       self.goToNum(max + self.currentIndex - min + 1, true)
-      return true
     } else if (self.currentIndex > max) {
-      self.initial = true
       self.wrap = true
       console.log('wrapping')
       self.goToNum(min + self.currentIndex - max - 1, true)
-      return true
     }
-    return false
   }
 
   /**
