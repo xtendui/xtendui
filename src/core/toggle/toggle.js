@@ -1385,9 +1385,9 @@ class Toggle {
 
   /**
    * auto start
-   * @param {Number|Boolean} time Force automatic time
+   * @param {Event} e
    */
-  eventAutostart(time = false) {
+  eventAutostart(e = null) {
     const self = this
     const options = self.options
     // disabled
@@ -1396,18 +1396,18 @@ class Toggle {
     }
     // start
     if (options.auto && options.auto.time && !self.wrap) {
-      // clear
-      clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutoTimeout'))
-      // auto
-      time = time ? time : options.auto.time
       // not when nothing activated
       if (self.currentIndex !== null && (!self.initial || options.auto.initial)) {
-        // not when initial
+        // clear
+        clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutoTimeout'))
+        // auto
+        const time = options.auto.time
+        // timeout
         Xt.dataStorage.set(
           self.object,
           self.componentNamespace + 'AutoTimeout',
-          // timeout
           setTimeout(() => {
+            console.log('cccc')
             self.eventAuto()
           }, time)
         )
@@ -1422,8 +1422,9 @@ class Toggle {
 
   /**
    * auto stop
+   * @param {Event} e
    */
-  eventAutostop() {
+  eventAutostop(e = null) {
     const self = this
     const options = self.options
     // stop
@@ -1437,8 +1438,9 @@ class Toggle {
 
   /**
    * auto pause
+   * @param {Event} e
    */
-  eventAutopause() {
+  eventAutopause(e = null) {
     const self = this
     const options = self.options
     // disabled
@@ -1460,8 +1462,9 @@ class Toggle {
 
   /**
    * auto resume
+   * @param {Event} e
    */
-  eventAutoresume() {
+  eventAutoresume(e = null) {
     const self = this
     const options = self.options
     // disabled

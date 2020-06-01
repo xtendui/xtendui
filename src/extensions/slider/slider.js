@@ -687,7 +687,6 @@ class Slider extends Xt.Toggle {
       // drag wrap
       if (self.dragger && options.drag.wrap && !options.drag.manual && !self.wrap) {
         // @FIX wrap around xt-wrap items
-        console.log('ccc')
         Xt.animTimeout(
           dragger,
           () => {
