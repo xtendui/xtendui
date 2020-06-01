@@ -1,3 +1,10 @@
+## [0.13.89](https://github.com/minimit/xtend-library/compare/v0.13.88...v0.13.89) (2020-06-01)
+
+
+### Bug Fixes
+
+* build lint and react demos ([ce59ee3](https://github.com/minimit/xtend-library/commit/ce59ee319c8f0971a0e20562dc558bf0840043cb))
+
 ## [0.13.88](https://github.com/minimit/xtend-library/compare/v0.13.87...v0.13.88) (2020-06-01)
 
 
