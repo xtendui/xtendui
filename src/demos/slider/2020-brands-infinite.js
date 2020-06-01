@@ -41,17 +41,15 @@ Xt.mount.push({
         // animate
         if (self.initial) {
           // current dragging position
-          // @TODO console.log('reset', self.detail.dragStart)
-          // @TODO gsap.set(self.dragger, { x: self.detail.dragStart })
+          gsap.set(self.dragger, { x: self.detail.dragPos })
+          self.goToNext()
         }
         if (self.wrap) {
           // end dragging position instant
-          //console.log('set', self.detail.dragPos)
           gsap.set(self.dragger, { x: self.detail.dragPos })
         } else {
           // end dragging position
           gsap.to(self.dragger, { x: self.detail.dragPos, duration: time, ease: 'linear' }).eventCallback('onComplete', () => {
-            //console.log('next', self.detail.dragPos)
             // wrap before changing slide if needed, needed with drag.wrap = true
             self.eventWrap()
             requestAnimationFrame(() => {
