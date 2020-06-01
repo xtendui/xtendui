@@ -4,7 +4,7 @@ import 'xtend-library/src/extensions/slider/slider.js'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '.demo--2020-brands-infinite--factor',
+  matches: '.demo--2020-brands-infinite',
   mount: object => {
     // vars
 
@@ -19,6 +19,7 @@ Xt.mount.push({
       align: 'left',
       groupMq: false,
       autoHeight: false,
+      jump: false,
       drag: {
         manual: true,
         wrap: true,

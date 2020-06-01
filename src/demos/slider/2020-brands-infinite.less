@@ -3,8 +3,10 @@
 
 .demo--2020-brands-infinite {
   .margin(y, giant);
+  .slides {
+    overflow: visible;
+  }
   .slides-inner {
-    .row-space(giant); // same as .slide_item
     // dragger animations
     .transition-none() !important;
   }
@@ -13,42 +15,78 @@
   // .slide_item
   .slide_item {
     .list();
-    .list-space(giant); // same as .slides-inner
     flex-wrap: nowrap;
   }
   .slide_content {
-    .font-sans-semibold();
-    font-size: 12px;
-    text-transform: uppercase;
-    white-space: nowrap;
-    @media @min-sm {
-      font-size: 1.6rem;
-    }
+    .link-none();
   }
   &.slider-nooverflow {
     .slides-inner {
       justify-content: center;
     }
   }
-  // horizontal gradient
-  &:before {
-    content: '';
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 4rem;
-    background: linear-gradient(90deg, @white 0%, fade(@white, 0%) 100%);
+  // .demo--2020-brands-infinite--img
+  .demo--2020-brands-infinite--img& {
+    .slides-inner {
+      .row-space(medium); // same as .slide_item
+    }
+    .slide_item {
+      .list-space(medium); // same as .slides-inner
+    }
+    .slide_content {
+      .col-custom(300px);
+      // animation
+      transition: transform @time-small @ease-leave;
+      &:hover, &.hover, &:active, &.active {
+        transform: scale(1.2, 1.2);
+        transition: transform @time-small @ease-enter;
+      }
+    }
   }
-  &:after {
-    content: '';
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    width: 4rem;
-    background: linear-gradient(90deg, fade(@white, 0%) 0%, @white 100%);
+  // .demo--2020-brands-infinite--text
+  .demo--2020-brands-infinite--text& {
+    .slides-inner {
+      .row-space(giant); // same as .slide_item
+    }
+    .slide_item {
+      .list-space(giant); // same as .slides-inner
+    }
+    .slide_content {
+      .font-sans-semibold();
+      font-size: 12px;
+      color: @text !important;
+      text-transform: uppercase;
+      white-space: nowrap;
+      @media @min-sm {
+        font-size: 1.6rem;
+      }
+      // animation
+      transition: color @time-small @ease-leave;
+      &:hover, &.hover, &:active, &.active {
+        color: @accent !important;
+        transition: color @time-small @ease-enter;
+      }
+    }
+    // gradient on left and right
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 4rem;
+      background: linear-gradient(90deg, @white 0%, fade(@white, 0%) 100%);
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 4rem;
+      background: linear-gradient(90deg, fade(@white, 0%) 0%, @white 100%);
+    }
   }
 }

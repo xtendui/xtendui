@@ -1,5 +1,7 @@
 import React from 'react'
 import path from 'path'
+const img = require('components/snippets/img').default
+const imgAlt = require('components/snippets/img').alt
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -14,7 +16,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="slider demo--2020-brands-infinite">
+<div class="slider demo--2020-brands-infinite demo--2020-brands-infinite--text">
 
   <div class="slides">
     <ul class="slides-inner">
@@ -22,66 +24,36 @@ demo.htmlSource = `
       <li class="slide">
         <div class="slide-inner">
           <div class="slide_item">
-            <div class="slide_content">
+            <a href="#test-link-1" class="slide_content">
               One
-            </div>
-            <div class="slide_content">
+            </a>
+            <a href="#test-link-2" class="slide_content">
               Two
-            </div>
-            <div class="slide_content">
+            </a>
+            <a href="#test-link-3" class="slide_content">
               Three
-            </div>
-            <div class="slide_content">
+            </a>
+            <a href="#test-link-4" class="slide_content">
               Four
-            </div>
-            <div class="slide_content">
+            </a>
+            <a href="#test-link-5" class="slide_content">
               Five
-            </div>
-            <div class="slide_content">
+            </a>
+            <a href="#test-link-6" class="slide_content">
               Six
-            </div>
-            <div class="slide_content">
+            </a>
+            <a href="#test-link-7" class="slide_content">
               Seven
-            </div>
-            <div class="slide_content">
+            </a>
+            <a href="#test-link-8" class="slide_content">
               Eight
-            </div>
-            <div class="slide_content">
+            </a>
+            <a href="#test-link-9" class="slide_content">
               Nine
-            </div>
-            <div class="slide_content">
+            </a>
+            <a href="#test-link-10" class="slide_content">
               Ten
-            </div>
-            <div class="slide_content">
-              Eleven
-            </div>
-            <div class="slide_content">
-              Twelve
-            </div>
-            <div class="slide_content">
-              Thirteen
-            </div>
-            <div class="slide_content">
-              Fourteen
-            </div>
-            <div class="slide_content">
-              Fifteen
-            </div>
-            <div class="slide_content">
-              Sixteen
-            </div>
-            <div class="slide_content">
-              Seventeen
-            </div>
-            <div class="slide_content">
-              Eighteen
-            </div>
-            <div class="slide_content">
-              Nineteen
-            </div>
-            <div class="slide_content">
-              Twenty
-            </div>
+            </a>
           </div>
         </div>
       </li>
@@ -96,7 +68,7 @@ demo.htmlSource = `
 
 </div>
 
-<div class="slider demo--2020-brands-infinite demo--2020-brands-infinite--factor">
+<div class="slider demo--2020-brands-infinite demo--2020-brands-infinite--text demo--2020-brands-infinite--factor">
 
   <div class="slides">
     <ul class="slides-inner">
@@ -104,66 +76,76 @@ demo.htmlSource = `
       <li class="slide">
         <div class="slide-inner">
           <div class="slide_item">
-            <div class="slide_content">
+            <a href="#test-link-1" class="slide_content">
               One
-            </div>
-            <div class="slide_content">
+            </a>
+            <a href="#test-link-2" class="slide_content">
               Two
-            </div>
-            <div class="slide_content">
+            </a>
+            <a href="#test-link-3" class="slide_content">
               Three
-            </div>
-            <div class="slide_content">
+            </a>
+            <a href="#test-link-4" class="slide_content">
               Four
-            </div>
-            <div class="slide_content">
+            </a>
+            <a href="#test-link-5" class="slide_content">
               Five
-            </div>
-            <div class="slide_content">
+            </a>
+            <a href="#test-link-6" class="slide_content">
               Six
-            </div>
-            <div class="slide_content">
+            </a>
+            <a href="#test-link-7" class="slide_content">
               Seven
-            </div>
-            <div class="slide_content">
+            </a>
+            <a href="#test-link-8" class="slide_content">
               Eight
-            </div>
-            <div class="slide_content">
+            </a>
+            <a href="#test-link-9" class="slide_content">
               Nine
-            </div>
-            <div class="slide_content">
+            </a>
+            <a href="#test-link-10" class="slide_content">
               Ten
-            </div>
-            <div class="slide_content">
-              Eleven
-            </div>
-            <div class="slide_content">
-              Twelve
-            </div>
-            <div class="slide_content">
-              Thirteen
-            </div>
-            <div class="slide_content">
-              Fourteen
-            </div>
-            <div class="slide_content">
-              Fifteen
-            </div>
-            <div class="slide_content">
-              Sixteen
-            </div>
-            <div class="slide_content">
-              Seventeen
-            </div>
-            <div class="slide_content">
-              Eighteen
-            </div>
-            <div class="slide_content">
-              Nineteen
-            </div>
-            <div class="slide_content">
-              Twenty
-            </div>
+            </a>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
+  <nav class="slider-pagination display-none">
+    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
+    </button>
+  </nav>
+
+</div>
+
+<div class="slider demo--2020-brands-infinite demo--2020-brands-infinite--img">
+
+  <div class="slides">
+    <ul class="slides-inner">
+
+      <li class="slide">
+        <div class="slide-inner">
+          <div class="slide_item">
+            <a href="#test-link-1" class="slide_content">
+              ${img({ classes: 'media-cover', ratio: '25%' })}
+            </a>
+            <a href="#test-link-2" class="slide_content">
+              ${img({ classes: 'media-cover', ratio: '25%' })}
+            </a>
+            <a href="#test-link-3" class="slide_content">
+              ${img({ classes: 'media-cover', ratio: '25%' })}
+            </a>
+            <a href="#test-link-4" class="slide_content">
+              ${img({ classes: 'media-cover', ratio: '25%' })}
+            </a>
+            <a href="#test-link-5" class="slide_content">
+              ${img({ classes: 'media-cover', ratio: '25%' })}
+            </a>
+            <a href="#test-link-6" class="slide_content">
+              ${imgAlt({ classes: 'media-cover', ratio: '25%' })}
+            </a>
           </div>
         </div>
       </li>

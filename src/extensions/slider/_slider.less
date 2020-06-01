@@ -31,8 +31,14 @@
 
 .slider-nodrag {
   .slides-inner {
-    cursor: default;
+    // no grab cursor
+    cursor: auto;
+    // no drag interaction
     pointer-events: none;
+  }
+  .slide {
+    // internal interaction
+    pointer-events: auto
   }
 }
 
@@ -41,7 +47,8 @@
 .slider-nooverflow {
   .xt-disable();
   .slides-inner {
-    cursor: auto; // no grab cursor
+     // no grab cursor
+    cursor: auto;
     // @FIX disable slider if not overflowing
     .transform-none() !important;
     .transition-none() !important;
