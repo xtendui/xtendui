@@ -1,3 +1,10 @@
+## [0.13.93](https://github.com/minimit/xtend-library/compare/v0.13.92...v0.13.93) (2020-06-02)
+
+
+### Bug Fixes
+
+* lint on postversion ([c8a67e0](https://github.com/minimit/xtend-library/commit/c8a67e00c2026dbb32168599571aefcc3787f07b))
+
 ## [0.13.92](https://github.com/minimit/xtend-library/compare/v0.13.91...v0.13.92) (2020-06-01)
 
 
