@@ -478,7 +478,6 @@ const makeFullscreen = (container, skipIgnore = false) => {
 
 const initializeIframe = (container, item) => {
   if (!item.classList.contains('populated-iframe')) {
-    container.dataset.isFullscreenOnly = 'true'
     item.classList.add('populated-iframe')
     const src = '/' + item.getAttribute('data-iframe')
     const id = item.getAttribute('id')

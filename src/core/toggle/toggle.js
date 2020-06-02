@@ -256,10 +256,10 @@ class Toggle {
       }
       // no currents
       if (currents === 0) {
-        // auto
-        self.eventAutostart()
         // vars
         self.initial = false
+        // auto
+        self.eventAutostart()
       }
     }
     // init events
