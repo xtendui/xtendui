@@ -258,6 +258,7 @@ class Toggle {
       if (currents === 0) {
         // vars
         self.initial = false
+        // @FIX autostart after self.initial or it gives error on reinitialization (demos fullscreen)
         // auto
         self.eventAutostart()
       }

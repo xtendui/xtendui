@@ -11,13 +11,13 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-default list-space-small align-items-center"
      data-xt-toggle="{ auto: { time: 2000, initial: false } }">
-  <button type="button" class="btn btn-default active">
+  <button type="button" class="btn btn-default">
     Toggle 0
   </button>
   <button type="button" class="btn btn-default">
     Toggle 1
   </button>
-  <button type="button" class="btn btn-default">
+  <button type="button" class="btn btn-default active">
     Toggle 2
   </button>
   <button type="button" class="btn btn-default">
