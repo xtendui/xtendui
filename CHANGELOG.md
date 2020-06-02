@@ -1,3 +1,10 @@
+## [0.13.94](https://github.com/minimit/xtend-library/compare/v0.13.93...v0.13.94) (2020-06-02)
+
+
+### Bug Fixes
+
+* docs fix demos fullscreen initializations ([ec11e5b](https://github.com/minimit/xtend-library/commit/ec11e5b8a6c233d867ce631dd69c57ff178289be))
+
 ## [0.13.93](https://github.com/minimit/xtend-library/compare/v0.13.92...v0.13.93) (2020-06-02)
 
 
