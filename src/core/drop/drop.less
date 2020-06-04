@@ -1,4 +1,6 @@
 @import '~xtend-library/src/core/drop/_drop.less';
+@import '~xtend-library/src/core/list/list.less';
+@import '~xtend-library/src/core/card/card.less';
 
 /**
  * vars
@@ -18,7 +20,6 @@
     > .drop-content {
       > .list, > .list-block {
         .padding(y, 1.3rem); // vertical space
-        min-width: 18rem;
       }
     }
     > .drop-design, > .drop-content {
@@ -30,6 +31,8 @@
   // default options
   .drop-left();
   .drop-bottom();
+  .drop-size-small();
+  .drop-small();
 }
 
 // variant
@@ -59,6 +62,73 @@
   }
   > .drop-inner > .drop-content > .list-drop {
     .list-btns({ .btn-text() });
+  }
+}
+
+// size
+
+.drop-size-small {
+  .list-drop {
+    max-width: 25rem;
+  }
+  .card-drop {
+    max-width: 35rem;
+  }
+}
+
+.drop-size-medium {
+  .list-drop {
+    max-width: 35rem;
+  }
+  .card-drop {
+    max-width: 45rem;
+  }
+}
+
+.drop-size-large {
+  .list-drop {
+    max-width: 45rem;
+  }
+  .card-drop {
+    max-width: 55rem;
+  }
+}
+
+// card size
+
+.drop-small {
+  .list-drop {
+    .list-btns({
+      .btn-small();
+      .padding(x, 2.5rem);
+    });
+  }
+  .card-drop {
+    .card-small();
+  }
+}
+
+.drop-medium {
+  .list-drop {
+    .list-btns({
+      .btn-medium();
+      .padding(x, 3rem);
+    });
+  }
+  .card-drop {
+    .card-medium();
+  }
+}
+
+.drop-large {
+  .list-drop {
+    .list-btns({
+      .btn-large();
+      .padding(x, 3.5rem);
+    });
+  }
+  .card-drop {
+    .card-large();
   }
 }
 

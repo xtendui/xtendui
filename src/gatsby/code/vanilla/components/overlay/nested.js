@@ -13,10 +13,11 @@ demo.htmlSource = `
   Toggle with API
 </button>
 
-<div class="overlay overlay-large" id="overlay-nested"
+<div class="overlay overlay-default overlay-large" id="overlay-nested"
   data-xt-overlay="{ on: false, instant: false }">
   <div class="overlay-container">
     <div class="overlay-inner">
+      <div class="overlay-design"></div>
 
       <div class="card card-overlay">
         <div class="card-design"></div>
@@ -38,9 +39,10 @@ demo.htmlSource = `
                 <button type="button" class="btn btn-primary">
                   Toggle
                 </button>
-                <div class="overlay overlay-small">
+                <div class="overlay overlay-default overlay-size-small">
                   <div class="overlay-container">
                     <div class="overlay-inner">
+                      <div class="overlay-design"></div>
 
                       <div class="card card-overlay">
                         <div class="card-design"></div>

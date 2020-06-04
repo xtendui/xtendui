@@ -24,6 +24,24 @@ Classes for assigning variant (e.g.: border / background / color). Add or remove
   </demovanilla>
 </demo>
 
+## Size
+
+Set drop size with this classes.
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Example                       |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Class                   | `.drop-size-{size}`                        | `.drop-size-small`             |
+| Mixin                   | `.drop-size({size})`                   | `.drop-size(small)`         |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/drop/size">
+  </demovanilla>
+</demo>
+
 ## Position
 
 Set drop position with this classes.
@@ -46,6 +64,26 @@ Set drop position with this classes.
   </demovanilla>
 </demo>
 
+## List
+
+### Size
+
+Classes for assigning size (e.g.: padding or font size). Add or remove selectors at your discretion.
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Example                       |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Class                   | `.drop-{size}`                           | `.drop-small` `.drop-medium` `.drop-large`|
+| Mixin                   | `.drop-{size}()`                         | `.drop-small()` `.drop-medium()` `.drop-large()`         |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/drop/list-size">
+  </demovanilla>
+</demo>
+
 ## Card
 
 [[notePrimary]]
@@ -59,8 +97,8 @@ Classes for assigning variant (e.g.: border / background / color). Add or remove
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.card-{variant}`                     | `.card-default` `.card-primary` `.card-white` |
-| Mixin                   | `.card-{variant}()`                   | `.card-default()` `.card-primary()` `.card-white()`        |
+| Class                   | `.drop-{variant}`                     | `.drop-default` `.drop-primary` |
+| Mixin                   | `.drop-{variant}()`                   | `.drop-default()` `.drop-primary()`        |
 
 </div>
 
@@ -77,8 +115,8 @@ Classes for assigning size (e.g.: padding or font size). Add or remove selectors
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.card-{size}`                           | `.card-small` `.card-medium` `.card-large`|
-| Mixin                   | `.card-{size}()`                         | `.card-small()` `.card-medium()` `.card-large()`         |
+| Class                   | `.drop-{size}`                           | `.drop-small` `.drop-medium` `.drop-large`|
+| Mixin                   | `.drop-{size}()`                         | `.drop-small()` `.drop-medium()` `.drop-large()`         |
 
 </div>
 

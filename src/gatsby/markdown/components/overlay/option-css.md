@@ -14,7 +14,7 @@ Set overlay size with this classes. They are generated with `@generate-overlay-s
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.overlay-{size}`                        | `.overlay-small`             |
+| Class                   | `.overlay-size-{size}`                        | `.overlay-size-small`             |
 | Mixin                   | `.overlay-size({size})`                   | `.overlay-size(small)`         |
 
 </div>
@@ -37,8 +37,8 @@ Classes for assigning variant (e.g.: border / background / color). Add or remove
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.card-{variant}`                     | `.card-default` `.card-primary` `.card-white` |
-| Mixin                   | `.card-{variant}()`                   | `.card-default()` `.card-primary()` `.card-white()`        |
+| Class                   | `.overlay-{variant}`                     | `.overlay-default` `.overlay-primary` |
+| Mixin                   | `.overlay-{variant}()`                   | `.overlay-default()` `.overlay-primary()`        |
 
 </div>
 
@@ -55,8 +55,8 @@ Classes for assigning size (e.g.: padding or font size). Add or remove selectors
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.card-{size}`                           | `.card-small` `.card-medium` `.card-large`|
-| Mixin                   | `.card-{size}()`                         | `.card-small()` `.card-medium()` `.card-large()`         |
+| Class                   | `.overlay-{size}`                           | `.overlay-small` `.overlay-medium` `.overlay-large`|
+| Mixin                   | `.overlay-{size}()`                         | `.overlay-small()` `.overlay-medium()` `.overlay-large()`         |
 
 </div>
 

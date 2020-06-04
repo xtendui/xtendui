@@ -14,15 +14,15 @@
     &:hover, &.hover {
       color: @text-dark;
       > .card-design {
-        border-color: @shade-200-dark;
-        background: @shade-200;
+        border-color: @shade-200;
+        background: @white;
       }
     }
     &:active, &.active {
       color: @text-dark;
       > .card-design {
-        border-color: @shade-200-dark;
-        background: @shade-200-dark;
+        border-color: @shade-200;
+        background: @shade-200;
       }
     }
   }
@@ -43,26 +43,6 @@
       > .card-design {
         border-color: @accent-dark;
         background: @accent-dark;
-      }
-    }
-  }
-}
-
-.card-white {
-  // interactive
-  a&, label& {
-    &:hover, &.hover {
-      color: @text-dark;
-      > .card-design {
-        border-color: @shade-200;
-        background: @white;
-      }
-    }
-    &:active, &.active {
-      color: @text-dark;
-      > .card-design {
-        border-color: @shade-200;
-        background: @shade-200;
       }
     }
   }

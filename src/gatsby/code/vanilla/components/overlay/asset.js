@@ -16,9 +16,10 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       asset
     </button>
-    <div class="overlay">
+    <div class="overlay overlay-default">
       <div class="overlay-container">
         <div class="overlay-inner">
+          <div class="overlay-design"></div>
 
           <div class="card card-overlay">
             <div class="card-design"></div>
@@ -41,9 +42,10 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       asset and text
     </button>
-    <div class="overlay">
+    <div class="overlay overlay-default">
       <div class="overlay-container">
         <div class="overlay-inner">
+          <div class="overlay-design"></div>
 
           <div class="card card-overlay">
             <div class="card-design"></div>

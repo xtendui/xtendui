@@ -1,5 +1,6 @@
 @import '~xtend-library/src/core/javascript/javascript.less';
 @import '~xtend-library/src/core/overlay/_overlay.less';
+@import '~xtend-library/src/core/card/card.less';
 
 /**
  * vars
@@ -11,13 +12,13 @@
 
 // size
 
-@generate-overlay-size: tiny, small, medium, large, big, full; // overlay internal spacing
-@overlay-tiny: @breakpoint-xs - 60;
-@overlay-small: @breakpoint-sm - 60;
-@overlay-medium: @breakpoint-md - 60;
-@overlay-large: @breakpoint-lg - 60;
-@overlay-big: @breakpoint-xl - 60;
-@overlay-full: none;
+@generate-overlay-size: tiny, small, medium, large, big, full;
+@overlay-size-tiny: @breakpoint-xs - 60;
+@overlay-size-small: @breakpoint-sm - 60;
+@overlay-size-medium: @breakpoint-md - 60;
+@overlay-size-large: @breakpoint-lg - 60;
+@overlay-size-big: @breakpoint-xl - 60;
+@overlay-size-full: none;
 
 /**
  * overlay
@@ -33,10 +34,67 @@
     border-color: transparent;
   }
   // default options
-  .overlay-size(medium);
+  .overlay-medium();
+  .overlay-size(small);
+}
+
+// variant
+
+.overlay-default {
+  .overlay-inner {
+    color: @text;
+  }
+  .overlay-design {
+    border-color: @shade-200;
+    background: @white;
+    box-shadow: @shadow-light;
+  }
+}
+
+.overlay-primary {
+  .overlay-inner {
+    .text-inverse();
+  }
+  .overlay-design {
+    border-color: @accent-dark;
+    background: @accent;
+    box-shadow: @shadow-dark;
+  }
+}
+
+// card size
+
+.overlay-small {
+  .card-overlay {
+    .card-small();
+  }
+}
+
+.overlay-medium {
+  .card-overlay {
+    .card-medium();
+  }
+}
+
+.overlay-large {
+  .card-overlay {
+    .card-large();
+  }
 }
 
 // special
+
+.overlay-squared {
+  .overlay-design {
+    border-radius: 0;
+  }
+}
+
+.overlay-noborder {
+  .overlay-design {
+    border: 0;
+  }
+}
 
 .overlay-disable {
   // disable animation
@@ -54,6 +112,9 @@
 // animation
 
 .overlay {
+  .overlay-design {
+    opacity: 0;
+  }
   .card-overlay {
     > .card-design {
       opacity: 0;
@@ -69,6 +130,10 @@
   }
   &.in {
     animation-duration: @time-medium + @time-tiny; // needed for animation time and backdrop animation time, put max animation time
+    .overlay-design {
+      opacity: 1;
+      transition: opacity @time-medium @ease-in;
+    }
     .card-overlay {
       > .card-design {
         opacity: 1;
@@ -89,6 +154,10 @@
   }
   &.out {
     animation-duration: @time-small + @time-tiny; // needed for animation time and backdrop animation time, put max animation time
+    .overlay-design {
+      opacity: 0;
+      transition: opacity @time-small @ease-out @time-tiny;
+    }
     .card-overlay {
       > .card-design {
         opacity: 0;

@@ -16,7 +16,6 @@ Xt.mount.push({
 
     // log
 
-    let logTimeout
     const log = document.querySelector('#demo--slider-events-log')
 
     const logAdd = text => {
@@ -24,8 +23,8 @@ Xt.mount.push({
       // scroll
       log.scrollTo(0, log.scrollHeight)
       // hr
-      clearTimeout(logTimeout)
-      logTimeout = setTimeout(() => {
+      clearTimeout(window.logTimeout)
+      window.logTimeout = setTimeout(() => {
         log.innerHTML += '<hr/>'
       }, 1000)
     }

@@ -41,7 +41,7 @@ demo.htmlSource = `
 <br/><br/><br/><br/><br/><br/><br/>
 <br/><br/><br/><br/><br/><br/><br/>
 
-<div class="card card-default card-squared" id="anchor-0">
+<div class="card card-primary card-squared" id="anchor-0">
   <div class="card-design"></div>
   <div class="card-inner">
     <div class="card-content">
@@ -74,7 +74,7 @@ demo.htmlSource = `
 <br/><br/><br/><br/><br/><br/><br/>
 <br/><br/><br/><br/><br/><br/><br/>
 
-<div class="card card-default card-squared" id="anchor-1">
+<div class="card card-primary card-squared" id="anchor-1">
   <div class="card-design"></div>
   <div class="card-inner">
     <div class="card-content">
@@ -107,7 +107,7 @@ demo.htmlSource = `
 <br/><br/><br/><br/><br/><br/><br/>
 <br/><br/><br/><br/><br/><br/><br/>
 
-<div class="card card-default card-squared" id="anchor-2">
+<div class="card card-primary card-squared" id="anchor-2">
   <div class="card-design"></div>
   <div class="card-inner">
     <div class="card-content">

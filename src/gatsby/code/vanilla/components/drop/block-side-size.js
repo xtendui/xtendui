@@ -16,7 +16,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       block side size
     </button>
-    <div class="drop drop-default">
+    <div class="drop drop-default drop-size-large">
       <div class="drop-inner">
         <div class="drop-design"></div>
         <div class="drop-content">
@@ -48,7 +48,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       block side size image
     </button>
-    <div class="drop drop-default">
+    <div class="drop drop-default drop-size-large">
       <div class="drop-inner">
         <div class="drop-design"></div>
         <div class="drop-content">

@@ -14,7 +14,7 @@ demo.htmlSource = `
 
     <div class="col-12 col-6-sm">
       <input type="checkbox" id="check-card-0">
-      <label for="check-card-0" class="card card-default align-center">
+      <label for="check-card-0" class="card card-primary align-center">
         <div class="card-design"></div>
         <div class="card-inner">
           <div class="card-asset">
@@ -33,7 +33,7 @@ demo.htmlSource = `
 
     <div class="col-12 col-6-sm">
       <input type="checkbox" id="check-card-1">
-      <label for="check-card-1" class="card card-default align-center">
+      <label for="check-card-1" class="card card-primary align-center">
         <div class="card-design"></div>
         <div class="card-inner">
           <div class="card-asset">
@@ -52,7 +52,7 @@ demo.htmlSource = `
 
     <div class="col-12 col-6-sm">
       <input type="radio" id="radio-card-0" name="radio-card">
-      <label for="radio-card-0" class="card card-default align-center">
+      <label for="radio-card-0" class="card card-primary align-center">
         <div class="card-design"></div>
         <div class="card-inner">
           <div class="card-asset">
@@ -71,7 +71,7 @@ demo.htmlSource = `
 
     <div class="col-12 col-6-sm">
       <input type="radio" id="radio-card-1" name="radio-card">
-      <label for="radio-card-1" class="card card-default align-center">
+      <label for="radio-card-1" class="card card-primary align-center">
         <div class="card-design"></div>
         <div class="card-inner">
           <div class="card-asset">

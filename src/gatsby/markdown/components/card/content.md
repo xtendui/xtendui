@@ -19,7 +19,7 @@ If you want full width assets use `.card-asset`.
 </div>
 
 <script type="text/plain" class="language-markup">
-  <div class="card card-default">
+  <div class="card card-primary">
     <div class="card-design"></div>
     <div class="card-inner">
       <div class="card-content">
@@ -51,7 +51,7 @@ Sequential `.card-block` stack vertically.
 </div>
 
 <script type="text/plain" class="language-markup">
-  <div class="card card-default">
+  <div class="card card-primary">
     <div class="card-design"></div>
     <div class="card-inner">
       <div class="card-content">
@@ -98,7 +98,7 @@ To stack `.card-item` horizontally wrap them inside `.card-item-nested` and `.ca
 </div>
 
 <script type="text/plain" class="language-markup">
-  <div class="card card-default">
+  <div class="card card-primary">
     <div class="card-design"></div>
     <div class="card-inner">
       <div class="card-content">

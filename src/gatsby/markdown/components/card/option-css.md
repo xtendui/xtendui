@@ -34,8 +34,8 @@ Classes for assigning variant (e.g.: border / background / color). Add or remove
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.card-{variant}`                        | `.card-default` `.card-primary` `.card-white` |
-| Mixin                   | `.card-{variant}()`                      | `.card-default()` `.card-primary()` `.card-white()`         |
+| Class                   | `.card-{variant}`                        | `.card-default` `.card-primary` |
+| Mixin                   | `.card-{variant}()`                      | `.card-default()` `.card-primary()`         |
 
 </div>
 

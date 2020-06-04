@@ -15,9 +15,10 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       block intro
     </button>
-    <div class="overlay">
+    <div class="overlay overlay-default">
       <div class="overlay-container">
         <div class="overlay-inner">
+          <div class="overlay-design"></div>
 
           <div class="card card-overlay">
             <div class="card-design"></div>
@@ -50,9 +51,10 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       block intro bottom
     </button>
-    <div class="overlay">
+    <div class="overlay overlay-default">
       <div class="overlay-container">
         <div class="overlay-inner">
+          <div class="overlay-design"></div>
 
           <div class="card card-overlay">
             <div class="card-design"></div>

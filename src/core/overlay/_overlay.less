@@ -89,7 +89,7 @@
  */
 
 .overlay-size(@name) {
-  @arr: ~"overlay-@{name}";
+  @arr: ~"overlay-size-@{name}";
   @val: @@arr;
   .overlay-inner, .card-overlay > .card-inner > .card-content {
     max-width: @val;
@@ -100,7 +100,7 @@
 .generate-overlay-size(@i: length(@generate-overlay-size)) when (@i > 0) {
   .generate-overlay-size(@i - 1);
   @name: extract(@generate-overlay-size, @i);
-  .overlay-@{name} {
+  .overlay-size-@{name} {
     .overlay-size(@name) !important;
   }
 }
