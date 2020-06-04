@@ -49,7 +49,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       screen image
     </button>
-    <div class="overlay overlay-screen overlay-full">
+    <div class="overlay overlay-screen">
       <div class="overlay-container">
         <div class="overlay-inner">
 
@@ -72,9 +72,9 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
     <button type="button" class="btn btn-primary">
-      screen multiple
+      screen image full
     </button>
-    <div class="overlay overlay-screen">
+    <div class="overlay overlay-screen overlay-full">
       <div class="overlay-container">
         <div class="overlay-inner">
 
@@ -83,27 +83,8 @@ demo.htmlSource = `
             <div class="btn btn-close" aria-label="Close"></div>
             <div class="card-inner">
               <div class="card-content">
-                <div class="card-block card-item">
-                  <div class="card-title">Lorem ipsum</div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
-                    ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
-                  <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
-                    justo.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
-                    ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
-                  <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
-                    justo.</p>
-                </div>
-                <div class="card-block card-item">
-                  <div class="card-title">Lorem ipsum</div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
-                    ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
-                  <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
-                    justo.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
-                    ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
-                  <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
-                    justo.</p>
+                <div class="card-asset">
+                  ${img({ classes: 'media-cover', ratio: '100%' })}
                 </div>
               </div>
             </div>
