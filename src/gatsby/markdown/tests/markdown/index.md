@@ -57,15 +57,6 @@ categories: ["100-Test"]
   </demovanilla>
 </demo>
 
-<demo>
-  <demovanilla src="vanilla/components/test/test-card-content">
-  </demovanilla>
-  <demovanilla src="vanilla/components/test/test-overlay-content">
-  </demovanilla>
-  <demovanilla src="vanilla/components/test/test-slider-content">
-  </demovanilla>
-</demo>
-
 ## Markdown
 
 <div class="table-scroll">

@@ -21,6 +21,12 @@ Xt.mount.push({
     const contentX = 50
     const contentTimeOn = Xt.vars.timeBig
     const contentEaseOn = 'quint.inOut'
+    const contentEaseOnDragging = 'quint.out'
+
+    const lineSizeMin = 120
+    const lineSizeMax = 200
+    const lineDelayMin = Xt.vars.timeMedium
+    const lineDelayMax = Xt.vars.timeLarge
 
     // slider
 
@@ -30,6 +36,7 @@ Xt.mount.push({
       durationOff: Xt.vars.timeBig,
       auto: {
         time: 4000,
+        pause: '.slide_text',
       },
       autoHeight: false,
       groupMq: false,
@@ -141,6 +148,13 @@ Xt.mount.push({
           const content = target.querySelector('.slide_text')
           gsap.killTweensOf(content)
           gsap.set(content, { x: 0 })
+          // line
+          const lineSmall = target.querySelector('.slide_line_small')
+          gsap.killTweensOf(lineSmall)
+          gsap.set(lineSmall, { height: lineSizeMax, bottom: 0, opacity: 1 })
+          const lineBig = target.querySelector('.slide_line_big')
+          gsap.killTweensOf(lineBig)
+          gsap.set(lineBig, { height: lineSizeMin, bottom: lineSizeMax - lineSizeMin })
         } else {
           // assetMask
           const assetMask = target.querySelector('.slide_item')
@@ -164,7 +178,15 @@ Xt.mount.push({
           if (!self.detail.dragging) {
             gsap.set(content, { x: contentX * self.direction })
           }
-          gsap.to(content, { x: 0, duration: contentTimeOn, ease: contentEaseOn })
+          gsap.to(content, { x: 0, duration: contentTimeOn, ease: self.detail.dragging ? contentEaseOnDragging : contentEaseOn })
+          // line
+          const lineSmall = target.querySelector('.slide_line_small')
+          gsap.set(lineSmall, { height: 0, bottom: 0, opacity: 1 })
+          gsap.to(lineSmall, { height: lineSizeMax, bottom: 0, opacity: 0.3, duration: Xt.vars.timeSmall, ease: 'expo.in', delay: lineDelayMin })
+          const lineBig = target.querySelector('.slide_line_big')
+          gsap.set(lineBig, { height: 0, bottom: 0 })
+          gsap.to(lineBig, { height: lineSizeMax, bottom: 0, duration: Xt.vars.timeSmall, ease: 'expo.in', delay: lineDelayMax })
+          gsap.to(lineBig, { height: lineSizeMin, bottom: lineSizeMax - lineSizeMin, duration: Xt.vars.timeMedium, ease: 'expo.out', delay: lineDelayMax + Xt.vars.timeSmall })
         }
       }
     }
