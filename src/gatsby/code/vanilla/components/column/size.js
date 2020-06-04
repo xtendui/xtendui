@@ -10,6 +10,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="row row-default">
+
   <div class="col-4"></div>
   <div class="col-8"></div>
   <div class="col-12 col-8-sm"></div>
@@ -17,5 +18,6 @@ demo.htmlSource = `
   <div class="col-auto col-2-sm"></div>
   <div class="col-auto"></div>
   <div class="col-auto col-2-sm col-auto-lg"></div>
+
 </div>
 `

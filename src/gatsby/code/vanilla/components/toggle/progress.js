@@ -10,6 +10,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="list list-default list-space-small align-items-center demo--toggle-progress">
+
   <button type="button" class="btn btn-default">
     <span>
       Toggle 0
@@ -20,6 +21,7 @@ demo.htmlSource = `
       </span>
     </span>
   </button>
+
   <button type="button" class="btn btn-default">
     <span>
       Toggle 1
@@ -30,6 +32,7 @@ demo.htmlSource = `
       </span>
     </span>
   </button>
+
   <button type="button" class="btn btn-default active">
     <span>
       Toggle 2
@@ -40,6 +43,7 @@ demo.htmlSource = `
       </span>
     </span>
   </button>
+
   <button type="button" class="btn btn-default">
     <span>
       Toggle 3
@@ -50,6 +54,7 @@ demo.htmlSource = `
       </span>
     </span>
   </button>
+
   <div class="note note-default note-background toggle-block">
     Target 0
     <div class="loader loader-x loader-size-bottom loader-js">
@@ -58,6 +63,7 @@ demo.htmlSource = `
       </div>
     </div>
   </div>
+
   <div class="note note-default note-background toggle-block">
     Target 1
     <div class="loader loader-x loader-size-bottom loader-js">
@@ -66,6 +72,7 @@ demo.htmlSource = `
       </div>
     </div>
   </div>
+
   <div class="note note-default note-background toggle-block">
     Target 2
     <div class="loader loader-x loader-size-bottom loader-js">
@@ -74,6 +81,7 @@ demo.htmlSource = `
       </div>
     </div>
   </div>
+
   <div class="note note-default note-background toggle-block">
     Target 3
     <span class="loader loader-x loader-size-bottom loader-js">
@@ -82,5 +90,6 @@ demo.htmlSource = `
       </span>
     </span>
   </div>
+
 </div>
 `

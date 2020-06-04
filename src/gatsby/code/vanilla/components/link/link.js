@@ -10,6 +10,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="list list-default list-space-small align-items-center">
+
   <a href="#">
     link
   </a>
@@ -17,5 +18,6 @@ demo.htmlSource = `
   <a href="#" class="link-none">
     link
   </a>
+
 </div>
 `

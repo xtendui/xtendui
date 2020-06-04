@@ -11,6 +11,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-default list-space-small align-items-center text-inverse"
   style="padding: 1rem 1.5rem; background: #0078ff;">
+
   <button type="button" class="btn btn-default">
     default
   </button>
@@ -26,5 +27,6 @@ demo.htmlSource = `
   <button type="button" class="btn btn-link">
     link
   </button>
+
 </div>
 `
