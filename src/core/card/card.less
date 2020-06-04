@@ -49,6 +49,11 @@
       padding: 3em 3em !important;
     }
   }
+  > .btn-close {
+    .btn-big();
+    top: 2rem;
+    right: 2rem;
+  }
 }
 
 .card-slide {
@@ -58,10 +63,20 @@
 }
 
 .card-drop {
-  width: 40rem;
+  width: 33rem;
   // default options
   .card-white();
-  .card-small();
+  .card-block {
+    .font-tiny();
+    padding: 1.5em 1.5em !important;
+    @media @min-sm {
+      padding: 2em 2em !important;
+    }
+    .card-title {
+      .h5();
+      .spacing-tiny();
+    }
+  }
 }
 
 // variant

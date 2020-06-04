@@ -14,7 +14,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
     <button type="button" class="btn btn-primary">
-      group side
+      block side size
     </button>
     <div class="overlay">
       <div class="overlay-container">
@@ -55,7 +55,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
     <button type="button" class="btn btn-primary">
-      group side image
+      block side size image
     </button>
     <div class="overlay">
       <div class="overlay-container">
