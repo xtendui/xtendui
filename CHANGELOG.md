@@ -1,3 +1,10 @@
+## [0.13.95](https://github.com/minimit/xtend-library/compare/v0.13.94...v0.13.95) (2020-06-04)
+
+
+### Bug Fixes
+
+* revision card with overlay screen alignment and also sizes ([2293a86](https://github.com/minimit/xtend-library/commit/2293a8682ea664ba781da8deae9c4e1aa4170217))
+
 ## [0.13.94](https://github.com/minimit/xtend-library/compare/v0.13.93...v0.13.94) (2020-06-02)
 
 
