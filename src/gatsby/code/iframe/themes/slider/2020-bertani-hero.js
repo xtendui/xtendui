@@ -23,12 +23,18 @@ demo.htmlSource = `
 
       <li class="slide">
         <div class="slide-inner">
-          <a href="#" class="slide_item">
+          <div class="slide_item">
             <div class="slide_inner">
+              <div class="slide_line">
+                <div class="slide_line_inner">
+                  <div class="slide_line_small"></div>
+                  <div class="slide_line_big"></div>
+                </div>
+              </div>
               <div class="slide_asset">
                 ${img({ classes: 'media-cover' })}
               </div>
-              <div class="slide_text">
+              <a href="#" class="slide_text">
                 <div class="container">
                   <div class="slide_text_inner">
                     <h2 class="h1">
@@ -36,20 +42,26 @@ demo.htmlSource = `
                     </h2>
                   </div>
                 </div>
-              </div>
+              </a>
             </div>
-          </a>
+          </div>
         </div>
       </li>
 
       <li class="slide">
         <div class="slide-inner">
-          <a href="#" class="slide_item">
+          <div class="slide_item">
             <div class="slide_inner">
+              <div class="slide_line">
+                <div class="slide_line_inner">
+                  <div class="slide_line_small"></div>
+                  <div class="slide_line_big"></div>
+                </div>
+              </div>
               <div class="slide_asset">
                 ${imgAlt({ classes: 'media-cover' })}
               </div>
-              <div class="slide_text">
+              <a href="#" class="slide_text">
                 <div class="container">
                   <div class="slide_text_inner">
                     <h2 class="h1">
@@ -57,20 +69,26 @@ demo.htmlSource = `
                     </h2>
                   </div>
                 </div>
-              </div>
+              </a>
             </div>
-          </a>
+          </div>
         </div>
       </li>
 
       <li class="slide">
         <div class="slide-inner">
-          <a href="#" class="slide_item">
+          <div class="slide_item">
             <div class="slide_inner">
+              <div class="slide_line">
+                <div class="slide_line_inner">
+                  <div class="slide_line_small"></div>
+                  <div class="slide_line_big"></div>
+                </div>
+              </div>
               <div class="slide_asset">
                 ${img({ classes: 'media-cover' })}
               </div>
-              <div class="slide_text">
+              <a href="#" class="slide_text">
                 <div class="container">
                   <div class="slide_text_inner">
                     <h2 class="h1">
@@ -78,20 +96,26 @@ demo.htmlSource = `
                     </h2>
                   </div>
                 </div>
-              </div>
+              </a>
             </div>
-          </a>
+          </div>
         </div>
       </li>
 
       <li class="slide">
         <div class="slide-inner">
-          <a href="#" class="slide_item">
+          <div class="slide_item">
             <div class="slide_inner">
+              <div class="slide_line">
+                <div class="slide_line_inner">
+                  <div class="slide_line_small"></div>
+                  <div class="slide_line_big"></div>
+                </div>
+              </div>
               <div class="slide_asset">
                 ${imgAlt({ classes: 'media-cover' })}
               </div>
-              <div class="slide_text">
+              <a href="#" class="slide_text">
                 <div class="container">
                   <div class="slide_text_inner">
                     <h2 class="h1">
@@ -99,9 +123,9 @@ demo.htmlSource = `
                     </h2>
                   </div>
                 </div>
-              </div>
+              </a>
             </div>
-          </a>
+          </div>
         </div>
       </li>
 
