@@ -6,28 +6,30 @@ title: "Option Css"
 date: "2019-12-01"
 ---
 
-[[notePrimary]]
-| Overlay uses card to style it's content, refer to [card's option](/components/card/option) for all **option**.
+## Size
 
-## Card Preset
-
-Overlay's card preset is `.card-overlay`. This preset gives overlay's card default variant and size, you can use it in combination with card's variants.
+Set overlay size with this classes. They are generated with `@generate-overlay-size`.
 
 <div class="table-scroll">
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.card-{preset}`                         | `.card-overlay`              |
-| Mixin                   | Not possible                              | Not possible                  |
+| Class                   | `.overlay-{size}`                        | `.overlay-small`             |
+| Mixin                   | `.overlay-size({size})`                   | `.overlay-size(small)`         |
 
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/overlay/card-preset">
+  <demovanilla src="vanilla/components/overlay/size">
   </demovanilla>
 </demo>
 
-## Card Variant
+## Card
+
+[[notePrimary]]
+| Overlay uses card to style it's content, refer to [card's option](/components/card/option) for all **option**.
+
+### Variant
 
 Classes for assigning variant (e.g.: border / background / color). Add or remove selectors at your discretion.
 
@@ -45,7 +47,7 @@ Classes for assigning variant (e.g.: border / background / color). Add or remove
   </demovanilla>
 </demo>
 
-## Card Size
+### Size
 
 Classes for assigning size (e.g.: padding or font size). Add or remove selectors at your discretion.
 
@@ -60,23 +62,5 @@ Classes for assigning size (e.g.: padding or font size). Add or remove selectors
 
 <demo>
   <demovanilla src="vanilla/components/overlay/card-size">
-  </demovanilla>
-</demo>
-
-## Size
-
-Set overlay size with this classes. They are generated with `@generate-overlay-size`.
-
-<div class="table-scroll">
-
-|                         | Syntax                                    | Example                       |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.overlay-{size}`                        | `.overlay-small`             |
-| Mixin                   | `.overlay-size({size})`                   | `.overlay-size(small)`         |
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/overlay/size">
   </demovanilla>
 </demo>

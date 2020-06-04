@@ -17,7 +17,7 @@ demo.htmlSource = `
 <div class="list list-default list-space-small align-items-center demo--2019-position-slide">
   <div data-xt-overlay>
     <button type="button" class="btn btn-primary">
-      overlay position left
+      position left
     </button>
     <div class="overlay overlay-position overlay-position-left demo--2019-position-slide">
       <div class="overlay-container">
@@ -50,7 +50,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
     <button type="button" class="btn btn-primary">
-      overlay position right
+      position right
     </button>
     <div class="overlay overlay-position overlay-position-right demo--2019-position-slide">
       <div class="overlay-container">

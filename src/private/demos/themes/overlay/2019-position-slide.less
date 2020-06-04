@@ -4,6 +4,15 @@
 
 .demo--2019-position-slide {
   /**
+   * vars
+   */
+
+  // ease
+
+  @ease-in: @ease-out-quint;
+  @ease-out: @ease-in-out-quint;
+
+  /**
     * overlay
     */
 
@@ -73,6 +82,9 @@
               transition: transform @time-small @ease-out, opacity @time-tiny @ease-out @time-tiny;
             }
           }
+          > .btn-close {
+            .anim-x-inverse.out();
+          }
         }
       }
       &.overlay-position-right {
@@ -88,6 +100,9 @@
               transform: translateX(125%);
               transition: transform @time-small @ease-out, opacity @time-tiny @ease-out @time-tiny;
             }
+          }
+          > .btn-close {
+            .anim-x.out();
           }
         }
       }

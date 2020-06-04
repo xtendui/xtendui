@@ -45,3 +45,44 @@ Set drop position with this classes.
   <demovanilla src="vanilla/components/drop/after">
   </demovanilla>
 </demo>
+
+## Card
+
+[[notePrimary]]
+| Drop uses card to style it's content, refer to [card's option](/components/card/option) for all **option**.
+
+### Variant
+
+Classes for assigning variant (e.g.: border / background / color). Add or remove selectors at your discretion.
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Example                       |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Class                   | `.card-{variant}`                     | `.card-default` `.card-primary` `.card-white` |
+| Mixin                   | `.card-{variant}()`                   | `.card-default()` `.card-primary()` `.card-white()`        |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/drop/card-variant">
+  </demovanilla>
+</demo>
+
+### Size
+
+Classes for assigning size (e.g.: padding or font size). Add or remove selectors at your discretion.
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Example                       |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Class                   | `.card-{size}`                           | `.card-small` `.card-medium` `.card-large`|
+| Mixin                   | `.card-{size}()`                         | `.card-small()` `.card-medium()` `.card-large()`         |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/drop/card-size">
+  </demovanilla>
+</demo>
