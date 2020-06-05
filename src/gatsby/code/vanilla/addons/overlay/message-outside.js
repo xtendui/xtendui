@@ -15,7 +15,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       left
     </button>
-    <div class="overlay overlay-position overlay-position-left">
+    <div class="overlay overlay-default overlay-position overlay-position-left">
       <div class="overlay-message-outside">
         <button type="button" class="btn btn-primary btn-small overlay-dismiss">
           close message
@@ -23,6 +23,7 @@ demo.htmlSource = `
       </div>
       <div class="overlay-container">
         <div class="overlay-inner">
+          <div class="overlay-design"></div>
 
           <div class="card card-overlay">
             <div class="card-design"></div>
@@ -53,7 +54,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       right
     </button>
-    <div class="overlay overlay-position overlay-position-right">
+    <div class="overlay overlay-default overlay-position overlay-position-right">
       <div class="overlay-message-outside">
         <button type="button" class="btn btn-primary btn-small overlay-dismiss">
           close message
@@ -61,6 +62,7 @@ demo.htmlSource = `
       </div>
       <div class="overlay-container">
         <div class="overlay-inner">
+          <div class="overlay-design"></div>
 
           <div class="card card-overlay">
             <div class="card-design"></div>

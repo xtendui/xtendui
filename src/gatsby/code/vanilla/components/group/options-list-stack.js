@@ -11,8 +11,10 @@ export const demo = {
 demo.htmlSource = `
 <form class="form-default">
   <div class="form-group form-group-last">
+
     <div class="group group-default">
       <div class="list list-default">
+
         <div class="group-inner">
           <button type="button" class="btn btn-primary">
             Lorem
@@ -21,11 +23,14 @@ demo.htmlSource = `
             ipsum
           </button>
         </div>
+
         <div class="group-inner">
           <input type="text" class="form-item" />
         </div>
+
       </div>
     </div>
+
   </div>
 </form>
 `

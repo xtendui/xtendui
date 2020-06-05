@@ -85,27 +85,6 @@
 }
 
 /**
- * @generate-overlay-size
- */
-
-.overlay-size(@name) {
-  @arr: ~"overlay-@{name}";
-  @val: @@arr;
-  .overlay-inner, .card-overlay > .card-inner > .card-content {
-    max-width: @val;
-  }
-}
-
-.generate-overlay-size();
-.generate-overlay-size(@i: length(@generate-overlay-size)) when (@i > 0) {
-  .generate-overlay-size(@i - 1);
-  @name: extract(@generate-overlay-size, @i);
-  .overlay-@{name} {
-    .overlay-size(@name) !important;
-  }
-}
-
-/**
  * @generate-overlay-space
  */
 

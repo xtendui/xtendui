@@ -13,7 +13,7 @@ demo.htmlSource = `
 
   <div class="col-12 col-8-sm">
 
-    <div class="card card-default">
+    <div class="card card-primary">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
@@ -29,7 +29,7 @@ demo.htmlSource = `
 
   <div class="col-12 col-4-sm">
 
-    <div class="card card-default">
+    <div class="card card-primary">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
@@ -45,7 +45,7 @@ demo.htmlSource = `
 
   <div class="col-12 col-4-sm">
 
-    <div class="card card-default">
+    <div class="card card-primary">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
@@ -61,7 +61,7 @@ demo.htmlSource = `
 
   <div class="col-12 col-8-sm">
 
-    <div class="card card-default">
+    <div class="card card-primary">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">

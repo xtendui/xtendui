@@ -15,10 +15,11 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       list
     </button>
-    <div class="drop drop-default drop-center drop-middle drop-overflow-y">
+    <div class="drop drop-default drop-overflow-y">
       <div class="drop-inner">
         <div class="drop-design"></div>
         <div class="drop-content">
+
           <ul class="list list-drop">
             <li>
               <button type="button">
@@ -66,6 +67,7 @@ demo.htmlSource = `
               </button>
             </li>
           </ul>
+
         </div>
       </div>
     </div>

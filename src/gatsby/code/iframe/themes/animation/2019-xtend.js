@@ -53,6 +53,7 @@ demo.htmlSource = `
       <div class="drop-inner">
         <div class="drop-design"></div>
         <div class="drop-content">
+
           <ul class="list list-drop">
             <li>
               <button type="button">
@@ -70,6 +71,7 @@ demo.htmlSource = `
               </button>
             </li>
           </ul>
+
         </div>
       </div>
     </div>
@@ -117,9 +119,10 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       overlay
     </button>
-    <div class="overlay demo--2019-xtend">
+    <div class="overlay overlay-default demo--2019-xtend">
       <div class="overlay-container">
         <div class="overlay-inner">
+          <div class="overlay-design"></div>
 
           <div class="card card-overlay">
             <div class="card-design"></div>
@@ -148,11 +151,12 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
     <button type="button" class="btn btn-primary">
-      overlay screen
+      overlay screen full
     </button>
-    <div class="overlay overlay-screen demo--2019-xtend">
+    <div class="overlay overlay-default overlay-screen overlay-size-full demo--2019-xtend">
       <div class="overlay-container">
         <div class="overlay-inner">
+          <div class="overlay-design"></div>
 
             <div class="card card-overlay">
               <div class="card-design"></div>
@@ -175,9 +179,10 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       overlay position
     </button>
-    <div class="overlay overlay-position overlay-position-left demo--2019-xtend">
+    <div class="overlay overlay-default overlay-position overlay-position-left demo--2019-xtend">
       <div class="overlay-container">
         <div class="overlay-inner">
+          <div class="overlay-design"></div>
 
           <div class="card card-overlay">
             <div class="card-design"></div>
@@ -218,7 +223,7 @@ demo.htmlSource = `
       <div class="card-inner">
         <div class="card-content">
           <div class="card-block card-item">
-            <div class="card-title">Default</div>
+            <div class="card-title">Primary</div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
           </div>
         </div>
@@ -232,21 +237,7 @@ demo.htmlSource = `
       <div class="card-inner">
         <div class="card-content">
           <div class="card-block card-item">
-            <div class="card-title">Primary</div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
-          </div>
-        </div>
-      </div>
-    </a>
-  </div>
-
-  <div class="col-12 col-6-sm">
-    <a role="button" class="card card-white demo--2019-xtend">
-      <div class="card-design"></div>
-      <div class="card-inner">
-        <div class="card-content">
-          <div class="card-block card-item">
-            <div class="card-title">White</div>
+            <div class="card-title">Default</div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
           </div>
         </div>

@@ -16,9 +16,10 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       screen
     </button>
-    <div class="overlay overlay-screen">
+    <div class="overlay overlay-default overlay-screen">
       <div class="overlay-container">
         <div class="overlay-inner">
+          <div class="overlay-design"></div>
 
             <div class="card card-overlay">
               <div class="card-design"></div>
@@ -49,9 +50,10 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       screen image
     </button>
-    <div class="overlay overlay-screen">
+    <div class="overlay overlay-default overlay-screen">
       <div class="overlay-container">
         <div class="overlay-inner">
+          <div class="overlay-design"></div>
 
           <div class="card card-overlay">
             <div class="card-design"></div>
@@ -74,9 +76,10 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       screen image full
     </button>
-    <div class="overlay overlay-screen overlay-full">
+    <div class="overlay overlay-default overlay-screen overlay-size-full">
       <div class="overlay-container">
         <div class="overlay-inner">
+          <div class="overlay-design"></div>
 
           <div class="card card-overlay">
             <div class="card-design"></div>
@@ -99,9 +102,10 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       screen image full
     </button>
-    <div class="overlay overlay-screen overlay-full">
+    <div class="overlay overlay-default overlay-screen overlay-size-full">
       <div class="overlay-container">
         <div class="overlay-inner">
+          <div class="overlay-design"></div>
 
           <div class="card card-overlay">
             <div class="card-design"></div>
@@ -124,9 +128,10 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       screen group side image
     </button>
-    <div class="overlay overlay-screen">
+    <div class="overlay overlay-default overlay-screen">
       <div class="overlay-container">
         <div class="overlay-inner">
+          <div class="overlay-design"></div>
 
           <div class="card card-overlay">
             <div class="card-design"></div>
@@ -170,9 +175,10 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       screen full group side image
     </button>
-    <div class="overlay overlay-screen overlay-full">
+    <div class="overlay overlay-default overlay-screen overlay-size-full">
       <div class="overlay-container">
         <div class="overlay-inner">
+          <div class="overlay-design"></div>
 
           <div class="card card-overlay">
             <div class="card-design"></div>

@@ -16,7 +16,6 @@ Xt.mount.push({
 
     // log
 
-    let logTimeout
     const log = document.querySelector('#demo--slider-events-log')
 
     const logAdd = text => {
@@ -24,8 +23,8 @@ Xt.mount.push({
       // scroll
       log.scrollTo(0, log.scrollHeight)
       // hr
-      clearTimeout(logTimeout)
-      logTimeout = setTimeout(() => {
+      clearTimeout(window.logTimeout)
+      window.logTimeout = setTimeout(() => {
         log.innerHTML += '<hr/>'
       }, 1000)
     }
@@ -91,7 +90,7 @@ Xt.mount.push({
         <li class="slide col-6 col-4-sm">
           <div class="slide-inner">
 
-            <div class="card card-slide align-center">
+            <div class="card card-slide">
               <div class="card-design"></div>
               <div class="card-inner">
                 <div class="card-content">

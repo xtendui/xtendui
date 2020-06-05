@@ -17,6 +17,7 @@ demo.htmlSource = `
     <div class="drop-inner">
       <div class="drop-design"></div>
       <div class="drop-content">
+
         <ul class="list list-drop">
           <li>
             <button type="button">
@@ -34,6 +35,7 @@ demo.htmlSource = `
             </button>
           </li>
         </ul>
+
       </div>
     </div>
   </div>
@@ -47,6 +49,7 @@ demo.htmlSource = `
     <div class="drop-inner">
       <div class="drop-design"></div>
       <div class="drop-content">
+
         <ul class="list list-drop">
           <li>
             <button type="button">
@@ -62,10 +65,11 @@ demo.htmlSource = `
             <button type="button">
               Toggle
             </button>
-            <div class="drop drop-primary drop-center drop-middle">
+            <div class="drop drop-primary drop-after drop-middle">
               <div class="drop-inner">
                 <div class="drop-design"></div>
                 <div class="drop-content">
+
                   <ul class="list list-drop">
                     <li>
                       <button type="button">
@@ -85,6 +89,7 @@ demo.htmlSource = `
                         <div class="drop-inner">
                           <div class="drop-design"></div>
                           <div class="drop-content">
+
                             <ul class="list list-drop">
                               <li>
                                 <button type="button">
@@ -102,16 +107,19 @@ demo.htmlSource = `
                                 </button>
                               </li>
                             </ul>
+
                           </div>
                         </div>
                       </div>
                     </li>
                   </ul>
+
                 </div>
               </div>
             </div>
           </li>
         </ul>
+
       </div>
     </div>
   </div>

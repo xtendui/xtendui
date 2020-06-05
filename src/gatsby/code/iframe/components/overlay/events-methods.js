@@ -46,9 +46,10 @@ demo.htmlSource = `
   </button>
 </div>
 
-<div class="overlay overlay-large" id="overlay-nested">
+<div class="overlay overlay-default overlay-large" id="overlay-nested">
   <div class="overlay-container">
     <div class="overlay-inner">
+      <div class="overlay-design"></div>
 
       <div class="card card-overlay">
         <div class="card-design"></div>
@@ -77,7 +78,7 @@ demo.htmlSource = `
 
 <br/>
 
-<div class="card card-default card-small">
+<div class="card card-primary card-small">
   <div class="card-design"></div>
   <div class="card-inner">
     <div class="card-content">

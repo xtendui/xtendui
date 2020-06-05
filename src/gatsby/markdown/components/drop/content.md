@@ -3,7 +3,7 @@ type: "Components"
 badge: "Core"
 parent: "Drop"
 title: "Content"
-date: "2019-10-01"
+date: "2020-10-01"
 ---
 
 ## List
@@ -23,10 +23,147 @@ Use `li.xt-custom` to override styles applied by `.list.list-drop`.
 [[notePrimary]]
 | Drop uses card to style it's content, refer to [card's content](/components/card/content) for all **content**.
 
+
+### Asset
+
+If you want full width assets use `.card-asset`.
+
+<div class="table-scroll">
+
+|                         | Class                                     | Mixin                         | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.card-asset`                | Not Possible        | Full width block with responsive full assets            |
+
+</div>
+
+<script type="text/plain" class="language-markup">
+  <div class="card card-drop">
+    <div class="card-design"></div>
+    <div class="card-inner">
+      <div class="card-content">
+
+        <div class="card-asset">
+          <!-- content -->
+        </div>
+
+      </div>
+    </div>
+  </div>
+</script>
+
 <demo>
-  <demovanilla src="vanilla/components/drop/usage-card">
+  <demovanilla src="vanilla/components/drop/asset">
   </demovanilla>
 </demo>
+
+### Block
+
+Sequential `.card-block` stack vertically.
+
+<div class="table-scroll">
+
+|                         | Class                                     | Mixin                         | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.card-block.card-item`                | Not Possible        | Card blocks with spacing            |
+
+</div>
+
+<script type="text/plain" class="language-markup">
+  <div class="card card-drop">
+    <div class="card-design"></div>
+    <div class="card-inner">
+      <div class="card-content">
+
+        <div class="card-block card-item">
+          <!-- content -->
+        </div>
+
+        <div class="card-block card-item">
+          <!-- content -->
+        </div>
+
+      </div>
+    </div>
+  </div>
+</script>
+
+[[noteDefault]]
+| To have a separator between multiple `.card-block` use [card separator addon](/addons/card/separator).
+
+<demo>
+  <demovanilla src="vanilla/components/drop/block">
+  </demovanilla>
+</demo>
+
+You can add custom `.card-block` modifiers and style them as you like (e.g.: `.card-block-intro`).
+
+<demo>
+  <demovanilla src="vanilla/components/drop/block-intro">
+  </demovanilla>
+</demo>
+
+### Group
+
+To stack `.card-item` horizontally wrap them inside `.card-item-nested` and `.card-group`, with responsive classes if you need them.
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Example                       |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Class                   | `.card-group`                           | `.card-group`                      |
+| Class responsive        | `.card-group-{breakpoint}`              | `.card-group-sm`                   |
+
+</div>
+
+<script type="text/plain" class="language-markup">
+  <div class="card card-drop">
+    <div class="card-design"></div>
+    <div class="card-inner">
+      <div class="card-content">
+
+        <div class="card-item-nested card-item card-group">
+          <div class="card-block card-item">
+             <!-- content -->
+          </div>
+          <div class="card-block card-item">
+             <!-- content -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</script>
+
+You can add custom `.card-block` modifiers and style them as you like (e.g.: `.card-block-side`).
+
+[[noteDefault]]
+| To have a separator between multiple `.card-group` contents use [card separator addon](/addons/card/separator).
+
+<demo>
+  <demovanilla src="vanilla/components/drop/group">
+  </demovanilla>
+</demo>
+
+If you need to put an asset outside `.card-block`, just use `.card-item.card-block-side` and wrap the text inside another `.card-block.card-item`, like in the second example.
+
+The size of **blocks** is automatic, you can specify the **size** with [columns](/components/column), with responsive classes if you need them.
+
+<demo>
+  <demovanilla src="vanilla/components/drop/block-side">
+  </demovanilla>
+  <demovanilla src="vanilla/components/drop/block-side-size">
+  </demovanilla>
+</demo>
+
+
+
+
+
+
+
+
+
 
 ## Overflow
 

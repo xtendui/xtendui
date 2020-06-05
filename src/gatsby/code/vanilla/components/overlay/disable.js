@@ -13,9 +13,10 @@ demo.htmlSource = `
   <button type="button" class="btn btn-primary demo--overlay-disable-btn">
     Toggle
   </button>
-  <div class="overlay demo--overlay-disable">
+  <div class="overlay overlay-default demo--overlay-disable">
     <div class="overlay-container">
       <div class="overlay-inner">
+        <div class="overlay-design"></div>
 
           <div class="card card-overlay">
             <div class="card-design"></div>
@@ -37,9 +38,10 @@ demo.htmlSource = `
                     <button type="button" class="btn btn-primary">
                       Toggle
                     </button>
-                    <div class="overlay overlay-small">
+                    <div class="overlay overlay-default overlay-size-small">
                       <div class="overlay-container">
                         <div class="overlay-inner">
+                          <div class="overlay-design"></div>
 
                           <div class="card card-overlay">
                             <div class="card-design"></div>
@@ -64,6 +66,7 @@ demo.htmlSource = `
                                       <div class="drop-inner">
                                         <div class="drop-design"></div>
                                         <div class="drop-content">
+
                                           <ul class="list list-drop">
                                             <li>
                                               <button type="button" class="btn btn-default">
@@ -81,6 +84,7 @@ demo.htmlSource = `
                                               </button>
                                             </li>
                                           </ul>
+
                                         </div>
                                       </div>
                                     </div>

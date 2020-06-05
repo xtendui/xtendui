@@ -10,8 +10,10 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="row row-default">
+
   <div class="demo--col-custom-percent"></div>
   <div class="demo--col-custom-px"></div>
   <div class="col-auto"></div>
+
 </div>
 `

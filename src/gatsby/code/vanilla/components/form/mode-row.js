@@ -10,6 +10,7 @@ export const demo = {
 
 demo.htmlSource = `
 <form class="form-default">
+
   <div class="row row-form">
     <div class="col-form-double">
       <div class="form-group">
@@ -51,5 +52,6 @@ demo.htmlSource = `
   <button type="submit" class="btn btn-primary">
     submit
   </button>
+
 </form>
 `

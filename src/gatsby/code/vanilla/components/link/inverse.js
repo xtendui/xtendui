@@ -11,6 +11,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-default list-space-small align-items-center text-inverse"
   style="padding: 1rem 1.5rem; background: #0078ff;">
+
   <a href="#">
     link
   </a>
@@ -18,5 +19,6 @@ demo.htmlSource = `
   <a href="#" class="link-none">
     link
   </a>
+
 </div>
 `

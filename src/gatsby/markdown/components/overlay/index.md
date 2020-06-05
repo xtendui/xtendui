@@ -40,9 +40,10 @@ Use this markup to create an **overlay**.
   <button type="button" data-xt-overlay="{ targets: '#overlay_custom' }">
     <!-- content -->
   </button>
-  <div class="overlay" id="overlay-custom">
+  <div class="overlay overlay-default" id="overlay-custom">
     <div class="overlay-container">
       <div class="overlay-inner">
+        <div class="overlay-design"></div>
         <!-- content -->
       </div>
     </div>
@@ -52,9 +53,10 @@ Use this markup to create an **overlay**.
 You can use this markup to create an **overlay without toggle**.
 
 <script type="text/plain" class="language-markup">
-<div class="overlay active" id="overlay_custom" data-xt-overlay="{ on: false, instant: false }">
+<div class="overlay overlay-default active" id="overlay_custom" data-xt-overlay="{ on: false, instant: false }">
   <div class="overlay-container">
     <div class="overlay-inner">
+      <div class="overlay-design"></div>
       <!-- content -->
     </div>
   </div>

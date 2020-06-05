@@ -17,11 +17,12 @@ demo.htmlSource = `
 <div class="list list-default list-space-small align-items-center demo--2019-position-slide">
   <div data-xt-overlay>
     <button type="button" class="btn btn-primary">
-      overlay position left
+      position left
     </button>
-    <div class="overlay overlay-position overlay-position-left demo--2019-position-slide">
+    <div class="overlay overlay-default overlay-position overlay-position-left demo--2019-position-slide">
       <div class="overlay-container">
         <div class="overlay-inner">
+          <div class="overlay-design"></div>
 
           <div class="card card-overlay">
             <div class="card-design"></div>
@@ -50,11 +51,12 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
     <button type="button" class="btn btn-primary">
-      overlay position right
+      position right
     </button>
-    <div class="overlay overlay-position overlay-position-right demo--2019-position-slide">
+    <div class="overlay overlay-default overlay-position overlay-position-right demo--2019-position-slide">
       <div class="overlay-container">
         <div class="overlay-inner">
+          <div class="overlay-design"></div>
 
           <div class="card card-overlay">
             <div class="card-design"></div>

@@ -15,9 +15,10 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       close fixed
     </button>
-    <div class="overlay overlay-close-fixed">
+    <div class="overlay overlay-default overlay-close-fixed">
       <div class="overlay-container">
         <div class="overlay-inner">
+          <div class="overlay-design"></div>
 
           <div class="card card-overlay">
             <div class="card-design"></div>
@@ -76,9 +77,10 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       screen close fixed
     </button>
-    <div class="overlay overlay-screen">
+    <div class="overlay overlay-default overlay-screen">
       <div class="overlay-container">
         <div class="overlay-inner">
+          <div class="overlay-design"></div>
 
           <div class="card card-overlay">
             <div class="card-design"></div>

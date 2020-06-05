@@ -36,32 +36,32 @@
 
 // preset
 
+.card-drop {
+  // default options
+  width: 100vw; // fill size max-width
+}
+
 .card-overlay {
   // default options
-  .card-white();
-  .card-medium();
-  > .card-design {
-    box-shadow: @shadow-light;
-  }
-  .card-block {
-    padding: 2em 2em !important;
-    @media @min-sm {
-      padding: 3em 3em !important;
-    }
+  > .btn-close {
+    .btn-big();
+    .btn-icon();
+    top: 2rem;
+    right: 2rem;
   }
 }
 
 .card-slide {
   // default options
-  .card-default();
-  .card-large();
-}
-
-.card-drop {
-  width: 40rem;
-  // default options
-  .card-white();
-  .card-small();
+  color: @text;
+  > .card-design {
+    border-color: @shade-200;
+    background: @shade-200;
+  }
+  > .card-inner > .card-content {
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 // variant
@@ -69,8 +69,8 @@
 .card-default {
   color: @text;
   > .card-design {
-    border-color: @shade-200;
-    background: @shade-200;
+    border-color: @white;
+    background: @white;
   }
 }
 
@@ -79,14 +79,6 @@
   > .card-design {
     border-color: @accent;
     background: @accent;
-  }
-}
-
-.card-white {
-  color: @text;
-  > .card-design {
-    border-color: @white;
-    background: @white;
   }
 }
 
@@ -99,7 +91,7 @@
     padding: 2em 2.5em;
     .card-title {
       .h4();
-      .spacing-tiny();
+      .spacing-medium();
     }
   }
 }
@@ -111,7 +103,7 @@
     padding: 2em 2.5em;
     .card-title {
       .h3();
-      .spacing-small();
+      .spacing-medium();
     }
   }
 }

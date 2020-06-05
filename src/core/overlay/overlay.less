@@ -1,23 +1,15 @@
-@import '~xtend-library/src/core/javascript/javascript.less';
 @import '~xtend-library/src/core/overlay/_overlay.less';
+@import '~xtend-library/src/core/javascript/javascript.less';
+@import '~xtend-library/src/core/container/container.less';
+@import '~xtend-library/src/core/card/card.less';
 
 /**
  * vars
  */
 
-// space
+// overlay external spacing
 
-@generate-overlay-space: @generate-container-space; // overlay external spacing
-
-// size
-
-@generate-overlay-size: tiny, small, medium, large, big, full; // overlay internal spacing
-@overlay-tiny: @breakpoint-xs - 60;
-@overlay-small: @breakpoint-sm - 60;
-@overlay-medium: @breakpoint-md - 60;
-@overlay-large: @breakpoint-lg - 60;
-@overlay-big: @breakpoint-xl - 60;
-@overlay-full: none;
+@generate-overlay-space: @generate-container-space;
 
 /**
  * overlay
@@ -33,10 +25,129 @@
     border-color: transparent;
   }
   // default options
-  .overlay-size(medium);
+  .overlay-size-small();
+  .overlay-medium();
+}
+
+// variant
+
+.overlay-default {
+  .overlay-inner {
+    color: @text;
+  }
+  .overlay-design {
+    border-color: @shade-200;
+    background: @white;
+    box-shadow: @shadow-light;
+  }
+}
+
+.overlay-primary {
+  .overlay-inner {
+    .text-inverse();
+  }
+  .overlay-design {
+    border-color: @accent-dark;
+    background: @accent;
+    box-shadow: @shadow-dark;
+  }
+}
+
+// size
+
+.overlay-size-tiny {
+  .overlay-inner, .card-overlay > .card-inner > .card-content {
+    max-width: 500px;
+  }
+}
+
+.overlay-size-small {
+  .overlay-inner, .card-overlay > .card-inner > .card-content {
+    max-width: 700px;
+  }
+}
+
+.overlay-size-medium {
+  .overlay-inner, .card-overlay > .card-inner > .card-content {
+    max-width: 900px;
+  }
+}
+
+.overlay-size-large {
+  .overlay-inner, .card-overlay > .card-inner > .card-content {
+    max-width: 1200px;
+  }
+}
+
+.overlay-size-big {
+  .overlay-inner, .card-overlay > .card-inner > .card-content {
+    max-width: 1600px;
+  }
+}
+
+.overlay-size-full {
+  .overlay-inner, .card-overlay > .card-inner > .card-content {
+    max-width: none;
+  }
+}
+
+// content size
+
+.overlay-small {
+  // card
+  .card-overlay {
+    .card-small();
+    .card-block {
+      padding: 2em 2em !important;
+    }
+  }
+}
+
+.overlay-medium {
+  // card
+  .card-overlay {
+    .card-small();
+    .card-block {
+      padding: 2em 2em !important;
+    }
+    @media @min-sm {
+      .card-medium();
+      .card-block {
+        padding: 2.5em 2.5em !important;
+      }
+    }
+  }
+}
+
+.overlay-large {
+  // card
+  .card-overlay {
+    .card-medium();
+    .card-block {
+      padding: 2.5em 2.5em !important;
+    }
+    @media @min-sm {
+      .card-large();
+      .card-block {
+        padding: 3em 3em !important;
+      }
+    }
+  }
 }
 
 // special
+
+.overlay-squared {
+  .overlay-design {
+    border-radius: 0;
+  }
+}
+
+.overlay-noborder {
+  .overlay-design {
+    border: 0;
+  }
+}
 
 .overlay-disable {
   // disable animation
@@ -54,6 +165,9 @@
 // animation
 
 .overlay {
+  .overlay-design {
+    opacity: 0;
+  }
   .card-overlay {
     > .card-design {
       opacity: 0;
@@ -69,6 +183,10 @@
   }
   &.in {
     animation-duration: @time-medium + @time-tiny; // needed for animation time and backdrop animation time, put max animation time
+    .overlay-design {
+      opacity: 1;
+      transition: opacity @time-medium @ease-in;
+    }
     .card-overlay {
       > .card-design {
         opacity: 1;
@@ -89,6 +207,10 @@
   }
   &.out {
     animation-duration: @time-small + @time-tiny; // needed for animation time and backdrop animation time, put max animation time
+    .overlay-design {
+      opacity: 0;
+      transition: opacity @time-small @ease-out @time-tiny;
+    }
     .card-overlay {
       > .card-design {
         opacity: 0;

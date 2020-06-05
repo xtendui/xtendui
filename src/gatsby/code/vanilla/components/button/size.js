@@ -10,6 +10,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="list list-default list-space-small align-items-center">
+
   <button type="button" class="btn btn-default">
     default
   </button>
@@ -33,5 +34,6 @@ demo.htmlSource = `
   <button type="button" class="btn btn-default btn-big">
     big
   </button>
+
 </div>
 `

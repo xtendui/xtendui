@@ -15,9 +15,10 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       default
     </button>
-    <div class="overlay">
+    <div class="overlay overlay-default">
       <div class="overlay-container">
         <div class="overlay-inner">
+          <div class="overlay-design"></div>
 
           <div class="card card-overlay">
             <div class="card-design"></div>
@@ -48,9 +49,10 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       tiny
     </button>
-    <div class="overlay overlay-tiny">
+    <div class="overlay overlay-default overlay-size-tiny">
       <div class="overlay-container">
         <div class="overlay-inner">
+          <div class="overlay-design"></div>
 
           <div class="card card-overlay">
             <div class="card-design"></div>
@@ -81,9 +83,10 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       small
     </button>
-    <div class="overlay overlay-small">
+    <div class="overlay overlay-default overlay-size-small">
       <div class="overlay-container">
         <div class="overlay-inner">
+          <div class="overlay-design"></div>
 
           <div class="card card-overlay">
             <div class="card-design"></div>
@@ -114,9 +117,10 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       medium
     </button>
-    <div class="overlay overlay-medium">
+    <div class="overlay overlay-default overlay-size-medium">
       <div class="overlay-container">
         <div class="overlay-inner">
+          <div class="overlay-design"></div>
 
           <div class="card card-overlay">
             <div class="card-design"></div>
@@ -147,9 +151,10 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       large
     </button>
-    <div class="overlay overlay-large">
+    <div class="overlay overlay-default overlay-size-large">
       <div class="overlay-container">
         <div class="overlay-inner">
+          <div class="overlay-design"></div>
 
           <div class="card card-overlay">
             <div class="card-design"></div>
@@ -180,9 +185,10 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       big
     </button>
-    <div class="overlay overlay-big">
+    <div class="overlay overlay-default overlay-size-big">
       <div class="overlay-container">
         <div class="overlay-inner">
+          <div class="overlay-design"></div>
 
           <div class="card card-overlay">
             <div class="card-design"></div>
@@ -213,9 +219,10 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       full
     </button>
-    <div class="overlay overlay-full">
+    <div class="overlay overlay-default overlay-size-full">
       <div class="overlay-container">
         <div class="overlay-inner">
+          <div class="overlay-design"></div>
 
           <div class="card card-overlay">
             <div class="card-design"></div>

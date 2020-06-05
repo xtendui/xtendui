@@ -3,7 +3,7 @@ type: "Components"
 badge: "Core"
 parent: "Card"
 title: "Content"
-date: "2019-10-01"
+date: "2020-10-01"
 ---
 
 ## Asset
@@ -19,7 +19,7 @@ If you want full width assets use `.card-asset`.
 </div>
 
 <script type="text/plain" class="language-markup">
-  <div class="card card-default">
+  <div class="card card-primary">
     <div class="card-design"></div>
     <div class="card-inner">
       <div class="card-content">
@@ -42,8 +42,16 @@ If you want full width assets use `.card-asset`.
 
 Sequential `.card-block` stack vertically.
 
+<div class="table-scroll">
+
+|                         | Class                                     | Mixin                         | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.card-block.card-item`                | Not Possible        | Card blocks with spacing            |
+
+</div>
+
 <script type="text/plain" class="language-markup">
-  <div class="card card-default">
+  <div class="card card-primary">
     <div class="card-design"></div>
     <div class="card-inner">
       <div class="card-content">
@@ -90,7 +98,7 @@ To stack `.card-item` horizontally wrap them inside `.card-item-nested` and `.ca
 </div>
 
 <script type="text/plain" class="language-markup">
-  <div class="card card-default">
+  <div class="card card-primary">
     <div class="card-design"></div>
     <div class="card-inner">
       <div class="card-content">
@@ -121,14 +129,11 @@ You can add custom `.card-block` modifiers and style them as you like (e.g.: `.c
 
 If you need to put an asset outside `.card-block`, just use `.card-item.card-block-side` and wrap the text inside another `.card-block.card-item`, like in the second example.
 
-<demo>
-  <demovanilla src="vanilla/components/card/block-side">
-  </demovanilla>
-</demo>
-
 The size of **blocks** is automatic, you can specify the **size** with [columns](/components/column), with responsive classes if you need them.
 
 <demo>
+  <demovanilla src="vanilla/components/card/block-side">
+  </demovanilla>
   <demovanilla src="vanilla/components/card/block-side-size">
   </demovanilla>
 </demo>
