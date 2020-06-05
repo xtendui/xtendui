@@ -1,15 +1,6 @@
 @import '~xtend-library/src/core/overlay/_overlay.less';
 @import '~xtend-library/src/core/javascript/javascript.less';
-@import '~xtend-library/src/core/container/container.less';
 @import '~xtend-library/src/core/card/card.less';
-
-/**
- * vars
- */
-
-// overlay external spacing
-
-@generate-overlay-space: @generate-container-space;
 
 /**
  * overlay
@@ -24,9 +15,37 @@
     border-style: solid;
     border-color: transparent;
   }
+  .overlay-container {
+    .overlay-space();
+  }
   // default options
   .overlay-size-small();
   .overlay-medium();
+}
+
+// space
+
+.overlay-space {
+  // same as .container-space
+  padding: 1.5rem;
+  @media @min-xxs {
+    padding: 2rem;
+  }
+  @media @min-xs {
+    padding: 3rem;
+  }
+  @media @min-sm {
+    padding: 3rem;
+  }
+  @media @min-md {
+    padding: 4rem;
+  }
+  @media @min-lg {
+    padding: 5rem;
+  }
+  @media @min-xl {
+    padding: 6rem;
+  }
 }
 
 // variant

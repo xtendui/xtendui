@@ -1,13 +1,71 @@
 @import '~xtend-library/src/core/container/_container.less';
 
 /**
- * vars
+ * container
  */
 
-// max-width
+.container {
+  .container-space();
+  max-width: 1600px;
+}
 
-@container-max: 1600px; // none for full width
+// space
 
-// container internal spacing
+.container-space {
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  @media @min-xxs {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+  @media @min-xs {
+    padding-right: 3rem;
+    padding-left: 3rem;
+  }
+  @media @min-sm {
+    padding-right: 3rem;
+    padding-left: 3rem;
+  }
+  @media @min-md {
+    padding-right: 4rem;
+    padding-left: 4rem;
+  }
+  @media @min-lg {
+    padding-right: 5rem;
+    padding-left: 5rem;
+  }
+  @media @min-xl {
+    padding-right: 6rem;
+    padding-left: 6rem;
+  }
+}
 
-@generate-container-space: none 1.5rem, xxs 2rem, xs 3rem, sm 3rem, md 4rem, lg 5rem, xl 6rem;
+.container-space-remove {
+  // same as .container-space
+  margin-right: -1.5rem;
+  margin-left: -1.5rem;
+  @media @min-xxs {
+    margin-right: -2rem;
+    margin-left: -2rem;
+  }
+  @media @min-xs {
+    margin-right: -3rem;
+    margin-left: -3rem;
+  }
+  @media @min-sm {
+    margin-right: -3rem;
+    margin-left: -3rem;
+  }
+  @media @min-md {
+    margin-right: -4rem;
+    margin-left: -4rem;
+  }
+  @media @min-lg {
+    margin-right: -5rem;
+    margin-left: -5rem;
+  }
+  @media @min-xl {
+    margin-right: -6rem;
+    margin-left: -6rem;
+  }
+}
