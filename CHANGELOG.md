@@ -1,3 +1,13 @@
+## [0.13.96](https://github.com/minimit/xtend-library/compare/v0.13.95...v0.13.96) (2020-06-05)
+
+
+### Bug Fixes
+
+* card drop demos + revision btn-close size ([048c7ae](https://github.com/minimit/xtend-library/commit/048c7ae2d89d585607d65e8677c289ecb2eca3c9))
+* overlay and drop content sizes ([06698f1](https://github.com/minimit/xtend-library/commit/06698f1819f32a1c659e91971ac87424c79c57c4))
+* overlay close fixed position + card demos ([6948490](https://github.com/minimit/xtend-library/commit/6948490a365fbee2c84b5e76cd80789c3e857202))
+* refactor cards inside drop and overlay ([190e502](https://github.com/minimit/xtend-library/commit/190e502bc997da860495a4a8e6f288ea044072f1))
+
 ## [0.13.95](https://github.com/minimit/xtend-library/compare/v0.13.94...v0.13.95) (2020-06-04)
 
 
