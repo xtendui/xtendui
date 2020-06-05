@@ -1,3 +1,10 @@
+## [0.13.98](https://github.com/minimit/xtend-library/compare/v0.13.97...v0.13.98) (2020-06-05)
+
+
+### Bug Fixes
+
+* overlay btn close ([885b22f](https://github.com/minimit/xtend-library/commit/885b22fd0470def868c87ebb51110c477ad36f0b))
+
 ## [0.13.97](https://github.com/minimit/xtend-library/compare/v0.13.96...v0.13.97) (2020-06-05)
 
 
