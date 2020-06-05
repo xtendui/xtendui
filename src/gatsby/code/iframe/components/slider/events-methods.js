@@ -52,7 +52,7 @@ demo.htmlSource = `
 <div class="slider" id="demo--slider-events">
 
   <div class="slides">
-    <ul class="slides-inner">
+    <ul class="slides-inner" id="demo--slider-events-targets">
 
       <li class="slide col-6 col-4-sm">
         <div class="slide-inner">

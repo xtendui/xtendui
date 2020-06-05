@@ -6,6 +6,8 @@ Xt.mount.push({
     // init
 
     let self = new Xt.Toggle(object, {
+      elements: 'a, button',
+      targets: '[class^="toggle-"], [class*=" toggle-"]',
       min: 1,
       auto: {
         time: 4000,
@@ -86,16 +88,16 @@ Xt.mount.push({
         const elements = self.elements
         const elIndex = elements.length
         const strEl = `<button type="button" class="btn btn-default">Toggle ${elIndex}</button>`
-        elements[elements.length - 1].after(Xt.createElement(strEl))
+        document.querySelector('#demo--toggle-events-elements').append(Xt.createElement(strEl))
         // targets
         const targets = self.targets
         const indexTr = targets.length
         const strTr = `<div class="note note-default note-background toggle-block">Target ${indexTr}</div>`
-        targets[targets.length - 1].after(Xt.createElement(strTr))
+        document.querySelector('#demo--toggle-events-targets').append(Xt.createElement(strTr))
         // reinit
         logAdd('<strong>reinit</strong>')
         self.reinit()
-      }, 1000).toString()
+      }, 200).toString()
     }
 
     addBtn.addEventListener('click', addFnc)
@@ -107,19 +109,17 @@ Xt.mount.push({
     const removeFnc = () => {
       clearTimeout(parseFloat(object.dataset.reinitTimeout))
       object.dataset.reinitTimeout = setTimeout(() => {
-        if (self.elements.length > 1 && self.targets.length > 1) {
-          logAdd('<strong>remove</strong>')
-          // element
-          const elements = self.elements
-          elements[elements.length - 1].remove()
-          // element
-          const targets = self.targets
-          targets[targets.length - 1].remove()
-          // reinit
-          logAdd('<strong>reinit</strong>')
-          self.reinit()
-        }
-      }, 1000).toString()
+        logAdd('<strong>remove</strong>')
+        // element
+        const elements = self.elements
+        elements[elements.length - 1].remove()
+        // element
+        const targets = self.targets
+        targets[targets.length - 1].remove()
+        // reinit
+        logAdd('<strong>reinit</strong>')
+        self.reinit()
+      }, 200).toString()
     }
 
     removeBtn.addEventListener('click', removeFnc)
@@ -133,7 +133,7 @@ Xt.mount.push({
       object.dataset.reinitTimeout = setTimeout(() => {
         logAdd('<strong>reinit</strong>')
         self.reinit()
-      }, 1000).toString()
+      }, 200).toString()
     }
 
     reinitBtn.addEventListener('click', reinitFnc)

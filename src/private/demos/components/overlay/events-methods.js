@@ -57,7 +57,7 @@ Xt.mount.push({
       object.dataset.reinitTimeout = setTimeout(() => {
         logAdd('<strong>reinit</strong>')
         self.reinit()
-      }, 1000).toString()
+      }, 200).toString()
     }
 
     reinitBtn.addEventListener('click', reinitFnc)

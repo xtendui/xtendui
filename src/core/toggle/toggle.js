@@ -2844,7 +2844,6 @@ class Toggle {
           // @FIX multiple calls coming from resize
           if (!self.initial) {
             // handler
-            self.destroy()
             self.reinit()
           }
         },
@@ -2859,6 +2858,8 @@ class Toggle {
    */
   reinit(saveCurrents = true) {
     const self = this
+    // @FIX bug when remove all elements, element becomes the object, then and add new elements
+    self.destroy()
     // reinit
     self.initLogic(saveCurrents)
     // listener dispatch
