@@ -73,6 +73,7 @@ demo.htmlSource = `
     <div class="note note-default note-background toggle-block">
       Target 2
     </div>
+  </div>
 </div>
 
 </div>

@@ -231,7 +231,7 @@ class Toggle {
       }
       // if currents < min
       let todo = options.min - currents
-      if (todo > 0) {
+      if (todo > 0 && self.targets.length) {
         let start = 0
         // @FIX initial activation drag wrap
         if (!self.disabled && self.dragger && options.drag.wrap) {
