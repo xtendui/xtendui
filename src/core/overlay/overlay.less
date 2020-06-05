@@ -1,24 +1,15 @@
-@import '~xtend-library/src/core/javascript/javascript.less';
 @import '~xtend-library/src/core/overlay/_overlay.less';
+@import '~xtend-library/src/core/javascript/javascript.less';
+@import '~xtend-library/src/core/container/container.less';
 @import '~xtend-library/src/core/card/card.less';
 
 /**
  * vars
  */
 
-// space
+// overlay external spacing
 
-@generate-overlay-space: @generate-container-space; // overlay external spacing
-
-// size
-
-@generate-overlay-size: tiny, small, medium, large, big, full;
-@overlay-size-tiny: @breakpoint-xs - 60;
-@overlay-size-small: @breakpoint-sm - 60;
-@overlay-size-medium: @breakpoint-md - 60;
-@overlay-size-large: @breakpoint-lg - 60;
-@overlay-size-big: @breakpoint-xl - 60;
-@overlay-size-full: none;
+@generate-overlay-space: @generate-container-space;
 
 /**
  * overlay
@@ -34,8 +25,8 @@
     border-color: transparent;
   }
   // default options
+  .overlay-size-small();
   .overlay-medium();
-  .overlay-size(small);
 }
 
 // variant
@@ -62,23 +53,85 @@
   }
 }
 
-// card size
+// size
+
+.overlay-size-tiny {
+  .overlay-inner, .card-overlay > .card-inner > .card-content {
+    max-width: 500px;
+  }
+}
+
+.overlay-size-small {
+  .overlay-inner, .card-overlay > .card-inner > .card-content {
+    max-width: 700px;
+  }
+}
+
+.overlay-size-medium {
+  .overlay-inner, .card-overlay > .card-inner > .card-content {
+    max-width: 900px;
+  }
+}
+
+.overlay-size-large {
+  .overlay-inner, .card-overlay > .card-inner > .card-content {
+    max-width: 1200px;
+  }
+}
+
+.overlay-size-big {
+  .overlay-inner, .card-overlay > .card-inner > .card-content {
+    max-width: 1600px;
+  }
+}
+
+.overlay-size-full {
+  .overlay-inner, .card-overlay > .card-inner > .card-content {
+    max-width: none;
+  }
+}
+
+// content size
 
 .overlay-small {
+  // card
   .card-overlay {
     .card-small();
+    .card-block {
+      padding: 2em 2em !important;
+    }
   }
 }
 
 .overlay-medium {
+  // card
   .card-overlay {
-    .card-medium();
+    .card-small();
+    .card-block {
+      padding: 2em 2em !important;
+    }
+    @media @min-sm {
+      .card-medium();
+      .card-block {
+        padding: 2.5em 2.5em !important;
+      }
+    }
   }
 }
 
 .overlay-large {
+  // card
   .card-overlay {
-    .card-large();
+    .card-medium();
+    .card-block {
+      padding: 2.5em 2.5em !important;
+    }
+    @media @min-sm {
+      .card-large();
+      .card-block {
+        padding: 3em 3em !important;
+      }
+    }
   }
 }
 

@@ -8,14 +8,14 @@ date: "2019-12-01"
 
 ## Size
 
-Set overlay size with this classes. They are generated with `@generate-overlay-size`.
+Set overlay size with this classes.
 
 <div class="table-scroll">
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
 | Class                   | `.overlay-size-{size}`                        | `.overlay-size-small`             |
-| Mixin                   | `.overlay-size({size})`                   | `.overlay-size(small)`         |
+| Mixin                   | `.overlay-size-{size}()`                   | `.overlay-size-small()`         |
 
 </div>
 

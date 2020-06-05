@@ -94,41 +94,68 @@
   }
 }
 
-// card size
+// content size
 
 .drop-small {
+  // list
   .list-drop {
     .list-btns({
       .btn-small();
       .padding(x, 2.5rem);
     });
   }
+  // card
   .card-drop {
     .card-small();
+    .card-block {
+      padding: 2em 2em !important;
+    }
   }
 }
 
 .drop-medium {
+  // list
   .list-drop {
     .list-btns({
       .btn-medium();
       .padding(x, 3rem);
     });
   }
+  // card
   .card-drop {
-    .card-medium();
+    .card-small();
+    .card-block {
+      padding: 2em 2em !important;
+    }
+    @media @min-sm {
+      .card-medium();
+      .card-block {
+        padding: 2.5em 2.5em !important;
+      }
+    }
   }
 }
 
 .drop-large {
+  // list
   .list-drop {
     .list-btns({
       .btn-large();
       .padding(x, 3.5rem);
     });
   }
+  // card
   .card-drop {
-    .card-large();
+    .card-small();
+    .card-block {
+      padding: 2em 2em !important;
+    }
+    @media @min-sm {
+      .card-large();
+      .card-block {
+        padding: 3em 3em !important;
+      }
+    }
   }
 }
 
