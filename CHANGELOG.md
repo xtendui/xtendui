@@ -1,3 +1,10 @@
+## [0.13.97](https://github.com/minimit/xtend-library/compare/v0.13.96...v0.13.97) (2020-06-05)
+
+
+### Bug Fixes
+
+* removed generation from container space and overlay space ([00b81d7](https://github.com/minimit/xtend-library/commit/00b81d767de971efaf4284d38d971c69165c757d))
+
 ## [0.13.96](https://github.com/minimit/xtend-library/compare/v0.13.95...v0.13.96) (2020-06-05)
 
 
