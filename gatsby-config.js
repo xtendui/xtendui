@@ -22,6 +22,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-less`,
       options: {
+        // resolve xtend-library less import
         paths: [__dirname],
       },
     },
@@ -38,15 +39,16 @@ module.exports = {
         icon: 'src/gatsby/assets/images/favicon.png',
       },
     },
-    // resolve js and css
+    // resolve
     {
       resolve: 'gatsby-plugin-module-resolver',
       options: {
         root: './',
         aliases: {
-          'xtend-library': './', // resolve xtend-library gatsby
           assets: './src/gatsby/assets',
           components: './src/gatsby/components',
+          // resolve xtend-library js import
+          '/src': './src',
         },
       },
     },

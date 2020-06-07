@@ -89,21 +89,21 @@ import 'regenerator-runtime/runtime'
 You need to import the **polyfills** files and the **main** js:
 
 ```jsx
-import 'xtend-library/src/polyfill.js'
-import { Xt } from 'xtend-library'
+import '/src/polyfill.js'
+import { Xt } from '/src/xt.js'
 ```
 
 Then you can import the **components you need** as described in the docs:
 
 ```jsx
-import 'xtend-library/src/extensions/slider/slider.js'
+import '/src/extensions/slider/slider.js'
 ```
 
 Or just import **all core** and **extensions** and **addons** needed (preferred method):
 
 ```jsx
-import 'xtend-library/src/xtend-core.js'
-import 'xtend-library/src/extensions/slider/slider.js'
+import '/src/xtend-core.js'
+import '/src/extensions/slider/slider.js'
 ```
 
 To modify a **less** or **js** file add [webpack resolve](/introduction/setup#usage-webpack) and fork the file copying it in your project.
@@ -123,7 +123,7 @@ Supported browsers are as follow: **explorer 12**, **firefox 38**, **opera 25**,
 If you want to support old browsers since Internet Explorer 11, import the polyfills:
 
 ```jsx
-import 'xtend-library/src/polyfill-old.js'
+import '/src/polyfill-old.js'
 ```
 
 And add this in **.browserslistrc**:

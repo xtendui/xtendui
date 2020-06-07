@@ -1,4 +1,4 @@
-import { Xt } from 'xtend-library'
+import { Xt } from '/src/xt.js'
 
 //
 // validation

@@ -1,5 +1,5 @@
-import { Xt } from 'xtend-library'
-import 'xtend-library/src/addons/animation/mouse-follow.js'
+import { Xt } from '/src/xt.js'
+import '/src/addons/animation/mouse-follow.js'
 
 /**
  * slider-navigation-sides

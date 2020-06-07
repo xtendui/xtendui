@@ -34,6 +34,15 @@ module.exports = {
                 },
               ],
             ],
+            plugins: [
+              [
+                'module-resolver',
+                {
+                  // resolve xtend-library js import
+                  root: ['./'],
+                },
+              ],
+            ],
           },
         },
       },
@@ -53,6 +62,7 @@ module.exports = {
             options: {
               sourceMap: true,
               lessOptions: {
+                // resolve xtend-library less import
                 paths: [__dirname],
               },
             },

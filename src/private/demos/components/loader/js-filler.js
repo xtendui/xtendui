@@ -1,5 +1,5 @@
-import { Xt } from 'xtend-library'
-import 'xtend-library/src/vars.js'
+import { Xt } from '/src/xt.js'
+import '/src/vars.js'
 import gsap from 'gsap'
 
 Xt.mount.push({

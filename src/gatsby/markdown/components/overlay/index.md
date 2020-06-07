@@ -16,7 +16,7 @@ To use this component import the **less** and **js** files accordingly:
 ```
 
 ```jsx
-import 'xtend-library/src/core/overlay/overlay.js'
+import '/src/core/overlay/overlay.js'
 ```
 
 Or just import **core**:
@@ -26,7 +26,7 @@ Or just import **core**:
 ```
 
 ```jsx
-import 'xtend-library/src/xtend-core.js'
+import '/src/xtend-core.js'
 ```
 
 [[noteDefault]]

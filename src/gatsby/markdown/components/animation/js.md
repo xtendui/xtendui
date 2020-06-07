@@ -17,7 +17,7 @@ For javascript animations we use [gsap](https://greensock.com/gsap/). If you imp
 In `/src/vars.js` there are js variables for animation beziers and timing. Import it where you need animation variables:
 
 ```jsx
-import 'xtend-library/src/vars.js'
+import '/src/vars.js'
 ```
 
 And access the variables this way: `Xt.vars.timeBig`, `'linear'`.

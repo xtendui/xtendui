@@ -16,13 +16,13 @@ To use this component import the **less** and **js** files accordingly:
 ```
 
 ```jsx
-import 'xtend-library/src/core/toggle/toggle.js'
+import '/src/core/toggle/toggle.js'
 ```
 
 Or just import **core**:
 
 ```jsx
-import 'xtend-library/src/xtend-core.js'
+import '/src/xtend-core.js'
 ```
 
 [[noteDefault]]

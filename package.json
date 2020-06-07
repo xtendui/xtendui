@@ -45,6 +45,7 @@
     "@semantic-release/github": "^5.5.8",
     "@semantic-release/release-notes-generator": "^7.3.5",
     "babel-loader": "^8.0.6",
+    "babel-plugin-module-resolver": "^4.0.0",
     "babel-preset-gatsby": "^0.2.29",
     "clipboard": "^2.0.4",
     "css-loader": "^3.4.2",

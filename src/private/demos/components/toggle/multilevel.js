@@ -1,1 +1,1 @@
-import 'xtend-library/src/addons/toggle/multilevel.js'
+import '/src/addons/toggle/multilevel.js'

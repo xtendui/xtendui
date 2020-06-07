@@ -1,5 +1,5 @@
-import { Xt } from 'xtend-library'
-import 'xtend-library/src/addons/utils/google-locator.js'
+import { Xt } from '/src/xt.js'
+import '/src/addons/utils/google-locator.js'
 
 /**
  * googlelocator

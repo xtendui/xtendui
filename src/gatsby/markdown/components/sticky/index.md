@@ -16,7 +16,7 @@ To use this component import the **less** and **js** files accordingly:
 ```
 
 ```jsx
-import 'xtend-library/src/extensions/sticky/sticky.js'
+import '/src/extensions/sticky/sticky.js'
 ```
 
 Or just import **extensions**:
@@ -26,7 +26,7 @@ Or just import **extensions**:
 ```
 
 ```jsx
-import 'xtend-library/src/xtend-extensions.js'
+import '/src/xtend-extensions.js'
 ```
 
 [[noteDefault]]
