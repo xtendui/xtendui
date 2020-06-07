@@ -12,7 +12,7 @@ categories: ["100-Core"]
 To use this component import the **less** and **js** files accordingly:
 
 ```less
-@import '~xtend-library/src/core/toggle/toggle.less';
+@import '/src/core/toggle/toggle.less';
 ```
 
 ```jsx

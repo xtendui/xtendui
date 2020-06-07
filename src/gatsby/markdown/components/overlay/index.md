@@ -12,7 +12,7 @@ categories: ["100-Core"]
 To use this component import the **less** and **js** files accordingly:
 
 ```less
-@import '~xtend-library/src/core/overlay/overlay.less';
+@import '/src/core/overlay/overlay.less';
 ```
 
 ```jsx
@@ -22,7 +22,7 @@ import 'xtend-library/src/core/overlay/overlay.js'
 Or just import **core**:
 
 ```less
-@import '~xtend-library/src/xtend-core.less';
+@import '/src/xtend-core.less';
 ```
 
 ```jsx

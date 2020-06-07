@@ -13,13 +13,13 @@ date: "2018-01-01"
 To use this component import the **less** files accordingly:
 
 ```less
-@import '~xtend-library/src/core/global/global.less';
+@import '/src/core/global/global.less';
 ```
 
 Or just import **core**:
 
 ```less
-@import '~xtend-library/src/xtend-core.less';
+@import '/src/xtend-core.less';
 ```
 
 [[noteDefault]]

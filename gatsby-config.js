@@ -3,6 +3,7 @@
  */
 
 const fs = require('fs')
+const path = require('path')
 const version = JSON.parse(fs.readFileSync('package.json').toString()).version
 
 module.exports = {
@@ -18,7 +19,12 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',
-    'gatsby-plugin-less',
+    {
+      resolve: `gatsby-plugin-less`,
+      options: {
+        paths: [__dirname],
+      },
+    },
     // manifest
     {
       resolve: 'gatsby-plugin-manifest',

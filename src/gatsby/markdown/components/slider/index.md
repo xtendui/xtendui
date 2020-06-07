@@ -12,7 +12,7 @@ categories: ["400-Extensions"]
 To use this component import the **less** and **js** files accordingly:
 
 ```less
-@import '~xtend-library/src/extensions/slider/slider.less';
+@import '/src/extensions/slider/slider.less';
 ```
 
 ```jsx
@@ -22,7 +22,7 @@ import 'xtend-library/src/extensions/slider/slider.js'
 Or just import **extensions**:
 
 ```less
-@import '~xtend-library/src/xtend-extensions.less';
+@import '/src/xtend-extensions.less';
 ```
 
 ```jsx

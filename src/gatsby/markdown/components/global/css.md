@@ -8,7 +8,7 @@ date: "2019-12-01"
 
 ## Vars
 
-Most of the variables are inside `~xtend-library/src/core/global/global.less`, specific component variables are inside the component's less files.
+Most of the variables are inside `/src/core/global/global.less`, specific component variables are inside the component's less files.
 
 #### Generate
 

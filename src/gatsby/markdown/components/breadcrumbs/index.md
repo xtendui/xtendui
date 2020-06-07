@@ -12,13 +12,13 @@ categories: ["100-Core"]
 To use this component import the **less** files accordingly:
 
 ```less
-@import '~xtend-library/src/core/breadcrumbs/breadcrumbs.less';
+@import '/src/core/breadcrumbs/breadcrumbs.less';
 ```
 
 Or just import **core**:
 
 ```less
-@import '~xtend-library/src/xtend-core.less';
+@import '/src/xtend-core.less';
 ```
 
 [[noteDefault]]

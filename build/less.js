@@ -6,7 +6,7 @@ const writeFile = require('write')
 let lessCore = ''
 const lessCoreGlob = new glob.Glob('src/core/**/*.less', { ignore: ['**/_*.less'] }, (er, files) => {
   for (const file of files) {
-    lessCore += `@import '~xtend-library/${file}';\n`
+    lessCore += `@import '/${file}';\n`
   }
 })
 lessCoreGlob.on('end', filepath => {
@@ -18,7 +18,7 @@ lessCoreGlob.on('end', filepath => {
 let lessAddons = ''
 const lessAddonsGlob = new glob.Glob('src/addons/**/*.less', { ignore: ['**/_*.less'] }, (er, files) => {
   for (const file of files) {
-    lessAddons += `@import '~xtend-library/${file}';\n`
+    lessAddons += `@import '/${file}';\n`
   }
 })
 lessAddonsGlob.on('end', filepath => {
@@ -30,7 +30,7 @@ lessAddonsGlob.on('end', filepath => {
 let lessExtensions = ''
 const lessExtensionsGlob = new glob.Glob('src/extensions/**/*.less', { ignore: ['**/_*.less'] }, (er, files) => {
   for (const file of files) {
-    lessExtensions += `@import '~xtend-library/${file}';\n`
+    lessExtensions += `@import '/${file}';\n`
   }
 })
 lessExtensionsGlob.on('end', filepath => {
@@ -42,7 +42,7 @@ lessExtensionsGlob.on('end', filepath => {
 let lessDemos = ''
 const lessDemosGlob = new glob.Glob('src/private/demos/**/*.less', { ignore: ['**/_*.less'] }, (er, files) => {
   for (const file of files) {
-    lessDemos += `@import '~xtend-library/${file}';\n`
+    lessDemos += `@import '/${file}';\n`
   }
 })
 lessDemosGlob.on('end', filepath => {

@@ -18,12 +18,6 @@ module.exports = {
     filename: '[name].min.js',
     path: __dirname,
   },
-  resolve: {
-    alias: {
-      // resolve xtend-library js and css
-      'xtend-library': path.resolve(__dirname, './'),
-    },
-  },
   module: {
     rules: [
       {
@@ -58,6 +52,9 @@ module.exports = {
             loader: 'less-loader',
             options: {
               sourceMap: true,
+              lessOptions: {
+                paths: [__dirname],
+              },
             },
           },
         ],
