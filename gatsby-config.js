@@ -3,7 +3,6 @@
  */
 
 const fs = require('fs')
-const path = require('path')
 const version = JSON.parse(fs.readFileSync('package.json').toString()).version
 
 module.exports = {
