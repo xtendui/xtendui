@@ -1,6 +1,6 @@
 if (typeof window !== 'undefined') {
-  require('/src/core/drop/drop.js')
-  require('/src/core/form/form.js')
-  require('/src/core/overlay/overlay.js')
-  require('/src/core/toggle/toggle.js')
+  require('xtend-library/src/core/drop/drop.js')
+  require('xtend-library/src/core/form/form.js')
+  require('xtend-library/src/core/overlay/overlay.js')
+  require('xtend-library/src/core/toggle/toggle.js')
 }

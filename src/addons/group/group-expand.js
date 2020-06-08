@@ -1,4 +1,4 @@
-import { Xt } from '/src/xt.js'
+import { Xt } from 'xtend-library/src/xt.js'
 
 /**
  * group-expand

@@ -1,5 +1,5 @@
-import { Xt } from '/src/xt.js'
-import '/src/extensions/scroll/scroll.js'
+import { Xt } from 'xtend-library/src/xt.js'
+import 'xtend-library/src/extensions/scroll/scroll.js'
 import gsap from 'gsap'
 
 Xt.mount.push({

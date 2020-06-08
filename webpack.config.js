@@ -18,6 +18,12 @@ module.exports = {
     filename: '[name].min.js',
     path: __dirname,
   },
+  resolve: {
+    alias: {
+      // resolve xtend-library js and less import
+      'xtend-library': path.resolve(__dirname, './'),
+    },
+  },
   module: {
     rules: [
       {
@@ -31,15 +37,6 @@ module.exports = {
                 {
                   useBuiltIns: 'entry',
                   corejs: 2,
-                },
-              ],
-            ],
-            plugins: [
-              [
-                'module-resolver',
-                {
-                  // resolve xtend-library js import
-                  root: ['./'],
                 },
               ],
             ],
@@ -61,10 +58,6 @@ module.exports = {
             loader: 'less-loader',
             options: {
               sourceMap: true,
-              lessOptions: {
-                // resolve xtend-library less import
-                paths: [__dirname],
-              },
             },
           },
         ],

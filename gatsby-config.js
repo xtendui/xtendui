@@ -3,6 +3,7 @@
  */
 
 const fs = require('fs')
+const path = require('path')
 const version = JSON.parse(fs.readFileSync('package.json').toString()).version
 
 module.exports = {
@@ -18,13 +19,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',
-    {
-      resolve: `gatsby-plugin-less`,
-      options: {
-        // resolve xtend-library less import
-        paths: [__dirname],
-      },
-    },
+    'gatsby-plugin-less',
     // manifest
     {
       resolve: 'gatsby-plugin-manifest',
@@ -46,8 +41,8 @@ module.exports = {
         aliases: {
           assets: './src/gatsby/assets',
           components: './src/gatsby/components',
-          // resolve xtend-library js import
-          '/src': './src',
+          // resolve xtend-library js and less import
+          'xtend-library': path.resolve(__dirname, './'),
         },
       },
     },

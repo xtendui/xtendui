@@ -1,5 +1,5 @@
-import { Xt } from '/src/xt.js'
-import '/src/core/toggle/toggle.js'
+import { Xt } from 'xtend-library/src/xt.js'
+import 'xtend-library/src/core/toggle/toggle.js'
 import RJSON from 'relaxed-json'
 
 class Overlay extends Xt.Toggle {

@@ -1,3 +1,3 @@
-import { Xt } from '/src/xt.js'
-import '/src/core/drop/drop.js'
-import '/src/core/overlay/overlay.js'
+import { Xt } from 'xtend-library/src/xt.js'
+import 'xtend-library/src/core/drop/drop.js'
+import 'xtend-library/src/core/overlay/overlay.js'

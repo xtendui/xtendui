@@ -1,5 +1,5 @@
-import { Xt } from '/src/xt.js'
-import '/src/addons/form/textarea-autosize.js'
+import { Xt } from 'xtend-library/src/xt.js'
+import 'xtend-library/src/addons/form/textarea-autosize.js'
 
 Xt.mount.push({
   matches: '.demo--textarea-autosize',

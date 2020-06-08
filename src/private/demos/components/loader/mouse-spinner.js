@@ -1,5 +1,5 @@
-import { Xt } from '/src/xt.js'
-import '/src/addons/animation/mouse-follow.js'
+import { Xt } from 'xtend-library/src/xt.js'
+import 'xtend-library/src/addons/animation/mouse-follow.js'
 
 Xt.mount.push({
   matches: '.demo--loader-mouse-spinner',
