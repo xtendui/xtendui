@@ -4,8 +4,6 @@
 
 const fs = require('fs')
 const path = require('path')
-const postcsImport = require('postcss-import')
-const LessPluginAliases = require('less-plugin-aliases').default
 const version = JSON.parse(fs.readFileSync('package.json').toString()).version
 
 module.exports = {
@@ -21,38 +19,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',
-    {
-      resolve: `gatsby-plugin-less`,
-      // fix less resolve with old less-loader with tilde https://github.com/gatsbyjs/gatsby/issues/24867
-      options: {
-        postCssPlugins: [
-          postcsImport({
-            resolve: function(id) {
-              const arr = id.split('/')
-              const first = arr[0]
-              if (first === '~xtend-library') {
-                arr.shift()
-                const theme = path.resolve(__dirname, './' + arr.join('/'))
-                const module = path.resolve(__dirname, './node_modules/' + arr.join('/'))
-                if (fs.existsSync(theme)) {
-                  return theme
-                } else {
-                  return module
-                }
-              }
-            },
-          }),
-        ],
-        lessPlugins: [
-          new LessPluginAliases({
-            prefix: '',
-            aliases: {
-              'xtend-library': path.resolve(__dirname, './'),
-            },
-          }),
-        ],
-      },
-    },
+    'gatsby-plugin-less',
     // manifest
     {
       resolve: 'gatsby-plugin-manifest',
