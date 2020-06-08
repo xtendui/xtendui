@@ -88,9 +88,6 @@
     "webpack-cli": "^3.3.11",
     "write": "^1.0.3"
   },
-  "resolutions": {
-    "webpack-hot-middleware": "git://github.com/minimit/webpack-hot-middleware.git#fix-iframe"
-  },
   "release": {
     "branch": "master",
     "plugins": [
