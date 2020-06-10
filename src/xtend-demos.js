@@ -28,6 +28,7 @@ if (typeof window !== 'undefined') {
   require('xtend-library/src/private/demos/themes/animation/2020-bertani-listing.js')
   require('xtend-library/src/private/demos/themes/animation/2020-euroricambi-collapse.js')
   require('xtend-library/src/private/demos/themes/media/2020-aniyeby-mask.js')
+  require('xtend-library/src/private/demos/themes/media/2020-bertani-mask.js')
   require('xtend-library/src/private/demos/themes/overlay/2019-position-slide.js')
   require('xtend-library/src/private/demos/themes/slider/2019-sun68-hero.js')
   require('xtend-library/src/private/demos/themes/slider/2020-aniyeby-hero.js')
