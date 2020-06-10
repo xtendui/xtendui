@@ -12,7 +12,6 @@ Xt.mount.push({
     // append
 
     if (!object.querySelector('.media_mask')) {
-      console.log(object.querySelector('.media-container'))
       object.querySelector('.media-container').prepend(Xt.createElement('<span class="media_mask"></span>'))
     }
 

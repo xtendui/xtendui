@@ -811,7 +811,6 @@ class Slider extends Xt.Toggle {
     const options = self.options
     // friction
     const velocity = Math.abs(self.detail.dragVelocity)
-    console.log(velocity)
     if (velocity > options.drag.frictionLimit) {
       // disable dragger
       dragger.classList.add('xt-pointer-events-none')
