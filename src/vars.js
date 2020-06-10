@@ -9,6 +9,7 @@ import BezierEasing from 'bezier-easing'
 
 gsap.defaults({
   overwrite: 'auto',
+  force3D: false,
 })
 
 gsap.globalTimeline.timeScale(1000) // milliseconds instead of seconds
