@@ -4,6 +4,10 @@ import 'xtend-library/src/extensions/slider/slider.js'
 import 'xtend-library/src/addons/slider/navigation-sides.js'
 import gsap from 'gsap'
 
+/**
+ * .demo--2020-aniyeby-hero
+ */
+
 Xt.mount.push({
   matches: '.demo--2020-aniyeby-hero',
   mount: object => {
@@ -90,7 +94,7 @@ Xt.mount.push({
           const assetCover = target.querySelector('.slide_cover')
           gsap.set(assetCover, { x: 100 * self.direction + '%', skewX: 0 })
           gsap.to(assetCover, { x: -100 * self.direction + '%', duration: assetCoverTimeOn, ease: assetCoverEaseOn })
-          gsap.to(assetCover, { skewX: 10 * self.direction, duration: assetCoverTimeOn / 2, ease: assetCoverEaseOn }).eventCallback('onComplete', () => {
+          gsap.to(assetCover, { skewX: 5 * self.direction, duration: assetCoverTimeOn / 2, ease: assetCoverEaseOn }).eventCallback('onComplete', () => {
             gsap.to(assetCover, { skewX: 0, duration: assetCoverTimeOn / 2, ease: assetCoverEaseOn })
           })
           // assetMask

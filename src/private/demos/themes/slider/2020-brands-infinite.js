@@ -3,6 +3,10 @@ import 'xtend-library/src/vars.js'
 import 'xtend-library/src/extensions/slider/slider.js'
 import gsap from 'gsap'
 
+/**
+ * .demo--2020-brands-infinite
+ */
+
 Xt.mount.push({
   matches: '.demo--2020-brands-infinite',
   mount: object => {

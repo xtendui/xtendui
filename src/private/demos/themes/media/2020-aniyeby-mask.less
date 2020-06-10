@@ -1,0 +1,63 @@
+@import (reference) '~xtend-library/src/xtend-core.less';
+@import '~xtend-library/src/core/media/media.less';
+
+/**
+ * .demo--2020-aniyeby-mask
+ */
+
+.demo--2020-aniyeby-mask {
+  /**
+   * .block-listing
+   */
+  
+  .block-listing {
+  }
+  
+  .block-listing_inner {
+    > .row {
+      .row-space(big);
+    }
+  }
+  
+  .block-listing_col {
+    .col(12);
+    .col(6, sm);
+    .col(3, lg);
+  }
+  
+  .block-listing_item {
+    .link-none();
+    .full();
+    color: @text !important;
+  }
+  
+  .block-listing_img {
+    text-align: center;
+    .media-container {
+      padding-bottom: 150%;
+    }
+  }
+  
+  .block-listing_title {
+    .margin(top, small);
+    .font-sans-semibold();
+    font-size: 3.2rem;
+    text-align: center;
+  }
+  
+  /**
+   * .media_mask
+   */
+  
+  .media_mask {
+    position: absolute;
+    z-index: @index-active;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: @white;
+    opacity: 0;
+  }
+
+}
