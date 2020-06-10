@@ -81,7 +81,7 @@ Xt.mount.push({
           gsap.killTweensOf(assetMaskInner)
           gsap.set(assetMaskInner, { x: 0 })
           // asset
-          const asset = target.querySelector('.slide_item img')
+          const asset = target.querySelector('.slide_asset .media')
           gsap.killTweensOf(asset)
           gsap.set(asset, { scale: 1 })
         } else {
@@ -100,7 +100,7 @@ Xt.mount.push({
           gsap.set(assetMaskInner, { x: -100 * self.direction + '%' })
           gsap.to(assetMaskInner, { x: 0, duration: assetMaskTime, ease: assetMaskEase })
           // asset
-          const asset = target.querySelector('.slide_item img')
+          const asset = target.querySelector('.slide_asset .media')
           gsap.set(asset, { scale: 1 + assetZoom })
           gsap.to(asset, { scale: 1, duration: assetTime, ease: assetEase, delay: assetDelay })
         }
