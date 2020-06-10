@@ -1,3 +1,12 @@
+## [0.13.99](https://github.com/minimit/xtend-library/compare/v0.13.98...v0.13.99) (2020-06-10)
+
+
+### Bug Fixes
+
+* **slider:** fix dragreset not when clicking ([2f53e8a](https://github.com/minimit/xtend-library/commit/2f53e8a15da1d15bb9c6474b25f34b7e594c589d))
+* fix toggle when adding remove elements and targets ([4464e49](https://github.com/minimit/xtend-library/commit/4464e4936a0f5dadac4276721ca723e05babea34))
+* slider intialization fix js error when to targets ([be4ff3e](https://github.com/minimit/xtend-library/commit/be4ff3ea68de2b523ad54afdcfe47b9fa602df9f))
+
 ## [0.13.98](https://github.com/minimit/xtend-library/compare/v0.13.97...v0.13.98) (2020-06-05)
 
 
