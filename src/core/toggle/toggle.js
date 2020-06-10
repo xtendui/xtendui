@@ -231,7 +231,7 @@ class Toggle {
       }
       // if currents < min
       let todo = options.min - currents
-      if (todo > 0) {
+      if (todo > 0 && self.targets.length) {
         let start = 0
         // @FIX initial activation drag wrap
         if (!self.disabled && self.dragger && options.drag.wrap) {
@@ -2844,7 +2844,6 @@ class Toggle {
           // @FIX multiple calls coming from resize
           if (!self.initial) {
             // handler
-            self.destroy()
             self.reinit()
           }
         },
@@ -2859,6 +2858,8 @@ class Toggle {
    */
   reinit(saveCurrents = true) {
     const self = this
+    // @FIX bug when remove all elements, element becomes the object, then and add new elements
+    self.destroy()
     // reinit
     self.initLogic(saveCurrents)
     // listener dispatch

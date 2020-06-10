@@ -103,11 +103,11 @@ Xt.mount.push({
 
           </div>
         </li>`
-        targets[targets.length - 1].after(Xt.createElement(strTr))
+        document.querySelector('#demo--slider-events-targets').append(Xt.createElement(strTr))
         // reinit
         logAdd('<strong>reinit</strong>')
         self.reinit()
-      }, 1000).toString()
+      }, 200).toString()
     }
 
     addBtn.addEventListener('click', addFnc)
@@ -120,18 +120,16 @@ Xt.mount.push({
       clearTimeout(parseFloat(object.dataset.reinitTimeout))
       object.dataset.reinitTimeout = setTimeout(() => {
         logAdd('<strong>remove</strong>')
-        if (self.elements.length > 1 && self.targets.length > 1) {
-          // elements
-          const elements = self.elements.filter(x => !x.classList.contains('xt-wrap'))
-          elements[elements.length - 1].remove()
-          // targets
-          const targets = self.targets.filter(x => !x.classList.contains('xt-wrap'))
-          targets[targets.length - 1].remove()
-          // reinit
-          logAdd('<strong>reinit</strong>')
-          self.reinit()
-        }
-      }, 1000).toString()
+        // elements
+        const elements = self.elements.filter(x => !x.classList.contains('xt-wrap'))
+        elements[elements.length - 1].remove()
+        // targets
+        const targets = self.targets.filter(x => !x.classList.contains('xt-wrap'))
+        targets[targets.length - 1].remove()
+        // reinit
+        logAdd('<strong>reinit</strong>')
+        self.reinit()
+    }, 200).toString()
     }
 
     removeBtn.addEventListener('click', removeFnc)
@@ -145,7 +143,7 @@ Xt.mount.push({
       object.dataset.reinitTimeout = setTimeout(() => {
         logAdd('<strong>reinit</strong>')
         self.reinit()
-      }, 1000).toString()
+      }, 200).toString()
     }
 
     reinitBtn.addEventListener('click', reinitFnc)

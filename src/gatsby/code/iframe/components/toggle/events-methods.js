@@ -49,27 +49,32 @@ demo.htmlSource = `
 
 <br/>
 
-<div class="list list-default list-space-small align-items-center" id="demo--toggle-events">
+<div id="demo--toggle-events">
 
-  <button type="button" class="btn btn-default">
-    Toggle 0
-  </button>
-  <button type="button" class="btn btn-default">
-    Toggle 1
-  </button>
-  <button type="button" class="btn btn-default active">
-    Toggle 2
-  </button>
+  <div class="list list-default list-space-small align-items-center" id="demo--toggle-events-elements">
+    <button type="button" class="btn btn-default">
+      Toggle 0
+    </button>
+    <button type="button" class="btn btn-default">
+      Toggle 1
+    </button>
+    <button type="button" class="btn btn-default active">
+      Toggle 2
+    </button>
+  </div>
 
-  <div class="note note-default note-background toggle-block">
-    Target 0
+  <div class="list list-default list-space-small align-items-center" id="demo--toggle-events-targets">
+    <div class="note note-default note-background toggle-block">
+      Target 0
+    </div>
+    <div class="note note-default note-background toggle-block">
+      Target 1
+    </div>
+    <div class="note note-default note-background toggle-block">
+      Target 2
+    </div>
   </div>
-  <div class="note note-default note-background toggle-block">
-    Target 1
-  </div>
-  <div class="note note-default note-background toggle-block">
-    Target 2
-  </div>
+</div>
 
 </div>
 

@@ -810,7 +810,9 @@ class Slider extends Xt.Toggle {
     const self = this
     const options = self.options
     // friction
-    if (Math.abs(self.detail.dragVelocity) > options.drag.frictionLimit) {
+    const velocity = Math.abs(self.detail.dragVelocity)
+    console.log(velocity)
+    if (velocity > options.drag.frictionLimit) {
       // disable dragger
       dragger.classList.add('xt-pointer-events-none')
       for (const nav of self.navs) {
@@ -825,7 +827,7 @@ class Slider extends Xt.Toggle {
       requestAnimationFrame(() => {
         self.logicDragfriction(dragger, e)
       })
-    } else {
+    } else if (velocity) {
       // disable links
       requestAnimationFrame(() => {
         dragger.classList.remove('xt-links-none')
