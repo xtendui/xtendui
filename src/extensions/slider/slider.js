@@ -826,7 +826,7 @@ class Slider extends Xt.Toggle {
       requestAnimationFrame(() => {
         self.logicDragfriction(dragger, e)
       })
-    } else if (velocity) {
+    } else {
       // disable links
       requestAnimationFrame(() => {
         dragger.classList.remove('xt-links-none')
