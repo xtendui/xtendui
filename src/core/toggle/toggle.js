@@ -591,7 +591,7 @@ class Toggle {
       addEventListener('autoclose.trigger.xt', autocloseHandler)
     }
     // mediaLoaded
-    if (options.mediaLoaded) {
+    if (options.mediaLoaded || options.mediaLoadedReinit) {
       for (const el of self.elements.filter(x => !x.classList.contains('xt-ignore'))) {
         const imgs = el.querySelectorAll('img')
         self.destroyElements.push(...imgs)
@@ -898,10 +898,10 @@ class Toggle {
   eventMedialoadedHandler(el, deferred = false) {
     const self = this
     const options = self.options
-    // class
-    el.classList.add('xt-medialoaded')
-    // listener dispatch
-    el.dispatchEvent(new CustomEvent('medialoaded.xt', { detail: { deferred: deferred } }))
+    // mediaLoaded
+    if (options.mediaLoaded) {
+      el.classList.add('xt-medialoaded')
+    }
     // mediaLoadedReinit
     if (options.mediaLoadedReinit && deferred) {
       clearTimeout(Xt.dataStorage.get(self.object, 'xt' + self.componentNamespace + 'MedialoadedInit' + 'Timeout'))
@@ -909,10 +909,17 @@ class Toggle {
         self.object,
         'xt' + self.componentNamespace + 'MedialoadedInit' + 'Timeout',
         setTimeout(() => {
-          self.reinit()
+          // debug
+          if (Xt.debug === true) {
+            console.debug('Xt.debug: mediaLoadedReinit', el)
+          }
+          // handler
+          self.restart()
         }, Xt.medialoadedDelay)
       )
     }
+    // listener dispatch
+    el.dispatchEvent(new CustomEvent('medialoaded.xt', { detail: { deferred: deferred } }))
   }
 
   //
