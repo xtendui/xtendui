@@ -133,7 +133,7 @@ class Slider extends Xt.Toggle {
     // @FIX position values negative margins
     self.detail.fixNegativeMargin = self.groupMq[0][0].offsetLeft
     // @FIX disable slider if not overflowing
-    if (totalCount >= 0) {
+    if (options.nooverflow && totalCount >= 0) {
       const afterInitDisable = () => {
         // disable
         self.object.classList.add('slider-nooverflow')
@@ -153,62 +153,60 @@ class Slider extends Xt.Toggle {
     // drag wrap
     const wrapFirst = []
     const wrapLast = []
-    if (totalCount < 0) {
-      if (self.dragger && options.drag.wrap) {
-        const container = self.targets[0].parentNode
-        if (!options.loop) {
-          console.error('Error: Xt.Slider needs "loop": true when using "drag": {"wrap": true}', self.object)
-        }
-        if (options.contain) {
-          console.error('Error: Xt.Slider cannot use "contain": true when using "drag": {"wrap": true}', self.object)
-        }
-        const cloneSlide = slide => {
-          const cloned = slide.cloneNode(true)
-          cloned.classList.add('xt-clone', 'xt-wrap')
-          cloned.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesInitial, ...self.classesInverse)
-          return cloned
-        }
-        // wrapLast
-        const wrapLastFunction = () => {
-          let wrapLastCount = draggerWidth
-          for (const [i, group] of self.groupMqInitial.entries()) {
-            wrapLast.push([])
-            for (const slide of group) {
-              const cloned = cloneSlide(slide)
-              container.append(cloned)
-              wrapLast[i].push(cloned)
-              cloned.setAttribute('data-xt-group', self.namespace + '-' + 'wrapLast' + i)
-              self.targets.push(cloned)
-              wrapLastCount -= slide.offsetWidth
-              if (wrapLastCount <= -draggerWidth * (options.drag.wrap - 1)) {
-                return
-              }
-            }
-          }
-        }
-        wrapLastFunction()
-        // wrapFirst
-        const wrapFirstFunction = () => {
-          let wrapFirstCount = draggerWidth
-          for (const [i, group] of self.groupMqInitial.reverse().entries()) {
-            wrapFirst.unshift([])
-            for (const slide of group.reverse()) {
-              const cloned = cloneSlide(slide)
-              container.prepend(cloned)
-              wrapFirst[0].unshift(cloned)
-              cloned.setAttribute('data-xt-group', self.namespace + '-' + 'wrapFirst' + i)
-              self.targets.unshift(cloned)
-              wrapFirstCount -= slide.offsetWidth
-              if (wrapFirstCount <= -draggerWidth * (options.drag.wrap - 1)) {
-                return
-              }
-            }
-            group.reverse() // reset reverse
-          }
-        }
-        wrapFirstFunction()
-        self.groupMqInitial.reverse() // reset reverse
+    if (self.dragger && options.drag.wrap) {
+      const container = self.targets[0].parentNode
+      if (!options.loop) {
+        console.error('Error: Xt.Slider needs "loop": true when using "drag": {"wrap": true}', self.object)
       }
+      if (options.contain) {
+        console.error('Error: Xt.Slider cannot use "contain": true when using "drag": {"wrap": true}', self.object)
+      }
+      const cloneSlide = slide => {
+        const cloned = slide.cloneNode(true)
+        cloned.classList.add('xt-clone', 'xt-wrap')
+        cloned.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesInitial, ...self.classesInverse)
+        return cloned
+      }
+      // wrapLast
+      const wrapLastFunction = () => {
+        let wrapLastCount = draggerWidth
+        for (const [i, group] of self.groupMqInitial.entries()) {
+          wrapLast.push([])
+          for (const slide of group) {
+            const cloned = cloneSlide(slide)
+            container.append(cloned)
+            wrapLast[i].push(cloned)
+            cloned.setAttribute('data-xt-group', self.namespace + '-' + 'wrapLast' + i)
+            self.targets.push(cloned)
+            wrapLastCount -= slide.offsetWidth
+            if (wrapLastCount <= -draggerWidth * (options.drag.wrap - 1)) {
+              return
+            }
+          }
+        }
+      }
+      wrapLastFunction()
+      // wrapFirst
+      const wrapFirstFunction = () => {
+        let wrapFirstCount = draggerWidth
+        for (const [i, group] of self.groupMqInitial.reverse().entries()) {
+          wrapFirst.unshift([])
+          for (const slide of group.reverse()) {
+            const cloned = cloneSlide(slide)
+            container.prepend(cloned)
+            wrapFirst[0].unshift(cloned)
+            cloned.setAttribute('data-xt-group', self.namespace + '-' + 'wrapFirst' + i)
+            self.targets.unshift(cloned)
+            wrapFirstCount -= slide.offsetWidth
+            if (wrapFirstCount <= -draggerWidth * (options.drag.wrap - 1)) {
+              return
+            }
+          }
+          group.reverse() // reset reverse
+        }
+      }
+      wrapFirstFunction()
+      self.groupMqInitial.reverse() // reset reverse
     }
     self.groupMqFirst = wrapFirst
     self.groupMqLast = wrapLast
@@ -1213,6 +1211,7 @@ Slider.optionsDefault = {
   align: 'center',
   contain: false,
   pagination: '.slider-pagination',
+  nooverflow: true,
   drag: {
     dragger: '.slides-inner',
     wrap: false,

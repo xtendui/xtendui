@@ -79,9 +79,7 @@ Xt.mount.push({
         if (self.initial) {
           // content
           const content = target.querySelector('.slide_asset .media-container')
-          if (!self.detail.dragging) {
-            gsap.set(content, { x: 0, opacity: 1, scale: 1 })
-          }
+          gsap.set(content, { x: 0, opacity: 1, scale: 1 })
           gsap.to(content, { scale: 1 + contentZoom, duration: contentZoomTime, ease: contentZoomEase, repeat: -1, yoyo: true })
         } else {
           // content
