@@ -817,8 +817,7 @@ class Slider extends Xt.Toggle {
     const self = this
     const options = self.options
     // friction
-    const velocity = Math.abs(self.detail.dragVelocity)
-    if (velocity > options.drag.frictionLimit) {
+    if (Math.abs(self.detail.dragVelocity) > options.drag.frictionLimit) {
       // disable dragger
       dragger.classList.add('xt-pointer-events-none')
       for (const nav of self.navs) {
@@ -833,7 +832,7 @@ class Slider extends Xt.Toggle {
       requestAnimationFrame(() => {
         self.logicDragfriction(dragger, e)
       })
-    } else {
+    } else if (self.detail.dragVelocity) {
       // disable links
       requestAnimationFrame(() => {
         dragger.classList.remove('xt-links-none')
@@ -875,10 +874,10 @@ class Slider extends Xt.Toggle {
       self.detail.dragVelocity = fncFriction(Math.abs(self.detail.dragVelocity)) * sign
       // no momentum when stopping
       if (self.detail.dragDate) {
-        const dateDiff = new Date() - self.detail.dragDate
+        self.detail.dragDateDiff = new Date() - self.detail.dragDate
         self.detail.dragDate = null
-        if (dateDiff > options.drag.timeLimit) {
-          self.detail.dragVelocity = 0
+        if (self.detail.dragDateDiff > options.drag.timeLimit) {
+          self.detail.dragVelocity = -1 // @FIX velocity -1 when done
         }
       }
       // on friction
@@ -919,11 +918,11 @@ class Slider extends Xt.Toggle {
         }
       } else {
         if (dragPos > min) {
-          self.detail.dragVelocity = 0
+          self.detail.dragVelocity = -1 // @FIX velocity -1 when done
           const overflow = dragPos - min
           dragPos = min + fncOverflow(overflow)
         } else if (dragPos < max) {
-          self.detail.dragVelocity = 0
+          self.detail.dragVelocity = -1 // @FIX velocity -1 when done
           const overflow = dragPos - max
           dragPos = max - fncOverflow(-overflow)
         }
