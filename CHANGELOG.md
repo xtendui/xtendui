@@ -1,3 +1,10 @@
+## [0.13.102](https://github.com/minimit/xtend-library/compare/v0.13.101...v0.13.102) (2020-06-11)
+
+
+### Bug Fixes
+
+* **slider:** fix reinit with also self.initial ([35be913](https://github.com/minimit/xtend-library/commit/35be913758d52ab6ba12ccb20f7db1b51ed1f8e6))
+
 ## [0.13.101](https://github.com/minimit/xtend-library/compare/v0.13.100...v0.13.101) (2020-06-11)
 
 
