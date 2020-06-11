@@ -2848,11 +2848,8 @@ class Toggle {
         e,
         self.object,
         () => {
-          // @FIX multiple calls coming from resize
-          if (!self.initial) {
-            // handler
-            self.reinit()
-          }
+          // handler
+          self.reinit()
         },
         self.componentNamespace + 'Reinit'
       )
