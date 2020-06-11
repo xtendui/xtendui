@@ -1,3 +1,10 @@
+## [0.13.101](https://github.com/minimit/xtend-library/compare/v0.13.100...v0.13.101) (2020-06-11)
+
+
+### Bug Fixes
+
+* **slider:** optional nooverflow + wrap also if not overflowing totalcount ([62203f8](https://github.com/minimit/xtend-library/commit/62203f82e43085fb7f671bf04098da90c85b1c30))
+
 ## [0.13.100](https://github.com/minimit/xtend-library/compare/v0.13.99...v0.13.100) (2020-06-11)
 
 
