@@ -1,3 +1,12 @@
+## [0.13.100](https://github.com/minimit/xtend-library/compare/v0.13.99...v0.13.100) (2020-06-11)
+
+
+### Bug Fixes
+
+* **slider:** drag velocity check when clicking dragend ([edd3bf5](https://github.com/minimit/xtend-library/commit/edd3bf5f07b5de81b4b6912d2f8ad84db15fe486))
+* **slider:** fix drag not working ([85f3c8f](https://github.com/minimit/xtend-library/commit/85f3c8f1169ba153b165362fae227086d9955315))
+* **toggle:** fix medialoadedreinit restart + refactor slider inistart ([b25bfc1](https://github.com/minimit/xtend-library/commit/b25bfc1989fb31e409c6c1607a6c74eac14ae027))
+
 ## [0.13.99](https://github.com/minimit/xtend-library/compare/v0.13.98...v0.13.99) (2020-06-10)
 
 
