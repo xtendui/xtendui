@@ -12,7 +12,17 @@ Disable slider drag and cursor grab with `.slider-nodrag`.
 
 ## No overflow
 
-Slider automatically disable when not overflowing. It also hides automatically **pagination** and **navigation**.
+Slider automatically disable when not overflowing. It also hides automatically **pagination**, **navigation** and **wrap**.
+
+Disable this behaviour with `nooverflow: false`.
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Default                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `nooverflow:Boolean`                          | `true`        | When not overflowing disable slider           |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/slider/no-overflow">
