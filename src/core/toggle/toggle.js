@@ -1603,8 +1603,8 @@ class Toggle {
           clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'DelayTimeout'))
           clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'))
           // done other queue
-          self.queueDelayDone(actionOther, actionCurrent, obj, el, type, true)
-          self.queueAnimDone(actionOther, actionCurrent, obj, el, type, true)
+          self.queueDelayDone(actionCurrent, actionOther, obj, el, type, true)
+          self.queueAnimDone(actionCurrent, actionOther, obj, el, type, true)
         }
       }
     }
@@ -2825,8 +2825,6 @@ class Toggle {
       }
       // stop auto
       clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutoTimeout'))
-      // stop queue
-      self.queueStopAll()
       // disable
       self.disabled = true
     }
