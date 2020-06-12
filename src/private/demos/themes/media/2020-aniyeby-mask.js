@@ -29,15 +29,15 @@ Xt.mount.push({
       const tr = e.target
       // img
       const img = tr.querySelector('.media-container')
-      gsap.to(img, { scale: 1 + imgScaleContainer, duration: Xt.vars.timeSmall, ease: 'expo.out' })
+      gsap.to(img, { scale: 1 + imgScaleContainer, duration: Xt.vars.timeSmall, ease: 'quart.out' })
       const imgInner = tr.querySelector('.media-inner')
-      gsap.to(imgInner, { scale: 1 + imgScale, duration: Xt.vars.timeBig, ease: 'expo.out' })
+      gsap.to(imgInner, { scale: 1 + imgScale, duration: Xt.vars.timeBig, ease: 'quart.out' })
       // mask
       const mask = tr.querySelector('.media_mask')
       gsap.set(mask, { height: 0, y: img.offsetHeight, skewY: 0, opacity: maskOpacityOff })
-      gsap.to(mask, { height: '150%', y: 0, opacity: maskOpacityOn, duration: Xt.vars.timeSmall, ease: 'expo.out' }) // @FIX to cover height: '150%'
-      gsap.to(mask, { skewY: -10, duration: Xt.vars.timeSmall / 2, ease: 'expo.out' }).eventCallback('onComplete', () => {
-        gsap.to(mask, { skewY: 0, duration: Xt.vars.timeSmall / 2, ease: 'expo.out' })
+      gsap.to(mask, { height: '150%', y: 0, opacity: maskOpacityOn, duration: Xt.vars.timeSmall, ease: 'quart.out' }) // @FIX to cover height: '150%'
+      gsap.to(mask, { skewY: -10, duration: Xt.vars.timeSmall / 2, ease: 'quart.out' }).eventCallback('onComplete', () => {
+        gsap.to(mask, { skewY: 0, duration: Xt.vars.timeSmall / 2, ease: 'quart.out' })
       })
     }
 
@@ -49,14 +49,14 @@ Xt.mount.push({
       const tr = e.target
       // img
       const img = tr.querySelector('.media-container')
-      gsap.to(img, { scale: 1, duration: Xt.vars.timeSmall, ease: 'expo.out' })
+      gsap.to(img, { scale: 1, duration: Xt.vars.timeSmall, ease: 'quart.out' })
       const imgInner = tr.querySelector('.media-inner')
-      gsap.to(imgInner, { scale: 1, duration: Xt.vars.timeBig, ease: 'expo.out' })
+      gsap.to(imgInner, { scale: 1, duration: Xt.vars.timeBig, ease: 'quart.out' })
       // mask
       const mask = tr.querySelector('.media_mask')
-      gsap.to(mask, { height: 0, y: -50, opacity: maskOpacityOff, duration: Xt.vars.timeSmall, ease: 'expo.out' }) // @FIX to cover y: -50
-      gsap.to(mask, { skewY: 10, duration: Xt.vars.timeSmall / 2, ease: 'expo.out' }).eventCallback('onComplete', () => {
-        gsap.to(mask, { skewY: 0, duration: Xt.vars.timeSmall / 2, ease: 'expo.out' })
+      gsap.to(mask, { height: 0, y: -50, opacity: maskOpacityOff, duration: Xt.vars.timeSmall, ease: 'quart.out' }) // @FIX to cover y: -50
+      gsap.to(mask, { skewY: 10, duration: Xt.vars.timeSmall / 2, ease: 'quart.out' }).eventCallback('onComplete', () => {
+        gsap.to(mask, { skewY: 0, duration: Xt.vars.timeSmall / 2, ease: 'quart.out' })
       })
     }
 
