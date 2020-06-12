@@ -120,18 +120,6 @@ npm install --save gsap bezier-easing
 
 Supported browsers are as follow: **explorer 12**, **firefox 38**, **opera 25**, **safari 10**, **chrome 38**.
 
-If you want to support old browsers since Internet Explorer 11, import the polyfills:
-
-```jsx
-import '/src/polyfill-old.js'
-```
-
-And add this in **.browserslistrc**:
-
-```Shell
-ie >= 11
-```
-
 #### Media with Object fit
 
 If you want to support [old browsers](https://caniuse.com/#feat=object-fit), use [object-fit polyfills](https://github.com/fregante/object-fit-images).
