@@ -31,6 +31,9 @@ class Header extends React.Component {
                   <a href={site.site.siteMetadata.npm} target="_blank" rel="noopener" className="btn gatsby_btn-site_header_top_social" title="Npm">
                     <span className="icon-npm icon-large"></span>
                   </a>
+                  <a href={site.site.siteMetadata.twitter} target="_blank" rel="noopener" className="btn gatsby_btn-site_header_top_social" title="Npm">
+                    <span className="icon-twitter icon-large"></span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -97,6 +100,8 @@ Header.propTypes = {
         title: PropTypes.string.isRequired,
         download: PropTypes.string.isRequired,
         github: PropTypes.string.isRequired,
+        npm: PropTypes.string.isRequired,
+        twitter: PropTypes.string.isRequired,
       }).isRequired,
     }).isRequired,
   }).isRequired,

@@ -48,8 +48,9 @@ class Layout extends React.Component {
                 title
                 author
                 version
-                npm
                 github
+                npm
+                twitter
                 download
               }
             }

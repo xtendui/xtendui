@@ -14,6 +14,7 @@ module.exports = {
     version: version,
     npm: 'https://www.npmjs.com/package/xtend-library',
     github: 'https://github.com/minimit/xtend-library',
+    twitter: 'https://twitter.com/beaver82minimit',
     download: 'https://github.com/minimit/xtend-library/releases',
   },
   plugins: [
