@@ -34,8 +34,8 @@ Xt.mount.push({
       gsap.to(imgInner, { scale: 1 + imgScale, duration: Xt.vars.timeBig, ease: 'expo.out' })
       // mask
       const mask = tr.querySelector('.media_mask')
-      gsap.set(mask, { height: 0, y: '100%', skewY: 0, opacity: maskOpacityOff })
-      gsap.to(mask, { height: '125%', y: 0, opacity: maskOpacityOn, duration: Xt.vars.timeSmall, ease: 'expo.out' }) // @FIX to cover skew: 125%
+      gsap.set(mask, { height: 0, y: img.offsetHeight, skewY: 0, opacity: maskOpacityOff })
+      gsap.to(mask, { height: '150%', y: 0, opacity: maskOpacityOn, duration: Xt.vars.timeSmall, ease: 'expo.out' }) // @FIX to cover height: '150%'
       gsap.to(mask, { skewY: -10, duration: Xt.vars.timeSmall / 2, ease: 'expo.out' }).eventCallback('onComplete', () => {
         gsap.to(mask, { skewY: 0, duration: Xt.vars.timeSmall / 2, ease: 'expo.out' })
       })
@@ -54,7 +54,7 @@ Xt.mount.push({
       gsap.to(imgInner, { scale: 1, duration: Xt.vars.timeBig, ease: 'expo.out' })
       // mask
       const mask = tr.querySelector('.media_mask')
-      gsap.to(mask, { height: 0, y: 0, opacity: maskOpacityOff, duration: Xt.vars.timeSmall, ease: 'expo.out' })
+      gsap.to(mask, { height: 0, y: -50, opacity: maskOpacityOff, duration: Xt.vars.timeSmall, ease: 'expo.out' }) // @FIX to cover y: -50
       gsap.to(mask, { skewY: 10, duration: Xt.vars.timeSmall / 2, ease: 'expo.out' }).eventCallback('onComplete', () => {
         gsap.to(mask, { skewY: 0, duration: Xt.vars.timeSmall / 2, ease: 'expo.out' })
       })
