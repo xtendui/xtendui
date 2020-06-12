@@ -109,7 +109,7 @@ You can disable friction with `drag: { friction: false }`.
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `drag.friction:Function`                          | `<function>`        | Function for drag friction             |
 | Option                  | `drag.frictionLimit:Number`                          | `1.5`        | Limit for friction calculation             |
-| Option                  | `drag.timeLimit:Milliseconds`                          | `25`        | Milliseconds after we disable drag friction building            |
+| Option                  | `drag.frictionTime:Milliseconds`                          | `25`        | Milliseconds after we disable drag friction building            |
 
 </div>
 
