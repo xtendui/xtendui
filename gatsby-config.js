@@ -42,7 +42,7 @@ module.exports = {
         aliases: {
           assets: './src/gatsby/assets',
           components: './src/gatsby/components',
-          // resolve xtend-library js and less import
+          // resolve xtend-library import js and less
           'xtend-library': path.resolve(__dirname, './'),
         },
       },
