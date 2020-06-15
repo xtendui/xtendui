@@ -1,6 +1,6 @@
 module.exports = {
   extends: ['eslint:recommended', 'google', 'prettier', 'prettier/react'],
-  plugins: ['import', 'prettier'],
+  plugins: ['prettier'],
   env: {
     browser: true,
     commonjs: true,
@@ -21,12 +21,5 @@ module.exports = {
     'no-unused-vars': 0,
     'require-jsdoc': 'off',
     'valid-jsdoc': 'off',
-  },
-  settings: {
-    'import/resolver': {
-      webpack: {
-        config: 'webpack.config.js',
-      },
-    },
   },
 }
