@@ -2,6 +2,9 @@ import { Xt } from 'xtend-library/src/xt.js'
 import 'xtend-library/src/core/toggle/toggle.js'
 import RJSON from 'relaxed-json'
 
+/**
+ * Scroll
+ */
 class Scroll extends Xt.Toggle {
   /**
    * constructor

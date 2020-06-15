@@ -9,7 +9,7 @@ Xt.mount.push({
   mount: object => {
     // init
 
-    let self = new Xt.ScrollToAnchor(object, {})
+    const self = new Xt.ScrollToAnchor(object, {})
 
     // change
 

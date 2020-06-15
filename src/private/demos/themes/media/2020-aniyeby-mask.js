@@ -64,8 +64,7 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = () => {
-    }
+    const unmount = () => {}
     return unmount
   },
 })

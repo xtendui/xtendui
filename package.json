@@ -22,8 +22,8 @@
     "deploy": "yarn build && gh-pages -d public",
     "release": "npx semantic-release --no-ci",
     "release:dry": "npx semantic-release --dry-run",
-    "lint": "eslint ./src/core --ext .js",
-    "postversion": "yarn build"
+    "lint": "eslint . --ext .js --fix",
+    "postversion": "yarn lint && yarn build"
   },
   "dependencies": {
     "@google/markerclusterer": "^2.0.8",
@@ -48,6 +48,7 @@
     "css-loader": "^3.4.2",
     "eslint": "7.2.0",
     "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-import-resolver-webpack": "^0.12.1",
     "eslint-loader": "^4.0.2",

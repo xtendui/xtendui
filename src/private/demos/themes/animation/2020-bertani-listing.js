@@ -10,14 +10,14 @@ import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '.demo--2020-bertani-listing',
-  mount: function(object) {
+  mount: object => {
     // init
 
     let self = new Xt.Smooth(object, {})
 
     // unmount
 
-    const unmount = function() {
+    const unmount = () => {
       self.destroy()
       self = null
     }
@@ -31,7 +31,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '.demo--2020-bertani-listing a, .demo--2020-bertani-listing button',
-  mount: function(object) {
+  mount: object => {
     // init
 
     let self = new Xt.PropagateInteraction(object, {
@@ -40,7 +40,7 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = function() {
+    const unmount = () => {
       self.destroy()
       self = null
     }
@@ -54,7 +54,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '.demo--2020-bertani-listing .btn--line',
-  mount: function(object) {
+  mount: object => {
     // wrap
 
     if (!object.querySelector('.btn--line_text')) {
@@ -120,7 +120,7 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = function() {}
+    const unmount = () => {}
     return unmount
   },
 })
@@ -131,7 +131,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '.demo--2020-bertani-listing .parallax_item',
-  mount: function(object) {
+  mount: object => {
     // vars
 
     const imgY = 150
@@ -147,8 +147,8 @@ Xt.mount.push({
 
     // change
 
-    const eventChange = function() {
-      const element = this
+    const eventChange = e => {
+      const element = e.target
       // img
       const img = element.querySelector('.parallax_img_col')
       gsap.set(img, { y: imgY * (self.detail.ratio - 0.5) })
@@ -163,7 +163,7 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = function() {
+    const unmount = () => {
       self.destroy()
       self = null
     }

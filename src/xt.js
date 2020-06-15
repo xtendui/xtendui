@@ -187,6 +187,7 @@ if (typeof window !== 'undefined') {
    * get component
    * @param {String} name Component name
    * @param {Node|HTMLElement|EventTarget|Window} element Component's element
+   * @return {Object}
    */
   Xt.get = (name, element) => {
     return Xt.dataStorage.get(element, name)
@@ -196,6 +197,7 @@ if (typeof window !== 'undefined') {
    * remove component
    * @param {String} name Component name
    * @param {Node|HTMLElement|EventTarget|Window} element Component's element
+   * @return {Object}
    */
   Xt.remove = (name, element) => {
     return Xt.dataStorage.remove(element, name)
@@ -234,7 +236,7 @@ if (typeof window !== 'undefined') {
      * @param {Node|HTMLElement|EventTarget|Window} el
      * @param {String} key
      * @param {*} obj
-     * @returns {*}
+     * @return {*}
      */
     set: (el, key, obj) => {
       // new map if not already there
@@ -253,7 +255,7 @@ if (typeof window !== 'undefined') {
      * @param {Node|HTMLElement|EventTarget|Window} el
      * @param {String} key
      * @param {*} obj
-     * @returns {*}
+     * @return {*}
      */
     put: (el, key, obj) => {
       // new map if not already there
@@ -276,7 +278,7 @@ if (typeof window !== 'undefined') {
      * get obj from key on element's map
      * @param {Node|HTMLElement|EventTarget|Window} el
      * @param {String} key
-     * @returns {*}
+     * @return {*}
      */
     get: (el, key) => {
       const getEl = Xt.dataStorage._storage.get(el)
@@ -291,7 +293,7 @@ if (typeof window !== 'undefined') {
     /**
      * get all obj/key on element's map
      * @param {Node|HTMLElement|EventTarget|Window} el
-     * @returns {*}
+     * @return {*}
      */
     getAll: el => {
       const getEl = Xt.dataStorage._storage.get(el)
@@ -307,7 +309,7 @@ if (typeof window !== 'undefined') {
      * has key on element's map
      * @param {Node|HTMLElement|EventTarget|Window} el
      * @param {String} key
-     * @returns {Boolean}
+     * @return {Boolean}
      */
     has: (el, key) => {
       // return
@@ -318,7 +320,7 @@ if (typeof window !== 'undefined') {
      * remove element's map key
      * @param {Node|HTMLElement|EventTarget|Window} el
      * @param {String} key
-     * @returns {Boolean}
+     * @return {Boolean}
      */
     remove: (el, key) => {
       const getEl = Xt.dataStorage._storage.get(el)
@@ -350,7 +352,7 @@ if (typeof window !== 'undefined') {
 
     /**
      * get scrollbar currents
-     * @returns {Array} Currents
+     * @return {Array} Currents
      */
     get: () => {
       return Xt.scrollbar.currents
@@ -387,6 +389,7 @@ if (typeof window !== 'undefined') {
 
     /**
      * enable focus change events
+     * @param {Boolean} keepAll
      */
     on: (keepAll = false) => {
       // event key
@@ -404,6 +407,7 @@ if (typeof window !== 'undefined') {
 
     /**
      * disable focus change events
+     * @param {Boolean} keepAll
      */
     off: (keepAll = false) => {
       // @FIX switch mode
@@ -483,7 +487,7 @@ if (typeof window !== 'undefined') {
         Xt.focusLimit.first = Xt.focusLimit.focusables[0]
         Xt.focusLimit.last = Xt.focusLimit.focusables[Xt.focusLimit.focusables.length - 1]
         // event
-        const focusLimitHandler = Xt.dataStorage.put(document, 'keydown/focusLimit', Xt.focusLimit.limit.bind(this))
+        const focusLimitHandler = Xt.dataStorage.put(document, 'keydown/focusLimit', Xt.focusLimit.limit)
         document.addEventListener('keydown', focusLimitHandler)
       }
       // @FIX Xt.focus when clicking and not used tab before
@@ -554,7 +558,7 @@ if (typeof window !== 'undefined') {
     let xDist = obj.x - xCurrent
     let yDist = obj.y - yCurrent
     // momentum
-    let fncFriction = obj.friction
+    const fncFriction = obj.friction
     if (fncFriction) {
       xCurrent += fncFriction(Math.abs(xDist)) * Math.sign(xDist)
       yCurrent += fncFriction(Math.abs(yDist)) * Math.sign(yDist)
@@ -640,7 +644,7 @@ if (typeof window !== 'undefined') {
 
   /**
    * Get unique id
-   * @returns {String} Unique id
+   * @return {String} Unique id
    */
   Xt.getuniqueId = () => {
     Xt.uid = Xt.uid !== undefined ? Xt.uid : 0
@@ -649,7 +653,7 @@ if (typeof window !== 'undefined') {
 
   /**
    * Get unique number
-   * @returns {Number} Unique number
+   * @return {Number} Unique number
    */
   Xt.getStickyIndex = () => {
     return Xt.stickyIndex--
@@ -658,7 +662,7 @@ if (typeof window !== 'undefined') {
   /**
    * Merge objects
    * @param {Array} arr Array of objects to merge
-   * @returns {Object} Merged object
+   * @return {Object} Merged object
    */
   Xt.merge = arr => {
     const final = {}
@@ -686,7 +690,7 @@ if (typeof window !== 'undefined') {
   /**
    * Make an array when element is only one
    * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} el
-   * @returns {NodeList|Array}
+   * @return {NodeList|Array}
    */
   Xt.arrSingle = el => {
     if (!el) {
@@ -718,7 +722,7 @@ if (typeof window !== 'undefined') {
    */
   Xt.setScrollbarWidth = (force = false) => {
     if (Xt.scrollbarWidth === undefined) {
-      const scrollbarWidthHandler = Xt.dataStorage.put(window, 'resize/scrollbar', Xt.setScrollbarWidth.bind(this, true))
+      const scrollbarWidthHandler = Xt.dataStorage.put(window, 'resize/scrollbar', Xt.setScrollbarWidth.bind(true))
       addEventListener('resize', scrollbarWidthHandler)
     }
     if (force || Xt.scrollbarWidth === undefined) {
@@ -748,7 +752,7 @@ if (typeof window !== 'undefined') {
   /**
    * if full width return '' else return value in px
    * @param {Number|String} width
-   * @returns {String} Value in px
+   * @return {String} Value in px
    */
   Xt.normalizeWidth = width => {
     width = parseFloat(width)
@@ -862,7 +866,7 @@ if (typeof window !== 'undefined') {
    * get transition or animation time
    * @param {Node|HTMLElement|EventTarget|Window} el Element animating
    * @param {Number} timing Force duration in milliseconds
-   * @returns {Number} Time in milliseconds
+   * @return {Number} Time in milliseconds
    */
   Xt.animTime = (el, timing = null) => {
     if (timing || timing === 0) {
@@ -936,7 +940,7 @@ if (typeof window !== 'undefined') {
   /**
    * return window percent if percent string
    * @param {Number|String} num Number to check
-   * @returns {Number}
+   * @return {Number}
    */
   Xt.windowPercent = num => {
     if (typeof num === 'string' || num instanceof String) {
@@ -951,7 +955,7 @@ if (typeof window !== 'undefined') {
    * query array of elements or element
    * @param {Node|HTMLElement|NodeList|Array} element Element to search from
    * @param {String} query Query for querySelectorAll
-   * @returns {Array}
+   * @return {Array}
    */
   Xt.queryAll = (element, query) => {
     if (!query) {
@@ -973,7 +977,7 @@ if (typeof window !== 'undefined') {
   /**
    * check element visibility
    * @param {Node|HTMLElement|EventTarget|Window} el Element animating
-   * @returns {Boolean}
+   * @return {Boolean}
    */
   Xt.visible = el => {
     return !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length)

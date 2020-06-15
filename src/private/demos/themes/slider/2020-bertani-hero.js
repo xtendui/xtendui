@@ -190,7 +190,13 @@ Xt.mount.push({
           const lineBig = target.querySelector('.slide_line_big')
           gsap.set(lineBig, { height: 0, bottom: 0 })
           gsap.to(lineBig, { height: lineSizeMax, bottom: 0, duration: Xt.vars.timeSmall, ease: 'expo.in', delay: lineDelayMax })
-          gsap.to(lineBig, { height: lineSizeMin, bottom: lineSizeMax - lineSizeMin, duration: Xt.vars.timeMedium, ease: 'expo.out', delay: lineDelayMax + Xt.vars.timeSmall })
+          gsap.to(lineBig, {
+            height: lineSizeMin,
+            bottom: lineSizeMax - lineSizeMin,
+            duration: Xt.vars.timeMedium,
+            ease: 'expo.out',
+            delay: lineDelayMax + Xt.vars.timeSmall,
+          })
         }
       }
     }

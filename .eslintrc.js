@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['airbnb', 'prettier', 'prettier/react'],
+  extends: ['eslint:recommended', 'google', 'prettier', 'prettier/react'],
   plugins: ['import', 'prettier'],
   env: {
     browser: true,
@@ -15,16 +15,12 @@ module.exports = {
     },
   },
   rules: {
-    'prettier/prettier': 'error',
+    'prettier/prettier': 2,
     'no-console': 'off',
-    'global-require': 0,
-    'no-restricted-syntax': 0,
-    'prefer-destructuring': 0,
-    'no-param-reassign': 0,
-    'no-nested-ternary': 0,
-    'no-restricted-globals': 0,
-    'class-methods-use-this': 0,
+    'prefer-arrow-callback': 2,
     'no-unused-vars': 0,
+    'require-jsdoc': 'off',
+    'valid-jsdoc': 'off',
   },
   settings: {
     'import/resolver': {
@@ -32,5 +28,5 @@ module.exports = {
         config: 'webpack.config.js',
       },
     },
-  }
+  },
 }

@@ -12,7 +12,7 @@ Xt.mount.push({
 
     // init
 
-    function loaderTimeout() {
+    const loaderTimeout = () => {
       const spinner = object.querySelectorAll('.spinner svg:nth-child(1) circle')
       object.dataset.loaderActive = object.dataset.loaderActive === 'true' ? 'false' : 'true'
       if (object.dataset.loaderActive === 'true') {

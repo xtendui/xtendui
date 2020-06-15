@@ -13,9 +13,9 @@ Xt.mount.push({
   mount: object => {
     // vars
 
-    const assetCoverTimeOn= Xt.vars.timeBig + 150 // @FIX to cover skew: + 250
+    const assetCoverTimeOn = Xt.vars.timeBig + 150 // @FIX to cover skew: + 250
     const assetCoverEaseOn = 'quint.inOut'
-    const assetCoverTimeOff= Xt.vars.timeBig
+    const assetCoverTimeOff = Xt.vars.timeBig
     const assetCoverEaseOff = 'quint.inOut'
 
     const assetMaskTimeOn = Xt.vars.timeBig

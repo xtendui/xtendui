@@ -1,6 +1,9 @@
 import { Xt } from 'xtend-library/src/xt.js'
 import RJSON from 'relaxed-json'
 
+/**
+ * PropagateInteraction
+ */
 class PropagateInteraction {
   /**
    * constructor

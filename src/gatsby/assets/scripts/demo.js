@@ -63,7 +63,7 @@ if (typeof window !== 'undefined') {
 const formatCode = source => {
   let text = source.innerHTML
   // search html tags
-  var re = /<[^>]*>/g
+  const re = /<[^>]*>/g
   text = text.replace(re, (match, g1, g2) => {
     // replace quote entities
     match = match.replace(/&quot;/g, '"')
@@ -357,7 +357,7 @@ const populateDemo = (container, i) => {
             let prev = i - 1
             prev = prev >= 0 ? prev : demos.length - 1
             let currentOffset
-            let prevOffset = demos[prev].offsetTop
+            const prevOffset = demos[prev].offsetTop
             if (document.querySelector('#gatbsy_open-full-trigger').classList.contains('active')) {
               currentOffset = document.querySelector('[data-xt-origin="gatbsy_open-full-content"]').offsetTop
               location.hash = demos[prev].querySelector('.gatsby_demo_item.active').getAttribute('id')
@@ -397,7 +397,7 @@ const populateDemo = (container, i) => {
             let next = i + 1
             next = next < demos.length ? next : 0
             let currentOffset
-            let nextOffset = demos[next].offsetTop
+            const nextOffset = demos[next].offsetTop
             if (document.querySelector('#gatbsy_open-full-trigger').classList.contains('active')) {
               currentOffset = document.querySelector('[data-xt-origin="gatbsy_open-full-content"]').offsetTop
               location.hash = demos[next].querySelector('.gatsby_demo_item.active').getAttribute('id')

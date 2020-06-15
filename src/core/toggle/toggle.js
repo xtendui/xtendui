@@ -1,6 +1,9 @@
 import RJSON from 'relaxed-json'
 import { Xt } from 'xtend-library/src/xt.js'
 
+/**
+ * Toggle
+ */
 class Toggle {
   /**
    * constructor
@@ -208,7 +211,7 @@ class Toggle {
     }
     // set namespace for next frame
     for (const el of self.elements) {
-      let arr = Xt.dataStorage.get(self.namespace, 'xtNamespace')
+      const arr = Xt.dataStorage.get(self.namespace, 'xtNamespace')
       arr.push(el)
       Xt.dataStorage.set(self.namespace, 'xtNamespace', arr)
     }
@@ -275,7 +278,7 @@ class Toggle {
    * init reset element activation
    * @param {Node|HTMLElement|EventTarget|Window} el Element to check and reset
    * @param {Boolean} saveCurrents
-   * @returns {Boolean} if element was activated
+   * @return {Boolean} if element was activated
    */
   initReset(el, saveCurrents = false) {
     const self = this
@@ -928,7 +931,7 @@ class Toggle {
 
   /**
    * get groups (one element per group)
-   * @returns {Array} array of elements
+   * @return {Array} array of elements
    */
   getGroups() {
     const self = this
@@ -952,7 +955,7 @@ class Toggle {
   /**
    * get elements from element or target
    * @param {Node|HTMLElement|EventTarget|Window} el Element that triggered interaction
-   * @returns {Array} The first element is the one on getGroups()
+   * @return {Array} The first element is the one on getGroups()
    */
   getElements(el) {
     const self = this
@@ -989,7 +992,7 @@ class Toggle {
   /**
    * get targets from element or target
    * @param {Node|HTMLElement|EventTarget|Window} el Element that triggered interaction
-   * @returns {Array}
+   * @return {Array}
    */
   getTargets(el) {
     const self = this
@@ -1025,7 +1028,7 @@ class Toggle {
 
   /**
    * get currents based on namespace (so shared between Xt objects)
-   * @returns {Array}
+   * @return {Array}
    */
   getCurrents() {
     const self = this
@@ -1080,7 +1083,7 @@ class Toggle {
   /**
    * check element on
    * @param {Node|HTMLElement|EventTarget|Window} element To be checked
-   * @returns {Boolean} If elements can activate
+   * @return {Boolean} If elements can activate
    */
   checkOn(element) {
     const self = this
@@ -1091,7 +1094,7 @@ class Toggle {
   /**
    * check element off
    * @param {Node|HTMLElement|EventTarget|Window} element To be checked
-   * @returns {Boolean} If elements can deactivate
+   * @return {Boolean} If elements can deactivate
    */
   checkOff(element) {
     const self = this
@@ -1107,7 +1110,7 @@ class Toggle {
   /**
    * check elements animation
    * @param {NodeList|Array} elements To be checked
-   * @returns {Boolean} If elements are animating
+   * @return {Boolean} If elements are animating
    */
   checkAnim(elements) {
     const self = this
@@ -1210,7 +1213,7 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} element To be activated
    * @param {Boolean} force
    * @param {Event} e
-   * @returns {Boolean} If activated
+   * @return {Boolean} If activated
    */
   eventOn(element, force = false, e = null) {
     const self = this
@@ -1247,6 +1250,7 @@ class Toggle {
       const actionOther = 'Off'
       self.eventQueue(actionCurrent, groupElements, targets, elementsInner, targetsInner, e)
       // queue run
+      // eslint-disable-next-line guard-for-in
       for (const type in self.detail['queue' + actionCurrent][0]) {
         self.queueStart(actionCurrent, actionOther, type, 0, true)
       }
@@ -1264,7 +1268,7 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} element To be deactivated
    * @param {Boolean} force
    * @param {Event} e
-   * @returns {Boolean} If deactivated
+   * @return {Boolean} If deactivated
    */
   eventOff(element, force = false, e = null) {
     const self = this
@@ -1316,6 +1320,7 @@ class Toggle {
         self.queueStop(actionCurrent, actionOther, removedOff)
       }
       // queue run
+      // eslint-disable-next-line guard-for-in
       for (const type in self.detail['queue' + actionCurrent][0]) {
         self.queueStart(actionCurrent, actionOther, type, 0, true)
       }
@@ -2613,7 +2618,7 @@ class Toggle {
    * get next index
    * @param {Number} amount
    * @param {Boolean} loop
-   * @returns {Number} index
+   * @return {Number} index
    */
   getNextIndex(amount = 1, loop = null) {
     const self = this
@@ -2629,7 +2634,7 @@ class Toggle {
    * get next element
    * @param {Number} amount
    * @param {Boolean} loop
-   * @returns {Number} index
+   * @return {Number} index
    */
   getNext(amount = 1, loop = null) {
     const self = this
@@ -2655,7 +2660,7 @@ class Toggle {
    * get prev index
    * @param {Number} amount
    * @param {Boolean} loop
-   * @returns {Number} index
+   * @return {Number} index
    */
   getPrevIndex(amount = 1, loop = null) {
     const self = this
@@ -2671,7 +2676,7 @@ class Toggle {
    * get prev element
    * @param {Number} amount
    * @param {Boolean} loop
-   * @returns {Number} index
+   * @return {Number} index
    */
   getPrev(amount = 1, loop = null) {
     const self = this
@@ -2697,7 +2702,7 @@ class Toggle {
    * get number index
    * @param {Number} index
    * @param {Boolean} loop
-   * @returns {Number} index
+   * @return {Number} index
    */
   getNumIndex(index, loop = null) {
     const self = this
@@ -2727,7 +2732,7 @@ class Toggle {
    * get number element
    * @param {Number} index
    * @param {Boolean} loop
-   * @returns {Element} element
+   * @return {Element} element
    */
   getNum(index = 1, loop = null) {
     const self = this

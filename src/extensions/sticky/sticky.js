@@ -2,6 +2,9 @@ import { Xt } from 'xtend-library/src/xt.js'
 import 'xtend-library/src/core/toggle/toggle.js'
 import RJSON from 'relaxed-json'
 
+/**
+ * Sticky
+ */
 class Sticky extends Xt.Toggle {
   /**
    * constructor
@@ -336,7 +339,7 @@ class Sticky extends Xt.Toggle {
    * @param {String|Number|Element} option
    * @param {Number} scrollTop Window's scrollTop
    * @param {Number} val Default value
-   * @returns {Number} value Option's position (px)
+   * @return {Number} value Option's position (px)
    */
   eventStickypos(option, scrollTop = 0, val = null) {
     if (!isNaN(parseFloat(option))) {
@@ -379,7 +382,7 @@ class Sticky extends Xt.Toggle {
    * get height of option
    * @param {String|Number|Element} option
    * @param {Number} val Default value
-   * @returns {Object} obj Option's height (px) and if found hide element
+   * @return {Object} obj Option's height (px) and if found hide element
    */
   eventStickyheight(option, val = null) {
     const self = this

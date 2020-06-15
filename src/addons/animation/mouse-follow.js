@@ -1,5 +1,8 @@
 import { Xt } from 'xtend-library/src/xt.js'
 
+/**
+ * MouseFollow
+ */
 class MouseFollow {
   /**
    * constructor

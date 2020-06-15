@@ -2,6 +2,9 @@ import { Xt } from 'xtend-library/src/xt.js'
 import 'xtend-library/src/core/toggle/toggle.js'
 import RJSON from 'relaxed-json'
 
+/**
+ * Slider
+ */
 class Slider extends Xt.Toggle {
   /**
    * constructor
@@ -79,7 +82,7 @@ class Slider extends Xt.Toggle {
     // drag wrap
     self.destroyWraps()
     // width
-    let draggerWidth = self.dragger ? self.detail.draggerWidth : self.detail.objectWidth
+    const draggerWidth = self.dragger ? self.detail.draggerWidth : self.detail.objectWidth
     let draggerWidthAvailable = 0
     // draggerWidthAvailable
     if (options.groupMq) {
@@ -247,7 +250,7 @@ class Slider extends Xt.Toggle {
         clone.classList.add('xt-clone')
         item.appendChild(clone)
         let html = item.innerHTML
-        let classes = []
+        const classes = []
         if (html.search(new RegExp('xt-content', 'ig')) !== -1) {
           let replace = ''
           for (const slide of group) {
@@ -405,7 +408,7 @@ class Slider extends Xt.Toggle {
     if (options.drag) {
       // @FIX prevent dragging links and images
       for (const img of self.dragger.querySelectorAll('img')) {
-        let imgnodragHandler = Xt.dataStorage.put(img, 'mousedown/drag' + '/' + self.namespace, self.eventImgnodragHandler.bind(self))
+        const imgnodragHandler = Xt.dataStorage.put(img, 'mousedown/drag' + '/' + self.namespace, self.eventImgnodragHandler.bind(self))
         img.addEventListener('mousedown', imgnodragHandler)
       }
       // drag start

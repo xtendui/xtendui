@@ -1,6 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+/**
+ * HTML
+ * @param {Object} props
+ * @return {String}
+ */
 export default function HTML(props) {
   return (
     <html {...props.htmlAttributes}>

@@ -12,7 +12,7 @@ Xt.mount.push({
 
     // init
 
-    function loaderTimeout() {
+    const loaderTimeout = () => {
       const filler = object.querySelectorAll('.filler span:nth-child(1)')
       object.dataset.loaderActive = object.dataset.loaderActive === 'true' ? 'false' : 'true'
       if (object.dataset.loaderActive === 'true') {

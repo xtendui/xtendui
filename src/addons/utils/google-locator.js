@@ -1,6 +1,10 @@
+/* global google */
 import { Xt } from 'xtend-library/src/xt.js'
 import MarkerClusterer from '@google/markerclusterer'
 
+/**
+ * Googlelocator
+ */
 class Googlelocator {
   /**
    * constructor
@@ -54,8 +58,8 @@ class Googlelocator {
     self.searchBtn.addEventListener('click', self.searchClick.bind(self))
     // minimum zoom
     if (options.map.zoomMin) {
-      google.maps.event.addListener(self.map, 'zoom_changed', function() {
-        google.maps.event.addListener(self.map, 'bounds_changed', function() {
+      google.maps.event.addListener(self.map, 'zoom_changed', () => {
+        google.maps.event.addListener(self.map, 'bounds_changed', () => {
           if (self.map.getZoom() > options.map.zoomMin) {
             self.map.setZoom(options.map.zoomMin)
           }
@@ -63,7 +67,7 @@ class Googlelocator {
       })
     }
     // search place
-    google.maps.event.addListener(self.search, 'place_changed', function() {
+    google.maps.event.addListener(self.search, 'place_changed', () => {
       let place = self.search.getPlace()
       if (place && place.name && place.name !== '') {
         if (place.geometry) {
@@ -92,11 +96,11 @@ class Googlelocator {
         return
       }
       // new prediction
-      new google.maps.places.AutocompleteService().getPlacePredictions({ input: self.searchInput.value }, function(results) {
+      new google.maps.places.AutocompleteService().getPlacePredictions({ input: self.searchInput.value }, results => {
         if (results && results.length) {
           const placesPreview = document.createElement('div')
           placesPreview.classList.add('display--none')
-          new google.maps.places.PlacesService(placesPreview).getDetails({ reference: results[0].reference }, function(results) {
+          new google.maps.places.PlacesService(placesPreview).getDetails({ reference: results[0].reference }, results => {
             place = results
             self.searchInput.value = place.formatted_address
             self.position = place.geometry.location
@@ -125,7 +129,7 @@ class Googlelocator {
     }
     // initialSearch
     if (options.initialSearch) {
-      google.maps.event.addListenerOnce(self.map, 'idle', function() {
+      google.maps.event.addListenerOnce(self.map, 'idle', () => {
         self.map.setCenter(options.map.center)
         self.map.setZoom(options.map.zoom)
         self.submitCurrent(true)
@@ -205,7 +209,7 @@ class Googlelocator {
     const options = self.options
     // fix .getBounds not ready
     if (!self.map.getBounds()) {
-      google.maps.event.addListenerOnce(self.map, 'bounds_changed', function() {
+      google.maps.event.addListenerOnce(self.map, 'bounds_changed', () => {
         self.submit()
       })
       return false
@@ -223,7 +227,7 @@ class Googlelocator {
     // markers
     self.locations = []
     let index = 0
-    let markers = options.markers
+    const markers = options.markers
     const bounds = new google.maps.LatLngBounds()
     if (options.infoWindow) {
       self.info = new google.maps.InfoWindow(options.infoWindow)
@@ -252,7 +256,7 @@ class Googlelocator {
           })
           bounds.extend(latLng)
           self.locations.push(loc)
-          loc.addListener('click', function() {
+          loc.addListener('click', () => {
             self.populateInfo(loc, 'marker')
           })
           index++
@@ -360,7 +364,7 @@ class Googlelocator {
       }
     }
     // info
-    cloned.addEventListener('click', function() {
+    cloned.addEventListener('click', () => {
       self.populateInfo(loc, 'result')
     })
   }
@@ -645,7 +649,7 @@ Googlelocator.optionsDefault = {
       return marker[filter]
     },
     name: function(self, loc, el) {
-      let str = loc.marker.name
+      const str = loc.marker.name
       if (!str || str === '') {
         el.remove()
       } else {
@@ -653,7 +657,7 @@ Googlelocator.optionsDefault = {
       }
     },
     address: function(self, loc, el) {
-      let str = loc.marker.address
+      const str = loc.marker.address
       if (!str || str === '') {
         el.remove()
       } else {
@@ -661,7 +665,7 @@ Googlelocator.optionsDefault = {
       }
     },
     additional: function(self, loc, el) {
-      let str = loc.marker.additional
+      const str = loc.marker.additional
       if (!str || str === '') {
         el.remove()
       } else {
@@ -669,7 +673,7 @@ Googlelocator.optionsDefault = {
       }
     },
     img: function(self, loc, el) {
-      let str = loc.marker.img
+      const str = loc.marker.img
       if (!str || str === '') {
         el.remove()
       } else {

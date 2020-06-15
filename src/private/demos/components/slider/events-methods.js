@@ -129,7 +129,7 @@ Xt.mount.push({
         // reinit
         logAdd('<strong>reinit</strong>')
         self.reinit()
-    }, 200).toString()
+      }, 200).toString()
     }
 
     removeBtn.addEventListener('click', removeFnc)

@@ -1,2 +1,1 @@
-require = require('esm')(module)
-module.exports = require('./gatsby-node.esm.js')
+module.exports = require('esm')(module)('./gatsby-node.esm.js')

@@ -9,7 +9,7 @@ Xt.mount.push({
   mount: object => {
     // methods
 
-    function inputNumberChange(step, e) {
+    const inputNumberChange = (step, e) => {
       // trigger external events and skip internal events
       if (!e || !e.detail || !e.detail.skip) {
         const input = object.querySelector('input')
@@ -19,7 +19,7 @@ Xt.mount.push({
       }
     }
 
-    function inputNumberValidate(val) {
+    const inputNumberValidate = val => {
       const input = object.querySelector('input')
       const addEl = object.querySelector('.group-number-add')
       const removeEl = object.querySelector('.group-number-remove')

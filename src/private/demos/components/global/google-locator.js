@@ -1,3 +1,4 @@
+/* global google */
 import { Xt } from 'xtend-library/src/xt.js'
 import 'xtend-library/src/addons/utils/google-locator.js'
 

@@ -28,7 +28,7 @@ exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
   config.resolve.alias['xtend-library'] = path.resolve(__dirname, './');
   actions.replaceWebpackConfig(config)
   */
-  //console.log(getConfig())
+  // console.log(getConfig())
 }
 
 // markdown
