@@ -2,29 +2,6 @@ import { Xt } from 'xtend-library/src/xt.js'
 import gsap from 'gsap'
 
 /**
- * xt-smooth
- */
-
-/*
-Xt.mount.push({
-  matches: 'html',
-  mount: object => {
-    // init
-
-    let self = new Xt.Smooth(object, {})
-
-    // unmount
-
-    const unmount = () => {
-      self.destroy()
-      self = null
-    }
-    return unmount
-  },
-})
-*/
-
-/**
  * xt-scroll
  */
 
