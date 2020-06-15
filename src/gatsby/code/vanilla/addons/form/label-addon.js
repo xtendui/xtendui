@@ -15,7 +15,7 @@ demo.htmlSource = `
     <label class="form-label">
       Label
     </label>
-    <input type="text" class="form-item">
+    <input type="text" class="form-item"/>
     <div class="form-label-addon">
       <a href="#" class="btn btn-primary btn-text">
         btn-text

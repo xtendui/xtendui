@@ -84,7 +84,7 @@ Use this markup to create a input group as line.
       </div>
 
       <div class="group-inner">
-        <input type="text" class="form-item">
+        <input type="text" class="form-item"/>
       </div>
 
     </div>
@@ -109,7 +109,7 @@ Use this markup to create a input group as stack.
       </div>
 
       <div class="group-inner">
-        <input type="text" class="form-item">
+        <input type="text" class="form-item"/>
       </div>
 
     </div>

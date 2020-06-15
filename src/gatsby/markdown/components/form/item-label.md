@@ -16,20 +16,28 @@ Use this markup to create a **form label** and **form item**.
       <label class="form-label">
         <!-- content -->
       </label>
-      <input type="text" class="form-item">
+      <input type="text" class="form-item"/>
     </div>
   </form>
 </script>
 
-If you want to customize singularly `.form-item` or `.form-label` use the class `.xt-custom`.
+<div class="table-scroll">
 
-In css you can use `.form-labels({});` and `.form-items({});` to style all `.form-label:not(.xt-custom)` and `.form-item:not(.xt-custom)`.
+|                         | Class                                     | Mixin                         | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.form-label`                | `.form-label()`        | Form label            | |
+| Option                  | `.form-item`                | `.form-item()`        | Form item            | |
+
+</div>
 
 [[notePrimary]]
 | Form label and item must be inside [form group](/components/form/group) to have default styles.
 
+[[notePrimary]]
+| Form group must be inside `.form-default` or another form variant to have default styles.
+
 <demo>
-  <demovanilla src="vanilla/components/form/item-label" name="item and label">
+  <demovanilla src="vanilla/components/form/form-mixins">
   </demovanilla>
 </demo>
 
@@ -45,32 +53,9 @@ You can set the size globally on **form**.
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Example                       |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.form-{variant}`                        | `.form-default` `.form-inverse` |
-| Mixin                   | `.form-{variant}()`                      | `.form-default()` `.form-inverse()` |
-
-</div>
-
-Or granularly on **form label**.
-
-<div class="table-scroll">
-
-|                         | Syntax                                    | Example                       |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.form-label-{variant}`                  | `.form-label-default` `.form-label-inverse` |
-| Mixin                   | `.form-label-{variant}()`                | `.form-label-default()` `.form-label-inverse()` |
-
-</div>
-
-And granularly on **form item**.
-
-<div class="table-scroll">
-
-|                         | Syntax                                    | Example                       |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.form-item-{variant}`                  | `.form-item-default` `.form-item-inverse` |
-| Mixin                   | `.form-item-{variant}()`                | `.form-item-default()` `.form-item-inverse()` |
+|                         | Class                                     | Mixin                         | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.form-{variant}`                | Not Possible        | Form variant styles            |
 
 </div>
 

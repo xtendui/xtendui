@@ -39,13 +39,22 @@ a, .btn-link {
   }
 }
 
-// text-inverse
+// text
+
+.text-default {
+  // link color
+  a:not(.btn), .btn-link {
+    color: @text;
+    &:hover, &.hover, &:active, &.active {
+      color: @text;
+    }
+  }
+}
 
 .text-inverse {
   // link color
   a:not(.btn), .btn-link {
     color: @text-inverse;
-    text-decoration: underline;
     &:hover, &.hover, &:active, &.active {
       color: @text-inverse-dark;
     }

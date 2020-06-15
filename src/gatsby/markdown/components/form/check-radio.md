@@ -135,21 +135,10 @@ You can set the size globally on **form**.
 
 </div>
 
-Or granularly on **form label**.
-
-<div class="table-scroll">
-
-|                         | Syntax                                    | Example                       |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.form-label-{variant}`                  | `.form-label-default` `.form-label-inverse` |
-| Mixin                   | `.form-label-{variant}()`                | `.form-label-default()` `.form-label-inverse()` |
-
-</div>
-
 <demo>
-  <demovanilla src="vanilla/components/form/check-radio-variant-default">
+  <demovanilla src="vanilla/components/form/variant-default">
   </demovanilla>
-  <demovanilla src="vanilla/components/form/check-radio-variant-inverse">
+  <demovanilla src="vanilla/components/form/variant-inverse">
   </demovanilla>
 </demo>
 

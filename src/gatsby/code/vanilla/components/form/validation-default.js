@@ -10,12 +10,6 @@ export const demo = {
 
 demo.htmlSource = `
 <form class="form-default">
-  <div class="form-group" style="padding: 1rem 1.5rem; background: #0078ff;">
-    <label class="form-label form-label-inverse xt-custom">
-      Custom
-    </label>
-    <input type="text" class="form-item form-item-inverse xt-custom" placeholder="Input" required>
-  </div>
 
   <div class="form-group">
     <label class="form-label">
@@ -70,7 +64,7 @@ demo.htmlSource = `
     <label class="form-label">
       File
     </label>
-    <input type="file" class="form-item">
+    <input type="file" class="form-item"/>
   </div>
 
   <div class="form-group">
@@ -118,14 +112,6 @@ demo.htmlSource = `
     <input type="radio" id="radio-validation-inverse-0" name="radio-validation-inverse"
       required>
     <label class="form-label" for="radio-validation-inverse-0">
-      <strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
-    </label>
-  </div>
-
-  <div class="form-group">
-    <input type="radio" id="radio-validation-inverse-1" name="radio-validation-inverse"
-      required>
-    <label class="form-label" for="radio-validation-inverse-1">
       <strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
     </label>
   </div>

@@ -43,12 +43,13 @@ legend, .legend {
 
 // set variant (for specificity must be before classes used)
 
-.form-default {
-  .form-groups({ .form-group-medium(); });
-}
-
-.form-inverse {
-  .form-groups({ .form-group-medium(); });
+.form-group {
+  .form-default & {
+    .form-group-medium();
+  }
+  .form-inverse & {
+    .form-group-medium();
+  }
 }
 
 // size
@@ -59,7 +60,7 @@ legend, .legend {
 }
 
 .form-small {
-  .form-groups({ .form-group-small(); });
+  .form-group-small();
   button[type='submit'] {
     .btn-medium();
     .btn-wide();
@@ -72,7 +73,7 @@ legend, .legend {
 }
 
 .form-medium {
-  .form-groups({ .form-group-medium(); });
+  .form-group-medium();
   button[type='submit'] {
     .btn-large();
     .btn-wide();
@@ -85,7 +86,7 @@ legend, .legend {
 }
 
 .form-large {
-  .form-groups({ .form-group-large(); });
+  .form-group-large();
   button[type='submit'] {
     .btn-big();
     .btn-wide();
@@ -141,21 +142,24 @@ legend, .legend {
 
 // set variant (for specificity must be before classes used)
 
-.form-default {
-  .form-labels({ .form-label-default(); });
-}
-
-.form-inverse {
-  .form-labels({ .form-label-inverse(); });
+.form-label {
+  &.form-label.form-label-default, .form-default & {
+    .form-label-default();
+  }
+  &.form-label.form-label-inverse, .form-inverse & {
+    .form-label-inverse();
+  }
 }
 
 // variant
 
 .form-label-default {
+  .text-default();
   color: @shade-500;
 }
 
 .form-label-inverse {
+  .text-inverse();
   color: @text-inverse;
 }
 
@@ -172,12 +176,13 @@ legend, .legend {
 
 // set variant (for specificity must be before classes used)
 
-.form-default {
-  .form-items({ .form-item-default(); });
-}
-
-.form-inverse {
-  .form-items({ .form-item-inverse(); });
+.form-item {
+  &.form-item.form-item-default, .form-default & {
+    .form-item-default();
+  }
+  &.form-item.form-item-inverse, .form-inverse & {
+    .form-item-inverse();
+  }
 }
 
 // variant
@@ -288,12 +293,12 @@ legend, .legend {
 
 .form-item {
   select:not([multiple])& {
-    &.form-item.form-item-default, .form-default & {
+    &.form-item-default, .form-default & {
       @select-arrow-color: @text;
       @select-space-color: fade(@shade-900, 10%);
       background-image: linear-gradient(45deg, transparent 50%, @select-arrow-color 50%), linear-gradient(135deg, @select-arrow-color 50%, transparent 50%), linear-gradient(to right, @select-space-color, @select-space-color);
     }
-    &.form-item.form-item-inverse, .form-inverse & {
+    &.form-item-inverse, .form-inverse & {
       @select-arrow-color: @text-inverse;
       @select-space-color: fade(@shade-900, 10%);
       background-image: linear-gradient(45deg, transparent 50%, @select-arrow-color 50%), linear-gradient(135deg, @select-arrow-color 50%, transparent 50%), linear-gradient(to right, @select-space-color, @select-space-color);

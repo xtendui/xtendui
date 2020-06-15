@@ -10,7 +10,7 @@ export const demo = {
 
 demo.htmlSource = `
 <form class="form-default form-medium">
-  <div class="form-group form-group-large xt-custom">
+  <div class="form-group form-group-large">
     <label class="form-label">
       Custom
     </label>
@@ -28,7 +28,7 @@ demo.htmlSource = `
     <label class="form-label">
       File
     </label>
-    <input type="file" class="form-item">
+    <input type="file" class="form-item"/>
   </div>
 
   <div class="form-group">

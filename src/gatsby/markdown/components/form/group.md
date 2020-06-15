@@ -18,12 +18,24 @@ Use this markup to create a **form group**.
   </form>
 </script>
 
-If you want to customize form's group singularly use the class `.form-group.xt-custom`.
+<div class="table-scroll">
 
-In css you can use `.form-groups({});` to style all `.form-group:not(.xt-custom)`.
+|                         | Class                                     | Mixin                         | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.form-group`                | `.form-group()`        | Form group            | |
+
+</div>
+
+[[notePrimary]]
+| Form label and item must be inside [form group](/components/form/group) to have default styles.
 
 [[notePrimary]]
 | Form group must be inside `.form-default` or another form variant to have default styles.
+
+<demo>
+  <demovanilla src="vanilla/components/form/form-mixins">
+  </demovanilla>
+</demo>
 
 ## Mode
 

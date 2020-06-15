@@ -10,31 +10,31 @@ export const demo = {
 
 demo.htmlSource = `
 <form class="form-default">
-  <div class="form-group form-group-small xt-custom">
+  <div class="form-group form-group-small">
     <label class="form-label">
       Small
     </label>
-    <input type="text" class="form-item">
+    <input type="text" class="form-item"/>
     <div class="form-note">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis.
     </div>
   </div>
 
-  <div class="form-group form-group-medium xt-custom">
+  <div class="form-group form-group-medium">
     <label class="form-label">
       Medium
     </label>
-    <input type="text" class="form-item">
+    <input type="text" class="form-item"/>
     <div class="form-note">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis.
     </div>
   </div>
 
-  <div class="form-group form-group-large xt-custom">
+  <div class="form-group form-group-large">
     <label class="form-label">
       Large
     </label>
-    <input type="text" class="form-item">
+    <input type="text" class="form-item"/>
     <div class="form-note">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis.
     </div>
