@@ -1,10 +1,4 @@
 *.min.css
 *.min.js
-/_gh_pages/
 polyfill.js
 ResizeSensor.js
-src/core/icon/icons/
-/src/gatsby/assets/images
-/src/gatsby/assets/styles/icons
-/src/gatsby/assets/styles/icons-theme
-*.md
