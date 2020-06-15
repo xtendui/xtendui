@@ -58,6 +58,3 @@ Give `.media` one of this options:
   <demovanilla src="vanilla/components/media/contain">
   </demovanilla>
 </demo>
-
-[[notePrimary]]
-| If you want to support [old browsers](https://caniuse.com/#feat=object-fit), use [object-fit polyfills](https://github.com/fregante/object-fit-images).
