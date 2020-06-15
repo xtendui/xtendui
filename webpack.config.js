@@ -28,20 +28,25 @@ module.exports = {
     rules: [
       {
         test: /\.m?js$/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: [
-              [
-                '@babel/preset-env',
-                {
-                  useBuiltIns: 'entry',
-                  corejs: 2,
-                },
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                [
+                  '@babel/preset-env',
+                  {
+                    useBuiltIns: 'entry',
+                    corejs: 2,
+                  },
+                ],
               ],
-            ],
+            },
           },
-        },
+          {
+            loader: 'eslint-loader',
+          },
+        ],
       },
       {
         test: /\.less$/,
