@@ -1,5 +1,4 @@
-*.less
-*.css
+*.min.css
 *.min.js
 /_gh_pages/
 polyfill.js
