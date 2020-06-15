@@ -24,10 +24,6 @@
 
 a, .btn-link {
   .link-underline();
-  color: @accent;
-  &:hover, &.hover, &:active, &.active {
-    color: @accent-dark;
-  }
 }
 
 // animation
@@ -44,9 +40,9 @@ a, .btn-link {
 .text-default {
   // link color
   a:not(.btn), .btn-link {
-    color: @text;
+    color: @accent;
     &:hover, &.hover, &:active, &.active {
-      color: @text;
+      color: @accent-dark;
     }
   }
 }

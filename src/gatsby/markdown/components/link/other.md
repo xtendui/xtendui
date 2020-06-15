@@ -31,6 +31,7 @@ Links under `.text-inverse` are styled accordingly.
 
 |                         | Class                                     | Mixin                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.text-default`                 | `.text-default()`        | Styles child elements with **default** text styles            |
 | Option                  | `.text-inverse`                 | `.text-inverse()`        | Styles child elements with **inverse** text styles            |
 
 </div>
