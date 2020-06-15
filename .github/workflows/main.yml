@@ -1,4 +1,4 @@
-name: CI
+name: Release
 
 on:
   push:
@@ -15,7 +15,7 @@ jobs:
       with:
         persist-credentials: false
     - name: Yarn Install
-      run: yarn install
+      run: yarn install --frozen-lockfile
     - name: Semantic Release
       uses: cycjimmy/semantic-release-action@v2
       with:
