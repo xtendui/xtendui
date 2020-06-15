@@ -1,6 +1,6 @@
-@import '~xtend-library/src/core/overlay/_overlay.less';
-@import '~xtend-library/src/core/javascript/javascript.less';
-@import '~xtend-library/src/core/card/card.less';
+@import 'xtend-library/src/core/overlay/_overlay.less';
+@import 'xtend-library/src/core/javascript/javascript.less';
+@import 'xtend-library/src/core/card/card.less';
 
 /**
  * overlay
@@ -52,7 +52,7 @@
 
 .overlay-default {
   .overlay-inner {
-    color: @text;
+    .text-default();
   }
   .overlay-design {
     border-color: @shade-200;

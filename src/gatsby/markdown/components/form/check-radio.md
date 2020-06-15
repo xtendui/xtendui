@@ -22,16 +22,13 @@ Use this markup to create a **styled** **checkbox** or **radio**.
     </div>
 
     <div class="form-group">
-      <input type="radio" id="radio-styled" name="radio-styled">
-      <label class="form-label" for="radio-styled">
+      <input type="radio" id="radio-styled-0" name="radio-styled">
+      <label class="form-label" for="radio-styled-0">
         <!-- content -->
       </label>
     </div>
   </form>
 </script>
-
-[[notePrimary]]
-| Checkbox and radio must be inside [form group](/components/form/group) to have default styles.
 
 <demo>
   <demovanilla src="vanilla/components/form/check-radio-styled-block">
@@ -41,6 +38,8 @@ Use this markup to create a **styled** **checkbox** or **radio**.
   <demovanilla src="vanilla/components/form/check-radio-styled-disabled">
   </demovanilla>
 </demo>
+
+For inline or other checkbox and radio layout refer to [form mode](/components/form/items#mode).
 
 #### Fake
 
@@ -128,41 +127,15 @@ You can set the size globally on **form**.
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Example                       |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.form-{variant}`                        | `.form-default` `.form-inverse` |
-| Mixin                   | `.form-{variant}()`                      | `.form-default()` `.form-inverse()` |
-
-</div>
-
-Or granularly on **form label**.
-
-<div class="table-scroll">
-
-|                         | Syntax                                    | Example                       |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.form-label-{variant}`                  | `.form-label-default` `.form-label-inverse` |
-| Mixin                   | `.form-label-{variant}()`                | `.form-label-default()` `.form-label-inverse()` |
+|                         | Class                                     | Mixin                         | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.form-{variant}`                | Not Possible        | Form variant styles            |
 
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/form/check-radio-variant-default">
+  <demovanilla src="vanilla/components/form/variant-default">
   </demovanilla>
-  <demovanilla src="vanilla/components/form/check-radio-variant-inverse">
-  </demovanilla>
-</demo>
-
-## Validation
-
-Validation with html attributes.
-
-[[notePrimary]]
-| Form validation must be inside `form` or `.form` to work.
-
-<demo>
-  <demovanilla src="vanilla/components/form/check-radio-validation-default">
-  </demovanilla>
-  <demovanilla src="vanilla/components/form/check-radio-validation-inverse">
+  <demovanilla src="vanilla/components/form/variant-inverse">
   </demovanilla>
 </demo>

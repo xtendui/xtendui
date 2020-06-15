@@ -12,13 +12,13 @@ categories: ["400-Extensions"]
 To use this component import the **less** files accordingly:
 
 ```less
-@import '~xtend-library/src/extensions/loader/loader.less';
+@import '/src/extensions/loader/loader.less';
 ```
 
 Or just import **extensions**:
 
 ```less
-@import '~xtend-library/src/xtend-extensions.less';
+@import '/src/xtend-extensions.less';
 ```
 
 [[noteDefault]]

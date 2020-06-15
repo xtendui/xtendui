@@ -10,12 +10,6 @@ export const demo = {
 
 demo.htmlSource = `
 <form class="form-default">
-  <div class="form-group" style="padding: 1rem 1.5rem; background: #0078ff;">
-    <label class="form-label form-label-inverse xt-custom">
-      Custom
-    </label>
-    <input type="text" class="form-item form-item-inverse xt-custom" placeholder="Input">
-  </div>
 
   <div class="form-group">
     <label class="form-label">
@@ -35,7 +29,7 @@ demo.htmlSource = `
     <label class="form-label">
       File
     </label>
-    <input type="file" class="form-item">
+    <input type="file" class="form-item"/>
   </div>
 
   <div class="form-group">
@@ -50,7 +44,7 @@ demo.htmlSource = `
       Select
     </label>
     <select class="form-item">
-      <option selected>Select an option</option>
+      <option selected value="">Select an option</option>
       <option>Test</option>
       <option>Test</option>
       <option>Test</option>
@@ -68,8 +62,55 @@ demo.htmlSource = `
     </select>
   </div>
 
+  <div class="form-group">
+    <input type="checkbox" id="check-default" name="check-default">
+    <label class="form-label" for="check-default">
+      <strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
+    </label>
+  </div>
+
+  <div class="form-group">
+    <input type="radio" id="radio-default-0" name="radio-default">
+    <label class="form-label" for="radio-default-0">
+      <strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
+    </label>
+  </div>
+
+  <div class="form-group" style="padding: 1rem 1.5rem; background: #0078ff;">
+    <div class="form-group">
+      <label class="form-label form-label-inverse">
+        Input
+      </label>
+      <input type="text" class="form-item form-item-inverse" placeholder="Input">
+    </div>
+    <div class="form-group">
+      <label class="form-label form-label-inverse">
+        Input
+      </label>
+      <select class="form-item form-item-inverse">
+        <option selected value="">Select an option</option>
+        <option>Test</option>
+        <option>Test</option>
+        <option>Test</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <input type="checkbox" id="checkbox-default-inverse">
+      <label class="form-label form-label-inverse" for="checkbox-default-inverse">
+        <strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
+      </label>
+    </div>
+    <div class="form-group">
+      <input type="radio" id="radio-default-inverse-0" name="radio-default-inverse">
+      <label class="form-label form-label-inverse" for="radio-default-inverse-0">
+        <strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
+      </label>
+    </div>
+  </div>
+
   <button type="submit" class="btn btn-primary">
     submit
   </button>
+  
 </form>
 `

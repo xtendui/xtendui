@@ -12,13 +12,13 @@ categories: ["100-Core"]
 To use this component import the **less** files accordingly:
 
 ```less
-@import '~xtend-library/src/core/group/group.less';
+@import '/src/core/group/group.less';
 ```
 
 Or just import **core**:
 
 ```less
-@import '~xtend-library/src/xtend-core.less';
+@import '/src/xtend-core.less';
 ```
 
 [[noteDefault]]
@@ -84,7 +84,7 @@ Use this markup to create a input group as line.
       </div>
 
       <div class="group-inner">
-        <input type="text" class="form-item">
+        <input type="text" class="form-item"/>
       </div>
 
     </div>
@@ -109,7 +109,7 @@ Use this markup to create a input group as stack.
       </div>
 
       <div class="group-inner">
-        <input type="text" class="form-item">
+        <input type="text" class="form-item"/>
       </div>
 
     </div>

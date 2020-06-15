@@ -5,8 +5,7 @@
 import 'core-js'
 import 'regenerator-runtime/runtime'
 import 'xtend-library/src/polyfill.js'
-import 'xtend-library/src/polyfill-old.js'
-import { Xt } from 'xtend-library'
+import { Xt } from 'xtend-library/src/xt.js'
 import 'xtend-library/src/xtend-core.js'
 
 // export UMD

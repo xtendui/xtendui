@@ -28,12 +28,10 @@
   "dependencies": {
     "@google/markerclusterer": "^2.0.8",
     "bezier-easing": "^2.1.0",
-    "classlist.js": "^1.1.20150312",
     "core-js": "^2.6.11",
     "gsap": "^3.2.0",
     "regenerator-runtime": "^0.13.3",
-    "relaxed-json": "^1.0.3",
-    "url-polyfill": "^1.1.8"
+    "relaxed-json": "^1.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
@@ -67,8 +65,7 @@
     "gatsby-transformer-remark": "^2.6.53",
     "gh-pages": "^1.2.0",
     "glob": "^7.1.6",
-    "less": "^3.11.1",
-    "less-loader": "^5.0.0",
+    "less-loader": "^6.1.0",
     "lodash.kebabcase": "^4.1.1",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "prettier-eslint": "^9.0.1",
@@ -86,9 +83,6 @@
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11",
     "write": "^1.0.3"
-  },
-  "resolutions": {
-    "webpack-hot-middleware": "git://github.com/minimit/webpack-hot-middleware.git#fix-iframe"
   },
   "release": {
     "branch": "master",

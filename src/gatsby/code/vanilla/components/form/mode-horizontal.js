@@ -18,7 +18,7 @@ demo.htmlSource = `
         </label>
       </div>
       <div class="col-form-item">
-        <input type="text" class="form-item">
+        <input type="text" class="form-item"/>
       </div>
     </div>
   </div>
@@ -31,7 +31,7 @@ demo.htmlSource = `
         </label>
       </div>
       <div class="col-form-item">
-        <input type="text" class="form-item">
+        <input type="text" class="form-item"/>
       </div>
     </div>
   </div>
@@ -44,7 +44,7 @@ demo.htmlSource = `
         </label>
       </div>
       <div class="col-form-item">
-        <input type="text" class="form-item">
+        <input type="text" class="form-item"/>
       </div>
     </div>
   </div>
@@ -57,7 +57,7 @@ demo.htmlSource = `
         </label>
       </div>
       <div class="col-form-item">
-        <input type="text" class="form-item">
+        <input type="text" class="form-item"/>
       </div>
     </div>
   </div>

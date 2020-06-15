@@ -1,4 +1,4 @@
-@import '~xtend-library/src/core/typography/_typography.less';
+@import 'xtend-library/src/core/typography/_typography.less';
 
 /**
  * font face
@@ -214,6 +214,16 @@ small {
   top: -.1em;
 }
 
+// text
+
+.text-default {
+  color: @text;
+}
+
+.text-inverse {
+  color: @text-inverse;
+}
+
 // font
 
 .font-micro {
@@ -274,13 +284,12 @@ small {
   line-height: 2;
 }
 
-// text-inverse
+.line-height-giant {
+  line-height: 2.25;
+}
 
-.text-inverse {
-  color: @text-inverse;
-  h1, h2, h3, h4, h5, h6 {
-    color: inherit;
-  }
+.line-height-huge {
+  line-height: 2.5;
 }
 
 /**

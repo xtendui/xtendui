@@ -1,4 +1,4 @@
-@import '~xtend-library/src/core/link/_link.less';
+@import 'xtend-library/src/core/link/_link.less';
 
 /**
  * decoration
@@ -24,10 +24,6 @@
 
 a, .btn-link {
   .link-underline();
-  color: @accent;
-  &:hover, &.hover, &:active, &.active {
-    color: @accent-dark;
-  }
 }
 
 // animation
@@ -39,13 +35,22 @@ a, .btn-link {
   }
 }
 
-// text-inverse
+// text
+
+.text-default {
+  // link color
+  a:not(.btn), .btn-link {
+    color: @accent;
+    &:hover, &.hover, &:active, &.active {
+      color: @accent-dark;
+    }
+  }
+}
 
 .text-inverse {
   // link color
   a:not(.btn), .btn-link {
     color: @text-inverse;
-    text-decoration: underline;
     &:hover, &.hover, &:active, &.active {
       color: @text-inverse-dark;
     }

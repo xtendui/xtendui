@@ -11,17 +11,24 @@ require('./build/js.js')
 
 // webpack config
 
-exports.onCreateWebpackConfig = ({ stage, actions }) => {
-  if (stage.startsWith('develop')) {
-    actions.setWebpackConfig({
-      // https://github.com/gatsbyjs/gatsby/issues/11934
-      resolve: {
-        alias: {
-          'react-dom': '@hot-loader/react-dom',
-        },
+exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        // resolve xtend-library js and less import
+        'xtend-library': path.resolve(__dirname, './'),
+        // https://github.com/gatsbyjs/gatsby/issues/11934
+        'react-dom': '@hot-loader/react-dom',
       },
-    })
-  }
+    },
+  })
+  /*
+  // https://github.com/gatsbyjs/gatsby/issues/14882
+  let config = getConfig()
+  config.resolve.alias['xtend-library'] = path.resolve(__dirname, './');
+  actions.replaceWebpackConfig(config)
+  */
+  //console.log(getConfig())
 }
 
 // markdown

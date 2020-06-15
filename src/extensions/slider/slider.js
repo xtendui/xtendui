@@ -1,4 +1,4 @@
-import { Xt } from 'xtend-library'
+import { Xt } from 'xtend-library/src/xt.js'
 import 'xtend-library/src/core/toggle/toggle.js'
 import RJSON from 'relaxed-json'
 
@@ -874,7 +874,7 @@ class Slider extends Xt.Toggle {
       if (self.detail.dragDate) {
         self.detail.dragDateDiff = new Date() - self.detail.dragDate
         self.detail.dragDate = null
-        if (self.detail.dragDateDiff > options.drag.timeLimit) {
+        if (self.detail.dragDateDiff > options.drag.frictionTime) {
           self.detail.dragVelocity = -1 // @FIX velocity -1 when done
         }
       }
@@ -1216,8 +1216,8 @@ Slider.optionsDefault = {
     dragger: '.slides-inner',
     wrap: false,
     manual: false,
-    threshold: 50,
-    linkThreshold: 50,
+    threshold: 5,
+    linkThreshold: 5,
     factor: 1,
     friction: false,
     /*
@@ -1225,11 +1225,11 @@ Slider.optionsDefault = {
       return Math.pow(velocity, 0.95)
     },
     frictionLimit: 1.5,
+    frictionTime: 25,
     */
     overflow: overflow => {
       return Math.pow(overflow, 0.73)
     },
-    timeLimit: 25,
   },
 }
 

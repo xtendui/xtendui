@@ -1,5 +1,5 @@
-@import (reference) '~xtend-library/src/xtend-core.less';
-@import '~xtend-library/src/core/media/media.less';
+@import (reference) 'xtend-library/src/xtend-core.less';
+@import 'xtend-library/src/core/media/media.less';
 
 /**
  * .demo--2020-aniyeby-mask
@@ -28,7 +28,7 @@
   .block-listing_item {
     .link-none();
     .full();
-    color: @text !important;
+    .text-default() !important;
   }
   
   .block-listing_img {
@@ -51,13 +51,12 @@
   
   .media_mask {
     position: absolute;
-    z-index: @index-active;
+    z-index: @index-active + 1;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 0;
     background: @white;
-    opacity: 0;
   }
 
 }

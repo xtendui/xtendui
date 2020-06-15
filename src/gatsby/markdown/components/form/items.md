@@ -2,28 +2,101 @@
 type: "Components"
 badge: "Core"
 parent: "Form"
-title: "Group"
-date: "2019-10-01"
+title: "Items"
+date: "2019-11-01"
 ---
 
 ## Usage
 
-Use this markup to create a **form group**.
+Use this markup to create a **form label** and **form item**.
 
 <script type="text/plain" class="language-markup">
   <form class="form-default">
     <div class="form-group">
-      <!-- content -->
+      <label class="form-label">
+        <!-- content -->
+      </label>
+      <input type="text" class="form-item"/>
     </div>
   </form>
 </script>
 
-If you want to customize form's group singularly use the class `.form-group.xt-custom`.
+<div class="table-scroll">
 
-In css you can use `.form-groups({});` to style all `.form-group:not(.xt-custom)`.
+|                         | Class                                     | Mixin                         | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.form-group`                | `.form-group()`        | Form group            |
+| Option                  | `.form-label`                | `.form-label()`        | Form label            |
+| Option                  | `.form-item`                | `.form-item()`        | Form item            |
+
+</div>
 
 [[notePrimary]]
 | Form group must be inside `.form-default` or another form variant to have default styles.
+
+<demo>
+  <demovanilla src="vanilla/components/form/form-mixins">
+  </demovanilla>
+</demo>
+
+## Size
+
+Classes for assigning size (e.g.: padding or font size). Add or remove selectors at your discretion.
+
+Size is done with **em** so it's relative to the container element.
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Example                       |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Class                   | `.form-group-{size}`                        | `.form-group-small` `.form-group-medium` `.form-group-large`     |
+| Mixin                   | `.form-group-{size}()`                      | `.form-group-small()` `.form-group-medium()` `.form-group-large()`     |
+
+</div>
+
+You can set the size globally on **form**.
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Example                       |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Class                   | `.form-{size}`                        | `.form-small` `.form-medium` `.form-large`     |
+| Mixin                   | `.form-{size}()`                      | `.form-small()` `.form-medium()` `.form-large()`     |
+
+</div>
+
+[[notePrimary]]
+| Form label and item must be inside `.form-group` to have default size.
+
+<demo>
+  <demovanilla src="vanilla/components/form/group-small">
+  </demovanilla>
+  <demovanilla src="vanilla/components/form/group-medium">
+  </demovanilla>
+  <demovanilla src="vanilla/components/form/group-large">
+  </demovanilla>
+</demo>
+
+## Variant
+
+Classes for assigning variant (e.g.: border / background / color). Add or remove selectors at your discretion.
+
+You can set the size globally on **form**.
+
+<div class="table-scroll">
+
+|                         | Class                                     | Mixin                         | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.form-{variant}`                | Not Possible        | Form variant styles            |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/form/variant-default">
+  </demovanilla>
+  <demovanilla src="vanilla/components/form/variant-inverse">
+  </demovanilla>
+</demo>
 
 ## Mode
 
@@ -187,40 +260,5 @@ Inline **form input** and **form label**.
 
 <demo>
   <demovanilla src="vanilla/components/form/mode-inline-inner">
-  </demovanilla>
-</demo>
-
-## Size
-
-Classes for assigning size (e.g.: padding or font size). Add or remove selectors at your discretion.
-
-You can set the size globally on **form**.
-
-<div class="table-scroll">
-
-|                         | Syntax                                    | Example                       |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.form-{size}`                        | `.form-small` `.form-medium` `.form-large`     |
-| Mixin                   | `.form-{size}()`                      | `.form-small()` `.form-medium()` `.form-large()`     |
-
-</div>
-
-Or granularly on **form group**.
-
-<div class="table-scroll">
-
-|                         | Syntax                                    | Example                       |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.form-group-{size}`                        | `.form-group-small` `.form-group-medium` `.form-group-large`     |
-| Mixin                   | `.form-group-{size}()`                      | `.form-group-small()` `.form-group-medium()` `.form-group-large()`     |
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/form/group-small">
-  </demovanilla>
-  <demovanilla src="vanilla/components/form/group-medium">
-  </demovanilla>
-  <demovanilla src="vanilla/components/form/group-large">
   </demovanilla>
 </demo>

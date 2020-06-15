@@ -12,21 +12,21 @@ categories: ["100-Core"]
 To use this component import the **less** and **js** files accordingly:
 
 ```less
-@import '~xtend-library/src/core/drop/drop.less';
+@import '/src/core/drop/drop.less';
 ```
 
 ```jsx
-import 'xtend-library/src/core/drop/drop.js'
+import '/src/core/drop/drop.js'
 ```
 
 Or just import **core**:
 
 ```less
-@import '~xtend-library/src/xtend-core.less';
+@import '/src/xtend-core.less';
 ```
 
 ```jsx
-import 'xtend-library/src/xtend-core.js'
+import '/src/xtend-core.js'
 ```
 
 [[noteDefault]]

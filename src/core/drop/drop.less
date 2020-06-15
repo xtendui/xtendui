@@ -1,6 +1,6 @@
-@import '~xtend-library/src/core/drop/_drop.less';
-@import '~xtend-library/src/core/list/list.less';
-@import '~xtend-library/src/core/card/card.less';
+@import 'xtend-library/src/core/drop/_drop.less';
+@import 'xtend-library/src/core/list/list.less';
+@import 'xtend-library/src/core/card/card.less';
 
 /**
  * vars
@@ -39,7 +39,7 @@
 
 .drop-default {
   > .drop-inner {
-    color: @text;
+    .text-default();
     > .drop-design {
       border-color: @shade-200;
       background: @white;

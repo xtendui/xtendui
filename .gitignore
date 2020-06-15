@@ -69,7 +69,7 @@ yarn-error.log
 .yarn-integrity
 
 # build
-/dist/*.css
-/dist/*.css.map
+/dist/*.min.css
+/dist/*.min.css.map
 /dist/*.min.js
 /dist/*.min.js.map

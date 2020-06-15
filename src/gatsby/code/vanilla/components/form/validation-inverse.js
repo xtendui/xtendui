@@ -11,13 +11,6 @@ export const demo = {
 demo.htmlSource = `
 <form class="form-inverse"
   style="padding: 1rem 1.5rem; background: #0078ff;">
-  <div class="form-group"
-    style="padding: 1rem 1.5rem; background: #ffffff;">
-    <label class="form-label form-label-default xt-custom">
-      Custom
-    </label>
-    <input type="text" class="form-item form-item-default xt-custom" placeholder="Input" required>
-  </div>
 
   <div class="form-group">
     <label class="form-label">
@@ -72,7 +65,8 @@ demo.htmlSource = `
     <label class="form-label">
       File
     </label>
-    <input type="file" class="form-item">
+    <input type="file" class="form-item"
+      required/>
   </div>
 
   <div class="form-group">
@@ -89,7 +83,7 @@ demo.htmlSource = `
     </label>
     <select class="form-item"
       required>
-      <option selected>Select an option</option>
+      <option selected value="">Select an option</option>
       <option>Test</option>
       <option>Test</option>
       <option>Test</option>
@@ -124,15 +118,7 @@ demo.htmlSource = `
     </label>
   </div>
 
-  <div class="form-group">
-    <input type="radio" id="radio-validation-inverse-1" name="radio-validation-inverse"
-      required>
-    <label class="form-label" for="radio-validation-inverse-1">
-      <strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
-    </label>
-  </div>
-
-  <button type="submit" class="btn btn-primary btn-big">
+  <button type="submit" class="btn btn-default btn-big">
     Send
   </button>
 

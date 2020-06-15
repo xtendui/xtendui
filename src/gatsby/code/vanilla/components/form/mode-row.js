@@ -17,7 +17,7 @@ demo.htmlSource = `
         <label class="form-label">
           Lorem
         </label>
-        <input type="text" class="form-item">
+        <input type="text" class="form-item"/>
       </div>
     </div>
     <div class="col-form-double">
@@ -25,7 +25,7 @@ demo.htmlSource = `
         <label class="form-label">
           Lorem Ipsum
         </label>
-        <input type="text" class="form-item">
+        <input type="text" class="form-item"/>
       </div>
     </div>
   </div>
@@ -36,7 +36,7 @@ demo.htmlSource = `
         <label class="form-label">
           Lorem
         </label>
-        <input type="text" class="form-item">
+        <input type="text" class="form-item"/>
       </div>
     </div>
     <div class="col-form-double">
@@ -44,7 +44,7 @@ demo.htmlSource = `
         <label class="form-label">
           Lorem Ipsum
         </label>
-        <input type="text" class="form-item">
+        <input type="text" class="form-item"/>
       </div>
     </div>
   </div>

@@ -3,7 +3,6 @@
 *.min.js
 /_gh_pages/
 polyfill.js
-polyfill-old.js
 ResizeSensor.js
 src/core/icon/icons/
 /src/gatsby/assets/images

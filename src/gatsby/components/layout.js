@@ -11,8 +11,7 @@ import DocFullscreen from 'components/includes/doc-fullscreen'
 import 'core-js'
 import 'regenerator-runtime/runtime'
 import 'xtend-library/src/polyfill.js'
-import 'xtend-library/src/polyfill-old.js'
-import { Xt } from 'xtend-library'
+import { Xt } from 'xtend-library/src/xt.js'
 import 'xtend-library/src/xtend-core.js'
 import 'xtend-library/src/xtend-extensions.js'
 import 'xtend-library/src/xtend-addons.js'
@@ -48,8 +47,9 @@ class Layout extends React.Component {
                 title
                 author
                 version
-                npm
                 github
+                npm
+                twitter
                 download
               }
             }

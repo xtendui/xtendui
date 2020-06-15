@@ -3,6 +3,7 @@
  */
 
 const fs = require('fs')
+const path = require('path')
 const version = JSON.parse(fs.readFileSync('package.json').toString()).version
 
 module.exports = {
@@ -13,6 +14,7 @@ module.exports = {
     version: version,
     npm: 'https://www.npmjs.com/package/xtend-library',
     github: 'https://github.com/minimit/xtend-library',
+    twitter: 'https://twitter.com/beaver82minimit',
     download: 'https://github.com/minimit/xtend-library/releases',
   },
   plugins: [
@@ -32,15 +34,16 @@ module.exports = {
         icon: 'src/gatsby/assets/images/favicon.png',
       },
     },
-    // resolve js and css
+    // resolve
     {
       resolve: 'gatsby-plugin-module-resolver',
       options: {
         root: './',
         aliases: {
-          'xtend-library': './', // resolve xtend-library gatsby
           assets: './src/gatsby/assets',
           components: './src/gatsby/components',
+          // resolve xtend-library import js and less
+          'xtend-library': path.resolve(__dirname, './'),
         },
       },
     },
