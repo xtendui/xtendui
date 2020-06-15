@@ -37,7 +37,7 @@ demo.htmlSource = `
         Select
       </label>
       <select>
-        <option selected>Select an option</option>
+        <option selected value="">Select an option</option>
         <option>Test</option>
         <option>Test</option>
         <option>Test</option>

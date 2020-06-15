@@ -44,7 +44,7 @@ demo.htmlSource = `
       Select
     </label>
     <select class="form-item">
-      <option selected>Select an option</option>
+      <option selected value="">Select an option</option>
       <option>Test</option>
       <option>Test</option>
       <option>Test</option>
@@ -88,7 +88,7 @@ demo.htmlSource = `
         Input
       </label>
       <select class="form-item form-item-inverse">
-        <option selected>Select an option</option>
+        <option selected value="">Select an option</option>
         <option>Test</option>
         <option>Test</option>
         <option>Test</option>

@@ -10,12 +10,6 @@ export const demo = {
 
 demo.htmlSource = `
 <form class="form-default form-large">
-  <div class="form-group form-group-large">
-    <label class="form-label">
-      Custom
-    </label>
-    <input type="text" class="form-item" placeholder="Input">
-  </div>
 
   <div class="form-group">
     <label class="form-label">
@@ -43,7 +37,7 @@ demo.htmlSource = `
       Select
     </label>
     <select class="form-item">
-      <option selected>Select an option</option>
+      <option selected value="">Select an option</option>
       <option>Test</option>
       <option>Test</option>
       <option>Test</option>
@@ -81,9 +75,17 @@ demo.htmlSource = `
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
     </label>
   </div>
+  
+  <div class="form-group form-group-small">
+    <label class="form-label">
+      Input
+    </label>
+    <input type="text" class="form-item" placeholder="Input">
+  </div>
 
   <button type="submit" class="btn btn-primary">
     submit
   </button>
+  
 </form>
 `

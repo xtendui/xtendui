@@ -56,3 +56,17 @@ Form note uses the [note component](/components/note).
 ## Group
 
 Refer to [Group page](/components/group#usage-input).
+
+## Validation
+
+Validation with html attributes.
+
+[[notePrimary]]
+| Form validation must be inside `form` or `.form` to work.
+
+<demo>
+  <demovanilla src="vanilla/components/form/validation-default">
+  </demovanilla>
+  <demovanilla src="vanilla/components/form/validation-inverse">
+  </demovanilla>
+</demo>

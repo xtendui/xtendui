@@ -20,7 +20,7 @@ demo.htmlSource = `
   <div class="googlelocator_aside">
 
     <div class="googlelocator_aside_head">
-      <div class="form form-default">
+      <div class="form-default">
 
         <div class="form-group">
           <div class="group full">

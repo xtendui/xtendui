@@ -41,56 +41,64 @@ legend, .legend {
   .margin(bottom, none) !important;
 }
 
-// set variant (for specificity must be before classes used)
+// set group variant (for specificity must be before classes used)
 
 .form-group {
   .form-default & {
-    .form-group-medium();
+    .form-group.form-group-medium();
   }
   .form-inverse & {
-    .form-group-medium();
+    .form-group.form-group-medium();
   }
 }
 
-// size
-
-.form-group-small {
-  .margin(bottom, 1.5rem);
-  font-size: 1.2rem;
-}
+// set group size (for specificity must be before classes used)
 
 .form-small {
-  .form-group-small();
+  .form-group {
+    .form-group.form-group-small();
+  }
   button[type='submit'] {
     .btn-medium();
     .btn-wide();
   }
 }
 
-.form-group-medium {
-  .margin(bottom, 1.5rem);
-  font-size: 1.4rem;
-}
-
 .form-medium {
-  .form-group-medium();
+  .form-group {
+    .form-group.form-group-medium();
+  }
   button[type='submit'] {
     .btn-large();
     .btn-wide();
   }
 }
 
-.form-group-large {
-  .margin(bottom, 1.5rem);
-  font-size: 1.6rem;
-}
-
 .form-large {
-  .form-group-large();
+  .form-group {
+    .form-group.form-group-large();
+  }
   button[type='submit'] {
     .btn-big();
     .btn-wide();
   }
+}
+
+// size
+
+.form-group.form-group-small {
+  .margin(bottom, 1.5rem);
+  font-size: 1.2rem;
+}
+
+.form-group.form-group-medium {
+  .margin(bottom, 1.5rem);
+  font-size: 1.4rem;
+}
+
+.form-group.form-group-large {
+  .margin(bottom, 1.5rem);
+  font-size: 1.6rem;
 }
 
 // mode
@@ -140,7 +148,7 @@ legend, .legend {
   text-transform: uppercase;
 }
 
-// set variant (for specificity must be before classes used)
+// set label variant (for specificity must be before classes used)
 
 .form-label {
   &.form-label.form-label-default, .form-default & {
@@ -174,7 +182,7 @@ legend, .legend {
   font-size: 1em; // size in em inherit .form-group size
 }
 
-// set variant (for specificity must be before classes used)
+// set item variant (for specificity must be before classes used)
 
 .form-item {
   &.form-item.form-item-default, .form-default & {
@@ -310,7 +318,7 @@ legend, .legend {
     overflow-y: auto;
     .overflow-style(@mode: inner);
     option {
-      padding: .5rem 1rem;
+      padding: .5rem 0;
     }
   }
 }

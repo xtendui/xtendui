@@ -64,7 +64,8 @@ demo.htmlSource = `
     <label class="form-label">
       File
     </label>
-    <input type="file" class="form-item"/>
+    <input type="file" class="form-item"
+      required/>
   </div>
 
   <div class="form-group">
@@ -81,7 +82,7 @@ demo.htmlSource = `
     </label>
     <select class="form-item"
       required>
-      <option selected>Select an option</option>
+      <option selected value="">Select an option</option>
       <option>Test</option>
       <option>Test</option>
       <option>Test</option>
