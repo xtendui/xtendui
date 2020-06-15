@@ -23,7 +23,7 @@
     "release": "npx semantic-release --no-ci",
     "release:dry": "npx semantic-release --dry-run",
     "lint": "eslint ./src/core --ext .js",
-    "postversion": "yarn lint && yarn build"
+    "postversion": "yarn build"
   },
   "dependencies": {
     "@google/markerclusterer": "^2.0.8",
