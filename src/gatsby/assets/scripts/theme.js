@@ -8,14 +8,14 @@ import gsap from 'gsap'
 /*
 Xt.mount.push({
   matches: 'html',
-  mount: function(object) {
+  mount: object => {
     // init
 
     let self = new Xt.Smooth(object, {})
 
     // unmount
 
-    const unmount = function() {
+    const unmount = () => {
       self.destroy()
       self = null
     }
