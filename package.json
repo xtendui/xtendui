@@ -15,7 +15,7 @@
   "main": "dist/xtend.min.js",
   "module": "src/xt.js",
   "scripts": {
-    "pack": "webpack --progress --colors",
+    "webpack": "webpack --progress --colors",
     "build": "gatsby clean && gatsby build",
     "dev": "gatsby clean && gatsby develop -p 8888",
     "serve": "yarn build && gatsby serve -p 8888",

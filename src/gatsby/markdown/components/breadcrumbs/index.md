@@ -1,10 +1,10 @@
 ---
 type: "Components"
-badge: "Core"
+badge: "Extensions"
 parent: "Breadcrumbs"
 title: "Breadcrumbs"
 description: "Dynamic breadcrumbs that looks awesome in all responsive breakpoints."
-categories: ["100-Core"]
+categories: ["400-Extensions"]
 ---
 
 ## Setup

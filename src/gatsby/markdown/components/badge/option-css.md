@@ -1,6 +1,6 @@
 ---
 type: "Components"
-badge: "Core"
+badge: "Extensions"
 parent: "Badge"
 title: "Option Css"
 date: "2019-12-01"

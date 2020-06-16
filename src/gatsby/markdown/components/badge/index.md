@@ -1,10 +1,10 @@
 ---
 type: "Components"
-badge: "Core"
+badge: "Extensions"
 parent: "Badge"
 title: "Badge"
 description: "Badge component for showing very short messages."
-categories: ["100-Core"]
+categories: ["400-Extensions"]
 ---
 
 ## Setup
