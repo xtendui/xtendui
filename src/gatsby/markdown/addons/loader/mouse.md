@@ -7,11 +7,11 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 ---
 
 <demo>
-  <demovanilla src="vanilla/components/loader/mouse-spinner">
+  <demovanilla src="vanilla/addons/loader/mouse-spinner">
   </demovanilla>
 </demo>
 
 <demo>
-  <demovanilla src="vanilla/components/loader/mouse-filler">
+  <demovanilla src="vanilla/addons/loader/mouse-filler">
   </demovanilla>
 </demo>

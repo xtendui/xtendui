@@ -7,7 +7,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 ---
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/global/google-locator">
+  <div class="gatsby_demo_item" data-iframe="iframe/addons/global/google-locator">
   </div>
 </demo>
 

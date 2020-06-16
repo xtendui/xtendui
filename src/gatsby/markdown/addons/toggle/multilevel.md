@@ -7,6 +7,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 ---
 
 <demo>
-  <demovanilla src="vanilla/components/toggle/multilevel">
+  <demovanilla src="vanilla/addons/toggle/multilevel">
   </demovanilla>
 </demo>
