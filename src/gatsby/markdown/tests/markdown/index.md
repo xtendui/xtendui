@@ -38,7 +38,9 @@ categories: ["100-Test"]
   </div>
   <div class="gatsby_demo_item" data-iframe="iframe/themes/animation/2020-euroricambi-collapse">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/animation/2020-bertani-listing">
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/animation/2020-bertani-parallax">
+  </div>
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/media/2020-bertani-listing">
   </div>
 </demo>
 

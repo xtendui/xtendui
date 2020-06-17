@@ -1,11 +1,11 @@
 ---
 type: "Themes"
 badge: "Themes"
-parent: "Button"
-title: "2020-bertani-listing"
+parent: "Media"
+title: "2020-aniyeby-listing"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-date: "2020-02-27"
+date: "2020-06-10"
 demos: [
-  "iframe/themes/animation/2020-bertani-listing"
+  "iframe/themes/media/2020-aniyeby-listing"
 ]
 ---
