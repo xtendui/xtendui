@@ -188,9 +188,6 @@
     opacity: 0;
   }
   .card-overlay {
-    > .card-design {
-      opacity: 0;
-    }
     > .btn-close {
       opacity: 0;
     }
@@ -207,10 +204,6 @@
       transition: opacity @time-medium @ease-in;
     }
     .card-overlay {
-      > .card-design {
-        opacity: 1;
-        transition: opacity @time-medium @ease-in;
-      }
       > .btn-close {
         // use animation to not override .btn transitions
         .anim-zoom.in();
@@ -231,10 +224,6 @@
       transition: opacity @time-small @ease-out @time-tiny;
     }
     .card-overlay {
-      > .card-design {
-        opacity: 0;
-        transition: opacity @time-small @ease-out @time-tiny;
-      }
       > .btn-close {
         // use animation to not override .btn transitions
         .anim-zoom.out();
