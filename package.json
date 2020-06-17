@@ -13,7 +13,11 @@
     "vanilla"
   ],
   "main": "dist/xtend.min.js",
-  "module": "src/xt.js",  "scripts": {
+  "module": "src/xt.js",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "scripts": {
     "webpack": "webpack --progress --colors",
     "build": "gatsby clean && gatsby build",
     "dev": "gatsby clean && gatsby develop -p 8888",
@@ -88,9 +92,6 @@
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11",
     "write": "^1.0.3"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
   },
   "release": {
     "branch": "master",
