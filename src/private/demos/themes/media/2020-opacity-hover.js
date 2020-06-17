@@ -33,6 +33,7 @@ Xt.mount.push({
     }
 
     object.addEventListener('mouseleave', eventLeave)
+    object.addEventListener('mousedown', eventLeave)
 
     // unmount
 
