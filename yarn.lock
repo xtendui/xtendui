@@ -3320,9 +3320,10 @@ clone@^1.0.2:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/clone/-/clone-1.0.4.tgz#da309cc263df15994c688ca902179ca3c7cd7c7e"
 
-clone@^2.1.2:
+clone@^2.1.1, clone@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/clone/-/clone-2.1.2.tgz#1b7f4b9f591f1e8f83670401600345a02887435f"
+  integrity sha1-G39Ln1kfHo+DZwQBYANFoCiHQ18=
 
 cmd-shim@^3.0.0, cmd-shim@^3.0.3:
   version "3.0.3"
@@ -5835,13 +5836,13 @@ gatsby-plugin-catch-links@^2.1.25:
     "@babel/runtime" "^7.10.2"
     escape-string-regexp "^1.0.5"
 
-gatsby-plugin-less@3.2.4-dev-1592324396972:
-  version "3.2.4-dev-1592324396972"
-  resolved "http://localhost:4873/gatsby-plugin-less/-/gatsby-plugin-less-3.2.4-dev-1592324396972.tgz#c3984658f189e706d856f8bb548ce23f19dafee5"
-  integrity sha512-QM9nzuiz6IkVj5GPGaN+eUeR8S/ITEts9+wF5yxL8Xyr6mSktn3nzrZFqrLNDP+3uSww+AcVd6oKHuYINTDAdA==
+gatsby-plugin-less@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-less/-/gatsby-plugin-less-2.1.2.tgz#e31b2366110e3d91e5ed757f80d92c6f5f9e1a22"
+  integrity sha512-lABwFLg0gdEqPVcEYKiNXxBXZBYyupzgWzMdLyLvNuIQEPOJdM62OVXTyDamdG/okK35X9gX2XucS0FlR3HKoA==
   dependencies:
-    "@babel/runtime" "^7.10.2"
-    less-loader "^6.1.0"
+    "@babel/runtime" "^7.0.0"
+    less-loader "^4.1.0"
 
 gatsby-plugin-manifest@^2.2.41:
   version "2.4.10"
@@ -8184,6 +8185,15 @@ lcid@^2.0.0:
   resolved "https://registry.yarnpkg.com/lcid/-/lcid-2.0.0.tgz#6ef5d2df60e52f82eb228a4c373e8d1f397253cf"
   dependencies:
     invert-kv "^2.0.0"
+
+less-loader@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/less-loader/-/less-loader-4.1.0.tgz#2c1352c5b09a4f84101490274fd51674de41363e"
+  integrity sha512-KNTsgCE9tMOM70+ddxp9yyt9iHqgmSs0yTZc5XH5Wo+g80RWRIYNqE58QJKm/yMud5wZEvz50ugRDuzVIkyahg==
+  dependencies:
+    clone "^2.1.1"
+    loader-utils "^1.1.0"
+    pify "^3.0.0"
 
 less-loader@^6.1.0:
   version "6.1.0"
