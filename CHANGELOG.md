@@ -1,3 +1,29 @@
+# [0.14.0](https://github.com/minimit/xtend-library/compare/v0.13.102...v0.14.0) (2020-06-18)
+
+
+### Bug Fixes
+
+* build ([af81dd4](https://github.com/minimit/xtend-library/commit/af81dd4f3982419e3dd75941ce2c5e5ec0dca1fe))
+* **overlay:** removed card design animations overlay and added overlay design ([acfbb81](https://github.com/minimit/xtend-library/commit/acfbb810d619c0263d1bfad9057ad5ea1bbdc21f))
+* babel resolve instead of webpack ([f80cfac](https://github.com/minimit/xtend-library/commit/f80cfacb8939835f6cde0bf98196d5b2853b010a))
+* media-container background color ([4325792](https://github.com/minimit/xtend-library/commit/43257929f53a9ee14f2c5768ded2137fe81a1bf8))
+* refactor addons demos structure ([f726dd8](https://github.com/minimit/xtend-library/commit/f726dd8b38941db294f5fbf7da31a170c9dced7b))
+* refactor no import used components in demos ([1a8e254](https://github.com/minimit/xtend-library/commit/1a8e254e8eec61d796469fbbd14b66b8d37d4b48))
+* removed dist packs and moved breadcrumbs and badge to extensions ([b966d18](https://github.com/minimit/xtend-library/commit/b966d18b9cdb7f2a44b7dd103c78f89d714dfc83))
+* text-default and lorem ipsum demos copy ([3627f29](https://github.com/minimit/xtend-library/commit/3627f293c485dface21bb50a2b2b2b735e5470db))
+* **slider:** revision threshold slider ([3ef0b2a](https://github.com/minimit/xtend-library/commit/3ef0b2a07f97ba088cf6a030156b6c1b1fcec083))
+* **toggle:** toggle destroy and disable removed queueStopAll for vanilla overlay ajax ([c703418](https://github.com/minimit/xtend-library/commit/c7034187c55f14a2e8b31c713954896d27793642))
+* resolve less ([ee6b861](https://github.com/minimit/xtend-library/commit/ee6b86186077fc0244f422891d2e984630ee0d06))
+
+
+### Features
+
+* **form:** refactor forms mixins ([e82c09d](https://github.com/minimit/xtend-library/commit/e82c09d1d6305b77188c003c9ca8f9d43bcb677a))
+* **form:** refactor forms mixins ([e3f4220](https://github.com/minimit/xtend-library/commit/e3f42206bab72cd7c2daecb18bc1f9d41e107238))
+* **media:** revision media classes in container ([0cd1343](https://github.com/minimit/xtend-library/commit/0cd13437966387618a8b672bec89a02609a26de2))
+* done resolve xtend-library + yarn instead of npm ([5157495](https://github.com/minimit/xtend-library/commit/5157495b70938f33583a1bcd135e3928d5369133))
+* removed polyfill-old ie11 ([e9f8f7c](https://github.com/minimit/xtend-library/commit/e9f8f7c2bf3f234dfad35a36ef3074de43280a6b))
+
 ## [0.13.102](https://github.com/minimit/xtend-library/compare/v0.13.101...v0.13.102) (2020-06-11)
 
 
