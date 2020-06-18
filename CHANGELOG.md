@@ -1,3 +1,10 @@
+## [0.14.1](https://github.com/minimit/xtend-library/compare/v0.14.0...v0.14.1) (2020-06-18)
+
+
+### Bug Fixes
+
+* build ([8848ccc](https://github.com/minimit/xtend-library/commit/8848ccc8ca15b5aa56350986b9969a22fc77be33))
+
 # [0.14.0](https://github.com/minimit/xtend-library/compare/v0.13.102...v0.14.0) (2020-06-18)
 
 
