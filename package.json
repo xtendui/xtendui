@@ -14,9 +14,6 @@
   ],
   "main": "dist/xtend.min.js",
   "module": "src/xt.js",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "scripts": {
     "webpack": "webpack --progress --colors",
     "build": "gatsby clean && gatsby build",
