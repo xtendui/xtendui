@@ -7,9 +7,6 @@
    * .block-listing
    */
 
-  .block-listing {
-  }
-
   .block-listing_inner {
     > .row {
       .row-space(small);
@@ -57,40 +54,18 @@
     text-transform: none;
   }
 
-  /**
-   * .discount
-   */
+  // custom
 
-  .discount {
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    padding: 1.2rem 1.5rem;
-    background: fade(@black, 42%);
-    > .list {
-      .list-space(tiny);
-      flex-wrap: nowrap;
-      align-items: center;
+  .block-listing_col--big {
+    .col(12, sm);
+    .col(12, lg);
+    .block-listing_img {
+      .media-container {
+        @media @min-sm {
+          padding-bottom: 37.5%;
+        }
+      }
     }
-  }
-
-  .discount_number {
-    .font-sans-regular();
-    font-size: 2.1rem;
-    .text-inverse();
-    line-height: 1.4;
-    letter-spacing: .1em;
-  }
-
-  .discount_text {
-    padding-right: .5rem;
-    .font-sans-semibold();
-    font-size: 10px;
-    color: fade(@text-inverse, 50%);
-    line-height: 1.4;
-    letter-spacing: 0;
-    text-transform: uppercase;
   }
 
 }

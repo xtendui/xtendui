@@ -38,8 +38,22 @@
   .block-listing_title {
     .margin(top, small);
     .font-sans-semibold();
-    font-size: 3.2rem;
+    font-size: 2rem;
     text-align: center;
+  }
+
+  // custom
+
+  .block-listing_col--big {
+    .col(12, sm);
+    .col(12, lg);
+    .block-listing_img {
+      .media-container {
+        @media @min-sm {
+          padding-bottom: 37.5%;
+        }
+      }
+    }
   }
 
   /**
