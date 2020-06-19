@@ -63,8 +63,10 @@
   position: relative;
   .container-space();
   .padding(y, giant);
+  .padding(bottom, huge);
   .padding(y, huge, lg);
-  background: linear-gradient(180deg, @shade-200 0%, @white 66%);
+  .padding(bottom, 12rem, lg);
+  background: linear-gradient(180deg, @shade-200-dark 0%, @white 66%);
   p {
     .font-big();
     color: @shade-500;
@@ -112,7 +114,7 @@
   left: 0;
   right: 0;
   .container-space();
-  .padding(y, small);
+  .padding(y, big);
   .row {
     .row-space(medium);
     justify-content: space-between;
@@ -147,7 +149,7 @@
 .gatsby_site_article_foot {
   .container-space();
   .padding(y, big);
-  background: linear-gradient(-180deg, @white 33%, @shade-200 100%);
+  background: linear-gradient(-180deg, @white 0%, @shade-200-dark 100%);
 }
 
 /**
