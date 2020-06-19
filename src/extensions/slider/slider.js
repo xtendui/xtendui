@@ -31,11 +31,6 @@ class Slider extends Xt.Toggle {
       self.dragger = self.object.querySelector(options.drag.dragger)
       self.destroyElements.push(self.dragger)
     }
-    // @FIX performances
-    self.detail.objectWidth = self.object.offsetWidth
-    if (self.dragger) {
-      self.detail.draggerWidth = self.dragger.offsetWidth
-    }
     // targets
     self.initScopeTargets()
     // autoHeight and keepHeight
@@ -81,6 +76,17 @@ class Slider extends Xt.Toggle {
     self.object.classList.remove('slider-nooverflow')
     // drag wrap
     self.destroyWraps()
+    // @FIX performances
+    self.detail.objectWidth = self.object.offsetWidth
+    if (self.dragger) {
+      self.detail.draggerWidth = self.dragger.offsetWidth
+      self.detail.draggerLeft = self.dragger.offsetLeft
+    }
+    for (const slide of self.targets) {
+      Xt.dataStorage.set(slide, self.componentNamespace + 'SlideLeft', slide.offsetLeft)
+      Xt.dataStorage.set(slide, self.componentNamespace + 'SlideWidth', slide.offsetWidth)
+      Xt.dataStorage.set(slide, self.componentNamespace + 'SlideHeight', slide.children[0].offsetHeight)
+    }
     // width
     const draggerWidth = self.dragger ? self.detail.draggerWidth : self.detail.objectWidth
     let draggerWidthAvailable = 0
@@ -102,7 +108,7 @@ class Slider extends Xt.Toggle {
     let totalCount = draggerWidth
     let doneFirst = false
     for (const target of self.targets) {
-      let targetWidth = target.offsetWidth
+      let targetWidth = Xt.dataStorage.get(target, self.componentNamespace + 'SlideWidth')
       if (targetWidth === 0) {
         // when display none
         const container = target.parentNode
@@ -134,7 +140,7 @@ class Slider extends Xt.Toggle {
     }
     self.groupMqInitial = self.groupMq
     // @FIX position values negative margins
-    self.detail.fixNegativeMargin = self.groupMq[0][0].offsetLeft
+    self.detail.fixNegativeMargin = Xt.dataStorage.get(self.groupMq[0][0], self.componentNamespace + 'SlideLeft')
     // @FIX disable slider if not overflowing
     if (options.nooverflow && totalCount >= 0) {
       const afterInitDisable = () => {
@@ -181,7 +187,7 @@ class Slider extends Xt.Toggle {
             wrapLast[i].push(cloned)
             cloned.setAttribute('data-xt-group', self.namespace + '-' + 'wrapLast' + i)
             self.targets.push(cloned)
-            wrapLastCount -= slide.offsetWidth
+            wrapLastCount -= Xt.dataStorage.get(slide, self.componentNamespace + 'SlideWidth')
             if (wrapLastCount <= -draggerWidth * (options.drag.wrap - 1)) {
               return
             }
@@ -200,7 +206,7 @@ class Slider extends Xt.Toggle {
             wrapFirst[0].unshift(cloned)
             cloned.setAttribute('data-xt-group', self.namespace + '-' + 'wrapFirst' + i)
             self.targets.unshift(cloned)
-            wrapFirstCount -= slide.offsetWidth
+            wrapFirstCount -= Xt.dataStorage.get(slide, self.componentNamespace + 'SlideWidth')
             if (wrapFirstCount <= -draggerWidth * (options.drag.wrap - 1)) {
               return
             }
@@ -298,11 +304,12 @@ class Slider extends Xt.Toggle {
     for (const slide of self.targets) {
       Xt.dataStorage.remove(slide, self.componentNamespace + 'GroupPosDone')
     }
-    // set pos
+    // save
     const draggerWidth = self.detail.draggerWidth
     // slides pos
     let slidesWidth = 0
     for (const slide of self.targets) {
+      // once per group
       if (!Xt.dataStorage.get(slide, self.componentNamespace + 'GroupPosDone')) {
         // vars
         const targets = self.getTargets(slide)
@@ -312,9 +319,12 @@ class Slider extends Xt.Toggle {
         let slideHeightTemp = 0
         // vars
         for (const target of targets) {
-          slideLeft = target.offsetLeft < slideLeft ? slide.offsetLeft : slideLeft
-          slideWidth += target.offsetWidth
-          slideHeightTemp = target.children[0].offsetHeight
+          slideLeft =
+            Xt.dataStorage.get(target, self.componentNamespace + 'SlideLeft') < slideLeft
+              ? Xt.dataStorage.get(slide, self.componentNamespace + 'SlideLeft')
+              : slideLeft
+          slideWidth += Xt.dataStorage.get(target, self.componentNamespace + 'SlideWidth')
+          slideHeightTemp = Xt.dataStorage.get(target, self.componentNamespace + 'SlideHeight')
           slidesWidth += slideWidth
           slideHeight = slideHeightTemp > slideHeight ? slideHeightTemp : slideHeight
         }
@@ -348,10 +358,10 @@ class Slider extends Xt.Toggle {
     if (options.contain && slidesWidth > draggerWidth) {
       // only if slides overflow dragger
       const slideFirst = self.targets[0]
-      const slideFirstLeft = slideFirst.offsetLeft
+      const slideFirstLeft = Xt.dataStorage.get(slideFirst, self.componentNamespace + 'SlideLeft')
       const slideLast = self.targets[self.targets.length - 1]
-      const slideLastLeft = slideLast.offsetLeft
-      const slideLastWidth = slideLast.offsetWidth
+      const slideLastLeft = Xt.dataStorage.get(slideLast, self.componentNamespace + 'SlideLeft')
+      const slideLastWidth = Xt.dataStorage.get(slideLast, self.componentNamespace + 'SlideWidth')
       const min = -slideFirstLeft
       const max = -slideLastLeft + draggerWidth - slideLastWidth
       for (const group of self.groupMq) {
@@ -395,14 +405,6 @@ class Slider extends Xt.Toggle {
       // event off
       const slideoffHandler = Xt.dataStorage.put(el, 'off/slider' + '/' + self.namespace, self.eventSlideoffHandler.bind(self).bind(self, dragger, el))
       el.addEventListener('off.xt', slideoffHandler, true)
-    }
-    // targets
-    // not event on and event off for targets because not needed and bugs pagination inside targets
-    // disable links not active slide
-    if (options.jump) {
-      for (const tr of self.targets) {
-        tr.classList.add('xt-links-none')
-      }
     }
     // dragger
     if (options.drag) {
@@ -616,17 +618,11 @@ class Slider extends Xt.Toggle {
     requestAnimationFrame(() => {
       Xt.dataStorage.remove(slide, self.componentNamespace + 'SlideonDone')
     })
-    // disable links not active slide
-    if (options.jump) {
-      for (const target of slides) {
-        target.classList.remove('xt-links-none')
-      }
-    }
     // val
     self.detail.dragPos = self.detail.dragPosCurrent = self.detail.dragPosReal = Xt.dataStorage.get(slide, self.componentNamespace + 'GroupPos')
     // autoHeight and keepHeight
     if (self.autoHeight || (self.keepHeight && self.initial)) {
-      let slideHeight = slide.children[0].offsetHeight
+      let slideHeight = Xt.dataStorage.get(slide, self.componentNamespace + 'SlideHeight')
       const groupHeight = Xt.dataStorage.get(slide, self.componentNamespace + 'GroupHeight')
       slideHeight = groupHeight > slideHeight ? groupHeight : slideHeight
       if (slideHeight > 0) {
@@ -664,6 +660,27 @@ class Slider extends Xt.Toggle {
       if (!options.drag.manual) {
         dragger.style.transform = 'translateX(' + self.detail.dragPos + 'px)'
       }
+      // disable links not active slide
+      Xt.animTimeout(
+        dragger,
+        () => {
+          if (options.jump) {
+            const draggerTranslate = Xt.getTranslate(self.dragger)[0]
+            for (const target of self.targets) {
+              const slideLeft = Xt.dataStorage.get(target, self.componentNamespace + 'SlideLeft')
+              const slideWidth = Xt.dataStorage.get(target, self.componentNamespace + 'SlideWidth')
+              const slideBound = slideLeft + slideWidth
+              if (slideLeft < -draggerTranslate || slideBound > Xt.windowWidth - draggerTranslate) {
+                target.classList.add('xt-links-none')
+              } else {
+                target.classList.remove('xt-links-none')
+              }
+            }
+          }
+        },
+        'draggerDisableLinks',
+        self.initial ? 0 : self.options.durationOn
+      )
       // disable dragger
       dragger.classList.add('xt-pointer-events-none')
       for (const nav of self.navs) {
@@ -740,12 +757,6 @@ class Slider extends Xt.Toggle {
     requestAnimationFrame(() => {
       Xt.dataStorage.remove(slide, self.componentNamespace + 'SlideoffDone')
     })
-    // disable links not active slide
-    if (options.jump) {
-      for (const target of slides) {
-        target.classList.add('xt-links-none')
-      }
-    }
   }
 
   //
