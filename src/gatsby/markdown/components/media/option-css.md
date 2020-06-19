@@ -12,7 +12,7 @@ date: "2019-12-01"
 
 |                         | Class                                     | Mixin                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `.media-responsive`                 | `.media-responsive()`        | Responsive media            |
+| Option                  | `.media-container-responsive`                 | `.media-container-responsive()`        | Responsive media            |
 
 </div>
 
@@ -27,7 +27,7 @@ date: "2019-12-01"
 
 |                         | Class                                     | Mixin                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `.media-16-9`                 | `.media-16-9()`        | Video and iframes with aspect ratio 16/9            |
+| Option                  | `.media-container-16-9`                 | `.media-container-16-9()`        | Video and iframes with aspect ratio 16/9            |
 
 </div>
 
