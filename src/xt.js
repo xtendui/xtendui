@@ -1129,6 +1129,7 @@ if (typeof window !== 'undefined') {
   })
 
   Xt.windowHeightSet = () => {
+    Xt.windowWidth = window.innerWidth
     Xt.windowHeight = window.innerHeight
     /* https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
      * height: 100vh;
