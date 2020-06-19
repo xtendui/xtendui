@@ -45,16 +45,14 @@
 // .slider-nooverflow
 
 .slider-nooverflow {
-  .xt-disable();
+  .xt-disable-noinit();
+  .slider-pagination, [data-xt-nav], .xt-wrap {
+    display: none !important;
+  }
+  // @FIX disable slider if not overflowing
   .slides-inner {
-     // no grab cursor
-    cursor: auto;
-    // @FIX disable slider if not overflowing
     .transform-none() !important;
     .transition-none() !important;
-  }
-  .slider-pagination, [data-xt-nav] {
-    display: none !important;
   }
 }
 
@@ -62,11 +60,20 @@
 
 .slider-disable {
   .xt-disable();
-  .slide:not(.active) {
-    display: none;
-  }
   .slider-pagination, [data-xt-nav] {
     display: none !important;
+  }
+  .xt-wrap {
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+  // @FIX do calculation first
+  &.xt-disabled {
+    .slide:not(.active) {
+      visibility: hidden !important;
+      opacity: 0 !important;
+      height: 0 !important;
+    }
   }
 }
 

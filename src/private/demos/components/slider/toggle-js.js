@@ -68,14 +68,14 @@ Xt.mount.push({
         if (self.initial) {
           // mask
           gsap.killTweensOf(self.dragger)
-          gsap.set(self.dragger, { x: 0, ease: maskEaseOn })
+          gsap.set(self.dragger, { x: 0 })
           gsap.killTweensOf(target)
-          gsap.set(target, { x: 0, opacity: 1, ease: maskEaseOn })
+          gsap.set(target, { x: 0, opacity: 1 })
           // content
           const contents = target.querySelectorAll('.card-item > *')
           for (const content of contents) {
             gsap.killTweensOf(content)
-            gsap.set(content, { x: 0, opacity: 1, ease: contentEaseOn })
+            gsap.set(content, { x: 0, opacity: 1 })
           }
         } else {
           if (!self.detail.dragging) {
