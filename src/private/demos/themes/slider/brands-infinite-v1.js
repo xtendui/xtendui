@@ -14,7 +14,7 @@ Xt.mount.push({
 
     const timeScaleTimeOn = Xt.vars.timeMedium
     const timeScaleEaseOn = 'quint.in'
-    const timeScaleTimeOff = Xt.vars.timeMedium
+    const timeScaleTimeOff = Xt.vars.timeBig
     const timeScaleEaseOff = 'quint.out'
 
     // slider
