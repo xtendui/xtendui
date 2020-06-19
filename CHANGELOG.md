@@ -1,3 +1,10 @@
+## [0.14.5](https://github.com/minimit/xtend-library/compare/v0.14.4...v0.14.5) (2020-06-19)
+
+
+### Bug Fixes
+
+* **slider:** refactor slider nooverflow + refactor slider brands ([8952a01](https://github.com/minimit/xtend-library/commit/8952a01aa810881968ba4a78ba8322365bd19f95))
+
 ## [0.14.4](https://github.com/minimit/xtend-library/compare/v0.14.3...v0.14.4) (2020-06-19)
 
 
