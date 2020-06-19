@@ -10,7 +10,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="slider demo--slider-disable"
-     data-xt-slider>
+     data-xt-slider="{ align: 'center', drag: { wrap: true } }">
 
   <div class="slides">
     <ul class="slides-inner">

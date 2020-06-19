@@ -237,7 +237,7 @@ class Toggle {
       if (todo > 0 && self.targets.length) {
         let start = 0
         // @FIX initial activation drag wrap
-        if (!self.disabled && self.dragger && options.drag.wrap) {
+        if ((!self.disabled || !self.initial) && self.dragger && options.drag.wrap) {
           start = self.groupMqFirst.length
           todo += start
         }
@@ -2794,13 +2794,21 @@ class Toggle {
       check = self.targets[0]
     }
     // status
+    const str = getComputedStyle(check, ':after')
+      .getPropertyValue('content')
+      .replace(/['"]+/g, '')
     if (
       check instanceof HTMLElement && // @FIX not on window
-      getComputedStyle(check, ':after')
-        .getPropertyValue('content')
-        .replace(/['"]+/g, '') === 'xt-disable'
+      str === 'xt-disable-noinit'
     ) {
       self.disable()
+    } else if (str === 'xt-disable') {
+      // @FIX do calculation first
+      const afterInitDisable = () => {
+        self.disable()
+        self.object.removeEventListener('init.xt', afterInitDisable)
+      }
+      self.object.addEventListener('init.xt', afterInitDisable)
     } else {
       self.enable()
     }
@@ -2814,6 +2822,7 @@ class Toggle {
     if (self.disabled) {
       // enable
       self.disabled = false
+      self.object.classList.remove('xt-disabled')
     }
   }
 
@@ -2832,6 +2841,7 @@ class Toggle {
       clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutoTimeout'))
       // disable
       self.disabled = true
+      self.object.classList.add('xt-disabled')
     }
   }
 
