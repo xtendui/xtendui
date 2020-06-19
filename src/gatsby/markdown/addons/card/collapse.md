@@ -2,7 +2,7 @@
 type: "Addons"
 badge: "Addons"
 parent: "Card"
-title: "Collapse"
+title: "collapse"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 

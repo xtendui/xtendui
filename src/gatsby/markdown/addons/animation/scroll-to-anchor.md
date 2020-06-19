@@ -2,7 +2,7 @@
 type: "Addons"
 badge: "Addons"
 parent: "Animation"
-title: "Scroll to Anchor"
+title: "scroll-to-anchor"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 

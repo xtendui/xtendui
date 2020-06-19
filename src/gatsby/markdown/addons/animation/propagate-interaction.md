@@ -2,7 +2,7 @@
 type: "Addons"
 badge: "Addons"
 parent: "Animation"
-title: "Propagate Interaction"
+title: "propagate-interaction"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 

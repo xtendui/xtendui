@@ -2,7 +2,7 @@
 type: "Addons"
 badge: "Addons"
 parent: "Structure"
-title: "Sticky Footer"
+title: "sticky-footer"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 

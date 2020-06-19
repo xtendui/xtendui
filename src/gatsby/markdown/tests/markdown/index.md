@@ -21,28 +21,28 @@ categories: ["100-Test"]
 </demo>
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/slider/2020-brands-infinite">
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/slider/brands-infinite-v1">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/slider/2020-aniyeby-hero">
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/slider/fashion-hero-v2">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/slider/2020-bertani-hero">
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/slider/furniture-hero-v1">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/slider/2020-euroricambi-cards">
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/slider/industrial-hero-v1">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/slider/2019-sun68-hero">
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/slider/fashion-hero-v1">
   </div>
 </demo>
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/animation/2019-xtend">
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/animation/xtend-v1">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/animation/2020-euroricambi-collapse">
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/animation/collapse-v1">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/animation/2020-bertani-parallax">
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/animation/furniture-parallax-v1">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/media/2020-bertani-listing">
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/media/furniture-listing-v1">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/media/2020-aniyeby-listing">
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/media/fashion-listing-v1">
   </div>
 </demo>
 

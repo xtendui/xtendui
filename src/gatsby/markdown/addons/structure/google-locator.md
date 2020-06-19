@@ -2,7 +2,7 @@
 type: "Addons"
 badge: "Addons"
 parent: "Structure"
-title: "Google Locator"
+title: "google-locator"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 

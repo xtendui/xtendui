@@ -1,0 +1,73 @@
+/**
+ * .demo--fashion-listing-v1
+ */
+
+.demo--fashion-listing-v1 {
+  /**
+   * .block-listing
+   */
+
+  .block-listing {
+  }
+
+  .block-listing_inner {
+    > .row {
+      .row-space(big);
+    }
+  }
+
+  .block-listing_col {
+    .col(12);
+    .col(6, sm);
+    .col(3, lg);
+  }
+
+  .block-listing_item {
+    .link-none();
+    .full();
+    .text-default() !important;
+  }
+
+  .block-listing_img {
+    text-align: center;
+    .media-container {
+      padding-bottom: 150%;
+    }
+  }
+
+  .block-listing_title {
+    .margin(top, small);
+    .font-sans-semibold();
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  // custom
+
+  .block-listing_col--big {
+    .col(12, sm);
+    .col(12, lg);
+    .block-listing_img {
+      .media-container {
+        @media @min-sm {
+          padding-bottom: 37.5%;
+        }
+      }
+    }
+  }
+
+  /**
+   * .media_mask
+   */
+
+  .media_mask {
+    position: absolute;
+    z-index: @index-active + 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: @white;
+  }
+
+}

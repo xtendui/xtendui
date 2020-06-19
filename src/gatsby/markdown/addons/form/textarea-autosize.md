@@ -2,7 +2,7 @@
 type: "Addons"
 badge: "Addons"
 parent: "Form"
-title: "Textarea Autosize"
+title: "textarea-autosize"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 

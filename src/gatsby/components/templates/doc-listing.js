@@ -37,8 +37,8 @@ class Template extends React.Component {
                                 <div className="card-block card-item">
                                   <div className="card-title">
                                     {post.frontmatter.title
-                                      .split('-')
-                                      .map((item, index) => (index ? item.charAt(0).toUpperCase() + item.slice(1).toLowerCase() : item))
+                                      .split(/[\s-]+/)
+                                      .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
                                       .join(' ')}
                                   </div>
                                   <p>{post.frontmatter.description}</p>
@@ -56,8 +56,8 @@ class Template extends React.Component {
                                 <div className="card-block card-item">
                                   <div className="card-title">
                                     {post.frontmatter.title
-                                      .split('-')
-                                      .map((item, index) => (index ? item.charAt(0).toUpperCase() + item.slice(1).toLowerCase() : item))
+                                      .split(/[\s-]+/)
+                                      .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
                                       .join(' ')}
                                   </div>
                                   <p>{post.frontmatter.description}</p>
