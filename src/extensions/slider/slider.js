@@ -155,6 +155,9 @@ class Slider extends Xt.Toggle {
     // drag wrap
     const wrapFirst = []
     const wrapLast = []
+    const wrapMaxWidth = -draggerWidth * (options.drag.wrap - 1)
+    let wrapLastCountIteration = 0
+    let wrapFirstCountIteration = 0
     if (self.dragger && options.drag.wrap) {
       const container = self.targets[0].parentNode
       if (!options.loop) {
@@ -170,41 +173,49 @@ class Slider extends Xt.Toggle {
         return cloned
       }
       // wrapLast
+      let wrapLastCount = draggerWidth
       const wrapLastFunction = () => {
-        let wrapLastCount = draggerWidth
         for (const [i, group] of self.groupMqInitial.entries()) {
           wrapLast.push([])
           for (const slide of group) {
             const cloned = cloneSlide(slide)
             container.append(cloned)
-            wrapLast[i].push(cloned)
-            cloned.setAttribute('data-xt-group', self.namespace + '-' + 'wrapLast' + i)
+            wrapLast[wrapLastCountIteration * self.groupMqInitial.length + i].push(cloned)
+            cloned.setAttribute('data-xt-group', self.namespace + '-' + 'wrapLast' + wrapLastCountIteration + i)
             self.targets.push(cloned)
             wrapLastCount -= Xt.dataStorage.get(slide, self.componentNamespace + 'SlideWidth')
-            if (wrapLastCount <= -draggerWidth * (options.drag.wrap - 1)) {
-              return
-            }
+          }
+          if (wrapLastCount <= wrapMaxWidth) {
+            return
+          } else if (i === self.groupMqInitial.length - 1) {
+            wrapLastCountIteration++
+            wrapLastFunction()
           }
         }
       }
       wrapLastFunction()
       // wrapFirst
+      let wrapFirstCount = draggerWidth
+      self.groupMqInitial.reverse()
       const wrapFirstFunction = () => {
-        let wrapFirstCount = draggerWidth
-        for (const [i, group] of self.groupMqInitial.reverse().entries()) {
+        for (const [i, group] of self.groupMqInitial.entries()) {
           wrapFirst.unshift([])
           for (const slide of group.reverse()) {
             const cloned = cloneSlide(slide)
             container.prepend(cloned)
             wrapFirst[0].unshift(cloned)
-            cloned.setAttribute('data-xt-group', self.namespace + '-' + 'wrapFirst' + i)
+            cloned.setAttribute('data-xt-group', self.namespace + '-' + 'wrapFirst' + wrapFirstCountIteration + i)
             self.targets.unshift(cloned)
             wrapFirstCount -= Xt.dataStorage.get(slide, self.componentNamespace + 'SlideWidth')
-            if (wrapFirstCount <= -draggerWidth * (options.drag.wrap - 1)) {
-              return
-            }
           }
-          group.reverse() // reset reverse
+          if (wrapFirstCount <= wrapMaxWidth) {
+            group.reverse() // reset reverse
+            return
+          } else if (i === self.groupMqInitial.length - 1) {
+            wrapFirstCountIteration++
+            group.reverse() // reset reverse
+            wrapFirstFunction()
+          }
         }
       }
       wrapFirstFunction()
@@ -220,6 +231,7 @@ class Slider extends Xt.Toggle {
     self.groupMqFirst = wrapFirst
     self.groupMqLast = wrapLast
     self.groupMq = wrapFirst.concat(self.groupMq.concat(wrapLast))
+    self.wrapIndex = self.groupMqFirst.length
   }
 
   /**
@@ -269,7 +281,7 @@ class Slider extends Xt.Toggle {
           html = html.replace(new RegExp('xt-content', 'ig'), replace)
         }
         if (html.search(new RegExp('xt-num', 'ig')) !== -1) {
-          html = html.replace(new RegExp('xt-num', 'ig'), (i - self.groupMqFirst.length + 1).toString())
+          html = html.replace(new RegExp('xt-num', 'ig'), (i - self.wrapIndex + 1).toString())
         }
         if (html.search(new RegExp('xt-tot', 'ig')) !== -1) {
           html = html.replace(new RegExp('xt-tot', 'ig'), self.groupMqInitial.length.toString())
@@ -284,8 +296,8 @@ class Slider extends Xt.Toggle {
         self.pags[z][i] = container.querySelectorAll('[data-xt-pag].xt-clone')[i]
         // drag wrap
         if (self.dragger && options.drag.wrap) {
-          const min = self.groupMqFirst.length
-          const max = self.groupMqFirst.length + self.groupMqInitial.length - 1
+          const min = self.wrapIndex
+          const max = self.wrapIndex + self.groupMqInitial.length - 1
           if (i < min || i > max) {
             self.pags[z][i].classList.add('xt-clone', 'xt-wrap', 'display-none')
           }
@@ -726,14 +738,14 @@ class Slider extends Xt.Toggle {
   eventWrap() {
     const self = this
     // wrap around xt-wrap items
-    const min = self.groupMqFirst.length
-    const max = self.groupMqFirst.length + self.groupMqInitial.length - 1
+    const min = self.wrapIndex
+    const max = self.wrapIndex + self.groupMqInitial.length - 1
     if (self.currentIndex < min) {
       self.wrap = true
       self.goToNum(max + self.currentIndex - min + 1, true)
     } else if (self.currentIndex > max) {
       self.wrap = true
-      self.goToNum(min + self.currentIndex - max - 1, true)
+      self.goToNum(min + self.currentIndex - max - 1, true,)
     }
   }
 

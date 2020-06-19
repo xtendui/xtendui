@@ -12,7 +12,7 @@ Disable slider drag and cursor grab with `.slider-nodrag`.
 
 ## No overflow
 
-Slider automatically disable when not overflowing. It also hides automatically **pagination**, **navigation** and **wrap**. Disable this behaviour with `nooverflow: false`.
+Slider automatically disable when not overflowing. It also hides automatically **pagination**, **navigation** and **wrap**.
 
 Use `justify-content` to assign horizontal alignment when not overflowing, this way:
 
@@ -36,6 +36,13 @@ Use `justify-content` to assign horizontal alignment when not overflowing, this 
 
 <demo>
   <demovanilla src="vanilla/components/slider/no-overflow">
+  </demovanilla>
+</demo>
+
+Disable this behaviour with `nooverflow: false`.
+
+<demo>
+  <demovanilla src="vanilla/components/slider/nooverflow-false">
   </demovanilla>
 </demo>
 

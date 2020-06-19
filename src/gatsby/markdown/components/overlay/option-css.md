@@ -29,7 +29,7 @@ Set overlay size with this classes.
 [[notePrimary]]
 | Overlay uses card to style it's content, refer to [card's option](/components/card/option) for all **option**.
 
-### Variant
+#### Variant
 
 Classes for assigning variant (e.g.: border / background / color). Add or remove selectors at your discretion.
 
@@ -47,7 +47,7 @@ Classes for assigning variant (e.g.: border / background / color). Add or remove
   </demovanilla>
 </demo>
 
-### Size
+#### Size
 
 Classes for assigning size (e.g.: padding or font size). Add or remove selectors at your discretion.
 

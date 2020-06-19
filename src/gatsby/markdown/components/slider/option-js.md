@@ -97,7 +97,7 @@ Set to `groupMq: false` to disable automatic grouping of slides.
   </demovanilla>
 </demo>
 
-## Friction
+#### Friction
 
 You can set friction with `drag: { friction: Function }`, for example `(velocity) => {return Math.pow(velocity, 0.9)}`.
 
@@ -118,7 +118,7 @@ You can disable friction with `drag: { friction: false }`.
   </demovanilla>
 </demo>
 
-## Overflow
+#### Overflow
 
 You can set overflow with `drag: { overflow: Function }`, for example `(overflow) => {return Math.pow(overflow, 0.73)}`.
 
@@ -130,18 +130,18 @@ You can set overflow with `drag: { overflow: Function }`, for example `(overflow
 
 </div>
 
-## Wrap
+#### Wrap
 
 You can wrap the slides with `drag: { wrap: true }`.
 
 [[notePrimary]]
-| With `drag: { wrap: true }` you have to set `loop: true` and you can't use `contain: true`
+| With `drag.wrap` you have to set `loop: true` and you can't use `contain: true`
 
 <div class="table-scroll">
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `drag.wrap:Boolean`                          | `false`        | Wrap slides on start and end             |
+| Option                  | `drag.wrap:Boolean|Number`                          | `false`        | Wrap slides on start and end             |
 
 </div>
 
@@ -156,10 +156,8 @@ You can wrap the slides with `drag: { wrap: true }`.
 
 Use `drag: { overflow: false }` to not have the drag overflow on wrap.
 
-You can set `drag: { wrap: Number }` where `Number` is how many times to cover the **drag.dragger** with wrap (setting `1` is the same as `true`).
-
 <demo>
-  <demovanilla src="vanilla/components/slider/wrap-overflow">
+  <demovanilla src="vanilla/components/slider/nooverflow-false">
   </demovanilla>
 </demo>
 

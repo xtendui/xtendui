@@ -237,8 +237,8 @@ class Toggle {
       if (todo > 0 && self.targets.length) {
         let start = 0
         // @FIX initial activation drag wrap
-        if ((!self.disabled || !self.initial) && self.dragger && options.drag.wrap) {
-          start = self.groupMqFirst.length
+        if ((!self.disabled || !self.initial) && self.wrapIndex) {
+          start = self.wrapIndex
           todo += start
         }
         // initial
@@ -2708,20 +2708,26 @@ class Toggle {
     const self = this
     const options = self.options
     // check
+    const min = 0
     const max = self.getGroups().length - 1
-    if (index > max) {
-      if (loop || (loop === null && options.loop)) {
-        index = index - max - 1
-        index = index > max ? max : index // prevent overflow
-      } else {
-        index = max
-      }
-    } else if (index < 0) {
-      if (loop || (loop == null && options.loop)) {
-        index = index + max + 1
-        index = index < 0 ? 0 : index // prevent overflow
-      } else {
-        index = 0
+    if (min === max) {
+      // if only one go to the only one
+      index = min
+    } else {
+      if (index > max) {
+        if (loop || (loop === null && options.loop)) {
+          index = index - max - 1
+          index = index > max ? max : index // prevent overflow
+        } else {
+          index = max
+        }
+      } else if (index < min) {
+        if (loop || (loop == null && options.loop)) {
+          index = index + max + 1
+          index = index < min ? min : index // prevent overflow
+        } else {
+          index = min
+        }
       }
     }
     // element
