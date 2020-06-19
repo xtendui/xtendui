@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="media-container media-responsive">
+<div class="media-container media-container-responsive">
   <div class="media-inner">
     <img class="media" src="/img.svg" loading="lazy" alt=""/>
   </div>

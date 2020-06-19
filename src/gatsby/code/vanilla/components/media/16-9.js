@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="media-container media-16-9">
+<div class="media-container media-container-16-9">
   <div class="media-inner">
     <iframe class="media" type="text/html" src="https://www.youtube.com/embed/hNQFjqDvPhA?autoplay=0&showinfo=0&enablejsapi=1&rel=0" frameborder="0"></iframe>
   </div>
