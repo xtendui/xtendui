@@ -1,3 +1,11 @@
+## [0.14.3](https://github.com/minimit/xtend-library/compare/v0.14.2...v0.14.3) (2020-06-19)
+
+
+### Bug Fixes
+
+* **slider:**  jump slider only when outside window revision wrap ([9241575](https://github.com/minimit/xtend-library/commit/92415757c670e0b79d09dcb18519b930cdd6275f))
+* **slider:** jump slider only when outside window ([5ea95f5](https://github.com/minimit/xtend-library/commit/5ea95f5120a30dcaf0851dc529ff5e6d86a7f02a))
+
 ## [0.14.2](https://github.com/minimit/xtend-library/compare/v0.14.1...v0.14.2) (2020-06-19)
 
 
