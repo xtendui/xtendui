@@ -98,8 +98,6 @@ Xt.mount.push({
       gsap.to(line, { width: lineWidth + lineX, x: 0, opacity: 1, duration: Xt.vars.timeMedium, delay: Xt.vars.timeSmall, ease: 'expo.out' })
     }
 
-    console.log(link, object)
-
     link.addEventListener('mouseenter', eventEnter)
 
     // enter
