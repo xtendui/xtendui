@@ -103,8 +103,9 @@ svg {
 .gatsby_demo-cols {
   [class^='col-'], [class*=' col-'], [class^='demo--col-'], [class*=' demo--col-'] {
     &:before {
-      position: relative;
-      float: left;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 100%;
       height: 22px;
       min-height: 100%;
