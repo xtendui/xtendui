@@ -58,14 +58,12 @@ demo.htmlSource = `
                 <div class="row row-default">
                   <div class="col-12 col-8-sm">
                     <div class="slide_asset">
-                      <div class="slide_asset_background"></div>
-                      ${img({ classes: 'media-cover' })}
+                      ${img({ classes: 'media-cover', loading: 'eager' })}
                     </div>
                   </div>
                   <div class="col-12 col-4-sm">
                     <div class="slide_asset">
-                      <div class="slide_asset_background"></div>
-                      ${img({ classes: 'media-cover' })}
+                      ${img({ classes: 'media-cover', loading: 'eager' })}
                     </div>
                   </div>
                 </div>
@@ -73,8 +71,7 @@ demo.htmlSource = `
 
               <div class="slide_assets--mobile">
                 <div class="slide_asset">
-                  <div class="slide_asset_background"></div>
-                  ${img({ classes: 'media-cover' })}
+                  ${img({ classes: 'media-cover', loading: 'eager' })}
                 </div>
               </div>
 
@@ -90,7 +87,7 @@ demo.htmlSource = `
                         <p>
                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacinia rutrum ornare.
                         </p>
-                        <a href="#" class="btn btn-primary btn-big">
+                        <a href="#" class="btn btn-default btn-big">
                           Discover
                         </a>
                       </div>
@@ -115,16 +112,14 @@ demo.htmlSource = `
 
               <div class="slide_assets--desktop">
                 <div class="row row-default">
-                  <div class="col-12 col-8-sm">
-                    <div class="slide_asset">
-                      <div class="slide_asset_background"></div>
-                      ${imgAlt({ classes: 'media-cover' })}
-                    </div>
-                  </div>
                   <div class="col-12 col-4-sm">
                     <div class="slide_asset">
-                      <div class="slide_asset_background"></div>
-                      ${imgAlt({ classes: 'media-cover' })}
+                      ${imgAlt({ classes: 'media-cover', loading: 'eager' })}
+                    </div>
+                  </div>
+                  <div class="col-12 col-8-sm">
+                    <div class="slide_asset">
+                      ${imgAlt({ classes: 'media-cover', loading: 'eager' })}
                     </div>
                   </div>
                 </div>
@@ -132,8 +127,7 @@ demo.htmlSource = `
 
               <div class="slide_assets--mobile">
                 <div class="slide_asset">
-                  <div class="slide_asset_background"></div>
-                  ${imgAlt({ classes: 'media-cover' })}
+                  ${imgAlt({ classes: 'media-cover', loading: 'eager' })}
                 </div>
               </div>
 
@@ -149,7 +143,7 @@ demo.htmlSource = `
                         <p>
                           Lorem ipsum dolor sit amet
                         </p>
-                        <a href="#" class="btn btn-primary btn-big">
+                        <a href="#" class="btn btn-default btn-big">
                           Discover
                         </a>
                       </div>
@@ -176,14 +170,12 @@ demo.htmlSource = `
                 <div class="row row-default">
                   <div class="col-12 col-8-sm">
                     <div class="slide_asset">
-                      <div class="slide_asset_background"></div>
-                      ${img({ classes: 'media-cover' })}
+                      ${img({ classes: 'media-cover', loading: 'eager' })}
                     </div>
                   </div>
                   <div class="col-12 col-4-sm">
                     <div class="slide_asset">
-                      <div class="slide_asset_background"></div>
-                      ${img({ classes: 'media-cover' })}
+                      ${img({ classes: 'media-cover', loading: 'eager' })}
                     </div>
                   </div>
                 </div>
@@ -191,8 +183,7 @@ demo.htmlSource = `
 
               <div class="slide_assets--mobile">
                 <div class="slide_asset">
-                  <div class="slide_asset_background"></div>
-                  ${img({ classes: 'media-cover' })}
+                  ${img({ classes: 'media-cover', loading: 'eager' })}
                 </div>
               </div>
 
@@ -208,7 +199,7 @@ demo.htmlSource = `
                         <p>
                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacinia rutrum ornare.
                         </p>
-                        <a href="#" class="btn btn-primary btn-big">
+                        <a href="#" class="btn btn-default btn-big">
                           Discover
                         </a>
                       </div>
@@ -233,16 +224,14 @@ demo.htmlSource = `
 
               <div class="slide_assets--desktop">
                 <div class="row row-default">
-                  <div class="col-12 col-8-sm">
-                    <div class="slide_asset">
-                      <div class="slide_asset_background"></div>
-                      ${imgAlt({ classes: 'media-cover' })}
-                    </div>
-                  </div>
                   <div class="col-12 col-4-sm">
                     <div class="slide_asset">
-                      <div class="slide_asset_background"></div>
-                      ${imgAlt({ classes: 'media-cover' })}
+                      ${imgAlt({ classes: 'media-cover', loading: 'eager' })}
+                    </div>
+                  </div>
+                  <div class="col-12 col-8-sm">
+                    <div class="slide_asset">
+                      ${imgAlt({ classes: 'media-cover', loading: 'eager' })}
                     </div>
                   </div>
                 </div>
@@ -250,8 +239,7 @@ demo.htmlSource = `
 
               <div class="slide_assets--mobile">
                 <div class="slide_asset">
-                  <div class="slide_asset_background"></div>
-                  ${imgAlt({ classes: 'media-cover' })}
+                  ${imgAlt({ classes: 'media-cover', loading: 'eager' })}
                 </div>
               </div>
 
@@ -267,7 +255,7 @@ demo.htmlSource = `
                         <p>
                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacinia rutrum ornare.
                         </p>
-                        <a href="#" class="btn btn-primary btn-big">
+                        <a href="#" class="btn btn-default btn-big">
                           Discover
                         </a>
                       </div>

@@ -101,6 +101,7 @@
       width: 49rem;
     }
     > .card {
+      .card-squared();
       align-items: flex-end;
     }
   }
@@ -109,20 +110,14 @@
   }
   .slide_asset {
     position: relative;
+    background: @shade-200;
     .media-container {
       overflow: hidden;
+      background: transparent;
     }
     .media-inner {
       overflow: hidden;
     }
-  }
-  .slide_asset_background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: @shade-200;
   }
   .slide_assets--desktop {
     > .row {

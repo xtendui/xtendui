@@ -153,22 +153,22 @@ demo.htmlSource = `
         <div class="slide-inner">
           <div class="slide_item">
             <a href="#test-link-1" class="slide_content">
-              ${img({ classes: 'media-cover', ratio: '25%' })}
+              ${img({ classes: 'media-cover', ratio: '25%', loading: 'eager' })}
             </a>
             <a href="#test-link-2" class="slide_content">
-              ${img({ classes: 'media-cover', ratio: '25%' })}
+              ${img({ classes: 'media-cover', ratio: '25%', loading: 'eager' })}
             </a>
             <a href="#test-link-3" class="slide_content">
-              ${img({ classes: 'media-cover', ratio: '25%' })}
+              ${img({ classes: 'media-cover', ratio: '25%', loading: 'eager' })}
             </a>
             <a href="#test-link-4" class="slide_content">
-              ${img({ classes: 'media-cover', ratio: '25%' })}
+              ${img({ classes: 'media-cover', ratio: '25%', loading: 'eager' })}
             </a>
             <a href="#test-link-5" class="slide_content">
-              ${img({ classes: 'media-cover', ratio: '25%' })}
+              ${img({ classes: 'media-cover', ratio: '25%', loading: 'eager' })}
             </a>
             <a href="#test-link-6" class="slide_content">
-              ${imgAlt({ classes: 'media-cover', ratio: '25%' })}
+              ${imgAlt({ classes: 'media-cover', ratio: '25%', loading: 'eager' })}
             </a>
           </div>
         </div>

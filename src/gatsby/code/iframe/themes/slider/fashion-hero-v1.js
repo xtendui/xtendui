@@ -25,7 +25,7 @@ demo.htmlSource = `
         <div class="slide-inner">
           <a href="#" class="slide_item">
             <div class="slide_asset">
-              ${img({ classes: 'media-cover', height: '100%' })}
+              ${img({ classes: 'media-cover', height: '100%', loading: 'eager' })}
             </div>
             <div class="slide_content">
               <div class="container full">
@@ -42,7 +42,7 @@ demo.htmlSource = `
         <div class="slide-inner">
           <a href="#" class="slide_item">
             <div class="slide_asset">
-              ${imgAlt({ classes: 'media-cover', height: '100%' })}
+              ${imgAlt({ classes: 'media-cover', height: '100%', loading: 'eager' })}
             </div>
             <div class="slide_content">
               <div class="container full">
@@ -59,7 +59,7 @@ demo.htmlSource = `
         <div class="slide-inner">
           <a href="#" class="slide_item">
             <div class="slide_asset">
-              ${img({ classes: 'media-cover', height: '100%' })}
+              ${img({ classes: 'media-cover', height: '100%', loading: 'eager' })}
             </div>
             <div class="slide_content">
               <div class="container full">
@@ -76,7 +76,7 @@ demo.htmlSource = `
         <div class="slide-inner">
           <a href="#" class="slide_item">
             <div class="slide_asset">
-              ${imgAlt({ classes: 'media-cover', height: '100%' })}
+              ${imgAlt({ classes: 'media-cover', height: '100%', loading: 'eager' })}
             </div>
             <div class="slide_content">
               <div class="container full">

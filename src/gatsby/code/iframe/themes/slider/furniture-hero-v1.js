@@ -32,7 +32,7 @@ demo.htmlSource = `
                 </div>
               </div>
               <div class="slide_asset">
-                ${img({ classes: 'media-cover' })}
+                ${img({ classes: 'media-cover', loading: 'eager' })}
               </div>
               <a href="#" class="slide_text">
                 <div class="container">
@@ -59,7 +59,7 @@ demo.htmlSource = `
                 </div>
               </div>
               <div class="slide_asset">
-                ${imgAlt({ classes: 'media-cover' })}
+                ${imgAlt({ classes: 'media-cover', loading: 'eager' })}
               </div>
               <a href="#" class="slide_text">
                 <div class="container">
@@ -86,7 +86,7 @@ demo.htmlSource = `
                 </div>
               </div>
               <div class="slide_asset">
-                ${img({ classes: 'media-cover' })}
+                ${img({ classes: 'media-cover', loading: 'eager' })}
               </div>
               <a href="#" class="slide_text">
                 <div class="container">
@@ -113,7 +113,7 @@ demo.htmlSource = `
                 </div>
               </div>
               <div class="slide_asset">
-                ${imgAlt({ classes: 'media-cover' })}
+                ${imgAlt({ classes: 'media-cover', loading: 'eager' })}
               </div>
               <a href="#" class="slide_text">
                 <div class="container">

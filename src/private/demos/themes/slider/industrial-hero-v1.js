@@ -61,11 +61,6 @@ Xt.mount.push({
         const assetMaskInner = assetMask.querySelector('.media-inner')
         gsap.set(assetMaskInner, { x: 100 * self.detail.dragRatio * self.direction + '%', opacity: 1 })
       }
-      // assetBackground
-      const assetBackgrounds = target.querySelectorAll('.slide_asset_background')
-      for (const assetBackground of assetBackgrounds) {
-        gsap.set(assetBackground, { opacity: self.detail.dragRatioInverse })
-      }
       // asset
       const assets = target.querySelectorAll('.slide_asset img')
       for (const asset of assets) {
