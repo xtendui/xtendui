@@ -1,3 +1,10 @@
+## [0.14.2](https://github.com/minimit/xtend-library/compare/v0.14.1...v0.14.2) (2020-06-19)
+
+
+### Bug Fixes
+
+* **media:** media options back to .media ([ce9fb48](https://github.com/minimit/xtend-library/commit/ce9fb4806bee0744c7421baa6b4404bdbe940d2c))
+
 ## [0.14.1](https://github.com/minimit/xtend-library/compare/v0.14.0...v0.14.1) (2020-06-18)
 
 
