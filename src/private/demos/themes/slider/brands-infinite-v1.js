@@ -45,9 +45,8 @@ Xt.mount.push({
         }
         // animate
         if (self.initial) {
-          // current dragging position
-          gsap.set(self.dragger, { x: self.detail.dragPos })
-          self.goToNext()
+          // reset dragging position
+          gsap.set(self.dragger, { x: 0 })
         }
         if (self.wrap) {
           // end dragging position instant

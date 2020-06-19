@@ -148,21 +148,9 @@ class Slider extends Xt.Toggle {
     self.detail.fixNegativeMargin = Xt.dataStorage.get(self.groupMq[0][0], self.componentNamespace + 'SlideLeft')
     // @FIX disable slider if not overflowing
     if (options.nooverflow && totalCount > 0) {
-      const afterInitDisable = () => {
-        // disable
-        self.object.classList.add('slider-nooverflow')
-        self.disable()
-        // enable all visible elements also if not .active next frame when self.elements is populated
-        const currents = self.getCurrents()
-        for (const el of self.elements.filter(x => !currents.includes(self.getElements(x)[0]))) {
-          self.activate(el)
-          for (const tr of self.getTargets(el)) {
-            self.activate(tr)
-          }
-        }
-        self.object.removeEventListener('init.xt', afterInitDisable)
-      }
-      self.object.addEventListener('init.xt', afterInitDisable)
+      // disable
+      self.object.classList.add('slider-nooverflow')
+      self.disable()
     }
     // drag wrap
     const wrapFirst = []
