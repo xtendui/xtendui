@@ -52,7 +52,7 @@ self.targets.filter(x => self.hasCurrent(x))
 ## Trigger
 
 [[noteDefault]]
-| For triggering and listening the **resize event**, refer to [global's js](/components/global/js#events-resize).
+| For triggering and listening the **resize event**, refer to [structure](/components/structure/other#resize).
 
 ## Listen
 

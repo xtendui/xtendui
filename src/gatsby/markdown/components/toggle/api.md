@@ -85,7 +85,7 @@ document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('o
 </div>
 
 [[noteDefault]]
-| For triggering and listening the **resize event**, refer to [global's js](/components/global/js#events-resize).
+| For triggering and listening the **resize event**, refer to [structure](/components/structure/other#resize).
 
 ## Listen
 

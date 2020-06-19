@@ -1,9 +1,9 @@
 ---
 type: "Components"
 badge: "Core"
-parent: "Global"
-title: "Global"
-description: "Global variables, styles and utils."
+parent: "Structure"
+title: "Structure"
+description: "Structure styles, variables and utils."
 categories: ["100-Core"]
 date: "2018-01-01"
 ---
@@ -13,7 +13,9 @@ date: "2018-01-01"
 To use this component import the **less** files accordingly:
 
 ```less
-@import '/src/core/global/global.less';
+@import '/src/core/structure/structure.less';
+@import '/src/core/structure/variables.less';
+@import '/src/core/structure/utils.less';
 ```
 
 Or just import **core**:
@@ -27,4 +29,4 @@ Or just import **core**:
 
 ## Theming
 
-For an explanation of the css file content see [global css](/components/global/css).
+For an explanation of the css file content see [structure css](/components/structure/css).

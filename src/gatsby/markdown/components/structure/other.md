@@ -1,14 +1,12 @@
 ---
 type: "Components"
 badge: "Core"
-parent: "Global"
-title: "Js"
-date: "2019-06-01"
+parent: "Structure"
+title: "Other"
+date: "2019-03-15"
 ---
 
-## Events
-
-#### Resize
+## Resize
 
 We use a special resize handler that manages `resize` **only if the height of the window changes**, to force it also on window width change use `e.detail.force`:
 

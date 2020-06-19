@@ -1,0 +1,88 @@
+/**
+ * background
+ */
+
+body {
+  background: @shade-200;
+}
+
+/**
+ * scrollbar
+ */
+
+.overflow-style(@mode: none) {
+  -webkit-overflow-scrolling: touch;
+  & when (@mode = none) {
+    &::-webkit-scrollbar {
+      height: 8px;
+      width: 8px;
+      background: @shade-200;
+      @media (hover: none) {
+        display: none;
+      }
+    }
+    &::-webkit-scrollbar-thumb {
+      background: fade(@shade-900, 50%);
+    }
+  }
+  & when (@mode = inner) {
+    &::-webkit-scrollbar {
+      height: 4px;
+      width: 4px;
+      background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: fade(@shade-900, 50%);
+    }
+  }
+}
+
+/**
+ * selection
+ */
+
+::selection {
+  background-color: @accent-dark !important;
+  color: @white !important;
+}
+
+/**
+ * focus
+ * to disable focus add html.xt-focus-disable class
+ */
+
+html.xt-focus-visible:not(.xt-focus-disable) {
+  :focus {
+    outline-color: rgb(77, 144, 254);
+  }
+  // custom focus on forms
+  input:not([type="checkbox"]):not([type="radio"]), select, textarea {
+    &:focus {
+      outline: none;
+    }
+  }
+  /*
+  // custom focus for checkbox and radio
+  input[type="checkbox"], input[type="radio"] {
+    &:focus, &:focus ~ .form-label:before {
+      outline-color: rgb(77, 144, 254);
+      outline-offset: -2px;
+      outline-style: auto;
+      outline-width: 5px;
+    }
+  }
+  */
+}
+
+/**
+ * disabled
+ */
+
+[disabled], .disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  // when not .active also graphic changes
+  &:not(.active) {
+    opacity: .75;
+  }
+}
