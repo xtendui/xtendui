@@ -9,15 +9,15 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<ul class="row">
-  <li>
+<div class="row">
+  <div>
     Lorem ipsum dolor sit amet.
-  </li>
-  <li>
+  </div>
+  <div>
     consectetur adipiscing elit.
-  </li>
-  <li>
+  </div>
+  <div>
     Cras placerat pellentesque pulvinar.
-  </li>
+  </div>
 </ul>
 `

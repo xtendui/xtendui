@@ -9,15 +9,15 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<ul class="row flex-direction-column">
-  <li>
+<div class="row flex-direction-column">
+  <div>
     Lorem ipsum dolor sit amet.
-  </li>
-  <li>
+  </div>
+  <div>
     consectetur adipiscing elit.
-  </li>
-  <li>
+  </div>
+  <div>
     Cras placerat pellentesque pulvinar.
-  </li>
-</ul>
+  </div>
+</div>
 `

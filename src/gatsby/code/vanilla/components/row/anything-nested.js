@@ -9,42 +9,42 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<ul class="row">
-  <li>
-    <ul class="row">
-      <li>
-        <ul class="row flex-direction-column">
-          <li>
+<div class="row">
+  <div>
+    <div class="row">
+      <div>
+        <div class="row flex-direction-column">
+          <div>
             Lorem ipsum dolor sit amet.
-          </li>
-          <li>
+          </div>
+          <div>
             consectetur adipiscing elit.
-          </li>
-          <li>
+          </div>
+          <div>
             Cras placerat pellentesque pulvinar.
-          </li>
-        </ul>
-      </li>
-      <li>
+          </div>
+        </div>
+      </div>
+      <div>
         consectetur adipiscing elit.
-      </li>
-      <li>
+      </div>
+      <div>
         Cras placerat pellentesque pulvinar.
-      </li>
-    </ul>
-  </li>
-  <li>
-    <ul class="row">
-      <li>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="row">
+      <div>
         Lorem ipsum dolor sit amet.
-      </li>
-      <li>
+      </div>
+      <div>
         consectetur adipiscing elit.
-      </li>
-      <li>
+      </div>
+      <div>
         Cras placerat pellentesque pulvinar.
-      </li>
-    </ul>
-  </li>
-</ul>
+      </div>
+    </div>
+  </div>
+</div>
 `
