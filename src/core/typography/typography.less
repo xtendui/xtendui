@@ -47,18 +47,8 @@ body {
   .font-sans-regular();
   .font-medium();
   .line-height-medium();
-  .text-default();
-  font-variant-ligatures: none;
-}
-
-// text
-
-.text-default {
   color: @text;
-}
-
-.text-inverse {
-  color: @text-inverse;
+  font-variant-ligatures: none;
 }
 
 /**
@@ -222,6 +212,16 @@ small {
 .align-uppercase {
   position: relative;
   top: -.1em;
+}
+
+// text
+
+.text-default {
+  color: @text;
+}
+
+.text-inverse {
+  color: @text-inverse;
 }
 
 // font
