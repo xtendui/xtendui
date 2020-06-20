@@ -12,13 +12,13 @@ class DocHead extends React.Component {
         <div className="gatsby_site_article_hero_content">
           <div className="gatsby_site_article_hero_content_inner">
             <h1>
-              {page.post.frontmatter.parent && page.post.frontmatter.parent !== page.post.frontmatter.title ? (
-                <span>
-                  {page.post.frontmatter.title} <em>{page.post.frontmatter.parent}</em>
-                </span>
-              ) : (
-                <span>{page.post.frontmatter.title}</span>
-              )}
+              <span>
+                {page.post.frontmatter.title
+                  .split(/[\s-]+/)
+                  .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
+                  .join(' ')}{' '}
+                {page.post.frontmatter.parent && page.post.frontmatter.parent !== page.post.frontmatter.title ? <em>{page.post.frontmatter.parent}</em> : null}
+              </span>
               {page.post.frontmatter.badge ? <div className="badge badge-default badge-small">{page.post.frontmatter.badge}</div> : null}
             </h1>
             {page.post.frontmatter.description ? <p>{page.post.frontmatter.description}</p> : null}
