@@ -7,7 +7,7 @@
   position: relative;
   .flex-full();
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   height: 100%;
   z-index: @index-base; // fix :before negative z-index
@@ -20,7 +20,7 @@
 
 .card-inner {
   .full();
-  height: 100%;
+  height: initial;
   // @FIX full height and card-block empty spaces
   display: flex;
   flex-direction: column;
@@ -64,7 +64,6 @@
 .card-asset {
   overflow: hidden;
   position: relative;
-  .flex-full();
   > * {
     .full();
     height: auto;

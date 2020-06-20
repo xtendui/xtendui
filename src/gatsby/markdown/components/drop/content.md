@@ -145,7 +145,7 @@ You can add custom `.card-block` modifiers and style them as you like (e.g.: `.c
   </demovanilla>
 </demo>
 
-If you need to put an asset outside `.card-block`, just use `.card-item.card-block-side` and wrap the text inside another `.card-block.card-item`, like in the second example.
+If you need to put an asset outside `.card-block`, just use `.card-item` and wrap the text inside another `.card-block.card-item`, like in the second example.
 
 The size of **blocks** is automatic, you can specify the **size** with [columns](/components/column), with responsive classes if you need them.
 

@@ -74,15 +74,15 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
     <button type="button" class="btn btn-primary">
-      position left asset blocks
+      position left blocks
     </button>
-    <div class="overlay overlay-default overlay-position-left">
+    <div class="overlay overlay-primary overlay-position-left">
       <div class="overlay-container">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
 
           <div class="card card-overlay"
-            style="align-items: flex-start;">
+            style="align-items: stretch;">
             <div class="card-design"></div>
             <div class="btn btn-close" aria-label="Close"></div>
             <div class="card-inner">
@@ -94,7 +94,8 @@ demo.htmlSource = `
                   <div class="card-title">Lorem ipsum</div>
                   <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
                 </div>
-                <div class="card-block card-item">
+                <div class="card-block card-item card-block-side"
+                  style="margin-top: auto">
                   <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
                 </div>
               </div>
