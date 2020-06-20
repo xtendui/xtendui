@@ -4,9 +4,6 @@
   * .block-listing
   */
 
-.block-listing {
-}
-
 .block-listing_inner {
   > .row {
     .row-space(big);
@@ -19,6 +16,11 @@
   .col(3, lg);
 }
 
+.block-listing_col--big {
+  .col(12, sm);
+  .col(12, lg);
+}
+
 .block-listing_item {
   .link-none();
   .full();
@@ -29,6 +31,16 @@
   text-align: center;
   .media-container {
     padding-bottom: 150%;
+  }
+}
+
+.block-listing_col--big {
+  .block-listing_img {
+    .media-container {
+      @media @min-sm {
+        padding-bottom: 37.5%;
+      }
+    }
   }
 }
 
