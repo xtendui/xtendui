@@ -90,7 +90,6 @@ class Slider extends Xt.Toggle {
     for (const slide of self.targets) {
       Xt.dataStorage.set(slide, self.componentNamespace + 'SlideLeft', slide.offsetLeft)
       Xt.dataStorage.set(slide, self.componentNamespace + 'SlideWidth', slide.offsetWidth)
-      Xt.dataStorage.set(slide, self.componentNamespace + 'SlideHeight', slide.children[0].offsetHeight)
     }
     // width
     const draggerWidth = self.dragger ? self.detail.draggerWidth : self.detail.objectWidth
@@ -225,7 +224,6 @@ class Slider extends Xt.Toggle {
         // needs to recalculate not only xt-wrap but all targets
         Xt.dataStorage.set(slide, self.componentNamespace + 'SlideLeft', slide.offsetLeft)
         Xt.dataStorage.set(slide, self.componentNamespace + 'SlideWidth', slide.offsetWidth)
-        Xt.dataStorage.set(slide, self.componentNamespace + 'SlideHeight', slide.children[0].offsetHeight)
       }
     }
     self.groupMqFirst = wrapFirst
@@ -321,6 +319,9 @@ class Slider extends Xt.Toggle {
     }
     // @FIX performances
     const draggerWidth = self.detail.draggerWidth
+    for (const slide of self.targets) {
+      Xt.dataStorage.set(slide, self.componentNamespace + 'SlideHeight', slide.children[0].offsetHeight)
+    }
     // slides pos
     let slidesWidth = 0
     for (const slide of self.targets) {
