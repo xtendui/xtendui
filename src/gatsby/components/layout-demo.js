@@ -29,6 +29,8 @@ class Layout extends React.Component {
   componentDidMount() {
     const { demo } = this.props
     document.querySelector('html').classList.add('gatsby_iframe-inside')
+    console.log(demo)
+    document.querySelector('html').setAttribute('id', 'iframe--' + demo.name)
     if (demo.full) {
       document.querySelector('html').classList.add('gatsby_iframe-full')
     }

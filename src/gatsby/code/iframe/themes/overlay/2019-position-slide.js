@@ -14,12 +14,12 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-default list-space-small align-items-center demo--2019-position-slide">
+<div class="list list-default list-space-small align-items-center">
   <div data-xt-overlay>
     <button type="button" class="btn btn-primary">
       position left
     </button>
-    <div class="overlay overlay-default overlay-position overlay-position-left demo--2019-position-slide">
+    <div class="overlay overlay-default overlay-position overlay-position-left">
       <div class="overlay-container">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
@@ -49,7 +49,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       position right
     </button>
-    <div class="overlay overlay-default overlay-position overlay-position-right demo--2019-position-slide">
+    <div class="overlay overlay-default overlay-position overlay-position-right">
       <div class="overlay-container">
         <div class="overlay-inner">
           <div class="overlay-design"></div>

@@ -16,106 +16,102 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="demo--2020-aniyeby-mask">
+<div class="block-listing">
+  <div class="container">
+    <div class="block-listing_inner">
+      <div class="row">
 
-  <div class="block-listing">
-    <div class="container">
-      <div class="block-listing_inner">
-        <div class="row">
-
-          <div class="block-listing_col">
-            <a href="#" class="block-listing_item">
-              <div class="block-listing_img">
-                ${img({ classes: 'media-cover' })}
-              </div>
-              <div class="block-listing_title">
-                Lorem Ipsum
-              </div>
-            </a>
-          </div>
-
-          <div class="block-listing_col">
-            <a href="#" class="block-listing_item">
-              <div class="block-listing_img">
-                ${imgAlt({ classes: 'media-cover' })}
-              </div>
-              <div class="block-listing_title">
-                Dolor sit amet
-              </div>
-            </a>
-          </div>
-
-          <div class="block-listing_col">
-            <a href="#" class="block-listing_item">
-              <div class="block-listing_img">
-                ${img({ classes: 'media-cover' })}
-              </div>
-              <div class="block-listing_title">
-                Consectetur
-              </div>
-            </a>
-          </div>
-
-          <div class="block-listing_col">
-            <a href="#" class="block-listing_item">
-              <div class="block-listing_img">
-                ${imgAlt({ classes: 'media-cover' })}
-              </div>
-              <div class="block-listing_title">
-                Adipiscing elit
-              </div>
-            </a>
-          </div>
-
-          <div class="block-listing_col">
-            <a href="#" class="block-listing_item">
-              <div class="block-listing_img">
-                ${img({ classes: 'media-cover' })}
-              </div>
-              <div class="block-listing_title">
-                Lorem Ipsum
-              </div>
-            </a>
-          </div>
-
-          <div class="block-listing_col">
-            <a href="#" class="block-listing_item">
-              <div class="block-listing_img">
-                ${imgAlt({ classes: 'media-cover' })}
-              </div>
-              <div class="block-listing_title">
-                Dolor sit amet
-              </div>
-            </a>
-          </div>
-
-          <div class="block-listing_col">
-            <a href="#" class="block-listing_item">
-              <div class="block-listing_img">
-                ${img({ classes: 'media-cover' })}
-              </div>
-              <div class="block-listing_title">
-                Consectetur
-              </div>
-            </a>
-          </div>
-
-          <div class="block-listing_col">
-            <a href="#" class="block-listing_item">
-              <div class="block-listing_img">
-                ${imgAlt({ classes: 'media-cover' })}
-              </div>
-              <div class="block-listing_title">
-                Adipiscing elit
-              </div>
-            </a>
-          </div>
-
+        <div class="block-listing_col">
+          <a href="#" class="block-listing_item">
+            <div class="block-listing_img">
+              ${img({ classes: 'media-cover' })}
+            </div>
+            <div class="block-listing_title">
+              Lorem Ipsum
+            </div>
+          </a>
         </div>
+
+        <div class="block-listing_col">
+          <a href="#" class="block-listing_item">
+            <div class="block-listing_img">
+              ${imgAlt({ classes: 'media-cover' })}
+            </div>
+            <div class="block-listing_title">
+              Dolor sit amet
+            </div>
+          </a>
+        </div>
+
+        <div class="block-listing_col">
+          <a href="#" class="block-listing_item">
+            <div class="block-listing_img">
+              ${img({ classes: 'media-cover' })}
+            </div>
+            <div class="block-listing_title">
+              Consectetur
+            </div>
+          </a>
+        </div>
+
+        <div class="block-listing_col">
+          <a href="#" class="block-listing_item">
+            <div class="block-listing_img">
+              ${imgAlt({ classes: 'media-cover' })}
+            </div>
+            <div class="block-listing_title">
+              Adipiscing elit
+            </div>
+          </a>
+        </div>
+
+        <div class="block-listing_col">
+          <a href="#" class="block-listing_item">
+            <div class="block-listing_img">
+              ${img({ classes: 'media-cover' })}
+            </div>
+            <div class="block-listing_title">
+              Lorem Ipsum
+            </div>
+          </a>
+        </div>
+
+        <div class="block-listing_col">
+          <a href="#" class="block-listing_item">
+            <div class="block-listing_img">
+              ${imgAlt({ classes: 'media-cover' })}
+            </div>
+            <div class="block-listing_title">
+              Dolor sit amet
+            </div>
+          </a>
+        </div>
+
+        <div class="block-listing_col">
+          <a href="#" class="block-listing_item">
+            <div class="block-listing_img">
+              ${img({ classes: 'media-cover' })}
+            </div>
+            <div class="block-listing_title">
+              Consectetur
+            </div>
+          </a>
+        </div>
+
+        <div class="block-listing_col">
+          <a href="#" class="block-listing_item">
+            <div class="block-listing_img">
+              ${imgAlt({ classes: 'media-cover' })}
+            </div>
+            <div class="block-listing_title">
+              Adipiscing elit
+            </div>
+          </a>
+        </div>
+
       </div>
     </div>
   </div>
-
 </div>
 `
 

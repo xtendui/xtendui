@@ -19,7 +19,7 @@ demo.htmlSource = `
   Button
 </div>
 
-<div class="list list-default list-space-small align-items-center demo--2019-xtend">
+<div class="list list-default list-space-small align-items-center">
 
   <button type="button" class="btn btn-default">
     button
@@ -43,7 +43,7 @@ demo.htmlSource = `
   Drop
 </div>
 
-<div class="list list-default list-space-small align-items-center demo--2019-xtend">
+<div class="list list-default list-space-small align-items-center">
 
   <div class="drop-container" data-xt-drop="{ targetsInner: ':scope > .drop-inner' }">
     <button type="button" class="btn btn-primary">
@@ -113,13 +113,13 @@ demo.htmlSource = `
   Overlay
 </div>
 
-<div class="list list-default list-space-small align-items-center demo--2019-xtend">
+<div class="list list-default list-space-small align-items-center">
 
   <div data-xt-overlay>
     <button type="button" class="btn btn-primary">
       overlay
     </button>
-    <div class="overlay overlay-default demo--2019-xtend">
+    <div class="overlay overlay-default">
       <div class="overlay-container">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
@@ -149,7 +149,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       overlay screen full
     </button>
-    <div class="overlay overlay-default overlay-screen overlay-size-full demo--2019-xtend">
+    <div class="overlay overlay-default overlay-screen overlay-size-full">
       <div class="overlay-container">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
@@ -175,7 +175,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       overlay position
     </button>
-    <div class="overlay overlay-default overlay-position overlay-position-left demo--2019-xtend">
+    <div class="overlay overlay-default overlay-position overlay-position-left">
       <div class="overlay-container">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
@@ -210,7 +210,7 @@ demo.htmlSource = `
 <div class="row row-default">
 
   <div class="col-12 col-6-sm">
-    <a role="button" class="card card-default demo--2019-xtend">
+    <a role="button" class="card card-default">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
@@ -224,7 +224,7 @@ demo.htmlSource = `
   </div>
 
   <div class="col-12 col-6-sm">
-    <a role="button" class="card card-primary demo--2019-xtend">
+    <a role="button" class="card card-primary">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">

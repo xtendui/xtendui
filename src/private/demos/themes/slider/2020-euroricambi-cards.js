@@ -3,12 +3,8 @@ import 'xtend-library/src/vars.js'
 import 'xtend-library/src/extensions/slider/slider.js'
 import gsap from 'gsap'
 
-/**
- * .demo--2020-euroricambi-cards
- */
-
 Xt.mount.push({
-  matches: '.demo--2020-euroricambi-cards',
+  matches: '#iframe--2020-euroricambi-cards .slider',
   mount: object => {
     // vars
 

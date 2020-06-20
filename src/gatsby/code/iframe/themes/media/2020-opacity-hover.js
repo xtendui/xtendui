@@ -16,35 +16,33 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="demo--2020-opacity-hover">
-  <div class="container">
-    <div class="row row-default">
-    
-      <div class="col-6 col-sm-4">
-        <a href="#" class="full">
-          ${img({ classes: 'media-cover', ratio: '37.5%' })}
-        </a>
-      </div>
-      
-      <div class="col-6 col-sm-4">
-        <a href="#" class="full">
-          ${imgAlt({ classes: 'media-cover', ratio: '37.5%' })}
-        </a>
-      </div>
-      
-      <div class="col-6 col-sm-4">
-        <a href="#" class="full">
-          ${img({ classes: 'media-cover', ratio: '37.5%' })}
-        </a>
-      </div>
-      
-      <div class="col-6 col-sm-4">
-        <a href="#" class="full">
-          ${imgAlt({ classes: 'media-cover', ratio: '37.5%' })}
-        </a>
-      </div>
-      
+<div class="container">
+  <div class="row row-default">
+
+    <div class="col-6 col-sm-4">
+      <a href="#" class="media--opacity full">
+        ${img({ classes: 'media-cover', ratio: '37.5%' })}
+      </a>
     </div>
+
+    <div class="col-6 col-sm-4">
+      <a href="#" class="media--opacity full">
+        ${imgAlt({ classes: 'media-cover', ratio: '37.5%' })}
+      </a>
+    </div>
+
+    <div class="col-6 col-sm-4">
+      <a href="#" class="media--opacity full">
+        ${img({ classes: 'media-cover', ratio: '37.5%' })}
+      </a>
+    </div>
+
+    <div class="col-6 col-sm-4">
+      <a href="#" class="media--opacity full">
+        ${imgAlt({ classes: 'media-cover', ratio: '37.5%' })}
+      </a>
+    </div>
+
   </div>
 </div>
 `

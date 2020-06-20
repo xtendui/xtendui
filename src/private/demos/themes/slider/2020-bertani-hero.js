@@ -4,12 +4,8 @@ import 'xtend-library/src/extensions/slider/slider.js'
 import 'xtend-library/src/addons/slider/navigation-sides.js'
 import gsap from 'gsap'
 
-/**
- * .demo--2020-bertani-hero
- */
-
 Xt.mount.push({
-  matches: '.demo--2020-bertani-hero',
+  matches: '#iframe--2020-bertani-hero .slider',
   mount: object => {
     // vars
 

@@ -3,12 +3,8 @@ import 'xtend-library/src/vars.js'
 import 'xtend-library/src/extensions/slider/slider.js'
 import gsap from 'gsap'
 
-/**
- * .demo--2020-brands-infinite
- */
-
 Xt.mount.push({
-  matches: '.demo--2020-brands-infinite',
+  matches: '#iframe--2020-brands-infinite .slider',
   mount: object => {
     // vars
 
@@ -40,7 +36,7 @@ Xt.mount.push({
         const slideWidth = target.offsetWidth
         const draggerWidth = self.dragger.offsetWidth
         let time = slideWidth * 15 // constant speed
-        if (object.classList.contains('demo--2020-brands-infinite--factor')) {
+        if (object.classList.contains('slider--factor')) {
           time = (draggerWidth / slideWidth) * 50000 // faster or slower depending on horizontal space
         }
         // animate

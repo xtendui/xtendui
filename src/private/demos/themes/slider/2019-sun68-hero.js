@@ -4,12 +4,8 @@ import 'xtend-library/src/extensions/slider/slider.js'
 import 'xtend-library/src/addons/slider/navigation-sides.js'
 import gsap from 'gsap'
 
-/**
- * .demo--2019-sun68-hero
- */
-
 Xt.mount.push({
-  matches: '.demo--2019-sun68-hero',
+  matches: '#iframe--2019-sun68-hero .slider',
   mount: object => {
     // vars
 

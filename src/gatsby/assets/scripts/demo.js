@@ -62,6 +62,20 @@ if (typeof window !== 'undefined') {
 
 const formatCode = source => {
   let text = source.innerHTML
+  // ##START and ##END
+  const meta = text.match(/\/\/##START([\S\s]*?)\/\/##END/)
+  if (meta) {
+    text = meta[1]
+  }
+  // replace id
+  const item = source.closest('.gatsby_demo_item')
+  if (item) {
+    let id = item.getAttribute('data-iframe')
+    if (id) {
+      id = '#iframe--' + id.split('/').pop()
+      text = text.replace(new RegExp(`[ ]{0,}${id}[ ]{0,}`, 'gi'), '')
+    }
+  }
   // search html tags
   const re = /<[^>]*>/g
   text = text.replace(re, (match, g1, g2) => {
