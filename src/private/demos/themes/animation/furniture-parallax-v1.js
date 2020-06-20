@@ -9,7 +9,7 @@ import gsap from 'gsap'
  */
 
 Xt.mount.push({
-  matches: '.demo--furniture-parallax-v1',
+  matches: '#iframe--furniture-parallax-v1 #body--smooth',
   mount: object => {
     // init
 
@@ -30,7 +30,7 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '.demo--furniture-parallax-v1 a, .demo--furniture-parallax-v1 button',
+  matches: '#iframe--furniture-parallax-v1 a, #iframe--furniture-parallax-v1 button',
   mount: object => {
     // init
 
@@ -53,7 +53,7 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '.demo--furniture-parallax-v1 .btn--line',
+  matches: '#iframe--furniture-parallax-v1 .btn--line',
   mount: object => {
     // wrap
 
@@ -130,7 +130,7 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '.demo--furniture-parallax-v1 .parallax_item',
+  matches: '#iframe--furniture-parallax-v1 .parallax_item',
   mount: object => {
     // vars
 

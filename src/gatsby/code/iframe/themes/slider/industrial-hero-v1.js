@@ -16,7 +16,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="slider demo--industrial-hero-v1">
+<div class="slider">
 
   <nav class="slider-pagination">
 

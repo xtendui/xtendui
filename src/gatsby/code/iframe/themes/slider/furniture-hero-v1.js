@@ -16,7 +16,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="slider demo--furniture-hero-v1">
+<div class="slider">
 
   <div class="slides">
     <ul class="slides-inner">

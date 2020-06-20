@@ -17,7 +17,7 @@ Slider automatically disable when not overflowing. It also hides automatically *
 Use `justify-content` to assign horizontal alignment when not overflowing, this way:
 
 ```less
-.my-slider {
+.slider--custom {
   &.xt-overflow-auto {
     .slides-inner {
       justify-content: center;

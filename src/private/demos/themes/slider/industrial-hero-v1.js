@@ -3,12 +3,8 @@ import 'xtend-library/src/vars.js'
 import 'xtend-library/src/extensions/slider/slider.js'
 import gsap from 'gsap'
 
-/**
- * .demo--industrial-hero-v1
- */
-
 Xt.mount.push({
-  matches: '.demo--industrial-hero-v1',
+  matches: '#iframe--industrial-hero-v1 .slider',
   mount: object => {
     // vars
 

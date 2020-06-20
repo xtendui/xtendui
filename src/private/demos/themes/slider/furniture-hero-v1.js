@@ -4,12 +4,8 @@ import 'xtend-library/src/extensions/slider/slider.js'
 import 'xtend-library/src/addons/slider/navigation-sides.js'
 import gsap from 'gsap'
 
-/**
- * .demo--furniture-hero-v1
- */
-
 Xt.mount.push({
-  matches: '.demo--furniture-hero-v1',
+  matches: '#iframe--furniture-hero-v1 .slider',
   mount: object => {
     // vars
 

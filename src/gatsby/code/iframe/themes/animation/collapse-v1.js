@@ -19,7 +19,7 @@ demo.htmlSource = `
   Drop
 </div>
 
-<div class="list list-default list-space-small align-items-center demo--collapse-v1">
+<div class="list list-default list-space-small align-items-center">
 
   <div class="drop-container" data-xt-drop="{ targetsInner: ':scope > .drop-inner' }">
     <button type="button" class="btn btn-primary">
@@ -89,13 +89,13 @@ demo.htmlSource = `
   Overlay
 </div>
 
-<div class="list list-default list-space-small align-items-center demo--collapse-v1">
+<div class="list list-default list-space-small align-items-center">
 
   <div data-xt-overlay>
     <button type="button" class="btn btn-primary">
       overlay
     </button>
-    <div class="overlay overlay-default demo--collapse-v1">
+    <div class="overlay overlay-default">
       <div class="overlay-container">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
@@ -125,7 +125,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       overlay screen full
     </button>
-    <div class="overlay overlay-default overlay-screen overlay-size-full demo--collapse-v1">
+    <div class="overlay overlay-default overlay-screen overlay-size-full">
       <div class="overlay-container">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
@@ -151,7 +151,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       overlay position
     </button>
-    <div class="overlay overlay-default overlay-position overlay-position-left demo--collapse-v1">
+    <div class="overlay overlay-default overlay-position overlay-position-left">
       <div class="overlay-container">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
@@ -183,7 +183,7 @@ demo.htmlSource = `
   Group
 </div>
 
-<div class="list list-default list-space-small align-items-center demo--collapse-v1">
+<div class="list list-default list-space-small align-items-center">
 
   <form class="form-default form-small flex-full"
         data-xt-toggle="{ elements: '.form-group > .btn', targets: '.group' }">

@@ -20,7 +20,7 @@ demo.htmlSource = `
   Constant speed
 </div>
 
-<div class="slider demo--brands-infinite-v1 demo--brands-infinite-v1--text">
+<div class="slider slider--text">
 
   <div class="slides">
     <ul class="slides-inner">
@@ -82,7 +82,7 @@ demo.htmlSource = `
   Faster or slower depending on horizontal space
 </div>
 
-<div class="slider demo--brands-infinite-v1 demo--brands-infinite-v1--text demo--brands-infinite-v1--factor">
+<div class="slider slider--text slider--factor">
 
   <div class="slides">
     <ul class="slides-inner">
@@ -144,7 +144,7 @@ demo.htmlSource = `
   Images
 </div>
 
-<div class="slider demo--brands-infinite-v1 demo--brands-infinite-v1--img">
+<div class="slider slider--img">
 
   <div class="slides">
     <ul class="slides-inner">

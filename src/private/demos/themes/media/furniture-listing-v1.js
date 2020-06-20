@@ -2,12 +2,8 @@ import { Xt } from 'xtend-library'
 import 'xtend-library/src/vars.js'
 import gsap from 'gsap'
 
-/**
- * .demo--furniture-listing-v1
- */
-
 Xt.mount.push({
-  matches: '.demo--furniture-listing-v1 .block-listing_item',
+  matches: '#iframe--furniture-listing-v1 .block-listing_item',
   mount: object => {
     // vars
 

@@ -15,7 +15,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="demo--furniture-parallax-v1">
+<div id="body--smooth">
 
   <div class="parallax parallax--inverse">
 

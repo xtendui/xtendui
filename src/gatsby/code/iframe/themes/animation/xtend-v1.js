@@ -19,7 +19,7 @@ demo.htmlSource = `
   Button
 </div>
 
-<div class="list list-default list-space-small align-items-center demo--xtend-v1">
+<div class="list list-default list-space-small align-items-center">
 
   <button type="button" class="btn btn-default">
     button
@@ -43,7 +43,7 @@ demo.htmlSource = `
   Drop
 </div>
 
-<div class="list list-default list-space-small align-items-center demo--xtend-v1">
+<div class="list list-default list-space-small align-items-center">
 
   <div class="drop-container" data-xt-drop="{ targetsInner: ':scope > .drop-inner' }">
     <button type="button" class="btn btn-primary">
@@ -113,13 +113,13 @@ demo.htmlSource = `
   Overlay
 </div>
 
-<div class="list list-default list-space-small align-items-center demo--xtend-v1">
+<div class="list list-default list-space-small align-items-center">
 
   <div data-xt-overlay>
     <button type="button" class="btn btn-primary">
       overlay
     </button>
-    <div class="overlay overlay-default demo--xtend-v1">
+    <div class="overlay overlay-default">
       <div class="overlay-container">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
@@ -149,7 +149,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       overlay screen full
     </button>
-    <div class="overlay overlay-default overlay-screen overlay-size-full demo--xtend-v1">
+    <div class="overlay overlay-default overlay-screen overlay-size-full">
       <div class="overlay-container">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
@@ -175,7 +175,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       overlay position
     </button>
-    <div class="overlay overlay-default overlay-position overlay-position-left demo--xtend-v1">
+    <div class="overlay overlay-default overlay-position overlay-position-left">
       <div class="overlay-container">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
@@ -210,13 +210,13 @@ demo.htmlSource = `
 <div class="row row-default">
 
   <div class="col-12 col-6-sm">
-    <a role="button" class="card card-default demo--xtend-v1">
+    <a role="button" class="card card-default">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
           <div class="card-block card-item">
             <div class="card-title">Primary</div>
-            <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+            <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
           </div>
         </div>
       </div>
@@ -224,13 +224,13 @@ demo.htmlSource = `
   </div>
 
   <div class="col-12 col-6-sm">
-    <a role="button" class="card card-primary demo--xtend-v1">
+    <a role="button" class="card card-primary">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
           <div class="card-block card-item">
             <div class="card-title">Default</div>
-            <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+            <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
           </div>
         </div>
       </div>

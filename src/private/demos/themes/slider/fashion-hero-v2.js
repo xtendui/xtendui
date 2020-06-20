@@ -4,12 +4,8 @@ import 'xtend-library/src/extensions/slider/slider.js'
 import 'xtend-library/src/addons/slider/navigation-sides.js'
 import gsap from 'gsap'
 
-/**
- * .demo--fashion-hero-v2
- */
-
 Xt.mount.push({
-  matches: '.demo--fashion-hero-v2',
+  matches: '#iframe--fashion-hero-v2 .slider',
   mount: object => {
     // vars
 
@@ -149,11 +145,11 @@ Xt.mount.push({
 })
 
 /**
- * .demo--fashion-hero-v2 .media
+ * #iframe--fashion-hero-v2 .media
  */
 
 Xt.mount.push({
-  matches: '.demo--fashion-hero-v2 .slide',
+  matches: '#iframe--fashion-hero-v2 .slide',
   mount: function(object) {
     // vars
 
