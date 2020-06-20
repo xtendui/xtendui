@@ -14,7 +14,7 @@ class Template extends React.Component {
     seo.description = data.post.frontmatter.description
     return (
       <Layout seo={seo} page={data}>
-        <SEO title={seo.title + ' — ' + seo.description} />
+        <SEO title={seo.title} />
         <div className="gatsby_listing">
           <div className="row">
             {data.categories.category.map((category, i) => (

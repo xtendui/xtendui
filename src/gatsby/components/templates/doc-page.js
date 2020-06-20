@@ -22,7 +22,7 @@ class Template extends React.Component {
     seo.description = data.post.frontmatter.description ? data.post.frontmatter.description : data.post.frontmatter.parent
     return (
       <Layout seo={seo} page={data}>
-        <SEO title={seo.title + ' — ' + seo.description} />
+        <SEO title={seo.title} />
         {data.post.frontmatter.parent === data.post.frontmatter.title ? (
           <div className="gatsby_listing">
             <div className="row">

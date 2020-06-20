@@ -29,7 +29,7 @@ class DemoVanillaIframe extends React.Component {
         `}
         render={data => (
           <Layout seo={seo} demo={demo}>
-            <SEO title={seo.title + ' — ' + seo.description} />
+            <SEO title={seo.title} />
             <div id="body-outer">
               {data.allFile.files
                 .filter(x => x.file.relativePath === `${demo.type}/${demo.component}/${demo.name}.less`)
