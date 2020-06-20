@@ -272,7 +272,7 @@ class Slider extends Xt.Toggle {
           for (const slide of group) {
             const content = slide.querySelector('.slide-pagination-content')
             if (content) {
-              replace += content.innerHTML
+              replace += '<span>' + content.innerHTML + '</span>'
             }
             const attr = slide.querySelector('[data-slide-pagination-class]')
             if (attr) {
