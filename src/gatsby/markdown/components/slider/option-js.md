@@ -154,13 +154,6 @@ You can wrap the slides with `drag: { wrap: true }`.
   </demovanilla>
 </demo>
 
-Use `drag: { overflow: false }` to not have the drag overflow on wrap.
-
-<demo>
-  <demovanilla src="vanilla/components/slider/nooverflow-false">
-  </demovanilla>
-</demo>
-
 ## Pagination
 
 You can add pagination with `[data-xt-pag].xt-ignore` it gets cloned inside the closest `.slider-pagination`.

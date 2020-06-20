@@ -18,6 +18,8 @@ categories: ["100-Test"]
   </demovanilla>
   <demovanilla src="vanilla/components/toggle/timing-delay-fnc">
   </demovanilla>
+  <demovanilla src="vanilla/components/slider/overflow-auto-false">
+  </demovanilla>
 </demo>
 
 <demo>

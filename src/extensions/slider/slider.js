@@ -78,7 +78,7 @@ class Slider extends Xt.Toggle {
       return false
     }
     // @FIX disable slider if not overflowing
-    self.object.classList.remove('slider-nooverflow')
+    self.object.classList.remove('xt-overflow-auto')
     // drag wrap
     self.destroyWraps()
     // @FIX performances
@@ -147,9 +147,9 @@ class Slider extends Xt.Toggle {
     // @FIX position values negative margins
     self.detail.fixNegativeMargin = Xt.dataStorage.get(self.groupMq[0][0], self.componentNamespace + 'SlideLeft')
     // @FIX disable slider if not overflowing
-    if (options.nooverflow && totalCount > 0) {
+    if (options.overflowAuto && totalCount > 0) {
       // disable
-      self.object.classList.add('slider-nooverflow')
+      self.object.classList.add('xt-overflow-auto')
       self.disable()
     }
     // drag wrap
@@ -346,7 +346,7 @@ class Slider extends Xt.Toggle {
         }
         // pos with alignment
         let pos
-        if (!self.object.classList.contains('slider-nooverflow')) {
+        if (!self.object.classList.contains('xt-overflow-auto')) {
           // @FIX disable slider if not overflowing
           if (options.align === 'center') {
             pos = draggerWidth / 2 - slideLeft - slideWidth / 2
@@ -1236,7 +1236,7 @@ Slider.optionsDefault = {
   align: 'center',
   contain: false,
   pagination: '.slider-pagination',
-  nooverflow: true,
+  overflowAuto: true,
   drag: {
     dragger: '.slides-inner',
     wrap: false,
