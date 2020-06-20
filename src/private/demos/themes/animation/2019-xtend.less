@@ -1,3 +1,4 @@
+
 #iframe--2019-xtend {
 //##START
 /**
@@ -171,7 +172,9 @@
     }
   }
 }
-
+//##END
+}
+//##START
 /**
   * card
   */
@@ -181,6 +184,9 @@
 .card-default {
   // interactive
   a&, label& {
+//##END
+#iframe--2019-xtend & {
+//##START
     &:hover, &.hover {
       > .card-design {
         box-shadow: @shadow-light;
@@ -191,12 +197,18 @@
         box-shadow: none;
       }
     }
+//##END
+}
+//##START
   }
 }
 
 .card-primary {
   // interactive
   a&, label& {
+//##END
+#iframe--2019-xtend & {
+//##START
     &:hover, &.hover {
       > .card-design {
         box-shadow: @shadow-accent;
@@ -207,6 +219,9 @@
         box-shadow: none;
       }
     }
+//##END
+}
+//##START
   }
 }
 
@@ -215,6 +230,9 @@
 .card {
   // interactive
   a&, label& {
+//##END
+#iframe--2019-xtend & {
+//##START
     transition: all @time-small @ease-out;
     > .card-design {
       transition: all @time-small @ease-out;
@@ -233,7 +251,10 @@
         transition: all @time-small @ease-in;
       }
     }
+//##END
+}
+//##START
   }
 }
 //##END
-}
+

@@ -63,9 +63,12 @@ if (typeof window !== 'undefined') {
 const formatCode = source => {
   let text = source.innerHTML
   // ##START and ##END
-  const meta = text.match(/\/\/##START([\S\s]*?)\/\/##END/)
-  if (meta) {
-    text = meta[1]
+  const metas = text.match(/\/\/##START\n([\S\s]*?)\/\/##END\n/g)
+  if (metas) {
+    text = ''
+    for (const meta of metas.entries()) {
+      text += meta[1].replace(/\/\/##START\n/g, '').replace(/\/\/##END\n/g, '')
+    }
   }
   // replace id
   const item = source.closest('.gatsby_demo_item')
@@ -76,6 +79,7 @@ const formatCode = source => {
       text = text.replace(new RegExp(`[ ]{0,}${id}[ ]{0,}`, 'gi'), '')
     }
   }
+
   // search html tags
   const re = /<[^>]*>/g
   text = text.replace(re, (match, g1, g2) => {
