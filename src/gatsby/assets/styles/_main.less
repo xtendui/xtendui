@@ -95,7 +95,6 @@
 }
 
 .gatsby_site_article_hero_content {
-  pointer-events: none;
   .badge {
     margin-top: -1rem;
     margin-left: 1.5rem;
@@ -105,6 +104,12 @@
       .font-sans-regular();
       color: @shade-200-dark;
     }
+  }
+}
+
+.gatsby_site_article_hero_content_inner {
+  &:not(.fade) {
+    pointer-events: none;
   }
 }
 
