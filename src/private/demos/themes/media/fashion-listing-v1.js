@@ -59,11 +59,5 @@ Xt.mount.push({
     }
 
     object.addEventListener('mouseleave', eventLeave)
-
-    // unmount
-
-    const unmount = () => {
-    }
-    return unmount
   },
 })
