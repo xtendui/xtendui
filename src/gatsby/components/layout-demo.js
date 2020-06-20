@@ -39,9 +39,11 @@ class Layout extends React.Component {
       if (window.self !== window.top) {
         window.parent.initIframe(window.name, demo.htmlSource, demo.jsxSource, demo.cssSource, demo.jsSource)
         window.parent.resizeIframe(window.frameElement.getAttribute('name'))
-        new ResizeSensor(document.querySelector('#body-outer'), () => {
-          window.parent.resizeIframe(window.frameElement.getAttribute('name'))
-        })
+        if (demo.full) {
+          new ResizeSensor(document.querySelector('#body-outer'), () => {
+            window.parent.resizeIframe(window.frameElement.getAttribute('name'))
+          })
+        }
       }
       makeDocument()
     }

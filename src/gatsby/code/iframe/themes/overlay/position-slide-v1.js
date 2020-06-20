@@ -7,7 +7,7 @@ const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
 export const demo = {
   container: true,
-  full: true,
+  full: false,
   name: path.basename(filename, '.js'),
   component: dirs.pop(),
   type: dirs.pop(),
