@@ -1,4 +1,5 @@
 import path from 'path'
+const img = require('components/snippets/img').default
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -15,7 +16,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       position left
     </button>
-    <div class="overlay overlay-default overlay-position overlay-position-left">
+    <div class="overlay overlay-default overlay-position-left">
       <div class="overlay-container">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
@@ -45,7 +46,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       position right
     </button>
-    <div class="overlay overlay-default overlay-position overlay-position-right">
+    <div class="overlay overlay-default overlay-position-right">
       <div class="overlay-container">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
@@ -65,6 +66,40 @@ demo.htmlSource = `
                 </div>
               </div>
             </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-xt-overlay>
+    <button type="button" class="btn btn-primary">
+      position left asset blocks
+    </button>
+    <div class="overlay overlay-default overlay-position-left">
+      <div class="overlay-container">
+        <div class="overlay-inner">
+          <div class="overlay-design"></div>
+
+          <div class="card card-overlay"
+            style="align-items: flex-start;">
+            <div class="card-design"></div>
+            <div class="btn btn-close" aria-label="Close"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-asset">
+                  ${img({ classes: 'media-cover', ratio: '37.5%' })}
+                </div>
+                <div class="card-block card-item">
+                  <div class="card-title">Lorem ipsum</div>
+                  <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+                </div>
+                <div class="card-block card-item">
+                  <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
         </div>
       </div>

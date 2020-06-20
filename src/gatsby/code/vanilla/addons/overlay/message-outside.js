@@ -15,7 +15,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       left
     </button>
-    <div class="overlay overlay-default overlay-position overlay-position-left">
+    <div class="overlay overlay-default overlay-position-left">
       <div class="overlay-message-outside">
         <button type="button" class="btn btn-primary btn-small overlay-dismiss">
           close message
@@ -50,7 +50,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       right
     </button>
-    <div class="overlay overlay-default overlay-position overlay-position-right">
+    <div class="overlay overlay-default overlay-position-right">
       <div class="overlay-message-outside">
         <button type="button" class="btn btn-primary btn-small overlay-dismiss">
           close message

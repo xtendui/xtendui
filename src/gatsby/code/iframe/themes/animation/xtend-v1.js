@@ -175,7 +175,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       overlay position
     </button>
-    <div class="overlay overlay-default overlay-position overlay-position-left">
+    <div class="overlay overlay-default overlay-position-left">
       <div class="overlay-container">
         <div class="overlay-inner">
           <div class="overlay-design"></div>

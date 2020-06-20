@@ -749,7 +749,7 @@ class Slider extends Xt.Toggle {
       self.goToNum(max + self.currentIndex - min + 1, true)
     } else if (self.currentIndex > max) {
       self.wrap = true
-      self.goToNum(min + self.currentIndex - max - 1, true,)
+      self.goToNum(min + self.currentIndex - max - 1, true)
     }
   }
 

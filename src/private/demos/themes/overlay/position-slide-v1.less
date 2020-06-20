@@ -15,7 +15,7 @@
 
 // animation
 
-.overlay-position {
+[class^='overlay-position-'], [class*=' overlay-position-'] {
   &.overlay-position-left {
     .overlay-design {
       opacity: 0;
@@ -46,19 +46,17 @@
   }
   &.in {
     animation-duration: @time-medium; // needed for animation time and backdrop animation time, put max animation time
-    &.overlay-position {
-      .overlay-design {
-        opacity: 1;
-        transform: none;
-        transition: transform @time-medium @ease-in, opacity @time-tiny @ease-in;
-      }
-      .card-overlay {
-        > .card-inner {
-          > .card-block,  > .card-content {
-            opacity: 1;
-            transform: none;
-            transition: transform @time-medium @ease-in, opacity @time-tiny @ease-in;
-          }
+    .overlay-design {
+      opacity: 1;
+      transform: none;
+      transition: transform @time-medium @ease-in, opacity @time-tiny @ease-in;
+    }
+    .card-overlay {
+      > .card-inner {
+        > .card-block,  > .card-content {
+          opacity: 1;
+          transform: none;
+          transition: transform @time-medium @ease-in, opacity @time-tiny @ease-in;
         }
       }
     }

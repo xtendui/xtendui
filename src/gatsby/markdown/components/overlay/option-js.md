@@ -23,13 +23,27 @@ It's recommended to use `active-overlay` on overlay otherwise the overlay flashe
 
 </div>
 
+## Class html
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Default                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `classHtml:String`                          | `'xt-overlay'`        | Add class to `html` on activation            |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/overlay/class-html">
+  </demovanilla>
+</demo>
+
 ## Other
 
 <div class="table-scroll">
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `classHtml:String`                          | `'xt-overlay'`        | Close automatically on `autoclose.trigger.xt` event            |
 | Option                  | `autoClose:Boolean`                          | `true`        | Close automatically on `autoclose.trigger.xt` event            |
 | Option                  | `closeInside:Query`                          | `'.overlay-dismiss, .btn-close, .backdrop'`        | Query Node inside to close on click            |
 | Option                  | `appendTo:Query`                          | `'body'`        | Append targets to Node on activation            |

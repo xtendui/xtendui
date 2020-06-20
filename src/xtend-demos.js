@@ -31,7 +31,6 @@ if (typeof window !== 'undefined') {
   require('xtend-library/src/private/demos/themes/media/fashion-listing-v1.js')
   require('xtend-library/src/private/demos/themes/media/furniture-listing-v1.js')
   require('xtend-library/src/private/demos/themes/media/opacity-v1.js')
-  require('xtend-library/src/private/demos/themes/overlay/position-slide-v1.js')
   require('xtend-library/src/private/demos/themes/slider/brands-infinite-v1.js')
   require('xtend-library/src/private/demos/themes/slider/fashion-hero-v1.js')
   require('xtend-library/src/private/demos/themes/slider/fashion-hero-v2.js')

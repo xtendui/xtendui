@@ -15,9 +15,15 @@ date: "2019-03-15"
 
 |                         | Class                                     | Mixin                         | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.overlay-close-fixed`                | `.overlay-close-fixed()`        | Close button position fixed and styles            |
 | Option                  | `.overlay-disable`                | `.overlay-disable()`        | Disable overlay, useful within media queries            |
 
 </div>
+
+<demo>
+  <demovanilla src="vanilla/components/overlay/close-fixed">
+  </demovanilla>
+</demo>
 
 <demo>
   <demovanilla src="vanilla/components/overlay/disable">

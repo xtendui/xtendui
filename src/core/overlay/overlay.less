@@ -23,6 +23,46 @@
   .overlay-medium();
 }
 
+// preset
+
+.overlay-screen {
+  .overlay-squared();
+  .overlay-close-fixed();
+  .card-overlay {
+    .card-squared();
+    .card-noborder();
+  }
+  .btn-close {
+    .btn-squared();
+  }
+  > .backdrop {
+    opacity: 0 !important;
+    .trans-anim-none() !important;
+  }
+}
+
+[class^='overlay-position-'], [class*=' overlay-position-'] {
+  .overlay-squared();
+  .card-overlay {
+    .card-squared();
+    .card-noborder();
+  }
+}
+
+.overlay-position-left {
+  .overlay-container {
+    width: 88%;
+    max-width: 500px;
+  }
+}
+
+.overlay-position-right {
+  .overlay-container {
+    width: 88%;
+    max-width: 500px;
+  }
+}
+
 // space
 
 .overlay-space {
@@ -155,6 +195,12 @@
 }
 
 // special
+
+.overlay-close-fixed {
+  .card-overlay > .btn-close {
+    .btn-squared();
+  }
+}
 
 .overlay-squared {
   .overlay-design {

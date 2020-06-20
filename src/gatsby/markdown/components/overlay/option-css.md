@@ -6,6 +6,29 @@ title: "Option Css"
 date: "2019-12-01"
 ---
 
+## Preset
+
+For `.overlay-position` available positions are: `left` `right`.
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Example                       |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Class                   | `.overlay-{preset}`                         | `.overlay-screen` `.overlay-position-{position}` |
+| Mixin                   | Not possible                              | Not possible                  |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/overlay/screen">
+  </demovanilla>
+</demo>
+
+<demo>
+  <demovanilla src="vanilla/components/overlay/position">
+  </demovanilla>
+</demo>
+
 ## Size
 
 Set overlay size with this classes.
