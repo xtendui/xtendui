@@ -3,7 +3,7 @@ import 'xtend-library/src/vars.js'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '#iframe--2020-opacity-hover .media--opacity',
+  matches: '#iframe--2020-opacity-hover .block-listing_item',
   mount: function(object) {
     // vars
 

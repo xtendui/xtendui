@@ -20,6 +20,11 @@
   .col(4, lg);
 }
 
+.block-listing_col--big {
+  .col(12, sm);
+  .col(12, lg);
+}
+
 .block-listing_item {
   .link-none();
   .full();
@@ -30,6 +35,16 @@
   .media-container {
     .padding(bottom, 75%);
     background: @shade-200;
+  }
+}
+
+.block-listing_col--big {
+  .block-listing_img {
+    .media-container {
+      @media @min-sm {
+        padding-bottom: 37.5%;
+      }
+    }
   }
 }
 
