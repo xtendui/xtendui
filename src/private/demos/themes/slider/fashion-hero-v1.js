@@ -36,7 +36,7 @@ Xt.mount.push({
     // drag
 
     const eventDrag = e => {
-      const target = self.targets.filter(x => self.hasCurrent(x))[0]
+      const tr = self.targets.filter(x => self.hasCurrent(x))[0]
       const size = self.dragger.offsetWidth / 6
       // content others
       for (const other of self.targets.filter(x => !self.hasCurrent(x))) {
@@ -44,7 +44,7 @@ Xt.mount.push({
         gsap.set(contentOther, { x: size * self.detail.dragRatio * self.direction - size * self.direction, opacity: self.detail.dragRatio + 0.5 })
       }
       // content
-      const content = target.querySelector('.slide_asset .media-container')
+      const content = tr.querySelector('.slide_asset .media-container')
       gsap.set(content, { x: size * self.detail.dragRatio * self.direction, opacity: self.detail.dragRatioInverse + 0.5 })
     }
 
@@ -53,14 +53,14 @@ Xt.mount.push({
     // dragreset
 
     const eventDragReset = e => {
-      const target = self.targets.filter(x => self.hasCurrent(x))[0]
+      const tr = self.targets.filter(x => self.hasCurrent(x))[0]
       // content others
       for (const other of self.targets.filter(x => !self.hasCurrent(x))) {
         const contentOther = other.querySelector('.slide_asset .media-container')
         gsap.to(contentOther, { x: 0, opacity: 0.5, duration: contentTimeOff, ease: contentEaseOff })
       }
       // content
-      const content = target.querySelector('.slide_asset .media-container')
+      const content = tr.querySelector('.slide_asset .media-container')
       gsap.to(content, { x: 0, opacity: 1, duration: contentTimeOff, ease: contentEaseOff })
     }
 
@@ -69,17 +69,17 @@ Xt.mount.push({
     // on
 
     const eventOn = e => {
-      const target = e.target
+      const tr = e.target
       // useCapture delegation
-      if (self.targets.includes(target)) {
+      if (self.targets.includes(tr)) {
         if (self.initial) {
           // content
-          const content = target.querySelector('.slide_asset .media-container')
+          const content = tr.querySelector('.slide_asset .media-container')
           gsap.set(content, { x: 0, opacity: 1, scale: 1 })
           gsap.to(content, { scale: 1 + contentZoom, duration: contentZoomTime, ease: contentZoomEase, repeat: -1, yoyo: true })
         } else {
           // content
-          const content = target.querySelector('.slide_asset .media-container')
+          const content = tr.querySelector('.slide_asset .media-container')
           gsap.to(content, { x: 0, opacity: 1, duration: contentTimeOn, ease: contentEaseOn }).eventCallback('onComplete', () => {
             gsap.to(content, { scale: 1 + contentZoom, duration: contentZoomTime, ease: contentZoomEase, repeat: -1, yoyo: true })
           })
@@ -92,12 +92,12 @@ Xt.mount.push({
     // off
 
     const eventOff = e => {
-      const target = e.target
+      const tr = e.target
       // useCapture delegation
-      if (self.targets.includes(target)) {
+      if (self.targets.includes(tr)) {
         const size = self.detail.draggerWidth / 6
         // content
-        const content = target.querySelector('.slide_asset .media-container')
+        const content = tr.querySelector('.slide_asset .media-container')
         gsap
           .to(content, { x: size * self.direction, opacity: 0.5, scale: 1, duration: contentTimeOff, ease: contentEaseOff })
           .eventCallback('onComplete', () => {

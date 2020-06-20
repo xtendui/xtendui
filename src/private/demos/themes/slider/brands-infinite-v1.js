@@ -29,11 +29,11 @@ Xt.mount.push({
     // on
 
     const eventOn = e => {
-      const target = e.target
+      const tr = e.target
       // useCapture delegation
-      if (self.targets.includes(target)) {
+      if (self.targets.includes(tr)) {
         // time depending on target and dragger width
-        const slideWidth = target.offsetWidth
+        const slideWidth = tr.offsetWidth
         const draggerWidth = self.dragger.offsetWidth
         let time = slideWidth * 15 // constant speed
         if (object.classList.contains('slider--factor')) {
