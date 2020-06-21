@@ -2,6 +2,28 @@ import { Xt } from 'xtend-library/src/xt.js'
 import gsap from 'gsap'
 
 /**
+ * favicon
+ */
+
+const favicon = document.querySelector('link[rel="icon"]')
+const colorSchemeMq = window.matchMedia('(prefers-color-scheme: dark)')
+
+const changeMq = () => {
+  console.log(colorSchemeMq.matches, favicon)
+  favicon.remove()
+  if (colorSchemeMq.matches) {
+    const icon = Xt.createElement('<link rel="icon" href="/favicon-dark.png">')
+    document.head.append(icon)
+  } else {
+    const icon = Xt.createElement('<link rel="icon" href="/favicon.png">')
+    document.head.append(icon)
+  }
+}
+
+colorSchemeMq.addListener(changeMq)
+changeMq()
+
+/**
  * xt-scroll
  */
 
