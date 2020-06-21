@@ -2,8 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
-import logoIcon from 'assets/images/logo-icon.svg'
-
 class Footer extends React.Component {
   render() {
     const { site, seo } = this.props
@@ -25,16 +23,6 @@ class Footer extends React.Component {
                 </div>
                 <div className="gatsby_site_footer_bottom_right">
                   © 2018 <span className="separator separator-dash"></span> {new Date().getFullYear()} {site.site.siteMetadata.author}
-                </div>
-                <div>
-                  <Link
-                    to="/"
-                    title="Home"
-                    className={`gatsby_logo-icon
-                                      ${seo.title.toLowerCase() === 'home' ? 'active' : ''}`}
-                  >
-                    <img src={logoIcon} alt={site.site.siteMetadata.title} />
-                  </Link>
                 </div>
               </div>
             </div>
