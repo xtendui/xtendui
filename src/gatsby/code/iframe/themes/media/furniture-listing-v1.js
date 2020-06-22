@@ -117,38 +117,6 @@ demo.htmlSource = `
             </a>
         </div>
 
-        <div class="block-listing_col">
-          <a href="#" class="block-listing_item">
-            <div class="block-listing_img">
-              ${img({ classes: 'media-cover' })}
-            </div>
-            <div class="block-listing_content">
-              <div class="block-listing_title">
-                Consectetur
-              </div>
-              <div class="block-listing_price">
-                3.772,00 €
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="block-listing_col">
-          <a href="#" class="block-listing_item">
-            <div class="block-listing_img">
-              ${imgAlt({ classes: 'media-cover' })}
-            </div>
-            <div class="block-listing_content">
-              <div class="block-listing_title">
-                Adipiscing elit
-              </div>
-              <div class="block-listing_price">
-                3.772,00 €
-              </div>
-            </div>
-          </a>
-        </div>
-
         <div class="block-listing_col block-listing_col--big">
           <a href="#" class="block-listing_item">
             <div class="block-listing_img">
