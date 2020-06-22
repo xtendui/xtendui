@@ -6,11 +6,11 @@
 
 .demo--overlay-class-html {
   transition: transform @time-small @ease-out;
-  html.overlay-class-html-left & {
+  &.overlay-class-html-left, .overlay-class-html-left & {
     transform: translateX(4rem);
     transition-timing-function: @ease-in;
   }
-  html.overlay-class-html-right & {
+  &.overlay-class-html-right, .overlay-class-html-right & {
     transform: translateX(-4rem);
     transition-timing-function: @ease-in;
   }
