@@ -262,6 +262,9 @@
         }
       }
     }
+    > .backdrop {
+      .backdrop.in();
+    }
   }
   &.out {
     animation-duration: @time-small + @time-tiny; // needed for animation time and backdrop animation time, put max animation time
@@ -281,6 +284,9 @@
           transition: opacity @time-small @ease-out;
         }
       }
+    }
+    > .backdrop {
+      .backdrop.out();
     }
   }
 }
