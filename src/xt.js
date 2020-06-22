@@ -61,7 +61,7 @@ if (typeof window !== 'undefined') {
    * init
    */
   Xt.ready(() => {
-    Xt.stickyIndex = 500
+    Xt.stickyIndex = 800
     Xt.setScrollbarWidth()
     Xt.windowHeightSet()
     Xt.mountCheck(document.documentElement)
