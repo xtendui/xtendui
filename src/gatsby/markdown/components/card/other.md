@@ -20,6 +20,9 @@ Refer to [Row page](/components/row/other#stretch).
 | Option                  | `.card-nodesign`                | `.card-nodesign()`        | No design on card            |
 | Option                  | `.card-squared`                | `.card-squared()`        | No border-radius on card            |
 | Option                  | `.card-noborder`                | `.card-noborder()`        | No border on card            |
+| Option                  | `.card-none`                | `.card-none()`        | No padding on `.card-block`            |
+| Option                  | `.card-none-x`                | `.card-none-x()`        | No horizontal padding on `.card-block`            |
+| Option                  | `.card-none-y`                | `.card-none-y()`        | No vertical padding on `.card-block`            |
 
 </div>
 

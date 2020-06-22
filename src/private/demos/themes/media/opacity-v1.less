@@ -25,23 +25,33 @@
     .link-none();
     .full();
     .text-default() !important;
-  }
-
-  .block-listing_img {
-    text-align: center;
-    .media-container {
-      .padding(bottom, 75%);
+    // card
+    .card-white();
+    .card-small();
+    .card-squared();
+    .card-none-x();
+    .card-title {
+      .font-sans-semibold();
+      font-size: 2rem;
     }
-    .media {
-      .media-cover();
+    .card-asset {
+      .media-container {
+        .padding(bottom, 75%);
+      }
+      .media {
+        .media-cover();
+      }
     }
   }
 
   .block-listing_col--big {
-    .block-listing_img {
+    .card-asset {
       .media-container {
         @media @min-sm {
           .padding(bottom, 37.5%);
+        }
+        @media @min-lg {
+          .padding(bottom, 25%);
         }
       }
     }

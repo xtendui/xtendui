@@ -22,65 +22,105 @@ demo.htmlSource = `
       <div class="row">
 
         <div class="block-listing_col">
-          <a href="#" class="block-listing_item">
-            <div class="block-listing_img">
-              ${img({})}
+          <a href="#" class="card block-listing_item">
+            <div class="card-design"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-asset">
+                  ${img({})}
+                </div>
+              </div>
             </div>
           </a>
         </div>
 
         <div class="block-listing_col">
-          <a href="#" class="block-listing_item">
-            <div class="block-listing_img">
-              ${imgAlt({})}
+          <a href="#" class="card block-listing_item">
+            <div class="card-design"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-asset">
+                  ${imgAlt({})}
+                </div>
+              </div>
             </div>
           </a>
         </div>
 
         <div class="block-listing_col">
-          <a href="#" class="block-listing_item">
-            <div class="block-listing_img">
-              ${img({})}
+          <a href="#" class="card block-listing_item">
+            <div class="card-design"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-asset">
+                  ${img({})}
+                </div>
+              </div>
             </div>
           </a>
         </div>
 
         <div class="block-listing_col">
-          <a href="#" class="block-listing_item">
-            <div class="block-listing_img">
-              ${imgAlt({})}
+          <a href="#" class="card block-listing_item">
+            <div class="card-design"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-asset">
+                  ${imgAlt({})}
+                </div>
+              </div>
             </div>
           </a>
         </div>
 
         <div class="block-listing_col">
-          <a href="#" class="block-listing_item">
-            <div class="block-listing_img">
-              ${img({})}
+          <a href="#" class="card block-listing_item">
+            <div class="card-design"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-asset">
+                  ${img({})}
+                </div>
+              </div>
             </div>
           </a>
         </div>
 
         <div class="block-listing_col">
-          <a href="#" class="block-listing_item">
-            <div class="block-listing_img">
-              ${imgAlt({})}
+          <a href="#" class="card block-listing_item">
+            <div class="card-design"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-asset">
+                  ${imgAlt({})}
+                </div>
+              </div>
             </div>
           </a>
         </div>
 
         <div class="block-listing_col block-listing_col--big">
-          <a href="#" class="block-listing_item">
-            <div class="block-listing_img">
-              ${img({})}
+          <a href="#" class="card block-listing_item">
+            <div class="card-design"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-asset">
+                  ${img({})}
+                </div>
+              </div>
             </div>
           </a>
         </div>
 
         <div class="block-listing_col block-listing_col--big">
-          <a href="#" class="block-listing_item">
-            <div class="block-listing_img">
-              ${imgAlt({})}
+          <a href="#" class="card block-listing_item">
+            <div class="card-design"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-asset">
+                  ${imgAlt({})}
+                </div>
+              </div>
             </div>
           </a>
         </div>

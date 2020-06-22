@@ -1,65 +1,68 @@
 #iframe--fashion-listing-v1 {
   //##START
   body { // add your own selector instead of body to contain the code
-    
+
     /**
       * .block-listing
       */
-    
+
     .block-listing_inner {
       > .row {
-        .row-space(big);
+        .row-space(large);
       }
     }
-    
+
     .block-listing_col {
       .col(12);
       .col(6, sm);
       .col(3, lg);
     }
-    
+
     .block-listing_col--big {
       .col(12, sm);
       .col(12, lg);
     }
-    
+
     .block-listing_item {
       .link-none();
       .full();
-      .text-default() !important;
-    }
-    
-    .block-listing_img {
+      // card
+      .card-white();
+      .card-small();
+      .card-squared();
+      .card-none-x();
       text-align: center;
-      .media-container {
-        .padding(bottom, 150%);
+      .card-title {
+        .font-sans-semibold();
+        font-size: 2rem;
       }
-      .media {
-        .media-cover();
+      .card-asset {
+        .media-container {
+          .padding(bottom, 150%);
+        }
+        .media {
+          .media-cover();
+        }
       }
     }
-    
+
     .block-listing_col--big {
-      .block-listing_img {
+      .card-asset {
         .media-container {
           @media @min-sm {
             .padding(bottom, 37.5%);
           }
+          @media @min-lg {
+            .padding(bottom, 25%);
+          }
         }
       }
     }
-    
-    .block-listing_title {
-      .margin(top, small);
-      .font-sans-semibold();
-      font-size: 3.2rem;
-      text-align: center;
-    }
-    
+
     /**
       * .media_mask
       */
-    
+
     .media_mask {
       position: absolute;
       z-index: @index-active + 1;
@@ -69,7 +72,7 @@
       height: 0;
       background: @white;
     }
-  
+
   }
   //##END
 }

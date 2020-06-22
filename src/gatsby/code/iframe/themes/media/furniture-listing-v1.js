@@ -22,128 +22,168 @@ demo.htmlSource = `
       <div class="row">
 
         <div class="block-listing_col">
-          <a href="#" class="block-listing_item">
-            <div class="block-listing_img">
-              ${img({})}
-            </div>
-            <div class="block-listing_content">
-              <div class="block-listing_title">
-                Lorem ipsum
-              </div>
-              <div class="block-listing_price">
-                3.772,00 €
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="block-listing_col">
-          <a href="#" class="block-listing_item">
-            <div class="block-listing_img">
-              ${imgAlt({})}
-            </div>
-            <div class="block-listing_content">
-              <div class="block-listing_title">
-                Dolor sit amet
-              </div>
-              <div class="block-listing_price">
-                3.772,00 €
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="block-listing_col">
-          <a href="#" class="block-listing_item">
-            <div class="block-listing_img">
-              ${img({})}
-            </div>
-            <div class="block-listing_content">
-              <div class="block-listing_title">
-                Consectetur
-              </div>
-              <div class="block-listing_price">
-                3.772,00 €
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="block-listing_col">
-          <a href="#" class="block-listing_item">
-            <div class="block-listing_img">
-              ${imgAlt({})}
-            </div>
-            <div class="block-listing_content">
-              <div class="block-listing_title">
-                Adipiscing elit
-              </div>
-              <div class="block-listing_price">
-                3.772,00 €
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="block-listing_col">
-          <a href="#" class="block-listing_item">
-            <div class="block-listing_img">
-              ${img({})}
-            </div>
-            <div class="block-listing_content">
-              <div class="block-listing_title">
-                Lorem Ipsum
-              </div>
-              <div class="block-listing_price">
-                3.772,00 €
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="block-listing_col">
-            <a href="#" class="block-listing_item">
-              <div class="block-listing_img">
-                ${imgAlt({})}
-              </div>
-              <div class="block-listing_content">
-                <div class="block-listing_title">
-                  Dolor sit amet
+          <a href="#" class="card block-listing_item">
+            <div class="card-design"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-asset">
+                  ${img({})}
                 </div>
-                <div class="block-listing_price">
-                  3.772,00 €
+                <div class="card-block card-item">
+                  <div class="card-title">
+                    Lorem Ipsum
+                  </div>
+                  <div class="block-listing_price">
+                    3.772,00 €
+                  </div>
                 </div>
               </div>
-            </a>
+            </div>
+          </a>
+        </div>
+
+        <div class="block-listing_col">
+          <a href="#" class="card block-listing_item">
+            <div class="card-design"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-asset">
+                  ${imgAlt({})}
+                </div>
+                <div class="card-block card-item">
+                  <div class="card-title">
+                    Dolor sit amet
+                  </div>
+                  <div class="block-listing_price">
+                    3.772,00 €
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="block-listing_col">
+          <a href="#" class="card block-listing_item">
+            <div class="card-design"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-asset">
+                  ${img({})}
+                </div>
+                <div class="card-block card-item">
+                  <div class="card-title">
+                    Consectetur adipiscing elit
+                  </div>
+                  <div class="block-listing_price">
+                    3.772,00 €
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="block-listing_col">
+          <a href="#" class="card block-listing_item">
+            <div class="card-design"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-asset">
+                  ${img({})}
+                </div>
+                <div class="card-block card-item">
+                  <div class="card-title">
+                    Lorem Ipsum
+                  </div>
+                  <div class="block-listing_price">
+                    3.772,00 €
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="block-listing_col">
+          <a href="#" class="card block-listing_item">
+            <div class="card-design"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-asset">
+                  ${imgAlt({})}
+                </div>
+                <div class="card-block card-item">
+                  <div class="card-title">
+                    Dolor sit amet
+                  </div>
+                  <div class="block-listing_price">
+                    3.772,00 €
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="block-listing_col">
+          <a href="#" class="card block-listing_item">
+            <div class="card-design"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-asset">
+                  ${img({})}
+                </div>
+                <div class="card-block card-item">
+                  <div class="card-title">
+                    Consectetur adipiscing elit
+                  </div>
+                  <div class="block-listing_price">
+                    3.772,00 €
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
         </div>
 
         <div class="block-listing_col block-listing_col--big">
-          <a href="#" class="block-listing_item">
-            <div class="block-listing_img">
-              ${imgAlt({})}
-            </div>
-            <div class="block-listing_content">
-              <div class="block-listing_title">
-                Adipiscing elit
-              </div>
-              <div class="block-listing_price">
-                3.772,00 €
+          <a href="#" class="card block-listing_item">
+            <div class="card-design"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-asset">
+                  ${img({})}
+                </div>
+                <div class="card-block card-item">
+                  <div class="card-title">
+                    Lorem Ipsum
+                  </div>
+                  <div class="block-listing_price">
+                    3.772,00 €
+                  </div>
+                </div>
               </div>
             </div>
           </a>
         </div>
 
         <div class="block-listing_col block-listing_col--big">
-          <a href="#" class="block-listing_item">
-            <div class="block-listing_img">
-              ${imgAlt({})}
-            </div>
-            <div class="block-listing_content">
-              <div class="block-listing_title">
-                Adipiscing elit
-              </div>
-              <div class="block-listing_price">
-                3.772,00 €
+          <a href="#" class="card block-listing_item">
+            <div class="card-design"></div>
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-asset">
+                  ${imgAlt({})}
+                </div>
+                <div class="card-block card-item">
+                  <div class="card-title">
+                    Dolor sit amet
+                  </div>
+                  <div class="block-listing_price">
+                    3.772,00 €
+                  </div>
+                </div>
               </div>
             </div>
           </a>

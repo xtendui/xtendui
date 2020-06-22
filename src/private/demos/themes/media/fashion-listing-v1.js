@@ -18,7 +18,9 @@ Xt.mount.push({
 
     const maskOpacityOn = 0.2
     const maskOpacityOff = 0.2
-    const maskOpacityDone = 0.1
+    const maskOpacityDone = 0
+
+    const titleY = -10
 
     // enter
 
@@ -37,6 +39,9 @@ Xt.mount.push({
         gsap.to(mask, { skewY: 0, duration: Xt.vars.timeSmall / 2, ease: 'quart.out' })
       })
       gsap.to(mask, { opacity: maskOpacityDone, duration: Xt.vars.timeMedium, ease: 'quart.out', delay: Xt.vars.timeSmall })
+      // title
+      const title = tr.querySelector('.card-title')
+      gsap.to(title, { y: titleY, duration: Xt.vars.timeMedium, ease: 'expo.out' })
     }
 
     object.addEventListener('mouseenter', eventEnter)
@@ -56,6 +61,9 @@ Xt.mount.push({
       gsap.to(mask, { skewY: 10, duration: Xt.vars.timeSmall / 2, ease: 'quart.out' }).eventCallback('onComplete', () => {
         gsap.to(mask, { skewY: 0, duration: Xt.vars.timeSmall / 2, ease: 'quart.out' })
       })
+      // title
+      const title = tr.querySelector('.card-title')
+      gsap.to(title, { y: 0, duration: Xt.vars.timeMedium, ease: 'expo.out' })
     }
 
     object.addEventListener('mouseleave', eventLeave)
