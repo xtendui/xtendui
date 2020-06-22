@@ -21,7 +21,7 @@ class DocHead extends React.Component {
               </span>
               {page.post.frontmatter.badge ? <div className="badge badge-default badge-small">{page.post.frontmatter.badge}</div> : null}
             </h1>
-            {page.post.frontmatter.description ? <h2 class="p">{page.post.frontmatter.description}</h2> : null}
+            {page.post.frontmatter.description ? <h2 className="p">{page.post.frontmatter.description}</h2> : null}
           </div>
         </div>
         {page.post.frontmatter.parent ? (
