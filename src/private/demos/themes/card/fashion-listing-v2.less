@@ -1,33 +1,33 @@
 #iframe--fashion-listing-v2 {
   //##START
   body { // add your own selector instead of body to contain the code
-    
+
     /**
       * vars
       */
-    
+
     // ease
-    
+
     @ease-in: @ease-out-quint;
     @ease-out: @ease-out-quint;
-    
+
     /**
       * .block-listing
       */
-    
+
     .block-listing_inner {
       > .row {
         .row-default();
         .row-stretch();
       }
     }
-    
+
     .block-listing_col {
       .col(12);
       .col(6, sm);
       .col(4, lg);
     }
-    
+
     .block-listing_item {
       .link-none();
       .full();
@@ -37,11 +37,11 @@
         .btn-primary();
       }
     }
-    
+
     .block-listing_content {
       .padding(all, 3rem);
     }
-    
+
     .block-listing_img {
       text-align: center;
       .media-container {
@@ -51,7 +51,7 @@
         .media-cover();
       }
     }
-    
+
     .block-listing_title {
       .spacing-medium();
       .font-sans-semibold();
@@ -60,27 +60,28 @@
       letter-spacing: 0;
       text-transform: none;
     }
-    
+
     .block-listing_subtitle {
       .spacing-medium();
+      .font-sans-semibold();
       font-size: 2rem;
       line-height: 1.2;
       letter-spacing: 0;
       text-transform: none;
     }
-    
+
     .block-listing_address {
       .full();
       font-size: 1.5rem;
       line-height: 1.8;
     }
-    
+
     .block-listing_additional {
       .full();
       font-size: 1.4rem;
       line-height: 1.8;
     }
-    
+
     .block-listing_btns {
       .list-block();
       .list-space(tiny);
@@ -92,9 +93,9 @@
         .btn-squared();
       }
     }
-    
+
     // front and back
-    
+
     .block-listing_front {
       position: relative;
       z-index: 2;
@@ -102,7 +103,7 @@
       backface-visibility: hidden;
       background: @shade-200;
     }
-    
+
     .block-listing_back {
       position: absolute;
       z-index: 1;
@@ -115,7 +116,7 @@
       backface-visibility: hidden;
       background: @shade-200;
     }
-    
+
     .block-listing_item {
       perspective: 1400px;
       .block-listing_item_inner {
@@ -136,7 +137,7 @@
         }
       }
     }
-    
+
   }
   //##END
 }

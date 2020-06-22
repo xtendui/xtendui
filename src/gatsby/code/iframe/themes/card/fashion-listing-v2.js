@@ -24,7 +24,7 @@ demo.htmlSource = `
         <div class="block-listing_col">
           <div class="block-listing_item">
             <div class="block-listing_item_inner">
-            
+
               <div class="block-listing_front">
                 <div class="block-listing_img">
                   ${img({})}
@@ -34,7 +34,7 @@ demo.htmlSource = `
                     Lorem Ipsum
                   </div>
                   <address class="block-listing_address">
-                      Street lorem ipsum 42, 00134 City, Nation
+                    Street lorem ipsum 42, 00134 City, Nation
                   </address>
                   <div class="block-listing_btns">
                       <a href="#" class="btn btn-text">
@@ -46,7 +46,7 @@ demo.htmlSource = `
                   </div>
                 </div>
               </div>
-              
+
               <div class="block-listing_back">
                 <div class="btn btn-close" aria-label="Close"></div>
                 <div class="block-listing_content">
@@ -54,24 +54,24 @@ demo.htmlSource = `
                     Contacts
                   </div>
                   <div class="block-listing_additional">
-                    Email: <a href="mailto:info@info.com">info@info.com</a><br/>
-                    Phone: <a href="tel:333010101">333 010101</a><br/>
+                    <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br/>
+                    <strong>Phone:</strong> <a href="tel:333010101">333 010101</a><br/>
                   </div>
                   <div class="block-listing_subtitle">
                     Timetable
                   </div>
                   <div class="block-listing_additional">
-                    Monday: 15:30–19:30<br/>
-                    Tuesday: 10:00–13:00, 15:30–19:30<br/>
-                    Wednesday: 10:00–13:00, 15:30–19:30<br/>
-                    Thursday: 10:00–13:00, 15:30–19:30<br/>
-                    Friday: 10:00–13:00, 15:30–19:30<br/>
-                    Saturday: 10:00–19:30<br/>
-                    Sunday: 10:00–13:00, 15:30–19:30
+                    <strong>Monday:</strong> 15:30–19:30<br/>
+                    <strong>Tuesday:</strong> 10:00–13:00, 15:30–19:30<br/>
+                    <strong>Wednesday:</strong> 10:00–13:00, 15:30–19:30<br/>
+                    <strong>Thursday:</strong> 10:00–13:00, 15:30–19:30<br/>
+                    <strong>Friday:</strong> 10:00–13:00, 15:30–19:30<br/>
+                    <strong>Saturday:</strong> 10:00–19:30<br/>
+                    <strong>Sunday:</strong> 10:00–13:00, 15:30–19:30
                   </div>
                 </div>
               </div>
-              
+
             </div>
           </div>
         </div>
@@ -79,7 +79,7 @@ demo.htmlSource = `
         <div class="block-listing_col">
           <div class="block-listing_item">
             <div class="block-listing_item_inner">
-            
+
               <div class="block-listing_front">
                 <div class="block-listing_img">
                   ${imgAlt({})}
@@ -89,7 +89,7 @@ demo.htmlSource = `
                     Dolor sit amet
                   </div>
                   <address class="block-listing_address">
-                      Street lorem ipsum 42, 00134 City, Nation
+                    Street lorem ipsum 42, 00134 City, Nation
                   </address>
                   <div class="block-listing_btns">
                       <a href="#" class="btn btn-text">
@@ -101,7 +101,7 @@ demo.htmlSource = `
                   </div>
                 </div>
               </div>
-              
+
               <div class="block-listing_back">
                 <div class="btn btn-close" aria-label="Close"></div>
                 <div class="block-listing_content">
@@ -109,24 +109,24 @@ demo.htmlSource = `
                     Contacts
                   </div>
                   <div class="block-listing_additional">
-                    Email: <a href="mailto:info@info.com">info@info.com</a><br/>
-                    Phone: <a href="tel:333010101">333 010101</a><br/>
+                    <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br/>
+                    <strong>Phone:</strong> <a href="tel:333010101">333 010101</a><br/>
                   </div>
                   <div class="block-listing_subtitle">
                     Timetable
                   </div>
                   <div class="block-listing_additional">
-                    Monday: 15:30–19:30<br/>
-                    Tuesday: 10:00–13:00, 15:30–19:30<br/>
-                    Wednesday: 10:00–13:00, 15:30–19:30<br/>
-                    Thursday: 10:00–13:00, 15:30–19:30<br/>
-                    Friday: 10:00–13:00, 15:30–19:30<br/>
-                    Saturday: 10:00–19:30<br/>
-                    Sunday: 10:00–13:00, 15:30–19:30
+                    <strong>Monday:</strong> 15:30–19:30<br/>
+                    <strong>Tuesday:</strong> 10:00–13:00, 15:30–19:30<br/>
+                    <strong>Wednesday:</strong> 10:00–13:00, 15:30–19:30<br/>
+                    <strong>Thursday:</strong> 10:00–13:00, 15:30–19:30<br/>
+                    <strong>Friday:</strong> 10:00–13:00, 15:30–19:30<br/>
+                    <strong>Saturday:</strong> 10:00–19:30<br/>
+                    <strong>Sunday:</strong> 10:00–13:00, 15:30–19:30
                   </div>
                 </div>
               </div>
-              
+
             </div>
           </div>
         </div>
@@ -134,7 +134,7 @@ demo.htmlSource = `
         <div class="block-listing_col">
           <div class="block-listing_item">
             <div class="block-listing_item_inner">
-            
+
               <div class="block-listing_front">
                 <div class="block-listing_img">
                   ${img({})}
@@ -144,7 +144,7 @@ demo.htmlSource = `
                     Consectetur adipiscing elit
                   </div>
                   <address class="block-listing_address">
-                      Street lorem ipsum 42, 00134 City, Nation
+                    Street lorem ipsum 42, 00134 City, Nation
                   </address>
                   <div class="block-listing_btns">
                       <a href="#" class="btn btn-text">
@@ -156,7 +156,7 @@ demo.htmlSource = `
                   </div>
                 </div>
               </div>
-              
+
               <div class="block-listing_back">
                 <div class="btn btn-close" aria-label="Close"></div>
                 <div class="block-listing_content">
@@ -164,24 +164,24 @@ demo.htmlSource = `
                     Contacts
                   </div>
                   <div class="block-listing_additional">
-                    Email: <a href="mailto:info@info.com">info@info.com</a><br/>
-                    Phone: <a href="tel:333010101">333 010101</a><br/>
+                    <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br/>
+                    <strong>Phone:</strong> <a href="tel:333010101">333 010101</a><br/>
                   </div>
                   <div class="block-listing_subtitle">
                     Timetable
                   </div>
                   <div class="block-listing_additional">
-                    Monday: 15:30–19:30<br/>
-                    Tuesday: 10:00–13:00, 15:30–19:30<br/>
-                    Wednesday: 10:00–13:00, 15:30–19:30<br/>
-                    Thursday: 10:00–13:00, 15:30–19:30<br/>
-                    Friday: 10:00–13:00, 15:30–19:30<br/>
-                    Saturday: 10:00–19:30<br/>
-                    Sunday: 10:00–13:00, 15:30–19:30
+                    <strong>Monday:</strong> 15:30–19:30<br/>
+                    <strong>Tuesday:</strong> 10:00–13:00, 15:30–19:30<br/>
+                    <strong>Wednesday:</strong> 10:00–13:00, 15:30–19:30<br/>
+                    <strong>Thursday:</strong> 10:00–13:00, 15:30–19:30<br/>
+                    <strong>Friday:</strong> 10:00–13:00, 15:30–19:30<br/>
+                    <strong>Saturday:</strong> 10:00–19:30<br/>
+                    <strong>Sunday:</strong> 10:00–13:00, 15:30–19:30
                   </div>
                 </div>
               </div>
-              
+
             </div>
           </div>
         </div>
@@ -189,7 +189,7 @@ demo.htmlSource = `
         <div class="block-listing_col">
           <div class="block-listing_item">
             <div class="block-listing_item_inner">
-            
+
               <div class="block-listing_front">
                 <div class="block-listing_img">
                   ${img({})}
@@ -199,7 +199,7 @@ demo.htmlSource = `
                     Lorem Ipsum
                   </div>
                   <address class="block-listing_address">
-                      Street lorem ipsum 42, 00134 City, Nation
+                    Street lorem ipsum 42, 00134 City, Nation
                   </address>
                   <div class="block-listing_btns">
                       <a href="#" class="btn btn-text">
@@ -211,7 +211,7 @@ demo.htmlSource = `
                   </div>
                 </div>
               </div>
-              
+
               <div class="block-listing_back">
                 <div class="btn btn-close" aria-label="Close"></div>
                 <div class="block-listing_content">
@@ -219,24 +219,24 @@ demo.htmlSource = `
                     Contacts
                   </div>
                   <div class="block-listing_additional">
-                    Email: <a href="mailto:info@info.com">info@info.com</a><br/>
-                    Phone: <a href="tel:333010101">333 010101</a><br/>
+                    <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br/>
+                    <strong>Phone:</strong> <a href="tel:333010101">333 010101</a><br/>
                   </div>
                   <div class="block-listing_subtitle">
                     Timetable
                   </div>
                   <div class="block-listing_additional">
-                    Monday: 15:30–19:30<br/>
-                    Tuesday: 10:00–13:00, 15:30–19:30<br/>
-                    Wednesday: 10:00–13:00, 15:30–19:30<br/>
-                    Thursday: 10:00–13:00, 15:30–19:30<br/>
-                    Friday: 10:00–13:00, 15:30–19:30<br/>
-                    Saturday: 10:00–19:30<br/>
-                    Sunday: 10:00–13:00, 15:30–19:30
+                    <strong>Monday:</strong> 15:30–19:30<br/>
+                    <strong>Tuesday:</strong> 10:00–13:00, 15:30–19:30<br/>
+                    <strong>Wednesday:</strong> 10:00–13:00, 15:30–19:30<br/>
+                    <strong>Thursday:</strong> 10:00–13:00, 15:30–19:30<br/>
+                    <strong>Friday:</strong> 10:00–13:00, 15:30–19:30<br/>
+                    <strong>Saturday:</strong> 10:00–19:30<br/>
+                    <strong>Sunday:</strong> 10:00–13:00, 15:30–19:30
                   </div>
                 </div>
               </div>
-              
+
             </div>
           </div>
         </div>
@@ -244,7 +244,7 @@ demo.htmlSource = `
         <div class="block-listing_col">
           <div class="block-listing_item">
             <div class="block-listing_item_inner">
-            
+
               <div class="block-listing_front">
                 <div class="block-listing_img">
                   ${imgAlt({})}
@@ -254,7 +254,7 @@ demo.htmlSource = `
                     Dolor sit amet
                   </div>
                   <address class="block-listing_address">
-                      Street lorem ipsum 42, 00134 City, Nation
+                    Street lorem ipsum 42, 00134 City, Nation
                   </address>
                   <div class="block-listing_btns">
                       <a href="#" class="btn btn-text">
@@ -266,7 +266,7 @@ demo.htmlSource = `
                   </div>
                 </div>
               </div>
-              
+
               <div class="block-listing_back">
                 <div class="btn btn-close" aria-label="Close"></div>
                 <div class="block-listing_content">
@@ -274,24 +274,24 @@ demo.htmlSource = `
                     Contacts
                   </div>
                   <div class="block-listing_additional">
-                    Email: <a href="mailto:info@info.com">info@info.com</a><br/>
-                    Phone: <a href="tel:333010101">333 010101</a><br/>
+                    <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br/>
+                    <strong>Phone:</strong> <a href="tel:333010101">333 010101</a><br/>
                   </div>
                   <div class="block-listing_subtitle">
                     Timetable
                   </div>
                   <div class="block-listing_additional">
-                    Monday: 15:30–19:30<br/>
-                    Tuesday: 10:00–13:00, 15:30–19:30<br/>
-                    Wednesday: 10:00–13:00, 15:30–19:30<br/>
-                    Thursday: 10:00–13:00, 15:30–19:30<br/>
-                    Friday: 10:00–13:00, 15:30–19:30<br/>
-                    Saturday: 10:00–19:30<br/>
-                    Sunday: 10:00–13:00, 15:30–19:30
+                    <strong>Monday:</strong> 15:30–19:30<br/>
+                    <strong>Tuesday:</strong> 10:00–13:00, 15:30–19:30<br/>
+                    <strong>Wednesday:</strong> 10:00–13:00, 15:30–19:30<br/>
+                    <strong>Thursday:</strong> 10:00–13:00, 15:30–19:30<br/>
+                    <strong>Friday:</strong> 10:00–13:00, 15:30–19:30<br/>
+                    <strong>Saturday:</strong> 10:00–19:30<br/>
+                    <strong>Sunday:</strong> 10:00–13:00, 15:30–19:30
                   </div>
                 </div>
               </div>
-              
+
             </div>
           </div>
         </div>
@@ -299,7 +299,7 @@ demo.htmlSource = `
         <div class="block-listing_col">
           <div class="block-listing_item">
             <div class="block-listing_item_inner">
-            
+
               <div class="block-listing_front">
                 <div class="block-listing_img">
                   ${img({})}
@@ -309,7 +309,7 @@ demo.htmlSource = `
                     Consectetur adipiscing elit
                   </div>
                   <address class="block-listing_address">
-                      Street lorem ipsum 42, 00134 City, Nation
+                    Street lorem ipsum 42, 00134 City, Nation
                   </address>
                   <div class="block-listing_btns">
                       <a href="#" class="btn btn-text">
@@ -321,7 +321,7 @@ demo.htmlSource = `
                   </div>
                 </div>
               </div>
-              
+
               <div class="block-listing_back">
                 <div class="btn btn-close" aria-label="Close"></div>
                 <div class="block-listing_content">
@@ -329,28 +329,28 @@ demo.htmlSource = `
                     Contacts
                   </div>
                   <div class="block-listing_additional">
-                    Email: <a href="mailto:info@info.com">info@info.com</a><br/>
-                    Phone: <a href="tel:333010101">333 010101</a><br/>
+                    <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br/>
+                    <strong>Phone:</strong> <a href="tel:333010101">333 010101</a><br/>
                   </div>
                   <div class="block-listing_subtitle">
                     Timetable
                   </div>
                   <div class="block-listing_additional">
-                    Monday: 15:30–19:30<br/>
-                    Tuesday: 10:00–13:00, 15:30–19:30<br/>
-                    Wednesday: 10:00–13:00, 15:30–19:30<br/>
-                    Thursday: 10:00–13:00, 15:30–19:30<br/>
-                    Friday: 10:00–13:00, 15:30–19:30<br/>
-                    Saturday: 10:00–19:30<br/>
-                    Sunday: 10:00–13:00, 15:30–19:30
+                    <strong>Monday:</strong> 15:30–19:30<br/>
+                    <strong>Tuesday:</strong> 10:00–13:00, 15:30–19:30<br/>
+                    <strong>Wednesday:</strong> 10:00–13:00, 15:30–19:30<br/>
+                    <strong>Thursday:</strong> 10:00–13:00, 15:30–19:30<br/>
+                    <strong>Friday:</strong> 10:00–13:00, 15:30–19:30<br/>
+                    <strong>Saturday:</strong> 10:00–19:30<br/>
+                    <strong>Sunday:</strong> 10:00–13:00, 15:30–19:30
                   </div>
                 </div>
               </div>
-              
+
             </div>
           </div>
         </div>
-        
+
       </div>
     </div>
   </div>
