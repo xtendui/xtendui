@@ -1,242 +1,260 @@
+
+#iframe--2019-xtend {
+//##START
 /**
- * .demo--2019-xtend
- */
+  * vars
+  */
 
-.demo--2019-xtend {
-  /**
-   * vars
-   */
+// ease
 
-  // ease
+@ease-in: @ease-out-quint;
+@ease-out: @ease-in-out-quint;
 
-  @ease-in: @ease-out-quint;
-  @ease-out: @ease-in-out-quint;
+/**
+  * button
+  */
 
-  /**
-   * button
-   */
+// variant
 
-  // variant
+.btn-default {
+  &:hover, &.hover {
+    transform: translateY(-.25rem);
+    box-shadow: @shadow-light;
+  }
+  &:active, &.active {
+    transform: none;
+    box-shadow: @shadow-none;
+  }
+}
 
-  .btn-default {
-    &:hover, &.hover {
-      transform: translateY(-.25rem);
-      box-shadow: @shadow-light;
-    }
-    &:active, &.active {
-      transform: none;
-      box-shadow: @shadow-none;
+.btn-primary {
+  &:hover, &.hover {
+    transform: translateY(-.25rem);
+    box-shadow: @shadow-accent;
+  }
+  &:active, &.active {
+    transform: none;
+    box-shadow: @shadow-none;
+  }
+}
+
+// animation
+
+.btn {
+  transition: border @time-small @ease-out, background @time-small @ease-out, color @time-small @ease-out, box-shadow @time-small @ease-out, transform @time-tiny @ease-out;
+  &:hover, &.hover {
+    transition: border @time-small @ease-in, background @time-small @ease-in, color @time-small @ease-in, box-shadow @time-small @ease-in, transform @time-tiny @ease-in;
+  }
+  &:active, &.active {
+    transition: border @time-small @ease-in, background @time-small @ease-in, color @time-small @ease-in, box-shadow @time-small @ease-in, transform @time-tiny @ease-in;
+  }
+}
+
+/**
+  * drop
+  */
+
+// animation
+
+.drop-container {
+  > .drop {
+    > .drop-inner {
+      > .drop-design {
+        opacity: 0;
+        transform: scale(.75);
+      }
+      > .drop-content {
+        opacity: 0;
+        transform: translateY(-1.5rem);
+      }
     }
   }
-
-  .btn-primary {
-    &:hover, &.hover {
-      transform: translateY(-.25rem);
-      box-shadow: @shadow-accent;
-    }
-    &:active, &.active {
-      transform: none;
-      box-shadow: @shadow-none;
-    }
-  }
-
-  // animation
-
-  .btn {
-    transition: border @time-small @ease-out, background @time-small @ease-out, color @time-small @ease-out, box-shadow @time-small @ease-out, transform @time-tiny @ease-out;
-    &:hover, &.hover {
-      transition: border @time-small @ease-in, background @time-small @ease-in, color @time-small @ease-in, box-shadow @time-small @ease-in, transform @time-tiny @ease-in;
-    }
-    &:active, &.active {
-      transition: border @time-small @ease-in, background @time-small @ease-in, color @time-small @ease-in, box-shadow @time-small @ease-in, transform @time-tiny @ease-in;
+  &.in {
+    animation-duration: @time-small + @time-tiny; // needed for animation time and backdrop animation time, put max animation time
+    > .drop {
+      > .drop-inner {
+        > .drop-design {
+          opacity: 1;
+          transform: none;
+          transition: transform @time-medium @ease-in, opacity @time-medium @ease-in;
+        }
+        > .drop-content {
+          opacity: 1;
+          transform: none;
+          transition: transform @time-medium @ease-in @time-tiny, opacity @time-medium @ease-in @time-tiny;
+        }
+      }
     }
   }
-
-  /**
-   * drop
-   */
-
-  // animation
-
-  .drop-container {
+  &.out {
+    animation-duration: @time-small + @time-tiny; // needed for animation time and backdrop animation time, put max animation time
     > .drop {
       > .drop-inner {
         > .drop-design {
           opacity: 0;
           transform: scale(.75);
+          transition: transform @time-small @ease-out @time-tiny, opacity @time-small @ease-out @time-tiny;
         }
         > .drop-content {
           opacity: 0;
-          transform: translateY(-1.5rem);
-        }
-      }
-    }
-    &.in {
-      animation-duration: @time-small + @time-tiny; // needed for animation time and backdrop animation time, put max animation time
-      > .drop {
-        > .drop-inner {
-          > .drop-design {
-            opacity: 1;
-            transform: none;
-            transition: transform @time-medium @ease-in, opacity @time-medium @ease-in;
-          }
-          > .drop-content {
-            opacity: 1;
-            transform: none;
-            transition: transform @time-medium @ease-in @time-tiny, opacity @time-medium @ease-in @time-tiny;
-          }
-        }
-      }
-    }
-    &.out {
-      animation-duration: @time-small + @time-tiny; // needed for animation time and backdrop animation time, put max animation time
-      > .drop {
-        > .drop-inner {
-          > .drop-design {
-            opacity: 0;
-            transform: scale(.75);
-            transition: transform @time-small @ease-out @time-tiny, opacity @time-small @ease-out @time-tiny;
-          }
-          > .drop-content {
-            opacity: 0;
-            transform: translateY(1.5rem);
-            transition: transform @time-small @ease-out, opacity @time-small @ease-out;
-          }
+          transform: translateY(1.5rem);
+          transition: transform @time-small @ease-out, opacity @time-small @ease-out;
         }
       }
     }
   }
+}
 
-  /**
-    * overlay
-    */
+/**
+  * overlay
+  */
 
-  // animation
+// animation
 
-  .overlay& {
+.overlay {
+  .card-overlay {
+    > .card-design {
+      opacity: 0;
+      transform: scale(.75);
+    }
+    > .btn-close {
+      opacity: 0;
+    }
+    > .card-inner {
+      > .card-block,  > .card-content {
+        opacity: 0;
+        transform: translateY(-1.5rem);
+      }
+    }
+  }
+  &.in {
+    animation-duration: @time-medium + @time-tiny; // needed for animation time and backdrop animation time, put max animation time
+    .card-overlay {
+      > .card-design {
+        opacity: 1;
+        transform: scale(1);
+        transition: transform @time-medium @ease-in, opacity @time-medium @ease-in;
+      }
+      > .btn-close {
+        // use animation to not override .btn transitions
+        .anim-zoom.in();
+        animation-delay: @time-medium;
+      }
+      > .card-inner {
+        > .card-block,  > .card-content {
+          opacity: 1;
+          transform: none;
+          transition: transform @time-medium @ease-in @time-tiny, opacity @time-medium @ease-in @time-tiny;
+        }
+      }
+    }
+  }
+  &.out {
+    animation-duration: @time-small + @time-tiny; // needed for animation time and backdrop animation time, put max animation time
     .card-overlay {
       > .card-design {
         opacity: 0;
         transform: scale(.75);
+        transition: transform @time-small @ease-out @time-tiny, opacity @time-small @ease-out @time-tiny;
       }
       > .btn-close {
-        opacity: 0;
+        // use animation to not override .btn transitions
+        .anim-zoom.out();
+        animation-delay: initial;
       }
       > .card-inner {
         > .card-block,  > .card-content {
           opacity: 0;
-          transform: translateY(-1.5rem);
-        }
-      }
-    }
-    &.in {
-      animation-duration: @time-medium + @time-tiny; // needed for animation time and backdrop animation time, put max animation time
-      .card-overlay {
-        > .card-design {
-          opacity: 1;
-          transform: scale(1);
-          transition: transform @time-medium @ease-in, opacity @time-medium @ease-in;
-        }
-        > .btn-close {
-          // use animation to not override .btn transitions
-          .anim-zoom.in();
-          animation-delay: @time-medium;
-        }
-        > .card-inner {
-          > .card-block,  > .card-content {
-            opacity: 1;
-            transform: none;
-            transition: transform @time-medium @ease-in @time-tiny, opacity @time-medium @ease-in @time-tiny;
-          }
-        }
-      }
-    }
-    &.out {
-      animation-duration: @time-small + @time-tiny; // needed for animation time and backdrop animation time, put max animation time
-      .card-overlay {
-        > .card-design {
-          opacity: 0;
-          transform: scale(.75);
-          transition: transform @time-small @ease-out @time-tiny, opacity @time-small @ease-out @time-tiny;
-        }
-        > .btn-close {
-          // use animation to not override .btn transitions
-          .anim-zoom.out();
-          animation-delay: initial;
-        }
-        > .card-inner {
-          > .card-block,  > .card-content {
-            opacity: 0;
-            transform: translateY(1.5rem);
-            transition: transform @time-small @ease-out, opacity @time-small @ease-out;
-          }
+          transform: translateY(1.5rem);
+          transition: transform @time-small @ease-out, opacity @time-small @ease-out;
         }
       }
     }
   }
-
-  /**
-   * card
-   */
-
-  // variant
-
-  .card-default& {
-    // interactive
-    a&, label& {
-      &:hover, &.hover {
-        > .card-design {
-          box-shadow: @shadow-light;
-        }
-      }
-      &:active, &.active {
-        > .card-design {
-          box-shadow: none;
-        }
-      }
-    }
-  }
-
-  .card-primary& {
-    // interactive
-    a&, label& {
-      &:hover, &.hover {
-        > .card-design {
-          box-shadow: @shadow-accent;
-        }
-      }
-      &:active, &.active {
-        > .card-design {
-          box-shadow: none;
-        }
-      }
-    }
-  }
-
-  // animation
-
-  .card& {
-    // interactive
-    a&, label& {
-      transition: all @time-small @ease-out;
-      > .card-design {
-        transition: all @time-small @ease-out;
-      }
-      &:hover, &.hover {
-        transform: translateY(-.5rem);
-        transition: all @time-small @ease-in;
-        > .card-design {
-          transition: all @time-small @ease-in;
-        }
-      }
-      &:active, &.active, input[type="checkbox"]:not(.unstyled):checked ~ &, input[type="radio"]:not(.unstyled):checked ~ & {
-        transform: none;
-        transition: all @time-small @ease-in;
-        > .card-design {
-          transition: all @time-small @ease-in;
-        }
-      }
-    }
-  }
-
 }
+//##END
+}
+//##START
+/**
+  * card
+  */
+
+// variant
+
+.card-default {
+  // interactive
+  a&, label& {
+//##END
+#iframe--2019-xtend & {
+//##START
+    &:hover, &.hover {
+      > .card-design {
+        box-shadow: @shadow-light;
+      }
+    }
+    &:active, &.active {
+      > .card-design {
+        box-shadow: none;
+      }
+    }
+//##END
+}
+//##START
+  }
+}
+
+.card-primary {
+  // interactive
+  a&, label& {
+//##END
+#iframe--2019-xtend & {
+//##START
+    &:hover, &.hover {
+      > .card-design {
+        box-shadow: @shadow-accent;
+      }
+    }
+    &:active, &.active {
+      > .card-design {
+        box-shadow: none;
+      }
+    }
+//##END
+}
+//##START
+  }
+}
+
+// animation
+
+.card {
+  // interactive
+  a&, label& {
+//##END
+#iframe--2019-xtend & {
+//##START
+    transition: all @time-small @ease-out;
+    > .card-design {
+      transition: all @time-small @ease-out;
+    }
+    &:hover, &.hover {
+      transform: translateY(-.5rem);
+      transition: all @time-small @ease-in;
+      > .card-design {
+        transition: all @time-small @ease-in;
+      }
+    }
+    &:active, &.active, input[type="checkbox"]:not(.unstyled):checked ~ &, input[type="radio"]:not(.unstyled):checked ~ & {
+      transform: none;
+      transition: all @time-small @ease-in;
+      > .card-design {
+        transition: all @time-small @ease-in;
+      }
+    }
+//##END
+}
+//##START
+  }
+}
+//##END
+

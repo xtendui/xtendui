@@ -2,12 +2,8 @@ import { Xt } from 'xtend-library'
 import 'xtend-library/src/vars.js'
 import gsap from 'gsap'
 
-/**
- * .demo--2020-bertani-mask
- */
-
 Xt.mount.push({
-  matches: '.demo--2020-bertani-mask .block-listing_item',
+  matches: '#iframe--2020-bertani-listing .block-listing_item',
   mount: object => {
     // vars
 

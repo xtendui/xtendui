@@ -9,6 +9,9 @@ import bezierEasing from 'bezier-easing'
 
 gsap.defaults({
   overwrite: 'auto',
+})
+
+gsap.config({
   force3D: false,
 })
 

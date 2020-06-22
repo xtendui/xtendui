@@ -15,8 +15,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="demo--2020-bertani-parallax">
-
+<div id="body--smooth">
   <div class="parallax parallax--inverse">
 
     <a href="#" class="parallax_item">
@@ -124,7 +123,6 @@ demo.htmlSource = `
     </a>
 
   </div>
-
 </div>
 `
 

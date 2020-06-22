@@ -16,7 +16,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="slider demo--2020-euroricambi-cards">
+<div class="slider">
 
   <nav class="slider-pagination">
 
@@ -90,7 +90,7 @@ demo.htmlSource = `
                         <p>
                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacinia rutrum ornare.
                         </p>
-                        <a href="#" class="btn btn-primary btn-big">
+                        <a href="#" class="btn btn-default btn-big">
                           Discover
                         </a>
                       </div>
@@ -149,7 +149,7 @@ demo.htmlSource = `
                         <p>
                           Lorem ipsum dolor sit amet
                         </p>
-                        <a href="#" class="btn btn-primary btn-big">
+                        <a href="#" class="btn btn-default btn-big">
                           Discover
                         </a>
                       </div>
@@ -208,7 +208,7 @@ demo.htmlSource = `
                         <p>
                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacinia rutrum ornare.
                         </p>
-                        <a href="#" class="btn btn-primary btn-big">
+                        <a href="#" class="btn btn-default btn-big">
                           Discover
                         </a>
                       </div>
@@ -267,7 +267,7 @@ demo.htmlSource = `
                         <p>
                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacinia rutrum ornare.
                         </p>
-                        <a href="#" class="btn btn-primary btn-big">
+                        <a href="#" class="btn btn-default btn-big">
                           Discover
                         </a>
                       </div>

@@ -16,34 +16,76 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="demo--2020-opacity-hover">
+<div class="block-listing">
   <div class="container">
-    <div class="row row-default">
-    
-      <div class="col-6 col-sm-4">
-        <a href="#" class="full">
-          ${img({ classes: 'media-cover', ratio: '37.5%' })}
-        </a>
+    <div class="block-listing_inner">
+      <div class="row">
+
+        <div class="block-listing_col">
+          <a href="#" class="block-listing_item">
+            <div class="block-listing_img">
+              ${img({ classes: 'media-cover', ratio: '37.5%' })}
+            </div>
+          </a>
+        </div>
+
+        <div class="block-listing_col">
+          <a href="#" class="block-listing_item">
+            <div class="block-listing_img">
+              ${imgAlt({ classes: 'media-cover', ratio: '37.5%' })}
+            </div>
+          </a>
+        </div>
+
+        <div class="block-listing_col">
+          <a href="#" class="block-listing_item">
+            <div class="block-listing_img">
+              ${img({ classes: 'media-cover', ratio: '37.5%' })}
+            </div>
+          </a>
+        </div>
+
+        <div class="block-listing_col">
+          <a href="#" class="block-listing_item">
+            <div class="block-listing_img">
+              ${imgAlt({ classes: 'media-cover', ratio: '37.5%' })}
+            </div>
+          </a>
+        </div>
+
+        <div class="block-listing_col">
+          <a href="#" class="block-listing_item">
+            <div class="block-listing_img">
+              ${img({ classes: 'media-cover', ratio: '37.5%' })}
+            </div>
+          </a>
+        </div>
+
+        <div class="block-listing_col">
+          <a href="#" class="block-listing_item">
+            <div class="block-listing_img">
+              ${imgAlt({ classes: 'media-cover', ratio: '37.5%' })}
+            </div>
+          </a>
+        </div>
+
+        <div class="block-listing_col block-listing_col--big">
+          <a href="#" class="block-listing_item">
+            <div class="block-listing_img">
+              ${img({ classes: 'media-cover', ratio: '37.5%' })}
+            </div>
+          </a>
+        </div>
+
+        <div class="block-listing_col block-listing_col--big">
+          <a href="#" class="block-listing_item">
+            <div class="block-listing_img">
+              ${imgAlt({ classes: 'media-cover', ratio: '37.5%' })}
+            </div>
+          </a>
+        </div>
+
       </div>
-      
-      <div class="col-6 col-sm-4">
-        <a href="#" class="full">
-          ${imgAlt({ classes: 'media-cover', ratio: '37.5%' })}
-        </a>
-      </div>
-      
-      <div class="col-6 col-sm-4">
-        <a href="#" class="full">
-          ${img({ classes: 'media-cover', ratio: '37.5%' })}
-        </a>
-      </div>
-      
-      <div class="col-6 col-sm-4">
-        <a href="#" class="full">
-          ${imgAlt({ classes: 'media-cover', ratio: '37.5%' })}
-        </a>
-      </div>
-      
     </div>
   </div>
 </div>

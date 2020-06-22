@@ -62,6 +62,24 @@ if (typeof window !== 'undefined') {
 
 const formatCode = source => {
   let text = source.innerHTML
+  // ##START and ##END
+  const metas = text.match(/\/\/##START\n([\S\s]*?)\/\/##END\n/g)
+  if (metas) {
+    text = ''
+    for (const meta of metas.entries()) {
+      text += meta[1].replace(/\/\/##START\n/g, '').replace(/\/\/##END\n/g, '')
+    }
+  }
+  // replace id
+  const item = source.closest('.gatsby_demo_item')
+  if (item) {
+    let id = item.getAttribute('data-iframe')
+    if (id) {
+      id = '#iframe--' + id.split('/').pop()
+      text = text.replace(new RegExp(`[ ]{0,}${id}[ ]{0,}`, 'gi'), '')
+    }
+  }
+
   // search html tags
   const re = /<[^>]*>/g
   text = text.replace(re, (match, g1, g2) => {

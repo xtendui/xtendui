@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="slider"
+<div class="slider demo--slider-nooverflow"
      data-xt-slider="{ align: 'center', drag: { wrap: true } }">
 
   <div class="slides">
