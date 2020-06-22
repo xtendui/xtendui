@@ -59,7 +59,7 @@ categories: ["100-Test"]
   </demovanilla>
   <demovanilla src="vanilla/components/overlay/nested">
   </demovanilla>
-  <demovanilla src="vanilla/addons/overlay/position">
+  <demovanilla src="vanilla/components/overlay/position">
   </demovanilla>
 </demo>
 
