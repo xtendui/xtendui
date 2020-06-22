@@ -5,7 +5,7 @@ import 'xtend-library/src/addons/slider/navigation-sides.js'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '#iframe--fashion-hero-v2 .slider',
+  matches: '#iframe--fashion-hero-v2 body .slider', // add your own selector instead of body to contain the code
   mount: object => {
     // vars
 

@@ -9,7 +9,7 @@ import gsap from 'gsap'
  */
 
 Xt.mount.push({
-  matches: '#iframe--furniture-parallax-v1 #body--smooth',
+  matches: '#iframe--furniture-parallax-v1 body #body--smooth', // add your own selector instead of body to contain the code
   mount: object => {
     // init
 
@@ -30,7 +30,7 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '#iframe--furniture-parallax-v1 a, #iframe--furniture-parallax-v1 button',
+  matches: '#iframe--furniture-parallax-v1 body a, #iframe--furniture-parallax-v1 body button', // add your own selector instead of body to contain the code
   mount: object => {
     // init
 
@@ -53,7 +53,7 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '#iframe--furniture-parallax-v1 .btn--line',
+  matches: '#iframe--furniture-parallax-v1 body .btn--line', // add your own selector instead of body to contain the code
   mount: object => {
     // wrap
 
@@ -130,7 +130,7 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '#iframe--furniture-parallax-v1 .parallax_item',
+  matches: '#iframe--furniture-parallax-v1 body .parallax_item', // add your own selector instead of body to contain the code
   mount: object => {
     // vars
 

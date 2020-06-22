@@ -1,64 +1,68 @@
 #iframe--fashion-hero-v2 {
   //##START
-  /**
-    * slider
-    */
-  
-  .slider {
-    position: relative;
-    background: @shade-200;
-    .slides-inner {
-      .row-space(none);
-      // dragger animations
-      .transition-none() !important;
-      .transform-none() !important;
-    }
-    .slide {
+  body { // add your own selector instead of body to contain the code
+    
+    /**
+      * slider
+      */
+    
+    .slider {
       position: relative;
-      .col(12);
-      // activation
-      display: none;
-      &.active {
-        display: block;
-        z-index: @index-active;
+      background: @shade-200;
+      .slides-inner {
+        .row-space(none);
+        // dragger animations
+        .transition-none() !important;
+        .transform-none() !important;
       }
-      &.out {
-        display: block;
+      .slide {
+        position: relative;
+        .col(12);
+        // activation
+        display: none;
+        &.active {
+          display: block;
+          z-index: @index-active;
+        }
+        &.out {
+          display: block;
+        }
+        &:not(.active) {
+          position: absolute;
+        }
       }
-      &:not(.active) {
+      .slider-pagination {
+        display: none;
+      }
+      // .slide_item
+      .slide_item {
+        .link-none();
+        .full();
+        display: block;
+        overflow: hidden;
+      }
+      .slide_cover {
+        pointer-events: none;
         position: absolute;
+        z-index: @index-active;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: @accent-dark;
+      }
+      .slide_asset {
+        .media-container {
+          height: 100vh;
+          height: calc(var(--vh, 1vh) * 100);
+        }
+      }
+      // .slider-navigation-sides
+      .slider-navigation-sides {
+        color: @white;
       }
     }
-    .slider-pagination {
-      display: none;
-    }
-    // .slide_item
-    .slide_item {
-      .link-none();
-      .full();
-      display: block;
-      overflow: hidden;
-    }
-    .slide_cover {
-      pointer-events: none;
-      position: absolute;
-      z-index: @index-active;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: @accent-dark;
-    }
-    .slide_asset {
-      .media-container {
-        height: 100vh;
-        height: calc(var(--vh, 1vh) * 100);
-      }
-    }
-    // .slider-navigation-sides
-    .slider-navigation-sides {
-      color: @white;
-    }
+  
   }
   //##END
 }
