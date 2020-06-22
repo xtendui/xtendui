@@ -24,7 +24,7 @@ demo.htmlSource = `
         <div class="block-listing_col">
           <a href="#" class="block-listing_item">
             <div class="block-listing_img">
-              ${img({ classes: 'media-cover' })}
+              ${img({})}
             </div>
             <div class="block-listing_title">
               Lorem Ipsum
@@ -35,7 +35,7 @@ demo.htmlSource = `
         <div class="block-listing_col">
           <a href="#" class="block-listing_item">
             <div class="block-listing_img">
-              ${imgAlt({ classes: 'media-cover' })}
+              ${imgAlt({})}
             </div>
             <div class="block-listing_title">
               Dolor sit amet
@@ -46,7 +46,7 @@ demo.htmlSource = `
         <div class="block-listing_col">
           <a href="#" class="block-listing_item">
             <div class="block-listing_img">
-              ${img({ classes: 'media-cover' })}
+              ${img({})}
             </div>
             <div class="block-listing_title">
               Consectetur
@@ -57,7 +57,7 @@ demo.htmlSource = `
         <div class="block-listing_col">
           <a href="#" class="block-listing_item">
             <div class="block-listing_img">
-              ${imgAlt({ classes: 'media-cover' })}
+              ${imgAlt({})}
             </div>
             <div class="block-listing_title">
               Adipiscing elit
@@ -68,7 +68,7 @@ demo.htmlSource = `
         <div class="block-listing_col">
           <a href="#" class="block-listing_item">
             <div class="block-listing_img">
-              ${img({ classes: 'media-cover' })}
+              ${img({})}
             </div>
             <div class="block-listing_title">
               Lorem Ipsum
@@ -79,7 +79,7 @@ demo.htmlSource = `
         <div class="block-listing_col">
           <a href="#" class="block-listing_item">
             <div class="block-listing_img">
-              ${imgAlt({ classes: 'media-cover' })}
+              ${imgAlt({})}
             </div>
             <div class="block-listing_title">
               Dolor sit amet
@@ -90,7 +90,7 @@ demo.htmlSource = `
         <div class="block-listing_col">
           <a href="#" class="block-listing_item">
             <div class="block-listing_img">
-              ${img({ classes: 'media-cover' })}
+              ${img({})}
             </div>
             <div class="block-listing_title">
               Consectetur
@@ -101,7 +101,7 @@ demo.htmlSource = `
         <div class="block-listing_col">
           <a href="#" class="block-listing_item">
             <div class="block-listing_img">
-              ${imgAlt({ classes: 'media-cover' })}
+              ${imgAlt({})}
             </div>
             <div class="block-listing_title">
               Adipiscing elit
@@ -112,7 +112,7 @@ demo.htmlSource = `
         <div class="block-listing_col block-listing_col--big">
           <a href="#" class="block-listing_item">
             <div class="block-listing_img">
-              ${imgAlt({ classes: 'media-cover' })}
+              ${imgAlt({})}
             </div>
             <div class="block-listing_title">
               Adipiscing elit
@@ -123,7 +123,7 @@ demo.htmlSource = `
         <div class="block-listing_col block-listing_col--big">
           <a href="#" class="block-listing_item">
             <div class="block-listing_img">
-              ${imgAlt({ classes: 'media-cover' })}
+              ${imgAlt({})}
             </div>
             <div class="block-listing_title">
               Adipiscing elit

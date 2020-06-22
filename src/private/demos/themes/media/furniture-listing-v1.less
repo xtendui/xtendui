@@ -33,13 +33,16 @@
     .padding(bottom, 75%);
     background: @shade-200;
   }
+  .media {
+    .media-cover();
+  }
 }
 
 .block-listing_col--big {
   .block-listing_img {
     .media-container {
       @media @min-sm {
-        padding-bottom: 37.5%;
+        .padding(bottom, 37.5%);
       }
     }
   }

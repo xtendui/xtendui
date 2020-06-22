@@ -23,8 +23,24 @@ demo.htmlSource = `
 
         <div class="block-listing_col">
           <a href="#" class="block-listing_item">
-            <div class="block-listing_img">
-              ${img({})}
+            <div class="block-listing_front">
+              <div class="block-listing_img">
+                ${img({})}
+              </div>
+              <div class="block-listing_title">
+                Lorem Ipsum
+              </div>
+              <address>
+                  Lorem ipsum dolor sit amet<br/>consectetur adipiscing elit<br/>Nunc tempus laoreet leo sit amet iaculis<br/>
+              </address>
+              <div class="block-listing_subtitle">
+                consectetur adipiscing
+              </div>
+              <div class="block-listing_subtitle">
+                Nunc tempus laoreet leo sit amet
+              </div>
+            </div>
+            <div class="block-listing_back">
             </div>
           </a>
         </div>
@@ -34,21 +50,8 @@ demo.htmlSource = `
             <div class="block-listing_img">
               ${imgAlt({})}
             </div>
-          </a>
-        </div>
-
-        <div class="block-listing_col">
-          <a href="#" class="block-listing_item">
-            <div class="block-listing_img">
-              ${img({})}
-            </div>
-          </a>
-        </div>
-
-        <div class="block-listing_col">
-          <a href="#" class="block-listing_item">
-            <div class="block-listing_img">
-              ${imgAlt({})}
+            <div class="block-listing_title">
+              Dolor sit amet
             </div>
           </a>
         </div>
@@ -58,6 +61,9 @@ demo.htmlSource = `
             <div class="block-listing_img">
               ${img({})}
             </div>
+            <div class="block-listing_title">
+              Consectetur
+            </div>
           </a>
         </div>
 
@@ -66,21 +72,52 @@ demo.htmlSource = `
             <div class="block-listing_img">
               ${imgAlt({})}
             </div>
-          </a>
-        </div>
-
-        <div class="block-listing_col block-listing_col--big">
-          <a href="#" class="block-listing_item">
-            <div class="block-listing_img">
-              ${img({})}
+            <div class="block-listing_title">
+              Adipiscing elit
             </div>
           </a>
         </div>
 
-        <div class="block-listing_col block-listing_col--big">
+        <div class="block-listing_col">
+          <a href="#" class="block-listing_item">
+            <div class="block-listing_img">
+              ${img({})}
+            </div>
+            <div class="block-listing_title">
+              Lorem Ipsum
+            </div>
+          </a>
+        </div>
+
+        <div class="block-listing_col">
           <a href="#" class="block-listing_item">
             <div class="block-listing_img">
               ${imgAlt({})}
+            </div>
+            <div class="block-listing_title">
+              Dolor sit amet
+            </div>
+          </a>
+        </div>
+
+        <div class="block-listing_col">
+          <a href="#" class="block-listing_item">
+            <div class="block-listing_img">
+              ${img({})}
+            </div>
+            <div class="block-listing_title">
+              Consectetur
+            </div>
+          </a>
+        </div>
+
+        <div class="block-listing_col">
+          <a href="#" class="block-listing_item">
+            <div class="block-listing_img">
+              ${imgAlt({})}
+            </div>
+            <div class="block-listing_title">
+              Adipiscing elit
             </div>
           </a>
         </div>

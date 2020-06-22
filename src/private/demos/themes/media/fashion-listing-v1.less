@@ -30,7 +30,10 @@
 .block-listing_img {
   text-align: center;
   .media-container {
-    padding-bottom: 150%;
+    .padding(bottom, 150%);
+  }
+  .media {
+    .media-cover();
   }
 }
 
@@ -38,7 +41,7 @@
   .block-listing_img {
     .media-container {
       @media @min-sm {
-        padding-bottom: 37.5%;
+        .padding(bottom, 37.5%);
       }
     }
   }

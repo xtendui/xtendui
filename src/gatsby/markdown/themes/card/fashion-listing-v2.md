@@ -2,10 +2,10 @@
 type: "Themes"
 badge: "Themes"
 parent: "Card"
-title: "fashion-listing-v2"
+title: "xtend-v1"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-date: "2020-06-22"
+date: "2019-10-10"
 demos: [
-  "iframe/themes/card/fashion-listing-v2"
+  "iframe/themes/animation/xtend-v1"
 ]
 ---

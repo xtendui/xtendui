@@ -28,6 +28,7 @@ if (typeof window !== 'undefined') {
   require('xtend-library/src/private/demos/components/toggle/progress.js')
   require('xtend-library/src/private/demos/components/toggle/timing-delay-fnc.js')
   require('xtend-library/src/private/demos/themes/animation/furniture-parallax-v1.js')
+  require('xtend-library/src/private/demos/themes/card/fashion-listing-v2.js')
   require('xtend-library/src/private/demos/themes/media/fashion-listing-v1.js')
   require('xtend-library/src/private/demos/themes/media/furniture-listing-v1.js')
   require('xtend-library/src/private/demos/themes/media/opacity-v1.js')
