@@ -1,20 +1,20 @@
 #iframe--collapse-v1 {
   //##START
   body { // add your own selector instead of body to contain the code
-    
+
     /**
       * vars
       */
-    
+
     // ease
-    
+
     @ease-in: @ease-out-quint;
     @ease-out: @ease-in-out-quint;
-    
+
     /**
       * drop
       */
-    
+
     .drop-default {
       > .drop-inner {
         box-shadow: @shadow-light;
@@ -23,7 +23,7 @@
         }
       }
     }
-    
+
     .drop-primary {
       > .drop-inner {
         box-shadow: @shadow-dark;
@@ -32,9 +32,9 @@
         }
       }
     }
-    
+
     // animation
-    
+
     .drop-container {
       > .drop {
         > .drop-inner {
@@ -87,13 +87,13 @@
         }
       }
     }
-    
+
     /**
       * overlay
       */
-    
+
     // animation
-    
+
     .overlay {
       .collapse-height();
       .overlay-design {
@@ -104,11 +104,9 @@
         > .btn-close {
           opacity: 0;
         }
-        > .card-inner {
-          > .card-block,  > .card-content {
-            opacity: 0;
-            transform: translateY(-2.5rem);
-          }
+        .card-block,  .card-content {
+          opacity: 0;
+          transform: translateY(-2.5rem);
         }
       }
       &.in {
@@ -125,12 +123,10 @@
             .anim-zoom.in();
             animation-delay: @time-medium;
           }
-          > .card-inner {
-            > .card-block,  > .card-content {
-              opacity: 1;
-              transform: none;
-              transition: transform @time-medium @ease-in, opacity @time-tiny @ease-in;
-            }
+          .card-block,  .card-content {
+            opacity: 1;
+            transform: none;
+            transition: transform @time-medium @ease-in, opacity @time-tiny @ease-in;
           }
         }
       }
@@ -148,21 +144,19 @@
             .anim-zoom.out();
             animation-delay: initial;
           }
-          > .card-inner {
-            > .card-block,  > .card-content {
-              opacity: 0;
-              transform: translateY(2.5rem);
-              transition: transform @time-small @ease-out, opacity @time-tiny @ease-out @time-tiny;
-            }
+          .card-block, .card-content {
+            opacity: 0;
+            transform: translateY(2.5rem);
+            transition: transform @time-small @ease-out, opacity @time-tiny @ease-out @time-tiny;
           }
         }
       }
     }
-    
+
     /**
       * group
       */
-    
+
     .group {
       .collapse-width();
       &.in {
@@ -172,7 +166,7 @@
         transition: width @time-medium @ease-out;
       }
     }
-    
+
   }
   //##END
 }

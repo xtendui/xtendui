@@ -10,3 +10,8 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
   <demovanilla src="vanilla/addons/card/separator">
   </demovanilla>
 </demo>
+
+<demo>
+  <demovanilla src="vanilla/addons/card/separator-horizontal">
+  </demovanilla>
+</demo>

@@ -72,7 +72,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       screen full blocks
     </button>
-    <div class="overlay overlay-primary overlay-screen overlay-size-full">
+    <div class="overlay overlay-default overlay-screen overlay-size-full">
       <div class="overlay-container">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
@@ -84,7 +84,7 @@ demo.htmlSource = `
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-asset">
-                  ${img({ classes: 'media-cover', ratio: '25%' })}
+                  ${img({ classes: 'media-cover', ratio: '15%' })}
                 </div>
                 <div class="card-block card-item">
                   <div class="card-title">Lorem ipsum</div>

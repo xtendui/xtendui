@@ -193,12 +193,12 @@
   // interactive
   a&, label& {
     &:hover, &.hover {
-      > .card-design {
+      .card-design {
         box-shadow: @shadow-accent;
       }
     }
     &:active, &.active {
-      > .card-design {
+      .card-design {
         box-shadow: none;
       }
     }
@@ -206,20 +206,20 @@
   // animation
   a&, label& {
     transition: all @time-small @ease-out;
-    > .card-design {
+    .card-design {
       transition: all @time-small @ease-out;
     }
     &:hover, &.hover {
       transform: translateY(-.5rem);
       transition: all @time-small @ease-in;
-      > .card-design {
+      .card-design {
         transition: all @time-small @ease-in;
       }
     }
     &:active, &.active {
       transform: none;
       transition: all @time-small @ease-in;
-      > .card-design {
+      .card-design {
         transition: all @time-small @ease-in;
       }
     }

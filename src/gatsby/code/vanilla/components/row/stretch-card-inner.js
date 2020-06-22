@@ -22,11 +22,9 @@ demo.htmlSource = `
           </div>
           <div class="card-block card-item">
             <div class="card-title">Lorem ipsum</div>
-            <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-          </div>
-          <div class="card-block card-item card-block-side"
-            style="margin-top: auto">
-            <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+            <div style="margin-top: auto">
+              <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -41,13 +39,11 @@ demo.htmlSource = `
           <div class="card-asset">
             ${img({ classes: 'media-cover', ratio: '37.5%' })}
           </div>
-          <div class="card-block card-item">
+          <div class="card-block card-item flex-full">
             <div class="card-title">Lorem ipsum</div>
-            <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>.</p>
-          </div>
-          <div class="card-block card-item card-block-side"
-            style="margin-top: auto">
-            <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+            <div style="margin-top: auto">
+              <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>.</p>
+            </div>
           </div>
         </div>
       </div>

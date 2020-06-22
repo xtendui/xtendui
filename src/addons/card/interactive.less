@@ -7,16 +7,16 @@
 a.card-default, label.card-default {
   &:hover, &.hover {
     color: @text-dark;
-    > .card-design {
+    .card-design {
       border-color: @shade-200;
-      background: @white;
+      background: @shade-200;
     }
   }
   &:active, &.active {
     color: @text-dark;
-    > .card-design {
-      border-color: @shade-200;
-      background: @shade-200;
+    .card-design {
+      border-color: @shade-200-dark;
+      background: @shade-200-dark;
     }
   }
 }
@@ -24,14 +24,14 @@ a.card-default, label.card-default {
 a.card-primary, label.card-primary {
   &:hover, &.hover {
     color: @text-inverse-dark;
-    > .card-design {
-      border-color: @accent-dark;
+    .card-design {
+      border-color: @accent;
       background: @accent;
     }
   }
   &:active, &.active {
     color: @text-inverse-dark;
-    > .card-design {
+    .card-design {
       border-color: @accent-dark;
       background: @accent-dark;
     }
@@ -41,16 +41,16 @@ a.card-primary, label.card-primary {
 // animation
 
 a.card, label.card {
-  > .card-design {
+  .card-design {
     transition: all @time-small @ease-out;
   }
   &:hover, &.hover {
-    > .card-design {
+    .card-design {
       transition: all @time-small @ease-in;
     }
   }
   &:active, &.active {
-    > .card-design {
+    .card-design {
       transition: all @time-small @ease-in;
     }
   }

@@ -115,37 +115,37 @@
 // size
 
 .overlay-size-tiny {
-  .overlay-inner, .card-overlay > .card-inner > .card-content {
+  .overlay-inner, .card-overlay .card-content {
     max-width: 500px;
   }
 }
 
 .overlay-size-small {
-  .overlay-inner, .card-overlay > .card-inner > .card-content {
+  .overlay-inner, .card-overlay .card-content {
     max-width: 700px;
   }
 }
 
 .overlay-size-medium {
-  .overlay-inner, .card-overlay > .card-inner > .card-content {
+  .overlay-inner, .card-overlay .card-content {
     max-width: 900px;
   }
 }
 
 .overlay-size-large {
-  .overlay-inner, .card-overlay > .card-inner > .card-content {
+  .overlay-inner, .card-overlay .card-content {
     max-width: 1200px;
   }
 }
 
 .overlay-size-big {
-  .overlay-inner, .card-overlay > .card-inner > .card-content {
+  .overlay-inner, .card-overlay .card-content {
     max-width: 1600px;
   }
 }
 
 .overlay-size-full {
-  .overlay-inner, .card-overlay > .card-inner > .card-content {
+  .overlay-inner, .card-overlay .card-content {
     max-width: none;
   }
 }
@@ -217,12 +217,10 @@
 .overlay-disable {
   // disable animation
   .card-overlay {
-    > .card-inner {
-      > .card-block,  > .card-content {
-        opacity: 1 !important;
-        .transform-none() !important;
-        .trans-anim-none() !important;
-      }
+    .card-block,  .card-content {
+      opacity: 1 !important;
+      .transform-none() !important;
+      .trans-anim-none() !important;
     }
   }
 }
@@ -237,10 +235,8 @@
     > .btn-close {
       opacity: 0;
     }
-    > .card-inner {
-      > .card-block,  > .card-content {
-        opacity: 0;
-      }
+    .card-block,  .card-content {
+      opacity: 0;
     }
   }
   &.in {
@@ -255,11 +251,9 @@
         .anim-zoom.in();
         animation-delay: @time-medium;
       }
-      > .card-inner {
-        > .card-block,  > .card-content {
-          opacity: 1;
-          transition: opacity @time-medium @ease-in @time-tiny;
-        }
+      .card-block,  .card-content {
+        opacity: 1;
+        transition: opacity @time-medium @ease-in @time-tiny;
       }
     }
     > .backdrop {
@@ -278,11 +272,9 @@
         .anim-zoom.out();
         animation-delay: initial;
       }
-      > .card-inner {
-        > .card-block,  > .card-content {
-          opacity: 0;
-          transition: opacity @time-small @ease-out;
-        }
+      .card-block,  .card-content {
+        opacity: 0;
+        transition: opacity @time-small @ease-out;
       }
     }
     > .backdrop {

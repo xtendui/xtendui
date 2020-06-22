@@ -10,3 +10,8 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
   <demovanilla src="vanilla/addons/card/full">
   </demovanilla>
 </demo>
+
+<demo>
+  <demovanilla src="vanilla/addons/card/full-horizontal">
+  </demovanilla>
+</demo>

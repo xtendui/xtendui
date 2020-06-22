@@ -1,40 +1,46 @@
+@import 'xtend-library/src/addons/card/_separator.less';
+
 /**
  * card-separator
  */
 
 .card {
   &.card-separator {
-    > .card-inner > .card-content {
-      > .card-item {
-        & + .card-item {
-          &:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: auto;
-            left: 0;
-            right: 0;
-            width: auto;
-            height: 1px;
-          }
-        }
+    .card-item + .card-item,
+    .card-item + .card-asset,
+    .card-item + .card-content,
+    .card-asset + .card-asset,
+    .card-asset + .card-item,
+    .card-asset + .card-content,
+    .card-content + .card-content,
+    .card-content + .card-item,
+    .card-content + .card-asset {
+      &:before {
+        content: '';
+        z-index: @index-active + 1;
+        position: absolute;
+        top: 0;
+        bottom: auto;
+        left: 0;
+        right: 0;
+        width: auto;
+        height: 1px;
       }
     }
-    > .card-inner > .card-content > .card-item-nested {
-      > .card-item {
-        & + .card-item {
-          &:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: auto;
-            width: 1px;
-            height: auto;
-          }
-        }
-      }
+  }
+}
+
+.card-separator-vertical {
+  .card-item + .card-item,
+  .card-asset + .card-item,
+  .card-item + .card-asset {
+    &:before {
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: auto;
+      width: 1px;
+      height: auto;
     }
   }
 }
@@ -43,49 +49,44 @@
 
 .card-default {
   &.card-separator {
-    .card-contents({
-      > .card-item {
-        & + .card-item {
-          &:before {
-            background: fade(@shade-900, 10%);
-          }
-        }
+    .card-item + .card-item,
+    .card-item + .card-asset,
+    .card-item + .card-content,
+    .card-asset + .card-asset,
+    .card-asset + .card-item,
+    .card-asset + .card-content,
+    .card-content + .card-content,
+    .card-content + .card-item,
+    .card-content + .card-asset {
+      &:before {
+        background: fade(@shade-900, 10%);
       }
-    });
+    }
   }
 }
 
 .card-primary {
   &.card-separator {
-    .card-contents({
-      > .card-item {
-        & + .card-item {
-          &:before {
-            background: fade(@shade-200, 10%);
-          }
-        }
+    .card-item + .card-item,
+    .card-item + .card-asset,
+    .card-item + .card-content,
+    .card-asset + .card-asset,
+    .card-asset + .card-item,
+    .card-asset + .card-content,
+    .card-content + .card-content,
+    .card-content + .card-item,
+    .card-content + .card-asset {
+      &:before {
+        background: fade(@shade-200, 10%);
       }
-    });
+    }
   }
 }
 
 // special
 
-.card-group, .card-horizontal {
+.card-horizontal {
   &.card-separator {
-    .card-contents({
-      > .card-item {
-        & + .card-item {
-          &:before {
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: auto;
-            width: 1px;
-            height: auto;
-          }
-        }
-      }
-    });
+    .card-separator-vertical();
   }
 }
