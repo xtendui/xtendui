@@ -1,27 +1,26 @@
 import { Xt } from 'xtend-library/src/xt.js'
 
-/**
- * more info rotate card
- */
-
 Xt.mount.push({
-  matches: '#iframe--fashion-listing-v2 .listing_item',
+  matches: '#iframe--fashion-listing-v2 .block-listing_item',
   mount: object => {
     // vars
 
+    const actionBtn = object.querySelector('.block-listing_action')
     const closeBtn = object.querySelector('.btn-close')
 
     // eventClick
 
-    const eventClick = () => {
+    const eventClick = e => {
+      e.stopPropagation()
       object.classList.add('active')
     }
 
-    object.addEventListener('click', eventClick)
+    actionBtn.addEventListener('click', eventClick)
 
     // eventClose
 
-    const eventClose = () => {
+    const eventClose = e => {
+      e.stopPropagation()
       object.classList.remove('active')
     }
 

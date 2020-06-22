@@ -22,106 +22,335 @@ demo.htmlSource = `
       <div class="row">
 
         <div class="block-listing_col">
-          <a href="#" class="block-listing_item">
-            <div class="block-listing_front">
-              <div class="block-listing_img">
-                ${img({})}
+          <div class="block-listing_item">
+            <div class="block-listing_item_inner">
+            
+              <div class="block-listing_front">
+                <div class="block-listing_img">
+                  ${img({})}
+                </div>
+                <div class="block-listing_content">
+                  <div class="block-listing_title">
+                    Lorem Ipsum
+                  </div>
+                  <address class="block-listing_address">
+                      Street lorem ipsum 42, 00134 City, Nation
+                  </address>
+                  <div class="block-listing_btns">
+                      <a href="#" class="btn btn-text">
+                        Take me here
+                      </a>
+                      <button type="button" class="btn btn-primary block-listing_action">
+                          More info
+                      </button>
+                  </div>
+                </div>
               </div>
-              <div class="block-listing_title">
-                Lorem Ipsum
+              
+              <div class="block-listing_back">
+                <div class="btn btn-close" aria-label="Close"></div>
+                <div class="block-listing_content">
+                  <div class="block-listing_subtitle">
+                    Contacts
+                  </div>
+                  <div class="block-listing_additional">
+                    Email: <a href="mailto:info@info.com">info@info.com</a><br/>
+                    Phone: <a href="tel:333010101">333 010101</a><br/>
+                  </div>
+                  <div class="block-listing_subtitle">
+                    Timetable
+                  </div>
+                  <div class="block-listing_additional">
+                    Monday: 15:30–19:30<br/>
+                    Tuesday: 10:00–13:00, 15:30–19:30<br/>
+                    Wednesday: 10:00–13:00, 15:30–19:30<br/>
+                    Thursday: 10:00–13:00, 15:30–19:30<br/>
+                    Friday: 10:00–13:00, 15:30–19:30<br/>
+                    Saturday: 10:00–19:30<br/>
+                    Sunday: 10:00–13:00, 15:30–19:30
+                  </div>
+                </div>
               </div>
-              <address>
-                  Lorem ipsum dolor sit amet<br/>consectetur adipiscing elit<br/>Nunc tempus laoreet leo sit amet iaculis<br/>
-              </address>
-              <div class="block-listing_subtitle">
-                consectetur adipiscing
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="block-listing_col">
+          <div class="block-listing_item">
+            <div class="block-listing_item_inner">
+            
+              <div class="block-listing_front">
+                <div class="block-listing_img">
+                  ${imgAlt({})}
+                </div>
+                <div class="block-listing_content">
+                  <div class="block-listing_title">
+                    Dolor sit amet
+                  </div>
+                  <address class="block-listing_address">
+                      Street lorem ipsum 42, 00134 City, Nation
+                  </address>
+                  <div class="block-listing_btns">
+                      <a href="#" class="btn btn-text">
+                        Take me here
+                      </a>
+                      <button type="button" class="btn btn-primary block-listing_action">
+                          More info
+                      </button>
+                  </div>
+                </div>
               </div>
-              <div class="block-listing_subtitle">
-                Nunc tempus laoreet leo sit amet
+              
+              <div class="block-listing_back">
+                <div class="btn btn-close" aria-label="Close"></div>
+                <div class="block-listing_content">
+                  <div class="block-listing_subtitle">
+                    Contacts
+                  </div>
+                  <div class="block-listing_additional">
+                    Email: <a href="mailto:info@info.com">info@info.com</a><br/>
+                    Phone: <a href="tel:333010101">333 010101</a><br/>
+                  </div>
+                  <div class="block-listing_subtitle">
+                    Timetable
+                  </div>
+                  <div class="block-listing_additional">
+                    Monday: 15:30–19:30<br/>
+                    Tuesday: 10:00–13:00, 15:30–19:30<br/>
+                    Wednesday: 10:00–13:00, 15:30–19:30<br/>
+                    Thursday: 10:00–13:00, 15:30–19:30<br/>
+                    Friday: 10:00–13:00, 15:30–19:30<br/>
+                    Saturday: 10:00–19:30<br/>
+                    Sunday: 10:00–13:00, 15:30–19:30
+                  </div>
+                </div>
               </div>
+              
             </div>
-            <div class="block-listing_back">
-            </div>
-          </a>
+          </div>
         </div>
 
         <div class="block-listing_col">
-          <a href="#" class="block-listing_item">
-            <div class="block-listing_img">
-              ${imgAlt({})}
+          <div class="block-listing_item">
+            <div class="block-listing_item_inner">
+            
+              <div class="block-listing_front">
+                <div class="block-listing_img">
+                  ${img({})}
+                </div>
+                <div class="block-listing_content">
+                  <div class="block-listing_title">
+                    Consectetur adipiscing elit
+                  </div>
+                  <address class="block-listing_address">
+                      Street lorem ipsum 42, 00134 City, Nation
+                  </address>
+                  <div class="block-listing_btns">
+                      <a href="#" class="btn btn-text">
+                        Take me here
+                      </a>
+                      <button type="button" class="btn btn-primary block-listing_action">
+                          More info
+                      </button>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="block-listing_back">
+                <div class="btn btn-close" aria-label="Close"></div>
+                <div class="block-listing_content">
+                  <div class="block-listing_subtitle">
+                    Contacts
+                  </div>
+                  <div class="block-listing_additional">
+                    Email: <a href="mailto:info@info.com">info@info.com</a><br/>
+                    Phone: <a href="tel:333010101">333 010101</a><br/>
+                  </div>
+                  <div class="block-listing_subtitle">
+                    Timetable
+                  </div>
+                  <div class="block-listing_additional">
+                    Monday: 15:30–19:30<br/>
+                    Tuesday: 10:00–13:00, 15:30–19:30<br/>
+                    Wednesday: 10:00–13:00, 15:30–19:30<br/>
+                    Thursday: 10:00–13:00, 15:30–19:30<br/>
+                    Friday: 10:00–13:00, 15:30–19:30<br/>
+                    Saturday: 10:00–19:30<br/>
+                    Sunday: 10:00–13:00, 15:30–19:30
+                  </div>
+                </div>
+              </div>
+              
             </div>
-            <div class="block-listing_title">
-              Dolor sit amet
-            </div>
-          </a>
+          </div>
         </div>
 
         <div class="block-listing_col">
-          <a href="#" class="block-listing_item">
-            <div class="block-listing_img">
-              ${img({})}
+          <div class="block-listing_item">
+            <div class="block-listing_item_inner">
+            
+              <div class="block-listing_front">
+                <div class="block-listing_img">
+                  ${img({})}
+                </div>
+                <div class="block-listing_content">
+                  <div class="block-listing_title">
+                    Lorem Ipsum
+                  </div>
+                  <address class="block-listing_address">
+                      Street lorem ipsum 42, 00134 City, Nation
+                  </address>
+                  <div class="block-listing_btns">
+                      <a href="#" class="btn btn-text">
+                        Take me here
+                      </a>
+                      <button type="button" class="btn btn-primary block-listing_action">
+                          More info
+                      </button>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="block-listing_back">
+                <div class="btn btn-close" aria-label="Close"></div>
+                <div class="block-listing_content">
+                  <div class="block-listing_subtitle">
+                    Contacts
+                  </div>
+                  <div class="block-listing_additional">
+                    Email: <a href="mailto:info@info.com">info@info.com</a><br/>
+                    Phone: <a href="tel:333010101">333 010101</a><br/>
+                  </div>
+                  <div class="block-listing_subtitle">
+                    Timetable
+                  </div>
+                  <div class="block-listing_additional">
+                    Monday: 15:30–19:30<br/>
+                    Tuesday: 10:00–13:00, 15:30–19:30<br/>
+                    Wednesday: 10:00–13:00, 15:30–19:30<br/>
+                    Thursday: 10:00–13:00, 15:30–19:30<br/>
+                    Friday: 10:00–13:00, 15:30–19:30<br/>
+                    Saturday: 10:00–19:30<br/>
+                    Sunday: 10:00–13:00, 15:30–19:30
+                  </div>
+                </div>
+              </div>
+              
             </div>
-            <div class="block-listing_title">
-              Consectetur
-            </div>
-          </a>
+          </div>
         </div>
 
         <div class="block-listing_col">
-          <a href="#" class="block-listing_item">
-            <div class="block-listing_img">
-              ${imgAlt({})}
+          <div class="block-listing_item">
+            <div class="block-listing_item_inner">
+            
+              <div class="block-listing_front">
+                <div class="block-listing_img">
+                  ${imgAlt({})}
+                </div>
+                <div class="block-listing_content">
+                  <div class="block-listing_title">
+                    Dolor sit amet
+                  </div>
+                  <address class="block-listing_address">
+                      Street lorem ipsum 42, 00134 City, Nation
+                  </address>
+                  <div class="block-listing_btns">
+                      <a href="#" class="btn btn-text">
+                        Take me here
+                      </a>
+                      <button type="button" class="btn btn-primary block-listing_action">
+                          More info
+                      </button>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="block-listing_back">
+                <div class="btn btn-close" aria-label="Close"></div>
+                <div class="block-listing_content">
+                  <div class="block-listing_subtitle">
+                    Contacts
+                  </div>
+                  <div class="block-listing_additional">
+                    Email: <a href="mailto:info@info.com">info@info.com</a><br/>
+                    Phone: <a href="tel:333010101">333 010101</a><br/>
+                  </div>
+                  <div class="block-listing_subtitle">
+                    Timetable
+                  </div>
+                  <div class="block-listing_additional">
+                    Monday: 15:30–19:30<br/>
+                    Tuesday: 10:00–13:00, 15:30–19:30<br/>
+                    Wednesday: 10:00–13:00, 15:30–19:30<br/>
+                    Thursday: 10:00–13:00, 15:30–19:30<br/>
+                    Friday: 10:00–13:00, 15:30–19:30<br/>
+                    Saturday: 10:00–19:30<br/>
+                    Sunday: 10:00–13:00, 15:30–19:30
+                  </div>
+                </div>
+              </div>
+              
             </div>
-            <div class="block-listing_title">
-              Adipiscing elit
-            </div>
-          </a>
+          </div>
         </div>
 
         <div class="block-listing_col">
-          <a href="#" class="block-listing_item">
-            <div class="block-listing_img">
-              ${img({})}
+          <div class="block-listing_item">
+            <div class="block-listing_item_inner">
+            
+              <div class="block-listing_front">
+                <div class="block-listing_img">
+                  ${img({})}
+                </div>
+                <div class="block-listing_content">
+                  <div class="block-listing_title">
+                    Consectetur adipiscing elit
+                  </div>
+                  <address class="block-listing_address">
+                      Street lorem ipsum 42, 00134 City, Nation
+                  </address>
+                  <div class="block-listing_btns">
+                      <a href="#" class="btn btn-text">
+                        Take me here
+                      </a>
+                      <button type="button" class="btn btn-primary block-listing_action">
+                          More info
+                      </button>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="block-listing_back">
+                <div class="btn btn-close" aria-label="Close"></div>
+                <div class="block-listing_content">
+                  <div class="block-listing_subtitle">
+                    Contacts
+                  </div>
+                  <div class="block-listing_additional">
+                    Email: <a href="mailto:info@info.com">info@info.com</a><br/>
+                    Phone: <a href="tel:333010101">333 010101</a><br/>
+                  </div>
+                  <div class="block-listing_subtitle">
+                    Timetable
+                  </div>
+                  <div class="block-listing_additional">
+                    Monday: 15:30–19:30<br/>
+                    Tuesday: 10:00–13:00, 15:30–19:30<br/>
+                    Wednesday: 10:00–13:00, 15:30–19:30<br/>
+                    Thursday: 10:00–13:00, 15:30–19:30<br/>
+                    Friday: 10:00–13:00, 15:30–19:30<br/>
+                    Saturday: 10:00–19:30<br/>
+                    Sunday: 10:00–13:00, 15:30–19:30
+                  </div>
+                </div>
+              </div>
+              
             </div>
-            <div class="block-listing_title">
-              Lorem Ipsum
-            </div>
-          </a>
+          </div>
         </div>
-
-        <div class="block-listing_col">
-          <a href="#" class="block-listing_item">
-            <div class="block-listing_img">
-              ${imgAlt({})}
-            </div>
-            <div class="block-listing_title">
-              Dolor sit amet
-            </div>
-          </a>
-        </div>
-
-        <div class="block-listing_col">
-          <a href="#" class="block-listing_item">
-            <div class="block-listing_img">
-              ${img({})}
-            </div>
-            <div class="block-listing_title">
-              Consectetur
-            </div>
-          </a>
-        </div>
-
-        <div class="block-listing_col">
-          <a href="#" class="block-listing_item">
-            <div class="block-listing_img">
-              ${imgAlt({})}
-            </div>
-            <div class="block-listing_title">
-              Adipiscing elit
-            </div>
-          </a>
-        </div>
-
+        
       </div>
     </div>
   </div>
