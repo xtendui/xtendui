@@ -1,111 +1,111 @@
 #iframe--furniture-hero-v1 {
-//##START
-/**
-  * slider
-  */
-
-.slider {
-  position: relative;
-  background: @shade-200;
-  .slides-inner {
-    .row-space(none);
-    // dragger animations
-    .transition-none() !important;
-    .transform-none() !important;
-  }
-  .slide {
+  //##START
+  /**
+    * slider
+    */
+  
+  .slider {
     position: relative;
-    .col(12);
-    // activation
-    display: none;
-    &.active, &.out {
+    background: @shade-200;
+    .slides-inner {
+      .row-space(none);
+      // dragger animations
+      .transition-none() !important;
+      .transform-none() !important;
+    }
+    .slide {
+      position: relative;
+      .col(12);
+      // activation
+      display: none;
+      &.active, &.out {
+        display: block;
+        z-index: @index-active;
+      }
+      &.next {
+        display: block;
+        z-index: @index-active + 1;
+      }
+      &:not(.active) {
+        position: absolute;
+      }
+    }
+    .slider-pagination {
+      display: none;
+    }
+    // .slide_item
+    .slide_item {
+      .full();
       display: block;
-      z-index: @index-active;
+      overflow: hidden;
     }
-    &.next {
-      display: block;
-      z-index: @index-active + 1;
+    .slide_asset {
+      .media-container {
+        height: 100vh;
+        height: calc(var(--vh, 1vh) * 100);
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        z-index: 2;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: 75%;
+        background: linear-gradient(180deg, fade(@black, 0%) 0%, fade(@black, 30%) 100%);
+      }
     }
-    &:not(.active) {
+    .slide_text {
+      .link-none();
       position: absolute;
+      z-index: 3;
+      bottom: 0;
+      left: 0;
+      right: 0;
     }
-  }
-  .slider-pagination {
-    display: none;
-  }
-  // .slide_item
-  .slide_item {
-    .full();
-    display: block;
-    overflow: hidden;
-  }
-  .slide_asset {
-    .media-container {
-      height: 100vh;
-      height: calc(var(--vh, 1vh) * 100);
+    .slide_text_inner {
+      .text-inverse();
+      .padding(right, big);
+      .padding(y, giant);
+      max-width: 80rem;
     }
-    &:before {
-      content: '';
+    // line
+    .slide_line {
+      .container-space();
+      pointer-events: none;
       position: absolute;
-      z-index: 2;
+      z-index: 1;
+      top: 0;
       left: 0;
       bottom: 0;
       right: 0;
-      height: 75%;
-      background: linear-gradient(180deg, fade(@black, 0%) 0%, fade(@black, 30%) 100%);
+    }
+    .slide_line_inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    .slide_line_small {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: 200px;
+      width: 1px;
+      background: @white;
+    }
+    .slide_line_big {
+      position: absolute;
+      margin-right: -1px;
+      bottom: 80px;
+      right: 0;
+      height: 120px;
+      width: 3px;
+      background: @white;
+    }
+    // .slider-navigation-sides
+    .slider-navigation-sides {
+      color: @white;
     }
   }
-  .slide_text {
-    .link-none();
-    position: absolute;
-    z-index: 3;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-  .slide_text_inner {
-    .text-inverse();
-    .padding(right, big);
-    .padding(y, giant);
-    max-width: 80rem;
-  }
-  // line
-  .slide_line {
-    .container-space();
-    pointer-events: none;
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-  }
-  .slide_line_inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-  .slide_line_small {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    height: 200px;
-    width: 1px;
-    background: @white;
-  }
-  .slide_line_big {
-    position: absolute;
-    margin-right: -1px;
-    bottom: 80px;
-    right: 0;
-    height: 120px;
-    width: 3px;
-    background: @white;
-  }
-  // .slider-navigation-sides
-  .slider-navigation-sides {
-    color: @white;
-  }
-}
-//##END
+  //##END
 }

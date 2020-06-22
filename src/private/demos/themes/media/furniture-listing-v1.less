@@ -1,72 +1,72 @@
 #iframe--furniture-listing-v1 {
-//##START
-/**
-  * .block-listing
-  */
-
-.block-listing_inner {
-  > .row {
-    .row-space(small);
-    .row-space(medium, sm);
+  //##START
+  /**
+    * .block-listing
+    */
+  
+  .block-listing_inner {
+    > .row {
+      .row-space(small);
+      .row-space(medium, sm);
+    }
   }
-}
-
-.block-listing_col {
-  .col(12);
-  .col(6, sm);
-  .col(4, lg);
-}
-
-.block-listing_col--big {
-  .col(12, sm);
-  .col(12, lg);
-}
-
-.block-listing_item {
-  .link-none();
-  .full();
-  .text-default() !important;
-}
-
-.block-listing_img {
-  .media-container {
-    .padding(bottom, 75%);
-    background: @shade-200;
+  
+  .block-listing_col {
+    .col(12);
+    .col(6, sm);
+    .col(4, lg);
   }
-  .media {
-    .media-cover();
+  
+  .block-listing_col--big {
+    .col(12, sm);
+    .col(12, lg);
   }
-}
-
-.block-listing_col--big {
+  
+  .block-listing_item {
+    .link-none();
+    .full();
+    .text-default() !important;
+  }
+  
   .block-listing_img {
     .media-container {
-      @media @min-sm {
-        .padding(bottom, 37.5%);
+      .padding(bottom, 75%);
+      background: @shade-200;
+    }
+    .media {
+      .media-cover();
+    }
+  }
+  
+  .block-listing_col--big {
+    .block-listing_img {
+      .media-container {
+        @media @min-sm {
+          .padding(bottom, 37.5%);
+        }
       }
     }
   }
-}
-
-.block-listing_content {
-  .padding(y, medium);
-}
-
-.block-listing_title {
-  .spacing-medium();
-  .font-sans-semibold();
-  .line-height-small();
-  font-size: 1.8rem;
-  letter-spacing: 0;
-  text-transform: none;
-}
-
-.block-listing_price {
-  .font-sans-semibold();
-  .line-height-small();
-  font-size: 1.4rem;
-  letter-spacing: 0.1em;
-  text-transform: none;
-}
-//##END
+  
+  .block-listing_content {
+    .padding(y, medium);
+  }
+  
+  .block-listing_title {
+    .spacing-medium();
+    .font-sans-semibold();
+    .line-height-small();
+    font-size: 1.8rem;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  
+  .block-listing_price {
+    .font-sans-semibold();
+    .line-height-small();
+    font-size: 1.4rem;
+    letter-spacing: 0.1em;
+    text-transform: none;
+  }
+  //##END
 }
