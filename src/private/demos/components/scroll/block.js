@@ -5,7 +5,7 @@ Xt.mount.push({
   mount: object => {
     // vars
 
-    const btns = object.querySelectorAll('#demo--scroll-container-block--btn')
+    const btns = object.querySelectorAll('.demo--scroll-container-block--btn')
 
     // init
 
@@ -17,10 +17,12 @@ Xt.mount.push({
 
     const eventBlock = () => {
       for (const element of self.elements) {
-        // fade out
-        element.dispatchEvent(new CustomEvent('off.trigger.xt'))
-        // block
-        element.classList.add('scroll-block')
+        if (!element.classList.contains('scroll-block')) {
+          // fade out
+          element.dispatchEvent(new CustomEvent('off.trigger.xt'))
+          // block
+          element.classList.add('scroll-block')
+        }
       }
     }
 

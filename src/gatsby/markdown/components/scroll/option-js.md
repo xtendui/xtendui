@@ -32,13 +32,14 @@ You can set scroll mode with css selectors.
 
 Use `distance: Number` activation and deactivation distance. For percent use `distance: 'Number%'`.
 
-The default **distance** is `distance: '20%'`.
+You can also set a **fallback** distance from top and bottom for elements that are too close to window's top or bottom.
 
 <div class="table-scroll">
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `distance:Number|Percent`                          | `'20%'`        | Activation distance from window's top and bottom            |
+| Option                  | `distance:Number|Percent`                          | `50`        | Activation distance from window's top and bottom            |
+| Option                  | `fallback:Number|Percent`                          | `0`        | Fallback distance when too close to the start and end of the page            |
 
 </div>
 
@@ -85,7 +86,7 @@ You can use a function for `delayOn` and `delayOff` for example `(current, total
 | Option                  | `trigger:Number|Percent`                          | `'100%'`        | Activation trigger distance viewport's top and bottom            |
 | Option                  | `start:Number|Percent`                          | `'100%'`        | Activation start distance viewport's top and bottom           |
 | Option                  | `end:Number|Percent`                          | `false`        | Activation end distance viewport's top and bottom            |
-| Option                  | `fallback:Number|Percent`                          | `100`        | Fallback distance when too close to the start and end of the page            |
+| Option                  | `fallback:Number|Percent`                          | `0`        | Fallback distance when too close to the start and end of the page            |
 
 </div>
 
