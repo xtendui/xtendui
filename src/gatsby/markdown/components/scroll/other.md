@@ -15,6 +15,17 @@ Animate with inverse `.inverse` or `self.direction`.
   </div>
 </demo>
 
+## Block
+
+You can block the scroll animations with the class `.scroll-block`. Add also the class `.fade` to have them enabled.
+
+If you want to block them with fade in or out use the events `on.trigger.xt` or `off.trigger.xt`. 
+
+<demo>
+  <div class="gatsby_demo_item" data-iframe="iframe/components/scroll/block">
+  </div>
+</demo>
+
 ## @TODO
 
 Use events `'change.xt.scroll'` inside you can use the values of `self.detail.ratio` `self.detail.ratioInverse` `self.detail.ratioDouble`.

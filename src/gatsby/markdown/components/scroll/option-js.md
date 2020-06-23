@@ -26,8 +26,6 @@ You can set scroll mode with css selectors.
   </div>
   <div class="gatsby_demo_item" data-iframe="iframe/components/scroll/mode-responsive">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/scroll/mode-block">
-  </div>
 </demo>
 
 ## Distance

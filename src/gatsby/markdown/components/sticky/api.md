@@ -51,6 +51,21 @@ self.targets.filter(x => self.hasCurrent(x))
 
 ## Trigger
 
+Trigger events this way:
+
+```js
+document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('on.trigger.xt'))
+```
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | DOM Element                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Event                   | `on.trigger.xt`       | `elements` `targets` | Activation event             |
+| Event                   | `off.trigger.xt`      | `elements` `targets` | Deactivation event            |
+
+</div>
+
 [[noteDefault]]
 | For triggering and listening the **resize event**, refer to [structure](/components/structure/other#resize).
 
@@ -63,7 +78,7 @@ const eventChange = e => {
   // logic
 }
 
-document.querySelector('#my-element').addEventListener('change.xt', eventChange)
+document.querySelector('#my-element-or-target').addEventListener('change.xt', eventChange)
 ```
 
 Listen to events delegation with **useCapture** this way:
