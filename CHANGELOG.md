@@ -1,3 +1,16 @@
+## [0.14.9](https://github.com/minimit/xtend-library/compare/v0.14.8...v0.14.9) (2020-06-23)
+
+
+### Bug Fixes
+
+* semantic release options and branches ([fef4447](https://github.com/minimit/xtend-library/commit/fef4447e36fc51c3e85d2a0d8782610c2658d15b))
+* semantic release options and branches ([f5f12f4](https://github.com/minimit/xtend-library/commit/f5f12f4335560ca8bc3b63c62814695c5946876c))
+* **toggle:** fix timing delay fnc with queueStop other queue like in comment + comments ([793f3ee](https://github.com/minimit/xtend-library/commit/793f3ee713d58d5560d13d196a26c1d8ec83ff53))
+
+
+* Merge branch 'master' into release-0.14 ([b9b0814](https://github.com/minimit/xtend-library/commit/b9b0814db1ccf77fd899e964315078ce660497ed))
+* chore ([9a331b8](https://github.com/minimit/xtend-library/commit/9a331b864c123ae9b29518f1f328c70f294b2ef8))
+
 ## [0.14.8](https://github.com/minimit/xtend-library/compare/v0.14.7...v0.14.8) (2020-06-23)
 
 
