@@ -1,3 +1,48 @@
+## [0.14.8](https://github.com/minimit/xtend-library/compare/v0.14.7...v0.14.8) (2020-06-23)
+
+
+### Bug Fixes
+
+* **toggle:** toggle off set index and direction + revision scroll inverse ([f38e4fc](https://github.com/minimit/xtend-library/commit/f38e4fc68a6b3f807d9ae0d372dc9c9d3af7baaa))
+
+## [0.14.7](https://github.com/minimit/xtend-library/compare/v0.14.6...v0.14.7) (2020-06-23)
+
+
+### Bug Fixes
+
+* **toggle:** toggle off set index and direction + revision scroll inverse ([68791a5](https://github.com/minimit/xtend-library/commit/68791a51c5eed04fa088dfa1c2bc46fb070bd89f))
+* scroll and sticky refactor events + xt-block + fixes demos ([002efd6](https://github.com/minimit/xtend-library/commit/002efd615291858119282de8483f8c9d8bd53889))
+* **scroll:** fix scroll business logic start end fallback ([1271e94](https://github.com/minimit/xtend-library/commit/1271e94c07758633c4d08bbd47c9981e81dd83f2))
+
+## [0.14.6](https://github.com/minimit/xtend-library/compare/v0.14.5...v0.14.6) (2020-06-23)
+
+
+### Bug Fixes
+
+* **scroll:** fix scroll direction + demos ([ffed1f6](https://github.com/minimit/xtend-library/commit/ffed1f6fd82f8b5168b986d4964ad4d667cbb98b))
+
+## [0.14.5](https://github.com/minimit/xtend-library/compare/v0.14.4...v0.14.5) (2020-06-19)
+
+
+### Bug Fixes
+
+* **slider:** refactor slider nooverflow + refactor slider brands ([8952a01](https://github.com/minimit/xtend-library/commit/8952a01aa810881968ba4a78ba8322365bd19f95))
+
+## [0.14.4](https://github.com/minimit/xtend-library/compare/v0.14.3...v0.14.4) (2020-06-19)
+
+
+### Bug Fixes
+
+* **slider:** fix slider disabled an nooverflow refactor ([abb6215](https://github.com/minimit/xtend-library/commit/abb6215b9552c5cea53cf5e0a029f4be601318ef))
+
+## [0.14.3](https://github.com/minimit/xtend-library/compare/v0.14.2...v0.14.3) (2020-06-19)
+
+
+### Bug Fixes
+
+* **slider:**  jump slider only when outside window revision wrap ([9241575](https://github.com/minimit/xtend-library/commit/92415757c670e0b79d09dcb18519b930cdd6275f))
+* **slider:** jump slider only when outside window ([5ea95f5](https://github.com/minimit/xtend-library/commit/5ea95f5120a30dcaf0851dc529ff5e6d86a7f02a))
+
 ## [0.14.2](https://github.com/minimit/xtend-library/compare/v0.14.1...v0.14.2) (2020-06-19)
 
 
