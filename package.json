@@ -14,7 +14,13 @@
   ],
   "main": "dist/xtend.min.js",
   "module": "src/xt.js",
-  "files": ["dist/**", "src/*", "src/core/**", "src/addons/**", "src/extensions/**"],
+  "files": [
+    "dist/**",
+    "src/*",
+    "src/core/**",
+    "src/addons/**",
+    "src/extensions/**"
+  ],
   "scripts": {
     "webpack": "webpack --progress --colors",
     "build": "gatsby clean && gatsby build",
@@ -22,8 +28,7 @@
     "serve": "yarn build && gatsby serve -p 8888",
     "deploy": "yarn build && gh-pages -d public",
     "release": "npx semantic-release --dry-run --no-ci",
-    "lint": "eslint . --ext .js --fix",
-    "prerelease": "yarn lint"
+    "lint": "eslint . --ext .js --fix"
   },
   "dependencies": {
     "@google/markerclusterer": "^2.0.8",
@@ -37,7 +42,6 @@
     "@babel/core": "^7.8.4",
     "@babel/preset-env": "^7.8.4",
     "@hot-loader/react-dom": "^16.11.0",
-    "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/commit-analyzer": "^8.0.1",
     "@semantic-release/git": "^9.0.0",
     "@semantic-release/github": "^7.0.7",

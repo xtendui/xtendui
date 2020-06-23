@@ -9,19 +9,13 @@ module.exports = {
     { name: 'alpha', prerelease: true },
   ],
   plugins: [
-    // analyze commits with conventional-changelog
     ['@semantic-release/commit-analyzer'],
-    // generate changelog content with conventional-changelog
     ['@semantic-release/release-notes-generator'],
-    // updates the changelog file
-    '@semantic-release/changelog',
-    // publishes to npm
     ['@semantic-release/npm', { npmPublish: true }],
-    // creating a new version commit
     [
       '@semantic-release/git',
       {
-        assets: ['package.json', 'package-lock.json', 'CHANGELOG.md', '**/*.js'],
+        assets: ['package.json', 'package-lock.json', 'CHANGELOG.md'],
         message: 'chore(release): ${nextRelease.version} [skip ci]',
       },
     ],
