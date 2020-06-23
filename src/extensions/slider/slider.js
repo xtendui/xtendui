@@ -963,7 +963,7 @@ class Slider extends Xt.Toggle {
     self.detail.dragRatio = Math.abs(self.detail.dragStart - self.detail.dragCurrent) / self.detail.draggerWidth
     self.detail.dragRatioInverse = 1 - self.detail.dragRatio
     self.direction = self.detail.dragStart - self.detail.dragCurrent < 0 ? -1 : 1
-    self.inverse = self.direction === -1
+    self.inverse = self.direction < 0
     // drag position
     if (self.initial) {
       self.dragger.classList.add('transition-none')
@@ -991,7 +991,7 @@ class Slider extends Xt.Toggle {
     const dragPosCurrent = self.detail.dragPosCurrent || 0
     // prevent dragging animation
     dragger.classList.remove('duration-none')
-    // activate or reset
+    // activation or reset
     const dragDist = self.detail.dragPosReal - dragPosCurrent
     const direction = Math.sign(dragDist)
     const dragDistAbs = Math.abs(dragDist)

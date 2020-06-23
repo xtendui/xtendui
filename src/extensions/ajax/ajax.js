@@ -95,7 +95,7 @@ class Ajax extends Xt.Toggle {
         if (url !== '') {
           if (loc === url) {
             found = true
-            // activate
+            // activation
             self.eventOn(element, true)
           } else {
             // deactivate

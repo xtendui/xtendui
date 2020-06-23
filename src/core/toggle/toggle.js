@@ -227,7 +227,7 @@ class Toggle {
           currents++
           // reactivate
           requestAnimationFrame(() => {
-            // activate
+            // activation
             self.eventOn(element, true)
           })
         }
@@ -243,7 +243,7 @@ class Toggle {
         }
         // initial
         currents += todo
-        // activate
+        // activation
         requestAnimationFrame(() => {
           for (let i = start; i < todo; i++) {
             self.eventOn(self.elements[i], true)
@@ -1143,7 +1143,7 @@ class Toggle {
    */
   activate(el) {
     const self = this
-    // activate
+    // activation
     el.classList.add(...self.classes)
     el.classList.remove(...self.classesIn)
     el.classList.remove(...self.classesInDone)
@@ -1168,7 +1168,7 @@ class Toggle {
    */
   activateDone(el) {
     const self = this
-    // activate
+    // activation
     el.classList.add(...self.classesInDone)
   }
 
@@ -1178,7 +1178,7 @@ class Toggle {
    */
   deactivate(el) {
     const self = this
-    // activate
+    // activation
     el.classList.remove(...self.classes)
     el.classList.remove(...self.classesIn)
     el.classList.remove(...self.classesInDone)
@@ -1199,7 +1199,7 @@ class Toggle {
    */
   deactivateDone(el) {
     const self = this
-    // activate
+    // activation
     el.classList.remove(...self.classesOut)
   }
 
@@ -1253,12 +1253,12 @@ class Toggle {
       for (const type in self.detail['queue' + actionCurrent][0]) {
         self.queueStart(actionCurrent, actionOther, type, 0, true)
       }
-      // activated
+      // activationd
       return true
     } else if (!e || !e.type || e.type !== 'on.trigger.xt') {
       self.eventOff(element, false, e)
     }
-    // activated
+    // activationd
     return false
   }
 
@@ -1310,7 +1310,7 @@ class Toggle {
       const actionCurrent = 'Off'
       const actionOther = 'On'
       self.eventQueue(actionCurrent, groupElements, targets, elementsInner, targetsInner, e)
-      // if queue too big
+      // remove queue not started if queue too big
       if (self.detail['queue' + actionCurrent].length > options.max) {
         // remove queue and stop
         const removedOn = self.detail['queue' + actionOther].shift()
@@ -1608,32 +1608,9 @@ class Toggle {
           clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'DelayTimeout'))
           clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'))
           // done other queue
-          self.queueDelayDone(actionCurrent, actionOther, obj, el, type, true)
-          self.queueAnimDone(actionCurrent, actionOther, obj, el, type, true)
+          self.queueDelayDone(actionOther, actionCurrent, obj, el, type, true)
+          self.queueAnimDone(actionOther, actionCurrent, obj, el, type, true)
         }
-      }
-    }
-  }
-
-  /**
-   * queue stop all
-   */
-  queueStopAll() {
-    const self = this
-    // stop all obj in queues
-    if (self.detail) {
-      // @FIX not already initialized
-      const actions = [
-        { current: 'On', other: 'Off' },
-        { current: 'Off', other: 'On' },
-      ]
-      for (const action of actions) {
-        // @FIX slider resize multiple queues
-        // @FIX autoclose with appendTo outside ajax
-        // remove queue and stop
-        const removed = self.detail['queue' + action.current].shift()
-        self.queueStop(action.current, action.other, removed)
-        self.detail['queue' + action.current] = []
       }
     }
   }
@@ -1709,7 +1686,7 @@ class Toggle {
     const self = this
     const options = self.options
     if (actionCurrent === 'On') {
-      // activate
+      // activation
       self.activate(el)
       // special
       const before = getComputedStyle(el, ':before')
@@ -1728,8 +1705,8 @@ class Toggle {
         const el = obj.targets ? obj.targets.queueEls[0] : obj.elements.queueEls[0]
         Xt.focusLimit.on(el)
       }
+      // @FIX when standalone !self.targets.length && type === 'elements'
       if (type === 'targets' || (!self.targets.length && type === 'elements')) {
-        // @FIX when standalone
         // appendTo
         if (options.appendTo) {
           const appendToTarget = document.querySelector(options.appendTo)
@@ -1772,7 +1749,7 @@ class Toggle {
       // listener dispatch
       el.dispatchEvent(new CustomEvent('on.xt'))
     } else if (actionCurrent === 'Off') {
-      // activate
+      // activation
       self.deactivate(el)
       // special
       const before = getComputedStyle(el, ':before')
@@ -1855,7 +1832,7 @@ class Toggle {
     const self = this
     const options = self.options
     if (actionCurrent === 'On') {
-      // activate
+      // activation
       self.activateDone(el)
       // special
       const before = getComputedStyle(el, ':before')
@@ -1868,7 +1845,7 @@ class Toggle {
       // listener dispatch
       el.dispatchEvent(new CustomEvent('ondone.xt'))
     } else if (actionCurrent === 'Off') {
-      // activate
+      // activation
       self.deactivateDone(el)
       // special
       if (type === 'targets' || (!self.targets.length && type === 'elements')) {
