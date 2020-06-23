@@ -1134,7 +1134,6 @@ class Toggle {
       }
     }
     self.direction = self.inverse !== null ? (self.inverse ? -1 : 1) : self.currentIndex > index ? -1 : 1
-    self.inverse = null
     self.currentIndex = index
   }
 
@@ -1156,7 +1155,7 @@ class Toggle {
     if (self.initial) {
       el.classList.add(...self.classesInitial)
     }
-    if (self.direction === 1) {
+    if (self.direction > 0) {
       el.classList.remove(...self.classesInverse)
     } else {
       el.classList.add(...self.classesInverse)
@@ -1187,7 +1186,7 @@ class Toggle {
     if (!self.initial) {
       el.classList.remove(...self.classesInitial)
     }
-    if (self.direction === 1) {
+    if (self.direction > 0) {
       el.classList.remove(...self.classesInverse)
     } else {
       el.classList.add(...self.classesInverse)
@@ -1972,6 +1971,7 @@ class Toggle {
         // auto
         self.eventAutostart()
         // reset
+        self.inverse = null
         self.initial = false
         self.wrap = false
       })
