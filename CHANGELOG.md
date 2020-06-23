@@ -1,3 +1,10 @@
+## [0.14.6](https://github.com/minimit/xtend-library/compare/v0.14.5...v0.14.6) (2020-06-23)
+
+
+### Bug Fixes
+
+* **scroll:** fix scroll direction + demos ([ffed1f6](https://github.com/minimit/xtend-library/commit/ffed1f6fd82f8b5168b986d4964ad4d667cbb98b))
+
 ## [0.14.5](https://github.com/minimit/xtend-library/compare/v0.14.4...v0.14.5) (2020-06-19)
 
 
