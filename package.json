@@ -20,8 +20,7 @@
     "dev": "gatsby clean && gatsby develop -p 8888",
     "serve": "yarn build && gatsby serve -p 8888",
     "deploy": "yarn build && gh-pages -d public",
-    "release": "npx semantic-release --no-ci",
-    "release:dry": "npx semantic-release --dry-run",
+    "release": "npx semantic-release --dry-run --no-ci",
     "lint": "eslint . --ext .js --fix"
   },
   "dependencies": {

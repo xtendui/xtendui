@@ -5,6 +5,7 @@ on:
     branches:
       - master
       - release-0.14
+      - release-0.15
 
 jobs:
   build:

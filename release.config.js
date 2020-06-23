@@ -72,7 +72,13 @@ const releaseNotesGeneratorOptions = {
 module.exports = {
   debug: true,
   repositoryUrl: 'https://github.com/minimit/xtend-library',
-  branches: ['master', 'release-0.14', { name: 'beta', prerelease: true }, { name: 'alpha', prerelease: true }],
+  branches: [
+    'master',
+    { name: 'release-0.14', prerelease: true },
+    { name: 'release-0.15', prerelease: true },
+    { name: 'beta', prerelease: true },
+    { name: 'alpha', prerelease: true },
+  ],
   plugins: [
     // analyze commits with conventional-changelog
     ['@semantic-release/commit-analyzer', commitAnalyzerOptions],
