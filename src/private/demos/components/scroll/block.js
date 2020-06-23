@@ -11,7 +11,6 @@ Xt.mount.push({
 
     let self = new Xt.Scroll(object, {
       elements: ':scope > *',
-      distance: '30%',
     })
 
     // eventBlock
