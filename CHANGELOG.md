@@ -1,3 +1,12 @@
+## [0.14.7](https://github.com/minimit/xtend-library/compare/v0.14.6...v0.14.7) (2020-06-23)
+
+
+### Bug Fixes
+
+* **toggle:** toggle off set index and direction + revision scroll inverse ([68791a5](https://github.com/minimit/xtend-library/commit/68791a51c5eed04fa088dfa1c2bc46fb070bd89f))
+* scroll and sticky refactor events + xt-block + fixes demos ([002efd6](https://github.com/minimit/xtend-library/commit/002efd615291858119282de8483f8c9d8bd53889))
+* **scroll:** fix scroll business logic start end fallback ([1271e94](https://github.com/minimit/xtend-library/commit/1271e94c07758633c4d08bbd47c9981e81dd83f2))
+
 ## [0.14.6](https://github.com/minimit/xtend-library/compare/v0.14.5...v0.14.6) (2020-06-23)
 
 
