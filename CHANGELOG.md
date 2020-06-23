@@ -1,3 +1,98 @@
+# [0.15.0](https://github.com/minimit/xtend-library/compare/v0.14.8...v0.15.0) (2020-06-23)
+
+
+### Bug Fixes
+
+* release ([ebe9a62](https://github.com/minimit/xtend-library/commit/ebe9a62511826e7365a631568abc45174a1c5438))
+* **scroll:** fix scroll business logic start end fallback ([ea7140c](https://github.com/minimit/xtend-library/commit/ea7140c817134a2af6ff8df8ca63df071835e49f))
+* **scroll:** fix scroll direction + demos ([8314034](https://github.com/minimit/xtend-library/commit/8314034e57309199c68fe2acacfaadc54391220c))
+* **slider:** refactor overflowAuto ([4058e26](https://github.com/minimit/xtend-library/commit/4058e26c4009d4f3ebeb5c826239b955da48ed20))
+* **slider:** refactor slider nooverflow false ([6f1d9fb](https://github.com/minimit/xtend-library/commit/6f1d9fbcaf4724b0320d97717c038cc8db7dcb0c))
+* **slider:** refactor slider pagination ([d28013d](https://github.com/minimit/xtend-library/commit/d28013d6ad587a834d0a9092e1970e86d66e9915))
+* **slider:** refactor slider slide height calculation performances ([5671d44](https://github.com/minimit/xtend-library/commit/5671d4455c4e43d12528b9de643e43e449e6b091))
+* **toggle:** fix timing delay fnc with queueStop other queue like in comment + comments ([9d0ef45](https://github.com/minimit/xtend-library/commit/9d0ef4508c1846be2eb78358efffdddf14106241))
+* **toggle:** fixed timing delay function and sliders with setindex and setdirection ([343a318](https://github.com/minimit/xtend-library/commit/343a318b4ec210857a3941a9d2f6083f9b871954))
+* **toggle:** toggle off set index and direction + revision scroll inverse ([24b78ef](https://github.com/minimit/xtend-library/commit/24b78ef2c4751952846e590b4b158565297e4db1))
+* **toggle:** toggle off set index and direction + revision scroll inverse ([020c942](https://github.com/minimit/xtend-library/commit/020c9422a2a6741480f1aac0d43207a50a8d7bb5))
+* card asset full and refactor addons card selector + docs body themes ([1b963e9](https://github.com/minimit/xtend-library/commit/1b963e91f7fb79e39a4a65c74cee3fc2b21661e3))
+* card asset full and refactor addons card selector + docs body themes ([974d005](https://github.com/minimit/xtend-library/commit/974d0050384b65aa9493f705843e0a3cbb715268))
+* links styles refactor ([21694a6](https://github.com/minimit/xtend-library/commit/21694a65c25618a945fd7a8110ecea41b4b70d7d))
+* links styles refactor ([1df75f7](https://github.com/minimit/xtend-library/commit/1df75f72fcff5581d8e6b73f121c8624c61971b4))
+* scroll and sticky refactor events + xt-block + fixes demos ([8c99eba](https://github.com/minimit/xtend-library/commit/8c99ebad34684e952d60d152255393c1e57587be))
+
+
+* Merge branch 'release-0.15' ([373edfe](https://github.com/minimit/xtend-library/commit/373edfeceb0516ed09b622c0e96408cac3596c79))
+* merge release-0.14 ([74a381a](https://github.com/minimit/xtend-library/commit/74a381a7b91e108b5fdead60c1f40e4d7976f795))
+* chore ([113188c](https://github.com/minimit/xtend-library/commit/113188cfd067564cc0b069d5c60025a8b3b523d8))
+* chore ([438010c](https://github.com/minimit/xtend-library/commit/438010ca80f47fbe6604c722c5c8b94c85f62d3a))
+* chore ([861dbd2](https://github.com/minimit/xtend-library/commit/861dbd22e3a102d0286c862c4058f0d9dc29780a))
+* chore ([c501fd9](https://github.com/minimit/xtend-library/commit/c501fd983fa8554b49e9d51c4966c7266250cd0d))
+* chore ([83e4c60](https://github.com/minimit/xtend-library/commit/83e4c60b2ce309c3429cd42c5def29ea43069dc6))
+* chore ([dc90769](https://github.com/minimit/xtend-library/commit/dc90769b66367588e378817d6e3bb634204975a0))
+* chore ([d92afc2](https://github.com/minimit/xtend-library/commit/d92afc213386d59992afee6b1839e52949eff35e))
+* chore ([5fac835](https://github.com/minimit/xtend-library/commit/5fac835fe1ead90cc30083fd52cd99f03449141c))
+* chore ([575e75f](https://github.com/minimit/xtend-library/commit/575e75ff00353634070dde5f60b945a5b47badef))
+* chore ([2ed0470](https://github.com/minimit/xtend-library/commit/2ed04705ae0500b2cfc63b9b5b6b4b1bf24bcd7e))
+* chore ([d1d09cc](https://github.com/minimit/xtend-library/commit/d1d09ccabdd4b53691014f96a99c09135fe9128d))
+* Merge branch 'release-0.14' into release-0.15 ([aa99fee](https://github.com/minimit/xtend-library/commit/aa99fee9683d710f110fe66593ae5b6a613a00d6))
+* chore ([33f8a7f](https://github.com/minimit/xtend-library/commit/33f8a7f58e170c99a83d2049e14de87bff90f733))
+* Merge branch 'release-0.14' into release-0.15 ([9d892cf](https://github.com/minimit/xtend-library/commit/9d892cf408d1e0dba42beb6cde5a77b165e9dcd5))
+* Merge branch 'release-0.14' into release-0.15 ([b12e0e0](https://github.com/minimit/xtend-library/commit/b12e0e0bdaa636b152c671237627fd2ef62aad18))
+* Merge branch 'release-0.14' into release-0.15 ([dbe2739](https://github.com/minimit/xtend-library/commit/dbe2739e038bdbd6dd44a7b2f1c01f35e90918ce))
+* Merge branch 'release-0.14' into release-0.15 ([4afc8be](https://github.com/minimit/xtend-library/commit/4afc8be6e48f55d7d869d824aec2e87b8a57c850))
+* Merge branch 'release-0.14' into release-0.15 ([57ed274](https://github.com/minimit/xtend-library/commit/57ed274829ca58974ad82bf5f44ce9ecc2ce9c1c))
+* Merge branch 'master' into release-0.15 ([7cca064](https://github.com/minimit/xtend-library/commit/7cca0641ae4937a741b0613f457b6e236501f078))
+
+
+### chore
+
+* backdrop revision animation ([2e12ce4](https://github.com/minimit/xtend-library/commit/2e12ce4aaf7f5dd200c069eda6ecc5b3fae7492e))
+* code styles ([a97f213](https://github.com/minimit/xtend-library/commit/a97f2134c61867dbd8bbe2af458bf1cc7b58b5fa))
+* docs ([957b57b](https://github.com/minimit/xtend-library/commit/957b57bfe395d42be737315820e57962fc403f1d))
+* docs ([19722a9](https://github.com/minimit/xtend-library/commit/19722a943167626587d5c4c28601b2322f111f18))
+* docs ([7074715](https://github.com/minimit/xtend-library/commit/70747155ee22adeb62321e58858d9d67c361f80e))
+
+
+### demos
+
+* loading eager in slider and fix industrial-hero-v1 ([4f5b4b8](https://github.com/minimit/xtend-library/commit/4f5b4b8943857fd396ba15436501243dc26bbf71))
+* refactor theme demos name ([a110ff6](https://github.com/minimit/xtend-library/commit/a110ff6dfa9dea69f570bc59d7664b56b00c3e86))
+* revision iframe demos ([dc58b50](https://github.com/minimit/xtend-library/commit/dc58b5027e146a179ae9587a27e20fa9258b28ac))
+
+
+### Documentation
+
+* **scroll:** revision demos scroll ([9130a8c](https://github.com/minimit/xtend-library/commit/9130a8c1df2739a2e75b3e28110173dddd6d5945))
+* badge color ([bdb86cd](https://github.com/minimit/xtend-library/commit/bdb86cdd80b38455a932daa6fbb197e6e8cb181d))
+* demo fashion listing v2 ([27e590d](https://github.com/minimit/xtend-library/commit/27e590df829cfe9de2873c63888cd7af440b67f9))
+* demos listing columns ([d33829c](https://github.com/minimit/xtend-library/commit/d33829c75dd4ab6bdd4b418c63a531cfdd9bffba))
+* favicon ([9e2d7f6](https://github.com/minimit/xtend-library/commit/9e2d7f6dec84f35a0b62ed7cd7804521190202a1))
+* fix aniye listing ([3e0e5ab](https://github.com/minimit/xtend-library/commit/3e0e5ab46ccb9e3ab14c46d29e7c48a3574af482))
+* footer link ([2862b8b](https://github.com/minimit/xtend-library/commit/2862b8bbc13e4b1d8184dc3c4d638c13100a0d8c))
+* less themes indent ([cbe3682](https://github.com/minimit/xtend-library/commit/cbe3682f4796b1e83cccbf654f3976320c76f9fa))
+* list and row demos anything ([72227a5](https://github.com/minimit/xtend-library/commit/72227a582bca85d45342924d18b04a4f942421a8))
+* refactor demos tr instead of targets and elements ([a353de9](https://github.com/minimit/xtend-library/commit/a353de98f61567ad901d1bfe74c039d7bc8dc33c))
+* refactor media and card themes with card ([92a1260](https://github.com/minimit/xtend-library/commit/92a1260f803f335911156b9e76662a8e6ebc5f7c))
+* refactor styles & { ([2b650fb](https://github.com/minimit/xtend-library/commit/2b650fb8aa0a12c1c6ee0c916fa4b5eba3149175))
+* refactor styles & { ([5020fd3](https://github.com/minimit/xtend-library/commit/5020fd34c0afa1226f226c563eb32c7e4c8443e3))
+* revision demos listing ([c6c33e6](https://github.com/minimit/xtend-library/commit/c6c33e6b50123ba862892595dfd47e9bfb5129b5))
+* scroll block demo + revision scroll demos + scroll super initevents ([293a16a](https://github.com/minimit/xtend-library/commit/293a16a4a37b7c5495594728772f7d7839b8690a))
+* seo title and description ([99bc237](https://github.com/minimit/xtend-library/commit/99bc23703aaffc9c961e65a0ccdab2ece76d3b6a))
+* titles ([562f58c](https://github.com/minimit/xtend-library/commit/562f58c08a9d1fb96a3439de6418d79752737b90))
+* various fixes doc ([d17fef2](https://github.com/minimit/xtend-library/commit/d17fef28809628499ad6b8348d6e53b26bac62c6))
+* WIP listing sun68 ([358304e](https://github.com/minimit/xtend-library/commit/358304e3107a0de44ee8aa83a1cd8b755c5f220a))
+
+
+### Features
+
+* **card:** refactor card and overlay styles ([e32d4da](https://github.com/minimit/xtend-library/commit/e32d4da58cc998eff1520aa7971810a3a9dcf2e9))
+* **card:** refactor card styles and no > selectors ([9f4d96b](https://github.com/minimit/xtend-library/commit/9f4d96b6b61b553136c49d51e33ea0804888b763))
+* **css:** refactor css animations without fill-mode ([12d389e](https://github.com/minimit/xtend-library/commit/12d389ebdf6b134c83220d94fdf06090fbb2f2b7))
+* refactor global and variables and utils ([8e5da2a](https://github.com/minimit/xtend-library/commit/8e5da2af7da8b09db9ef6afd8d5a0236a05266e7))
+* vars.js to variables.js ([2dfacb3](https://github.com/minimit/xtend-library/commit/2dfacb37348612d82c911138ea6456aea1c92093))
+* **overlay:** refactor overlay addons in core ([2ae6651](https://github.com/minimit/xtend-library/commit/2ae66515bfb53b0882e7029189071436f7ae8d43))
+* refactor row and other docs fixes ([de4b113](https://github.com/minimit/xtend-library/commit/de4b1131f12439019638f19baf06510cfc2363cf))
+
 ## [0.14.8](https://github.com/minimit/xtend-library/compare/v0.14.7...v0.14.8) (2020-06-23)
 
 
