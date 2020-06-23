@@ -97,6 +97,7 @@ class Scroll extends Xt.Toggle {
    * init events
    */
   initEvents() {
+    super.initEvents()
     const self = this
     const options = self.options
     // event on

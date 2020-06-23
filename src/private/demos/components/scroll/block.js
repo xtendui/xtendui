@@ -1,0 +1,39 @@
+import { Xt } from 'xtend-library/src/xt.js'
+
+Xt.mount.push({
+  matches: '.demo--scroll-container-block',
+  mount: object => {
+    // vars
+
+    const btns = object.querySelectorAll('#demo--scroll-container-block--btn')
+
+    // init
+
+    let self = new Xt.Scroll(object, {
+      elements: ':scope > *',
+    })
+
+    // eventBlock
+
+    const eventBlock = () => {
+      for (const element of self.elements) {
+        // fade out
+        element.dispatchEvent(new CustomEvent('off.trigger.xt'))
+        // block
+        element.classList.add('scroll-block')
+      }
+    }
+
+    for (const btn of btns) {
+      btn.addEventListener('click', eventBlock)
+    }
+
+    // unmount
+
+    const unmount = () => {
+      self.destroy()
+      self = null
+    }
+    return unmount
+  },
+})
