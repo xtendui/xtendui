@@ -189,9 +189,9 @@ class Scroll extends Xt.Toggle {
         self.detail.ratio = self.detail.ratio < 1 ? self.detail.ratio : 1
         self.detail.ratioInverse = 1 - self.detail.ratio
         self.detail.ratioDouble = 1 - Math.abs((self.detail.ratio - 0.5) * 2)
-        //self.inverse = scrollTop < self.detail.scrollTopOld
         // activation
-        if (current >= 0 && current <= total) {
+        // @FIX fixes on page top || self.detail.start > self.detail.end
+        if ((current >= 0 && current <= total) || self.detail.start > self.detail.end) {
           // inside
           changed = self.checkOn(el)
           if (changed) {
@@ -270,15 +270,6 @@ class Scroll extends Xt.Toggle {
         )
       }
     }
-    // save for direction
-    cancelAnimationFrame(Xt.dataStorage.get(self.object, self.componentNamespace + 'ScrollObjectFrame'))
-    Xt.dataStorage.set(
-      self.object,
-      self.componentNamespace + 'ScrollDispatchFrame',
-      requestAnimationFrame(() => {
-        self.detail.scrollTopOld = scrollTop
-      })
-    )
   }
 
   //
@@ -302,7 +293,7 @@ Scroll.optionsDefault = {
   aria: false,
   // scroll only
   sticky: false,
-  distance: 50,
+  distance: 100,
   trigger: '100%',
   start: '100%',
   end: false,
