@@ -38,7 +38,7 @@ You can also set a **fallback** distance from top and bottom for elements that a
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `distance:Number|Percent`                          | `50`        | Activation distance from window's top and bottom            |
+| Option                  | `distance:Number|Percent`                          | `100`        | Activation distance from window's top and bottom            |
 | Option                  | `fallback:Number|Percent`                          | `0`        | Fallback distance when too close to the start and end of the page            |
 
 </div>
