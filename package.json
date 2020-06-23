@@ -14,13 +14,9 @@
   ],
   "main": "dist/xtend.min.js",
   "module": "src/xt.js",
-  "files": [
-    "dist/**",
-    "src/*",
-    "src/core/**",
-    "src/addons/**",
-    "src/extensions/**"
-  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "webpack": "webpack --progress --colors",
     "build": "gatsby clean && gatsby build",
