@@ -16,6 +16,7 @@ if (typeof window !== 'undefined') {
   require('xtend-library/src/private/demos/components/overlay/events-methods.js')
   require('xtend-library/src/private/demos/components/overlay/nested.js')
   require('xtend-library/src/private/demos/components/scroll/delay.js')
+  require('xtend-library/src/private/demos/components/scroll/direction.js')
   require('xtend-library/src/private/demos/components/scroll/mode-block.js')
   require('xtend-library/src/private/demos/components/scroll/parallax.js')
   require('xtend-library/src/private/demos/components/slider/events-methods.js')
