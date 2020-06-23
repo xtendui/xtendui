@@ -1,4 +1,4 @@
-const scrollContainerBlocks = document.querySelectorAll('.demo--scroll-container-block > *')
+const scrollContainerBlocks = document.querySelectorAll('.demo--scroll-block > *')
 
 if (scrollContainerBlocks.length) {
   setTimeout(() => {

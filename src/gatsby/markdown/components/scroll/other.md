@@ -6,6 +6,15 @@ title: "Other"
 date: "2019-03-15"
 ---
 
+## Indicator
+
+Add the class `.scroll-indicator` to show show visual info on a scroll component.
+
+<demo>
+  <div class="gatsby_demo_item" data-iframe="iframe/components/scroll/indicator">
+  </div>
+</demo>
+
 ## Direction
 
 Animate with inverse `.inverse` or `self.direction`.

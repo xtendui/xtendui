@@ -1,7 +1,19 @@
-.demo--scroll-container--responsive > * {
-  @media @max-sm {
-    // mode-once
-    &:not(.scroll-done) {
+.demo--scroll-responsive {
+  .card {
+    @media @max-sm {
+      // mode-once
+      &:not(.scroll-done) {
+        opacity: 0;
+        &.fade {
+          .anim-x.in();
+        }
+        &.fade-out {
+          .anim-x.out();
+        }
+      }
+    }
+    @media @min-sm {
+      // mode-infinite
       opacity: 0;
       &.fade {
         .anim-x.in();
@@ -9,16 +21,6 @@
       &.fade-out {
         .anim-x.out();
       }
-    }
-  }
-  @media @min-sm {
-    // mode-infinite
-    opacity: 0;
-    &.fade {
-      .anim-x.in();
-    }
-    &.fade-out {
-      .anim-x.out();
     }
   }
 }

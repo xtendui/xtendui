@@ -1,12 +1,12 @@
 import { Xt } from 'xtend-library/src/xt.js'
 
 Xt.mount.push({
-  matches: '.demo--scroll-container--direction',
+  matches: '.demo--scroll-direction',
   mount: object => {
     // init
 
     let self = new Xt.Scroll(object, {
-      elements: ':scope > *',
+      elements: '.card',
       delayOn: current => {
         return Math.min((current + 1) * 75, 300)
       },

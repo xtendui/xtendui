@@ -1,16 +1,16 @@
 import { Xt } from 'xtend-library/src/xt.js'
 
 Xt.mount.push({
-  matches: '.demo--scroll-container-block',
+  matches: '.demo--scroll-block',
   mount: object => {
     // vars
 
-    const btns = object.querySelectorAll('.demo--scroll-container-block--btn')
+    const btns = object.querySelectorAll('.demo--scroll-block--btn')
 
     // init
 
     let self = new Xt.Scroll(object, {
-      elements: ':scope > *',
+      elements: '.card, .btn',
     })
 
     // eventBlock

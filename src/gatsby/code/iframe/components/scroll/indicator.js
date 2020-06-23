@@ -14,11 +14,11 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="row row-default demo--scroll-infinite"
+<div class="row row-default demo--scroll-indicator"
   data-xt-scroll="{ elements: '.card' }">
 
   <div class="col-12">
-    <div class="card card-default">
+    <div class="card card-default scroll-indicator">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">

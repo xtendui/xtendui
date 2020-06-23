@@ -1,12 +1,14 @@
-.demo--scroll-container--outside-once > * {
-  // mode-outside-once
-  &.scroll-outside:not(.scroll-done) {
-    opacity: 0;
-    &.fade {
-      .anim-x.in();
-    }
-    &.fade-out {
-      .anim-x.out();
+.demo--scroll-outside-once {
+  .card {
+    // mode-outside-once
+    &.scroll-outside:not(.scroll-done) {
+      opacity: 0;
+      &.fade {
+        .anim-x.in();
+      }
+      &.fade-out {
+        .anim-x.out();
+      }
     }
   }
 }

@@ -78,7 +78,7 @@ class Scroll extends Xt.Toggle {
         }
       }
       // indicator
-      if (el.classList.contains('indicator')) {
+      if (el.classList.contains('scroll-indicator')) {
         const indicatorTrigger = Xt.createElement('<div class="xt-ignore xt-indicator xt-indicator-trigger"></div>')
         document.body.append(indicatorTrigger)
         const indicatorStart = Xt.createElement('<div class="xt-ignore xt-indicator xt-indicator-start"></div>')
@@ -247,7 +247,7 @@ class Scroll extends Xt.Toggle {
           }
         }
         // indicator
-        if (el.classList.contains('indicator')) {
+        if (el.classList.contains('scroll-indicator')) {
           const triggerEl = document.body.querySelector('.xt-indicator-trigger')
           triggerEl.style.top = self.detail.trigger + 'px'
           const startEl = document.body.querySelector('.xt-indicator-start')
