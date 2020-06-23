@@ -33,7 +33,7 @@ Xt.mount.push({
 
     let self = new Xt.Scroll(object, {
       sticky: 'fixed',
-      end: 250,
+      end: 75,
     })
 
     // change

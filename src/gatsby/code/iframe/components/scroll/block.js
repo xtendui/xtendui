@@ -142,7 +142,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="indicator">
+  <div>
     <button type="button" class="btn btn-primary demo--scroll-container-block--btn">
       Click to fade out and block
     </button>
