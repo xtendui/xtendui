@@ -245,14 +245,6 @@ class Scroll extends Xt.Toggle {
             )
           }
         }
-        // direction
-        if (changed) {
-          if (self.inverse) {
-            el.classList.add('inverse')
-          } else {
-            el.classList.remove('inverse')
-          }
-        }
         // indicator
         if (el.classList.contains('indicator')) {
           const triggerEl = document.body.querySelector('.xt-indicator-trigger')
