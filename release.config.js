@@ -16,7 +16,6 @@ const releaseNotesGeneratorOptions = {
   writerOpts: {
     transform: (commit, context) => {
       const issues = []
-
       if (commit.type === 'breaking') {
         commit.type = 'Breaking'
       } else if (commit.type === 'feat') {
@@ -74,8 +73,8 @@ module.exports = {
   repositoryUrl: 'https://github.com/minimit/xtend-library',
   branches: [
     'master',
-    { name: 'release-0.14', prerelease: true },
-    { name: 'release-0.15', prerelease: true },
+    { name: 'release-0.14', prerelease: false },
+    { name: 'release-0.15', prerelease: false },
     { name: 'beta', prerelease: true },
     { name: 'alpha', prerelease: true },
   ],
@@ -92,7 +91,7 @@ module.exports = {
     [
       '@semantic-release/git',
       {
-        assets: ['package.json', 'package-lock.json', 'CHANGELOG.md'],
+        assets: ['package.json', 'package-lock.json', 'CHANGELOG.md', '**/*.js'],
         message: 'chore(release): ${nextRelease.version} [skip ci]',
       },
     ],
