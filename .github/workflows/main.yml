@@ -18,10 +18,6 @@ jobs:
         persist-credentials: false
     - name: Yarn Install
       run: yarn install --frozen-lockfile
-  release:
-    if: "!contains(github.event.commits[0].message, '[skip ci]')"
-    runs-on: ubuntu-latest
-    steps:
     - name: Semantic Release
       uses: cycjimmy/semantic-release-action@v2
       with:
@@ -33,10 +29,6 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.semantic_release_github_token }}
         NPM_TOKEN: ${{ secrets.semantic_release_npm_token }}
-  deploy:
-    if: "!contains(github.event.commits[0].message, '[skip ci]')"
-    runs-on: ubuntu-latest
-    steps:
     - name: Github Pages
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
