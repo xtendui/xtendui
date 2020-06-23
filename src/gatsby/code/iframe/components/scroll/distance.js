@@ -15,9 +15,9 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="list list-default list-space-medium demo--scroll-container--distance"
-  data-xt-scroll="{ elements: ':scope > *', distance: 0 }">
+  data-xt-scroll="{ elements: ':scope > *', distance: '30%', fallback: '20%' }">
 
-  <div class="card card-primary">
+  <div class="card card-primary indicator">
     <div class="card-design"></div>
     <div class="card-inner">
       <div class="card-content">
