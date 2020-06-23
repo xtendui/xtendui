@@ -42,6 +42,7 @@ class Toggle {
     self.elements = []
     self.targets = []
     self.currentIndex = null
+    self.oldIndex = null
     self.direction = null
     self.inverse = null
     self.initialCurrents = []
@@ -202,6 +203,7 @@ class Toggle {
     self.initial = true
     self.wrap = false
     self.currentIndex = null
+    self.oldIndex = null
     // [disabled]
     self.destroyDisabled()
     // reset namespace
@@ -1120,12 +1122,12 @@ class Toggle {
   }
 
   /**
-   * set index and direction
+   * set index
    * @param {Node|HTMLElement|EventTarget|Window} element Current element
    */
-  setIndexAndDirection(element) {
+  setIndex(element) {
     const self = this
-    // setIndexAndDirection
+    // set index
     let index = 0
     for (const [i, el] of self.elements.entries()) {
       if (el === element) {
@@ -1133,8 +1135,23 @@ class Toggle {
         break
       }
     }
-    self.direction = self.inverse !== null ? (self.inverse ? -1 : 1) : self.currentIndex > index ? -1 : 1
+    self.oldIndex = self.currentIndex
     self.currentIndex = index
+  }
+
+  /**
+   * set direction
+   */
+  setDirection() {
+    const self = this
+    // set direction
+    if (self.oldIndex === null) {
+      self.direction = 1
+    } else if (self.inverse !== null) {
+      self.direction = self.inverse ? -1 : 1
+    } else {
+      self.direction = self.oldIndex > self.currentIndex ? -1 : 1
+    }
   }
 
   /**
@@ -1228,7 +1245,8 @@ class Toggle {
       // on
       const groupElements = self.getElements(element)
       self.addCurrent(groupElements[0])
-      self.setIndexAndDirection(element)
+      self.setIndex(element)
+      self.setDirection()
       const targets = self.getTargets(element)
       const elementsInner = Xt.queryAll(element, options.elementsInner)
       const targetsInner = Xt.queryAll(targets, options.targetsInner)
@@ -1281,7 +1299,7 @@ class Toggle {
       // off
       const groupElements = self.getElements(element)
       self.removeCurrent(groupElements[0])
-      self.setIndexAndDirection(element)
+      self.setDirection()
       const targets = self.getTargets(element)
       const elementsInner = Xt.queryAll(element, options.elementsInner)
       const targetsInner = Xt.queryAll(targets, options.targetsInner)
