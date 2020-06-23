@@ -1,3 +1,10 @@
+## [0.14.10](https://github.com/minimit/xtend-library/compare/v0.14.9...v0.14.10) (2020-06-23)
+
+
+### Bug Fixes
+
+* **toggle:** fixed timing delay function and sliders with setindex and setdirection ([facee37](https://github.com/minimit/xtend-library/commit/facee377912f72e713207597c58abd2abc22197e))
+
 ## [0.14.9](https://github.com/minimit/xtend-library/compare/v0.14.8...v0.14.9) (2020-06-23)
 
 
