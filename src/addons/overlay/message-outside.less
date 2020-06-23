@@ -11,24 +11,38 @@
   @media @max-sm {
     display: none;
   }
-  .overlay-position-left & {
+}
+
+.overlay-position-left {
+  .overlay-message-outside {
     right: 0;
+    opacity: 0;
   }
-  .overlay-position-right & {
+  &.in {
+    .overlay-message-outside {
+      .anim-x-inverse.in();
+    }
+  }
+  &.out {
+    .overlay-message-outside {
+      .anim-x.out();
+    }
+  }
+}
+
+.overlay-position-right {
+  .overlay-message-outside {
     left: 0;
+    opacity: 0;
   }
-  // animation
-  opacity: 0;
-  .overlay-position-left.in & {
-    .anim-x-inverse.in();
+  &.in {
+    .overlay-message-outside {
+      .anim-x.in();
+    }
   }
-  .overlay-position-left.out & {
-    .anim-x.out();
-  }
-  .overlay-position-right.in & {
-    .anim-x.in();
-  }
-  .overlay-position-right.out & {
-    .anim-x-inverse.out();
+  &.out {
+    .overlay-message-outside {
+      .anim-x-inverse.out();
+    }
   }
 }

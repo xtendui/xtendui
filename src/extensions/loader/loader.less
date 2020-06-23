@@ -9,10 +9,6 @@
 .spinner {
   width: 25px;
   height: 25px;
-  .btn & {
-    width: 1em;
-    height: 1em;
-  }
   line-height: 0;
   svg {
     filter: drop-shadow(0 .1rem .2rem fade(@black, 10%)) drop-shadow(0 .2rem .4rem fade(@black, 25%));
@@ -20,9 +16,6 @@
       fill: none;
       stroke-width: 30;
       transform-origin: center center;
-      .btn & {
-        stroke-width: 40;
-      }
     }
     &:nth-child(1) {
       circle {
@@ -40,6 +33,16 @@
         stroke: fade(@accent, 5%);
         stroke-dashoffset: 0;
       }
+    }
+  }
+}
+
+.btn .spinner {
+  width: 1em;
+  height: 1em;
+  svg {
+    circle {
+      stroke-width: 40;
     }
   }
 }
@@ -216,25 +219,12 @@
   }
 }
 
-// mouse-follow
+// loader-mouse
 
-.loader.loader-mouse {
+.loader-mouse {
   .filler, .spinner {
     display: block;
     position: relative;
-  }
-  // spinner
-  .loader-spinner& {
-    margin-top: -5px;
-    margin-left: 30px;
-  }
-  // x
-  .loader-x& {
-    margin-top: -5px;
-    margin-left: 40px;
-    .filler {
-      width: 60px;
-    }
   }
   // animation
   .loader-animated();
@@ -247,5 +237,18 @@
     margin-top: -13px;
     margin-left: -13px;
     transform: none;
+  }
+}
+
+.loader-spinner.loader-mouse {
+  margin-top: -5px;
+  margin-left: 30px;
+}
+
+.loader-x.loader-mouse {
+  margin-top: -5px;
+  margin-left: 40px;
+  .filler {
+    width: 60px;
   }
 }

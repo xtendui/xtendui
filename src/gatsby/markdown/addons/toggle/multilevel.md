@@ -2,7 +2,7 @@
 type: "Addons"
 badge: "Addons"
 parent: "Toggle"
-title: "Multilevel"
+title: "multilevel"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 

@@ -1,5 +1,5 @@
 import { Xt } from 'xtend-library/src/xt.js'
-import 'xtend-library/src/vars.js'
+import 'xtend-library/src/variables.js'
 import 'xtend-library/src/core/toggle/toggle.js'
 import gsap from 'gsap'
 
@@ -23,14 +23,14 @@ Xt.mount.push({
     // on
 
     const eventOn = e => {
-      const target = e.target
-      gsap.set(target, { opacity: 0 })
-      if (!target.classList.contains('inverse')) {
-        gsap.set(target, { x: -15 })
+      const tr = e.target
+      gsap.set(tr, { opacity: 0 })
+      if (!tr.classList.contains('inverse')) {
+        gsap.set(tr, { x: -15 })
       } else {
-        gsap.set(target, { x: 15 })
+        gsap.set(tr, { x: 15 })
       }
-      gsap.to(target, { x: 0, opacity: 1, duration: targetTimeOn, ease: targetEaseOn })
+      gsap.to(tr, { x: 0, opacity: 1, duration: targetTimeOn, ease: targetEaseOn })
     }
 
     for (const target of self.targets) {
@@ -40,11 +40,11 @@ Xt.mount.push({
     // off
 
     const eventOff = e => {
-      const target = e.target
-      if (!target.classList.contains('inverse')) {
-        gsap.to(target, { x: 15, opacity: 0, duration: targetTimeOff, ease: targetEaseOff })
+      const tr = e.target
+      if (!tr.classList.contains('inverse')) {
+        gsap.to(tr, { x: 15, opacity: 0, duration: targetTimeOff, ease: targetEaseOff })
       } else {
-        gsap.to(target, { x: -15, opacity: 0, duration: targetTimeOff, ease: targetEaseOff })
+        gsap.to(tr, { x: -15, opacity: 0, duration: targetTimeOff, ease: targetEaseOff })
       }
     }
 

@@ -3,44 +3,42 @@
  */
 
 .card-collapse {
-  .card-contents({
-    > .card-item {
-      padding: 0 !important;
-    }
-  });
+  .card-item {
+    padding: 0 !important;
+  }
 }
 
 // size
 
 .card-small {
-  .card-collapse& {
-    > .card-inner > .card-content {
+  &.card-collapse {
+    .card-content {
       padding: 1.5rem 2rem;
     }
-    .card-contents({
+    .card-content, .card-item-nested {
       .list-space(small);
-    });
+    }
   }
 }
 
 .card-medium {
-  .card-collapse& {
-    > .card-inner > .card-content {
+  &.card-collapse {
+    .card-content {
       padding: 2rem 2.5rem;
     }
-    .card-contents({
+    .card-content, .card-item-nested {
       .list-space(medium);
-    });
+    }
   }
 }
 
 .card-large {
-  .card-collapse& {
-    > .card-inner > .card-content {
+  &.card-collapse {
+    .card-content {
       padding: 3rem 3.5rem;
     }
-    .card-contents({
+    .card-content, .card-item-nested {
       .list-space(large);
-    });
+    }
   }
 }

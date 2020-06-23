@@ -85,6 +85,7 @@ class Ajax extends Xt.Toggle {
     self.initial = true
     self.wrap = false
     self.currentIndex = null
+    self.oldIndex = null
     // automatic initial currents
     const elements = self.getGroups()
     if (elements.length) {
@@ -95,7 +96,7 @@ class Ajax extends Xt.Toggle {
         if (url !== '') {
           if (loc === url) {
             found = true
-            // activate
+            // activation
             self.eventOn(element, true)
           } else {
             // deactivate

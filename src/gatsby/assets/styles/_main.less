@@ -64,8 +64,9 @@
   .container-space();
   .padding(y, giant);
   .padding(y, huge, lg);
-  background: linear-gradient(180deg, @shade-200 0%, @white 66%);
-  p {
+  background: linear-gradient(180deg, @shade-200-dark 0%, @white 66%);
+  h2 {
+    .reset-text();
     .font-big();
     color: @shade-500;
   }
@@ -93,7 +94,6 @@
 }
 
 .gatsby_site_article_hero_content {
-  pointer-events: none;
   .badge {
     margin-top: -1rem;
     margin-left: 1.5rem;
@@ -106,13 +106,19 @@
   }
 }
 
+.gatsby_site_article_hero_content_inner {
+  &:not(.fade) {
+    pointer-events: none;
+  }
+}
+
 .gatsby_site_article_hero_links {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   .container-space();
-  .padding(y, small);
+  .padding(y, medium);
   .row {
     .row-space(medium);
     justify-content: space-between;
@@ -147,7 +153,7 @@
 .gatsby_site_article_foot {
   .container-space();
   .padding(y, big);
-  background: linear-gradient(-180deg, @white 33%, @shade-200 100%);
+  background: linear-gradient(-180deg, @white 0%, @shade-200-dark 100%);
 }
 
 /**
@@ -167,7 +173,6 @@
 .gatsby_listing_title {
   .h5();
   .header-block();
-  .spacing-large();
 }
 
 .gatsby_listing_items {
@@ -187,12 +192,12 @@
   // interactive
   a&, label& {
     &:hover, &.hover {
-      > .card-design {
+      .card-design {
         box-shadow: @shadow-accent;
       }
     }
     &:active, &.active {
-      > .card-design {
+      .card-design {
         box-shadow: none;
       }
     }
@@ -200,20 +205,20 @@
   // animation
   a&, label& {
     transition: all @time-small @ease-out;
-    > .card-design {
+    .card-design {
       transition: all @time-small @ease-out;
     }
     &:hover, &.hover {
       transform: translateY(-.5rem);
       transition: all @time-small @ease-in;
-      > .card-design {
+      .card-design {
         transition: all @time-small @ease-in;
       }
     }
-    &:active, &.active, input[type="checkbox"]:not(.unstyled):checked ~ &, input[type="radio"]:not(.unstyled):checked ~ & {
+    &:active, &.active {
       transform: none;
       transition: all @time-small @ease-in;
-      > .card-design {
+      .card-design {
         transition: all @time-small @ease-in;
       }
     }

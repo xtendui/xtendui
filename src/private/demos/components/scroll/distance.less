@@ -1,10 +1,12 @@
-.demo--scroll-container--distance > * {
-  opacity: 0;
-  .transition-none() !important; // fix animation on links
-  &.fade {
-    .anim-x.in();
-  }
-  &.fade-out {
-    .anim-x.out();
+.demo--scroll-distance {
+  .card {
+    // mode-infinite
+    opacity: 0;
+    &.fade {
+      .anim-x.in();
+    }
+    &.fade-out {
+      .anim-x.out();
+    }
   }
 }

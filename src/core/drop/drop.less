@@ -233,6 +233,9 @@
           transition: opacity @time-medium @ease-in @time-tiny;
         }
       }
+      > .backdrop {
+        .backdrop.in();
+      }
     }
   }
   &.out {
@@ -247,6 +250,9 @@
           opacity: 0;
           transition: opacity @time-small @ease-out;
         }
+      }
+      > .backdrop {
+        .backdrop.out();
       }
     }
   }

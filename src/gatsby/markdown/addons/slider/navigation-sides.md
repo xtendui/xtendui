@@ -2,7 +2,7 @@
 type: "Addons"
 badge: "Addons"
 parent: "Slider"
-title: "Navigation Sides"
+title: "navigation-sides"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 

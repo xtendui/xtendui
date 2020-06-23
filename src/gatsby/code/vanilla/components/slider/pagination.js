@@ -26,6 +26,7 @@ demo.htmlSource = `
                   <div class="card-title slide-pagination-content">1</div>
                   <nav class="slider-pagination">
                     <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
+                      xt-content
                     </button>
                   </nav>
                 </div>
@@ -47,6 +48,7 @@ demo.htmlSource = `
                   <div class="card-title slide-pagination-content">2</div>
                   <nav class="slider-pagination">
                     <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
+                      xt-content
                     </button>
                   </nav>
                 </div>
@@ -68,6 +70,7 @@ demo.htmlSource = `
                   <div class="card-title slide-pagination-content">3</div>
                   <nav class="slider-pagination">
                     <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
+                      xt-content
                     </button>
                   </nav>
                 </div>
@@ -89,6 +92,7 @@ demo.htmlSource = `
                   <div class="card-title slide-pagination-content">4</div>
                   <nav class="slider-pagination">
                     <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
+                      xt-content
                     </button>
                   </nav>
                 </div>
@@ -110,6 +114,7 @@ demo.htmlSource = `
                   <div class="card-title slide-pagination-content">5</div>
                   <nav class="slider-pagination">
                     <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
+                      xt-content
                     </button>
                   </nav>
                 </div>
@@ -132,6 +137,7 @@ demo.htmlSource = `
                   <div class="card-title slide-pagination-content">6</div>
                   <nav class="slider-pagination">
                     <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
+                      xt-content
                     </button>
                   </nav>
                 </div>
@@ -147,7 +153,7 @@ demo.htmlSource = `
 
   <nav class="slider-pagination">
     <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
-      xt-num of xt-tot : xt-content
+      xt-num of xt-tot
     </button>
   </nav>
 

@@ -1,16 +1,18 @@
-.demo--scroll-container--direction > * {
-  opacity: 0;
-  .transition-none() !important; // fix animation on links
-  &.fade {
-    .anim-y.in();
-    &.inverse {
+.demo--scroll-direction {
+  .card {
+    // mode-infinite
+    opacity: 0;
+    &.fade {
       .anim-y-inverse.in();
+      &.inverse {
+        .anim-y.in();
+      }
     }
-  }
-  &.fade-out {
-    .anim-y.out();
-    &.inverse {
-      .anim-y-inverse.out();
+    &.fade-out {
+      .anim-y.out();
+      &.inverse {
+        .anim-y-inverse.out();
+      }
     }
   }
 }

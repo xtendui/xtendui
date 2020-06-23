@@ -7,9 +7,9 @@
 .gatsby_site_footer_bottom {
   .padding(y, medium);
   .padding(y, big, sm);
-  background: linear-gradient(-180deg, @white 0%, @shade-200 100%);
+  background: linear-gradient(-180deg, @white 0%, @shade-200-dark 100%);
   .gatsby_site_article_foot + .gatsby_site_footer & {
-    background: @shade-200;
+    background: @shade-200-dark;
   }
   font-size: 12px;
   @media @max-sm {
@@ -31,7 +31,6 @@
   .flex-auto();
   .row-space(tiny);
   .row-space(small, sm);
-  align-items: center;
   justify-content: space-between;
 }
 

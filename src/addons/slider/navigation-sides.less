@@ -10,10 +10,6 @@
   width: 5rem;
   height: 100%;
   color: @black;
-  // disable
-  .slider.xt-disable & {
-    display: none;
-  }
   // not touch
   @media (hover: hover) {
     width: 10rem;
@@ -50,10 +46,6 @@
   padding: 0;
   line-height: 0;
   font-size: 2rem;
-  // not touch
-  @media (hover: hover) {
-    .mouse-follow();
-  }
   // touch
   @media (hover: none) {
     position: absolute;
@@ -62,5 +54,17 @@
     margin-top: -1rem;
     margin-left: -1rem;
     .transform-none() !important;
+  }
+  // not touch
+  @media (hover: hover) {
+    .mouse-follow();
+  }
+}
+
+// slider disable
+
+.slider.xt-disable {
+  .slider-navigation-sides {
+    display: none;
   }
 }

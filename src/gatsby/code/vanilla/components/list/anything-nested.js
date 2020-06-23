@@ -9,42 +9,42 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<ul class="list-block list-default">
-  <li>
-    <ul class="list list-default">
-      <li>
-        <ul class="list-block list-default">
-          <li>
+<div class="list-block list-default">
+  <div>
+    <div class="list list-default">
+      <div>
+        <div class="list-block list-default">
+          <div>
             Lorem ipsum dolor sit amet.
-          </li>
-          <li>
+          </div>
+          <div>
             consectetur adipiscing elit.
-          </li>
-          <li>
+          </div>
+          <div>
             Cras placerat pellentesque pulvinar.
-          </li>
-        </ul>
-      </li>
-      <li>
+          </div>
+        </div>
+      </div>
+      <div>
         consectetur adipiscing elit.
-      </li>
-      <li>
+      </div>
+      <div>
         Cras placerat pellentesque pulvinar.
-      </li>
-    </ul>
-  </li>
-  <li>
-    <ul class="list list-default">
-      <li>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="list list-default">
+      <div>
         Lorem ipsum dolor sit amet.
-      </li>
-      <li>
+      </div>
+      <div>
         consectetur adipiscing elit.
-      </li>
-      <li>
+      </div>
+      <div>
         Cras placerat pellentesque pulvinar.
-      </li>
-    </ul>
-  </li>
-</ul>
+      </div>
+    </div>
+  </div>
+</div>
 `

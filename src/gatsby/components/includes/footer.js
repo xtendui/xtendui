@@ -12,15 +12,14 @@ class Footer extends React.Component {
             <div className="gatsby_site_footer_inner">
               <div className="row gatsby_site_footer_bottom_row">
                 <div>
-                  Site and docs licensed{' '}
-                  <a href="https://github.com/minimit/xtend-library/blob/master/LICENSE-DOCS" target="_blank" rel="noopener">
-                    CC BY 3.0
-                  </a>{' '}
-                  <span className="separator separator-dash"></span> {site.site.siteMetadata.title} v{site.site.siteMetadata.version} licensed{' '}
-                  <a href="https://github.com/minimit/minimit/blob/master/LICENSE" target="_blank" rel="noopener">
+                  {site.site.siteMetadata.title} v{site.site.siteMetadata.version} licensed{' '}
+                  <a href="https://github.com/minimit/xtend-library/blob/master/LICENSE" target="_blank" rel="noopener">
                     MIT
                   </a>
-                  <br />
+                  <span className="separator separator-dash"></span> Docs licensed{' '}
+                  <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener">
+                    CC BY 3.0
+                  </a>{' '}
                 </div>
                 <div className="gatsby_site_footer_bottom_right">
                   © 2018 <span className="separator separator-dash"></span> {new Date().getFullYear()} {site.site.siteMetadata.author}

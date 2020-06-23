@@ -42,6 +42,7 @@ class Toggle {
     self.elements = []
     self.targets = []
     self.currentIndex = null
+    self.oldIndex = null
     self.direction = null
     self.inverse = null
     self.initialCurrents = []
@@ -202,6 +203,7 @@ class Toggle {
     self.initial = true
     self.wrap = false
     self.currentIndex = null
+    self.oldIndex = null
     // [disabled]
     self.destroyDisabled()
     // reset namespace
@@ -227,7 +229,7 @@ class Toggle {
           currents++
           // reactivate
           requestAnimationFrame(() => {
-            // activate
+            // activation
             self.eventOn(element, true)
           })
         }
@@ -237,13 +239,13 @@ class Toggle {
       if (todo > 0 && self.targets.length) {
         let start = 0
         // @FIX initial activation drag wrap
-        if ((!self.disabled || !self.initial) && self.dragger && options.drag.wrap) {
-          start = self.groupMqFirst.length
+        if ((!self.disabled || !self.initial) && self.wrapIndex) {
+          start = self.wrapIndex
           todo += start
         }
         // initial
         currents += todo
-        // activate
+        // activation
         requestAnimationFrame(() => {
           for (let i = start; i < todo; i++) {
             self.eventOn(self.elements[i], true)
@@ -1088,7 +1090,7 @@ class Toggle {
   checkOn(element) {
     const self = this
     // check
-    return !self.hasCurrent(element)
+    return !self.hasCurrent(element) && !element.classList.contains('xt-block')
   }
 
   /**
@@ -1104,7 +1106,7 @@ class Toggle {
       return false
     }
     // check
-    return self.hasCurrent(element)
+    return self.hasCurrent(element) && !element.classList.contains('xt-block')
   }
 
   /**
@@ -1120,12 +1122,12 @@ class Toggle {
   }
 
   /**
-   * set index and direction
+   * set index
    * @param {Node|HTMLElement|EventTarget|Window} element Current element
    */
-  setIndexAndDirection(element) {
+  setIndex(element) {
     const self = this
-    // setIndexAndDirection
+    // set index
     let index = 0
     for (const [i, el] of self.elements.entries()) {
       if (el === element) {
@@ -1133,8 +1135,23 @@ class Toggle {
         break
       }
     }
-    self.direction = self.inverse !== null ? (self.inverse ? -1 : 1) : self.currentIndex > index ? -1 : 1
+    self.oldIndex = self.currentIndex
     self.currentIndex = index
+  }
+
+  /**
+   * set direction
+   */
+  setDirection() {
+    const self = this
+    // set direction
+    if (self.oldIndex === null) {
+      self.direction = 1
+    } else if (self.inverse !== null) {
+      self.direction = self.inverse ? -1 : 1
+    } else {
+      self.direction = self.oldIndex > self.currentIndex ? -1 : 1
+    }
   }
 
   /**
@@ -1143,7 +1160,7 @@ class Toggle {
    */
   activate(el) {
     const self = this
-    // activate
+    // activation
     el.classList.add(...self.classes)
     el.classList.remove(...self.classesIn)
     el.classList.remove(...self.classesInDone)
@@ -1168,7 +1185,7 @@ class Toggle {
    */
   activateDone(el) {
     const self = this
-    // activate
+    // activation
     el.classList.add(...self.classesInDone)
   }
 
@@ -1178,7 +1195,7 @@ class Toggle {
    */
   deactivate(el) {
     const self = this
-    // activate
+    // activation
     el.classList.remove(...self.classes)
     el.classList.remove(...self.classesIn)
     el.classList.remove(...self.classesInDone)
@@ -1199,7 +1216,7 @@ class Toggle {
    */
   deactivateDone(el) {
     const self = this
-    // activate
+    // activation
     el.classList.remove(...self.classesOut)
   }
 
@@ -1228,7 +1245,8 @@ class Toggle {
       // on
       const groupElements = self.getElements(element)
       self.addCurrent(groupElements[0])
-      self.setIndexAndDirection(element)
+      self.setIndex(element)
+      self.setDirection()
       const targets = self.getTargets(element)
       const elementsInner = Xt.queryAll(element, options.elementsInner)
       const targetsInner = Xt.queryAll(targets, options.targetsInner)
@@ -1253,12 +1271,12 @@ class Toggle {
       for (const type in self.detail['queue' + actionCurrent][0]) {
         self.queueStart(actionCurrent, actionOther, type, 0, true)
       }
-      // activated
+      // activationd
       return true
     } else if (!e || !e.type || e.type !== 'on.trigger.xt') {
       self.eventOff(element, false, e)
     }
-    // activated
+    // activationd
     return false
   }
 
@@ -1281,7 +1299,7 @@ class Toggle {
       // off
       const groupElements = self.getElements(element)
       self.removeCurrent(groupElements[0])
-      self.setIndexAndDirection(element)
+      self.setDirection()
       const targets = self.getTargets(element)
       const elementsInner = Xt.queryAll(element, options.elementsInner)
       const targetsInner = Xt.queryAll(targets, options.targetsInner)
@@ -1310,7 +1328,7 @@ class Toggle {
       const actionCurrent = 'Off'
       const actionOther = 'On'
       self.eventQueue(actionCurrent, groupElements, targets, elementsInner, targetsInner, e)
-      // if queue too big
+      // remove queue not started if queue too big
       if (self.detail['queue' + actionCurrent].length > options.max) {
         // remove queue and stop
         const removedOn = self.detail['queue' + actionOther].shift()
@@ -1608,32 +1626,9 @@ class Toggle {
           clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'DelayTimeout'))
           clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'))
           // done other queue
-          self.queueDelayDone(actionCurrent, actionOther, obj, el, type, true)
-          self.queueAnimDone(actionCurrent, actionOther, obj, el, type, true)
+          self.queueDelayDone(actionOther, actionCurrent, obj, el, type, true)
+          self.queueAnimDone(actionOther, actionCurrent, obj, el, type, true)
         }
-      }
-    }
-  }
-
-  /**
-   * queue stop all
-   */
-  queueStopAll() {
-    const self = this
-    // stop all obj in queues
-    if (self.detail) {
-      // @FIX not already initialized
-      const actions = [
-        { current: 'On', other: 'Off' },
-        { current: 'Off', other: 'On' },
-      ]
-      for (const action of actions) {
-        // @FIX slider resize multiple queues
-        // @FIX autoclose with appendTo outside ajax
-        // remove queue and stop
-        const removed = self.detail['queue' + action.current].shift()
-        self.queueStop(action.current, action.other, removed)
-        self.detail['queue' + action.current] = []
       }
     }
   }
@@ -1709,7 +1704,7 @@ class Toggle {
     const self = this
     const options = self.options
     if (actionCurrent === 'On') {
-      // activate
+      // activation
       self.activate(el)
       // special
       const before = getComputedStyle(el, ':before')
@@ -1728,8 +1723,8 @@ class Toggle {
         const el = obj.targets ? obj.targets.queueEls[0] : obj.elements.queueEls[0]
         Xt.focusLimit.on(el)
       }
+      // @FIX when standalone !self.targets.length && type === 'elements'
       if (type === 'targets' || (!self.targets.length && type === 'elements')) {
-        // @FIX when standalone
         // appendTo
         if (options.appendTo) {
           const appendToTarget = document.querySelector(options.appendTo)
@@ -1772,7 +1767,7 @@ class Toggle {
       // listener dispatch
       el.dispatchEvent(new CustomEvent('on.xt'))
     } else if (actionCurrent === 'Off') {
-      // activate
+      // activation
       self.deactivate(el)
       // special
       const before = getComputedStyle(el, ':before')
@@ -1855,7 +1850,7 @@ class Toggle {
     const self = this
     const options = self.options
     if (actionCurrent === 'On') {
-      // activate
+      // activation
       self.activateDone(el)
       // special
       const before = getComputedStyle(el, ':before')
@@ -1868,7 +1863,7 @@ class Toggle {
       // listener dispatch
       el.dispatchEvent(new CustomEvent('ondone.xt'))
     } else if (actionCurrent === 'Off') {
-      // activate
+      // activation
       self.deactivateDone(el)
       // special
       if (type === 'targets' || (!self.targets.length && type === 'elements')) {
@@ -2709,20 +2704,26 @@ class Toggle {
     const self = this
     const options = self.options
     // check
+    const min = 0
     const max = self.getGroups().length - 1
-    if (index > max) {
-      if (loop || (loop === null && options.loop)) {
-        index = index - max - 1
-        index = index > max ? max : index // prevent overflow
-      } else {
-        index = max
-      }
-    } else if (index < 0) {
-      if (loop || (loop == null && options.loop)) {
-        index = index + max + 1
-        index = index < 0 ? 0 : index // prevent overflow
-      } else {
-        index = 0
+    if (min === max) {
+      // if only one go to the only one
+      index = min
+    } else {
+      if (index > max) {
+        if (loop || (loop === null && options.loop)) {
+          index = index - max - 1
+          index = index > max ? max : index // prevent overflow
+        } else {
+          index = max
+        }
+      } else if (index < min) {
+        if (loop || (loop == null && options.loop)) {
+          index = index + max + 1
+          index = index < min ? min : index // prevent overflow
+        } else {
+          index = min
+        }
       }
     }
     // element

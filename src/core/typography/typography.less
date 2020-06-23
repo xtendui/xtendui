@@ -181,9 +181,12 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 .header-block {
-  .spacing-big();
+  .margin(top, big);
+  .margin(bottom, big);
+  .margin(y, layout);
   .padding(y, small);
   .padding(x, medium);
+  border-radius: 6px;
   background: @shade-200;
   text-align: center;
 }

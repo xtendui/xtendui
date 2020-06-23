@@ -10,7 +10,7 @@ class Page extends React.Component {
     seo.description = 'Description'
     return (
       <Layout seo={seo}>
-        <SEO title={seo.title + ' — ' + seo.description} />
+        <SEO title={seo.title} />
         <ul>
           <li>UI framework</li>
           <li>vanilla html components with js and less imports</li>

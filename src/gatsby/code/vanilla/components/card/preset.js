@@ -40,7 +40,8 @@ demo.htmlSource = `
   </div>
 
   <div class="col-12 col-6-sm">
-    <div class="card card-drop">
+    <div class="card card-drop"
+      style="max-width: 100%;">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">

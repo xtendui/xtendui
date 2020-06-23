@@ -2,11 +2,11 @@
 type: "Addons"
 badge: "Addons"
 parent: "Group"
-title: "Group Expand"
+title: "expand"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
 <demo>
-  <demovanilla src="vanilla/addons/group/group-expand">
+  <demovanilla src="vanilla/addons/group/expand">
   </demovanilla>
 </demo>

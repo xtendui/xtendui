@@ -11,7 +11,7 @@ date: "2020-10-01"
 [[notePrimary]]
 | Overlay uses card to style it's content, refer to [card's content](/components/card/content) for all **content**.
 
-### Asset
+#### Asset
 
 If you want full width assets use `.card-asset`.
 
@@ -44,7 +44,7 @@ If you want full width assets use `.card-asset`.
   </demovanilla>
 </demo>
 
-### Block
+#### Block
 
 Sequential `.card-block` stack vertically.
 
@@ -91,7 +91,7 @@ You can add custom `.card-block` modifiers and style them as you like (e.g.: `.c
   </demovanilla>
 </demo>
 
-### Group
+#### Group
 
 To stack `.card-item` horizontally wrap them inside `.card-item-nested` and `.card-group`, with responsive classes if you need them.
 
@@ -135,13 +135,16 @@ You can add custom `.card-block` modifiers and style them as you like (e.g.: `.c
   </demovanilla>
 </demo>
 
-If you need to put an asset outside `.card-block`, just use `.card-item.card-block-side` and wrap the text inside another `.card-block.card-item`, like in the second example.
-
-The size of **blocks** is automatic, you can specify the **size** with [columns](/components/column), with responsive classes if you need them.
+If you need to put an asset outside `.card-block`, just use `.card-item` and wrap the text inside another `.card-block.card-item`, like in the second example.
 
 <demo>
   <demovanilla src="vanilla/components/overlay/block-side">
   </demovanilla>
+</demo>
+
+The size of **blocks** is automatic, you can specify the **size** with [columns](/components/column), with responsive classes if you need them.
+
+<demo>
   <demovanilla src="vanilla/components/overlay/block-side-size">
   </demovanilla>
 </demo>

@@ -46,7 +46,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       position left
     </button>
-    <div class="overlay overlay-default overlay-position overlay-position-left overlay-close-outside">
+    <div class="overlay overlay-default overlay-position-left overlay-close-outside">
       <div class="overlay-container">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
@@ -76,7 +76,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       position right
     </button>
-    <div class="overlay overlay-default overlay-position overlay-position-right overlay-close-outside">
+    <div class="overlay overlay-default overlay-position-right overlay-close-outside">
       <div class="overlay-container">
         <div class="overlay-inner">
           <div class="overlay-design"></div>

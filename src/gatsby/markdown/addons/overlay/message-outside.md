@@ -2,7 +2,7 @@
 type: "Addons"
 badge: "Addons"
 parent: "Overlay"
-title: "Message Outside"
+title: "message-outside"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 

@@ -12,36 +12,20 @@ categories: ["100-Test"]
 <demo>
   <div class="gatsby_demo_item" data-iframe="iframe/components/slider/events-methods">
   </div>
+  <div class="gatsby_demo_item" data-iframe="iframe/components/scroll/direction">
+  </div>
+  <div class="gatsby_demo_item" data-iframe="iframe/components/scroll/block">
+  </div>
   <demovanilla src="vanilla/components/slider/toggle-js">
   </demovanilla>
   <demovanilla src="vanilla/components/slider/progress">
   </demovanilla>
+  <demovanilla src="vanilla/components/toggle/timing-duration">
+  </demovanilla>
   <demovanilla src="vanilla/components/toggle/timing-delay-fnc">
   </demovanilla>
-</demo>
-
-<demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/slider/2020-brands-infinite">
-  </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/slider/2020-aniyeby-hero">
-  </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/slider/2020-bertani-hero">
-  </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/slider/2020-euroricambi-cards">
-  </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/slider/2019-sun68-hero">
-  </div>
-</demo>
-
-<demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/animation/2019-xtend">
-  </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/animation/2020-euroricambi-collapse">
-  </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/animation/2020-bertani-parallax">
-  </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/media/2020-bertani-listing">
-  </div>
+  <demovanilla src="vanilla/components/slider/overflow-auto-false">
+  </demovanilla>
 </demo>
 
 <demo>
@@ -55,8 +39,34 @@ categories: ["100-Test"]
   </demovanilla>
   <demovanilla src="vanilla/components/overlay/nested">
   </demovanilla>
-  <demovanilla src="vanilla/addons/overlay/position">
+  <demovanilla src="vanilla/components/overlay/position">
   </demovanilla>
+</demo>
+
+<demo>
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/slider/brands-infinite-v1">
+  </div>
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/slider/fashion-hero-v2">
+  </div>
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/slider/furniture-hero-v1">
+  </div>
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/slider/industrial-hero-v1">
+  </div>
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/slider/fashion-hero-v1">
+  </div>
+</demo>
+
+<demo>
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/animation/xtend-v1">
+  </div>
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/animation/collapse-v1">
+  </div>
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/animation/furniture-parallax-v1">
+  </div>
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/media/furniture-listing-v1">
+  </div>
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/media/fashion-listing-v1">
+  </div>
 </demo>
 
 ## Markdown

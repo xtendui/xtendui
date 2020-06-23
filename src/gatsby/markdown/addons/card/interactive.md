@@ -2,11 +2,11 @@
 type: "Addons"
 badge: "Addons"
 parent: "Card"
-title: "Interactive"
+title: "interactive"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
-You can make interactive cards with `a.card`.
+You can make interactive cards with `a.card` or `label.card`.
 
 <demo>
   <demovanilla src="vanilla/addons/card/interactive">

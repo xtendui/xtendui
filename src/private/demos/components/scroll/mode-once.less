@@ -1,12 +1,14 @@
-.demo--scroll-container--once > * {
-  &:not(.scroll-done) {
-    opacity: 0;
-    .transition-none() !important; // fix animation on links
-    &.fade {
-      .anim-x.in();
-    }
-    &.fade-out {
-      .anim-x.out();
+.demo--scroll-once {
+  .card {
+    // mode-once
+    &:not(.scroll-done) {
+      opacity: 0;
+      &.fade {
+        .anim-x.in();
+      }
+      &.fade-out {
+        .anim-x.out();
+      }
     }
   }
 }

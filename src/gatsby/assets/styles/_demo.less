@@ -44,8 +44,8 @@ html.gatsby_iframe-container {
 code {
   margin: -.1em .1em;
   padding: .2em .35em;
-  border-radius: 6px;
-  background: @shade-200 !important;
+  border-radius: 0;
+  background: @shade-200-dark !important;
   .font-monospace();
   font-size: .8em;
   color: @text;
@@ -76,25 +76,7 @@ pre {
     .line-height-medium() !important;
     white-space: pre-wrap !important;
   }
-  // animation
-  transition: border-color @time-small @ease-out;
-  &:hover, &.hover, &:active, &.active {
-    border-color: @shade-200-dark;
-    transition: border-color @time-small @ease-in;
-  }
 }
-
-/**
- * svg
- */
-
-/* WTF is this
-svg {
-  .font-sans-semibold();
-  font-size: 1.8rem;
-  text-transform: uppercase;
-}
-*/
 
 /**
  * .gatsby_demo-cols
@@ -103,8 +85,9 @@ svg {
 .gatsby_demo-cols {
   [class^='col-'], [class*=' col-'], [class^='demo--col-'], [class*=' demo--col-'] {
     &:before {
-      position: relative;
-      float: left;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 100%;
       height: 22px;
       min-height: 100%;
@@ -153,7 +136,7 @@ pre {
     > * {
       opacity: 0;
       transform: translateY(1.5rem);
-      transition: opacity @time-small @ease-in, transform @time-small @ease-in;
+      transition: all @time-small @ease-in;
       transition-delay: 0ms; // @start + @child * @increment
       .nth-child(@child: 3, @start: 150ms, @increment: 0ms, @decrement: 50ms, {
         @transition-delay();
@@ -161,13 +144,11 @@ pre {
     }
   }
   &:hover, &:focus-within {
-    border-color: @shade-200-dark;
-    transition: border-color @time-small @ease-in;
     .gatsby_demo_tabs_right {
       > * {
         opacity: 1;
         transform: translateY(0);
-        transition: opacity @time-small @ease-in, transform @time-small @ease-in;
+        transition: all @time-small @ease-in;
       }
     }
     .gatsby_demo_tabs, .gatsby_demo_code_tabs {
@@ -278,14 +259,6 @@ pre {
 
 .gatsby_demo_item {
   position: relative;
-  /* NO because drop go below next demo item
-  > * {
-    z-index: 10;
-    &.gatsby_demo_source {
-      z-index: 9;
-    }
-  }
-  */
   .toggle-flex() !important;
   .gatsby_demo_item_wrapper {
     position: relative;
@@ -352,15 +325,6 @@ table {
   border-color: @shade-200; // @FIX initial color
 }
 
-.gatbsy_table {
-  border-color: @shade-200;
-  transition: border-color @time-small @ease-out;
-  &:hover, &.hover, &:active, &.active {
-    border-color: @shade-200-dark;
-    transition: border-color @time-small @ease-in;
-  }
-}
-
 // theme
 
 [data-gatsby-listing-toggle] + .gatsby_demo {
@@ -381,7 +345,7 @@ table {
 
 #gatbsy_open-full {
   position: fixed;
-  z-index: @index-overlay;
+  z-index: @index-top + 100;
   top: 0;
   left: 0;
   bottom: 0;

@@ -22,7 +22,7 @@ class Template extends React.Component {
     seo.description = data.post.frontmatter.description ? data.post.frontmatter.description : data.post.frontmatter.parent
     return (
       <Layout seo={seo} page={data}>
-        <SEO title={seo.title + ' — ' + seo.description} />
+        <SEO title={seo.title} />
         {data.post.frontmatter.parent === data.post.frontmatter.title ? (
           <div className="gatsby_listing">
             <div className="row">
@@ -40,8 +40,8 @@ class Template extends React.Component {
                                   <div className="card-block card-item">
                                     <div className="card-title">
                                       {adiacent.frontmatter.title
-                                        .split('-')
-                                        .map((item, index) => (index ? item.charAt(0).toUpperCase() + item.slice(1).toLowerCase() : item))
+                                        .split(/[\s-]+/)
+                                        .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
                                         .join(' ')}
                                     </div>
                                     <p>{adiacent.frontmatter.description}</p>
@@ -71,8 +71,8 @@ class Template extends React.Component {
                                   <div className="card-block card-item">
                                     <div className="card-title">
                                       {adiacent.frontmatter.title
-                                        .split('-')
-                                        .map((item, index) => (index ? item.charAt(0).toUpperCase() + item.slice(1).toLowerCase() : item))
+                                        .split(/[\s-]+/)
+                                        .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
                                         .join(' ')}
                                     </div>
                                     <p>{adiacent.frontmatter.description}</p>

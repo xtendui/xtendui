@@ -1,0 +1,79 @@
+#iframe--furniture-listing-v1 {
+  //##START
+  body { // add your own selector instead of body to contain the code
+
+    /**
+      * .block-listing
+      */
+
+    .block-listing_inner {
+      > .row {
+        .row-space(small);
+        .row-space(medium, sm);
+      }
+    }
+
+    .block-listing_col {
+      .col(12);
+      .col(6, sm);
+      .col(4, lg);
+    }
+
+    .block-listing_col--big {
+      .col(12, sm);
+      .col(12, lg);
+    }
+
+    .block-listing_item {
+      .link-none();
+      .full();
+      .text-default() !important;
+      // card
+      .card-white();
+      .card-small();
+      .card-squared();
+      .card-none-x();
+      .card-title {
+        .font-sans-semibold();
+        .line-height-small();
+        font-size: 1.8rem;
+      }
+      .card-asset {
+        .media-container {
+          .padding(bottom, 75%);
+          background: @shade-200;
+        }
+        .media {
+          .media-cover();
+        }
+      }
+    }
+
+    .block-listing_col--big {
+      .card-asset {
+        .media-container {
+          @media @min-sm {
+            .padding(bottom, 37.5%);
+          }
+          @media @min-lg {
+            .padding(bottom, 25%);
+          }
+        }
+      }
+    }
+
+    .block-listing_content {
+      .padding(y, medium);
+    }
+
+    .block-listing_price {
+      .font-sans-semibold();
+      .line-height-small();
+      font-size: 1.4rem;
+      letter-spacing: 0.1em;
+      text-transform: none;
+    }
+
+  }
+  //##END
+}

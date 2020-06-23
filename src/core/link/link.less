@@ -22,33 +22,29 @@
  * link
  */
 
-a, .btn-link {
+.a-link {
   .link-underline();
-}
-
-// animation
-
-a, .btn-link {
+  color: @accent;
   transition: color @time-small @ease-out;
   &:hover, &.hover, &:active, &.active {
+    color: @accent-dark;
     transition: color @time-small @ease-in;
   }
+}
+
+a, .btn-link {
+  .a-link();
 }
 
 // text
 
 .text-default {
-  // link color
   a:not(.btn), .btn-link {
-    color: @accent;
-    &:hover, &.hover, &:active, &.active {
-      color: @accent-dark;
-    }
+    .a-link();
   }
 }
 
 .text-inverse {
-  // link color
   a:not(.btn), .btn-link {
     color: @text-inverse;
     &:hover, &.hover, &:active, &.active {

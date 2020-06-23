@@ -27,13 +27,13 @@ changeMq()
  */
 
 Xt.mount.push({
-  matches: '.gatsby_site_article_hero_content_inner',
+  matches: 'body .gatsby_site_article_hero_content_inner',
   mount: object => {
     // init
 
     let self = new Xt.Scroll(object, {
       sticky: 'fixed',
-      end: 250,
+      end: 75,
     })
 
     // change

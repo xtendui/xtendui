@@ -85,7 +85,10 @@ class DocSidebar extends React.Component {
                                               page.post.frontmatter.title === adiacent.frontmatter.title ? 'active' : ''
                                             }`}
                                           >
-                                            {adiacent.frontmatter.title}
+                                            {adiacent.frontmatter.title
+                                              .split(/[\s-]+/)
+                                              .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
+                                              .join(' ')}
                                           </Link>
                                         </div>
                                       ) : null

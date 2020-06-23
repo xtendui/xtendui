@@ -1,4 +1,5 @@
 import path from 'path'
+const img = require('components/snippets/img').default
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -11,76 +12,46 @@ export const demo = {
 demo.htmlSource = `
 <div class="row row-default row-stretch">
 
-  <div class="col-12 col-8-sm">
-
-    <div class="card card-primary">
-      <div class="card-design"></div>
-      <div class="card-inner">
-        <div class="card-content" style="justify-content: flex-start;">
-          <div class="card-block card-block-intro">
-            <div class="card-title">Lorem ipsum</div>
-          </div>
-          <div class="card-block card-item">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="col-12 col-4-sm">
-
-    <div class="card card-primary">
-      <div class="card-design"></div>
-      <div class="card-inner">
-        <div class="card-content" style="justify-content: flex-start;">
-          <div class="card-block card-block-intro">
-            <div class="card-title">Lorem ipsum</div>
-          </div>
-          <div class="card-block card-item">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="col-12 col-4-sm">
-
+  <div class="col-12 col-6-sm">
     <div class="card card-primary">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
-          <div class="card-block card-block-intro">
-            <div class="card-title">Lorem ipsum</div>
+          <div class="card-asset">
+            ${img({ classes: 'media-cover', ratio: '37.5%' })}
           </div>
-          <div class="card-block card-item" style="margin-top: auto;">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <div class="card-block card-item">
+            <div class="card-title">Lorem ipsum</div>
+            <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+          </div>
+          <div class="card-block card-item card-block-side"
+            style="margin-top: auto">
+            <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
           </div>
         </div>
       </div>
     </div>
-
   </div>
 
-  <div class="col-12 col-8-sm">
-
+  <div class="col-12 col-6-sm">
     <div class="card card-primary">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
-          <div class="card-block card-block-intro">
-            <div class="card-title">Lorem ipsum</div>
+          <div class="card-asset">
+            ${img({ classes: 'media-cover', ratio: '37.5%' })}
           </div>
-          <div class="card-block card-item" style="margin-top: auto;">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
+          <div class="card-block card-item">
+            <div class="card-title">Lorem ipsum</div>
+            <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>.</p>
+          </div>
+          <div class="card-block card-item card-block-side"
+            style="margin-top: auto">
+            <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
           </div>
         </div>
       </div>
     </div>
-
   </div>
 
 </div>

@@ -2,11 +2,11 @@
 type: "Addons"
 badge: "Addons"
 parent: "Group"
-title: "Group Number"
+title: "number"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
 <demo>
-  <demovanilla src="vanilla/addons/group/group-number">
+  <demovanilla src="vanilla/addons/group/number">
   </demovanilla>
 </demo>

@@ -36,11 +36,11 @@
     "@babel/core": "^7.8.4",
     "@babel/preset-env": "^7.8.4",
     "@hot-loader/react-dom": "^16.11.0",
-    "@semantic-release/changelog": "^3.0.6",
-    "@semantic-release/commit-analyzer": "^6.1.0",
-    "@semantic-release/git": "^7.0.8",
-    "@semantic-release/github": "^5.5.8",
-    "@semantic-release/release-notes-generator": "^7.3.5",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/commit-analyzer": "^8.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/github": "^7.0.7",
+    "@semantic-release/release-notes-generator": "^9.0.1",
     "babel-loader": "^8.0.6",
     "babel-preset-gatsby": "^0.2.29",
     "clipboard": "^2.0.4",
@@ -83,31 +83,10 @@
     "react-helmet": "^5.2.0",
     "rehype-react": "^3.1.0",
     "remark-grid-tables": "^1.7.1",
-    "semantic-release": "^15.14.0",
+    "semantic-release": "^17.1.0",
     "terser-webpack-plugin": "^1.4.3",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11",
     "write": "^1.0.3"
-  },
-  "release": {
-    "branch": "master",
-    "plugins": [
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      "@semantic-release/changelog",
-      "@semantic-release/npm",
-      [
-        "@semantic-release/git",
-        {
-          "assets": [
-            "package.json",
-            "package-lock.json",
-            "CHANGELOG.md"
-          ],
-          "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
-        }
-      ],
-      "@semantic-release/github"
-    ]
   }
 }

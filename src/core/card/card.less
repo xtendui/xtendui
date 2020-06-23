@@ -15,7 +15,7 @@
 
 .card {
   border-radius: 6px;
-  > .card-design {
+  .card-design {
     border-width: 1px;
     border-style: solid;
     border-color: transparent;
@@ -42,6 +42,7 @@
 }
 
 .card-overlay {
+  align-items: center;
   // default options
   > .btn-close {
     .btn-big();
@@ -53,14 +54,9 @@
 
 .card-slide {
   // default options
-  color: @text;
-  > .card-design {
-    border-color: @shade-200;
-    background: @shade-200;
-  }
-  > .card-inner > .card-content {
-    justify-content: center;
-    align-items: center;
+  .card-default();
+  .card-content {
+    text-align: center;
   }
 }
 
@@ -68,17 +64,25 @@
 
 .card-default {
   .text-default();
-  > .card-design {
-    border-color: @white;
-    background: @white;
+  .card-design {
+    border-color: @shade-200;
+    background: @shade-200;
   }
 }
 
 .card-primary {
   .text-inverse();
-  > .card-design {
+  .card-design {
     border-color: @accent;
     background: @accent;
+  }
+}
+
+.card-white {
+  .text-default();
+  .card-design {
+    border-color: @white;
+    background: @white;
   }
 }
 
@@ -88,10 +92,10 @@
   .card-block {
     .font-small();
     .line-height-medium();
-    padding: 2em 2.5em;
+    padding: 2em;
     .card-title {
       .h4();
-      .spacing-small();
+      .spacing-tiny();
     }
   }
 }
@@ -100,10 +104,10 @@
   .card-block {
     .font-medium();
     .line-height-medium();
-    padding: 2em 2.5em;
+    padding: 2.25em;
     .card-title {
       .h3();
-      .spacing-medium();
+      .spacing-small();
     }
   }
 }
@@ -112,7 +116,7 @@
   .card-block {
     .font-big();
     .line-height-medium();
-    padding: 2em 2.5em;
+    padding: 2.5em;
     .card-title {
       .h2();
       .spacing-medium();
@@ -123,7 +127,7 @@
 // special
 
 .card-nodesign {
-  > .card-design {
+  .card-design {
     display: none;
   }
 }
@@ -133,8 +137,26 @@
 }
 
 .card-noborder {
-  > .card-design {
+  .card-design {
     border: 0;
+  }
+}
+
+.card-none {
+  .card-block {
+    .padding(all, none);
+  }
+}
+
+.card-none-x {
+  .card-block {
+    .padding(x, none);
+  }
+}
+
+.card-none-y {
+  .card-block {
+    .padding(y, none);
   }
 }
 

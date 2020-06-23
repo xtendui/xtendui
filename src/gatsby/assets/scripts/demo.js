@@ -75,7 +75,8 @@ const formatCode = source => {
   if (item) {
     let id = item.getAttribute('data-iframe')
     if (id) {
-      id = '#iframe--' + id.split('/').pop()
+      const names = id.split('/')
+      id = '#iframe--' + names[names.length - 1]
       text = text.replace(new RegExp(`[ ]{0,}${id}[ ]{0,}`, 'gi'), '')
     }
   }
@@ -384,7 +385,7 @@ const populateDemo = (container, i) => {
               currentOffset = element.closest('.gatsby_demo').offsetTop
             }
             document.scrollingElement.scrollTo(0, document.scrollingElement.scrollTop - currentOffset + prevOffset)
-            // activate demo last
+            // activation demo last
             const s = Xt.get('xt-toggle', demos[prev])
             s.goToNum(-1)
           }
@@ -424,7 +425,7 @@ const populateDemo = (container, i) => {
               currentOffset = element.closest('.gatsby_demo').offsetTop
             }
             document.scrollingElement.scrollTo(0, document.scrollingElement.scrollTop - currentOffset + nextOffset)
-            // activate demo first
+            // activation demo first
             const s = Xt.get('xt-toggle', demos[next])
             s.goToNum(0)
           }

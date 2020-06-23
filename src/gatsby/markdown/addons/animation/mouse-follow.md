@@ -2,6 +2,6 @@
 type: "Addons"
 badge: "Addons"
 parent: "Animation"
-title: "Mouse Follow"
+title: "mouse-follow"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
