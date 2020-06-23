@@ -384,7 +384,7 @@ const populateDemo = (container, i) => {
               currentOffset = element.closest('.gatsby_demo').offsetTop
             }
             document.scrollingElement.scrollTo(0, document.scrollingElement.scrollTop - currentOffset + prevOffset)
-            // activate demo last
+            // activation demo last
             const s = Xt.get('xt-toggle', demos[prev])
             s.goToNum(-1)
           }
@@ -424,7 +424,7 @@ const populateDemo = (container, i) => {
               currentOffset = element.closest('.gatsby_demo').offsetTop
             }
             document.scrollingElement.scrollTo(0, document.scrollingElement.scrollTop - currentOffset + nextOffset)
-            // activate demo first
+            // activation demo first
             const s = Xt.get('xt-toggle', demos[next])
             s.goToNum(0)
           }

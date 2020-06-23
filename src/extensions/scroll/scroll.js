@@ -209,7 +209,7 @@ class Scroll extends Xt.Toggle {
                 }
                 // direction
                 self.inverse = current > self.detail.trigger
-                // activate
+                // activation
                 Xt.dataStorage.set(el, self.componentNamespace + 'OnCount', currentOn)
                 Xt.dataStorage.set(el, self.componentNamespace + 'OnTot', currentsOn.length)
                 currentOn++
