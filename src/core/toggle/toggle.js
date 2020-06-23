@@ -1281,6 +1281,7 @@ class Toggle {
       // off
       const groupElements = self.getElements(element)
       self.removeCurrent(groupElements[0])
+      self.setIndexAndDirection(element)
       const targets = self.getTargets(element)
       const elementsInner = Xt.queryAll(element, options.elementsInner)
       const targetsInner = Xt.queryAll(targets, options.targetsInner)
