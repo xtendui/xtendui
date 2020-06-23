@@ -80,6 +80,7 @@ const formatCode = source => {
       text = text.replace(new RegExp(`[ ]{0,}${id}[ ]{0,}`, 'gi'), '')
     }
   }
+
   // search html tags
   const re = /<[^>]*>/g
   text = text.replace(re, (match, g1, g2) => {

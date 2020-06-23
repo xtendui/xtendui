@@ -1222,7 +1222,6 @@ class Toggle {
       return false
     }
     // toggle
-    console.log(element, force)
     if (force || (self.checkOn(element) && (!e || !e.type || e.type !== 'off.trigger.xt'))) {
       // auto
       self.eventAutostop()
