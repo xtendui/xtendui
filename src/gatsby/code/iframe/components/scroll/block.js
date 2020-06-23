@@ -34,7 +34,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="card card-primary fade scroll-block">
+  <div class="card card-primary fade xt-block">
     <div class="card-design"></div>
     <div class="card-inner">
       <div class="card-content">
@@ -118,7 +118,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="card card-primary fade scroll-block">
+  <div class="card card-primary fade xt-block">
     <div class="card-design"></div>
     <div class="card-inner">
       <div class="card-content">

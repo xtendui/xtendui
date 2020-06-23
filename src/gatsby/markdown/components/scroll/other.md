@@ -17,7 +17,7 @@ Animate with inverse `.inverse` or `self.direction`.
 
 ## Block
 
-You can block the scroll animations with the class `.scroll-block`. Add also the class `.fade` to have them enabled.
+You can block the scroll animations with the class `.xt-block`. Add also the class `.fade` to have them enabled.
 
 If you want to block them with fade in or out use the events `on.trigger.xt` or `off.trigger.xt`. 
 

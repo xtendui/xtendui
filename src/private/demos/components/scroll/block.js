@@ -11,18 +11,19 @@ Xt.mount.push({
 
     let self = new Xt.Scroll(object, {
       elements: ':scope > *',
+      distance: '30%',
     })
 
     // eventBlock
 
     const eventBlock = () => {
       for (const element of self.elements) {
-        if (!element.classList.contains('scroll-block')) {
-          // fade out
-          element.dispatchEvent(new CustomEvent('off.trigger.xt'))
-          // block
-          element.classList.add('scroll-block')
-        }
+        // fade out
+        element.dispatchEvent(new CustomEvent('off.trigger.xt'))
+        // block
+        element.classList.add('xt-block')
+        // this doesn't trigger because when .xt-block on and off are blocked
+        element.dispatchEvent(new CustomEvent('on.trigger.xt'))
       }
     }
 
