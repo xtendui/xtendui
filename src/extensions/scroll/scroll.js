@@ -156,8 +156,6 @@ class Scroll extends Xt.Toggle {
     const scrollHeight = scrollingElement.scrollHeight
     const scrollTop = scrollingElement.scrollTop
     const windowHeight = Xt.windowHeight
-    // direction
-    self.inverse = scrollTop < self.detail.scrollTopOld
     // loop
     for (const el of self.elements) {
       const tr = self.getTargets(el)[0]
@@ -191,9 +189,9 @@ class Scroll extends Xt.Toggle {
         self.detail.ratio = self.detail.ratio < 1 ? self.detail.ratio : 1
         self.detail.ratioInverse = 1 - self.detail.ratio
         self.detail.ratioDouble = 1 - Math.abs((self.detail.ratio - 0.5) * 2)
+        //self.inverse = scrollTop < self.detail.scrollTopOld
         // activation
-        if ((current >= 0 && current <= total)
-          || self.detail.start > self.detail.end) { // limit fixes activation on page top
+        if (current >= 0 && current <= total) {
           // inside
           changed = self.checkOn(el)
           if (changed) {
@@ -209,6 +207,8 @@ class Scroll extends Xt.Toggle {
                 } else {
                   Xt.dataStorage.remove(el, self.componentNamespace + 'Initial')
                 }
+                // direction
+                self.inverse = current > self.detail.trigger
                 // activate
                 Xt.dataStorage.set(el, self.componentNamespace + 'OnCount', currentOn)
                 Xt.dataStorage.set(el, self.componentNamespace + 'OnTot', currentsOn.length)
@@ -235,6 +235,8 @@ class Scroll extends Xt.Toggle {
                 } else {
                   Xt.dataStorage.remove(el, self.componentNamespace + 'Initial')
                 }
+                // direction
+                self.inverse = current > self.detail.trigger
                 // deactivate
                 Xt.dataStorage.set(el, self.componentNamespace + 'OffCount', currentOff)
                 Xt.dataStorage.set(el, self.componentNamespace + 'OffTot', currentsOff.length)
