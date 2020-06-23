@@ -100,15 +100,13 @@ class Scroll extends Xt.Toggle {
     super.initEvents()
     const self = this
     const options = self.options
-    // event on
-    if (options.on) {
-      const scrollHandler = Xt.dataStorage.put(window, options.on + '/' + self.namespace, self.eventScrollHandler.bind(self).bind(self, false))
-      const events = [...options.on.split(' ')]
-      for (const event of events) {
-        addEventListener(event, scrollHandler, { passive: true })
-      }
-      self.eventScrollHandler(true)
+    // event scroll and resize
+    const scrollHandler = Xt.dataStorage.put(window, options.on + '/' + self.namespace, self.eventScrollHandler.bind(self).bind(self, false))
+    const events = [...'scroll resize'.split(' ')]
+    for (const event of events) {
+      addEventListener(event, scrollHandler, { passive: true })
     }
+    self.eventScrollHandler(true)
   }
 
   //
@@ -163,7 +161,7 @@ class Scroll extends Xt.Toggle {
     // loop
     for (const el of self.elements) {
       const tr = self.getTargets(el)[0]
-      if (!el.classList.contains('scroll-block') && Xt.visible(el) && tr.offsetParent) {
+      if (!el.classList.contains('xt-block') && Xt.visible(el) && tr.offsetParent) {
         // filter out document.documentElement
         // vars
         let changed = false
@@ -292,7 +290,7 @@ Scroll.componentName = 'xt-scroll'
 Scroll.optionsDefault = {
   elements: false,
   targets: false,
-  on: 'scroll resize',
+  on: 'on.xt.scroll',
   min: 0,
   max: 'Infinity',
   instant: true,

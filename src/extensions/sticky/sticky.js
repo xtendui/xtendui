@@ -93,17 +93,16 @@ class Sticky extends Xt.Toggle {
    * init events
    */
   initEvents() {
+    super.initEvents()
     const self = this
     const options = self.options
-    // event on
-    if (options.on) {
-      const stickyHandler = Xt.dataStorage.put(window, options.on + '/' + self.namespace, self.eventStickyHandler.bind(self))
-      const events = [...options.on.split(' ')]
-      for (const event of events) {
-        addEventListener(event, stickyHandler, { passive: true })
-      }
-      self.eventStickyHandler(null, true)
+    // event scroll and resize
+    const stickyHandler = Xt.dataStorage.put(window, options.on + '/' + self.namespace, self.eventStickyHandler.bind(self))
+    const events = [...'scroll resize'.split(' ')]
+    for (const event of events) {
+      addEventListener(event, stickyHandler, { passive: true })
     }
+    self.eventStickyHandler(null, true)
     // focusin
     const focusInHandler = Xt.dataStorage.put(document, 'focusin/sticky' + '/' + self.namespace, self.eventFocusinHandler.bind(self))
     document.addEventListener('focusin', focusInHandler, { passive: true })
@@ -424,7 +423,7 @@ Sticky.componentName = 'xt-sticky'
 Sticky.optionsDefault = {
   elements: false,
   targets: false,
-  on: 'scroll resize',
+  on: 'on.xt.sticky',
   min: 0,
   max: 'Infinity',
   instant: true,
