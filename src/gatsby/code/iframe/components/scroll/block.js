@@ -14,10 +14,27 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-default list-space-medium demo--scroll-container--responsive"
-  data-xt-scroll="{ elements: ':scope > *' }">
+<div class="list list-default list-space-medium demo--scroll-container-block">
+
+  <div>
+    <button type="button" class="btn btn-primary demo--scroll-container-block--btn">
+      Click to fade out and block
+    </button>
+  </div>
 
   <div class="card card-primary">
+    <div class="card-design"></div>
+    <div class="card-inner">
+      <div class="card-content">
+        <div class="card-block card-item">
+          <div class="card-title">Lorem ipsum dolor sit amet</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-primary fade xt-block">
     <div class="card-design"></div>
     <div class="card-inner">
       <div class="card-content">
@@ -101,7 +118,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="card card-primary">
+  <div class="card card-primary fade xt-block">
     <div class="card-design"></div>
     <div class="card-inner">
       <div class="card-content">
@@ -125,16 +142,10 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="card card-primary">
-    <div class="card-design"></div>
-    <div class="card-inner">
-      <div class="card-content">
-        <div class="card-block card-item">
-          <div class="card-title">Lorem ipsum dolor sit amet</div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
-        </div>
-      </div>
-    </div>
+  <div class="indicator">
+    <button type="button" class="btn btn-primary demo--scroll-container-block--btn">
+      Click to fade out and block
+    </button>
   </div>
 
 </div>

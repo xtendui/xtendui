@@ -97,17 +97,16 @@ class Scroll extends Xt.Toggle {
    * init events
    */
   initEvents() {
+    super.initEvents()
     const self = this
     const options = self.options
-    // event on
-    if (options.on) {
-      const scrollHandler = Xt.dataStorage.put(window, options.on + '/' + self.namespace, self.eventScrollHandler.bind(self).bind(self, false))
-      const events = [...options.on.split(' ')]
-      for (const event of events) {
-        addEventListener(event, scrollHandler, { passive: true })
-      }
-      self.eventScrollHandler(true)
+    // event scroll and resize
+    const scrollHandler = Xt.dataStorage.put(window, options.on + '/' + self.namespace, self.eventScrollHandler.bind(self).bind(self, false))
+    const events = [...'scroll resize'.split(' ')]
+    for (const event of events) {
+      addEventListener(event, scrollHandler, { passive: true })
     }
+    self.eventScrollHandler(true)
   }
 
   //
@@ -157,12 +156,10 @@ class Scroll extends Xt.Toggle {
     const scrollHeight = scrollingElement.scrollHeight
     const scrollTop = scrollingElement.scrollTop
     const windowHeight = Xt.windowHeight
-    // direction
-    self.inverse = scrollTop < self.detail.scrollTopOld
     // loop
     for (const el of self.elements) {
       const tr = self.getTargets(el)[0]
-      if (!el.classList.contains('scroll-block') && Xt.visible(el) && tr.offsetParent) {
+      if (!el.classList.contains('xt-block') && Xt.visible(el) && tr.offsetParent) {
         // filter out document.documentElement
         // vars
         let changed = false
@@ -173,17 +170,17 @@ class Scroll extends Xt.Toggle {
           el.style.width = tr.offsetWidth + 'px'
         }
         // position
+        const max = self.detail.trigger + scrollHeight - window.innerHeight
+        const fallback = Xt.windowPercent(options.fallback)
         self.detail.distance = Xt.windowPercent(options.distance)
         self.detail.trigger = Xt.windowPercent(options.trigger)
         self.detail.start = self.detail.startReal = elTop - windowHeight + Xt.windowPercent(options.start) + self.detail.distance
         self.detail.start = self.detail.start < self.detail.trigger ? self.detail.trigger : self.detail.start // limit fixes activation on page top
+        self.detail.start = self.detail.start > max ? max - fallback : self.detail.start // limit fixes activation on page bottom
         self.detail.end = self.detail.endReal = options.end
           ? self.detail.start + Xt.windowPercent(options.end) + elHeight - self.detail.distance
           : elTop + elHeight + self.detail.trigger - self.detail.distance
-        self.detail.end =
-          self.detail.end > self.detail.trigger + scrollHeight - window.innerHeight ? self.detail.trigger + scrollHeight - window.innerHeight : self.detail.end // limit fixes deactivation on page bottom
-        self.detail.fallback = self.detail.end - Xt.windowPercent(options.fallback)
-        self.detail.start = self.detail.start > self.detail.end ? self.detail.fallback : self.detail.start // limit fixes deactivation on page bottom
+        self.detail.end = self.detail.end < self.detail.start + fallback ? self.detail.start + fallback : self.detail.end // limit fixes deactivation on page top
         // ratio
         const current = scrollTop + self.detail.trigger - self.detail.start
         const total = self.detail.end - self.detail.start
@@ -192,9 +189,9 @@ class Scroll extends Xt.Toggle {
         self.detail.ratio = self.detail.ratio < 1 ? self.detail.ratio : 1
         self.detail.ratioInverse = 1 - self.detail.ratio
         self.detail.ratioDouble = 1 - Math.abs((self.detail.ratio - 0.5) * 2)
+        //self.inverse = scrollTop < self.detail.scrollTopOld
         // activation
-        if ((current >= 0 && current <= total) || self.detail.start > self.detail.end) {
-          // limit fixes activation on page top
+        if (current >= 0 && current <= total) {
           // inside
           changed = self.checkOn(el)
           if (changed) {
@@ -210,6 +207,8 @@ class Scroll extends Xt.Toggle {
                 } else {
                   Xt.dataStorage.remove(el, self.componentNamespace + 'Initial')
                 }
+                // direction
+                self.inverse = current > self.detail.trigger
                 // activate
                 Xt.dataStorage.set(el, self.componentNamespace + 'OnCount', currentOn)
                 Xt.dataStorage.set(el, self.componentNamespace + 'OnTot', currentsOn.length)
@@ -236,6 +235,8 @@ class Scroll extends Xt.Toggle {
                 } else {
                   Xt.dataStorage.remove(el, self.componentNamespace + 'Initial')
                 }
+                // direction
+                self.inverse = current > self.detail.trigger
                 // deactivate
                 Xt.dataStorage.set(el, self.componentNamespace + 'OffCount', currentOff)
                 Xt.dataStorage.set(el, self.componentNamespace + 'OffTot', currentsOff.length)
@@ -291,7 +292,7 @@ Scroll.componentName = 'xt-scroll'
 Scroll.optionsDefault = {
   elements: false,
   targets: false,
-  on: 'scroll resize',
+  on: 'on.xt.scroll',
   min: 0,
   max: 'Infinity',
   instant: true,
@@ -301,11 +302,11 @@ Scroll.optionsDefault = {
   aria: false,
   // scroll only
   sticky: false,
-  distance: '20%',
+  distance: 50,
   trigger: '100%',
   start: '100%',
   end: false,
-  fallback: 100,
+  fallback: 0,
 }
 
 //

@@ -51,6 +51,21 @@ self.targets.filter(x => self.hasCurrent(x))
 
 ## Trigger
 
+Trigger events this way:
+
+```js
+document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('on.trigger.xt'))
+```
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | DOM Element                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Event                   | `on.trigger.xt`       | `elements` `targets` | Activation event             |
+| Event                   | `off.trigger.xt`      | `elements` `targets` | Deactivation event            |
+
+</div>
+
 [[noteDefault]]
 | For triggering and listening the **resize event**, refer to [global's js](/components/global/js#events-resize).
 
@@ -63,7 +78,7 @@ const eventChange = e => {
   // logic
 }
 
-document.querySelector('#my-element').addEventListener('change.xt', eventChange)
+document.querySelector('#my-element-or-target').addEventListener('change.xt', eventChange)
 ```
 
 Listen to events delegation with **useCapture** this way:
@@ -90,6 +105,10 @@ object.addEventListener('change.xt', eventChange, true)
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Event                   | `on.xt`       | `elements` `targets` | Activation event             |
+| Event                   | `off.xt`      | `elements` `targets` | Deactivation event            |
+| Event                   | `ondone.xt`           | `elements` `targets` | Activation event after delay and duration             |
+| Event                   | `offdone.xt`           | `elements` `targets` | Deactivation event after delay and duration             |
 | Event                   | `change.xt`       | `elements` | Computation event             |
 | Event                   | `medialoaded.xt`           | `elements` `targets` | Images loaded event            |
 | Event                   | `init.xt`           | `object` | Init event             |

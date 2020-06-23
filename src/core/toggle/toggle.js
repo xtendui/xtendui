@@ -1222,7 +1222,7 @@ class Toggle {
       return false
     }
     // toggle
-    if (force || (self.checkOn(element) && (!e || !e.type || e.type !== 'off.trigger.xt'))) {
+    if (force || (!element.classList.contains('xt-block') && self.checkOn(element) && (!e || !e.type || e.type !== 'off.trigger.xt'))) {
       // auto
       self.eventAutostop()
       // on
@@ -1277,10 +1277,11 @@ class Toggle {
       return false
     }
     // toggle
-    if (force || self.checkOff(element)) {
+    if (force || (!element.classList.contains('xt-block') && self.checkOff(element))) {
       // off
       const groupElements = self.getElements(element)
       self.removeCurrent(groupElements[0])
+      self.setIndexAndDirection(element)
       const targets = self.getTargets(element)
       const elementsInner = Xt.queryAll(element, options.elementsInner)
       const targetsInner = Xt.queryAll(targets, options.targetsInner)
