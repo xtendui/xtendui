@@ -1,3 +1,10 @@
+## [0.14.8](https://github.com/minimit/xtend-library/compare/v0.14.7...v0.14.8) (2020-06-23)
+
+
+### Bug Fixes
+
+* **toggle:** toggle off set index and direction + revision scroll inverse ([f38e4fc](https://github.com/minimit/xtend-library/commit/f38e4fc68a6b3f807d9ae0d372dc9c9d3af7baaa))
+
 ## [0.14.7](https://github.com/minimit/xtend-library/compare/v0.14.6...v0.14.7) (2020-06-23)
 
 
