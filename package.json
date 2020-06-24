@@ -24,10 +24,12 @@
     "serve": "yarn build && gatsby serve -p 8888",
     "deploy": "yarn build && gh-pages -d public",
     "release": "npx semantic-release --dry-run --no-ci",
-    "lint": "eslint . --ext .js --fix"
+    "lint": "eslint . --ext .js --fix",
+    "preversion": "yarn build"
   },
   "dependencies": {
     "@google/markerclusterer": "^2.0.8",
+    "@semantic-release/npm": "^7.0.5",
     "bezier-easing": "^2.1.0",
     "core-js": "^2.6.11",
     "gsap": "^3.2.0",
