@@ -25,7 +25,7 @@
     "deploy": "yarn build && gh-pages -d public",
     "release": "npx semantic-release --dry-run --no-ci",
     "lint": "eslint . --ext .js --fix",
-    "preversion": "yarn build"
+    "postversion": "yarn lint"
   },
   "dependencies": {
     "@google/markerclusterer": "^2.0.8",
