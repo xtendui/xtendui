@@ -12,7 +12,7 @@ class Footer extends React.Component {
             <div className="gatsby_site_footer_inner">
               <div className="row gatsby_site_footer_bottom_row">
                 <div>
-                  {site.site.siteMetadata.title} v{site.site.siteMetadata.version} licensed{' '}
+                  {site.site.siteMetadata.title} v{site.site.siteMetadata.version} and demos licensed{' '}
                   <a href="https://github.com/minimit/xtend-library/blob/master/LICENSE" target="_blank" rel="noopener">
                     MIT
                   </a>
