@@ -5,10 +5,9 @@ import gsap from 'gsap'
  * favicon
  */
 
-const favicon = document.querySelector('link[rel="icon"]')
-const colorSchemeMq = window.matchMedia('(prefers-color-scheme: dark)')
-
 const changeMq = () => {
+  const colorSchemeMq = window.matchMedia('(prefers-color-scheme: dark)')
+  const favicon = document.querySelector('link[rel="icon"]')
   favicon.remove()
   if (colorSchemeMq.matches) {
     const icon = Xt.createElement('<link rel="icon" href="/favicon-dark.png">')
@@ -19,7 +18,6 @@ const changeMq = () => {
   }
 }
 
-colorSchemeMq.addListener(changeMq)
 changeMq()
 
 /**
