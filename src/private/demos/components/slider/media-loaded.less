@@ -1,0 +1,14 @@
+.demo--slider-media-loaded {
+  .slide {
+    img {
+      height: 45rem;
+      width: auto;
+    }
+    &.xt-medialoaded {
+      opacity: 0;
+      .anim-x.in();
+      animation-delay: @time-big;
+      animation-fill-mode: forwards;
+    }
+  }
+}

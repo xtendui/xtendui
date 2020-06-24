@@ -224,6 +224,26 @@ You can add navigation with `navigation: QuerySelector`, set the amount to add (
   </demovanilla>
 </demo>
 
+## Media loaded
+
+When the **slide width** depend on inner images size, you need to reinit the slider when the media is loaded and the **width** of the image is calculated.
+
+If you want to animate with css use the `.xt-medialoaded` class or with js use the event `medialoaded.xt`.
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Default                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `mediaLoaded:Boolean`                          | `false`        | Add the class `.xt-medialoaded` on img loaded             |
+| Option                  | `mediaLoadedReinit:Boolean`                          | `false`        | Reinit slider on img loaded after a delay set with `Xt.medialoadedDelay`             |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/slider/media-loaded">
+  </demovanilla>
+</demo>
+
 ## Wheel
 
 Use `wheel: { selector: 'object' }` or `wheel: { selector: QuerySelector }` to enable mousewheel navigation.
