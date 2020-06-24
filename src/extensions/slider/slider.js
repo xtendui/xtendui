@@ -590,6 +590,28 @@ class Slider extends Xt.Toggle {
     self.logicDrag(dragger, e)
   }
 
+  /**
+   * medialoaded
+   * @param {Node|HTMLElement|EventTarget|Window} el
+   * @param {Boolean} deferred
+   */
+  eventMedialoadedHandler(el, deferred = false) {
+    const self = this
+    const options = self.options
+    // mediaLoadedReinit
+    if (options.mediaLoadedReinit && deferred) {
+      // @FIX performances
+      for (const slide of self.targets) {
+        // needs to recalculate not only xt-wrap but all targets
+        Xt.dataStorage.set(slide, self.componentNamespace + 'SlideLeft', slide.offsetLeft)
+        Xt.dataStorage.set(slide, self.componentNamespace + 'SlideWidth', slide.offsetWidth)
+        Xt.dataStorage.set(slide, self.componentNamespace + 'SlideHeight', slide.children[0].offsetHeight)
+      }
+    }
+    // super
+    super.eventMedialoadedHandler(el, deferred)
+  }
+
   //
   // event
   //
@@ -672,7 +694,9 @@ class Slider extends Xt.Toggle {
               const slideBound = slideLeft + slideWidth
               if (slideLeft < -draggerTranslate || slideBound > window.innerWidth - draggerTranslate) {
                 target.classList.add('xt-links-none')
+                target.classList.remove('xt-jumps-none')
               } else {
+                target.classList.add('xt-jumps-none')
                 target.classList.remove('xt-links-none')
               }
             }
