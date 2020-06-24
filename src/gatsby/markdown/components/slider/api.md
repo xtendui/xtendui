@@ -129,7 +129,7 @@ object.addEventListener('on.xt', eventOn, true)
 | Event                   | `off.xt`      | `elements` `targets` | Deactivation event            |
 | Event                   | `ondone.xt`           | `elements` `targets` | Activation event after delay and duration             |
 | Event                   | `offdone.xt`           | `elements` `targets` | Deactivation event after delay and duration             |
-| Event                   | `medialoaded.xt`           | `elements` `targets` | Images loaded event            |
+| Event                   | `medialoaded.xt`           | `elements` `targets` | Images loaded event, only when setting `options.mediaLoaded: true`           |
 | Event                   | `autostart.xt`           | `object` | Auto start event             |
 | Event                   | `autostop.xt`           | `object` | Auto stop event             |
 | Event                   | `autopause.xt`           | `object` | Auto pause event             |
