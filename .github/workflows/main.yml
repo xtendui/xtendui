@@ -21,7 +21,6 @@ jobs:
       uses: cycjimmy/semantic-release-action@v2
       with:
         extra_plugins: |
-            @semantic-release/changelog
             @semantic-release/commit-analyzer
             @semantic-release/git
             @semantic-release/github
