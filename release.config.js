@@ -3,8 +3,7 @@ module.exports = {
   repositoryUrl: 'https://github.com/minimit/xtend-library',
   branches: [
     'master',
-    { name: 'release-0.14', prerelease: false },
-    { name: 'release-0.15', prerelease: false },
+    { name: 'release-0.14', prerelease: false, range: '0.14.x' },
     { name: 'beta', prerelease: true },
     { name: 'alpha', prerelease: true },
   ],
