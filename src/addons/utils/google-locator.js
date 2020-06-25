@@ -9,13 +9,13 @@ class Googlelocator {
   /**
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
-   * @param {Object} optionsJs User options
+   * @param {Object} optionsCustom User options
    * @constructor
    */
-  constructor(object, optionsJs = {}) {
+  constructor(object, optionsCustom = {}) {
     const self = this
     self.object = object
-    self.optionsJs = optionsJs
+    self.optionsCustom = optionsCustom
     // @FIX multiple initializations
     const alreadyDefinedInstance = Xt.get(self.componentName, self.object)
     if (!alreadyDefinedInstance) {
@@ -38,7 +38,7 @@ class Googlelocator {
   init() {
     const self = this
     // js options
-    self.options = Xt.merge([self.constructor.optionsDefault, self.optionsJs])
+    self.options = Xt.merge([self.constructor.optionsDefault, self.optionsCustom])
     // vars
     self.locateCache = null
     self.loaderElement = self.object.querySelector(self.options.elements.loader)

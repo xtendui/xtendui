@@ -29,7 +29,7 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
    * @param {Object} optionsCustom User options
    */
-  init(object = null, optionsCustom = false) {
+  init(object = null, optionsCustom = null) {
     const self = this
     self.object = object || self.object
     self.optionsCustom = optionsCustom || self.optionsCustom
@@ -64,13 +64,9 @@ class Toggle {
   initVars() {
     const self = this
     // options
-    if (self.constructor.optionsDefaultSuper) {
-      self.optionsDefault = Xt.merge([self.constructor.optionsDefaultSuper, self.constructor.optionsDefault])
-    } else {
-      self.optionsDefault = self.constructor.optionsDefaultSuper
-    }
+    self.optionsDefault = Xt.merge([self.constructor.optionsDefaultSuper, self.constructor.optionsDefault])
     self.optionsDefault = Xt.merge([self.optionsDefault, Xt.optionsGlobal[self.componentName]])
-    self.options = Xt.merge([self.optionsDefault, self.optionsCustom ? self.optionsCustom : {}])
+    self.options = Xt.merge([self.optionsDefault, self.optionsCustom])
     // classes
     self.classes = self.options.class ? [...self.options.class.split(' ')] : []
     self.classesIn = self.options.classIn ? [...self.options.classIn.split(' ')] : []
@@ -178,7 +174,6 @@ class Toggle {
     // targets
     if (options.targets) {
       let arr = Array.from(self.container.querySelectorAll(options.targets))
-      // arr = arr.filter(x => !x.parentElement.closest(options.targets)) // filter out parent
       arr = arr.filter(x => !x.closest('.xt-ignore')) // filter out ignore
       self.targets = arr
       self.destroyElements.push(...self.targets)
