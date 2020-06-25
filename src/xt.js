@@ -20,6 +20,7 @@ Xt.optionsGlobal = {}
 Xt.resizeDelay = 1000
 Xt.scrollDelay = false
 Xt.medialoadedDelay = 500
+Xt.stickyIndex = 800
 Xt.focusables = 'a, button, details, input, iframe, select, textarea, .btn-close'
 
 if (typeof window !== 'undefined') {
@@ -61,7 +62,6 @@ if (typeof window !== 'undefined') {
    * init
    */
   Xt.ready(() => {
-    Xt.stickyIndex = 800
     Xt.setScrollbarWidth()
     Xt.windowHeightSet()
     Xt.mountCheck(document.documentElement)
@@ -652,7 +652,7 @@ if (typeof window !== 'undefined') {
   }
 
   /**
-   * Get unique number
+   * Get decresting number from Xt.stickyIndex
    * @return {Number} Unique number
    */
   Xt.getStickyIndex = () => {

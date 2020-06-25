@@ -21,24 +21,54 @@ class Sticky extends Xt.Toggle {
   //
 
   /**
+   * init setup
+   */
+  initSetup() {
+    const self = this
+    // container
+    let container = self.object.closest('.xt-container')
+    if (!container) {
+      container = Xt.createElement('<div class="xt-container xt-fixed-check xt-cloned"></div>')
+      self.object.before(container)
+      // @FIX mount inside clone components (sticky etc..)
+      requestAnimationFrame(() => {
+        container.append(self.object)
+      })
+    }
+    // super
+    super.initSetup()
+    // mode
+    self.mode = 'unique'
+  }
+
+  /**
+   * init logic
+   * @param {Boolean} saveCurrents
+   */
+  initLogic(saveCurrents = true) {
+    const self = this
+    // @FIX mount inside clone components (sticky etc..)
+    requestAnimationFrame(() => {
+      // init
+      self.enable()
+      self.initScope()
+      self.initAria()
+      self.initStart(saveCurrents)
+    })
+  }
+
+  /**
    * init elements, targets and currents
    */
   initScope() {
     super.initScope()
     const self = this
     const options = self.options
-    // mode
-    self.mode = 'unique'
     // sticky container
     for (const el of self.elements) {
-      let container = el.closest('.xt-container')
-      if (!container) {
-        container = Xt.createElement('<div class="xt-container xt-fixed-check"></div>')
-        el.before(container)
-        container.append(el)
-      }
       el.style[options.position] = '0px'
       // sticky clone
+      const container = self.object.closest('.xt-container')
       let target = container.querySelector('.xt-clone')
       if (!target) {
         target = el.cloneNode(true)
