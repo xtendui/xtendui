@@ -865,8 +865,7 @@ class Slider extends Xt.Toggle {
     }
     // check threshold
     const dragDist = self.detail.dragPosReal - self.detail.dragPosCurrent
-    if (Math.abs(dragDist) > options.drag.linkThreshold) {
-    } else {
+    if (Math.abs(dragDist) <= options.drag.linkThreshold) {
       // check other threshold
       if (Math.abs(self.detail.dragStartOther - self.detail.dragCurrentOther) > options.drag.linkThreshold) {
         return
@@ -970,15 +969,15 @@ class Slider extends Xt.Toggle {
     self.detail.dragCurrentRealY = self.detail.dragCurrentY
     // check threshold
     const dragDist = dragPos - dragPosCurrent
-    if (Math.abs(dragDist) > options.drag.linkThreshold) {
-      // disable links
-      dragger.classList.add('xt-links-none')
-      dragger.classList.add('xt-jumps-none')
-    } else {
+    if (Math.abs(dragDist) <= options.drag.linkThreshold) {
       // check other threshold
       if (Math.abs(self.detail.dragStartOther - self.detail.dragCurrentOther) > options.drag.linkThreshold) {
         return
       }
+    } else {
+      // disable links
+      dragger.classList.add('xt-links-none')
+      dragger.classList.add('xt-jumps-none')
     }
     // overflow
     if (options.drag.overflow) {
