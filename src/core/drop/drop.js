@@ -52,6 +52,7 @@ Drop.optionsDefault = {
   elements: false,
   elementsInner: ':scope > a, :scope > button',
   targets: ':scope > .drop',
+  targetsInner: ':scope > .drop-inner',
   on: 'click',
   min: 0,
   max: 1,
