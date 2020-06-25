@@ -817,10 +817,13 @@ class Slider extends Xt.Toggle {
     // save event
     if (e.detail.wheelX !== undefined) {
       self.detail.dragStart = e.detail.wheelX
+      self.detail.dragStartOther = e.detail.wheelY
     } else if (e.clientX !== undefined) {
       self.detail.dragStart = e.clientX
+      self.detail.dragStartOther = e.clientY
     } else if (e.touches && e.touches.length) {
       self.detail.dragStart = e.touches[0].clientX
+      self.detail.dragStartOther = e.touches[0].clientY
     }
     // auto
     self.eventAutopause()
@@ -844,6 +847,7 @@ class Slider extends Xt.Toggle {
    */
   logicDragend(dragger, e) {
     const self = this
+    const options = self.options
     // disabled
     if (self.disabled) {
       return
@@ -851,10 +855,22 @@ class Slider extends Xt.Toggle {
     // save event
     if (e.detail.wheelX !== undefined) {
       self.detail.dragCurrent = e.detail.wheelX
+      self.detail.dragCurrentOther = e.detail.wheelY
     } else if (e.clientX !== undefined) {
       self.detail.dragCurrent = e.clientX
+      self.detail.dragCurrentOther = e.clientY
     } else if (e.touches && e.touches.length) {
       self.detail.dragCurrent = e.touches[0].clientX
+      self.detail.dragCurrentOther = e.touches[0].clientY
+    }
+    // check threshold
+    const dragDist = self.detail.dragPosReal - self.detail.dragPosCurrent
+    if (Math.abs(dragDist) > options.drag.linkThreshold) {
+    } else {
+      // check other threshold
+      if (Math.abs(self.detail.dragStartOther - self.detail.dragCurrentOther) > options.drag.linkThreshold) {
+        return
+      }
     }
     // logic
     self.logicDragfriction(dragger, e)
@@ -911,10 +927,13 @@ class Slider extends Xt.Toggle {
     // save event
     if (e.detail.wheelX !== undefined) {
       self.detail.dragCurrent = e.detail.wheelX
+      self.detail.dragCurrentOther = e.detail.wheelY
     } else if (e.clientX !== undefined) {
       self.detail.dragCurrent = e.clientX
+      self.detail.dragCurrentOther = e.clientY
     } else if (e.touches && e.touches.length) {
       self.detail.dragCurrent = e.touches[0].clientX
+      self.detail.dragCurrentOther = e.touches[0].clientY
     }
     // calculate
     let dragPos = self.detail.dragPosReal
@@ -948,12 +967,18 @@ class Slider extends Xt.Toggle {
     // val
     self.detail.dragPosReal = dragPos
     self.detail.dragCurrentReal = self.detail.dragCurrent
-    // check
+    self.detail.dragCurrentRealY = self.detail.dragCurrentY
+    // check threshold
     const dragDist = dragPos - dragPosCurrent
     if (Math.abs(dragDist) > options.drag.linkThreshold) {
       // disable links
       dragger.classList.add('xt-links-none')
       dragger.classList.add('xt-jumps-none')
+    } else {
+      // check other threshold
+      if (Math.abs(self.detail.dragStartOther - self.detail.dragCurrentOther) > options.drag.linkThreshold) {
+        return
+      }
     }
     // overflow
     if (options.drag.overflow) {
@@ -1018,8 +1043,7 @@ class Slider extends Xt.Toggle {
     // activation or reset
     const dragDist = self.detail.dragPosReal - dragPosCurrent
     const direction = Math.sign(dragDist)
-    const dragDistAbs = Math.abs(dragDist)
-    if (dragDistAbs > options.drag.threshold) {
+    if (Math.abs(dragDist) > options.drag.threshold) {
       // get nearest
       let found = self.currentIndex
       if (found === 0 && direction > 0) {
