@@ -11,19 +11,38 @@ export const demo = {
 demo.htmlSource = `
 <form class="form-default">
 
-  <div class="form-group form-group-last">
+  <div class="form-group">
     <label class="form-label">
       Label
+      <div class="form-label-addon">
+        <div class="list">
+          <a href="#" class="btn btn-text">
+            btn-text
+          </a>
+          <a href="#" class="btn btn-link">
+            btn-link
+          </a>
+        </div>
+      </div>
     </label>
     <input type="text" class="form-item"/>
-    <div class="form-label-addon">
-      <a href="#" class="btn btn-primary btn-text">
-        btn-text
-      </a>
-      <a href="#" class="btn btn-link">
-        btn-link
-      </a>
-    </div>
+  </div>
+  
+  <div class="form-group">
+    <label class="form-label">
+      Label
+      <div class="form-label-addon form-label-addon-absolute">
+        <div class="list">
+          <a href="#" class="btn btn-text">
+            btn-text
+          </a>
+          <a href="#" class="btn btn-link">
+            btn-link
+          </a>
+        </div>
+      </div>
+    </label>
+    <input type="text" class="form-item"/>
   </div>
 
 </form>

@@ -187,7 +187,7 @@ demo.htmlSource = `
 
   <form class="form-default form-small flex-full"
         data-xt-toggle="{ elements: '.form-group > .btn', targets: '.group' }">
-    <div class="form-group form-group-last">
+    <div class="form-group">
       <button type="button" class="btn btn-primary">
         group
       </button>

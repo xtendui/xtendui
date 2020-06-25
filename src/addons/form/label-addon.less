@@ -3,12 +3,18 @@
  */
 
 .form-label-addon {
-  position: absolute;
-  top: 0;
-  right: 0;
-  .list();
-  .list-default();
+  display: inline-flex;
+  .margin(left, small);
   .btn {
     .btn-none();
   }
+  > .list {
+    .list-default();
+  }
+}
+
+.form-label-addon-absolute {
+  position: absolute;
+  top: 0;
+  right: 0;
 }

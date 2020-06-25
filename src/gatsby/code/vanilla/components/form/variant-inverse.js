@@ -76,7 +76,7 @@ demo.htmlSource = `
     </label>
   </div>
 
-  <div class="form-group" style="padding: 1rem 1.5rem; background: #ffffff;">
+  <div class="form-group" style="margin-bottom: 1.5rem; padding: 1rem 1.5rem; background: #ffffff;">
     <div class="form-group">
       <label class="form-label form-label-default">
         Input
