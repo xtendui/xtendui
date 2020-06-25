@@ -74,6 +74,7 @@ class Toggle {
     self.classesOut = self.options.classOut ? [...self.options.classOut.split(' ')] : []
     self.classesInitial = self.options.classInitial ? [...self.options.classInitial.split(' ')] : []
     self.classesInverse = self.options.classInverse ? [...self.options.classInverse.split(' ')] : []
+    self.classesLast = self.options.classLast ? [...self.options.classLast.split(' ')] : []
   }
 
   /**
@@ -159,10 +160,6 @@ class Toggle {
         Xt.dataStorage.remove(self.namespace, 'xtNamespaceDone')
       })
     }
-    // set self
-    for (const el of self.elements) {
-      Xt.set(self.componentName, el, self)
-    }
   }
 
   /**
@@ -177,10 +174,6 @@ class Toggle {
       arr = arr.filter(x => !x.closest('.xt-ignore')) // filter out ignore
       self.targets = arr
       self.destroyElements.push(...self.targets)
-    }
-    // set self
-    for (const tr of self.targets) {
-      Xt.set(self.componentName, tr, self)
     }
   }
 
@@ -267,7 +260,8 @@ class Toggle {
     self.initEvents()
     // listener dispatch
     requestAnimationFrame(() => {
-      self.object.classList.add(self.componentName)
+      // initialized class
+      self.object.classList.add('xt-component', self.componentName)
       self.object.dispatchEvent(new CustomEvent('init.xt'))
     })
   }
@@ -301,7 +295,8 @@ class Toggle {
             ...self.classesInDone,
             ...self.classesOut,
             ...self.classesInitial,
-            ...self.classesInverse
+            ...self.classesInverse,
+            ...self.classesLast,
           )
         })
       }
@@ -1141,12 +1136,12 @@ class Toggle {
   setDirection() {
     const self = this
     // set direction
-    if (self.oldIndex === null) {
-      self.direction = 1
+    if (!self.initial && (self.currentIndex === null || self.oldIndex === null)) {
+      self.direction = 0
     } else if (self.inverse !== null) {
       self.direction = self.inverse ? -1 : 1
     } else {
-      self.direction = self.oldIndex > self.currentIndex ? -1 : 1
+      self.direction = self.currentIndex < self.oldIndex ? -1 : 1
     }
   }
 
@@ -1168,7 +1163,7 @@ class Toggle {
     if (self.initial) {
       el.classList.add(...self.classesInitial)
     }
-    if (self.direction > 0) {
+    if (self.direction >= 0) {
       el.classList.remove(...self.classesInverse)
     } else {
       el.classList.add(...self.classesInverse)
@@ -1199,7 +1194,7 @@ class Toggle {
     if (!self.initial) {
       el.classList.remove(...self.classesInitial)
     }
-    if (self.direction > 0) {
+    if (self.direction >= 0) {
       el.classList.remove(...self.classesInverse)
     } else {
       el.classList.add(...self.classesInverse)
@@ -1295,7 +1290,13 @@ class Toggle {
       // off
       const groupElements = self.getElements(element)
       self.removeCurrent(groupElements[0])
-      self.setDirection()
+      // @FIX raf for sequential activation/deactivation (eg: mousenter mouseleave)
+      requestAnimationFrame(() => {
+        if (self.getCurrents().length === 0) {
+          self.currentIndex = null
+        }
+        self.setDirection()
+      })
       const targets = self.getTargets(element)
       const elementsInner = Xt.queryAll(element, options.elementsInner)
       const targetsInner = Xt.queryAll(targets, options.targetsInner)
@@ -1310,12 +1311,6 @@ class Toggle {
           disable.removeAttribute('disabled')
         }
       }
-      // currentIndex after a frame for sequential events
-      requestAnimationFrame(() => {
-        if (self.getCurrents().length === 0) {
-          self.currentIndex = null
-        }
-      })
       // auto
       if (!self.getCurrents().length) {
         self.eventAutostop()
@@ -1761,7 +1756,9 @@ class Toggle {
         }
       }
       // listener dispatch
-      el.dispatchEvent(new CustomEvent('on.xt'))
+      if (type !== 'elementsInner' && type !== 'targetsInner') {
+        el.dispatchEvent(new CustomEvent('on.xt'))
+      }
     } else if (actionCurrent === 'Off') {
       // activation
       self.deactivate(el)
@@ -1782,7 +1779,9 @@ class Toggle {
         Xt.focusLimit.off(el)
       }
       // listener dispatch
-      el.dispatchEvent(new CustomEvent('off.xt'))
+      if (type !== 'elementsInner' && type !== 'targetsInner') {
+        el.dispatchEvent(new CustomEvent('off.xt'))
+      }
     }
     // queue
     if (!skipQueue) {
@@ -1857,7 +1856,9 @@ class Toggle {
         .replace(/['"]+/g, '')
       self.specialCollapse('Reset', el, before, after)
       // listener dispatch
-      el.dispatchEvent(new CustomEvent('ondone.xt'))
+      if (type !== 'elementsInner' && type !== 'targetsInner') {
+        el.dispatchEvent(new CustomEvent('ondone.xt'))
+      }
     } else if (actionCurrent === 'Off') {
       // activation
       self.deactivateDone(el)
@@ -1901,7 +1902,9 @@ class Toggle {
         }
       }
       // listener dispatch
-      el.dispatchEvent(new CustomEvent('offdone.xt'))
+      if (type !== 'elementsInner' && type !== 'targetsInner') {
+        el.dispatchEvent(new CustomEvent('offdone.xt'))
+      }
     }
     // queue
     if (!skipQueue) {
@@ -1958,6 +1961,18 @@ class Toggle {
     const self = this
     const options = self.options
     if (actionCurrent === 'On') {
+      // last
+      for (const elNotLast of self.elements) {
+        elNotLast.classList.remove(...self.classesLast)
+      }
+      for (const trNotLast of self.targets) {
+        trNotLast.classList.remove(...self.classesLast)
+      }
+      for (const type in obj) {
+        for (const elLast of obj[type].queueEls) {
+          elLast.classList.add(...self.classesLast)
+        }
+      }
       // @FIX after raf because after on.xt custom listeners
       requestAnimationFrame(() => {
         // auto
@@ -2893,6 +2908,8 @@ class Toggle {
    */
   destroy() {
     const self = this
+    // initialized class
+    self.object.classList.remove('xt-component', self.componentName)
     // disable
     self.disable()
     // [disabled]
@@ -2973,6 +2990,7 @@ Toggle.optionsDefaultSuper = {
   classOut: 'out',
   classInitial: 'initial',
   classInverse: 'inverse',
+  classLast: 'last',
   eventLimit: '.event-limit',
   autoDisable: false,
   autoClose: false,

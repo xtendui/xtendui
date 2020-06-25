@@ -8,15 +8,20 @@
   position: relative;
   // z-index
   &.in {
-    &, > .drop > .drop-inner {
+    &, > .drop {
       z-index: @index-drop;
     }
   }
   &.out {
-    &, > .drop > .drop-inner {
+    &, > .drop {
       z-index: @index-drop - 1;
     }
   }
+  &.last {
+     &, > .drop {
+       z-index: @index-drop + 1;
+     }
+   }
   // content
   > .backdrop, > .drop {
     display: none;
@@ -33,7 +38,7 @@
   animation-duration: inherit; // needed for animation time and backdrop animation time, put max animation time
   > .drop-inner {
     position: relative;
-    z-index: @index-base; // fix :before negative z-index
+    z-index: @index-backdrop + 1;
     > .drop-design {
       .design-setup();
       border-radius: inherit;
