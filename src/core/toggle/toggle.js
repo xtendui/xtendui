@@ -29,7 +29,7 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
    * @param {Object} optionsCustom User options
    */
-  init(object = false, optionsCustom = false) {
+  init(object = null, optionsCustom = false) {
     const self = this
     self.object = object || self.object
     self.optionsCustom = optionsCustom || self.optionsCustom
@@ -272,6 +272,7 @@ class Toggle {
     self.initEvents()
     // listener dispatch
     requestAnimationFrame(() => {
+      self.object.classList.add(self.componentName)
       self.object.dispatchEvent(new CustomEvent('init.xt'))
     })
   }
