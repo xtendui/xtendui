@@ -1980,7 +1980,6 @@ class Toggle {
    */
   queueComplete(actionCurrent, obj) {
     const self = this
-    const options = self.options
     if (actionCurrent === 'On') {
       // @FIX after raf because after on.xt custom listeners
       requestAnimationFrame(() => {
