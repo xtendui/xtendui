@@ -136,7 +136,7 @@ You can use a function for <code>delayOn</code> and <code>delayOff</code> for ex
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `instant:Boolean|Object`                 | `{ elements: true, elementsInner: true }`     | Set instant activation and deactivation          |
+| Option                  | `instant:Boolean|Object`                 | `{ elements: true, elementsInner: true }`     | Set instant activation and deactivation, can be one or more booleans `elements` `elementsInner` `targets` `targetsInner`          |
 | Option                  | `delayOn:Milliseconds|Function`                          | `false`        | Activation delay            |
 | Option                  | `delayOff:Milliseconds|Function`                          | `false`        | Deactivation delay            |
 | Option                  | `delayInitial:Boolean`                          | `true`        | Initial activation delay            |
@@ -227,6 +227,7 @@ Use `keyboard: { selector: 'object' }` or `keyboard: { selector: QuerySelector }
 | Option                  | `offBlock:Milliseconds`                          | `true`        | Block concurrent deactivation events for some time            |
 | Option                  | `mediaLoaded:Boolean`                          | `false`        | Media loaded classes on elements and targets            |
 | Option                  | `mediaLoadedReinit:Boolean`                          | `false`        | Reinit component on media loaded elements and targets            |
+| Option                  | `zIndex:Boolean|Object`                 | `false`     | Set zIndex on activation, can be one or more objects `elements` `elementsInner` `targets` `targetsInner`, the object have `start` and `factor` for the starting zIndex and the factor number to add          |
 | Option                  | `focusLimit:Boolean`                          | `false`        | Limit focus on activation            |
 | Option                  | `aria:Object|false`                          | `Object`        | Inject aria attributes            |
 | Option                  | `aria.tabindex:Boolean`                          | `true`        | Inject aria tabindex attributes            |
