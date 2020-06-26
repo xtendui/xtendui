@@ -19,7 +19,33 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
     <button type="button" class="btn btn-primary">
-      menu left
+      overlay full
+    </button>
+    <div class="overlay overlay-default overlay-screen overlay-size-full">
+      <div class="overlay-container">
+        <div class="overlay-inner">
+          <div class="overlay-design"></div>
+
+            <div class="card card-overlay">
+              <div class="card-design"></div>
+              <div class="btn btn-close" aria-label="Close"></div>
+              <div class="card-inner">
+                <div class="card-content">
+                  <div class="card-asset">
+                    ${img({ classes: 'media-cover', ratio: '100%' })}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-xt-overlay>
+    <button type="button" class="btn btn-primary">
+      overlay menu left
     </button>
     <div class="overlay overlay-default overlay-position-left overlay-close-outside">
       <div class="overlay-container">
@@ -67,7 +93,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
     <button type="button" class="btn btn-primary">
-      contact
+      overlay contact
     </button>
     <div class="overlay overlay-default overlay-squared overlay-close-outside">
       <div class="overlay-container">
@@ -195,7 +221,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
     <button type="button" class="btn btn-primary">
-      newsletter
+      overlay newsletter
     </button>
     <div class="overlay overlay-default overlay-squared overlay-close-outside">
       <div class="overlay-container">
