@@ -182,41 +182,30 @@ class Scroll extends Xt.Toggle {
           : elTop + elHeight + self.detail.trigger - self.detail.distance
         self.detail.end = self.detail.end < self.detail.start + fallback ? self.detail.start + fallback : self.detail.end // limit fixes deactivation on page top
         // ratio
-        const current = scrollTop + self.detail.trigger - self.detail.start
+        const position = scrollTop + self.detail.trigger - self.detail.start
+        Xt.dataStorage.set(el, self.componentNamespace + 'Position', position)
         const total = self.detail.end - self.detail.start
-        self.detail.ratio = Math.max(0, current) / total
+        self.detail.ratio = Math.max(0, position) / total
         self.detail.ratio = self.detail.ratio > 0 ? self.detail.ratio : 0
         self.detail.ratio = self.detail.ratio < 1 ? self.detail.ratio : 1
         self.detail.ratioInverse = 1 - self.detail.ratio
         self.detail.ratioDouble = 1 - Math.abs((self.detail.ratio - 0.5) * 2)
-        // activation
         // @FIX fixes on page top || self.detail.start > self.detail.end
-        if ((current >= 0 && current <= total) || self.detail.start > self.detail.end) {
+        if ((position >= 0 && position <= total) || self.detail.start > self.detail.end) {
           // inside
           changed = self.checkOn(el)
           if (changed) {
             currentsOn.push(el)
-            // next frame for counter
-            cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'ScrollFrame'))
-            Xt.dataStorage.set(
-              el,
-              self.componentNamespace + 'ScrollFrame',
-              requestAnimationFrame(() => {
-                // initial
-                if (initial) {
-                  Xt.dataStorage.set(el, self.componentNamespace + 'Initial', true)
-                } else {
-                  Xt.dataStorage.remove(el, self.componentNamespace + 'Initial')
-                }
-                // direction
-                self.inverse = current > self.detail.trigger
-                // activation
-                Xt.dataStorage.set(el, self.componentNamespace + 'OnCount', currentOn)
-                Xt.dataStorage.set(el, self.componentNamespace + 'OnTot', currentsOn.length)
-                currentOn++
-                self.eventOn(el, true)
-              })
-            )
+            // initial
+            if (initial) {
+              Xt.dataStorage.set(el, self.componentNamespace + 'Initial', true)
+            } else {
+              Xt.dataStorage.remove(el, self.componentNamespace + 'Initial')
+            }
+            // activation
+            Xt.dataStorage.set(el, self.componentNamespace + 'OnCount', currentOn)
+            Xt.dataStorage.set(el, self.componentNamespace + 'OnTot', currentsOn.length)
+            currentOn++
           }
         } else {
           // outside
@@ -225,27 +214,16 @@ class Scroll extends Xt.Toggle {
           if (changed) {
             el.classList.add('scroll-done')
             currentsOff.push(el)
-            // next frame for counter
-            cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'ScrollFrame'))
-            Xt.dataStorage.set(
-              el,
-              self.componentNamespace + 'ScrollFrame',
-              requestAnimationFrame(() => {
-                // initial
-                if (initial) {
-                  Xt.dataStorage.set(el, self.componentNamespace + 'Initial', true)
-                } else {
-                  Xt.dataStorage.remove(el, self.componentNamespace + 'Initial')
-                }
-                // direction
-                self.inverse = current > self.detail.trigger
-                // deactivate
-                Xt.dataStorage.set(el, self.componentNamespace + 'OffCount', currentOff)
-                Xt.dataStorage.set(el, self.componentNamespace + 'OffTot', currentsOff.length)
-                currentOff++
-                self.eventOff(el, true)
-              })
-            )
+            // initial
+            if (initial) {
+              Xt.dataStorage.set(el, self.componentNamespace + 'Initial', true)
+            } else {
+              Xt.dataStorage.remove(el, self.componentNamespace + 'Initial')
+            }
+            // deactivate
+            Xt.dataStorage.set(el, self.componentNamespace + 'OffCount', currentOff)
+            Xt.dataStorage.set(el, self.componentNamespace + 'OffTot', currentsOff.length)
+            currentOff++
           }
         }
         // indicator
@@ -271,6 +249,22 @@ class Scroll extends Xt.Toggle {
           })
         )
       }
+    }
+    // currents
+    const total = self.detail.end - self.detail.start
+    for (const el of currentsOn) {
+      // direction
+      const position = Xt.dataStorage.get(el, self.componentNamespace + 'Position')
+      self.inverse = position > 0
+      // event
+      self.eventOn(el, true)
+    }
+    for (const el of currentsOff) {
+      // direction
+      const position = Xt.dataStorage.get(el, self.componentNamespace + 'Position')
+      self.inverse = position > 0
+      // event
+      self.eventOff(el, true)
     }
   }
 

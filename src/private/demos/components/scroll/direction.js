@@ -8,10 +8,10 @@ Xt.mount.push({
     let self = new Xt.Scroll(object, {
       elements: ':scope > *',
       delayOn: current => {
-        return Math.min(current * 75, 300)
+        return Math.min((current + 1) * 75, 300)
       },
       delayOff: (current, total) => {
-        return Math.min((total - current) * 75, 300)
+        return Math.min((total - (current + 1)) * 75, 300)
       },
     })
 
