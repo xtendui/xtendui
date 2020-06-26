@@ -1987,7 +1987,7 @@ class Toggle {
         // auto
         self.eventAutostart()
         // reset
-        //self.inverse = null
+        self.inverse = null
         self.initial = false
         self.wrap = false
       })
