@@ -12,6 +12,11 @@ demo.htmlSource = `
 <form class="form-default">
   <div
     data-xt-toggle="{ elements: '.radio', min: 1 }">
+
+    <label class="form-label">
+      Lorem ipsum
+    </label>
+
     <div class="form-group">
       <button type="button" class="checkbox active" data-xt-toggle="{ elements: false }">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>

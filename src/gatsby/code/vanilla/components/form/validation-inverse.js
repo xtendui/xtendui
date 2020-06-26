@@ -84,9 +84,9 @@ demo.htmlSource = `
     <select class="form-item"
       required>
       <option selected value="">Select an option</option>
-      <option>Test</option>
-      <option>Test</option>
-      <option>Test</option>
+      <option>Option 1</option>
+      <option>Option 2</option>
+      <option>Option 3</option>
     </select>
   </div>
 
@@ -96,24 +96,37 @@ demo.htmlSource = `
     </label>
     <select class="form-item"
       multiple required>
-      <option>Test</option>
-      <option>Test</option>
-      <option>Test</option>
+      <option>Option 1</option>
+      <option>Option 2</option>
+      <option>Option 3</option>
     </select>
+  </div>
+
+  <div class="form-group-inline">
+
+    <div class="form-group">
+      <input type="radio" id="radio-validation-inverse-0" name="radio-validation-inverse"
+        required>
+      <label class="form-label" for="radio-validation-inverse-0">
+        Lorem ipsum dolor
+      </label>
+    </div>
+
+    <div class="form-group">
+      <input type="radio" id="radio-validation-inverse-1" name="radio-validation-inverse"
+        required>
+        <label class="form-label" for="radio-validation-inverse-1">
+          Lorem ipsum dolor
+        </label>
+      </div>
+    </div>
+
   </div>
 
   <div class="form-group">
     <input type="checkbox" id="check-validation-inverse" name="check-validation-inverse"
       required>
     <label class="form-label" for="check-validation-inverse">
-      <strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
-    </label>
-  </div>
-
-  <div class="form-group">
-    <input type="radio" id="radio-validation-inverse-0" name="radio-validation-inverse"
-      required>
-    <label class="form-label" for="radio-validation-inverse-0">
       <strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
     </label>
   </div>

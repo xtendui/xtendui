@@ -20,6 +20,10 @@ demo.htmlSource = `
             <div class="card-title">Default</div>
             <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
           </div>
+          <div class="card-block card-item card-block-small">
+            <div class="card-title">Small</div>
+            <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -32,6 +36,10 @@ demo.htmlSource = `
         <div class="card-content">
           <div class="card-block card-item">
             <div class="card-title">Small</div>
+            <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+          </div>
+          <div class="card-block card-item card-block-large">
+            <div class="card-title">Large</div>
             <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
           </div>
         </div>
@@ -48,6 +56,10 @@ demo.htmlSource = `
             <div class="card-title">Medium</div>
             <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
           </div>
+          <div class="card-block card-item card-block-small">
+            <div class="card-title">Small</div>
+            <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -60,6 +72,10 @@ demo.htmlSource = `
         <div class="card-content">
           <div class="card-block card-item">
             <div class="card-title">Large</div>
+            <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+          </div>
+          <div class="card-block card-item card-block-medium">
+            <div class="card-title">Medium</div>
             <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
           </div>
         </div>

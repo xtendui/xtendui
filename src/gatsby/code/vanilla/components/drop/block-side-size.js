@@ -31,7 +31,7 @@ demo.htmlSource = `
                     <div class="card-title">Lorem ipsum</div>
                     <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
                   </div>
-                  <div class="card-block card-item card-block-side col-6-sm">
+                  <div class="card-block card-item card-block-side col-5-sm">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
                   </div>
                 </div>
@@ -63,9 +63,9 @@ demo.htmlSource = `
                     <div class="card-title">Lorem ipsum</div>
                     <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
                   </div>
-                  <div class="card-item card-block-side col-6-sm">
+                  <div class="card-item card-block-side col-5-sm">
                     <div class="card-asset">
-                      ${img({ classes: 'media-cover', ratio: '37.5%' })}
+                      ${img({ classes: 'media-cover', ratio: '100%' })}
                     </div>
                     <div class="card-block card-item">
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>

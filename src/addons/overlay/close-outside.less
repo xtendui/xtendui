@@ -4,21 +4,23 @@
 
 .overlay-close-outside {
   &:not(.overlay-screen) {
-    .overlay-inner {
-      border-top-right-radius: 0;
+    @media @min-sm {
+      .overlay-inner {
+        border-top-right-radius: 0;
+      }
+      .card-overlay > .btn-close {
+        .btn-primary();
+        .btn-squared();
+        top: 0;
+        left: 100%;
+        right: auto;
+      }
     }
-    .card-overlay > .btn-close {
-      .btn-primary();
-      .btn-squared();
-      top: 0;
-      left: 100%;
-      right: auto;
-    }
-  }
-  &.overlay-position-right {
-    .card-overlay > .btn-close {
-      left: auto;
-      right: 100%;
+    &.overlay-position-right {
+      .card-overlay > .btn-close {
+        left: auto;
+        right: 100%;
+      }
     }
   }
 }

@@ -38,9 +38,9 @@ demo.htmlSource = `
     </label>
     <select class="form-item">
       <option selected value="">Select an option</option>
-      <option>Test</option>
-      <option>Test</option>
-      <option>Test</option>
+      <option>Option 1</option>
+      <option>Option 2</option>
+      <option>Option 3</option>
     </select>
   </div>
 
@@ -49,9 +49,9 @@ demo.htmlSource = `
       Select multiple
     </label>
     <select class="form-item" multiple>
-      <option>Test</option>
-      <option>Test</option>
-      <option>Test</option>
+      <option>Option 1</option>
+      <option>Option 2</option>
+      <option>Option 3</option>
     </select>
   </div>
 
@@ -75,7 +75,7 @@ demo.htmlSource = `
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
     </label>
   </div>
-  
+
   <div class="form-group form-group-small">
     <label class="form-label">
       Input
@@ -86,6 +86,6 @@ demo.htmlSource = `
   <button type="submit" class="btn btn-primary">
     submit
   </button>
-  
+
 </form>
 `

@@ -44,7 +44,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
     <button type="button" class="btn btn-primary">
-      screen image full
+      screen full image
     </button>
     <div class="overlay overlay-default overlay-screen overlay-size-full">
       <div class="overlay-container">
@@ -70,29 +70,35 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
     <button type="button" class="btn btn-primary">
-      screen full blocks
+      screen full nested
     </button>
     <div class="overlay overlay-default overlay-screen overlay-size-full">
       <div class="overlay-container">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
 
-          <div class="card card-overlay"
-            style="align-items: stretch;">
+          <div class="card card-overlay">
             <div class="card-design"></div>
             <div class="btn btn-close" aria-label="Close"></div>
             <div class="card-inner">
               <div class="card-content">
-                <div class="card-asset">
-                  ${img({ classes: 'media-cover', ratio: '15%' })}
-                </div>
-                <div class="card-block card-item">
-                  <div class="card-title">Lorem ipsum</div>
-                  <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-                </div>
-                <div class="card-block card-item card-block-side"
-                  style="margin-top: auto">
-                  <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+
+                <div class="card-item-nested card-item card-group-sm">
+
+                  <div class="card-item card-block-side col-5-sm">
+                    <div class="card-asset">
+                      ${img({ classes: 'media-cover', ratio: '100%', loading: 'eager' })}
+                    </div>
+                    <div class="card-block card-item">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
+                    </div>
+                  </div>
+
+                  <div class="card-block card-item">
+                    <div class="card-title">Lorem ipsum</div>
+                    <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+                  </div>
+
                 </div>
               </div>
             </div>

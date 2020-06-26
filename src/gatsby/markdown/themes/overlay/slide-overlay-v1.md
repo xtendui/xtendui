@@ -2,10 +2,10 @@
 type: "Themes"
 badge: "Themes"
 parent: "Overlay"
-title: "position-slide-v1"
+title: "slide-overlay-v1"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-date: "2019-10-15"
+date: "2020-06-26"
 demos: [
-  "iframe/themes/position-slide-v1"
+  "iframe/themes/slide-overlay-v1"
 ]
 ---

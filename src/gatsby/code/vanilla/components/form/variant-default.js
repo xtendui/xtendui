@@ -56,9 +56,9 @@ demo.htmlSource = `
       Select multiple
     </label>
     <select class="form-item" multiple>
-      <option>Test</option>
-      <option>Test</option>
-      <option>Test</option>
+      <option>Option 1</option>
+      <option>Option 2</option>
+      <option>Option 3</option>
     </select>
   </div>
 
@@ -89,9 +89,9 @@ demo.htmlSource = `
       </label>
       <select class="form-item form-item-inverse">
         <option selected value="">Select an option</option>
-        <option>Test</option>
-        <option>Test</option>
-        <option>Test</option>
+        <option>Option 1</option>
+        <option>Option 2</option>
+        <option>Option 3</option>
       </select>
     </div>
     <div class="form-group">
@@ -111,6 +111,6 @@ demo.htmlSource = `
   <button type="submit" class="btn btn-primary">
     submit
   </button>
-  
+
 </form>
 `

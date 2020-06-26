@@ -19,7 +19,7 @@
     .overlay-space();
   }
   // default options
-  .overlay-size-small();
+  .overlay-size-medium();
   .overlay-medium();
 }
 
@@ -153,43 +153,51 @@
 // content size
 
 .overlay-small {
+  .overlay.overlay-small();
+}
+
+.overlay.overlay-small {
   // card
   .card-overlay {
     .card-small();
     .card-block {
-      padding: 2em 2em !important;
+      padding: 2em 2em;
     }
   }
 }
 
 .overlay-medium {
+  .overlay.overlay-medium();
+  // smaller on mobile
+  @media @max-sm {
+    .overlay.overlay-small();
+  }
+}
+
+.overlay.overlay-medium {
   // card
   .card-overlay {
-    .card-small();
+    .card-medium();
     .card-block {
-      padding: 2em 2em !important;
-    }
-    @media @min-sm {
-      .card-medium();
-      .card-block {
-        padding: 2.5em 2.5em !important;
-      }
+      padding: 2.5em 2.5em;
     }
   }
 }
 
 .overlay-large {
+  .overlay.overlay-large();
+  // smaller on mobile
+  @media @max-sm {
+    .overlay.overlay-medium();
+  }
+}
+
+.overlay.overlay-large {
   // card
   .card-overlay {
-    .card-medium();
+    .card-large();
     .card-block {
-      padding: 2.5em 2.5em !important;
-    }
-    @media @min-sm {
-      .card-large();
-      .card-block {
-        padding: 3em 3em !important;
-      }
+      padding: 3em 3em;
     }
   }
 }
@@ -232,10 +240,10 @@
     opacity: 0;
   }
   .card-overlay {
-    > .btn-close {
+    .card-block,  .card-content {
       opacity: 0;
     }
-    .card-block,  .card-content {
+    > .btn-close {
       opacity: 0;
     }
   }
@@ -246,16 +254,16 @@
       transition: opacity @time-medium @ease-in;
     }
     .card-overlay {
+      .card-block,  .card-content {
+        opacity: 1;
+        transition: opacity @time-medium @ease-in @time-tiny;
+      }
       > .btn-close {
         // use animation to not override .btn transitions
         .anim-zoom.in();
         animation-delay: @time-medium;
         animation-fill-mode: forwards;
         opacity: 0;
-      }
-      .card-block,  .card-content {
-        opacity: 1;
-        transition: opacity @time-medium @ease-in @time-tiny;
       }
     }
     > .backdrop {
@@ -269,14 +277,14 @@
       transition: opacity @time-small @ease-out @time-tiny;
     }
     .card-overlay {
+      .card-block,  .card-content {
+        opacity: 0;
+        transition: opacity @time-small @ease-out;
+      }
       > .btn-close {
         // use animation to not override .btn transitions
         .anim-zoom.out();
         animation-delay: initial;
-      }
-      .card-block,  .card-content {
-        opacity: 0;
-        transition: opacity @time-small @ease-out;
       }
     }
     > .backdrop {

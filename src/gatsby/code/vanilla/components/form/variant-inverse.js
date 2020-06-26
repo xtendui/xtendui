@@ -45,9 +45,9 @@ demo.htmlSource = `
     </label>
     <select class="form-item">
       <option selected value="">Select an option</option>
-      <option>Test</option>
-      <option>Test</option>
-      <option>Test</option>
+      <option>Option 1</option>
+      <option>Option 2</option>
+      <option>Option 3</option>
     </select>
   </div>
 
@@ -56,12 +56,12 @@ demo.htmlSource = `
       Select multiple
     </label>
     <select class="form-item" multiple>
-      <option>Test</option>
-      <option>Test</option>
-      <option>Test</option>
+      <option>Option 1</option>
+      <option>Option 2</option>
+      <option>Option 3</option>
     </select>
   </div>
-  
+
   <div class="form-group">
     <input type="checkbox" id="check-inverse" name="check-inverse">
     <label class="form-label" for="check-inverse">
@@ -111,6 +111,6 @@ demo.htmlSource = `
   <button type="submit" class="btn btn-default">
     submit
   </button>
-  
+
 </form>
 `

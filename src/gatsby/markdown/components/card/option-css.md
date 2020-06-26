@@ -61,3 +61,21 @@ Classes for assigning size (e.g.: padding or font size). Add or remove selectors
   <demovanilla src="vanilla/components/card/size">
   </demovanilla>
 </demo>
+
+## Block Size
+
+Classes for assigning size (e.g.: padding or font size). Add or remove selectors at your discretion.
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Example                       |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Class                   | `.card-block-{size}`                           | `.card-block-small` `.card-block-medium` `.card-block-large`|
+| Mixin                   | `.card-block.card-block-{size}()`                         | `.card-block.card-small()` `.card-block.card-block-medium()` `.card-block.card-block-large()`         |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/card/block-size">
+  </demovanilla>
+</demo>

@@ -10,6 +10,11 @@ export const demo = {
 
 demo.htmlSource = `
 <form class="form-default">
+
+  <label class="form-label flex-full">
+    Lorem ipsum
+  </label>
+
   <div class="form-group">
     <input type="checkbox" class="unstyled" id="check-block-unstyled" checked>
     <label class="form-label" for="check-block-unstyled">
@@ -34,5 +39,6 @@ demo.htmlSource = `
   <button type="submit" class="btn btn-primary">
     submit
   </button>
+
 </form>
 `
