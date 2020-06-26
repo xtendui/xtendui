@@ -17,6 +17,8 @@ Xt.mount.push({
     const assetZoom = 0.25
     const assetTimeOn = Xt.vars.timeBig
     const assetEaseOn = 'quint.inOut'
+    const assetTimeOnDragging = Xt.vars.timeBig + Xt.vars.timeBig
+    const assetEaseOnDragging = 'quint.out'
 
     const contentX = 50
     const contentTimeOn = Xt.vars.timeBig
@@ -172,7 +174,7 @@ Xt.mount.push({
           if (!self.detail.dragging) {
             gsap.set(asset, { scale: 1 + assetZoom })
           }
-          gsap.to(asset, { scale: 1, duration: assetTimeOn, ease: assetEaseOn })
+          gsap.to(asset, { scale: 1, duration: self.detail.dragging ? assetTimeOnDragging : assetTimeOn, ease: self.detail.dragging ? assetEaseOnDragging : assetEaseOn })
           // content
           const content = tr.querySelector('.slide_text')
           if (!self.detail.dragging) {
