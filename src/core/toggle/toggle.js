@@ -294,7 +294,7 @@ class Toggle {
             ...self.classesInDone,
             ...self.classesOut,
             ...self.classesInitial,
-            ...self.classesInverse,
+            ...self.classesInverse
           )
         })
       }
@@ -1256,6 +1256,7 @@ class Toggle {
       const actionOther = 'Off'
       self.eventQueue(actionCurrent, groupElements, targets, elementsInner, targetsInner, e)
       // queue run
+      // eslint-disable-next-line guard-for-in
       for (const type in self.detail['queue' + actionCurrent][0]) {
         self.queueStart(actionCurrent, actionOther, type, 0, true)
       }
@@ -1326,6 +1327,7 @@ class Toggle {
         self.queueStop(actionCurrent, actionOther, removedOff)
       }
       // queue run
+      // eslint-disable-next-line guard-for-in
       for (const type in self.detail['queue' + actionCurrent][0]) {
         self.queueStart(actionCurrent, actionOther, type, 0, true)
       }
@@ -1590,6 +1592,29 @@ class Toggle {
         } else if (typeof options.instant === 'object' && options.instant[type]) {
           obj[type].instantType = true
         }
+        // zIndex
+        if (options.zIndex) {
+          // eslint-disable-next-line guard-for-in
+          for (const type in options.zIndex) {
+            for (const el of obj[type].queueEls) {
+              self.detail.zIndex = self.detail.zIndex ? self.detail.zIndex : options.zIndex[type].start
+              self.detail.zIndex = self.detail.zIndex + options.zIndex[type].factor
+              el.style.zIndex = self.detail.zIndex
+              // zIndex reset after duration
+              const duration = Xt.animTime(el, options['duration' + actionCurrent])
+              clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'indexTimeout'))
+              Xt.dataStorage.set(
+                el,
+                self.componentNamespace + 'indexTimeout',
+                setTimeout(() => {
+                  self.detail.zIndex = options.zIndex[type].start
+                  el.style.zIndex = self.detail.zIndex
+                }, duration)
+              )
+            }
+          }
+        }
+        // start queue
         self.queueDelay(actionCurrent, actionOther, obj, type, queueInitial)
       }
     }
@@ -1957,33 +1982,12 @@ class Toggle {
     const self = this
     const options = self.options
     if (actionCurrent === 'On') {
-      // zIndex
-      if (options.zIndex) {
-        for (const type in options.zIndex) {
-          for (const el of obj[type].queueEls) {
-            self.detail.zIndex = self.detail.zIndex ? self.detail.zIndex : options.zIndex[type].start
-            self.detail.zIndex = self.detail.zIndex + options.zIndex[type].factor
-            el.style.zIndex = self.detail.zIndex
-            // zIndex reset after duration
-            const duration = Xt.animTime(el, options['duration' + actionCurrent])
-            clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'indexTimeout'))
-            Xt.dataStorage.set(
-              el,
-              self.componentNamespace + 'indexTimeout',
-              setTimeout(() => {
-                self.detail.zIndex = options.zIndex[type].start
-                el.style.zIndex = self.detail.zIndex
-              }, duration)
-            )
-          }
-        }
-      }
       // @FIX after raf because after on.xt custom listeners
       requestAnimationFrame(() => {
         // auto
         self.eventAutostart()
         // reset
-        self.inverse = null
+        //self.inverse = null
         self.initial = false
         self.wrap = false
       })

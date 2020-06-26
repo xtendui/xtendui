@@ -196,6 +196,7 @@ class Scroll extends Xt.Toggle {
           changed = self.checkOn(el)
           if (changed) {
             currentsOn.push(el)
+            // next frame for counter
             cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'ScrollFrame'))
             Xt.dataStorage.set(
               el,
@@ -224,6 +225,7 @@ class Scroll extends Xt.Toggle {
           if (changed) {
             el.classList.add('scroll-done')
             currentsOff.push(el)
+            // next frame for counter
             cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'ScrollFrame'))
             Xt.dataStorage.set(
               el,
