@@ -174,7 +174,11 @@ Xt.mount.push({
           if (!self.detail.dragging) {
             gsap.set(asset, { scale: 1 + assetZoom })
           }
-          gsap.to(asset, { scale: 1, duration: self.detail.dragging ? assetTimeDragging : assetTime, ease: self.detail.dragging ? assetEaseDragging : assetEase })
+          gsap.to(asset, {
+            scale: 1,
+            duration: self.detail.dragging ? assetTimeDragging : assetTime,
+            ease: self.detail.dragging ? assetEaseDragging : assetEase,
+          })
           // content
           const content = tr.querySelector('.slide_text')
           if (!self.detail.dragging) {
