@@ -5,7 +5,8 @@ module.exports = {
     'master',
     { name: 'release-0.14', prerelease: false, range: '0.14.x' },
     { name: 'release-0.15', prerelease: false, range: '0.15.x' },
-    { name: 'beta', prerelease: true }, { name: 'alpha', prerelease: true },
+    { name: 'beta', prerelease: true },
+    { name: 'alpha', prerelease: true },
   ],
   plugins: [
     ['@semantic-release/commit-analyzer'],
@@ -14,7 +15,7 @@ module.exports = {
     [
       '@semantic-release/git',
       {
-        assets: ['package.json', 'package-lock.json', 'CHANGELOG.md', '/**'],
+        assets: ['package.json', 'package-lock.json', 'CHANGELOG.md', '/**/*.*'],
         message: 'chore(release): ${nextRelease.version} [skip ci]',
       },
     ],
