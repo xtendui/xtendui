@@ -448,14 +448,16 @@ class Toggle {
         for (const event of events) {
           el.addEventListener(event, onHandler)
         }
-        // @FIX prevents click links on click until clicked two times
-        const withlinkStartTouchHandler = Xt.dataStorage.put(
-          el,
-          'touchend/withlink' + '/' + self.namespace,
-          self.eventWithlinkStartHandler.bind(self).bind(self, el)
-        )
-        el.addEventListener('touchend', withlinkStartTouchHandler)
-        if (!events.includes('mouseenter') && !events.includes('mousehover')) {
+        if (events.includes('click') || events.includes('mouseenter') || events.includes('mousehover')) {
+          // @FIX prevents click links on click until clicked two times
+          const withlinkStartTouchHandler = Xt.dataStorage.put(
+            el,
+            'touchend/withlink' + '/' + self.namespace,
+            self.eventWithlinkStartHandler.bind(self).bind(self, el)
+          )
+          el.addEventListener('touchend', withlinkStartTouchHandler)
+        }
+        if (events.includes('click')) {
           const withlinkStartMouseHandler = Xt.dataStorage.put(
             el,
             'mouseup/withlink' + '/' + self.namespace,
@@ -1767,7 +1769,7 @@ class Toggle {
           }
         }
         // tabindex
-        if (options.aria === true || options.aria.tabindex) {
+        if (options.aria === true || (typeof options.aria === 'object' && options.aria.tabindex)) {
           if (type === 'targets') {
             const focusables = el.querySelectorAll(Xt.focusables)
             for (const focusable of focusables) {
@@ -1913,7 +1915,7 @@ class Toggle {
             el.setAttribute('aria-expanded', 'false')
           }
           // tabindex
-          if (options.aria === true || options.aria.tabindex) {
+          if (options.aria === true || (typeof options.aria === 'object' && options.aria.tabindex)) {
             const focusables = el.querySelectorAll(Xt.focusables)
             for (const focusable of focusables) {
               focusable.setAttribute('tabindex', '-1')
