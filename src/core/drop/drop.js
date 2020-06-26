@@ -56,12 +56,21 @@ Drop.optionsDefault = {
   on: 'click',
   min: 0,
   max: 1,
-  instant: { elements: false, elementsInner: true },
+  instant: {
+    elements: false,
+    elementsInner: true,
+  },
   class: 'active active-drop',
   eventLimit: '.event-limit, .drop',
   autoClose: true,
   closeOutside: 'body',
   closeInside: '.drop-dismiss, .btn-close, .backdrop',
+  zIndex: {
+    targets: {
+      start: 500,
+      factor: 1,
+    },
+  },
   ariaControls: ':scope > a, :scope > button',
 }
 

@@ -7,21 +7,15 @@
   vertical-align: middle;
   position: relative;
   // z-index
-  &.in {
-    &, > .drop {
+  > .drop {
+    z-index: inherit;
+    &.in {
       z-index: @index-drop;
     }
-  }
-  &.out {
-    &, > .drop {
+    &.out {
       z-index: @index-drop - 1;
     }
   }
-  &.last {
-     &, > .drop {
-       z-index: @index-drop + 1;
-     }
-   }
   // content
   > .backdrop, > .drop {
     display: none;

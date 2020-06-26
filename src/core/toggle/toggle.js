@@ -74,7 +74,6 @@ class Toggle {
     self.classesOut = self.options.classOut ? [...self.options.classOut.split(' ')] : []
     self.classesInitial = self.options.classInitial ? [...self.options.classInitial.split(' ')] : []
     self.classesInverse = self.options.classInverse ? [...self.options.classInverse.split(' ')] : []
-    self.classesLast = self.options.classLast ? [...self.options.classLast.split(' ')] : []
   }
 
   /**
@@ -296,7 +295,6 @@ class Toggle {
             ...self.classesOut,
             ...self.classesInitial,
             ...self.classesInverse,
-            ...self.classesLast,
           )
         })
       }
@@ -1258,7 +1256,6 @@ class Toggle {
       const actionOther = 'Off'
       self.eventQueue(actionCurrent, groupElements, targets, elementsInner, targetsInner, e)
       // queue run
-      // eslint-disable-next-line guard-for-in
       for (const type in self.detail['queue' + actionCurrent][0]) {
         self.queueStart(actionCurrent, actionOther, type, 0, true)
       }
@@ -1329,7 +1326,6 @@ class Toggle {
         self.queueStop(actionCurrent, actionOther, removedOff)
       }
       // queue run
-      // eslint-disable-next-line guard-for-in
       for (const type in self.detail['queue' + actionCurrent][0]) {
         self.queueStart(actionCurrent, actionOther, type, 0, true)
       }
@@ -1961,16 +1957,25 @@ class Toggle {
     const self = this
     const options = self.options
     if (actionCurrent === 'On') {
-      // last
-      for (const elNotLast of self.elements) {
-        elNotLast.classList.remove(...self.classesLast)
-      }
-      for (const trNotLast of self.targets) {
-        trNotLast.classList.remove(...self.classesLast)
-      }
-      for (const type in obj) {
-        for (const elLast of obj[type].queueEls) {
-          elLast.classList.add(...self.classesLast)
+      // zIndex
+      if (options.zIndex) {
+        for (const type in options.zIndex) {
+          for (const el of obj[type].queueEls) {
+            self.detail.zIndex = self.detail.zIndex ? self.detail.zIndex : options.zIndex[type].start
+            self.detail.zIndex = self.detail.zIndex + options.zIndex[type].factor
+            el.style.zIndex = self.detail.zIndex
+            // zIndex reset after duration
+            const duration = Xt.animTime(el, options['duration' + actionCurrent])
+            clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'indexTimeout'))
+            Xt.dataStorage.set(
+              el,
+              self.componentNamespace + 'indexTimeout',
+              setTimeout(() => {
+                self.detail.zIndex = options.zIndex[type].start
+                el.style.zIndex = self.detail.zIndex
+              }, duration)
+            )
+          }
         }
       }
       // @FIX after raf because after on.xt custom listeners
@@ -2982,7 +2987,10 @@ Toggle.optionsDefaultSuper = {
   off: false,
   min: 0,
   max: 1,
-  instant: { elements: true, elementsInner: true },
+  instant: {
+    elements: true,
+    elementsInner: true,
+  },
   // defaults
   class: 'active active-toggle',
   classIn: 'in',
@@ -2990,7 +2998,6 @@ Toggle.optionsDefaultSuper = {
   classOut: 'out',
   classInitial: 'initial',
   classInverse: 'inverse',
-  classLast: 'last',
   eventLimit: '.event-limit',
   autoDisable: false,
   autoClose: false,
@@ -3023,6 +3030,7 @@ Toggle.optionsDefaultSuper = {
     inverse: false,
     pause: false,
   },
+  zIndex: false,
   aria: {
     tabindex: true,
     controls: true,
