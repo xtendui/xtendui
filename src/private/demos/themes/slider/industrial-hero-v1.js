@@ -25,8 +25,8 @@ Xt.mount.push({
     const cardContentTimeOff = Xt.vars.timeTiny
     const cardContentEaseOff = 'expo.inOut'
 
-    const cardTimeOn = Xt.vars.timeLarge
-    const cardEaseOn = 'expo.out'
+    const cardTime = Xt.vars.timeLarge
+    const cardEase = 'expo.out'
 
     const fixDelayOn = 100
 
@@ -161,7 +161,7 @@ Xt.mount.push({
           if (!self.detail.dragging) {
             gsap.set(card, { height: Xt.dataStorage.get(self.object, 'cardHeight') || cardHeight })
           }
-          gsap.to(card, { height: cardHeight, duration: cardTimeOn, ease: cardEaseOn, delay: fixDelayOn })
+          gsap.to(card, { height: cardHeight, duration: cardTime, ease: cardEase, delay: fixDelayOn })
         }
       }
     }

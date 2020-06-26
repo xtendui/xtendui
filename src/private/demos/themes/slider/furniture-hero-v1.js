@@ -15,15 +15,15 @@ Xt.mount.push({
     const assetMaskEaseOff = 'quint.inOut'
 
     const assetZoom = 0.25
-    const assetTimeOn = Xt.vars.timeBig
-    const assetEaseOn = 'quint.inOut'
-    const assetTimeOnDragging = Xt.vars.timeBig + Xt.vars.timeBig
-    const assetEaseOnDragging = 'quint.out'
+    const assetTime = Xt.vars.timeBig
+    const assetEase = 'quint.inOut'
+    const assetTimeDragging = Xt.vars.timeBig + Xt.vars.timeBig
+    const assetEaseDragging = 'quint.out'
 
     const contentX = 50
-    const contentTimeOn = Xt.vars.timeBig
-    const contentEaseOn = 'quint.inOut'
-    const contentEaseOnDragging = 'quint.out'
+    const contentTime = Xt.vars.timeBig
+    const contentEase = 'quint.inOut'
+    const contentEaseDragging = 'quint.out'
 
     const lineSizeMin = 120
     const lineSizeMax = 200
@@ -174,13 +174,13 @@ Xt.mount.push({
           if (!self.detail.dragging) {
             gsap.set(asset, { scale: 1 + assetZoom })
           }
-          gsap.to(asset, { scale: 1, duration: self.detail.dragging ? assetTimeOnDragging : assetTimeOn, ease: self.detail.dragging ? assetEaseOnDragging : assetEaseOn })
+          gsap.to(asset, { scale: 1, duration: self.detail.dragging ? assetTimeDragging : assetTime, ease: self.detail.dragging ? assetEaseDragging : assetEase })
           // content
           const content = tr.querySelector('.slide_text')
           if (!self.detail.dragging) {
             gsap.set(content, { x: contentX * self.direction })
           }
-          gsap.to(content, { x: 0, duration: contentTimeOn, ease: self.detail.dragging ? contentEaseOnDragging : contentEaseOn })
+          gsap.to(content, { x: 0, duration: contentTime, ease: self.detail.dragging ? contentEaseDragging : contentEase })
           // line
           const lineSmall = tr.querySelector('.slide_line_small')
           gsap.set(lineSmall, { height: 0, bottom: 0, opacity: 1 })

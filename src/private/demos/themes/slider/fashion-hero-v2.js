@@ -9,13 +9,13 @@ Xt.mount.push({
   mount: object => {
     // vars
 
-    const assetCoverTimeOn= Xt.vars.timeBig + 150 // @FIX to cover skew: + 250
+    const assetCoverTimeOn = Xt.vars.timeBig + 150 // @FIX to cover skew: + 250
     const assetCoverEaseOn = 'quint.inOut'
-    const assetCoverTimeOff= Xt.vars.timeBig
+    const assetCoverTimeOff = Xt.vars.timeBig
     const assetCoverEaseOff = 'quint.inOut'
 
-    const assetMaskTimeOn = Xt.vars.timeBig
-    const assetMaskEaseOn = 'quint.inOut'
+    const assetMaskTime = Xt.vars.timeBig
+    const assetMaskEase = 'quint.inOut'
 
     const assetZoom = 0.25
     const assetTime = Xt.vars.timeBig
@@ -107,10 +107,10 @@ Xt.mount.push({
           // assetMask
           const assetMask = target.querySelector('.slide_item')
           gsap.set(assetMask, { x: (self.detail.dragging ? 125 : 100) * self.direction + '%' }) // @FIX to cover skew 125%
-          gsap.to(assetMask, { x: 0, duration: assetMaskTimeOn, ease: assetMaskEaseOn })
+          gsap.to(assetMask, { x: 0, duration: assetMaskTime, ease: assetMaskEase })
           const assetMaskInner = assetMask.querySelector('.slide_inner')
           gsap.set(assetMaskInner, { x: (self.detail.dragging ? -125 : -100) * self.direction + '%' }) // @FIX to cover skew 125%
-          gsap.to(assetMaskInner, { x: 0, duration: assetMaskTimeOn, ease: assetMaskEaseOn })
+          gsap.to(assetMaskInner, { x: 0, duration: assetMaskTime, ease: assetMaskEase })
           // asset
           const asset = target.querySelector('.slide_asset .media')
           gsap.set(asset, { scale: 1 + assetZoom })
@@ -141,9 +141,9 @@ Xt.mount.push({
         }
         // assetMask
         const assetMask = target.querySelector('.slide_item')
-        gsap.to(assetMask, { x: -100 * self.direction + '%', duration: assetMaskTimeOn, ease: assetMaskEaseOn })
+        gsap.to(assetMask, { x: -100 * self.direction + '%', duration: assetMaskTime, ease: assetMaskEase })
         const assetMaskInner = assetMask.querySelector('.slide_inner')
-        gsap.to(assetMaskInner, { x: 100 * self.direction + '%', duration: assetMaskTimeOn, ease: assetMaskEaseOn })
+        gsap.to(assetMaskInner, { x: 100 * self.direction + '%', duration: assetMaskTime, ease: assetMaskEase })
         // content
         const content = target.querySelector('.slide_content')
         gsap.to(content, { x: -contentX * self.direction, opacity: 0, duration: contentTime, ease: contentEase })
