@@ -14,32 +14,29 @@
     @ease-out: @ease-in-out-quint;
 
     /**
-      * card
+      * overlay
       */
 
-    .card-item--menu {
-      background: @accent;
-      .btn {
-        .btn-primary();
-        .btn-tall();
-        .btn-squared();
+    .overlay {
+      .card-item--menu {
+        background: @accent;
+        .btn {
+          .btn-primary();
+          .btn-tall();
+          .btn-squared();
+        }
       }
-    }
-
-    .card-item-nested {
-      @media @max-sm {
-        // order on mobile
-        display: inline-flex;
-        flex-direction: column;
-        .col-5-sm {
-          .order(5);
+      .card-item--order {
+        @media @max-sm {
+          // order on mobile
+          display: inline-flex;
+          flex-direction: column;
+          .card-block-side {
+            .order(5);
+          }
         }
       }
     }
-
-    /**
-      * overlay
-      */
 
     // animation
 
