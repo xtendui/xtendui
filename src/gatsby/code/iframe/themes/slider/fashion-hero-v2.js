@@ -24,52 +24,100 @@ demo.htmlSource = `
       <li class="slide">
         <div class="slide-inner">
           <div class="slide_cover"></div>
-          <a href="#" class="slide_item">
+          <div class="slide_item">
             <div class="slide_inner">
               <div class="slide_asset">
                 ${img({ classes: 'media-cover', loading: 'eager' })}
               </div>
+              <div class="slide_content">
+                <div class="container">
+                  <a href="#" class="slide_content_inner">
+                    <h2 class="h1">
+                      Lorem ipsum
+                    </h2>
+                    <div class="btn btn-primary btn-big btn-wide">
+                        Shop now
+                    </div>
+                  </a>
+                </div>
+              </div>
             </div>
-          </a>
+          </div>
         </div>
       </li>
 
       <li class="slide">
         <div class="slide-inner">
           <div class="slide_cover"></div>
-          <a href="#" class="slide_item">
+          <div class="slide_item">
             <div class="slide_inner">
               <div class="slide_asset">
                 ${imgAlt({ classes: 'media-cover', loading: 'eager' })}
               </div>
+              <div class="slide_content">
+                <div class="container">
+                  <a href="#" class="slide_content_inner">
+                    <h2 class="h1">
+                      Dolor sit amet
+                    </h2>
+                    <div class="btn btn-primary btn-big btn-wide">
+                        Shop now
+                    </div>
+                  </a>
+                </div>
+              </div>
             </div>
-          </a>
+          </div>
         </div>
       </li>
 
       <li class="slide">
         <div class="slide-inner">
           <div class="slide_cover"></div>
-          <a href="#" class="slide_item">
+          <div class="slide_item">
             <div class="slide_inner">
               <div class="slide_asset">
                 ${img({ classes: 'media-cover', loading: 'eager' })}
               </div>
+              <div class="slide_content">
+                <div class="container">
+                  <a href="#" class="slide_content_inner">
+                    <h2 class="h1">
+                      Consectetur adipiscing elit
+                    </h2>
+                    <div class="btn btn-primary btn-big btn-wide">
+                        Shop now
+                    </div>
+                  </a>
+                </div>
+              </div>
             </div>
-          </a>
+          </div>
         </div>
       </li>
 
       <li class="slide">
         <div class="slide-inner">
           <div class="slide_cover"></div>
-          <a href="#" class="slide_item">
+          <div class="slide_item">
             <div class="slide_inner">
               <div class="slide_asset">
                 ${imgAlt({ classes: 'media-cover', loading: 'eager' })}
               </div>
+              <div class="slide_content">
+                <div class="container">
+                  <a href="#" class="slide_content_inner">
+                    <h2 class="h1">
+                      Nam iaculis magna eu consectetur condimentum
+                    </h2>
+                    <div class="btn btn-default btn-big btn-wide">
+                        Shop now
+                    </div>
+                  </a>
+                </div>
+              </div>
             </div>
-          </a>
+          </aid>
         </div>
       </li>
 
