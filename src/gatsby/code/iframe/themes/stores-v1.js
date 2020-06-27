@@ -63,7 +63,7 @@ demo.htmlSource = `
                       </div>
                       <div class="block-listing_additional">
                         <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br/>
-                        <strong>Phone:</strong> <a href="tel:333010101">333 010101</a><br/>
+                        <strong>Phone:</strong> <a href="tel:+39333010101">+39 333 010101</a><br/>
                       </div>
                       <div class="block-listing_subtitle">
                         Timetable
@@ -128,7 +128,7 @@ demo.htmlSource = `
                       </div>
                       <div class="block-listing_additional">
                         <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br/>
-                        <strong>Phone:</strong> <a href="tel:333010101">333 010101</a><br/>
+                        <strong>Phone:</strong> <a href="tel:+39333010101">+39 333 010101</a><br/>
                       </div>
                       <div class="block-listing_subtitle">
                         Timetable
@@ -193,7 +193,7 @@ demo.htmlSource = `
                       </div>
                       <div class="block-listing_additional">
                         <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br/>
-                        <strong>Phone:</strong> <a href="tel:333010101">333 010101</a><br/>
+                        <strong>Phone:</strong> <a href="tel:+39333010101">+39 333 010101</a><br/>
                       </div>
                       <div class="block-listing_subtitle">
                         Timetable
@@ -258,7 +258,7 @@ demo.htmlSource = `
                       </div>
                       <div class="block-listing_additional">
                         <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br/>
-                        <strong>Phone:</strong> <a href="tel:333010101">333 010101</a><br/>
+                        <strong>Phone:</strong> <a href="tel:+39333010101">+39 333 010101</a><br/>
                       </div>
                       <div class="block-listing_subtitle">
                         Timetable
@@ -323,7 +323,7 @@ demo.htmlSource = `
                       </div>
                       <div class="block-listing_additional">
                         <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br/>
-                        <strong>Phone:</strong> <a href="tel:333010101">333 010101</a><br/>
+                        <strong>Phone:</strong> <a href="tel:+39333010101">+39 333 010101</a><br/>
                       </div>
                       <div class="block-listing_subtitle">
                         Timetable
@@ -388,7 +388,7 @@ demo.htmlSource = `
                       </div>
                       <div class="block-listing_additional">
                         <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br/>
-                        <strong>Phone:</strong> <a href="tel:333010101">333 010101</a><br/>
+                        <strong>Phone:</strong> <a href="tel:+39333010101">+39 333 010101</a><br/>
                       </div>
                       <div class="block-listing_subtitle">
                         Timetable

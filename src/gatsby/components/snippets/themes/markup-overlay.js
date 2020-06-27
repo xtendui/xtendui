@@ -104,8 +104,11 @@ export default () => {
                       ${img({ classes: 'media-cover', ratio: '100%', loading: 'eager' })}
                     </div>
                     <div class="card-block card-item">
-                      <p class="h5">
-                        Lorem ipsum <a href="#">dolor</a> <strong>sit</strong> <code>amet</code>, consectetur adipiscing elit.
+                      <p class=h5>
+                        Didn't find what you was looking for?
+                      </p>
+                      <p>
+                         Contact our customer service at <a href="tel:+39333010101">+39 333 010101</a> or email us at <a href="mailto:info@info.com">info@info.com</a>.
                       </p>
                     </div>
                   </div>
@@ -236,7 +239,7 @@ export default () => {
                   <div class="card-block card-item">
 
                     <div class="card-title">
-                      Contact us
+                      Subscribe to our newsletter
                     </div>
 
                     <form class="form-default">
@@ -293,7 +296,7 @@ export default () => {
                 </div>
 
                 <div class="card-block card-item card-block-side card-block-small">
-                  <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>.</p>
+                  <p>Receive <strong>free discount</strong> periodically on all our products.</p>
                 </div>
 
               </div>

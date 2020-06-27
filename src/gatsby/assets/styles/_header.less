@@ -61,7 +61,7 @@
   text-transform: uppercase;
   opacity: 0.8;
   &:hover, &.hover, &:active, &.active {
-    color: @text-inverse-dark;
+    color: @text-inverse;
     opacity: 1;
   }
   &:active, &.active {
@@ -72,8 +72,8 @@
 .gatsby_site_header_links {
   .margin(top, medium);
   .padding(y, medium);
-  border-top: 1px solid fade(@shade-900, 25%);
-  border-bottom: 1px solid fade(@shade-900, 25%);
+  border-top: 1px solid fade(@shade-900, 20%);
+  border-bottom: 1px solid fade(@shade-900, 20%);
 }
 
 .gatsby_btn-site_header_link {
@@ -93,14 +93,14 @@
   text-transform: uppercase;
   &:hover, &.hover {
     border-color: transparent;
-    background: fade(@shade-900, 25%);
-    color: @text-inverse-dark;
+    background: fade(@shade-900, 20%);
+    color: @text-inverse;
     transform: translateX(.25rem);
   }
   &:active, &.active, &.current {
     border-color: transparent;
-    background: fade(@shade-900, 50%);
-    color: @text-inverse-dark;
+    background: fade(@shade-900, 40%);
+    color: @text-inverse;
     transform: none;
   }
   // animation
@@ -179,14 +179,14 @@
   text-transform: none;
   &:hover, &.hover {
     border-color: transparent;
-    background: fade(@shade-900, 25%);
-    color: @text-inverse-dark;
+    background: fade(@shade-900, 20%);
+    color: @text-inverse;
     transform: translateX(.25rem);
   }
   &:active, &.active, &.current {
     border-color: transparent;
-    background: fade(@shade-900, 50%);
-    color: @text-inverse-dark;
+    background: fade(@shade-900, 40%);
+    color: @text-inverse;
     transform: none;
   }
   // animation

@@ -159,12 +159,12 @@ legend, .legend {
 
 .form-label-default {
   .text-default();
-  color: @shade-500;
+  color: @text-light;
 }
 
 .form-label-inverse {
   .text-inverse();
-  color: @text-inverse;
+  color: @text-inverse-light;
 }
 
 /**
@@ -195,32 +195,32 @@ legend, .legend {
   border-radius: 6px;
   border-width: 1px;
   border-style: solid;
-  border-color: @shade-200-dark;
-  background-color: @shade-200; // @FIX no background: or it overrides background-image
+  border-color: @shade-200;
+  background-color: @shade-100; // @FIX no background: or it overrides background-image
   color: @text;
   &:focus, &.active {
-    border-color: @shade-200-dark;
-    background-color: @shade-200-dark; // @FIX no background: or it overrides background-image
+    border-color: @shade-200;
+    background-color: @shade-200; // @FIX no background: or it overrides background-image
     color: @text;
   }
   // placeholder
   &:-ms-input-placeholder {
-    color: @shade-500;
+    color: @text-light;
   }
   &:-moz-placeholder {
-    color: @shade-500;
+    color: @text-light;
   }
   &::-webkit-input-placeholder {
-    color: @shade-500;
+    color: @text-light;
   }
   &::-ms-input-placeholder {
-    color: @shade-500;
+    color: @text-light;
   }
   &::-moz-placeholder {
-    color: @shade-500;
+    color: @text-light;
   }
   &::placeholder {
-    color: @shade-500;
+    color: @text-light;
   }
   // validation
   &.valid {
@@ -237,31 +237,31 @@ legend, .legend {
   border-style: solid;
   border-bottom-width: 2px;
   border-color: transparent;
-  background-color: fade(@shade-900, 25%); // @FIX no background: or it overrides background-image
-  color: @text-inverse-dark;
+  background-color: fade(@shade-900, 20%); // @FIX no background: or it overrides background-image
+  color: @text-inverse;
   &:focus, &.active {
     border-color: @white;
-    background-color: fade(@shade-900, 50%); // @FIX no background: or it overrides background-image
-    color: @text-inverse-dark;
+    background-color: fade(@shade-900, 40%); // @FIX no background: or it overrides background-image
+    color: @text-inverse;
   }
   // placeholder
   &:-ms-input-placeholder {
-    color: @text-inverse;
+    color: @text-inverse-light;
   }
   &:-moz-placeholder {
-    color: @text-inverse;
+    color: @text-inverse-light;
   }
   &::-webkit-input-placeholder {
-    color: @text-inverse;
+    color: @text-inverse-light;
   }
   &::-ms-input-placeholder {
-    color: @text-inverse;
+    color: @text-inverse-light;
   }
   &::-moz-placeholder {
-    color: @text-inverse;
+    color: @text-inverse-light;
   }
   &::placeholder {
-    color: @text-inverse;
+    color: @text-inverse-light;
   }
   // validation
   &.valid {
@@ -355,8 +355,8 @@ legend, .legend {
   // variant
   &.form-label.form-label-default, .form-default & {
     &:before {
-      background: @shade-200;
-      border: 1px solid @shade-200-dark;
+      background: @shade-100;
+      border: 1px solid @shade-200;
     }
     &:after {
       color: @accent;
@@ -364,8 +364,8 @@ legend, .legend {
   }
   &.form-label.form-label-inverse, .form-inverse & {
     &:before {
-      background: fade(@shade-900, 25%);
-      border: 1px solid fade(@shade-900, 50%);
+      background: fade(@shade-900, 20%);
+      border: 1px solid fade(@shade-900, 10%);
     }
     &:after {
       color: @white;
@@ -449,7 +449,7 @@ input[type="checkbox"], input[type="radio"] {
     }
     &.form-label.form-label-inverse, .form-inverse & {
       &:before {
-        border: 1px solid @shade-900;
+        border: 1px solid fade(@white, 50%);
       }
     }
   }

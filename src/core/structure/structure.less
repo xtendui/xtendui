@@ -3,7 +3,7 @@
  */
 
 body {
-  background: @shade-200;
+  background: @shade-100;
 }
 
 /**
@@ -16,13 +16,13 @@ body {
     &::-webkit-scrollbar {
       height: 8px;
       width: 8px;
-      background: @shade-200;
+      background: @shade-100;
       @media (hover: none) {
         display: none;
       }
     }
     &::-webkit-scrollbar-thumb {
-      background: fade(@shade-900, 50%);
+      background: fade(@shade-900, 40%);
     }
   }
   & when (@mode = inner) {
@@ -32,7 +32,7 @@ body {
       background: transparent;
     }
     &::-webkit-scrollbar-thumb {
-      background: fade(@shade-900, 50%);
+      background: fade(@shade-900, 40%);
     }
   }
 }
