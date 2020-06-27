@@ -27,18 +27,32 @@
 // preset
 
 .card-drop {
-  // default options
+  border-radius: inherit;
   width: 100vw; // fill size max-width
+  // custom blocks
+  .card-block-intro {
+    background: fade(@accent, 10%);
+  }
+  .card-block-side {
+    background: fade(@accent, 10%);
+  }
 }
 
 .card-overlay {
+  border-radius: inherit;
   align-items: center;
-  // default options
   > .btn-close {
     .btn-big();
     .btn-icon();
     top: 2rem;
     right: 2rem;
+  }
+  // custom blocks
+  .card-block-intro {
+    background: fade(@accent, 10%);
+  }
+  .card-block-side {
+    background: fade(@accent, 10%);
   }
 }
 

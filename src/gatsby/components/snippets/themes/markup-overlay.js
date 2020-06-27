@@ -85,7 +85,7 @@ export default () => {
     <button type="button" class="btn btn-primary">
       overlay contact
     </button>
-    <div class="overlay overlay-default overlay-squared overlay-close-outside">
+    <div class="overlay overlay-default overlay-close-outside">
       <div class="overlay-container">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
@@ -213,7 +213,7 @@ export default () => {
     <button type="button" class="btn btn-primary">
       overlay newsletter
     </button>
-    <div class="overlay overlay-default overlay-squared overlay-close-outside">
+    <div class="overlay overlay-default overlay-close-outside">
       <div class="overlay-container">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
