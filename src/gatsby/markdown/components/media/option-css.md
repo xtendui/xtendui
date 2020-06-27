@@ -8,6 +8,8 @@ date: "2019-12-01"
 
 ## Responsive
 
+To have media responsive give `.media-container` this options:
+
 <div class="table-scroll">
 
 |                         | Class                                     | Mixin                       | Description                   |
@@ -21,24 +23,9 @@ date: "2019-12-01"
   </demovanilla>
 </demo>
 
-## Aspect ratio
-
-<div class="table-scroll">
-
-|                         | Class                                     | Mixin                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `.media-container-16-9`                 | `.media-container-16-9()`        | Video and iframes with aspect ratio 16/9            |
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/media/16-9">
-  </demovanilla>
-</demo>
-
 ## Object fit
 
-Give `.media` one of this options:
+To have media with **object-fit** give `.media` one of this options:
 
 <div class="table-scroll">
 
@@ -56,5 +43,40 @@ Give `.media` one of this options:
   <demovanilla src="vanilla/components/media/cover">
   </demovanilla>
   <demovanilla src="vanilla/components/media/contain">
+  </demovanilla>
+</demo>
+
+You can also use `min-height: <Value>` to `.media-container` to have a min height (resize to mobile to see it in action).
+
+<demo>
+  <demovanilla src="vanilla/components/media/cover-min-height">
+  </demovanilla>
+</demo>
+
+## Aspect ratio
+
+To have media with aspect ratio give`.media-container` this options:
+
+<div class="table-scroll">
+
+|                         | Class                                     | Mixin                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.media-container-16-9`                 | `.media-container-16-9()`        | Video and iframes with aspect ratio 16/9            |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/media/16-9">
+  </demovanilla>
+  <demovanilla src="vanilla/components/media/16-9-video">
+  </demovanilla>
+  <demovanilla src="vanilla/components/media/16-9-iframe">
+  </demovanilla>
+</demo>
+
+You can also use `min-height: <Value>` to `.media-container` to have a min height (resize to mobile to see it in action).
+
+<demo>
+  <demovanilla src="vanilla/components/media/16-9-min-height">
   </demovanilla>
 </demo>
