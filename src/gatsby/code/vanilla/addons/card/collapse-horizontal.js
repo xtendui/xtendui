@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="card card-primary card-horizontal-sm card-collapse">
+<div class="card card-default card-horizontal-sm card-collapse">
   <div class="card-design"></div>
   <div class="card-inner">
     <div class="card-content">

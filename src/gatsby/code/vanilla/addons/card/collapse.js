@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="card card-primary card-collapse">
+<div class="card card-default card-collapse">
   <div class="card-design"></div>
   <div class="card-inner">
     <div class="card-block card-block-intro">

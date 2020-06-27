@@ -1,7 +1,3 @@
-// const markupSlider = require('components/snippets/components/markup-slider').default
-// const indentString = require('indent-string')
-// ${indentString(markupSlider(), 2)}
-
 export default () => {
   return `
 <div class="slides">
