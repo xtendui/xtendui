@@ -19,6 +19,8 @@ date: "2019-03-15"
 
 </div>
 
+You can disable drop using `.drop-disable` (resize to mobile to see it in action).
+
 <demo>
   <demovanilla src="vanilla/components/drop/disable">
   </demovanilla>

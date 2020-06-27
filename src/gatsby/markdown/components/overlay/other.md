@@ -20,10 +20,14 @@ date: "2019-03-15"
 
 </div>
 
+You can have the `.btn-close` with `position: fixed` using `.overlay-close-fixed`.
+
 <demo>
   <demovanilla src="vanilla/components/overlay/close-fixed">
   </demovanilla>
 </demo>
+
+You can disable overlay using `.overlay-disable` (resize to mobile to see it in action).
 
 <demo>
   <demovanilla src="vanilla/components/overlay/disable">

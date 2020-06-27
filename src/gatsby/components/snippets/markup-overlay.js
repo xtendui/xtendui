@@ -228,8 +228,8 @@ export default () => {
                 <div class="card-item-nested card-item card-group-sm">
 
                   <div class="card-item col-5-sm">
-                    <div class="card-asset">
-                      ${img({ classes: 'media-cover', ratio: '100%', loading: 'eager' })}
+                    <div class="card-asset full-y">
+                      ${img({ classes: 'media-cover', ratio: '37.5%', loading: 'eager' })}
                     </div>
                   </div>
 

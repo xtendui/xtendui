@@ -48,7 +48,9 @@ Disable this behaviour with `overflowAuto: false`.
 
 ## Disable
 
-To disable slider use `.slider-disable` also within media queries. It also hides automatically **pagination** and **navigation** **wrap** and slides not `active`.
+You can disable slider using `.slider-disable` (resize to mobile to see it in action).
+
+It also hides automatically **pagination** and **navigation** **wrap** and slides not `active`.
 
 <demo>
   <demovanilla src="vanilla/components/slider/disable">

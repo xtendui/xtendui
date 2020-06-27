@@ -25,6 +25,9 @@ You can set scroll mode with css selectors.
   <div class="gatsby_demo_item" data-iframe="iframe/components/scroll/mode-outside-once">
   </div>
   <div class="gatsby_demo_item" data-iframe="iframe/components/scroll/mode-responsive">
+    <div class="gatsby_demo_text">
+      You can style animations within media queries (resize to mobile to see it in action).
+    </div>
   </div>
 </demo>
 

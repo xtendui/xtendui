@@ -26,6 +26,8 @@ Refer to [Row page](/components/row/other#stretch).
 
 </div>
 
+You can disable card using `.card-disable` (resize to mobile to see it in action).
+
 <demo>
   <demovanilla src="vanilla/components/card/disable">
   </demovanilla>
