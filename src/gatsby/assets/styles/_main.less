@@ -75,9 +75,9 @@
     > .row > * {
       opacity: 0;
       transform: translateY(1.5rem);
-      transition: opacity @time-small @ease-in, transform @time-small @ease-in;
-      transition-delay: 150ms; // @start + @child * @increment
-      .nth-child(@child: 3, @start: 0ms, @increment: 50ms, @decrement: 0ms, {
+      transition: opacity @time-small @ease-out, transform @time-small @ease-out;
+      transition-delay: 500ms; // @start + @child * @increment
+      .nth-child(@child: 3, @start: 0ms, @increment: 250ms, @decrement: 0ms, {
         @transition-delay();
       });
     }
@@ -88,6 +88,10 @@
         opacity: 1;
         transform: translateY(0);
         transition: opacity @time-small @ease-in, transform @time-small @ease-in;
+        transition-delay: 500ms; // @start + @child * @increment
+        .nth-child(@child: 3, @start: 0ms, @increment: 250ms, @decrement: 0ms, {
+          @transition-delay();
+        });
       }
     }
   }
@@ -118,10 +122,9 @@
   left: 0;
   right: 0;
   .container-space();
-  .padding(y, medium);
+  .padding(bottom, large);
   .row {
-    .row-space(medium);
-    justify-content: space-between;
+    .row-space(large);
   }
   .btn {
     .link-none();
