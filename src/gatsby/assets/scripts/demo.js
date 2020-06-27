@@ -231,7 +231,14 @@ const populateDemo = (container, i) => {
         '<button type="button" class="btn btn-text btn-tiny btn-open-full" aria-label="Toggle Fullscreen"><span class="icon-maximize icon-large"></span></button>'
       )
     )
-  // loop items
+  container
+    .querySelector('.gatsby_demo_tabs_right')
+    .append(
+      Xt.createElement(
+        '<a href="#" target="_blank" class="btn btn-text btn-tiny btn-open-iframe" aria-label="Open Iframe"><span class="icon-iframe icon-large"></span></a>'
+      )
+    )
+  // loop itemsi
   for (const [k, item] of items.entries()) {
     // populate tabs
     let name = item.getAttribute('data-iframe') || item.getAttribute('data-iframe-fullscreen')
@@ -335,6 +342,13 @@ const populateDemo = (container, i) => {
         // set hash
         location.hash = item.getAttribute('id')
         cancelAnimationFrame(Xt.dataStorage.get(document, 'gatbsy_open-full-raf'))
+      }
+      // btn-open-iframe
+      const iframe = item.querySelector('iframe')
+      if (iframe) {
+        const btn = container.querySelector('.btn-open-iframe')
+        btn.classList.add('gatbsy_with-iframe')
+        btn.setAttribute('href', iframe.getAttribute('data-src'))
       }
     })
   }

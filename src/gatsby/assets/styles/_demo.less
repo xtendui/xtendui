@@ -350,6 +350,19 @@ table {
   }
 }
 
+.btn-open-iframe {
+  display: none !important;
+  padding-top: 0.4em !important;
+  padding-bottom: 0.4em !important;
+  > span {
+    display: inline-block;
+    position: relative;
+    top: auto;
+    margin-top: -.5em;
+    margin-bottom: -.5em;
+  }
+}
+
 #gatbsy_open-full {
   position: fixed;
   z-index: @index-top + 100;
@@ -369,10 +382,13 @@ table {
     font-size: 15px;
   }
   .gatsby_demo_tabs_right {
-    padding-right: 4rem;
+    padding-right: 45px;
   }
   .btn-open-full {
     display: none !important;
+  }
+  .btn-open-iframe.gatbsy_with-iframe {
+    display: block !important;
   }
 }
 
