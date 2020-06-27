@@ -894,10 +894,6 @@ class Toggle {
   eventMedialoadedHandler(el, deferred = false) {
     const self = this
     const options = self.options
-    // mediaLoaded
-    if (options.mediaLoaded) {
-      el.classList.add('xt-medialoaded')
-    }
     // mediaLoadedReinit
     if (options.mediaLoadedReinit && deferred) {
       clearTimeout(Xt.dataStorage.get(self.object, 'xt' + self.componentNamespace + 'MedialoadedInit' + 'Timeout'))
@@ -905,14 +901,14 @@ class Toggle {
         self.object,
         'xt' + self.componentNamespace + 'MedialoadedInit' + 'Timeout',
         setTimeout(() => {
-          // debug
-          if (Xt.debug === true) {
-            console.debug('Xt.debug: mediaLoadedReinit', self.object)
-          }
-          // handler
-          self.restart()
+          // mediaLoaded
+          self.eventMediaLoadedReinit()
         }, Xt.medialoadedDelay)
       )
+    }
+    // mediaLoaded
+    if (options.mediaLoaded) {
+      el.classList.add('xt-medialoaded')
     }
     // listener dispatch
     el.dispatchEvent(new CustomEvent('medialoaded.xt', { detail: { deferred: deferred } }))
@@ -1554,6 +1550,19 @@ class Toggle {
     } else {
       self.goToNext(step, true)
     }
+  }
+
+  /**
+   * medialoadedReinit
+   */
+  eventMedialoadedReinit() {
+    const self = this
+    // debug
+    if (Xt.debug === true) {
+      console.debug('Xt.debug: mediaLoadedReinit', self.object)
+    }
+    // restart
+    self.reinit()
   }
 
   //

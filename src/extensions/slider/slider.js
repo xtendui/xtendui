@@ -606,28 +606,6 @@ class Slider extends Xt.Toggle {
     self.logicDrag(dragger, e)
   }
 
-  /**
-   * medialoaded
-   * @param {Node|HTMLElement|EventTarget|Window} el
-   * @param {Boolean} deferred
-   */
-  eventMedialoadedHandler(el, deferred = false) {
-    const self = this
-    const options = self.options
-    // mediaLoadedReinit
-    if (options.mediaLoadedReinit && deferred) {
-      // @FIX performances
-      for (const slide of self.targets) {
-        // needs to recalculate not only xt-wrap but all targets
-        Xt.dataStorage.set(slide, self.componentNamespace + 'SlideLeft', slide.offsetLeft)
-        Xt.dataStorage.set(slide, self.componentNamespace + 'SlideWidth', slide.offsetWidth)
-        Xt.dataStorage.set(slide, self.componentNamespace + 'SlideHeight', slide.children[0].offsetHeight)
-      }
-    }
-    // super
-    super.eventMedialoadedHandler(el, deferred)
-  }
-
   //
   // event
   //
@@ -797,6 +775,27 @@ class Slider extends Xt.Toggle {
     requestAnimationFrame(() => {
       Xt.dataStorage.remove(slide, self.componentNamespace + 'SlideoffDone')
     })
+  }
+
+  /**
+   * medialoadedReinit
+   */
+  eventMediaLoadedReinit() {
+    const self = this
+    // mediaLoaded
+    // @FIX performances
+    for (const slide of self.targets) {
+      // needs to recalculate not only xt-wrap but all targets
+      Xt.dataStorage.set(slide, self.componentNamespace + 'SlideLeft', slide.offsetLeft)
+      Xt.dataStorage.set(slide, self.componentNamespace + 'SlideWidth', slide.offsetWidth)
+      Xt.dataStorage.set(slide, self.componentNamespace + 'SlideHeight', slide.children[0].offsetHeight)
+    }
+    // debug
+    if (Xt.debug === true) {
+      console.debug('Xt.debug: mediaLoadedReinit', self.object)
+    }
+    // restart
+    self.reinit()
   }
 
   //
