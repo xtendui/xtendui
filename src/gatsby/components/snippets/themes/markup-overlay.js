@@ -50,13 +50,13 @@ export default () => {
               <div class="card-content">
                 <div class="card-item card-item--menu">
                   <div class="list">
-                    <button type="button" class="btn">
+                    <button type="button" class="btn btn-primary btn-tall btn-squared">
                       Menu
                     </button>
-                    <button type="button" class="btn">
+                    <button type="button" class="btn btn-primary btn-tall btn-squared">
                       Info
                     </button>
-                    <button type="button" class="btn">
+                    <button type="button" class="btn btn-primary btn-tall btn-squared">
                       Account
                     </button>
                   </div>
@@ -98,20 +98,6 @@ export default () => {
               <div class="card-content">
 
                 <div class="card-item-nested card-item card-group-sm card-item--order">
-
-                  <div class="card-item card-block-side col-5-sm">
-                    <div class="card-asset">
-                      ${img({ classes: 'media-cover', ratio: '100%', loading: 'eager' })}
-                    </div>
-                    <div class="card-block card-item">
-                      <p class=h5>
-                        Didn't find what you was looking for?
-                      </p>
-                      <p>
-                         Contact our customer service at <a href="tel:+39333010101">+39 333 010101</a> or email us at <a href="mailto:info@info.com">info@info.com</a>.
-                      </p>
-                    </div>
-                  </div>
 
                   <div class="card-block card-item">
 
@@ -201,6 +187,22 @@ export default () => {
 
                   </div>
 
+                  <div class="card-item card-block-side col-5-sm"
+                    style="display: flex; flex-direction: column">
+                    <div class="card-block card-item">
+                      <p class="h5">
+                        Didn't find what you was looking for?
+                      </p>
+                      <p>
+                         Contact our customer service at <a href="tel:+39333010101">+39 333 010101</a> or email us at <a href="mailto:info@info.com">info@info.com</a>.
+                      </p>
+                    </div>
+                    <div class="card-asset"
+                      style="margin-top: auto">
+                      ${img({ classes: 'media-cover', ratio: '100%', loading: 'eager' })}
+                    </div>
+                  </div>
+
                 </div>
 
               </div>
@@ -216,7 +218,7 @@ export default () => {
     <button type="button" class="btn btn-primary">
       overlay newsletter
     </button>
-    <div class="overlay overlay-default overlay-close-outside">
+    <div class="overlay overlay-default overlay-size-small overlay-close-outside">
       <div class="overlay-container">
         <div class="overlay-inner">
           <div class="overlay-design"></div>

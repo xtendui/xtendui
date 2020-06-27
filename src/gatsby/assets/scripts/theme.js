@@ -104,7 +104,7 @@ const makeDocument = () => {
   if (docs) {
     const tables = docs.querySelectorAll('table')
     for (const table of tables) {
-      table.classList.add('table', 'table-border', 'table-stripe', 'gatbsy_table')
+      table.classList.add('table', 'table-border', 'gatbsy_table')
       for (const el of table.querySelectorAll('tr td:first-child')) {
         el.outerHTML = el.outerHTML.replace(/(<\s*\/?\s*)td(\s*([^>]*)?\s*>)/gi, '$1th$2') // regex replace tagname
         el.setAttribute('scope', 'row')
