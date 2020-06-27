@@ -225,7 +225,7 @@
 .overlay-disable {
   // disable animation
   .card-overlay {
-    .card-block,  .card-content {
+    .card-inner {
       opacity: 1 !important;
       .transform-none() !important;
       .trans-anim-none() !important;
@@ -240,7 +240,7 @@
     opacity: 0;
   }
   .card-overlay {
-    .card-block,  .card-content {
+    .card-block, .card-content {
       opacity: 0;
     }
     > .btn-close {
@@ -254,7 +254,7 @@
       transition: opacity @time-medium @ease-in;
     }
     .card-overlay {
-      .card-block,  .card-content {
+      .card-block, .card-content {
         opacity: 1;
         transition: opacity @time-medium @ease-in @time-tiny;
       }
@@ -277,7 +277,7 @@
       transition: opacity @time-small @ease-out @time-tiny;
     }
     .card-overlay {
-      .card-block,  .card-content {
+      .card-block, .card-content {
         opacity: 0;
         transition: opacity @time-small @ease-out;
       }

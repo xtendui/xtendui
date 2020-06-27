@@ -1,9 +1,9 @@
 import React from 'react'
 import path from 'path'
-const markupButton = require('components/snippets/markup-button').default
-const markupDrop = require('components/snippets/markup-drop').default
-const markupOverlay = require('components/snippets/markup-overlay').default
-const markupCard = require('components/snippets/markup-card').default
+const markupButton = require('components/snippets/themes/markup-button').default
+const markupDrop = require('components/snippets/themes/markup-drop').default
+const markupOverlay = require('components/snippets/themes/markup-overlay').default
+const markupCard = require('components/snippets/themes/markup-card').default
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 

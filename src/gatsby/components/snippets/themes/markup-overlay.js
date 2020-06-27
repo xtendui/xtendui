@@ -1,4 +1,4 @@
-// const markupOverlay = require('components/snippets/markup-overlay').default
+// const markupOverlay = require('components/snippets/themes/markup-overlay').default
 // ${markupOverlay()}
 
 const img = require('components/snippets/img').default

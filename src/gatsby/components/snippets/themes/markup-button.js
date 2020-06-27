@@ -1,4 +1,4 @@
-// const markupButton = require('components/snippets/markup-button').default
+// const markupButton = require('components/snippets/themes/markup-button').default
 // ${markupButton()}
 
 export default () => {

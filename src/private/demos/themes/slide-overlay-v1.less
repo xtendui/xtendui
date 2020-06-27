@@ -46,7 +46,7 @@
         transform: translateY(125%);
       }
       .card-overlay {
-        .card-block,  .card-content {
+        .card-block, .card-content {
           opacity: 0;
           transform: translateY(100%);
         }
@@ -56,13 +56,13 @@
         .overlay-design {
           opacity: 1;
           transform: none;
-          transition: transform @time-medium @ease-in, opacity @time-tiny @ease-in;
+          transition: transform @time-medium @ease-in, opacity @time-small @ease-in;
         }
         .card-overlay {
           .card-block, .card-content {
             opacity: 1;
             transform: none;
-            transition: transform @time-medium @ease-in, opacity @time-tiny @ease-in;
+            transition: transform @time-medium @ease-in, opacity @time-small @ease-in;
           }
         }
       }
@@ -71,13 +71,13 @@
         .overlay-design {
           opacity: 0;
           transform: translateY(125%);
-          transition: transform @time-small @ease-out, opacity @time-tiny @ease-out @time-tiny;
+          transition: transform @time-small @ease-out, opacity @time-small @ease-out;
         }
         .card-overlay {
           .card-block, .card-content {
             opacity: 0;
             transform: translateY(100%);
-            transition: transform @time-small @ease-out, opacity @time-tiny @ease-out @time-tiny;
+            transition: transform @time-small @ease-out, opacity @time-small @ease-out;
           }
           > .btn-close {
             .anim-y.out();
@@ -122,13 +122,13 @@
         .overlay-design {
           opacity: 1;
           transform: none;
-          transition: transform @time-medium @ease-in, opacity @time-tiny @ease-in;
+          transition: transform @time-medium @ease-in, opacity @time-small @ease-in;
         }
         .card-overlay {
           .card-block, .card-content {
             opacity: 1;
             transform: none;
-            transition: transform @time-medium @ease-in, opacity @time-tiny @ease-in;
+            transition: transform @time-medium @ease-in, opacity @time-small @ease-in;
           }
         }
       }
@@ -138,13 +138,13 @@
           .overlay-design {
             opacity: 0;
             transform: translateX(-125%);
-            transition: transform @time-small @ease-out, opacity @time-tiny @ease-out @time-tiny;
+            transition: transform @time-small @ease-out, opacity @time-small @ease-out;
           }
           .card-overlay {
             .card-block, .card-content {
               opacity: 0;
               transform: translateX(-100%);
-              transition: transform @time-small @ease-out, opacity @time-tiny @ease-out @time-tiny;
+              transition: transform @time-small @ease-out, opacity @time-small @ease-out;
             }
             > .btn-close {
               .anim-x-inverse.out();
@@ -155,13 +155,13 @@
           .overlay-design {
             opacity: 0;
             transform: translateX(125%);
-            transition: transform @time-small @ease-out, opacity @time-tiny @ease-out @time-tiny;
+            transition: transform @time-small @ease-out, opacity @time-small @ease-out ;
           }
           .card-overlay {
             .card-block, .card-content {
               opacity: 0;
               transform: translateX(100%);
-              transition: transform @time-small @ease-out, opacity @time-tiny @ease-out @time-tiny;
+              transition: transform @time-small @ease-out, opacity @time-small @ease-out ;
             }
             > .btn-close {
               .anim-x.out();

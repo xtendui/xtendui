@@ -1,4 +1,4 @@
-// const markupDrop = require('components/snippets/markup-drop').default
+// const markupDrop = require('components/snippets/themes/markup-drop').default
 // ${markupDrop()}
 
 const img = require('components/snippets/img').default
