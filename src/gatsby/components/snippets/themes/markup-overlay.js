@@ -190,7 +190,7 @@ export default () => {
                         </label>
                       </div>
 
-                      <button type="submit" class="btn btn-primary btn-big">
+                      <button type="submit" class="btn btn-primary btn-wide">
                         Send
                       </button>
 
@@ -282,7 +282,7 @@ export default () => {
                         </label>
                       </div>
 
-                      <button type="submit" class="btn btn-primary btn-big">
+                      <button type="submit" class="btn btn-primary btn-wide">
                         Subscribe
                       </button>
 
