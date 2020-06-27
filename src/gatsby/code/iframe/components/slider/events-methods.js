@@ -142,8 +142,7 @@ demo.htmlSource = `
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card-slide"
-            style="height: 15rem">
+          <div class="card card-slide card-large">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -160,7 +159,7 @@ demo.htmlSource = `
     </ul>
   </div>
 
-  <nav class="slider-pagination">
+  <nav class="slider-pagination slider-navigation">
     <button type="button" class="btn btn-default" data-xt-nav="-1" title="Previous slide">
       <span class="icon-xt-chevron-left icon-left"></span> prev
     </button>

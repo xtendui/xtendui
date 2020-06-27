@@ -95,8 +95,7 @@ export default () => {
     <li class="slide col-12">
       <div class="slide-inner">
 
-        <div class="card card-slide"
-          style="height: 15rem">
+        <div class="card card-slide card-large">
           <div class="card-design"></div>
           <div class="card-inner">
             <div class="card-content">

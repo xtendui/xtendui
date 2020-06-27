@@ -4,6 +4,7 @@
 
 export default () => {
   return `
+
 <div class="slides">
   <ul class="slides-inner">
 
@@ -16,12 +17,14 @@ export default () => {
             <div class="card-content">
               <div class="card-block card-item">
                 <div class="card-title">1</div>
-                <button type="button" class="btn btn-default" data-xt-nav="-1" title="Previous slide">
-                  <span class="icon-xt-chevron-left"></span>
-                </button>
-                <button type="button" class="btn btn-default" data-xt-nav="1" title="Next slide">
-                  <span class="icon-xt-chevron-right"></span>
-                </button>
+                <nav class="slider-navigation">
+                  <button type="button" class="btn btn-default" data-xt-nav="-1" title="Previous slide">
+                    <span class="icon-xt-chevron-left"></span>
+                  </button>
+                  <button type="button" class="btn btn-default" data-xt-nav="1" title="Next slide">
+                    <span class="icon-xt-chevron-right"></span>
+                  </button>
+                </nav>
               </div>
             </div>
           </div>
@@ -39,12 +42,14 @@ export default () => {
             <div class="card-content">
               <div class="card-block card-item">
                 <div class="card-title">2</div>
-                <button type="button" class="btn btn-default" data-xt-nav="-1" title="Previous slide">
-                  <span class="icon-xt-chevron-left"></span>
-                </button>
-                <button type="button" class="btn btn-default" data-xt-nav="1" title="Next slide">
-                  <span class="icon-xt-chevron-right"></span>
-                </button>
+                <nav class="slider-navigation">
+                  <button type="button" class="btn btn-default" data-xt-nav="-1" title="Previous slide">
+                    <span class="icon-xt-chevron-left"></span>
+                  </button>
+                  <button type="button" class="btn btn-default" data-xt-nav="1" title="Next slide">
+                    <span class="icon-xt-chevron-right"></span>
+                  </button>
+                </nav>
               </div>
             </div>
           </div>
@@ -62,12 +67,14 @@ export default () => {
             <div class="card-content">
               <div class="card-block card-item">
                 <div class="card-title">3</div>
-                <button type="button" class="btn btn-default" data-xt-nav="-1" title="Previous slide">
-                  <span class="icon-xt-chevron-left"></span>
-                </button>
-                <button type="button" class="btn btn-default" data-xt-nav="1" title="Next slide">
-                  <span class="icon-xt-chevron-right"></span>
-                </button>
+                <nav class="slider-navigation">
+                  <button type="button" class="btn btn-default" data-xt-nav="-1" title="Previous slide">
+                    <span class="icon-xt-chevron-left"></span>
+                  </button>
+                  <button type="button" class="btn btn-default" data-xt-nav="1" title="Next slide">
+                    <span class="icon-xt-chevron-right"></span>
+                  </button>
+                </nav>
               </div>
             </div>
           </div>
@@ -85,12 +92,14 @@ export default () => {
             <div class="card-content">
               <div class="card-block card-item">
                 <div class="card-title">4</div>
-                <button type="button" class="btn btn-default" data-xt-nav="-1" title="Previous slide">
-                  <span class="icon-xt-chevron-left"></span>
-                </button>
-                <button type="button" class="btn btn-default" data-xt-nav="1" title="Next slide">
-                  <span class="icon-xt-chevron-right"></span>
-                </button>
+                <nav class="slider-navigation">
+                  <button type="button" class="btn btn-default" data-xt-nav="-1" title="Previous slide">
+                    <span class="icon-xt-chevron-left"></span>
+                  </button>
+                  <button type="button" class="btn btn-default" data-xt-nav="1" title="Next slide">
+                    <span class="icon-xt-chevron-right"></span>
+                  </button>
+                </nav>
               </div>
             </div>
           </div>
@@ -108,12 +117,14 @@ export default () => {
             <div class="card-content">
               <div class="card-block card-item">
                 <div class="card-title">5</div>
-                <button type="button" class="btn btn-default" data-xt-nav="-1" title="Previous slide">
-                  <span class="icon-xt-chevron-left"></span>
-                </button>
-                <button type="button" class="btn btn-default" data-xt-nav="1" title="Next slide">
-                  <span class="icon-xt-chevron-right"></span>
-                </button>
+                <nav class="slider-navigation">
+                  <button type="button" class="btn btn-default" data-xt-nav="-1" title="Previous slide">
+                    <span class="icon-xt-chevron-left"></span>
+                  </button>
+                  <button type="button" class="btn btn-default" data-xt-nav="1" title="Next slide">
+                    <span class="icon-xt-chevron-right"></span>
+                  </button>
+                </nav>
               </div>
             </div>
           </div>
@@ -125,19 +136,20 @@ export default () => {
     <li class="slide col-12">
       <div class="slide-inner">
 
-        <div class="card card-slide"
-          style="height: 15rem">
+        <div class="card card-slide card-large">
           <div class="card-design"></div>
           <div class="card-inner">
             <div class="card-content">
               <div class="card-block card-item">
                 <div class="card-title">6</div>
-                <button type="button" class="btn btn-default" data-xt-nav="-1" title="Previous slide">
-                  <span class="icon-xt-chevron-left"></span>
-                </button>
-                <button type="button" class="btn btn-default" data-xt-nav="1" title="Next slide">
-                  <span class="icon-xt-chevron-right"></span>
-                </button>
+                <nav class="slider-navigation">
+                  <button type="button" class="btn btn-default" data-xt-nav="-1" title="Previous slide">
+                    <span class="icon-xt-chevron-left"></span>
+                  </button>
+                  <button type="button" class="btn btn-default" data-xt-nav="1" title="Next slide">
+                    <span class="icon-xt-chevron-right"></span>
+                  </button>
+                </nav>
               </div>
             </div>
           </div>
@@ -149,7 +161,7 @@ export default () => {
   </ul>
 </div>
 
-<nav class="slider-pagination">
+<nav class="slider-pagination slider-navigation">
   <button type="button" class="btn btn-default" data-xt-nav="-1" title="Previous slide">
     <span class="icon-xt-chevron-left icon-left"></span> prev
   </button>

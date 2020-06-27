@@ -44,7 +44,7 @@ export default () => {
   </ul>
 </div>
 
-<nav class="slider-pagination">
+<nav class="slider-pagination slider-navigation">
   <button type="button" class="btn btn-default" data-xt-nav="-1" title="Previous slide">
     <span class="icon-xt-chevron-left icon-left"></span> prev
   </button>

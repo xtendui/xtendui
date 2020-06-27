@@ -178,12 +178,12 @@
 // animation
 
 .btn {
-  transition: border @time-small @ease-out, background @time-small @ease-out, color @time-small @ease-out, transform @time-small @ease-out;
+  transition: all @time-small @ease-out;
   &:hover, &.hover {
-    transition: border @time-small @ease-in, background @time-small @ease-in, color @time-small @ease-in, transform @time-small @ease-in;
+    transition: all @time-small @ease-in;
   }
   &:active, &.active {
-    transition: border @time-small @ease-in, background @time-small @ease-in, color @time-small @ease-in, transform @time-small @ease-in;
+    transition: all @time-small @ease-in;
   }
 }
 

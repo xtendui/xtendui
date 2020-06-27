@@ -24,9 +24,9 @@
   transition: transform 750ms @ease-out-quint;
 }
 
-// pagination
+// pagination and navigation
 
-.slider-pagination {
+.slider-pagination, .slider-navigation {
   .list();
   .list-space(small);
   align-items: center;
@@ -42,9 +42,19 @@
   &.active {
     padding: .5em 2em;
   }
+  // animation
+  transition: all @time-small @ease-out;
+  &:hover, &.hover {
+    transition: all @time-small @ease-out;
+  }
+  &:active, &.active {
+    transition: all @time-small @ease-out;
+  }
+  // custom
+  .slide & {
+    .btn-primary();
+  }
 }
-
-// navigation
 
 [data-xt-nav].btn {
   .btn-tiny();
@@ -53,6 +63,10 @@
   border-radius: 2rem;
   [class^='icon-'], [class*=' icon-'] {
     .icon-small();
+  }
+  // custom
+  .slide & {
+    .btn-primary();
   }
 }
 

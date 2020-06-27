@@ -68,7 +68,7 @@ To disable and expand a slider use `.slider-expand` also within media queries.
 
 ## Touch Overflow
 
-Use `.slider-touch-overflow` to have browser overflow on touch devices.
+Use `.slider-touch-overflow` to have browser overflow on touch devices (use touch device to see it in action).
 
 <demo>
   <demovanilla src="vanilla/components/slider/touch-overflow">
