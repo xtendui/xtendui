@@ -907,7 +907,7 @@ class Toggle {
         setTimeout(() => {
           // debug
           if (Xt.debug === true) {
-            console.debug('Xt.debug: mediaLoadedReinit', el)
+            console.debug('Xt.debug: mediaLoadedReinit', self.object)
           }
           // handler
           self.restart()

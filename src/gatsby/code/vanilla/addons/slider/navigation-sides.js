@@ -10,7 +10,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="slider"
-     data-xt-slider>
+    data-xt-slider>
 
   <div class="slides">
     <ul class="slides-inner">

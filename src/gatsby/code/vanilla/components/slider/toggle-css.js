@@ -1,4 +1,6 @@
 import path from 'path'
+const markupSlider = require('components/snippets/components/markup-slider').default
+const indentString = require('indent-string')
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -10,7 +12,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="slider demo--slider-toggle-css"
-     data-xt-slider="{ instant: false, drag: false }">
+    data-xt-slider="{ instant: false, drag: false }">
 
   <div class="slides">
     <ul class="slides-inner">
