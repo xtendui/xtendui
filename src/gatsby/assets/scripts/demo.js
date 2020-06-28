@@ -45,16 +45,15 @@ const demoHash = (e, skipIgnore = false) => {
       if (item) {
         const demo = item.closest('.gatsby_demo')
         if (demo) {
-          // fix reopen options.scrollbar
+          // raf fix reopen options.scrollbar
           requestAnimationFrame(() => {
             makeFullscreen(demo, skipIgnore)
+            // scrollToItem
+            scrollToItem()
+            // trigger fullscreen or change tabs
+            item.dispatchEvent(new CustomEvent('on.trigger.xt'))
           })
         }
-        requestAnimationFrame(() => {
-          scrollToItem()
-          // trigger fullscreen or change tabs
-          item.dispatchEvent(new CustomEvent('on.trigger.xt'))
-        })
       }
     }
   }
