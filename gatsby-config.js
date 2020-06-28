@@ -88,12 +88,6 @@ module.exports = {
                 notePrimary: {
                   classes: 'note note-primary note-background gatbsy_note',
                 },
-                noteError: {
-                  classes: 'note note-error note-background gatbsy_note',
-                },
-                noteSuccess: {
-                  classes: 'note note-success note-background gatbsy_note',
-                },
               },
             },
           },

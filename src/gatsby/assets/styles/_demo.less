@@ -51,6 +51,20 @@ code {
   color: @text;
 }
 
+.note-default {
+  code {
+    background: darken(@shade-100, 4%) !important;
+    color: @text;
+  }
+}
+
+.note-primary {
+  code {
+    background: fade(@white, 20%) !important;
+    color: @text-inverse;
+  }
+}
+
 // pre
 
 pre {
