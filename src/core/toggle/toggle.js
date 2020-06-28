@@ -151,7 +151,6 @@ class Toggle {
         let arr = Xt.dataStorage.get(self.namespace, 'xtNamespace')
         arr = arr.filter(x => !x.closest('.xt-ignore')) // filter out ignore
         if (arr.length) {
-          // fix when using shadow dom doesn't query deep
           self.elements = arr
           self.destroyElements.push(...self.elements)
         }

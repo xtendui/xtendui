@@ -44,33 +44,43 @@ class DocSidebar extends React.Component {
                         post.frontmatter.parent === post.frontmatter.title ? (
                           <div key={z}>
                             {post.frontmatter.link ? (
-                              <a
-                                href={post.frontmatter.link}
-                                target="_blank"
-                                rel="noopener"
-                                className={`btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub ${
-                                  markdownSlug(page.post) === markdownSlug(post)
-                                    ? 'active'
-                                    : page.post.frontmatter.parent === post.frontmatter.parent
-                                    ? 'current'
-                                    : ''
-                                }`}
-                              >
-                                {post.frontmatter.title}
-                              </a>
+                              <div>
+                                <a
+                                  href={post.frontmatter.link}
+                                  target="_blank"
+                                  rel="noopener"
+                                  className={`btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub ${
+                                    markdownSlug(page.post) === markdownSlug(post)
+                                      ? 'active'
+                                      : page.post.frontmatter.parent === post.frontmatter.parent
+                                      ? 'current'
+                                      : ''
+                                  }`}
+                                >
+                                  {post.frontmatter.title}
+                                </a>
+                                <div className="gatsby_site_header_adiacent_inner">
+                                  <div className="gatsby_site_header_item"></div>
+                                </div>
+                              </div>
                             ) : (
-                              <Link
-                                to={markdownSlug(post)}
-                                className={`btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub ${
-                                  markdownSlug(page.post) === markdownSlug(post)
-                                    ? 'active'
-                                    : page.post.frontmatter.parent === post.frontmatter.parent
-                                    ? 'current'
-                                    : ''
-                                }`}
-                              >
-                                {post.frontmatter.title}
-                              </Link>
+                              <div>
+                                <Link
+                                  to={markdownSlug(post)}
+                                  className={`btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub ${
+                                    markdownSlug(page.post) === markdownSlug(post)
+                                      ? 'active'
+                                      : page.post.frontmatter.parent === post.frontmatter.parent
+                                      ? 'current'
+                                      : ''
+                                  }`}
+                                >
+                                  {post.frontmatter.title}
+                                </Link>
+                                <div className="gatsby_site_header_adiacent_inner">
+                                  <div className="gatsby_site_header_item"></div>
+                                </div>
+                              </div>
                             )}
                             {post.frontmatter.parent === page.post.frontmatter.parent ? (
                               <div className="gatsby_site_header_adiacent active">
@@ -90,6 +100,9 @@ class DocSidebar extends React.Component {
                                               .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
                                               .join(' ')}
                                           </Link>
+                                          <div className="gatsby_site_header_adiacent_inner">
+                                            <div className="gatsby_site_header_item"></div>
+                                          </div>
                                         </div>
                                       ) : null
                                     ) : null

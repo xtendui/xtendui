@@ -58,5 +58,12 @@ Xt.mount.push({
       item.addEventListener('invalid', eventInvalid)
       item.addEventListener('submit', eventSubmit)
     }
+
+    // unmount
+
+    const unmount = () => {
+      removeEventListener('scroll', eventScroll)
+    }
+    return unmount
   },
 })
