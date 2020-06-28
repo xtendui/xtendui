@@ -50,6 +50,8 @@ const demoHash = (e, skipIgnore = false) => {
             makeFullscreen(demo, skipIgnore)
             // scrollToItem
             scrollToItem()
+            // makeGatbsyWithIframe
+            makeGatbsyWithIframe(item)
             // trigger fullscreen or change tabs
             item.dispatchEvent(new CustomEvent('on.trigger.xt'))
           })
@@ -339,13 +341,8 @@ const populateDemo = (container, i) => {
         location.hash = item.getAttribute('id')
         cancelAnimationFrame(Xt.dataStorage.get(document, 'gatbsy_open-full-raf'))
       }
-      // btn-open-iframe
-      const iframe = item.querySelector('iframe')
-      if (iframe) {
-        const btn = container.querySelector('.btn-open-iframe')
-        btn.classList.add('gatbsy_with-iframe')
-        btn.setAttribute('href', iframe.getAttribute('data-src'))
-      }
+      // makeGatbsyWithIframe
+      makeGatbsyWithIframe(item)
     })
   }
   // .btn-show-code
@@ -360,6 +357,21 @@ const populateDemo = (container, i) => {
   document.querySelector('#' + demoId + ' .gatsby_demo_code').addEventListener('off.xt', e => {
     e.target.closest('.gatsby_demo_item').classList.remove('active-code')
   })
+}
+
+/**
+ * makeGatbsyWithIframe
+ */
+const makeGatbsyWithIframe = item => {
+  // btn-open-iframe
+  const iframe = item.querySelector('iframe')
+  const btn = item.closest('.gatsby_demo').querySelector('.btn-open-iframe')
+  if (iframe) {
+    btn.classList.add('gatbsy_with-iframe')
+    btn.setAttribute('href', iframe.getAttribute('data-src'))
+  } else {
+    btn.classList.remove('gatbsy_with-iframe')
+  }
 }
 
 /**
