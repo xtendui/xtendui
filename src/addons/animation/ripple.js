@@ -37,6 +37,12 @@ class Ripple {
     // on
     self.object.addEventListener('mousedown', self.eventStart.bind(self))
     self.object.addEventListener('touchstart', self.eventStart.bind(self), { passive: true })
+    // listener dispatch
+    requestAnimationFrame(() => {
+      // initialized class
+      self.object.classList.add('xt-component', self.componentName)
+      self.object.dispatchEvent(new CustomEvent('init.xt'))
+    })
   }
 
   //

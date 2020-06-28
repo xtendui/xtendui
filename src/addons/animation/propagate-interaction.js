@@ -43,6 +43,12 @@ class PropagateInteraction {
         Xt.set(self.componentName, tr, self)
       }
     }
+    // listener dispatch
+    requestAnimationFrame(() => {
+      // initialized class
+      self.object.classList.add('xt-component', self.componentName)
+      self.object.dispatchEvent(new CustomEvent('init.xt'))
+    })
   }
 
   //

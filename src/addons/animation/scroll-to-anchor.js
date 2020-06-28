@@ -43,6 +43,12 @@ class ScrollToAnchor {
       self.eventScrollHandler()
       self.eventStart()
     })
+    // listener dispatch
+    requestAnimationFrame(() => {
+      // initialized class
+      self.object.classList.add('xt-component', self.componentName)
+      self.object.dispatchEvent(new CustomEvent('init.xt'))
+    })
   }
 
   //

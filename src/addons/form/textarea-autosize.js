@@ -41,6 +41,12 @@ class TextareaAutosize {
     }
     // initial
     self.keychange.bind(self)()
+    // listener dispatch
+    requestAnimationFrame(() => {
+      // initialized class
+      self.object.classList.add('xt-component', self.componentName)
+      self.object.dispatchEvent(new CustomEvent('init.xt'))
+    })
   }
 
   //
