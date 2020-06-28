@@ -41,6 +41,9 @@ html {
   @media @min-xl {
     font-size: 68.75%; // 11px
   }
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  font-size-adjust: 100%;
 }
 
 body {
@@ -48,6 +51,9 @@ body {
   .font-medium();
   .line-height-medium();
   color: @text;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
   font-variant-ligatures: none;
 }
 

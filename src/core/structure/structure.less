@@ -1,9 +1,19 @@
+@import 'xtend-library/src/core/structure/_variables.less';
+@import 'xtend-library/src/core/structure/_utils.less';
+
 /**
  * background
  */
 
+html {
+  .overflow-style();
+}
+
 body {
   background: @shade-100;
+  overflow-x: hidden !important;
+  overflow-y: scroll !important;
+  .overflow-style();
 }
 
 /**

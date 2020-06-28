@@ -11,6 +11,22 @@ class Page extends React.Component {
     return (
       <Layout seo={seo}>
         <SEO title={seo.title} />
+        <h2>Links</h2>
+        <ul>
+          <li>
+            <a href="https://ghost.org/docs/">ghost</a>
+          </li>
+          <li>
+            <a href="https://getuikit.com/">getuikit</a>
+          </li>
+          <li>
+            <a href="https://stenciljs.com/">stenciljs</a>
+          </li>
+          <li>
+            <a href="https://www.mozilla.org/en-US/firefox/developer/">firefox</a>
+          </li>
+        </ul>
+        <h2>Copy</h2>
         <ul>
           <li>UI framework</li>
           <li>vanilla html components with js and less imports</li>

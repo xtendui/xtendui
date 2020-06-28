@@ -12,7 +12,7 @@ categories: ["400-Extensions"]
 To use this component import the **less** and **js** files accordingly:
 
 ```less
-@import '/src/extensions/sticky/sticky.less';
+@import 'xtend-library/src/extensions/sticky/sticky.less';
 ```
 
 ```jsx
@@ -22,7 +22,7 @@ import '/src/extensions/sticky/sticky.js'
 Or just import **extensions**:
 
 ```less
-@import '/src/xtend-extensions.less';
+@import 'xtend-library/src/xtend-extensions.less';
 ```
 
 ```jsx

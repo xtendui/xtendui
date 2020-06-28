@@ -12,13 +12,13 @@ categories: ["400-Extensions"]
 To use this component import the **less** files accordingly:
 
 ```less
-@import '/src/core/badge/badge.less';
+@import 'xtend-library/src/core/badge/badge.less';
 ```
 
 Or just import **core**:
 
 ```less
-@import '/src/xtend-core.less';
+@import 'xtend-library/src/xtend-core.less';
 ```
 
 [[noteDefault]]

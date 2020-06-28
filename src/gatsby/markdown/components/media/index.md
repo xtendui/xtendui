@@ -12,13 +12,13 @@ categories: ["100-Core"]
 To use this component import the **less** files accordingly:
 
 ```less
-@import '/src/core/media/media.less';
+@import 'xtend-library/src/core/media/media.less';
 ```
 
 Or just import **core**:
 
 ```less
-@import '/src/xtend-core.less';
+@import 'xtend-library/src/xtend-core.less';
 ```
 
 [[noteDefault]]

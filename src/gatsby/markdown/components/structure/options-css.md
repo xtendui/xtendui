@@ -6,7 +6,7 @@ title: "Option Css"
 date: "2019-12-01"
 ---
 
-The structure styles that don't belongs to a component are all inside `/src/core/structure/structure.less`.
+The structure styles that don't belongs to a component are all inside `xtend-libray/src/core/structure/structure.less`.
 
 ## Scrollbar
 

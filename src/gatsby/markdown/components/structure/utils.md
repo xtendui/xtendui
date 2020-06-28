@@ -6,7 +6,7 @@ title: "Utils"
 date: "2019-11-10"
 ---
 
-The utils styles and mixins are all inside `/src/core/structure/utils.less`.
+The utils styles and mixins are all inside `xtend-libray/src/core/structure/_utils.less`.
 
 ## Various
 

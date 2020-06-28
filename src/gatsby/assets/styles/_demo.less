@@ -9,7 +9,7 @@
 
 html.gatsby_iframe-inside {
   body {
-    .overflow-style(@mode: none);
+    .overflow-style();
     background: @white !important;
   }
   #gatsby_body-inner {
@@ -194,7 +194,7 @@ pre {
     .gatsby_demo_item:not(.populated-iframe) {
       overflow-x: hidden;
       overflow-y: auto;
-      .overflow-style(@mode: none);
+      .overflow-style();
     }
     .gatsby_demo_item.active-code {
       overflow-x: hidden;

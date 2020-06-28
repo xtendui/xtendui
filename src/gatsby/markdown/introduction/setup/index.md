@@ -48,21 +48,21 @@ With this setup you can **fork** css and js files inside `./dist/xtend-library` 
 You need to import the **reset** file as first import:
 
 ```less
-@import '/src/xtend-reset.less'; // always first loaded
+@import 'xtend-library/src/xtend-reset.less'; // always first loaded
 ```
 
 Then you can import the **components you need** as described in the docs:
 
 ```less
 @import (reference) '/src/xtend-core.less'; // be sure to import the library as reference first
-@import '/src/extensions/slider/slider.less';
+@import 'xtend-library/src/extensions/slider/slider.less';
 ```
 
 Or just import **all core** and **extensions** and **addons** needed (preferred method):
 
 ```less
-@import '/src/xtend-core.less';
-@import '/src/extensions/slider/slider.less';
+@import 'xtend-library/src/xtend-core.less';
+@import 'xtend-library/src/extensions/slider/slider.less';
 ```
 
 To modify a **less** or **js** file add [webpack resolve](/introduction/setup#usage-webpack) and fork the file copying it in your project.

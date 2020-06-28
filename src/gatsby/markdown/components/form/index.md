@@ -12,7 +12,7 @@ categories: ["100-Core"]
 To use this component import the **less** and **js** files accordingly:
 
 ```less
-@import '/src/core/form/form.less';
+@import 'xtend-library/src/core/form/form.less';
 ```
 
 ```jsx
@@ -22,7 +22,7 @@ import '/src/core/form/form.js'
 Or just import **core**:
 
 ```less
-@import '/src/xtend-core.less';
+@import 'xtend-library/src/xtend-core.less';
 ```
 
 ```jsx
