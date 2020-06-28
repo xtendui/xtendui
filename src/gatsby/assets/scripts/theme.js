@@ -28,11 +28,15 @@ changeMq()
  */
 
 Xt.mount.push({
-  matches: '#gatsby_html body', // add your own selector instead of body to contain the code
+  matches: '#gatsby_html body',
   mount: object => {
     // init
 
-    const self = new Xt.ScrollToAnchor(object, {})
+    const self = new Xt.ScrollToAnchor(object, {
+      scrollDistance: () => {
+        return window.innerHeight / 6
+      },
+    })
 
     // change
 
@@ -160,6 +164,11 @@ const makeDocument = () => {
         el.setAttribute('scope', 'row')
       }
     }
+  }
+  // restart xt-scroll-to-anchor
+  const scrollToAnchor = Xt.get('xt-scroll-to-anchor', document.querySelector('#gatsby_html body'))
+  if (scrollToAnchor) {
+    scrollToAnchor.eventStart()
   }
 }
 

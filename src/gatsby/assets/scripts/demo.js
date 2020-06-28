@@ -20,7 +20,7 @@ Prism.manual = true
 const scrollToItem = () => {
   const top = document.querySelector('[data-xt-origin="gatbsy_open-full-content"]').offsetTop
   if (top !== 0) {
-    const distanceY = 50
+    const distanceY = window.innerHeight / 6
     // add space
     let scrollAdd = 0
     // sticky space

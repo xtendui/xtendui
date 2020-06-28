@@ -79,33 +79,37 @@ class ScrollToAnchor {
     const self = this
     // useCapture delegation
     el = el ? el : e.target
-    if (el.matches(self.options.elements)) {
-      // event
-      const loc = new URL(el.getAttribute('href'), location)
-      if (loc.hash && loc.pathname === location.pathname) {
-        if (!hashchange || location.hash === el.hash) {
-          const hash = hashchange ? loc.hash : el.hash.toString()
-          self.target = self.object.querySelector(hash)
-          if (self.target) {
-            // prevent location.hash
-            if (e) {
-              e.preventDefault()
+    // not null and HTML element and not window
+    if (el && el.nodeName && el !== window) {
+      el = el.closest(self.options.elements)
+      if (el && el.matches(self.options.elements)) {
+        // event
+        const loc = new URL(el.getAttribute('href'), location)
+        if (loc.hash && loc.pathname === location.pathname) {
+          if (!hashchange || location.hash === el.hash) {
+            const hash = hashchange ? loc.hash : el.hash.toString()
+            self.target = self.object.querySelector(hash)
+            if (self.target) {
+              // prevent location.hash
+              if (e) {
+                e.preventDefault()
+              }
+              // class
+              let els = Array.from(self.object.querySelectorAll(self.options.elements))
+              els = els.filter(x => !x.closest('.xt-ignore')) // filter out ignore
+              for (const other of els) {
+                other.classList.remove(...self.classes)
+              }
+              el.classList.add(...self.classes)
+              // no location.hash or page scrolls
+              if (location.hash !== el.hash) {
+                history.pushState({}, '', loc.hash)
+              }
+              // add space
+              self.scrollSpace = self.options.scrollSpace(self)
+              // listener dispatch
+              self.object.dispatchEvent(new CustomEvent('change.xt.scrolltoanchor'))
             }
-            // class
-            let els = Array.from(self.object.querySelectorAll(self.options.elements))
-            els = els.filter(x => !x.closest('.xt-ignore')) // filter out ignore
-            for (const other of els) {
-              other.classList.remove(...self.classes)
-            }
-            el.classList.add(...self.classes)
-            // no location.hash or page scrolls
-            if (location.hash !== el.hash) {
-              history.pushState({}, '', loc.hash)
-            }
-            // add space
-            self.scrollSpace = self.options.scrollSpace(self)
-            // listener dispatch
-            self.object.dispatchEvent(new CustomEvent('change.xt.scrolltoanchor'))
           }
         }
       }

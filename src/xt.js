@@ -673,8 +673,8 @@ if (typeof window !== 'undefined') {
             value !== null &&
             typeof value === 'object' &&
             !Array.isArray(value) && // not array
-            !value.nodeName && // not HTML elemen
-            value !== window
+            !value.nodeName && // not HTML element
+            value !== window // not HTML element
           ) {
             // not window
             final[key] = Xt.merge([final[key], value])
