@@ -14,6 +14,7 @@ class DemoVanillaIframe extends React.Component {
     seo.title = demo.name
     seo.description = 'Demo'
     demo.type = 'private/demos/' + demo.type
+    demo.type = demo.type.replace('/iframe', '')
     return (
       <StaticQuery
         query={graphql`

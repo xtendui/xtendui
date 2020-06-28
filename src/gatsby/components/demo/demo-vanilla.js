@@ -9,6 +9,7 @@ class DemoVanilla extends React.Component {
     const { src, children, name, mode } = this.props
     const demo = require('../../code/' + src + '.js').demo
     demo.type = 'private/demos/' + demo.type
+    demo.type = demo.type.replace('/vanilla', '')
     return (
       <StaticQuery
         query={graphql`

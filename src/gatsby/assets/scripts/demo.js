@@ -8,6 +8,9 @@ require('prismjs/plugins/unescaped-markup/prism-unescaped-markup.css')
 require('prismjs/components/prism-jsx.min')
 require('prismjs/components/prism-less.min')
 require('prism-themes/themes/prism-base16-ateliersulphurpool.light.css')
+// require('prism-themes/themes/prism-vs.css')
+// require('prism-themes/themes/prism-ghcolors.css')
+// require('prism-themes/themes/prism-material-light.css')
 Prism.manual = true
 
 /**

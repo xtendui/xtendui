@@ -150,7 +150,10 @@
 .gatsby_site_article_foot_inner,
 .gatsby_site_footer_inner {
   margin: auto;
-  max-width: 1200px;
+  max-width: @breakpoint-md;
+  @media @min-xl {
+    max-width: @breakpoint-lg;
+  }
 }
 
 .gatsby_site_article_foot {

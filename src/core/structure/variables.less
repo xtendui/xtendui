@@ -17,12 +17,12 @@
 
 @shade-100: #f0f5ff;
 @shade-200: #d0e6fe;
-@shade-900: #002a78;
+@shade-700: #002a78;
 
 @accent: #0078ff;
 @accent-dark: darken(@accent, 5%);
 
-@text: @shade-900;
+@text: #001743;
 @text-light: fade(@text, 65%);
 @text-inverse: @white;
 @text-inverse-light: fade(@text-inverse, 65%);
@@ -34,15 +34,15 @@
 // USAGE: box-shadow: @shadow-light;
 
 @shadow-none: 0 .25rem .5rem transparent, 0 .75rem 1.5rem transparent;
-@shadow-light: 0 .25rem .5rem fade(@shade-900, 5%), 0 .75rem 1.5rem fade(@shade-900, 10%);
-@shadow-dark: 0 .25rem .5rem fade(@shade-900, 20%), 0 .75rem 1.5rem fade(@shade-900, 40%);
+@shadow-light: 0 .25rem .5rem fade(@shade-700, 5%), 0 .75rem 1.5rem fade(@shade-700, 10%);
+@shadow-dark: 0 .25rem .5rem fade(@shade-700, 20%), 0 .75rem 1.5rem fade(@shade-700, 40%);
 @shadow-accent: 0 .25rem .5rem fade(@accent-dark, 20%), 0 .75rem 1.5rem fade(@accent-dark, 40%);
 
 // gradient
 // USAGE: background: linear-gradient(135deg, @grad-light);
 
 @grad-light: @shade-100 33%, darken(@shade-100, 2%) 100%;
-@grad-dark: @shade-900 33%, darken(@shade-900, 2%) 100%;
+@grad-dark: @shade-700 33%, darken(@shade-700, 2%) 100%;
 @grad-accent: @accent 33%, @accent-dark 100%;
 
 // spacing
