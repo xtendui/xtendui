@@ -322,6 +322,7 @@ const populateDemo = (container, i) => {
     elements: '.gatsby_demo_tabs_left .btn',
     targets: '.gatsby_demo_item',
     min: 1,
+    instant: true,
   })
   for (const item of items) {
     // @FIX demo fullscreen

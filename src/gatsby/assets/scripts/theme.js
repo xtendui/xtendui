@@ -1,5 +1,6 @@
 import { Xt } from 'xtend-library/src/xt.js'
 import 'xtend-library/src/variables.js'
+import 'xtend-library/src/core/toggle/toggle.js'
 import 'xtend-library/src/addons/animation/scroll-to-anchor.js'
 import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin.js'
@@ -24,6 +25,32 @@ const changeMq = () => {
 changeMq()
 
 /**
+ * #gatbsy_open-full-trigger
+ */
+
+Xt.mount.push({
+  matches: '#gatbsy_open-full-trigger',
+  mount: object => {
+    // init
+
+    let self = new Xt.Toggle(object, {
+      targets: '#gatbsy_open-full',
+      closeInside: ':scope > .btn-close',
+      autoClose: false,
+      scrollbar: true,
+    })
+
+    // unmount
+
+    const unmount = () => {
+      self.destroy()
+      self = null
+    }
+    return unmount
+  },
+})
+
+/**
  * xt-scroll-to-anchor
  */
 
@@ -32,7 +59,7 @@ Xt.mount.push({
   mount: object => {
     // init
 
-    const self = new Xt.ScrollToAnchor(object, {
+    let self = new Xt.ScrollToAnchor(object, {
       scrollDistance: () => {
         return window.innerHeight / 6
       },
@@ -54,6 +81,14 @@ Xt.mount.push({
     }
 
     self.object.addEventListener('change.xt.scrolltoanchor', eventChange)
+
+    // unmount
+
+    const unmount = () => {
+      self.destroy()
+      self = null
+    }
+    return unmount
   },
 })
 
