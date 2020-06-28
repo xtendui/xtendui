@@ -75,11 +75,15 @@ document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('o
 Listen to events this way:
 
 ```js
+const el = document.querySelector('#my-element-or-target')
+
 const eventOn = e => {
+  if (e.target === el) {
   // logic
+  }
 }
 
-document.querySelector('#my-element-or-target').addEventListener('on.xt', eventOn)
+el.addEventListener('on.xt', eventOn)
 ```
 
 Listen to events delegation with **useCapture** this way:
