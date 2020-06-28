@@ -44,7 +44,7 @@ class DocSidebar extends React.Component {
                         post.frontmatter.parent === post.frontmatter.title ? (
                           <div key={z}>
                             {post.frontmatter.link ? (
-                              <div>
+                              <div className="gatsby_site_header_item_container">
                                 <a
                                   href={post.frontmatter.link}
                                   target="_blank"
@@ -64,7 +64,7 @@ class DocSidebar extends React.Component {
                                 </div>
                               </div>
                             ) : (
-                              <div>
+                              <div className="gatsby_site_header_item_container">
                                 <Link
                                   to={markdownSlug(post)}
                                   className={`btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub ${
