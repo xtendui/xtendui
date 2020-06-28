@@ -6,7 +6,7 @@ class DocFullscreen extends React.Component {
       <>
         <div
           id="gatbsy_open-full-trigger"
-          data-xt-toggle="{ targets: '#gatbsy_open-full', closeInside: ':scope > .btn-close', autoClose: true, scrollbar: true }"
+          data-xt-toggle="{ targets: '#gatbsy_open-full', closeInside: ':scope > .btn-close', autoClose: false, scrollbar: true }"
         ></div>
         <div className="toggle-block" id="gatbsy_open-full">
           <div className="btn btn-close" aria-label="Close"></div>
