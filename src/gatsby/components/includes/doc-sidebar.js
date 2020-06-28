@@ -42,9 +42,9 @@ class DocSidebar extends React.Component {
                     <div className="gatsby_site_header_item">
                       {category.posts.map(({ post }, z) =>
                         post.frontmatter.parent === post.frontmatter.title ? (
-                          <div key={z}>
+                          <div className="gatsby_site_header_item_container" key={z}>
                             {post.frontmatter.link ? (
-                              <div className="gatsby_site_header_item_container">
+                              <div>
                                 <a
                                   href={post.frontmatter.link}
                                   target="_blank"
@@ -64,7 +64,7 @@ class DocSidebar extends React.Component {
                                 </div>
                               </div>
                             ) : (
-                              <div className="gatsby_site_header_item_container">
+                              <div>
                                 <Link
                                   to={markdownSlug(post)}
                                   className={`btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub ${

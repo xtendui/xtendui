@@ -30,7 +30,7 @@ exports.onRouteUpdate = () => {
   requestAnimationFrame(() => {
     let sidebarActive = document.querySelector('.gatsby_btn-site_article_sidebar--sub.active')
     if (sidebarActive) {
-      const add = 20
+      const add = 25
       sidebarActive = sidebarActive.closest('.gatsby_site_header_item_container')
       const sidebarActiveTop = sidebarActive.getBoundingClientRect().top + sidebarArticle.scrollTop
       const sidebarActiveBottom = sidebarActiveTop + sidebarActive.offsetHeight
