@@ -212,20 +212,6 @@ const populateDemo = (container, i) => {
     .querySelector('.gatsby_demo_tabs_right')
     .append(
       Xt.createElement(
-        '<button type="button" class="btn btn-text btn-tiny btn-prev-demo" aria-label="Previous"><span class="icon-arrow-left icon-large"></span></button>'
-      )
-    )
-  container
-    .querySelector('.gatsby_demo_tabs_right')
-    .append(
-      Xt.createElement(
-        '<button type="button" class="btn btn-text btn-tiny btn-next-demo" aria-label="Next"><span class="icon-arrow-right icon-large"></span></button>'
-      )
-    )
-  container
-    .querySelector('.gatsby_demo_tabs_right')
-    .append(
-      Xt.createElement(
         '<button type="button" class="btn btn-text btn-tiny btn-show-code" aria-label="Toggle Code"><span class="icon-code icon-large"></span></button>'
       )
     )
@@ -368,113 +354,6 @@ const populateDemo = (container, i) => {
   })
   document.querySelector('#' + demoId + ' .gatsby_demo_code').addEventListener('off.xt', e => {
     e.target.closest('.gatsby_demo_item').classList.remove('active-code')
-  })
-  // hide navigation if not needed
-  let count
-  const listingToggles = document.querySelectorAll('[data-gatsby-listing-toggle]')
-  if (!listingToggles.length) {
-    count = document.querySelectorAll('.gatsby_demo').length
-  } else {
-    count = listingToggles.length
-  }
-  if (count < 2) {
-    container.querySelector('.btn-prev-demo').classList.add('display-none')
-    container.querySelector('.btn-next-demo').classList.add('display-none')
-  }
-  // .btn-prev-demo
-  container.querySelector('.btn-prev-demo').addEventListener('click', e => {
-    const demos = document.querySelectorAll('.gatsby_demo')
-    const element = e.currentTarget
-    const self = Xt.get('xt-toggle', container)
-    if (self.currentIndex > 0) {
-      self.goToPrev()
-    } else {
-      if (!listingToggles.length) {
-        for (let i = 0; i < demos.length; i++) {
-          if (demos[i].contains(element)) {
-            let prev = i - 1
-            prev = prev >= 0 ? prev : demos.length - 1
-            let currentOffset
-            const prevOffset = demos[prev].offsetTop
-            if (document.querySelector('#gatbsy_open-full-trigger').classList.contains('active')) {
-              currentOffset = document.querySelector('[data-xt-origin="gatbsy_open-full-content"]').offsetTop
-              const prevDemo = demos[prev].querySelector('.gatsby_demo_item.active')
-              if (prevDemo) {
-                location.hash = prevDemo.getAttribute('id')
-                cancelAnimationFrame(Xt.dataStorage.get(document, 'gatbsy_open-full-raf'))
-              }
-            } else {
-              currentOffset = element.closest('.gatsby_demo').offsetTop
-            }
-            document.scrollingElement.scrollTo(0, document.scrollingElement.scrollTop - currentOffset + prevOffset)
-            // activation demo last
-            const s = Xt.get('xt-toggle', demos[prev])
-            s.goToNum(-1)
-          }
-        }
-      } else {
-        for (let i = 0; i < listingToggles.length; i++) {
-          if (listingToggles[i].classList.contains('active')) {
-            let prev = i - 1
-            prev = prev >= 0 ? prev : listingToggles.length - 1
-            const prevDemo = listingToggles[prev].parentNode.querySelector('.gatsby_demo_item.active')
-            if (prevDemo) {
-              location.hash = prevDemo.getAttribute('id')
-              cancelAnimationFrame(Xt.dataStorage.get(document, 'gatbsy_open-full-raf'))
-            }
-            break
-          }
-        }
-      }
-    }
-  })
-  // .btn-next-demo
-  container.querySelector('.btn-next-demo').addEventListener('click', e => {
-    const demos = document.querySelectorAll('.gatsby_demo')
-    const element = e.currentTarget
-    const self = Xt.get('xt-toggle', container)
-    if (self.currentIndex < self.getGroups().length - 1) {
-      self.goToNext()
-    } else {
-      if (!listingToggles.length) {
-        for (let i = 0; i < demos.length; i++) {
-          if (demos[i].contains(element)) {
-            let next = i + 1
-            next = next < demos.length ? next : 0
-            let currentOffset
-            const nextOffset = demos[next].offsetTop
-            if (document.querySelector('#gatbsy_open-full-trigger').classList.contains('active')) {
-              currentOffset = document.querySelector('[data-xt-origin="gatbsy_open-full-content"]').offsetTop
-              const nextDemo = demos[next].querySelector('.gatsby_demo_item.active')
-              if (nextDemo) {
-                location.hash = nextDemo.getAttribute('id')
-                cancelAnimationFrame(Xt.dataStorage.get(document, 'gatbsy_open-full-raf'))
-              }
-            } else {
-              currentOffset = element.closest('.gatsby_demo').offsetTop
-            }
-            document.scrollingElement.scrollTo(0, document.scrollingElement.scrollTop - currentOffset + nextOffset)
-            // activation demo first
-            const s = Xt.get('xt-toggle', demos[next])
-            s.goToNum(0)
-          }
-        }
-      } else {
-        for (let i = 0; i < listingToggles.length; i++) {
-          if (listingToggles[i].classList.contains('active')) {
-            let next = i + 1
-            next = next < listingToggles.length ? next : 0
-            const nextDemo = listingToggles[next].parentNode.querySelector('.gatsby_demo .gatsby_demo_item.active')
-            if (nextDemo) {
-              location.hash = nextDemo.getAttribute('id')
-              cancelAnimationFrame(Xt.dataStorage.get(document, 'gatbsy_open-full-raf'))
-            }
-            cancelAnimationFrame(Xt.dataStorage.get(document, 'gatbsy_open-full-raf'))
-            break
-          }
-        }
-      }
-    }
   })
 }
 
