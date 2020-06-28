@@ -57,7 +57,7 @@ class DocSidebar extends React.Component {
                                       : ''
                                   }`}
                                 >
-                                  {post.frontmatter.title}
+                                  <span>{post.frontmatter.title}</span>
                                 </a>
                                 <div className="gatsby_site_header_adiacent_inner">
                                   <div className="gatsby_site_header_item"></div>
@@ -75,7 +75,7 @@ class DocSidebar extends React.Component {
                                       : ''
                                   }`}
                                 >
-                                  {post.frontmatter.title}
+                                  <span>{post.frontmatter.title}</span>
                                 </Link>
                                 <div className="gatsby_site_header_adiacent_inner">
                                   <div className="gatsby_site_header_item"></div>
@@ -95,10 +95,12 @@ class DocSidebar extends React.Component {
                                               page.post.frontmatter.title === adiacent.frontmatter.title ? 'active' : ''
                                             }`}
                                           >
-                                            {adiacent.frontmatter.title
-                                              .split(/[\s-]+/)
-                                              .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
-                                              .join(' ')}
+                                            <span>
+                                              {adiacent.frontmatter.title
+                                                .split(/[\s-]+/)
+                                                .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
+                                                .join(' ')}
+                                            </span>
                                           </Link>
                                           <div className="gatsby_site_header_adiacent_inner">
                                             <div className="gatsby_site_header_item"></div>

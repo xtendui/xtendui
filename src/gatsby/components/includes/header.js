@@ -39,52 +39,60 @@ class Header extends React.Component {
             </div>
           </div>
 
-          <div>
+          <div className="gatsby_site_header_links_container">
             <div className="gatsby_site_header_links">
-              <Link
-                to="/introduction"
-                className={`btn gatsby_btn-site_header_link ${
-                  page && page.post
-                    ? markdownSlug(page.post) === '/' + 'introduction'
-                      ? 'active'
-                      : page.post.frontmatter.type === 'Introduction'
-                      ? 'current'
+              <div>
+                <Link
+                  to="/introduction"
+                  className={`btn gatsby_btn-site_header_link ${
+                    page && page.post
+                      ? markdownSlug(page.post) === '/' + 'introduction'
+                        ? 'active'
+                        : page.post.frontmatter.type === 'Introduction'
+                        ? 'current'
+                        : ''
                       : ''
-                    : ''
-                }`}
-              >
-                Introduction
-              </Link>
-              <Link
-                to="/components"
-                className={`btn gatsby_btn-site_header_link ${
-                  page && page.post
-                    ? markdownSlug(page.post) === '/' + 'components'
-                      ? 'active'
-                      : page.post.frontmatter.type === 'Components'
-                      ? 'current'
+                  }`}
+                >
+                  <span>Introduction</span>
+                </Link>
+              </div>
+              <div>
+                <Link
+                  to="/components"
+                  className={`btn gatsby_btn-site_header_link ${
+                    page && page.post
+                      ? markdownSlug(page.post) === '/' + 'components'
+                        ? 'active'
+                        : page.post.frontmatter.type === 'Components'
+                        ? 'current'
+                        : ''
                       : ''
-                    : ''
-                }`}
-              >
-                Components
-              </Link>
-              <Link
-                to="/addons"
-                className={`btn gatsby_btn-site_header_link ${
-                  page && page.post ? (markdownSlug(page.post) === '/' + 'addons' ? 'active' : page.post.frontmatter.type === 'Addons' ? 'current' : '') : ''
-                }`}
-              >
-                Addons
-              </Link>
-              <Link
-                to="/themes"
-                className={`btn gatsby_btn-site_header_link ${
-                  page && page.post ? (markdownSlug(page.post) === '/' + 'themes' ? 'active' : page.post.frontmatter.type === 'Theme' ? 'current' : '') : ''
-                }`}
-              >
-                Themes
-              </Link>
+                  }`}
+                >
+                  <span>Components</span>
+                </Link>
+              </div>
+              <div>
+                <Link
+                  to="/addons"
+                  className={`btn gatsby_btn-site_header_link ${
+                    page && page.post ? (markdownSlug(page.post) === '/' + 'addons' ? 'active' : page.post.frontmatter.type === 'Addons' ? 'current' : '') : ''
+                  }`}
+                >
+                  <span>Addons</span>
+                </Link>
+              </div>
+              <div>
+                <Link
+                  to="/themes"
+                  className={`btn gatsby_btn-site_header_link ${
+                    page && page.post ? (markdownSlug(page.post) === '/' + 'themes' ? 'active' : page.post.frontmatter.type === 'Theme' ? 'current' : '') : ''
+                  }`}
+                >
+                  <span>Themes</span>
+                </Link>
+              </div>
             </div>
           </div>
         </nav>

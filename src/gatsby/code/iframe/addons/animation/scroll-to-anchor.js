@@ -33,6 +33,10 @@ demo.htmlSource = `
     </div>
   </div>
 
+  <br/><br/><br/><br/><br/><br/><br/>
+  <br/><br/><br/><br/><br/><br/><br/>
+  <br/><br/><br/><br/><br/><br/><br/>
+
   <div class="card card-primary card-squared" id="anchor-0">
     <div class="card-design"></div>
     <div class="card-inner">
@@ -115,13 +119,6 @@ demo.htmlSource = `
       </div>
     </div>
   </div>
-
-  <br/><br/><br/><br/><br/><br/><br/>
-  <br/><br/><br/><br/><br/><br/><br/>
-  <br/><br/><br/><br/><br/><br/><br/>
-  <br/><br/><br/><br/><br/><br/><br/>
-  <br/><br/><br/><br/><br/><br/><br/>
-  <br/><br/><br/><br/><br/><br/><br/>
 
 </main>
 `

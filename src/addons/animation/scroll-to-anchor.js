@@ -34,10 +34,10 @@ class ScrollToAnchor {
     self.classes = self.options.class ? [...self.options.class.split(' ')] : []
     // click
     self.object.addEventListener('click', self.eventChange.bind(self).bind(self, false, null))
-    // scroll
-    self.options.scrollElement.addEventListener('scroll', self.eventScrollHandler.bind(self).bind(self))
     // hash
     addEventListener('hashchange', self.eventChange.bind(self).bind(self, true, null))
+    // scroll
+    self.options.scrollElement.addEventListener('scroll', self.eventScrollHandler.bind(self).bind(self))
     // initial
     requestAnimationFrame(() => {
       self.eventScrollHandler()
@@ -137,6 +137,14 @@ class ScrollToAnchor {
   eventScroll(e = null) {
     const self = this
     // scroll
+    let found = false
+    let scrollTop = document.scrollingElement.scrollTop
+    // fake scroll position if on bottom of the page
+    const scrollMax = document.scrollingElement.scrollHeight
+    if (scrollTop + Xt.windowHeight >= scrollMax) {
+      scrollTop = scrollMax
+    }
+    // loop
     let els = Array.from(self.object.querySelectorAll(self.options.elements))
     els = els.filter(x => !x.closest('.xt-ignore')) // filter out ignore
     for (const el of els) {
@@ -148,14 +156,15 @@ class ScrollToAnchor {
       if (loc.hash) {
         self.target = document.querySelector(loc.hash)
         if (self.target) {
-          if (document.scrollingElement.scrollTop >= self.target.offsetTop - self.scrollSpace - self.scrollDistance) {
-            // class
+          if (scrollTop >= self.target.offsetTop - self.scrollSpace - self.scrollDistance) {
+            // reset others
             for (const other of els) {
               other.classList.remove(...self.classes)
             }
             // loop multiple els of
             const matches = self.options.elements.replace('#', loc.hash)
             const currents = els.filter(x => x.matches(matches))
+            found = currents.length ? true : false
             for (const current of currents) {
               if (!current.classList.contains('active')) {
                 // class
@@ -177,6 +186,12 @@ class ScrollToAnchor {
         }
       }
     }
+    // reset others when not found elements
+    if (!found) {
+      for (const other of els) {
+        other.classList.remove(...self.classes)
+      }
+    }
   }
 
   //
@@ -190,8 +205,8 @@ class ScrollToAnchor {
     const self = this
     // remove events
     self.object.removeEventListener('click', self.eventChange.bind(self, false, null), true)
-    self.options.scrollElement.removeEventListener('scroll', self.eventScrollHandler.bind(self).bind(self))
     removeEventListener('hashchange', self.eventChange.bind(self).bind(self, true, null), true)
+    self.options.scrollElement.removeEventListener('scroll', self.eventScrollHandler.bind(self).bind(self))
     // set self
     Xt.remove(self.componentName, self.object)
     // listener dispatch

@@ -35,7 +35,9 @@ If you want to block them with fade in or out use the events `on.trigger.xt` or 
   </div>
 </demo>
 
-## @TODO
+## test
+
+@TODO
 
 Use events `'change.xt.scroll'` inside you can use the values of `self.detail.ratio` `self.detail.ratioInverse` `self.detail.ratioDouble`.
 
