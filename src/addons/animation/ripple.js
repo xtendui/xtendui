@@ -40,7 +40,7 @@ class Ripple {
     // listener dispatch
     requestAnimationFrame(() => {
       // initialized class
-      self.object.classList.add('xt-component', self.componentName)
+      self.object.classList.add(self.componentName)
       self.object.dispatchEvent(new CustomEvent('init.xt'))
     })
   }
@@ -136,6 +136,8 @@ class Ripple {
     // off
     removeEventListener('mouseup', self.offListener)
     removeEventListener('touchend', self.offListener)
+    // initialized class
+    self.object.classList.remove(self.componentName)
     // set self
     Xt.remove(self.componentName, self.object)
     // listener dispatch

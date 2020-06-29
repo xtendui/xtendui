@@ -44,7 +44,7 @@ class TextareaAutosize {
     // listener dispatch
     requestAnimationFrame(() => {
       // initialized class
-      self.object.classList.add('xt-component', self.componentName)
+      self.object.classList.add(self.componentName)
       self.object.dispatchEvent(new CustomEvent('init.xt'))
     })
   }
@@ -84,6 +84,8 @@ class TextareaAutosize {
     }
     self.object.removeEventListener('keydown', self.keychange.bind(self))
     self.object.removeEventListener('keyup', self.keychange.bind(self))
+    // initialized class
+    self.object.classList.remove(self.componentName)
     // set self
     Xt.remove(self.componentName, self.object)
     // listener dispatch

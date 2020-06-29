@@ -259,7 +259,7 @@ class Toggle {
     // listener dispatch
     requestAnimationFrame(() => {
       // initialized class
-      self.object.classList.add('xt-component', self.componentName)
+      self.object.classList.add(self.componentName)
       self.object.dispatchEvent(new CustomEvent('init.xt'))
     })
   }
@@ -2924,8 +2924,6 @@ class Toggle {
    */
   destroy() {
     const self = this
-    // initialized class
-    self.object.classList.remove('xt-component', self.componentName)
     // disable
     self.disable()
     // [disabled]
@@ -2953,6 +2951,8 @@ class Toggle {
         }
       }
     }
+    // initialized class
+    self.object.classList.remove(self.componentName)
     // set self
     Xt.remove(self.componentName, self.object)
     for (const el of self.elements) {

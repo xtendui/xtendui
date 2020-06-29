@@ -46,7 +46,7 @@ class PropagateInteraction {
     // listener dispatch
     requestAnimationFrame(() => {
       // initialized class
-      self.object.classList.add('xt-component', self.componentName)
+      self.object.classList.add(self.componentName)
       self.object.dispatchEvent(new CustomEvent('init.xt'))
     })
   }
@@ -117,6 +117,8 @@ class PropagateInteraction {
     self.object.removeEventListener('mouseleave', self.hoverOff.bind(self))
     self.object.removeEventListener('mousedown', self.activeOn.bind(self))
     removeEventListener('mouseup', self.activeOff.bind(self))
+    // initialized class
+    self.object.classList.remove(self.componentName)
     // set self
     Xt.remove(self.componentName, self.object)
     for (const tr of self.targets) {

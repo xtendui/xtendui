@@ -46,7 +46,7 @@ class ScrollToAnchor {
     // listener dispatch
     requestAnimationFrame(() => {
       // initialized class
-      self.object.classList.add('xt-component', self.componentName)
+      self.object.classList.add(self.componentName)
       self.object.dispatchEvent(new CustomEvent('init.xt'))
     })
   }
@@ -211,6 +211,8 @@ class ScrollToAnchor {
     self.object.removeEventListener('click', self.eventChange.bind(self, false, null), true)
     removeEventListener('hashchange', self.eventChange.bind(self).bind(self, true, null), true)
     self.options.scrollElement.removeEventListener('scroll', self.eventScrollHandler.bind(self).bind(self))
+    // initialized class
+    self.object.classList.remove(self.componentName)
     // set self
     Xt.remove(self.componentName, self.object)
     // listener dispatch
