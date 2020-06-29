@@ -11,7 +11,6 @@ class Page extends React.Component {
     return (
       <Layout seo={seo}>
         <SEO title={seo.title} />
-        <h2>Links</h2>
         <ul>
           <li>
             <a href="https://ghost.org/docs/">ghost</a>
@@ -26,27 +25,20 @@ class Page extends React.Component {
             <a href="https://www.mozilla.org/en-US/firefox/developer/">firefox</a>
           </li>
         </ul>
-        <h2>Copy</h2>
         <ul>
-          <li>UI framework</li>
-          <li>vanilla html components with js and less imports</li>
-          <li>extremely customizable</li>
-          <li>simple solutions for hard problems</li>
-          <li>modular css and javascript for html apps</li>
-          <li>(vanilla &gt; simple &gt; custom) library with extensible (markup &gt; styles &gt; javascript)</li>
-          <li>designed for building custom websites with complex interactions</li>
-          <li>advanced vanilla js with customizzable behaviour and animations</li>
+          <li>frontend library</li>
           <li>a new approach to custom frontend development</li>
-          <li>ecosystem of vanilla js plugins</li>
-          <li>focused on interactions and animations</li>
-          <li>focused on working speed, quality and customization</li>
-          <li>highly customizzable library for who wants to customize the css without many variables or mixins</li>
-          <li>
-            includes core styles not to be modified and a separate smart theme template for custom styles, easy to use, extensible, intelligible code,
-            contextualized code
-          </li>
-          <li>automatic aria attributes</li>
-          <li>style real css, not a list of variables</li>
+          <li>extremely customizable and designed for building custom websites with complex interactions</li>
+          <li>UI framework for custom styling, interactions and animations</li>
+          <li>modular css and javascript for html apps with an ecosystem of vanilla js plugins</li>
+          <li>vanilla html components with less and js componentization with imports</li>
+          <li>does the general hard work for you, so you have time to work on advanced interactions and animations</li>
+          <li>(vanilla &gt; simple &gt; custom) library with extensible (markup &gt; styles &gt; javascript)</li>
+          <li>simple css without many variables or mixins, you style what you want with css</li>
+          <li>philosophy: focused on working speed, quality and customization</li>
+          <li>philosophy: themes for every component, not a theme for all the library, and style real css, not a list of variables</li>
+          <li>js: vanilla js with customizzable behaviour thanks to javascript events</li>
+          <li>js: automatic focus utils and aria attributes injected by javascript</li>
         </ul>
       </Layout>
     )
