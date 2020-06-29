@@ -5,7 +5,8 @@
 .form-label {
   cursor: pointer;
   display: inline-block;
-  vertical-align: top; // fix inline-block spacing
+  // fix inline-block spacing
+  vertical-align: top;
 }
 
 /**
@@ -13,9 +14,9 @@
  */
 
 .form-item {
-  // blok fixes select and textarea space below
-  display: block;
   .full();
+  // block fixes select and textarea space below
+  display: block;
   &:focus, &.active {
     z-index: @index-active;
   }
