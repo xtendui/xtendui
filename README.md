@@ -126,5 +126,5 @@ We use gatsby to serve the docs:
 
 ## Copyright
 
-Licensed under [MIT license](https://github.com/minimit/xtend-library/blob/master/LICENSE).
+Xtand and demos licensed under [MIT license](https://github.com/minimit/xtend-library/blob/master/LICENSE).
 Docs licensed under [CC BY 3.0](https://github.com/minimit/xtend-library/blob/master/LICENSE-DOCS).

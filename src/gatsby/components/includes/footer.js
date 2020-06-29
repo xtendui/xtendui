@@ -22,7 +22,7 @@ class Footer extends React.Component {
                   </a>{' '}
                 </div>
                 <div className="gatsby_site_footer_bottom_right">
-                  © 2018 <span className="separator separator-dash"></span> {new Date().getFullYear()} {site.site.siteMetadata.author}
+                  © 2017 <span className="separator separator-dash"></span> {new Date().getFullYear()} {site.site.siteMetadata.author}
                 </div>
               </div>
             </div>
