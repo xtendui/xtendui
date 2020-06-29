@@ -22,7 +22,7 @@ module.exports = {
     [
       '@semantic-release/github',
       {
-        assets: [{ path: 'dist/*.min.*', label: 'UMD distribution' }],
+        assets: [{ path: 'dist/*.min.*', label: 'Xtend${nextRelease.gitTag}-UMD' }],
       },
     ],
   ],

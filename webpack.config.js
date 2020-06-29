@@ -41,9 +41,6 @@ module.exports = {
               ],
             },
           },
-          {
-            loader: 'eslint-loader',
-          },
         ],
       },
       {
