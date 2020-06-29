@@ -30,8 +30,9 @@ class Sticky extends Xt.Toggle {
     if (!container) {
       container = Xt.createElement('<div class="xt-container xt-fixed-check xt-cloned"></div>')
       self.object.before(container)
-      // @FIX mount inside clone components (sticky etc..)
+      // @FIX mount inside clone components (sticky, scroll etc..)
       requestAnimationFrame(() => {
+        container.classList.add('xt-ignore', 'xt-ignore-once')
         container.append(self.object)
       })
     }
@@ -47,7 +48,7 @@ class Sticky extends Xt.Toggle {
    */
   initLogic(saveCurrents = true) {
     const self = this
-    // @FIX mount inside clone components (sticky etc..)
+    // @FIX mount inside clone components (sticky, scroll etc..)
     requestAnimationFrame(() => {
       // init
       self.enable()
