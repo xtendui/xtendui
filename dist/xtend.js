@@ -1,6 +1,8 @@
-/* ! Xtend (https://getxtend.com/)
-@copyright (c) 2018 - 2020 Riccardo Caroli
-@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */
+/**
+ * Xtend (https://getxtend.com/)
+ * @copyright (c) 2017 - 2020 Riccardo Caroli
+ * @license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE)
+ */
 
 import 'core-js'
 import 'regenerator-runtime/runtime'
