@@ -19,7 +19,7 @@ class DocHead extends React.Component {
                   .join(' ')}{' '}
                 {page.post.frontmatter.parent && page.post.frontmatter.parent !== page.post.frontmatter.title ? <em>{page.post.frontmatter.parent}</em> : null}
               </span>
-              {page.post.frontmatter.badge ? <div className="badge badge-default badge-small">{page.post.frontmatter.badge}</div> : null}
+              {page.post.frontmatter.category ? <div className="badge badge-default badge-small">{page.post.frontmatter.category}</div> : null}
             </h1>
             {page.post.frontmatter.description ? <h2 className="p">{page.post.frontmatter.description}</h2> : null}
           </div>

@@ -1,6 +1,6 @@
 ---
 type: "Addons"
-badge: "Addons"
+category: "Addons"
 parent: "Form"
 title: "check-radio-card"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."

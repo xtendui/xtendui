@@ -1,8 +1,7 @@
 ---
 type: "Addons"
-badge: "Addons"
+category: "Addons"
 parent: "Link"
 title: "Link"
 description: "Global link styles."
-categories: ["100-Core"]
 ---

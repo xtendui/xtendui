@@ -1,0 +1,224 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Link, graphql } from 'gatsby'
+import { markdownSlug } from 'components/snippets/markdown-slug.js'
+
+import SEO from 'components/seo'
+import Layout from 'components/layout'
+
+class Template extends React.Component {
+  render() {
+    const { data } = this.props
+    const seo = {}
+    seo.title = data.post.frontmatter.title
+    seo.title += data.post.frontmatter.category ? ' — ' + data.post.frontmatter.category : ''
+    seo.description = data.post.frontmatter.description
+    return (
+      <Layout seo={seo} page={data}>
+        <SEO title={seo.title} />
+        <div className="gatsby_listing">
+          <div className="row">
+            {data.categories.category.map((category, i) => (
+              <div className="gatsby_listing_group" key={i}>
+                <h2 className="gatsby_listing_title">{category.title.split('-').pop()}</h2>
+                <div className="gatsby_listing_items">
+                  <div className="row">
+                    {category.posts.map(({ post }, z) =>
+                      post.frontmatter.link ? (
+                        <div className="gatsby_listing_column" key={z}>
+                          <a
+                            href={post.frontmatter.link}
+                            target="_blank"
+                            rel="noopener"
+                            className="card card-primary card-small card-full card-collapse gatsby_listing_item"
+                          >
+                            <div className="card-design"></div>
+                            <div className="card-inner">
+                              <div className="card-content">
+                                <div className="card-block card-item">
+                                  <div className="card-title">
+                                    {post.frontmatter.title
+                                      .split(/[\s-]+/)
+                                      .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
+                                      .join(' ')}
+                                  </div>
+                                  <p>{post.frontmatter.description}</p>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      ) : post.frontmatter.parent === post.frontmatter.title ? (
+                        <div className="gatsby_listing_column" key={z}>
+                          <Link to={markdownSlug(post)} className="card card-primary card-small card-full card-collapse gatsby_listing_item">
+                            <div className="card-design"></div>
+                            <div className="card-inner">
+                              <div className="card-content">
+                                <div className="card-block card-item">
+                                  <div className="card-title">
+                                    {post.frontmatter.title
+                                      .split(/[\s-]+/)
+                                      .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
+                                      .join(' ')}
+                                  </div>
+                                  <p>{post.frontmatter.description}</p>
+                                  {post.frontmatter.link}
+                                </div>
+                              </div>
+                            </div>
+                          </Link>
+                        </div>
+                      ) : null
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Layout>
+    )
+  }
+}
+
+export default Template
+
+export const query = graphql`
+  query($title: String!, $type: String, $category: String, $parent: String, $parents: String) {
+    categories: allMarkdownRemark(filter: { frontmatter: { type: { eq: $type } } }, sort: { fields: [frontmatter___date, frontmatter___title], order: ASC }) {
+      category: group(field: frontmatter___category) {
+        title: fieldValue
+        posts: edges {
+          post: node {
+            frontmatter {
+              type
+              category
+              parent
+              title
+              description
+              link
+            }
+          }
+        }
+      }
+    }
+    postsAll: allMarkdownRemark {
+      posts: edges {
+        post: node {
+          frontmatter {
+            type
+            category
+            parent
+            title
+            description
+          }
+        }
+      }
+    }
+    postsAdiacent: allMarkdownRemark(
+      filter: { frontmatter: { type: { eq: $type }, parent: { regex: $parents } } }
+      sort: { fields: [frontmatter___date, frontmatter___title], order: [DESC, ASC] }
+    ) {
+      posts: edges {
+        post: node {
+          frontmatter {
+            type
+            category
+            parent
+            title
+          }
+        }
+      }
+    }
+    parent: markdownRemark(frontmatter: { title: { eq: $parent }, category: { eq: $category } }) {
+      htmlAst
+      frontmatter {
+        type
+        category
+        parent
+        title
+      }
+    }
+    post: markdownRemark(frontmatter: { type: { eq: $type }, category: { eq: $category }, parent: { eq: $parent }, title: { eq: $title } }) {
+      htmlAst
+      frontmatter {
+        type
+        category
+        parent
+        title
+        description
+      }
+    }
+  }
+`
+
+Template.propTypes = {
+  data: PropTypes.shape({
+    categories: PropTypes.shape({
+      group: PropTypes.arrayOf(
+        PropTypes.shape({
+          title: PropTypes.string.isRequired,
+          posts: PropTypes.arrayOf(
+            PropTypes.shape({
+              post: PropTypes.shape({
+                frontmatter: PropTypes.shape({
+                  type: PropTypes.string.isRequired,
+                  category: PropTypes.string,
+                  parent: PropTypes.string,
+                  title: PropTypes.string.isRequired,
+                  description: PropTypes.string.isRequired,
+                }).isRequired,
+              }).isRequired,
+            }).isRequired
+          ),
+        }).isRequired
+      ),
+    }),
+    postsAll: PropTypes.shape({
+      posts: PropTypes.arrayOf(
+        PropTypes.shape({
+          post: PropTypes.shape({
+            frontmatter: PropTypes.shape({
+              type: PropTypes.string.isRequired,
+              category: PropTypes.string,
+              parent: PropTypes.string,
+              title: PropTypes.string.isRequired,
+              description: PropTypes.string,
+            }).isRequired,
+          }).isRequired,
+        }).isRequired
+      ),
+    }).isRequired,
+    postsAdiacent: PropTypes.shape({
+      posts: PropTypes.arrayOf(
+        PropTypes.shape({
+          post: PropTypes.shape({
+            frontmatter: PropTypes.shape({
+              type: PropTypes.string.isRequired,
+              parent: PropTypes.string,
+              title: PropTypes.string.isRequired,
+            }).isRequired,
+          }).isRequired,
+        }).isRequired
+      ),
+    }).isRequired,
+    parent: PropTypes.shape({
+      frontmatter: PropTypes.shape({
+        type: PropTypes.string.isRequired,
+        category: PropTypes.string,
+        parent: PropTypes.string,
+        title: PropTypes.string.isRequired,
+      }).isRequired,
+    }),
+    post: PropTypes.shape({
+      htmlAst: PropTypes.object.isRequired,
+      frontmatter: PropTypes.shape({
+        type: PropTypes.string.isRequired,
+        category: PropTypes.string,
+        parent: PropTypes.string,
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string,
+      }).isRequired,
+    }).isRequired,
+  }).isRequired,
+}

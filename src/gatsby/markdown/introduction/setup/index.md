@@ -1,9 +1,9 @@
 ---
 type: "Introduction"
+category: "Getting Started"
 parent: "Setup"
 title: "Setup"
 description: "Setup and compilation instructions."
-categories: ["000-Introduction"]
 date: "2018-01-01"
 ---
 

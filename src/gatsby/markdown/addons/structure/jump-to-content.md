@@ -1,6 +1,6 @@
 ---
 type: "Addons"
-badge: "Addons"
+category: "Addons"
 parent: "Structure"
 title: "jump-to-content"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."

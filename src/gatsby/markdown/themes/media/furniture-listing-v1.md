@@ -1,6 +1,6 @@
 ---
 type: "Themes"
-badge: "Themes"
+category: "Themes"
 parent: "Media"
 title: "furniture-listing-v1"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."

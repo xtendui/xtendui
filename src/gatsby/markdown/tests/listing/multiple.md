@@ -1,6 +1,6 @@
 ---
 type: "Tests"
-badge: "Tests"
+category: "Tests"
 parent: "Listing"
 title: "Multiple"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."

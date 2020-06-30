@@ -1,6 +1,6 @@
 ---
 type: "Themes"
-badge: "Themes"
+category: "Themes"
 parent: "Smooth"
 title: "furniture-parallax-v1"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."

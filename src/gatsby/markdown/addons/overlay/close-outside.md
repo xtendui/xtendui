@@ -1,6 +1,6 @@
 ---
 type: "Addons"
-badge: "Addons"
+category: "Addons"
 parent: "Overlay"
 title: "close-outside"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."

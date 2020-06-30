@@ -1,8 +1,7 @@
 ---
 type: "Themes"
-badge: "Themes"
+category: "Themes"
 parent: "Button"
 title: "Button"
 description: "Simple and extensible button styles."
-categories: ["100-Core"]
 ---

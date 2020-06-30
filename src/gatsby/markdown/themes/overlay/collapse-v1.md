@@ -1,6 +1,6 @@
 ---
 type: "Themes"
-badge: "Themes"
+category: "Themes"
 parent: "Overlay"
 title: "collapse-v1"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."

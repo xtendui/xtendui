@@ -87,9 +87,13 @@
   position: relative;
 }
 
-.gatsby_site_header_sub, .gatsby_site_header_adiacent, .gatsby_site_header_adiacent_inner {
+.gatsby_site_header_sub {
+  .full();
+}
+
+.gatsby_site_header_adiacent, .gatsby_site_header_adiacent_inner {
+  .full();
   display: none;
-  width: 100%;
   &.active {
     display: block;
   }

@@ -99,14 +99,15 @@ class Template extends React.Component {
 export default Template
 
 export const query = graphql`
-  query($title: String!, $type: String, $parent: String, $parents: String) {
+  query($title: String!, $type: String, $category: String, $parent: String, $parents: String) {
     categories: allMarkdownRemark(filter: { frontmatter: { type: { eq: $type } } }, sort: { fields: [frontmatter___date, frontmatter___title], order: ASC }) {
-      category: group(field: frontmatter___categories) {
+      category: group(field: frontmatter___category) {
         title: fieldValue
         posts: edges {
           post: node {
             frontmatter {
               type
+              category
               parent
               title
               description
@@ -121,6 +122,7 @@ export const query = graphql`
         post: node {
           frontmatter {
             type
+            category
             parent
             title
             description
@@ -129,13 +131,14 @@ export const query = graphql`
       }
     }
     postsAdiacent: allMarkdownRemark(
-      filter: { frontmatter: { type: { eq: $type }, parent: { regex: $parents } } }
+      filter: { frontmatter: { type: { eq: $type }, category: { eq: $category }, parent: { regex: $parents } } }
       sort: { fields: [frontmatter___date, frontmatter___title], order: [DESC, ASC] }
     ) {
       posts: edges {
         post: node {
           frontmatter {
             type
+            category
             parent
             title
             description
@@ -144,23 +147,23 @@ export const query = graphql`
         }
       }
     }
-    parent: markdownRemark(frontmatter: { title: { eq: $parent } }) {
+    parent: markdownRemark(frontmatter: { title: { eq: $parent }, category: { eq: $category } }) {
       htmlAst
       frontmatter {
         type
+        category
         parent
         title
       }
     }
-    post: markdownRemark(frontmatter: { type: { eq: $type }, parent: { eq: $parent }, title: { eq: $title } }) {
+    post: markdownRemark(frontmatter: { type: { eq: $type }, parent: { eq: $parent }, category: { eq: $category }, title: { eq: $title } }) {
       htmlAst
       frontmatter {
         type
-        badge
+        category
         parent
         title
         description
-        categories
       }
     }
   }
@@ -177,6 +180,7 @@ Template.propTypes = {
               post: PropTypes.shape({
                 frontmatter: PropTypes.shape({
                   type: PropTypes.string.isRequired,
+                  category: PropTypes.string,
                   parent: PropTypes.string,
                   title: PropTypes.string.isRequired,
                   description: PropTypes.string.isRequired,
@@ -193,6 +197,7 @@ Template.propTypes = {
           post: PropTypes.shape({
             frontmatter: PropTypes.shape({
               type: PropTypes.string.isRequired,
+              category: PropTypes.string,
               parent: PropTypes.string,
               title: PropTypes.string.isRequired,
               description: PropTypes.string,
@@ -207,6 +212,7 @@ Template.propTypes = {
           post: PropTypes.shape({
             frontmatter: PropTypes.shape({
               type: PropTypes.string.isRequired,
+              category: PropTypes.string,
               parent: PropTypes.string,
               title: PropTypes.string.isRequired,
               description: PropTypes.string,
@@ -219,6 +225,7 @@ Template.propTypes = {
     parent: PropTypes.shape({
       frontmatter: PropTypes.shape({
         type: PropTypes.string.isRequired,
+        category: PropTypes.string,
         parent: PropTypes.string,
         title: PropTypes.string.isRequired,
       }).isRequired,
@@ -227,11 +234,10 @@ Template.propTypes = {
       htmlAst: PropTypes.object.isRequired,
       frontmatter: PropTypes.shape({
         type: PropTypes.string.isRequired,
-        badge: PropTypes.string,
+        category: PropTypes.string,
         parent: PropTypes.string,
         title: PropTypes.string.isRequired,
         description: PropTypes.string,
-        categories: PropTypes.array,
       }).isRequired,
     }).isRequired,
   }).isRequired,

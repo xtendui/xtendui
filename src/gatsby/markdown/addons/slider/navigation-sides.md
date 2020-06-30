@@ -1,6 +1,6 @@
 ---
 type: "Addons"
-badge: "Addons"
+category: "Addons"
 parent: "Slider"
 title: "navigation-sides"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."

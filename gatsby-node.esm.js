@@ -36,7 +36,7 @@ exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
   const docPageTemplate = path.resolve('src/gatsby/components/templates/doc-page.js')
-  const docListingTemplate = path.resolve('src/gatsby/components/templates/doc-listing.js')
+  const docCategoryTemplate = path.resolve('src/gatsby/components/templates/doc-category.js')
   return graphql(`
     {
       allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
@@ -44,6 +44,7 @@ exports.createPages = ({ actions, graphql }) => {
           node {
             frontmatter {
               type
+              category
               parent
               title
             }
@@ -56,18 +57,16 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors)
     }
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      let template = docPageTemplate
-      if (!node.frontmatter.parent) {
-        template = docListingTemplate
-      }
       createPage({
         path: markdownSlug(node), // needs gatsby-source-filesystem resolve name
-        component: template,
+        component: node.frontmatter.parent ? docPageTemplate : docCategoryTemplate,
         context: {
-          type: node.frontmatter.type, // for query($type: String) { // put also on return graphql
-          parent: node.frontmatter.parent, // for query($parent: String) { // put also on return graphql
-          parents: '/' + node.frontmatter.parent + '/', // for query($parents: String) { // put also on return graphql
-          title: node.frontmatter.title, // for query($title: String) { // put also on return graphql
+          // for graphql query($type: String)
+          type: node.frontmatter.type,
+          category: node.frontmatter.category,
+          parent: node.frontmatter.parent,
+          parents: '/' + node.frontmatter.parent + '/',
+          title: node.frontmatter.title,
         },
       })
     })
