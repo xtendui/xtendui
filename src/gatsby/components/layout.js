@@ -8,12 +8,8 @@ import DocHead from 'components/includes/doc-head'
 import DocFoot from 'components/includes/doc-foot'
 import DocFullscreen from 'components/includes/doc-fullscreen'
 
-import 'core-js'
-import 'regenerator-runtime/runtime'
-import 'xtend-library/src/polyfill.js'
-
-import { populateBlock } from 'assets/scripts/demo.js'
 import { makeDocument } from 'assets/scripts/theme.js'
+import { populateBlock } from 'assets/scripts/demo.js'
 
 import 'assets/styles/theme.less'
 
