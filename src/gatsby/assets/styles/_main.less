@@ -60,7 +60,6 @@
 }
 
 .gatsby_site_article_hero {
-  position: relative;
   .container-space();
   .padding(y, giant);
   .padding(y, huge, lg);
@@ -97,6 +96,10 @@
   }
 }
 
+.gatsby_site_article_hero_inner {
+  position: relative;
+}
+
 .gatsby_site_article_hero_content {
   .badge {
     margin-top: -1rem;
@@ -118,9 +121,12 @@
 
 .gatsby_site_article_hero_links {
   position: absolute;
-  bottom: 0;
+  bottom: -8rem;
+  left: 0;
+  right: 0;
   width: 100%;
-  .padding(bottom, 2.5rem);
+  .margin(bottom, 3.5rem);
+  .margin(bottom, 2.5rem, lg);
   .btn {
     .link-none();
     .btn-text();
@@ -139,8 +145,7 @@
 }
 
 
-.gatsby_site_article_hero_content,
-.gatsby_site_article_hero_links,
+.gatsby_site_article_hero_inner,
 .gatsby_site_article_content_inner,
 .gatsby_site_article_foot_inner,
 .gatsby_site_footer_inner {

@@ -19,26 +19,26 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
   </demovanilla>
   <demovanilla src="vanilla/components/extensions/slider/progress">
   </demovanilla>
-  <demovanilla src="vanilla/components/toggle/timing-duration">
+  <demovanilla src="vanilla/components/core/toggle/timing-duration">
   </demovanilla>
-  <demovanilla src="vanilla/components/toggle/timing-delay-fnc">
+  <demovanilla src="vanilla/components/core/toggle/timing-delay-fnc">
   </demovanilla>
   <demovanilla src="vanilla/components/extensions/slider/overflow-auto-false">
   </demovanilla>
 </demo>
 
 <demo>
-  <demovanilla src="vanilla/components/drop/event">
+  <demovanilla src="vanilla/components/core/drop/event">
   </demovanilla>
-  <demovanilla src="vanilla/components/drop/backdrop">
+  <demovanilla src="vanilla/components/core/drop/backdrop">
   </demovanilla>
-  <demovanilla src="vanilla/components/drop/with-link">
+  <demovanilla src="vanilla/components/core/drop/with-link">
   </demovanilla>
-  <demovanilla src="vanilla/components/drop/with-link-hover">
+  <demovanilla src="vanilla/components/core/drop/with-link-hover">
   </demovanilla>
-  <demovanilla src="vanilla/components/overlay/nested">
+  <demovanilla src="vanilla/components/core/overlay/nested">
   </demovanilla>
-  <demovanilla src="vanilla/components/overlay/position">
+  <demovanilla src="vanilla/components/core/overlay/position">
   </demovanilla>
 </demo>
 
