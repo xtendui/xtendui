@@ -77,7 +77,7 @@ class Header extends React.Component {
                 <Link
                   to="/themes"
                   className={`btn gatsby_btn-site_header_link ${
-                    page && page.post ? (markdownSlug(page.post) === '/' + 'themes' ? 'active' : page.post.frontmatter.type === 'Theme' ? 'current' : '') : ''
+                    page && page.post ? (markdownSlug(page.post) === '/' + 'themes' ? 'active' : page.post.frontmatter.type === 'Themes' ? 'current' : '') : ''
                   }`}
                 >
                   <span>Themes</span>
