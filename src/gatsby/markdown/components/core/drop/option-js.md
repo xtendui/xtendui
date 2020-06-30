@@ -7,7 +7,7 @@ date: "2019-11-01"
 ---
 
 [[notePrimary]]
-| Drop uses toggle for logic, refer to [toggle's option](/components/toggle/option-js).
+| Drop uses toggle for logic, refer to [toggle's option](/core/toggle/option-js).
 
 ## Class
 
@@ -38,7 +38,7 @@ You can specify **on** and **off** events for the drop. Fore example `on: 'mouse
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/drop/event">
+  <demovanilla src="vanilla/components/core/drop/event">
   </demovanilla>
 </demo>
 
@@ -53,7 +53,7 @@ You can specify **on** and **off** events for the drop. Fore example `on: 'mouse
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/drop/backdrop">
+  <demovanilla src="vanilla/components/core/drop/backdrop">
   </demovanilla>
 </demo>
 

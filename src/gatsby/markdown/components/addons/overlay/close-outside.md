@@ -7,6 +7,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 ---
 
 <demo>
-  <demovanilla src="vanilla/addons/overlay/close-outside">
+  <demovanilla src="vanilla/components/addons/overlay/close-outside">
   </demovanilla>
 </demo>

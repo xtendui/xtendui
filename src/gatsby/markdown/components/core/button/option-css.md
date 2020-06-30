@@ -20,14 +20,14 @@ Classes for assigning variant (e.g.: border / background / color). Add or remove
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/button/variant">
+  <demovanilla src="vanilla/components/core/button/variant">
   </demovanilla>
 </demo>
 
 On containers use `.text-inverse` to have white buttons (needs `color: inherit`).
 
 <demo>
-  <demovanilla src="vanilla/components/button/inverse">
+  <demovanilla src="vanilla/components/core/button/inverse">
   </demovanilla>
 </demo>
 
@@ -43,6 +43,6 @@ Sizes uses `em` padding that depends on font size.
 | Mixin                   | `.btn-{size}()`                      | `.btn-tiny()` `.btn-small()`  `.btn-medium()` `.btn-large()` `.btn-big()`   |
 
 <demo>
-  <demovanilla src="vanilla/components/button/size">
+  <demovanilla src="vanilla/components/core/button/size">
   </demovanilla>
 </demo>

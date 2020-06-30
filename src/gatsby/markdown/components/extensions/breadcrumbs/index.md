@@ -11,7 +11,7 @@ description: "Dynamic breadcrumbs that looks awesome in all responsive breakpoin
 To use this component import the **less** files accordingly:
 
 ```less
-@import 'xtend-library/src/core/breadcrumbs/breadcrumbs.less';
+@import 'xtend-library/src/extensions/breadcrumbs/breadcrumbs.less';
 ```
 
 Or just import **core**:
@@ -80,8 +80,8 @@ Use this markup to add **json-ld** metadata to **breadcrumb**.
 ```
 
 <demo>
-  <demovanilla src="vanilla/components/breadcrumbs/default">
+  <demovanilla src="vanilla/components/extensions/breadcrumbs/default">
   </demovanilla>
-  <demovanilla src="vanilla/components/breadcrumbs/background-title">
+  <demovanilla src="vanilla/components/extensions/breadcrumbs/background-title">
   </demovanilla>
 </demo>

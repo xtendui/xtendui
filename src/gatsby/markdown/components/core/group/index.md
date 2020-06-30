@@ -61,9 +61,9 @@ Use this markup to create a button group as stack.
 </script>
 
 <demo>
-  <demovanilla src="vanilla/components/group/button-line">
+  <demovanilla src="vanilla/components/core/group/button-line">
   </demovanilla>
-  <demovanilla src="vanilla/components/group/button-stack">
+  <demovanilla src="vanilla/components/core/group/button-stack">
   </demovanilla>
 </demo>
 
@@ -117,8 +117,8 @@ Use this markup to create a input group as stack.
 </script>
 
 <demo>
-  <demovanilla src="vanilla/components/group/input-line">
+  <demovanilla src="vanilla/components/core/group/input-line">
   </demovanilla>
-  <demovanilla src="vanilla/components/group/input-stack">
+  <demovanilla src="vanilla/components/core/group/input-stack">
   </demovanilla>
 </demo>

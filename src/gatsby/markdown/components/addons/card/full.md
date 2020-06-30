@@ -7,11 +7,11 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 ---
 
 <demo>
-  <demovanilla src="vanilla/addons/card/full">
+  <demovanilla src="vanilla/components/addons/card/full">
   </demovanilla>
 </demo>
 
 <demo>
-  <demovanilla src="vanilla/addons/card/full-horizontal">
+  <demovanilla src="vanilla/components/addons/card/full-horizontal">
   </demovanilla>
 </demo>

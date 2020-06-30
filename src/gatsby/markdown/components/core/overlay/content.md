@@ -9,7 +9,7 @@ date: "2020-10-01"
 ## Card
 
 [[notePrimary]]
-| Overlay uses card to style it's content, refer to [card's content](/components/card/content) for all **content**.
+| Overlay uses card to style it's content, refer to [card's content](/core/card/content) for all **content**.
 
 #### Asset
 
@@ -40,7 +40,7 @@ If you want full width assets use `.card-asset`.
 </script>
 
 <demo>
-  <demovanilla src="vanilla/components/overlay/asset">
+  <demovanilla src="vanilla/components/core/overlay/asset">
   </demovanilla>
 </demo>
 
@@ -80,14 +80,14 @@ Sequential `.card-block` stack vertically.
 | To have a separator between multiple `.card-block` use [card separator addon](/addons/card/separator).
 
 <demo>
-  <demovanilla src="vanilla/components/overlay/block">
+  <demovanilla src="vanilla/components/core/overlay/block">
   </demovanilla>
 </demo>
 
 You can add custom `.card-block` modifiers and style them as you like (e.g.: `.card-block-intro`).
 
 <demo>
-  <demovanilla src="vanilla/components/overlay/block-intro">
+  <demovanilla src="vanilla/components/core/overlay/block-intro">
   </demovanilla>
 </demo>
 
@@ -131,21 +131,21 @@ You can add custom `.card-block` modifiers and style them as you like (e.g.: `.c
 | To have a separator between multiple `.card-group` contents use [card separator addon](/addons/card/separator).
 
 <demo>
-  <demovanilla src="vanilla/components/overlay/group">
+  <demovanilla src="vanilla/components/core/overlay/group">
   </demovanilla>
 </demo>
 
 If you need to put an asset outside `.card-block`, just use `.card-item` and wrap the text inside another `.card-block.card-item`, like in the second example.
 
 <demo>
-  <demovanilla src="vanilla/components/overlay/block-side">
+  <demovanilla src="vanilla/components/core/overlay/block-side">
   </demovanilla>
 </demo>
 
-The size of **blocks** is automatic, you can specify the **size** with [columns](/components/column), with responsive classes if you need them.
+The size of **blocks** is automatic, you can specify the **size** with [columns](/core/column), with responsive classes if you need them.
 
 <demo>
-  <demovanilla src="vanilla/components/overlay/block-side-size">
+  <demovanilla src="vanilla/components/core/overlay/block-side-size">
   </demovanilla>
 </demo>
 
@@ -162,6 +162,6 @@ You can set vertical overflow using `.card-overflow-y` in `.card-inner` or `.car
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/overlay/overflow-y">
+  <demovanilla src="vanilla/components/core/overlay/overflow-y">
   </demovanilla>
 </demo>

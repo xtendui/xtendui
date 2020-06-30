@@ -8,8 +8,8 @@ class DemoVanilla extends React.Component {
   render() {
     const { src, children, name, mode } = this.props
     const demo = require('../../code/' + src + '.js').demo
-    demo.type = 'private/demos/' + demo.type
-    demo.type = demo.type.replace('/vanilla', '')
+    demo.path = `private/demos/${demo.dirs.join('/')}/${demo.name}`.replace('/vanilla', '').replace('src/gatsby/code/', '')
+    console.log(demo.path)
     return (
       <StaticQuery
         query={graphql`
@@ -37,12 +37,12 @@ class DemoVanilla extends React.Component {
               }
             />
             {data.allFile.files
-              .filter(x => x.file.relativePath === `${demo.type}/${demo.component}/${demo.name}.less`)
+              .filter(x => x.file.relativePath === `${demo.path}.less`)
               .map((file, i) => (
                 <div className="gatsby_demo_source xt-ignore" data-lang="less" dangerouslySetInnerHTML={{ __html: cssSource(demo) }} key={i} />
               ))}
             {data.allFile.files
-              .filter(x => x.file.relativePath === `${demo.type}/${demo.component}/${demo.name}.js`)
+              .filter(x => x.file.relativePath === `${demo.path}.js`)
               .map((file, i) => (
                 <div className="gatsby_demo_source xt-ignore" data-lang="js" dangerouslySetInnerHTML={{ __html: jsSource(demo) }} key={i} />
               ))}

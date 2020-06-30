@@ -26,4 +26,4 @@ Or just import **core**:
 
 ## Theming
 
-For an explanation of the css file content see [structure css](/components/structure/css).
+For an explanation of the css file content see [structure css](/core/structure/css).

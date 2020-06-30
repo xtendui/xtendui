@@ -64,7 +64,7 @@ Available sizes are: `layout` `auto` `none` `micro` `mini` `tiny` `small` `mediu
 
 ## Order
 
-See [order utils](/components/structure/utils#order).
+See [order utils](/core/structure/utils#order).
 
 ## Z-Index
 

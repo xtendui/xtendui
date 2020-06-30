@@ -35,7 +35,7 @@ Use this markup to create a **form label** and **form item**.
 | Form group must be inside `.form-default` or another form variant to have default styles.
 
 <demo>
-  <demovanilla src="vanilla/components/form/form-mixins">
+  <demovanilla src="vanilla/components/core/form/form-mixins">
   </demovanilla>
 </demo>
 
@@ -69,11 +69,11 @@ You can set the size globally on **form**.
 | Form label and item must be inside `.form-group` to have default size.
 
 <demo>
-  <demovanilla src="vanilla/components/form/group-small">
+  <demovanilla src="vanilla/components/core/form/group-small">
   </demovanilla>
-  <demovanilla src="vanilla/components/form/group-medium">
+  <demovanilla src="vanilla/components/core/form/group-medium">
   </demovanilla>
-  <demovanilla src="vanilla/components/form/group-large">
+  <demovanilla src="vanilla/components/core/form/group-large">
   </demovanilla>
 </demo>
 
@@ -92,9 +92,9 @@ You can set the size globally on **form**.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/form/variant-default">
+  <demovanilla src="vanilla/components/core/form/variant-default">
   </demovanilla>
-  <demovanilla src="vanilla/components/form/variant-inverse">
+  <demovanilla src="vanilla/components/core/form/variant-inverse">
   </demovanilla>
 </demo>
 
@@ -124,7 +124,7 @@ There are several form group mode to change the form layout. They aren't just le
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/form/mode-normal">
+  <demovanilla src="vanilla/components/core/form/mode-normal">
   </demovanilla>
 </demo>
 
@@ -168,7 +168,7 @@ Horizontal label and input, add or remove selectors at your discretion.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/form/mode-horizontal">
+  <demovanilla src="vanilla/components/core/form/mode-horizontal">
   </demovanilla>
 </demo>
 
@@ -176,7 +176,7 @@ Horizontal label and input, add or remove selectors at your discretion.
 
 Multiple columns of `.form-group`, add or remove selectors at your discretion.
 
-For columns sizes see [column page](/components/column).
+For columns sizes see [column page](/core/column).
 
 <script type="text/plain" class="language-markup">
 <form class="form-default">
@@ -204,7 +204,7 @@ For columns sizes see [column page](/components/column).
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/form/mode-row">
+  <demovanilla src="vanilla/components/core/form/mode-row">
   </demovanilla>
 </demo>
 
@@ -235,7 +235,7 @@ Inline **form group**, add or remove selectors at your discretion.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/form/mode-inline">
+  <demovanilla src="vanilla/components/core/form/mode-inline">
   </demovanilla>
 </demo>
 
@@ -259,6 +259,6 @@ Inline **form input** and **form label**.
 </script>
 
 <demo>
-  <demovanilla src="vanilla/components/form/mode-inline-inner">
+  <demovanilla src="vanilla/components/core/form/mode-inline-inner">
   </demovanilla>
 </demo>

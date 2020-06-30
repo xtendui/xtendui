@@ -85,7 +85,7 @@ document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('o
 </div>
 
 [[noteDefault]]
-| For triggering and listening the **resize event**, refer to [structure](/components/structure/other#resize).
+| For triggering and listening the **resize event**, refer to [structure](/core/structure/other#resize).
 
 ## Listen
 
@@ -169,6 +169,6 @@ Here are the main properties inside `self`:
 ## Demo
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/toggle/events-methods">
+  <div class="gatsby_demo_item" data-iframe="iframe/components/core/toggle/events-methods">
   </div>
 </demo>

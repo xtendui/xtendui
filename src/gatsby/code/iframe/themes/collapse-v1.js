@@ -12,8 +12,7 @@ export const demo = {
   container: true,
   full: false,
   name: path.basename(filename, '.js'),
-  component: dirs.pop(),
-  type: dirs.pop(),
+  dirs: dirs,
 }
 
 demo.htmlSource = `

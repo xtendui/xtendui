@@ -11,7 +11,7 @@ date: "2019-03-15"
 Example of muted note with `.muted`.
 
 <demo>
-  <demovanilla src="vanilla/components/note/muted">
+  <demovanilla src="vanilla/components/core/note/muted">
   </demovanilla>
 </demo>
 
@@ -20,6 +20,6 @@ Example of muted note with `.muted`.
 Usage of `.btn-close`.
 
 <demo>
-  <demovanilla src="vanilla/components/note/close-background">
+  <demovanilla src="vanilla/components/core/note/close-background">
   </demovanilla>
 </demo>

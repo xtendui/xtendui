@@ -22,7 +22,7 @@ date: "2019-03-15"
 You can disable drop using `.drop-disable` (resize to mobile to see it in action).
 
 <demo>
-  <demovanilla src="vanilla/components/drop/disable">
+  <demovanilla src="vanilla/components/core/drop/disable">
   </demovanilla>
 </demo>
 
@@ -33,9 +33,9 @@ You can have **element's link** that trigger after toggle.
 If the toggle is on <code>"on": "mouseenter"</code> or <code>"on": "mousehover"</code> the link gets activated on the second touch event on touch devices.
 
 <demo>
-  <demovanilla src="vanilla/components/drop/with-link">
+  <demovanilla src="vanilla/components/core/drop/with-link">
   </demovanilla>
-  <demovanilla src="vanilla/components/drop/with-link-hover">
+  <demovanilla src="vanilla/components/core/drop/with-link-hover">
   </demovanilla>
 </demo>
 
@@ -50,7 +50,7 @@ If the toggle is on <code>"on": "mouseenter"</code> or <code>"on": "mousehover"<
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/drop/static">
+  <demovanilla src="vanilla/components/core/drop/static">
   </demovanilla>
 </demo>
 
@@ -59,6 +59,6 @@ If the toggle is on <code>"on": "mouseenter"</code> or <code>"on": "mousehover"<
 You can nest drops this way .
 
 <demo>
-  <demovanilla src="vanilla/components/drop/nested">
+  <demovanilla src="vanilla/components/core/drop/nested">
   </demovanilla>
 </demo>

@@ -20,7 +20,7 @@ Classes for assigning variant (e.g.: border / background / color). Add or remove
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/drop/variant">
+  <demovanilla src="vanilla/components/core/drop/variant">
   </demovanilla>
 </demo>
 
@@ -38,7 +38,7 @@ Set drop size with this classes.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/drop/size">
+  <demovanilla src="vanilla/components/core/drop/size">
   </demovanilla>
 </demo>
 
@@ -52,15 +52,15 @@ Set drop position with this classes.
 | Mixin                   | `.drop-{position}()`                      | `.drop-bottom()` `.drop-top()` `.drop-left()` `.drop-right()` `.drop-center()` `.drop-before()` `.drop-after()` |
 
 <demo>
-  <demovanilla src="vanilla/components/drop/left">
+  <demovanilla src="vanilla/components/core/drop/left">
   </demovanilla>
-  <demovanilla src="vanilla/components/drop/right">
+  <demovanilla src="vanilla/components/core/drop/right">
   </demovanilla>
-  <demovanilla src="vanilla/components/drop/center">
+  <demovanilla src="vanilla/components/core/drop/center">
   </demovanilla>
-  <demovanilla src="vanilla/components/drop/before">
+  <demovanilla src="vanilla/components/core/drop/before">
   </demovanilla>
-  <demovanilla src="vanilla/components/drop/after">
+  <demovanilla src="vanilla/components/core/drop/after">
   </demovanilla>
 </demo>
 
@@ -80,14 +80,14 @@ Classes for assigning size (e.g.: padding or font size). Add or remove selectors
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/drop/list-size">
+  <demovanilla src="vanilla/components/core/drop/list-size">
   </demovanilla>
 </demo>
 
 ## Card
 
 [[notePrimary]]
-| Drop uses card to style it's content, refer to [card's option](/components/card/option) for all **option**.
+| Drop uses card to style it's content, refer to [card's option](/core/card/option) for all **option**.
 
 ### Variant
 
@@ -103,7 +103,7 @@ Classes for assigning variant (e.g.: border / background / color). Add or remove
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/drop/card-variant">
+  <demovanilla src="vanilla/components/core/drop/card-variant">
   </demovanilla>
 </demo>
 
@@ -121,7 +121,7 @@ Classes for assigning size (e.g.: padding or font size). Add or remove selectors
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/drop/card-size">
+  <demovanilla src="vanilla/components/core/drop/card-size">
   </demovanilla>
 </demo>
 
@@ -139,6 +139,6 @@ Classes for assigning size (e.g.: padding or font size). Add or remove selectors
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/drop/card-block-size">
+  <demovanilla src="vanilla/components/core/drop/card-block-size">
   </demovanilla>
 </demo>

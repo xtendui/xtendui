@@ -7,7 +7,7 @@ date: "2019-11-01"
 ---
 
 [[notePrimary]]
-| Sticky uses toggle for logic, refer to [toggle's option](/components/toggle/option-js).
+| Sticky uses toggle for logic, refer to [toggle's option](/core/toggle/option-js).
 
 ## Mode
 
@@ -20,11 +20,11 @@ date: "2019-11-01"
 </div>
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/sticky/mode-absolute">
+  <div class="gatsby_demo_item" data-iframe="iframe/components/extensions/sticky/mode-absolute">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/sticky/mode-fixed">
+  <div class="gatsby_demo_item" data-iframe="iframe/components/extensions/sticky/mode-fixed">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/sticky/mode-fixed-always">
+  <div class="gatsby_demo_item" data-iframe="iframe/components/extensions/sticky/mode-fixed-always">
   </div>
 </demo>
 
@@ -41,7 +41,7 @@ The default **position** is `position: 'top'` you can also use `position: 'botto
 </div>
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/sticky/position"></div>
+  <div class="gatsby_demo_item" data-iframe="iframe/components/extensions/sticky/position"></div>
 </demo>
 
 ## Limit
@@ -58,7 +58,7 @@ The default **limit** for `limit: { top: Element }` is the element's own positio
 </div>
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/sticky/limit">
+  <div class="gatsby_demo_item" data-iframe="iframe/components/extensions/sticky/limit">
   </div>
 </demo>
 
@@ -76,9 +76,9 @@ Use the `contain: {}` option to stack consecutive sticky elements. with `contain
 </div>
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/sticky/contain-top">
+  <div class="gatsby_demo_item" data-iframe="iframe/components/extensions/sticky/contain-top">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/sticky/contain-bottom">
+  <div class="gatsby_demo_item" data-iframe="iframe/components/extensions/sticky/contain-bottom">
   </div>
 </demo>
 
@@ -95,6 +95,6 @@ To hide the sticky when scrolling down or up use `hide: 'down'` or `hide: 'up'`.
 </div>
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/sticky/hide">
+  <div class="gatsby_demo_item" data-iframe="iframe/components/extensions/sticky/hide">
   </div>
 </demo>

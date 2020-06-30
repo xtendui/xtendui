@@ -55,21 +55,21 @@ Row **automatically** add horizontal and vertical spacing to the contents. You c
 | When using **row space classes** with **breakpoints** you need to set the class breakpoint generation with `@generate-row`.
 
 <demo>
-  <demovanilla src="vanilla/components/row/space-none" mode="grid">
+  <demovanilla src="vanilla/components/core/row/space-none" mode="grid">
   </demovanilla>
-  <demovanilla src="vanilla/components/row/space-mini" mode="grid">
+  <demovanilla src="vanilla/components/core/row/space-mini" mode="grid">
   </demovanilla>
-  <demovanilla src="vanilla/components/row/space-tiny" mode="grid">
+  <demovanilla src="vanilla/components/core/row/space-tiny" mode="grid">
   </demovanilla>
-  <demovanilla src="vanilla/components/row/space-small" mode="grid">
+  <demovanilla src="vanilla/components/core/row/space-small" mode="grid">
   </demovanilla>
-  <demovanilla src="vanilla/components/row/space-medium" mode="grid">
+  <demovanilla src="vanilla/components/core/row/space-medium" mode="grid">
   </demovanilla>
-  <demovanilla src="vanilla/components/row/space-large" mode="grid">
+  <demovanilla src="vanilla/components/core/row/space-large" mode="grid">
   </demovanilla>
-  <demovanilla src="vanilla/components/row/space-big" mode="grid">
+  <demovanilla src="vanilla/components/core/row/space-big" mode="grid">
   </demovanilla>
-  <demovanilla src="vanilla/components/row/space-giant" mode="grid">
+  <demovanilla src="vanilla/components/core/row/space-giant" mode="grid">
   </demovanilla>
 </demo>
 
@@ -94,13 +94,13 @@ Set children's direction inside the flexbox.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/row/direction-row" mode="grid">
+  <demovanilla src="vanilla/components/core/row/direction-row" mode="grid">
   </demovanilla>
-  <demovanilla src="vanilla/components/row/direction-row-reverse" mode="grid">
+  <demovanilla src="vanilla/components/core/row/direction-row-reverse" mode="grid">
   </demovanilla>
-  <demovanilla src="vanilla/components/row/direction-column" mode="grid">
+  <demovanilla src="vanilla/components/core/row/direction-column" mode="grid">
   </demovanilla>
-  <demovanilla src="vanilla/components/row/direction-column-reverse" mode="grid">
+  <demovanilla src="vanilla/components/core/row/direction-column-reverse" mode="grid">
   </demovanilla>
 </demo>
 
@@ -120,11 +120,11 @@ Set children's wrapping inside the flexbox.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/row/wrap" mode="grid">
+  <demovanilla src="vanilla/components/core/row/wrap" mode="grid">
   </demovanilla>
-  <demovanilla src="vanilla/components/row/wrap-reverse" mode="grid">
+  <demovanilla src="vanilla/components/core/row/wrap-reverse" mode="grid">
   </demovanilla>
-  <demovanilla src="vanilla/components/row/nowrap" mode="grid">
+  <demovanilla src="vanilla/components/core/row/nowrap" mode="grid">
   </demovanilla>
 </demo>
 
@@ -144,17 +144,17 @@ Set children's horizontal alignment inside the flexbox.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/row/justify-start" mode="grid">
+  <demovanilla src="vanilla/components/core/row/justify-start" mode="grid">
   </demovanilla>
-  <demovanilla src="vanilla/components/row/justify-end" mode="grid">
+  <demovanilla src="vanilla/components/core/row/justify-end" mode="grid">
   </demovanilla>
-  <demovanilla src="vanilla/components/row/justify-center" mode="grid">
+  <demovanilla src="vanilla/components/core/row/justify-center" mode="grid">
   </demovanilla>
-  <demovanilla src="vanilla/components/row/justify-between" mode="grid">
+  <demovanilla src="vanilla/components/core/row/justify-between" mode="grid">
   </demovanilla>
-  <demovanilla src="vanilla/components/row/justify-around" mode="grid">
+  <demovanilla src="vanilla/components/core/row/justify-around" mode="grid">
   </demovanilla>
-  <demovanilla src="vanilla/components/row/justify-evenly" mode="grid">
+  <demovanilla src="vanilla/components/core/row/justify-evenly" mode="grid">
   </demovanilla>
 </demo>
 
@@ -174,15 +174,15 @@ Set children's vertical alignment inside the flexbox.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/row/items-start" mode="grid">
+  <demovanilla src="vanilla/components/core/row/items-start" mode="grid">
   </demovanilla>
-  <demovanilla src="vanilla/components/row/items-end" mode="grid">
+  <demovanilla src="vanilla/components/core/row/items-end" mode="grid">
   </demovanilla>
-  <demovanilla src="vanilla/components/row/items-center" mode="grid">
+  <demovanilla src="vanilla/components/core/row/items-center" mode="grid">
   </demovanilla>
-  <demovanilla src="vanilla/components/row/items-baseline" mode="grid">
+  <demovanilla src="vanilla/components/core/row/items-baseline" mode="grid">
   </demovanilla>
-  <demovanilla src="vanilla/components/row/items-stretch" mode="grid">
+  <demovanilla src="vanilla/components/core/row/items-stretch" mode="grid">
   </demovanilla>
 </demo>
 
@@ -202,17 +202,17 @@ Set children's vertical alignment inside the flexbox.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/row/content-start" mode="grid">
+  <demovanilla src="vanilla/components/core/row/content-start" mode="grid">
   </demovanilla>
-  <demovanilla src="vanilla/components/row/content-end" mode="grid">
+  <demovanilla src="vanilla/components/core/row/content-end" mode="grid">
   </demovanilla>
-  <demovanilla src="vanilla/components/row/content-center" mode="grid">
+  <demovanilla src="vanilla/components/core/row/content-center" mode="grid">
   </demovanilla>
-  <demovanilla src="vanilla/components/row/content-between" mode="grid">
+  <demovanilla src="vanilla/components/core/row/content-between" mode="grid">
   </demovanilla>
-  <demovanilla src="vanilla/components/row/content-around" mode="grid">
+  <demovanilla src="vanilla/components/core/row/content-around" mode="grid">
   </demovanilla>
-  <demovanilla src="vanilla/components/row/content-stretch" mode="grid">
+  <demovanilla src="vanilla/components/core/row/content-stretch" mode="grid">
   </demovanilla>
 </demo>
 
@@ -233,17 +233,17 @@ If set to **auto** computes to the parent's `align-items` value.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/row/self-start" mode="grid">
+  <demovanilla src="vanilla/components/core/row/self-start" mode="grid">
   </demovanilla>
-  <demovanilla src="vanilla/components/row/self-end" mode="grid">
+  <demovanilla src="vanilla/components/core/row/self-end" mode="grid">
   </demovanilla>
-  <demovanilla src="vanilla/components/row/self-center" mode="grid">
+  <demovanilla src="vanilla/components/core/row/self-center" mode="grid">
   </demovanilla>
-  <demovanilla src="vanilla/components/row/self-baseline" mode="grid">
+  <demovanilla src="vanilla/components/core/row/self-baseline" mode="grid">
   </demovanilla>
-  <demovanilla src="vanilla/components/row/self-stretch" mode="grid">
+  <demovanilla src="vanilla/components/core/row/self-stretch" mode="grid">
   </demovanilla>
-  <demovanilla src="vanilla/components/row/self-auto" mode="grid">
+  <demovanilla src="vanilla/components/core/row/self-auto" mode="grid">
   </demovanilla>
 </demo>
 
@@ -266,6 +266,6 @@ Set item's order inside the flexbox.
 | By default orders from `.order-0` to `.order-2` are negative values.
 
 <demo>
-  <demovanilla src="vanilla/components/row/order" mode="grid">
+  <demovanilla src="vanilla/components/core/row/order" mode="grid">
   </demovanilla>
 </demo>

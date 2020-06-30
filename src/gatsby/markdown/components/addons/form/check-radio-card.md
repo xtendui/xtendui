@@ -7,6 +7,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 ---
 
 <demo>
-  <demovanilla src="vanilla/addons/form/check-radio-card">
+  <demovanilla src="vanilla/components/addons/form/check-radio-card">
   </demovanilla>
 </demo>

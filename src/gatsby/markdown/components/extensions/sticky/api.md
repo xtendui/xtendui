@@ -7,7 +7,7 @@ date: "2019-01-15"
 ---
 
 [[notePrimary]]
-| Sticky uses toggle for logic, refer to [toggle's API](/components/toggle/api).
+| Sticky uses toggle for logic, refer to [toggle's API](/core/toggle/api).
 
 ## Util
 
@@ -67,7 +67,7 @@ document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('o
 </div>
 
 [[noteDefault]]
-| For triggering and listening the **resize event**, refer to [structure](/components/structure/other#resize).
+| For triggering and listening the **resize event**, refer to [structure](/core/structure/other#resize).
 
 ## Listen
 

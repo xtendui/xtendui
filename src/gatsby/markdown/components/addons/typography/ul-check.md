@@ -7,6 +7,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 ---
 
 <demo>
-  <demovanilla src="vanilla/addons/typography/ul-check">
+  <demovanilla src="vanilla/components/addons/typography/ul-check">
   </demovanilla>
 </demo>

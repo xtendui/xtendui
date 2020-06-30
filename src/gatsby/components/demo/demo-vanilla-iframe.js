@@ -13,8 +13,9 @@ class DemoVanillaIframe extends React.Component {
     const seo = {}
     seo.title = demo.name
     seo.description = 'Demo'
-    demo.type = 'private/demos/' + demo.type
-    demo.type = demo.type.replace('/iframe', '')
+    console.log(demo.dirs)
+    demo.path = `private/demos/${demo.dirs.join('/')}/${demo.name}`.replace('/iframe', '').replace('src/gatsby/code/', '')
+    console.log(demo.path)
     return (
       <StaticQuery
         query={graphql`
@@ -32,13 +33,9 @@ class DemoVanillaIframe extends React.Component {
           <Layout seo={seo} demo={demo}>
             <SEO title={seo.title} />
             <div id="body-outer">
-              {data.allFile.files
-                .filter(x => x.file.relativePath === `${demo.type}/${demo.component}/${demo.name}.less`)
-                .map((file, index) => (demo.cssSource = cssSource(demo))) && <div /> // @FIX react render string
+              {data.allFile.files.filter(x => x.file.relativePath === `${demo.path}.less`).map((file, index) => (demo.cssSource = cssSource(demo))) && <div /> // @FIX react render string
               }
-              {data.allFile.files
-                .filter(x => x.file.relativePath === `${demo.type}/${demo.component}/${demo.name}.js`)
-                .map((file, index) => (demo.jsSource = jsSource(demo))) && <div /> // @FIX react render string
+              {data.allFile.files.filter(x => x.file.relativePath === `${demo.path}.js`).map((file, index) => (demo.jsSource = jsSource(demo))) && <div /> // @FIX react render string
               }
               <div id="gatsby_body-inner" className="gatsby_demo_source--from" dangerouslySetInnerHTML={{ __html: demo.htmlSource }} />
             </div>

@@ -7,6 +7,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 ---
 
 <demo>
-  <demovanilla src="vanilla/addons/form/label-addon">
+  <demovanilla src="vanilla/components/addons/form/label-addon">
   </demovanilla>
 </demo>

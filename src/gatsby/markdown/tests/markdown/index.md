@@ -9,21 +9,21 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 ## Demos
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/slider/events-methods">
+  <div class="gatsby_demo_item" data-iframe="iframe/components/extensions/slider/events-methods">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/scroll/direction">
+  <div class="gatsby_demo_item" data-iframe="iframe/components/extensions/scroll/direction">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/scroll/block">
+  <div class="gatsby_demo_item" data-iframe="iframe/components/extensions/scroll/block">
   </div>
-  <demovanilla src="vanilla/components/slider/toggle-js">
+  <demovanilla src="vanilla/components/extensions/slider/toggle-js">
   </demovanilla>
-  <demovanilla src="vanilla/components/slider/progress">
+  <demovanilla src="vanilla/components/extensions/slider/progress">
   </demovanilla>
   <demovanilla src="vanilla/components/toggle/timing-duration">
   </demovanilla>
   <demovanilla src="vanilla/components/toggle/timing-delay-fnc">
   </demovanilla>
-  <demovanilla src="vanilla/components/slider/overflow-auto-false">
+  <demovanilla src="vanilla/components/extensions/slider/overflow-auto-false">
   </demovanilla>
 </demo>
 
@@ -165,14 +165,14 @@ const test = 'test'
       </div>
     </div>
   </div>
-  <demovanilla src="vanilla/components/test/demo-vanilla" name="demo vanilla">
+  <demovanilla src="vanilla/test/demo-vanilla" name="demo vanilla">
     <div class="gatsby_demo_text">
       test vanilla <strong>strong</strong> <code>code</code>
     </div>
   </demovanilla>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/test/demo-vanilla-iframe" data-name="demo vanilla frame">
+  <div class="gatsby_demo_item" data-iframe="iframe/test/demo-vanilla-iframe" data-name="demo vanilla frame">
     <div class="gatsby_demo_text">
-      <a href="/iframe/components/test/demo-vanilla-iframe">test vanilla iframe</a>
+      <a href="/iframe/test/demo-vanilla-iframe">test vanilla iframe</a>
     </div>
   </div>
 </demo>

@@ -7,7 +7,7 @@ date: "2019-01-15"
 ---
 
 [[notePrimary]]
-| Overlay uses toggle for logic, refer to [toggle's API](/components/toggle/api).
+| Overlay uses toggle for logic, refer to [toggle's API](/core/toggle/api).
 
 ## Util
 
@@ -68,7 +68,7 @@ document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('o
 </div>
 
 [[noteDefault]]
-| For triggering and listening the **resize event**, refer to [structure](/components/structure/other#resize).
+| For triggering and listening the **resize event**, refer to [structure](/core/structure/other#resize).
 
 ## Listen
 
@@ -148,6 +148,6 @@ Here are the main properties inside `self`:
 ## Demo
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/overlay/events-methods">
+  <div class="gatsby_demo_item" data-iframe="iframe/components/core/overlay/events-methods">
   </div>
 </demo>

@@ -8,17 +8,17 @@ date: "2020-10-01"
 
 ## Anything
 
-You can use list to space childrens like [list](/components/list/content) does. But the childrens are spaced with **padding** instead of **margin**.
+You can use list to space childrens like [list](/core/list/content) does. But the childrens are spaced with **padding** instead of **margin**.
 
 <demo>
-  <demovanilla src="vanilla/components/row/anything-row">
+  <demovanilla src="vanilla/components/core/row/anything-row">
   </demovanilla>
-  <demovanilla src="vanilla/components/row/anything-column">
+  <demovanilla src="vanilla/components/core/row/anything-column">
   </demovanilla>
-  <demovanilla src="vanilla/components/row/anything-nested">
+  <demovanilla src="vanilla/components/core/row/anything-nested">
   </demovanilla>
 </demo>
 
 ## Columns
 
-Refer to [Column](/components/column).
+Refer to [Column](/core/column).

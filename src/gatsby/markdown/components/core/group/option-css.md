@@ -7,7 +7,7 @@ date: "2019-12-01"
 ---
 
 [[notePrimary]]
-| Group uses list to style it's content, refer to [list's options](/components/list/option) for all **option**.
+| Group uses list to style it's content, refer to [list's options](/core/list/option) for all **option**.
 
 ## Variant
 
@@ -23,9 +23,9 @@ Classes for assigning variant (e.g.: border / background / color). Add or remove
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/group/options-variant-line">
+  <demovanilla src="vanilla/components/core/group/options-variant-line">
   </demovanilla>
-  <demovanilla src="vanilla/components/group/options-variant-stack">
+  <demovanilla src="vanilla/components/core/group/options-variant-stack">
   </demovanilla>
 </demo>
 
@@ -34,8 +34,8 @@ Classes for assigning variant (e.g.: border / background / color). Add or remove
 Space group elements with list's options.
 
 <demo>
-  <demovanilla src="vanilla/components/group/options-list-line">
+  <demovanilla src="vanilla/components/core/group/options-list-line">
   </demovanilla>
-  <demovanilla src="vanilla/components/group/options-list-stack">
+  <demovanilla src="vanilla/components/core/group/options-list-stack">
   </demovanilla>
 </demo>

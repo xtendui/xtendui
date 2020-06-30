@@ -7,7 +7,7 @@ date: "2019-11-01"
 ---
 
 [[notePrimary]]
-| Slider uses toggle for logic, refer to [toggle's option](/components/toggle/option-js).
+| Slider uses toggle for logic, refer to [toggle's option](/core/toggle/option-js).
 
 ## Align
 
@@ -20,11 +20,11 @@ date: "2019-11-01"
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/slider/align-center">
+  <demovanilla src="vanilla/components/extensions/slider/align-center">
   </demovanilla>
-  <demovanilla src="vanilla/components/slider/align-left">
+  <demovanilla src="vanilla/components/extensions/slider/align-left">
   </demovanilla>
-  <demovanilla src="vanilla/components/slider/align-right">
+  <demovanilla src="vanilla/components/extensions/slider/align-right">
   </demovanilla>
 </demo>
 
@@ -39,11 +39,11 @@ date: "2019-11-01"
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/slider/contain-center">
+  <demovanilla src="vanilla/components/extensions/slider/contain-center">
   </demovanilla>
-  <demovanilla src="vanilla/components/slider/contain-left">
+  <demovanilla src="vanilla/components/extensions/slider/contain-left">
   </demovanilla>
-  <demovanilla src="vanilla/components/slider/contain-right">
+  <demovanilla src="vanilla/components/extensions/slider/contain-right">
   </demovanilla>
 </demo>
 
@@ -64,14 +64,14 @@ By default it's set to `groupMq: { 'all': 0.8 }`.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/slider/group-responsive">
+  <demovanilla src="vanilla/components/extensions/slider/group-responsive">
   </demovanilla>
 </demo>
 
 Set to `groupMq: false` to disable automatic grouping of slides.
 
 <demo>
-  <demovanilla src="vanilla/components/slider/group-false">
+  <demovanilla src="vanilla/components/extensions/slider/group-false">
   </demovanilla>
 </demo>
 
@@ -91,9 +91,9 @@ Set to `groupMq: false` to disable automatic grouping of slides.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/slider/toggle-css">
+  <demovanilla src="vanilla/components/extensions/slider/toggle-css">
   </demovanilla>
-  <demovanilla src="vanilla/components/slider/toggle-js">
+  <demovanilla src="vanilla/components/extensions/slider/toggle-js">
   </demovanilla>
 </demo>
 
@@ -114,7 +114,7 @@ You can disable friction with `drag: { friction: false }`.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/slider/friction-false">
+  <demovanilla src="vanilla/components/extensions/slider/friction-false">
   </demovanilla>
 </demo>
 
@@ -146,11 +146,11 @@ You can wrap the slides with `drag: { wrap: true }`.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/slider/wrap">
+  <demovanilla src="vanilla/components/extensions/slider/wrap">
   </demovanilla>
-  <demovanilla src="vanilla/components/slider/wrap-left">
+  <demovanilla src="vanilla/components/extensions/slider/wrap-left">
   </demovanilla>
-  <demovanilla src="vanilla/components/slider/wrap-right">
+  <demovanilla src="vanilla/components/extensions/slider/wrap-right">
   </demovanilla>
 </demo>
 
@@ -185,7 +185,7 @@ Inside it you can use this strings that gets populated with variables:
 | `slider-pagination[data-xt-pag].xt-ignore` is essential to the functioning of the slider, so if you don't want to show it add `.display-none`.
 
 <demo>
-  <demovanilla src="vanilla/components/slider/pagination">
+  <demovanilla src="vanilla/components/extensions/slider/pagination">
   </demovanilla>
 </demo>
 
@@ -211,7 +211,7 @@ You can add navigation with `navigation: QuerySelector`, set the amount to add (
 </script>
 
 <demo>
-  <demovanilla src="vanilla/components/slider/navigation">
+  <demovanilla src="vanilla/components/extensions/slider/navigation">
   </demovanilla>
 </demo>
 
@@ -231,7 +231,7 @@ If you want to animate with css use the `.xt-medialoaded` class or with js use t
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/slider/media-loaded">
+  <demovanilla src="vanilla/components/extensions/slider/media-loaded">
   </demovanilla>
 </demo>
 
@@ -240,7 +240,7 @@ If you want to animate with css use the `.xt-medialoaded` class or with js use t
 Use `wheel: { selector: 'object' }` or `wheel: { selector: QuerySelector }` to enable mousewheel navigation.
 
 <demo>
-  <demovanilla src="vanilla/components/slider/wheel">
+  <demovanilla src="vanilla/components/extensions/slider/wheel">
   </demovanilla>
 </demo>
 
@@ -259,17 +259,17 @@ Use `wheel: { selector: 'object' }` or `wheel: { selector: QuerySelector }` to e
 </div>
 
 [[notePrimary]]
-| Auto doesn't run if the slider is `display: none`. Start it manually when visible when using [slider events](/components/slider/api#trigger).
+| Auto doesn't run if the slider is `display: none`. Start it manually when visible when using [slider events](/extensions/slider/api#trigger).
 
 <demo>
-  <demovanilla src="vanilla/components/slider/auto">
+  <demovanilla src="vanilla/components/extensions/slider/auto">
   </demovanilla>
 </demo>
 
-Use the [api](/components/slider/api#listen) and listen to events to make auto progress indicators.
+Use the [api](/extensions/slider/api#listen) and listen to events to make auto progress indicators.
 
 <demo>
-  <demovanilla src="vanilla/components/slider/progress">
+  <demovanilla src="vanilla/components/extensions/slider/progress">
   </demovanilla>
 </demo>
 
@@ -287,6 +287,6 @@ Use the [api](/components/slider/api#listen) and listen to events to make auto p
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/slider/other">
+  <demovanilla src="vanilla/components/extensions/slider/other">
   </demovanilla>
 </demo>

@@ -22,7 +22,7 @@ You can use card's presets outside the normal scope, for example to style a card
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/card/preset">
+  <demovanilla src="vanilla/components/core/card/preset">
   </demovanilla>
 </demo>
 
@@ -40,7 +40,7 @@ Classes for assigning variant (e.g.: border / background / color). Add or remove
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/card/variant">
+  <demovanilla src="vanilla/components/core/card/variant">
   </demovanilla>
 </demo>
 
@@ -58,7 +58,7 @@ Classes for assigning size (e.g.: padding or font size). Add or remove selectors
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/card/size">
+  <demovanilla src="vanilla/components/core/card/size">
   </demovanilla>
 </demo>
 
@@ -76,6 +76,6 @@ Classes for assigning size (e.g.: padding or font size). Add or remove selectors
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/card/block-size">
+  <demovanilla src="vanilla/components/core/card/block-size">
   </demovanilla>
 </demo>

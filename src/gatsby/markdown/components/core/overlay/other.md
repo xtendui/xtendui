@@ -7,7 +7,7 @@ date: "2019-03-15"
 ---
 
 [[notePrimary]]
-| Overlay uses card to style it's content, refer to [card's other](/components/card/other) for all **other**.
+| Overlay uses card to style it's content, refer to [card's other](/core/card/other) for all **other**.
 
 ## Special
 
@@ -23,20 +23,20 @@ date: "2019-03-15"
 You can have the `.btn-close` with `position: fixed` using `.overlay-close-fixed`.
 
 <demo>
-  <demovanilla src="vanilla/components/overlay/close-fixed">
+  <demovanilla src="vanilla/components/core/overlay/close-fixed">
   </demovanilla>
 </demo>
 
 You can disable overlay using `.overlay-disable` (resize to mobile to see it in action).
 
 <demo>
-  <demovanilla src="vanilla/components/overlay/disable">
+  <demovanilla src="vanilla/components/core/overlay/disable">
   </demovanilla>
 </demo>
 
 ## Unique mode and nested
 
 <demo>
-  <demovanilla src="vanilla/components/overlay/nested">
+  <demovanilla src="vanilla/components/core/overlay/nested">
   </demovanilla>
 </demo>

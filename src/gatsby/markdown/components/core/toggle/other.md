@@ -13,7 +13,7 @@ The toggle class utils are this, they toggle on activation the `display` or `vis
 You can make a target inverse toggle (`display: none` when active), just use `.toggle-inverse`:
 
 <demo>
-  <demovanilla src="vanilla/components/toggle/inverse">
+  <demovanilla src="vanilla/components/core/toggle/inverse">
   </demovanilla>
 </demo>
 
@@ -22,7 +22,7 @@ You can make a target inverse toggle (`display: none` when active), just use `.t
 If you need to toggle **multiple targets** with the **same element** assign `data-xt-group` to **elements** and the associated targets **targets**. Group's additional elements aren't counted for min and max.
 
 <demo>
-  <demovanilla src="vanilla/components/toggle/group">
+  <demovanilla src="vanilla/components/core/toggle/group">
   </demovanilla>
 </demo>
 
@@ -33,17 +33,17 @@ You can have **element's link** that trigger after toggle.
 If the toggle is on `"on": "mouseenter"` or `"on": "mousehover"` the link gets activated on the second touch event on touch devices.
 
 <demo>
-  <demovanilla src="vanilla/components/toggle/with-link">
+  <demovanilla src="vanilla/components/core/toggle/with-link">
   </demovanilla>
-  <demovanilla src="vanilla/components/toggle/with-link-hover">
+  <demovanilla src="vanilla/components/core/toggle/with-link-hover">
   </demovanilla>
 </demo>
 
 ## Animation
 
-You can animate with javascript instead of css, just use [toggle events](/components/toggle/api#events) and remember to set `durationOn: Milliseconds` and `durationOff: Milliseconds`.
+You can animate with javascript instead of css, just use [toggle events](/core/toggle/api#events) and remember to set `durationOn: Milliseconds` and `durationOff: Milliseconds`.
 
 <demo>
-  <demovanilla src="vanilla/components/toggle/animation-js">
+  <demovanilla src="vanilla/components/core/toggle/animation-js">
   </demovanilla>
 </demo>

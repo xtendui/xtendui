@@ -11,9 +11,9 @@ date: "2019-03-15"
 Use `.full` to have full width fluid group. Use `.group-inner.flex-auto` to expand groups.
 
 <demo>
-  <demovanilla src="vanilla/components/group/options-full-line">
+  <demovanilla src="vanilla/components/core/group/options-full-line">
   </demovanilla>
-  <demovanilla src="vanilla/components/group/options-full-stack">
+  <demovanilla src="vanilla/components/core/group/options-full-stack">
   </demovanilla>
 </demo>
 
@@ -62,8 +62,8 @@ Use this markup to merge multiple `.btn` in one `[button]` as stack.
 </script>
 
 <demo>
-  <demovanilla src="vanilla/components/group/merge-line">
+  <demovanilla src="vanilla/components/core/group/merge-line">
   </demovanilla>
-  <demovanilla src="vanilla/components/group/merge-stack">
+  <demovanilla src="vanilla/components/core/group/merge-stack">
   </demovanilla>
 </demo>

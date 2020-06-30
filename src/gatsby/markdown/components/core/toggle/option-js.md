@@ -23,7 +23,7 @@ You can specify classes to toggle with `class: 'my-class-0 my-class-1'`. Toggled
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/toggle/class">
+  <demovanilla src="vanilla/components/core/toggle/class">
   </demovanilla>
 </demo>
 
@@ -38,7 +38,7 @@ You can start with toggled elements and targets just by adding **one of the clas
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/toggle/start">
+  <demovanilla src="vanilla/components/core/toggle/start">
   </demovanilla>
 </demo>
 
@@ -57,7 +57,7 @@ You can specify `min` and `max` concurrent activations. The `min` option is fulf
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/toggle/minmax">
+  <demovanilla src="vanilla/components/core/toggle/minmax">
   </demovanilla>
 </demo>
 
@@ -76,7 +76,7 @@ You can specify **on** and **off** events for the toggle. Fore example `on: 'mou
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/toggle/event">
+  <demovanilla src="vanilla/components/core/toggle/event">
   </demovanilla>
 </demo>
 
@@ -93,7 +93,7 @@ Use `jump: true` to enable clicking on a **target** to jump to them.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/toggle/jump">
+  <demovanilla src="vanilla/components/core/toggle/jump">
   </demovanilla>
 </demo>
 
@@ -110,7 +110,7 @@ You can add navigation with `navigation: QuerySelector`, set the amount to add (
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/toggle/navigation">
+  <demovanilla src="vanilla/components/core/toggle/navigation">
   </demovanilla>
 </demo>
 
@@ -146,13 +146,13 @@ You can use a function for <code>delayOn</code> and <code>delayOff</code> for ex
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/toggle/timing-duration">
+  <demovanilla src="vanilla/components/core/toggle/timing-duration">
   </demovanilla>
-  <demovanilla src="vanilla/components/toggle/timing-delay">
+  <demovanilla src="vanilla/components/core/toggle/timing-delay">
   </demovanilla>
-  <demovanilla src="vanilla/components/toggle/timing-delay-fnc">
+  <demovanilla src="vanilla/components/core/toggle/timing-delay-fnc">
   </demovanilla>
-  <demovanilla src="vanilla/components/toggle/timing-instant">
+  <demovanilla src="vanilla/components/core/toggle/timing-instant">
   </demovanilla>
 </demo>
 
@@ -171,25 +171,25 @@ You can use a function for <code>delayOn</code> and <code>delayOff</code> for ex
 </div>
 
 [[notePrimary]]
-| Auto doesn't run if the toggle is `display: none`. Start it manually when visible when using [toggle events](/components/toggle/api#trigger).
+| Auto doesn't run if the toggle is `display: none`. Start it manually when visible when using [toggle events](/core/toggle/api#trigger).
 
 <demo>
-  <demovanilla src="vanilla/components/toggle/auto-initial">
+  <demovanilla src="vanilla/components/core/toggle/auto-initial">
   </demovanilla>
-  <demovanilla src="vanilla/components/toggle/auto-step">
+  <demovanilla src="vanilla/components/core/toggle/auto-step">
   </demovanilla>
-  <demovanilla src="vanilla/components/toggle/auto-inverse">
+  <demovanilla src="vanilla/components/core/toggle/auto-inverse">
   </demovanilla>
-  <demovanilla src="vanilla/components/toggle/auto-pause">
+  <demovanilla src="vanilla/components/core/toggle/auto-pause">
   </demovanilla>
-  <demovanilla src="vanilla/components/toggle/auto-minmax">
+  <demovanilla src="vanilla/components/core/toggle/auto-minmax">
   </demovanilla>
 </demo>
 
-Use the [api](/components/toggle/api#listen) and listen to events to make auto progress indicators.
+Use the [api](/core/toggle/api#listen) and listen to events to make auto progress indicators.
 
 <demo>
-  <demovanilla src="vanilla/components/toggle/progress">
+  <demovanilla src="vanilla/components/core/toggle/progress">
   </demovanilla>
 </demo>
 
@@ -206,7 +206,7 @@ Use `keyboard: { selector: 'object' }` or `keyboard: { selector: QuerySelector }
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/toggle/usability-keyboard">
+  <demovanilla src="vanilla/components/core/toggle/usability-keyboard">
   </demovanilla>
 </demo>
 

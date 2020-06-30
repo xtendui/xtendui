@@ -7,7 +7,7 @@ date: "2019-11-01"
 ---
 
 [[notePrimary]]
-| Overlay uses toggle for logic, refer to [toggle's option](/components/toggle/option-js).
+| Overlay uses toggle for logic, refer to [toggle's option](/core/toggle/option-js).
 
 ## Class
 
@@ -34,7 +34,7 @@ It's recommended to use `active-overlay` on overlay otherwise the overlay flashe
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/overlay/class-html">
+  <demovanilla src="vanilla/components/core/overlay/class-html">
   </demovanilla>
 </demo>
 

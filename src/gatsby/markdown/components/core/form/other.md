@@ -17,7 +17,7 @@ date: "2019-03-15"
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/form/legend">
+  <demovanilla src="vanilla/components/core/form/legend">
   </demovanilla>
 </demo>
 
@@ -32,13 +32,13 @@ date: "2019-03-15"
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/form/fieldset">
+  <demovanilla src="vanilla/components/core/form/fieldset">
   </demovanilla>
 </demo>
 
 ## Note
 
-Form note uses the [note component](/components/note).
+Form note uses the [note component](/core/note).
 
 <div class="table-scroll">
 
@@ -49,13 +49,13 @@ Form note uses the [note component](/components/note).
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/form/note">
+  <demovanilla src="vanilla/components/core/form/note">
   </demovanilla>
 </demo>
 
 ## Group
 
-Refer to [Group page](/components/group#usage-input).
+Refer to [Group page](/core/group#usage-input).
 
 ## Validation
 
@@ -65,8 +65,8 @@ Validation with html attributes.
 | Form validation must be inside `form` or `.form` to work.
 
 <demo>
-  <demovanilla src="vanilla/components/form/validation-default">
+  <demovanilla src="vanilla/components/core/form/validation-default">
   </demovanilla>
-  <demovanilla src="vanilla/components/form/validation-inverse">
+  <demovanilla src="vanilla/components/core/form/validation-inverse">
   </demovanilla>
 </demo>

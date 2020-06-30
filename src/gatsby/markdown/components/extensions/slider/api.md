@@ -7,7 +7,7 @@ date: "2019-01-15"
 ---
 
 [[notePrimary]]
-| Slider uses toggle for logic, refer to [toggle's API](/components/toggle/api).
+| Slider uses toggle for logic, refer to [toggle's API](/core/toggle/api).
 
 ## Util
 
@@ -87,7 +87,7 @@ document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('o
 </div>
 
 [[noteDefault]]
-| For triggering and listening the **resize event**, refer to [structure](/components/structure/other#resize).
+| For triggering and listening the **resize event**, refer to [structure](/core/structure/other#resize).
 
 ## Listen
 
@@ -210,6 +210,6 @@ Here are the main wheel properties inside `self.detail`:
 ## Demo
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/slider/events-methods">
+  <div class="gatsby_demo_item" data-iframe="iframe/components/extensions/slider/events-methods">
   </div>
 </demo>

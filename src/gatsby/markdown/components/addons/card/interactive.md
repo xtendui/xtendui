@@ -9,6 +9,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 You can make interactive cards with `a.card` or `label.card`.
 
 <demo>
-  <demovanilla src="vanilla/addons/card/interactive">
+  <demovanilla src="vanilla/components/addons/card/interactive">
   </demovanilla>
 </demo>

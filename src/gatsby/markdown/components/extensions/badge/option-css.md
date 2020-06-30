@@ -20,7 +20,7 @@ Classes for assigning variant (e.g.: border / background / color). Add or remove
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/badge/variant">
+  <demovanilla src="vanilla/components/extensions/badge/variant">
   </demovanilla>
 </demo>
 
@@ -38,6 +38,6 @@ Classes for assigning size (e.g.: padding or font size). Add or remove selectors
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/badge/size">
+  <demovanilla src="vanilla/components/extensions/badge/size">
   </demovanilla>
 </demo>

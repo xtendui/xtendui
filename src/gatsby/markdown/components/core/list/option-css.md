@@ -55,21 +55,21 @@ Lists **automatically** add horizontal and vertical spacing to the contents. You
 | When using **list space classes** with **breakpoints** you need to set the class breakpoint generation with `@generate-list`.
 
 <demo>
-  <demovanilla src="vanilla/components/list/space-none">
+  <demovanilla src="vanilla/components/core/list/space-none">
   </demovanilla>
-  <demovanilla src="vanilla/components/list/space-mini">
+  <demovanilla src="vanilla/components/core/list/space-mini">
   </demovanilla>
-  <demovanilla src="vanilla/components/list/space-tiny">
+  <demovanilla src="vanilla/components/core/list/space-tiny">
   </demovanilla>
-  <demovanilla src="vanilla/components/list/space-small">
+  <demovanilla src="vanilla/components/core/list/space-small">
   </demovanilla>
-  <demovanilla src="vanilla/components/list/space-medium">
+  <demovanilla src="vanilla/components/core/list/space-medium">
   </demovanilla>
-  <demovanilla src="vanilla/components/list/space-large">
+  <demovanilla src="vanilla/components/core/list/space-large">
   </demovanilla>
-  <demovanilla src="vanilla/components/list/space-big">
+  <demovanilla src="vanilla/components/core/list/space-big">
   </demovanilla>
-  <demovanilla src="vanilla/components/list/space-giant">
+  <demovanilla src="vanilla/components/core/list/space-giant">
   </demovanilla>
 </demo>
 
@@ -94,13 +94,13 @@ Set children's direction inside the flexbox.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/list/direction-row">
+  <demovanilla src="vanilla/components/core/list/direction-row">
   </demovanilla>
-  <demovanilla src="vanilla/components/list/direction-row-reverse">
+  <demovanilla src="vanilla/components/core/list/direction-row-reverse">
   </demovanilla>
-  <demovanilla src="vanilla/components/list/direction-column">
+  <demovanilla src="vanilla/components/core/list/direction-column">
   </demovanilla>
-  <demovanilla src="vanilla/components/list/direction-column-reverse">
+  <demovanilla src="vanilla/components/core/list/direction-column-reverse">
   </demovanilla>
 </demo>
 
@@ -120,11 +120,11 @@ Set children's wrapping inside the flexbox.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/list/wrap">
+  <demovanilla src="vanilla/components/core/list/wrap">
   </demovanilla>
-  <demovanilla src="vanilla/components/list/wrap-reverse">
+  <demovanilla src="vanilla/components/core/list/wrap-reverse">
   </demovanilla>
-  <demovanilla src="vanilla/components/list/nowrap">
+  <demovanilla src="vanilla/components/core/list/nowrap">
   </demovanilla>
 </demo>
 
@@ -144,17 +144,17 @@ Set children's horizontal alignment inside the flexbox.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/list/justify-start">
+  <demovanilla src="vanilla/components/core/list/justify-start">
   </demovanilla>
-  <demovanilla src="vanilla/components/list/justify-end">
+  <demovanilla src="vanilla/components/core/list/justify-end">
   </demovanilla>
-  <demovanilla src="vanilla/components/list/justify-center">
+  <demovanilla src="vanilla/components/core/list/justify-center">
   </demovanilla>
-  <demovanilla src="vanilla/components/list/justify-between">
+  <demovanilla src="vanilla/components/core/list/justify-between">
   </demovanilla>
-  <demovanilla src="vanilla/components/list/justify-around">
+  <demovanilla src="vanilla/components/core/list/justify-around">
   </demovanilla>
-  <demovanilla src="vanilla/components/list/justify-evenly">
+  <demovanilla src="vanilla/components/core/list/justify-evenly">
   </demovanilla>
 </demo>
 
@@ -174,15 +174,15 @@ Set children's vertical alignment inside the flexbox.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/list/items-start">
+  <demovanilla src="vanilla/components/core/list/items-start">
   </demovanilla>
-  <demovanilla src="vanilla/components/list/items-end">
+  <demovanilla src="vanilla/components/core/list/items-end">
   </demovanilla>
-  <demovanilla src="vanilla/components/list/items-center">
+  <demovanilla src="vanilla/components/core/list/items-center">
   </demovanilla>
-  <demovanilla src="vanilla/components/list/items-baseline">
+  <demovanilla src="vanilla/components/core/list/items-baseline">
   </demovanilla>
-  <demovanilla src="vanilla/components/list/items-stretch">
+  <demovanilla src="vanilla/components/core/list/items-stretch">
   </demovanilla>
 </demo>
 
@@ -202,17 +202,17 @@ Set children's vertical alignment inside the flexbox.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/list/content-start">
+  <demovanilla src="vanilla/components/core/list/content-start">
   </demovanilla>
-  <demovanilla src="vanilla/components/list/content-end">
+  <demovanilla src="vanilla/components/core/list/content-end">
   </demovanilla>
-  <demovanilla src="vanilla/components/list/content-center">
+  <demovanilla src="vanilla/components/core/list/content-center">
   </demovanilla>
-  <demovanilla src="vanilla/components/list/content-between">
+  <demovanilla src="vanilla/components/core/list/content-between">
   </demovanilla>
-  <demovanilla src="vanilla/components/list/content-around">
+  <demovanilla src="vanilla/components/core/list/content-around">
   </demovanilla>
-  <demovanilla src="vanilla/components/list/content-stretch">
+  <demovanilla src="vanilla/components/core/list/content-stretch">
   </demovanilla>
 </demo>
 
@@ -233,17 +233,17 @@ If set to **auto** computes to the parent's `align-items` value.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/list/self-start">
+  <demovanilla src="vanilla/components/core/list/self-start">
   </demovanilla>
-  <demovanilla src="vanilla/components/list/self-end">
+  <demovanilla src="vanilla/components/core/list/self-end">
   </demovanilla>
-  <demovanilla src="vanilla/components/list/self-center">
+  <demovanilla src="vanilla/components/core/list/self-center">
   </demovanilla>
-  <demovanilla src="vanilla/components/list/self-baseline">
+  <demovanilla src="vanilla/components/core/list/self-baseline">
   </demovanilla>
-  <demovanilla src="vanilla/components/list/self-stretch">
+  <demovanilla src="vanilla/components/core/list/self-stretch">
   </demovanilla>
-  <demovanilla src="vanilla/components/list/self-auto">
+  <demovanilla src="vanilla/components/core/list/self-auto">
   </demovanilla>
 </demo>
 
@@ -266,7 +266,7 @@ Set item's order inside the flexbox.
 | By default orders from `.order-0` to `.order-2` are negative values.
 
 <demo>
-  <demovanilla src="vanilla/components/list/order">
+  <demovanilla src="vanilla/components/core/list/order">
   </demovanilla>
 </demo>
 

@@ -20,12 +20,12 @@ For `.overlay-position` available positions are: `left` `right`.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/overlay/screen">
+  <demovanilla src="vanilla/components/core/overlay/screen">
   </demovanilla>
 </demo>
 
 <demo>
-  <demovanilla src="vanilla/components/overlay/position">
+  <demovanilla src="vanilla/components/core/overlay/position">
   </demovanilla>
 </demo>
 
@@ -43,14 +43,14 @@ Set overlay size with this classes.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/overlay/size">
+  <demovanilla src="vanilla/components/core/overlay/size">
   </demovanilla>
 </demo>
 
 ## Card
 
 [[notePrimary]]
-| Overlay uses card to style it's content, refer to [card's option](/components/card/option) for all **option**.
+| Overlay uses card to style it's content, refer to [card's option](/core/card/option) for all **option**.
 
 #### Variant
 
@@ -66,7 +66,7 @@ Classes for assigning variant (e.g.: border / background / color). Add or remove
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/overlay/card-variant">
+  <demovanilla src="vanilla/components/core/overlay/card-variant">
   </demovanilla>
 </demo>
 
@@ -84,7 +84,7 @@ Classes for assigning size (e.g.: padding or font size). Add or remove selectors
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/overlay/card-size">
+  <demovanilla src="vanilla/components/core/overlay/card-size">
   </demovanilla>
 </demo>
 
@@ -102,6 +102,6 @@ Classes for assigning size (e.g.: padding or font size). Add or remove selectors
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/overlay/card-block-size">
+  <demovanilla src="vanilla/components/core/overlay/card-block-size">
   </demovanilla>
 </demo>

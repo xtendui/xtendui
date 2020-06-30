@@ -11,7 +11,7 @@ date: "2019-05-15"
 Sequential `.card-block` stack vertically.
 
 <demo>
-  <demovanilla src="vanilla/components/card/horizontal-multiple">
+  <demovanilla src="vanilla/components/core/card/horizontal-multiple">
   </demovanilla>
 </demo>
 
@@ -20,7 +20,7 @@ You can add custom `.card-block` modifiers and style them as you like (e.g.: `.c
 If you put it **outside** `.card-content` it will be rendered vertically.
 
 <demo>
-  <demovanilla src="vanilla/components/card/horizontal-block">
+  <demovanilla src="vanilla/components/core/card/horizontal-block">
   </demovanilla>
 </demo>
 
@@ -39,7 +39,7 @@ If you put it **outside** `.card-content` it will be rendered vertically.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/card/horizontal-asset">
+  <demovanilla src="vanilla/components/core/card/horizontal-asset">
   </demovanilla>
 </demo>
 
@@ -56,6 +56,6 @@ You can set vertical overflow using `.card-overflow-y` in `.card-inner` or `.car
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/card/horizontal-overflow-y">
+  <demovanilla src="vanilla/components/core/card/horizontal-overflow-y">
   </demovanilla>
 </demo>

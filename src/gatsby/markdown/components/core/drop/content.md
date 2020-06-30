@@ -9,19 +9,19 @@ date: "2020-10-01"
 ## List
 
 [[notePrimary]]
-| Drop uses list to style it's content, refer to [list's content](/components/list/content) for all **content**.
+| Drop uses list to style it's content, refer to [list's content](/core/list/content) for all **content**.
 
 Use `li.xt-custom` to override styles applied by `.list.list-drop`.
 
 <demo>
-  <demovanilla src="vanilla/components/drop/usage-list">
+  <demovanilla src="vanilla/components/core/drop/usage-list">
   </demovanilla>
 </demo>
 
 ## Card
 
 [[notePrimary]]
-| Drop uses card to style it's content, refer to [card's content](/components/card/content) for all **content**.
+| Drop uses card to style it's content, refer to [card's content](/core/card/content) for all **content**.
 
 
 #### Asset
@@ -52,7 +52,7 @@ If you want full width assets use `.card-asset`.
 </script>
 
 <demo>
-  <demovanilla src="vanilla/components/drop/asset">
+  <demovanilla src="vanilla/components/core/drop/asset">
   </demovanilla>
 </demo>
 
@@ -91,14 +91,14 @@ Sequential `.card-block` stack vertically.
 | To have a separator between multiple `.card-block` use [card separator addon](/addons/card/separator).
 
 <demo>
-  <demovanilla src="vanilla/components/drop/block">
+  <demovanilla src="vanilla/components/core/drop/block">
   </demovanilla>
 </demo>
 
 You can add custom `.card-block` modifiers and style them as you like (e.g.: `.card-block-intro`).
 
 <demo>
-  <demovanilla src="vanilla/components/drop/block-intro">
+  <demovanilla src="vanilla/components/core/drop/block-intro">
   </demovanilla>
 </demo>
 
@@ -141,21 +141,21 @@ You can add custom `.card-block` modifiers and style them as you like (e.g.: `.c
 | To have a separator between multiple `.card-group` contents use [card separator addon](/addons/card/separator).
 
 <demo>
-  <demovanilla src="vanilla/components/drop/group">
+  <demovanilla src="vanilla/components/core/drop/group">
   </demovanilla>
 </demo>
 
 If you need to put an asset outside `.card-block`, just use `.card-item` and wrap the text inside another `.card-block.card-item`, like in the second example.
 
 <demo>
-  <demovanilla src="vanilla/components/drop/block-side">
+  <demovanilla src="vanilla/components/core/drop/block-side">
   </demovanilla>
 </demo>
 
-The size of **blocks** is automatic, you can specify the **size** with [columns](/components/column), with responsive classes if you need them.
+The size of **blocks** is automatic, you can specify the **size** with [columns](/core/column), with responsive classes if you need them.
 
 <demo>
-  <demovanilla src="vanilla/components/drop/block-side-size">
+  <demovanilla src="vanilla/components/core/drop/block-side-size">
   </demovanilla>
 </demo>
 
@@ -173,9 +173,9 @@ You can set overflow using `.drop-overflow-y` and/or `.drop-overflow-x` in `.dro
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/drop/overflow-y">
+  <demovanilla src="vanilla/components/core/drop/overflow-y">
   </demovanilla>
-  <demovanilla src="vanilla/components/drop/overflow-x">
+  <demovanilla src="vanilla/components/core/drop/overflow-x">
   </demovanilla>
 </demo>
 

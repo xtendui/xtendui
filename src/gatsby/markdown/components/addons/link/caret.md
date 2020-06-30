@@ -7,6 +7,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 ---
 
 <demo>
-  <demovanilla src="vanilla/addons/link/caret">
+  <demovanilla src="vanilla/components/addons/link/caret">
   </demovanilla>
 </demo>

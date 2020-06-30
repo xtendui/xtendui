@@ -40,7 +40,7 @@ You can use this markup to create a **toggle** with **no targets**.
 </script>
 
 <demo>
-  <demovanilla src="vanilla/components/toggle/self">
+  <demovanilla src="vanilla/components/core/toggle/self">
   </demovanilla>
 </demo>
 
@@ -74,9 +74,9 @@ Use `:scope` when using descendant selector on root (e.g. `:scope > *`).
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/toggle/multiple-default">
+  <demovanilla src="vanilla/components/core/toggle/multiple-default">
   </demovanilla>
-  <demovanilla src="vanilla/components/toggle/multiple-custom">
+  <demovanilla src="vanilla/components/core/toggle/multiple-custom">
   </demovanilla>
 </demo>
 
@@ -97,9 +97,9 @@ The **unique** mode is useful when triggering **targets outside the scope** of t
 </script>
 
 <demo>
-  <demovanilla src="vanilla/components/toggle/unique-single">
+  <demovanilla src="vanilla/components/core/toggle/unique-single">
   </demovanilla>
-  <demovanilla src="vanilla/components/toggle/unique-same">
+  <demovanilla src="vanilla/components/core/toggle/unique-same">
   </demovanilla>
 </demo>
 

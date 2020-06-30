@@ -19,7 +19,7 @@ To have media responsive give `.media-container` this options:
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/media/responsive">
+  <demovanilla src="vanilla/components/core/media/responsive">
   </demovanilla>
 </demo>
 
@@ -40,16 +40,16 @@ To have media with **object-fit** give `.media` one of this options:
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/media/cover">
+  <demovanilla src="vanilla/components/core/media/cover">
   </demovanilla>
-  <demovanilla src="vanilla/components/media/contain">
+  <demovanilla src="vanilla/components/core/media/contain">
   </demovanilla>
 </demo>
 
 You can also use `min-height: <Value>` to `.media-container` to have a min height (resize to mobile to see it in action).
 
 <demo>
-  <demovanilla src="vanilla/components/media/cover-min-height">
+  <demovanilla src="vanilla/components/core/media/cover-min-height">
   </demovanilla>
 </demo>
 
@@ -66,17 +66,17 @@ To have media with aspect ratio give`.media-container` this options:
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/media/16-9">
+  <demovanilla src="vanilla/components/core/media/16-9">
   </demovanilla>
-  <demovanilla src="vanilla/components/media/16-9-video">
+  <demovanilla src="vanilla/components/core/media/16-9-video">
   </demovanilla>
-  <demovanilla src="vanilla/components/media/16-9-iframe">
+  <demovanilla src="vanilla/components/core/media/16-9-iframe">
   </demovanilla>
 </demo>
 
 You can also use `min-height: <Value>` to `.media-container` to have a min height (resize to mobile to see it in action).
 
 <demo>
-  <demovanilla src="vanilla/components/media/16-9-min-height">
+  <demovanilla src="vanilla/components/core/media/16-9-min-height">
   </demovanilla>
 </demo>

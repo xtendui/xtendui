@@ -7,6 +7,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 ---
 
 <demo>
-  <demovanilla src="vanilla/addons/group/number">
+  <demovanilla src="vanilla/components/addons/group/number">
   </demovanilla>
 </demo>

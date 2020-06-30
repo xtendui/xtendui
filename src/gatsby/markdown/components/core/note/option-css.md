@@ -20,7 +20,7 @@ Classes for assigning variant (e.g.: border / background / color). Add or remove
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/note/variant">
+  <demovanilla src="vanilla/components/core/note/variant">
   </demovanilla>
 </demo>
 
@@ -38,7 +38,7 @@ Classes for assigning size (e.g.: padding or font size). Add or remove selectors
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/note/size">
+  <demovanilla src="vanilla/components/core/note/size">
   </demovanilla>
 </demo>
 
@@ -55,6 +55,6 @@ Use `.note-list` to make a list block inside contents.
 </script>
 
 <demo>
-  <demovanilla src="vanilla/components/note/block">
+  <demovanilla src="vanilla/components/core/note/block">
   </demovanilla>
 </demo>

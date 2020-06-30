@@ -7,6 +7,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 ---
 
 <demo>
-  <demovanilla src="vanilla/addons/form/textarea-autosize">
+  <demovanilla src="vanilla/components/addons/form/textarea-autosize">
   </demovanilla>
 </demo>

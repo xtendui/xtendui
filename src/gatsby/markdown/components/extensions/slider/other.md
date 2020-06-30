@@ -35,14 +35,14 @@ Use `justify-content` to assign horizontal alignment when not overflowing, this 
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/slider/overflow-auto">
+  <demovanilla src="vanilla/components/extensions/slider/overflow-auto">
   </demovanilla>
 </demo>
 
 Disable this behaviour with `overflowAuto: false`.
 
 <demo>
-  <demovanilla src="vanilla/components/slider/overflow-auto-false">
+  <demovanilla src="vanilla/components/extensions/slider/overflow-auto-false">
   </demovanilla>
 </demo>
 
@@ -53,7 +53,7 @@ You can disable slider using `.slider-disable` (resize to mobile to see it in ac
 It also hides automatically **pagination** and **navigation** **wrap** and slides not `active`.
 
 <demo>
-  <demovanilla src="vanilla/components/slider/disable">
+  <demovanilla src="vanilla/components/extensions/slider/disable">
   </demovanilla>
 </demo>
 
@@ -62,7 +62,7 @@ It also hides automatically **pagination** and **navigation** **wrap** and slide
 To disable and expand a slider use `.slider-expand` also within media queries.
 
 <demo>
-  <demovanilla src="vanilla/components/slider/expand">
+  <demovanilla src="vanilla/components/extensions/slider/expand">
   </demovanilla>
 </demo>
 
@@ -71,6 +71,6 @@ To disable and expand a slider use `.slider-expand` also within media queries.
 Use `.slider-touch-overflow` to have browser overflow on touch devices (use touch device to see it in action).
 
 <demo>
-  <demovanilla src="vanilla/components/slider/touch-overflow">
+  <demovanilla src="vanilla/components/extensions/slider/touch-overflow">
   </demovanilla>
 </demo>

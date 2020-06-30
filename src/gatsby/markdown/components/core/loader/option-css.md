@@ -17,7 +17,7 @@ date: "2019-12-01"
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/loader/spinner">
+  <demovanilla src="vanilla/components/extensions/loader/spinner">
   </demovanilla>
 </demo>
 
@@ -35,9 +35,9 @@ date: "2019-12-01"
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/loader/filler-x">
+  <demovanilla src="vanilla/components/extensions/loader/filler-x">
   </demovanilla>
-  <demovanilla src="vanilla/components/loader/filler-y">
+  <demovanilla src="vanilla/components/extensions/loader/filler-y">
   </demovanilla>
 </demo>
 
@@ -55,11 +55,11 @@ Loader size with `.loader-x`.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/loader/filler-size-x">
+  <demovanilla src="vanilla/components/extensions/loader/filler-size-x">
   </demovanilla>
-  <demovanilla src="vanilla/components/loader/filler-size-top">
+  <demovanilla src="vanilla/components/extensions/loader/filler-size-top">
   </demovanilla>
-  <demovanilla src="vanilla/components/loader/filler-size-bottom">
+  <demovanilla src="vanilla/components/extensions/loader/filler-size-bottom">
   </demovanilla>
 </demo>
 
@@ -75,11 +75,11 @@ Loader size with `.loader-y`.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/loader/filler-size-y">
+  <demovanilla src="vanilla/components/extensions/loader/filler-size-y">
   </demovanilla>
-  <demovanilla src="vanilla/components/loader/filler-size-left">
+  <demovanilla src="vanilla/components/extensions/loader/filler-size-left">
   </demovanilla>
-  <demovanilla src="vanilla/components/loader/filler-size-right">
+  <demovanilla src="vanilla/components/extensions/loader/filler-size-right">
   </demovanilla>
 </demo>
 
@@ -96,10 +96,10 @@ Use `.loader-background` to add the background.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/loader/background-spinner">
+  <demovanilla src="vanilla/components/extensions/loader/background-spinner">
   </demovanilla>
-  <demovanilla src="vanilla/components/loader/background-direction">
+  <demovanilla src="vanilla/components/extensions/loader/background-direction">
   </demovanilla>
-  <demovanilla src="vanilla/components/loader/background-size">
+  <demovanilla src="vanilla/components/extensions/loader/background-size">
   </demovanilla>
 </demo>

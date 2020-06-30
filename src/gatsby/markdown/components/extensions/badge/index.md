@@ -11,7 +11,7 @@ description: "Badge component for showing very short messages."
 To use this component import the **less** files accordingly:
 
 ```less
-@import 'xtend-library/src/core/badge/badge.less';
+@import 'xtend-library/src/extensions/badge/badge.less';
 ```
 
 Or just import **core**:

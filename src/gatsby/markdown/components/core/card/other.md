@@ -8,7 +8,7 @@ date: "2019-03-15"
 
 ## Stretch
 
-Refer to [Row page](/components/row/other#stretch).
+Refer to [Row page](/core/row/other#stretch).
 
 ## Special
 
@@ -29,7 +29,7 @@ Refer to [Row page](/components/row/other#stretch).
 You can disable card using `.card-disable` (resize to mobile to see it in action).
 
 <demo>
-  <demovanilla src="vanilla/components/card/disable">
+  <demovanilla src="vanilla/components/core/card/disable">
   </demovanilla>
 </demo>
 
@@ -38,6 +38,6 @@ You can disable card using `.card-disable` (resize to mobile to see it in action
 Usage of `.btn-close` inside card.
 
 <demo>
-  <demovanilla src="vanilla/components/card/close">
+  <demovanilla src="vanilla/components/core/card/close">
   </demovanilla>
 </demo>

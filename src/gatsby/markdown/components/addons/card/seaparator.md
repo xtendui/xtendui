@@ -7,11 +7,11 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 ---
 
 <demo>
-  <demovanilla src="vanilla/addons/card/separator">
+  <demovanilla src="vanilla/components/addons/card/separator">
   </demovanilla>
 </demo>
 
 <demo>
-  <demovanilla src="vanilla/addons/card/separator-horizontal">
+  <demovanilla src="vanilla/components/addons/card/separator-horizontal">
   </demovanilla>
 </demo>

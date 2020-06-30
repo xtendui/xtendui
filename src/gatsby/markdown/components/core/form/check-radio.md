@@ -31,15 +31,15 @@ Use this markup to create a **styled** **checkbox** or **radio**.
 </script>
 
 <demo>
-  <demovanilla src="vanilla/components/form/check-radio-styled-block">
+  <demovanilla src="vanilla/components/core/form/check-radio-styled-block">
   </demovanilla>
-  <demovanilla src="vanilla/components/form/check-radio-styled-inline">
+  <demovanilla src="vanilla/components/core/form/check-radio-styled-inline">
   </demovanilla>
-  <demovanilla src="vanilla/components/form/check-radio-styled-disabled">
+  <demovanilla src="vanilla/components/core/form/check-radio-styled-disabled">
   </demovanilla>
 </demo>
 
-For inline or other checkbox and radio layout refer to [form mode](/components/form/items#mode).
+For inline or other checkbox and radio layout refer to [form mode](/core/form/items#mode).
 
 #### Fake
 
@@ -69,11 +69,11 @@ Use this markup to create a **fake** **styled** **checkbox** or **radio**.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/form/check-radio-fake-block">
+  <demovanilla src="vanilla/components/core/form/check-radio-fake-block">
   </demovanilla>
-  <demovanilla src="vanilla/components/form/check-radio-fake-inline">
+  <demovanilla src="vanilla/components/core/form/check-radio-fake-inline">
   </demovanilla>
-  <demovanilla src="vanilla/components/form/check-radio-fake-disabled">
+  <demovanilla src="vanilla/components/core/form/check-radio-fake-disabled">
   </demovanilla>
 </demo>
 
@@ -108,14 +108,14 @@ Use this markup to create a **unstyled** **checkbox** or **radio**.
 </div>
 
 [[notePrimary]]
-| Checkbox and radio must be inside [form group](/components/form/group) to have default styles.
+| Checkbox and radio must be inside [form group](/core/form/group) to have default styles.
 
 <demo>
-  <demovanilla src="vanilla/components/form/check-radio-unstyled-block">
+  <demovanilla src="vanilla/components/core/form/check-radio-unstyled-block">
   </demovanilla>
-  <demovanilla src="vanilla/components/form/check-radio-unstyled-inline">
+  <demovanilla src="vanilla/components/core/form/check-radio-unstyled-inline">
   </demovanilla>
-  <demovanilla src="vanilla/components/form/check-radio-unstyled-disabled">
+  <demovanilla src="vanilla/components/core/form/check-radio-unstyled-disabled">
   </demovanilla>
 </demo>
 
@@ -134,8 +134,8 @@ You can set the size globally on **form**.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/form/variant-default">
+  <demovanilla src="vanilla/components/core/form/variant-default">
   </demovanilla>
-  <demovanilla src="vanilla/components/form/variant-inverse">
+  <demovanilla src="vanilla/components/core/form/variant-inverse">
   </demovanilla>
 </demo>

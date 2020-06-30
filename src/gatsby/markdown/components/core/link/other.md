@@ -19,7 +19,7 @@ Links with the tag `a` are styled with link underline styles. To have a `a` tag 
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/link/link">
+  <demovanilla src="vanilla/components/core/link/link">
   </demovanilla>
 </demo>
 
@@ -37,6 +37,6 @@ Links under `.text-inverse` are styled accordingly.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/link/inverse">
+  <demovanilla src="vanilla/components/core/link/inverse">
   </demovanilla>
 </demo>
