@@ -245,6 +245,7 @@
 
 .align-left(@breakpoint: none) when (@breakpoint = none) {
   text-align: left;
+  align-self: flex-start;
   justify-content: flex-start;
 }
 
@@ -252,12 +253,14 @@
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     text-align: left;
+    align-self: flex-start;
     justify-content: flex-start;
   }
 }
 
 .align-center(@breakpoint: none) when (@breakpoint = none) {
   text-align: center;
+  align-self: center;
   justify-content: center;
 }
 
@@ -265,12 +268,14 @@
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     text-align: center;
+    align-self: center;
     justify-content: center;
   }
 }
 
 .align-right(@breakpoint: none) when (@breakpoint = none) {
   text-align: right;
+  align-self: flex-end;
   justify-content: flex-end;
 }
 
@@ -278,6 +283,7 @@
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     text-align: right;
+    align-self: flex-end;
     justify-content: flex-end;
   }
 }
