@@ -60,8 +60,12 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '#gatsby_html body',
+  matches: '.gatsby_site_wrapper',
   mount: object => {
+    // vars
+
+    object = object.closest('body')
+
     // init
 
     let self = new Xt.ScrollToAnchor(object, {
@@ -206,7 +210,7 @@ const makeDocument = () => {
     }
   }
   // restart xt-scroll-to-anchor
-  const scrollToAnchor = Xt.get('xt-scroll-to-anchor', document.querySelector('#gatsby_html body'))
+  const scrollToAnchor = Xt.get('xt-scroll-to-anchor', document.querySelector('.gatsby_site_wrapper').closest('body'))
   if (scrollToAnchor) {
     scrollToAnchor.eventStart()
   }

@@ -15,6 +15,9 @@ import 'assets/styles/theme.less'
 
 class Layout extends React.Component {
   componentDidMount() {
+    if (window.self !== window.top) {
+      document.querySelector('html').setAttribute('id', 'gatsby_html')
+    }
     populateBlock()
     makeDocument()
   }
