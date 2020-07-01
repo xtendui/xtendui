@@ -15,8 +15,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
   </div>
   <div class="gatsby_demo_item" data-iframe="iframe/components/extensions/scroll/block">
   </div>
-  <demovanilla src="vanilla/components/extensions/slider/toggle-js">
-  </demovanilla>
   <demovanilla src="vanilla/components/extensions/slider/progress">
   </demovanilla>
   <demovanilla src="vanilla/components/core/toggle/timing-duration">

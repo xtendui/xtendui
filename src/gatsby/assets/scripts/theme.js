@@ -210,9 +210,12 @@ const makeDocument = () => {
     }
   }
   // restart xt-scroll-to-anchor
-  const scrollToAnchor = Xt.get('xt-scroll-to-anchor', document.querySelector('.gatsby_site_wrapper').closest('body'))
-  if (scrollToAnchor) {
-    scrollToAnchor.eventStart()
+  const gatsby = document.querySelector('.gatsby_site_wrapper')
+  if (gatsby) {
+    const scrollToAnchor = Xt.get('xt-scroll-to-anchor', gatsby.closest('body'))
+    if (scrollToAnchor) {
+      scrollToAnchor.eventStart()
+    }
   }
 }
 

@@ -1,11 +1,7 @@
 ---
 type: "Themes"
-category: "By Component"
-parent: "Slider"
-title: "industrial-hero-v1"
+category: "By Type"
+parent: "Featured"
+title: "Featured"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-date: "2020-01-24"
-demos: [
-  "iframe/themes/industrial-hero-v1"
-]
 ---

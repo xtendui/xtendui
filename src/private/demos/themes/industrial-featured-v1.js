@@ -4,7 +4,7 @@ import 'xtend-library/src/extensions/slider/slider.js'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '#iframe--industrial-hero-v1 body .slider', // add your own selector instead of body to contain the code
+  matches: '#iframe--industrial-featured-v1 body .slider', // add your own selector instead of body to contain the code
   mount: object => {
     // vars
 
@@ -28,8 +28,6 @@ Xt.mount.push({
     const cardTime = Xt.vars.timeLarge
     const cardEase = 'expo.out'
 
-    const fixDelayOn = 100
-
     // slider
 
     let self = new Xt.Slider(object, {
@@ -37,7 +35,7 @@ Xt.mount.push({
         elements: true,
         elementsInner: true,
       },
-      durationOn: Xt.vars.timeLarge + fixDelayOn,
+      durationOn: Xt.vars.timeLarge,
       durationOff: Xt.vars.timeSmall,
       auto: {
         time: 4000,
@@ -134,10 +132,10 @@ Xt.mount.push({
             if (!self.detail.dragging) {
               gsap.set(assetMask, { x: 100 * self.direction + '%' })
             }
-            gsap.to(assetMask, { x: 0, duration: assetMaskTimeOn, ease: assetMaskEaseOn, delay: fixDelayOn })
+            gsap.to(assetMask, { x: 0, duration: assetMaskTimeOn, ease: assetMaskEaseOn })
             const assetMaskInner = assetMask.querySelector('.media-inner')
             gsap.set(assetMaskInner, { x: -100 * self.direction + '%' })
-            gsap.to(assetMaskInner, { x: 0, opacity: 1, duration: assetMaskTimeOn, ease: assetMaskEaseOn, delay: fixDelayOn })
+            gsap.to(assetMaskInner, { x: 0, opacity: 1, duration: assetMaskTimeOn, ease: assetMaskEaseOn })
           }
           // asset
           const assets = tr.querySelectorAll('.slide_asset img')
@@ -145,7 +143,7 @@ Xt.mount.push({
             if (!self.detail.dragging) {
               gsap.set(asset, { scale: 1 + assetZoom })
             }
-            gsap.to(asset, { scale: 1, duration: assetTimeOn, ease: assetEaseOn, delay: fixDelayOn })
+            gsap.to(asset, { scale: 1, duration: assetTimeOn, ease: assetEaseOn })
           }
           // cardContent
           const cardContents = tr.querySelectorAll('.slide_card .card-item')
@@ -153,7 +151,7 @@ Xt.mount.push({
             if (!self.detail.dragging) {
               gsap.set(cardContent, { x: cardContentX * self.direction, opacity: 0 })
             }
-            gsap.to(cardContent, { x: 0, opacity: 1, duration: cardContentTimeOn, ease: cardContentEaseOn, delay: fixDelayOn })
+            gsap.to(cardContent, { x: 0, opacity: 1, duration: cardContentTimeOn, ease: cardContentEaseOn })
           }
           // card
           const card = tr.querySelector('.slide_card > .card')
@@ -161,7 +159,7 @@ Xt.mount.push({
           if (!self.detail.dragging) {
             gsap.set(card, { height: Xt.dataStorage.get(self.object, 'cardHeight') || cardHeight })
           }
-          gsap.to(card, { height: cardHeight, duration: cardTime, ease: cardEase, delay: fixDelayOn })
+          gsap.to(card, { height: cardHeight, duration: cardTime, ease: cardEase })
         }
       }
     }
