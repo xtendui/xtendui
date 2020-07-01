@@ -683,17 +683,29 @@ class Slider extends Xt.Toggle {
         dragger,
         () => {
           if (options.jump) {
-            const draggerTranslate = Xt.getTranslate(self.dragger)[0]
-            for (const target of self.targets) {
-              const slideLeft = Xt.dataStorage.get(target, self.componentNamespace + 'SlideLeft')
-              const slideWidth = Xt.dataStorage.get(target, self.componentNamespace + 'SlideWidth')
-              const slideBound = slideLeft + slideWidth
-              if (slideLeft < -draggerTranslate || slideBound > window.innerWidth - draggerTranslate) {
-                target.classList.add('xt-links-none')
-                target.classList.remove('xt-jumps-none')
-              } else {
-                target.classList.add('xt-jumps-none')
-                target.classList.remove('xt-links-none')
+            if (options.jumpOverflow) {
+              const draggerTranslate = Xt.getTranslate(self.dragger)[0]
+              for (const target of self.targets) {
+                const slideLeft = Xt.dataStorage.get(target, self.componentNamespace + 'SlideLeft')
+                const slideWidth = Xt.dataStorage.get(target, self.componentNamespace + 'SlideWidth')
+                const slideBound = slideLeft + slideWidth
+                if (slideLeft < -Math.ceil(draggerTranslate) || slideBound > self.detail.draggerWidth - draggerTranslate) {
+                  target.classList.add('xt-links-none')
+                  target.classList.remove('xt-jumps-none')
+                } else {
+                  target.classList.add('xt-jumps-none')
+                  target.classList.remove('xt-links-none')
+                }
+              }
+            } else {
+              for (const target of self.targets) {
+                if (!target.classList.contains(...self.classes)) {
+                  target.classList.add('xt-links-none')
+                  target.classList.remove('xt-jumps-none')
+                } else {
+                  target.classList.add('xt-jumps-none')
+                  target.classList.remove('xt-links-none')
+                }
               }
             }
           }
@@ -1255,6 +1267,7 @@ Slider.optionsDefault = {
   class: 'active active-slider',
   loop: true,
   jump: true,
+  jumpOverflow: false,
   navigation: '[data-xt-nav]',
   wheel: {
     selector: false,

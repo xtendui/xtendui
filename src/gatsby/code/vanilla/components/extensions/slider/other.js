@@ -1,5 +1,5 @@
 import path from 'path'
-const markupSlider = require('components/snippets/components/markup-slider-others').default
+const markupSlider = require('components/snippets/components/markup-slider-other').default
 const indentString = require('indent-string')
 
 const filename = __filename.replace(/\\/g, '/')
@@ -10,8 +10,8 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="slider"
-    data-xt-slider="{ loop: false, jump: false, autoHeight: '.slides' }">
+<div class="slider demo--slider-other"
+    data-xt-slider="{ loop: false, jumpOverflow: true, autoHeight: '.slides' }">
   ${indentString(markupSlider(), 2)}
 </div>
 `

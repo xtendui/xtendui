@@ -2,7 +2,7 @@
 type: "Components"
 category: "Extensions"
 parent: "Slider"
-title: "Option Various"
+title: "Activation"
 date: "2019-11-05"
 ---
 

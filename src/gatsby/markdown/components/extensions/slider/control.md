@@ -2,7 +2,7 @@
 type: "Components"
 category: "Extensions"
 parent: "Slider"
-title: "Option Control"
+title: "Control"
 date: "2019-11-10"
 ---
 
@@ -85,7 +85,9 @@ You can add navigation with `navigation: QuerySelector`, set the amount to add (
 
 </div>
 
-#### Friction @TODO
+#### Friction
+
+@TODO
 
 You can set friction with `drag: { friction: Function }`, for example `(velocity) => {return Math.pow(velocity, 0.9)}`.
 
@@ -101,7 +103,9 @@ You can disable friction with `drag: { friction: false }`.
 
 </div>
 
-#### Overflow @TODO
+#### Overflow
+
+@TODO
 
 You can set overflow with `drag: { overflow: Function }`, for example `(overflow) => {return Math.pow(overflow, 0.73)}`.
 
@@ -158,6 +162,7 @@ Disable the jump feature (clicking on not activated slides jumps to the slide) w
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `loop:Boolean`                          | `true`        | Loop activation            |
 | Option                  | `jump:Boolean`                          | `true`        | Clicking on targets triggers activation            |
+| Option                  | `jumpOverflow:Boolean`                          | `false`        | Jump only activates if slide overflow dragger            |
 
 </div>
 

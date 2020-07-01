@@ -2,7 +2,7 @@
 type: "Components"
 category: "Extensions"
 parent: "Slider"
-title: "Option Position"
+title: "Position"
 date: "2019-11-20"
 ---
 
@@ -70,7 +70,7 @@ With `groupMq: { MediaQuery: Number }` you set a decimal number from 0 to 1 to g
   </demovanilla>
 </demo>
 
-#### Wrap
+## Wrap
 
 You can wrap the slides with `drag: { wrap: true }`. With `drag.wrap` you have to set `loop: true` and you can't use `contain: true`.
 
