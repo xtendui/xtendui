@@ -910,6 +910,21 @@ class Slider extends Xt.Toggle {
       self.detail.dragCurrent = e.touches[0].clientX
       self.detail.dragCurrentOther = e.touches[0].clientY
     }
+    // check threshold
+    const dragDist = Math.abs(self.detail.dragStart - self.detail.dragCurrent)
+    const dragDistOther = Math.abs(self.detail.dragStartOther - self.detail.dragCurrentOther)
+    if (dragDist > options.drag.thresholdLink) {
+      // disable links
+      dragger.classList.add('xt-links-none')
+      dragger.classList.add('xt-jumps-none')
+    }
+    if (dragDistOther > options.drag.thresholdOther && dragDistOther > dragDist) {
+      // block drag if scrolling
+      return
+    } else if (e.cancelable) {
+      // block scrolling if dragging
+      e.preventDefault()
+    }
     // calculate
     let dragPos = self.detail.dragPosReal
     const dragPosCurrent = self.detail.dragPosCurrent || 0
@@ -942,21 +957,6 @@ class Slider extends Xt.Toggle {
     // val
     self.detail.dragPosReal = dragPos
     self.detail.dragCurrentReal = self.detail.dragCurrent
-    // check threshold
-    const dragDist = Math.abs(dragPos - dragPosCurrent)
-    const dragDistOther = Math.abs(self.detail.dragStartOther - self.detail.dragCurrentOther)
-    if (dragDist > options.drag.thresholdLink) {
-      // disable links
-      dragger.classList.add('xt-links-none')
-      dragger.classList.add('xt-jumps-none')
-    }
-    if (dragDistOther > options.drag.thresholdOther && dragDistOther > dragDist) {
-      // block drag if scrolling
-      return
-    } else if (e.cancelable) {
-      // block scrolling if dragging
-      e.preventDefault()
-    }
     // overflow
     if (options.drag.overflow) {
       const arr = self.targets.filter(x => !x.classList.contains('xt-wrap'))
