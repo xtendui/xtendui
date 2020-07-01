@@ -566,7 +566,7 @@ class Slider extends Xt.Toggle {
     const dragHandler = Xt.dataStorage.put(dragger, 'mousemove touchmove/drag' + '/' + self.namespace, self.eventDragHandler.bind(self).bind(self, dragger))
     const events = ['mousemove', 'touchmove']
     for (const event of events) {
-      dragger.addEventListener(event, dragHandler, { passive: true })
+      dragger.addEventListener(event, dragHandler)
     }
     // logic
     self.logicDragstart(dragger, e)
@@ -862,14 +862,6 @@ class Slider extends Xt.Toggle {
       self.detail.dragCurrent = e.touches[0].clientX
       self.detail.dragCurrentOther = e.touches[0].clientY
     }
-    // check threshold
-    const dragDist = self.detail.dragPosReal - self.detail.dragPosCurrent
-    if (Math.abs(dragDist) <= options.drag.linkThreshold) {
-      // check other threshold
-      if (Math.abs(self.detail.dragStartOther - self.detail.dragCurrentOther) > options.drag.linkThreshold) {
-        return
-      }
-    }
     // logic
     self.logicDragfriction(dragger, e)
   }
@@ -965,18 +957,20 @@ class Slider extends Xt.Toggle {
     // val
     self.detail.dragPosReal = dragPos
     self.detail.dragCurrentReal = self.detail.dragCurrent
-    self.detail.dragCurrentRealY = self.detail.dragCurrentY
     // check threshold
-    const dragDist = dragPos - dragPosCurrent
-    if (Math.abs(dragDist) <= options.drag.linkThreshold) {
-      // check other threshold
-      if (Math.abs(self.detail.dragStartOther - self.detail.dragCurrentOther) > options.drag.linkThreshold) {
-        return
-      }
-    } else {
+    const dragDist = Math.abs(dragPos - dragPosCurrent)
+    const dragDistOther = Math.abs(self.detail.dragStartOther - self.detail.dragCurrentOther)
+    if (dragDist > options.drag.thresholdLink) {
       // disable links
       dragger.classList.add('xt-links-none')
       dragger.classList.add('xt-jumps-none')
+    }
+    if (dragDistOther > options.drag.thresholdOther && dragDistOther > dragDist) {
+      // block drag if scrolling
+      return
+    } else if (e.cancelable) {
+      // block scrolling if dragging
+      e.preventDefault()
     }
     // overflow
     if (options.drag.overflow) {
@@ -1041,7 +1035,7 @@ class Slider extends Xt.Toggle {
     // activation or reset
     const dragDist = self.detail.dragPosReal - dragPosCurrent
     const direction = Math.sign(dragDist)
-    if (Math.abs(dragDist) > options.drag.threshold) {
+    if (Math.abs(dragDist) > options.drag.thresholdChange) {
       // get nearest
       let found = self.currentIndex
       if (found === 0 && direction > 0) {
@@ -1291,8 +1285,9 @@ Slider.optionsDefault = {
     dragger: '.slides-inner',
     wrap: false,
     manual: false,
-    threshold: 5,
-    linkThreshold: 5,
+    thresholdChange: 5,
+    thresholdOther: 5,
+    thresholdLink: 5,
     factor: 1,
     friction: false,
     /*
