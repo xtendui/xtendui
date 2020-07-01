@@ -159,11 +159,13 @@ class Slider extends Xt.Toggle {
     let wrapFirstCountIteration = 0
     if (self.dragger && options.drag.wrap) {
       const container = self.targets[0].parentNode
-      if (!options.loop) {
-        console.error('Error: Xt.Slider needs "loop": true when using "drag": {"wrap": true}', self.object)
-      }
-      if (options.contain) {
-        console.error('Error: Xt.Slider cannot use "contain": true when using "drag": {"wrap": true}', self.object)
+      if (Xt.debug === true) {
+        if (!options.loop) {
+          console.debug('Xt.debug: Xt.Slider needs "loop": true when using "drag": {"wrap": true}', self.object)
+        }
+        if (options.contain) {
+          console.debug('Xt.debug: Xt.Slider cannot use "contain": true when using "drag": {"wrap": true}', self.object)
+        }
       }
       const cloneSlide = slide => {
         const cloned = slide.cloneNode(true)
@@ -1276,9 +1278,9 @@ Slider.optionsDefault = {
     labelledby: false,
   },
   // slider only
-  autoHeight: '.slides',
+  autoHeight: false,
   keepHeight: false,
-  groupMq: { all: 0.8 },
+  groupMq: false,
   align: 'center',
   contain: false,
   pagination: '.slider-pagination',

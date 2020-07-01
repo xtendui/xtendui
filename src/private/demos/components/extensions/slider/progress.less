@@ -3,10 +3,12 @@
     .mouse-follow() !important;
     // disable on touch
     @media (hover: none) {
-      top: 100% !important;
+      position: absolute !important;
+      top: auto !important;
+      bottom: 0 !important;
       left: 0 !important;
-      margin-top: -25px !important;
-      margin-left: 0 !important;
+      margin: 0 !important;
+      .transform-none() !important;
     }
   }
 }

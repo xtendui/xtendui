@@ -332,7 +332,7 @@ const populateDemo = (container, i) => {
       if (!self.initial) {
         // triggering e.detail.container
         requestAnimationFrame(() => {
-          dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: item.querySelector('.gatsby_demo_source') } }))
+          dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: item.querySelector('.gatsby_demo_source'), delay: 0 } }))
         })
       }
       // only if demo opened

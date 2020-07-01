@@ -26,7 +26,6 @@ if (typeof window !== 'undefined') {
   require('xtend-library/src/private/demos/components/extensions/scroll/parallax.js')
   require('xtend-library/src/private/demos/components/extensions/slider/events-methods.js')
   require('xtend-library/src/private/demos/components/extensions/slider/progress.js')
-  require('xtend-library/src/private/demos/components/extensions/slider/toggle-js.js')
   require('xtend-library/src/private/demos/test/demo-vanilla-iframe.js')
   require('xtend-library/src/private/demos/test/demo-vanilla.js')
   require('xtend-library/src/private/demos/themes/brands-infinite-v1.js')

@@ -2,13 +2,29 @@
 type: "Components"
 category: "Extensions"
 parent: "Slider"
-title: "Other"
-date: "2019-03-15"
+title: "Option Various"
+date: "2019-11-05"
 ---
 
-## No drag
+## Media loaded
 
-Disable slider drag and cursor grab with `.slider-nodrag`.
+When the **slide width** depend on inner images size, you need to reinit the slider when the media is loaded and the **width** of the image is calculated.
+
+If you want to animate with css use the `.xt-medialoaded` class or with js use the event `medialoaded.xt`.
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Default                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `mediaLoaded:Boolean`                          | `false`        | Add the class `.xt-medialoaded` on img loaded             |
+| Option                  | `mediaLoadedReinit:Boolean`                          | `false`        | Reinit slider on img loaded after a delay set with `Xt.medialoadedDelay`             |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/extensions/slider/media-loaded">
+  </demovanilla>
+</demo>
 
 ## Overflow auto
 
@@ -46,17 +62,6 @@ Disable this behaviour with `overflowAuto: false`.
   </demovanilla>
 </demo>
 
-## Disable
-
-You can disable slider using `.slider-disable` (resize to mobile to see it in action).
-
-It also hides automatically **pagination** and **navigation** **wrap** and slides not `active`.
-
-<demo>
-  <demovanilla src="vanilla/components/extensions/slider/disable">
-  </demovanilla>
-</demo>
-
 ## Expand
 
 To disable and expand a slider use `.slider-expand` also within media queries.
@@ -72,5 +77,16 @@ Use `.slider-touch-overflow` to have browser overflow on touch devices (use touc
 
 <demo>
   <demovanilla src="vanilla/components/extensions/slider/touch-overflow">
+  </demovanilla>
+</demo>
+
+## Disable
+
+You can disable slider using `.slider-disable` (resize to mobile to see it in action).
+
+It also hides automatically **pagination** and **navigation** **wrap** and slides not `active`.
+
+<demo>
+  <demovanilla src="vanilla/components/extensions/slider/disable">
   </demovanilla>
 </demo>

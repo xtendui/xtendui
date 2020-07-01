@@ -21,10 +21,10 @@ Xt.mount.push({
     // slider
 
     let self = new Xt.Slider(object, {
+      align: 'left',
       auto: {
         time: 4000,
       },
-      align: 'left',
       autoHeight: false,
       groupMq: false,
       drag: {
