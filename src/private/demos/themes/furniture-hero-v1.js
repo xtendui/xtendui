@@ -13,6 +13,7 @@ Xt.mount.push({
     const assetMaskEaseOn = 'quint.inOut'
     const assetMaskTimeOff = Xt.vars.timeBig
     const assetMaskEaseOff = 'quint.inOut'
+    const assetMaskEaseDragging = 'quint.out'
 
     const assetZoom = 0.25
     const assetTime = Xt.vars.timeBig
@@ -163,12 +164,12 @@ Xt.mount.push({
           if (!self.detail.dragging) {
             gsap.set(assetMask, { x: 100 * self.direction + '%' })
           }
-          gsap.to(assetMask, { x: 0, duration: assetMaskTimeOn, ease: assetMaskEaseOn })
+          gsap.to(assetMask, { x: 0, duration: assetMaskTimeOn, ease: self.detail.dragging ? assetMaskEaseDragging : assetMaskEaseOn })
           const assetMaskInner = assetMask.querySelector('.slide_inner')
           if (!self.detail.dragging) {
             gsap.set(assetMaskInner, { x: -((100 * self.direction) / 2) + '%' })
           }
-          gsap.to(assetMaskInner, { x: 0, duration: assetMaskTimeOn, ease: assetMaskEaseOn })
+          gsap.to(assetMaskInner, { x: 0, duration: assetMaskTimeOn, ease: self.detail.dragging ? assetMaskEaseDragging : assetMaskEaseOn })
           // asset
           const asset = tr.querySelector('.slide_asset img')
           if (!self.detail.dragging) {
@@ -213,9 +214,9 @@ Xt.mount.push({
       if (self.targets.includes(tr)) {
         // assetMask
         const assetMask = tr.querySelector('.slide_item')
-        gsap.to(assetMask, { x: -100 * self.direction + '%', duration: assetMaskTimeOff, ease: assetMaskEaseOff })
+        gsap.to(assetMask, { x: -100 * self.direction + '%', duration: assetMaskTimeOff, ease: self.detail.dragging ? assetMaskEaseDragging : assetMaskEaseOff })
         const assetMaskInner = assetMask.querySelector('.slide_inner')
-        gsap.to(assetMaskInner, { x: (100 * self.direction) / 2 + '%', duration: assetMaskTimeOff, ease: assetMaskEaseOff })
+        gsap.to(assetMaskInner, { x: (100 * self.direction) / 2 + '%', duration: assetMaskTimeOff, ease: self.detail.dragging ? assetMaskEaseDragging : assetMaskEaseOff })
       }
     }
 

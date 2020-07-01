@@ -31,6 +31,7 @@ class Page extends React.Component {
           <li>extremely customizable and designed for building custom websites with complex interactions</li>
           <li>UI framework for custom styling, interactions and animations</li>
           <li>modular css and javascript for html apps with an ecosystem of vanilla js plugins</li>
+          <li>markup to support complex animations and styling</li>
           <li>vanilla html components with less and js componentization with imports</li>
           <li>does the general hard work for you, so you have time to work on advanced interactions and animations</li>
           <li>(vanilla &gt; simple &gt; custom) library with extensible (markup &gt; styles &gt; javascript)</li>
