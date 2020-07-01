@@ -72,18 +72,10 @@ Xt.mount.push({
       const tr = e.target
       // useCapture delegation
       if (self.targets.includes(tr)) {
-        if (self.initial) {
-          // content
-          const content = tr.querySelector('.slide_asset .media-container')
-          gsap.set(content, { x: 0, opacity: 1, scale: 1 })
-          gsap.to(content, { scale: 1 + contentZoom, duration: contentZoomTime, ease: contentZoomEase, repeat: -1, yoyo: true })
-        } else {
-          // content
-          const content = tr.querySelector('.slide_asset .media-container')
-          gsap.to(content, { x: 0, opacity: 1, duration: contentTimeOn, ease: contentEaseOn }).eventCallback('onComplete', () => {
-            gsap.to(content, { scale: 1 + contentZoom, duration: contentZoomTime, ease: contentZoomEase, repeat: -1, yoyo: true })
-          })
-        }
+        // content
+        const content = tr.querySelector('.slide_asset .media-container')
+        gsap.set(content, { x: 0, opacity: 1, scale: 1 })
+        gsap.to(content, { scale: 1 + contentZoom, duration: contentZoomTime, ease: contentZoomEase, repeat: -1, yoyo: true })
       }
     }
 
@@ -99,10 +91,7 @@ Xt.mount.push({
         // content
         const content = tr.querySelector('.slide_asset .media-container')
         gsap
-          .to(content, { x: size * self.direction, opacity: 0.5, scale: 1, duration: contentTimeOff, ease: contentEaseOff })
-          .eventCallback('onComplete', () => {
-            gsap.set(content, { x: 0, opacity: 1 })
-          })
+          .to(content, { x: size * self.direction, scale: 1, opacity: 0.5, duration: contentTimeOff, ease: contentEaseOff })
       }
     }
 

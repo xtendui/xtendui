@@ -747,9 +747,11 @@ class Slider extends Xt.Toggle {
     const min = self.wrapIndex
     const max = self.wrapIndex + self.groupMqInitial.length - 1
     if (self.currentIndex < min) {
+      self.initial = true
       self.wrap = true
       self.goToNum(max + self.currentIndex - min + 1, true)
     } else if (self.currentIndex > max) {
+      self.initial = true
       self.wrap = true
       self.goToNum(min + self.currentIndex - max - 1, true)
     }
