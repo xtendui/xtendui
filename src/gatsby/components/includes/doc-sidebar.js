@@ -14,7 +14,8 @@ class DocSidebar extends React.Component {
           <nav className="gatsby_site_header_listing">
             {page.categories.category
               .sort((a, b) => {
-                return a.title === 'Addons' || a.title === 'By Component' ? -1 : b.title === 'Addons' || b.title === 'By Component' ? -1 : 1
+                const val = a.title === 'Addons' || a.title === 'By Component' ? 1 : -1
+                return val
               })
               .map((category, i) => (
                 <div key={i}>
