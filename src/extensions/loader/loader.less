@@ -23,6 +23,10 @@
         stroke-dashoffset: 628;
         transform: rotateY(0deg) rotateZ(-90deg);
         animation: anim-spinner @time-small * 2 infinite @ease-in;
+        // custom
+        .card-primary &, .btn-primary & {
+          stroke: @white;
+        }
       }
     }
     &:nth-child(2) {
@@ -32,6 +36,10 @@
       circle {
         stroke: fade(@accent, 5%);
         stroke-dashoffset: 0;
+        // custom
+        .card-primary &, .btn-primary & {
+          stroke: fade(@white, 5%);
+        }
       }
     }
   }
@@ -84,9 +92,17 @@
       background: linear-gradient(90deg, @grad-accent);
       box-shadow: @shadow-accent;
       animation: anim-loader-x @time-small * 2 infinite @ease-in;
+      // custom
+      .card-primary &, .btn-primary & {
+        background: linear-gradient(90deg, @grad-light);
+      }
     }
     span:nth-child(2) {
       background: fade(@accent, 5%);
+      // custom
+      .card-primary &, .btn-primary & {
+        background: fade(@white, 5%);
+      }
     }
   }
 }
@@ -98,9 +114,17 @@
       background: linear-gradient(0deg, @grad-accent);
       box-shadow: @shadow-accent;
       animation: anim-loader-y @time-small * 2 infinite @ease-in;
+      // custom
+      .card-primary &, .btn-primary & {
+        background: linear-gradient(0deg, @grad-light);
+      }
     }
     span:nth-child(2) {
       background: fade(@accent, 5%);
+      // custom
+      .card-primary &, .btn-primary & {
+        background: fade(@white, 5%);
+      }
     }
   }
 }

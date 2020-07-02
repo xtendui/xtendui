@@ -19,6 +19,8 @@ date: "2019-12-01"
 <demo>
   <demovanilla src="vanilla/components/extensions/loader/spinner">
   </demovanilla>
+  <demovanilla src="vanilla/components/extensions/loader/spinner-inverse">
+  </demovanilla>
 </demo>
 
 ## Filler
@@ -38,6 +40,8 @@ date: "2019-12-01"
   <demovanilla src="vanilla/components/extensions/loader/filler-x">
   </demovanilla>
   <demovanilla src="vanilla/components/extensions/loader/filler-y">
+  </demovanilla>
+  <demovanilla src="vanilla/components/extensions/loader/filler-inverse">
   </demovanilla>
 </demo>
 

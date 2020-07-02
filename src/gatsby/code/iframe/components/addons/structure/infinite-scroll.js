@@ -127,7 +127,7 @@ demo.htmlSource = `
        data-xt-infinite-scroll-scroll>
       <div class="list-block">
         <div class="infinite-scroll--trigger">
-          <button type="button" class="btn btn-default"
+          <button type="button" class="btn btn-primary btn-wide btn-tall"
                   data-xt-infinite-scroll-trigger>
             <span class="content">
               Show more products
