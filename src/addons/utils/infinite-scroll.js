@@ -92,12 +92,14 @@ class Infinitescroll {
   eventScroll() {
     const self = this
     // scroll
-    const top = document.scrollingElement.scrollTop
-    const bottom = self.scrollElement.offsetTop + self.scrollElement.offsetHeight
-    const height = window.innerHeight
-    if (top > bottom - height) {
-      // request
-      self.request()
+    if (!self.object.classList.contains(self.classes[0])) {
+      const top = document.scrollingElement.scrollTop
+      const bottom = self.scrollElement.offsetTop + self.scrollElement.offsetHeight
+      const height = window.innerHeight
+      if (top > bottom - height) {
+        // request
+        self.request()
+      }
     }
   }
 
@@ -111,30 +113,40 @@ class Infinitescroll {
     self.current = self.current + options.add
     if (self.current <= options.max) {
       self.current = self.current > options.max ? options.max : self.current
-      // request
-      const url = options.url + self.current
-      const request = new XMLHttpRequest()
-      request.open('GET', url, true)
-      request.onload = () => {
-        self.response(request)
-      }
-      request.onerror = () => {
-        self.response(request)
-      }
       // class
       self.object.classList.add(...self.classes)
-      // debug
-      if (Xt.debug === true) {
-        console.debug('Xt.debug: xt-infinitescroll request', request)
+      // logic
+      if (options.url) {
+        // request
+        const url = options.url + self.current
+        const request = new XMLHttpRequest()
+        request.open('GET', url, true)
+        request.onload = () => {
+          self.response(request)
+        }
+        request.onerror = () => {
+          self.response(request)
+        }
+        request.send()
+      } else {
+        // fake
+        clearTimeout(Xt.dataStorage.get(self.object, 'xt' + self.componentNamespace + 'FakeTimeout'))
+        Xt.dataStorage.set(
+          self.object,
+          'xt' + self.componentNamespace + 'FakeTimeout',
+          setTimeout(() => {
+            // func
+            const request = { responseText: self.object.outerHTML }
+            self.success(request)
+          }, 1000)
+        )
       }
-      // send
-      request.send()
     }
   }
 
   /**
    * response
-   * @param {XMLHttpRequest} request Html response
+   * @param {XMLHttpRequest|Object} request Html response
    */
   response(request) {
     const self = this
@@ -148,34 +160,36 @@ class Infinitescroll {
 
   /**
    * success
-   * @param {XMLHttpRequest} request Html response
+   * @param {XMLHttpRequest|Object} request Html response
    */
   success(request) {
     const self = this
-    const options = self.options
     // set substitute
     let html = document.createElement('html')
     html.innerHTML = request.responseText.trim()
-    let items = html.querySelector(self.options.elements.items)
+    let items = html.querySelector(self.options.elements.items).querySelectorAll(':scope > *')
     // populate dom
-    self.itemsElement.append(Xt.createElement(items.innerHTML))
+    for(const item of items) {
+      self.itemsElement.querySelector(':scope > *:last-child').after(item)
+    }
+    // class
+    self.object.classList.remove(...self.classes)
+    // paginate
+    self.paginate()
+    // debug
+    if (Xt.debug === true) {
+      console.debug('Xt.debug: xt-infinitescroll request success', request)
+    }
     // garbage collector
     html = null
     items = null
-    // class
-    self.object.classList.remove(...self.classes)
-    if (self.current >= options.max) {
-      self.object.classList.add(...self.classesNoMore)
-    }
-    // paginate
-    self.paginate()
     // listener dispatch
     self.object.dispatchEvent(new CustomEvent('replace.xt.infinitescroll'))
   }
 
   /**
    * error
-   * @param {XMLHttpRequest} request Html response
+   * @param {XMLHttpRequest|Object} request Html response
    */
   error(request) {
     const self = this
@@ -199,6 +213,10 @@ class Infinitescroll {
     }
     for (const el of self.object.querySelectorAll('[data-xt-infinitescroll-num]')) {
       el.innerHTML = self.current
+    }
+    // class
+    if (self.current >= options.max) {
+      self.object.classList.add(...self.classesNoMore)
     }
   }
 
@@ -230,7 +248,8 @@ class Infinitescroll {
 
 Infinitescroll.componentName = 'xt-infinitescroll'
 Infinitescroll.optionsDefault = {
-  current: 0,
+  url: false,
+  current: 1,
   add: 1,
   max: 'Infinity',
   class: 'infinite-scroll-loading',

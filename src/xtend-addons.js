@@ -11,4 +11,5 @@ if (typeof window !== 'undefined') {
   require('xtend-library/src/addons/test.js')
   require('xtend-library/src/addons/toggle/multilevel.js')
   require('xtend-library/src/addons/utils/google-locator.js')
+  require('xtend-library/src/addons/utils/infinite-scroll.js')
 }
