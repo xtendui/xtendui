@@ -1,0 +1,134 @@
+@import 'xtend-library/src/extensions/loader/loader.less';
+
+#iframe--infinite-scroll {
+//##START
+/**
+  * .block-listing
+  */
+
+.block-listing {
+}
+
+.block-listing_inner {
+  > .row {
+    .row-space(small);
+    .row-space(medium, sm);
+  }
+}
+
+.block-listing_col {
+  .col(12);
+  .col(6, sm);
+  .col(4, lg);
+}
+
+.block-listing_col--big {
+  .col(12, sm);
+  .col(12, lg);
+}
+
+.block-listing_item {
+  .link-none();
+  .full();
+  .text-default() !important;
+}
+
+.block-listing_img {
+  .media-container {
+    .padding(bottom, 75%);
+    background: @shade-200;
+  }
+}
+
+.block-listing_col--big {
+  .block-listing_img {
+    .media-container {
+      @media @min-sm {
+        padding-bottom: 37.5%;
+      }
+    }
+  }
+}
+
+.block-listing_content {
+  .padding(y, medium);
+}
+
+.block-listing_title {
+  .spacing-medium();
+  .font-sans-semibold();
+  .line-height-small();
+  font-size: 1.8rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.block-listing_price {
+  .font-sans-semibold();
+  .line-height-small();
+  font-size: 1.4rem;
+  letter-spacing: 0.1em;
+  text-transform: none;
+}
+
+/**
+ * .infinite-scroll
+ */
+
+.infinite-scroll {
+  .margin(top, big);
+  > .list-block {
+    .list-space(tiny);
+    align-items: center;
+  }
+}
+
+.infinite-scroll--more {
+  .font-sans-semibold();
+  font-size: 12px;
+  letter-spacing: .05em;
+}
+
+.infinite-scroll--spinner {
+  .loader-animated.out();
+}
+.infinite-scroll-loading {
+  .infinite-scroll--spinner {
+    .loader-animated.in();
+  }
+}
+
+[data-xt-infinitescroll-trigger] {
+  .content-nomore {
+    display: none;
+  }
+  .content {
+    transition: transform @time-small @ease-out-expo, opacity @time-small @ease-out-expo;
+  }
+}
+
+.infinite-scroll-loading {
+  [data-xt-infinitescroll-trigger] {
+    pointer-events: none;
+    > .content {
+      opacity: 0;
+      transform: translateY(1rem);
+      transition: transform @time-small @ease-out-expo, opacity @time-small @ease-out-expo;
+    }
+  }
+}
+
+.infinite-scroll-nomore {
+  [data-xt-infinitescroll-trigger] {
+    .disabled();
+    pointer-events: none;
+    .content {
+      display: none;
+    }
+    .content-nomore {
+      display: block;
+    }
+  }
+}
+//##END
+}
