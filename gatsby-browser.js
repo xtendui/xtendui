@@ -27,21 +27,7 @@ exports.onRouteUpdate = () => {
     sidebarArticle.scrollTop = keepSidebarScroll
   }
   // scrollSidebarToContent
-  requestAnimationFrame(() => {
-    let sidebarActive = document.querySelector('.gatsby_btn-site_article_sidebar--sub.active')
-    if (sidebarActive) {
-      const add = 25
-      sidebarActive = sidebarActive.closest('.gatsby_site_header_item_container')
-      const sidebarActiveTop = sidebarActive.getBoundingClientRect().top + sidebarArticle.scrollTop
-      const sidebarActiveBottom = sidebarActiveTop + sidebarActive.offsetHeight
-      if (sidebarArticle.scrollTop > sidebarActiveTop) {
-        sidebarArticle.scrollTop = sidebarActiveTop - add
-      }
-      if (sidebarArticle.scrollTop + sidebarArticle.offsetHeight < sidebarActiveBottom) {
-        sidebarArticle.scrollTop = sidebarActiveBottom - sidebarArticle.offsetHeight + add
-      }
-    }
-  })
+  require('assets/scripts/gatsby.js').gatsbySidebar()
   // @FIX popstate #gatbsy_open-full
   for (const link of document.querySelectorAll('.gatsby_btn-site_article_sidebar.active')) {
     link.addEventListener('click', e => {
@@ -55,8 +41,5 @@ exports.onRouteUpdate = () => {
 
 exports.shouldUpdateScroll = ({ routerProps: { location }, getSavedScrollPosition }) => {
   // prevent scroll on href="#" or role="button"
-  if (location.href === window.location.href) {
-    return false
-  }
-  return true
+  return location.href !== window.location.href;
 }

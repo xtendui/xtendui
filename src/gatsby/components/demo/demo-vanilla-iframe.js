@@ -13,9 +13,7 @@ class DemoVanillaIframe extends React.Component {
     const seo = {}
     seo.title = demo.name
     seo.description = 'Demo'
-    console.log(demo.dirs)
     demo.path = `private/demos/${demo.dirs.join('/')}/${demo.name}`.replace('/iframe', '').replace('src/gatsby/code/', '')
-    console.log(demo.path)
     return (
       <StaticQuery
         query={graphql`
