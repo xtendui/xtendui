@@ -9,7 +9,7 @@ import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
 export const demo = {
-  container: false,
+  container: true,
   full: false,
   name: path.basename(filename, '.js'),
   dirs: dirs,

@@ -96,7 +96,7 @@ class Infinitescroll {
       const top = document.scrollingElement.scrollTop
       const bottom = self.scrollElement.offsetTop + self.scrollElement.offsetHeight
       const height = window.innerHeight
-      if (top > bottom - height) {
+      if (top >= bottom - height) {
         // request
         self.request()
       }
