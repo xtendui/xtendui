@@ -38,11 +38,15 @@
     .full();
     .toggle-block();
     // animation
-    .anim-x();
-    animation-duration: @time-tiny;
+    .anim-x-inverse();
+    animation-duration: @time-tiny !important;
     &.inverse {
-      .anim-x-inverse();
-      animation-duration: @time-tiny;
+      .anim-x();
+      animation-duration: @time-tiny !important;
+    }
+    &.initial {
+      opacity: 1 !important;
+      .animation-none() !important;
     }
   }
 }
