@@ -269,7 +269,8 @@ class Slider extends Xt.Toggle {
         item.appendChild(clone)
         let html = item.innerHTML
         const classes = []
-        if (html.search(new RegExp('xt-content', 'ig')) !== -1) {
+        let regex = new RegExp('xt-content', 'ig')
+        if (html.search(regex) !== -1) {
           let replace = ''
           for (const slide of group) {
             const content = slide.querySelector('.slide-pagination-content')
@@ -281,13 +282,15 @@ class Slider extends Xt.Toggle {
               classes.push(attr.getAttribute('data-slide-pagination-class'))
             }
           }
-          html = html.replace(new RegExp('xt-content', 'ig'), replace)
+          html = html.replace(regex, replace)
         }
-        if (html.search(new RegExp('xt-num', 'ig')) !== -1) {
-          html = html.replace(new RegExp('xt-num', 'ig'), (i - self.wrapIndex + 1).toString())
+        regex = new RegExp('xt-num', 'ig')
+        if (html.search(regex) !== -1) {
+          html = html.replace(regex, (i - self.wrapIndex + 1).toString())
         }
-        if (html.search(new RegExp('xt-tot', 'ig')) !== -1) {
-          html = html.replace(new RegExp('xt-tot', 'ig'), self.groupMqInitial.length.toString())
+        regex = new RegExp('xt-tot', 'ig')
+        if (html.search(regex) !== -1) {
+          html = html.replace(regex, self.groupMqInitial.length.toString())
         }
         item.innerHTML = html
         if (classes.length) {

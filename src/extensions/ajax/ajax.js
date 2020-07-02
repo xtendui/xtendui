@@ -243,7 +243,7 @@ class Ajax extends Xt.Toggle {
       }
       // debug
       if (Xt.debug === true) {
-        console.debug('Xt.debug: xt-ajax request', url)
+        console.debug('Xt.debug: xt-ajax request', request)
       }
       // send
       request.send()
@@ -261,7 +261,7 @@ class Ajax extends Xt.Toggle {
   ajaxResponse(element, url, request, date) {
     const self = this
     // listener dispatch
-    self.object.dispatchEvent(new CustomEvent('response.xt'))
+    self.object.dispatchEvent(new CustomEvent('response.xt.ajax'))
     // duration
     self.detail.requestDuration -= new Date() - date
     if (self.detail.requestDuration > 0) {
@@ -299,7 +299,7 @@ class Ajax extends Xt.Toggle {
     const options = self.options
     // debug
     if (Xt.debug === true) {
-      console.debug('Xt.debug: xt-ajax request success', url)
+      console.debug('Xt.debug: xt-ajax request success', request)
     }
     // set substitute
     let html = document.createElement('html')
@@ -316,7 +316,7 @@ class Ajax extends Xt.Toggle {
     html = null
     replace = null
     // listener dispatch
-    self.object.dispatchEvent(new CustomEvent('replace.xt'))
+    self.object.dispatchEvent(new CustomEvent('replace.xt.ajax'))
     // reinit
     if (!self.initial && date === self.detail.requestDate) {
       // fix fast change page
@@ -337,12 +337,12 @@ class Ajax extends Xt.Toggle {
     const self = this
     // debug
     if (Xt.debug === true) {
-      console.debug('Xt.debug: xt-ajax request failed', url)
+      console.debug('Xt.debug: xt-ajax request failed', request)
     }
     // reinit currents
     self.initStart()
     // listener dispatch
-    self.object.dispatchEvent(new CustomEvent('replace.xt'))
+    self.object.dispatchEvent(new CustomEvent('replace.xt.ajax'))
   }
 
   /**
