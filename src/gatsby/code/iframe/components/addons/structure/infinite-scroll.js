@@ -17,12 +17,12 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="block-listing"
-    data-xt-infinitescroll="{ max: 2 }">
+    data-xt-infinite-scroll="{ max: 2 }">
   <div class="container">
   
     <div class="block-listing_inner">
       <div class="row"
-        data-xt-infinitescroll-items>
+        data-xt-infinite-scroll-items>
 
         <div class="block-listing_col">
           <a href="#" class="block-listing_item">
@@ -124,11 +124,11 @@ demo.htmlSource = `
     </div>
     
     <div class="infinite-scroll"
-       data-xt-infinitescroll-scroll>
+       data-xt-infinite-scroll-scroll>
       <div class="list-block">
         <div class="infinite-scroll--trigger">
           <button type="button" class="btn btn-default"
-                  data-xt-infinitescroll-trigger>
+                  data-xt-infinite-scroll-trigger>
             <span class="content">
               Show more products
             </span>
@@ -143,7 +143,7 @@ demo.htmlSource = `
           </button>
         </div>
         <div class="infinite-scroll--more">
-          Page <span data-xt-infinitescroll-num></span> of <span data-xt-infinitescroll-tot></span>
+          Page <span data-xt-infinite-scroll-num></span> of <span data-xt-infinite-scroll-tot></span>
         </div>
       </div>
     </div>

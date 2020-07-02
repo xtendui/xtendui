@@ -14,24 +14,24 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="googlelocator demo--googlelocator">
+<div class="google-locator demo--google-locator">
 
-  <div class="googlelocator_aside">
+  <div class="google-locator_aside">
 
-    <div class="googlelocator_aside_head">
+    <div class="google-locator_aside_head">
       <div class="form-default">
 
         <div class="form-group">
           <div class="group full">
             <input type="text" class="form-item" placeholder="Search"
-                   data-xt-googlelocator-search-input>
+                   data-xt-google-locator-search-input>
             <span class="group-inner">
-              <button type="button" class="btn btn-default" data-xt-googlelocator-locate-btn="Locate">
+              <button type="button" class="btn btn-default" data-xt-google-locator-locate-btn="Locate">
                 <span class="icon-xt-locate icon-big"></span>
               </button>
             </span>
             <span class="group-inner">
-              <button type="button" class="btn btn-primary" data-xt-googlelocator-search-btn>
+              <button type="button" class="btn btn-primary" data-xt-google-locator-search-btn>
                 <span class="icon-xt-search icon-big"></span>
               </button>
             </span>
@@ -39,33 +39,33 @@ demo.htmlSource = `
         </div>
 
         <div class="form-group">
-          <input type="radio" id="googlelocator-options-all" name="googlelocator-options" value="" checked
-                 data-xt-googlelocator-option/>
-          <label class="form-label" for="googlelocator-options-all">
+          <input type="radio" id="google-locator-options-all" name="google-locator-options" value="" checked
+                 data-xt-google-locator-option/>
+          <label class="form-label" for="google-locator-options-all">
             All types
           </label>
         </div>
 
         <div class="form-group">
-          <input type="radio" id="googlelocator-options-restaurant" name="googlelocator-options" value="restaurant"
-                 data-xt-googlelocator-option/>
-          <label class="form-label" for="googlelocator-options-restaurant">
+          <input type="radio" id="google-locator-options-restaurant" name="google-locator-options" value="restaurant"
+                 data-xt-google-locator-option/>
+          <label class="form-label" for="google-locator-options-restaurant">
             Restaurant
           </label>
         </div>
 
         <div class="form-group">
-          <input type="radio" id="googlelocator-options-school" name="googlelocator-options" value="school"
-                 data-xt-googlelocator-option/>
-          <label class="form-label" for="googlelocator-options-school">
+          <input type="radio" id="google-locator-options-school" name="google-locator-options" value="school"
+                 data-xt-google-locator-option/>
+          <label class="form-label" for="google-locator-options-school">
             School
           </label>
         </div>
 
         <div class="form-group">
-          <input type="checkbox" id="googlelocator-options-fav" name="googlelocator-fav" value="fav"
-                 data-xt-googlelocator-option/>
-          <label class="form-label" for="googlelocator-options-fav">
+          <input type="checkbox" id="google-locator-options-fav" name="google-locator-fav" value="fav"
+                 data-xt-google-locator-option/>
+          <label class="form-label" for="google-locator-options-fav">
             Favourite
           </label>
         </div>
@@ -73,40 +73,40 @@ demo.htmlSource = `
       </div>
     </div>
 
-    <div class="googlelocator_aside_body" data-xt-googlelocator-results>
+    <div class="google-locator_aside_body" data-xt-google-locator-results>
 
-      <div class="googlelocator_result" data-xt-googlelocator-result-initial>
+      <div class="google-locator_result" data-xt-google-locator-result-initial>
         Insert your position and find a place near you
       </div>
-      <div class="googlelocator_result" data-xt-googlelocator-result-error>
+      <div class="google-locator_result" data-xt-google-locator-result-error>
         Request timed out, retry
       </div>
-      <div class="googlelocator_result" data-xt-googlelocator-result-noplace>
+      <div class="google-locator_result" data-xt-google-locator-result-noplace>
         Not a valid place
       </div>
-      <div class="googlelocator_result" data-xt-googlelocator-result-empty>
+      <div class="google-locator_result" data-xt-google-locator-result-empty>
         No place found
       </div>
-      <div class="googlelocator_result" data-xt-googlelocator-result-founds>
-        <span data-xt-googlelocator-result-found></span>
+      <div class="google-locator_result" data-xt-google-locator-result-founds>
+        <span data-xt-google-locator-result-found></span>
         places found
       </div>
 
-      <div class="googlelocator_items" data-xt-googlelocator-items>
+      <div class="google-locator_items" data-xt-google-locator-items>
 
         <script type="text/x-template">
-          <div class="googlelocator_item" tabindex="-1">
+          <div class="google-locator_item" tabindex="-1">
             <div class="list">
-              <div class="googlelocator_item_content">
-                <div class="googlelocator_item_name" data-xt-googlelocator-data="name"></div>
-                <address class="googlelocator_item_address" data-xt-googlelocator-data="address"></address>
-                <div class="googlelocator_item_additional" data-xt-googlelocator-data="additional"></div>
+              <div class="google-locator_item_content">
+                <div class="google-locator_item_name" data-xt-google-locator-data="name"></div>
+                <address class="google-locator_item_address" data-xt-google-locator-data="address"></address>
+                <div class="google-locator_item_additional" data-xt-google-locator-data="additional"></div>
               </div>
-              <a href="#" target="_blank" class="googlelocator_item_directions" title="directions" data-xt-googlelocator-data="direction">
-                <span class="googlelocator_item_directions_icon">
+              <a href="#" target="_blank" class="google-locator_item_directions" title="directions" data-xt-google-locator-data="direction">
+                <span class="google-locator_item_directions_icon">
                   <span class="icon-xt-search icon-big"></span>
                 </span>
-                <span data-xt-googlelocator-data="distance"></span>
+                <span data-xt-google-locator-data="distance"></span>
               </a>
             </div>
           </div>
@@ -118,19 +118,19 @@ demo.htmlSource = `
 
   </div>
 
-  <div class="googlelocator_main">
-    <div class="googlelocator_main_inner">
+  <div class="google-locator_main">
+    <div class="google-locator_main_inner">
 
-      <div class="googlelocator_main_map" data-xt-googlelocator-map></div>
+      <div class="google-locator_main_map" data-xt-google-locator-map></div>
 
-      <button type="button" class="btn btn-primary googlelocator_repeat" data-xt-googlelocator-repeat>
+      <button type="button" class="btn btn-primary google-locator_repeat" data-xt-google-locator-repeat>
         Search in this area
       </button>
 
     </div>
   </div>
 
-  <div class="loader loader-spinner loader-background toggle-block" data-xt-googlelocator-loader>
+  <div class="loader loader-spinner loader-background toggle-block" data-xt-google-locator-loader>
     <div class="spinner">
       ${spinner({})}
     </div>

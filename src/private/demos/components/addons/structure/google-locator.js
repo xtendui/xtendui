@@ -1,22 +1,22 @@
 /* global google */
 import { Xt } from 'xtend-library/src/xt.js'
-import 'xtend-library/src/addons/utils/google-locator.js'
+import 'xtend-library/src/addons/structure/google-locator.js'
 
 /**
- * googlelocator
+ * google-locator
  */
 
 Xt.addScript(
-  'https://maps.googleapis.com/maps/api/js?key=AIzaSyDSZt9TUgS20QyAbAAL-X3tJIKVLEaCrts&v=3&libraries=places,geometry&language=en&&region=US&callback=demoGooglelocator'
+  'https://maps.googleapis.com/maps/api/js?key=AIzaSyDSZt9TUgS20QyAbAAL-X3tJIKVLEaCrts&v=3&libraries=places,geometry&language=en&&region=US&callback=demoGoogleLocator'
 )
 
-window.demoGooglelocator = function() {
+window.demoGoogleLocator = function() {
   Xt.mount.push({
-    matches: '.demo--googlelocator',
+    matches: '.demo--google-locator',
     mount: object => {
       // init
 
-      let self = new Xt.Googlelocator(object, {
+      let self = new Xt.GoogleLocator(object, {
         events: {
           animateMarkerResultClick: google.maps.Animation.BOUNCE,
           infoWindowMarkerClick: true,

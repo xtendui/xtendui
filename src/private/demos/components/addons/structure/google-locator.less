@@ -1,10 +1,10 @@
 /**
- * googlelocator
+ * google-locator
  */
 
-.demo--googlelocator {
+.demo--google-locator {
 
-  &.googlelocator {
+  &.google-locator {
     display: flex;
     flex-wrap: wrap;
     @media @max-sm {
@@ -16,9 +16,9 @@
     }
   }
 
-  // .googlelocator_main
+  // .google-locator_main
 
-  .googlelocator_main {
+  .google-locator_main {
     position: relative;
     .flex-auto();
     min-height: 100%;
@@ -50,20 +50,20 @@
     }
   }
 
-  .googlelocator_main_inner {
+  .google-locator_main_inner {
     position: relative;
     width: 100%;
     height: 100%;
   }
 
-  .googlelocator_main_map {
+  .google-locator_main_map {
     width: 100%;
     height: 100%;
   }
 
-  // .googlelocator_aside
+  // .google-locator_aside
 
-  .googlelocator_aside {
+  .google-locator_aside {
     position: relative;
     z-index: 1;
     @media @min-sm {
@@ -79,7 +79,7 @@
     }
   }
 
-  .googlelocator_aside_head {
+  .google-locator_aside_head {
     position: relative;
     .btn-locate-store-outer {
       position: relative;
@@ -89,55 +89,55 @@
     border-bottom: 1px solid @shade-100;
   }
 
-  .googlelocator_aside_body {
+  .google-locator_aside_body {
     position: relative;
     padding: 3rem;
 
     // result
 
-    .googlelocator_result {
+    .google-locator_result {
       display: none;
       padding-bottom: 1rem;
       border-bottom: 1px solid @shade-100;
       font-size: 1.3rem;
     }
 
-    [data-xt-googlelocator-result-initial] {
+    [data-xt-google-locator-result-initial] {
       display: block;
     }
 
     &.found {
-      .googlelocator_result {
+      .google-locator_result {
         display: none;
       }
-      [data-xt-googlelocator-result-founds] {
+      [data-xt-google-locator-result-founds] {
         display: block;
       }
     }
 
     &.noplace {
-      .googlelocator_result {
+      .google-locator_result {
         display: none;
       }
-      [data-xt-googlelocator-result-noplace] {
+      [data-xt-google-locator-result-noplace] {
         display: block;
       }
     }
 
     &.empty {
-      .googlelocator_result {
+      .google-locator_result {
         display: none;
       }
-      [data-xt-googlelocator-result-empty] {
+      [data-xt-google-locator-result-empty] {
         display: block;
       }
     }
 
     &.error {
-      .googlelocator_result {
+      .google-locator_result {
         display: none;
       }
-      [data-xt-googlelocator-result-error] {
+      [data-xt-google-locator-result-error] {
         display: block;
       }
     }
@@ -146,20 +146,20 @@
 
   // special
 
-  .googlelocator_repeat {
+  .google-locator_repeat {
     position: absolute;
     z-index: 2;
     top: 2rem;
     left: 2rem;
   }
 
-  // .googlelocator_items
+  // .google-locator_items
 
-  .googlelocator_items {
+  .google-locator_items {
     .margin(top, medium);
   }
 
-  .googlelocator_item {
+  .google-locator_item {
     .padding(y, small);
     > .list {
       .list-space(small);
@@ -169,7 +169,7 @@
     }
   }
 
-  .googlelocator_items .googlelocator_item {
+  .google-locator_items .google-locator_item {
     // activation when clicking marker
     cursor: pointer;
     border: 1px solid transparent;
@@ -180,26 +180,26 @@
     }
   }
 
-  .googlelocator_item_name {
+  .google-locator_item_name {
     .full();
     .h5();
   }
 
-  .googlelocator_item_address {
+  .google-locator_item_address {
     .full();
     font-size: 1.3rem;
     line-height: 1.4;
     text-transform: uppercase;
   }
 
-  .googlelocator_item_additional {
+  .google-locator_item_additional {
     .full();
     font-size: 1.3rem;
     line-height: 1.4;
     text-transform: uppercase;
   }
 
-  .googlelocator_item_directions {
+  .google-locator_item_directions {
     .link-none();
     font-size: 1.3rem;
     line-height: 1.4;

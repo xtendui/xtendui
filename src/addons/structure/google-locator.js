@@ -3,9 +3,9 @@ import { Xt } from 'xtend-library/src/xt.js'
 import MarkerClusterer from '@google/markerclusterer'
 
 /**
- * Googlelocator
+ * GoogleLocator
  */
-class Googlelocator {
+class GoogleLocator {
   /**
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
@@ -238,7 +238,7 @@ class Googlelocator {
     }
     // debug
     if (Xt.debug === true) {
-      console.debug('Xt.debug: xt-googlelocator viewport and radius', self.viewport, self.radius)
+      console.debug('Xt.debug: xt-google-locator viewport and radius', self.viewport, self.radius)
     }
     for (const marker of markers) {
       if (!self.filters.length || self.filterMarker(marker)) {
@@ -302,10 +302,10 @@ class Googlelocator {
     }
     // debug
     if (Xt.debug === true) {
-      console.debug('Xt.debug: xt-googlelocator locations', self.locations)
+      console.debug('Xt.debug: xt-google-locator locations', self.locations)
     }
     // listener dispatch
-    self.object.dispatchEvent(new CustomEvent('change.xt.googlelocator'))
+    self.object.dispatchEvent(new CustomEvent('change.xt.google-locator'))
   }
 
   /**
@@ -314,7 +314,7 @@ class Googlelocator {
   populateItems() {
     const self = this
     // remove old
-    const removes = self.object.querySelectorAll('.xt-googlelocator-clone')
+    const removes = self.object.querySelectorAll('.xt-google-locator-clone')
     for (const remove of removes) {
       remove.remove()
     }
@@ -355,14 +355,14 @@ class Googlelocator {
     let cloned = document.createElement('div')
     cloned.innerHTML = self.itemsTemplate.innerHTML
     cloned = cloned.querySelector(':scope > *')
-    cloned.classList.add('xt-googlelocator-clone')
-    cloned.setAttribute('data-xt-googlelocator-index', index.toString())
+    cloned.classList.add('xt-google-locator-clone')
+    cloned.setAttribute('data-xt-google-locator-index', index.toString())
     // append clone
     self.itemsContainer.append(cloned)
     // populate clone
-    const els = cloned.querySelectorAll('[data-xt-googlelocator-data]')
+    const els = cloned.querySelectorAll('[data-xt-google-locator-data]')
     for (const el of els) {
-      const fnc = options.formatData[el.getAttribute('data-xt-googlelocator-data')]
+      const fnc = options.formatData[el.getAttribute('data-xt-google-locator-data')]
       if (fnc) {
         fnc(self, loc, el)
       }
@@ -393,8 +393,8 @@ class Googlelocator {
       self.animatingLoc = loc
     }
     // activation
-    const item = self.itemsContainer.querySelector('[data-xt-googlelocator-index="' + loc.index + '"]')
-    const old = self.itemsContainer.querySelector('[data-xt-googlelocator-index].active')
+    const item = self.itemsContainer.querySelector('[data-xt-google-locator-index="' + loc.index + '"]')
+    const old = self.itemsContainer.querySelector('[data-xt-google-locator-index].active')
     if (old) {
       old.classList.remove('active')
     }
@@ -463,14 +463,14 @@ class Googlelocator {
     // loader
     self.loaderHide()
     // position
-    self.searchInput.value = self.locateElement.getAttribute('data-xt-googlelocator-locate-btn')
+    self.searchInput.value = self.locateElement.getAttribute('data-xt-google-locator-locate-btn')
     self.position = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude)
     self.viewport = null
     self.radius = null
     self.locateCache = { value: self.searchInput.value, position: self.position }
     // debug
     if (Xt.debug === true) {
-      console.debug('Xt.debug: xt-googlelocator locate', pos, self.position)
+      console.debug('Xt.debug: xt-google-locator locate', pos, self.position)
     }
     // submit on zoom only one time
     self.map.setCenter(self.position)
@@ -486,7 +486,7 @@ class Googlelocator {
     // loader
     self.loaderHide()
     // error
-    console.error('Error: xt-googlelocator locate error', error)
+    console.error('Error: xt-google-locator locate error', error)
   }
 
   /**
@@ -515,7 +515,7 @@ class Googlelocator {
   destroy() {
     const self = this
     // remove old
-    const removes = self.object.querySelectorAll('.xt-googlelocator-clone')
+    const removes = self.object.querySelectorAll('.xt-google-locator-clone')
     for (const remove of removes) {
       remove.remove()
     }
@@ -541,8 +541,8 @@ class Googlelocator {
 // option
 //
 
-Googlelocator.componentName = 'xt-googlelocator'
-Googlelocator.optionsDefault = {
+GoogleLocator.componentName = 'xt-google-locator'
+GoogleLocator.optionsDefault = {
   initialLocate: false,
   initialSearch: false,
   seachMapBounds: false,
@@ -600,7 +600,7 @@ Googlelocator.optionsDefault = {
     },
   ],
   map: {
-    center: { lat: 0, lng: 0 },
+    center: { lat: 40, lng: -74 },
     zoom: 2.5,
     zoomMin: 14,
     scrollwheel: false,
@@ -617,17 +617,17 @@ Googlelocator.optionsDefault = {
   },
   infoWindow: {},
   elements: {
-    loader: '[data-xt-googlelocator-loader]',
-    searchInput: '[data-xt-googlelocator-search-input]',
-    searchBtn: '[data-xt-googlelocator-search-btn]',
-    map: '[data-xt-googlelocator-map]',
+    loader: '[data-xt-google-locator-loader]',
+    searchInput: '[data-xt-google-locator-search-input]',
+    searchBtn: '[data-xt-google-locator-search-btn]',
+    map: '[data-xt-google-locator-map]',
     itemsTemplate: 'script[type="text/x-template"]',
-    itemsContainer: '[data-xt-googlelocator-items]',
-    results: '[data-xt-googlelocator-results]',
-    founds: '[data-xt-googlelocator-result-found]',
-    locate: '[data-xt-googlelocator-locate-btn]',
-    repeat: '[data-xt-googlelocator-repeat]',
-    filter: '[data-xt-googlelocator-option]',
+    itemsContainer: '[data-xt-google-locator-items]',
+    results: '[data-xt-google-locator-results]',
+    founds: '[data-xt-google-locator-result-found]',
+    locate: '[data-xt-google-locator-locate-btn]',
+    repeat: '[data-xt-google-locator-repeat]',
+    filter: '[data-xt-google-locator-option]',
   },
   formatData: {
     lat: function(self, marker) {
@@ -714,4 +714,4 @@ Googlelocator.optionsDefault = {
 // export
 //
 
-Xt.Googlelocator = Googlelocator
+Xt.GoogleLocator = GoogleLocator

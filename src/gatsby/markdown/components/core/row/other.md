@@ -17,7 +17,7 @@ You can space with `margin-<position>: auto;` on `.card-block`.
   </demovanilla>
 </demo>
 
-Or use flex utils on `.card-content`.
+Or use flex util on `.card-content`.
 
 <demo>
   <demovanilla src="vanilla/components/core/row/stretch-card-flex">

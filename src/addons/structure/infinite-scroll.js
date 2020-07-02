@@ -2,9 +2,9 @@ import { Xt } from 'xtend-library/src/xt.js'
 import RJSON from 'relaxed-json'
 
 /**
- * Infinitescroll
+ * InfiniteScroll
  */
-class Infinitescroll {
+class InfiniteScroll {
   /**
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
@@ -178,13 +178,13 @@ class Infinitescroll {
     self.paginate()
     // debug
     if (Xt.debug === true) {
-      console.debug('Xt.debug: xt-infinitescroll request success', request)
+      console.debug('Xt.debug: xt-infinite-scroll request success', request)
     }
     // garbage collector
     html = null
     items = null
     // listener dispatch
-    self.object.dispatchEvent(new CustomEvent('replace.xt.infinitescroll'))
+    self.object.dispatchEvent(new CustomEvent('replace.xt.infinite-scroll'))
   }
 
   /**
@@ -197,7 +197,7 @@ class Infinitescroll {
     self.object.classList.remove(...self.classes)
     // debug
     if (Xt.debug === true) {
-      console.debug('Xt.debug: xt-infinitescroll request failed', request)
+      console.debug('Xt.debug: xt-infinite-scroll request failed', request)
     }
   }
 
@@ -208,10 +208,10 @@ class Infinitescroll {
     const self = this
     const options = self.options
     // paginate
-    for (const el of self.object.querySelectorAll('[data-xt-infinitescroll-tot]')) {
+    for (const el of self.object.querySelectorAll('[data-xt-infinite-scroll-tot]')) {
       el.innerHTML = options.max
     }
-    for (const el of self.object.querySelectorAll('[data-xt-infinitescroll-num]')) {
+    for (const el of self.object.querySelectorAll('[data-xt-infinite-scroll-num]')) {
       el.innerHTML = self.current
     }
     // class
@@ -246,8 +246,8 @@ class Infinitescroll {
 // options
 //
 
-Infinitescroll.componentName = 'xt-infinitescroll'
-Infinitescroll.optionsDefault = {
+InfiniteScroll.componentName = 'xt-infinite-scroll'
+InfiniteScroll.optionsDefault = {
   url: false,
   current: 1,
   add: 1,
@@ -259,9 +259,9 @@ Infinitescroll.optionsDefault = {
     trigger: 'click',
   },
   elements: {
-    scroll: '[data-xt-infinitescroll-scroll]',
-    trigger: '[data-xt-infinitescroll-trigger]',
-    items: '[data-xt-infinitescroll-items]',
+    scroll: '[data-xt-infinite-scroll-scroll]',
+    trigger: '[data-xt-infinite-scroll-trigger]',
+    items: '[data-xt-infinite-scroll-items]',
   },
 }
 
@@ -269,23 +269,23 @@ Infinitescroll.optionsDefault = {
 // export
 //
 
-Xt.Infinitescroll = Infinitescroll
+Xt.InfiniteScroll = InfiniteScroll
 
 //
 // observe
 //
 
 Xt.mount.push({
-  matches: '[data-' + Xt.Infinitescroll.componentName + ']',
+  matches: '[data-' + Xt.InfiniteScroll.componentName + ']',
   mount: object => {
     // vars
 
-    const optionsMarkup = object.getAttribute('data-' + Xt.Infinitescroll.componentName)
+    const optionsMarkup = object.getAttribute('data-' + Xt.InfiniteScroll.componentName)
     const options = optionsMarkup ? RJSON.parse(optionsMarkup) : {}
 
     // init
 
-    let self = new Xt.Infinitescroll(object, options)
+    let self = new Xt.InfiniteScroll(object, options)
 
     // unmount
 

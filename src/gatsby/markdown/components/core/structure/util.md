@@ -2,11 +2,11 @@
 type: "Components"
 category: "Core"
 parent: "Structure"
-title: "Utils"
+title: "Util"
 date: "2019-11-10"
 ---
 
-The utils styles and mixins are all inside `xtend-libray/src/core/structure/_utils.less`.
+The utils styles and mixins are all inside `xtend-libray/src/core/structure/_util.less`.
 
 ## Various
 
@@ -28,7 +28,7 @@ The utils styles and mixins are all inside `xtend-libray/src/core/structure/_uti
 
 ## Toggle
 
-Toggle utils are useful with [toggle](/core/toggle) to show/hide **targets**.
+Toggle util are useful with [toggle](/core/toggle) to show/hide **targets**.
 
 <div class="table-scroll">
 

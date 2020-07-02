@@ -6,7 +6,7 @@ title: "Variables"
 date: "2019-11-20"
 ---
 
-Most of the variables are inside `xtend-libray/src/core/structure/_variables.less`, specific component variables are inside the component's less files.
+Most of the variables are inside `xtend-libray/src/core/structure/_vars.less`, specific component variables are inside the component's less files.
 
 ## Generate
 
@@ -64,7 +64,7 @@ Available sizes are: `layout` `auto` `none` `micro` `mini` `tiny` `small` `mediu
 
 ## Order
 
-See [order utils](/core/structure/utils#order).
+See [order util](/core/structure/util#order).
 
 ## Z-Index
 
