@@ -1,60 +1,64 @@
-#iframe--opacity-v1 {
+#iframe--opacity-media-v1 {
   //##START
-  /**
-    * .block-listing
-    */
-
-  .block-listing_inner {
-    > .row {
-      .row-default();
-    }
-  }
-
-  .block-listing_col {
-    .col(12);
-    .col(6, sm);
-    .col(4, lg);
-  }
-
-  .block-listing_col--big {
-    .col(12, sm);
-    .col(12, lg);
-  }
-
-  .block-listing_item {
-    .link-none();
-    .full();
-    .text-default() !important;
-    // card
-    .card-white();
-    .card-small();
-    .card-squared();
-    .card-none-x();
-    .card-title {
-      .font-sans-semibold();
-      font-size: 2rem;
-    }
-    .card-asset {
-      .media-container {
-        .padding(bottom, 75%);
-      }
-      .media {
-        .media-cover();
+  body { // add your own selector instead of body to contain the code
+    
+    /**
+      * .block-listing
+      */
+  
+    .block-listing_inner {
+      > .row {
+        .row-default();
       }
     }
-  }
-
-  .block-listing_col--big {
-    .card-asset {
-      .media-container {
-        @media @min-sm {
-          .padding(bottom, 37.5%);
+  
+    .block-listing_col {
+      .col(12);
+      .col(6, sm);
+      .col(4, lg);
+    }
+  
+    .block-listing_col--big {
+      .col(12, sm);
+      .col(12, lg);
+    }
+  
+    .block-listing_item {
+      .link-none();
+      .full();
+      .text-default() !important;
+      // card
+      .card-white();
+      .card-small();
+      .card-squared();
+      .card-none-x();
+      .card-title {
+        .font-sans-semibold();
+        font-size: 2rem;
+      }
+      .card-asset {
+        .media-container {
+          .padding(bottom, 75%);
         }
-        @media @min-lg {
-          .padding(bottom, 25%);
+        .media {
+          .media-cover();
         }
       }
     }
+  
+    .block-listing_col--big {
+      .card-asset {
+        .media-container {
+          @media @min-sm {
+            .padding(bottom, 37.5%);
+          }
+          @media @min-lg {
+            .padding(bottom, 25%);
+          }
+        }
+      }
+    }
+    
   }
   //##END
 }
