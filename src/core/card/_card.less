@@ -55,6 +55,7 @@ a.card, label.card {
 
 .card-asset {
   position: relative;
+  .full();
   > * {
     .full();
     height: auto;
@@ -69,7 +70,7 @@ a.card, label.card {
 
 .card-inner, .card-content, .card-item {
   &:first-child, &:last-child {
-    > * {
+    > .card-content, > .card-block, > .card-item, > .card-asset {
       &:first-child {
         border-top-left-radius: inherit;
         border-top-right-radius: inherit;
@@ -139,7 +140,7 @@ a.card, label.card {
   // radius
   .card-content, .card-item {
     &:first-child, &:last-child {
-      > * {
+      > .card-block, > .card-item, > .card-asset {
         &:first-child {
           border-top-left-radius: inherit;
           border-top-right-radius: initial;
@@ -151,22 +152,6 @@ a.card, label.card {
           border-top-right-radius: inherit;
           border-bottom-left-radius: initial;
           border-bottom-right-radius: inherit;
-        }
-      }
-      .card-item {
-        > * {
-          &:first-child {
-            border-top-left-radius: inherit;
-            border-top-right-radius: inherit;
-            border-bottom-left-radius: initial;
-            border-bottom-right-radius: initial;
-          }
-          &:last-child {
-            border-top-left-radius: initial;
-            border-top-right-radius: initial;
-            border-bottom-left-radius: inherit;
-            border-bottom-right-radius: inherit;
-          }
         }
       }
     }
