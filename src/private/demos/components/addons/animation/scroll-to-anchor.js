@@ -9,7 +9,7 @@ Xt.mount.push({
   mount: object => {
     // init
 
-    const self = new Xt.ScrollToAnchor(object, {
+    let self = new Xt.ScrollToAnchor(object, {
       scrollDistance: () => {
         return 0
       },
@@ -31,5 +31,13 @@ Xt.mount.push({
     }
 
     self.object.addEventListener('change.xt.scrolltoanchor', eventChange)
+
+    // unmount
+
+    const unmount = () => {
+      self.destroy()
+      self = null
+    }
+    return unmount
   },
 })
