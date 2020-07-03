@@ -42,25 +42,27 @@ html.gatsby_iframe-container {
  */
 
 code {
-  margin: -.1em .1em;
-  padding: .2em .35em;
   border-radius: 0;
-  background: @shade-100 !important;
+  background: transparent;
   .font-monospace();
-  font-size: .8em;
-  color: @text;
+  font-size: .9em;
+  color: #22a2c9;
 }
 
 .note-default {
   code {
-    background: darken(@shade-100, 4%) !important;
+    margin: -.1em .1em;
+    padding: .2em .35em;
+    background: darken(@shade-100, 4%);
     color: @text;
   }
 }
 
 .note-primary {
   code {
-    background: fade(@white, 20%) !important;
+    margin: -.1em .1em;
+    padding: .2em .35em;
+    background: fade(@white, 20%);
     color: @text-inverse;
   }
 }
@@ -249,9 +251,6 @@ pre {
   .padding(y, small);
   .padding(x, medium);
   border-bottom: 1px solid @shade-100;
-  code {
-    background: @shade-100 !important;
-  }
 }
 
 .gatsby_demo_source {
