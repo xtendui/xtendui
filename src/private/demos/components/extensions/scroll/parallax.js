@@ -1,4 +1,4 @@
-import { Xt } from 'xtend-library/src/xt.js'
+import { Xt } from 'xtend-library'
 import 'xtend-library/src/extensions/scroll/scroll.js'
 import gsap from 'gsap'
 

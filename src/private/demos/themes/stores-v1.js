@@ -1,4 +1,4 @@
-import { Xt } from 'xtend-library/src/xt.js'
+import { Xt } from 'xtend-library'
 
 Xt.mount.push({
   matches: '#iframe--stores-v1 body .block-listing_item', // add your own selector instead of body to contain the code

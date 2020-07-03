@@ -12,7 +12,7 @@
     "components",
     "vanilla"
   ],
-  "main": "dist/xtend.min.js",
+  "main": "src/xt.js",
   "module": "src/xt.js",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"

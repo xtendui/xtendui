@@ -1,4 +1,4 @@
-import { Xt } from 'xtend-library/src/xt.js'
+import { Xt } from 'xtend-library'
 import 'xtend-library/src/core/toggle/toggle.js'
 import RJSON from 'relaxed-json'
 

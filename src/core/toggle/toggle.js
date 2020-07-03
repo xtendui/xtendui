@@ -1,5 +1,5 @@
 import RJSON from 'relaxed-json'
-import { Xt } from 'xtend-library/src/xt.js'
+import { Xt } from 'xtend-library'
 
 /**
  * Toggle
