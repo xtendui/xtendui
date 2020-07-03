@@ -27,7 +27,9 @@ const changeMq = () => {
   }
 }
 
-changeMq()
+if (typeof window !== 'undefined') {
+  changeMq()
+}
 
 /**
  * #gatbsy_open-full-trigger

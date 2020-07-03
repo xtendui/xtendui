@@ -4,7 +4,7 @@
  * link
  */
 
-a, .btn-link {
+a:not(.btn), .btn-link {
   .link-underline();
   transition: color @time-small @ease-out;
   &:hover, &.hover, &:active, &.active {
@@ -31,7 +31,7 @@ a, .btn-link {
 // text
 
 .text-default {
-  a, .btn-link {
+  a:not(.btn), .btn-link {
     color: @accent;
     &:hover, &.hover, &:active, &.active {
       color: @accent-dark;
@@ -40,7 +40,7 @@ a, .btn-link {
 }
 
 .text-inverse {
-  a, .btn-link {
+  a:not(.btn), .btn-link {
     color: @text-inverse;
     &:hover, &.hover, &:active, &.active {
       color: @accent;

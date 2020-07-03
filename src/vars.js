@@ -106,7 +106,7 @@ Xt.optionsGlobal['xt-slider'] = {
 // prefers-reduced-motion
 //
 
-if (window.matchMedia('(prefers-reduced-motion: reduce), (update: slow)').matches) {
+if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce), (update: slow)').matches) {
   vars.timeMicro = 0
   vars.timeMini = 0
   vars.timeTiny = 0

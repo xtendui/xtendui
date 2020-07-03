@@ -41,28 +41,28 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 </demo>
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/slider/brands-infinite-v1">
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/brands-infinite-v1">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/slider/fashion-hero-v2">
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/fashion-hero-v2">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/slider/furniture-hero-v1">
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/furniture-hero-v1">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/slider/industrial-hero-v1">
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/industrial-featured-v1">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/slider/fashion-hero-v1">
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/fashion-hero-v1">
   </div>
 </demo>
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/animation/xtend-v1">
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/xtend-v1">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/animation/collapse-v1">
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/collapse-v1">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/animation/furniture-parallax-v1">
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/furniture-parallax-v1">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/media/furniture-listing-v1">
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/furniture-listing-v1">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/media/fashion-listing-v1">
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/fashion-listing-v1">
   </div>
 </demo>
 
