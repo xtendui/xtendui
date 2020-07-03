@@ -33,7 +33,10 @@ demo.htmlSource = `
                 <div class="parallax_desc">
                   <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
                   <div class="btn btn--line">
-                    Discover
+                    <span class="btn--line_line"></span>
+                    <span class="btn--line_text">
+                      Discover          
+                    </span>
                   </div>
                 </div>
               </div>
@@ -58,7 +61,10 @@ demo.htmlSource = `
                 <div class="parallax_desc">
                   <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
                   <div class="btn btn--line">
-                    Discover
+                    <span class="btn--line_line"></span>
+                    <span class="btn--line_text">
+                      Discover          
+                    </span>
                   </div>
                 </div>
               </div>
@@ -83,7 +89,10 @@ demo.htmlSource = `
                 <div class="parallax_desc">
                   <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
                   <div class="btn btn--line">
-                    Discover
+                    <span class="btn--line_line"></span>
+                    <span class="btn--line_text">
+                      Discover          
+                    </span>
                   </div>
                 </div>
               </div>
@@ -112,7 +121,10 @@ demo.htmlSource = `
                 <div class="parallax_desc">
                   <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
                   <div class="btn btn--line">
-                    Discover
+                    <span class="btn--line_line"></span>
+                    <span class="btn--line_text">
+                      Discover
+                    </span>
                   </div>
                 </div>
               </div>

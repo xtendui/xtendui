@@ -7,6 +7,16 @@
   position: relative;
   overflow: hidden;
   min-height: 100%;
+  border-radius: inherit;
+}
+
+.media-mask {
+  position: absolute;
+  z-index: @index-active + 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .media-inner {
@@ -21,3 +31,4 @@
   width: 100%;
   height: 100%;
 }
+

@@ -1,4 +1,5 @@
 import path from 'path'
+const img = require('components/snippets/img').default
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -17,7 +18,7 @@ demo.htmlSource = `
         <div class="card-design"></div>
         <div class="card-inner">
           <div class="card-asset">
-            <div class="media-container" style="padding-bottom:37.5%"><div class="media-inner"><img class="media media-cover" src="/img.svg" alt loading="lazy"/></div></div>
+            ${img({ classes: 'media-cover', ratio: '37.5%' })}
           </div>
           <div class="card-content">
             <div class="card-block card-item">
@@ -36,7 +37,7 @@ demo.htmlSource = `
         <div class="card-design"></div>
         <div class="card-inner">
           <div class="card-asset">
-            <div class="media-container" style="padding-bottom:37.5%"><div class="media-inner"><img class="media media-cover" src="/img.svg" alt loading="lazy"/></div></div>
+            ${img({ classes: 'media-cover', ratio: '37.5%' })}
           </div>
           <div class="card-content">
             <div class="card-block card-item">
@@ -55,7 +56,7 @@ demo.htmlSource = `
         <div class="card-design"></div>
         <div class="card-inner">
           <div class="card-asset">
-            <div class="media-container" style="padding-bottom:37.5%"><div class="media-inner"><img class="media media-cover" src="/img.svg" alt loading="lazy"/></div></div>
+            ${img({ classes: 'media-cover', ratio: '37.5%' })}
           </div>
           <div class="card-content">
             <div class="card-block card-item">
@@ -74,7 +75,7 @@ demo.htmlSource = `
         <div class="card-design"></div>
         <div class="card-inner">
           <div class="card-asset">
-            <div class="media-container" style="padding-bottom:37.5%"><div class="media-inner"><img class="media media-cover" src="/img.svg" alt loading="lazy"/></div></div>
+            ${img({ classes: 'media-cover', ratio: '37.5%' })}
           </div>
           <div class="card-content">
             <div class="card-block card-item">

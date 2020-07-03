@@ -55,22 +55,6 @@ Xt.mount.push({
 Xt.mount.push({
   matches: '#iframe--furniture-parallax-v1 body .btn--line', // add your own selector instead of body to contain the code
   mount: object => {
-    // wrap
-
-    if (!object.querySelector('.btn--line_text')) {
-      const wrapper = Xt.createElement('<span class="btn--line_text"></span>')
-      while (object.firstChild) {
-        wrapper.appendChild(object.firstChild)
-      }
-      object.appendChild(wrapper)
-    }
-
-    // prepend
-
-    if (!object.querySelector('.btn--line_line')) {
-      object.prepend(Xt.createElement('<span class="btn--line_line"></span>'))
-    }
-
     // vars
 
     const link = object.tagName === 'a' || object.tagName === 'button' ? object : object.closest('a, button')

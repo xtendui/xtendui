@@ -5,12 +5,6 @@ import gsap from 'gsap'
 Xt.mount.push({
   matches: '#iframe--fashion-listing-v1 body .block-listing_item', // add your own selector instead of body to contain the code
   mount: object => {
-    // append
-
-    if (!object.querySelector('.media_mask')) {
-      object.querySelector('.media-container').prepend(Xt.createElement('<span class="media_mask"></span>'))
-    }
-
     // vars
 
     const imgScaleContainer = 0.03
@@ -32,16 +26,16 @@ Xt.mount.push({
       const imgInner = tr.querySelector('.media-inner')
       gsap.to(imgInner, { scale: 1 + imgScale, duration: Xt.vars.timeBig, ease: 'quart.out' })
       // mask
-      const mask = tr.querySelector('.media_mask')
+      const mask = tr.querySelector('.media-mask')
       gsap.set(mask, { height: 0, y: img.offsetHeight, skewY: 0, opacity: maskOpacityOff })
       gsap.to(mask, { height: '150%', y: 0, opacity: maskOpacityOn, duration: Xt.vars.timeSmall, ease: 'quart.out' }) // @FIX to cover height: '150%'
       gsap.to(mask, { skewY: -10, duration: Xt.vars.timeSmall / 2, ease: 'quart.out' }).eventCallback('onComplete', () => {
         gsap.to(mask, { skewY: 0, duration: Xt.vars.timeSmall / 2, ease: 'quart.out' })
       })
       gsap.to(mask, { opacity: maskOpacityDone, duration: Xt.vars.timeMedium, ease: 'quart.out', delay: Xt.vars.timeSmall })
-      // title
-      const title = tr.querySelector('.card-title')
-      gsap.to(title, { y: titleY, duration: Xt.vars.timeSmall, ease: 'expo.out' })
+      // item
+      const item = tr.querySelector('.card-item')
+      gsap.to(item, { y: titleY, duration: Xt.vars.timeSmall, ease: 'expo.out' })
     }
 
     object.addEventListener('mouseenter', eventEnter)
@@ -56,14 +50,14 @@ Xt.mount.push({
       const imgInner = tr.querySelector('.media-inner')
       gsap.to(imgInner, { scale: 1, duration: Xt.vars.timeBig, ease: 'quart.out' })
       // mask
-      const mask = tr.querySelector('.media_mask')
+      const mask = tr.querySelector('.media-mask')
       gsap.to(mask, { height: '50%', y: '-100%', opacity: maskOpacityOff, duration: Xt.vars.timeSmall, ease: 'quart.out' }) // @FIX to cover height: '50%', y: '-100%'
       gsap.to(mask, { skewY: 10, duration: Xt.vars.timeSmall / 2, ease: 'quart.out' }).eventCallback('onComplete', () => {
         gsap.to(mask, { skewY: 0, duration: Xt.vars.timeSmall / 2, ease: 'quart.out' })
       })
-      // title
-      const title = tr.querySelector('.card-title')
-      gsap.to(title, { y: 0, duration: Xt.vars.timeSmall, ease: 'expo.out' })
+      // item
+      const item = tr.querySelector('.card-item')
+      gsap.to(item, { y: 0, duration: Xt.vars.timeSmall, ease: 'expo.out' })
     }
 
     object.addEventListener('mouseleave', eventLeave)
