@@ -31,7 +31,6 @@ Set the **aspect ratio** with css `padding-bottom`.
 
 <script type="text/plain" class="language-markup">
   <div class="media-container" style="padding-bottom: 37.5%;">
-    <div class="media-mask"></div>
     <div class="media-inner">
       <img class="media" src="/img.jpg" alt="" loading="lazy"/>
     </div>
