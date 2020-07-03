@@ -168,23 +168,12 @@ class ScrollToAnchor {
             // loop multiple els of
             const matches = self.options.elements.replace('#', loc.hash)
             const currents = els.filter(x => x.matches(matches))
-            found = currents.length ? true : false
+            found = !!currents.length
             for (const current of currents) {
               if (!current.classList.contains('active')) {
                 // class
                 current.classList.add(...self.classes)
               }
-            }
-            // debug
-            if (Xt.debug === true) {
-              cancelAnimationFrame(Xt.dataStorage.get(self.object, 'xtScrollToAnchorDebugFrame'))
-              Xt.dataStorage.set(
-                self.object,
-                'xtScrollToAnchorDebugFrame',
-                requestAnimationFrame(() => {
-                  console.debug('Xt.debug: xt-scroll-to-anchor scroll activation', currents, self.target)
-                })
-              )
             }
           }
         }

@@ -87,8 +87,12 @@ Xt.mount.push({
       // scroll
       const scrollSpace = self.options.scrollSpace()
       const scrollDistance = self.options.scrollDistance()
-      const posY = self.target.offsetTop - scrollSpace - scrollDistance
-      gsap.to(window, { scrollTo: posY, duration: Xt.vars.timeLarge, ease: 'quart.inOut' })
+      let pos = self.target.offsetTop - scrollSpace - scrollDistance
+      const min = 0;
+      const max = document.scrollingElement.scrollHeight - window.innerHeight
+      pos = pos < min ? min : pos
+      pos = pos > max ? max : pos
+      gsap.to(window, { scrollTo: pos, duration: Xt.vars.timeLarge, ease: 'quart.inOut' })
     }
 
     self.object.addEventListener('change.xt.scrolltoanchor', eventChange)
