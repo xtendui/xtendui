@@ -732,14 +732,14 @@ if (typeof window !== 'undefined') {
       outer.style.width = '100%'
       outer.style.msOverflowStyle = 'scrollbar' // needed for WinJS apps
       outer.classList.add('xt-ignore', 'overflow-style')
-      document.body.appendChild(outer)
+      document.body.append(outer)
       // force scrollbars
       outer.style.overflow = 'scroll'
       // add inner
       const inner = document.createElement('div')
       inner.style.width = '100%'
       inner.classList.add('xt-ignore')
-      outer.appendChild(inner)
+      outer.append(inner)
       // return
       const widthNoScroll = outer.offsetWidth
       const widthWithScroll = inner.offsetWidth
@@ -842,7 +842,7 @@ if (typeof window !== 'undefined') {
       }
       script.type = 'text/javascript'
       script.src = url
-      document.body.appendChild(script)
+      document.body.append(script)
     }
   }
 

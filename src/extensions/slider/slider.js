@@ -266,7 +266,7 @@ class Slider extends Xt.Toggle {
         const clone = cloned.cloneNode(true)
         clone.classList.remove('xt-ignore')
         clone.classList.add('xt-clone')
-        item.appendChild(clone)
+        item.append(clone)
         let html = item.innerHTML
         const classes = []
         let regex = new RegExp('xt-content', 'ig')

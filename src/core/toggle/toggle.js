@@ -1747,7 +1747,7 @@ class Toggle {
             el.before(Xt.createElement('<div class="xt-ignore" data-xt-origin="' + self.namespace + '"></div>'))
           }
           el.classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
-          appendToTarget.appendChild(el)
+          appendToTarget.append(el)
         }
       }
       if (type === 'targets' || type === 'targetsInner' || el === self.object) {
