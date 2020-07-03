@@ -1,8 +1,18 @@
 @import 'xtend-library/src/core/link/_link.less';
 
 /**
- * decoration
+ * link
  */
+
+a, .btn-link {
+  .link-underline();
+  transition: color @time-small @ease-out;
+  &:hover, &.hover, &:active, &.active {
+    transition: color @time-small @ease-in;
+  }
+}
+
+// decoration
 
 .link-underline() {
   text-decoration: underline;
@@ -18,37 +28,22 @@
   }
 }
 
-/**
- * link
- */
-
-.a-link {
-  .link-underline();
-  color: @accent;
-  transition: color @time-small @ease-out;
-  &:hover, &.hover, &:active, &.active {
-    color: @accent-dark;
-    transition: color @time-small @ease-in;
-  }
-}
-
-a, .btn-link {
-  .a-link();
-}
-
 // text
 
 .text-default {
-  a:not(.btn), .btn-link {
-    .a-link();
+  a, .btn-link {
+    color: @accent;
+    &:hover, &.hover, &:active, &.active {
+      color: @accent-dark;
+    }
   }
 }
 
 .text-inverse {
-  a:not(.btn), .btn-link {
+  a, .btn-link {
     color: @text-inverse;
     &:hover, &.hover, &:active, &.active {
-      color: @text-inverse;
+      color: @accent;
     }
   }
 }

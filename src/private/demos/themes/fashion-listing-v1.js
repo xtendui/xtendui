@@ -18,7 +18,7 @@ Xt.mount.push({
 
     const maskOpacityOn = 0.2
     const maskOpacityOff = 0.2
-    const maskOpacityDone = 0
+    const maskOpacityDone = 0.1
 
     const titleY = 10
 
