@@ -7,7 +7,7 @@ date: "2019-11-10"
 ---
 
 [[notePrimary]]
-| Slider uses toggle for logic, refer to [toggle's option](/core/toggle/option-js).
+| Slider uses toggle for logic, refer to [toggle's option](/components/core/toggle/option-js).
 
 ## Pagination
 
@@ -141,9 +141,9 @@ Use `wheel: { selector: 'object' }` or `wheel: { selector: QuerySelector }` to e
 </div>
 
 [[notePrimary]]
-| Auto doesn't run if the slider is `display: none`. Start it manually when visible when using [slider events](/extensions/slider/api#trigger).
+| Auto doesn't run if the slider is `display: none`. Start it manually when visible when using [slider events](/components/extensions/slider/api#trigger).
 
-Use the [api](/extensions/slider/api#listen) and listen to events to make auto progress indicators.
+Use the [api](/components/extensions/slider/api#listen) and listen to events to make auto progress indicators.
 
 <demo>
   <demovanilla src="vanilla/components/extensions/slider/progress">

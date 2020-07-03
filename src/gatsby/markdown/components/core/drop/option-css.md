@@ -87,7 +87,7 @@ Classes for assigning size (e.g.: padding or font size). Add or remove selectors
 ## Card
 
 [[notePrimary]]
-| Drop uses card to style it's content, refer to [card's option](/core/card/option) for all **option**.
+| Drop uses card to style it's content, refer to [card's option](/components/core/card/option) for all **option**.
 
 ### Variant
 

@@ -176,7 +176,7 @@ Horizontal label and input, add or remove selectors at your discretion.
 
 Multiple columns of `.form-group`, add or remove selectors at your discretion.
 
-For columns sizes see [column page](/core/column).
+For columns sizes see [column page](/components/core/column).
 
 <script type="text/plain" class="language-markup">
 <form class="form-default">

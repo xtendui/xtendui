@@ -10,7 +10,7 @@ date: "2019-06-01"
 
 #### Gsap
 
-For javascript animations we use [gsap](https://greensock.com/gsap/). If you import `/src/vars.js` you import also **gsap**, you need to install it with npm see [setup gsap](/core/setup#usage-gsap).
+For javascript animations we use [gsap](https://greensock.com/gsap/). If you import `/src/vars.js` you import also **gsap**, you need to install it with npm see [setup gsap](/components/core/setup#usage-gsap).
 
 #### Vars
 

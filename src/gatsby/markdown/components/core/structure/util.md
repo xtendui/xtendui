@@ -28,7 +28,7 @@ The utils styles and mixins are all inside `xtend-libray/src/core/structure/_uti
 
 ## Toggle
 
-Toggle util are useful with [toggle](/core/toggle) to show/hide **targets**.
+Toggle util are useful with [toggle](/components/core/toggle) to show/hide **targets**.
 
 <div class="table-scroll">
 
@@ -180,7 +180,7 @@ Classes and mixins for setting **flex** properties.
 
 </div>
 
-For available **{value}** see [list](/core/list/option) or [row](/core/row/option).
+For available **{value}** see [list](/components/core/list/option) or [row](/components/core/row/option).
 
 <div class="table-scroll">
 

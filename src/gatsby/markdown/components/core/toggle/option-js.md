@@ -171,7 +171,7 @@ You can use a function for <code>delayOn</code> and <code>delayOff</code> for ex
 </div>
 
 [[notePrimary]]
-| Auto doesn't run if the toggle is `display: none`. Start it manually when visible when using [toggle events](/core/toggle/api#trigger).
+| Auto doesn't run if the toggle is `display: none`. Start it manually when visible when using [toggle events](/components/core/toggle/api#trigger).
 
 <demo>
   <demovanilla src="vanilla/components/core/toggle/auto-initial">
@@ -186,7 +186,7 @@ You can use a function for <code>delayOn</code> and <code>delayOff</code> for ex
   </demovanilla>
 </demo>
 
-Use the [api](/core/toggle/api#listen) and listen to events to make auto progress indicators.
+Use the [api](/components/core/toggle/api#listen) and listen to events to make auto progress indicators.
 
 <demo>
   <demovanilla src="vanilla/components/core/toggle/progress">

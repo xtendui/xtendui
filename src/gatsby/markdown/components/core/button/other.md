@@ -28,4 +28,4 @@ date: "2019-03-15"
 
 ## Group
 
-Refer to [Group page](/core/group#usage-button).
+Refer to [Group page](/components/core/group#usage-button).

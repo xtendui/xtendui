@@ -39,7 +39,7 @@ Use this markup to create a **styled** **checkbox** or **radio**.
   </demovanilla>
 </demo>
 
-For inline or other checkbox and radio layout refer to [form mode](/core/form/items#mode).
+For inline or other checkbox and radio layout refer to [form mode](/components/core/form/items#mode).
 
 #### Fake
 
@@ -108,7 +108,7 @@ Use this markup to create a **unstyled** **checkbox** or **radio**.
 </div>
 
 [[notePrimary]]
-| Checkbox and radio must be inside [form group](/core/form/group) to have default styles.
+| Checkbox and radio must be inside [form group](/components/core/form/group) to have default styles.
 
 <demo>
   <demovanilla src="vanilla/components/core/form/check-radio-unstyled-block">

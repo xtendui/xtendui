@@ -8,7 +8,7 @@ date: "2020-10-01"
 
 ## Anything
 
-You can use list to space childrens like [row](/core/row/content) does. But the childrens are spaced with **margin** instead of **padding**.
+You can use list to space childrens like [row](/components/core/row/content) does. But the childrens are spaced with **margin** instead of **padding**.
 
 <demo>
   <demovanilla src="vanilla/components/core/list/anything-row">

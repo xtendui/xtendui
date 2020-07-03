@@ -25,4 +25,4 @@ Or just import **core**:
 
 ## Theming
 
-For an explanation of the css file content see [animation css](/core/animation/css).
+For an explanation of the css file content see [animation css](/components/core/animation/css).

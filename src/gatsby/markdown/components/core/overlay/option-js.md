@@ -7,7 +7,7 @@ date: "2019-11-01"
 ---
 
 [[notePrimary]]
-| Overlay uses toggle for logic, refer to [toggle's option](/core/toggle/option-js).
+| Overlay uses toggle for logic, refer to [toggle's option](/components/core/toggle/option-js).
 
 ## Class
 

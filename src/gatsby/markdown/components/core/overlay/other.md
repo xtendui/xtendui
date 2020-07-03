@@ -7,7 +7,7 @@ date: "2019-03-15"
 ---
 
 [[notePrimary]]
-| Overlay uses card to style it's content, refer to [card's other](/core/card/other) for all **other**.
+| Overlay uses card to style it's content, refer to [card's other](/components/core/card/other) for all **other**.
 
 ## Special
 

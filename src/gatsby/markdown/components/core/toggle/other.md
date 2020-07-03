@@ -41,7 +41,7 @@ If the toggle is on `"on": "mouseenter"` or `"on": "mousehover"` the link gets a
 
 ## Animation
 
-You can animate with javascript instead of css, just use [toggle events](/core/toggle/api#events) and remember to set `durationOn: Milliseconds` and `durationOff: Milliseconds`.
+You can animate with javascript instead of css, just use [toggle events](/components/core/toggle/api#events) and remember to set `durationOn: Milliseconds` and `durationOff: Milliseconds`.
 
 <demo>
   <demovanilla src="vanilla/components/core/toggle/animation-js">

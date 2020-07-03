@@ -38,7 +38,7 @@ date: "2019-03-15"
 
 ## Note
 
-Form note uses the [note component](/core/note).
+Form note uses the [note component](/components/core/note).
 
 <div class="table-scroll">
 
@@ -55,7 +55,7 @@ Form note uses the [note component](/core/note).
 
 ## Group
 
-Refer to [Group page](/core/group#usage-input).
+Refer to [Group page](/components/core/group#usage-input).
 
 ## Validation
 

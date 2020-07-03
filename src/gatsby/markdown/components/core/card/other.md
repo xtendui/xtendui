@@ -8,7 +8,7 @@ date: "2019-03-15"
 
 ## Stretch
 
-Refer to [Row page](/core/row/other#stretch).
+Refer to [Row page](/components/core/row/other#stretch).
 
 ## Special
 

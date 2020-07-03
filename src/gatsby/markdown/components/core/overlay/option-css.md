@@ -50,7 +50,7 @@ Set overlay size with this classes.
 ## Card
 
 [[notePrimary]]
-| Overlay uses card to style it's content, refer to [card's option](/core/card/option) for all **option**.
+| Overlay uses card to style it's content, refer to [card's option](/components/core/card/option) for all **option**.
 
 #### Variant
 

@@ -9,7 +9,7 @@ date: "2020-10-01"
 ## Card
 
 [[notePrimary]]
-| Overlay uses card to style it's content, refer to [card's content](/core/card/content) for all **content**.
+| Overlay uses card to style it's content, refer to [card's content](/components/core/card/content) for all **content**.
 
 #### Asset
 
@@ -77,7 +77,7 @@ Sequential `.card-block` stack vertically.
 </script>
 
 [[noteDefault]]
-| To have a separator between multiple `.card-block` use [card separator addon](/addons/card/separator).
+| To have a separator between multiple `.card-block` use [card separator addon](/components/addons/card/separator).
 
 <demo>
   <demovanilla src="vanilla/components/core/overlay/block">
@@ -128,7 +128,7 @@ To stack `.card-item` horizontally wrap them inside `.card-item-nested` and `.ca
 You can add custom `.card-block` modifiers and style them as you like (e.g.: `.card-block-side`).
 
 [[noteDefault]]
-| To have a separator between multiple `.card-group` contents use [card separator addon](/addons/card/separator).
+| To have a separator between multiple `.card-group` contents use [card separator addon](/components/addons/card/separator).
 
 <demo>
   <demovanilla src="vanilla/components/core/overlay/group">
@@ -142,7 +142,7 @@ If you need to put an asset outside `.card-block`, just use `.card-item` and wra
   </demovanilla>
 </demo>
 
-The size of **blocks** is automatic, you can specify the **size** with [columns](/core/column), with responsive classes if you need them.
+The size of **blocks** is automatic, you can specify the **size** with [columns](/components/core/column), with responsive classes if you need them.
 
 <demo>
   <demovanilla src="vanilla/components/core/overlay/block-side-size">

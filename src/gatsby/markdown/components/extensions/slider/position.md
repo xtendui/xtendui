@@ -7,7 +7,7 @@ date: "2019-11-20"
 ---
 
 [[notePrimary]]
-| Slider uses toggle for logic, refer to [toggle's option](/core/toggle/option-js).
+| Slider uses toggle for logic, refer to [toggle's option](/components/core/toggle/option-js).
 
 ## Align
 
