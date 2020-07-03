@@ -18,62 +18,75 @@ class Template extends React.Component {
         <SEO title={seo.title} />
         <div className="gatsby_listing">
           <div className="row">
-            {data.categories.category.map((category, i) => (
-              <div className="gatsby_listing_group" key={i}>
-                <h2 className="gatsby_listing_title">{category.title.split('-').pop()}</h2>
-                <div className="gatsby_listing_items">
-                  <div className="row">
-                    {category.posts.map(({ post }, z) =>
-                      post.frontmatter.link ? (
-                        <div className="gatsby_listing_column" key={z}>
-                          <a
-                            href={post.frontmatter.link}
-                            target="_blank"
-                            rel="noopener"
-                            className="card card-primary card-small card-full card-collapse gatsby_listing_item"
-                          >
-                            <div className="card-design"></div>
-                            <div className="card-inner">
-                              <div className="card-content">
-                                <div className="card-block card-item">
-                                  <div className="card-title">
-                                    {post.frontmatter.title
-                                      .split(/[\s-]+/)
-                                      .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
-                                      .join(' ')}
+            {data.categories.category
+              .sort((a, b) => {
+                if (a.title === 'Addons' || a.title === 'By Component') {
+                  // a is less than b by some ordering criterion
+                  return 1
+                }
+                if (a.title === 'Core' || a.title === 'By Type' || b.title === 'Addons' || b.title === 'By Component') {
+                  // a is greater than b by the ordering criterion
+                  return -1
+                }
+                // a must be equal to b
+                return 0
+              })
+              .map((category, i) => (
+                <div className="gatsby_listing_group" key={i}>
+                  <h2 className="gatsby_listing_title">{category.title.split('-').pop()}</h2>
+                  <div className="gatsby_listing_items">
+                    <div className="row">
+                      {category.posts.map(({ post }, z) =>
+                        post.frontmatter.link ? (
+                          <div className="gatsby_listing_column" key={z}>
+                            <a
+                              href={post.frontmatter.link}
+                              target="_blank"
+                              rel="noopener"
+                              className="card card-primary card-small card-full card-collapse gatsby_listing_item"
+                            >
+                              <div className="card-design"></div>
+                              <div className="card-inner">
+                                <div className="card-content">
+                                  <div className="card-block card-item">
+                                    <div className="card-title">
+                                      {post.frontmatter.title
+                                        .split(/[\s-]+/)
+                                        .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
+                                        .join(' ')}
+                                    </div>
+                                    <p>{post.frontmatter.description}</p>
                                   </div>
-                                  <p>{post.frontmatter.description}</p>
                                 </div>
                               </div>
-                            </div>
-                          </a>
-                        </div>
-                      ) : post.frontmatter.parent === post.frontmatter.title ? (
-                        <div className="gatsby_listing_column" key={z}>
-                          <Link to={markdownSlug(post)} className="card card-primary card-small card-full card-collapse gatsby_listing_item">
-                            <div className="card-design"></div>
-                            <div className="card-inner">
-                              <div className="card-content">
-                                <div className="card-block card-item">
-                                  <div className="card-title">
-                                    {post.frontmatter.title
-                                      .split(/[\s-]+/)
-                                      .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
-                                      .join(' ')}
+                            </a>
+                          </div>
+                        ) : post.frontmatter.parent === post.frontmatter.title ? (
+                          <div className="gatsby_listing_column" key={z}>
+                            <Link to={markdownSlug(post)} className="card card-primary card-small card-full card-collapse gatsby_listing_item">
+                              <div className="card-design"></div>
+                              <div className="card-inner">
+                                <div className="card-content">
+                                  <div className="card-block card-item">
+                                    <div className="card-title">
+                                      {post.frontmatter.title
+                                        .split(/[\s-]+/)
+                                        .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
+                                        .join(' ')}
+                                    </div>
+                                    <p>{post.frontmatter.description}</p>
+                                    {post.frontmatter.link}
                                   </div>
-                                  <p>{post.frontmatter.description}</p>
-                                  {post.frontmatter.link}
                                 </div>
                               </div>
-                            </div>
-                          </Link>
-                        </div>
-                      ) : null
-                    )}
+                            </Link>
+                          </div>
+                        ) : null
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
         </div>
       </Layout>

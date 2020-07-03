@@ -14,12 +14,12 @@ class DocSidebar extends React.Component {
           <nav className="gatsby_site_header_listing">
             {page.categories.category
               .sort((a, b) => {
-                // a is less than b by some ordering criterion
                 if (a.title === 'Addons' || a.title === 'By Component') {
+                  // a is less than b by some ordering criterion
                   return 1
                 }
-                // a is greater than b by the ordering criterion
-                if (a.title === 'Core' || b.title === 'Addons' || b.title === 'By Component') {
+                if (a.title === 'Core' || a.title === 'By Type' || b.title === 'Addons' || b.title === 'By Component') {
+                  // a is greater than b by the ordering criterion
                   return -1
                 }
                 // a must be equal to b
