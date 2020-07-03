@@ -24,7 +24,8 @@
     "serve": "yarn build && gatsby serve -p 8888",
     "deploy": "yarn build && gh-pages -d public",
     "release": "npx semantic-release --dry-run --no-ci",
-    "lint": "eslint . --ext .js"
+    "lint": "eslint . --ext .js",
+    "postversion": "yarn build"
   },
   "dependencies": {
     "@google/markerclusterer": "^2.0.8",
