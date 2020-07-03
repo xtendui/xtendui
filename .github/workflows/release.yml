@@ -18,6 +18,8 @@ jobs:
         persist-credentials: false
     - name: Install
       run: yarn install --frozen-lockfile
+    - name: Build
+      run: yarn build
     - name: Release
       uses: cycjimmy/semantic-release-action@v2
       with:
