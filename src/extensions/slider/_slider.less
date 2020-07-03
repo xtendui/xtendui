@@ -7,6 +7,12 @@
 .slider {
   position: relative;
   overflow: hidden;
+  // fix initial page load height jumping by showing the first slide before initialization
+  &:not(.xt-slider) .slide {
+    &:first-child {
+      display: block !important;
+    }
+  }
 }
 
 .slides {
