@@ -6,26 +6,40 @@ title: "Other"
 date: "2019-03-15"
 ---
 
-## Underline
+## Style
 
-Links with the tag `a` are styled with link underline styles. To have a `a` tag without underline (ex: buttons) use `.link-none()`.
+Links with the tag `a` are styled **unless they have a class**. If you are using a class on links add `.link` class.
+
+<div class="table-scroll">
+
+|                         | Class                                     | Mixin                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.link`                 | `.link()`        | Stile a tag with link            |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/core/link/style">
+  </demovanilla>
+</demo>
+
+## Decoration
 
 <div class="table-scroll">
 
 |                         | Class                                     | Mixin                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `.link-none`                 | `.link-none()`        | Remove link underline styles            |
+| Option                  | `.link-underline`                 | `.link-underline()`        | Add link underline styles            |
 
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/link/link">
+  <demovanilla src="vanilla/components/core/link/decoration">
   </demovanilla>
 </demo>
 
-## Inverse
-
-Links under `.text-inverse` are styled accordingly.
+## Variant
 
 <div class="table-scroll">
 
@@ -37,6 +51,6 @@ Links under `.text-inverse` are styled accordingly.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/link/inverse">
+  <demovanilla src="vanilla/components/core/link/variant">
   </demovanilla>
 </demo>

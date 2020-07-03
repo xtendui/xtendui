@@ -8,16 +8,15 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-default list-space-small align-items-center text-inverse"
-  style="padding: 1rem 1.5rem; background: #0078ff;">
+<div class="list list-default list-space-small align-items-center">
 
   <a href="#">
     link
   </a>
 
-  <a href="#" class="link-none">
-    link
-  </a>
+  <div class="link">
+    link with class
+  </div>
 
 </div>
 `

@@ -4,7 +4,7 @@
  * link
  */
 
-a:not([class]), .btn-link {
+a:not([class]), .btn-link, .link {
   .link-underline();
   transition: color @time-small @ease-out;
   &:hover, &.hover, &:active, &.active {
@@ -28,22 +28,22 @@ a:not([class]), .btn-link {
   }
 }
 
-// text
+// variant
 
-.text-default {
-  a:not([class]), .btn-link {
-    color: @accent;
+.text-inverse {
+  a:not([class]), .btn-link, .link {
+    color: @text-inverse;
     &:hover, &.hover, &:active, &.active {
-      color: @accent-dark;
+      color: @text-inverse-light;
     }
   }
 }
 
-.text-inverse {
-  a:not([class]), .btn-link {
-    color: @text-inverse;
+.text-default {
+  a:not([class]), .btn-link, .link {
+    color: @accent;
     &:hover, &.hover, &:active, &.active {
-      color: @text-inverse-light;
+      color: @accent-dark;
     }
   }
 }

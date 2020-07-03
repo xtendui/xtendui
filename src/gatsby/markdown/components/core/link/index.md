@@ -35,4 +35,8 @@ Use this markup to create a **link**.
   <button type="button" class="btn btn-link">
     <!-- content -->
   </button>
+  
+  <div class="a-link>
+    <!-- content -->
+  </div>
 </script>
