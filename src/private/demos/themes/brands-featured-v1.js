@@ -3,6 +3,10 @@ import 'xtend-library/src/vars.js'
 import 'xtend-library/src/extensions/slider/slider.js'
 import gsap from 'gsap'
 
+/**
+ * slider
+ */
+
 Xt.mount.push({
   matches: '#iframe--brands-featured-v1 body .slider', // add your own selector instead of body to contain the code
   mount: object => {

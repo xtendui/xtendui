@@ -87,7 +87,7 @@ Xt.mount.push({
 })
 
 /**
- * .parallax_item
+ * parallax
  */
 
 Xt.mount.push({

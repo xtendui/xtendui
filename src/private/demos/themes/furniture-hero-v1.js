@@ -5,6 +5,10 @@ import 'xtend-library/src/addons/slider/navigation-sides.js'
 import 'xtend-library/src/addons/animation/propagate-interaction.js'
 import gsap from 'gsap'
 
+/**
+ * PropagateInteraction
+ */
+
 Xt.mount.push({
   matches: '#iframe--furniture-hero-v1 body a, #iframe--furniture-hero-v1 body button', // add your own selector instead of body to contain the code
   mount: object => {
@@ -13,6 +17,10 @@ Xt.mount.push({
     })
   },
 })
+
+/**
+ * link animation
+ */
 
 Xt.mount.push({
   matches: '#iframe--furniture-hero-v1 body .slide', // add your own selector instead of body to contain the code
@@ -47,6 +55,10 @@ Xt.mount.push({
     }
   },
 })
+
+/**
+ * slider
+ */
 
 Xt.mount.push({
   matches: '#iframe--furniture-hero-v1 body .slider', // add your own selector instead of body to contain the code

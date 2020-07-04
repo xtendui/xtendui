@@ -552,7 +552,7 @@ if (typeof window !== 'undefined') {
    * @param {Object} obj Object with x and y values
    * @param {Boolean} transform Use transforms instead of position
    */
-  Xt.friction = (el, obj, transform = false) => {
+  Xt.friction = (el, obj, transform = true) => {
     cancelAnimationFrame(Xt.dataStorage.get(el, 'xtFrictionFrame'))
     cancelAnimationFrame(Xt.dataStorage.get(el, 'xtFrictionInitFrame'))
     Xt.dataStorage.set(
@@ -581,9 +581,8 @@ if (typeof window !== 'undefined') {
           if (transform) {
             el.style.transform = 'translateX(' + xCurrent + 'px) translateY(' + yCurrent + 'px)'
           } else {
-            el.style.top = Math.round(yCurrent) + 'px'
-            el.style.left = Math.round(xCurrent) + 'px'
-            console.log(Math.round(xCurrent), el.style.top)
+            el.style.left = xCurrent + 'px'
+            el.style.top = yCurrent + 'px'
           }
         } else {
           xCurrent = obj.x

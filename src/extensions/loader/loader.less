@@ -246,9 +246,12 @@
 // loader-mouse
 
 .loader-mouse {
+  overflow: visible;
   .filler, .spinner {
     display: block;
     position: relative;
+    margin-top: -10px;
+    margin-left: 40px;
   }
   // animation
   .loader-animated();
@@ -258,20 +261,13 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-top: -13px;
-    margin-left: -13px;
+    padding-top: -13px;
+    padding-left: -13px;
     transform: none;
   }
 }
 
-.loader-spinner.loader-mouse {
-  margin-top: -5px;
-  margin-left: 30px;
-}
-
 .loader-x.loader-mouse {
-  margin-top: -5px;
-  margin-left: 40px;
   .filler {
     width: 60px;
   }
