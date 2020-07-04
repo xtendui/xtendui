@@ -19,7 +19,6 @@ export default () => {
                   <h2 class="h1">
                     Lorem ipsum
                   </h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
                 </div>
               </a>
             </div>

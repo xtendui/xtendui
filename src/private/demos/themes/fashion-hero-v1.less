@@ -46,6 +46,13 @@
         .full();
         .text-inverse();
         .padding(y, giant);
+        max-width: 70rem;
+      }
+      .slide_item_text {
+        font-size: 1.7rem;
+        .h1 {
+          font-size: 4rem;
+        }
       }
       .slide_item_actions {
         display: inline-block;
@@ -65,13 +72,11 @@
           .align-center();
         }
       }
-      .slide--big {
-        .slide_item_content_inner {
-          .font-big();
-          @media @min-sm {
-            .font-giant();
+      @media @min-sm {
+        .slide--big {
+          .slide_item_text {
             .h1 {
-              font-size: 7rem;
+              font-size: 9rem;
             }
           }
         }
