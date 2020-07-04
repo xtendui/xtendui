@@ -34,7 +34,7 @@ jobs:
             ${{ runner.os }}-node-v${{ env.NODE }}-yarn-
       - name: Install
         if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: yarn install --frozen-lockfile
+        run: yarn
       - name: Build
         run: yarn build
       - name: Deploy
