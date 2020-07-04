@@ -41,7 +41,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 </demo>
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/brands-infinite-v1">
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/brands-featured-v1">
   </div>
   <div class="gatsby_demo_item" data-iframe="iframe/themes/fashion-hero-v2">
   </div>
@@ -54,11 +54,11 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 </demo>
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/xtend-v1">
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/xtend-theme-v1">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/collapse-v1">
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/collapse-theme-v1">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/furniture-parallax-v1">
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/furniture-featured-v1">
   </div>
   <div class="gatsby_demo_item" data-iframe="iframe/themes/furniture-listing-v1">
   </div>
@@ -103,8 +103,11 @@ Sed gravida massa in commodo eleifend. Curabitur ac pellentesque nisl. Nunc ut p
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut ex at ex pellentesque efficitur.
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut ex at ex pellentesque efficitur. Maecenas pulvinar mauris eget pharetra elementum.
 
+[[noteDefault]]
+| With **multiple mode** you **can't** specify targets with **#id** `.class`.
+
 [[notePrimary]]
-| With **multiple mode** you **can't** specify targets with **#id**.
+| With **multiple mode** you **can't** specify targets with **#id** `.class`.
 
 <script type="text/plain" class="language-markup">
   <a href="#" class="btn btn-default">

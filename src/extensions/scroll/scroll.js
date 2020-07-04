@@ -278,23 +278,29 @@ class Scroll extends Xt.Toggle {
 
 Scroll.componentName = 'xt-scroll'
 Scroll.optionsDefault = {
-  elements: false,
-  targets: false,
-  on: 'on.xt.scroll',
-  min: 0,
-  max: 'Infinity',
-  instant: true,
-  class: 'fade',
-  classIn: 'fade-in',
-  classOut: 'fade-out',
-  aria: false,
-  // scroll only
+  // scroll
   sticky: false,
   distance: 100,
   trigger: '100%',
   start: '100%',
   end: false,
   fallback: 0,
+  // element
+  elements: false,
+  targets: false,
+  // class
+  class: 'fade',
+  classIn: 'fade-in',
+  classOut: 'fade-out',
+  // quantity
+  min: 0,
+  max: 'Infinity',
+  // event
+  on: 'on.xt.scroll',
+  // timing
+  instant: true,
+  // other
+  aria: false,
 }
 
 //

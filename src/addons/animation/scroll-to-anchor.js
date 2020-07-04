@@ -217,10 +217,14 @@ class ScrollToAnchor {
 
 ScrollToAnchor.componentName = 'xt-scroll-to-anchor'
 ScrollToAnchor.optionsDefault = {
-  class: 'active',
+  // elements
   elements: '[href*="#"]',
   scrollElement: window,
+  // class
+  class: 'active',
+  // event
   scrollDelay: 250,
+  // scroll
   scrollDistance: () => {
     return window.innerHeight / 6
   },

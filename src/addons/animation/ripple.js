@@ -154,6 +154,7 @@ class Ripple {
 
 Ripple.componentName = 'xt-ripple'
 Ripple.optionsDefault = {
+  // ripple
   sizeFactor: 0.1,
   onlyInside: 'a, button, .btn',
 }

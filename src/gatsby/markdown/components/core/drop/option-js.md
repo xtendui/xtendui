@@ -13,7 +13,7 @@ date: "2019-11-01"
 
 You can start with toggled elements and targets just by adding **one of the classes** to the **elements** or **targets**.
 
-It's recommended to use `active-drop` on drops otherwise the overlay flashes visible on page load.
+It's recommended to use `active-drop` otherwise the component flashes visible on page load.
 
 <div class="table-scroll">
 
@@ -65,6 +65,6 @@ You can specify **on** and **off** events for the drop. Fore example `on: 'mouse
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `autoClose:Boolean`                          | `true`        | Close automatically on `autoclose.trigger.xt` event            |
 | Option                  | `closeOutside:Query`                          | `'body'`        | Query Node outside to close on click            |
-| Option                  | `closeInside:Query`                          | `'.drop-dismiss, .btn-close, .backdrop'`        | Query Node inside to close on click            |
+| Option                  | `closeInside:Query`                          | `'.drop-dismiss, .backdrop, .btn-close'`        | Query Node inside to close on click            |
 
 </div>

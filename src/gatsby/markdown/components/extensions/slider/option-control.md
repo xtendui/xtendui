@@ -2,7 +2,7 @@
 type: "Components"
 category: "Extensions"
 parent: "Slider"
-title: "Control"
+title: "Option Control"
 date: "2019-11-10"
 ---
 

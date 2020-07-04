@@ -33,6 +33,19 @@ import '/src/xtend-core.js'
 
 ## Usage
 
+Set `elements` `targets` `elementsInner` `targetsInner`, elements are responding to events, targets are activated on events.
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Default                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `elements:Query`                          | `:scope > a, :scope > button`        | Elements query            |
+| Option                  | `targets:Query`                          | `:scope > .overlay`        | Targets query            |
+| Option                  | `elementsInner:Query`                          | `false`        | Inner elements query (scope inside elements)            |
+| Option                  | `targetsInner:Query`                          | `false`        | Inner targets query (scope inside targets)     
+
+</div>
+
 Use this markup to create an **overlay**.
 
 <script type="text/plain" class="language-markup">

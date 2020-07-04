@@ -2990,50 +2990,37 @@ class Toggle {
 
 Toggle.componentName = 'xt-toggle'
 Toggle.optionsDefaultSuper = {
+  // element
   elements: ':scope > a, :scope > button',
   targets: ':scope > [class^="toggle-"], :scope > [class*=" toggle-"]',
   elementsInner: false,
   targetsInner: false,
-  on: 'click',
-  off: false,
-  min: 0,
-  max: 1,
-  instant: {
-    elements: true,
-    elementsInner: true,
-  },
-  // defaults
+  // class
   class: 'active active-toggle',
   classIn: 'in',
   classInDone: 'in-done',
   classOut: 'out',
   classInitial: 'initial',
   classInverse: 'inverse',
-  eventLimit: '.event-limit',
+  // quantity
+  min: 0,
+  max: 1,
   autoDisable: false,
-  autoClose: false,
-  appendTo: false,
-  backdrop: false,
-  classHtml: false,
-  closeInside: false,
-  closeOutside: false,
-  closeOnDisable: false,
-  scrollbar: false,
-  onBlock: false,
-  offBlock: false,
-  loop: true,
-  jump: false,
-  mediaLoaded: false,
-  mediaLoadedReinit: false,
+  // event
+  on: 'click',
+  off: false,
+  eventLimit: '.event-limit',
+  // timing
+  instant: {
+    elements: true,
+    elementsInner: true,
+  },
   delayOn: false,
   delayOff: false,
   delayInitial: true,
   durationOn: false,
   durationOff: false,
-  navigation: false,
-  keyboard: {
-    selector: false,
-  },
+  // auto
   auto: {
     time: false,
     initial: true,
@@ -3041,7 +3028,27 @@ Toggle.optionsDefaultSuper = {
     inverse: false,
     pause: false,
   },
+  // other
+  loop: true,
+  jump: false,
+  navigation: false,
+  keyboard: {
+    selector: false,
+  },
+  backdrop: false,
+  autoClose: false,
+  appendTo: false,
+  classHtml: false,
+  closeInside: false,
+  closeOutside: false,
+  closeOnDisable: false,
+  scrollbar: false,
+  onBlock: false,
+  offBlock: false,
+  mediaLoaded: false,
+  mediaLoadedReinit: false,
   zIndex: false,
+  focusLimit: false,
   aria: {
     tabindex: true,
     controls: true,

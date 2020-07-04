@@ -57,16 +57,21 @@ class Overlay extends Xt.Toggle {
 
 Overlay.componentName = 'xt-overlay'
 Overlay.optionsDefault = {
+  // element
   elements: ':scope > a, :scope > button',
   targets: ':scope > .overlay',
-  on: 'click',
+  // class
+  class: 'active active-overlay',
+  // quantity
   min: 0,
   max: 1,
-  class: 'active active-overlay',
+  // event
+  on: 'click',
   eventLimit: '.event-limit, .card-overlay .card-content',
+  // other
+  backdrop: true,
   autoClose: true,
   appendTo: 'body',
-  backdrop: true,
   classHtml: 'xt-overlay',
   closeInside: '.overlay-dismiss, .backdrop, .btn-close',
   closeOnDisable: true,
