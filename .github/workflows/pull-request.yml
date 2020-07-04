@@ -24,10 +24,12 @@ jobs:
     - uses: actions/cache@v2
       id: yarn-cache
       with:
-        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-        key: ${{ runner.os }}-node-v${{ env.NODE }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        path: |
+          ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          **/node_modules
+        key: test-${{ runner.os }}-node-v${{ env.NODE }}-yarn-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
-          ${{ runner.os }}-node-v${{ env.NODE }}-yarn-
+          test-${{ runner.os }}-node-v${{ env.NODE }}-yarn-
     - name: Install
       if: steps.yarn-cache.outputs.cache-hit != 'true'
       run: yarn install --frozen-lockfile
