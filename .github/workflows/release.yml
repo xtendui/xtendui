@@ -8,7 +8,6 @@ on:
       - release-0.15
 
 env:
-  CI: true
   NODE: 12.x
 
 jobs:
