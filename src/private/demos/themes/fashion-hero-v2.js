@@ -2,7 +2,17 @@ import { Xt } from 'xtend-library'
 import 'xtend-library/src/vars.js'
 import 'xtend-library/src/extensions/slider/slider.js'
 import 'xtend-library/src/addons/slider/navigation-sides.js'
+import 'xtend-library/src/addons/animation/propagate-interaction.js'
 import gsap from 'gsap'
+
+Xt.mount.push({
+  matches: '#iframe--fashion-hero-v2 body a, #iframe--fashion-hero-v2 body button', // add your own selector instead of body to contain the code
+  mount: object => {
+    new Xt.PropagateInteraction(object, {
+      targets: '.btn',
+    })
+  },
+})
 
 Xt.mount.push({
   matches: '#iframe--fashion-hero-v2 body .slide', // add your own selector instead of body to contain the code
@@ -34,7 +44,6 @@ Xt.mount.push({
 
     for (const link of links) {
       link.addEventListener('mouseleave', eventLeave)
-      link.addEventListener('mousedown', eventLeave)
     }
   },
 })

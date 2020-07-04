@@ -2,40 +2,15 @@ import { Xt } from 'xtend-library'
 import 'xtend-library/src/vars.js'
 import 'xtend-library/src/extensions/slider/slider.js'
 import 'xtend-library/src/addons/slider/navigation-sides.js'
+import 'xtend-library/src/addons/animation/propagate-interaction.js'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '#iframe--fashion-hero-v1 body .slide', // add your own selector instead of body to contain the code
-  mount: function(object) {
-    // vars
-
-    const links = object.tagName === 'A' || object.tagName === 'BUTTON' ? Xt.arrSingle(object) : object.querySelectorAll('a, button')
-    const img = object.querySelector('.media')
-    const imgOpacityIn = 0.75
-    const imgOpacityOut = 1
-
-    // enter
-
-    const eventEnter = e => {
-      // img
-      gsap.to(img, { opacity: imgOpacityIn, duration: Xt.vars.timeSmall, ease: 'quart.out' })
-    }
-
-    for (const link of links) {
-      link.addEventListener('mouseenter', eventEnter)
-    }
-
-    // enter
-
-    const eventLeave = e => {
-      // img
-      gsap.to(img, { opacity: imgOpacityOut, duration: Xt.vars.timeSmall, ease: 'quart.out', overwrite: true })
-    }
-
-    for (const link of links) {
-      link.addEventListener('mouseleave', eventLeave)
-      link.addEventListener('mousedown', eventLeave)
-    }
+  matches: '#iframe--fashion-hero-v1 body a, #iframe--fashion-hero-v1 body button', // add your own selector instead of body to contain the code
+  mount: object => {
+    new Xt.PropagateInteraction(object, {
+      targets: '.btn',
+    })
   },
 })
 

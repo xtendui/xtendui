@@ -32,7 +32,6 @@ Xt.mount.push({
 
     for (const link of links) {
       link.addEventListener('mouseleave', eventLeave)
-      link.addEventListener('mousedown', eventLeave)
     }
   },
 })

@@ -8,7 +8,7 @@ export default () => {
   <div class="slides">
     <ul class="slides-inner">
 
-      <li class="slide">
+      <li class="slide slide--center slide--big">
         <div class="slide-inner">
           <div class="slide_item">
             <div class="slide_item_inner">
@@ -56,7 +56,7 @@ export default () => {
         </div>
       </li>
 
-      <li class="slide">
+      <li class="slide slide--center">
         <div class="slide-inner">
           <div class="slide_item">
             <div class="slide_item_inner">
