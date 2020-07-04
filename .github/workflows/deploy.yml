@@ -18,11 +18,11 @@ jobs:
         uses: actions/checkout@v2
         with:
           persist-credentials: false
-      - name: Setup Node
+      - name: Node
         uses: actions/setup-node@v1
         with:
           node-version: "${{ env.NODE }}"
-      - name: Setup Cache
+      - name: Cache
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
       - uses: actions/cache@v2
