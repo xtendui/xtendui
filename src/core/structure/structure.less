@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  background: @shade-100;
+  background: @white;
   overflow-x: hidden !important;
   overflow-y: scroll !important;
   .overflow-style();
@@ -23,6 +23,7 @@ body {
 .overflow-style(@mode: none) {
   -webkit-overflow-scrolling: touch;
   & when (@mode = none) {
+    // webkit
     &::-webkit-scrollbar {
       height: 8px;
       width: 8px;
@@ -34,8 +35,12 @@ body {
     &::-webkit-scrollbar-thumb {
       background: fade(@shade-700, 40%);
     }
+    // firefox
+    scrollbar-width: thin;
+    scrollbar-color: fade(@shade-700, 40%) transparent;
   }
   & when (@mode = inner) {
+    // webkit
     &::-webkit-scrollbar {
       height: 4px;
       width: 4px;
@@ -44,6 +49,8 @@ body {
     &::-webkit-scrollbar-thumb {
       background: fade(@shade-700, 40%);
     }
+    // firefox
+    scrollbar-color: fade(@shade-700, 40%) transparent;
   }
 }
 
