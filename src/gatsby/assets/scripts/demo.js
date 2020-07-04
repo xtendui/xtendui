@@ -202,9 +202,7 @@ const populateBlock = () => {
     const content = document.querySelector('#gatbsy_open-full-content')
     const current = content.querySelector('.gatsby_demo_item.active')
     // triggering e.detail.container
-    requestAnimationFrame(() => {
-      dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: current } }))
-    })
+    dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: current } }))
   })
 }
 
@@ -333,9 +331,7 @@ const populateDemo = (container, i) => {
     item.addEventListener('on.xt', e => {
       if (!self.initial) {
         // triggering e.detail.container
-        requestAnimationFrame(() => {
-          dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: item.querySelector('.gatsby_demo_source'), delay: 0 } }))
-        })
+        dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: item.querySelector('.gatsby_demo_source') } }))
       }
       // only if demo opened
       if (document.querySelector('#gatbsy_open-full-trigger').classList.contains('active')) {
