@@ -7,6 +7,8 @@ Xt.mount.push({
   mount: function(object) {
     // vars
 
+    const links = object.tagName === 'A' || object.tagName === 'BUTTON' ? Xt.arrSingle(object) : object.querySelectorAll('a, button')
+    const img = object.querySelector('.media')
     const imgOpacityIn = 0.75
     const imgOpacityOut = 1
 
@@ -14,26 +16,23 @@ Xt.mount.push({
 
     const eventEnter = e => {
       // img
-      const img = object.querySelector('.media')
       gsap.to(img, { opacity: imgOpacityIn, duration: Xt.vars.timeSmall, ease: 'quart.out' })
     }
 
-    object.addEventListener('mouseenter', eventEnter)
+    for (const link of links) {
+      link.addEventListener('mouseenter', eventEnter)
+    }
 
     // enter
 
     const eventLeave = e => {
       // img
-      const img = object.querySelector('.media')
       gsap.to(img, { opacity: imgOpacityOut, duration: Xt.vars.timeSmall, ease: 'quart.out', overwrite: true })
     }
 
-    object.addEventListener('mouseleave', eventLeave)
-    object.addEventListener('mousedown', eventLeave)
-
-    // unmount
-
-    const unmount = function() {}
-    return unmount
+    for (const link of links) {
+      link.addEventListener('mouseleave', eventLeave)
+      link.addEventListener('mousedown', eventLeave)
+    }
   },
 })

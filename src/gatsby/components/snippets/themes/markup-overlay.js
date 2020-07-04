@@ -1,6 +1,3 @@
-// const markupOverlay = require('components/snippets/themes/markup-overlay').default
-// ${markupOverlay()}
-
 const img = require('components/snippets/img').default
 
 export default () => {

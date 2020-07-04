@@ -1,5 +1,3 @@
-// const markupStores = require('components/snippets/themes/markup-listing').default
-// ${markupStores()}
 const img = require('components/snippets/img').default
 const imgAlt = require('components/snippets/img').alt
 

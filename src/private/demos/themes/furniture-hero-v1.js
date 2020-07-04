@@ -5,6 +5,41 @@ import 'xtend-library/src/addons/slider/navigation-sides.js'
 import gsap from 'gsap'
 
 Xt.mount.push({
+  matches: '#iframe--furniture-hero-v1 body .slide', // add your own selector instead of body to contain the code
+  mount: function(object) {
+    // vars
+
+    const links = object.tagName === 'A' || object.tagName === 'BUTTON' ? Xt.arrSingle(object) : object.querySelectorAll('a, button')
+    const img = object.querySelector('.media')
+    const imgOpacityIn = 0.75
+    const imgOpacityOut = 1
+
+    // enter
+
+    const eventEnter = e => {
+      // img
+      gsap.to(img, { opacity: imgOpacityIn, duration: Xt.vars.timeSmall, ease: 'quart.out' })
+    }
+
+    for (const link of links) {
+      link.addEventListener('mouseenter', eventEnter)
+    }
+
+    // enter
+
+    const eventLeave = e => {
+      // img
+      gsap.to(img, { opacity: imgOpacityOut, duration: Xt.vars.timeSmall, ease: 'quart.out', overwrite: true })
+    }
+
+    for (const link of links) {
+      link.addEventListener('mouseleave', eventLeave)
+      link.addEventListener('mousedown', eventLeave)
+    }
+  },
+})
+
+Xt.mount.push({
   matches: '#iframe--furniture-hero-v1 body .slider', // add your own selector instead of body to contain the code
   mount: object => {
     // vars
@@ -38,8 +73,8 @@ Xt.mount.push({
       durationOn: Xt.vars.timeBig,
       durationOff: Xt.vars.timeBig,
       auto: {
-        time: 4000,
-        pause: '.slide_text',
+        time: 5000,
+        pause: '.slide_item_content_inner',
       },
       autoHeight: false,
       groupMq: false,
@@ -84,7 +119,7 @@ Xt.mount.push({
       // assetMask
       const assetMask = tr.querySelector('.slide_item')
       gsap.set(assetMask, { x: -100 * self.detail.dragRatio * self.direction + '%' })
-      const assetMaskInner = assetMask.querySelector('.slide_inner')
+      const assetMaskInner = assetMask.querySelector('.slide_item_inner')
       gsap.set(assetMaskInner, { x: (100 * self.detail.dragRatio * self.direction) / 2 + '%' })
       // next
       const nexts = self.direction > 0 ? self.getTargets(self.getNext()) : self.getTargets(self.getPrev())
@@ -93,13 +128,13 @@ Xt.mount.push({
         // assetMask
         const assetMask = next.querySelector('.slide_item')
         gsap.set(assetMask, { x: 100 * self.detail.dragRatioInverse * self.direction + '%' })
-        const assetMaskInner = assetMask.querySelector('.slide_inner')
+        const assetMaskInner = assetMask.querySelector('.slide_item_inner')
         gsap.set(assetMaskInner, { x: (-100 * self.detail.dragRatioInverse * self.direction) / 2 + '%' })
         // asset
-        const asset = next.querySelector('.slide_asset img')
+        const asset = next.querySelector('.slide_item_asset .media')
         gsap.set(asset, { scale: 1 + assetZoom * self.detail.dragRatioInverse })
         // content
-        const content = next.querySelector('.slide_text')
+        const content = next.querySelector('.slide_item_content')
         gsap.set(content, { x: contentX * self.detail.dragRatioInverse * self.direction })
       }
     }
@@ -113,7 +148,7 @@ Xt.mount.push({
       // assetMask
       const assetMask = tr.querySelector('.slide_item')
       gsap.to(assetMask, { x: 0, duration: assetMaskTimeOff, ease: assetMaskEaseOff })
-      const assetMaskInner = assetMask.querySelector('.slide_inner')
+      const assetMaskInner = assetMask.querySelector('.slide_item_inner')
       gsap.to(assetMaskInner, { x: 0, duration: assetMaskTimeOff, ease: assetMaskEaseOff })
       // next
       const nexts = self.targets.filter(x => x.classList.contains('next'))
@@ -122,7 +157,7 @@ Xt.mount.push({
         const assetMask = next.querySelector('.slide_item')
         const xCurrent = assetMask.clientWidth * self.direction
         gsap.to(assetMask, { x: xCurrent, duration: assetMaskTimeOff, ease: assetMaskEaseOff })
-        const assetMaskInner = assetMask.querySelector('.slide_inner')
+        const assetMaskInner = assetMask.querySelector('.slide_item_inner')
         gsap.to(assetMaskInner, { x: -xCurrent / 2, duration: assetMaskTimeOff, ease: assetMaskEaseOff })
       }
     }
@@ -136,19 +171,32 @@ Xt.mount.push({
       // useCapture delegation
       if (self.targets.includes(tr)) {
         if (self.initial) {
+          // inject
+          for (const target of self.targets) {
+            if (!target.querySelector('.slide_line')) {
+              const inject = Xt.createElement(`
+              <div class="slide_line">
+                <div class="slide_line_inner">
+                  <div class="slide_line_small"></div>
+                  <div class="slide_line_big"></div>
+                </div>
+              </div>`);
+              target.querySelector('.slide_item_inner').prepend(inject)
+            }
+          }
           // assetMask
           const assetMask = tr.querySelector('.slide_item')
           gsap.killTweensOf(assetMask)
           gsap.set(assetMask, { x: 0 })
-          const assetMaskInner = assetMask.querySelector('.slide_inner')
+          const assetMaskInner = assetMask.querySelector('.slide_item_inner')
           gsap.killTweensOf(assetMaskInner)
           gsap.set(assetMaskInner, { x: 0 })
           // asset
-          const asset = tr.querySelector('.slide_asset img')
+          const asset = tr.querySelector('.slide_item_asset .media')
           gsap.killTweensOf(asset)
           gsap.set(asset, { scale: 1 })
           // content
-          const content = tr.querySelector('.slide_text')
+          const content = tr.querySelector('.slide_item_content')
           gsap.killTweensOf(content)
           gsap.set(content, { x: 0 })
           // line
@@ -165,13 +213,13 @@ Xt.mount.push({
             gsap.set(assetMask, { x: 100 * self.direction + '%' })
           }
           gsap.to(assetMask, { x: 0, duration: assetMaskTimeOn, ease: self.detail.dragging ? assetMaskEaseDragging : assetMaskEaseOn })
-          const assetMaskInner = assetMask.querySelector('.slide_inner')
+          const assetMaskInner = assetMask.querySelector('.slide_item_inner')
           if (!self.detail.dragging) {
             gsap.set(assetMaskInner, { x: -((100 * self.direction) / 2) + '%' })
           }
           gsap.to(assetMaskInner, { x: 0, duration: assetMaskTimeOn, ease: self.detail.dragging ? assetMaskEaseDragging : assetMaskEaseOn })
           // asset
-          const asset = tr.querySelector('.slide_asset img')
+          const asset = tr.querySelector('.slide_item_asset .media')
           if (!self.detail.dragging) {
             gsap.set(asset, { scale: 1 + assetZoom })
           }
@@ -181,7 +229,7 @@ Xt.mount.push({
             ease: self.detail.dragging ? assetEaseDragging : assetEase,
           })
           // content
-          const content = tr.querySelector('.slide_text')
+          const content = tr.querySelector('.slide_item_content')
           if (!self.detail.dragging) {
             gsap.set(content, { x: contentX * self.direction })
           }
@@ -215,7 +263,7 @@ Xt.mount.push({
         // assetMask
         const assetMask = tr.querySelector('.slide_item')
         gsap.to(assetMask, { x: -100 * self.direction + '%', duration: assetMaskTimeOff, ease: self.detail.dragging ? assetMaskEaseDragging : assetMaskEaseOff })
-        const assetMaskInner = assetMask.querySelector('.slide_inner')
+        const assetMaskInner = assetMask.querySelector('.slide_item_inner')
         gsap.to(assetMaskInner, { x: (100 * self.direction) / 2 + '%', duration: assetMaskTimeOff, ease: self.detail.dragging ? assetMaskEaseDragging : assetMaskEaseOff })
       }
     }

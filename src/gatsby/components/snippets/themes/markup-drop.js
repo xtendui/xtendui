@@ -1,6 +1,3 @@
-// const markupDrop = require('components/snippets/themes/markup-drop').default
-// ${markupDrop()}
-
 const img = require('components/snippets/img').default
 
 export default () => {

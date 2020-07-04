@@ -1,6 +1,3 @@
-// const markupButton = require('components/snippets/themes/markup-button').default
-// ${markupButton()}
-
 export default () => {
   return `
 <div class="list list-default list-space-small align-items-center">

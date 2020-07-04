@@ -21,32 +21,34 @@
         display: none;
       }
       // .slide_item
-      .slide_item {
-        .link-none();
-        display: block;
-      }
-      .slide_asset {
+      .slide_item_asset {
         position: relative;
         overflow: hidden;
         width: 100%;
         height: 100vh;
         height: calc(var(--vh, 1vh) * 100);
       }
-      .slide_content {
+      .slide_item_content {
         position: absolute;
+        z-index: 3;
         top: 0;
         left: 0;
         bottom: 0;
         right: 0;
         display: flex;
         align-items: flex-end;
-        justify-content: center;
-        .padding(y, big);
-        color: @white;
-        text-align: center;
-        @media @min-sm {
-          justify-content: flex-start;
-          text-align: left;
+      }
+      .slide_item_content_inner {
+        .link-none();
+        .full();
+        .text-inverse();
+        .padding(y, giant);
+        // no btn
+        .h1 {
+          .margin(bottom, none);
+        }
+        .btn {
+          display: none;
         }
       }
       // .slider-navigation-sides

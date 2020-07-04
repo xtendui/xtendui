@@ -53,15 +53,15 @@ demo.htmlSource = `
                 Lorem ipsum
               </div>
 
-              <div class="slide_assets">
+              <div class="slide_item_assets">
                 <div class="row">
-                  <div class="slide_assets_col--big slide_assets_col--big">
-                    <div class="slide_asset">
+                  <div class="slide_item_assets_col--big slide_item_assets_col--big">
+                    <div class="slide_item_asset">
                       ${img({ classes: 'media-cover', loading: 'eager' })}
                     </div>
                   </div>
-                  <div class="slide_assets_col--small slide_assets_col--small">
-                    <div class="slide_asset">
+                  <div class="slide_item_assets_col--small slide_item_assets_col--small">
+                    <div class="slide_item_asset">
                       ${img({ classes: 'media-cover', loading: 'eager' })}
                     </div>
                   </div>
@@ -103,15 +103,15 @@ demo.htmlSource = `
                 Dolor sit amet
               </div>
 
-              <div class="slide_assets">
+              <div class="slide_item_assets">
                 <div class="row">
-                  <div class="slide_assets_col--small">
-                    <div class="slide_asset">
+                  <div class="slide_item_assets_col--small">
+                    <div class="slide_item_asset">
                       ${imgAlt({ classes: 'media-cover', loading: 'eager' })}
                     </div>
                   </div>
-                  <div class="slide_assets_col--big">
-                    <div class="slide_asset">
+                  <div class="slide_item_assets_col--big">
+                    <div class="slide_item_asset">
                       ${imgAlt({ classes: 'media-cover', loading: 'eager' })}
                     </div>
                   </div>
@@ -153,15 +153,15 @@ demo.htmlSource = `
                 Consectetur adipiscing elit
               </div>
 
-              <div class="slide_assets">
+              <div class="slide_item_assets">
                 <div class="row">
-                  <div class="slide_assets_col--big">
-                    <div class="slide_asset">
+                  <div class="slide_item_assets_col--big">
+                    <div class="slide_item_asset">
                       ${img({ classes: 'media-cover', loading: 'eager' })}
                     </div>
                   </div>
-                  <div class="slide_assets_col--small">
-                    <div class="slide_asset">
+                  <div class="slide_item_assets_col--small">
+                    <div class="slide_item_asset">
                       ${img({ classes: 'media-cover', loading: 'eager' })}
                     </div>
                   </div>
@@ -203,15 +203,15 @@ demo.htmlSource = `
                 Nam iaculis magna eu consectetur condimentum
               </div>
 
-              <div class="slide_assets">
+              <div class="slide_item_assets">
                 <div class="row">
-                  <div class="slide_assets_col--small">
-                    <div class="slide_asset">
+                  <div class="slide_item_assets_col--small">
+                    <div class="slide_item_asset">
                       ${imgAlt({ classes: 'media-cover', loading: 'eager' })}
                     </div>
                   </div>
-                  <div class="slide_assets_col--big">
-                    <div class="slide_asset">
+                  <div class="slide_item_assets_col--big">
+                    <div class="slide_item_asset">
                       ${imgAlt({ classes: 'media-cover', loading: 'eager' })}
                     </div>
                   </div>
