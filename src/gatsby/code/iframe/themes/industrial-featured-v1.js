@@ -47,21 +47,21 @@ demo.htmlSource = `
       <li class="slide">
         <div class="container">
           <div class="slide-inner">
-            <div class="slide_item">
+            <div class="hero">
 
               <div class="slide-pagination-content">
                 Lorem ipsum
               </div>
 
-              <div class="slide_item_assets">
+              <div class="hero_assets">
                 <div class="row">
-                  <div class="slide_item_assets_col--big slide_item_assets_col--big">
-                    <div class="slide_item_asset">
+                  <div class="hero_assets_col--big hero_assets_col--big">
+                    <div class="hero_asset">
                       ${img({ classes: 'media-cover', loading: 'eager' })}
                     </div>
                   </div>
-                  <div class="slide_item_assets_col--small slide_item_assets_col--small">
-                    <div class="slide_item_asset">
+                  <div class="hero_assets_col--small hero_assets_col--small">
+                    <div class="hero_asset">
                       ${img({ classes: 'media-cover', loading: 'eager' })}
                     </div>
                   </div>
@@ -97,21 +97,21 @@ demo.htmlSource = `
       <li class="slide">
         <div class="container">
           <div class="slide-inner">
-            <div class="slide_item">
+            <div class="hero">
 
               <div class="slide-pagination-content">
                 Dolor sit amet
               </div>
 
-              <div class="slide_item_assets">
+              <div class="hero_assets">
                 <div class="row">
-                  <div class="slide_item_assets_col--small">
-                    <div class="slide_item_asset">
+                  <div class="hero_assets_col--small">
+                    <div class="hero_asset">
                       ${imgAlt({ classes: 'media-cover', loading: 'eager' })}
                     </div>
                   </div>
-                  <div class="slide_item_assets_col--big">
-                    <div class="slide_item_asset">
+                  <div class="hero_assets_col--big">
+                    <div class="hero_asset">
                       ${imgAlt({ classes: 'media-cover', loading: 'eager' })}
                     </div>
                   </div>
@@ -147,21 +147,21 @@ demo.htmlSource = `
       <li class="slide">
         <div class="container">
           <div class="slide-inner">
-            <div class="slide_item">
+            <div class="hero">
 
               <div class="slide-pagination-content">
                 Consectetur adipiscing elit
               </div>
 
-              <div class="slide_item_assets">
+              <div class="hero_assets">
                 <div class="row">
-                  <div class="slide_item_assets_col--big">
-                    <div class="slide_item_asset">
+                  <div class="hero_assets_col--big">
+                    <div class="hero_asset">
                       ${img({ classes: 'media-cover', loading: 'eager' })}
                     </div>
                   </div>
-                  <div class="slide_item_assets_col--small">
-                    <div class="slide_item_asset">
+                  <div class="hero_assets_col--small">
+                    <div class="hero_asset">
                       ${img({ classes: 'media-cover', loading: 'eager' })}
                     </div>
                   </div>
@@ -197,21 +197,21 @@ demo.htmlSource = `
       <li class="slide">
         <div class="container">
           <div class="slide-inner">
-            <div class="slide_item">
+            <div class="hero">
 
               <div class="slide-pagination-content">
                 Nam iaculis magna eu consectetur condimentum
               </div>
 
-              <div class="slide_item_assets">
+              <div class="hero_assets">
                 <div class="row">
-                  <div class="slide_item_assets_col--small">
-                    <div class="slide_item_asset">
+                  <div class="hero_assets_col--small">
+                    <div class="hero_asset">
                       ${imgAlt({ classes: 'media-cover', loading: 'eager' })}
                     </div>
                   </div>
-                  <div class="slide_item_assets_col--big">
-                    <div class="slide_item_asset">
+                  <div class="hero_assets_col--big">
+                    <div class="hero_asset">
                       ${imgAlt({ classes: 'media-cover', loading: 'eager' })}
                     </div>
                   </div>
