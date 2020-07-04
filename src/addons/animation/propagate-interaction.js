@@ -15,6 +15,7 @@ class PropagateInteraction {
     const self = this
     self.object = object
     self.optionsCustom = optionsCustom
+    self.componentName = self.constructor.componentName
     Xt.destroyAndInit(self)
   }
 

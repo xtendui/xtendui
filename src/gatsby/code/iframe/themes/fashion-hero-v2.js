@@ -1,6 +1,7 @@
 import React from 'react'
 import path from 'path'
 const markupHero = require('components/snippets/themes/markup-hero').default
+const indentString = require('indent-string')
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -14,7 +15,16 @@ export const demo = {
 }
 
 demo.htmlSource = `
-${markupHero()}
+<div class="slider">
+
+  ${indentString(markupHero(), 2)}
+
+  <nav class="slider-pagination display-none">
+    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
+    </button>
+  </nav>
+
+</div>
 `
 
 class Page extends React.Component {

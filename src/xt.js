@@ -553,51 +553,75 @@ if (typeof window !== 'undefined') {
    * @param {Boolean} transform Use transforms instead of position
    */
   Xt.friction = (el, obj, transform = false) => {
-    let xCurrent = Xt.getTranslate(el)[0]
-    let yCurrent = Xt.getTranslate(el)[1]
-    let xDist = obj.x - xCurrent
-    let yDist = obj.y - yCurrent
-    // momentum
-    const fncFriction = obj.friction
-    if (fncFriction) {
-      xCurrent += fncFriction(Math.abs(xDist)) * Math.sign(xDist)
-      yCurrent += fncFriction(Math.abs(yDist)) * Math.sign(yDist)
-      // set
+    cancelAnimationFrame(Xt.dataStorage.get(el, 'xtFrictionFrame'))
+    cancelAnimationFrame(Xt.dataStorage.get(el, 'xtFrictionInitFrame'))
+    Xt.dataStorage.set(
+      el,
+      'xtFrictionInitFrame',
       requestAnimationFrame(() => {
+        let xCurrent
+        let yCurrent
         if (transform) {
-          el.style.transform = 'translateX(' + xCurrent + 'px) translateY(' + yCurrent + 'px)'
+          xCurrent = Xt.getTranslate(el)[0]
+          yCurrent = Xt.getTranslate(el)[1]
         } else {
-          el.style.top = yCurrent + 'px'
-          el.style.left = xCurrent + 'px'
+          const rect = el.getBoundingClientRect()
+          xCurrent = rect.left
+          yCurrent = rect.top
+        }
+        let xDist = obj.x - xCurrent
+        let yDist = obj.y - yCurrent
+        // momentum
+        const fncFriction = obj.friction
+        // instant position if Xt.dataStorage.get
+        if (fncFriction && Xt.dataStorage.get(el, 'xtFrictionX')) {
+          xCurrent += fncFriction(Math.abs(xDist)) * Math.sign(xDist)
+          yCurrent += fncFriction(Math.abs(yDist)) * Math.sign(yDist)
+          // set
+          if (transform) {
+            el.style.transform = 'translateX(' + xCurrent + 'px) translateY(' + yCurrent + 'px)'
+          } else {
+            el.style.top = Math.round(yCurrent) + 'px'
+            el.style.left = Math.round(xCurrent) + 'px'
+            console.log(Math.round(xCurrent), el.style.top)
+          }
+        } else {
+          xCurrent = obj.x
+          yCurrent = obj.y
+          // set
+          if (transform) {
+            el.style.transform = 'translateX(' + xCurrent + 'px) translateY(' + yCurrent + 'px)'
+          } else {
+            el.style.top = yCurrent + 'px'
+            el.style.left = xCurrent + 'px'
+          }
+        }
+        // next interaction friction position
+        Xt.dataStorage.set(el, 'xtFrictionX', xCurrent)
+        Xt.dataStorage.set(el, 'xtFrictionY', yCurrent)
+        // loop
+        if (fncFriction) {
+          const frictionLimit = obj.frictionLimit ? obj.frictionLimit : 1.5
+          xDist = obj.x - xCurrent
+          yDist = obj.y - yCurrent
+          cancelAnimationFrame(Xt.dataStorage.get(el, 'xtFrictionFrame'))
+          Xt.dataStorage.set(
+            el,
+            'xtFrictionFrame',
+            requestAnimationFrame(() => {
+              if (Math.abs(xDist) >= frictionLimit || Math.abs(yDist) >= frictionLimit) {
+                // continue friction
+                Xt.friction(el, obj, transform)
+              } else {
+                // next interaction instant position
+                Xt.dataStorage.remove(el, 'xtFrictionX')
+                Xt.dataStorage.remove(el, 'xtFrictionY')
+              }
+            })
+          )
         }
       })
-    } else {
-      xCurrent = obj.x
-      yCurrent = obj.y
-      // set
-      if (transform) {
-        el.style.transform = 'translateX(' + xCurrent + 'px) translateY(' + yCurrent + 'px)'
-      } else {
-        el.style.top = yCurrent + 'px'
-        el.style.left = xCurrent + 'px'
-      }
-    }
-    // loop
-    if (fncFriction) {
-      const frictionLimit = obj.frictionLimit ? obj.frictionLimit : 1.5
-      xDist = obj.x - xCurrent
-      yDist = obj.y - yCurrent
-      cancelAnimationFrame(Xt.dataStorage.get(el, 'xtFrictionFrame'))
-      if (Math.abs(xDist) >= frictionLimit || Math.abs(yDist) >= frictionLimit) {
-        Xt.dataStorage.set(
-          el,
-          'xtFrictionFrame',
-          requestAnimationFrame(() => {
-            Xt.friction(el, obj)
-          })
-        )
-      }
-    }
+    )
   }
 
   /**

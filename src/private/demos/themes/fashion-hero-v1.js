@@ -31,7 +31,7 @@ Xt.mount.push({
     let self = new Xt.Slider(object, {
       align: 'left',
       auto: {
-        time: 5000,
+        //time: 5000,
         pause: '.slide_item_content_inner',
       },
       autoHeight: false,

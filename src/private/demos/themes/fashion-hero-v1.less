@@ -2,6 +2,8 @@
   //##START
   body { // add your own selector instead of body to contain the code
     
+    @import 'xtend-library/src/addons/slider/navigation-sides.less';
+    
     /**
       * slider
       */
@@ -29,6 +31,7 @@
         height: calc(var(--vh, 1vh) * 100);
       }
       .slide_item_content {
+        .container();
         position: absolute;
         z-index: 3;
         top: 0;
@@ -43,18 +46,34 @@
         .full();
         .text-inverse();
         .padding(y, giant);
-        // no btn
-        .h1 {
-          .margin(bottom, none);
+      }
+      .slide_item_actions {
+        display: inline-block;
+        .margin(top, medium);
+        > .list {
+          .list-space(medium)
         }
         .btn {
-          display: none;
+          .btn-text();
+          .btn-big();
+          .btn-none-x();
         }
       }
       // variants
       .slide--center {
         .slide_item_content {
-          align-items: center;
+          .align-center();
+        }
+      }
+      .slide--big {
+        .slide_item_content_inner {
+          .font-big();
+          @media @min-sm {
+            .font-giant();
+            .h1 {
+              font-size: 7rem;
+            }
+          }
         }
       }
       // .slider-navigation-sides

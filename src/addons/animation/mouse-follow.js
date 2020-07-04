@@ -16,6 +16,7 @@ class MouseFollow {
     self.object = object
     self.container = container
     self.optionsCustom = optionsCustom
+    self.componentName = self.constructor.componentName
     Xt.destroyAndInit(self)
   }
 
@@ -62,8 +63,9 @@ class MouseFollow {
       {
         x: e.clientX - self.width / 2,
         y: e.clientY - self.height / 2,
+        friction: options.friction,
       },
-      options.friction
+      options.transform
     )
     // listener dispatch
     self.container.dispatchEvent(new CustomEvent('mousemove.xt.mousefollow'))
@@ -83,10 +85,15 @@ class MouseFollow {
       // class
       Xt.animOn(self.object)
       // initial
-      Xt.friction(self.object, {
-        x: e.clientX - self.width / 2,
-        y: e.clientY - self.height / 2,
-      })
+      Xt.friction(
+        self.object,
+        {
+          x: e.clientX - self.width / 2,
+          y: e.clientY - self.height / 2,
+          friction: options.friction,
+        },
+        options.transform
+      )
       // listener dispatch
       self.container.dispatchEvent(new CustomEvent('mouseenter.xt.mousefollow'))
     }
@@ -136,8 +143,9 @@ class MouseFollow {
 
 MouseFollow.componentName = 'xt-mouse-follow'
 MouseFollow.optionsDefault = {
+  transform: true,
   friction: delta => {
-    return delta / 11
+    return delta / 9
   },
 }
 

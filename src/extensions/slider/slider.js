@@ -1280,7 +1280,7 @@ Slider.optionsDefault = {
     horizontal: true,
     factor: 1,
     friction: delta => {
-      return delta / 11
+      return delta / 9
     },
     frictionLimit: 1.5,
   },

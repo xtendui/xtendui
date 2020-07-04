@@ -77,7 +77,7 @@ Xt.mount.push({
       durationOn: Xt.vars.timeBig,
       durationOff: Xt.vars.timeBig,
       auto: {
-        time: 5000,
+        //time: 5000,
         pause: '.slide_item_content_inner',
       },
       autoHeight: false,
