@@ -32,9 +32,10 @@ jobs:
         path: |
           ${{ steps.yarn-cache-dir-path.outputs.dir }}
           **/node_modules
-        key: test-${{ runner.os }}-node-v${{ env.NODE }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          ~/.npm
+        key: ${{ runner.os }}-node-v${{ env.NODE }}-yarn-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
-          test-${{ runner.os }}-node-v${{ env.NODE }}-yarn-
+          ${{ runner.os }}-node-v${{ env.NODE }}-yarn-
     - name: Install
       if: steps.yarn-cache.outputs.cache-hit != 'true'
       run: yarn install --frozen-lockfile
