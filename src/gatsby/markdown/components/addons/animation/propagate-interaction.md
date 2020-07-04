@@ -19,4 +19,28 @@ import '/src/addons/animation/propagate-interaction.js'
     </div>
   </button>
 </script>
+
+/**
+ * propagate-interaction
+ */
+
+Xt.mount.push({
+  matches: '#iframe--furniture-parallax-v1 body a, #iframe--furniture-parallax-v1 body button', // add your own selector instead of body to contain the code
+  mount: object => {
+    // init
+
+    let self = new Xt.PropagateInteraction(object, {
+      targets: '.btn',
+    })
+
+    // unmount
+
+    const unmount = () => {
+      self.destroy()
+      self = null
+    }
+    return unmount
+  },
+})
+
 -->

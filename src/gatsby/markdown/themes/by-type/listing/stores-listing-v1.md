@@ -1,11 +1,11 @@
 ---
 type: "Themes"
-category: "By Component"
-parent: "Drop"
-title: "xtend-v1"
+category: "By Type"
+parent: "Listing"
+title: "stores-listing-v1"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-date: "2019-10-10"
+date: "2020-06-22"
 demos: [
-  "iframe/themes/xtend-v1"
+  "iframe/themes/stores-listing-v1"
 ]
 ---

@@ -1,11 +1,11 @@
 ---
 type: "Themes"
 category: "By Component"
-parent: "Group"
-title: "collapse-v1"
+parent: "Card"
+title: "xtend-theme-v1"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-date: "2020-01-24"
+date: "2019-10-10"
 demos: [
-  "iframe/themes/collapse-v1"
+  "iframe/themes/xtend-theme-v1"
 ]
 ---

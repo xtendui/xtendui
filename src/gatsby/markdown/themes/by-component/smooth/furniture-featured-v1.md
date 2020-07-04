@@ -1,11 +1,11 @@
 ---
 type: "Themes"
 category: "By Component"
-parent: "Card"
-title: "xtend-v1"
+parent: "Smooth"
+title: "furniture-featured-v1"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-date: "2019-10-10"
+date: "2020-02-27"
 demos: [
-  "iframe/themes/xtend-v1"
+  "iframe/themes/furniture-featured-v1"
 ]
 ---

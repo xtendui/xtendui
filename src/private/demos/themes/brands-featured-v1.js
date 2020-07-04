@@ -4,7 +4,7 @@ import 'xtend-library/src/extensions/slider/slider.js'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '#iframe--brands-infinite-v1 body .slider', // add your own selector instead of body to contain the code
+  matches: '#iframe--brands-featured-v1 body .slider', // add your own selector instead of body to contain the code
   mount: object => {
     // vars
 

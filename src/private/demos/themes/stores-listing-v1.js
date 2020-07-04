@@ -1,7 +1,7 @@
 import { Xt } from 'xtend-library'
 
 Xt.mount.push({
-  matches: '#iframe--stores-v1 body .block-listing_item', // add your own selector instead of body to contain the code
+  matches: '#iframe--stores-listing-v1 body .block-listing_item', // add your own selector instead of body to contain the code
   mount: object => {
     // vars
 

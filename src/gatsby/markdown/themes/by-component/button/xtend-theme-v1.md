@@ -1,11 +1,11 @@
 ---
 type: "Themes"
 category: "By Component"
-parent: "Scroll"
-title: "furniture-parallax-v1"
+parent: "Button"
+title: "xtend-theme-v1"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-date: "2020-02-27"
+date: "2019-10-10"
 demos: [
-  "iframe/themes/furniture-parallax-v1"
+  "iframe/themes/xtend-theme-v1"
 ]
 ---

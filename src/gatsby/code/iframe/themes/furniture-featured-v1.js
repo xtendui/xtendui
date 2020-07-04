@@ -14,7 +14,8 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div id="body--smooth">
+<div id="body--smooth"
+  data-xt-propagate-interaction="{ targets: '.btn' }">
 
   <div class="parallax parallax--inverse">
 

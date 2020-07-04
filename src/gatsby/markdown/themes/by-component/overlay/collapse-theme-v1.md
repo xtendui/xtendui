@@ -1,11 +1,11 @@
 ---
 type: "Themes"
 category: "By Component"
-parent: "Button"
-title: "xtend-v1"
+parent: "Overlay"
+title: "collapse-theme-v1"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-date: "2019-10-10"
+date: "2020-01-24"
 demos: [
-  "iframe/themes/xtend-v1"
+  "iframe/themes/collapse-theme-v1"
 ]
 ---

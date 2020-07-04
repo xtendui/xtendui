@@ -9,7 +9,7 @@ import gsap from 'gsap'
  */
 
 Xt.mount.push({
-  matches: '#iframe--furniture-parallax-v1 body #body--smooth', // add your own selector instead of body to contain the code
+  matches: '#iframe--furniture-featured-v1 body #body--smooth', // add your own selector instead of body to contain the code
   mount: object => {
     // init
 
@@ -26,34 +26,11 @@ Xt.mount.push({
 })
 
 /**
- * propagate-interaction
- */
-
-Xt.mount.push({
-  matches: '#iframe--furniture-parallax-v1 body a, #iframe--furniture-parallax-v1 body button', // add your own selector instead of body to contain the code
-  mount: object => {
-    // init
-
-    let self = new Xt.PropagateInteraction(object, {
-      targets: '.btn',
-    })
-
-    // unmount
-
-    const unmount = () => {
-      self.destroy()
-      self = null
-    }
-    return unmount
-  },
-})
-
-/**
  * .btn--line
  */
 
 Xt.mount.push({
-  matches: '#iframe--furniture-parallax-v1 body .btn--line', // add your own selector instead of body to contain the code
+  matches: '#iframe--furniture-featured-v1 body .btn--line', // add your own selector instead of body to contain the code
   mount: object => {
     // vars
 
@@ -114,7 +91,7 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '#iframe--furniture-parallax-v1 body .parallax_item', // add your own selector instead of body to contain the code
+  matches: '#iframe--furniture-featured-v1 body .parallax_item', // add your own selector instead of body to contain the code
   mount: object => {
     // vars
 

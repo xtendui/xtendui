@@ -1,11 +1,11 @@
 ---
 type: "Themes"
 category: "By Type"
-parent: "Listing"
-title: "stores-v1"
+parent: "Featured"
+title: "furniture-featured-v1"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-date: "2020-06-22"
+date: "2020-02-27"
 demos: [
-  "iframe/themes/stores-v1"
+  "iframe/themes/furniture-featured-v1"
 ]
 ---
