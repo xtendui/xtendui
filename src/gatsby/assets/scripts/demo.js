@@ -202,7 +202,9 @@ const populateBlock = () => {
     const content = document.querySelector('#gatbsy_open-full-content')
     const current = content.querySelector('.gatsby_demo_item.active')
     // triggering e.detail.container
-    dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: current } }))
+    requestAnimationFrame(() => {
+      dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: current } }))
+    })
   })
 }
 
