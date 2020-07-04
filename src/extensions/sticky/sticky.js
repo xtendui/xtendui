@@ -451,20 +451,26 @@ class Sticky extends Xt.Toggle {
 
 Sticky.componentName = 'xt-sticky'
 Sticky.optionsDefault = {
-  elements: false,
-  targets: false,
-  on: 'on.xt.sticky',
-  min: 0,
-  max: 'Infinity',
-  instant: true,
-  class: 'active active-sticky',
-  aria: false,
-  // sticky only
+  // sticky
   sticky: true,
   position: 'top',
   limit: { bottom: 'Infinity' },
   contain: false,
   hide: false,
+  // element
+  elements: false,
+  targets: false,
+  // class
+  class: 'active active-sticky',
+  // quantity
+  min: 0,
+  max: 'Infinity',
+  // event
+  on: 'on.xt.sticky',
+  // timing
+  instant: true,
+  // other
+  aria: false,
 }
 
 //

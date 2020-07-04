@@ -143,6 +143,7 @@ class MouseFollow {
 
 MouseFollow.componentName = 'xt-mouse-follow'
 MouseFollow.optionsDefault = {
+  // mousefollow
   transform: true,
   friction: delta => {
     return delta / 9

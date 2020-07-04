@@ -1261,39 +1261,7 @@ class Slider extends Xt.Toggle {
 
 Slider.componentName = 'xt-slider'
 Slider.optionsDefault = {
-  elements: '[data-xt-pag]',
-  targets: '.slide',
-  on: 'click',
-  min: 1,
-  max: 1,
-  instant: true,
-  class: 'active active-slider',
-  loop: true,
-  jump: true,
-  jumpOverflow: false,
-  navigation: '[data-xt-nav]',
-  wheel: {
-    selector: false,
-    block: true,
-    limit: false,
-    transform: true,
-    horizontal: true,
-    factor: 1,
-    friction: delta => {
-      return delta / 9
-    },
-    frictionLimit: 1.5,
-  },
-  keyboard: {
-    selector: '.slides',
-  },
-  auto: {
-    pause: '[data-xt-pag], [data-xt-nav], .btn',
-  },
-  aria: {
-    labelledby: false,
-  },
-  // slider only
+  // slider
   autoHeight: false,
   keepHeight: false,
   groupMq: false,
@@ -1320,6 +1288,46 @@ Slider.optionsDefault = {
     overflow: overflow => {
       return Math.pow(overflow, 0.73)
     },
+  },
+  // element
+  elements: '[data-xt-pag]',
+  targets: '.slide',
+  // class
+  class: 'active active-slider',
+  // quantity
+  min: 1,
+  max: 1,
+  // event
+  on: 'click',
+  // timing
+  instant: true,
+  // auto
+  auto: {
+    pause: '[data-xt-pag], [data-xt-nav], .btn',
+  },
+  // wheel
+  wheel: {
+    selector: false,
+    block: true,
+    limit: false,
+    transform: true,
+    horizontal: true,
+    factor: 1,
+    friction: delta => {
+      return delta / 9
+    },
+    frictionLimit: 1.5,
+  },
+  // other
+  loop: true,
+  jump: true,
+  jumpOverflow: false,
+  navigation: '[data-xt-nav]',
+  keyboard: {
+    selector: '.slides',
+  },
+  aria: {
+    labelledby: false,
   },
 }
 

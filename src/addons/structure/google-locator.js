@@ -544,62 +544,32 @@ class GoogleLocator {
 
 GoogleLocator.componentName = 'xt-google-locator'
 GoogleLocator.optionsDefault = {
+  // setting
   initialLocate: false,
   initialSearch: false,
   seachMapBounds: false,
+  // element
+  elements: {
+    loader: '[data-xt-google-locator-loader]',
+    searchInput: '[data-xt-google-locator-search-input]',
+    searchBtn: '[data-xt-google-locator-search-btn]',
+    map: '[data-xt-google-locator-map]',
+    itemsTemplate: 'script[type="text/x-template"]',
+    itemsContainer: '[data-xt-google-locator-items]',
+    results: '[data-xt-google-locator-results]',
+    founds: '[data-xt-google-locator-result-found]',
+    locate: '[data-xt-google-locator-locate-btn]',
+    repeat: '[data-xt-google-locator-repeat]',
+    filter: '[data-xt-google-locator-option]',
+  },
+  // event
   events: {
     animateMarkerClick: false,
     animateMarkerResultClick: false,
     infoWindowMarkerClick: true,
     infoWindowMarkerResultClick: false,
   },
-  markers: [
-    {
-      lat: 40.72308,
-      lng: -73.98434,
-      name: 'Restaurant 1',
-      address: 'Via Foo, 19 - 35141 City PD',
-      additional: '<a href="tel:+39333010101">+39 333 010101</a><br/><a href="mailto:info@info.com">info@info.com</a>',
-      type: ['restaurant'],
-      fav: true,
-    },
-    {
-      lat: 40.724705,
-      lng: -73.986611,
-      name: 'School 1',
-      address: 'Via Foo, 19 - 35141 City PD',
-      additional: '<a href="tel:+39333010101">+39 333 010101</a><br/><a href="mailto:info@info.com">info@info.com</a>',
-      type: ['school'],
-      fav: true,
-    },
-    {
-      lat: 40.724165,
-      lng: -73.983883,
-      name: 'School 2',
-      address: 'Via Foo, 19 - 35141 City PD',
-      additional: '<a href="tel:+39333010101">+39 333 010101</a><br/><a href="mailto:info@info.com">info@info.com</a>',
-      type: ['school'],
-      fav: false,
-    },
-    {
-      lat: 40.721819,
-      lng: -73.991358,
-      name: 'Restaurant 2',
-      address: 'Via Foo, 19 - 35141 City PD',
-      additional: '<a href="tel:+39333010101">+39 333 010101</a><br/><a href="mailto:info@info.com">info@info.com</a>',
-      type: ['restaurant'],
-      fav: false,
-    },
-    {
-      lat: 40.732056,
-      lng: -73.998683,
-      name: 'School 3',
-      address: 'Via Foo, 19 - 35141 City PD',
-      additional: '<a href="tel:+39333010101">+39 333 010101</a><br/><a href="mailto:info@info.com">info@info.com</a>',
-      type: ['school'],
-      fav: false,
-    },
-  ],
+  // map
   map: {
     center: { lat: 40, lng: -74 },
     zoom: 2.5,
@@ -616,20 +586,9 @@ GoogleLocator.optionsDefault = {
       imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m',
     },
   },
+  // infoWindow
   infoWindow: {},
-  elements: {
-    loader: '[data-xt-google-locator-loader]',
-    searchInput: '[data-xt-google-locator-search-input]',
-    searchBtn: '[data-xt-google-locator-search-btn]',
-    map: '[data-xt-google-locator-map]',
-    itemsTemplate: 'script[type="text/x-template"]',
-    itemsContainer: '[data-xt-google-locator-items]',
-    results: '[data-xt-google-locator-results]',
-    founds: '[data-xt-google-locator-result-found]',
-    locate: '[data-xt-google-locator-locate-btn]',
-    repeat: '[data-xt-google-locator-repeat]',
-    filter: '[data-xt-google-locator-option]',
-  },
+  // format
   formatData: {
     lat: function(self, marker) {
       return marker.lat
@@ -709,6 +668,54 @@ GoogleLocator.optionsDefault = {
       return el.outerHTML
     },
   },
+  // marker
+  markers: [
+    {
+      lat: 40.72308,
+      lng: -73.98434,
+      name: 'Restaurant 1',
+      address: 'Via Foo, 19 - 35141 City PD',
+      additional: '<a href="tel:+39333010101">+39 333 010101</a><br/><a href="mailto:info@info.com">info@info.com</a>',
+      type: ['restaurant'],
+      fav: true,
+    },
+    {
+      lat: 40.724705,
+      lng: -73.986611,
+      name: 'School 1',
+      address: 'Via Foo, 19 - 35141 City PD',
+      additional: '<a href="tel:+39333010101">+39 333 010101</a><br/><a href="mailto:info@info.com">info@info.com</a>',
+      type: ['school'],
+      fav: true,
+    },
+    {
+      lat: 40.724165,
+      lng: -73.983883,
+      name: 'School 2',
+      address: 'Via Foo, 19 - 35141 City PD',
+      additional: '<a href="tel:+39333010101">+39 333 010101</a><br/><a href="mailto:info@info.com">info@info.com</a>',
+      type: ['school'],
+      fav: false,
+    },
+    {
+      lat: 40.721819,
+      lng: -73.991358,
+      name: 'Restaurant 2',
+      address: 'Via Foo, 19 - 35141 City PD',
+      additional: '<a href="tel:+39333010101">+39 333 010101</a><br/><a href="mailto:info@info.com">info@info.com</a>',
+      type: ['restaurant'],
+      fav: false,
+    },
+    {
+      lat: 40.732056,
+      lng: -73.998683,
+      name: 'School 3',
+      address: 'Via Foo, 19 - 35141 City PD',
+      additional: '<a href="tel:+39333010101">+39 333 010101</a><br/><a href="mailto:info@info.com">info@info.com</a>',
+      type: ['school'],
+      fav: false,
+    },
+  ],
 }
 
 //

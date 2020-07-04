@@ -13,7 +13,7 @@ date: "2019-11-01"
 
 You can start with toggled elements and targets just by adding **one of the classes** to the **elements** or **targets**.
 
-It's recommended to use `active-overlay` on overlay otherwise the overlay flashes visible on page load.
+It's recommended to use `active-overlay` otherwise the component flashes visible on page load.
 
 <div class="table-scroll">
 

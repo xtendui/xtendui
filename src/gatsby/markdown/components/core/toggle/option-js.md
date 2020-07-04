@@ -14,7 +14,7 @@ You can specify classes to toggle with `class: 'my-class-0 my-class-1'`. Toggled
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `class:String`                          | `active`        | Class name for activation            |
+| Option                  | `class:String`                          | `active active-toggle`        | Class name for activation            |
 | Option                  | `classIn:String`                          | `in`        | Class name for in animation            |
 | Option                  | `classOut:String`                          | `out`        | Class name for out animation            |
 | Option                  | `classInitial:String`                          | `initial`        | Class name for initialization            |
@@ -29,6 +29,8 @@ You can specify classes to toggle with `class: 'my-class-0 my-class-1'`. Toggled
 
 You can start with toggled elements and targets just by adding **one of the classes** to the **elements** or **targets**.
 
+It's recommended to use `active-toggle` otherwise the component flashes visible on page load.
+
 <div class="table-scroll">
 
 |                         | Syntax                                    | Default                       | Description                   |
@@ -42,7 +44,7 @@ You can start with toggled elements and targets just by adding **one of the clas
   </demovanilla>
 </demo>
 
-## Min and Max
+## Quantity
 
 You can specify `min` and `max` concurrent activations. The `min` option is fulfilled on initialization, the `max` options deactivates the first activated when max is reached.
 
@@ -79,52 +81,6 @@ You can specify **on** and **off** events for the toggle. Fore example `on: 'mou
   <demovanilla src="vanilla/components/core/toggle/event">
   </demovanilla>
 </demo>
-
-## Jump
-
-Use `jump: true` to enable clicking on a **target** to jump to them.
-
-<div class="table-scroll">
-
-|                         | Syntax                                    | Default                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `jump:Boolean`                          | `false`        | Clicking on targets triggers activation            |
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/core/toggle/jump">
-  </demovanilla>
-</demo>
-
-## Navigation
-
-You can add navigation with `navigation: QuerySelector`, set the amount to add (`+1`) or remove (`-1`) to the current activation index with `[data-xt-nav="value"]`.
-
-<div class="table-scroll">
-
-|                         | Syntax                                    | Default                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `navigation:Query`                          | `false`        | Query for navigation elements             |
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/core/toggle/navigation">
-  </demovanilla>
-</demo>
-
-## Loop
-
-Use `loop: false` to disable looping on activation.
-
-<div class="table-scroll">
-
-|                         | Syntax                                    | Default                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `loop:Boolean`                          | `true`        | Loop activation            |
-
-</div>
 
 ## Timing
 
@@ -193,6 +149,52 @@ Use the [api](/components/core/toggle/api#listen) and listen to events to make a
   </demovanilla>
 </demo>
 
+## Loop
+
+Use `loop: false` to disable looping on activation.
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Default                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `loop:Boolean`                          | `true`        | Loop activation            |
+
+</div>
+
+## Jump
+
+Use `jump: true` to enable clicking on a **target** to jump to them.
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Default                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `jump:Boolean`                          | `false`        | Clicking on targets triggers activation            |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/core/toggle/jump">
+  </demovanilla>
+</demo>
+
+## Navigation
+
+You can add navigation with `navigation: QuerySelector`, set the amount to add (`+1`) or remove (`-1`) to the current activation index with `[data-xt-nav="value"]`.
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Default                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `navigation:Query`                          | `false`        | Query for navigation elements             |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/core/toggle/navigation">
+  </demovanilla>
+</demo>
+
 ## Keyboard
 
 Use `keyboard: { selector: 'object' }` or `keyboard: { selector: QuerySelector }` to enable keyboard navigation on focus.
@@ -216,6 +218,7 @@ Use `keyboard: { selector: 'object' }` or `keyboard: { selector: QuerySelector }
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `backdrop:Boolean`                              | `false`                     | Generate backdrop on targets or on object if no targets           |
 | Option                  | `autoClose:Boolean`                          | `false`        | Close automatically on `autoclose.trigger.xt` event            |
 | Option                  | `appendTo:Query`                          | `false`        | Append targets to Node on activation            |
 | Option                  | `classHtml:String`                          | `false`        | Class to add to html element on activation            |

@@ -2,7 +2,7 @@
 type: "Components"
 category: "Extensions"
 parent: "Slider"
-title: "Position"
+title: "Option Position"
 date: "2019-11-20"
 ---
 

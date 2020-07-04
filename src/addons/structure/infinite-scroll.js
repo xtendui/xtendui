@@ -249,20 +249,25 @@ class InfiniteScroll {
 
 InfiniteScroll.componentName = 'xt-infinite-scroll'
 InfiniteScroll.optionsDefault = {
+  // infiniteScroll
   url: false,
-  current: 1,
-  add: 1,
-  max: 'Infinity',
-  class: 'infinite-scroll-loading',
-  classNoMore: 'infinite-scroll-nomore',
-  events: {
-    scroll: true,
-    trigger: 'click',
-  },
+  // element
   elements: {
     scroll: '[data-xt-infinite-scroll-scroll]',
     trigger: '[data-xt-infinite-scroll-trigger]',
     items: '[data-xt-infinite-scroll-items]',
+  },
+  // class
+  class: 'infinite-scroll-loading',
+  classNoMore: 'infinite-scroll-nomore',
+  // quantity
+  current: 1,
+  add: 1,
+  max: 'Infinity',
+  // event
+  events: {
+    scroll: true,
+    trigger: 'click',
   },
 }
 
