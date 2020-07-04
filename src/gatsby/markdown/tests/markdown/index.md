@@ -103,8 +103,11 @@ Sed gravida massa in commodo eleifend. Curabitur ac pellentesque nisl. Nunc ut p
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut ex at ex pellentesque efficitur.
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut ex at ex pellentesque efficitur. Maecenas pulvinar mauris eget pharetra elementum.
 
+[[noteDefault]]
+| With **multiple mode** you **can't** specify targets with **#id** `.class`.
+
 [[notePrimary]]
-| With **multiple mode** you **can't** specify targets with **#id**.
+| With **multiple mode** you **can't** specify targets with **#id** `.class`.
 
 <script type="text/plain" class="language-markup">
   <a href="#" class="btn btn-default">

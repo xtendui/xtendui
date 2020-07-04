@@ -33,6 +33,19 @@ import '/src/xtend-core.js'
 
 ## Usage
 
+Set `elements` `targets` `elementsInner` `targetsInner`, elements are responding to events, targets are activated on events.
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Default                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `elements:Query`                          | `false`        | Elements query            |
+| Option                  | `targets:Query`                          | `:scope > .drop`        | Targets query            |
+| Option                  | `elementsInner:Query`                          | `:scope > a, :scope > button`        | Inner elements query (scope inside elements)            |
+| Option                  | `targetsInner:Query`                          | `:scope > .drop-inner`        | Inner targets query (scope inside targets)           |
+
+</div>
+
 Use this markup to create a **drop**.
 
 <script type="text/plain" class="language-markup">

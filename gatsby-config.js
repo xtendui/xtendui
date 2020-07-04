@@ -91,6 +91,14 @@ module.exports = {
               },
             },
           },
+          {
+            resolve: `gatsby-remark-classes`,
+            options: {
+              classMap: {
+                link: 'link',
+              },
+            },
+          },
         ],
       },
     },

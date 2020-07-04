@@ -29,6 +29,19 @@ import '/src/xtend-core.js'
 
 ## Usage
 
+Set `elements` `targets` `elementsInner` `targetsInner`, elements are responding to events, targets are activated on events.
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Default                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `elements:Query`                          | `:scope > a, :scope > button`        | Elements query            |
+| Option                  | `targets:Query`                          | `:scope > [class^="toggle-"], :scope > [class*=" toggle-"]`        | Targets query            |
+| Option                  | `elementsInner:Query`                          | `false`        | Inner elements query (scope inside elements)            |
+| Option                  | `targetsInner:Query`                          | `false`        | Inner targets query (scope inside targets)     
+
+</div>
+
 #### Self
 
 You can use this markup to create a **toggle** with **no targets**.
@@ -60,18 +73,6 @@ With multiple mode, the **targets** activated are the ones with the same index o
     </div>
   </div>
 </script>
-
-Use `:scope` when using descendant selector on root (e.g. `:scope > *`).
-
-<div class="table-scroll">
-
-|                         | Syntax                                    | Default                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `elements:Query`                          | `:scope > a, :scope > button`        | Elements that triggers the events            |
-| Option                  | `targets:Query`                           | `:scope > [class^="toggle-"], :scope > [class*=" toggle-"]`      | Targets that gets activated on events by the elements           |
-| Option                  | `elementsInner:Query`                          | `false`        | Additional query inside elements that gets activated on events            |
-| Option                  | `targetsInner:Query`                          | `false`        | Additional query inside targets that gets activated on events            |
-</div>
 
 <demo>
   <demovanilla src="vanilla/components/core/toggle/multiple-default">

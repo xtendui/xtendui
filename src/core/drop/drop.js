@@ -64,7 +64,7 @@ Drop.optionsDefault = {
   eventLimit: '.event-limit, .drop',
   autoClose: true,
   closeOutside: 'body',
-  closeInside: '.drop-dismiss, .btn-close, .backdrop',
+  closeInside: '.drop-dismiss, .backdrop, .btn-close',
   zIndex: {
     targets: {
       start: 500,

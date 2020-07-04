@@ -42,8 +42,10 @@ html.gatsby_iframe-container {
  */
 
 code {
+  margin: -.1em .1em;
+  padding: .2em .35em;
   border-radius: 0;
-  background: transparent;
+  background: fade(@shade-100, 25%);
   .font-monospace();
   font-size: .9em;
   color: #22a2c9;
@@ -51,18 +53,14 @@ code {
 
 .note-default {
   code {
-    margin: -.1em .1em;
-    padding: .2em .35em;
-    background: darken(@shade-100, 4%);
+    background: darken(@shade-100, 2%);
     color: @text;
   }
 }
 
 .note-primary {
   code {
-    margin: -.1em .1em;
-    padding: .2em .35em;
-    background: fade(@white, 20%);
+    background: fade(@white, 10%);
     color: @text-inverse;
   }
 }
