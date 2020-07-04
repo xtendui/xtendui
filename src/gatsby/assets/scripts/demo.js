@@ -331,7 +331,9 @@ const populateDemo = (container, i) => {
     item.addEventListener('on.xt', e => {
       if (!self.initial) {
         // triggering e.detail.container
-        dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: item.querySelector('.gatsby_demo_source') } }))
+        requestAnimationFrame(() => {
+          dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: item.querySelector('.gatsby_demo_source'), delay: 0 } }))
+        })
       }
       // only if demo opened
       if (document.querySelector('#gatbsy_open-full-trigger').classList.contains('active')) {

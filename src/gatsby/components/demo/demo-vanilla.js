@@ -9,7 +9,6 @@ class DemoVanilla extends React.Component {
     const { src, children, name, mode } = this.props
     const demo = require('../../code/' + src + '.js').demo
     demo.path = `private/demos/${demo.dirs.join('/')}/${demo.name}`.replace('/vanilla', '').replace('src/gatsby/code/', '')
-    console.log(demo.path)
     return (
       <StaticQuery
         query={graphql`
