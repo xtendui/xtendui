@@ -234,9 +234,8 @@ class Slider extends Xt.Toggle {
     self.wrapIndex = self.groupMqFirst.length
     // @FIX page load flickr
     const firstSlide = self.groupMqInitial[0][0]
-    const firstPosition = Xt.dataStorage.get(firstSlide, self.componentNamespace + 'SlideLeft')
     self.dragger.classList.add('transition-none')
-    self.dragger.style.transform = 'translateX(' + firstPosition + 'px)'
+    self.dragger.style.transform = 'translateX(' + firstSlide.offsetLeft + 'px)'
   }
 
   /**

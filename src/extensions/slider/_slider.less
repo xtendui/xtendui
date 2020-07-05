@@ -8,10 +8,12 @@
   position: relative;
   overflow: hidden;
   // @FIX page load flickr
-  &:not(.xt-slider) .slide {
-    &:first-child {
-      display: block !important;
-      position: relative !important;
+  &:not(.xt-slider) {
+    .slide {
+      &:first-child {
+        display: block !important;
+        position: relative !important;
+      }
     }
   }
 }
