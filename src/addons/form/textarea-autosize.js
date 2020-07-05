@@ -1,5 +1,5 @@
 import { Xt } from 'xtend-library'
-import JSON5  from 'json5'
+import JSON5 from 'json5'
 
 /**
  * TextareaAutosize

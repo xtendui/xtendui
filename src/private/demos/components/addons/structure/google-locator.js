@@ -10,7 +10,7 @@ Xt.addScript(
   'https://maps.googleapis.com/maps/api/js?key=AIzaSyDSZt9TUgS20QyAbAAL-X3tJIKVLEaCrts&v=3&libraries=places,geometry&language=en&&region=US&callback=demoGoogleLocator'
 )
 
-window.demoGoogleLocator = function() {
+window.demoGoogleLocator = function () {
   Xt.mount.push({
     matches: '.demo--google-locator',
     mount: object => {
@@ -28,7 +28,7 @@ window.demoGoogleLocator = function() {
           },
         },
         formatData: {
-          filter: function(self, marker, filter) {
+          filter: function (self, marker, filter) {
             return marker[filter] || (marker.type && marker.type.includes(filter))
           },
         },

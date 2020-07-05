@@ -23,7 +23,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '#iframe--fashion-hero-v2 body .slide', // add your own selector instead of body to contain the code
-  mount: function(object) {
+  mount: function (object) {
     // vars
 
     const links = object.tagName === 'A' || object.tagName === 'BUTTON' ? Xt.arrSingle(object) : object.querySelectorAll('a, button')
@@ -139,7 +139,7 @@ Xt.mount.push({
           // inject
           for (const target of self.targets) {
             if (!target.querySelector('.hero_cover')) {
-              const inject = Xt.createElement(`<div class="hero_cover"></div>`);
+              const inject = Xt.createElement(`<div class="hero_cover"></div>`)
               target.querySelector('.slide-inner').prepend(inject)
             }
           }

@@ -107,8 +107,7 @@ Xt.mount.push({
         const size = self.detail.draggerWidth / 6
         // content
         const content = tr.querySelector('.hero_asset .media')
-        gsap
-          .to(content, { x: size * self.direction, scale: 1, opacity: 0.5, duration: contentTime, ease: contentEase })
+        gsap.to(content, { x: size * self.direction, scale: 1, opacity: 0.5, duration: contentTime, ease: contentEase })
       }
     }
 

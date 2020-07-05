@@ -588,13 +588,13 @@ GoogleLocator.optionsDefault = {
   infoWindow: {},
   // format
   formatData: {
-    lat: function(self, marker) {
+    lat: function (self, marker) {
       return marker.lat
     },
-    lng: function(self, marker) {
+    lng: function (self, marker) {
       return marker.lng
     },
-    sort: function(self, locations) {
+    sort: function (self, locations) {
       if (self.searchInput.value === '') {
         locations.sort((a, b) => {
           if (a.marker.name > b.marker.name) {
@@ -609,10 +609,10 @@ GoogleLocator.optionsDefault = {
         locations.sort((a, b) => a.distance - b.distance)
       }
     },
-    filter: function(self, marker, filter) {
+    filter: function (self, marker, filter) {
       return marker[filter]
     },
-    name: function(self, loc, el) {
+    name: function (self, loc, el) {
       const str = loc.marker.name
       if (!str || str === '') {
         el.remove()
@@ -620,7 +620,7 @@ GoogleLocator.optionsDefault = {
         el.innerHTML = str
       }
     },
-    address: function(self, loc, el) {
+    address: function (self, loc, el) {
       const str = loc.marker.address
       if (!str || str === '') {
         el.remove()
@@ -628,7 +628,7 @@ GoogleLocator.optionsDefault = {
         el.innerHTML = str
       }
     },
-    additional: function(self, loc, el) {
+    additional: function (self, loc, el) {
       const str = loc.marker.additional
       if (!str || str === '') {
         el.remove()
@@ -636,7 +636,7 @@ GoogleLocator.optionsDefault = {
         el.innerHTML = str
       }
     },
-    img: function(self, loc, el) {
+    img: function (self, loc, el) {
       const str = loc.marker.img
       if (!str || str === '') {
         el.remove()
@@ -644,13 +644,13 @@ GoogleLocator.optionsDefault = {
         el.setAttribute('src', str)
       }
     },
-    direction: function(self, loc, el) {
+    direction: function (self, loc, el) {
       let str = 'https://www.google.com/maps/dir/?api=1&destination='
       str += loc.marker.name
       str += '+' + loc.marker.address
       el.setAttribute('href', encodeURI(str))
     },
-    distance: function(self, loc, el) {
+    distance: function (self, loc, el) {
       let distance
       if (loc.distance > 1000) {
         distance = Math.round(loc.distance / 1000) + ' Km'
@@ -662,7 +662,7 @@ GoogleLocator.optionsDefault = {
         el.remove()
       }
     },
-    info: function(self, loc, el) {
+    info: function (self, loc, el) {
       return el.outerHTML
     },
   },

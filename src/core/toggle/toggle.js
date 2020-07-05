@@ -1,4 +1,4 @@
-import JSON5  from 'json5'
+import JSON5 from 'json5'
 import { Xt } from 'xtend-library'
 
 /**
@@ -1721,12 +1721,8 @@ class Toggle {
       // activation
       self.activate(el)
       // special
-      const before = getComputedStyle(el, ':before')
-        .getPropertyValue('content')
-        .replace(/['"]+/g, '')
-      const after = getComputedStyle(el, ':after')
-        .getPropertyValue('content')
-        .replace(/['"]+/g, '')
+      const before = getComputedStyle(el, ':before').getPropertyValue('content').replace(/['"]+/g, '')
+      const after = getComputedStyle(el, ':after').getPropertyValue('content').replace(/['"]+/g, '')
       self.specialCenter(el, before, after)
       self.specialMiddle(el, before, after)
       self.specialCollapse(actionCurrent, el, before, after)
@@ -1786,12 +1782,8 @@ class Toggle {
       // activation
       self.deactivate(el)
       // special
-      const before = getComputedStyle(el, ':before')
-        .getPropertyValue('content')
-        .replace(/['"]+/g, '')
-      const after = getComputedStyle(el, ':after')
-        .getPropertyValue('content')
-        .replace(/['"]+/g, '')
+      const before = getComputedStyle(el, ':before').getPropertyValue('content').replace(/['"]+/g, '')
+      const after = getComputedStyle(el, ':after').getPropertyValue('content').replace(/['"]+/g, '')
       self.specialCollapse(actionCurrent, el, before, after)
       if (type === 'targets' || type === 'targetsInner' || el === self.object) {
         self.specialClose(actionCurrent, el)
@@ -1871,12 +1863,8 @@ class Toggle {
       // activation
       self.activateDone(el)
       // special
-      const before = getComputedStyle(el, ':before')
-        .getPropertyValue('content')
-        .replace(/['"]+/g, '')
-      const after = getComputedStyle(el, ':after')
-        .getPropertyValue('content')
-        .replace(/['"]+/g, '')
+      const before = getComputedStyle(el, ':before').getPropertyValue('content').replace(/['"]+/g, '')
+      const after = getComputedStyle(el, ':after').getPropertyValue('content').replace(/['"]+/g, '')
       self.specialCollapse('Reset', el, before, after)
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
@@ -2817,9 +2805,7 @@ class Toggle {
       check = self.targets[0]
     }
     // status
-    const str = getComputedStyle(check, ':after')
-      .getPropertyValue('content')
-      .replace(/['"]+/g, '')
+    const str = getComputedStyle(check, ':after').getPropertyValue('content').replace(/['"]+/g, '')
     if (
       check instanceof HTMLElement && // @FIX not on window
       str === 'xt-disable-noinit'

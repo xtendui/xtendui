@@ -8,7 +8,7 @@ document.body.addEventListener('click', e => {
     target.select()
   }
 })
-;(function() {
+;(function () {
   const fontSize = document.getElementById('fontSize')
   const testDrive = document.getElementById('testDrive')
   const testText = document.getElementById('testText')

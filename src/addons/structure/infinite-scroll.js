@@ -1,5 +1,5 @@
 import { Xt } from 'xtend-library'
-import JSON5  from 'json5'
+import JSON5 from 'json5'
 
 /**
  * InfiniteScroll
@@ -170,7 +170,7 @@ class InfiniteScroll {
     html.innerHTML = request.responseText.trim()
     let items = html.querySelector(self.options.elements.items).querySelectorAll(':scope > *')
     // populate dom
-    for(const item of items) {
+    for (const item of items) {
       self.itemsElement.querySelector(':scope > *:last-child').after(item)
     }
     // class

@@ -24,7 +24,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '#iframe--furniture-hero-v1 body .slide', // add your own selector instead of body to contain the code
-  mount: function(object) {
+  mount: function (object) {
     // vars
 
     const links = object.tagName === 'A' || object.tagName === 'BUTTON' ? Xt.arrSingle(object) : object.querySelectorAll('a, button')
@@ -201,7 +201,7 @@ Xt.mount.push({
                   <div class="hero_line_small"></div>
                   <div class="hero_line_big"></div>
                 </div>
-              </div>`);
+              </div>`)
               target.querySelector('.hero_inner').prepend(inject)
             }
           }
@@ -283,9 +283,17 @@ Xt.mount.push({
       if (self.targets.includes(tr)) {
         // assetMask
         const assetMask = tr.querySelector('.hero')
-        gsap.to(assetMask, { x: -100 * self.direction + '%', duration: assetMaskTimeOff, ease: self.detail.dragging ? assetMaskEaseDragging : assetMaskEaseOff })
+        gsap.to(assetMask, {
+          x: -100 * self.direction + '%',
+          duration: assetMaskTimeOff,
+          ease: self.detail.dragging ? assetMaskEaseDragging : assetMaskEaseOff,
+        })
         const assetMaskInner = assetMask.querySelector('.hero_inner')
-        gsap.to(assetMaskInner, { x: (100 * self.direction) / 2 + '%', duration: assetMaskTimeOff, ease: self.detail.dragging ? assetMaskEaseDragging : assetMaskEaseOff })
+        gsap.to(assetMaskInner, {
+          x: (100 * self.direction) / 2 + '%',
+          duration: assetMaskTimeOff,
+          ease: self.detail.dragging ? assetMaskEaseDragging : assetMaskEaseOff,
+        })
       }
     }
 

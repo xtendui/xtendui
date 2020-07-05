@@ -1,6 +1,6 @@
 import { Xt } from 'xtend-library'
 import 'xtend-library/src/core/toggle/toggle.js'
-import JSON5  from 'json5'
+import JSON5 from 'json5'
 
 /**
  * Ajax

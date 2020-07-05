@@ -88,7 +88,7 @@ Xt.mount.push({
       const scrollSpace = self.options.scrollSpace()
       const scrollDistance = self.options.scrollDistance()
       let pos = self.target.offsetTop - scrollSpace - scrollDistance
-      const min = 0;
+      const min = 0
       const max = document.scrollingElement.scrollHeight - window.innerHeight
       pos = pos < min ? min : pos
       pos = pos > max ? max : pos

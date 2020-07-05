@@ -18,7 +18,9 @@ class DocHead extends React.Component {
                     .split(/[\s-]+/)
                     .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
                     .join(' ')}{' '}
-                  {page.post.frontmatter.parent && page.post.frontmatter.parent !== page.post.frontmatter.title ? <em>{page.post.frontmatter.parent}</em> : null}
+                  {page.post.frontmatter.parent && page.post.frontmatter.parent !== page.post.frontmatter.title ? (
+                    <em>{page.post.frontmatter.parent}</em>
+                  ) : null}
                 </span>
                 {page.post.frontmatter.category ? <div className="badge badge-default badge-small">{page.post.frontmatter.category}</div> : null}
               </h1>

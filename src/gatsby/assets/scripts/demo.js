@@ -96,10 +96,7 @@ const formatCode = source => {
     // replace quote entities
     match = match.replace(/&quot;/g, '"')
     // replace entities
-    match = match
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
+    match = match.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
     // replace empty quotes
     match = match.replace(/=""/g, '')
     return match
@@ -240,11 +237,7 @@ const populateDemo = (container, i) => {
     // populate tabs
     let name = item.getAttribute('data-iframe') || item.getAttribute('data-iframe-fullscreen')
     if (name) {
-      name = name
-        .split('/')
-        .pop()
-        .split('-')
-        .join(' ')
+      name = name.split('/').pop().split('-').join(' ')
     }
     name = item.getAttribute('data-name') ? item.getAttribute('data-name') : name
     if (!name) {
