@@ -47,9 +47,7 @@ class PropagateInteraction {
     // initialized class
     self.object.classList.add(self.componentName)
     // listener dispatch
-    requestAnimationFrame(() => {
-      self.object.dispatchEvent(new CustomEvent('init.xt'))
-    })
+    self.object.dispatchEvent(new CustomEvent('init.xt'))
   }
 
   //
