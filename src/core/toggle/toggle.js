@@ -256,6 +256,10 @@ class Toggle {
     }
     // init events
     self.initEvents()
+    // initialized class
+    self.object.classList.add(self.componentName)
+    // listener dispatch
+    self.object.dispatchEvent(new CustomEvent('init.xt'))
   }
 
   /**
@@ -1985,10 +1989,6 @@ class Toggle {
         self.inverse = null
         self.initial = false
         self.wrap = false
-        // initialized class
-        self.object.classList.add(self.componentName)
-        // listener dispatch
-        self.object.dispatchEvent(new CustomEvent('init.xt'))
       })
     } else if (actionCurrent === 'Off') {
       // special
