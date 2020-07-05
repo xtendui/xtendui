@@ -39,7 +39,7 @@ class DemoVanillaIframe extends React.Component {
           <Layout seo={seo} demo={demo}>
             <SEO title={seo.title} />
             <Helmet>
-              <html id={'iframe--' + demo.name} class={cname} />
+              <html id={'iframe--' + demo.name} className={cname} />
             </Helmet>
             <div id="body-outer">
               {data.allFile.files.filter(x => x.file.relativePath === `${demo.path}.less`).map((file, index) => (demo.cssSource = cssSource(demo))) && <div /> // @FIX react render string
