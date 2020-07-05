@@ -1,4 +1,4 @@
-import RJSON from 'relaxed-json'
+import JSON5  from 'json5'
 import { Xt } from 'xtend-library'
 
 /**
@@ -259,7 +259,9 @@ class Toggle {
     // initialized class
     self.object.classList.add(self.componentName)
     // listener dispatch
-    self.object.dispatchEvent(new CustomEvent('init.xt'))
+    requestAnimationFrame(() => {
+      self.object.dispatchEvent(new CustomEvent('init.xt'))
+    })
   }
 
   /**
@@ -3070,7 +3072,7 @@ Xt.mount.push({
     // vars
 
     const optionsMarkup = object.getAttribute('data-' + Xt.Toggle.componentName)
-    const options = optionsMarkup ? RJSON.parse(optionsMarkup) : {}
+    const options = optionsMarkup ? JSON5.parse(optionsMarkup) : {}
 
     // init
 

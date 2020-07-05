@@ -1,5 +1,5 @@
 import { Xt } from 'xtend-library'
-import RJSON from 'relaxed-json'
+import JSON5  from 'json5'
 
 /**
  * InfiniteScroll
@@ -287,7 +287,7 @@ Xt.mount.push({
     // vars
 
     const optionsMarkup = object.getAttribute('data-' + Xt.InfiniteScroll.componentName)
-    const options = optionsMarkup ? RJSON.parse(optionsMarkup) : {}
+    const options = optionsMarkup ? JSON5.parse(optionsMarkup) : {}
 
     // init
 

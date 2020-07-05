@@ -1,6 +1,6 @@
 import { Xt } from 'xtend-library'
 import 'xtend-library/src/core/toggle/toggle.js'
-import RJSON from 'relaxed-json'
+import JSON5  from 'json5'
 
 /**
  * Ajax
@@ -397,7 +397,7 @@ Xt.mount.push({
     // vars
 
     const optionsMarkup = object.getAttribute('data-' + Xt.Ajax.componentName)
-    const options = optionsMarkup ? RJSON.parse(optionsMarkup) : {}
+    const options = optionsMarkup ? JSON5.parse(optionsMarkup) : {}
 
     // init
 

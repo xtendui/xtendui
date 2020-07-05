@@ -35,7 +35,7 @@ module.exports = {
                   '@babel/preset-env',
                   {
                     useBuiltIns: 'entry',
-                    corejs: 2,
+                    corejs: 3,
                   },
                 ],
               ],
@@ -46,7 +46,9 @@ module.exports = {
       {
         test: /\.less$/,
         use: [
-          MiniCssExtractPlugin.loader,
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
           {
             loader: 'css-loader',
             options: {
@@ -80,6 +82,7 @@ module.exports = {
     minimizer: [
       new TerserJSPlugin({
         sourceMap: true,
+        extractComments: false,
       }),
       new OptimizeCSSAssetsPlugin({
         cssProcessorOptions: {
