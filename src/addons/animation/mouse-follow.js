@@ -35,10 +35,10 @@ class MouseFollow {
     self.container.addEventListener('mousemove', self.mousemove.bind(self))
     self.container.addEventListener('mouseenter', self.mouseenter.bind(self))
     self.container.addEventListener('mouseleave', self.mouseleave.bind(self))
+    // initialized class
+    self.object.classList.add(self.componentName)
     // listener dispatch
     requestAnimationFrame(() => {
-      // initialized class
-      self.object.classList.add(self.componentName)
       self.object.dispatchEvent(new CustomEvent('init.xt'))
     })
   }

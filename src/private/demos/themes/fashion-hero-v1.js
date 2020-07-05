@@ -28,7 +28,7 @@ Xt.mount.push({
     // vars
 
     const contentTime = Xt.vars.timeLarge
-    const contentEase = 'expo.out'
+    const contentEase = 'quart.out'
 
     const contentZoom = 0.2
     const contentZoomTime = Xt.vars.timeBig * 4

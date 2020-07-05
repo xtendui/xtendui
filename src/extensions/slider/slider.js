@@ -232,6 +232,11 @@ class Slider extends Xt.Toggle {
     self.groupMqLast = wrapLast
     self.groupMq = wrapFirst.concat(self.groupMq.concat(wrapLast))
     self.wrapIndex = self.groupMqFirst.length
+    // @FIX page load flickr
+    const firstSlide = self.groupMqInitial[0][0]
+    const firstPosition = Xt.dataStorage.get(firstSlide, self.componentNamespace + 'SlideLeft')
+    self.dragger.classList.add('transition-none')
+    self.dragger.style.transform = 'translateX(' + firstPosition + 'px)'
   }
 
   /**
@@ -670,7 +675,7 @@ class Slider extends Xt.Toggle {
       // prevent alignment animation
       dragger.classList.remove('duration-none')
       // initial or resizing
-      if (self.initial || self.wrap) {
+      if (self.initial) {
         // prevent alignment animation
         dragger.classList.add('duration-none')
         requestAnimationFrame(() => {

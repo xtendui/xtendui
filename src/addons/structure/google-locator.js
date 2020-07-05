@@ -154,10 +154,10 @@ class GoogleLocator {
         }
       }
     }
+    // initialized class
+    self.object.classList.add(self.componentName)
     // listener dispatch
     requestAnimationFrame(() => {
-      // initialized class
-      self.object.classList.add(self.componentName)
       self.object.dispatchEvent(new CustomEvent('init.xt'))
     })
   }

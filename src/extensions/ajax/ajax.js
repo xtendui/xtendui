@@ -126,10 +126,10 @@ class Ajax extends Xt.Toggle {
     self.pushState(url, document.title)
     // init events
     self.initEvents()
+    // initialized class
+    self.object.classList.add(self.componentName)
     // listener dispatch
     requestAnimationFrame(() => {
-      // initialized class
-      self.object.classList.add(self.componentName)
       self.object.dispatchEvent(new CustomEvent('init.xt'))
     })
   }
