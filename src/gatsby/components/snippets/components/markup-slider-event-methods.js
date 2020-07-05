@@ -37,7 +37,7 @@ export default () => {
       </div>
     </li>
 
-    <li class="slide col-6 col-4-sm active">
+    <li class="slide col-6 col-4-sm">
       <div class="slide-inner">
 
         <div class="card card-slide">
@@ -54,7 +54,7 @@ export default () => {
       </div>
     </li>
 
-    <li class="slide col-6 col-4-sm">
+    <li class="slide col-7 col-5-sm">
       <div class="slide-inner">
 
         <div class="card card-slide">
@@ -71,7 +71,7 @@ export default () => {
       </div>
     </li>
 
-    <li class="slide col-6 col-4-sm">
+    <li class="slide col-7 col-5-sm">
       <div class="slide-inner">
 
         <div class="card card-slide">
@@ -80,23 +80,6 @@ export default () => {
             <div class="card-content">
               <div class="card-block card-item">
                 <div class="card-title">5</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </li>
-
-    <li class="slide col-12">
-      <div class="slide-inner">
-
-        <div class="card card-slide">
-          <div class="card-design"></div>
-          <div class="card-inner">
-            <div class="card-content">
-              <div class="card-block card-item">
-                <div class="card-title">6</div>
               </div>
             </div>
           </div>

@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
@@ -13,6 +14,13 @@ class DemoVanillaIframe extends React.Component {
     const seo = {}
     seo.title = demo.name
     seo.description = 'Demo'
+    let cname = 'gatsby_iframe-inside'
+    if (demo.full) {
+      cname += ' gatsby_iframe-full'
+    }
+    if (demo.container) {
+      cname += ' gatsby_iframe-container'
+    }
     demo.path = `private/demos/${demo.dirs.join('/')}/${demo.name}`.replace('/iframe', '').replace('src/gatsby/code/', '')
     return (
       <StaticQuery
@@ -30,6 +38,9 @@ class DemoVanillaIframe extends React.Component {
         render={data => (
           <Layout seo={seo} demo={demo}>
             <SEO title={seo.title} />
+            <Helmet>
+              <html id={'iframe--' + demo.name} class={cname} />
+            </Helmet>
             <div id="body-outer">
               {data.allFile.files.filter(x => x.file.relativePath === `${demo.path}.less`).map((file, index) => (demo.cssSource = cssSource(demo))) && <div /> // @FIX react render string
               }
