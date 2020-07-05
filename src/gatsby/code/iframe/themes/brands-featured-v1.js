@@ -26,41 +26,41 @@ demo.htmlSource = `
 
       <li class="slide">
         <div class="slide-inner">
-          <div class="hero">
-            <a href="#test-link-1" class="hero_content">
+          <div class="brand">
+            <a href="#test-link-1" class="brand_content">
               One
             </a>
-            <a href="#test-link-2" class="hero_content">
+            <a href="#test-link-2" class="brand_content">
               Two
             </a>
-            <a href="#test-link-3" class="hero_content">
+            <a href="#test-link-3" class="brand_content">
               Three
             </a>
-            <a href="#test-link-4" class="hero_content">
+            <a href="#test-link-4" class="brand_content">
               Four
             </a>
-            <a href="#test-link-5" class="hero_content">
+            <a href="#test-link-5" class="brand_content">
               Five
             </a>
-            <a href="#test-link-6" class="hero_content">
+            <a href="#test-link-6" class="brand_content">
               Six
             </a>
-            <a href="#test-link-7" class="hero_content">
+            <a href="#test-link-7" class="brand_content">
               Seven
             </a>
-            <a href="#test-link-8" class="hero_content">
+            <a href="#test-link-8" class="brand_content">
               Eight
             </a>
-            <a href="#test-link-9" class="hero_content">
+            <a href="#test-link-9" class="brand_content">
               Nine
             </a>
-            <a href="#test-link-10" class="hero_content">
+            <a href="#test-link-10" class="brand_content">
               Ten
             </a>
-            <a href="#test-link-11" class="hero_content">
+            <a href="#test-link-11" class="brand_content">
               Eleven
             </a>
-            <a href="#test-link-12" class="hero_content">
+            <a href="#test-link-12" class="brand_content">
               Twelve
             </a>
           </div>
@@ -88,41 +88,41 @@ demo.htmlSource = `
 
       <li class="slide">
         <div class="slide-inner">
-          <div class="hero">
-            <a href="#test-link-1" class="hero_content">
+          <div class="brand">
+            <a href="#test-link-1" class="brand_content">
               One
             </a>
-            <a href="#test-link-2" class="hero_content">
+            <a href="#test-link-2" class="brand_content">
               Two
             </a>
-            <a href="#test-link-3" class="hero_content">
+            <a href="#test-link-3" class="brand_content">
               Three
             </a>
-            <a href="#test-link-4" class="hero_content">
+            <a href="#test-link-4" class="brand_content">
               Four
             </a>
-            <a href="#test-link-5" class="hero_content">
+            <a href="#test-link-5" class="brand_content">
               Five
             </a>
-            <a href="#test-link-6" class="hero_content">
+            <a href="#test-link-6" class="brand_content">
               Six
             </a>
-            <a href="#test-link-7" class="hero_content">
+            <a href="#test-link-7" class="brand_content">
               Seven
             </a>
-            <a href="#test-link-8" class="hero_content">
+            <a href="#test-link-8" class="brand_content">
               Eight
             </a>
-            <a href="#test-link-9" class="hero_content">
+            <a href="#test-link-9" class="brand_content">
               Nine
             </a>
-            <a href="#test-link-10" class="hero_content">
+            <a href="#test-link-10" class="brand_content">
               Ten
             </a>
-            <a href="#test-link-11" class="hero_content">
+            <a href="#test-link-11" class="brand_content">
               Eleven
             </a>
-            <a href="#test-link-12" class="hero_content">
+            <a href="#test-link-12" class="brand_content">
               Twelve
             </a>
           </div>
@@ -150,23 +150,23 @@ demo.htmlSource = `
 
       <li class="slide">
         <div class="slide-inner">
-          <div class="hero">
-            <a href="#test-link-1" class="hero_content">
+          <div class="brand">
+            <a href="#test-link-1" class="brand_content">
               ${img({ classes: 'media-cover', ratio: '37.5%', loading: 'eager' })}
             </a>
-            <a href="#test-link-2" class="hero_content">
+            <a href="#test-link-2" class="brand_content">
               ${img({ classes: 'media-cover', ratio: '37.5%', loading: 'eager' })}
             </a>
-            <a href="#test-link-3" class="hero_content">
+            <a href="#test-link-3" class="brand_content">
               ${img({ classes: 'media-cover', ratio: '37.5%', loading: 'eager' })}
             </a>
-            <a href="#test-link-4" class="hero_content">
+            <a href="#test-link-4" class="brand_content">
               ${img({ classes: 'media-cover', ratio: '37.5%', loading: 'eager' })}
             </a>
-            <a href="#test-link-5" class="hero_content">
+            <a href="#test-link-5" class="brand_content">
               ${img({ classes: 'media-cover', ratio: '37.5%', loading: 'eager' })}
             </a>
-            <a href="#test-link-6" class="hero_content">
+            <a href="#test-link-6" class="brand_content">
               ${imgAlt({ classes: 'media-cover', ratio: '37.5%', loading: 'eager' })}
             </a>
           </div>
