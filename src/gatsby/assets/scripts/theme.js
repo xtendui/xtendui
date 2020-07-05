@@ -17,12 +17,14 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin.js'
 const changeMq = () => {
   const colorSchemeMq = window.matchMedia('(prefers-color-scheme: dark)')
   const favicon = document.querySelector('link[rel="icon"]')
-  favicon.remove()
+  if (favicon) {
+    favicon.remove()
+  }
   if (colorSchemeMq.matches) {
-    const icon = Xt.createElement('<link rel="icon" href="/favicon-dark.png">')
+    const icon = Xt.createElement('<link rel="icon" href="/icons/favicon-dark.png">')
     document.head.append(icon)
   } else {
-    const icon = Xt.createElement('<link rel="icon" href="/favicon.png">')
+    const icon = Xt.createElement('<link rel="icon" href="/icons/favicon.png">')
     document.head.append(icon)
   }
 }

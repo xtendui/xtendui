@@ -30,10 +30,11 @@ module.exports = {
         start_url: '/',
         background_color: '#ffffff',
         theme_color: '#0078ff',
-        display: 'minimal-ui',
-        icon: 'src/gatsby/assets/images/favicon.png',
+        display: 'browser',
+        icon: './static/icons/apple-touch-icon.png',
       },
     },
+    `gatsby-plugin-offline`,
     // resolve
     {
       resolve: 'gatsby-plugin-module-resolver',
