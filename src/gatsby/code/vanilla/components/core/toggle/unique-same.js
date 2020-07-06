@@ -24,7 +24,7 @@ demo.htmlSource = `
     Target 0
   </div>
 
-  <div class="note note-default note-background toggle-block" id="toggle--unique-3">
+  <div class="note note-default note-background toggle-block active-toggle" id="toggle--unique-3">
     Target 1
   </div>
 
