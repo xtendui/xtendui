@@ -155,7 +155,7 @@ Xt.mount.push({
         const asset = next.querySelector('.hero_asset .media')
         gsap.set(asset, { scale: 1 + assetZoom * self.detail.dragRatioInverse })
         // content
-        const content = next.querySelector('.hero_content')
+        const content = next.querySelector('.hero_content_outer')
         gsap.set(content, { x: contentX * self.detail.dragRatioInverse * self.direction })
       }
     }
