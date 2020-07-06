@@ -169,7 +169,6 @@ class ScrollToAnchor {
         self.target = document.querySelector(loc.hash)
         if (self.target) {
           if (scrollTop >= self.target.offsetTop - self.scrollSpace - self.scrollDistance) {
-            console.log(self.target)
             // reset others
             for (const other of els) {
               other.classList.remove(...self.classes)

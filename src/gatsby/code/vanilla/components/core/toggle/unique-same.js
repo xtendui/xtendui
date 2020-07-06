@@ -11,7 +11,7 @@ demo.htmlSource = `
 <div class="list list-default list-space-small align-items-center">
 
   <button type="button" class="btn btn-default"
-          data-xt-toggle="{ targets: '#toggle--unique-2, #toggle--unique-3' }">
+    data-xt-toggle="{ targets: '#toggle--unique-2, #toggle--unique-3' }">
     Toggle same
   </button>
 

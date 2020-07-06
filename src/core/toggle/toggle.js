@@ -101,7 +101,7 @@ class Toggle {
     self.namespace = self.namespace.replace(/^[^a-z]+|[ ,#_:.-]+/gi, '')
     // currents array based on namespace (so shared between Xt objects)
     self.setCurrents([])
-    // xtNamespace
+    // xtNamespace linked components
     const arr = Xt.dataStorage.get(self.namespace, 'xtNamespace') || []
     arr.push(self)
     Xt.dataStorage.set(self.namespace, 'xtNamespace', arr)
@@ -186,7 +186,7 @@ class Toggle {
     // [disabled]
     self.destroyDisabled()
     // automatic initial currents
-    const elements = self.getGroups()
+    const elements = self.getElementsGroups()
     if (elements.length) {
       // check elements
       for (const element of elements) {
@@ -896,48 +896,71 @@ class Toggle {
   //
 
   /**
-   * get groups (one element per group)
+   * get elements groups (one element per group)
    * @return {Array} array of elements
    */
-  getGroups() {
+  getElementsGroups() {
     const self = this
     // groups
-    const groups = []
+    const final = []
     for (const element of self.elements) {
       // choose element by group
       const group = element.getAttribute('data-xt-group')
       if (group) {
-        const found = groups.filter(x => x.getAttribute('data-xt-group') === group)
+        const found = final.filter(x => x.getAttribute('data-xt-group') === group)
         if (!found.length) {
-          groups.push(element)
+          final.push(element)
         }
       } else {
-        groups.push(element)
+        final.push(element)
       }
     }
-    return groups
+    return final
+  }
+
+  /**
+   * get targets groups (one target per group)
+   * @return {Array} array of targets
+   */
+  getTargetsGroups() {
+    const self = this
+    // groups
+    const final = []
+    for (const targets of self.targets) {
+      // choose element by group
+      const group = targets.getAttribute('data-xt-group')
+      if (group) {
+        const found = final.filter(x => x.getAttribute('data-xt-group') === group)
+        if (!found.length) {
+          final.push(targets)
+        }
+      } else {
+        final.push(targets)
+      }
+    }
+    return final
   }
 
   /**
    * get elements from element or target
    * @param {Node|HTMLElement|EventTarget|Window} el Element that triggered interaction
-   * @return {Array} The first element is the one on getGroups()
+   * @return {Array} The first element is the one on getElementsGroups()
    */
-  getElements(el) {
+  getElements(el = null) {
     const self = this
     // getElements
     if (!self.elements || !self.elements.length) {
       return []
     }
     if (self.mode === 'unique' || !el) {
-      // xtNamespace
-      const elements = []
+      // xtNamespace linked components
+      const final = []
       const selfs = Xt.dataStorage.get(self.namespace, 'xtNamespace')
       for (const item of selfs) {
-        elements.push(...item.elements)
+        // choose element by group
+        final.push(...item.getElementsGroups())
       }
-      // choose all elements
-      return elements
+      return final
     } else if (self.mode === 'multiple') {
       // choose element by group
       let final
@@ -966,15 +989,21 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} el Element that triggered interaction
    * @return {Array}
    */
-  getTargets(el) {
+  getTargets(el = null) {
     const self = this
     // getTargets
     if (!self.targets || !self.targets.length) {
       return []
     }
     if (self.mode === 'unique' || !el) {
-      // choose all targets
-      return self.targets
+      // xtNamespace linked components
+      const final = []
+      const selfs = Xt.dataStorage.get(self.namespace, 'xtNamespace')
+      for (const item of selfs) {
+        // choose element by group
+        final.push(...item.getTargetsGroups())
+      }
+      return final
     } else if (self.mode === 'multiple') {
       // choose only target by group
       let final
@@ -1099,7 +1128,7 @@ class Toggle {
     const self = this
     // set index
     let index = 0
-    for (const [i, el] of self.elements.entries()) {
+    for (const [i, el] of self.getElementsGroups().entries()) {
       if (el === element) {
         index = i
         break
@@ -1373,14 +1402,11 @@ class Toggle {
     if (Xt.visible(self.object)) {
       // not when disabled
       if (getComputedStyle(self.object).pointerEvents !== 'none') {
-        // @FIX after raf because after .xt custom listeners
-        requestAnimationFrame(() => {
-          if (options.auto.inverse) {
-            self.goToPrev(options.auto.step, true)
-          } else {
-            self.goToNext(options.auto.step, true)
-          }
-        })
+        if (options.auto.inverse) {
+          self.goToPrev(options.auto.step, true)
+        } else {
+          self.goToNext(options.auto.step, true)
+        }
       }
     }
   }
@@ -1409,7 +1435,10 @@ class Toggle {
           self.object,
           self.componentNamespace + 'AutoTimeout',
           setTimeout(() => {
-            self.eventAuto()
+            // @FIX after raf because after .xt custom listeners
+            requestAnimationFrame(() => {
+              self.eventAuto()
+            })
           }, time)
         )
         // @FIX event called before removing classes
@@ -2023,7 +2052,7 @@ class Toggle {
       return
     }
     // prevent default if not loop
-    const max = self.getGroups().length - 1
+    const max = self.getElementsGroups().length - 1
     const delta = -e.deltaY || e.wheelDeltaY
     if ((delta > 0 && self.currentIndex > 0) || (delta < 0 && self.currentIndex < max - 1)) {
       // prevent wheel
@@ -2657,7 +2686,7 @@ class Toggle {
     const self = this
     // logic
     const i = self.getNextIndex(amount, loop)
-    return self.getGroups()[i]
+    return self.getElementsGroups()[i]
   }
 
   /**
@@ -2682,7 +2711,7 @@ class Toggle {
   getPrevIndex(amount = 1, loop = null) {
     const self = this
     // logic
-    let index = self.getGroups().length - 1
+    let index = self.getElementsGroups().length - 1
     if (self.currentIndex !== null) {
       index = self.currentIndex - amount
     }
@@ -2699,7 +2728,7 @@ class Toggle {
     const self = this
     // logic
     const i = self.getPrevIndex(amount, loop)
-    return self.getGroups()[i]
+    return self.getElementsGroups()[i]
   }
 
   /**
@@ -2726,7 +2755,7 @@ class Toggle {
     const options = self.options
     // check
     const min = 0
-    const max = self.getGroups().length - 1
+    const max = self.getElementsGroups().length - 1
     if (min === max) {
       // if only one go to the only one
       index = min
@@ -2761,7 +2790,7 @@ class Toggle {
     const self = this
     // logic
     const i = self.getNumIndex(index, loop)
-    return self.getGroups()[i]
+    return self.getElementsGroups()[i]
   }
 
   /**
@@ -2948,7 +2977,7 @@ class Toggle {
         }
       }
     }
-    // xtNamespace
+    // xtNamespace linked components
     const selfs = Xt.dataStorage.get(self.namespace, 'xtNamespace')
     selfs.filter(x => x !== self)
     Xt.dataStorage.set(self.namespace, 'xtNamespace', selfs)
