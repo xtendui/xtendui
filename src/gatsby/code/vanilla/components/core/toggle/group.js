@@ -42,7 +42,7 @@ demo.htmlSource = `
     Target Group 3
   </div>
 
-  <div class="note note-default note-background toggle-block active-toggle" data-xt-group="0">
+  <div class="note note-default note-background toggle-block" data-xt-group="0">
     Target Group 0
   </div>
 

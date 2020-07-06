@@ -12,12 +12,12 @@ demo.htmlSource = `
 
   <button type="button" class="btn btn-default"
           data-xt-toggle="{ targets: '#toggle--unique-2, #toggle--unique-3' }">
-    Toggle
+    Toggle same
   </button>
 
   <button type="button" class="btn btn-default"
           data-xt-toggle="{ targets: '#toggle--unique-2, #toggle--unique-3' }">
-    Toggle
+    Toggle same
   </button>
 
   <div class="note note-default note-background toggle-block" id="toggle--unique-2">

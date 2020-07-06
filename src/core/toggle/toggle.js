@@ -101,6 +101,10 @@ class Toggle {
     self.namespace = self.namespace.replace(/^[^a-z]+|[ ,#_:.-]+/gi, '')
     // currents array based on namespace (so shared between Xt objects)
     self.setCurrents([])
+    // xtNamespace
+    const arr = Xt.dataStorage.get(self.namespace, 'xtNamespace') || []
+    arr.push(self)
+    Xt.dataStorage.set(self.namespace, 'xtNamespace', arr)
   }
 
   /**
@@ -142,23 +146,10 @@ class Toggle {
       arr = arr.filter(x => !x.closest('[data-xt-nav]')) // filter out nav
       self.elements = arr
       self.destroyElements.push(...self.elements)
-      // reset namespace
-      Xt.dataStorage.remove(self.namespace, 'xtNamespaceDone')
     }
-    // xtend unique mode
+    // object if no elements
     if (!self.elements.length) {
       self.elements = Xt.arrSingle(self.object)
-      // set namespace for next frame
-      requestAnimationFrame(() => {
-        let arr = Xt.dataStorage.get(self.namespace, 'xtNamespace')
-        arr = arr.filter(x => !x.closest('.xt-ignore')) // filter out ignore
-        if (arr.length) {
-          self.elements = arr
-          self.destroyElements.push(...self.elements)
-        }
-        // reset namespace
-        Xt.dataStorage.remove(self.namespace, 'xtNamespaceDone')
-      })
     }
   }
 
@@ -194,17 +185,6 @@ class Toggle {
     self.oldIndex = null
     // [disabled]
     self.destroyDisabled()
-    // reset namespace
-    if (!Xt.dataStorage.get(self.namespace, 'xtNamespaceDone')) {
-      Xt.dataStorage.set(self.namespace, 'xtNamespace', [])
-      Xt.dataStorage.set(self.namespace, 'xtNamespaceDone', true)
-    }
-    // set namespace for next frame
-    for (const el of self.elements) {
-      const arr = Xt.dataStorage.get(self.namespace, 'xtNamespace')
-      arr.push(el)
-      Xt.dataStorage.set(self.namespace, 'xtNamespace', arr)
-    }
     // automatic initial currents
     const elements = self.getGroups()
     if (elements.length) {
@@ -950,8 +930,14 @@ class Toggle {
       return []
     }
     if (self.mode === 'unique' || !el) {
+      // xtNamespace
+      const elements = []
+      const selfs = Xt.dataStorage.get(self.namespace, 'xtNamespace')
+      for (const item of selfs) {
+        elements.push(...item.elements)
+      }
       // choose all elements
-      return self.elements
+      return elements
     } else if (self.mode === 'multiple') {
       // choose element by group
       let final
@@ -2924,8 +2910,6 @@ class Toggle {
    */
   restart() {
     const self = this
-    // reset namespace
-    Xt.dataStorage.remove(self.namespace, 'xtNamespaceDone')
     // restart
     self.initStart()
     // listener dispatch
@@ -2964,6 +2948,10 @@ class Toggle {
         }
       }
     }
+    // xtNamespace
+    const selfs = Xt.dataStorage.get(self.namespace, 'xtNamespace')
+    selfs.filter(x => x !== self)
+    Xt.dataStorage.set(self.namespace, 'xtNamespace', selfs)
     // initialized class
     self.object.classList.remove(self.componentName)
     // set self

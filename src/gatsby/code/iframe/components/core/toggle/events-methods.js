@@ -51,10 +51,13 @@ demo.htmlSource = `
 <div id="demo--toggle-events">
 
   <div class="list list-default list-space-small align-items-center" id="demo--toggle-events-elements">
-    <button type="button" class="btn btn-default">
-      Toggle 0
+    <button type="button" class="btn btn-default" data-xt-group="0">
+      Toggle Group 0
     </button>
-    <button type="button" class="btn btn-default">
+    <button type="button" class="btn btn-default" data-xt-group="0">
+      Toggle Group 0
+    </button>
+    <button type="button" class="btn btn-default active-toggle">
       Toggle 1
     </button>
     <button type="button" class="btn btn-default active-toggle">
@@ -63,8 +66,8 @@ demo.htmlSource = `
   </div>
 
   <div class="list list-default list-space-small align-items-center" id="demo--toggle-events-targets">
-    <div class="note note-default note-background toggle-block">
-      Target 0
+    <div class="note note-default note-background toggle-block" data-xt-group="0">
+        Target Group 0
     </div>
     <div class="note note-default note-background toggle-block">
       Target 1

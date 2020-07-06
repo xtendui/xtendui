@@ -37,10 +37,10 @@ demo.htmlSource = `
 <br/>
 
 <div class="list list-default list-space-tiny align-items-center">
-  <button type="button" class="btn btn-primary" id="demo--overlay-events">
+  <button type="button" class="btn btn-default" id="demo--overlay-events">
     Open Overlay
   </button>
-  <button type="button" class="btn btn-primary" id="demo--overlay-events-alt">
+  <button type="button" class="btn btn-default" id="demo--overlay-events-alt">
     Open Same Overlay
   </button>
 </div>
