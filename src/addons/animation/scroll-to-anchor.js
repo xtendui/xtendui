@@ -169,6 +169,7 @@ class ScrollToAnchor {
         self.target = document.querySelector(loc.hash)
         if (self.target) {
           if (scrollTop >= self.target.offsetTop - self.scrollSpace - self.scrollDistance) {
+            console.log(self.target)
             // reset others
             for (const other of els) {
               other.classList.remove(...self.classes)
@@ -226,7 +227,7 @@ class ScrollToAnchor {
 ScrollToAnchor.componentName = 'xt-scroll-to-anchor'
 ScrollToAnchor.optionsDefault = {
   // elements
-  elements: '[href*="#"]',
+  elements: '[href*="#"]:not([aria-controls])', // filter out components toggles with :not([aria-controls])
   scrollElement: window,
   // class
   class: 'active',
