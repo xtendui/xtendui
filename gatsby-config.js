@@ -32,6 +32,9 @@ module.exports = {
         theme_color: '#0078ff',
         display: 'browser',
         icon: './static/icons/apple-touch-icon.png',
+        icon_options: {
+          purpose: `maskable any`,
+        },
       },
     },
     `gatsby-plugin-offline`,
