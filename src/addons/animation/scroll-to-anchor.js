@@ -45,8 +45,11 @@ class ScrollToAnchor {
     })
     // initialized class
     self.object.classList.add(self.componentName)
-    // listener dispatch
-    self.object.dispatchEvent(new CustomEvent('init.xt'))
+    // @FIX after raf because after .xt custom listeners
+    requestAnimationFrame(() => {
+      // listener dispatch
+      self.object.dispatchEvent(new CustomEvent('init.xt'))
+    })
   }
 
   //
@@ -105,8 +108,11 @@ class ScrollToAnchor {
               }
               // add space
               self.scrollSpace = self.options.scrollSpace(self)
-              // listener dispatch
-              self.object.dispatchEvent(new CustomEvent('change.xt.scrolltoanchor'))
+              // @FIX after raf because after .xt custom listeners
+              requestAnimationFrame(() => {
+                // listener dispatch
+                self.object.dispatchEvent(new CustomEvent('change.xt.scrolltoanchor'))
+              })
             }
           }
         }

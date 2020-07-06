@@ -14,7 +14,7 @@ export default () => {
             <div class="hero_asset">
               ${img({ classes: 'media-cover', loading: 'eager' })}
             </div>
-            <div class="hero_content">
+            <div class="hero_content_outer">
               <a href="#" class="hero_content_inner">
                 <div class="hero_text">
                   <h2 class="h1">
@@ -37,8 +37,8 @@ export default () => {
             <div class="hero_asset">
               ${imgAlt({ classes: 'media-cover', loading: 'eager' })}
             </div>
-            <div class="hero_content">
-              <div class="container">
+            <div class="hero_content_outer">
+              <div class="hero_content">
                 <a href="#" class="hero_content_inner">
                   <div class="hero_text">
                     <h2 class="h1">
@@ -69,8 +69,8 @@ export default () => {
             <div class="hero_asset">
               ${img({ classes: 'media-cover', loading: 'eager' })}
             </div>
-            <div class="hero_content">
-              <div class="container">
+            <div class="hero_content_outer">
+              <div class="hero_content">
                 <a href="#" class="hero_content_inner">
                   <div class="hero_text">
                     <h2 class="h1">
@@ -94,8 +94,8 @@ export default () => {
             <div class="hero_asset">
               ${imgAlt({ classes: 'media-cover', loading: 'eager' })}
             </div>
-            <div class="hero_content">
-              <div class="container">
+            <div class="hero_content_outer">
+              <div class="hero_content">
                 <div class="hero_content_inner">
                   <div class="hero_text">
                     <h2 class="h1">
@@ -130,8 +130,8 @@ export default () => {
             <div class="hero_asset">
               ${img({ classes: 'media-cover', loading: 'eager' })}
             </div>
-            <div class="hero_content">
-              <div class="container">
+            <div class="hero_content_outer">
+              <div class="hero_content">
                 <div class="hero_content_inner">
                   <div class="hero_text">
                     <h2 class="h1">
@@ -166,8 +166,8 @@ export default () => {
             <div class="hero_asset">
               ${img({ classes: 'media-cover', loading: 'eager' })}
             </div>
-            <div class="hero_content">
-              <div class="container">
+            <div class="hero_content_outer">
+              <div class="hero_content">
                 <div class="hero_content_inner">
                   <div class="hero_text">
                     <h2 class="h1">

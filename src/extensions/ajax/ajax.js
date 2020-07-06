@@ -124,8 +124,6 @@ class Ajax extends Xt.Toggle {
       self.locationFrom = new URL(url, location)
     }
     self.pushState(url, document.title)
-    // init events
-    self.initEvents()
   }
 
   /**

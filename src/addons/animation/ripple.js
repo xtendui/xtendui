@@ -40,8 +40,11 @@ class Ripple {
     self.object.addEventListener('touchstart', self.eventStart.bind(self), { passive: true })
     // initialized class
     self.object.classList.add(self.componentName)
-    // listener dispatch
-    self.object.dispatchEvent(new CustomEvent('init.xt'))
+    // @FIX after raf because after .xt custom listeners
+    requestAnimationFrame(() => {
+      // listener dispatch
+      self.object.dispatchEvent(new CustomEvent('init.xt'))
+    })
   }
 
   //
@@ -96,6 +99,7 @@ class Ripple {
       self.left = left
       self.sizeFinal = sizeFinal
       self.scaleFinal = scaleFinal
+      // listener dispatch
       self.object.dispatchEvent(new CustomEvent('ripple.on.xt'))
       // off
       self.offListener = self.eventEnd.bind(self)

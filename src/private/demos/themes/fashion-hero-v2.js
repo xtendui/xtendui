@@ -64,12 +64,10 @@ Xt.mount.push({
   mount: object => {
     // vars
 
-    const assetCoverTimeOn = Xt.vars.timeBig + 150 // @FIX to cover skew: + 250
-    const assetCoverEaseOn = 'quint.inOut'
-    const assetCoverTimeOff = Xt.vars.timeBig
-    const assetCoverEaseOff = 'quint.inOut'
+    const assetCoverTime = Xt.vars.timeBig
+    const assetCoverEase = 'quint.inOut'
 
-    const assetMaskTime = Xt.vars.timeBig
+    const assetMaskTime = Xt.vars.timeBig - 150 // @FIX skew mask reveal
     const assetMaskEase = 'quint.inOut'
 
     const assetZoom = 0.25
@@ -123,7 +121,7 @@ Xt.mount.push({
       const skew = self.detail.dragRatio < 0.5 ? 10 * (self.detail.dragRatio * 1.5) : 10 * (self.detail.dragRatioInverse * 1.5) // * 2 would be the same as the normal skew
       gsap.set(assetCover, { x: 100 * self.detail.dragRatioInverse * self.direction + '%', skewX: skew * self.direction })
       // content
-      const content = tr.querySelector('.hero_content')
+      const content = tr.querySelector('.hero_content_outer')
       gsap.set(content, { x: -contentX * self.detail.dragRatio * self.direction, opacity: 1 * self.detail.dragRatioInverse })
     }
 
@@ -135,10 +133,10 @@ Xt.mount.push({
       const tr = self.targets.filter(x => self.hasCurrent(x))[0]
       // cover
       const assetCover = tr.querySelector('.hero_cover')
-      gsap.to(assetCover, { x: 100 * self.direction + '%', duration: assetCoverTimeOff, ease: assetCoverEaseOff })
-      gsap.to(assetCover, { skew: 0, duration: assetCoverTimeOff / 2, ease: assetCoverEaseOff })
+      gsap.to(assetCover, { x: 100 * self.direction + '%', duration: assetCoverTime, ease: assetCoverEase })
+      gsap.to(assetCover, { skew: 0, duration: assetCoverTime / 2, ease: assetCoverEase })
       // content
-      const content = tr.querySelector('.hero_content')
+      const content = tr.querySelector('.hero_content_outer')
       gsap.to(content, { x: 0, opacity: 1, duration: contentTime, ease: contentEase })
     }
 
@@ -170,9 +168,9 @@ Xt.mount.push({
           // cover
           const assetCover = tr.querySelector('.hero_cover')
           gsap.set(assetCover, { x: 100 * self.direction + '%', skewX: 0 })
-          gsap.to(assetCover, { x: -100 * self.direction + '%', duration: assetCoverTimeOn, ease: assetCoverEaseOn })
-          gsap.to(assetCover, { skewX: 5 * self.direction, duration: assetCoverTimeOn / 2, ease: assetCoverEaseOn }).eventCallback('onComplete', () => {
-            gsap.to(assetCover, { skewX: 0, duration: assetCoverTimeOn / 2, ease: assetCoverEaseOn })
+          gsap.to(assetCover, { x: -100 * self.direction + '%', duration: assetCoverTime, ease: assetCoverEase })
+          gsap.to(assetCover, { skewX: 5 * self.direction, duration: assetCoverTime / 2, ease: assetCoverEase }).eventCallback('onComplete', () => {
+            gsap.to(assetCover, { skewX: 0, duration: assetCoverTime / 2, ease: assetCoverEase })
           })
           // assetMask
           const assetMask = tr.querySelector('.hero')
@@ -186,7 +184,7 @@ Xt.mount.push({
           gsap.set(asset, { scale: 1 + assetZoom })
           gsap.to(asset, { scale: 1, duration: assetTime, ease: assetEase, delay: assetDelay })
           // content
-          const content = tr.querySelector('.hero_content')
+          const content = tr.querySelector('.hero_content_outer')
           gsap.set(content, { x: contentX * self.direction })
           gsap.to(content, { x: 0, opacity: 1, duration: contentTime, ease: contentEase })
         }
@@ -202,20 +200,18 @@ Xt.mount.push({
       // useCapture delegation
       if (self.targets.includes(tr)) {
         // cover
-        if (self.detail.dragging) {
-          const assetCover = tr.querySelector('.hero_cover')
-          gsap.to(assetCover, { x: -100 * self.direction + '%', duration: assetCoverTimeOff, ease: assetCoverEaseOff })
-          gsap.to(assetCover, { skewX: 10 * self.direction, duration: assetCoverTimeOff / 2, ease: assetCoverEaseOff }).eventCallback('onComplete', () => {
-            gsap.to(assetCover, { skewX: 0, duration: assetCoverTimeOff / 2, ease: assetCoverEaseOff })
-          })
-        }
+        const assetCover = tr.querySelector('.hero_cover')
+        gsap.to(assetCover, { x: -100 * self.direction + '%', duration: assetCoverTime, ease: assetCoverEase })
+        gsap.to(assetCover, { skewX: 10 * self.direction, duration: assetCoverTime / 2, ease: assetCoverEase }).eventCallback('onComplete', () => {
+          gsap.to(assetCover, { skewX: 0, duration: assetCoverTime / 2, ease: assetCoverEase })
+        })
         // assetMask
         const assetMask = tr.querySelector('.hero')
         gsap.to(assetMask, { x: -100 * self.direction + '%', duration: assetMaskTime, ease: assetMaskEase })
         const assetMaskInner = assetMask.querySelector('.hero_inner')
         gsap.to(assetMaskInner, { x: 100 * self.direction + '%', duration: assetMaskTime, ease: assetMaskEase })
         // content
-        const content = tr.querySelector('.hero_content')
+        const content = tr.querySelector('.hero_content_outer')
         gsap.to(content, { x: -contentX * self.direction, opacity: 0, duration: contentTime, ease: contentEase })
       }
     }

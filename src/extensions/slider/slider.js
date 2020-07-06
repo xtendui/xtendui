@@ -418,15 +418,6 @@ class Slider extends Xt.Toggle {
     const self = this
     const options = self.options
     const dragger = self.dragger
-    // elements
-    for (const el of self.elements) {
-      // event on
-      const slideonHandler = Xt.dataStorage.put(el, 'on/slider' + '/' + self.namespace, self.eventSlideonHandler.bind(self).bind(self, dragger, el))
-      el.addEventListener('on.xt', slideonHandler, true)
-      // event off
-      const slideoffHandler = Xt.dataStorage.put(el, 'off/slider' + '/' + self.namespace, self.eventSlideoffHandler.bind(self).bind(self, dragger, el))
-      el.addEventListener('off.xt', slideoffHandler, true)
-    }
     // dragger
     if (options.drag) {
       // @FIX prevent dragging links and images
@@ -467,36 +458,6 @@ class Slider extends Xt.Toggle {
   //
   // handler
   //
-
-  /**
-   * slide on handler
-   * @param {Node|HTMLElement|EventTarget|Window} dragger
-   * @param {Node|HTMLElement|EventTarget|Window} el
-   * @param {Event} e
-   */
-  eventSlideonHandler(dragger, el, e) {
-    const self = this
-    // useCapture delegation
-    if (self.elements.includes(el)) {
-      // handler
-      self.eventSlideon(dragger, el, e)
-    }
-  }
-
-  /**
-   * slide off handler
-   * @param {Node|HTMLElement|EventTarget|Window} dragger
-   * @param {Node|HTMLElement|EventTarget|Window} el
-   * @param {Event} e
-   */
-  eventSlideoffHandler(dragger, el, e) {
-    const self = this
-    // useCapture delegation
-    if (self.elements.includes(el)) {
-      // handler
-      self.eventSlideoff(dragger, el, e)
-    }
-  }
 
   /**
    * drag fix handler
@@ -616,141 +577,147 @@ class Slider extends Xt.Toggle {
   //
 
   /**
-   * slide on
-   * @param {Node|HTMLElement|EventTarget|Window} dragger
-   * @param {Node|HTMLElement|EventTarget|Window} el
+   * element on
+   * @param {Node|HTMLElement|EventTarget|Window} element To be activated
+   * @param {Boolean} force
    * @param {Event} e
+   * @return {Boolean} If activated
    */
-  eventSlideon(dragger, el, e) {
+  eventOn(element, force = false, e = null) {
+    super.eventOn(element, force, e)
     const self = this
     const options = self.options
     // disabled
     if (self.disabled) {
-      return
+      return false
     }
-    // @FIX targets handler
-    const slides = self.getTargets(el)
-    const slide = slides[0]
-    // only one call per group
-    if (Xt.dataStorage.get(slide, self.componentNamespace + 'SlideonDone')) {
-      return
-    }
-    Xt.dataStorage.set(slide, self.componentNamespace + 'SlideonDone', true)
-    requestAnimationFrame(() => {
-      Xt.dataStorage.remove(slide, self.componentNamespace + 'SlideonDone')
-    })
-    // val
-    self.detail.dragPos = self.detail.dragPosCurrent = self.detail.dragPosReal = Xt.dataStorage.get(slide, self.componentNamespace + 'GroupPos')
-    // autoHeight and keepHeight
-    if (self.autoHeight || (self.keepHeight && self.initial)) {
-      let slideHeight = Xt.dataStorage.get(slide, self.componentNamespace + 'SlideHeight')
-      const groupHeight = Xt.dataStorage.get(slide, self.componentNamespace + 'GroupHeight')
-      slideHeight = groupHeight > slideHeight ? groupHeight : slideHeight
-      if (slideHeight > 0) {
-        slideHeight += 'px'
-        if (self.autoHeight) {
-          if (self.autoHeight.style.height !== slideHeight) {
-            if (!self.initial) {
-              self.autoHeight.classList.add('xt-autoHeight')
+    // toggle
+    if (force || (!element.classList.contains('xt-block') && self.checkOn(element) && (!e || !e.type || e.type !== 'off.trigger.xt'))) {
+      // @FIX targets handler
+      const slides = self.getTargets(element)
+      const slide = slides[0]
+      // only one call per group
+      if (Xt.dataStorage.get(slide, self.componentNamespace + 'SlideonDone')) {
+        return false
+      }
+      Xt.dataStorage.set(slide, self.componentNamespace + 'SlideonDone', true)
+      requestAnimationFrame(() => {
+        Xt.dataStorage.remove(slide, self.componentNamespace + 'SlideonDone')
+      })
+      // val
+      self.detail.dragPos = self.detail.dragPosCurrent = self.detail.dragPosReal = Xt.dataStorage.get(slide, self.componentNamespace + 'GroupPos')
+      // autoHeight and keepHeight
+      if (self.autoHeight || (self.keepHeight && self.initial)) {
+        let slideHeight = Xt.dataStorage.get(slide, self.componentNamespace + 'SlideHeight')
+        const groupHeight = Xt.dataStorage.get(slide, self.componentNamespace + 'GroupHeight')
+        slideHeight = groupHeight > slideHeight ? groupHeight : slideHeight
+        if (slideHeight > 0) {
+          slideHeight += 'px'
+          if (self.autoHeight) {
+            if (self.autoHeight.style.height !== slideHeight) {
+              if (!self.initial) {
+                self.autoHeight.classList.add('xt-autoHeight')
+              }
+              self.autoHeight.style.height = slideHeight
+              // listener dispatch
+              slide.dispatchEvent(new CustomEvent('autoheight.xt'))
             }
-            self.autoHeight.style.height = slideHeight
-            // listener dispatch
-            slide.dispatchEvent(new CustomEvent('autoheight.xt'))
           }
-        }
-        if (self.keepHeight) {
-          if (self.initial) {
-            self.keepHeight.style.height = slideHeight
+          if (self.keepHeight) {
+            if (self.initial) {
+              self.keepHeight.style.height = slideHeight
+            }
           }
         }
       }
-    }
-    // dragger
-    if (dragger) {
-      // prevent alignment animation
-      dragger.classList.remove('duration-none')
-      // initial or resizing
-      if (self.initial) {
+      // dragger
+      const dragger = self.dragger
+      if (dragger) {
         // prevent alignment animation
-        dragger.classList.add('duration-none')
-        requestAnimationFrame(() => {
-          dragger.classList.remove('duration-none')
-        })
-      }
-      // drag position
-      if (!options.drag.manual) {
-        dragger.style.transform = 'translateX(' + self.detail.dragPos + 'px)'
-      }
-      // disable links not active slide
-      Xt.animTimeout(
-        dragger,
-        () => {
-          if (options.jump) {
-            if (options.jumpOverflow) {
-              const draggerTranslate = Xt.getTranslate(self.dragger)[0]
-              for (const target of self.targets) {
-                const slideLeft = Xt.dataStorage.get(target, self.componentNamespace + 'SlideLeft')
-                const slideWidth = Xt.dataStorage.get(target, self.componentNamespace + 'SlideWidth')
-                const slideBound = slideLeft + slideWidth
-                if (slideLeft < -Math.ceil(draggerTranslate) || slideBound > self.detail.draggerWidth - draggerTranslate) {
-                  target.classList.add('xt-links-none')
-                  target.classList.remove('xt-jumps-none')
-                } else {
-                  target.classList.add('xt-jumps-none')
-                  target.classList.remove('xt-links-none')
-                }
-              }
-            } else {
-              for (const target of self.targets) {
-                if (!target.classList.contains(...self.classes)) {
-                  target.classList.add('xt-links-none')
-                  target.classList.remove('xt-jumps-none')
-                } else {
-                  target.classList.add('xt-jumps-none')
-                  target.classList.remove('xt-links-none')
-                }
-              }
-            }
-          }
-        },
-        'draggerDisableLinks',
-        self.initial ? 0 : self.options.durationOn
-      )
-      // disable dragger
-      dragger.classList.add('xt-pointer-events-none')
-      for (const nav of self.navs) {
-        nav.classList.add('xt-pointer-events-none')
-      }
-      for (const el of self.elements) {
-        el.classList.add('xt-pointer-events-none')
-      }
-      Xt.animTimeout(
-        dragger,
-        () => {
-          dragger.classList.remove('xt-pointer-events-none')
-          for (const nav of self.navs) {
-            nav.classList.remove('xt-pointer-events-none')
-          }
-          for (const el of self.elements) {
-            el.classList.remove('xt-pointer-events-none')
-          }
-        },
-        'draggerDisable',
-        self.initial ? 0 : self.options.durationOn
-      )
-      // disable links
-      dragger.classList.remove('xt-links-none')
-      dragger.classList.remove('xt-jumps-none')
-      // drag wrap
-      if (self.dragger && options.drag.wrap && !options.drag.manual && !self.wrap) {
-        // @FIX wrap around xt-wrap items
+        dragger.classList.remove('duration-none')
+        // initial or resizing
+        if (self.initial) {
+          // prevent alignment animation
+          dragger.classList.add('duration-none')
+          requestAnimationFrame(() => {
+            dragger.classList.remove('duration-none')
+          })
+        }
+        // drag position
+        if (!options.drag.manual) {
+          dragger.style.transform = 'translateX(' + self.detail.dragPos + 'px)'
+        }
+        // disable links not active slide
         Xt.animTimeout(
           dragger,
           () => {
-            self.eventWrap()
+            if (options.jump) {
+              if (options.jumpOverflow) {
+                const draggerTranslate = Xt.getTranslate(self.dragger)[0]
+                for (const target of self.targets) {
+                  const slideLeft = Xt.dataStorage.get(target, self.componentNamespace + 'SlideLeft')
+                  const slideWidth = Xt.dataStorage.get(target, self.componentNamespace + 'SlideWidth')
+                  const slideBound = slideLeft + slideWidth
+                  if (slideLeft < -Math.ceil(draggerTranslate) || slideBound > self.detail.draggerWidth - draggerTranslate) {
+                    target.classList.add('xt-links-none')
+                    target.classList.remove('xt-jumps-none')
+                  } else {
+                    target.classList.add('xt-jumps-none')
+                    target.classList.remove('xt-links-none')
+                  }
+                }
+              } else {
+                for (const target of self.targets) {
+                  if (!target.classList.contains(...self.classes)) {
+                    target.classList.add('xt-links-none')
+                    target.classList.remove('xt-jumps-none')
+                  } else {
+                    target.classList.add('xt-jumps-none')
+                    target.classList.remove('xt-links-none')
+                  }
+                }
+              }
+            }
           },
-          'wrap'
+          'draggerDisableLinks',
+          self.initial ? 0 : self.options.durationOn
         )
+        // disable dragger
+        dragger.classList.add('xt-pointer-events-none')
+        for (const nav of self.navs) {
+          nav.classList.add('xt-pointer-events-none')
+        }
+        for (const el of self.elements) {
+          el.classList.add('xt-pointer-events-none')
+        }
+        Xt.animTimeout(
+          dragger,
+          () => {
+            dragger.classList.remove('xt-pointer-events-none')
+            for (const nav of self.navs) {
+              nav.classList.remove('xt-pointer-events-none')
+            }
+            for (const el of self.elements) {
+              el.classList.remove('xt-pointer-events-none')
+            }
+          },
+          'draggerDisable',
+          self.initial ? 0 : self.options.durationOn
+        )
+        // disable links
+        dragger.classList.remove('xt-links-none')
+        dragger.classList.remove('xt-jumps-none')
+        // drag wrap
+        if (self.dragger && options.drag.wrap && !options.drag.manual && !self.wrap) {
+          // @FIX wrap around xt-wrap items
+          Xt.animTimeout(
+            dragger,
+            () => {
+              self.eventWrap()
+            },
+            'wrap'
+          )
+        }
       }
     }
   }
@@ -772,28 +739,6 @@ class Slider extends Xt.Toggle {
       self.wrap = true
       self.goToNum(min + self.currentIndex - max - 1, true)
     }
-  }
-
-  /**
-   * slide off
-   * @param {Node|HTMLElement|EventTarget|Window} dragger
-   * @param {Node|HTMLElement|EventTarget|Window} el
-   * @param {Event} e
-   */
-  eventSlideoff(dragger, el, e) {
-    const self = this
-    const options = self.options
-    // @FIX targets handler
-    const slides = self.getTargets(el)
-    const slide = slides[0]
-    // only one call per group
-    if (Xt.dataStorage.get(slide, self.componentNamespace + 'SlideoffDone')) {
-      return
-    }
-    Xt.dataStorage.set(slide, self.componentNamespace + 'SlideoffDone', true)
-    requestAnimationFrame(() => {
-      Xt.dataStorage.remove(slide, self.componentNamespace + 'SlideoffDone')
-    })
   }
 
   /**

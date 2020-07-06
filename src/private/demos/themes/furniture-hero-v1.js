@@ -217,7 +217,7 @@ Xt.mount.push({
           gsap.killTweensOf(asset)
           gsap.set(asset, { scale: 1 })
           // content
-          const content = tr.querySelector('.hero_content')
+          const content = tr.querySelector('.hero_content_outer')
           gsap.killTweensOf(content)
           gsap.set(content, { x: 0 })
           // line
@@ -250,7 +250,7 @@ Xt.mount.push({
             ease: self.detail.dragging ? assetEaseDragging : assetEase,
           })
           // content
-          const content = tr.querySelector('.hero_content')
+          const content = tr.querySelector('.hero_content_outer')
           if (!self.detail.dragging) {
             gsap.set(content, { x: contentX * self.direction })
           }

@@ -113,6 +113,8 @@ class Toggle {
     self.enable()
     self.initScope()
     self.initAria()
+    self.eventStatusHandler()
+    self.initEvents()
     self.initStart(saveCurrents)
   }
 
@@ -182,10 +184,6 @@ class Toggle {
   initStart(saveCurrents = false) {
     const self = this
     const options = self.options
-    // status
-    self.eventStatusHandler()
-    // init events
-    self.initEvents()
     // currents
     self.setCurrents([])
     // vars
@@ -258,7 +256,7 @@ class Toggle {
     }
     // initialized class
     self.object.classList.add(self.componentName)
-    // listener dispatch
+    // @FIX after raf because after .xt custom listeners
     requestAnimationFrame(() => {
       self.object.dispatchEvent(new CustomEvent('init.xt'))
     })
@@ -1389,7 +1387,7 @@ class Toggle {
     if (Xt.visible(self.object)) {
       // not when disabled
       if (getComputedStyle(self.object).pointerEvents !== 'none') {
-        // @FIX after raf because after on.xt custom listeners
+        // @FIX after raf because after .xt custom listeners
         requestAnimationFrame(() => {
           if (options.auto.inverse) {
             self.goToPrev(options.auto.step, true)
@@ -1675,8 +1673,16 @@ class Toggle {
         }
       }
       if (actionCurrent === 'On') {
-        // listener dispatch
-        el.dispatchEvent(new CustomEvent('ondelay.xt'))
+        if (self.initial) {
+          // @FIX after raf because after .xt custom listeners
+          requestAnimationFrame(() => {
+            // listener dispatch
+            el.dispatchEvent(new CustomEvent('ondelay.xt'))
+          })
+        } else {
+          // listener dispatch
+          el.dispatchEvent(new CustomEvent('ondelay.xt'))
+        }
       } else if (actionCurrent === 'Off') {
         // listener dispatch
         el.dispatchEvent(new CustomEvent('offdelay.xt'))
@@ -1774,9 +1780,19 @@ class Toggle {
           }
         }
       }
-      // listener dispatch
-      if (type !== 'elementsInner' && type !== 'targetsInner') {
-        el.dispatchEvent(new CustomEvent('on.xt'))
+      if (self.initial) {
+        // @FIX after raf because after .xt custom listeners
+        requestAnimationFrame(() => {
+          // listener dispatch
+          if (type !== 'elementsInner' && type !== 'targetsInner') {
+            el.dispatchEvent(new CustomEvent('on.xt'))
+          }
+        })
+      } else {
+        // listener dispatch
+        if (type !== 'elementsInner' && type !== 'targetsInner') {
+          el.dispatchEvent(new CustomEvent('on.xt'))
+        }
       }
     } else if (actionCurrent === 'Off') {
       // activation
@@ -1866,9 +1882,19 @@ class Toggle {
       const before = getComputedStyle(el, ':before').getPropertyValue('content').replace(/['"]+/g, '')
       const after = getComputedStyle(el, ':after').getPropertyValue('content').replace(/['"]+/g, '')
       self.specialCollapse('Reset', el, before, after)
-      // listener dispatch
-      if (type !== 'elementsInner' && type !== 'targetsInner') {
-        el.dispatchEvent(new CustomEvent('ondone.xt'))
+      if (self.initial) {
+        // @FIX after raf because after .xt custom listeners
+        requestAnimationFrame(() => {
+          // listener dispatch
+          if (type !== 'elementsInner' && type !== 'targetsInner') {
+            el.dispatchEvent(new CustomEvent('ondone.xt'))
+          }
+        })
+      } else {
+        // listener dispatch
+        if (type !== 'elementsInner' && type !== 'targetsInner') {
+          el.dispatchEvent(new CustomEvent('ondone.xt'))
+        }
       }
     } else if (actionCurrent === 'Off') {
       // activation
@@ -1971,7 +1997,7 @@ class Toggle {
   queueComplete(actionCurrent, obj) {
     const self = this
     if (actionCurrent === 'On') {
-      // @FIX after raf because after on.xt custom listeners
+      // @FIX after raf because after .xt custom listeners
       requestAnimationFrame(() => {
         // auto
         self.eventAutostart()
@@ -2844,6 +2870,7 @@ class Toggle {
     if (!self.disabled) {
       // closeOnDisable
       if (options.closeOnDisable) {
+        // listener dispatch
         self.object.dispatchEvent(new CustomEvent('off.trigger.xt'))
       }
       // stop auto

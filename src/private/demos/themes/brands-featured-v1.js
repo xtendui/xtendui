@@ -34,6 +34,7 @@ Xt.mount.push({
 
     const eventOn = e => {
       const tr = e.target
+      console.log(self.initial)
       // useCapture delegation
       if (self.targets.includes(tr)) {
         // time depending on target and dragger width

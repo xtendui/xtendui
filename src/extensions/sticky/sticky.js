@@ -54,6 +54,8 @@ class Sticky extends Xt.Toggle {
       self.enable()
       self.initScope()
       self.initAria()
+      self.eventStatusHandler()
+      self.initEvents()
       self.initStart(saveCurrents)
     })
   }
