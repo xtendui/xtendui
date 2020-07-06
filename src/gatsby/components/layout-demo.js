@@ -11,6 +11,15 @@ import 'assets/styles/theme.less'
 class Layout extends React.Component {
   componentDidMount() {
     const { demo } = this.props
+    let cname = 'gatsby_iframe-inside'
+    if (demo.full) {
+      cname += ' gatsby_iframe-full'
+    }
+    if (demo.container) {
+      cname += ' gatsby_iframe-container'
+    }
+    document.documentElement.classList.add(...cname.split(' '))
+    document.documentElement.setAttribute('id', 'iframe--' + demo.name)
     const iframeLoaded = () => {
       if (window.self !== window.top) {
         window.parent.initIframe(window.name, demo.htmlSource, demo.jsxSource, demo.cssSource, demo.jsSource)

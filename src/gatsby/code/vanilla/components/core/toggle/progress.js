@@ -32,7 +32,7 @@ demo.htmlSource = `
     </span>
   </button>
 
-  <button type="button" class="btn btn-default active">
+  <button type="button" class="btn btn-default active-toggle">
     <span>
       Toggle 2
     </span>

@@ -59,12 +59,12 @@ class Slider extends Xt.Toggle {
    */
   initStart(saveCurrents = false) {
     const self = this
-    // super
-    super.initStart(saveCurrents)
     // initSliderPos
     if (self.dragger) {
       self.initSliderPos()
     }
+    // super
+    super.initStart(saveCurrents)
   }
 
   /**
@@ -180,10 +180,10 @@ class Slider extends Xt.Toggle {
           wrapLast.push([])
           for (const slide of group) {
             const cloned = cloneSlide(slide)
-            container.append(cloned)
             wrapLast[wrapLastCountIteration * self.groupMqInitial.length + i].push(cloned)
             cloned.setAttribute('data-xt-group', self.namespace + '-' + 'wrapLast' + wrapLastCountIteration + i)
             self.targets.push(cloned)
+            container.append(cloned)
             wrapLastCount -= Xt.dataStorage.get(slide, self.componentNamespace + 'SlideWidth')
           }
           if (wrapLastCount <= wrapMaxWidth) {
@@ -203,10 +203,10 @@ class Slider extends Xt.Toggle {
           wrapFirst.unshift([])
           for (const slide of group.reverse()) {
             const cloned = cloneSlide(slide)
-            container.prepend(cloned)
             wrapFirst[0].unshift(cloned)
             cloned.setAttribute('data-xt-group', self.namespace + '-' + 'wrapFirst' + wrapFirstCountIteration + i)
             self.targets.unshift(cloned)
+            container.prepend(cloned)
             wrapFirstCount -= Xt.dataStorage.get(slide, self.componentNamespace + 'SlideWidth')
           }
           if (wrapFirstCount <= wrapMaxWidth) {

@@ -99,6 +99,21 @@ Xt.mount.push({
       },
     })
 
+    // init
+
+    const eventInit = () => {
+      for (const target of self.targets) {
+        if (!target.querySelector('.hero_cover')) {
+          // inject
+          const inject = Xt.createElement(`<div class="hero_cover"></div>`)
+          gsap.set(inject, { x: 100 * self.direction + '%', skewX: 0 })
+          target.querySelector('.slide-inner').prepend(inject)
+        }
+      }
+    }
+
+    self.object.addEventListener('init.xt', eventInit)
+
     // drag
 
     const eventDrag = () => {
@@ -136,13 +151,6 @@ Xt.mount.push({
       // useCapture delegation
       if (self.targets.includes(tr)) {
         if (self.initial) {
-          // inject
-          for (const target of self.targets) {
-            if (!target.querySelector('.hero_cover')) {
-              const inject = Xt.createElement(`<div class="hero_cover"></div>`)
-              target.querySelector('.slide-inner').prepend(inject)
-            }
-          }
           // cover
           const assetCover = tr.querySelector('.hero_cover')
           gsap.killTweensOf(assetCover)

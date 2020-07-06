@@ -15,7 +15,7 @@ demo.htmlSource = `
     Toggle 0
   </button>
 
-  <button type="button" class="btn btn-default active">
+  <button type="button" class="btn btn-default active-toggle">
     Toggle 1
   </button>
 

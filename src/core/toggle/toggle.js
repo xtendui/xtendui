@@ -184,6 +184,10 @@ class Toggle {
     const options = self.options
     // status
     self.eventStatusHandler()
+    // init events
+    self.initEvents()
+    // currents
+    self.setCurrents([])
     // vars
     let currents = 0
     self.initial = true
@@ -213,17 +217,16 @@ class Toggle {
         if (found && currents < options.max) {
           // initial
           currents++
-          // reactivate
+          // reactivate after raf
           requestAnimationFrame(() => {
-            // activation
             self.eventOn(element, true)
           })
         }
       }
       // if currents < min
       let todo = options.min - currents
+      let start = 0
       if (todo > 0 && self.targets.length) {
-        let start = 0
         // @FIX initial activation drag wrap
         if ((!self.disabled || !self.initial) && self.wrapIndex) {
           start = self.wrapIndex
@@ -231,16 +234,15 @@ class Toggle {
         }
         // initial
         currents += todo
-        // activation
-        requestAnimationFrame(() => {
-          for (let i = start; i < todo; i++) {
-            self.eventOn(self.elements[i], true)
-          }
-        })
       }
-      // initial
-      self.setCurrents([])
+      if (todo > 0 && self.targets.length) {
+        for (let i = start; i < todo; i++) {
+          self.eventOn(self.elements[i], true)
+        }
+      }
+      // currents
       if (saveCurrents) {
+        // initialCurrents after raf
         requestAnimationFrame(() => {
           self.initialCurrents = self.getCurrents().slice(0)
         })
@@ -254,8 +256,6 @@ class Toggle {
         self.eventAutostart()
       }
     }
-    // init events
-    self.initEvents()
     // initialized class
     self.object.classList.add(self.componentName)
     // listener dispatch
