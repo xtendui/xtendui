@@ -23,27 +23,40 @@
     padding-left: 4rem;
   }
   @media @min-lg {
+    padding-right: 5rem;
+    padding-left: 5rem;
+  }
+  @media @min-xl {
     padding-right: 6rem;
     padding-left: 6rem;
   }
+}
+
+.container-space-y {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  @media @min-sm {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  @media @min-md {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  @media @min-lg {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
   @media @min-xl {
-    padding-right: 8rem;
-    padding-left: 8rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
   }
 }
 
 .container-space-remove {
   // same as .container-space
-  margin-right: -1.5rem;
-  margin-left: -1.5rem;
-  @media @min-xxs {
-    margin-right: -2rem;
-    margin-left: -2rem;
-  }
-  @media @min-xs {
-    margin-right: -3rem;
-    margin-left: -3rem;
-  }
+  margin-right: -2rem;
+  margin-left: -2rem;
   @media @min-sm {
     margin-right: -3rem;
     margin-left: -3rem;
@@ -59,5 +72,27 @@
   @media @min-xl {
     margin-right: -6rem;
     margin-left: -6rem;
+  }
+}
+
+.container-space-y-remove {
+  // same as .container-space
+  margin-top: -2rem;
+  margin-bottom: -2rem;
+  @media @min-sm {
+    margin-top: -3rem;
+    margin-bottom: -3rem;
+  }
+  @media @min-md {
+    margin-top: -4rem;
+    margin-bottom: -4rem;
+  }
+  @media @min-lg {
+    margin-top: -5rem;
+    margin-bottom: -5rem;
+  }
+  @media @min-xl {
+    margin-top: -6rem;
+    margin-bottom: -6rem;
   }
 }
