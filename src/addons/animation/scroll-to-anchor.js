@@ -78,6 +78,8 @@ class ScrollToAnchor {
    */
   eventChange(hashchange = false, el = null, e = null) {
     const self = this
+    // reset self.target
+    self.target = null
     // useCapture delegation
     el = el ? el : e.target
     // not null and HTML element and not window
@@ -144,6 +146,8 @@ class ScrollToAnchor {
    */
   eventScroll(e = null) {
     const self = this
+    // reset self.target
+    self.target = null
     // scroll
     let found = false
     let scrollTop = document.scrollingElement.scrollTop
@@ -183,8 +187,8 @@ class ScrollToAnchor {
         }
       }
     }
-    // reset others when not found elements
-    if (!found) {
+    // reset others when not found elements and found target
+    if (!found && self.target) {
       for (const other of els) {
         other.classList.remove(...self.classes)
       }
