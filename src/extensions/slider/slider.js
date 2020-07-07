@@ -410,7 +410,7 @@ class Slider extends Xt.Toggle {
       el.addEventListener('off.xt', slideoffHandler, true)
     }
     // dragger
-    if (options.drag) {
+    if (options.drag && !options.drag.manual) {
       // @FIX prevent dragging links and images
       for (const img of self.dragger.querySelectorAll('img')) {
         const imgnodragHandler = Xt.dataStorage.put(img, 'mousedown/drag' + '/' + self.namespace, self.eventImgnodragHandler.bind(self))
@@ -670,7 +670,7 @@ class Slider extends Xt.Toggle {
       }
     }
     // dragger
-    if (dragger) {
+    if (dragger && !options.drag.manual) {
       // prevent alignment animation
       dragger.classList.remove('duration-none')
       // initial or resizing
@@ -682,9 +682,7 @@ class Slider extends Xt.Toggle {
         })
       }
       // drag position
-      if (!options.drag.manual) {
-        dragger.style.transform = 'translateX(' + self.detail.dragPos + 'px)'
-      }
+      dragger.style.transform = 'translateX(' + self.detail.dragPos + 'px)'
       // disable links not active slide
       Xt.animTimeout(
         dragger,
@@ -734,7 +732,7 @@ class Slider extends Xt.Toggle {
       dragger.classList.remove('xt-links-none')
       dragger.classList.remove('xt-jumps-none')
       // drag wrap
-      if (self.dragger && options.drag.wrap && !options.drag.manual && !self.wrap) {
+      if (self.dragger && options.drag.wrap && !self.wrap) {
         // @FIX wrap around xt-wrap items
         Xt.animTimeout(
           dragger,
@@ -772,7 +770,6 @@ class Slider extends Xt.Toggle {
    */
   eventSlideoff(dragger, el, e) {
     const self = this
-    const options = self.options
     // @FIX targets handler
     const slides = self.getTargets(el)
     const slide = slides[0]
@@ -797,8 +794,13 @@ class Slider extends Xt.Toggle {
    */
   logicDragstart(dragger, e) {
     const self = this
+    const options = self.options
     // disabled
     if (self.disabled) {
+      return
+    }
+    // manual
+    if (options.drag.manual) {
       return
     }
     // save event
@@ -837,6 +839,10 @@ class Slider extends Xt.Toggle {
     const options = self.options
     // disabled
     if (self.disabled) {
+      return
+    }
+    // manual
+    if (options.drag.manual) {
       return
     }
     // save event
@@ -900,6 +906,10 @@ class Slider extends Xt.Toggle {
     const options = self.options
     // disabled
     if (self.disabled) {
+      return
+    }
+    // manual
+    if (options.drag.manual) {
       return
     }
     // save event
@@ -997,9 +1007,7 @@ class Slider extends Xt.Toggle {
     if (self.initial) {
       self.dragger.classList.add('transition-none')
     }
-    if (!options.drag.manual) {
-      dragger.style.transform = 'translateX(' + self.detail.dragPos + 'px)'
-    }
+    dragger.style.transform = 'translateX(' + self.detail.dragPos + 'px)'
     if (self.initial) {
       self.dragger.classList.remove('transition-none')
     }
@@ -1090,9 +1098,7 @@ class Slider extends Xt.Toggle {
       if (self.initial) {
         self.dragger.classList.add('transition-none')
       }
-      if (!options.drag.manual) {
-        dragger.style.transform = 'translateX(' + self.detail.dragPosCurrent + 'px)'
-      }
+      dragger.style.transform = 'translateX(' + self.detail.dragPosCurrent + 'px)'
       if (self.initial) {
         self.dragger.classList.remove('transition-none')
       }
@@ -1138,9 +1144,10 @@ class Slider extends Xt.Toggle {
   disable() {
     super.disable()
     const self = this
+    const options = self.options
     const dragger = self.dragger
     // disable
-    if (dragger) {
+    if (dragger && !options.drag.manual) {
       // grab
       dragger.classList.remove('xt-grab')
       // links
