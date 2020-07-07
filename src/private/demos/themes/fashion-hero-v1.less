@@ -1,17 +1,19 @@
 #iframe--fashion-hero-v1 {
   //##START
   body { // add your own selector instead of body to contain the code
-    
+
     @import 'xtend-library/src/addons/slider/navigation-sides.less';
-    
+
     /**
       * slider
       */
-    
+
     .slider {
       background: @black;
       .slides-inner {
         .row-space(none);
+        // dragger animations
+        transition: transform @time-large @ease-out-quart;
       }
       .slide {
         .col(12);
@@ -123,7 +125,7 @@
         color: @white;
       }
     }
-  
+
   }
   //##END
 }

@@ -27,8 +27,8 @@ Xt.mount.push({
   mount: object => {
     // vars
 
-    const contentTime = Xt.vars.timeLarge
-    const contentEase = 'quart.out'
+    const contentTime = Xt.vars.timeLarge // same as .slides-inner
+    const contentEase = 'quart.out' // same as .slides-inner
 
     const contentZoom = 0.2
     const contentZoomTime = Xt.vars.timeBig * 4
