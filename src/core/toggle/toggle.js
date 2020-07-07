@@ -1743,7 +1743,7 @@ class Toggle {
         }
       }
       if (type === 'targets' || type === 'targetsInner' || el === self.object) {
-        self.specialClose(actionCurrent, el, obj.elements.queueEls[0])
+        self.specialClose(actionCurrent, el)
       }
       // aria
       if (options.aria) {
@@ -2275,48 +2275,43 @@ class Toggle {
    * add or remove close events on element
    * @param {String} actionCurrent Current action
    * @param {Node|HTMLElement|EventTarget|Window} el Element
-   * @param {Node|HTMLElement|EventTarget|Window} single Element to toggle
    */
-  specialClose(actionCurrent, el, single = null) {
+  specialClose(actionCurrent, el) {
     const self = this
     const options = self.options
     if (actionCurrent === 'On') {
       // closeInside
       if (options.closeInside) {
         const closeElements = el.querySelectorAll(options.closeInside)
-        requestAnimationFrame(() => {
-          for (const closeElement of closeElements) {
-            const specialcloseinsideHandler = Xt.dataStorage.put(
-              closeElement,
-              'click/close' + '/' + self.namespace,
-              self.eventSpecialcloseinsideHandler.bind(self).bind(self, single)
-            )
-            closeElement.addEventListener('click', specialcloseinsideHandler)
-            // focusable
-            const specialcloseinsideKeydownHandler = Xt.dataStorage.put(
-              closeElement,
-              'keydown/close' + '/' + self.namespace,
-              self.eventSpecialcloseinsideKeydownHandler.bind(self).bind(self, closeElement)
-            )
-            closeElement.addEventListener('keydown', specialcloseinsideKeydownHandler)
-            closeElement.setAttribute('tabindex', '0')
-            closeElement.setAttribute('role', 'button')
-          }
-        })
+        for (const closeElement of closeElements) {
+          const specialcloseinsideHandler = Xt.dataStorage.put(
+            closeElement,
+            'click/close' + '/' + self.namespace,
+            self.eventSpecialcloseinsideHandler.bind(self)
+          )
+          closeElement.addEventListener('click', specialcloseinsideHandler)
+          // focusable
+          const specialcloseinsideKeydownHandler = Xt.dataStorage.put(
+            closeElement,
+            'keydown/close' + '/' + self.namespace,
+            self.eventSpecialcloseinsideKeydownHandler.bind(self).bind(self, closeElement)
+          )
+          closeElement.addEventListener('keydown', specialcloseinsideKeydownHandler)
+          closeElement.setAttribute('tabindex', '0')
+          closeElement.setAttribute('role', 'button')
+        }
       }
       // closeOutside
       if (options.closeOutside) {
         const closeElements = document.querySelectorAll(options.closeOutside)
-        requestAnimationFrame(() => {
-          for (const closeElement of closeElements) {
-            const specialcloseoutsideHandler = Xt.dataStorage.put(
-              closeElement,
-              'click/close' + '/' + self.namespace,
-              self.eventSpecialcloseoutsideHandler.bind(self).bind(self, single)
-            )
-            closeElement.addEventListener('click', specialcloseoutsideHandler)
-          }
-        })
+        for (const closeElement of closeElements) {
+          const specialcloseoutsideHandler = Xt.dataStorage.put(
+            closeElement,
+            'click/close' + '/' + self.namespace,
+            self.eventSpecialcloseoutsideHandler.bind(self)
+          )
+          closeElement.addEventListener('click', specialcloseoutsideHandler)
+        }
       }
     } else if (actionCurrent === 'Off') {
       // closeInside
@@ -2345,25 +2340,16 @@ class Toggle {
 
   /**
    * specialClose on handler
-   * @param {Node|HTMLElement|EventTarget|Window} single
    * @param {Event} e
    */
-  eventSpecialcloseinsideHandler(single, e) {
+  eventSpecialcloseinsideHandler(e) {
     const self = this
-    /*
-    // prevent closing when nested and moved (ex: overlay)
-    const checkContainer = self.targets.length ? self.targets : Xt.arrSingle(self.object)
-    if (!Xt.contains(checkContainer, closeElement)) {
-      return
-    }
-    // handler
-    if (Xt.contains(Xt.arrSingle(closeElement), e.target)) {
-      self.eventOff(single)
-    }
-    */
     // handler
     if (Xt.contains([self.object, ...self.elements, ...self.targets], e.target)) {
-      self.eventOff(single)
+      const currents = self.getCurrents()
+      for (const current of currents) {
+        self.eventOff(current, true)
+      }
     }
   }
 
@@ -2382,14 +2368,16 @@ class Toggle {
 
   /**
    * specialClose off handler
-   * @param {Node|HTMLElement|EventTarget|Window} single
    * @param {Event} e
    */
-  eventSpecialcloseoutsideHandler(single, e) {
+  eventSpecialcloseoutsideHandler(e) {
     const self = this
     // handler
     if (!Xt.contains([self.object, ...self.elements, ...self.targets], e.target)) {
-      self.eventOff(single)
+      const currents = self.getCurrents()
+      for (const current of currents) {
+        self.eventOff(current, true)
+      }
     }
   }
 
