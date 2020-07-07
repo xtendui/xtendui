@@ -33,8 +33,10 @@ self = null
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Method                  | `self.getElements(el:Node)`                          | Get elements from element or target             |
-| Method                  | `self.getTargets(el:Node)`                          | Get targets from element or target             |
+| Method                  | `self.getElements(el:Node|null)`                          | Get all elements or all elements from element or target             |
+| Method                  | `self.getTargets(el:Nod|null)`                          | Get all targets from or all targets from element or target             |
+| Method                  | `self.getElementsGroups()`                          | Get elements (one per group)             |
+| Method                  | `self.getTargetsGroups()`                          | Get targets (one per group)             |
 | Method                  | `self.hasCurrent(el:Node)`                          | Returns `true` or `false` if element or target is activated             |
 | Method                  | `self.reinit(saveCurrents:Boolean)`       | Reinit component and save currents as initial (default: `true`)             |
 | Method                  | `self.restart()`                          | Restart component to initial             |
