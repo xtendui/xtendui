@@ -2938,10 +2938,10 @@ class Toggle {
    */
   destroy(weak = false) {
     const self = this
-    // disable
-    self.disable()
     // [disabled]
     self.destroyDisabled()
+    // disable
+    self.disable()
     // remove events
     if (self.destroyElements) {
       for (const element of self.destroyElements) {
