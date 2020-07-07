@@ -75,8 +75,9 @@ Xt.mount.push({
     const assetDelay = Xt.vars.timeBig / 2
     const assetEase = 'expo.out'
 
-    const contentX = 200
+    const contentX = 50
     const contentTime = Xt.vars.timeBig
+    const contentDelayOn = Xt.vars.timeTiny
     const contentEase = 'quint.inOut'
 
     // slider
@@ -186,7 +187,7 @@ Xt.mount.push({
           // content
           const content = tr.querySelector('.hero_content_outer')
           gsap.set(content, { x: contentX * self.direction })
-          gsap.to(content, { x: 0, opacity: 1, duration: contentTime, ease: contentEase })
+          gsap.to(content, { x: 0, opacity: 1, duration: contentTime, ease: contentEase, delay: contentDelayOn })
         }
       }
     }
