@@ -5,34 +5,34 @@ export default () => {
 <div class="drop-megamenus">
   <span class="drop-megamenus_line"></span>
   <div class="container">
-  
+
     <div class="list">
-      
+
       <div class="drop-container drop-container-static drop-megamenu_outer">
-      
-        <button type="button" class="btn btn_megamenus">
-            Lorem ipsum
-        </button>
-        
+
+        <a href="#" type="button" class="btn btn_megamenus">
+          Lorem ipsum
+        </a>
+
         <div class="drop drop-primary">
           <div class="drop-inner">
             <div class="drop-design"></div>
             <div class="drop-content">
-            
+
               <div class="drop-megamenu">
                 <div class="container">
                   <div class="drop-megamenu_inner">
                     <div class="row">
-                    
+
                       <div class="drop-megamenu_col_left">
                         <div class="drop-megamenu_left">
                           <img class="responsive" src="/img.svg" loading="eager" alt="" />
                         </div>
                       </div>
-                      
+
                       <div class="drop-megamenu_col_right">
                         <div class="row">
-                          
+
                           <div class="drop-megamenu_item_col">
                             <div class="drop-megamenu_item">
                               <a href="#" class="drop-megamenu_item_title">
@@ -56,7 +56,7 @@ export default () => {
                               </div>
                             </div>
                           </div>
-                          
+
                           <div class="drop-megamenu_item_col">
                             <div class="drop-megamenu_item">
                               <a href="#" class="drop-megamenu_item_title">
@@ -74,7 +74,7 @@ export default () => {
                               </div>
                             </div>
                           </div>
-                          
+
                           <div class="drop-megamenu_item_col">
                             <div class="drop-megamenu_item">
                               <a href="#" class="drop-megamenu_item_title">
@@ -92,7 +92,7 @@ export default () => {
                               </div>
                             </div>
                           </div>
-                          
+
                           <div class="drop-megamenu_item_col">
                             <div class="drop-megamenu_item">
                               <a href="#" class="drop-megamenu_item_title">
@@ -116,7 +116,7 @@ export default () => {
                               </div>
                             </div>
                           </div>
-                          
+
                           <div class="drop-megamenu_item_col">
                             <div class="drop-megamenu_item">
                               <a href="#" class="drop-megamenu_item_title">
@@ -124,7 +124,7 @@ export default () => {
                               </a>
                             </div>
                           </div>
-                          
+
                           <div class="drop-megamenu_item_col">
                             <div class="drop-megamenu_item">
                               <a href="#" class="drop-megamenu_item_title">
@@ -132,46 +132,46 @@ export default () => {
                               </a>
                             </div>
                           </div>
-                          
+
                         </div>
                       </div>
-                      
+
                     </div>
                   </div>
                 </div>
               </div>
-           
+
             </div>
           </div>
         </div>
-        
+
       </div>
-      
+
       <div class="drop-container drop-container-static drop-megamenu_outer">
-      
-        <button type="button" class="btn btn_megamenus">
-            dolor
-        </button>
-        
+
+        <a href="#" type="button" class="btn btn_megamenus">
+          dolor
+        </a>
+
         <div class="drop drop-primary">
           <div class="drop-inner">
             <div class="drop-design"></div>
             <div class="drop-content">
-            
+
               <div class="drop-megamenu">
                 <div class="container">
                   <div class="drop-megamenu_inner">
                     <div class="row">
-                    
+
                       <div class="drop-megamenu_col_left">
                         <div class="drop-megamenu_left">
                           <img class="responsive" src="/img.svg" loading="eager" alt="" />
                         </div>
                       </div>
-                      
+
                       <div class="drop-megamenu_col_right">
                         <div class="row">
-                          
+
                           <div class="drop-megamenu_item_col">
                             <div class="drop-megamenu_item">
                               <a href="#" class="drop-megamenu_item_title">
@@ -195,7 +195,7 @@ export default () => {
                               </div>
                             </div>
                           </div>
-                          
+
                           <div class="drop-megamenu_item_col">
                             <div class="drop-megamenu_item">
                               <a href="#" class="drop-megamenu_item_title">
@@ -213,7 +213,7 @@ export default () => {
                               </div>
                             </div>
                           </div>
-                          
+
                           <div class="drop-megamenu_item_col">
                             <div class="drop-megamenu_item">
                               <a href="#" class="drop-megamenu_item_title">
@@ -231,7 +231,7 @@ export default () => {
                               </div>
                             </div>
                           </div>
-                          
+
                           <div class="drop-megamenu_item_col">
                             <div class="drop-megamenu_item">
                               <a href="#" class="drop-megamenu_item_title">
@@ -255,7 +255,7 @@ export default () => {
                               </div>
                             </div>
                           </div>
-                          
+
                           <div class="drop-megamenu_item_col">
                             <div class="drop-megamenu_item">
                               <a href="#" class="drop-megamenu_item_title">
@@ -263,7 +263,7 @@ export default () => {
                               </a>
                             </div>
                           </div>
-                          
+
                           <div class="drop-megamenu_item_col">
                             <div class="drop-megamenu_item">
                               <a href="#" class="drop-megamenu_item_title">
@@ -271,46 +271,46 @@ export default () => {
                               </a>
                             </div>
                           </div>
-                          
+
                         </div>
                       </div>
-                      
+
                     </div>
                   </div>
                 </div>
               </div>
-           
+
             </div>
           </div>
         </div>
-        
+
       </div>
-      
+
       <div class="drop-container drop-container-static drop-megamenu_outer">
-      
-        <button type="button" class="btn btn_megamenus">
-            sit amet
-        </button>
-        
+
+        <a href="#" type="button" class="btn btn_megamenus">
+          sit amet
+        </a>
+
         <div class="drop drop-primary">
           <div class="drop-inner">
             <div class="drop-design"></div>
             <div class="drop-content">
-            
+
               <div class="drop-megamenu">
                 <div class="container">
                   <div class="drop-megamenu_inner">
                     <div class="row">
-                    
+
                       <div class="drop-megamenu_col_left">
                         <div class="drop-megamenu_left">
                           <img class="responsive" src="/img.svg" loading="eager" alt="" />
                         </div>
                       </div>
-                      
+
                       <div class="drop-megamenu_col_right">
                         <div class="row">
-                          
+
                           <div class="drop-megamenu_item_col">
                             <div class="drop-megamenu_item">
                               <a href="#" class="drop-megamenu_item_title">
@@ -334,7 +334,7 @@ export default () => {
                               </div>
                             </div>
                           </div>
-                          
+
                           <div class="drop-megamenu_item_col">
                             <div class="drop-megamenu_item">
                               <a href="#" class="drop-megamenu_item_title">
@@ -352,7 +352,7 @@ export default () => {
                               </div>
                             </div>
                           </div>
-                          
+
                           <div class="drop-megamenu_item_col">
                             <div class="drop-megamenu_item">
                               <a href="#" class="drop-megamenu_item_title">
@@ -370,7 +370,7 @@ export default () => {
                               </div>
                             </div>
                           </div>
-                          
+
                           <div class="drop-megamenu_item_col">
                             <div class="drop-megamenu_item">
                               <a href="#" class="drop-megamenu_item_title">
@@ -394,7 +394,7 @@ export default () => {
                               </div>
                             </div>
                           </div>
-                          
+
                           <div class="drop-megamenu_item_col">
                             <div class="drop-megamenu_item">
                               <a href="#" class="drop-megamenu_item_title">
@@ -402,7 +402,7 @@ export default () => {
                               </a>
                             </div>
                           </div>
-                          
+
                           <div class="drop-megamenu_item_col">
                             <div class="drop-megamenu_item">
                               <a href="#" class="drop-megamenu_item_title">
@@ -410,31 +410,31 @@ export default () => {
                               </a>
                             </div>
                           </div>
-                          
+
                         </div>
                       </div>
-                      
+
                     </div>
                   </div>
                 </div>
               </div>
-           
+
             </div>
           </div>
         </div>
-        
+
       </div>
-      
+
       <a href="#" class="btn btn_megamenus">
         consectetur
       </a>
-      
+
       <a href="#" class="btn btn_megamenus">
         adipiscing elit
       </a>
-      
+
     </div>
-    
+
   </div>
 </div>
 

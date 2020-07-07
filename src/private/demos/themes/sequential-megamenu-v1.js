@@ -47,12 +47,13 @@ Xt.mount.push({
   mount: object => {
     // vars
 
-    const contentXOn = -35
-    const contentXOff = -35
+    const contentXOn = -40
+    const contentXOff = -40
     const contentTime = Xt.vars.timeMedium
+    const contentDelayOn = Xt.vars.timeTiny
     const contentEase = 'quint.out'
 
-    const innerTime = Xt.vars.timeMedium
+    const innerTime = Xt.vars.timeLarge
     const innerEase = 'expo.out'
 
     // init
@@ -60,8 +61,8 @@ Xt.mount.push({
     let self = new Xt.Drop(object, {
       elements: '.drop-container',
       targets: '.drop-container > .drop',
-      durationOn: Xt.vars.timeSmall,
-      durationOff: Xt.vars.timeSmall,
+      durationOn: Xt.vars.timeLarge,
+      durationOff: Xt.vars.timeLarge,
       // on: 'mouseenter',
       // off: 'mouseleave',
       instant: true,
@@ -83,7 +84,7 @@ Xt.mount.push({
         // content
         const content = tr.querySelector('.drop-content')
         gsap.set(content, { x: contentXOn * self.direction, opacity: 0 })
-        gsap.to(content, { x: 0, opacity: 1, duration: contentTime, ease: contentEase })
+        gsap.to(content, { x: 0, opacity: 1, duration: contentTime, delay: contentDelayOn, ease: contentEase })
         // inner
         const inner = tr.querySelector('.drop-inner')
         gsap.set(inner, { height: '' })
