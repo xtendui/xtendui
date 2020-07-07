@@ -46,7 +46,9 @@ Set `elements` `targets` `elementsInner` `targetsInner`, elements are responding
 
 </div>
 
-Use this markup to create a **drop**.
+#### Unique
+
+Use this markup to create a unique **drop**.
 
 <script type="text/plain" class="language-markup">
   <div class="drop-container" data-xt-drop>
@@ -63,6 +65,56 @@ Use this markup to create a **drop**.
     </div>
   </div>
 </script>
+
+<demo>
+  <demovanilla src="vanilla/components/core/drop/unique">
+  </demovanilla>
+</demo>
+
+#### Multiple
+
+Use this markup to create multiple **drop**.
+
+The **multiple** mode is useful when you want special animations on more than one drop on interaction (see [themes](/themes/by-component/drop)). 
+
+<script type="text/plain" class="language-markup">
+  <div data-xt-drop="{ elements: '.drop-container', targets: '.drop-container > .drop' }">
+  
+    <div class="drop-container">
+      <button type="button">
+        <!-- content -->
+      </button>
+      <div class="drop drop-default">
+        <div class="drop-inner">
+          <div class="drop-design"></div>
+          <div class="drop-content">
+            <!-- content -->
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="drop-container">
+      <button type="button">
+        <!-- content -->
+      </button>
+      <div class="drop drop-default">
+        <div class="drop-inner">
+          <div class="drop-design"></div>
+          <div class="drop-content">
+            <!-- content -->
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</script>
+
+<demo>
+  <demovanilla src="vanilla/components/core/drop/multiple">
+  </demovanilla>
+</demo>
 
 ## Initialization
 

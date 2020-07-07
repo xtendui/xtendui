@@ -49,10 +49,10 @@ Xt.mount.push({
 
     const contentXOn = -35
     const contentXOff = -35
-    const contentTime = Xt.vars.timeSmall
+    const contentTime = Xt.vars.timeMedium
     const contentEase = 'quint.out'
 
-    const innerTime = Xt.vars.timeSmall
+    const innerTime = Xt.vars.timeMedium
     const innerEase = 'expo.out'
 
     // init

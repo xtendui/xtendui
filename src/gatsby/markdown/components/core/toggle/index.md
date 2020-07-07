@@ -57,6 +57,29 @@ You can use this markup to create a **toggle** with **no targets**.
   </demovanilla>
 </demo>
 
+#### Unique
+
+The **unique** mode is useful when triggering **targets outside the scope** of the toggle.
+
+[[notePrimary]]
+| To activate **unique mode** you **need** to specify targets with **#id**.
+
+<script type="text/plain" class="language-markup">
+  <button type="button" data-xt-toggle="{ targets: '#my-target' }">
+    <!-- content -->
+  </button>
+  <div class="toggle-block" id="my-target">
+    <!-- content -->
+  </div>
+</script>
+
+<demo>
+  <demovanilla src="vanilla/components/core/toggle/unique-single">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/toggle/unique-same">
+  </demovanilla>
+</demo>
+
 #### Multiple
 
 You can create a toggle with **mutiple** mode by assigning the toggle to a container element, elements and targets must be inside the container.
@@ -78,29 +101,6 @@ With multiple mode, the **targets** activated are the ones with the same index o
   <demovanilla src="vanilla/components/core/toggle/multiple-default">
   </demovanilla>
   <demovanilla src="vanilla/components/core/toggle/multiple-custom">
-  </demovanilla>
-</demo>
-
-#### Unique
-
-The **unique** mode is useful when triggering **targets outside the scope** of the toggle.
-
-[[notePrimary]]
-| To activate **unique mode** you **need** to specify targets with **#id**.
-
-<script type="text/plain" class="language-markup">
-  <button type="button" data-xt-toggle="{ targets: '#my-target' }">
-    <!-- content -->
-  </button>
-  <div class="toggle-block" id="my-target">
-    <!-- content -->
-  </div>
-</script>
-
-<demo>
-  <demovanilla src="vanilla/components/core/toggle/unique-single">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/toggle/unique-same">
   </demovanilla>
 </demo>
 

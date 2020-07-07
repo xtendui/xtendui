@@ -46,13 +46,16 @@ Set `elements` `targets` `elementsInner` `targetsInner`, elements are responding
 
 </div>
 
-Use this markup to create an **overlay**.
+#### Unique
+
+Use this markup to create an unique **overlay**.
 
 <script type="text/plain" class="language-markup">
-  <button type="button" data-xt-overlay="{ targets: '#overlay_custom' }">
+  <button type="button"
+    data-xt-overlay="{ targets: '#demo--overlay-unique' }">
     <!-- content -->
   </button>
-  <div class="overlay overlay-default" id="overlay-custom">
+  <div class="overlay overlay-default" id="demo--overlay-unique">
     <div class="overlay-container">
       <div class="overlay-inner">
         <div class="overlay-design"></div>
@@ -62,10 +65,18 @@ Use this markup to create an **overlay**.
   </div>
 </script>
 
-You can use this markup to create an **overlay without toggle**.
+<demo>
+  <demovanilla src="vanilla/components/core/overlay/unique">
+  </demovanilla>
+</demo>
+
+#### Self
+
+You can use this markup to create an **overlay without toggle**. Just use the class `active` if you want to automatically open, or use the [api](/components/overlay/api)
 
 <script type="text/plain" class="language-markup">
-<div class="overlay overlay-default active" id="overlay_custom" data-xt-overlay="{ on: false, instant: false }">
+<div class="overlay overlay-default active" id="demo--overlay-self"
+  data-xt-overlay="{ on: false, instant: false }">
   <div class="overlay-container">
     <div class="overlay-inner">
       <div class="overlay-design"></div>
@@ -74,6 +85,11 @@ You can use this markup to create an **overlay without toggle**.
   </div>
 </div>
 </script>
+
+<demo>
+  <div class="gatsby_demo_item" data-iframe="iframe/components/core/overlay/self">
+  </div>
+</demo>
 
 [[notePrimary]]
 | Overlays are moved to **body** to prevent **z-index** problems. Style and query overlay's content accordingly.
