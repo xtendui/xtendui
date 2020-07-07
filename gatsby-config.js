@@ -25,11 +25,11 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Xtend',
-        short_name: 'docs',
+        name: 'Xtend Library',
+        short_name: 'Xtend',
         start_url: '/',
         background_color: '#ffffff',
-        theme_color: '#0078ff',
+        theme_color: '#0058C6',
         display: 'minimal-ui',
         icon: './static/icons/apple-touch-icon.png',
         icon_options: {
