@@ -5,7 +5,7 @@ import { Xt } from 'xtend-library'
 //
 
 Xt.mount.push({
-  matches: 'form, .form',
+  matches: 'form:not([novalidate]), .form:not([novalidate])',
   mount: object => {
     // vars
 
