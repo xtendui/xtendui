@@ -22,6 +22,7 @@ Xt.scrollDelay = false
 Xt.medialoadedDelay = 500
 Xt.stickyIndex = 800
 Xt.focusables = 'a, button, details, input, iframe, select, textarea, .btn-close'
+Xt.supportScroll = typeof window === 'undefined' ? false : 'onscroll' in window && !/(gle|ing)bot/.test(navigator.userAgent)
 
 if (typeof window !== 'undefined') {
   //

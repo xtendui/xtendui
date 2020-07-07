@@ -101,6 +101,16 @@ class Scroll extends Xt.Toggle {
     super.initEvents()
     const self = this
     const options = self.options
+    // if browser doesn't support scroll
+    if (!Xt.supportScroll) {
+      // show all and block
+      for (const el of self.elements) {
+        self.eventOn(el, true)
+        el.classList.add('xt-block')
+      }
+      // no events
+      return
+    }
     // event scroll and resize
     const scrollHandler = Xt.dataStorage.put(window, options.on + '/' + self.namespace, self.eventScrollHandler.bind(self).bind(self, false))
     const events = [...'scroll resize'.split(' ')]
@@ -252,7 +262,6 @@ class Scroll extends Xt.Toggle {
       }
     }
     // currents
-    const total = self.detail.end - self.detail.start
     for (const el of currentsOn) {
       // direction
       const position = Xt.dataStorage.get(el, self.componentNamespace + 'Position')
