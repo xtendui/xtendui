@@ -37,5 +37,6 @@ if (typeof window !== 'undefined') {
   require('xtend-library/src/private/demos/themes/furniture-listing-v1.js')
   require('xtend-library/src/private/demos/themes/industrial-featured-v1.js')
   require('xtend-library/src/private/demos/themes/opacity-listing-v1.js')
+  require('xtend-library/src/private/demos/themes/sequential-megamenu-v1.js')
   require('xtend-library/src/private/demos/themes/stores-listing-v1.js')
 }

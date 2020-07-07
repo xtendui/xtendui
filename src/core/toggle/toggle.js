@@ -2915,7 +2915,7 @@ class Toggle {
   reinit(saveCurrents = true) {
     const self = this
     // @FIX bug when remove all elements, element becomes the object, then and add new elements
-    self.destroy()
+    self.destroy(true)
     // reinit
     self.initLogic(saveCurrents)
     // listener dispatch
@@ -2936,7 +2936,7 @@ class Toggle {
   /**
    * destroy
    */
-  destroy() {
+  destroy(weak = false) {
     const self = this
     // disable
     self.disable()
@@ -2969,20 +2969,17 @@ class Toggle {
     const selfs = Xt.dataStorage.get(self.namespace, 'xtNamespace')
     selfs.filter(x => x !== self)
     Xt.dataStorage.set(self.namespace, 'xtNamespace', selfs)
-    // initialized class
-    self.object.classList.remove(self.componentName)
-    // set self
-    Xt.remove(self.componentName, self.object)
-    for (const el of self.elements) {
-      Xt.remove(self.componentName, el)
+    // weak
+    if (!weak) {
+      // initialized class
+      self.object.classList.remove(self.componentName)
+      // set self
+      Xt.remove(self.componentName, self.object)
+      // listener dispatch
+      self.object.dispatchEvent(new CustomEvent('destroy.xt'))
+      // delete
+      delete this
     }
-    for (const tr of self.targets) {
-      Xt.remove(self.componentName, tr)
-    }
-    // listener dispatch
-    self.object.dispatchEvent(new CustomEvent('destroy.xt'))
-    // delete
-    delete this
   }
 
   /**

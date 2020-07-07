@@ -38,7 +38,7 @@ self = null
 | Method                  | `self.hasCurrent(el:Node)`                          | Returns `true` or `false` if element or target is activated             |
 | Method                  | `self.reinit(saveCurrents:Boolean)`       | Reinit component and save currents as initial (default: `true`)             |
 | Method                  | `self.restart()`                          | Restart component to initial             |
-| Method                  | `self.destroy()`              | Destroy component            |
+| Method                  | `self.destroy(weak:Boolean)`              | Destroy component            |
 
 </div>
 

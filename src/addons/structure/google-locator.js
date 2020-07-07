@@ -17,16 +17,7 @@ class GoogleLocator {
     self.object = object
     self.optionsCustom = optionsCustom
     self.componentName = self.constructor.componentName
-    // @FIX multiple initializations
-    const alreadyDefinedInstance = Xt.get(self.componentName, self.object)
-    if (!alreadyDefinedInstance) {
-      // set
-      Xt.set(self.componentName, self.object, self)
-      // init
-      self.init()
-    } else {
-      return alreadyDefinedInstance
-    }
+    Xt.destroyAndInit(self)
   }
 
   //

@@ -39,10 +39,6 @@ class PropagateInteraction {
       self.object.addEventListener('mousedown', self.activeOn.bind(self))
       addEventListener('mouseup', self.activeOff.bind(self).bind(self, false))
       self.object.addEventListener('click', self.activeOff.bind(self).bind(self, true))
-      // set self
-      for (const tr of self.targets) {
-        Xt.set(self.componentName, tr, self)
-      }
     }
     // initialized class
     self.object.classList.add(self.componentName)
@@ -121,11 +117,6 @@ class PropagateInteraction {
     removeEventListener('mouseup', self.activeOff.bind(self))
     // initialized class
     self.object.classList.remove(self.componentName)
-    // set self
-    Xt.remove(self.componentName, self.object)
-    for (const tr of self.targets) {
-      Xt.remove(self.componentName, tr)
-    }
     // listener dispatch
     self.object.dispatchEvent(new CustomEvent('destroy.xt'))
   }
