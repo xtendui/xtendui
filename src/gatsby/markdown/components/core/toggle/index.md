@@ -44,7 +44,7 @@ Set `elements` `targets` `elementsInner` `targetsInner`, elements are responding
 
 #### Self
 
-You can use this markup to create a **toggle** with **no targets**.
+Use this markup to create a **self toggle**.
 
 <script type="text/plain" class="language-markup">
   <button type="button" data-xt-toggle>
@@ -59,7 +59,9 @@ You can use this markup to create a **toggle** with **no targets**.
 
 #### Unique
 
-The **unique** mode is useful when triggering **targets outside the scope** of the toggle.
+Use this markup to create a **unique toggle**.
+
+The **unique** mode is useful when triggering **targets outside the scope** of the component.
 
 [[notePrimary]]
 | To activate **unique mode** you **need** to specify targets with **#id**.
@@ -82,12 +84,10 @@ The **unique** mode is useful when triggering **targets outside the scope** of t
 
 #### Multiple
 
-You can create a toggle with **mutiple** mode by assigning the toggle to a container element, elements and targets must be inside the container.
-
-With multiple mode, the **targets** activated are the ones with the same index of the toggled **element**.
+Use this markup to create **multiple toggle**.
 
 <script type="text/plain" class="language-markup">
-  <div  data-xt-toggle="{ elements: '.my-elements', targets: '.my-targets' }">
+  <div data-xt-toggle="{ elements: '.my-elements', targets: '.my-targets' }">
     <button type="button" class="my-elements">
       <!-- content -->
     </button>

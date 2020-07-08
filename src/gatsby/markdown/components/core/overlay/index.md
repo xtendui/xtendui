@@ -31,6 +31,9 @@ import '/src/xtend-core.js'
 [[noteDefault]]
 | To modify a **less** or **js** file add [webpack resolve](/introduction/setup#usage-webpack) and fork the file copying it in your project.
 
+[[notePrimary]]
+| Overlays are moved to **body** to prevent **z-index** problems. Style and query overlay's content accordingly.
+
 ## Usage
 
 Set `elements` `targets` `elementsInner` `targetsInner`, elements are responding to events, targets are activated on events.
@@ -46,16 +49,46 @@ Set `elements` `targets` `elementsInner` `targetsInner`, elements are responding
 
 </div>
 
+#### Self
+
+Use this markup to create a **self overlay**.
+
+<script type="text/plain" class="language-markup">
+  <div data-xt-overlay>
+    <button type="button">
+      <!-- content -->
+    </button>
+    <div class="overlay overlay-default">
+      <div class="overlay-container">
+        <div class="overlay-inner">
+          <div class="overlay-design"></div>
+          <!-- content -->
+        </div>
+      </div>
+    </div>
+  </div>
+</script>
+
+<demo>
+  <demovanilla src="vanilla/components/core/overlay/self">
+  </demovanilla>
+</demo>
+
 #### Unique
 
-Use this markup to create an unique **overlay**.
+Use this markup to create a **unique overlay**.
+
+The **unique** mode is useful when triggering **targets outside the scope** of the component.
+
+[[notePrimary]]
+| To activate **unique mode** you **need** to specify targets with **#id**.
 
 <script type="text/plain" class="language-markup">
   <button type="button"
-    data-xt-overlay="{ targets: '#demo--overlay-unique' }">
+    data-xt-overlay="{ targets: '#overlay--unique' }">
     <!-- content -->
   </button>
-  <div class="overlay overlay-default" id="demo--overlay-unique">
+  <div class="overlay overlay-default" id="overlay--unique">
     <div class="overlay-container">
       <div class="overlay-inner">
         <div class="overlay-design"></div>
@@ -70,12 +103,14 @@ Use this markup to create an unique **overlay**.
   </demovanilla>
 </demo>
 
-#### Self
+#### Standalone
 
-You can use this markup to create an **overlay without toggle**. Just use the class `active` if you want to automatically open, or use the [api](/components/overlay/api)
+Use this markup to create a **standalone overlay**.
+
+Just use the class `active` if you want to automatically open, or use the [api](/components/overlay/api)
 
 <script type="text/plain" class="language-markup">
-<div class="overlay overlay-default active" id="demo--overlay-self"
+<div class="overlay overlay-default active" id="overlay--standalone"
   data-xt-overlay="{ on: false, instant: false }">
   <div class="overlay-container">
     <div class="overlay-inner">
@@ -87,12 +122,9 @@ You can use this markup to create an **overlay without toggle**. Just use the cl
 </script>
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/core/overlay/self">
+  <div class="gatsby_demo_item" data-iframe="iframe/components/core/overlay/standalone">
   </div>
 </demo>
-
-[[notePrimary]]
-| Overlays are moved to **body** to prevent **z-index** problems. Style and query overlay's content accordingly.
 
 ## Initialization
 

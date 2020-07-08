@@ -46,9 +46,9 @@ Set `elements` `targets` `elementsInner` `targetsInner`, elements are responding
 
 </div>
 
-#### Unique
+#### Self
 
-Use this markup to create a unique **drop**.
+Use this markup to create a **self drop**.
 
 <script type="text/plain" class="language-markup">
   <div class="drop-container" data-xt-drop>
@@ -67,15 +67,13 @@ Use this markup to create a unique **drop**.
 </script>
 
 <demo>
-  <demovanilla src="vanilla/components/core/drop/unique">
+  <demovanilla src="vanilla/components/core/drop/self">
   </demovanilla>
 </demo>
 
 #### Multiple
 
-Use this markup to create multiple **drop**.
-
-The **multiple** mode is useful when you want special animations on more than one drop on interaction (see [themes](/themes/by-component/drop)). 
+Use this markup to create **multiple drop**.
 
 <script type="text/plain" class="language-markup">
   <div data-xt-drop="{ elements: '.drop-container', targets: '.drop-container > .drop' }">

@@ -9,10 +9,11 @@ export const demo = {
 
 demo.htmlSource = `
 <button type="button" class="btn btn-primary"
-  data-xt-overlay="{ targets: '#demo--overlay-unique' }">
+  data-xt-overlay="{ targets: '#overlay--unique' }">
   overlay
 </button>
-<div class="overlay overlay-default" id="demo--overlay-unique">
+
+<div class="overlay overlay-default" id="overlay--unique">
   <div class="overlay-container">
     <div class="overlay-inner">
       <div class="overlay-design"></div>

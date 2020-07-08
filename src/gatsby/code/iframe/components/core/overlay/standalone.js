@@ -13,7 +13,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="overlay overlay-default active" id="demo--overlay-self"
+<div class="overlay overlay-default active" id="overlay--standalone"
     data-xt-overlay="{ on: false, instant: false }">
   <div class="overlay-container">
     <div class="overlay-inner">
