@@ -236,7 +236,7 @@ class Toggle {
     }
     // initialized class
     self.object.classList.add(self.componentName)
-    // @FIX after raf because after .xt custom listeners
+    // @fix raf because after .xt custom listeners
     requestAnimationFrame(() => {
       self.object.dispatchEvent(new CustomEvent('init.xt'))
     })
@@ -1165,9 +1165,14 @@ class Toggle {
     el.classList.remove(...self.classesInDone)
     el.classList.remove(...self.classesOut)
     // keep the same level of raf as others
-    requestAnimationFrame(() => {
-      el.classList.add(...self.classesIn)
-    })
+    cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'ActivateFrame'))
+    Xt.dataStorage.put(
+      el,
+      self.componentNamespace + 'ActivateFrame',
+      requestAnimationFrame(() => {
+        el.classList.add(...self.classesIn)
+      })
+    )
     if (self.initial) {
       el.classList.add(...self.classesInitial)
     }
@@ -1435,7 +1440,7 @@ class Toggle {
           self.object,
           self.componentNamespace + 'AutoTimeout',
           setTimeout(() => {
-            // @FIX after raf because after .xt custom listeners
+            // @fix raf because after .xt custom listeners
             requestAnimationFrame(() => {
               self.eventAuto()
             })
@@ -1601,12 +1606,6 @@ class Toggle {
       }
       */
       if (!objOther || !objOther[type] || objOther[type].done) {
-        // @FIX if initial must be instant, fixes queue
-        if (self.initial || (typeof options.instant !== 'object' && options.instant === true)) {
-          obj[type].instant = true
-        } else if (typeof options.instant === 'object' && options.instant[type]) {
-          obj[type].instantType = true
-        }
         // zIndex
         if (options.zIndex) {
           // eslint-disable-next-line guard-for-in
@@ -1629,6 +1628,12 @@ class Toggle {
             }
           }
         }
+        // @FIX if initial must be instant, fixes queue
+        if (self.initial || (typeof options.instant !== 'object' && options.instant === true)) {
+          obj[type].instant = true
+        } else if (typeof options.instant === 'object' && options.instant[type]) {
+          obj[type].instantType = true
+        }
         // start queue
         self.queueDelay(actionCurrent, actionOther, obj, type, queueInitial)
       }
@@ -1648,10 +1653,10 @@ class Toggle {
       if (obj[type].done) {
         for (const el of obj[type].queueEls) {
           // clear timeout and frame
-          cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'AnimFrame'))
           cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'))
-          clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'DelayTimeout'))
-          clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'))
+          cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + type + 'AnimFrame'))
+          clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + type + 'DelayTimeout'))
+          clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + type + 'AnimTimeout'))
           // done other queue
           self.queueDelayDone(actionOther, actionCurrent, obj, el, type, true)
           self.queueAnimDone(actionOther, actionCurrent, obj, el, type, true)
@@ -1689,7 +1694,7 @@ class Toggle {
       }
       if (actionCurrent === 'On') {
         if (self.initial) {
-          // @FIX after raf because after .xt custom listeners
+          // @fix raf because after .xt custom listeners
           requestAnimationFrame(() => {
             // listener dispatch
             el.dispatchEvent(new CustomEvent('ondelay.xt'))
@@ -1703,14 +1708,15 @@ class Toggle {
         el.dispatchEvent(new CustomEvent('offdelay.xt'))
       }
       // delay fnc
-      clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'DelayTimeout'))
-      clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'))
+      cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + type + 'AnimFrame'))
+      clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + type + 'DelayTimeout'))
+      clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + type + 'AnimTimeout'))
       if (!delay) {
         self.queueDelayDone(actionCurrent, actionOther, obj, el, type)
       } else {
         Xt.dataStorage.set(
           el,
-          self.componentNamespace + 'DelayTimeout',
+          self.componentNamespace + type + 'DelayTimeout',
           setTimeout(() => {
             self.queueDelayDone(actionCurrent, actionOther, obj, el, type)
           }, delay)
@@ -1796,7 +1802,7 @@ class Toggle {
         }
       }
       if (self.initial) {
-        // @FIX after raf because after .xt custom listeners
+        // @fix raf because after .xt custom listeners
         requestAnimationFrame(() => {
           // listener dispatch
           if (type !== 'elementsInner' && type !== 'targetsInner') {
@@ -1831,15 +1837,7 @@ class Toggle {
     }
     // queue
     if (!skipQueue) {
-      // keep the same level of raf as others
-      cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'AnimFrame'))
-      Xt.dataStorage.set(
-        el,
-        self.componentNamespace + 'AnimFrame',
-        requestAnimationFrame(() => {
-          self.queueAnim(actionCurrent, actionOther, obj, el, type)
-        })
-      )
+      self.queueAnim(actionCurrent, actionOther, obj, el, type)
       // queue done
       if (obj[type].instantType) {
         const els = obj[type].queueEls
@@ -1864,13 +1862,22 @@ class Toggle {
     const options = self.options
     // anim
     const duration = Xt.animTime(el, options['duration' + actionCurrent])
-    clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'))
+    clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + type + 'AnimTimeout'))
+    // queue done
     if (!duration) {
-      self.queueAnimDone(actionCurrent, actionOther, obj, el, type)
+      // keep the same level of raf as others
+      cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + type + 'AnimFrame'))
+      Xt.dataStorage.set(
+        el,
+        self.componentNamespace + type + 'AnimFrame',
+        requestAnimationFrame(() => {
+          self.queueAnimDone(actionCurrent, actionOther, obj, el, type)
+        })
+      )
     } else {
       Xt.dataStorage.set(
         el,
-        self.componentNamespace + 'AnimTimeout',
+        self.componentNamespace + type + 'AnimTimeout',
         setTimeout(() => {
           self.queueAnimDone(actionCurrent, actionOther, obj, el, type)
         }, duration)
@@ -1898,7 +1905,7 @@ class Toggle {
       const after = getComputedStyle(el, ':after').getPropertyValue('content').replace(/['"]+/g, '')
       self.specialCollapse('Reset', el, before, after)
       if (self.initial) {
-        // @FIX after raf because after .xt custom listeners
+        // @fix raf because after .xt custom listeners
         requestAnimationFrame(() => {
           // listener dispatch
           if (type !== 'elementsInner' && type !== 'targetsInner') {
@@ -2012,7 +2019,7 @@ class Toggle {
   queueComplete(actionCurrent, obj) {
     const self = this
     if (actionCurrent === 'On') {
-      // @FIX after raf because after .xt custom listeners
+      // @fix raf because after .xt custom listeners
       requestAnimationFrame(() => {
         // auto
         self.eventAutostart()
@@ -3028,7 +3035,9 @@ Toggle.optionsDefaultSuper = {
   // timing
   instant: {
     elements: true,
+    targets: false,
     elementsInner: true,
+    targetsInner: true,
   },
   delayOn: false,
   delayOff: false,

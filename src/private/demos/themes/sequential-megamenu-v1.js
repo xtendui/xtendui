@@ -16,10 +16,8 @@ Xt.mount.push({
 
     const checkChange = e => {
       const component = document.querySelector('#iframe--sequential-megamenu-v1 body .drop-megamenus')
-      console.log(component)
       if (component) {
         const self = Xt.get('xt-drop', component)
-        console.log(self)
         if (self) {
           if (object.checked) {
             self.options.on = 'mouseenter'
@@ -28,7 +26,6 @@ Xt.mount.push({
             self.options.on = 'click'
             self.options.off = false
           }
-          console.log(self, self.options)
           self.reinit()
         }
       }

@@ -65,7 +65,9 @@ Drop.optionsDefault = {
   // timing
   instant: {
     elements: false,
+    targets: false,
     elementsInner: true,
+    targetsInner: true,
   },
   // other
   autoClose: true,
