@@ -67,7 +67,7 @@ Drop.optionsDefault = {
     elements: false,
     targets: false,
     elementsInner: true,
-    targetsInner: true,
+    targetsInner: false,
   },
   // other
   autoClose: true,
