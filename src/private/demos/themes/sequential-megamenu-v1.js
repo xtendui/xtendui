@@ -50,6 +50,9 @@ Xt.mount.push({
     const contentDelayOn = Xt.vars.timeTiny
     const contentEase = 'quint.out'
 
+    const designTime = Xt.vars.timeLarge
+    const designEase = 'expo.out'
+
     const innerTime = Xt.vars.timeLarge
     const innerEase = 'expo.out'
 
@@ -82,14 +85,22 @@ Xt.mount.push({
         const content = tr.querySelector('.drop-content')
         gsap.set(content, { x: contentXOn * self.direction, opacity: 0 })
         gsap.to(content, { x: 0, opacity: 1, duration: contentTime, delay: contentDelayOn, ease: contentEase })
+        // design
+        const design = tr.querySelector('.drop-design')
+        const designOpacityCache = Xt.dataStorage.get(self.object, 'designOpacityCache') || 0
+        gsap.set(design, { opacity: designOpacityCache })
+        gsap.to(design, { opacity: 1, duration: designTime, ease: designEase }).eventCallback('onUpdate', () => {
+          Xt.dataStorage.set(self.object, 'designOpacityCache', design.style.opacity)
+        })
         // inner
         const inner = tr.querySelector('.drop-inner')
         gsap.set(inner, { height: '' })
         const innerHeight = inner.clientHeight
         const innerHeightCache = Xt.dataStorage.get(self.object, 'innerHeightCache') || 0
-        Xt.dataStorage.set(self.object, 'innerHeightCache', innerHeight)
         gsap.set(inner, { height: innerHeightCache, opacity: 0 })
-        gsap.to(inner, { height: innerHeight, opacity: 1, duration: innerTime, ease: innerEase })
+        gsap.to(inner, { height: innerHeight, opacity: 1, duration: innerTime, ease: innerEase }).eventCallback('onUpdate', () => {
+          Xt.dataStorage.set(self.object, 'innerHeightCache', inner.clientHeight)
+        })
       }
     }
 
@@ -112,26 +123,34 @@ Xt.mount.push({
               // content
               const content = tr.querySelector('.drop-content')
               gsap.to(content, { x: contentXOff * self.direction * -1, opacity: 0, duration: contentTime, ease: contentEase, overwrite: true })
-              // inner
-              const inner = tr.querySelector('.drop-inner')
-              const innerHeight = inner.clientHeight
-              const innerHeightCache = Xt.dataStorage.get(self.object, 'innerHeightCache') || 0
-              gsap.set(inner, { height: innerHeight })
-              gsap.to(inner, { height: innerHeightCache, duration: innerTime, ease: innerEase })
+              // design
+              const design = tr.querySelector('.drop-design')
+              const designOpacityCache = Xt.dataStorage.get(self.object, 'designOpacityCache') || 0
+              gsap.set(design, { opacity: designOpacityCache })
             } else {
+              // others
+              for (const other of self.targets.filter(x => x !== tr)) {
+                // design
+                const design = other.querySelector('.drop-design')
+                gsap.set(design, { opacity: 0 })
+                // inner
+                const inner = other.querySelector('.drop-inner')
+                gsap.set(inner, { height: 0 })
+              }
               // content
               const content = tr.querySelector('.drop-content')
               gsap.to(content, { opacity: 0, duration: contentTime, ease: contentEase })
+              // design
+              const design = tr.querySelector('.drop-design')
+              gsap.to(design, { opacity: 0, duration: designTime, ease: designEase }).eventCallback('onUpdate', () => {
+                Xt.dataStorage.set(self.object, 'designOpacityCache', design.style.opacity)
+              })
               // inner
               const inner = tr.querySelector('.drop-inner')
               const innerHeight = 0
-              Xt.dataStorage.set(self.object, 'innerHeightCache', innerHeight)
-              gsap.to(inner, { height: innerHeight, opacity: 0, duration: innerTime, ease: innerEase })
-              // others
-              for (const other of self.targets.filter(x => x !== tr)) {
-                const inner = other.querySelector('.drop-inner')
-                gsap.set(inner, { opacity: 0 })
-              }
+              gsap.to(inner, { height: innerHeight, opacity: 0, duration: innerTime, ease: innerEase }).eventCallback('onUpdate', () => {
+                Xt.dataStorage.set(self.object, 'innerHeightCache', inner.clientHeight)
+              })
             }
           })
         )
