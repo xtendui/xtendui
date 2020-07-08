@@ -19,6 +19,10 @@ class Template extends React.Component {
     const { data } = this.props
     const seo = {}
     seo.title = data.post.frontmatter.title
+    seo.title += data.post.frontmatter.parent && data.post.frontmatter.parent !== data.post.frontmatter.title ? ' ' + data.post.frontmatter.parent : ''
+    seo.title += ' — '
+    seo.title += data.post.frontmatter.category && data.post.frontmatter.category !== data.post.frontmatter.title ? ' ' + data.post.frontmatter.category : ''
+    seo.title += data.post.frontmatter.type && data.post.frontmatter.type !== data.post.frontmatter.title ? ' ' + data.post.frontmatter.type : ''
     seo.description = data.post.frontmatter.description ? data.post.frontmatter.description : data.post.frontmatter.parent
     return (
       <Layout seo={seo} page={data}>
