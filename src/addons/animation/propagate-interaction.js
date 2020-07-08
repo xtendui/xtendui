@@ -42,7 +42,7 @@ class PropagateInteraction {
     }
     // initialized class
     self.object.classList.add(self.componentName)
-    // @FIX after raf because after .xt custom listeners
+    // @FIX raf because after .xt custom listeners
     requestAnimationFrame(() => {
       // listener dispatch
       self.object.dispatchEvent(new CustomEvent('init.xt'))

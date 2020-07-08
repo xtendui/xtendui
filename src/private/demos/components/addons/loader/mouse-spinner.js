@@ -9,8 +9,9 @@ Xt.mount.push({
     const mouseFollowObject = object
     const mouseFollowContainer = mouseFollowObject.closest('.card')
     let mouseFollow = new Xt.MouseFollow(mouseFollowObject, mouseFollowContainer, {
-      mouseCheck: () => {
-        return !mouseFollow.object.classList.contains('loader-disable') || mouseFollow.object.classList.contains('loader-js')
+      mouseCheck: function () {
+        // eslint-disable-next-line no-invalid-this
+        return !this.object.classList.contains('loader-disable') || this.object.classList.contains('loader-js')
       },
     })
 

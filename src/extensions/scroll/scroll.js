@@ -250,12 +250,12 @@ class Scroll extends Xt.Toggle {
           const endRealEl = document.body.querySelector('.xt-indicator-end-real')
           endRealEl.style.top = self.detail.endReal - scrollTop + 'px'
         }
-        // listener dispatch
         cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'ScrollDispatchFrame'))
         Xt.dataStorage.set(
           el,
           self.componentNamespace + 'ScrollDispatchFrame',
           requestAnimationFrame(() => {
+            // listener dispatch
             el.dispatchEvent(new CustomEvent('change.xt'))
           })
         )

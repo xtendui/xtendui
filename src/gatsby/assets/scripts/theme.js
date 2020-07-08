@@ -115,7 +115,7 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: 'body .gatsby_site_article_hero_content_inner',
+  matches: '.gatsby_site_article_hero_content_inner',
   mount: object => {
     // init
 

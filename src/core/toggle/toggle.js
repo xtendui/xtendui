@@ -238,6 +238,7 @@ class Toggle {
     self.object.classList.add(self.componentName)
     // @fix raf because after .xt custom listeners
     requestAnimationFrame(() => {
+      // listener dispatch
       self.object.dispatchEvent(new CustomEvent('init.xt'))
     })
   }
@@ -1435,19 +1436,17 @@ class Toggle {
         clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutoTimeout'))
         // auto
         const time = options.auto.time
-        // timeout
-        Xt.dataStorage.set(
-          self.object,
-          self.componentNamespace + 'AutoTimeout',
-          setTimeout(() => {
-            // @fix raf because after .xt custom listeners
-            requestAnimationFrame(() => {
-              self.eventAuto()
-            })
-          }, time)
-        )
-        // @FIX event called before removing classes
+        // @fix raf because after .xt custom listeners
         requestAnimationFrame(() => {
+          // timeout
+          Xt.dataStorage.set(
+            self.object,
+            self.componentNamespace + 'AutoTimeout',
+            setTimeout(() => {
+              // auto
+              self.eventAuto()
+            }, time)
+          )
           // listener dispatch
           self.object.dispatchEvent(new CustomEvent('autostart.xt'))
         })
@@ -1693,16 +1692,8 @@ class Toggle {
         }
       }
       if (actionCurrent === 'On') {
-        if (self.initial) {
-          // @fix raf because after .xt custom listeners
-          requestAnimationFrame(() => {
-            // listener dispatch
-            el.dispatchEvent(new CustomEvent('ondelay.xt'))
-          })
-        } else {
-          // listener dispatch
-          el.dispatchEvent(new CustomEvent('ondelay.xt'))
-        }
+        // listener dispatch
+        el.dispatchEvent(new CustomEvent('ondelay.xt'))
       } else if (actionCurrent === 'Off') {
         // listener dispatch
         el.dispatchEvent(new CustomEvent('offdelay.xt'))
@@ -1801,19 +1792,9 @@ class Toggle {
           }
         }
       }
-      if (self.initial) {
-        // @fix raf because after .xt custom listeners
-        requestAnimationFrame(() => {
-          // listener dispatch
-          if (type !== 'elementsInner' && type !== 'targetsInner') {
-            el.dispatchEvent(new CustomEvent('on.xt'))
-          }
-        })
-      } else {
-        // listener dispatch
-        if (type !== 'elementsInner' && type !== 'targetsInner') {
-          el.dispatchEvent(new CustomEvent('on.xt'))
-        }
+      // listener dispatch
+      if (type !== 'elementsInner' && type !== 'targetsInner') {
+        el.dispatchEvent(new CustomEvent('on.xt'))
       }
     } else if (actionCurrent === 'Off') {
       // activation
@@ -1904,19 +1885,9 @@ class Toggle {
       const before = getComputedStyle(el, ':before').getPropertyValue('content').replace(/['"]+/g, '')
       const after = getComputedStyle(el, ':after').getPropertyValue('content').replace(/['"]+/g, '')
       self.specialCollapse('Reset', el, before, after)
-      if (self.initial) {
-        // @fix raf because after .xt custom listeners
-        requestAnimationFrame(() => {
-          // listener dispatch
-          if (type !== 'elementsInner' && type !== 'targetsInner') {
-            el.dispatchEvent(new CustomEvent('ondone.xt'))
-          }
-        })
-      } else {
-        // listener dispatch
-        if (type !== 'elementsInner' && type !== 'targetsInner') {
-          el.dispatchEvent(new CustomEvent('ondone.xt'))
-        }
+      // listener dispatch
+      if (type !== 'elementsInner' && type !== 'targetsInner') {
+        el.dispatchEvent(new CustomEvent('ondone.xt'))
       }
     } else if (actionCurrent === 'Off') {
       // activation
@@ -2019,10 +1990,10 @@ class Toggle {
   queueComplete(actionCurrent, obj) {
     const self = this
     if (actionCurrent === 'On') {
+      // auto
+      self.eventAutostart()
       // @fix raf because after .xt custom listeners
       requestAnimationFrame(() => {
-        // auto
-        self.eventAutostart()
         // reset
         self.inverse = null
         self.initial = false

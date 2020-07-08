@@ -50,6 +50,13 @@ class InfiniteScroll {
     if (self.options.events.trigger) {
       self.triggerElement.addEventListener(self.options.events.trigger, self.eventTrigger.bind(self))
     }
+    // initialized class
+    self.object.classList.add(self.componentName)
+    // @FIX raf because after .xt custom listeners
+    requestAnimationFrame(() => {
+      // listener dispatch
+      self.object.dispatchEvent(new CustomEvent('init.xt'))
+    })
   }
 
   //
