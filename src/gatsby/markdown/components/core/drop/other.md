@@ -41,6 +41,8 @@ If the toggle is on <code>"on": "mouseenter"</code> or <code>"on": "mousehover"<
 
 ## Static
 
+You can make a drop that is relative to the nearest `position: relative` parent with `.drop-container-static`.
+
 <div class="table-scroll">
 
 |                         | Class                                     | Mixin                         | Description                   |

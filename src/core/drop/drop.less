@@ -161,6 +161,12 @@
 
 // special
 
+.drop-container-static {
+  .list-drop, .card-drop {
+    max-width: 100% !important;
+  }
+}
+
 .drop-squared {
   > .drop-inner {
     border-radius: 0;
@@ -169,7 +175,7 @@
 
 .drop-noborder {
   > .drop-inner {
-    > .drop-design {
+    > .drop-design, > .drop-content {
       border: 0;
     }
   }
