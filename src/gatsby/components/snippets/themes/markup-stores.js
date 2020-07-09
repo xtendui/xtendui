@@ -19,7 +19,7 @@ export default () => {
                     <div class="card-asset">
                       ${img({})}
                     </div>
-                    <div class="card-block card-item">
+                    <div class="card-block card-item block-listing_content">
                       <div class="card-title">
                         Lorem Ipsum
                       </div>
@@ -44,7 +44,7 @@ export default () => {
                 <div class="btn btn-close" aria-label="Close"></div>
                 <div class="card-inner">
                   <div class="card-content">
-                    <div class="card-block card-item">
+                    <div class="card-block card-item block-listing_content">
                       <div class="block-listing_subtitle">
                         Contacts
                       </div>
@@ -84,7 +84,7 @@ export default () => {
                     <div class="card-asset">
                       ${imgAlt({})}
                     </div>
-                    <div class="card-block card-item">
+                    <div class="card-block card-item block-listing_content">
                       <div class="card-title">
                         Dolor sit amet
                       </div>
@@ -109,7 +109,7 @@ export default () => {
                 <div class="btn btn-close" aria-label="Close"></div>
                 <div class="card-inner">
                   <div class="card-content">
-                    <div class="card-block card-item">
+                    <div class="card-block card-item block-listing_content">
                       <div class="block-listing_subtitle">
                         Contacts
                       </div>
@@ -149,7 +149,7 @@ export default () => {
                     <div class="card-asset">
                       ${img({})}
                     </div>
-                    <div class="card-block card-item">
+                    <div class="card-block card-item block-listing_content">
                       <div class="card-title">
                         Consectetur adipiscing elit. Proin molestie diam nec euismod commodo
                       </div>
@@ -174,7 +174,7 @@ export default () => {
                 <div class="btn btn-close" aria-label="Close"></div>
                 <div class="card-inner">
                   <div class="card-content">
-                    <div class="card-block card-item">
+                    <div class="card-block card-item block-listing_content">
                       <div class="block-listing_subtitle">
                         Contacts
                       </div>
@@ -214,7 +214,7 @@ export default () => {
                     <div class="card-asset">
                       ${img({})}
                     </div>
-                    <div class="card-block card-item">
+                    <div class="card-block card-item block-listing_content">
                       <div class="card-title">
                         Lorem Ipsum
                       </div>
@@ -239,7 +239,7 @@ export default () => {
                 <div class="btn btn-close" aria-label="Close"></div>
                 <div class="card-inner">
                   <div class="card-content">
-                    <div class="card-block card-item">
+                    <div class="card-block card-item block-listing_content">
                       <div class="block-listing_subtitle">
                         Contacts
                       </div>
