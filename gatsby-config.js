@@ -28,7 +28,7 @@ module.exports = {
         name: 'Xtend Library',
         short_name: 'Xtend',
         start_url: '/',
-        background_color: '#ffffff',
+        background_color: '#0058C6',
         theme_color: '#0058C6',
         display: 'minimal-ui',
         icon: './static/icons/apple-touch-icon.png',
