@@ -167,6 +167,10 @@ class Scroll extends Xt.Toggle {
     const scrollHeight = scrollingElement.scrollHeight
     const scrollTop = scrollingElement.scrollTop
     const windowHeight = Xt.windowHeight
+    const fallback = Xt.windowPercent(options.fallback)
+    self.detail.distance = Xt.windowPercent(options.distance)
+    self.detail.trigger = Xt.windowPercent(options.trigger)
+    const max = self.detail.trigger + scrollHeight - window.innerHeight
     // loop
     for (const el of self.elements) {
       const tr = self.getTargets(el)[0]
@@ -181,10 +185,6 @@ class Scroll extends Xt.Toggle {
           el.style.width = tr.offsetWidth + 'px'
         }
         // position
-        const max = self.detail.trigger + scrollHeight - window.innerHeight
-        const fallback = Xt.windowPercent(options.fallback)
-        self.detail.distance = Xt.windowPercent(options.distance)
-        self.detail.trigger = Xt.windowPercent(options.trigger)
         self.detail.start = self.detail.startReal = elTop - windowHeight + Xt.windowPercent(options.start) + self.detail.distance
         self.detail.start = self.detail.start < self.detail.trigger ? self.detail.trigger : self.detail.start // limit fixes activation on page top
         self.detail.start = self.detail.start > max ? max - fallback : self.detail.start // limit fixes activation on page bottom
@@ -261,20 +261,30 @@ class Scroll extends Xt.Toggle {
         )
       }
     }
+    // direction
+    if (!options.inverseRelative) {
+      self.inverse = self.detail.scrollTopOld > scrollTop
+      self.detail.scrollTopOld = scrollTop
+    }
     // currents
     for (const el of currentsOn) {
       // direction
-      const position = Xt.dataStorage.get(el, self.componentNamespace + 'Position')
-      self.inverse = position > 0
+      if (options.inverseRelative) {
+        const position = Xt.dataStorage.get(el, self.componentNamespace + 'Position')
+        self.inverse = position > self.detail.distance
+        console.log(position, self.detail.distance, self.inverse)
+      }
       // event
-      self.eventOn(el, true)
+      self.eventOn(el)
     }
     for (const el of currentsOff) {
       // direction
-      const position = Xt.dataStorage.get(el, self.componentNamespace + 'Position')
-      self.inverse = position > 0
+      if (options.inverseRelative) {
+        const position = Xt.dataStorage.get(el, self.componentNamespace + 'Position')
+        self.inverse = position > self.detail.distance
+      }
       // event
-      self.eventOff(el, true)
+      self.eventOff(el)
     }
   }
 
@@ -294,6 +304,7 @@ Scroll.optionsDefault = {
   start: '100%',
   end: false,
   fallback: 0,
+  inverseRelative: false,
   // element
   elements: false,
   targets: false,

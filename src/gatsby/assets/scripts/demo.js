@@ -88,8 +88,10 @@ const formatCode = source => {
       id = '#iframe--' + names[names.length - 1]
       text = text.replace(new RegExp(`[ ]{0,}${id}[ ]{0,}`, 'gi'), '')
     }
+    // replace #gatsby_body-inner
+    id = '#gatsby_body-inner'
+    text = text.replace(new RegExp(`[ ]{0,}${id}[ ]{0,}`, 'gi'), '')
   }
-
   // search html tags
   const re = /<[^>]*>/g
   text = text.replace(re, (match, g1, g2) => {

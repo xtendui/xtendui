@@ -13,6 +13,7 @@ Xt.mount.push({
       delayOff: (current, total) => {
         return Math.min((total - (current + 1)) * 75, 300)
       },
+      inverseRelative: false,
     })
 
     // unmount

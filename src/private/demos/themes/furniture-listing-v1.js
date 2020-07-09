@@ -45,3 +45,34 @@ Xt.mount.push({
     return unmount
   },
 })
+
+/**
+ * scroll
+ */
+
+Xt.mount.push({
+  matches: '#iframe--furniture-listing-v1 body #gatsby_body-inner', // add your own selector instead of body to contain the code
+  mount: object => {
+    // init
+
+    let self = new Xt.Scroll(object, {
+      // the same css and js
+      elements: '.scroll-item, .block-listing_item',
+      delayOn: current => {
+        return Math.min((current + 1) * 75, 300)
+      },
+      delayOff: (current, total) => {
+        return Math.min((total - (current + 1)) * 75, 300)
+      },
+      distance: 100,
+    })
+
+    // unmount
+
+    const unmount = function() {
+      self.destroy()
+      self = null
+    }
+    return unmount
+  },
+})

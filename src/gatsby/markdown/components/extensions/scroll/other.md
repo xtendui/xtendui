@@ -6,18 +6,19 @@ title: "Other"
 date: "2019-03-15"
 ---
 
-## Indicator
-
-Add the class `.scroll-indicator` to show show visual info on a scroll component.
-
-<demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/extensions/scroll/indicator">
-  </div>
-</demo>
-
 ## Direction
 
 Animate with inverse `.inverse` or `self.direction`.
+
+Use `inverseRelative: false` to have inverse class depending on scroll direction instead of element position relative to window.
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Default                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `inverseRelative:Boolean`                          | `true`        | Inverse class relative to window's position instead of scroll direction            |
+
+</div>
 
 <demo>
   <div class="gatsby_demo_item" data-iframe="iframe/components/extensions/scroll/direction">
@@ -32,6 +33,15 @@ If you want to block them with fade in or out use the events `on.trigger.xt` or 
 
 <demo>
   <div class="gatsby_demo_item" data-iframe="iframe/components/extensions/scroll/block">
+  </div>
+</demo>
+
+## Indicator
+
+Add the class `.scroll-indicator` to show show visual info on a scroll component.
+
+<demo>
+  <div class="gatsby_demo_item" data-iframe="iframe/components/extensions/scroll/indicator">
   </div>
 </demo>
 
