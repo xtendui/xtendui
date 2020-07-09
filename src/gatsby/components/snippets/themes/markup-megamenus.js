@@ -26,7 +26,7 @@ export default () => {
 
                       <div class="drop-megamenu_col_left">
                         <div class="drop-megamenu_left">
-                          <img class="responsive" src="/img.svg" loading="eager" alt="" />
+                          ${img({ classes: 'media-cover', ratio: '72.6%' })}
                         </div>
                       </div>
 
@@ -69,48 +69,6 @@ export default () => {
                                   </a>
                                   <a href="#">
                                     dolor sit amet
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="drop-megamenu_item_col">
-                            <div class="drop-megamenu_item">
-                              <a href="#" class="drop-megamenu_item_title">
-                                consectetur
-                              </a>
-                              <div class="drop-megamenu_item_content">
-                                <div class="list-block">
-                                  <a href="#">
-                                    consectetur
-                                  </a>
-                                  <a href="#">
-                                    adipiscing elit
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="drop-megamenu_item_col">
-                            <div class="drop-megamenu_item">
-                              <a href="#" class="drop-megamenu_item_title">
-                                adipiscing elit
-                              </a>
-                              <div class="drop-megamenu_item_content">
-                                <div class="list-block">
-                                  <a href="#">
-                                    Lorem ipsum
-                                  </a>
-                                  <a href="#">
-                                    dolor sit amet
-                                  </a>
-                                  <a href="#">
-                                    consectetur
-                                  </a>
-                                  <a href="#">
-                                    adipiscing elit
                                   </a>
                                 </div>
                               </div>
@@ -165,7 +123,7 @@ export default () => {
 
                       <div class="drop-megamenu_col_left">
                         <div class="drop-megamenu_left">
-                          <img class="responsive" src="/img.svg" loading="eager" alt="" />
+                          ${img({ classes: 'media-cover', ratio: '72.6%' })}
                         </div>
                       </div>
 
@@ -304,7 +262,7 @@ export default () => {
 
                       <div class="drop-megamenu_col_left">
                         <div class="drop-megamenu_left">
-                          <img class="responsive" src="/img.svg" loading="eager" alt="" />
+                          ${img({ classes: 'media-cover', ratio: '72.6%' })}
                         </div>
                       </div>
 
@@ -350,64 +308,6 @@ export default () => {
                                   </a>
                                 </div>
                               </div>
-                            </div>
-                          </div>
-
-                          <div class="drop-megamenu_item_col">
-                            <div class="drop-megamenu_item">
-                              <a href="#" class="drop-megamenu_item_title">
-                                consectetur
-                              </a>
-                              <div class="drop-megamenu_item_content">
-                                <div class="list-block">
-                                  <a href="#">
-                                    consectetur
-                                  </a>
-                                  <a href="#">
-                                    adipiscing elit
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="drop-megamenu_item_col">
-                            <div class="drop-megamenu_item">
-                              <a href="#" class="drop-megamenu_item_title">
-                                adipiscing elit
-                              </a>
-                              <div class="drop-megamenu_item_content">
-                                <div class="list-block">
-                                  <a href="#">
-                                    Lorem ipsum
-                                  </a>
-                                  <a href="#">
-                                    dolor sit amet
-                                  </a>
-                                  <a href="#">
-                                    consectetur
-                                  </a>
-                                  <a href="#">
-                                    adipiscing elit
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="drop-megamenu_item_col">
-                            <div class="drop-megamenu_item">
-                              <a href="#" class="drop-megamenu_item_title">
-                                Lorem ipsum
-                              </a>
-                            </div>
-                          </div>
-
-                          <div class="drop-megamenu_item_col">
-                            <div class="drop-megamenu_item">
-                              <a href="#" class="drop-megamenu_item_title">
-                                dolor sit amet
-                              </a>
                             </div>
                           </div>
 

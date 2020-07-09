@@ -66,6 +66,12 @@ Xt.mount.push({
       // on: 'mouseenter',
       // off: 'mouseleave',
       instant: true,
+      zIndex: {
+        targets: {
+          start: 500,
+          factor: -1,
+        },
+      },
     })
 
     // setup
@@ -97,8 +103,8 @@ Xt.mount.push({
         gsap.set(inner, { height: '' })
         const innerHeight = inner.clientHeight
         const innerHeightCache = Xt.dataStorage.get(self.object, 'innerHeightCache') || 0
-        gsap.set(inner, { height: innerHeightCache, opacity: 0 })
-        gsap.to(inner, { height: innerHeight, opacity: 1, duration: innerTime, ease: innerEase }).eventCallback('onUpdate', () => {
+        gsap.set(inner, { height: innerHeightCache })
+        gsap.to(inner, { height: innerHeight, duration: innerTime, ease: innerEase }).eventCallback('onUpdate', () => {
           Xt.dataStorage.set(self.object, 'innerHeightCache', inner.clientHeight)
         })
       }
@@ -125,8 +131,7 @@ Xt.mount.push({
               gsap.to(content, { x: contentXOff * self.direction * -1, opacity: 0, duration: contentTime, ease: contentEase, overwrite: true })
               // design
               const design = tr.querySelector('.drop-design')
-              const designOpacityCache = Xt.dataStorage.get(self.object, 'designOpacityCache') || 0
-              gsap.set(design, { opacity: designOpacityCache })
+              gsap.set(design, { opacity: 0 })
             } else {
               // others
               for (const other of self.targets.filter(x => x !== tr)) {
@@ -148,7 +153,7 @@ Xt.mount.push({
               // inner
               const inner = tr.querySelector('.drop-inner')
               const innerHeight = 0
-              gsap.to(inner, { height: innerHeight, opacity: 0, duration: innerTime, ease: innerEase }).eventCallback('onUpdate', () => {
+              gsap.to(inner, { height: innerHeight, duration: innerTime, ease: innerEase }).eventCallback('onUpdate', () => {
                 Xt.dataStorage.set(self.object, 'innerHeightCache', inner.clientHeight)
               })
             }
