@@ -6,7 +6,7 @@ env:
   NODE: 12.x
 
 jobs:
-  pull_request:
+  lint:
     if: "!contains(github.event.commits[0].message, '[skip ci]')"
     runs-on: ubuntu-latest
     steps:
