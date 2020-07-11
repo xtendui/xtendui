@@ -12,6 +12,6 @@ export const demo = {
 demo.htmlSource = `
 <div class="slider slider-touch-overflow"
     data-xt-slider>
-  ${indentString(markupSlider(), 2)}
+${indentString(markupSlider(), 2)}
 </div>
 `

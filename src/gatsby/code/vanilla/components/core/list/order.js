@@ -1,4 +1,7 @@
 import path from 'path'
+const markupList = require('components/snippets/components/markup-list-order').default
+const indentString = require('indent-string')
+
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -9,20 +12,6 @@ export const demo = {
 
 demo.htmlSource = `
 <ul class="list list-default">
-  <li class="order-2">
-    <button type="button">
-      Lorem Ipsum
-    </button>
-  </li>
-  <li class="order-1">
-    <button type="button">
-      Dolor sit
-    </button>
-  </li>
-  <li class="order-0 order-3-sm">
-    <button type="button">
-      Amet
-    </button>
-  </li>
+${indentString(markupList(), 2)}
 </ul>
 `

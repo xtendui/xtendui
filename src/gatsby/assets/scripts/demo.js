@@ -245,7 +245,8 @@ const populateDemo = (container, i) => {
     if (!name) {
       name = k
     }
-    item.setAttribute('id', 'demo-' + kebabCase(name))
+    const file = item.getAttribute('data-file') || name
+    item.setAttribute('id', 'demo-' + kebabCase(file))
     container.querySelector('.gatsby_demo_tabs_left').append(Xt.createElement('<button type="button" class="btn btn-text btn-tiny">' + name + '</button>'))
     // tabs
     item.prepend(

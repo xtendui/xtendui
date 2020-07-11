@@ -1,4 +1,6 @@
 import path from 'path'
+const markupRow = require('components/snippets/components/markup-row-self-start').default
+const indentString = require('indent-string')
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -9,11 +11,6 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="row row-default">
-
-  <div class="col-4" style="height: 100px"></div>
-  <div class="col-8 align-self-flex-start"></div>
-  <div class="col-8" style="height: 100px"></div>
-  <div class="col-4 align-self-flex-start"></div>
-
+${indentString(markupRow(), 2)}
 </div>
 `

@@ -10,7 +10,7 @@ date: "2019-12-01"
 
 You can set **column's width** specifying a number between 1 and 12, for example `.col-6` will take 50% width.
 
-Use `.col-auto` to fit the column inside the available width.
+Use `.col-auto` to fit the column inside the available width, but if the content is too big the width of the column goes to **100%**.
 
 <div class="table-scroll">
 

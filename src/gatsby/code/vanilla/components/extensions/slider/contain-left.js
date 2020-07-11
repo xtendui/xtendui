@@ -12,6 +12,6 @@ export const demo = {
 demo.htmlSource = `
 <div class="slider"
     data-xt-slider="{ contain: true, align: 'left' }">
-  ${indentString(markupSlider(), 2)}
+${indentString(markupSlider(), 2)}
 </div>
 `

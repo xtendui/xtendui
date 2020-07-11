@@ -17,7 +17,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="slider">
 
-  ${indentString(markupHero(), 2)}
+${indentString(markupHero(), 2)}
 
   <nav class="slider-pagination display-none">
     <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">

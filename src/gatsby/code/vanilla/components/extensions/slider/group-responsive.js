@@ -12,6 +12,6 @@ export const demo = {
 demo.htmlSource = `
 <div class="slider"
     data-xt-slider="{ groupMq: {'all': 1, '(min-width: 768px)': 0.8 } }">
-  ${indentString(markupSlider(), 2)}
+${indentString(markupSlider(), 2)}
 </div>
 `

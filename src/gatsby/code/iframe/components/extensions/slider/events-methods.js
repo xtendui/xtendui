@@ -51,7 +51,7 @@ demo.htmlSource = `
 <br/>
 
 <div class="slider" id="demo--slider-events">
-  ${indentString(markupSlider(), 2)}
+${indentString(markupSlider(), 2)}
 </div>
 
 <br/>

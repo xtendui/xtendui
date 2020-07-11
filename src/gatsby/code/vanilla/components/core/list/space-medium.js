@@ -1,4 +1,6 @@
 import path from 'path'
+const markupList = require('components/snippets/components/markup-list').default
+const indentString = require('indent-string')
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -9,20 +11,6 @@ export const demo = {
 
 demo.htmlSource = `
 <ul class="list list-default list-space-medium">
-  <li>
-    <button type="button">
-      Lorem Ipsum
-    </button>
-  </li>
-  <li>
-    <button type="button">
-      Dolor sit
-    </button>
-  </li>
-  <li>
-    <button type="button">
-      Amet
-    </button>
-  </li>
+${indentString(markupList(), 2)}
 </ul>
 `

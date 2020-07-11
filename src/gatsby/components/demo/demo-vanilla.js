@@ -23,7 +23,12 @@ class DemoVanilla extends React.Component {
           }
         `}
         render={data => (
-          <div className={'gatsby_demo_item gatsby_demo_preview'} data-name={name || demo.name.split('-').join(' ')} data-inline={src}>
+          <div
+            className={'gatsby_demo_item gatsby_demo_preview'}
+            data-name={name || demo.name.split('-').join(' ')}
+            data-file={demo.name.split('-').join(' ')}
+            data-inline={src}
+          >
             {children}
             <script type="text/plain" data-lang="html" dangerouslySetInnerHTML={{ __html: demo.htmlSource }} />
             <div

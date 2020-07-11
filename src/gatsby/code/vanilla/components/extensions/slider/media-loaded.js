@@ -12,6 +12,6 @@ export const demo = {
 demo.htmlSource = `
 <div class="slider demo--slider-media-loaded"
     data-xt-slider="{ mediaLoaded: true, mediaLoadedReinit: true }">
-  ${indentString(markupSlider(), 2)}
+${indentString(markupSlider(), 2)}
 </div>
 `
