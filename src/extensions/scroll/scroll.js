@@ -255,6 +255,10 @@ class Scroll extends Xt.Toggle {
           el,
           self.componentNamespace + 'ScrollDispatchFrame',
           requestAnimationFrame(() => {
+            // disabled
+            if (self.disabled) {
+              return
+            }
             // listener dispatch
             el.dispatchEvent(new CustomEvent('change.xt'))
           })
