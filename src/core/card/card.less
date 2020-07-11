@@ -63,8 +63,10 @@
     .align-center();
   }
   // activation
-  opacity: 0.5;
-  .slide.active & {
+  .xt-slider:not(.xt-disabled) & {
+    opacity: 0.5;
+  }
+  .xt-slider:not(.xt-disabled) .slide.active & {
     opacity: 1;
   }
 }

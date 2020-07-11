@@ -26,7 +26,7 @@ Or use flex util on `.card-content`.
 
 ## Touch overflow
 
-Use `.row-touch-overflow` to have browser scroll overflow on touch devices.
+Use `.row-touch-overflow` to have browser overflow scroll on touch devices (use touch device to see it in action).
 
 <demo>
   <demovanilla src="vanilla/components/core/row/touch-overflow">
