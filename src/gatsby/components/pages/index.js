@@ -35,6 +35,7 @@ class Page extends React.Component {
           <li>vanilla html components with less and js componentization with imports</li>
           <li>does the general hard work for you, so you have time to work on advanced interactions and animations</li>
           <li>(vanilla &gt; simple &gt; custom) library with extensible (markup &gt; styles &gt; javascript)</li>
+          <li>in rilevanza componenti principali: toggle, slider, scroll etc..</li>
           <li>simple css without many variables or mixins, you style what you want with css</li>
           <li>philosophy: focused on working speed, quality and customization</li>
           <li>philosophy: themes for every component, not a theme for all the library, and style real css, not a list of variables</li>
