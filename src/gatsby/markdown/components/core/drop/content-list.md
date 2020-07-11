@@ -14,7 +14,7 @@ date: "2020-10-10"
 If you use the class `.btn` you can define custom button styles.
 
 <demo>
-  <demovanilla src="vanilla/components/core/drop/usage-list">
+  <demovanilla src="vanilla/components/core/drop/list">
   </demovanilla>
 </demo>
 
