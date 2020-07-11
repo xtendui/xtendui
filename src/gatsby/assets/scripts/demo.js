@@ -347,6 +347,7 @@ const populateDemo = (container, i) => {
   container.setAttribute('id', demoId)
   new Xt.Toggle(container.querySelector('.btn-show-code'), {
     targets: '#' + demoId + ' .gatsby_demo_code',
+    instant: true,
   })
   document.querySelector('#' + demoId + ' .gatsby_demo_code').addEventListener('on.xt', e => {
     e.target.closest('.gatsby_demo_item').classList.add('active-code')
@@ -444,19 +445,15 @@ const initializeIframe = (container, item) => {
     if (!item.dataset.iframeLoadEvents) {
       item.dataset.iframeLoadEvents = 'true'
       item.addEventListener('ondone.xt', e => {
-        if (!item.dataset.iframeLoadCall) {
-          item.dataset.iframeLoadCall = 'true'
-          const iframe = item.querySelector('iframe')
-          loadIframe(iframe)
-        }
+        console.log('ccc')
+        const iframe = item.querySelector('iframe')
+        loadIframe(iframe)
       })
       item.addEventListener('offdone.xt', e => {
-        if (item.dataset.iframeLoadCall) {
-          delete item.dataset.iframeLoadCall
-          const iframe = item.querySelector('iframe')
-          item.classList.remove('loaded')
-          unloadIframe(iframe)
-        }
+        console.log('ddd')
+        const iframe = item.querySelector('iframe')
+        item.classList.remove('loaded')
+        unloadIframe(iframe)
       })
     }
   }
@@ -535,6 +532,7 @@ const populateIframe = (item, iframe, htmlSource, jsxSource, cssSource, jsSource
       elements: '.gatsby_demo_code_tabs_left .btn',
       targets: '.gatsby_demo_code_body_item',
       min: 1,
+      instant: true,
     })
   }
 }
@@ -557,6 +555,7 @@ const populateInline = item => {
       elements: '.gatsby_demo_code_tabs_left .btn',
       targets: '.gatsby_demo_code_body_item',
       min: 1,
+      instant: true,
     })
   }
 }
