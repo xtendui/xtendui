@@ -59,10 +59,13 @@ class Slider extends Xt.Toggle {
    */
   initStart(saveCurrents = false) {
     const self = this
-    // initSliderPos
-    if (self.dragger) {
-      self.initSliderPos()
-    }
+    // @fix raf because after .xt custom listeners
+    requestAnimationFrame(() => {
+      // initSliderPos
+      if (self.dragger) {
+        self.initSliderPos()
+      }
+    })
     // super
     super.initStart(saveCurrents)
   }
@@ -584,7 +587,6 @@ class Slider extends Xt.Toggle {
    * @return {Boolean} If activated
    */
   eventOn(element, force = false, e = null) {
-    super.eventOn(element, force, e)
     const self = this
     const options = self.options
     // disabled
@@ -720,6 +722,8 @@ class Slider extends Xt.Toggle {
         }
       }
     }
+    // super
+    super.eventOn(element, force, e)
   }
 
   /**

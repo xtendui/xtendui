@@ -175,69 +175,69 @@ class Toggle {
   initStart(saveCurrents = false) {
     const self = this
     const options = self.options
-    // currents
-    self.setCurrents([])
-    // vars
-    let currents = 0
-    self.initial = true
-    self.wrap = false
-    self.currentIndex = null
-    self.oldIndex = null
-    // [disabled]
-    self.destroyDisabled()
-    // automatic initial currents
-    const elements = self.getElementsGroups()
-    if (elements.length) {
-      // check elements
-      for (const element of elements) {
-        // reset
-        const found = self.initReset(element, saveCurrents)
-        if (found && currents < options.max) {
-          // initial
-          currents++
-          // reactivate after raf
-          requestAnimationFrame(() => {
-            self.eventOn(element, true)
-          })
-        }
-      }
-      // if currents < min
-      let todo = options.min - currents
-      let start = 0
-      if (todo > 0 && self.targets.length) {
-        // @FIX initial activation drag wrap
-        if ((!self.disabled || !self.initial) && self.wrapIndex) {
-          start = self.wrapIndex
-          todo += start
-        }
-        // initial
-        currents += todo
-      }
-      if (todo > 0 && self.targets.length) {
-        for (let i = start; i < todo; i++) {
-          self.eventOn(self.elements[i], true)
-        }
-      }
-      // currents
-      if (saveCurrents) {
-        // initialCurrents after raf
-        requestAnimationFrame(() => {
-          self.initialCurrents = self.getCurrents().slice(0)
-        })
-      }
-      // no currents
-      if (currents === 0) {
-        // vars
-        self.initial = false
-        // @FIX autostart after self.initial or it gives error on reinitialization (demos fullscreen)
-        // auto
-        self.eventAutostart()
-      }
-    }
-    // initialized class
-    self.object.classList.add(self.componentName)
     // @fix raf because after .xt custom listeners
     requestAnimationFrame(() => {
+      // currents
+      self.setCurrents([])
+      // vars
+      let currents = 0
+      self.initial = true
+      self.wrap = false
+      self.currentIndex = null
+      self.oldIndex = null
+      // [disabled]
+      self.destroyDisabled()
+      // automatic initial currents
+      const elements = self.getElementsGroups()
+      if (elements.length) {
+        // check elements
+        for (const element of elements) {
+          // reset
+          const found = self.initReset(element, saveCurrents)
+          if (found && currents < options.max) {
+            // initial
+            currents++
+            // reactivate after raf
+            requestAnimationFrame(() => {
+              self.eventOn(element, true)
+            })
+          }
+        }
+        // if currents < min
+        let todo = options.min - currents
+        let start = 0
+        if (todo > 0 && self.targets.length) {
+          // @FIX initial activation drag wrap
+          if ((!self.disabled || !self.initial) && self.wrapIndex) {
+            start = self.wrapIndex
+            todo += start
+          }
+          // initial
+          currents += todo
+        }
+        if (todo > 0 && self.targets.length) {
+          for (let i = start; i < todo; i++) {
+            self.eventOn(self.elements[i], true)
+          }
+        }
+        // currents
+        if (saveCurrents) {
+          // initialCurrents after raf
+          requestAnimationFrame(() => {
+            self.initialCurrents = self.getCurrents().slice(0)
+          })
+        }
+        // no currents
+        if (currents === 0) {
+          // vars
+          self.initial = false
+          // @FIX autostart after self.initial or it gives error on reinitialization (demos fullscreen)
+          // auto
+          self.eventAutostart()
+        }
+      }
+      // initialized class
+      self.object.classList.add(self.componentName)
       // listener dispatch
       self.object.dispatchEvent(new CustomEvent('init.xt'))
     })

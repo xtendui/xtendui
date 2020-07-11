@@ -9,6 +9,8 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 ## Demos
 
 <demo>
+  <div class="gatsby_demo_item" data-iframe="iframe/components/core/toggle/events-methods">
+  </div>
   <div class="gatsby_demo_item" data-iframe="iframe/components/extensions/slider/events-methods">
   </div>
   <div class="gatsby_demo_item" data-iframe="iframe/components/extensions/scroll/direction">

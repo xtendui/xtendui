@@ -75,49 +75,52 @@ class Ajax extends Xt.Toggle {
    */
   initStart(saveCurrents = false) {
     const self = this
-    // initial
-    self.initial = true
-    self.wrap = false
-    self.currentIndex = null
-    self.oldIndex = null
-    // automatic initial currents
-    const elements = self.getElementsGroups()
-    if (elements.length) {
-      let found = false
-      for (const element of elements) {
-        const loc = location.pathname + location.search
-        const url = element.pathname + element.search
-        if (url !== '') {
-          if (loc === url) {
-            found = true
-            // activation
-            self.eventOn(element, true)
-          } else {
-            // deactivate
-            self.eventOff(element, true)
+    // @fix raf because after .xt custom listeners
+    requestAnimationFrame(() => {
+      // initial
+      self.initial = true
+      self.wrap = false
+      self.currentIndex = null
+      self.oldIndex = null
+      // automatic initial currents
+      const elements = self.getElementsGroups()
+      if (elements.length) {
+        let found = false
+        for (const element of elements) {
+          const loc = location.pathname + location.search
+          const url = element.pathname + element.search
+          if (url !== '') {
+            if (loc === url) {
+              found = true
+              // activation
+              self.eventOn(element, true)
+            } else {
+              // deactivate
+              self.eventOff(element, true)
+            }
           }
         }
-      }
-      if (!found) {
+        if (!found) {
+          self.initial = false
+        }
+      } else {
         self.initial = false
       }
-    } else {
-      self.initial = false
-    }
-    // detect url
-    let url
-    if (history.state && history.state.url) {
-      // detect from history
-      url = history.state.url
-    } else {
-      // detect from url location (absolute url without domain name)
-      url = location.pathname + location.search
-    }
-    // set pushstate
-    if (!self.locationFrom) {
-      self.locationFrom = new URL(url, location)
-    }
-    self.pushState(url, document.title)
+      // detect url
+      let url
+      if (history.state && history.state.url) {
+        // detect from history
+        url = history.state.url
+      } else {
+        // detect from url location (absolute url without domain name)
+        url = location.pathname + location.search
+      }
+      // set pushstate
+      if (!self.locationFrom) {
+        self.locationFrom = new URL(url, location)
+      }
+      self.pushState(url, document.title)
+    })
   }
 
   /**
