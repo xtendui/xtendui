@@ -8,7 +8,7 @@ date: "2019-12-01"
 
 ## Preset
 
-For `.overlay-position` available positions are: `left` `right`.
+`{preset}` can be `screen`, `position-left`, `position-right`. `{position}` can be `left`, `right`. Add or remove selectors at your discretion.
 
 <div class="table-scroll">
 

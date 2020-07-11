@@ -1,5 +1,5 @@
 import path from 'path'
-const markupList = require('components/snippets/components/markup-list-order').default
+const markupList = require('components/snippets/components/markup-list').default
 const indentString = require('indent-string')
 
 const filename = __filename.replace(/\\/g, '/')
@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-default">
+<nav class="list list-drop">
 ${indentString(markupList(), 2)}
-</div>
+</nav>
 `

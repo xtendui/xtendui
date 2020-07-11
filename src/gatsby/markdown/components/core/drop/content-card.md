@@ -2,29 +2,14 @@
 type: "Components"
 category: "Core"
 parent: "Drop"
-title: "Content"
+title: "Content Card"
 date: "2020-10-01"
 ---
-
-## List
-
-[[notePrimary]]
-| Drop uses list to style it's content, refer to [list's content](/components/core/list/content) for all **content**.
-
-If you use the class `.btn` you can define custom button styles.
-
-<demo>
-  <demovanilla src="vanilla/components/core/drop/usage-list">
-  </demovanilla>
-</demo>
-
-## Card
 
 [[notePrimary]]
 | Drop uses card to style it's content, refer to [card's content](/components/core/card/content) for all **content**.
 
-
-#### Asset
+## Asset
 
 If you want full width assets use `.card-asset`.
 
@@ -56,7 +41,7 @@ If you want full width assets use `.card-asset`.
   </demovanilla>
 </demo>
 
-#### Block
+## Block
 
 Sequential `.card-block` stack vertically.
 
@@ -102,7 +87,7 @@ You can add custom `.card-block` modifiers and style them as you like (e.g.: `.c
   </demovanilla>
 </demo>
 
-#### Group
+## Group
 
 To stack `.card-item` horizontally wrap them inside `.card-item-nested` and `.card-group`, with responsive classes if you need them.
 

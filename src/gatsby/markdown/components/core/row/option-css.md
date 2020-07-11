@@ -6,20 +6,28 @@ title: "Option Css"
 date: "2019-12-01"
 ---
 
-## Variant
+## Preset
 
-Classes for assigning variant (e.g.: space). Add or remove selectors at your discretion.
-
-`{variant}` can be `default`, `form`.
+`{preset}` can be `default`, `form`. Add or remove selectors at your discretion.
 
 <div class="table-scroll">
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.row-{variant}`                        | `.row-default` `.row-form` |
-| Mixin                   | `.row-{variant}()`                      | `.row-default()` `.row-form()`  |
+| Class                   | `.row-{preset}`                        | `.row-default` `.row-form` |
+| Mixin                   | `.row-{preset}()`                      | `.row-default()` `.row-form()`  |
 
 </div>
+
+<demo>
+  <demovanilla src="vanilla/components/core/row/preset-default" mode="grid">
+  </demovanilla>
+</demo>
+
+<demo>
+  <demovanilla src="vanilla/components/core/row/preset-form" mode="grid">
+  </demovanilla>
+</demo>
 
 ## Space
 

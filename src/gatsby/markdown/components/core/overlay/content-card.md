@@ -2,16 +2,14 @@
 type: "Components"
 category: "Core"
 parent: "Overlay"
-title: "Content"
+title: "Content Card"
 date: "2020-10-01"
 ---
-
-## Card
 
 [[notePrimary]]
 | Overlay uses card to style it's content, refer to [card's content](/components/core/card/content) for all **content**.
 
-#### Asset
+## Asset
 
 If you want full width assets use `.card-asset`.
 
@@ -44,7 +42,7 @@ If you want full width assets use `.card-asset`.
   </demovanilla>
 </demo>
 
-#### Block
+## Block
 
 Sequential `.card-block` stack vertically.
 
@@ -91,7 +89,7 @@ You can add custom `.card-block` modifiers and style them as you like (e.g.: `.c
   </demovanilla>
 </demo>
 
-#### Group
+## Group
 
 To stack `.card-item` horizontally wrap them inside `.card-item-nested` and `.card-group`, with responsive classes if you need them.
 
