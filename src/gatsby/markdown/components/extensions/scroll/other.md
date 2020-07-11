@@ -10,16 +10,6 @@ date: "2019-03-15"
 
 Animate with inverse `.inverse` or `self.direction`.
 
-Use `inverseRelative: false` to have inverse class depending on scroll direction instead of element position relative to window.
-
-<div class="table-scroll">
-
-|                         | Syntax                                    | Default                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `inverseRelative:Boolean`                          | `true`        | Inverse class relative to window's position instead of scroll direction            |
-
-</div>
-
 <demo>
   <div class="gatsby_demo_item" data-iframe="iframe/components/extensions/scroll/direction">
   </div>

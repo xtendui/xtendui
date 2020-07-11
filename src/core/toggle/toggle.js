@@ -1177,6 +1177,7 @@ class Toggle {
     if (self.initial) {
       el.classList.add(...self.classesInitial)
     }
+    // direction
     if (self.direction >= 0) {
       el.classList.remove(...self.classesInverse)
     } else {

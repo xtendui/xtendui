@@ -262,27 +262,14 @@ class Scroll extends Xt.Toggle {
       }
     }
     // direction
-    if (!options.inverseRelative) {
-      self.inverse = self.detail.scrollTopOld > scrollTop
-      self.detail.scrollTopOld = scrollTop
-    }
+    self.inverse = self.detail.scrollTopOld > scrollTop
+    self.detail.scrollTopOld = scrollTop
     // currents
     for (const el of currentsOn) {
-      // direction
-      if (options.inverseRelative) {
-        const position = Xt.dataStorage.get(el, self.componentNamespace + 'Position')
-        self.inverse = position > self.detail.distance
-        console.log(position, self.detail.distance, self.inverse)
-      }
       // event
       self.eventOn(el)
     }
     for (const el of currentsOff) {
-      // direction
-      if (options.inverseRelative) {
-        const position = Xt.dataStorage.get(el, self.componentNamespace + 'Position')
-        self.inverse = position > self.detail.distance
-      }
       // event
       self.eventOff(el)
     }
@@ -304,7 +291,6 @@ Scroll.optionsDefault = {
   start: '100%',
   end: false,
   fallback: 0,
-  inverseRelative: false,
   // element
   elements: false,
   targets: false,
