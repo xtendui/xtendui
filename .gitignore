@@ -54,10 +54,6 @@ typings/
 # dotenv environment variables file
 .env
 
-# gatsby files
-.cache/
-public
-
 # Mac files
 .DS_Store
 
@@ -68,8 +64,12 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 
+# gatsby files
+.cache/
+public
+
 # build
-dist/*.min.css
-dist/*.min.css.map
-dist/*.min.js
-dist/*.min.js.map
+**/*.min.css
+**/*.min.css.map
+**/*.min.js
+**/*.min.js.map

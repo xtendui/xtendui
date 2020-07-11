@@ -1,4 +1,9 @@
-*.min.css
-*.min.js
+# gatsby files
+.cache/
+public
+
+# build
 polyfill.js
 ResizeSensor.js
+**/*.min.js
+**/*.min.js.map
