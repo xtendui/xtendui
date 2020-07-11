@@ -6,6 +6,24 @@ title: "Option Css"
 date: "2019-12-01"
 ---
 
+## Preset
+
+`{preset}` can be `static`.
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Example                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Class                   | `.drop-container-{preset}`                         | `.drop-container-static` |
+| Mixin                   | Not possible                              | Not possible                  | Position relative to closest element with `position: relative;`.            |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/core/drop/static">
+  </demovanilla>
+</demo>
+
 ## Variant
 
 Classes for assigning variant (e.g.: border / background / color). Add or remove selectors at your discretion.

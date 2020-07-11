@@ -39,23 +39,6 @@ If the toggle is on <code>"on": "mouseenter"</code> or <code>"on": "mousehover"<
   </demovanilla>
 </demo>
 
-## Static
-
-You can make a drop that is relative to the nearest `position: relative` parent with `.drop-container-static`.
-
-<div class="table-scroll">
-
-|                         | Class                                     | Mixin                         | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `.drop-container-static`                | `.drop-container-static()`        | Position relative to closest element with `position: relative;`.            |
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/core/drop/static">
-  </demovanilla>
-</demo>
-
 ## Nested
 
 You can nest drops this way .
