@@ -147,7 +147,7 @@ class ScrollToAnchor {
    * scroll
    * @param {Event} e
    */
-  eventScroll(e = null) {
+  eventScroll() {
     const self = this
     // reset self.target
     self.target = null

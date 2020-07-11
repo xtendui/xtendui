@@ -94,7 +94,7 @@ const formatCode = source => {
   }
   // search html tags
   const re = /<[^>]*>/g
-  text = text.replace(re, (match, g1, g2) => {
+  text = text.replace(re, match => {
     // replace quote entities
     match = match.replace(/&quot;/g, '"')
     // replace entities
@@ -196,7 +196,7 @@ const populateBlock = () => {
     }
   })
   // trigger fullscreen or change tabs
-  document.querySelector('#gatbsy_open-full').addEventListener('on.xt', e => {
+  document.querySelector('#gatbsy_open-full').addEventListener('on.xt', () => {
     // @FIX demo fullscreen
     const content = document.querySelector('#gatbsy_open-full-content')
     const current = content.querySelector('.gatsby_demo_item.active')
@@ -265,7 +265,7 @@ const populateDemo = (container, i) => {
       e.clearSelection()
       // $(e.trigger).attr('data-original-title', 'Done').tooltip('show')
     })
-    clipboard.on('error', e => {
+    clipboard.on('error', () => {
       // $(e.trigger).attr('data-original-title', 'Error: copy manually').tooltip('show')
     })
     // inject iframe
@@ -325,7 +325,7 @@ const populateDemo = (container, i) => {
   })
   for (const item of items) {
     // @FIX demo fullscreen
-    item.addEventListener('on.xt', e => {
+    item.addEventListener('on.xt', () => {
       if (!self.initial) {
         // triggering e.detail.container
         requestAnimationFrame(() => {
@@ -397,7 +397,7 @@ const makeFullscreen = (container, skipIgnore = false) => {
     })
   }
   toggle.dispatchEvent(new CustomEvent('on.trigger.xt'))
-  toggle.addEventListener('init.xt', e => {
+  toggle.addEventListener('init.xt', () => {
     toggle.dispatchEvent(new CustomEvent('on.trigger.xt'))
   })
   // move code block
@@ -444,13 +444,11 @@ const initializeIframe = (container, item) => {
     // load
     if (!item.dataset.iframeLoadEvents) {
       item.dataset.iframeLoadEvents = 'true'
-      item.addEventListener('ondone.xt', e => {
-        console.log('ccc')
+      item.addEventListener('ondone.xt', () => {
         const iframe = item.querySelector('iframe')
         loadIframe(iframe)
       })
-      item.addEventListener('offdone.xt', e => {
-        console.log('ddd')
+      item.addEventListener('offdone.xt', () => {
         const iframe = item.querySelector('iframe')
         item.classList.remove('loaded')
         unloadIframe(iframe)

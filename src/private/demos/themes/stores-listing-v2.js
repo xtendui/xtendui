@@ -21,11 +21,11 @@ Xt.mount.push({
         tr.classList.add('active')
         // front
         const front = tr.querySelector('.listing_front')
-        gsap.to(front, {opacity: 0, duration: Xt.vars.timeSmall, ease: 'expo.out'})
+        gsap.to(front, { opacity: 0, duration: Xt.vars.timeSmall, ease: 'expo.out' })
         // front
         const back = tr.querySelector('.listing_back')
-        gsap.set(back, {y: 40, opacity: 0})
-        gsap.to(back, {y: 0, opacity: 1, duration: Xt.vars.timeSmall, ease: 'expo.out'})
+        gsap.set(back, { y: 40, opacity: 0 })
+        gsap.to(back, { y: 0, opacity: 1, duration: Xt.vars.timeSmall, ease: 'expo.out' })
       } else {
         eventOff(tr)
       }
@@ -37,11 +37,11 @@ Xt.mount.push({
         tr.classList.remove('active')
         // front
         const front = tr.querySelector('.listing_front')
-        gsap.set(front, {y: -40, opacity: 0})
-        gsap.to(front, {y: 0, opacity: 1, duration: Xt.vars.timeSmall, ease: 'expo.out'})
+        gsap.set(front, { y: -40, opacity: 0 })
+        gsap.to(front, { y: 0, opacity: 1, duration: Xt.vars.timeSmall, ease: 'expo.out' })
         // front
         const back = tr.querySelector('.listing_back')
-        gsap.to(back, {y: 0, opacity: 0, duration: Xt.vars.timeSmall, ease: 'expo.out'})
+        gsap.to(back, { y: 0, opacity: 0, duration: Xt.vars.timeSmall, ease: 'expo.out' })
       }
     }
 
@@ -65,8 +65,7 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = () => {
-    }
+    const unmount = () => {}
     return unmount
   },
 })

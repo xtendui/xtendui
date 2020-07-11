@@ -43,7 +43,7 @@ Xt.mount.push({
 
     // enter
 
-    const eventEnter = e => {
+    const eventEnter = () => {
       // img
       const img = link.querySelector('.media-container')
       gsap.to(img, { scale: 1 - imgScale, duration: Xt.vars.timeMedium, ease: 'expo.out' })
@@ -63,7 +63,7 @@ Xt.mount.push({
 
     // enter
 
-    const eventLeave = e => {
+    const eventLeave = () => {
       // img
       const img = link.querySelector('.media-container')
       gsap.to(img, { scale: 1, duration: Xt.vars.timeMedium, ease: 'expo.inOut' })

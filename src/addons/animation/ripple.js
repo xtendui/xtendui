@@ -111,9 +111,8 @@ class Ripple {
   /**
    * eventStart
    */
-  eventEnd(e) {
+  eventEnd() {
     const self = this
-    const options = self.options
     // off
     removeEventListener('mouseup', self.offListener)
     removeEventListener('touchend', self.offListener)

@@ -12,7 +12,7 @@ const jsCoreGlob = new glob.Glob('src/core/**/*.js', (er, files) => {
   jsCore += '}'
   jsCore += '\n'
 })
-jsCoreGlob.on('end', filepath => {
+jsCoreGlob.on('end', () => {
   writeFile('./src/xtend-core.js', jsCore, err => {
     if (err) console.log(err)
   })
@@ -27,7 +27,7 @@ const jsAddonsGlob = new glob.Glob('src/addons/**/*.js', (er, files) => {
   jsAddons += '}'
   jsAddons += '\n'
 })
-jsAddonsGlob.on('end', filepath => {
+jsAddonsGlob.on('end', () => {
   writeFile('./src/xtend-addons.js', jsAddons, err => {
     if (err) console.log(err)
   })
@@ -42,7 +42,7 @@ const jsExtensionsGlob = new glob.Glob('src/extensions/**/*.js', (er, files) => 
   jsExtensions += '}'
   jsExtensions += '\n'
 })
-jsExtensionsGlob.on('end', filepath => {
+jsExtensionsGlob.on('end', () => {
   writeFile('./src/xtend-extensions.js', jsExtensions, err => {
     if (err) console.log(err)
   })
@@ -56,7 +56,7 @@ const jsDemosGlob = new glob.Glob('src/private/demos/**/*.js', (er, files) => {
   jsDemos += '}'
   jsDemos += '\n'
 })
-jsDemosGlob.on('end', filepath => {
+jsDemosGlob.on('end', () => {
   writeFile('./src/xtend-demos.js', jsDemos, err => {
     if (err) console.log(err)
   })

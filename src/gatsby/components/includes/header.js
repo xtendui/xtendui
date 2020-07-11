@@ -25,13 +25,13 @@ class Header extends React.Component {
               </div>
               <div>
                 <div className="gatsby_site_header_top_social">
-                  <a href={site.site.siteMetadata.github} target="_blank" rel="noopener" className="btn gatsby_btn-site_header_top_social" title="Github">
+                  <a href={site.site.siteMetadata.github} target="_blank" rel="noreferrer" className="btn gatsby_btn-site_header_top_social" title="Github">
                     <span className="icon-github icon-large"></span>
                   </a>
-                  <a href={site.site.siteMetadata.npm} target="_blank" rel="noopener" className="btn gatsby_btn-site_header_top_social" title="Npm">
+                  <a href={site.site.siteMetadata.npm} target="_blank" rel="noreferrer" className="btn gatsby_btn-site_header_top_social" title="Npm">
                     <span className="icon-npm icon-large"></span>
                   </a>
-                  <a href={site.site.siteMetadata.twitter} target="_blank" rel="noopener" className="btn gatsby_btn-site_header_top_social" title="Npm">
+                  <a href={site.site.siteMetadata.twitter} target="_blank" rel="noreferrer" className="btn gatsby_btn-site_header_top_social" title="Npm">
                     <span className="icon-twitter icon-large"></span>
                   </a>
                 </div>
@@ -100,6 +100,22 @@ Header.propTypes = {
         github: PropTypes.string.isRequired,
         npm: PropTypes.string.isRequired,
         twitter: PropTypes.string.isRequired,
+      }).isRequired,
+    }).isRequired,
+  }).isRequired,
+  seo: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+  }).isRequired,
+  page: PropTypes.shape({
+    post: PropTypes.shape({
+      htmlAst: PropTypes.object.isRequired,
+      frontmatter: PropTypes.shape({
+        type: PropTypes.string.isRequired,
+        category: PropTypes.string,
+        parent: PropTypes.string,
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string,
       }).isRequired,
     }).isRequired,
   }).isRequired,

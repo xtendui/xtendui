@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { markdownSlug } from 'components/snippets/markdown-slug.js'
 
@@ -28,13 +29,7 @@ class DocSidebar extends React.Component {
               .map((category, i) => (
                 <div key={i}>
                   <div className="gatsby_site_header_cat">
-                    <div
-                      className={`gatsby_cat--site_article_sidebar ${
-                        page.post.frontmatter.categories ? (page.post.frontmatter.categories === category.title ? 'active' : '') : ''
-                      }`}
-                    >
-                      {category.title.split('-').pop()}
-                    </div>
+                    <div className="gatsby_cat--site_article_sidebar">{category.title.split('-').pop()}</div>
                     <div className="gatsby_site_header_sub">
                       <div className="gatsby_site_header_item">
                         {category.posts.map(({ post }, z) =>
@@ -45,7 +40,7 @@ class DocSidebar extends React.Component {
                                   <a
                                     href={post.frontmatter.link}
                                     target="_blank"
-                                    rel="noopener"
+                                    rel="noreferrer"
                                     className={`btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub ${
                                       markdownSlug(page.post) === markdownSlug(post)
                                         ? 'active'
@@ -127,6 +122,72 @@ class DocSidebar extends React.Component {
       </div>
     )
   }
+}
+
+DocSidebar.propTypes = {
+  site: PropTypes.shape({
+    site: PropTypes.shape({
+      siteMetadata: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        download: PropTypes.string.isRequired,
+        github: PropTypes.string.isRequired,
+        npm: PropTypes.string.isRequired,
+        twitter: PropTypes.string.isRequired,
+      }).isRequired,
+    }).isRequired,
+  }).isRequired,
+  seo: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+  }).isRequired,
+  page: PropTypes.shape({
+    categories: PropTypes.shape({
+      category: PropTypes.arrayOf(
+        PropTypes.shape({
+          title: PropTypes.string.isRequired,
+          posts: PropTypes.arrayOf(
+            PropTypes.shape({
+              post: PropTypes.shape({
+                frontmatter: PropTypes.shape({
+                  type: PropTypes.string.isRequired,
+                  category: PropTypes.string,
+                  parent: PropTypes.string,
+                  title: PropTypes.string.isRequired,
+                  description: PropTypes.string,
+                }).isRequired,
+              }).isRequired,
+            }).isRequired
+          ),
+        }).isRequired
+      ),
+    }),
+    post: PropTypes.shape({
+      htmlAst: PropTypes.object.isRequired,
+      frontmatter: PropTypes.shape({
+        type: PropTypes.string.isRequired,
+        category: PropTypes.string,
+        parent: PropTypes.string,
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string,
+      }).isRequired,
+    }).isRequired,
+    postsAdiacent: PropTypes.shape({
+      posts: PropTypes.arrayOf(
+        PropTypes.shape({
+          post: PropTypes.shape({
+            frontmatter: PropTypes.shape({
+              type: PropTypes.string.isRequired,
+              category: PropTypes.string,
+              parent: PropTypes.string,
+              title: PropTypes.string.isRequired,
+              description: PropTypes.string,
+              demos: PropTypes.array,
+            }).isRequired,
+          }).isRequired,
+        }).isRequired
+      ),
+    }).isRequired,
+  }).isRequired,
 }
 
 export default DocSidebar

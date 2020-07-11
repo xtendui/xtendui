@@ -1,10 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
 
 class Footer extends React.Component {
   render() {
-    const { site, seo } = this.props
+    const { site } = this.props
     return (
       <footer className="gatsby_site_footer">
         <div className="gatsby_site_footer_bottom">
@@ -13,11 +12,11 @@ class Footer extends React.Component {
               <div className="row gatsby_site_footer_bottom_row">
                 <div>
                   {site.site.siteMetadata.title} v{site.site.siteMetadata.version} and demos licensed{' '}
-                  <a href="https://github.com/minimit/xtend-library/blob/master/LICENSE" target="_blank" rel="noopener">
+                  <a href="https://github.com/minimit/xtend-library/blob/master/LICENSE" target="_blank" rel="noreferrer">
                     MIT
                   </a>
                   <span className="separator separator-dash"></span> Docs licensed{' '}
-                  <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener">
+                  <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noreferrer">
                     CC BY 3.0
                   </a>{' '}
                 </div>

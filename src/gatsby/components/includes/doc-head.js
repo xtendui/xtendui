@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import kebabCase from 'lodash.kebabcase'
 import { markdownSlug } from 'components/snippets/markdown-slug.js'
@@ -82,6 +83,37 @@ class DocHead extends React.Component {
       </header>
     )
   }
+}
+
+DocHead.propTypes = {
+  page: PropTypes.shape({
+    post: PropTypes.shape({
+      htmlAst: PropTypes.object.isRequired,
+      frontmatter: PropTypes.shape({
+        type: PropTypes.string.isRequired,
+        category: PropTypes.string,
+        parent: PropTypes.string,
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string,
+      }).isRequired,
+    }).isRequired,
+    postsAdiacent: PropTypes.shape({
+      posts: PropTypes.arrayOf(
+        PropTypes.shape({
+          post: PropTypes.shape({
+            frontmatter: PropTypes.shape({
+              type: PropTypes.string.isRequired,
+              category: PropTypes.string,
+              parent: PropTypes.string,
+              title: PropTypes.string.isRequired,
+              description: PropTypes.string,
+              demos: PropTypes.array,
+            }).isRequired,
+          }).isRequired,
+        }).isRequired
+      ),
+    }).isRequired,
+  }).isRequired,
 }
 
 export default DocHead

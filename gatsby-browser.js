@@ -39,7 +39,7 @@ exports.onRouteUpdate = () => {
   }
 }
 
-exports.shouldUpdateScroll = ({ routerProps: { location }, getSavedScrollPosition }) => {
+exports.shouldUpdateScroll = ({ routerProps: { location } }) => {
   // prevent scroll on href="#" or role="button"
   return location.href !== window.location.href
 }

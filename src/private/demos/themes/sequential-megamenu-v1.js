@@ -14,7 +14,7 @@ Xt.mount.push({
   mount: object => {
     // mouse events instead of click
 
-    const checkChange = e => {
+    const checkChange = () => {
       const component = document.querySelector('#iframe--sequential-megamenu-v1 body .megamenus')
       if (component) {
         const self = Xt.get('xt-drop', component)
@@ -214,7 +214,7 @@ Xt.mount.push({
 
     // leave
 
-    const eventLeave = function (e) {
+    const eventLeave = function () {
       // eslint-disable-next-line no-invalid-this
       const el = this
       // eventEnter after eventLeave sequential interaction

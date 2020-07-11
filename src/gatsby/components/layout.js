@@ -64,7 +64,7 @@ class Layout extends React.Component {
                       {page && page.post.frontmatter.type !== page.post.frontmatter.title && page.post.frontmatter.type !== 'Introduction' ? (
                         <DocFoot page={page} />
                       ) : null}
-                      <Footer site={data} seo={seo} />
+                      <Footer site={data} />
                     </main>
                   </div>
                 </div>
@@ -79,6 +79,22 @@ class Layout extends React.Component {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  seo: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+  }).isRequired,
+  page: PropTypes.shape({
+    post: PropTypes.shape({
+      htmlAst: PropTypes.object.isRequired,
+      frontmatter: PropTypes.shape({
+        type: PropTypes.string.isRequired,
+        category: PropTypes.string,
+        parent: PropTypes.string,
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string,
+      }).isRequired,
+    }).isRequired,
+  }).isRequired,
 }
 
 export default Layout

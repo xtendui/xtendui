@@ -8,7 +8,7 @@ import 'xtend-library/src/xtend-addons.js'
 import 'xtend-library/src/xtend-demos.js'
 import 'xtend-library/src/vars.js'
 import gsap from 'gsap'
-import { ScrollToPlugin } from 'gsap/ScrollToPlugin.js'
+import 'gsap/ScrollToPlugin.js'
 
 /**
  * favicon
@@ -80,7 +80,7 @@ Xt.mount.push({
 
     // change
 
-    const eventChange = e => {
+    const eventChange = () => {
       // stop xt-smooth
       const smooth = Xt.get('xt-smooth', self.object)
       if (smooth) {

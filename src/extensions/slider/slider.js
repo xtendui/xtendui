@@ -1003,9 +1003,8 @@ class Slider extends Xt.Toggle {
   /**
    * element drag friction off logic
    * @param {Node|HTMLElement|EventTarget|Window} dragger
-   * @param {Event} e
    */
-  logicDragfrictionend(dragger, e) {
+  logicDragfrictionend(dragger) {
     const self = this
     const options = self.options
     const dragPosCurrent = self.detail.dragPosCurrent || 0
@@ -1172,7 +1171,7 @@ class Slider extends Xt.Toggle {
     // clean wraps
     self.destroyWraps()
     // super
-    super.destroy()
+    super.destroy(weak)
   }
 
   /**

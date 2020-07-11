@@ -1,8 +1,9 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import kebabCase from 'lodash.kebabcase'
 
-class DocHead extends React.Component {
+class DocFoot extends React.Component {
   render() {
     const { page } = this.props
     const postsIntroduction = page.postsAll.posts.filter(
@@ -153,4 +154,34 @@ class DocHead extends React.Component {
   }
 }
 
-export default DocHead
+DocFoot.propTypes = {
+  page: PropTypes.shape({
+    post: PropTypes.shape({
+      htmlAst: PropTypes.object.isRequired,
+      frontmatter: PropTypes.shape({
+        type: PropTypes.string.isRequired,
+        category: PropTypes.string,
+        parent: PropTypes.string,
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string,
+      }).isRequired,
+    }).isRequired,
+    postsAll: PropTypes.shape({
+      posts: PropTypes.arrayOf(
+        PropTypes.shape({
+          post: PropTypes.shape({
+            frontmatter: PropTypes.shape({
+              type: PropTypes.string.isRequired,
+              category: PropTypes.string,
+              parent: PropTypes.string,
+              title: PropTypes.string.isRequired,
+              description: PropTypes.string,
+            }).isRequired,
+          }).isRequired,
+        }).isRequired
+      ),
+    }).isRequired,
+  }).isRequired,
+}
+
+export default DocFoot

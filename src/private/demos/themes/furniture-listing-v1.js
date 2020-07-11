@@ -69,7 +69,7 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = function() {
+    const unmount = function () {
       self.destroy()
       self = null
     }

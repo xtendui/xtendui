@@ -71,9 +71,8 @@ class Ajax extends Xt.Toggle {
 
   /**
    * init start
-   * @param {Boolean} saveCurrents
    */
-  initStart(saveCurrents = false) {
+  initStart() {
     const self = this
     // @fix raf because after .xt custom listeners
     requestAnimationFrame(() => {
@@ -157,7 +156,7 @@ class Ajax extends Xt.Toggle {
    * element popstate handler
    * @param {Event} e
    */
-  eventPopstateHandler(e) {
+  eventPopstateHandler() {
     const self = this
     // handler
     if (history.state && history.state.url) {

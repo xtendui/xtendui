@@ -12,7 +12,7 @@ Xt.mount.push({
 
     // on
 
-    const eventOn = e => {
+    const eventOn = () => {
       const ripple = self.rippleContainer.querySelector('.ripple:last-child')
       // animate
       if (ripple) {
@@ -26,7 +26,7 @@ Xt.mount.push({
 
     // off
 
-    const eventOff = e => {
+    const eventOff = () => {
       const ripple = self.rippleContainer.querySelector('.ripple:last-child')
       // animate
       if (ripple) {

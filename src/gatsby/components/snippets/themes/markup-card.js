@@ -1,5 +1,3 @@
-const img = require('components/snippets/img').default
-
 export default () => {
   return `
 <div class="row row-default">

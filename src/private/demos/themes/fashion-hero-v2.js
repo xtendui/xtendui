@@ -33,7 +33,7 @@ Xt.mount.push({
 
     // enter
 
-    const eventEnter = e => {
+    const eventEnter = () => {
       // img
       gsap.to(img, { opacity: imgOpacityIn, duration: Xt.vars.timeSmall, ease: 'quart.out' })
     }
@@ -44,7 +44,7 @@ Xt.mount.push({
 
     // enter
 
-    const eventLeave = e => {
+    const eventLeave = () => {
       // img
       gsap.to(img, { opacity: imgOpacityOut, duration: Xt.vars.timeSmall, ease: 'quart.out', overwrite: true })
     }

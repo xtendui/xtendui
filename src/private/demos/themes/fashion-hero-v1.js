@@ -52,7 +52,7 @@ Xt.mount.push({
 
     // drag
 
-    const eventDrag = e => {
+    const eventDrag = () => {
       const tr = self.targets.filter(x => self.hasCurrent(x))[0]
       const size = self.dragger.offsetWidth / 6
       // content others
@@ -69,7 +69,7 @@ Xt.mount.push({
 
     // dragreset
 
-    const eventDragReset = e => {
+    const eventDragReset = () => {
       const tr = self.targets.filter(x => self.hasCurrent(x))[0]
       // content others
       for (const other of self.targets.filter(x => !self.hasCurrent(x))) {

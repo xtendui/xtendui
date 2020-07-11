@@ -60,6 +60,8 @@ class DemoVanilla extends React.Component {
 export default DemoVanilla
 
 DemoVanilla.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.node.isRequired,
   src: PropTypes.string.isRequired,
+  name: PropTypes.string,
+  mode: PropTypes.string,
 }

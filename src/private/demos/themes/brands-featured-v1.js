@@ -69,7 +69,7 @@ Xt.mount.push({
 
     // eventPause
 
-    const eventPause = e => {
+    const eventPause = () => {
       // pause tween
       const tweens = gsap.getTweensOf(self.dragger)
       for (const tween of tweens) {
@@ -82,7 +82,7 @@ Xt.mount.push({
 
     // eventResume
 
-    const eventResume = e => {
+    const eventResume = () => {
       // resume tween
       const tweens = gsap.getTweensOf(self.dragger)
       for (const tween of tweens) {

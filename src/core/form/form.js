@@ -31,7 +31,7 @@ Xt.mount.push({
 
     // invalid
 
-    const eventScroll = e => {
+    const eventScroll = () => {
       window.scrollTo(window.scrollX, window.scrollY - Xt.windowHeight * scrollWindowFactor)
     }
 
@@ -48,7 +48,7 @@ Xt.mount.push({
       })
     }
 
-    const eventSubmit = e => {
+    const eventSubmit = () => {
       for (const item of items) {
         delete item.dataset.xtValidate
       }

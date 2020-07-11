@@ -2,7 +2,7 @@ import { Xt } from 'xtend-library'
 import 'xtend-library/src/vars.js'
 import 'xtend-library/src/addons/animation/scroll-to-anchor.js'
 import gsap from 'gsap'
-import { ScrollToPlugin } from 'gsap/ScrollToPlugin.js'
+import 'gsap/ScrollToPlugin.js'
 
 Xt.mount.push({
   matches: '#iframe--scroll-to-anchor body #gatsby_body-inner', // add your own selector instead of body to contain the code
@@ -17,7 +17,7 @@ Xt.mount.push({
 
     // change
 
-    const eventChange = e => {
+    const eventChange = () => {
       // stop xt-smooth
       const smooth = Xt.get('xt-smooth', self.object)
       if (smooth) {

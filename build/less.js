@@ -9,7 +9,7 @@ const lessCoreGlob = new glob.Glob('src/core/**/*.less', { ignore: ['**/_*.less'
     lessCore += `@import 'xtend-library/${file}';\n`
   }
 })
-lessCoreGlob.on('end', filepath => {
+lessCoreGlob.on('end', () => {
   writeFile('./src/xtend-core.less', lessCore, err => {
     if (err) console.log(err)
   })
@@ -21,7 +21,7 @@ const lessAddonsGlob = new glob.Glob('src/addons/**/*.less', { ignore: ['**/_*.l
     lessAddons += `@import 'xtend-library/${file}';\n`
   }
 })
-lessAddonsGlob.on('end', filepath => {
+lessAddonsGlob.on('end', () => {
   writeFile('./src/xtend-addons.less', lessAddons, err => {
     if (err) console.log(err)
   })
@@ -33,7 +33,7 @@ const lessExtensionsGlob = new glob.Glob('src/extensions/**/*.less', { ignore: [
     lessExtensions += `@import 'xtend-library/${file}';\n`
   }
 })
-lessExtensionsGlob.on('end', filepath => {
+lessExtensionsGlob.on('end', () => {
   writeFile('./src/xtend-extensions.less', lessExtensions, err => {
     if (err) console.log(err)
   })
@@ -45,7 +45,7 @@ const lessDemosGlob = new glob.Glob('src/private/demos/**/*.less', { ignore: ['*
     lessDemos += `@import 'xtend-library/${file}';\n`
   }
 })
-lessDemosGlob.on('end', filepath => {
+lessDemosGlob.on('end', () => {
   writeFile('./src/xtend-demos.less', lessDemos, err => {
     if (err) console.log(err)
   })

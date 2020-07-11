@@ -11,9 +11,9 @@ class DemoVanillaIframe extends React.Component {
   render() {
     const { demo } = this.props
     const seo = {}
-    seo.title = demo.name
+    seo.title = 'Demo'
     seo.description = 'Demo'
-    demo.path = `private/demos/${demo.dirs.join('/')}/${demo.name}`.replace('/iframe', '').replace('src/gatsby/code/', '')
+    demo.path = `private/demos/${demo.dirs.join('/')}`.replace('/iframe', '').replace('src/gatsby/code/', '')
     return (
       <StaticQuery
         query={graphql`
@@ -32,10 +32,10 @@ class DemoVanillaIframe extends React.Component {
             <SEO title={seo.title} />
             <div id="body-outer">
               {
-                data.allFile.files.filter(x => x.file.relativePath === `${demo.path}.less`).map((file, index) => (demo.cssSource = cssSource(demo))) && <div /> // @FIX react render string
+                data.allFile.files.filter(x => x.file.relativePath === `${demo.path}.less`).map(() => (demo.cssSource = cssSource(demo))) && <div /> // @FIX react render string
               }
               {
-                data.allFile.files.filter(x => x.file.relativePath === `${demo.path}.js`).map((file, index) => (demo.jsSource = jsSource(demo))) && <div /> // @FIX react render string
+                data.allFile.files.filter(x => x.file.relativePath === `${demo.path}.js`).map(() => (demo.jsSource = jsSource(demo))) && <div /> // @FIX react render string
               }
               <div id="gatsby_body-inner" className="gatsby_demo_source--from" dangerouslySetInnerHTML={{ __html: demo.htmlSource }} />
             </div>
@@ -50,7 +50,11 @@ export default DemoVanillaIframe
 
 DemoVanillaIframe.propTypes = {
   demo: PropTypes.shape({
-    container: PropTypes.bool.isRequired,
-    full: PropTypes.bool.isRequired,
+    dirs: PropTypes.array.isRequired,
+    path: PropTypes.string,
+    htmlSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+    jsxSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+    jsSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+    cssSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   }).isRequired,
 }

@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['eslint:recommended', 'google', 'prettier', 'prettier/react'],
+  extends: ['eslint:recommended', 'plugin:react/recommended', 'prettier', 'prettier/react'],
   plugins: ['prettier'],
   env: {
     browser: true,
@@ -16,10 +16,5 @@ module.exports = {
   },
   rules: {
     'prettier/prettier': 2,
-    'no-console': 'off',
-    'prefer-arrow-callback': 2,
-    'no-unused-vars': 0,
-    'require-jsdoc': 'off',
-    'valid-jsdoc': 'off',
   },
 }

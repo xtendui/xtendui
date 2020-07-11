@@ -416,10 +416,9 @@ class GoogleLocator {
 
   /**
    * submitCurrent
-   * @param {Event} e
    * @param {Boolean} empty
    */
-  submitCurrent(empty = false, e = null) {
+  submitCurrent(empty = false) {
     const self = this
     const options = self.options
     // position

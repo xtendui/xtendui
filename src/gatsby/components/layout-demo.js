@@ -44,7 +44,11 @@ class Layout extends React.Component {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   demo: PropTypes.shape({
+    name: PropTypes.string,
+    full: PropTypes.bool,
+    container: PropTypes.bool,
     htmlSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+    jsxSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
     jsSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
     cssSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   }).isRequired,

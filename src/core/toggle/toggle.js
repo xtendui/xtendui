@@ -544,18 +544,10 @@ class Toggle {
       for (const keyboard of keyboards) {
         keyboard.setAttribute('tabindex', '0')
         // focus
-        const keyboardfocusHandler = Xt.dataStorage.put(
-          keyboard,
-          'focus/keyboard' + '/' + self.namespace,
-          self.eventKeyboardfocusHandler.bind(self).bind(self, keyboard)
-        )
+        const keyboardfocusHandler = Xt.dataStorage.put(keyboard, 'focus/keyboard' + '/' + self.namespace, self.eventKeyboardfocusHandler.bind(self))
         keyboard.addEventListener('focus', keyboardfocusHandler)
         // blur
-        const keyboardblurHandler = Xt.dataStorage.put(
-          keyboard,
-          'blur/keyboard' + '/' + self.namespace,
-          self.eventKeyboardblurHandler.bind(self).bind(self, keyboard)
-        )
+        const keyboardblurHandler = Xt.dataStorage.put(keyboard, 'blur/keyboard' + '/' + self.namespace, self.eventKeyboardblurHandler.bind(self))
         keyboard.addEventListener('blur', keyboardblurHandler)
       }
     }
@@ -705,9 +697,8 @@ class Toggle {
   /**
    * init prevents click on touch until clicked two times
    * @param {Node|HTMLElement|EventTarget|Window} el
-   * @param {Event} e
    */
-  eventWithlinkStartHandler(el, e) {
+  eventWithlinkStartHandler(el) {
     const self = this
     // active
     Xt.dataStorage.put(el, 'active/withlink' + '/' + self.namespace, self.hasCurrent(el))
@@ -755,9 +746,8 @@ class Toggle {
   /**
    * reset prevents click on touch until clicked two times
    * @param {Node|HTMLElement|EventTarget|Window} el
-   * @param {Event} e
    */
-  eventWithlinkResetHandler(el, e) {
+  eventWithlinkResetHandler(el) {
     const self = this
     self.eventWithlinkEndHandler(el)
     Xt.dataStorage.remove(el, self.componentNamespace + 'WithlinkDone')
@@ -791,10 +781,8 @@ class Toggle {
 
   /**
    * keyboard focus handler
-   * @param {Node|HTMLElement|EventTarget|Window} el
-   * @param {Event} e
    */
-  eventKeyboardfocusHandler(el, e) {
+  eventKeyboardfocusHandler() {
     const self = this
     // handler
     const keyboardHandler = Xt.dataStorage.put(document, 'keyup/keyboard' + '/' + self.namespace, self.eventKeyboardHandler.bind(self))
@@ -803,10 +791,8 @@ class Toggle {
 
   /**
    * keyboard blur handler
-   * @param {Node|HTMLElement|EventTarget|Window} el
-   * @param {Event} e
    */
-  eventKeyboardblurHandler(el, e) {
+  eventKeyboardblurHandler() {
     const self = this
     // handler
     const keyboardHandler = Xt.dataStorage.get(document, 'keyup/keyboard' + '/' + self.namespace)
@@ -1420,9 +1406,8 @@ class Toggle {
 
   /**
    * auto start
-   * @param {Event} e
    */
-  eventAutostart(e = null) {
+  eventAutostart() {
     const self = this
     const options = self.options
     // disabled
@@ -1457,9 +1442,8 @@ class Toggle {
 
   /**
    * auto stop
-   * @param {Event} e
    */
-  eventAutostop(e = null) {
+  eventAutostop() {
     const self = this
     const options = self.options
     // stop
@@ -1473,9 +1457,8 @@ class Toggle {
 
   /**
    * auto pause
-   * @param {Event} e
    */
-  eventAutopause(e = null) {
+  eventAutopause() {
     const self = this
     const options = self.options
     // disabled
@@ -1497,9 +1480,8 @@ class Toggle {
 
   /**
    * auto resume
-   * @param {Event} e
    */
-  eventAutoresume(e = null) {
+  eventAutoresume() {
     const self = this
     const options = self.options
     // disabled
@@ -1522,9 +1504,8 @@ class Toggle {
   /**
    * jump
    * @param {Node|HTMLElement|EventTarget|Window} tr
-   * @param {Event} e
    */
-  eventJump(tr, e) {
+  eventJump(tr) {
     const self = this
     // disabled
     if (self.disabled) {
@@ -1544,9 +1525,8 @@ class Toggle {
   /**
    * nav
    * @param {Node|HTMLElement|EventTarget|Window} nav
-   * @param {Event} e
    */
-  eventNav(nav, e) {
+  eventNav(nav) {
     const self = this
     // disabled
     if (self.disabled) {
@@ -1742,7 +1722,7 @@ class Toggle {
       // special
       const before = getComputedStyle(el, ':before').getPropertyValue('content').replace(/['"]+/g, '')
       const after = getComputedStyle(el, ':after').getPropertyValue('content').replace(/['"]+/g, '')
-      self.specialCenter(el, before, after)
+      self.specialCenter(el, before)
       self.specialMiddle(el, before, after)
       self.specialCollapse(actionCurrent, el, before, after)
       self.specialBackdrop(actionCurrent, obj)
@@ -2595,9 +2575,8 @@ class Toggle {
    * center position on activation
    * @param {Node|HTMLElement|EventTarget|Window} el Element
    * @param {String} before Before content
-   * @param {String} after After content
    */
-  specialCenter(el, before, after) {
+  specialCenter(el, before) {
     const self = this
     // specialCenter
     if (before === 'xt-drop-center') {

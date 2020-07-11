@@ -933,9 +933,15 @@ if (typeof window !== 'undefined') {
   Xt.animOn = (el, suffix = '') => {
     el.classList.add('active')
     el.classList.remove('out')
-    requestAnimationFrame(() => {
-      el.classList.add('in')
-    })
+    // keep the same level of raf as others
+    cancelAnimationFrame(Xt.dataStorage.get(el, suffix))
+    Xt.dataStorage.put(
+      el,
+      suffix,
+      requestAnimationFrame(() => {
+        el.classList.add('in')
+      })
+    )
   }
 
   /**

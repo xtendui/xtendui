@@ -44,7 +44,7 @@ class Template extends React.Component {
                             <a
                               href={post.frontmatter.link}
                               target="_blank"
-                              rel="noopener"
+                              rel="noreferrer"
                               className="card card-primary card-small card-full card-collapse gatsby_listing_item"
                             >
                               <div className="card-design"></div>
@@ -170,7 +170,7 @@ export const query = graphql`
 Template.propTypes = {
   data: PropTypes.shape({
     categories: PropTypes.shape({
-      group: PropTypes.arrayOf(
+      category: PropTypes.arrayOf(
         PropTypes.shape({
           title: PropTypes.string.isRequired,
           posts: PropTypes.arrayOf(
@@ -181,7 +181,7 @@ Template.propTypes = {
                   category: PropTypes.string,
                   parent: PropTypes.string,
                   title: PropTypes.string.isRequired,
-                  description: PropTypes.string.isRequired,
+                  description: PropTypes.string,
                 }).isRequired,
               }).isRequired,
             }).isRequired
