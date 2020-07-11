@@ -78,12 +78,11 @@ npm install --save relaxed-json
 You need to install and import [core-js](https://github.com/zloirock/core-js):
 
 ```Shell
-npm install --save core-js@2 regenerator-runtime
+npm install --save core-js@2
 ```
 
 ```jsx
 import 'core-js'
-import 'regenerator-runtime/runtime'
 ```
 
 You need to import the **polyfills** files and the **main** js:
