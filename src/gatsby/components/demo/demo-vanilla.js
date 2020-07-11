@@ -26,7 +26,7 @@ class DemoVanilla extends React.Component {
           <div
             className={'gatsby_demo_item gatsby_demo_preview'}
             data-name={name || demo.name.split('-').join(' ')}
-            data-file={demo.name.split('-').join(' ')}
+            data-file={demo.path.split('-').join(' ')}
             data-inline={src}
           >
             {children}

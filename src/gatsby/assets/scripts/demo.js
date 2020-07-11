@@ -237,15 +237,16 @@ const populateDemo = (container, i) => {
   // loop itemsi
   for (const [k, item] of items.entries()) {
     // populate tabs
-    let name = item.getAttribute('data-iframe') || item.getAttribute('data-iframe-fullscreen')
-    if (name) {
-      name = name.split('/').pop().split('-').join(' ')
+    let name = k
+    let file = item.getAttribute('data-file')
+    const src = item.getAttribute('data-iframe') || item.getAttribute('data-iframe-fullscreen')
+    if (src) {
+      name = src.split('/').pop().split('-').join(' ')
+      file = src.split('/').join('-')
+    } else if (file) {
+      name = file.split('/').pop().split('-').join(' ')
+      file = file.split('/').join('-')
     }
-    name = item.getAttribute('data-name') ? item.getAttribute('data-name') : name
-    if (!name) {
-      name = k
-    }
-    const file = item.getAttribute('data-file') || name
     item.setAttribute('id', 'demo-' + kebabCase(file))
     container.querySelector('.gatsby_demo_tabs_left').append(Xt.createElement('<button type="button" class="btn btn-text btn-tiny">' + name + '</button>'))
     // tabs
