@@ -102,6 +102,7 @@ Xt.mount.push({
     // unmount
 
     const unmount = () => {
+      self.object.removeEventListener('change.xt.scrolltoanchor', eventChange)
       self.destroy()
       self = null
     }
