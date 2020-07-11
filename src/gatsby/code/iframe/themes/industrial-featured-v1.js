@@ -78,7 +78,7 @@ demo.htmlSource = `
                           Lorem ipsum
                         </h3>
                         <p>
-                          <strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Morbi lacinia rutrum ornare.
+                          <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Morbi lacinia rutrum ornare.
                         </p>
                         <a href="#" class="btn btn-default btn-big">
                           Discover
@@ -178,7 +178,7 @@ demo.htmlSource = `
                           Consectetur adipiscing elit
                         </h3>
                         <p>
-                          <strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Morbi lacinia rutrum ornare.
+                          <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Morbi lacinia rutrum ornare.
                         </p>
                         <a href="#" class="btn btn-default btn-big">
                           Discover
@@ -228,7 +228,7 @@ demo.htmlSource = `
                           Nam iaculis magna eu consectetur condimentum
                         </h3>
                         <p>
-                          <strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Morbi lacinia rutrum ornare.
+                          <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Morbi lacinia rutrum ornare.
                         </p>
                         <a href="#" class="btn btn-default btn-big">
                           Discover
