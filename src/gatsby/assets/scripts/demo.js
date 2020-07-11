@@ -242,12 +242,12 @@ const populateDemo = (container, i) => {
     const src = item.getAttribute('data-iframe') || item.getAttribute('data-iframe-fullscreen')
     if (src) {
       name = src.split('/').pop().split('-').join(' ')
-      file = src.split('/').join('-')
+      file = src.split('/').splice(2, 5).join('-')
     } else if (file) {
       name = file.split('/').pop().split('-').join(' ')
-      file = file.split('/').join('-')
+      file = file.split('/').splice(3, 5).join('-')
     }
-    item.setAttribute('id', 'demo-' + kebabCase(file))
+    item.setAttribute('id', kebabCase(file))
     container.querySelector('.gatsby_demo_tabs_left').append(Xt.createElement('<button type="button" class="btn btn-text btn-tiny">' + name + '</button>'))
     // tabs
     item.prepend(
