@@ -15,7 +15,7 @@ Xt.mount.push({
     // mouse events instead of click
 
     const checkChange = e => {
-      const component = document.querySelector('#iframe--sequential-megamenu-v1 body .drop-megamenus')
+      const component = document.querySelector('#iframe--sequential-megamenu-v1 body .megamenus')
       if (component) {
         const self = Xt.get('xt-drop', component)
         if (self) {
@@ -36,11 +36,11 @@ Xt.mount.push({
 })
 
 /**
- * .drop-megamenus drops
+ * .megamenus drops
  */
 
 Xt.mount.push({
-  matches: '#iframe--sequential-megamenu-v1 body .drop-megamenus', // add your own selector instead of body to contain the code
+  matches: '#iframe--sequential-megamenu-v1 body .megamenus', // add your own selector instead of body to contain the code
   mount: object => {
     // vars
 
@@ -175,17 +175,17 @@ Xt.mount.push({
 })
 
 /**
- * .drop-megamenus line
+ * .megamenus line
  */
 
 Xt.mount.push({
-  matches: '.drop-megamenus',
+  matches: '.megamenus',
   mount: function (object) {
     // vars
 
     let lineFirst = true
     const btns = object.querySelectorAll('.btn_megamenus')
-    const line = object.querySelector('.drop-megamenus_line')
+    const line = object.querySelector('.megamenus_line')
 
     const lineHeight = 4
     const lineTime = Xt.vars.timeSmall
@@ -224,7 +224,7 @@ Xt.mount.push({
         'lineFrame',
         requestAnimationFrame(() => {
           // not when drop is still open
-          const dropBtnActive = object.querySelector('.drop-megamenus .drop-container > .btn.active')
+          const dropBtnActive = object.querySelector('.megamenus .drop-container > .btn.active')
           if (!dropBtnActive) {
             // line
             const lineY = el.getBoundingClientRect().top + el.offsetHeight

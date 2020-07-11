@@ -16,104 +16,104 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="block-listing"
+<div class="listing"
     data-xt-infinite-scroll="{ max: 2 }">
   <div class="container">
-  
-    <div class="block-listing_inner">
+
+    <div class="listing_inner">
       <div class="row"
         data-xt-infinite-scroll-items>
 
-        <div class="block-listing_col">
-          <a href="#" class="block-listing_item">
-            <div class="block-listing_img">
+        <div class="listing_col">
+          <a href="#" class="listing_item">
+            <div class="listing_img">
               ${img({ classes: 'media-cover' })}
             </div>
-            <div class="block-listing_content">
-              <div class="block-listing_title">
+            <div class="listing_content">
+              <div class="listing_title">
                 Lorem ipsum
               </div>
-              <div class="block-listing_price">
+              <div class="listing_price">
                 3.772,00 €
               </div>
             </div>
           </a>
         </div>
 
-        <div class="block-listing_col">
-          <a href="#" class="block-listing_item">
-            <div class="block-listing_img">
+        <div class="listing_col">
+          <a href="#" class="listing_item">
+            <div class="listing_img">
               ${imgAlt({ classes: 'media-cover' })}
             </div>
-            <div class="block-listing_content">
-              <div class="block-listing_title">
+            <div class="listing_content">
+              <div class="listing_title">
                 Dolor sit amet
               </div>
-              <div class="block-listing_price">
+              <div class="listing_price">
                 3.772,00 €
               </div>
             </div>
           </a>
         </div>
 
-        <div class="block-listing_col">
-          <a href="#" class="block-listing_item">
-            <div class="block-listing_img">
+        <div class="listing_col">
+          <a href="#" class="listing_item">
+            <div class="listing_img">
               ${img({ classes: 'media-cover' })}
             </div>
-            <div class="block-listing_content">
-              <div class="block-listing_title">
+            <div class="listing_content">
+              <div class="listing_title">
                 Consectetur
               </div>
-              <div class="block-listing_price">
+              <div class="listing_price">
                 3.772,00 €
               </div>
             </div>
           </a>
         </div>
 
-        <div class="block-listing_col">
-          <a href="#" class="block-listing_item">
-            <div class="block-listing_img">
+        <div class="listing_col">
+          <a href="#" class="listing_item">
+            <div class="listing_img">
               ${imgAlt({ classes: 'media-cover' })}
             </div>
-            <div class="block-listing_content">
-              <div class="block-listing_title">
+            <div class="listing_content">
+              <div class="listing_title">
                 Adipiscing elit
               </div>
-              <div class="block-listing_price">
+              <div class="listing_price">
                 3.772,00 €
               </div>
             </div>
           </a>
         </div>
 
-        <div class="block-listing_col">
-          <a href="#" class="block-listing_item">
-            <div class="block-listing_img">
+        <div class="listing_col">
+          <a href="#" class="listing_item">
+            <div class="listing_img">
               ${img({ classes: 'media-cover' })}
             </div>
-            <div class="block-listing_content">
-              <div class="block-listing_title">
+            <div class="listing_content">
+              <div class="listing_title">
                 Lorem Ipsum
               </div>
-              <div class="block-listing_price">
+              <div class="listing_price">
                 3.772,00 €
               </div>
             </div>
           </a>
         </div>
 
-        <div class="block-listing_col">
-            <a href="#" class="block-listing_item">
-              <div class="block-listing_img">
+        <div class="listing_col">
+            <a href="#" class="listing_item">
+              <div class="listing_img">
                 ${imgAlt({ classes: 'media-cover' })}
               </div>
-              <div class="block-listing_content">
-                <div class="block-listing_title">
+              <div class="listing_content">
+                <div class="listing_title">
                   Dolor sit amet
                 </div>
-                <div class="block-listing_price">
+                <div class="listing_price">
                   3.772,00 €
                 </div>
               </div>
@@ -122,7 +122,7 @@ demo.htmlSource = `
 
       </div>
     </div>
-    
+
     <div class="infinite-scroll"
        data-xt-infinite-scroll-scroll>
       <div class="list-block">

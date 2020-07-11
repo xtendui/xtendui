@@ -1,30 +1,30 @@
 #iframe--furniture-listing-v1 {
   //##START
   body { // add your own selector instead of body to contain the code
-  
+
     /**
-      * .block-listing
+      * .listing
       */
 
-    .block-listing_inner {
+    .listing_inner {
       > .row {
         .row-space(small);
         .row-space(medium, sm);
       }
     }
 
-    .block-listing_col {
+    .listing_col {
       .col(12);
       .col(6, sm);
       .col(4, lg);
     }
 
-    .block-listing_col--big {
+    .listing_col--big {
       .col(12, sm);
       .col(12, lg);
     }
 
-    .block-listing_item {
+    .listing_item {
       .full();
       .text-default() !important;
       // card
@@ -48,7 +48,7 @@
       }
     }
 
-    .block-listing_col--big {
+    .listing_col--big {
       .card-asset {
         .media-container {
           @media @min-sm {
@@ -61,28 +61,28 @@
       }
     }
 
-    .block-listing_content {
+    .listing_content {
       .padding(y, medium);
     }
 
-    .block-listing_price {
+    .listing_price {
       .font-sans-semibold();
       .line-height-small();
       font-size: 1.4rem;
       letter-spacing: 0.1em;
       text-transform: none;
     }
-  
+
     /**
       * scroll
       */
-  
+
     // vars
-  
+
     @anim-scale-size: 1.05;
-  
+
     // the same css and js
-    .scroll-item, .block-listing_item {
+    .scroll-item, .listing_item {
       opacity: 0;
       &.fade {
         opacity: 1;
@@ -109,9 +109,9 @@
         }
       }
     }
-  
+
     // anim-furniture-listing-v1
-  
+
     @keyframes anim-furniture-listing-v1-in {
       0% {
         opacity: 0;
@@ -122,7 +122,7 @@
         transform: translateY(0);
       }
     }
-  
+
     @keyframes anim-furniture-listing-v1-out {
       0% {
         opacity: 1;
@@ -133,9 +133,9 @@
         transform: translateY(3rem);
       }
     }
-  
+
     // anim-furniture-listing-v1-inverse
-  
+
     @keyframes anim-furniture-listing-v1-inverse-in {
       0% {
         opacity: 0;
@@ -146,7 +146,7 @@
         transform: translateY(0);
       }
     }
-  
+
     @keyframes anim-furniture-listing-v1-inverse-out {
       0% {
         opacity: 1;

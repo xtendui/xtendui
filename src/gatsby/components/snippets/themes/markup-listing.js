@@ -3,13 +3,13 @@ const imgAlt = require('components/snippets/img').alt
 
 export default () => {
   return `
-<div class="block-listing">
+<div class="listing">
   <div class="container">
-    <div class="block-listing_inner">
+    <div class="listing_inner">
       <div class="row">
 
-        <div class="block-listing_col">
-          <a href="#" class="card block-listing_item">
+        <div class="listing_col">
+          <a href="#" class="card listing_item">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -20,7 +20,7 @@ export default () => {
                   <div class="card-title">
                     Lorem Ipsum
                   </div>
-                  <div class="block-listing_price">
+                  <div class="listing_price">
                     3.772,00 €
                   </div>
                 </div>
@@ -29,8 +29,8 @@ export default () => {
           </a>
         </div>
 
-        <div class="block-listing_col">
-          <a href="#" class="card block-listing_item">
+        <div class="listing_col">
+          <a href="#" class="card listing_item">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -41,7 +41,7 @@ export default () => {
                   <div class="card-title">
                     Dolor sit amet
                   </div>
-                  <div class="block-listing_price">
+                  <div class="listing_price">
                     2.150,00 €
                   </div>
                 </div>
@@ -50,8 +50,8 @@ export default () => {
           </a>
         </div>
 
-        <div class="block-listing_col">
-          <a href="#" class="card block-listing_item">
+        <div class="listing_col">
+          <a href="#" class="card listing_item">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -62,7 +62,7 @@ export default () => {
                   <div class="card-title">
                     Consectetur adipiscing elit
                   </div>
-                  <div class="block-listing_price">
+                  <div class="listing_price">
                     1.520,00 €
                   </div>
                 </div>
@@ -71,8 +71,8 @@ export default () => {
           </a>
         </div>
 
-        <div class="block-listing_col">
-          <a href="#" class="card block-listing_item">
+        <div class="listing_col">
+          <a href="#" class="card listing_item">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -83,7 +83,7 @@ export default () => {
                   <div class="card-title">
                     Lorem Ipsum
                   </div>
-                  <div class="block-listing_price">
+                  <div class="listing_price">
                     3.772,00 €
                   </div>
                 </div>
@@ -92,8 +92,8 @@ export default () => {
           </a>
         </div>
 
-        <div class="block-listing_col">
-          <a href="#" class="card block-listing_item">
+        <div class="listing_col">
+          <a href="#" class="card listing_item">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -104,7 +104,7 @@ export default () => {
                   <div class="card-title">
                     Dolor sit amet
                   </div>
-                  <div class="block-listing_price">
+                  <div class="listing_price">
                     2.150,00 €
                   </div>
                 </div>
@@ -113,8 +113,8 @@ export default () => {
           </a>
         </div>
 
-        <div class="block-listing_col">
-          <a href="#" class="card block-listing_item">
+        <div class="listing_col">
+          <a href="#" class="card listing_item">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -125,7 +125,7 @@ export default () => {
                   <div class="card-title">
                     Consectetur adipiscing elit
                   </div>
-                  <div class="block-listing_price">
+                  <div class="listing_price">
                     1.520,00 €
                   </div>
                 </div>
@@ -134,8 +134,8 @@ export default () => {
           </a>
         </div>
 
-        <div class="block-listing_col">
-          <a href="#" class="card block-listing_item">
+        <div class="listing_col">
+          <a href="#" class="card listing_item">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -146,7 +146,7 @@ export default () => {
                   <div class="card-title">
                     Lorem Ipsum
                   </div>
-                  <div class="block-listing_price">
+                  <div class="listing_price">
                     3.772,00 €
                   </div>
                 </div>
@@ -155,8 +155,8 @@ export default () => {
           </a>
         </div>
 
-        <div class="block-listing_col">
-          <a href="#" class="card block-listing_item">
+        <div class="listing_col">
+          <a href="#" class="card listing_item">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -167,7 +167,7 @@ export default () => {
                   <div class="card-title">
                     Dolor sit amet
                   </div>
-                  <div class="block-listing_price">
+                  <div class="listing_price">
                     2.150,00 €
                   </div>
                 </div>
@@ -176,8 +176,8 @@ export default () => {
           </a>
         </div>
 
-        <div class="block-listing_col block-listing_col--big">
-          <a href="#" class="card block-listing_item">
+        <div class="listing_col listing_col--big">
+          <a href="#" class="card listing_item">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -188,7 +188,7 @@ export default () => {
                   <div class="card-title">
                     Lorem Ipsum
                   </div>
-                  <div class="block-listing_price">
+                  <div class="listing_price">
                     3.772,00 €
                   </div>
                 </div>
@@ -197,8 +197,8 @@ export default () => {
           </a>
         </div>
 
-        <div class="block-listing_col block-listing_col--big">
-          <a href="#" class="card block-listing_item">
+        <div class="listing_col listing_col--big">
+          <a href="#" class="card listing_item">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -209,7 +209,7 @@ export default () => {
                   <div class="card-title">
                     Dolor sit amet
                   </div>
-                  <div class="block-listing_price">
+                  <div class="listing_price">
                     2.150,00 €
                   </div>
                 </div>

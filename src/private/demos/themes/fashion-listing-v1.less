@@ -1,29 +1,29 @@
 #iframe--fashion-listing-v1 {
   //##START
   body { // add your own selector instead of body to contain the code
-  
+
     /**
-      * .block-listing
+      * .listing
       */
 
-    .block-listing_inner {
+    .listing_inner {
       > .row {
         .row-space(large);
       }
     }
 
-    .block-listing_col {
+    .listing_col {
       .col(12);
       .col(6, sm);
       .col(3, lg);
     }
 
-    .block-listing_col--big {
+    .listing_col--big {
       .col(12, sm);
       .col(12, lg);
     }
 
-    .block-listing_item {
+    .listing_item {
       .full();
       // card
       .card-white();
@@ -45,7 +45,7 @@
       }
     }
 
-    .block-listing_col--big {
+    .listing_col--big {
       .card-asset {
         .media-container {
           @media @min-sm {
@@ -71,17 +71,17 @@
       height: 0;
       background: @white;
     }
-  
+
     /**
       * scroll
       */
-  
+
     // vars
-  
+
     @anim-scale-size: 1.1;
-  
+
     // the same css and js
-    .scroll-item, .block-listing_item {
+    .scroll-item, .listing_item {
       opacity: 0;
       &.fade {
         opacity: 1;
@@ -112,9 +112,9 @@
         }
       }
     }
-  
+
     // anim-fashion-listing-v1
-  
+
     @keyframes anim-fashion-listing-v1-in {
       0% {
         opacity: 0;
@@ -125,7 +125,7 @@
         transform: translateY(0) scaleY(1);
       }
     }
-  
+
     @keyframes anim-fashion-listing-v1-out {
       0% {
         opacity: 1;
@@ -136,9 +136,9 @@
         transform: translateY(5rem) scaleY(@anim-scale-size);
       }
     }
-  
+
     // anim-fashion-listing-v1-inverse
-  
+
     @keyframes anim-fashion-listing-v1-inverse-in {
       0% {
         opacity: 0;
@@ -149,7 +149,7 @@
         transform: translateY(0) scaleY(1);
       }
     }
-  
+
     @keyframes anim-fashion-listing-v1-inverse-out {
       0% {
         opacity: 1;

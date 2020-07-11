@@ -2,13 +2,13 @@ const img = require('components/snippets/img').default
 
 export default () => {
   return `
-<div class="drop-megamenus">
-  <span class="drop-megamenus_line"></span>
+<div class="megamenus">
+  <span class="megamenus_line"></span>
   <div class="container">
 
     <div class="list">
 
-      <div class="drop-container drop-container-static drop-megamenu_outer">
+      <div class="drop-container drop-container-static megamenu_outer">
 
         <a href="#" type="button" class="btn btn_megamenus">
           Lorem ipsum
@@ -19,26 +19,26 @@ export default () => {
             <div class="drop-design"></div>
             <div class="drop-content">
 
-              <div class="drop-megamenu">
+              <div class="megamenu">
                 <div class="container">
-                  <div class="drop-megamenu_inner">
+                  <div class="megamenu_inner">
                     <div class="row">
 
-                      <div class="drop-megamenu_col_left">
-                        <div class="drop-megamenu_left">
+                      <div class="megamenu_col_left">
+                        <div class="megamenu_left">
                           ${img({ classes: 'media-cover', ratio: '72.6%' })}
                         </div>
                       </div>
 
-                      <div class="drop-megamenu_col_right">
+                      <div class="megamenu_col_right">
                         <div class="row">
 
-                          <div class="drop-megamenu_item_col">
-                            <div class="drop-megamenu_item">
-                              <a href="#" class="drop-megamenu_item_title">
+                          <div class="megamenu_item_col">
+                            <div class="megamenu_item">
+                              <a href="#" class="megamenu_item_title">
                                 Lorem ipsum
                               </a>
-                              <div class="drop-megamenu_item_content">
+                              <div class="megamenu_item_content">
                                 <div class="list-block">
                                   <a href="#">
                                     Lorem ipsum
@@ -57,12 +57,12 @@ export default () => {
                             </div>
                           </div>
 
-                          <div class="drop-megamenu_item_col">
-                            <div class="drop-megamenu_item">
-                              <a href="#" class="drop-megamenu_item_title">
+                          <div class="megamenu_item_col">
+                            <div class="megamenu_item">
+                              <a href="#" class="megamenu_item_title">
                                 dolor sit amet
                               </a>
-                              <div class="drop-megamenu_item_content">
+                              <div class="megamenu_item_content">
                                 <div class="list-block">
                                   <a href="#">
                                     Lorem ipsum
@@ -75,17 +75,17 @@ export default () => {
                             </div>
                           </div>
 
-                          <div class="drop-megamenu_item_col">
-                            <div class="drop-megamenu_item">
-                              <a href="#" class="drop-megamenu_item_title">
+                          <div class="megamenu_item_col">
+                            <div class="megamenu_item">
+                              <a href="#" class="megamenu_item_title">
                                 Lorem ipsum
                               </a>
                             </div>
                           </div>
 
-                          <div class="drop-megamenu_item_col">
-                            <div class="drop-megamenu_item">
-                              <a href="#" class="drop-megamenu_item_title">
+                          <div class="megamenu_item_col">
+                            <div class="megamenu_item">
+                              <a href="#" class="megamenu_item_title">
                                 dolor sit amet
                               </a>
                             </div>
@@ -105,7 +105,7 @@ export default () => {
 
       </div>
 
-      <div class="drop-container drop-container-static drop-megamenu_outer">
+      <div class="drop-container drop-container-static megamenu_outer">
 
         <a href="#" type="button" class="btn btn_megamenus">
           dolor
@@ -116,26 +116,26 @@ export default () => {
             <div class="drop-design"></div>
             <div class="drop-content">
 
-              <div class="drop-megamenu">
+              <div class="megamenu">
                 <div class="container">
-                  <div class="drop-megamenu_inner">
+                  <div class="megamenu_inner">
                     <div class="row">
 
-                      <div class="drop-megamenu_col_left">
-                        <div class="drop-megamenu_left">
+                      <div class="megamenu_col_left">
+                        <div class="megamenu_left">
                           ${img({ classes: 'media-cover', ratio: '72.6%' })}
                         </div>
                       </div>
 
-                      <div class="drop-megamenu_col_right">
+                      <div class="megamenu_col_right">
                         <div class="row">
 
-                          <div class="drop-megamenu_item_col">
-                            <div class="drop-megamenu_item">
-                              <a href="#" class="drop-megamenu_item_title">
+                          <div class="megamenu_item_col">
+                            <div class="megamenu_item">
+                              <a href="#" class="megamenu_item_title">
                                 Lorem ipsum
                               </a>
-                              <div class="drop-megamenu_item_content">
+                              <div class="megamenu_item_content">
                                 <div class="list-block">
                                   <a href="#">
                                     Lorem ipsum
@@ -154,12 +154,12 @@ export default () => {
                             </div>
                           </div>
 
-                          <div class="drop-megamenu_item_col">
-                            <div class="drop-megamenu_item">
-                              <a href="#" class="drop-megamenu_item_title">
+                          <div class="megamenu_item_col">
+                            <div class="megamenu_item">
+                              <a href="#" class="megamenu_item_title">
                                 dolor sit amet
                               </a>
-                              <div class="drop-megamenu_item_content">
+                              <div class="megamenu_item_content">
                                 <div class="list-block">
                                   <a href="#">
                                     Lorem ipsum
@@ -172,12 +172,12 @@ export default () => {
                             </div>
                           </div>
 
-                          <div class="drop-megamenu_item_col">
-                            <div class="drop-megamenu_item">
-                              <a href="#" class="drop-megamenu_item_title">
+                          <div class="megamenu_item_col">
+                            <div class="megamenu_item">
+                              <a href="#" class="megamenu_item_title">
                                 consectetur
                               </a>
-                              <div class="drop-megamenu_item_content">
+                              <div class="megamenu_item_content">
                                 <div class="list-block">
                                   <a href="#">
                                     consectetur
@@ -190,12 +190,12 @@ export default () => {
                             </div>
                           </div>
 
-                          <div class="drop-megamenu_item_col">
-                            <div class="drop-megamenu_item">
-                              <a href="#" class="drop-megamenu_item_title">
+                          <div class="megamenu_item_col">
+                            <div class="megamenu_item">
+                              <a href="#" class="megamenu_item_title">
                                 adipiscing elit
                               </a>
-                              <div class="drop-megamenu_item_content">
+                              <div class="megamenu_item_content">
                                 <div class="list-block">
                                   <a href="#">
                                     Lorem ipsum
@@ -214,17 +214,17 @@ export default () => {
                             </div>
                           </div>
 
-                          <div class="drop-megamenu_item_col">
-                            <div class="drop-megamenu_item">
-                              <a href="#" class="drop-megamenu_item_title">
+                          <div class="megamenu_item_col">
+                            <div class="megamenu_item">
+                              <a href="#" class="megamenu_item_title">
                                 Lorem ipsum
                               </a>
                             </div>
                           </div>
 
-                          <div class="drop-megamenu_item_col">
-                            <div class="drop-megamenu_item">
-                              <a href="#" class="drop-megamenu_item_title">
+                          <div class="megamenu_item_col">
+                            <div class="megamenu_item">
+                              <a href="#" class="megamenu_item_title">
                                 dolor sit amet
                               </a>
                             </div>
@@ -244,7 +244,7 @@ export default () => {
 
       </div>
 
-      <div class="drop-container drop-container-static drop-megamenu_outer">
+      <div class="drop-container drop-container-static megamenu_outer">
 
         <a href="#" type="button" class="btn btn_megamenus">
           sit amet
@@ -255,26 +255,26 @@ export default () => {
             <div class="drop-design"></div>
             <div class="drop-content">
 
-              <div class="drop-megamenu">
+              <div class="megamenu">
                 <div class="container">
-                  <div class="drop-megamenu_inner">
+                  <div class="megamenu_inner">
                     <div class="row">
 
-                      <div class="drop-megamenu_col_left">
-                        <div class="drop-megamenu_left">
+                      <div class="megamenu_col_left">
+                        <div class="megamenu_left">
                           ${img({ classes: 'media-cover', ratio: '72.6%' })}
                         </div>
                       </div>
 
-                      <div class="drop-megamenu_col_right">
+                      <div class="megamenu_col_right">
                         <div class="row">
 
-                          <div class="drop-megamenu_item_col">
-                            <div class="drop-megamenu_item">
-                              <a href="#" class="drop-megamenu_item_title">
+                          <div class="megamenu_item_col">
+                            <div class="megamenu_item">
+                              <a href="#" class="megamenu_item_title">
                                 Lorem ipsum
                               </a>
-                              <div class="drop-megamenu_item_content">
+                              <div class="megamenu_item_content">
                                 <div class="list-block">
                                   <a href="#">
                                     Lorem ipsum
@@ -293,12 +293,12 @@ export default () => {
                             </div>
                           </div>
 
-                          <div class="drop-megamenu_item_col">
-                            <div class="drop-megamenu_item">
-                              <a href="#" class="drop-megamenu_item_title">
+                          <div class="megamenu_item_col">
+                            <div class="megamenu_item">
+                              <a href="#" class="megamenu_item_title">
                                 dolor sit amet
                               </a>
-                              <div class="drop-megamenu_item_content">
+                              <div class="megamenu_item_content">
                                 <div class="list-block">
                                   <a href="#">
                                     Lorem ipsum

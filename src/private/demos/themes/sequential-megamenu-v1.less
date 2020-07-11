@@ -3,15 +3,15 @@
   body { // add your own selector instead of body to contain the code
 
     /**
-      * .drop-megamenus
+      * .megamenus
       */
 
-    .drop-megamenus {
+    .megamenus {
       display: flex;
       position: relative;
     }
 
-    .drop-megamenus_line {
+    .megamenus_line {
       position: fixed;
       left: 0;
       top: 0;
@@ -24,7 +24,7 @@
       .padding(y, 1.5em);
     }
 
-    .drop-megamenu_outer {
+    .megamenu_outer {
       > .drop {
         .drop-nospace();
         .drop-squared();
@@ -82,25 +82,25 @@
       }
     }
 
-    .drop-megamenu {
+    .megamenu {
       .padding(y, 6rem);
     }
 
-    .drop-megamenu_inner {
+    .megamenu_inner {
       > .row {
         .row-space(medium);
         .row-space(big, lg);
       }
     }
 
-    .drop-megamenu_col_left {
+    .megamenu_col_left {
       .col(12);
       .col(4, sm);
       .col(3, lg);
       padding-right: 4rem !important;
     }
 
-    .drop-megamenu_col_right {
+    .megamenu_col_right {
       .col(12);
       .col(8, sm);
       .col(9, lg);
@@ -111,12 +111,12 @@
       }
     }
 
-    .drop-megamenu_item_col {
+    .megamenu_item_col {
       .col(6);
       .col(4, sm);
     }
 
-    .drop-megamenu_item_title {
+    .megamenu_item_title {
       .link-none();
       .spacing-tiny();
       .font-sans-semibold();
@@ -126,7 +126,7 @@
       letter-spacing: .025em;
     }
 
-    .drop-megamenu_item_content {
+    .megamenu_item_content {
       > .list-block {
         .list-space(none);
       }

@@ -7,11 +7,11 @@ import gsap from 'gsap'
  */
 
 Xt.mount.push({
-  matches: '#iframe--stores-listing-v2 body .block-listing', // add your own selector instead of body to contain the code
+  matches: '#iframe--stores-listing-v2 body .listing', // add your own selector instead of body to contain the code
   mount: object => {
     // vars
 
-    const items = object.querySelectorAll('.block-listing_item')
+    const items = object.querySelectorAll('.listing_item')
 
     // click
 
@@ -20,10 +20,10 @@ Xt.mount.push({
         // class
         tr.classList.add('active')
         // front
-        const front = tr.querySelector('.block-listing_front')
+        const front = tr.querySelector('.listing_front')
         gsap.to(front, {opacity: 0, duration: Xt.vars.timeSmall, ease: 'expo.out'})
         // front
-        const back = tr.querySelector('.block-listing_back')
+        const back = tr.querySelector('.listing_back')
         gsap.set(back, {y: 40, opacity: 0})
         gsap.to(back, {y: 0, opacity: 1, duration: Xt.vars.timeSmall, ease: 'expo.out'})
       } else {
@@ -36,17 +36,17 @@ Xt.mount.push({
         // class
         tr.classList.remove('active')
         // front
-        const front = tr.querySelector('.block-listing_front')
+        const front = tr.querySelector('.listing_front')
         gsap.set(front, {y: -40, opacity: 0})
         gsap.to(front, {y: 0, opacity: 1, duration: Xt.vars.timeSmall, ease: 'expo.out'})
         // front
-        const back = tr.querySelector('.block-listing_back')
+        const back = tr.querySelector('.listing_back')
         gsap.to(back, {y: 0, opacity: 0, duration: Xt.vars.timeSmall, ease: 'expo.out'})
       }
     }
 
     const eventClick = e => {
-      const tr = e.target.closest('.block-listing_item')
+      const tr = e.target.closest('.listing_item')
       // disable on mobile
       if (matchMedia('(max-width: 767px)').matches) {
         return

@@ -7,7 +7,7 @@ import gsap from 'gsap'
  */
 
 Xt.mount.push({
-  matches: '#iframe--furniture-listing-v1 body .block-listing_item', // add your own selector instead of body to contain the code
+  matches: '#iframe--furniture-listing-v1 body .listing_item', // add your own selector instead of body to contain the code
   mount: object => {
     // vars
 
@@ -57,7 +57,7 @@ Xt.mount.push({
 
     let self = new Xt.Scroll(object, {
       // the same css and js
-      elements: '.scroll-item, .block-listing_item',
+      elements: '.scroll-item, .listing_item',
       delayOn: current => {
         return Math.min((current + 1) * 75, 300)
       },
