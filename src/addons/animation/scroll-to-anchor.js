@@ -78,14 +78,20 @@ class ScrollToAnchor {
    */
   eventChange(hashchange = false, el = null, e = null) {
     const self = this
+    const options = self.options
     // reset self.target
     self.target = null
+    // hashchange
+    if (hashchange) {
+      const hash = location.hash
+      el = self.object.querySelector(options.elements.replace('#', hash))
+    }
     // useCapture delegation
     el = el ? el : e.target
     // not null and HTML element and not window
     if (el && el.nodeName && el !== window) {
-      el = el.closest(self.options.elements)
-      if (el && el.matches(self.options.elements)) {
+      el = el.closest(options.elements)
+      if (el && el.matches(options.elements)) {
         // event
         const loc = new URL(el.getAttribute('href'), location)
         if (loc.hash && loc.pathname === location.pathname) {
@@ -98,7 +104,7 @@ class ScrollToAnchor {
                 e.preventDefault()
               }
               // class
-              let els = Array.from(self.object.querySelectorAll(self.options.elements))
+              let els = Array.from(self.object.querySelectorAll(options.elements))
               els = els.filter(x => !x.closest('.xt-ignore')) // filter out ignore
               for (const other of els) {
                 other.classList.remove(...self.classes)
@@ -109,7 +115,7 @@ class ScrollToAnchor {
                 history.pushState({}, '', loc.hash)
               }
               // add space
-              self.scrollSpace = self.options.scrollSpace(self)
+              self.scrollSpace = options.scrollSpace(self)
               // listener dispatch
               self.object.dispatchEvent(new CustomEvent('change.xt.scrolltoanchor'))
             }
@@ -238,7 +244,9 @@ ScrollToAnchor.optionsDefault = {
     // sticky
     const stickys = document.querySelectorAll('.xt-sticky.xt-clone.active')
     for (const sticky of stickys) {
-      scrollSpace += sticky.clientHeight
+      if (Xt.visible(sticky)) {
+        scrollSpace += sticky.clientHeight
+      }
     }
     return scrollSpace
   },
