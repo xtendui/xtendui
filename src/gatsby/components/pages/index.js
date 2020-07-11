@@ -11,7 +11,7 @@ class Page extends React.Component {
     return (
       <Layout seo={seo}>
         <SEO title={seo.title} />
-        <ul>
+        <nav>
           <li>
             <a href="https://ghost.org/docs/">ghost</a>
           </li>
@@ -24,8 +24,8 @@ class Page extends React.Component {
           <li>
             <a href="https://www.mozilla.org/en-US/firefox/developer/">firefox</a>
           </li>
-        </ul>
-        <ul>
+        </nav>
+        <nav>
           <li>frontend library</li>
           <li>a new approach to custom frontend development</li>
           <li>extremely customizable and designed for building custom websites with complex interactions</li>
@@ -41,7 +41,7 @@ class Page extends React.Component {
           <li>philosophy: themes for every component, not a theme for all the library, and style real css, not a list of variables</li>
           <li>js: vanilla js with customizzable behaviour thanks to javascript events</li>
           <li>js: automatic focus utils and aria attributes injected by javascript</li>
-        </ul>
+        </nav>
       </Layout>
     )
   }

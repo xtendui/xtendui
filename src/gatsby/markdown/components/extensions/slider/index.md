@@ -39,21 +39,21 @@ Use this markup to create a **slider**.
   <div class="slider" data-xt-slider>
 
     <div class="slides">
-      <ul class="slides-inner">
+      <nav class="slides-inner">
 
-        <li class="slide">
+        <div class="slide">
           <div class="slide-inner">
             <!-- content -->
           </div>
-        </li>
+        </div>
 
-        <li class="slide">
+        <div class="slide">
           <div class="slide-inner">
             <!-- content -->
           </div>
-        </li>
+        </div>
 
-      </ul>
+      </nav>
     </div>
 
     <nav class="slider-pagination">

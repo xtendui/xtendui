@@ -22,46 +22,34 @@ demo.htmlSource = `
         </button>
       </div>
 
-      <ul class="list-block multilevel-list">
-        <li>
-          <button type="button" class="btn" data-xt-group="cat-0">
-            Category 0
-          </button>
-        </li>
-        <li>
-          <button type="button" class="btn" data-xt-group="cat-1">
-            Category 1
-          </button>
-        </li>
-        <li>
-          <a href="#" class="btn">
-            Link 0
-          </a>
-        </li>
-        <li>
-          <a href="#" class="btn">
-            Link 1
-          </a>
-        </li>
-      </ul>
+      <nav class="list-block multilevel-list">
+        <button type="button" class="btn" data-xt-group="cat-0">
+          Category 0
+        </button>
+        <button type="button" class="btn" data-xt-group="cat-1">
+          Category 1
+        </button>
+        <a href="#" class="btn">
+          Link 0
+        </a>
+        <a href="#" class="btn">
+          Link 1
+        </a>
+      </nav>
 
       <div class="multilevel-title-wrapper">
         <div class="h4 multilevel-title">
           About
         </div>
       </div>
-      <ul class="list-block multilevel-list">
-        <li>
-          <a href="#" class="btn">
-            Link 0
-          </a>
-        </li>
-        <li>
-          <a href="#" class="btn">
-            Link 1
-          </a>
-        </li>
-      </ul>
+      <nav class="list-block multilevel-list">
+        <a href="#" class="btn">
+          Link 0
+        </a>
+        <a href="#" class="btn">
+          Link 1
+        </a>
+      </nav>
 
     </nav>
 
@@ -76,28 +64,20 @@ demo.htmlSource = `
         </button>
       </div>
 
-      <ul class="list-block multilevel-list">
-        <li>
-          <button type="button" class="btn" data-xt-group="cat-0a">
-            Category 0a
-          </button>
-        </li>
-        <li>
-          <button type="button" class="btn" data-xt-group="cat-0b">
-            Category 0b
-          </button>
-        </li>
-        <li>
-          <a href="#" class="btn">
-            Link 0
-          </a>
-        </li>
-        <li>
-          <a href="#" class="btn">
-            Link 1
-          </a>
-        </li>
-      </ul>
+      <nav class="list-block multilevel-list">
+        <button type="button" class="btn" data-xt-group="cat-0a">
+          Category 0a
+        </button>
+        <button type="button" class="btn" data-xt-group="cat-0b">
+          Category 0b
+        </button>
+        <a href="#" class="btn">
+          Link 0
+        </a>
+        <a href="#" class="btn">
+          Link 1
+        </a>
+      </nav>
 
     </nav>
 
@@ -112,18 +92,14 @@ demo.htmlSource = `
         </button>
       </div>
 
-      <ul class="list-block multilevel-list">
-        <li>
-          <a href="#" class="btn">
-            Link 0
-          </a>
-        </li>
-        <li>
-          <a href="#" class="btn">
-            Link 1
-          </a>
-        </li>
-      </ul>
+      <nav class="list-block multilevel-list">
+        <a href="#" class="btn">
+          Link 0
+        </a>
+        <a href="#" class="btn">
+          Link 1
+        </a>
+      </nav>
 
     </nav>
 
@@ -138,18 +114,14 @@ demo.htmlSource = `
         </button>
       </div>
 
-      <ul class="list-block multilevel-list">
-        <li>
-          <a href="#" class="btn">
-            Link 0
-          </a>
-        </li>
-        <li>
-          <a href="#" class="btn">
-            Link 1
-          </a>
-        </li>
-      </ul>
+      <nav class="list-block multilevel-list">
+        <a href="#" class="btn">
+          Link 0
+        </a>
+        <a href="#" class="btn">
+          Link 1
+        </a>
+      </nav>
 
     </nav>
 
@@ -164,18 +136,14 @@ demo.htmlSource = `
         </button>
       </div>
 
-      <ul class="list-block multilevel-list">
-        <li>
-          <a href="#" class="btn">
-            Link 0
-          </a>
-        </li>
-        <li>
-          <a href="#" class="btn">
-            Link 1
-          </a>
-        </li>
-      </ul>
+      <nav class="list-block multilevel-list">
+        <a href="#" class="btn">
+          Link 0
+        </a>
+        <a href="#" class="btn">
+          Link 1
+        </a>
+      </nav>
 
     </nav>
 

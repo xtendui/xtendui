@@ -58,23 +58,17 @@ demo.htmlSource = `
                                         <div class="drop-design"></div>
                                         <div class="drop-content">
 
-                                          <ul class="list list-drop">
-                                            <li>
-                                              <button type="button" class="btn btn-default">
-                                                Lorem ipsum dolor
-                                              </button>
-                                            </li>
-                                            <li>
-                                              <button type="button" class="btn btn-default">
-                                                Dolor sit
-                                              </button>
-                                            </li>
-                                            <li>
-                                              <button type="button" class="btn btn-default">
-                                                Amet
-                                              </button>
-                                            </li>
-                                          </ul>
+                                          <nav class="list-block list-drop">
+                                            <button type="button" class="btn btn-default">
+                                              Lorem ipsum dolor
+                                            </button>
+                                            <button type="button" class="btn btn-default">
+                                              Dolor sit
+                                            </button>
+                                            <button type="button" class="btn btn-default">
+                                              Amet
+                                            </button>
+                                          </nav>
 
                                         </div>
                                       </div>

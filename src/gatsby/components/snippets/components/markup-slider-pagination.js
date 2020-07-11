@@ -1,9 +1,9 @@
 export default () => {
   return `
 <div class="slides">
-  <ul class="slides-inner">
+  <nav class="slides-inner">
 
-    <li class="slide col-6 col-4-sm">
+    <div class="slide col-6 col-4-sm">
       <div class="slide-inner">
 
         <div class="card card-slide">
@@ -23,9 +23,9 @@ export default () => {
         </div>
 
       </div>
-    </li>
+    </div>
 
-    <li class="slide col-6 col-4-sm">
+    <div class="slide col-6 col-4-sm">
       <div class="slide-inner">
 
         <div class="card card-slide">
@@ -45,9 +45,9 @@ export default () => {
         </div>
 
       </div>
-    </li>
+    </div>
 
-    <li class="slide col-6 col-4-sm">
+    <div class="slide col-6 col-4-sm">
       <div class="slide-inner">
 
         <div class="card card-slide">
@@ -67,9 +67,9 @@ export default () => {
         </div>
 
       </div>
-    </li>
+    </div>
 
-    <li class="slide col-7 col-5-sm">
+    <div class="slide col-7 col-5-sm">
       <div class="slide-inner">
 
         <div class="card card-slide">
@@ -89,9 +89,9 @@ export default () => {
         </div>
 
       </div>
-    </li>
+    </div>
 
-    <li class="slide col-7 col-5-sm">
+    <div class="slide col-7 col-5-sm">
       <div class="slide-inner">
 
         <div class="card card-slide">
@@ -111,9 +111,9 @@ export default () => {
         </div>
 
       </div>
-    </li>
+    </div>
 
-  </ul>
+  </nav>
 </div>
 
 <nav class="slider-pagination">

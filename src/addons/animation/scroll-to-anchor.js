@@ -208,8 +208,8 @@ class ScrollToAnchor {
   destroy() {
     const self = this
     // remove events
-    self.object.removeEventListener('click', self.eventChange.bind(self, false, null), true)
-    removeEventListener('hashchange', self.eventChange.bind(self).bind(self, true, null), true)
+    self.object.removeEventListener('click', self.eventChange.bind(self, false, null))
+    removeEventListener('hashchange', self.eventChange.bind(self).bind(self, true, null))
     self.options.scrollElement.removeEventListener('scroll', self.eventScrollHandler.bind(self).bind(self))
     // initialized class
     self.object.classList.remove(self.componentName)

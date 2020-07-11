@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<ul class="list list-default align-content-space-between" style="height: 150px;">
+<div class="list list-default align-content-space-between" style="height: 150px;">
 ${indentString(markupList(), 2)}
-</ul>
+</div>
 `

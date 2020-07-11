@@ -1,4 +1,6 @@
 import path from 'path'
+const markupList = require('components/snippets/components/markup-list-anything').default
+const indentString = require('indent-string')
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -8,15 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list-block list-default">
-  <div>
-    Lorem ipsum dolor sit amet.
-  </div>
-  <div>
-    consectetur adipiscing elit.
-  </div>
-  <div>
-    Cras placerat pellentesque pulvinar.
-  </div>
-</ul>
+<nav class="list-block list-default">
+${indentString(markupList(), 2)}
+</nav>
 `

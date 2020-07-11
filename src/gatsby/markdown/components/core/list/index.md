@@ -25,22 +25,44 @@ Or just import **core**:
 
 ## Usage
 
-Use this markup to create a **row list**.
+Use this markup to create a **horizontal list**.
 
 <script type="text/plain" class="language-markup">
-  <ul class="list">
-    <li><!-- content --></li>
-    <li><!-- content --></li>
-    <li><!-- content --></li>
-  </ul>
+  <nav class="list">
+    <!-- content -->
+  </nav>
 </script>
 
-Use this markup to create a **column list**.
+Use this markup to create a **vertical list**.
 
 <script type="text/plain" class="language-markup">
-  <ul class="list-block">
-    <li><!-- content --></li>
-    <li><!-- content --></li>
-    <li><!-- content --></li>
-  </ul>
+  <nav class="list-block">
+    <!-- content -->
+  </nav>
 </script>
+
+#### Anything
+
+You can use list to space childrens like [row](/components/core/row/content) does. But the childrens are spaced with **margin** instead of **padding**.
+
+<demo>
+  <demovanilla src="vanilla/components/core/list/anything-row" name="horizontal">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/list/anything-column" name="vertical">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/list/anything-nested" name="nested">
+  </demovanilla>
+</demo>
+
+#### Button
+
+In css you can use `.list-btns({});` to style with this selector `> a:not(.btn), > button:not(.btn)`.
+
+<demo>
+  <demovanilla src="vanilla/components/core/list/button-row" name="horizontal">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/list/button-column" name="vertical">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/list/button-nested" name="nested">
+  </demovanilla>
+</demo>

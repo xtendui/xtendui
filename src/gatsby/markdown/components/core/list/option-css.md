@@ -16,8 +16,8 @@ Classes for assigning variant (e.g.: space). Add or remove selectors at your dis
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.list-{variant}`                        | `.list-default` |
-| Mixin                   | `.list-{variant}()`                      | `.list-default()`  |
+| Class                   | `.list-{variant}`                        | `.list-default` `.list-drop` |
+| Mixin                   | `.list-{variant}()`                      | `.list-default()` `.list-drop()`  |
 
 </div>
 

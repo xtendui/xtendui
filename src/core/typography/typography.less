@@ -306,28 +306,14 @@ small {
  */
 
 ul, ol {
-  .margin(top, none);
   .margin(bottom, medium);
+  .margin(bottom, layout);
   padding-left: 2rem;
   > li {
     .margin(bottom, small);
     > ul, > ol {
       .margin(y, small);
     }
-  }
-}
-
-// .list-reset
-// use this mixin to reset styles on xtend ul.list ul.slides-inner etc..
-
-.list-reset() {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  > li {
-    margin: 0;
-    padding: 0;
-    background: none;
   }
 }
 

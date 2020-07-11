@@ -42,9 +42,9 @@ demo.htmlSource = `
   </nav>
 
   <div class="slides">
-    <ul class="slides-inner">
+    <nav class="slides-inner">
 
-      <li class="slide">
+      <div class="slide">
         <div class="container">
           <div class="slide-inner">
             <div class="featured">
@@ -92,9 +92,9 @@ demo.htmlSource = `
             </div>
           </div>
         </div>
-      </li>
+      </div>
 
-      <li class="slide">
+      <div class="slide">
         <div class="container">
           <div class="slide-inner">
             <div class="featured">
@@ -142,9 +142,9 @@ demo.htmlSource = `
             </div>
           </div>
         </div>
-      </li>
+      </div>
 
-      <li class="slide">
+      <div class="slide">
         <div class="container">
           <div class="slide-inner">
             <div class="featured">
@@ -192,9 +192,9 @@ demo.htmlSource = `
             </div>
           </div>
         </div>
-      </li>
+      </div>
 
-      <li class="slide">
+      <div class="slide">
         <div class="container">
           <div class="slide-inner">
             <div class="featured">
@@ -242,9 +242,9 @@ demo.htmlSource = `
             </div>
           </div>
         </div>
-      </li>
+      </div>
 
-    </ul>
+    </nav>
   </div>
 
 </div>

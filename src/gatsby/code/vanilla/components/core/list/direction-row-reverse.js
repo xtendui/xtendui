@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<ul class="list list-default flex-direction-row-reverse">
+<div class="list list-default flex-direction-row-reverse">
 ${indentString(markupList(), 2)}
-</ul>
+</div>
 `

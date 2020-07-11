@@ -1,9 +1,9 @@
 export default () => {
   return `
 <div class="slides">
-  <ul class="slides-inner">
+  <nav class="slides-inner">
 
-    <li class="slide">
+    <div class="slide">
       <div class="slide-inner">
 
         <div class="media-container media-container-responsive">
@@ -13,9 +13,9 @@ export default () => {
         </div>
 
       </div>
-    </li>
+    </div>
 
-    <li class="slide">
+    <div class="slide">
       <div class="slide-inner">
 
         <div class="media-container media-container-responsive">
@@ -25,9 +25,9 @@ export default () => {
         </div>
 
       </div>
-    </li>
+    </div>
 
-    <li class="slide">
+    <div class="slide">
       <div class="slide-inner">
 
         <div class="media-container media-container-responsive">
@@ -37,9 +37,9 @@ export default () => {
         </div>
 
       </div>
-    </li>
+    </div>
 
-    <li class="slide">
+    <div class="slide">
       <div class="slide-inner">
 
         <div class="media-container media-container-responsive">
@@ -49,9 +49,9 @@ export default () => {
         </div>
 
       </div>
-    </li>
+    </div>
 
-    <li class="slide">
+    <div class="slide">
       <div class="slide-inner">
 
         <div class="media-container media-container-responsive">
@@ -61,9 +61,9 @@ export default () => {
         </div>
 
       </div>
-    </li>
+    </div>
 
-    <li class="slide">
+    <div class="slide">
       <div class="slide-inner">
 
         <div class="media-container media-container-responsive">
@@ -73,9 +73,9 @@ export default () => {
         </div>
 
       </div>
-    </li>
+    </div>
 
-  </ul>
+  </nav>
 </div>
 
 <nav class="slider-pagination">

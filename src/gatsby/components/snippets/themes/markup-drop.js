@@ -1,5 +1,3 @@
-const img = require('components/snippets/img').default
-
 export default () => {
   return `
 <div class="list list-default list-space-small align-items-center">
@@ -13,23 +11,17 @@ export default () => {
         <div class="drop-design"></div>
         <div class="drop-content">
 
-          <ul class="list list-drop">
-            <li>
-              <button type="button">
-                Lorem ipsum dolor
-              </button>
-            </li>
-            <li>
-              <button type="button">
-                Dolor sit
-              </button>
-            </li>
-            <li>
-              <button type="button">
-                Amet
-              </button>
-            </li>
-          </ul>
+          <nav class="list-block list-drop">
+            <button type="button">
+              Lorem ipsum dolor
+            </button>
+            <button type="button">
+              Dolor sit
+            </button>
+            <button type="button">
+              Amet
+            </button>
+          </nav>
 
         </div>
       </div>

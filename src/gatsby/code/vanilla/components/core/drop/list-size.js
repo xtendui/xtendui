@@ -1,5 +1,6 @@
 import path from 'path'
-const img = require('components/snippets/img').default
+const markupDrop = require('components/snippets/components/markup-drop').default
+const indentString = require('indent-string')
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -16,30 +17,7 @@ demo.htmlSource = `
       default
     </button>
     <div class="drop drop-default">
-      <div class="drop-inner">
-        <div class="drop-design"></div>
-        <div class="drop-content">
-
-          <ul class="list list-drop">
-            <li>
-              <button type="button">
-                Lorem ipsum
-              </button>
-            </li>
-            <li>
-              <button type="button">
-                Dolor sit
-              </button>
-            </li>
-            <li>
-              <button type="button">
-                Amet
-              </button>
-            </li>
-          </ul>
-
-        </div>
-      </div>
+    ${indentString(markupDrop(), 6)}
     </div>
   </div>
 
@@ -48,30 +26,7 @@ demo.htmlSource = `
       small
     </button>
     <div class="drop drop-default drop-small">
-      <div class="drop-inner">
-        <div class="drop-design"></div>
-        <div class="drop-content">
-
-          <ul class="list list-drop">
-            <li>
-              <button type="button">
-                Lorem ipsum
-              </button>
-            </li>
-            <li>
-              <button type="button">
-                Dolor sit
-              </button>
-            </li>
-            <li>
-              <button type="button">
-                Amet
-              </button>
-            </li>
-          </ul>
-
-        </div>
-      </div>
+    ${indentString(markupDrop(), 6)}
     </div>
   </div>
 
@@ -80,30 +35,7 @@ demo.htmlSource = `
       medium
     </button>
     <div class="drop drop-default drop-medium">
-      <div class="drop-inner">
-        <div class="drop-design"></div>
-        <div class="drop-content">
-
-          <ul class="list list-drop">
-            <li>
-              <button type="button">
-                Lorem ipsum
-              </button>
-            </li>
-            <li>
-              <button type="button">
-                Dolor sit
-              </button>
-            </li>
-            <li>
-              <button type="button">
-                Amet
-              </button>
-            </li>
-          </ul>
-
-        </div>
-      </div>
+    ${indentString(markupDrop(), 6)}
     </div>
   </div>
 
@@ -112,30 +44,7 @@ demo.htmlSource = `
       large
     </button>
     <div class="drop drop-default drop-large">
-      <div class="drop-inner">
-        <div class="drop-design"></div>
-        <div class="drop-content">
-
-          <ul class="list list-drop">
-            <li>
-              <button type="button">
-                Lorem ipsum
-              </button>
-            </li>
-            <li>
-              <button type="button">
-                Dolor sit
-              </button>
-            </li>
-            <li>
-              <button type="button">
-                Amet
-              </button>
-            </li>
-          </ul>
-
-        </div>
-      </div>
+    ${indentString(markupDrop(), 6)}
     </div>
   </div>
 

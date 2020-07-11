@@ -32,3 +32,5 @@ Use this markup to create a **row**.
     <!-- content -->
   </div>
 </script>
+
+Inside row you should always use columns [columns](/components/core/column), otherwise use [list](/components/core/list) that spaces with spaced with **margin** instead of **padding**.

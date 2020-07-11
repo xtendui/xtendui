@@ -13,7 +13,7 @@ demo.htmlSource = `
 
   <div class="drop-container" data-xt-drop>
     <button type="button" class="btn btn-primary">
-    default
+      default
     </button>
     <div class="drop drop-default">
       <div class="drop-inner">

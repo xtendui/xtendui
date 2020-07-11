@@ -2,43 +2,27 @@
  * list
  */
 
-.list-base {
-  display: flex;
-  .list-reset();
-  // list
-  > li {
-    display: flex;
-    align-items: flex-start;
-  }
-}
-
 // .list
 
 .list {
-  .list-base();
+  display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  align-items: flex-start;
 }
 
 .list-block {
-  .list-base();
+  display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
+  align-items: flex-start;
 }
 
 // selectors
 
-.list-items(@rules) {
-  > li:not(.xt-custom) {
-    @rules();
-  }
-}
-
 .list-btns(@rules) {
-  > li:not(.xt-custom) {
-    > a, > button {
-      @rules();
-    }
+  > a:not(.btn), > button:not(.btn) {
+    @rules();
   }
 }
 

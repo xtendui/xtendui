@@ -4,11 +4,11 @@ const imgAlt = require('components/snippets/img').alt
 export default () => {
   return `
 <div class="slides">
-  <ul class="slides-inner">
+  <nav class="slides-inner">
 
-    <li class="slide">
+    <div class="slide">
       <div class="slide-inner">
-      
+
         <div class="hero hero--center hero--big">
           <div class="hero_inner">
             <div class="hero_asset">
@@ -25,13 +25,13 @@ export default () => {
             </div>
           </div>
         </div>
-      
-      </div>
-    </li>
 
-    <li class="slide">
+      </div>
+    </div>
+
+    <div class="slide">
       <div class="slide-inner">
-      
+
         <div class="hero hero--center">
           <div class="hero_inner">
             <div class="hero_asset">
@@ -57,13 +57,13 @@ export default () => {
             </div>
           </div>
         </div>
-        
-      </div>
-    </li>
 
-    <li class="slide">
+      </div>
+    </div>
+
+    <div class="slide">
       <div class="slide-inner">
-      
+
         <div class="hero">
           <div class="hero_inner">
             <div class="hero_asset">
@@ -82,13 +82,13 @@ export default () => {
             </div>
           </div>
         </div>
-        
-      </div>
-    </li>
 
-    <li class="slide">
+      </div>
+    </div>
+
+    <div class="slide">
       <div class="slide-inner">
-      
+
         <div class="hero">
           <div class="hero_inner">
             <div class="hero_asset">
@@ -118,13 +118,13 @@ export default () => {
             </div>
           </div>
         </div>
-        
-      </div>
-    </li>
 
-    <li class="slide">
+      </div>
+    </div>
+
+    <div class="slide">
       <div class="slide-inner">
-      
+
         <div class="hero hero--middle hero--left">
           <div class="hero_inner">
             <div class="hero_asset">
@@ -154,13 +154,13 @@ export default () => {
             </div>
           </div>
         </div>
-        
-      </div>
-    </li>
 
-    <li class="slide">
+      </div>
+    </div>
+
+    <div class="slide">
       <div class="slide-inner">
-      
+
         <div class="hero hero--middle hero--right">
           <div class="hero_inner">
             <div class="hero_asset">
@@ -190,11 +190,11 @@ export default () => {
             </div>
           </div>
         </div>
-        
-      </div>
-    </li>
 
-  </ul>
+      </div>
+    </div>
+
+  </nav>
 </div>
 `
 }

@@ -16,8 +16,8 @@ Classes for assigning variant (e.g.: space). Add or remove selectors at your dis
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.row-{variant}`                        | `.row-default` |
-| Mixin                   | `.row-{variant}()`                      | `.row-default()`  |
+| Class                   | `.row-{variant}`                        | `.row-default` `.row-form` |
+| Mixin                   | `.row-{variant}()`                      | `.row-default()` `.row-form()`  |
 
 </div>
 

@@ -11,7 +11,7 @@ date: "2020-10-01"
 [[notePrimary]]
 | Drop uses list to style it's content, refer to [list's content](/components/core/list/content) for all **content**.
 
-Use `li.xt-custom` to override styles applied by `.list.list-drop`.
+If you use the class `.btn` you can define custom button styles.
 
 <demo>
   <demovanilla src="vanilla/components/core/drop/usage-list">

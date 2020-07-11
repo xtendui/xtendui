@@ -24,7 +24,7 @@ demo.htmlSource = `
   <div class="slides">
     <ul class="slides-inner">
 
-      <li class="slide">
+      <div class="slide">
         <div class="slide-inner">
           <div class="brand">
             <a href="#test-link-1" class="brand_content">
@@ -65,7 +65,7 @@ demo.htmlSource = `
             </a>
           </div>
         </div>
-      </li>
+      </div>
 
     </ul>
   </div>
@@ -86,7 +86,7 @@ demo.htmlSource = `
   <div class="slides">
     <ul class="slides-inner">
 
-      <li class="slide">
+      <div class="slide">
         <div class="slide-inner">
           <div class="brand">
             <a href="#test-link-1" class="brand_content">
@@ -127,7 +127,7 @@ demo.htmlSource = `
             </a>
           </div>
         </div>
-      </li>
+      </div>
 
     </ul>
   </div>
@@ -148,7 +148,7 @@ demo.htmlSource = `
   <div class="slides">
     <ul class="slides-inner">
 
-      <li class="slide">
+      <div class="slide">
         <div class="slide-inner">
           <div class="brand">
             <a href="#test-link-1" class="brand_content">
@@ -171,7 +171,7 @@ demo.htmlSource = `
             </a>
           </div>
         </div>
-      </li>
+      </div>
 
     </ul>
   </div>

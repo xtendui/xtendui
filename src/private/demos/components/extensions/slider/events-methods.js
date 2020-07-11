@@ -87,7 +87,7 @@ Xt.mount.push({
         const targets = self.targets.filter(x => !x.classList.contains('xt-wrap'))
         const indexTr = targets.length + 1
         const strTr = `
-        <li class="slide col-6 col-4-sm">
+        <div class="slide col-6 col-4-sm">
           <div class="slide-inner">
 
             <div class="card card-slide">
@@ -102,7 +102,7 @@ Xt.mount.push({
             </div>
 
           </div>
-        </li>`
+        </div>`
         document.querySelector('#demo--slider-events-targets').append(Xt.createElement(strTr))
         // reinit
         logAdd('<strong>reinit</strong>')

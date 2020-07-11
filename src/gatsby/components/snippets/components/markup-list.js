@@ -1,49 +1,31 @@
 export default () => {
   return `
-<li>
-  <button type="button">
-    Lorem Ipsum
-  </button>
-</li>
-<li>
-  <button type="button">
-    Dolor sit
-  </button>
-</li>
-<li>
-  <button type="button">
-    Amet
-  </button>
-</li>
-<li>
-  <button type="button">
-    Lorem Ipsum
-  </button>
-</li>
-<li>
-  <button type="button">
-    Dolor sit
-  </button>
-</li>
-<li>
-  <button type="button">
-    Amet
-  </button>
-</li>
-<li>
-  <button type="button">
-    Lorem Ipsum
-  </button>
-</li>
-<li>
-  <button type="button">
-    Dolor sit
-  </button>
-</li>
-<li>
-  <button type="button">
-    Amet
-  </button>
-</li>
+<button type="button">
+  Lorem Ipsum
+</button>
+<button type="button">
+  Dolor sit
+</button>
+<button type="button">
+  Amet
+</button>
+<button type="button">
+  Lorem Ipsum
+</button>
+<button type="button">
+  Dolor sit
+</button>
+<button type="button">
+  Amet
+</button>
+<button type="button">
+  Lorem Ipsum
+</button>
+<button type="button">
+  Dolor sit
+</button>
+<button type="button">
+  Amet
+</button>
 `
 }
