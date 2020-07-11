@@ -24,16 +24,9 @@ Or use flex util on `.card-content`.
   </demovanilla>
 </demo>
 
-To stretch inner elements on `.card-block` give it `.flex-full` and You can space with `margin-<position>: auto;` on inner elements.
-
-<demo>
-  <demovanilla src="vanilla/components/core/row/stretch-card-inner">
-  </demovanilla>
-</demo>
-
 ## Touch overflow
 
-Use `.row-touch-overflow` to have browser overflow on touch devices.
+Use `.row-touch-overflow` to have browser scroll overflow on touch devices.
 
 <demo>
   <demovanilla src="vanilla/components/core/row/touch-overflow">
