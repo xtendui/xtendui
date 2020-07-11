@@ -7,7 +7,7 @@ date: "2020-10-10"
 ---
 
 [[notePrimary]]
-| Drop uses list to style it's content, refer to [list's options](/components/core/list/option-css) for all **content**.
+| Drop uses list to style it's content, refer to [list's options](/components/core/list/option-css).
 
 ## List
 

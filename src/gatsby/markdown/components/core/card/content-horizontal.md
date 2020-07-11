@@ -2,8 +2,8 @@
 type: "Components"
 category: "Core"
 parent: "Card"
-title: "Horizontal"
-date: "2019-05-15"
+title: "Content Horizontal"
+date: "2020-10-05"
 ---
 
 ## Block

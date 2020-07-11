@@ -3,7 +3,7 @@ type: "Components"
 category: "Core"
 parent: "Drop"
 title: "Option Css"
-date: "2019-12-01"
+date: "2019-12-20"
 ---
 
 ## Preset
@@ -21,6 +21,28 @@ date: "2019-12-01"
 
 <demo>
   <demovanilla src="vanilla/components/core/drop/static">
+  </demovanilla>
+</demo>
+
+## Position
+
+Set drop position with this classes.
+
+|                         | Syntax                                    | Example                       |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Class                   | `.drop-{position}`                        | `.drop-bottom` `.drop-top` `.drop-left` `.drop-right` `.drop-center` `.drop-before` `.drop-after` |
+| Mixin                   | `.drop-{position}()`                      | `.drop-bottom()` `.drop-top()` `.drop-left()` `.drop-right()` `.drop-center()` `.drop-before()` `.drop-after()` |
+
+<demo>
+  <demovanilla src="vanilla/components/core/drop/left">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/drop/right">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/drop/center">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/drop/before">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/drop/after">
   </demovanilla>
 </demo>
 
@@ -60,31 +82,12 @@ Set drop size with this classes.
   </demovanilla>
 </demo>
 
-## Position
-
-Set drop position with this classes.
-
-|                         | Syntax                                    | Example                       |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.drop-{position}`                        | `.drop-bottom` `.drop-top` `.drop-left` `.drop-right` `.drop-center` `.drop-before` `.drop-after` |
-| Mixin                   | `.drop-{position}()`                      | `.drop-bottom()` `.drop-top()` `.drop-left()` `.drop-right()` `.drop-center()` `.drop-before()` `.drop-after()` |
-
-<demo>
-  <demovanilla src="vanilla/components/core/drop/left">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/right">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/center">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/before">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/after">
-  </demovanilla>
-</demo>
-
 ## List
 
-### Size
+[[notePrimary]]
+| Drop uses list to style it's content, refer to [list's options](/components/core/list/option-css).
+
+#### Size
 
 Classes for assigning size (e.g.: padding or font size). Add or remove selectors at your discretion.
 
@@ -105,9 +108,9 @@ Classes for assigning size (e.g.: padding or font size). Add or remove selectors
 ## Card
 
 [[notePrimary]]
-| Drop uses card to style it's content, refer to [card's option](/components/core/card/option) for all **option**.
+| Drop uses card to style it's content, refer to [card's option](/components/core/card/option-css).
 
-### Variant
+#### Variant
 
 Classes for assigning variant (e.g.: border / background / color). Add or remove selectors at your discretion.
 
@@ -125,7 +128,7 @@ Classes for assigning variant (e.g.: border / background / color). Add or remove
   </demovanilla>
 </demo>
 
-### Size
+#### Size
 
 Classes for assigning size (e.g.: padding or font size). Add or remove selectors at your discretion.
 
@@ -143,7 +146,7 @@ Classes for assigning size (e.g.: padding or font size). Add or remove selectors
   </demovanilla>
 </demo>
 
-### Block Size
+#### Block Size
 
 Classes for assigning size (e.g.: padding or font size). Add or remove selectors at your discretion.
 

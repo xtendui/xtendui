@@ -180,7 +180,7 @@ Classes and mixins for setting **flex** properties.
 
 </div>
 
-For available **{value}** see [list](/components/core/list/option) or [row](/components/core/row/option).
+For available **{value}** see [list](/components/core/list/option-css) or [row](/components/core/row/option-css).
 
 <div class="table-scroll">
 

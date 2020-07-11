@@ -7,7 +7,7 @@ date: "2019-12-01"
 ---
 
 [[notePrimary]]
-| Group uses list to style it's content, refer to [list's options](/components/core/list/option) for all **option**.
+| Group uses list to style it's content, refer to [list's options](/components/core/list/option-css).
 
 ## Variant
 

@@ -3,11 +3,11 @@ type: "Components"
 category: "Core"
 parent: "Drop"
 title: "Content Card"
-date: "2020-10-01"
+date: "2020-10-05"
 ---
 
 [[notePrimary]]
-| Drop uses card to style it's content, refer to [card's content](/components/core/card/content) for all **content**.
+| Drop uses card to style it's content, refer to [card's content](/components/core/card/content).
 
 ## Asset
 

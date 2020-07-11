@@ -3,11 +3,11 @@ type: "Components"
 category: "Core"
 parent: "Overlay"
 title: "Content Card"
-date: "2020-10-01"
+date: "2020-10-10"
 ---
 
 [[notePrimary]]
-| Overlay uses card to style it's content, refer to [card's content](/components/core/card/content) for all **content**.
+| Overlay uses card to style it's content, refer to [card's content](/components/core/card/content).
 
 ## Asset
 

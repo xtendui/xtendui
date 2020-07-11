@@ -3,7 +3,7 @@ type: "Components"
 category: "Core"
 parent: "Card"
 title: "Content"
-date: "2020-10-01"
+date: "2020-10-10"
 ---
 
 ## Asset
