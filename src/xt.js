@@ -4,10 +4,6 @@
 
 export const Xt = {}
 
-// call only if in browser mode
-// https://www.gatsbyjs.org/docs/debugging-html-builds/#how-to-check-if-code-classlanguage-textwindowcode-is-defined
-//
-
 //
 // vars
 //
@@ -21,6 +17,7 @@ Xt.resizeDelay = 500
 Xt.scrollDelay = false
 Xt.medialoadedDelay = 500
 Xt.stickyIndex = 800
+Xt.scrollRestoration = 'manual'
 Xt.focusables = 'a, button, details, input, iframe, select, textarea, .btn-close'
 Xt.supportScroll = typeof window === 'undefined' ? false : 'onscroll' in window && !/(gle|ing)bot/.test(navigator.userAgent)
 
@@ -1121,21 +1118,6 @@ if (typeof window !== 'undefined') {
   }
 
   /**
-   * debug console warning on img without loading attribute
-   */
-
-  requestAnimationFrame(() => {
-    if (Xt.debug) {
-      Xt.mount.push({
-        matches: 'img:not([loading]):not([src^="data:"])',
-        mount: object => {
-          console.warn('Xt.debug: detected an image without "loading" attribute', object)
-        },
-      })
-    }
-  })
-
-  /**
    * Xt.windowHeight
    * vindow height value only on width resize to fix mobile window height changes
    */
@@ -1160,6 +1142,31 @@ if (typeof window !== 'undefined') {
      */
     document.documentElement.style.setProperty('--vh', Xt.windowHeight * 0.01 + 'px')
   }
+
+  /**
+   * scrollRestoration
+   */
+
+  Xt.ready(() => {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = Xt.scrollRestoration
+    }
+  })
+
+  /**
+   * debug console warning on img without loading attribute
+   */
+
+  requestAnimationFrame(() => {
+    if (Xt.debug) {
+      Xt.mount.push({
+        matches: 'img:not([loading]):not([src^="data:"])',
+        mount: object => {
+          console.warn('Xt.debug: detected an image without "loading" attribute', object)
+        },
+      })
+    }
+  })
 
   //
 }

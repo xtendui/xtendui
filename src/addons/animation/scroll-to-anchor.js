@@ -99,7 +99,7 @@ class ScrollToAnchor {
             const hash = hashchange ? loc.hash : el.hash.toString()
             self.target = self.object.querySelector(hash)
             if (self.target) {
-              // prevent location.hash
+              // prevent page hash
               if (e) {
                 e.preventDefault()
               }
