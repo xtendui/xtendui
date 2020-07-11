@@ -64,7 +64,7 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '.gatsby_site_wrapper',
+  matches: '.gatsby_site_article',
   mount: object => {
     // vars
 
