@@ -7,7 +7,6 @@ import { markdownSlug } from 'components/snippets/markdown-slug.js'
 class DocHead extends React.Component {
   render() {
     const { page } = this.props
-    const postsAdiacentFiltered = page.postsAdiacent.posts.filter((x) => !x.post.frontmatter.demos)
     return (
       <header className="gatsby_site_article_hero">
         <div className="gatsby_site_article_hero_inner">
@@ -28,57 +27,6 @@ class DocHead extends React.Component {
               {page.post.frontmatter.description ? <h2 className="p">{page.post.frontmatter.description}</h2> : null}
             </div>
           </div>
-          {page.post.frontmatter.parent ? (
-            <nav className="gatsby_site_article_hero_links">
-              <div className="gatsby_site_article_hero_links_inner">
-                <div className="row">
-                  <div>
-                    {page.post.frontmatter.parent === page.post.frontmatter.title ? (
-                      <Link to={'/' + kebabCase(page.post.frontmatter.type)} className="btn">
-                        <span className="icon-arrow-left icon-left"></span>
-                        {page.post.frontmatter.type}
-                      </Link>
-                    ) : (
-                      page.postsAdiacent.posts.map(({ post: adiacent }, i) => {
-                        if (page.post.frontmatter.parent === adiacent.frontmatter.title) {
-                          return (
-                            <div key={i}>
-                              <Link to={markdownSlug(adiacent)} className="btn">
-                                <span className="icon-arrow-left icon-left"></span>
-                                {adiacent.frontmatter.title}
-                              </Link>
-                            </div>
-                          )
-                        }
-                      })
-                    )}
-                  </div>
-
-                  <div>
-                    {page.post.frontmatter.type !== 'Themes'
-                      ? postsAdiacentFiltered.map(({ post: adiacent }, i) => {
-                          if (postsAdiacentFiltered.length > 0 && markdownSlug(adiacent) === markdownSlug(page.post)) {
-                            let index = i + 1
-                            index = index >= postsAdiacentFiltered.length ? 0 : index
-                            const nextAdiacent = postsAdiacentFiltered[index].post
-                            if (nextAdiacent.frontmatter.parent !== nextAdiacent.frontmatter.title) {
-                              return (
-                                <div key={index}>
-                                  <Link to={markdownSlug(nextAdiacent)} className="btn align-right">
-                                    {nextAdiacent.frontmatter.title}
-                                    <span className="icon-arrow-right icon-right"></span>
-                                  </Link>
-                                </div>
-                              )
-                            }
-                          }
-                        })
-                      : null}
-                  </div>
-                </div>
-              </div>
-            </nav>
-          ) : null}
         </div>
       </header>
     )
@@ -96,22 +44,6 @@ DocHead.propTypes = {
         title: PropTypes.string.isRequired,
         description: PropTypes.string,
       }).isRequired,
-    }).isRequired,
-    postsAdiacent: PropTypes.shape({
-      posts: PropTypes.arrayOf(
-        PropTypes.shape({
-          post: PropTypes.shape({
-            frontmatter: PropTypes.shape({
-              type: PropTypes.string.isRequired,
-              category: PropTypes.string,
-              parent: PropTypes.string,
-              title: PropTypes.string.isRequired,
-              description: PropTypes.string,
-              demos: PropTypes.array,
-            }).isRequired,
-          }).isRequired,
-        }).isRequired
-      ),
     }).isRequired,
   }).isRequired,
 }

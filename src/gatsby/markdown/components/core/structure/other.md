@@ -34,7 +34,7 @@ addEventListener('scroll', e => {
 
 </div>
 
-### Resize
+#### Resize
 
 When the `e.type = 'resize'`, `Xt.eventDelay` also calls the function **only if the height of the window changes**, to fix browsers bugs call on resize events when scrolling, and to not trigger the resize event on mobile when the address bar hides on scroll.
 

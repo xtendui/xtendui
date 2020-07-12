@@ -88,7 +88,7 @@ Classes for assigning size (e.g.: padding or font size). Add or remove selectors
   </demovanilla>
 </demo>
 
-### Block Size
+#### Block Size
 
 Classes for assigning size (e.g.: padding or font size). Add or remove selectors at your discretion.
 
