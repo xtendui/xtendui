@@ -3,7 +3,7 @@ import 'xtend-library/src/addons/animation/mouse-follow.js'
 
 Xt.mount.push({
   matches: '.demo--loader-mouse-spinner',
-  mount: object => {
+  mount: (object) => {
     // mousefollow
 
     const mouseFollowObject = object

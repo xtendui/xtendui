@@ -170,7 +170,7 @@ class Slider extends Xt.Toggle {
           console.debug('Xt.debug: Xt.Slider cannot use "contain": true when using "drag": {"wrap": true}', self.object)
         }
       }
-      const cloneSlide = slide => {
+      const cloneSlide = (slide) => {
         const cloned = slide.cloneNode(true)
         cloned.classList.add('xt-clone', 'xt-wrap')
         cloned.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesInitial, ...self.classesInverse)
@@ -405,7 +405,7 @@ class Slider extends Xt.Toggle {
     }
     // set wheel min and max
     if (options.wheel && options.wheel.selector) {
-      const arr = self.targets.filter(x => !x.classList.contains('xt-wrap'))
+      const arr = self.targets.filter((x) => !x.classList.contains('xt-wrap'))
       const first = arr[0]
       const last = arr[arr.length - 1]
       self.detail.wheelMin = -Xt.dataStorage.get(first, self.componentNamespace + 'GroupPos')
@@ -955,7 +955,7 @@ class Slider extends Xt.Toggle {
     self.detail.dragCurrentReal = self.detail.dragCurrent
     // overflow
     if (options.drag.overflow) {
-      const arr = self.targets.filter(x => !x.classList.contains('xt-wrap'))
+      const arr = self.targets.filter((x) => !x.classList.contains('xt-wrap'))
       const first = arr[0]
       const last = arr[arr.length - 1]
       const min = Xt.dataStorage.get(first, self.componentNamespace + 'GroupPos')
@@ -1198,15 +1198,15 @@ class Slider extends Xt.Toggle {
     // drag wrap
     if (self.dragger && options.drag.wrap) {
       // clear elements
-      for (const el of self.elements.filter(x => x.classList.contains('xt-wrap'))) {
+      for (const el of self.elements.filter((x) => x.classList.contains('xt-wrap'))) {
         el.remove()
       }
-      self.elements = self.elements.filter(x => !x.classList.contains('xt-wrap'))
+      self.elements = self.elements.filter((x) => !x.classList.contains('xt-wrap'))
       // clear targets
-      for (const tr of self.targets.filter(x => x.classList.contains('xt-wrap'))) {
+      for (const tr of self.targets.filter((x) => x.classList.contains('xt-wrap'))) {
         tr.remove()
       }
-      self.targets = self.targets.filter(x => !x.classList.contains('xt-wrap'))
+      self.targets = self.targets.filter((x) => !x.classList.contains('xt-wrap'))
     }
   }
 
@@ -1243,7 +1243,7 @@ Slider.optionsDefault = {
     frictionLimit: 1.5,
     frictionTime: 25,
     */
-    overflow: overflow => {
+    overflow: (overflow) => {
       return Math.pow(overflow, 0.73)
     },
   },
@@ -1271,7 +1271,7 @@ Slider.optionsDefault = {
     transform: true,
     horizontal: true,
     factor: 1,
-    friction: delta => {
+    friction: (delta) => {
       return delta / 9
     },
     frictionLimit: 1.5,
@@ -1301,7 +1301,7 @@ Xt.Slider = Slider
 
 Xt.mount.push({
   matches: '[data-' + Xt.Slider.componentName + ']',
-  mount: object => {
+  mount: (object) => {
     // vars
 
     const optionsMarkup = object.getAttribute('data-' + Xt.Slider.componentName)

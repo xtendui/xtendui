@@ -40,7 +40,7 @@ if (typeof window !== 'undefined') {
    * ready
    * @param {Function} fnc Function to execute on dom ready
    */
-  Xt.ready = fnc => {
+  Xt.ready = (fnc) => {
     if (document.readyState === 'complete') {
       requestAnimationFrame(() => {
         fnc()
@@ -79,7 +79,7 @@ if (typeof window !== 'undefined') {
   /**
    * observer
    */
-  Xt.observer = new MutationObserver(mutationsList => {
+  Xt.observer = new MutationObserver((mutationsList) => {
     for (const mutation of mutationsList) {
       if (mutation.type === 'childList') {
         // added
@@ -134,7 +134,7 @@ if (typeof window !== 'undefined') {
                 object: el,
                 unmount: destroy,
                 unmountRemove: () => {
-                  Xt.unmount.filter(x => {
+                  Xt.unmount.filter((x) => {
                     return x.object !== el
                   })
                 },
@@ -206,7 +206,7 @@ if (typeof window !== 'undefined') {
    * @param {Object} self Component self
    * @param {Function} fnc Component init
    */
-  Xt.destroyAndInit = self => {
+  Xt.destroyAndInit = (self) => {
     // @FIX multiple initializations
     const old = Xt.get(self.componentName, self.object)
     if (old) {
@@ -293,7 +293,7 @@ if (typeof window !== 'undefined') {
      * @param {Node|HTMLElement|EventTarget|Window} el
      * @return {*}
      */
-    getAll: el => {
+    getAll: (el) => {
       const getEl = Xt.dataStorage._storage.get(el)
       // null if empty
       if (!getEl) {
@@ -360,7 +360,7 @@ if (typeof window !== 'undefined') {
      * add scrollbar currents
      * @param {Node|HTMLElement|EventTarget|Window} el Elements to be deactivated
      */
-    add: el => {
+    add: (el) => {
       Xt.scrollbar.currents.push(el)
     },
 
@@ -368,8 +368,8 @@ if (typeof window !== 'undefined') {
      * remove scrollbar currents
      * @param {Node|HTMLElement|EventTarget|Window} el Elements to be deactivated
      */
-    remove: el => {
-      Xt.scrollbar.currents = Xt.scrollbar.currents.filter(x => x !== el)
+    remove: (el) => {
+      Xt.scrollbar.currents = Xt.scrollbar.currents.filter((x) => x !== el)
     },
   }
 
@@ -425,7 +425,7 @@ if (typeof window !== 'undefined') {
      * focus change on key events
      * @param {Event} e Event
      */
-    changeKey: e => {
+    changeKey: (e) => {
       const code = e.keyCode ? e.keyCode : e.which
       if (code === 9) {
         if (!Xt.focus.block) {
@@ -445,7 +445,7 @@ if (typeof window !== 'undefined') {
      * focus change on other events
      * @param {Event} e Event
      */
-    changeOther: e => {
+    changeOther: (e) => {
       if (!Xt.focus.block) {
         // remember Xt.focus
         Xt.focus.current = e.target
@@ -478,9 +478,9 @@ if (typeof window !== 'undefined') {
      * activate focusLimit to an element
      * @param {Node|HTMLElement|EventTarget|Window} el Element
      */
-    on: el => {
+    on: (el) => {
       // vars
-      Xt.focusLimit.focusables = Array.from(el.querySelectorAll(Xt.focusables)).filter(x => x.matches(':not([disabled]), :not([tabindex="-1"])'))
+      Xt.focusLimit.focusables = Array.from(el.querySelectorAll(Xt.focusables)).filter((x) => x.matches(':not([disabled]), :not([tabindex="-1"])'))
       if (Xt.focusLimit.focusables.length) {
         Xt.focusLimit.first = Xt.focusLimit.focusables[0]
         Xt.focusLimit.last = Xt.focusLimit.focusables[Xt.focusLimit.focusables.length - 1]
@@ -501,15 +501,15 @@ if (typeof window !== 'undefined') {
      * deactivate focusLimit to an element
      * @param {Node|HTMLElement|EventTarget|Window} el Element
      */
-    off: el => {
+    off: (el) => {
       // event
       const focusLimitHandler = Xt.dataStorage.get(document, 'keydown/focusLimit')
       document.removeEventListener('keydown', focusLimitHandler)
       // actives
-      Xt.focusLimit.actives = Xt.focusLimit.actives.filter(x => x !== el)
+      Xt.focusLimit.actives = Xt.focusLimit.actives.filter((x) => x !== el)
       if (Xt.focusLimit.actives.length) {
         const active = Xt.focusLimit.actives[Xt.focusLimit.actives.length - 1]
-        Xt.focusLimit.actives = Xt.focusLimit.actives.filter(x => x !== active)
+        Xt.focusLimit.actives = Xt.focusLimit.actives.filter((x) => x !== active)
         Xt.focusLimit.on(active)
       } else {
         // @FIX switch mode
@@ -524,7 +524,7 @@ if (typeof window !== 'undefined') {
      * limit even on focus when activated
      * @param {Event} e Event
      */
-    limit: e => {
+    limit: (e) => {
       const code = e.keyCode ? e.keyCode : e.which
       if (code === 9) {
         if (!Xt.focusLimit.focusables.includes(document.activeElement)) {
@@ -632,7 +632,7 @@ if (typeof window !== 'undefined') {
   Xt.getTranslate(el)[1]; // for translateY
   */
 
-  Xt.getTranslate = element => {
+  Xt.getTranslate = (element) => {
     const transArr = []
     const style = getComputedStyle(element)
     const transform = style.transform
@@ -685,7 +685,7 @@ if (typeof window !== 'undefined') {
    * @param {Array} arr Array of objects to merge
    * @return {Object} Merged object
    */
-  Xt.merge = arr => {
+  Xt.merge = (arr) => {
     const final = {}
     for (const obj of arr) {
       if (obj) {
@@ -713,7 +713,7 @@ if (typeof window !== 'undefined') {
    * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} el
    * @return {NodeList|Array}
    */
-  Xt.arrSingle = el => {
+  Xt.arrSingle = (el) => {
     if (!el) {
       return []
     }
@@ -731,7 +731,7 @@ if (typeof window !== 'undefined') {
    * @param {String} str Html string (only 1 root html tag)
    * @return {Node} HTML elements
    */
-  Xt.createElement = str => {
+  Xt.createElement = (str) => {
     const div = document.createElement('div')
     div.innerHTML = str.trim()
     return div.firstChild
@@ -775,7 +775,7 @@ if (typeof window !== 'undefined') {
    * @param {Number|String} width
    * @return {String} Value in px
    */
-  Xt.normalizeWidth = width => {
+  Xt.normalizeWidth = (width) => {
     width = parseFloat(width)
     if (!width || width + Xt.scrollbarWidth >= window.innerWidth) {
       width = ''
@@ -789,7 +789,7 @@ if (typeof window !== 'undefined') {
    * fix scrollbar spacing when changing overflow adding padding
    * @param {Array|Node|HTMLElement|EventTarget|Window} container
    */
-  Xt.scrollbarSpaceOn = container => {
+  Xt.scrollbarSpaceOn = (container) => {
     const width = Xt.scrollbarWidth
     container.style.paddingRight = width + 'px'
     // backdrop
@@ -829,7 +829,7 @@ if (typeof window !== 'undefined') {
    * fix scrollbar spacing when changing overflow adding padding
    * @param {Array|Node|HTMLElement|EventTarget|Window} container
    */
-  Xt.scrollbarSpaceOff = container => {
+  Xt.scrollbarSpaceOff = (container) => {
     container.style.paddingRight = ''
     // backdrop
     const backdrops = container.querySelectorAll('.backdrop')
@@ -871,7 +871,7 @@ if (typeof window !== 'undefined') {
    * ignoreOnce
    * @param {Node|HTMLElement|EventTarget|Window} el
    */
-  Xt.ignoreOnce = el => {
+  Xt.ignoreOnce = (el) => {
     if (el.classList.contains('xt-ignore-once')) {
       requestAnimationFrame(() => {
         // @FIX react when componentDidMount
@@ -969,7 +969,7 @@ if (typeof window !== 'undefined') {
    * @param {Number|String} num Number to check
    * @return {Number}
    */
-  Xt.windowPercent = num => {
+  Xt.windowPercent = (num) => {
     if (typeof num === 'string' || num instanceof String) {
       if (num.indexOf('%') !== -1) {
         num = (Xt.windowHeight * parseFloat(num)) / 100
@@ -1006,7 +1006,7 @@ if (typeof window !== 'undefined') {
    * @param {Node|HTMLElement|EventTarget|Window} el Element animating
    * @return {Boolean}
    */
-  Xt.visible = el => {
+  Xt.visible = (el) => {
     return !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length)
   }
 
@@ -1128,7 +1128,7 @@ if (typeof window !== 'undefined') {
    * vindow height value only on width resize to fix mobile window height changes
    */
 
-  addEventListener('resize', e => {
+  addEventListener('resize', (e) => {
     Xt.eventDelay(
       e,
       document.documentElement,
@@ -1167,7 +1167,7 @@ if (typeof window !== 'undefined') {
     if (Xt.debug) {
       Xt.mount.push({
         matches: 'img:not([loading]):not([src^="data:"])',
-        mount: object => {
+        mount: (object) => {
           console.warn('Xt.debug: detected an image without "loading" attribute', object)
         },
       })

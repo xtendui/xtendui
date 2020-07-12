@@ -142,8 +142,8 @@ class Toggle {
     // elements
     if (options.elements) {
       let arr = Array.from(Xt.arrSingle(self.container.querySelectorAll(options.elements)))
-      arr = arr.filter(x => !x.closest('.xt-ignore')) // filter out ignore
-      arr = arr.filter(x => !x.closest('[data-xt-nav]')) // filter out nav
+      arr = arr.filter((x) => !x.closest('.xt-ignore')) // filter out ignore
+      arr = arr.filter((x) => !x.closest('[data-xt-nav]')) // filter out nav
       self.elements = arr
       self.destroyElements.push(...self.elements)
     }
@@ -162,7 +162,7 @@ class Toggle {
     // targets
     if (options.targets) {
       let arr = Array.from(self.container.querySelectorAll(options.targets))
-      arr = arr.filter(x => !x.closest('.xt-ignore')) // filter out ignore
+      arr = arr.filter((x) => !x.closest('.xt-ignore')) // filter out ignore
       self.targets = arr
       self.destroyElements.push(...self.targets)
     }
@@ -253,7 +253,7 @@ class Toggle {
     const self = this
     let found = false
     // reset
-    const reset = elReset => {
+    const reset = (elReset) => {
       let isActive = false
       for (const c of self.classes) {
         if (elReset.classList.contains(c)) {
@@ -281,7 +281,7 @@ class Toggle {
     // elements
     const group = el.getAttribute('data-xt-group')
     if (group) {
-      const groupEls = Array.from(self.elements).filter(x => x.getAttribute('data-xt-group') === group)
+      const groupEls = Array.from(self.elements).filter((x) => x.getAttribute('data-xt-group') === group)
       for (const groupEl of groupEls) {
         found = reset(groupEl)
         if (!saveCurrents && self.initialCurrents.includes(groupEl)) {
@@ -558,7 +558,7 @@ class Toggle {
     }
     // mediaLoaded
     if (options.mediaLoaded || options.mediaLoadedReinit) {
-      for (const el of self.elements.filter(x => !x.classList.contains('xt-ignore'))) {
+      for (const el of self.elements.filter((x) => !x.classList.contains('xt-ignore'))) {
         const imgs = el.querySelectorAll('img')
         self.destroyElements.push(...imgs)
         for (const img of imgs) {
@@ -577,7 +577,7 @@ class Toggle {
           }
         }
       }
-      for (const tr of self.targets.filter(x => !x.classList.contains('xt-ignore'))) {
+      for (const tr of self.targets.filter((x) => !x.classList.contains('xt-ignore'))) {
         const imgs = tr.querySelectorAll('img')
         self.destroyElements.push(...imgs)
         for (const img of imgs) {
@@ -894,7 +894,7 @@ class Toggle {
       // choose element by group
       const group = element.getAttribute('data-xt-group')
       if (group) {
-        const found = final.filter(x => x.getAttribute('data-xt-group') === group)
+        const found = final.filter((x) => x.getAttribute('data-xt-group') === group)
         if (!found.length) {
           final.push(element)
         }
@@ -917,7 +917,7 @@ class Toggle {
       // choose element by group
       const group = targets.getAttribute('data-xt-group')
       if (group) {
-        const found = final.filter(x => x.getAttribute('data-xt-group') === group)
+        const found = final.filter((x) => x.getAttribute('data-xt-group') === group)
         if (!found.length) {
           final.push(targets)
         }
@@ -952,8 +952,8 @@ class Toggle {
       // choose element by group
       let final
       const group = el.getAttribute('data-xt-group')
-      const groupElements = Array.from(self.elements).filter(x => x.getAttribute('data-xt-group') === group)
-      const groupTargets = Array.from(self.targets).filter(x => x.getAttribute('data-xt-group') === group)
+      const groupElements = Array.from(self.elements).filter((x) => x.getAttribute('data-xt-group') === group)
+      const groupTargets = Array.from(self.targets).filter((x) => x.getAttribute('data-xt-group') === group)
       if (group) {
         // all group targets if group
         final = Xt.arrSingle(groupElements)
@@ -963,7 +963,7 @@ class Toggle {
           // @FIX when argument is already element
           final = Xt.arrSingle(el)
         } else {
-          const index = groupTargets.findIndex(x => x === el)
+          const index = groupTargets.findIndex((x) => x === el)
           final = Xt.arrSingle(groupElements[index])
         }
       }
@@ -995,8 +995,8 @@ class Toggle {
       // choose only target by group
       let final
       const group = el.getAttribute('data-xt-group')
-      const groupElements = Array.from(self.elements).filter(x => x.getAttribute('data-xt-group') === group)
-      const groupTargets = Array.from(self.targets).filter(x => x.getAttribute('data-xt-group') === group)
+      const groupElements = Array.from(self.elements).filter((x) => x.getAttribute('data-xt-group') === group)
+      const groupTargets = Array.from(self.targets).filter((x) => x.getAttribute('data-xt-group') === group)
       if (group) {
         // all group targets if group
         final = Xt.arrSingle(groupTargets)
@@ -1006,7 +1006,7 @@ class Toggle {
           // @FIX when argument is already target
           final = Xt.arrSingle(el)
         } else {
-          const index = groupElements.findIndex(x => x === el)
+          const index = groupElements.findIndex((x) => x === el)
           final = Xt.arrSingle(groupTargets[index])
         }
       }
@@ -1054,7 +1054,7 @@ class Toggle {
   removeCurrent(element) {
     const self = this
     // removeCurrent
-    Xt.currents[self.namespace] = Xt.currents[self.namespace].filter(x => x !== element)
+    Xt.currents[self.namespace] = Xt.currents[self.namespace].filter((x) => x !== element)
   }
 
   /**
@@ -1065,7 +1065,7 @@ class Toggle {
     const self = this
     // hasCurrent
     const groupElements = self.getElements(el)
-    return Xt.currents[self.namespace].filter(x => x === groupElements[0]).length
+    return Xt.currents[self.namespace].filter((x) => x === groupElements[0]).length
   }
 
   /**
@@ -1103,7 +1103,7 @@ class Toggle {
   checkAnim(elements) {
     const self = this
     // check
-    elements = elements.filter(x => x.classList.contains(self.classesIn[0]) || x.classList.contains(self.classesOut[0]))
+    elements = elements.filter((x) => x.classList.contains(self.classesIn[0]) || x.classList.contains(self.classesOut[0]))
     return elements.length > 0
   }
 
@@ -1663,7 +1663,7 @@ class Toggle {
       let delay = options['delay' + actionCurrent]
       if (delay) {
         if (isNaN(delay)) {
-          const count = Xt.dataStorage.get(el, self.componentNamespace + actionCurrent + 'Count') || els.findIndex(x => x === el)
+          const count = Xt.dataStorage.get(el, self.componentNamespace + actionCurrent + 'Count') || els.findIndex((x) => x === el)
           const tot = Xt.dataStorage.get(el, self.componentNamespace + actionCurrent + 'Tot') || els.length
           if (typeof delay === 'function') {
             delay = delay(count, tot - 1)
@@ -2552,7 +2552,7 @@ class Toggle {
             const eWheel = 'onwheel' in backdrop ? 'wheel' : backdrop.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll'
             backdrop.addEventListener(
               eWheel,
-              e => {
+              (e) => {
                 const delta = -e.deltaY || e.wheelDeltaY
                 element.scrollTop -= delta
               },
@@ -2925,7 +2925,7 @@ class Toggle {
     }
     // xtNamespace linked components
     const selfs = Xt.dataStorage.get(self.namespace, 'xtNamespace')
-    selfs.filter(x => x !== self)
+    selfs.filter((x) => x !== self)
     Xt.dataStorage.set(self.namespace, 'xtNamespace', selfs)
     // weak
     if (!weak) {
@@ -3043,7 +3043,7 @@ Xt.Toggle = Toggle
 
 Xt.mount.push({
   matches: '[data-' + Xt.Toggle.componentName + ']',
-  mount: object => {
+  mount: (object) => {
     // vars
 
     const optionsMarkup = object.getAttribute('data-' + Xt.Toggle.componentName)

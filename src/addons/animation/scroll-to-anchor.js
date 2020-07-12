@@ -105,7 +105,7 @@ class ScrollToAnchor {
               }
               // class
               let els = Array.from(self.object.querySelectorAll(options.elements))
-              els = els.filter(x => !x.closest('.xt-ignore')) // filter out ignore
+              els = els.filter((x) => !x.closest('.xt-ignore')) // filter out ignore
               for (const other of els) {
                 other.classList.remove(...self.classes)
               }
@@ -161,7 +161,7 @@ class ScrollToAnchor {
     }
     // loop
     let els = Array.from(self.object.querySelectorAll(self.options.elements))
-    els = els.filter(x => !x.closest('.xt-ignore')) // filter out ignore
+    els = els.filter((x) => !x.closest('.xt-ignore')) // filter out ignore
     for (const el of els) {
       // add space
       self.scrollSpace = self.options.scrollSpace()
@@ -178,7 +178,7 @@ class ScrollToAnchor {
             }
             // loop multiple els of
             const matches = self.options.elements.replace('#', loc.hash)
-            const currents = els.filter(x => x.matches(matches))
+            const currents = els.filter((x) => x.matches(matches))
             found = !!currents.length
             for (const current of currents) {
               if (!current.classList.contains('active')) {

@@ -6,7 +6,7 @@ import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '.demo--slider-progress',
-  mount: object => {
+  mount: (object) => {
     // vars
 
     const spinnerTime = Xt.vars.timeTiny
@@ -31,7 +31,7 @@ Xt.mount.push({
       timeline.to(spinner, { strokeDashoffset: 628, duration: spinnerTime, ease: spinnerEase, autoRound: false })
       timeline.to(spinner, { strokeDashoffset: 0, duration: self.options.auto.time - spinnerTime, ease: spinnerEase, autoRound: false })
       // elements
-      const elements = self.elements.filter(x => self.hasCurrent(x))
+      const elements = self.elements.filter((x) => self.hasCurrent(x))
       for (const element of elements) {
         const fillers = element.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
@@ -40,7 +40,7 @@ Xt.mount.push({
         }
       }
       // targets
-      const targets = self.targets.filter(x => self.hasCurrent(x))
+      const targets = self.targets.filter((x) => self.hasCurrent(x))
       for (const target of targets) {
         const fillers = target.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
@@ -56,7 +56,7 @@ Xt.mount.push({
 
     const eventAutostop = () => {
       // elements
-      const elements = self.elements.filter(x => self.hasCurrent(x))
+      const elements = self.elements.filter((x) => self.hasCurrent(x))
       for (const element of elements) {
         const fillers = element.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
@@ -64,7 +64,7 @@ Xt.mount.push({
         }
       }
       // targets
-      const targets = self.targets.filter(x => self.hasCurrent(x))
+      const targets = self.targets.filter((x) => self.hasCurrent(x))
       for (const target of targets) {
         const fillers = target.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
@@ -82,7 +82,7 @@ Xt.mount.push({
       const spinner = self.object.querySelectorAll('.spinner svg:nth-child(1) circle')
       gsap.to(spinner, { strokeDashoffset: 628, duration: spinnerTime, ease: spinnerEase, autoRound: false })
       // elements
-      const elements = self.elements.filter(x => self.hasCurrent(x))
+      const elements = self.elements.filter((x) => self.hasCurrent(x))
       for (const element of elements) {
         const fillers = element.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
@@ -90,7 +90,7 @@ Xt.mount.push({
         }
       }
       // targets
-      const targets = self.targets.filter(x => self.hasCurrent(x))
+      const targets = self.targets.filter((x) => self.hasCurrent(x))
       for (const target of targets) {
         const fillers = target.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {

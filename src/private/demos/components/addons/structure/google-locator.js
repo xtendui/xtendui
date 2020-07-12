@@ -13,7 +13,7 @@ Xt.addScript(
 window.demoGoogleLocator = function () {
   Xt.mount.push({
     matches: '.demo--google-locator',
-    mount: object => {
+    mount: (object) => {
       // init
 
       let self = new Xt.GoogleLocator(object, {

@@ -9,7 +9,7 @@ import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '#iframe--brands-featured-v1 body .slider', // add your own selector instead of body to contain the code
-  mount: object => {
+  mount: (object) => {
     // vars
 
     const timeScaleTimeOn = Xt.vars.timeMedium
@@ -32,7 +32,7 @@ Xt.mount.push({
 
     // on
 
-    const eventOn = e => {
+    const eventOn = (e) => {
       const tr = e.target
       // useCapture delegation
       if (self.targets.includes(tr)) {

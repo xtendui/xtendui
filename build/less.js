@@ -10,7 +10,7 @@ const lessCoreGlob = new glob.Glob('src/core/**/*.less', { ignore: ['**/_*.less'
   }
 })
 lessCoreGlob.on('end', () => {
-  writeFile('./src/xtend-core.less', lessCore, err => {
+  writeFile('./src/xtend-core.less', lessCore, (err) => {
     if (err) console.log(err)
   })
 })
@@ -22,7 +22,7 @@ const lessAddonsGlob = new glob.Glob('src/addons/**/*.less', { ignore: ['**/_*.l
   }
 })
 lessAddonsGlob.on('end', () => {
-  writeFile('./src/xtend-addons.less', lessAddons, err => {
+  writeFile('./src/xtend-addons.less', lessAddons, (err) => {
     if (err) console.log(err)
   })
 })
@@ -34,7 +34,7 @@ const lessExtensionsGlob = new glob.Glob('src/extensions/**/*.less', { ignore: [
   }
 })
 lessExtensionsGlob.on('end', () => {
-  writeFile('./src/xtend-extensions.less', lessExtensions, err => {
+  writeFile('./src/xtend-extensions.less', lessExtensions, (err) => {
     if (err) console.log(err)
   })
 })
@@ -46,7 +46,7 @@ const lessDemosGlob = new glob.Glob('src/private/demos/**/*.less', { ignore: ['*
   }
 })
 lessDemosGlob.on('end', () => {
-  writeFile('./src/xtend-demos.less', lessDemos, err => {
+  writeFile('./src/xtend-demos.less', lessDemos, (err) => {
     if (err) console.log(err)
   })
 })

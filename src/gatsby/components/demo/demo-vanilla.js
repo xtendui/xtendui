@@ -22,7 +22,7 @@ class DemoVanilla extends React.Component {
             }
           }
         `}
-        render={data => (
+        render={(data) => (
           <div
             className={'gatsby_demo_item gatsby_demo_preview'}
             data-name={name || demo.name.split('-').join(' ')}
@@ -41,12 +41,12 @@ class DemoVanilla extends React.Component {
               }
             />
             {data.allFile.files
-              .filter(x => x.file.relativePath === `${demo.path}.less`)
+              .filter((x) => x.file.relativePath === `${demo.path}.less`)
               .map((file, i) => (
                 <div className="gatsby_demo_source xt-ignore" data-lang="less" dangerouslySetInnerHTML={{ __html: cssSource(demo) }} key={i} />
               ))}
             {data.allFile.files
-              .filter(x => x.file.relativePath === `${demo.path}.js`)
+              .filter((x) => x.file.relativePath === `${demo.path}.js`)
               .map((file, i) => (
                 <div className="gatsby_demo_source xt-ignore" data-lang="js" dangerouslySetInnerHTML={{ __html: jsSource(demo) }} key={i} />
               ))}

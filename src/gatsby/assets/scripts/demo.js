@@ -69,7 +69,7 @@ if (typeof window !== 'undefined') {
  * formatCode
  */
 
-const formatCode = source => {
+const formatCode = (source) => {
   let text = source.innerHTML
   // ##START and ##END
   const metas = text.match(/\/\/##START\n([\S\s]*?)\/\/##END\n/g)
@@ -94,7 +94,7 @@ const formatCode = source => {
   }
   // search html tags
   const re = /<[^>]*>/g
-  text = text.replace(re, match => {
+  text = text.replace(re, (match) => {
     // replace quote entities
     match = match.replace(/&quot;/g, '"')
     // replace entities
@@ -137,13 +137,13 @@ const populateBlock = () => {
   }
   // overlay fullscreen
   for (const el of document.querySelectorAll('[data-gatsby-listing-toggle]')) {
-    el.addEventListener('click', e => {
+    el.addEventListener('click', (e) => {
       e.preventDefault()
       location.hash = el.nextSibling.querySelector('.gatsby_demo_item ').getAttribute('id')
       cancelAnimationFrame(Xt.dataStorage.get(document, 'gatbsy_open-full-raf'))
     })
   }
-  document.querySelector('#gatbsy_open-full').addEventListener('off.xt', e => {
+  document.querySelector('#gatbsy_open-full').addEventListener('off.xt', (e) => {
     if (e.target === document.querySelector('#gatbsy_open-full')) {
       const content = document.querySelector('#gatbsy_open-full-content')
       // scrollToItem
@@ -257,11 +257,11 @@ const populateDemo = (container, i) => {
     )
     // https://github.com/zenorocha/clipboard.js/
     const clipboard = new ClipboardJS('.btn-clipboard', {
-      target: trigger => {
+      target: (trigger) => {
         return trigger.closest('.gatsby_demo').querySelector('.gatsby_demo_item.active .gatsby_demo_code.active .gatsby_demo_code_body_item.active pre code')
       },
     })
-    clipboard.on('success', e => {
+    clipboard.on('success', (e) => {
       e.clearSelection()
       // $(e.trigger).attr('data-original-title', 'Done').tooltip('show')
     })
@@ -349,10 +349,10 @@ const populateDemo = (container, i) => {
     targets: '#' + demoId + ' .gatsby_demo_code',
     instant: true,
   })
-  document.querySelector('#' + demoId + ' .gatsby_demo_code').addEventListener('on.xt', e => {
+  document.querySelector('#' + demoId + ' .gatsby_demo_code').addEventListener('on.xt', (e) => {
     e.target.closest('.gatsby_demo_item').classList.add('active-code')
   })
-  document.querySelector('#' + demoId + ' .gatsby_demo_code').addEventListener('off.xt', e => {
+  document.querySelector('#' + demoId + ' .gatsby_demo_code').addEventListener('off.xt', (e) => {
     e.target.closest('.gatsby_demo_item').classList.remove('active-code')
   })
 }
@@ -360,7 +360,7 @@ const populateDemo = (container, i) => {
 /**
  * makeGatbsyWithIframe
  */
-const makeGatbsyWithIframe = item => {
+const makeGatbsyWithIframe = (item) => {
   // btn-open-iframe
   const iframe = item.querySelector('iframe')
   const btn = item.closest('.gatsby_demo').querySelector('.btn-open-iframe')
@@ -457,11 +457,11 @@ const initializeIframe = (container, item) => {
   }
 }
 
-const loadIframe = iframe => {
+const loadIframe = (iframe) => {
   iframe.setAttribute('src', iframe.getAttribute('data-src'))
 }
 
-const unloadIframe = iframe => {
+const unloadIframe = (iframe) => {
   iframe.removeAttribute('src')
 }
 
@@ -475,7 +475,7 @@ if (typeof window !== 'undefined') {
       item.classList.add('loaded')
     }
   }
-  window.resizeIframe = name => {
+  window.resizeIframe = (name) => {
     const src = 'iframe[name="' + name + '"]'
     const iframes = document.querySelectorAll(src)
     for (const iframe of iframes) {
@@ -539,7 +539,7 @@ const populateIframe = (item, iframe, htmlSource, jsxSource, cssSource, jsSource
  * inline
  */
 
-const populateInline = item => {
+const populateInline = (item) => {
   if (!item.classList.contains('populated')) {
     item.classList.add('populated')
     const els = item.querySelectorAll('[data-lang]')

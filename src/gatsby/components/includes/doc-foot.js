@@ -7,31 +7,31 @@ class DocFoot extends React.Component {
   render() {
     const { page } = this.props
     const postsIntroduction = page.postsAll.posts.filter(
-      x => ['Introduction'].includes(x.post.frontmatter.type) && x.post.frontmatter.title !== x.post.frontmatter.parent
+      (x) => ['Introduction'].includes(x.post.frontmatter.type) && x.post.frontmatter.title !== x.post.frontmatter.parent
     )
     const postsCore = page.postsAll.posts.filter(
-      x =>
+      (x) =>
         ['Components'].includes(x.post.frontmatter.type) &&
         x.post.frontmatter.category === 'Core' &&
         x.post.frontmatter.parent === page.post.frontmatter.parent &&
         x.post.frontmatter.title !== x.post.frontmatter.parent
     )
     const postsAddons = page.postsAll.posts.filter(
-      x =>
+      (x) =>
         ['Components'].includes(x.post.frontmatter.type) &&
         x.post.frontmatter.category === 'Addons' &&
         x.post.frontmatter.parent === page.post.frontmatter.parent &&
         x.post.frontmatter.title !== x.post.frontmatter.parent
     )
     const postsExtensions = page.postsAll.posts.filter(
-      x =>
+      (x) =>
         ['Components'].includes(x.post.frontmatter.type) &&
         x.post.frontmatter.category === 'Extensions' &&
         x.post.frontmatter.parent === page.post.frontmatter.parent &&
         x.post.frontmatter.title !== x.post.frontmatter.parent
     )
     const postsThemes = page.postsAll.posts.filter(
-      x =>
+      (x) =>
         ['Themes'].includes(x.post.frontmatter.type) &&
         x.post.frontmatter.parent === page.post.frontmatter.parent &&
         x.post.frontmatter.title !== x.post.frontmatter.parent

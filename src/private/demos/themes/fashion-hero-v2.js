@@ -10,7 +10,7 @@ import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '#iframe--fashion-hero-v2 body a, #iframe--fashion-hero-v2 body button', // add your own selector instead of body to contain the code
-  mount: object => {
+  mount: (object) => {
     new Xt.PropagateInteraction(object, {
       targets: '.btn',
     })
@@ -61,7 +61,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '#iframe--fashion-hero-v2 body .slider', // add your own selector instead of body to contain the code
-  mount: object => {
+  mount: (object) => {
     // vars
 
     const assetCoverTime = Xt.vars.timeBig
@@ -116,7 +116,7 @@ Xt.mount.push({
     // drag
 
     const eventDrag = () => {
-      const tr = self.targets.filter(x => self.hasCurrent(x))[0]
+      const tr = self.targets.filter((x) => self.hasCurrent(x))[0]
       // cover
       const assetCover = tr.querySelector('.hero_cover')
       const skew = self.detail.dragRatio < 0.5 ? 10 * (self.detail.dragRatio * 1.5) : 10 * (self.detail.dragRatioInverse * 1.5) // * 2 would be the same as the normal skew
@@ -131,7 +131,7 @@ Xt.mount.push({
     // dragreset
 
     const eventDragReset = () => {
-      const tr = self.targets.filter(x => self.hasCurrent(x))[0]
+      const tr = self.targets.filter((x) => self.hasCurrent(x))[0]
       // cover
       const assetCover = tr.querySelector('.hero_cover')
       gsap.to(assetCover, { x: 100 * self.direction + '%', duration: assetCoverTime, ease: assetCoverEase })
@@ -145,7 +145,7 @@ Xt.mount.push({
 
     // on
 
-    const eventOn = e => {
+    const eventOn = (e) => {
       const tr = e.target
       // useCapture delegation
       if (self.targets.includes(tr)) {
@@ -196,7 +196,7 @@ Xt.mount.push({
 
     // on
 
-    const eventOff = e => {
+    const eventOff = (e) => {
       const tr = e.target
       // useCapture delegation
       if (self.targets.includes(tr)) {

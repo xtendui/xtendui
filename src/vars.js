@@ -19,27 +19,27 @@ gsap.globalTimeline.timeScale(1000) // milliseconds instead of seconds
 
 gsap.registerPlugin(ScrollToPlugin)
 
-gsap.registerEase('cheetah', progress => {
+gsap.registerEase('cheetah', (progress) => {
   const easing = bezierEasing(0.14, 0.63, 0, 1)
   return easing(progress)
 })
 
-gsap.registerEase('tiger', progress => {
+gsap.registerEase('tiger', (progress) => {
   const easing = bezierEasing(0.96, 0.1, 0.14, 0.88)
   return easing(progress)
 })
 
-gsap.registerEase('cat', progress => {
+gsap.registerEase('cat', (progress) => {
   const easing = bezierEasing(0.77, 0, 0.17, 1)
   return easing(progress)
 })
 
-gsap.registerEase('dog', progress => {
+gsap.registerEase('dog', (progress) => {
   const easing = bezierEasing(0.36, 0, 0, 1)
   return easing(progress)
 })
 
-gsap.registerEase('penguin', progress => {
+gsap.registerEase('penguin', (progress) => {
   const easing = bezierEasing(0.68, 0.13, 0.25, 1)
   return easing(progress)
 })

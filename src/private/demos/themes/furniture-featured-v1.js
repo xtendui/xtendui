@@ -10,7 +10,7 @@ import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '#iframe--furniture-featured-v1 body #body--smooth', // add your own selector instead of body to contain the code
-  mount: object => {
+  mount: (object) => {
     // init
 
     let self = new Xt.Smooth(object, {})
@@ -31,7 +31,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '#iframe--furniture-featured-v1 body .btn--line', // add your own selector instead of body to contain the code
-  mount: object => {
+  mount: (object) => {
     // vars
 
     const link = object.tagName === 'a' || object.tagName === 'button' ? object : object.closest('a, button')
@@ -92,7 +92,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '#iframe--furniture-featured-v1 body .parallax_item', // add your own selector instead of body to contain the code
-  mount: object => {
+  mount: (object) => {
     // vars
 
     const imgY = 150
@@ -108,7 +108,7 @@ Xt.mount.push({
 
     // change
 
-    const eventChange = e => {
+    const eventChange = (e) => {
       const tr = e.target
       // img
       const img = tr.querySelector('.parallax_img_col')

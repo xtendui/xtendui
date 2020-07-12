@@ -88,11 +88,11 @@ class GoogleLocator {
         return
       }
       // new prediction
-      new google.maps.places.AutocompleteService().getPlacePredictions({ input: self.searchInput.value }, results => {
+      new google.maps.places.AutocompleteService().getPlacePredictions({ input: self.searchInput.value }, (results) => {
         if (results && results.length) {
           const placesPreview = document.createElement('div')
           placesPreview.classList.add('display--none')
-          new google.maps.places.PlacesService(placesPreview).getDetails({ reference: results[0].reference }, results => {
+          new google.maps.places.PlacesService(placesPreview).getDetails({ reference: results[0].reference }, (results) => {
             place = results
             self.searchInput.value = place.formatted_address
             self.position = place.geometry.location

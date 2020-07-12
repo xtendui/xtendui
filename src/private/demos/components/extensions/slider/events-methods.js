@@ -2,7 +2,7 @@ import { Xt } from 'xtend-library'
 
 Xt.mount.push({
   matches: '#demo--slider-events',
-  mount: object => {
+  mount: (object) => {
     // init
 
     let self = new Xt.Slider(object, {
@@ -18,7 +18,7 @@ Xt.mount.push({
 
     const log = document.querySelector('#demo--slider-events-log')
 
-    const logAdd = text => {
+    const logAdd = (text) => {
       log.innerHTML += text + '<br/>'
       // scroll
       log.scrollTo(0, log.scrollHeight)
@@ -35,7 +35,7 @@ Xt.mount.push({
 
     const firstElFnc = () => {
       logAdd('<strong>1st element</strong>')
-      const elements = self.elements.filter(x => !x.classList.contains('xt-wrap'))
+      const elements = self.elements.filter((x) => !x.classList.contains('xt-wrap'))
       elements[0].dispatchEvent(new CustomEvent('on.trigger.xt'))
     }
 
@@ -47,7 +47,7 @@ Xt.mount.push({
 
     const firstTrFnc = () => {
       logAdd('<strong>1st target</strong>')
-      const targets = self.targets.filter(x => !x.classList.contains('xt-wrap'))
+      const targets = self.targets.filter((x) => !x.classList.contains('xt-wrap'))
       targets[0].dispatchEvent(new CustomEvent('on.trigger.xt'))
     }
 
@@ -84,7 +84,7 @@ Xt.mount.push({
       object.dataset.reinitTimeout = setTimeout(() => {
         logAdd('<strong>add</strong>')
         // targets
-        const targets = self.targets.filter(x => !x.classList.contains('xt-wrap'))
+        const targets = self.targets.filter((x) => !x.classList.contains('xt-wrap'))
         const indexTr = targets.length + 1
         const strTr = `
         <div class="slide col-6 col-4-sm">
@@ -121,10 +121,10 @@ Xt.mount.push({
       object.dataset.reinitTimeout = setTimeout(() => {
         logAdd('<strong>remove</strong>')
         // elements
-        const elements = self.elements.filter(x => !x.classList.contains('xt-wrap'))
+        const elements = self.elements.filter((x) => !x.classList.contains('xt-wrap'))
         elements[elements.length - 1].remove()
         // targets
-        const targets = self.targets.filter(x => !x.classList.contains('xt-wrap'))
+        const targets = self.targets.filter((x) => !x.classList.contains('xt-wrap'))
         targets[targets.length - 1].remove()
         // reinit
         logAdd('<strong>reinit</strong>')
@@ -183,7 +183,7 @@ Xt.mount.push({
 
     // events
 
-    const events = e => {
+    const events = (e) => {
       let str = 'event <strong>' + e.type + '</strong>'
       if (e.target.getAttribute('title')) {
         str += ' from <strong>' + e.target.getAttribute('title') + '</strong>'

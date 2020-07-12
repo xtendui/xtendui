@@ -6,10 +6,10 @@ import { Xt } from 'xtend-library'
 
 Xt.mount.push({
   matches: '.jump-to-content',
-  mount: object => {
+  mount: (object) => {
     // event
 
-    const documentFocusin = e => {
+    const documentFocusin = (e) => {
       const active = object.contains(e.target)
       if (active) {
         object.classList.remove('sr-only')

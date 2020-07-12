@@ -325,7 +325,7 @@ Xt.Scroll = Scroll
 
 Xt.mount.push({
   matches: '[data-' + Scroll.componentName + ']',
-  mount: object => {
+  mount: (object) => {
     // vars
 
     const optionsMarkup = object.getAttribute('data-' + Xt.Scroll.componentName)

@@ -45,7 +45,7 @@ class Template extends React.Component {
                                     <div className="card-title">
                                       {adiacent.frontmatter.title
                                         .split(/[\s-]+/)
-                                        .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
+                                        .map((item) => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
                                         .join(' ')}
                                     </div>
                                     <p>{adiacent.frontmatter.description}</p>
@@ -76,7 +76,7 @@ class Template extends React.Component {
                                     <div className="card-title">
                                       {adiacent.frontmatter.title
                                         .split(/[\s-]+/)
-                                        .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
+                                        .map((item) => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
                                         .join(' ')}
                                     </div>
                                     <p>{adiacent.frontmatter.description}</p>

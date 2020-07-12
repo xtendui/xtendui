@@ -2,7 +2,7 @@ import { Xt } from 'xtend-library'
 
 Xt.mount.push({
   matches: '#demo--overlay-events, #demo--overlay-events-alt',
-  mount: object => {
+  mount: (object) => {
     // init
 
     let self = new Xt.Overlay(object, {
@@ -13,7 +13,7 @@ Xt.mount.push({
 
     const log = document.querySelector('#demo--overlay-events-log')
 
-    const logAdd = text => {
+    const logAdd = (text) => {
       log.innerHTML += text + '<br/>'
       // scroll
       log.scrollTo(0, log.scrollHeight)
@@ -97,7 +97,7 @@ Xt.mount.push({
 
     // events
 
-    const events = e => {
+    const events = (e) => {
       let str = 'event <strong>' + e.type + '</strong>'
       if (e.target.getAttribute('title')) {
         str += ' from <strong>' + e.target.getAttribute('title') + '</strong>'

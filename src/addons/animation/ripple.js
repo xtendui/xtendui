@@ -172,7 +172,7 @@ Xt.Ripple = Ripple
 
 Xt.mount.push({
   matches: '[data-' + Xt.Ripple.componentName + ']',
-  mount: object => {
+  mount: (object) => {
     // vars
 
     const optionsMarkup = object.getAttribute('data-' + Xt.Ripple.componentName)

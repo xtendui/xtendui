@@ -7,7 +7,7 @@ import { markdownSlug } from 'components/snippets/markdown-slug.js'
 class DocHead extends React.Component {
   render() {
     const { page } = this.props
-    const postsAdiacentFiltered = page.postsAdiacent.posts.filter(x => !x.post.frontmatter.demos)
+    const postsAdiacentFiltered = page.postsAdiacent.posts.filter((x) => !x.post.frontmatter.demos)
     return (
       <header className="gatsby_site_article_hero">
         <div className="gatsby_site_article_hero_inner">
@@ -17,7 +17,7 @@ class DocHead extends React.Component {
                 <span>
                   {page.post.frontmatter.title
                     .split(/[\s-]+/)
-                    .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
+                    .map((item) => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
                     .join(' ')}{' '}
                   {page.post.frontmatter.parent && page.post.frontmatter.parent !== page.post.frontmatter.title ? (
                     <em>{page.post.frontmatter.parent}</em>

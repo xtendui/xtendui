@@ -5,7 +5,7 @@ import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '.demo--ripple-default .btn, .demo--ripple-default .card',
-  mount: object => {
+  mount: (object) => {
     // init
 
     let self = new Xt.Ripple(object, {})

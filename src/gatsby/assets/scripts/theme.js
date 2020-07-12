@@ -38,7 +38,7 @@ if (typeof window !== 'undefined') {
 
 Xt.mount.push({
   matches: '#gatbsy_open-full-trigger',
-  mount: object => {
+  mount: (object) => {
     // init
 
     let self = new Xt.Toggle(object, {
@@ -64,7 +64,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '.gatsby_site_article',
-  mount: object => {
+  mount: (object) => {
     // vars
 
     object = object.closest('body')
@@ -115,7 +115,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '.gatsby_site_article_hero_content_inner',
-  mount: object => {
+  mount: (object) => {
     // init
 
     let self = new Xt.Scroll(object, {
@@ -125,7 +125,7 @@ Xt.mount.push({
 
     // change
 
-    const eventChange = e => {
+    const eventChange = (e) => {
       const element = e.target
       gsap.set(element, { transformOrigin: 'left top' })
       gsap.set(element, { opacity: self.detail.ratioInverse, scale: 0.9 + 0.1 * self.detail.ratioInverse })

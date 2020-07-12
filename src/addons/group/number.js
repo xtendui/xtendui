@@ -6,7 +6,7 @@ import { Xt } from 'xtend-library'
 
 Xt.mount.push({
   matches: '.group-number',
-  mount: object => {
+  mount: (object) => {
     // methods
 
     const inputNumberChange = (step, e) => {
@@ -19,7 +19,7 @@ Xt.mount.push({
       }
     }
 
-    const inputNumberValidate = val => {
+    const inputNumberValidate = (val) => {
       const input = object.querySelector('input')
       const addEl = object.querySelector('.group-number-add')
       const removeEl = object.querySelector('.group-number-remove')
