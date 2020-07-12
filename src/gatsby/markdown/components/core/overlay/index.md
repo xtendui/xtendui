@@ -107,10 +107,10 @@ The **unique** mode is useful when triggering **targets outside the scope** of t
 
 Use this markup to create a **standalone overlay**.
 
-Just use the class `active` if you want to automatically open, or use the [api](/components/overlay/api)
+Just use the class `active-overlay` if you want to automatically open, or use the [api](/components/overlay/api)
 
 <script type="text/plain" class="language-markup">
-<div class="overlay overlay-default active" id="overlay--standalone"
+<div class="overlay overlay-default active-overlay" id="overlay--standalone"
   data-xt-overlay="{ on: false, instant: false }">
   <div class="overlay-container">
     <div class="overlay-inner">
