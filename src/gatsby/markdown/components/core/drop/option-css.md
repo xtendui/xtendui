@@ -6,6 +6,9 @@ title: "Option Css"
 date: "2019-12-20"
 ---
 
+[[notePrimary]]
+| Drop uses **list** and **card** to style it's content, refer to [list's options](/components/core/list/option-css) and [card's option](/components/core/card/option-css).
+
 ## Preset
 
 `{preset}` can be `static`.
@@ -48,7 +51,7 @@ Set drop position with this classes.
 
 ## Variant
 
-Classes for assigning variant (e.g.: border / background / color). Add or remove selectors at your discretion.
+Classes for assigning **list** or **card** **variant** (e.g.: border / background / color).
 
 <div class="table-scroll">
 
@@ -60,13 +63,18 @@ Classes for assigning variant (e.g.: border / background / color). Add or remove
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/drop/variant">
+  <demovanilla src="vanilla/components/core/drop/list-variant">
+  </demovanilla>
+</demo>
+
+<demo>
+  <demovanilla src="vanilla/components/core/drop/card-variant">
   </demovanilla>
 </demo>
 
 ## Size
 
-Set drop size with this classes.
+Set drop **max-width** with this classes.
 
 <div class="table-scroll">
 
@@ -77,19 +85,7 @@ Set drop size with this classes.
 
 </div>
 
-<demo>
-  <demovanilla src="vanilla/components/core/drop/size">
-  </demovanilla>
-</demo>
-
-## List
-
-[[notePrimary]]
-| Drop uses list to style it's content, refer to [list's options](/components/core/list/option-css).
-
-#### Size
-
-Classes for assigning size (e.g.: padding or font size). Add or remove selectors at your discretion.
+Classes for assigning **list** or **card** **size** (e.g.: padding or font size).
 
 <div class="table-scroll">
 
@@ -105,50 +101,14 @@ Classes for assigning size (e.g.: padding or font size). Add or remove selectors
   </demovanilla>
 </demo>
 
-## Card
-
-[[notePrimary]]
-| Drop uses card to style it's content, refer to [card's option](/components/core/card/option-css).
-
-#### Variant
-
-Classes for assigning variant (e.g.: border / background / color). Add or remove selectors at your discretion.
-
-<div class="table-scroll">
-
-|                         | Syntax                                    | Example                       |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.drop-{variant}`                     | `.drop-default` `.drop-primary` |
-| Mixin                   | `.drop-{variant}()`                   | `.drop-default()` `.drop-primary()`        |
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/core/drop/card-variant">
-  </demovanilla>
-</demo>
-
-#### Size
-
-Classes for assigning size (e.g.: padding or font size). Add or remove selectors at your discretion.
-
-<div class="table-scroll">
-
-|                         | Syntax                                    | Example                       |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.drop-{size}`                           | `.drop-small` `.drop-medium` `.drop-large`|
-| Mixin                   | `.drop-{size}()`                         | `.drop-small()` `.drop-medium()` `.drop-large()`         |
-
-</div>
-
 <demo>
   <demovanilla src="vanilla/components/core/drop/card-size">
   </demovanilla>
 </demo>
 
-#### Block Size
+## Block Size
 
-Classes for assigning size (e.g.: padding or font size). Add or remove selectors at your discretion.
+Classes for assigning **card block size** (e.g.: padding or font size).
 
 <div class="table-scroll">
 
@@ -160,6 +120,6 @@ Classes for assigning size (e.g.: padding or font size). Add or remove selectors
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/drop/card-block-size">
+  <demovanilla src="vanilla/components/core/drop/block-size">
   </demovanilla>
 </demo>

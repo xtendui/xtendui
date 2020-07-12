@@ -121,7 +121,7 @@ Use this markup to create a **unstyled** **checkbox** or **radio**.
 
 ## Variant
 
-Classes for assigning variant (e.g.: border / background / color). Add or remove selectors at your discretion.
+Classes for assigning variant (e.g.: border / background / color).
 
 You can set the size globally on **form**.
 

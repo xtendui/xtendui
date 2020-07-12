@@ -8,7 +8,7 @@ date: "2019-12-01"
 
 ## Preset
 
-`{preset}` can be `default`, `drop`. Add or remove selectors at your discretion.
+`{preset}` can be `default`, `drop`.
 
 <div class="table-scroll">
 

@@ -6,9 +6,12 @@ title: "Option Css"
 date: "2019-12-01"
 ---
 
+[[notePrimary]]
+| Overlay uses **card** to style it's content, refer to [card's option](/components/core/card/option-css).
+
 ## Preset
 
-`{preset}` can be `screen`, `position-left`, `position-right`. `{position}` can be `left`, `right`. Add or remove selectors at your discretion.
+`{preset}` can be `screen`, `position-left`, `position-right`. `{position}` can be `left`, `right`.
 
 <div class="table-scroll">
 
@@ -29,32 +32,9 @@ date: "2019-12-01"
   </demovanilla>
 </demo>
 
-## Size
+## Variant
 
-Set overlay size with this classes.
-
-<div class="table-scroll">
-
-|                         | Syntax                                    | Example                       |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.overlay-size-{size}`                        | `.overlay-size-small`             |
-| Mixin                   | `.overlay-size-{size}()`                   | `.overlay-size-small()`         |
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/core/overlay/size">
-  </demovanilla>
-</demo>
-
-## Card
-
-[[notePrimary]]
-| Overlay uses card to style it's content, refer to [card's option](/components/core/card/option-css).
-
-#### Variant
-
-Classes for assigning variant (e.g.: border / background / color). Add or remove selectors at your discretion.
+Classes for assigning variant (e.g.: border / background / color).
 
 <div class="table-scroll">
 
@@ -66,13 +46,24 @@ Classes for assigning variant (e.g.: border / background / color). Add or remove
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/overlay/card-variant">
+  <demovanilla src="vanilla/components/core/overlay/variant">
   </demovanilla>
 </demo>
 
-#### Size
+## Size
 
-Classes for assigning size (e.g.: padding or font size). Add or remove selectors at your discretion.
+Set overlay **max-width** with this classes.
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Example                       |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Class                   | `.overlay-size-{size}`                        | `.overlay-size-small`             |
+| Mixin                   | `.overlay-size-{size}()`                   | `.overlay-size-small()`         |
+
+</div>
+
+Classes for assigning **card size** (e.g.: padding or font size).
 
 <div class="table-scroll">
 
@@ -84,13 +75,13 @@ Classes for assigning size (e.g.: padding or font size). Add or remove selectors
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/overlay/card-size">
+  <demovanilla src="vanilla/components/core/overlay/size">
   </demovanilla>
 </demo>
 
-#### Block Size
+## Block Size
 
-Classes for assigning size (e.g.: padding or font size). Add or remove selectors at your discretion.
+Classes for assigning **card block size** (e.g.: padding or font size).
 
 <div class="table-scroll">
 
@@ -102,6 +93,6 @@ Classes for assigning size (e.g.: padding or font size). Add or remove selectors
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/overlay/card-block-size">
+  <demovanilla src="vanilla/components/core/overlay/block-size">
   </demovanilla>
 </demo>

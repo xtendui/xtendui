@@ -25,7 +25,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       small
     </button>
-    <div class="drop drop-default drop-small">
+    <div class="drop drop-default drop-size-small drop-small">
     ${indentString(markupDrop(), 6)}
     </div>
   </div>
@@ -34,7 +34,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       medium
     </button>
-    <div class="drop drop-default drop-medium">
+    <div class="drop drop-default drop-size-medium drop-medium">
     ${indentString(markupDrop(), 6)}
     </div>
   </div>
@@ -43,7 +43,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       large
     </button>
-    <div class="drop drop-default drop-large">
+    <div class="drop drop-default drop-size-large drop-large">
     ${indentString(markupDrop(), 6)}
     </div>
   </div>

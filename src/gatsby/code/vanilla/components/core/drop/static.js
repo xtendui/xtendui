@@ -15,7 +15,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       Toggle
     </button>
-    <div class="drop drop-default drop-squared drop-nospace drop-noborder">
+    <div class="drop drop-default drop-large drop-squared drop-nospace drop-noborder">
       <div class="drop-inner">
         <div class="drop-design"></div>
         <div class="drop-content">

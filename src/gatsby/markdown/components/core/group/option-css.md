@@ -7,11 +7,11 @@ date: "2019-12-01"
 ---
 
 [[notePrimary]]
-| Group uses list to style it's content, refer to [list's options](/components/core/list/option-css).
+| Group uses **list** to style it's content, refer to [list's options](/components/core/list/option-css).
 
 ## Variant
 
-Classes for assigning variant (e.g.: border / background / color). Add or remove selectors at your discretion.
+Classes for assigning variant (e.g.: border / background / color).
 
 <div class="table-scroll">
 

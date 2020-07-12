@@ -41,7 +41,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       small
     </button>
-    <div class="drop drop-default drop-small">
+    <div class="drop drop-default drop-size-small drop-small">
       <div class="drop-inner">
         <div class="drop-design"></div>
         <div class="drop-content">
@@ -68,7 +68,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       medium
     </button>
-    <div class="drop drop-default drop-medium">
+    <div class="drop drop-default drop-size-medium drop-medium">
       <div class="drop-inner">
         <div class="drop-design"></div>
         <div class="drop-content">
@@ -95,7 +95,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       large
     </button>
-    <div class="drop drop-default drop-large">
+    <div class="drop drop-default drop-size-large drop-large">
       <div class="drop-inner">
         <div class="drop-design"></div>
         <div class="drop-content">

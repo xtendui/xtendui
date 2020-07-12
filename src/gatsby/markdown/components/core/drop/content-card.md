@@ -7,7 +7,7 @@ date: "2020-10-05"
 ---
 
 [[notePrimary]]
-| Drop uses card to style it's content, refer to [card's content](/components/core/card/content).
+| Drop uses **card** to style it's content, refer to [card's content](/components/core/card/content).
 
 ## Asset
 

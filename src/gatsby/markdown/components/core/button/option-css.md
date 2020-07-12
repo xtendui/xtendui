@@ -8,7 +8,7 @@ date: "2019-12-01"
 
 ## Variant
 
-Classes for assigning variant (e.g.: border / background / color). Add or remove selectors at your discretion.
+Classes for assigning variant (e.g.: border / background / color).
 
 <div class="table-scroll">
 
@@ -33,7 +33,7 @@ On containers use `.text-inverse` to have white buttons (needs `color: inherit`)
 
 ## Size
 
-Classes for assigning size (e.g.: padding or font size). Add or remove selectors at your discretion.
+Classes for assigning size (e.g.: padding or font size).
 
 Sizes uses `em` padding that depends on font size.
 

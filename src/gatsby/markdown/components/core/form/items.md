@@ -41,7 +41,7 @@ Use this markup to create a **form label** and **form item**.
 
 ## Size
 
-Classes for assigning size (e.g.: padding or font size). Add or remove selectors at your discretion.
+Classes for assigning size (e.g.: padding or font size).
 
 Size is done with **em** so it's relative to the container element.
 
@@ -79,7 +79,7 @@ You can set the size globally on **form**.
 
 ## Variant
 
-Classes for assigning variant (e.g.: border / background / color). Add or remove selectors at your discretion.
+Classes for assigning variant (e.g.: border / background / color).
 
 You can set the size globally on **form**.
 
@@ -130,7 +130,7 @@ There are several form group mode to change the form layout. They aren't just le
 
 #### Horizontal
 
-Horizontal label and input, add or remove selectors at your discretion.
+Horizontal label and input,
 
 <script type="text/plain" class="language-markup">
 <form class="form-default">
@@ -174,7 +174,7 @@ Horizontal label and input, add or remove selectors at your discretion.
 
 #### Row
 
-Multiple columns of `.form-group`, add or remove selectors at your discretion.
+Multiple columns of `.form-group`,
 
 For columns sizes see [column page](/components/core/column).
 
@@ -210,7 +210,7 @@ For columns sizes see [column page](/components/core/column).
 
 #### Inline
 
-Inline **form group**, add or remove selectors at your discretion.
+Inline **form group**,
 
 <script type="text/plain" class="language-markup">
 <form class="form-default">

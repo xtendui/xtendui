@@ -28,7 +28,7 @@ You can use card's presets outside the normal scope, for example to style a card
 
 ## Variant
 
-Classes for assigning variant (e.g.: border / background / color). Add or remove selectors at your discretion.
+Classes for assigning variant (e.g.: border / background / color).
 
 <div class="table-scroll">
 
@@ -46,7 +46,7 @@ Classes for assigning variant (e.g.: border / background / color). Add or remove
 
 ## Size
 
-Classes for assigning size (e.g.: padding or font size). Add or remove selectors at your discretion.
+Classes for assigning size (e.g.: padding or font size).
 
 <div class="table-scroll">
 
@@ -64,7 +64,7 @@ Classes for assigning size (e.g.: padding or font size). Add or remove selectors
 
 ## Block Size
 
-Classes for assigning size (e.g.: padding or font size). Add or remove selectors at your discretion.
+Classes for assigning size (e.g.: padding or font size).
 
 <div class="table-scroll">
 

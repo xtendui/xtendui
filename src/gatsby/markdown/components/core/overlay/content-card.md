@@ -7,7 +7,7 @@ date: "2020-10-10"
 ---
 
 [[notePrimary]]
-| Overlay uses card to style it's content, refer to [card's content](/components/core/card/content).
+| Overlay uses **card** to style it's content, refer to [card's content](/components/core/card/content).
 
 ## Asset
 
