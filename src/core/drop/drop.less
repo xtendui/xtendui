@@ -32,7 +32,6 @@
   .drop-left();
   .drop-bottom();
   .drop-size-small();
-  .drop-small();
 }
 
 // variant
@@ -68,27 +67,33 @@
 // size
 
 .drop-size-small {
+  // list
   .list-drop {
     max-width: 25rem;
   }
+  // card
   .card-drop {
     max-width: 35rem;
   }
 }
 
 .drop-size-medium {
+  // list
   .list-drop {
     max-width: 35rem;
   }
+  // card
   .card-drop {
     max-width: 45rem;
   }
 }
 
 .drop-size-large {
+  // list
   .list-drop {
     max-width: 45rem;
   }
+  // card
   .card-drop {
     max-width: 55rem;
   }
@@ -96,65 +101,50 @@
 
 // content size
 
-.drop-small {
+.drop.drop-small {
   // list
   .list-drop {
     .list-btns({
       .btn-small();
+      .padding(x, 2rem);
+    });
+  }
+  // card
+  .card-drop {
+    .card-small();
+  }
+}
+
+.drop.drop-medium {
+  // list
+  .list-drop {
+    .list-btns({
+      .btn-medium();
       .padding(x, 2.5rem);
     });
   }
   // card
   .card-drop {
     .card-small();
-    .card-block {
-      padding: 2em 2em !important;
+    @media @min-sm {
+      .card-medium();
     }
   }
 }
 
-.drop-medium {
+.drop.drop-large {
   // list
   .list-drop {
     .list-btns({
-      .btn-medium();
+      .btn-large();
       .padding(x, 3rem);
     });
   }
   // card
   .card-drop {
-    .card-small();
-    .card-block {
-      padding: 2em 2em !important;
-    }
-    @media @min-sm {
-      .card-medium();
-      .card-block {
-        padding: 2.5em 2.5em !important;
-      }
-    }
-  }
-}
-
-.drop-large {
-  // list
-  .list-drop {
-    .list-btns({
-      .btn-large();
-      .padding(x, 3.5rem);
-    });
-  }
-  // card
-  .card-drop {
-    .card-small();
-    .card-block {
-      padding: 2em 2em !important;
-    }
+    .card-medium();
     @media @min-sm {
       .card-large();
-      .card-block {
-        padding: 3em 3em !important;
-      }
     }
   }
 }

@@ -21,7 +21,6 @@
   }
   // default options
   .overlay-size-medium();
-  .overlay-medium();
 }
 
 // preset
@@ -156,16 +155,15 @@
   .card-overlay {
     .card-small();
     .card-block {
-      padding: 2em 2em;
+      padding: 2.5rem 2.5rem;
     }
   }
 }
 
 .overlay-medium {
-  .overlay.overlay-medium();
-  // smaller on mobile
-  @media @max-sm {
-    .overlay.overlay-small();
+  .overlay.overlay-small();
+  @media @min-sm {
+    .overlay.overlay-medium();
   }
 }
 
@@ -174,16 +172,15 @@
   .card-overlay {
     .card-medium();
     .card-block {
-      padding: 2.5em 2.5em;
+      padding: 3rem 3rem;
     }
   }
 }
 
 .overlay-large {
-  .overlay.overlay-large();
-  // smaller on mobile
-  @media @max-sm {
-    .overlay.overlay-medium();
+  .overlay.overlay-medium();
+  @media @min-sm {
+    .overlay.overlay-large();
   }
 }
 
@@ -192,7 +189,7 @@
   .card-overlay {
     .card-large();
     .card-block {
-      padding: 3em 3em;
+      padding: 3.5rem 3.5rem;
     }
   }
 }

@@ -29,6 +29,8 @@
 .card-drop {
   border-radius: inherit;
   width: 100vw; // fill size max-width
+  // default options
+  .drop.drop-small.card-drop();
   // custom blocks
   .card-block-intro {
     background: fade(@accent, 15%);
@@ -47,6 +49,8 @@
     top: 2rem;
     right: 2rem;
   }
+  // default options
+  .overlay.overlay-large.card-overlay();
   // custom blocks
   .card-block-intro {
     background: fade(@accent, 15%);
@@ -131,12 +135,11 @@
 }
 
 .card-block.card-block-small {
-  .font-small();
-  .line-height-medium();
-  padding: 2em;
+  .font-tiny();
+  .line-height-small();
+  padding: 2rem;
   .card-title {
-    .h4();
-    .spacing-tiny();
+    .h5();
   }
 }
 
@@ -159,12 +162,11 @@
 }
 
 .card-block.card-block-medium {
-  .font-medium();
+  .font-small();
   .line-height-medium();
-  padding: 2.25em;
+  padding: 2.5rem;
   .card-title {
-    .h3();
-    .spacing-medium();
+    .h4();
   }
 }
 
@@ -187,12 +189,11 @@
 }
 
 .card-block.card-block-large {
-  .font-big();
+  .font-medium();
   .line-height-medium();
-  padding: 2.5em;
+  padding: 3rem;
   .card-title {
-    .h2();
-    .spacing-medium();
+    .h3();
   }
 }
 

@@ -32,75 +32,137 @@
 
 // list-space
 
-.list-space-y(@name, @breakpoint: none) when (@breakpoint = none) {
-  @arr: ~"list-space-@{name}";
-  @vertical: extract(@@arr, 1);
-  margin-top: -@vertical;
-  margin-bottom: -@vertical;
-  > * , > li {
-    margin-top: @vertical;
-    margin-bottom: @vertical;
+.list-space-y(@size, @breakpoint: none) when (@breakpoint = none) {
+  & when (isnumber(@size)) {
+    margin-top: -@size;
+    margin-bottom: -@size;
+    > * {
+      margin-top: @size;
+      margin-bottom: @size;
+    }
   }
-}
-
-.list-space-y(@name, @breakpoint: none) when (default()) {
-  @arr: ~"list-space-@{name}";
-  @vertical: extract(@@arr, 1);
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
+  & when not (isnumber(@size)) {
+    @arr: ~"list-space-@{size}";
+    @vertical: extract(@@arr, 1);
     margin-top: -@vertical;
     margin-bottom: -@vertical;
-    > * , > li {
+    > * {
       margin-top: @vertical;
       margin-bottom: @vertical;
     }
   }
 }
 
-.list-space-x(@name, @breakpoint: none) when (@breakpoint = none) {
-  @arr: ~"list-space-@{name}";
-  @horizontal: extract(@@arr, 2);
-  margin-left: -@horizontal;
-  margin-right: -@horizontal;
-  > * , > li {
-    margin-left: @horizontal;
-    margin-right: @horizontal;
+.list-space-y(@size, @breakpoint: none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  & when (isnumber(@size)) {
+    @media @@query-min {
+      margin-top: -@size;
+      margin-bottom: -@size;
+      > * {
+        margin-top: @size;
+        margin-bottom: @size;
+      }
+    }
+  }
+  & when not (isnumber(@size)) {
+    @arr: ~"list-space-@{size}";
+    @vertical: extract(@@arr, 1);
+    @media @@query-min {
+      margin-top: -@vertical;
+      margin-bottom: -@vertical;
+      > * {
+        margin-top: @vertical;
+        margin-bottom: @vertical;
+      }
+    }
   }
 }
 
-.list-space-x(@name, @breakpoint: none) when (default()) {
-  @arr: ~"list-space-@{name}";
-  @horizontal: extract(@@arr, 2);
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
+.list-space-x(@size, @breakpoint: none) when (@breakpoint = none) {
+  & when (isnumber(@size)) {
+    margin-left: -@size;
+    margin-right: -@size;
+    > * {
+      margin-left: @size;
+      margin-right: @size;
+    }
+  }
+  & when not (isnumber(@size)) {
+    @arr: ~"list-space-@{size}";
+    @horizontal: extract(@@arr, 2);
     margin-left: -@horizontal;
     margin-right: -@horizontal;
-    > * , > li {
+    > * {
       margin-left: @horizontal;
       margin-right: @horizontal;
     }
   }
 }
 
-.list-space(@name, @breakpoint: none) when (@breakpoint = none) {
-  @arr: ~"list-space-@{name}";
-  @vertical: extract(@@arr, 1);
-  @horizontal: extract(@@arr, 2);
-  margin: -@vertical -@horizontal;
-  > * , > li {
-    margin: @vertical @horizontal;
+.list-space-x(@size, @breakpoint: none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  & when (isnumber(@size)) {
+    @media @@query-min {
+      margin-left: -@size;
+      margin-right: -@size;
+      > * {
+        margin-left: @size;
+        margin-right: @size;
+      }
+    }
+  }
+  & when not (isnumber(@size)) {
+    @arr: ~"list-space-@{size}";
+    @horizontal: extract(@@arr, 2);
+    @media @@query-min {
+      margin-left: -@horizontal;
+      margin-right: -@horizontal;
+      > * {
+        margin-left: @horizontal;
+        margin-right: @horizontal;
+      }
+    }
   }
 }
 
-.list-space(@name, @breakpoint: none) when (default()) {
-  @arr: ~"list-space-@{name}";
-  @vertical: extract(@@arr, 1);
-  @horizontal: extract(@@arr, 2);
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
+.list-space(@size, @breakpoint: none) when (@breakpoint = none) {
+  & when (isnumber(@size)) {
+    margin: -@size -@size;
+    > * {
+      margin: @size @size;
+    }
+  }
+  & when not (isnumber(@size)) {
+    @arr: ~"list-space-@{size}";
+    @vertical: extract(@@arr, 1);
+    @horizontal: extract(@@arr, 2);
     margin: -@vertical -@horizontal;
-    > * , > li {
+    > * {
       margin: @vertical @horizontal;
+    }
+  }
+}
+
+.list-space(@size, @breakpoint: none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  & when (isnumber(@size)) {
+    @media @@query-min {
+      margin: -@size -@size;
+      > * {
+        margin: @size @size;
+      }
+    }
+  }
+  & when not (isnumber(@size)) {
+    @arr: ~"list-space-@{size}";
+    @vertical: extract(@@arr, 1);
+    @horizontal: extract(@@arr, 2);
+    @media @@query-min {
+      margin: -@vertical -@horizontal;
+      > * {
+        margin: @vertical @horizontal;
+      }
     }
   }
 }

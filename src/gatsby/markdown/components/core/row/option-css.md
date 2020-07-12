@@ -43,6 +43,8 @@ Row **automatically** add horizontal and vertical spacing to the contents. You c
 | Class responsive        | `.row-space-{size}-{breakpoint}`         | `.row-space-small-sm`        |
 | Mixin                   | `.row-space({size})`                      | `.row-space(small)`           |
 | Mixin responsive min    | `.row-space({size}, {breakpoint})`        | `.row-space(small, sm)`       |
+| Mixin                   | `.row-space({value})`                     | `.row-space(2.5rem)`          |
+| Mixin responsive min    | `.row-space({value}, {breakpoint})`       | `.row-space(2.5rem, sm)`      |
 
 </div>
 
@@ -56,6 +58,8 @@ Row **automatically** add horizontal and vertical spacing to the contents. You c
 | Class responsive        | `.row-space-{direction}-{size}-{breakpoint}`         | `.row-space-x-small-sm`        |
 | Mixin                   | `.row-space-{direction}({size})`                      | `.row-space-x(small)`           |
 | Mixin responsive min    | `.row-space-{direction}({size}, {breakpoint})`        | `.row-space-x(small, sm)`       |
+| Mixin                   | `.row-space-x({value})`                     | `.row-space-x(2.5rem)`          |
+| Mixin responsive min    | `.row-space-x({value}, {breakpoint})`       | `.row-space-x(2.5rem, sm)`      |
 
 </div>
 

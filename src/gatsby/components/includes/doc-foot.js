@@ -44,7 +44,7 @@ class DocFoot extends React.Component {
               <div className="row">
                 {page.post.frontmatter.type !== 'Introduction' && postsIntroduction.length ? (
                   <div className="gatsby_listing_column">
-                    <Link to={'/introduction'} className="card card-primary card-small card-full card-collapse gatsby_listing_item">
+                    <Link to={'/introduction'} className="card card-primary card-full card-collapse gatsby_listing_item">
                       <div className="card-design"></div>
                       <div className="card-inner">
                         <div className="card-content">
@@ -64,7 +64,7 @@ class DocFoot extends React.Component {
                   <div className="gatsby_listing_column">
                     <Link
                       to={'/components/core/' + kebabCase(page.post.frontmatter.parent)}
-                      className="card card-primary card-small card-full card-collapse gatsby_listing_item"
+                      className="card card-primary card-full card-collapse gatsby_listing_item"
                     >
                       <div className="card-design"></div>
                       <div className="card-inner">
@@ -85,7 +85,7 @@ class DocFoot extends React.Component {
                   <div className="gatsby_listing_column">
                     <Link
                       to={'/components/extensions/' + kebabCase(page.post.frontmatter.parent)}
-                      className="card card-primary card-small card-full card-collapse gatsby_listing_item"
+                      className="card card-primary card-full card-collapse gatsby_listing_item"
                     >
                       <div className="card-design"></div>
                       <div className="card-inner">
@@ -107,7 +107,7 @@ class DocFoot extends React.Component {
                   <div className="gatsby_listing_column">
                     <Link
                       to={'/components/addons/' + kebabCase(page.post.frontmatter.parent)}
-                      className="card card-primary card-small card-full card-collapse gatsby_listing_item"
+                      className="card card-primary card-full card-collapse gatsby_listing_item"
                     >
                       <div className="card-design"></div>
                       <div className="card-inner">
@@ -129,7 +129,7 @@ class DocFoot extends React.Component {
                   <div className="gatsby_listing_column">
                     <Link
                       to={'/themes/' + kebabCase(page.post.frontmatter.parent)}
-                      className="card card-primary card-small card-full card-collapse gatsby_listing_item"
+                      className="card card-primary card-full card-collapse gatsby_listing_item"
                     >
                       <div className="card-design"></div>
                       <div className="card-inner">

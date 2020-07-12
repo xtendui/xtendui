@@ -43,6 +43,8 @@ Lists **automatically** add horizontal and vertical spacing to the contents. You
 | Class responsive        | `.list-space-{size}-{breakpoint}`        | `.list-space-small-sm`       |
 | Mixin                   | `.list-space({size})`                     | `.list-space(small)`          |
 | Mixin responsive min    | `.list-space({size}, {breakpoint})`       | `.list-space(small, sm)`      |
+| Mixin                   | `.list-space({value})`                     | `.list-space(2.5rem)`          |
+| Mixin responsive min    | `.list-space({value}, {breakpoint})`       | `.list-space(2.5rem, sm)`      |
 
 </div>
 
@@ -56,6 +58,8 @@ Lists **automatically** add horizontal and vertical spacing to the contents. You
 | Class responsive        | `.list-space-{direction}-{size}-{breakpoint}`         | `.list-space-x-small-sm`        |
 | Mixin                   | `.list-space-{direction}({size})`                      | `.list-space-x(small)`           |
 | Mixin responsive min    | `.list-space-{direction}({size}, {breakpoint})`        | `.list-space-x(small, sm)`       |
+| Mixin                   | `.list-space-{direction}({value})`                     | `.list-space-x(2.5rem)`          |
+| Mixin responsive min    | `.list-space-{direction}({value}, {breakpoint})`       | `.list-space-x(2.5rem, sm)`      |
 
 </div>
 

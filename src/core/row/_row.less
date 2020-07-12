@@ -23,75 +23,137 @@
 
 // row-space
 
-.row-space-y(@name, @breakpoint: none) when (@breakpoint = none) {
-  @arr: ~"row-space-@{name}";
-  @vertical: extract(@@arr, 1);
-  margin-top: -@vertical;
-  margin-bottom: -@vertical;
-  > * , > li {
-    padding-top: @vertical;
-    padding-bottom: @vertical;
+.row-space-y(@size, @breakpoint: none) when (@breakpoint = none) {
+  & when (isnumber(@size)) {
+    margin-top: -@size;
+    margin-bottom: -@size;
+    > * {
+      padding-top: @size;
+      padding-bottom: @size;
+    }
   }
-}
-
-.row-space-y(@name, @breakpoint: none) when (default()) {
-  @arr: ~"row-space-@{name}";
-  @vertical: extract(@@arr, 1);
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
+  & when not (isnumber(@size)) {
+    @arr: ~"row-space-@{size}";
+    @vertical: extract(@@arr, 1);
     margin-top: -@vertical;
     margin-bottom: -@vertical;
-    > * , > li {
+    > * {
       padding-top: @vertical;
       padding-bottom: @vertical;
     }
   }
 }
 
-.row-space-x(@name, @breakpoint: none) when (@breakpoint = none) {
-  @arr: ~"row-space-@{name}";
-  @horizontal: extract(@@arr, 2);
-  margin-left: -@horizontal;
-  margin-right: -@horizontal;
-  > * , > li {
-    padding-left: @horizontal;
-    padding-right: @horizontal;
+.row-space-y(@size, @breakpoint: none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  & when (isnumber(@size)) {
+    @media @@query-min {
+      margin-top: -@size;
+      margin-bottom: -@size;
+      > * {
+        padding-top: @size;
+        padding-bottom: @size;
+      }
+    }
+  }
+  & when not (isnumber(@size)) {
+    @arr: ~"row-space-@{size}";
+    @vertical: extract(@@arr, 1);
+    @media @@query-min {
+      margin-top: -@vertical;
+      margin-bottom: -@vertical;
+      > * {
+        padding-top: @vertical;
+        padding-bottom: @vertical;
+      }
+    }
   }
 }
 
-.row-space-x(@name, @breakpoint: none) when (default()) {
-  @arr: ~"row-space-@{name}";
-  @horizontal: extract(@@arr, 2);
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
+.row-space-x(@size, @breakpoint: none) when (@breakpoint = none) {
+  & when (isnumber(@size)) {
+    margin-left: -@size;
+    margin-right: -@size;
+    > * {
+      padding-left: @size;
+      padding-right: @size;
+    }
+  }
+  & when not (isnumber(@size)) {
+    @arr: ~"row-space-@{size}";
+    @horizontal: extract(@@arr, 2);
     margin-left: -@horizontal;
     margin-right: -@horizontal;
-    > * , > li {
+    > * {
       padding-left: @horizontal;
       padding-right: @horizontal;
     }
   }
 }
 
-.row-space(@name, @breakpoint: none) when (@breakpoint = none) {
-  @arr: ~"row-space-@{name}";
-  @vertical: extract(@@arr, 1);
-  @horizontal: extract(@@arr, 2);
-  margin: -@vertical -@horizontal;
-  > * , > li {
-    padding: @vertical @horizontal;
+.row-space-x(@size, @breakpoint: none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  & when (isnumber(@size)) {
+    @media @@query-min {
+      margin-left: -@size;
+      margin-right: -@size;
+      > * {
+        padding-left: @size;
+        padding-right: @size;
+      }
+    }
+  }
+  & when not (isnumber(@size)) {
+    @arr: ~"row-space-@{size}";
+    @horizontal: extract(@@arr, 2);
+    @media @@query-min {
+      margin-left: -@horizontal;
+      margin-right: -@horizontal;
+      > * {
+        padding-left: @horizontal;
+        padding-right: @horizontal;
+      }
+    }
   }
 }
 
-.row-space(@name, @breakpoint: none) when (default()) {
-  @arr: ~"row-space-@{name}";
-  @vertical: extract(@@arr, 1);
-  @horizontal: extract(@@arr, 2);
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
+.row-space(@size, @breakpoint: none) when (@breakpoint = none) {
+  & when (isnumber(@size)) {
+    margin: -@size -@size;
+    > * {
+      padding: @size @size;
+    }
+  }
+  & when not (isnumber(@size)) {
+    @arr: ~"row-space-@{size}";
+    @vertical: extract(@@arr, 1);
+    @horizontal: extract(@@arr, 2);
     margin: -@vertical -@horizontal;
-    > * , > li {
+    > * {
       padding: @vertical @horizontal;
+    }
+  }
+}
+
+.row-space(@size, @breakpoint: none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  & when (isnumber(@size)) {
+    @media @@query-min {
+      margin: -@size -@size;
+      > * {
+        padding: @size @size;
+      }
+    }
+  }
+  & when not (isnumber(@size)) {
+    @arr: ~"row-space-@{size}";
+    @vertical: extract(@@arr, 1);
+    @horizontal: extract(@@arr, 2);
+    @media @@query-min {
+      margin: -@vertical -@horizontal;
+      > * {
+        padding: @vertical @horizontal;
+      }
     }
   }
 }
