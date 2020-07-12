@@ -73,24 +73,25 @@ Xt.mount.push({
 
     let self = new Xt.ScrollToAnchor(object, {
       scrollDistance: () => {
-        return window.innerHeight / 6
+        return window.innerHeight / 10
+      },
+      scrollSpace: () => {
+        return 0
       },
     })
 
     // change
 
     const eventChange = () => {
-      // stop xt-smooth
-      const smooth = Xt.get('xt-smooth', self.object)
-      if (smooth) {
-        smooth.eventWheelstop()
-      }
       // scroll
+      const scrollingElement = document.scrollingElement
+      const rect = self.target.getBoundingClientRect()
+      const top = rect.top
       const scrollSpace = self.options.scrollSpace()
       const scrollDistance = self.options.scrollDistance()
-      let pos = self.target.offsetTop - scrollSpace - scrollDistance
+      let pos = top + scrollingElement.scrollTop - scrollSpace - scrollDistance
       const min = 0
-      const max = document.scrollingElement.scrollHeight - window.innerHeight
+      const max = scrollingElement.scrollHeight - window.innerHeight
       pos = pos < min ? min : pos
       pos = pos > max ? max : pos
       gsap.to(window, { scrollTo: pos, duration: Xt.vars.timeLarge, ease: 'quart.inOut' })
@@ -111,7 +112,6 @@ Xt.mount.push({
 
 /**
  * xt-scroll
- */
 
 Xt.mount.push({
   matches: '.gatsby_site_article_hero_content_inner',
@@ -144,6 +144,7 @@ Xt.mount.push({
     return unmount
   },
 })
+*/
 
 //
 // makeDocument

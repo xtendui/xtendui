@@ -93,28 +93,6 @@ demo.htmlSource = `
     </div>
   </div>
 </div>
-
-<br/>
-
-<div class="list list-default list-space-small align-items-center" id="demo--toggle-events-elements">
-  <button type="button" class="btn btn-default"
-    data-xt-toggle="{ targets: '#toggle--event-method-0, #toggle--event-method-1' }">
-    Toggle Same
-  </button>
-  <button type="button" class="btn btn-default"
-    data-xt-toggle="{ targets: '#toggle--event-method-0, #toggle--event-method-1' }">
-    Toggle Same
-  </button>
-</div>
-
-<div class="list list-default list-space-small align-items-center" id="demo--toggle-events-targets">
-  <div class="note note-default note-background toggle-block" id="toggle--event-method-0">
-    Target Same
-  </div>
-  <div class="note note-default note-background toggle-block active-toggle" id="toggle--event-method-1">
-    Target Same
-  </div>
-</div>
 `
 
 class Page extends React.Component {

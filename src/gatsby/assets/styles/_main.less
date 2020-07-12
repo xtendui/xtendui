@@ -79,11 +79,11 @@ body {
 
 .gatsby_site_article_hero {
   .container-space();
-  .padding(y, giant);
+  .padding(y, large);
+  .padding(y, giant, sm);
   .padding(y, huge, lg);
   background: linear-gradient(180deg, @shade-200 0%, @white 66%);
-  h2 {
-    .reset-text();
+  .p {
     .font-big();
     color: @text-light;
   }
@@ -143,7 +143,6 @@ body {
 
 .gatsby_site_article_foot {
   .container-space();
-  .padding(top, big);
   background: linear-gradient(-180deg, @white 0%, @shade-200 100%);
 }
 

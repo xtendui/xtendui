@@ -237,18 +237,10 @@ ScrollToAnchor.optionsDefault = {
   scrollDelay: 250,
   // scroll
   scrollDistance: () => {
-    return window.innerHeight / 6
+    return 0
   },
   scrollSpace: () => {
-    let scrollSpace = 0
-    // sticky
-    const stickys = document.querySelectorAll('.xt-sticky.xt-clone.active')
-    for (const sticky of stickys) {
-      if (Xt.visible(sticky)) {
-        scrollSpace += sticky.clientHeight
-      }
-    }
-    return scrollSpace
+    return 0
   },
 }
 
