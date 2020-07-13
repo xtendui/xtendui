@@ -9,24 +9,6 @@ date: "2019-12-20"
 [[notePrimary]]
 | Drop uses **list** and **card** to style it's content, refer to [list's options](/components/core/list/option-css) and [card's option](/components/core/card/option-css).
 
-## Preset
-
-`{preset}` can be `static`.
-
-<div class="table-scroll">
-
-|                         | Syntax                                    | Example                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Class                   | `.drop-container-{preset}`                         | `.drop-container-static` |
-| Mixin                   | Not possible                              | Not possible                  | Position relative to closest element with `position: relative;`.            |
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/core/drop/static">
-  </demovanilla>
-</demo>
-
 ## Position
 
 Set drop position with this classes.

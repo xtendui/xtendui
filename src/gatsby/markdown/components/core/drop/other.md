@@ -12,14 +12,18 @@ date: "2019-03-15"
 
 |                         | Class                                     | Mixin                         | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `.drop-disable`                | `.drop-disable()`        | Disable drop, useful within media queries            |
+| Option                  | `.drop-container-static`                | `.drop-container-static()`        | Position relative to closest element with `position: relative;`.    
+| Option                  | `.drop-container-disable`                | `.drop-container-disable()`        | Disable drop, useful within media queries            |
 | Option                  | `.drop-squared`                | `.drop-squared()`        | No border-radius on drop            |
 | Option                  | `.drop-noborder`                | `.drop-noborder()`        | No border on drop            |
 | Option                  | `.drop-nospace`                | `.drop-nospace()`        | No space on drop            |
 
 </div>
 
-You can disable drop using `.drop-disable` (resize to mobile to see it in action).
+<demo>
+  <demovanilla src="vanilla/components/core/drop/static">
+  </demovanilla>
+</demo>
 
 <demo>
   <demovanilla src="vanilla/components/core/drop/disable">
@@ -36,14 +40,5 @@ If the toggle is on <code>"on": "mouseenter"</code> or <code>"on": "mousehover"<
   <demovanilla src="vanilla/components/core/drop/with-link">
   </demovanilla>
   <demovanilla src="vanilla/components/core/drop/with-link-hover">
-  </demovanilla>
-</demo>
-
-## Nested
-
-You can nest drops this way .
-
-<demo>
-  <demovanilla src="vanilla/components/core/drop/nested">
   </demovanilla>
 </demo>

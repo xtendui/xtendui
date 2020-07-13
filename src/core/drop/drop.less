@@ -177,15 +177,26 @@
 
 // special
 
-.drop-disable {
-  // list
-  .list-drop {
-    max-width: none;
-  }
-  // card
-  .card-drop {
-    width: auto;
-    max-width: none;
+.drop-container-disable {
+  > .drop {
+    > .drop-inner {
+      > .drop-content {
+        // list
+        > .list-drop {
+          width: auto;
+          max-width: none;
+          align-items: initial;
+          .list-btns({
+            .btn-none-x();
+          });
+        }
+        // card
+        > .card-drop {
+          width: auto;
+          max-width: none;
+        }
+      }
+    }
   }
   // disable custom animation
   > .drop > .drop-inner {

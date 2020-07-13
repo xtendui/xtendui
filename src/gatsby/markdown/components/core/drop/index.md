@@ -71,6 +71,36 @@ Use this markup to create a **self drop**.
   </demovanilla>
 </demo>
 
+#### Unique
+
+Use this markup to create a **unique drop**.
+
+The **unique** mode is useful when triggering **targets outside the scope** of the component.
+
+[[notePrimary]]
+| To activate **unique mode** you **need** to specify targets with **#id**.
+
+<script type="text/plain" class="language-markup">
+  <button type="button" data-xt-drop="{ targets: '#drop--unique' }">
+    <!-- content -->
+  </button>
+  <div class="drop-container">
+    <div class="drop drop-default" id="drop--unique">
+      <div class="drop-inner">
+        <div class="drop-design"></div>
+        <div class="drop-content">
+          <!-- content -->
+        </div>
+      </div>
+    </div>
+  </div>
+</script>
+
+<demo>
+  <demovanilla src="vanilla/components/core/drop/unique">
+  </demovanilla>
+</demo>
+
 #### Multiple
 
 Use this markup to create **multiple drop**.

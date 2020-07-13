@@ -21,8 +21,10 @@
 // selectors
 
 .list-btns(@rules) {
-  > a:not(.btn), > button:not(.btn) {
-    @rules();
+  &, > * {
+    > a:not(.btn), > button:not(.btn) {
+      @rules();
+    }
   }
 }
 

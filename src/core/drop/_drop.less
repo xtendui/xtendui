@@ -51,13 +51,30 @@
     width: 100%;
     > .drop-inner {
       width: 100%;
-      > .drop-content {
-        max-width: none;
-      }
     }
     // @FIX no horizontal drop position
     left: 0 !important;
     right: 0 !important;
+  }
+}
+
+.drop-container-disable {
+  .xt-disable();
+  display: initial;
+  position: initial;
+  vertical-align: initial;
+  > a, > button {
+    display: none !important;
+  }
+  > .drop {
+    display: inline-block !important;
+    position: relative;
+    > .drop-inner {
+      z-index: initial;
+      > .drop-design {
+        display: none;
+      }
+    }
   }
 }
 
@@ -175,29 +192,4 @@
 
 .drop.drop-contain-top {
   .drop-contain-top() !important;
-}
-
-// .drop-disable
-
-.drop-disable {
-  .xt-disable();
-  display: initial;
-  > .btn {
-    display: none !important;
-  }
-  > .drop {
-    display: block !important;
-    position: relative;
-    > .drop-inner {
-      z-index: initial;
-      min-width: auto;
-      > .drop-design {
-        display: none;
-      }
-      > .drop-content {
-        max-width: none;
-        max-height: none;
-      }
-    }
-  }
 }

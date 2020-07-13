@@ -34,7 +34,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn-primary">
       after middle
     </button>
-    <div class="drop drop-default drop-after drop-middle">
+    <div class="drop drop-default drop-center drop-middle">
     ${indentString(markupDrop(), 6)}
     </div>
   </div>
