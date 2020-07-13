@@ -2833,8 +2833,11 @@ class Toggle {
     ) {
       // @FIX do calculation first
       const afterInitDisable = () => {
-        self.disable()
         self.object.removeEventListener('init.xt', afterInitDisable)
+        // @FIX after init activation
+        requestAnimationFrame(() => {
+          self.disable()
+        })
       }
       self.object.addEventListener('init.xt', afterInitDisable)
     } else if (str === 'xt-disable') {
