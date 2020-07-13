@@ -44,7 +44,7 @@ It's recommended to use `active-overlay` otherwise the component flashes visible
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `autoClose:Boolean`                          | `true`        | Close automatically on `autoclose.trigger.xt` event            |
+| Option                  | `closeAuto:Boolean`                          | `true`        | Close automatically on `closeauto.trigger.xt` event            |
 | Option                  | `closeInside:Query`                          | `'.overlay-dismiss, .btn-close, .backdrop'`        | Query Node inside to close on click            |
 | Option                  | `appendTo:Query`                          | `'body'`        | Append targets to Node on activation            |
 | Option                  | `scrollbar:Boolean`                          | `true`        | Hide body scrollbars on activation            |

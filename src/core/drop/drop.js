@@ -70,7 +70,7 @@ Drop.optionsDefault = {
     targetsInner: false,
   },
   // other
-  autoClose: true,
+  closeAuto: true,
   closeOutside: 'body',
   closeInside: '.drop-dismiss, .backdrop, .btn-close',
   zIndex: {

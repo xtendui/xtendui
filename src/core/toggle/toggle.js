@@ -551,10 +551,10 @@ class Toggle {
         keyboard.addEventListener('blur', keyboardblurHandler)
       }
     }
-    // autoclose
-    if (options.autoClose) {
-      const autocloseHandler = Xt.dataStorage.put(window, 'autoclose' + '/' + self.namespace, self.eventAutocloseHandler.bind(self))
-      addEventListener('autoclose.trigger.xt', autocloseHandler)
+    // closeauto
+    if (options.closeAuto) {
+      const closeautoHandler = Xt.dataStorage.put(window, 'closeauto' + '/' + self.namespace, self.eventAutocloseHandler.bind(self))
+      addEventListener('closeauto.trigger.xt', closeautoHandler)
     }
     // mediaLoaded
     if (options.mediaLoaded || options.mediaLoadedReinit) {
@@ -835,7 +835,7 @@ class Toggle {
   }
 
   /**
-   * autoclose handler
+   * closeauto handler
    * @param {Event} e
    */
   eventAutocloseHandler(e) {
@@ -3053,9 +3053,9 @@ Toggle.optionsDefaultSuper = {
     selector: false,
   },
   backdrop: false,
-  autoClose: false,
   appendTo: false,
   classHtml: false,
+  closeAuto: false,
   closeInside: false,
   closeOutside: false,
   closeOnDisable: false,

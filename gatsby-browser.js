@@ -9,8 +9,8 @@ let keepSidebarScroll = 0
 exports.onPreRouteUpdate = () => {
   // fix demo index when changing page
   document.documentElement.setAttribute('data-demo-index', '0')
-  // autoclose
-  dispatchEvent(new CustomEvent('autoclose.trigger.xt'))
+  // closeauto
+  dispatchEvent(new CustomEvent('closeauto.trigger.xt'))
   // keepSidebarScroll
   const sidebarArticle = document.querySelector('.gatsby_site_article_sidebar')
   if (sidebarArticle) {

@@ -63,7 +63,7 @@ You can specify **on** and **off** events for the drop. Fore example `on: 'mouse
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `autoClose:Boolean`                          | `true`        | Close automatically on `autoclose.trigger.xt` event            |
+| Option                  | `closeAuto:Boolean`                          | `true`        | Close automatically on `closeauto.trigger.xt` event            |
 | Option                  | `closeOutside:Query`                          | `'body'`        | Query Node outside to close on click            |
 | Option                  | `closeInside:Query`                          | `'.drop-dismiss, .backdrop, .btn-close'`        | Query Node inside to close on click            |
 

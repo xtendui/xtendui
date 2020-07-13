@@ -70,7 +70,7 @@ Overlay.optionsDefault = {
   eventLimit: '.event-limit, .card-overlay .card-content',
   // other
   backdrop: true,
-  autoClose: true,
+  closeAuto: true,
   appendTo: 'body',
   classHtml: 'xt-overlay',
   closeInside: '.overlay-dismiss, .backdrop, .btn-close',

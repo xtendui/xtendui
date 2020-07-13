@@ -299,8 +299,8 @@ class Sticky extends Xt.Toggle {
           add = -heightEl
           if (!el.classList.contains('sticky-hide')) {
             el.classList.add('sticky-hide')
-            // autoclose
-            dispatchEvent(new CustomEvent('autoclose.trigger.xt', { detail: { container: el } }))
+            // closeauto
+            dispatchEvent(new CustomEvent('closeauto.trigger.xt', { detail: { container: el } }))
             // listener dispatch
             el.dispatchEvent(new CustomEvent('hide.xt'))
           }

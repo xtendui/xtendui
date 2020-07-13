@@ -65,7 +65,7 @@ document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('o
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Event                   | `on.trigger.xt`       | `elements` `targets` | Activation event             |
 | Event                   | `off.trigger.xt`      | `elements` `targets` | Deactivation event            |
-| Event                   | `autoclose.trigger.xt`           | `window` | Autclose all components with `autoClose: true` option             |
+| Event                   | `closeauto.trigger.xt`           | `window` | Autclose all components with `closeAuto: true` option             |
 
 </div>
 
