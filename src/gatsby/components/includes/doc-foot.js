@@ -181,7 +181,7 @@ DocFoot.propTypes = {
         }).isRequired
       ),
     }).isRequired,
-  }).isRequired,
+  }),
 }
 
 export default DocFoot

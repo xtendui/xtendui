@@ -45,7 +45,7 @@ DocHead.propTypes = {
         description: PropTypes.string,
       }).isRequired,
     }).isRequired,
-  }).isRequired,
+  }),
 }
 
 export default DocHead

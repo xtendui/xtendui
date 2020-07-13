@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
+import Header from 'components/includes/header'
 import Footer from 'components/includes/footer'
-import DocSidebar from 'components/includes/doc-sidebar'
 import DocHead from 'components/includes/doc-head'
 import DocFoot from 'components/includes/doc-foot'
 import DocFullscreen from 'components/includes/doc-fullscreen'
@@ -53,7 +53,7 @@ class Layout extends React.Component {
             <div className="gatsby_site_wrapper">
               <div className="gatsby_site_main">
                 <div className="gatsby_site_main_inner">
-                  <DocSidebar site={data} seo={seo} page={page} />
+                  <Header site={data} seo={seo} page={page} />
                   <div className="gatsby_site_article">
                     <DocFullscreen />
                     <main className="gatsby_site_article_inner" id="gatbsy_open-full-inner">
@@ -94,7 +94,7 @@ Layout.propTypes = {
         description: PropTypes.string,
       }).isRequired,
     }).isRequired,
-  }).isRequired,
+  }),
 }
 
 export default Layout

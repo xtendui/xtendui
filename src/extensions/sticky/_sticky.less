@@ -100,15 +100,17 @@
   }
 }
 
-// .sticky-disable
+// special
 
 .sticky-disable {
   .xt-disable();
   position: relative !important;
-  top: auto !important;
-  bottom: auto !important;
+  top: initial !important;
+  left: initial !important;
+  right: initial !important;
+  bottom: initial !important;
   &.xt-clone {
-    position: absolute !important;
+    display: none !important;
   }
   &:not(.xt-clone) {
     position: relative !important;

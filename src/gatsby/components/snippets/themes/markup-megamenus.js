@@ -26,7 +26,7 @@ export default () => {
 
                       <div class="megamenu_col_left">
                         <div class="megamenu_left">
-                          ${img({ classes: 'media-cover', ratio: '72.6%' })}
+                          ${img({ classes: 'media-cover', ratio: '72.6%', loading: 'eager' })}
                         </div>
                       </div>
 
@@ -123,7 +123,7 @@ export default () => {
 
                       <div class="megamenu_col_left">
                         <div class="megamenu_left">
-                          ${img({ classes: 'media-cover', ratio: '72.6%' })}
+                          ${img({ classes: 'media-cover', ratio: '100%', loading: 'eager' })}
                         </div>
                       </div>
 
@@ -262,7 +262,7 @@ export default () => {
 
                       <div class="megamenu_col_left">
                         <div class="megamenu_left">
-                          ${img({ classes: 'media-cover', ratio: '72.6%' })}
+                          ${img({ classes: 'media-cover', ratio: '50%', loading: 'eager' })}
                         </div>
                       </div>
 
@@ -341,7 +341,6 @@ export default () => {
 <!-- mouse events instead of click you can remove this -->
 <div class="container">
   <div class="form form-default">
-    <br/>
     <input type="checkbox" id="check-sequential-megamenu-v1">
     <label class="form-label" for="check-sequential-megamenu-v1">
       Use mouse events

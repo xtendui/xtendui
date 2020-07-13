@@ -151,7 +151,7 @@
 
 // special
 
-.drop-container-static {
+.drop-static {
   .list-drop, .card-drop {
     max-width: 100% !important;
   }
@@ -177,32 +177,30 @@
 
 // special
 
-.drop-container-disable {
-  > .drop {
-    .drop-nospace();
-    > .drop-inner {
-      > .drop-content {
-        // list
-        > .list-drop {
-          padding: 0;
-          width: auto;
-          max-width: none;
-          align-items: initial;
-          .list-btns({
-            .btn-none-x();
-          });
-        }
-        // card
-        > .card-drop {
-          .card-disable();
-          width: auto;
-          max-width: none;
-        }
+.drop-disable {
+  .drop-nospace();
+  > .drop-inner {
+    > .drop-content {
+      // list
+      > .list-drop {
+        padding: 0;
+        width: auto;
+        max-width: none;
+        align-items: initial;
+        .list-btns({
+          .btn-none-x();
+        });
+      }
+      // card
+      > .card-drop {
+        .card-disable();
+        width: auto;
+        max-width: none;
       }
     }
   }
   // disable custom animation
-  > .drop > .drop-inner {
+  > .drop-inner {
     > .drop-content {
       opacity: 1 !important;
       .trans-anim-none() !important;
@@ -228,51 +226,45 @@
 
 // animation
 
-.drop-container {
-  > .drop {
-    > .drop-inner {
-      > .drop-design {
-        opacity: 0;
-      }
-      > .drop-content {
-        opacity: 0;
-      }
+.drop {
+  > .drop-inner {
+    > .drop-design {
+      opacity: 0;
+    }
+    > .drop-content {
+      opacity: 0;
     }
   }
   &.in {
     animation-duration: @time-medium + @time-tiny; // needed for animation time and backdrop animation time, put max animation time
-    > .drop {
-      > .drop-inner {
-        > .drop-design {
-          opacity: 1;
-          transition: opacity @time-medium @ease-in;
-        }
-        > .drop-content {
-          opacity: 1;
-          transition: opacity @time-medium @ease-in @time-tiny;
-        }
+    > .drop-inner {
+      > .drop-design {
+        opacity: 1;
+        transition: opacity @time-medium @ease-in;
       }
-      > .backdrop {
-        .backdrop.in();
+      > .drop-content {
+        opacity: 1;
+        transition: opacity @time-medium @ease-in @time-tiny;
       }
+    }
+    > .backdrop {
+      .backdrop.in();
     }
   }
   &.out {
     animation-duration: @time-small + @time-tiny; // needed for animation time and backdrop animation time, put max animation time
-    > .drop {
-      > .drop-inner {
-        > .drop-design {
-          opacity: 0;
-          transition: opacity @time-small @ease-out @time-tiny;
-        }
-        > .drop-content {
-          opacity: 0;
-          transition: opacity @time-small @ease-out;
-        }
+    > .drop-inner {
+      > .drop-design {
+        opacity: 0;
+        transition: opacity @time-small @ease-out @time-tiny;
       }
-      > .backdrop {
-        .backdrop.out();
+      > .drop-content {
+        opacity: 0;
+        transition: opacity @time-small @ease-out;
       }
+    }
+    > .backdrop {
+      .backdrop.out();
     }
   }
 }

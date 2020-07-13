@@ -57,50 +57,44 @@
 
     // animation
 
-    .drop-container {
-      > .drop {
-        > .drop-inner {
-          > .drop-design {
-            opacity: 0;
-            transform: scale(.75);
-          }
-          > .drop-content {
-            opacity: 0;
-            transform: translateY(-1.5rem);
-          }
+    .drop {
+      > .drop-inner {
+        > .drop-design {
+          opacity: 0;
+          transform: scale(.75);
+        }
+        > .drop-content {
+          opacity: 0;
+          transform: translateY(-1.5rem);
         }
       }
       &.in {
         animation-duration: @time-small + @time-tiny; // needed for animation time and backdrop animation time, put max animation time
-        > .drop {
-          > .drop-inner {
-            > .drop-design {
-              opacity: 1;
-              transform: none;
-              transition: transform @time-medium @ease-in, opacity @time-medium @ease-in;
-            }
-            > .drop-content {
-              opacity: 1;
-              transform: none;
-              transition: transform @time-medium @ease-in @time-tiny, opacity @time-medium @ease-in @time-tiny;
-            }
+        > .drop-inner {
+          > .drop-design {
+            opacity: 1;
+            transform: none;
+            transition: transform @time-medium @ease-in, opacity @time-medium @ease-in;
+          }
+          > .drop-content {
+            opacity: 1;
+            transform: none;
+            transition: transform @time-medium @ease-in @time-tiny, opacity @time-medium @ease-in @time-tiny;
           }
         }
       }
       &.out {
         animation-duration: @time-small + @time-tiny; // needed for animation time and backdrop animation time, put max animation time
-        > .drop {
-          > .drop-inner {
-            > .drop-design {
-              opacity: 0;
-              transform: scale(.75);
-              transition: transform @time-small @ease-out @time-tiny, opacity @time-small @ease-out @time-tiny;
-            }
-            > .drop-content {
-              opacity: 0;
-              transform: translateY(1.5rem);
-              transition: transform @time-small @ease-out, opacity @time-small @ease-out;
-            }
+        > .drop-inner {
+          > .drop-design {
+            opacity: 0;
+            transform: scale(.75);
+            transition: transform @time-small @ease-out @time-tiny, opacity @time-small @ease-out @time-tiny;
+          }
+          > .drop-content {
+            opacity: 0;
+            transform: translateY(1.5rem);
+            transition: transform @time-small @ease-out, opacity @time-small @ease-out;
           }
         }
       }

@@ -35,54 +35,48 @@
 
     // animation
 
-    .drop-container {
-      > .drop {
-        > .drop-inner {
-          .collapse-height();
-        transition: height @time-medium @ease-in;
-          > .drop-design {
-            opacity: 0;
-            transform: translateY(-1rem);
-          }
-          > .drop-content {
-            opacity: 0;
-            transform: translateY(-1.5rem);
-          }
+  .drop {
+    > .drop-inner {
+      .collapse-height();
+      transition: height @time-medium @ease-in;
+        > .drop-design {
+          opacity: 0;
+          transform: translateY(-1rem);
+        }
+        > .drop-content {
+          opacity: 0;
+          transform: translateY(-1.5rem);
         }
       }
       &.in {
         animation-duration: @time-medium; // needed for animation time and backdrop animation time, put max animation time
-        > .drop {
-          > .drop-inner {
-            transition: height @time-medium @ease-in;
-            > .drop-design {
-              opacity: 1;
-              transform: none;
-              transition: height @time-medium @ease-in, transform @time-medium @ease-in, opacity @time-tiny @ease-in;
-            }
-            > .drop-content {
-              opacity: 1;
-              transform: none;
-              transition: transform @time-medium @ease-in, opacity @time-medium @ease-in;
-            }
+        > .drop-inner {
+          transition: height @time-medium @ease-in;
+          > .drop-design {
+            opacity: 1;
+            transform: none;
+            transition: height @time-medium @ease-in, transform @time-medium @ease-in, opacity @time-tiny @ease-in;
+          }
+          > .drop-content {
+            opacity: 1;
+            transform: none;
+            transition: transform @time-medium @ease-in, opacity @time-medium @ease-in;
           }
         }
       }
       &.out {
         animation-duration: @time-small; // needed for animation time and backdrop animation time, put max animation time
-        > .drop {
-          > .drop-inner {
-            transition: height @time-small @ease-out;
-            > .drop-design {
-              opacity: 0;
-              transform: translateY(1rem);
-              transition: height @time-small @ease-out, transform @time-small @ease-out, opacity @time-tiny @ease-out @time-tiny;
-            }
-            > .drop-content {
-              opacity: 0;
-              transform: translateY(1.5rem);
-              transition: transform @time-small @ease-out, opacity @time-small @ease-out;
-            }
+        > .drop-inner {
+          transition: height @time-small @ease-out;
+          > .drop-design {
+            opacity: 0;
+            transform: translateY(1rem);
+            transition: height @time-small @ease-out, transform @time-small @ease-out, opacity @time-tiny @ease-out @time-tiny;
+          }
+          > .drop-content {
+            opacity: 0;
+            transform: translateY(1.5rem);
+            transition: transform @time-small @ease-out, opacity @time-small @ease-out;
           }
         }
       }
