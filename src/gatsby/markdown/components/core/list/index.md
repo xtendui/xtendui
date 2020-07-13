@@ -56,8 +56,6 @@ You can use list to space childrens like [row](/components/core/row/content) doe
 
 #### Button
 
-In css you can use `.list-btns({});` to style with this selector `> a:not(.btn), > button:not(.btn)`.
-
 <demo>
   <demovanilla src="vanilla/components/core/list/button-row" name="horizontal">
   </demovanilla>

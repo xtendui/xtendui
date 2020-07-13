@@ -95,6 +95,14 @@
 
 // special
 
+.overlay-close-fixed {
+  .btn-close {
+    position: fixed !important;
+    z-index: @index-btn-close;
+    line-height: 1;
+  }
+}
+
 .overlay-disable {
   .xt-disable();
   display: flex !important;
@@ -133,15 +141,5 @@
   }
   > .backdrop {
     display: none !important;
-  }
-}
-
-// special
-
-.overlay-close-fixed {
-  .btn-close {
-    position: fixed !important;
-    z-index: @index-btn-close;
-    line-height: 1;
   }
 }

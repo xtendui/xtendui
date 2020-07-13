@@ -17,6 +17,8 @@ date: "2019-03-15"
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `.overlay-close-fixed`                | `.overlay-close-fixed()`        | Close button position fixed and styles            |
 | Option                  | `.overlay-disable`                | `.overlay-disable()`        | Disable overlay, useful within media queries            |
+| Option                  | `.overlay-squared`                | `.overlay-squared()`        | No border-radius on overlay           |
+| Option                  | `.overlay-noborder`                | `.overlay-noborder()`        | No border on overlay            |
 
 </div>
 

@@ -29,6 +29,15 @@ date: "2019-12-01"
   </demovanilla>
 </demo>
 
+Presets style child `a` and `button` automatically, if you want a customize one just add the class `.btn`.
+
+In css you can use the same styling with custom css by using `.list-btns({ /* styles here */ });`.
+
+<demo>
+  <demovanilla src="vanilla/components/core/list/list-btns">
+  </demovanilla>
+</demo>
+
 ## Space
 
 Lists **automatically** add horizontal and vertical spacing to the contents. You can **specify a different one** with this classes/mixins.
