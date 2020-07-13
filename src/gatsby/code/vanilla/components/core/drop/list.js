@@ -1,6 +1,4 @@
 import path from 'path'
-const markupDrop = require('components/snippets/components/markup-drop-usage').default
-const indentString = require('indent-string')
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -15,7 +13,24 @@ demo.htmlSource = `
     Toggle
   </button>
   <div class="drop drop-default">
-  ${indentString(markupDrop(), 4)}
+    <div class="drop-inner">
+      <div class="drop-design"></div>
+      <div class="drop-content">
+    
+        <nav class="list-block list-drop">
+          <a href="#">
+            Lorem Ipsum
+          </a>
+          <button type="button">
+            Dolor sit
+          </button>
+          <button type="button" class="btn btn-default btn-small btn-wide btn-squared">
+            Dolor sit
+          </button>
+        </nav>
+    
+      </div>
+    </div>
   </div>
 </div>
 `

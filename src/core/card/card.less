@@ -243,10 +243,13 @@
 }
 
 .card-disable {
-  color: @text !important;
-  &, .card-item {
-    opacity: 1 !important;
-    .transform-none() !important;
-    .trans-anim-none() !important;
+  .text-default();
+  .card-block, .card-content {
+    opacity: 1;
+    .transform-none();
+    .trans-anim-none();
+  }
+  > .btn-close {
+    display: none;
   }
 }

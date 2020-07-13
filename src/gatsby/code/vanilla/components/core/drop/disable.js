@@ -1,6 +1,6 @@
 import path from 'path'
 const markupDrop = require('components/snippets/components/markup-drop').default
-const markupDropNested = require('components/snippets/components/markup-drop-nested').default
+const markupDropCard = require('components/snippets/components/markup-drop-card').default
 const indentString = require('indent-string')
 
 const filename = __filename.replace(/\\/g, '/')
@@ -13,12 +13,12 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-default list-space-small align-items-center">
   
-  <div class="drop-container drop-container-disable" data-xt-drop>
+  <div class="drop-container demo--drop-container-disable-sm" data-xt-drop>
     <button type="button" class="btn btn-primary">
       Toggle
     </button>
     <div class="drop drop-default">
-    ${indentString(markupDrop(), 4)}
+    ${indentString(markupDropCard(), 6)}
     </div>
   </div>
   
@@ -27,7 +27,68 @@ demo.htmlSource = `
       Toggle
     </button>
     <div class="drop drop-default">
-    ${indentString(markupDropNested(), 4)}
+      <div class="drop-inner">
+        <div class="drop-design"></div>
+        <div class="drop-content">
+      
+          <nav class="list-block list-drop">
+            <button type="button">
+              Lorem ipsum dolor
+            </button>
+            <button type="button">
+              Dolor sit
+            </button>
+            <div class="drop-container" data-xt-drop>
+              <button type="button">
+                Toggle
+              </button>
+              <div class="drop drop-primary drop-center drop-middle">
+                <div class="drop-inner">
+                  <div class="drop-design"></div>
+                  <div class="drop-content">
+      
+                    <nav class="list-block list-drop">
+                      <button type="button">
+                        Lorem ipsum dolor
+                      </button>
+                      <button type="button">
+                        Dolor sit
+                      </button>
+                      <div class="drop-container" data-xt-drop>
+                        <button type="button">
+                          Toggle
+                        </button>
+                        <div class="drop drop-default drop-center drop-middle">
+                          <div class="drop-inner">
+                            <div class="drop-design"></div>
+                            <div class="drop-content">
+      
+                              <nav class="list-block list-drop">
+                                <button type="button">
+                                  Lorem ipsum dolor
+                                </button>
+                                <button type="button">
+                                  Dolor sit
+                                </button>
+                                <button type="button">
+                                  Amet
+                                </button>
+                              </nav>
+      
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </nav>
+      
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+      
+        </div>
+      </div>
     </div>
   </div>
   

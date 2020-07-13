@@ -1,6 +1,4 @@
 import path from 'path'
-const markupDrop = require('components/snippets/components/markup-drop-overflow').default
-const indentString = require('indent-string')
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -17,7 +15,42 @@ demo.htmlSource = `
       list
     </button>
     <div class="drop drop-default drop-overflow-y">
-    ${indentString(markupDrop(), 6)}
+      <div class="drop-inner">
+        <div class="drop-design"></div>
+        <div class="drop-content">
+      
+          <nav class="list-block list-drop">
+            <button type="button">
+              Lorem ipsum dolor
+            </button>
+            <button type="button">
+              Lorem ipsum dolor
+            </button>
+            <button type="button">
+              Lorem ipsum dolor
+            </button>
+            <button type="button">
+              Dolor sit
+            </button>
+            <button type="button">
+              Dolor sit
+            </button>
+            <button type="button">
+              Dolor sit
+            </button>
+            <button type="button">
+              Amet
+            </button>
+            <button type="button">
+              Amet
+            </button>
+            <button type="button">
+              Amet
+            </button>
+          </nav>
+      
+        </div>
+      </div>
     </div>
   </div>
 
@@ -29,7 +62,7 @@ demo.htmlSource = `
       <div class="drop-inner">
         <div class="drop-design"></div>
         <div class="drop-content">
-
+      
           <div class="card card-drop">
             <div class="card-design"></div>
             <div class="btn btn-close" aria-label="Close"></div>
@@ -50,7 +83,7 @@ demo.htmlSource = `
               </div>
             </div>
           </div>
-
+      
         </div>
       </div>
     </div>
