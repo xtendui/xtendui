@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div data-xt-overlay>
+<div class="demo--overlay-disable" data-xt-overlay>
   <button type="button" class="btn btn-primary demo--overlay-disable-btn">
     Toggle
   </button>

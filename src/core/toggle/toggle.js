@@ -840,13 +840,25 @@ class Toggle {
    */
   eventAutocloseHandler(e) {
     const self = this
+    // check
+    let check = self.object
+    if (self.mode === 'unique') {
+      check = self.targets[0]
+    }
     // triggering e.detail.container
-    if (!e || !e.detail || !e.detail.container || e.detail.container.contains(self.object)) {
-      // handler
-      const currents = self.getCurrents()
-      for (const current of currents) {
-        self.eventOff(current, true)
-      }
+    if (!e || !e.detail || !e.detail.container || e.detail.container.contains(check)) {
+      Xt.eventDelay(
+        e,
+        check,
+        () => {
+          // handler
+          const currents = self.getCurrents()
+          for (const current of currents) {
+            self.eventOff(current, true)
+          }
+        },
+        self.componentNamespace + 'Status'
+      )
     }
   }
 
@@ -1646,6 +1658,27 @@ class Toggle {
   }
 
   /**
+   * queue stop all
+   */
+  queueStopAll() {
+    const self = this
+    // stop all obj in queues
+    if (self.detail) {
+      // @FIX not already initialized
+      const actions = [
+        { current: 'On', other: 'Off' },
+        { current: 'Off', other: 'On' },
+      ]
+      for (const action of actions) {
+        // remove queue and stop
+        const removed = self.detail['queue' + action.current].shift()
+        self.queueStop(action.current, action.other, removed)
+        self.detail['queue' + action.current] = []
+      }
+    }
+  }
+
+  /**
    * queue delay
    * @param {String} actionCurrent Current action
    * @param {String} actionOther Other action
@@ -1859,6 +1892,7 @@ class Toggle {
   queueAnimDone(actionCurrent, actionOther, obj, el, type, skipQueue = false) {
     const self = this
     const options = self.options
+    // special
     if (actionCurrent === 'On') {
       // activation
       self.activateDone(el)
@@ -1875,7 +1909,6 @@ class Toggle {
       self.deactivateDone(el)
       // special
       if (type === 'targets' || (!self.targets.length && type === 'elements')) {
-        // @FIX when standalone
         // appendTo
         if (options.appendTo) {
           const appendOrigin = document.querySelector('[data-xt-origin="' + self.namespace + '"]')
@@ -2786,6 +2819,7 @@ class Toggle {
    */
   eventStatus() {
     const self = this
+    const options = self.options
     // check
     let check = self.object
     if (self.mode === 'unique') {
@@ -2795,16 +2829,16 @@ class Toggle {
     const str = getComputedStyle(check, ':after').getPropertyValue('content').replace(/['"]+/g, '')
     if (
       check instanceof HTMLElement && // @FIX not on window
-      str === 'xt-disable-noinit'
+      str === 'xt-disable-after-init'
     ) {
-      self.disable()
-    } else if (str === 'xt-disable') {
       // @FIX do calculation first
       const afterInitDisable = () => {
         self.disable()
         self.object.removeEventListener('init.xt', afterInitDisable)
       }
       self.object.addEventListener('init.xt', afterInitDisable)
+    } else if (str === 'xt-disable') {
+      self.disable()
     } else {
       self.enable()
     }
@@ -2831,8 +2865,11 @@ class Toggle {
     if (!self.disabled) {
       // closeOnDisable
       if (options.closeOnDisable) {
-        // listener dispatch
-        self.object.dispatchEvent(new CustomEvent('off.trigger.xt'))
+        // @FIX appendTo targets
+        for (const target of self.targets) {
+          // listener dispatch
+          target.dispatchEvent(new CustomEvent('off.trigger.xt'))
+        }
       }
       // stop auto
       clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutoTimeout'))
@@ -2852,8 +2889,13 @@ class Toggle {
    */
   eventReinitHandler(e) {
     const self = this
+    // check
+    let check = self.object
+    if (self.mode === 'unique') {
+      check = self.targets[0]
+    }
     // triggering e.detail.container
-    if (!e || !e.detail || !e.detail.container || e.detail.container.contains(self.object)) {
+    if (!e || !e.detail || !e.detail.container || e.detail.container.contains(check)) {
       Xt.eventDelay(
         e,
         self.object,
