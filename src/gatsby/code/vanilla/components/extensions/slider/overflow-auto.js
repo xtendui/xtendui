@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="slider"
+<div class="slider demo--overflow-auto"
     data-xt-slider="{ align: 'center', drag: { wrap: true } }">
 ${indentString(markupSlider(), 2)}
 </div>

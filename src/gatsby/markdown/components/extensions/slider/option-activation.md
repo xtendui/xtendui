@@ -50,12 +50,14 @@ Use `justify-content` to assign horizontal alignment when not overflowing, this 
 
 </div>
 
+You can style the slides justification with the selector `.slider.xt-overflow-auto .slides-inner`.
+
 <demo>
   <demovanilla src="vanilla/components/extensions/slider/overflow-auto">
   </demovanilla>
 </demo>
 
-Disable this behaviour with `overflowAuto: false`.
+You can disable **overflow auto** behaviour with `overflowAuto: false`.
 
 <demo>
   <demovanilla src="vanilla/components/extensions/slider/overflow-auto-false">
