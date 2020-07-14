@@ -30,6 +30,7 @@ if (typeof window !== 'undefined') {
   require('xtend-library/src/private/demos/test/demo-vanilla-iframe.js')
   require('xtend-library/src/private/demos/test/demo-vanilla.js')
   require('xtend-library/src/private/demos/themes/brands-featured-v1.js')
+  require('xtend-library/src/private/demos/themes/fashion-gallery-v1.js')
   require('xtend-library/src/private/demos/themes/fashion-hero-v1.js')
   require('xtend-library/src/private/demos/themes/fashion-hero-v2.js')
   require('xtend-library/src/private/demos/themes/fashion-listing-v1.js')
