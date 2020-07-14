@@ -13,7 +13,7 @@ class DemoVanillaIframe extends React.Component {
     const seo = {}
     seo.title = 'Demo'
     seo.description = 'Demo'
-    demo.path = `private/demos/${demo.dirs.join('/')}`.replace('/iframe', '').replace('src/gatsby/code/', '')
+    demo.path = `private/demos/${demo.dirs.join('/')}/${demo.name}`.replace('/iframe', '').replace('src/gatsby/code/', '')
     return (
       <StaticQuery
         query={graphql`
@@ -50,6 +50,7 @@ export default DemoVanillaIframe
 
 DemoVanillaIframe.propTypes = {
   demo: PropTypes.shape({
+    name: PropTypes.string,
     dirs: PropTypes.array.isRequired,
     path: PropTypes.string,
     htmlSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
