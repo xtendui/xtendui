@@ -52,7 +52,7 @@ Xt.mount.push({
       self = null
     }
     return unmount
-  }
+  },
 })
 
 /**

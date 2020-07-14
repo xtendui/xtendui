@@ -1,5 +1,4 @@
 import path from 'path'
-const markupDrop = require('components/snippets/components/markup-drop').default
 const markupDropCard = require('components/snippets/components/markup-drop-card').default
 const indentString = require('indent-string')
 

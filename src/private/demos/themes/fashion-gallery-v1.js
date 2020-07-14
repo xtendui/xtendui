@@ -25,12 +25,12 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = function() {
+    const unmount = function () {
       self.destroy()
       self = null
     }
     return unmount
-  }
+  },
 })
 
 /**
@@ -70,7 +70,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '#iframe--fashion-gallery-v1 body #gatsby_body-inner', // add your own selector instead of body to contain the code
-  mount: object => {
+  mount: (object) => {
     // init
 
     let self = new Xt.ScrollToAnchor(object, {
@@ -109,7 +109,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '#iframe--fashion-gallery-v1 body .header-continue', // add your own selector instead of body to contain the code
-  mount: object => {
+  mount: (object) => {
     // vars
 
     const icon = object.querySelector(':scope > *')
@@ -126,7 +126,7 @@ Xt.mount.push({
 
     // scroll
 
-    const eventScroll = e => {
+    const eventScroll = () => {
       if (document.scrollingElement.scrollTop > 0) {
         object.classList.add('scrolled')
       } else {
@@ -139,7 +139,7 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = function() {
+    const unmount = function () {
       clearInterval(interval)
       removeEventListener('scroll', eventScroll)
     }

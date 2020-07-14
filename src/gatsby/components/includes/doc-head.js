@@ -1,8 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
-import kebabCase from 'lodash.kebabcase'
-import { markdownSlug } from 'components/snippets/markdown-slug.js'
 
 class DocHead extends React.Component {
   render() {

@@ -2819,7 +2819,6 @@ class Toggle {
    */
   eventStatus() {
     const self = this
-    const options = self.options
     // check
     let check = self.object
     if (self.mode === 'unique') {

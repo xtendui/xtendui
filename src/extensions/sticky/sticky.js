@@ -155,7 +155,7 @@ class Sticky extends Xt.Toggle {
       self.object,
       () => {
         // handler
-        self.eventSticky(e)
+        self.eventSticky()
       },
       self.componentNamespace + 'Sticky'
     )
@@ -188,9 +188,8 @@ class Sticky extends Xt.Toggle {
 
   /**
    * window scroll
-   * @param {Event} e
    */
-  eventSticky(e) {
+  eventSticky() {
     const self = this
     const options = self.options
     // disabled

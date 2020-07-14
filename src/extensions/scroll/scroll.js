@@ -137,7 +137,7 @@ class Scroll extends Xt.Toggle {
       self.object,
       () => {
         // handler
-        self.eventScroll(e)
+        self.eventScroll()
       },
       self.componentNamespace + 'Scroll'
     )
@@ -149,9 +149,8 @@ class Scroll extends Xt.Toggle {
 
   /**
    * window scroll
-   * @param {Event} e
    */
-  eventScroll(e) {
+  eventScroll() {
     const self = this
     const options = self.options
     // disabled

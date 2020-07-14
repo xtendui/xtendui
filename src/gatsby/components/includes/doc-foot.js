@@ -127,10 +127,7 @@ class DocFoot extends React.Component {
 
                 {page.post.frontmatter.type !== 'Themes' && postsThemes.length ? (
                   <div className="gatsby_listing_column">
-                    <Link
-                      to={'/themes/' + kebabCase(page.post.frontmatter.parent)}
-                      className="card card-primary card-full card-collapse gatsby_listing_item"
-                    >
+                    <Link to={'/themes/' + kebabCase(page.post.frontmatter.parent)} className="card card-primary card-full card-collapse gatsby_listing_item">
                       <div className="card-design"></div>
                       <div className="card-inner">
                         <div className="card-content">
