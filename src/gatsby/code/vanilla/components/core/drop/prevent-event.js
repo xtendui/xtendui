@@ -10,8 +10,8 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="drop-container" data-xt-drop="{ on: 'mouseenter', off: 'mouseleave', closeOutside: false }">
-  <a href="#drop-with-link-1" class="btn btn-primary">
+<div class="drop-container" data-xt-drop="{ preventEvent: true }">
+  <a href="#drop-with-link-0" class="btn btn-primary">
     Toggle
   </a>
   <div class="drop drop-default">

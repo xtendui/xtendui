@@ -30,15 +30,23 @@ date: "2019-03-15"
   </demovanilla>
 </demo>
 
-## Link
+## Prevent Event
 
-You can have **element's link** that trigger after toggle.
+You can have **element's link** and **other events** that trigger after drop with `preventEvent: true`.
 
 If the toggle is on <code>"on": "mouseenter"</code> or <code>"on": "mousehover"</code> the link gets activated on the second touch event on touch devices.
 
+<div class="table-scroll">
+
+|                         | Syntax                                    | Default                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `preventEvent:Boolean`                          | `false`        | Prevent interaction until activated depending on `on` and `off` events (second click or mouseenter)            |
+
+</div>
+
 <demo>
-  <demovanilla src="vanilla/components/core/drop/with-link">
+  <demovanilla src="vanilla/components/core/drop/prevent-event">
   </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/with-link-hover">
+  <demovanilla src="vanilla/components/core/drop/prevent-event-hover">
   </demovanilla>
 </demo>

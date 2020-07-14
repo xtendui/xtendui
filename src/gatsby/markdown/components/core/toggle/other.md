@@ -6,16 +6,24 @@ title: "Other"
 date: "2019-03-15"
 ---
 
-## Link
+## Prevent event
 
-You can have **element's link** that trigger after toggle.
+You can have **element's link** and **other events** that trigger after toggle with `preventEvent: true`.
 
 If the toggle is on `"on": "mouseenter"` or `"on": "mousehover"` the link gets activated on the second touch event on touch devices.
 
+<div class="table-scroll">
+
+|                         | Syntax                                    | Default                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `preventEvent:Boolean`                          | `false`        | Prevent interaction until activated depending on `on` and `off` events (second click or mouseenter)            |
+
+</div>
+
 <demo>
-  <demovanilla src="vanilla/components/core/toggle/with-link">
+  <demovanilla src="vanilla/components/core/toggle/prevent-event">
   </demovanilla>
-  <demovanilla src="vanilla/components/core/toggle/with-link-hover">
+  <demovanilla src="vanilla/components/core/toggle/prevent-event-hover">
   </demovanilla>
 </demo>
 

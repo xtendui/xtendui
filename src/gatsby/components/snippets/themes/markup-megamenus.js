@@ -10,7 +10,7 @@ export default () => {
 
       <div class="drop-container drop-container-static megamenu_outer">
 
-        <a href="#" type="button" class="btn btn_megamenus">
+        <a href="#menu-0" type="button" class="btn btn_megamenus">
           Lorem ipsum
         </a>
 
@@ -107,7 +107,7 @@ export default () => {
 
       <div class="drop-container drop-container-static megamenu_outer">
 
-        <a href="#" type="button" class="btn btn_megamenus">
+        <a href="#menu-1" type="button" class="btn btn_megamenus">
           dolor
         </a>
 
@@ -246,7 +246,7 @@ export default () => {
 
       <div class="drop-container drop-container-static megamenu_outer">
 
-        <a href="#" type="button" class="btn btn_megamenus">
+        <a href="#menu-2" type="button" class="btn btn_megamenus">
           sit amet
         </a>
 
@@ -325,11 +325,11 @@ export default () => {
 
       </div>
 
-      <a href="#" class="btn btn_megamenus">
+      <a href="#menu-3" class="btn btn_megamenus">
         consectetur
       </a>
 
-      <a href="#" class="btn btn_megamenus">
+      <a href="#menu-4" class="btn btn_megamenus">
         adipiscing elit
       </a>
 

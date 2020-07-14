@@ -74,6 +74,7 @@ You can specify **on** and **off** events for the toggle. Fore example `on: 'mou
 | Option                  | `on:String`                          | `'click'`        | Activation event to attach to elements            |
 | Option                  | `off:String`                          | `false`        | Dectivation event to attach to elements            |
 | Option                  | `eventLimit:Query`                          | `'.event-limit'`        | Limit events inside self.object            |
+| Option                  | `preventEvent:Boolean`                          | `false`        | Prevent interaction until activated depending on `on` and `off` events (second click or mouseenter)            |
 
 </div>
 

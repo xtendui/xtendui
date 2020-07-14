@@ -426,24 +426,26 @@ class Toggle {
         for (const event of events) {
           el.addEventListener(event, onHandler)
         }
-        if (events.includes('click') || events.includes('mouseenter') || events.includes('mousehover')) {
-          // @FIX prevents click links on click until clicked two times
-          const withlinkStartTouchHandler = Xt.dataStorage.put(
-            el,
-            'touchend/withlink' + '/' + self.namespace,
-            self.eventWithlinkStartHandler.bind(self).bind(self, el)
-          )
-          el.addEventListener('touchend', withlinkStartTouchHandler)
+        if (options.preventEvent) {
+          if (events.includes('click') || events.includes('mouseenter') || events.includes('mousehover')) {
+            // @FIX prevents click links on click until clicked two times
+            const preventeventStartTouchHandler = Xt.dataStorage.put(
+              el,
+              'touchend/preventevent' + '/' + self.namespace,
+              self.eventPreventeventStartHandler.bind(self).bind(self, el)
+            )
+            el.addEventListener('touchend', preventeventStartTouchHandler)
+          }
+          if (events.includes('click')) {
+            const preventeventStartMouseHandler = Xt.dataStorage.put(
+              el,
+              'mouseup/preventevent' + '/' + self.namespace,
+              self.eventPreventeventStartHandler.bind(self).bind(self, el)
+            )
+            el.addEventListener('mouseup', preventeventStartMouseHandler)
+          }
         }
-        if (events.includes('click')) {
-          const withlinkStartMouseHandler = Xt.dataStorage.put(
-            el,
-            'mouseup/withlink' + '/' + self.namespace,
-            self.eventWithlinkStartHandler.bind(self).bind(self, el)
-          )
-          el.addEventListener('mouseup', withlinkStartMouseHandler)
-        }
-        Xt.dataStorage.put(el, 'active/withlink' + '/' + self.namespace, self.hasCurrent(el))
+        Xt.dataStorage.put(el, 'active/preventevent' + '/' + self.namespace, self.hasCurrent(el))
       }
       const onHandlerCustom = Xt.dataStorage.put(el, 'on' + '/' + self.namespace, self.eventOnHandler.bind(self).bind(self, el))
       el.addEventListener('on.trigger.xt', onHandlerCustom)
@@ -698,30 +700,34 @@ class Toggle {
    * init prevents click on touch until clicked two times
    * @param {Node|HTMLElement|EventTarget|Window} el
    */
-  eventWithlinkStartHandler(el) {
+  eventPreventeventStartHandler(el) {
     const self = this
     // active
-    Xt.dataStorage.put(el, 'active/withlink' + '/' + self.namespace, self.hasCurrent(el))
+    Xt.dataStorage.put(el, 'active/preventevent' + '/' + self.namespace, self.hasCurrent(el))
     // event link
-    const withlinkHandler = Xt.dataStorage.put(el, 'click/withlink' + '/' + self.namespace, self.eventWithlinkHandler.bind(self).bind(self, el))
-    el.addEventListener('click', withlinkHandler)
+    const preventeventHandler = Xt.dataStorage.put(el, 'click/preventevent' + '/' + self.namespace, self.eventPreventeventHandler.bind(self).bind(self, el))
+    el.addEventListener('click', preventeventHandler)
     // event reset
-    const withlinkResetHandler = Xt.dataStorage.put(el, 'off/withlink' + '/' + self.namespace, self.eventWithlinkResetHandler.bind(self).bind(self, el))
-    el.addEventListener('off.xt', withlinkResetHandler)
+    const preventeventResetHandler = Xt.dataStorage.put(
+      el,
+      'off/preventevent' + '/' + self.namespace,
+      self.eventPreventeventResetHandler.bind(self).bind(self, el)
+    )
+    el.addEventListener('off.xt', preventeventResetHandler)
   }
 
   /**
    * remove prevents click on touch until clicked two times
    * @param {Node|HTMLElement|EventTarget|Window} el
    */
-  eventWithlinkEndHandler(el) {
+  eventPreventeventEndHandler(el) {
     const self = this
     // event link
-    const withlinkHandler = Xt.dataStorage.get(el, 'click/withlink' + '/' + self.namespace)
-    el.removeEventListener('click', withlinkHandler)
+    const preventeventHandler = Xt.dataStorage.get(el, 'click/preventevent' + '/' + self.namespace)
+    el.removeEventListener('click', preventeventHandler)
     // event reset
-    const withlinkResetHandler = Xt.dataStorage.get(el, 'off/withlink' + '/' + self.namespace)
-    el.removeEventListener('off.xt', withlinkResetHandler)
+    const preventeventResetHandler = Xt.dataStorage.get(el, 'off/preventevent' + '/' + self.namespace)
+    el.removeEventListener('off.xt', preventeventResetHandler)
   }
 
   /**
@@ -729,17 +735,19 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
-  eventWithlinkHandler(el, e) {
+  eventPreventeventHandler(el, e) {
     const self = this
-    const active = Xt.dataStorage.get(el, 'active/withlink' + '/' + self.namespace)
-    if (!active && !Xt.dataStorage.get(el, self.componentNamespace + 'WithlinkDone')) {
-      Xt.dataStorage.set(el, self.componentNamespace + 'WithlinkDone', true)
+    const active = Xt.dataStorage.get(el, 'active/preventevent' + '/' + self.namespace)
+    if (!active && !Xt.dataStorage.get(el, self.componentNamespace + 'PreventeventDone')) {
+      Xt.dataStorage.set(el, self.componentNamespace + 'PreventeventDone', true)
       // prevent default
       e.preventDefault()
     } else {
-      self.eventWithlinkEndHandler(el)
-      Xt.dataStorage.remove(el, self.componentNamespace + 'WithlinkDone')
-      Xt.dataStorage.remove(el, 'active/withlink' + '/' + self.namespace)
+      self.eventPreventeventEndHandler(el)
+      Xt.dataStorage.remove(el, self.componentNamespace + 'PreventeventDone')
+      Xt.dataStorage.remove(el, 'active/preventevent' + '/' + self.namespace)
+      // off on second interaction on touch
+      el.dispatchEvent(new CustomEvent('off.trigger.xt'))
     }
   }
 
@@ -747,11 +755,11 @@ class Toggle {
    * reset prevents click on touch until clicked two times
    * @param {Node|HTMLElement|EventTarget|Window} el
    */
-  eventWithlinkResetHandler(el) {
+  eventPreventeventResetHandler(el) {
     const self = this
-    self.eventWithlinkEndHandler(el)
-    Xt.dataStorage.remove(el, self.componentNamespace + 'WithlinkDone')
-    Xt.dataStorage.remove(el, 'active/withlink' + '/' + self.namespace)
+    self.eventPreventeventEndHandler(el)
+    Xt.dataStorage.remove(el, self.componentNamespace + 'PreventeventDone')
+    Xt.dataStorage.remove(el, 'active/preventevent' + '/' + self.namespace)
   }
 
   /**
@@ -3027,6 +3035,7 @@ Toggle.optionsDefaultSuper = {
   on: 'click',
   off: false,
   eventLimit: '.event-limit',
+  preventEvent: false,
   // timing
   instant: {
     elements: true,

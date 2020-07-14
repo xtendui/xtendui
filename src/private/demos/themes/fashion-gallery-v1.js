@@ -58,6 +58,7 @@ Xt.mount.push({
       pos = pos > max ? max : pos
       // scroll
       const component = self.scrollElementCurrent.closest('.overlay')
+      console.log(self.scrollElementCurrent, component)
       if (component) {
         // if component on activation
         gsap.set(scrollingElement, { scrollTo: pos })

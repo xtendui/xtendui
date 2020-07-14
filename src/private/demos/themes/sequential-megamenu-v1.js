@@ -63,6 +63,7 @@ Xt.mount.push({
       targets: '.drop-container > .drop',
       durationOn: Xt.vars.timeLarge,
       durationOff: Xt.vars.timeLarge,
+      preventEvent: true,
       // on: 'mouseenter',
       // off: 'mouseleave',
       instant: true,
