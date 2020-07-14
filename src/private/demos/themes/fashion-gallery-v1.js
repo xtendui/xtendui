@@ -11,7 +11,7 @@ import 'gsap/ScrollToPlugin.js'
  */
 
 Xt.mount.push({
-  matches: '#iframe--fashion-gallery-v1 body .product-page_right', // add your own selector instead of body to contain the code
+  matches: '#iframe--fashion-gallery-v1 body .product_right', // add your own selector instead of body to contain the code
   mount: function (object) {
     // init
 
@@ -19,7 +19,7 @@ Xt.mount.push({
       sticky: 'absolute',
       contain: {
         top: 0,
-        bottom: '.product-page_limit-bottom',
+        bottom: '.product_limit-bottom',
       },
     })
 
@@ -43,7 +43,7 @@ Xt.mount.push({
     // init
 
     let self = new Xt.ScrollToAnchor(object, {
-      scrollElements: [document.scrollingElement, object.querySelector('.product-page_left'), object.querySelector('#overlay--product_images')],
+      scrollElements: [document.scrollingElement, object.querySelector('.product_left'), object.querySelector('#overlay--product_images')],
     })
 
     // change

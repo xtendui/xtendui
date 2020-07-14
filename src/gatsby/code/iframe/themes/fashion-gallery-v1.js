@@ -13,15 +13,15 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="product-page">
+<div class="product">
 
   <div class="container">
-    <div class="product-page_inner">
+    <div class="product_inner">
       <div class="row">
       
-        <div class="product-page_left_col">
-          <div class="product-page_left_outer">
-            <div class="product-page_left">
+        <div class="product_left_col">
+          <div class="product_left_outer">
+            <div class="product_left">
             
               <div class="product_images">
                 <div class="list-block">
@@ -112,28 +112,28 @@ demo.htmlSource = `
           </div>
         </div>
         
-        <div class="product-page_right_col" id="header-continue-target">
-          <div class="product-page_right">
+        <div class="product_right_col" id="header-continue-target">
+          <div class="product_right">
           
-            <h1 class="product-page_title">
+            <h1 class="product_title">
               Lorem ipsum dolor sit amet
             </h1>
             
-            <div class="product-page_price">
+            <div class="product_price">
               €&nbsp;229,00
             </div>
             
-            <div class="product-page_actions">
+            <div class="product_actions">
               <a href="#" class="btn btn-primary btn-big btn-wide btn-tall">
               Add to cart
               </a>
             </div>
             
-            <div class="product-page_details">
+            <div class="product_details">
               <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
             </div>
             
-            <div class="product-page_attributes">
+            <div class="product_attributes">
               <dl class="dl-line">
                 <dt>
                   Product Code:
@@ -161,7 +161,7 @@ demo.htmlSource = `
     <span class="icon-xt-chevron-down"></span>
   </a>
   
-  <div class="product-page_limit-bottom"></div>
+  <div class="product_limit-bottom"></div>
   
 </div>
 
