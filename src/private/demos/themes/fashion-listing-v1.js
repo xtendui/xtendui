@@ -84,7 +84,7 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '#iframe--fashion-listing-v1 body #gatsby_body-inner', // add your own selector instead of body to contain the code
+  matches: '#iframe--fashion-listing-v1 body', // add your own selector instead of body to contain the code
   mount: (object) => {
     // init
 

@@ -32,17 +32,17 @@
     }
     
     /**
-     * product-page
+     * product
      */
   
-    .product-page {
+    .product {
       .margin(bottom, 10rem);
       @media @min-md {
         .margin(top, large);
       }
     }
   
-    .product-page_toolbar {
+    .product_toolbar {
       .margin(bottom, mini);
       .margin(bottom, small, sm);
       > .list {
@@ -55,7 +55,7 @@
       }
     }
   
-    .product-page_inner {
+    .product_inner {
       > .row {
         @media @min-md {
           .row-space(big);
@@ -63,19 +63,19 @@
       }
     }
   
-    .product-page_left_col {
+    .product_left_col {
       .col(12);
       .col(6, md);
       .col(7, lg);
     }
   
-    .product-page_right_col {
+    .product_right_col {
       .col(12);
       .col(6, md);
       .col(5, lg);
     }
   
-    .product-page_left {
+    .product_left {
       @media @max-md {
         overflow-x: hidden;
         overflow-y: auto;
@@ -85,21 +85,21 @@
       }
     }
   
-    .product-page_right {
+    .product_right {
       .padding(top, large);
       @media @min-md {
         .padding(top, giant);
       }
     }
     
-    .product-page_title {
+    .product_title {
       .h1();
       .margin(top, small);
       .margin(bottom, small);
       .margin(y, layout);
     }
   
-    .product-page_price {
+    .product_price {
       .margin(top, small);
       .margin(bottom, small);
       .margin(y, layout);
@@ -110,20 +110,20 @@
       text-transform: none;
     }
   
-    .product-page_actions {
+    .product_actions {
       .margin(top, large);
       .margin(bottom, large);
       .margin(y, layout);
     }
   
-    .product-page_details {
+    .product_details {
       .margin(top, small);
       .margin(bottom, small);
       .margin(y, layout);
       .font-big();
     }
   
-    .product-page_attributes {
+    .product_attributes {
       .margin(top, small);
       .margin(bottom, small);
       .margin(y, layout);
@@ -133,14 +133,24 @@
     // images
   
     .product_images {
-      .full();
       .list-block {
         .list-space(none);
       }
+    }
+    
+    .product_image {
+      .full();
       img {
         .responsive();
       }
     }
+  
+    .product_image_inner {
+      @media @max-md {
+        pointer-events: none;
+      }
+    }
+  
   
     #overlay--product_images {
       .list-block {
@@ -151,7 +161,7 @@
       }
     }
   
-    .product-page_left_outer {
+    .product_left_outer {
       position: relative;
       .container-space-remove();
       @media @min-md {
@@ -203,95 +213,6 @@
       }
     }
     
-    /**
-      * scroll
-      */
-
-    // vars
-
-    @anim-scale-size: 1.1;
-
-    // the same css and js
-    .scroll-item, .listing_item {
-      opacity: 0;
-      &.fade {
-        opacity: 1;
-        animation-name: anim-fashion-listing-v1-in;
-        animation-duration: @time-medium;
-        animation-timing-function: @ease-out-quint;
-        transform-origin: center top;
-        &.inverse {
-          opacity: 1;
-          animation-name: anim-fashion-listing-v1-inverse-in;
-          animation-duration: @time-medium;
-          animation-timing-function: @ease-out-quint;
-          transform-origin: center bottom;
-        }
-      }
-      &.fade-out {
-        opacity: 0;
-        animation-name: anim-fashion-listing-v1-out;
-        animation-duration: @time-medium;
-        animation-timing-function: @ease-out-quint;
-        transform-origin: center top;
-        &.inverse {
-          opacity: 0;
-          animation-name: anim-fashion-listing-v1-inverse-out;
-          animation-duration: @time-medium;
-          animation-timing-function: @ease-out-quint;
-          transform-origin: center bottom;
-        }
-      }
-    }
-
-    // anim-fashion-listing-v1
-
-    @keyframes anim-fashion-listing-v1-in {
-      0% {
-        opacity: 0;
-        transform: translateY(5rem) scaleY(@anim-scale-size);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0) scaleY(1);
-      }
-    }
-
-    @keyframes anim-fashion-listing-v1-out {
-      0% {
-        opacity: 1;
-        transform: translateY(0) scaleY(1);
-      }
-      100% {
-        opacity: 0;
-        transform: translateY(5rem) scaleY(@anim-scale-size);
-      }
-    }
-
-    // anim-fashion-listing-v1-inverse
-
-    @keyframes anim-fashion-listing-v1-inverse-in {
-      0% {
-        opacity: 0;
-        transform: translateY(-5rem) scaleY(@anim-scale-size);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0) scaleY(1);
-      }
-    }
-
-    @keyframes anim-fashion-listing-v1-inverse-out {
-      0% {
-        opacity: 1;
-        transform: translateY(0) scaleY(1);
-      }
-      100% {
-        opacity: 0;
-        transform: translateY(-5rem) scaleY(@anim-scale-size)
-      }
-    }
-
   }
   //##END
 }

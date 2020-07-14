@@ -72,7 +72,7 @@ Overlay.optionsDefault = {
   backdrop: true,
   closeAuto: true,
   appendTo: 'body',
-  classHtml: 'xt-overlay',
+  classHtml: false,
   closeInside: '.overlay-dismiss, .backdrop, .btn-close',
   closeOnDisable: true,
   scrollbar: true,

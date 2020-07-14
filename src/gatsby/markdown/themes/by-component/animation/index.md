@@ -1,11 +1,7 @@
 ---
 type: "Themes"
 category: "By Component"
-parent: "Overlay"
-title: "slide-overlay-v1"
+parent: "Animation"
+title: "Animation"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-date: "2019-06-26"
-demos: [
-  "iframe/themes/slide-overlay-v1"
-]
 ---

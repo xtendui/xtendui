@@ -29,7 +29,7 @@ It's recommended to use `active-overlay` otherwise the component flashes visible
 
 |                         | Syntax                                    | Default                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `classHtml:String`                          | `'xt-overlay'`        | Add class to `html` on activation            |
+| Option                  | `classHtml:String`                          | `false`        | Add class to `html` on activation            |
 
 </div>
 

@@ -99,16 +99,16 @@
       }
       &.fade-out {
         opacity: 0;
-        animation-name: anim-fashion-listing-v1-out;
+        animation-name: anim-fashion-listing-v1-inverse-out;
         animation-duration: @time-medium;
         animation-timing-function: @ease-out-quint;
-        transform-origin: center top;
+        transform-origin: center bottom;
         &.inverse {
           opacity: 0;
-          animation-name: anim-fashion-listing-v1-inverse-out;
+          animation-name: anim-fashion-listing-v1-out;
           animation-duration: @time-medium;
           animation-timing-function: @ease-out-quint;
-          transform-origin: center bottom;
+          transform-origin: center top;
         }
       }
     }
