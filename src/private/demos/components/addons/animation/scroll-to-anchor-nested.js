@@ -5,14 +5,15 @@ import gsap from 'gsap'
 import 'gsap/ScrollToPlugin.js'
 
 Xt.mount.push({
-  matches: '#iframe--scroll-to-anchor body #gatsby_body-inner', // add your own selector instead of body to contain the code
+  matches: '#iframe--scroll-to-anchor-nested body #gatsby_body-inner', // add your own selector instead of body to contain the code
   mount: (object) => {
     // init
 
     let self = new Xt.ScrollToAnchor(object, {
-      scrollSpace: (self) => {
+      scrollElements: [document.scrollingElement, object.querySelector('.demo--scroll-to-anchor-nested')],
+      scrollSpace: (self, scrollingElement) => {
         let scrollSpace = 0
-        if (self.scrollElementCurrent === document.scrollingElement) {
+        if (scrollingElement === document.scrollingElement) {
           const spaces = document.querySelectorAll('.xt-sticky.xt-clone')
           for (const space of spaces) {
             if (Xt.visible(space)) {

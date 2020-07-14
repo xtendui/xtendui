@@ -10,3 +10,10 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
   <div class="gatsby_demo_item" data-iframe="iframe/components/addons/animation/scroll-to-anchor">
   </div>
 </demo>
+
+`scrollElements` ordered by parent > child relationship
+
+<demo>
+  <div class="gatsby_demo_item" data-iframe="iframe/components/addons/animation/scroll-to-anchor-nested">
+  </div>
+</demo>

@@ -37,12 +37,19 @@ class ScrollToAnchor {
     // hash
     addEventListener('hashchange', self.eventChange.bind(self).bind(self, true, null))
     // scroll
-    self.options.scrollElement.addEventListener('scroll', self.eventScrollHandler.bind(self).bind(self))
-    // initial
-    requestAnimationFrame(() => {
-      self.eventScrollHandler()
-      self.eventStart()
-    })
+    for (const scrollElement of self.options.scrollElements) {
+      if (scrollElement === document.scrollingElement) {
+        addEventListener('scroll', self.eventScrollHandler.bind(self).bind(self, scrollElement))
+      } else {
+        scrollElement.addEventListener('scroll', self.eventScrollHandler.bind(self).bind(self, scrollElement))
+      }
+      // initial
+      requestAnimationFrame(() => {
+        self.scrollElementCurrent = scrollElement
+        self.eventScrollHandler(scrollElement)
+        self.eventStart()
+      })
+    }
     // initialized class
     self.object.classList.add(self.componentName)
     // @FIX raf because after .xt custom listeners
@@ -61,10 +68,11 @@ class ScrollToAnchor {
    */
   eventStart() {
     const self = this
+    const options = self.options
     // hash trigger
     const hash = location.hash
     if (hash) {
-      const el = self.object.querySelector(self.options.elements.replace('#', hash))
+      const el = self.object.querySelector(options.elements.replace('#', hash))
       if (el) {
         self.eventChange(false, el)
       }
@@ -74,6 +82,7 @@ class ScrollToAnchor {
   /**
    * change
    * @param {Boolean} hashchange
+   * @param {Node|HTMLElement|EventTarget|Window} el Change element
    * @param {Event} e
    */
   eventChange(hashchange = false, el = null, e = null) {
@@ -103,9 +112,15 @@ class ScrollToAnchor {
               if (e) {
                 e.preventDefault()
               }
+              // current scrollElement
+              for (const scrollElement of options.scrollElements) {
+                if (scrollElement.contains(self.target)) {
+                  self.scrollElementCurrent = scrollElement
+                }
+              }
+              // els
+              let els = Array.from(self.scrollElementCurrent.querySelectorAll(options.elements))
               // class
-              let els = Array.from(self.object.querySelectorAll(options.elements))
-              els = els.filter((x) => !x.closest('.xt-ignore')) // filter out ignore
               for (const other of els) {
                 other.classList.remove(...self.classes)
               }
@@ -114,8 +129,10 @@ class ScrollToAnchor {
               if (location.hash !== el.hash) {
                 history.pushState({}, '', loc.hash)
               }
-              // add space
-              self.scrollSpace = options.scrollSpace(self)
+              // vars
+              self.scrollSpace = options.scrollSpace(self, self.scrollElementCurrent)
+              self.scrollDistance = options.scrollDistance(self, self.scrollElementCurrent)
+              self.position = options.position(self, self.scrollElementCurrent)
               // listener dispatch
               self.object.dispatchEvent(new CustomEvent('change.xt.scrolltoanchor'))
             }
@@ -127,62 +144,81 @@ class ScrollToAnchor {
 
   /**
    * scroll handler
-   * @param {Event} e
+   * @param {Node|HTMLElement|EventTarget|Window} scrollElement Scroll element
    */
-  eventScrollHandler(e = null) {
+  eventScrollHandler(scrollElement) {
     const self = this
+    const options = self.options
     // timeout
-    clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'ScrollTimeout'))
+    clearTimeout(Xt.dataStorage.get(scrollElement, self.componentNamespace + 'ScrollTimeout'))
     Xt.dataStorage.set(
-      self.object,
+      scrollElement,
       self.componentNamespace + 'ScrollTimeout',
       setTimeout(() => {
         // handler
-        self.eventScroll(e)
-      }, self.options.scrollDelay)
+        self.eventScroll(scrollElement)
+      }, options.scrollDelay)
     )
   }
 
   /**
    * scroll
-   * @param {Event} e
    */
-  eventScroll() {
+  eventScroll(scrollElement) {
     const self = this
+    const options = self.options
     // reset self.target
     self.target = null
     // scroll
     let found = false
-    let scrollTop = document.scrollingElement.scrollTop
+    let scrollTop = scrollElement.scrollTop
     // fake scroll position if on bottom of the page
-    const scrollMax = document.scrollingElement.scrollHeight
-    if (scrollTop + Xt.windowHeight >= scrollMax) {
+    const scrollMax = scrollElement.scrollHeight
+    if (scrollTop + scrollElement.clientHeight >= scrollMax) {
       scrollTop = scrollMax
     }
-    // loop
-    let els = Array.from(self.object.querySelectorAll(self.options.elements))
+    // els
+    let els = Array.from(scrollElement.querySelectorAll(options.elements))
     els = els.filter((x) => !x.closest('.xt-ignore')) // filter out ignore
+    // filter out other scrollElement
+    let elsFiltered = els
+    for (const scrollElementOther of options.scrollElements.filter((x) => x !== scrollElement)) {
+      for (const el of els) {
+        if (scrollElementOther.contains(el)) {
+          elsFiltered = elsFiltered.filter((x) => x !== el) // filter out ignore
+        }
+      }
+    }
+    els = elsFiltered.length > 0 ? elsFiltered : els
+    // loop
     for (const el of els) {
-      // add space
-      self.scrollSpace = self.options.scrollSpace()
-      self.scrollDistance = self.options.scrollDistance()
       // event
       const loc = new URL(el.getAttribute('href'), location)
       if (loc.hash) {
         self.target = document.querySelector(loc.hash)
         if (self.target) {
-          if (scrollTop >= self.target.offsetTop - self.scrollSpace - self.scrollDistance) {
-            // reset others
-            for (const other of els) {
-              other.classList.remove(...self.classes)
+          // current scrollElement
+          for (const scrollElement of options.scrollElements) {
+            if (scrollElement.contains(self.target)) {
+              self.scrollElementCurrent = scrollElement
             }
+          }
+          // vars
+          self.scrollSpace = options.scrollSpace(self, self.scrollElementCurrent)
+          self.scrollDistance = options.scrollDistance(self, self.scrollElementCurrent)
+          // check if activating
+          if (scrollTop >= self.target.offsetTop - self.scrollSpace - self.scrollDistance) {
             // loop multiple els of
-            const matches = self.options.elements.replace('#', loc.hash)
+            const matches = options.matches.replace('{hash}', loc.hash)
             const currents = els.filter((x) => x.matches(matches))
             found = !!currents.length
+            // reset others
+            for (const other of els.filter((x) => !currents.includes(x))) {
+              other.classList.remove(...self.classes)
+            }
+            // class
             for (const current of currents) {
               if (!current.classList.contains('active')) {
-                // class
                 current.classList.add(...self.classes)
               }
             }
@@ -207,10 +243,17 @@ class ScrollToAnchor {
    */
   destroy() {
     const self = this
+    const options = self.options
     // remove events
     self.object.removeEventListener('click', self.eventChange.bind(self, false, null))
     removeEventListener('hashchange', self.eventChange.bind(self).bind(self, true, null))
-    self.options.scrollElement.removeEventListener('scroll', self.eventScrollHandler.bind(self).bind(self))
+    for (const scrollElement of options.scrollElements) {
+      if (scrollElement === document.scrollingElement) {
+        removeEventListener('scroll', self.eventScrollHandler.bind(self).bind(self, scrollElement))
+      } else {
+        scrollElement.removeEventListener('scroll', self.eventScrollHandler.bind(self).bind(self, scrollElement))
+      }
+    }
     // initialized class
     self.object.classList.remove(self.componentName)
     // set self
@@ -229,13 +272,23 @@ class ScrollToAnchor {
 ScrollToAnchor.componentName = 'xt-scroll-to-anchor'
 ScrollToAnchor.optionsDefault = {
   // elements
-  elements: '[href*="#"]:not([aria-controls])', // filter out components toggles with :not([aria-controls])
-  scrollElement: window,
+  elements: '[href*="#"]:not([aria-controls])', // filter out toggle components toggles with :not([aria-controls])
+  matches: '[href$="{hash}"]:not([aria-controls])', // filter out toggle components toggles with :not([aria-controls])
+  scrollElements: [document.scrollingElement],
   // class
   class: 'active',
   // event
   scrollDelay: 250,
   // scroll
+  position: (self, scrollingElement) => {
+    const rect = self.target.getBoundingClientRect()
+    let position = rect.top + scrollingElement.scrollTop
+    if (scrollingElement !== document.scrollingElement) {
+      const rectScrollingElement = scrollingElement.getBoundingClientRect()
+      position = position - rectScrollingElement.top
+    }
+    return position
+  },
   scrollDistance: () => {
     return 0
   },
