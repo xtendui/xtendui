@@ -42,13 +42,9 @@ Xt.mount.push({
   mount: (object) => {
     // init
 
-    console.log(object)
-
     let self = new Xt.ScrollToAnchor(object, {
       scrollElements: [document.scrollingElement, object.querySelector('.product-page_left'), object.querySelector('#overlay--product-page_images')],
     })
-    console.log(object.querySelector('.product-page_left'))
-
 
     // change
 
