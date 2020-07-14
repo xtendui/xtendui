@@ -34,60 +34,36 @@ Xt.mount.push({
 })
 
 /**
- * scroll
- */
-
-Xt.mount.push({
-  matches: '#iframe--fashion-gallery-v1 body #gatsby_body-inner', // add your own selector instead of body to contain the code
-  mount: (object) => {
-    // init
-
-    let self = new Xt.Scroll(object, {
-      // the same css and js
-      elements: '.scroll-item, .listing_item',
-      delayOn: (current) => {
-        return Math.min((current + 1) * 75, 300)
-      },
-      delayOff: (current, total) => {
-        return Math.min((total - (current + 1)) * 75, 300)
-      },
-      distance: 100,
-    })
-
-    // unmount
-
-    const unmount = function () {
-      self.destroy()
-      self = null
-    }
-    return unmount
-  },
-})
-
-/**
  * scroll-to-anchor
  */
 
 Xt.mount.push({
-  matches: '#iframe--fashion-gallery-v1 body #gatsby_body-inner', // add your own selector instead of body to contain the code
+  matches: '#iframe--fashion-gallery-v1 body', // add your own selector instead of body to contain the code
   mount: (object) => {
     // init
 
     let self = new Xt.ScrollToAnchor(object, {
-      scrollElements: [document.scrollingElement, object.querySelector('.product-page_left')],
+      scrollElements: [document.scrollingElement, object.querySelector('.product-page_left'), object.querySelector('#overlay--product_images')],
     })
 
     // change
 
     const eventChange = () => {
-      // scroll
+      // val
       const scrollingElement = self.scrollElementCurrent
       let pos = self.position - self.scrollSpace - self.scrollDistance
       const min = 0
       const max = scrollingElement.scrollHeight - scrollingElement.offsetHeight
       pos = pos < min ? min : pos
       pos = pos > max ? max : pos
-      gsap.to(scrollingElement, { scrollTo: pos, duration: Xt.vars.timeLarge, ease: 'quart.inOut' })
+      // scroll
+      const component = self.scrollElementCurrent.closest('.overlay')
+      if (component) {
+        // if component on activation
+        gsap.set(scrollingElement, { scrollTo: pos })
+      } else {
+        gsap.to(scrollingElement, { scrollTo: pos, duration: Xt.vars.timeLarge, ease: 'quart.inOut' })
+      }
     }
 
     self.object.addEventListener('change.xt.scrolltoanchor', eventChange)

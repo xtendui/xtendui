@@ -106,18 +106,21 @@ Xt.mount.push({
     // change
 
     const eventChange = () => {
-      // scroll
-      const scrollingElement = document.scrollingElement
-      const rect = self.target.getBoundingClientRect()
-      const top = rect.top
-      const scrollSpace = self.options.scrollSpace()
-      const scrollDistance = self.options.scrollDistance()
-      let pos = top + scrollingElement.scrollTop - scrollSpace - scrollDistance
+      // val
+      const scrollingElement = self.scrollElementCurrent
+      let pos = self.position - self.scrollSpace - self.scrollDistance
       const min = 0
-      const max = scrollingElement.scrollHeight - window.innerHeight
+      const max = scrollingElement.scrollHeight - scrollingElement.offsetHeight
       pos = pos < min ? min : pos
       pos = pos > max ? max : pos
-      gsap.to(window, { scrollTo: pos, duration: Xt.vars.timeLarge, ease: 'quart.inOut' })
+      // scroll
+      const component = self.scrollElementCurrent.closest('.overlay')
+      if (component) {
+        // if component on activation
+        gsap.set(scrollingElement, { scrollTo: pos })
+      } else {
+        gsap.to(scrollingElement, { scrollTo: pos, duration: Xt.vars.timeLarge, ease: 'quart.inOut' })
+      }
     }
 
     self.object.addEventListener('change.xt.scrolltoanchor', eventChange)

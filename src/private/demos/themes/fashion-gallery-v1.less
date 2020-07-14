@@ -133,14 +133,24 @@
     // images
   
     .product_images {
-      .full();
       .list-block {
         .list-space(none);
       }
+    }
+    
+    .product_image {
+      .full();
       img {
         .responsive();
       }
     }
+  
+    .product_image_inner {
+      @media @max-md {
+        pointer-events: none;
+      }
+    }
+  
   
     #overlay--product_images {
       .list-block {
@@ -203,95 +213,6 @@
       }
     }
     
-    /**
-      * scroll
-      */
-
-    // vars
-
-    @anim-scale-size: 1.1;
-
-    // the same css and js
-    .scroll-item, .listing_item {
-      opacity: 0;
-      &.fade {
-        opacity: 1;
-        animation-name: anim-fashion-listing-v1-in;
-        animation-duration: @time-medium;
-        animation-timing-function: @ease-out-quint;
-        transform-origin: center top;
-        &.inverse {
-          opacity: 1;
-          animation-name: anim-fashion-listing-v1-inverse-in;
-          animation-duration: @time-medium;
-          animation-timing-function: @ease-out-quint;
-          transform-origin: center bottom;
-        }
-      }
-      &.fade-out {
-        opacity: 0;
-        animation-name: anim-fashion-listing-v1-out;
-        animation-duration: @time-medium;
-        animation-timing-function: @ease-out-quint;
-        transform-origin: center top;
-        &.inverse {
-          opacity: 0;
-          animation-name: anim-fashion-listing-v1-inverse-out;
-          animation-duration: @time-medium;
-          animation-timing-function: @ease-out-quint;
-          transform-origin: center bottom;
-        }
-      }
-    }
-
-    // anim-fashion-listing-v1
-
-    @keyframes anim-fashion-listing-v1-in {
-      0% {
-        opacity: 0;
-        transform: translateY(5rem) scaleY(@anim-scale-size);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0) scaleY(1);
-      }
-    }
-
-    @keyframes anim-fashion-listing-v1-out {
-      0% {
-        opacity: 1;
-        transform: translateY(0) scaleY(1);
-      }
-      100% {
-        opacity: 0;
-        transform: translateY(5rem) scaleY(@anim-scale-size);
-      }
-    }
-
-    // anim-fashion-listing-v1-inverse
-
-    @keyframes anim-fashion-listing-v1-inverse-in {
-      0% {
-        opacity: 0;
-        transform: translateY(-5rem) scaleY(@anim-scale-size);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0) scaleY(1);
-      }
-    }
-
-    @keyframes anim-fashion-listing-v1-inverse-out {
-      0% {
-        opacity: 1;
-        transform: translateY(0) scaleY(1);
-      }
-      100% {
-        opacity: 0;
-        transform: translateY(-5rem) scaleY(@anim-scale-size)
-      }
-    }
-
   }
   //##END
 }
