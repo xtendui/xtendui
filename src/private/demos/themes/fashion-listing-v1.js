@@ -17,14 +17,14 @@ Xt.mount.push({
 
     // vars
 
-    const imgScaleContainer = 0.03
-    const imgScale = 0.06
+    const imgScaleContainer = -0.04
+    const imgScale = 0.08
 
     const maskOpacityOn = 0.2
     const maskOpacityOff = 0.2
     const maskOpacityDone = 0.1
 
-    const titleY = 10
+    const titleY = -10
 
     // enter
 
