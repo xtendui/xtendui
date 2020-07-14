@@ -117,7 +117,9 @@ class Scroll extends Xt.Toggle {
     for (const event of events) {
       addEventListener(event, scrollHandler, { passive: true })
     }
-    self.eventScrollHandler(true)
+    requestAnimationFrame(() => {
+      self.eventScrollHandler()
+    })
   }
 
   //
@@ -127,16 +129,15 @@ class Scroll extends Xt.Toggle {
   /**
    * element on handler
    * @param {Event} e
-   * @param {Boolean} initial
    */
-  eventScrollHandler(initial = false, e = null) {
+  eventScrollHandler(e = null) {
     const self = this
     Xt.eventDelay(
       e,
       self.object,
       () => {
         // handler
-        self.eventScroll(e, initial)
+        self.eventScroll(e)
       },
       self.componentNamespace + 'Scroll'
     )
@@ -149,9 +150,8 @@ class Scroll extends Xt.Toggle {
   /**
    * window scroll
    * @param {Event} e
-   * @param {Boolean} initial
    */
-  eventScroll(e, initial) {
+  eventScroll(e) {
     const self = this
     const options = self.options
     // disabled
@@ -207,12 +207,6 @@ class Scroll extends Xt.Toggle {
           changed = self.checkOn(el)
           if (changed) {
             currentsOn.push(el)
-            // initial
-            if (initial) {
-              Xt.dataStorage.set(el, self.componentNamespace + 'Initial', true)
-            } else {
-              Xt.dataStorage.remove(el, self.componentNamespace + 'Initial')
-            }
             // activation
             Xt.dataStorage.set(el, self.componentNamespace + 'OnCount', currentOn)
             Xt.dataStorage.set(el, self.componentNamespace + 'OnTot', currentsOn.length)
@@ -225,12 +219,6 @@ class Scroll extends Xt.Toggle {
           if (changed) {
             el.classList.add('scroll-done')
             currentsOff.push(el)
-            // initial
-            if (initial) {
-              Xt.dataStorage.set(el, self.componentNamespace + 'Initial', true)
-            } else {
-              Xt.dataStorage.remove(el, self.componentNamespace + 'Initial')
-            }
             // deactivate
             Xt.dataStorage.set(el, self.componentNamespace + 'OffCount', currentOff)
             Xt.dataStorage.set(el, self.componentNamespace + 'OffTot', currentsOff.length)

@@ -134,7 +134,7 @@ class Sticky extends Xt.Toggle {
     for (const event of events) {
       addEventListener(event, stickyHandler, { passive: true })
     }
-    self.eventStickyHandler(null, true)
+    self.eventStickyHandler()
     // focusin
     const focusInHandler = Xt.dataStorage.put(document, 'focusin/sticky' + '/' + self.namespace, self.eventFocusinHandler.bind(self))
     document.addEventListener('focusin', focusInHandler, { passive: true })
@@ -147,16 +147,15 @@ class Sticky extends Xt.Toggle {
   /**
    * element on handler
    * @param {Event} e
-   * @param {Boolean} initial
    */
-  eventStickyHandler(e = null, initial = false) {
+  eventStickyHandler(e = null) {
     const self = this
     Xt.eventDelay(
       e,
       self.object,
       () => {
         // handler
-        self.eventSticky(e, initial)
+        self.eventSticky(e)
       },
       self.componentNamespace + 'Sticky'
     )
@@ -190,9 +189,8 @@ class Sticky extends Xt.Toggle {
   /**
    * window scroll
    * @param {Event} e
-   * @param {Boolean} initial
    */
-  eventSticky(e, initial) {
+  eventSticky(e) {
     const self = this
     const options = self.options
     // disabled
@@ -270,12 +268,6 @@ class Sticky extends Xt.Toggle {
       const checkTop = scrollTop >= top - add + addHide
       const checkBottom = scrollTop < bottom + add - addHide
       if (checkTop && checkBottom) {
-        // initial
-        if (initial) {
-          Xt.dataStorage.set(el, self.componentNamespace + 'Initial', true)
-        } else {
-          Xt.dataStorage.remove(el, self.componentNamespace + 'Initial')
-        }
         // inside
         self.eventOn(el, true)
         // hide
@@ -283,12 +275,6 @@ class Sticky extends Xt.Toggle {
           hide = true
         }
       } else {
-        // initial
-        if (initial) {
-          Xt.dataStorage.set(el, self.componentNamespace + 'Initial', true)
-        } else {
-          Xt.dataStorage.remove(el, self.componentNamespace + 'Initial')
-        }
         // outside
         self.eventOff(el, true)
       }
