@@ -3,62 +3,62 @@
   body { // add your own selector instead of body to contain the code
 
     /**
-      * .parallax
+      * .featured
       */
 
-    .parallax {
+    .featured {
       .padding(y, huge);
       background: @white;
     }
 
-    .parallax_item {
+    .featured_item {
       .full();
       .margin(y, huge);
       .text-default() !important;
     }
 
-    .parallax--inverse {
+    .featured--inverse {
       background: @shade-700;
-      .parallax_item {
+      .featured_item {
         .text-inverse() !important;
       }
     }
 
-    .parallax_item_inner {
+    .featured_item_inner {
       > .row {
         align-items: center;
       }
     }
 
-    .parallax_img_col {
+    .featured_img_col {
       z-index: 1;
       .col(12);
       .col-custom(40%, sm);
     }
 
-    .parallax_item--big {
-      .parallax_img_col {
+    .featured_item--big {
+      .featured_img_col {
         .col-custom(55%, sm);
       }
     }
 
-    .parallax_content_col {
+    .featured_content_col {
       z-index: 2;
       .col(12);
       .col-auto(sm);
     }
 
-    .parallax_img {
+    .featured_img {
       .media-container();
       padding-bottom: 72.6%;
       overflow: hidden;
     }
 
-    .parallax_img--vertical {
+    .featured_img--vertical {
       padding-bottom: 121%;
     }
 
-    .parallax_img_inner {
+    .featured_img_inner {
       .media-inner();
       img {
         .media();
@@ -66,42 +66,42 @@
       }
     }
 
-    .parallax_content {
+    .featured_content {
       .padding(x, giant);
     }
 
-    .parallax_item--align-right {
-      .parallax_content {
+    .featured_item--align-right {
+      .featured_content {
         text-align: right;
       }
     }
 
-    .parallax_title {
+    .featured_title {
       .margin-remove(left, 12rem);
       .spacing-medium();
       font-size: 4rem;
     }
 
-    .parallax_desc {
+    .featured_desc {
       font-size: 1.6rem;
       line-height: 2.5;
     }
 
-    .parallax_item--desc-right {
-      .parallax_desc {
+    .featured_item--desc-right {
+      .featured_desc {
         .padding(left, 6rem);
         .margin-remove(right, 18rem);
       }
     }
 
-    .parallax_item--right {
-      .parallax_img_col {
+    .featured_item--right {
+      .featured_img_col {
         .order(2, sm);
       }
-      .parallax_content_col {
+      .featured_content_col {
         .order(1, sm);
       }
-      .parallax_title {
+      .featured_title {
         .margin(left, 0);
         .margin-remove(right, 12rem);
       }
@@ -148,7 +148,7 @@
       opacity: @line-opacity;
     }
 
-    .parallax--inverse {
+    .featured--inverse {
       .btn--line {
         color: @text-inverse;
         &:hover, &.hover {

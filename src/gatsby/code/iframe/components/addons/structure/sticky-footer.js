@@ -16,11 +16,11 @@ demo.htmlSource = `
 <div class="site_wrapper">
 
   <header class="site_header">
-    <div class="card card-default card-squared">
+    <div class="card card-primary card-squared" style="opacity: 0.5; text-align: center;">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
-          <div class="card-block card-item" style="text-align: center;">
+          <div class="card-block card-item">
             <div class="card-title">Header</div>
           </div>
         </div>
@@ -29,7 +29,7 @@ demo.htmlSource = `
   </header>
 
   <main class="site_main">
-    <div class="card card-white card-squared" style="align-items: flex-start;">
+    <div class="card card-default card-squared" style="align-items: flex-start;">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
@@ -46,11 +46,11 @@ demo.htmlSource = `
   </main>
 
   <footer class="site_footer">
-    <div class="card card-default card-squared">
+    <div class="card card-primary card-squared" style="opacity: 0.5; text-align: center;">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
-          <div class="card-block card-item" style="text-align: center;">
+          <div class="card-block card-item">
             <div class="card-title">Footer</div>
           </div>
         </div>

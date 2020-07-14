@@ -3,27 +3,27 @@
   body { // add your own selector instead of body to contain the code
 
     /**
-      * .listing
+      * .listing-page
       */
 
-    .listing_inner {
+    .listing-page_inner {
       > .row {
         .row-space(large);
       }
     }
 
-    .listing_col {
+    .listing-page_col {
       .col(12);
       .col(6, sm);
       .col(3, lg);
     }
 
-    .listing_col--big {
+    .listing-page_col--big {
       .col(12, sm);
       .col(12, lg);
     }
 
-    .listing_item {
+    .listing-page_item {
       .full();
       // card
       .card-white();
@@ -45,7 +45,7 @@
       }
     }
 
-    .listing_col--big {
+    .listing-page_col--big {
       .card-asset {
         .media-container {
           @media @min-sm {
@@ -81,7 +81,7 @@
     @anim-scale-size: 1.1;
 
     // the same css and js
-    .scroll-item, .listing_item {
+    .scroll-item, .listing-page_item {
       opacity: 0;
       &.fade {
         opacity: 1;

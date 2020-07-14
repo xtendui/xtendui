@@ -17,26 +17,26 @@ demo.htmlSource = `
 <div id="body--smooth"
   data-xt-propagate-interaction="{ targets: '.btn' }">
 
-  <div class="parallax parallax--inverse">
+  <div class="featured featured--inverse">
 
-    <a href="#" class="parallax_item">
+    <a href="#" class="featured_item">
       <div class="container">
-        <div class="parallax_item_inner">
+        <div class="featured_item_inner">
           <div class="row">
-            <div class="parallax_img_col">
+            <div class="featured_img_col">
               ${img({ classes: 'media-cover', ratio: '121%' })}
             </div>
-            <div class="parallax_content_col">
-              <div class="parallax_content">
-                <div class="parallax_title">
+            <div class="featured_content_col">
+              <div class="featured_content">
+                <div class="featured_title">
                   Lorem ipsum
                 </div>
-                <div class="parallax_desc">
+                <div class="featured_desc">
                   <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
                   <div class="btn btn--line">
                     <span class="btn--line_line"></span>
                     <span class="btn--line_text">
-                      Discover          
+                      Discover
                     </span>
                   </div>
                 </div>
@@ -47,24 +47,24 @@ demo.htmlSource = `
       </div>
     </a>
 
-    <a href="#" class="parallax_item parallax_item--big parallax_item--right parallax_item--desc-right">
+    <a href="#" class="featured_item featured_item--big featured_item--right featured_item--desc-right">
       <div class="container">
-        <div class="parallax_item_inner">
+        <div class="featured_item_inner">
           <div class="row">
-            <div class="parallax_img_col">
+            <div class="featured_img_col">
               ${img({ classes: 'media-cover', ratio: '72.6%' })}
             </div>
-            <div class="parallax_content_col">
-              <div class="parallax_content">
-                <div class="parallax_title">
+            <div class="featured_content_col">
+              <div class="featured_content">
+                <div class="featured_title">
                   Dolor sit amet
                 </div>
-                <div class="parallax_desc">
+                <div class="featured_desc">
                   <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
                   <div class="btn btn--line">
                     <span class="btn--line_line"></span>
                     <span class="btn--line_text">
-                      Discover          
+                      Discover
                     </span>
                   </div>
                 </div>
@@ -75,24 +75,24 @@ demo.htmlSource = `
       </div>
     </a>
 
-    <a href="#" class="parallax_item">
+    <a href="#" class="featured_item">
       <div class="container">
-        <div class="parallax_item_inner">
+        <div class="featured_item_inner">
           <div class="row">
-            <div class="parallax_img_col">
+            <div class="featured_img_col">
               ${img({ classes: 'media-cover', ratio: '121%' })}
             </div>
-            <div class="parallax_content_col">
-              <div class="parallax_content">
-                <div class="parallax_title">
+            <div class="featured_content_col">
+              <div class="featured_content">
+                <div class="featured_title">
                   Consectetur adipiscing elit
                 </div>
-                <div class="parallax_desc">
+                <div class="featured_desc">
                   <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
                   <div class="btn btn--line">
                     <span class="btn--line_line"></span>
                     <span class="btn--line_text">
-                      Discover          
+                      Discover
                     </span>
                   </div>
                 </div>
@@ -105,21 +105,21 @@ demo.htmlSource = `
 
   </div>
 
-  <div class="parallax">
+  <div class="featured">
 
-    <a href="#" class="parallax_item parallax_item--right parallax_item--align-right">
+    <a href="#" class="featured_item featured_item--right featured_item--align-right">
       <div class="container">
-        <div class="parallax_item_inner">
+        <div class="featured_item_inner">
           <div class="row">
-            <div class="parallax_img_col">
+            <div class="featured_img_col">
               ${img({ classes: 'media-cover', ratio: '121%' })}
             </div>
-            <div class="parallax_content_col">
-              <div class="parallax_content">
-                <div class="parallax_title">
+            <div class="featured_content_col">
+              <div class="featured_content">
+                <div class="featured_title">
                   Lorem ipsum
                 </div>
-                <div class="parallax_desc">
+                <div class="featured_desc">
                   <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
                   <div class="btn btn--line">
                     <span class="btn--line_line"></span>

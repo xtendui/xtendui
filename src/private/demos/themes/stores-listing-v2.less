@@ -3,12 +3,12 @@
   body { // add your own selector instead of body to contain the code
 
     /**
-      * .listing
+      * .listing-page
       */
 
     // items
 
-    .listing_inner {
+    .listing-page_inner {
       .padding(bottom, big);
       > .row {
         .row-space(small);
@@ -16,24 +16,24 @@
       }
     }
 
-    .listing_col {
+    .listing-page_col {
       .col(12);
       .col(6, sm);
       .col(4, lg);
     }
 
-    .listing_item {
+    .listing-page_item {
       position: relative;
       overflow: hidden;
       @media @max-sm {
-        .listing_front {
-          .listing_item_content {
+        .listing-page_front {
+          .listing-page_item_content {
             display: none;
           }
         }
       }
       @media @min-sm {
-        .listing_front {
+        .listing-page_front {
           display: block;
           position: absolute;
           top: 0;
@@ -41,20 +41,21 @@
           width: 100%;
           height: 100%;
         }
-        .listing_back {
+        .listing-page_back {
           pointer-events: none;
           opacity: 0;
         }
         &.active {
-          .listing_back {
+          .listing-page_back {
             pointer-events: all;
           }
         }
       }
-      .listing_front {
+      .listing-page_front {
+        cursor: pointer;
         .card-squared();
       }
-      .listing_back {
+      .listing-page_back {
         .card-squared();
         min-height: 40rem;
         .btn-close {
@@ -65,7 +66,7 @@
           .btn-close {
             display: none;
           }
-          .listing_content {
+          .listing-page_content {
             .padding(top, medium);
           }
         }
@@ -109,43 +110,37 @@
       }
     }
 
-    .listing_content {
+    .listing-page_content {
       .padding(y, 0);
       .padding(x, 4rem);
       border-left: 1px solid @shade-200;
     }
 
-    .listing_title {
-      .spacing-small();
+    .listing-page_title {
+      .spacing-medium();
       .font-sans-semibold();
       font-size: 3.1rem;
       .line-height-mini();
     }
 
-    .listing_address {
-      .spacing-small();
-      .font-mini();
+    .listing-page_address {
       .line-height-mini();
-      text-transform: uppercase;
-      opacity: .54;
     }
 
-    .listing_subtitle {
-      .spacing-large();
+    .listing-page_subtitle {
+      .spacing-small();
       .font-sans-semibold();
-      font-size: 13px;
+      font-size: 14px;
       .line-height-mini();
       text-transform: uppercase;
     }
 
-    .listing_additional {
-      .spacing-small();
-      .font-mini();
+    .listing-page_additional {
+      .font-small();
       .line-height-big();
-      opacity: .54;
     }
 
-    .listing_btns {
+    .listing-page_btns {
       display: none;
     }
 

@@ -3,28 +3,28 @@
   body { // add your own selector instead of body to contain the code
 
     /**
-      * .listing
+      * .listing-page
       */
 
-    .listing_inner {
+    .listing-page_inner {
       > .row {
         .row-space(small);
         .row-space(medium, sm);
       }
     }
 
-    .listing_col {
+    .listing-page_col {
       .col(12);
       .col(6, sm);
       .col(4, lg);
     }
 
-    .listing_col--big {
+    .listing-page_col--big {
       .col(12, sm);
       .col(12, lg);
     }
 
-    .listing_item {
+    .listing-page_item {
       .full();
       .text-default() !important;
       // card
@@ -48,7 +48,7 @@
       }
     }
 
-    .listing_col--big {
+    .listing-page_col--big {
       .card-asset {
         .media-container {
           @media @min-sm {
@@ -61,11 +61,11 @@
       }
     }
 
-    .listing_content {
+    .listing-page_content {
       .padding(y, medium);
     }
 
-    .listing_price {
+    .listing-page_price {
       .font-sans-semibold();
       .line-height-small();
       font-size: 1.4rem;
@@ -82,7 +82,7 @@
     @anim-scale-size: 1.05;
 
     // the same css and js
-    .scroll-item, .listing_item {
+    .scroll-item, .listing-page_item {
       opacity: 0;
       &.fade {
         opacity: 1;

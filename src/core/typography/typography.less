@@ -67,44 +67,50 @@ body {
 }
 
 .spacing-micro {
-  .margin(top, tiny);
+  .margin(top, mini);
   .margin(bottom, micro);
   .margin(y, layout);
 }
 
 .spacing-mini {
-  .margin(top, small);
+  .margin(top, tiny);
   .margin(bottom, mini);
   .margin(y, layout);
 }
 
 .spacing-tiny {
-  .margin(top, medium);
+  .margin(top, small);
   .margin(bottom, tiny);
   .margin(y, layout);
 }
 
 .spacing-small {
-  .margin(top, large);
+  .margin(top, medium);
   .margin(bottom, small);
   .margin(y, layout);
 }
 
 .spacing-medium {
-  .margin(top, big);
+  .margin(top, large);
   .margin(bottom, medium);
   .margin(y, layout);
 }
 
 .spacing-large {
-  .margin(top, giant);
+  .margin(top, big);
   .margin(bottom, large);
   .margin(y, layout);
 }
 
 .spacing-big {
-  .margin(top, huge);
+  .margin(top, giant);
   .margin(bottom, big);
+  .margin(y, layout);
+}
+
+.spacing-giant {
+  .margin(top, huge);
+  .margin(bottom, giant);
   .margin(y, layout);
 }
 
@@ -113,7 +119,7 @@ body {
  */
 
 h1, .h1 {
-  .spacing-small();
+  .spacing-medium();
   .font-sans-semibold();
   .line-height-mini();
   font-size: 3rem;
@@ -125,7 +131,7 @@ h1, .h1 {
 }
 
 h2, .h2 {
-  .spacing-small();
+  .spacing-medium();
   .font-sans-semibold();
   .line-height-mini();
   font-size: 3rem;
@@ -137,7 +143,7 @@ h2, .h2 {
 }
 
 h3, .h3 {
-  .spacing-small();
+  .spacing-medium();
   .font-sans-semibold();
   .line-height-mini();
   font-size: 2.5rem;
@@ -149,7 +155,7 @@ h3, .h3 {
 }
 
 h4, .h4 {
-  .spacing-mini();
+  .spacing-tiny();
   .font-sans-semibold();
   .line-height-tiny();
   font-size: 2rem;
@@ -161,7 +167,7 @@ h4, .h4 {
 }
 
 h5, .h5 {
-  .spacing-mini();
+  .spacing-tiny();
   .font-sans-semibold();
   .line-height-tiny();
   font-size: 1.6rem;
@@ -173,7 +179,7 @@ h5, .h5 {
 }
 
 h6, .h6 {
-  .spacing-mini();
+  .spacing-tiny();
   .font-sans-semibold();
   .line-height-tiny();
   font-size: 13px;
