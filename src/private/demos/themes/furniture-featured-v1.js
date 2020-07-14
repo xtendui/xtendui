@@ -87,11 +87,11 @@ Xt.mount.push({
 })
 
 /**
- * parallax
+ * featured
  */
 
 Xt.mount.push({
-  matches: '#iframe--furniture-featured-v1 body .parallax_item', // add your own selector instead of body to contain the code
+  matches: '#iframe--furniture-featured-v1 body .featured_item', // add your own selector instead of body to contain the code
   mount: (object) => {
     // vars
 
@@ -111,10 +111,10 @@ Xt.mount.push({
     const eventChange = (e) => {
       const tr = e.target
       // img
-      const img = tr.querySelector('.parallax_img_col')
+      const img = tr.querySelector('.featured_img_col')
       gsap.set(img, { y: imgY * (self.detail.ratio - 0.5) })
       // imgInner
-      const imgInner = tr.querySelector('.parallax_img_col img')
+      const imgInner = tr.querySelector('.featured_img_col img')
       gsap.set(imgInner, { scale: 1.1 - 0.1 * self.detail.ratio })
     }
 

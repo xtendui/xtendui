@@ -3,11 +3,11 @@ import 'xtend-library/src/vars.js'
 import gsap from 'gsap'
 
 /**
- * listing
+ * listing-page
  */
 
 Xt.mount.push({
-  matches: '#iframe--furniture-listing-v1 body .listing_item', // add your own selector instead of body to contain the code
+  matches: '#iframe--furniture-listing-v1 body .listing-page_item', // add your own selector instead of body to contain the code
   mount: (object) => {
     // vars
 
@@ -51,13 +51,13 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '#iframe--furniture-listing-v1 body', // add your own selector instead of body to contain the code
+  matches: '#iframe--furniture-listing-v1 body #gatsby_body-inner', // add your own selector instead of body to contain the code
   mount: (object) => {
     // init
 
     let self = new Xt.Scroll(object, {
       // the same css and js
-      elements: '.scroll-item, .listing_item',
+      elements: '.scroll-item, .listing-page_item',
       delayOn: (current) => {
         return Math.min((current + 1) * 75, 300)
       },

@@ -16,7 +16,7 @@ demo.htmlSource = `
 <div class="site_wrapper">
 
   <header class="site_header">
-    <div class="card card-primary card-squared">
+    <div class="card card-primary card-squared" style="opacity: 0.5; text-align: center;">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
@@ -46,7 +46,7 @@ demo.htmlSource = `
   </main>
 
   <footer class="site_footer">
-    <div class="card card-primary card-squared">
+    <div class="card card-primary card-squared" style="opacity: 0.5; text-align: center;">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">

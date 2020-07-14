@@ -12,23 +12,23 @@
     @ease-out: @ease-out-quint;
 
     /**
-      * .listing
+      * .listing-page
       */
 
-    .listing_inner {
+    .listing-page_inner {
       > .row {
         .row-default();
         .row-stretch();
       }
     }
 
-    .listing_col {
+    .listing-page_col {
       .col(12);
       .col(6, sm);
       .col(4, lg);
     }
 
-    .listing_item {
+    .listing-page_item {
       .full();
       .text-default() !important;
       .btn-close {
@@ -47,7 +47,7 @@
       }
     }
 
-    .listing_subtitle {
+    .listing-page_subtitle {
       .spacing-medium();
       .font-sans-semibold();
       font-size: 2rem;
@@ -56,19 +56,19 @@
       text-transform: none;
     }
 
-    .listing_address {
+    .listing-page_address {
       .full();
       font-size: 1.5rem;
       line-height: 1.8;
     }
 
-    .listing_additional {
+    .listing-page_additional {
       .full();
       font-size: 1.4rem;
       line-height: 1.8;
     }
 
-    .listing_btns {
+    .listing-page_btns {
       .list-block();
       .list-space(tiny);
       margin-top: auto;
@@ -82,28 +82,31 @@
 
     // front and back
 
-    .listing_front {
+    .listing-page_front {
       position: relative;
       z-index: 2;
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
       // card
+      height: 100%;
       .card-squared();
-      .card-small();
       .text-default();
       .card-design {
         border-color: @shade-100;
         background: @shade-100;
       }
       .card-block {
+        display: flex;
+        flex-direction: column;
         .flex-full();
+        padding: 3.5rem;
       }
-      .listing_btns {
+      .listing-page_btns {
         margin-top: auto;
       }
     }
 
-    .listing_back {
+    .listing-page_back {
       position: absolute;
       z-index: 1;
       top: 0;
@@ -115,17 +118,20 @@
       backface-visibility: hidden;
       // card
       .card-squared();
-      .card-small();
       .text-default();
       .card-design {
         border-color: @shade-100;
         background: @shade-100;
       }
+      .card-block {
+        .flex-full();
+        padding: 3.5rem;
+      }
     }
 
-    .listing_item {
+    .listing-page_item {
       perspective: 1400px;
-      .listing_item_inner {
+      .listing-page_item_inner {
         height: 100%;
         transform-style: preserve-3d;
         transition-duration: @time-big;
@@ -133,13 +139,13 @@
         transition-timing-function: @ease-out;
       }
       &.active {
-        .listing_item_inner {
+        .listing-page_item_inner {
           transform: rotateY(180deg);
           transition-duration: @time-big;
           transition-delay: initial;
           transition-timing-function: @ease-in;
         }
-        .listing_back {
+        .listing-page_back {
           z-index: 3;
         }
       }

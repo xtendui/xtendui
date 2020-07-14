@@ -11,7 +11,7 @@ import 'gsap/ScrollToPlugin.js'
  */
 
 Xt.mount.push({
-  matches: '#iframe--fashion-gallery-v1 body .product_right', // add your own selector instead of body to contain the code
+  matches: '#iframe--fashion-gallery-v1 body .product-page_right', // add your own selector instead of body to contain the code
   mount: function (object) {
     // init
 
@@ -19,7 +19,7 @@ Xt.mount.push({
       sticky: 'absolute',
       contain: {
         top: 0,
-        bottom: '.product_limit-bottom',
+        bottom: '.product-page_limit-bottom',
       },
     })
 
@@ -38,13 +38,17 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '#iframe--fashion-gallery-v1 body', // add your own selector instead of body to contain the code
+  matches: '#iframe--fashion-gallery-v1 body #gatsby_body-inner', // add your own selector instead of body to contain the code
   mount: (object) => {
     // init
 
+    console.log(object)
+
     let self = new Xt.ScrollToAnchor(object, {
-      scrollElements: [document.scrollingElement, object.querySelector('.product_left'), object.querySelector('#overlay--product_images')],
+      scrollElements: [document.scrollingElement, object.querySelector('.product-page_left'), object.querySelector('#overlay--product-page_images')],
     })
+    console.log(object.querySelector('.product-page_left'))
+
 
     // change
 
@@ -80,11 +84,11 @@ Xt.mount.push({
 })
 
 /**
- *  .header-continue
+ *  .product-page_continue
  */
 
 Xt.mount.push({
-  matches: '#iframe--fashion-gallery-v1 body .header-continue', // add your own selector instead of body to contain the code
+  matches: '#iframe--fashion-gallery-v1 body .product-page_continue', // add your own selector instead of body to contain the code
   mount: (object) => {
     // vars
 
