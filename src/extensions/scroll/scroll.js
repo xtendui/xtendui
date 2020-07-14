@@ -261,18 +261,15 @@ class Scroll extends Xt.Toggle {
         )
       }
     }
+    // direction
+    self.inverse = self.detail.scrollTopOld > scrollTop
+    self.detail.scrollTopOld = scrollTop
     // currents
     for (const el of currentsOn) {
-      // direction
-      const position = Xt.dataStorage.get(el, self.componentNamespace + 'Position')
-      self.inverse = position > 0
       // event
       self.eventOn(el, true)
     }
     for (const el of currentsOff) {
-      // direction
-      const position = Xt.dataStorage.get(el, self.componentNamespace + 'Position')
-      self.inverse = position > 0
       // event
       self.eventOff(el, true)
     }
