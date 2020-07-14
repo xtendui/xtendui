@@ -31,7 +31,7 @@ module.exports = {
         background_color: '#0078ff',
         theme_color: '#0058C6',
         display: 'minimal-ui',
-        icon: './static/icons/apple-touch-icon.png',
+        icon: './static/apple-touch-icon.png',
         icon_options: {
           purpose: `maskable any`,
         },
