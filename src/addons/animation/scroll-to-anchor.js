@@ -38,17 +38,19 @@ class ScrollToAnchor {
     addEventListener('hashchange', self.eventChange.bind(self).bind(self, true, null))
     // scroll
     for (const scrollElement of self.options.scrollElements) {
-      if (scrollElement === document.scrollingElement) {
-        addEventListener('scroll', self.eventScrollHandler.bind(self).bind(self, scrollElement))
-      } else {
-        scrollElement.addEventListener('scroll', self.eventScrollHandler.bind(self).bind(self, scrollElement))
+      if (scrollElement) {
+        if (scrollElement === document.scrollingElement) {
+          addEventListener('scroll', self.eventScrollHandler.bind(self).bind(self, scrollElement))
+        } else {
+          scrollElement.addEventListener('scroll', self.eventScrollHandler.bind(self).bind(self, scrollElement))
+        }
+        // initial
+        requestAnimationFrame(() => {
+          self.scrollElementCurrent = scrollElement
+          self.eventScrollHandler(scrollElement)
+          self.eventStart()
+        })
       }
-      // initial
-      requestAnimationFrame(() => {
-        self.scrollElementCurrent = scrollElement
-        self.eventScrollHandler(scrollElement)
-        self.eventStart()
-      })
     }
     // initialized class
     self.object.classList.add(self.componentName)
@@ -114,8 +116,10 @@ class ScrollToAnchor {
               }
               // current scrollElement
               for (const scrollElement of options.scrollElements) {
-                if (scrollElement.contains(self.target)) {
-                  self.scrollElementCurrent = scrollElement
+                if (scrollElement) {
+                  if (scrollElement.contains(self.target)) {
+                    self.scrollElementCurrent = scrollElement
+                  }
                 }
               }
               // els
@@ -183,9 +187,11 @@ class ScrollToAnchor {
     // filter out other scrollElement
     let elsFiltered = els
     for (const scrollElementOther of options.scrollElements.filter((x) => x !== scrollElement)) {
-      for (const el of els) {
-        if (scrollElementOther.contains(el)) {
-          elsFiltered = elsFiltered.filter((x) => x !== el) // filter out ignore
+      if (scrollElementOther) {
+        for (const el of els) {
+          if (scrollElementOther.contains(el)) {
+            elsFiltered = elsFiltered.filter((x) => x !== el) // filter out ignore
+          }
         }
       }
     }
@@ -199,8 +205,10 @@ class ScrollToAnchor {
         if (self.target) {
           // current scrollElement
           for (const scrollElement of options.scrollElements) {
-            if (scrollElement.contains(self.target)) {
-              self.scrollElementCurrent = scrollElement
+            if (scrollElement) {
+              if (scrollElement.contains(self.target)) {
+                self.scrollElementCurrent = scrollElement
+              }
             }
           }
           // vars
