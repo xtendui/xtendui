@@ -17,6 +17,8 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
   </div>
   <div class="gatsby_demo_item" data-iframe="iframe/components/extensions/scroll/block">
   </div>
+  <div class="gatsby_demo_item" data-iframe="iframe/components/addons/animation/scroll-to-anchor-nested">
+  </div>
   <demovanilla src="vanilla/components/extensions/slider/progress">
   </demovanilla>
   <demovanilla src="vanilla/components/core/toggle/timing-duration">
@@ -32,9 +34,9 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
   </demovanilla>
   <demovanilla src="vanilla/components/core/drop/backdrop">
   </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/with-link">
+  <demovanilla src="vanilla/components/core/drop/prevent-event">
   </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/with-link-hover">
+  <demovanilla src="vanilla/components/core/drop/prevent-event-hover">
   </demovanilla>
   <demovanilla src="vanilla/components/core/overlay/nested">
   </demovanilla>
@@ -56,6 +58,8 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 </demo>
 
 <demo>
+  <div class="gatsby_demo_item" data-iframe="iframe/themes/sequential-megamenu-v1">
+  </div>
   <div class="gatsby_demo_item" data-iframe="iframe/themes/xtend-theme-v1">
   </div>
   <div class="gatsby_demo_item" data-iframe="iframe/themes/collapse-theme-v1">
