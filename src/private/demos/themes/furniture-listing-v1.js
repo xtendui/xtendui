@@ -53,6 +53,10 @@ Xt.mount.push({
 Xt.mount.push({
   matches: '#iframe--furniture-listing-v1 body #gatsby_body-inner', // add your own selector instead of body to contain the code
   mount: (object) => {
+    // vars
+
+    object = document.documentElement
+
     // init
 
     let self = new Xt.Scroll(object, {

@@ -7,6 +7,10 @@ import 'gsap/ScrollToPlugin.js'
 Xt.mount.push({
   matches: '#iframe--scroll-to-anchor body #gatsby_body-inner', // add your own selector instead of body to contain the code
   mount: (object) => {
+    // vars
+
+    object = document.documentElement
+
     // init
 
     let self = new Xt.ScrollToAnchor(object, {
@@ -35,13 +39,7 @@ Xt.mount.push({
       pos = pos < min ? min : pos
       pos = pos > max ? max : pos
       // scroll
-      const component = self.scrollElementCurrent.closest('.overlay')
-      if (component) {
-        // if component on activation
-        gsap.set(scrollingElement, { scrollTo: pos })
-      } else {
-        gsap.to(scrollingElement, { scrollTo: pos, duration: Xt.vars.timeLarge, ease: 'quart.inOut' })
-      }
+      gsap.to(scrollingElement, { scrollTo: pos, duration: Xt.vars.timeLarge, ease: 'quart.inOut' })
     }
 
     self.object.addEventListener('change.xt.scrolltoanchor', eventChange)

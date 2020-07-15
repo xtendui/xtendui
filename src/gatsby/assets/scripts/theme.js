@@ -114,13 +114,7 @@ Xt.mount.push({
       pos = pos < min ? min : pos
       pos = pos > max ? max : pos
       // scroll
-      const component = self.scrollElementCurrent.closest('.overlay')
-      if (component) {
-        // if component on activation
-        gsap.set(scrollingElement, { scrollTo: pos })
-      } else {
-        gsap.to(scrollingElement, { scrollTo: pos, duration: Xt.vars.timeLarge, ease: 'quart.inOut' })
-      }
+      gsap.to(scrollingElement, { scrollTo: pos, duration: Xt.vars.timeLarge, ease: 'quart.inOut' })
     }
 
     self.object.addEventListener('change.xt.scrolltoanchor', eventChange)

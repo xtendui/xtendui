@@ -7,10 +7,18 @@ import 'gsap/ScrollToPlugin.js'
 Xt.mount.push({
   matches: '#iframe--scroll-to-anchor-nested body #gatsby_body-inner', // add your own selector instead of body to contain the code
   mount: (object) => {
+    // vars
+
+    object = document.documentElement
+
     // init
 
     let self = new Xt.ScrollToAnchor(object, {
-      scrollElements: [document.scrollingElement, object.querySelector('.demo--scroll-to-anchor-nested')],
+      scrollElements: [
+        document.scrollingElement,
+        object.querySelector('.demo--scroll-to-anchor-nested'),
+        object.querySelector('#demo--overlay-scroll-to-anchor-nested'),
+      ],
       scrollSpace: (self, scrollingElement) => {
         let scrollSpace = 0
         if (scrollingElement === document.scrollingElement) {
@@ -36,13 +44,7 @@ Xt.mount.push({
       pos = pos < min ? min : pos
       pos = pos > max ? max : pos
       // scroll
-      const component = self.scrollElementCurrent.closest('.overlay')
-      if (component) {
-        // if component on activation
-        gsap.set(scrollingElement, { scrollTo: pos })
-      } else {
-        gsap.to(scrollingElement, { scrollTo: pos, duration: Xt.vars.timeLarge, ease: 'quart.inOut' })
-      }
+      gsap.to(scrollingElement, { scrollTo: pos, duration: Xt.vars.timeLarge, ease: 'quart.inOut' })
     }
 
     self.object.addEventListener('change.xt.scrolltoanchor', eventChange)
