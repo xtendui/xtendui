@@ -10,6 +10,7 @@ if (typeof window !== 'undefined') {
   require('xtend-library/src/private/demos/components/addons/slider/navigation-sides.js')
   require('xtend-library/src/private/demos/components/addons/structure/google-locator.js')
   require('xtend-library/src/private/demos/components/addons/toggle/multilevel.js')
+  require('xtend-library/src/private/demos/components/core/drop/events-methods.js')
   require('xtend-library/src/private/demos/components/core/group/merge-line.js')
   require('xtend-library/src/private/demos/components/core/group/merge-stack.js')
   require('xtend-library/src/private/demos/components/core/loader/js-filler.js')

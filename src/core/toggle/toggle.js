@@ -251,6 +251,7 @@ class Toggle {
    */
   initReset(el, saveCurrents = false) {
     const self = this
+    const options = self.options
     let found = false
     // reset
     const reset = (elReset) => {
@@ -274,6 +275,17 @@ class Toggle {
             ...self.classesInitial,
             ...self.classesInverse
           )
+          const elementsInner = Xt.queryAll(elReset, options.elementsInner)
+          for (const elementInner of elementsInner) {
+            elementInner.classList.remove(
+              ...self.classes,
+              ...self.classesIn,
+              ...self.classesInDone,
+              ...self.classesOut,
+              ...self.classesInitial,
+              ...self.classesInverse
+            )
+          }
         })
       }
       return found
@@ -1212,9 +1224,6 @@ class Toggle {
     el.classList.remove(...self.classesIn)
     el.classList.remove(...self.classesInDone)
     el.classList.add(...self.classesOut)
-    if (!self.initial) {
-      el.classList.remove(...self.classesInitial)
-    }
     if (self.direction >= 0) {
       el.classList.remove(...self.classesInverse)
     } else {
@@ -2021,6 +2030,16 @@ class Toggle {
       self.eventAutostart()
       // @fix raf because after .xt custom listeners
       requestAnimationFrame(() => {
+        // remove class initial
+        if (self.initial) {
+          for (const type in obj) {
+            if (obj[type].done) {
+              for (const el of obj[type].queueEls) {
+                el.classList.remove(...self.classesInitial)
+              }
+            }
+          }
+        }
         // reset
         self.inverse = null
         self.initial = false
@@ -2331,16 +2350,22 @@ class Toggle {
             'click/close' + '/' + self.namespace,
             self.eventSpecialcloseinsideHandler.bind(self)
           )
-          closeElement.addEventListener('click', specialcloseinsideHandler)
+          // @FIX do not close when clicking things that trigger this
+          requestAnimationFrame(() => {
+            closeElement.addEventListener('click', specialcloseinsideHandler)
+          })
           // focusable
           const specialcloseinsideKeydownHandler = Xt.dataStorage.put(
             closeElement,
             'keydown/close' + '/' + self.namespace,
             self.eventSpecialcloseinsideKeydownHandler.bind(self).bind(self, closeElement)
           )
-          closeElement.addEventListener('keydown', specialcloseinsideKeydownHandler)
-          closeElement.setAttribute('tabindex', '0')
-          closeElement.setAttribute('role', 'button')
+          // @FIX do not close when clicking things that trigger this
+          requestAnimationFrame(() => {
+            closeElement.addEventListener('keydown', specialcloseinsideKeydownHandler)
+            closeElement.setAttribute('tabindex', '0')
+            closeElement.setAttribute('role', 'button')
+          })
         }
       }
       // closeOutside
@@ -2352,7 +2377,10 @@ class Toggle {
             'click/close' + '/' + self.namespace,
             self.eventSpecialcloseoutsideHandler.bind(self)
           )
-          closeElement.addEventListener('click', specialcloseoutsideHandler)
+          // @FIX do not close when clicking things that trigger this
+          requestAnimationFrame(() => {
+            closeElement.addEventListener('click', specialcloseoutsideHandler)
+          })
         }
       }
     } else if (actionCurrent === 'Off') {

@@ -59,8 +59,8 @@ Xt.mount.push({
     // init
 
     let self = new Xt.Drop(object, {
-      elements: '.drop-container',
-      targets: '.drop-container > .drop',
+      elements: '.megamenu_outer',
+      targets: '.megamenu_outer > .drop',
       durationOn: Xt.vars.timeLarge,
       durationOff: Xt.vars.timeLarge,
       preventEvent: true,

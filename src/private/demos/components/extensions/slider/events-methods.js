@@ -201,7 +201,7 @@ Xt.mount.push({
     // events
 
     const events = (e) => {
-      let str = 'event <strong>' + e.type + '</strong>'
+      let str = 'event <strong>' + e.type + '</strong>' + ' direction <strong>' + self.direction + '</strong>'
       if (e.target.getAttribute('title')) {
         str += ' from <strong>' + e.target.getAttribute('title') + '</strong>'
       } else if (e.target.querySelector('.card-title')) {

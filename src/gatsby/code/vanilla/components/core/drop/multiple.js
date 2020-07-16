@@ -10,27 +10,26 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div data-xt-drop="{ elements: '.drop-container', targets: '.drop-container > .drop' }">
-  <div class="list list-default list-space-small align-items-center">
+<div class="list list-default list-space-small align-items-center"
+  data-xt-drop="{ elements: ':scope > .drop-container', targets: ':scope > .drop-container > .drop' }">
 
-    <div class="drop-container">
-      <button type="button" class="btn btn-primary">
-        drop
-      </button>
-      <div class="drop drop-default">
-      ${indentString(markupDrop(), 6)}
-      </div>
+  <div class="drop-container">
+    <button type="button" class="btn btn-primary">
+      drop
+    </button>
+    <div class="drop drop-default">
+    ${indentString(markupDrop(), 6)}
     </div>
-
-    <div class="drop-container">
-      <button type="button" class="btn btn-primary">
-        drop
-      </button>
-      <div class="drop drop-default">
-      ${indentString(markupDrop(), 6)}
-      </div>
-    </div>
-
   </div>
+
+  <div class="drop-container">
+    <button type="button" class="btn btn-primary">
+      drop
+    </button>
+    <div class="drop drop-default">
+    ${indentString(markupDrop(), 6)}
+    </div>
+  </div>
+
 </div>
 `

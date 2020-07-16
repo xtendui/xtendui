@@ -6,6 +6,13 @@ title: "API"
 date: "2019-01-15"
 ---
 
+## Demo
+
+<demo>
+  <div class="gatsby_demo_item" data-iframe="iframe/components/core/drop/events-methods">
+  </div>
+</demo>
+
 ## Util
 
 <div class="table-scroll">

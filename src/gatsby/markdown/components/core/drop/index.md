@@ -106,7 +106,7 @@ The **unique** mode is useful when triggering **targets outside the scope** of t
 Use this markup to create **multiple drop**.
 
 <script type="text/plain" class="language-markup">
-  <div data-xt-drop="{ elements: '.drop-container', targets: '.drop-container > .drop' }">
+  <div data-xt-drop="{ elements: ':scope > .drop-container', targets: ':scope > .drop-container > .drop' }">
   
     <div class="drop-container">
       <button type="button">

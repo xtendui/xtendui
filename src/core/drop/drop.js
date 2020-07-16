@@ -61,7 +61,7 @@ Drop.optionsDefault = {
   max: 1,
   // event
   on: 'click',
-  eventLimit: '.event-limit, .drop',
+  eventLimit: '.event-limit, .drop-inner',
   // timing
   instant: {
     elements: false,

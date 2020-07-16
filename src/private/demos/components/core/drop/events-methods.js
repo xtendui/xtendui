@@ -1,23 +1,19 @@
 import { Xt } from 'xtend-library'
 
 Xt.mount.push({
-  matches: '#demo--toggle-events',
+  matches: '#demo--drop-events',
   mount: (object) => {
     // init
 
-    let self = new Xt.Toggle(object, {
-      elements: 'a, button',
-      targets: '[class^="toggle-"], [class*=" toggle-"]',
-      min: 1,
-      auto: {
-        time: 2000,
-        initial: false,
-      },
+    let self = new Xt.Drop(object, {
+      elements: ':scope > .drop-container',
+      targets: ':scope > .drop-container > .drop',
+      closeOutside: false,
     })
 
     // log
 
-    const log = document.querySelector('#demo--toggle-events-log')
+    const log = document.querySelector('#demo--drop-events-log')
 
     const logAdd = (text) => {
       log.innerHTML += text + '<br/>'
@@ -32,7 +28,7 @@ Xt.mount.push({
 
     // first element
 
-    const firstEl = document.querySelector('#demo--toggle-events-first-element')
+    const firstEl = document.querySelector('#demo--drop-events-first-element')
 
     const firstElFnc = () => {
       logAdd('<strong>1st element</strong>')
@@ -44,7 +40,7 @@ Xt.mount.push({
 
     // first target
 
-    const firstTr = document.querySelector('#demo--toggle-events-first-target')
+    const firstTr = document.querySelector('#demo--drop-events-first-target')
 
     const firstTrFnc = () => {
       logAdd('<strong>1st target</strong>')
@@ -54,44 +50,43 @@ Xt.mount.push({
 
     firstTr.addEventListener('click', firstTrFnc)
 
-    // autostart
-
-    const autostartEl = document.querySelector('#demo--toggle-events-autostart')
-
-    const autstartFnc = () => {
-      logAdd('<strong>autostart</strong>')
-      self.object.dispatchEvent(new CustomEvent('autostart.trigger.xt'))
-    }
-
-    autostartEl.addEventListener('click', autstartFnc)
-
-    // autostop
-
-    const autostopEl = document.querySelector('#demo--toggle-events-autostop')
-
-    const autostopFnc = () => {
-      logAdd('<strong>autostop</strong>')
-      self.object.dispatchEvent(new CustomEvent('autostop.trigger.xt'))
-    }
-
-    autostopEl.addEventListener('click', autostopFnc)
-
     // add
 
-    const addBtn = document.querySelector('#demo--toggle-events-add')
+    const addBtn = document.querySelector('#demo--drop-events-add')
 
     const addFnc = () => {
       clearTimeout(parseFloat(object.dataset.reinitTimeout))
       object.dataset.reinitTimeout = setTimeout(() => {
         logAdd('<strong>add</strong>')
         // elements
-        const elIndex = self.getElementsGroups().length
-        const strEl = `<button type="button" class="btn btn-default">Toggle ${elIndex}</button>`
-        document.querySelector('#demo--toggle-events-elements').append(Xt.createElement(strEl))
-        // targets
-        const indexTr = self.getTargetsGroups().length
-        const strTr = `<div class="note note-default note-background toggle-block">Target ${indexTr}</div>`
-        document.querySelector('#demo--toggle-events-targets').append(Xt.createElement(strTr))
+        const strEl = `
+        <div class="drop-container">
+          <button type="button" class="btn btn-primary">
+            drop
+          </button>
+          <div class="drop drop-default">
+            <div class="drop-inner">
+              <div class="drop-design"></div>
+              <div class="drop-content">
+
+                <nav class="list-block list-drop">
+                  <button type="button">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                  </button>
+                  <button type="button">
+                    Dolor sit
+                  </button>
+                  <button type="button">
+                    Amet
+                  </button>
+                </nav>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      `
+        document.querySelector('#demo--drop-events').append(Xt.createElement(strEl))
         // reinit
         logAdd('<strong>reinit</strong>')
         self.reinit()
@@ -102,7 +97,7 @@ Xt.mount.push({
 
     // remove
 
-    const removeBtn = document.querySelector('#demo--toggle-events-remove')
+    const removeBtn = document.querySelector('#demo--drop-events-remove')
 
     const removeFnc = () => {
       clearTimeout(parseFloat(object.dataset.reinitTimeout))
@@ -111,9 +106,6 @@ Xt.mount.push({
         // element
         const elements = self.elements
         elements[elements.length - 1].remove()
-        // element
-        const targets = self.targets
-        targets[targets.length - 1].remove()
         // reinit
         logAdd('<strong>reinit</strong>')
         self.reinit()
@@ -124,7 +116,7 @@ Xt.mount.push({
 
     // block
 
-    const blockBtn = document.querySelector('#demo--toggle-events-block')
+    const blockBtn = document.querySelector('#demo--drop-events-block')
 
     const blockFnc = () => {
       logAdd('<strong>block/unblock</strong>')
@@ -141,7 +133,7 @@ Xt.mount.push({
 
     // reinit
 
-    const reinitBtn = document.querySelector('#demo--toggle-events-reinit')
+    const reinitBtn = document.querySelector('#demo--drop-events-reinit')
 
     const reinitFnc = () => {
       clearTimeout(parseFloat(object.dataset.reinitTimeout))
@@ -155,7 +147,7 @@ Xt.mount.push({
 
     // restart
 
-    const restartBtn = document.querySelector('#demo--toggle-events-restart')
+    const restartBtn = document.querySelector('#demo--drop-events-restart')
 
     const restartFnc = () => {
       logAdd('<strong>restart</strong>')
@@ -166,7 +158,7 @@ Xt.mount.push({
 
     // destroy
 
-    const destroyBtn = document.querySelector('#demo--toggle-events-destroy')
+    const destroyBtn = document.querySelector('#demo--drop-events-destroy')
 
     const destroyFnc = () => {
       logAdd('<strong>destroy</strong>')
@@ -177,7 +169,7 @@ Xt.mount.push({
 
     // unmount
 
-    const unmountBtn = document.querySelector('#demo--toggle-events-unmount')
+    const unmountBtn = document.querySelector('#demo--drop-events-unmount')
 
     const unmountFnc = () => {
       logAdd('<strong>unmount</strong>')
