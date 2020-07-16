@@ -26,6 +26,15 @@ You can start with toggled elements and targets just by adding **one of the acti
 
 Additionally on component initialization the class `xt-sticky` gets added to the object (the DOM element you assigned the component) useful if you want to animate with css on component intialization. `classInitial` and `classInverse` are useful if you want to animate with css depending on initial activation or direction of the activation. For javascript animation you can use the [api properties](/components/extensions/sticky/api#properties).
 
+## Block
+
+You can block the activations with the class `.xt-block` on elements.
+
+<demo>
+  <div class="gatsby_demo_item" data-iframe="iframe/components/extensions/sticky/block">
+  </div>
+</demo>
+
 ## Mode
 
 <div class="table-scroll">

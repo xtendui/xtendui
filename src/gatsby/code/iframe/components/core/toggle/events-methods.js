@@ -32,6 +32,9 @@ demo.htmlSource = `
   <button type="button" class="btn btn-primary btn-tiny" id="demo--toggle-events-remove">
     Remove
   </button>
+  <button type="button" class="btn btn-primary btn-tiny" id="demo--toggle-events-block">
+    Block/Unblock
+  </button>
   <button type="button" class="btn btn-primary btn-tiny" id="demo--toggle-events-reinit">
     Reinit
   </button>

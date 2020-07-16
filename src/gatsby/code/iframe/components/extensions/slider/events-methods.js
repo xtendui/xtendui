@@ -34,6 +34,9 @@ demo.htmlSource = `
   <button type="button" class="btn btn-primary btn-tiny" id="demo--slider-events-remove">
     Remove
   </button>
+  <button type="button" class="btn btn-primary btn-tiny" id="demo--slider-events-block">
+    Block/Unblock
+  </button>
   <button type="button" class="btn btn-primary btn-tiny" id="demo--slider-events-reinit">
     Reinit
   </button>

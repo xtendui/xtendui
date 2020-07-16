@@ -594,7 +594,7 @@ class Slider extends Xt.Toggle {
       return false
     }
     // toggle
-    if (force || (!element.classList.contains('xt-block') && self.checkOn(element) && (!e || !e.type || e.type !== 'off.trigger.xt'))) {
+    if (force || (self.checkOn(element) && (!e || !e.type || e.type !== 'off.trigger.xt'))) {
       // @FIX targets handler
       const slides = self.getTargets(element)
       const slide = slides[0]
@@ -721,6 +721,9 @@ class Slider extends Xt.Toggle {
           )
         }
       }
+    } else if (!e || !e.type || e.type !== 'on.trigger.xt') {
+      // drag reset
+      self.logicDragreset(self.dragger)
     }
     // super
     super.eventOn(element, force, e)
@@ -1049,53 +1052,63 @@ class Slider extends Xt.Toggle {
       if (found === self.currentIndex) {
         // change at least one
         if (direction < 0) {
-          self.goToNext(1, true)
+          self.goToNext(1)
         } else {
-          self.goToPrev(1, true)
+          self.goToPrev(1)
         }
       } else {
         // goToNum
-        self.goToNum(found, true)
+        self.goToNum(found)
       }
     } else {
-      // val
-      self.detail.dragPosOld = self.detail.dragPos
-      self.detail.dragPos = self.detail.dragPosCurrent
-      // disable drag and links
-      Xt.animTimeout(
-        dragger,
-        () => {
-          dragger.classList.remove('xt-pointer-events-none')
-          for (const nav of self.navs) {
-            nav.classList.remove('xt-pointer-events-none')
-          }
-          for (const el of self.elements) {
-            el.classList.remove('xt-pointer-events-none')
-          }
-        },
-        'draggerDisable',
-        self.initial ? 0 : self.options.durationOn
-      )
-      // drag position
-      if (self.initial) {
-        self.dragger.classList.add('transition-none')
-      }
-      dragger.style.transform = 'translateX(' + self.detail.dragPosCurrent + 'px)'
-      if (self.initial) {
-        self.dragger.classList.remove('transition-none')
-      }
-      // auto
-      self.eventAutostart()
-      // listener dispatch
-      if (!self.initial) {
-        dragger.dispatchEvent(new CustomEvent('dragreset.xt'))
-      }
+      // drag reset
+      self.logicDragreset(dragger)
     }
     // dragging
     self.detail.dragging = false
     // listener dispatch
     if (!self.initial) {
       dragger.dispatchEvent(new CustomEvent('dragend.xt'))
+    }
+  }
+
+  /**
+   * element drag friction off logic
+   * @param {Node|HTMLElement|EventTarget|Window} dragger
+   */
+  logicDragreset(dragger) {
+    const self = this
+    // val
+    self.detail.dragPosOld = self.detail.dragPos
+    self.detail.dragPos = self.detail.dragPosCurrent
+    // disable drag and links
+    Xt.animTimeout(
+      dragger,
+      () => {
+        dragger.classList.remove('xt-pointer-events-none')
+        for (const nav of self.navs) {
+          nav.classList.remove('xt-pointer-events-none')
+        }
+        for (const el of self.elements) {
+          el.classList.remove('xt-pointer-events-none')
+        }
+      },
+      'draggerDisable',
+      self.initial ? 0 : self.options.durationOn
+    )
+    // drag position
+    if (self.initial) {
+      self.dragger.classList.add('transition-none')
+    }
+    dragger.style.transform = 'translateX(' + self.detail.dragPosCurrent + 'px)'
+    if (self.initial) {
+      self.dragger.classList.remove('transition-none')
+    }
+    // auto
+    self.eventAutostart()
+    // listener dispatch
+    if (!self.initial) {
+      dragger.dispatchEvent(new CustomEvent('dragreset.xt'))
     }
   }
 

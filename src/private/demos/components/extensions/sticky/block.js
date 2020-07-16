@@ -1,16 +1,16 @@
 import { Xt } from 'xtend-library'
 
 Xt.mount.push({
-  matches: '.demo--scroll-block',
+  matches: '.demo--sticky-block',
   mount: (object) => {
     // vars
 
-    const btn = object.querySelector('.demo--scroll-block--btn')
+    const btn = object.querySelector('.demo--sticky-block--btn')
 
     // init
 
-    let self = new Xt.Scroll(object, {
-      elements: '.card, .btn',
+    let self = new Xt.Sticky(object, {
+      sticky: 'absolute',
     })
 
     // eventBlock
@@ -21,11 +21,11 @@ Xt.mount.push({
         if (element.classList.contains('xt-block')) {
           // unblock
           element.classList.remove('xt-block')
-          // fade in
-          element.dispatchEvent(new CustomEvent('on.trigger.xt'))
+          // recheck
+          dispatchEvent(new CustomEvent('sticky.trigger.xt'))
         } else {
-          // fade out
-          element.dispatchEvent(new CustomEvent('off.trigger.xt'))
+          // recheck
+          dispatchEvent(new CustomEvent('sticky.trigger.xt'))
           // block
           element.classList.add('xt-block')
         }

@@ -134,6 +134,7 @@ class Sticky extends Xt.Toggle {
     for (const event of events) {
       addEventListener(event, stickyHandler, { passive: true })
     }
+    addEventListener('sticky.trigger.xt', stickyHandler)
     self.eventStickyHandler()
     // focusin
     const focusInHandler = Xt.dataStorage.put(document, 'focusin/sticky' + '/' + self.namespace, self.eventFocusinHandler.bind(self))
@@ -268,14 +269,20 @@ class Sticky extends Xt.Toggle {
       const checkBottom = scrollTop < bottom + add - addHide
       if (checkTop && checkBottom) {
         // inside
-        self.eventOn(el, true)
+        const changed = self.checkOn(el)
+        if (changed) {
+          self.eventOn(el)
+        }
         // hide
         if (addHide) {
           hide = true
         }
       } else {
-        // outside
-        self.eventOff(el, true)
+        const changed = self.checkOff(el)
+        if (changed) {
+          // outside
+          self.eventOff(el)
+        }
       }
       // after active
       if (el.classList.contains(self.classes[0])) {

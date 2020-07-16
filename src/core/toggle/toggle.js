@@ -1251,7 +1251,7 @@ class Toggle {
       return false
     }
     // toggle
-    if (force || (!element.classList.contains('xt-block') && self.checkOn(element) && (!e || !e.type || e.type !== 'off.trigger.xt'))) {
+    if (force || (self.checkOn(element) && (!e || !e.type || e.type !== 'off.trigger.xt'))) {
       // auto
       self.eventAutostop()
       // on
@@ -1416,9 +1416,9 @@ class Toggle {
       // not when disabled
       if (getComputedStyle(self.object).pointerEvents !== 'none') {
         if (options.auto.inverse) {
-          self.goToPrev(options.auto.step, true)
+          self.goToPrev(options.auto.step)
         } else {
-          self.goToNext(options.auto.step, true)
+          self.goToNext(options.auto.step)
         }
       }
     }

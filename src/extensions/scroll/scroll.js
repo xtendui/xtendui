@@ -117,6 +117,7 @@ class Scroll extends Xt.Toggle {
     for (const event of events) {
       addEventListener(event, scrollHandler, { passive: true })
     }
+    addEventListener('scroll.trigger.xt', scrollHandler)
     requestAnimationFrame(() => {
       self.eventScrollHandler()
     })
@@ -176,7 +177,6 @@ class Scroll extends Xt.Toggle {
       if (!el.classList.contains('xt-block') && Xt.visible(el) && tr.offsetParent) {
         // filter out document.documentElement
         // vars
-        let changed = false
         const elTop = tr.offsetParent.getBoundingClientRect().top + tr.offsetTop + scrollTop // we use parents to not include transforms animations
         const elHeight = tr.offsetHeight
         // size fix when position fixed
@@ -203,7 +203,7 @@ class Scroll extends Xt.Toggle {
         // @FIX fixes on page top || self.detail.start > self.detail.end
         if ((position >= 0 && position <= total) || self.detail.start > self.detail.end) {
           // inside
-          changed = self.checkOn(el)
+          const changed = self.checkOn(el)
           if (changed) {
             currentsOn.push(el)
             // activation
@@ -213,7 +213,7 @@ class Scroll extends Xt.Toggle {
           }
         } else {
           // outside
-          changed = self.checkOff(el)
+          const changed = self.checkOff(el)
           el.classList.add('scroll-outside')
           if (changed) {
             el.classList.add('scroll-done')

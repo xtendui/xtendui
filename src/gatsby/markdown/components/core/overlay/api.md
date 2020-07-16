@@ -6,6 +6,13 @@ title: "API"
 date: "2019-01-15"
 ---
 
+## Demo
+
+<demo>
+  <div class="gatsby_demo_item" data-iframe="iframe/components/core/overlay/events-methods">
+  </div>
+</demo>
+
 ## Util
 
 <div class="table-scroll">
@@ -143,10 +150,3 @@ Here are the main properties inside `self`:
 | Option                  | `initial:Boolean`       | If initial or reset activation            |
 
 </div>
-
-## Demo
-
-<demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/core/overlay/events-methods">
-  </div>
-</demo>

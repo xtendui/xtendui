@@ -20,6 +20,9 @@ demo.htmlSource = `
   <button type="button" class="btn btn-primary btn-tiny" id="demo--overlay-events-first-target">
     1st target
   </button>
+  <button type="button" class="btn btn-primary btn-tiny" id="demo--overlay-events-block">
+    Block/Unblock
+  </button>
   <button type="button" class="btn btn-primary btn-tiny" id="demo--overlay-events-reinit">
     Reinit
   </button>

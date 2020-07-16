@@ -15,17 +15,6 @@ Animate with inverse `.inverse` or `self.direction`.
   </div>
 </demo>
 
-## Block
-
-You can block the scroll animations with the class `.xt-block`. Add also the class `.fade` to have them enabled.
-
-If you want to block them with fade in or out use the events `on.trigger.xt` or `off.trigger.xt`. 
-
-<demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/extensions/scroll/block">
-  </div>
-</demo>
-
 ## Indicator
 
 Add the class `.scroll-indicator` to show show visual info on a scroll component.

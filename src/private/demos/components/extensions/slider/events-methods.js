@@ -134,6 +134,23 @@ Xt.mount.push({
 
     removeBtn.addEventListener('click', removeFnc)
 
+    // block
+
+    const blockBtn = document.querySelector('#demo--slider-events-block')
+
+    const blockFnc = () => {
+      logAdd('<strong>block/unblock</strong>')
+      for (const element of self.elements) {
+        if (element.classList.contains('xt-block')) {
+          element.classList.remove('xt-block')
+        } else {
+          element.classList.add('xt-block')
+        }
+      }
+    }
+
+    blockBtn.addEventListener('click', blockFnc)
+
     // reinit
 
     const reinitBtn = document.querySelector('#demo--slider-events-reinit')

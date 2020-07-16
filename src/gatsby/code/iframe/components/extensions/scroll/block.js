@@ -17,7 +17,7 @@ demo.htmlSource = `
 
   <div class="col-12">
     <button type="button" class="btn btn-primary demo--scroll-block--btn">
-      Click to fade out and block
+      Click to block/unblock and fade out/in
     </button>
   </div>
 
@@ -36,7 +36,7 @@ demo.htmlSource = `
   </div>
 
   <div class="col-12">
-    <div class="card card-default xt-block fade">
+    <div class="card card-default">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
@@ -120,7 +120,7 @@ demo.htmlSource = `
   </div>
 
   <div class="col-6 col-4-sm">
-    <div class="card card-default xt-block fade">
+    <div class="card card-default">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
@@ -145,12 +145,6 @@ demo.htmlSource = `
         </div>
       </div>
     </div>
-  </div>
-
-  <div class="col-12">
-    <button type="button" class="btn btn-primary demo--scroll-block--btn">
-      Click to fade out and block
-    </button>
   </div>
 
 </div>

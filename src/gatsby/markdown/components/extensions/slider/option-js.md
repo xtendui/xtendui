@@ -26,6 +26,10 @@ You can start with toggled elements and targets just by adding **one of the acti
 
 Additionally on component initialization the class `xt-slider` gets added to the object (the DOM element you assigned the component) useful if you want to animate with css on component intialization. `classInitial` and `classInverse` are useful if you want to animate with css depending on initial activation or direction of the activation. For javascript animation you can use the [api properties](/components/extensions/slider/api#properties).
 
+## Block
+
+You can block the activations with the class `.xt-block` on elements. See the [api demo](/components/extensions/slider/api#demo)
+
 ## Pagination
 
 You can add pagination with `[data-xt-pag].xt-ignore` it gets cloned inside the closest `.slider-pagination`.

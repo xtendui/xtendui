@@ -6,6 +6,12 @@ title: "API"
 date: "2019-01-15"
 ---
 
+## Demo
+
+<demo>
+  <div class="gatsby_demo_item" data-iframe="iframe/components/extensions/slider/events-methods">
+  </div>
+</demo>
 ## Util
 
 <div class="table-scroll">
@@ -206,9 +212,3 @@ Here are the main wheel properties inside `self.detail`:
 
 </div>
 
-## Demo
-
-<demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/extensions/slider/events-methods">
-  </div>
-</demo>

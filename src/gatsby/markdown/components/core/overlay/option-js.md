@@ -26,6 +26,10 @@ You can start with toggled elements and targets just by adding **one of the acti
 
 Additionally on component initialization the class `xt-overlay` gets added to the object (the DOM element you assigned the component) useful if you want to animate with css on component intialization. `classInitial` and `classInverse` are useful if you want to animate with css depending on initial activation or direction of the activation. For javascript animation you can use the [api properties](/components/core/overlay/api#properties).
 
+## Block
+
+You can block the activations with the class `.xt-block` on elements. See the [api demo](/components/core/overlay/api#demo)
+
 ## Class html
 
 <div class="table-scroll">

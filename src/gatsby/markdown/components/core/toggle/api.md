@@ -6,6 +6,13 @@ title: "API"
 date: "2019-01-15"
 ---
 
+## Demo
+
+<demo>
+  <div class="gatsby_demo_item" data-iframe="iframe/components/core/toggle/events-methods">
+  </div>
+</demo>
+
 ## Util
 
 <div class="table-scroll">
@@ -167,10 +174,3 @@ Here are the main properties inside `self`:
 | Event                   | `direction:Number`       | Direction `1` or `-1`            |
 
 </div>
-
-## Demo
-
-<demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/core/toggle/events-methods">
-  </div>
-</demo>
