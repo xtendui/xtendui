@@ -31,7 +31,7 @@ export default () => {
                       </div>
 
                       <div class="megamenu_col_right">
-                        <div class="row">
+                        <div class="row" style="max-height: 20rem;">
 
                           <div class="megamenu_item_col">
                             <div class="megamenu_item">
@@ -128,7 +128,7 @@ export default () => {
                       </div>
 
                       <div class="megamenu_col_right">
-                        <div class="row">
+                        <div class="row" style="max-height: 30rem;">
 
                           <div class="megamenu_item_col">
                             <div class="megamenu_item">
@@ -267,7 +267,7 @@ export default () => {
                       </div>
 
                       <div class="megamenu_col_right">
-                        <div class="row">
+                        <div class="row" style="max-height: 20rem;">
 
                           <div class="megamenu_item_col">
                             <div class="megamenu_item">
