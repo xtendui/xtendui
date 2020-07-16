@@ -42,28 +42,43 @@ demo.htmlSource = `
                   <div class="product-page_images">
                     <div class="list-block">
                       <a href="#product-image-overlay-0" class="product-page_image">
-                        <div class="product-page_image_inner" data-xt-overlay="{ targets: '#overlay--product-page_images' }">
-                          <img id="product-image-0" src="/img.svg" loading="lazy" alt=""/>
+                        <div class="media-container media-container-responsive"
+                          data-xt-overlay="{ targets: '#overlay--product-page_images' }">
+                          <div class="media-inner">
+                            <img class="media" id="product-image-0" src="/img.svg" loading="lazy" alt=""/>
+                          </div>
                         </div>
                       </a>
                       <a href="#product-image-overlay-1" class="product-page_image">
-                        <div class="product-page_image_inner" data-xt-overlay="{ targets: '#overlay--product-page_images' }">
-                          <img id="product-image-1" src="/img.svg" loading="lazy" alt=""/>
+                        <div class="media-container media-container-responsive"
+                          data-xt-overlay="{ targets: '#overlay--product-page_images' }">
+                          <div class="media-inner">
+                            <img class="media" id="product-image-1" src="/img.svg" loading="lazy" alt=""/>
+                          </div>
                         </div>
                       </a>
                       <a href="#product-image-overlay-3" class="product-page_image">
-                        <div class="product-page_image_inner" data-xt-overlay="{ targets: '#overlay--product-page_images' }">
-                          <img id="product-image-2" src="/img.svg" loading="lazy" alt=""/>
+                        <div class="media-container media-container-responsive"
+                          data-xt-overlay="{ targets: '#overlay--product-page_images' }">
+                          <div class="media-inner">
+                            <img class="media" id="product-image-2" src="/img.svg" loading="lazy" alt=""/>
+                          </div>
                         </div>
                       </a>
                       <a href="#product-image-overlay-4" class="product-page_image">
-                        <div class="product-page_image_inner" data-xt-overlay="{ targets: '#overlay--product-page_images' }">
-                          <img id="product-image-3" src="/img.svg" loading="lazy" alt=""/>
+                        <div class="media-container media-container-responsive"
+                          data-xt-overlay="{ targets: '#overlay--product-page_images' }">
+                          <div class="media-inner">
+                            <img class="media" id="product-image-3" src="/img.svg" loading="lazy" alt=""/>
+                          </div>
                         </div>
                       </a>
                       <a href="#product-image-overlay-4" class="product-page_image">
-                        <div class="product-page_image_inner" data-xt-overlay="{ targets: '#overlay--product-page_images' }">
-                          <img id="product-image-4" src="/img.svg" loading="lazy" alt=""/>
+                        <div class="media-container media-container-responsive"
+                          data-xt-overlay="{ targets: '#overlay--product-page_images' }">
+                          <div class="media-inner">
+                            <img class="media" id="product-image-4" src="/img.svg" loading="lazy" alt=""/>
+                          </div>
                         </div>
                       </a>
                     </div>
@@ -110,11 +125,31 @@ demo.htmlSource = `
                             <div class="card-content">
                               <div class="card-asset">
                                 <div class="list-block">
-                                  <img id="product-image-overlay-0" src="/img.svg" loading="eager" alt=""/>
-                                  <img id="product-image-overlay-1" src="/img.svg" loading="eager" alt=""/>
-                                  <img id="product-image-overlay-2" src="/img.svg" loading="eager" alt=""/>
-                                  <img id="product-image-overlay-3" src="/img.svg" loading="eager" alt=""/>
-                                  <img id="product-image-overlay-4" src="/img.svg" loading="eager" alt=""/>
+                                  <div class="media-container media-container-responsive">
+                                    <div class="media-inner">
+                                      <img class="media" id="product-image-overlay-0" src="/img.svg" loading="eager" alt=""/>
+                                    </div>
+                                  </div>
+                                  <div class="media-container media-container-responsive">
+                                    <div class="media-inner">
+                                      <img class="media" id="product-image-overlay-1" src="/img.svg" loading="eager" alt=""/>
+                                    </div>
+                                  </div>
+                                  <div class="media-container media-container-responsive">
+                                    <div class="media-inner">
+                                      <img class="media" id="product-image-overlay-2" src="/img.svg" loading="eager" alt=""/>
+                                    </div>
+                                  </div>
+                                  <div class="media-container media-container-responsive">
+                                    <div class="media-inner">
+                                      <img class="media" id="product-image-overlay-3" src="/img.svg" loading="eager" alt=""/>
+                                    </div>
+                                  </div>
+                                  <div class="media-container media-container-responsive">
+                                    <div class="media-inner">
+                                      <img class="media" id="product-image-overlay-4" src="/img.svg" loading="eager" alt=""/>
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
                             </div>

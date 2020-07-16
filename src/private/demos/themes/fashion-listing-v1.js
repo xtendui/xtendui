@@ -45,7 +45,9 @@ Xt.mount.push({
       gsap.to(mask, { opacity: maskOpacityDone, duration: Xt.vars.timeMedium, ease: 'quart.out', delay: Xt.vars.timeSmall })
       // item
       const item = tr.querySelector('.card-item')
-      gsap.to(item, { y: titleY, duration: Xt.vars.timeSmall, ease: 'expo.out' })
+      if (item) {
+        gsap.to(item, { y: titleY, duration: Xt.vars.timeSmall, ease: 'expo.out' })
+      }
     }
 
     object.addEventListener('mouseenter', eventEnter)
@@ -67,7 +69,9 @@ Xt.mount.push({
       })
       // item
       const item = tr.querySelector('.card-item')
-      gsap.to(item, { y: 0, duration: Xt.vars.timeSmall, ease: 'expo.out' })
+      if (item) {
+        gsap.to(item, {y: 0, duration: Xt.vars.timeSmall, ease: 'expo.out'})
+      }
     }
 
     object.addEventListener('mouseleave', eventLeave)
