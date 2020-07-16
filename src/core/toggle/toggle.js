@@ -1180,7 +1180,7 @@ class Toggle {
         el.classList.add(...self.classesIn)
       })
     )
-    if (self.initial) {
+    if (self.initial && !self.wrap) {
       el.classList.add(...self.classesInitial)
     }
     // direction

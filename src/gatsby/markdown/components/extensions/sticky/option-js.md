@@ -3,11 +3,28 @@ type: "Components"
 category: "Extensions"
 parent: "Sticky"
 title: "Option Js"
-date: "2019-11-01"
+date: "2019-11-10"
 ---
 
-[[notePrimary]]
-| Sticky uses toggle for logic, refer to [toggle's option](/components/core/toggle/option-js).
+## Class
+
+You can customize the classnames used with the component.
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Default                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `class:String`                          | `active active-sticky`        | Class name for activation            |
+| Option                  | `classIn:String`                          | `in`        | Class name for in animation            |
+| Option                  | `classOut:String`                          | `out`        | Class name for out animation            |
+| Option                  | `classInitial:String`                          | `initial`        | Class name for initialization            |
+| Option                  | `classInverse:String`                          | `inverse`        | Class name for inverse direction activation            |
+
+</div>
+
+You can start with toggled elements and targets just by adding **one of the activation classes** to the **elements** or **targets**.
+
+Additionally on component initialization the class `xt-sticky` gets added to the object (the DOM element you assigned the component) useful if you want to animate with css on component intialization. `classInitial` and `classInverse` are useful if you want to animate with css depending on initial activation or direction of the activation. For javascript animation you can use the [api properties](/components/extensions/sticky/api#properties).
 
 ## Mode
 

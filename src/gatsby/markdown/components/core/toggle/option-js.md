@@ -3,12 +3,12 @@ type: "Components"
 category: "Core"
 parent: "Toggle"
 title: "Option Js"
-date: "2019-11-01"
+date: "2019-11-10"
 ---
 
 ## Class
 
-You can specify classes to toggle with `class: 'my-class-0 my-class-1'`. Toggled class is by default `.active`.
+You can customize the classnames used with the component.
 
 <div class="table-scroll">
 
@@ -27,22 +27,14 @@ You can specify classes to toggle with `class: 'my-class-0 my-class-1'`. Toggled
   </demovanilla>
 </demo>
 
-You can start with toggled elements and targets just by adding **one of the classes** to the **elements** or **targets**.
-
-It's recommended to use `active-toggle` otherwise the component flashes visible on page load.
-
-<div class="table-scroll">
-
-|                         | Syntax                                    | Default                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `class:String`                          | `active active-toggle`        | Class name for activation            |
-
-</div>
+You can start with toggled elements and targets just by adding **one of the activation classes** to the **elements** or **targets**.
 
 <demo>
   <demovanilla src="vanilla/components/core/toggle/start">
   </demovanilla>
 </demo>
+
+Additionally on component initialization the class `xt-toggle` gets added to the object (the DOM element you assigned the component) useful if you want to animate with css on component intialization. `classInitial` and `classInverse` are useful if you want to animate with css depending on initial activation or direction of the activation. For javascript animation you can use the [api properties](/components/core/toggle/api#properties).
 
 ## Quantity
 

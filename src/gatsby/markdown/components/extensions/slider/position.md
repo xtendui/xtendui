@@ -2,12 +2,9 @@
 type: "Components"
 category: "Extensions"
 parent: "Slider"
-title: "Option Position"
-date: "2019-11-20"
+title: "Position"
+date: "2019-11-05"
 ---
-
-[[notePrimary]]
-| Slider uses toggle for logic, refer to [toggle's option](/components/core/toggle/option-js).
 
 ## Align
 

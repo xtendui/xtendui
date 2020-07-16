@@ -6,9 +6,6 @@ title: "API"
 date: "2019-01-15"
 ---
 
-[[notePrimary]]
-| Slider uses toggle for logic, refer to [toggle's API](/components/core/toggle/api).
-
 ## Util
 
 <div class="table-scroll">
