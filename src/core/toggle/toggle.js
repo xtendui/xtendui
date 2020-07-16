@@ -1412,13 +1412,15 @@ class Toggle {
     const self = this
     const options = self.options
     // auto
-    if (Xt.visible(self.object)) {
-      // not when disabled
-      if (getComputedStyle(self.object).pointerEvents !== 'none') {
-        if (options.auto.inverse) {
-          self.goToPrev(options.auto.step)
-        } else {
-          self.goToNext(options.auto.step)
+    if (!self.detail.autopaused) {
+      if (Xt.visible(self.object)) {
+        // not when disabled
+        if (getComputedStyle(self.object).pointerEvents !== 'none') {
+          if (options.auto.inverse) {
+            self.goToPrev(options.auto.step)
+          } else {
+            self.goToNext(options.auto.step)
+          }
         }
       }
     }
@@ -1485,17 +1487,20 @@ class Toggle {
     if (self.disabled) {
       return
     }
-    // pause
-    if (options.auto && options.auto.time && !self.wrap) {
-      if (!self.detail.autopaused) {
-        // paused
-        self.detail.autopaused = true
-        // clear
-        clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutoTimeout'))
-        // listener dispatch
-        self.object.dispatchEvent(new CustomEvent('autopause.xt'))
+    // @FIX focus eventAutoresume happening after first interaction
+    requestAnimationFrame(() => {
+      // pause
+      if (options.auto && options.auto.time && !self.wrap) {
+        if (!self.detail.autopaused) {
+          // paused
+          self.detail.autopaused = true
+          // clear
+          clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutoTimeout'))
+          // listener dispatch
+          self.object.dispatchEvent(new CustomEvent('autopause.xt'))
+        }
       }
-    }
+    })
   }
 
   /**
