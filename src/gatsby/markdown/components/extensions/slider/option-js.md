@@ -99,9 +99,8 @@ You can add navigation with `navigation: QuerySelector`, set the amount to add (
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `drag.dragger:Query`                          | `'.slides-inner'`        | Query for dragger element             |
 | Option                  | `drag.manual:Boolean`                          | `false`        | Manual dragger position            |
-| Option                  | `drag.thresholdChange:Number`                          | `50`        | Minumim drag size for changing drag             |
+| Option                  | `drag.threshold:Number`                          | `50`        | Minumim drag size for changing drag and disable links             |
 | Option                  | `drag.thresholdOther:Number`                          | `50`        | Maximum drag size (y value) for blocking drag             |
-| Option                  | `drag.thresholdLink:Number`                          | `50`        | Maximum drag size for clicking links             |
 | Option                  | `drag.factor:Number`                          | `1`        | Factor multiplier for drag             |
 
 </div>
