@@ -83,19 +83,19 @@ Xt.mount.push({
       // assetMask
       const assetMasks = tr.querySelectorAll('.featured-item_asset .media-container')
       for (const assetMask of assetMasks) {
-        gsap.to(assetMask, { x: 0, duration: assetMaskTimeOff, ease: assetMaskEaseOff })
+        gsap.to(assetMask, { x: 0, duration: Xt.vars.timeTiny, ease: assetMaskEaseOff })
         const assetMaskInner = assetMask.querySelector('.media-inner')
-        gsap.to(assetMaskInner, { x: 0, opacity: 1, duration: assetMaskTimeOff, ease: assetMaskEaseOff })
+        gsap.to(assetMaskInner, { x: 0, opacity: 1, duration: Xt.vars.timeTiny, ease: assetMaskEaseOff })
       }
       // asset
       const assets = tr.querySelectorAll('.featured-item_asset img')
       for (const asset of assets) {
-        gsap.to(asset, { scale: 1, duration: assetTimeOff, ease: assetEaseOff })
+        gsap.to(asset, { scale: 1, duration: Xt.vars.timeTiny, ease: assetEaseOff })
       }
       // cardContent
       const cardContents = tr.querySelectorAll('.slide_card .card-item')
       for (const cardContent of cardContents) {
-        gsap.to(cardContent, { x: 0, opacity: 1, duration: cardContentTimeOff, ease: cardContentEaseOff })
+        gsap.to(cardContent, { x: 0, opacity: 1, duration: Xt.vars.timeTiny, ease: cardContentEaseOff })
       }
     }
 

@@ -164,7 +164,7 @@ export default () => {
         <div class="hero hero--middle hero--right">
           <div class="hero_inner">
             <div class="hero_asset">
-              ${img({ classes: 'media-cover', loading: 'eager' })}
+              ${imgAlt({ classes: 'media-cover', loading: 'eager' })}
             </div>
             <div class="hero_content_outer">
               <div class="hero_content">

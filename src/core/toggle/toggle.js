@@ -1496,20 +1496,17 @@ class Toggle {
     if (self.disabled) {
       return
     }
-    // @FIX focus eventAutoresume happening after first interaction
-    requestAnimationFrame(() => {
-      // pause
-      if (options.auto && options.auto.time && !self.wrap) {
-        if (!self.detail.autopaused) {
-          // paused
-          self.detail.autopaused = true
-          // clear
-          clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutoTimeout'))
-          // listener dispatch
-          self.object.dispatchEvent(new CustomEvent('autopause.xt'))
-        }
+    // pause
+    if (options.auto && options.auto.time) {
+      if (!self.detail.autopaused) {
+        // paused
+        self.detail.autopaused = true
+        // clear
+        clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutoTimeout'))
+        // listener dispatch
+        self.object.dispatchEvent(new CustomEvent('autopause.xt'))
       }
-    })
+    }
   }
 
   /**
@@ -1522,17 +1519,20 @@ class Toggle {
     if (self.disabled) {
       return
     }
-    // pause
-    if (options.auto && options.auto.time && !self.wrap) {
-      if (self.detail.autopaused) {
-        // paused
-        self.detail.autopaused = false
-        // resume
-        self.eventAutostart()
-        // listener dispatch
-        self.object.dispatchEvent(new CustomEvent('autoresume.xt'))
+    // @FIX focus eventAutoresume happening after first interaction
+    requestAnimationFrame(() => {
+      // pause
+      if (options.auto && options.auto.time) {
+        if (self.detail.autopaused) {
+          // paused
+          self.detail.autopaused = false
+          // resume
+          self.eventAutostart()
+          // listener dispatch
+          self.object.dispatchEvent(new CustomEvent('autoresume.xt'))
+        }
       }
-    }
+    })
   }
 
   /**

@@ -168,18 +168,18 @@ Xt.mount.push({
       const tr = self.targets.filter((x) => self.hasCurrent(x))[0]
       // assetMask
       const assetMask = tr.querySelector('.hero')
-      gsap.to(assetMask, { x: 0, duration: assetMaskTimeOff, ease: assetMaskEaseOff })
+      gsap.to(assetMask, { x: 0, duration: Xt.vars.timeTiny, ease: assetMaskEaseOff })
       const assetMaskInner = assetMask.querySelector('.hero_inner')
-      gsap.to(assetMaskInner, { x: 0, duration: assetMaskTimeOff, ease: assetMaskEaseOff })
+      gsap.to(assetMaskInner, { x: 0, duration: Xt.vars.timeTiny, ease: assetMaskEaseOff })
       // next
       const nexts = self.targets.filter((x) => x.classList.contains('next'))
       for (const next of nexts) {
         // assetMask
         const assetMask = next.querySelector('.hero')
         const xCurrent = assetMask.clientWidth * self.direction
-        gsap.to(assetMask, { x: xCurrent, duration: assetMaskTimeOff, ease: assetMaskEaseOff })
+        gsap.to(assetMask, { x: xCurrent, duration: Xt.vars.timeTiny, ease: assetMaskEaseOff })
         const assetMaskInner = assetMask.querySelector('.hero_inner')
-        gsap.to(assetMaskInner, { x: -xCurrent / 2, duration: assetMaskTimeOff, ease: assetMaskEaseOff })
+        gsap.to(assetMaskInner, { x: -xCurrent / 2, duration: Xt.vars.timeTiny, ease: assetMaskEaseOff })
       }
     }
 

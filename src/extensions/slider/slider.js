@@ -1064,6 +1064,8 @@ class Slider extends Xt.Toggle {
       // drag reset
       self.logicDragreset(dragger)
     }
+    // auto
+    self.eventAutoresume()
     // dragging
     self.detail.dragging = false
     // listener dispatch

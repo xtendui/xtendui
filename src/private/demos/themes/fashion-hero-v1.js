@@ -74,11 +74,11 @@ Xt.mount.push({
       // content others
       for (const other of self.targets.filter((x) => !self.hasCurrent(x))) {
         const contentOther = other.querySelector('.hero_asset .media')
-        gsap.to(contentOther, { x: 0, opacity: 0.5, duration: contentTime, ease: contentEase })
+        gsap.to(contentOther, { x: 0, opacity: 0.5, duration: Xt.vars.timeTiny, ease: contentEase })
       }
       // content
       const content = tr.querySelector('.hero_asset .media')
-      gsap.to(content, { x: 0, opacity: 1, duration: contentTime, ease: contentEase })
+      gsap.to(content, { x: 0, opacity: 1, duration: Xt.vars.timeTiny, ease: contentEase })
     }
 
     self.dragger.addEventListener('dragreset.xt', eventDragReset)
