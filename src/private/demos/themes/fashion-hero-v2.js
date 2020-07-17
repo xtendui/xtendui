@@ -67,7 +67,7 @@ Xt.mount.push({
     const assetCoverTime = Xt.vars.timeBig
     const assetCoverEase = 'quint.inOut'
 
-    const assetMaskTime = Xt.vars.timeBig - 50 // @FIX - 100 to cover skew
+    const assetMaskTime = Xt.vars.timeBig - 100 // @FIX - 100 to cover skew
     const assetMaskEase = 'quint.inOut'
 
     const assetZoom = 0.25
@@ -134,8 +134,7 @@ Xt.mount.push({
       const tr = self.targets.filter((x) => self.hasCurrent(x))[0]
       // cover
       const assetCover = tr.querySelector('.hero_cover')
-      gsap.to(assetCover, { x: 100 * self.direction + '%', duration: Xt.vars.timeTiny, ease: assetCoverEase })
-      gsap.to(assetCover, { skew: 0, duration: Xt.vars.timeTiny / 2, ease: assetCoverEase })
+      gsap.to(assetCover, { skewX: 0, x: 100 * self.direction + '%', duration: Xt.vars.timeTiny, ease: assetCoverEase })
       // content
       const content = tr.querySelector('.hero_content_outer')
       gsap.to(content, { x: 0, opacity: 1, duration: Xt.vars.timeTiny, ease: contentEase })
