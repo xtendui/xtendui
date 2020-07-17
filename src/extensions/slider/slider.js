@@ -924,14 +924,14 @@ class Slider extends Xt.Toggle {
       self.detail.dragCurrentOther = e.touches[0].clientY
     }
     // check threshold
-    const dragDist = Math.abs(self.detail.dragStart - self.detail.dragCurrent)
-    const dragDistOther = Math.abs(self.detail.dragStartOther - self.detail.dragCurrentOther)
-    if (dragDist > options.drag.thresholdLink) {
+    self.detail.dragDist = self.detail.dragStart - self.detail.dragCurrent
+    self.detail.dragDistOther = self.detail.dragStartOther - self.detail.dragCurrentOther
+    if (Math.abs(self.detail.dragDist) > options.drag.threshold) {
       // disable links
       dragger.classList.add('xt-links-none')
       dragger.classList.add('xt-jumps-none')
     }
-    if (dragDistOther > options.drag.thresholdOther && dragDistOther > dragDist) {
+    if (Math.abs(self.detail.dragDistOther) > options.drag.thresholdOther && Math.abs(self.detail.dragDistOther) > Math.abs(self.detail.dragDist)) {
       // block drag if scrolling
       return
     } else if (e.cancelable) {
@@ -1000,6 +1000,8 @@ class Slider extends Xt.Toggle {
     self.detail.dragPosOld = self.detail.dragPos
     self.detail.dragPos = dragPos
     self.detail.dragRatio = Math.abs(self.detail.dragStart - self.detail.dragCurrent) / self.detail.draggerWidth
+    self.detail.dragRatio = self.detail.dragRatio > 1 ? 1 : self.detail.dragRatio
+    self.detail.dragRatio = self.detail.dragRatio < -1 ? -1 : self.detail.dragRatio
     self.detail.dragRatioInverse = 1 - self.detail.dragRatio
     self.direction = self.detail.dragStart - self.detail.dragCurrent < 0 ? -1 : 1
     self.inverse = self.direction < 0
@@ -1028,10 +1030,13 @@ class Slider extends Xt.Toggle {
     const dragPosCurrent = self.detail.dragPosCurrent || 0
     // prevent dragging animation
     dragger.classList.remove('duration-none')
-    // activation or reset
-    const dragDist = self.detail.dragPosReal - dragPosCurrent
-    const direction = Math.sign(dragDist)
-    if (Math.abs(dragDist) > options.drag.thresholdChange) {
+    // check threshold
+    self.detail.dragDist = self.detail.dragPosReal - dragPosCurrent
+    const direction = Math.sign(self.detail.dragDist)
+    if (self.detail.dragDistOther > options.drag.thresholdOther && self.detail.dragDistOther > self.detail.dragDist) {
+      // drag reset
+      self.logicDragreset(dragger)
+    } else if (Math.abs(self.detail.dragDist) > options.drag.threshold) {
       // get nearest
       let found = self.currentIndex
       if (found === 0 && direction > 0) {
@@ -1103,7 +1108,7 @@ class Slider extends Xt.Toggle {
         self.dragger.classList.remove('transition-none')
       }
       // auto
-      self.eventAutostart()
+      self.eventAutoresume()
       // listener dispatch
       if (!self.initial) {
         dragger.dispatchEvent(new CustomEvent('dragreset.xt'))
@@ -1114,6 +1119,49 @@ class Slider extends Xt.Toggle {
     // listener dispatch
     if (!self.initial) {
       dragger.dispatchEvent(new CustomEvent('dragend.xt'))
+    }
+  }
+
+  /**
+   * element drag friction off logic
+   * @param {Node|HTMLElement|EventTarget|Window} dragger
+   */
+  logicDragreset(dragger) {
+    const self = this
+    // val
+    self.detail.dragPosOld = self.detail.dragPos
+    self.detail.dragPos = self.detail.dragPosCurrent
+    // fix direction
+    self.direction = self.detail.dragStart - self.detail.dragCurrentReal < 0 ? -1 : 1
+    self.inverse = self.direction < 0
+    // disable drag and links
+    Xt.animTimeout(
+      dragger,
+      () => {
+        dragger.classList.remove('xt-pointer-events-none')
+        for (const nav of self.navs) {
+          nav.classList.remove('xt-pointer-events-none')
+        }
+        for (const el of self.elements) {
+          el.classList.remove('xt-pointer-events-none')
+        }
+      },
+      'draggerDisable',
+      self.initial ? 0 : self.options.durationOn
+    )
+    // drag position
+    if (self.initial) {
+      self.dragger.classList.add('transition-none')
+    }
+    dragger.style.transform = 'translateX(' + self.detail.dragPosCurrent + 'px)'
+    if (self.initial) {
+      self.dragger.classList.remove('transition-none')
+    }
+    // auto
+    self.eventAutostart()
+    // listener dispatch
+    if (!self.initial) {
+      dragger.dispatchEvent(new CustomEvent('dragreset.xt'))
     }
   }
 
@@ -1280,9 +1328,8 @@ Slider.optionsDefault = {
     dragger: '.slides-inner',
     wrap: false,
     manual: false,
-    thresholdChange: 5,
-    thresholdOther: 5,
-    thresholdLink: 5,
+    threshold: 25,
+    thresholdOther: 50,
     factor: 1,
     friction: false,
     /*
