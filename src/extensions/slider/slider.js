@@ -532,10 +532,10 @@ class Slider extends Xt.Toggle {
   eventDragstart(dragger, e) {
     const self = this
     // event move
-    const dragHandler = Xt.dataStorage.put(dragger, 'mousemove touchmove/drag' + '/' + self.namespace, self.eventDragHandler.bind(self).bind(self, dragger))
+    const dragHandler = Xt.dataStorage.put(window, 'mousemove touchmove/drag' + '/' + self.namespace, self.eventDragHandler.bind(self).bind(self, dragger))
     const events = ['mousemove', 'touchmove']
     for (const event of events) {
-      dragger.addEventListener(event, dragHandler)
+      addEventListener(event, dragHandler, { passive: false })
     }
     // logic
     self.logicDragstart(dragger, e)
@@ -555,10 +555,10 @@ class Slider extends Xt.Toggle {
       removeEventListener(event, dragendHandler)
     }
     // event move
-    const dragHandler = Xt.dataStorage.get(dragger, 'mousemove touchmove/drag' + '/' + self.namespace)
+    const dragHandler = Xt.dataStorage.get(window, 'mousemove touchmove/drag' + '/' + self.namespace)
     const eventsmove = ['mousemove', 'touchmove']
     for (const event of eventsmove) {
-      dragger.removeEventListener(event, dragHandler)
+      removeEventListener(event, dragHandler)
     }
     // logic
     self.logicDragend(dragger, e)
@@ -809,6 +809,7 @@ class Slider extends Xt.Toggle {
     self.detail.dragVelocityNext = null
     // dragging
     self.detail.dragging = true
+    self.detail.dragBlock = false
     // listener dispatch
     if (!self.initial) {
       dragger.dispatchEvent(new CustomEvent('dragstart.xt'))
@@ -917,12 +918,15 @@ class Slider extends Xt.Toggle {
       dragger.classList.add('xt-links-none')
       dragger.classList.add('xt-jumps-none')
     }
-    if (Math.abs(self.detail.dragDistOther) > options.drag.thresholdOther && Math.abs(self.detail.dragDistOther) > Math.abs(self.detail.dragDist)) {
+    if (!self.detail.dragBlock && Math.abs(self.detail.dragDistOther) > Math.abs(self.detail.dragDist)) {
       // block drag if scrolling
       return
-    } else if (e.cancelable) {
+    } else {
+      self.detail.dragBlock = true
       // block scrolling if dragging
-      e.preventDefault()
+      if (e.cancelable) {
+        e.preventDefault()
+      }
     }
     // calculate
     let dragPos = self.detail.dragPosReal
@@ -1018,7 +1022,7 @@ class Slider extends Xt.Toggle {
     // check threshold
     self.detail.dragDist = self.detail.dragPosReal - dragPosCurrent
     const direction = Math.sign(self.detail.dragDist)
-    if (self.detail.dragDistOther > options.drag.thresholdOther && self.detail.dragDistOther > self.detail.dragDist) {
+    if (!self.detail.dragBlock && Math.abs(self.detail.dragDistOther) > Math.abs(self.detail.dragDist)) {
       // drag reset
       self.logicDragreset(dragger)
     } else if (Math.abs(self.detail.dragDist) > options.drag.threshold) {
