@@ -105,34 +105,6 @@ Xt.mount.push({
       },
     })
 
-    // dragstart
-
-    const eventDragStart = () => {
-      const nexts = self.targets.filter((x) => x.classList.contains('next'))
-      for (const next of nexts) {
-        clearTimeout(Xt.dataStorage.get(next, 'dragNextTimeout'))
-      }
-    }
-
-    self.dragger.addEventListener('dragstart.xt', eventDragStart)
-
-    // dragend
-
-    const eventDragEnd = () => {
-      const nexts = self.targets.filter((x) => x.classList.contains('next'))
-      for (const next of nexts) {
-        Xt.dataStorage.set(
-          next,
-          self.componentNamespace + 'dragNextTimeout',
-          setTimeout(() => {
-            next.classList.remove('next')
-          }, assetMaskTimeOn)
-        )
-      }
-    }
-
-    self.dragger.addEventListener('dragend.xt', eventDragEnd)
-
     // drag
 
     const eventDrag = () => {
@@ -142,6 +114,11 @@ Xt.mount.push({
       gsap.set(assetMask, { x: -100 * self.detail.dragRatio * self.direction + '%' })
       const assetMaskInner = assetMask.querySelector('.hero_inner')
       gsap.set(assetMaskInner, { x: (100 * self.detail.dragRatio * self.direction) / 2 + '%' })
+      // nextsOld
+      const nextsOld = self.targets.filter((x) => x.classList.contains('next'))
+      for (const next of nextsOld) {
+        next.classList.remove('next')
+      }
       // next
       const nexts = self.direction > 0 ? self.getTargets(self.getNext()) : self.getTargets(self.getPrev())
       for (const next of nexts) {
@@ -294,6 +271,11 @@ Xt.mount.push({
           duration: assetMaskTimeOff,
           ease: self.detail.dragging ? assetMaskEaseDragging : assetMaskEaseOff,
         })
+        // nextsOld
+        const nextsOld = self.targets.filter((x) => x.classList.contains('next'))
+        for (const next of nextsOld) {
+          next.classList.remove('next')
+        }
       }
     }
 

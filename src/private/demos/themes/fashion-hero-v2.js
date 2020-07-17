@@ -100,18 +100,14 @@ Xt.mount.push({
 
     // init
 
-    const eventInit = () => {
-      for (const target of self.targets) {
-        if (!target.querySelector('.hero_cover')) {
-          // inject
-          const inject = Xt.createElement(`<div class="hero_cover"></div>`)
-          gsap.set(inject, { x: 100 * self.direction + '%', skewX: 0 })
-          target.querySelector('.slide-inner').prepend(inject)
-        }
+    for (const target of self.targets) {
+      if (!target.querySelector('.hero_cover')) {
+        // inject
+        const inject = Xt.createElement(`<div class="hero_cover"></div>`)
+        gsap.set(inject, { x: 100 * self.direction + '%', skewX: 0 })
+        target.querySelector('.slide-inner').prepend(inject)
       }
     }
-
-    self.object.addEventListener('init.xt', eventInit)
 
     // drag
 

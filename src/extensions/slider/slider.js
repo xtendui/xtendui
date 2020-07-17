@@ -1259,7 +1259,6 @@ Slider.optionsDefault = {
     wrap: false,
     manual: false,
     threshold: 25,
-    thresholdOther: 50,
     factor: 1,
     friction: false,
     /*

@@ -191,6 +191,7 @@ Here are the main drag properties inside `self.detail`:
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
 | Event                   | `detail.dragging:Boolean`       | Returns true when slider is being dragged or just being dragged             |
+| Event                   | `detail.dragBlock:Boolean`       | Returns true when slider is blocked on dragging and other interactions are prevented             |
 | Event                   | `detail.draggerWidth:Number`       | Dragger width             |
 | Event                   | `detail.dragRatio:Number`       | Drag ratio from 0 to 1             |
 | Event                   | `detail.dragRatioInverse:Number`       | Drag ratio inverse from 1 to 0             |
