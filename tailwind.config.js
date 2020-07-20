@@ -26,6 +26,11 @@ module.exports = {
         '96': '24rem',
         '128': '32rem',
       },
+      zIndex: {
+        base: '0',
+        active: '2',
+        out: '1',
+      },
     },
   },
   //important: true,
