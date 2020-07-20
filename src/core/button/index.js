@@ -8,6 +8,13 @@ module.exports = function () {
         flexWrap: 'nowrap',
         alignItems: 'center',
         justifyContent: 'space-between',
+        zIndex: config('theme.zIndex.base'),
+        '&:hover, &.hover, &:active, &.active': {
+          zIndex: config('theme.zIndex.active'),
+        },
+        '&.out': {
+          zIndex: config('theme.zIndex.out'),
+        },
         position: 'relative',
         borderRadius: '6px',
         borderWidth: '1px',
@@ -19,19 +26,9 @@ module.exports = function () {
         letterSpacing: '.025em',
         textTransform: 'uppercase',
       },
-      '.btn-blue': {
-        backgroundColor: '#3490dc',
-        color: '#fff',
-        '&:hover': {
-          backgroundColor: '#2779bd',
-        },
-      },
-      '.btn-red': {
-        backgroundColor: '#e3342f',
-        color: '#fff',
-        '&:hover': {
-          backgroundColor: '#cc1f1a',
-        },
+      '.btn-primary': {
+        backgroundColor: config('theme.colors.accent'),
+        color: config('theme.colors.white'),
       },
     })
   }

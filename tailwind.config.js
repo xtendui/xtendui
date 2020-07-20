@@ -22,10 +22,6 @@ module.exports = {
         text: '#001743',
         textInverse: '#fff',
       },
-      spacing: {
-        '96': '24rem',
-        '128': '32rem',
-      },
       zIndex: {
         base: '0',
         active: '2',
