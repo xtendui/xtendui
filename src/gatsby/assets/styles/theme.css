@@ -1,0 +1,49 @@
+/**
+ * import
+ */
+
+/*
+// xtend
+
+@import 'xtend-library/src/xtend-reset.less'; // always first loaded
+@import 'xtend-library/src/xtend-core.less';
+@import 'xtend-library/src/xtend-extensions.less';
+@import 'xtend-library/src/xtend-addons.less';
+@import 'xtend-library/src/xtend-demos.less';
+
+// icons
+
+@import 'icons-theme/style.css';
+
+// theme
+
+@import '_shared.less';
+@import '_header.less';
+@import '_footer.less';
+@import '_main.less';
+@import '_demo.less';
+*/
+
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+body {
+  background: #000000;
+}
+
+.btn {
+  @apply font-bold;
+  @apply py-2;
+  @apply px-4;
+  @apply rounded;
+  @screen sm {
+    @apply test;
+  }
+}
+
+.test {
+  background: #ff0000;
+}
