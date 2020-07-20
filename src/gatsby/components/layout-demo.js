@@ -6,8 +6,8 @@ import { Xt } from 'xtend-library'
 import { makeDocument } from 'assets/scripts/theme.js'
 import ResizeSensor from 'assets/scripts/ResizeSensor.js'
 
-import 'assets/styles/theme.less'
 import 'assets/styles/theme.css'
+import 'assets/styles/theme.less'
 
 class Layout extends React.Component {
   componentDidMount() {

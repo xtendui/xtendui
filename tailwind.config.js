@@ -33,5 +33,6 @@ module.exports = {
       },
     },
   },
+  plugins: [require('./src/core/button')()],
   //important: true,
 }

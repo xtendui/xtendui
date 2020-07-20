@@ -6,6 +6,6 @@
 
 @import "tailwindcss/components";
 
-@import "xtend-library/src/core/button/button.css";
+/* @import "xtend-library/src/core/button/button.css"; */
 
 @import "tailwindcss/utilities";

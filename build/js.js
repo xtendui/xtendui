@@ -4,7 +4,7 @@ const writeFile = require('write')
 // build xtend js
 
 let jsCore = ''
-const jsCoreGlob = new glob.Glob('src/core/**/*.js', (er, files) => {
+const jsCoreGlob = new glob.Glob('src/core/**/*.js', { ignore: ['**/index.js'] }, (er, files) => {
   jsCore += `if (typeof window !== 'undefined') {\n`
   for (const file of files) {
     jsCore += `  require('xtend-library/${file}')\n`
@@ -19,7 +19,7 @@ jsCoreGlob.on('end', () => {
 })
 
 let jsAddons = `if (typeof window !== 'undefined') {\n`
-const jsAddonsGlob = new glob.Glob('src/addons/**/*.js', (er, files) => {
+const jsAddonsGlob = new glob.Glob('src/addons/**/*.js', { ignore: ['**/index.js'] }, (er, files) => {
   for (const file of files) {
     // const obj = path.parse(file); ${obj.dir}/${obj.name}
     jsAddons += `  require('xtend-library/${file}')\n`
@@ -34,7 +34,7 @@ jsAddonsGlob.on('end', () => {
 })
 
 let jsExtensions = `if (typeof window !== 'undefined') {\n`
-const jsExtensionsGlob = new glob.Glob('src/extensions/**/*.js', (er, files) => {
+const jsExtensionsGlob = new glob.Glob('src/extensions/**/*.js', { ignore: ['**/index.js'] }, (er, files) => {
   for (const file of files) {
     // const obj = path.parse(file); ${obj.dir}/${obj.name}
     jsExtensions += `  require('xtend-library/${file}')\n`
@@ -49,7 +49,7 @@ jsExtensionsGlob.on('end', () => {
 })
 
 let jsDemos = `if (typeof window !== 'undefined') {\n`
-const jsDemosGlob = new glob.Glob('src/private/demos/**/*.js', (er, files) => {
+const jsDemosGlob = new glob.Glob('src/private/demos/**/*.js', { ignore: ['**/index.js'] }, (er, files) => {
   for (const file of files) {
     jsDemos += `  require('xtend-library/${file}')\n`
   }
