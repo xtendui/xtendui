@@ -11,6 +11,7 @@ import DocFullscreen from 'components/includes/doc-fullscreen'
 import { makeDocument } from 'assets/scripts/theme.js'
 import { populateBlock } from 'assets/scripts/demo.js'
 
+import 'assets/styles/theme.less'
 import 'assets/styles/theme.css'
 
 if (typeof window !== 'undefined' && window.self === window.top) {
