@@ -1,7 +1,7 @@
 // https://tailwindcss.com/docs/plugins/#css-in-js-syntax
 
 module.exports = function () {
-  return function ({ addComponents, theme, config }) {
+  return function ({ addComponents, theme }) {
     //console.log(theme('fontFamily.sans'))
     addComponents({
       '.btn': {
