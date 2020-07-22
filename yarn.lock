@@ -3093,7 +3093,6 @@ clone@^1.0.2:
 clone@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/clone/-/clone-2.1.2.tgz#1b7f4b9f591f1e8f83670401600345a02887435f"
-  integrity sha1-G39Ln1kfHo+DZwQBYANFoCiHQ18=
 
 cmd-shim@^3.0.0, cmd-shim@^3.0.3:
   version "3.0.3"
@@ -5414,7 +5413,6 @@ gatsby-plugin-catch-links@^2.3.10:
 gatsby-plugin-less@^4.0.3:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-less/-/gatsby-plugin-less-4.0.3.tgz#170f207369dceaa7ca584e21ad7c2bdd4be2c80f"
-  integrity sha512-cmBi0gSISUcagRr+gWNTl91HgNIzojdkyLrOk0Rl53ZVzaYsM6PItQm8UJYIJ+I4bvYUyFQ4/Qs4XaADnTflJQ==
   dependencies:
     "@babel/runtime" "^7.10.3"
     less-loader "^6.1.3"
@@ -6736,7 +6734,6 @@ ignore@^5.1.1, ignore@^5.1.4:
 image-size@~0.5.0:
   version "0.5.5"
   resolved "https://registry.yarnpkg.com/image-size/-/image-size-0.5.5.tgz#09dfd4ab9d20e29eb1c3e80b8990378df9e3cb9c"
-  integrity sha1-Cd/Uq50g4p6xw+gLiZA3jfnjy5w=
 
 import-cwd@^2.0.0:
   version "2.1.0"
@@ -7680,7 +7677,6 @@ lcid@^2.0.0:
 less-loader@^6.1.3:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/less-loader/-/less-loader-6.2.0.tgz#8b26f621c155b342eefc24f5bd6e9dc40c42a719"
-  integrity sha512-Cl5h95/Pz/PWub/tCBgT1oNMFeH1WTD33piG80jn5jr12T4XbxZcjThwNXDQ7AG649WEynuIzO4b0+2Tn9Qolg==
   dependencies:
     clone "^2.1.2"
     less "^3.11.3"
@@ -7690,7 +7686,6 @@ less-loader@^6.1.3:
 less@^3.11.3:
   version "3.12.2"
   resolved "https://registry.yarnpkg.com/less/-/less-3.12.2.tgz#157e6dd32a68869df8859314ad38e70211af3ab4"
-  integrity sha512-+1V2PCMFkL+OIj2/HrtrvZw0BC0sYLMICJfbQjuj/K8CEnlrFX6R5cKKgzzttsZDHyxQNL1jqMREjKN3ja/E3Q==
   dependencies:
     tslib "^1.10.0"
   optionalDependencies:
@@ -8715,7 +8710,6 @@ napi-build-utils@^1.0.1:
 native-request@^1.0.5:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/native-request/-/native-request-1.0.7.tgz#ff742dc555b4c8f2f1c14b548639ba174e573856"
-  integrity sha512-9nRjinI9bmz+S7dgNtf4A70+/vPhnd+2krGpy4SUlADuOuSa24IDkNaZ+R/QT1wQ6S8jBdi6wE7fLekFZNfUpQ==
 
 native-url@^0.2.6:
   version "0.2.6"

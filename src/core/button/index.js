@@ -1,7 +1,11 @@
+// https://tailwindcss.com/docs/plugins/#css-in-js-syntax
+
 module.exports = function () {
-  return function ({ addComponents, config }) {
+  return function ({ addComponents, theme, config }) {
+    //console.log(theme('fontFamily.sans'))
     addComponents({
       '.btn': {
+        // setup
         cursor: 'pointer',
         display: 'inline-flex',
         position: 'relative',
@@ -9,13 +13,21 @@ module.exports = function () {
         flexWrap: 'nowrap',
         alignItems: 'center',
         justifyContent: 'space-between',
-        zIndex: config('theme.zIndex.base'),
+        zIndex: theme('zIndex.base'),
         '&:hover, &.hover': {
-          zIndex: config('theme.zIndex.active'),
+          zIndex: theme('zIndex.active'),
         },
         '&.out': {
-          zIndex: config('theme.zIndex.out'),
+          zIndex: theme('zIndex.out'),
         },
+        // custom
+        fontFamily: theme('btn.fontFamily'),
+        borderRadius: theme('btn.borderRadius'),
+        borderWidth: theme('btn.borderWidth'),
+        fontWeight: theme('btn.fontWeight'),
+        textTransform: theme('btn.textTransform'),
+        lineHeight: theme('btn.lineHeight'),
+        letterSpacing: theme('btn.letterSpacing'),
       },
     })
   }

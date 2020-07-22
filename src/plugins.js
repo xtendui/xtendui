@@ -1,33 +1,15 @@
-const selectorParser = require('postcss-selector-parser');
+// https://tailwindcss.com/docs/plugins/#adding-variants
 
 module.exports = function () {
-  return function ({ addVariant }) {
+  return function ({ addVariant, e }) {
     addVariant('in', ({ modifySelectors, separator }) => {
-      modifySelectors(({ selector }) => {
-        return selectorParser((selectors) => {
-          const clonedSelectors = selectors.clone()
-          ;[selectors, clonedSelectors].forEach((sel, i) => {
-            sel.walkClasses((classNode) => {
-              classNode.value = `in${separator}${classNode.value}`
-              classNode.parent.insertAfter(classNode, selectorParser.pseudo({ value: '.in' }))
-            })
-          })
-          selectors.append(clonedSelectors)
-        }).processSync(selector)
+      modifySelectors(({ className }) => {
+        return `.${e(`in${separator}${className}`)}.in`
       })
     })
     addVariant('out', ({ modifySelectors, separator }) => {
-      modifySelectors(({ selector }) => {
-        return selectorParser((selectors) => {
-          const clonedSelectors = selectors.clone()
-          ;[selectors, clonedSelectors].forEach((sel, i) => {
-            sel.walkClasses((classNode) => {
-              classNode.value = `out${separator}${classNode.value}`
-              classNode.parent.insertAfter(classNode, selectorParser.pseudo({ value: '.out' }))
-            })
-          })
-          selectors.append(clonedSelectors)
-        }).processSync(selector)
+      modifySelectors(({ className }) => {
+        return `.${e(`out${separator}${className}`)}.out`
       })
     })
   }
