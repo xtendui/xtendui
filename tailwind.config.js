@@ -1,6 +1,10 @@
 module.exports = {
   purge: [],
-  theme: require('./src/core/structure/theme.js'),
-  plugins: [require('./src/core/button')()],
+  variants: require('./src/variants'),
+  theme: require('./src/theme'),
+  plugins: [
+    require('./src/plugins')(),
+    require('./src/core/button')()
+  ],
   //important: true,
 }
