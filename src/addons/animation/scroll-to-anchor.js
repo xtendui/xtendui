@@ -109,7 +109,7 @@ class ScrollToAnchor {
           if (!hashchange || location.hash === el.hash) {
             const hash = hashchange ? loc.hash : el.hash.toString()
             self.target = self.object.querySelector(hash)
-            if (self.target) {
+            if (self.target && Xt.visible(self.target)) {
               // prevent page hash
               if (e) {
                 e.preventDefault()
@@ -202,7 +202,7 @@ class ScrollToAnchor {
       const loc = new URL(el.getAttribute('href'), location)
       if (loc.hash) {
         self.target = document.querySelector(loc.hash)
-        if (self.target) {
+        if (self.target && Xt.visible(self.target)) {
           // current scrollElement
           for (const scrollElement of options.scrollElements) {
             if (scrollElement) {
