@@ -183,14 +183,14 @@ class ScrollToAnchor {
     }
     // els
     let els = Array.from(scrollElement.querySelectorAll(options.elements))
-    els = els.filter((x) => !x.closest('.xt-ignore')) // filter out ignore
+    els = els.filter(x => !x.closest('.xt-ignore')) // filter out ignore
     // filter out other scrollElement
     let elsFiltered = els
-    for (const scrollElementOther of options.scrollElements.filter((x) => x !== scrollElement)) {
+    for (const scrollElementOther of options.scrollElements.filter(x => x !== scrollElement)) {
       if (scrollElementOther) {
         for (const el of els) {
           if (scrollElementOther.contains(el)) {
-            elsFiltered = elsFiltered.filter((x) => x !== el) // filter out ignore
+            elsFiltered = elsFiltered.filter(x => x !== el) // filter out ignore
           }
         }
       }
@@ -219,10 +219,10 @@ class ScrollToAnchor {
           if (scrollTop >= self.position - self.scrollSpace - self.scrollDistance) {
             // loop multiple els of
             const matches = options.matches.replace('{hash}', loc.hash)
-            const currents = els.filter((x) => x.matches(matches))
+            const currents = els.filter(x => x.matches(matches))
             found = !!currents.length
             // reset others
-            for (const other of els.filter((x) => !currents.includes(x))) {
+            for (const other of els.filter(x => !currents.includes(x))) {
               other.classList.remove(...self.classes)
             }
             // class

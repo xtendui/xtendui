@@ -6,7 +6,7 @@ import 'gsap/ScrollToPlugin.js'
 
 Xt.mount.push({
   matches: '#iframe--scroll-to-anchor body #gatsby_body-inner', // add your own selector instead of body to contain the code
-  mount: (object) => {
+  mount: object => {
     // vars
 
     object = document.documentElement
@@ -14,7 +14,7 @@ Xt.mount.push({
     // init
 
     let self = new Xt.ScrollToAnchor(object, {
-      scrollSpace: (self) => {
+      scrollSpace: self => {
         let scrollSpace = 0
         if (self.scrollElementCurrent === document.scrollingElement) {
           const spaces = document.querySelectorAll('.xt-sticky.xt-clone')

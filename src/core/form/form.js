@@ -6,7 +6,7 @@ import { Xt } from 'xtend-library'
 
 Xt.mount.push({
   matches: 'form:not([novalidate]), .form:not([novalidate])',
-  mount: (object) => {
+  mount: object => {
     // vars
 
     const scrollWindowFactor = 0.2
@@ -15,7 +15,7 @@ Xt.mount.push({
 
     // valid
 
-    const eventChange = (e) => {
+    const eventChange = e => {
       const item = e.target
       if (item.dataset.xtValidate === 'true') {
         item.classList.add('valid')
@@ -35,7 +35,7 @@ Xt.mount.push({
       window.scrollTo(window.scrollX, window.scrollY - Xt.windowHeight * scrollWindowFactor)
     }
 
-    const eventInvalid = (e) => {
+    const eventInvalid = e => {
       const item = e.target
       item.classList.remove('valid')
       item.classList.add('invalid')

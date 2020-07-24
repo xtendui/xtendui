@@ -116,7 +116,7 @@ Xt.TextareaAutosize = TextareaAutosize
 
 Xt.mount.push({
   matches: '[data-' + Xt.TextareaAutosize.componentName + ']',
-  mount: (object) => {
+  mount: object => {
     // vars
 
     const optionsMarkup = object.getAttribute('data-' + Xt.TextareaAutosize.componentName)

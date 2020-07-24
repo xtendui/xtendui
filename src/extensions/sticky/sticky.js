@@ -479,7 +479,7 @@ Xt.Sticky = Sticky
 
 Xt.mount.push({
   matches: '[data-' + Xt.Sticky.componentName + ']',
-  mount: (object) => {
+  mount: object => {
     // vars
 
     const optionsMarkup = object.getAttribute('data-' + Xt.Sticky.componentName)

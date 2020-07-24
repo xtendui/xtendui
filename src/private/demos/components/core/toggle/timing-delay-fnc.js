@@ -2,11 +2,11 @@ import { Xt } from 'xtend-library'
 
 Xt.mount.push({
   matches: '.demo--toggle-timing-delay-fnc',
-  mount: (object) => {
+  mount: object => {
     // init
 
     let self = new Xt.Toggle(object, {
-      delayOn: (current) => {
+      delayOn: current => {
         return Math.min(current * 150, 300)
       },
       delayOff: (current, total) => {
@@ -26,13 +26,13 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '.demo--toggle-timing-delay-fnc--hover',
-  mount: (object) => {
+  mount: object => {
     // init
 
     let self = new Xt.Toggle(object, {
       on: 'mouseenter',
       off: 'mouseleave',
-      delayOn: (current) => {
+      delayOn: current => {
         return Math.min(current * 150, 300)
       },
       delayOff: (current, total) => {

@@ -6,7 +6,7 @@ import { Xt } from 'xtend-library'
 
 Xt.mount.push({
   matches: '.multilevel',
-  mount: (object) => {
+  mount: object => {
     // init
 
     let self = new Xt.Toggle(object, {

@@ -13,7 +13,7 @@ exports.onPreRenderHTML = ({ getHeadComponents }) => {
   }
 
   const hc = getHeadComponents()
-  hc.forEach((el) => {
+  hc.forEach(el => {
     if (el.type === 'style') {
       el.type = 'link'
       el.props.href = el.props['data-href']

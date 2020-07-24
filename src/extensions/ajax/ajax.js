@@ -52,7 +52,7 @@ class Ajax extends Xt.Toggle {
     // remove external links
     for (const element of self.elements) {
       if (location.hostname !== element.hostname || element.getAttribute('href').split('#')[0] === '') {
-        self.elements = Array.from(self.elements).filter((x) => x !== element)
+        self.elements = Array.from(self.elements).filter(x => x !== element)
       }
     }
     // generate groups
@@ -387,7 +387,7 @@ Xt.Ajax = Ajax
 
 Xt.mount.push({
   matches: '[data-' + Xt.Ajax.componentName + ']',
-  mount: (object) => {
+  mount: object => {
     // vars
 
     const optionsMarkup = object.getAttribute('data-' + Xt.Ajax.componentName)

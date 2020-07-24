@@ -8,14 +8,14 @@ import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '#iframe--furniture-listing-v1 body .listing-page_item', // add your own selector instead of body to contain the code
-  mount: (object) => {
+  mount: object => {
     // vars
 
     const imgScale = 0.04
 
     // enter
 
-    const eventEnter = (e) => {
+    const eventEnter = e => {
       const tr = e.target
       // img
       const img = tr.querySelector('.media-container')
@@ -28,7 +28,7 @@ Xt.mount.push({
 
     // leave
 
-    const eventLeave = (e) => {
+    const eventLeave = e => {
       const tr = e.target
       // img
       const img = tr.querySelector('.media-container')
@@ -52,7 +52,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '#iframe--furniture-listing-v1 body #gatsby_body-inner', // add your own selector instead of body to contain the code
-  mount: (object) => {
+  mount: object => {
     // vars
 
     object = document.documentElement
@@ -62,7 +62,7 @@ Xt.mount.push({
     let self = new Xt.Scroll(object, {
       // the same css and js
       elements: '.scroll-item, .listing-page_item',
-      delayOn: (current) => {
+      delayOn: current => {
         return Math.min((current + 1) * 75, 300)
       },
       delayOff: (current, total) => {

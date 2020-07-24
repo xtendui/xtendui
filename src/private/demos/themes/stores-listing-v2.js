@@ -8,14 +8,14 @@ import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '#iframe--stores-listing-v2 body .listing-page', // add your own selector instead of body to contain the code
-  mount: (object) => {
+  mount: object => {
     // vars
 
     const items = object.querySelectorAll('.listing-page_item')
 
     // click
 
-    const eventOn = (tr) => {
+    const eventOn = tr => {
       if (!tr.classList.contains('active')) {
         // class
         tr.classList.add('active')
@@ -31,7 +31,7 @@ Xt.mount.push({
       }
     }
 
-    const eventOff = (tr) => {
+    const eventOff = tr => {
       if (tr.classList.contains('active')) {
         // class
         tr.classList.remove('active')
@@ -45,14 +45,14 @@ Xt.mount.push({
       }
     }
 
-    const eventClick = (e) => {
+    const eventClick = e => {
       const tr = e.target.closest('.listing-page_item')
       // disable on mobile
       if (matchMedia('(max-width: 767px)').matches) {
         return
       }
       // deactivate
-      for (const other of Array.from(items).filter((x) => x !== tr)) {
+      for (const other of Array.from(items).filter(x => x !== tr)) {
         eventOff(other)
       }
       // activate

@@ -6,7 +6,7 @@ import 'gsap/ScrollToPlugin.js'
 
 Xt.mount.push({
   matches: '#iframe--scroll-to-anchor-nested body #gatsby_body-inner', // add your own selector instead of body to contain the code
-  mount: (object) => {
+  mount: object => {
     // vars
 
     object = document.documentElement

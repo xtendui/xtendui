@@ -5,7 +5,7 @@ import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '.demo--toggle-js',
-  mount: (object) => {
+  mount: object => {
     // vars
 
     const targetTimeOn = Xt.vars.timeLarge
@@ -22,7 +22,7 @@ Xt.mount.push({
 
     // on
 
-    const eventOn = (e) => {
+    const eventOn = e => {
       const tr = e.target
       gsap.set(tr, { opacity: 0 })
       if (!tr.classList.contains('inverse')) {
@@ -39,7 +39,7 @@ Xt.mount.push({
 
     // off
 
-    const eventOff = (e) => {
+    const eventOff = e => {
       const tr = e.target
       if (!tr.classList.contains('inverse')) {
         gsap.to(tr, { x: 15, opacity: 0, duration: targetTimeOff, ease: targetEaseOff })

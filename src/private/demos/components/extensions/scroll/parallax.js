@@ -4,7 +4,7 @@ import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '.demo--parallax-title',
-  mount: (object) => {
+  mount: object => {
     // init
 
     let self = new Xt.Scroll(object, {
@@ -14,7 +14,7 @@ Xt.mount.push({
 
     // change
 
-    const eventChange = (e) => {
+    const eventChange = e => {
       const tr = e.target
       gsap.set(tr, { transformOrigin: 'left center' })
       gsap.set(tr, { opacity: self.detail.ratioInverse, scale: 0.9 + 0.1 * self.detail.ratioInverse })
@@ -36,7 +36,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '.demo--parallax-img',
-  mount: (object) => {
+  mount: object => {
     // init
 
     let self = new Xt.Scroll(object, {
@@ -46,7 +46,7 @@ Xt.mount.push({
 
     // change
 
-    const eventChange = (e) => {
+    const eventChange = e => {
       const tr = e.target
       gsap.set(tr, { y: 100 * self.detail.ratio, opacity: self.detail.ratioInverse })
     }
@@ -67,7 +67,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '.demo--parallax-footer',
-  mount: (object) => {
+  mount: object => {
     // init
 
     let self = new Xt.Scroll(object, {
@@ -77,7 +77,7 @@ Xt.mount.push({
 
     // change
 
-    const eventChange = (e) => {
+    const eventChange = e => {
       const tr = e.target
       gsap.set(tr, { opacity: self.detail.ratio, scale: 0.9 + 0.1 * self.detail.ratio })
     }

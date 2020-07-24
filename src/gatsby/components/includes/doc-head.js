@@ -13,7 +13,7 @@ class DocHead extends React.Component {
                 <span>
                   {page.post.frontmatter.title
                     .split(/[\s-]+/)
-                    .map((item) => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
+                    .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
                     .join(' ')}{' '}
                   {page.post.frontmatter.parent && page.post.frontmatter.parent !== page.post.frontmatter.title ? (
                     <em>{page.post.frontmatter.parent}</em>

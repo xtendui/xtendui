@@ -2,7 +2,7 @@ import { Xt } from 'xtend-library'
 
 Xt.mount.push({
   matches: '.demo--scroll-block',
-  mount: (object) => {
+  mount: object => {
     // vars
 
     const btn = object.querySelector('.demo--scroll-block--btn')

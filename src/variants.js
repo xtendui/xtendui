@@ -1,4 +1,4 @@
-var merge = require('lodash.merge');
+var merge = require('lodash.merge')
 
 module.exports = function (fork = {}) {
   // override theme waiting for https://github.com/tailwindlabs/tailwindcss/issues/677

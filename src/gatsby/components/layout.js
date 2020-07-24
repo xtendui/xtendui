@@ -16,7 +16,7 @@ import 'assets/styles/theme.less'
 
 if (typeof window !== 'undefined' && window.self === window.top) {
   if (module.hot) {
-    module.hot.addStatusHandler((status) => {
+    module.hot.addStatusHandler(status => {
       if (status === 'apply') {
         window.location.reload()
       }
@@ -49,7 +49,7 @@ class Layout extends React.Component {
             }
           }
         `}
-        render={(data) => (
+        render={data => (
           <>
             <div className="gatsby_site_wrapper">
               <div className="gatsby_site_main">

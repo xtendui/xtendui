@@ -290,7 +290,7 @@ Xt.InfiniteScroll = InfiniteScroll
 
 Xt.mount.push({
   matches: '[data-' + Xt.InfiniteScroll.componentName + ']',
-  mount: (object) => {
+  mount: object => {
     // vars
 
     const optionsMarkup = object.getAttribute('data-' + Xt.InfiniteScroll.componentName)

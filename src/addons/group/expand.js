@@ -6,7 +6,7 @@ import { Xt } from 'xtend-library'
 
 Xt.mount.push({
   matches: '.group-expand',
-  mount: (object) => {
+  mount: object => {
     // on
 
     object.querySelector('input').addEventListener('focus', () => {

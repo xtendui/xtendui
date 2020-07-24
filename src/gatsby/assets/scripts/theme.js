@@ -61,7 +61,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '#gatbsy_open-full-trigger',
-  mount: (object) => {
+  mount: object => {
     // init
 
     let self = new Xt.Toggle(object, {
@@ -87,7 +87,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '.gatsby_site_article',
-  mount: (object) => {
+  mount: object => {
     // vars
 
     object = object.closest('body')

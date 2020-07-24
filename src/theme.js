@@ -1,4 +1,4 @@
-var merge = require('lodash.merge');
+var merge = require('lodash.merge')
 
 module.exports = function (fork = {}) {
   // override theme waiting for https://github.com/tailwindlabs/tailwindcss/issues/677
@@ -26,7 +26,7 @@ module.exports = function (fork = {}) {
         out: '1',
       },
       // button
-      btn: (theme) => ({
+      btn: theme => ({
         custom: {
           // font
           fontFamily: theme('fontFamily.sans').join(', '),

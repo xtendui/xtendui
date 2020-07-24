@@ -30,7 +30,7 @@ exports.onRouteUpdate = () => {
   require('assets/scripts/gatsby.js').gatsbySidebar()
   // @FIX popstate #gatbsy_open-full
   for (const link of document.querySelectorAll('.gatsby_btn-site_article_sidebar.active')) {
-    link.addEventListener('click', (e) => {
+    link.addEventListener('click', e => {
       e.preventDefault()
       // no location.hash or page scroll to top
       history.pushState({}, '', '#')

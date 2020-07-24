@@ -94,7 +94,7 @@ Xt.Drop = Drop
 
 Xt.mount.push({
   matches: '[data-' + Xt.Drop.componentName + ']',
-  mount: (object) => {
+  mount: object => {
     // vars
 
     const optionsMarkup = object.getAttribute('data-' + Xt.Drop.componentName)

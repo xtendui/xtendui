@@ -11,7 +11,7 @@ import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '#iframe--fashion-hero-v1 body a, #iframe--fashion-hero-v1 body button', // add your own selector instead of body to contain the code
-  mount: (object) => {
+  mount: object => {
     new Xt.PropagateInteraction(object, {
       targets: '.btn',
     })
@@ -24,7 +24,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '#iframe--fashion-hero-v1 body .slider', // add your own selector instead of body to contain the code
-  mount: (object) => {
+  mount: object => {
     // vars
 
     const contentTime = Xt.vars.timeLarge // same as .slides-inner
@@ -53,10 +53,10 @@ Xt.mount.push({
     // drag
 
     const eventDrag = () => {
-      const tr = self.targets.filter((x) => self.hasCurrent(x))[0]
+      const tr = self.targets.filter(x => self.hasCurrent(x))[0]
       const size = self.dragger.offsetWidth / 6
       // content others
-      for (const other of self.targets.filter((x) => !self.hasCurrent(x))) {
+      for (const other of self.targets.filter(x => !self.hasCurrent(x))) {
         const contentOther = other.querySelector('.hero_asset .media')
         gsap.set(contentOther, { x: size * self.detail.dragRatio * self.direction - size * self.direction, opacity: self.detail.dragRatio + 0.5 })
       }
@@ -70,9 +70,9 @@ Xt.mount.push({
     // dragreset
 
     const eventDragReset = () => {
-      const tr = self.targets.filter((x) => self.hasCurrent(x))[0]
+      const tr = self.targets.filter(x => self.hasCurrent(x))[0]
       // content others
-      for (const other of self.targets.filter((x) => !self.hasCurrent(x))) {
+      for (const other of self.targets.filter(x => !self.hasCurrent(x))) {
         const contentOther = other.querySelector('.hero_asset .media')
         gsap.to(contentOther, { x: 0, opacity: 0.5, duration: Xt.vars.timeTiny, ease: contentEase })
       }
@@ -85,7 +85,7 @@ Xt.mount.push({
 
     // on
 
-    const eventOn = (e) => {
+    const eventOn = e => {
       const tr = e.target
       // useCapture delegation
       if (self.targets.includes(tr)) {
@@ -100,7 +100,7 @@ Xt.mount.push({
 
     // off
 
-    const eventOff = (e) => {
+    const eventOff = e => {
       const tr = e.target
       // useCapture delegation
       if (self.targets.includes(tr)) {

@@ -7,7 +7,7 @@ import 'xtend-library/src/addons/animation/mouse-follow.js'
 
 Xt.mount.push({
   matches: '.slider-navigation-sides-btn',
-  mount: (object) => {
+  mount: object => {
     // mousefollow
 
     const mouseFollowObject = object

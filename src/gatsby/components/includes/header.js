@@ -191,7 +191,7 @@ class DocSidebar extends React.Component {
                                                             <span>
                                                               {adiacent.frontmatter.title
                                                                 .split(/[\s-]+/)
-                                                                .map((item) => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
+                                                                .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
                                                                 .join(' ')}
                                                             </span>
                                                           </Link>
