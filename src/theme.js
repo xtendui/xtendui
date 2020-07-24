@@ -25,15 +25,28 @@ module.exports = function (fork = {}) {
         active: '2',
         out: '1',
       },
-      // components
+      // button
       btn: (theme) => ({
-        fontFamily: theme('fontFamily.sans').join(', '),
-        borderRadius: theme('borderRadius.default'),
-        borderWidth: theme('borderWidth.default'),
-        fontWeight: theme('fontWeight.semibold'),
-        lineHeight: theme('lineHeight.tight'),
-        letterSpacing: theme('letterSpacing.wide'),
-        textTransform: 'uppercase',
+        custom: {
+          // font
+          fontFamily: theme('fontFamily.sans').join(', '),
+          borderRadius: theme('borderRadius.default'),
+          borderWidth: theme('borderWidth.default'),
+          fontWeight: theme('fontWeight.semibold'),
+          lineHeight: theme('lineHeight.tight'),
+          letterSpacing: theme('letterSpacing.wide'),
+          textTransform: 'uppercase',
+          // animation
+          transitionProperty: 'all',
+          transitionDuration: '500ms',
+          transitionTimingFunction: 'cubic-bezier(0.455, 0.030, 0.515, 0.955)',
+          '&:hover, &.hover': {
+            transitionTimingFunction: 'cubic-bezier(0.250, 0.460, 0.450, 0.940)',
+          },
+          '&:active, &.active': {
+            transitionTimingFunction: 'cubic-bezier(0.250, 0.460, 0.450, 0.940)',
+          },
+        },
       }),
     },
   }
