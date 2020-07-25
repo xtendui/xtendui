@@ -6,12 +6,33 @@ module.exports = plugin.withOptions(() => {
   return function ({ addComponents, addUtilities, theme }) {
 
     /**
+     * variant
+     */
+    /*
+    addVariant('in', ({ modifySelectors, separator }) => {
+      modifySelectors(({ className }) => {
+        return `.${e(`in${separator}${className}`)}.in`
+      })
+    })
+
+    addVariant('out', ({ modifySelectors, separator }) => {
+      modifySelectors(({ className }) => {
+        return `.${e(`out${separator}${className}`)}.out`
+      })
+    })
+
+    variants: {
+      backgroundColor: ['responsive', 'hover', 'active', 'focus', 'in', 'out'],
+    }
+    */
+
+    /**
      * btn
      */
     // components
     let component = 'btn'
     let config = theme(`xtendConfig.${component}`, {})
-    let custom = theme(`xtend.${component}`, {})
+    let custom = theme(`xtendCustom.${component}`, {})
     if (custom !== false) {
       const styles = merge(...castArray(config), custom)
       addComponents(styles)
@@ -22,7 +43,7 @@ module.exports = plugin.withOptions(() => {
      */
     component = 'list'
     config = theme(`xtendConfig.${component}`, {})
-    custom = theme(`xtend.${component}`, {})
+    custom = theme(`xtendCustom.${component}`, {})
     if (custom !== false) {
       // components
       const styles = merge(...castArray(config), custom)
