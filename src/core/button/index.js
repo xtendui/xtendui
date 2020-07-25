@@ -2,7 +2,6 @@
 
 module.exports = function () {
   return function ({ addComponents, theme }) {
-    //console.log(theme('fontFamily.sans'))
     addComponents({
       '.btn': {
         // setup
@@ -20,7 +19,8 @@ module.exports = function () {
         '&.out': {
           zIndex: theme('zIndex.out'),
         },
-        ...theme('btn.custom'),
+        ...theme('btnDefault'),
+        ...theme('btnCustom'),
       },
     })
   }
