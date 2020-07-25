@@ -1,10 +1,8 @@
-// https://tailwindcss.com/docs/plugins/#css-in-js-syntax
-
 module.exports = function () {
   return function ({ addComponents, theme }) {
     addComponents({
+      // btn
       '.btn': {
-        // setup
         cursor: 'pointer',
         display: 'inline-flex',
         position: 'relative',

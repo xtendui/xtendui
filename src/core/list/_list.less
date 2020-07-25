@@ -5,27 +5,33 @@
 // .list
 
 .list {
+  /*
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   align-items: flex-start;
+  */
 }
 
 .list-block {
+  /*
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
   align-items: flex-start;
+  */
 }
 
 // selectors
 
 .list-btns(@rules) {
+  /*
   &, > * {
     > a:not(.btn), > button:not(.btn) {
       @rules();
     }
   }
+  */
 }
 
 /**
@@ -35,6 +41,7 @@
 // list-space
 
 .list-space-y(@size, @breakpoint: none) when (@breakpoint = none) {
+  /*
   & when (isnumber(@size)) {
     margin-top: -@size;
     margin-bottom: -@size;
@@ -52,10 +59,11 @@
       margin-top: @vertical;
       margin-bottom: @vertical;
     }
-  }
+  }*/
 }
 
 .list-space-y(@size, @breakpoint: none) when (default()) {
+  /*
   @query-min: 'min-@{breakpoint}';
   & when (isnumber(@size)) {
     @media @@query-min {
@@ -78,10 +86,11 @@
         margin-bottom: @vertical;
       }
     }
-  }
+  }*/
 }
 
 .list-space-x(@size, @breakpoint: none) when (@breakpoint = none) {
+  /*
   & when (isnumber(@size)) {
     margin-left: -@size;
     margin-right: -@size;
@@ -99,10 +108,11 @@
       margin-left: @horizontal;
       margin-right: @horizontal;
     }
-  }
+  }*/
 }
 
 .list-space-x(@size, @breakpoint: none) when (default()) {
+  /*
   @query-min: 'min-@{breakpoint}';
   & when (isnumber(@size)) {
     @media @@query-min {
@@ -125,10 +135,11 @@
         margin-right: @horizontal;
       }
     }
-  }
+  }*/
 }
 
 .list-space(@size, @breakpoint: none) when (@breakpoint = none) {
+  /*
   & when (isnumber(@size)) {
     margin: -@size -@size;
     > * {
@@ -144,9 +155,11 @@
       margin: @vertical @horizontal;
     }
   }
+  */
 }
 
 .list-space(@size, @breakpoint: none) when (default()) {
+  /*
   @query-min: 'min-@{breakpoint}';
   & when (isnumber(@size)) {
     @media @@query-min {
@@ -167,6 +180,7 @@
       }
     }
   }
+  */
 }
 
 // generate

@@ -145,42 +145,6 @@ pre {
   .gatsby_demo_tabs {
     overflow: hidden;
   }
-  .gatsby_demo_tabs_right {
-    > * {
-      opacity: 0;
-      transform: translateY(1.5rem);
-      transition: all @time-small @ease-in;
-      transition-delay: 0ms; // @start + @child * @increment
-      .nth-child(@child: 3, @start: 150ms, @increment: 0ms, @decrement: 50ms, {
-        @transition-delay();
-      });
-    }
-  }
-  &:hover, &:focus-within {
-    .gatsby_demo_tabs_right {
-      > * {
-        opacity: 1;
-        transform: translateY(0);
-        transition: all @time-small @ease-in;
-      }
-    }
-    .gatsby_demo_tabs, .gatsby_demo_code_tabs {
-      .btn {
-        &:active, &.active {
-          border-color: @shade-200 !important;
-        }
-      }
-    }
-  }
-  @media (hover: none) {
-    .gatsby_demo_tabs_right {
-      > * {
-        opacity: 1 !important;
-        .transform-none() !important;
-        .transition-none() !important;
-      }
-    }
-  }
   #gatbsy_open-full & {
     border: 0 !important;
     .gatsby_demo_code_body,
