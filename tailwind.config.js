@@ -1,5 +1,5 @@
 module.exports = {
-  theme: require('./src/theme')(),
+  theme: require('./src/tailwind-theme')(),
   variants: require('./src/variants')(),
-  plugins: [require('./src/plugins')(), require('./src/core/button'), require('./src/core/list')]
+  plugins: [require('./src/plugins')(), require('./src/tailwind-plugins')],
 }

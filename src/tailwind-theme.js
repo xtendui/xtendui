@@ -4,7 +4,10 @@ module.exports = function (custom = {}) {
   // override theme waiting for https://github.com/tailwindlabs/tailwindcss/issues/677
   const base = {
     extend: {
-      // design
+
+      /**
+       * design
+       */
       colors: {
         // https://javisperez.github.io/tailwindcolorshades/#/?Azure%20Radiance=0078ff&tv=1
         accent: {
@@ -19,7 +22,10 @@ module.exports = function (custom = {}) {
           900: '#00244D',
         },
       },
-      // interaction
+
+      /**
+       * interaction
+       */
       ease: {
         in: 'cubic-bezier(0.250, 0.460, 0.450, 0.940)',
         out: 'cubic-bezier(0.455, 0.030, 0.515, 0.955)',
@@ -29,15 +35,24 @@ module.exports = function (custom = {}) {
         active: '2',
         out: '1',
       },
-      // list
+
+      /**
+       * list
+       */
       list: theme => ({
         spacing: {
           ...theme('spacing')
         },
       }),
-      // config
-      config: theme => ({
-        // btn
+
+      /**
+       * xtend
+       */
+      xtendConfig: theme => ({
+
+        /**
+         * btn
+         */
         btn: {
           '.btn': {
             // setup
@@ -78,7 +93,10 @@ module.exports = function (custom = {}) {
             },
           },
         },
-        // list
+
+        /**
+         * list
+         */
         list: {
           // list
           '.list': {
@@ -99,6 +117,7 @@ module.exports = function (custom = {}) {
             alignItems: 'flex-start',
           },
         },
+
       }),
     },
   }
