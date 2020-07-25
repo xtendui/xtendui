@@ -29,34 +29,75 @@ module.exports = function (custom = {}) {
         active: '2',
         out: '1',
       },
-      // btn
-      btnDefault: theme => ({
-        // typography
-        fontFamily: theme('fontFamily.sans').join(', '),
-        borderRadius: theme('borderRadius.default'),
-        borderWidth: theme('borderWidth.default'),
-        fontWeight: theme('fontWeight.semibold'),
-        lineHeight: theme('lineHeight.tight'),
-        letterSpacing: theme('letterSpacing.wider'),
-        textTransform: 'uppercase',
-        // size
-        padding: '.625em 1.225em',
-        fontSize: '.75rem',
-        // animation
-        transitionProperty: theme('transitionProperty.all'),
-        transitionDuration: theme('transitionDuration.500'),
-        transitionTimingFunction: theme('ease.out'),
-        '&:hover, &.hover': {
-          transitionTimingFunction: theme('ease.in'),
-        },
-        '&:active, &.active': {
-          transitionTimingFunction: theme('ease.in'),
+      // list
+      list: theme => ({
+        spacing: {
+          ...theme('spacing')
         },
       }),
-      // list
-      listDefault: theme => ({
-        listSpacing: {
-          ...theme('spacing')
+      // config
+      config: theme => ({
+        // btn
+        btn: {
+          '.btn': {
+            // setup
+            cursor: 'pointer',
+            display: 'inline-flex',
+            position: 'relative',
+            verticalAlign: 'middle',
+            flexWrap: 'nowrap',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            zIndex: theme('zIndex.base'),
+            '&:hover, &.hover': {
+              zIndex: theme('zIndex.active'),
+            },
+            '&.out': {
+              zIndex: theme('zIndex.out'),
+            },
+            // typography
+            fontFamily: theme('fontFamily.sans').join(', '),
+            borderRadius: theme('borderRadius.default'),
+            borderWidth: theme('borderWidth.default'),
+            fontWeight: theme('fontWeight.semibold'),
+            lineHeight: theme('lineHeight.tight'),
+            letterSpacing: theme('letterSpacing.wider'),
+            textTransform: 'uppercase',
+            // size
+            padding: '.625em 1.225em',
+            fontSize: '.75rem',
+            // animation
+            transitionProperty: theme('transitionProperty.all'),
+            transitionDuration: theme('transitionDuration.500'),
+            transitionTimingFunction: theme('ease.out'),
+            '&:hover, &.hover': {
+              transitionTimingFunction: theme('ease.in'),
+            },
+            '&:active, &.active': {
+              transitionTimingFunction: theme('ease.in'),
+            },
+          },
+        },
+        // list
+        list: {
+          // list
+          '.list': {
+            display: 'flex',
+            flexWrap: 'wrap',
+            flexDirection: 'row',
+            alignItems: 'flex-start',
+            '&, > *': {
+              '> a:not(.btn), > button:not(.btn)': {
+              }
+            }
+          },
+          // list-block
+          '.list-block': {
+            display: 'flex',
+            flexWrap: 'nowrap',
+            flexDirection: 'column',
+            alignItems: 'flex-start',
+          },
         },
       }),
     },

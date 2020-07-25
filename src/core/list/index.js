@@ -1,10 +1,17 @@
-var merge = require('lodash.merge')
+const plugin = require('tailwindcss/plugin')
+const merge = require('lodash/merge')
+const castArray = require('lodash/castArray')
 
-module.exports = function () {
+module.exports = plugin.withOptions(({ component = 'list' } = {}) => {
   return function ({ addComponents, addUtilities, theme }) {
+    // styles
+    const config = theme(`config.${component}`, {})
+    const custom = theme(`custom.${component}`, {})
+    const styles = merge(...castArray(config), custom)
+    addComponents(styles)
     // utilities
     let css = {}
-    let spacing = merge(theme('listDefault.listSpacing'), theme('listCustom.listSpacing'))
+    let spacing = theme('list.spacing')
     Object.keys(spacing).forEach(name => {
       let value = spacing[name]
       css[`.list-space-${name}`] = {
@@ -31,28 +38,5 @@ module.exports = function () {
       }
     })
     addUtilities(css, ['responsive'])
-    // components
-    addComponents({
-      // list
-      '.list': {
-        display: 'flex',
-        flexWrap: 'wrap',
-        flexDirection: 'row',
-        alignItems: 'flex-start',
-        '&, > *': {
-          '> a:not(.btn), > button:not(.btn)': {
-          }
-        }
-      },
-      // list-block
-      '.list-block': {
-        display: 'flex',
-        flexWrap: 'nowrap',
-        flexDirection: 'column',
-        alignItems: 'flex-start',
-      },
-      ...theme('listDefault'),
-      ...theme('listCustom'),
-    })
   }
-}
+})

@@ -1,25 +1,14 @@
-module.exports = function () {
+const plugin = require('tailwindcss/plugin')
+const merge = require('lodash/merge')
+const castArray = require('lodash/castArray')
+
+module.exports = plugin.withOptions(({ component = 'btn' } = {}) => {
   return function ({ addComponents, theme }) {
-    addComponents({
-      // btn
-      '.btn': {
-        cursor: 'pointer',
-        display: 'inline-flex',
-        position: 'relative',
-        verticalAlign: 'middle',
-        flexWrap: 'nowrap',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        zIndex: theme('zIndex.base'),
-        '&:hover, &.hover': {
-          zIndex: theme('zIndex.active'),
-        },
-        '&.out': {
-          zIndex: theme('zIndex.out'),
-        },
-        ...theme('btnDefault'),
-        ...theme('btnCustom'),
-      },
-    })
+    // styles
+    const config = theme(`config.${component}`, {})
+    const custom = theme(`custom.${component}`, {})
+    console.log(config)
+    const styles = merge(...castArray(config), custom)
+    addComponents(styles)
   }
-}
+})
