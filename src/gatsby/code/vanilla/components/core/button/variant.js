@@ -22,7 +22,7 @@ demo.htmlSource = `
     btn-primary
   </button>
 
-  <button type="button" class="btn">
+  <button type="button" class="btn btn-link">
     btn-link
   </button>
 
