@@ -217,21 +217,21 @@ const populateDemo = (container, i) => {
     .querySelector('.gatsby_demo_tabs_right')
     .append(
       Xt.createElement(
-        '<button type="button" class="btn btn-text btn-tiny btn-show-code" aria-label="Toggle Code"><span class="icon-code icon-large"></span></button>'
+        '<button type="button" class="btn btn-tiny btn-show-code" aria-label="Toggle Code"><span class="icon-code icon-large"></span></button>'
       )
     )
   container
     .querySelector('.gatsby_demo_tabs_right')
     .append(
       Xt.createElement(
-        '<button type="button" class="btn btn-text btn-tiny btn-open-full" aria-label="Toggle Fullscreen"><span class="icon-maximize icon-large"></span></button>'
+        '<button type="button" class="btn btn-tiny btn-open-full" aria-label="Toggle Fullscreen"><span class="icon-maximize icon-large"></span></button>'
       )
     )
   container
     .querySelector('.gatsby_demo_tabs_right')
     .append(
       Xt.createElement(
-        '<a href="#" target="_blank" class="btn btn-text btn-tiny btn-open-iframe" aria-label="Open Iframe"><span class="icon-iframe icon-large"></span></a>'
+        '<a href="#" target="_blank" class="btn btn-tiny btn-open-iframe" aria-label="Open Iframe"><span class="icon-iframe icon-large"></span></a>'
       )
     )
   // loop itemsi
@@ -248,11 +248,11 @@ const populateDemo = (container, i) => {
       file = file.split('/').splice(3, 10).join('-')
     }
     item.setAttribute('id', kebabCase(file))
-    container.querySelector('.gatsby_demo_tabs_left').append(Xt.createElement('<button type="button" class="btn btn-text btn-tiny">' + name + '</button>'))
+    container.querySelector('.gatsby_demo_tabs_left').append(Xt.createElement('<button type="button" class="btn btn-tiny">' + name + '</button>'))
     // tabs
     item.prepend(
       Xt.createElement(
-        '<div class="gatsby_demo_code"><div class="gatsby_demo_code_inner"><div class="gatsby_demo_code_tabs"><div class="gatsby_demo_code_tabs_left"></div><div class="gatsby_demo_code_tabs_right"><button type="button" class="btn btn-text btn-tiny btn-clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="gatsby_demo_code_body"></div></div></div>'
+        '<div class="gatsby_demo_code"><div class="gatsby_demo_code_inner"><div class="gatsby_demo_code_tabs"><div class="gatsby_demo_code_tabs_left"></div><div class="gatsby_demo_code_tabs_right"><button type="button" class="btn btn-tiny btn-clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="gatsby_demo_code_body"></div></div></div>'
       )
     )
     // https://github.com/zenorocha/clipboard.js/
@@ -576,7 +576,7 @@ const populateSources = (item, element, z) => {
   }
   // populate tabs
   item.querySelector('.gatsby_demo_code_body').append(Xt.createElement('<div class="gatsby_demo_code_body_item"><pre class="noedit"><code></code></pre></div>'))
-  item.querySelector('.gatsby_demo_code_tabs_left').append(Xt.createElement('<button type="button" class="btn btn-text btn-tiny">' + lang + '</button>'))
+  item.querySelector('.gatsby_demo_code_tabs_left').append(Xt.createElement('<button type="button" class="btn btn-tiny">' + lang + '</button>'))
   // format code
   const itemInside = item.querySelectorAll('.gatsby_demo_code_body .gatsby_demo_code_body_item')[z]
   const codeInside = itemInside.querySelector('pre code')

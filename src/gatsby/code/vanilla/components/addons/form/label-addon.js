@@ -15,8 +15,8 @@ demo.htmlSource = `
       Label
       <div class="form-label-addon">
         <div class="list">
-          <a href="#" class="btn btn-text">
-            btn-text
+          <a href="#" class="btn">
+
           </a>
           <a href="#" class="btn btn-link">
             btn-link
@@ -32,8 +32,8 @@ demo.htmlSource = `
       Label
       <div class="form-label-addon form-label-addon-absolute">
         <div class="list">
-          <a href="#" class="btn btn-text">
-            btn-text
+          <a href="#" class="btn">
+
           </a>
           <a href="#" class="btn btn-link">
             btn-link

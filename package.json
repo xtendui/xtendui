@@ -30,6 +30,7 @@
   "dependencies": {
     "@google/markerclusterer": "^2.0.8",
     "@semantic-release/npm": "^7.0.5",
+    "@tailwindcss/typography": "^0.2.0",
     "bezier-easing": "^2.1.0",
     "core-js": "^3.6.5",
     "gsap": "^3.3.4",

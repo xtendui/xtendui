@@ -27,7 +27,7 @@ export default () => {
                         Street lorem ipsum 42, 00134 City, Nation
                       </address>
                       <div class="listing-page_btns">
-                        <a href="#" class="btn btn-text">
+                        <a href="#" class="btn">
                           Take me here
                         </a>
                         <button type="button" class="btn btn-primary listing-page_action">
@@ -92,7 +92,7 @@ export default () => {
                         Street lorem ipsum 42, 00134 City, Nation
                       </address>
                       <div class="listing-page_btns">
-                        <a href="#" class="btn btn-text">
+                        <a href="#" class="btn">
                           Take me here
                         </a>
                         <button type="button" class="btn btn-primary listing-page_action">
@@ -157,7 +157,7 @@ export default () => {
                         Street lorem ipsum 42, 00134 City, Nation
                       </address>
                       <div class="listing-page_btns">
-                        <a href="#" class="btn btn-text">
+                        <a href="#" class="btn">
                           Take me here
                         </a>
                         <button type="button" class="btn btn-primary listing-page_action">
@@ -222,7 +222,7 @@ export default () => {
                         Street lorem ipsum 42, 00134 City, Nation
                       </address>
                       <div class="listing-page_btns">
-                        <a href="#" class="btn btn-text">
+                        <a href="#" class="btn">
                           Take me here
                         </a>
                         <button type="button" class="btn btn-primary listing-page_action">
@@ -287,7 +287,7 @@ export default () => {
                         Street lorem ipsum 42, 00134 City, Nation
                       </address>
                       <div class="listing-page_btns">
-                        <a href="#" class="btn btn-text">
+                        <a href="#" class="btn">
                           Take me here
                         </a>
                         <button type="button" class="btn btn-primary listing-page_action">
@@ -352,7 +352,7 @@ export default () => {
                         Street lorem ipsum 42, 00134 City, Nation
                       </address>
                       <div class="listing-page_btns">
-                        <a href="#" class="btn btn-text">
+                        <a href="#" class="btn">
                           Take me here
                         </a>
                         <button type="button" class="btn btn-primary listing-page_action">

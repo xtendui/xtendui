@@ -14,8 +14,8 @@ Classes for assigning variant (e.g.: border / background / color).
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.btn-{variant}`                        | `.btn-default` `.btn-primary` `.btn-text` `.btn-link` |
-| Mixin                   | `.btn-{variant}()`                      | `.btn-default()` `.btn-primary()`  `.btn-text()` `.btn-link()`   |
+| Class                   | `.btn-{variant}`                        | `.btn-default` `.btn-primary` `.btn-link` |
+| Mixin                   | `.btn-{variant}()`                      | `.btn-default()` `.btn-primary()` `.btn-link()`   |
 
 </div>
 

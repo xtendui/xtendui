@@ -17,7 +17,7 @@ demo.htmlSource = `
         <div class="h4 multilevel-title">
           Products
         </div>
-        <button type="button" class="btn btn-text btn-none multilevel-reset display-none multilevel-tab-reset">
+        <button type="button" class="btn btn-none multilevel-reset display-none multilevel-tab-reset">
           Back
         </button>
       </div>
@@ -59,7 +59,7 @@ demo.htmlSource = `
         <div class="h4 multilevel-title">
           Category 0
         </div>
-        <button type="button" class="btn btn-text btn-none multilevel-reset">
+        <button type="button" class="btn btn-none multilevel-reset">
           Back
         </button>
       </div>
@@ -87,7 +87,7 @@ demo.htmlSource = `
         <div class="h4 multilevel-title">
           Category 0a
         </div>
-        <button type="button" class="btn btn-text btn-none multilevel-reset">
+        <button type="button" class="btn btn-none multilevel-reset">
           Back
         </button>
       </div>
@@ -109,7 +109,7 @@ demo.htmlSource = `
         <div class="h4 multilevel-title">
           Category 0b
         </div>
-        <button type="button" class="btn btn-text btn-none multilevel-reset">
+        <button type="button" class="btn btn-none multilevel-reset">
           Back
         </button>
       </div>
@@ -131,7 +131,7 @@ demo.htmlSource = `
         <div class="h4 multilevel-title">
           Category 1
         </div>
-        <button type="button" class="btn btn-text btn-none multilevel-reset">
+        <button type="button" class="btn btn-none multilevel-reset">
           Back
         </button>
       </div>

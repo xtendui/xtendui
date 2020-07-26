@@ -10,7 +10,7 @@ export default () => {
     button primary
   </button>
 
-  <button type="button" class="btn btn-text">
+  <button type="button" class="btn">
     button text
   </button>
 

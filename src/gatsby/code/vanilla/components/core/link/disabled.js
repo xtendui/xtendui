@@ -12,7 +12,7 @@ demo.htmlSource = `
   primary
 </button>
 
-<button type="button" class="btn btn-text" disabled>
+<button type="button" class="btn" disabled>
   text
 </button>
 

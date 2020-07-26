@@ -19,7 +19,7 @@ demo.htmlSource = `
     primary
   </button>
 
-  <button type="button" class="btn btn-text">
+  <button type="button" class="btn">
     text
   </button>
 
