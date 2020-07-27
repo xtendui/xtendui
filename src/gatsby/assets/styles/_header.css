@@ -326,10 +326,10 @@
   .btn-close {
     display: none;
   }
-  /*
-  @media @min-md {
-    .drop-disable();
+  @screen md {
+    @apply drop-disable;
   }
+  /*
   @media @max-md {
     > .drop-inner {
       .text-inverse();

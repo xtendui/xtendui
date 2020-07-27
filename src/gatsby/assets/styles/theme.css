@@ -28,3 +28,38 @@ body {
   }
 }
 */
+
+.drop-disable {
+  display: inline-block;
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  > .drop-inner {
+    z-index: initial;
+    > .drop-design {
+      display: none;
+    }
+  }
+  > .drop-inner {
+    > .drop-content {
+      > .list-drop {
+        padding: 0;
+        width: auto;
+        max-width: none;
+        align-items: initial;
+      }
+      > .card-drop {
+        width: auto;
+        max-width: none;
+      }
+    }
+  }
+  /* disable custom animation */
+  > .drop-inner {
+    > .drop-content {
+      opacity: 1 !important;
+    }
+  }
+}
