@@ -1,3 +1,5 @@
+// rema and em
+// https://github.com/tailwindlabs/tailwindcss-typography/blob/master/src/styles.js
 const round = (num) =>
   num
     .toFixed(7)
@@ -36,16 +38,9 @@ module.exports = {
       '&.out': {
         zIndex: theme('zIndex.out'),
       },
-      // typography
-      fontFamily: theme('fontFamily.sans').join(', '),
-      borderRadius: theme('borderRadius.md'),
-      borderWidth: theme('borderWidth.px'),
-      borderColor: theme('colors.transparent'),
-      fontWeight: theme('fontWeight.semibold'),
-      lineHeight: theme('lineHeight.tight'),
-      letterSpacing: theme('letterSpacing.wider'),
-      textTransform: 'uppercase',
-      // size
+      // styles
+      '@apply border border-transparent rounded-md': {},
+      '@apply font-sans font-semibold leading-tight tracking-wider uppercase': {},
       padding: '.7em 1.2em',
       fontSize: rem(12),
       // animation
@@ -59,6 +54,7 @@ module.exports = {
         transitionTimingFunction: theme('transitionTimingFunction.in'),
       },
     },
+    /*
     '.btn-default': {
       // variant
       borderColor: theme('colors.gray.300'),
@@ -87,6 +83,7 @@ module.exports = {
         backgroundColor: theme('colors.accent.600'),
       },
     },
+    */
     // list
     '.list': {
       display: 'flex',

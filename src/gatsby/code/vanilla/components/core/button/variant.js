@@ -13,12 +13,10 @@ demo.htmlSource = `
   <button type="button" class="btn">
     btn
   </button>
-
-  <button type="button" class="btn btn-default">
+  <button type="button" class="btn text-sm text-black border-gray-300 bg-gray-300 hover:border-gray-400 active:text-opacity-75 active:bg-gray-400">
     btn-default
   </button>
-
-  <button type="button" class="btn btn-primary">
+  <button type="button" class="btn text-white border-accent-500 bg-accent-500 hover:border-accent-600 active:text-opacity-75 active:bg-accent-600">
     btn-primary
   </button>
 
