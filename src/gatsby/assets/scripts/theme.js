@@ -33,29 +33,6 @@ if (typeof window !== 'undefined') {
 }
 
 /**
- * sticky
- */
-
-Xt.mount.push({
-  matches: '.gatsby_site_article_sidebar_inner',
-  mount: function (object) {
-    // init
-
-    let self = new Xt.Sticky(object, {
-      sticky: 'fixed',
-    })
-
-    // unmount
-
-    const unmount = () => {
-      self.destroy()
-      self = null
-    }
-    return unmount
-  },
-})
-
-/**
  * #gatbsy_open-full-trigger
  */
 
