@@ -5,5 +5,26 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
 
 @import "tailwindcss/base";
+
 @import "tailwindcss/components";
+
+@import "./_shared.css";
+@import "./_header.css";
+@import "./_footer.css";
+@import "./_main.css";
+@import "./_demo.css";
+
 @import "tailwindcss/utilities";
+
+/*
+body {
+  &:after {
+     content: theme('gradients.accent');
+   }
+  @screen md {
+    &:after {
+      content: 'xxxx';
+    }
+  }
+}
+*/

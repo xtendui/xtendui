@@ -90,10 +90,12 @@ module.exports = {
       flexWrap: 'wrap',
       flexDirection: 'row',
       alignItems: 'flex-start',
+      /*
       '&, > *': {
         '> a:not(.btn), > button:not(.btn)': {
         }
       }
+      */
     },
     // list-block
     '.list-block': {

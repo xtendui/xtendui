@@ -1,0 +1,41 @@
+/**
+ * footer
+
+// .gatsby_site_footer_bottom
+
+.gatsby_site_footer_bottom {
+  .padding(top, big);
+  .padding(bottom, medium);
+  background: linear-gradient(-180deg, @white 0%, @shade-200 100%);
+  a {
+    .font-sans-semibold();
+    color: @black;
+    text-decoration: none;
+    // animation
+    &:hover, &.hover, &:active, &.active {
+      color: @black;
+      text-decoration: underline;
+    }
+  }
+}
+
+.gatsby_site_footer_bottom_row {
+  .flex-auto();
+  .row-space(tiny);
+  .row-space(small, sm);
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  font-size: 12px;
+  @media @max-sm {
+    font-size: 11px;
+  }
+  opacity: 0.7;
+}
+
+.gatsby_site_footer_bottom_right {
+  @media @min-sm {
+    margin-left: auto;
+  }
+}
+
+ */

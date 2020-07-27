@@ -78,7 +78,7 @@
     "path": "^0.12.7",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
-    "postcss-nesting": "^7.0.1",
+    "postcss-nested": "^4.2.3",
     "prettier-eslint": "^11.0.0",
     "prism-themes": "^1.3.0",
     "prismjs": "^1.19.0",

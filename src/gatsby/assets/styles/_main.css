@@ -3,10 +3,10 @@
  */
 
 body {
-  background: @white;
+  @apply bg-black;
 }
 
-// indexes
+/* indexes */
 
 .gatsby_site_main {
   position: relative;
@@ -33,17 +33,17 @@ body {
   z-index: 7;
 }
 
-// prevent horizontal overflow
+/* prevent horizontal overflow */
 
 .gatsby_site_wrapper {
   overflow: hidden;
 }
 
 .gatsby_site_header, .gatsby_site_main, .gatsby_site_footer {
-  .full();
+  @apply w-full;
 }
 
-// sticky footer
+/* sticky footer */
 
 .gatsby_site_wrapper {
   display: flex;
@@ -59,21 +59,20 @@ body {
 .gatsby_site_article_inner {
   display: flex;
   flex-direction: column;
-  .flex-auto();
+  @apply flex-auto;
 }
 
 /**
  * article
- */
 
 .gatsby_site_article {
   background: @white;
   box-shadow: @shadow-light;
   @media @min-md {
-    margin-left: 16rem;
+    margin-left: @gatsby_site_article_sidebar_width_md;
   }
   @media @min-lg {
-    margin-left: 21rem;
+    margin-left: @gatsby_site_article_sidebar_width_lg;
   }
 }
 
@@ -82,9 +81,9 @@ body {
   .padding(y, big);
   .padding(y, giant, sm);
   .padding(y, huge, lg);
-  background: linear-gradient(180deg, @shade-200 0%, @white 66%);
+    background: linear-gradient(180deg, @shade-200 0%, @white 66%);
   .p {
-    .font-big();
+  .font-big();
     opacity: 0.7;
   }
 }
@@ -108,8 +107,8 @@ body {
 
 .gatsby_site_article_hero_content_inner {
   &:not(.fade) {
-    pointer-events: none;
-  }
+     pointer-events: none;
+   }
 }
 
 .gatsby_site_article_content {
@@ -144,10 +143,11 @@ body {
 .gatsby_site_article_foot {
   .container-space();
 }
+*/
+
 
 /**
  * listing
- */
 
 .gatsby_listing {
   > .row {
@@ -207,7 +207,6 @@ body {
       }
     }
   }
-  // interactive
   a&, label& {
     &:hover, &.hover {
       .card-design {
@@ -220,7 +219,6 @@ body {
       }
     }
   }
-  // animation
   a&, label& {
     transition: all @time-small @ease-out;
     .card-design {
@@ -237,8 +235,9 @@ body {
       transform: none;
       transition: all @time-small @ease-in;
       .card-design {
-        transition: all @time-small @ease-in;
+      transition: all @time-small @ease-in;
       }
     }
   }
 }
+*/
