@@ -1,3 +1,11 @@
+const round = (num) =>
+  num
+    .toFixed(7)
+    .replace(/(\.[0-9]+?)0+$/, '$1')
+    .replace(/\.0$/, '')
+const rem = (px) => `${round(px / 16)}rem`
+const em = (px, base) => `${round(px / base)}em`
+
 module.exports = {
   utilities: theme => ({
     // list
@@ -22,7 +30,7 @@ module.exports = {
       alignItems: 'center',
       justifyContent: 'space-between',
       zIndex: theme('zIndex.base'),
-      '&:hover, &.hover': {
+      '&:hover': {
         zIndex: theme('zIndex.active'),
       },
       '&.out': {
@@ -39,7 +47,7 @@ module.exports = {
       textTransform: 'uppercase',
       // size
       padding: '.7em 1.2em',
-      fontSize: '0.8rem',
+      fontSize: rem(12),
       // animation
       transitionProperty: theme('transitionProperty.all'),
       transitionDuration: theme('transitionDuration.500'),

@@ -1,7 +1,7 @@
 const plugin = require('tailwindcss/plugin')
 const merge = require('lodash/merge')
 const castArray = require('lodash/castArray')
-const vars = require('./tailwind-vars.js')
+const css = require('./tailwind-css.js')
 
 module.exports = plugin.withOptions(() => {
   return function ({ addComponents, addUtilities, theme }) { theme(`xtend`, {})
@@ -11,14 +11,14 @@ module.exports = plugin.withOptions(() => {
      * styles
      */
 
-    const styles = merge(...castArray(vars.css(theme) || {}), xtend.css || {})
+    const styles = merge(...castArray(css.css(theme) || {}), xtend.css || {})
     addComponents(styles)
 
     /**
      * utilities
      */
 
-    const utilities = merge(...castArray(vars.utilities(theme) || {}), xtend.utilities || {})
+    const utilities = merge(...castArray(css.utilities(theme) || {}), xtend.utilities || {})
 
     // list
 

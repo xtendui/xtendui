@@ -1,8 +1,6 @@
 module.exports = {
-  theme: {
+  theme: require('./src/tailwind-theme')({
     extend: {
-      // xtend theme
-      ...require('./src/tailwind-theme.js'),
       // theme
       colors: {
         // https://javisperez.github.io/tailwindcolorshades/#/?hawkes-blue=d0e6fe
@@ -18,16 +16,6 @@ module.exports = {
           900: '#3E454C',
         },
       },
-      // xtend plugin
-      xtend: theme => ({
-        css: {
-          // btn
-          //'.btn': false,
-          '.btn-primary': {
-            backgroundColor: theme('colors.gray.900'),
-          },
-        },
-      }),
       // typography plugin
       typography: theme => ({
         default: {
@@ -62,7 +50,7 @@ module.exports = {
         },
       }),
     },
-  },
+  }),
   variants: {
     typography: [],
   },
