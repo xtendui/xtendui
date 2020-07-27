@@ -41,7 +41,7 @@ module.exports = {
       // styles
       '@apply border border-transparent rounded-md': {},
       '@apply font-sans font-semibold leading-tight tracking-wider uppercase': {},
-      padding: '.7em 1.2em',
+      padding: `${em(8, 12)} ${em(16, 12)}`,
       fontSize: rem(12),
       // animation
       transitionProperty: theme('transitionProperty.all'),
