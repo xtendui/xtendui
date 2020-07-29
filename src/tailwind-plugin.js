@@ -1,7 +1,7 @@
 const plugin = require('tailwindcss/plugin')
 const merge = require('lodash/merge')
 const castArray = require('lodash/castArray')
-const css = require('./tailwind-css.js')
+const base = require('./tailwind-css.js')
 
 module.exports = plugin.withOptions(() => {
   return function ({ addComponents, addUtilities, theme }) {
@@ -11,47 +11,63 @@ module.exports = plugin.withOptions(() => {
      * styles
      */
 
-    const styles = merge(...castArray(css.css(theme) || {}), xtend.css || {})
-    addComponents(styles)
+    const cssBase = base(theme).components || {}
+    const cssCustom = xtend.components || {}
+    for (const component of Object.keys(cssBase)) {
+      if (cssCustom[component] !== false) {
+        const style = merge(...castArray(cssBase[component] || {}), cssCustom[component] || {})
+        addComponents(style)
+      }
+    }
 
     /**
      * utilities
      */
 
-    const utilities = merge(...castArray(css.utilities(theme) || {}), xtend.utilities || {})
-
-    // list
-
-    const listSpace = utilities.listSpace
-    if (listSpace) {
-      // utilities
-      let css = {}
-      Object.keys(listSpace).forEach(name => {
-        let value = listSpace[name]
-        css[`.list-space-${name}`] = {
-          margin: `-${value}`,
-          '> *': {
-            margin: `${value}`,
-          },
+    const utilitiesBase = base(theme).utilities || {}
+    const utilitiesCustom = xtend.utilities || {}
+    for (const component of Object.keys(utilitiesBase)) {
+      if (utilitiesCustom[component] !== false) {
+        const options = merge(...castArray(utilitiesBase[component] || {}), utilitiesCustom[component] || {})
+        const utilities = Object.keys(options)
+        for (const utility of utilities) {
+          if (utilitiesCustom[utility] !== false) {
+            // list
+            if (component === 'list') {
+              // space
+              if (utility === 'space') {
+                let css = {}
+                Object.keys(utility).forEach(name => {
+                  let value = options[utility][name]
+                  css[`.list-space-${name}`] = {
+                    margin: `-${value}`,
+                    '> *': {
+                      margin: `${value}`,
+                    },
+                  }
+                  css[`.list-space-x-${name}`] = {
+                    marginLeft: `-${value}`,
+                    marginRight: `-${value}`,
+                    '> *': {
+                      marginLeft: `${value}`,
+                      marginRight: `${value}`,
+                    },
+                  }
+                  css[`.list-space-y-${name}`] = {
+                    marginTop: `-${value}`,
+                    marginBottom: `-${value}`,
+                    '> *': {
+                      marginTop: `${value}`,
+                      marginBottom: `${value}`,
+                    },
+                  }
+                })
+                addUtilities(css, ['responsive'])
+              }
+            }
+          }
         }
-        css[`.list-space-x-${name}`] = {
-          marginLeft: `-${value}`,
-          marginRight: `-${value}`,
-          '> *': {
-            marginLeft: `${value}`,
-            marginRight: `${value}`,
-          },
-        }
-        css[`.list-space-y-${name}`] = {
-          marginTop: `-${value}`,
-          marginBottom: `-${value}`,
-          '> *': {
-            marginTop: `${value}`,
-            marginBottom: `${value}`,
-          },
-        }
-      })
-      addUtilities(css, ['responsive'])
+      }
     }
 
     /**
