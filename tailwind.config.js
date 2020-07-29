@@ -58,51 +58,12 @@ module.exports = {
         in: 'cubic-bezier(0.250, 0.460, 0.450, 0.940)',
         out: 'cubic-bezier(0.455, 0.030, 0.515, 0.955)',
       },
-      // typography plugin
-      typography: theme => ({
-        default: {
-          css: {
-            color: theme('colors.gray.900'),
-            strong: {
-              fontWeight: '600',
-            },
-            h1: {
-              color: 'inherit',
-              fontWeight: '600',
-            },
-            h2: {
-              color: 'inherit',
-              fontWeight: '600',
-            },
-            h3: {
-              color: 'inherit',
-              fontWeight: '600',
-            },
-            h4: {
-              color: 'inherit',
-              fontWeight: '600',
-            },
-            a: {
-              color: theme('colors.accent.500'),
-              '&:hover': {
-                color: theme('colors.accent.600'),
-              },
-            },
-          },
-        },
-      }),
     },
   },
   variants: {
     backgroundColor: ['responsive', 'hover', 'focus', 'active'],
     borderColor: ['responsive', 'hover', 'focus', 'active'],
     textOpacity: ['responsive', 'hover', 'focus', 'active'],
-    typography: [],
   },
-  plugins: [
-    require('@tailwindcss/typography')({
-      modifiers: [],
-    }),
-    require('./src/tailwind-plugin'),
-  ],
+  plugins: [require('./src/tailwind-plugin')],
 }
