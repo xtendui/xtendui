@@ -5,7 +5,7 @@ class DocHead extends React.Component {
   render() {
     const { page } = this.props
     return (
-      <header className="gatsby_site_article_hero">
+      <header className="gatsby_site_article_hero container">
         <div className="gatsby_site_article_hero_inner">
           <div className="gatsby_site_article_hero_content">
             <div className="gatsby_site_article_hero_content_inner">
@@ -16,7 +16,7 @@ class DocHead extends React.Component {
                     .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
                     .join(' ')}{' '}
                   {page.post.frontmatter.parent && page.post.frontmatter.parent !== page.post.frontmatter.title ? (
-                    <em>{page.post.frontmatter.parent}</em>
+                    <span>{page.post.frontmatter.parent}</span>
                   ) : null}
                 </span>
                 {page.post.frontmatter.category ? <div className="badge badge-default badge-small">{page.post.frontmatter.category}</div> : null}

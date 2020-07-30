@@ -29,15 +29,15 @@ class Template extends React.Component {
         <SEO title={seo.title} />
         {data.post.frontmatter.parent === data.post.frontmatter.title ? (
           <div className="gatsby_listing">
-            <div className="row">
+            <div className="row row-space-4">
               <div className="gatsby_listing_group">
                 <div className="gatsby_listing_items">
-                  <div className="row">
+                  <div className="row row row-space-2 lg:row-space-4 row-stretch">
                     {data.postsAdiacent.posts.map(({ post: adiacent }, i) =>
                       adiacent.frontmatter.parent !== adiacent.frontmatter.title ? (
                         adiacent.frontmatter.demos ? (
                           <div className="gatsby_listing_column" key={i}>
-                            <a role="button" className="card card-primary card-full card-collapse gatsby_listing_item" data-gatsby-listing-toggle>
+                            <a role="button" className="card card-small card-primary card-full card-collapse gatsby_listing_item" data-gatsby-listing-toggle>
                               <div className="card-design"></div>
                               <div className="card-inner">
                                 <div className="card-content">
@@ -68,7 +68,7 @@ class Template extends React.Component {
                           </div>
                         ) : adiacent.frontmatter.category === 'Addons' || adiacent.frontmatter.category === 'Themes' ? (
                           <div className="gatsby_listing_column" key={i}>
-                            <Link to={markdownSlug(adiacent)} className="card card-primary card-full card-collapse gatsby_listing_item">
+                            <Link to={markdownSlug(adiacent)} className="card card-small card-primary card-full card-collapse gatsby_listing_item">
                               <div className="card-design"></div>
                               <div className="card-inner">
                                 <div className="card-content">

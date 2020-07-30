@@ -10,13 +10,121 @@ const em = (px, base) => `${round(px / base)}em`
 
 module.exports = theme => ({
   utilities: {
+    typography: {
+      '.reset-text': {
+        fontFamily: 'inherit',
+        fontStyle: 'inherit',
+        fontWeight: 'inherit',
+        fontSize: 'inherit',
+        lineHeight: 'inherit',
+        letterSpacing: 'inherit',
+        textTransform: 'inherit',
+      },
+    },
     list: {
+      space: {
+        ...theme('spacing')
+      },
+    },
+    row: {
       space: {
         ...theme('spacing')
       },
     },
   },
   components: {
+    typography: {
+      body: {
+
+      },
+      'p, .p': {
+        '@apply reset-text pb-6': {},
+        '&:first-child': {
+          marginTop: 0,
+        },
+        '&:last-child': {
+          marginTop: 0,
+        },
+      },
+      'h1, .h1': {
+        '@apply mt-8 mb-6 font-semibold leading-tight tracking-normal normal-case': {},
+        fontSize: rem(30),
+        '@screen lg': {
+          fontSize: rem(40),
+        },
+        '&:first-child': {
+          marginTop: 0,
+        },
+        '&:last-child': {
+          marginTop: 0,
+        },
+      },
+      'h2, .h2': {
+        '@apply mt-8 mb-6 font-semibold leading-tight tracking-normal normal-case': {},
+        fontSize: rem(30),
+        '@screen lg': {
+          fontSize: rem(35),
+        },
+        '&:first-child': {
+          marginTop: 0,
+        },
+        '&:last-child': {
+          marginTop: 0,
+        },
+      },
+      'h3, .h3': {
+        '@apply mt-8 mb-6 font-semibold leading-tight tracking-normal normal-case': {},
+        fontSize: rem(25),
+        '@screen lg': {
+          fontSize: rem(30),
+        },
+        '&:first-child': {
+          marginTop: 0,
+        },
+        '&:last-child': {
+          marginTop: 0,
+        },
+      },
+      'h4, .h4': {
+        '@apply mt-4 mb-2 font-semibold leading-tight tracking-normal normal-case': {},
+        fontSize: rem(20),
+        '&:first-child': {
+          marginTop: 0,
+        },
+        '&:last-child': {
+          marginTop: 0,
+        },
+      },
+      'h5, .h5': {
+        '@apply mt-4 mb-2 font-semibold leading-tight tracking-normal normal-case': {},
+        fontSize: rem(16),
+        '&:first-child': {
+          marginTop: 0,
+        },
+        '&:last-child': {
+          marginTop: 0,
+        },
+      },
+      'h6, .h6': {
+        '@apply mt-4 mb-2 font-semibold leading-tight tracking-wide uppercase': {},
+        fontSize: '13px',
+        '&:first-child': {
+          marginTop: 0,
+        },
+        '&:last-child': {
+          marginTop: 0,
+        },
+      },
+      '.header-block': {
+        '@apply mt-8 mb-6 py-4 px-6 bg-gray-200 text-center': {},
+        '&:first-child': {
+          marginTop: 0,
+        },
+        '&:last-child': {
+          marginTop: 0,
+        },
+      },
+    },
     btn: {
       button: {
         '&:focus': {
@@ -105,6 +213,25 @@ module.exports = theme => ({
         flexWrap: 'nowrap',
         flexDirection: 'column',
         alignItems: 'flex-start',
+      },
+    },
+    // row
+    row: {
+      '.row': {
+        display: 'flex',
+        flexWrap: 'wrap',
+        flexDirection: 'row',
+        alignItems: 'flex-start',
+      },
+      '.row-stretch': {
+        alignItems: 'stretch',
+        '> *': {
+          display: 'flex',
+          alignItems: 'stretch',
+          '> *': {
+            minHeight: '100%'
+          },
+        },
       },
     },
   }

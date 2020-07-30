@@ -59,7 +59,7 @@ class Layout extends React.Component {
                     <DocFullscreen />
                     <main className="gatsby_site_article_inner" id="gatbsy_open-full-inner">
                       {page ? <DocHead page={page} /> : null}
-                      <article className="gatsby_site_article_content">
+                      <article className="gatsby_site_article_content container">
                         <div className="gatsby_site_article_content_inner">{children}</div>
                       </article>
                       {page && page.post.frontmatter.type !== page.post.frontmatter.title && page.post.frontmatter.type !== 'Introduction' ? (

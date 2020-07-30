@@ -16,19 +16,6 @@
 
 @import "tailwindcss/utilities";
 
-/*
-body {
-  &:after {
-     content: theme('gradients.accent');
-   }
-  @screen md {
-    &:after {
-      content: 'xxxx';
-    }
-  }
-}
-*/
-
 .card-disable {
   .card-block {
     padding: 0 !important;

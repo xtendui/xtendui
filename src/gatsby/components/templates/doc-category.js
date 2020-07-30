@@ -19,7 +19,7 @@ class Template extends React.Component {
       <Layout seo={seo} page={data}>
         <SEO title={seo.title} />
         <div className="gatsby_listing">
-          <div className="row">
+          <div className="row row-space-4">
             {data.categories.category
               .sort((a, b) => {
                 if (a.title === 'Addons' || a.title === 'By Component') {
@@ -35,9 +35,9 @@ class Template extends React.Component {
               })
               .map((category, i) => (
                 <div className="gatsby_listing_group" key={i}>
-                  <h2 className="gatsby_listing_title">{category.title.split('-').pop()}</h2>
+                  <h2 className="gatsby_listing_title h5">{category.title.split('-').pop()}</h2>
                   <div className="gatsby_listing_items">
-                    <div className="row">
+                    <div className="row row-space-2 lg:row-space-4 row-stretch">
                       {category.posts.map(({ post }, z) =>
                         post.frontmatter.link ? (
                           <div className="gatsby_listing_column" key={z}>
@@ -45,7 +45,7 @@ class Template extends React.Component {
                               href={post.frontmatter.link}
                               target="_blank"
                               rel="noreferrer"
-                              className="card card-primary card-full card-collapse gatsby_listing_item"
+                              className="card card-primary card-small card-full card-collapse gatsby_listing_item"
                             >
                               <div className="card-design"></div>
                               <div className="card-inner">
@@ -65,7 +65,7 @@ class Template extends React.Component {
                           </div>
                         ) : post.frontmatter.parent === post.frontmatter.title ? (
                           <div className="gatsby_listing_column" key={z}>
-                            <Link to={markdownSlug(post)} className="card card-primary card-full card-collapse gatsby_listing_item">
+                            <Link to={markdownSlug(post)} className="card card-small card-primary card-full card-collapse gatsby_listing_item">
                               <div className="card-design"></div>
                               <div className="card-inner">
                                 <div className="card-content">

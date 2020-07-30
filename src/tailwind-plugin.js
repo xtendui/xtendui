@@ -32,38 +32,67 @@ module.exports = plugin.withOptions(() => {
         const utilities = Object.keys(options)
         for (const utility of utilities) {
           if (utilitiesCustom[utility] !== false) {
-            // list
-            if (component === 'list') {
-              // space
-              if (utility === 'space') {
-                let css = {}
-                Object.keys(utility).forEach(name => {
-                  let value = options[utility][name]
-                  css[`.list-space-${name}`] = {
-                    margin: `-${value}`,
-                    '> *': {
-                      margin: `${value}`,
-                    },
-                  }
-                  css[`.list-space-x-${name}`] = {
-                    marginLeft: `-${value}`,
-                    marginRight: `-${value}`,
-                    '> *': {
-                      marginLeft: `${value}`,
-                      marginRight: `${value}`,
-                    },
-                  }
-                  css[`.list-space-y-${name}`] = {
-                    marginTop: `-${value}`,
-                    marginBottom: `-${value}`,
-                    '> *': {
-                      marginTop: `${value}`,
-                      marginBottom: `${value}`,
-                    },
-                  }
-                })
-                addUtilities(css, ['responsive'])
-              }
+            if (component === 'list' && utility === 'space') {
+              let css = {}
+              Object.keys(options[utility]).forEach(name => {
+                let value = options[utility][name]
+                css[`.list-space-${name}`] = {
+                  margin: `-${value}`,
+                  '> *': {
+                    margin: `${value}`,
+                  },
+                }
+                css[`.list-space-x-${name}`] = {
+                  marginLeft: `-${value}`,
+                  marginRight: `-${value}`,
+                  '> *': {
+                    marginLeft: `${value}`,
+                    marginRight: `${value}`,
+                  },
+                }
+                css[`.list-space-y-${name}`] = {
+                  marginTop: `-${value}`,
+                  marginBottom: `-${value}`,
+                  '> *': {
+                    marginTop: `${value}`,
+                    marginBottom: `${value}`,
+                  },
+                }
+              })
+              addUtilities(css, ['responsive'])
+            } else if (component === 'row' && utility === 'space') {
+              let css = {}
+              Object.keys(options[utility]).forEach(name => {
+                let value = options[utility][name]
+                css[`.row-space-${name}`] = {
+                  margin: `-${value}`,
+                  '> *': {
+                    padding: `${value}`,
+                  },
+                }
+                css[`.row-space-x-${name}`] = {
+                  marginLeft: `-${value}`,
+                  marginRight: `-${value}`,
+                  '> *': {
+                    paddingLeft: `${value}`,
+                    paddingRight: `${value}`,
+                  },
+                }
+                css[`.row-space-y-${name}`] = {
+                  marginTop: `-${value}`,
+                  marginBottom: `-${value}`,
+                  '> *': {
+                    paddingTop: `${value}`,
+                    paddingBottom: `${value}`,
+                  },
+                }
+              })
+              addUtilities(css, ['responsive'])
+            } else {
+              let css = {}
+              let value = options[utility]
+              css[utility] = value
+              addUtilities(css, ['responsive'])
             }
           }
         }

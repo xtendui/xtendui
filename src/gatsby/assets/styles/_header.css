@@ -3,7 +3,7 @@
 */
 
 .gatsby_site_article_sidebar {
-  @screen md {
+  @screen lg {
     position: fixed;
     z-index: 2;
     top: 0;
@@ -15,10 +15,10 @@
     @apply overflow-sub;
     line-height: 1;
   }
-  @screen md {
+  @screen lg {
     width: 16rem;
   }
-  @screen lg {
+  @screen xl {
     width: 21rem;
   }
 }
@@ -55,7 +55,7 @@
   padding-bottom: 1.25rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  @screen lg {
+  @screen xl {
     padding-left: 2rem;
     padding-right: 2rem;
   }
@@ -99,7 +99,7 @@
   padding-bottom: 1.5rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  @screen lg {
+  @screen xl {
     padding-left: 2rem;
     padding-right: 2rem;
   }
@@ -145,7 +145,7 @@
 .gatsby_site_header_links_container {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  @screen lg {
+  @screen xl {
     padding-left: 2rem;
     padding-right: 2rem;
   }

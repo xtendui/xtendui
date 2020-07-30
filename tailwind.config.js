@@ -21,17 +21,17 @@ module.exports = {
         ],
       },
       colors: {
-        // https://javisperez.github.io/tailwindcolorshades/#/?hawkes-blue=d0e6fe
+        // https://javisperez.github.io/tailwindcolorshades/#/?hawkes-blue=bdd3ff
         gray: {
-          100: '#FAFDFF',
-          200: '#F3F9FF',
-          300: '#ECF5FF',
-          400: '#DEEEFE',
-          500: '#D0E6FE',
-          600: '#BBCFE5',
-          700: '#7D8A98',
-          800: '#5E6872',
-          900: '#3E454C',
+          100: '#F8FBFF',
+          200: '#EFF4FF',
+          300: '#E5EDFF',
+          400: '#D1E0FF',
+          500: '#BDD3FF',
+          600: '#AABEE6',
+          700: '#717F99',
+          800: '#555F73',
+          900: '#393F4D',
         },
         // https://javisperez.github.io/tailwindcolorshades/#/?Azure%20Radiance=0078ff&tv=1
         accent: {

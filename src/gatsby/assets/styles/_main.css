@@ -3,7 +3,7 @@
  */
 
 body {
-  @apply bg-black;
+  @apply bg-white;
 }
 
 /* indexes */
@@ -64,26 +64,21 @@ body {
 
 /**
  * article
+ */
 
 .gatsby_site_article {
-  background: @white;
-  box-shadow: @shadow-light;
-  @media @min-md {
-    margin-left: @gatsby_site_article_sidebar_width_md;
+  @apply bg-white;
+  @screen lg {
+    margin-left: 16rem;
   }
-  @media @min-lg {
-    margin-left: @gatsby_site_article_sidebar_width_lg;
+  @screen xl {
+    margin-left: 21rem;
   }
 }
-
 .gatsby_site_article_hero {
-  .container-space();
-  .padding(y, big);
-  .padding(y, giant, sm);
-  .padding(y, huge, lg);
-    background: linear-gradient(180deg, @shade-200 0%, @white 66%);
+  @apply pt-20 pb-8;
   .p {
-  .font-big();
+    @apply text-lg;
     opacity: 0.7;
   }
 }
@@ -94,13 +89,12 @@ body {
 
 .gatsby_site_article_hero_content {
   .badge {
-    .margin-remove(top, 1.25rem);
-    .margin(left, 1.25rem);
+    @apply -mt-4 ml-4;
   }
   h1 {
-    em {
-      .font-sans-regular();
-      color: darken(@shade-100, 10%);
+    span span {
+      @apply font-medium;
+      color: theme('colors.gray.500');
     }
   }
 }
@@ -112,11 +106,9 @@ body {
 }
 
 .gatsby_site_article_content {
-  .flex-auto();
-  .container-space();
-  .padding(y, giant);
+  @apply flex-auto py-20;
   .gatsby_site_article_hero + & {
-    .padding(top, none);
+    @apply flex-auto pt-0;
   }
 }
 
@@ -126,57 +118,32 @@ body {
 .gatsby_site_article_foot_inner,
 .gatsby_site_footer_inner {
   margin: auto;
-  max-width: @breakpoint-md;
-  @media @min-xl {
-    max-width: @breakpoint-lg;
-  }
+  max-width: 1200px;
 }
 
 .gatsby_site_article_hero_content_inner {
   max-width: 70rem;
-  .row {
-    .row-space(large);
-    justify-content: space-between
-  }
 }
-
-.gatsby_site_article_foot {
-  .container-space();
-}
-*/
-
 
 /**
  * listing
-
-.gatsby_listing {
-  > .row {
-    .row-space(large);
-  }
-}
+*/
 
 .gatsby_listing_group {
-  .col(12);
+  @apply w-full;
 }
 
 .gatsby_listing_title {
-  .h5();
-  .header-block();
-}
-
-.gatsby_listing_items {
-  > .row {
-    .row-stretch();
-    .row-space(1rem);
-    .row-space(2.5rem, md);
-  }
+  @apply header-block;
 }
 
 .gatsby_listing_column {
-  .col(6);
-  .col(4, sm);
+  @apply w-2/4;
+  @screen md {
+    @apply w-2/6;
+  }
   .gatsby_site_article_foot_inner & {
-    @media @max-sm {
+    @screen md {
       &:nth-child(1) {
         display: none;
       }
@@ -186,7 +153,7 @@ body {
 
 .gatsby_listing_item {
   &.card {
-    .card-small();
+    /*
     .card-block {
       font-size: 1.4rem;
       line-height: 1.6;
@@ -237,7 +204,6 @@ body {
       .card-design {
       transition: all @time-small @ease-in;
       }
-    }
+    }*/
   }
 }
-*/
