@@ -67,7 +67,7 @@ Overlay.optionsDefault = {
   max: 1,
   // event
   on: 'click',
-  eventLimit: '.event-limit, .card-overlay .card-content',
+  eventLimit: '.event-limit, :scope > .overlay-container > .overlay-inner > .card-overlay .card-content',
   // other
   backdrop: true,
   closeAuto: true,
