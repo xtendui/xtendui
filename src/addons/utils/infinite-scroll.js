@@ -120,7 +120,7 @@ class Infinitescroll {
         // request
         const url = options.url + self.current
         const request = new XMLHttpRequest()
-        request.open('GET', url, true)
+        request.open('GET', encodeURI(url), true)
         request.onload = () => {
           self.response(request)
         }
