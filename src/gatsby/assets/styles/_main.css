@@ -113,15 +113,6 @@ body {
   }
 }
 
-
-.gatsby_site_article_hero_inner,
-.gatsby_site_article_content_inner,
-.gatsby_site_article_foot_inner,
-.gatsby_site_footer_inner {
-  margin: auto;
-  max-width: 1200px;
-}
-
 .gatsby_site_article_hero_content_inner {
   max-width: 70rem;
 }
