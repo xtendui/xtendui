@@ -8,22 +8,22 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-default list-space-small align-items-center text-inverse"
+<div class="list list-default list-space-2 items-center text-inverse"
   style="padding: 1rem 1.5rem; background: #0078ff;">
 
-  <button type="button" class="btn btn-default">
-    default
-  </button>
-
-  <button type="button" class="btn btn-primary">
-    primary
-  </button>
-
   <button type="button" class="btn">
-    text
+    btn
   </button>
 
-  <button type="button" class="btn btn-link">
+  <button type="button" class="btn text-black border-gray-300 bg-gray-300 hover:border-gray-400 active:text-opacity-75 active:bg-gray-400">
+    gray
+  </button>
+
+  <button type="button" class="btn text-white border-accent-500 bg-accent-500 hover:border-accent-600 active:text-opacity-75 active:bg-accent-600">
+    accent
+  </button>
+
+  <button type="button" class="btn link">
     link
   </button>
 

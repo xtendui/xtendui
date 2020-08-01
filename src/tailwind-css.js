@@ -27,6 +27,12 @@ module.exports = theme => ({
         letterSpacing: 'inherit',
         textTransform: 'inherit',
       },
+      '.text-inverse': {
+        '@apply text-white': {},
+        'a:not([class]), .link': {
+          '@apply text-white': {},
+        },
+      },
     },
     list: {
       space: {
@@ -56,10 +62,32 @@ module.exports = theme => ({
   components: {
     structure: {
       'html': {
-        'line-height': 1.8,
+        lineHeight: 1.8,
+        fontSize: rem(14),
+        '@screen sm': {
+          fontSize: rem(15),
+        },
+        '@screen lg': {
+          fontSize: rem(16),
+        },
+        '@screen xl': {
+          fontSize: rem(17),
+        },
       },
     },
     typography: {
+      'a:not([class]), .link': {
+        wordWrap: 'break-word',
+        overflowWrap: 'break-word',
+        '@apply text-reset !important': {},
+        '@apply text-accent-500 underline transition-colors duration-500 ease-out': {},
+        '&:hover, &.hover': {
+          '@apply text-accent-600 ease-in': {},
+        },
+        '&:active, &.active': {
+          '@apply ease-in': {},
+        },
+      },
       'p, .p': {
         '@apply text-reset mb-5': {},
         '&:first-child': {

@@ -54,7 +54,7 @@
   width: 100%;
   a {
     display: block;
-    color: @text !important;
+    @apply text-black !important;
   }
   .gatsby_site_article_anchor {
     pointer-events: none;
@@ -87,7 +87,7 @@
     border-color: theme('colors.white') !important;
     background: theme('colors.white') !important;
     font-size: 17px;
-    color: @accent;
+    color: theme('colors.accent.500');
     line-height: 1;
   }
 }

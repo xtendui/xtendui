@@ -77,6 +77,7 @@ body {
 }
 .gatsby_site_article_hero {
   @apply pt-20 pb-8;
+  background: linear-gradient(180deg, theme('colors.gray.300'), theme('colors.white') 66%);
   .p {
     @apply text-lg;
     opacity: 0.7;

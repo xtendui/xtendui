@@ -73,7 +73,7 @@ code {
 pre[class*="language-"] {
   overflow-x: hidden !important;
   overflow-y: auto !important;
-  @apply overflow-sub my-5 py-3 px-4;
+  @apply overflow-sub my-5 py-4 px-5;
   width: 100%;
   border-radius: 6px;
   border: 0 !important;
