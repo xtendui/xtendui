@@ -1,5 +1,6 @@
 /**
  * .gatsby_make-line
+*/
 
 .gatsby_make-line {
   position: relative;
@@ -11,7 +12,7 @@
     .gatsby_make-line_line {
       display: inline-block;
       padding-right: 15px;
-      background: @white;
+      background: theme('colors.white');
     }
     .gatsby_make-line_line:after {
       content: '';
@@ -21,54 +22,51 @@
       left: 0;
       width: 100%;
       height: 2px;
-      background: @shade-200;
+      background: theme('colors.gray.500');
     }
   }
-  // animation
   .gatsby_make-line_container {
     .gatsby_make-line_line:after {
       left: 100%;
       width: 0;
       opacity: 0;
-      transition: all @time-tiny @ease-out initial;
+      transition: all theme('transitionDuration.500') theme('transitionTimingFunction.out');
     }
   }
-  &:hover, &.hover, &:active, &.active {
+  &:hover, &:active {
     .gatsby_make-line_container {
       .gatsby_make-line_line:after {
         left: 0;
         width: 100%;
         opacity: 1;
-        transition: all @time-tiny @ease-in @time-tiny;
+        transition: all theme('transitionDuration.500') theme('transitionTimingFunction.in');
       }
     }
   }
 }
- */
 
 /**
  * .gatsby_make-anchor
+*/
 
 .gatsby_make-anchor {
   position: relative;
   width: 100%;
   a {
     display: block;
-    .link-none();
     color: @text !important;
   }
   .gatsby_site_article_anchor {
     pointer-events: none;
   }
-  // animation
   .gatsby_site_article_anchor {
     opacity: 0;
-    transition: all @time-small @ease-out, @time-tiny;
+    transition: all theme('transitionDuration.500') theme('transitionTimingFunction.out') theme('transitionDelay.500');
   }
-  &:hover, &.hover, &:active, &.active {
+  &:hover, &:active {
     .gatsby_site_article_anchor {
       opacity: 1;
-      transition: all @time-small @ease-in initial;
+      transition: all theme('transitionDuration.500') theme('transitionTimingFunction.in') theme('transitionDelay.500');
     }
   }
 }
@@ -82,18 +80,14 @@
     bottom: 3px;
   }
   .btn {
-    .btn-squared();
-    .btn-nodesign();
     padding: 7px;
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    border-color: @white !important;
-    background: @white !important;
+    border-color: theme('colors.white') !important;
+    background: theme('colors.white') !important;
     font-size: 17px;
     color: @accent;
     line-height: 1;
   }
 }
-
- */

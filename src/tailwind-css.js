@@ -31,12 +31,23 @@ module.exports = theme => ({
         ...theme('spacing')
       },
     },
+    toggle: {
+      '.toggle-block': {
+        display: 'none',
+        '&.active, &.out': {
+          display: 'block',
+        },
+      },
+      '.toggle-flex': {
+        display: 'none',
+        '&.active, &.out': {
+          display: 'flex',
+        },
+      },
+    },
   },
   components: {
     typography: {
-      body: {
-
-      },
       'p, .p': {
         '@apply reset-text pb-6': {},
         '&:first-child': {

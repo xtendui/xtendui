@@ -38,7 +38,7 @@ We recomend to use transitions this way:
   opacity: 0;
   transform: translateX(-1.5rem);
   transition: all @time-small @ease-out initial;
-  &:hover, &.hover, &:active, &.active {
+  &:hover, &:active {
     opacity: 1;
     transform: translateX(0);
     transition: all @time-small @ease-in initial;
@@ -53,7 +53,7 @@ We recomend to use animations this way:
 ```less
 .my-element {
   .anim-opacity.active();
-  &:hover, &.hover, &:active, &.active {
+  &:hover, &:active {
     .anim-opacity.out();
   }
 }

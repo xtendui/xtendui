@@ -1,5 +1,6 @@
 /**
  * demo
+*/
 
 #gatsby_body-inner {
   position: relative;
@@ -9,8 +10,8 @@
 
 html.gatsby_iframe-inside {
   body {
-    .overflow-style();
-    background: @white !important;
+    @apply overflow-main;
+    background: theme('colors.white') !important;
   }
   #gatsby_body-inner {
     height: initial;
@@ -19,82 +20,70 @@ html.gatsby_iframe-inside {
 
 html.gatsby_iframe-container {
   #gatsby_body-inner {
-    .padding(y, big);
-    .container();
+    @apply py-10;
   }
 }
 
 .gatsby_demo_source {
-  .padding(all, medium);
+  @apply p-5;
   #gatbsy_open-full & {
-    .padding(all, none);
-    .container-space-y();
-    .container();
+    @apply p-0;
   }
   .gatsby_demo_item--full & {
-    .padding(all, none) !important;
+    @apply p-0;
     max-width: none !important;
   }
 }
 
- */
 /**
  * code
+*/
 
 code {
   margin: -.1em .1em;
   padding: .2em .35em;
   border-radius: 0;
-  background: fade(@shade-100, 25%);
-  .font-monospace();
+  @apply font-mono bg-gray-100;
   font-size: .9em;
   color: #22a2c9;
 }
 
 .note-default {
   code {
-    background: darken(@shade-100, 2%);
-    color: @text;
+    @apply bg-gray-500 bg-opacity-25 text-black;
   }
 }
 
 .note-primary {
   code {
-    background: fade(@white, 10%);
-    color: @text-inverse;
+    @apply bg-white bg-opacity-25 text-white;
   }
 }
-
-// pre
 
 pre {
   overflow-x: hidden !important;
   overflow-y: auto !important;
-  .overflow-style(@mode: inner);
-  .margin(y, medium) !important;
-  .margin(y, layout) !important;
-  .padding(y, small) !important;
-  .padding(x, small) !important;
+  @apply overflow-sub my-5 p-2;
   width: 100%;
   border-radius: 6px;
   border: 0 !important;
-  background: @shade-100 !important;
+  background: theme('colors.gray.100') !important;
   line-height: 0 !important;
   code {
     width: 100%;
     background: transparent !important;
-    .font-monospace();
-    font-size: 1.2rem !important;
-    .line-height-medium() !important;
+    @apply font-mono;
+    font-size: 0.75rem !important;
+    line-height: 1.6 !important;
     white-space: pre-wrap !important;
   }
 }
 
- */
 /**
  * .gatsby_demo-cols
+ */
 
-.gatsby_demo-cols {
+.gatsby_demo-cols, .gatsby_demo-cols-nested {
   [class^='col-'], [class*=' col-'], [class^='demo--col-'], [class*=' demo--col-'] {
     &:before {
       display: flex;
@@ -103,44 +92,31 @@ pre {
       max-width: 100%;
       height: 22px;
       min-height: 100%;
-      border: 1px solid darken(@shade-100, 5%);
-      background: @shade-100;
+      @apply font-semibold bg-gray-100 border border-gray-100;
       content: attr(data-index);
-      .font-sans-semibold();
       font-size: 12px;
-      color: @accent;
+      color: theme('colors.accent.500');
       line-height: 1.8;
       text-align: center;
     }
   }
 }
-
-.gatsby_demo-cols-nested {
-  [class^='col-'], [class*=' col-'] {
-    .gatsby_demo-cols();
-  }
-}
-
- */
 /**
  * .demo
-
-@gatsby_demo-height: 55rem;
+*/
 
 pre {
-  max-height: @gatsby_demo-height;
+  max-height: 55rem;
 }
 
 .gatsby_demo {
-  .margin(y, medium);
-  .margin(y, layout);
+  @apply my-5;
   border-radius: 6px;
   pre {
     border-width: 0 !important;
   }
-  // animation
-  border: 3px solid @shade-100;
-  transition: border-color @time-small @ease-out;
+  @apply border border-gray-100;
+  transition: border-color theme('transitionDuration.500') theme('transitionTimingFunction.out');
   .gatsby_demo_tabs {
     overflow: hidden;
   }
@@ -150,7 +126,7 @@ pre {
     .gatsby_demo_item:not(.populated-iframe) {
       overflow-x: hidden;
       overflow-y: auto;
-      .overflow-style();
+      @apply overflow-main;
     }
     .gatsby_demo_item.active-code {
       overflow-x: hidden;
@@ -159,14 +135,14 @@ pre {
     .gatsby_demo_tabs_right {
       > * {
         opacity: 1 !important;
-        .transform-none() !important;
+        transform: initial !important;
       }
     }
   }
 }
 
 .gatsby_demo_tabs, .gatsby_demo_code_tabs, .gatsby_demo_code_body {
-  background: @shade-100;
+  @apply bg-gray-100;
 }
 
 .gatsby_demo_tabs, .gatsby_demo_code_tabs {
@@ -174,21 +150,14 @@ pre {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  > * {
-    .list();
-    .list-default();
-    .list-space(micro);
-  }
-  .padding(all, 7px);
+  padding: 7px;
   .btn {
     border-width: 3px;
     padding: .5em .75em;
     font-size: 10px;
     color: fade(@text, 50%);
-    &:hover, &.hover, &:active, &.active {
-      border-color: @shade-100;
-      background: @white;
-      color: @text;
+    &:hover, &:active {
+      @apply border-gray-100 bg-white text-black;
     }
   }
   .gatsby_demo_tabs_right {
@@ -209,10 +178,7 @@ pre {
 }
 
 .gatsby_demo_text {
-  .font-small();
-  .padding(y, small);
-  .padding(x, medium);
-  border-bottom: 1px solid @shade-100;
+  @apply py-2 px-4 border border-gray-100;
 }
 
 .gatsby_demo_source {
@@ -223,7 +189,6 @@ pre {
 
 .gatsby_demo_item {
   position: relative;
-  .toggle-flex() !important;
   .gatsby_demo_item_wrapper {
     position: relative;
     #gatbsy_open-full & {
@@ -231,7 +196,6 @@ pre {
     }
   }
   .gatsby_demo_code {
-    .toggle-block();
     #gatbsy_open-full & {
       position: absolute;
       width: 100%;
@@ -258,7 +222,7 @@ pre {
       height: 0;
       border: 0;
       &:not(.gatsby_iframe-full) {
-        height: @gatsby_demo-height;
+        height: 55rem;
       }
     }
   }
@@ -266,11 +230,6 @@ pre {
     .gatsby_demo_code_body {
       width: 100%;
       overflow: hidden;
-    }
-  }
-  &.populated {
-    .gatsby_demo_code_body_item {
-      .toggle-block();
     }
   }
 }
@@ -281,15 +240,15 @@ pre {
 }
 
 table {
-  border-color: @shade-100; // @FIX initial color
+  @apply border-gray-100; /* @FIX initial color*/
 }
 
-// theme
+/* theme */
 
 [data-gatsby-listing-toggle] + .gatsby_demo {
   display: none;
   .gatsby_demo_source_populate {
-    display: inline-flex; // populate source disable
+    display: inline-flex; /* populate source disable */
   }
 }
 
@@ -297,7 +256,7 @@ table {
   display: flex;
   flex-direction: column;
   #gatbsy_open-full & {
-    .flex-full();
+    @apply flex-auto;
     width: 100%;
   }
 }
@@ -317,30 +276,26 @@ table {
 
 #gatbsy_open-full {
   position: fixed;
-  z-index: @index-top + 100;
+  z-index: calc(theme('zIndex.top') + 100);
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  background: @white;
-  @media @min-md {
-    margin-left: @gatsby_site_article_sidebar_width_md;
+  @apply bg-white;
+  @screen lg {
+    margin-left: 16rem;
   }
-  @media @min-lg {
-    margin-left: @gatsby_site_article_sidebar_width_lg;
+  @screen xl {
+    margin-left: 21rem;
   }
   > .btn-close {
     top: 0;
     right: 0;
-    .btn-primary();
-    .btn-squared();
     font-size: 15px;
   }
   .gatsby_demo_tabs_right {
     padding-right: 45px;
   }
-  // activation
-  .toggle-block();
   .btn-open-full {
     display: none !important;
   }
@@ -357,4 +312,3 @@ table {
     max-height: none;
   }
 }
-*/

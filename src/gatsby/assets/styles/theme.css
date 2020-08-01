@@ -2,12 +2,11 @@
  * import
  */
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
-
 @import "tailwindcss/base";
 
 @import "tailwindcss/components";
 
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
 @import "./_shared.css";
 @import "./_header.css";
 @import "./_footer.css";

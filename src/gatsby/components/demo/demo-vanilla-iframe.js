@@ -37,7 +37,7 @@ class DemoVanillaIframe extends React.Component {
               {
                 data.allFile.files.filter(x => x.file.relativePath === `${demo.path}.js`).map(() => (demo.jsSource = jsSource(demo))) && <div /> // @FIX react render string
               }
-              <div id="gatsby_body-inner" className="gatsby_demo_source--from" dangerouslySetInnerHTML={{ __html: demo.htmlSource }} />
+              <div id="gatsby_body-inner" className="gatsby_demo_source--from container" dangerouslySetInnerHTML={{ __html: demo.htmlSource }} />
             </div>
           </Layout>
         )}
