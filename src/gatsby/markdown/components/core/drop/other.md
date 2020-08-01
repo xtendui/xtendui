@@ -13,7 +13,7 @@ date: "2019-03-15"
 |                         | Class                                     | Mixin                         | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `.drop-container-static`                | `.drop-container-static()`        | Position relative to closest element with `position: relative;`.    
-| Option                  | `.drop-container-disable`                | `.drop-container-disable()`        | Disable drop, useful within media queries            |
+| Option                  | `.drop-container-reset`                | `.drop-container-reset()`        | Disable drop, useful within media queries            |
 | Option                  | `.drop-squared`                | `.drop-squared()`        | No border-radius on drop            |
 | Option                  | `.drop-noborder`                | `.drop-noborder()`        | No border on drop            |
 | Option                  | `.drop-nospace`                | `.drop-nospace()`        | No space on drop            |

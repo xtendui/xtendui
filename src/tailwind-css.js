@@ -10,8 +10,15 @@ const em = (px, base) => `${round(px / base)}em`
 
 module.exports = theme => ({
   utilities: {
+    structure: {
+      '.container-reset': {
+        padding: 0,
+        width: 'auto',
+        maxWidth: 'none',
+      },
+    },
     typography: {
-      '.reset-text': {
+      '.text-reset': {
         fontFamily: 'inherit',
         fontStyle: 'inherit',
         fontWeight: 'inherit',
@@ -47,9 +54,14 @@ module.exports = theme => ({
     },
   },
   components: {
+    structure: {
+      'html': {
+        'line-height': 1.8,
+      },
+    },
     typography: {
       'p, .p': {
-        '@apply reset-text pb-6': {},
+        '@apply text-reset mb-5': {},
         '&:first-child': {
           marginTop: 0,
         },
@@ -97,7 +109,7 @@ module.exports = theme => ({
         },
       },
       'h4, .h4': {
-        '@apply mt-4 mb-2 font-semibold leading-tight tracking-normal normal-case': {},
+        '@apply mt-8 mb-6 font-semibold leading-tight tracking-normal normal-case': {},
         fontSize: rem(20),
         '&:first-child': {
           marginTop: 0,
@@ -107,7 +119,7 @@ module.exports = theme => ({
         },
       },
       'h5, .h5': {
-        '@apply mt-4 mb-2 font-semibold leading-tight tracking-normal normal-case': {},
+        '@apply mt-8 mb-6 font-semibold leading-tight tracking-normal normal-case': {},
         fontSize: rem(16),
         '&:first-child': {
           marginTop: 0,
@@ -117,7 +129,7 @@ module.exports = theme => ({
         },
       },
       'h6, .h6': {
-        '@apply mt-4 mb-2 font-semibold leading-tight tracking-wide uppercase': {},
+        '@apply mt-8 mb-6 font-semibold leading-tight tracking-wide uppercase': {},
         fontSize: '13px',
         '&:first-child': {
           marginTop: 0,

@@ -29,6 +29,7 @@
 // row-space
 
 .row-space-y(@size, @breakpoint: none) when (@breakpoint = none) {
+  /*
   & when (isnumber(@size)) {
     margin-top: -@size;
     margin-bottom: -@size;
@@ -46,10 +47,11 @@
       padding-top: @vertical;
       padding-bottom: @vertical;
     }
-  }
+  }*/
 }
 
 .row-space-y(@size, @breakpoint: none) when (default()) {
+  /*
   @query-min: 'min-@{breakpoint}';
   & when (isnumber(@size)) {
     @media @@query-min {
@@ -72,10 +74,11 @@
         padding-bottom: @vertical;
       }
     }
-  }
+  }*/
 }
 
 .row-space-x(@size, @breakpoint: none) when (@breakpoint = none) {
+  /*
   & when (isnumber(@size)) {
     margin-left: -@size;
     margin-right: -@size;
@@ -93,10 +96,11 @@
       padding-left: @horizontal;
       padding-right: @horizontal;
     }
-  }
+  }*/
 }
 
 .row-space-x(@size, @breakpoint: none) when (default()) {
+  /*
   @query-min: 'min-@{breakpoint}';
   & when (isnumber(@size)) {
     @media @@query-min {
@@ -119,10 +123,11 @@
         padding-right: @horizontal;
       }
     }
-  }
+  }*/
 }
 
 .row-space(@size, @breakpoint: none) when (@breakpoint = none) {
+  /*
   & when (isnumber(@size)) {
     margin: -@size -@size;
     > * {
@@ -137,10 +142,11 @@
     > * {
       padding: @vertical @horizontal;
     }
-  }
+  }*/
 }
 
 .row-space(@size, @breakpoint: none) when (default()) {
+  /*
   @query-min: 'min-@{breakpoint}';
   & when (isnumber(@size)) {
     @media @@query-min {
@@ -160,12 +166,13 @@
         padding: @vertical @horizontal;
       }
     }
-  }
+  }*/
 }
 
 // generate
 
 & when not (@generate-row = false) {
+  /*
 
   // generate-row
 
@@ -225,5 +232,5 @@
       }
     }
   }
-
+*/
 }

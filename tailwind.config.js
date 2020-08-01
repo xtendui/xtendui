@@ -20,6 +20,22 @@ module.exports = {
           '"Noto Color Emoji"',
         ],
       },
+      container: {
+        center: true,
+        padding: {
+          default: '1.5rem',
+          md: '2rem',
+          lg: '3rem',
+          xl: '4rem',
+        },
+      },
+      borderWidth: {
+        default: '1px',
+        '0': '0',
+        '1': '1px',
+        '2': '2px',
+        '3': '3px',
+      },
       colors: {
         // https://javisperez.github.io/tailwindcolorshades/#/?hawkes-blue=bdd3ff
         gray: {

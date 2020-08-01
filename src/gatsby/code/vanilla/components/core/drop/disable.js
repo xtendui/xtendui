@@ -11,8 +11,8 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="list list-default list-space-small align-items-center">
-  
-  <div class="drop-container demo--drop-container-disable-sm" data-xt-drop>
+
+  <div class="drop-container demo--drop-container-reset-sm" data-xt-drop>
     <button type="button" class="btn btn-primary">
       Toggle
     </button>
@@ -20,8 +20,8 @@ demo.htmlSource = `
     ${indentString(markupDropCard(), 6)}
     </div>
   </div>
-  
-  <div class="drop-container demo--drop-container-disable-sm" data-xt-drop>
+
+  <div class="drop-container demo--drop-container-reset-sm" data-xt-drop>
     <button type="button" class="btn btn-primary">
       Toggle
     </button>
@@ -29,7 +29,7 @@ demo.htmlSource = `
       <div class="drop-inner">
         <div class="drop-design"></div>
         <div class="drop-content">
-      
+
           <nav class="list-block list-drop">
             <button type="button">
               Lorem ipsum dolor
@@ -45,7 +45,7 @@ demo.htmlSource = `
                 <div class="drop-inner">
                   <div class="drop-design"></div>
                   <div class="drop-content">
-      
+
                     <nav class="list-block list-drop">
                       <button type="button">
                         Lorem ipsum dolor
@@ -61,7 +61,7 @@ demo.htmlSource = `
                           <div class="drop-inner">
                             <div class="drop-design"></div>
                             <div class="drop-content">
-      
+
                               <nav class="list-block list-drop">
                                 <button type="button">
                                   Lorem ipsum dolor
@@ -73,23 +73,23 @@ demo.htmlSource = `
                                   Amet
                                 </button>
                               </nav>
-      
+
                             </div>
                           </div>
                         </div>
                       </div>
                     </nav>
-      
+
                   </div>
                 </div>
               </div>
             </div>
           </nav>
-      
+
         </div>
       </div>
     </div>
   </div>
-  
+
 </div>
 `

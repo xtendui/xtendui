@@ -4,10 +4,8 @@ import { Xt } from 'xtend-library'
 import kebabCase from 'lodash.kebabcase'
 
 require('prismjs/plugins/unescaped-markup/prism-unescaped-markup')
-require('prismjs/plugins/unescaped-markup/prism-unescaped-markup.css')
 require('prismjs/components/prism-jsx.min')
 require('prismjs/components/prism-less.min')
-require('prism-themes/themes/prism-base16-ateliersulphurpool.light.css')
 // require('prism-themes/themes/prism-vs.css')
 // require('prism-themes/themes/prism-ghcolors.css')
 // require('prism-themes/themes/prism-material-light.css')
@@ -282,6 +280,7 @@ const populateDemo = (container, i) => {
     const sourceTo = item.querySelector('.gatsby_demo_source_populate')
     if (sourceTo) {
       if (getComputedStyle(sourceTo).display === 'inline-flex') {
+        // populate source disable
         container.dataset.isFullscreenOnly = 'true'
       } else {
         requestAnimationFrame(() => {
@@ -429,7 +428,7 @@ const initializeIframe = (container, item) => {
     item.classList.add('populated-iframe')
     const src = '/' + item.getAttribute('data-iframe')
     const id = item.getAttribute('id')
-    item.append(Xt.createElement('<div class="gatsby_demo_item_wrapper toggle-flex"><iframe data-src="' + src + '" name="' + id + '"></iframe></div>'))
+    item.append(Xt.createElement('<div class="gatsby_demo_item_wrapper"><iframe data-src="' + src + '" name="' + id + '"></iframe></div>'))
     item
       .querySelector('.gatsby_demo_item_wrapper')
       .append(

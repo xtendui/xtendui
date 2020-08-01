@@ -41,11 +41,11 @@
       transition: height @time-medium @ease-in;
         > .drop-design {
           opacity: 0;
-          transform: translateY(-1rem);
+          transform: translateY(-0.7rem);
         }
         > .drop-content {
           opacity: 0;
-          transform: translateY(-1.5rem);
+          transform: translateY(-1rem);
         }
       }
       &.in {
@@ -70,12 +70,12 @@
           transition: height @time-small @ease-out;
           > .drop-design {
             opacity: 0;
-            transform: translateY(1rem);
+            transform: translateY(0.7rem);
             transition: height @time-small @ease-out, transform @time-small @ease-out, opacity @time-tiny @ease-out @time-tiny;
           }
           > .drop-content {
             opacity: 0;
-            transform: translateY(1.5rem);
+            transform: translateY(1rem);
             transition: transform @time-small @ease-out, opacity @time-small @ease-out;
           }
         }

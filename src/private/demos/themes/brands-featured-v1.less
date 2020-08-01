@@ -1,16 +1,16 @@
 #iframe--brands-featured-v1 {
   //##START
   body { // add your own selector instead of body to contain the code
-    
+
     /**
       * vars
       */
-    
+
     // ease
-    
+
     @ease-in: @ease-out-quint;
     @ease-out: @ease-out-quint;
-    
+
     /**
       * slider
       */
@@ -31,9 +31,9 @@
         }
       }
     }
-    
+
     // .slider--img
-    
+
     .slider--img {
       .slides-inner {
         .row-space(medium); // same as .brand
@@ -51,9 +51,9 @@
         }
       }
     }
-    
+
     // .slider--text
-    
+
     .slider--text {
       .slides-inner {
         .row-space(giant); // same as .brand
@@ -68,7 +68,7 @@
         text-transform: uppercase;
         white-space: nowrap;
         @media @min-sm {
-          font-size: 1.6rem;
+          font-size: 1rem;
         }
         // animation
         transition: color @time-small @ease-out;
@@ -99,7 +99,7 @@
         background: linear-gradient(90deg, fade(@white, 0%) 0%, @white 100%);
       }
     }
-  
+
   }
   //##END
 }

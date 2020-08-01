@@ -15,12 +15,22 @@ html.gatsby_iframe-inside {
   }
   #gatsby_body-inner {
     height: initial;
+    max-width: none;
   }
-}
-
-html.gatsby_iframe-container {
-  #gatsby_body-inner {
-    @apply py-10;
+  &:not(.gatsby_demo_item--full) {
+    .gatsby_demo_source {
+      @apply container-reset;
+    }
+  }
+  &:not(.gatsby_iframe-container) {
+    #gatsby_body-inner {
+      @apply container-reset;
+    }
+  }
+  &.gatsby_iframe-container {
+    #gatsby_body-inner {
+      @apply py-10;
+    }
   }
 }
 
@@ -43,7 +53,7 @@ code {
   margin: -.1em .1em;
   padding: .2em .35em;
   border-radius: 0;
-  @apply font-mono bg-gray-100;
+  @apply font-mono bg-gray-200;
   font-size: .9em;
   color: #22a2c9;
 }
@@ -60,14 +70,14 @@ code {
   }
 }
 
-pre {
+pre[class*="language-"] {
   overflow-x: hidden !important;
   overflow-y: auto !important;
-  @apply overflow-sub my-5 p-2;
+  @apply overflow-sub my-5 py-3 px-4;
   width: 100%;
   border-radius: 6px;
   border: 0 !important;
-  background: theme('colors.gray.100') !important;
+  background: theme('colors.gray.200') !important;
   line-height: 0 !important;
   code {
     width: 100%;
@@ -92,7 +102,7 @@ pre {
       max-width: 100%;
       height: 22px;
       min-height: 100%;
-      @apply font-semibold bg-gray-100 border border-gray-100;
+      @apply font-semibold bg-gray-200 border border-gray-200;
       content: attr(data-index);
       font-size: 12px;
       color: theme('colors.accent.500');
@@ -115,7 +125,7 @@ pre {
   pre {
     border-width: 0 !important;
   }
-  @apply border border-gray-100;
+  @apply border-3 border-gray-200;
   transition: border-color theme('transitionDuration.500') theme('transitionTimingFunction.out');
   .gatsby_demo_tabs {
     overflow: hidden;
@@ -142,7 +152,7 @@ pre {
 }
 
 .gatsby_demo_tabs, .gatsby_demo_code_tabs, .gatsby_demo_code_body {
-  @apply bg-gray-100;
+  @apply bg-gray-200;
 }
 
 .gatsby_demo_tabs, .gatsby_demo_code_tabs {
@@ -155,9 +165,9 @@ pre {
     border-width: 3px;
     padding: .5em .75em;
     font-size: 10px;
-    color: fade(@text, 50%);
-    &:hover, &:active {
-      @apply border-gray-100 bg-white text-black;
+    @apply text-black text-opacity-50;
+    &:hover, &:active, &.active {
+      @apply border-gray-200 bg-white text-opacity-100;
     }
   }
   .gatsby_demo_tabs_right {
@@ -178,7 +188,7 @@ pre {
 }
 
 .gatsby_demo_text {
-  @apply py-2 px-4 border border-gray-100;
+  @apply py-2 px-4 border border-gray-200;
 }
 
 .gatsby_demo_source {
@@ -238,12 +248,6 @@ pre {
   z-index: 1;
   flex: 1;
 }
-
-table {
-  @apply border-gray-100; /* @FIX initial color*/
-}
-
-/* theme */
 
 [data-gatsby-listing-toggle] + .gatsby_demo {
   display: none;

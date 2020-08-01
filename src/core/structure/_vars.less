@@ -33,10 +33,10 @@
 // shadow
 // USAGE: box-shadow: @shadow-light;
 
-@shadow-none: 0 .5rem .5rem transparent, 0 1rem 1rem transparent;
-@shadow-light: 0 .5rem .5rem fade(@shade-700, 5%), 0 1rem 1rem fade(@shade-700, 5%);
-@shadow-dark: 0 .5rem .5rem fade(@shade-700, 20%), 0 1rem 1rem fade(@shade-700, 20%);
-@shadow-accent: 0 .5rem .5rem fade(@accent-dark, 20%), 0 1rem 1rem fade(@accent-dark, 20%);
+@shadow-none: 0 .5rem .5rem transparent, 0 0.7rem 0.7rem transparent;
+@shadow-light: 0 .5rem .5rem fade(@shade-700, 5%), 0 0.7rem 0.7rem fade(@shade-700, 5%);
+@shadow-dark: 0 .5rem .5rem fade(@shade-700, 20%), 0 0.7rem 0.7rem fade(@shade-700, 20%);
+@shadow-accent: 0 .5rem .5rem fade(@accent-dark, 20%), 0 0.7rem 0.7rem fade(@accent-dark, 20%);
 
 // gradient
 // USAGE: background: linear-gradient(135deg, @grad-light);
@@ -49,8 +49,8 @@
 // USAGE: .margin(x, small); .margin(y, small); .margin(all, small); .margin-remove(all, small);
 // USAGE: .padding(x, small); .padding(y, small); .padding(all, small);
 
-@margins: auto auto, none 0, micro .25rem, mini .5rem, tiny 1rem, small 1.5rem, medium 2rem, large 3rem, big 4rem, giant 6rem, huge 8rem;
-@paddings: auto auto, none 0, micro .25rem, mini .5rem, tiny 1rem, small 1.5rem, medium 2rem, large 3rem, big 4rem, giant 6rem, huge 8rem;
+@margins: auto auto, none 0, micro .25rem, mini .5rem, tiny 0.7rem, small 1rem, medium 2rem, large 3rem, big 4rem, giant 6rem, huge 8rem;
+@paddings: auto auto, none 0, micro .25rem, mini .5rem, tiny 0.7rem, small 1rem, medium 2rem, large 3rem, big 4rem, giant 6rem, huge 8rem;
 
 // order
 // USAGE: .order(1); // eval to -2
