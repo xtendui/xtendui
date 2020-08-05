@@ -222,7 +222,7 @@ class Ajax extends Xt.Toggle {
       self.detail.requestDuration = options.duration || Xt.animTime(self.queryElement)
       // request
       const request = new XMLHttpRequest()
-      request.open('GET', url, true)
+      request.open('GET', encodeURI(url), true)
       request.onload = () => {
         self.ajaxResponse(element, url, request, self.detail.requestDate)
       }
