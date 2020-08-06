@@ -30,7 +30,7 @@ class Infinitescroll {
     // options
     self.options = Xt.merge([self.constructor.optionsDefault, self.optionsCustom])
     // vars
-    self.current = self.options.current
+    self.current = 1
     self.classes = self.options.class ? [...self.options.class.split(' ')] : []
     self.classesNoMore = self.options.classNoMore ? [...self.options.classNoMore.split(' ')] : []
     // elements
@@ -43,6 +43,8 @@ class Infinitescroll {
       addEventListener('scroll', scrollHandler)
       self.eventScrollHandler()
     }
+    // setCurrent
+    self.setCurrent()
     // paginate
     self.paginate()
     // trigger
@@ -58,7 +60,6 @@ class Infinitescroll {
   /**
    * element on handler
    * @param {Event} e
-   * @param {Boolean} initial
    */
   eventScrollHandler(e = null) {
     const self = this
@@ -110,37 +111,34 @@ class Infinitescroll {
     const self = this
     const options = self.options
     // current
-    self.current = self.current + options.add
-    if (self.current <= options.max) {
+    if (self.current < options.max) {
       self.current = self.current > options.max ? options.max : self.current
       // class
       self.object.classList.add(...self.classes)
-      // logic
-      if (options.url) {
-        // request
-        const url = options.url + self.current
-        const request = new XMLHttpRequest()
-        request.open('GET', encodeURI(url), true)
-        request.onload = () => {
-          self.response(request)
+      // params
+      self.setCurrentNext()
+      // request
+      const request = new XMLHttpRequest()
+      request.open('GET', encodeURI(self.url.href), true)
+      request.onload = () => {
+        // debug
+        if (Xt.debug === true) {
+          console.debug('Xt.debug: xt-infinitescroll request success', request, self.url)
         }
-        request.onerror = () => {
-          self.response(request)
-        }
-        request.send()
-      } else {
-        // fake
-        clearTimeout(Xt.dataStorage.get(self.object, 'xt' + self.componentNamespace + 'FakeTimeout'))
-        Xt.dataStorage.set(
-          self.object,
-          'xt' + self.componentNamespace + 'FakeTimeout',
-          setTimeout(() => {
-            // func
-            const request = { responseText: self.object.outerHTML }
-            self.success(request)
-          }, 1000)
-        )
+        // replace state
+        history.replaceState({}, null, self.url.href)
+        // response
+        self.response(request)
       }
+      request.onerror = () => {
+        // debug
+        if (Xt.debug === true) {
+          console.debug('Xt.debug: xt-infinitescroll request failed', request)
+        }
+        // response
+        self.response(request)
+      }
+      request.send()
     }
   }
 
@@ -165,26 +163,17 @@ class Infinitescroll {
   success(request) {
     const self = this
     // set substitute
-    let html = document.createElement('html')
+    const html = document.createElement('html')
     html.innerHTML = request.responseText.trim()
-    let items = html.querySelector(self.options.elements.items).querySelectorAll(':scope > *')
-    // populate dom
-    for(const item of items) {
-      self.itemsElement.querySelector(':scope > *:last-child').after(item)
+    const items = html.querySelector(self.options.elements.items)
+    if (items) {
+      self.populate(items)
+    } else {
+      // fake
+      setTimeout(() => {
+        self.populate(self.object.querySelector(self.options.elements.items).cloneNode(true))
+      }, 1000)
     }
-    // class
-    self.object.classList.remove(...self.classes)
-    // paginate
-    self.paginate()
-    // debug
-    if (Xt.debug === true) {
-      console.debug('Xt.debug: xt-infinitescroll request success', request)
-    }
-    // garbage collector
-    html = null
-    items = null
-    // listener dispatch
-    self.object.dispatchEvent(new CustomEvent('replace.xt.infinitescroll'))
   }
 
   /**
@@ -195,10 +184,24 @@ class Infinitescroll {
     const self = this
     // class
     self.object.classList.remove(...self.classes)
-    // debug
-    if (Xt.debug === true) {
-      console.debug('Xt.debug: xt-infinitescroll request failed', request)
+  }
+
+  /**
+   * populate
+   * @param {Node|HTMLElement|EventTarget|Window} items Items to add
+   */
+  populate(items) {
+    const self = this
+    // populate dom
+    for (const item of items.querySelectorAll(':scope > *')) {
+      self.itemsElement.querySelector(':scope > *:last-child').after(item)
     }
+    // class
+    self.object.classList.remove(...self.classes)
+    // paginate
+    self.paginate()
+    // listener dispatch
+    self.object.dispatchEvent(new CustomEvent('replace.xt.infinitescroll'))
   }
 
   /**
@@ -225,6 +228,42 @@ class Infinitescroll {
   //
 
   /**
+   * setCurrent
+   */
+  setCurrent() {
+    const self = this
+    const options = self.options
+    // check url
+    const url = new URL(location.href)
+    const searchParams = new URLSearchParams(url.search)
+    // set current
+    const get = searchParams.get(options.get)
+    self.current = get ? parseFloat(get) : self.current
+    searchParams.set(options.get, self.current)
+    // set url
+    url.search = searchParams.toString()
+    self.url = url
+  }
+
+  /**
+   * setCurrentNext
+   */
+  setCurrentNext() {
+    const self = this
+    const options = self.options
+    // check url
+    const url = new URL(location.href)
+    const searchParams = new URLSearchParams(url.search)
+    // set current
+    const get = searchParams.get(options.get)
+    self.current = get ? parseFloat(get) + options.add : self.current + options.add
+    searchParams.set(options.get, self.current)
+    // set url
+    url.search = searchParams.toString()
+    self.url = url
+  }
+
+  /**
    * destroy
    */
   destroy() {
@@ -248,8 +287,7 @@ class Infinitescroll {
 
 Infinitescroll.componentName = 'xt-infinitescroll'
 Infinitescroll.optionsDefault = {
-  url: false,
-  current: 1,
+  get: 'page',
   add: 1,
   max: 'Infinity',
   class: 'infinite-scroll-loading',
