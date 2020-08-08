@@ -28,9 +28,9 @@ module.exports = theme => ({
         textTransform: 'inherit',
       },
       '.text-inverse': {
-        '@apply text-white': {},
+        color: theme('colors.white'),
         'a:not([class]), .link': {
-          '@apply text-white': {},
+          color: theme('colors.white'),
         },
       },
     },
@@ -77,103 +77,147 @@ module.exports = theme => ({
     },
     typography: {
       'a:not([class]), .link': {
+        '@apply text-reset !important': {},
         wordWrap: 'break-word',
         overflowWrap: 'break-word',
-        '@apply text-reset !important': {},
-        '@apply text-accent-500 underline transition-colors duration-500 ease-out': {},
+        color: theme('colors.accent.500'),
+        textDecoration: 'underline',
+        transitionProperty: theme('transitionProperty.colors'),
+        transitionDuration: theme('transitionDuration.500'),
+        transitionTimingFunction: theme('transitionTimingFunction.ease.out'),
         '&:hover, &.hover': {
-          '@apply text-accent-600 ease-in': {},
+          color: theme('colors.accent.600'),
+          transitionTimingFunction: theme('transitionTimingFunction.ease.in'),
         },
         '&:active, &.active': {
-          '@apply ease-in': {},
+          color: theme('colors.accent.400'),
+          transitionTimingFunction: theme('transitionTimingFunction.ease.in'),
         },
       },
       'p, .p': {
-        '@apply text-reset mb-5': {},
+        '@apply text-reset': {},
+        marginBottom: theme('spacing.5'),
+        '&:first-child': {
+          marginTop: theme('spacing.0'),
+        },
+        '&:last-child': {
+          marginBottom: theme('spacing.0'),
+        },
+      },
+      'h1, .h1': {
+        marginTop: theme('spacing.8'),
+        marginBottom: theme('spacing.6'),
         '&:first-child': {
           marginTop: 0,
         },
         '&:last-child': {
           marginTop: 0,
         },
-      },
-      'h1, .h1': {
-        '@apply mt-8 mb-6 font-semibold leading-tight tracking-normal normal-case': {},
+        fontFamily: theme('fontFamily.sans').toString(),
+        fontWeight: theme('fontWeight.semibold'),
+        lineHeight: theme('lineHeight.tight'),
+        letterSpacing: theme('letterSpacing.normal'),
+        textTransform: 'none',
         fontSize: rem(30),
         '@screen lg': {
           fontSize: rem(40),
         },
+      },
+      'h2, .h2': {
+        marginTop: theme('spacing.8'),
+        marginBottom: theme('spacing.6'),
         '&:first-child': {
           marginTop: 0,
         },
         '&:last-child': {
           marginTop: 0,
         },
-      },
-      'h2, .h2': {
-        '@apply mt-8 mb-6 font-semibold leading-tight tracking-normal normal-case': {},
+        fontFamily: theme('fontFamily.sans').toString(),
+        fontWeight: theme('fontWeight.semibold'),
+        lineHeight: theme('lineHeight.tight'),
+        letterSpacing: theme('letterSpacing.normal'),
+        textTransform: 'none',
         fontSize: rem(30),
         '@screen lg': {
           fontSize: rem(35),
         },
+      },
+      'h3, .h3': {
+        marginTop: theme('spacing.8'),
+        marginBottom: theme('spacing.6'),
         '&:first-child': {
           marginTop: 0,
         },
         '&:last-child': {
           marginTop: 0,
         },
-      },
-      'h3, .h3': {
-        '@apply mt-8 mb-6 font-semibold leading-tight tracking-normal normal-case': {},
+        fontFamily: theme('fontFamily.sans').toString(),
+        fontWeight: theme('fontWeight.semibold'),
+        lineHeight: theme('lineHeight.tight'),
+        letterSpacing: theme('letterSpacing.normal'),
+        textTransform: 'none',
         fontSize: rem(25),
         '@screen lg': {
           fontSize: rem(30),
         },
-        '&:first-child': {
-          marginTop: 0,
-        },
-        '&:last-child': {
-          marginTop: 0,
-        },
       },
       'h4, .h4': {
-        '@apply mt-8 mb-6 font-semibold leading-tight tracking-normal normal-case': {},
-        fontSize: rem(20),
+        marginTop: theme('spacing.8'),
+        marginBottom: theme('spacing.6'),
         '&:first-child': {
           marginTop: 0,
         },
         '&:last-child': {
           marginTop: 0,
         },
+        fontFamily: theme('fontFamily.sans').toString(),
+        fontWeight: theme('fontWeight.semibold'),
+        lineHeight: theme('lineHeight.tight'),
+        letterSpacing: theme('letterSpacing.normal'),
+        textTransform: 'none',
+        fontSize: rem(20),
       },
       'h5, .h5': {
-        '@apply mt-8 mb-6 font-semibold leading-tight tracking-normal normal-case': {},
-        fontSize: rem(16),
+        marginTop: theme('spacing.8'),
+        marginBottom: theme('spacing.6'),
         '&:first-child': {
           marginTop: 0,
         },
         '&:last-child': {
           marginTop: 0,
         },
+        fontFamily: theme('fontFamily.sans').toString(),
+        fontWeight: theme('fontWeight.semibold'),
+        lineHeight: theme('lineHeight.tight'),
+        letterSpacing: theme('letterSpacing.normal'),
+        textTransform: 'none',
+        fontSize: rem(16),
       },
       'h6, .h6': {
-        '@apply mt-8 mb-6 font-semibold leading-tight tracking-wide uppercase': {},
-        fontSize: '13px',
+        marginTop: theme('spacing.8'),
+        marginBottom: theme('spacing.6'),
         '&:first-child': {
           marginTop: 0,
         },
         '&:last-child': {
           marginTop: 0,
         },
+        fontFamily: theme('fontFamily.sans').toString(),
+        fontWeight: theme('fontWeight.semibold'),
+        lineHeight: theme('lineHeight.tight'),
+        letterSpacing: theme('letterSpacing.wide'),
+        textTransform: 'uppercase',
+        fontSize: '13px',
       },
       '.header-block': {
-        '@apply mt-8 mb-6 py-4 px-6 bg-gray-200 text-center': {},
-        '&:first-child': {
-          marginTop: 0,
-        },
-        '&:last-child': {
-          marginTop: 0,
-        },
+        marginTop: theme('spacing.8'),
+        marginBottom: theme('spacing.6'),
+        paddingTop: theme('spacing.4'),
+        paddingBottom: theme('spacing.4'),
+        paddingLeft: theme('spacing.6'),
+        paddingRight: theme('spacing.6'),
+        backgroundColor: theme('colors.gray.200'),
+        textAlign: 'center',
       },
     },
     btn: {
@@ -199,9 +243,15 @@ module.exports = theme => ({
           zIndex: theme('zIndex.out'),
         },
         // styles
-        '@apply border border-transparent rounded-md': {},
-        '@apply font-sans font-semibold leading-tight tracking-wider uppercase': {},
         padding: `${em(8, 12)} ${em(16, 12)}`,
+        borderWidth: theme('borderWidth.default'),
+        borderColor: theme('borderColor.transparent'),
+        borderRadius: theme('borderRadius.md'),
+        fontFamily: theme('fontFamily.sans').toString(),
+        fontWeight: theme('fontWeight.semibold'),
+        lineHeight: theme('lineHeight.tight'),
+        letterSpacing: theme('letterSpacing.wider'),
+        textTransform: 'uppercase',
         fontSize: rem(12),
         // animation
         transitionProperty: theme('transitionProperty.all'),
