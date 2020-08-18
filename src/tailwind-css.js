@@ -60,6 +60,7 @@ module.exports = theme => ({
     },
   },
   components: {
+    // structure
     structure: {
       'html': {
         lineHeight: 1.8,
@@ -75,6 +76,7 @@ module.exports = theme => ({
         },
       },
     },
+    // typography
     typography: {
       'a:not([class]), .link': {
         '@apply text-reset !important': {},
@@ -111,7 +113,7 @@ module.exports = theme => ({
           marginTop: 0,
         },
         '&:last-child': {
-          marginTop: 0,
+          marginBottom: 0,
         },
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
@@ -130,7 +132,7 @@ module.exports = theme => ({
           marginTop: 0,
         },
         '&:last-child': {
-          marginTop: 0,
+          marginBottom: 0,
         },
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
@@ -149,7 +151,7 @@ module.exports = theme => ({
           marginTop: 0,
         },
         '&:last-child': {
-          marginTop: 0,
+          marginBottom: 0,
         },
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
@@ -168,7 +170,7 @@ module.exports = theme => ({
           marginTop: 0,
         },
         '&:last-child': {
-          marginTop: 0,
+          marginBottom: 0,
         },
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
@@ -184,7 +186,7 @@ module.exports = theme => ({
           marginTop: 0,
         },
         '&:last-child': {
-          marginTop: 0,
+          marginBottom: 0,
         },
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
@@ -200,7 +202,7 @@ module.exports = theme => ({
           marginTop: 0,
         },
         '&:last-child': {
-          marginTop: 0,
+          marginBottom: 0,
         },
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
@@ -209,7 +211,7 @@ module.exports = theme => ({
         textTransform: 'uppercase',
         fontSize: '13px',
       },
-      '.header-block': {
+      '.h-block': {
         marginTop: theme('spacing.8'),
         marginBottom: theme('spacing.6'),
         paddingTop: theme('spacing.4'),
@@ -219,81 +221,6 @@ module.exports = theme => ({
         backgroundColor: theme('colors.gray.200'),
         textAlign: 'center',
       },
-    },
-    btn: {
-      button: {
-        '&:focus': {
-          outline: 'none'
-        },
-      },
-      '.btn': {
-        // setup
-        cursor: 'pointer',
-        display: 'inline-flex',
-        position: 'relative',
-        verticalAlign: 'middle',
-        flexWrap: 'nowrap',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        zIndex: theme('zIndex.base'),
-        '&:hover': {
-          zIndex: theme('zIndex.active'),
-        },
-        '&.out': {
-          zIndex: theme('zIndex.out'),
-        },
-        // styles
-        padding: `${em(8, 12)} ${em(16, 12)}`,
-        borderWidth: theme('borderWidth.default'),
-        borderColor: theme('borderColor.transparent'),
-        borderRadius: theme('borderRadius.md'),
-        fontFamily: theme('fontFamily.sans').toString(),
-        fontWeight: theme('fontWeight.semibold'),
-        lineHeight: theme('lineHeight.tight'),
-        letterSpacing: theme('letterSpacing.wider'),
-        textTransform: 'uppercase',
-        fontSize: rem(12),
-        // animation
-        transitionProperty: theme('transitionProperty.all'),
-        transitionDuration: theme('transitionDuration.500'),
-        transitionTimingFunction: theme('transitionTimingFunction.out'),
-        '&:hover, &.hover': {
-          transitionTimingFunction: theme('transitionTimingFunction.in'),
-        },
-        '&:active, &.active': {
-          transitionTimingFunction: theme('transitionTimingFunction.in'),
-        },
-      },
-      /*
-      '.btn-default': {
-        // variant
-        borderColor: theme('colors.gray.300'),
-        backgroundColor: theme('colors.gray.300'),
-        color: theme('textColor.black'),
-        '&:hover, &.hover': {
-          borderColor: theme('colors.gray.400'),
-          backgroundColor: theme('colors.gray.300'),
-        },
-        '&:active, &.active': {
-          borderColor: theme('colors.gray.400'),
-          backgroundColor: theme('colors.gray.400'),
-        },
-      },
-      '.btn-primary': {
-        // variant
-        borderColor: theme('colors.accent.500'),
-        backgroundColor: theme('colors.accent.500'),
-        color: theme('textColor.white'),
-        '&:hover, &.hover': {
-          borderColor: theme('colors.accent.600'),
-          backgroundColor: theme('colors.accent.500'),
-        },
-        '&:active, &.active': {
-          borderColor: theme('colors.accent.600'),
-          backgroundColor: theme('colors.accent.600'),
-        },
-      },
-      */
     },
     // list
     list: {
@@ -333,6 +260,148 @@ module.exports = theme => ({
             minHeight: '100%'
           },
         },
+      },
+    },
+    // btn
+    btn: {
+      button: {
+        '&:focus': {
+          outline: 'none'
+        },
+      },
+      '.btn': {
+        // setup
+        cursor: 'pointer',
+        display: 'inline-flex',
+        position: 'relative',
+        verticalAlign: 'middle',
+        flexWrap: 'nowrap',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        zIndex: theme('zIndex.base'),
+        '&:hover, &:active': {
+          zIndex: theme('zIndex.active'),
+        },
+        // styles
+        padding: `${em(8, 12)} ${em(16, 12)}`,
+        fontSize: rem(12),
+        borderWidth: theme('borderWidth.default'),
+        borderColor: theme('borderColor.transparent'),
+        borderRadius: theme('borderRadius.md'),
+        fontFamily: theme('fontFamily.sans').toString(),
+        fontWeight: theme('fontWeight.semibold'),
+        lineHeight: theme('lineHeight.tight'),
+        letterSpacing: theme('letterSpacing.wider'),
+        textTransform: 'uppercase',
+        // animation
+        transitionProperty: theme('transitionProperty.all'),
+        transitionDuration: theme('transitionDuration.500'),
+        transitionTimingFunction: theme('transitionTimingFunction.out'),
+        '&:hover, &.hover': {
+          transitionTimingFunction: theme('transitionTimingFunction.in'),
+        },
+        '&:active, &.active': {
+          transitionTimingFunction: theme('transitionTimingFunction.in'),
+        },
+      },
+      /*
+      '.btn-default': {
+        borderColor: theme('colors.gray.300'),
+        backgroundColor: theme('colors.gray.300'),
+        color: theme('textColor.black'),
+        '&:hover, &.hover': {
+          borderColor: theme('colors.gray.400'),
+          backgroundColor: theme('colors.gray.300'),
+        },
+        '&:active, &.active': {
+          borderColor: theme('colors.gray.400'),
+          backgroundColor: theme('colors.gray.400'),
+        },
+      },
+      '.btn-primary': {
+        borderColor: theme('colors.accent.500'),
+        backgroundColor: theme('colors.accent.500'),
+        color: theme('textColor.white'),
+        '&:hover, &.hover': {
+          borderColor: theme('colors.accent.600'),
+          backgroundColor: theme('colors.accent.500'),
+        },
+        '&:active, &.active': {
+          borderColor: theme('colors.accent.600'),
+          backgroundColor: theme('colors.accent.600'),
+        },
+      },
+      '.btn-tiny': {
+        padding: '.5em 1em',
+        fontSize: '10px',
+      },
+      '.btn-small': {
+        padding: '.6em 1.2em',
+        fontSize: rem(11),
+      },
+      '.btn-medium': {
+        padding: '.6em 1.2em',
+        fontSize: rem(12),
+      },
+      '.btn-large': {
+        padding: '.6em 1.2em',
+        fontSize: rem(13),
+      },
+      '.btn-big': {
+        padding: '.6em 1.2em',
+        fontSize: rem(14),
+      },
+      */
+    },
+    // card
+    card: {
+      '.card': {
+        // setup
+        '@apply: flex-full': '',
+        position: 'relative',
+        display: 'flex',
+        alignItems: 'flex-start',
+        width: '100%',
+        zIndex: theme('zIndex.base'),
+        '&:hover, &:active': {
+          zIndex: theme('zIndex.active'),
+        },
+      },
+      '.card-inner': {
+        // setup
+        display: 'flex',
+        flexDirection: 'column',
+        width: '100%',
+        minHeight: '100%',
+      },
+      '.card-content': {
+        // setup
+        '@apply: flex-auto': '',
+        position: 'relative',
+        display: 'flex',
+        flexDirection: 'column',
+        width: '100%',
+        height: '100%',
+      },
+      '.card-block': {
+        padding: `${em(24, 12)}`,
+        fontSize: rem(14),
+      },
+      '.card-title': {
+        marginTop: theme('spacing.6'),
+        marginBottom: theme('spacing.4'),
+        '&:first-child': {
+          marginTop: 0,
+        },
+        '&:last-child': {
+          marginBottom: 0,
+        },
+        fontFamily: theme('fontFamily.sans').toString(),
+        fontWeight: theme('fontWeight.semibold'),
+        lineHeight: theme('lineHeight.tight'),
+        letterSpacing: theme('letterSpacing.normal'),
+        textTransform: 'none',
+        fontSize: rem(20),
       },
     },
   }

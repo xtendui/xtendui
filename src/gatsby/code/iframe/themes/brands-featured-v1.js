@@ -15,7 +15,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="h5 header-block">
+<div class="h5 h-block">
   Constant speed
 </div>
 
@@ -77,7 +77,7 @@ demo.htmlSource = `
 
 </div>
 
-<div class="h5 header-block">
+<div class="h5 h-block">
   Faster or slower depending on horizontal space
 </div>
 
@@ -139,7 +139,7 @@ demo.htmlSource = `
 
 </div>
 
-<div class="h5 header-block">
+<div class="h5 h-block">
   Images
 </div>
 

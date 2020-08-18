@@ -126,7 +126,7 @@ body {
 }
 
 .gatsby_listing_title {
-  @apply header-block;
+  @apply h-block;
 }
 
 .gatsby_listing_column {
