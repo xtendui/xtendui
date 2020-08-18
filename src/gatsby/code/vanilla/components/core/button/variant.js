@@ -14,12 +14,12 @@ demo.htmlSource = `
     btn
   </button>
 
-  <button type="button" class="btn text-black border-gray-300 bg-gray-300 hover:border-gray-400 active:text-opacity-75 active:bg-gray-400">
-    gray
+  <button type="button" class="btn btn-default">
+    default
   </button>
 
-  <button type="button" class="btn text-white border-accent-500 bg-accent-500 hover:border-accent-600 active:text-opacity-75 active:bg-accent-600">
-    accent
+  <button type="button" class="btn btn-primary">
+    primary
   </button>
 
   <button type="button" class="btn link">

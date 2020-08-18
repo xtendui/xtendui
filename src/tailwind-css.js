@@ -27,6 +27,12 @@ module.exports = theme => ({
         letterSpacing: 'inherit',
         textTransform: 'inherit',
       },
+      '.text-default': {
+        color: theme('colors.black'),
+        'a:not([class]), .link': {
+          color: theme('colors.accent.500'),
+        },
+      },
       '.text-inverse': {
         color: theme('colors.white'),
         'a:not([class]), .link': {
@@ -87,11 +93,11 @@ module.exports = theme => ({
         transitionProperty: theme('transitionProperty.colors'),
         transitionDuration: theme('transitionDuration.500'),
         transitionTimingFunction: theme('transitionTimingFunction.ease.out'),
-        '&:hover, &.hover': {
+        '&:hover': {
           color: theme('colors.accent.600'),
           transitionTimingFunction: theme('transitionTimingFunction.ease.in'),
         },
-        '&:active, &.active': {
+        '&:active': {
           color: theme('colors.accent.400'),
           transitionTimingFunction: theme('transitionTimingFunction.ease.in'),
         },
@@ -297,23 +303,23 @@ module.exports = theme => ({
         transitionProperty: theme('transitionProperty.all'),
         transitionDuration: theme('transitionDuration.500'),
         transitionTimingFunction: theme('transitionTimingFunction.out'),
-        '&:hover, &.hover': {
+        '&:hover': {
           transitionTimingFunction: theme('transitionTimingFunction.in'),
         },
-        '&:active, &.active': {
+        '&:active': {
           transitionTimingFunction: theme('transitionTimingFunction.in'),
         },
       },
-      /*
+      // variant
       '.btn-default': {
         borderColor: theme('colors.gray.300'),
         backgroundColor: theme('colors.gray.300'),
         color: theme('textColor.black'),
-        '&:hover, &.hover': {
+        '&:hover': {
           borderColor: theme('colors.gray.400'),
           backgroundColor: theme('colors.gray.300'),
         },
-        '&:active, &.active': {
+        '&:active': {
           borderColor: theme('colors.gray.400'),
           backgroundColor: theme('colors.gray.400'),
         },
@@ -322,15 +328,16 @@ module.exports = theme => ({
         borderColor: theme('colors.accent.500'),
         backgroundColor: theme('colors.accent.500'),
         color: theme('textColor.white'),
-        '&:hover, &.hover': {
+        '&:hover': {
           borderColor: theme('colors.accent.600'),
           backgroundColor: theme('colors.accent.500'),
         },
-        '&:active, &.active': {
+        '&:active': {
           borderColor: theme('colors.accent.600'),
           backgroundColor: theme('colors.accent.600'),
         },
       },
+      // size
       '.btn-tiny': {
         padding: '.5em 1em',
         fontSize: '10px',
@@ -351,13 +358,12 @@ module.exports = theme => ({
         padding: '.6em 1.2em',
         fontSize: rem(14),
       },
-      */
     },
     // card
     card: {
       '.card': {
         // setup
-        '@apply: flex-full': '',
+        '@apply: flex-auto': '',
         position: 'relative',
         display: 'flex',
         alignItems: 'flex-start',
@@ -365,6 +371,22 @@ module.exports = theme => ({
         zIndex: theme('zIndex.base'),
         '&:hover, &:active': {
           zIndex: theme('zIndex.active'),
+        },
+        // animation
+        '.card-design' : {
+          transitionProperty: theme('transitionProperty.all'),
+          transitionDuration: theme('transitionDuration.500'),
+          transitionTimingFunction: theme('transitionTimingFunction.out'),
+        },
+        '&:hover': {
+          '.card-design' : {
+            transitionTimingFunction: theme('transitionTimingFunction.in'),
+          },
+        },
+        '&:active': {
+          '.card-design' : {
+            transitionTimingFunction: theme('transitionTimingFunction.in'),
+          },
         },
       },
       '.card-inner': {
@@ -402,6 +424,72 @@ module.exports = theme => ({
         letterSpacing: theme('letterSpacing.normal'),
         textTransform: 'none',
         fontSize: rem(20),
+      },
+      // variant
+      '.card-default': {
+        '@apply text-default': {},
+        '.card-design' : {
+          borderColor: theme('colors.gray.300'),
+          backgroundColor: theme('colors.gray.300'),
+        },
+        // interactive
+        'a&, label&': {
+          '&:hover': {
+            '.card-design' : {
+              borderColor: theme('colors.gray.400'),
+              backgroundColor: theme('colors.gray.300'),
+            },
+          },
+          '&:active': {
+            '.card-design' : {
+              borderColor: theme('colors.gray.400'),
+              backgroundColor: theme('colors.gray.400'),
+            },
+          },
+        },
+      },
+      '.card-primary': {
+        '@apply text-inverse': {},
+        '.card-design' : {
+          borderColor: theme('colors.accent.500'),
+          backgroundColor: theme('colors.accent.500'),
+        },
+        // interactive
+        'a&, label&': {
+          '&:hover': {
+            '.card-design' : {
+              borderColor: theme('colors.accent.600'),
+              backgroundColor: theme('colors.accent.500'),
+            },
+          },
+          '&:active': {
+            '.card-design' : {
+              borderColor: theme('colors.accent.600'),
+              backgroundColor: theme('colors.accent.600'),
+            },
+          },
+        },
+      },
+      // size
+      '.card-tiny': {
+        padding: '.5em 1em',
+        fontSize: '10px',
+      },
+      '.card-small': {
+        padding: '.6em 1.2em',
+        fontSize: rem(11),
+      },
+      '.card-medium': {
+        padding: '.6em 1.2em',
+        fontSize: rem(12),
+      },
+      '.card-large': {
+        padding: '.6em 1.2em',
+        fontSize: rem(13),
+      },
+      '.card-big': {
+        padding: '.6em 1.2em',
+        fontSize: rem(14),
       },
     },
   }
