@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-default list-space-small align-items-center"
+<div class="list list-default list-space-2 items-center"
      data-xt-toggle="{ navigation: '[data-xt-nav]' }">
 
   <button type="button" class="btn btn-default">

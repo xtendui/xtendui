@@ -15,7 +15,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-default list-space-tiny align-items-center">
+<div class="list list-default list-space-1 items-center">
   <button type="button" class="btn btn-primary btn-tiny" id="demo--drop-events-first-element">
     1st element
   </button>
@@ -47,7 +47,7 @@ demo.htmlSource = `
 
 <br/>
 
-<div class="list list-default list-space-small align-items-center" id="demo--drop-events">
+<div class="list list-default list-space-2 items-center" id="demo--drop-events">
 
   <div class="drop-container">
     <button type="button" class="btn btn-primary">

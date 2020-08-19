@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-default list-space-small align-items-center">
+<div class="list list-default list-space-2 items-center">
 
   <div class="drop-container" data-xt-drop>
     <button type="button" class="btn btn-primary">
@@ -18,7 +18,7 @@ demo.htmlSource = `
       <div class="drop-inner">
         <div class="drop-design"></div>
         <div class="drop-content">
-      
+
           <nav class="list-block list-drop">
             <button type="button">
               Lorem ipsum dolor
@@ -48,7 +48,7 @@ demo.htmlSource = `
               Amet
             </button>
           </nav>
-      
+
         </div>
       </div>
     </div>
@@ -62,7 +62,7 @@ demo.htmlSource = `
       <div class="drop-inner">
         <div class="drop-design"></div>
         <div class="drop-content">
-      
+
           <div class="card card-drop">
             <div class="card-design"></div>
             <div class="btn btn-close" aria-label="Close"></div>
@@ -83,7 +83,7 @@ demo.htmlSource = `
               </div>
             </div>
           </div>
-      
+
         </div>
       </div>
     </div>

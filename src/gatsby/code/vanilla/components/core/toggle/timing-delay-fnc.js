@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-default list-space-small align-items-center demo--toggle-timing-delay-fnc">
+<div class="list list-default list-space-2 items-center demo--toggle-timing-delay-fnc">
 
   <button type="button" class="btn btn-default">
     Toggle 0
@@ -54,7 +54,7 @@ demo.htmlSource = `
 
 <br>
 
-<div class="list list-default list-space-small align-items-center demo--toggle-timing-delay-fnc--hover">
+<div class="list list-default list-space-2 items-center demo--toggle-timing-delay-fnc--hover">
 
   <button type="button" class="btn btn-default">
     Toggle 0

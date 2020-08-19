@@ -10,7 +10,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="demo--checkradio-card">
-  <div class="row row-default">
+  <div class="row row-space-4">
 
     <div class="col-12 col-6-sm">
       <input type="checkbox" id="check-card-0">

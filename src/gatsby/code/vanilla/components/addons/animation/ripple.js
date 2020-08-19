@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-default list-space-small align-items-center justify-content-center demo--ripple-default">
+<div class="list list-default list-space-2 items-center justify-center demo--ripple-default">
 
   <button type="button" class="btn btn-default">
     default
@@ -22,7 +22,7 @@ demo.htmlSource = `
     text
   </button>
 
-  <div class="row row-default">
+  <div class="row row-space-4">
 
     <div class="col-12 col-6-sm">
       <a role="button" class="card card-default">

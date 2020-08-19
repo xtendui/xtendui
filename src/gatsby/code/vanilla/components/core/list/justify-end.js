@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-default justify-content-flex-end">
+<div class="list list-default justify-flex-end">
 ${indentString(markupList(), 2)}
 </div>
 `

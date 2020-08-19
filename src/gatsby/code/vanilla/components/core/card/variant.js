@@ -1,4 +1,6 @@
 import path from 'path'
+const cardDefault = require('components/snippets/classes/card-default').default
+const cardPrimary = require('components/snippets/classes/card-primary').default
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -8,10 +10,10 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="row row-default">
+<div class="row row-space-4">
 
   <div class="col-12 col-6-sm">
-    <div class="card card-default">
+    <div class="card ${cardDefault()}">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
@@ -25,7 +27,7 @@ demo.htmlSource = `
   </div>
 
   <div class="col-12 col-6-sm">
-    <div class="card card-primary">
+    <div class="card ${cardPrimary()}">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">

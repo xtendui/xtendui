@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="row row-default justify-content-space-between">
+<div class="row row-space-4 justify-space-between">
 ${indentString(markupRow(), 2)}
 </div>
 `

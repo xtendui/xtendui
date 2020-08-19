@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-default list-space-small align-items-center"
+<div class="list list-default list-space-2 items-center"
   data-xt-toggle="{ elements: ':scope > .btn', targets: ':scope > .demo--toggle-custom-options' }">
 
   <button type="button" class="btn btn-default">

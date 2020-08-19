@@ -48,8 +48,8 @@ Lists **automatically** add horizontal and vertical spacing to the contents. You
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.list-space-{size}`                     | `.list-space-small`          |
-| Class responsive        | `.list-space-{size}-{breakpoint}`        | `.list-space-small-sm`       |
+| Class                   | `.list-space-{size}`                     | `.list-space-2`          |
+| Class responsive        | `.list-space-{size}-{breakpoint}`        | `.list-space-2-sm`       |
 | Mixin                   | `.list-space({size})`                     | `.list-space(small)`          |
 | Mixin responsive min    | `.list-space({size}, {breakpoint})`       | `.list-space(small, sm)`      |
 | Mixin                   | `.list-space({value})`                     | `.list-space(2.5rem)`          |

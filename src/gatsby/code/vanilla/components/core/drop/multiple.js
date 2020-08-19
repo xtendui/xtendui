@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-default list-space-small align-items-center"
+<div class="list list-default list-space-2 items-center"
   data-xt-drop="{ elements: ':scope > .drop-container', targets: ':scope > .drop-container > .drop' }">
 
   <div class="drop-container">

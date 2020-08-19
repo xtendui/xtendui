@@ -142,57 +142,32 @@ body {
 
 .gatsby_listing_item {
   &.card {
-    /*
+    @apply card-full text-default hover:text-inverse hover:text-opacity-75;
+    .card-design {
+      @apply border-transparent bg-transparent;
+    }
     .card-block {
-      font-size: 1.4rem;
-      line-height: 1.6;
       .card-title {
-        font-size: 1.6rem;
+        font-size: 1rem;
       }
+      font-size: 0.8rem;
+      line-height: 1.6;
       p {
         opacity: 0.7;
       }
     }
-    @media @max-sm {
-      .card-block {
-        font-size: 1.3rem;
-        line-height: 1.6;
-        .card-title {
-          font-size: 1.6rem;
-        }
-      }
-    }
-  }
-  a&, label& {
-    &:hover, &.hover {
+    &:hover {
+      transform: translateY(-.5rem);
       .card-design {
-        box-shadow: @shadow-accent;
+        @apply border-accent-500 bg-accent-500;
+        box-shadow: 0 .2rem .4rem theme('colors.accent.300');
       }
     }
-    &:active, &.active {
+    &:active {
+      transform: none;
       .card-design {
         box-shadow: none;
       }
     }
-  }
-  a&, label& {
-    transition: all @time-small @ease-out;
-    .card-design {
-      transition: all @time-small @ease-out;
-    }
-    &:hover, &.hover {
-      transform: translateY(-.5rem);
-      transition: all @time-small @ease-in;
-      .card-design {
-        transition: all @time-small @ease-in;
-      }
-    }
-    &:active, &.active {
-      transform: none;
-      transition: all @time-small @ease-in;
-      .card-design {
-      transition: all @time-small @ease-in;
-      }
-    }*/
   }
 }

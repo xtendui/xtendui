@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="row row-default justify-content-flex-start">
+<div class="row row-space-4 justify-flex-start">
 ${indentString(markupRow(), 2)}
 </div>
 `

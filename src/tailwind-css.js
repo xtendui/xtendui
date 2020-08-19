@@ -26,6 +26,15 @@ module.exports = theme => ({
           marginBottom: theme('spacing.0'),
         },
       },
+      '.design-absolute': {
+        content: '',
+        position: 'absolute',
+        zIndex: '-1',
+        top: '0',
+        left: '0',
+        bottom: '0',
+        right: '0',
+      },
     },
     typography: {
       '.text-reset': {
@@ -40,13 +49,13 @@ module.exports = theme => ({
       '.text-default': {
         color: theme('colors.black'),
         'a:not([class]), .link': {
-          color: theme('colors.accent.500'),
+          color: theme('colors.accent.500') + ' !important',
         },
       },
       '.text-inverse': {
         color: theme('colors.white'),
         'a:not([class]), .link': {
-          color: theme('colors.white'),
+          color: theme('colors.white') + ' !important',
         },
       },
     },
@@ -132,6 +141,8 @@ module.exports = theme => ({
         '@screen xl': {
           fontSize: rem(17),
         },
+        touchAction: 'manipulation', // disable double-tap
+        '-webkit-tap-highlight-color': 'rgba(0, 0, 0, 0)', // disable tap highlight
       },
     },
     // typography
@@ -326,58 +337,6 @@ module.exports = theme => ({
           transitionTimingFunction: theme('transitionTimingFunction.in'),
         },
       },
-      // variant
-      /*
-      '.btn-default': {
-        borderColor: theme('colors.gray.300'),
-        backgroundColor: theme('colors.gray.300'),
-        color: theme('textColor.black'),
-        '&:hover': {
-          borderColor: theme('colors.gray.400'),
-          backgroundColor: theme('colors.gray.300'),
-        },
-        '&:active': {
-          borderColor: theme('colors.gray.400'),
-          backgroundColor: theme('colors.gray.400'),
-        },
-      },
-      '.btn-primary': {
-        borderColor: theme('colors.accent.500'),
-        backgroundColor: theme('colors.accent.500'),
-        color: theme('textColor.white'),
-        '&:hover': {
-          borderColor: theme('colors.accent.600'),
-          backgroundColor: theme('colors.accent.500'),
-        },
-        '&:active': {
-          borderColor: theme('colors.accent.600'),
-          backgroundColor: theme('colors.accent.600'),
-        },
-      },
-      */
-      // size
-      /*
-      '.btn-tiny': {
-        padding: '.5em 1em',
-        fontSize: '10px',
-      },
-      '.btn-small': {
-        padding: '.6em 1.2em',
-        fontSize: rem(11),
-      },
-      '.btn-medium': {
-        padding: '.6em 1.2em',
-        fontSize: rem(12),
-      },
-      '.btn-large': {
-        padding: '.6em 1.2em',
-        fontSize: rem(13),
-      },
-      '.btn-big': {
-        padding: '.6em 1.2em',
-        fontSize: rem(14),
-      },
-      */
     },
     // card
     card: {
@@ -392,22 +351,27 @@ module.exports = theme => ({
         '&:hover, &:active': {
           zIndex: theme('zIndex.active'),
         },
+        // styles
+        borderWidth: theme('borderWidth.default'),
+        borderColor: theme('borderColor.transparent'),
+        borderRadius: theme('borderRadius.md'),
         // animation
-        '.card-design': {
-          transitionProperty: theme('transitionProperty.all'),
-          transitionDuration: theme('transitionDuration.500'),
-          transitionTimingFunction: theme('transitionTimingFunction.out'),
-        },
+        transitionProperty: theme('transitionProperty.all'),
+        transitionDuration: theme('transitionDuration.500'),
+        transitionTimingFunction: theme('transitionTimingFunction.out'),
         '&:hover': {
-          '.card-design': {
-            transitionTimingFunction: theme('transitionTimingFunction.in'),
-          },
+          transitionTimingFunction: theme('transitionTimingFunction.in'),
         },
         '&:active': {
-          '.card-design': {
-            transitionTimingFunction: theme('transitionTimingFunction.in'),
-          },
+          transitionTimingFunction: theme('transitionTimingFunction.in'),
         },
+      },
+      '.card-design': {
+        // setup
+        '@apply: design-absolute': '',
+        transitionProperty: 'inherit',
+        transitionDuration: 'inherit',
+        transitionTimingFunction: 'inherit',
       },
       '.card-inner': {
         // setup
@@ -426,12 +390,14 @@ module.exports = theme => ({
         height: '100%',
       },
       '.card-block': {
-        padding: `${em(24, 12)}`,
+        // styles
+        padding: rem(24),
         fontSize: rem(14),
       },
       '.card-title': {
-        marginTop: theme('spacing.6'),
-        marginBottom: theme('spacing.4'),
+        // styles
+        marginTop: theme('spacing.4'),
+        marginBottom: theme('spacing.2'),
         '@apply mt-reset mb-reset': {},
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
@@ -440,76 +406,18 @@ module.exports = theme => ({
         textTransform: 'none',
         fontSize: rem(20),
       },
-      // variant
-      /*
-      '.card-default': {
-        '@apply text-default': {},
+      // full
+      '.card-full': {
+        '.card-block': {
+          padding: theme('spacing.0'),
+        },
         '.card-design': {
-          borderColor: theme('colors.gray.300'),
-          backgroundColor: theme('colors.gray.300'),
-        },
-        // interactive
-        'a&, label&': {
-          '&:hover': {
-            '.card-design': {
-              borderColor: theme('colors.gray.400'),
-              backgroundColor: theme('colors.gray.300'),
-            },
-          },
-          '&:active': {
-            '.card-design': {
-              borderColor: theme('colors.gray.400'),
-              backgroundColor: theme('colors.gray.400'),
-            },
-          },
+          top: `-${rem(18)}`,
+          left: `-${rem(18)}`,
+          bottom: `-${rem(18)}`,
+          right: `-${rem(18)}`,
         },
       },
-      '.card-primary': {
-        '@apply text-inverse': {},
-        '.card-design': {
-          borderColor: theme('colors.accent.500'),
-          backgroundColor: theme('colors.accent.500'),
-        },
-        // interactive
-        'a&, label&': {
-          '&:hover': {
-            '.card-design': {
-              borderColor: theme('colors.accent.600'),
-              backgroundColor: theme('colors.accent.500'),
-            },
-          },
-          '&:active': {
-            '.card-design': {
-              borderColor: theme('colors.accent.600'),
-              backgroundColor: theme('colors.accent.600'),
-            },
-          },
-        },
-      },
-      */
-      // size
-      /*
-      '.card-tiny': {
-        padding: '.5em 1em',
-        fontSize: '10px',
-      },
-      '.card-small': {
-        padding: '.6em 1.2em',
-        fontSize: rem(11),
-      },
-      '.card-medium': {
-        padding: '.6em 1.2em',
-        fontSize: rem(12),
-      },
-      '.card-large': {
-        padding: '.6em 1.2em',
-        fontSize: rem(13),
-      },
-      '.card-big': {
-        padding: '.6em 1.2em',
-        fontSize: rem(14),
-      },
-      */
     },
   },
 })

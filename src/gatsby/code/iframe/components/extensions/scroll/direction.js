@@ -13,7 +13,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="row row-default demo--scroll-direction">
+<div class="row row-space-4 demo--scroll-direction">
 
   <div class="col-12">
     <div class="card card-default">

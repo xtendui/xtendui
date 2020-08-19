@@ -13,7 +13,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="row row-default demo--scroll-block">
+<div class="row row-space-4 demo--scroll-block">
 
   <div class="col-12">
     <button type="button" class="btn btn-primary demo--scroll-block--btn">

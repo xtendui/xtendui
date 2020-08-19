@@ -109,8 +109,8 @@ Set children's vertical alignment inside the flexbox.
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
 | Css                   | `align-items: {value}`                        | `align-items: center`                   |
-| Class                   | `.align-items-{value}`                        | `.align-items-center`                   |
-| Class responsive        | `.align-items-{value}-{breakpoint}`           | `.align-items-center-sm`                |
+| Class                   | `.align-items-{value}`                        | `.items-center`                   |
+| Class responsive        | `.align-items-{value}-{breakpoint}`           | `.items-center-sm`                |
 | Mixin                   | `.align-items({value})`                        | `.align-items(center)`                   |
 | Mixin responsive min    | `.align-items({value}, {breakpoint})`          | `.align-items(center, sm)`               |
 

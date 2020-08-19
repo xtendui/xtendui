@@ -59,7 +59,8 @@ module.exports = plugin.withOptions(() => {
                   },
                 }
               })
-              addUtilities(css, ['responsive'])
+              const variants = ['responsive']
+              addUtilities(css, variants)
             } else if (component === 'row' && utility === 'space') {
               let css = {}
               Object.keys(options[utility]).forEach(name => {
@@ -87,12 +88,18 @@ module.exports = plugin.withOptions(() => {
                   },
                 }
               })
-              addUtilities(css, ['responsive'])
+              const variants = ['responsive']
+              addUtilities(css, variants)
             } else {
               let css = {}
               let value = options[utility]
               css[utility] = value
-              addUtilities(css, ['responsive'])
+              const variants = ['responsive']
+              const hoverUtils = ['.text-default', '.text-inverse']
+              if (hoverUtils.includes(utility)) {
+                variants.push('hover')
+              }
+              addUtilities(css, variants)
             }
           }
         }

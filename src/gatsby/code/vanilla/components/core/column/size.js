@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="row row-default">
+<div class="row row-space-4">
 
   <div class="col-4"></div>
   <div class="col-8"></div>

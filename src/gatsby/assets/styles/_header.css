@@ -3,8 +3,8 @@
 */
 
 .gatsby_site_article_sidebar {
+  @apply overflow-sub;
   @screen lg {
-    /*@apply overflow-sub; // WAITING FOR https://github.com/tailwindlabs/tailwindcss/issues/2192*/
     position: fixed;
     z-index: 2;
     top: 0;
@@ -78,7 +78,7 @@
   padding: 5px;
   border-radius: 0;
   font-size: 1.15rem;
-  @apply text-white hover:text-white active:text-white;
+  @apply text-white hover:text-white;
   line-height: 1;
   text-transform: uppercase;
   opacity: 0.8;

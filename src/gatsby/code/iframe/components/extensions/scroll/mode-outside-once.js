@@ -13,7 +13,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="row row-default demo--scroll-outside-once"
+<div class="row row-space-4 demo--scroll-outside-once"
   data-xt-scroll="{ elements: '.card' }">
 
   <div class="col-12">

@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-default list-space-small align-items-center justify-content-center demo--overlay-class-html">
+<div class="list list-default list-space-2 items-center justify-center demo--overlay-class-html">
   <div data-xt-overlay="{ classHtml: 'overlay-class-html-left' }">
     <button type="button" class="btn btn-primary">
       position left

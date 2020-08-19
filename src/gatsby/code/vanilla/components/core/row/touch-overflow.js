@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="row row-default row-touch-overflow">
+<div class="row row-space-4 row-touch-overflow">
 
   <div class="col-12 col-8-sm">
 

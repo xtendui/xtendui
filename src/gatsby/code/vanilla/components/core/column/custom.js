@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="row row-default">
+<div class="row row-space-4">
 
   <div class="demo--col-custom-percent"></div>
   <div class="demo--col-custom-px"></div>

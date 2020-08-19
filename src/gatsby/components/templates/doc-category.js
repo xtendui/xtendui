@@ -65,7 +65,7 @@ class Template extends React.Component {
                           </div>
                         ) : post.frontmatter.parent === post.frontmatter.title ? (
                           <div className="gatsby_listing_column" key={z}>
-                            <Link to={markdownSlug(post)} className="card card-small card-primary card-full card-collapse gatsby_listing_item">
+                            <Link to={markdownSlug(post)} className="card gatsby_listing_item">
                               <div className="card-design"></div>
                               <div className="card-inner">
                                 <div className="card-content">
