@@ -83,4 +83,10 @@ module.exports = {
     textOpacity: ['responsive', 'hover', 'focus', 'active'],
   },
   plugins: [require('./src/tailwind-plugin')],
+  experimental: {
+    //applyComplexClasses: true,
+    extendedSpacingScale: true,
+    defaultLineHeights: true,
+    removeDeprecatedGapUtilities: true,
+  },
 }

@@ -1,11 +1,11 @@
 // rema and em
 // https://github.com/tailwindlabs/tailwindcss-typography/blob/master/src/styles.js
-const round = (num) =>
+const round = num =>
   num
     .toFixed(7)
     .replace(/(\.[0-9]+?)0+$/, '$1')
     .replace(/\.0$/, '')
-const rem = (px) => `${round(px / 16)}rem`
+const rem = px => `${round(px / 16)}rem`
 const em = (px, base) => `${round(px / base)}em`
 
 module.exports = theme => ({
@@ -42,12 +42,54 @@ module.exports = theme => ({
     },
     list: {
       space: {
-        ...theme('spacing')
+        px: '1px',
+        '0': '0',
+        '0.5': '0.125rem',
+        '1': '0.25rem',
+        '1.5': '0.375rem',
+        '2': '0.5rem',
+        '2.5': '0.625rem',
+        '3': '0.75rem',
+        '3.5': '0.875rem',
+        '4': '1rem',
+        '5': '1.25rem',
+        '6': '1.5rem',
+        '7': '1.75rem',
+        '8': '2rem',
+        '9': '2.25rem',
+        '10': '2.5rem',
+        '11': '2.75rem',
+        '12': '3rem',
+        '13': '3.25rem',
+        '14': '3.5rem',
+        '15': '3.75rem',
+        '16': '4rem',
       },
     },
     row: {
       space: {
-        ...theme('spacing')
+        px: '1px',
+        '0': '0',
+        '0.5': '0.125rem',
+        '1': '0.25rem',
+        '1.5': '0.375rem',
+        '2': '0.5rem',
+        '2.5': '0.625rem',
+        '3': '0.75rem',
+        '3.5': '0.875rem',
+        '4': '1rem',
+        '5': '1.25rem',
+        '6': '1.5rem',
+        '7': '1.75rem',
+        '8': '2rem',
+        '9': '2.25rem',
+        '10': '2.5rem',
+        '11': '2.75rem',
+        '12': '3rem',
+        '13': '3.25rem',
+        '14': '3.5rem',
+        '15': '3.75rem',
+        '16': '4rem',
       },
     },
     toggle: {
@@ -68,7 +110,7 @@ module.exports = theme => ({
   components: {
     // structure
     structure: {
-      'html': {
+      html: {
         lineHeight: 1.8,
         fontSize: rem(14),
         '@screen sm': {
@@ -263,7 +305,7 @@ module.exports = theme => ({
           display: 'flex',
           alignItems: 'stretch',
           '> *': {
-            minHeight: '100%'
+            minHeight: '100%',
           },
         },
       },
@@ -272,7 +314,7 @@ module.exports = theme => ({
     btn: {
       button: {
         '&:focus': {
-          outline: 'none'
+          outline: 'none',
         },
       },
       '.btn': {
@@ -373,18 +415,18 @@ module.exports = theme => ({
           zIndex: theme('zIndex.active'),
         },
         // animation
-        '.card-design' : {
+        '.card-design': {
           transitionProperty: theme('transitionProperty.all'),
           transitionDuration: theme('transitionDuration.500'),
           transitionTimingFunction: theme('transitionTimingFunction.out'),
         },
         '&:hover': {
-          '.card-design' : {
+          '.card-design': {
             transitionTimingFunction: theme('transitionTimingFunction.in'),
           },
         },
         '&:active': {
-          '.card-design' : {
+          '.card-design': {
             transitionTimingFunction: theme('transitionTimingFunction.in'),
           },
         },
@@ -428,20 +470,20 @@ module.exports = theme => ({
       // variant
       '.card-default': {
         '@apply text-default': {},
-        '.card-design' : {
+        '.card-design': {
           borderColor: theme('colors.gray.300'),
           backgroundColor: theme('colors.gray.300'),
         },
         // interactive
         'a&, label&': {
           '&:hover': {
-            '.card-design' : {
+            '.card-design': {
               borderColor: theme('colors.gray.400'),
               backgroundColor: theme('colors.gray.300'),
             },
           },
           '&:active': {
-            '.card-design' : {
+            '.card-design': {
               borderColor: theme('colors.gray.400'),
               backgroundColor: theme('colors.gray.400'),
             },
@@ -450,20 +492,20 @@ module.exports = theme => ({
       },
       '.card-primary': {
         '@apply text-inverse': {},
-        '.card-design' : {
+        '.card-design': {
           borderColor: theme('colors.accent.500'),
           backgroundColor: theme('colors.accent.500'),
         },
         // interactive
         'a&, label&': {
           '&:hover': {
-            '.card-design' : {
+            '.card-design': {
               borderColor: theme('colors.accent.600'),
               backgroundColor: theme('colors.accent.500'),
             },
           },
           '&:active': {
-            '.card-design' : {
+            '.card-design': {
               borderColor: theme('colors.accent.600'),
               backgroundColor: theme('colors.accent.600'),
             },
@@ -492,5 +534,5 @@ module.exports = theme => ({
         fontSize: rem(14),
       },
     },
-  }
+  },
 })
