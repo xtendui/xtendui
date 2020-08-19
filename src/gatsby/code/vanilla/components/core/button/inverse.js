@@ -1,4 +1,6 @@
 import path from 'path'
+const btnDefault = require('components/snippets/classes/btn-default').default
+const btnPrimary = require('components/snippets/classes/btn-primary').default
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -15,11 +17,11 @@ demo.htmlSource = `
     btn
   </button>
 
-  <button type="button" class="btn btn-default">
+  <button type="button" class="btn ${btnDefault()}">
     default
   </button>
 
-  <button type="button" class="btn btn-primarygit a">
+  <button type="button" class="btn ${btnPrimary()}">
     primary
   </button>
 

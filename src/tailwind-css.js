@@ -16,6 +16,16 @@ module.exports = theme => ({
         width: 'auto',
         maxWidth: 'none',
       },
+      '.mt-reset': {
+        '&:first-child': {
+          marginTop: theme('spacing.0'),
+        },
+      },
+      '.mb-reset': {
+        '&:last-child': {
+          marginBottom: theme('spacing.0'),
+        },
+      },
     },
     typography: {
       '.text-reset': {
@@ -145,24 +155,13 @@ module.exports = theme => ({
         },
       },
       'p, .p': {
-        '@apply text-reset': {},
         marginBottom: theme('spacing.5'),
-        '&:first-child': {
-          marginTop: theme('spacing.0'),
-        },
-        '&:last-child': {
-          marginBottom: theme('spacing.0'),
-        },
+        '@apply text-reset mb-reset': {},
       },
       'h1, .h1': {
         marginTop: theme('spacing.8'),
         marginBottom: theme('spacing.6'),
-        '&:first-child': {
-          marginTop: 0,
-        },
-        '&:last-child': {
-          marginBottom: 0,
-        },
+        '@apply mt-reset mb-reset': {},
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
         lineHeight: theme('lineHeight.tight'),
@@ -176,12 +175,7 @@ module.exports = theme => ({
       'h2, .h2': {
         marginTop: theme('spacing.8'),
         marginBottom: theme('spacing.6'),
-        '&:first-child': {
-          marginTop: 0,
-        },
-        '&:last-child': {
-          marginBottom: 0,
-        },
+        '@apply mt-reset mb-reset': {},
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
         lineHeight: theme('lineHeight.tight'),
@@ -195,12 +189,7 @@ module.exports = theme => ({
       'h3, .h3': {
         marginTop: theme('spacing.8'),
         marginBottom: theme('spacing.6'),
-        '&:first-child': {
-          marginTop: 0,
-        },
-        '&:last-child': {
-          marginBottom: 0,
-        },
+        '@apply mt-reset mb-reset': {},
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
         lineHeight: theme('lineHeight.tight'),
@@ -214,12 +203,7 @@ module.exports = theme => ({
       'h4, .h4': {
         marginTop: theme('spacing.8'),
         marginBottom: theme('spacing.6'),
-        '&:first-child': {
-          marginTop: 0,
-        },
-        '&:last-child': {
-          marginBottom: 0,
-        },
+        '@apply mt-reset mb-reset': {},
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
         lineHeight: theme('lineHeight.tight'),
@@ -230,12 +214,7 @@ module.exports = theme => ({
       'h5, .h5': {
         marginTop: theme('spacing.8'),
         marginBottom: theme('spacing.6'),
-        '&:first-child': {
-          marginTop: 0,
-        },
-        '&:last-child': {
-          marginBottom: 0,
-        },
+        '@apply mt-reset mb-reset': {},
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
         lineHeight: theme('lineHeight.tight'),
@@ -246,12 +225,7 @@ module.exports = theme => ({
       'h6, .h6': {
         marginTop: theme('spacing.8'),
         marginBottom: theme('spacing.6'),
-        '&:first-child': {
-          marginTop: 0,
-        },
-        '&:last-child': {
-          marginBottom: 0,
-        },
+        '@apply mt-reset mb-reset': {},
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
         lineHeight: theme('lineHeight.tight'),
@@ -353,6 +327,7 @@ module.exports = theme => ({
         },
       },
       // variant
+      /*
       '.btn-default': {
         borderColor: theme('colors.gray.300'),
         backgroundColor: theme('colors.gray.300'),
@@ -379,7 +354,9 @@ module.exports = theme => ({
           backgroundColor: theme('colors.accent.600'),
         },
       },
+      */
       // size
+      /*
       '.btn-tiny': {
         padding: '.5em 1em',
         fontSize: '10px',
@@ -400,6 +377,7 @@ module.exports = theme => ({
         padding: '.6em 1.2em',
         fontSize: rem(14),
       },
+      */
     },
     // card
     card: {
@@ -454,12 +432,7 @@ module.exports = theme => ({
       '.card-title': {
         marginTop: theme('spacing.6'),
         marginBottom: theme('spacing.4'),
-        '&:first-child': {
-          marginTop: 0,
-        },
-        '&:last-child': {
-          marginBottom: 0,
-        },
+        '@apply mt-reset mb-reset': {},
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
         lineHeight: theme('lineHeight.tight'),
@@ -468,6 +441,7 @@ module.exports = theme => ({
         fontSize: rem(20),
       },
       // variant
+      /*
       '.card-default': {
         '@apply text-default': {},
         '.card-design': {
@@ -512,7 +486,9 @@ module.exports = theme => ({
           },
         },
       },
+      */
       // size
+      /*
       '.card-tiny': {
         padding: '.5em 1em',
         fontSize: '10px',
@@ -533,6 +509,7 @@ module.exports = theme => ({
         padding: '.6em 1.2em',
         fontSize: rem(14),
       },
+      */
     },
   },
 })

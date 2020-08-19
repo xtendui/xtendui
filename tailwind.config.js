@@ -81,10 +81,11 @@ module.exports = {
     backgroundColor: ['responsive', 'hover', 'focus', 'active'],
     borderColor: ['responsive', 'hover', 'focus', 'active'],
     textOpacity: ['responsive', 'hover', 'focus', 'active'],
+    textColor: ['responsive', 'hover', 'focus', 'active'],
   },
   plugins: [require('./src/tailwind-plugin')],
   experimental: {
-    //applyComplexClasses: true,
+    applyComplexClasses: true,
     extendedSpacingScale: true,
     defaultLineHeights: true,
     removeDeprecatedGapUtilities: true,

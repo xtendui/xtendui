@@ -130,10 +130,7 @@ body {
 }
 
 .gatsby_listing_column {
-  @apply w-2/4;
-  @screen md {
-    @apply w-2/6;
-  }
+  @apply w-2/4 md:w-2/6;
   .gatsby_site_article_foot_inner & {
     @screen md {
       &:nth-child(1) {
