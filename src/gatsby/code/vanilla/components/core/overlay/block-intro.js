@@ -21,11 +21,11 @@ demo.htmlSource = `
 
           <div class="card card-overlay">
             <div class="card-design"></div>
-            <div class="btn btn-close" aria-label="Close"></div>
+            <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-block-intro">
-                  <div class="card-title">Lorem ipsum</div>
+                  <div class="h4 card-title">Lorem ipsum</div>
                 </div>
                 <div class="card-block card-item">
                   <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
@@ -53,7 +53,7 @@ demo.htmlSource = `
 
           <div class="card card-overlay">
             <div class="card-design"></div>
-            <div class="btn btn-close" aria-label="Close"></div>
+            <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
@@ -63,7 +63,7 @@ demo.htmlSource = `
                   <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
                 </div>
                 <div class="card-block card-block-intro">
-                  <div class="card-title">Lorem ipsum</div>
+                  <div class="h4 card-title">Lorem ipsum</div>
                 </div>
               </div>
             </div>

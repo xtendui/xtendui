@@ -22,11 +22,11 @@ demo.htmlSource = `
 
             <div class="card card-overlay">
               <div class="card-design"></div>
-              <div class="btn btn-close" aria-label="Close"></div>
+              <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
               <div class="card-inner">
                 <div class="card-content">
                   <div class="card-block card-item">
-                    <div class="card-title">Lorem ipsum</div>
+                    <div class="h4 card-title">Lorem ipsum</div>
                     <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
                     <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat, ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
@@ -52,7 +52,7 @@ demo.htmlSource = `
 
           <div class="card card-overlay">
             <div class="card-design"></div>
-            <div class="btn btn-close" aria-label="Close"></div>
+            <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-asset">
@@ -78,7 +78,7 @@ demo.htmlSource = `
 
           <div class="card card-overlay">
             <div class="card-design"></div>
-            <div class="btn btn-close" aria-label="Close"></div>
+            <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
             <div class="card-inner">
               <div class="card-content">
 
@@ -94,7 +94,7 @@ demo.htmlSource = `
                   </div>
 
                   <div class="card-block card-item">
-                    <div class="card-title">Lorem ipsum</div>
+                    <div class="h4 card-title">Lorem ipsum</div>
                     <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
                   </div>

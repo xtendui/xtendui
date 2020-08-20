@@ -20,7 +20,7 @@ export default () => {
                       ${img({})}
                     </div>
                     <div class="card-block card-item listing-page_content">
-                      <div class="card-title">
+                      <div class="h4 card-title">
                         Lorem Ipsum
                       </div>
                       <address class="listing-page_address">
@@ -41,7 +41,7 @@ export default () => {
 
               <div class="card listing-page_back">
                 <div class="card-design"></div>
-                <div class="btn btn-close" aria-label="Close"></div>
+                <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
                 <div class="card-inner">
                   <div class="card-content">
                     <div class="card-block card-item listing-page_content">
@@ -85,7 +85,7 @@ export default () => {
                       ${imgAlt({})}
                     </div>
                     <div class="card-block card-item listing-page_content">
-                      <div class="card-title">
+                      <div class="h4 card-title">
                         Dolor sit amet
                       </div>
                       <address class="listing-page_address">
@@ -106,7 +106,7 @@ export default () => {
 
               <div class="card listing-page_back">
                 <div class="card-design"></div>
-                <div class="btn btn-close" aria-label="Close"></div>
+                <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
                 <div class="card-inner">
                   <div class="card-content">
                     <div class="card-block card-item listing-page_content">
@@ -150,7 +150,7 @@ export default () => {
                       ${img({})}
                     </div>
                     <div class="card-block card-item listing-page_content">
-                      <div class="card-title">
+                      <div class="h4 card-title">
                         Consectetur adipiscing elit. Proin molestie diam nec euismod commodo
                       </div>
                       <address class="listing-page_address">
@@ -171,7 +171,7 @@ export default () => {
 
               <div class="card listing-page_back">
                 <div class="card-design"></div>
-                <div class="btn btn-close" aria-label="Close"></div>
+                <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
                 <div class="card-inner">
                   <div class="card-content">
                     <div class="card-block card-item listing-page_content">
@@ -215,7 +215,7 @@ export default () => {
                       ${img({})}
                     </div>
                     <div class="card-block card-item listing-page_content">
-                      <div class="card-title">
+                      <div class="h4 card-title">
                         Lorem Ipsum
                       </div>
                       <address class="listing-page_address">
@@ -236,7 +236,7 @@ export default () => {
 
               <div class="card listing-page_back">
                 <div class="card-design"></div>
-                <div class="btn btn-close" aria-label="Close"></div>
+                <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
                 <div class="card-inner">
                   <div class="card-content">
                     <div class="card-block card-item listing-page_content">
@@ -280,7 +280,7 @@ export default () => {
                       ${imgAlt({})}
                     </div>
                     <div class="card-block card-item">
-                      <div class="card-title">
+                      <div class="h4 card-title">
                         Dolor sit amet
                       </div>
                       <address class="listing-page_address">
@@ -301,7 +301,7 @@ export default () => {
 
               <div class="card listing-page_back">
                 <div class="card-design"></div>
-                <div class="btn btn-close" aria-label="Close"></div>
+                <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
                 <div class="card-inner">
                   <div class="card-content">
                     <div class="card-block card-item">
@@ -345,7 +345,7 @@ export default () => {
                       ${img({})}
                     </div>
                     <div class="card-block card-item">
-                      <div class="card-title">
+                      <div class="h4 card-title">
                         Consectetur adipiscing elit. Proin molestie diam nec euismod commodo
                       </div>
                       <address class="listing-page_address">
@@ -366,7 +366,7 @@ export default () => {
 
               <div class="card listing-page_back">
                 <div class="card-design"></div>
-                <div class="btn btn-close" aria-label="Close"></div>
+                <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
                 <div class="card-inner">
                   <div class="card-content">
                     <div class="card-block card-item">

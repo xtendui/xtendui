@@ -81,7 +81,8 @@ module.exports = {
         base: '0',
         active: '2',
         out: '1',
-        top: '1000',
+        top: '50',
+        last: '1000',
       },
       transitionTimingFunction: {
         in: 'cubic-bezier(0.250, 0.460, 0.450, 0.940)',

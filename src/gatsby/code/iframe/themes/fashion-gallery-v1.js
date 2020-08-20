@@ -21,7 +21,7 @@ demo.htmlSource = `
       <div class="card-inner">
         <div class="card-content">
           <div class="card-block card-item">
-            <div class="card-title">Header</div>
+            <div class="h4 card-title">Header</div>
           </div>
         </div>
       </div>
@@ -120,7 +120,7 @@ demo.htmlSource = `
                         <div class="overlay-design"></div>
                         <div class="card card-overlay">
                           <div class="card-design"></div>
-                          <div class="btn btn-close" aria-label="Close"></div>
+                          <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
                           <div class="card-inner">
                             <div class="card-content">
                               <div class="card-asset">
@@ -223,7 +223,7 @@ demo.htmlSource = `
       <div class="card-inner">
         <div class="card-content">
           <div class="card-block card-item">
-            <div class="card-title">Footer</div>
+            <div class="h4 card-title">Footer</div>
           </div>
         </div>
       </div>

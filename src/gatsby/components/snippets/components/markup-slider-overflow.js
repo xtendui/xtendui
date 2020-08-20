@@ -11,7 +11,7 @@ export default () => {
           <div class="card-inner">
             <div class="card-content">
               <div class="card-block card-item">
-                <div class="card-title">1</div>
+                <div class="h4 card-title">1</div>
               </div>
             </div>
           </div>
@@ -28,7 +28,7 @@ export default () => {
           <div class="card-inner">
             <div class="card-content">
               <div class="card-block card-item">
-                <div class="card-title">2</div>
+                <div class="h4 card-title">2</div>
               </div>
             </div>
           </div>

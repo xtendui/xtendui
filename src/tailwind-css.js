@@ -16,12 +16,12 @@ module.exports = theme => ({
         width: 'auto',
         maxWidth: 'none',
       },
-      '.mt-reset': {
+      '.mt-fc': {
         '&:first-child': {
           marginTop: theme('spacing.0'),
         },
       },
-      '.mb-reset': {
+      '.mb-lc': {
         '&:last-child': {
           marginBottom: theme('spacing.0'),
         },
@@ -116,6 +116,21 @@ module.exports = theme => ({
         display: 'flex',
         alignItems: 'stretch',
       },
+      '.card-disable': {
+        '@apply text-default': '',
+        borderWidth: '0',
+        backgroundColor: 'transparent',
+        boxShadow: 'none',
+        '.card-design': {
+          display: 'none',
+        },
+        '.card-block': {
+          padding: '0',
+        },
+        '> .btn-close': {
+          display: 'none',
+        },
+      },
     },
     toggle: {
       '.toggle-block': {
@@ -169,7 +184,7 @@ module.exports = theme => ({
         },
         scrollbarWidth: 'thin',
         scrollbarColor: theme('colors.accent.700') + ' transparent',
-      }
+      },
     },
     // typography
     typography: {
@@ -207,12 +222,12 @@ module.exports = theme => ({
       },
       'p, .p': {
         marginBottom: theme('spacing.5'),
-        '@apply text-reset mb-reset': {},
+        '@apply text-reset mb-lc': {},
       },
       'h1, .h1': {
         marginTop: theme('spacing.8'),
         marginBottom: theme('spacing.6'),
-        '@apply mt-reset mb-reset': {},
+        '@apply mt-fc mb-lc': {},
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
         lineHeight: theme('lineHeight.tight'),
@@ -226,7 +241,7 @@ module.exports = theme => ({
       'h2, .h2': {
         marginTop: theme('spacing.8'),
         marginBottom: theme('spacing.6'),
-        '@apply mt-reset mb-reset': {},
+        '@apply mt-fc mb-lc': {},
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
         lineHeight: theme('lineHeight.tight'),
@@ -240,7 +255,7 @@ module.exports = theme => ({
       'h3, .h3': {
         marginTop: theme('spacing.8'),
         marginBottom: theme('spacing.6'),
-        '@apply mt-reset mb-reset': {},
+        '@apply mt-fc mb-lc': {},
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
         lineHeight: theme('lineHeight.tight'),
@@ -254,7 +269,7 @@ module.exports = theme => ({
       'h4, .h4': {
         marginTop: theme('spacing.8'),
         marginBottom: theme('spacing.6'),
-        '@apply mt-reset mb-reset': {},
+        '@apply mt-fc mb-lc': {},
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
         lineHeight: theme('lineHeight.tight'),
@@ -265,7 +280,7 @@ module.exports = theme => ({
       'h5, .h5': {
         marginTop: theme('spacing.8'),
         marginBottom: theme('spacing.6'),
-        '@apply mt-reset mb-reset': {},
+        '@apply mt-fc mb-lc': {},
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
         lineHeight: theme('lineHeight.tight'),
@@ -276,7 +291,7 @@ module.exports = theme => ({
       'h6, .h6': {
         marginTop: theme('spacing.8'),
         marginBottom: theme('spacing.6'),
-        '@apply mt-reset mb-reset': {},
+        '@apply mt-fc mb-lc': {},
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
         lineHeight: theme('lineHeight.tight'),
@@ -394,6 +409,17 @@ module.exports = theme => ({
           transitionTimingFunction: theme('transitionTimingFunction.in'),
         },
       },
+      '.btn-close': {
+        cursor: 'pointer',
+        position: 'absolute',
+        zIndex: theme('zIndex.top'),
+        top: '0',
+        right: '0',
+        padding: `${em(16, 12)} ${em(16, 12)}`,
+        '& + *': {
+          margin: '0 !important',
+        },
+      },
     },
     // card
     card: {
@@ -464,10 +490,9 @@ module.exports = theme => ({
       },
       '.card-title': {
         // styles
-        '@apply .h4': '',
         marginTop: theme('spacing.4'),
         marginBottom: theme('spacing.2'),
-        '@apply mt-reset mb-reset': {},
+        '@apply mt-fc mb-lc': {},
       },
       // full
       '.card-full': {

@@ -95,7 +95,7 @@ Xt.mount.push({
               <div class="card-inner">
                 <div class="card-content">
                   <div class="card-block card-item">
-                    <div class="card-title">${indexTr}</div>
+                    <div class="h4 card-title">${indexTr}</div>
                   </div>
                 </div>
               </div>

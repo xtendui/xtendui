@@ -105,7 +105,8 @@ Sequential `.card-block` stack vertically.
 
 ## Group
 
-To stack `.card-item` horizontally wrap them inside `.card-item-nested` and `.card-group`, with responsive classes if you need them.
+To stack `.card-item` horizontally wrap them inside `.card-item-nested` and `.card-group`.
+(responsive classes doc)
 
 <div class="table-scroll">
 
@@ -153,7 +154,7 @@ If you need to put an asset outside `.card-block`, just use `.card-item` and wra
   </demovanilla>
 </demo>
 
-The size of **blocks** is automatic, you can specify the **size** with [columns](/components/core/column), with responsive classes if you need them.
+The size of **blocks** is automatic, you can specify the **size** with [columns](/components/core/column) inside `card-group`.
 
 <demo>
   <demovanilla src="vanilla/components/core/card/block-side-size">
@@ -183,3 +184,26 @@ You can set vertical overflow using `.card-overflow-y` in `.card-inner` or `.car
   <demovanilla src="vanilla/components/core/card/overflow-y">
   </demovanilla>
 </demo>
+
+## Close button
+
+Usage of `.btn-close` inside card.
+
+<demo>
+  <demovanilla src="vanilla/components/core/card/close">
+  </demovanilla>
+</demo>
+
+## Disable
+
+You can disable card using `.card-disable`.
+(responsive classes doc)
+
+<demo>
+  <demovanilla src="vanilla/components/core/card/disable">
+  </demovanilla>
+</demo>
+
+## Stretch
+
+Same demo as [Row stretch](/components/core/row/other#stretch) HERE.
