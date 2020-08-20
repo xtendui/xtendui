@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="row row-space-4 items-center">
+<div class="row row-space-3 items-center">
 ${indentString(markupRow(), 2)}
 </div>
 `

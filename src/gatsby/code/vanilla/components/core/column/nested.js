@@ -8,10 +8,10 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="row row-space-4">
+<div class="row row-space-3">
 
   <div class="col-4">
-    <div class="row row-space-4">
+    <div class="row row-space-3">
       <div class="col-4"></div>
       <div class="col-8"></div>
       <div class="col-8"></div>
@@ -20,7 +20,7 @@ demo.htmlSource = `
   </div>
 
   <div class="col-8">
-    <div class="row row-space-4">
+    <div class="row row-space-3">
       <div class="w-full col-8-sm"></div>
       <div class="w-full sm:w-4/12"></div>
       <div class="col-auto"></div>

@@ -13,7 +13,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="row row-space-4 demo--scroll-once"
+<div class="row row-space-3 demo--scroll-once"
   data-xt-scroll="{ elements: '.card' }">
 
   <div class="w-full">

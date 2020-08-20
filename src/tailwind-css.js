@@ -464,15 +464,10 @@ module.exports = theme => ({
       },
       '.card-title': {
         // styles
+        '@apply .h4': '',
         marginTop: theme('spacing.4'),
         marginBottom: theme('spacing.2'),
         '@apply mt-reset mb-reset': {},
-        fontFamily: theme('fontFamily.sans').toString(),
-        fontWeight: theme('fontWeight.semibold'),
-        lineHeight: theme('lineHeight.tight'),
-        letterSpacing: theme('letterSpacing.normal'),
-        textTransform: 'none',
-        fontSize: rem(20),
       },
       // full
       '.card-full': {
@@ -482,10 +477,10 @@ module.exports = theme => ({
         },
         // styles
         '.card-design': {
-          top: `-${rem(18)}`,
-          left: `-${rem(18)}`,
-          bottom: `-${rem(18)}`,
-          right: `-${rem(18)}`,
+          top: `-${rem(24)}`,
+          left: `-${rem(24)}`,
+          bottom: `-${rem(24)}`,
+          right: `-${rem(24)}`,
         },
       },
     },

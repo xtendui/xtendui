@@ -22,7 +22,7 @@ demo.htmlSource = `
     text
   </button>
 
-  <div class="row row-space-4">
+  <div class="row row-space-3">
 
     <div class="w-full sm:w-6/12">
       <a role="button" class="card card-default">

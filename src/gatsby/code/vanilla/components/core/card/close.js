@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="row row-space-4">
+<div class="row row-space-3">
 
   <div class="w-full sm:w-6/12">
     <div class="card card-default">

@@ -17,11 +17,13 @@ html.gatsby_iframe-inside {
     height: initial;
     max-width: none;
   }
+  /*
   &:not(.gatsby_demo_item--full) {
     .gatsby_demo_source {
       @apply container-reset;
     }
   }
+  */
   &:not(.gatsby_iframe-container) {
     #gatsby_body-inner {
       @apply container-reset;
@@ -35,7 +37,7 @@ html.gatsby_iframe-inside {
 }
 
 .gatsby_demo_source {
-  @apply p-5;
+  @apply p-6;
   #gatbsy_open-full & {
     @apply p-0;
   }

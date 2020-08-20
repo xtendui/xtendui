@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="row row-space-4">
+<div class="row row-space-3">
 
   <div class="w-full sm:w-6/12">
     <a role="button" class="card card-full rounded-md text-default hover:text-opacity-75 demo--card-full-default">
