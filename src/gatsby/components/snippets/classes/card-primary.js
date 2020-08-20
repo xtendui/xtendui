@@ -1,3 +1,3 @@
 export default () => {
-  return `text-inverse border-accent-500 bg-accent-500`
+  return `text-inverse rounded-md border-accent-500 bg-accent-500`
 }

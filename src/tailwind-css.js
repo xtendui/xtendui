@@ -37,17 +37,8 @@ module.exports = theme => ({
       },
     },
     typography: {
-      '.text-reset': {
-        fontFamily: 'inherit',
-        fontStyle: 'inherit',
-        fontWeight: 'inherit',
-        fontSize: 'inherit',
-        lineHeight: 'inherit',
-        letterSpacing: 'inherit',
-        textTransform: 'inherit',
-      },
       '.text-default': {
-        color: theme('colors.black'),
+        color: theme('colors.accent.900'),
         'a:not([class]), .link': {
           color: theme('colors.accent.500') + ' !important',
         },
@@ -57,6 +48,15 @@ module.exports = theme => ({
         'a:not([class]), .link': {
           color: theme('colors.white') + ' !important',
         },
+      },
+      '.text-reset': {
+        fontFamily: 'inherit',
+        fontStyle: 'inherit',
+        fontWeight: 'inherit',
+        fontSize: 'inherit',
+        lineHeight: 'inherit',
+        letterSpacing: 'inherit',
+        textTransform: 'inherit',
       },
     },
     list: {
@@ -111,6 +111,12 @@ module.exports = theme => ({
         '16': '4rem',
       },
     },
+    card: {
+      '.card-group': {
+        display: 'flex',
+        alignItems: 'stretch',
+      },
+    },
     toggle: {
       '.toggle-block': {
         display: 'none',
@@ -130,6 +136,14 @@ module.exports = theme => ({
     // structure
     structure: {
       html: {
+        touchAction: 'manipulation', // disable double-tap
+        '-webkit-tap-highlight-color': 'rgba(0, 0, 0, 0)', // disable tap highlight
+      },
+    },
+    // typography
+    typography: {
+      html: {
+        '@apply text-default': '',
         lineHeight: 1.8,
         fontSize: rem(14),
         '@screen sm': {
@@ -141,12 +155,7 @@ module.exports = theme => ({
         '@screen xl': {
           fontSize: rem(17),
         },
-        touchAction: 'manipulation', // disable double-tap
-        '-webkit-tap-highlight-color': 'rgba(0, 0, 0, 0)', // disable tap highlight
       },
-    },
-    // typography
-    typography: {
       'a:not([class]), .link': {
         '@apply text-reset !important': {},
         wordWrap: 'break-word',
@@ -320,7 +329,6 @@ module.exports = theme => ({
         fontSize: rem(12),
         borderWidth: theme('borderWidth.default'),
         borderColor: theme('borderColor.transparent'),
-        borderRadius: theme('borderRadius.md'),
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
         lineHeight: theme('lineHeight.tight'),
@@ -342,9 +350,9 @@ module.exports = theme => ({
     card: {
       '.card': {
         // setup
-        '@apply: flex-auto': '',
         position: 'relative',
         display: 'flex',
+        flexDirection: 'column',
         alignItems: 'flex-start',
         width: '100%',
         zIndex: theme('zIndex.base'),
@@ -354,7 +362,6 @@ module.exports = theme => ({
         // styles
         borderWidth: theme('borderWidth.default'),
         borderColor: theme('borderColor.transparent'),
-        borderRadius: theme('borderRadius.md'),
         // animation
         transitionProperty: theme('transitionProperty.all'),
         transitionDuration: theme('transitionDuration.500'),
@@ -368,7 +375,8 @@ module.exports = theme => ({
       },
       '.card-design': {
         // setup
-        '@apply: design-absolute': '',
+        '@apply design-absolute': '',
+        borderRadius: 'inherit',
         transitionProperty: 'inherit',
         transitionDuration: 'inherit',
         transitionTimingFunction: 'inherit',
@@ -382,14 +390,25 @@ module.exports = theme => ({
       },
       '.card-content': {
         // setup
-        '@apply: flex-auto': '',
         position: 'relative',
         display: 'flex',
         flexDirection: 'column',
         width: '100%',
         height: '100%',
       },
+      '.card-asset': {
+        // setup
+        position: 'relative',
+        width: '100%',
+        '> *': {
+          width: '100%',
+          height: 'auto',
+        },
+      },
       '.card-block': {
+        // setup
+        position: 'relative',
+        width: '100%',
         // styles
         padding: rem(24),
         fontSize: rem(14),
@@ -408,9 +427,11 @@ module.exports = theme => ({
       },
       // full
       '.card-full': {
+        // setup
         '.card-block': {
           padding: theme('spacing.0'),
         },
+        // styles
         '.card-design': {
           top: `-${rem(18)}`,
           left: `-${rem(18)}`,

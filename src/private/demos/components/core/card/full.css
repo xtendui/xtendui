@@ -1,0 +1,21 @@
+.demo--card-full-default {
+  .card-design {
+    @apply border-transparent bg-transparent;
+  }
+  &:hover {
+    .card-design {
+      @apply border-gray-300 bg-gray-300;
+    }
+  }
+}
+
+.demo--card-full-primary {
+  .card-design {
+    @apply border-transparent bg-transparent;
+  }
+  &:hover {
+    .card-design {
+      @apply border-accent-500 bg-accent-500;
+    }
+  }
+}

@@ -52,9 +52,9 @@
 .gatsby_make-anchor {
   position: relative;
   width: 100%;
-  a {
+  a:not([class]) {
     display: block;
-    @apply text-black !important;
+    @apply text-default !important;
   }
   .gatsby_site_article_anchor {
     pointer-events: none;

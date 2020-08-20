@@ -60,13 +60,13 @@ code {
 
 .note-default {
   code {
-    @apply bg-gray-500 bg-opacity-25 text-black;
+    @apply bg-gray-500 bg-opacity-25 text-default;
   }
 }
 
 .note-primary {
   code {
-    @apply bg-white bg-opacity-25 text-white;
+    @apply bg-white bg-opacity-25 text-inverse;
   }
 }
 
@@ -165,7 +165,7 @@ pre {
     border-width: 3px;
     padding: .5em .75em;
     font-size: 10px;
-    @apply text-black text-opacity-50;
+    @apply text-default text-opacity-50;
     &:hover, &:active, &.active {
       @apply border-gray-200 bg-white text-opacity-100;
     }

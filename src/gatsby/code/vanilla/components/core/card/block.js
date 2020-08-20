@@ -1,4 +1,5 @@
 import path from 'path'
+const cardDefault = require('components/snippets/classes/card-default').default
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -11,18 +12,15 @@ demo.htmlSource = `
 <div class="row row-space-4">
 
   <div class="col-12">
-    <div class="card card-default">
-      <div class="card-design"></div>
-      <div class="card-inner">
-        <div class="card-content">
-          <div class="card-block card-item">
-            <div class="card-title">Lorem ipsum</div>
-            <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-          </div>
-          <div class="card-block card-item">
-            <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-          </div>
-        </div>
+    <div class="card ${cardDefault()}">
+      <div class="card-block rounded-t-md bg-gray-500">
+        <div class="card-title">Lorem ipsum</div>
+      </div>
+      <div class="card-block">
+        <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+      </div>
+      <div class="card-block pt-0">
+        <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>
     </div>
   </div>

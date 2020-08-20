@@ -24,7 +24,7 @@
 }
 
 .gatsby_site_article_sidebar_inner {
-  @apply text-white;
+  @apply text-inverse;
   background: linear-gradient(-90deg, theme('gradients.accent'));
 }
 
@@ -50,7 +50,7 @@
 }
 
 .gatsby_site_header {
-  @apply text-white;
+  @apply text-inverse;
   padding-top: 2rem;
   padding-bottom: 1.25rem;
   padding-left: 1.5rem;
@@ -78,7 +78,7 @@
   padding: 5px;
   border-radius: 0;
   font-size: 1.15rem;
-  @apply text-white hover:text-white;
+  @apply text-inverse hover:text-inverse;
   line-height: 1;
   text-transform: uppercase;
   opacity: 0.8;
@@ -135,7 +135,7 @@
 .gatsby_cat--site_article_sidebar {
   margin-top: 1rem !important;
   margin-bottom: 0.5rem !important;
-  @apply text-white;
+  @apply text-inverse;
   .gatsby_site_header_listing > *:first-child & {
     margin-top: 0 !important;
   }

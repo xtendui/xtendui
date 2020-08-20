@@ -142,17 +142,16 @@ body {
 
 .gatsby_listing_item {
   &.card {
-    @apply card-full text-default hover:text-inverse hover:text-opacity-75;
+    @apply card-full text-default rounded-md hover:text-inverse hover:text-opacity-75;
     .card-design {
       @apply border-transparent bg-transparent;
     }
     .card-block {
       .card-title {
-        font-size: 1rem;
+        font-size: 1.1rem;
       }
-      font-size: 0.8rem;
-      line-height: 1.6;
       p {
+        @apply text-sm;
         opacity: 0.7;
       }
     }
