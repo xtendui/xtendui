@@ -154,8 +154,8 @@ const test = 'test'
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.col-{number}`                           | `.col-6`                      |
-| Class responsive        | `.col-{number}-{breakpoint}`              | `.col-6-sm`                   |
+| Class                   | `.col-{number}`                           | `.w-6/12`                      |
+| Class responsive        | `.col-{number}-{breakpoint}`              | `.sm:w-6/12`                   |
 | Mixin                   | `.col({number})`                          | `.col(6)`                     |
 | Mixin responsive min    | `.col({number}, {breakpoint})`            | `.col(6, sm)`                 |
 

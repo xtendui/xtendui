@@ -27,7 +27,7 @@ demo.htmlSource = `
         <div class="listing_col">
           <a href="#" class="listing_item">
             <div class="listing_img">
-              ${img({ classes: 'media-cover' })}
+              ${img({ classes: 'object-cover object-center' })}
             </div>
             <div class="listing_content">
               <div class="listing_title">
@@ -43,7 +43,7 @@ demo.htmlSource = `
         <div class="listing_col">
           <a href="#" class="listing_item">
             <div class="listing_img">
-              ${imgAlt({ classes: 'media-cover' })}
+              ${imgAlt({ classes: 'object-cover object-center' })}
             </div>
             <div class="listing_content">
               <div class="listing_title">
@@ -59,7 +59,7 @@ demo.htmlSource = `
         <div class="listing_col">
           <a href="#" class="listing_item">
             <div class="listing_img">
-              ${img({ classes: 'media-cover' })}
+              ${img({ classes: 'object-cover object-center' })}
             </div>
             <div class="listing_content">
               <div class="listing_title">
@@ -75,7 +75,7 @@ demo.htmlSource = `
         <div class="listing_col">
           <a href="#" class="listing_item">
             <div class="listing_img">
-              ${imgAlt({ classes: 'media-cover' })}
+              ${imgAlt({ classes: 'object-cover object-center' })}
             </div>
             <div class="listing_content">
               <div class="listing_title">
@@ -91,7 +91,7 @@ demo.htmlSource = `
         <div class="listing_col">
           <a href="#" class="listing_item">
             <div class="listing_img">
-              ${img({ classes: 'media-cover' })}
+              ${img({ classes: 'object-cover object-center' })}
             </div>
             <div class="listing_content">
               <div class="listing_title">
@@ -107,7 +107,7 @@ demo.htmlSource = `
         <div class="listing_col">
             <a href="#" class="listing_item">
               <div class="listing_img">
-                ${imgAlt({ classes: 'media-cover' })}
+                ${imgAlt({ classes: 'object-cover object-center' })}
               </div>
               <div class="listing_content">
                 <div class="listing_title">

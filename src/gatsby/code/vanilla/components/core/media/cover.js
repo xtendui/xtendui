@@ -9,5 +9,5 @@ export const demo = {
 }
 
 demo.htmlSource = `
-${img({ classes: 'media-cover', ratio: '37.5%' })}
+${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
 `

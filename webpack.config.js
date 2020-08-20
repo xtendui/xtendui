@@ -2,7 +2,7 @@ const path = require('path')
 const TerserJSPlugin = require('terser-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-require('./build/less.js')
+require('./build/css.js')
 require('./build/js.js')
 
 module.exports = {

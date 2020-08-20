@@ -11,7 +11,7 @@ description: "Responsive columns classes/mixins, also support custom size."
 Use this markup to create a **column**.
 
 <script type="text/plain" class="language-markup">
-  <div class="col-12 col-6-sm col-4-md">
+  <div class="w-full sm:w-6/12 col-4-md">
     <!-- content -->
   </div>
 </script>

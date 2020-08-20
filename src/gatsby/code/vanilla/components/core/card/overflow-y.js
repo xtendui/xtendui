@@ -12,10 +12,10 @@ export const demo = {
 demo.htmlSource = `
 <div class="row row-space-4">
 
-  <div class="col-12 col-6-sm">
+  <div class="w-full sm:w-6/12">
     <div class="card ${cardDefault()} overflow-y-auto overflow-x-hidden overflow-sub max-h-64">
       <div class="card-asset rounded-t-md">
-        ${img({ classes: 'media-cover', ratio: '37.5%' })}
+        ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
       </div>
       <div class="card-block">
         <div class="card-title">Lorem ipsum</div>
@@ -26,10 +26,10 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="col-12 col-6-sm">
+  <div class="w-full sm:w-6/12">
     <div class="card ${cardDefault()}">
       <div class="card-asset rounded-t-md">
-        ${img({ classes: 'media-cover', ratio: '37.5%' })}
+        ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
       </div>
       <div class="card-block overflow-y-auto overflow-x-hidden overflow-sub max-h-64">
         <div class="card-title">Lorem ipsum</div>

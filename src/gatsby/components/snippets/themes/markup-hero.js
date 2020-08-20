@@ -12,7 +12,7 @@ export default () => {
         <div class="hero hero--center hero--big">
           <div class="hero_inner">
             <div class="hero_asset">
-              ${img({ classes: 'media-cover', loading: 'eager' })}
+              ${img({ classes: 'object-cover object-center', loading: 'eager' })}
             </div>
             <div class="hero_content_outer">
               <a href="#" class="hero_content_inner">
@@ -35,7 +35,7 @@ export default () => {
         <div class="hero hero--center">
           <div class="hero_inner">
             <div class="hero_asset">
-              ${imgAlt({ classes: 'media-cover', loading: 'eager' })}
+              ${imgAlt({ classes: 'object-cover object-center', loading: 'eager' })}
             </div>
             <div class="hero_content_outer">
               <div class="hero_content">
@@ -67,7 +67,7 @@ export default () => {
         <div class="hero">
           <div class="hero_inner">
             <div class="hero_asset">
-              ${img({ classes: 'media-cover', loading: 'eager' })}
+              ${img({ classes: 'object-cover object-center', loading: 'eager' })}
             </div>
             <div class="hero_content_outer">
               <div class="hero_content">
@@ -92,7 +92,7 @@ export default () => {
         <div class="hero">
           <div class="hero_inner">
             <div class="hero_asset">
-              ${imgAlt({ classes: 'media-cover', loading: 'eager' })}
+              ${imgAlt({ classes: 'object-cover object-center', loading: 'eager' })}
             </div>
             <div class="hero_content_outer">
               <div class="hero_content">
@@ -128,7 +128,7 @@ export default () => {
         <div class="hero hero--middle hero--left">
           <div class="hero_inner">
             <div class="hero_asset">
-              ${img({ classes: 'media-cover', loading: 'eager' })}
+              ${img({ classes: 'object-cover object-center', loading: 'eager' })}
             </div>
             <div class="hero_content_outer">
               <div class="hero_content">
@@ -164,7 +164,7 @@ export default () => {
         <div class="hero hero--middle hero--right">
           <div class="hero_inner">
             <div class="hero_asset">
-              ${imgAlt({ classes: 'media-cover', loading: 'eager' })}
+              ${imgAlt({ classes: 'object-cover object-center', loading: 'eager' })}
             </div>
             <div class="hero_content_outer">
               <div class="hero_content">

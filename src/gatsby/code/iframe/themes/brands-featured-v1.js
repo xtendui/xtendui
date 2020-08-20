@@ -152,22 +152,22 @@ demo.htmlSource = `
         <div class="slide-inner">
           <div class="brand">
             <a href="#test-link-1" class="brand_content">
-              ${img({ classes: 'media-cover', ratio: '37.5%', loading: 'eager' })}
+              ${img({ classes: 'object-cover object-center', ratio: '37.5%', loading: 'eager' })}
             </a>
             <a href="#test-link-2" class="brand_content">
-              ${img({ classes: 'media-cover', ratio: '37.5%', loading: 'eager' })}
+              ${img({ classes: 'object-cover object-center', ratio: '37.5%', loading: 'eager' })}
             </a>
             <a href="#test-link-3" class="brand_content">
-              ${img({ classes: 'media-cover', ratio: '37.5%', loading: 'eager' })}
+              ${img({ classes: 'object-cover object-center', ratio: '37.5%', loading: 'eager' })}
             </a>
             <a href="#test-link-4" class="brand_content">
-              ${img({ classes: 'media-cover', ratio: '37.5%', loading: 'eager' })}
+              ${img({ classes: 'object-cover object-center', ratio: '37.5%', loading: 'eager' })}
             </a>
             <a href="#test-link-5" class="brand_content">
-              ${img({ classes: 'media-cover', ratio: '37.5%', loading: 'eager' })}
+              ${img({ classes: 'object-cover object-center', ratio: '37.5%', loading: 'eager' })}
             </a>
             <a href="#test-link-6" class="brand_content">
-              ${imgAlt({ classes: 'media-cover', ratio: '37.5%', loading: 'eager' })}
+              ${imgAlt({ classes: 'object-cover object-center', ratio: '37.5%', loading: 'eager' })}
             </a>
           </div>
         </div>

@@ -3,7 +3,7 @@ export default () => {
 <div class="slides">
   <nav class="slides-inner">
 
-    <div class="slide col-6 col-4-sm">
+    <div class="slide w-6/12 sm:w-4/12">
       <div class="slide-inner">
 
         <div class="card card-slide">
@@ -25,7 +25,7 @@ export default () => {
       </div>
     </div>
 
-    <div class="slide col-6 col-4-sm">
+    <div class="slide w-6/12 sm:w-4/12">
       <div class="slide-inner">
 
         <div class="card card-slide">
@@ -47,7 +47,7 @@ export default () => {
       </div>
     </div>
 
-    <div class="slide col-6 col-4-sm">
+    <div class="slide w-6/12 sm:w-4/12">
       <div class="slide-inner">
 
         <div class="card card-slide">
@@ -69,7 +69,7 @@ export default () => {
       </div>
     </div>
 
-    <div class="slide col-7 col-5-sm">
+    <div class="slide w-7/12 sm:w-5/12">
       <div class="slide-inner">
 
         <div class="card card-slide">
@@ -91,7 +91,7 @@ export default () => {
       </div>
     </div>
 
-    <div class="slide col-7 col-5-sm">
+    <div class="slide w-7/12 sm:w-5/12">
       <div class="slide-inner">
 
         <div class="card card-slide">

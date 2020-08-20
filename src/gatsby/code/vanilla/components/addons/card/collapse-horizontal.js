@@ -14,7 +14,7 @@ demo.htmlSource = `
   <div class="card-inner">
     <div class="card-content">
       <div class="card-asset">
-        ${img({ classes: 'media-cover', ratio: '37.5%' })}
+        ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
       </div>
       <div class="card-block card-item">
         <div class="card-title">Lorem ipsum</div>
@@ -26,7 +26,7 @@ demo.htmlSource = `
       </div>
     </div>
     <div class="card-asset">
-      ${img({ classes: 'media-cover', ratio: '15%' })}
+      ${img({ classes: 'object-cover object-center', ratio: '15%' })}
     </div>
   </div>
 </div>

@@ -19,7 +19,7 @@ demo.htmlSource = `
     <h1>Parallax Title</h1>
   </div>
   <div class="demo--parallax-img">
-     ${img({ classes: 'media-cover', ratio: '15%' })}
+     ${img({ classes: 'object-cover object-center', ratio: '15%' })}
   </div>
 </div>
 

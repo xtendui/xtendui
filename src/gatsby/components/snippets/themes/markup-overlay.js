@@ -19,7 +19,7 @@ export default () => {
               <div class="card-inner">
                 <div class="card-content">
                   <div class="card-asset">
-                    ${img({ classes: 'media-cover', ratio: '100%' })}
+                    ${img({ classes: 'object-cover object-center', ratio: '100%' })}
                   </div>
                 </div>
               </div>
@@ -59,7 +59,7 @@ export default () => {
                   </div>
                 </div>
                 <div class="card-asset">
-                  ${img({ classes: 'media-cover', ratio: '37.5%' })}
+                  ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
                 </div>
                 <div class="card-block card-item">
                   <div class="card-title">Lorem ipsum</div>
@@ -184,7 +184,7 @@ export default () => {
 
                   </div>
 
-                  <div class="card-item card-block-side col-5-sm"
+                  <div class="card-item card-block-side sm:w-5/12"
                     style="display: flex; flex-direction: column">
                     <div class="card-block card-item">
                       <p class="h5">
@@ -196,7 +196,7 @@ export default () => {
                     </div>
                     <div class="card-asset"
                       style="margin-top: auto">
-                      ${img({ classes: 'media-cover', ratio: '100%', loading: 'eager' })}
+                      ${img({ classes: 'object-cover object-center', ratio: '100%', loading: 'eager' })}
                     </div>
                   </div>
 
@@ -229,9 +229,9 @@ export default () => {
 
                 <div class="card-item-nested card-item card-group-sm">
 
-                  <div class="card-item col-5-sm">
+                  <div class="card-item sm:w-5/12">
                     <div class="card-asset full-y">
-                      ${img({ classes: 'media-cover', ratio: '37.5%', loading: 'eager' })}
+                      ${img({ classes: 'object-cover object-center', ratio: '37.5%', loading: 'eager' })}
                     </div>
                   </div>
 

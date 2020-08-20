@@ -10,7 +10,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="row row-space-4">
 
-  <div class="col-12 col-6-sm">
+  <div class="w-full sm:w-6/12">
     <a role="button" class="card card-full rounded-md text-default hover:text-opacity-75 demo--card-full-default">
       <div class="card-design"></div>
       <div class="card-inner">
@@ -24,7 +24,7 @@ demo.htmlSource = `
     </a>
   </div>
 
-  <div class="col-12 col-6-sm">
+  <div class="w-full sm:w-6/12">
     <a role="button" class="card card-full rounded-md text-default hover:text-inverse hover:text-opacity-75 demo--card-full-primary">
       <div class="card-design"></div>
       <div class="card-inner">

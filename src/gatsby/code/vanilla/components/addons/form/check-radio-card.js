@@ -12,13 +12,13 @@ demo.htmlSource = `
 <div class="demo--checkradio-card">
   <div class="row row-space-4">
 
-    <div class="col-12 col-6-sm">
+    <div class="w-full sm:w-6/12">
       <input type="checkbox" id="check-card-0">
       <label for="check-card-0" class="card card-primary align-center">
         <div class="card-design"></div>
         <div class="card-inner">
           <div class="card-asset">
-            ${img({ classes: 'media-cover', ratio: '37.5%' })}
+            ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
           </div>
           <div class="card-content">
             <div class="card-block card-item">
@@ -31,13 +31,13 @@ demo.htmlSource = `
       </label>
     </div>
 
-    <div class="col-12 col-6-sm">
+    <div class="w-full sm:w-6/12">
       <input type="checkbox" id="check-card-1">
       <label for="check-card-1" class="card card-primary align-center">
         <div class="card-design"></div>
         <div class="card-inner">
           <div class="card-asset">
-            ${img({ classes: 'media-cover', ratio: '37.5%' })}
+            ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
           </div>
           <div class="card-content">
             <div class="card-block card-item">
@@ -50,13 +50,13 @@ demo.htmlSource = `
       </label>
     </div>
 
-    <div class="col-12 col-6-sm">
+    <div class="w-full sm:w-6/12">
       <input type="radio" id="radio-card-0" name="radio-card">
       <label for="radio-card-0" class="card card-primary align-center">
         <div class="card-design"></div>
         <div class="card-inner">
           <div class="card-asset">
-            ${img({ classes: 'media-cover', ratio: '37.5%' })}
+            ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
           </div>
           <div class="card-content">
             <div class="card-block card-item">
@@ -69,13 +69,13 @@ demo.htmlSource = `
       </label>
     </div>
 
-    <div class="col-12 col-6-sm">
+    <div class="w-full sm:w-6/12">
       <input type="radio" id="radio-card-1" name="radio-card">
       <label for="radio-card-1" class="card card-primary align-center">
         <div class="card-design"></div>
         <div class="card-inner">
           <div class="card-asset">
-            ${img({ classes: 'media-cover', ratio: '37.5%' })}
+            ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
           </div>
           <div class="card-content">
             <div class="card-block card-item">

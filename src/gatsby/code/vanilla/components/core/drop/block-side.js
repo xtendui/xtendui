@@ -64,7 +64,7 @@ demo.htmlSource = `
                   </div>
                   <div class="card-item card-block-side">
                     <div class="card-asset">
-                      ${img({ classes: 'media-cover', ratio: '100%' })}
+                      ${img({ classes: 'object-cover object-center', ratio: '100%' })}
                     </div>
                     <div class="card-block card-item">
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>

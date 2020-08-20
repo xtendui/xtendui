@@ -11,7 +11,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="row row-space-4">
 
-  <div class="col-12">
+  <div class="w-full">
     <div class="card ${cardDefault()}">
       <div class="card-block rounded-t-md bg-gray-500">
         <div class="card-title">Lorem ipsum</div>

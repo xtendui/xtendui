@@ -30,7 +30,7 @@ demo.htmlSource = `
                     <div class="card-title">Lorem ipsum</div>
                     <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
                   </div>
-                  <div class="card-block card-item card-block-side col-5-sm">
+                  <div class="card-block card-item card-block-side sm:w-5/12">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
                   </div>
                 </div>
@@ -62,9 +62,9 @@ demo.htmlSource = `
                     <div class="card-title">Lorem ipsum</div>
                     <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
                   </div>
-                  <div class="card-item card-block-side col-5-sm">
+                  <div class="card-item card-block-side sm:w-5/12">
                     <div class="card-asset">
-                      ${img({ classes: 'media-cover', ratio: '100%' })}
+                      ${img({ classes: 'object-cover object-center', ratio: '100%' })}
                     </div>
                     <div class="card-block card-item">
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>

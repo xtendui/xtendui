@@ -33,7 +33,7 @@ demo.htmlSource = `
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat, ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
                     <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
                   </div>
-                  <div class="card-block card-item card-block-side col-5-sm">
+                  <div class="card-block card-item card-block-side sm:w-5/12">
                     <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
                     <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
                   </div>
@@ -69,9 +69,9 @@ demo.htmlSource = `
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat, ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
                     <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
                   </div>
-                  <div class="card-item card-block-side col-5-sm">
+                  <div class="card-item card-block-side sm:w-5/12">
                     <div class="card-asset">
-                      ${img({ classes: 'media-cover', ratio: '100%' })}
+                      ${img({ classes: 'object-cover object-center', ratio: '100%' })}
                     </div>
                     <div class="card-block card-item">
                       <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>

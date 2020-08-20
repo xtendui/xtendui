@@ -304,6 +304,24 @@ module.exports = theme => ({
         },
       },
     },
+    // badge
+    badge: {
+      '.badge': {
+        // setup
+        display: 'inline-block',
+        verticalAlign: 'middle',
+        // styles
+        padding: `${em(4, 10)} ${em(8, 10)}`,
+        fontSize: rem(10),
+        borderWidth: theme('borderWidth.default'),
+        borderColor: theme('borderColor.transparent'),
+        fontFamily: theme('fontFamily.sans').toString(),
+        fontWeight: theme('fontWeight.semibold'),
+        lineHeight: theme('lineHeight.tight'),
+        letterSpacing: theme('letterSpacing.wider'),
+        textTransform: 'uppercase',
+      },
+    },
     // btn
     btn: {
       button: {
@@ -438,6 +456,41 @@ module.exports = theme => ({
           bottom: `-${rem(18)}`,
           right: `-${rem(18)}`,
         },
+      },
+    },
+    // media
+    media: {
+      '.media-container': {
+        // setup
+        display: 'block',
+        position: 'relative',
+        overflow: 'hidden',
+        width: '100%',
+        minHeight: '100%',
+        borderRadius: 'inherit',
+      },
+      '.media-inner': {
+        // setup
+        position: 'absolute',
+        top: '0',
+        left: '0',
+        bottom: '0',
+        right: '0',
+      },
+      '.media': {
+        // setup
+        width: '100%',
+        height: '100%',
+      },
+      '.media-container-responsive': {
+        // responsive
+        '.media-inner': {
+          position: 'relative',
+        },
+      },
+      '.media-container-16-9': {
+        // aspect ratio
+        paddingBottom: '56.2%',
       },
     },
   },

@@ -10,7 +10,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="row row-space-4">
 
-  <div class="col-12 col-6-sm">
+  <div class="w-full sm:w-6/12">
     <div class="card card-default demo--card-disable">
       <div class="card-design"></div>
       <div class="card-inner">
@@ -24,7 +24,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="col-12 col-6-sm">
+  <div class="w-full sm:w-6/12">
     <div class="card card-primary demo--card-disable">
       <div class="card-design"></div>
       <div class="card-inner">

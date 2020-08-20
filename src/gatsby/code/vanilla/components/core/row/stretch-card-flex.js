@@ -11,14 +11,14 @@ export const demo = {
 demo.htmlSource = `
 <div class="row row-space-4 row-stretch">
 
-  <div class="col-12 col-6-sm">
+  <div class="w-full sm:w-6/12">
     <div class="card card-default">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content"
           style="justify-content: space-between;">
           <div class="card-asset">
-            ${img({ classes: 'media-cover', ratio: '37.5%' })}
+            ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
           </div>
           <div class="card-block card-item">
             <div class="card-title">Lorem ipsum</div>
@@ -32,14 +32,14 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="col-12 col-6-sm">
+  <div class="w-full sm:w-6/12">
     <div class="card card-default">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content"
           style="justify-content: space-between;">
           <div class="card-asset">
-            ${img({ classes: 'media-cover', ratio: '37.5%' })}
+            ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
           </div>
           <div class="card-block card-item">
             <div class="card-title">Lorem ipsum</div>

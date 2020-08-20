@@ -11,7 +11,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="row row-space-4">
 
-  <div class="col-12">
+  <div class="w-full">
     <div class="card card-default card-horizontal-sm">
       <div class="card-design"></div>
       <div class="card-inner">
@@ -25,14 +25,14 @@ demo.htmlSource = `
             <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
           </div>
           <div class="card-asset">
-            ${img({ classes: 'media-cover', ratio: '37.5%' })}
+            ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="col-12">
+  <div class="w-full">
     <div class="card card-default card-horizontal-sm">
       <div class="card-design"></div>
       <div class="card-inner">
@@ -47,7 +47,7 @@ demo.htmlSource = `
           </div>
         </div>
         <div class="card-asset">
-          ${img({ classes: 'media-cover', ratio: '15%' })}
+          ${img({ classes: 'object-cover object-center', ratio: '15%' })}
         </div>
       </div>
     </div>

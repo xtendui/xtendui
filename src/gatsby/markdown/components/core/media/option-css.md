@@ -31,7 +31,7 @@ To have media with **object-fit** give `.media` one of this options:
 
 |                         | Class                                     | Mixin                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `.media-cover`                 | `.media-cover()`        | object-fit with cover            |
+| Option                  | `.object-cover object-center`                 | `.object-cover object-center()`        | object-fit with cover            |
 | Option                  | `.media-contain`                 | `.media-contain()`        | object-fit with contain            |
 | Option                  | `.media-scale-down`                 | `.media-scale-down()`        | object-fit with scale-down            |
 | Option                  | `.media-fill`                 | `.media-fill()`        | object-fit with fill            |

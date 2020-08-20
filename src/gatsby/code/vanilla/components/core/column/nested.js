@@ -21,8 +21,8 @@ demo.htmlSource = `
 
   <div class="col-8">
     <div class="row row-space-4">
-      <div class="col-12 col-8-sm"></div>
-      <div class="col-12 col-4-sm"></div>
+      <div class="w-full col-8-sm"></div>
+      <div class="w-full sm:w-4/12"></div>
       <div class="col-auto"></div>
       <div class="col-auto col-2-sm col-auto-lg"></div>
     </div>

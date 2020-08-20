@@ -15,13 +15,13 @@ export const demo = {
 demo.htmlSource = `
 <div class="row row-space-4 demo--scroll-block">
 
-  <div class="col-12">
+  <div class="w-full">
     <button type="button" class="btn btn-primary demo--scroll-block--btn">
       Click to block/unblock and fade out/in
     </button>
   </div>
 
-  <div class="col-12">
+  <div class="w-full">
     <div class="card card-default">
       <div class="card-design"></div>
       <div class="card-inner">
@@ -35,7 +35,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="col-12">
+  <div class="w-full">
     <div class="card card-default">
       <div class="card-design"></div>
       <div class="card-inner">
@@ -49,7 +49,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="col-12 col-6-sm">
+  <div class="w-full sm:w-6/12">
     <div class="card card-default">
       <div class="card-design"></div>
       <div class="card-inner">
@@ -63,7 +63,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="col-12 col-6-sm">
+  <div class="w-full sm:w-6/12">
     <div class="card card-default">
       <div class="card-design"></div>
       <div class="card-inner">
@@ -77,7 +77,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="col-12 col-6-sm">
+  <div class="w-full sm:w-6/12">
     <div class="card card-default">
       <div class="card-design"></div>
       <div class="card-inner">
@@ -91,7 +91,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="col-12 col-6-sm">
+  <div class="w-full sm:w-6/12">
     <div class="card card-default">
       <div class="card-design"></div>
       <div class="card-inner">
@@ -105,7 +105,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="col-6 col-4-sm">
+  <div class="w-6/12 sm:w-4/12">
     <div class="card card-default">
       <div class="card-design"></div>
       <div class="card-inner">
@@ -119,7 +119,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="col-6 col-4-sm">
+  <div class="w-6/12 sm:w-4/12">
     <div class="card card-default">
       <div class="card-design"></div>
       <div class="card-inner">
@@ -133,7 +133,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="col-6 col-4-sm">
+  <div class="w-6/12 sm:w-4/12">
     <div class="card card-default">
       <div class="card-design"></div>
       <div class="card-inner">

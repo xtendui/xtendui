@@ -12,7 +12,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="row row-space-4">
 
-  <div class="col-12 col-6-sm">
+  <div class="w-full sm:w-6/12">
     <div class="card ${cardDefault()}">
       <div class="card-block">
         <div class="card-title">Default</div>
@@ -21,7 +21,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="col-12 col-6-sm">
+  <div class="w-full sm:w-6/12">
     <div class="card ${cardPrimary()}">
       <div class="card-block">
         <div class="card-title">Primary</div>

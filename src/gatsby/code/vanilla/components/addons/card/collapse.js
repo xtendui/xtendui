@@ -32,7 +32,7 @@ demo.htmlSource = `
       </div>
     </div>
     <div class="card-asset">
-      ${img({ classes: 'media-cover', ratio: '15%' })}
+      ${img({ classes: 'object-cover object-center', ratio: '15%' })}
     </div>
   </div>
 </div>

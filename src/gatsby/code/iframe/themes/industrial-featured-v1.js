@@ -57,12 +57,12 @@ demo.htmlSource = `
                 <div class="row">
                   <div class="featured-item_assets_col--big featured-item_assets_col--big">
                     <div class="featured-item_asset">
-                      ${img({ classes: 'media-cover', loading: 'eager' })}
+                      ${img({ classes: 'object-cover object-center', loading: 'eager' })}
                     </div>
                   </div>
                   <div class="featured-item_assets_col--small featured-item_assets_col--small">
                     <div class="featured-item_asset">
-                      ${img({ classes: 'media-cover', loading: 'eager' })}
+                      ${img({ classes: 'object-cover object-center', loading: 'eager' })}
                     </div>
                   </div>
                 </div>
@@ -107,12 +107,12 @@ demo.htmlSource = `
                 <div class="row">
                   <div class="featured-item_assets_col--small">
                     <div class="featured-item_asset">
-                      ${imgAlt({ classes: 'media-cover', loading: 'eager' })}
+                      ${imgAlt({ classes: 'object-cover object-center', loading: 'eager' })}
                     </div>
                   </div>
                   <div class="featured-item_assets_col--big">
                     <div class="featured-item_asset">
-                      ${imgAlt({ classes: 'media-cover', loading: 'eager' })}
+                      ${imgAlt({ classes: 'object-cover object-center', loading: 'eager' })}
                     </div>
                   </div>
                 </div>
@@ -157,12 +157,12 @@ demo.htmlSource = `
                 <div class="row">
                   <div class="featured-item_assets_col--big">
                     <div class="featured-item_asset">
-                      ${img({ classes: 'media-cover', loading: 'eager' })}
+                      ${img({ classes: 'object-cover object-center', loading: 'eager' })}
                     </div>
                   </div>
                   <div class="featured-item_assets_col--small">
                     <div class="featured-item_asset">
-                      ${img({ classes: 'media-cover', loading: 'eager' })}
+                      ${img({ classes: 'object-cover object-center', loading: 'eager' })}
                     </div>
                   </div>
                 </div>
@@ -207,12 +207,12 @@ demo.htmlSource = `
                 <div class="row">
                   <div class="featured-item_assets_col--small">
                     <div class="featured-item_asset">
-                      ${imgAlt({ classes: 'media-cover', loading: 'eager' })}
+                      ${imgAlt({ classes: 'object-cover object-center', loading: 'eager' })}
                     </div>
                   </div>
                   <div class="featured-item_assets_col--big">
                     <div class="featured-item_asset">
-                      ${imgAlt({ classes: 'media-cover', loading: 'eager' })}
+                      ${imgAlt({ classes: 'object-cover object-center', loading: 'eager' })}
                     </div>
                   </div>
                 </div>

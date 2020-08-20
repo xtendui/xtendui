@@ -28,9 +28,9 @@ demo.htmlSource = `
 
                 <div class="card-item-nested card-item card-group-sm">
 
-                  <div class="card-item card-block-side col-5-sm">
+                  <div class="card-item card-block-side sm:w-5/12">
                     <div class="card-asset">
-                      ${img({ classes: 'media-cover', ratio: '100%', loading: 'eager' })}
+                      ${img({ classes: 'object-cover object-center', ratio: '100%', loading: 'eager' })}
                     </div>
                     <div class="card-block card-item">
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
