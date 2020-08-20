@@ -139,6 +139,37 @@ module.exports = theme => ({
         touchAction: 'manipulation', // disable double-tap
         '-webkit-tap-highlight-color': 'rgba(0, 0, 0, 0)', // disable tap highlight
       },
+      body: {
+        '@apply overflow-main': '',
+      },
+      '.overflow-main': {
+        '-webkit-overflow-scrolling': 'touch',
+        '&::-webkit-scrollbar': {
+          height: '8px',
+          width: '8px',
+          background: theme('colors.accent.200'),
+          '@media (hover: none)': {
+            display: 'none',
+          },
+        },
+        '&::-webkit-scrollbar-thumb': {
+          background: theme('colors.accent.700'),
+        },
+        scrollbarColor: theme('colors.accent.700') + ' transparent',
+      },
+      '.overflow-sub': {
+        '-webkit-overflow-scrolling': 'touch',
+        '&::-webkit-scrollbar': {
+          height: '4px',
+          width: '4px',
+          background: 'transparent',
+        },
+        '&::-webkit-scrollbar-thumb': {
+          background: theme('colors.accent.700'),
+        },
+        scrollbarWidth: 'thin',
+        scrollbarColor: theme('colors.accent.700') + ' transparent',
+      }
     },
     // typography
     typography: {
@@ -468,6 +499,8 @@ module.exports = theme => ({
         width: '100%',
         minHeight: '100%',
         borderRadius: 'inherit',
+        // styles
+        backgroundColor: theme('colors.gray.500'),
       },
       '.media-inner': {
         // setup
