@@ -150,6 +150,9 @@ module.exports = theme => ({
   components: {
     // structure
     structure: {
+      ':focus': {
+        outline: 'none', // disable focus outline
+      },
       html: {
         touchAction: 'manipulation', // disable double-tap
         '-webkit-tap-highlight-color': 'rgba(0, 0, 0, 0)', // disable tap highlight
@@ -370,11 +373,6 @@ module.exports = theme => ({
     },
     // btn
     btn: {
-      button: {
-        '&:focus': {
-          outline: 'none',
-        },
-      },
       '.btn': {
         // setup
         cursor: 'pointer',

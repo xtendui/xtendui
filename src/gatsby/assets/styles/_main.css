@@ -69,10 +69,10 @@ body {
 .gatsby_site_article {
   @apply bg-white;
   @screen lg {
-    margin-left: 16rem;
+    margin-left: 18rem;
   }
   @screen xl {
-    margin-left: 21rem;
+    margin-left: 20rem;
   }
 }
 .gatsby_site_article_hero {

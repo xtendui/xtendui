@@ -51,7 +51,7 @@ class Template extends React.Component {
                               <div className="card-inner">
                                 <div className="card-content">
                                   <div className="card-block card-item">
-                                    <div className="card-title">
+                                    <div className="h4 card-title">
                                       {post.frontmatter.title
                                         .split(/[\s-]+/)
                                         .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
@@ -70,7 +70,7 @@ class Template extends React.Component {
                               <div className="card-inner">
                                 <div className="card-content">
                                   <div className="card-block card-item">
-                                    <div className="card-title">
+                                    <div className="h4 card-title">
                                       {post.frontmatter.title
                                         .split(/[\s-]+/)
                                         .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())

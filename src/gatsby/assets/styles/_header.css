@@ -16,10 +16,10 @@
     line-height: 1;
   }
   @screen lg {
-    width: 16rem;
+    width: 18rem;
   }
   @screen xl {
-    width: 21rem;
+    width: 20rem;
   }
 }
 
@@ -37,7 +37,7 @@
   align-items: center;
   height: 100%;
   img {
-    width: 5.5rem;
+    width: 5.2rem;
   }
   img {
     transition: opacity theme('transitionDuration.500') theme('transitionTimingFunction.out');
@@ -77,7 +77,7 @@
   margin-bottom: -5px;
   padding: 5px;
   border-radius: 0;
-  font-size: 1.15rem;
+  font-size: 1rem;
   @apply text-inverse hover:text-inverse;
   line-height: 1;
   text-transform: uppercase;
@@ -116,8 +116,8 @@
 }
 
 .gatsby_site_header_item {
-  margin-top: 1px;
-  margin-bottom: 1px;
+  margin-top: 4px;
+  margin-bottom: 4px;
 }
 
 .gatsby_site_header_sub {

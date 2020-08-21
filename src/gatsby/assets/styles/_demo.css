@@ -289,10 +289,10 @@ pre {
   right: 0;
   @apply bg-white;
   @screen lg {
-    margin-left: 16rem;
+    margin-left: 18rem;
   }
   @screen xl {
-    margin-left: 21rem;
+    margin-left: 20rem;
   }
   > .btn-close {
     top: 0;
