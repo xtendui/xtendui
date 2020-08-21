@@ -233,10 +233,10 @@ module.exports = theme => ({
         '@apply mt-fc mb-lc': {},
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
+        fontSize: rem(30),
         lineHeight: theme('lineHeight.tight'),
         letterSpacing: theme('letterSpacing.normal'),
         textTransform: 'none',
-        fontSize: rem(30),
         '@screen lg': {
           fontSize: rem(40),
         },
@@ -247,10 +247,10 @@ module.exports = theme => ({
         '@apply mt-fc mb-lc': {},
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
+        fontSize: rem(30),
         lineHeight: theme('lineHeight.tight'),
         letterSpacing: theme('letterSpacing.normal'),
         textTransform: 'none',
-        fontSize: rem(30),
         '@screen lg': {
           fontSize: rem(35),
         },
@@ -261,10 +261,10 @@ module.exports = theme => ({
         '@apply mt-fc mb-lc': {},
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
+        fontSize: rem(25),
         lineHeight: theme('lineHeight.tight'),
         letterSpacing: theme('letterSpacing.normal'),
         textTransform: 'none',
-        fontSize: rem(25),
         '@screen lg': {
           fontSize: rem(30),
         },
@@ -275,10 +275,10 @@ module.exports = theme => ({
         '@apply mt-fc mb-lc': {},
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
+        fontSize: rem(20),
         lineHeight: theme('lineHeight.tight'),
         letterSpacing: theme('letterSpacing.normal'),
         textTransform: 'none',
-        fontSize: rem(20),
       },
       'h5, .h5': {
         marginTop: theme('spacing.8'),
@@ -286,10 +286,10 @@ module.exports = theme => ({
         '@apply mt-fc mb-lc': {},
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
+        fontSize: rem(16),
         lineHeight: theme('lineHeight.tight'),
         letterSpacing: theme('letterSpacing.normal'),
         textTransform: 'none',
-        fontSize: rem(16),
       },
       'h6, .h6': {
         marginTop: theme('spacing.8'),
@@ -297,10 +297,10 @@ module.exports = theme => ({
         '@apply mt-fc mb-lc': {},
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
+        fontSize: '13px',
         lineHeight: theme('lineHeight.tight'),
         letterSpacing: theme('letterSpacing.wide'),
         textTransform: 'uppercase',
-        fontSize: '13px',
       },
       '.h-block': {
         marginTop: theme('spacing.8'),
@@ -353,24 +353,6 @@ module.exports = theme => ({
         },
       },
     },
-    // badge
-    badge: {
-      '.badge': {
-        // setup
-        display: 'inline-block',
-        verticalAlign: 'middle',
-        // styles
-        padding: `${em(4, 10)} ${em(8, 10)}`,
-        fontSize: rem(10),
-        borderWidth: theme('borderWidth.default'),
-        borderColor: theme('borderColor.transparent'),
-        fontFamily: theme('fontFamily.sans').toString(),
-        fontWeight: theme('fontWeight.semibold'),
-        lineHeight: theme('lineHeight.tight'),
-        letterSpacing: theme('letterSpacing.wider'),
-        textTransform: 'uppercase',
-      },
-    },
     // btn
     btn: {
       '.btn': {
@@ -387,12 +369,12 @@ module.exports = theme => ({
           zIndex: theme('zIndex.active'),
         },
         // styles
-        padding: `${em(8, 12)} ${em(16, 12)}`,
-        fontSize: rem(12),
+        padding: `${theme('spacing.2')} ${theme('spacing.4')}`,
         borderWidth: theme('borderWidth.default'),
         borderColor: theme('borderColor.transparent'),
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
+        fontSize: rem(12),
         lineHeight: theme('lineHeight.tight'),
         letterSpacing: theme('letterSpacing.wider'),
         textTransform: 'uppercase',
@@ -413,7 +395,7 @@ module.exports = theme => ({
         zIndex: theme('zIndex.top'),
         top: '0',
         right: '0',
-        padding: `${em(16, 12)} ${em(16, 12)}`,
+        padding: `${theme('spacing.5')}`,
         '& + *': {
           margin: '0 !important',
         },
@@ -483,7 +465,7 @@ module.exports = theme => ({
         position: 'relative',
         width: '100%',
         // styles
-        padding: rem(24),
+        padding: `${theme('spacing.6')}`,
         fontSize: rem(14),
       },
       '.card-title': {
@@ -500,10 +482,10 @@ module.exports = theme => ({
         },
         // styles
         '.card-design': {
-          top: `-${rem(24)}`,
-          left: `-${rem(24)}`,
-          bottom: `-${rem(24)}`,
-          right: `-${rem(24)}`,
+          top: `-${theme('spacing.6')}`,
+          left: `-${theme('spacing.6')}`,
+          bottom: `-${theme('spacing.6')}`,
+          right: `-${theme('spacing.6')}`,
         },
       },
     },
@@ -542,6 +524,83 @@ module.exports = theme => ({
       '.media-container-16-9': {
         // aspect ratio
         paddingBottom: '56.2%',
+      },
+    },
+    // table
+    table: {
+      '.table': {
+        borderCollapse: 'collapse',
+        width: '100%',
+        th: {
+          textAlign: 'left',
+          verticalAlign: 'top',
+          padding: `${theme('spacing.2')} ${theme('spacing.4')}`,
+          fontFamily: theme('fontFamily.sans').toString(),
+          fontWeight: theme('fontWeight.semibold'),
+          fontSize: rem(10),
+          lineHeight: theme('lineHeight.tight'),
+          letterSpacing: theme('letterSpacing.wider'),
+          textTransform: 'uppercase',
+        },
+        td: {
+          textAlign: 'left',
+          verticalAlign: 'top',
+          padding: `${theme('spacing.2')} ${theme('spacing.4')}`,
+          fontSize: rem(13),
+        },
+        // thead
+        thead: {
+          'th, td': {
+            borderRightWidth: theme('borderWidth.default'),
+            borderBottomWidth: theme('borderWidth.default'),
+            borderColor: theme('borderColor.gray.200'),
+            '&:last-child': {
+              borderRight: '0',
+            },
+          },
+        },
+        // tbody
+        tbody: {
+          'th, td': {
+            borderRightWidth: theme('borderWidth.default'),
+            borderBottomWidth: theme('borderWidth.default'),
+            borderColor: theme('borderColor.gray.200'),
+            '&:last-child': {
+              borderRight: '0',
+            },
+          },
+          tr: {
+            '&:last-child': {
+              'th, td': {
+                borderBottom: '0',
+              },
+            },
+          },
+        },
+      },
+      '.table-scroll': {
+        '@apply overflow-sub': '',
+        width: '100%',
+        overflowX: 'hidden',
+        overflowY: 'scroll',
+      },
+    },
+    // badge
+    badge: {
+      '.badge': {
+        // setup
+        display: 'inline-block',
+        verticalAlign: 'middle',
+        // styles
+        padding: `${theme('spacing.1')} ${theme('spacing.2')}`,
+        borderWidth: theme('borderWidth.default'),
+        borderColor: theme('borderColor.transparent'),
+        fontFamily: theme('fontFamily.sans').toString(),
+        fontWeight: theme('fontWeight.semibold'),
+        fontSize: rem(10),
+        lineHeight: theme('lineHeight.tight'),
+        letterSpacing: theme('letterSpacing.wider'),
+        textTransform: 'uppercase',
       },
     },
   },

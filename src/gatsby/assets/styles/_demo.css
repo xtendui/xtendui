@@ -113,9 +113,10 @@ pre[class*="language-"] {
     }
   }
 }
+
 /**
  * .demo
-*/
+ */
 
 pre {
   max-height: 55rem;
@@ -316,5 +317,15 @@ pre {
   height: calc(var(--vh, 1vh) * 100);
   pre {
     max-height: none;
+  }
+}
+
+.gatsby_table {
+  border-radius: 6px;
+  border: 3px solid theme('colors.gray.200');
+  border-collapse: separate;
+  border-spacing: 0;
+  th {
+    vertical-align: middle;
   }
 }
