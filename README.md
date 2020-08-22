@@ -12,25 +12,36 @@ We have some boilerplate setup projects to start a project:
 
 * [vanilla boilerplate](https://github.com/minimit/xtend-theme-vanilla)
 
-#### Webpack
+### Css Resolve
 
-This library is made to be used by [webpack](https://github.com/webpack). In essence you have to setup webpack's resolve to be able to import the scripts and styles from the `node_modules/xtend-library` or from your custom folder if present (`./dist/xtend-library` in this case).
+Add this to **less options** to resolve less urls with `xtend-library/`:
 
 ```jsx
-  resolve: {
-    alias: {
-      // resolve xtend-library js and less
-      'xtend-library': [
-        path.resolve(__dirname, './dist/xtend-library'),
-        path.resolve(__dirname, './node_modules/xtend-library'),
-      ],
-    },
-  },
-  module: {
-    unsafeCache: false,
+// resolve xtend-library import less
+paths: [path.resolve(__dirname, './dist'), path.resolve(__dirname, './node_modules')],
 ```
 
-With this setup you can **fork** css and js files inside `./dist/xtend-library` and the webpack resolver will load files from it or fallback to `./node_modules/xtend-library`.
+### Js Resolve
+
+Add this to **babel options** to resolve js urls with `xtend-library/`:
+
+```jsx
+const path = require('path')
+
+module.exports = {
+  plugins: [
+    [
+      require.resolve('babel-plugin-module-resolver'),
+      {
+        alias: {
+          // resolve xtend-library import js
+          'xtend-library': [path.resolve(__dirname, './dist/assets/xtend-library'), path.resolve(__dirname, './node_modules/xtend-library')],
+        },
+      },
+    ],
+  ],
+}
+```
 
 #### Css
 

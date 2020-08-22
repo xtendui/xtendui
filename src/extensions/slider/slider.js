@@ -149,10 +149,9 @@ class Slider extends Xt.Toggle {
     // @FIX position values negative margins
     self.detail.fixNegativeMargin = Xt.dataStorage.get(self.groupMq[0][0], self.componentNamespace + 'SlideLeft')
     // @FIX disable slider if not overflowing
-    if (options.overflowAuto && totalCount > 0) {
+    if (options.overflowAuto && totalCount >= 0) {
       // disable
       self.object.classList.add('xt-overflow-auto')
-      self.disable()
     }
     // drag wrap
     const wrapFirst = []
