@@ -21,7 +21,7 @@ demo.htmlSource = `
       <div class="card-inner">
         <div class="card-content">
           <div class="card-block card-item">
-            <div class="h4 card-title">Header</div>
+            <div class="h4">Header</div>
           </div>
         </div>
       </div>
@@ -223,7 +223,7 @@ demo.htmlSource = `
       <div class="card-inner">
         <div class="card-content">
           <div class="card-block card-item">
-            <div class="h4 card-title">Footer</div>
+            <div class="h4">Footer</div>
           </div>
         </div>
       </div>

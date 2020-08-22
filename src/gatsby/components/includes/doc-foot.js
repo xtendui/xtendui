@@ -49,7 +49,7 @@ class DocFoot extends React.Component {
                       <div className="card-inner">
                         <div className="card-content">
                           <div className="card-block card-item">
-                            <div className="h4 card-title">Setup or other problems?</div>
+                            <div className="h4">Setup or other problems?</div>
                             <p>
                               Visit the <strong>Introduction</strong> page.
                             </p>
@@ -70,7 +70,7 @@ class DocFoot extends React.Component {
                       <div className="card-inner">
                         <div className="card-content">
                           <div className="card-block card-item">
-                            <div className="h4 card-title">Visit the Core pages</div>
+                            <div className="h4">Visit the Core pages</div>
                             <p>
                               There {postsCore.length === 1 ? 'is' : 'are'} {postsCore.length} <strong>core pages</strong> for {page.post.frontmatter.parent}.
                             </p>
@@ -91,7 +91,7 @@ class DocFoot extends React.Component {
                       <div className="card-inner">
                         <div className="card-content">
                           <div className="card-block card-item">
-                            <div className="h4 card-title">Visit the Extensions page</div>
+                            <div className="h4">Visit the Extensions page</div>
                             <p>
                               There {postsExtensions.length === 1 ? 'is' : 'are'} {postsExtensions.length} <strong>extensions pages</strong> for{' '}
                               {page.post.frontmatter.parent}.
@@ -113,7 +113,7 @@ class DocFoot extends React.Component {
                       <div className="card-inner">
                         <div className="card-content">
                           <div className="card-block card-item">
-                            <div className="h4 card-title">Visit the Addons page</div>
+                            <div className="h4">Visit the Addons page</div>
                             <p>
                               There {postsAddons.length === 1 ? 'is' : 'are'} {postsAddons.length} <strong>addon pages</strong> for{' '}
                               {page.post.frontmatter.parent}.
@@ -132,7 +132,7 @@ class DocFoot extends React.Component {
                       <div className="card-inner">
                         <div className="card-content">
                           <div className="card-block card-item">
-                            <div className="h4 card-title">Visit the Theme page</div>
+                            <div className="h4">Visit the Theme page</div>
                             <p>
                               There {postsThemes.length === 1 ? 'is' : 'are'} {postsThemes.length} <strong>themes</strong> for {page.post.frontmatter.parent}.
                             </p>

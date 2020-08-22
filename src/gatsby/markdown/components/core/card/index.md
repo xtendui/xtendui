@@ -42,6 +42,13 @@ Use this markup to create a **card**.
   </demovanilla>
 </demo>
 
+## Size
+
+<demo>
+  <demovanilla src="vanilla/components/core/card/size">
+  </demovanilla>
+</demo>
+
 ## Interactive
 
 You can make interactive cards with `a` or `button` or `label`.

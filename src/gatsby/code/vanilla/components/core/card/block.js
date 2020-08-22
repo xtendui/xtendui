@@ -13,13 +13,13 @@ demo.htmlSource = `
 
   <div class="w-full">
     <div class="card ${cardDefault()}">
-      <div class="card-block rounded-t-md bg-gray-500">
-        <div class="h4 card-title">Lorem ipsum</div>
+      <div class="card-block card-block-medium rounded-t-md bg-gray-500">
+        <div class="h4">Lorem ipsum</div>
       </div>
-      <div class="card-block">
+      <div class="card-block card-block-medium">
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>
-      <div class="card-block pt-0">
+      <div class="card-block card-block-medium pt-0">
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>
     </div>

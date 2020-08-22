@@ -12,7 +12,7 @@ export default () => {
           <div class="card-inner">
             <div class="card-content">
               <div class="card-block card-item">
-                <div class="h4 card-title">1</div>
+                <div class="h4">1</div>
                 <nav class="slider-navigation">
                   <button type="button" class="btn btn-default" data-xt-nav="-1" title="Previous slide">
                     <span class="icon-xt-chevron-left"></span>
@@ -37,7 +37,7 @@ export default () => {
           <div class="card-inner">
             <div class="card-content">
               <div class="card-block card-item">
-                <div class="h4 card-title">2</div>
+                <div class="h4">2</div>
                 <nav class="slider-navigation">
                   <button type="button" class="btn btn-default" data-xt-nav="-1" title="Previous slide">
                     <span class="icon-xt-chevron-left"></span>
@@ -62,7 +62,7 @@ export default () => {
           <div class="card-inner">
             <div class="card-content">
               <div class="card-block card-item">
-                <div class="h4 card-title">3</div>
+                <div class="h4">3</div>
                 <nav class="slider-navigation">
                   <button type="button" class="btn btn-default" data-xt-nav="-1" title="Previous slide">
                     <span class="icon-xt-chevron-left"></span>
@@ -87,7 +87,7 @@ export default () => {
           <div class="card-inner">
             <div class="card-content">
               <div class="card-block card-item">
-                <div class="h4 card-title">4</div>
+                <div class="h4">4</div>
                 <nav class="slider-navigation">
                   <button type="button" class="btn btn-default" data-xt-nav="-1" title="Previous slide">
                     <span class="icon-xt-chevron-left"></span>
@@ -112,7 +112,7 @@ export default () => {
           <div class="card-inner">
             <div class="card-content">
               <div class="card-block card-item">
-                <div class="h4 card-title">5</div>
+                <div class="h4">5</div>
                 <nav class="slider-navigation">
                   <button type="button" class="btn btn-default" data-xt-nav="-1" title="Previous slide">
                     <span class="icon-xt-chevron-left"></span>

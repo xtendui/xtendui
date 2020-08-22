@@ -19,7 +19,7 @@ export default () => {
           <div class="card-inner">
             <div class="card-content">
               <div class="card-block card-item">
-                <div class="h4 card-title">1</div>
+                <div class="h4">1</div>
               </div>
               <div class="loader loader-x loader-size-bottom loader-js">
                 <div class="filler">
@@ -41,7 +41,7 @@ export default () => {
           <div class="card-inner">
             <div class="card-content">
               <div class="card-block card-item">
-                <div class="h4 card-title">2</div>
+                <div class="h4">2</div>
               </div>
               <div class="loader loader-x loader-size-bottom loader-js">
                 <div class="filler">
@@ -63,7 +63,7 @@ export default () => {
           <div class="card-inner">
             <div class="card-content">
               <div class="card-block card-item">
-                <div class="h4 card-title">3</div>
+                <div class="h4">3</div>
               </div>
               <div class="loader loader-x loader-size-bottom loader-js">
                 <div class="filler">
@@ -85,7 +85,7 @@ export default () => {
           <div class="card-inner">
             <div class="card-content">
               <div class="card-block card-item">
-                <div class="h4 card-title">4</div>
+                <div class="h4">4</div>
               </div>
               <div class="loader loader-x loader-size-bottom loader-js">
                 <div class="filler">
@@ -107,7 +107,7 @@ export default () => {
           <div class="card-inner">
             <div class="card-content">
               <div class="card-block card-item">
-                <div class="h4 card-title">5</div>
+                <div class="h4">5</div>
               </div>
               <div class="loader loader-x loader-size-bottom loader-js">
                 <div class="filler">

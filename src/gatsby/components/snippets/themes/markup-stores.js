@@ -20,7 +20,7 @@ export default () => {
                       ${img({})}
                     </div>
                     <div class="card-block card-item listing-page_content">
-                      <div class="h4 card-title">
+                      <div class="h4">
                         Lorem Ipsum
                       </div>
                       <address class="listing-page_address">
@@ -85,7 +85,7 @@ export default () => {
                       ${imgAlt({})}
                     </div>
                     <div class="card-block card-item listing-page_content">
-                      <div class="h4 card-title">
+                      <div class="h4">
                         Dolor sit amet
                       </div>
                       <address class="listing-page_address">
@@ -150,7 +150,7 @@ export default () => {
                       ${img({})}
                     </div>
                     <div class="card-block card-item listing-page_content">
-                      <div class="h4 card-title">
+                      <div class="h4">
                         Consectetur adipiscing elit. Proin molestie diam nec euismod commodo
                       </div>
                       <address class="listing-page_address">
@@ -215,7 +215,7 @@ export default () => {
                       ${img({})}
                     </div>
                     <div class="card-block card-item listing-page_content">
-                      <div class="h4 card-title">
+                      <div class="h4">
                         Lorem Ipsum
                       </div>
                       <address class="listing-page_address">
@@ -280,7 +280,7 @@ export default () => {
                       ${imgAlt({})}
                     </div>
                     <div class="card-block card-item">
-                      <div class="h4 card-title">
+                      <div class="h4">
                         Dolor sit amet
                       </div>
                       <address class="listing-page_address">
@@ -345,7 +345,7 @@ export default () => {
                       ${img({})}
                     </div>
                     <div class="card-block card-item">
-                      <div class="h4 card-title">
+                      <div class="h4">
                         Consectetur adipiscing elit. Proin molestie diam nec euismod commodo
                       </div>
                       <address class="listing-page_address">

@@ -26,7 +26,7 @@ module.exports = theme => ({
           marginBottom: theme('spacing.0'),
         },
       },
-      '.design-absolute': {
+      '.design-setup': {
         content: '',
         position: 'absolute',
         zIndex: '-1',
@@ -34,6 +34,10 @@ module.exports = theme => ({
         left: '0',
         bottom: '0',
         right: '0',
+        borderRadius: 'inherit',
+        transitionProperty: 'inherit',
+        transitionDuration: 'inherit',
+        transitionTimingFunction: 'inherit',
       },
     },
     typography: {
@@ -151,7 +155,7 @@ module.exports = theme => ({
     // structure
     structure: {
       ':focus': {
-        outline: 'none', // disable focus outline
+        outline: 'none !important', // disable focus outline
       },
       html: {
         touchAction: 'manipulation', // disable double-tap
@@ -242,8 +246,8 @@ module.exports = theme => ({
         },
       },
       'h2, .h2': {
-        marginTop: theme('spacing.8'),
-        marginBottom: theme('spacing.6'),
+        marginTop: theme('spacing.6'),
+        marginBottom: theme('spacing.4'),
         '@apply mt-fc mb-lc': {},
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
@@ -256,8 +260,8 @@ module.exports = theme => ({
         },
       },
       'h3, .h3': {
-        marginTop: theme('spacing.8'),
-        marginBottom: theme('spacing.6'),
+        marginTop: theme('spacing.6'),
+        marginBottom: theme('spacing.4'),
         '@apply mt-fc mb-lc': {},
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
@@ -270,8 +274,8 @@ module.exports = theme => ({
         },
       },
       'h4, .h4': {
-        marginTop: theme('spacing.8'),
-        marginBottom: theme('spacing.6'),
+        marginTop: theme('spacing.4'),
+        marginBottom: theme('spacing.2'),
         '@apply mt-fc mb-lc': {},
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
@@ -281,8 +285,8 @@ module.exports = theme => ({
         textTransform: 'none',
       },
       'h5, .h5': {
-        marginTop: theme('spacing.8'),
-        marginBottom: theme('spacing.6'),
+        marginTop: theme('spacing.4'),
+        marginBottom: theme('spacing.2'),
         '@apply mt-fc mb-lc': {},
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
@@ -292,8 +296,8 @@ module.exports = theme => ({
         textTransform: 'none',
       },
       'h6, .h6': {
-        marginTop: theme('spacing.8'),
-        marginBottom: theme('spacing.6'),
+        marginTop: theme('spacing.4'),
+        marginBottom: theme('spacing.2'),
         '@apply mt-fc mb-lc': {},
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
@@ -303,8 +307,9 @@ module.exports = theme => ({
         textTransform: 'uppercase',
       },
       '.h-block': {
-        marginTop: theme('spacing.8'),
-        marginBottom: theme('spacing.6'),
+        marginTop: theme('spacing.6'),
+        marginBottom: theme('spacing.4'),
+        '@apply mt-fc mb-lc': {},
         paddingTop: theme('spacing.4'),
         paddingBottom: theme('spacing.4'),
         paddingLeft: theme('spacing.6'),
@@ -369,12 +374,11 @@ module.exports = theme => ({
           zIndex: theme('zIndex.active'),
         },
         // styles
-        padding: `${theme('spacing.2')} ${theme('spacing.4')}`,
+        '@apply btn-medium': '',
         borderWidth: theme('borderWidth.default'),
         borderColor: theme('borderColor.transparent'),
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
-        fontSize: rem(12),
         lineHeight: theme('lineHeight.tight'),
         letterSpacing: theme('letterSpacing.wider'),
         textTransform: 'uppercase',
@@ -389,16 +393,33 @@ module.exports = theme => ({
           transitionTimingFunction: theme('transitionTimingFunction.in'),
         },
       },
+      '.btn-small': {
+        // styles
+        padding: `${rem(4)} ${rem(10)}`,
+        fontSize: rem(10),
+      },
+      '.btn-medium': {
+        // styles
+        padding: `${rem(8)} ${rem(14)}`,
+        fontSize: rem(12),
+      },
+      '.btn-large': {
+        // styles
+        padding: `${rem(12)} ${rem(18)}`,
+        fontSize: rem(14),
+      },
       '.btn-close': {
+        // setup
         cursor: 'pointer',
         position: 'absolute',
         zIndex: theme('zIndex.top'),
         top: '0',
         right: '0',
-        padding: `${theme('spacing.5')}`,
         '& + *': {
           margin: '0 !important',
         },
+        // styles
+        padding: `${theme('spacing.5')}`,
       },
     },
     // card
@@ -441,23 +462,25 @@ module.exports = theme => ({
         // setup
         position: 'relative',
         width: '100%',
+      },
+      '.card-block-small': {
         // styles
-        padding: `${theme('spacing.6')}`,
+        padding: `${rem(20)}`,
+        fontSize: rem(12),
+      },
+      '.card-block-medium': {
+        // styles
+        padding: `${rem(25)}`,
         fontSize: rem(14),
       },
-      '.card-title': {
+      '.card-block-large': {
         // styles
-        marginTop: theme('spacing.4'),
-        marginBottom: theme('spacing.2'),
-        '@apply mt-fc mb-lc': {},
+        padding: `${rem(35)}`,
+        fontSize: rem(16),
       },
       '.card-design': {
         // setup
-        '@apply design-absolute': '',
-        borderRadius: 'inherit',
-        transitionProperty: 'inherit',
-        transitionDuration: 'inherit',
-        transitionTimingFunction: 'inherit',
+        '@apply design-setup': '',
       },
       '.card-full': {
         // setup
@@ -513,12 +536,13 @@ module.exports = theme => ({
     // table
     table: {
       '.table': {
+        // setup
         borderCollapse: 'separate',
         borderSpacing: '0',
         width: '100%',
       },
       th: {
-        textAlign: 'left',
+        // styles
         verticalAlign: 'top',
         padding: `${theme('spacing.2')} ${theme('spacing.4')}`,
         fontFamily: theme('fontFamily.sans').toString(),
@@ -527,14 +551,17 @@ module.exports = theme => ({
         lineHeight: theme('lineHeight.tight'),
         letterSpacing: theme('letterSpacing.wider'),
         textTransform: 'uppercase',
+        textAlign: 'left',
       },
       td: {
-        textAlign: 'left',
+        // styles
         verticalAlign: 'top',
         padding: `${theme('spacing.2')} ${theme('spacing.4')}`,
         fontSize: rem(13),
+        textAlign: 'left',
       },
       'th, td': {
+        // styles
         borderRightWidth: theme('borderWidth.default'),
         borderBottomWidth: theme('borderWidth.default'),
         borderColor: theme('borderColor.gray.200'),
@@ -543,6 +570,7 @@ module.exports = theme => ({
         },
       },
       tbody: {
+        // styles
         tr: {
           '&:last-child': {
             'th, td': {
@@ -552,10 +580,52 @@ module.exports = theme => ({
         },
       },
       '.table-scroll': {
+        // setup
         '@apply overflow-sub': '',
         width: '100%',
         overflowX: 'hidden',
         overflowY: 'scroll',
+      },
+    },
+    // overlay
+    overlay: {
+      '.overlay': {
+        // setup
+        '@apply toggle-flex overflow-main': '',
+        position: 'fixed',
+        zIndex: theme('zIndex.overlay'),
+        top: '0',
+        left: '0',
+        bottom: '0', // @FIX no height or it bugs collapse animation
+        right: '0', // @FIX no width or it bugs collapse animation
+        overflow: 'hidden',
+      },
+      '.overlay-design': {
+        // setup
+        '@apply design-setup': '',
+      },
+      '.overlay-container': {
+        // setup
+        display: 'flex',
+        flexWrap: 'nowrap',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        margin: 'auto', // @FIX http://stackoverflow.com/questions/33454533/cant-scroll-to-top-of-flex-item-that-is-overflowing-container
+        width: '100%',
+        minHeight: '100vh',
+      },
+      '.overlay-inner': {
+        // setup
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        alignSelf: 'center',
+        position: 'relative',
+        zIndex: theme('zIndex.overlay'),
+        width: '100%',
+        borderRadius: 'inherit',
+        // styles
+        maxWidth: '900px',
       },
     },
     // badge

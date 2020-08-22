@@ -84,6 +84,10 @@ module.exports = {
         active: '2',
         out: '1',
         top: '50',
+        indicator: '510',
+        backdrop: '600',
+        sticky: '800', // same as javascript and decreses with sequential sticky
+        overlay: '900',
         last: '1000',
       },
       transitionTimingFunction: {
