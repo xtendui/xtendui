@@ -125,8 +125,8 @@ body {
   @apply w-full;
 }
 
-.gatsby_listing_title {
-  @apply h-block;
+.gatsby_listing_items {
+  @apply my-12;
 }
 
 .gatsby_listing_column {
@@ -147,8 +147,8 @@ body {
       @apply border-transparent bg-transparent;
     }
     .card-block {
-      .card-title {
-        font-size: 1.1rem;
+      .h4 {
+        font-size: 1rem;
       }
       p {
         @apply text-sm;

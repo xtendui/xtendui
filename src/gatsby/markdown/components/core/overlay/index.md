@@ -8,11 +8,7 @@ description: "Used when you need to display any content over the main page, not 
 
 ## Setup
 
-To use this component import the **less** and **js** files accordingly:
-
-```less
-@import 'xtend-library/src/core/overlay/overlay.less';
-```
+To use this component import the **js** file:
 
 ```jsx
 import '/src/core/overlay/overlay.js'
@@ -20,16 +16,12 @@ import '/src/core/overlay/overlay.js'
 
 Or just import **core**:
 
-```less
-@import 'xtend-library/src/xtend-core.less';
-```
-
 ```jsx
 import '/src/xtend-core.js'
 ```
 
 [[noteDefault]]
-| To modify a **less** or **js** file add [webpack resolve](/introduction/setup#usage-webpack) and fork the file copying it in your project.
+| To modify a **js** file add [webpack resolve](/introduction/setup#usage-webpack) and fork the file copying it in your project.
 
 [[notePrimary]]
 | Overlays are moved to **body** to prevent **z-index** problems. Style and query overlay's content accordingly.

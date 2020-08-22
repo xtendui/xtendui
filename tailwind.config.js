@@ -20,7 +20,6 @@ module.exports = {
           '"Noto Color Emoji"',
         ],
       },
-      /*
       fontSize: {
         xs: ['0.75rem', { lineHeight: '1.8' }],
         sm: ['0.875rem', { lineHeight: '1.6' }],
@@ -33,7 +32,6 @@ module.exports = {
         '5xl': ['3rem', { lineHeight: '1' }],
         '6xl': ['4rem', { lineHeight: '1' }],
       },
-      */
       container: {
         center: true,
         padding: {

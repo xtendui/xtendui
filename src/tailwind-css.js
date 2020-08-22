@@ -307,15 +307,13 @@ module.exports = theme => ({
         textTransform: 'uppercase',
       },
       '.h-block': {
-        marginTop: theme('spacing.6'),
-        marginBottom: theme('spacing.4'),
+        marginTop: theme('spacing.8'),
+        marginBottom: theme('spacing.6'),
         '@apply mt-fc mb-lc': {},
-        paddingTop: theme('spacing.4'),
-        paddingBottom: theme('spacing.4'),
+        paddingTop: theme('spacing.3'),
+        paddingBottom: theme('spacing.3'),
         paddingLeft: theme('spacing.6'),
         paddingRight: theme('spacing.6'),
-        backgroundColor: theme('colors.gray.200'),
-        textAlign: 'center',
       },
     },
     // list
@@ -436,7 +434,7 @@ module.exports = theme => ({
           zIndex: theme('zIndex.active'),
         },
         // styles
-        borderWidth: theme('borderWidth.default'),
+        borderWidth: theme('borderWidth.0'),
         borderColor: theme('borderColor.transparent'),
         // animation
         transitionProperty: theme('transitionProperty.all'),
@@ -462,6 +460,8 @@ module.exports = theme => ({
         // setup
         position: 'relative',
         width: '100%',
+        // styles
+        '@apply card-block-medium': '',
       },
       '.card-block-small': {
         // styles
@@ -656,6 +656,12 @@ module.exports = theme => ({
         // styles
         '.overlay-container': {
           maxWidth: '1200px',
+        },
+      },
+      '.overlay-full': {
+        // styles
+        '.overlay-container': {
+          maxWidth: 'none',
         },
       },
       '.overlay-screen': {

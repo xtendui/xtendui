@@ -1,5 +1,6 @@
 import React from 'react'
 import path from 'path'
+const cardDefault = require('components/snippets/classes/card-default-overlay').default
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -13,25 +14,19 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="overlay overlay-default active-overlay" id="overlay--standalone"
+<div class="overlay active-overlay" id="overlay--standalone"
     data-xt-overlay="{ on: false, instant: false }">
   <div class="overlay-container">
     <div class="overlay-inner">
-      <div class="overlay-design"></div>
 
-      <div class="card card-overlay">
-        <div class="card-design"></div>
+      <div class="card ${cardDefault()}">
         <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
-        <div class="card-inner">
-          <div class="card-content">
-            <div class="card-block card-item">
-              <div class="h4">Lorem ipsum</div>
-              <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-              <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat, ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
-              <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
-            </div>
-          </div>
+        <div class="card-block card-block-large">
+          <div class="h3">Lorem ipsum</div>
+          <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+          <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat, ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+          <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
         </div>
       </div>
 

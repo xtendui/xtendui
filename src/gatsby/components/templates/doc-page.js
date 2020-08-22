@@ -32,25 +32,21 @@ class Template extends React.Component {
             <div className="row row-space-3">
               <div className="gatsby_listing_group">
                 <div className="gatsby_listing_items">
-                  <div className="row row row-space-2 lg:row-space-3 row-stretch">
+                  <div className="row row row-space-2 lg:row-space-4 xl:row-space-6 row-stretch">
                     {data.postsAdiacent.posts.map(({ post: adiacent }, i) =>
                       adiacent.frontmatter.parent !== adiacent.frontmatter.title ? (
                         adiacent.frontmatter.demos ? (
                           <div className="gatsby_listing_column" key={i}>
                             <a role="button" className="card gatsby_listing_item" data-gatsby-listing-toggle>
                               <div className="card-design"></div>
-                              <div className="card-inner">
-                                <div className="card-content">
-                                  <div className="card-block card-item">
-                                    <div className="h4">
-                                      {adiacent.frontmatter.title
-                                        .split(/[\s-]+/)
-                                        .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
-                                        .join(' ')}
-                                    </div>
-                                    <p>{adiacent.frontmatter.description}</p>
-                                  </div>
+                              <div className="card-block">
+                                <div className="h4">
+                                  {adiacent.frontmatter.title
+                                    .split(/[\s-]+/)
+                                    .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
+                                    .join(' ')}
                                 </div>
+                                <p>{adiacent.frontmatter.description}</p>
                               </div>
                             </a>
                             {adiacent.frontmatter.demos ? (
@@ -70,18 +66,14 @@ class Template extends React.Component {
                           <div className="gatsby_listing_column" key={i}>
                             <Link to={markdownSlug(adiacent)} className="card gatsby_listing_item">
                               <div className="card-design"></div>
-                              <div className="card-inner">
-                                <div className="card-content">
-                                  <div className="card-block card-item">
-                                    <div className="h4">
-                                      {adiacent.frontmatter.title
-                                        .split(/[\s-]+/)
-                                        .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
-                                        .join(' ')}
-                                    </div>
-                                    <p>{adiacent.frontmatter.description}</p>
-                                  </div>
+                              <div className="card-block">
+                                <div className="h4">
+                                  {adiacent.frontmatter.title
+                                    .split(/[\s-]+/)
+                                    .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
+                                    .join(' ')}
                                 </div>
+                                <p>{adiacent.frontmatter.description}</p>
                               </div>
                             </Link>
                           </div>

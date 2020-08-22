@@ -35,9 +35,9 @@ class Template extends React.Component {
               })
               .map((category, i) => (
                 <div className="gatsby_listing_group" key={i}>
-                  <h2 className="gatsby_listing_title h5">{category.title.split('-').pop()}</h2>
+                  <h2 className="h5 h-block bg-gray-200 text-center">{category.title.split('-').pop()}</h2>
                   <div className="gatsby_listing_items">
-                    <div className="row row-space-2 lg:row-space-3 row-stretch">
+                    <div className="row row-space-2 lg:row-space-4 xl:row-space-6 row-stretch">
                       {category.posts.map(({ post }, z) =>
                         post.frontmatter.link ? (
                           <div className="gatsby_listing_column" key={z}>
@@ -48,18 +48,14 @@ class Template extends React.Component {
                               className="card card-primary card-small card-full card-collapse gatsby_listing_item"
                             >
                               <div className="card-design"></div>
-                              <div className="card-inner">
-                                <div className="card-content">
-                                  <div className="card-block card-item">
-                                    <div className="h4">
-                                      {post.frontmatter.title
-                                        .split(/[\s-]+/)
-                                        .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
-                                        .join(' ')}
-                                    </div>
-                                    <p>{post.frontmatter.description}</p>
-                                  </div>
+                              <div className="card-block">
+                                <div className="h4">
+                                  {post.frontmatter.title
+                                    .split(/[\s-]+/)
+                                    .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
+                                    .join(' ')}
                                 </div>
+                                <p>{post.frontmatter.description}</p>
                               </div>
                             </a>
                           </div>
@@ -67,19 +63,15 @@ class Template extends React.Component {
                           <div className="gatsby_listing_column" key={z}>
                             <Link to={markdownSlug(post)} className="card gatsby_listing_item">
                               <div className="card-design"></div>
-                              <div className="card-inner">
-                                <div className="card-content">
-                                  <div className="card-block card-item">
-                                    <div className="h4">
-                                      {post.frontmatter.title
-                                        .split(/[\s-]+/)
-                                        .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
-                                        .join(' ')}
-                                    </div>
-                                    <p>{post.frontmatter.description}</p>
-                                    {post.frontmatter.link}
-                                  </div>
+                              <div className="card-block">
+                                <div className="h4">
+                                  {post.frontmatter.title
+                                    .split(/[\s-]+/)
+                                    .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
+                                    .join(' ')}
                                 </div>
+                                <p>{post.frontmatter.description}</p>
+                                {post.frontmatter.link}
                               </div>
                             </Link>
                           </div>
