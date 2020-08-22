@@ -14,7 +14,7 @@ demo.htmlSource = `
   <button type="button" class="btn ${btnPrimary()}">
     overlay
   </button>
-  <div class="overlay overlay-default">
+  <div class="overlay">
     <div class="overlay-container">
       <div class="overlay-inner">
 

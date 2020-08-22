@@ -599,6 +599,8 @@ module.exports = theme => ({
         bottom: '0', // @FIX no height or it bugs collapse animation
         right: '0', // @FIX no width or it bugs collapse animation
         overflow: 'hidden',
+        // styles
+        '@apply overlay-medium': '',
       },
       '.overlay-design': {
         // setup
@@ -613,6 +615,19 @@ module.exports = theme => ({
         margin: 'auto', // @FIX http://stackoverflow.com/questions/33454533/cant-scroll-to-top-of-flex-item-that-is-overflowing-container
         width: '100%',
         minHeight: '100vh',
+        padding: theme('container.padding.default'),
+        '@screen sm': {
+          padding: theme('container.padding.sm'),
+        },
+        '@screen md': {
+          padding: theme('container.padding.md'),
+        },
+        '@screen lg': {
+          padding: theme('container.padding.lg'),
+        },
+        '@screen xl': {
+          padding: theme('container.padding.xl'),
+        },
       },
       '.overlay-inner': {
         // setup
@@ -624,8 +639,44 @@ module.exports = theme => ({
         zIndex: theme('zIndex.overlay'),
         width: '100%',
         borderRadius: 'inherit',
+      },
+      '.overlay-small': {
         // styles
-        maxWidth: '900px',
+        '.overlay-container': {
+          maxWidth: '600px',
+        },
+      },
+      '.overlay-medium': {
+        // styles
+        '.overlay-container': {
+          maxWidth: '900px',
+        },
+      },
+      '.overlay-large': {
+        // styles
+        '.overlay-container': {
+          maxWidth: '1200px',
+        },
+      },
+      '.overlay-screen': {
+        '.overlay-container': {
+          position: 'relative',
+          zIndex: theme('zIndex.overlay'),
+          maxWidth: 'none !important',
+          padding: '0 !important',
+          '.overlay-inner': {
+            position: 'static',
+          },
+        },
+        '.overlay-inner': {
+          '@apply flex-auto': '',
+          display: 'flex',
+          flexDirection: 'column',
+          maxWidth: 'none !important',
+        },
+        '.card-overlay .card-inner': {
+          alignItems: 'center',
+        },
       },
     },
     // badge
@@ -644,6 +695,29 @@ module.exports = theme => ({
         lineHeight: theme('lineHeight.tight'),
         letterSpacing: theme('letterSpacing.wider'),
         textTransform: 'uppercase',
+      },
+    },
+    // javascript
+    javascript: {
+      '.backdrop': {
+        // setup
+        position: 'fixed',
+        zIndex: theme('zIndex.backdrop'),
+        top: '0',
+        right: '0',
+        width: '100%',
+        height: '100%',
+        // styles
+        '@apply bg-gray-900 bg-opacity-25': '',
+      },
+      'html.xt-scrollbar': {
+        // setup
+        body: {
+          overflowY: 'hidden !important',
+        },
+        '.overlay': {
+          overflowY: 'scroll !important',
+        },
       },
     },
   },

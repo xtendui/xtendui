@@ -752,7 +752,7 @@ if (typeof window !== 'undefined') {
       outer.style.visibility = 'hidden'
       outer.style.width = '100%'
       outer.style.msOverflowStyle = 'scrollbar' // needed for WinJS apps
-      outer.classList.add('xt-ignore', 'overflow-style')
+      outer.classList.add('xt-ignore', 'overflow-main')
       document.body.append(outer)
       // force scrollbars
       outer.style.overflow = 'scroll'
