@@ -428,29 +428,6 @@ module.exports = theme => ({
           transitionTimingFunction: theme('transitionTimingFunction.in'),
         },
       },
-      '.card-design': {
-        // setup
-        '@apply design-absolute': '',
-        borderRadius: 'inherit',
-        transitionProperty: 'inherit',
-        transitionDuration: 'inherit',
-        transitionTimingFunction: 'inherit',
-      },
-      '.card-inner': {
-        // setup
-        display: 'flex',
-        flexDirection: 'column',
-        width: '100%',
-        minHeight: '100%',
-      },
-      '.card-content': {
-        // setup
-        position: 'relative',
-        display: 'flex',
-        flexDirection: 'column',
-        width: '100%',
-        height: '100%',
-      },
       '.card-asset': {
         // setup
         position: 'relative',
@@ -474,7 +451,14 @@ module.exports = theme => ({
         marginBottom: theme('spacing.2'),
         '@apply mt-fc mb-lc': {},
       },
-      // full
+      '.card-design': {
+        // setup
+        '@apply design-absolute': '',
+        borderRadius: 'inherit',
+        transitionProperty: 'inherit',
+        transitionDuration: 'inherit',
+        transitionTimingFunction: 'inherit',
+      },
       '.card-full': {
         // setup
         '.card-block': {
@@ -529,51 +513,40 @@ module.exports = theme => ({
     // table
     table: {
       '.table': {
-        borderCollapse: 'collapse',
+        borderCollapse: 'separate',
+        borderSpacing: '0',
         width: '100%',
-        th: {
-          textAlign: 'left',
-          verticalAlign: 'top',
-          padding: `${theme('spacing.2')} ${theme('spacing.4')}`,
-          fontFamily: theme('fontFamily.sans').toString(),
-          fontWeight: theme('fontWeight.semibold'),
-          fontSize: rem(10),
-          lineHeight: theme('lineHeight.tight'),
-          letterSpacing: theme('letterSpacing.wider'),
-          textTransform: 'uppercase',
+      },
+      th: {
+        textAlign: 'left',
+        verticalAlign: 'top',
+        padding: `${theme('spacing.2')} ${theme('spacing.4')}`,
+        fontFamily: theme('fontFamily.sans').toString(),
+        fontWeight: theme('fontWeight.semibold'),
+        fontSize: rem(10),
+        lineHeight: theme('lineHeight.tight'),
+        letterSpacing: theme('letterSpacing.wider'),
+        textTransform: 'uppercase',
+      },
+      td: {
+        textAlign: 'left',
+        verticalAlign: 'top',
+        padding: `${theme('spacing.2')} ${theme('spacing.4')}`,
+        fontSize: rem(13),
+      },
+      'th, td': {
+        borderRightWidth: theme('borderWidth.default'),
+        borderBottomWidth: theme('borderWidth.default'),
+        borderColor: theme('borderColor.gray.200'),
+        '&:last-child': {
+          borderRight: '0',
         },
-        td: {
-          textAlign: 'left',
-          verticalAlign: 'top',
-          padding: `${theme('spacing.2')} ${theme('spacing.4')}`,
-          fontSize: rem(13),
-        },
-        // thead
-        thead: {
-          'th, td': {
-            borderRightWidth: theme('borderWidth.default'),
-            borderBottomWidth: theme('borderWidth.default'),
-            borderColor: theme('borderColor.gray.200'),
-            '&:last-child': {
-              borderRight: '0',
-            },
-          },
-        },
-        // tbody
-        tbody: {
-          'th, td': {
-            borderRightWidth: theme('borderWidth.default'),
-            borderBottomWidth: theme('borderWidth.default'),
-            borderColor: theme('borderColor.gray.200'),
-            '&:last-child': {
-              borderRight: '0',
-            },
-          },
-          tr: {
-            '&:last-child': {
-              'th, td': {
-                borderBottom: '0',
-              },
+      },
+      tbody: {
+        tr: {
+          '&:last-child': {
+            'th, td': {
+              borderBottom: '0',
             },
           },
         },
