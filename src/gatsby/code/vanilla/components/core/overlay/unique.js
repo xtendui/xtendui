@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<button type="button" class="btn ${btnPrimary()}"
+<button type="button" class="btn btn-medium ${btnPrimary()}"
   data-xt-overlay="{ targets: '#overlay--unique' }">
   overlay
 </button>

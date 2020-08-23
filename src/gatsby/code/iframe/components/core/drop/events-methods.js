@@ -1,7 +1,9 @@
 import React from 'react'
 import path from 'path'
-const markupDrop = require('components/snippets/components/markup-drop').default
-const indentString = require('indent-string')
+const btnPrimary = require('components/snippets/classes/btn-primary').default
+const cardDefault = require('components/snippets/classes/card-default').default
+const btnDefaultDrop = require('components/snippets/classes/btn-default-drop').default
+const cardDefaultDropList = require('components/snippets/classes/card-default-drop-list').default
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -16,31 +18,31 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="list list-default list-space-1 items-center">
-  <button type="button" class="btn btn-primary btn-tiny" id="demo--drop-events-first-element">
+  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--drop-events-first-element">
     1st element
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo--drop-events-first-target">
+  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--drop-events-first-target">
     1st target
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo--drop-events-add">
+  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--drop-events-add">
     Add
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo--drop-events-remove">
+  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--drop-events-remove">
     Remove
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo--drop-events-block">
+  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--drop-events-block">
     Block/Unblock
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo--drop-events-reinit">
+  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--drop-events-reinit">
     Reinit
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo--drop-events-restart">
+  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--drop-events-restart">
     Restart
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo--drop-events-destroy">
+  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--drop-events-destroy">
     Destroy
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo--drop-events-unmount">
+  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--drop-events-unmount">
     Unmount
   </button>
 </div>
@@ -50,34 +52,67 @@ demo.htmlSource = `
 <div class="list list-default list-space-2 items-center" id="demo--drop-events">
 
   <div class="drop-container">
-    <button type="button" class="btn btn-primary">
+
+    <button type="button" class="btn btn-medium ${btnPrimary()}">
       drop
     </button>
-    <div class="drop drop-default">
-    ${indentString(markupDrop(), 4)}
+
+    <div class="drop">
+      <div class="drop-inner">
+        <div class="card card-small ${cardDefaultDropList()}">
+          <div class="card-block py-3">
+            <nav class="list-block">
+              <a href="#" class="btn btn-small ${btnDefaultDrop()}">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              </a>
+              <button type="button" class="btn btn-small ${btnDefaultDrop()}">
+                Dolor sit
+              </button>
+              <button type="button" class="btn btn-small ${btnDefaultDrop()}">
+                Amet
+              </button>
+            </nav>
+          </div>
+        </div>
+      </div>
     </div>
+
   </div>
 
   <div class="drop-container">
-    <button type="button" class="btn btn-primary">
+
+    <button type="button" class="btn btn-medium ${btnPrimary()}">
       drop
     </button>
-    <div class="drop drop-default">
-    ${indentString(markupDrop(), 4)}
+
+    <div class="drop">
+      <div class="drop-inner">
+        <div class="card card-small ${cardDefaultDropList()}">
+          <div class="card-block py-3">
+            <nav class="list-block">
+              <a href="#" class="btn btn-small ${btnDefaultDrop()}">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              </a>
+              <button type="button" class="btn btn-small ${btnDefaultDrop()}">
+                Dolor sit
+              </button>
+              <button type="button" class="btn btn-small ${btnDefaultDrop()}">
+                Amet
+              </button>
+            </nav>
+          </div>
+        </div>
+      </div>
     </div>
+
   </div>
 
 </div>
 
 <br/>
 
-<div class="card card-default card-small">
-  <div class="card-design"></div>
-  <div class="card-inner">
-    <div class="card-content">
-      <div class="card-block card-item card-overflow-y" id="demo--drop-events-log">
-      </div>
-    </div>
+<div class="card ${cardDefault()}">
+  <div class="card-block card-block-small overflow-y-auto overflow-x-hidden overflow-sub max-h-64" id="demo--drop-events-log">
   </div>
 </div>
 `

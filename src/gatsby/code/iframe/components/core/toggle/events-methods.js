@@ -1,5 +1,7 @@
 import React from 'react'
 import path from 'path'
+const btnPrimary = require('components/snippets/classes/btn-primary').default
+const cardDefault = require('components/snippets/classes/card-default').default
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -14,37 +16,37 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="list list-default list-space-1 items-center">
-  <button type="button" class="btn btn-primary btn-tiny" id="demo--toggle-events-first-element">
+  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--toggle-events-first-element">
     1st element
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo--toggle-events-first-target">
+  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--toggle-events-first-target">
     1st target
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo--toggle-events-autostart">
+  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--toggle-events-autostart">
     Autostart
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo--toggle-events-autostop">
+  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--toggle-events-autostop">
     Autostop
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo--toggle-events-add">
+  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--toggle-events-add">
     Add
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo--toggle-events-remove">
+  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--toggle-events-remove">
     Remove
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo--toggle-events-block">
+  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--toggle-events-block">
     Block/Unblock
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo--toggle-events-reinit">
+  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--toggle-events-reinit">
     Reinit
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo--toggle-events-restart">
+  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--toggle-events-restart">
     Restart
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo--toggle-events-destroy">
+  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--toggle-events-destroy">
     Destroy
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo--toggle-events-unmount">
+  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--toggle-events-unmount">
     Unmount
   </button>
 </div>
@@ -87,13 +89,8 @@ demo.htmlSource = `
 
 <br/>
 
-<div class="card card-default card-small">
-  <div class="card-design"></div>
-  <div class="card-inner">
-    <div class="card-content">
-      <div class="card-block card-item card-overflow-y" id="demo--toggle-events-log">
-      </div>
-    </div>
+<div class="card ${cardDefault()}">
+  <div class="card-block card-block-small overflow-y-auto overflow-x-hidden overflow-sub max-h-64" id="demo--toggle-events-log">
   </div>
 </div>
 `

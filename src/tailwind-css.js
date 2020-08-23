@@ -42,15 +42,15 @@ module.exports = theme => ({
     },
     typography: {
       '.text-default': {
-        color: theme('colors.accent.900'),
+        '@apply text-accent-900': '',
         'a:not([class]), .link': {
-          color: theme('colors.accent.500') + ' !important',
+          '@apply text-accent-500 !important': '',
         },
       },
       '.text-inverse': {
-        color: theme('colors.white'),
+        '@apply text-white': '',
         'a:not([class]), .link': {
-          color: theme('colors.white') + ' !important',
+          '@apply text-white !important': '',
         },
       },
       '.text-reset': {
@@ -252,7 +252,7 @@ module.exports = theme => ({
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
         fontSize: rem(30),
-        lineHeight: theme('lineHeight.tight'),
+        lineHeight: theme('lineHeight.snug'),
         letterSpacing: theme('letterSpacing.normal'),
         textTransform: 'none',
         '@screen lg': {
@@ -266,7 +266,7 @@ module.exports = theme => ({
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
         fontSize: rem(30),
-        lineHeight: theme('lineHeight.tight'),
+        lineHeight: theme('lineHeight.snug'),
         letterSpacing: theme('letterSpacing.normal'),
         textTransform: 'none',
         '@screen lg': {
@@ -280,7 +280,7 @@ module.exports = theme => ({
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
         fontSize: rem(25),
-        lineHeight: theme('lineHeight.tight'),
+        lineHeight: theme('lineHeight.snug'),
         letterSpacing: theme('letterSpacing.normal'),
         textTransform: 'none',
         '@screen lg': {
@@ -294,7 +294,7 @@ module.exports = theme => ({
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
         fontSize: rem(20),
-        lineHeight: theme('lineHeight.tight'),
+        lineHeight: theme('lineHeight.snug'),
         letterSpacing: theme('letterSpacing.normal'),
         textTransform: 'none',
       },
@@ -305,7 +305,7 @@ module.exports = theme => ({
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
         fontSize: rem(16),
-        lineHeight: theme('lineHeight.tight'),
+        lineHeight: theme('lineHeight.snug'),
         letterSpacing: theme('letterSpacing.normal'),
         textTransform: 'none',
       },
@@ -316,7 +316,7 @@ module.exports = theme => ({
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
         fontSize: '13px',
-        lineHeight: theme('lineHeight.tight'),
+        lineHeight: theme('lineHeight.snug'),
         letterSpacing: theme('letterSpacing.wide'),
         textTransform: 'uppercase',
       },
@@ -337,12 +337,6 @@ module.exports = theme => ({
         flexWrap: 'wrap',
         flexDirection: 'row',
         alignItems: 'flex-start',
-        /*
-        '&, > *': {
-          '> a:not(.btn), > button:not(.btn)': {
-          }
-        }
-        */
       },
       '.list-block': {
         display: 'flex',
@@ -386,12 +380,11 @@ module.exports = theme => ({
           zIndex: theme('zIndex.active'),
         },
         // styles
-        '@apply btn-medium': '',
         borderWidth: theme('borderWidth.default'),
         borderColor: theme('borderColor.transparent'),
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
-        lineHeight: theme('lineHeight.tight'),
+        lineHeight: theme('lineHeight.snug'),
         letterSpacing: theme('letterSpacing.wider'),
         textTransform: 'uppercase',
         // animation
@@ -407,8 +400,8 @@ module.exports = theme => ({
       },
       '.btn-small': {
         // styles
-        padding: `${rem(4)} ${rem(10)}`,
-        fontSize: rem(10),
+        padding: `${rem(7)} ${rem(12)}`,
+        fontSize: rem(11),
       },
       '.btn-medium': {
         // styles
@@ -417,8 +410,8 @@ module.exports = theme => ({
       },
       '.btn-large': {
         // styles
-        padding: `${rem(12)} ${rem(18)}`,
-        fontSize: rem(14),
+        padding: `${rem(9)} ${rem(16)}`,
+        fontSize: rem(13),
       },
       '.btn-close': {
         // setup
@@ -463,21 +456,22 @@ module.exports = theme => ({
           transitionTimingFunction: theme('transitionTimingFunction.in'),
         },
       },
-      '.card-asset': {
-        // setup
-        position: 'relative',
-        width: '100%',
-        '> *': {
-          width: '100%',
-          height: 'auto',
-        },
+      '.card-small': {
+        // styles
+        minWidth: `${rem(250)}`,
+      },
+      '.card-medium': {
+        // styles
+        minWidth: `${rem(400)}`,
+      },
+      '.card-large': {
+        // styles
+        minWidth: `${rem(650)}`,
       },
       '.card-block': {
         // setup
         position: 'relative',
         width: '100%',
-        // styles
-        '@apply card-block-medium': '',
       },
       '.card-block-small': {
         // styles
@@ -497,6 +491,15 @@ module.exports = theme => ({
       '.card-design': {
         // setup
         '@apply design-setup': '',
+      },
+      '.card-asset': {
+        // setup
+        position: 'relative',
+        width: '100%',
+        '> *': {
+          width: '100%',
+          height: 'auto',
+        },
       },
       '.card-full': {
         // setup
@@ -564,7 +567,7 @@ module.exports = theme => ({
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
         fontSize: rem(10),
-        lineHeight: theme('lineHeight.tight'),
+        lineHeight: theme('lineHeight.snug'),
         letterSpacing: theme('letterSpacing.wider'),
         textTransform: 'uppercase',
         textAlign: 'left',
@@ -601,6 +604,36 @@ module.exports = theme => ({
         width: '100%',
         overflowX: 'hidden',
         overflowY: 'scroll',
+      },
+    },
+    // drop
+    drop: {
+      '.drop-container': {
+        // setup
+        position: 'relative',
+      },
+      '.drop': {
+        // setup
+        '@apply toggle-block': '',
+        position: 'absolute',
+        zIndex: 'inherit',
+        '&.in': {
+          zIndex: theme('zIndex.drop'),
+        },
+        '&.out': {
+          zIndex: theme('zIndex.drop') - 1,
+        },
+        // styles
+        '@apply py-2': '',
+      },
+      '.drop-inner': {
+        // setup
+        position: 'relative',
+        zIndex: theme('zIndex.drop'),
+      },
+      '.drop-design': {
+        // setup
+        '@apply design-setup': '',
       },
     },
     // overlay
@@ -715,7 +748,7 @@ module.exports = theme => ({
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
         fontSize: rem(10),
-        lineHeight: theme('lineHeight.tight'),
+        lineHeight: theme('lineHeight.snug'),
         letterSpacing: theme('letterSpacing.wider'),
         textTransform: 'uppercase',
       },

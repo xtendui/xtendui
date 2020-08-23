@@ -15,7 +15,7 @@ demo.htmlSource = `
   <div class="w-full sm:w-6/12">
     <a role="button" class="card ${cardDefaultFull()} demo--card-full-default">
       <div class="card-design"></div>
-      <div class="card-block">
+      <div class="card-block card-block-medium">
         <div class="h4">Primary</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>
@@ -25,7 +25,7 @@ demo.htmlSource = `
   <div class="w-full sm:w-6/12">
     <a role="button" class="card ${cardPrimaryFull()} demo--card-full-primary">
       <div class="card-design"></div>
-      <div class="card-block">
+      <div class="card-block card-block-medium">
         <div class="h4">Default</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>

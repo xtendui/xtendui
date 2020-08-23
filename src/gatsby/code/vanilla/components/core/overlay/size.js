@@ -14,7 +14,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
 
-    <button type="button" class="btn ${btnPrimary()}">
+    <button type="button" class="btn btn-medium ${btnPrimary()}">
       small max-w-xl
     </button>
 
@@ -41,7 +41,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
 
-    <button type="button" class="btn ${btnPrimary()}">
+    <button type="button" class="btn btn-medium ${btnPrimary()}">
       medium max-w-2xl
     </button>
 
@@ -68,7 +68,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
 
-    <button type="button" class="btn ${btnPrimary()}">
+    <button type="button" class="btn btn-medium ${btnPrimary()}">
       large max-w-4xl
     </button>
 
@@ -95,7 +95,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
 
-    <button type="button" class="btn ${btnPrimary()}">
+    <button type="button" class="btn btn-medium ${btnPrimary()}">
       large full
     </button>
 

@@ -6,15 +6,16 @@ title: "Content List"
 date: "2020-10-10"
 ---
 
-[[notePrimary]]
-| Drop uses **list** to style it's content, refer to [list's options](/components/core/list/option-css).
-
-## List
-
-If you use the class `.btn` you can define custom button styles.
+## Variant
 
 <demo>
-  <demovanilla src="vanilla/components/core/drop/list">
+  <demovanilla src="vanilla/components/core/drop/list-variant">
   </demovanilla>
 </demo>
 
+## Size
+
+<demo>
+  <demovanilla src="vanilla/components/core/drop/list-size">
+  </demovanilla>
+</demo>

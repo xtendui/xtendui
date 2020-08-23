@@ -48,7 +48,7 @@ class Template extends React.Component {
                               className="card card-primary card-small card-full card-collapse gatsby_listing_item"
                             >
                               <div className="card-design"></div>
-                              <div className="card-block">
+                              <div className="card-block card-block-medium">
                                 <div className="h4">
                                   {post.frontmatter.title
                                     .split(/[\s-]+/)
@@ -63,7 +63,7 @@ class Template extends React.Component {
                           <div className="gatsby_listing_column" key={z}>
                             <Link to={markdownSlug(post)} className="card gatsby_listing_item">
                               <div className="card-design"></div>
-                              <div className="card-block">
+                              <div className="card-block card-block-medium">
                                 <div className="h4">
                                   {post.frontmatter.title
                                     .split(/[\s-]+/)

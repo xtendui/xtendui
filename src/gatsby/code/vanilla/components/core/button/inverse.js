@@ -17,11 +17,11 @@ demo.htmlSource = `
     btn
   </button>
 
-  <button type="button" class="btn ${btnDefault()}">
+  <button type="button" class="btn btn-medium ${btnDefault()}">
     default
   </button>
 
-  <button type="button" class="btn ${btnPrimary()}">
+  <button type="button" class="btn btn-medium ${btnPrimary()}">
     primary
   </button>
 

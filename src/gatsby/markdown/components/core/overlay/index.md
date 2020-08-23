@@ -20,9 +20,6 @@ Or just import **core**:
 import '/src/xtend-core.js'
 ```
 
-[[noteDefault]]
-| To modify a **js** file add [webpack resolve](/introduction/setup#usage-webpack) and fork the file copying it in your project.
-
 [[notePrimary]]
 | Overlays are moved to **body** to prevent **z-index** problems. Style and query overlay's content accordingly.
 

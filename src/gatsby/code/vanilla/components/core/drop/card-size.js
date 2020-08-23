@@ -1,6 +1,6 @@
 import path from 'path'
-const markupDropCard = require('components/snippets/components/markup-drop-card').default
-const indentString = require('indent-string')
+const btnPrimary = require('components/snippets/classes/btn-primary').default
+const cardDefaultDrop = require('components/snippets/classes/card-default-drop').default
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -13,39 +13,63 @@ demo.htmlSource = `
 <div class="list list-default list-space-2 items-center">
 
   <div class="drop-container" data-xt-drop>
-    <button type="button" class="btn btn-primary">
-      default
-    </button>
-    <div class="drop drop-default">
-    ${indentString(markupDropCard(), 6)}
-    </div>
-  </div>
 
-  <div class="drop-container" data-xt-drop>
-    <button type="button" class="btn btn-primary">
+    <button type="button" class="btn btn-medium ${btnPrimary()}">
       small
     </button>
-    <div class="drop drop-default drop-size-small drop-small">
-    ${indentString(markupDropCard(), 6)}
+
+    <div class="drop">
+      <div class="drop-inner">
+        <div class="card card-small ${cardDefaultDrop()}">
+          <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
+          <div class="card-block card-block-small">
+            <div class="h5">Lorem ipsum</div>
+            <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+          </div>
+        </div>
+      </div>
     </div>
+
   </div>
 
   <div class="drop-container" data-xt-drop>
-    <button type="button" class="btn btn-primary">
+
+    <button type="button" class="btn btn-medium ${btnPrimary()}">
       medium
     </button>
-    <div class="drop drop-default drop-size-medium drop-medium">
-    ${indentString(markupDropCard(), 6)}
+
+    <div class="drop">
+      <div class="drop-inner">
+        <div class="card card-medium ${cardDefaultDrop()}">
+          <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
+          <div class="card-block card-block-medium">
+            <div class="h4">Lorem ipsum</div>
+            <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+          </div>
+        </div>
+      </div>
     </div>
+
   </div>
 
   <div class="drop-container" data-xt-drop>
-    <button type="button" class="btn btn-primary">
+
+    <button type="button" class="btn btn-medium ${btnPrimary()}">
       large
     </button>
-    <div class="drop drop-default drop-size-large drop-large">
-    ${indentString(markupDropCard(), 6)}
+
+    <div class="drop">
+      <div class="drop-inner">
+        <div class="card card-large ${cardDefaultDrop()}">
+          <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
+          <div class="card-block card-block-large">
+            <div class="h3">Lorem ipsum</div>
+            <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+          </div>
+        </div>
+      </div>
     </div>
+
   </div>
 
 </div>

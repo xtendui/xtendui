@@ -1,10 +1,9 @@
 export default () => {
   return `
 <div class="drop-inner">
-  <div class="drop-design"></div>
   <div class="drop-content">
 
-    <nav class="list-block list-drop">
+    <nav class="list-block">
       <button type="button">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit
       </button>

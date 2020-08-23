@@ -12,19 +12,19 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-default list-space-2 items-center">
 
-  <button type="button" class="btn">
+  <button type="button" class="btn btn-medium">
     btn
   </button>
 
-  <button type="button" class="btn ${btnDefault()}">
+  <button type="button" class="btn btn-medium ${btnDefault()}">
     default
   </button>
 
-  <button type="button" class="btn ${btnPrimary()}">
+  <button type="button" class="btn btn-medium ${btnPrimary()}">
     primary
   </button>
 
-  <button type="button" class="btn link">
+  <button type="button" class="btn btn-medium link">
     link
   </button>
 

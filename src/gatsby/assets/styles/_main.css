@@ -76,7 +76,7 @@ body {
   }
 }
 .gatsby_site_article_hero {
-  @apply pt-20 pb-8;
+  @apply pt-20 pb-12;
   background: linear-gradient(180deg, theme('colors.gray.300'), theme('colors.white') 66%);
   .p {
     @apply text-lg;
@@ -107,7 +107,7 @@ body {
 }
 
 .gatsby_site_article_content {
-  @apply flex-auto py-20;
+  @apply flex-auto py-12;
   .gatsby_site_article_hero + & {
     @apply flex-auto pt-0;
   }
@@ -126,7 +126,12 @@ body {
 }
 
 .gatsby_listing_items {
-  @apply my-12;
+  .gatsby_listing& {
+    @apply my-12 mt-fc mb-lc;
+  }
+  .gatsby_site_article_foot_inner & {
+    @apply mb-12;
+  }
 }
 
 .gatsby_listing_column {

@@ -54,7 +54,7 @@
   width: 100%;
   a:not([class]) {
     display: block;
-    @apply text-default !important;
+    @apply text-accent-900 !important;
   }
   .gatsby_site_article_anchor {
     pointer-events: none;

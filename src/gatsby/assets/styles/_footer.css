@@ -4,7 +4,7 @@
 
 
 .gatsby_site_footer_bottom {
-  @apply pt-10 pb-5;
+  @apply pb-5;
   background: linear-gradient(-180deg, theme('colors.white'), theme('colors.gray.300'));
   a {
     @apply font-semibold;

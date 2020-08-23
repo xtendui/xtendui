@@ -15,7 +15,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
 
-    <button type="button" class="btn ${btnPrimary()}">
+    <button type="button" class="btn btn-medium ${btnPrimary()}">
       left
     </button>
 
@@ -42,7 +42,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
 
-    <button type="button" class="btn ${btnPrimary()}">
+    <button type="button" class="btn btn-medium ${btnPrimary()}">
       right
     </button>
 
@@ -69,7 +69,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
 
-    <button type="button" class="btn ${btnPrimary()}">
+    <button type="button" class="btn btn-medium ${btnPrimary()}">
       left blocks
     </button>
 
@@ -82,11 +82,11 @@ demo.htmlSource = `
             <div class="card-asset">
               ${img({ classes: 'object-cover object-center', ratio: '100%' })}
             </div>
-            <div class="card-block">
+            <div class="card-block card-block-medium">
               <div class="h3">Lorem ipsum</div>
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
             </div>
-            <div class="card-block bg-gray-500 mt-auto">
+            <div class="card-block card-block-medium bg-gray-500 mt-auto">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
             </div>
           </div>

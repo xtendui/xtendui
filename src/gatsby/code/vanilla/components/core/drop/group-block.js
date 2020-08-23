@@ -1,7 +1,7 @@
 import path from 'path'
 const img = require('components/snippets/img').default
 const btnPrimary = require('components/snippets/classes/btn-primary').default
-const cardDefaultOverlay = require('components/snippets/classes/card-default-overlay').default
+const cardDefaultDrop = require('components/snippets/classes/card-default-drop').default
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -11,21 +11,20 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div data-xt-overlay>
+<div class="list list-default list-space-2 items-center">
 
-  <button type="button" class="btn btn-medium ${btnPrimary()}">
-    block side
-  </button>
+  <div class="drop-container" data-xt-drop>
 
-  <div class="overlay">
-    <div class="overlay-container max-w-4xl">
-      <div class="overlay-inner">
+    <button type="button" class="btn btn-medium ${btnPrimary()}">
+      group block
+    </button>
 
-        <div class="card ${cardDefaultOverlay()}">
-          <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
+    <div class="drop">
+      <div class="drop-inner">
+        <div class="card card-medium ${cardDefaultDrop()}">
           <div class="sm:card-group">
             <div class="card-block card-block-medium sm:w-6/12">
-              <div class="h3">Lorem ipsum</div>
+              <div class="h4">Lorem ipsum</div>
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
             </div>
             <div class="sm:w-6/12">
@@ -41,9 +40,9 @@ demo.htmlSource = `
             ${img({ classes: 'object-cover object-center', ratio: '15%' })}
           </div>
         </div>
-
       </div>
     </div>
+
   </div>
 
 </div>

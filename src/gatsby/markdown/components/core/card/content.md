@@ -20,33 +20,9 @@ date: "2020-10-10"
   </demovanilla>
 </demo>
 
-## Interactive
-
-You can make interactive cards with `a` or `button` or `label`.
-
-<demo>
-  <demovanilla src="vanilla/components/core/card/interactive">
-  </demovanilla>
-</demo>
-
-## Full
-
-<demo>
-  <demovanilla src="vanilla/components/core/card/full">
-  </demovanilla>
-</demo>
-
 ## Asset
 
 If you want full width assets use `.card-asset`.
-
-<div class="table-scroll">
-
-|                         | Class                                     | Mixin                         | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `.card-asset`                | Not Possible        | Full size block with responsive full assets            |
-
-</div>
 
 <demo>
   <demovanilla src="vanilla/components/core/card/asset">
@@ -56,33 +32,6 @@ If you want full width assets use `.card-asset`.
 ## Block
 
 Sequential `.card-block` stack vertically.
-
-<div class="table-scroll">
-
-|                         | Class                                     | Mixin                         | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `.card-block.card-item`                | Not Possible        | Card blocks with spacing            |
-
-</div>
-
-<script type="text/plain" class="language-markup">
-  <div class="card card-primary">
-    <div class="card-design"></div>
-    <div class="card-inner">
-      <div class="card-content">
-
-        <div class="card-block">
-          <!-- content -->
-        </div>
-
-        <div class="card-block">
-          <!-- content -->
-        </div>
-
-      </div>
-    </div>
-  </div>
-</script>
 
 <demo>
   <demovanilla src="vanilla/components/core/card/block">
@@ -124,40 +73,7 @@ The size of **blocks** is automatic, you can specify the **size** with [columns]
 
 ## Overflow
 
-You can set vertical overflow using `.card-overflow-y` in `.card-inner` or `.card-block`.
-
-<div class="table-scroll">
-
-|                         | Class                                     | Mixin                         | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `.card-overflow-y`                | `.card-overflow-y()`        | Vertical overflow with max-height and scrollbar            |
-
-</div>
-
 <demo>
   <demovanilla src="vanilla/components/core/card/overflow-y">
   </demovanilla>
 </demo>
-
-## Close button
-
-Usage of `.btn-close` inside card.
-
-<demo>
-  <demovanilla src="vanilla/components/core/card/close">
-  </demovanilla>
-</demo>
-
-## Disable
-
-You can disable card using `.card-disable`.
-(responsive classes doc)
-
-<demo>
-  <demovanilla src="vanilla/components/core/card/disable">
-  </demovanilla>
-</demo>
-
-## Stretch
-
-Same demo as [Row stretch](/components/core/row/other#stretch) HERE.

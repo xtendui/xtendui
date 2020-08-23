@@ -44,10 +44,10 @@ demo.htmlSource = `
 <br/>
 
 <div class="list list-default list-space-1 items-center">
-  <button type="button" class="btn ${btnDefault()}" id="demo--overlay-events">
+  <button type="button" class="btn btn-medium ${btnDefault()}" id="demo--overlay-events">
     Open Overlay
   </button>
-  <button type="button" class="btn ${btnDefault()}" id="demo--overlay-events-alt">
+  <button type="button" class="btn btn-medium ${btnDefault()}" id="demo--overlay-events-alt">
     Open Same Overlay
   </button>
 </div>

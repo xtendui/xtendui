@@ -1,4 +1,5 @@
 import path from 'path'
+const btnPrimary = require('components/snippets/classes/btn-primary').default
 const markupDrop = require('components/snippets/components/markup-drop').default
 const indentString = require('indent-string')
 
@@ -11,10 +12,10 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="drop-container" data-xt-drop>
-  <button type="button" class="btn btn-primary">
+  <button type="button" class="btn btn-medium ${btnPrimary()}">
     drop
   </button>
-  <div class="drop drop-default">
+  <div class="drop">
   ${indentString(markupDrop(), 4)}
   </div>
 </div>

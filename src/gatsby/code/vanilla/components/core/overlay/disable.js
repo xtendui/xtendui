@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<button type="button" class="btn ${btnPrimary()}" id="demo--overlay-nested-disable-toggle">
+<button type="button" class="btn btn-medium ${btnPrimary()}" id="demo--overlay-nested-disable-toggle">
   Nested
 </button>
 
@@ -30,7 +30,7 @@ demo.htmlSource = `
 
           <div data-xt-overlay>
 
-            <button type="button" class="btn ${btnPrimary()}">
+            <button type="button" class="btn btn-medium ${btnPrimary()}">
               Overlay
             </button>
 

@@ -8,11 +8,7 @@ description: "Highly customizable dropdowns that can contain anything you want."
 
 ## Setup
 
-To use this component import the **less** and **js** files accordingly:
-
-```less
-@import 'xtend-library/src/core/drop/drop.less';
-```
+To use this component import the **js** file:
 
 ```jsx
 import '/src/core/drop/drop.js'
@@ -20,16 +16,9 @@ import '/src/core/drop/drop.js'
 
 Or just import **core**:
 
-```less
-@import 'xtend-library/src/xtend-core.less';
-```
-
 ```jsx
 import '/src/xtend-core.js'
 ```
-
-[[noteDefault]]
-| To modify a **less** or **js** file add [webpack resolve](/introduction/setup#usage-webpack) and fork the file copying it in your project.
 
 ## Usage
 
