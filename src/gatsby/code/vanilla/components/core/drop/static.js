@@ -1,5 +1,7 @@
 import path from 'path'
 const img = require('components/snippets/img').default
+const btnPrimary = require('components/snippets/classes/btn-primary').default
+const cardDefaultDrop = require('components/snippets/classes/card-default-drop').default
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -12,46 +14,35 @@ demo.htmlSource = `
 <div style="position: relative; padding: 1rem 1.5rem; background: #0078ff;">
 
   <div class="drop-container drop-container-static" data-xt-drop>
-    <button type="button" class="btn btn-primary">
-      Toggle
+
+    <button type="button" class="btn btn-medium ${btnPrimary()}">
+      static
     </button>
-    <div class="drop drop-default drop-large drop-squared drop-nospace drop-noborder">
+
+    <div class="drop p-0">
       <div class="drop-inner">
-        <div class="drop-design"></div>
-        <div class="drop-content">
-
-          <div class="card card-drop">
-            <div class="card-design"></div>
-            <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
-            <div class="card-inner">
-              <div class="card-content">
-
-                <div class="card-item-nested card-item card-group-sm">
-
-                  <div class="card-item card-block-side sm:w-5/12">
-                    <div class="card-asset">
-                      ${img({ classes: 'object-cover object-center', ratio: '100%', loading: 'eager' })}
-                    </div>
-                    <div class="card-block card-item">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
-                    </div>
-                  </div>
-
-                  <div class="card-block card-item">
-                    <div class="h4">Lorem ipsum</div>
-                    <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur <a href="#">adipiscing elit</a>. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
-                  </div>
-
-                </div>
-
+        <div class="card card-medium ${cardDefaultDrop()}">
+          <div class="sm:card-group">
+            <div class="card-block card-block-medium sm:w-6/12">
+              <div class="h4">Lorem ipsum</div>
+              <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+            </div>
+            <div class="sm:w-6/12">
+              <div class="card-block card-block-medium bg-gray-500 sm:rounded-tr-md">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
+              </div>
+              <div class="card-block card-block-medium">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
               </div>
             </div>
           </div>
-
+          <div class="card-asset rounded-b-md">
+            ${img({ classes: 'object-cover object-center', ratio: '15%' })}
+          </div>
         </div>
       </div>
     </div>
+
   </div>
 
 </div>

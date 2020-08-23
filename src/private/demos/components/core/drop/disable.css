@@ -1,0 +1,6 @@
+.demo--drop-container-disable-sm {
+  /*@screen md {
+    @apply drop-container-disable;
+  }*/
+  @apply drop-container-disable;
+}

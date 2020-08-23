@@ -49,7 +49,7 @@ demo.htmlSource = `
 
 <br/>
 
-<div class="list list-default list-space-2 items-center" id="demo--drop-events">
+<div class="list list-default list-space-2 items-center inline-flex" id="demo--drop-events">
 
   <div class="drop-container">
 

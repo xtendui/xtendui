@@ -1,6 +1,7 @@
 import path from 'path'
-const markupDrop = require('components/snippets/components/markup-drop').default
-const indentString = require('indent-string')
+const btnPrimary = require('components/snippets/classes/btn-primary').default
+const btnDefaultDrop = require('components/snippets/classes/btn-default-drop').default
+const cardDefaultDropList = require('components/snippets/classes/card-default-drop-list').default
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -10,16 +11,38 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<button type="button" class="btn btn-primary" data-xt-drop="{ elementsInner: false, targets: '#drop--unique' }">
-  drop
-</button>
+<div class="list list-default list-space-2 items-center">
 
-<br/>
+  <button type="button" class="btn btn-medium ${btnPrimary()}"
+    data-xt-drop="{ targets: '#drop--unique' }">
+    drop
+  </button>
 
-<div class="drop-container" id="drop--unique">
-  Drop is relative to here
-  <div class="drop drop-default">
-  ${indentString(markupDrop(), 4)}
+  <div class="drop-container">
+
+    Drop is relative to here
+
+    <div class="drop" id="drop--unique">
+      <div class="drop-inner">
+        <div class="card card-small ${cardDefaultDropList()}">
+          <div class="card-block py-3">
+            <nav class="list-block">
+              <a href="#" class="btn btn-small ${btnDefaultDrop()}">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              </a>
+              <button type="button" class="btn btn-small ${btnDefaultDrop()}">
+                Dolor sit
+              </button>
+              <button type="button" class="btn btn-small ${btnDefaultDrop()}">
+                Amet
+              </button>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
 </div>
 `

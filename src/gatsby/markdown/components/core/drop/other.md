@@ -6,17 +6,13 @@ title: "Other"
 date: "2019-03-15"
 ---
 
-## Special
+## Static
 
 <div class="table-scroll">
 
 |                         | Class                                     | Mixin                         | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `.drop-container-static`                | `.drop-container-static()`        | Position relative to closest element with `position: relative;`.    
-| Option                  | `.drop-container-reset`                | `.drop-container-reset()`        | Disable drop, useful within media queries            |
-| Option                  | `.drop-squared`                | `.drop-squared()`        | No border-radius on drop            |
-| Option                  | `.drop-noborder`                | `.drop-noborder()`        | No border on drop            |
-| Option                  | `.drop-nospace`                | `.drop-nospace()`        | No space on drop            |
 
 </div>
 
@@ -24,6 +20,16 @@ date: "2019-03-15"
   <demovanilla src="vanilla/components/core/drop/static">
   </demovanilla>
 </demo>
+
+## Disable
+
+<div class="table-scroll">
+
+|                         | Class                                     | Mixin                         | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `.drop-container-disable`                | `.drop-container-disable()`        | Disable drop, useful within media queries            |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/core/drop/disable">

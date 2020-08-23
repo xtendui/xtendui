@@ -624,7 +624,7 @@ module.exports = theme => ({
           zIndex: theme('zIndex.drop') - 1,
         },
         // styles
-        '@apply py-2': '',
+        '@apply p-2 drop-left drop-bottom': '',
       },
       '.drop-inner': {
         // setup
@@ -634,6 +634,101 @@ module.exports = theme => ({
       '.drop-design': {
         // setup
         '@apply design-setup': '',
+      },
+      '.drop-container-static': {
+        // setup
+        position: 'static',
+        '> .drop': {
+          width: '100%',
+          '> .drop-inner': {
+            width: '100%',
+          },
+          left: '0 !important',
+          right: '0 !important',
+        },
+      },
+      '.drop-container-disable': {
+        // setup
+        '@apply xt-disable': '',
+        position: 'initial',
+        '> a, > button': {
+          display: 'none',
+        },
+        '> .drop': {
+          display: 'inline-block',
+          position: 'relative',
+          top: 'auto',
+          left: 'auto',
+          right: 'auto',
+          bottom: 'auto',
+          '> .drop-inner': {
+            zIndex: 'initial',
+            '> .drop-design': {
+              display: 'none',
+            },
+            '> .card': {
+              '@apply card-disable': '',
+            },
+          },
+        },
+      },
+      '.drop-before': {
+        // setup
+        left: 'auto',
+        right: '100%',
+      },
+      '.drop-after': {
+        // setup
+        left: '100%',
+        right: 'auto',
+      },
+      '.drop-left': {
+        // setup
+        left: '0',
+        right: 'auto',
+      },
+      '.drop-right': {
+        // setup
+        left: 'auto',
+        right: '0',
+      },
+      '.drop-bottom': {
+        // setup
+        top: '100%',
+        bottom: 'auto',
+      },
+      '.drop-top': {
+        // setup
+        top: 'auto',
+        bottom: '100%',
+      },
+      '.drop-center': {
+        // setup
+        '&:before': {
+          display: 'none',
+          content: 'xt-drop-center',
+        },
+      },
+      '.drop-middle': {
+        // setup
+        paddingTop: '0',
+        paddingBottom: '0',
+        '&:after': {
+          display: 'none',
+          content: 'xt-drop-middle',
+        },
+      },
+      '.drop-contain-bottom': {
+        // setup
+        '@apply drop-middle': '',
+        top: 'auto',
+        bottom: '0',
+      },
+      '.drop-contain-top': {
+        // setup
+        '@apply drop-middle': '',
+        top: '0',
+        bottom: 'auto',
       },
     },
     // overlay

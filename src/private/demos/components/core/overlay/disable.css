@@ -2,10 +2,12 @@
   /*@screen md {
     display: none;
   }*/
+  display: none;
 }
 
 #demo--overlay-nested-disable {
   /*@screen md {
     @apply overlay-disable;
   }*/
+  @apply overlay-disable;
 }
