@@ -9,7 +9,7 @@ export default () => {
       overlay full
     </button>
     <div class="overlay overlay-default overlay-screen overlay-size-full">
-      <div class="overlay-container">
+      <div class="overlay-container max-w-4xl">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
 
@@ -35,7 +35,7 @@ export default () => {
       overlay menu left
     </button>
     <div class="overlay overlay-default overlay-position-left overlay-close-outside">
-      <div class="overlay-container">
+      <div class="overlay-container max-w-4xl">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
 
@@ -83,7 +83,7 @@ export default () => {
       overlay contact
     </button>
     <div class="overlay overlay-default overlay-close-outside">
-      <div class="overlay-container">
+      <div class="overlay-container max-w-4xl">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
 
@@ -216,7 +216,7 @@ export default () => {
       overlay newsletter
     </button>
     <div class="overlay overlay-default overlay-size-small overlay-close-outside">
-      <div class="overlay-container">
+      <div class="overlay-container max-w-4xl">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
 

@@ -51,7 +51,7 @@ Use this markup to create a **self overlay**.
       <!-- content -->
     </button>
     <div class="overlay overlay-default">
-      <div class="overlay-container">
+      <div class="overlay-container max-w-4xl">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
           <!-- content -->
@@ -81,7 +81,7 @@ The **unique** mode is useful when triggering **targets outside the scope** of t
     <!-- content -->
   </button>
   <div class="overlay overlay-default" id="overlay--unique">
-    <div class="overlay-container">
+    <div class="overlay-container max-w-4xl">
       <div class="overlay-inner">
         <div class="overlay-design"></div>
         <!-- content -->
@@ -104,7 +104,7 @@ Just use the class `active-overlay` if you want to automatically open, or use th
 <script type="text/plain" class="language-markup">
 <div class="overlay overlay-default active-overlay" id="overlay--standalone"
   data-xt-overlay="{ on: false, instant: false }">
-  <div class="overlay-container">
+  <div class="overlay-container max-w-4xl">
     <div class="overlay-inner">
       <div class="overlay-design"></div>
       <!-- content -->

@@ -20,7 +20,7 @@ demo.htmlSource = `
           close message
         </button>
       </div>
-      <div class="overlay-container">
+      <div class="overlay-container max-w-4xl">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
 
@@ -55,7 +55,7 @@ demo.htmlSource = `
           close message
         </button>
       </div>
-      <div class="overlay-container">
+      <div class="overlay-container max-w-4xl">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
 

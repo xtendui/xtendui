@@ -13,7 +13,7 @@ demo.htmlSource = `
     Toggle
   </button>
   <div class="overlay overlay-default demo--overlay-disable">
-    <div class="overlay-container">
+    <div class="overlay-container max-w-4xl">
       <div class="overlay-inner">
         <div class="overlay-design"></div>
 
@@ -34,7 +34,7 @@ demo.htmlSource = `
                       Toggle
                     </button>
                     <div class="overlay overlay-default overlay-size-small">
-                      <div class="overlay-container">
+                      <div class="overlay-container max-w-4xl">
                         <div class="overlay-inner">
                           <div class="overlay-design"></div>
 

@@ -16,7 +16,7 @@ demo.htmlSource = `
 </button>
 
 <div class="overlay" id="overlay--unique">
-  <div class="overlay-container">
+  <div class="overlay-container max-w-4xl">
     <div class="overlay-inner">
 
       <div class="card ${cardDefault()}">

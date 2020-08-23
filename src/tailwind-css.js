@@ -424,10 +424,12 @@ module.exports = theme => ({
     card: {
       '.card': {
         // setup
+        '@apply flex-auto': '',
         position: 'relative',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'flex-start',
+        alignItems: 'center',
+        justifyContent: 'flex-start',
         width: '100%',
         zIndex: theme('zIndex.base'),
         '&:hover, &:active': {
@@ -465,17 +467,17 @@ module.exports = theme => ({
       },
       '.card-block-small': {
         // styles
-        padding: `${rem(20)}`,
+        padding: `${rem(25)}`,
         fontSize: rem(12),
       },
       '.card-block-medium': {
         // styles
-        padding: `${rem(25)}`,
+        padding: `${rem(30)}`,
         fontSize: rem(14),
       },
       '.card-block-large': {
         // styles
-        padding: `${rem(35)}`,
+        padding: `${rem(40)}`,
         fontSize: rem(16),
       },
       '.card-design': {
@@ -599,8 +601,6 @@ module.exports = theme => ({
         bottom: '0', // @FIX no height or it bugs collapse animation
         right: '0', // @FIX no width or it bugs collapse animation
         overflow: 'hidden',
-        // styles
-        '@apply overlay-medium': '',
       },
       '.overlay-design': {
         // setup
@@ -639,24 +639,6 @@ module.exports = theme => ({
         zIndex: theme('zIndex.overlay'),
         width: '100%',
         borderRadius: 'inherit',
-      },
-      '.overlay-small': {
-        // styles
-        '.overlay-container': {
-          maxWidth: '600px',
-        },
-      },
-      '.overlay-medium': {
-        // styles
-        '.overlay-container': {
-          maxWidth: '900px',
-        },
-      },
-      '.overlay-large': {
-        // styles
-        '.overlay-container': {
-          maxWidth: '1200px',
-        },
       },
       '.overlay-full': {
         // styles

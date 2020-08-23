@@ -15,7 +15,7 @@ demo.htmlSource = `
       default
     </button>
     <div class="overlay overlay-default overlay-close-outside">
-      <div class="overlay-container">
+      <div class="overlay-container max-w-4xl">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
 
@@ -45,7 +45,7 @@ demo.htmlSource = `
       position left
     </button>
     <div class="overlay overlay-default overlay-position-left overlay-close-outside">
-      <div class="overlay-container">
+      <div class="overlay-container max-w-4xl">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
 
@@ -75,7 +75,7 @@ demo.htmlSource = `
       position right
     </button>
     <div class="overlay overlay-default overlay-position-right overlay-close-outside">
-      <div class="overlay-container">
+      <div class="overlay-container max-w-4xl">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
 

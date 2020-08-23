@@ -15,7 +15,7 @@ demo.htmlSource = `
       close fixed
     </button>
     <div class="overlay overlay-default overlay-close-fixed">
-      <div class="overlay-container">
+      <div class="overlay-container max-w-4xl">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
 
@@ -57,7 +57,7 @@ demo.htmlSource = `
       screen close fixed
     </button>
     <div class="overlay overlay-default overlay-screen">
-      <div class="overlay-container">
+      <div class="overlay-container max-w-4xl">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
 

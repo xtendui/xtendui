@@ -26,16 +26,7 @@ Classes for assigning variant (e.g.: border / background / color).
 
 ## Size
 
-Set overlay **max-width** with this classes.
-
-<div class="table-scroll">
-
-|                         | Syntax                                    | Example                       |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.overlay-{size}`                           | `.overlay-small` `.overlay-medium` `.overlay-large`|
-| Mixin                   | `.overlay-{size}()`                         | `.overlay-small()` `.overlay-medium()` `.overlay-large()`         |
-
-</div>
+Set overlay **max-width** with tailwind size classes.
 
 Classes for assigning **card block size** (e.g.: padding or font size).
 
@@ -50,29 +41,6 @@ Classes for assigning **card block size** (e.g.: padding or font size).
 
 <demo>
   <demovanilla src="vanilla/components/core/overlay/size">
-  </demovanilla>
-</demo>
-
-## Preset
-
-`{preset}` can be `screen`, `position-left`, `position-right`. `{position}` can be `left`, `right`.
-
-<div class="table-scroll">
-
-|                         | Syntax                                    | Example                       |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.overlay-{preset}`                         | `.overlay-screen` `.overlay-position-{position}` |
-| Mixin                   | Not possible                              | Not possible                  |
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/core/overlay/screen">
-  </demovanilla>
-</demo>
-
-<demo>
-  <demovanilla src="vanilla/components/core/overlay/position">
   </demovanilla>
 </demo>
 

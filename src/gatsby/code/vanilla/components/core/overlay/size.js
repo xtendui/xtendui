@@ -15,11 +15,11 @@ demo.htmlSource = `
   <div data-xt-overlay>
 
     <button type="button" class="btn ${btnPrimary()}">
-      small
+      small max-w-xl
     </button>
 
-    <div class="overlay overlay-small">
-      <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-container max-w-xl">
         <div class="overlay-inner">
 
           <div class="card ${cardDefault()}">
@@ -42,11 +42,11 @@ demo.htmlSource = `
   <div data-xt-overlay>
 
     <button type="button" class="btn ${btnPrimary()}">
-      medium
+      medium max-w-2xl
     </button>
 
-    <div class="overlay overlay-medium">
-      <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-container max-w-2xl">
         <div class="overlay-inner">
 
           <div class="card ${cardDefault()}">
@@ -69,11 +69,11 @@ demo.htmlSource = `
   <div data-xt-overlay>
 
     <button type="button" class="btn ${btnPrimary()}">
-      large
+      large max-w-4xl
     </button>
 
-    <div class="overlay overlay-large">
-      <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-container max-w-4xl">
         <div class="overlay-inner">
 
           <div class="card ${cardDefault()}">
@@ -96,10 +96,10 @@ demo.htmlSource = `
   <div data-xt-overlay>
 
     <button type="button" class="btn ${btnPrimary()}">
-      full
+      large full
     </button>
 
-    <div class="overlay overlay-full">
+    <div class="overlay">
       <div class="overlay-container">
         <div class="overlay-inner">
 

@@ -115,7 +115,7 @@ demo.htmlSource = `
                   </div>
 
                   <div class="overlay overlay-default overlay-screen overlay-size-full" id="overlay--product-page_images">
-                    <div class="overlay-container">
+                    <div class="overlay-container max-w-4xl">
                       <div class="overlay-inner">
                         <div class="overlay-design"></div>
                         <div class="card card-overlay">
