@@ -38,7 +38,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
   </demovanilla>
   <demovanilla src="vanilla/components/core/drop/prevent-event-hover">
   </demovanilla>
-  <demovanilla src="vanilla/components/core/overlay/nested">
+  <demovanilla src="vanilla/components/core/overlay/disable">
   </demovanilla>
   <demovanilla src="vanilla/components/core/overlay/position">
   </demovanilla>

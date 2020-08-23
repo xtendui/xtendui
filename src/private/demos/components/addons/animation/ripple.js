@@ -1,4 +1,4 @@
-import { Xt } from 'xtend-library'
+import { Xt } from 'xtend-library/src/xt.js'
 import 'xtend-library/src/vars.js'
 import 'xtend-library/src/addons/animation/ripple.js'
 import gsap from 'gsap'

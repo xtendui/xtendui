@@ -1,5 +1,5 @@
 /* global google */
-import { Xt } from 'xtend-library'
+import { Xt } from 'xtend-library/src/xt.js'
 import MarkerClusterer from '@google/markerclusterer'
 
 /**

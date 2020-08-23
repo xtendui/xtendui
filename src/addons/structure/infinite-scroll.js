@@ -1,4 +1,4 @@
-import { Xt } from 'xtend-library'
+import { Xt } from 'xtend-library/src/xt.js'
 import JSON5 from 'json5'
 
 /**

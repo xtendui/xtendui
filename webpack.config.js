@@ -10,7 +10,7 @@ module.exports = {
   performance: { hints: false },
   context: path.resolve(__dirname, ''),
   entry: {
-    'dist/xtend': ['./dist/xtend.js', './dist/xtend.less'],
+    'dist/xtend': ['./dist/xtend.js', './dist/xtend.css'],
   },
   output: {
     filename: '[name].min.js',
@@ -44,7 +44,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.less$/,
+        test: /\.css$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -57,10 +57,7 @@ module.exports = {
             },
           },
           {
-            loader: 'less-loader',
-            options: {
-              sourceMap: true,
-            },
+            loader: 'postcss-loader',
           },
         ],
       },

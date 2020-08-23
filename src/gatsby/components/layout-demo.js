@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Xt } from 'xtend-library'
+import { Xt } from 'xtend-library/src/xt.js'
 
 import { makeDocument } from 'assets/scripts/theme.js'
 import ResizeSensor from 'assets/scripts/ResizeSensor.js'

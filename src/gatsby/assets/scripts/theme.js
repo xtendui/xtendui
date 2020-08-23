@@ -1,6 +1,6 @@
 import 'core-js'
 import 'xtend-library/src/polyfill.js'
-import { Xt } from 'xtend-library'
+import { Xt } from 'xtend-library/src/xt.js'
 import 'xtend-library/src/xtend-core.js'
 import 'xtend-library/src/xtend-extensions.js'
 import 'xtend-library/src/xtend-addons.js'

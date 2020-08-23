@@ -1,4 +1,4 @@
-import { Xt } from 'xtend-library'
+import { Xt } from 'xtend-library/src/xt.js'
 import 'xtend-library/src/core/toggle/toggle.js'
 import JSON5 from 'json5'
 
