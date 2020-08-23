@@ -217,23 +217,13 @@ const populateDemo = (container, i) => {
   )
   container
     .querySelector('.gatsby_demo_tabs_right')
-    .append(
-      Xt.createElement('<button type="button" class="btn btn-tiny btn-show-code" aria-label="Toggle Code"><span class="icon-code icon-large"></span></button>')
-    )
+    .append(Xt.createElement('<button type="button" class="btn btn-show-code" aria-label="Toggle Code"><span class="icon-code"></span></button>'))
   container
     .querySelector('.gatsby_demo_tabs_right')
-    .append(
-      Xt.createElement(
-        '<button type="button" class="btn btn-tiny btn-open-full" aria-label="Toggle Fullscreen"><span class="icon-maximize icon-large"></span></button>'
-      )
-    )
+    .append(Xt.createElement('<button type="button" class="btn btn-open-full" aria-label="Toggle Fullscreen"><span class="icon-maximize"></span></button>'))
   container
     .querySelector('.gatsby_demo_tabs_right')
-    .append(
-      Xt.createElement(
-        '<a href="#" target="_blank" class="btn btn-tiny btn-open-iframe" aria-label="Open Iframe"><span class="icon-iframe icon-large"></span></a>'
-      )
-    )
+    .append(Xt.createElement('<a href="#" target="_blank" class="btn btn-open-iframe" aria-label="Open Iframe"><span class="icon-iframe"></span></a>'))
   // loop itemsi
   for (const [k, item] of items.entries()) {
     // populate tabs
@@ -248,7 +238,7 @@ const populateDemo = (container, i) => {
       file = file.split('/').splice(3, 10).join('-')
     }
     item.setAttribute('id', kebabCase(file))
-    container.querySelector('.gatsby_demo_tabs_left').append(Xt.createElement('<button type="button" class="btn btn-tiny">' + name + '</button>'))
+    container.querySelector('.gatsby_demo_tabs_left').append(Xt.createElement('<button type="button" class="btn">' + name + '</button>'))
     // tabs
     item.prepend(
       Xt.createElement(
@@ -286,17 +276,6 @@ const populateDemo = (container, i) => {
         requestAnimationFrame(() => {
           // @FIX multiple initializations
           sourceTo.innerHTML = item.querySelector('script[type="text/plain"]').innerHTML
-          // .gatsby_demo-cols
-          if (sourceTo.classList.contains('gatsby_demo-cols')) {
-            for (const [i, el] of sourceTo.querySelectorAll("[class^='col-'], [class*=' col-'], [class^='demo--col-'], [class*=' demo--col-']").entries()) {
-              el.setAttribute('data-index', i.toString())
-            }
-          }
-          if (sourceTo.classList.contains('gatsby_demo-cols-nested')) {
-            for (const [i, el] of sourceTo.querySelectorAll("[class^='col-'], [class*=' col-'], [class^='demo--col-'], [class*=' demo--col-']").entries()) {
-              el.setAttribute('data-index', i.toString())
-            }
-          }
         })
       }
     }
@@ -576,7 +555,9 @@ const populateSources = (item, element, z) => {
     lang = 'jsx'
   }
   // populate tabs
-  item.querySelector('.gatsby_demo_code_body').append(Xt.createElement('<div class="gatsby_demo_code_body_item toggle-block"><pre class="noedit"><code></code></pre></div>'))
+  item
+    .querySelector('.gatsby_demo_code_body')
+    .append(Xt.createElement('<div class="gatsby_demo_code_body_item toggle-block"><pre class="noedit"><code></code></pre></div>'))
   item.querySelector('.gatsby_demo_code_tabs_left').append(Xt.createElement('<button type="button" class="btn btn-tiny">' + lang + '</button>'))
   // format code
   const itemInside = item.querySelectorAll('.gatsby_demo_code_body .gatsby_demo_code_body_item')[z]

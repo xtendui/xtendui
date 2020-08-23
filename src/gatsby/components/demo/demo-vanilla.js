@@ -31,15 +31,7 @@ class DemoVanilla extends React.Component {
           >
             {children}
             <script type="text/plain" data-lang="html" dangerouslySetInnerHTML={{ __html: demo.htmlSource }} />
-            <div
-              className={
-                mode === 'grid'
-                  ? 'gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate gatsby_demo-cols'
-                  : mode === 'grid-nested'
-                  ? 'gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate gatsby_demo-cols-nested'
-                  : 'gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate'
-              }
-            />
+            <div className="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate" />
             {data.allFile.files
               .filter(x => x.file.relativePath === `${demo.path}.less`)
               .map((file, i) => (
