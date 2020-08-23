@@ -172,9 +172,11 @@ module.exports = theme => ({
       html: {
         touchAction: 'manipulation', // disable double-tap
         '-webkit-tap-highlight-color': 'rgba(0, 0, 0, 0)', // disable tap highlight
+        height: '100%',
       },
       body: {
         '@apply overflow-main': '',
+        height: '100%',
       },
       '.overflow-main': {
         '-webkit-overflow-scrolling': 'touch',
@@ -666,9 +668,6 @@ module.exports = theme => ({
           '@apply flex-auto': '',
           display: 'flex',
           flexDirection: 'column',
-        },
-        '.card-overlay .card-inner': {
-          alignItems: 'center',
         },
       },
       '.overlay-disable': {
