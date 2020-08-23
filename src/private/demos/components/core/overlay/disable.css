@@ -1,10 +1,10 @@
-.demo--overlay-nested-disable-toggle {
+#demo--overlay-nested-disable-toggle {
   /*@screen md {
     display: none;
   }*/
 }
 
-.demo--overlay-nested-disable {
+#demo--overlay-nested-disable {
   /*@screen md {
     @apply overlay-disable;
   }*/

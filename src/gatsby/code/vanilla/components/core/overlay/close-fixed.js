@@ -14,9 +14,11 @@ demo.htmlSource = `
 <div class="list list-default list-space-2 items-center">
 
   <div data-xt-overlay>
+
     <button type="button" class="btn ${btnPrimary()}">
       closed fixed
     </button>
+
     <div class="overlay">
       <div class="overlay-container max-w-4xl">
         <div class="overlay-inner">
@@ -47,12 +49,15 @@ demo.htmlSource = `
         </div>
       </div>
     </div>
+
   </div>
 
   <div data-xt-overlay>
+
     <button type="button" class="btn ${btnPrimary()}">
       screen closed fixed
     </button>
+
     <div class="overlay overlay-screen">
       <div class="overlay-container">
         <div class="overlay-inner">
@@ -85,6 +90,7 @@ demo.htmlSource = `
         </div>
       </div>
     </div>
+
   </div>
 
 </div>

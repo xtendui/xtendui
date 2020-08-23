@@ -136,7 +136,7 @@ module.exports = theme => ({
         },
       },
     },
-    toggle: {
+    javascript: {
       '.toggle-block': {
         display: 'none',
         '&.active, &.out': {
@@ -147,6 +147,18 @@ module.exports = theme => ({
         display: 'none',
         '&.active, &.out': {
           display: 'flex',
+        },
+      },
+      '.xt-disable': {
+        '&:after': {
+          display: 'none',
+          content: 'xt-disable',
+        },
+      },
+      '.xt-disable-after-init': {
+        '&:after': {
+          display: 'none',
+          content: 'xt-disable-after-init',
         },
       },
     },
@@ -640,13 +652,8 @@ module.exports = theme => ({
         width: '100%',
         borderRadius: 'inherit',
       },
-      '.overlay-full': {
-        // styles
-        '.overlay-container': {
-          maxWidth: 'none',
-        },
-      },
       '.overlay-screen': {
+        // setup
         '.overlay-container': {
           position: 'relative',
           zIndex: theme('zIndex.overlay'),
@@ -662,6 +669,37 @@ module.exports = theme => ({
         },
         '.card-overlay .card-inner': {
           alignItems: 'center',
+        },
+      },
+      '.overlay-disable': {
+        '@apply xt-disable': '',
+        display: 'flex !important',
+        overflow: 'initial !important',
+        position: 'static',
+        zIndex: 'initial',
+        top: 'auto',
+        left: 'auto',
+        bottom: 'auto',
+        right: 'auto',
+        width: 'auto',
+        height: 'auto',
+        '.overlay-design': {
+          display: 'none',
+        },
+        '.overlay-container': {
+          zIndex: 'initial',
+          padding: '0',
+          width: '100%',
+          minHeight: 'auto',
+          maxWidth: 'none',
+        },
+        '.overlay-inner': {
+          '> .card': {
+            '@apply card-disable': '',
+          },
+        },
+        '> .backdrop': {
+          display: 'none !important',
         },
       },
     },
@@ -699,10 +737,10 @@ module.exports = theme => ({
       'html.xt-scrollbar': {
         // setup
         body: {
-          overflowY: 'hidden !important',
+          overflowY: 'hidden',
         },
         '.overlay': {
-          overflowY: 'scroll !important',
+          overflowY: 'scroll',
         },
       },
     },
