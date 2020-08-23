@@ -650,7 +650,6 @@ module.exports = theme => ({
         '.overlay-container': {
           position: 'relative',
           zIndex: theme('zIndex.overlay'),
-          maxWidth: 'none !important',
           padding: '0 !important',
           '.overlay-inner': {
             position: 'static',
@@ -660,7 +659,6 @@ module.exports = theme => ({
           '@apply flex-auto': '',
           display: 'flex',
           flexDirection: 'column',
-          maxWidth: 'none !important',
         },
         '.card-overlay .card-inner': {
           alignItems: 'center',

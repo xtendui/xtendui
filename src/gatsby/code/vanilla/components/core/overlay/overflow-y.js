@@ -1,7 +1,7 @@
 import path from 'path'
 const img = require('components/snippets/img').default
 const btnPrimary = require('components/snippets/classes/btn-primary').default
-const cardDefault = require('components/snippets/classes/card-default-overlay').default
+const cardDefaultOverlay = require('components/snippets/classes/card-default-overlay').default
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -23,7 +23,7 @@ demo.htmlSource = `
       <div class="overlay-container max-w-4xl">
         <div class="overlay-inner">
 
-          <div class="card ${cardDefault()} overflow-y-auto overflow-x-hidden overflow-sub max-h-64">
+          <div class="card ${cardDefaultOverlay()} overflow-y-auto overflow-x-hidden overflow-sub max-h-64">
             <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
             <div class="card-asset rounded-t-md">
               ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
@@ -52,7 +52,7 @@ demo.htmlSource = `
       <div class="overlay-container max-w-4xl">
         <div class="overlay-inner">
 
-          <div class="card ${cardDefault()}">
+          <div class="card ${cardDefaultOverlay()}">
             <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
             <div class="card-asset rounded-t-md">
               ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}

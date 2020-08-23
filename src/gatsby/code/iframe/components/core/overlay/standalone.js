@@ -1,6 +1,6 @@
 import React from 'react'
 import path from 'path'
-const cardDefault = require('components/snippets/classes/card-default-overlay').default
+const cardDefaultOverlay = require('components/snippets/classes/card-default-overlay').default
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -19,7 +19,7 @@ demo.htmlSource = `
   <div class="overlay-container max-w-4xl">
     <div class="overlay-inner">
 
-      <div class="card ${cardDefault()}">
+      <div class="card ${cardDefaultOverlay()}">
         <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
         <div class="card-block card-block-large">
           <div class="h3">Lorem ipsum</div>

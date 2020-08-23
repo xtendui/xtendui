@@ -1,6 +1,6 @@
 import path from 'path'
-const cardDefault = require('components/snippets/classes/card-default-full').default
-const cardPrimary = require('components/snippets/classes/card-primary-full').default
+const cardDefaultFull = require('components/snippets/classes/card-default-full').default
+const cardPrimaryFull = require('components/snippets/classes/card-primary-full').default
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -13,7 +13,7 @@ demo.htmlSource = `
 <div class="row row-space-3">
 
   <div class="w-full sm:w-6/12">
-    <a role="button" class="card ${cardDefault()} demo--card-full-default">
+    <a role="button" class="card ${cardDefaultFull()} demo--card-full-default">
       <div class="card-design"></div>
       <div class="card-block">
         <div class="h4">Primary</div>
@@ -23,7 +23,7 @@ demo.htmlSource = `
   </div>
 
   <div class="w-full sm:w-6/12">
-    <a role="button" class="card ${cardPrimary()} demo--card-full-primary">
+    <a role="button" class="card ${cardPrimaryFull()} demo--card-full-primary">
       <div class="card-design"></div>
       <div class="card-block">
         <div class="h4">Default</div>
