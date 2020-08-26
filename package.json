@@ -51,7 +51,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.20.0",
     "esm": "^3.2.25",
-    "gatsby": "^2.23.20",
+    "gatsby": "^2.19.19",
     "gatsby-image": "^2.2.41",
     "gatsby-plugin-catch-links": "^2.1.25",
     "gatsby-plugin-less": "^4.0.3",
