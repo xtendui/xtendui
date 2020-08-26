@@ -20,13 +20,13 @@ demo.htmlSource = `
 <div class="block-listing"
     data-xt-infinitescroll="{ max: 2 }">
   <div class="container">
-  
+
     <div class="block-listing_inner">
       <div class="row"
         data-xt-infinitescroll-items>
 
         <div class="block-listing_col">
-          <a href="#" class="block-listing_item">
+          <a href="/" class="block-listing_item">
             <div class="block-listing_img">
               ${img({ classes: 'media-cover' })}
             </div>
@@ -42,7 +42,7 @@ demo.htmlSource = `
         </div>
 
         <div class="block-listing_col">
-          <a href="#" class="block-listing_item">
+          <a href="/" class="block-listing_item">
             <div class="block-listing_img">
               ${imgAlt({ classes: 'media-cover' })}
             </div>
@@ -58,7 +58,7 @@ demo.htmlSource = `
         </div>
 
         <div class="block-listing_col">
-          <a href="#" class="block-listing_item">
+          <a href="/" class="block-listing_item">
             <div class="block-listing_img">
               ${img({ classes: 'media-cover' })}
             </div>
@@ -74,7 +74,7 @@ demo.htmlSource = `
         </div>
 
         <div class="block-listing_col">
-          <a href="#" class="block-listing_item">
+          <a href="/" class="block-listing_item">
             <div class="block-listing_img">
               ${imgAlt({ classes: 'media-cover' })}
             </div>
@@ -90,7 +90,7 @@ demo.htmlSource = `
         </div>
 
         <div class="block-listing_col">
-          <a href="#" class="block-listing_item">
+          <a href="/" class="block-listing_item">
             <div class="block-listing_img">
               ${img({ classes: 'media-cover' })}
             </div>
@@ -106,7 +106,7 @@ demo.htmlSource = `
         </div>
 
         <div class="block-listing_col">
-            <a href="#" class="block-listing_item">
+            <a href="/" class="block-listing_item">
               <div class="block-listing_img">
                 ${imgAlt({ classes: 'media-cover' })}
               </div>
@@ -123,7 +123,7 @@ demo.htmlSource = `
 
       </div>
     </div>
-    
+
     <div class="infinite-scroll"
        data-xt-infinitescroll-scroll>
       <div class="list-block">

@@ -38,13 +38,21 @@ class Infinitescroll {
     self.triggerElement = self.object.querySelector(self.options.elements.trigger)
     self.itemsElement = self.object.querySelector(self.options.elements.items)
     // scroll
-    if (self.options.events.scroll) {
-      const scrollHandler = Xt.dataStorage.put(window, 'on.xt.scroll' + '/' + self.namespace, self.eventScrollHandler.bind(self))
-      addEventListener('scroll', scrollHandler)
-      self.eventScrollHandler()
-    }
+    const scrollHandler = Xt.dataStorage.put(window, 'on.xt.scroll' + '/' + self.namespace, self.eventScrollHandler.bind(self))
+    addEventListener('scroll', scrollHandler)
     // setCurrent
     self.setCurrent()
+    const found = self.itemsElement.querySelector(self.options.elements.item)
+    found.setAttribute('data-xt-infinitescroll-item-first', self.current)
+    // resume state
+    const state = history.state
+    if (state && state.scrollResume) {
+      document.scrollingElement.scrollTop = state.scrollResume
+      // debug
+      if (Xt.debug === true) {
+        console.debug('Xt.debug: xt-infinitescroll scrollResume', state.scrollResume)
+      }
+    }
     // paginate
     self.paginate()
     // trigger
@@ -92,14 +100,31 @@ class Infinitescroll {
    */
   eventScroll() {
     const self = this
-    // scroll
+    // not if requesting
     if (!self.object.classList.contains(self.classes[0])) {
+      // scroll
       const top = document.scrollingElement.scrollTop
-      const bottom = self.scrollElement.offsetTop + self.scrollElement.offsetHeight
       const height = window.innerHeight
-      if (top > bottom - height) {
-        // request
-        self.request()
+      // current page
+      let found = self.itemsElement.querySelector(self.options.elements.item)
+      const scrollInitial = found.offsetTop
+      const items = self.itemsElement.querySelectorAll('[data-xt-infinitescroll-item-first]')
+      for (const item of items) {
+        const itemTop = item.offsetTop
+        if (top > itemTop - height) {
+          found = item
+        }
+      }
+      self.setCurrent(parseFloat(found.getAttribute('data-xt-infinitescroll-item-first')))
+      // replace state
+      const scrollResume = top + scrollInitial - found.offsetTop
+      history.replaceState({ scrollResume: scrollResume }, null, self.url.href)
+      // request if on bottom
+      if (self.options.events.scroll) {
+        const bottom = self.scrollElement.offsetTop + self.scrollElement.offsetHeight
+        if (top > bottom - height) {
+          self.request()
+        }
       }
     }
   }
@@ -125,8 +150,6 @@ class Infinitescroll {
         if (Xt.debug === true) {
           console.debug('Xt.debug: xt-infinitescroll request success', request, self.url)
         }
-        // replace state
-        history.replaceState({}, null, self.url.href)
         // response
         self.response(request)
       }
@@ -192,6 +215,9 @@ class Infinitescroll {
    */
   populate(items) {
     const self = this
+    // current page
+    const found = items.querySelector(self.options.elements.item)
+    found.setAttribute('data-xt-infinitescroll-item-first', self.current)
     // populate dom
     for (const item of items.querySelectorAll(':scope > *')) {
       self.itemsElement.querySelector(':scope > *:last-child').after(item)
@@ -229,8 +255,9 @@ class Infinitescroll {
 
   /**
    * setCurrent
+   * @param {Number} page Page number to set
    */
-  setCurrent() {
+  setCurrent(page = null) {
     const self = this
     const options = self.options
     // check url
@@ -238,7 +265,7 @@ class Infinitescroll {
     const searchParams = new URLSearchParams(url.search)
     // set current
     const get = searchParams.get(options.get)
-    self.current = get ? parseFloat(get) : self.current
+    self.current = page ? page : get ? parseFloat(get) : self.current
     searchParams.set(options.get, self.current)
     // set url
     url.search = searchParams.toString()
@@ -300,6 +327,7 @@ Infinitescroll.optionsDefault = {
     scroll: '[data-xt-infinitescroll-scroll]',
     trigger: '[data-xt-infinitescroll-trigger]',
     items: '[data-xt-infinitescroll-items]',
+    item: ':scope > *',
   },
 }
 
