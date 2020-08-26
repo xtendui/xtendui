@@ -1,6 +1,6 @@
 {
   "name": "xtend-library",
-  "version": "0.14.35",
+  "version": "0.14.36",
   "description": "Frontend library",
   "homepage": "http://getxtend.com/",
   "license": "MIT",
@@ -20,7 +20,7 @@
     "dev": "gatsby clean && gatsby develop -p 8888",
     "serve": "yarn build && gatsby serve -p 8888",
     "deploy": "yarn build && gh-pages -d public",
-    "release": "npx semantic-release --dry-run --no-ci",
+    "release": "npx semantic-release --dry-run false --no-ci",
     "lint": "eslint . --ext .js"
   },
   "dependencies": {
