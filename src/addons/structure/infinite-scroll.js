@@ -152,7 +152,7 @@ class InfiniteScroll {
       self.setCurrentNext()
       // request
       const request = new XMLHttpRequest()
-      request.open('GET', encodeURI(self.url.href), true)
+      request.open('GET', self.url.href, true)
       request.onload = () => {
         // debug
         if (Xt.debug === true) {
