@@ -25,7 +25,7 @@ demo.htmlSource = `
         data-xt-infinite-scroll-items>
 
         <div class="listing_col">
-          <a href="#" class="listing_item">
+          <a href="/" class="listing_item">
             <div class="listing_img">
               ${img({ classes: 'object-cover object-center' })}
             </div>
@@ -41,7 +41,7 @@ demo.htmlSource = `
         </div>
 
         <div class="listing_col">
-          <a href="#" class="listing_item">
+          <a href="/" class="listing_item">
             <div class="listing_img">
               ${imgAlt({ classes: 'object-cover object-center' })}
             </div>
@@ -57,7 +57,7 @@ demo.htmlSource = `
         </div>
 
         <div class="listing_col">
-          <a href="#" class="listing_item">
+          <a href="/" class="listing_item">
             <div class="listing_img">
               ${img({ classes: 'object-cover object-center' })}
             </div>
@@ -73,7 +73,7 @@ demo.htmlSource = `
         </div>
 
         <div class="listing_col">
-          <a href="#" class="listing_item">
+          <a href="/" class="listing_item">
             <div class="listing_img">
               ${imgAlt({ classes: 'object-cover object-center' })}
             </div>
@@ -89,7 +89,7 @@ demo.htmlSource = `
         </div>
 
         <div class="listing_col">
-          <a href="#" class="listing_item">
+          <a href="/" class="listing_item">
             <div class="listing_img">
               ${img({ classes: 'object-cover object-center' })}
             </div>
@@ -105,7 +105,7 @@ demo.htmlSource = `
         </div>
 
         <div class="listing_col">
-            <a href="#" class="listing_item">
+            <a href="/" class="listing_item">
               <div class="listing_img">
                 ${imgAlt({ classes: 'object-cover object-center' })}
               </div>
