@@ -5,22 +5,31 @@ import gsap from 'gsap'
  * favicon
  */
 
-const favicon = document.querySelector('link[rel="icon"]')
-const colorSchemeMq = window.matchMedia('(prefers-color-scheme: dark)')
+Xt.mount.push({
+  matches: 'body',
+  mount: object => {
+    // vars
 
-const changeMq = () => {
-  favicon.remove()
-  if (colorSchemeMq.matches) {
-    const icon = Xt.createElement('<link rel="icon" href="/favicon-dark.png">')
-    document.head.append(icon)
-  } else {
-    const icon = Xt.createElement('<link rel="icon" href="/favicon.png">')
-    document.head.append(icon)
-  }
-}
+    const favicon = document.querySelector('link[rel="icon"]')
+    const colorSchemeMq = window.matchMedia('(prefers-color-scheme: dark)')
 
-colorSchemeMq.addListener(changeMq)
-changeMq()
+    // changeMq
+
+    const changeMq = () => {
+      favicon.remove()
+      if (colorSchemeMq.matches) {
+        const icon = Xt.createElement('<link rel="icon" href="/favicon-dark.png">')
+        document.head.append(icon)
+      } else {
+        const icon = Xt.createElement('<link rel="icon" href="/favicon.png">')
+        document.head.append(icon)
+      }
+    }
+
+    colorSchemeMq.addListener(changeMq)
+    changeMq()
+  },
+})
 
 /**
  * xt-scroll
