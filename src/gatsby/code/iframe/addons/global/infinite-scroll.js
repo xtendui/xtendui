@@ -21,6 +21,17 @@ demo.htmlSource = `
     data-xt-infinitescroll="{ max: 2 }">
   <div class="container">
 
+    <div class="infinite-scroll-pre">
+      <div class="list-block">
+        <div>
+          <button type="button" class="btn btn-default"
+                  data-xt-infinitescroll-reset>
+            Load previous pages
+          </button>
+        </div>
+      </div>
+    </div>
+
     <div class="block-listing_inner">
       <div class="row"
         data-xt-infinitescroll-items>

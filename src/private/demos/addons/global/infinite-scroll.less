@@ -83,6 +83,15 @@
   }
 }
 
+.infinite-scroll-pre {
+  display: none;
+  .margin(bottom, big);
+  > .list-block {
+    .list-space(tiny);
+    align-items: center;
+  }
+}
+
 .infinite-scroll--more {
   .font-sans-semibold();
   font-size: 12px;
@@ -128,6 +137,12 @@
     .content-nomore {
       display: block;
     }
+  }
+}
+
+.infinite-scroll-reset {
+  .infinite-scroll-pre {
+    display: block;
   }
 }
 //##END
