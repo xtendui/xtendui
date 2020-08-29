@@ -20,12 +20,23 @@ demo.htmlSource = `
     data-xt-infinite-scroll="{ max: 2 }">
   <div class="container">
 
+    <div class="infinite-scroll-pre">
+      <div class="list-block">
+        <div>
+          <button type="button" class="btn btn-default"
+                  data-xt-infinitescroll-reset>
+            Load previous pages
+          </button>
+        </div>
+      </div>
+    </div>
+
     <div class="listing_inner">
       <div class="row"
         data-xt-infinite-scroll-items>
 
         <div class="listing_col">
-          <a href="#" class="listing_item">
+          <a href="/" class="listing_item">
             <div class="listing_img">
               ${img({ classes: 'object-cover object-center' })}
             </div>
@@ -41,7 +52,7 @@ demo.htmlSource = `
         </div>
 
         <div class="listing_col">
-          <a href="#" class="listing_item">
+          <a href="/" class="listing_item">
             <div class="listing_img">
               ${imgAlt({ classes: 'object-cover object-center' })}
             </div>
@@ -57,7 +68,7 @@ demo.htmlSource = `
         </div>
 
         <div class="listing_col">
-          <a href="#" class="listing_item">
+          <a href="/" class="listing_item">
             <div class="listing_img">
               ${img({ classes: 'object-cover object-center' })}
             </div>
@@ -73,7 +84,7 @@ demo.htmlSource = `
         </div>
 
         <div class="listing_col">
-          <a href="#" class="listing_item">
+          <a href="/" class="listing_item">
             <div class="listing_img">
               ${imgAlt({ classes: 'object-cover object-center' })}
             </div>
@@ -89,7 +100,7 @@ demo.htmlSource = `
         </div>
 
         <div class="listing_col">
-          <a href="#" class="listing_item">
+          <a href="/" class="listing_item">
             <div class="listing_img">
               ${img({ classes: 'object-cover object-center' })}
             </div>
@@ -105,7 +116,7 @@ demo.htmlSource = `
         </div>
 
         <div class="listing_col">
-            <a href="#" class="listing_item">
+            <a href="/" class="listing_item">
               <div class="listing_img">
                 ${imgAlt({ classes: 'object-cover object-center' })}
               </div>
