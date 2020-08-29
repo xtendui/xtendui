@@ -12,7 +12,7 @@ demo.htmlSource = `
   <div class="form-group">
 
     <div class="group group-default">
-      <div class="list list-default">
+      <div class="list">
 
         <div class="group-inner">
           <button type="button" class="btn btn-primary">

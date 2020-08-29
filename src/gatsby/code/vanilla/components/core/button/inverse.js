@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-default list-space-2 items-center text-inverse"
+<div class="list list-space-2 items-center text-inverse"
   style="padding: 1rem 1.5rem; background: #0078ff;">
 
   <button type="button" class="btn">

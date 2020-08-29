@@ -15,7 +15,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-default list-space-1 items-center">
+<div class="list list-space-1 items-center">
   <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--toggle-events-first-element">
     1st element
   </button>
@@ -55,7 +55,7 @@ demo.htmlSource = `
 
 <div id="demo--toggle-events">
 
-  <div class="list list-default list-space-2 items-center" id="demo--toggle-events-elements">
+  <div class="list list-space-2 items-center" id="demo--toggle-events-elements">
     <button type="button" class="btn btn-default" data-xt-group="0">
       Toggle Group 0
     </button>
@@ -70,7 +70,7 @@ demo.htmlSource = `
     </button>
   </div>
 
-  <div class="list list-default list-space-2 items-center" id="demo--toggle-events-targets">
+  <div class="list list-space-2 items-center" id="demo--toggle-events-targets">
     <div class="note note-default note-background toggle-block" data-xt-group="0">
       Target Group 0
     </div>

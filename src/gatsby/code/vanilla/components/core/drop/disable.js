@@ -13,7 +13,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-default list-space-2 items-center">
+<div class="list list-space-2 items-center">
 
   <div class="drop-container demo--drop-container-disable-sm" data-xt-drop>
 

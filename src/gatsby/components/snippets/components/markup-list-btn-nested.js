@@ -1,9 +1,9 @@
 export default () => {
   return `
 <div>
-  <div class="list list-default">
+  <div class="list">
     <div>
-      <div class="list-block list-default">
+      <div class="list-block">
         <a href="#" class="btn btn-default">
           Lorem Ipsum
         </a>
@@ -24,7 +24,7 @@ export default () => {
   </div>
 </div>
 <div>
-  <div class="list list-default">
+  <div class="list">
     <a href="#" class="btn btn-default">
       Lorem Ipsum
     </a>

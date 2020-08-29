@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-default list-space-2 items-center justify-center">
+<div class="list list-space-2 items-center justify-center">
 
   <div class="card card-default">
     <div class="card-design"></div>

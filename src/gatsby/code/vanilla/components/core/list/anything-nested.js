@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<nav class="list-block list-default">
+<nav class="list-block">
 ${indentString(markupList(), 2)}
 </nav>
 `

@@ -11,7 +11,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-default list-space-2 items-center inline-flex"
+<div class="list list-space-2 items-center inline-flex"
   data-xt-drop="{ elements: ':scope > .drop-container', targets: ':scope > .drop-container > .drop' }">
 
   <div class="drop-container">

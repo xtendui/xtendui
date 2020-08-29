@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-default list-space-2 items-center" data-xt-toggle>
+<div class="list list-space-2 items-center" data-xt-toggle>
 
   <button type="button" class="btn btn-default" data-xt-group="0">
     Toggle Group 0

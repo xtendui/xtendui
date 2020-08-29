@@ -13,6 +13,15 @@ date: "2020-10-10"
   </demovanilla>
 </demo>
 
+## Interactive
+
+You can make interactive cards with `a` or `button` or `label`.
+
+<demo>
+  <demovanilla src="vanilla/components/core/card/interactive">
+  </demovanilla>
+</demo>
+
 ## Size
 
 <demo>
@@ -75,5 +84,19 @@ The size of **blocks** is automatic, you can specify the **size** with [columns]
 
 <demo>
   <demovanilla src="vanilla/components/core/card/overflow-y">
+  </demovanilla>
+</demo>
+
+## List
+
+<demo>
+  <demovanilla src="vanilla/components/core/card/list">
+  </demovanilla>
+</demo>
+
+## Close button
+
+<demo>
+  <demovanilla src="vanilla/components/core/card/close">
   </demovanilla>
 </demo>

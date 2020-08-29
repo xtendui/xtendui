@@ -21,7 +21,7 @@ demo.htmlSource = `
       <div class="card-inner">
       <div class="card-content">
         <div class="card-block card-item">
-          <div class="list list-default">
+          <div class="list">
             <div>Sticky</div>
             <button type="button" class="btn btn-default demo--sticky-block--btn">
               Click to block/unblock

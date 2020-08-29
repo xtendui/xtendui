@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-default flex-wrap-nowrap">
+<div class="list flex-wrap-nowrap">
 ${indentString(markupList(), 2)}
 </div>
 `

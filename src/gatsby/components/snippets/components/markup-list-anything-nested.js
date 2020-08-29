@@ -1,9 +1,9 @@
 export default () => {
   return `
 <div>
-  <nav class="list list-default">
+  <nav class="list">
     <div>
-      <nav class="list-block list-default">
+      <nav class="list-block">
         <div>
           Lorem ipsum dolor sit amet.
         </div>
@@ -24,7 +24,7 @@ export default () => {
   </nav>
 </div>
 <div>
-  <nav class="list list-default">
+  <nav class="list">
     <div>
       Lorem ipsum dolor sit amet.
     </div>

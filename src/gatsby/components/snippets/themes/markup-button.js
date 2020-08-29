@@ -1,6 +1,6 @@
 export default () => {
   return `
-<div class="list list-default list-space-2 items-center">
+<div class="list list-space-2 items-center">
 
   <button type="button" class="btn btn-default">
     button

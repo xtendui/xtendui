@@ -118,7 +118,7 @@ module.exports = theme => ({
     card: {
       '.card-group': {
         display: 'flex',
-        alignItems: 'stretch',
+        alignItems: 'inherit',
       },
       '.card-disable': {
         '@apply text-default': '',
@@ -435,7 +435,7 @@ module.exports = theme => ({
         position: 'relative',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center',
+        alignItems: 'stretch',
         justifyContent: 'flex-start',
         width: '100%',
         zIndex: theme('zIndex.base'),
@@ -443,6 +443,9 @@ module.exports = theme => ({
           zIndex: theme('zIndex.active'),
         },
         // styles
+        marginTop: theme('spacing.4'),
+        marginBottom: theme('spacing.4'),
+        '@apply mt-fc mb-lc': {},
         borderWidth: theme('borderWidth.0'),
         borderColor: theme('borderColor.transparent'),
         // animation
@@ -475,17 +478,17 @@ module.exports = theme => ({
       },
       '.card-block-small': {
         // styles
-        padding: `${rem(25)}`,
+        padding: `${rem(20)} ${rem(25)}`,
         fontSize: rem(12),
       },
       '.card-block-medium': {
         // styles
-        padding: `${rem(30)}`,
+        padding: `${rem(25)} ${rem(30)}`,
         fontSize: rem(14),
       },
       '.card-block-large': {
         // styles
-        padding: `${rem(40)}`,
+        padding: `${rem(35)} ${rem(40)}`,
         fontSize: rem(16),
       },
       '.card-design': {
@@ -501,17 +504,34 @@ module.exports = theme => ({
           height: 'auto',
         },
       },
-      '.card-full': {
-        // setup
-        '.card-block': {
-          padding: theme('spacing.0'),
-        },
+      '.card-default-full-interactive': {
         // styles
         '.card-design': {
           top: `-${theme('spacing.6')}`,
           left: `-${theme('spacing.6')}`,
           bottom: `-${theme('spacing.6')}`,
           right: `-${theme('spacing.6')}`,
+          '@apply border-transparent bg-transparent': '',
+        },
+        '&:hover': {
+          '.card-design': {
+            '@apply border-gray-300 bg-gray-300': '',
+          },
+        },
+      },
+      '.card-primary-full-interactive': {
+        // styles
+        '.card-design': {
+          top: `-${theme('spacing.6')}`,
+          left: `-${theme('spacing.6')}`,
+          bottom: `-${theme('spacing.6')}`,
+          right: `-${theme('spacing.6')}`,
+          '@apply border-transparent bg-transparent': '',
+        },
+        '&:hover': {
+          '.card-design': {
+            '@apply border-accent-500 bg-accent-500': '',
+          },
         },
       },
     },
@@ -828,6 +848,11 @@ module.exports = theme => ({
         '> .backdrop': {
           display: 'none !important',
         },
+      },
+    },
+    // note
+    note: {
+      '.note': {
       },
     },
     // badge

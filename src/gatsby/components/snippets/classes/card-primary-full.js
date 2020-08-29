@@ -1,3 +1,3 @@
 export default () => {
-  return `card-full text-default rounded-md hover:text-inverse hover:text-opacity-75`
+  return `text-accent-600`
 }

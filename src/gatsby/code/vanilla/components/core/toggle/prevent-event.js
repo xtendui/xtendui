@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-default list-space-2 items-center"
+<div class="list list-space-2 items-center"
      data-xt-toggle="{ min: 1, preventEvent: true }">
 
   <a href="#toggle--with-link-0" class="btn btn-default">

@@ -41,12 +41,7 @@ class Template extends React.Component {
                       {category.posts.map(({ post }, z) =>
                         post.frontmatter.link ? (
                           <div className="gatsby_listing_column" key={z}>
-                            <a
-                              href={post.frontmatter.link}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="card card-primary card-small card-full card-collapse gatsby_listing_item"
-                            >
+                            <a href={post.frontmatter.link} target="_blank" rel="noreferrer" className="card gatsby_listing_item">
                               <div className="card-design"></div>
                               <div className="card-block card-block-medium">
                                 <div className="h4">

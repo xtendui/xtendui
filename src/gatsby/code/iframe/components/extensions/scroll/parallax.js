@@ -14,7 +14,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-default">
+<div class="list">
   <div class="demo--parallax-title">
     <h1>Parallax Title</h1>
   </div>

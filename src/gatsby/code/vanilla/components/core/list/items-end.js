@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-default items-flex-end" style="height: 150px;">
+<div class="list items-flex-end" style="height: 150px;">
 ${indentString(markupList(), 2)}
 </div>
 `

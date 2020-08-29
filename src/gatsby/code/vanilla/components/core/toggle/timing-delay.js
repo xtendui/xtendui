@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-default list-space-2 items-center"
+<div class="list list-space-2 items-center"
      data-xt-toggle="{ delayOn: 500, delayOff: 500 }">
 
   <button type="button" class="btn btn-default">
@@ -39,7 +39,7 @@ demo.htmlSource = `
 
 <br>
 
-<div class="list list-default list-space-2 items-center"
+<div class="list list-space-2 items-center"
      data-xt-toggle="{ on: 'mouseenter', off: 'mouseleave', delayOn: 500, delayOff: 500 }">
 
   <button type="button" class="btn btn-default">
