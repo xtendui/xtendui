@@ -1,7 +1,7 @@
 module.exports = {
   theme: {
     extend: {
-      // override theme waiting for https://github.com/tailwindlabs/tailwindcss/issues/660 https://github.com/tailwindlabs/tailwindcss/issues/677
+      // override theme waiting for https://github.com/tailwindlabs/tailwindcss/issues/677
       fontFamily: {
         sans: [
           '"Open Sans"',
