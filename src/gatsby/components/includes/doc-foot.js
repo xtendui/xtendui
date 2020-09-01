@@ -41,7 +41,7 @@ class DocFoot extends React.Component {
         <div className="gatsby_site_article_foot_inner">
           <div className="gatsby_listing_group">
             <div className="gatsby_listing_items">
-              <div className="row row-space-2 lg:row-space-4 xl:row-space-6 row-stretch">
+              <div className="row row-space-2 lg:row-space-4 row-stretch">
                 {page.post.frontmatter.type !== 'Introduction' && postsIntroduction.length ? (
                   <div className="gatsby_listing_column">
                     <Link to={'/introduction'} className="card gatsby_listing_item">

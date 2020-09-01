@@ -241,10 +241,6 @@ module.exports = theme => ({
           transitionTimingFunction: theme('transitionTimingFunction.ease.in'),
         },
       },
-      'p, .p': {
-        marginBottom: theme('spacing.5'),
-        '@apply text-reset mb-lc': {},
-      },
       'h1, .h1': {
         marginTop: theme('spacing.8'),
         marginBottom: theme('spacing.6'),
@@ -328,6 +324,46 @@ module.exports = theme => ({
         paddingBottom: theme('spacing.3'),
         paddingLeft: theme('spacing.6'),
         paddingRight: theme('spacing.6'),
+      },
+      'p, .p': {
+        marginBottom: theme('spacing.5'),
+        '@apply text-reset mb-lc': {},
+      },
+      'ul:not([class]), ol:not([class])': {
+        marginBottom: theme('spacing.5'),
+        '@apply text-reset mb-lc': {},
+        '> li': {
+          position: 'relative',
+          marginBottom: theme('spacing.5'),
+          '@apply text-reset mb-lc': {},
+          '&:before': {
+            position: 'absolute',
+            display: 'inline-block',
+            left: '0',
+          },
+          '> ul:not([class]), > ol:not([class])': {
+            marginTop: theme('spacing.5'),
+          },
+        },
+      },
+      'ul:not([class])': {
+        '> li': {
+          paddingLeft: '1.25rem',
+          '&:before': {
+            content: '"\\2022"',
+            color: theme('colors.gray.600'),
+          },
+        },
+      },
+      'ol:not([class])': {
+        '> li': {
+          counterIncrement: 'ol-counter',
+          paddingLeft: '1.5rem',
+          '&:before': {
+            content: 'counter(ol-counter) "."',
+            color: theme('colors.gray.600'),
+          },
+        },
       },
     },
     // list

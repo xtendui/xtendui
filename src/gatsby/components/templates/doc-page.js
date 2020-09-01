@@ -32,7 +32,7 @@ class Template extends React.Component {
             <div className="row row-space-3">
               <div className="gatsby_listing_group">
                 <div className="gatsby_listing_items">
-                  <div className="row row row-space-2 lg:row-space-4 xl:row-space-6 row-stretch">
+                  <div className="row row row-space-2 lg:row-space-4 row-stretch">
                     {data.postsAdiacent.posts.map(({ post: adiacent }, i) =>
                       adiacent.frontmatter.parent !== adiacent.frontmatter.title ? (
                         adiacent.frontmatter.demos ? (
