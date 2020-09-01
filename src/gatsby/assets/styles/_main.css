@@ -76,7 +76,7 @@ body {
   }
 }
 .gatsby_site_article_hero {
-  @apply pt-20 pb-12;
+  @apply pt-20 pb-16;
   background: linear-gradient(180deg, theme('colors.gray.300'), theme('colors.white') 66%);
   .p {
     @apply text-lg;
@@ -126,11 +126,11 @@ body {
 }
 
 .gatsby_listing_items {
-  .gatsby_listing& {
-    @apply my-12 mt-fc mb-lc;
+  .gatsby_listing .h-block + & {
+    @apply my-10;
   }
   .gatsby_site_article_foot_inner & {
-    @apply mb-12;
+    @apply mb-10;
   }
 }
 
