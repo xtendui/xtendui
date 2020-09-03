@@ -37,7 +37,7 @@ class DocFoot extends React.Component {
         x.post.frontmatter.title !== x.post.frontmatter.parent
     )
     return (
-      <footer className="gatsby_site_article_foot container">
+      <footer className="gatsby_site_article_foot">
         <div className="gatsby_site_article_foot_inner">
           <div className="gatsby_listing_group">
             <div className="gatsby_listing_items">

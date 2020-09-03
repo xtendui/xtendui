@@ -1,6 +1,20 @@
 .demo--drop-container-disable {
   /*@screen md {
-    @apply drop-container-disable;
+    @apply drop-container-disable !important;
   }*/
-  @apply drop-container-disable;
+  @apply drop-container-disable !important;
+  > .drop {
+    > .drop-inner {
+      > .card {
+        > .card-block {
+          @apply py-0;
+          > .list-block {
+            > .btn, > * > .btn {
+              @apply px-0;
+            }
+          }
+        }
+      }
+    }
+  }
 }

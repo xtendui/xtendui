@@ -234,11 +234,8 @@ module.exports = theme => ({
       html: {
         '@apply text-default': '',
         lineHeight: 1.6,
-        fontSize: rem(13),
-        '@screen sm': {
-          fontSize: rem(14),
-        },
-        '@screen lg': {
+        fontSize: rem(14),
+        '@screen md': {
           fontSize: rem(15),
         },
         '@screen xl': {
@@ -269,7 +266,7 @@ module.exports = theme => ({
         '@apply mt-fc mb-lc': {},
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
-        fontSize: rem(30),
+        fontSize: rem(35),
         lineHeight: theme('lineHeight.snug'),
         letterSpacing: theme('letterSpacing.normal'),
         textTransform: 'none',
@@ -730,7 +727,6 @@ module.exports = theme => ({
       },
       '.drop-container-disable': {
         // setup
-        '@apply xt-disable': '',
         position: 'initial',
         '> a, > button': {
           display: 'none',
@@ -751,6 +747,7 @@ module.exports = theme => ({
               '@apply card-disable': '',
             },
           },
+          '@apply xt-disable': '',
         },
       },
       '.drop-before': {
@@ -880,7 +877,6 @@ module.exports = theme => ({
         },
       },
       '.overlay-disable': {
-        '@apply xt-disable': '',
         display: 'flex !important',
         overflow: 'initial !important',
         position: 'static',
@@ -909,6 +905,7 @@ module.exports = theme => ({
         '> .backdrop': {
           display: 'none !important',
         },
+        '@apply xt-disable': '',
       },
     },
     // badge

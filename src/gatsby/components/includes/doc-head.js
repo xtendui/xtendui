@@ -6,7 +6,7 @@ class DocHead extends React.Component {
     const { page } = this.props
     return (
       <header className="gatsby_site_article_hero">
-        <div className="gatsby_site_article_hero_inner container">
+        <div className="gatsby_site_article_hero_inner">
           <div className="gatsby_site_article_hero_content">
             <div className="gatsby_site_article_hero_content_inner">
               <h1>

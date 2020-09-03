@@ -33,6 +33,15 @@ body {
   z-index: 7;
 }
 
+/* container */
+
+.gatsby_site_article_hero_inner, .gatsby_site_article_content, .gatsby_site_article_foot {
+  @apply container;
+  @screen xl {
+    max-width: 1152px;
+  }
+}
+
 /* prevent horizontal overflow */
 
 .gatsby_site_wrapper {

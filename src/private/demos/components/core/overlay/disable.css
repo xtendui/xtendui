@@ -1,13 +1,13 @@
 #demo--overlay-nested-disable-toggle {
   /*@screen md {
-    display: none;
+    display: none !important;
   }*/
-  display: none;
+  display: none !important;
 }
 
 #demo--overlay-nested-disable {
   /*@screen md {
-    @apply overlay-disable;
+    @apply overlay-disable !important;
   }*/
-  @apply overlay-disable;
+  @apply overlay-disable !important;
 }
