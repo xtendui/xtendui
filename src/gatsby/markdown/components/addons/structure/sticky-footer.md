@@ -7,6 +7,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 ---
 
 <demo>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/components/addons/structure/sticky-footer">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/structure/sticky-footer">
   </div>
 </demo>

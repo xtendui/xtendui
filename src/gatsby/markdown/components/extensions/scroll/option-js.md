@@ -31,7 +31,7 @@ Additionally on component initialization the class `xt-scroll` gets added to the
 You can block the activations with the class `.xt-block` on elements.
 
 <demo>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/components/extensions/scroll/block">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/scroll/block">
   </div>
 </demo>
 
@@ -40,17 +40,17 @@ You can block the activations with the class `.xt-block` on elements.
 You can set scroll mode with css selectors.
 
 <demo>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/components/extensions/scroll/mode-infinite">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/scroll/mode-infinite">
   </div>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/components/extensions/scroll/mode-once">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/scroll/mode-once">
   </div>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/components/extensions/scroll/mode-inside">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/scroll/mode-inside">
   </div>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/components/extensions/scroll/mode-outside">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/scroll/mode-outside">
   </div>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/components/extensions/scroll/mode-outside-once">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/scroll/mode-outside-once">
   </div>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/components/extensions/scroll/mode-responsive">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/scroll/mode-responsive">
     <div class="gatsby_demo_text">
       You can style animations within media queries (resize to mobile to see it in action).
     </div>
@@ -73,7 +73,7 @@ You can also set a **fallback** distance from top and bottom for elements that a
 </div>
 
 <demo>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/components/extensions/scroll/distance">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/scroll/distance">
   </div>
 </demo>
 
@@ -90,7 +90,7 @@ You can use a function for `delayOn` and `delayOff` for example `(current, total
 
 </div>
 <demo>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/components/extensions/scroll/delay">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/scroll/delay">
   </div>
 </demo>
 

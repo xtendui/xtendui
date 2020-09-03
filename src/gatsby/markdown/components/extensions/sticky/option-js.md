@@ -31,7 +31,7 @@ Additionally on component initialization the class `xt-sticky` gets added to the
 You can block the activations with the class `.xt-block` on elements.
 
 <demo>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/components/extensions/sticky/block">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/sticky/block">
   </div>
 </demo>
 
@@ -46,11 +46,11 @@ You can block the activations with the class `.xt-block` on elements.
 </div>
 
 <demo>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/components/extensions/sticky/mode-absolute">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/sticky/mode-absolute">
   </div>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/components/extensions/sticky/mode-fixed">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/sticky/mode-fixed">
   </div>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/components/extensions/sticky/mode-fixed-always">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/sticky/mode-fixed-always">
   </div>
 </demo>
 
@@ -67,7 +67,7 @@ The default **position** is `position: 'top'` you can also use `position: 'botto
 </div>
 
 <demo>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/components/extensions/sticky/position"></div>
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/sticky/position"></div>
 </demo>
 
 ## Limit
@@ -84,7 +84,7 @@ The default **limit** for `limit: { top: Element }` is the element's own positio
 </div>
 
 <demo>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/components/extensions/sticky/limit">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/sticky/limit">
   </div>
 </demo>
 
@@ -102,9 +102,9 @@ Use the `contain: {}` option to stack consecutive sticky elements. with `contain
 </div>
 
 <demo>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/components/extensions/sticky/contain-top">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/sticky/contain-top">
   </div>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/components/extensions/sticky/contain-bottom">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/sticky/contain-bottom">
   </div>
 </demo>
 
@@ -121,6 +121,6 @@ To hide the sticky when scrolling down or up use `hide: 'down'` or `hide: 'up'`.
 </div>
 
 <demo>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/components/extensions/sticky/hide">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/sticky/hide">
   </div>
 </demo>

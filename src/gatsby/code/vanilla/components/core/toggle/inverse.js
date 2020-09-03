@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-space-2 items-center demo--toggle-inverse"
+<div class="list list-space-2 items-center demo--toggle-none"
      data-xt-toggle="{ max: 2 }">
 
   <button type="button" class="btn btn-default">
@@ -19,11 +19,11 @@ demo.htmlSource = `
     Toggle 1
   </button>
 
-  <div class="note note-default note-background toggle-inverse">
+  <div class="note note-default note-background toggle-none">
     Target 0
   </div>
 
-  <div class="note note-default note-background toggle-inverse">
+  <div class="note note-default note-background toggle-none">
     Target 1
   </div>
 

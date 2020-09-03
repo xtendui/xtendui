@@ -90,7 +90,7 @@ Xt.mount.push({
         document.querySelector('#demo--toggle-events-elements').append(Xt.createElement(strEl))
         // targets
         const indexTr = self.getTargetsGroups().length
-        const strTr = `<div class="note note-default note-background toggle-block">Target ${indexTr}</div>`
+        const strTr = `<div class="note note-default note-background toggle">Target ${indexTr}</div>`
         document.querySelector('#demo--toggle-events-targets').append(Xt.createElement(strTr))
         // reinit
         logAdd('<strong>reinit</strong>')

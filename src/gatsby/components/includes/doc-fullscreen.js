@@ -5,7 +5,7 @@ class DocFullscreen extends React.Component {
     return (
       <>
         <div id="gatbsy_open-full-trigger"></div>
-        <div id="gatbsy_open-full" className="toggle-block">
+        <div id="gatbsy_open-full" className="toggle">
           <div className="btn btn-close" aria-label="Close">
             <span className="icon-close"></span>
           </div>

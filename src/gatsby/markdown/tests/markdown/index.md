@@ -9,15 +9,15 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 ## Demos
 
 <demo>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/components/core/toggle/events-methods">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/toggle/events-methods">
   </div>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/components/extensions/slider/events-methods">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/slider/events-methods">
   </div>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/components/extensions/scroll/direction">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/scroll/direction">
   </div>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/components/extensions/scroll/block">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/scroll/block">
   </div>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/components/addons/animation/scroll-to-anchor-nested">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/animation/scroll-to-anchor-nested">
   </div>
   <demovanilla src="vanilla/components/extensions/slider/progress">
   </demovanilla>
@@ -45,30 +45,30 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 </demo>
 
 <demo>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/themes/brands-featured-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/brands-featured-v1">
   </div>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/themes/fashion-hero-v2">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/fashion-hero-v2">
   </div>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/themes/furniture-hero-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/furniture-hero-v1">
   </div>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/themes/industrial-featured-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/industrial-featured-v1">
   </div>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/themes/fashion-hero-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/fashion-hero-v1">
   </div>
 </demo>
 
 <demo>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/themes/sequential-megamenu-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/sequential-megamenu-v1">
   </div>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/themes/xtend-theme-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/xtend-theme-v1">
   </div>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/themes/collapse-theme-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/collapse-theme-v1">
   </div>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/themes/furniture-featured-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/furniture-featured-v1">
   </div>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/themes/furniture-listing-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/furniture-listing-v1">
   </div>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/themes/fashion-listing-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/fashion-listing-v1">
   </div>
 </demo>
 
@@ -166,7 +166,7 @@ const test = 'test'
 
 <demo>
   <div class="gatsby_demo-inline">
-    <div class="gatsby_demo_item toggle-flex gatsby_demo_preview" data-name="inline">
+    <div class="gatsby_demo_item toggle gatsby_demo_preview" data-name="inline">
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
         Inline
       </div>
@@ -177,7 +177,7 @@ const test = 'test'
       test vanilla <strong>strong</strong> <code>code</code>
     </div>
   </demovanilla>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/test/demo-vanilla-iframe" data-name="demo vanilla frame">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/test/demo-vanilla-iframe" data-name="demo vanilla frame">
     <div class="gatsby_demo_text">
       <a href="/iframe/test/demo-vanilla-iframe">test vanilla iframe</a>
     </div>

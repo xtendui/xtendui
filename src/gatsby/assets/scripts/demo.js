@@ -242,7 +242,7 @@ const populateDemo = (container, i) => {
     // tabs
     item.prepend(
       Xt.createElement(
-        '<div class="gatsby_demo_code toggle-block"><div class="gatsby_demo_code_inner"><div class="gatsby_demo_code_tabs"><div class="gatsby_demo_code_tabs_left list list-space-1"></div><div class="gatsby_demo_code_tabs_right list list-space-1"><button type="button" class="btn btn-tiny btn-clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="gatsby_demo_code_body"></div></div></div>'
+        '<div class="gatsby_demo_code toggle"><div class="gatsby_demo_code_inner"><div class="gatsby_demo_code_tabs"><div class="gatsby_demo_code_tabs_left list list-space-1"></div><div class="gatsby_demo_code_tabs_right list list-space-1"><button type="button" class="btn btn-tiny btn-clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="gatsby_demo_code_body"></div></div></div>'
       )
     )
     // https://github.com/zenorocha/clipboard.js/
@@ -557,7 +557,7 @@ const populateSources = (item, element, z) => {
   // populate tabs
   item
     .querySelector('.gatsby_demo_code_body')
-    .append(Xt.createElement('<div class="gatsby_demo_code_body_item toggle-block"><pre class="noedit"><code></code></pre></div>'))
+    .append(Xt.createElement('<div class="gatsby_demo_code_body_item toggle"><pre class="noedit"><code></code></pre></div>'))
   item.querySelector('.gatsby_demo_code_tabs_left').append(Xt.createElement('<button type="button" class="btn btn-tiny">' + lang + '</button>'))
   // format code
   const itemInside = item.querySelectorAll('.gatsby_demo_code_body .gatsby_demo_code_body_item')[z]

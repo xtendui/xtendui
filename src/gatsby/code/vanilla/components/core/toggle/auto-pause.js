@@ -9,7 +9,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="list list-space-2 items-center"
-     data-xt-toggle="{ auto: { time: 2000, pause: ':scope > button, .toggle-block' } }">
+     data-xt-toggle="{ auto: { time: 2000, pause: ':scope > button, .toggle' } }">
 
   <button type="button" class="btn btn-default">
     Toggle 0
@@ -27,19 +27,19 @@ demo.htmlSource = `
     Toggle 3
   </button>
 
-  <div class="note note-default note-background toggle-block">
+  <div class="note note-default note-background toggle">
     Target 0
   </div>
 
-  <div class="note note-default note-background toggle-block">
+  <div class="note note-default note-background toggle">
     Target 1
   </div>
 
-  <div class="note note-default note-background toggle-block">
+  <div class="note note-default note-background toggle">
     Target 2
   </div>
 
-  <div class="note note-default note-background toggle-block">
+  <div class="note note-default note-background toggle">
     Target 3
   </div>
 

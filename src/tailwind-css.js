@@ -26,18 +26,15 @@ module.exports = theme => ({
           marginBottom: theme('spacing.0'),
         },
       },
-      '.design-setup': {
-        content: '',
-        position: 'absolute',
-        zIndex: '-1',
-        top: '0',
-        left: '0',
-        bottom: '0',
-        right: '0',
-        borderRadius: 'inherit',
-        transitionProperty: 'inherit',
-        transitionDuration: 'inherit',
-        transitionTimingFunction: 'inherit',
+      '.toggle': {
+        '&:not(.active):not(.out)': {
+          display: 'none',
+        },
+      },
+      '.toggle-inverse': {
+        '&.in-done': {
+          display: 'none',
+        },
       },
     },
     typography: {
@@ -61,6 +58,12 @@ module.exports = theme => ({
         lineHeight: 'inherit',
         letterSpacing: 'inherit',
         textTransform: 'inherit',
+      },
+      '.lowercase-capitalize': {
+        textTransform: 'lowercase',
+        '&:first-letter': {
+          textTransform: 'uppercase',
+        },
       },
     },
     list: {
@@ -136,32 +139,6 @@ module.exports = theme => ({
         },
       },
     },
-    javascript: {
-      '.toggle-block': {
-        display: 'none',
-        '&.active, &.out': {
-          display: 'block',
-        },
-      },
-      '.toggle-flex': {
-        display: 'none',
-        '&.active, &.out': {
-          display: 'flex',
-        },
-      },
-      '.xt-disable': {
-        '&:after': {
-          display: 'none',
-          content: 'xt-disable',
-        },
-      },
-      '.xt-disable-after-init': {
-        '&:after': {
-          display: 'none',
-          content: 'xt-disable-after-init',
-        },
-      },
-    },
   },
   components: {
     // structure
@@ -206,21 +183,66 @@ module.exports = theme => ({
         scrollbarWidth: 'thin',
         scrollbarColor: theme('colors.accent.700') + ' transparent',
       },
+      '.design-setup': {
+        content: '',
+        position: 'absolute',
+        zIndex: '-1',
+        top: '0',
+        left: '0',
+        bottom: '0',
+        right: '0',
+        borderRadius: 'inherit',
+        transitionProperty: 'inherit',
+        transitionDuration: 'inherit',
+        transitionTimingFunction: 'inherit',
+      },
+      '.backdrop': {
+        // setup
+        position: 'fixed',
+        zIndex: theme('zIndex.backdrop'),
+        top: '0',
+        right: '0',
+        width: '100%',
+        height: '100%',
+        // styles
+        '@apply bg-gray-900 bg-opacity-25': '',
+      },
+      'html.xt-scrollbar': {
+        // setup
+        body: {
+          overflowY: 'hidden',
+        },
+        '.overlay': {
+          overflowY: 'scroll',
+        },
+      },
+      '.xt-disable': {
+        '&:after': {
+          display: 'none',
+          content: 'xt-disable',
+        },
+      },
+      '.xt-disable-after-init': {
+        '&:after': {
+          display: 'none',
+          content: 'xt-disable-after-init',
+        },
+      },
     },
     // typography
     typography: {
       html: {
         '@apply text-default': '',
-        lineHeight: 1.8,
-        fontSize: rem(14),
+        lineHeight: 1.6,
+        fontSize: rem(13),
         '@screen sm': {
-          fontSize: rem(15),
+          fontSize: rem(14),
         },
         '@screen lg': {
-          fontSize: rem(16),
+          fontSize: rem(15),
         },
         '@screen xl': {
-          fontSize: rem(17),
+          fontSize: rem(16),
         },
       },
       'a:not([class]), .link': {
@@ -284,12 +306,12 @@ module.exports = theme => ({
         },
       },
       'h4, .h4': {
-        marginTop: theme('spacing.4'),
-        marginBottom: theme('spacing.2'),
+        marginTop: theme('spacing.6'),
+        marginBottom: theme('spacing.4'),
         '@apply mt-fc mb-lc': {},
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
-        fontSize: rem(20),
+        fontSize: rem(24),
         lineHeight: theme('lineHeight.snug'),
         letterSpacing: theme('letterSpacing.normal'),
         textTransform: 'none',
@@ -300,7 +322,7 @@ module.exports = theme => ({
         '@apply mt-fc mb-lc': {},
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
-        fontSize: rem(16),
+        fontSize: rem(18),
         lineHeight: theme('lineHeight.snug'),
         letterSpacing: theme('letterSpacing.normal'),
         textTransform: 'none',
@@ -497,7 +519,7 @@ module.exports = theme => ({
       },
       '.card-small': {
         // styles
-        minWidth: `${rem(250)}`,
+        minWidth: `${rem(300)}`,
       },
       '.card-medium': {
         // styles
@@ -505,7 +527,7 @@ module.exports = theme => ({
       },
       '.card-large': {
         // styles
-        minWidth: `${rem(650)}`,
+        minWidth: `${rem(500)}`,
       },
       '.card-block': {
         // setup
@@ -654,12 +676,15 @@ module.exports = theme => ({
           },
         },
       },
-      '.table-scroll': {
+      '.table, .table-scroll': {
         // setup
         '@apply overflow-sub': '',
         width: '100%',
         overflowX: 'hidden',
         overflowY: 'scroll',
+        // styles
+        marginBottom: theme('spacing.5'),
+        '@apply mb-lc': {},
       },
     },
     // drop
@@ -670,7 +695,7 @@ module.exports = theme => ({
       },
       '.drop': {
         // setup
-        '@apply toggle-block': '',
+        '@apply toggle': '',
         position: 'absolute',
         zIndex: 'inherit',
         '&.in': {
@@ -711,7 +736,7 @@ module.exports = theme => ({
           display: 'none',
         },
         '> .drop': {
-          display: 'inline-block',
+          display: 'inline-block !important',
           position: 'relative',
           top: 'auto',
           left: 'auto',
@@ -791,7 +816,7 @@ module.exports = theme => ({
     overlay: {
       '.overlay': {
         // setup
-        '@apply toggle-flex overflow-main': '',
+        '@apply toggle overflow-main': '',
         position: 'fixed',
         zIndex: theme('zIndex.overlay'),
         top: '0',
@@ -886,11 +911,6 @@ module.exports = theme => ({
         },
       },
     },
-    // note
-    note: {
-      '.note': {
-      },
-    },
     // badge
     badge: {
       '.badge': {
@@ -907,29 +927,6 @@ module.exports = theme => ({
         lineHeight: theme('lineHeight.snug'),
         letterSpacing: theme('letterSpacing.wider'),
         textTransform: 'uppercase',
-      },
-    },
-    // javascript
-    javascript: {
-      '.backdrop': {
-        // setup
-        position: 'fixed',
-        zIndex: theme('zIndex.backdrop'),
-        top: '0',
-        right: '0',
-        width: '100%',
-        height: '100%',
-        // styles
-        '@apply bg-gray-900 bg-opacity-25': '',
-      },
-      'html.xt-scrollbar': {
-        // setup
-        body: {
-          overflowY: 'hidden',
-        },
-        '.overlay': {
-          overflowY: 'scroll',
-        },
       },
     },
   },

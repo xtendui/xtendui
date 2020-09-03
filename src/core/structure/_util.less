@@ -78,14 +78,14 @@
 
 // toggle
 
-.toggle-block() {
+.toggle() {
   display: none;
   &.active, &.out {
     display: block;
   }
 }
 
-.toggle-flex() {
+.toggle() {
   display: none;
   &.active, &.out {
     display: flex;
@@ -129,7 +129,7 @@
   }
 }
 
-.toggle-inverse() {
+.toggle-none() {
   &.in-done {
     display: none;
   }
@@ -368,14 +368,14 @@
         .sr-only() !important;
       }
       // toggle
-      .toggle-block {
-        .toggle-block() !important;
+      .toggle {
+        .toggle() !important;
       }
-      .toggle-inverse {
-        .toggle-inverse() !important;
+      .toggle-none {
+        .toggle-none() !important;
       }
-      .toggle-flex {
-        .toggle-flex() !important;
+      .toggle {
+        .toggle() !important;
       }
       .toggle-inline-flex {
         .toggle-inline-flex() !important;

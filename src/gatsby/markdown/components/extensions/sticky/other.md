@@ -11,11 +11,11 @@ date: "2019-03-15"
 To show or hide content when sticky activates use `.show-sticky` or `.hide-sticky`.
 
 <demo>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/components/extensions/sticky/showhide-top">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/sticky/showhide-top">
   </div>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/components/extensions/sticky/showhide-bottom">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/sticky/showhide-bottom">
   </div>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/components/extensions/sticky/showhide-hide">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/sticky/showhide-hide">
   </div>
 </demo>
 
@@ -24,6 +24,6 @@ To show or hide content when sticky activates use `.show-sticky` or `.hide-stick
 You can disable sticky using `.sticky-disable` (resize to mobile to see it in action).
 
 <demo>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/components/extensions/sticky/disable">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/sticky/disable">
   </div>
 </demo>

@@ -2,7 +2,7 @@
 type: "Components"
 category: "Core"
 parent: "Animation"
-title: "Js"
+title: "Javascript"
 date: "2019-06-01"
 ---
 

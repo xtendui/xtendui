@@ -71,16 +71,16 @@ demo.htmlSource = `
   </div>
 
   <div class="list list-space-2 items-center" id="demo--toggle-events-targets">
-    <div class="note note-default note-background toggle-block" data-xt-group="0">
+    <div class="note note-default note-background toggle" data-xt-group="0">
       Target Group 0
     </div>
-    <div class="note note-default note-background toggle-block" data-xt-group="0">
+    <div class="note note-default note-background toggle" data-xt-group="0">
       Target Group 0
     </div>
-    <div class="note note-default note-background toggle-block">
+    <div class="note note-default note-background toggle">
       Target 1
     </div>
-    <div class="note note-default note-background toggle-block">
+    <div class="note note-default note-background toggle">
       Target 2
     </div>
   </div>

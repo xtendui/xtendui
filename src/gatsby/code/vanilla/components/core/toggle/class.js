@@ -15,7 +15,7 @@ demo.htmlSource = `
     Toggle
   </button>
 
-  <div class="note note-default note-background toggle-block">
+  <div class="note note-default note-background toggle">
     Target
   </div>
 

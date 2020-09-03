@@ -111,7 +111,7 @@ Just use the class `active-overlay` if you want to automatically open, or use th
 </script>
 
 <demo>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/components/core/overlay/standalone">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/overlay/standalone">
   </div>
 </demo>
 

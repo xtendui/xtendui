@@ -38,9 +38,9 @@ If you need to toggle **multiple targets** with the **same element** assign `dat
 
 ## Toggles
 
-The toggle class utils are this, they toggle on activation the `display` or `visibility` property: `.toggle-block` `.toggle-flex` `.toggle-inline-flex` `.toggle-inline` `.toggle-visible` `.toggle-hidden`.
+The toggle class utils are this, they toggle on activation the `display` or `visibility` property: `.toggle` `.toggle` `.toggle-inline-flex` `.toggle-inline` `.toggle-visible` `.toggle-hidden`.
 
-You can make a target inverse toggle (`display: none` when active), just use `.toggle-inverse`:
+You can make a target inverse toggle (`display: none` when active), just use `.toggle-none`:
 
 <demo>
   <demovanilla src="vanilla/components/core/toggle/inverse">

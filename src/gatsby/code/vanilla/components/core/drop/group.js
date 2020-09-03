@@ -20,7 +20,7 @@ demo.htmlSource = `
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="card card-medium ${cardDefaultDrop()}">
+        <div class="card card-large ${cardDefaultDrop()}">
           <div class="sm:card-group">
             <div class="card-block card-block-medium">
               <div class="h4">Lorem ipsum</div>

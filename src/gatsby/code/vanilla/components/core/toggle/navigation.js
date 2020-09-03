@@ -35,19 +35,19 @@ demo.htmlSource = `
     <span class="icon-xt-chevron-right"></span>
   </button>
 
-  <div class="note note-default note-background toggle-block">
+  <div class="note note-default note-background toggle">
     Target 0
   </div>
 
-  <div class="note note-default note-background toggle-block">
+  <div class="note note-default note-background toggle">
     Target 1
   </div>
 
-  <div class="note note-default note-background toggle-block">
+  <div class="note note-default note-background toggle">
     Target 2
   </div>
 
-  <div class="note note-default note-background toggle-block">
+  <div class="note note-default note-background toggle">
     Target 3
   </div>
 

@@ -20,11 +20,11 @@ demo.htmlSource = `
     Toggle same
   </button>
 
-  <div class="note note-default note-background toggle-block" id="toggle--unique-2">
+  <div class="note note-default note-background toggle" id="toggle--unique-2">
     Target 0
   </div>
 
-  <div class="note note-default note-background toggle-block" id="toggle--unique-3">
+  <div class="note note-default note-background toggle" id="toggle--unique-3">
     Target 1
   </div>
 

@@ -154,6 +154,7 @@ body {
     .card-block {
       @apply p-0;
       .h4 {
+        @apply mt-4 mb-2 mt-fc mb-lc;
         font-size: 1rem;
       }
       p {

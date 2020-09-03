@@ -9,7 +9,7 @@ date: "2019-01-15"
 ## Demo
 
 <demo>
-  <div class="gatsby_demo_item toggle-flex" data-iframe="iframe/components/core/drop/events-methods">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/drop/events-methods">
   </div>
 </demo>
 

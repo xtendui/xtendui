@@ -70,7 +70,7 @@ The **unique** mode is useful when triggering **targets outside the scope** of t
   <button type="button" data-xt-toggle="{ targets: '#my-target' }">
     <!-- content -->
   </button>
-  <div class="toggle-block" id="my-target">
+  <div class="toggle" id="my-target">
     <!-- content -->
   </div>
 </script>
@@ -91,7 +91,7 @@ Use this markup to create **multiple toggle**.
     <button type="button" class="my-elements">
       <!-- content -->
     </button>
-    <div class="toggle-block" class="my-targets">
+    <div class="toggle" class="my-targets">
       <!-- content -->
     </div>
   </div>

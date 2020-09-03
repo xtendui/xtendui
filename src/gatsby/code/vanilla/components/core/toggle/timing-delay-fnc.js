@@ -22,31 +22,31 @@ demo.htmlSource = `
     Group 1
   </button>
 
-  <div class="note note-default note-background toggle-block">
+  <div class="note note-default note-background toggle">
     Target 0
   </div>
 
-  <div class="note note-default note-background toggle-block" data-xt-group="0">
+  <div class="note note-default note-background toggle" data-xt-group="0">
     Group 0a
   </div>
 
-  <div class="note note-default note-background toggle-block" data-xt-group="1">
+  <div class="note note-default note-background toggle" data-xt-group="1">
     Group 1a
   </div>
 
-  <div class="note note-default note-background toggle-block" data-xt-group="0">
+  <div class="note note-default note-background toggle" data-xt-group="0">
     Group 0b
   </div>
 
-  <div class="note note-default note-background toggle-block" data-xt-group="1">
+  <div class="note note-default note-background toggle" data-xt-group="1">
     Group 1b
   </div>
 
-  <div class="note note-default note-background toggle-block" data-xt-group="0">
+  <div class="note note-default note-background toggle" data-xt-group="0">
     Group 0c
   </div>
 
-  <div class="note note-default note-background toggle-block" data-xt-group="1">
+  <div class="note note-default note-background toggle" data-xt-group="1">
     Group 1c
   </div>
 
@@ -68,31 +68,31 @@ demo.htmlSource = `
     Group 1
   </button>
 
-  <div class="note note-default note-background toggle-block">
+  <div class="note note-default note-background toggle">
     Target 0
   </div>
 
-  <div class="note note-default note-background toggle-block" data-xt-group="0">
+  <div class="note note-default note-background toggle" data-xt-group="0">
     Group 0a
   </div>
 
-  <div class="note note-default note-background toggle-block" data-xt-group="1">
+  <div class="note note-default note-background toggle" data-xt-group="1">
     Group 1a
   </div>
 
-  <div class="note note-default note-background toggle-block" data-xt-group="0">
+  <div class="note note-default note-background toggle" data-xt-group="0">
     Group 0b
   </div>
 
-  <div class="note note-default note-background toggle-block" data-xt-group="1">
+  <div class="note note-default note-background toggle" data-xt-group="1">
     Group 1b
   </div>
 
-  <div class="note note-default note-background toggle-block" data-xt-group="0">
+  <div class="note note-default note-background toggle" data-xt-group="0">
     Group 0c
   </div>
 
-  <div class="note note-default note-background toggle-block" data-xt-group="1">
+  <div class="note note-default note-background toggle" data-xt-group="1">
     Group 1c
   </div>
 

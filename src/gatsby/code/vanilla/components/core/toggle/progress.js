@@ -54,7 +54,7 @@ demo.htmlSource = `
     </span>
   </button>
 
-  <div class="note note-default note-background toggle-block">
+  <div class="note note-default note-background toggle">
     Target 0
     <div class="loader loader-x loader-size-bottom loader-js">
       <div class="filler">
@@ -63,7 +63,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="note note-default note-background toggle-block">
+  <div class="note note-default note-background toggle">
     Target 1
     <div class="loader loader-x loader-size-bottom loader-js">
       <div class="filler">
@@ -72,7 +72,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="note note-default note-background toggle-block">
+  <div class="note note-default note-background toggle">
     Target 2
     <div class="loader loader-x loader-size-bottom loader-js">
       <div class="filler">
@@ -81,7 +81,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="note note-default note-background toggle-block">
+  <div class="note note-default note-background toggle">
     Target 3
     <span class="loader loader-x loader-size-bottom loader-js">
       <span class="filler">

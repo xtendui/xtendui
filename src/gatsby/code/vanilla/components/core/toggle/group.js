@@ -30,27 +30,27 @@ demo.htmlSource = `
     Toggle Group 3
   </button>
 
-  <div class="note note-default note-background toggle-block">
+  <div class="note note-default note-background toggle">
     Target 1
   </div>
 
-  <div class="note note-default note-background toggle-block" data-xt-group="0">
+  <div class="note note-default note-background toggle" data-xt-group="0">
     Target Group 0
   </div>
 
-  <div class="note note-default note-background toggle-block" data-xt-group="3">
+  <div class="note note-default note-background toggle" data-xt-group="3">
     Target Group 3
   </div>
 
-  <div class="note note-default note-background toggle-block" data-xt-group="0">
+  <div class="note note-default note-background toggle" data-xt-group="0">
     Target Group 0
   </div>
 
-  <div class="note note-default note-background toggle-block">
+  <div class="note note-default note-background toggle">
     Target 2
   </div>
 
-  <div class="note note-default note-background toggle-block" data-xt-group="3">
+  <div class="note note-default note-background toggle" data-xt-group="3">
     Target Group 3
   </div>
 
