@@ -33,9 +33,9 @@ class DemoVanilla extends React.Component {
             <script type="text/plain" data-lang="html" dangerouslySetInnerHTML={{ __html: demo.htmlSource }} />
             <div className="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate" />
             {data.allFile.files
-              .filter(x => x.file.relativePath === `${demo.path}.less`)
+              .filter(x => x.file.relativePath === `${demo.path}.css`)
               .map((file, i) => (
-                <div className="gatsby_demo_source xt-ignore" data-lang="less" dangerouslySetInnerHTML={{ __html: cssSource(demo) }} key={i} />
+                <div className="gatsby_demo_source xt-ignore" data-lang="css" dangerouslySetInnerHTML={{ __html: cssSource(demo) }} key={i} />
               ))}
             {data.allFile.files
               .filter(x => x.file.relativePath === `${demo.path}.js`)

@@ -8,12 +8,21 @@ date: "2019-12-20"
 
 ## Position
 
-Set drop position with this classes.
+Set drop position with this utils.
 
-|                         | Syntax                                    | Example                       |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Syntax                   | `.drop-{position}`                        | `.drop-bottom` `.drop-top` `.drop-left` `.drop-right` `.drop-center` `.drop-before` `.drop-after` |
-| Mixin                   | `.drop-{position}()`                      | `.drop-bottom()` `.drop-top()` `.drop-left()` `.drop-right()` `.drop-center()` `.drop-before()` `.drop-after()` |
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
+| Util                  | `.drop-bottom`       | `drop-bottom`                | `responsive`                | Position bottom            |
+| Util                  | `.drop-top`       | `drop-top`                | `responsive`                | Position top            |
+| Util                  | `.drop-left`       | `drop-left`                | `responsive`                | Position left            |
+| Util                  | `.drop-right`       | `drop-right`                | `responsive`                | Position right            |
+| Util                  | `.drop-center`       | `drop-center`                | `responsive`                | Position center            |
+| Util                  | `.drop-before`       | `drop-before`                | `responsive`                | Position before            |
+| Util                  | `.drop-after`       | `drop-after`                | `responsive`                | Position after            |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/core/drop/left">

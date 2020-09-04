@@ -10,6 +10,7 @@ const em = (px, base) => `${round(px / base)}em`
 
 module.exports = theme => ({
   utilities: {
+    // structure
     structure: {
       '.container-reset': {
         padding: 0,
@@ -66,6 +67,7 @@ module.exports = theme => ({
         },
       },
     },
+    // list
     list: {
       space: {
         px: '1px',
@@ -92,6 +94,7 @@ module.exports = theme => ({
         '16': '4rem',
       },
     },
+    // row
     row: {
       space: {
         px: '1px',
@@ -118,6 +121,160 @@ module.exports = theme => ({
         '16': '4rem',
       },
     },
+    // drop
+    drop: {
+      '.drop-container-disable': {
+        // setup
+        position: 'initial',
+        '> a, > button': {
+          display: 'none',
+        },
+        '> .drop': {
+          display: 'inline-block !important',
+          position: 'relative',
+          top: 'auto',
+          left: 'auto',
+          right: 'auto',
+          bottom: 'auto',
+          '> .drop-inner': {
+            zIndex: 'initial',
+            '> .drop-design': {
+              display: 'none',
+            },
+            '> .card': {
+              '@apply card-disable': '',
+            },
+          },
+          '@apply xt-disable': '',
+        },
+      },
+      '.drop-before': {
+        // setup
+        left: 'auto',
+        right: '100%',
+      },
+      '.drop-after': {
+        // setup
+        left: '100%',
+        right: 'auto',
+      },
+      '.drop-left': {
+        // setup
+        left: '0',
+        right: 'auto',
+        '&:before': {
+          display: 'none',
+          content: '',
+        },
+      },
+      '.drop-right': {
+        // setup
+        left: 'auto',
+        right: '0',
+        '&:before': {
+          display: 'none',
+          content: '',
+        },
+      },
+      '.drop-bottom': {
+        // setup
+        top: '100%',
+        bottom: 'auto',
+        '&:after': {
+          display: 'none',
+          content: '',
+        },
+      },
+      '.drop-top': {
+        // setup
+        top: 'auto',
+        bottom: '100%',
+        '&:after': {
+          display: 'none',
+          content: '',
+        },
+      },
+      '.drop-center': {
+        // setup
+        '&:before': {
+          display: 'none',
+          content: 'xt-drop-center',
+        },
+      },
+      '.drop-middle': {
+        // setup
+        paddingTop: '0',
+        paddingBottom: '0',
+        '&:after': {
+          display: 'none',
+          content: 'xt-drop-middle',
+        },
+      },
+      '.drop-contain-bottom': {
+        // setup
+        '@apply drop-middle': '',
+        top: 'auto',
+        bottom: '0',
+      },
+      '.drop-contain-top': {
+        // setup
+        '@apply drop-middle': '',
+        top: '0',
+        bottom: 'auto',
+      },
+    },
+    // overlay
+    overlay: {
+      '.overlay-screen': {
+        // setup
+        '.overlay-container': {
+          position: 'relative',
+          zIndex: theme('zIndex.overlay'),
+          padding: '0 !important',
+          '.overlay-inner': {
+            position: 'static',
+          },
+        },
+        '.overlay-inner': {
+          '@apply flex-auto': '',
+          display: 'flex',
+          flexDirection: 'column',
+        },
+      },
+      '.overlay-disable': {
+        // setup
+        display: 'flex !important',
+        overflow: 'initial !important',
+        position: 'static',
+        zIndex: 'initial',
+        top: 'auto',
+        left: 'auto',
+        bottom: 'auto',
+        right: 'auto',
+        width: 'auto',
+        height: 'auto',
+        '.overlay-design': {
+          display: 'none',
+        },
+        '.overlay-container': {
+          zIndex: 'initial',
+          padding: '0',
+          width: '100%',
+          minHeight: 'auto',
+          maxWidth: 'none',
+        },
+        '.overlay-inner': {
+          '> .card': {
+            '@apply card-disable': '',
+          },
+        },
+        '> .backdrop': {
+          display: 'none !important',
+        },
+        '@apply xt-disable': '',
+      },
+    },
+    // card
     card: {
       '.card-group': {
         display: 'flex',
@@ -729,89 +886,6 @@ module.exports = theme => ({
           right: '0 !important',
         },
       },
-      '.drop-container-disable': {
-        // setup
-        position: 'initial',
-        '> a, > button': {
-          display: 'none',
-        },
-        '> .drop': {
-          display: 'inline-block !important',
-          position: 'relative',
-          top: 'auto',
-          left: 'auto',
-          right: 'auto',
-          bottom: 'auto',
-          '> .drop-inner': {
-            zIndex: 'initial',
-            '> .drop-design': {
-              display: 'none',
-            },
-            '> .card': {
-              '@apply card-disable': '',
-            },
-          },
-          '@apply xt-disable': '',
-        },
-      },
-      '.drop-before': {
-        // setup
-        left: 'auto',
-        right: '100%',
-      },
-      '.drop-after': {
-        // setup
-        left: '100%',
-        right: 'auto',
-      },
-      '.drop-left': {
-        // setup
-        left: '0',
-        right: 'auto',
-      },
-      '.drop-right': {
-        // setup
-        left: 'auto',
-        right: '0',
-      },
-      '.drop-bottom': {
-        // setup
-        top: '100%',
-        bottom: 'auto',
-      },
-      '.drop-top': {
-        // setup
-        top: 'auto',
-        bottom: '100%',
-      },
-      '.drop-center': {
-        // setup
-        '&:before': {
-          display: 'none',
-          content: 'xt-drop-center',
-        },
-      },
-      '.drop-middle': {
-        // setup
-        paddingTop: '0',
-        paddingBottom: '0',
-        '&:after': {
-          display: 'none',
-          content: 'xt-drop-middle',
-        },
-      },
-      '.drop-contain-bottom': {
-        // setup
-        '@apply drop-middle': '',
-        top: 'auto',
-        bottom: '0',
-      },
-      '.drop-contain-top': {
-        // setup
-        '@apply drop-middle': '',
-        top: '0',
-        bottom: 'auto',
-      },
     },
     // overlay
     overlay: {
@@ -863,53 +937,6 @@ module.exports = theme => ({
         zIndex: theme('zIndex.overlay'),
         width: '100%',
         borderRadius: 'inherit',
-      },
-      '.overlay-screen': {
-        // setup
-        '.overlay-container': {
-          position: 'relative',
-          zIndex: theme('zIndex.overlay'),
-          padding: '0 !important',
-          '.overlay-inner': {
-            position: 'static',
-          },
-        },
-        '.overlay-inner': {
-          '@apply flex-auto': '',
-          display: 'flex',
-          flexDirection: 'column',
-        },
-      },
-      '.overlay-disable': {
-        display: 'flex !important',
-        overflow: 'initial !important',
-        position: 'static',
-        zIndex: 'initial',
-        top: 'auto',
-        left: 'auto',
-        bottom: 'auto',
-        right: 'auto',
-        width: 'auto',
-        height: 'auto',
-        '.overlay-design': {
-          display: 'none',
-        },
-        '.overlay-container': {
-          zIndex: 'initial',
-          padding: '0',
-          width: '100%',
-          minHeight: 'auto',
-          maxWidth: 'none',
-        },
-        '.overlay-inner': {
-          '> .card': {
-            '@apply card-disable': '',
-          },
-        },
-        '> .backdrop': {
-          display: 'none !important',
-        },
-        '@apply xt-disable': '',
       },
     },
     // badge

@@ -8,14 +8,13 @@ date: "2019-03-15"
 
 ## Preset
 
-`{preset}` can be `screen`, `position-left`, `position-right`. `{position}` can be `left`, `right`.
+You can overlay that covers the screen with `.overlay-screen`, remember to use also align and justify the `.card`.
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Example                       |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Syntax                   | `.overlay-{preset}`                         | `.overlay-screen` `.overlay-position-{position}` |
-| Mixin                   | Not possible                              | Not possible                  |
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
+| Util                  | `.overlay-screen`       | `overlay-screen`                | `responsive`                | Overlay that covers the screen            |
 
 </div>
 
@@ -24,6 +23,8 @@ date: "2019-03-15"
   </demovanilla>
 </demo>
 
+With `.overlay-screen` you can also use **tailwind classes** to modify `.overlay-container` **position** and **size**.
+
 <demo>
   <demovanilla src="vanilla/components/core/overlay/position">
   </demovanilla>
@@ -31,7 +32,17 @@ date: "2019-03-15"
 
 ## Disable
 
-You can disable overlay using `.overlay-disable` (resize to mobile to see it in action).
+You can disable styles and javascript using `.overlay-disable`.
+
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
+| Util                  | `.overlay-disable`       | `overlay-disable !important`                | `responsive`                | Reset overlay styles and javascript            |
+
+</div>
+
+You can disable overlay using `.overlay-disable`.
 
 <demo>
   <demovanilla src="vanilla/components/core/overlay/disable">
@@ -40,7 +51,7 @@ You can disable overlay using `.overlay-disable` (resize to mobile to see it in 
 
 ## Close fixed
 
-You can have the `.btn-close` with `fixed z-top`.
+You can have the `.btn-close` with `fixed z-top` to have it always visible also when scrolling.
 
 <demo>
   <demovanilla src="vanilla/components/core/overlay/close-fixed">

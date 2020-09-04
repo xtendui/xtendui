@@ -8,8 +8,15 @@ date: "2019-03-15"
 
 ## Disable
 
-You can disable card using `.card-disable`.
-(responsive classes doc)
+You can disable card styles using `.card-disable`.
+
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
+| Util                  | `.card-disable`       | `card-disable`                | `responsive`                | Reset card styles            |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/core/card/disable">
@@ -18,4 +25,4 @@ You can disable card using `.card-disable`.
 
 ## Stretch
 
-Same demo as [Row stretch](/components/core/row/other#stretch) HERE.
+You can stretch cards vertically inside row, see [row stretch](/components/core/row/other#stretch).

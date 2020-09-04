@@ -1,13 +1,9 @@
 #demo--overlay-nested-disable-toggle {
-  /*@screen md {
-    display: none !important;
-  }*/
-  display: none !important;
+  /*@apply md:hidden !important;*/
+  @apply hidden !important;
 }
 
 #demo--overlay-nested-disable {
-  /*@screen md {
-    @apply overlay-disable !important;
-  }*/
+  /*@apply md:overlay-disable !important;*/
   @apply overlay-disable !important;
 }

@@ -19,7 +19,7 @@ demo.htmlSource = `
       bottom right
     </button>
 
-    <div class="drop drop-bottom drop-right">
+    <div class="drop md:drop-bottom md:drop-right">
       <div class="drop-inner">
         <div class="card card-small ${cardDefaultDropList()}">
           <div class="card-block py-3">
@@ -47,7 +47,7 @@ demo.htmlSource = `
       top right
     </button>
 
-    <div class="drop drop-top drop-right">
+    <div class="drop md:drop-top md:drop-right">
       <div class="drop-inner">
         <div class="card card-small ${cardDefaultDropList()}">
           <div class="card-block py-3">
@@ -75,7 +75,7 @@ demo.htmlSource = `
       right middle
     </button>
 
-    <div class="drop drop-right drop-middle">
+    <div class="drop md:drop-right md:drop-middle">
       <div class="drop-inner">
         <div class="card card-small ${cardDefaultDropList()}">
           <div class="card-block py-3">
@@ -103,7 +103,7 @@ demo.htmlSource = `
       right contain-bottom
     </button>
 
-    <div class="drop drop-right drop-contain-bottom">
+    <div class="drop md:drop-right md:drop-contain-bottom">
       <div class="drop-inner">
         <div class="card card-small ${cardDefaultDropList()}">
           <div class="card-block py-3">
@@ -131,7 +131,7 @@ demo.htmlSource = `
       right contain-top
     </button>
 
-    <div class="drop drop-right drop-contain-top">
+    <div class="drop md:drop-right md:drop-contain-top">
       <div class="drop-inner">
         <div class="card card-small ${cardDefaultDropList()}">
           <div class="card-block py-3">

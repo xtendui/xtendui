@@ -25,13 +25,13 @@ If you want a drop with size and position **relative to a parent Node** use `dro
 
 ## Disable
 
-If you want to **disable drop and reset css drop styles** use `drop-container-disable`.
+You can disable styles and javascript using `.drop-container-disable`.
 
 <div class="table-scroll">
 
-|                         | Syntax                                     | Mixin                         | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Component                  | `.drop-container-disable`                | `drop-container-disable !important`        | Disable drop, useful within media queries            |
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
+| Util                  | `.drop-container-disable`       | `drop-container-disable !important`                | `responsive`                | Reset drop styles and javascript            |
 
 </div>
 

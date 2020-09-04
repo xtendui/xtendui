@@ -1,4 +1,4 @@
-const cssSource = (demo, nameOverride, type = '.less') => {
+const cssSource = (demo, nameOverride, type = '.css') => {
   return require(`!!raw-loader!xtend-library/src/${demo.path}${type}`).default
 }
 

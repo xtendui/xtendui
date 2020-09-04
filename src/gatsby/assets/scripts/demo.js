@@ -547,8 +547,8 @@ const populateSources = (item, element, z) => {
   // set text
   if (lang === 'language-markup') {
     lang = 'html'
-  } else if (lang === 'language-less') {
-    lang = 'less'
+  } else if (lang === 'language-css') {
+    lang = 'css'
   } else if (lang === 'language-js') {
     lang = 'js'
   } else if (lang === 'language-jsx') {
@@ -565,8 +565,8 @@ const populateSources = (item, element, z) => {
   // set text
   if (lang === 'html') {
     lang = 'language-markup'
-  } else if (lang === 'less') {
-    lang = 'language-less'
+  } else if (lang === 'css') {
+    lang = 'language-css'
   } else if (lang === 'js') {
     lang = 'language-js'
   } else if (lang === 'jsx') {

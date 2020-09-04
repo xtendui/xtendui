@@ -76,8 +76,20 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 <div class="table-scroll">
 
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Function                  | `Xt.eventDelay:Function`              | `e:Event, element:Node, function:Function, prefix:String = '', instant:Boolean = false`       | event delay wrapper                  |
+| Variable                  | `Xt.resizeDelay:Number|Boolean`              | `500`        | Delay for the `resize` event with `Xt.eventDelay`            |
+| Option                    | `elements:Query`                          | `false`        | Elements query            |
+| Object                   | `let self = Xt.get('xt-drop', {DOM element})`       | `object` `elements` `targets` | Get object self for this component class             |
+| Property                  | `initial:Boolean`       | If initial or reset activation            |
+
+</div>
+
+<div class="table-scroll">
+
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |----------------------------- |
+| ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
 | Util                  | `.container-reset`       | `container-reset`                | `responsive`                | Reset container styles            |
 
 </div>
@@ -87,18 +99,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
 | Component                  | `.overflow-main`                     | `overflow-main`                | Overflow scrollbar style            |
-
-</div>
-
-<div class="table-scroll">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Function                  | `Xt.eventDelay:Function`              | `e:Event, element:Node, function:Function, prefix:String = '', instant:Boolean = false`       | event delay wrapper                  |
-| Variable                  | `Xt.resizeDelay:Number|Boolean`              | `500`        | Delay for the `resize` event with `Xt.eventDelay`            |
-| Option                    | `elements:Query`                          | `false`        | Elements query            |
-| Object                   | `let self = Xt.get('xt-drop', {DOM element})`       | `object` `elements` `targets` | Get object self for this component class             |
-| Property                  | `initial:Boolean`       | If initial or reset activation            |
 
 </div>
 

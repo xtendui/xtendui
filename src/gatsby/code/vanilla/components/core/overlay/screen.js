@@ -17,11 +17,11 @@ demo.htmlSource = `
     <button type="button" class="btn btn-medium ${btnPrimary()}">
       screen image full
     </button>
-    <div class="overlay overlay-screen">
+    <div class="overlay md:overlay-screen">
       <div class="overlay-container">
         <div class="overlay-inner">
 
-          <div class="card ${cardDefaultOverlayScreen()} justify-center">
+          <div class="card ${cardDefaultOverlayScreen()} items-center justify-center">
             <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
             <div class="card-asset">
               ${img({ classes: 'object-cover object-center', ratio: '100%' })}
@@ -37,11 +37,11 @@ demo.htmlSource = `
     <button type="button" class="btn btn-medium ${btnPrimary()}">
       screen max-w-3xl
     </button>
-    <div class="overlay overlay-screen">
+    <div class="overlay md:overlay-screen">
       <div class="overlay-container">
         <div class="overlay-inner">
 
-          <div class="card ${cardDefaultOverlayScreen()} justify-center">
+          <div class="card ${cardDefaultOverlayScreen()} items-center justify-center">
             <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
             <div class="max-w-3xl">
               <div class="card-block card-block-large">
@@ -63,11 +63,11 @@ demo.htmlSource = `
     <button type="button" class="btn btn-medium ${btnPrimary()}">
       screen group max-w-3xl
     </button>
-    <div class="overlay overlay-screen">
+    <div class="overlay md:overlay-screen">
       <div class="overlay-container">
         <div class="overlay-inner">
 
-          <div class="card ${cardDefaultOverlayScreen()} justify-center">
+          <div class="card ${cardDefaultOverlayScreen()} items-center justify-center">
             <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
             <div class="max-w-3xl">
               <div class="sm:card-group">

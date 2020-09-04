@@ -32,7 +32,7 @@ class DemoVanillaIframe extends React.Component {
             <SEO title={seo.title} />
             <div id="body-outer">
               {
-                data.allFile.files.filter(x => x.file.relativePath === `${demo.path}.less`).map(() => (demo.cssSource = cssSource(demo))) && <div /> // @FIX react render string
+                data.allFile.files.filter(x => x.file.relativePath === `${demo.path}.css`).map(() => (demo.cssSource = cssSource(demo))) && <div /> // @FIX react render string
               }
               {
                 data.allFile.files.filter(x => x.file.relativePath === `${demo.path}.js`).map(() => (demo.jsSource = jsSource(demo))) && <div /> // @FIX react render string
