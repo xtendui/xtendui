@@ -116,8 +116,10 @@
 }
 
 .gatsby_site_header_item {
-  margin-top: 3px;
-  margin-bottom: 3px;
+  &:not(:empty) {
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
 }
 
 .gatsby_site_header_sub {

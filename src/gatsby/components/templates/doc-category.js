@@ -35,7 +35,7 @@ class Template extends React.Component {
               })
               .map((category, i) => (
                 <div className="gatsby_listing_group" key={i}>
-                  <h2 className="h5 h-block bg-gray-200 text-center">{category.title.split('-').pop()}</h2>
+                  <h2 className="h5 h-block rounded-md bg-gray-200 text-center">{category.title.split('-').pop()}</h2>
                   <div className="gatsby_listing_items">
                     <div className="row row-space-2 lg:row-space-4 row-stretch">
                       {category.posts.map(({ post }, z) =>

@@ -27,10 +27,14 @@ class Template extends React.Component {
     return (
       <Layout seo={seo} page={data}>
         <SEO title={seo.title} />
-        {data.postsAdiacent.posts.filter(x => x.post.frontmatter.demos && x.post.frontmatter.parent !== x.post.frontmatter.title).length ? (
+        {data.post.htmlAst !== '<div></div>' ? renderAst(data.post.htmlAst) : null}
+        {data.postsAdiacent.posts.length ? (
           <div className="gatsby_listing">
             <div className="row row-space-3">
               <div className="gatsby_listing_group">
+                {data.post.frontmatter.type === 'Components' ? (
+                  <h2 className="h5 h-block rounded-md bg-gray-200 text-center">{'Dive Into Subpages'}</h2>
+                ) : null}
                 <div className="gatsby_listing_items">
                   <div className="row row row-space-2 lg:row-space-4 row-stretch">
                     {data.postsAdiacent.posts.map(({ post: adiacent }, i) =>
@@ -62,7 +66,7 @@ class Template extends React.Component {
                               </Demo>
                             ) : null}
                           </div>
-                        ) : adiacent.frontmatter.category === 'Addons' || adiacent.frontmatter.category === 'Themes' ? (
+                        ) : (
                           <div className="gatsby_listing_column" key={i}>
                             <Link to={markdownSlug(adiacent)} className="card gatsby_listing_item">
                               <div className="card-design"></div>
@@ -73,11 +77,20 @@ class Template extends React.Component {
                                     .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
                                     .join(' ')}
                                 </div>
-                                <p>{adiacent.frontmatter.description}</p>
+                                <p>
+                                  {adiacent.frontmatter.description
+                                    ? adiacent.frontmatter.description
+                                    : adiacent.frontmatter.parent +
+                                      "'s " +
+                                      adiacent.frontmatter.title
+                                        .split(/[\s-]+/)
+                                        .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
+                                        .join(' ')}
+                                </p>
                               </div>
                             </Link>
                           </div>
-                        ) : null
+                        )
                       ) : null
                     )}
                   </div>
@@ -86,7 +99,6 @@ class Template extends React.Component {
             </div>
           </div>
         ) : null}
-        {renderAst(data.post.htmlAst)}
       </Layout>
     )
   }
