@@ -12,7 +12,7 @@ If you want a drop with size and position **relative to a parent Node** use `dro
 
 <div class="table-scroll">
 
-|                         | Class                                     | Mixin                         | Description                   |
+|                         | Syntax                                     | Mixin                         | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Component                  | `.drop-container-static`                | `drop-container-static`        | Position relative to closest element with `.relative`    
 
@@ -29,7 +29,7 @@ If you want to **disable drop and reset css drop styles** use `drop-container-di
 
 <div class="table-scroll">
 
-|                         | Class                                     | Mixin                         | Description                   |
+|                         | Syntax                                     | Mixin                         | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Component                  | `.drop-container-disable`                | `drop-container-disable !important`        | Disable drop, useful within media queries            |
 

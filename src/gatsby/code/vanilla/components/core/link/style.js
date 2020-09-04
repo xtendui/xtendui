@@ -14,8 +14,12 @@ demo.htmlSource = `
     link
   </a>
 
+  <button type="button" class="btn link">
+    link btn
+  </button>
+
   <div class="link">
-    link with class
+    link class
   </div>
 
 </div>

@@ -17,7 +17,7 @@ Classes for assigning variant (e.g.: border / background / color).
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.group-{variant}`                        | `.group-default`             |
+| Syntax                   | `.group-{variant}`                        | `.group-default`             |
 | Mixin                   | `.group-{variant}()`                      | `.group-default()`            |
 
 </div>

@@ -14,7 +14,7 @@ date: "2019-03-15"
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.overlay-{preset}`                         | `.overlay-screen` `.overlay-position-{position}` |
+| Syntax                   | `.overlay-{preset}`                         | `.overlay-screen` `.overlay-position-{position}` |
 | Mixin                   | Not possible                              | Not possible                  |
 
 </div>

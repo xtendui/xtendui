@@ -12,7 +12,7 @@ To have media responsive give `.media-container` this options:
 
 <div class="table-scroll">
 
-|                         | Class                                     | Mixin                       | Description                   |
+|                         | Syntax                                     | Mixin                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `.media-container-responsive`                 | `.media-container-responsive()`        | Responsive media            |
 
@@ -29,7 +29,7 @@ To have media with **object-fit** give `.media` one of this options:
 
 <div class="table-scroll">
 
-|                         | Class                                     | Mixin                       | Description                   |
+|                         | Syntax                                     | Mixin                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `.object-cover object-center`                 | `.object-cover object-center()`        | object-fit with cover            |
 | Option                  | `.media-contain`                 | `.media-contain()`        | object-fit with contain            |
@@ -59,7 +59,7 @@ To have media with aspect ratio give`.media-container` this options:
 
 <div class="table-scroll">
 
-|                         | Class                                     | Mixin                       | Description                   |
+|                         | Syntax                                     | Mixin                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `.media-container-16-9`                 | `.media-container-16-9()`        | Video and iframes with aspect ratio 16/9            |
 

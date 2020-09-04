@@ -16,7 +16,7 @@ Use `.col-auto` to fit the column inside the available width, but if the content
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.col-{number}`                           | `.col-1` `.col-2` `.col-3` etc..                |
+| Syntax                   | `.col-{number}`                           | `.col-1` `.col-2` `.col-3` etc..                |
 | Class responsive        | `.col-{number}-{breakpoint}`             | `.col-1-sm` `.col-2-sm` `.col-3-sm` etc..                |
 | Mixin                   | `.col({number})`                          | `.col(1)` `.col(2)` `.col(3)` etc..                     |
 | Mixin responsive min    | `.col({number}, {breakpoint})`            | `.col(1, sm)` `.col(2, sm)` `.col(3, sm)` etc..                 |

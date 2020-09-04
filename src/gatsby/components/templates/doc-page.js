@@ -28,76 +28,79 @@ class Template extends React.Component {
       <Layout seo={seo} page={data}>
         <SEO title={seo.title} />
         {data.post.htmlAst !== '<div></div>' ? renderAst(data.post.htmlAst) : null}
-        {data.postsAdiacent.posts.length ? (
-          <div className="gatsby_listing">
-            <div className="row row-space-3">
-              <div className="gatsby_listing_group">
-                {data.post.frontmatter.type === 'Components' ? (
-                  <h2 className="h5 h-block rounded-md bg-gray-200 text-center">{'Dive Into Subpages'}</h2>
-                ) : null}
-                <div className="gatsby_listing_items">
-                  <div className="row row row-space-2 lg:row-space-4 row-stretch">
-                    {data.postsAdiacent.posts.map(({ post: adiacent }, i) =>
-                      adiacent.frontmatter.parent !== adiacent.frontmatter.title ? (
-                        adiacent.frontmatter.demos ? (
-                          <div className="gatsby_listing_column" key={i}>
-                            <a role="button" className="card gatsby_listing_item" data-gatsby-listing-toggle>
-                              <div className="card-design"></div>
-                              <div className="card-block card-block-medium">
-                                <div className="h4">
-                                  {adiacent.frontmatter.title
-                                    .split(/[\s-]+/)
-                                    .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
-                                    .join(' ')}
+
+        {data.post.frontmatter.parent === data.post.frontmatter.title ? (
+          data.postsAdiacent.posts.length ? (
+            <div className="gatsby_listing">
+              <div className="row row-space-3">
+                <div className="gatsby_listing_group">
+                  {data.post.frontmatter.type === 'Components' ? (
+                    <h2 className="h5 h-block rounded-md bg-gray-200 text-center">{'Dive Into Subpages'}</h2>
+                  ) : null}
+                  <div className="gatsby_listing_items">
+                    <div className="row row row-space-2 lg:row-space-4 row-stretch">
+                      {data.postsAdiacent.posts.map(({ post: adiacent }, i) =>
+                        adiacent.frontmatter.parent !== adiacent.frontmatter.title ? (
+                          adiacent.frontmatter.demos ? (
+                            <div className="gatsby_listing_column" key={i}>
+                              <a role="button" className="card gatsby_listing_item" data-gatsby-listing-toggle>
+                                <div className="card-design"></div>
+                                <div className="card-block card-block-medium">
+                                  <div className="h4">
+                                    {adiacent.frontmatter.title
+                                      .split(/[\s-]+/)
+                                      .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
+                                      .join(' ')}
+                                  </div>
+                                  <p>{adiacent.frontmatter.description}</p>
                                 </div>
-                                <p>{adiacent.frontmatter.description}</p>
-                              </div>
-                            </a>
-                            {adiacent.frontmatter.demos ? (
-                              <Demo>
-                                {adiacent.frontmatter.demos.map((demo, i) => {
-                                  const type = demo.split('/')[0]
-                                  if (type === 'vanilla') {
-                                    return <DemoVanilla src={demo} key={i}></DemoVanilla>
-                                  } else if (type === 'iframe') {
-                                    return <div className="gatsby_demo_item toggle" data-iframe-fullscreen={demo} key={i}></div>
-                                  }
-                                })}
-                              </Demo>
-                            ) : null}
-                          </div>
-                        ) : (
-                          <div className="gatsby_listing_column" key={i}>
-                            <Link to={markdownSlug(adiacent)} className="card gatsby_listing_item">
-                              <div className="card-design"></div>
-                              <div className="card-block card-block-medium">
-                                <div className="h4">
-                                  {adiacent.frontmatter.title
-                                    .split(/[\s-]+/)
-                                    .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
-                                    .join(' ')}
+                              </a>
+                              {adiacent.frontmatter.demos ? (
+                                <Demo>
+                                  {adiacent.frontmatter.demos.map((demo, i) => {
+                                    const type = demo.split('/')[0]
+                                    if (type === 'vanilla') {
+                                      return <DemoVanilla src={demo} key={i}></DemoVanilla>
+                                    } else if (type === 'iframe') {
+                                      return <div className="gatsby_demo_item toggle" data-iframe-fullscreen={demo} key={i}></div>
+                                    }
+                                  })}
+                                </Demo>
+                              ) : null}
+                            </div>
+                          ) : (
+                            <div className="gatsby_listing_column" key={i}>
+                              <Link to={markdownSlug(adiacent)} className="card gatsby_listing_item">
+                                <div className="card-design"></div>
+                                <div className="card-block card-block-medium">
+                                  <div className="h4">
+                                    {adiacent.frontmatter.title
+                                      .split(/[\s-]+/)
+                                      .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
+                                      .join(' ')}
+                                  </div>
+                                  <p>
+                                    {adiacent.frontmatter.description
+                                      ? adiacent.frontmatter.description
+                                      : adiacent.frontmatter.parent +
+                                        "'s " +
+                                        adiacent.frontmatter.title
+                                          .split(/[\s-]+/)
+                                          .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
+                                          .join(' ')}
+                                  </p>
                                 </div>
-                                <p>
-                                  {adiacent.frontmatter.description
-                                    ? adiacent.frontmatter.description
-                                    : adiacent.frontmatter.parent +
-                                      "'s " +
-                                      adiacent.frontmatter.title
-                                        .split(/[\s-]+/)
-                                        .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
-                                        .join(' ')}
-                                </p>
-                              </div>
-                            </Link>
-                          </div>
-                        )
-                      ) : null
-                    )}
+                              </Link>
+                            </div>
+                          )
+                        ) : null
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          ) : null
         ) : null}
       </Layout>
     )

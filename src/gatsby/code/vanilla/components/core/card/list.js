@@ -27,21 +27,5 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="w-full sm:w-6/12">
-    <div class="card ${cardDefault()}">
-      <div class="card-block card-block-medium">
-        <div class="list list-space-2 flex-no-wrap items-baseline">
-          <div>
-            <div class="h4">Lorem ipsum</div>
-            <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-          </div>
-          <div>
-            <span class="icon-chevron-right"></span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
 </div>
 `

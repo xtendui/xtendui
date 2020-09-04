@@ -10,8 +10,8 @@ date: "2019-12-01"
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Variants                         | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+|                         | Syntax                                    | Mixin            | Variants               | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
 | Util                  | `.text-default`                               | `responsive`                | Text and links default colors            |
 | Util                  | `.text-inverse`                               | `responsive`                | Text and link inverse colors            |
 | Util                  | `.text-reset`                               | `responsive`                | Inherit text styles            |

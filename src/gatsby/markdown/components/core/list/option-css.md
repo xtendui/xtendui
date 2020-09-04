@@ -14,7 +14,7 @@ date: "2019-12-01"
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.list-{preset}`                        | `.list-default` `.list-drop` |
+| Syntax                   | `.list-{preset}`                        | `.list-default` `.list-drop` |
 | Mixin                   | `.list-{preset}()`                      | `.list-default()` `.list-drop()`  |
 
 </div>
@@ -48,7 +48,7 @@ Lists **automatically** add horizontal and vertical spacing to the contents. You
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.list-space-{size}`                     | `.list-space-2`          |
+| Syntax                   | `.list-space-{size}`                     | `.list-space-2`          |
 | Class responsive        | `.list-space-{size}-{breakpoint}`        | `.list-space-2-sm`       |
 | Mixin                   | `.list-space({size})`                     | `.list-space(small)`          |
 | Mixin responsive min    | `.list-space({size}, {breakpoint})`       | `.list-space(small, sm)`      |
@@ -63,7 +63,7 @@ Lists **automatically** add horizontal and vertical spacing to the contents. You
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.list-space-{direction}-{size}`                      | `.list-space-x-small`           |
+| Syntax                   | `.list-space-{direction}-{size}`                      | `.list-space-x-small`           |
 | Class responsive        | `.list-space-{direction}-{size}-{breakpoint}`         | `.list-space-x-small-sm`        |
 | Mixin                   | `.list-space-{direction}({size})`                      | `.list-space-x(small)`           |
 | Mixin responsive min    | `.list-space-{direction}({size}, {breakpoint})`        | `.list-space-x(small, sm)`       |

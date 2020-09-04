@@ -19,11 +19,11 @@ Use this markup to create a **link**.
     <!-- content -->
   </a>
 
-  <button type="button" class="btn btn-link">
+  <button type="button" class="btn link">
     <!-- content -->
   </button>
   
-  <div class="a-link>
+  <div class="link">
     <!-- content -->
   </div>
 </script>

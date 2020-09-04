@@ -8,6 +8,8 @@ date: "2020-10-10"
 
 ## Variant
 
+Use **tailwind classes** to assign variant (e.g.: border / background / color).
+
 <demo>
   <demovanilla src="vanilla/components/core/card/variant-full">
   </demovanilla>
@@ -15,7 +17,7 @@ date: "2020-10-10"
 
 ## Interactive
 
-You can make interactive cards with `a` or `button` or `label`.
+Use **tailwind classes** to modify variants for interactive animations.
 
 <demo>
   <demovanilla src="vanilla/components/core/card/interactive-full">
@@ -23,6 +25,8 @@ You can make interactive cards with `a` or `button` or `label`.
 </demo>
 
 ## Size
+
+Use component's classes to assign size (e.g.: padding / font size). See [component customizations](/introduction/getting-started/setup) to modify values.
 
 <demo>
   <demovanilla src="vanilla/components/core/card/size-full">
@@ -33,6 +37,14 @@ You can make interactive cards with `a` or `button` or `label`.
 
 If you want full width assets use `.card-asset`.
 
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `.card-asset`                     | `card-asset`                | Full width assets            |
+
+</div>
+
 <demo>
   <demovanilla src="vanilla/components/core/card/asset-full">
   </demovanilla>
@@ -40,7 +52,15 @@ If you want full width assets use `.card-asset`.
 
 ## Block
 
-Sequential `.card-block` stack vertically.
+Sequential `.card-block` stack vertically. Use **tailwind classes** to assign styles (e.g.: border-radius / background / spacing) 
+
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `.card-block`                     | `card-block`                | Card stack            |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/core/card/block-full">
@@ -49,15 +69,13 @@ Sequential `.card-block` stack vertically.
 
 ## Group
 
-To stack `.card-item` horizontally wrap them inside `.card-item-nested` and `.card-group`.
-(responsive classes doc)
+To stack `.card-block` horizontally wrap them inside `.card-group`.
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Example                       |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.card-group`                           | `.card-group`                      |
-| Class responsive        | `.card-group-{breakpoint}`              | `.card-group-sm`                   |
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
+| Util                  | `.card-group`       | `card-group`                | `responsive`                | Card stack horizontal wrapper           |
 
 </div>
 
@@ -66,7 +84,7 @@ To stack `.card-item` horizontally wrap them inside `.card-item-nested` and `.ca
   </demovanilla>
 </demo>
 
-The size of **blocks** is automatic, you can specify the **size** with [columns](/components/core/column) inside `card-group`.
+The horizontal size of `.card-block` is automatic, but you can specify it with [tailwind width](https://tailwindcss.com/docs/width).
 
 <demo>
   <demovanilla src="vanilla/components/core/card/group-block-full">
@@ -75,12 +93,24 @@ The size of **blocks** is automatic, you can specify the **size** with [columns]
 
 ## Separator
 
+Use **tailwind classes** to style borders for separation.
+
 <demo>
   <demovanilla src="vanilla/components/core/card/separator-full">
   </demovanilla>
 </demo>
 
 ## Overflow
+
+Use **tailwind classes** to overflow divs, you can style it with `overflow-sub`.
+
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `.overflow-sub`       | `overflow-sub`                | Overflow styles           |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/core/card/overflow-y-full">
@@ -89,12 +119,16 @@ The size of **blocks** is automatic, you can specify the **size** with [columns]
 
 ## List
 
+You can use [list component](/components/core/list) to space card's internal content.
+
 <demo>
   <demovanilla src="vanilla/components/core/card/list-full">
   </demovanilla>
 </demo>
 
 ## Close button
+
+Close button inside card.
 
 <demo>
   <demovanilla src="vanilla/components/core/card/close-full">

@@ -14,7 +14,7 @@ date: "2019-12-01"
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.row-{preset}`                        | `.row-default` `.row-form` |
+| Syntax                   | `.row-{preset}`                        | `.row-default` `.row-form` |
 | Mixin                   | `.row-{preset}()`                      | `.row-default()` `.row-form()`  |
 
 </div>
@@ -39,7 +39,7 @@ Row **automatically** add horizontal and vertical spacing to the contents. You c
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.row-space-{size}`                      | `.row-space-small`           |
+| Syntax                   | `.row-space-{size}`                      | `.row-space-small`           |
 | Class responsive        | `.row-space-{size}-{breakpoint}`         | `.row-space-small-sm`        |
 | Mixin                   | `.row-space({size})`                      | `.row-space(small)`           |
 | Mixin responsive min    | `.row-space({size}, {breakpoint})`        | `.row-space(small, sm)`       |
@@ -54,7 +54,7 @@ Row **automatically** add horizontal and vertical spacing to the contents. You c
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.row-space-{direction}-{size}`                      | `.row-space-x-small`           |
+| Syntax                   | `.row-space-{direction}-{size}`                      | `.row-space-x-small`           |
 | Class responsive        | `.row-space-{direction}-{size}-{breakpoint}`         | `.row-space-x-small-sm`        |
 | Mixin                   | `.row-space-{direction}({size})`                      | `.row-space-x(small)`           |
 | Mixin responsive min    | `.row-space-{direction}({size}, {breakpoint})`        | `.row-space-x(small, sm)`       |

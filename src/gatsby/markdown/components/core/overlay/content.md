@@ -8,12 +8,38 @@ date: "2020-10-10"
 
 ## Variant
 
+Use **tailwind classes** to assign variant (e.g.: border / background / color).
+
 <demo>
   <demovanilla src="vanilla/components/core/overlay/variant">
   </demovanilla>
 </demo>
 
 ## Size
+
+Use component's classes to assign size (e.g.: padding / font size). See [component customizations](/introduction/getting-started/setup) to modify values.
+
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `.card-block-small`                     | `card-block-small`                | Size small            |
+| Component                  | `.card-block-medium`                     | `card-block-medium`                | Size medium            |
+| Component                  | `.card-block-large`                     | `card-block-large`                | Size large            |
+
+</div>
+
+Use **tailwind classes** to assign overlay size (e.g.: max-width). If you **omit max-width** classes the overlay is **full width**.
+
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `.max-w-xl`                     | `max-w-xl`                | Width small            |
+| Component                  | `.max-w-2xl`                     | `max-w-2xl`                | Width medium            |
+| Component                  | `.max-w-4xl`                     | `max-w-4xl`                | Width large            |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/core/overlay/size">
@@ -24,6 +50,14 @@ date: "2020-10-10"
 
 If you want full width assets use `.card-asset`.
 
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `.card-asset`                     | `card-asset`                | Full width assets            |
+
+</div>
+
 <demo>
   <demovanilla src="vanilla/components/core/overlay/asset">
   </demovanilla>
@@ -31,7 +65,15 @@ If you want full width assets use `.card-asset`.
 
 ## Block
 
-Sequential `.card-block` stack vertically.
+Sequential `.card-block` stack vertically. Use **tailwind classes** to assign styles (e.g.: border-radius / background / spacing) 
+
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `.card-block`                     | `card-block`                | Card stack            |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/core/overlay/block">
@@ -40,15 +82,22 @@ Sequential `.card-block` stack vertically.
 
 ## Group
 
-To stack `.card-item` horizontally wrap them inside `.card-item-nested` and `.card-group`.
-(responsive classes doc)
+To stack `.card-block` horizontally wrap them inside `.card-group`.
+
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
+| Util                  | `.card-group`       | `card-group`                | `responsive`                | Card stack horizontal wrapper           |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/core/overlay/group">
   </demovanilla>
 </demo>
 
-The size of **blocks** is automatic, you can specify the **size** with [columns](/components/core/column), with responsive classes if you need them.
+The horizontal size of `.card-block` is automatic, but you can specify it with [tailwind width](https://tailwindcss.com/docs/width).
 
 <demo>
   <demovanilla src="vanilla/components/core/overlay/group-block">
@@ -57,6 +106,8 @@ The size of **blocks** is automatic, you can specify the **size** with [columns]
 
 ## Separator
 
+Use **tailwind classes** to style borders for separation.
+
 <demo>
   <demovanilla src="vanilla/components/core/overlay/separator">
   </demovanilla>
@@ -64,7 +115,26 @@ The size of **blocks** is automatic, you can specify the **size** with [columns]
 
 ## Overflow
 
+Use **tailwind classes** to overflow divs, you can style it with `overflow-sub`.
+
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `.overflow-sub`       | `overflow-sub`                | Overflow styles           |
+
+</div>
+
 <demo>
   <demovanilla src="vanilla/components/core/overlay/overflow-y">
+  </demovanilla>
+</demo>
+
+## List
+
+You can use [list component](/components/core/list) to space card's internal content.
+
+<demo>
+  <demovanilla src="vanilla/components/core/overlay/list">
   </demovanilla>
 </demo>

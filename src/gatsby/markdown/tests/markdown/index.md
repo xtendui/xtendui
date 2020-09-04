@@ -76,6 +76,22 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 <div class="table-scroll">
 
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |----------------------------- |
+| Util                  | `.container-reset`       | `container-reset`                | `responsive`                | Reset container styles            |
+
+</div>
+
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `.overflow-main`                     | `overflow-main`                | Overflow scrollbar style            |
+
+</div>
+
+<div class="table-scroll">
+
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Function                  | `Xt.eventDelay:Function`              | `e:Event, element:Node, function:Function, prefix:String = '', instant:Boolean = false`       | event delay wrapper                  |
@@ -83,15 +99,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 | Option                    | `elements:Query`                          | `false`        | Elements query            |
 | Object                   | `let self = Xt.get('xt-drop', {DOM element})`       | `object` `elements` `targets` | Get object self for this component class             |
 | Property                  | `initial:Boolean`       | If initial or reset activation            |
-
-</div>
-
-<div class="table-scroll">
-
-|                      | Syntax                          | Mixin            | Variants               | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
-| Util                  | `.container-reset`       | `container-reset`                | `responsive`                | Reset container styles            |
-| Component                  | `.overflow-main`                     | `overflow-main`                | Overflow scrollbar style            |
 
 </div>
 
@@ -152,7 +159,7 @@ const test = 'test'
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.col-{number}`                           | `.w-6/12`                      |
+| Syntax                   | `.col-{number}`                           | `.w-6/12`                      |
 | Class responsive        | `.col-{number}-{breakpoint}`              | `.sm:w-6/12`                   |
 | Mixin                   | `.col({number})`                          | `.col(6)`                     |
 | Mixin responsive min    | `.col({number}, {breakpoint})`            | `.col(6, sm)`                 |

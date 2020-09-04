@@ -8,14 +8,19 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-space-2 items-center">
+<div class="list list-space-2 items-center text-inverse"
+  style="padding: 1rem 1.5rem; background: #0078ff;">
 
-  <a href="#" class="link link-none">
-    link none
+  <a href="#">
+    link
   </a>
 
-  <div class="btn link-underline">
-    link underline btn
+  <button type="button" class="btn link">
+    link btn
+  </button>
+
+  <div class="link">
+    link class
   </div>
 
 </div>

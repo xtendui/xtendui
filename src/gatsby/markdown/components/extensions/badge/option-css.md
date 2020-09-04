@@ -14,7 +14,7 @@ Classes for assigning variant (e.g.: border / background / color).
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.badge-{variant}`                        | `.badge-default` `.badge-primary` `.badge-success` `.badge-error` |
+| Syntax                   | `.badge-{variant}`                        | `.badge-default` `.badge-primary` `.badge-success` `.badge-error` |
 | Mixin                   | `.badge-{variant}()`                      | `.badge-default()` `.badge-primary()`  `.badge-success()` `.badge-error()`   |
 
 </div>
@@ -32,7 +32,7 @@ Classes for assigning size (e.g.: padding or font size).
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.badge-{size}`                           | `.badge-small` `.badge-medium` `.badge-large`|
+| Syntax                   | `.badge-{size}`                           | `.badge-small` `.badge-medium` `.badge-large`|
 | Mixin                   | `.badge-{size}()`                         | `.badge-small()` `.badge-medium()`  `.badge-large()`   |
 
 </div>

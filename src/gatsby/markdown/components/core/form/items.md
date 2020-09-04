@@ -23,7 +23,7 @@ Use this markup to create a **form label** and **form item**.
 
 <div class="table-scroll">
 
-|                         | Class                                     | Mixin                         | Description                   |
+|                         | Syntax                                     | Mixin                         | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `.form-group`                | `.form-group()`        | Form group            |
 | Option                  | `.form-label`                | `.form-label()`        | Form label            |
@@ -49,7 +49,7 @@ Size is done with **em** so it's relative to the container element.
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.form-group-{size}`                        | `.form-group-small` `.form-group-medium` `.form-group-large`     |
+| Syntax                   | `.form-group-{size}`                        | `.form-group-small` `.form-group-medium` `.form-group-large`     |
 | Mixin                   | `.form-group-{size}()`                      | `.form-group-small()` `.form-group-medium()` `.form-group-large()`     |
 
 </div>
@@ -60,7 +60,7 @@ You can set the size globally on **form**.
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.form-{size}`                        | `.form-small` `.form-medium` `.form-large`     |
+| Syntax                   | `.form-{size}`                        | `.form-small` `.form-medium` `.form-large`     |
 | Mixin                   | `.form-{size}()`                      | `.form-small()` `.form-medium()` `.form-large()`     |
 
 </div>
@@ -85,7 +85,7 @@ You can set the size globally on **form**.
 
 <div class="table-scroll">
 
-|                         | Class                                     | Mixin                         | Description                   |
+|                         | Syntax                                     | Mixin                         | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `.form-{variant}`                | Not Possible        | Form variant styles            |
 
@@ -117,7 +117,7 @@ There are several form group mode to change the form layout. They aren't just le
 
 <div class="table-scroll">
 
-|                         | Class                                     | Mixin                         | Description                   |
+|                         | Syntax                                     | Mixin                         | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `.form-group`                | `.form-group()`        | Form group            | |
 
@@ -160,7 +160,7 @@ Horizontal label and input,
 
 <div class="table-scroll">
 
-|                         | Class                                     | Mixin                         | Description                   |
+|                         | Syntax                                     | Mixin                         | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `.form-group-horizontal`                | `.form-group-horizontal()`        | Form group horizontal            |
 | Option                  | `.form-group-horizontal-sm`                | `.form-group-horizontal-sm()`        | Form group horizontal responsive            |
@@ -197,7 +197,7 @@ For columns sizes see [column page](/components/core/column).
 
 <div class="table-scroll">
 
-|                         | Class                                     | Mixin                         | Description                   |
+|                         | Syntax                                     | Mixin                         | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `.col-form-double`                | `.col-form-double()`        | Form with double columns            |
 
@@ -227,7 +227,7 @@ Inline **form group**,
 
 <div class="table-scroll">
 
-|                         | Class                                     | Mixin                         | Description                   |
+|                         | Syntax                                     | Mixin                         | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `.form-group-inline`                | `.form-group-inline()`        | Form group inline            |
 | Option                  | `.form-group-inline-sm`                | `.form-group-inline-sm()`        | Form group inline responsive           |

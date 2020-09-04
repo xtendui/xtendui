@@ -10,7 +10,7 @@ date: "2019-03-15"
 
 <div class="table-scroll">
 
-|                         | Tag                                     | Class                                     | Mixin                       | Description                   |
+|                         | Tag                                     | Syntax                                     | Mixin                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `legend` | `.legend`                 | `.legend()`        | Legend styles            |
 
@@ -25,7 +25,7 @@ date: "2019-03-15"
 
 <div class="table-scroll">
 
-|                         | Tag                                     | Class                                     | Mixin                       | Description                   |
+|                         | Tag                                     | Syntax                                     | Mixin                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `fieldset` | `.fieldset`                 | `.fieldset()`        | Fieldset styles            |
 
@@ -42,7 +42,7 @@ Form note uses the [note component](/components/core/note).
 
 <div class="table-scroll">
 
-|                         | Class                                     | Mixin                       | Description                   |
+|                         | Syntax                                     | Mixin                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `.form-note`                 | `.form-note()`        | Form note styles            |
 

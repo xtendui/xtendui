@@ -61,7 +61,7 @@ Use this markup to create a **fake** **styled** **checkbox** or **radio**.
 
 <div class="table-scroll">
 
-|                         | Class                                     | Mixin                       | Description                   |
+|                         | Syntax                                     | Mixin                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `.checkbox`                 | `.checkbox()`        | Set up fake styled checkbox            |
 | Option                  | `.radio`                 | `.radio()`        | Set up fake styled radio            |
@@ -101,7 +101,7 @@ Use this markup to create a **unstyled** **checkbox** or **radio**.
 
 <div class="table-scroll">
 
-|                         | Class                                     | Mixin                       | Description                   |
+|                         | Syntax                                     | Mixin                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `.unstyled`                 | Not Possible        | Set up unstyled checkbox and radio            |
 
@@ -127,7 +127,7 @@ You can set the size globally on **form**.
 
 <div class="table-scroll">
 
-|                         | Class                                     | Mixin                         | Description                   |
+|                         | Syntax                                     | Mixin                         | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `.form-{variant}`                | Not Possible        | Form variant styles            |
 
