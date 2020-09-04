@@ -14,7 +14,7 @@ If you want to animate with css use the `.xt-medialoaded` class or with js use t
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `mediaLoaded:Boolean`                          | `false`        | Add the class `.xt-medialoaded` on img loaded             |
 | Option                  | `mediaLoadedReinit:Boolean`                          | `false`        | Reinit slider on img loaded after a delay set with `Xt.medialoadedDelay`             |
@@ -44,7 +44,7 @@ Use `justify-content` to assign horizontal alignment when not overflowing, this 
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `overflowAuto:Boolean`                          | `true`        | When not overflowing disable slider           |
 

@@ -58,7 +58,7 @@ class Layout extends React.Component {
                   <Header site={data} seo={seo} page={page} />
                   <div className="gatsby_site_article prose max-w-none">
                     <DocFullscreen />
-                    <main className="gatsby_site_article_inner" id="gatbsy_open-full-inner">
+                    <main className="gatsby_site_article_inner" id="gatsby_open-full-inner">
                       {page ? <DocHead page={page} /> : null}
                       <article className="gatsby_site_article_content">
                         <div className="gatsby_site_article_content_inner">{children}</div>

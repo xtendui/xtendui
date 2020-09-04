@@ -20,7 +20,7 @@ demo.htmlSource = `
 
   <div class="drop-container">
 
-    Drop is relative to here
+    Drop is relative to .drop-container
 
     <div class="drop" id="drop--unique">
       <div class="drop-inner">

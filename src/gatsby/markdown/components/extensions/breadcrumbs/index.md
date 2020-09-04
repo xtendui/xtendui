@@ -8,20 +8,7 @@ description: "Dynamic breadcrumbs that looks awesome in all responsive breakpoin
 
 ## Setup
 
-To use this component import the **less** files accordingly:
-
-```less
-@import 'xtend-library/src/extensions/breadcrumbs/breadcrumbs.less';
-```
-
-Or just import **core**:
-
-```less
-@import 'xtend-library/src/xtend-core.less';
-```
-
-[[noteDefault]]
-| To modify a **less** or **js** file add [webpack resolve](/introduction/setup#usage-webpack) and fork the file copying it in your project.
+Follow xtend's [installation instructions](/introduction/getting-started/setup) for extending tailwind.
 
 ## Usage
 

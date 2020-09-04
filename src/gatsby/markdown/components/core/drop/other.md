@@ -8,11 +8,13 @@ date: "2019-03-15"
 
 ## Static
 
+If you want a drop with size and position **relative to a parent Node** use `drop-container-static`.
+
 <div class="table-scroll">
 
 |                         | Class                                     | Mixin                         | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `.drop-container-static`                | `.drop-container-static()`        | Position relative to closest element with `position: relative;`.    
+| Component                  | `.drop-container-static`                | `drop-container-static`        | Position relative to closest element with `.relative`    
 
 </div>
 
@@ -23,11 +25,13 @@ date: "2019-03-15"
 
 ## Disable
 
+If you want to **disable drop and reset css drop styles** use `drop-container-disable`.
+
 <div class="table-scroll">
 
 |                         | Class                                     | Mixin                         | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `.drop-container-disable`                | `.drop-container-disable()`        | Disable drop, useful within media queries            |
+| Component                  | `.drop-container-disable`                | `drop-container-disable !important`        | Disable drop, useful within media queries            |
 
 </div>
 
@@ -38,13 +42,11 @@ date: "2019-03-15"
 
 ## Prevent Event
 
-You can have **element's link** and **other events** that trigger after drop with `preventEvent: true`.
-
-If the toggle is on <code>"on": "mouseenter"</code> or <code>"on": "mousehover"</code> the link gets activated on the second touch event on touch devices.
+You can have **element's link** and **click events** prevented when the drop opens with `preventEvent: true`, they will trigger only if the drop is already opened.
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `preventEvent:Boolean`                          | `false`        | Prevent interaction until activated depending on `on` and `off` events (second click or mouseenter)            |
 

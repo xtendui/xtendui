@@ -28,13 +28,13 @@ exports.onRouteUpdate = () => {
   }
   // scrollSidebarToContent
   require('assets/scripts/gatsby.js').gatsbySidebar()
-  // @FIX popstate #gatbsy_open-full
+  // @FIX popstate #gatsby_open-full
   for (const link of document.querySelectorAll('.gatsby_btn-site_article_sidebar.active')) {
     link.addEventListener('click', e => {
       e.preventDefault()
       // no location.hash or page scroll to top
       history.pushState({}, '', '#')
-      document.querySelector('#gatbsy_open-full-trigger').dispatchEvent(new CustomEvent('off.trigger.xt'))
+      document.querySelector('#gatsby_open-full-trigger').dispatchEvent(new CustomEvent('off.trigger.xt'))
     })
   }
 }

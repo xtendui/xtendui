@@ -8,32 +8,31 @@ description: "Toggle is the main js component that toggle classes, it's inherite
 
 ## Setup
 
-To use this component import the **less** and **js** files accordingly:
+Follow xtend's [installation instructions](/introduction/getting-started/setup) for extending tailwind.
 
-```less
-@import 'xtend-library/src/core/toggle/toggle.less';
-```
+#### Component
+
+Import the component's **js** file.
 
 ```jsx
 import '/src/core/toggle/toggle.js'
 ```
 
-Or just import **core**:
+Or just import **core**.
 
 ```jsx
 import '/src/xtend-core.js'
 ```
 
-[[noteDefault]]
-| To modify a **less** or **js** file add [webpack resolve](/introduction/setup#usage-webpack) and fork the file copying it in your project.
-
 ## Usage
 
-Set `elements` `targets` `elementsInner` `targetsInner`, elements are responding to events, targets are activated on events.
+Pass **elements** and **targets** options if different from defaults.
+
+Elements listens to events, targets and inners are activated on events.
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `elements:Query`                          | `:scope > a, :scope > button`        | Elements query            |
 | Option                  | `targets:Query`                          | `:scope > [class^="toggle-"], :scope > [class*=" toggle-"]`        | Targets query            |
@@ -70,6 +69,7 @@ The **unique** mode is useful when triggering **targets outside the scope** of t
   <button type="button" data-xt-toggle="{ targets: '#my-target' }">
     <!-- content -->
   </button>
+  
   <div class="toggle" id="my-target">
     <!-- content -->
   </div>
@@ -88,12 +88,15 @@ Use this markup to create **multiple toggle**.
 
 <script type="text/plain" class="language-markup">
   <div data-xt-toggle="{ elements: '.my-elements', targets: '.my-targets' }">
+  
     <button type="button" class="my-elements">
       <!-- content -->
     </button>
+    
     <div class="toggle" class="my-targets">
       <!-- content -->
     </div>
+    
   </div>
 </script>
 
@@ -106,12 +109,12 @@ Use this markup to create **multiple toggle**.
 
 ## Initialization
 
-Initialize automatically within markup with `[data-xt-toggle="{ <options> }"]` on the **object**:
+Initialize automatically within markup with `[data-xt-toggle="{ <options> }"]` on the **object**.
 
 [[noteDefault]]
-| **Object** is the DOM element you want to assign the component.
+| **Object** is the DOM element you want to assign the component to.
 
-Or initialize with javascript:
+Or initialize with **javascript**.
 
 ```js
 let self = new Xt.Toggle(document.querySelector('#my-object'), {
@@ -119,7 +122,7 @@ let self = new Xt.Toggle(document.querySelector('#my-object'), {
 })
 ```
 
-Or inizialize with **mutation observer** (preferred method):
+Or inizialize with **mutation observer**.
 
 ```js
 Xt.mount.push({

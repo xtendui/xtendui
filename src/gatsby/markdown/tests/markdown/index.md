@@ -76,26 +76,22 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Example                       |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.drop-{variant}`                        | `.drop-default` `.drop-primary` |
-| Mixin                   | `.drop-{variant}()`                      | `.drop-default()` `.drop-primary()`         |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Function                  | `Xt.eventDelay:Function`              | `e:Event, element:Node, function:Function, prefix:String = '', instant:Boolean = false`       | event delay wrapper                  |
+| Variable                  | `Xt.resizeDelay:Number|Boolean`              | `500`        | Delay for the `resize` event with `Xt.eventDelay`            |
+| Option                    | `elements:Query`                          | `false`        | Elements query            |
+| Object                   | `let self = Xt.get('xt-drop', {DOM element})`       | `object` `elements` `targets` | Get object self for this component class             |
+| Property                  | `initial:Boolean`       | If initial or reset activation            |
 
 </div>
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `class:String`                          | `active active-overlay`        | Class name for activation            |
-
-</div>
-
-<div class="table-scroll">
-
-|                         | Class                                     | Mixin                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `.drop-container-static`                 | `.drop-container-static()`        | Position relative to closest element with `position: relative;`.            |
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
+| Util                  | `.container-reset`       | `container-reset`                | `responsive`                | Reset container styles            |
+| Component                  | `.overflow-main`                     | `overflow-main`                | Overflow scrollbar style            |
 
 </div>
 
@@ -106,6 +102,8 @@ Maecenas pulvinar mauris eget pharetra elementum. Sed sit amet ultrices metus, v
 Sed gravida massa in commodo eleifend. Curabitur ac pellentesque nisl. Nunc ut placerat velit, aliquet faucibus erat. In imperdiet ligula ex, ut vestibulum ipsum fermentum in. Fusce ante ex, molestie at condimentum non, ullamcorper a lorem. Morbi et eros pellentesque, congue sem non, dapibus tellus.
 
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut ex at ex pellentesque efficitur.
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut ex at ex pellentesque efficitur.
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut ex at ex pellentesque efficitur. Maecenas pulvinar mauris eget pharetra elementum.
 

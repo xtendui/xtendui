@@ -12,13 +12,13 @@ date: "2019-01-15"
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `let self = Xt.get('xt-sticky', {DOM element})`       | `object` `elements` `targets` | Get object self for this component class             |
+| Object                   | `let self = Xt.get('xt-sticky', {DOM element})`       | `object` `elements` `targets` | Get object self for this component class             |
 
 </div>
 
 ## Methods
 
-Call methods this way (object is the DOM element you assigned the component):
+Call methods by getting component object.
 
 ```js
 let self = Xt.get('xt-sticky', document.querySelector('#my-object'))
@@ -41,7 +41,7 @@ self = null
 
 </div>
 
-You can get activated elements or targets this way:
+You can get activated elements or targets with `hasCurrent`.
 
 ```js
 self.elements.filter(x => self.hasCurrent(x))
@@ -50,7 +50,7 @@ self.targets.filter(x => self.hasCurrent(x))
 
 ## Trigger
 
-Trigger events this way:
+Trigger events on **DOM elements**.
 
 ```js
 document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('on.trigger.xt'))
@@ -66,12 +66,9 @@ document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('o
 
 </div>
 
-[[noteDefault]]
-| For triggering and listening the **resize event**, refer to [structure](/components/core/structure/other#resize).
-
 ## Listen
 
-Listen to events this way:
+Listen to events on **DOM elements**.
 
 ```js
 const el = document.querySelector('#my-element-or-target')
@@ -122,7 +119,7 @@ object.addEventListener('change.xt', eventChange, true)
 
 ## Properties
 
-Access properties this way inside events:
+Access properties by getting component object.
 
 ```js
 let object = document.querySelector('#my-object')
@@ -130,15 +127,13 @@ let self = Xt.get('xt-sticky', object)
 const elements = self.elements
 ```
 
-Here are the main properties inside `self`:
-
 <div class="table-scroll">
 
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
-| Event                   | `object:Node`       | Object node             |
-| Event                   | `elements:Array`       | Elements nodes             |
-| Event                   | `targets:Array`       | Targets nodes            |
-| Option                  | `initial:Boolean`       | If initial or reset activation            |
+| Property                   | `object:Node`       | Object node             |
+| Property                   | `elements:Array`       | Elements nodes             |
+| Property                   | `targets:Array`       | Targets nodes            |
+| Property                  | `initial:Boolean`       | If initial or reset activation            |
 
 </div>

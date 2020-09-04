@@ -11,7 +11,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div style="position: relative; padding: 1rem 1.5rem; background: #0078ff;">
+<div class="relative" style="padding: 1rem 1.5rem; background: #0078ff;">
 
   <div class="drop-container drop-container-static" data-xt-drop>
 

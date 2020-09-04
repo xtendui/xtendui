@@ -14,7 +14,7 @@ If the toggle is on `"on": "mouseenter"` or `"on": "mousehover"` the link gets a
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `preventEvent:Boolean`                          | `false`        | Prevent interaction until activated depending on `on` and `off` events (second click or mouseenter)            |
 

@@ -18,13 +18,13 @@ date: "2019-01-15"
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `let self = Xt.get('xt-slider', {DOM element})`       | `object` `elements` `targets` | Get object self for this component class             |
+| Object                   | `let self = Xt.get('xt-slider', {DOM element})`       | `object` `elements` `targets` | Get object self for this component class             |
 
 </div>
 
 ## Methods
 
-Call methods this way (object is the DOM element you assigned the component):
+Call methods by getting component object.
 
 ```js
 const self = Xt.get('xt-slider', document.querySelector('#my-object'))
@@ -47,7 +47,7 @@ self = null
 
 </div>
 
-You can get activated elements or targets this way:
+You can get activated elements or targets with `hasCurrent`.
 
 ```js
 self.elements.filter(x => self.hasCurrent(x))
@@ -74,7 +74,7 @@ Index methods:
 
 ## Trigger
 
-Trigger events this way:
+Trigger events on **DOM elements**.
 
 ```js
 document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('on.trigger.xt'))
@@ -91,12 +91,9 @@ document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('o
 
 </div>
 
-[[noteDefault]]
-| For triggering and listening the **resize event**, refer to [structure](/components/core/structure/other#resize).
-
 ## Listen
 
-Listen to events this way:
+Listen to events on **DOM elements**.
 
 ```js
 const el = document.querySelector('#my-element-or-target')
@@ -159,7 +156,7 @@ object.addEventListener('on.xt', eventOn, true)
 
 ## Properties
 
-Access properties this way inside events:
+Access properties by getting component object.
 
 ```js
 let object = document.querySelector('#my-object')
@@ -167,49 +164,29 @@ let self = Xt.get('xt-slider', object)
 const elements = self.elements
 ```
 
-Here are the main properties inside `self`:
-
 <div class="table-scroll">
 
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
-| Event                   | `object:Node`       | Object node             |
-| Event                   | `elements:Array`       | Elements nodes             |
-| Event                   | `targets:Array`       | Targets nodes            |
-| Option                  | `initial:Boolean`       | If initial or reset activation            |
-| Event                   | `wrap:Boolean`       | If wrap activation             |
-| Event                   | `direction:Number`       | Direction `1` or `-1`            |
-| Event                   | `dragger:Node`       | Dragger node             |
-| Event                   | `wheel:Node`       | Wheel node             |
-
-</div>
-
-Here are the main drag properties inside `self.detail`:
-
-<div class="table-scroll">
-
-|                         | Syntax                                   | Description                   |
-| ----------------------- | ---------------------------------------- | ----------------------------- |
-| Event                   | `detail.dragging:Boolean`       | Returns true when slider is being dragged or just being dragged             |
-| Event                   | `detail.dragBlock:Boolean`       | Returns true when slider is blocked on dragging and other interactions are prevented             |
-| Event                   | `detail.draggerWidth:Number`       | Dragger width             |
-| Event                   | `detail.dragRatio:Number`       | Drag ratio from 0 to 1             |
-| Event                   | `detail.dragRatioInverse:Number`       | Drag ratio inverse from 1 to 0             |
-| Event                   | `detail.dragStart:Number`       | Drag starting position             |
-| Event                   | `detail.dragCurrent:Number`       | Drag current position             |
-| Event                   | `detail.dragPos:Number`       | Drag distance from dragStart to dragCurrent with computation             |
-| Event                   | `detail.dragPosOld:Number`       | Drag distance from dragStart to dragCurrent with computation on the previous frame             |
-
-</div>
-
-Here are the main wheel properties inside `self.detail`:
-
-<div class="table-scroll">
-
-|                         | Syntax                                   | Description                   |
-| ----------------------- | ---------------------------------------- | ----------------------------- |
-| Event                   | `detail.wheelCurrent:Number`       | Wheel current scroll position             |
-| Event                   | `detail.wheelEnd:Number`       | Wheel end scroll position             |
+| Property                   | `object:Node`       | Object node             |
+| Property                   | `elements:Array`       | Elements nodes             |
+| Property                   | `targets:Array`       | Targets nodes            |
+| Property                  | `initial:Boolean`       | If initial or reset activation            |
+| Property                   | `wrap:Boolean`       | If wrap activation             |
+| Property                   | `direction:Number`       | Direction `1` or `-1`            |
+| Property                   | `dragger:Node`       | Dragger node             |
+| Property                   | `wheel:Node`       | Wheel node             |
+| Property                   | `detail.dragging:Boolean`       | Returns true when slider is being dragged or just being dragged             |
+| Property                   | `detail.dragBlock:Boolean`       | Returns true when slider is blocked on dragging and other interactions are prevented             |
+| Property                   | `detail.draggerWidth:Number`       | Dragger width             |
+| Property                   | `detail.dragRatio:Number`       | Drag ratio from 0 to 1             |
+| Property                   | `detail.dragRatioInverse:Number`       | Drag ratio inverse from 1 to 0             |
+| Property                   | `detail.dragStart:Number`       | Drag starting position             |
+| Property                   | `detail.dragCurrent:Number`       | Drag current position             |
+| Property                   | `detail.dragPos:Number`       | Drag distance from dragStart to dragCurrent with computation             |
+| Property                   | `detail.dragPosOld:Number`       | Drag distance from dragStart to dragCurrent with computation on the previous frame             |
+| Property                   | `detail.wheelCurrent:Number`       | Wheel current scroll position             |
+| Property                   | `detail.wheelEnd:Number`       | Wheel end scroll position             |
 
 </div>
 

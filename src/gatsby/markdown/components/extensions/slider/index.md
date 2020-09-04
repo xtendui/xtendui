@@ -8,28 +8,21 @@ description: "Customizable sliders with custom animation and interaction."
 
 ## Setup
 
-To use this component import the **less** and **js** files accordingly:
+Follow xtend's [installation instructions](/introduction/getting-started/setup) for extending tailwind.
 
-```less
-@import 'xtend-library/src/extensions/slider/slider.less';
-```
+#### Component
+
+Import the component's **js** file.
 
 ```jsx
 import '/src/extensions/slider/slider.js'
 ```
 
-Or just import **extensions**:
-
-```less
-@import 'xtend-library/src/xtend-extensions.less';
-```
+Or just import **extensions**.
 
 ```jsx
 import '/src/xtend-extensions.js'
 ```
-
-[[noteDefault]]
-| To modify a **less** or **js** file add [webpack resolve](/introduction/setup#usage-webpack) and fork the file copying it in your project.
 
 ## Usage
 
@@ -69,12 +62,12 @@ Use this markup to create a **slider**.
 
 ## Initialization
 
-Initialize automatically within markup with `[data-xt-slider="{ <options> }"]` on the **object**:
+Initialize automatically within markup with `[data-xt-slider="{ <options> }"]` on the **object**.
 
 [[noteDefault]]
-| **Object** is the DOM element you want to assign the component.
+| **Object** is the DOM element you want to assign the component to.
 
-Or initialize with javascript:
+Or initialize with **javascript**.
 
 ```js
 let self = new Xt.Slider(document.querySelector('#my-object'), {
@@ -82,7 +75,7 @@ let self = new Xt.Slider(document.querySelector('#my-object'), {
 })
 ```
 
-Or inizialize with **mutation observer** (preferred method):
+Or inizialize with **mutation observer**.
 
 ```js
 Xt.mount.push({

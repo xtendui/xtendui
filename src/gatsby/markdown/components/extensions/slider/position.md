@@ -12,7 +12,7 @@ Align the slides.
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `align:String`                          | `'left'`        | Alignment 'left' or 'center' or 'right'           |
 
@@ -33,7 +33,7 @@ Contain the slides.
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `contain:Boolean`                          | `false`        | If true contain the slides on available width            |
 
@@ -56,7 +56,7 @@ With `groupMq: { MediaQuery: Number }` you set a decimal number from 0 to 1 to g
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `groupMq:Object`                          | `false`        | Set automatic grouping based on available width from 0 to 1            |
 
@@ -73,7 +73,7 @@ You can wrap the slides with `drag: { wrap: true }`. With `drag.wrap` you have t
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `drag.wrap:Boolean|Number`                          | `false`        | Wrap slides on start and end             |
 
@@ -96,7 +96,7 @@ If you want to keep the first element height on the slide use `keepHeight: '.sli
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `autoHeight:Query`                          | `false`        | Elements to automaticaly height (ex: `.slides`)            |
 | Option                  | `keepHeight:Query`                          | `false`        | Elements to keep height of the first slide (ex: `.slides`)            |

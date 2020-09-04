@@ -8,27 +8,18 @@ description: "Form styles with multiple layouts, custom checkbox/radio, and more
 
 ## Setup
 
-To use this component import the **less** and **js** files accordingly:
+Follow xtend's [installation instructions](/introduction/getting-started/setup) for extending tailwind.
 
-```less
-@import 'xtend-library/src/core/form/form.less';
-```
+#### Component
+
+Import the component's **js** file.
 
 ```jsx
 import '/src/core/form/form.js'
 ```
 
-Or just import **core**:
-
-```less
-@import 'xtend-library/src/xtend-core.less';
-```
+Or just import **core**.
 
 ```jsx
 import '/src/xtend-core.js'
 ```
-
-[[noteDefault]]
-| To modify a **less** or **js** file add [webpack resolve](/introduction/setup#usage-webpack) and fork the file copying it in your project.
-
-

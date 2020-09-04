@@ -12,7 +12,7 @@ You can customize the classnames used with the component.
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `class:String`                          | `active active-toggle`        | Class name for activation            |
 | Option                  | `classIn:String`                          | `in`        | Class name for in animation            |
@@ -46,7 +46,7 @@ You can specify `min` and `max` concurrent activations. The `min` option is fulf
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `min:Number`                          | `0`        | Minimum number of concurrent elements activated            |
 | Option                  | `max:Number`                          | `1`        | Maximum number of concurrent elements activated            |
@@ -65,7 +65,7 @@ You can specify **on** and **off** events for the toggle. Fore example `on: 'mou
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `on:String`                          | `'click'`        | Activation event to attach to elements            |
 | Option                  | `off:String`                          | `false`        | Dectivation event to attach to elements            |
@@ -87,7 +87,7 @@ You can use a function for <code>delayOn</code> and <code>delayOff</code> for ex
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `instant:Boolean|Object`                 | `{ elements: true, targets: false, elementsInner: true, targetsInner: true }`     | Set instant activation and deactivation, can be one or more booleans `elements` `elementsInner` `targets` `targetsInner`          |
 | Option                  | `delayOn:Milliseconds|Function`                          | `false`        | Activation delay            |
@@ -113,7 +113,7 @@ You can use a function for <code>delayOn</code> and <code>delayOff</code> for ex
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `auto.time:Milliseconds`                          | `false`        | Automatic activation time            |
 | Option                  | `auto.initial:Boolean`                          | `true`        | Automatic activation on initial            |
@@ -152,7 +152,7 @@ Use `loop: false` to disable looping on activation.
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `loop:Boolean`                          | `true`        | Loop activation            |
 
@@ -164,7 +164,7 @@ Use `jump: true` to enable clicking on a **target** to jump to them.
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `jump:Boolean`                          | `false`        | Clicking on targets triggers activation            |
 
@@ -181,7 +181,7 @@ You can add navigation with `navigation: QuerySelector`, set the amount to add (
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `navigation:Query`                          | `false`        | Query for navigation elements             |
 
@@ -198,7 +198,7 @@ Use `keyboard: { selector: 'object' }` or `keyboard: { selector: QuerySelector }
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `keyboard.selector:Boolean`                          | `false`        | Elements that triggers the events            |
 
@@ -213,7 +213,7 @@ Use `keyboard: { selector: 'object' }` or `keyboard: { selector: QuerySelector }
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `backdrop:Boolean`                              | `false`                     | Generate backdrop on targets or on object if no targets           |
 | Option                  | `appendTo:Query`                          | `false`        | Append targets to Node on activation            |

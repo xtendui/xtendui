@@ -8,20 +8,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 ## Setup
 
-To use this component import the **less** files accordingly:
-
-```less
-@import 'xtend-library/src/extensions/loader/loader.less';
-```
-
-Or just import **extensions**:
-
-```less
-@import 'xtend-library/src/xtend-extensions.less';
-```
-
-[[noteDefault]]
-| To modify a **less** or **js** file add [webpack resolve](/introduction/setup#usage-webpack) and fork the file copying it in your project.
+Follow xtend's [installation instructions](/introduction/getting-started/setup) for extending tailwind.
 
 ## Usage
 

@@ -3,33 +3,39 @@ type: "Components"
 category: "Core"
 parent: "Overlay"
 title: "Overlay"
-description: "Used when you need to display any content over the main page, not only modals."
+description: "Used when you need to display any content over the main page."
 ---
 
 ## Setup
 
-To use this component import the **js** file:
+Follow xtend's [installation instructions](/introduction/getting-started/setup) for extending tailwind.
+
+[[notePrimary]]
+| Overlays are moved to **body** to prevent **z-index** problems. Style and query overlay's content accordingly.
+
+#### Component
+
+Import the component's **js** file.
 
 ```jsx
 import '/src/core/overlay/overlay.js'
 ```
 
-Or just import **core**:
+Or just import **core**.
 
 ```jsx
 import '/src/xtend-core.js'
 ```
 
-[[notePrimary]]
-| Overlays are moved to **body** to prevent **z-index** problems. Style and query overlay's content accordingly.
-
 ## Usage
 
-Set `elements` `targets` `elementsInner` `targetsInner`, elements are responding to events, targets are activated on events.
+Pass **elements** and **targets** options if different from defaults.
+
+Elements listens to events, targets and inners are activated on events.
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `elements:Query`                          | `:scope > a, :scope > button`        | Elements query            |
 | Option                  | `targets:Query`                          | `:scope > .overlay`        | Targets query            |
@@ -44,17 +50,19 @@ Use this markup to create a **self overlay**.
 
 <script type="text/plain" class="language-markup">
   <div data-xt-overlay>
+  
     <button type="button">
       <!-- content -->
     </button>
-    <div class="overlay overlay-default">
-      <div class="overlay-container max-w-4xl">
+    
+    <div class="overlay">
+      <div class="overlay-container">
         <div class="overlay-inner">
-          <div class="overlay-design"></div>
           <!-- content -->
         </div>
       </div>
     </div>
+    
   </div>
 </script>
 
@@ -77,10 +85,10 @@ The **unique** mode is useful when triggering **targets outside the scope** of t
     data-xt-overlay="{ targets: '#overlay--unique' }">
     <!-- content -->
   </button>
-  <div class="overlay overlay-default" id="overlay--unique">
-    <div class="overlay-container max-w-4xl">
+  
+  <div class="overlay" id="overlay--unique">
+    <div class="overlay-container">
       <div class="overlay-inner">
-        <div class="overlay-design"></div>
         <!-- content -->
       </div>
     </div>
@@ -96,14 +104,13 @@ The **unique** mode is useful when triggering **targets outside the scope** of t
 
 Use this markup to create a **standalone overlay**.
 
-Just use the class `active-overlay` if you want to automatically open, or use the [api](/components/overlay/api)
+Just use the class `active-overlay` if you want to automatically open, or use the [api](/components/core/overlay/api)
 
 <script type="text/plain" class="language-markup">
-<div class="overlay overlay-default active-overlay" id="overlay--standalone"
+<div class="overlay active-overlay" id="overlay--standalone"
   data-xt-overlay="{ on: false, instant: false }">
-  <div class="overlay-container max-w-4xl">
+  <div class="overlay-container">
     <div class="overlay-inner">
-      <div class="overlay-design"></div>
       <!-- content -->
     </div>
   </div>
@@ -117,12 +124,12 @@ Just use the class `active-overlay` if you want to automatically open, or use th
 
 ## Initialization
 
-Initialize automatically within markup with `[data-xt-overlay="{ <options> }"]` on the **object**:
+Initialize automatically within markup with `[data-xt-overlay="{ <options> }"]` on the **object**.
 
 [[noteDefault]]
-| **Object** is the DOM element you want to assign the component.
+| **Object** is the DOM element you want to assign the component to.
 
-Or initialize with javascript:
+Or initialize with **javascript**.
 
 ```js
 let self = new Xt.Overlay(document.querySelector('#my-object'), {
@@ -130,7 +137,7 @@ let self = new Xt.Overlay(document.querySelector('#my-object'), {
 })
 ```
 
-Or inizialize with **mutation observer** (preferred method):
+Or inizialize with **mutation observer**.
 
 ```js
 Xt.mount.push({

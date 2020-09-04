@@ -12,7 +12,7 @@ You can customize the classnames used with the component.
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `class:String`                          | `active active-sticky`        | Class name for activation            |
 | Option                  | `classIn:String`                          | `in`        | Class name for in animation            |
@@ -39,7 +39,7 @@ You can block the activations with the class `.xt-block` on elements.
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `sticky:String`                          | `false`        | Sticky mode 'absolute' or 'fixed' or 'fixed-always'            |
 
@@ -60,7 +60,7 @@ The default **position** is `position: 'top'` you can also use `position: 'botto
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `position:String`                          | `'top'`        | Position 'top' or 'bottom'            |
 
@@ -76,7 +76,7 @@ The default **limit** for `limit: { top: Element }` is the element's own positio
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `limit.top:Number|Query`                          | `false`        | Limit top sticky to pixel or query           |
 | Option                  | `limit.bottom:Number|Query`                          | `'Infinity'`        | Limit bottom sticky to pixel or query            |
@@ -94,7 +94,7 @@ Use the `contain: {}` option to stack consecutive sticky elements. with `contain
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `contain.top:Query`                          | `false`        | Contain top sticky to query            |
 | Option                  | `contain.bottom:Query`                          | `false`        | Contain bottom sticky to query            |
@@ -114,7 +114,7 @@ To hide the sticky when scrolling down or up use `hide: 'down'` or `hide: 'up'`.
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `hide:String`                          | `false`        | Hide sticky on 'up' or 'down'            |
 

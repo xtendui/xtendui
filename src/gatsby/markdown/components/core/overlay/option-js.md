@@ -12,7 +12,7 @@ You can customize the classnames used with the component.
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `class:String`                          | `active active-overlay`        | Class name for activation            |
 | Option                  | `classIn:String`                          | `in`        | Class name for in animation            |
@@ -34,7 +34,7 @@ You can block the activations with the class `.xt-block` on elements. See the [a
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `classHtml:String`                          | `false`        | Add class to `html` on activation            |
 
@@ -49,7 +49,7 @@ You can block the activations with the class `.xt-block` on elements. See the [a
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `closeAuto:Boolean`                          | `true`        | Close automatically on `closeauto.trigger.xt` event            |
 | Option                  | `closeInside:Query`                          | `'.overlay-dismiss, .btn-close, .backdrop'`        | Query Node inside to close on click            |

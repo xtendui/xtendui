@@ -8,44 +8,34 @@ description: "Content animation when you scroll the page, fade in elements, para
 
 ## Setup
 
-To use this component import the **less** and **js** files accordingly:
+Follow xtend's [installation instructions](/introduction/getting-started/setup) for extending tailwind.
 
-```less
-@import 'xtend-library/src/extensions/scroll/scroll.less';
-```
+#### Component
+
+Import the component's **js** file.
 
 ```jsx
 import '/src/extensions/scroll/scroll.js'
 ```
 
-Or just import **extensions**:
-
-```less
-@import 'xtend-library/src/xtend-extensions.less';
-```
+Or just import **extensions**.
 
 ```jsx
 import '/src/xtend-extensions.js'
 ```
 
-[[noteDefault]]
-| To modify a **less** or **js** file add [webpack resolve](/introduction/setup#usage-webpack) and fork the file copying it in your project.
-
 ## Usage
 
 @TODO
 
-[[notePrimary]]
-| It's recomended to animate the scroll elements with <code>animation</code> instead of <code>transition</code> because of <a href="{% link faq.html %}#browsers-bugs-fixed-position">this bug</a>.
-
 ## Initialization
 
-Initialize automatically within markup with `[data-xt-scroll="{ <options> }"]` on the **object**:
+Initialize automatically within markup with `[data-xt-scroll="{ <options> }"]` on the **object**.
 
 [[noteDefault]]
-| **Object** is the DOM element you want to assign the component.
+| **Object** is the DOM element you want to assign the component to.
 
-Or initialize with javascript:
+Or initialize with **javascript**.
 
 ```js
 let self = new Xt.Scroll(document.querySelector('#my-object'), {
@@ -53,7 +43,7 @@ let self = new Xt.Scroll(document.querySelector('#my-object'), {
 })
 ```
 
-Or inizialize with **mutation observer** (preferred method):
+Or inizialize with **mutation observer**.
 
 ```js
 Xt.mount.push({

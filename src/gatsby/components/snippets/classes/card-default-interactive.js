@@ -1,3 +1,3 @@
 export default () => {
-  return `text-default rounded-md bg-gray-300 hover:text-opacity-75 hover:bg-gray-400`
+  return `text-default rounded-md bg-gray-200 hover:text-opacity-75 hover:bg-gray-300`
 }

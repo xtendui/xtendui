@@ -12,7 +12,7 @@ You can customize the classnames used with the component.
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `class:String`                          | `fade fade-scroll`        | Class name for activation            |
 | Option                  | `classIn:String`                          | `fade-in`        | Class name for in animation            |
@@ -65,7 +65,7 @@ You can also set a **fallback** distance from top and bottom for elements that a
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `distance:Number|Percent`                          | `100`        | Activation distance from window's top and bottom            |
 | Option                  | `fallback:Number|Percent`                          | `0`        | Fallback distance when too close to the start and end of the page            |
@@ -83,7 +83,7 @@ You can use a function for `delayOn` and `delayOff` for example `(current, total
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `delayOn:Milliseconds|Function`                          | `false`        | Activation delay            |
 | Option                  | `delayOff:Milliseconds|Function`                          | `false`        | Deactivation delay            |
@@ -98,7 +98,7 @@ You can use a function for `delayOn` and `delayOff` for example `(current, total
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `sticky:String`                          | `false`        | Sticky mode 'absolute' or 'fixed' or 'fixed-always'            |
 
@@ -110,7 +110,7 @@ You can use a function for `delayOn` and `delayOff` for example `(current, total
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `trigger:Number|Percent`                          | `'100%'`        | Activation trigger distance viewport's top and bottom            |
 | Option                  | `start:Number|Percent`                          | `'100%'`        | Activation start distance viewport's top and bottom           |

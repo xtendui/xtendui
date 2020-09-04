@@ -12,7 +12,7 @@ You can customize the classnames used with the component.
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `class:String`                          | `active active-slider`        | Class name for activation            |
 | Option                  | `classIn:String`                          | `in`        | Class name for in animation            |
@@ -43,7 +43,7 @@ Inside it you can use this strings that gets populated with variables:
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `pagination:Query`                          | `'.slider-pagination'`        | Query for pagination element             |
 
@@ -71,7 +71,7 @@ You can add navigation with `navigation: QuerySelector`, set the amount to add (
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `navigation:Query`                          | `[data-xt-nav]`        | Query for navigation elements             |
 
@@ -95,7 +95,7 @@ You can add navigation with `navigation: QuerySelector`, set the amount to add (
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `drag.dragger:Query`                          | `'.slides-inner'`        | Query for dragger element             |
 | Option                  | `drag.manual:Boolean`                          | `false`        | Manual dragger position            |
@@ -114,7 +114,7 @@ You can disable friction with `drag: { friction: false }`.
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `drag.friction:Function`                          | `<function>`        | Function for drag friction             |
 | Option                  | `drag.frictionLimit:Number`                          | `1.5`        | Limit for friction calculation             |
@@ -130,7 +130,7 @@ You can set overflow with `drag: { overflow: Function }`, for example `(overflow
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `drag.overflow:Function`                          | `<function>`        | Function for drag overflow             |
 
@@ -149,7 +149,7 @@ Use `wheel: { selector: 'object' }` or `wheel: { selector: QuerySelector }` to e
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `auto.time:Milliseconds`                          | `false`        | Automatic activation time            |
 | Option                  | `auto.initial:Boolean`                          | `true`        | Automatic activation on initial            |
@@ -177,7 +177,7 @@ Disable the jump feature (clicking on not activated slides jumps to the slide) w
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `loop:Boolean`                          | `true`        | Loop activation            |
 | Option                  | `jump:Boolean`                          | `true`        | Clicking on targets triggers activation            |

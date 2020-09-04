@@ -88,10 +88,10 @@ module.exports = {
             options: {
               blocks: {
                 noteDefault: {
-                  classes: 'note note-default note-background gatbsy_note',
+                  classes: 'card text-default rounded-md bg-gray-200 gatsby_note',
                 },
                 notePrimary: {
-                  classes: 'note note-primary note-background gatbsy_note',
+                  classes: 'card text-inverse rounded-md bg-accent-500 gatsby_note',
                 },
               },
             },

@@ -233,7 +233,7 @@ module.exports = theme => ({
     typography: {
       html: {
         '@apply text-default': '',
-        lineHeight: 1.6,
+        lineHeight: 1.8,
         fontSize: rem(14),
         '@screen md': {
           fontSize: rem(15),
@@ -498,8 +498,8 @@ module.exports = theme => ({
           zIndex: theme('zIndex.active'),
         },
         // styles
-        marginTop: theme('spacing.4'),
-        marginBottom: theme('spacing.4'),
+        marginTop: theme('spacing.5'),
+        marginBottom: theme('spacing.5'),
         '@apply mt-fc mb-lc': {},
         borderWidth: theme('borderWidth.0'),
         borderColor: theme('borderColor.transparent'),
@@ -570,7 +570,7 @@ module.exports = theme => ({
         },
         '&:hover': {
           '.card-design': {
-            '@apply border-gray-300 bg-gray-300': '',
+            '@apply border-gray-200 bg-gray-200': '',
           },
         },
       },
@@ -635,13 +635,26 @@ module.exports = theme => ({
         borderSpacing: '0',
         width: '100%',
       },
+      '.table-scroll': {
+        // setup
+        '@apply overflow-sub': '',
+        overflowX: 'scroll',
+        overflowY: 'hidden',
+      },
+      '.table, .table-scroll': {
+        // setup
+        width: '100%',
+        // styles
+        marginBottom: theme('spacing.5'),
+        '@apply mb-lc': {},
+      },
       th: {
         // styles
         verticalAlign: 'top',
         padding: `${theme('spacing.2')} ${theme('spacing.4')}`,
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
-        fontSize: rem(10),
+        fontSize: rem(11),
         lineHeight: theme('lineHeight.snug'),
         letterSpacing: theme('letterSpacing.wider'),
         textTransform: 'uppercase',
@@ -652,6 +665,7 @@ module.exports = theme => ({
         verticalAlign: 'top',
         padding: `${theme('spacing.2')} ${theme('spacing.4')}`,
         fontSize: rem(13),
+        lineHeight: theme('lineHeight.snug'),
         textAlign: 'left',
       },
       'th, td': {
@@ -672,16 +686,6 @@ module.exports = theme => ({
             },
           },
         },
-      },
-      '.table, .table-scroll': {
-        // setup
-        '@apply overflow-sub': '',
-        width: '100%',
-        overflowX: 'hidden',
-        overflowY: 'scroll',
-        // styles
-        marginBottom: theme('spacing.5'),
-        '@apply mb-lc': {},
       },
     },
     // drop

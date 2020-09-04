@@ -6,6 +6,20 @@ title: "Javascript"
 date: "2019-06-01"
 ---
 
+## Vars
+
+In `/src/vars.js` there are js variables. Import it when you need animation's or other's variables:
+
+```jsx
+import '/src/vars.js'
+```
+
+And access the variables with `Xt.vars.<property>`.
+
+## Animation
+
+For javascript animations we use [gsap](https://greensock.com/gsap/). If you import `/src/vars.js` you import also **gsap**, you need to install it with npm see [setup gsap](/components/core/setup#usage-gsap).
+
 ## Event Delay
 
 For the `resize` and `scroll` events we use a special wrapper `Xt.eventDelay` that set the delay on which the resize gets triggered with `Xt.resizeDelay` and `Xt.scrollDelay`.
@@ -26,11 +40,11 @@ addEventListener('scroll', e => {
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `Xt.eventDelay(e, element, function, prefix = '', instant = false)`              |        | event delay wrapper                  |
-| Option                  | `Xt.resizeDelay:Number|Boolean`              | `500`        | Delay for the `resize` event with `Xt.eventDelay`            |
-| Option                  | `Xt.scrollDelay:Number|Boolean`              | `500`        | Delay for the `scroll` event with `Xt.eventDelay`                 |
+| Function                  | `Xt.eventDelay:Function`              | `e:Event, element:Node, function:Function, prefix:String = '', instant:Boolean = false`       | event delay wrapper                  |
+| Variable                  | `Xt.resizeDelay:Number|Boolean`              | `500`        | Delay for the `resize` event with `Xt.eventDelay`            |
+| Variable                  | `Xt.scrollDelay:Number|Boolean`              | `500`        | Delay for the `scroll` event with `Xt.eventDelay`                 |
 
 </div>
 

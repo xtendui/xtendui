@@ -33,16 +33,16 @@ if (typeof window !== 'undefined') {
 }
 
 /**
- * #gatbsy_open-full-trigger
+ * #gatsby_open-full-trigger
  */
 
 Xt.mount.push({
-  matches: '#gatbsy_open-full-trigger',
+  matches: '#gatsby_open-full-trigger',
   mount: object => {
     // init
 
     let self = new Xt.Toggle(object, {
-      targets: '#gatbsy_open-full',
+      targets: '#gatsby_open-full',
       closeInside: ':scope > .btn-close',
       closeAuto: true, // needed for onPreRouteUpdate gatsby-browser.js
       scrollbar: true,

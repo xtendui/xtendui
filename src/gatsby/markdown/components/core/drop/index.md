@@ -8,13 +8,17 @@ description: "Highly customizable dropdowns that can contain anything you want."
 
 ## Setup
 
-To use this component import the **js** file:
+Follow xtend's [installation instructions](/introduction/getting-started/setup) for extending tailwind.
+
+#### Component
+
+Import the component's **js** file.
 
 ```jsx
 import '/src/core/drop/drop.js'
 ```
 
-Or just import **core**:
+Or just import **core**.
 
 ```jsx
 import '/src/xtend-core.js'
@@ -22,11 +26,13 @@ import '/src/xtend-core.js'
 
 ## Usage
 
-Set `elements` `targets` `elementsInner` `targetsInner`, elements are responding to events, targets are activated on events.
+Pass **elements** and **targets** options if different from defaults.
+
+Elements listens to events, targets and inners are activated on events.
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `elements:Query`                          | `false`        | Elements query            |
 | Option                  | `targets:Query`                          | `:scope > .drop`        | Targets query            |
@@ -41,17 +47,17 @@ Use this markup to create a **self drop**.
 
 <script type="text/plain" class="language-markup">
   <div class="drop-container" data-xt-drop>
+  
     <button type="button">
       <!-- content -->
     </button>
-    <div class="drop drop-default">
+    
+    <div class="drop">
       <div class="drop-inner">
-        <div class="drop-design"></div>
-        <div class="drop-content">
-          <!-- content -->
-        </div>
+        <!-- content -->
       </div>
     </div>
+    
   </div>
 </script>
 
@@ -73,13 +79,11 @@ The **unique** mode is useful when triggering **targets outside the scope** of t
   <button type="button" data-xt-drop="{ targets: '#drop--unique' }">
     <!-- content -->
   </button>
+  
   <div class="drop-container">
-    <div class="drop drop-default" id="drop--unique">
+    <div class="drop" id="drop--unique">
       <div class="drop-inner">
-        <div class="drop-design"></div>
-        <div class="drop-content">
-          <!-- content -->
-        </div>
+        <!-- content -->
       </div>
     </div>
   </div>
@@ -98,31 +102,31 @@ Use this markup to create **multiple drop**.
   <div data-xt-drop="{ elements: ':scope > .drop-container', targets: ':scope > .drop-container > .drop' }">
   
     <div class="drop-container">
+    
       <button type="button">
         <!-- content -->
       </button>
-      <div class="drop drop-default">
+      
+      <div class="drop">
         <div class="drop-inner">
-          <div class="drop-design"></div>
-          <div class="drop-content">
-            <!-- content -->
-          </div>
+          <!-- content -->
         </div>
       </div>
+      
     </div>
     
     <div class="drop-container">
+    
       <button type="button">
         <!-- content -->
       </button>
-      <div class="drop drop-default">
+      
+      <div class="drop">
         <div class="drop-inner">
-          <div class="drop-design"></div>
-          <div class="drop-content">
-            <!-- content -->
-          </div>
+          <!-- content -->
         </div>
       </div>
+      
     </div>
     
   </div>
@@ -135,12 +139,12 @@ Use this markup to create **multiple drop**.
 
 ## Initialization
 
-Initialize automatically within markup with `[data-xt-drop="{ <options> }"]` on the **object**:
+Initialize automatically within markup with `[data-xt-drop="{ <options> }"]` on the **object**.
 
 [[noteDefault]]
-| **Object** is the DOM element you want to assign the component.
+| **Object** is the DOM element you want to assign the component to.
 
-Or initialize with javascript:
+Or initialize with **javascript**.
 
 ```js
 let self = new Xt.Drop(document.querySelector('#my-object'), {
@@ -148,7 +152,7 @@ let self = new Xt.Drop(document.querySelector('#my-object'), {
 })
 ```
 
-Or inizialize with **mutation observer** (preferred method):
+Or inizialize with **mutation observer**.
 
 ```js
 Xt.mount.push({

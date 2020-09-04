@@ -12,13 +12,13 @@ Toggle util are useful with [toggle](/components/core/toggle) to show/hide **tar
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Variants                         | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Util                  | `.container-reset`                               | `responsive`                | Reset container styles            |
-| Util                  | `.mt-fc`                               | `responsive`                | Reset margin top on `:first-child`            |
-| Util                  | `.mb-lc`                               | `responsive`                | Reset margin bottom on `:last-child`            |
-| Util                  | `.toggle`                               | `responsive`                | Toggle `display: none` on `.active` and `.out`            |
-| Util                  | `.toggle-inverse`                               | `responsive`                | Toggle `display: none` on `.in-done`         |
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
+| Util                  | `.container-reset`       | `container-reset`                | `responsive`                | Reset container styles            |
+| Util                  | `.mt-fc`                     | `mt-fc`                | `responsive`                | Reset margin top on `:first-child`            |
+| Util                  | `.mb-lc`                     | `mb-lc`                | `responsive`                | Reset margin bottom on `:last-child`            |
+| Util                  | `.toggle`                     | `toggle`                | `responsive`                | Toggle `display: none` on `.active` and `.out`            |
+| Util                  | `.toggle-inverse`                     | `toggle-inverse`                | `responsive`                | Toggle `display: none` on `.in-done`         |
 
 </div>
 
@@ -26,10 +26,10 @@ Toggle util are useful with [toggle](/components/core/toggle) to show/hide **tar
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Variants                         | Description                   |
+|               | Syntax                          | Mixin               | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Component                  | `.overflow-main`                               | `none`                | Overflow scrollbar style            |
-| Component                  | `.overflow-sub`                               | `none`                | Overflow scrollbar style small version            |
-| Component                  | `.design-setup`                               | `none`                | Apply design setup styles            |
+| Component                  | `.overflow-main`                     | `overflow-main`                | Overflow scrollbar style            |
+| Component                  | `.overflow-sub`                     | `overflow-sub`                | Overflow scrollbar style small version            |
+| Component                  | `.design-setup`                     | `design-setup`                | Apply design setup styles            |
 
 </div>
