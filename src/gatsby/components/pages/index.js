@@ -16,6 +16,9 @@ class Page extends React.Component {
             Design
             <ul>
               <li>
+                <a href="https://www.algolia.com/doc/">ghost</a>
+              </li>
+              <li>
                 <a href="https://ghost.org/docs/">ghost</a>
               </li>
               <li>

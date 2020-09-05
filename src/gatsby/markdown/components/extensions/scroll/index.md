@@ -10,8 +10,6 @@ description: "Content animation when you scroll the page, fade in elements, para
 
 Follow [css installation](/introduction/getting-started/setup#css-installation) and [js installation](/introduction/getting-started/setup#js-installation) instructions. To customize default styles follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
 
-#### Component
-
 Import the component's **js** file.
 
 ```jsx

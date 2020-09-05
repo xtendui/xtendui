@@ -4,11 +4,11 @@ module.exports = {
     container: {
       center: true,
       padding: {
-        default: '1rem',
-        sm: '1.5rem',
-        md: '2rem',
-        lg: '3rem',
-        xl: '4rem',
+        default: '1.5rem',
+        sm: '2rem',
+        md: '3rem',
+        lg: '4rem',
+        xl: '5rem',
       },
     },
     fontSize: {
@@ -90,9 +90,6 @@ module.exports = {
       borderWidth: {
         3: '3px',
       },
-      gradients: theme => ({
-        accent: `${theme('colors.accent.500')} 33%, ${theme('colors.accent.600')} 100%`,
-      }),
     },
   },
   /* https://github.com/tailwindlabs/tailwindcss/pull/2309

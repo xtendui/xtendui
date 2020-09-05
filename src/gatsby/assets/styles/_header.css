@@ -3,14 +3,14 @@
 */
 
 .gatsby_site_article_sidebar {
-  @apply overflow-sub;
+  @apply text-inverse overflow-sub;
+  background: theme('colors.accent.500');
   @screen lg {
     position: fixed;
     z-index: 2;
     top: 0;
     left: 0;
     bottom: 0;
-    background: linear-gradient(-90deg, theme('gradients.accent'));
     overflow-x: hidden;
     overflow-y: scroll;
     line-height: 1;
@@ -21,11 +21,6 @@
   @screen xl {
     width: 20rem;
   }
-}
-
-.gatsby_site_article_sidebar_inner {
-  @apply text-inverse;
-  background: linear-gradient(-90deg, theme('gradients.accent'));
 }
 
 /**

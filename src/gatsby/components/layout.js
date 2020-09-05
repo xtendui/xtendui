@@ -63,10 +63,14 @@ class Layout extends React.Component {
                       <article className="gatsby_site_article_content">
                         <div className="gatsby_site_article_content_inner">{children}</div>
                       </article>
-                      {page && page.post.frontmatter.type !== page.post.frontmatter.title && page.post.frontmatter.type !== 'Introduction' ? (
-                        <DocFoot page={page} />
-                      ) : null}
-                      <Footer site={data} />
+                      <footer className="gatsby_site_footer">
+                        <div className="gatsby_site_footer_inner">
+                          {page && page.post.frontmatter.type !== page.post.frontmatter.title && page.post.frontmatter.type !== 'Introduction' ? (
+                            <DocFoot page={page} />
+                          ) : null}
+                          <Footer site={data} />
+                        </div>
+                      </footer>
                     </main>
                   </div>
                 </div>

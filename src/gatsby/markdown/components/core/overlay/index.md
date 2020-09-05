@@ -10,11 +10,6 @@ description: "Used when you need to display any content over the main page."
 
 Follow [css installation](/introduction/getting-started/setup#css-installation) and [js installation](/introduction/getting-started/setup#js-installation) instructions. To customize default styles follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
 
-[[notePrimary]]
-| Overlays are moved to **body** to prevent **z-index** problems. Style and query overlay's content accordingly.
-
-#### Component
-
 Import the component's **js** file.
 
 ```jsx
@@ -26,6 +21,9 @@ Or just import **core**.
 ```jsx
 import 'xtend-library/src/xtend-core.js'
 ```
+
+[[notePrimary]]
+| Overlays are moved to **body** to prevent **z-index** problems. Style and query overlay's content accordingly.
 
 ## Usage
 

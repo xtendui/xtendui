@@ -431,8 +431,8 @@ module.exports = theme => ({
         },
       },
       'h1, .h1': {
-        marginTop: theme('spacing.8'),
-        marginBottom: theme('spacing.6'),
+        marginTop: theme('spacing.6'),
+        marginBottom: theme('spacing.4'),
         '@apply mt-fc mb-lc': {},
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
