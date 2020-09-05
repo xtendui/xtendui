@@ -3,7 +3,7 @@ type: "Components"
 category: "Core"
 parent: "General"
 title: "Javascript"
-date: "2019-06-01"
+date: "2050-05-05"
 ---
 
 ## Vars

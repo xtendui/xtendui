@@ -3,7 +3,7 @@ type: "Components"
 category: "Core"
 parent: "Card"
 title: "Content"
-date: "2020-10-10"
+date: "2030-10-10"
 ---
 
 ## Variant
@@ -26,7 +26,10 @@ Use **tailwind classes** to modify variants for interactive animations.
 
 ## Size
 
-Use component's classes to assign size (e.g.: padding / font size). See [component customizations](/introduction/getting-started/setup) to modify values.
+Use **component's classes** to assign size (e.g.: padding / font size).
+
+[[noteDefault]]
+| To customize component's styles follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
 
 <div class="table-scroll">
 

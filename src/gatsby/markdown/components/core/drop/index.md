@@ -59,8 +59,10 @@ Use this markup to create a **self drop**.
   </div>
 </script>
 
+Then add and [style content](/components/core/drop/content-list).
+
 <demo>
-  <demovanilla src="vanilla/components/core/drop/self">
+  <demovanilla src="vanilla/components/core/drop/usage-self">
   </demovanilla>
 </demo>
 
@@ -79,16 +81,20 @@ The **unique** mode is useful when triggering **targets outside the scope** of t
   </button>
   
   <div class="drop-container">
+
     <div class="drop" id="drop--unique">
       <div class="drop-inner">
         <!-- content -->
       </div>
     </div>
+    
   </div>
 </script>
 
+Then add and [style content](/components/core/drop/content-list).
+
 <demo>
-  <demovanilla src="vanilla/components/core/drop/unique">
+  <demovanilla src="vanilla/components/core/drop/usage-unique">
   </demovanilla>
 </demo>
 
@@ -130,8 +136,10 @@ Use this markup to create **multiple drop**.
   </div>
 </script>
 
+Then add and [style content](/components/core/drop/content-list).
+
 <demo>
-  <demovanilla src="vanilla/components/core/drop/multiple">
+  <demovanilla src="vanilla/components/core/drop/usage-multiple">
   </demovanilla>
 </demo>
 

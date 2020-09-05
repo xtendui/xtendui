@@ -16,11 +16,13 @@ Use this markup to create a **card**.
 
 <script type="text/plain" class="language-markup">
   <div class="card">
-    <div class="card-block card-block-medium">
+    <div class="card-block">
       <!-- content -->
     </div>
   </div>
 </script>
+
+Then add and [style content](/components/core/card/content).
 
 <demo>
   <demovanilla src="vanilla/components/core/card/usage">

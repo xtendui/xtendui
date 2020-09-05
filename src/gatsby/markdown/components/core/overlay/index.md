@@ -44,7 +44,7 @@ Elements listens to events, targets and inners are activated on events.
 
 #### Self
 
-Use this markup to create a **self overlay**.
+Use this markup to create a **overlay** in **self mode**.
 
 <script type="text/plain" class="language-markup">
   <div data-xt-overlay>
@@ -64,14 +64,16 @@ Use this markup to create a **self overlay**.
   </div>
 </script>
 
+Then add and [style content](/components/core/overlay/content).
+
 <demo>
-  <demovanilla src="vanilla/components/core/overlay/self">
+  <demovanilla src="vanilla/components/core/overlay/usage-self">
   </demovanilla>
 </demo>
 
 #### Unique
 
-Use this markup to create a **unique overlay**.
+Use this markup to create a **overlay** in **unique mode**.
 
 The **unique** mode is useful when triggering **targets outside the scope** of the component.
 
@@ -93,14 +95,16 @@ The **unique** mode is useful when triggering **targets outside the scope** of t
   </div>
 </script>
 
+Then add and [style content](/components/core/overlay/content).
+
 <demo>
-  <demovanilla src="vanilla/components/core/overlay/unique">
+  <demovanilla src="vanilla/components/core/overlay/usage-unique">
   </demovanilla>
 </demo>
 
 #### Standalone
 
-Use this markup to create a **standalone overlay**.
+Use this markup to create a **overlay** in **standalone mode**.
 
 Just use the class `active-overlay` if you want to automatically open, or use the [api](/components/core/overlay/api)
 
@@ -115,8 +119,10 @@ Just use the class `active-overlay` if you want to automatically open, or use th
 </div>
 </script>
 
+Then add and [style content](/components/core/overlay/content).
+
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/overlay/standalone">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/overlay/usage-standalone">
   </div>
 </demo>
 

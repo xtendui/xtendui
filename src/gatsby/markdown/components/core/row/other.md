@@ -3,7 +3,7 @@ type: "Components"
 category: "Core"
 parent: "Row"
 title: "Other"
-date: "2019-03-15"
+date: "2005-10-10"
 ---
 
 ## Stretch

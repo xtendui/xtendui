@@ -126,9 +126,12 @@ body {
 
 .gatsby_site_article_hero_content {
   .badge {
-    @apply text-default border-gray-300 bg-gray-300 -mt-4 ml-2;
+    @apply text-default border-gray-300 bg-gray-300 -mt-4 ml-4;
   }
   h1 {
+    span {
+      display: inline-block;
+    }
     span span {
       @apply font-medium;
       color: theme('colors.gray.500');

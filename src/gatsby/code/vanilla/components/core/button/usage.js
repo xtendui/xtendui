@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<button type="button" class="btn btn-medium">
+<button type="button" class="btn btn-medium ${btnDefault()}">
   button
 </button>
 `

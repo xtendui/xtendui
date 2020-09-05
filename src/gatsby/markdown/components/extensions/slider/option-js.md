@@ -3,7 +3,7 @@ type: "Components"
 category: "Extensions"
 parent: "Slider"
 title: "Option Js"
-date: "2019-11-10"
+date: "2019-05-05"
 ---
 
 ## Class

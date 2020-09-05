@@ -3,7 +3,7 @@ type: "Components"
 category: "Core"
 parent: "Card"
 title: "Other"
-date: "2019-03-15"
+date: "2005-10-10"
 ---
 
 ## Disable

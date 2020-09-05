@@ -520,11 +520,11 @@ module.exports = theme => ({
       },
       'ul:not([class]), ol:not([class])': {
         marginBottom: theme('spacing.5'),
-        '@apply text-reset mb-lc': {},
+        '@apply mb-lc': {},
         '> li': {
           position: 'relative',
           marginBottom: theme('spacing.5'),
-          '@apply text-reset mb-lc': {},
+          '@apply mb-lc': {},
           '&:before': {
             position: 'absolute',
             display: 'inline-block',
@@ -600,43 +600,36 @@ module.exports = theme => ({
         flexWrap: 'nowrap',
         alignItems: 'center',
         justifyContent: 'space-between',
-        zIndex: theme('zIndex.base'),
-        '&:hover, &:active': {
-          zIndex: theme('zIndex.active'),
-        },
         // styles
-        borderWidth: theme('borderWidth.default'),
-        borderColor: theme('borderColor.transparent'),
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
         lineHeight: theme('lineHeight.snug'),
         letterSpacing: theme('letterSpacing.wider'),
         textTransform: 'uppercase',
         // animation
+        zIndex: theme('zIndex.base'),
         transitionProperty: theme('transitionProperty.all'),
         transitionDuration: theme('transitionDuration.500'),
         transitionTimingFunction: theme('transitionTimingFunction.out'),
         '&:hover': {
-          transitionTimingFunction: theme('transitionTimingFunction.in'),
-        },
-        '&:active': {
+          zIndex: theme('zIndex.active'),
           transitionTimingFunction: theme('transitionTimingFunction.in'),
         },
       },
       '.btn-small': {
         // styles
-        padding: `${rem(7)} ${rem(12)}`,
-        fontSize: rem(11),
+        padding: `${rem(7)} ${rem(11)}`,
+        fontSize: rem(10),
       },
       '.btn-medium': {
         // styles
-        padding: `${rem(8)} ${rem(14)}`,
+        padding: `${rem(9)} ${rem(15)}`,
         fontSize: rem(12),
       },
       '.btn-large': {
         // styles
-        padding: `${rem(9)} ${rem(16)}`,
-        fontSize: rem(13),
+        padding: `${rem(11)} ${rem(19)}`,
+        fontSize: rem(14),
       },
       '.btn-close': {
         // setup
@@ -663,24 +656,17 @@ module.exports = theme => ({
         alignItems: 'stretch',
         justifyContent: 'flex-start',
         width: '100%',
-        zIndex: theme('zIndex.base'),
-        '&:hover, &:active': {
-          zIndex: theme('zIndex.active'),
-        },
         // styles
         marginTop: theme('spacing.5'),
         marginBottom: theme('spacing.5'),
         '@apply mt-fc mb-lc': {},
-        borderWidth: theme('borderWidth.0'),
-        borderColor: theme('borderColor.transparent'),
         // animation
+        zIndex: theme('zIndex.base'),
         transitionProperty: theme('transitionProperty.all'),
         transitionDuration: theme('transitionDuration.500'),
         transitionTimingFunction: theme('transitionTimingFunction.out'),
         '&:hover': {
-          transitionTimingFunction: theme('transitionTimingFunction.in'),
-        },
-        '&:active': {
+          zIndex: theme('zIndex.active'),
           transitionTimingFunction: theme('transitionTimingFunction.in'),
         },
       },
@@ -736,11 +722,13 @@ module.exports = theme => ({
           left: `-${theme('spacing.6')}`,
           bottom: `-${theme('spacing.6')}`,
           right: `-${theme('spacing.6')}`,
-          '@apply border-transparent bg-transparent': '',
+          borderColor: theme('colors.transparent'),
+          backgroundColor: theme('colors.transparent'),
         },
         '&:hover': {
           '.card-design': {
-            '@apply border-gray-200 bg-gray-200': '',
+            borderColor: theme('colors.gray.200'),
+            backgroundColor: theme('colors.gray.200'),
           },
         },
       },
@@ -751,11 +739,13 @@ module.exports = theme => ({
           left: `-${theme('spacing.6')}`,
           bottom: `-${theme('spacing.6')}`,
           right: `-${theme('spacing.6')}`,
-          '@apply border-transparent bg-transparent': '',
+          borderColor: theme('colors.transparent'),
+          backgroundColor: theme('colors.transparent'),
         },
         '&:hover': {
           '.card-design': {
-            '@apply border-accent-500 bg-accent-500': '',
+            borderColor: theme('colors.accent.500'),
+            backgroundColor: theme('colors.accent.500'),
           },
         },
       },
@@ -959,15 +949,35 @@ module.exports = theme => ({
         display: 'inline-block',
         verticalAlign: 'middle',
         // styles
-        padding: `${theme('spacing.1')} ${theme('spacing.2')}`,
-        borderWidth: theme('borderWidth.default'),
-        borderColor: theme('borderColor.transparent'),
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
-        fontSize: rem(10),
         lineHeight: theme('lineHeight.snug'),
         letterSpacing: theme('letterSpacing.wider'),
         textTransform: 'uppercase',
+        // animation
+        zIndex: theme('zIndex.base'),
+        transitionProperty: theme('transitionProperty.all'),
+        transitionDuration: theme('transitionDuration.500'),
+        transitionTimingFunction: theme('transitionTimingFunction.out'),
+        '&:hover': {
+          zIndex: theme('zIndex.active'),
+          transitionTimingFunction: theme('transitionTimingFunction.in'),
+        },
+      },
+      '.badge-small': {
+        // styles
+        padding: `${rem(6)} ${rem(10)}`,
+        fontSize: rem(10),
+      },
+      '.badge-medium': {
+        // styles
+        padding: `${rem(8)} ${rem(14)}`,
+        fontSize: rem(12),
+      },
+      '.badge-large': {
+        // styles
+        padding: `${rem(10)} ${rem(18)}`,
+        fontSize: rem(14),
       },
     },
   },

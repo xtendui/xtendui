@@ -15,18 +15,20 @@ Follow [css installation](/introduction/getting-started/setup#css-installation) 
 Use this markup to create a **button**.
 
 <script type="text/plain" class="language-markup">
-  <button type="button" class="btn btn-medium">
+  <button type="button" class="btn">
     <!-- content -->
   </button>
   
-  <a href="#" class="btn btn-medium">
+  <a href="#" class="btn">
     <!-- content -->
   </a>
   
-  <a role="button" class="btn btn-medium">
+  <a role="button" class="btn">
     <!-- content -->
   </a>
 </script>
+
+Then add and [style content](/components/core/button/content).
 
 <demo>
   <demovanilla src="vanilla/components/core/button/usage">

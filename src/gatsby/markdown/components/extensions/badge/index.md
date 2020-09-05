@@ -15,15 +15,14 @@ Follow [css installation](/introduction/getting-started/setup#css-installation) 
 Use this markup to create a **badge**.
 
 <script type="text/plain" class="language-markup">
-  <div class="badge-container">
-  
-      <div class="badge badge-default">
-        <!-- content -->
-      </div>
-      
-      <div class="badge badge-default">
-        <!-- content -->
-      </div>
-      
+  <div class="badge">
+    <!-- content -->
   </div>
 </script>
+
+Then add and [style content](/components/extensions/badge/content).
+
+<demo>
+  <demovanilla src="vanilla/components/extensions/badge/usage">
+  </demovanilla>
+</demo>
