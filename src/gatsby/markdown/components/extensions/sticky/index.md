@@ -8,20 +8,20 @@ description: "Sticky elements with complex interactions."
 
 ## Setup
 
-Follow xtend's [installation instructions](/introduction/getting-started/setup) for extending tailwind.
+Follow [css installation](/introduction/getting-started/setup#css-installation) and [js installation](/introduction/getting-started/setup#js-installation) instructions. To customize default styles follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
 
 #### Component
 
 Import the component's **js** file.
 
 ```jsx
-import '/src/extensions/sticky/sticky.js'
+import 'xtend-library/src/extensions/sticky/sticky.js'
 ```
 
 Or just import **extensions**.
 
 ```jsx
-import '/src/xtend-extensions.js'
+import 'xtend-library/src/xtend-extensions.js'
 ```
 
 ## Usage

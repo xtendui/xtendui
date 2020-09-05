@@ -84,7 +84,7 @@ pre[class*="language-"] {
  */
 
 pre {
-  max-height: 30rem;
+  max-height: 36rem;
 }
 
 .gatsby_demo {
@@ -203,7 +203,7 @@ pre {
       height: 0;
       border: 0;
       &:not(.gatsby_iframe-full) {
-        height: 30rem;
+        height: 36rem;
       }
     }
   }

@@ -1,4 +1,5 @@
 import path from 'path'
+const btnDefault = require('components/snippets/classes/btn-default').default
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -8,11 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="row row-space-3">
-
-  <div class="demo--col-custom-percent"></div>
-  <div class="demo--col-custom-px"></div>
-  <div class="col-auto"></div>
-
-</div>
+<button type="button" class="btn btn-medium">
+  button
+</button>
 `

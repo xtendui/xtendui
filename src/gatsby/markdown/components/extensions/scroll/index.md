@@ -8,20 +8,20 @@ description: "Content animation when you scroll the page, fade in elements, para
 
 ## Setup
 
-Follow xtend's [installation instructions](/introduction/getting-started/setup) for extending tailwind.
+Follow [css installation](/introduction/getting-started/setup#css-installation) and [js installation](/introduction/getting-started/setup#js-installation) instructions. To customize default styles follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
 
 #### Component
 
 Import the component's **js** file.
 
 ```jsx
-import '/src/extensions/scroll/scroll.js'
+import 'xtend-library/src/extensions/scroll/scroll.js'
 ```
 
 Or just import **extensions**.
 
 ```jsx
-import '/src/xtend-extensions.js'
+import 'xtend-library/src/xtend-extensions.js'
 ```
 
 ## Usage

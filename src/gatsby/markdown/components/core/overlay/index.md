@@ -8,7 +8,7 @@ description: "Used when you need to display any content over the main page."
 
 ## Setup
 
-Follow xtend's [installation instructions](/introduction/getting-started/setup) for extending tailwind.
+Follow [css installation](/introduction/getting-started/setup#css-installation) and [js installation](/introduction/getting-started/setup#js-installation) instructions. To customize default styles follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
 
 [[notePrimary]]
 | Overlays are moved to **body** to prevent **z-index** problems. Style and query overlay's content accordingly.
@@ -18,13 +18,13 @@ Follow xtend's [installation instructions](/introduction/getting-started/setup) 
 Import the component's **js** file.
 
 ```jsx
-import '/src/core/overlay/overlay.js'
+import 'xtend-library/src/core/overlay/overlay.js'
 ```
 
 Or just import **core**.
 
 ```jsx
-import '/src/xtend-core.js'
+import 'xtend-library/src/xtend-core.js'
 ```
 
 ## Usage

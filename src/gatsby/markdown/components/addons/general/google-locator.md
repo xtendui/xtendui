@@ -1,13 +1,13 @@
 ---
 type: "Components"
 category: "Addons"
-parent: "Structure"
+parent: "General"
 title: "google-locator"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/structure/google-locator">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/general/google-locator">
   </div>
 </demo>
 

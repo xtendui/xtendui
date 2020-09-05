@@ -1,29 +1,12 @@
 ---
 type: "Components"
 category: "Core"
-parent: "Link"
-title: "Link"
-description: "Global link styles."
+parent: "General"
+title: "General"
+description: "General components and utils."
+date: "2018-01-01"
 ---
 
 ## Setup
 
 Follow [css installation](/introduction/getting-started/setup#css-installation) and [js installation](/introduction/getting-started/setup#js-installation) instructions. To customize default styles follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
-
-## Usage
-
-Use this markup to create a **link**.
-
-<script type="text/plain" class="language-markup">
-  <a href="#">
-    <!-- content -->
-  </a>
-
-  <button type="button" class="btn link">
-    <!-- content -->
-  </button>
-  
-  <div class="link">
-    <!-- content -->
-  </div>
-</script>

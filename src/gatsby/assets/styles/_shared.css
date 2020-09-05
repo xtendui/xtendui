@@ -77,7 +77,7 @@
   bottom: 0;
   right: 12px;
   h2 & {
-    bottom: 3px;
+    bottom: -1px;
   }
   .btn {
     padding: 7px;

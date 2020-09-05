@@ -1,14 +1,12 @@
 ---
 type: "Components"
 category: "Core"
-parent: "Structure"
+parent: "General"
 title: "Css"
 date: "2019-12-01"
 ---
 
 ## Utils
-
-Toggle util are useful with [toggle](/components/core/toggle) to show/hide **targets**.
 
 <div class="table-scroll">
 
@@ -19,6 +17,8 @@ Toggle util are useful with [toggle](/components/core/toggle) to show/hide **tar
 | Util                  | `.mb-lc`                     | `mb-lc`                | `responsive`                | Reset margin bottom on `:last-child`            |
 | Util                  | `.toggle`                     | `toggle`                | `responsive`                | Toggle `display: none` on `.active` and `.out`            |
 | Util                  | `.toggle-inverse`                     | `toggle-inverse`                | `responsive`                | Toggle `display: none` on `.in-done`         |
+| Util                  | `.duration-none`                     | `duration-none`                | `responsive`                | Instant transitions and animations            |
+
 
 </div>
 

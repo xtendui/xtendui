@@ -1,7 +1,7 @@
 ---
 type: "Components"
 category: "Core"
-parent: "Structure"
+parent: "General"
 title: "Javascript"
 date: "2019-06-01"
 ---
@@ -11,7 +11,7 @@ date: "2019-06-01"
 In `/src/vars.js` there are js variables. Import it when you need animation's or other's variables:
 
 ```jsx
-import '/src/vars.js'
+import 'xtend-library/src/vars.js'
 ```
 
 And access the variables with `Xt.vars.<property>`.

@@ -4,7 +4,6 @@
  * @license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE)
  */
 
-import 'xtend-library/src/polyfill.js'
 import { Xt } from 'xtend-library/src/xt.js'
 import 'xtend-library/src/xtend-core.js'
 import 'xtend-library/src/xtend-extensions.js'

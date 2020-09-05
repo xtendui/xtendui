@@ -10,8 +10,8 @@ const em = (px, base) => `${round(px / base)}em`
 
 module.exports = theme => ({
   utilities: {
-    // structure
-    structure: {
+    // general
+    general: {
       '.container-reset': {
         padding: 0,
         width: 'auto',
@@ -37,18 +37,31 @@ module.exports = theme => ({
           display: 'none',
         },
       },
+      '.duration-none': {
+        transitionDuration: 'initial',
+        transitionDelay: 'initial',
+        animationDuration: 'initial',
+        animationDelay: 'initial',
+        animationIterationCount: '1',
+      },
     },
     typography: {
       '.text-default': {
-        '@apply text-accent-900': '',
+        color: theme('colors.accent.900'),
         'a:not([class]), .link': {
-          '@apply text-accent-500 !important': '',
+          color: theme('colors.accent.500'),
+          '&:hover': {
+            color: theme('colors.accent.600'),
+          },
         },
       },
       '.text-inverse': {
-        '@apply text-white': '',
+        color: theme('colors.white'),
         'a:not([class]), .link': {
-          '@apply text-white !important': '',
+          color: theme('colors.white'),
+          '&:hover': {
+            color: theme('colors.white'),
+          },
         },
       },
       '.text-reset': {
@@ -71,54 +84,54 @@ module.exports = theme => ({
     list: {
       space: {
         px: '1px',
-        '0': '0',
-        '0.5': '0.125rem',
-        '1': '0.25rem',
-        '1.5': '0.375rem',
-        '2': '0.5rem',
-        '2.5': '0.625rem',
-        '3': '0.75rem',
-        '3.5': '0.875rem',
-        '4': '1rem',
-        '5': '1.25rem',
-        '6': '1.5rem',
-        '7': '1.75rem',
-        '8': '2rem',
-        '9': '2.25rem',
-        '10': '2.5rem',
-        '11': '2.75rem',
-        '12': '3rem',
-        '13': '3.25rem',
-        '14': '3.5rem',
-        '15': '3.75rem',
-        '16': '4rem',
+        0: '0',
+        0.5: '0.125rem',
+        1: '0.25rem',
+        1.5: '0.375rem',
+        2: '0.5rem',
+        2.5: '0.625rem',
+        3: '0.75rem',
+        3.5: '0.875rem',
+        4: '1rem',
+        5: '1.25rem',
+        6: '1.5rem',
+        7: '1.75rem',
+        8: '2rem',
+        9: '2.25rem',
+        10: '2.5rem',
+        11: '2.75rem',
+        12: '3rem',
+        13: '3.25rem',
+        14: '3.5rem',
+        15: '3.75rem',
+        16: '4rem',
       },
     },
     // row
     row: {
       space: {
         px: '1px',
-        '0': '0',
-        '0.5': '0.125rem',
-        '1': '0.25rem',
-        '1.5': '0.375rem',
-        '2': '0.5rem',
-        '2.5': '0.625rem',
-        '3': '0.75rem',
-        '3.5': '0.875rem',
-        '4': '1rem',
-        '5': '1.25rem',
-        '6': '1.5rem',
-        '7': '1.75rem',
-        '8': '2rem',
-        '9': '2.25rem',
-        '10': '2.5rem',
-        '11': '2.75rem',
-        '12': '3rem',
-        '13': '3.25rem',
-        '14': '3.5rem',
-        '15': '3.75rem',
-        '16': '4rem',
+        0: '0',
+        0.5: '0.125rem',
+        1: '0.25rem',
+        1.5: '0.375rem',
+        2: '0.5rem',
+        2.5: '0.625rem',
+        3: '0.75rem',
+        3.5: '0.875rem',
+        4: '1rem',
+        5: '1.25rem',
+        6: '1.5rem',
+        7: '1.75rem',
+        8: '2rem',
+        9: '2.25rem',
+        10: '2.5rem',
+        11: '2.75rem',
+        12: '3rem',
+        13: '3.25rem',
+        14: '3.5rem',
+        15: '3.75rem',
+        16: '4rem',
       },
     },
     // drop
@@ -298,8 +311,8 @@ module.exports = theme => ({
     },
   },
   components: {
-    // structure
-    structure: {
+    // general
+    general: {
       ':focus': {
         outline: 'none !important', // disable focus outline
       },
@@ -364,6 +377,12 @@ module.exports = theme => ({
         // styles
         '@apply bg-gray-900 bg-opacity-25': '',
       },
+      '.initial': {
+        // instant transitions and animation on init and reinit
+        '&, *': {
+          '@apply duration-none !important': '',
+        },
+      },
       'html.xt-scrollbar': {
         // setup
         body: {
@@ -403,17 +422,11 @@ module.exports = theme => ({
         '@apply text-reset !important': {},
         wordWrap: 'break-word',
         overflowWrap: 'break-word',
-        color: theme('colors.accent.500'),
         textDecoration: 'underline',
         transitionProperty: theme('transitionProperty.colors'),
         transitionDuration: theme('transitionDuration.500'),
         transitionTimingFunction: theme('transitionTimingFunction.ease.out'),
         '&:hover': {
-          color: theme('colors.accent.600'),
-          transitionTimingFunction: theme('transitionTimingFunction.ease.in'),
-        },
-        '&:active': {
-          color: theme('colors.accent.400'),
           transitionTimingFunction: theme('transitionTimingFunction.ease.in'),
         },
       },

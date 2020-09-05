@@ -7,112 +7,175 @@ description: "Setup and compilation instructions."
 date: "2018-01-01"
 ---
 
-# WIP pre 1.0 version: api changing fast
+## Css Installation
 
-## Installation
+This is the setup procedure for styles and javascript.
+
+If you want we have some boilerplate projects to start a project all ready to go!
+
+* [xtend-theme-vanilla](https://github.com/minimit/xtend-theme-vanilla)
+
+#### Postcss
+
+Install **postcss** and **tailwind**.
+
+```Shell
+npm install postcss-import postcss-nesting tailwindcss --save-dev
+```
+
+Then in `postcss.config.js` set up compilation.
+
+```jsx
+const postcssImport = require(`postcss-import`)
+const postcssNesting = require('postcss-nesting')
+const tailwindcss = require(`tailwindcss`)
+
+module.exports = {
+  map: true,
+  plugins: [postcssImport(), tailwindcss(), postcssNesting()],
+}
+```
+
+#### Tailwind
+
+Install **xtend**.
 
 ```Shell
 npm install xtend-library --save
 ```
 
-## Usage
-
-We have some boilerplate setup projects to start a project:
-
-* [vanilla boilerplate](https://github.com/minimit/xtend-theme-vanilla)
-
-#### Webpack
-
-This library is made to be used by [webpack](https://github.com/webpack). In essence you have to setup webpack's resolve to be able to import the scripts and styles from the `node_modules/xtend-library` or from your custom folder if present (`./dist/xtend-library` in this case).
+Then add **xtend** plugins and variables inside `tailwind.config.js`.
 
 ```jsx
-  resolve: {
-    alias: {
-      // resolve xtend-library js and less
-      'xtend-library': [
-        path.resolve(__dirname, './dist/xtend-library'),
-        path.resolve(__dirname, './node_modules/xtend-library'),
-      ],
+module.exports = {
+  purge: [],
+  theme: {
+    extend: {
+      zIndex: {
+        base: '0',
+        active: '5',
+        top: '50',
+        indicator: '51',
+        backdrop: '500',
+        drop: '600',
+        sticky: '800', // same as javascript and decreses with sequential sticky
+        overlay: '900',
+        last: '1000',
+      },
+      transitionTimingFunction: {
+        in: 'cubic-bezier(0.250, 0.460, 0.450, 0.940)',
+        out: 'cubic-bezier(0.455, 0.030, 0.515, 0.955)',
+      },
     },
   },
-  module: {
-    unsafeCache: false,
+  plugins: [require('xtend-library')],
+  experimental: {
+    applyComplexClasses: true,
+    extendedSpacingScale: true,
+    defaultLineHeights: true,
+    removeDeprecatedGapUtilities: true,
+  },
+}
+
 ```
 
-With this setup you can **fork** css and js files inside `./dist/xtend-library` and the webpack resolver will load files from it or fallback to `./node_modules/xtend-library`.
+## Js Installation
 
-**IMPORTANT** do not fork the files inside `./core/demos` they can change anytime
-
-#### Css
-
-You need to import the **reset** file as first import:
-
-```less
-@import 'xtend-library/src/xtend-reset.less'; // always first loaded
-```
-
-Then you can import the **components you need** as described in the docs:
-
-```less
-@import (reference) '/src/xtend-core.less'; // be sure to import the library as reference first
-@import 'xtend-library/src/extensions/slider/slider.less';
-```
-
-Or just import **all core** and **extensions** and **addons** needed (preferred method):
-
-```less
-@import 'xtend-library/src/xtend-core.less';
-@import 'xtend-library/src/extensions/slider/slider.less';
-```
-
-To modify a **less** or **js** file add [webpack resolve](/introduction/setup#usage-webpack) and fork the file copying it in your project.
-
-#### Js
-
-You need to install [relaxed-json](https://www.npmjs.com/package/relaxed-json):
+You need to install [json5](https://www.npmjs.com/package/json5), [core-js](https://www.npmjs.com/package/core-js), [@babel/core](https://www.npmjs.com/package/@babel/core), [@babel/preset-env](https://www.npmjs.com/package/@babel/preset-env), [babel-plugin-module-resolver](https://www.npmjs.com/package/babel-plugin-module-resolver).
 
 ```Shell
-npm install --save relaxed-json
+npm install json5 --save
+npm install core-js@3 @babel/core @babel/preset-env babel-plugin-module-resolver --save-dev
 ```
 
-You need to install and import [core-js](https://github.com/zloirock/core-js):
-
-```Shell
-npm install --save core-js@2
-```
+Then in `babel.config.js` set up polyfills.
 
 ```jsx
-import 'core-js'
+const path = require('path')
+
+module.exports = {
+  presets: [
+    [
+      '@babel/preset-env',
+      {
+        useBuiltIns: 'entry',
+        corejs: 3,
+      },
+    ],
+  ],
+  plugins: [
+    [
+      require.resolve('babel-plugin-module-resolver'),
+      {
+        alias: {
+          // if you want to fork javascript file add a local path.resolve as first in array
+          'xtend-library': [path.resolve(__dirname, './node_modules/xtend-library')],
+        },
+      },
+    ],
+  ],
+}
 ```
-
-You need to import the **polyfills** files and the **main** js:
-
-```jsx
-import '/src/polyfill.js'
-import { Xt } from '/src/xt.js'
-```
-
-Then you can import the **components you need** as described in the docs:
-
-```jsx
-import '/src/extensions/slider/slider.js'
-```
-
-Or just import **all core** and **extensions** and **addons** needed (preferred method):
-
-```jsx
-import '/src/xtend-core.js'
-import '/src/extensions/slider/slider.js'
-```
-
-To modify a **less** or **js** file add [webpack resolve](/introduction/setup#usage-webpack) and fork the file copying it in your project.
 
 #### Gsap
 
 This library in the demos uses [gsap](https://github.com/greensock/GSAP) and [bezier-easing](https://github.com/gre/bezier-easing) for javascript animations.
 
 ```
-npm install --save gsap bezier-easing
+npm install gsap bezier-easing --save
+```
+
+#### Usage
+
+You need to import the **polyfills** and the **main js** file.
+
+```jsx
+import 'core-js'
+import 'xtend-library/src/xt.js'
+```
+
+Then you can import the **components you need** as described in the docs:
+
+```jsx
+import 'xtend-library/src/xtend-core.js'
+import 'xtend-library/src/extensions/slider/slider.js'
+```
+
+## Css Customization
+
+To **modify or disable default styles** of utilities and components, use `xtend` object inside **tailwind's theme** and set your custom styles, or set to `false`.
+
+For the source code of utilities and components, **to know what to modify**, open `node_modules/xtend-library/src/tailwind-css.js`.
+
+```jsx
+module.exports = {
+  theme: {
+    extend: {
+      xtend: theme => ({
+        utilities: {
+          // disable utility
+          utility: false,
+          // modify utility
+          utility: {
+            '.selector': {
+              myStyle: 'myStyleValue',
+            },
+          },
+        },
+        components: {
+          // disable component
+          component: false,
+          // modify component
+          component: {
+            '.selector': {
+              myStyle: 'myStyleValue',
+            },
+          },
+        },
+      }),
+    },
+  },
+}
 ```
 
 ## Browser support
@@ -121,16 +184,12 @@ Supported browsers are as follow: **explorer 12**, **firefox 38**, **opera 25**,
 
 ## Documentation
 
-We use gatsby to serve the docs:
+We use [gatsby](https://www.npmjs.com/package/gatsby) to serve the docs:
 
 * Install required npm packages with `npm install`
 * Use `npm run build` to build the docs in `/public`
 * Use `npm run dev` to serve a develop version
 * Use `npm run serve`to serve a production version
-
-## Acknowledgements
-
-* Icons with [feather icons](https://github.com/feathericons/feather)
 
 ## Copyright
 

@@ -8,20 +8,20 @@ description: "Highly customizable dropdowns that can contain anything you want."
 
 ## Setup
 
-Follow xtend's [installation instructions](/introduction/getting-started/setup) for extending tailwind.
+Follow [css installation](/introduction/getting-started/setup#css-installation) and [js installation](/introduction/getting-started/setup#js-installation) instructions. To customize default styles follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
 
 #### Component
 
 Import the component's **js** file.
 
 ```jsx
-import '/src/core/drop/drop.js'
+import 'xtend-library/src/core/drop/drop.js'
 ```
 
 Or just import **core**.
 
 ```jsx
-import '/src/xtend-core.js'
+import 'xtend-library/src/xtend-core.js'
 ```
 
 ## Usage
