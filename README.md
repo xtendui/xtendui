@@ -1,12 +1,3 @@
----
-type: "Introduction"
-category: "Getting Started"
-parent: "Setup"
-title: "Setup"
-description: "Setup and compilation instructions."
-date: "2018-01-01"
----
-
 ## Css Installation
 
 This is the setup procedure for styles and javascript.
