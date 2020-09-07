@@ -28,26 +28,16 @@ Use this markup to create a **vertical list**.
   </nav>
 </script>
 
-#### Anything
+[[notePrimary]]
+| You can space anything inside `.list`, it's like a [row](/components/core/row) but that spaces with **margins instead of paddings** and you don't use **tailwind width classes**.
 
-You can use list to space childrens like [row](/components/core/row/content) does. But the childrens are spaced with **margin** instead of **padding**.
-
-<demo>
-  <demovanilla src="vanilla/components/core/list/anything-row" name="horizontal">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/list/anything-column" name="vertical">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/list/anything-nested" name="nested">
-  </demovanilla>
-</demo>
-
-#### Button
+Then add and [style content](/components/core/list/content).
 
 <demo>
-  <demovanilla src="vanilla/components/core/list/button-row" name="horizontal">
+  <demovanilla src="vanilla/components/core/list/usage">
   </demovanilla>
-  <demovanilla src="vanilla/components/core/list/button-column" name="vertical">
+  <demovanilla src="vanilla/components/core/list/usage-block">
   </demovanilla>
-  <demovanilla src="vanilla/components/core/list/button-nested" name="nested">
+  <demovanilla src="vanilla/components/core/list/usage-nested">
   </demovanilla>
 </demo>

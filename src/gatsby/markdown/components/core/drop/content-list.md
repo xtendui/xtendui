@@ -20,7 +20,7 @@ Use **tailwind classes** to assign variant (e.g.: border / background / color).
 Use **component's classes** to assign size (e.g.: padding / font size).
 
 [[noteDefault]]
-| To customize component's styles follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
+| To customize utils and component's styles follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
 
 <div class="table-scroll">
 
@@ -35,7 +35,7 @@ Use **component's classes** to assign size (e.g.: padding / font size).
 Use [button classes](/components/core/button/content#size) to assign button size (e.g.: padding / font size).
 
 [[noteDefault]]
-| To customize component's styles follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
+| To customize utils and component's styles follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
 
 <demo>
   <demovanilla src="vanilla/components/core/drop/list-size">

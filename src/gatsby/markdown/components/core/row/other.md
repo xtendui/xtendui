@@ -21,7 +21,7 @@ Use `.row-stretch` to stretch content vertically.
 When using cards you can space with `margin auto` on `.card-block`. When not using cards, be sure that the content have class `flex-auto`.
 
 <demo>
-  <demovanilla src="vanilla/components/core/row/stretch-card">
+  <demovanilla src="vanilla/components/core/row/stretch">
   </demovanilla>
 </demo>
 
@@ -38,7 +38,7 @@ Use `.row-overflow` to have browser overflow scroll on **touch devices** (use to
 </div>
 
 [[noteDefault]]
-| To customize component's styles follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
+| To customize utils and component's styles follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
 
 <demo>
   <demovanilla src="vanilla/components/core/row/overflow">

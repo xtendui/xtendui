@@ -1,29 +1,29 @@
 ---
 type: "Components"
 category: "Core"
-parent: "Row"
+parent: "List"
 title: "Content"
 date: "2030-10-10"
 ---
 
 ## Space
 
-Use **row space utils** to space row's content horizontally and vertically. If you **omit spacing utilities** classes the row have **no space**. 
+Use **list space utils** to space row's content horizontally and vertically. If you **omit spacing utilities** classes the list have **no space**. 
 
 <div class="table-scroll">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Util                  | `.row-space-<space>`       | `row-space-<space>`                | `responsive`                | Space contents horizontally and vertically            |
-| Util                  | `.row-space-x-<space>`       | `row-space-x-<space>`                | `responsive`                | Space contents horizontally            |
-| Util                  | `.row-space-y-<space>`       | `row-space-y-<space>`                | `responsive`                | Space contents vertically            |
+| Util                  | `.list-space-<space>`       | `list-space-<space>`                | `responsive`                | Space contents horizontally and vertically            |
+| Util                  | `.list-space-x-<space>`       | `list-space-x-<space>`                | `responsive`                | Space contents horizontally            |
+| Util                  | `.list-space-y-<space>`       | `list-space-y-<space>`                | `responsive`                | Space contents vertically            |
 
 </div>
 
 Default spacing is as follow.
 
 ```jsx
-row: {
+list: {
   space: {
     px: '1px',
     0: '0',
@@ -56,14 +56,11 @@ row: {
 
 Use **tailwind classes** to assign flex options.
 
-[[notePrimary]]
-| You should always use **tailwind width classes** inside `.row`.
-
 <demo>
-  <demovanilla src="vanilla/components/core/row/space-1">
+  <demovanilla src="vanilla/components/core/list/space-1">
   </demovanilla>
-  <demovanilla src="vanilla/components/core/row/space-2">
+  <demovanilla src="vanilla/components/core/list/space-2">
   </demovanilla>
-  <demovanilla src="vanilla/components/core/row/space-3">
+  <demovanilla src="vanilla/components/core/list/space-3">
   </demovanilla>
 </demo>

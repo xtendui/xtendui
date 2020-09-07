@@ -29,7 +29,7 @@ Use `.text-inverse` to have white links.
 Use **component's classes** to assign size (e.g.: padding / font size).
 
 [[noteDefault]]
-| To customize component's styles follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
+| To customize utils and component's styles follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
 
 <div class="table-scroll">
 
