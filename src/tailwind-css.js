@@ -776,16 +776,6 @@ module.exports = theme => ({
         width: '100%',
         height: '100%',
       },
-      '.media-container-responsive': {
-        // responsive
-        '.media-inner': {
-          position: 'relative',
-        },
-      },
-      '.media-container-16-9': {
-        // aspect ratio
-        paddingBottom: '56.2%',
-      },
     },
     // table
     table: {

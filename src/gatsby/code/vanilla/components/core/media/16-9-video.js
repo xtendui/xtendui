@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="media-container media-container-16-9">
+<div class="media-container" style="padding-bottom: 56.2%">
   <div class="media-inner">
     <video class="media" poster="/placeholder-1080.jpg"
             muted loop playsinline controls>

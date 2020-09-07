@@ -14,8 +14,6 @@ Follow [css installation](/introduction/getting-started/setup#css-installation) 
 
 Use this markup to create a **media**.
 
-Set the **aspect ratio** with css `padding-bottom`.
-
 <script type="text/plain" class="language-markup">
   <div class="media-container" style="padding-bottom: 37.5%;">
     <div class="media-inner">
@@ -23,3 +21,10 @@ Set the **aspect ratio** with css `padding-bottom`.
     </div>
   </div>
 </script>
+
+Then add and [style content](/components/core/media/content).
+
+<demo>
+  <demovanilla src="vanilla/components/core/media/usage">
+  </demovanilla>
+</demo>
