@@ -136,7 +136,7 @@ import 'xtend-library/src/extensions/slider/slider.js'
 
 To **modify or disable default styles** of utilities and components, use `xtend` object inside **tailwind's theme** and set your custom styles, or set to `false`.
 
-For the source code of utilities and components, **to know what to modify**, open `node_modules/xtend-library/src/tailwind-css.js`.
+To **know what to modify** see the source code of `node_modules/xtend-library/src/tailwind-css.js`.
 
 ```jsx
 module.exports = {

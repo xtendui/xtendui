@@ -393,12 +393,14 @@ module.exports = theme => ({
         },
       },
       '.xt-disable': {
+        // setup
         '&:after': {
           display: 'none',
           content: 'xt-disable',
         },
       },
       '.xt-disable-after-init': {
+        // setup
         '&:after': {
           display: 'none',
           content: 'xt-disable-after-init',
@@ -408,6 +410,7 @@ module.exports = theme => ({
     // typography
     typography: {
       html: {
+        // style
         '@apply text-default': '',
         lineHeight: 1.8,
         fontSize: rem(14),
@@ -419,10 +422,12 @@ module.exports = theme => ({
         },
       },
       'a:not([class]), .link': {
+        // setup
         '@apply text-reset !important': {},
         wordWrap: 'break-word',
         overflowWrap: 'break-word',
         textDecoration: 'underline',
+        // animation
         transitionProperty: theme('transitionProperty.colors'),
         transitionDuration: theme('transitionDuration.500'),
         transitionTimingFunction: theme('transitionTimingFunction.ease.out'),
@@ -431,6 +436,7 @@ module.exports = theme => ({
         },
       },
       'h1, .h1': {
+        // style
         marginTop: theme('spacing.6'),
         marginBottom: theme('spacing.4'),
         '@apply mt-fc mb-lc': {},
@@ -445,6 +451,7 @@ module.exports = theme => ({
         },
       },
       'h2, .h2': {
+        // style
         marginTop: theme('spacing.6'),
         marginBottom: theme('spacing.4'),
         '@apply mt-fc mb-lc': {},
@@ -459,6 +466,7 @@ module.exports = theme => ({
         },
       },
       'h3, .h3': {
+        // style
         marginTop: theme('spacing.6'),
         marginBottom: theme('spacing.4'),
         '@apply mt-fc mb-lc': {},
@@ -473,6 +481,7 @@ module.exports = theme => ({
         },
       },
       'h4, .h4': {
+        // style
         marginTop: theme('spacing.6'),
         marginBottom: theme('spacing.4'),
         '@apply mt-fc mb-lc': {},
@@ -484,6 +493,7 @@ module.exports = theme => ({
         textTransform: 'none',
       },
       'h5, .h5': {
+        // style
         marginTop: theme('spacing.4'),
         marginBottom: theme('spacing.2'),
         '@apply mt-fc mb-lc': {},
@@ -495,6 +505,7 @@ module.exports = theme => ({
         textTransform: 'none',
       },
       'h6, .h6': {
+        // style
         marginTop: theme('spacing.4'),
         marginBottom: theme('spacing.2'),
         '@apply mt-fc mb-lc': {},
@@ -506,6 +517,7 @@ module.exports = theme => ({
         textTransform: 'uppercase',
       },
       '.h-block': {
+        // style
         marginTop: theme('spacing.8'),
         marginBottom: theme('spacing.6'),
         '@apply mt-fc mb-lc': {},
@@ -515,10 +527,12 @@ module.exports = theme => ({
         paddingRight: theme('spacing.6'),
       },
       'p, .p': {
+        // style
         marginBottom: theme('spacing.5'),
         '@apply text-reset mb-lc': {},
       },
       'ul:not([class]), ol:not([class])': {
+        // style
         marginBottom: theme('spacing.5'),
         '@apply mb-lc': {},
         '> li': {
@@ -536,6 +550,7 @@ module.exports = theme => ({
         },
       },
       'ul:not([class])': {
+        // style
         '> li': {
           paddingLeft: '1.25rem',
           '&:before': {
@@ -545,6 +560,7 @@ module.exports = theme => ({
         },
       },
       'ol:not([class])': {
+        // style
         '> li': {
           counterIncrement: 'ol-counter',
           paddingLeft: '1.5rem',
@@ -558,12 +574,14 @@ module.exports = theme => ({
     // list
     list: {
       '.list': {
+        // setup
         display: 'flex',
         flexWrap: 'wrap',
         flexDirection: 'row',
         alignItems: 'flex-start',
       },
       '.list-block': {
+        // setup
         display: 'flex',
         flexWrap: 'nowrap',
         flexDirection: 'column',
@@ -573,18 +591,32 @@ module.exports = theme => ({
     // row
     row: {
       '.row': {
+        // setup
         display: 'flex',
         flexWrap: 'wrap',
         flexDirection: 'row',
         alignItems: 'flex-start',
       },
       '.row-stretch': {
+        // setup
         alignItems: 'stretch',
         '> *': {
           display: 'flex',
           alignItems: 'stretch',
           '> *': {
             minHeight: '100%',
+          },
+        },
+      },
+      '@media (hover: none)': {
+        '.row-overflow': {
+          // setup
+          '@apply overflow-sub': '',
+          overflowX: 'auto',
+          overflowY: 'hidden',
+          flexWrap: 'nowrap',
+          '> *': {
+            '@apply flex-none': '',
           },
         },
       },

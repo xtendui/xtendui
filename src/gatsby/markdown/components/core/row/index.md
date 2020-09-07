@@ -20,4 +20,9 @@ Use this markup to create a **row**.
   </div>
 </script>
 
-Inside row you should always use columns [columns](/components/core/column), otherwise use [list](/components/core/list) that spaces with spaced with **margin** instead of **padding**.
+Then add and [style content](/components/core/row/content).
+
+<demo>
+  <demovanilla src="vanilla/components/core/row/usage">
+  </demovanilla>
+</demo>

@@ -74,6 +74,15 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 ## Markdown
 
+[[noteDefault]]
+| To customize component's styles follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
+
+[[noteDefault]]
+| To know **spacing utilities values** see the source code of `node_modules/xtend-library/src/tailwind-css.js`.
+
+[[notePrimary]]
+| You should always use **tailwind width classes** inside `.row`.
+
 <div class="table-scroll">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
@@ -120,12 +129,6 @@ Lorem ipsum `dolor sit` amet, *consectetur* **adipiscing** elit. Nam in [laoreet
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut ex at ex pellentesque efficitur.
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut ex at ex pellentesque efficitur. Maecenas pulvinar mauris eget pharetra elementum.
 
-[[noteDefault]]
-| With **multiple mode** you **can't** specify targets with **#id** `.class`.
-
-[[notePrimary]]
-| With **multiple mode** you **can't** specify targets with **#id** `.class`.
-
 <script type="text/plain" class="language-markup">
   <a href="#" class="btn btn-default">
     <!-- content -->
@@ -141,17 +144,12 @@ mkdir -p xtend-library/
 cp -r node_modules/xtend-library/dist/ xtend-library/
 ```
 
-```less
-// test comment
-
-.test > * {
-  @media @min-sm {
-    .test();
-  }
-}
-
+```css
 body {
   background: #ff0000;
+}
+
+.test > * {
 }
 ```
 

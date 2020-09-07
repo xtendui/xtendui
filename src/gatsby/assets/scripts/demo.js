@@ -212,7 +212,7 @@ const populateDemo = (container, i) => {
   // multiple elements
   container.prepend(
     Xt.createElement(
-      '<div class="gatsby_demo_tabs"><div class="gatsby_demo_tabs_left list list-space-1"></div><div class="gatsby_demo_tabs_right list list-space-1"></div></div>'
+      '<div class="gatsby_demo_tabs"><div class="gatsby_demo_tabs_left list list-space-px"></div><div class="gatsby_demo_tabs_right list list-space-px"></div></div>'
     )
   )
   container
@@ -242,7 +242,7 @@ const populateDemo = (container, i) => {
     // tabs
     item.prepend(
       Xt.createElement(
-        '<div class="gatsby_demo_code toggle"><div class="gatsby_demo_code_inner"><div class="gatsby_demo_code_tabs"><div class="gatsby_demo_code_tabs_left list list-space-1"></div><div class="gatsby_demo_code_tabs_right list list-space-1"><button type="button" class="btn btn-tiny btn-clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="gatsby_demo_code_body"></div></div></div>'
+        '<div class="gatsby_demo_code toggle"><div class="gatsby_demo_code_inner"><div class="gatsby_demo_code_tabs"><div class="gatsby_demo_code_tabs_left list list-space-px"></div><div class="gatsby_demo_code_tabs_right list list-space-px"><button type="button" class="btn btn-tiny btn-clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="gatsby_demo_code_body"></div></div></div>'
       )
     )
     // https://github.com/zenorocha/clipboard.js/
