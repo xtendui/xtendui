@@ -696,13 +696,15 @@ module.exports = theme => ({
         marginBottom: theme('spacing.5'),
         '@apply mt-fc mb-lc': {},
         // animation
-        zIndex: theme('zIndex.base'),
-        transitionProperty: theme('transitionProperty.all'),
-        transitionDuration: theme('transitionDuration.500'),
-        transitionTimingFunction: theme('transitionTimingFunction.out'),
-        '&:hover, &:active, &.active': {
-          zIndex: theme('zIndex.active'),
-          transitionTimingFunction: theme('transitionTimingFunction.in'),
+        'a&, button&, label&': {
+          zIndex: theme('zIndex.base'),
+          transitionProperty: theme('transitionProperty.all'),
+          transitionDuration: theme('transitionDuration.500'),
+          transitionTimingFunction: theme('transitionTimingFunction.out'),
+          '&:hover, &:active, &.active': {
+            zIndex: theme('zIndex.active'),
+            transitionTimingFunction: theme('transitionTimingFunction.in'),
+          },
         },
       },
       '.card-small': {
@@ -992,13 +994,15 @@ module.exports = theme => ({
         letterSpacing: theme('letterSpacing.wider'),
         textTransform: 'uppercase',
         // animation
-        zIndex: theme('zIndex.base'),
-        transitionProperty: theme('transitionProperty.all'),
-        transitionDuration: theme('transitionDuration.500'),
-        transitionTimingFunction: theme('transitionTimingFunction.out'),
-        '&:hover, &:active, &.active': {
-          zIndex: theme('zIndex.active'),
-          transitionTimingFunction: theme('transitionTimingFunction.in'),
+        'a&, button&, label&': {
+          zIndex: theme('zIndex.base'),
+          transitionProperty: theme('transitionProperty.all'),
+          transitionDuration: theme('transitionDuration.500'),
+          transitionTimingFunction: theme('transitionTimingFunction.out'),
+          '&:hover, &:active, &.active': {
+            zIndex: theme('zIndex.active'),
+            transitionTimingFunction: theme('transitionTimingFunction.in'),
+          },
         },
       },
       '.badge-small': {

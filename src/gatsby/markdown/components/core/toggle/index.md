@@ -33,7 +33,7 @@ Elements listens to events, targets and inners are activated on events.
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `elements:Query`                          | `:scope > a, :scope > button`        | Elements query            |
-| Option                  | `targets:Query`                          | `:scope > [class^="toggle-"], :scope > [class*=" toggle-"]`        | Targets query            |
+| Option                  | `targets:Query`                          | `:scope > .toggle, :scope > [class^="toggle-"], :scope > [class*=" toggle-"]`        | Targets query            |
 | Option                  | `elementsInner:Query`                          | `false`        | Inner elements query (scope inside elements)            |
 | Option                  | `targetsInner:Query`                          | `false`        | Inner targets query (scope inside targets)     
 

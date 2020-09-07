@@ -1,0 +1,5 @@
+.demo--toggle-custom-options {
+  &:not(.active):not(.out) {
+    display: none;
+  }
+}
