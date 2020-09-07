@@ -1,4 +1,5 @@
 import path from 'path'
+const btnDefault = require('components/snippets/classes/btn-default').default
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -11,15 +12,15 @@ demo.htmlSource = `
 <div class="list list-space-2 items-center"
   data-xt-toggle="{ elements: ':scope > .btn', targets: ':scope > .demo--toggle-custom-options' }">
 
-  <button type="button" class="btn btn-default">
+  <button type="button" class="btn btn-medium ${btnDefault()}">
     Toggle 0
   </button>
 
-  <button type="button" class="btn btn-default">
+  <button type="button" class="btn btn-medium ${btnDefault()}">
     Toggle 1
   </button>
 
-  <button type="button" class="btn btn-default">
+  <button type="button" class="btn btn-medium ${btnDefault()}">
     Toggle 2
   </button>
 

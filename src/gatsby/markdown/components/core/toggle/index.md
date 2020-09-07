@@ -50,7 +50,7 @@ Use this markup to create a **self toggle**.
 </script>
 
 <demo>
-  <demovanilla src="vanilla/components/core/toggle/self">
+  <demovanilla src="vanilla/components/core/toggle/usage-self">
   </demovanilla>
 </demo>
 
@@ -74,9 +74,9 @@ The **unique** mode is useful when triggering **targets outside the scope** of t
 </script>
 
 <demo>
-  <demovanilla src="vanilla/components/core/toggle/unique-single">
+  <demovanilla src="vanilla/components/core/toggle/usage-unique-single">
   </demovanilla>
-  <demovanilla src="vanilla/components/core/toggle/unique-same">
+  <demovanilla src="vanilla/components/core/toggle/usage-unique-same">
   </demovanilla>
 </demo>
 
@@ -99,9 +99,9 @@ Use this markup to create **multiple toggle**.
 </script>
 
 <demo>
-  <demovanilla src="vanilla/components/core/toggle/multiple-default">
+  <demovanilla src="vanilla/components/core/toggle/usage-multiple-default">
   </demovanilla>
-  <demovanilla src="vanilla/components/core/toggle/multiple-custom">
+  <demovanilla src="vanilla/components/core/toggle/usage-multiple-custom">
   </demovanilla>
 </demo>
 

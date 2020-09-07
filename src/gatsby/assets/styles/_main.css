@@ -184,8 +184,12 @@ body {
 
 .gatsby_listing_item {
   &.card {
-    @apply card-primary-full-interactive text-default rounded-md hover:text-inverse hover:text-opacity-75;
+    @apply card-primary-full-interactive text-default rounded-md hover:text-inverse;
     .card-design {
+      top: -20px;
+      left: -25px;
+      bottom: -20px;
+      right: -25px;
       @apply border-transparent bg-transparent;
     }
     .card-block {
@@ -204,6 +208,13 @@ body {
       .card-design {
         @apply border-accent-500 bg-accent-500;
         box-shadow: 0 .2rem .4rem theme('colors.accent.300');
+      }
+    }
+    &:active, &.active {
+      transform: translateY(-.5rem);
+      .card-design {
+        @apply border-accent-600 bg-accent-600;
+        box-shadow: none;
       }
     }
     &:active {

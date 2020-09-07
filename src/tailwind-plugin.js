@@ -4,7 +4,7 @@ const castArray = require('lodash/castArray')
 const base = require('./tailwind-css.js')
 
 module.exports = plugin.withOptions(() => {
-  return function ({ addComponents, addUtilities, theme }) {
+  return function ({ addComponents, addUtilities, addVariant, e, theme }) {
     const xtend = theme(`xtend`, {})
 
     /**
@@ -109,22 +109,11 @@ module.exports = plugin.withOptions(() => {
     /**
      * variant
      */
-    /*
-    addVariant('in', ({ modifySelectors, separator }) => {
+    addVariant('active', ({ modifySelectors, separator }) => {
       modifySelectors(({ className }) => {
-        return `.${e(`in${separator}${className}`)}.in`
+        return `.${e(`active${separator}${className}`)}:active,.${e(`active${separator}${className}`)}.active`
       })
     })
 
-    addVariant('out', ({ modifySelectors, separator }) => {
-      modifySelectors(({ className }) => {
-        return `.${e(`out${separator}${className}`)}.out`
-      })
-    })
-
-    variants: {
-      backgroundColor: ['responsive', 'hover', 'active', 'focus', 'in', 'out'],
-    }
-    */
   }
 })

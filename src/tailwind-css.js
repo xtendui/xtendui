@@ -47,20 +47,20 @@ module.exports = theme => ({
     },
     typography: {
       '.text-default': {
-        color: theme('colors.accent.900'),
+        '@apply text-accent-900': '',
         'a:not([class]), .link': {
-          color: theme('colors.accent.500'),
-          '&:hover': {
-            color: theme('colors.accent.600'),
+          '@apply text-accent-500': '',
+          '&:hover, &:active, &.active': {
+            '@apply text-accent-600': '',
           },
         },
       },
       '.text-inverse': {
-        color: theme('colors.white'),
+        '@apply text-white': '',
         'a:not([class]), .link': {
-          color: theme('colors.white'),
-          '&:hover': {
-            color: theme('colors.white'),
+          '@apply text-white': '',
+          '&:hover, &:active, &.active': {
+            '@apply text-white': '',
           },
         },
       },
@@ -298,11 +298,14 @@ module.exports = theme => ({
         borderWidth: '0',
         backgroundColor: 'transparent',
         boxShadow: 'none',
-        '.card-design': {
+        '> .card-design': {
           display: 'none',
         },
-        '.card-block': {
+        '&, > *': {
           padding: '0',
+          '> .card-block': {
+            padding: '0',
+          },
         },
         '> .btn-close': {
           display: 'none',
@@ -431,7 +434,7 @@ module.exports = theme => ({
         transitionProperty: theme('transitionProperty.colors'),
         transitionDuration: theme('transitionDuration.500'),
         transitionTimingFunction: theme('transitionTimingFunction.ease.out'),
-        '&:hover': {
+        '&:hover, &:active, &.active': {
           transitionTimingFunction: theme('transitionTimingFunction.ease.in'),
         },
       },
@@ -643,7 +646,7 @@ module.exports = theme => ({
         transitionProperty: theme('transitionProperty.all'),
         transitionDuration: theme('transitionDuration.500'),
         transitionTimingFunction: theme('transitionTimingFunction.out'),
-        '&:hover': {
+        '&:hover, &:active, &.active': {
           zIndex: theme('zIndex.active'),
           transitionTimingFunction: theme('transitionTimingFunction.in'),
         },
@@ -697,7 +700,7 @@ module.exports = theme => ({
         transitionProperty: theme('transitionProperty.all'),
         transitionDuration: theme('transitionDuration.500'),
         transitionTimingFunction: theme('transitionTimingFunction.out'),
-        '&:hover': {
+        '&:hover, &:active, &.active': {
           zIndex: theme('zIndex.active'),
           transitionTimingFunction: theme('transitionTimingFunction.in'),
         },
@@ -750,10 +753,10 @@ module.exports = theme => ({
       '.card-default-full-interactive': {
         // styles
         '.card-design': {
-          top: `-${theme('spacing.6')}`,
-          left: `-${theme('spacing.6')}`,
-          bottom: `-${theme('spacing.6')}`,
-          right: `-${theme('spacing.6')}`,
+          top: `-${rem(25)}`,
+          left: `-${rem(30)}`,
+          bottom: `-${rem(25)}`,
+          right: `-${rem(30)}`,
           borderColor: theme('colors.transparent'),
           backgroundColor: theme('colors.transparent'),
         },
@@ -763,14 +766,20 @@ module.exports = theme => ({
             backgroundColor: theme('colors.gray.200'),
           },
         },
+        '&:active, &.active': {
+          '.card-design': {
+            borderColor: theme('colors.gray.300'),
+            backgroundColor: theme('colors.gray.300'),
+          },
+        },
       },
       '.card-primary-full-interactive': {
         // styles
         '.card-design': {
-          top: `-${theme('spacing.6')}`,
-          left: `-${theme('spacing.6')}`,
-          bottom: `-${theme('spacing.6')}`,
-          right: `-${theme('spacing.6')}`,
+          top: `-${rem(25)}`,
+          left: `-${rem(30)}`,
+          bottom: `-${rem(25)}`,
+          right: `-${rem(30)}`,
           borderColor: theme('colors.transparent'),
           backgroundColor: theme('colors.transparent'),
         },
@@ -778,6 +787,12 @@ module.exports = theme => ({
           '.card-design': {
             borderColor: theme('colors.accent.500'),
             backgroundColor: theme('colors.accent.500'),
+          },
+        },
+        '&:active, &.active': {
+          '.card-design': {
+            borderColor: theme('colors.accent.600'),
+            backgroundColor: theme('colors.accent.600'),
           },
         },
       },
@@ -981,7 +996,7 @@ module.exports = theme => ({
         transitionProperty: theme('transitionProperty.all'),
         transitionDuration: theme('transitionDuration.500'),
         transitionTimingFunction: theme('transitionTimingFunction.out'),
-        '&:hover': {
+        '&:hover, &:active, &.active': {
           zIndex: theme('zIndex.active'),
           transitionTimingFunction: theme('transitionTimingFunction.in'),
         },

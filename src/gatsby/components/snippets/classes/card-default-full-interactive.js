@@ -1,3 +1,3 @@
 export default () => {
-  return `text-default rounded-md hover:text-opacity-75`
+  return `text-default rounded-md`
 }

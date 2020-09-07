@@ -92,14 +92,22 @@ module.exports = {
       },
     },
   },
-  /* https://github.com/tailwindlabs/tailwindcss/pull/2309
   variants: {
-    backgroundColor: ['responsive', 'hover', 'focus', 'active'],
-    borderColor: ['responsive', 'hover', 'focus', 'active'],
-    textOpacity: ['responsive', 'hover', 'focus', 'active'],
-    textColor: ['responsive', 'hover', 'focus', 'active'],
+    backgroundColor: ({ after }) => after(['active'], 'hover'),
+    gradientColorStops: ({ after }) => after(['active'], 'hover'),
+    backgroundOpacity: ({ after }) => after(['active'], 'hover'),
+    borderColor: ({ after }) => after(['active'], 'hover'),
+    borderOpacity: ({ after }) => after(['active'], 'hover'),
+    boxShadow: ({ after }) => after(['active'], 'hover'),
+    opacity: ({ after }) => after(['active'], 'hover'),
+    textColor: ({ after }) => after(['active'], 'hover'),
+    textOpacity: ({ after }) => after(['active'], 'hover'),
+    textDecoration: ({ after }) => after(['active'], 'hover'),
+    scale: ({ after }) => after(['active'], 'hover'),
+    rotate: ({ after }) => after(['active'], 'hover'),
+    translate: ({ after }) => after(['active'], 'hover'),
+    skew: ({ after }) => after(['active'], 'hover'),
   },
-  */
   plugins: [require('./src/tailwind-plugin')],
   experimental: {
     applyComplexClasses: true,
