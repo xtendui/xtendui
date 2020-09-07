@@ -25,7 +25,7 @@ If you want a drop with size and position **relative to a parent Node** use `dro
 
 ## Disable
 
-You can disable styles and javascript using `.drop-container-disable`.
+You can disable styles and javascript using `.drop-container-disable`. [responsive bug](https://github.com/tailwindlabs/tailwindcss/issues/2302).
 
 <div class="table-scroll">
 

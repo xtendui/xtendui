@@ -32,7 +32,7 @@ With `.overlay-screen` you can also use **tailwind classes** to modify `.overlay
 
 ## Disable
 
-You can disable styles and javascript using `.overlay-disable`.
+You can disable styles and javascript using `.overlay-disable`. [responsive bug](https://github.com/tailwindlabs/tailwindcss/issues/2302).
 
 <div class="table-scroll">
 
