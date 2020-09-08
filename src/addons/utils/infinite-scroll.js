@@ -136,9 +136,8 @@ class Infinitescroll {
    */
   eventUnload() {
     const self = this
-    const options = self.options
     // save scroll position
-    if (self.scrollResume && self.current !== options.min) {
+    if (self.scrollResume) {
       history.replaceState({ scrollResume: self.scrollResume }, '', self.url.href)
       document.scrollingElement.scrollTop = 0
     }
@@ -167,6 +166,7 @@ class Infinitescroll {
       self.setCurrent(parseFloat(found.getAttribute('data-xt-infinitescroll-item-first')))
       // save scroll position
       self.scrollResume = top + scrollInitial - found.offsetTop
+      console.log(self.scrollResume)
       // replace state
       const linkOrigin = self.url.origin || self.url.protocol + '//' + self.url.host
       if (linkOrigin === location.origin) {
