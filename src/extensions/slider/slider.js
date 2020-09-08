@@ -29,7 +29,6 @@ class Slider extends Xt.Toggle {
     // dragger
     if (options.drag && options.drag.dragger) {
       self.dragger = self.object.querySelector(options.drag.dragger)
-      self.destroyElements.push(self.dragger)
     }
     // @FIX performances
     self.detail.objectWidth = self.object.offsetWidth
@@ -435,7 +434,7 @@ class Slider extends Xt.Toggle {
       )
       const events = ['mousedown', 'touchstart']
       for (const event of events) {
-        dragger.addEventListener(event, dragstartHandler, { passive: true })
+        addEventListener(event, dragstartHandler, { passive: true })
       }
       // xt-grab
       if (!self.disabled) {
@@ -477,6 +476,10 @@ class Slider extends Xt.Toggle {
   eventDragstartHandler(dragger, e) {
     const self = this
     const options = self.options
+    // not when outside dragger
+    if (!dragger.contains(e.target)) {
+      return
+    }
     // handler
     if (!e.button || e.button !== 2) {
       // not right click or it gets stuck
