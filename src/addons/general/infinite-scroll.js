@@ -40,6 +40,9 @@ class InfiniteScroll {
     self.triggerElement = self.object.querySelector(self.options.elements.trigger)
     self.resetElement = self.object.querySelector(self.options.elements.reset)
     self.itemsElement = self.object.querySelector(self.options.elements.items)
+    // unload
+    const unloadHandler = Xt.dataStorage.put(window, 'on.xt.unload' + '/' + self.namespace, self.eventUnloadHandler.bind(self))
+    addEventListener('unload', unloadHandler)
     // scroll
     const scrollHandler = Xt.dataStorage.put(window, 'on.xt.scroll' + '/' + self.namespace, self.eventScrollHandler.bind(self))
     addEventListener('scroll', scrollHandler)
@@ -88,7 +91,15 @@ class InfiniteScroll {
   //
 
   /**
-   * element on handler
+   * unload handler
+   */
+  eventUnloadHandler() {
+    const self = this
+    self.eventUnload()
+  }
+
+  /**
+   * scroll handler
    * @param {Event} e
    */
   eventScrollHandler(e = null) {
@@ -129,6 +140,19 @@ class InfiniteScroll {
   }
 
   /**
+   * unload
+   */
+  eventUnload() {
+    const self = this
+    const options = self.options
+    // save scroll position
+    if (self.scrollResume && self.current !== options.min) {
+      history.replaceState({ scrollResume: self.scrollResume }, '', self.url.href)
+      document.scrollingElement.scrollTop = 0
+    }
+  }
+
+  /**
    * scroll
    */
   eventScroll() {
@@ -149,9 +173,22 @@ class InfiniteScroll {
         }
       }
       self.setCurrent(parseFloat(found.getAttribute('data-xt-infinitescroll-item-first')))
+      // save scroll position
+      self.scrollResume = top + scrollInitial - found.offsetTop
       // replace state
-      const scrollResume = top + scrollInitial - found.offsetTop
-      history.replaceState({ scrollResume: scrollResume }, null, self.url.href)
+      const linkOrigin = self.url.origin || self.url.protocol + '//' + self.url.host
+      if (linkOrigin === location.origin) {
+        if (self.url.href !== location.href) {
+          history.replaceState(null, '', self.url.href)
+          if (Xt.debug === true) {
+            console.debug('Xt.debug: xt-infinitescroll history replace', self.url.href)
+          }
+        }
+      } else {
+        if (Xt.debug === true) {
+          console.error('Xt.debug: xt-infinitescroll cannot set history with different origin', linkOrigin)
+        }
+      }
       // request if on bottom
       if (self.options.events.scroll) {
         const bottom = self.scrollElement.offsetTop + self.scrollElement.offsetHeight
@@ -331,9 +368,8 @@ class InfiniteScroll {
   destroy() {
     const self = this
     // class
-    if (self.options.scroll) {
-      removeEventListener('scroll', self.eventScroll.bind(self))
-    }
+    removeEventListener('unload', self.eventUnloadHandler.bind(self))
+    removeEventListener('scroll', self.eventScrollHandler.bind(self))
     // set self
     Xt.remove(self.componentName, self.object)
     // listener dispatch
