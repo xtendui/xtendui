@@ -144,9 +144,8 @@ class InfiniteScroll {
    */
   eventUnload() {
     const self = this
-    const options = self.options
     // save scroll position
-    if (self.scrollResume && self.current !== options.min) {
+    if (self.scrollResume) {
       history.replaceState({ scrollResume: self.scrollResume }, '', self.url.href)
       document.scrollingElement.scrollTop = 0
     }
