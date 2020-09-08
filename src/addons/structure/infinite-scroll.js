@@ -43,6 +43,9 @@ class InfiniteScroll {
     // unload
     const unloadHandler = Xt.dataStorage.put(window, 'on.xt.unload' + '/' + self.namespace, self.eventUnloadHandler.bind(self))
     addEventListener('unload', unloadHandler)
+    // beforeunload
+    const beforeunloadHandler = Xt.dataStorage.put(window, 'on.xt.beforeunload' + '/' + self.namespace, self.eventBeforeunloadHandler.bind(self))
+    addEventListener('beforeunload', beforeunloadHandler)
     // scroll
     const scrollHandler = Xt.dataStorage.put(window, 'on.xt.scroll' + '/' + self.namespace, self.eventScrollHandler.bind(self))
     addEventListener('scroll', scrollHandler)
@@ -99,6 +102,14 @@ class InfiniteScroll {
   }
 
   /**
+   * beforeunload handler
+   */
+  eventBeforeunloadHandler() {
+    const self = this
+    self.eventBeforeunload()
+  }
+
+  /**
    * scroll handler
    * @param {Event} e
    */
@@ -146,8 +157,18 @@ class InfiniteScroll {
     const self = this
     // save scroll position
     if (self.scrollResume) {
-      history.replaceState({ scrollResume: self.scrollResume }, '', self.url.href)
       document.scrollingElement.scrollTop = 0
+    }
+  }
+
+  /**
+   * unload
+   */
+  eventBeforeunload() {
+    const self = this
+    // save scroll position
+    if (self.scrollResume) {
+      history.replaceState({ scrollResume: self.scrollResume }, '', self.url.href)
     }
   }
 
@@ -368,6 +389,7 @@ class InfiniteScroll {
     const self = this
     // class
     removeEventListener('unload', self.eventUnloadHandler.bind(self))
+    removeEventListener('beforeunload', self.eventBeforeunloadHandler.bind(self))
     removeEventListener('scroll', self.eventScrollHandler.bind(self))
     // set self
     Xt.remove(self.componentName, self.object)
