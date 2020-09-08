@@ -260,10 +260,14 @@ class GoogleLocator {
         }
       }
     }
-    // populate items for infowindow BEFORE sort order locations
-    self.populateItems()
+    // assign index before sort
+    for (const [i, loc] of self.locations.entries()) {
+      loc.index = i
+    }
     // order locations
-    options.formatData.sort(self, self.locations)
+    options.formatData.sort(self)
+    // populate items after order
+    self.populateItems()
     // markers
     if (options.map.cluster) {
       if (self.cluster) {
@@ -312,8 +316,8 @@ class GoogleLocator {
       remove.remove()
     }
     // populateItem
-    for (const [i, loc] of self.locations.entries()) {
-      self.populateItem(loc, i)
+    for (const loc of self.locations) {
+      self.populateItem(loc)
     }
   }
 
@@ -339,9 +343,8 @@ class GoogleLocator {
   /**
    * populateItem
    * @param {Object} loc
-   * @param {Number} index
    */
-  populateItem(loc, index) {
+  populateItem(loc) {
     const self = this
     const options = self.options
     // clone
@@ -349,7 +352,7 @@ class GoogleLocator {
     cloned.innerHTML = self.itemsTemplate.innerHTML
     cloned = cloned.querySelector(':scope > *')
     cloned.classList.add('xt-google-locator-clone')
-    cloned.setAttribute('data-xt-google-locator-index', index.toString())
+    cloned.setAttribute('data-xt-google-locator-index', loc.index.toString())
     // append clone
     self.itemsContainer.append(cloned)
     // populate clone
@@ -587,19 +590,23 @@ GoogleLocator.optionsDefault = {
     lng: function (self, marker) {
       return marker.lng
     },
-    sort: function (self, locations) {
+    sort: function (self) {
       if (self.searchInput.value === '') {
-        locations.sort((a, b) => {
-          if (a.marker.name > b.marker.name) {
+        self.locations.sort((a, b) => {
+          const aName = a.marker.name.toUpperCase()
+          const bName = b.marker.name.toUpperCase()
+          if (aName > bName) {
             return 1
           }
-          if (b.marker.name > a.marker.name) {
+          if (aName < bName) {
             return -1
           }
           return 0
         })
       } else {
-        locations.sort((a, b) => a.distance - b.distance)
+        self.locations.sort((a, b) => {
+          return a.distance - b.distance
+        })
       }
     },
     filter: function (self, marker, filter) {
@@ -662,24 +669,6 @@ GoogleLocator.optionsDefault = {
   // marker
   markers: [
     {
-      lat: 40.72308,
-      lng: -73.98434,
-      name: 'Restaurant 1',
-      address: 'Via Foo, 19 - 35141 City PD',
-      additional: '<a href="tel:+39333010101">+39 333 010101</a><br/><a href="mailto:info@info.com">info@info.com</a>',
-      type: ['restaurant'],
-      fav: true,
-    },
-    {
-      lat: 40.724705,
-      lng: -73.986611,
-      name: 'School 1',
-      address: 'Via Foo, 19 - 35141 City PD',
-      additional: '<a href="tel:+39333010101">+39 333 010101</a><br/><a href="mailto:info@info.com">info@info.com</a>',
-      type: ['school'],
-      fav: true,
-    },
-    {
       lat: 40.724165,
       lng: -73.983883,
       name: 'School 2',
@@ -696,6 +685,24 @@ GoogleLocator.optionsDefault = {
       additional: '<a href="tel:+39333010101">+39 333 010101</a><br/><a href="mailto:info@info.com">info@info.com</a>',
       type: ['restaurant'],
       fav: false,
+    },
+    {
+      lat: 40.72308,
+      lng: -73.98434,
+      name: 'Restaurant 1',
+      address: 'Via Foo, 19 - 35141 City PD',
+      additional: '<a href="tel:+39333010101">+39 333 010101</a><br/><a href="mailto:info@info.com">info@info.com</a>',
+      type: ['restaurant'],
+      fav: true,
+    },
+    {
+      lat: 40.724705,
+      lng: -73.986611,
+      name: 'School 1',
+      address: 'Via Foo, 19 - 35141 City PD',
+      additional: '<a href="tel:+39333010101">+39 333 010101</a><br/><a href="mailto:info@info.com">info@info.com</a>',
+      type: ['school'],
+      fav: true,
     },
     {
       lat: 40.732056,
