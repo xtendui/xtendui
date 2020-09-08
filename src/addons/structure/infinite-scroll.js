@@ -174,7 +174,6 @@ class InfiniteScroll {
       self.setCurrent(parseFloat(found.getAttribute('data-xt-infinitescroll-item-first')))
       // save scroll position
       self.scrollResume = top + scrollInitial - found.offsetTop
-      console.log(self.scrollResume)
       // replace state
       const linkOrigin = self.url.origin || self.url.protocol + '//' + self.url.host
       if (linkOrigin === location.origin) {
