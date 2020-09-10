@@ -592,7 +592,14 @@ class Slider extends Xt.Toggle {
   eventDragHandler(dragger, e) {
     const self = this
     // logic
-    self.logicDrag(dragger, e)
+    cancelAnimationFrame(Xt.dataStorage.get(dragger, self.componentNamespace + 'DragFrame'))
+    Xt.dataStorage.set(
+      dragger,
+      self.componentNamespace + 'DragFrame',
+      requestAnimationFrame(() => {
+        self.logicDrag(dragger, e)
+      })
+    )
   }
 
   /**
