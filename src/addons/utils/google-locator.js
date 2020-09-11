@@ -459,13 +459,14 @@ class Googlelocator {
    */
   locateSuccess(pos) {
     const self = this
+    const options = self.options
     // loader
     self.loaderHide()
     // position
     self.searchInput.value = self.locateElement.getAttribute('data-xt-googlelocator-locate-btn')
     self.position = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude)
     self.viewport = null
-    self.radius = null
+    self.radius = options.locateRadius
     self.locateCache = { value: self.searchInput.value, position: self.position }
     // debug
     if (Xt.debug === true) {
@@ -542,6 +543,7 @@ Googlelocator.componentName = 'xt-googlelocator'
 Googlelocator.optionsDefault = {
   initialLocate: false,
   initialSearch: false,
+  locateRadius: 25000,
   seachMapBounds: false,
   events: {
     animateMarkerClick: false,
