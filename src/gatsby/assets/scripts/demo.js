@@ -1,6 +1,7 @@
 import Prism from 'prismjs'
 import ClipboardJS from 'clipboard'
 import { Xt } from 'xtend-library/src/xt.js'
+import 'xtend-library/src/core/toggle/toggle.js'
 import kebabCase from 'lodash.kebabcase'
 
 require('prismjs/plugins/unescaped-markup/prism-unescaped-markup')
