@@ -2,8 +2,8 @@
 type: "Components"
 category: "Extensions"
 parent: "Slider"
-title: "Activation"
-date: "2019-11-04"
+title: "Other"
+date: "2005-10-10"
 ---
 
 ## Media loaded

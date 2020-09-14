@@ -70,8 +70,8 @@ class Toggle {
     // classes
     self.classes = self.options.class ? [...self.options.class.split(' ')] : []
     self.classesIn = self.options.classIn ? [...self.options.classIn.split(' ')] : []
-    self.classesInDone = self.options.classInDone ? [...self.options.classInDone.split(' ')] : []
     self.classesOut = self.options.classOut ? [...self.options.classOut.split(' ')] : []
+    self.classesDone = self.options.classDone ? [...self.options.classDone.split(' ')] : []
     self.classesInitial = self.options.classInitial ? [...self.options.classInitial.split(' ')] : []
     self.classesInverse = self.options.classInverse ? [...self.options.classInverse.split(' ')] : []
   }
@@ -267,21 +267,14 @@ class Toggle {
           found = true
         }
         requestAnimationFrame(() => {
-          elReset.classList.remove(
-            ...self.classes,
-            ...self.classesIn,
-            ...self.classesInDone,
-            ...self.classesOut,
-            ...self.classesInitial,
-            ...self.classesInverse
-          )
+          elReset.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesDone, ...self.classesInitial, ...self.classesInverse)
           const elementsInner = Xt.queryAll(elReset, options.elementsInner)
           for (const elementInner of elementsInner) {
             elementInner.classList.remove(
               ...self.classes,
               ...self.classesIn,
-              ...self.classesInDone,
               ...self.classesOut,
+              ...self.classesDone,
               ...self.classesInitial,
               ...self.classesInverse
             )
@@ -1181,8 +1174,8 @@ class Toggle {
     // activation
     el.classList.add(...self.classes)
     el.classList.remove(...self.classesIn)
-    el.classList.remove(...self.classesInDone)
     el.classList.remove(...self.classesOut)
+    el.classList.remove(...self.classesDone)
     // keep the same level of raf as others
     cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'ActivateFrame'))
     Xt.dataStorage.put(
@@ -1210,7 +1203,7 @@ class Toggle {
   activateDone(el) {
     const self = this
     // activation
-    el.classList.add(...self.classesInDone)
+    el.classList.add(...self.classesDone)
   }
 
   /**
@@ -1222,8 +1215,8 @@ class Toggle {
     // activation
     el.classList.remove(...self.classes)
     el.classList.remove(...self.classesIn)
-    el.classList.remove(...self.classesInDone)
     el.classList.add(...self.classesOut)
+    el.classList.remove(...self.classesDone)
     if (self.direction >= 0) {
       el.classList.remove(...self.classesInverse)
     } else {
@@ -3072,8 +3065,8 @@ Toggle.optionsDefaultSuper = {
   // class
   class: 'active active-toggle',
   classIn: 'in',
-  classInDone: 'in-done',
   classOut: 'out',
+  classDone: 'done',
   classInitial: 'initial',
   classInverse: 'inverse',
   // quantity

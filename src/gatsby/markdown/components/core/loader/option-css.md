@@ -3,7 +3,7 @@ type: "Components"
 category: "Extensions"
 parent: "Loader"
 title: "Option Css"
-date: "2019-12-01"
+date: "2015-10-10"
 ---
 
 ## Spinner

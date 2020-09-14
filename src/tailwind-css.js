@@ -33,7 +33,7 @@ module.exports = theme => ({
         },
       },
       '.toggle-inverse': {
-        '&.in-done': {
+        '&.active': {
           display: 'none',
         },
       },
@@ -704,10 +704,6 @@ module.exports = theme => ({
         alignItems: 'stretch',
         justifyContent: 'flex-start',
         width: '100%',
-        // styles
-        marginTop: theme('spacing.5'),
-        marginBottom: theme('spacing.5'),
-        '@apply mt-fc mb-lc': {},
         // animation
         'a&, button&, label&': {
           zIndex: theme('zIndex.base'),

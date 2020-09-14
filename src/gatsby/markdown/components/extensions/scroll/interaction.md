@@ -2,8 +2,8 @@
 type: "Components"
 category: "Extensions"
 parent: "Scroll"
-title: "Option Js"
-date: "2019-05-05"
+title: "Interaction"
+date: "2010-10-10"
 ---
 
 ## Class
@@ -17,12 +17,13 @@ You can customize the class names used with the component.
 | Option                  | `class:String`                          | `fade fade-scroll`        | Class name for activation            |
 | Option                  | `classIn:String`                          | `fade-in`        | Class name for in animation            |
 | Option                  | `classOut:String`                          | `fade-out`        | Class name for out animation            |
+| Option                  | `classDone:String`                          | `done`        | Class name for in animation done            |
 | Option                  | `classInitial:String`                          | `initial`        | Class name for initialization            |
 | Option                  | `classInverse:String`                          | `inverse`        | Class name for inverse direction activation            |
 
 </div>
 
-You can start with toggled elements and targets just by adding **one of the initialization classes** to the **elements** or **targets**.
+You can start with toggled elements and targets just by adding **one of the class names for activation** to the **elements** or **targets**.
 
 Additionally on component initialization the class `xt-scroll` gets added to the **object** (the DOM element you assigned the component).
 

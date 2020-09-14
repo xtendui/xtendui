@@ -10,10 +10,10 @@
   z-index: @index-top;
   // animation
   opacity: 0;
-  &.active {
+  &.in {
     .anim-y.in();
   }
-  &:not(.active) {
+  &.out {
     .anim-y-inverse.out();
   }
 }

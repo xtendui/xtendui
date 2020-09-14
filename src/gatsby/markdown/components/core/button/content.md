@@ -17,7 +17,7 @@ Use `.link` to create a [link](/components/core/link).
   </demovanilla>
 </demo>
 
-Use `.text-inverse` to have white links.
+Inside `.text-inverse` buttons are styled accordingly.
 
 <demo>
   <demovanilla src="vanilla/components/core/button/inverse">

@@ -2,8 +2,8 @@
 type: "Components"
 category: "Core"
 parent: "Toggle"
-title: "Option Js"
-date: "2019-05-05"
+title: "Interaction"
+date: "2010-10-10"
 ---
 
 ## Class
@@ -17,6 +17,7 @@ You can customize the class names used with the component.
 | Option                  | `class:String`                          | `active active-toggle`        | Class name for activation            |
 | Option                  | `classIn:String`                          | `in`        | Class name for in animation            |
 | Option                  | `classOut:String`                          | `out`        | Class name for out animation            |
+| Option                  | `classDone:String`                          | `done`        | Class name for in animation done            |
 | Option                  | `classInitial:String`                          | `initial`        | Class name for initialization            |
 | Option                  | `classInverse:String`                          | `inverse`        | Class name for inverse direction activation            |
 
@@ -27,7 +28,7 @@ You can customize the class names used with the component.
   </demovanilla>
 </demo>
 
-You can start with toggled elements and targets just by adding **one of the initialization classes** to the **elements** or **targets**.
+You can start with toggled elements and targets just by adding **one of the class names for activation** to the **elements** or **targets**.
 
 <demo>
   <demovanilla src="vanilla/components/core/toggle/start">
@@ -39,6 +40,29 @@ Additionally on component initialization the class `xt-toggle` gets added to the
 ## Block
 
 You can block the activations with the class `.xt-block` on elements. See the [api demo](/components/core/toggle/api#demo)
+
+## Toggle
+
+The util class `.toggle` sets `display: none` when **not activated**. If you want `display: none` when **activated** `.toggle-inverse`.
+
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
+| Util                  | `.toggle`                     | `toggle`                | `responsive`                | Toggle `display: none` on `.active` and `.out`            |
+| Util                  | `.toggle-inverse`                     | `toggle-inverse`                | `responsive`                | Toggle `display: none` on `.done`         |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/core/toggle/toggle">
+  </demovanilla>
+</demo>
+
+<demo>
+  <demovanilla src="vanilla/components/core/toggle/toggle-inverse">
+  </demovanilla>
+</demo>
 
 ## Quantity
 

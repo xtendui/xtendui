@@ -3,7 +3,7 @@ type: "Components"
 category: "Core"
 parent: "Form"
 title: "Check and Radio"
-date: "2019-06-01"
+date: "2010-10-10"
 ---
 
 ## Usage

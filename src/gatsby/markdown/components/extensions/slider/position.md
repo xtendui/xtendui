@@ -3,7 +3,7 @@ type: "Components"
 category: "Extensions"
 parent: "Slider"
 title: "Position"
-date: "2019-11-05"
+date: "2009-10-10"
 ---
 
 ## Align
