@@ -21,9 +21,11 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
   </div>
   <demovanilla src="vanilla/components/extensions/slider/progress">
   </demovanilla>
-  <demovanilla src="vanilla/components/core/toggle/timing-duration">
+  <demovanilla src="vanilla/components/core/toggle/timing">
   </demovanilla>
-  <demovanilla src="vanilla/components/core/toggle/timing-delay-fnc">
+  <demovanilla src="vanilla/components/core/toggle/auto">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/toggle/prevent-event">
   </demovanilla>
   <demovanilla src="vanilla/components/extensions/slider/overflow-auto-false">
   </demovanilla>
@@ -33,10 +35,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
   <demovanilla src="vanilla/components/core/drop/event">
   </demovanilla>
   <demovanilla src="vanilla/components/core/drop/backdrop">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/prevent-event">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/prevent-event-hover">
   </demovanilla>
   <demovanilla src="vanilla/components/core/overlay/disable">
   </demovanilla>

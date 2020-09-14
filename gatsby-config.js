@@ -21,7 +21,6 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-postcss',
-    'gatsby-plugin-less',
     // manifest
     {
       resolve: 'gatsby-plugin-manifest',

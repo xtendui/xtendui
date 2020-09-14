@@ -10,7 +10,8 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-space-2 items-center" data-xt-toggle>
+<div class="list list-space-2 items-center"
+     data-xt-toggle="{ auto: { time: 2000, initial: false, step: 3, inverse: true, pause: ':scope > button, .toggle' } }">
 
   <button type="button" class="btn btn-medium ${btnDefault()}">
     Toggle 0
@@ -20,29 +21,36 @@ demo.htmlSource = `
     Toggle 1
   </button>
 
-  <button type="button" class="btn btn-medium ${btnDefault()}">
+  <button type="button" class="btn btn-medium ${btnDefault()} active-toggle">
     Toggle 2
+  </button>
+
+  <button type="button" class="btn btn-medium ${btnDefault()}">
+    Toggle 3
+  </button>
+
+  <button type="button" class="btn btn-medium ${btnDefault()}">
+    Toggle 4
   </button>
 
   <div class="card card-block card-block-small toggle ${cardDefault()}">
     Target 0
-    <div class="card card-block card-block-small toggle ${cardDefault()}">
-      Nested targets are not toggled
-    </div>
   </div>
 
   <div class="card card-block card-block-small toggle ${cardDefault()}">
     Target 1
-    <div class="card card-block card-block-small toggle ${cardDefault()}">
-      Nested targets are not toggled
-    </div>
   </div>
 
   <div class="card card-block card-block-small toggle ${cardDefault()}">
     Target 2
-    <div class="card card-block card-block-small toggle ${cardDefault()}">
-      Nested targets are not toggled
-    </div>
+  </div>
+
+  <div class="card card-block card-block-small toggle ${cardDefault()}">
+    Target 3
+  </div>
+
+  <div class="card card-block card-block-small toggle ${cardDefault()}">
+    Target 4
   </div>
 
 </div>

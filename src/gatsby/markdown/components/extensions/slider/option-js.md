@@ -8,7 +8,7 @@ date: "2019-05-05"
 
 ## Class
 
-You can customize the classnames used with the component.
+You can customize the class names used with the component.
 
 <div class="table-scroll">
 
@@ -22,9 +22,9 @@ You can customize the classnames used with the component.
 
 </div>
 
-You can start with toggled elements and targets just by adding **one of the activation classes** to the **elements** or **targets**.
+You can start with toggled elements and targets just by adding **one of the initialization classes** to the **elements** or **targets**.
 
-Additionally on component initialization the class `xt-slider` gets added to the object (the DOM element you assigned the component) useful if you want to animate with css on component intialization. `classInitial` and `classInverse` are useful if you want to animate with css depending on initial activation or direction of the activation. For javascript animation you can use the [api properties](/components/extensions/slider/api#properties).
+Additionally on component initialization the class `xt-slider` gets added to the **object** (the DOM element you assigned the component).
 
 ## Block
 
@@ -160,7 +160,7 @@ Use `wheel: { selector: 'object' }` or `wheel: { selector: QuerySelector }` to e
 </div>
 
 [[notePrimary]]
-| Auto doesn't run if the slider is `display: none`. Start it manually when visible when using [slider events](/components/extensions/slider/api#trigger).
+| Auto doesn't run if the slider is `display: none`. Start it manually when visible using [slider events](/components/extensions/slider/api#trigger).
 
 Use the [api](/components/extensions/slider/api#listen) and listen to events to make auto progress indicators.
 

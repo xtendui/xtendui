@@ -23,8 +23,6 @@ If the toggle is on `"on": "mouseenter"` or `"on": "mousehover"` the link gets a
 <demo>
   <demovanilla src="vanilla/components/core/toggle/prevent-event">
   </demovanilla>
-  <demovanilla src="vanilla/components/core/toggle/prevent-event-hover">
-  </demovanilla>
 </demo>
 
 ## Group
@@ -33,17 +31,6 @@ If you need to toggle **multiple targets** with the **same element** assign `dat
 
 <demo>
   <demovanilla src="vanilla/components/core/toggle/group">
-  </demovanilla>
-</demo>
-
-## Toggles
-
-The toggle class utils are this, they toggle on activation the `display` or `visibility` property: `.toggle` `.toggle` `.toggle-inline-flex` `.toggle-inline` `.toggle-visible` `.toggle-hidden`.
-
-You can make a target inverse toggle (`display: none` when active), just use `.toggle-none`:
-
-<demo>
-  <demovanilla src="vanilla/components/core/toggle/inverse">
   </demovanilla>
 </demo>
 

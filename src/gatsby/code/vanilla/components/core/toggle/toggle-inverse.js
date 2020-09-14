@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-space-2 items-center demo--toggle-js">
+<div class="list list-space-2 items-center" data-xt-toggle>
 
   <button type="button" class="btn btn-medium ${btnDefault()}">
     Toggle 0
@@ -20,20 +20,12 @@ demo.htmlSource = `
     Toggle 1
   </button>
 
-  <button type="button" class="btn btn-medium ${btnDefault()}">
-    Toggle 2
-  </button>
-
-  <div class="card card-block card-block-small toggle ${cardDefault()}">
+  <div class="card card-block card-block-small toggle-inverse ${cardDefault()}">
     Target 0
   </div>
 
-  <div class="card card-block card-block-small toggle ${cardDefault()}">
+  <div class="card card-block card-block-small toggle-inverse ${cardDefault()}">
     Target 1
-  </div>
-
-  <div class="card card-block card-block-small toggle ${cardDefault()}">
-    Target 2
   </div>
 
 </div>

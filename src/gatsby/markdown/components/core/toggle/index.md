@@ -105,6 +105,25 @@ Use this markup to create **multiple toggle**.
   </demovanilla>
 </demo>
 
+#### Toggle
+
+The util class `.toggle` sets `display: none` when **not activated**. If you want `display: none` when **activated** `.toggle-inverse`.
+
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
+| Util                  | `.toggle`                     | `toggle`                | `responsive`                | Toggle `display: none` on `.active` and `.out`            |
+| Util                  | `.toggle-inverse`                     | `toggle-inverse`                | `responsive`                | Toggle `display: none` on `.in-done`         |
+
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/core/toggle/toggle-inverse">
+  </demovanilla>
+</demo>
+
 ## Initialization
 
 Initialize automatically within markup with `[data-xt-toggle="{ <options> }"]` on the **object**.

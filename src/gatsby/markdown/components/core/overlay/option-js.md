@@ -8,7 +8,7 @@ date: "2019-05-05"
 
 ## Class
 
-You can customize the classnames used with the component.
+You can customize the class names used with the component.
 
 <div class="table-scroll">
 
@@ -22,9 +22,9 @@ You can customize the classnames used with the component.
 
 </div>
 
-You can start with toggled elements and targets just by adding **one of the activation classes** to the **elements** or **targets**.
+You can start with toggled elements and targets just by adding **one of the initialization classes** to the **elements** or **targets**.
 
-Additionally on component initialization the class `xt-overlay` gets added to the object (the DOM element you assigned the component) useful if you want to animate with css on component intialization. `classInitial` and `classInverse` are useful if you want to animate with css depending on initial activation or direction of the activation. For javascript animation you can use the [api properties](/components/core/overlay/api#properties).
+Additionally on component initialization the class `xt-overlay` gets added to the **object** (the DOM element you assigned the component).
 
 ## Block
 

@@ -1,4 +1,6 @@
 import { Xt } from 'xtend-library/src/xt.js'
+const btnDefault = require('components/snippets/classes/btn-default').default
+const cardDefault = require('components/snippets/classes/card-default').default
 
 Xt.mount.push({
   matches: '#demo--toggle-events',
@@ -7,7 +9,7 @@ Xt.mount.push({
 
     let self = new Xt.Toggle(object, {
       elements: 'a, button',
-      targets: '[class^="toggle-"], [class*=" toggle-"]',
+      targets: '.toggle',
       min: 1,
       auto: {
         time: 2000,
@@ -86,11 +88,11 @@ Xt.mount.push({
         logAdd('<strong>add</strong>')
         // elements
         const elIndex = self.getElementsGroups().length
-        const strEl = `<button type="button" class="btn btn-default">Toggle ${elIndex}</button>`
+        const strEl = `<button type="button" class="btn btn-medium ${btnDefault()}">Toggle ${elIndex}</button>`
         document.querySelector('#demo--toggle-events-elements').append(Xt.createElement(strEl))
         // targets
         const indexTr = self.getTargetsGroups().length
-        const strTr = `<div class="note note-default note-background toggle">Target ${indexTr}</div>`
+        const strTr = `<div class="card card-block card-block-small toggle ${cardDefault()}">Target ${indexTr}</div>`
         document.querySelector('#demo--toggle-events-targets').append(Xt.createElement(strTr))
         // reinit
         logAdd('<strong>reinit</strong>')

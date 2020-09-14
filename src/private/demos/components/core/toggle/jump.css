@@ -1,0 +1,8 @@
+.demo--toggle-jump {
+  opacity: .5;
+  transition: opacity theme('transitionDuration.500') theme('transitionTimingFunction.out');
+  &.active {
+    opacity: 1;
+    transition: opacity theme('transitionDuration.500') theme('transitionTimingFunction.in');
+  }
+}

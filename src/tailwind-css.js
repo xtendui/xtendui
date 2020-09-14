@@ -409,6 +409,14 @@ module.exports = theme => ({
           content: 'xt-disable-after-init',
         },
       },
+      '.xt-jump': {
+        '&:not(.active)': {
+          cursor: 'pointer',
+        },
+        '&.xt-jumps-none, .xt-jumps-none &': {
+          cursor: 'inherit',
+        },
+      },
     },
     // typography
     typography: {
@@ -573,6 +581,10 @@ module.exports = theme => ({
           },
         },
       },
+      hr: {
+        marginTop: theme('spacing.5'),
+        marginBottom: theme('spacing.5'),
+      },
     },
     // list
     list: {
@@ -628,13 +640,15 @@ module.exports = theme => ({
     btn: {
       '.btn': {
         // setup
-        cursor: 'pointer',
         display: 'inline-flex',
         position: 'relative',
         verticalAlign: 'middle',
         flexWrap: 'nowrap',
         alignItems: 'center',
         justifyContent: 'space-between',
+        '&:not(.disabled)': {
+          cursor: 'pointer',
+        },
         // styles
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
@@ -668,7 +682,6 @@ module.exports = theme => ({
       },
       '.btn-close': {
         // setup
-        cursor: 'pointer',
         position: 'absolute',
         zIndex: theme('zIndex.top'),
         top: '0',

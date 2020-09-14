@@ -10,7 +10,8 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-space-2 items-center" data-xt-toggle>
+<div class="list list-space-2 items-center"
+     data-xt-toggle="{ min: 2, max: 2, autoDisable: true }">
 
   <button type="button" class="btn btn-medium ${btnDefault()}">
     Toggle 0
@@ -24,25 +25,24 @@ demo.htmlSource = `
     Toggle 2
   </button>
 
+  <button type="button" class="btn btn-medium ${btnDefault()}">
+    Toggle 3
+  </button>
+
   <div class="card card-block card-block-small toggle ${cardDefault()}">
     Target 0
-    <div class="card card-block card-block-small toggle ${cardDefault()}">
-      Nested targets are not toggled
-    </div>
   </div>
 
   <div class="card card-block card-block-small toggle ${cardDefault()}">
     Target 1
-    <div class="card card-block card-block-small toggle ${cardDefault()}">
-      Nested targets are not toggled
-    </div>
   </div>
 
   <div class="card card-block card-block-small toggle ${cardDefault()}">
     Target 2
-    <div class="card card-block card-block-small toggle ${cardDefault()}">
-      Nested targets are not toggled
-    </div>
+  </div>
+
+  <div class="card card-block card-block-small toggle ${cardDefault()}">
+    Target 3
   </div>
 
 </div>

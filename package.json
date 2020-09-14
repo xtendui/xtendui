@@ -53,7 +53,6 @@
     "esm": "^3.2.25",
     "gatsby": "^2.23.20",
     "gatsby-plugin-catch-links": "^2.3.10",
-    "gatsby-plugin-less": "^4.0.3",
     "gatsby-plugin-manifest": "^2.4.17",
     "gatsby-plugin-module-resolver": "^1.0.3",
     "gatsby-plugin-offline": "^3.2.16",

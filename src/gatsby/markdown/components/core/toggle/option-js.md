@@ -8,7 +8,7 @@ date: "2019-05-05"
 
 ## Class
 
-You can customize the classnames used with the component.
+You can customize the class names used with the component.
 
 <div class="table-scroll">
 
@@ -27,14 +27,14 @@ You can customize the classnames used with the component.
   </demovanilla>
 </demo>
 
-You can start with toggled elements and targets just by adding **one of the activation classes** to the **elements** or **targets**.
+You can start with toggled elements and targets just by adding **one of the initialization classes** to the **elements** or **targets**.
 
 <demo>
   <demovanilla src="vanilla/components/core/toggle/start">
   </demovanilla>
 </demo>
 
-Additionally on component initialization the class `xt-toggle` gets added to the object (the DOM element you assigned the component) useful if you want to animate with css on component intialization. `classInitial` and `classInverse` are useful if you want to animate with css depending on initial activation or direction of the activation. For javascript animation you can use the [api properties](/components/core/toggle/api#properties).
+Additionally on component initialization the class `xt-toggle` gets added to the **object** (the DOM element you assigned the component).
 
 ## Block
 
@@ -55,7 +55,7 @@ You can specify `min` and `max` concurrent activations. The `min` option is fulf
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/toggle/minmax">
+  <demovanilla src="vanilla/components/core/toggle/quantity">
   </demovanilla>
 </demo>
 
@@ -99,13 +99,7 @@ You can use a function for <code>delayOn</code> and <code>delayOff</code> for ex
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/toggle/timing-duration">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/toggle/timing-delay">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/toggle/timing-delay-fnc">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/toggle/timing-instant">
+  <demovanilla src="vanilla/components/core/toggle/timing">
   </demovanilla>
 </demo>
 
@@ -124,25 +118,10 @@ You can use a function for <code>delayOn</code> and <code>delayOff</code> for ex
 </div>
 
 [[notePrimary]]
-| Auto doesn't run if the toggle is `display: none`. Start it manually when visible when using [toggle events](/components/core/toggle/api#trigger).
+| Auto doesn't run if the toggle is `display: none`. Start it manually when visible using [toggle events](/components/core/toggle/api#trigger).
 
 <demo>
-  <demovanilla src="vanilla/components/core/toggle/auto-initial">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/toggle/auto-step">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/toggle/auto-inverse">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/toggle/auto-pause">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/toggle/auto-minmax">
-  </demovanilla>
-</demo>
-
-Use the [api](/components/core/toggle/api#listen) and listen to events to make auto progress indicators.
-
-<demo>
-  <demovanilla src="vanilla/components/core/toggle/progress">
+  <demovanilla src="vanilla/components/core/toggle/auto">
   </demovanilla>
 </demo>
 

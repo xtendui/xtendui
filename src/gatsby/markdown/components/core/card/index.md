@@ -22,6 +22,14 @@ Use this markup to create a **card**.
   </div>
 </script>
 
+Or add `.card-block` classes directly to `.card`
+
+<script type="text/plain" class="language-markup">
+  <div class="card card-block">
+    <!-- content -->
+  </div>
+</script>
+
 Then add and [style content](/components/core/card/content).
 
 <demo>

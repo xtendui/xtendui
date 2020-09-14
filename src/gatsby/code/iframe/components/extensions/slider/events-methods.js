@@ -56,8 +56,6 @@ demo.htmlSource = `
 <div class="slider" id="demo--slider-events">
 </div>
 
-<br/>
-
 <div class="card ${cardDefault()}">
   <div class="card-block card-block-small overflow-y-auto overflow-x-hidden overflow-sub max-h-64" id="demo--slider-events-log">
   </div>
