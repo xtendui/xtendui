@@ -1,10 +1,10 @@
 import { Xt } from 'xtend-library/src/xt.js'
 import 'xtend-library/src/vars.js'
-import 'xtend-library/src/core/toggle/toggle.js'
+import 'xtend-library/src/core/drop/drop.js'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '.demo--toggle-animation-js',
+  matches: '.demo--drop-animation-js',
   mount: object => {
     // vars
 
@@ -15,7 +15,9 @@ Xt.mount.push({
 
     // init
 
-    let self = new Xt.Toggle(object, {
+    let self = new Xt.Drop(object, {
+      elements: ':scope > .drop-container',
+      targets: ':scope > .drop-container > .drop',
       durationOn: Xt.vars.timeSmall,
       durationOff: Xt.vars.timeSmall,
     })

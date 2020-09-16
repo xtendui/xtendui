@@ -297,9 +297,7 @@ pre {
 }
 
 .gatsby_note {
-  .custom-block-body {
-    padding: 1rem 1.5625rem;
-    font-size: 0.875rem;
-    line-height: 1.4;
-  }
+  @apply my-5 mt-fc mb-lc;
+  font-size: 0.875rem;
+  line-height: 1.4;
 }

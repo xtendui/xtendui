@@ -11,40 +11,15 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-space-2 items-center">
+<div class="demo--overlay-animation-js">
 
-  <div data-xt-overlay>
+  <button type="button" class="btn btn-medium ${btnPrimary()}">
+    overlay
+  </button>
 
-    <button type="button" class="btn btn-medium ${btnPrimary()}">
-      asset
-    </button>
-
-    <div class="overlay">
-      <div class="overlay-container max-w-4xl">
-        <div class="overlay-inner">
-
-          <div class="card ${cardDefaultOverlay()}">
-            <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
-            <div class="card-asset rounded-md">
-              ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <div data-xt-overlay>
-
-    <button type="button" class="btn btn-medium ${btnPrimary()}">
-      asset and text
-    </button>
-
-    <div class="overlay">
-      <div class="overlay-container max-w-4xl">
-        <div class="overlay-inner">
+  <div class="overlay">
+    <div class="overlay-container max-w-4xl">
+      <div class="overlay-inner">
 
           <div class="card ${cardDefaultOverlay()}">
             <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
@@ -60,10 +35,8 @@ demo.htmlSource = `
             </div>
           </div>
 
-        </div>
       </div>
     </div>
-
   </div>
 
 </div>

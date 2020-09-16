@@ -1,10 +1,10 @@
 import { Xt } from 'xtend-library/src/xt.js'
 import 'xtend-library/src/vars.js'
-import 'xtend-library/src/core/toggle/toggle.js'
+import 'xtend-library/src/core/overlay/overlay.js'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '.demo--toggle-animation-js',
+  matches: '.demo--overlay-animation-js',
   mount: object => {
     // vars
 
@@ -15,7 +15,7 @@ Xt.mount.push({
 
     // init
 
-    let self = new Xt.Toggle(object, {
+    let self = new Xt.Overlay(object, {
       durationOn: Xt.vars.timeSmall,
       durationOff: Xt.vars.timeSmall,
     })
@@ -24,13 +24,17 @@ Xt.mount.push({
 
     const eventOn = e => {
       const tr = e.target
-      gsap.set(tr, { opacity: 0 })
+      const inner = tr.querySelector('.overlay-inner')
       if (!tr.classList.contains('inverse')) {
-        gsap.set(tr, { x: -15 })
+        gsap.set(inner, { x: -15 })
       } else {
-        gsap.set(tr, { x: 15 })
+        gsap.set(inner, { x: 15 })
       }
-      gsap.to(tr, { x: 0, opacity: 1, duration: targetTimeOn, ease: targetEaseOn })
+      gsap.set(inner, { opacity: 0 })
+      gsap.to(inner, { x: 0, opacity: 1, duration: targetTimeOn, ease: targetEaseOn })
+      const backdrop = tr.querySelector('.backdrop')
+      gsap.set(backdrop, { opacity: 0 })
+      gsap.to(backdrop, { opacity: 1, duration: targetTimeOn, ease: targetEaseOn })
     }
 
     for (const target of self.targets) {
@@ -42,10 +46,14 @@ Xt.mount.push({
     const eventOff = e => {
       const tr = e.target
       if (!tr.classList.contains('inverse')) {
-        gsap.to(tr, { x: 15, opacity: 0, duration: targetTimeOff, ease: targetEaseOff })
+        const inner = tr.querySelector('.overlay-inner')
+        gsap.to(inner, { x: 15, opacity: 0, duration: targetTimeOff, ease: targetEaseOff })
       } else {
-        gsap.to(tr, { x: -15, opacity: 0, duration: targetTimeOff, ease: targetEaseOff })
+        const inner = tr.querySelector('.overlay-inner')
+        gsap.to(inner, { x: -15, opacity: 0, duration: targetTimeOff, ease: targetEaseOff })
       }
+      const backdrop = tr.querySelector('.backdrop')
+      gsap.to(backdrop, { opacity: 0, duration: targetTimeOff, ease: targetEaseOff })
     }
 
     for (const target of self.targets) {

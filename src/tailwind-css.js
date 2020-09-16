@@ -33,7 +33,7 @@ module.exports = theme => ({
         },
       },
       '.toggle-inverse': {
-        '&.active': {
+        '&.done': {
           display: 'none',
         },
       },
@@ -907,6 +907,7 @@ module.exports = theme => ({
         '@apply toggle': '',
         position: 'absolute',
         zIndex: 'inherit',
+        transitionDuration: 'inherit',
         '&.in': {
           zIndex: theme('zIndex.drop'),
         },

@@ -27,15 +27,6 @@ You can start with toggled elements and targets just by adding **one of the clas
 
 Additionally on component initialization the class `xt-sticky` gets added to the **object** (the DOM element you assigned the component).
 
-## Block
-
-You can block the activations with the class `.xt-block` on elements.
-
-<demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/sticky/block">
-  </div>
-</demo>
-
 ## Mode
 
 <div class="table-scroll">
@@ -123,5 +114,14 @@ To hide the sticky when scrolling down or up use `hide: 'down'` or `hide: 'up'`.
 
 <demo>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/sticky/hide">
+  </div>
+</demo>
+
+## Block
+
+You can block the activations with the class `.xt-block` on elements.
+
+<demo>
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/sticky/block">
   </div>
 </demo>

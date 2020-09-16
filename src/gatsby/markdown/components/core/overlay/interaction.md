@@ -27,9 +27,21 @@ You can start with toggled elements and targets just by adding **one of the clas
 
 Additionally on component initialization the class `xt-overlay` gets added to the **object** (the DOM element you assigned the component).
 
-## Block
+## Animations
 
-You can block the activations with the class `.xt-block` on elements. See the [api demo](/components/core/overlay/api#demo)
+You can use **css animations**, just add them with **class names**.
+
+<demo>
+  <demovanilla src="vanilla/components/core/overlay/animation">
+  </demovanilla>
+</demo>
+
+You can use **javascript animations**, just use [overlay api](/components/core/overlay/api), and remember to set `durationOn: Milliseconds` and `durationOff: Milliseconds`.
+
+<demo>
+  <demovanilla src="vanilla/components/core/overlay/animation-js">
+  </demovanilla>
+</demo>
 
 ## Class html
 
@@ -45,6 +57,10 @@ You can block the activations with the class `.xt-block` on elements. See the [a
   <demovanilla src="vanilla/components/core/overlay/class-html">
   </demovanilla>
 </demo>
+
+## Block
+
+You can block the activations with the class `.xt-block` on elements. See the [api demo](/components/core/overlay/api#demo)
 
 ## Other
 

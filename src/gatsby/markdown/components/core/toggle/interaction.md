@@ -37,11 +37,7 @@ You can start with toggled elements and targets just by adding **one of the clas
 
 Additionally on component initialization the class `xt-toggle` gets added to the **object** (the DOM element you assigned the component).
 
-## Block
-
-You can block the activations with the class `.xt-block` on elements. See the [api demo](/components/core/toggle/api#demo)
-
-## Toggle
+## Animations
 
 The util class `.toggle` sets `display: none` when **not activated**. If you want `display: none` when **activated** `.toggle-inverse`.
 
@@ -54,13 +50,22 @@ The util class `.toggle` sets `display: none` when **not activated**. If you wan
 
 </div>
 
+You can use **css animations**, just add them with **class names**.
+
 <demo>
-  <demovanilla src="vanilla/components/core/toggle/toggle">
+  <demovanilla src="vanilla/components/core/toggle/animation">
   </demovanilla>
 </demo>
 
 <demo>
-  <demovanilla src="vanilla/components/core/toggle/toggle-inverse">
+  <demovanilla src="vanilla/components/core/toggle/animation-inverse">
+  </demovanilla>
+</demo>
+
+You can use **javascript animations**, just use [toggle api](/components/core/toggle/api), and remember to set `durationOn: Milliseconds` and `durationOff: Milliseconds`.
+
+<demo>
+  <demovanilla src="vanilla/components/core/toggle/animation-js">
   </demovanilla>
 </demo>
 
@@ -211,6 +216,10 @@ Use `keyboard: { selector: 'object' }` or `keyboard: { selector: QuerySelector }
   <demovanilla src="vanilla/components/core/toggle/usability-keyboard">
   </demovanilla>
 </demo>
+
+## Block
+
+You can block the activations with the class `.xt-block` on elements. See the [api demo](/components/core/toggle/api#demo)
 
 ## Other
 

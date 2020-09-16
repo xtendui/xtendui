@@ -1,7 +1,7 @@
-.demo--toggle-timing, .demo--toggle-timing--event {
+.demo--toggle-animation {
   .card {
-    @apply transform transition-all duration-500;
     /* initial */
+    @apply transform transition-all duration-500;
     @apply opacity-0 -translate-x-4;
     &.inverse {
       @apply translate-x-4;

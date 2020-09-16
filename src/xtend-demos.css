@@ -1,6 +1,10 @@
+@import 'xtend-library/src/private/demos/components/core/drop/animation.css';
 @import 'xtend-library/src/private/demos/components/core/drop/disable.css';
+@import 'xtend-library/src/private/demos/components/core/overlay/animation.css';
 @import 'xtend-library/src/private/demos/components/core/overlay/class-html.css';
 @import 'xtend-library/src/private/demos/components/core/overlay/disable.css';
+@import 'xtend-library/src/private/demos/components/core/toggle/animation-inverse.css';
+@import 'xtend-library/src/private/demos/components/core/toggle/animation.css';
 @import 'xtend-library/src/private/demos/components/core/toggle/class.css';
 @import 'xtend-library/src/private/demos/components/core/toggle/custom-options.css';
 @import 'xtend-library/src/private/demos/components/core/toggle/jump.css';

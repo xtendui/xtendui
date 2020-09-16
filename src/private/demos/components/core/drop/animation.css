@@ -1,0 +1,29 @@
+.demo--drop-animation {
+  @apply duration-500; /* needed for animation time, put max animation time */
+  > .drop {
+    @apply duration-500; /* needed for animation time, put max animation time */
+    /* initial */
+    > .drop-inner {
+      @apply transform transition-all duration-500;
+      @apply opacity-0 -translate-x-4;
+      .inverse& {
+        @apply translate-x-4;
+      }
+    }
+    /* in */
+    &.in {
+      > .drop-inner {
+        @apply opacity-100 translate-x-0 ease-in;
+      }
+    }
+    /* out */
+    &.out {
+      > .drop-inner {
+        @apply opacity-0 translate-x-4 ease-out;
+        .inverse& {
+          @apply -translate-x-4;
+        }
+      }
+    }
+  }
+}

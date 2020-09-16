@@ -66,8 +66,8 @@ module.exports = {
         last: '1000',
       },
       transitionTimingFunction: {
-        in: 'cubic-bezier(0.250, 0.460, 0.450, 0.940)',
-        out: 'cubic-bezier(0.455, 0.030, 0.515, 0.955)',
+        in: 'cubic-bezier(0.250, 0.460, 0.450, 0.940)', // @ease-out-quad
+        out: 'cubic-bezier(0.455, 0.030, 0.515, 0.955)', //  @ease-in-out-quad
       },
       fontFamily: {
         sans: [
@@ -113,6 +113,5 @@ module.exports = {
     applyComplexClasses: true,
     extendedSpacingScale: true,
     defaultLineHeights: true,
-    removeDeprecatedGapUtilities: true,
   },
 }

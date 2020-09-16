@@ -27,9 +27,21 @@ You can start with toggled elements and targets just by adding **one of the clas
 
 Additionally on component initialization the class `xt-drop` gets added to the **object** (the DOM element you assigned the component).
 
-## Block
+## Animations
 
-You can block the activations with the class `.xt-block` on elements. See the [api demo](/components/core/drop/api#demo)
+You can use **css animations**, just add them with **class names**.
+
+<demo>
+  <demovanilla src="vanilla/components/core/drop/animation">
+  </demovanilla>
+</demo>
+
+You can use **javascript animations**, just use [drop api](/components/core/drop/api), and remember to set `durationOn: Milliseconds` and `durationOff: Milliseconds`.
+
+<demo>
+  <demovanilla src="vanilla/components/core/drop/animation-js">
+  </demovanilla>
+</demo>
 
 ## Event
 
@@ -96,6 +108,10 @@ Set drop position with this utils.
   <demovanilla src="vanilla/components/core/drop/after">
   </demovanilla>
 </demo>
+
+## Block
+
+You can block the activations with the class `.xt-block` on elements. See the [api demo](/components/core/drop/api#demo)
 
 ## Other
 

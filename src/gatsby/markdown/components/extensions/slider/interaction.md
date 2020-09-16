@@ -27,10 +27,6 @@ You can start with toggled elements and targets just by adding **one of the clas
 
 Additionally on component initialization the class `xt-slider` gets added to the **object** (the DOM element you assigned the component).
 
-## Block
-
-You can block the activations with the class `.xt-block` on elements. See the [api demo](/components/extensions/slider/api#demo)
-
 ## Pagination
 
 You can add pagination with `[data-xt-pag].xt-ignore` it gets cloned inside the closest `.slider-pagination`.
@@ -169,6 +165,10 @@ Use the [api](/components/extensions/slider/api#listen) and listen to events to 
   <demovanilla src="vanilla/components/extensions/slider/progress">
   </demovanilla>
 </demo>
+
+## Block
+
+You can block the activations with the class `.xt-block` on elements. See the [api demo](/components/extensions/slider/api#demo)
 
 ## Other
 

@@ -27,15 +27,6 @@ You can start with toggled elements and targets just by adding **one of the clas
 
 Additionally on component initialization the class `xt-scroll` gets added to the **object** (the DOM element you assigned the component).
 
-## Block
-
-You can block the activations with the class `.xt-block` on elements.
-
-<demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/scroll/block">
-  </div>
-</demo>
-
 ## Mode
 
 You can set scroll mode with css selectors.
@@ -121,3 +112,12 @@ You can use a function for `delayOn` and `delayOff` for example `(current, total
 </div>
 
 @TODO demo
+
+## Block
+
+You can block the activations with the class `.xt-block` on elements.
+
+<demo>
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/scroll/block">
+  </div>
+</demo>

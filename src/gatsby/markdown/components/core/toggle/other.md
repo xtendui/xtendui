@@ -33,12 +33,3 @@ If you need to toggle **multiple targets** with the **same element** assign `dat
   <demovanilla src="vanilla/components/core/toggle/group">
   </demovanilla>
 </demo>
-
-## Animation
-
-You can animate with javascript instead of css, just use [toggle events](/components/core/toggle/api#events) and remember to set `durationOn: Milliseconds` and `durationOff: Milliseconds`.
-
-<demo>
-  <demovanilla src="vanilla/components/core/toggle/animation-js">
-  </demovanilla>
-</demo>
