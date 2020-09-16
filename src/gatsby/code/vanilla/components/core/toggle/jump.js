@@ -25,15 +25,15 @@ demo.htmlSource = `
     Toggle 2
   </button>
 
-  <div class="card card-block card-block-small demo--toggle-jump ${cardDefault()}">
+  <div class="card card-block card-block-small text-sm demo--toggle-jump ${cardDefault()}">
     Target 0
   </div>
 
-  <div class="card card-block card-block-small demo--toggle-jump ${cardDefault()}">
+  <div class="card card-block card-block-small text-sm demo--toggle-jump ${cardDefault()}">
     Target 1
   </div>
 
-  <div class="card card-block card-block-small demo--toggle-jump ${cardDefault()}">
+  <div class="card card-block card-block-small text-sm demo--toggle-jump ${cardDefault()}">
     Target 2
   </div>
 

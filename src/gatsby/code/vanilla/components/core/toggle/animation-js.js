@@ -24,15 +24,15 @@ demo.htmlSource = `
     Toggle 2
   </button>
 
-  <div class="card card-block card-block-small toggle ${cardDefault()}">
+  <div class="card card-block card-block-small text-sm toggle ${cardDefault()}">
     Target 0
   </div>
 
-  <div class="card card-block card-block-small toggle ${cardDefault()}">
+  <div class="card card-block card-block-small text-sm toggle ${cardDefault()}">
     Target 1
   </div>
 
-  <div class="card card-block card-block-small toggle ${cardDefault()}">
+  <div class="card card-block card-block-small text-sm toggle ${cardDefault()}">
     Target 2
   </div>
 

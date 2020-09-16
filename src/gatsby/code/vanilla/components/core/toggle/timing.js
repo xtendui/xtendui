@@ -24,31 +24,31 @@ demo.htmlSource = `
     Group 1
   </button>
 
-  <div class="card card-block card-block-small toggle ${cardDefault()}">
+  <div class="card card-block card-block-small text-sm toggle ${cardDefault()}">
     Target 0
   </div>
 
-  <div class="card card-block card-block-small toggle ${cardDefault()}" data-xt-group="0">
+  <div class="card card-block card-block-small text-sm toggle ${cardDefault()}" data-xt-group="0">
     Group 0a
   </div>
 
-  <div class="card card-block card-block-small toggle ${cardDefault()}" data-xt-group="1">
+  <div class="card card-block card-block-small text-sm toggle ${cardDefault()}" data-xt-group="1">
     Group 1a
   </div>
 
-  <div class="card card-block card-block-small toggle ${cardDefault()}" data-xt-group="0">
+  <div class="card card-block card-block-small text-sm toggle ${cardDefault()}" data-xt-group="0">
     Group 0b
   </div>
 
-  <div class="card card-block card-block-small toggle ${cardDefault()}" data-xt-group="1">
+  <div class="card card-block card-block-small text-sm toggle ${cardDefault()}" data-xt-group="1">
     Group 1b
   </div>
 
-  <div class="card card-block card-block-small toggle ${cardDefault()}" data-xt-group="0">
+  <div class="card card-block card-block-small text-sm toggle ${cardDefault()}" data-xt-group="0">
     Group 0c
   </div>
 
-  <div class="card card-block card-block-small toggle ${cardDefault()}" data-xt-group="1">
+  <div class="card card-block card-block-small text-sm toggle ${cardDefault()}" data-xt-group="1">
     Group 1c
   </div>
 
@@ -70,31 +70,31 @@ demo.htmlSource = `
     Group 1 hover
   </button>
 
-  <div class="card card-block card-block-small toggle ${cardDefault()}">
+  <div class="card card-block card-block-small text-sm toggle ${cardDefault()}">
     Target 0 hover
   </div>
 
-  <div class="card card-block card-block-small toggle ${cardDefault()}" data-xt-group="0">
+  <div class="card card-block card-block-small text-sm toggle ${cardDefault()}" data-xt-group="0">
     Group 0a hover
   </div>
 
-  <div class="card card-block card-block-small toggle ${cardDefault()}" data-xt-group="1">
+  <div class="card card-block card-block-small text-sm toggle ${cardDefault()}" data-xt-group="1">
     Group 1a hover
   </div>
 
-  <div class="card card-block card-block-small toggle ${cardDefault()}" data-xt-group="0">
+  <div class="card card-block card-block-small text-sm toggle ${cardDefault()}" data-xt-group="0">
     Group 0b hover
   </div>
 
-  <div class="card card-block card-block-small toggle ${cardDefault()}" data-xt-group="1">
+  <div class="card card-block card-block-small text-sm toggle ${cardDefault()}" data-xt-group="1">
     Group 1b hover
   </div>
 
-  <div class="card card-block card-block-small toggle ${cardDefault()}" data-xt-group="0">
+  <div class="card card-block card-block-small text-sm toggle ${cardDefault()}" data-xt-group="0">
     Group 0c hover
   </div>
 
-  <div class="card card-block card-block-small toggle ${cardDefault()}" data-xt-group="1">
+  <div class="card card-block card-block-small text-sm toggle ${cardDefault()}" data-xt-group="1">
     Group 1c hover
   </div>
 

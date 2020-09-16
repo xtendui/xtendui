@@ -294,7 +294,7 @@ export default () => {
 
                 </div>
 
-                <div class="card-block card-item card-block-side card-block-small">
+                <div class="card-block card-item card-block-side card-block-small text-sm">
                   <p>Receive <strong>free discount</strong> periodically on all our products.</p>
                 </div>
 

@@ -32,27 +32,27 @@ demo.htmlSource = `
     Toggle Group 3
   </button>
 
-  <div class="card card-block card-block-small toggle ${cardDefault()}">
+  <div class="card card-block card-block-small text-sm toggle ${cardDefault()}">
     Target 1
   </div>
 
-  <div class="card card-block card-block-small toggle ${cardDefault()}" data-xt-group="0">
+  <div class="card card-block card-block-small text-sm toggle ${cardDefault()}" data-xt-group="0">
     Target Group 0
   </div>
 
-  <div class="card card-block card-block-small toggle ${cardDefault()}" data-xt-group="3">
+  <div class="card card-block card-block-small text-sm toggle ${cardDefault()}" data-xt-group="3">
     Target Group 3
   </div>
 
-  <div class="card card-block card-block-small toggle ${cardDefault()}" data-xt-group="0">
+  <div class="card card-block card-block-small text-sm toggle ${cardDefault()}" data-xt-group="0">
     Target Group 0
   </div>
 
-  <div class="card card-block card-block-small toggle ${cardDefault()}">
+  <div class="card card-block card-block-small text-sm toggle ${cardDefault()}">
     Target 2
   </div>
 
-  <div class="card card-block card-block-small toggle ${cardDefault()}" data-xt-group="3">
+  <div class="card card-block card-block-small text-sm toggle ${cardDefault()}" data-xt-group="3">
     Target Group 3
   </div>
 

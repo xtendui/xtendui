@@ -22,11 +22,11 @@ demo.htmlSource = `
     Toggle same
   </button>
 
-  <div class="card card-block card-block-small toggle ${cardDefault()}" id="toggle--unique-2">
+  <div class="card card-block card-block-small text-sm toggle ${cardDefault()}" id="toggle--unique-2">
     Target 0
   </div>
 
-  <div class="card card-block card-block-small toggle ${cardDefault()}" id="toggle--unique-3">
+  <div class="card card-block card-block-small text-sm toggle ${cardDefault()}" id="toggle--unique-3">
     Target 0
   </div>
 

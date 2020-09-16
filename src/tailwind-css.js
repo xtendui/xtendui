@@ -736,17 +736,14 @@ module.exports = theme => ({
       '.card-block-small': {
         // styles
         padding: `${rem(20)} ${rem(25)}`,
-        fontSize: rem(12),
       },
       '.card-block-medium': {
         // styles
         padding: `${rem(25)} ${rem(30)}`,
-        fontSize: rem(14),
       },
       '.card-block-large': {
         // styles
         padding: `${rem(35)} ${rem(40)}`,
-        fontSize: rem(16),
       },
       '.card-design': {
         // setup

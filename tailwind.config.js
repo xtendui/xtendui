@@ -113,5 +113,6 @@ module.exports = {
     applyComplexClasses: true,
     extendedSpacingScale: true,
     defaultLineHeights: true,
+    removeDeprecatedGapUtilities: true,
   },
 }

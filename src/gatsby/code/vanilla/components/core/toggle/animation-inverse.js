@@ -20,11 +20,11 @@ demo.htmlSource = `
     Toggle 1
   </button>
 
-  <div class="card card-block card-block-small toggle-inverse ${cardDefault()}">
+  <div class="card card-block card-block-small text-sm toggle-inverse ${cardDefault()}">
     Target 0
   </div>
 
-  <div class="card card-block card-block-small toggle-inverse ${cardDefault()}">
+  <div class="card card-block card-block-small text-sm toggle-inverse ${cardDefault()}">
     Target 1
   </div>
 

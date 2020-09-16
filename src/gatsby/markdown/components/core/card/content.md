@@ -26,6 +26,8 @@ Use **tailwind classes** to modify variants for interactive animations.
 
 ## Size
 
+Use **tailwind classes** to assign text size.
+
 Use **component's classes** to assign size (e.g.: padding / font size).
 
 [[noteDefault]]

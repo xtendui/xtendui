@@ -21,11 +21,11 @@ demo.htmlSource = `
     Toggle 1
   </a>
 
-  <div class="card card-block card-block-small toggle ${cardDefault()}">
+  <div class="card card-block card-block-small text-sm toggle ${cardDefault()}">
     Target 0
   </div>
 
-  <div class="card card-block card-block-small toggle ${cardDefault()}">
+  <div class="card card-block card-block-small text-sm toggle ${cardDefault()}">
     Target 1
   </div>
 
@@ -44,11 +44,11 @@ demo.htmlSource = `
     Toggle 2 hover
   </a>
 
-  <div class="card card-block card-block-small toggle ${cardDefault()}">
+  <div class="card card-block card-block-small text-sm toggle ${cardDefault()}">
     Target 1 hover
   </div>
 
-  <div class="card card-block card-block-small toggle ${cardDefault()}">
+  <div class="card card-block card-block-small text-sm toggle ${cardDefault()}">
     Target 2 hover
   </div>
 

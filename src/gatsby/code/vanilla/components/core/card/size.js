@@ -13,7 +13,7 @@ demo.htmlSource = `
 
   <div class="w-full sm:w-6/12">
     <div class="card ${cardDefault()}">
-      <div class="card-block card-block-small">
+      <div class="card-block card-block-small text-sm">
         <div class="h5">Small</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>
@@ -31,24 +31,7 @@ demo.htmlSource = `
 
   <div class="w-full sm:w-6/12">
     <div class="card ${cardDefault()}">
-      <div class="card-block card-block-large">
-        <div class="h3">Large</div>
-        <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="w-full sm:w-6/12">
-    <div class="card ${cardDefault()}">
-      <div class="card-block card-block-small">
-        <div class="h5">Small</div>
-        <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-      </div>
-      <div class="card-block card-block-medium pt-0">
-        <div class="h4">Medium</div>
-        <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-      </div>
-      <div class="card-block card-block-large pt-0">
+      <div class="card-block card-block-large text-lg">
         <div class="h3">Large</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>

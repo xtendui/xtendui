@@ -74,24 +74,26 @@ demo.htmlSource = `
   <br>
 
   <div class="list list-space-2 items-center" id="demo--toggle-events-targets">
-    <div class="card card-block card-block-small toggle ${cardDefault()}" data-xt-group="0">
+    <div class="card card-block card-block-small text-sm toggle ${cardDefault()}" data-xt-group="0">
       Target Group 0
     </div>
-    <div class="card card-block card-block-small toggle ${cardDefault()}" data-xt-group="0">
+    <div class="card card-block card-block-small text-sm toggle ${cardDefault()}" data-xt-group="0">
       Target Group 0
     </div>
-    <div class="card card-block card-block-small toggle ${cardDefault()}">
+    <div class="card card-block card-block-small text-sm toggle ${cardDefault()}">
       Target 1
     </div>
-    <div class="card card-block card-block-small toggle ${cardDefault()}">
+    <div class="card card-block card-block-small text-sm toggle ${cardDefault()}">
       Target 2
     </div>
   </div>
 
 </div>
 
+<br>
+
 <div class="card ${cardDefault()}">
-  <div class="card-block card-block-small overflow-y-auto overflow-x-hidden overflow-sub max-h-64" id="demo--toggle-events-log">
+  <div class="card-block card-block-small text-sm overflow-y-auto overflow-x-hidden overflow-sub max-h-64" id="demo--toggle-events-log">
   </div>
 </div>
 `

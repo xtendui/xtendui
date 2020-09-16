@@ -17,6 +17,8 @@ Use **tailwind classes** to assign variant (e.g.: border / background / color).
 
 ## Size
 
+Use **tailwind classes** to assign text size.
+
 Use **component's classes** to assign size (e.g.: padding / font size).
 
 [[noteDefault]]

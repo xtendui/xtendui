@@ -24,23 +24,23 @@ demo.htmlSource = `
     Toggle 2
   </button>
 
-  <div class="card card-block card-block-small toggle ${cardDefault()}">
+  <div class="card card-block card-block-small text-sm toggle ${cardDefault()}">
     Target 0
-    <div class="card card-block card-block-small toggle ${cardDefault()}">
+    <div class="card card-block card-block-small text-sm toggle ${cardDefault()}">
       Nested targets are not toggled
     </div>
   </div>
 
-  <div class="card card-block card-block-small toggle ${cardDefault()}">
+  <div class="card card-block card-block-small text-sm toggle ${cardDefault()}">
     Target 1
-    <div class="card card-block card-block-small toggle ${cardDefault()}">
+    <div class="card card-block card-block-small text-sm toggle ${cardDefault()}">
       Nested targets are not toggled
     </div>
   </div>
 
-  <div class="card card-block card-block-small toggle ${cardDefault()}">
+  <div class="card card-block card-block-small text-sm toggle ${cardDefault()}">
     Target 2
-    <div class="card card-block card-block-small toggle ${cardDefault()}">
+    <div class="card card-block card-block-small text-sm toggle ${cardDefault()}">
       Nested targets are not toggled
     </div>
   </div>

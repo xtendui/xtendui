@@ -35,6 +35,7 @@ class Page extends React.Component {
           <li>
             Philosophy
             <ul>
+              <li>Tailwind setup cssinjs style for components but keep it possible to style design with tailwind classes</li>
               <li>most simple markup to do each demo</li>
               <li>tailwind plugin classes with base component styles</li>
               <li>tailwind classes for design and interaction</li>

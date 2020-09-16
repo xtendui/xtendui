@@ -17,7 +17,7 @@ demo.htmlSource = `
     Toggle
   </button>
 
-  <div class="card card-block card-block-small toggle ${cardDefault()}">
+  <div class="card card-block card-block-small text-sm toggle ${cardDefault()}">
     Target
   </div>
 

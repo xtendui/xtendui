@@ -297,7 +297,5 @@ pre {
 }
 
 .gatsby_note {
-  @apply my-5 mt-fc mb-lc;
-  font-size: 0.875rem;
-  line-height: 1.4;
+  @apply my-5 mt-fc mb-lc text-sm;
 }
