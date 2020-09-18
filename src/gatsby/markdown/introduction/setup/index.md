@@ -49,41 +49,16 @@ Then add **xtend** plugins and variables inside `tailwind.config.js`.
 ```jsx
 module.exports = {
   purge: [],
-  theme: {
+  theme: require('xtend-library/src/tailwind-theme')({
+    // add here your theme settings
     extend: {
-      zIndex: {
-        base: '0',
-        active: '5',
-        top: '50',
-        indicator: '51',
-        backdrop: '500',
-        drop: '600',
-        sticky: '800', // same as javascript and decreses with sequential sticky
-        overlay: '900',
-        last: '1000',
-      },
-      transitionTimingFunction: {
-        in: 'cubic-bezier(0.250, 0.460, 0.450, 0.940)',
-        out: 'cubic-bezier(0.455, 0.030, 0.515, 0.955)',
-      },
+      // add here your theme extend settings
+      // extend theme in node_modules/xtend-library/src/tailwind-theme.js
     },
-  },
-  variants: {
-    backgroundColor: ({ after }) => after(['active'], 'hover'),
-    gradientColorStops: ({ after }) => after(['active'], 'hover'),
-    backgroundOpacity: ({ after }) => after(['active'], 'hover'),
-    borderColor: ({ after }) => after(['active'], 'hover'),
-    borderOpacity: ({ after }) => after(['active'], 'hover'),
-    boxShadow: ({ after }) => after(['active'], 'hover'),
-    opacity: ({ after }) => after(['active'], 'hover'),
-    textColor: ({ after }) => after(['active'], 'hover'),
-    textOpacity: ({ after }) => after(['active'], 'hover'),
-    textDecoration: ({ after }) => after(['active'], 'hover'),
-    scale: ({ after }) => after(['active'], 'hover'),
-    rotate: ({ after }) => after(['active'], 'hover'),
-    translate: ({ after }) => after(['active'], 'hover'),
-    skew: ({ after }) => after(['active'], 'hover'),
-  },
+  }),
+  variants: require('xtend-library/src/tailwind-variants')({
+    // add here your variants
+  }),
   plugins: [require('xtend-library')],
   experimental: {
     applyComplexClasses: true,
@@ -92,7 +67,6 @@ module.exports = {
     removeDeprecatedGapUtilities: true,
   },
 }
-
 ```
 
 ## Js Installation
@@ -161,12 +135,27 @@ import 'xtend-library/src/extensions/slider/slider.js'
 
 To **modify or disable default styles** of utilities and components, use `xtend` object inside **tailwind's theme** and set your custom styles, or set to `false`.
 
-To **know what to modify** see the source code of `node_modules/xtend-library/src/tailwind-css.js`.
+To **know what to modify** see the source code of `node_modules/xtend-library/src/tailwind-components.js`.
 
 ```jsx
 module.exports = {
   theme: {
     extend: {
+      // extend theme in node_modules/xtend-library/src/tailwind-theme.js
+      colors: {
+        accent: {
+          100: '#F1F0FE',
+          200: '#DDD9FD',
+          300: '#C8C2FC',
+          400: '#9E95FA',
+          500: '#7567F8',
+          600: '#695DDF',
+          700: '#463E95',
+          800: '#352E70',
+          900: '#231F4A',
+        },
+      },
+      // extend components in node_modules/xtend-library/src/tailwind-components.js 
       xtend: theme => ({
         utilities: {
           // disable utility

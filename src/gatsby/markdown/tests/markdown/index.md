@@ -76,7 +76,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 | To customize utils and component's styles follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
 
 [[noteDefault]]
-| To know **spacing utilities values** see the source code of `node_modules/xtend-library/src/tailwind-css.js`.
+| To know **spacing utilities values** see the source code of `node_modules/xtend-library/src/tailwind-components.js`.
 
 [[notePrimary]]
 | You should always use **tailwind width classes** inside `.row`.

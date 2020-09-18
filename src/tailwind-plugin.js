@@ -1,7 +1,7 @@
 const plugin = require('tailwindcss/plugin')
 const merge = require('lodash/merge')
 const castArray = require('lodash/castArray')
-const base = require('./tailwind-css.js')
+const base = require('./tailwind-components.js')
 
 module.exports = plugin.withOptions(() => {
   return function ({ addComponents, addUtilities, addVariant, e, theme }) {
@@ -114,6 +114,5 @@ module.exports = plugin.withOptions(() => {
         return `.${e(`active${separator}${className}`)}:active,.${e(`active${separator}${className}`)}.active`
       })
     })
-
   }
 })
