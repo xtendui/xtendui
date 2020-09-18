@@ -36,13 +36,13 @@ module.exports = plugin.withOptions(() => {
               let css = {}
               Object.keys(options[utility]).forEach(name => {
                 let value = options[utility][name]
-                css[`.list-space-${name}`] = {
+                css[`.list-space-${e(name)}`] = {
                   margin: `-${value}`,
                   '> *': {
                     margin: `${value}`,
                   },
                 }
-                css[`.list-space-x-${name}`] = {
+                css[`.list-space-x-${e(name)}`] = {
                   marginLeft: `-${value}`,
                   marginRight: `-${value}`,
                   '> *': {
@@ -50,7 +50,7 @@ module.exports = plugin.withOptions(() => {
                     marginRight: `${value}`,
                   },
                 }
-                css[`.list-space-y-${name}`] = {
+                css[`.list-space-y-${e(name)}`] = {
                   marginTop: `-${value}`,
                   marginBottom: `-${value}`,
                   '> *': {
@@ -65,13 +65,13 @@ module.exports = plugin.withOptions(() => {
               let css = {}
               Object.keys(options[utility]).forEach(name => {
                 let value = options[utility][name]
-                css[`.row-space-${name}`] = {
+                css[`.row-space-${e(name)}`] = {
                   margin: `-${value}`,
                   '> *': {
                     padding: `${value}`,
                   },
                 }
-                css[`.row-space-x-${name}`] = {
+                css[`.row-space-x-${e(name)}`] = {
                   marginLeft: `-${value}`,
                   marginRight: `-${value}`,
                   '> *': {
@@ -79,7 +79,7 @@ module.exports = plugin.withOptions(() => {
                     paddingRight: `${value}`,
                   },
                 }
-                css[`.row-space-y-${name}`] = {
+                css[`.row-space-y-${e(name)}`] = {
                   marginTop: `-${value}`,
                   marginBottom: `-${value}`,
                   '> *': {
