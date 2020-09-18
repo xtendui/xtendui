@@ -1,18 +1,18 @@
 const plugin = require('tailwindcss/plugin')
 const merge = require('lodash/merge')
 const castArray = require('lodash/castArray')
-const base = require('./tailwind-components.js')
+const base = require('./tailwind-xtend.js')
 
 module.exports = plugin.withOptions(() => {
   return function ({ addComponents, addUtilities, addVariant, e, theme }) {
-    const xtend = theme(`xtend`, {})
+    const custom = theme(`xtend`, {})
 
     /**
      * styles
      */
 
     const cssBase = base(theme).components || {}
-    const cssCustom = xtend.components || {}
+    const cssCustom = custom.components || {}
     for (const component of Object.keys(cssBase)) {
       if (cssCustom[component] !== false) {
         const style = merge(...castArray(cssBase[component] || {}), cssCustom[component] || {})
@@ -25,7 +25,7 @@ module.exports = plugin.withOptions(() => {
      */
 
     const utilitiesBase = base(theme).utilities || {}
-    const utilitiesCustom = xtend.utilities || {}
+    const utilitiesCustom = custom.utilities || {}
     for (const component of Object.keys(utilitiesBase)) {
       if (utilitiesCustom[component] !== false) {
         const options = merge(...castArray(utilitiesBase[component] || {}), utilitiesCustom[component] || {})

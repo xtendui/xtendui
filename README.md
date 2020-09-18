@@ -45,13 +45,12 @@ module.exports = {
     // add here your theme settings
     extend: {
       // add here your theme extend settings
-      // extend theme in node_modules/xtend-library/src/tailwind-theme.js
     },
   }),
-  variants: require('xtend-library/src/tailwind-variants')({
+  variants: require('xtend-library/src/tailwind-variants.js')({
     // add here your variants
   }),
-  plugins: [require('xtend-library')],
+  plugins: [require('xtend-library/src/tailwind-plugin')],
   experimental: {
     applyComplexClasses: true,
     extendedSpacingScale: true,
@@ -127,7 +126,7 @@ import 'xtend-library/src/extensions/slider/slider.js'
 
 To **modify or disable default styles** of utilities and components, use `xtend` object inside **tailwind's theme** and set your custom styles, or set to `false`.
 
-To **know what to modify** see the source code of `node_modules/xtend-library/src/tailwind-components.js`.
+To **know what to modify** see the source code of `node_modules/xtend-library/src/tailwind-xtend.js`.
 
 ```jsx
 module.exports = {
@@ -147,7 +146,7 @@ module.exports = {
           900: '#231F4A',
         },
       },
-      // extend components in node_modules/xtend-library/src/tailwind-components.js 
+      // xtend utilities and components in node_modules/xtend-library/src/tailwind-xtend.js
       xtend: theme => ({
         utilities: {
           // disable utility
