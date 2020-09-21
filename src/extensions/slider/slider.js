@@ -306,7 +306,7 @@ class Slider extends Xt.Toggle {
           const min = self.wrapIndex
           const max = self.wrapIndex + self.groupMqInitial.length - 1
           if (i < min || i > max) {
-            self.pags[z][i].classList.add('xt-clone', 'xt-wrap', 'display-none')
+            self.pags[z][i].classList.add('xt-clone', 'xt-wrap', 'hidden')
           }
         }
       }

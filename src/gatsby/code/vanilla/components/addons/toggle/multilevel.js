@@ -17,7 +17,7 @@ demo.htmlSource = `
         <div class="h4 multilevel-title">
           Products
         </div>
-        <button type="button" class="btn btn-none multilevel-reset display-none multilevel-tab-reset">
+        <button type="button" class="btn btn-none multilevel-reset hidden multilevel-tab-reset">
           Back
         </button>
       </div>

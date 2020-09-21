@@ -45,51 +45,29 @@ module.exports = theme => ({
         animationIterationCount: '1',
       },
     },
-    typography: {
-      '.text-default': {
-        '@apply text-accent-900': '',
-        'a:not([class]), .link': {
-          '@apply text-accent-500': '',
-          '&:hover, &:active, &.active': {
-            '@apply text-accent-600': '',
+    // card
+    card: {
+      '.card-group': {
+        display: 'flex',
+        alignItems: 'inherit',
+      },
+      '.card-disable': {
+        '@apply text-default': '',
+        borderWidth: '0',
+        backgroundColor: 'transparent',
+        boxShadow: 'none',
+        '> .card-design': {
+          display: 'none',
+        },
+        '&, > *': {
+          padding: '0',
+          '> .card-block': {
+            padding: '0',
           },
         },
-      },
-      '.text-inverse': {
-        '@apply text-white': '',
-        'a:not([class]), .link': {
-          '@apply text-white': '',
-          '&:hover, &:active, &.active': {
-            '@apply text-white': '',
-          },
+        '> .btn-close': {
+          display: 'none',
         },
-      },
-      '.text-reset': {
-        fontFamily: 'inherit',
-        fontStyle: 'inherit',
-        fontWeight: 'inherit',
-        fontSize: 'inherit',
-        lineHeight: 'inherit',
-        letterSpacing: 'inherit',
-        textTransform: 'inherit',
-      },
-      '.lowercase-capitalize': {
-        textTransform: 'lowercase',
-        '&:first-letter': {
-          textTransform: 'uppercase',
-        },
-      },
-    },
-    // list
-    list: {
-      space: {
-        ...theme('spacing'),
-      },
-    },
-    // row
-    row: {
-      space: {
-        ...theme('spacing'),
       },
     },
     // drop
@@ -194,6 +172,12 @@ module.exports = theme => ({
         bottom: 'auto',
       },
     },
+    // list
+    list: {
+      space: {
+        ...theme('spacing'),
+      },
+    },
     // overlay
     overlay: {
       '.overlay-screen': {
@@ -245,28 +229,49 @@ module.exports = theme => ({
         '@apply xt-disable': '',
       },
     },
-    // card
-    card: {
-      '.card-group': {
-        display: 'flex',
-        alignItems: 'inherit',
+    // slider
+    slider: {
+
+    },
+    // row
+    row: {
+      space: {
+        ...theme('spacing'),
       },
-      '.card-disable': {
-        '@apply text-default': '',
-        borderWidth: '0',
-        backgroundColor: 'transparent',
-        boxShadow: 'none',
-        '> .card-design': {
-          display: 'none',
-        },
-        '&, > *': {
-          padding: '0',
-          '> .card-block': {
-            padding: '0',
+    },
+    // typography
+    typography: {
+      '.text-default': {
+        '@apply text-accent-900': '',
+        'a:not([class]), .link': {
+          '@apply text-accent-500': '',
+          '&:hover, &:active, &.active': {
+            '@apply text-accent-600': '',
           },
         },
-        '> .btn-close': {
-          display: 'none',
+      },
+      '.text-inverse': {
+        '@apply text-white': '',
+        'a:not([class]), .link': {
+          '@apply text-white': '',
+          '&:hover, &:active, &.active': {
+            '@apply text-white': '',
+          },
+        },
+      },
+      '.text-reset': {
+        fontFamily: 'inherit',
+        fontStyle: 'inherit',
+        fontWeight: 'inherit',
+        fontSize: 'inherit',
+        lineHeight: 'inherit',
+        letterSpacing: 'inherit',
+        textTransform: 'inherit',
+      },
+      '.lowercase-capitalize': {
+        textTransform: 'lowercase',
+        '&:first-letter': {
+          textTransform: 'uppercase',
         },
       },
     },
@@ -353,6 +358,19 @@ module.exports = theme => ({
           overflowY: 'scroll',
         },
       },
+      '[data-xt-pag].xt-ignore': {
+        // setup
+        display: 'none !important',
+      },
+      '[data-xt-nav]': {
+        // setup
+        cursor: 'pointer',
+      },
+      '.xt-container': {
+        // setup
+        position: 'relative',
+        width: '100%',
+      },
       '.xt-disable': {
         // setup
         '&:after': {
@@ -368,6 +386,7 @@ module.exports = theme => ({
         },
       },
       '.xt-jump': {
+        // setup
         '&:not(.active)': {
           cursor: 'pointer',
         },
@@ -375,223 +394,77 @@ module.exports = theme => ({
           cursor: 'inherit',
         },
       },
-    },
-    // typography
-    typography: {
-      html: {
-        // style
-        '@apply text-default': '',
-        lineHeight: 1.8,
-        fontSize: rem(14),
-        '@screen md': {
-          fontSize: rem(15),
-        },
-        '@screen xl': {
-          fontSize: rem(16),
-        },
-      },
-      'a:not([class]), .link': {
+      '.xt-pointer-events-none': {
         // setup
-        '@apply text-reset !important': {},
-        wordWrap: 'break-word',
-        overflowWrap: 'break-word',
-        textDecoration: 'underline',
-        // animation
-        transitionProperty: theme('transitionProperty.colors'),
-        transitionDuration: theme('transitionDuration.500'),
-        transitionTimingFunction: theme('transitionTimingFunction.ease.out'),
-        '&:hover, &:active, &.active': {
-          transitionTimingFunction: theme('transitionTimingFunction.ease.in'),
+        pointerEvents: 'none',
+      },
+      '.xt-links-none': {
+        // setup
+        'a&, a': {
+          pointerEvents: 'none',
         },
       },
-      'h1, .h1': {
-        // style
-        marginTop: theme('spacing.6'),
-        marginBottom: theme('spacing.4'),
-        '@apply mt-fc mb-lc': {},
-        fontFamily: theme('fontFamily.sans').toString(),
-        fontWeight: theme('fontWeight.semibold'),
-        fontSize: rem(35),
-        lineHeight: theme('lineHeight.snug'),
-        letterSpacing: theme('letterSpacing.normal'),
-        textTransform: 'none',
-        '@screen lg': {
-          fontSize: rem(40),
+      '.xt-grab': {
+        // setup
+        '@apply select-none': '',
+        cursor: 'grab',
+        'a, img': {
+          // prevent browser drag
+          '-webkit-user-drag': 'none',
+          userDrag: 'none',
+          // prevent browser selection
+          '-webkit-user-select': 'none',
+          '-moz-user-select': 'none',
+          '-ms-user-select': 'none',
+          userSelect: 'none',
         },
       },
-      'h2, .h2': {
-        // style
-        marginTop: theme('spacing.6'),
-        marginBottom: theme('spacing.4'),
-        '@apply mt-fc mb-lc': {},
-        fontFamily: theme('fontFamily.sans').toString(),
-        fontWeight: theme('fontWeight.semibold'),
-        fontSize: rem(30),
-        lineHeight: theme('lineHeight.snug'),
-        letterSpacing: theme('letterSpacing.normal'),
-        textTransform: 'none',
-        '@screen lg': {
-          fontSize: rem(35),
-        },
+      '.xt-calculating': {
+        // setup
+        '@apply duration-none !important': '',
+        display: 'block !important',
+        visibility: 'hidden !important',
+        opacity: '0 !important',
       },
-      'h3, .h3': {
-        // style
-        marginTop: theme('spacing.6'),
-        marginBottom: theme('spacing.4'),
-        '@apply mt-fc mb-lc': {},
+    },
+    // badge
+    badge: {
+      '.badge': {
+        // setup
+        display: 'inline-block',
+        verticalAlign: 'middle',
+        // styles
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
-        fontSize: rem(25),
         lineHeight: theme('lineHeight.snug'),
-        letterSpacing: theme('letterSpacing.normal'),
-        textTransform: 'none',
-        '@screen lg': {
-          fontSize: rem(30),
-        },
-      },
-      'h4, .h4': {
-        // style
-        marginTop: theme('spacing.6'),
-        marginBottom: theme('spacing.4'),
-        '@apply mt-fc mb-lc': {},
-        fontFamily: theme('fontFamily.sans').toString(),
-        fontWeight: theme('fontWeight.semibold'),
-        fontSize: rem(24),
-        lineHeight: theme('lineHeight.snug'),
-        letterSpacing: theme('letterSpacing.normal'),
-        textTransform: 'none',
-      },
-      'h5, .h5': {
-        // style
-        marginTop: theme('spacing.4'),
-        marginBottom: theme('spacing.2'),
-        '@apply mt-fc mb-lc': {},
-        fontFamily: theme('fontFamily.sans').toString(),
-        fontWeight: theme('fontWeight.semibold'),
-        fontSize: rem(18),
-        lineHeight: theme('lineHeight.snug'),
-        letterSpacing: theme('letterSpacing.normal'),
-        textTransform: 'none',
-      },
-      'h6, .h6': {
-        // style
-        marginTop: theme('spacing.4'),
-        marginBottom: theme('spacing.2'),
-        '@apply mt-fc mb-lc': {},
-        fontFamily: theme('fontFamily.sans').toString(),
-        fontWeight: theme('fontWeight.semibold'),
-        fontSize: '13px',
-        lineHeight: theme('lineHeight.snug'),
-        letterSpacing: theme('letterSpacing.wide'),
+        letterSpacing: theme('letterSpacing.wider'),
         textTransform: 'uppercase',
-      },
-      '.h-block': {
-        // style
-        marginTop: theme('spacing.8'),
-        marginBottom: theme('spacing.6'),
-        '@apply mt-fc mb-lc': {},
-        paddingTop: theme('spacing.3'),
-        paddingBottom: theme('spacing.3'),
-        paddingLeft: theme('spacing.6'),
-        paddingRight: theme('spacing.6'),
-      },
-      'p, .p': {
-        // style
-        marginBottom: theme('spacing.5'),
-        '@apply text-reset mb-lc': {},
-      },
-      'ul:not([class]), ol:not([class])': {
-        // style
-        marginBottom: theme('spacing.5'),
-        '@apply mb-lc': {},
-        '> li': {
-          position: 'relative',
-          marginBottom: theme('spacing.5'),
-          '@apply mb-lc': {},
-          '&:before': {
-            position: 'absolute',
-            display: 'inline-block',
-            left: '0',
-          },
-          '> ul:not([class]), > ol:not([class])': {
-            marginTop: theme('spacing.5'),
+        // animation
+        'a&, button&, label&': {
+          zIndex: theme('zIndex.base'),
+          transitionProperty: theme('transitionProperty.all'),
+          transitionDuration: theme('transitionDuration.500'),
+          transitionTimingFunction: theme('transitionTimingFunction.out'),
+          '&:hover, &:active, &.active': {
+            zIndex: theme('zIndex.active'),
+            transitionTimingFunction: theme('transitionTimingFunction.in'),
           },
         },
       },
-      'ul:not([class])': {
-        // style
-        '> li': {
-          paddingLeft: '1.25rem',
-          '&:before': {
-            content: '"\\2022"',
-            color: theme('colors.gray.600'),
-          },
-        },
+      '.badge-small': {
+        // styles
+        padding: `${rem(6)} ${rem(10)}`,
+        fontSize: rem(10),
       },
-      'ol:not([class])': {
-        // style
-        '> li': {
-          counterIncrement: 'ol-counter',
-          paddingLeft: '1.5rem',
-          '&:before': {
-            content: 'counter(ol-counter) "."',
-            color: theme('colors.gray.600'),
-          },
-        },
+      '.badge-medium': {
+        // styles
+        padding: `${rem(8)} ${rem(14)}`,
+        fontSize: rem(12),
       },
-      hr: {
-        marginTop: theme('spacing.5'),
-        marginBottom: theme('spacing.5'),
-      },
-    },
-    // list
-    list: {
-      '.list': {
-        // setup
-        display: 'flex',
-        flexWrap: 'wrap',
-        flexDirection: 'row',
-        alignItems: 'flex-start',
-      },
-      '.list-block': {
-        // setup
-        display: 'flex',
-        flexWrap: 'nowrap',
-        flexDirection: 'column',
-        alignItems: 'flex-start',
-      },
-    },
-    // row
-    row: {
-      '.row': {
-        // setup
-        display: 'flex',
-        flexWrap: 'wrap',
-        flexDirection: 'row',
-        alignItems: 'flex-start',
-      },
-      '.row-stretch': {
-        // setup
-        alignItems: 'stretch',
-        '> *': {
-          display: 'flex',
-          alignItems: 'stretch',
-          '> *': {
-            minHeight: '100%',
-          },
-        },
-      },
-      '@media (hover: none)': {
-        '.row-overflow': {
-          // setup
-          '@apply overflow-sub': '',
-          overflowX: 'auto',
-          overflowY: 'hidden',
-          flexWrap: 'nowrap',
-          '> *': {
-            '@apply flex-none': '',
-          },
-        },
+      '.badge-large': {
+        // styles
+        padding: `${rem(10)} ${rem(18)}`,
+        fontSize: rem(14),
       },
     },
     // btn
@@ -763,6 +636,66 @@ module.exports = theme => ({
         },
       },
     },
+    // drop
+    drop: {
+      '.drop-container': {
+        // setup
+        position: 'relative',
+      },
+      '.drop': {
+        // setup
+        '@apply toggle': '',
+        position: 'absolute',
+        zIndex: 'inherit',
+        transitionDuration: 'inherit',
+        '&.in': {
+          zIndex: theme('zIndex.drop'),
+        },
+        '&.out': {
+          zIndex: theme('zIndex.drop') - 1,
+        },
+        // styles
+        '@apply p-2 drop-left drop-bottom': '',
+      },
+      '.drop-inner': {
+        // setup
+        position: 'relative',
+        zIndex: theme('zIndex.drop'),
+      },
+      '.drop-design': {
+        // setup
+        '@apply design-setup': '',
+      },
+      '.drop-container-static': {
+        // setup
+        position: 'static',
+        '> .drop': {
+          width: '100%',
+          '> .drop-inner': {
+            width: '100%',
+          },
+          left: '0 !important',
+          right: '0 !important',
+        },
+      },
+    },
+    // list
+    list: {
+      '.list': {
+        // setup
+        display: 'flex',
+        flexWrap: 'wrap',
+        flexDirection: 'row',
+        alignItems: 'flex-start',
+      },
+      '.list-block': {
+        // setup
+        display: 'flex',
+        flexWrap: 'nowrap',
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+      },
+    },
     // media
     media: {
       '.media-container': {
@@ -788,6 +721,166 @@ module.exports = theme => ({
         // setup
         width: '100%',
         height: '100%',
+      },
+    },
+    // overlay
+    overlay: {
+      '.overlay': {
+        // setup
+        '@apply toggle overflow-main': '',
+        position: 'fixed',
+        zIndex: theme('zIndex.overlay'),
+        top: '0',
+        left: '0',
+        bottom: '0', // @FIX no height or it bugs collapse animation
+        right: '0', // @FIX no width or it bugs collapse animation
+        overflow: 'hidden',
+      },
+      '.overlay-design': {
+        // setup
+        '@apply design-setup': '',
+      },
+      '.overlay-container': {
+        // setup
+        display: 'flex',
+        flexWrap: 'nowrap',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        margin: 'auto', // @FIX http://stackoverflow.com/questions/33454533/cant-scroll-to-top-of-flex-item-that-is-overflowing-container
+        width: '100%',
+        minHeight: '100vh',
+        padding: theme('container.padding.default'),
+        '@screen sm': {
+          padding: theme('container.padding.sm'),
+        },
+        '@screen md': {
+          padding: theme('container.padding.md'),
+        },
+        '@screen lg': {
+          padding: theme('container.padding.lg'),
+        },
+        '@screen xl': {
+          padding: theme('container.padding.xl'),
+        },
+      },
+      '.overlay-inner': {
+        // setup
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        alignSelf: 'center',
+        position: 'relative',
+        zIndex: theme('zIndex.overlay'),
+        width: '100%',
+        borderRadius: 'inherit',
+      },
+    },
+    // row
+    row: {
+      '.row': {
+        // setup
+        display: 'flex',
+        flexWrap: 'wrap',
+        flexDirection: 'row',
+        alignItems: 'flex-start',
+        '> *': {
+          flex: '0 0 auto', // @FIX column flex shrink
+        },
+      },
+      '.row-stretch': {
+        // setup
+        alignItems: 'stretch',
+        '> *': {
+          display: 'flex',
+          alignItems: 'stretch',
+          '> *': {
+            minHeight: '100%',
+          },
+        },
+      },
+      '@media (hover: none)': {
+        '.row-overflow': {
+          // setup
+          '@apply overflow-sub': '',
+          overflowX: 'auto',
+          overflowY: 'hidden',
+          flexWrap: 'nowrap',
+          '> *': {
+            '@apply flex-none': '',
+          },
+        },
+      },
+    },
+    // slider
+    slider: {
+      '.slider': {
+        // setup
+        position: 'relative',
+        overflow: 'hidden',
+        '&:not(.xt-slider)': { // @FIX page load height without .active slides
+          '.slide': {
+            '&:first-child': {
+              display: 'block !important',
+              position: 'relative !important',
+            },
+          },
+        },
+      },
+      '.slides': {
+        // setup
+        '@apply w-full': '',
+        position: 'relative',
+        display: 'inline-block', // @FIX autoheight values
+        verticalAlign: 'top', // @FIX inline-block margin below
+        // styles
+        '&.xt-autoHeight': {
+          // animation autoHeight
+          transitionProperty: theme('transitionProperty.height'),
+          transitionDuration: theme('transitionDuration.500'),
+          transitionTimingFunction: theme('transitionTimingFunction.ease.out'),
+        },
+      },
+      '.slide': {
+        // setup
+        position: 'relative',
+        '> *': {
+          display: 'block',
+          position: 'relative',
+        },
+      },
+      '.slides-inner': {
+        // styles
+        '@apply row row-space-2': '',
+        flexWrap: 'nowrap',
+        alignItems: 'flex-start',
+        // animation dragger
+        transitionProperty: theme('transitionProperty.transform'),
+        transitionDuration: theme('transitionDuration.500'),
+        transitionTimingFunction: theme('transitionTimingFunction.ease.out'),
+      },
+      '.slider-pagination, .slider-navigation': {
+        // styles
+        '@apply list list-space-2': '',
+        paddingTop: theme('spacing.4'),
+        alignItems: 'center',
+        justifyContent: 'center',
+      },
+      '[data-xt-pag].btn': {
+        // styles
+        minHeight: '1.3rem',
+        borderRadius: '2rem',
+        padding: `${rem(7)} ${rem(11)}`,
+        fontSize: rem(10),
+        '&.active': {
+          padding: `${rem(7)} ${rem(20)}`,
+        },
+        // animation
+        transitionProperty: theme('transitionProperty.all'),
+        transitionDuration: theme('transitionDuration.500'),
+        transitionTimingFunction: theme('transitionTimingFunction.out'),
+        '&:hover, &:active, &.active': {
+          transitionTimingFunction: theme('transitionTimingFunction.out'),
+        },
       },
     },
     // table
@@ -851,139 +944,172 @@ module.exports = theme => ({
         },
       },
     },
-    // drop
-    drop: {
-      '.drop-container': {
-        // setup
-        position: 'relative',
-      },
-      '.drop': {
-        // setup
-        '@apply toggle': '',
-        position: 'absolute',
-        zIndex: 'inherit',
-        transitionDuration: 'inherit',
-        '&.in': {
-          zIndex: theme('zIndex.drop'),
-        },
-        '&.out': {
-          zIndex: theme('zIndex.drop') - 1,
-        },
-        // styles
-        '@apply p-2 drop-left drop-bottom': '',
-      },
-      '.drop-inner': {
-        // setup
-        position: 'relative',
-        zIndex: theme('zIndex.drop'),
-      },
-      '.drop-design': {
-        // setup
-        '@apply design-setup': '',
-      },
-      '.drop-container-static': {
-        // setup
-        position: 'static',
-        '> .drop': {
-          width: '100%',
-          '> .drop-inner': {
-            width: '100%',
-          },
-          left: '0 !important',
-          right: '0 !important',
-        },
-      },
-    },
-    // overlay
-    overlay: {
-      '.overlay': {
-        // setup
-        '@apply toggle overflow-main': '',
-        position: 'fixed',
-        zIndex: theme('zIndex.overlay'),
-        top: '0',
-        left: '0',
-        bottom: '0', // @FIX no height or it bugs collapse animation
-        right: '0', // @FIX no width or it bugs collapse animation
-        overflow: 'hidden',
-      },
-      '.overlay-design': {
-        // setup
-        '@apply design-setup': '',
-      },
-      '.overlay-container': {
-        // setup
-        display: 'flex',
-        flexWrap: 'nowrap',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        margin: 'auto', // @FIX http://stackoverflow.com/questions/33454533/cant-scroll-to-top-of-flex-item-that-is-overflowing-container
-        width: '100%',
-        minHeight: '100vh',
-        padding: theme('container.padding.default'),
-        '@screen sm': {
-          padding: theme('container.padding.sm'),
-        },
+    // typography
+    typography: {
+      html: {
+        // style
+        '@apply text-default': '',
+        lineHeight: 1.8,
+        fontSize: rem(14),
         '@screen md': {
-          padding: theme('container.padding.md'),
-        },
-        '@screen lg': {
-          padding: theme('container.padding.lg'),
+          fontSize: rem(15),
         },
         '@screen xl': {
-          padding: theme('container.padding.xl'),
+          fontSize: rem(16),
         },
       },
-      '.overlay-inner': {
+      'a:not([class]), .link': {
         // setup
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        alignSelf: 'center',
-        position: 'relative',
-        zIndex: theme('zIndex.overlay'),
-        width: '100%',
-        borderRadius: 'inherit',
+        '@apply text-reset !important': {},
+        wordWrap: 'break-word',
+        overflowWrap: 'break-word',
+        textDecoration: 'underline',
+        // animation
+        transitionProperty: theme('transitionProperty.colors'),
+        transitionDuration: theme('transitionDuration.500'),
+        transitionTimingFunction: theme('transitionTimingFunction.ease.out'),
+        '&:hover, &:active, &.active': {
+          transitionTimingFunction: theme('transitionTimingFunction.ease.in'),
+        },
       },
-    },
-    // badge
-    badge: {
-      '.badge': {
-        // setup
-        display: 'inline-block',
-        verticalAlign: 'middle',
-        // styles
+      'h1, .h1': {
+        // style
+        marginTop: theme('spacing.6'),
+        marginBottom: theme('spacing.4'),
+        '@apply mt-fc mb-lc': {},
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
+        fontSize: rem(35),
         lineHeight: theme('lineHeight.snug'),
-        letterSpacing: theme('letterSpacing.wider'),
+        letterSpacing: theme('letterSpacing.normal'),
+        textTransform: 'none',
+        '@screen lg': {
+          fontSize: rem(40),
+        },
+      },
+      'h2, .h2': {
+        // style
+        marginTop: theme('spacing.6'),
+        marginBottom: theme('spacing.4'),
+        '@apply mt-fc mb-lc': {},
+        fontFamily: theme('fontFamily.sans').toString(),
+        fontWeight: theme('fontWeight.semibold'),
+        fontSize: rem(30),
+        lineHeight: theme('lineHeight.snug'),
+        letterSpacing: theme('letterSpacing.normal'),
+        textTransform: 'none',
+        '@screen lg': {
+          fontSize: rem(35),
+        },
+      },
+      'h3, .h3': {
+        // style
+        marginTop: theme('spacing.6'),
+        marginBottom: theme('spacing.4'),
+        '@apply mt-fc mb-lc': {},
+        fontFamily: theme('fontFamily.sans').toString(),
+        fontWeight: theme('fontWeight.semibold'),
+        fontSize: rem(25),
+        lineHeight: theme('lineHeight.snug'),
+        letterSpacing: theme('letterSpacing.normal'),
+        textTransform: 'none',
+        '@screen lg': {
+          fontSize: rem(30),
+        },
+      },
+      'h4, .h4': {
+        // style
+        marginTop: theme('spacing.6'),
+        marginBottom: theme('spacing.4'),
+        '@apply mt-fc mb-lc': {},
+        fontFamily: theme('fontFamily.sans').toString(),
+        fontWeight: theme('fontWeight.semibold'),
+        fontSize: rem(24),
+        lineHeight: theme('lineHeight.snug'),
+        letterSpacing: theme('letterSpacing.normal'),
+        textTransform: 'none',
+      },
+      'h5, .h5': {
+        // style
+        marginTop: theme('spacing.4'),
+        marginBottom: theme('spacing.2'),
+        '@apply mt-fc mb-lc': {},
+        fontFamily: theme('fontFamily.sans').toString(),
+        fontWeight: theme('fontWeight.semibold'),
+        fontSize: rem(18),
+        lineHeight: theme('lineHeight.snug'),
+        letterSpacing: theme('letterSpacing.normal'),
+        textTransform: 'none',
+      },
+      'h6, .h6': {
+        // style
+        marginTop: theme('spacing.4'),
+        marginBottom: theme('spacing.2'),
+        '@apply mt-fc mb-lc': {},
+        fontFamily: theme('fontFamily.sans').toString(),
+        fontWeight: theme('fontWeight.semibold'),
+        fontSize: '13px',
+        lineHeight: theme('lineHeight.snug'),
+        letterSpacing: theme('letterSpacing.wide'),
         textTransform: 'uppercase',
-        // animation
-        'a&, button&, label&': {
-          zIndex: theme('zIndex.base'),
-          transitionProperty: theme('transitionProperty.all'),
-          transitionDuration: theme('transitionDuration.500'),
-          transitionTimingFunction: theme('transitionTimingFunction.out'),
-          '&:hover, &:active, &.active': {
-            zIndex: theme('zIndex.active'),
-            transitionTimingFunction: theme('transitionTimingFunction.in'),
+      },
+      '.h-block': {
+        // style
+        marginTop: theme('spacing.8'),
+        marginBottom: theme('spacing.6'),
+        '@apply mt-fc mb-lc': {},
+        paddingTop: theme('spacing.3'),
+        paddingBottom: theme('spacing.3'),
+        paddingLeft: theme('spacing.6'),
+        paddingRight: theme('spacing.6'),
+      },
+      'p, .p': {
+        // style
+        marginBottom: theme('spacing.5'),
+        '@apply text-reset mb-lc': {},
+      },
+      'ul:not([class]), ol:not([class])': {
+        // style
+        marginBottom: theme('spacing.5'),
+        '@apply mb-lc': {},
+        '> li': {
+          position: 'relative',
+          marginBottom: theme('spacing.5'),
+          '@apply mb-lc': {},
+          '&:before': {
+            position: 'absolute',
+            display: 'inline-block',
+            left: '0',
+          },
+          '> ul:not([class]), > ol:not([class])': {
+            marginTop: theme('spacing.5'),
           },
         },
       },
-      '.badge-small': {
-        // styles
-        padding: `${rem(6)} ${rem(10)}`,
-        fontSize: rem(10),
+      'ul:not([class])': {
+        // style
+        '> li': {
+          paddingLeft: '1.25rem',
+          '&:before': {
+            content: '"\\2022"',
+            color: theme('colors.gray.600'),
+          },
+        },
       },
-      '.badge-medium': {
-        // styles
-        padding: `${rem(8)} ${rem(14)}`,
-        fontSize: rem(12),
+      'ol:not([class])': {
+        // style
+        '> li': {
+          counterIncrement: 'ol-counter',
+          paddingLeft: '1.5rem',
+          '&:before': {
+            content: 'counter(ol-counter) "."',
+            color: theme('colors.gray.600'),
+          },
+        },
       },
-      '.badge-large': {
-        // styles
-        padding: `${rem(10)} ${rem(18)}`,
-        fontSize: rem(14),
+      hr: {
+        marginTop: theme('spacing.5'),
+        marginBottom: theme('spacing.5'),
       },
     },
   },

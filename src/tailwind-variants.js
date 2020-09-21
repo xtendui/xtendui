@@ -2,6 +2,7 @@ const merge = require('lodash.merge')
 
 module.exports = function (custom = {}) {
   const base = {
+    backgroundColor: ({ after }) => after(['active'], 'hover'),
     gradientColorStops: ({ after }) => after(['active'], 'hover'),
     backgroundOpacity: ({ after }) => after(['active'], 'hover'),
     borderColor: ({ after }) => after(['active'], 'hover'),

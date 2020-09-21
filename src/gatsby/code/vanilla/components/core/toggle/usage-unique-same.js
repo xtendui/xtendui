@@ -1,6 +1,6 @@
 import path from 'path'
 const btnDefault = require('components/snippets/classes/btn-default').default
-const cardDefault = require('components/snippets/classes/card-default').default
+const cardToggle = require('components/snippets/classes/card-toggle').default
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -22,11 +22,11 @@ demo.htmlSource = `
     Toggle same
   </button>
 
-  <div class="card card-block card-block-small text-sm toggle ${cardDefault()}" id="toggle--unique-2">
+  <div class="card toggle ${cardToggle()}" id="toggle--unique-2">
     Target 0
   </div>
 
-  <div class="card card-block card-block-small text-sm toggle ${cardDefault()}" id="toggle--unique-3">
+  <div class="card toggle ${cardToggle()}" id="toggle--unique-3">
     Target 0
   </div>
 

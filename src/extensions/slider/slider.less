@@ -5,52 +5,7 @@
  * slider
  */
 
-// slides
-
-.slides {
-  .full();
-  &.xt-autoHeight {
-    // autoHeight animations
-    transition: height 750ms @ease-out;
-  }
-}
-
-.slides-inner {
-  .row();
-  .row-space(small);
-  flex-wrap: nowrap;
-  align-items: flex-start;
-  // dragger animations
-  transition: transform 750ms @ease-out-quint;
-}
-
 // pagination and navigation
-
-.slider-pagination, .slider-navigation {
-  .list();
-  .list-space(small);
-  align-items: center;
-  justify-content: center;
-  .padding(top, small);
-}
-
-[data-xt-pag].btn {
-  .btn-tiny();
-  border-radius: 2rem;
-  padding: .5em 1.15em;
-  min-height: 2.2rem;
-  &.active {
-    padding: .5em 2em;
-  }
-  // animation
-  transition: all @time-small @ease-out;
-  &:hover, &.hover {
-    transition: all @time-small @ease-out;
-  }
-  &:active, &.active {
-    transition: all @time-small @ease-out;
-  }
-}
 
 [data-xt-nav].btn {
   .btn-tiny();

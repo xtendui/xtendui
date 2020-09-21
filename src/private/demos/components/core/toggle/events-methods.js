@@ -1,6 +1,6 @@
 import { Xt } from 'xtend-library/src/xt.js'
 const btnDefault = require('components/snippets/classes/btn-default').default
-const cardDefault = require('components/snippets/classes/card-default').default
+const cardToggle = require('components/snippets/classes/card-toggle').default
 
 Xt.mount.push({
   matches: '#demo--toggle-events',
@@ -92,7 +92,7 @@ Xt.mount.push({
         document.querySelector('#demo--toggle-events-elements').append(Xt.createElement(strEl))
         // targets
         const indexTr = self.getTargetsGroups().length
-        const strTr = `<div class="card card-block card-block-small text-sm toggle ${cardDefault()}">Target ${indexTr}</div>`
+        const strTr = `<div class="card toggle ${cardToggle()}">Target ${indexTr}</div>`
         document.querySelector('#demo--toggle-events-targets').append(Xt.createElement(strTr))
         // reinit
         logAdd('<strong>reinit</strong>')
