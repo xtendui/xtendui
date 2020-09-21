@@ -17,21 +17,19 @@ To customize this component in your `tailwind.config.js` file, as described in [
 ```jsx
 module.exports = {
   theme: require('xtend-library/src/tailwind-theme')({
-    extend: {
-      // xtend utilities and components in node_modules/xtend-library/src/tailwind-xtend.js
-      xtend: theme => ({
-        utilities: {
-          row: {
-            // modify utility
-          },
+    // xtend utilities and components in node_modules/xtend-library/src/tailwind-xtend.js
+    xtend: theme => ({
+      utilities: {
+        row: {
+          // modify utility
         },
-        components: {
-          row: {
-            // modify component
-          },
+      },
+      components: {
+        row: {
+          // modify component
         },
-      }),
-    }  
+      },
+    }),
   })
 }
 ```

@@ -17,6 +17,20 @@ To customize this component in your `tailwind.config.js` file, as described in [
 
 ```jsx
 module.exports = {
-@TODO
+  theme: require('xtend-library/src/tailwind-theme')({
+    // xtend utilities and components in node_modules/xtend-library/src/tailwind-xtend.js
+    xtend: theme => ({
+      utilities: {
+        general: {
+          // modify utility
+        },
+      },
+      components: {
+        general: {
+          // modify component
+        },
+      },
+    }),
+  })
 }
 ```

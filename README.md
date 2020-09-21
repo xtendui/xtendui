@@ -30,13 +30,15 @@ module.exports = {
 
 #### Tailwind
 
+Follow the instructions to [install tailwind](https://tailwindcss.com/docs/installation).
+
 Install **xtend**.
 
 ```Shell
 npm install xtend-library --save
 ```
 
-Then add **xtend** plugins and variables inside `tailwind.config.js`.
+Then add **xtend** plugins and variables inside `tailwind.config.js`, with this special format that merges your configuration with xtend configuration.
 
 ```jsx
 module.exports = {
@@ -130,8 +132,8 @@ To **see the default values** see the source code of `node_modules/xtend-library
 ```jsx
 module.exports = {
   theme: {
+    // extend theme in node_modules/xtend-library/src/tailwind-theme.js
     extend: {
-      // extend theme in node_modules/xtend-library/src/tailwind-theme.js
       colors: {
         accent: {
           100: '#F1F0FE',
