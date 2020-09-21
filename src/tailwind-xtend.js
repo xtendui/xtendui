@@ -882,6 +882,12 @@ module.exports = theme => ({
           transitionTimingFunction: theme('transitionTimingFunction.out'),
         },
       },
+      '[data-xt-nav].btn': {
+        minHeight: '1.3rem',
+        borderRadius: '2rem',
+        padding: `${rem(7)} ${rem(11)}`,
+        fontSize: rem(10),
+      },
     },
     // table
     table: {

@@ -29,7 +29,7 @@ Additionally on component initialization the class `xt-slider` gets added to the
 
 ## Pagination
 
-You can add pagination with `[data-xt-pag].xt-ignore` it gets cloned inside the closest `.slider-pagination`.
+You can add pagination with an element `[data-xt-pag].xt-ignore`, it gets cloned inside the closest `.slider-pagination`.
 
 Inside it you can use this strings that gets populated with variables:
 
@@ -48,14 +48,14 @@ Inside it you can use this strings that gets populated with variables:
 
 <script type="text/plain" class="language-markup">
   <nav class="slider-pagination">
-    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
+    <button type="button" class="btn btn-medium xt-ignore" data-xt-pag title="Slide xt-num">
       xt-num of xt-tot
     </button>
   </nav>
 </script>
 
 [[notePrimary]]
-| `slider-pagination[data-xt-pag].xt-ignore` is essential to the functioning of the slider, so if you don't want to show it add `.hidden`.
+| `[data-xt-pag].xt-ignore` is essential to the functioning of the slider, but you can hide it using the class `.hidden`.
 
 <demo>
   <demovanilla src="vanilla/components/extensions/slider/pagination">
@@ -64,7 +64,7 @@ Inside it you can use this strings that gets populated with variables:
 
 ## Navigation
 
-You can add navigation with `navigation: QuerySelector`, set the amount to add (`+1`) or remove (`-1`) to the current activation index with `[data-xt-nav="value"]`.
+You can add navigation with the `navigation:Query` option, on the queried elements use the attribute `[data-xt-nav="value"]` to set the amount to add (`+1`) or remove (`-1`) to the current activation index.
 
 <div class="table-scroll">
 
@@ -75,11 +75,11 @@ You can add navigation with `navigation: QuerySelector`, set the amount to add (
 </div>
 
 <script type="text/plain" class="language-markup">
-  <button type="button" class="btn btn-default" data-xt-nav="-1" title="Previous slide">
-    <span class="icon-xt-chevron-left"></span>
+  <button type="button" class="btn btn-medium" data-xt-nav="-1" title="Previous slide">
+    <span class="icon-chevron-left"></span>
   </button>
-  <button type="button" class="btn btn-default" data-xt-nav="1" title="Next slide">
-    <span class="icon-xt-chevron-right"></span>
+  <button type="button" class="btn btn-medium" data-xt-nav="1" title="Next slide">
+    <span class="icon-chevron-right"></span>
   </button>
 </script>
 
@@ -135,7 +135,7 @@ You can set overflow with `drag: { overflow: Function }`, for example `(overflow
 
 ## Wheel
 
-Use `wheel: { selector: 'object' }` or `wheel: { selector: QuerySelector }` to enable mousewheel navigation.
+Use `wheel: { selector: 'object' }` or `wheel: { selector: Query }` to enable mousewheel navigation.
 
 <demo>
   <demovanilla src="vanilla/components/extensions/slider/wheel">

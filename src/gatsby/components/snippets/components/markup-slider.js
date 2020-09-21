@@ -60,7 +60,7 @@ export default () => {
 </div>
 
 <nav class="slider-pagination">
-  <button type="button" class="btn btn-medium ${btnDefault()} xt-ignore" data-xt-pag title="Slide xt-num">
+  <button type="button" class="btn ${btnDefault()} xt-ignore" data-xt-pag title="Slide xt-num">
   </button>
 </nav>
 `

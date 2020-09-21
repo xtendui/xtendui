@@ -91,9 +91,7 @@ demo.htmlSource = `
 
 </div>
 
-<br>
-
-<div class="card ${cardDefault()}">
+<div class="card ${cardDefault()} mt-6">
   <div class="card-block card-block-small text-sm overflow-y-auto overflow-x-hidden overflow-sub max-h-64" id="demo--toggle-events-log">
   </div>
 </div>

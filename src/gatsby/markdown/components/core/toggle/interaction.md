@@ -185,7 +185,7 @@ Use `jump: true` to enable clicking on a **target** to jump to them.
 
 ## Navigation
 
-You can add navigation with `navigation: QuerySelector`, set the amount to add (`+1`) or remove (`-1`) to the current activation index with `[data-xt-nav="value"]`.
+You can add navigation with the `navigation:Query` option, on the queried elements use the attribute `[data-xt-nav="value"]` to set the amount to add (`+1`) or remove (`-1`) to the current activation index.
 
 <div class="table-scroll">
 
@@ -202,7 +202,7 @@ You can add navigation with `navigation: QuerySelector`, set the amount to add (
 
 ## Keyboard
 
-Use `keyboard: { selector: 'object' }` or `keyboard: { selector: QuerySelector }` to enable keyboard navigation on focus.
+Use `keyboard: { selector: 'object' }` or `keyboard: { selector: Query }` to enable keyboard navigation on focus.
 
 <div class="table-scroll">
 

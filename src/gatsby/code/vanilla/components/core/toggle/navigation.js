@@ -29,11 +29,11 @@ demo.htmlSource = `
     Toggle 3
   </button>
 
-  <button type="button" class="btn btn-medium ${btnDefault()}" data-xt-nav="-1" title="Previous slide">
+  <button type="button" class="btn ${btnDefault()}" data-xt-nav="-1" title="Previous slide">
     <span class="icon-arrow-left"></span>
   </button>
 
-  <button type="button" class="btn btn-medium ${btnDefault()}" data-xt-nav="1" title="Next slide">
+  <button type="button" class="btn ${btnDefault()}" data-xt-nav="1" title="Next slide">
     <span class="icon-arrow-right"></span>
   </button>
 
