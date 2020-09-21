@@ -73,7 +73,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 ## Markdown
 
 [[noteDefault]]
-| To customize utils and component's styles follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
+| To customize utils and components follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
 
 [[noteDefault]]
 | To know **spacing utilities values** see the source code of `node_modules/xtend-library/src/tailwind-xtend.js`.

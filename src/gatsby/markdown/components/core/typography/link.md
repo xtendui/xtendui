@@ -27,7 +27,7 @@ Use this markup to create a **link**.
 Links with the tag `a` are styled **unless they have a class**. If you are using a class on links add `.link` class.
 
 [[noteDefault]]
-| To customize utils and component's styles follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
+| To customize utils and components follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
 
 <div class="table-scroll">
 

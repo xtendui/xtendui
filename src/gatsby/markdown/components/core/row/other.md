@@ -37,9 +37,6 @@ Use `.row-overflow` to have browser overflow scroll on **touch devices** (use to
 
 </div>
 
-[[noteDefault]]
-| To customize utils and component's styles follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
-
 <demo>
   <demovanilla src="vanilla/components/core/row/overflow">
   </demovanilla>

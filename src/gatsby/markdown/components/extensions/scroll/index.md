@@ -8,7 +8,21 @@ description: "Content animation when you scroll the page, fade in elements, para
 
 ## Setup
 
-Follow [css installation](/introduction/getting-started/setup#css-installation) and [js installation](/introduction/getting-started/setup#js-installation) instructions. To customize default styles follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
+#### Css
+
+Follow the [css installation](/introduction/getting-started/setup#css-installation) instructions.
+
+To customize this component in your `tailwind.config.js` file, as described in [css customization](/introduction/getting-started/setup#css-customization) instructions, use the keys like below.
+
+```jsx
+module.exports = {
+@TODO
+}
+```
+
+#### Javascript
+
+Follow the [js installation](/introduction/getting-started/setup#js-installation) instructions.
 
 Import the component's **js** file.
 

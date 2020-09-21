@@ -8,7 +8,9 @@ description: "Toggle is the main js component that toggle classes, it's inherite
 
 ## Setup
 
-Follow [css installation](/introduction/getting-started/setup#css-installation) and [js installation](/introduction/getting-started/setup#js-installation) instructions. To customize default styles follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
+#### Javascript
+
+Follow the [js installation](/introduction/getting-started/setup#js-installation) instructions.
 
 Import the component's **js** file.
 

@@ -8,14 +8,14 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="row row-space-1 items-center justify-center">
+<div class="row row-space-1 justify-center">
 
   <div class="w-4/12">
     <div class="w-full h-12 bg-gray-300"></div>
   </div>
 
   <div class="w-8/12">
-    <div class="w-full h-6 bg-gray-500"></div>
+    <div class="w-full h-12 bg-gray-500"></div>
   </div>
 
   <div class="w-full sm:w-6/12">

@@ -131,9 +131,9 @@ import 'xtend-library/src/extensions/slider/slider.js'
 
 ## Css Customization
 
-To **modify or disable default styles** of utilities and components, use `xtend` object inside **tailwind's theme** and set your custom styles, or set to `false`.
+To **customize the options** provided by this plugin, use [tailwind theme configuration](https://tailwindcss.com/docs/theme) in the theme section of your `tailwind.config.js` file.
 
-To **know what to modify** see the source code of `node_modules/xtend-library/src/tailwind-xtend.js`.
+To **see the default values** see the source code of `node_modules/xtend-library/src/tailwind-theme.js`.
 
 ```jsx
 module.exports = {
@@ -153,30 +153,41 @@ module.exports = {
           900: '#231F4A',
         },
       },
-      // xtend utilities and components in node_modules/xtend-library/src/tailwind-xtend.js
-      xtend: theme => ({
-        utilities: {
-          // disable utility
-          utility: false,
-          // modify utility
-          utility: {
-            '.selector': {
-              myStyle: 'myStyleValue',
-            },
-          },
-        },
-        components: {
-          // disable component
-          component: false,
-          // modify component
-          component: {
-            '.selector': {
-              myStyle: 'myStyleValue',
-            },
-          },
-        },
-      }),
     },
+  },
+}
+```
+
+To **customize the styles** provided by this plugin, add your overrides under the **xtend key** in the theme section of your `tailwind.config.js` file.
+
+To **see the default values** see the source code of `node_modules/xtend-library/src/tailwind-xtend.js`.
+
+```jsx
+module.exports = {
+  theme: {
+    // xtend utilities and components in node_modules/xtend-library/src/tailwind-xtend.js
+    xtend: theme => ({
+      utilities: {
+        // disable utility
+        utilityName: false,
+        // modify utility
+        utilityName: {
+          '.selector': {
+            myStyle: 'myStyleValue',
+          },
+        },
+      },
+      components: {
+        // disable component
+        componentName: false,
+        // modify component
+        componentName: {
+          '.selector': {
+            myStyle: 'myStyleValue',
+          },
+        },
+      },
+    }),
   },
 }
 ```
