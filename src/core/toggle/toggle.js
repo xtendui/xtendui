@@ -589,16 +589,15 @@ class Toggle {
         self.destroyElements.push(...imgs)
         for (const img of imgs) {
           if (!Xt.dataStorage.get(img, self.componentNamespace + 'MedialoadedDone')) {
-            Xt.dataStorage.set(img, self.componentNamespace + 'MedialoadedDone', true)
             if (!img.complete) {
               const medialoadedHandler = Xt.dataStorage.put(
                 img,
                 'load/media' + '/' + self.namespace,
-                self.eventMedialoadedHandler.bind(self).bind(self, tr, true)
+                self.eventMedialoadedHandler.bind(self).bind(self, img, tr, true)
               )
               img.addEventListener('load', medialoadedHandler)
             } else {
-              self.eventMedialoadedHandler(tr)
+              self.eventMedialoadedHandler(img, tr)
             }
           }
         }
@@ -877,12 +876,15 @@ class Toggle {
 
   /**
    * medialoaded
+   * @param {Node|HTMLElement|EventTarget|Window} img
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Boolean} deferred
    */
-  eventMedialoadedHandler(el, deferred = false) {
+  eventMedialoadedHandler(img, el, deferred = false) {
     const self = this
     const options = self.options
+    // @FIX multiple calls
+    Xt.dataStorage.set(img, self.componentNamespace + 'MedialoadedDone', true)
     // mediaLoadedReinit
     if (options.mediaLoadedReinit && deferred) {
       clearTimeout(Xt.dataStorage.get(self.object, 'xt' + self.componentNamespace + 'MedialoadedInit' + 'Timeout'))
