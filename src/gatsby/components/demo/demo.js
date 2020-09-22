@@ -4,8 +4,8 @@ import PropTypes from 'prop-types'
 import { populateDemo, demoHash } from 'assets/scripts/demo'
 
 class Demo extends React.Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
     this.demoRef = React.createRef()
   }
 

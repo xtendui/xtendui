@@ -428,7 +428,7 @@ class Slider extends Xt.Toggle {
       }
       // drag start
       const dragstartHandler = Xt.dataStorage.put(
-        dragger,
+        window,
         'mousedown touchstart/drag' + '/' + self.namespace,
         self.eventDragstartHandler.bind(self).bind(self, dragger)
       )
