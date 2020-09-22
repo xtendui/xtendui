@@ -1,3 +1,5 @@
+const btnDefault = require('components/snippets/classes/btn-default').default
+
 export default () => {
   return `
 <div class="slides">
@@ -6,8 +8,8 @@ export default () => {
     <div class="slide">
       <div class="slide-inner">
 
-        <div class="media-container media-container-responsive">
-          <div class="media-inner">
+        <div class="media-container">
+          <div class="media-inner relative">
             <img class="media" src="/img.svg" loading="eager" alt=""/>
           </div>
         </div>
@@ -18,8 +20,8 @@ export default () => {
     <div class="slide">
       <div class="slide-inner">
 
-        <div class="media-container media-container-responsive">
-          <div class="media-inner">
+        <div class="media-container">
+          <div class="media-inner relative">
             <img class="media" src="/img-ratio.svg" loading="eager" alt=""/>
           </div>
         </div>
@@ -30,8 +32,8 @@ export default () => {
     <div class="slide">
       <div class="slide-inner">
 
-        <div class="media-container media-container-responsive">
-          <div class="media-inner">
+        <div class="media-container">
+          <div class="media-inner relative">
             <img class="media" src="/img.svg" loading="eager" alt=""/>
           </div>
         </div>
@@ -42,8 +44,8 @@ export default () => {
     <div class="slide">
       <div class="slide-inner">
 
-        <div class="media-container media-container-responsive">
-          <div class="media-inner">
+        <div class="media-container">
+          <div class="media-inner relative">
             <img class="media" src="/img-ratio.svg" loading="eager" alt=""/>
           </div>
         </div>
@@ -54,8 +56,8 @@ export default () => {
     <div class="slide">
       <div class="slide-inner">
 
-        <div class="media-container media-container-responsive">
-          <div class="media-inner">
+        <div class="media-container">
+          <div class="media-inner relative">
             <img class="media" src="/img.svg" loading="eager" alt=""/>
           </div>
         </div>
@@ -66,8 +68,8 @@ export default () => {
     <div class="slide">
       <div class="slide-inner">
 
-        <div class="media-container media-container-responsive">
-          <div class="media-inner">
+        <div class="media-container">
+          <div class="media-inner relative">
             <img class="media" src="/img-ratio.svg" loading="eager" alt=""/>
           </div>
         </div>
@@ -79,7 +81,7 @@ export default () => {
 </div>
 
 <nav class="slider-pagination">
-  <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
+  <button type="button" class="btn ${btnDefault()} xt-ignore" data-xt-pag title="Slide xt-num">
   </button>
 </nav>
 `

@@ -1,0 +1,16 @@
+.demo--slider-media-loaded {
+  .slide {
+    img {
+      height: 30rem;
+      width: auto;
+    }
+    /* animation */
+    opacity: 0;
+    &.xt-medialoaded {
+      opacity: 1;
+      transition-property: theme('transitionProperty.opacity');
+      transition-duration: theme('transitionDuration.500');
+      transition-timing-function: theme('transitionTimingFunction.in');
+    }
+  }
+}

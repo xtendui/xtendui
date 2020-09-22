@@ -11,4 +11,8 @@
 @import 'xtend-library/src/private/demos/components/core/toggle/custom-options.css';
 @import 'xtend-library/src/private/demos/components/core/toggle/jump.css';
 @import 'xtend-library/src/private/demos/components/core/toggle/timing.css';
+@import 'xtend-library/src/private/demos/components/extensions/slider/disable.css';
+@import 'xtend-library/src/private/demos/components/extensions/slider/expand.css';
+@import 'xtend-library/src/private/demos/components/extensions/slider/media-loaded.css';
+@import 'xtend-library/src/private/demos/components/extensions/slider/overflow-auto.css';
 @import 'xtend-library/src/private/demos/components/extensions/slider/progress.css';
