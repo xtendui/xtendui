@@ -91,7 +91,7 @@ module.exports = theme => ({
               display: 'none',
             },
             '> .card': {
-              '@apply card-disable': '',
+              '@apply card-disable !important': '',
             },
           },
           '@apply xt-disable': '',
@@ -220,7 +220,7 @@ module.exports = theme => ({
         },
         '.overlay-inner': {
           '> .card': {
-            '@apply card-disable': '',
+            '@apply card-disable !important': '',
           },
         },
         '> .backdrop': {
