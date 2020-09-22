@@ -93,19 +93,23 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 </div>
 
+For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/customizing-spacing).
+
 <div class="table-scroll">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Util                  | `.container-reset`       | `container-reset`                | `responsive`                | Reset container styles            |
+| Util                  | `.list-space-<space>`       | `list-space-<space>`                | `responsive`                | Space contents horizontally and vertically            |
 
 </div>
+
+For `<direction>` values use `x` or `y`.
 
 <div class="table-scroll">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.overflow-main`                     | `overflow-main`                | Overflow scrollbar style            |
+| Component                  | `.loader-<direction>`                     | `loader-<direction>`                | Loader direction for filler            |
 
 </div>
 

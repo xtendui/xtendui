@@ -130,7 +130,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="loader loader-spinner loader-background toggle" data-xt-google-locator-loader>
+  <div class="loader loader-background toggle" data-xt-google-locator-loader>
     <div class="spinner">
       ${spinner({})}
     </div>

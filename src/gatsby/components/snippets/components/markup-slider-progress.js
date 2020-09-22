@@ -2,7 +2,7 @@ const spinner = require('components/snippets/spinner').default
 
 export default () => {
   return `
-<div class="loader loader-spinner loader-mouse loader-js">
+<div class="loader loader-mouse loader-js">
   <span class="spinner">
     ${spinner({})}
   </span>

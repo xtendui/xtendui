@@ -1,5 +1,7 @@
 @import 'xtend-library/src/private/demos/components/core/drop/animation.css';
 @import 'xtend-library/src/private/demos/components/core/drop/disable.css';
+@import 'xtend-library/src/private/demos/components/core/loader/js-filler.css';
+@import 'xtend-library/src/private/demos/components/core/loader/js-spinner.css';
 @import 'xtend-library/src/private/demos/components/core/overlay/animation.css';
 @import 'xtend-library/src/private/demos/components/core/overlay/class-html.css';
 @import 'xtend-library/src/private/demos/components/core/overlay/disable.css';

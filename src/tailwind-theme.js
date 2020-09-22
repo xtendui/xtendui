@@ -94,6 +94,64 @@ module.exports = function (custom = {}) {
         outBack: 'cubic-bezier(.175,.885,.32,1.275)',
         inOutBack: 'cubic-bezier(.68,-.55,.265,1.55)',
       },
+      keyframes: theme => ({
+        'anim-spinner': {
+          '0%': {
+            strokeDashoffset: '628',
+            transform: 'rotateY(0deg) rotateZ(-90deg)',
+            animationTimingFunction: theme('transitionTimingFunction.ease.in'),
+            transformOrigin: '48% 48%', // fix no support transform-box: border-box;
+          },
+          '50%': {
+            strokeDashoffset: '0',
+            transform: 'rotateY(0deg) rotateZ(90deg)',
+            transformOrigin: '48% 48%', // fix no support transform-box: border-box;
+          },
+          '50.0001%': {
+            strokeDashoffset: '0',
+            transform: 'rotateY(180deg) rotateZ(90deg)',
+            animationTimingFunction: theme('transitionTimingFunction.ease.out'),
+            transformOrigin: 'center center', // fix no support transform-box: border-box;
+          },
+          '100%': {
+            strokeDashoffset: '628',
+            transform: 'rotateY(180deg) rotateZ(-90deg)',
+            transformOrigin: '46% 50%', // fix no support transform-box: border-box;
+          },
+        },
+        'anim-filler-x': {
+          '0%': {
+            left: '0',
+            width: '0',
+            animationTimingFunction: theme('transitionTimingFunction.ease.in'),
+          },
+          '50%': {
+            left: '0',
+            width: '100%',
+            animationTimingFunction: theme('transitionTimingFunction.ease.out'),
+          },
+          '100%': {
+            left: '100%',
+            width: '0',
+          },
+        },
+        'anim-filler-y': {
+          '0%': {
+            top: '0',
+            height: '0',
+            animationTimingFunction: theme('transitionTimingFunction.ease.in'),
+          },
+          '50%': {
+            top: '0',
+            height: '100%',
+            animationTimingFunction: theme('transitionTimingFunction.ease.out'),
+          },
+          '100%': {
+            top: '100%',
+            height: '0',
+          },
+        },
+      }),
     },
   }
   return merge(base, custom)

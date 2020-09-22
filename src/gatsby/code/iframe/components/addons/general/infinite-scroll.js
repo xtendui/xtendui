@@ -146,7 +146,7 @@ demo.htmlSource = `
             <span class="content-nomore">
               There are no more products
             </span>
-            <span class="loader loader-spinner infinite-scroll--spinner">
+            <span class="loader infinite-scroll--spinner">
               <span class="spinner">
                 ${spinner({})}
               </span>
