@@ -103,14 +103,9 @@ Xt.mount.push({
 
     // mousefollow
 
-    const mouseFollowObject = document.querySelector('.loader-mouse')
+    const mouseFollowObject = object.querySelector(':scope > .loader')
     const mouseFollowContainer = object
-    let mouseFollow = new Xt.MouseFollow(mouseFollowObject, mouseFollowContainer, {
-      mouseCheck: function () {
-        // eslint-disable-next-line no-invalid-this
-        return !this.object.classList.contains('loader-disable') || this.object.classList.contains('loader-js')
-      },
-    })
+    let mouseFollow = new Xt.MouseFollow(mouseFollowObject, mouseFollowContainer, {})
 
     // unmount
 

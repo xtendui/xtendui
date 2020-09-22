@@ -883,39 +883,15 @@ module.exports = theme => ({
           bottom: '25%',
         },
       },
-      /*
-      // animation
-
-      // loader-mouse
-
-      .loader-mouse {
-        overflow: visible;
-        .filler, .spinner {
-          display: block;
-          position: relative;
-          margin-top: -10px;
-          margin-left: 40px;
+      '.loader-mouse': {
+        overflow: 'visible',
+        '.filler, .spinner': {
+          display: 'block',
+          position: 'relative',
+          marginTop: '-10px',
+          marginLeft: '40px',
         }
-        // animation
-        .loader-animated();
-        // disable on touch
-        @media (hover: none) {
-          .loader-animated.in();
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          padding-top: -13px;
-          padding-left: -13px;
-          transform: none;
-        }
-      }
-
-      .loader-x.loader-mouse {
-        .filler {
-          width: 60px;
-        }
-      }
-*/
+      },
     },
     // media
     media: {
@@ -942,6 +918,17 @@ module.exports = theme => ({
         // setup
         width: '100%',
         height: '100%',
+      },
+    },
+    // mousefollow
+    mousefollow: {
+      '.mouse-follow': {
+        pointerEvents: 'none',
+        position: 'fixed',
+        top: '0',
+        left: '0',
+        right: 'auto',
+        bottom: 'auto',
       },
     },
     // overlay

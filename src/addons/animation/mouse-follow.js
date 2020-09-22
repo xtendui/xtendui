@@ -35,7 +35,6 @@ class MouseFollow {
     self.container.addEventListener('mousemove', self.mousemove.bind(self))
     self.container.addEventListener('mouseenter', self.mouseenter.bind(self))
     self.container.addEventListener('mouseleave', self.mouseleave.bind(self))
-    addEventListener('mouseup', self.mouseleave.bind(self))
     // initialized class
     self.object.classList.add(self.componentName)
     // @FIX raf because after .xt custom listeners
