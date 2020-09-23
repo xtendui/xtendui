@@ -2,6 +2,8 @@ import React from 'react'
 import path from 'path'
 const btnPrimary = require('components/snippets/classes/btn-primary').default
 const cardDefault = require('components/snippets/classes/card-default').default
+const markupSlider = require('components/snippets/components/markup-slider-event-method').default
+const indentString = require('indent-string')
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -54,6 +56,7 @@ demo.htmlSource = `
 <br/>
 
 <div class="slider" id="demo--slider-events">
+${indentString(markupSlider(), 2)}
 </div>
 
 <div class="card ${cardDefault()} mt-6">

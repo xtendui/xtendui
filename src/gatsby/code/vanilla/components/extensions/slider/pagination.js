@@ -11,7 +11,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="slider"
-  data-xt-slider="{ groupMq: {'all': 1 } }">
+  data-xt-slider="{ groupMq: { all: 1 } }">
 ${indentString(markupSlider(), 2)}
 </div>
 `

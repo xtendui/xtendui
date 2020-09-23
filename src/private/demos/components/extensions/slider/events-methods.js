@@ -1,4 +1,5 @@
 import { Xt } from 'xtend-library/src/xt.js'
+const cardSlide = require('components/snippets/classes/card-slide').default
 
 Xt.mount.push({
   matches: '#demo--slider-events',
@@ -11,6 +12,7 @@ Xt.mount.push({
         initial: false,
       },
       align: 'center',
+      groupMq: { all: 1, '(min-width: 768px)': 0.8 },
       drag: { wrap: true },
     })
 
@@ -87,22 +89,16 @@ Xt.mount.push({
         const targets = self.targets.filter(x => !x.classList.contains('xt-wrap'))
         const indexTr = targets.length + 1
         const strTr = `
-        <div class="slide w-6/12 sm:w-4/12">
+        <div class="slide w-6/12 sm:w-4/12 opacity-50 active:opacity-100">
           <div class="slide-inner">
 
-            <div class="card card-slide">
-              <div class="card-design"></div>
-              <div class="card-inner">
-                <div class="card-content">
-                  <div class="card-block card-item">
-                    <div class="h4">${indexTr}</div>
-                  </div>
-                </div>
-              </div>
+            <div class="card ${cardSlide()}">
+              <div class="h4">${indexTr}</div>
             </div>
 
           </div>
-        </div>`
+        </div>
+        `
         document.querySelector('#demo--slider-events-targets').append(Xt.createElement(strTr))
         // reinit
         logAdd('<strong>reinit</strong>')
