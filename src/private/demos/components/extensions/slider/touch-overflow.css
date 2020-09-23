@@ -1,0 +1,17 @@
+.demo--slider-touch-overflow {
+  @media (hover: none) {
+    @apply xt-disable-after-init;
+    .slides {
+      @apply overflow-sub;
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+    .slides-inner {
+      @apply duration-none transform-none !important;
+      cursor: auto !important;
+    }
+    .slider-pagination {
+      display: none !important;
+    }
+  }
+}

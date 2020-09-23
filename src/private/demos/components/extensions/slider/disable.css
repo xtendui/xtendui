@@ -1,7 +1,4 @@
-/*
 .demo--slider-disable {
-  @media @min-sm {
-    .slider-disable();
-  }
+  /*@apply sm:slider-disable;*/
+  @apply slider-disable;
 }
-*/

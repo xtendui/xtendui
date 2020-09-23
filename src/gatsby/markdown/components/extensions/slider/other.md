@@ -8,9 +8,9 @@ date: "2005-10-10"
 
 ## Media loaded
 
-When the **slide width** depend on inner images size, you need to reinit the slider when the media is loaded and the **width** of the image is calculated.
+If you want to animate on image loaded, with `mediaLoaded: true` use the class `.xt-medialoaded` or the js event `medialoaded.xt`.
 
-If you want to animate with css use the `.xt-medialoaded` class or with js use the event `medialoaded.xt`.
+When the **slide width** depends on inner images size, you need to reinit the slider when the media is loaded and the **width** of the image is calculated with `mediaLoadedReinit: true`.
 
 <div class="table-scroll">
 
@@ -28,19 +28,7 @@ If you want to animate with css use the `.xt-medialoaded` class or with js use t
 
 ## Overflow auto
 
-Slider automatically disable when not overflowing. It also hides automatically **pagination**, **navigation** and **wrap**.
-
-Use `justify-content` to assign horizontal alignment when not overflowing, this way:
-
-```less
-.slider--custom {
-  &.xt-overflow-auto {
-    .slides-inner {
-      justify-content: center;
-    }
-  }
-}
-```
+Slider with `overflowAuto:Boolean` automatically disable when not overflowing. It also hides automatically **pagination**, **navigation** and **wrap**.
 
 <div class="table-scroll">
 
@@ -50,7 +38,7 @@ Use `justify-content` to assign horizontal alignment when not overflowing, this 
 
 </div>
 
-You can style the slides justification with the selector `.slider.xt-overflow-auto .slides-inner`.
+Use the class `.xt-overflow-auto` to assign horizontal alignment when not overflowing.
 
 <demo>
   <demovanilla src="vanilla/components/extensions/slider/overflow-auto">
@@ -64,20 +52,36 @@ You can disable **overflow auto** behaviour with `overflowAuto: false`.
   </demovanilla>
 </demo>
 
+## Disable
+
+To disable a slider use `.slider-disable` util.
+
+It also hides automatically **pagination** and **navigation** **wrap** and slides not `active`.
+
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
+| Util                  | `.slider-disable`       | `slider-disable`                | `responsive`                | Disable the slider            |
+
+</div>
+
 ## Expand
 
-To disable and expand a slider use `.slider-expand` also within media queries.
+To disable and expand a slider use `.slider-expand` util.
+
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
+| Util                  | `.slider-expand`       | `slider-expand`                | `responsive`                | Disable the slider and expand the slides            |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/extensions/slider/expand">
   </demovanilla>
 </demo>
-
-## Disable
-
-You can disable slider using `.slider-disable` (resize to mobile to see it in action).
-
-It also hides automatically **pagination** and **navigation** **wrap** and slides not `active`.
 
 <demo>
   <demovanilla src="vanilla/components/extensions/slider/disable">
@@ -86,7 +90,7 @@ It also hides automatically **pagination** and **navigation** **wrap** and slide
 
 ## Touch Overflow
 
-Use `.slider-touch-overflow` to have browser overflow scroll on touch devices (use touch device to see it in action).
+To have browser overflow scroll on touch devices use this css (use touch device to see it in action).
 
 <demo>
   <demovanilla src="vanilla/components/extensions/slider/touch-overflow">

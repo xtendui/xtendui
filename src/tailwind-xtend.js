@@ -37,6 +37,9 @@ module.exports = theme => ({
           display: 'none',
         },
       },
+      '.transform-none': {
+        transform: 'initial',
+      },
       '.duration-none': {
         transitionDuration: 'initial',
         transitionDelay: 'initial',
@@ -74,6 +77,7 @@ module.exports = theme => ({
     drop: {
       '.drop-container-disable': {
         // setup
+        '@apply xt-disable': '',
         position: 'initial',
         '> a, > button': {
           display: 'none',
@@ -94,7 +98,6 @@ module.exports = theme => ({
               '@apply card-disable !important': '',
             },
           },
-          '@apply xt-disable': '',
         },
       },
       '.drop-before': {
@@ -113,7 +116,7 @@ module.exports = theme => ({
         right: 'auto',
         '&:before': {
           display: 'none',
-          content: '',
+          content: '""',
         },
       },
       '.drop-right': {
@@ -122,7 +125,7 @@ module.exports = theme => ({
         right: '0',
         '&:before': {
           display: 'none',
-          content: '',
+          content: '""',
         },
       },
       '.drop-bottom': {
@@ -131,7 +134,7 @@ module.exports = theme => ({
         bottom: 'auto',
         '&:after': {
           display: 'none',
-          content: '',
+          content: '""',
         },
       },
       '.drop-top': {
@@ -140,14 +143,14 @@ module.exports = theme => ({
         bottom: '100%',
         '&:after': {
           display: 'none',
-          content: '',
+          content: '""',
         },
       },
       '.drop-center': {
         // setup
         '&:before': {
           display: 'none',
-          content: 'xt-drop-center',
+          content: '"xt-drop-center"',
         },
       },
       '.drop-middle': {
@@ -156,7 +159,7 @@ module.exports = theme => ({
         paddingBottom: '0',
         '&:after': {
           display: 'none',
-          content: 'xt-drop-middle',
+          content: '"xt-drop-middle"',
         },
       },
       '.drop-contain-bottom': {
@@ -198,6 +201,7 @@ module.exports = theme => ({
       },
       '.overlay-disable': {
         // setup
+        '@apply xt-disable': '',
         display: 'flex !important',
         overflow: 'initial !important',
         position: 'static',
@@ -226,12 +230,47 @@ module.exports = theme => ({
         '> .backdrop': {
           display: 'none !important',
         },
-        '@apply xt-disable': '',
       },
     },
     // slider
     slider: {
-
+      '.slider-disable': {
+        // setup
+        '@apply xt-disable-after-init': '',
+        '.slider-pagination, [data-xt-nav]': {
+          display: 'none !important',
+        },
+        '.xt-wrap': {
+          visibility: 'hidden !important',
+          opacity: '0 !important',
+        },
+        // @FIX do calculation first
+        '&.xt-disabled': {
+          '.slide:not(.active)': {
+            visibility: 'hidden !important',
+            opacity: '0 !important',
+            height: '0 !important',
+          },
+        },
+      },
+      '.slider-expand': {
+        // setup
+        '@apply xt-disable': '',
+        '.slides': {
+          overflow: 'visible',
+          height: 'auto !important',
+        },
+        '.slides-inner': {
+          '@apply duration-none animate-none transform-none !important': '',
+          flexWrap: 'wrap !important',
+        },
+        '.slide:not(.active)': {
+          opacity: '1 !important',
+        },
+        '.xt-wrap, .slider-pagination, [data-xt-nav], .loader, .filler, .spinner': {
+          display: 'none !important',
+        },
+      },
     },
     // row
     row: {
@@ -320,7 +359,7 @@ module.exports = theme => ({
         scrollbarColor: theme('colors.accent.700') + ' transparent',
       },
       '.design-setup': {
-        content: '',
+        content: '""',
         position: 'absolute',
         zIndex: '-1',
         top: '0',
@@ -375,14 +414,14 @@ module.exports = theme => ({
         // setup
         '&:after': {
           display: 'none',
-          content: 'xt-disable',
+          content: '"xt-disable"',
         },
       },
       '.xt-disable-after-init': {
         // setup
         '&:after': {
           display: 'none',
-          content: 'xt-disable-after-init',
+          content: '"xt-disable-after-init"',
         },
       },
       '.xt-jump': {
@@ -1095,6 +1134,16 @@ module.exports = theme => ({
         borderRadius: '2rem',
         padding: `${rem(7)} ${rem(11)}`,
         fontSize: rem(10),
+      },
+      '.xt-overflow-auto': {
+        '@apply xt-disable': '',
+        '.slider-pagination, [data-xt-nav], .xt-wrap': {
+          display: 'none !important',
+        },
+        // @FIX disable slider if not overflowing
+        '.slides-inner': {
+          '@apply duration-none transform-none !important': '',
+        },
       },
     },
     // table
