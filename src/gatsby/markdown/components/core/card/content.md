@@ -8,7 +8,7 @@ date: "2030-10-10"
 
 ## Variant
 
-Use **tailwind classes** to assign variant (e.g.: border / background / color).
+Use **tailwind classes** to assign variant (e.g.: border, background, color).
 
 <demo>
   <demovanilla src="vanilla/components/core/card/variant">
@@ -28,7 +28,7 @@ Use **tailwind classes** to modify variants for interactive animations.
 
 Use **tailwind classes** to assign text size.
 
-Use **component's classes** to assign size (e.g.: padding / font size).
+Use **component's classes** to assign size (e.g.: padding, font size).
 
 [[noteDefault]]
 | To customize utils and components follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
@@ -67,7 +67,7 @@ If you want full width assets use `.card-asset`.
 
 ## Block
 
-Sequential `.card-block` stack vertically. Use **tailwind classes** to assign styles (e.g.: border-radius / background / spacing) 
+Sequential `.card-block` stack vertically. Use **tailwind classes** to assign styles (e.g.: border-radius, background, spacing) 
 
 <div class="table-scroll">
 

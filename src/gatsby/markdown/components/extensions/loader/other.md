@@ -8,7 +8,7 @@ date: "2005-10-10"
 
 ## Background
 
-Use **tailwind classes** to assign variant (e.g.: background / opacity).
+Use **tailwind classes** to assign variant (e.g.: background, opacity).
 
 <demo>
   <demovanilla src="vanilla/components/extensions/loader/background-spinner">

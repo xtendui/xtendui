@@ -8,7 +8,7 @@ date: "2030-10-10"
 
 ## Spinner
 
-Use **tailwind classes** to assign variant (e.g.: stroke / opacity).
+Use **tailwind classes** to assign variant (e.g.: stroke, opacity).
 
 Use `.spinner-animated` to assing spinner animation.
 
@@ -29,7 +29,7 @@ Use `.spinner-animated` to assing spinner animation.
 
 ## Filler
 
-Use **tailwind classes** to assign variant (e.g.: background / opacity).
+Use **tailwind classes** to assign variant (e.g.: background, opacity).
 
 Use `.loader-<direction>-animated` to assing filler animation.
 

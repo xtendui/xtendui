@@ -331,6 +331,10 @@ module.exports = theme => ({
           textTransform: 'uppercase',
         },
       },
+      '.align-uppercase': {
+        position: 'relative',
+        top: '-.1em',
+      },
     },
   },
   components: {
@@ -586,6 +590,34 @@ module.exports = theme => ({
         // styles
         padding: `${rem(10)} ${rem(18)}`,
         fontSize: rem(14),
+      },
+    },
+    // breadcrumbs
+    breadcrumbs: {
+      '.breadcrumbs': {
+        // setup
+        width: '100%',
+        // styles
+        '@apply py-4': '',
+      },
+      '.breadcrumbs-list': {
+        // setup
+        lineHeight: '1',
+        '.btn': {
+          paddingLeft: '0',
+          paddingRight: '0',
+        },
+        'div.btn': {
+          pointerEvents: 'none',
+        },
+        // ellipsis
+        overflow: 'hidden',
+        whiteSpace: 'nowrap',
+        textOverflow: 'ellipsis',
+        '> *': {
+          display: 'inline !important',
+          verticalAlign: 'middle !important',
+        },
       },
     },
     // btn
@@ -1137,6 +1169,46 @@ module.exports = theme => ({
           '> *': {
             '@apply flex-none': '',
           },
+        },
+      },
+    },
+    // separator
+    separator: {
+      '.separator': {
+        // setup
+        display: 'inline-block',
+        position: 'relative',
+        fontSize: '1em',
+        verticalAlign: 'baseline',
+      },
+      '.separator-dash': {
+        // styles
+        '&:after': {
+          content: '"-"',
+        },
+      },
+      '.separator-slash': {
+        // styles
+        '&:after': {
+          content: '"/"',
+        },
+      },
+      '.separator-pipe': {
+        // styles
+        '&:after': {
+          content: '"|"',
+        },
+      },
+      '.separator-point': {
+        // styles
+        '&:after': {
+          content: '"•"',
+        },
+      },
+      '.separator-arrow': {
+        // styles
+        '&:after': {
+          content: '">"',
         },
       },
     },

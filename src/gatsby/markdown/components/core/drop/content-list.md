@@ -8,7 +8,7 @@ date: "2030-10-10"
 
 ## Variant
 
-Use **tailwind classes** to assign variant (e.g.: border / background / color).
+Use **tailwind classes** to assign variant (e.g.: border, background, color).
 
 <demo>
   <demovanilla src="vanilla/components/core/drop/list-variant">
@@ -17,7 +17,7 @@ Use **tailwind classes** to assign variant (e.g.: border / background / color).
 
 ## Size
 
-Use **component's classes** to assign size (e.g.: padding / font size).
+Use **component's classes** to assign size (e.g.: padding, font size).
 
 [[noteDefault]]
 | To customize utils and components follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
@@ -32,7 +32,7 @@ Use **component's classes** to assign size (e.g.: padding / font size).
 
 </div>
 
-Use [button classes](/components/core/button/content#size) to assign button size (e.g.: padding / font size).
+Use [button classes](/components/core/button/content#size) to assign button size (e.g.: padding, font size).
 
 <demo>
   <demovanilla src="vanilla/components/core/drop/list-size">

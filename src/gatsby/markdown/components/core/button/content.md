@@ -8,7 +8,7 @@ date: "2030-10-10"
 
 ## Variant
 
-Use **tailwind classes** to assign variant (e.g.: border / background / color).
+Use **tailwind classes** to assign variant (e.g.: border, background, color).
 
 Use `.link` to create a [link](/components/core/link).
 
@@ -26,7 +26,7 @@ Inside `.text-inverse` buttons are styled accordingly.
 
 ## Size
 
-Use **component's classes** to assign size (e.g.: padding / font size).
+Use **component's classes** to assign size (e.g.: padding, font size).
 
 [[noteDefault]]
 | To customize utils and components follow [css customization](/introduction/getting-started/setup#css-customization) instructions.

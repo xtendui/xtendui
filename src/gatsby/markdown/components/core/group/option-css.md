@@ -11,7 +11,7 @@ date: "2015-10-10"
 
 ## Variant
 
-Classes for assigning variant (e.g.: border / background / color).
+Classes for assigning variant (e.g.: border, background, color).
 
 <div class="table-scroll">
 

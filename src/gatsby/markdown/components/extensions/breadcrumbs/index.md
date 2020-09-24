@@ -16,7 +16,16 @@ To customize this component in your `tailwind.config.js` file, as described in [
 
 ```jsx
 module.exports = {
-@TODO
+  theme: require('xtend-library/src/tailwind-theme')({
+    // xtend utilities and components in node_modules/xtend-library/src/tailwind-xtend.js
+    xtend: theme => ({
+      components: {
+        breadcrumbs: {
+          // modify component
+        },
+      },
+    }),
+  })
 }
 ```
 
@@ -27,21 +36,21 @@ Use this markup to create a **breadcrumb**.
 <script type="text/plain" class="language-markup">
   <div class="breadcrumbs">
     <div class="container">
-      <div class="breadcrumbs-inner">
-        <nav class="breadcrumbs-list">
-          <a href="/" class="btn">
-            <!-- content -->
-          </a>
-          <span class="separator"></span>
-          <a href="/link" class="btn">
-            <!-- content -->
-          </a>
-          <span class="separator"></span>
-          <div class="btn">
-            <!-- content -->
-          </div>
-        </nav>
-      </div>
+
+      <nav class="breadcrumbs-list">
+        <a href="#" class="btn">
+          <!-- content -->
+        </a>
+        <span class="separator"></span>
+        <a href="#" class="btn">
+          <!-- content -->
+        </a>
+        <span class="separator"></span>
+        <div class="btn">
+          <!-- content -->
+        </div>
+      </nav>
+      
     </div>
   </div>
 </script>
@@ -76,9 +85,12 @@ Use this markup to add **json-ld** metadata to **breadcrumb**.
 </script>
 ```
 
+Then add and [style content](/components/extensions/breadcrumbs/content).
+
+[[noteDefault]]
+| To customize separator follow [separator component](/components/extensions/separator).
+
 <demo>
-  <demovanilla src="vanilla/components/extensions/breadcrumbs/default">
-  </demovanilla>
-  <demovanilla src="vanilla/components/extensions/breadcrumbs/background-title">
+  <demovanilla src="vanilla/components/extensions/breadcrumbs/usage">
   </demovanilla>
 </demo>

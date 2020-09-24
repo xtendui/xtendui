@@ -33,7 +33,7 @@ Additionally on component initialization the class `xt-sticky` gets added to the
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `sticky:String`                          | `false`        | Sticky mode `'absolute'` or `'fixed`' or `'fixed-always'`            |
+| Option                  | `sticky:String`                          | `false`        | Sticky mode `'absolute'`, `'fixed`' or `'fixed-always'`            |
 
 </div>
 

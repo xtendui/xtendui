@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="breadcrumbs py-12 bg-gray-200">
+<div class="breadcrumbs">
   <div class="container">
 
     <nav class="breadcrumbs-list">
@@ -24,10 +24,6 @@ demo.htmlSource = `
         Lorem ipsum
       </div>
     </nav>
-
-    <h1 class="h2">
-      Lorem ipsum dolor sit amet
-    </h1>
 
   </div>
 </div>
