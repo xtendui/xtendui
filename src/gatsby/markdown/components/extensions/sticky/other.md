@@ -6,6 +6,15 @@ title: "Other"
 date: "2005-10-10"
 ---
 
+## Disable
+
+You can disable styles and javascript using `.sticky-disable`.
+
+<demo>
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/sticky/disable">
+  </div>
+</demo>
+
 ## Show and Hide
 
 To show or hide content when sticky activates use `.show-sticky` or `.hide-sticky`.
@@ -16,14 +25,5 @@ To show or hide content when sticky activates use `.show-sticky` or `.hide-stick
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/sticky/showhide-bottom">
   </div>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/sticky/showhide-hide">
-  </div>
-</demo>
-
-#### Disable
-
-You can disable sticky using `.sticky-disable` (resize to mobile to see it in action).
-
-<demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/sticky/disable">
   </div>
 </demo>

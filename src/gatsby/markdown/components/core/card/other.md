@@ -8,7 +8,7 @@ date: "2005-10-10"
 
 ## Disable
 
-You can disable card styles using `.card-disable`.
+You can disable styles using `.card-disable`.
 
 <div class="table-scroll">
 

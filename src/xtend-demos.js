@@ -21,6 +21,7 @@ if (typeof window !== 'undefined') {
   require('xtend-library/src/private/demos/components/core/overlay/events-methods.js')
   require('xtend-library/src/private/demos/components/core/toggle/animation-js.js')
   require('xtend-library/src/private/demos/components/core/toggle/events-methods.js')
+  require('xtend-library/src/private/demos/components/core/toggle/progress.js')
   require('xtend-library/src/private/demos/components/core/toggle/timing.js')
   require('xtend-library/src/private/demos/components/extensions/scroll/block.js')
   require('xtend-library/src/private/demos/components/extensions/scroll/delay.js')

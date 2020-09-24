@@ -61,17 +61,3 @@ You can use **javascript animations**, just use [overlay api](/components/core/o
 ## Block
 
 You can block the activations with the class `.xt-block` on elements. See the [api demo](/components/core/overlay/api#demo)
-
-## Other
-
-<div class="table-scroll">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `closeAuto:Boolean`                          | `true`        | Close automatically on `closeauto.trigger.xt` event            |
-| Option                  | `closeInside:Query`                          | `'.overlay-dismiss, .btn-close, .backdrop'`        | Query Node inside to close on click            |
-| Option                  | `appendTo:Query`                          | `'body'`        | Append targets to Node on activation            |
-| Option                  | `scrollbar:Boolean`                          | `true`        | Hide body scrollbars on activation            |
-| Option                  | `focusLimit:Boolean`                          | `true`        | Limit focus on activation            |
-
-</div>

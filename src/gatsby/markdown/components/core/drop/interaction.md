@@ -112,15 +112,3 @@ Set drop position with this utils.
 ## Block
 
 You can block the activations with the class `.xt-block` on elements. See the [api demo](/components/core/drop/api#demo)
-
-## Other
-
-<div class="table-scroll">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `closeAuto:Boolean`                          | `true`        | Close automatically on `closeauto.trigger.xt` event            |
-| Option                  | `closeOutside:Query`                          | `'body'`        | Query Node outside to close on click            |
-| Option                  | `closeInside:Query`                          | `'.drop-dismiss, .backdrop, .btn-close'`        | Query Node inside to close on click            |
-
-</div>

@@ -154,6 +154,13 @@ You can use a function for <code>delayOn</code> and <code>delayOff</code> for ex
   </demovanilla>
 </demo>
 
+Use the [api](/components/extensions/slider/api#listen) and listen to events to make auto progress indicators.
+
+<demo>
+  <demovanilla src="vanilla/components/core/toggle/progress">
+  </demovanilla>
+</demo>
+
 ## Loop
 
 Use `loop: false` to disable looping on activation.
@@ -220,30 +227,3 @@ Use `keyboard: { selector: 'object' }` or `keyboard: { selector: Query }` to ena
 ## Block
 
 You can block the activations with the class `.xt-block` on elements. See the [api demo](/components/core/toggle/api#demo)
-
-## Other
-
-<div class="table-scroll">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `backdrop:Boolean`                              | `false`                     | Generate backdrop on targets or on object if no targets           |
-| Option                  | `appendTo:Query`                          | `false`        | Append targets to Node on activation            |
-| Option                  | `classHtml:String`                          | `false`        | Class to add to html element on activation            |
-| Option                  | `closeAuto:Boolean`                          | `false`        | Close automatically on `closeauto.trigger.xt` event            |
-| Option                  | `closeInside:Query`                          | `false`        | Query Node inside to close on click            |
-| Option                  | `closeOutside:Query`                          | `false`        | Query Node outside to close on click            |
-| Option                  | `closeOnDisable:Boolean`                          | `false`        | Automatically close on disable            |
-| Option                  | `scrollbar:Boolean`                          | `false`        | Hide body scrollbars on activation            |
-| Option                  | `onBlock:Milliseconds`                          | `true`        | Block concurrent activation events for some time            |
-| Option                  | `offBlock:Milliseconds`                          | `true`        | Block concurrent deactivation events for some time            |
-| Option                  | `mediaLoaded:Boolean`                          | `false`        | Media loaded classes on elements and targets            |
-| Option                  | `mediaLoadedReinit:Boolean`                          | `false`        | Reinit component on media loaded elements and targets            |
-| Option                  | `zIndex:Boolean|Object`                 | `false`     | Set zIndex on activation, can be one or more objects `elements` `elementsInner` `targets` `targetsInner`, the object have `start` and `factor` for the starting zIndex and the factor number to add          |
-| Option                  | `focusLimit:Boolean`                          | `false`        | Limit focus on activation            |
-| Option                  | `aria:Object|false`                          | `Object`        | Inject aria attributes            |
-| Option                  | `aria.tabindex:Boolean`                          | `true`        | Inject aria tabindex attributes            |
-| Option                  | `aria.controls:Boolean`                          | `true`        | Inject aria controls attributes            |
-| Option                  | `aria.labelledby:Boolean`                          | `true`        | Inject aria labelledby attributes            |
-
-</div>
