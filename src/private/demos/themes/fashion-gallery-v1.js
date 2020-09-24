@@ -11,7 +11,7 @@ import 'gsap/ScrollToPlugin.js'
  */
 
 Xt.mount.push({
-  matches: '#iframe--fashion-gallery-v1 body .product-page_right', // add your own selector instead of body to contain the code
+  matches: '#iframe--fashion-gallery-v1 body .product-page_right', /* add your own selector instead of body to contain the code */
   mount: function (object) {
     // init
 
@@ -38,7 +38,7 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '#iframe--fashion-gallery-v1 body #gatsby_body-inner', // add your own selector instead of body to contain the code
+  matches: '#iframe--fashion-gallery-v1 body #gatsby_body-inner', /* add your own selector instead of body to contain the code */
   mount: object => {
     // vars
 
@@ -88,7 +88,7 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '#iframe--fashion-gallery-v1 body .product-page_continue', // add your own selector instead of body to contain the code
+  matches: '#iframe--fashion-gallery-v1 body .product-page_continue', /* add your own selector instead of body to contain the code */
   mount: object => {
     // vars
 
@@ -132,7 +132,7 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '#iframe--fashion-gallery-v1 body .product-page_image', // add your own selector instead of body to contain the code
+  matches: '#iframe--fashion-gallery-v1 body .product-page_image', /* add your own selector instead of body to contain the code */
   mount: object => {
     // markup
 

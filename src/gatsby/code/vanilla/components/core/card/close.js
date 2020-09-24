@@ -12,7 +12,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="row row-space-3">
 
-  <div class="w-full sm:w-6/12">
+  <div class="w-full md:w-6/12">
     <div class="card ${cardDefault()}">
       <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
       <div class="card-block card-block-medium">
@@ -22,7 +22,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="w-full sm:w-6/12">
+  <div class="w-full md:w-6/12">
     <div class="card ${cardPrimary()}">
       <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
       <div class="card-block card-block-medium">

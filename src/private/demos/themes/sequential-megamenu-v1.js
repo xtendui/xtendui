@@ -40,7 +40,7 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '#iframe--sequential-megamenu-v1 body .megamenus', // add your own selector instead of body to contain the code
+  matches: '#iframe--sequential-megamenu-v1 body .megamenus', /* add your own selector instead of body to contain the code */
   mount: object => {
     // vars
 

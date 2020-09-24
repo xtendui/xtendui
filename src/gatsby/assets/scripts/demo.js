@@ -72,11 +72,11 @@ if (typeof window !== 'undefined') {
 const formatCode = source => {
   let text = source.innerHTML
   // ##START and ##END
-  const metas = text.match(/\/\/##START\n([\S\s]*?)\/\/##END\n/g)
+  const metas = text.match(/\/\*##START\*\/\n([\S\s]*?)\/\*##END\*\/\n/g)
   if (metas) {
     text = ''
     for (const meta of metas.entries()) {
-      text += meta[1].replace(/\/\/##START\n/g, '').replace(/\/\/##END\n/g, '')
+      text += meta[1].replace(/\/\*##START\*\/\n/g, '').replace(/\/\*##END\*\/\n/g, '')
     }
   }
   // replace id
@@ -492,7 +492,7 @@ const populateIframe = (item, iframe, htmlSource, jsxSource, cssSource, jsSource
       item.append(Xt.createElement('<div class="gatsby_demo_source xt-ignore" data-lang="jsx">' + jsxSource + '</div>'))
     }
     if (cssSource) {
-      item.append(Xt.createElement('<div class="gatsby_demo_source xt-ignore" data-lang="less">' + cssSource + '</div>'))
+      item.append(Xt.createElement('<div class="gatsby_demo_source xt-ignore" data-lang="css">' + cssSource + '</div>'))
     }
     if (jsSource) {
       item.append(Xt.createElement('<div class="gatsby_demo_source xt-ignore" data-lang="js">' + jsSource + '</div>'))

@@ -11,7 +11,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="row row-space-3">
 
-  <div class="w-full sm:w-6/12">
+  <div class="w-full md:w-6/12">
     <div class="card ${cardDefault()}">
       <div class="card-block card-block-medium">
         <div class="list list-space-2 flex-no-wrap items-baseline">

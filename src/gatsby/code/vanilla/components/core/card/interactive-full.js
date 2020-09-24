@@ -12,7 +12,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="row row-space-3">
 
-  <div class="w-full sm:w-6/12">
+  <div class="w-full md:w-6/12">
     <a role="button" class="card card-default-full-interactive ${cardDefaultFullInteractive()}">
       <div class="card-design"></div>
       <div class="card-block card-block-medium p-0">
@@ -22,7 +22,7 @@ demo.htmlSource = `
     </a>
   </div>
 
-  <div class="w-full sm:w-6/12">
+  <div class="w-full md:w-6/12">
     <a role="button" class="card card-primary-full-interactive ${cardPrimaryFullInteractive()}">
       <div class="card-design"></div>
       <div class="card-block card-block-medium p-0">

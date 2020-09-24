@@ -341,18 +341,27 @@ module.exports = theme => ({
     // general
     general: {
       ':focus': {
+        // setup
         outline: 'none !important', // disable focus outline
       },
       html: {
+        // setup
         touchAction: 'manipulation', // disable double-tap
         '-webkit-tap-highlight-color': 'rgba(0, 0, 0, 0)', // disable tap highlight
         height: '100%',
       },
       body: {
+        // setup
         '@apply overflow-main': '',
         height: '100%',
       },
+      '::selection': {
+        // styles
+        backgroundColor: theme('colors.accent.800'),
+        color: theme('colors.white'),
+      },
       '.overflow-main': {
+        // styles
         '-webkit-overflow-scrolling': 'touch',
         '&::-webkit-scrollbar': {
           height: '8px',
@@ -368,6 +377,7 @@ module.exports = theme => ({
         scrollbarColor: theme('colors.accent.700') + ' transparent',
       },
       '.overflow-sub': {
+        // styles
         '-webkit-overflow-scrolling': 'touch',
         '&::-webkit-scrollbar': {
           height: '4px',
@@ -380,7 +390,18 @@ module.exports = theme => ({
         scrollbarWidth: 'thin',
         scrollbarColor: theme('colors.accent.700') + ' transparent',
       },
+      '[disabled], .disabled': {
+        // setup
+        cursor: 'not-allowed',
+        pointerEvents: 'none',
+        // styles
+        // when not .active also graphic changes
+        '&:not(.active)': {
+          opacity: '.75',
+        },
+      },
       '.design-setup': {
+        // setup
         content: '""',
         position: 'absolute',
         zIndex: '-1',
@@ -567,7 +588,7 @@ module.exports = theme => ({
         // animation
         'a&, button&, label&': {
           zIndex: theme('zIndex.base'),
-          transitionProperty: theme('transitionProperty.all'),
+          transitionProperty: 'all',
           transitionDuration: theme('transitionDuration.500'),
           transitionTimingFunction: theme('transitionTimingFunction.out'),
           '&:hover, &:active, &.active': {
@@ -641,7 +662,7 @@ module.exports = theme => ({
         textTransform: 'uppercase',
         // animation
         zIndex: theme('zIndex.base'),
-        transitionProperty: theme('transitionProperty.all'),
+        transitionProperty: 'all',
         transitionDuration: theme('transitionDuration.500'),
         transitionTimingFunction: theme('transitionTimingFunction.out'),
         '&:hover, &:active, &.active': {
@@ -691,7 +712,7 @@ module.exports = theme => ({
         // animation
         'a&, button&, label&': {
           zIndex: theme('zIndex.base'),
-          transitionProperty: theme('transitionProperty.all'),
+          transitionProperty: 'all',
           transitionDuration: theme('transitionDuration.500'),
           transitionTimingFunction: theme('transitionTimingFunction.out'),
           '&:hover, &:active, &.active': {
@@ -1236,7 +1257,7 @@ module.exports = theme => ({
         // styles
         '&.xt-autoHeight': {
           // animation autoHeight
-          transitionProperty: theme('transitionProperty.height'),
+          transitionProperty: 'height',
           transitionDuration: theme('transitionDuration.500'),
           transitionTimingFunction: theme('transitionTimingFunction.ease.out'),
         },
@@ -1255,7 +1276,7 @@ module.exports = theme => ({
         flexWrap: 'nowrap',
         alignItems: 'flex-start',
         // animation dragger
-        transitionProperty: theme('transitionProperty.transform'),
+        transitionProperty: 'transform',
         transitionDuration: theme('transitionDuration.500'),
         transitionTimingFunction: theme('transitionTimingFunction.ease.out'),
       },
@@ -1276,7 +1297,7 @@ module.exports = theme => ({
           padding: `${rem(7)} ${rem(20)}`,
         },
         // animation
-        transitionProperty: theme('transitionProperty.all'),
+        transitionProperty: 'all',
         transitionDuration: theme('transitionDuration.500'),
         transitionTimingFunction: theme('transitionTimingFunction.out'),
         '&:hover, &:active, &.active': {
@@ -1491,7 +1512,7 @@ module.exports = theme => ({
         overflowWrap: 'break-word',
         textDecoration: 'underline',
         // animation
-        transitionProperty: theme('transitionProperty.colors'),
+        transitionProperty: 'color',
         transitionDuration: theme('transitionDuration.500'),
         transitionTimingFunction: theme('transitionTimingFunction.ease.out'),
         '&:hover, &:active, &.active': {
@@ -1557,8 +1578,8 @@ module.exports = theme => ({
       },
       'h5, .h5': {
         // style
-        marginTop: theme('spacing.4'),
-        marginBottom: theme('spacing.2'),
+        marginTop: theme('spacing.2'),
+        marginBottom: theme('spacing.1'),
         '@apply mt-fc mb-lc': {},
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
@@ -1569,8 +1590,8 @@ module.exports = theme => ({
       },
       'h6, .h6': {
         // style
-        marginTop: theme('spacing.4'),
-        marginBottom: theme('spacing.2'),
+        marginTop: theme('spacing.2'),
+        marginBottom: theme('spacing.1'),
         '@apply mt-fc mb-lc': {},
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),

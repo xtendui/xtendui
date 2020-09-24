@@ -12,7 +12,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="row row-space-3">
 
-  <div class="w-full sm:w-6/12">
+  <div class="w-full md:w-6/12">
     <div class="card ${cardDefaultFull()} overflow-y-auto overflow-x-hidden overflow-sub max-h-64">
       <div class="card-asset rounded-md">
         ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
@@ -26,7 +26,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="w-full sm:w-6/12">
+  <div class="w-full md:w-6/12">
     <div class="card ${cardDefaultFull()}">
       <div class="card-asset rounded-md">
         ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}

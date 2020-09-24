@@ -16,13 +16,13 @@
       @apply loader-mouse mouse-follow;
       /* animation */
       opacity: 0;
-      transition-property: theme('transitionProperty.opacity');
+      transition-property: opacity;
       transition-duration: theme('transitionDuration.500');
       transition-timing-function: theme('transitionTimingFunction.out');
       .spinner {
         opacity: 0;
         transform: scale(.75);
-        transition-property: theme('transitionProperty.all');
+        transition-property: all;
         transition-duration: theme('transitionDuration.500');
         transition-timing-function: theme('transitionTimingFunction.out');
       }
@@ -33,15 +33,6 @@
           opacity: 1;
           transform: scale(1);
           transition-timing-function: theme('transitionTimingFunction.in');
-        }
-      }
-      &.out {
-        opacity: 0;
-        transition-timing-function: theme('transitionTimingFunction.in');
-        .spinner {
-          opacity: 0;
-          transform: scale(.75);
-          transition-timing-function: theme('transitionTimingFunction.out');
         }
       }
     }

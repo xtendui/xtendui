@@ -2,7 +2,7 @@ export default () => {
   return `
 <div class="row row-space-3">
 
-  <div class="w-full sm:w-6/12">
+  <div class="w-full md:w-6/12">
     <a role="button" class="card card-default">
       <div class="card-design"></div>
       <div class="card-inner">
@@ -16,7 +16,7 @@ export default () => {
     </a>
   </div>
 
-  <div class="w-full sm:w-6/12">
+  <div class="w-full md:w-6/12">
     <a role="button" class="card card-primary">
       <div class="card-design"></div>
       <div class="card-inner">

@@ -25,7 +25,7 @@ import 'xtend-library/src/addons/animation/propagate-interaction.js'
  */
 
 Xt.mount.push({
-  matches: '#iframe--furniture-parallax-v1 body a, #iframe--furniture-parallax-v1 body button', // add your own selector instead of body to contain the code
+  matches: '#iframe--furniture-parallax-v1 body a, #iframe--furniture-parallax-v1 body button', /* add your own selector instead of body to contain the code */
   mount: object => {
     // init
 
