@@ -8,7 +8,7 @@ date: "2010-10-10"
 
 ## Class
 
-You can customize the class names used with the component.
+You can customize the **class names** used with the component.
 
 <div class="table-scroll">
 
@@ -29,7 +29,18 @@ Additionally on component initialization the class `xt-scroll` gets added to the
 
 ## Mode
 
-You can set scroll mode with css selectors.
+You can set **scroll mode** with css selectors.
+
+<div class="table-scroll">
+
+|                      | Syntax                          |  Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Selector                  | `&:not(.scroll-done) {`                     | Animate once            |
+| Selector                  | ` &:not(.scroll-outside) {`                     | Animate inside viewport once            |
+| Selector                  | `&.scroll-outside {`                     |  Animate outside viewport            |
+| Selector                  | `&.scroll-outside:not(.scroll-done) {`                     |  Animate outside viewport once            |
+
+</div>
 
 <demo>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/scroll/mode-infinite">
@@ -43,9 +54,6 @@ You can set scroll mode with css selectors.
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/scroll/mode-outside-once">
   </div>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/scroll/mode-responsive">
-    <div class="gatsby_demo_text">
-      You can style animations within media queries (resize to mobile to see it in action).
-    </div>
   </div>
 </demo>
 
@@ -71,7 +79,7 @@ You can also set a **fallback** distance from top and bottom for elements that a
 
 ## Delay
 
-You can use a function for `delayOn` and `delayOff` for example `(current, total) => {return Math.min((total - current) * 150, 300)}`.
+You can use `delayOn` and `delayOff` for a delay on activation and deactivation.
 
 <div class="table-scroll">
 
@@ -96,7 +104,7 @@ You can use a function for `delayOn` and `delayOff` for example `(current, total
 
 </div>
 
-@TODO demo
+@TODO
 
 ## Position
 
@@ -111,11 +119,19 @@ You can use a function for `delayOn` and `delayOff` for example `(current, total
 
 </div>
 
-@TODO demo
+@TODO
 
 ## Block
 
 You can block the activations with the class `.xt-block` on elements.
+
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `.xt-block`                     | `NOT POSSIBLE`                | Block scroll on element            |
+
+</div>
 
 <demo>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/scroll/block">

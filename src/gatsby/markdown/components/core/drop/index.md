@@ -173,10 +173,7 @@ Then add and [style content](/components/core/drop/content-list).
 
 ## Initialization
 
-Initialize automatically within markup with `[data-xt-drop="{ <options> }"]` on the **object**.
-
-[[noteDefault]]
-| **Object** is the DOM element you want to assign the component to.
+Initialize automatically within markup with `[data-xt-drop="{ <options> }"]` on the **object** (the DOM element you assigned the component).
 
 Or initialize with **javascript**.
 

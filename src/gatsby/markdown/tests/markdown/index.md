@@ -113,6 +113,16 @@ For `<direction>` values use `x` or `y`.
 
 </div>
 
+You can set **scroll mode** with css selectors.
+
+<div class="table-scroll">
+
+|                      | Syntax                          |  Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Selector                  | `&:not(.scroll-done) {`                     | Animate once            |
+
+</div>
+
 Lorem ipsum `dolor sit` amet, *consectetur* **adipiscing** elit. Nam in [laoreet tellus](/components/group/button), nec commodo massa. Aenean ut ex at ex pellentesque efficitur.
 
 <p class="text-xs">Maecenas pulvinar mauris eget pharetra elementum. Sed sit amet ultrices metus, vitae cursus metus. Proin tristique finibus pretium. Morbi sit amet magna faucibus, luctus enim tempor, dignissim quam. Nam a ornare quam, varius cursus felis. Fusce nunc lacus, iaculis vel cursus non, facilisis id quam.</p>

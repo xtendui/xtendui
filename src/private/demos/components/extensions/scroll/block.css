@@ -1,0 +1,22 @@
+.demo--scroll-block {
+  .card {
+    /* mode-infinite */
+    /* initial */
+    @apply transform transition-all duration-500;
+    @apply opacity-0 -translate-x-4;
+    &.inverse {
+      @apply translate-x-4;
+    }
+    /* in */
+    &.fade-in {
+      @apply opacity-100 translate-x-0 ease-in;
+    }
+    /* out */
+    &.fade-out {
+      @apply opacity-0 translate-x-4 ease-out;
+      &.inverse {
+        @apply -translate-x-4;
+      }
+    }
+  }
+}

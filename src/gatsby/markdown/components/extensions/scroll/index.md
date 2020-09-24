@@ -8,18 +8,6 @@ description: "Content animation when you scroll the page, fade in elements, para
 
 ## Setup
 
-#### Css
-
-Follow the [css installation](/introduction/getting-started/setup#css-installation) instructions.
-
-To customize this component in your `tailwind.config.js` file, as described in [css customization](/introduction/getting-started/setup#css-customization) instructions, use the keys like below.
-
-```jsx
-module.exports = {
-@TODO
-}
-```
-
 #### Javascript
 
 Follow the [js installation](/introduction/getting-started/setup#js-installation) instructions.
@@ -42,10 +30,7 @@ import 'xtend-library/src/xtend-extensions.js'
 
 ## Initialization
 
-Initialize automatically within markup with `[data-xt-scroll="{ <options> }"]` on the **object**.
-
-[[noteDefault]]
-| **Object** is the DOM element you want to assign the component to.
+Initialize automatically within markup with `[data-xt-scroll="{ <options> }"]` on the **object** (the DOM element you assigned the component).
 
 Or initialize with **javascript**.
 

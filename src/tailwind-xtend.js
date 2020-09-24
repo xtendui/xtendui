@@ -382,12 +382,6 @@ module.exports = theme => ({
         // styles
         '@apply bg-gray-900 bg-opacity-25': '',
       },
-      '.initial': {
-        // instant transitions and animation on init and reinit
-        '&, *': {
-          '@apply duration-none !important': '',
-        },
-      },
       'html.xt-scrollbar': {
         // setup
         body: {
@@ -395,6 +389,12 @@ module.exports = theme => ({
         },
         '.overlay': {
           overflowY: 'scroll',
+        },
+      },
+      '.initial': {
+        // instant transitions and animation on init and reinit
+        '&, *': {
+          '@apply duration-none !important': '',
         },
       },
       '[data-xt-pag].xt-ignore': {
@@ -464,6 +464,70 @@ module.exports = theme => ({
         display: 'block !important',
         visibility: 'hidden !important',
         opacity: '0 !important',
+      },
+      '.xt-indicator': {
+        pointerEvents: 'none',
+        position: 'fixed',
+        right: '0',
+        marginTop: '-9px',
+        width: '100px',
+        height: '18px',
+        zIndex: theme('zIndex.top') + 1,
+        lineHeight: '0',
+        textAlign: 'right',
+        '&:before': {
+          display: 'inline-block',
+          position: 'relative',
+          padding: '3px 6px',
+          fontSize: '12px',
+          lineHeight: '1',
+          textTransform: 'uppercase',
+        },
+      },
+      '.xt-indicator-trigger': {
+        right: '100px',
+        backgroundColor: 'purple',
+        '&:before': {
+          content: '"trigger"',
+          color: 'white',
+          backgroundColor: 'purple',
+        },
+      },
+      '.xt-indicator-start': {
+        backgroundColor: 'red',
+        '&:before': {
+          content: '"start"',
+          color: 'white',
+          backgroundColor: 'red',
+        },
+      },
+      '.xt-indicator-end': {
+        backgroundColor: 'blue',
+        '&:before': {
+          content: '"end"',
+          color: 'white',
+          backgroundColor: 'blue',
+        },
+      },
+      '.xt-indicator-start-real': {
+        backgroundColor: 'red',
+        opacity: '.3',
+        zIndex: theme('zIndex.top'),
+        '&:before': {
+          content: '"start real"',
+          color: 'white',
+          backgroundColor: 'red',
+        },
+      },
+      '.xt-indicator-end-real': {
+        backgroundColor: 'blue',
+        opacity: '.3',
+        zIndex: theme('zIndex.top'),
+        '&:before': {
+          content: '"end real"',
+          color: 'white',
+          backgroundColor: 'blue',
+        },
       },
     },
     // badge

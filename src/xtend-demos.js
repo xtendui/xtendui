@@ -27,7 +27,6 @@ if (typeof window !== 'undefined') {
   require('xtend-library/src/private/demos/components/extensions/scroll/delay.js')
   require('xtend-library/src/private/demos/components/extensions/scroll/direction.js')
   require('xtend-library/src/private/demos/components/extensions/scroll/mode-block.js')
-  require('xtend-library/src/private/demos/components/extensions/scroll/parallax.js')
   require('xtend-library/src/private/demos/components/extensions/slider/events-methods.js')
   require('xtend-library/src/private/demos/components/extensions/slider/progress.js')
   require('xtend-library/src/private/demos/components/extensions/sticky/block.js')

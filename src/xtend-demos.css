@@ -11,6 +11,16 @@
 @import 'xtend-library/src/private/demos/components/core/toggle/custom-options.css';
 @import 'xtend-library/src/private/demos/components/core/toggle/jump.css';
 @import 'xtend-library/src/private/demos/components/core/toggle/timing.css';
+@import 'xtend-library/src/private/demos/components/extensions/scroll/block.css';
+@import 'xtend-library/src/private/demos/components/extensions/scroll/delay.css';
+@import 'xtend-library/src/private/demos/components/extensions/scroll/distance.css';
+@import 'xtend-library/src/private/demos/components/extensions/scroll/indicator.css';
+@import 'xtend-library/src/private/demos/components/extensions/scroll/mode-infinite.css';
+@import 'xtend-library/src/private/demos/components/extensions/scroll/mode-inside.css';
+@import 'xtend-library/src/private/demos/components/extensions/scroll/mode-once.css';
+@import 'xtend-library/src/private/demos/components/extensions/scroll/mode-outside-once.css';
+@import 'xtend-library/src/private/demos/components/extensions/scroll/mode-outside.css';
+@import 'xtend-library/src/private/demos/components/extensions/scroll/mode-responsive.css';
 @import 'xtend-library/src/private/demos/components/extensions/slider/disable.css';
 @import 'xtend-library/src/private/demos/components/extensions/slider/expand.css';
 @import 'xtend-library/src/private/demos/components/extensions/slider/media-loaded.css';

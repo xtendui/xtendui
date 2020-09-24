@@ -88,10 +88,7 @@ Use this markup to create a **slider**.
 
 ## Initialization
 
-Initialize automatically within markup with `[data-xt-slider="{ <options> }"]` on the **object**.
-
-[[noteDefault]]
-| **Object** is the DOM element you want to assign the component to.
+Initialize automatically within markup with `[data-xt-slider="{ <options> }"]` on the **object** (the DOM element you assigned the component).
 
 Or initialize with **javascript**.
 

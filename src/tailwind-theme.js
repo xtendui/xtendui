@@ -59,7 +59,6 @@ module.exports = function (custom = {}) {
         base: '0',
         active: '5',
         top: '50',
-        indicator: '51',
         backdrop: '500',
         drop: '600',
         sticky: '800', // same as javascript and decreses with sequential sticky

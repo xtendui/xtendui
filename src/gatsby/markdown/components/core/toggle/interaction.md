@@ -8,7 +8,7 @@ date: "2010-10-10"
 
 ## Class
 
-You can customize the class names used with the component.
+You can customize the **class names** used with the component.
 
 <div class="table-scroll">
 
