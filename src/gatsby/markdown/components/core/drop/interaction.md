@@ -111,4 +111,12 @@ Set drop position with this utils.
 
 ## Block
 
-You can block the activations with the class `.xt-block` on elements. See the [api demo](/components/core/drop/api#demo)
+You can block the activations with the class `.xt-block` on elements.
+
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `.xt-block`                     | `NOT POSSIBLE`                | Block scroll on element            |
+
+</div>

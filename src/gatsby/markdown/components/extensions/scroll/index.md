@@ -26,7 +26,13 @@ import 'xtend-library/src/xtend-extensions.js'
 
 ## Usage
 
-@TODO
+Use this markup to create a **scroll**.
+
+<script type="text/plain" class="language-markup">
+  <div data-xt-scroll="{ elements: <Query> }">
+    <!-- content -->
+  </div>
+</script>
 
 ## Initialization
 

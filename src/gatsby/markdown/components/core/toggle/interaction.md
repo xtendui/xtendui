@@ -226,4 +226,12 @@ Use `keyboard: { selector: 'object' }` or `keyboard: { selector: Query }` to ena
 
 ## Block
 
-You can block the activations with the class `.xt-block` on elements. See the [api demo](/components/core/toggle/api#demo)
+You can block the activations with the class `.xt-block` on elements.
+
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `.xt-block`                     | `NOT POSSIBLE`                | Block scroll on element            |
+
+</div>

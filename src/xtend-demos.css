@@ -1,3 +1,4 @@
+@import 'xtend-library/src/private/demos/components/core/card/disable.css';
 @import 'xtend-library/src/private/demos/components/core/drop/animation.css';
 @import 'xtend-library/src/private/demos/components/core/drop/disable.css';
 @import 'xtend-library/src/private/demos/components/core/loader/js-filler.css';
@@ -27,3 +28,4 @@
 @import 'xtend-library/src/private/demos/components/extensions/slider/overflow-auto.css';
 @import 'xtend-library/src/private/demos/components/extensions/slider/progress.css';
 @import 'xtend-library/src/private/demos/components/extensions/slider/touch-overflow.css';
+@import 'xtend-library/src/private/demos/components/extensions/sticky/disable.css';

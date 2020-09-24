@@ -33,7 +33,7 @@ Additionally on component initialization the class `xt-sticky` gets added to the
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `sticky:String`                          | `false`        | Sticky mode 'absolute' or 'fixed' or 'fixed-always'            |
+| Option                  | `sticky:String`                          | `false`        | Sticky mode `'absolute'` or `'fixed`' or `'fixed-always'`            |
 
 </div>
 
@@ -54,7 +54,7 @@ The default **position** is `position: 'top'` you can also use `position: 'botto
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `position:String`                          | `'top'`        | Position 'top' or 'bottom'            |
+| Option                  | `position:String`                          | `'top'`        | Position `'top'` or `'bottom'`            |
 
 </div>
 
@@ -108,7 +108,7 @@ To hide the sticky when scrolling down or up use `hide: 'down'` or `hide: 'up'`.
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `hide:String`                          | `false`        | Hide sticky on 'up' or 'down'            |
+| Option                  | `hide:String`                          | `false`        | Hide sticky on `'up'` or `'down'`            |
 
 </div>
 
@@ -120,6 +120,14 @@ To hide the sticky when scrolling down or up use `hide: 'down'` or `hide: 'up'`.
 ## Block
 
 You can block the activations with the class `.xt-block` on elements.
+
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `.xt-block`                     | `NOT POSSIBLE`                | Block scroll on element            |
+
+</div>
 
 <demo>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/sticky/block">

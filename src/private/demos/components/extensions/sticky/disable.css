@@ -1,0 +1,4 @@
+.demo--sticky-disable {
+  /*@apply md:sticky-disable;*/
+  @apply sticky-disable;
+}

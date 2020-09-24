@@ -20,6 +20,11 @@ It also hides automatically **pagination** and **navigation** **wrap** and slide
 
 </div>
 
+<demo>
+  <demovanilla src="vanilla/components/extensions/slider/disable">
+  </demovanilla>
+</demo>
+
 ## Media loaded
 
 If you want to animate on image loaded, with `mediaLoaded: true` use the class `.xt-medialoaded` or the js event `medialoaded.xt`.
@@ -80,11 +85,6 @@ To disable and expand a slider use `.slider-expand` util.
 
 <demo>
   <demovanilla src="vanilla/components/extensions/slider/expand">
-  </demovanilla>
-</demo>
-
-<demo>
-  <demovanilla src="vanilla/components/extensions/slider/disable">
   </demovanilla>
 </demo>
 

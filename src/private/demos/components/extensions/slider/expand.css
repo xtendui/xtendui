@@ -1,4 +1,4 @@
 .demo--slider-expand {
-  /*@apply sm:slider-expand;*/
+  /*@apply md:slider-expand;*/
   @apply slider-expand;
 }

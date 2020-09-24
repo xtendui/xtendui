@@ -1,4 +1,4 @@
 .demo--slider-disable {
-  /*@apply sm:slider-disable;*/
+  /*@apply md:slider-disable;*/
   @apply slider-disable;
 }

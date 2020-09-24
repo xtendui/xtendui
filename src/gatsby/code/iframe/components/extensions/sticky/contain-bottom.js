@@ -1,5 +1,7 @@
 import React from 'react'
 import path from 'path'
+const cardStickyDefault = require('components/snippets/classes/card-sticky-default').default
+const cardStickyPrimary = require('components/snippets/classes/card-sticky-primary').default
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -15,66 +17,31 @@ export const demo = {
 demo.htmlSource = `
 <div class="sticky-0"
      data-xt-sticky="{ contain: { bottom: '.sticky-1:not(.xt-clone)' } }">
-  <div class="card card-primary card-squared">
-      <div class="card-design"></div>
-      <div class="card-inner">
-      <div class="card-content">
-        <div class="card-block card-item">
-          Sticky top
-        </div>
-      </div>
-    </div>
+  <div class="card ${cardStickyPrimary()}">
+    <div class="h4">Sticky</div>
   </div>
 </div>
 
-<div class="card card-default card-squared">
-  <div class="card-design"></div>
-  <div class="card-inner">
-    <div class="card-content">
-      <div class="card-block card-item">
-        <div class="h4">Lorem ipsum dolor sit amet</div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
-      </div>
-    </div>
-  </div>
+<div class="card ${cardStickyDefault()}">
+  <div class="h4">Lorem ipsum</div>
+  <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
 </div>
 
 <div class="sticky-1"
      data-xt-sticky="{ contain: { bottom: '.sticky-2:not(.xt-clone)' } }">
-  <div class="card card-primary card-squared">
-      <div class="card-design"></div>
-      <div class="card-inner">
-      <div class="card-content">
-        <div class="card-block card-item">
-          Sticky middle
-        </div>
-      </div>
-    </div>
+  <div class="card ${cardStickyPrimary()}">
+    <div class="h4">Sticky</div>
   </div>
 </div>
 
-<div class="card card-default card-squared">
-  <div class="card-design"></div>
-  <div class="card-inner">
-    <div class="card-content">
-      <div class="card-block card-item">
-        <div class="h4">Lorem ipsum dolor sit amet</div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
-      </div>
-    </div>
-  </div>
+<div class="card ${cardStickyDefault()}">
+  <div class="h4">Lorem ipsum</div>
+  <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
 </div>
 
 <div class="sticky-2" data-xt-sticky>
-  <div class="card card-primary card-squared">
-      <div class="card-design"></div>
-      <div class="card-inner">
-      <div class="card-content">
-        <div class="card-block card-item">
-          Sticky bottom
-        </div>
-      </div>
-    </div>
+  <div class="card ${cardStickyPrimary()}">
+    <div class="h4">Sticky</div>
   </div>
 </div>
 
