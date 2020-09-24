@@ -11,6 +11,8 @@ require('prismjs/components/prism-less.min')
 // require('prism-themes/themes/prism-material-light.css')
 Prism.manual = true
 
+const spinner = require('components/snippets/spinner').default
+
 /**
  * demoHash
  */
@@ -408,19 +410,14 @@ const initializeIframe = (container, item) => {
     const src = '/' + item.getAttribute('data-iframe')
     const id = item.getAttribute('id')
     item.append(Xt.createElement('<div class="gatsby_demo_item_wrapper"><iframe data-src="' + src + '" name="' + id + '"></iframe></div>'))
-    item
-      .querySelector('.gatsby_demo_item_wrapper')
-      .append(
-        Xt.createElement(
-          '\n' +
-            '    <div class="loader">\n' +
-            '      <div class="spinner">\n' +
-            '        <svg viewBox="0 0 250 250"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"></circle></svg><svg viewBox="0 0 250 250" preserveAspectRatio="xMinYMin meet"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"></circle></svg>\n' +
-            '      </div>\n' +
-            '    </div>\n' +
-            '  </div>'
-        )
-      )
+    item.querySelector('.gatsby_demo_item_wrapper').append(
+      Xt.createElement(`
+          <div class="loader">
+            <div class="spinner spinner-animated text-accent-500">
+              ${spinner({})}
+            </div>
+          </div>`)
+    )
     // load
     if (!item.dataset.iframeLoadEvents) {
       item.dataset.iframeLoadEvents = 'true'
