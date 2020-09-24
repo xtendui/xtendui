@@ -16,7 +16,21 @@ To customize this component in your `tailwind.config.js` file, as described in [
 
 ```jsx
 module.exports = {
-@TODO
+  theme: require('xtend-library/src/tailwind-theme')({
+    // xtend utilities and components in node_modules/xtend-library/src/tailwind-xtend.js
+    xtend: theme => ({
+      utilities: {
+        sticky: {
+          // modify utility
+        },
+      },
+      components: {
+        sticky: {
+          // modify component
+        },
+      },
+    }),
+  })
 }
 ```
 
@@ -50,6 +64,8 @@ Use this markup to create a **sticky**.
 
 [[notePrimary]]
 | It's recomended to style and animate a inner div <code>[data-xt-xticky] > div</code> when using <strong>sticky component</strong>.
+
+@TODO demo
 
 ## Initialization
 
