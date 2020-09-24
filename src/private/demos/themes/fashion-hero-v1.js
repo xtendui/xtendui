@@ -10,7 +10,7 @@ import gsap from 'gsap'
  */
 
 Xt.mount.push({
-  matches: '#iframe--fashion-hero-v1 body a, #iframe--fashion-hero-v1 body button', /* add your own selector instead of body to contain the code */
+  matches: '#iframe--fashion-hero-v1 body a, #iframe--fashion-hero-v1 body button', // add your own selector instead of body to contain the code
   mount: object => {
     new Xt.PropagateInteraction(object, {
       targets: '.btn',
@@ -23,7 +23,7 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '#iframe--fashion-hero-v1 body .slider', /* add your own selector instead of body to contain the code */
+  matches: '#iframe--fashion-hero-v1 body .slider', // add your own selector instead of body to contain the code
   mount: object => {
     // vars
 

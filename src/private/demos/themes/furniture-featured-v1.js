@@ -9,7 +9,7 @@ import gsap from 'gsap'
  */
 
 Xt.mount.push({
-  matches: '#iframe--furniture-featured-v1 body #body--smooth', /* add your own selector instead of body to contain the code */
+  matches: '#iframe--furniture-featured-v1 body #body--smooth', // add your own selector instead of body to contain the code
   mount: object => {
     // init
 
@@ -30,7 +30,7 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '#iframe--furniture-featured-v1 body .btn--line', /* add your own selector instead of body to contain the code */
+  matches: '#iframe--furniture-featured-v1 body .btn--line', // add your own selector instead of body to contain the code
   mount: object => {
     // vars
 
@@ -91,7 +91,7 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '#iframe--furniture-featured-v1 body .featured_item', /* add your own selector instead of body to contain the code */
+  matches: '#iframe--furniture-featured-v1 body .featured_item', // add your own selector instead of body to contain the code
   mount: object => {
     // vars
 

@@ -115,7 +115,7 @@
     > * {
       &:first-child {
         .btn {
-          padding-top: 3px;
+          padding-top: 2px;
         }
       }
       &:last-child {
@@ -201,12 +201,12 @@
   letter-spacing: .05em;
   > span {
     border-radius: 6px;
-    padding: .25rem .5rem;
+    padding: .3rem .5rem;
   }
   &.gatsby_btn-site_header_link {
     @apply font-semibold;
-    padding-top: 2px;
-    padding-bottom: 2px;
+    padding-top: 1px;
+    padding-bottom: 1px;
     text-transform: uppercase;
     > span {
       @apply w-full;
@@ -215,8 +215,8 @@
   }
   &.gatsby_btn-site_article_sidebar--sub {
     @apply font-normal;
-    padding-top: 2px;
-    padding-bottom: 2px;
+    padding-top: 1px;
+    padding-bottom: 1px;
     > span {
       @apply w-full;
     }

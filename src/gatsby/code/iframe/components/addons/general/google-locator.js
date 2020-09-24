@@ -1,6 +1,8 @@
 import React from 'react'
 import path from 'path'
 const spinner = require('components/snippets/spinner').default
+const btnDefault = require('components/snippets/classes/btn-default').default
+const btnPrimary = require('components/snippets/classes/btn-primary').default
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -14,7 +16,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="google-locator demo--google-locator">
+<div class="google-locator">
 
   <div class="google-locator_aside">
 
@@ -26,12 +28,12 @@ demo.htmlSource = `
             <input type="text" class="form-item" placeholder="Search"
                    data-xt-google-locator-search-input>
             <span class="group-inner">
-              <button type="button" class="btn btn-default" data-xt-google-locator-locate-btn="Locate">
+              <button type="button" class="btn btn-medium ${btnDefault()}" data-xt-google-locator-locate-btn="Locate">
                 <span class="icon-xt-locate icon-big"></span>
               </button>
             </span>
             <span class="group-inner">
-              <button type="button" class="btn btn-primary" data-xt-google-locator-search-btn>
+              <button type="button" class="btn btn-medium ${btnDefault()}" data-xt-google-locator-search-btn>
                 <span class="icon-xt-search icon-big"></span>
               </button>
             </span>
@@ -123,17 +125,17 @@ demo.htmlSource = `
 
       <div class="google-locator_main_map" data-xt-google-locator-map></div>
 
-      <button type="button" class="btn btn-primary google-locator_repeat" data-xt-google-locator-repeat>
+      <button type="button" class="btn btn-medium ${btnPrimary()} google-locator_repeat" data-xt-google-locator-repeat>
         Search in this area
       </button>
 
     </div>
   </div>
 
-  <div class="loader loader-background toggle" data-xt-google-locator-loader>
-    <div class="spinner">
+  <div class="loader bg-white bg-opacity-75 toggle" data-xt-google-locator-loader>
+    <span class="spinner spinner-animated text-white">
       ${spinner({})}
-    </div>
+    </span>
   </div>
 </div>
 `

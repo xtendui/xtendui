@@ -7,7 +7,7 @@ import gsap from 'gsap'
  */
 
 Xt.mount.push({
-  matches: '#iframe--furniture-listing-v1 body .listing-page_item', /* add your own selector instead of body to contain the code */
+  matches: '#iframe--furniture-listing-v1 body .listing-page_item', // add your own selector instead of body to contain the code
   mount: object => {
     // vars
 
@@ -51,7 +51,7 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '#iframe--furniture-listing-v1 body #gatsby_body-inner', /* add your own selector instead of body to contain the code */
+  matches: '#iframe--furniture-listing-v1 body #gatsby_body-inner', // add your own selector instead of body to contain the code
   mount: object => {
     // vars
 

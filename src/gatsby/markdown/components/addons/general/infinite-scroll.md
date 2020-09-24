@@ -33,7 +33,7 @@ Here's the demo markup, css and javascript to create an **infinite scroll**.
   </div>
 </demo>
 
-Here are the main javascript options. For more advanced options see javascript file source code.
+Here are the main javascript options.
 
 <div class="table-scroll">
 
@@ -48,6 +48,8 @@ Here are the main javascript options. For more advanced options see javascript f
 | Option                    | `events.reset:String`                          | `'click'`        | Event to trigger infinite scroll reset            |
 
 </div>
+
+For advanced options see javascript file source code `xtend-library/src/addons/general/infinite-scroll.js`.
 
 ## Initialization
 
