@@ -14,7 +14,10 @@
         transition-duration: theme('transitionDuration.500');
         transition-timing-function: theme('transitionTimingFunction.out');
       }
-      .infinite-scroll-loading & {
+    }
+
+    .infinite-scroll-loading {
+      .infinite-scroll--spinner {
         opacity: 1;
         transition-timing-function: theme('transitionTimingFunction.in');
         .spinner {
@@ -34,7 +37,10 @@
         transition-duration: theme('transitionDuration.500');
         transition-timing-function: theme('transitionTimingFunction.out');
       }
-      .infinite-scroll-loading & {
+    }
+
+    .infinite-scroll-loading {
+      [data-xt-infinite-scroll-trigger] {
         pointer-events: none;
         > .infinite-scroll--trigger_content {
           opacity: 0;
@@ -58,11 +64,13 @@
 
     .infinite-scroll-pre {
       display: none;
-      .infinite-scroll-reset & {
+    }
+
+    .infinite-scroll-reset {
+      .infinite-scroll-pre {
         display: block;
       }
     }
-
   }
   /*##END*/
 }
