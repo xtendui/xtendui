@@ -955,13 +955,6 @@ module.exports = theme => ({
         '&:hover, &:focus': {
           transitionTimingFunction: theme('transitionTimingFunction.ease.in'),
         },
-        // validation
-        '&.valid': {
-          borderColor: `${theme('colors.green.500')} !important`,
-        },
-        '&.invalid': {
-          borderColor: `${theme('colors.red.500')} !important`,
-        },
       },
     },
     // list

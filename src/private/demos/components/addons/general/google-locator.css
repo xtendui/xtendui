@@ -209,8 +209,8 @@
         @apply p-4 !important;
         border: 0;
         border-radius: 0;
-        box-shadow: @shadow-light;
-        background: @white;
+        //box-shadow: @shadow-light;
+        background: theme('colors.white');
         /* scroll */
         @apply overflow-sub;
         overflow-x: hidden !important;
@@ -226,7 +226,7 @@
         background: theme('colors.gray.200') !important;
         border-bottom-left-radius: 0.7rem;
         font-size: 25px;
-        color: @black !important;
+        color: theme('colors.black') !important;
         line-height: 0;
         text-align: center;
         opacity: 1 !important;

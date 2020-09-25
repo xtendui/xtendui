@@ -53,19 +53,3 @@ Then add and [style content](/components/core/form/content).
   <demovanilla src="vanilla/components/core/form/usage">
   </demovanilla>
 </demo>
-
-#### Javascript
-
-Follow the [js installation](/introduction/getting-started/setup#js-installation) instructions.
-
-Import the component's **js** file.
-
-```jsx
-import 'xtend-library/src/core/form/form.js'
-```
-
-Or just import **core**.
-
-```jsx
-import 'xtend-library/src/xtend-core.js'
-```

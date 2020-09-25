@@ -1,9 +1,5 @@
 import { Xt } from 'xtend-library/src/xt.js'
 
-//
-// validation
-//
-
 Xt.mount.push({
   matches: 'form:not([novalidate]), .form:not([novalidate])',
   mount: object => {

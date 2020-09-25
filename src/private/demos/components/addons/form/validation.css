@@ -1,0 +1,12 @@
+#iframe--validation {
+  /*##START*/
+  body { /* add your own selector instead of body to contain the code */
+    .valid {
+      border-color: theme('colors.green.500') !important;
+    }
+    .invalid {
+      border-color: theme('colors.red.500') !important;
+    }
+  }
+  /*##END*/
+}

@@ -34,18 +34,6 @@ Use **tailwind classes** to create a note.
   </demovanilla>
 </demo>
 
-## Validation
-
-Html validation and Constraint Validation API.
-
-[[notePrimary]]
-| Form validation must be inside `form` or `.form` to work.
-
-<demo>
-  <demovanilla src="vanilla/components/core/form/validation">
-  </demovanilla>
-</demo>
-
 ## Group
 
 @TODO

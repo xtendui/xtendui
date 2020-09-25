@@ -1,11 +1,16 @@
+import React from 'react'
 import path from 'path'
 const btnPrimary = require('components/snippets/classes/btn-primary').default
 const labelDefault = require('components/snippets/classes/label-default').default
 const inputDefault = require('components/snippets/classes/input-default').default
 
+import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
+
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
 export const demo = {
+  container: true,
+  full: false,
   name: path.basename(filename, '.js'),
   dirs: dirs,
 }
@@ -37,9 +42,9 @@ demo.htmlSource = `
 
     <div class="w-full">
       <label class="label mb-4 ${labelDefault()}">
-        Custom
+        Custom constrain
       </label>
-      <input type="text" class="input ${inputDefault()} demo--validation-custom" placeholder="Custom" required>
+      <input type="text" class="input ${inputDefault()} demo--validation-custom-constrain" placeholder="Custom" required>
     </div>
 
     <script>
@@ -53,7 +58,7 @@ demo.htmlSource = `
               item.setCustomValidity(constraints[1]);
           }
       }
-      var items = document.querySelectorAll('.demo--validation-custom')
+      var items = document.querySelectorAll('.demo--validation-custom-constrain')
       for (var i = 0; i < items.length; i++) {
         var item = items[i];
         item.addEventListener('input', validationCustom);
@@ -127,3 +132,11 @@ demo.htmlSource = `
   </div>
 </form>
 `
+
+class Page extends React.Component {
+  render() {
+    return <DemoVanillaIframe demo={demo} />
+  }
+}
+
+export default Page
