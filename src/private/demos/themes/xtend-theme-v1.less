@@ -69,32 +69,32 @@
         }
       }
       &.in {
-        animation-duration: @time-small + @time-tiny; // needed for animation time, put max animation time
+        animation-duration: @time-sm + @time-tiny; // needed for animation time, put max animation time
         > .drop-inner {
           > .drop-design {
             opacity: 1;
             transform: none;
-            transition: transform @time-medium @ease-in, opacity @time-medium @ease-in;
+            transition: transform @time-md @ease-in, opacity @time-md @ease-in;
           }
           > .drop-content {
             opacity: 1;
             transform: none;
-            transition: transform @time-medium @ease-in @time-tiny, opacity @time-medium @ease-in @time-tiny;
+            transition: transform @time-md @ease-in @time-tiny, opacity @time-md @ease-in @time-tiny;
           }
         }
       }
       &.out {
-        animation-duration: @time-small + @time-tiny; // needed for animation time, put max animation time
+        animation-duration: @time-sm + @time-tiny; // needed for animation time, put max animation time
         > .drop-inner {
           > .drop-design {
             opacity: 0;
             transform: scale(.75);
-            transition: transform @time-small @ease-out @time-tiny, opacity @time-small @ease-out @time-tiny;
+            transition: transform @time-sm @ease-out @time-tiny, opacity @time-sm @ease-out @time-tiny;
           }
           > .drop-content {
             opacity: 0;
             transform: translateY(1rem);
-            transition: transform @time-small @ease-out, opacity @time-small @ease-out;
+            transition: transform @time-sm @ease-out, opacity @time-sm @ease-out;
           }
         }
       }
@@ -127,34 +127,34 @@
         }
       }
       &.in {
-        animation-duration: @time-medium + @time-tiny; // needed for animation time, put max animation time
+        animation-duration: @time-md + @time-tiny; // needed for animation time, put max animation time
         .card-overlay {
           .card-design {
             opacity: 1;
             transform: scale(1);
-            transition: transform @time-medium @ease-in, opacity @time-medium @ease-in;
+            transition: transform @time-md @ease-in, opacity @time-md @ease-in;
           }
           > .btn-close {
             // use animation to not override .btn transitions
             .anim-zoom.in();
-            animation-delay: @time-medium;
+            animation-delay: @time-md;
             animation-fill-mode: forwards;
             opacity: 0;
           }
           .card-block, .card-content {
             opacity: 1;
             transform: none;
-            transition: transform @time-medium @ease-in @time-tiny, opacity @time-medium @ease-in @time-tiny;
+            transition: transform @time-md @ease-in @time-tiny, opacity @time-md @ease-in @time-tiny;
           }
         }
       }
       &.out {
-        animation-duration: @time-small + @time-tiny; // needed for animation time, put max animation time
+        animation-duration: @time-sm + @time-tiny; // needed for animation time, put max animation time
         .card-overlay {
           .card-design {
             opacity: 0;
             transform: scale(.75);
-            transition: transform @time-small @ease-out @time-tiny, opacity @time-small @ease-out @time-tiny;
+            transition: transform @time-sm @ease-out @time-tiny, opacity @time-sm @ease-out @time-tiny;
           }
           > .btn-close {
             // use animation to not override .btn transitions
@@ -164,7 +164,7 @@
           .card-block, .card-content {
             opacity: 0;
             transform: translateY(1rem);
-            transition: transform @time-small @ease-out, opacity @time-small @ease-out;
+            transition: transform @time-sm @ease-out, opacity @time-sm @ease-out;
           }
         }
       }
@@ -205,22 +205,22 @@
     // animation
 
     a.card, label.card {
-      transition: all @time-small @ease-out;
+      transition: all @time-sm @ease-out;
       .card-design {
-        transition: all @time-small @ease-out;
+        transition: all @time-sm @ease-out;
       }
       &:hover, &.hover {
         transform: translateY(-.5rem);
-        transition: all @time-small @ease-in;
+        transition: all @time-sm @ease-in;
         .card-design {
-          transition: all @time-small @ease-in;
+          transition: all @time-sm @ease-in;
         }
       }
       &:active, &.active {
         transform: none;
-        transition: all @time-small @ease-in;
+        transition: all @time-sm @ease-in;
         .card-design {
-          transition: all @time-small @ease-in;
+          transition: all @time-sm @ease-in;
         }
       }
     }

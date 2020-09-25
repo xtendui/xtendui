@@ -13,15 +13,15 @@ demo.htmlSource = `
 <div class="list list-space-2 items-center"
   data-xt-toggle="{ elements: ':scope > .btn', targets: ':scope > .demo--toggle-custom-options' }">
 
-  <button type="button" class="btn btn-medium ${btnDefault()}">
+  <button type="button" class="btn btn-md ${btnDefault()}">
     Toggle 0
   </button>
 
-  <button type="button" class="btn btn-medium ${btnDefault()}">
+  <button type="button" class="btn btn-md ${btnDefault()}">
     Toggle 1
   </button>
 
-  <button type="button" class="btn btn-medium ${btnDefault()}">
+  <button type="button" class="btn btn-md ${btnDefault()}">
     Toggle 2
   </button>
 

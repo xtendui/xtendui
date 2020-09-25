@@ -12,11 +12,11 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-space-1">
 
-  <a role="button" class="badge badge-medium ${badgeDefaultInteractive()}">
+  <a role="button" class="badge badge-md ${badgeDefaultInteractive()}">
     Default
   </a>
 
-  <a role="button" class="badge badge-medium ${badgePrimaryInteractive()}">
+  <a role="button" class="badge badge-md ${badgePrimaryInteractive()}">
     Primary
   </a>
 

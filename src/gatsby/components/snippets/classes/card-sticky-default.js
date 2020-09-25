@@ -1,3 +1,3 @@
 export default () => {
-  return `card-block card-block-small text-default bg-gray-200`
+  return `card-block card-block-sm text-default bg-gray-200`
 }

@@ -13,11 +13,11 @@ demo.htmlSource = `
 <div class="list list-space-2 items-center"
      data-xt-toggle="{ min: 1, preventEvent: true }">
 
-  <a href="#toggle--prevent-event-0" class="btn btn-medium ${btnDefault()}">
+  <a href="#toggle--prevent-event-0" class="btn btn-md ${btnDefault()}">
     Toggle 0
   </a>
 
-  <a href="#toggle--prevent-event-1" class="btn btn-medium ${btnDefault()}">
+  <a href="#toggle--prevent-event-1" class="btn btn-md ${btnDefault()}">
     Toggle 1
   </a>
 
@@ -36,11 +36,11 @@ demo.htmlSource = `
 <div class="list list-space-2 items-center"
      data-xt-toggle="{ min: 1, on: 'mouseenter', off: 'mouseleave', preventEvent: true }">
 
-  <a href="#toggle--prevent-event-1-hover" class="btn btn-medium ${btnDefault()}">
+  <a href="#toggle--prevent-event-1-hover" class="btn btn-md ${btnDefault()}">
     Toggle 1 hover
   </a>
 
-  <a href="#toggle--prevent-event-2-hover" class="btn btn-medium ${btnDefault()}">
+  <a href="#toggle--prevent-event-2-hover" class="btn btn-md ${btnDefault()}">
     Toggle 2 hover
   </a>
 

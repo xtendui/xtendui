@@ -13,7 +13,7 @@ demo.htmlSource = `
 
   <div class="w-full md:w-6/12">
     <div class="card ${cardDefault()}">
-      <div class="card-block card-block-medium">
+      <div class="card-block card-block-md">
         <div class="list list-space-2 flex-no-wrap items-baseline">
           <div>
             <span class="icon-chevron-right"></span>

@@ -11,15 +11,15 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-space-1">
 
-  <div class="badge badge-small ${badgeDefault()}">
+  <div class="badge badge-sm ${badgeDefault()}">
     Small
   </div>
 
-  <div class="badge badge-medium ${badgeDefault()}">
+  <div class="badge badge-md ${badgeDefault()}">
     Medium
   </div>
 
-  <div class="badge badge-large ${badgeDefault()}">
+  <div class="badge badge-lg ${badgeDefault()}">
     Large
   </div>
 

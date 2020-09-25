@@ -15,22 +15,22 @@ demo.htmlSource = `
 
   <div class="drop-container" data-xt-drop>
 
-    <button type="button" class="btn btn-medium ${btnPrimary()}">
+    <button type="button" class="btn btn-md ${btnPrimary()}">
       small
     </button>
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="card card-small ${cardDefaultDropList()}">
+        <div class="card card-sm ${cardDefaultDropList()}">
           <div class="card-block py-3">
             <nav class="list-block">
-              <a href="#" class="btn btn-small ${btnDefaultDrop()}">
+              <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </a>
-              <button type="button" class="btn btn-small ${btnDefaultDrop()}">
+              <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
                 Dolor sit
               </button>
-              <button type="button" class="btn btn-small ${btnDefaultDrop()}">
+              <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
                 Amet
               </button>
             </nav>
@@ -43,22 +43,22 @@ demo.htmlSource = `
 
   <div class="drop-container" data-xt-drop>
 
-    <button type="button" class="btn btn-medium ${btnPrimary()}">
+    <button type="button" class="btn btn-md ${btnPrimary()}">
       medium
     </button>
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="card card-medium ${cardDefaultDropList()}">
+        <div class="card card-md ${cardDefaultDropList()}">
           <div class="card-block py-3">
             <nav class="list-block">
-              <a href="#" class="btn btn-medium ${btnDefaultDrop()}">
+              <a href="#" class="btn btn-md ${btnDefaultDrop()}">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </a>
-              <button type="button" class="btn btn-medium ${btnDefaultDrop()}">
+              <button type="button" class="btn btn-md ${btnDefaultDrop()}">
                 Dolor sit
               </button>
-              <button type="button" class="btn btn-medium ${btnDefaultDrop()}">
+              <button type="button" class="btn btn-md ${btnDefaultDrop()}">
                 Amet
               </button>
             </nav>
@@ -71,22 +71,22 @@ demo.htmlSource = `
 
   <div class="drop-container" data-xt-drop>
 
-    <button type="button" class="btn btn-medium ${btnPrimary()}">
+    <button type="button" class="btn btn-md ${btnPrimary()}">
       large
     </button>
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="card card-large ${cardDefaultDropList()}">
+        <div class="card card-lg ${cardDefaultDropList()}">
           <div class="card-block py-3">
             <nav class="list-block">
-              <a href="#" class="btn btn-large ${btnDefaultDrop()}">
+              <a href="#" class="btn btn-lg ${btnDefaultDrop()}">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </a>
-              <button type="button" class="btn btn-large ${btnDefaultDrop()}">
+              <button type="button" class="btn btn-lg ${btnDefaultDrop()}">
                 Dolor sit
               </button>
-              <button type="button" class="btn btn-large ${btnDefaultDrop()}">
+              <button type="button" class="btn btn-lg ${btnDefaultDrop()}">
                 Amet
               </button>
             </nav>

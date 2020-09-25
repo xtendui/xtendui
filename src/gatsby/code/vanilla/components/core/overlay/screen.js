@@ -14,7 +14,7 @@ demo.htmlSource = `
 <div class="list list-space-2 items-center">
 
   <div data-xt-overlay>
-    <button type="button" class="btn btn-medium ${btnPrimary()}">
+    <button type="button" class="btn btn-md ${btnPrimary()}">
       screen image full
     </button>
     <div class="overlay md:overlay-screen">
@@ -34,7 +34,7 @@ demo.htmlSource = `
   </div>
 
   <div data-xt-overlay>
-    <button type="button" class="btn btn-medium ${btnPrimary()}">
+    <button type="button" class="btn btn-md ${btnPrimary()}">
       screen max-w-3xl
     </button>
     <div class="overlay md:overlay-screen">
@@ -44,7 +44,7 @@ demo.htmlSource = `
           <div class="card ${cardDefaultOverlayScreen()} items-center justify-center">
             <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
             <div class="max-w-3xl">
-              <div class="card-block card-block-large">
+              <div class="card-block card-block-lg">
                 <div class="h3">Lorem ipsum</div>
                 <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
                 <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
@@ -60,7 +60,7 @@ demo.htmlSource = `
   </div>
 
   <div data-xt-overlay>
-    <button type="button" class="btn btn-medium ${btnPrimary()}">
+    <button type="button" class="btn btn-md ${btnPrimary()}">
       screen group max-w-3xl
     </button>
     <div class="overlay md:overlay-screen">
@@ -71,15 +71,15 @@ demo.htmlSource = `
             <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
             <div class="max-w-3xl">
               <div class="sm:card-group">
-                <div class="card-block card-block-medium sm:w-7/12">
+                <div class="card-block card-block-md sm:w-7/12">
                   <div class="h3">Lorem ipsum</div>
                   <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
                 </div>
                 <div class="sm:w-5/12">
-                  <div class="card-block card-block-medium bg-gray-500">
+                  <div class="card-block card-block-md bg-gray-500">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
                   </div>
-                  <div class="card-block card-block-medium">
+                  <div class="card-block card-block-md">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
                   </div>
                 </div>

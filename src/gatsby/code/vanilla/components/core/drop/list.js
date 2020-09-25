@@ -14,14 +14,14 @@ demo.htmlSource = `
 
   <div class="drop-container" data-xt-drop>
 
-    <button type="button" class="btn btn-medium ${btnPrimary()}">
+    <button type="button" class="btn btn-md ${btnPrimary()}">
       list
     </button>
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="card card-large ${cardDefaultDrop()}">
-          <div class="card-block card-block-medium">
+        <div class="card card-lg ${cardDefaultDrop()}">
+          <div class="card-block card-block-md">
             <div class="list list-space-2 flex-no-wrap items-baseline">
               <div>
                 <span class="icon-chevron-right"></span>

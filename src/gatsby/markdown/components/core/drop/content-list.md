@@ -26,9 +26,9 @@ Use **component's classes** to assign size (e.g.: padding, font size).
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.card-block-small`                     | `card-block-small`                | Size small            |
-| Component                  | `.card-block-medium`                     | `card-block-medium`                | Size medium            |
-| Component                  | `.card-block-large`                     | `card-block-large`                | Size large            |
+| Component                  | `.card-block-sm`                     | `card-block-sm`                | Size small            |
+| Component                  | `.card-block-md`                     | `card-block-md`                | Size medium            |
+| Component                  | `.card-block-lg`                     | `card-block-lg`                | Size large            |
 
 </div>
 

@@ -35,9 +35,9 @@ Use **component's classes** to assign size (e.g.: padding, font size).
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.btn-small`                     | `btn-small`                | Size small            |
-| Component                  | `.btn-medium`                     | `btn-medium`                | Size medium            |
-| Component                  | `.btn-large`                     | `btn-large`                | Size large            |
+| Component                  | `.btn-sm`                     | `btn-sm`                | Size small            |
+| Component                  | `.btn-md`                     | `btn-md`                | Size medium            |
+| Component                  | `.btn-lg`                     | `btn-lg`                | Size large            |
 
 </div>
 

@@ -11,15 +11,15 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-space-2 items-center">
 
-  <button type="button" class="btn btn-small ${btnDefault()}">
+  <button type="button" class="btn btn-sm ${btnDefault()}">
     small
   </button>
 
-  <button type="button" class="btn btn-medium ${btnDefault()}">
+  <button type="button" class="btn btn-md ${btnDefault()}">
     medium
   </button>
 
-  <button type="button" class="btn btn-large ${btnDefault()}">
+  <button type="button" class="btn btn-lg ${btnDefault()}">
     large
   </button>
 

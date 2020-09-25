@@ -16,7 +16,7 @@ demo.htmlSource = `
     </button>
     <div class="overlay overlay-default overlay-position-left">
       <div class="overlay-message-outside">
-        <button type="button" class="btn btn-primary btn-small overlay-dismiss">
+        <button type="button" class="btn btn-primary btn-sm overlay-dismiss">
           close message
         </button>
       </div>
@@ -51,7 +51,7 @@ demo.htmlSource = `
     </button>
     <div class="overlay overlay-default overlay-position-right">
       <div class="overlay-message-outside">
-        <button type="button" class="btn btn-primary btn-small overlay-dismiss">
+        <button type="button" class="btn btn-primary btn-sm overlay-dismiss">
           close message
         </button>
       </div>

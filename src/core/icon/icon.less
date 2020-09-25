@@ -13,9 +13,9 @@
 @icon-micro: .125em;
 @icon-mini: .25em;
 @icon-tiny: .5em;
-@icon-small: .75em;
-@icon-medium: 1em;
-@icon-large: 1.25em;
+@icon-sm: .75em;
+@icon-md: 1em;
+@icon-lg: 1.25em;
 @icon-big: 1.5em;
 @icon-giant: 2em;
 @icon-huge: 2.5em;
@@ -62,40 +62,40 @@
   margin-bottom: calc((1em - @icon-tiny) / 2);
 }
 
-.icon-small {
-  font-size: @icon-small;
+.icon-sm {
+  font-size: @icon-sm;
   img& {
     width: auto;
-    height: @icon-small;
+    height: @icon-sm;
   }
   // make same height as 1em
   vertical-align: middle;
-  margin-top: calc((1em - @icon-small) / 2);
-  margin-bottom: calc((1em - @icon-small) / 2);
+  margin-top: calc((1em - @icon-sm) / 2);
+  margin-bottom: calc((1em - @icon-sm) / 2);
 }
 
-.icon-medium {
-  font-size: @icon-medium;
+.icon-md {
+  font-size: @icon-md;
   img& {
     width: auto;
-    height: @icon-medium;
+    height: @icon-md;
   }
   // make same height as 1em
   vertical-align: middle;
-  margin-top: calc((1em - @icon-medium) / 2);
-  margin-bottom: calc((1em - @icon-medium) / 2);
+  margin-top: calc((1em - @icon-md) / 2);
+  margin-bottom: calc((1em - @icon-md) / 2);
 }
 
-.icon-large {
-  font-size: @icon-large;
+.icon-lg {
+  font-size: @icon-lg;
   img& {
     width: auto;
-    height: @icon-large;
+    height: @icon-lg;
   }
   // make same height as 1em
   vertical-align: middle;
-  margin-top: calc((1em - @icon-large) / 2);
-  margin-bottom: calc((1em - @icon-large) / 2);
+  margin-top: calc((1em - @icon-lg) / 2);
+  margin-bottom: calc((1em - @icon-lg) / 2);
 }
 
 .icon-big {
@@ -161,7 +161,7 @@
 }
 
 // icons
-// USAGE LESS: .icon-xt(@content: @icon-xt-close, @size: @icon-small, @position: after);
+// USAGE LESS: .icon-xt(@content: @icon-xt-close, @size: @icon-sm, @position: after);
 // USAGE MARKUP: <span class="icon-xt-close"></span>
 
 @icons-xt: close, chevron-down, chevron-left, chevron-right, chevron-up, check, circle, search, locate;
@@ -195,7 +195,7 @@
 }
 
 // icons
-// USAGE LESS: .icon(@content: @icon-theme-menu, @size: @icon-small, @position: after);
+// USAGE LESS: .icon(@content: @icon-theme-menu, @size: @icon-sm, @position: after);
 // USAGE MARKUP: <span class="icon-theme-menu"></span>
 
 @icons-theme: menu, search; // this will generate classes .icon-theme-{name}

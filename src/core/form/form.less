@@ -15,7 +15,7 @@
 .checkradio-label {
   .margin(all, auto);
   .font-sans-regular();
-  .line-height-small();
+  .line-height-sm();
   font-size: 0.9em; // size in em inherit .form-group size
   letter-spacing: 0;
   text-transform: none;
@@ -111,22 +111,22 @@ input[type="checkbox"], input[type="radio"] {
 .checkbox, .radio {
   &:before {
     transform: scale(.9);
-    transition: all @time-small @ease-out;
+    transition: all @time-sm @ease-out;
   }
   &:after {
     opacity: 0;
     transform: scale(.9);
-    transition: all @time-small @ease-out;
+    transition: all @time-sm @ease-out;
   }
   &.active {
     &:before {
       transform: scale(1);
-      transition: all @time-small @ease-in;
+      transition: all @time-sm @ease-in;
     }
     &:after {
       opacity: 1;
       transform: scale(1);
-      transition: all @time-small @ease-in;
+      transition: all @time-sm @ease-in;
     }
   }
   &.focus, &:focus {
@@ -150,7 +150,7 @@ input[type="checkbox"], input[type="radio"] {
 .form-note {
   .note();
   .note-default();
-  .note-small();
+  .note-sm();
   .muted();
   .margin(y, small);
   .margin(y, layout);

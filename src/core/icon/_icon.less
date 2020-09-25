@@ -7,7 +7,7 @@
   vertical-align: middle;
   align-items: center;
   position: relative;
-  font-size: @icon-medium;
+  font-size: @icon-md;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -19,7 +19,7 @@
   img& {
     top: -.1em;
     width: auto;
-    height: @icon-medium;
+    height: @icon-md;
   }
 }
 
@@ -70,7 +70,7 @@
 
 // .icon-xt
 
-.icon-xt(@content, @size: @icon-medium, @position: after) {
+.icon-xt(@content, @size: @icon-md, @position: after) {
   & when (@position = before) {
     &:before {
       .icon-xt();
@@ -89,7 +89,7 @@
 
 // .icon
 
-.icon(@content, @size: @icon-medium, @position: after) {
+.icon(@content, @size: @icon-md, @position: after) {
   & when (@position = before) {
     &:before {
       .icon-theme();

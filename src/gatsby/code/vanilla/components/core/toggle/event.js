@@ -13,19 +13,19 @@ demo.htmlSource = `
 <div class="list list-space-2 items-center"
      data-xt-toggle="{ min: 1, on: 'mouseenter', off: 'mouseleave' }">
 
-  <button type="button" class="btn btn-medium ${btnDefault()}">
+  <button type="button" class="btn btn-md ${btnDefault()}">
     Toggle 0
   </button>
 
-  <button type="button" class="btn btn-medium ${btnDefault()}">
+  <button type="button" class="btn btn-md ${btnDefault()}">
     Toggle 1
   </button>
 
-  <button type="button" class="btn btn-medium ${btnDefault()}">
+  <button type="button" class="btn btn-md ${btnDefault()}">
     Toggle 2
   </button>
 
-  <button type="button" class="btn btn-medium ${btnDefault()}">
+  <button type="button" class="btn btn-md ${btnDefault()}">
     Toggle 3
   </button>
 

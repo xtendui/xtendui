@@ -15,7 +15,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
 
-    <button type="button" class="btn btn-medium ${btnPrimary()}">
+    <button type="button" class="btn btn-md ${btnPrimary()}">
       list
     </button>
 
@@ -25,7 +25,7 @@ demo.htmlSource = `
 
           <div class="card ${cardDefaultOverlay()}">
             <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
-            <div class="card-block card-block-medium">
+            <div class="card-block card-block-md">
               <div class="list list-space-2 flex-no-wrap items-baseline">
                 <div>
                   <span class="icon-chevron-right"></span>

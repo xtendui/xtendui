@@ -48,7 +48,7 @@ Inside it you can use this strings that gets populated with variables:
 
 <script type="text/plain" class="language-markup">
   <nav class="slider-pagination list">
-    <button type="button" class="btn btn-medium xt-ignore" data-xt-pag title="Slide xt-num">
+    <button type="button" class="btn btn-md xt-ignore" data-xt-pag title="Slide xt-num">
       xt-num of xt-tot
     </button>
   </nav>
@@ -75,10 +75,10 @@ You can add navigation with the `navigation:Query` option, on the queried elemen
 </div>
 
 <script type="text/plain" class="language-markup">
-  <button type="button" class="btn btn-medium" data-xt-nav="-1" title="Previous slide">
+  <button type="button" class="btn btn-md" data-xt-nav="-1" title="Previous slide">
     <span class="icon-chevron-left"></span>
   </button>
-  <button type="button" class="btn btn-medium" data-xt-nav="1" title="Next slide">
+  <button type="button" class="btn btn-md" data-xt-nav="1" title="Next slide">
     <span class="icon-chevron-right"></span>
   </button>
 </script>

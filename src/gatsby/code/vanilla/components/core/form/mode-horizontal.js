@@ -67,7 +67,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <button type="submit" class="btn btn-medium ${btnPrimary()}">
+      <button type="submit" class="btn btn-md ${btnPrimary()}">
         submit
       </button>
     </div>

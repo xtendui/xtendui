@@ -12,15 +12,15 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-space-2 items-center demo--toggle-timing">
 
-  <button type="button" class="btn btn-medium ${btnDefault()}">
+  <button type="button" class="btn btn-md ${btnDefault()}">
     Toggle 0
   </button>
 
-  <button type="button" class="btn btn-medium ${btnDefault()}" data-xt-group="0">
+  <button type="button" class="btn btn-md ${btnDefault()}" data-xt-group="0">
     Group 0
   </button>
 
-  <button type="button" class="btn btn-medium ${btnDefault()}" data-xt-group="1">
+  <button type="button" class="btn btn-md ${btnDefault()}" data-xt-group="1">
     Group 1
   </button>
 
@@ -58,15 +58,15 @@ demo.htmlSource = `
 
 <div class="list list-space-2 items-center demo--toggle-timing--event">
 
-  <button type="button" class="btn btn-medium ${btnDefault()}">
+  <button type="button" class="btn btn-md ${btnDefault()}">
     Toggle 0 hover
   </button>
 
-  <button type="button" class="btn btn-medium ${btnDefault()}" data-xt-group="0">
+  <button type="button" class="btn btn-md ${btnDefault()}" data-xt-group="0">
     Group 0 hover
   </button>
 
-  <button type="button" class="btn btn-medium ${btnDefault()}" data-xt-group="1">
+  <button type="button" class="btn btn-md ${btnDefault()}" data-xt-group="1">
     Group 1 hover
   </button>
 

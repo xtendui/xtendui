@@ -11,11 +11,11 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-space-2 items-center">
 
-  <button type="button" class="btn btn-medium ${btnDefault()}" data-xt-toggle>
+  <button type="button" class="btn btn-md ${btnDefault()}" data-xt-toggle>
     Toggle
   </button>
 
-  <button type="button" class="btn btn-medium ${btnDefault()}" data-xt-toggle>
+  <button type="button" class="btn btn-md ${btnDefault()}" data-xt-toggle>
     Toggle
   </button>
 

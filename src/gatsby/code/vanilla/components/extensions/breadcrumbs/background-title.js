@@ -12,15 +12,15 @@ demo.htmlSource = `
   <div class="container">
 
     <nav class="breadcrumbs-list">
-      <a href="#" class="btn btn-medium">
+      <a href="#" class="btn btn-md">
         Home
       </a>
       <span class="separator separator-slash mx-2"></span>
-      <a href="#" class="btn btn-medium">
+      <a href="#" class="btn btn-md">
         Lorem ipsum dolor sit amet
       </a>
       <span class="separator separator-slash mx-2"></span>
-      <div class="btn btn-medium">
+      <div class="btn btn-md">
         Lorem ipsum
       </div>
     </nav>

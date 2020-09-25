@@ -27,7 +27,7 @@
       .full();
       // card
       .card-white();
-      .card-small();
+      .card-sm();
       .card-squared();
       .card-none-x();
       text-align: center;
@@ -86,13 +86,13 @@
       &.fade {
         opacity: 1;
         animation-name: anim-fashion-listing-v1-in;
-        animation-duration: @time-medium;
+        animation-duration: @time-md;
         animation-timing-function: @ease-out-quint;
         transform-origin: center top;
         &.inverse {
           opacity: 1;
           animation-name: anim-fashion-listing-v1-inverse-in;
-          animation-duration: @time-medium;
+          animation-duration: @time-md;
           animation-timing-function: @ease-out-quint;
           transform-origin: center bottom;
         }
@@ -100,13 +100,13 @@
       &.fade-out {
         opacity: 0;
         animation-name: anim-fashion-listing-v1-inverse-out;
-        animation-duration: @time-medium;
+        animation-duration: @time-md;
         animation-timing-function: @ease-out-quint;
         transform-origin: center bottom;
         &.inverse {
           opacity: 0;
           animation-name: anim-fashion-listing-v1-out;
-          animation-duration: @time-medium;
+          animation-duration: @time-md;
           animation-timing-function: @ease-out-quint;
           transform-origin: center top;
         }

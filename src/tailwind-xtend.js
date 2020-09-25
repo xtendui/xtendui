@@ -598,17 +598,17 @@ module.exports = theme => ({
           },
         },
       },
-      '.badge-small': {
+      '.badge-sm': {
         // styles
         padding: `${rem(6)} ${rem(10)}`,
         fontSize: rem(10),
       },
-      '.badge-medium': {
+      '.badge-md': {
         // styles
         padding: `${rem(8)} ${rem(14)}`,
         fontSize: rem(12),
       },
-      '.badge-large': {
+      '.badge-lg': {
         // styles
         padding: `${rem(10)} ${rem(18)}`,
         fontSize: rem(14),
@@ -672,17 +672,17 @@ module.exports = theme => ({
           transitionTimingFunction: theme('transitionTimingFunction.in'),
         },
       },
-      '.btn-small': {
+      '.btn-sm': {
         // styles
         padding: `${rem(7)} ${rem(11)}`,
         fontSize: rem(10),
       },
-      '.btn-medium': {
+      '.btn-md': {
         // styles
         padding: `${rem(9)} ${rem(15)}`,
         fontSize: rem(12),
       },
-      '.btn-large': {
+      '.btn-lg': {
         // styles
         padding: `${rem(11)} ${rem(19)}`,
         fontSize: rem(14),
@@ -723,15 +723,15 @@ module.exports = theme => ({
           },
         },
       },
-      '.card-small': {
+      '.card-sm': {
         // styles
         minWidth: `${rem(300)}`,
       },
-      '.card-medium': {
+      '.card-md': {
         // styles
         minWidth: `${rem(400)}`,
       },
-      '.card-large': {
+      '.card-lg': {
         // styles
         minWidth: `${rem(500)}`,
       },
@@ -740,15 +740,15 @@ module.exports = theme => ({
         position: 'relative',
         width: '100%',
       },
-      '.card-block-small': {
+      '.card-block-sm': {
         // styles
         padding: `${rem(20)} ${rem(25)}`,
       },
-      '.card-block-medium': {
+      '.card-block-md': {
         // styles
         padding: `${rem(25)} ${rem(30)}`,
       },
-      '.card-block-large': {
+      '.card-block-lg': {
         // styles
         padding: `${rem(35)} ${rem(40)}`,
       },
@@ -860,7 +860,7 @@ module.exports = theme => ({
     form: {
       'form, .form': {
         // styles
-        '@apply form-medium': '',
+        '@apply form-md': '',
       },
       'fieldset, .fieldset': {
         // styles
@@ -879,15 +879,15 @@ module.exports = theme => ({
         fontSize: rem(24),
         lineHeight: theme('lineHeight.snug'),
       },
-      '.form-small': {
+      '.form-sm': {
         // styles
         fontSize: rem(12),
       },
-      '.form-medium': {
+      '.form-md': {
         // styles
         fontSize: rem(14),
       },
-      '.form-large': {
+      '.form-lg': {
         // styles
         fontSize: rem(16),
       },
@@ -1686,8 +1686,8 @@ module.exports = theme => ({
       },
       'h5, .h5': {
         // style
-        marginTop: theme('spacing.2'),
-        marginBottom: theme('spacing.1'),
+        marginTop: theme('spacing.3'),
+        marginBottom: theme('spacing.2'),
         '@apply mt-fc mb-lc': {},
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),

@@ -28,9 +28,9 @@ Use **component's classes** to assign size (e.g.: padding, font size).
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.card-block-small`                     | `card-block-small`                | Size small            |
-| Component                  | `.card-block-medium`                     | `card-block-medium`                | Size medium            |
-| Component                  | `.card-block-large`                     | `card-block-large`                | Size large            |
+| Component                  | `.card-block-sm`                     | `card-block-sm`                | Size small            |
+| Component                  | `.card-block-md`                     | `card-block-md`                | Size medium            |
+| Component                  | `.card-block-lg`                     | `card-block-lg`                | Size large            |
 
 </div>
 
@@ -40,9 +40,9 @@ Use **card classes** to assign card size (e.g.: min-width).
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.card-small`                     | `card-small`                | Width small            |
-| Component                  | `.card-medium`                     | `card-medium`                | Width medium            |
-| Component                  | `.card-large`                     | `card-large`                | Width large            |
+| Component                  | `.card-sm`                     | `card-sm`                | Width small            |
+| Component                  | `.card-md`                     | `card-md`                | Width medium            |
+| Component                  | `.card-lg`                     | `card-lg`                | Width large            |
 
 </div>
 

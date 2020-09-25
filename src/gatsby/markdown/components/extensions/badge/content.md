@@ -35,9 +35,9 @@ Use **component's classes** to assign size (e.g.: padding, font size).
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.badge-small`                     | `badge-small`                | Size small            |
-| Component                  | `.badge-medium`                     | `badge-medium`                | Size medium            |
-| Component                  | `.badge-large`                     | `badge-large`                | Size large            |
+| Component                  | `.badge-sm`                     | `badge-sm`                | Size small            |
+| Component                  | `.badge-md`                     | `badge-md`                | Size medium            |
+| Component                  | `.badge-lg`                     | `badge-lg`                | Size large            |
 
 </div>
 

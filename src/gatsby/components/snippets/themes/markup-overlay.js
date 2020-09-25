@@ -215,7 +215,7 @@ export default () => {
     <button type="button" class="btn btn-primary">
       overlay newsletter
     </button>
-    <div class="overlay overlay-default overlay-size-small overlay-close-outside">
+    <div class="overlay overlay-default overlay-size-sm overlay-close-outside">
       <div class="overlay-container max-w-4xl">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
@@ -294,7 +294,7 @@ export default () => {
 
                 </div>
 
-                <div class="card-block card-item card-block-side card-block-small text-sm">
+                <div class="card-block card-item card-block-side card-block-sm text-sm">
                   <p>Receive <strong>free discount</strong> periodically on all our products.</p>
                 </div>
 

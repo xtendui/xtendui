@@ -17,39 +17,39 @@ demo.htmlSource = `
 
   <div class="drop-container demo--drop-container-disable" data-xt-drop>
 
-    <button type="button" class="btn btn-medium ${btnPrimary()}">
+    <button type="button" class="btn btn-md ${btnPrimary()}">
       disable sm
     </button>
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="card card-small ${cardDefaultDropList()}">
+        <div class="card card-sm ${cardDefaultDropList()}">
           <div class="card-block py-3">
             <nav class="list-block">
-              <a href="#" class="btn btn-small ${btnDefaultDrop()}">
+              <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </a>
-              <button type="button" class="btn btn-small ${btnDefaultDrop()}">
+              <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
                 Dolor sit
               </button>
               <div class="drop-container" data-xt-drop>
 
-                <button type="button" class="btn btn-small ${btnDefaultDrop()}">
+                <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
                   Drop inner
                 </button>
 
                 <div class="drop drop-center drop-middle">
                   <div class="drop-inner">
-                    <div class="card card-small ${cardPrimaryDropList()}">
+                    <div class="card card-sm ${cardPrimaryDropList()}">
                       <div class="card-block py-3">
                         <nav class="list-block">
-                          <a href="#" class="btn btn-small ${btnPrimaryDrop()}">
+                          <a href="#" class="btn btn-sm ${btnPrimaryDrop()}">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit
                           </a>
-                          <button type="button" class="btn btn-small ${btnPrimaryDrop()}">
+                          <button type="button" class="btn btn-sm ${btnPrimaryDrop()}">
                             Dolor sit
                           </button>
-                          <button type="button" class="btn btn-small ${btnPrimaryDrop()}">
+                          <button type="button" class="btn btn-sm ${btnPrimaryDrop()}">
                             Amet
                           </button>
                         </nav>

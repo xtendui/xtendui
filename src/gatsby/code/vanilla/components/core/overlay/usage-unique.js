@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<button type="button" class="btn btn-medium ${btnPrimary()}"
+<button type="button" class="btn btn-md ${btnPrimary()}"
   data-xt-overlay="{ targets: '#overlay--unique' }">
   overlay
 </button>
@@ -21,7 +21,7 @@ demo.htmlSource = `
 
       <div class="card ${cardDefaultOverlay()}">
         <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
-        <div class="card-block card-block-large">
+        <div class="card-block card-block-lg">
           <div class="h3">Lorem ipsum</div>
           <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
           <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>

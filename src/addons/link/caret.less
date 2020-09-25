@@ -3,13 +3,13 @@
  */
 
 .caret {
-  .icon-xt(@content: @icon-xt-chevron-down, @size: @icon-small);
+  .icon-xt(@content: @icon-xt-chevron-down, @size: @icon-sm);
   &:after {
     .icon-right();
   }
   // activation
   &.in {
-    .icon-xt(@content: @icon-xt-chevron-up, @size: @icon-small);
+    .icon-xt(@content: @icon-xt-chevron-up, @size: @icon-sm);
     &:after {
       .anim-y-inverse.in();
     }
@@ -21,9 +21,9 @@
   }
   // inverse
   &.caret-inverse {
-    .icon-xt(@content: @icon-xt-chevron-up, @size: @icon-small);
+    .icon-xt(@content: @icon-xt-chevron-up, @size: @icon-sm);
     &.in {
-      .icon-xt(@content: @icon-xt-chevron-down, @size: @icon-small);
+      .icon-xt(@content: @icon-xt-chevron-down, @size: @icon-sm);
       &:after {
         .anim-y.in();
       }
@@ -36,9 +36,9 @@
   }
   // horizontal
   &.caret-horizontal {
-    .icon-xt(@content: @icon-xt-chevron-right, @size: @icon-small);
+    .icon-xt(@content: @icon-xt-chevron-right, @size: @icon-sm);
     &.in {
-      .icon-xt(@content: @icon-xt-chevron-left, @size: @icon-small);
+      .icon-xt(@content: @icon-xt-chevron-left, @size: @icon-sm);
       &:after {
         .anim-x-inverse.in();
       }
@@ -50,7 +50,7 @@
     }
     // inverse
     &.caret-inverse {
-      .icon-xt(@content: @icon-xt-chevron-left, @size: @icon-small, @position: before);
+      .icon-xt(@content: @icon-xt-chevron-left, @size: @icon-sm, @position: before);
       &:after {
         content: '';
       }
@@ -58,7 +58,7 @@
         .icon-left();
       }
       &.in {
-        .icon-xt(@content: @icon-xt-chevron-right, @size: @icon-small, @position: before);
+        .icon-xt(@content: @icon-xt-chevron-right, @size: @icon-sm, @position: before);
         &:before {
           .anim-x.in();
         }

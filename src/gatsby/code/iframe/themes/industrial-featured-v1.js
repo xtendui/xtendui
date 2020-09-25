@@ -60,7 +60,7 @@ demo.htmlSource = `
                       ${img({ classes: 'object-cover object-center', loading: 'eager' })}
                     </div>
                   </div>
-                  <div class="featured-item_assets_col--small featured-item_assets_col--small">
+                  <div class="featured-item_assets_col--sm featured-item_assets_col--sm">
                     <div class="featured-item_asset">
                       ${img({ classes: 'object-cover object-center', loading: 'eager' })}
                     </div>
@@ -105,7 +105,7 @@ demo.htmlSource = `
 
               <div class="featured-item_assets">
                 <div class="row">
-                  <div class="featured-item_assets_col--small">
+                  <div class="featured-item_assets_col--sm">
                     <div class="featured-item_asset">
                       ${imgAlt({ classes: 'object-cover object-center', loading: 'eager' })}
                     </div>
@@ -160,7 +160,7 @@ demo.htmlSource = `
                       ${img({ classes: 'object-cover object-center', loading: 'eager' })}
                     </div>
                   </div>
-                  <div class="featured-item_assets_col--small">
+                  <div class="featured-item_assets_col--sm">
                     <div class="featured-item_asset">
                       ${img({ classes: 'object-cover object-center', loading: 'eager' })}
                     </div>
@@ -205,7 +205,7 @@ demo.htmlSource = `
 
               <div class="featured-item_assets">
                 <div class="row">
-                  <div class="featured-item_assets_col--small">
+                  <div class="featured-item_assets_col--sm">
                     <div class="featured-item_asset">
                       ${imgAlt({ classes: 'object-cover object-center', loading: 'eager' })}
                     </div>

@@ -12,12 +12,12 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-space-2 items-center">
 
-  <button type="button" class="btn btn-medium ${btnDefault()}"
+  <button type="button" class="btn btn-md ${btnDefault()}"
     data-xt-toggle="{ targets: '#toggle--unique-2, #toggle--unique-3' }">
     Toggle same
   </button>
 
-  <button type="button" class="btn btn-medium ${btnDefault()}"
+  <button type="button" class="btn btn-md ${btnDefault()}"
           data-xt-toggle="{ targets: '#toggle--unique-2, #toggle--unique-3' }">
     Toggle same
   </button>

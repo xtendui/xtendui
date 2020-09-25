@@ -13,23 +13,23 @@ demo.htmlSource = `
 <div class="list list-space-2 items-center"
      data-xt-toggle="{ auto: { time: 2000, initial: false, step: 3, inverse: true, pause: ':scope > button, .toggle' } }">
 
-  <button type="button" class="btn btn-medium ${btnDefault()}">
+  <button type="button" class="btn btn-md ${btnDefault()}">
     Toggle 0
   </button>
 
-  <button type="button" class="btn btn-medium ${btnDefault()}">
+  <button type="button" class="btn btn-md ${btnDefault()}">
     Toggle 1
   </button>
 
-  <button type="button" class="btn btn-medium ${btnDefault()} active-toggle">
+  <button type="button" class="btn btn-md ${btnDefault()} active-toggle">
     Toggle 2
   </button>
 
-  <button type="button" class="btn btn-medium ${btnDefault()}">
+  <button type="button" class="btn btn-md ${btnDefault()}">
     Toggle 3
   </button>
 
-  <button type="button" class="btn btn-medium ${btnDefault()}">
+  <button type="button" class="btn btn-md ${btnDefault()}">
     Toggle 4
   </button>
 

@@ -18,25 +18,25 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="list list-space-1 items-center">
-  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--overlay-events-first-element">
+  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--overlay-events-first-element">
     1st element
   </button>
-  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--overlay-events-first-target">
+  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--overlay-events-first-target">
     1st target
   </button>
-  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--overlay-events-block">
+  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--overlay-events-block">
     Block/Unblock
   </button>
-  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--overlay-events-reinit">
+  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--overlay-events-reinit">
     Reinit
   </button>
-  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--overlay-events-restart">
+  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--overlay-events-restart">
     Restart
   </button>
-  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--overlay-events-destroy">
+  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--overlay-events-destroy">
     Destroy
   </button>
-  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--overlay-events-unmount">
+  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--overlay-events-unmount">
     Unmount
   </button>
 </div>
@@ -44,10 +44,10 @@ demo.htmlSource = `
 <br/>
 
 <div class="list list-space-1 items-center">
-  <button type="button" class="btn btn-medium ${btnDefault()}" id="demo--overlay-events">
+  <button type="button" class="btn btn-md ${btnDefault()}" id="demo--overlay-events">
     Open Overlay
   </button>
-  <button type="button" class="btn btn-medium ${btnDefault()}" id="demo--overlay-events-alt">
+  <button type="button" class="btn btn-md ${btnDefault()}" id="demo--overlay-events-alt">
     Open Same Overlay
   </button>
 </div>
@@ -58,7 +58,7 @@ demo.htmlSource = `
 
       <div class="card ${cardDefaultOverlay()}">
         <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
-        <div class="card-block card-block-large">
+        <div class="card-block card-block-lg">
           <div class="h3">Lorem ipsum</div>
           <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
           <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
@@ -72,7 +72,7 @@ demo.htmlSource = `
 </div>
 
 <div class="card ${cardDefault()} mt-6">
-  <div class="card-block card-block-small text-sm overflow-y-auto overflow-x-hidden overflow-sub max-h-64" id="demo--overlay-events-log">
+  <div class="card-block card-block-sm text-sm overflow-y-auto overflow-x-hidden overflow-sub max-h-64" id="demo--overlay-events-log">
   </div>
 </div>
 `

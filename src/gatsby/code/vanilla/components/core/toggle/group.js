@@ -12,23 +12,23 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-space-2 items-center" data-xt-toggle>
 
-  <button type="button" class="btn btn-medium ${btnDefault()}" data-xt-group="0">
+  <button type="button" class="btn btn-md ${btnDefault()}" data-xt-group="0">
     Toggle Group 0
   </button>
 
-  <button type="button" class="btn btn-medium ${btnDefault()}">
+  <button type="button" class="btn btn-md ${btnDefault()}">
     Toggle 1
   </button>
 
-  <button type="button" class="btn btn-medium ${btnDefault()}" data-xt-group="0">
+  <button type="button" class="btn btn-md ${btnDefault()}" data-xt-group="0">
     Toggle Group 0
   </button>
 
-  <button type="button" class="btn btn-medium ${btnDefault()}">
+  <button type="button" class="btn btn-md ${btnDefault()}">
     Toggle 2
   </button>
 
-  <button type="button" class="btn btn-medium ${btnDefault()}" data-xt-group="3">
+  <button type="button" class="btn btn-md ${btnDefault()}" data-xt-group="3">
     Toggle Group 3
   </button>
 

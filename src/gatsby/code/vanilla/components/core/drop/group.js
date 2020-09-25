@@ -14,19 +14,19 @@ demo.htmlSource = `
 
   <div class="drop-container" data-xt-drop>
 
-    <button type="button" class="btn btn-medium ${btnPrimary()}">
+    <button type="button" class="btn btn-md ${btnPrimary()}">
       group
     </button>
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="card card-large ${cardDefaultDrop()}">
+        <div class="card card-lg ${cardDefaultDrop()}">
           <div class="sm:card-group">
-            <div class="card-block card-block-medium">
+            <div class="card-block card-block-md">
               <div class="h4">Lorem ipsum</div>
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
             </div>
-            <div class="card-block card-block-medium rounded-b-md sm:rounded-b-none sm:rounded-r-md bg-gray-400">
+            <div class="card-block card-block-md rounded-b-md sm:rounded-b-none sm:rounded-r-md bg-gray-400">
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
             </div>
           </div>

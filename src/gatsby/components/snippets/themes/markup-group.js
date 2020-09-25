@@ -10,7 +10,7 @@ export default () => {
       </button>
       <div class="group group-default">
         <div class="group-inner">
-          <button type="button" class="btn btn-default btn-large">
+          <button type="button" class="btn btn-default btn-lg">
             ipsum
           </button>
         </div>

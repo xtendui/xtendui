@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="badge badge-medium ${badgeDefault()}">
+<div class="badge badge-md ${badgeDefault()}">
   Lorem ipsum
 </div>
 `

@@ -15,22 +15,22 @@ demo.htmlSource = `
 
   <div class="drop-container" data-xt-drop>
 
-    <button type="button" class="btn btn-medium ${btnPrimary()}">
+    <button type="button" class="btn btn-md ${btnPrimary()}">
       bottom right
     </button>
 
     <div class="drop md:drop-bottom md:drop-right">
       <div class="drop-inner">
-        <div class="card card-small ${cardDefaultDropList()}">
+        <div class="card card-sm ${cardDefaultDropList()}">
           <div class="card-block py-3">
             <nav class="list-block">
-              <a href="#" class="btn btn-small ${btnDefaultDrop()}">
+              <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </a>
-              <button type="button" class="btn btn-small ${btnDefaultDrop()}">
+              <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
                 Dolor sit
               </button>
-              <button type="button" class="btn btn-small ${btnDefaultDrop()}">
+              <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
                 Amet
               </button>
             </nav>
@@ -43,22 +43,22 @@ demo.htmlSource = `
 
   <div class="drop-container" data-xt-drop>
 
-    <button type="button" class="btn btn-medium ${btnPrimary()}">
+    <button type="button" class="btn btn-md ${btnPrimary()}">
       top right
     </button>
 
     <div class="drop md:drop-top md:drop-right">
       <div class="drop-inner">
-        <div class="card card-small ${cardDefaultDropList()}">
+        <div class="card card-sm ${cardDefaultDropList()}">
           <div class="card-block py-3">
             <nav class="list-block">
-              <a href="#" class="btn btn-small ${btnDefaultDrop()}">
+              <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </a>
-              <button type="button" class="btn btn-small ${btnDefaultDrop()}">
+              <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
                 Dolor sit
               </button>
-              <button type="button" class="btn btn-small ${btnDefaultDrop()}">
+              <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
                 Amet
               </button>
             </nav>
@@ -71,22 +71,22 @@ demo.htmlSource = `
 
   <div class="drop-container" data-xt-drop>
 
-    <button type="button" class="btn btn-medium ${btnPrimary()}">
+    <button type="button" class="btn btn-md ${btnPrimary()}">
       right middle
     </button>
 
     <div class="drop md:drop-right md:drop-middle">
       <div class="drop-inner">
-        <div class="card card-small ${cardDefaultDropList()}">
+        <div class="card card-sm ${cardDefaultDropList()}">
           <div class="card-block py-3">
             <nav class="list-block">
-              <a href="#" class="btn btn-small ${btnDefaultDrop()}">
+              <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </a>
-              <button type="button" class="btn btn-small ${btnDefaultDrop()}">
+              <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
                 Dolor sit
               </button>
-              <button type="button" class="btn btn-small ${btnDefaultDrop()}">
+              <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
                 Amet
               </button>
             </nav>
@@ -99,22 +99,22 @@ demo.htmlSource = `
 
   <div class="drop-container" data-xt-drop>
 
-    <button type="button" class="btn btn-medium ${btnPrimary()}">
+    <button type="button" class="btn btn-md ${btnPrimary()}">
       right contain-bottom
     </button>
 
     <div class="drop md:drop-right md:drop-contain-bottom">
       <div class="drop-inner">
-        <div class="card card-small ${cardDefaultDropList()}">
+        <div class="card card-sm ${cardDefaultDropList()}">
           <div class="card-block py-3">
             <nav class="list-block">
-              <a href="#" class="btn btn-small ${btnDefaultDrop()}">
+              <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </a>
-              <button type="button" class="btn btn-small ${btnDefaultDrop()}">
+              <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
                 Dolor sit
               </button>
-              <button type="button" class="btn btn-small ${btnDefaultDrop()}">
+              <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
                 Amet
               </button>
             </nav>
@@ -127,22 +127,22 @@ demo.htmlSource = `
 
   <div class="drop-container" data-xt-drop>
 
-    <button type="button" class="btn btn-medium ${btnPrimary()}">
+    <button type="button" class="btn btn-md ${btnPrimary()}">
       right contain-top
     </button>
 
     <div class="drop md:drop-right md:drop-contain-top">
       <div class="drop-inner">
-        <div class="card card-small ${cardDefaultDropList()}">
+        <div class="card card-sm ${cardDefaultDropList()}">
           <div class="card-block py-3">
             <nav class="list-block">
-              <a href="#" class="btn btn-small ${btnDefaultDrop()}">
+              <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </a>
-              <button type="button" class="btn btn-small ${btnDefaultDrop()}">
+              <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
                 Dolor sit
               </button>
-              <button type="button" class="btn btn-small ${btnDefaultDrop()}">
+              <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
                 Amet
               </button>
             </nav>

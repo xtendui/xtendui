@@ -18,37 +18,37 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="list list-space-1 items-center">
-  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--slider-events-first-element">
+  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--slider-events-first-element">
     1st element
   </button>
-  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--slider-events-first-target">
+  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--slider-events-first-target">
     1st target
   </button>
-  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--toggle-events-autostart">
+  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--toggle-events-autostart">
     Autostart
   </button>
-  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--toggle-events-autostop">
+  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--toggle-events-autostop">
     Autostop
   </button>
-  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--slider-events-add">
+  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--slider-events-add">
     Add
   </button>
-  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--slider-events-remove">
+  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--slider-events-remove">
     Remove
   </button>
-  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--slider-events-block">
+  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--slider-events-block">
     Block/Unblock
   </button>
-  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--slider-events-reinit">
+  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--slider-events-reinit">
     Reinit
   </button>
-  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--slider-events-restart">
+  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--slider-events-restart">
     Restart
   </button>
-  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--slider-events-destroy">
+  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--slider-events-destroy">
     Destroy
   </button>
-  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--slider-events-unmount">
+  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--slider-events-unmount">
     Unmount
   </button>
 </div>
@@ -60,7 +60,7 @@ ${indentString(markupSlider(), 2)}
 </div>
 
 <div class="card ${cardDefault()} mt-6">
-  <div class="card-block card-block-small text-sm overflow-y-auto overflow-x-hidden overflow-sub max-h-64" id="demo--slider-events-log">
+  <div class="card-block card-block-sm text-sm overflow-y-auto overflow-x-hidden overflow-sub max-h-64" id="demo--slider-events-log">
   </div>
 </div>
 `

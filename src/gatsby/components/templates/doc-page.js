@@ -45,7 +45,7 @@ class Template extends React.Component {
                             <div className="gatsby_listing_column" key={i}>
                               <a role="button" className="card gatsby_listing_item" data-gatsby-listing-toggle>
                                 <div className="card-design"></div>
-                                <div className="card-block card-block-medium">
+                                <div className="card-block card-block-md">
                                   <div className="h4">
                                     {adiacent.frontmatter.title
                                       .split(/[\s-]+/)
@@ -72,7 +72,7 @@ class Template extends React.Component {
                             <div className="gatsby_listing_column" key={i}>
                               <Link to={markdownSlug(adiacent)} className="card gatsby_listing_item">
                                 <div className="card-design"></div>
-                                <div className="card-block card-block-medium">
+                                <div className="card-block card-block-md">
                                   <div className="h4">
                                     {adiacent.frontmatter.title
                                       .split(/[\s-]+/)

@@ -18,31 +18,31 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="list list-space-1 items-center">
-  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--drop-events-first-element">
+  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--drop-events-first-element">
     1st element
   </button>
-  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--drop-events-first-target">
+  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--drop-events-first-target">
     1st target
   </button>
-  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--drop-events-add">
+  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--drop-events-add">
     Add
   </button>
-  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--drop-events-remove">
+  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--drop-events-remove">
     Remove
   </button>
-  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--drop-events-block">
+  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--drop-events-block">
     Block/Unblock
   </button>
-  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--drop-events-reinit">
+  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--drop-events-reinit">
     Reinit
   </button>
-  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--drop-events-restart">
+  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--drop-events-restart">
     Restart
   </button>
-  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--drop-events-destroy">
+  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--drop-events-destroy">
     Destroy
   </button>
-  <button type="button" class="btn btn-small ${btnPrimary()}" id="demo--drop-events-unmount">
+  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--drop-events-unmount">
     Unmount
   </button>
 </div>
@@ -53,22 +53,22 @@ demo.htmlSource = `
 
   <div class="drop-container">
 
-    <button type="button" class="btn btn-medium ${btnPrimary()}">
+    <button type="button" class="btn btn-md ${btnPrimary()}">
       drop
     </button>
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="card card-small ${cardDefaultDropList()}">
+        <div class="card card-sm ${cardDefaultDropList()}">
           <div class="card-block py-3">
             <nav class="list-block">
-              <a href="#" class="btn btn-small ${btnDefaultDrop()}">
+              <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </a>
-              <button type="button" class="btn btn-small ${btnDefaultDrop()}">
+              <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
                 Dolor sit
               </button>
-              <button type="button" class="btn btn-small ${btnDefaultDrop()}">
+              <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
                 Amet
               </button>
             </nav>
@@ -81,22 +81,22 @@ demo.htmlSource = `
 
   <div class="drop-container">
 
-    <button type="button" class="btn btn-medium ${btnPrimary()}">
+    <button type="button" class="btn btn-md ${btnPrimary()}">
       drop
     </button>
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="card card-small ${cardDefaultDropList()}">
+        <div class="card card-sm ${cardDefaultDropList()}">
           <div class="card-block py-3">
             <nav class="list-block">
-              <a href="#" class="btn btn-small ${btnDefaultDrop()}">
+              <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </a>
-              <button type="button" class="btn btn-small ${btnDefaultDrop()}">
+              <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
                 Dolor sit
               </button>
-              <button type="button" class="btn btn-small ${btnDefaultDrop()}">
+              <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
                 Amet
               </button>
             </nav>
@@ -110,7 +110,7 @@ demo.htmlSource = `
 </div>
 
 <div class="card ${cardDefault()} mt-6">
-  <div class="card-block card-block-small text-sm overflow-y-auto overflow-x-hidden overflow-sub max-h-64" id="demo--drop-events-log">
+  <div class="card-block card-block-sm text-sm overflow-y-auto overflow-x-hidden overflow-sub max-h-64" id="demo--drop-events-log">
   </div>
 </div>
 `

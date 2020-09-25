@@ -38,7 +38,7 @@
   .drop {
     > .drop-inner {
       .collapse-height();
-      transition: height @time-medium @ease-in;
+      transition: height @time-md @ease-in;
         > .drop-design {
           opacity: 0;
           transform: translateY(-0.7rem);
@@ -49,34 +49,34 @@
         }
       }
       &.in {
-        animation-duration: @time-medium; // needed for animation time, put max animation time
+        animation-duration: @time-md; // needed for animation time, put max animation time
         > .drop-inner {
-          transition: height @time-medium @ease-in;
+          transition: height @time-md @ease-in;
           > .drop-design {
             opacity: 1;
             transform: none;
-            transition: height @time-medium @ease-in, transform @time-medium @ease-in, opacity @time-tiny @ease-in;
+            transition: height @time-md @ease-in, transform @time-md @ease-in, opacity @time-tiny @ease-in;
           }
           > .drop-content {
             opacity: 1;
             transform: none;
-            transition: transform @time-medium @ease-in, opacity @time-medium @ease-in;
+            transition: transform @time-md @ease-in, opacity @time-md @ease-in;
           }
         }
       }
       &.out {
-        animation-duration: @time-small; // needed for animation time, put max animation time
+        animation-duration: @time-sm; // needed for animation time, put max animation time
         > .drop-inner {
-          transition: height @time-small @ease-out;
+          transition: height @time-sm @ease-out;
           > .drop-design {
             opacity: 0;
             transform: translateY(0.7rem);
-            transition: height @time-small @ease-out, transform @time-small @ease-out, opacity @time-tiny @ease-out @time-tiny;
+            transition: height @time-sm @ease-out, transform @time-sm @ease-out, opacity @time-tiny @ease-out @time-tiny;
           }
           > .drop-content {
             opacity: 0;
             transform: translateY(1rem);
-            transition: transform @time-small @ease-out, opacity @time-small @ease-out;
+            transition: transform @time-sm @ease-out, opacity @time-sm @ease-out;
           }
         }
       }
@@ -110,35 +110,35 @@
         }
       }
       &.in {
-        animation-duration: @time-medium; // needed for animation time, put max animation time
-        transition: height @time-medium @ease-in;
+        animation-duration: @time-md; // needed for animation time, put max animation time
+        transition: height @time-md @ease-in;
         .overlay-design {
           opacity: 1;
           transform: none;
-          transition: transform @time-medium @ease-in, opacity @time-tiny @ease-in;
+          transition: transform @time-md @ease-in, opacity @time-tiny @ease-in;
         }
         .card-overlay {
           > .btn-close {
             // use animation to not override .btn transitions
             .anim-zoom.in();
-            animation-delay: @time-medium;
+            animation-delay: @time-md;
             animation-fill-mode: forwards;
             opacity: 0;
           }
           .card-block, .card-content {
             opacity: 1;
             transform: none;
-            transition: transform @time-medium @ease-in, opacity @time-tiny @ease-in;
+            transition: transform @time-md @ease-in, opacity @time-tiny @ease-in;
           }
         }
       }
       &.out {
-        animation-duration: @time-small; // needed for animation time, put max animation time
-        transition: height @time-small @ease-out;
+        animation-duration: @time-sm; // needed for animation time, put max animation time
+        transition: height @time-sm @ease-out;
         .overlay-design {
           opacity: 0;
           transform: translateY(2rem);
-          transition: transform @time-small @ease-out, opacity @time-tiny @ease-out @time-tiny;
+          transition: transform @time-sm @ease-out, opacity @time-tiny @ease-out @time-tiny;
         }
         .card-overlay {
           > .btn-close {
@@ -149,7 +149,7 @@
           .card-block, .card-content {
             opacity: 0;
             transform: translateY(2.5rem);
-            transition: transform @time-small @ease-out, opacity @time-tiny @ease-out @time-tiny;
+            transition: transform @time-sm @ease-out, opacity @time-tiny @ease-out @time-tiny;
           }
         }
       }
@@ -162,10 +162,10 @@
     .group {
       .collapse-width();
       &.in {
-        transition: width @time-medium @ease-out;
+        transition: width @time-md @ease-out;
       }
       &.out {
-        transition: width @time-medium @ease-out;
+        transition: width @time-md @ease-out;
       }
     }
 

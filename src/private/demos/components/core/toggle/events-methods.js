@@ -88,7 +88,7 @@ Xt.mount.push({
         logAdd('<strong>add</strong>')
         // elements
         const elIndex = self.getElementsGroups().length
-        const strEl = `<button type="button" class="btn btn-medium ${btnDefault()}">Toggle ${elIndex}</button>`
+        const strEl = `<button type="button" class="btn btn-md ${btnDefault()}">Toggle ${elIndex}</button>`
         document.querySelector('#demo--toggle-events-elements').append(Xt.createElement(strEl))
         // targets
         const indexTr = self.getTargetsGroups().length

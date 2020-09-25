@@ -18,7 +18,7 @@ demo.htmlSource = `
 <div class="row row-space-3 demo--scroll-block">
 
   <div class="w-full">
-    <button type="button" class="btn btn-medium ${btnPrimary()} demo--scroll-block--btn">
+    <button type="button" class="btn btn-md ${btnPrimary()} demo--scroll-block--btn">
       Click to block/unblock and fade out/in
     </button>
   </div>

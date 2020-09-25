@@ -13,15 +13,15 @@ demo.htmlSource = `
 <div class="list list-space-2 items-center text-inverse"
   style="padding: 1rem 1.5rem; background: #0078ff;">
 
-  <button type="button" class="btn btn-medium">
+  <button type="button" class="btn btn-md">
     btn
   </button>
 
-  <button type="button" class="btn btn-medium ${btnDefault()}">
+  <button type="button" class="btn btn-md ${btnDefault()}">
     default
   </button>
 
-  <button type="button" class="btn btn-medium ${btnPrimary()}">
+  <button type="button" class="btn btn-md ${btnPrimary()}">
     primary
   </button>
 

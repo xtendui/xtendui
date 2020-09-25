@@ -80,7 +80,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <button type="submit" class="btn btn-medium ${btnDefault()}">
+      <button type="submit" class="btn btn-md ${btnDefault()}">
         submit
       </button>
     </div>

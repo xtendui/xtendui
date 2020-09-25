@@ -37,32 +37,32 @@
         }
       }
       &.in {
-        animation-duration: @time-medium; // needed for animation time, put max animation time
+        animation-duration: @time-md; // needed for animation time, put max animation time
         .overlay-design {
           opacity: 1;
           transform: none;
-          transition: transform @time-medium @ease-in, opacity @time-small @ease-in;
+          transition: transform @time-md @ease-in, opacity @time-sm @ease-in;
         }
         .card-overlay {
           .card-block, .card-content {
             opacity: 1;
             transform: none;
-            transition: transform @time-medium @ease-in, opacity @time-small @ease-in;
+            transition: transform @time-md @ease-in, opacity @time-sm @ease-in;
           }
         }
       }
       &.out {
-        animation-duration: @time-small; // needed for animation time, put max animation time
+        animation-duration: @time-sm; // needed for animation time, put max animation time
         .overlay-design {
           opacity: 0;
           transform: translateY(125%);
-          transition: transform @time-small @ease-out, opacity @time-small @ease-out;
+          transition: transform @time-sm @ease-out, opacity @time-sm @ease-out;
         }
         .card-overlay {
           .card-block, .card-content {
             opacity: 0;
             transform: translateY(100%);
-            transition: transform @time-small @ease-out, opacity @time-small @ease-out;
+            transition: transform @time-sm @ease-out, opacity @time-sm @ease-out;
           }
           > .btn-close {
             .anim-y.out();
@@ -103,33 +103,33 @@
         }
       }
       &.in {
-        animation-duration: @time-medium; // needed for animation time, put max animation time
+        animation-duration: @time-md; // needed for animation time, put max animation time
         .overlay-design {
           opacity: 1;
           transform: none;
-          transition: transform @time-medium @ease-in, opacity @time-small @ease-in;
+          transition: transform @time-md @ease-in, opacity @time-sm @ease-in;
         }
         .card-overlay {
           .card-block, .card-content {
             opacity: 1;
             transform: none;
-            transition: transform @time-medium @ease-in, opacity @time-small @ease-in;
+            transition: transform @time-md @ease-in, opacity @time-sm @ease-in;
           }
         }
       }
       &.out {
-        animation-duration: @time-small; // needed for animation time, put max animation time
+        animation-duration: @time-sm; // needed for animation time, put max animation time
         &.overlay-position-left {
           .overlay-design {
             opacity: 0;
             transform: translateX(-125%);
-            transition: transform @time-small @ease-out, opacity @time-small @ease-out;
+            transition: transform @time-sm @ease-out, opacity @time-sm @ease-out;
           }
           .card-overlay {
             .card-block, .card-content {
               opacity: 0;
               transform: translateX(-100%);
-              transition: transform @time-small @ease-out, opacity @time-small @ease-out;
+              transition: transform @time-sm @ease-out, opacity @time-sm @ease-out;
             }
             > .btn-close {
               .anim-x-inverse.out();
@@ -140,13 +140,13 @@
           .overlay-design {
             opacity: 0;
             transform: translateX(125%);
-            transition: transform @time-small @ease-out, opacity @time-small @ease-out ;
+            transition: transform @time-sm @ease-out, opacity @time-sm @ease-out ;
           }
           .card-overlay {
             .card-block, .card-content {
               opacity: 0;
               transform: translateX(100%);
-              transition: transform @time-small @ease-out, opacity @time-small @ease-out ;
+              transition: transform @time-sm @ease-out, opacity @time-sm @ease-out ;
             }
             > .btn-close {
               .anim-x.out();

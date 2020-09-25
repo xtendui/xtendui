@@ -147,12 +147,12 @@ input[type="checkbox"], input[type="radio"] {
 .checkbox-card, .radio-card {
   &:before {
     transform: scale(.9);
-    transition: all @time-small @ease-out;
+    transition: all @time-sm @ease-out;
   }
   &:after {
     opacity: 0 !important;
     transform: scale(.9);
-    transition: all @time-small @ease-out;
+    transition: all @time-sm @ease-out;
   }
   &.focus, &:focus {
     &:before {
@@ -163,12 +163,12 @@ input[type="checkbox"], input[type="radio"] {
     &:before {
       background: @accent;
       transform: scale(1);
-      transition: all @time-small @ease-in;
+      transition: all @time-sm @ease-in;
     }
     &:after {
       opacity: 1 !important;
       transform: scale(1);
-      transition: all @time-small @ease-in;
+      transition: all @time-sm @ease-in;
     }
   }
 }

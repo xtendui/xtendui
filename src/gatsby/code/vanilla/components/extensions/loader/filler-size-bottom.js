@@ -13,7 +13,7 @@ demo.htmlSource = `
 <div class="list list-space-2 items-center justify-center">
 
   <div class="card ${cardDefault()}">
-    <div class="card-block card-block-small text-sm">
+    <div class="card-block card-block-sm text-sm">
       <div class="h5">Small</div>
       <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
     </div>
@@ -25,7 +25,7 @@ demo.htmlSource = `
     </span>
   </div>
 
-  <button type="button" class="btn btn-medium ${btnDefault()}">
+  <button type="button" class="btn btn-md ${btnDefault()}">
     Lorem ipsum
     <span class="loader loader-x loader-x-animated loader-size-bottom">
       <span class="filler text-accent-500">

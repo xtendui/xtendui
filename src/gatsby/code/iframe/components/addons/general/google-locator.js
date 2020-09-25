@@ -28,12 +28,12 @@ demo.htmlSource = `
             <input type="text" class="form-item" placeholder="Search"
                    data-xt-google-locator-search-input>
             <span class="group-inner">
-              <button type="button" class="btn btn-medium ${btnDefault()}" data-xt-google-locator-locate-btn="Locate">
+              <button type="button" class="btn btn-md ${btnDefault()}" data-xt-google-locator-locate-btn="Locate">
                 <span class="icon-xt-locate icon-big"></span>
               </button>
             </span>
             <span class="group-inner">
-              <button type="button" class="btn btn-medium ${btnDefault()}" data-xt-google-locator-search-btn>
+              <button type="button" class="btn btn-md ${btnDefault()}" data-xt-google-locator-search-btn>
                 <span class="icon-xt-search icon-big"></span>
               </button>
             </span>
@@ -125,7 +125,7 @@ demo.htmlSource = `
 
       <div class="google-locator_main_map" data-xt-google-locator-map></div>
 
-      <button type="button" class="btn btn-medium ${btnPrimary()} google-locator_repeat" data-xt-google-locator-repeat>
+      <button type="button" class="btn btn-md ${btnPrimary()} google-locator_repeat" data-xt-google-locator-repeat>
         Search in this area
       </button>
 

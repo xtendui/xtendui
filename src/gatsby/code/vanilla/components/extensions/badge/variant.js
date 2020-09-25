@@ -12,11 +12,11 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-space-1">
 
-  <div class="badge badge-medium ${badgeDefault()}">
+  <div class="badge badge-md ${badgeDefault()}">
     Default
   </div>
 
-  <div class="badge badge-medium ${badgePrimary()}">
+  <div class="badge badge-md ${badgePrimary()}">
     Primary
   </div>
 

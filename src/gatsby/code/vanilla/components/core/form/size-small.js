@@ -11,7 +11,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="form-small">
+<div class="form-sm">
   <div class="row row-space-2">
 
     <div class="w-full">
@@ -59,22 +59,22 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <input type="checkbox" id="check-block-small" checked>
-      <label class="label ${labelDefault()}" for="check-block-small">
+      <input type="checkbox" id="check-block-sm" checked>
+      <label class="label ${labelDefault()}" for="check-block-sm">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
       </label>
     </div>
 
     <div class="w-full">
-      <input type="radio" id="radio-block-small-0" name="radio-block-small" checked>
-      <label class="label ${labelDefault()}" for="radio-block-small-0">
+      <input type="radio" id="radio-block-sm-0" name="radio-block-sm" checked>
+      <label class="label ${labelDefault()}" for="radio-block-sm-0">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
       </label>
     </div>
 
     <div class="w-full">
-      <input type="radio" id="radio-block-small-1" name="radio-block-small">
-      <label class="label ${labelDefault()}" for="radio-block-small-1">
+      <input type="radio" id="radio-block-sm-1" name="radio-block-sm">
+      <label class="label ${labelDefault()}" for="radio-block-sm-1">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
       </label>
     </div>
@@ -87,7 +87,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <button type="submit" class="btn btn-medium ${btnPrimary()}">
+      <button type="submit" class="btn btn-md ${btnPrimary()}">
         submit
       </button>
     </div>
