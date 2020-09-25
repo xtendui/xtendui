@@ -16,28 +16,28 @@ demo.htmlSource = `
 
     <div class="w-full md:w-auto">
       <label class="label mb-4 ${labelDefault()}">
-        Lorem
+        Lorem ipsum
       </label>
       <input type="text" class="input ${inputDefault()}"/>
     </div>
 
     <div class="w-full md:w-auto">
       <label class="label mb-4 ${labelDefault()}">
-        Lorem Ipsum
+        Dolor sit amet
       </label>
       <input type="text" class="input ${inputDefault()}"/>
     </div>
 
     <div class="w-full md:w-auto">
       <label class="label mb-4 ${labelDefault()}">
-        Lorem
+        Lorem ipsum
       </label>
       <input type="text" class="input ${inputDefault()}"/>
     </div>
 
     <div class="w-full md:w-auto">
       <label class="label mb-4 ${labelDefault()}">
-        Lorem Ipsum
+        Dolor sit amet
       </label>
       <input type="text" class="input ${inputDefault()}"/>
     </div>

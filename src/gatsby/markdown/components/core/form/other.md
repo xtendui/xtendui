@@ -6,67 +6,46 @@ title: "Other"
 date: "2005-10-10"
 ---
 
-## Legend
+## Fieldset and Legend
 
 <div class="table-scroll">
 
-|                         | Tag                                     | Syntax                                     | Mixin                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `legend` | `.legend`                 | `.legend()`        | Legend styles            |
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `fieldset, .fieldset`                     | `fieldset`                | Fieldset styles            |
+| Component                  | `legend, .legend`                     | `legend`                | Legend styles            |
 
 </div>
 
-<demo>
-  <demovanilla src="vanilla/components/core/form/legend">
-  </demovanilla>
-</demo>
-
-## Fieldset
-
-<div class="table-scroll">
-
-|                         | Tag                                     | Syntax                                     | Mixin                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `fieldset` | `.fieldset`                 | `.fieldset()`        | Fieldset styles            |
-
-</div>
+[[noteDefault]]
+| To customize utils and components follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
 
 <demo>
-  <demovanilla src="vanilla/components/core/form/fieldset">
+  <demovanilla src="vanilla/components/core/form/fieldset-legend">
   </demovanilla>
 </demo>
 
 ## Note
 
-Form note uses the [note component](/components/core/note).
-
-<div class="table-scroll">
-
-|                         | Syntax                                     | Mixin                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `.form-note`                 | `.form-note()`        | Form note styles            |
-
-</div>
+Use **tailwind classes** to create a note.
 
 <demo>
   <demovanilla src="vanilla/components/core/form/note">
   </demovanilla>
 </demo>
 
-## Group
-
-Refer to [Group page](/components/core/group#usage-input).
-
 ## Validation
 
-Validation with html attributes.
+Html validation and Constraint Validation API.
 
 [[notePrimary]]
 | Form validation must be inside `form` or `.form` to work.
 
 <demo>
-  <demovanilla src="vanilla/components/core/form/validation-default">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/form/validation-inverse">
+  <demovanilla src="vanilla/components/core/form/validation">
   </demovanilla>
 </demo>
+
+## Group
+
+@TODO

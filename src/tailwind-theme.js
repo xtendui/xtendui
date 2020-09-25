@@ -24,37 +24,33 @@ module.exports = function (custom = {}) {
       '5xl': ['3rem', { lineHeight: '1' }],
       '6xl': ['4rem', { lineHeight: '1' }],
     },
-    colors: {
-      transparent: 'transparent',
-      current: 'currentColor',
-      black: '#000',
-      white: '#fff',
-      // https://javisperez.github.io/tailwindcolorshades/#/?hawkes-blue=bdd3ff
-      gray: {
-        100: '#F8FBFF',
-        200: '#EFF4FF',
-        300: '#E5EDFF',
-        400: '#D1E0FF',
-        500: '#BDD3FF',
-        600: '#AABEE6',
-        700: '#717F99',
-        800: '#555F73',
-        900: '#393F4D',
-      },
-      // https://javisperez.github.io/tailwindcolorshades/#/?Azure%20Radiance=0078ff&tv=1
-      accent: {
-        100: '#E6F2FF',
-        200: '#BFDDFF',
-        300: '#99C9FF',
-        400: '#4DA1FF',
-        500: '#0078FF',
-        600: '#006CE6',
-        700: '#004899',
-        800: '#003673',
-        900: '#00244D',
-      },
-    },
     extend: {
+      colors: {
+        // https://javisperez.github.io/tailwindcolorshades/#/?hawkes-blue=bdd3ff
+        gray: {
+          100: '#F8FBFF',
+          200: '#EFF4FF',
+          300: '#E5EDFF',
+          400: '#D1E0FF',
+          500: '#BDD3FF',
+          600: '#AABEE6',
+          700: '#717F99',
+          800: '#555F73',
+          900: '#393F4D',
+        },
+        // https://javisperez.github.io/tailwindcolorshades/#/?Azure%20Radiance=0078ff&tv=1
+        accent: {
+          100: '#E6F2FF',
+          200: '#BFDDFF',
+          300: '#99C9FF',
+          400: '#4DA1FF',
+          500: '#0078FF',
+          600: '#006CE6',
+          700: '#004899',
+          800: '#003673',
+          900: '#00244D',
+        },
+      },
       zIndex: {
         base: '0',
         active: '5',

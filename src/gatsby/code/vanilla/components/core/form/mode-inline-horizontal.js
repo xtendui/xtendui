@@ -18,7 +18,7 @@ demo.htmlSource = `
       <div class="row row-space-2">
         <div class="w-full md:w-auto md:self-center">
           <label class="label mb-4 md:mb-0 whitespace-no-wrap ${labelDefault()}">
-            Lorem
+            Lorem ipsum
           </label>
         </div>
         <div class="w-full md:w-auto md:self-center">
@@ -31,7 +31,7 @@ demo.htmlSource = `
       <div class="row row-space-2">
         <div class="w-full md:w-auto md:self-center">
           <label class="label mb-4 md:mb-0 whitespace-no-wrap ${labelDefault()}">
-            Lorem Ipsum
+            Dolor sit amet
           </label>
         </div>
         <div class="w-full md:w-auto md:self-center">
@@ -44,7 +44,7 @@ demo.htmlSource = `
       <div class="row row-space-2">
         <div class="w-full md:w-auto md:self-center">
           <label class="label mb-4 md:mb-0 whitespace-no-wrap ${labelDefault()}">
-            Lorem
+            Lorem ipsum
           </label>
         </div>
         <div class="w-full md:w-auto md:self-center">
@@ -57,7 +57,7 @@ demo.htmlSource = `
       <div class="row row-space-2">
         <div class="w-full md:w-auto md:self-center">
           <label class="label mb-4 md:mb-0 whitespace-no-wrap ${labelDefault()}">
-            Lorem Ipsum
+            Dolor sit amet
           </label>
         </div>
         <div class="w-full md:w-auto md:self-center">

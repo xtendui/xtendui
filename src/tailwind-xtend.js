@@ -378,7 +378,7 @@ module.exports = theme => ({
       },
       '::selection': {
         // styles
-        backgroundColor: theme('colors.accent.800'),
+        backgroundColor: theme('colors.accent.700'),
         color: theme('colors.white'),
       },
       '.overflow-main': {
@@ -883,20 +883,30 @@ module.exports = theme => ({
       'fieldset, .fieldset': {
         // styles
         '& + &': {
-          '@apply mt-4': '',
+          '@apply mt-8': '',
         },
       },
       'legend, .legend': {
         // styles
-        '@apply w-full h4': '',
+        '@apply w-full': '',
+        marginTop: theme('spacing.6'),
+        marginBottom: theme('spacing.4'),
+        '@apply mt-fc mb-lc': {},
+        fontFamily: theme('fontFamily.sans').toString(),
+        fontWeight: theme('fontWeight.semibold'),
+        fontSize: rem(24),
+        lineHeight: theme('lineHeight.snug'),
       },
       '.form-small': {
+        // styles
         fontSize: rem(12),
       },
       '.form-medium': {
+        // styles
         fontSize: rem(14),
       },
       '.form-large': {
+        // styles
         fontSize: rem(16),
       },
       '.label': {
@@ -915,10 +925,16 @@ module.exports = theme => ({
         '&:focus, &.active': {
           zIndex: theme('zIndex.active'),
         },
-        '.textarea-autosize': {
+        'textarea&': {
+          resize: 'vertical',
+          height: rem(120),
+        },
+        /*
+        '.textarea-autosize&': {
           overflow: 'hidden',
           resize: 'none',
         },
+        */
         'select:not([multiple])&': {
           /*
           .padding(right, @select-space-size) !important',

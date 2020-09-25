@@ -16,21 +16,14 @@ demo.htmlSource = `
 
     <div class="w-full">
       <label class="label mb-4 ${labelDefault()}">
-        Lorem
+        Lorem ipsum
       </label>
       <input type="text" class="input ${inputDefault()}"/>
     </div>
 
     <div class="w-full">
       <label class="label mb-4 ${labelDefault()}">
-        Lorem Ipsum
-      </label>
-      <input type="text" class="input ${inputDefault()}"/>
-    </div>
-
-    <div class="w-full md:w-6/12">
-      <label class="label mb-4 ${labelDefault()}">
-        Lorem
+        Dolor sit amet
       </label>
       <input type="text" class="input ${inputDefault()}"/>
     </div>
@@ -38,6 +31,13 @@ demo.htmlSource = `
     <div class="w-full md:w-6/12">
       <label class="label mb-4 ${labelDefault()}">
         Lorem Ipsum
+      </label>
+      <input type="text" class="input ${inputDefault()}"/>
+    </div>
+
+    <div class="w-full md:w-6/12">
+      <label class="label mb-4 ${labelDefault()}">
+        Dolor sit amet
       </label>
       <input type="text" class="input ${inputDefault()}"/>
     </div>
