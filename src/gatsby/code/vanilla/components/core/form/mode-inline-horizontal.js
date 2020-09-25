@@ -14,53 +14,53 @@ demo.htmlSource = `
 <form>
   <div class="row row-space-x-4 row-space-y-3">
 
-    <div class="w-full">
+    <div class="w-full md:w-auto">
       <div class="row row-space-2">
-        <div class="w-full md:w-2/12 md:self-center">
-          <label class="label mb-4 md:mb-0 ${labelDefault()}">
+        <div class="w-full md:w-auto md:self-center">
+          <label class="label mb-4 md:mb-0 whitespace-no-wrap ${labelDefault()}">
             Lorem
           </label>
         </div>
-        <div class="w-full md:w-10/12 md:self-center">
+        <div class="w-full md:w-auto md:self-center">
           <input type="text" class="input ${inputDefault()}"/>
         </div>
       </div>
     </div>
 
-    <div class="w-full">
+    <div class="w-full md:w-auto">
       <div class="row row-space-2">
-        <div class="w-full md:w-2/12 md:self-center">
-          <label class="label mb-4 md:mb-0 ${labelDefault()}">
+        <div class="w-full md:w-auto md:self-center">
+          <label class="label mb-4 md:mb-0 whitespace-no-wrap ${labelDefault()}">
             Lorem Ipsum
           </label>
         </div>
-        <div class="w-full md:w-10/12 md:self-center">
+        <div class="w-full md:w-auto md:self-center">
           <input type="text" class="input ${inputDefault()}"/>
         </div>
       </div>
     </div>
 
-    <div class="w-full md:w-6/12">
+    <div class="w-full md:w-auto">
       <div class="row row-space-2">
-        <div class="w-full md:w-4/12 md:self-center">
-          <label class="label mb-4 md:mb-0 ${labelDefault()}">
+        <div class="w-full md:w-auto md:self-center">
+          <label class="label mb-4 md:mb-0 whitespace-no-wrap ${labelDefault()}">
             Lorem
           </label>
         </div>
-        <div class="w-full md:w-8/12 md:self-center">
+        <div class="w-full md:w-auto md:self-center">
           <input type="text" class="input ${inputDefault()}"/>
         </div>
       </div>
     </div>
 
-    <div class="w-full md:w-6/12">
+    <div class="w-full md:w-auto">
       <div class="row row-space-2">
-        <div class="w-full md:w-4/12 md:self-center">
-          <label class="label mb-4 md:mb-0 ${labelDefault()}">
+        <div class="w-full md:w-auto md:self-center">
+          <label class="label mb-4 md:mb-0 whitespace-no-wrap ${labelDefault()}">
             Lorem Ipsum
           </label>
         </div>
-        <div class="w-full md:w-8/12 md:self-center">
+        <div class="w-full md:w-auto md:self-center">
           <input type="text" class="input ${inputDefault()}"/>
         </div>
       </div>

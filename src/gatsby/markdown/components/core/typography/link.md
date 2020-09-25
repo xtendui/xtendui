@@ -24,7 +24,9 @@ Use this markup to create a **link**.
   </div>
 </script>
 
-Links with the tag `a` are styled **unless they have a class**. If you are using a class on links add `.link` class.
+Links with the tag `a` are styled **unless they have a class**. So use **tailwind classes** to replace `a` link styles.
+
+You can also use `.link` to style any element as a link.
 
 [[noteDefault]]
 | To customize utils and components follow [css customization](/introduction/getting-started/setup#css-customization) instructions.

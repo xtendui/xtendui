@@ -21,7 +21,7 @@ demo.htmlSource = `
   <div class="google-locator_aside">
 
     <div class="google-locator_aside_head">
-      <div class="form-default">
+      <div>
 
         <div class="form-group">
           <div class="group full">

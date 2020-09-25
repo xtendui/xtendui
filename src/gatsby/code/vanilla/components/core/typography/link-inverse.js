@@ -15,6 +15,10 @@ demo.htmlSource = `
     link
   </a>
 
+  <a href="#" class="text-white text-opacity-75 underline">
+    link custom
+  </a>
+
   <button type="button" class="btn link">
     link btn
   </button>

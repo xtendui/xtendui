@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<form class="form-default">
+<form>
   <div
     data-xt-toggle="{ elements: '.radio', min: 1 }">
 

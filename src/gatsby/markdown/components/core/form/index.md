@@ -16,9 +16,43 @@ To customize this component in your `tailwind.config.js` file, as described in [
 
 ```jsx
 module.exports = {
-@TODO
+  theme: require('xtend-library/src/tailwind-theme')({
+    // xtend utilities and components in node_modules/xtend-library/src/tailwind-xtend.js
+    xtend: theme => ({
+      utilities: {
+        form: {
+          // modify utility
+        },
+      },
+      components: {
+        form: {
+          // modify component
+        },
+      },
+    }),
+  })
 }
 ```
+
+## Usage
+
+Use this markup to create a form **label** and **input**.
+
+<script type="text/plain" class="language-markup">
+  <form>
+    <label class="label for="my-input">
+      <!-- content -->
+    </label>
+    <input type="text" class="input" id="my-input" name="my-input"/>
+  </form>
+</script>
+
+Then add and [style content](/components/core/form/content).
+
+<demo>
+  <demovanilla src="vanilla/components/core/form/usage">
+  </demovanilla>
+</demo>
 
 #### Javascript
 

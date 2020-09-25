@@ -14,28 +14,28 @@ demo.htmlSource = `
 <form>
   <div class="row row-space-x-4 row-space-y-3">
 
-    <div class="w-full">
+    <div class="w-full md:w-auto">
       <label class="label mb-4 ${labelDefault()}">
         Lorem
       </label>
       <input type="text" class="input ${inputDefault()}"/>
     </div>
 
-    <div class="w-full">
+    <div class="w-full md:w-auto">
       <label class="label mb-4 ${labelDefault()}">
         Lorem Ipsum
       </label>
       <input type="text" class="input ${inputDefault()}"/>
     </div>
 
-    <div class="w-full md:w-6/12">
+    <div class="w-full md:w-auto">
       <label class="label mb-4 ${labelDefault()}">
         Lorem
       </label>
       <input type="text" class="input ${inputDefault()}"/>
     </div>
 
-    <div class="w-full md:w-6/12">
+    <div class="w-full md:w-auto">
       <label class="label mb-4 ${labelDefault()}">
         Lorem Ipsum
       </label>

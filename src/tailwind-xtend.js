@@ -175,6 +175,27 @@ module.exports = theme => ({
         bottom: 'auto',
       },
     },
+    // form
+    form: {
+      '.form-group-horizontal': {
+        '@apply row-space-x-3': '',
+        display: 'flex',
+        alignItems: 'center',
+        textAlign: 'right',
+        '.form-label': {
+          margin: '0',
+        },
+      },
+      '.form-group-inline': {
+        display: 'flex',
+        flexWrap: 'wrap',
+        '@apply list-space-x-3': '',
+        alignItems: 'baseline',
+        '.form-item': {
+          width: 'auto',
+        },
+      },
+    },
     // list
     list: {
       space: {
@@ -850,6 +871,80 @@ module.exports = theme => ({
           },
           left: '0 !important',
           right: '0 !important',
+        },
+      },
+    },
+    // form
+    form: {
+      'form, .form': {
+        // styles
+        '@apply form-medium': '',
+      },
+      'fieldset, .fieldset': {
+        // styles
+        '& + &': {
+          '@apply mt-4': '',
+        },
+      },
+      'legend, .legend': {
+        // styles
+        '@apply w-full h4': '',
+      },
+      '.form-small': {
+        fontSize: rem(12),
+      },
+      '.form-medium': {
+        fontSize: rem(14),
+      },
+      '.form-large': {
+        fontSize: rem(16),
+      },
+      '.label': {
+        // setup
+        cursor: 'pointer',
+        display: 'inline-block',
+        verticalAlign: 'middle', // @FIX inline-block spacing
+        // styles
+        fontSize: '1em',
+        lineHeight: theme('lineHeight.snug'),
+      },
+      '.input': {
+        // setup
+        display: 'block', // @FIX select and textarea space below
+        zIndex: theme('zIndex.base'),
+        '&:focus, &.active': {
+          zIndex: theme('zIndex.active'),
+        },
+        '.textarea-autosize': {
+          overflow: 'hidden',
+          resize: 'none',
+        },
+        'select:not([multiple])&': {
+          /*
+          .padding(right, @select-space-size) !important',
+          whiteSpace: 'normal;
+          background-position: 'calc(~'100% - ' @select-space-size / 2) 50%, calc(~'100% - (' @select-space-size / 2~') + '@select-arrow-size) 50%, 100% 0',
+          background-size: '@select-arrow-size @select-arrow-size, @select-arrow-size @select-arrow-size, @select-space-size 100%',
+          background-repeat: 'no-repeat',*/
+        },
+        // styles
+        '@apply w-full': '',
+        padding: `.75em 1.2em`,
+        fontSize: '1em',
+        lineHeight: theme('lineHeight.snug'),
+        // animation
+        transitionProperty: 'all',
+        transitionDuration: theme('transitionDuration.500'),
+        transitionTimingFunction: theme('transitionTimingFunction.ease.out'),
+        '&:hover, &:focus': {
+          transitionTimingFunction: theme('transitionTimingFunction.ease.in'),
+        },
+        // validation
+        '&.valid': {
+          borderColor: `${theme('colors.green.500')} !important`,
+        },
+        '&.invalid': {
+          borderColor: `${theme('colors.red.500')} !important`,
         },
       },
     },

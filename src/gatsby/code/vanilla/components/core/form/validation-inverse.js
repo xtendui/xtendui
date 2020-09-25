@@ -8,8 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<form class="form-inverse"
-  style="padding: 1rem 1.5rem; background: #0078ff;">
+<form style="padding: 2rem; background: #0078ff;">
 
   <div class="form-group">
     <label class="form-label">

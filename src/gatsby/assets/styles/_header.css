@@ -73,7 +73,7 @@
   padding: 5px;
   border-radius: 0;
   font-size: 1rem;
-  @apply text-inverse hover:text-inverse;
+  @apply text-inverse;
   line-height: 1;
   text-transform: uppercase;
   opacity: 0.8;

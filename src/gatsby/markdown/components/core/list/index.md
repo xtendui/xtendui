@@ -26,7 +26,7 @@ module.exports = {
       },
       components: {
         list: {
-            // modify component
+          // modify component
         },
       },
     }),

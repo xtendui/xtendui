@@ -2,18 +2,54 @@
 type: "Components"
 category: "Core"
 parent: "Form"
-title: "Check and Radio"
-date: "2010-10-10"
+title: "Content"
+date: "2030-10-10"
 ---
 
-## Usage
+## Variant
+
+Use **tailwind classes** to assign variant (e.g.: border, background, color).
+
+<demo>
+  <demovanilla src="vanilla/components/core/form/variant-primary">
+  </demovanilla>
+</demo>
+
+## Size
+
+Use **component's classes** to assign size (e.g.: padding, font size).
+
+[[noteDefault]]
+| To customize utils and components follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
+
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `form, .form`                     | `form`                | Default size            |
+| Component                  | `.form-small`                     | `form-small`                | Size small            |
+| Component                  | `.form-medium`                     | `form-medium`                | Size medium            |
+| Component                  | `.form-large`                     | `form-large`                | Size large            |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/core/form/size-small">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/form/size-medium">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/form/size-large">
+  </demovanilla>
+</demo>
+
+## Check and Radio
 
 #### Styled
 
 Use this markup to create a **styled** **checkbox** or **radio**.
 
 <script type="text/plain" class="language-markup">
-  <form class="form-default">
+  <form>
     <div class="form-group">
       <input type="checkbox" id="checkbox-styled">
       <label class="form-label" for="checkbox-styled">
@@ -82,7 +118,7 @@ Use this markup to create a **fake** **styled** **checkbox** or **radio**.
 Use this markup to create a **unstyled** **checkbox** or **radio**.
 
 <script type="text/plain" class="language-markup">
-  <form class="form-default">
+  <form>
     <div class="form-group">
       <input type="checkbox" id="checkbox-unstyled" class="unstyled">
       <label class="form-label" for="checkbox-unstyled">
@@ -116,26 +152,5 @@ Use this markup to create a **unstyled** **checkbox** or **radio**.
   <demovanilla src="vanilla/components/core/form/check-radio-unstyled-inline">
   </demovanilla>
   <demovanilla src="vanilla/components/core/form/check-radio-unstyled-disabled">
-  </demovanilla>
-</demo>
-
-## Variant
-
-Classes for assigning variant (e.g.: border, background, color).
-
-You can set the size globally on **form**.
-
-<div class="table-scroll">
-
-|                         | Syntax                                     | Mixin                         | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `.form-{variant}`                | Not Possible        | Form variant styles            |
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/core/form/variant-default">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/form/variant-inverse">
   </demovanilla>
 </demo>

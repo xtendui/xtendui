@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<form class="form-default">
+<form>
   <legend>Legend #1</legend>
 
   <div class="form-group">

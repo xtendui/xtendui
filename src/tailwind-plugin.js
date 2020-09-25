@@ -8,18 +8,17 @@ module.exports = plugin.withOptions(() => {
     const custom = theme(`xtend`, {})
 
     /**
-     * styles
+     * components
      */
 
     const cssBase = base(theme).components || {}
     const cssCustom = custom.components || {}
     for (const component of Object.keys(cssBase)) {
       if (cssCustom[component] !== false) {
-        const style = merge(...castArray(cssBase[component] || {}), cssCustom[component] || {})
-        addComponents(style)
+        const css = merge(...castArray(cssBase[component] || {}), cssCustom[component] || {})
+        addComponents(css)
       }
     }
-
     /**
      * utilities
      */

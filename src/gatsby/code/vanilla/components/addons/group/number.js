@@ -10,7 +10,7 @@ export const demo = {
 demo.htmlSource = `
 <h4>Line</h4>
 
-<form class="form-default">
+<form>
   <div class="form-group">
     <div class="group group-number group-number-line">
       <div class="group-inner">
@@ -32,7 +32,7 @@ demo.htmlSource = `
 
 <h4>Stack</h4>
 
-<form class="form-default">
+<form>
   <div class="form-group">
     <div class="group group-number group-number-stack">
       <div class="group-inner">

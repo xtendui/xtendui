@@ -69,7 +69,7 @@ Use this markup to create a button group as stack.
 Use this markup to create a input group as line.
 
 <script type="text/plain" class="language-markup">
-<form class="form-default">
+<form>
   <div class="form-group">
     <div class="group">
 
@@ -91,7 +91,7 @@ Use this markup to create a input group as line.
 Use this markup to create a input group as stack.
 
 <script type="text/plain" class="language-markup">
-<form class="form-default">
+<form>
   <div class="form-group">
     <div class="group">
 

@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<form class="form-default">
+<form>
 
   <label class="form-label flex-full">
     Lorem ipsum

@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<form class="form-default">
+<form>
   <div class="form-group">
     <div class="group group-expand">
 

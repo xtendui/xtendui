@@ -102,7 +102,7 @@ export default () => {
                       Contact us
                     </div>
 
-                    <form class="form-default">
+                    <form>
 
                       <div class="row row-form">
                         <div class="col-form-double">
@@ -241,7 +241,7 @@ export default () => {
                       Subscribe to our newsletter
                     </div>
 
-                    <form class="form-default">
+                    <form>
 
                       <div class="form-group">
                         <label class="form-label">
