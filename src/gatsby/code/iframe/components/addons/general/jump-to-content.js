@@ -1,5 +1,6 @@
 import React from 'react'
 import path from 'path'
+const btnPrimary = require('components/snippets/classes/btn-primary').default
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -13,8 +14,8 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="jump-to-content sr-only">
-  <a href="#jump-to-content" class="btn btn-primary btn-wide btn-tall">
+<div class="jump-to-content toggle sr-only xt-fixed-check">
+  <a href="#jump-to-content" class="btn btn-medium ${btnPrimary()}">
     Jump to content
   </a>
 </div>

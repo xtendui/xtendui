@@ -4,6 +4,7 @@ if (typeof window !== 'undefined') {
   require('xtend-library/src/private/demos/components/addons/animation/scroll-to-anchor.js')
   require('xtend-library/src/private/demos/components/addons/form/textarea-autosize.js')
   require('xtend-library/src/private/demos/components/addons/general/google-locator.js')
+  require('xtend-library/src/private/demos/components/addons/general/jump-to-content.js')
   require('xtend-library/src/private/demos/components/addons/group/expand.js')
   require('xtend-library/src/private/demos/components/addons/group/number.js')
   require('xtend-library/src/private/demos/components/addons/loader/mouse-filler.js')

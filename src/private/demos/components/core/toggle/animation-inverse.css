@@ -1,7 +1,7 @@
 .demo--toggle-animation-inverse {
   .card {
-    @apply transform transition-all duration-500;
     /* initial */
+    @apply transform transition-all duration-500;
     @apply opacity-100 translate-x-0 ease-in;
     /* in */
     &.in {
