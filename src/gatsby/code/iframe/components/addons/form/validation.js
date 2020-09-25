@@ -21,6 +21,13 @@ demo.htmlSource = `
 
     <div class="w-full">
       <label class="label mb-4 ${labelDefault()}">
+        Custom constrain
+      </label>
+      <input type="text" class="input ${inputDefault()} custom-constrain" placeholder="Custom constrain" required>
+    </div>
+
+    <div class="w-full">
+      <label class="label mb-4 ${labelDefault()}">
         Email
       </label>
       <input type="email" class="input ${inputDefault()} " placeholder="Email" required>
@@ -30,7 +37,7 @@ demo.htmlSource = `
       <label class="label mb-4 ${labelDefault()}">
         Number
       </label>
-      <input type="email" class="input ${inputDefault()} " placeholder="Number" required min="1" max="10">
+      <input type="number" class="input ${inputDefault()} " placeholder="Number" required min="1" max="10">
     </div>
 
     <div class="w-full">
@@ -39,31 +46,6 @@ demo.htmlSource = `
       </label>
       <input type="text" class="input ${inputDefault()} " placeholder="Letter" required pattern="[A-Za-z]+">
     </div>
-
-    <div class="w-full">
-      <label class="label mb-4 ${labelDefault()}">
-        Custom constrain
-      </label>
-      <input type="text" class="input ${inputDefault()} demo--validation-custom-constrain" placeholder="Custom" required>
-    </div>
-
-    <script>
-      function validationCustom (e) {
-          var item = e.target
-          var constraints = ['^(CH-)?\\\\d{4}$', 'Switzerland ZIPs must have exactly 4 digits: e.g. CH-1950 or 1950'];
-          var constraint = new RegExp(constraints[0], '');
-          if (constraint.test(item.value)) {
-              item.setCustomValidity('');
-          } else {
-              item.setCustomValidity(constraints[1]);
-          }
-      }
-      var items = document.querySelectorAll('.demo--validation-custom-constrain')
-      for (var i = 0; i < items.length; i++) {
-        var item = items[i];
-        item.addEventListener('input', validationCustom);
-      }
-    </script>
 
     <div class="w-full">
       <label class="label mb-4 ${labelDefault()}">
