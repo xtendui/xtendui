@@ -3,9 +3,9 @@
   body { /* add your own selector instead of body to contain the code */
 
     .google-locator {
-      @apply flex-auto;
       display: flex;
       flex-wrap: wrap;
+      flex: 1 1 auto;
       @media (max-width: theme('screens.md')) {
         flex-flow: column;
       }
@@ -16,7 +16,7 @@
     }
 
     .google-locator_main {
-      @apply flex-auto;
+      flex: 1 1 auto;
       position: relative;
       min-height: 100%;
       @screen md {

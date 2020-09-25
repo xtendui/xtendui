@@ -175,27 +175,6 @@ module.exports = theme => ({
         bottom: 'auto',
       },
     },
-    // form
-    form: {
-      '.form-group-horizontal': {
-        '@apply row-space-x-3': '',
-        display: 'flex',
-        alignItems: 'center',
-        textAlign: 'right',
-        '.form-label': {
-          margin: '0',
-        },
-      },
-      '.form-group-inline': {
-        display: 'flex',
-        flexWrap: 'wrap',
-        '@apply list-space-x-3': '',
-        alignItems: 'baseline',
-        '.form-item': {
-          width: 'auto',
-        },
-      },
-    },
     // list
     list: {
       space: {
@@ -215,9 +194,9 @@ module.exports = theme => ({
           },
         },
         '.overlay-inner': {
-          '@apply flex-auto': '',
           display: 'flex',
           flexDirection: 'column',
+          flex: '1 1 auto',
         },
       },
       '.overlay-disable': {
@@ -282,7 +261,7 @@ module.exports = theme => ({
           height: 'auto !important',
         },
         '.slides-inner': {
-          '@apply duration-none animate-none transform-none !important': '',
+          '@apply duration-none transform-none animate-none !important': '',
           flexWrap: 'wrap !important',
         },
         '.slide:not(.active)': {
@@ -444,7 +423,8 @@ module.exports = theme => ({
         width: '100%',
         height: '100%',
         // styles
-        '@apply bg-gray-900 bg-opacity-25': '',
+        backgroundColor: theme('colors.gray.900'),
+        opacity: '.3',
       },
       'html.xt-scrollbar': {
         // setup
@@ -640,7 +620,8 @@ module.exports = theme => ({
         // setup
         width: '100%',
         // styles
-        '@apply py-4': '',
+        paddingTop: theme('spacing.4'),
+        paddingBottom: theme('spacing.4'),
       },
       '.breadcrumbs-list': {
         // setup
@@ -723,12 +704,12 @@ module.exports = theme => ({
     card: {
       '.card': {
         // setup
-        '@apply flex-auto': '',
         position: 'relative',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'stretch',
         justifyContent: 'flex-start',
+        flex: '1 1 auto',
         width: '100%',
         // animation
         'a&, button&, label&': {
@@ -850,7 +831,8 @@ module.exports = theme => ({
           zIndex: theme('zIndex.drop') - 1,
         },
         // styles
-        '@apply p-2 drop-left drop-bottom': '',
+        '@apply drop-left drop-bottom': '',
+        padding: theme('spacing.2'),
       },
       '.drop-inner': {
         // setup
@@ -883,15 +865,15 @@ module.exports = theme => ({
       'fieldset, .fieldset': {
         // styles
         '& + &': {
-          '@apply mt-8': '',
+          marginTop: theme('spacing.8'),
         },
       },
       'legend, .legend': {
         // styles
-        '@apply w-full': '',
         marginTop: theme('spacing.6'),
         marginBottom: theme('spacing.4'),
         '@apply mt-fc mb-lc': {},
+        width: '100%',
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
         fontSize: rem(24),
@@ -942,10 +924,34 @@ module.exports = theme => ({
           background-position: 'calc(~'100% - ' @select-space-size / 2) 50%, calc(~'100% - (' @select-space-size / 2~') + '@select-arrow-size) 50%, 100% 0',
           background-size: '@select-arrow-size @select-arrow-size, @select-arrow-size @select-arrow-size, @select-space-size 100%',
           background-repeat: 'no-repeat',*/
+          /*
+          @select-arrow-size: 4px; // in px
+          @select-space-size: 35px; // in px
+          select:not([multiple])& {
+            &.form-item-default, .form-default & {
+              @select-arrow-color: @text;
+              @select-space-color: fade(@shade-700, 10%);
+              background-image: linear-gradient(45deg, transparent 50%, @select-arrow-color 50%), linear-gradient(135deg, @select-arrow-color 50%, transparent 50%), linear-gradient(to right, @select-space-color, @select-space-color);
+            }
+            &.form-item-inverse, .form-inverse & {
+              @select-arrow-color: @text-inverse;
+              @select-space-color: fade(@shade-700, 10%);
+              background-image: linear-gradient(45deg, transparent 50%, @select-arrow-color 50%), linear-gradient(135deg, @select-arrow-color 50%, transparent 50%), linear-gradient(to right, @select-space-color, @select-space-color);
+            }
+          }
+          select[multiple]& {
+            max-height: 10rem;
+            overflow-x: hidden;
+            overflow-y: auto;
+            .overflow-style(@mode: inner);
+            option {
+              padding: .5rem 0;
+            }
+          }*/
         },
         // styles
-        '@apply w-full': '',
         padding: `.75em 1.2em`,
+        width: '100%',
         fontSize: '1em',
         lineHeight: theme('lineHeight.snug'),
         // animation
@@ -1292,7 +1298,7 @@ module.exports = theme => ({
           overflowY: 'hidden',
           flexWrap: 'nowrap',
           '> *': {
-            '@apply flex-none': '',
+            flex: 'none',
           },
         },
       },
@@ -1354,10 +1360,10 @@ module.exports = theme => ({
       },
       '.slides': {
         // setup
-        '@apply w-full': '',
         position: 'relative',
         display: 'inline-block', // @FIX autoheight values
         verticalAlign: 'top', // @FIX inline-block margin below
+        width: '100%',
         // styles
         '&.xt-autoHeight': {
           // animation autoHeight
@@ -1376,7 +1382,6 @@ module.exports = theme => ({
       },
       '.slides-inner': {
         // styles
-        '@apply row row-space-2': '',
         flexWrap: 'nowrap',
         alignItems: 'flex-start',
         // animation dragger
@@ -1386,7 +1391,6 @@ module.exports = theme => ({
       },
       '.slider-pagination, .slider-navigation': {
         // styles
-        '@apply list list-space-2': '',
         paddingTop: theme('spacing.4'),
         alignItems: 'center',
         justifyContent: 'center',

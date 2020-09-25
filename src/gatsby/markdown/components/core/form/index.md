@@ -19,11 +19,6 @@ module.exports = {
   theme: require('xtend-library/src/tailwind-theme')({
     // xtend utilities and components in node_modules/xtend-library/src/tailwind-xtend.js
     xtend: theme => ({
-      utilities: {
-        form: {
-          // modify utility
-        },
-      },
       components: {
         form: {
           // modify component

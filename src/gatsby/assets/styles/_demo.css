@@ -231,7 +231,7 @@ pre {
   display: flex;
   flex-direction: column;
   #gatsby_open-full & {
-    @apply flex-auto;
+    flex: 1 1 auto;
     width: 100%;
   }
 }

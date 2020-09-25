@@ -16,9 +16,9 @@
 }
 
 .gatsby_site_footer_bottom_row {
-  @apply flex-auto;
   flex-wrap: nowrap;
   justify-content: space-between;
+  flex: 1 1 auto;
   font-size: 11px;
   @screeen md {
     font-size: 12px;

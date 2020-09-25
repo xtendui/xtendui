@@ -38,7 +38,8 @@ body {
 }
 
 .gatsby_site_article_content {
-  @apply flex-auto py-16;
+  @apply py-16;
+  flex: 1 1 auto;
   background: theme('colors.white');
 }
 
@@ -97,7 +98,7 @@ body {
 .gatsby_site_article_inner {
   display: flex;
   flex-direction: column;
-  @apply flex-auto;
+  flex: 1 1 auto;
 }
 
 /**
