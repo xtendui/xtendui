@@ -22,8 +22,6 @@ For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/
 
 </div>
 
-Use **tailwind classes** to assign flex options.
-
 <demo>
   <demovanilla src="vanilla/components/core/list/space-px">
   </demovanilla>
@@ -34,5 +32,14 @@ Use **tailwind classes** to assign flex options.
   <demovanilla src="vanilla/components/core/list/space-3">
   </demovanilla>
   <demovanilla src="vanilla/components/core/list/space-4">
+  </demovanilla>
+</demo>
+
+## Alignment
+
+Use **tailwind classes** to assign flex alignment.
+
+<demo>
+  <demovanilla src="vanilla/components/core/list/alignment">
   </demovanilla>
 </demo>

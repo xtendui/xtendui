@@ -22,8 +22,6 @@ For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/
 
 </div>
 
-Use **tailwind classes** to assign flex options.
-
 [[notePrimary]]
 | You should always use **tailwind width classes** for the contents inside `.row`. Otherwise you can space contents with [list](/components/core/list).
 
@@ -37,5 +35,14 @@ Use **tailwind classes** to assign flex options.
   <demovanilla src="vanilla/components/core/row/space-3">
   </demovanilla>
   <demovanilla src="vanilla/components/core/row/space-4">
+  </demovanilla>
+</demo>
+
+## Alignment
+
+Use **tailwind classes** to assign flex alignment.
+
+<demo>
+  <demovanilla src="vanilla/components/core/row/alignment">
   </demovanilla>
 </demo>

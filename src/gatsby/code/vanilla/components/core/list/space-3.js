@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<nav class="list-block list-space-3 items-center justify-center">
+<nav class="list-block list-space-3">
 
   <div>
     <div class="list list-space-3">

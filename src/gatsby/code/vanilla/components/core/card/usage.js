@@ -9,23 +9,10 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="row row-space-3">
-
-  <div class="w-full md:w-6/12">
-    <div class="card ${cardDefault()}">
-      <div class="card-block card-block-md">
-        <div class="h4">Lorem ipsum</div>
-        <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-      </div>
-    </div>
+<div class="card ${cardDefault()}">
+  <div class="card-block card-block-md">
+    <div class="h4">Lorem ipsum</div>
+    <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
   </div>
-
-  <div class="w-full md:w-6/12">
-    <div class="card card-block card-block-md ${cardDefault()}">
-      <div class="h4">Lorem ipsum</div>
-      <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-    </div>
-  </div>
-
 </div>
 `

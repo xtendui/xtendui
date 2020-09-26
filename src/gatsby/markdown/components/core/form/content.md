@@ -11,6 +11,8 @@ date: "2030-10-10"
 Use **tailwind classes** to assign variant (e.g.: border, background, color).
 
 <demo>
+  <demovanilla src="vanilla/components/core/form/variant-default">
+  </demovanilla>
   <demovanilla src="vanilla/components/core/form/variant-primary">
   </demovanilla>
 </demo>
