@@ -4,8 +4,6 @@
  * vars
  */
 
-// select
-
 /**
  * check and radio
  */
@@ -14,73 +12,6 @@
 
 .checkradio-label {
   .margin(all, auto);
-  .font-sans-regular();
-  .line-height-sm();
-  font-size: 0.9em; // size in em inherit .form-group size
-  letter-spacing: 0;
-  text-transform: none;
-  // variant
-  &.form-label.form-label-default, .form-default & {
-    color: @text;
-  }
-  &.form-label.form-label-inverse, .form-inverse & {
-    color: @text-inverse;
-  }
-}
-
-// styled
-
-.checkbox, .radio {
-  .full();
-  .form-label();
-  .checkradio-label() !important;
-  padding-left: 26px !important;
-  &:before, &:after {
-    top: 1px;
-    width: 16px;
-    height: 16px;
-  }
-  // variant
-  &.form-label.form-label-default, .form-default & {
-    &:before {
-      background: @shade-100;
-      border: 1px solid @shade-200;
-    }
-    &:after {
-      color: @accent;
-    }
-  }
-  &.form-label.form-label-inverse, .form-inverse & {
-    &:before {
-      background: fade(@shade-700, 20%);
-      border: 1px solid fade(@shade-700, 10%);
-    }
-    &:after {
-      color: @white;
-    }
-  }
-}
-
-.checkbox {
-  &:before {
-    border-radius: 2px;
-  }
-  &:after {
-    .icon-xt();
-    content: @icon-xt-check;
-    font-size: 100%;
-  }
-}
-
-.radio {
-  &:before {
-    border-radius: 50%;
-  }
-  &:after {
-    .icon-xt();
-    content: @icon-xt-circle;
-    font-size: 50%;
-  }
 }
 
 // unstyled

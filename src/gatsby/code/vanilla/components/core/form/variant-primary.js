@@ -15,35 +15,35 @@ demo.htmlSource = `
   <div class="row row-space-x-4 row-space-y-3">
 
     <div class="w-full">
-      <label class="label mb-4 ${labelPrimary()}">
+      <label class="label mb-3 ${labelPrimary()}">
         Input
       </label>
       <input type="text" class="input ${inputPrimary()}" placeholder="Input">
     </div>
 
     <div class="w-full">
-      <label class="label mb-4 ${labelPrimary()}">
+      <label class="label mb-3 ${labelPrimary()}">
         Disabled
       </label>
       <input type="text" class="input ${inputPrimary()}" placeholder="Input" disabled>
     </div>
 
     <div class="w-full">
-      <label class="label mb-4 ${labelPrimary()}">
+      <label class="label mb-3 ${labelPrimary()}">
         File
       </label>
       <input type="file" class="input ${inputPrimary()}"/>
     </div>
 
     <div class="w-full">
-      <label class="label mb-4 ${labelPrimary()}">
+      <label class="label mb-3 ${labelPrimary()}">
         Textarea
       </label>
       <textarea class="input ${inputPrimary()}" placeholder="Textarea"></textarea>
     </div>
 
     <div class="w-full">
-      <label class="label mb-4 ${labelPrimary()}">
+      <label class="label mb-3 ${labelPrimary()}">
         Select
       </label>
       <select class="input ${inputPrimary()}">
@@ -55,7 +55,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <label class="label mb-4 ${labelPrimary()}">
+      <label class="label mb-3 ${labelPrimary()}">
         Select multiple
       </label>
       <select class="input ${inputPrimary()}" multiple>

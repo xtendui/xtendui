@@ -20,14 +20,14 @@ demo.htmlSource = `
     <div class="row row-space-x-4 row-space-y-3">
 
       <div class="w-full">
-        <label class="label mb-4 ${labelDefault()}">
+        <label class="label mb-3 ${labelDefault()}">
           Lorem ipsum
         </label>
         <input type="text" class="input ${inputDefault()}" placeholder="Input">
       </div>
 
       <div class="w-full">
-        <label class="label mb-4 ${labelDefault()}">
+        <label class="label mb-3 ${labelDefault()}">
           Dolor sit amet
         </label>
         <input type="text" class="input ${inputDefault()}" placeholder="Input" disabled>
@@ -44,14 +44,14 @@ demo.htmlSource = `
     <div class="row row-space-x-4 row-space-y-3">
 
       <div class="w-full">
-        <label class="label mb-4 ${labelDefault()}">
+        <label class="label mb-3 ${labelDefault()}">
           Lorem ipsum
         </label>
         <input type="text" class="input ${inputDefault()}" placeholder="Input">
       </div>
 
       <div class="w-full">
-        <label class="label mb-4 ${labelDefault()}">
+        <label class="label mb-3 ${labelDefault()}">
           Dolor sit amet
         </label>
         <input type="text" class="input ${inputDefault()}" placeholder="Input" disabled>

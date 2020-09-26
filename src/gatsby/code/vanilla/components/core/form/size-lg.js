@@ -15,28 +15,28 @@ demo.htmlSource = `
   <div class="row row-space-4">
 
     <div class="w-full">
-      <label class="label mb-4 ${labelDefault()}">
+      <label class="label mb-3 ${labelDefault()}">
         Input
       </label>
       <input type="text" class="input ${inputDefault()}" placeholder="Input">
     </div>
 
     <div class="w-full">
-      <label class="label mb-4 ${labelDefault()}">
+      <label class="label mb-3 ${labelDefault()}">
         File
       </label>
       <input type="file" class="input ${inputDefault()}"/>
     </div>
 
     <div class="w-full">
-      <label class="label mb-4 ${labelDefault()}">
+      <label class="label mb-3 ${labelDefault()}">
         Textarea
       </label>
       <textarea class="input ${inputDefault()}" placeholder="Textarea"></textarea>
     </div>
 
     <div class="w-full">
-      <label class="label mb-4 ${labelDefault()}">
+      <label class="label mb-3 ${labelDefault()}">
         Select
       </label>
       <select class="input ${inputDefault()}">
@@ -48,7 +48,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <label class="label mb-4 ${labelDefault()}">
+      <label class="label mb-3 ${labelDefault()}">
         Select multiple
       </label>
       <select class="input ${inputDefault()}" multiple>
@@ -80,7 +80,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <label class="label mb-4 ${labelDefault()}">
+      <label class="label mb-3 ${labelDefault()}">
         Input
       </label>
       <input type="text" class="input ${inputDefault()}" placeholder="Input">

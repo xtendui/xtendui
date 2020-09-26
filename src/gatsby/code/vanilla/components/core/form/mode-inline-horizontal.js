@@ -17,7 +17,7 @@ demo.htmlSource = `
     <div class="w-full md:w-auto">
       <div class="row row-space-2">
         <div class="w-full md:w-auto md:self-center">
-          <label class="label mb-4 md:mb-0 whitespace-no-wrap ${labelDefault()}">
+          <label class="label mb-3 md:mb-0 whitespace-no-wrap ${labelDefault()}">
             Lorem ipsum
           </label>
         </div>
@@ -30,7 +30,7 @@ demo.htmlSource = `
     <div class="w-full md:w-auto">
       <div class="row row-space-2">
         <div class="w-full md:w-auto md:self-center">
-          <label class="label mb-4 md:mb-0 whitespace-no-wrap ${labelDefault()}">
+          <label class="label mb-3 md:mb-0 whitespace-no-wrap ${labelDefault()}">
             Dolor sit amet
           </label>
         </div>
@@ -43,7 +43,7 @@ demo.htmlSource = `
     <div class="w-full md:w-auto">
       <div class="row row-space-2">
         <div class="w-full md:w-auto md:self-center">
-          <label class="label mb-4 md:mb-0 whitespace-no-wrap ${labelDefault()}">
+          <label class="label mb-3 md:mb-0 whitespace-no-wrap ${labelDefault()}">
             Lorem ipsum
           </label>
         </div>
@@ -56,7 +56,7 @@ demo.htmlSource = `
     <div class="w-full md:w-auto">
       <div class="row row-space-2">
         <div class="w-full md:w-auto md:self-center">
-          <label class="label mb-4 md:mb-0 whitespace-no-wrap ${labelDefault()}">
+          <label class="label mb-3 md:mb-0 whitespace-no-wrap ${labelDefault()}">
             Dolor sit amet
           </label>
         </div>

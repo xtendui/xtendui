@@ -20,49 +20,49 @@ demo.htmlSource = `
   <div class="row row-space-x-4 row-space-y-3">
 
     <div class="w-full">
-      <label class="label mb-4 ${labelDefault()}">
+      <label class="label mb-3 ${labelDefault()}">
         Custom constrain
       </label>
       <input type="text" class="input ${inputDefault()} custom-constrain" placeholder="Custom constrain" required>
     </div>
 
     <div class="w-full">
-      <label class="label mb-4 ${labelDefault()}">
+      <label class="label mb-3 ${labelDefault()}">
         Email
       </label>
       <input type="email" class="input ${inputDefault()} " placeholder="Email" required>
     </div>
 
     <div class="w-full">
-      <label class="label mb-4 ${labelDefault()}">
+      <label class="label mb-3 ${labelDefault()}">
         Number
       </label>
       <input type="number" class="input ${inputDefault()} " placeholder="Number" required min="1" max="10">
     </div>
 
     <div class="w-full">
-      <label class="label mb-4 ${labelDefault()}">
+      <label class="label mb-3 ${labelDefault()}">
         Letters
       </label>
       <input type="text" class="input ${inputDefault()} " placeholder="Letter" required pattern="[A-Za-z]+">
     </div>
 
     <div class="w-full">
-      <label class="label mb-4 ${labelDefault()}">
+      <label class="label mb-3 ${labelDefault()}">
         File
       </label>
       <input type="file" class="input ${inputDefault()}" required/>
     </div>
 
     <div class="w-full">
-      <label class="label mb-4 ${labelDefault()}">
+      <label class="label mb-3 ${labelDefault()}">
         Textarea
       </label>
       <textarea class="input ${inputDefault()}" placeholder="Textarea" required></textarea>
     </div>
 
     <div class="w-full">
-      <label class="label mb-4 ${labelDefault()}">
+      <label class="label mb-3 ${labelDefault()}">
         Select
       </label>
       <select class="input ${inputDefault()}" required>
@@ -74,7 +74,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <label class="label mb-4 ${labelDefault()}" required>
+      <label class="label mb-3 ${labelDefault()}" required>
         Select multiple
       </label>
       <select class="input ${inputDefault()}" multiple>

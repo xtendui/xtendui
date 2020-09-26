@@ -17,7 +17,7 @@ demo.htmlSource = `
     <div class="w-full">
       <div class="row row-space-2">
         <div class="w-full md:w-2/12 md:self-center">
-          <label class="label mb-4 md:mb-0 ${labelDefault()}">
+          <label class="label mb-3 md:mb-0 ${labelDefault()}">
             Lorem ipsum
           </label>
         </div>
@@ -30,7 +30,7 @@ demo.htmlSource = `
     <div class="w-full">
       <div class="row row-space-2">
         <div class="w-full md:w-2/12 md:self-center">
-          <label class="label mb-4 md:mb-0 ${labelDefault()}">
+          <label class="label mb-3 md:mb-0 ${labelDefault()}">
             Dolor sit amet
           </label>
         </div>
@@ -43,7 +43,7 @@ demo.htmlSource = `
     <div class="w-full md:w-6/12">
       <div class="row row-space-2">
         <div class="w-full md:w-4/12 md:self-center">
-          <label class="label mb-4 md:mb-0 ${labelDefault()}">
+          <label class="label mb-3 md:mb-0 ${labelDefault()}">
             Lorem ipsum
           </label>
         </div>
@@ -56,7 +56,7 @@ demo.htmlSource = `
     <div class="w-full md:w-6/12">
       <div class="row row-space-2">
         <div class="w-full md:w-4/12 md:self-center">
-          <label class="label mb-4 md:mb-0 ${labelDefault()}">
+          <label class="label mb-3 md:mb-0 ${labelDefault()}">
             Dolor sit amet
           </label>
         </div>

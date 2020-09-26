@@ -3,7 +3,7 @@ type: "Components"
 category: "Core"
 parent: "Form"
 title: "Layout"
-date: "2030-05-05"
+date: "2030-03-03"
 ---
 
 ## Row
@@ -15,7 +15,7 @@ Use **tailwind classes** to assign column size. Use **component's classes** to a
     <div class="row row-space-x-4 row-space-y-3">
 
       <div class="w-full">
-        <label class="label mb-4" for="my-input">
+        <label class="label mb-3" for="my-input">
           <!-- content -->
         </label>
         <input type="text" class="input" id="my-input" name="my-input"/>
@@ -41,7 +41,7 @@ Use **tailwind classes** to assign column size. Use **component's classes** to a
     <div class="w-full">
       <div class="row row-space-2">
         <div class="w-full sm:w-2/12 sm:self-center">
-          <label class="label mb-4 sm:mb-0" for="my-input">
+          <label class="label mb-3 sm:mb-0" for="my-input">
             <!-- content -->
           </label>
         </div>
@@ -69,7 +69,7 @@ Inline Row mode with `w-auto`.
     <div class="row row-space-x-4 row-space-y-3">
 
       <div class="w-full sm:w-auto">
-        <label class="label mb-4" for="my-input">
+        <label class="label mb-3" for="my-input">
           <!-- content -->
         </label>
         <input type="text" class="input" id="my-input" name="my-input"/>
@@ -95,7 +95,7 @@ Inline Horizontal mode with `w-auto` and `whitespace-no-wrap`.
     <div class="w-full sm:w-auto">
       <div class="row row-space-2">
         <div class="w-full sm:w-auto sm:self-center">
-          <label class="label mb-4 sm:mb-0 whitespace-no-wrap" for="my-input">
+          <label class="label mb-3 sm:mb-0 whitespace-no-wrap" for="my-input">
             <!-- content -->
           </label>
         </div>
