@@ -648,15 +648,13 @@ module.exports = theme => ({
     btn: {
       '.btn': {
         // setup
+        cursor: 'pointer',
         display: 'inline-flex',
         position: 'relative',
         verticalAlign: 'middle',
         flexWrap: 'nowrap',
         alignItems: 'center',
         justifyContent: 'space-between',
-        '&:not(.disabled)': {
-          cursor: 'pointer',
-        },
         // styles
         fontFamily: theme('fontFamily.sans').toString(),
         fontWeight: theme('fontWeight.semibold'),
@@ -968,20 +966,29 @@ module.exports = theme => ({
       },
       '.label-check': {
         // setup
+        cursor: 'pointer',
         display: 'inline-flex',
-        '&:not(.disabled)': {
-          cursor: 'pointer',
-        },
         // styles
         fontSize: '1em',
         lineHeight: theme('lineHeight.snug'),
       },
+      '.select': {
+        // setup
+        '@apply appearance-none': '',
+      },
       '.checkbox, .radio, .switch': {
         // setup
         '@apply appearance-none': '',
+        cursor: 'pointer',
         position: 'relative',
         flexShrink: '0',
         backgroundRepeat: 'no-repeat',
+        // styles
+        '&[disabled]': {
+          backgroundColor: `${theme('colors.gray.700')} !important`,
+          borderColor: `${theme('colors.gray.700')} !important`,
+          opacity: '1',
+        },
         // animation
         transitionProperty: 'all',
         transitionDuration: theme('transitionDuration.500'),

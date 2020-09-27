@@ -53,7 +53,7 @@ demo.htmlSource = `
 
     <div class="w-full md:w-auto">
       <label class="label-check">
-        <input type="checkbox" class="checkbox ${checkDefault()}" checked>
+        <input type="checkbox" class="checkbox ${checkDefault()}" checked disabled>
         <span class="ml-3">Lorem ipsum</span>
       </label>
     </div>

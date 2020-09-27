@@ -1,7 +1,7 @@
 import { Xt } from 'xtend-library/src/xt.js'
 
 Xt.mount.push({
-  matches: 'form:not([novalidate]), .form:not([novalidate])',
+  matches: 'form:not([novalidate])',
   mount: object => {
     // vars
 
@@ -14,9 +14,12 @@ Xt.mount.push({
     const eventChange = e => {
       const item = e.target
       if (item.dataset.xtValidate === 'true') {
-        item.classList.add('valid')
-        item.classList.remove('invalid')
-        item.checkValidity()
+        const name = item.getAttribute('name')
+        for (const current of Array.from(items).filter(x => x.getAttribute('name') === name)) {
+          current.classList.add('valid')
+          current.classList.remove('invalid')
+          current.checkValidity()
+        }
       }
     }
 

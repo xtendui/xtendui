@@ -16,7 +16,7 @@ demo.htmlSource = `
 
     <div class="w-full">
       <label class="label-check">
-        <input type="checkbox" checked>
+        <input type="checkbox" checked disabled>
         <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
       </label>
     </div>
