@@ -2,6 +2,9 @@ import path from 'path'
 const btnPrimary = require('components/snippets/classes/btn-primary').default
 const labelDefault = require('components/snippets/classes/label-default').default
 const inputDefault = require('components/snippets/classes/input-default').default
+const checkDefault = require('components/snippets/classes/form-check-default').default
+const radioDefault = require('components/snippets/classes/form-radio-default').default
+const switchDefault = require('components/snippets/classes/form-switch-default').default
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -66,16 +69,69 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <input type="checkbox" id="check-default" name="check-default">
-      <label class="label ${labelDefault()}" for="check-default">
-        <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
+      <label class="label ${labelDefault()}">
+        Checkbox
       </label>
     </div>
 
     <div class="w-full">
-      <input type="radio" id="radio-default-0" name="radio-default">
-      <label class="label ${labelDefault()}" for="radio-default-0">
-        <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
+      <label class="label-check">
+        <input type="checkbox" class="checkbox ${checkDefault()}" checked>
+        <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+      </label>
+    </div>
+
+    <div class="w-full">
+      <label class="label-check">
+        <input type="checkbox" class="checkbox ${checkDefault()}">
+        <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+      </label>
+    </div>
+
+    <div class="w-full">
+      <label class="label ${labelDefault()}">
+        Radio
+      </label>
+    </div>
+
+    <div class="w-full">
+      <label class="label-check">
+        <input type="radio" class="radio ${radioDefault()}" name="radio-default" checked>
+        <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+      </label>
+    </div>
+
+    <div class="w-full">
+      <label class="label-check">
+        <input type="radio" class="radio ${radioDefault()}" name="radio-default">
+        <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+      </label>
+    </div>
+
+    <div class="w-full">
+      <label class="label ${labelDefault()}">
+        Switch
+      </label>
+    </div>
+
+    <div class="w-full">
+      <label class="label-check">
+        <input type="checkbox" class="switch ${radioDefault()}">
+        <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+      </label>
+    </div>
+
+    <div class="w-full">
+      <label class="label-check">
+        <input type="radio" class="switch ${switchDefault()}" name="switch-default" checked>
+        <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+      </label>
+    </div>
+
+    <div class="w-full">
+      <label class="label-check">
+        <input type="radio" class="switch ${switchDefault()}" name="switch-default">
+        <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
       </label>
     </div>
 

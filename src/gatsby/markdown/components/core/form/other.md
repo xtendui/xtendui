@@ -6,7 +6,9 @@ title: "Other"
 date: "2005-10-10"
 ---
 
-## Fieldset and Legend
+## Other
+
+Use **component's classes** to create `fieldset` and `legend`.
 
 <div class="table-scroll">
 
@@ -20,17 +22,10 @@ date: "2005-10-10"
 [[noteDefault]]
 | To customize utils and components follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
 
-<demo>
-  <demovanilla src="vanilla/components/core/form/fieldset-legend">
-  </demovanilla>
-</demo>
-
-## Note
-
 Use **tailwind classes** to create a note.
 
 <demo>
-  <demovanilla src="vanilla/components/core/form/note">
+  <demovanilla src="vanilla/components/core/form/other">
   </demovanilla>
 </demo>
 

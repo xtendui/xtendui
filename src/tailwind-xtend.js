@@ -1025,7 +1025,7 @@ module.exports = theme => ({
         backgroundSize: 'contain',
         backgroundPosition: 'left center',
         '&:checked': {
-        backgroundImage: `url('data:image/svg+xml;utf8,<svg viewBox="-4 -4 8 8" fill="${encodeURIComponent(theme('colors.white'))}" xmlns="http://www.w3.org/2000/svg"><circle  r="3"/></svg>')`,
+          backgroundImage: `url('data:image/svg+xml;utf8,<svg viewBox="-4 -4 8 8" fill="${encodeURIComponent(theme('colors.white'))}" xmlns="http://www.w3.org/2000/svg"><circle  r="3"/></svg>')`,
           backgroundPosition: 'right center',
           backgroundColor: 'currentColor',
           borderColor: 'currentColor',

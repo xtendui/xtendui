@@ -2,6 +2,9 @@ import path from 'path'
 const btnDefault = require('components/snippets/classes/btn-default').default
 const labelPrimary = require('components/snippets/classes/label-primary').default
 const inputPrimary = require('components/snippets/classes/input-primary').default
+const checkPrimary = require('components/snippets/classes/form-check-primary').default
+const radioPrimary = require('components/snippets/classes/form-radio-primary').default
+const switchPrimary = require('components/snippets/classes/form-switch-primary').default
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -66,16 +69,69 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <input type="checkbox" id="check-inverse" name="check-inverse">
-      <label class="label ${labelPrimary()}" for="check-inverse">
-        <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
+      <label class="label ${labelPrimary()}">
+        Checkbox
       </label>
     </div>
 
     <div class="w-full">
-      <input type="radio" id="radio-inverse-0" name="radio-inverse">
-      <label class="label ${labelPrimary()}" for="radio-inverse-0">
-        <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
+      <label class="label-check">
+        <input type="checkbox" class="checkbox ${checkPrimary()}" checked>
+        <span class="ml-3 text-inverse"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+      </label>
+    </div>
+
+    <div class="w-full">
+      <label class="label-check">
+        <input type="checkbox" class="checkbox ${checkPrimary()}">
+        <span class="ml-3 text-inverse"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+      </label>
+    </div>
+
+    <div class="w-full">
+      <label class="label ${labelPrimary()}">
+        Radio
+      </label>
+    </div>
+
+    <div class="w-full">
+      <label class="label-check">
+        <input type="radio" class="radio ${radioPrimary()}" name="radio-primary" checked>
+        <span class="ml-3 text-inverse"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+      </label>
+    </div>
+
+    <div class="w-full">
+      <label class="label-check">
+        <input type="radio" class="radio ${radioPrimary()}" name="radio-primary">
+        <span class="ml-3 text-inverse"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+      </label>
+    </div>
+
+    <div class="w-full">
+      <label class="label ${labelPrimary()}">
+        Switch
+      </label>
+    </div>
+
+    <div class="w-full">
+      <label class="label-check">
+        <input type="checkbox" class="switch ${radioPrimary()}">
+        <span class="ml-3 text-inverse"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+      </label>
+    </div>
+
+    <div class="w-full">
+      <label class="label-check">
+        <input type="radio" class="switch ${switchPrimary()}" name="switch-primary" checked>
+        <span class="ml-3 text-inverse"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+      </label>
+    </div>
+
+    <div class="w-full">
+      <label class="label-check">
+        <input type="radio" class="switch ${switchPrimary()}" name="switch-primary">
+        <span class="ml-3 text-inverse"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
       </label>
     </div>
 

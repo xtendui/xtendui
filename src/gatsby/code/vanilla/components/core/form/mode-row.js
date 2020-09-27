@@ -46,70 +46,76 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <button type="submit" class="btn btn-md ${btnPrimary()}">
-        submit
-      </button>
+      <label class="label ${labelDefault()}">
+        Checkbox
+      </label>
     </div>
 
     <div class="w-full">
-      <div class="row row-space-2">
+      <label class="label-check">
+        <input type="checkbox" class="checkbox ${checkDefault()}" checked>
+        <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+      </label>
+    </div>
 
-        <div class="w-full">
-          <label class="label ${labelDefault()}">
-            Lorem ipsum
-          </label>
-        </div>
+    <div class="w-full">
+      <label class="label-check">
+        <input type="checkbox" class="checkbox ${checkDefault()}">
+        <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+      </label>
+    </div>
 
-        <div class="w-full">
-          <label class="label-check">
-            <input type="checkbox" class="checkbox ${checkDefault()}" checked>
-            <span class="ml-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a></span>
-          </label>
-        </div>
+    <div class="w-full">
+      <label class="label ${labelDefault()}">
+        Radio
+      </label>
+    </div>
 
-        <div class="w-full">
-          <label class="label-check">
-            <input type="checkbox" class="checkbox ${checkDefault()}">
-            <span class="ml-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a></span>
-          </label>
-        </div>
+    <div class="w-full md:w-6/12">
+      <label class="label-check">
+        <input type="radio" class="radio ${radioDefault()}" name="radio-row" checked>
+        <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+      </label>
+    </div>
 
-        <div class="w-full">
-          <label class="label-check">
-            <input type="radio" class="radio ${radioDefault()}" name="radio-styled-block" checked>
-            <span class="ml-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a></span>
-          </label>
-        </div>
+    <div class="w-full md:w-6/12">
+      <label class="label-check">
+        <input type="radio" class="radio ${radioDefault()}" name="radio-row">
+        <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+      </label>
+    </div>
 
-        <div class="w-full">
-          <label class="label-check">
-            <input type="radio" class="radio ${radioDefault()}" name="radio-styled-block">
-            <span class="ml-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a></span>
-          </label>
-        </div>
+    <div class="w-full">
+      <label class="label ${labelDefault()}">
+        Switch
+      </label>
+    </div>
 
-        <div class="w-full">
-          <label class="label-check">
-            <input type="checkbox" class="switch ${radioDefault()}">
-            <span class="ml-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a></span>
-          </label>
-        </div>
+    <div class="w-full">
+      <label class="label-check">
+        <input type="checkbox" class="switch ${radioDefault()}">
+        <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+      </label>
+    </div>
 
-        <div class="w-full">
-          <label class="label-check">
-            <input type="radio" class="switch ${switchDefault()}" name="switch-styled-block" checked>
-            <span class="ml-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a></span>
-          </label>
-        </div>
+    <div class="w-full md:w-6/12">
+      <label class="label-check">
+        <input type="radio" class="switch ${switchDefault()}" name="switch-row" checked>
+        <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+      </label>
+    </div>
 
-        <div class="w-full">
-          <label class="label-check">
-            <input type="radio" class="switch ${switchDefault()}" name="switch-styled-block">
-            <span class="ml-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a></span>
-          </label>
-        </div>
+    <div class="w-full md:w-6/12">
+      <label class="label-check">
+        <input type="radio" class="switch ${switchDefault()}" name="switch-row">
+        <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+      </label>
+    </div>
 
-      </div>
+    <div class="w-full">
+      <button type="submit" class="btn btn-md ${btnPrimary()}">
+        submit
+      </button>
     </div>
 
   </div>
