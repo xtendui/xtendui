@@ -22,43 +22,46 @@ demo.htmlSource = `
     <div class="row row-space-x-4 row-space-y-3">
 
       <div class="w-full md:w-6/12">
-        <label class="label mb-3 ${labelDefault()}">
+        <label class="label mb-4 ${labelDefault()}">
           Lorem Ipsum
         </label>
         <input type="text" class="input ${inputDefault()}"/>
+        <div class="mt-3 ${note()}">
+          <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
+        </div>
       </div>
 
       <div class="w-full md:w-6/12">
-        <label class="label mb-3 ${labelDefault()}">
+        <label class="label mb-4 ${labelDefault()}">
           Dolor sit amet
         </label>
         <input type="text" class="input ${inputDefault()}"/>
-        <div class="mt-2 ${note()}">
+      </div>
+
+      <div class="w-full">
+
+        <div class="row row-space-x-4 row-space-y-3">
+
+          <div class="w-full md:w-auto">
+            <label class="label mb-4 ${labelDefault()}">
+              Lorem ipsum
+            </label>
+            <input type="text" class="input ${inputDefault()}"/>
+          </div>
+
+          <div class="w-full md:w-auto">
+            <label class="label mb-4 ${labelDefault()}">
+              Dolor sit amet
+            </label>
+            <input type="text" class="input ${inputDefault()}"/>
+          </div>
+
+        </div>
+
+        <div class="mt-3 ${note()}">
           <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
         </div>
-      </div>
 
-      <div class="w-full">
-        <label class="label ${labelDefault()}">
-          Checkbox
-        </label>
-      </div>
-
-      <div class="w-full">
-        <label class="label-check">
-          <input type="checkbox" class="checkbox ${checkDefault()}" checked>
-          <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
-        </label>
-      </div>
-
-      <div class="w-full">
-        <label class="label-check">
-          <input type="checkbox" class="checkbox ${checkDefault()}">
-          <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
-        </label>
-        <div class="mt-2 ${note()}">
-          <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
-        </div>
       </div>
 
     </div>
@@ -71,48 +74,98 @@ demo.htmlSource = `
 
     <div class="row row-space-x-4 row-space-y-3">
 
-      <div class="w-full md:w-auto">
-        <label class="label mb-3 ${labelDefault()}">
-          Lorem ipsum
+      <div class="w-full">
+
+        <label class="label mb-4 ${labelDefault()}">
+          Checkbox
         </label>
-        <input type="text" class="input ${inputDefault()}"/>
+
+        <div class="row row-space-x-4 row-space-y-3">
+
+          <div class="w-full">
+            <label class="label-check">
+              <input type="checkbox" class="checkbox ${checkDefault()}" checked>
+              <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+            </label>
+          </div>
+
+          <div class="w-full">
+            <label class="label-check">
+              <input type="checkbox" class="checkbox ${checkDefault()}">
+              <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+            </label>
+            <div class="mt-3 ${note()}">
+              <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
+            </div>
+          </div>
+
+        </div>
+
       </div>
 
-      <div class="w-full md:w-auto">
-        <label class="label mb-3 ${labelDefault()}">
-          Dolor sit amet
-        </label>
-        <input type="text" class="input ${inputDefault()}"/>
-        <div class="w-full">
-          <div class="mt-2 ${note()}">
-            <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
+      <div class="w-full">
+        <div class="row row-space-x-4 row-space-y-3">
+
+          <div class="w-full md:w-2/12 md:self-baseline">
+            <label class="label flex ${labelDefault()}">
+              Checkbox
+            </label>
           </div>
+
+          <div class="w-full md:w-10/12">
+            <div class="row row-space-x-4 row-space-y-3">
+
+              <div class="w-full">
+                <label class="label-check">
+                  <input type="checkbox" class="checkbox ${checkDefault()}" checked>
+                  <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+                </label>
+              </div>
+
+              <div class="w-full">
+                <label class="label-check">
+                  <input type="checkbox" class="checkbox ${checkDefault()}" checked>
+                  <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+                </label>
+                <div class="mt-3 ${note()}">
+                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
+                </div>
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </div>
 
       <div class="w-full">
-        <label class="label ${labelDefault()}">
+
+        <label class="label mb-4 ${labelDefault()}">
           Checkbox
         </label>
-      </div>
 
-      <div class="w-full md:w-auto">
-        <label class="label-check">
-          <input type="checkbox" class="checkbox ${checkDefault()}" checked>
-          <span class="ml-3">Lorem ipsum</span>
-        </label>
-      </div>
+        <div class="row row-space-x-4 row-space-y-3">
 
-      <div class="w-full md:w-auto">
-        <label class="label-check">
-          <input type="checkbox" class="checkbox ${checkDefault()}">
-          <span class="ml-3">Lorem ipsum</span>
-        </label>
-        <div class="w-full">
-          <div class="mt-2 ${note()}">
-            <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
+          <div class="w-full md:w-auto">
+            <label class="label-check">
+              <input type="checkbox" class="checkbox ${checkDefault()}" checked>
+              <span class="ml-3">Lorem ipsum</span>
+            </label>
           </div>
+
+          <div class="w-full md:w-auto">
+            <label class="label-check">
+              <input type="checkbox" class="checkbox ${checkDefault()}">
+              <span class="ml-3">Lorem ipsum</span>
+            </label>
+          </div>
+
         </div>
+
+        <div class="mt-3 ${note()}">
+          <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
+        </div>
+
       </div>
 
       <div class="w-full">

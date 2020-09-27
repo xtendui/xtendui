@@ -973,7 +973,7 @@ module.exports = theme => ({
       },
       '.checkbox': {
         // styles
-        top: '0',
+        top: '-1px',
         width: '1.5em',
         height: '1.5em',
         backgroundImage: `url('data:image/svg+xml;utf8,<svg viewBox="0 0 16 16" fill="${encodeURIComponent(theme('colors.white'))}" xmlns="http://www.w3.org/2000/svg"><path d="M5.707 7.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L7 8.586 5.707 7.293z"/></svg>')`,
@@ -986,7 +986,7 @@ module.exports = theme => ({
         },
       },
       '.radio': {
-        top: '0',
+        top: '-1px',
         width: '1.5em',
         height: '1.5em',
         backgroundImage: `url('data:image/svg+xml;utf8,<svg viewBox="0 0 16 16" fill="${encodeURIComponent(theme('colors.white'))}" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="3"/></svg>')`,
@@ -999,7 +999,7 @@ module.exports = theme => ({
         },
       },
       '.switch': {
-        top: '0',
+        top: '-1px',
         width: '2.5em',
         height: '1.5em',
         backgroundImage: `url('data:image/svg+xml;utf8,<svg viewBox="-4 -4 8 8" fill="${encodeURIComponent(theme('colors.gray.600'))}" xmlns="http://www.w3.org/2000/svg"><circle  r="3"/></svg>')`,

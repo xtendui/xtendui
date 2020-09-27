@@ -18,59 +18,70 @@ demo.htmlSource = `
   <div class="row row-space-x-4 row-space-y-3">
 
     <div class="w-full">
-      <div class="row row-space-2">
+      <div class="row row-space-x-4 row-space-y-3">
+
         <div class="w-full md:w-2/12 md:self-center">
           <label class="label flex ${labelDefault()}">
             Lorem ipsum
           </label>
         </div>
+
         <div class="w-full md:w-10/12">
           <input type="text" class="input ${inputDefault()}"/>
         </div>
+
       </div>
     </div>
 
     <div class="w-full">
-      <div class="row row-space-2">
+      <div class="row row-space-x-4 row-space-y-3">
+
         <div class="w-full md:w-2/12 md:self-center">
           <label class="label flex ${labelDefault()}">
             Dolor sit amet
           </label>
         </div>
+
         <div class="w-full md:w-10/12">
           <input type="text" class="input ${inputDefault()}"/>
         </div>
+
       </div>
     </div>
 
     <div class="w-full md:w-6/12">
-      <div class="row row-space-2">
+      <div class="row row-space-x-4 row-space-y-3">
+
         <div class="w-full md:w-4/12 md:self-center">
           <label class="label flex ${labelDefault()}">
             Lorem ipsum
           </label>
         </div>
+
         <div class="w-full md:w-8/12">
           <input type="text" class="input ${inputDefault()}"/>
         </div>
+
       </div>
     </div>
 
     <div class="w-full md:w-6/12">
-      <div class="row row-space-2">
+      <div class="row row-space-x-4 row-space-y-3">
         <div class="w-full md:w-4/12 md:self-center">
           <label class="label flex ${labelDefault()}">
             Dolor sit amet
           </label>
         </div>
+
         <div class="w-full md:w-8/12">
           <input type="text" class="input ${inputDefault()}"/>
         </div>
+
       </div>
     </div>
 
     <div class="w-full">
-      <div class="row row-space-2">
+      <div class="row row-space-x-4 row-space-y-3">
 
         <div class="w-full md:w-2/12 md:self-baseline">
           <label class="label flex ${labelDefault()}">
@@ -79,7 +90,7 @@ demo.htmlSource = `
         </div>
 
         <div class="w-full md:w-10/12">
-          <div class="row row-space-2">
+          <div class="row row-space-x-4 row-space-y-3">
 
             <div class="w-full">
               <label class="label-check">
@@ -102,7 +113,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <div class="row row-space-2">
+      <div class="row row-space-x-4 row-space-y-3">
 
         <div class="w-full md:w-2/12 md:self-baseline">
           <label class="label flex ${labelDefault()}">
@@ -111,7 +122,7 @@ demo.htmlSource = `
         </div>
 
         <div class="w-full md:w-10/12">
-          <div class="row row-space-2">
+          <div class="row row-space-x-4 row-space-y-3">
 
             <div class="w-full">
               <label class="label-check">
@@ -134,7 +145,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <div class="row row-space-2">
+      <div class="row row-space-x-4 row-space-y-3">
 
         <div class="w-full md:w-2/12 md:self-baseline">
           <label class="label flex ${labelDefault()}">
@@ -143,7 +154,7 @@ demo.htmlSource = `
         </div>
 
         <div class="w-full md:w-10/12">
-          <div class="row row-space-2">
+          <div class="row row-space-x-4 row-space-y-3">
 
             <div class="w-full">
               <label class="label-check">

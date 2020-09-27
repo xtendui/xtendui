@@ -18,35 +18,35 @@ demo.htmlSource = `
   <div class="row row-space-x-4 row-space-y-3">
 
     <div class="w-full">
-      <label class="label mb-3 ${labelPrimary()}">
+      <label class="label mb-4 ${labelPrimary()}">
         Input
       </label>
       <input type="text" class="input ${inputPrimary()}" placeholder="Input">
     </div>
 
     <div class="w-full">
-      <label class="label mb-3 ${labelPrimary()}">
+      <label class="label mb-4 ${labelPrimary()}">
         Disabled
       </label>
       <input type="text" class="input ${inputPrimary()}" placeholder="Input" disabled>
     </div>
 
     <div class="w-full">
-      <label class="label mb-3 ${labelPrimary()}">
+      <label class="label mb-4 ${labelPrimary()}">
         File
       </label>
       <input type="file" class="input ${inputPrimary()}"/>
     </div>
 
     <div class="w-full">
-      <label class="label mb-3 ${labelPrimary()}">
+      <label class="label mb-4 ${labelPrimary()}">
         Textarea
       </label>
       <textarea class="input ${inputPrimary()}" placeholder="Textarea"></textarea>
     </div>
 
     <div class="w-full">
-      <label class="label mb-3 ${labelPrimary()}">
+      <label class="label mb-4 ${labelPrimary()}">
         Select
       </label>
       <select class="input select select-primary ${inputPrimary()}">
@@ -58,7 +58,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <label class="label mb-3 ${labelPrimary()}">
+      <label class="label mb-4 ${labelPrimary()}">
         Select multiple
       </label>
       <select class="input select select-primary ${inputPrimary()}" multiple>
@@ -69,70 +69,88 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <label class="label ${labelPrimary()}">
+
+      <label class="label mb-4 ${labelPrimary()}">
         Checkbox
       </label>
+
+      <div class="row row-space-x-4 row-space-y-3">
+
+        <div class="w-full">
+          <label class="label-check">
+            <input type="checkbox" class="checkbox ${checkPrimary()}" checked disabled>
+            <span class="ml-3 text-inverse"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+          </label>
+        </div>
+
+        <div class="w-full">
+          <label class="label-check">
+            <input type="checkbox" class="checkbox ${checkPrimary()}">
+            <span class="ml-3 text-inverse"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+          </label>
+        </div>
+
+      </div>
+
     </div>
 
     <div class="w-full">
-      <label class="label-check">
-        <input type="checkbox" class="checkbox ${checkPrimary()}" checked disabled>
-        <span class="ml-3 text-inverse"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
-      </label>
-    </div>
 
-    <div class="w-full">
-      <label class="label-check">
-        <input type="checkbox" class="checkbox ${checkPrimary()}">
-        <span class="ml-3 text-inverse"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
-      </label>
-    </div>
-
-    <div class="w-full">
-      <label class="label ${labelPrimary()}">
+      <label class="label mb-4 ${labelPrimary()}">
         Radio
       </label>
+
+      <div class="row row-space-x-4 row-space-y-3">
+
+        <div class="w-full">
+          <label class="label-check">
+            <input type="radio" class="radio ${radioPrimary()}" name="radio-primary" checked>
+            <span class="ml-3 text-inverse"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+          </label>
+        </div>
+
+        <div class="w-full">
+          <label class="label-check">
+            <input type="radio" class="radio ${radioPrimary()}" name="radio-primary">
+            <span class="ml-3 text-inverse"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+          </label>
+        </div>
+
+      </div>
+
     </div>
 
     <div class="w-full">
-      <label class="label-check">
-        <input type="radio" class="radio ${radioPrimary()}" name="radio-primary" checked>
-        <span class="ml-3 text-inverse"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
-      </label>
-    </div>
 
-    <div class="w-full">
-      <label class="label-check">
-        <input type="radio" class="radio ${radioPrimary()}" name="radio-primary">
-        <span class="ml-3 text-inverse"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
-      </label>
-    </div>
-
-    <div class="w-full">
-      <label class="label ${labelPrimary()}">
+      <label class="label mb-4 ${labelPrimary()}">
         Switch
       </label>
-    </div>
 
-    <div class="w-full">
-      <label class="label-check">
-        <input type="checkbox" class="switch ${radioPrimary()}">
-        <span class="ml-3 text-inverse"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
-      </label>
-    </div>
+      <div class="row row-space-x-4 row-space-y-3">
 
-    <div class="w-full">
-      <label class="label-check">
-        <input type="radio" class="switch ${switchPrimary()}" name="switch-primary" checked>
-        <span class="ml-3 text-inverse"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
-      </label>
-    </div>
+        <div class="w-full">
+          <label class="label-check">
+            <input type="checkbox" class="switch ${radioPrimary()}">
+            <span class="ml-3 text-inverse"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+          </label>
+        </div>
 
-    <div class="w-full">
-      <label class="label-check">
-        <input type="radio" class="switch ${switchPrimary()}" name="switch-primary">
-        <span class="ml-3 text-inverse"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
-      </label>
+        <div class="w-full">
+          <label class="label-check">
+            <input type="radio" class="switch ${switchPrimary()}" name="switch-primary" checked>
+            <span class="ml-3 text-inverse"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+          </label>
+        </div>
+
+        <div class="w-full">
+          <label class="label-check">
+            <input type="radio" class="switch ${switchPrimary()}" name="switch-primary">
+            <span class="ml-3 text-inverse"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+          </label>
+        </div>
+
+      </div>
+
     </div>
 
     <div class="w-full">

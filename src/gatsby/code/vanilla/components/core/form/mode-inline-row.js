@@ -18,98 +18,116 @@ demo.htmlSource = `
   <div class="row row-space-x-4 row-space-y-3">
 
     <div class="w-full md:w-auto">
-      <label class="label mb-3 ${labelDefault()}">
+      <label class="label mb-4 ${labelDefault()}">
         Lorem ipsum
       </label>
       <input type="text" class="input ${inputDefault()}"/>
     </div>
 
     <div class="w-full md:w-auto">
-      <label class="label mb-3 ${labelDefault()}">
+      <label class="label mb-4 ${labelDefault()}">
         Dolor sit amet
       </label>
       <input type="text" class="input ${inputDefault()}"/>
     </div>
 
     <div class="w-full md:w-auto">
-      <label class="label mb-3 ${labelDefault()}">
+      <label class="label mb-4 ${labelDefault()}">
         Lorem ipsum
       </label>
       <input type="text" class="input ${inputDefault()}"/>
     </div>
 
     <div class="w-full md:w-auto">
-      <label class="label mb-3 ${labelDefault()}">
+      <label class="label mb-4 ${labelDefault()}">
         Dolor sit amet
       </label>
       <input type="text" class="input ${inputDefault()}"/>
     </div>
 
     <div class="w-full">
-      <label class="label ${labelDefault()}">
+
+      <label class="label mb-4 ${labelDefault()}">
         Checkbox
       </label>
-    </div>
 
-    <div class="w-full md:w-auto">
-      <label class="label-check">
-        <input type="checkbox" class="checkbox ${checkDefault()}" checked disabled>
-        <span class="ml-3">Lorem ipsum</span>
-      </label>
-    </div>
+      <div class="row row-space-x-4 row-space-y-3">
 
-    <div class="w-full md:w-auto">
-      <label class="label-check">
-        <input type="checkbox" class="checkbox ${checkDefault()}">
-        <span class="ml-3">Lorem ipsum</span>
-      </label>
+        <div class="w-full md:w-auto">
+          <label class="label-check">
+            <input type="checkbox" class="checkbox ${checkDefault()}" checked disabled>
+            <span class="ml-3">Lorem ipsum</span>
+          </label>
+        </div>
+
+        <div class="w-full md:w-auto">
+          <label class="label-check">
+            <input type="checkbox" class="checkbox ${checkDefault()}">
+            <span class="ml-3">Lorem ipsum</span>
+          </label>
+        </div>
+
+      </div>
+
     </div>
 
     <div class="w-full">
-      <label class="label ${labelDefault()}">
+
+      <label class="label mb-4 ${labelDefault()}">
         Radio
       </label>
-    </div>
 
-    <div class="w-full md:w-auto">
-      <label class="label-check">
-        <input type="radio" class="radio ${radioDefault()}" name="radio-inline-row" checked>
-        <span class="ml-3">Lorem ipsum</span>
-      </label>
-    </div>
+      <div class="row row-space-x-4 row-space-y-3">
 
-    <div class="w-full md:w-auto">
-      <label class="label-check">
-        <input type="radio" class="radio ${radioDefault()}" name="radio-inline-row">
-        <span class="ml-3">Lorem ipsum</span>
-      </label>
+        <div class="w-full md:w-auto">
+          <label class="label-check">
+            <input type="radio" class="radio ${radioDefault()}" name="radio-inline-row" checked>
+            <span class="ml-3">Lorem ipsum</span>
+          </label>
+        </div>
+
+        <div class="w-full md:w-auto">
+          <label class="label-check">
+            <input type="radio" class="radio ${radioDefault()}" name="radio-inline-row">
+            <span class="ml-3">Lorem ipsum</span>
+          </label>
+        </div>
+
+      </div>
+
     </div>
 
     <div class="w-full">
-      <label class="label ${labelDefault()}">
+
+      <label class="label mb-4 ${labelDefault()}">
         Switch
       </label>
-    </div>
 
-    <div class="w-full md:w-auto">
-      <label class="label-check">
-        <input type="checkbox" class="switch ${radioDefault()}">
-        <span class="ml-3">Lorem ipsum</span>
-      </label>
-    </div>
+      <div class="row row-space-x-4 row-space-y-3">
 
-    <div class="w-full md:w-auto">
-      <label class="label-check">
-        <input type="radio" class="switch ${switchDefault()}" name="switch-inline-row" checked>
-        <span class="ml-3">Lorem ipsum</span>
-      </label>
-    </div>
+        <div class="w-full md:w-auto">
+          <label class="label-check">
+            <input type="checkbox" class="switch ${radioDefault()}">
+            <span class="ml-3">Lorem ipsum</span>
+          </label>
+        </div>
 
-    <div class="w-full md:w-auto">
-      <label class="label-check">
-        <input type="radio" class="switch ${switchDefault()}" name="switch-inline-row">
-        <span class="ml-3">Lorem ipsum</span>
-      </label>
+        <div class="w-full md:w-auto">
+          <label class="label-check">
+            <input type="radio" class="switch ${switchDefault()}" name="switch-inline-row" checked>
+            <span class="ml-3">Lorem ipsum</span>
+          </label>
+        </div>
+
+        <div class="w-full md:w-auto">
+          <label class="label-check">
+            <input type="radio" class="switch ${switchDefault()}" name="switch-inline-row">
+            <span class="ml-3">Lorem ipsum</span>
+          </label>
+        </div>
+
+      </div>
+
     </div>
 
     <div class="w-full">

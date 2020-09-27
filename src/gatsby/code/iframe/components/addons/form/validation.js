@@ -23,49 +23,49 @@ demo.htmlSource = `
   <div class="row row-space-x-4 row-space-y-3">
 
     <div class="w-full">
-      <label class="label mb-3 ${labelDefault()}">
+      <label class="label mb-4 ${labelDefault()}">
         Custom constrain
       </label>
       <input type="text" class="input ${inputDefault()} custom-constrain" placeholder="Custom constrain" required>
     </div>
 
     <div class="w-full">
-      <label class="label mb-3 ${labelDefault()}">
+      <label class="label mb-4 ${labelDefault()}">
         Email
       </label>
       <input type="email" class="input ${inputDefault()} " placeholder="Email" required>
     </div>
 
     <div class="w-full">
-      <label class="label mb-3 ${labelDefault()}">
+      <label class="label mb-4 ${labelDefault()}">
         Number
       </label>
       <input type="number" class="input ${inputDefault()} " placeholder="Number" required min="1" max="10">
     </div>
 
     <div class="w-full">
-      <label class="label mb-3 ${labelDefault()}">
+      <label class="label mb-4 ${labelDefault()}">
         Letters
       </label>
       <input type="text" class="input ${inputDefault()} " placeholder="Letter" required pattern="[A-Za-z]+">
     </div>
 
     <div class="w-full">
-      <label class="label mb-3 ${labelDefault()}">
+      <label class="label mb-4 ${labelDefault()}">
         File
       </label>
       <input type="file" class="input ${inputDefault()}" required/>
     </div>
 
     <div class="w-full">
-      <label class="label mb-3 ${labelDefault()}">
+      <label class="label mb-4 ${labelDefault()}">
         Textarea
       </label>
       <textarea class="input ${inputDefault()}" placeholder="Textarea" required></textarea>
     </div>
 
     <div class="w-full">
-      <label class="label mb-3 ${labelDefault()}">
+      <label class="label mb-4 ${labelDefault()}">
         Select
       </label>
       <select class="input select ${inputDefault()}" required>
@@ -77,7 +77,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <label class="label mb-3 ${labelDefault()}" required>
+      <label class="label mb-4 ${labelDefault()}" required>
         Select multiple
       </label>
       <select class="input select ${inputDefault()}" multiple>
@@ -88,70 +88,88 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <label class="label ${labelDefault()}">
+
+      <label class="label mb-4 ${labelDefault()}">
         Checkbox
       </label>
+
+      <div class="row row-space-x-4 row-space-y-3">
+
+        <div class="w-full">
+          <label class="label-check">
+            <input type="checkbox" class="checkbox ${checkDefault()}" required disabled>
+            <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+          </label>
+        </div>
+
+        <div class="w-full">
+          <label class="label-check">
+            <input type="checkbox" class="checkbox ${checkDefault()}" required>
+            <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+          </label>
+        </div>
+
+      </div>
+
     </div>
 
     <div class="w-full">
-      <label class="label-check">
-        <input type="checkbox" class="checkbox ${checkDefault()}" required disabled>
-        <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
-      </label>
-    </div>
 
-    <div class="w-full">
-      <label class="label-check">
-        <input type="checkbox" class="checkbox ${checkDefault()}" required>
-        <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
-      </label>
-    </div>
-
-    <div class="w-full">
-      <label class="label ${labelDefault()}">
+      <label class="label mb-4 ${labelDefault()}">
         Radio
       </label>
+
+      <div class="row row-space-x-4 row-space-y-3">
+
+        <div class="w-full">
+          <label class="label-check">
+            <input type="radio" class="radio ${radioDefault()}" name="radio-validation" required>
+            <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+          </label>
+        </div>
+
+        <div class="w-full">
+          <label class="label-check">
+            <input type="radio" class="radio ${radioDefault()}" name="radio-validation">
+            <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+          </label>
+        </div>
+
+      </div>
+
     </div>
 
     <div class="w-full">
-      <label class="label-check">
-        <input type="radio" class="radio ${radioDefault()}" name="radio-validation" required>
-        <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
-      </label>
-    </div>
 
-    <div class="w-full">
-      <label class="label-check">
-        <input type="radio" class="radio ${radioDefault()}" name="radio-validation">
-        <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
-      </label>
-    </div>
-
-    <div class="w-full">
-      <label class="label ${labelDefault()}">
+      <label class="label mb-4 ${labelDefault()}">
         Switch
       </label>
-    </div>
 
-    <div class="w-full">
-      <label class="label-check">
-        <input type="checkbox" class="switch ${radioDefault()}" required>
-        <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
-      </label>
-    </div>
+      <div class="row row-space-x-4 row-space-y-3">
 
-    <div class="w-full">
-      <label class="label-check">
-        <input type="radio" class="switch ${switchDefault()}" name="switch-validation" required>
-        <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
-      </label>
-    </div>
+        <div class="w-full">
+          <label class="label-check">
+            <input type="checkbox" class="switch ${radioDefault()}" required>
+            <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+          </label>
+        </div>
 
-    <div class="w-full">
-      <label class="label-check">
-        <input type="radio" class="switch ${switchDefault()}" name="switch-validation">
-        <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
-      </label>
+        <div class="w-full">
+          <label class="label-check">
+            <input type="radio" class="switch ${switchDefault()}" name="switch-validation" required>
+            <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+          </label>
+        </div>
+
+        <div class="w-full">
+          <label class="label-check">
+            <input type="radio" class="switch ${switchDefault()}" name="switch-validation">
+            <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+          </label>
+        </div>
+
+      </div>
+
     </div>
 
     <div class="w-full">

@@ -18,7 +18,7 @@ demo.htmlSource = `
   <div class="row row-space-x-4 row-space-y-3">
 
     <div class="w-full md:w-auto">
-      <div class="row row-space-2">
+      <div class="row row-space-x-4 row-space-y-3">
 
         <div class="w-full md:w-auto md:self-center">
           <label class="label flex whitespace-no-wrap ${labelDefault()}">
@@ -34,7 +34,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full md:w-auto">
-      <div class="row row-space-2">
+      <div class="row row-space-x-4 row-space-y-3">
 
         <div class="w-full md:w-auto md:self-center">
           <label class="label flex whitespace-no-wrap ${labelDefault()}">
@@ -50,7 +50,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full md:w-auto">
-      <div class="row row-space-2">
+      <div class="row row-space-x-4 row-space-y-3">
 
         <div class="w-full md:w-auto md:self-center">
           <label class="label flex whitespace-no-wrap ${labelDefault()}">
@@ -66,7 +66,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full md:w-auto">
-      <div class="row row-space-2">
+      <div class="row row-space-x-4 row-space-y-3">
 
         <div class="w-full md:w-auto md:self-center">
           <label class="label whitespace-no-wrap ${labelDefault()}">
@@ -82,7 +82,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <div class="row row-space-2">
+      <div class="row row-space-x-4 row-space-y-3">
 
         <div class="w-full md:w-auto md:self-baseline">
           <label class="label flex whitespace-no-wrap ${labelDefault()}">
@@ -91,7 +91,7 @@ demo.htmlSource = `
         </div>
 
         <div class="w-full md:w-10/12">
-          <div class="row row-space-2">
+          <div class="row row-space-x-4 row-space-y-3">
 
             <div class="w-full md:w-auto">
               <label class="label-check">
@@ -114,7 +114,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <div class="row row-space-2">
+      <div class="row row-space-x-4 row-space-y-3">
 
         <div class="w-full md:w-auto md:self-baseline">
           <label class="label flex whitespace-no-wrap ${labelDefault()}">
@@ -123,7 +123,7 @@ demo.htmlSource = `
         </div>
 
         <div class="w-full md:w-10/12">
-          <div class="row row-space-2">
+          <div class="row row-space-x-4 row-space-y-3">
 
             <div class="w-full md:w-auto">
               <label class="label-check">
@@ -146,7 +146,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <div class="row row-space-2">
+      <div class="row row-space-x-4 row-space-y-3">
 
         <div class="w-full md:w-auto md:self-baseline">
           <label class="label flex whitespace-no-wrap ${labelDefault()}">
@@ -155,7 +155,7 @@ demo.htmlSource = `
         </div>
 
         <div class="w-full md:w-10/12">
-          <div class="row row-space-2">
+          <div class="row row-space-x-4 row-space-y-3">
 
             <div class="w-full md:w-auto">
               <label class="label-check">
