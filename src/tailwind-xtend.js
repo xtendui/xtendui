@@ -913,44 +913,6 @@ module.exports = theme => ({
           resize: 'vertical',
           height: rem(120),
         },
-        /*
-        '.textarea-autosize&': {
-          overflow: 'hidden',
-          resize: 'none',
-        },
-        */
-        'select:not([multiple])&': {
-          /*
-          .padding(right, @select-space-size) !important',
-          whiteSpace: 'normal;
-          background-position: 'calc(~'100% - ' @select-space-size / 2) 50%, calc(~'100% - (' @select-space-size / 2~') + '@select-arrow-size) 50%, 100% 0',
-          background-size: '@select-arrow-size @select-arrow-size, @select-arrow-size @select-arrow-size, @select-space-size 100%',
-          background-repeat: 'no-repeat',*/
-          /*
-          @select-arrow-size: 4px; // in px
-          @select-space-size: 35px; // in px
-          select:not([multiple])& {
-            &.form-item-default, .form-default & {
-              @select-arrow-color: @text;
-              @select-space-color: fade(@shade-700, 10%);
-              background-image: linear-gradient(45deg, transparent 50%, @select-arrow-color 50%), linear-gradient(135deg, @select-arrow-color 50%, transparent 50%), linear-gradient(to right, @select-space-color, @select-space-color);
-            }
-            &.form-item-inverse, .form-inverse & {
-              @select-arrow-color: @text-inverse;
-              @select-space-color: fade(@shade-700, 10%);
-              background-image: linear-gradient(45deg, transparent 50%, @select-arrow-color 50%), linear-gradient(135deg, @select-arrow-color 50%, transparent 50%), linear-gradient(to right, @select-space-color, @select-space-color);
-            }
-          }
-          select[multiple]& {
-            max-height: 10rem;
-            overflow-x: hidden;
-            overflow-y: auto;
-            .overflow-style(@mode: inner);
-            option {
-              padding: .5rem 0;
-            }
-          }*/
-        },
         // styles
         padding: `.75em 1.2em`,
         width: '100%',
@@ -975,6 +937,18 @@ module.exports = theme => ({
       '.select': {
         // setup
         '@apply appearance-none': '',
+        backgroundRepeat: 'no-repeat',
+        // styles
+        paddingRight: '3em',
+        backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="none" stroke="${encodeURIComponent(theme('colors.black'))}" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 5l6 6 6-6"/></svg>')`,
+        backgroundSize: '1em',
+        backgroundPosition: 'right 1rem center',
+        '&.select-primary': {
+          backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="none" stroke="${encodeURIComponent(theme('colors.white'))}" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 5l6 6 6-6"/></svg>')`,
+        },
+        '&[multiple]': {
+          backgroundImage: 'none',
+        },
       },
       '.checkbox, .radio, .switch': {
         // setup

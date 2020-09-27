@@ -49,7 +49,7 @@ demo.htmlSource = `
       <label class="label mb-3 ${labelPrimary()}">
         Select
       </label>
-      <select class="input ${inputPrimary()}">
+      <select class="input select select-primary ${inputPrimary()}">
         <option selected value="">Select an option</option>
         <option>Option 1</option>
         <option>Option 2</option>
@@ -61,7 +61,7 @@ demo.htmlSource = `
       <label class="label mb-3 ${labelPrimary()}">
         Select multiple
       </label>
-      <select class="input ${inputPrimary()}" multiple>
+      <select class="input select select-primary ${inputPrimary()}" multiple>
         <option>Option 1</option>
         <option>Option 2</option>
         <option>Option 3</option>

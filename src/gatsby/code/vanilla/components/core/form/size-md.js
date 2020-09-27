@@ -42,7 +42,7 @@ demo.htmlSource = `
       <label class="label mb-3 ${labelDefault()}">
         Select
       </label>
-      <select class="input ${inputDefault()}">
+      <select class="input select ${inputDefault()}">
         <option selected value="">Select an option</option>
         <option>Option 1</option>
         <option>Option 2</option>
@@ -54,7 +54,7 @@ demo.htmlSource = `
       <label class="label mb-3 ${labelDefault()}">
         Select multiple
       </label>
-      <select class="input ${inputDefault()}" multiple>
+      <select class="input select ${inputDefault()}" multiple>
         <option>Option 1</option>
         <option>Option 2</option>
         <option>Option 3</option>
