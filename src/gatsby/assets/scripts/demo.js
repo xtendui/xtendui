@@ -244,13 +244,17 @@ const populateDemo = (container, i) => {
     // tabs
     item.prepend(
       Xt.createElement(
-        '<div class="gatsby_demo_code toggle"><div class="gatsby_demo_code_inner"><div class="gatsby_demo_code_tabs"><div class="gatsby_demo_code_tabs_left list list-space-px"></div><div class="gatsby_demo_code_tabs_right list list-space-px"><button type="button" class="btn btn-tiny btn-clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="gatsby_demo_code_body"></div></div></div>'
+        '<div class="gatsby_demo_code"><div class="gatsby_demo_code_inner"><div class="gatsby_demo_code_tabs"><div class="gatsby_demo_code_tabs_left list list-space-px"></div><div class="gatsby_demo_code_tabs_right list list-space-px"><button type="button" class="btn btn-tiny btn-clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard"><span class="icon-copy"></span></button></div></div><div class="gatsby_demo_code_body"></div></div></div>'
       )
     )
     // https://github.com/zenorocha/clipboard.js/
     const clipboard = new ClipboardJS('.btn-clipboard', {
       target: trigger => {
-        return trigger.closest('.gatsby_demo').querySelector('.gatsby_demo_item.active .gatsby_demo_code.active .gatsby_demo_code_body_item.active pre code')
+        console.debug(
+          'code copy',
+          trigger.closest('.gatsby_demo').querySelector('.gatsby_demo_item.active .gatsby_demo_code .gatsby_demo_code_body_item.active pre code')
+        )
+        return trigger.closest('.gatsby_demo').querySelector('.gatsby_demo_item.active .gatsby_demo_code .gatsby_demo_code_body_item.active pre code')
       },
     })
     clipboard.on('success', e => {

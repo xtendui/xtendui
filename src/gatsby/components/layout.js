@@ -11,7 +11,7 @@ import DocFullscreen from 'components/includes/doc-fullscreen'
 import { makeDocument } from 'assets/scripts/theme.js'
 import { populateBlock } from 'assets/scripts/demo.js'
 
-import 'assets/styles/icons-theme/style.css'
+import 'assets/styles/icomoon/style.css'
 import 'assets/styles/theme.css'
 import 'assets/styles/theme.less'
 
