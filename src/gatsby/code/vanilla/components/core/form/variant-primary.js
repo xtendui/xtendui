@@ -14,7 +14,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<form style="padding: 1rem 1.5rem; background: #0078ff;">
+<form class="demo--form-variant-primary" style="padding: 1rem 1.5rem; background: #0078ff;">
   <div class="row row-space-x-4 row-space-y-3">
 
     <div class="w-full">

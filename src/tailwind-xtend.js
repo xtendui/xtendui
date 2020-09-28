@@ -935,11 +935,8 @@ module.exports = theme => ({
         backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="none" stroke="${encodeURIComponent(theme('colors.black'))}" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 5l6 6 6-6"/></svg>')`,
         backgroundSize: '1em',
         backgroundPosition: 'right 1rem center',
-        '&.form-select-primary': {
-          backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="none" stroke="${encodeURIComponent(theme('colors.white'))}" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 5l6 6 6-6"/></svg>')`,
-        },
         '&[multiple]': {
-          backgroundImage: 'none',
+          backgroundImage: 'none !important',
         },
       },
       '.form-label-check': {
@@ -959,8 +956,8 @@ module.exports = theme => ({
         backgroundRepeat: 'no-repeat',
         // styles
         '&[disabled]': {
-          backgroundColor: `${theme('colors.gray.700')} !important`,
-          borderColor: `${theme('colors.gray.700')} !important`,
+          backgroundColor: `${theme('colors.gray.500')} !important`,
+          borderColor: `${theme('colors.gray.500')} !important`,
           opacity: '1',
         },
         // animation
