@@ -116,8 +116,8 @@ if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion:
   vars.timeBig = 0
   vars.timeGiant = 0
   vars.timeHuge = 0
-  Xt.optionsGlobal['xt-slider'].wheel.friction = false
-  Xt.optionsGlobal['xt-slider'].drag.friction = false
+  //Xt.optionsGlobal['xt-slider'].wheel.friction = false
+  //Xt.optionsGlobal['xt-slider'].drag.friction = false
 }
 
 //

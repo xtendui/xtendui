@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?t5v19s');
-  src:  url('fonts/icomoon.eot?t5v19s#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.woff2?t5v19s') format('woff2'),
-    url('fonts/icomoon.ttf?t5v19s') format('truetype'),
-    url('fonts/icomoon.woff?t5v19s') format('woff'),
-    url('fonts/icomoon.svg?t5v19s#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?2yja80');
+  src:  url('fonts/icomoon.eot?2yja80#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.woff2?2yja80') format('woff2'),
+    url('fonts/icomoon.ttf?2yja80') format('truetype'),
+    url('fonts/icomoon.woff?2yja80') format('woff'),
+    url('fonts/icomoon.svg?2yja80#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -26,6 +26,21 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-map-pin:before {
+  content: "\e910";
+}
+.icon-circle:before {
+  content: "\e911";
+}
+.icon-locate:before {
+  content: "\e912";
+}
+.icon-search:before {
+  content: "\e913";
+}
+.icon-check:before {
+  content: "\e914";
+}
 .icon-clipboard:before {
   content: "\e90e";
 }

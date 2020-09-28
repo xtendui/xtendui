@@ -25,13 +25,13 @@
         right: 0;
         width: 100%;
         height: 100%;
-        padding-left: 15rem;
-      }
-      @screen lg {
         padding-left: 20rem;
       }
-      @screen xl {
+      @screen lg {
         padding-left: 25rem;
+      }
+      @screen xl {
+        padding-left: 30rem;
       }
       /* hide map on mobile */
       @media (max-width: theme('screens.md')) {
@@ -62,15 +62,15 @@
       position: relative;
       z-index: 1;
       @screen md {
-        width: 15rem;
+        width: 20rem;
         min-height: 100%;
         box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0.2);
       }
       @screen lg {
-        width: 20rem;
+        width: 25rem;
       }
       @screen xl {
-        width: 25rem;
+        width: 30rem;
       }
     }
 
