@@ -15,30 +15,30 @@ Use **tailwind classes** to assign column size (e.g.: width). Use **component's 
     <div class="row row-space-x-4 row-space-y-3">
 
       <div class="w-full">
-        <label class="label mb-4" for="my-input">
+        <label class="form-label mb-4" for="my-input">
           <!-- content -->
         </label>
-        <input type="text" class="input" id="my-input" name="my-input"/>
+        <input type="text" class="form-item" id="my-input" name="my-input"/>
       </div>
 
       <div class="w-full">
 
-        <label class="label mb-4">
+        <label class="form-label mb-4">
           Checkbox
         </label>
 
         <div class="row row-space-x-4 row-space-y-3">
     
           <div class="w-full">
-            <label class="label-check">
-              <input type="checkbox" class="checkbox" id="my-checkbox" name="my-checkbox">
+            <label class="form-label-check">
+              <input type="checkbox" class="form-check form-checkbox" id="my-checkbox" name="my-checkbox">
               <span class="ml-3"><!-- content --></span>
             </label>
           </div>
 
           <div class="w-full">
-            <label class="label-check">
-              <input type="radio" class="radio" id="my-radio" name="my-radio">
+            <label class="form-label-check">
+              <input type="radio" class="form-check form-radio" id="my-radio" name="my-radio">
               <span class="ml-3"><!-- content --></span>
             </label>
           </div>
@@ -65,24 +65,24 @@ Inline Row mode with `w-auto`.
     <div class="row row-space-x-4 row-space-y-3">
 
       <div class="w-full md:w-auto">
-        <label class="label mb-4" for="my-input">
+        <label class="form-label mb-4" for="my-input">
           <!-- content -->
         </label>
-        <input type="text" class="input" id="my-input" name="my-input"/>
+        <input type="text" class="form-item" id="my-input" name="my-input"/>
       </div>
   
       <div class="row row-space-x-4 row-space-y-3">
   
         <div class="w-full md:w-auto">
-          <label class="label-check">
-            <input type="checkbox" class="checkbox" id="my-checkbox" name="my-checkbox">
+          <label class="form-label-check">
+            <input type="checkbox" class="form-check form-checkbox" id="my-checkbox" name="my-checkbox">
             <span class="ml-3"><!-- content --></span>
           </label>
         </div>
 
         <div class="w-full md:w-auto">
-          <label class="label-check">
-            <input type="radio" class="radio" id="my-radio" name="my-radio">
+          <label class="form-label-check">
+            <input type="radio" class="form-check form-radio" id="my-radio" name="my-radio">
             <span class="ml-3"><!-- content --></span>
           </label>
         </div>
@@ -110,13 +110,13 @@ Use **tailwind classes** to assign column size. Use **component's classes** to a
         <div class="row row-space-x-4 row-space-y-3">
 
           <div class="w-full sm:w-2/12 sm:self-center">
-            <label class="label flex" for="my-input">
+            <label class="form-label flex" for="my-input">
               <!-- content -->
             </label>
           </div>
 
           <div class="w-full sm:w-10/12 sm:self-center">
-            <input type="text" class="input" id="my-input" name="my-input"/>
+            <input type="text" class="form-item" id="my-input" name="my-input"/>
           </div>
           
         </div>
@@ -126,7 +126,7 @@ Use **tailwind classes** to assign column size. Use **component's classes** to a
         <div class="row row-space-x-4 row-space-y-3">
 
           <div class="w-full md:w-2/12 md:self-baseline">
-            <label class="label flex">
+            <label class="form-label flex">
               <!-- content -->
             </label>
           </div>
@@ -135,15 +135,15 @@ Use **tailwind classes** to assign column size. Use **component's classes** to a
             <div class="row row-space-x-4 row-space-y-3">
 
               <div class="w-full">
-                <label class="label-check">
-                  <input type="checkbox" class="checkbox" id="my-checkbox" name="my-checkbox">
+                <label class="form-label-check">
+                  <input type="checkbox" class="form-check form-checkbox" id="my-checkbox" name="my-checkbox">
                   <span class="ml-3"><!-- content --></span>
                 </label>
               </div>
 
               <div class="w-full">
-                <label class="label-check">
-                  <input type="radio" class="radio" id="my-radio" name="my-radio">
+                <label class="form-label-check">
+                  <input type="radio" class="form-check form-radio" id="my-radio" name="my-radio">
                   <span class="ml-3"><!-- content --></span>
                 </label>
               </div>
@@ -175,13 +175,13 @@ Inline Horizontal mode with `w-auto`.
         <div class="row row-space-x-4 row-space-y-3">
 
           <div class="w-full md:w-auto sm:self-center">
-            <label class="label flex whitespace-no-wrap" for="my-input">
+            <label class="form-label flex whitespace-no-wrap" for="my-input">
               <!-- content -->
             </label>
           </div>
 
           <div class="w-full md:w-auto sm:self-center">
-            <input type="text" class="input" id="my-input" name="my-input"/>
+            <input type="text" class="form-item" id="my-input" name="my-input"/>
           </div>
           
         </div>
@@ -191,7 +191,7 @@ Inline Horizontal mode with `w-auto`.
         <div class="row row-space-x-4 row-space-y-3">
 
           <div class="w-full md:w-auto md:self-baseline">
-            <label class="label flex whitespace-no-wrap">
+            <label class="form-label flex whitespace-no-wrap">
               <!-- content -->
             </label>
           </div>
@@ -200,15 +200,15 @@ Inline Horizontal mode with `w-auto`.
             <div class="row row-space-x-4 row-space-y-3">
 
               <div class="w-full md:w-auto">
-                <label class="label-check">
-                  <input type="checkbox" class="checkbox" id="my-checkbox" name="my-checkbox">
+                <label class="form-label-check">
+                  <input type="checkbox" class="form-check form-checkbox" id="my-checkbox" name="my-checkbox">
                   <span class="ml-3"><!-- content --></span>
                 </label>
               </div>
 
               <div class="w-full md:w-auto">
-                <label class="label-check">
-                  <input type="radio" class="radio" id="my-radio" name="my-radio">
+                <label class="form-label-check">
+                  <input type="radio" class="form-check form-radio" id="my-radio" name="my-radio">
                   <span class="ml-3"><!-- content --></span>
                 </label>
               </div>

@@ -21,13 +21,13 @@ demo.htmlSource = `
       <div class="row row-space-x-4 row-space-y-3">
 
         <div class="w-full md:w-2/12 md:self-center">
-          <label class="label flex ${labelDefault()}">
+          <label class="form-label flex ${labelDefault()}">
             Lorem ipsum
           </label>
         </div>
 
         <div class="w-full md:w-10/12">
-          <input type="text" class="input ${inputDefault()}"/>
+          <input type="text" class="form-item ${inputDefault()}"/>
         </div>
 
       </div>
@@ -37,13 +37,13 @@ demo.htmlSource = `
       <div class="row row-space-x-4 row-space-y-3">
 
         <div class="w-full md:w-2/12 md:self-center">
-          <label class="label flex ${labelDefault()}">
+          <label class="form-label flex ${labelDefault()}">
             Dolor sit amet
           </label>
         </div>
 
         <div class="w-full md:w-10/12">
-          <input type="text" class="input ${inputDefault()}"/>
+          <input type="text" class="form-item ${inputDefault()}"/>
         </div>
 
       </div>
@@ -53,13 +53,13 @@ demo.htmlSource = `
       <div class="row row-space-x-4 row-space-y-3">
 
         <div class="w-full md:w-4/12 md:self-center">
-          <label class="label flex ${labelDefault()}">
+          <label class="form-label flex ${labelDefault()}">
             Lorem ipsum
           </label>
         </div>
 
         <div class="w-full md:w-8/12">
-          <input type="text" class="input ${inputDefault()}"/>
+          <input type="text" class="form-item ${inputDefault()}"/>
         </div>
 
       </div>
@@ -68,13 +68,13 @@ demo.htmlSource = `
     <div class="w-full md:w-6/12">
       <div class="row row-space-x-4 row-space-y-3">
         <div class="w-full md:w-4/12 md:self-center">
-          <label class="label flex ${labelDefault()}">
+          <label class="form-label flex ${labelDefault()}">
             Dolor sit amet
           </label>
         </div>
 
         <div class="w-full md:w-8/12">
-          <input type="text" class="input ${inputDefault()}"/>
+          <input type="text" class="form-item ${inputDefault()}"/>
         </div>
 
       </div>
@@ -84,7 +84,7 @@ demo.htmlSource = `
       <div class="row row-space-x-4 row-space-y-3">
 
         <div class="w-full md:w-2/12 md:self-baseline">
-          <label class="label flex ${labelDefault()}">
+          <label class="form-label flex ${labelDefault()}">
             Checkbox
           </label>
         </div>
@@ -93,15 +93,15 @@ demo.htmlSource = `
           <div class="row row-space-x-4 row-space-y-3">
 
             <div class="w-full">
-              <label class="label-check">
-                <input type="checkbox" class="checkbox ${checkDefault()}" checked disabled>
+              <label class="form-label-check">
+                <input type="checkbox" class="form-check form-checkbox ${checkDefault()}" checked disabled>
                 <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
               </label>
             </div>
 
             <div class="w-full">
-              <label class="label-check">
-                <input type="checkbox" class="checkbox ${checkDefault()}">
+              <label class="form-label-check">
+                <input type="checkbox" class="form-check form-checkbox ${checkDefault()}">
                 <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
               </label>
             </div>
@@ -116,7 +116,7 @@ demo.htmlSource = `
       <div class="row row-space-x-4 row-space-y-3">
 
         <div class="w-full md:w-2/12 md:self-baseline">
-          <label class="label flex ${labelDefault()}">
+          <label class="form-label flex ${labelDefault()}">
             Radio
           </label>
         </div>
@@ -125,15 +125,15 @@ demo.htmlSource = `
           <div class="row row-space-x-4 row-space-y-3">
 
             <div class="w-full">
-              <label class="label-check">
-                <input type="radio" class="radio ${radioDefault()}" name="radio-horizontal" checked>
+              <label class="form-label-check">
+                <input type="radio" class="form-check form-radio ${radioDefault()}" name="radio-horizontal" checked>
                 <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
               </label>
             </div>
 
             <div class="w-full">
-              <label class="label-check">
-                <input type="radio" class="radio ${radioDefault()}" name="radio-horizontal">
+              <label class="form-label-check">
+                <input type="radio" class="form-check form-radio ${radioDefault()}" name="radio-horizontal">
                 <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
               </label>
             </div>
@@ -148,7 +148,7 @@ demo.htmlSource = `
       <div class="row row-space-x-4 row-space-y-3">
 
         <div class="w-full md:w-2/12 md:self-baseline">
-          <label class="label flex ${labelDefault()}">
+          <label class="form-label flex ${labelDefault()}">
             Switch
           </label>
         </div>
@@ -157,22 +157,22 @@ demo.htmlSource = `
           <div class="row row-space-x-4 row-space-y-3">
 
             <div class="w-full">
-              <label class="label-check">
-                <input type="checkbox" class="switch ${radioDefault()}">
+              <label class="form-label-check">
+                <input type="checkbox" class="form-check form-switch ${radioDefault()}">
                 <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
               </label>
             </div>
 
             <div class="w-full">
-              <label class="label-check">
-                <input type="radio" class="switch ${switchDefault()}" name="switch-horizontal">
+              <label class="form-label-check">
+                <input type="radio" class="form-check form-switch ${switchDefault()}" name="switch-horizontal">
                 <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
               </label>
             </div>
 
             <div class="w-full">
-              <label class="label-check">
-                <input type="radio" class="switch ${switchDefault()}" name="switch-horizontal">
+              <label class="form-label-check">
+                <input type="radio" class="form-check form-switch ${switchDefault()}" name="switch-horizontal">
                 <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
               </label>
             </div>

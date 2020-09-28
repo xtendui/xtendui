@@ -21,13 +21,13 @@ demo.htmlSource = `
       <div class="row row-space-x-4 row-space-y-3">
 
         <div class="w-full md:w-auto md:self-center">
-          <label class="label flex whitespace-no-wrap ${labelDefault()}">
+          <label class="form-label flex whitespace-no-wrap ${labelDefault()}">
             Lorem ipsum
           </label>
         </div>
 
         <div class="w-full md:w-auto md:self-center">
-          <input type="text" class="input ${inputDefault()}"/>
+          <input type="text" class="form-item ${inputDefault()}"/>
         </div>
 
       </div>
@@ -37,13 +37,13 @@ demo.htmlSource = `
       <div class="row row-space-x-4 row-space-y-3">
 
         <div class="w-full md:w-auto md:self-center">
-          <label class="label flex whitespace-no-wrap ${labelDefault()}">
+          <label class="form-label flex whitespace-no-wrap ${labelDefault()}">
             Dolor sit amet
           </label>
         </div>
 
         <div class="w-full md:w-auto md:self-center">
-          <input type="text" class="input ${inputDefault()}"/>
+          <input type="text" class="form-item ${inputDefault()}"/>
         </div>
 
       </div>
@@ -53,13 +53,13 @@ demo.htmlSource = `
       <div class="row row-space-x-4 row-space-y-3">
 
         <div class="w-full md:w-auto md:self-center">
-          <label class="label flex whitespace-no-wrap ${labelDefault()}">
+          <label class="form-label flex whitespace-no-wrap ${labelDefault()}">
             Lorem ipsum
           </label>
         </div>
 
         <div class="w-full md:w-auto md:self-center">
-          <input type="text" class="input ${inputDefault()}"/>
+          <input type="text" class="form-item ${inputDefault()}"/>
         </div>
 
       </div>
@@ -69,13 +69,13 @@ demo.htmlSource = `
       <div class="row row-space-x-4 row-space-y-3">
 
         <div class="w-full md:w-auto md:self-center">
-          <label class="label whitespace-no-wrap ${labelDefault()}">
+          <label class="form-label whitespace-no-wrap ${labelDefault()}">
             Dolor sit amet
           </label>
         </div>
 
         <div class="w-full md:w-auto md:self-center">
-          <input type="text" class="input ${inputDefault()}"/>
+          <input type="text" class="form-item ${inputDefault()}"/>
         </div>
 
       </div>
@@ -85,7 +85,7 @@ demo.htmlSource = `
       <div class="row row-space-x-4 row-space-y-3">
 
         <div class="w-full md:w-auto md:self-baseline">
-          <label class="label flex whitespace-no-wrap ${labelDefault()}">
+          <label class="form-label flex whitespace-no-wrap ${labelDefault()}">
             Checkbox
           </label>
         </div>
@@ -94,15 +94,15 @@ demo.htmlSource = `
           <div class="row row-space-x-4 row-space-y-3">
 
             <div class="w-full md:w-auto">
-              <label class="label-check">
-                <input type="checkbox" class="checkbox ${checkDefault()}" checked disabled>
+              <label class="form-label-check">
+                <input type="checkbox" class="form-check form-checkbox ${checkDefault()}" checked disabled>
                 <span class="ml-3">Lorem ipsum</span>
               </label>
             </div>
 
             <div class="w-full md:w-auto">
-              <label class="label-check">
-                <input type="checkbox" class="checkbox ${checkDefault()}">
+              <label class="form-label-check">
+                <input type="checkbox" class="form-check form-checkbox ${checkDefault()}">
                 <span class="ml-3">Lorem ipsum</span>
               </label>
             </div>
@@ -117,7 +117,7 @@ demo.htmlSource = `
       <div class="row row-space-x-4 row-space-y-3">
 
         <div class="w-full md:w-auto md:self-baseline">
-          <label class="label flex whitespace-no-wrap ${labelDefault()}">
+          <label class="form-label flex whitespace-no-wrap ${labelDefault()}">
             Radio
           </label>
         </div>
@@ -126,15 +126,15 @@ demo.htmlSource = `
           <div class="row row-space-x-4 row-space-y-3">
 
             <div class="w-full md:w-auto">
-              <label class="label-check">
-                <input type="radio" class="radio ${radioDefault()}" name="radio-horizontal" checked>
+              <label class="form-label-check">
+                <input type="radio" class="form-check form-radio ${radioDefault()}" name="radio-horizontal" checked>
                 <span class="ml-3">Lorem ipsum</span>
               </label>
             </div>
 
             <div class="w-full md:w-auto">
-              <label class="label-check">
-                <input type="radio" class="radio ${radioDefault()}" name="radio-horizontal">
+              <label class="form-label-check">
+                <input type="radio" class="form-check form-radio ${radioDefault()}" name="radio-horizontal">
                 <span class="ml-3">Lorem ipsum</span>
               </label>
             </div>
@@ -149,7 +149,7 @@ demo.htmlSource = `
       <div class="row row-space-x-4 row-space-y-3">
 
         <div class="w-full md:w-auto md:self-baseline">
-          <label class="label flex whitespace-no-wrap ${labelDefault()}">
+          <label class="form-label flex whitespace-no-wrap ${labelDefault()}">
             Switch
           </label>
         </div>
@@ -158,22 +158,22 @@ demo.htmlSource = `
           <div class="row row-space-x-4 row-space-y-3">
 
             <div class="w-full md:w-auto">
-              <label class="label-check">
-                <input type="checkbox" class="switch ${radioDefault()}">
+              <label class="form-label-check">
+                <input type="checkbox" class="form-check form-switch ${radioDefault()}">
                 <span class="ml-3">Lorem ipsum</span>
               </label>
             </div>
 
             <div class="w-full md:w-auto">
-              <label class="label-check">
-                <input type="radio" class="switch ${switchDefault()}" name="switch-horizontal">
+              <label class="form-label-check">
+                <input type="radio" class="form-check form-switch ${switchDefault()}" name="switch-horizontal">
                 <span class="ml-3">Lorem ipsum</span>
               </label>
             </div>
 
             <div class="w-full md:w-auto">
-              <label class="label-check">
-                <input type="radio" class="switch ${switchDefault()}" name="switch-horizontal">
+              <label class="form-label-check">
+                <input type="radio" class="form-check form-switch ${switchDefault()}" name="switch-horizontal">
                 <span class="ml-3">Lorem ipsum</span>
               </label>
             </div>

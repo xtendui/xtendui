@@ -890,7 +890,7 @@ module.exports = theme => ({
         // styles
         fontSize: rem(16),
       },
-      '.label': {
+      '.form-label': {
         // setup
         cursor: 'pointer',
         display: 'inline-block',
@@ -902,7 +902,7 @@ module.exports = theme => ({
         letterSpacing: theme('letterSpacing.wider'),
         textTransform: 'uppercase',
       },
-      '.input': {
+      '.form-item': {
         // setup
         display: 'block', // @FIX select and textarea space below
         zIndex: theme('zIndex.base'),
@@ -926,15 +926,7 @@ module.exports = theme => ({
           transitionTimingFunction: theme('transitionTimingFunction.ease.in'),
         },
       },
-      '.label-check': {
-        // setup
-        cursor: 'pointer',
-        display: 'inline-flex',
-        // styles
-        fontSize: '1em',
-        lineHeight: theme('lineHeight.snug'),
-      },
-      '.select': {
+      '.form-select': {
         // setup
         '@apply appearance-none': '',
         backgroundRepeat: 'no-repeat',
@@ -943,14 +935,22 @@ module.exports = theme => ({
         backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="none" stroke="${encodeURIComponent(theme('colors.black'))}" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 5l6 6 6-6"/></svg>')`,
         backgroundSize: '1em',
         backgroundPosition: 'right 1rem center',
-        '&.select-primary': {
+        '&.form-select-primary': {
           backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="none" stroke="${encodeURIComponent(theme('colors.white'))}" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 5l6 6 6-6"/></svg>')`,
         },
         '&[multiple]': {
           backgroundImage: 'none',
         },
       },
-      '.checkbox, .radio, .switch': {
+      '.form-label-check': {
+        // setup
+        cursor: 'pointer',
+        display: 'inline-flex',
+        // styles
+        fontSize: '1em',
+        lineHeight: theme('lineHeight.snug'),
+      },
+      '.form-check': {
         // setup
         '@apply appearance-none': '',
         cursor: 'pointer',
@@ -971,7 +971,7 @@ module.exports = theme => ({
           transitionTimingFunction: theme('transitionTimingFunction.out'),
         },
       },
-      '.checkbox': {
+      '.form-checkbox': {
         // styles
         top: '-1px',
         width: '1.5em',
@@ -985,7 +985,7 @@ module.exports = theme => ({
           borderColor: 'currentColor',
         },
       },
-      '.radio': {
+      '.form-radio': {
         top: '-1px',
         width: '1.5em',
         height: '1.5em',
@@ -998,7 +998,7 @@ module.exports = theme => ({
           borderColor: 'currentColor',
         },
       },
-      '.switch': {
+      '.form-switch': {
         top: '-1px',
         width: '2.5em',
         height: '1.5em',

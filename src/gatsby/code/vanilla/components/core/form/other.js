@@ -22,20 +22,20 @@ demo.htmlSource = `
     <div class="row row-space-x-4 row-space-y-3">
 
       <div class="w-full md:w-6/12">
-        <label class="label mb-4 ${labelDefault()}">
+        <label class="form-label mb-4 ${labelDefault()}">
           Lorem Ipsum
         </label>
-        <input type="text" class="input ${inputDefault()}"/>
+        <input type="text" class="form-item ${inputDefault()}"/>
         <div class="mt-3 ${note()}">
           <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
         </div>
       </div>
 
       <div class="w-full md:w-6/12">
-        <label class="label mb-4 ${labelDefault()}">
+        <label class="form-label mb-4 ${labelDefault()}">
           Dolor sit amet
         </label>
-        <input type="text" class="input ${inputDefault()}"/>
+        <input type="text" class="form-item ${inputDefault()}"/>
       </div>
 
       <div class="w-full">
@@ -43,17 +43,17 @@ demo.htmlSource = `
         <div class="row row-space-x-4 row-space-y-3">
 
           <div class="w-full md:w-auto">
-            <label class="label mb-4 ${labelDefault()}">
+            <label class="form-label mb-4 ${labelDefault()}">
               Lorem ipsum
             </label>
-            <input type="text" class="input ${inputDefault()}"/>
+            <input type="text" class="form-item ${inputDefault()}"/>
           </div>
 
           <div class="w-full md:w-auto">
-            <label class="label mb-4 ${labelDefault()}">
+            <label class="form-label mb-4 ${labelDefault()}">
               Dolor sit amet
             </label>
-            <input type="text" class="input ${inputDefault()}"/>
+            <input type="text" class="form-item ${inputDefault()}"/>
           </div>
 
         </div>
@@ -76,22 +76,22 @@ demo.htmlSource = `
 
       <div class="w-full">
 
-        <label class="label mb-4 ${labelDefault()}">
+        <label class="form-label mb-4 ${labelDefault()}">
           Checkbox
         </label>
 
         <div class="row row-space-x-4 row-space-y-3">
 
           <div class="w-full">
-            <label class="label-check">
-              <input type="checkbox" class="checkbox ${checkDefault()}" checked>
+            <label class="form-label-check">
+              <input type="checkbox" class="form-check form-checkbox ${checkDefault()}" checked>
               <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
             </label>
           </div>
 
           <div class="w-full">
-            <label class="label-check">
-              <input type="checkbox" class="checkbox ${checkDefault()}">
+            <label class="form-label-check">
+              <input type="checkbox" class="form-check form-checkbox ${checkDefault()}">
               <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
             </label>
             <div class="mt-3 ${note()}">
@@ -107,7 +107,7 @@ demo.htmlSource = `
         <div class="row row-space-x-4 row-space-y-3">
 
           <div class="w-full md:w-2/12 md:self-baseline">
-            <label class="label flex ${labelDefault()}">
+            <label class="form-label flex ${labelDefault()}">
               Checkbox
             </label>
           </div>
@@ -116,15 +116,15 @@ demo.htmlSource = `
             <div class="row row-space-x-4 row-space-y-3">
 
               <div class="w-full">
-                <label class="label-check">
-                  <input type="checkbox" class="checkbox ${checkDefault()}" checked>
+                <label class="form-label-check">
+                  <input type="checkbox" class="form-check form-checkbox ${checkDefault()}" checked>
                   <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
                 </label>
               </div>
 
               <div class="w-full">
-                <label class="label-check">
-                  <input type="checkbox" class="checkbox ${checkDefault()}" checked>
+                <label class="form-label-check">
+                  <input type="checkbox" class="form-check form-checkbox ${checkDefault()}" checked>
                   <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
                 </label>
                 <div class="mt-3 ${note()}">
@@ -140,22 +140,22 @@ demo.htmlSource = `
 
       <div class="w-full">
 
-        <label class="label mb-4 ${labelDefault()}">
+        <label class="form-label mb-4 ${labelDefault()}">
           Checkbox
         </label>
 
         <div class="row row-space-x-4 row-space-y-3">
 
           <div class="w-full md:w-auto">
-            <label class="label-check">
-              <input type="checkbox" class="checkbox ${checkDefault()}" checked>
+            <label class="form-label-check">
+              <input type="checkbox" class="form-check form-checkbox ${checkDefault()}" checked>
               <span class="ml-3">Lorem ipsum</span>
             </label>
           </div>
 
           <div class="w-full md:w-auto">
-            <label class="label-check">
-              <input type="checkbox" class="checkbox ${checkDefault()}">
+            <label class="form-label-check">
+              <input type="checkbox" class="form-check form-checkbox ${checkDefault()}">
               <span class="ml-3">Lorem ipsum</span>
             </label>
           </div>

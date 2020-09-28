@@ -35,10 +35,10 @@ Use this markup to create a form **label** and **input**.
 
 <script type="text/plain" class="language-markup">
   <form>
-    <label class="label mb-3" for="my-input">
+    <label class="form-label mb-3" for="my-input">
       <!-- content -->
     </label>
-    <input type="text" class="input" id="my-input" name="my-input"/>
+    <input type="text" class="form-item" id="my-input" name="my-input"/>
   </form>
 </script>
 
@@ -46,13 +46,13 @@ Use this markup to create a form **checkbox or radio**.
 
 <script type="text/plain" class="language-markup">
   <form>
-    <label class="label-check">
-      <input type="checkbox" class="checkbox" id="my-checkbox" name="my-checkbox">
+    <label class="form-label-check">
+      <input type="checkbox" class="form-check form-checkbox" id="my-checkbox" name="my-checkbox">
       <span class="ml-3"><!-- content --></span>
     </label>
 
-    <label class="label-check">
-      <input type="radio" class="radio" id="my-radio" name="my-radio">
+    <label class="form-label-check">
+      <input type="radio" class="form-check form-radio" id="my-radio" name="my-radio">
       <span class="ml-3"><!-- content --></span>
     </label>
   </form>
@@ -62,13 +62,13 @@ Use this markup to create a form **checkbox or radio switches**.
 
 <script type="text/plain" class="language-markup">
   <form>
-    <label class="label-check">
-      <input type="checkbox" class="switch" id="my-checkbox" name="my-checkbox">
+    <label class="form-label-check">
+      <input type="checkbox" class="form-check form-switch" id="my-checkbox" name="my-checkbox">
       <span class="ml-3"><!-- content --></span>
     </label>
 
-    <label class="label-check">
-      <input type="radio" class="switch" id="my-radio" name="my-radio">
+    <label class="form-label-check">
+      <input type="radio" class="form-check form-switch" id="my-radio" name="my-radio">
       <span class="ml-3"><!-- content --></span>
     </label>
   </form>
