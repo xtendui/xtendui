@@ -1,6 +1,6 @@
 /**
  * demo
-*/
+ */
 
 #gatsby_body-inner {
   position: relative;
@@ -30,7 +30,7 @@ html.gatsby_iframe-inside {
 
 /**
  * code
-*/
+ */
 
 code {
   @apply font-mono;
@@ -60,6 +60,10 @@ pre[class*="language-"] {
     font-size: 0.75rem !important;
     line-height: 1.6 !important;
     white-space: pre-wrap !important;
+  }
+  ::selection {
+    background-color: theme('colors.accent.600');
+    color: theme('colors.white');
   }
 }
 

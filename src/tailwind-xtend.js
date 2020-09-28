@@ -358,7 +358,7 @@ module.exports = theme => ({
       },
       '::selection': {
         // styles
-        backgroundColor: theme('colors.accent.700'),
+        backgroundColor: theme('colors.accent.600'),
         color: theme('colors.white'),
       },
       '.overflow-main': {
