@@ -26,7 +26,7 @@ import 'xtend-library/src/xtend-addons.js'
 
 ## Usage
 
-Here's the demo markup, css and javascript to create a **google locator**.
+Here's code to create a **google locator**.
 
 <demo>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/general/google-locator">

@@ -15,6 +15,7 @@ date: "2020-10-10"
 | Util                  | `.text-default`                               | `responsive`                | Text and links default colors            |
 | Util                  | `.text-inverse`                               | `responsive`                | Text and link inverse colors            |
 | Util                  | `.text-reset`                               | `responsive`                | Inherit text styles            |
+| Util                  | `.ellipsis`                               | `responsive`                | Text overflow ellipsis on child elements            |
 | Util                  | `.lowercase-capitalize`                               | `responsive`                | Lowercase text and capitalize first letter            |
 | Util                  | `.align-uppercase`                               | `responsive`                | Vertical align to uppercase text            |
 

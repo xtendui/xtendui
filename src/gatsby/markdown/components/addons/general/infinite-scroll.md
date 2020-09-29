@@ -26,7 +26,7 @@ import 'xtend-library/src/xtend-addons.js'
 
 ## Usage
 
-Here's the demo markup, css and javascript to create an **infinite scroll**.
+Here's code to create an **infinite scroll**.
 
 <demo>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/general/infinite-scroll">

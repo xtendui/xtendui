@@ -2,7 +2,6 @@ if (typeof window !== 'undefined') {
   require('xtend-library/src/private/demos/components/addons/animation/ripple.js')
   require('xtend-library/src/private/demos/components/addons/animation/scroll-to-anchor-nested.js')
   require('xtend-library/src/private/demos/components/addons/animation/scroll-to-anchor.js')
-  require('xtend-library/src/private/demos/components/addons/form/textarea-autosize.js')
   require('xtend-library/src/private/demos/components/addons/form/validation.js')
   require('xtend-library/src/private/demos/components/addons/general/google-locator.js')
   require('xtend-library/src/private/demos/components/addons/general/jump-to-content.js')

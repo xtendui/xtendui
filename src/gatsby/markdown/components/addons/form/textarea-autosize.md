@@ -6,7 +6,64 @@ title: "textarea-autosize"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
+## Setup
+
+#### Javascript
+
+Follow the [js installation](/introduction/getting-started/setup#js-installation) instructions.
+
+Import the component's **js** file.
+
+```jsx
+import 'xtend-library/src/addons/form/textarea-autosize.js'
+```
+
+Or just import **addons**.
+
+```jsx
+import 'xtend-library/src/xtend-addons.js'
+```
+
+## Usage
+
+Here's code to create a **textarea autosize**.
+
 <demo>
   <demovanilla src="vanilla/components/addons/form/textarea-autosize">
   </demovanilla>
 </demo>
+
+## Initialization
+
+Initialize automatically within markup with `[data-xt-textarea-autosize="{ <options> }"]` on the **object** (the DOM element you assigned the component).
+
+Or initialize with **javascript**.
+
+```js
+let self = new Xt.TextareaAutosize(document.querySelector('#my-object'), {
+  // options
+})
+```
+
+Or inizialize with **mutation observer**.
+
+```js
+Xt.mount.push({
+  matches: '#my-object',
+  mount: object => {
+    // init
+
+    let self = new Xt.TextareaAutosize(object, {
+      // options
+    })
+
+    // unmount
+
+    const unmount = () => {
+      self.destroy()
+      self = null
+    }
+    return unmount
+  }
+})
+```

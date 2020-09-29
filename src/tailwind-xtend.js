@@ -326,6 +326,15 @@ module.exports = theme => ({
         letterSpacing: 'inherit',
         textTransform: 'inherit',
       },
+      '.ellipsis': {
+        overflow: 'hidden',
+        whiteSpace: 'nowrap',
+        textOverflow: 'ellipsis',
+        '> *': {
+          display: 'inline !important',
+          verticalAlign: 'middle !important',
+        },
+      },
       '.lowercase-capitalize': {
         textTransform: 'lowercase',
         '&:first-letter': {
@@ -615,35 +624,6 @@ module.exports = theme => ({
         fontSize: rem(14),
       },
     },
-    // breadcrumbs
-    breadcrumbs: {
-      '.breadcrumbs': {
-        // setup
-        width: '100%',
-        // styles
-        paddingTop: theme('spacing.4'),
-        paddingBottom: theme('spacing.4'),
-      },
-      '.breadcrumbs-list': {
-        // setup
-        lineHeight: '1',
-        '.btn': {
-          paddingLeft: '0',
-          paddingRight: '0',
-        },
-        'div.btn': {
-          pointerEvents: 'none',
-        },
-        // ellipsis
-        overflow: 'hidden',
-        whiteSpace: 'nowrap',
-        textOverflow: 'ellipsis',
-        '> *': {
-          display: 'inline !important',
-          verticalAlign: 'middle !important',
-        },
-      },
-    },
     // btn
     btn: {
       '.btn': {
@@ -908,10 +888,6 @@ module.exports = theme => ({
         zIndex: theme('zIndex.base'),
         '&:focus, &.active': {
           zIndex: theme('zIndex.active'),
-        },
-        'textarea&': {
-          resize: 'vertical',
-          height: rem(120),
         },
         // styles
         padding: `.75em 1.2em`,

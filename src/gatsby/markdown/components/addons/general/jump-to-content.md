@@ -8,7 +8,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 ## Usage
 
-Here's the demo markup, css and javascript to create a **jump to content**.
+Here's code to create a **jump to content**.
 
 <demo>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/general/jump-to-content">

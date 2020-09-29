@@ -1,9 +1,9 @@
 ---
 type: "Components"
-category: "Extensions"
-parent: "Breadcrumbs"
+category: "Addons"
+parent: "Layout"
 title: "Breadcrumbs"
-description: "Dynamic breadcrumbs that looks awesome in all responsive breakpoints."
+description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
 ## Setup
@@ -31,29 +31,15 @@ module.exports = {
 
 ## Usage
 
-Use this markup to create a **breadcrumb**.
+Use **tailwind classes** to create breadcrumbs.
 
-<script type="text/plain" class="language-markup">
-  <div class="breadcrumbs">
-    <div class="container">
+[[notePrimary]]
+| This addon uses [separator](/components/extensions/separator) components. Visit the component's webpages to customize them.
 
-      <nav class="breadcrumbs-list">
-        <a href="#" class="btn">
-          <!-- content -->
-        </a>
-        <span class="separator"></span>
-        <a href="#" class="btn">
-          <!-- content -->
-        </a>
-        <span class="separator"></span>
-        <div class="btn">
-          <!-- content -->
-        </div>
-      </nav>
-      
-    </div>
-  </div>
-</script>
+<demo>
+  <demovanilla src="vanilla/components/addons/layout/breadcrumbs-usage">
+  </demovanilla>
+</demo>
 
 Use this markup to add **json-ld** metadata to **breadcrumb**.
 
@@ -85,12 +71,11 @@ Use this markup to add **json-ld** metadata to **breadcrumb**.
 </script>
 ```
 
-Then add and [style content](/components/extensions/breadcrumbs/content).
+## Title
 
-[[noteDefault]]
-| To customize separator follow [separator component](/components/extensions/separator).
+Use **tailwind classes** to add title and background.
 
 <demo>
-  <demovanilla src="vanilla/components/extensions/breadcrumbs/usage">
+  <demovanilla src="vanilla/components/addons/layout/background-title">
   </demovanilla>
 </demo>

@@ -42,7 +42,7 @@ demo.htmlSource = `
       <label class="form-label mb-4 ${labelPrimary()}">
         Textarea
       </label>
-      <textarea class="form-item ${inputPrimary()}" placeholder="Textarea"></textarea>
+      <textarea class="form-item ${inputPrimary()} h-24 resize-vertical duration-150" placeholder="Textarea"></textarea>
     </div>
 
     <div class="w-full">

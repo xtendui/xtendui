@@ -110,8 +110,7 @@ export default () => {
                             <label class="form-label">
                               Name
                             </label>
-                            <input type="text" class="form-item"
-                              placeholder="Name" required>
+                            <input type="text" class="form-item" placeholder="Name" required>
                           </div>
                         </div>
                         <div class="col-form-double">
@@ -119,8 +118,7 @@ export default () => {
                             <label class="form-label">
                               Surname
                             </label>
-                            <input type="text" class="form-item"
-                              placeholder="Surname" required>
+                            <input type="text" class="form-item" placeholder="Surname" required>
                           </div>
                         </div>
                       </div>
@@ -131,8 +129,7 @@ export default () => {
                             <label class="form-label">
                               Email
                             </label>
-                            <input type="email" class="form-item"
-                              placeholder="Email" required>
+                            <input type="email" class="form-item" placeholder="Email" required>
                           </div>
                         </div>
                         <div class="col-form-double">
@@ -140,8 +137,7 @@ export default () => {
                             <label class="form-label">
                               Telephone
                             </label>
-                            <input type="text" class="form-item"
-                              placeholder="Telephone" required>
+                            <input type="text" class="form-item" placeholder="Telephone" required>
                           </div>
                         </div>
                       </div>
@@ -150,8 +146,7 @@ export default () => {
                         <label class="form-label">
                           Select an option
                         </label>
-                        <select class="form-item"
-                          required>
+                        <select class="form-item" required>
                           <option selected value="">Select an option</option>
                           <option>Option 1</option>
                           <option>Option 2</option>
@@ -163,13 +158,11 @@ export default () => {
                         <label class="form-label">
                           Textarea
                         </label>
-                        <textarea class="form-item"
-                          placeholder="Textarea" required></textarea>
+                        <textarea class="form-item h-24 resize-vertical duration-150" placeholder="Textarea" required></textarea>
                       </div>
 
                       <div class="form-group">
-                        <input type="checkbox" id="check-contact" name="check-contact"
-                          required>
+                        <input type="checkbox" id="check-contact" name="check-contact" required>
                         <label class="form-label" for="check-contact">
                         <span>
                           I <strong>read and accept</strong> the <a href="#" target="_blank">sales conditions</a> and the <a href="#" target="_blank">privacy policy</a>.
@@ -247,8 +240,7 @@ export default () => {
                         <label class="form-label">
                           Email
                         </label>
-                        <input type="email" class="form-item"
-                          placeholder="Email" required>
+                        <input type="email" class="form-item" placeholder="Email" required>
                       </div>
 
                       <div class="form-group-inline">
@@ -258,16 +250,14 @@ export default () => {
                         </label>
 
                         <div class="form-group">
-                          <input type="radio" id="radio-newsletter-0" name="radio-newsletter"
-                            required>
+                          <input type="radio" id="radio-newsletter-0" name="radio-newsletter" required>
                           <label class="form-label" for="radio-newsletter-0">
                             Option 1
                           </label>
                         </div>
 
                         <div class="form-group">
-                          <input type="radio" id="radio-newsletter-1" name="radio-newsletter"
-                            required>
+                          <input type="radio" id="radio-newsletter-1" name="radio-newsletter" required>
                           <label class="form-label" for="radio-valinewsletterdation-1">
                             Option 2
                           </label>
@@ -276,8 +266,7 @@ export default () => {
                       </div>
 
                       <div class="form-group">
-                        <input type="checkbox" id="check-newsletter" name="check-newsletter"
-                          required>
+                        <input type="checkbox" id="check-newsletter" name="check-newsletter" required>
                         <label class="form-label" for="check-newsletter">
                         <span>
                           I <strong>read and accept</strong> the <a href="#" target="_blank">sales conditions</a> and the <a href="#" target="_blank">privacy policy</a>.

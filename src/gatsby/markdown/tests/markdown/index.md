@@ -75,11 +75,8 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 [[noteDefault]]
 | To customize utils and components follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
 
-[[noteDefault]]
-| To know **spacing utilities values** see the source code of `node_modules/xtend-library/src/tailwind-xtend.js`.
-
 [[notePrimary]]
-| You should always use **tailwind width classes** inside `.row`.
+| This addon uses [separator](/components/extensions/separator) components. Visit the component's webpages to customize them.
 
 <div class="table-scroll">
 
