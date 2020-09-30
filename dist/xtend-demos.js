@@ -7,8 +7,6 @@ if (typeof window !== 'undefined') {
   require('xtend-library/src/private/demos/components/addons/general/jump-to-content.js')
   require('xtend-library/src/private/demos/components/addons/group/expand.js')
   require('xtend-library/src/private/demos/components/addons/group/number.js')
-  require('xtend-library/src/private/demos/components/addons/loader/mouse-filler.js')
-  require('xtend-library/src/private/demos/components/addons/loader/mouse-spinner.js')
   require('xtend-library/src/private/demos/components/addons/slider/navigation-sides.js')
   require('xtend-library/src/private/demos/components/addons/toggle/multilevel.js')
   require('xtend-library/src/private/demos/components/core/drop/animation-js.js')

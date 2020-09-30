@@ -43,7 +43,7 @@ class Ripple {
     // @FIX raf because after .xt custom listeners
     requestAnimationFrame(() => {
       // listener dispatch
-      self.object.dispatchEvent(new CustomEvent('init.xt'))
+      self.object.dispatchEvent(new CustomEvent('init.xt.ripple'))
     })
   }
 
@@ -100,7 +100,7 @@ class Ripple {
       self.sizeFinal = sizeFinal
       self.scaleFinal = scaleFinal
       // listener dispatch
-      self.object.dispatchEvent(new CustomEvent('ripple.on.xt'))
+      self.object.dispatchEvent(new CustomEvent('on.xt.ripple'))
       // off
       self.offListener = self.eventEnd.bind(self)
       addEventListener('mouseup', self.offListener)
@@ -117,7 +117,7 @@ class Ripple {
     removeEventListener('mouseup', self.offListener)
     removeEventListener('touchend', self.offListener)
     // listener dispatch
-    self.object.dispatchEvent(new CustomEvent('ripple.off.xt'))
+    self.object.dispatchEvent(new CustomEvent('off.xt.ripple'))
   }
 
   //
@@ -143,7 +143,7 @@ class Ripple {
     // set self
     Xt.remove(self.componentName, self.object)
     // listener dispatch
-    self.object.dispatchEvent(new CustomEvent('destroy.xt'))
+    self.object.dispatchEvent(new CustomEvent('destroy.xt.ripple'))
   }
 
   //

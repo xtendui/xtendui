@@ -72,11 +72,21 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 ## Markdown
 
+Use **tailwind classes** to create mouse follow.
+
+Use **component's classes** to create mouse follow.
+
+Use **component's classes** to assign size (e.g.: padding, font size).
+
+See [group component](/components/core/loader) to create a button with group.
+
+See [mouse follow addon](/components/core/loader) to create a loader with mouse follow.
+
 [[noteDefault]]
 | To customize utils and components follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
 
 [[notePrimary]]
-| This addon uses [separator](/components/core/separator) components. Visit the component's webpages to customize them.
+| This addon uses [separator component](/components/core/separator). Visit the component's webpages to customize them.
 
 <div class="table-scroll">
 

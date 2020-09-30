@@ -1092,32 +1092,6 @@ module.exports = theme => ({
           },
         },
       },
-      '.spinner-animated': {
-        // styles
-        'svg': {
-          '&:nth-child(1)': {
-            'circle': {
-              animation: 'anim-spinner 1500ms infinite',
-            },
-          },
-        },
-      },
-      '.loader-x-animated': {
-        // styles
-        '.filler': {
-          'span:nth-child(1)': {
-            animation: 'anim-filler-x 1500ms infinite',
-          },
-        },
-      },
-      '.loader-y-animated': {
-        // styles
-        '.filler': {
-          'span:nth-child(1)': {
-            animation: 'anim-filler-y 1500ms infinite',
-          },
-        },
-      },
       '.loader-size-top': {
         // setup
         '.filler': {
@@ -1197,7 +1171,56 @@ module.exports = theme => ({
           position: 'relative',
           marginTop: '-10px',
           marginLeft: '40px',
-        }
+        },
+      },
+      '.spinner-animated': {
+        // animation
+        'svg': {
+          '&:nth-child(1)': {
+            'circle': {
+              animation: 'anim-spinner 1500ms infinite',
+            },
+          },
+        },
+      },
+      '.loader-x-animated': {
+        // animation
+        '.filler': {
+          'span:nth-child(1)': {
+            animation: 'anim-filler-x 1500ms infinite',
+          },
+        },
+      },
+      '.loader-y-animated': {
+        // animation
+        '.filler': {
+          'span:nth-child(1)': {
+            animation: 'anim-filler-y 1500ms infinite',
+          },
+        },
+      },
+      '.loader-animated': {
+        // animation
+        opacity: '0',
+        transitionProperty: 'opacity',
+        transitionDuration: theme('transitionDuration.500'),
+        transitionTimingFunction: theme('transitionTimingFunction.ease.out'),
+        '> *': {
+          opacity: '0',
+          transform: 'scale(.75)',
+          transitionProperty: 'all',
+          transitionDuration: theme('transitionDuration.500'),
+          transitionTimingFunction: theme('transitionTimingFunction.ease.out'),
+        },
+        '&.in': {
+          opacity: '1',
+          transitionTimingFunction: theme('transitionTimingFunction.ease.in'),
+          '> *': {
+            opacity: '1',
+            transform: 'scale(1)',
+            transitionTimingFunction: theme('transitionTimingFunction.ease.in'),
+          },
+        },
       },
     },
     // media

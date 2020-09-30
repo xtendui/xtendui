@@ -150,7 +150,7 @@ class GoogleLocator {
     // @FIX raf because after .xt custom listeners
     requestAnimationFrame(() => {
       // listener dispatch
-      self.object.dispatchEvent(new CustomEvent('init.xt'))
+      self.object.dispatchEvent(new CustomEvent('init.xt.googlelocator'))
     })
   }
 
@@ -528,7 +528,7 @@ class GoogleLocator {
     // set self
     Xt.remove(self.componentName, self.object)
     // listener dispatch
-    self.object.dispatchEvent(new CustomEvent('destroy.xt'))
+    self.object.dispatchEvent(new CustomEvent('destroy.xt.googlelocator'))
   }
 }
 

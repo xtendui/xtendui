@@ -22,7 +22,7 @@ Xt.mount.push({
       }
     }
 
-    object.addEventListener('ripple.on.xt', eventOn)
+    object.addEventListener('on.xt.ripple', eventOn)
 
     // off
 
@@ -36,7 +36,7 @@ Xt.mount.push({
       }
     }
 
-    object.addEventListener('ripple.off.xt', eventOff)
+    object.addEventListener('off.xt.ripple', eventOff)
 
     // unmount
 

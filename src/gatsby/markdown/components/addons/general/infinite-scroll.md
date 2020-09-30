@@ -27,7 +27,11 @@ Here's code to create an **infinite scroll**.
   </div>
 </demo>
 
+## Options
+
 Here are the main javascript options.
+
+For advanced options see javascript file source code `xtend-library/src/addons/general/infinite-scroll.js`.
 
 <div class="table-scroll">
 
@@ -43,7 +47,18 @@ Here are the main javascript options.
 
 </div>
 
-For advanced options see javascript file source code `xtend-library/src/addons/general/infinite-scroll.js`.
+## Listen
+
+Listen to events on **DOM elements**.
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | DOM Element                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Event                   | `init.xt.infinitescroll`           | `object` | Init event             |
+| Event                   | `destroy.xt.infinitescroll`           | `object` | Destroy event             |
+
+</div>
 
 ## Initialization
 

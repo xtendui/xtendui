@@ -45,7 +45,7 @@ class PropagateInteraction {
     // @FIX raf because after .xt custom listeners
     requestAnimationFrame(() => {
       // listener dispatch
-      self.object.dispatchEvent(new CustomEvent('init.xt'))
+      self.object.dispatchEvent(new CustomEvent('init.xt.propagateinteraction'))
     })
   }
 
@@ -118,7 +118,7 @@ class PropagateInteraction {
     // initialized class
     self.object.classList.remove(self.componentName)
     // listener dispatch
-    self.object.dispatchEvent(new CustomEvent('destroy.xt'))
+    self.object.dispatchEvent(new CustomEvent('destroy.xt.propagateinteraction'))
   }
 
   //

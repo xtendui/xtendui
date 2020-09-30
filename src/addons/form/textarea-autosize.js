@@ -47,7 +47,7 @@ class TextareaAutosize {
     // @FIX raf because after .xt custom listeners
     requestAnimationFrame(() => {
       // listener dispatch
-      self.object.dispatchEvent(new CustomEvent('init.xt'))
+      self.object.dispatchEvent(new CustomEvent('init.xt.textareaautosize'))
     })
   }
 
@@ -91,7 +91,7 @@ class TextareaAutosize {
     // set self
     Xt.remove(self.componentName, self.object)
     // listener dispatch
-    self.object.dispatchEvent(new CustomEvent('destroy.xt'))
+    self.object.dispatchEvent(new CustomEvent('destroy.xt.textareaautosize'))
   }
 
   //

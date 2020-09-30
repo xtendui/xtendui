@@ -22,15 +22,30 @@ import 'xtend-library/src/addons/general/google-locator'
 
 Here's code to create a **google locator**.
 
+[[notePrimary]]
+| Needs google API key with **Maps Javascript API**, **Places API**.
+
 <demo>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/general/google-locator">
   </div>
 </demo>
 
-[[notePrimary]]
-| Needs google API key with **Maps Javascript API**, **Places API**.
+## Options
 
 For advanced options see javascript file source code `xtend-library/src/addons/general/google-locator.js`.
+
+## Listen
+
+Listen to events on **DOM elements**.
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | DOM Element                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Event                   | `init.xt.googlelocator`           | `object` | Init event             |
+| Event                   | `destroy.xt.googlelocator`           | `object` | Destroy event             |
+
+</div>
 
 ## Initialization
 

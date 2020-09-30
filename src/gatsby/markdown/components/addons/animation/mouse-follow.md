@@ -38,3 +38,89 @@ Import the component's **js** file.
 ```jsx
 import 'xtend-library/src/addons/animation/mousefollow'
 ```
+
+## Usage
+
+Use **component's classes** to create mouse follow.
+
+[[notePrimary]]
+| This addon uses [loader component](/components/core/loader). Visit the component's webpages to customize them.
+
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `.mouse-follow`                     | `mouse-follow`                | Styles for mouse follow            |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/addons/animation/mouse-follow">
+  </demovanilla>
+</demo>
+
+## Options
+ 
+Here are the main javascript options.
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                    | `targets:Query`                          | `':scope > .mouse-follow'`        | Mouse follow targets            |
+| Option                    | `transform:Boolean`                          | `true`        | Use transform instead of position            |
+| Option                    | `friction:Function`                          | `<function>`        | Function for friction             |
+| Option                    | `mouseCheck(self):Function`                          | `false`        | Function called on activate/deactivate, return false to not activate/deactivate             |
+
+</div>
+
+## Listen
+
+Listen to events on **DOM elements**.
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | DOM Element                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Event                   | `on.xt.mousefollow`       | `object` | Activation event             |
+| Event                   | `off.xt.mousefollow`      | `object` | Deactivation event            |
+| Event                   | `update.xt.mousefollow`       | `object` | Update event             |
+| Event                   | `init.xt.mousefollow`           | `object` | Init event             |
+| Event                   | `destroy.xt.mousefollow`           | `object` | Destroy event             |
+
+</div>
+
+## Initialization
+
+Initialize automatically within markup with `[data-xt-mouse-follow="{ <options> }"]` on the **object** (the DOM element you assigned the component).
+
+Or initialize with **javascript**.
+
+```js
+let self = new Xt.MouseFollow(document.querySelector('#my-object'), {
+  // options
+})
+```
+
+Or inizialize with **mutation observer**.
+
+```js
+Xt.mount.push({
+  matches: '#my-object',
+  mount: object => {
+    // init
+
+    let self = new Xt.MouseFollow(object, {
+      // options
+    })
+
+    // unmount
+
+    const unmount = () => {
+      self.destroy()
+      self = null
+    }
+    return unmount
+  }
+})
+```

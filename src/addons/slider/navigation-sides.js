@@ -3,7 +3,7 @@ import 'xtend-library/src/addons/animation/mouse-follow.js'
 
 /**
  * slider-navigation-sides
- */
+@TODO WITH data-xt-mousefollow
 
 Xt.mount.push({
   matches: '.slider-navigation-sides-btn',
@@ -35,3 +35,5 @@ Xt.mount.push({
     return unmount
   },
 })
+
+ */

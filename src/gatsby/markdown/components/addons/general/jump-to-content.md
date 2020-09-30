@@ -10,6 +10,8 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 Here's code to create a **jump to content**.
 
+Use the tab key to reveal the **jump to content** button.
+
 <demo>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/general/jump-to-content">
   </div>

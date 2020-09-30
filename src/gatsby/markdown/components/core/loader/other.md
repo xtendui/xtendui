@@ -17,7 +17,7 @@ Use **tailwind classes** to assign variant (e.g.: background, opacity).
   </demovanilla>
 </demo>
 
-## Javascript
+## Interaction
 
 Example loader spinner show and hide **with javascript and css transitions**.
 
@@ -32,3 +32,28 @@ Example loader filler show and hide **with javascript and css transitions**.
   <demovanilla src="vanilla/components/core/loader/js-filler">
   </demovanilla>
 </demo>
+
+[[noteDefault]]
+| To customize utils and components follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
+
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `.loader-animated`                     | `loader-animated`                | Loader activation and animation            |
+
+</div>
+
+## Mouse
+
+Use **component's classes** to create loader positioned for mouse.
+
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `.loader-mouse`                     | `loader-mouse`                | Loader position for mouse            |
+
+</div>
+
+See [mouse follow addon](/components/addons/animation/mouse-follow) to create a loader with mouse follow.

@@ -57,7 +57,7 @@ class ScrollToAnchor {
     // @FIX raf because after .xt custom listeners
     requestAnimationFrame(() => {
       // listener dispatch
-      self.object.dispatchEvent(new CustomEvent('init.xt'))
+      self.object.dispatchEvent(new CustomEvent('init.xt.scrolltoanchor'))
     })
   }
 
@@ -268,7 +268,7 @@ class ScrollToAnchor {
     // set self
     Xt.remove(self.componentName, self.object)
     // listener dispatch
-    self.object.dispatchEvent(new CustomEvent('destroy.xt'))
+    self.object.dispatchEvent(new CustomEvent('destroy.xt.scrolltoanchor'))
   }
 
   //

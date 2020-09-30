@@ -27,6 +27,19 @@ Here's code to create a **textarea autosize**.
   </demovanilla>
 </demo>
 
+## Listen
+
+Listen to events on **DOM elements**.
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | DOM Element                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Event                   | `init.xt.textareaautosize`           | `object` | Init event             |
+| Event                   | `destroy.xt.textareaautosize`           | `object` | Destroy event             |
+
+</div>
+
 ## Initialization
 
 Initialize automatically within markup with `[data-xt-textarea-autosize="{ <options> }"]` on the **object** (the DOM element you assigned the component).

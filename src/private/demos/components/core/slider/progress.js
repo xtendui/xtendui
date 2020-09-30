@@ -103,9 +103,9 @@ Xt.mount.push({
 
     // mousefollow
 
-    const mouseFollowObject = object.querySelector(':scope > .loader')
-    const mouseFollowContainer = object
-    let mouseFollow = new Xt.MouseFollow(mouseFollowObject, mouseFollowContainer, {})
+    let mouseFollow = new Xt.MouseFollow(object, {
+      targets: ':scope > .loader',
+    })
 
     // unmount
 
