@@ -47,6 +47,29 @@ Listen to events on **DOM elements**.
 
 </div>
 
+## Properties
+
+Access properties by getting component object.
+
+<div class="table-scroll">
+
+|                         | Syntax                                   | Description                   |
+| ----------------------- | ---------------------------------------- | ----------------------------- |
+| Property                   | `object:Node`       | Object node             |
+| Property                   | `locateCache:Object`       | Locate cache object             |
+| Property                   | `loaderElement:Node`       | Loader node             |
+| Property                   | `itemsTemplate:Node`       | Items template node             |
+| Property                   | `itemsContainer:Node`       | Items container node             |
+| Property                   | `resultElement:Node`       | Result node             |
+| Property                   | `foundElement:Node`       | Found node             |
+| Property                   | `mapElement:Node`       | Map node             |
+| Property                   | `map:Object`       | Map object             |
+| Property                   | `searchInput:Node`       | Search input node             |
+| Property                   | `search:Object`       | Search object             |
+| Property                   | `searchBtn:Node`       | Search button node             |
+
+</div>
+
 ## Initialization
 
 Initialize automatically within markup with `[data-xt-google-locator="{ <options> }"]` on the **object** (the DOM element you assigned the component).

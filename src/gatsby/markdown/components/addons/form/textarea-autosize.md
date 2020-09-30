@@ -40,6 +40,19 @@ Listen to events on **DOM elements**.
 
 </div>
 
+## Properties
+
+Access properties by getting component object.
+
+<div class="table-scroll">
+
+|                         | Syntax                                   | Description                   |
+| ----------------------- | ---------------------------------------- | ----------------------------- |
+| Property                   | `object:Node`       | Object node             |
+| Property                   | `form:Node`       | Form closest node             |
+
+</div>
+
 ## Initialization
 
 Initialize automatically within markup with `[data-xt-textarea-autosize="{ <options> }"]` on the **object** (the DOM element you assigned the component).

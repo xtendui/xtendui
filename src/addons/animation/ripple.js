@@ -31,9 +31,9 @@ class Ripple {
     // options
     self.options = Xt.merge([self.constructor.optionsDefault, self.optionsCustom])
     // generate
-    if (!self.rippleContainer) {
+    if (!self.container) {
       self.object.append(Xt.createElement('<div class="ripple-container"></div>'))
-      self.rippleContainer = self.object.querySelector(':scope > .ripple-container')
+      self.container = self.object.querySelector(':scope > .ripple-container')
     }
     // on
     self.object.addEventListener('mousedown', self.eventStart.bind(self))
@@ -59,7 +59,7 @@ class Ripple {
     const options = self.options
     // check if inside onlyInside
     if (!options.onlyInside || e.target.closest(options.onlyInside)) {
-      self.rippleContainer.append(Xt.createElement('<div class="ripple"></div>'))
+      self.container.append(Xt.createElement('<div class="ripple"></div>'))
       // @FIX prevent dragging links and images
       if (e.type === 'mousedown') {
         e.preventDefault()

@@ -13,7 +13,7 @@ Xt.mount.push({
     // on
 
     const eventOn = () => {
-      const ripple = self.rippleContainer.querySelector('.ripple:last-child')
+      const ripple = self.container.querySelector('.ripple:last-child')
       // animate
       if (ripple) {
         gsap.set(ripple, { height: self.size, width: self.size, top: self.top, left: self.left, scale: 1, opacity: 0 })
@@ -27,7 +27,7 @@ Xt.mount.push({
     // off
 
     const eventOff = () => {
-      const ripple = self.rippleContainer.querySelector('.ripple:last-child')
+      const ripple = self.container.querySelector('.ripple:last-child')
       // animate
       if (ripple) {
         gsap.to(ripple, { opacity: 0, duration: Xt.vars.timeSmall, ease: 'quad.out', delay: Xt.vars.timeMini }).eventCallback('onComplete', () => {

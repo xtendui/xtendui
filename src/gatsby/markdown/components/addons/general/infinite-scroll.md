@@ -60,6 +60,23 @@ Listen to events on **DOM elements**.
 
 </div>
 
+## Properties
+
+Access properties by getting component object.
+
+<div class="table-scroll">
+
+|                         | Syntax                                   | Description                   |
+| ----------------------- | ---------------------------------------- | ----------------------------- |
+| Property                   | `object:Node`       | Object node             |
+| Property                   | `current:Number`       | Current page             |
+| Property                   | `scrollElement:Node`       | Scroll node             |
+| Property                   | `triggerElement:Node`       | Trigger node             |
+| Property                   | `resetElement:Node`       | Reset node             |
+| Property                   | `itemsElement:Node`       | Items node             |
+
+</div>
+
 ## Initialization
 
 Initialize automatically within markup with `[data-xt-infinite-scroll="{ <options> }"]` on the **object** (the DOM element you assigned the component).
