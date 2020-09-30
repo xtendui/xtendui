@@ -6,13 +6,6 @@ title: "API"
 date: "1980-05-05"
 ---
 
-## Demo
-
-<demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/overlay/events-methods">
-  </div>
-</demo>
-
 ## Util
 
 <div class="table-scroll">
@@ -22,38 +15,6 @@ date: "1980-05-05"
 | Object                   | `let self = Xt.get('xt-overlay', {DOM element})`       | `object` `elements` `targets` | Get object self for this component class             |
 
 </div>
-
-## Methods
-
-Call methods by getting component object.
-
-```js
-let self = Xt.get('xt-overlay', document.querySelector('#my-object'))
-self.destroy()
-self = null
-```
-
-<div class="table-scroll">
-
-|                         | Syntax                                    | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Method                  | `self.getElements(el:Node|null)`                          | Get all elements or all elements from element or target             |
-| Method                  | `self.getTargets(el:Nod|null)`                          | Get all targets from or all targets from element or target             |
-| Method                  | `self.getElementsGroups()`                          | Get elements (one per group)             |
-| Method                  | `self.getTargetsGroups()`                          | Get targets (one per group)             |
-| Method                  | `self.hasCurrent(el:Node)`                          | Returns `true` or `false` if element or target is activated             |
-| Method                  | `self.reinit(saveCurrents:Boolean)`       | Reinit component and save currents as initial (default: `true`)             |
-| Method                  | `self.restart()`                          | Restart component to initial             |
-| Method                  | `self.destroy(weak:Boolean)`              | Destroy component            |
-
-</div>
-
-You can get activated elements or targets with `hasCurrent`.
-
-```js
-self.elements.filter(x => self.hasCurrent(x))
-self.targets.filter(x => self.hasCurrent(x))
-```
 
 ## Trigger
 
@@ -145,3 +106,42 @@ const elements = self.elements
 | Property                  | `initial:Boolean`       | If initial or reset activation            |
 
 </div>
+
+## Methods
+
+Call methods by getting component object.
+
+```js
+let self = Xt.get('xt-overlay', document.querySelector('#my-object'))
+self.destroy()
+self = null
+```
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Method                  | `self.getElements(el:Node|null)`                          | Get all elements or all elements from element or target             |
+| Method                  | `self.getTargets(el:Nod|null)`                          | Get all targets from or all targets from element or target             |
+| Method                  | `self.getElementsGroups()`                          | Get elements (one per group)             |
+| Method                  | `self.getTargetsGroups()`                          | Get targets (one per group)             |
+| Method                  | `self.hasCurrent(el:Node)`                          | Returns `true` or `false` if element or target is activated             |
+| Method                  | `self.reinit(saveCurrents:Boolean)`       | Reinit component and save currents as initial (default: `true`)             |
+| Method                  | `self.restart()`                          | Restart component to initial             |
+| Method                  | `self.destroy(weak:Boolean)`              | Destroy component            |
+
+</div>
+
+You can get activated elements or targets with `hasCurrent`.
+
+```js
+self.elements.filter(x => self.hasCurrent(x))
+self.targets.filter(x => self.hasCurrent(x))
+```
+
+## Demo
+
+<demo>
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/overlay/events-methods">
+  </div>
+</demo>

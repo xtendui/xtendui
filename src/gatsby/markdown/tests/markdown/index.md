@@ -191,7 +191,6 @@ const test = 'test'
 
 ## Demo
 
-
 <demo>
   <div class="gatsby_demo-inline">
     <div class="gatsby_demo_item toggle gatsby_demo_preview" data-name="inline">
