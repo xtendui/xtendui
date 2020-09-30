@@ -72,9 +72,9 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 ## Markdown
 
-Use **tailwind classes** to create mouse follow.
+Use **tailwind classes** to create a mouse follow.
 
-Use **component's classes** to create mouse follow.
+Use **component's classes** to create a mouse follow.
 
 Use **component's classes** to assign size (e.g.: padding, font size).
 

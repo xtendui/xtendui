@@ -17,19 +17,19 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="h5 h-block">
+<div class="h5 h-block rounded-md bg-gray-200 text-center">
   Button
 </div>
 ${markupButton()}
-<div class="h5 h-block">
+<div class="h5 h-block rounded-md bg-gray-200 text-center">
   Drop
 </div>
 ${markupDrop()}
-<div class="h5 h-block">
+<div class="h5 h-block rounded-md bg-gray-200 text-center">
   Overlay
 </div>
 ${markupOverlay()}
-<div class="h5 h-block">
+<div class="h5 h-block rounded-md bg-gray-200 text-center">
   Card
 </div>
 ${markupCard()}

@@ -1250,17 +1250,6 @@ module.exports = theme => ({
         height: '100%',
       },
     },
-    // mousefollow
-    mousefollow: {
-      '.mouse-follow': {
-        pointerEvents: 'none',
-        position: 'fixed',
-        top: '0',
-        left: '0',
-        right: 'auto',
-        bottom: 'auto',
-      },
-    },
     // overlay
     overlay: {
       '.overlay': {
@@ -1811,6 +1800,41 @@ module.exports = theme => ({
       hr: {
         marginTop: theme('spacing.5'),
         marginBottom: theme('spacing.5'),
+      },
+    },
+  },
+  addons: {
+    // mousefollow
+    mousefollow: {
+      '.mouse-follow': {
+        pointerEvents: 'none',
+        position: 'fixed',
+        top: '0',
+        left: '0',
+        right: 'auto',
+        bottom: 'auto',
+      },
+    },
+    // ripple
+    ripple: {
+      '.ripple-container': {
+        // setup
+        overflow: 'hidden',
+        pointerEvents: 'none',
+        borderRadius: 'inherit',
+        position: 'absolute',
+        top: '0',
+        left: '0',
+        right: '0',
+        bottom: '0',
+        // styles
+        opacity: '.075',
+      },
+      '.ripple': {
+        // styles
+        position: 'absolute',
+        borderRadius: '50%',
+        background: theme('colors.black'),
       },
     },
   },

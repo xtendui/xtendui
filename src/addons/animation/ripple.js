@@ -68,7 +68,7 @@ class Ripple {
       const h = self.object.offsetHeight
       const w = self.object.offsetWidth
       const sizeObject = h > w ? h : w
-      const size = sizeObject * options.sizeFactor
+      const size = sizeObject * options.sizeInitial
       // scale from diagonal
       const sizeFinal = Math.sqrt(Math.pow(h, 2) + Math.pow(w, 2))
       const scaleFinal = (sizeFinal / size) * 2
@@ -156,7 +156,7 @@ class Ripple {
 Ripple.componentName = 'xt-ripple'
 Ripple.optionsDefault = {
   // ripple
-  sizeFactor: 0.1,
+  sizeInitial: 0.1,
   onlyInside: 'a, button, .btn',
 }
 

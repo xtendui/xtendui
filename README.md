@@ -181,6 +181,16 @@ module.exports = {
           },
         },
       },
+      addons: {
+        // disable addon
+        addonName: false,
+        // modify addon
+        addonName: {
+          '.selector': {
+            myStyle: 'myStyleValue',
+          },
+        },
+      },
     }),
   },
 }

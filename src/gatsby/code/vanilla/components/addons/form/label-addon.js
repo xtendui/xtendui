@@ -18,8 +18,8 @@ demo.htmlSource = `
           <a href="#" class="btn">
 
           </a>
-          <a href="#" class="btn btn-link">
-            btn-link
+          <a href="#" class="btn link">
+            link
           </a>
         </div>
       </div>
@@ -35,8 +35,8 @@ demo.htmlSource = `
           <a href="#" class="btn">
 
           </a>
-          <a href="#" class="btn btn-link">
-            btn-link
+          <a href="#" class="btn link">
+            link
           </a>
         </div>
       </div>

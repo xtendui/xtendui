@@ -11,11 +11,24 @@ module.exports = plugin.withOptions(() => {
      * components
      */
 
-    const cssBase = base(theme).components || {}
-    const cssCustom = custom.components || {}
-    for (const component of Object.keys(cssBase)) {
-      if (cssCustom[component] !== false) {
-        const css = merge(...castArray(cssBase[component] || {}), cssCustom[component] || {})
+    const componentsBase = base(theme).components || {}
+    const componentsCustom = custom.components || {}
+    for (const component of Object.keys(componentsBase)) {
+      if (componentsCustom[component] !== false) {
+        const css = merge(...castArray(componentsBase[component] || {}), componentsCustom[component] || {})
+        addComponents(css)
+      }
+    }
+
+    /**
+     * addons
+     */
+
+    const addonsBase = base(theme).addons || {}
+    const addonsCustom = custom.components || {}
+    for (const addon of Object.keys(addonsBase)) {
+      if (addonsCustom[addon] !== false) {
+        const css = merge(...castArray(addonsBase[addon] || {}), addonsCustom[addon] || {})
         addComponents(css)
       }
     }
