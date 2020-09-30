@@ -14,9 +14,14 @@ Xt.mount.push({
     // init
 
     let self = new Xt.ScrollToAnchor(object, {
-      scrollSpace: self => {
+      scrollElements: [
+        document.scrollingElement,
+        object.querySelector('.demo--scroll-to-anchor'),
+        object.querySelector('#demo--overlay-scroll-to-anchor'),
+      ],
+      scrollSpace: (self, scrollingElement) => {
         let scrollSpace = 0
-        if (self.scrollElementCurrent === document.scrollingElement) {
+        if (scrollingElement === document.scrollingElement) {
           const spaces = document.querySelectorAll('.xt-sticky.xt-clone')
           for (const space of spaces) {
             if (Xt.visible(space)) {

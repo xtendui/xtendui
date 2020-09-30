@@ -73,7 +73,7 @@ class MouseFollow {
       )
     }
     // listener dispatch
-    self.object.dispatchEvent(new CustomEvent('update.xt.mousefollow'))
+    self.object.dispatchEvent(new CustomEvent('change.xt.mousefollow'))
   }
 
   /**

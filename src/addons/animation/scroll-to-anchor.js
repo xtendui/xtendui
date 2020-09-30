@@ -216,7 +216,7 @@ class ScrollToAnchor {
           self.scrollDistance = options.scrollDistance(self, self.scrollElementCurrent)
           self.position = options.position(self, self.scrollElementCurrent)
           // check if activating
-          if (scrollTop >= self.position - self.scrollSpace - self.scrollDistance) {
+          if (scrollTop >= Math.floor(self.position - self.scrollSpace - self.scrollDistance)) {
             // loop multiple els of
             const matches = options.matches.replace('{hash}', loc.hash)
             const currents = els.filter(x => x.matches(matches))
@@ -287,7 +287,7 @@ ScrollToAnchor.optionsDefault = {
   // class
   class: 'active',
   // event
-  scrollDelay: 250,
+  scrollDelay: 200,
   // scroll
   position: (self, scrollingElement) => {
     const rect = self.target.getBoundingClientRect()

@@ -17,7 +17,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
   </div>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/block">
   </div>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/animation/scroll-to-anchor-nested">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/animation/scroll-to-anchor">
   </div>
   <demovanilla src="vanilla/components/core/slider/progress">
   </demovanilla>

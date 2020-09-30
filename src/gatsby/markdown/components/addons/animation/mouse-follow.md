@@ -84,7 +84,7 @@ Listen to events on **DOM elements**.
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Event                   | `on.xt.mousefollow`       | `object` | Activation event             |
 | Event                   | `off.xt.mousefollow`      | `object` | Deactivation event            |
-| Event                   | `update.xt.mousefollow`       | `object` | Update event             |
+| Event                   | `change.xt.mousefollow`       | `object` | Change event             |
 | Event                   | `init.xt.mousefollow`           | `object` | Init event             |
 | Event                   | `destroy.xt.mousefollow`           | `object` | Destroy event             |
 

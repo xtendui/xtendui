@@ -42,6 +42,7 @@ Listen to events on **DOM elements**.
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Event                   | `change.xt.googlelocator`           | `object` | Change event             |
 | Event                   | `init.xt.googlelocator`           | `object` | Init event             |
 | Event                   | `destroy.xt.googlelocator`           | `object` | Destroy event             |
 

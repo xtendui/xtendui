@@ -6,6 +6,8 @@ title: "propagate-interaction"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
+@TODO vedere se serve ancora
+
 <!--
 ```jsx
 import 'xtend-library/src/addons/animation/propagate-interaction'
