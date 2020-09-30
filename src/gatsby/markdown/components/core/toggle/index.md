@@ -15,13 +15,7 @@ Follow the [js installation](/introduction/getting-started/setup#js-installation
 Import the component's **js** file.
 
 ```jsx
-import 'xtend-library/src/core/toggle/toggle.js'
-```
-
-Or just import **core**.
-
-```jsx
-import 'xtend-library/src/xtend-core.js'
+import 'xtend-library/src/core/toggle'
 ```
 
 ## Usage

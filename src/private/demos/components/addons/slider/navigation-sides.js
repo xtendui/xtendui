@@ -1,1 +1,1 @@
-import 'xtend-library/src/addons/slider/navigation-sides.js'
+import 'xtend-library/src/addons/slider/navigation-sides'

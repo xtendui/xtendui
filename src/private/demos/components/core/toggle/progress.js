@@ -1,7 +1,7 @@
 
-import { Xt } from 'xtend-library/src/xt.js'
-import 'xtend-library/src/vars.js'
-import 'xtend-library/src/core/toggle/toggle.js'
+import { Xt } from 'xtend-library'
+import 'xtend-library/src/vars'
+import 'xtend-library/src/core/toggle'
 import gsap from 'gsap'
 
 Xt.mount.push({

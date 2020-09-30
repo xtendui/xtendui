@@ -1,5 +1,5 @@
-import { Xt } from 'xtend-library/src/xt.js'
-import 'xtend-library/src/addons/form/validation.js'
+import { Xt } from 'xtend-library'
+import 'xtend-library/src/addons/form/validation'
 
 Xt.mount.push({
   matches: '#iframe--validation body .custom-constrain',

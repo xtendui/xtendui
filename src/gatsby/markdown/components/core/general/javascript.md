@@ -11,7 +11,7 @@ date: "2050-05-05"
 In `/src/vars.js` there are js variables. Import it when you need animation's or other's variables:
 
 ```jsx
-import 'xtend-library/src/vars.js'
+import 'xtend-library/src/vars'
 ```
 
 And access the variables with `Xt.vars.<property>`.

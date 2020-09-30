@@ -154,7 +154,7 @@ You can use a function for <code>delayOn</code> and <code>delayOff</code> for ex
   </demovanilla>
 </demo>
 
-Use the [api](/components/extensions/slider/api#listen) and listen to events to make auto progress indicators.
+Use the [api](/components/core/slider/api#listen) and listen to events to make auto progress indicators.
 
 <demo>
   <demovanilla src="vanilla/components/core/toggle/progress">

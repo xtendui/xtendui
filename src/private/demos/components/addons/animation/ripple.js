@@ -1,6 +1,6 @@
-import { Xt } from 'xtend-library/src/xt.js'
-import 'xtend-library/src/vars.js'
-import 'xtend-library/src/addons/animation/ripple.js'
+import { Xt } from 'xtend-library'
+import 'xtend-library/src/vars'
+import 'xtend-library/src/addons/animation/ripple'
 import gsap from 'gsap'
 
 Xt.mount.push({

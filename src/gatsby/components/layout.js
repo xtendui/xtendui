@@ -8,12 +8,11 @@ import DocHead from 'components/includes/doc-head'
 import DocFoot from 'components/includes/doc-foot'
 import DocFullscreen from 'components/includes/doc-fullscreen'
 
-import { makeDocument } from 'assets/scripts/theme.js'
-import { populateBlock } from 'assets/scripts/demo.js'
+import { makeDocument } from 'assets/scripts/theme'
+import { populateBlock } from 'assets/scripts/demo'
 
 import 'assets/styles/icomoon/style.css'
 import 'assets/styles/theme.css'
-import 'assets/styles/theme.less'
 
 if (typeof window !== 'undefined' && window.self === window.top) {
   if (module.hot) {

@@ -23,13 +23,6 @@ class DocFoot extends React.Component {
         x.post.frontmatter.parent === page.post.frontmatter.parent &&
         x.post.frontmatter.title !== x.post.frontmatter.parent
     )
-    const postsExtensions = page.postsAll.posts.filter(
-      x =>
-        ['Components'].includes(x.post.frontmatter.type) &&
-        x.post.frontmatter.category === 'Extensions' &&
-        x.post.frontmatter.parent === page.post.frontmatter.parent &&
-        x.post.frontmatter.title !== x.post.frontmatter.parent
-    )
     const postsThemes = page.postsAll.posts.filter(
       x =>
         ['Themes'].includes(x.post.frontmatter.type) &&
@@ -63,21 +56,6 @@ class DocFoot extends React.Component {
                       <div className="h4">Visit the Core pages</div>
                       <p>
                         There {postsCore.length === 1 ? 'is' : 'are'} {postsCore.length} <strong>core pages</strong> for {page.post.frontmatter.parent}.
-                      </p>
-                    </div>
-                  </Link>
-                </div>
-              ) : null}
-
-              {page.post.frontmatter.category !== 'Extensions' && page.post.frontmatter.category !== 'Extensions' && postsExtensions.length ? (
-                <div className="gatsby_listing_column">
-                  <Link to={'/components/extensions/' + kebabCase(page.post.frontmatter.parent)} className="card gatsby_listing_item">
-                    <div className="card-design"></div>
-                    <div className="card-block card-block-md">
-                      <div className="h4">Visit the Extensions page</div>
-                      <p>
-                        There {postsExtensions.length === 1 ? 'is' : 'are'} {postsExtensions.length} <strong>extensions pages</strong> for{' '}
-                        {page.post.frontmatter.parent}.
                       </p>
                     </div>
                   </Link>

@@ -1,10 +1,10 @@
-import { Xt } from 'xtend-library/src/xt.js'
-import 'xtend-library/src/vars.js'
-import 'xtend-library/src/extensions/scroll/scroll.js'
-import 'xtend-library/src/extensions/sticky/sticky.js'
-import 'xtend-library/src/addons/animation/scroll-to-anchor.js'
+import { Xt } from 'xtend-library'
+import 'xtend-library/src/vars'
+import 'xtend-library/src/core/scroll'
+import 'xtend-library/src/core/sticky'
+import 'xtend-library/src/addons/animation/scroll-to-anchor'
 import gsap from 'gsap'
-import 'gsap/ScrollToPlugin.js'
+import 'gsap/ScrollToPlugin'
 
 /**
  * sticky

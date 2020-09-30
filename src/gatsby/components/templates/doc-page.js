@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 import RehypeReact from 'rehype-react'
-import { markdownSlug } from 'components/snippets/markdown-slug.js'
+import { markdownSlug } from 'components/snippets/markdown-slug'
 
 import SEO from 'components/seo'
 import Layout from 'components/layout'

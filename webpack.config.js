@@ -18,7 +18,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      // resolve xtend-library import js and less
+      // resolve xtend-library import js and css
       'xtend-library': path.resolve(__dirname, './'),
     },
   },

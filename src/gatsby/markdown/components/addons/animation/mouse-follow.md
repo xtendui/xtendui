@@ -36,11 +36,5 @@ Follow the [js installation](/introduction/getting-started/setup#js-installation
 Import the component's **js** file.
 
 ```jsx
-import 'xtend-library/src/addons/animation/mousefollow.js'
-```
-
-Or just import **extensions**.
-
-```jsx
-import 'xtend-library/src/xtend-addons.js'
+import 'xtend-library/src/addons/animation/mousefollow'
 ```

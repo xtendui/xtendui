@@ -1,6 +1,6 @@
-import { Xt } from 'xtend-library/src/xt.js'
-import 'xtend-library/src/vars.js'
-import 'xtend-library/src/extensions/slider/slider.js'
+import { Xt } from 'xtend-library'
+import 'xtend-library/src/vars'
+import 'xtend-library/src/core/slider'
 import gsap from 'gsap'
 
 /**

@@ -1,12 +1,11 @@
 import 'core-js'
-import { Xt } from 'xtend-library/src/xt.js'
-import 'xtend-library/src/xtend-core.js'
-import 'xtend-library/src/xtend-extensions.js'
-import 'xtend-library/src/xtend-addons.js'
-import 'xtend-library/src/xtend-demos.js'
-import 'xtend-library/src/vars.js'
+import { Xt } from 'xtend-library'
+import 'xtend-library/dist/xtend-core'
+import 'xtend-library/dist/xtend-addons'
+import 'xtend-library/dist/xtend-demos'
+import 'xtend-library/src/vars'
 import gsap from 'gsap'
-import 'gsap/ScrollToPlugin.js'
+import 'gsap/ScrollToPlugin'
 
 /**
  * favicon

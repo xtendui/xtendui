@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import { markdownSlug } from 'components/snippets/markdown-slug.js'
+import { markdownSlug } from 'components/snippets/markdown-slug'
 import logoIcon from 'assets/images/logo-white.svg'
 
 class DocSidebar extends React.Component {

@@ -1,8 +1,8 @@
-import { Xt } from 'xtend-library/src/xt.js'
-import 'xtend-library/src/vars.js'
-import 'xtend-library/src/addons/animation/scroll-to-anchor.js'
+import { Xt } from 'xtend-library'
+import 'xtend-library/src/vars'
+import 'xtend-library/src/addons/animation/scroll-to-anchor'
 import gsap from 'gsap'
-import 'gsap/ScrollToPlugin.js'
+import 'gsap/ScrollToPlugin'
 
 Xt.mount.push({
   matches: '#iframe--scroll-to-anchor body #gatsby_body-inner', // add your own selector instead of body to contain the code

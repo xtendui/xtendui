@@ -11,15 +11,15 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 <demo>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/toggle/events-methods">
   </div>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/slider/events-methods">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/slider/events-methods">
   </div>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/scroll/direction">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/direction">
   </div>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/extensions/scroll/block">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/block">
   </div>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/animation/scroll-to-anchor-nested">
   </div>
-  <demovanilla src="vanilla/components/extensions/slider/progress">
+  <demovanilla src="vanilla/components/core/slider/progress">
   </demovanilla>
   <demovanilla src="vanilla/components/core/toggle/timing">
   </demovanilla>
@@ -27,7 +27,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
   </demovanilla>
   <demovanilla src="vanilla/components/core/toggle/prevent-event">
   </demovanilla>
-  <demovanilla src="vanilla/components/extensions/slider/overflow-auto-false">
+  <demovanilla src="vanilla/components/core/slider/overflow-auto-false">
   </demovanilla>
 </demo>
 
@@ -76,7 +76,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 | To customize utils and components follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
 
 [[notePrimary]]
-| This addon uses [separator](/components/extensions/separator) components. Visit the component's webpages to customize them.
+| This addon uses [separator](/components/core/separator) components. Visit the component's webpages to customize them.
 
 <div class="table-scroll">
 

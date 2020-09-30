@@ -8,7 +8,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 <!--
 ```jsx
-import 'xtend-library/src/addons/animation/propagate-interaction.js'
+import 'xtend-library/src/addons/animation/propagate-interaction'
 ```
 
 <script type="text/plain" class="language-markup">

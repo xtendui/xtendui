@@ -15,13 +15,7 @@ Follow the [js installation](/introduction/getting-started/setup#js-installation
 Import the component's **js** file.
 
 ```jsx
-import 'xtend-library/src/addons/general/infinite-scroll.js'
-```
-
-Or just import **addons**.
-
-```jsx
-import 'xtend-library/src/xtend-addons.js'
+import 'xtend-library/src/addons/general/infinite-scroll'
 ```
 
 ## Usage

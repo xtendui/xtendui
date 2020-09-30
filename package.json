@@ -12,7 +12,7 @@
     "components",
     "vanilla"
   ],
-  "main": "src/tailwind-plugin.js",
+  "main": "src/xt.js",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },

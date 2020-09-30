@@ -15,7 +15,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
       alias: {
-        // resolve xtend-library import js and less
+        // resolve xtend-library import js and css
         'xtend-library': path.resolve(__dirname, './'),
         // https://github.com/gatsbyjs/gatsby/issues/11934
         'react-dom': '@hot-loader/react-dom',

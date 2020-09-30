@@ -99,28 +99,28 @@ module.exports = {
 }
 ```
 
+#### Xtend
+
+You need to import the **polyfills** and the **main js** file.
+
+```jsx
+import 'core-js'
+import { Xt } from 'xtend-library'
+```
+
+Then you can import the **components you need** as described in the docs:
+
+```jsx
+import 'xtend-library/src/core/toggle'
+import 'xtend-library/src/core/slider'
+```
+
 #### Gsap
 
 This library in the demos uses [gsap](https://github.com/greensock/GSAP) and [bezier-easing](https://github.com/gre/bezier-easing) for javascript animations.
 
 ```
 npm install gsap bezier-easing --save
-```
-
-#### Usage
-
-You need to import the **polyfills** and the **main js** file.
-
-```jsx
-import 'core-js'
-import 'xtend-library/src/xt.js'
-```
-
-Then you can import the **components you need** as described in the docs:
-
-```jsx
-import 'xtend-library/src/xtend-core.js'
-import 'xtend-library/src/extensions/slider/slider.js'
 ```
 
 ## Css Customization

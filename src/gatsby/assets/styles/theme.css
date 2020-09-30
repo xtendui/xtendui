@@ -9,7 +9,7 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
 @import "prismjs/plugins/unescaped-markup/prism-unescaped-markup.css";
 @import "prism-themes/themes/prism-base16-ateliersulphurpool.light.css";
-@import "xtend-library/src/xtend-demos.css";
+@import "xtend-library/dist/xtend-demos.css";
 @import "./_shared.css";
 @import "./_header.css";
 @import "./_footer.css";

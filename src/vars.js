@@ -1,6 +1,6 @@
-import { Xt } from 'xtend-library/src/xt.js'
+import { Xt } from 'xtend-library'
 import gsap from 'gsap'
-import { ScrollToPlugin } from 'gsap/ScrollToPlugin.js'
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 import bezierEasing from 'bezier-easing'
 
 //
