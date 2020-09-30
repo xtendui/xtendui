@@ -75,7 +75,7 @@ class Ripple {
       // offset (using clientX and clientY for touch so we need to get values with getBoundingClientRect also)
       let y
       let x
-      if (e.offsetX !== undefined) {
+      if (e.clientX !== undefined) {
         y = e.clientY
         x = e.clientX
       } else if (e.touches && e.touches.length) {
