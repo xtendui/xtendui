@@ -98,6 +98,7 @@ Access properties by getting component object.
 
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
+| Property                   | `options:Object`       | Final options             |
 | Property                   | `object:Node`       | Object node             |
 | Property                   | `targets:Array`       | Targets nodes            |
 

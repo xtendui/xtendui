@@ -100,6 +100,7 @@ const elements = self.elements
 
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
+| Property                   | `options:Object`       | Final options             |
 | Property                   | `object:Node`       | Object node             |
 | Property                   | `elements:Array`       | Elements nodes             |
 | Property                   | `targets:Array`       | Targets nodes            |

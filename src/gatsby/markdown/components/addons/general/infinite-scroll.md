@@ -68,6 +68,7 @@ Access properties by getting component object.
 
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
+| Property                   | `options:Object`       | Final options             |
 | Property                   | `object:Node`       | Object node             |
 | Property                   | `current:Number`       | Current page             |
 | Property                   | `scrollElement:Node`       | Scroll node             |
