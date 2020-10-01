@@ -1,9 +1,9 @@
 ---
 type: "Introduction"
-category: "Support"
+category: "Getting Started"
 parent: "Issues"
 title: "Issues"
 description: "Find solutions or report issues."
-date: "2000-10-10"
+date: "2050-10-30"
 link: "https://github.com/minimit/xtend-library/issues"
 ---

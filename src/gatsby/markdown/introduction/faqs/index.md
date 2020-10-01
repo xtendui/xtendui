@@ -1,8 +1,8 @@
 ---
 type: "Introduction"
-category: "Support"
+category: "Getting Started"
 parent: "Faqs"
 title: "Faqs"
 description: "Frequently asked questions."
-date: "2005-10-10"
+date: "2050-10-20"
 ---

@@ -4,7 +4,7 @@ category: "Getting Started"
 parent: "Setup"
 title: "Setup"
 description: "Setup and compilation instructions."
-date: "2050-01-01"
+date: "2050-10-10"
 ---
 
 ## Boilerplate
@@ -196,34 +196,32 @@ module.exports = {
     // xtend utilities and components in node_modules/xtend-library/src/tailwind-xtend.js
     xtend: theme => ({
       utilities: {
-        // disable utility
-        utilityName: false,
-        // modify utility
-        utilityName: {
-          '.selector': {
-            myStyle: 'myStyleValue',
+        core: {
+          // disable utility
+          utilityName: false,
+          // modify utility
+          utilityName: {
+            '.selector': {
+              myStyle: 'myStyleValue',
+            },
           },
         },
+        // disable addons
+        addons: false,
       },
       components: {
-        // disable component
-        componentName: false,
-        // modify component
-        componentName: {
-          '.selector': {
-            myStyle: 'myStyleValue',
+        core: {
+          // disable component
+          componentName: false,
+          // modify component
+          componentName: {
+            '.selector': {
+              myStyle: 'myStyleValue',
+            },
           },
         },
-      },
-      addons: {
-        // disable addon
-        addonName: false,
-        // modify addon
-        addonName: {
-          '.selector': {
-            myStyle: 'myStyleValue',
-          },
-        },
+        // disable addons
+        addons: false,
       },
     }),
   },

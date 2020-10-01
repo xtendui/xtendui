@@ -19,9 +19,11 @@ module.exports = {
   theme: require('xtend-library/src/tailwind-theme')({
     // xtend utilities and components in node_modules/xtend-library/src/tailwind-xtend.js
     xtend: theme => ({
-      addons: {
-        mousefollow: {
-          // modify component
+      components: {
+        addons: {
+          mousefollow: {
+            // modify component
+          },
         },
       },
     }),
@@ -43,9 +45,6 @@ import 'xtend-library/src/addons/animation/mousefollow'
 
 Use **component's classes** to create a mouse follow.
 
-[[notePrimary]]
-| This addon uses [loader component](/components/core/loader). Visit the component's webpages to customize them.
-
 <div class="table-scroll">
 
 |                      | Syntax                          | Mixin            | Description                   |
@@ -53,6 +52,9 @@ Use **component's classes** to create a mouse follow.
 | Component                  | `.mouse-follow`                     | `mouse-follow`                | Styles for mouse follow            |
 
 </div>
+
+[[noteDefault]]
+| This addon uses [loader component](/components/core/loader). Visit the component's webpages to customize them.
 
 <demo>
   <demovanilla src="vanilla/components/addons/animation/mouse-follow">

@@ -85,7 +85,7 @@ See [mouse follow addon](/components/core/loader) to create a loader with mouse 
 [[noteDefault]]
 | To customize utils and components follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
 
-[[notePrimary]]
+[[noteDefault]]
 | This addon uses [separator component](/components/core/separator). Visit the component's webpages to customize them.
 
 <div class="table-scroll">

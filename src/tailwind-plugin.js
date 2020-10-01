@@ -8,43 +8,43 @@ module.exports = plugin.withOptions(() => {
     const custom = theme(`xtend`, {})
 
     /**
-     * components
+     * components core
      */
 
-    const componentsBase = base(theme).components || {}
-    const componentsCustom = custom.components || {}
-    for (const component of Object.keys(componentsBase)) {
-      if (componentsCustom[component] !== false) {
-        const css = merge(...castArray(componentsBase[component] || {}), componentsCustom[component] || {})
+    const componentsCoreBase = base(theme).components.core || {}
+    const componentsCoreCustom = custom.components ? custom.components.core || {} : {}
+    for (const component of Object.keys(componentsCoreBase)) {
+      if (componentsCoreCustom[component] !== false) {
+        const css = merge(...castArray(componentsCoreBase[component] || {}), componentsCoreCustom[component] || {})
         addComponents(css)
       }
     }
 
     /**
-     * addons
+     * components addons
      */
 
-    const addonsBase = base(theme).addons || {}
-    const addonsCustom = custom.components || {}
-    for (const addon of Object.keys(addonsBase)) {
-      if (addonsCustom[addon] !== false) {
-        const css = merge(...castArray(addonsBase[addon] || {}), addonsCustom[addon] || {})
+    const componentsAddonsBase = base(theme).components.addons || {}
+    const componentsAddonsCustom = custom.components ? custom.components.addons || {} : {}
+    for (const addon of Object.keys(componentsAddonsBase)) {
+      if (componentsAddonsCustom[addon] !== false) {
+        const css = merge(...castArray(componentsAddonsBase[addon] || {}), componentsAddonsCustom[addon] || {})
         addComponents(css)
       }
     }
 
     /**
-     * utilities
+     * utilities core
      */
 
-    const utilitiesBase = base(theme).utilities || {}
-    const utilitiesCustom = custom.utilities || {}
-    for (const component of Object.keys(utilitiesBase)) {
-      if (utilitiesCustom[component] !== false) {
-        const options = merge(...castArray(utilitiesBase[component] || {}), utilitiesCustom[component] || {})
+    const utilitiesCoreBase = base(theme).utilities.core || {}
+    const utilitiesCoreCustom = custom.utilities ? custom.utilities.core || {} : {}
+    for (const component of Object.keys(utilitiesCoreBase)) {
+      if (utilitiesCoreCustom[component] !== false) {
+        const options = merge(...castArray(utilitiesCoreBase[component] || {}), utilitiesCoreCustom[component] || {})
         const utilities = Object.keys(options)
         for (const utility of utilities) {
-          if (utilitiesCustom[utility] !== false) {
+          if (utilitiesCoreCustom[utility] !== false) {
             if (component === 'list' && utility === 'space') {
               let css = {}
               Object.keys(options[utility]).forEach(name => {
@@ -105,8 +105,7 @@ module.exports = plugin.withOptions(() => {
               addUtilities(css, variants)
             } else {
               let css = {}
-              let value = options[utility]
-              css[utility] = value
+              css[utility] = options[utility]
               const variants = ['responsive']
               const hoverUtils = ['.text-default', '.text-inverse']
               if (hoverUtils.includes(utility)) {
@@ -114,6 +113,31 @@ module.exports = plugin.withOptions(() => {
               }
               addUtilities(css, variants)
             }
+          }
+        }
+      }
+    }
+
+    /**
+     * utilities addons
+     */
+
+    const utilitiesAddonsBase = base(theme).utilities.addons || {}
+    const utilitiesAddonsCustom = custom.utilities ? custom.utilities.addons || {} : {}
+    for (const component of Object.keys(utilitiesAddonsBase)) {
+      if (utilitiesAddonsCustom[component] !== false) {
+        const options = merge(...castArray(utilitiesAddonsBase[component] || {}), utilitiesAddonsCustom[component] || {})
+        const utilities = Object.keys(options)
+        for (const utility of utilities) {
+          if (utilitiesAddonsCustom[utility] !== false) {
+            let css = {}
+            css[utility] = options[utility]
+            const variants = ['responsive']
+            const hoverUtils = ['.text-default', '.text-inverse']
+            if (hoverUtils.includes(utility)) {
+              variants.push('hover')
+            }
+            addUtilities(css, variants)
           }
         }
       }

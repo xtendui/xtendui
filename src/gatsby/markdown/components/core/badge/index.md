@@ -20,8 +20,10 @@ module.exports = {
     // xtend utilities and components in node_modules/xtend-library/src/tailwind-xtend.js
     xtend: theme => ({
       components: {
-        badge: {
-          // modify component
+        core: {
+          badge: {
+            // modify component
+          },
         },
       },
     }),

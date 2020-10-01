@@ -18,7 +18,7 @@
     // variant
 
     .btn-default {
-      &:hover, &.hover {
+      &:hover {
         transform: translateY(-.25rem);
         box-shadow: @shadow-light;
       }
@@ -29,7 +29,7 @@
     }
 
     .btn-primary {
-      &:hover, &.hover {
+      &:hover {
         transform: translateY(-.25rem);
         box-shadow: @shadow-accent;
       }
@@ -43,7 +43,7 @@
 
     .btn {
       transition: all @time-tiny @ease-out;
-      &:hover, &.hover {
+      &:hover {
         transition: all @time-tiny @ease-in;
       }
       &:active, &.active {
@@ -177,7 +177,7 @@
     // variant
 
     a.card-default, label.card-default {
-      &:hover, &.hover {
+      &:hover {
         .card-design {
           box-shadow: @shadow-light;
         }
@@ -190,7 +190,7 @@
     }
 
     a.card-primary, label.card-primary {
-      &:hover, &.hover {
+      &:hover {
         .card-design {
           box-shadow: @shadow-accent;
         }
@@ -209,7 +209,7 @@
       .card-design {
         transition: all @time-sm @ease-out;
       }
-      &:hover, &.hover {
+      &:hover {
         transform: translateY(-.5rem);
         transition: all @time-sm @ease-in;
         .card-design {

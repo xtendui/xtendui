@@ -4,7 +4,7 @@ category: "Core"
 parent: "General"
 title: "General"
 description: "General components and utils."
-date: "2018-01-01"
+date: "2050-10-10"
 ---
 
 ## Setup
@@ -21,13 +21,17 @@ module.exports = {
     // xtend utilities and components in node_modules/xtend-library/src/tailwind-xtend.js
     xtend: theme => ({
       utilities: {
-        general: {
-          // modify utility
+        core: {
+          general: {
+            // modify utility
+          },
         },
       },
       components: {
-        general: {
-          // modify component
+        core: {
+          general: {
+            // modify component
+          },
         },
       },
     }),

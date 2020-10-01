@@ -20,13 +20,17 @@ module.exports = {
     // xtend utilities and components in node_modules/xtend-library/src/tailwind-xtend.js
     xtend: theme => ({
       utilities: {
-        overlay: {
-          // modify utility
+        core: {
+          drop: {
+            // modify utility
+          },
         },
       },
       components: {
-        overlay: {
-          // modify component
+        core: {
+          drop: {
+            // modify component
+          },
         },
       },
     }),

@@ -10,8 +10,8 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 Use **tailwind classes** to create breadcrumbs.
 
-[[notePrimary]]
-| This addon uses [separator component](/components/core/separator). Visit the component's webpages to customize them.
+[[noteDefault]]
+| This addon uses [separator component](/components/addons/separator). Visit the component's webpages to customize them.
 
 <demo>
   <demovanilla src="vanilla/components/addons/layout/breadcrumbs-usage">

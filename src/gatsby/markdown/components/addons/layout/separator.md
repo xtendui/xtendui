@@ -1,7 +1,7 @@
 ---
 type: "Components"
-category: "Core"
-parent: "Separator"
+category: "Addons"
+parent: "Layout"
 title: "Separator"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
@@ -20,8 +20,10 @@ module.exports = {
     // xtend utilities and components in node_modules/xtend-library/src/tailwind-xtend.js
     xtend: theme => ({
       components: {
-        separator: {
-          // modify component
+        addons: {
+          separator: {
+            // modify component
+          },
         },
       },
     }),
@@ -39,9 +41,28 @@ Use this markup to create a **separator**.
   </span>
 </script>
 
-Then add and [style content](/components/core/separator/content).
+Then add and [style content](/components/addons/separator/content).
 
 <demo>
-  <demovanilla src="vanilla/components/core/separator/usage">
+  <demovanilla src="vanilla/components/addons/separator/usage">
+  </demovanilla>
+</demo>
+
+## Type
+
+Use **tailwind classes** to assign styles (e.g.: margin, color).
+
+For `<type>` values use `dash`, `slash`, `pipe`, `point` or `arrow`.
+
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `.separator-<type>`                     | `separator-<type>`                | Separator content            |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/addons/separator/type">
   </demovanilla>
 </demo>
