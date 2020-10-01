@@ -7,20 +7,26 @@ description: "Setup and compilation instructions."
 date: "2050-01-01"
 ---
 
-## Css Installation
-
-This is the setup procedure for styles and javascript.
+## Boilerplate
 
 If you want we have some boilerplate projects to start a project all ready to go!
 
 * [xtend-theme-vanilla](https://github.com/minimit/xtend-theme-vanilla)
 
-#### Postcss
+## Css Installation
 
-Install **postcss** and **tailwind**.
+#### Tailwind
+
+Follow the instructions to [install tailwind](https://tailwindcss.com/docs/installation).
 
 ```Shell
-npm install postcss-import postcss-nesting tailwindcss --save-dev
+npm install tailwindcss --save-dev
+```
+
+Install **postcss import** and **postcss nesting**.
+
+```Shell
+npm install postcss-import postcss-nesting --save-dev
 ```
 
 Then in `postcss.config.js` set up compilation.
@@ -36,9 +42,19 @@ module.exports = {
 }
 ```
 
-#### Tailwind
+Then you can use css with tailwind.
 
-Follow the instructions to [install tailwind](https://tailwindcss.com/docs/installation).
+```css
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "./custom.css"; /* custom code here */
+
+@import "tailwindcss/utilities";
+```
+
+#### Xtend
 
 Install **xtend**.
 
@@ -65,16 +81,16 @@ module.exports = {
     applyComplexClasses: true,
     extendedSpacingScale: true,
     defaultLineHeights: true,
+    removeDeprecatedGapUtilities: true,
   },
 }
 ```
 
 ## Js Installation
 
-You need to install [json5](https://www.npmjs.com/package/json5), [core-js](https://www.npmjs.com/package/core-js), [@babel/core](https://www.npmjs.com/package/@babel/core), [@babel/preset-env](https://www.npmjs.com/package/@babel/preset-env), [babel-plugin-module-resolver](https://www.npmjs.com/package/babel-plugin-module-resolver).
+You need to install [core-js](https://www.npmjs.com/package/core-js), [@babel/core](https://www.npmjs.com/package/@babel/core), [@babel/preset-env](https://www.npmjs.com/package/@babel/preset-env), [@babel/plugin-transform-runtime](https://www.npmjs.com/package/@babel/plugin-transform-runtime), [babel-plugin-module-resolver](https://www.npmjs.com/package/babel-plugin-module-resolver).
 
 ```Shell
-npm install json5 --save
 npm install core-js@3 @babel/core @babel/preset-env @babel/plugin-transform-runtime babel-plugin-module-resolver --save-dev
 ```
 
@@ -145,13 +161,11 @@ npm install gsap bezier-easing --save
 
 ## Css Customization
 
-To **customize the options** provided by this plugin, use [tailwind theme configuration](https://tailwindcss.com/docs/theme) in the theme section of your `tailwind.config.js` file.
-
-To **see the default values** see the source code of `node_modules/xtend-library/src/tailwind-theme.js`.
+To **customize the theme** use [tailwind theme configuration](https://tailwindcss.com/docs/theme) in the theme section of your `tailwind.config.js` file, with this special format that merges your configuration with xtend configuration..
 
 ```jsx
 module.exports = {
-  theme: {
+  theme: require('xtend-library/src/tailwind-theme')({
     // extend theme in node_modules/xtend-library/src/tailwind-theme.js
     extend: {
       colors: {
@@ -172,13 +186,13 @@ module.exports = {
 }
 ```
 
-To **customize the styles** provided by this plugin, add your overrides under the **xtend key** in the theme section of your `tailwind.config.js` file.
+To **see the xtend theme options** see the source code of `node_modules/xtend-library/src/tailwind-theme.js`.
 
-To **see the default values** see the source code of `node_modules/xtend-library/src/tailwind-xtend.js`.
+To **customize the utilities and components** add your overrides under the **xtend key** in the theme section of your `tailwind.config.js` file, with this special format that merges your configuration with xtend configuration..
 
 ```jsx
 module.exports = {
-  theme: {
+  theme: require('xtend-library/src/tailwind-theme')({
     // xtend utilities and components in node_modules/xtend-library/src/tailwind-xtend.js
     xtend: theme => ({
       utilities: {
@@ -216,6 +230,8 @@ module.exports = {
 }
 ```
 
+To **see the default values** see the source code of `node_modules/xtend-library/src/tailwind-xtend.js`.
+
 ## Browser support
 
 Supported browsers are as follow: **chrome 38**, **safari 10**, **ios 10**, **firefox 38**, **edge 12**, **opera 25**.
@@ -227,7 +243,7 @@ We use [gatsby](https://www.npmjs.com/package/gatsby) to serve the docs:
 * Install required npm packages with `npm install`
 * Use `npm run build` to build the docs in `/public`
 * Use `npm run dev` to serve a develop version
-* Use `npm run serve`to serve a production version
+* Use `npm run serve` to serve a production version
 
 ## Copyright
 
