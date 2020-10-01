@@ -12,6 +12,12 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 Follow the [js installation](/introduction/getting-started/setup#js-installation) instructions.
 
+Install also `@google/markerclusterer`.
+
+```Shell
+npm install @google/markerclusterer --save
+```
+
 Import the component's **js** file.
 
 ```jsx

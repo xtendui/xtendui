@@ -67,10 +67,10 @@ You need to install [json5](https://www.npmjs.com/package/json5), [core-js](http
 
 ```Shell
 npm install json5 --save
-npm install core-js@3 @babel/core @babel/preset-env babel-plugin-module-resolver --save-dev
+npm install core-js@3 @babel/core @babel/preset-env @babel/plugin-transform-runtime babel-plugin-module-resolver --save-dev
 ```
 
-Then in `babel.config.js` set up polyfills.
+Then in the root of your project set up polyfills with `babel.config.js`.
 
 ```jsx
 const path = require('path')
@@ -86,6 +86,7 @@ module.exports = {
     ],
   ],
   plugins: [
+    [require.resolve('@babel/plugin-transform-runtime')],
     [
       require.resolve('babel-plugin-module-resolver'),
       {
@@ -97,6 +98,17 @@ module.exports = {
     ],
   ],
 }
+```
+
+You need also to set a `.browserslistrc` in the root of your project.
+
+```
+Chrome >= 38
+Safari >= 10
+iOS >= 10
+Firefox >= 38
+Edge >= 12
+Opera >= 25
 ```
 
 #### Xtend
@@ -198,7 +210,7 @@ module.exports = {
 
 ## Browser support
 
-Supported browsers are as follow: **explorer 12**, **firefox 38**, **opera 25**, **safari 10**, **chrome 38**.
+Supported browsers are as follow: **chrome 38**, **safari 10**, **ios 10**, **firefox 38**, **edge 12**, **opera 25**.
 
 ## Documentation
 
