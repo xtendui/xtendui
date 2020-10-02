@@ -51,7 +51,7 @@ addEventListener('scroll', e => {
 You can also manually specify a **custom delay**, for instant use `delay: 0`.
 
 ```js
-dispatchEvent(new CustomEvent('resize', { detail: {delay: 0 } }))
+dispatchEvent(new CustomEvent('resize', { detail: { delay: 0 } }))
 ```
 
 #### Resize Force

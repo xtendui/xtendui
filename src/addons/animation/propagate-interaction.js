@@ -60,7 +60,7 @@ class PropagateInteraction {
     const self = this
     for (const tr of self.targets) {
       tr.classList.add('hover')
-      tr.dispatchEvent(new CustomEvent('mouseenter'))
+      tr.dispatchEvent(new Event('mouseenter'))
     }
   }
 
@@ -71,7 +71,7 @@ class PropagateInteraction {
     const self = this
     for (const tr of self.targets) {
       tr.classList.remove('hover')
-      tr.dispatchEvent(new CustomEvent('mouseleave'))
+      tr.dispatchEvent(new Event('mouseleave'))
     }
   }
 
@@ -82,7 +82,7 @@ class PropagateInteraction {
     const self = this
     for (const tr of self.targets) {
       tr.classList.add('active')
-      tr.dispatchEvent(new CustomEvent('mousedown'))
+      tr.dispatchEvent(new Event('mousedown'))
     }
   }
 
@@ -93,10 +93,10 @@ class PropagateInteraction {
     const self = this
     for (const tr of self.targets) {
       if (isClick) {
-        tr.dispatchEvent(new CustomEvent('click'))
+        tr.dispatchEvent(new Event('click'))
       } else {
         tr.classList.remove('active')
-        tr.dispatchEvent(new CustomEvent('mouseup'))
+        tr.dispatchEvent(new Event('mouseup'))
       }
     }
   }
