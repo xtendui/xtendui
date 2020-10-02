@@ -61,6 +61,9 @@ module.exports = function (custom = {}) {
         overlay: '900',
         last: '1000',
       },
+      inset: {
+        '100': '100%',
+      },
       transitionTimingFunction: {
         in: 'cubic-bezier(.25,.46,.45,.94)', // outQuad
         out: 'cubic-bezier(.455,.03,.515,.955)', // inOutQuad

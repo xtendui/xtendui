@@ -1,7 +1,7 @@
 ---
 type: "Components"
 category: "Addons"
-parent: "Layout"
+parent: "General"
 title: "Breadcrumbs"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
@@ -14,7 +14,7 @@ Use **tailwind classes** to create breadcrumbs.
 | This addon uses [separator](/components/addons/separator). Visit the component's webpages to customize them.
 
 <demo>
-  <demovanilla src="vanilla/components/addons/layout/breadcrumbs-usage">
+  <demovanilla src="vanilla/components/addons/general/breadcrumbs-usage">
   </demovanilla>
 </demo>
 
@@ -53,6 +53,6 @@ Use markup to add **json-ld** metadata to **breadcrumb**.
 Use **tailwind classes** to add title and background.
 
 <demo>
-  <demovanilla src="vanilla/components/addons/layout/background-title">
+  <demovanilla src="vanilla/components/addons/general/background-title">
   </demovanilla>
 </demo>

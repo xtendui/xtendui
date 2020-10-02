@@ -43,7 +43,7 @@ demo.htmlSource = `
     <div class="overlay-inner">
 
       <div class="card items-center justify-center">
-        <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
+        <div class="btn btn-close p-5" aria-label="Close"><span class="icon-close"></span></div>
         <div class="max-w-3xl">
 
           <div class="card ${cardStickyDefault()}" id="anchor-overlay-0">

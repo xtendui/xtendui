@@ -120,7 +120,7 @@ demo.htmlSource = `
                         <div class="overlay-design"></div>
                         <div class="card card-overlay">
                           <div class="card-design"></div>
-                          <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
+                          <div class="btn btn-close p-5" aria-label="Close"><span class="icon-close"></span></div>
                           <div class="card-inner">
                             <div class="card-content">
                               <div class="card-asset">

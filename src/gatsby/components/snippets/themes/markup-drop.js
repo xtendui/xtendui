@@ -39,7 +39,7 @@ export default () => {
 
           <div class="card card-drop">
             <div class="card-design"></div>
-            <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
+            <div class="btn btn-close p-5" aria-label="Close"><span class="icon-close"></span></div>
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">

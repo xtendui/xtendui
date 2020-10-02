@@ -22,7 +22,7 @@ demo.htmlSource = `
         <div class="overlay-inner">
 
           <div class="card ${cardDefaultOverlayScreen()} items-center justify-center">
-            <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
+            <div class="btn btn-close p-5" aria-label="Close"><span class="icon-close"></span></div>
             <div class="card-asset">
               ${img({ classes: 'object-cover object-center', ratio: '100%' })}
             </div>
@@ -42,7 +42,7 @@ demo.htmlSource = `
         <div class="overlay-inner">
 
           <div class="card ${cardDefaultOverlayScreen()} items-center justify-center">
-            <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
+            <div class="btn btn-close p-5" aria-label="Close"><span class="icon-close"></span></div>
             <div class="max-w-3xl">
               <div class="card-block card-block-lg">
                 <div class="h3">Lorem ipsum</div>
@@ -68,7 +68,7 @@ demo.htmlSource = `
         <div class="overlay-inner">
 
           <div class="card ${cardDefaultOverlayScreen()} items-center justify-center">
-            <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
+            <div class="btn btn-close p-5" aria-label="Close"><span class="icon-close"></span></div>
             <div class="max-w-3xl">
               <div class="sm:card-group">
                 <div class="card-block card-block-md sm:w-7/12">

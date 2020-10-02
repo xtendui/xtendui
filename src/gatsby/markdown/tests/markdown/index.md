@@ -76,6 +76,8 @@ Use markup to create a **card**.
 
 Then add and [style content](/components/core/loader/content#spinner).
 
+Use **javascript** to create a ripple.
+
 Use **tailwind classes** to create a mouse follow.
 
 Use **component classes** to create a mouse follow.

@@ -22,7 +22,7 @@ demo.htmlSource = `
     <div class="drop">
       <div class="drop-inner">
         <div class="card card-md ${cardDefaultDrop()}">
-          <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
+          <div class="btn btn-close p-5" aria-label="Close"><span class="icon-close"></span></div>
           <div class="card-asset rounded-md">
             ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
           </div>
@@ -41,7 +41,7 @@ demo.htmlSource = `
     <div class="drop">
       <div class="drop-inner">
         <div class="card card-md ${cardDefaultDrop()}">
-          <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
+          <div class="btn btn-close p-5" aria-label="Close"><span class="icon-close"></span></div>
           <div class="card-asset rounded-t-md">
             ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
           </div>

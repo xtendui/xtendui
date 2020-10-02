@@ -676,8 +676,6 @@ module.exports = theme => ({
           '& + *': {
             margin: '0 !important',
           },
-          // styles
-          padding: `${theme('spacing.5')}`,
         },
       },
       // card

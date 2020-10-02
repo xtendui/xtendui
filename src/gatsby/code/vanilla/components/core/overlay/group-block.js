@@ -22,7 +22,7 @@ demo.htmlSource = `
       <div class="overlay-inner">
 
         <div class="card ${cardDefaultOverlay()}">
-          <div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div>
+          <div class="btn btn-close p-5" aria-label="Close"><span class="icon-close"></span></div>
           <div class="sm:card-group">
             <div class="card-block card-block-md sm:w-7/12 bg-gray-400 sm:rounded-tl-md">
               <div class="h3">Lorem ipsum</div>
