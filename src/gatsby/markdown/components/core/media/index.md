@@ -33,7 +33,7 @@ module.exports = {
 
 ## Usage
 
-Use this markup to create a **media**.
+Use markup to create a **media**.
 
 <script type="text/plain" class="language-markup">
   <div class="media-container" style="padding-bottom: 37.5%;">

@@ -37,7 +37,7 @@ Elements listens to events, targets and inners are activated on events.
 
 #### Self
 
-Use this markup to create a **self toggle**.
+Use markup to create a **self toggle**.
 
 <script type="text/plain" class="language-markup">
   <button type="button" data-xt-toggle>
@@ -52,7 +52,7 @@ Use this markup to create a **self toggle**.
 
 #### Unique
 
-Use this markup to create a **unique toggle**.
+Use markup to create a **unique toggle**.
 
 The **unique** mode is useful when triggering **targets outside the scope** of the component.
 
@@ -78,7 +78,7 @@ The **unique** mode is useful when triggering **targets outside the scope** of t
 
 #### Multiple
 
-Use this markup to create **multiple toggle**.
+Use markup to create **multiple toggle**.
 
 <script type="text/plain" class="language-markup">
   <div data-xt-toggle="{ elements: '.my-elements', targets: '.my-targets' }">

@@ -1,7 +1,6 @@
 import { Xt } from 'xtend-library'
 import 'xtend-library/src/vars'
 import 'xtend-library/src/core/slider'
-import 'xtend-library/src/addons/slider/navigation-sides'
 import 'xtend-library/src/addons/animation/propagate-interaction'
 import gsap from 'gsap'
 

@@ -50,7 +50,7 @@ import 'xtend-library/src/core/sticky'
 
 ## Usage
 
-Use this markup to create a **sticky**.
+Use markup to create a **sticky**.
 
 <script type="text/plain" class="language-markup">
   <div data-xt-xticky>

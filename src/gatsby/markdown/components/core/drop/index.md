@@ -67,7 +67,7 @@ Elements listens to events, targets and inners are activated on events.
 
 #### Self
 
-Use this markup to create a **self drop**.
+Use markup to create a **self drop**.
 
 <script type="text/plain" class="language-markup">
   <div class="drop-container" data-xt-drop>
@@ -94,7 +94,7 @@ Then add and [style content](/components/core/drop/content-list).
 
 #### Unique
 
-Use this markup to create a **unique drop**.
+Use markup to create a **unique drop**.
 
 The **unique** mode is useful when triggering **targets outside the scope** of the component.
 
@@ -126,7 +126,7 @@ Then add and [style content](/components/core/drop/content-list).
 
 #### Multiple
 
-Use this markup to create **multiple drop**.
+Use markup to create **multiple drop**.
 
 <script type="text/plain" class="language-markup">
   <div data-xt-drop="{ elements: ':scope > .drop-container', targets: ':scope > .drop-container > .drop' }">

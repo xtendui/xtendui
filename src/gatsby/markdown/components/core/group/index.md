@@ -24,7 +24,7 @@ module.exports = {
 
 #### Button
 
-Use this markup to create a **button group as line**.
+Use markup to create a **button group as line**.
 
 <script type="text/plain" class="language-markup">
   <div class="group">
@@ -40,7 +40,7 @@ Use this markup to create a **button group as line**.
   </div>
 </script>
 
-Use this markup to create a button group as stack.
+Use markup to create a **button group as stack**.
 
 <script type="text/plain" class="language-markup">
   <div class="group">
@@ -66,7 +66,7 @@ Use this markup to create a button group as stack.
 
 #### Input
 
-Use this markup to create a input group as line.
+Use markup to create a **input group as line**.
 
 <script type="text/plain" class="language-markup">
 <form>
@@ -88,7 +88,7 @@ Use this markup to create a input group as line.
 </form>
 </script>
 
-Use this markup to create a input group as stack.
+Use markup to create a **input group as stack**.
 
 <script type="text/plain" class="language-markup">
 <form>

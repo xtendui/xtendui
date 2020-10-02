@@ -33,7 +33,7 @@ module.exports = {
 
 ## Usage
 
-Use this markup to create a **button**.
+Use markup to create a **button**.
 
 <script type="text/plain" class="language-markup">
   <button type="button" class="btn">

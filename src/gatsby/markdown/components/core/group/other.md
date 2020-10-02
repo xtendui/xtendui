@@ -21,7 +21,7 @@ Use `.full` to have full width fluid group. Use `.group-inner.flex-auto` to expa
 
 You can merge buttons in a single interactive object.
 
-Use this markup to merge multiple `.btn` in one `[button]` as line.
+Use markup to merge multiple `.btn` in one `[button]` as line.
 
 [[notePrimary]]
 | Needs [propagate-interaction](/components/addons/animation/propagate-interaction) extension
@@ -44,7 +44,7 @@ Use this markup to merge multiple `.btn` in one `[button]` as line.
   </button>
 </script>
 
-Use this markup to merge multiple `.btn` in one `[button]` as stack.
+Use markup to merge multiple `.btn` in one `[button]` as stack.
 
 <script type="text/plain" class="language-markup">
   <button type="button" class="group">

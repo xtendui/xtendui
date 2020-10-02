@@ -1,7 +1,7 @@
+/**
+* multilevel
+
 .demo--multilevel {
-  /**
-  * multilevel
-  */
   .multilevel-title-wrapper {
     .full();
     .margin(y, layout) !important;
@@ -49,3 +49,5 @@
     }
   }
 }
+
+*/

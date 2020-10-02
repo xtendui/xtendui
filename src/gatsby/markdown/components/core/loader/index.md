@@ -33,7 +33,7 @@ module.exports = {
 
 ## Usage
 
-Use this markup to create a **spinner loader**.
+Use markup to create a **spinner loader**.
 
 <script type="text/plain" class="language-markup">
   <div class="loader">
@@ -50,7 +50,7 @@ Use this markup to create a **spinner loader**.
 
 Then add and [style content](/components/core/loader/content#spinner).
 
-Use this markup to create a **filler loader**.
+Use markup to create a **filler loader**.
 
 <script type="text/plain" class="language-markup">
   <span class="loader">

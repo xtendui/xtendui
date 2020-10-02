@@ -20,7 +20,7 @@ import 'xtend-library/src/core/scroll'
 
 ## Usage
 
-Use this markup to create a **scroll**.
+Use markup to create a **scroll**.
 
 <script type="text/plain" class="language-markup">
   <div data-xt-scroll="{ elements: <Query> }">

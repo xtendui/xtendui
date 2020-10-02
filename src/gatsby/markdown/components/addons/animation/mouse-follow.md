@@ -43,7 +43,7 @@ import 'xtend-library/src/addons/animation/mousefollow'
 
 ## Usage
 
-Use **component's classes** to create a mouse follow.
+Use **component classes** to create a mouse follow.
 
 <div class="table-scroll">
 
@@ -54,7 +54,7 @@ Use **component's classes** to create a mouse follow.
 </div>
 
 [[noteDefault]]
-| This addon uses [loader component](/components/core/loader). Visit the component's webpages to customize them.
+| This addon uses [loader](/components/core/loader). Visit the component's webpages to customize them.
 
 <demo>
   <demovanilla src="vanilla/components/addons/animation/mouse-follow">

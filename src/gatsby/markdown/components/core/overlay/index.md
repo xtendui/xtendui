@@ -70,7 +70,7 @@ Elements listens to events, targets and inners are activated on events.
 
 #### Self
 
-Use this markup to create a **overlay** in **self mode**.
+Use markup to create a **overlay** in **self mode**.
 
 <script type="text/plain" class="language-markup">
   <div data-xt-overlay>
@@ -99,7 +99,7 @@ Then add and [style content](/components/core/overlay/content).
 
 #### Unique
 
-Use this markup to create a **overlay** in **unique mode**.
+Use markup to create a **overlay** in **unique mode**.
 
 The **unique** mode is useful when triggering **targets outside the scope** of the component.
 
@@ -130,7 +130,7 @@ Then add and [style content](/components/core/overlay/content).
 
 #### Standalone
 
-Use this markup to create a **overlay** in **standalone mode**.
+Use markup to create a **overlay** in **standalone mode**.
 
 Just use the class `active-overlay` if you want to automatically open, or use the [api](/components/core/overlay/api)
 

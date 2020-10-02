@@ -33,7 +33,7 @@ module.exports = {
 
 ## Usage
 
-Use this markup to create a form **label** and **input**.
+Use markup to create a form **label** and **input**.
 
 <script type="text/plain" class="language-markup">
   <form>
@@ -44,7 +44,7 @@ Use this markup to create a form **label** and **input**.
   </form>
 </script>
 
-Use this markup to create a form **checkbox or radio**.
+Use markup to create a form **checkbox or radio**.
 
 <script type="text/plain" class="language-markup">
   <form>
@@ -60,7 +60,7 @@ Use this markup to create a form **checkbox or radio**.
   </form>
 </script>
 
-Use this markup to create a form **checkbox or radio switches**.
+Use markup to create a form **checkbox or radio switches**.
 
 <script type="text/plain" class="language-markup">
   <form>

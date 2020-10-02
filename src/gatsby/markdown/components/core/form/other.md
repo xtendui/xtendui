@@ -8,7 +8,7 @@ date: "2005-10-10"
 
 ## Other
 
-Use **component's classes** to create `fieldset` and `legend`.
+Use **component classes** to create `fieldset` and `legend`.
 
 <div class="table-scroll">
 

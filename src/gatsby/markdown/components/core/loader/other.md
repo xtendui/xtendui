@@ -46,7 +46,7 @@ Example loader filler show and hide **with javascript and css transitions**.
 
 ## Mouse
 
-Use **component's classes** to create a loader positioned for mouse.
+Use **component classes** to create a loader positioned for mouse.
 
 <div class="table-scroll">
 

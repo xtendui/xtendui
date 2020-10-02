@@ -11,14 +11,14 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 Use **tailwind classes** to create breadcrumbs.
 
 [[noteDefault]]
-| This addon uses [separator component](/components/addons/separator). Visit the component's webpages to customize them.
+| This addon uses [separator](/components/addons/separator). Visit the component's webpages to customize them.
 
 <demo>
   <demovanilla src="vanilla/components/addons/layout/breadcrumbs-usage">
   </demovanilla>
 </demo>
 
-Use this markup to add **json-ld** metadata to **breadcrumb**.
+Use markup to add **json-ld** metadata to **breadcrumb**.
 
 ```html
 <script type="application/ld+json">

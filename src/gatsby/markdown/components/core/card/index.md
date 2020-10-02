@@ -40,7 +40,7 @@ module.exports = {
 
 ## Usage
 
-Use this markup to create a **card**.
+Use markup to create a **card**.
 
 <script type="text/plain" class="language-markup">
   <div class="card">

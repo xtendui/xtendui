@@ -2,11 +2,15 @@
 type: "Components"
 category: "Addons"
 parent: "Typography"
-title: "ul-check"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+title: "custom-list"
+description: "Custom ordered and unordered lists."
 ---
 
+## Usage
+
+Examples of **custom lists**.
+
 <demo>
-  <demovanilla src="vanilla/components/addons/typography/ul-check">
+  <demovanilla src="vanilla/components/addons/typography/list-check">
   </demovanilla>
 </demo>

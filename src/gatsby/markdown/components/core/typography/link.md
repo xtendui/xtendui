@@ -8,7 +8,7 @@ date: "1990-10-10"
 
 ## Usage
 
-Use this markup to create a **link**.
+Use markup to create a **link**.
 
 <script type="text/plain" class="language-markup">
   <a href="#">

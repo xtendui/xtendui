@@ -32,7 +32,7 @@ module.exports = {
 ```
 ## Usage
 
-Use this markup to create a **badge**.
+Use markup to create a **badge**.
 
 <script type="text/plain" class="language-markup">
   <div class="badge">

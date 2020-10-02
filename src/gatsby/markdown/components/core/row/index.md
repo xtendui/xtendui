@@ -40,7 +40,7 @@ module.exports = {
 
 ## Usage
 
-Use this markup to create a **row**.
+Use markup to create a **row**.
 
 <script type="text/plain" class="language-markup">
   <div class="row">

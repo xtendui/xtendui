@@ -17,9 +17,7 @@ date: "2050-10-10"
 | Util                  | `.mb-lc`                     | `mb-lc`                | `responsive`                | Reset margin bottom on `:last-child`            |
 | Util                  | `.toggle`                     | `toggle`                | `responsive`                | Toggle `display: none` on `.active` and `.out`            |
 | Util                  | `.toggle-inverse`                     | `toggle-inverse`                | `responsive`                | Toggle `display: none` on `.done`         |
-| Util                  | `.transform-none`                     | `transform-none`                | `responsive`                | Disable transform            |
 | Util                  | `.duration-none`                     | `duration-none`                | `responsive`                | Instant transitions and animations            |
-
 
 </div>
 

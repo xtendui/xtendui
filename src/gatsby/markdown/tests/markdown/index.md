@@ -72,11 +72,15 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 ## Markdown
 
+Use markup to create a **card**.
+
+Then add and [style content](/components/core/loader/content#spinner).
+
 Use **tailwind classes** to create a mouse follow.
 
-Use **component's classes** to create a mouse follow.
+Use **component classes** to create a mouse follow.
 
-Use **component's classes** to assign size (e.g.: padding, font size).
+Use **component classes** to assign size (e.g.: padding, font size).
 
 See [group component](/components/core/loader) to create a button with group.
 
@@ -86,7 +90,7 @@ See [mouse follow addon](/components/core/loader) to create a loader with mouse 
 | To customize utils and components follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
 
 [[noteDefault]]
-| This addon uses [separator component](/components/core/separator). Visit the component's webpages to customize them.
+| This addon uses [separator](/components/core/separator). Visit the component's webpages to customize them.
 
 <div class="table-scroll">
 

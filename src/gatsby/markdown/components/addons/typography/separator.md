@@ -1,7 +1,7 @@
 ---
 type: "Components"
 category: "Addons"
-parent: "Layout"
+parent: "Typography"
 title: "Separator"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
@@ -41,7 +41,22 @@ Use this markup to create a **separator**.
   </span>
 </script>
 
-Then add and [style content](/components/addons/separator/content).
+Use **component classes** to create a separator.
+
+[[noteDefault]]
+| To customize utils and components follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
+
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `.separator-dash`                     | `separator-dash`                | Separator with dash            |
+| Component                  | `.separator-slash`                     | `separator-slash`                | Separator with slash            |
+| Component                  | `.separator-pipe`                     | `separator-pipe`                | Separator with pipe            |
+| Component                  | `.separator-point`                     | `separator-point`                | Separator with point            |
+| Component                  | `.separator-arrow`                     | `separator-arrow`                | Separator with arrow            |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/addons/separator/usage">

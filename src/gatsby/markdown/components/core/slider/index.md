@@ -50,7 +50,7 @@ import 'xtend-library/src/core/slider'
 
 ## Usage
 
-Use this markup to create a **slider**.
+Use markup to create a **slider**.
 
 <script type="text/plain" class="language-markup">
   <div class="slider" data-xt-slider>

@@ -8,7 +8,7 @@ date: "2030-03-03"
 
 ## Row
 
-Use **component's classes** to assign [row spacing](/components/core/row/content#space).
+Use **component classes** to assign [row spacing](/components/core/row/content#space).
 
 Use **tailwind classes** to assign column size (e.g.: width).
 
@@ -28,7 +28,7 @@ Inline Row mode with `w-auto`.
 
 ## Horizontal
 
-Use **component's classes** to assign [row spacing](/components/core/row/content#space).
+Use **component classes** to assign [row spacing](/components/core/row/content#space).
 
 Use **tailwind classes** to assign column size.
 

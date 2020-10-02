@@ -40,7 +40,7 @@ module.exports = {
 
 ## Usage
 
-Use this markup to create a **horizontal list**.
+Use markup to create a **horizontal list**.
 
 <script type="text/plain" class="language-markup">
   <nav class="list">
@@ -48,7 +48,7 @@ Use this markup to create a **horizontal list**.
   </nav>
 </script>
 
-Use this markup to create a **vertical list**.
+Use markup to create a **vertical list**.
 
 <script type="text/plain" class="language-markup">
   <nav class="list-block">
