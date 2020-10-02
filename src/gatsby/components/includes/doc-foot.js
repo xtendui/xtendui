@@ -13,8 +13,7 @@ class DocFoot extends React.Component {
       x =>
         ['Components'].includes(x.post.frontmatter.type) &&
         x.post.frontmatter.category === 'Core' &&
-        x.post.frontmatter.parent === page.post.frontmatter.parent &&
-        x.post.frontmatter.title !== x.post.frontmatter.parent
+        x.post.frontmatter.parent === page.post.frontmatter.parent
     )
     const postsAddons = page.postsAll.posts.filter(
       x =>
@@ -34,14 +33,14 @@ class DocFoot extends React.Component {
         <div className="gatsby_listing_group">
           <div className="gatsby_listing_items">
             <div className="row row-space-2 lg:row-space-4 row-stretch">
-              {page.post.frontmatter.type !== 'Introduction' && postsIntroduction.length ? (
+              {page.post.frontmatter.type !== 'Introduction' && postsIntroduction ? (
                 <div className="gatsby_listing_column">
                   <Link to={'/introduction'} className="card gatsby_listing_item">
                     <div className="card-design"></div>
                     <div className="card-block card-block-md">
                       <div className="h5">Setup or other problems?</div>
                       <p>
-                        Visit the <strong>Introduction</strong> page.
+                        Check out the <strong>Introductions pages</strong>.
                       </p>
                     </div>
                   </Link>
@@ -55,7 +54,8 @@ class DocFoot extends React.Component {
                     <div className="card-block card-block-md">
                       <div className="h4">Visit the Core pages</div>
                       <p>
-                        There {postsCore.length === 1 ? 'is' : 'are'} {postsCore.length} <strong>core pages</strong> for {page.post.frontmatter.parent}.
+                        There {postsCore.length === 1 ? 'is' : 'are'} {postsCore.length} <strong>core page{postsAddons.length === 1 ? '' : 's'}</strong> for{' '}
+                        {page.post.frontmatter.parent}.
                       </p>
                     </div>
                   </Link>
@@ -69,7 +69,8 @@ class DocFoot extends React.Component {
                     <div className="card-block card-block-md">
                       <div className="h4">Visit the Addons page</div>
                       <p>
-                        There {postsAddons.length === 1 ? 'is' : 'are'} {postsAddons.length} <strong>addon pages</strong> for {page.post.frontmatter.parent}.
+                        There {postsAddons.length === 1 ? 'is' : 'are'} {postsAddons.length} <strong>addon page{postsAddons.length === 1 ? '' : 's'}</strong>{' '}
+                        for {page.post.frontmatter.parent}.
                       </p>
                     </div>
                   </Link>
@@ -83,7 +84,8 @@ class DocFoot extends React.Component {
                     <div className="card-block card-block-md">
                       <div className="h4">Visit the Theme page</div>
                       <p>
-                        There {postsThemes.length === 1 ? 'is' : 'are'} {postsThemes.length} <strong>themes</strong> for {page.post.frontmatter.parent}.
+                        There {postsThemes.length === 1 ? 'is' : 'are'} {postsThemes.length} <strong>theme{postsAddons.length === 1 ? '' : 's'}</strong> for{' '}
+                        {page.post.frontmatter.parent}.
                       </p>
                     </div>
                   </Link>
