@@ -10,9 +10,7 @@ description: "Css component to group up buttons and form inputs."
 
 #### Css
 
-Follow the [css installation](/introduction/getting-started/setup#css-installation) instructions.
-
-To customize this component in your `tailwind.config.js` file, as described in [css customization](/introduction/getting-started/setup#css-customization) instructions, use the keys like below.
+Follow the [css installation](/introduction/getting-started/setup#css-installation) instructions. To [customize styles](/introduction/getting-started/setup#css-customization) in your `tailwind.config.js` file.
 
 ```jsx
 module.exports = {
@@ -20,53 +18,29 @@ module.exports = {
 }
 ```
 
+To **see the default values** see the source code of `node_modules/xtend-library/src/tailwind-xtend.js`.
+
 ## Usage
 
 #### Button
 
-Use markup to create a **button group as line**.
-
-<script type="text/plain" class="language-markup">
-  <div class="group">
-
-    <button type="button" class="btn btn-default">
-      <!-- content -->
-    </button>
-
-    <button type="button" class="btn btn-default">
-      <!-- content -->
-    </button>
-
-  </div>
-</script>
-
-Use markup to create a **button group as stack**.
-
-<script type="text/plain" class="language-markup">
-  <div class="group">
-
-    <div class="group-inner">
-      <button type="button" class="btn btn-default">
-        <!-- content -->
-      </button>
-      <button type="button" class="btn btn-default">
-        <!-- content -->
-      </button>
-    </div>
-
-  </div>
-</script>
+Use this code to create a **button group as line**.
 
 <demo>
   <demovanilla src="vanilla/components/core/group/button-line">
   </demovanilla>
+</demo>
+
+Use this code to create a **button group as stack**.
+
+<demo>
   <demovanilla src="vanilla/components/core/group/button-stack">
   </demovanilla>
 </demo>
 
 #### Input
 
-Use markup to create a **input group as line**.
+Use this code to create a **input group as line**.
 
 <script type="text/plain" class="language-markup">
 <form>
@@ -88,7 +62,7 @@ Use markup to create a **input group as line**.
 </form>
 </script>
 
-Use markup to create a **input group as stack**.
+Use this code to create a **input group as stack**.
 
 <script type="text/plain" class="language-markup">
 <form>

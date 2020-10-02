@@ -2,8 +2,7 @@ export default () => {
   return `
 <div class="list list-space-2 items-center">
 
-  <form class="form-default flex-full"
-        data-xt-toggle="{ elements: '.form-group > .btn', targets: '.group' }">
+  <form class="form-default flex-full" data-xt-toggle="{ elements: '.form-group > .btn', targets: '.group' }">
     <div class="form-group">
       <button type="button" class="btn btn-primary">
         group

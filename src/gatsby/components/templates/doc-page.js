@@ -30,7 +30,7 @@ class Template extends React.Component {
         {data.post.htmlAst !== '<div></div>' ? renderAst(data.post.htmlAst) : null}
 
         {data.post.frontmatter.parent === data.post.frontmatter.title ? (
-          data.postsAdiacent.posts.length ? (
+          data.postsAdiacent.posts.length > 1 ? (
             <div className="gatsby_listing">
               <div className="row row-space-3">
                 <div className="gatsby_listing_group">

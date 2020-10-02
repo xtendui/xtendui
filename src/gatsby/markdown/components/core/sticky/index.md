@@ -8,11 +8,18 @@ description: "Sticky elements with complex interactions."
 
 ## Setup
 
+#### Javascript
+
+Follow the [js installation](/introduction/getting-started/setup#js-installation) instructions and **import the component javascript** file.
+
+```jsx
+import { Xt } from 'xtend-library'
+import 'xtend-library/src/core/sticky'
+```
+
 #### Css
 
-Follow the [css installation](/introduction/getting-started/setup#css-installation) instructions.
-
-To customize this component in your `tailwind.config.js` file, as described in [css customization](/introduction/getting-started/setup#css-customization) instructions, use the keys like below.
+Follow the [css installation](/introduction/getting-started/setup#css-installation) instructions. To [customize styles](/introduction/getting-started/setup#css-customization) in your `tailwind.config.js` file.
 
 ```jsx
 module.exports = {
@@ -38,62 +45,12 @@ module.exports = {
 }
 ```
 
-#### Javascript
-
-Follow the [js installation](/introduction/getting-started/setup#js-installation) instructions.
-
-Import the component's **js** file.
-
-```jsx
-import 'xtend-library/src/core/sticky'
-```
+To **see the default values** see the source code of `node_modules/xtend-library/src/tailwind-xtend.js`.
 
 ## Usage
 
-Use markup to create a **sticky**.
+Use this code to create a **sticky**.
 
-<script type="text/plain" class="language-markup">
-  <div data-xt-xticky>
-    <div>
-      <!-- content -->
-    </div>
-  </div>
-</script>
+@TODO
 
-[[notePrimary]]
-| It's recomended to style and animate a inner div <code>[data-xt-xticky] > div</code> when using <strong>sticky component</strong>.
-
-## Initialization
-
-Initialize automatically within markup with `[data-xt-sticky="{ <options> }"]` on the **object** (the DOM element you assigned the component).
-
-Or initialize with **javascript**.
-
-```js
-let self = new Xt.Sticky(document.querySelector('#my-object'), {
-  // options
-})
-```
-
-Or inizialize with **mutation observer**.
-
-```js
-Xt.mount.push({
-  matches: '#my-object',
-  mount: object => {
-    // init
-
-    let self = new Xt.Sticky(object, {
-      // options
-    })
-
-    // unmount
-
-    const unmount = () => {
-      self.destroy()
-      self = null
-    }
-    return unmount
-  }
-})
-```
+Check subpage to [customize interaction](/components/core/sticky/interaction).

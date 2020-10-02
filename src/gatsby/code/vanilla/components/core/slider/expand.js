@@ -10,8 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="slider demo--slider-expand"
-    data-xt-slider>
+<div class="slider demo--slider-expand" data-xt-slider>
 ${indentString(markupSlider(), 2)}
 </div>
 `

@@ -10,8 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-space-2 items-center"
-     data-xt-toggle="{ min: 1, preventEvent: true }">
+<div class="list list-space-2 items-center" data-xt-toggle="{ min: 1, preventEvent: true }">
 
   <a href="#toggle--prevent-event-0" class="btn btn-md ${btnDefault()}">
     Toggle 0
@@ -33,8 +32,7 @@ demo.htmlSource = `
 
 <br/>
 
-<div class="list list-space-2 items-center"
-     data-xt-toggle="{ min: 1, on: 'mouseenter', off: 'mouseleave', preventEvent: true }">
+<div class="list list-space-2 items-center" data-xt-toggle="{ min: 1, on: 'mouseenter', off: 'mouseleave', preventEvent: true }">
 
   <a href="#toggle--prevent-event-1-hover" class="btn btn-md ${btnDefault()}">
     Toggle 1 hover

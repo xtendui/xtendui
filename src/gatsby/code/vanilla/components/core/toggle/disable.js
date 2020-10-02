@@ -10,8 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-space-2 items-center xt-disable"
-     data-xt-toggle>
+<div class="list list-space-2 items-center xt-disable" data-xt-toggle>
 
   <button type="button" class="btn btn-md ${btnDefault()}">
     Toggle 0
@@ -33,8 +32,7 @@ demo.htmlSource = `
 
 <br/>
 
-<div class="list list-space-2 items-center xt-disable-after-init"
-     data-xt-toggle>
+<div class="list list-space-2 items-center xt-disable-after-init" data-xt-toggle>
 
   <button type="button" class="btn btn-md ${btnDefault()}">
     Toggle 0

@@ -10,9 +10,7 @@ description: "Simple and extensible button styles."
 
 #### Css
 
-Follow the [css installation](/introduction/getting-started/setup#css-installation) instructions.
-
-To customize this component in your `tailwind.config.js` file, as described in [css customization](/introduction/getting-started/setup#css-customization) instructions, use the keys like below.
+Follow the [css installation](/introduction/getting-started/setup#css-installation) instructions. To [customize styles](/introduction/getting-started/setup#css-customization) in your `tailwind.config.js` file.
 
 ```jsx
 module.exports = {
@@ -31,27 +29,15 @@ module.exports = {
 }
 ```
 
+To **see the default values** see the source code of `node_modules/xtend-library/src/tailwind-xtend.js`.
+
 ## Usage
 
-Use markup to create a **button**.
-
-<script type="text/plain" class="language-markup">
-  <button type="button" class="btn">
-    <!-- content -->
-  </button>
-  
-  <a href="#" class="btn">
-    <!-- content -->
-  </a>
-  
-  <a role="button" class="btn">
-    <!-- content -->
-  </a>
-</script>
-
-Then add and [style content](/components/core/button/content).
+Use this code to create a **button**.
 
 <demo>
   <demovanilla src="vanilla/components/core/button/usage">
   </demovanilla>
 </demo>
+
+Check subpage to [customize content](/components/core/button/content).

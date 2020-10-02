@@ -8,11 +8,18 @@ description: "Highly customizable dropdowns that can contain anything you want."
 
 ## Setup
 
+#### Javascript
+
+Follow the [js installation](/introduction/getting-started/setup#js-installation) instructions and **import the component javascript** file.
+
+```jsx
+import { Xt } from 'xtend-library'
+import 'xtend-library/src/core/drop'
+```
+
 #### Css
 
-Follow the [css installation](/introduction/getting-started/setup#css-installation) instructions.
-
-To customize this component in your `tailwind.config.js` file, as described in [css customization](/introduction/getting-started/setup#css-customization) instructions, use the keys like below.
+Follow the [css installation](/introduction/getting-started/setup#css-installation) instructions. To [customize styles](/introduction/getting-started/setup#css-customization) in your `tailwind.config.js` file.
 
 ```jsx
 module.exports = {
@@ -38,21 +45,11 @@ module.exports = {
 }
 ```
 
-#### Javascript
-
-Follow the [js installation](/introduction/getting-started/setup#js-installation) instructions.
-
-Import the component's **js** file.
-
-```jsx
-import 'xtend-library/src/core/drop'
-```
+To **see the default values** see the source code of `node_modules/xtend-library/src/tailwind-xtend.js`.
 
 ## Usage
 
-Pass **elements** and **targets** options if different from defaults.
-
-Elements listens to events, targets and inners are activated on events.
+Pass **elements** and **targets** options if different from defaults. **Elements** listens to events, **targets and inners** activate on events.
 
 <div class="table-scroll">
 
@@ -67,139 +64,38 @@ Elements listens to events, targets and inners are activated on events.
 
 #### Self
 
-Use markup to create a **self drop**.
-
-<script type="text/plain" class="language-markup">
-  <div class="drop-container" data-xt-drop>
-  
-    <button type="button">
-      <!-- content -->
-    </button>
-    
-    <div class="drop">
-      <div class="drop-inner">
-        <!-- content -->
-      </div>
-    </div>
-    
-  </div>
-</script>
-
-Then add and [style content](/components/core/drop/content-list).
+Use this code to create a **self drop**.
 
 <demo>
   <demovanilla src="vanilla/components/core/drop/usage-self">
   </demovanilla>
 </demo>
 
+Check subpage to [customize interaction](/components/core/drop/interaction) and [customize lists](/components/core/drop/content-list) or [customize card](/components/core/drop/content-card).
+
 #### Unique
 
-Use markup to create a **unique drop**.
+Use this code to create a **unique drop**.
 
 The **unique** mode is useful when triggering **targets outside the scope** of the component.
 
 [[notePrimary]]
 | To activate **unique mode** you **need** to specify targets with **#id**.
 
-<script type="text/plain" class="language-markup">
-  <button type="button" data-xt-drop="{ targets: '#drop--unique' }">
-    <!-- content -->
-  </button>
-  
-  <div class="drop-container">
-
-    <div class="drop" id="drop--unique">
-      <div class="drop-inner">
-        <!-- content -->
-      </div>
-    </div>
-    
-  </div>
-</script>
-
-Then add and [style content](/components/core/drop/content-list).
-
 <demo>
   <demovanilla src="vanilla/components/core/drop/usage-unique">
   </demovanilla>
 </demo>
 
+Check subpage to [customize interaction](/components/core/drop/interaction) and [customize lists](/components/core/drop/content-list) or [customize card](/components/core/drop/content-card).
+
 #### Multiple
 
-Use markup to create **multiple drop**.
-
-<script type="text/plain" class="language-markup">
-  <div data-xt-drop="{ elements: ':scope > .drop-container', targets: ':scope > .drop-container > .drop' }">
-  
-    <div class="drop-container">
-    
-      <button type="button">
-        <!-- content -->
-      </button>
-      
-      <div class="drop">
-        <div class="drop-inner">
-          <!-- content -->
-        </div>
-      </div>
-      
-    </div>
-    
-    <div class="drop-container">
-    
-      <button type="button">
-        <!-- content -->
-      </button>
-      
-      <div class="drop">
-        <div class="drop-inner">
-          <!-- content -->
-        </div>
-      </div>
-      
-    </div>
-    
-  </div>
-</script>
-
-Then add and [style content](/components/core/drop/content-list).
+Use this code to create **multiple drop**.
 
 <demo>
   <demovanilla src="vanilla/components/core/drop/usage-multiple">
   </demovanilla>
 </demo>
 
-## Initialization
-
-Initialize automatically within markup with `[data-xt-drop="{ <options> }"]` on the **object** (the DOM element you assigned the component).
-
-Or initialize with **javascript**.
-
-```js
-let self = new Xt.Drop(document.querySelector('#my-object'), {
-  // options
-})
-```
-
-Or inizialize with **mutation observer**.
-
-```js
-Xt.mount.push({
-  matches: '#my-object',
-  mount: object => {
-    // init
-
-    let self = new Xt.Drop(object, {
-      // options
-    })
-
-    // unmount
-
-    const unmount = () => {
-      self.destroy()
-      self = null
-    }
-    return unmount
-  }
-})
-```
+Check subpage to [customize interaction](/components/core/drop/interaction) and [customize lists](/components/core/drop/content-list) or [customize card](/components/core/drop/content-card).

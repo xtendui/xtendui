@@ -42,40 +42,35 @@ demo.htmlSource = `
                   <div class="product-page_images">
                     <div class="list-block">
                       <a href="#product-image-overlay-0" class="product-page_image">
-                        <div class="media-container media-container-responsive"
-                          data-xt-overlay="{ targets: '#overlay--product-page_images' }">
+                        <div class="media-container media-container-responsive" data-xt-overlay="{ targets: '#overlay--product-page_images' }">
                           <div class="media-inner">
                             <img class="media" id="product-image-0" src="/img.svg" loading="lazy" alt=""/>
                           </div>
                         </div>
                       </a>
                       <a href="#product-image-overlay-1" class="product-page_image">
-                        <div class="media-container media-container-responsive"
-                          data-xt-overlay="{ targets: '#overlay--product-page_images' }">
+                        <div class="media-container media-container-responsive" data-xt-overlay="{ targets: '#overlay--product-page_images' }">
                           <div class="media-inner">
                             <img class="media" id="product-image-1" src="/img.svg" loading="lazy" alt=""/>
                           </div>
                         </div>
                       </a>
                       <a href="#product-image-overlay-3" class="product-page_image">
-                        <div class="media-container media-container-responsive"
-                          data-xt-overlay="{ targets: '#overlay--product-page_images' }">
+                        <div class="media-container media-container-responsive" data-xt-overlay="{ targets: '#overlay--product-page_images' }">
                           <div class="media-inner">
                             <img class="media" id="product-image-2" src="/img.svg" loading="lazy" alt=""/>
                           </div>
                         </div>
                       </a>
                       <a href="#product-image-overlay-4" class="product-page_image">
-                        <div class="media-container media-container-responsive"
-                          data-xt-overlay="{ targets: '#overlay--product-page_images' }">
+                        <div class="media-container media-container-responsive" data-xt-overlay="{ targets: '#overlay--product-page_images' }">
                           <div class="media-inner">
                             <img class="media" id="product-image-3" src="/img.svg" loading="lazy" alt=""/>
                           </div>
                         </div>
                       </a>
                       <a href="#product-image-overlay-4" class="product-page_image">
-                        <div class="media-container media-container-responsive"
-                          data-xt-overlay="{ targets: '#overlay--product-page_images' }">
+                        <div class="media-container media-container-responsive" data-xt-overlay="{ targets: '#overlay--product-page_images' }">
                           <div class="media-inner">
                             <img class="media" id="product-image-4" src="/img.svg" loading="lazy" alt=""/>
                           </div>

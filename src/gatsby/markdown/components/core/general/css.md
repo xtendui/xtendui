@@ -8,6 +8,8 @@ date: "2050-10-10"
 
 ## Utils
 
+Use **component utilities** for general purpose.
+
 <div class="table-scroll">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
@@ -22,6 +24,8 @@ date: "2050-10-10"
 </div>
 
 ## Components
+
+Use **component classes** for general purpose.
 
 <div class="table-scroll">
 

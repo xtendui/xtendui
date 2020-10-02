@@ -28,9 +28,6 @@ Use **tailwind classes** to modify variants for interactive animations.
 
 Use **component classes** to assign size (e.g.: padding, font size).
 
-[[noteDefault]]
-| To customize utils and components follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
-
 <demo>
   <demovanilla src="vanilla/components/core/card/size-full">
   </demovanilla>

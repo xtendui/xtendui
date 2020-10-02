@@ -14,8 +14,7 @@ import 'xtend-library/src/addons/animation/propagate-interaction'
 ```
 
 <script type="text/plain" class="language-markup">
-  <button type="button"
-    data-xt-propagate-interaction="{ targets: '.btn' }">
+  <button type="button" data-xt-propagate-interaction="{ targets: '.btn' }">
     <div class="btn btn-primary">
       propagate interactions here
     </div>

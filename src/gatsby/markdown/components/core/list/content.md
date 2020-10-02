@@ -8,8 +8,6 @@ date: "2030-10-10"
 
 ## Space
 
-Use **list space utils** to space row's content horizontally and vertically. If you **omit spacing utilities** classes the list have **no space**. 
-
 For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/customizing-spacing).
 
 <div class="table-scroll">

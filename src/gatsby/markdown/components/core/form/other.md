@@ -19,9 +19,6 @@ Use **component classes** to create `fieldset` and `legend`.
 
 </div>
 
-[[noteDefault]]
-| To customize utils and components follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
-
 Use **tailwind classes** to create a note.
 
 <demo>
@@ -77,9 +74,6 @@ Use **component classes** to style validation.
 | Component                  | `.form-invalid`                     | `form-invalid`                | Validation invalid class            |
 
 </div>
-
-[[noteDefault]]
-| To customize utils and components follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
 
 <demo>
   <demovanilla src="vanilla/components/core/form/validation">

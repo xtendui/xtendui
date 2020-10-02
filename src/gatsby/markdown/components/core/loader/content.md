@@ -29,11 +29,19 @@ Use `.spinner-animated` to assing spinner animation.
 
 ## Filler
 
-Use **tailwind classes** to assign variant (e.g.: background, opacity).
+#### Direction
 
-Use `.loader-<direction>-animated` to assing filler animation.
+Use **component classes** to assign direction. For `<direction>` values use `x` or `y`.
 
-For `<direction>` values use `x` or `y`.
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `.loader-<direction>`                     | `loader-<direction>`                | Loader direction for filler            |
+
+</div>
+
+Use `.loader-<direction>-animated` to assing filler animation. For `<direction>` values use `x` or `y`.
 
 <div class="table-scroll">
 
@@ -43,17 +51,7 @@ For `<direction>` values use `x` or `y`.
 
 </div>
 
-#### Direction
-
-For `<direction>` values use `x` or `y`.
-
-<div class="table-scroll">
-
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.loader-<direction>`                     | `loader-<direction>`                | Loader direction for filler            |
-
-</div>
+Use **tailwind classes** to assign variant (e.g.: background, opacity).
 
 <demo>
   <demovanilla src="vanilla/components/core/loader/filler-x">

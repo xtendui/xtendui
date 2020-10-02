@@ -174,6 +174,27 @@ module.exports = theme => ({
           bottom: 'auto',
         },
       },
+      // link
+      link: {
+        '.text-default': {
+          // use @apply text to have tailwind opacity utilities
+          'a:not([class]), .link': {
+            '@apply text-accent-500': '',
+            '&:hover, &:active, &.active': {
+              '@apply text-accent-600': '',
+            },
+          },
+        },
+        '.text-inverse': {
+          // use @apply text to have tailwind opacity utilities
+          'a:not([class]), .link': {
+            '@apply text-white': '',
+            '&:hover, &:active, &.active': {
+              '@apply text-white': '',
+            },
+          },
+        },
+      },
       // list
       list: {
         space: {
@@ -298,22 +319,12 @@ module.exports = theme => ({
       // typography
       typography: {
         '.text-default': {
+          // use @apply text to have tailwind opacity utilities
           '@apply text-accent-900': '',
-          'a:not([class]), .link': {
-            '@apply text-accent-500': '',
-            '&:hover, &:active, &.active': {
-              '@apply text-accent-600': '',
-            },
-          },
         },
         '.text-inverse': {
+          // use @apply text to have tailwind opacity utilities
           '@apply text-white': '',
-          'a:not([class]), .link': {
-            '@apply text-white': '',
-            '&:hover, &:active, &.active': {
-              '@apply text-white': '',
-            },
-          },
         },
         '.text-reset': {
           fontFamily: 'inherit',
@@ -993,6 +1004,23 @@ module.exports = theme => ({
           },
         },
       },
+      // link
+      link: {
+        'a:not([class]), .link': {
+          // setup
+          '@apply text-reset !important': {},
+          wordWrap: 'break-word',
+          overflowWrap: 'break-word',
+          textDecoration: 'underline',
+          // animation
+          transitionProperty: 'color',
+          transitionDuration: theme('transitionDuration.500'),
+          transitionTimingFunction: theme('transitionTimingFunction.ease.out'),
+          '&:hover, &:active, &.active': {
+            transitionTimingFunction: theme('transitionTimingFunction.ease.in'),
+          },
+        },
+      },
       // list
       list: {
         '.list': {
@@ -1613,20 +1641,6 @@ module.exports = theme => ({
           },
           '@screen xl': {
             fontSize: rem(16),
-          },
-        },
-        'a:not([class]), .link': {
-          // setup
-          '@apply text-reset !important': {},
-          wordWrap: 'break-word',
-          overflowWrap: 'break-word',
-          textDecoration: 'underline',
-          // animation
-          transitionProperty: 'color',
-          transitionDuration: theme('transitionDuration.500'),
-          transitionTimingFunction: theme('transitionTimingFunction.ease.out'),
-          '&:hover, &:active, &.active': {
-            transitionTimingFunction: theme('transitionTimingFunction.ease.in'),
           },
         },
         'h1, .h1': {

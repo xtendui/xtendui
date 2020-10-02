@@ -10,8 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="slider"
-    data-xt-slider="{ drag: { wrap: true } }">
+<div class="slider" data-xt-slider="{ drag: { wrap: true } }">
 ${indentString(markupSlider(), 2)}
 </div>
 `

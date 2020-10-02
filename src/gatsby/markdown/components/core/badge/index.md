@@ -10,9 +10,7 @@ description: "Badge component for showing very short messages."
 
 #### Css
 
-Follow the [css installation](/introduction/getting-started/setup#css-installation) instructions.
-
-To customize this component in your `tailwind.config.js` file, as described in [css customization](/introduction/getting-started/setup#css-customization) instructions, use the keys like below.
+Follow the [css installation](/introduction/getting-started/setup#css-installation) instructions. To [customize styles](/introduction/getting-started/setup#css-customization) in your `tailwind.config.js` file.
 
 ```jsx
 module.exports = {
@@ -30,19 +28,16 @@ module.exports = {
   })
 }
 ```
+
+To **see the default values** see the source code of `node_modules/xtend-library/src/tailwind-xtend.js`.
+
 ## Usage
 
-Use markup to create a **badge**.
-
-<script type="text/plain" class="language-markup">
-  <div class="badge">
-    <!-- content -->
-  </div>
-</script>
-
-Then add and [style content](/components/core/badge/content).
+Use this code to create a **badge**.
 
 <demo>
   <demovanilla src="vanilla/components/core/badge/usage">
   </demovanilla>
 </demo>
+
+Check subpage to [customize content](/components/core/badge/content).

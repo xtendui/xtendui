@@ -17,32 +17,31 @@ Use **tailwind classes** to assign variant (e.g.: background, opacity).
   </demovanilla>
 </demo>
 
-## Interaction
+## Activation
 
-Example loader spinner show and hide **with javascript and css transitions**.
+Use **component classes** to assign loader activation animation. 
+
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `.loader-animated`                     | `loader-animated`                | Loader activation animation            |
+
+</div>
+
+Example loader spinner with activation animation*.
 
 <demo>
   <demovanilla src="vanilla/components/core/loader/js-spinner">
   </demovanilla>
 </demo>
 
-Example loader filler show and hide **with javascript and css transitions**.
+Example loader filler with activation animation.
 
 <demo>
   <demovanilla src="vanilla/components/core/loader/js-filler">
   </demovanilla>
 </demo>
-
-[[noteDefault]]
-| To customize utils and components follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
-
-<div class="table-scroll">
-
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.loader-animated`                     | `loader-animated`                | Loader activation and animation            |
-
-</div>
 
 ## Mouse
 

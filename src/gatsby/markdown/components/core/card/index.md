@@ -10,9 +10,7 @@ description: "Generic component to display content in a box."
 
 #### Css
 
-Follow the [css installation](/introduction/getting-started/setup#css-installation) instructions.
-
-To customize this component in your `tailwind.config.js` file, as described in [css customization](/introduction/getting-started/setup#css-customization) instructions, use the keys like below.
+Follow the [css installation](/introduction/getting-started/setup#css-installation) instructions. To [customize styles](/introduction/getting-started/setup#css-customization) in your `tailwind.config.js` file.
 
 ```jsx
 module.exports = {
@@ -38,29 +36,22 @@ module.exports = {
 }
 ```
 
+To **see the default values** see the source code of `node_modules/xtend-library/src/tailwind-xtend.js`.
+
 ## Usage
 
-Use markup to create a **card**.
-
-<script type="text/plain" class="language-markup">
-  <div class="card">
-    <div class="card-block">
-      <!-- content -->
-    </div>
-  </div>
-</script>
-
-Or add `.card-block` classes directly to `.card`
-
-<script type="text/plain" class="language-markup">
-  <div class="card card-block">
-    <!-- content -->
-  </div>
-</script>
-
-Then add and [style content](/components/core/card/content).
+Use this code to create a **card**.
 
 <demo>
   <demovanilla src="vanilla/components/core/card/usage">
   </demovanilla>
 </demo>
+
+You can add `.card-block` classes directly to `.card`
+
+<demo>
+  <demovanilla src="vanilla/components/core/card/usage-block">
+  </demovanilla>
+</demo>
+
+Check subpage to [customize content](/components/core/card/content).

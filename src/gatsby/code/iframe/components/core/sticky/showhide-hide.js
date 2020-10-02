@@ -15,8 +15,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="sticky-0"
-     data-xt-sticky="{ sticky: 'fixed', limit: { top: '.sticky-0-start' }, hide: 'down' }">
+<div class="sticky-0" data-xt-sticky="{ sticky: 'fixed', limit: { top: '.sticky-0-start' }, hide: 'down' }">
   <div class="card ${cardStickyPrimary()}">
     <div class="h4">Sticky</div>
   </div>
@@ -24,8 +23,7 @@ demo.htmlSource = `
 
 <div class="sticky-0-start"></div>
 
-<div class="sticky-1"
-     data-xt-sticky="{ sticky: 'absolute', contain: { top: '.sticky-0:not(.xt-clone)' } }">
+<div class="sticky-1" data-xt-sticky="{ sticky: 'absolute', contain: { top: '.sticky-0:not(.xt-clone)' } }">
   <div class="card ${cardStickyPrimary()}">
     <div class="h4">Sticky</div>
   </div>
@@ -36,8 +34,7 @@ demo.htmlSource = `
   <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
 </div>
 
-<div class="sticky-2"
-     data-xt-sticky="{ contain: { top: '.sticky-0:not(.xt-clone), .sticky-1:not(.xt-clone)', bottom: '.sticky-3:not(.xt-clone)' }, hide: 'up' }">
+<div class="sticky-2" data-xt-sticky="{ contain: { top: '.sticky-0:not(.xt-clone), .sticky-1:not(.xt-clone)', bottom: '.sticky-3:not(.xt-clone)' }, hide: 'up' }">
   <div class="card ${cardStickyPrimary()}">
     <div class="h4">Sticky</div>
     <p>Sticky bottom <span class="hide-sticky">.hide-sticky</span> <span class="show-sticky">.show-sticky</span></p>

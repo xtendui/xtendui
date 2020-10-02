@@ -19,9 +19,6 @@ Use **tailwind classes** to assign variant (e.g.: border, background, color).
 
 Use **component classes** to assign size (e.g.: padding, font size).
 
-[[noteDefault]]
-| To customize utils and components follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
-
 <div class="table-scroll">
 
 |                      | Syntax                          | Mixin            | Description                   |

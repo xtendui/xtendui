@@ -1,5 +1,4 @@
 import path from 'path'
-const img = require('components/snippets/img').default
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -9,5 +8,9 @@ export const demo = {
 }
 
 demo.htmlSource = `
-${img({ classes: 'object-cover object-center', ratio: '37.5%', style: 'min-height: 300px' })}
+<div class="media-container" style="padding-bottom: 37.5%; min-height: 30rem">
+  <div class="media-inner">
+    <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt=""/>
+  </div>
+</div>
 `

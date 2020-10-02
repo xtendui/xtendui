@@ -6,19 +6,9 @@ title: "Javascript"
 date: "2050-05-05"
 ---
 
-## Vars
+## Variables
 
-In `/src/vars.js` there are js variables. Import it when you need animation's or other's variables:
-
-```jsx
-import 'xtend-library/src/vars'
-```
-
-And access the variables with `Xt.vars.<property>`.
-
-## Animations
-
-For javascript animations we use [gsap](https://greensock.com/gsap/). If you import `/src/vars.js` you import also **gsap**, you need to install it with npm see [setup gsap](/components/core/setup#usage-gsap).
+In `xtend-library/src/vars` there are javascript variables. You can access them with `Xt.vars.<property>`. You'll need also to install [gsap](https://greensock.com/gsap/) when using xtend vars, it's all documented in the docs demos.
 
 ## Event Delay
 

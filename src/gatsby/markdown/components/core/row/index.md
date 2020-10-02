@@ -10,9 +10,7 @@ description: "Flex row to space any element with paddings, also spaces verticall
 
 #### Css
 
-Follow the [css installation](/introduction/getting-started/setup#css-installation) instructions.
-
-To customize this component in your `tailwind.config.js` file, as described in [css customization](/introduction/getting-started/setup#css-customization) instructions, use the keys like below.
+Follow the [css installation](/introduction/getting-started/setup#css-installation) instructions. To [customize styles](/introduction/getting-started/setup#css-customization) in your `tailwind.config.js` file.
 
 ```jsx
 module.exports = {
@@ -38,19 +36,18 @@ module.exports = {
 }
 ```
 
+To **see the default values** see the source code of `node_modules/xtend-library/src/tailwind-xtend.js`.
+
 ## Usage
 
-Use markup to create a **row**.
-
-<script type="text/plain" class="language-markup">
-  <div class="row">
-    <!-- content -->
-  </div>
-</script>
-
-Then add and [style content](/components/core/row/content).
+Use this code to create a **row**.
 
 <demo>
   <demovanilla src="vanilla/components/core/row/usage">
   </demovanilla>
 </demo>
+
+Check subpage to [customize content](/components/core/row/content).
+
+[[noteDefault]]
+| You should always use **tailwind width classes** inside `.row`. Otherwise you can space contents with [list](/components/core/list).

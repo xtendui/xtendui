@@ -1,22 +1,12 @@
 ---
 type: "Components"
-category: "Addons"
-parent: "General"
-title: "Breadcrumbs"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+category: "Core"
+parent: "Breadcrumbs"
+title: "Content"
+date: "2030-10-10"
 ---
 
-## Usage
-
-Use **tailwind classes** to create breadcrumbs.
-
-[[noteDefault]]
-| This addon uses [separator](/components/addons/separator). Visit the component's webpages to customize them.
-
-<demo>
-  <demovanilla src="vanilla/components/addons/general/breadcrumbs-usage">
-  </demovanilla>
-</demo>
+## Metadata
 
 Use markup to add **json-ld** metadata to **breadcrumb**.
 
@@ -53,6 +43,6 @@ Use markup to add **json-ld** metadata to **breadcrumb**.
 Use **tailwind classes** to add title and background.
 
 <demo>
-  <demovanilla src="vanilla/components/addons/general/background-title">
+  <demovanilla src="vanilla/components/core/breadcrumbs/title">
   </demovanilla>
 </demo>

@@ -13,8 +13,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-space-2 items-center">
 
-  <div class="drop-container"
-    data-xt-drop="{ preventEvent: true }">
+  <div class="drop-container" data-xt-drop="{ preventEvent: true }">
 
     <a href="#drop-with-link-0" class="btn btn-md ${btnPrimary()}">
       drop

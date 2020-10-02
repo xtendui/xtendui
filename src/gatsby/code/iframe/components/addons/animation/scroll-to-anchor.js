@@ -17,8 +17,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div
-    data-xt-sticky="{ sticky: 'fixed' }">
+<div data-xt-sticky="{ sticky: 'fixed' }">
   <div class="card ${cardStickyPrimary()}">
     <div class="list list-space-2">
       <a href="#anchor-0" class="btn btn-md ${btnPrimary()}">
@@ -30,8 +29,7 @@ demo.htmlSource = `
       <a href="#anchor-2" class="btn btn-md ${btnPrimary()}">
         anchor 2
       </a>
-      <button type="button" class="btn btn-md ${btnDefault()}"
-        data-xt-overlay="{ targets: '#demo--overlay-scroll-to-anchor' }">
+      <button type="button" class="btn btn-md ${btnDefault()}" data-xt-overlay="{ targets: '#demo--overlay-scroll-to-anchor' }">
         anchors within overlay
       </button>
     </div>

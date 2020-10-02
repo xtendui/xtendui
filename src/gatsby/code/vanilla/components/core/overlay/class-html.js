@@ -39,8 +39,7 @@ demo.htmlSource = `
 
   </div>
 
-  <div
-    data-xt-overlay="{ classHtml: 'demo--overlay-class-html-right' }">
+  <div data-xt-overlay="{ classHtml: 'demo--overlay-class-html-right' }">
 
     <button type="button" class="btn btn-md ${btnPrimary()}">
       right

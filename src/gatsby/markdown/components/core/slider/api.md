@@ -6,6 +6,41 @@ title: "API"
 date: "1980-05-05"
 ---
 
+## Initialization
+
+Initialize automatically within markup with `[data-xt-slider="{ <options> }"]` on the **object** (the DOM element you assigned the component).
+
+Or initialize with **javascript**.
+
+```js
+let self = new Xt.Slider(document.querySelector('#my-object'), {
+  // options
+})
+```
+
+Or inizialize with **mutation observer**.
+
+```js
+Xt.mount.push({
+  matches: '#my-object',
+  mount: object => {
+    // init
+
+    let self = new Xt.Slider(object, {
+      // options
+    })
+
+    // unmount
+
+    const unmount = () => {
+      self.destroy()
+      self = null
+    }
+    return unmount
+  }
+})
+```
+
 ## Util
 
 <div class="table-scroll">

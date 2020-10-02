@@ -10,19 +10,16 @@ description: "Toggle is the main js component that toggle classes, it's inherite
 
 #### Javascript
 
-Follow the [js installation](/introduction/getting-started/setup#js-installation) instructions.
-
-Import the component's **js** file.
+Follow the [js installation](/introduction/getting-started/setup#js-installation) instructions and **import the component javascript** file.
 
 ```jsx
+import { Xt } from 'xtend-library'
 import 'xtend-library/src/core/toggle'
 ```
 
 ## Usage
 
-Pass **elements** and **targets** options if different from defaults.
-
-Elements listens to events, targets and inners are activated on events.
+Pass **elements** and **targets** options if different from defaults. **Elements** listens to events, **targets and inners** activate on events.
 
 <div class="table-scroll">
 
@@ -37,101 +34,52 @@ Elements listens to events, targets and inners are activated on events.
 
 #### Self
 
-Use markup to create a **self toggle**.
-
-<script type="text/plain" class="language-markup">
-  <button type="button" data-xt-toggle>
-    <!-- content -->
-  </button>
-</script>
+Use this code to create a **self toggle**.
 
 <demo>
   <demovanilla src="vanilla/components/core/toggle/usage-self">
   </demovanilla>
 </demo>
 
+Check subpage to [customize interaction](/components/core/toggle/interaction).
+
 #### Unique
 
-Use markup to create a **unique toggle**.
+Use this code to create a **unique toggle**.
 
 The **unique** mode is useful when triggering **targets outside the scope** of the component.
-
-[[notePrimary]]
-| To activate **unique mode** you **need** to specify targets with **#id**.
-
-<script type="text/plain" class="language-markup">
-  <button type="button" data-xt-toggle="{ targets: '#my-target' }">
-    <!-- content -->
-  </button>
-  
-  <div class="toggle" id="my-target">
-    <!-- content -->
-  </div>
-</script>
 
 <demo>
   <demovanilla src="vanilla/components/core/toggle/usage-unique-single">
   </demovanilla>
+</demo>
+
+You can also toggle the **same targets on multiple toggles**.
+
+<demo>
   <demovanilla src="vanilla/components/core/toggle/usage-unique-same">
   </demovanilla>
 </demo>
 
+Check subpage to [customize interaction](/components/core/toggle/interaction).
+
+[[notePrimary]]
+| To activate **unique mode** you **need** to specify targets with **#id**.
+
 #### Multiple
 
-Use markup to create **multiple toggle**.
-
-<script type="text/plain" class="language-markup">
-  <div data-xt-toggle="{ elements: '.my-elements', targets: '.my-targets' }">
-  
-    <button type="button" class="my-elements">
-      <!-- content -->
-    </button>
-    
-    <div class="toggle" class="my-targets">
-      <!-- content -->
-    </div>
-    
-  </div>
-</script>
+Use this code to create **multiple toggle**.
 
 <demo>
   <demovanilla src="vanilla/components/core/toggle/usage-multiple-default">
   </demovanilla>
+</demo>
+
+You can also specify your own `elements` and `targets`.
+
+<demo>
   <demovanilla src="vanilla/components/core/toggle/usage-multiple-custom">
   </demovanilla>
 </demo>
 
-## Initialization
-
-Initialize automatically within markup with `[data-xt-toggle="{ <options> }"]` on the **object** (the DOM element you assigned the component).
-
-Or initialize with **javascript**.
-
-```js
-let self = new Xt.Toggle(document.querySelector('#my-object'), {
-  // options
-})
-```
-
-Or inizialize with **mutation observer**.
-
-```js
-Xt.mount.push({
-  matches: '#my-object',
-  mount: object => {
-    // init
-
-    let self = new Xt.Toggle(object, {
-      // options
-    })
-
-    // unmount
-
-    const unmount = () => {
-      self.destroy()
-      self = null
-    }
-    return unmount
-  }
-})
-```
+Check subpage to [customize interaction](/components/core/toggle/interaction).

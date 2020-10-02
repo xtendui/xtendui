@@ -47,6 +47,58 @@ demo.htmlSource = `
       <input type="text" class="form-item ${inputDefault()}"/>
     </div>
 
+    <div class="w-full">
+      <div class="row row-space-x-4 row-space-y-3">
+
+        <div class="w-full md:w-2/12 md:self-center">
+          <label class="form-label flex-col ${labelDefault()}">
+            Lorem ipsum
+            <div class="mt-2">
+              <div class="list list-space-2 items-center">
+                <a href="#" class="btn">
+                  btn
+                </a>
+                <a href="#" class="btn link">
+                  link
+                </a>
+              </div>
+            </div>
+          </label>
+        </div>
+
+        <div class="w-full md:w-10/12">
+          <input type="text" class="form-item ${inputDefault()}"/>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="w-full">
+      <div class="row row-space-x-4 row-space-y-3">
+
+        <div class="w-full md:w-2/12 md:self-center">
+          <label class="form-label flex-col ${labelDefault()}">
+            Dolor sit amet
+            <div class="mt-auto">
+              <div class="list list-space-2 items-center">
+                <a href="#" class="btn">
+                  btn
+                </a>
+                <a href="#" class="btn link">
+                  link
+                </a>
+              </div>
+            </div>
+          </label>
+        </div>
+
+        <div class="w-full md:w-10/12">
+          <input type="text" class="form-item ${inputDefault()}"/>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 </form>
 `

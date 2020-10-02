@@ -15,8 +15,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="sticky-0"
-     data-xt-sticky="{ contain: { bottom: '.sticky-1:not(.xt-clone)' } }">
+<div class="sticky-0" data-xt-sticky="{ contain: { bottom: '.sticky-1:not(.xt-clone)' } }">
   <div class="card ${cardStickyPrimary()}">
     <div class="h4">Sticky</div>
   </div>
@@ -27,8 +26,7 @@ demo.htmlSource = `
   <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
 </div>
 
-<div class="sticky-1"
-     data-xt-sticky="{ contain: { bottom: '.sticky-2:not(.xt-clone)' } }">
+<div class="sticky-1" data-xt-sticky="{ contain: { bottom: '.sticky-2:not(.xt-clone)' } }">
   <div class="card ${cardStickyPrimary()}">
     <div class="h4">Sticky</div>
   </div>

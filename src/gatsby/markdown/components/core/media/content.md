@@ -8,16 +8,33 @@ date: "2030-10-10"
 
 ## Responsive
 
-To have **responsive media** give `.relative` to `.media-inner`.
+Use **tailwind classes** to assign relative position. The result is a **responsive media**.
+
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Tailwind                  | `.relative`                     | `relative`                | Relative size            |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/core/media/responsive">
   </demovanilla>
 </demo>
 
-## Aspect ratio
+## Object fit
 
-Set the **aspect ratio** to `.media-container` with css `padding-bottom` with a parcent value.
+Use **tailwind classes** to assign object fit and `padding-bottom` to assign aspect ratio.
+
+<demo>
+  <demovanilla src="vanilla/components/core/media/cover">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/media/contain">
+  </demovanilla>
+</demo>
+
+You can also use **video** or **iframe** for media. Just use `padding-bottom` to assign aspect ratio.
 
 <demo>
   <demovanilla src="vanilla/components/core/media/16-9">
@@ -28,22 +45,9 @@ Set the **aspect ratio** to `.media-container` with css `padding-bottom` with a 
   </demovanilla>
 </demo>
 
-## Object fit
-
-Set the **aspect ratio** to `.media-container` with css `padding-bottom` with a parcent value.
-
-Use **tailwind classes** to assign object fit.
-
-<demo>
-  <demovanilla src="vanilla/components/core/media/cover">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/media/contain">
-  </demovanilla>
-</demo>
-
 ## Min height
 
-You can also use `min-height: <Value>` to `.media-container` to have a min height (resize to mobile to see it in action).
+Use `min-height: <Value>` to have a min height (use narrow screen to see it in action).
 
 <demo>
   <demovanilla src="vanilla/components/core/media/cover-min-height">

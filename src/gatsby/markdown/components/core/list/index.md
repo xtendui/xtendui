@@ -10,9 +10,7 @@ description: "Flex lists to space any element with margins, also spaces vertical
 
 #### Css
 
-Follow the [css installation](/introduction/getting-started/setup#css-installation) instructions.
-
-To customize this component in your `tailwind.config.js` file, as described in [css customization](/introduction/getting-started/setup#css-customization) instructions, use the keys like below.
+Follow the [css installation](/introduction/getting-started/setup#css-installation) instructions. To [customize styles](/introduction/getting-started/setup#css-customization) in your `tailwind.config.js` file.
 
 ```jsx
 module.exports = {
@@ -38,34 +36,25 @@ module.exports = {
 }
 ```
 
+To **see the default values** see the source code of `node_modules/xtend-library/src/tailwind-xtend.js`.
+
 ## Usage
 
-Use markup to create a **horizontal list**.
-
-<script type="text/plain" class="language-markup">
-  <nav class="list">
-    <!-- content -->
-  </nav>
-</script>
-
-Use markup to create a **vertical list**.
-
-<script type="text/plain" class="language-markup">
-  <nav class="list-block">
-    <!-- content -->
-  </nav>
-</script>
-
-[[notePrimary]]
-| You can space anything inside `.list`, it's like a [row](/components/core/row) but that spaces with **margins instead of paddings** and you don't use **tailwind width classes**.
-
-Then add and [style content](/components/core/list/content).
+Use this code to create a **horizontal list**.
 
 <demo>
-  <demovanilla src="vanilla/components/core/list/usage">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/list/usage-block">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/list/usage-nested">
+  <demovanilla src="vanilla/components/core/list/usage-horizontal">
   </demovanilla>
 </demo>
+
+Use this code to create a **vertical list**.
+
+<demo>
+  <demovanilla src="vanilla/components/core/list/usage-vertical">
+  </demovanilla>
+</demo>
+
+Check subpage to [customize content](/components/core/list/content).
+
+[[noteDefault]]
+| You can space anything inside `.list`. If you need to use **tailwind width classes** use [row](/components/core/row).

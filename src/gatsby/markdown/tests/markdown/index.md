@@ -72,9 +72,9 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 ## Markdown
 
-Use markup to create a **card**.
+Use this code to create a **card**.
 
-Then add and [style content](/components/core/loader/content#spinner).
+Check subpage to [customize content](/components/core/loader/content#spinner).
 
 Use **javascript** to create a ripple.
 
@@ -91,8 +91,9 @@ See [mouse follow addon](/components/core/loader) to create a loader with mouse 
 [[noteDefault]]
 | This addon uses [separator](/components/core/separator). Visit the component's webpages to customize them.
 
-[[noteDefault]]
-| To customize utils and components follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
+(use touch device to see it in action)
+
+(use narrow screen to see it in action)
 
 <div class="table-scroll">
 

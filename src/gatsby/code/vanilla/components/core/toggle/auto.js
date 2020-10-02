@@ -10,8 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-space-2 items-center"
-     data-xt-toggle="{ auto: { time: 2000, initial: false, step: 3, inverse: true, pause: ':scope > button, .toggle' } }">
+<div class="list list-space-2 items-center" data-xt-toggle="{ auto: { time: 2000, initial: false, step: 3, inverse: true, pause: ':scope > button, .toggle' } }">
 
   <button type="button" class="btn btn-md ${btnDefault()}">
     Toggle 0

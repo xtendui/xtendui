@@ -10,11 +10,10 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 #### Javascript
 
-Follow the [js installation](/introduction/getting-started/setup#js-installation) instructions.
-
-Import the component's **js** file.
+Follow the [js installation](/introduction/getting-started/setup#js-installation) instructions and **import the component javascript** file.
 
 ```jsx
+import { Xt } from 'xtend-library'
 import 'xtend-library/src/addons/general/google-locator'
 ```
 

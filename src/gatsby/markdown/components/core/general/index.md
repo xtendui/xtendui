@@ -9,11 +9,18 @@ date: "2050-10-10"
 
 ## Setup
 
+#### Javascript
+
+Follow the [js installation](/introduction/getting-started/setup#js-installation) instructions and **import the component javascript** file.
+
+```jsx
+import { Xt } from 'xtend-library'
+import 'xtend-library/src/vars'
+```
+
 #### Css
 
-Follow the [css installation](/introduction/getting-started/setup#css-installation) instructions.
-
-To customize this component in your `tailwind.config.js` file, as described in [css customization](/introduction/getting-started/setup#css-customization) instructions, use the keys like below.
+Follow the [css installation](/introduction/getting-started/setup#css-installation) instructions. To [customize styles](/introduction/getting-started/setup#css-customization) in your `tailwind.config.js` file.
 
 ```jsx
 module.exports = {
@@ -38,3 +45,9 @@ module.exports = {
   })
 }
 ```
+
+To **see the default values** see the source code of `node_modules/xtend-library/src/tailwind-xtend.js`.
+
+## Usage
+
+Check subpage to [use css](/components/core/general/css) or [use javascript](/components/core/general/javascript).

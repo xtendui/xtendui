@@ -10,9 +10,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 #### Css
 
-Follow the [css installation](/introduction/getting-started/setup#css-installation) instructions.
-
-To customize this component in your `tailwind.config.js` file, as described in [css customization](/introduction/getting-started/setup#css-customization) instructions, use the keys like below.
+Follow the [css installation](/introduction/getting-started/setup#css-installation) instructions. To [customize styles](/introduction/getting-started/setup#css-customization) in your `tailwind.config.js` file.
 
 ```jsx
 module.exports = {
@@ -31,34 +29,22 @@ module.exports = {
 }
 ```
 
+To **see the default values** see the source code of `node_modules/xtend-library/src/tailwind-xtend.js`.
+
 ## Usage
 
-Use markup to create a **spinner loader**.
+Use this code to create a **loader spinner**.
 
-<script type="text/plain" class="language-markup">
-  <div class="loader">
-    <div class="spinner">
-      <svg viewBox="0 0 250 250">
-        <circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628" class="stroke-current"/>
-      </svg>
-      <svg viewBox="0 0 250 250" preserveAspectRatio="xMinYMin meet">
-        <circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628" class="stroke-current opacity-25"/>
-      </svg>
-    </div>
-  </div>
-</script>
+<demo>
+  <demovanilla src="vanilla/components/core/loader/spinner">
+  </demovanilla>
+</demo>
 
-Then add and [style content](/components/core/loader/content#spinner).
+Use this code to create a **loader filler**.
 
-Use markup to create a **filler loader**.
+<demo>
+  <demovanilla src="vanilla/components/core/loader/filler-x">
+  </demovanilla>
+</demo>
 
-<script type="text/plain" class="language-markup">
-  <span class="loader">
-    <span class="filler">
-      <span class="bg-current"></span>
-      <span class="bg-current opacity-25"></span>
-    </span>
-  </span>
-</script>
-
-Then add and [style content](/components/core/loader/content#filler).
+Check subpage to [customize content](/components/core/loader/content#filler).

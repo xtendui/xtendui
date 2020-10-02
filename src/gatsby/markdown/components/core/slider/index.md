@@ -8,11 +8,18 @@ description: "Customizable sliders with custom animation and interaction."
 
 ## Setup
 
+#### Javascript
+
+Follow the [js installation](/introduction/getting-started/setup#js-installation) instructions and **import the component javascript** file.
+
+```jsx
+import { Xt } from 'xtend-library'
+import 'xtend-library/src/core/slider'
+```
+
 #### Css
 
-Follow the [css installation](/introduction/getting-started/setup#css-installation) instructions.
-
-To customize this component in your `tailwind.config.js` file, as described in [css customization](/introduction/getting-started/setup#css-customization) instructions, use the keys like below.
+Follow the [css installation](/introduction/getting-started/setup#css-installation) instructions. To [customize styles](/introduction/getting-started/setup#css-customization) in your `tailwind.config.js` file.
 
 ```jsx
 module.exports = {
@@ -38,83 +45,18 @@ module.exports = {
 }
 ```
 
-#### Javascript
-
-Follow the [js installation](/introduction/getting-started/setup#js-installation) instructions.
-
-Import the component's **js** file.
-
-```jsx
-import 'xtend-library/src/core/slider'
-```
+To **see the default values** see the source code of `node_modules/xtend-library/src/tailwind-xtend.js`.
 
 ## Usage
 
-Use markup to create a **slider**.
+Use this code to create a **slider**.
 
-<script type="text/plain" class="language-markup">
-  <div class="slider" data-xt-slider>
+<demo>
+  <demovanilla src="vanilla/components/core/slider/usage">
+  </demovanilla>
+</demo>
 
-    <div class="slides">
-      <nav class="slides-inner">
-
-        <div class="slide">
-          <div class="slide-inner">
-            <!-- content -->
-          </div>
-        </div>
-
-        <div class="slide">
-          <div class="slide-inner">
-            <!-- content -->
-          </div>
-        </div>
-
-      </nav>
-    </div>
-
-    <nav class="slider-pagination">
-      <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
-      </button>
-    </nav>
-
-  </div>
-</script>
+Check subpage to [customize interaction](/components/core/slider/interaction) and [customize position](/components/core/slider/position).
 
 [[notePrimary]]
 | `slider-pagination[data-xt-pag].xt-ignore` is essential to the functioning of the slider, so if you don't want to show it add `.hidden`.
-
-## Initialization
-
-Initialize automatically within markup with `[data-xt-slider="{ <options> }"]` on the **object** (the DOM element you assigned the component).
-
-Or initialize with **javascript**.
-
-```js
-let self = new Xt.Slider(document.querySelector('#my-object'), {
-  // options
-})
-```
-
-Or inizialize with **mutation observer**.
-
-```js
-Xt.mount.push({
-  matches: '#my-object',
-  mount: object => {
-    // init
-
-    let self = new Xt.Slider(object, {
-      // options
-    })
-
-    // unmount
-
-    const unmount = () => {
-      self.destroy()
-      self = null
-    }
-    return unmount
-  }
-})
-```
