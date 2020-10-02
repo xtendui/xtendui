@@ -16,10 +16,11 @@ demo.htmlSource = `
 <form>
 
   <fieldset>
-
-    <legend>Legend #1</legend>
-
     <div class="row row-space-x-4 row-space-y-3">
+
+      <div class="w-full">
+        <legend>Legend #1</legend>
+      </div>
 
       <div class="w-full md:w-6/12">
         <label class="form-label mb-4 ${labelDefault()}">
@@ -65,14 +66,14 @@ demo.htmlSource = `
       </div>
 
     </div>
-
   </fieldset>
 
   <fieldset>
-
-    <legend>Legend #2</legend>
-
     <div class="row row-space-x-4 row-space-y-3">
+
+      <div class="w-full">
+        <legend>Legend #2</legend>
+      </div>
 
       <div class="w-full">
 
@@ -139,6 +140,10 @@ demo.htmlSource = `
       </div>
 
       <div class="w-full">
+        <legend>Legend #3</legend>
+      </div>
+
+      <div class="w-full">
 
         <label class="form-label mb-4 ${labelDefault()}">
           Checkbox
@@ -175,7 +180,6 @@ demo.htmlSource = `
       </div>
 
     </div>
-
   </fieldset>
 
 </form>

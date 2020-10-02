@@ -18,11 +18,11 @@ demo.htmlSource = `
     <div class="w-full h-12 bg-gray-500"></div>
   </div>
 
-  <div class="w-full sm:w-8/12">
+  <div class="w-full md:w-8/12">
     <div class="w-full h-12 bg-gray-300"></div>
   </div>
 
-  <div class="w-full sm:w-6/12">
+  <div class="w-full md:w-6/12">
     <div class="w-full h-12 bg-gray-500"></div>
   </div>
 

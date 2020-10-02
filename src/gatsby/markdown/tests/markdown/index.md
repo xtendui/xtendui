@@ -89,10 +89,10 @@ See [group component](/components/core/loader) to create a button with group.
 See [mouse follow addon](/components/core/loader) to create a loader with mouse follow.
 
 [[noteDefault]]
-| To customize utils and components follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
+| This addon uses [separator](/components/core/separator). Visit the component's webpages to customize them.
 
 [[noteDefault]]
-| This addon uses [separator](/components/core/separator). Visit the component's webpages to customize them.
+| To customize utils and components follow [css customization](/introduction/getting-started/setup#css-customization) instructions.
 
 <div class="table-scroll">
 
@@ -181,19 +181,6 @@ body {
 ```jsx
 const test = 'test'
 ```
-
-## Tables
-
-<div class="table-scroll">
-
-|                         | Syntax                                    | Example                       |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Syntax                   | `.col-{number}`                           | `.w-6/12`                      |
-| Class responsive        | `.col-{number}-{breakpoint}`              | `.sm:w-6/12`                   |
-| Mixin                   | `.col({number})`                          | `.col(6)`                     |
-| Mixin responsive min    | `.col({number}, {breakpoint})`            | `.col(6, sm)`                 |
-
-</div>
 
 ## Demo
 

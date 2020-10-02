@@ -1,5 +1,56 @@
 import { Xt } from 'xtend-library'
 
+/**
+ * Radio change event on same name radios
+ */
+Xt.mount.push({
+  matches: 'input[type="radio"]',
+  mount: object => {
+    // vars
+
+    const name = object.getAttribute('name')
+    const others = document.querySelectorAll('input[type="radio"][name="' + name + '"]')
+
+    // eventInput
+
+    const eventInput = () => {
+      // propagate to other radios
+      for (const other of Array.from(others).filter(x => x !== object)) {
+        other.dispatchEvent(new Event('change'))
+      }
+    }
+
+    object.addEventListener('input', eventInput)
+  },
+})
+
+/**
+ * checks labels .active
+ */
+Xt.mount.push({
+  matches: 'label input[type="checkbox"], label input[type="radio"]',
+  mount: object => {
+    // vars
+
+    const label = object.closest('label')
+
+    // eventChange
+
+    const eventChange = () => {
+      if (object.checked) {
+        label.classList.add('active')
+      } else {
+        label.classList.remove('active')
+      }
+    }
+
+    object.addEventListener('change', eventChange)
+  },
+})
+
+/**
+ * Validation
+ */
 Xt.mount.push({
   matches: 'form:not([novalidate])',
   mount: object => {
@@ -14,12 +65,9 @@ Xt.mount.push({
     const eventChange = e => {
       const item = e.target
       if (item.dataset.xtValidate === 'true') {
-        const name = item.getAttribute('name')
-        for (const current of Array.from(items).filter(x => x.getAttribute('name') === name)) {
-          current.classList.add('valid')
-          current.classList.remove('invalid')
-          current.checkValidity()
-        }
+        item.classList.add('form-valid')
+        item.classList.remove('form-invalid')
+        item.checkValidity()
       }
     }
 
@@ -36,8 +84,8 @@ Xt.mount.push({
 
     const eventInvalid = e => {
       const item = e.target
-      item.classList.remove('valid')
-      item.classList.add('invalid')
+      item.classList.remove('form-valid')
+      item.classList.add('form-invalid')
       item.dataset.xtValidate = 'true'
       // scroll to views
       addEventListener('scroll', eventScroll)

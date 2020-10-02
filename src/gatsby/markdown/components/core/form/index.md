@@ -31,6 +31,16 @@ module.exports = {
 }
 ```
 
+#### Javascript
+
+Follow the [js installation](/introduction/getting-started/setup#js-installation) instructions.
+
+Import the component's **js** file.
+
+```jsx
+import 'xtend-library/src/core/form'
+```
+
 ## Usage
 
 Use markup to create a form **label** and **input**.

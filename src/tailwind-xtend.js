@@ -836,6 +836,9 @@ module.exports = theme => ({
       },
       // form
       form: {
+        'label': {
+          cursor: 'pointer',
+        },
         'form, .form': {
           // styles
           '@apply form-md': '',
@@ -856,6 +859,12 @@ module.exports = theme => ({
           fontWeight: theme('fontWeight.semibold'),
           fontSize: rem(24),
           lineHeight: theme('lineHeight.snug'),
+        },
+        '.form-valid': {
+          borderColor: `${theme('colors.green.500')} !important`,
+        },
+        '.form-invalid': {
+          borderColor: `${theme('colors.red.500')} !important`,
         },
         '.form-sm': {
           // styles

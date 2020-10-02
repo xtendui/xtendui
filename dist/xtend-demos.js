@@ -1,7 +1,6 @@
 if (typeof window !== 'undefined') {
   require('xtend-library/src/private/demos/components/addons/animation/ripple.js')
   require('xtend-library/src/private/demos/components/addons/animation/scroll-to-anchor.js')
-  require('xtend-library/src/private/demos/components/addons/form/validation.js')
   require('xtend-library/src/private/demos/components/addons/general/google-locator.js')
   require('xtend-library/src/private/demos/components/addons/general/jump-to-content.js')
   require('xtend-library/src/private/demos/components/addons/group/expand.js')
@@ -9,6 +8,7 @@ if (typeof window !== 'undefined') {
   require('xtend-library/src/private/demos/components/addons/toggle/multilevel.js')
   require('xtend-library/src/private/demos/components/core/drop/animation-js.js')
   require('xtend-library/src/private/demos/components/core/drop/events-methods.js')
+  require('xtend-library/src/private/demos/components/core/form/validation.js')
   require('xtend-library/src/private/demos/components/core/group/merge-line.js')
   require('xtend-library/src/private/demos/components/core/group/merge-stack.js')
   require('xtend-library/src/private/demos/components/core/loader/js-filler.js')

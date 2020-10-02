@@ -107,7 +107,7 @@ demo.htmlSource = `
 
         <div class="w-full">
           <label class="form-label-check">
-            <input type="checkbox" class="form-check form-switch ${radioDefault()}">
+            <input type="checkbox" class="form-check form-switch ${switchDefault()}">
             <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
           </label>
         </div>

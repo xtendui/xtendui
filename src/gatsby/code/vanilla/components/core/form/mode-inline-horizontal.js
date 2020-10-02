@@ -159,7 +159,7 @@ demo.htmlSource = `
 
             <div class="w-full md:w-auto">
               <label class="form-label-check">
-                <input type="checkbox" class="form-check form-switch ${radioDefault()}">
+                <input type="checkbox" class="form-check form-switch ${switchDefault()}">
                 <span class="ml-3">Lorem ipsum</span>
               </label>
             </div>
