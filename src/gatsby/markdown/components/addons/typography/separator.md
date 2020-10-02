@@ -36,7 +36,7 @@ To **see the default values** see the source code of `node_modules/xtend-library
 Use this code to create a **separator**.
 
 <demo>
-  <demovanilla src="vanilla/components/addons/separator/usage">
+  <demovanilla src="vanilla/components/addons/separator">
   </demovanilla>
 </demo>
 
@@ -55,6 +55,6 @@ For `<type>` values use `dash`, `slash`, `pipe`, `point` or `arrow`.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/addons/separator/type">
+  <demovanilla src="vanilla/components/addons/separator-type">
   </demovanilla>
 </demo>

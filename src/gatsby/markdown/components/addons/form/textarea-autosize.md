@@ -13,7 +13,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 Follow the [javascript installation](/introduction/getting-started/setup#javascript-installation) instructions and **import the component javascript** file.
 
 ```jsx
-import 'xtend-library/src/addons/form/textarea-autosize'
+import 'xtend-library/src/addons/textarea-autosize'
 ```
 
 ## Usage
@@ -21,7 +21,7 @@ import 'xtend-library/src/addons/form/textarea-autosize'
 Use this code to create a **textarea autosize**.
 
 <demo>
-  <demovanilla src="vanilla/components/addons/form/textarea-autosize">
+  <demovanilla src="vanilla/components/addons/textarea-autosize">
   </demovanilla>
 </demo>
 

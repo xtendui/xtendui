@@ -8,12 +8,12 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 ## Usage
 
-Use this code to create a **multilevel**.
+Use this code to create a **toggle multilevel**.
 
 [[notePrimary]]
 | This addon uses [toggle](/components/core/toggle). Visit the component page to import and initialize.
 
 <demo>
-  <demovanilla src="vanilla/components/addons/toggle/multilevel">
+  <demovanilla src="vanilla/components/addons/toggle-multilevel">
   </demovanilla>
 </demo>

@@ -1,6 +1,6 @@
 import { Xt } from 'xtend-library'
 import 'xtend-library/src/vars'
-import 'xtend-library/src/addons/animation/scroll-to-anchor'
+import 'xtend-library/src/addons/scroll-to-anchor'
 import gsap from 'gsap'
 import 'gsap/ScrollToPlugin'
 

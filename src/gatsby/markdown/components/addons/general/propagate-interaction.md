@@ -1,7 +1,7 @@
 ---
 type: "Components"
 category: "Addons"
-parent: "Animation"
+parent: "General"
 title: "propagate-interaction"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
@@ -10,7 +10,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 <!--
 ```jsx
-import 'xtend-library/src/addons/animation/propagate-interaction'
+import 'xtend-library/src/addons/propagate-interaction'
 ```
 
 <script type="text/plain" class="language-markup">

@@ -2,7 +2,7 @@
 type: "Components"
 category: "Addons"
 parent: "Typography"
-title: "custom-list"
+title: "list-custom"
 description: "Custom ordered and unordered lists."
 ---
 
@@ -11,6 +11,6 @@ description: "Custom ordered and unordered lists."
 Use this code to create a **custom list**.
 
 <demo>
-  <demovanilla src="vanilla/components/addons/typography/custom-list">
+  <demovanilla src="vanilla/components/addons/list-custom">
   </demovanilla>
 </demo>

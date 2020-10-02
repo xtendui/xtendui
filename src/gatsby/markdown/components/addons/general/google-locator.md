@@ -13,7 +13,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 Follow the [javascript installation](/introduction/getting-started/setup#javascript-installation) instructions and **import the component javascript** file.
 
 ```jsx
-import 'xtend-library/src/addons/general/google-locator'
+import 'xtend-library/src/addons/google-locator'
 ```
 
 Install also `@google/markerclusterer`.
@@ -30,13 +30,13 @@ Use this code to create a **google locator**.
 | Needs google API key with **Maps Javascript API**, **Places API**.
 
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/general/google-locator">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/google-locator">
   </div>
 </demo>
 
 ## Options
 
-For advanced options see javascript file source code `xtend-library/src/addons/general/google-locator.js`.
+For advanced options see javascript file source code `xtend-library/src/addons/google-locator.js`.
 
 ## Listen
 

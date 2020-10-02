@@ -9,9 +9,9 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 Use this code to create a **navigation sides**.
 
 [[notePrimary]]
-| This addon uses [slider](/components/core/slider) and [mouse follow](/components/addons/animation/mouse-follow). Visit the component page to import and initialize.
+| This addon uses [slider](/components/core/slider) and [mouse follow](/components/addons/general/mouse-follow). Visit the component page to import and initialize.
 
 <demo>
-  <demovanilla src="vanilla/components/addons/slider/navigation-sides">
+  <demovanilla src="vanilla/components/addons/slider-navigation-sides">
   </demovanilla>
 </demo>

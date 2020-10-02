@@ -1,8 +1,8 @@
 ---
 type: "Components"
 category: "Addons"
-parent: "Animation"
-title: "mouse-follow"
+parent: "General"
+title: "ripple"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
@@ -13,7 +13,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 Follow the [javascript installation](/introduction/getting-started/setup#javascript-installation) instructions and **import the component javascript** file.
 
 ```jsx
-import 'xtend-library/src/addons/animation/mousefollow'
+import 'xtend-library/src/addons/ripple'
 ```
 
 #### Css
@@ -27,7 +27,7 @@ module.exports = {
     xtend: theme => ({
       components: {
         addons: {
-          mousefollow: {
+          ripple: {
             // modify component
           },
         },
@@ -41,21 +41,10 @@ To **see the default values** see the source code of `node_modules/xtend-library
 
 ## Usage
 
-Use **component classes** to create a mouse follow.
-
-<div class="table-scroll">
-
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.mouse-follow`                     | `mouse-follow`                | Styles for mouse follow            |
-
-</div>
-
-[[notePrimary]]
-| This addon uses [loader](/components/core/loader). Visit the component page to import and initialize.
+Use this code to create a **ripple**.
 
 <demo>
-  <demovanilla src="vanilla/components/addons/animation/mouse-follow">
+  <demovanilla src="vanilla/components/addons/ripple">
   </demovanilla>
 </demo>
 
@@ -67,10 +56,8 @@ Here are the main **javascript options**.
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                    | `targets:Query`                          | `':scope > .mouse-follow'`        | Mouse follow targets            |
-| Option                    | `transform:Boolean`                          | `true`        | Use transform instead of position            |
-| Option                    | `friction:Function`                          | `<function>`        | Function for friction             |
-| Option                    | `mouseCheck(self):Function`                          | `false`        | Function called on activate/deactivate, return false to not activate/deactivate             |
+| Option                    | `sizeInitial:Boolean`                          | `0.1`        | Initial size factor            |
+| Option                    | `onlyInside:Query`                          | `'a, button, .btn'`        | Only if selector else query closest             |
 
 </div>
 
@@ -82,11 +69,10 @@ Listen to events on **DOM elements**.
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `on.xt.mousefollow`       | `object` | Activation event             |
-| Event                   | `off.xt.mousefollow`      | `object` | Deactivation event            |
-| Event                   | `change.xt.mousefollow`       | `object` | Change event             |
-| Event                   | `init.xt.mousefollow`           | `object` | Init event             |
-| Event                   | `destroy.xt.mousefollow`           | `object` | Destroy event             |
+| Event                   | `on.xt.ripple`       | `object` | Activation event             |
+| Event                   | `off.xt.ripple`      | `object` | Deactivation event            |
+| Event                   | `init.xt.ripple`           | `object` | Init event             |
+| Event                   | `destroy.xt.ripple`           | `object` | Destroy event             |
 
 </div>
 
@@ -100,18 +86,19 @@ Access properties by getting component object.
 | ----------------------- | ---------------------------------------- | ----------------------------- |
 | Property                   | `options:Object`       | Final options             |
 | Property                   | `object:Node`       | Object node             |
+| Property                   | `container:Node`       | Container node             |
 | Property                   | `targets:Array`       | Targets nodes            |
 
 </div>
 
 ## Initialization
 
-Initialize automatically within markup with `[data-xt-mouse-follow="{ <options> }"]` on the **object** (the DOM element you assigned the component).
+Initialize automatically within markup with `[data-xt-ripple="{ <options> }"]` on the **object** (the DOM element you assigned the component).
 
 Or initialize with **javascript**.
 
 ```js
-let self = new Xt.MouseFollow(document.querySelector('#my-object'), {
+let self = new Xt.Ripple(document.querySelector('#my-object'), {
   // options
 })
 ```
@@ -124,7 +111,7 @@ Xt.mount.push({
   mount: object => {
     // init
 
-    let self = new Xt.MouseFollow(object, {
+    let self = new Xt.Ripple(object, {
       // options
     })
 

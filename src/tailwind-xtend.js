@@ -386,9 +386,9 @@ module.exports = theme => ({
           // styles
           '-webkit-overflow-scrolling': 'touch',
           '&::-webkit-scrollbar': {
-            height: '8px',
-            width: '8px',
-            background: theme('colors.accent.200'),
+            height: '10px',
+            width: '10px',
+            background: theme('colors.gray.200'),
             '@media (hover: none)': {
               display: 'none',
             },
@@ -402,8 +402,8 @@ module.exports = theme => ({
           // styles
           '-webkit-overflow-scrolling': 'touch',
           '&::-webkit-scrollbar': {
-            height: '4px',
-            width: '4px',
+            height: '5px',
+            width: '5px',
             background: 'transparent',
           },
           '&::-webkit-scrollbar-thumb': {
@@ -1783,8 +1783,8 @@ module.exports = theme => ({
       },
     },
     addons: {
-      // mousefollow
-      mousefollow: {
+      // general
+      general: {
         '.mouse-follow': {
           pointerEvents: 'none',
           position: 'fixed',
@@ -1792,6 +1792,25 @@ module.exports = theme => ({
           left: '0',
           right: 'auto',
           bottom: 'auto',
+        },
+        '.ripple-container': {
+          // setup
+          overflow: 'hidden',
+          pointerEvents: 'none',
+          borderRadius: 'inherit',
+          position: 'absolute',
+          top: '0',
+          left: '0',
+          right: '0',
+          bottom: '0',
+          // styles
+          opacity: '.075',
+        },
+        '.ripple': {
+          // styles
+          position: 'absolute',
+          borderRadius: '50%',
+          background: theme('colors.black'),
         },
       },
       // slider
@@ -1853,30 +1872,8 @@ module.exports = theme => ({
           },
         },
       },
-      // ripple
-      ripple: {
-        '.ripple-container': {
-          // setup
-          overflow: 'hidden',
-          pointerEvents: 'none',
-          borderRadius: 'inherit',
-          position: 'absolute',
-          top: '0',
-          left: '0',
-          right: '0',
-          bottom: '0',
-          // styles
-          opacity: '.075',
-        },
-        '.ripple': {
-          // styles
-          position: 'absolute',
-          borderRadius: '50%',
-          background: theme('colors.black'),
-        },
-      },
-      // separator
-      separator: {
+      // typography
+      typography: {
         '.separator': {
           // setup
           display: 'inline-block',

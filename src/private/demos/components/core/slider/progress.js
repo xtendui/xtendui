@@ -1,7 +1,7 @@
 import { Xt } from 'xtend-library'
 import 'xtend-library/src/vars'
 import 'xtend-library/src/core/slider'
-import 'xtend-library/src/addons/animation/mouse-follow'
+import 'xtend-library/src/addons/mouse-follow'
 import gsap from 'gsap'
 
 Xt.mount.push({

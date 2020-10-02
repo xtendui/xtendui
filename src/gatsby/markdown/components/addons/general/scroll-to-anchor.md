@@ -1,7 +1,7 @@
 ---
 type: "Components"
 category: "Addons"
-parent: "Animation"
+parent: "General"
 title: "scroll-to-anchor"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
@@ -11,7 +11,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 Follow the [javascript installation](/introduction/getting-started/setup#javascript-installation) instructions and **import the component javascript** file.
 
 ```jsx
-import 'xtend-library/src/addons/animation/scroll-to-anchor'
+import 'xtend-library/src/addons/scroll-to-anchor'
 ```
 
 ## Usage
@@ -22,7 +22,7 @@ Use this code to create a **scroll to anchor**.
 | This addon uses [sticky](/components/core/sticky). Visit the component page to import and initialize.
 
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/animation/scroll-to-anchor">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/scroll-to-anchor">
   </div>
 </demo>
 

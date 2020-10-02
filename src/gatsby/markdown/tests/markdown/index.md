@@ -17,7 +17,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
   </div>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/block">
   </div>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/animation/scroll-to-anchor">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/scroll-to-anchor">
   </div>
   <demovanilla src="vanilla/components/core/slider/progress">
   </demovanilla>
@@ -87,7 +87,7 @@ See [group component](/components/core/loader) to create a button with group.
 See [mouse follow addon](/components/core/loader) to create a loader with mouse follow.
 
 [[notePrimary]]
-| This addon uses [separator](/components/addons/separator). Visit the component page to import and initialize.
+| This addon uses [separator](/components/separator). Visit the component page to import and initialize.
 
 (use touch device to see it in action)
 

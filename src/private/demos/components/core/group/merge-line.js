@@ -1,1 +1,1 @@
-import 'xtend-library/src/addons/animation/propagate-interaction'
+import 'xtend-library/src/addons/propagate-interaction'

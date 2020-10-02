@@ -12,6 +12,6 @@ Use this code to create a **close outside**.
 | This addon uses [overlay](/components/core/overlay). Visit the component page to import and initialize.
 
 <demo>
-  <demovanilla src="vanilla/components/addons/overlay/close-outside">
+  <demovanilla src="vanilla/components/addons/overlay-close-outside">
   </demovanilla>
 </demo>
