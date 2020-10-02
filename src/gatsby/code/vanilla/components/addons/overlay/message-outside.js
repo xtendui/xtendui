@@ -20,7 +20,7 @@ demo.htmlSource = `
     </button>
 
     <div class="overlay overlay-screen">
-      <div class="overlay-message-outside right-0">
+      <div class="demo--overlay-message-outside right-0">
         <div class="w-10/12 lg:w-8/12">
           <div class="card ${cardDefault()}">
             <div class="card-block card-block-md">
@@ -57,7 +57,7 @@ demo.htmlSource = `
     </button>
 
     <div class="overlay overlay-screen">
-      <div class="overlay-message-outside left-0">
+      <div class="demo--overlay-message-outside left-0">
         <div class="w-10/12 lg:w-8/12">
           <div class="card ${cardDefault()}">
             <div class="card-block card-block-md">

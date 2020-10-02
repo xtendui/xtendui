@@ -1,8 +1,4 @@
-/**
- * overlay-message-outside
- */
-
-.overlay-message-outside {
+.demo--overlay-message-outside {
   position: fixed;
   z-index: theme('zIndex.overlay');
   display: flex;
