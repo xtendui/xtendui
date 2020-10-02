@@ -45,6 +45,7 @@ Xt.mount.push({
     }
 
     object.addEventListener('change', eventChange)
+    eventChange()
   },
 })
 
