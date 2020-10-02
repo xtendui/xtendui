@@ -76,8 +76,6 @@ Use this code to create a **card**.
 
 Check subpage to [customize content](/components/core/loader/content#spinner).
 
-Use **javascript** to create a ripple.
-
 Use **tailwind classes** to create a mouse follow.
 
 Use **component classes** to create a mouse follow.
@@ -88,8 +86,8 @@ See [group component](/components/core/loader) to create a button with group.
 
 See [mouse follow addon](/components/core/loader) to create a loader with mouse follow.
 
-[[noteDefault]]
-| This addon uses [separator](/components/core/separator). Visit the component's webpages to customize them.
+[[notePrimary]]
+| This addon uses [separator](/components/addons/separator). Visit the component page to import and initialize.
 
 (use touch device to see it in action)
 

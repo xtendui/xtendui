@@ -10,10 +10,9 @@ description: "Customizable sliders with custom animation and interaction."
 
 #### Javascript
 
-Follow the [js installation](/introduction/getting-started/setup#js-installation) instructions and **import the component javascript** file.
+Follow the [javascript installation](/introduction/getting-started/setup#javascript-installation) instructions and **import the component javascript** file.
 
 ```jsx
-import { Xt } from 'xtend-library'
 import 'xtend-library/src/core/slider'
 ```
 
@@ -51,12 +50,12 @@ To **see the default values** see the source code of `node_modules/xtend-library
 
 Use this code to create a **slider**.
 
+[[notePrimary]]
+| `[data-xt-pag].xt-ignore` is essential to the functioning of the slider, but you can hide it using the class `.hidden`.
+
 <demo>
   <demovanilla src="vanilla/components/core/slider/usage">
   </demovanilla>
 </demo>
 
 Check subpage to [customize interaction](/components/core/slider/interaction) and [customize position](/components/core/slider/position).
-
-[[notePrimary]]
-| `slider-pagination[data-xt-pag].xt-ignore` is essential to the functioning of the slider, so if you don't want to show it add `.hidden`.

@@ -10,10 +10,9 @@ description: "Used when you need to display any content over the main page."
 
 #### Javascript
 
-Follow the [js installation](/introduction/getting-started/setup#js-installation) instructions and **import the component javascript** file.
+Follow the [javascript installation](/introduction/getting-started/setup#javascript-installation) instructions and **import the component javascript** file.
 
 ```jsx
-import { Xt } from 'xtend-library'
 import 'xtend-library/src/core/overlay'
 ```
 
@@ -82,15 +81,15 @@ Use this code to create a **overlay** in **unique mode**.
 
 The **unique** mode is useful when triggering **targets outside the scope** of the component.
 
+[[notePrimary]]
+| To activate **unique mode** you **need** to specify targets with **#id**.
+
 <demo>
   <demovanilla src="vanilla/components/core/overlay/usage-unique">
   </demovanilla>
 </demo>
 
 Check subpage to [customize interaction](/components/core/overlay/interaction) and [customize content](/components/core/overlay/content).
-
-[[notePrimary]]
-| To activate **unique mode** you **need** to specify targets with **#id**.
 
 #### Standalone
 

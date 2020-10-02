@@ -6,7 +6,10 @@ title: "message-outside"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
-Use **tailwind classes** and **css** to create a message outside.
+Use this code to create a **message outside**.
+
+[[notePrimary]]
+| This addon uses [overlay](/components/core/overlay). Visit the component page to import and initialize.
 
 <demo>
   <demovanilla src="vanilla/components/addons/overlay/message-outside">

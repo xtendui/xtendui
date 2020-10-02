@@ -10,10 +10,9 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 #### Javascript
 
-Follow the [js installation](/introduction/getting-started/setup#js-installation) instructions and **import the component javascript** file.
+Follow the [javascript installation](/introduction/getting-started/setup#javascript-installation) instructions and **import the component javascript** file.
 
 ```jsx
-import { Xt } from 'xtend-library'
 import 'xtend-library/src/addons/animation/mousefollow'
 ```
 
@@ -52,8 +51,8 @@ Use **component classes** to create a mouse follow.
 
 </div>
 
-[[noteDefault]]
-| This addon uses [loader](/components/core/loader). Visit the component's webpages to customize them.
+[[notePrimary]]
+| This addon uses [loader](/components/core/loader). Visit the component page to import and initialize.
 
 <demo>
   <demovanilla src="vanilla/components/addons/animation/mouse-follow">
@@ -62,7 +61,7 @@ Use **component classes** to create a mouse follow.
 
 ## Options
  
-Here are the main javascript options.
+Here are the main **javascript options**.
 
 <div class="table-scroll">
 

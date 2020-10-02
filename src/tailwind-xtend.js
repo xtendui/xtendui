@@ -1077,11 +1077,19 @@ module.exports = theme => ({
           width: '25px',
           height: '25px',
           lineHeight: '0',
+          '.btn &': {
+            width: '1em',
+            height: '1em',
+          },
           'svg': {
             'circle': {
               fill: 'none',
               strokeWidth: '30',
+              transformBox: 'border-box',
               transformOrigin: 'center center',
+              '.btn &': {
+                strokeWidth: '40',
+              },
             },
             '&:nth-child(1)': {
               position: 'relative',
@@ -1163,16 +1171,6 @@ module.exports = theme => ({
             },
           },
         },
-        '.btn .spinner': {
-          // styles
-          width: '1em',
-          height: '1em',
-          'svg': {
-            'circle': {
-              strokeWidth:'40',
-            },
-          },
-        },
         '.loader-size-x, .loader-size-top, .loader-size-bottom': {
           // styles
           '.filler': {
@@ -1213,7 +1211,7 @@ module.exports = theme => ({
           'svg': {
             '&:nth-child(1)': {
               'circle': {
-                animation: 'anim-spinner 1500ms infinite',
+                animation: 'anim-spinner 1500ms infinite', // see node_modules/xtend-library/src/tailwind-theme.js
               },
             },
           },
@@ -1222,7 +1220,7 @@ module.exports = theme => ({
           // animation
           '.filler': {
             'span:nth-child(1)': {
-              animation: 'anim-filler-x 1500ms infinite',
+              animation: 'anim-filler-x 1500ms infinite', // see node_modules/xtend-library/src/tailwind-theme.js
             },
           },
         },
@@ -1230,7 +1228,7 @@ module.exports = theme => ({
           // animation
           '.filler': {
             'span:nth-child(1)': {
-              animation: 'anim-filler-y 1500ms infinite',
+              animation: 'anim-filler-y 1500ms infinite', // see node_modules/xtend-library/src/tailwind-theme.js
             },
           },
         },

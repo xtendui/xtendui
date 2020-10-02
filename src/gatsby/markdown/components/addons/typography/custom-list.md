@@ -8,9 +8,9 @@ description: "Custom ordered and unordered lists."
 
 ## Usage
 
-Examples of **custom lists**.
+Use this code to create a **custom list**.
 
 <demo>
-  <demovanilla src="vanilla/components/addons/typography/list-check">
+  <demovanilla src="vanilla/components/addons/typography/custom-list">
   </demovanilla>
 </demo>

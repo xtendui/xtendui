@@ -10,10 +10,9 @@ description: "Form styles with multiple layouts, custom checkbox/radio, and more
 
 #### Javascript
 
-Follow the [js installation](/introduction/getting-started/setup#js-installation) instructions and **import the component javascript** file.
+Follow the [javascript installation](/introduction/getting-started/setup#javascript-installation) instructions and **import the component javascript** file.
 
 ```jsx
-import { Xt } from 'xtend-library'
 import 'xtend-library/src/core/form'
 ```
 

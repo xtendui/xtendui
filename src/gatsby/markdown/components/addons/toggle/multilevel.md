@@ -6,7 +6,12 @@ title: "multilevel"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
-Use **javascript** to create a multilevel.
+## Usage
+
+Use this code to create a **multilevel**.
+
+[[notePrimary]]
+| This addon uses [toggle](/components/core/toggle). Visit the component page to import and initialize.
 
 <demo>
   <demovanilla src="vanilla/components/addons/toggle/multilevel">

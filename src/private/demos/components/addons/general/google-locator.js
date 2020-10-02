@@ -2,10 +2,6 @@
 import { Xt } from 'xtend-library'
 import 'xtend-library/src/addons/general/google-locator'
 
-/**
- * google-locator
- */
-
 // add yout api key here
 
 Xt.addScript(

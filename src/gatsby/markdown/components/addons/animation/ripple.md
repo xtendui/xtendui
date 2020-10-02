@@ -10,10 +10,9 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 #### Javascript
 
-Follow the [js installation](/introduction/getting-started/setup#js-installation) instructions and **import the component javascript** file.
+Follow the [javascript installation](/introduction/getting-started/setup#javascript-installation) instructions and **import the component javascript** file.
 
 ```jsx
-import { Xt } from 'xtend-library'
 import 'xtend-library/src/addons/animation/ripple'
 ```
 
@@ -42,7 +41,7 @@ To **see the default values** see the source code of `node_modules/xtend-library
 
 ## Usage
 
-Use **javascript** to create a ripple.
+Use this code to create a **ripple**.
 
 <demo>
   <demovanilla src="vanilla/components/addons/animation/ripple">
@@ -51,7 +50,7 @@ Use **javascript** to create a ripple.
 
 ## Options
  
-Here are the main javascript options.
+Here are the main **javascript options**.
 
 <div class="table-scroll">
 

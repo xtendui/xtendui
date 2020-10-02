@@ -98,23 +98,19 @@ module.exports = function (custom = {}) {
             strokeDashoffset: '628',
             transform: 'rotateY(0deg) rotateZ(-90deg)',
             animationTimingFunction: theme('transitionTimingFunction.ease.in'),
-            transformOrigin: '48% 48%', // fix no support transform-box: border-box;
           },
           '50%': {
             strokeDashoffset: '0',
             transform: 'rotateY(0deg) rotateZ(90deg)',
-            transformOrigin: '48% 48%', // fix no support transform-box: border-box;
           },
           '50.0001%': {
             strokeDashoffset: '0',
             transform: 'rotateY(180deg) rotateZ(90deg)',
             animationTimingFunction: theme('transitionTimingFunction.ease.out'),
-            transformOrigin: 'center center', // fix no support transform-box: border-box;
           },
           '100%': {
             strokeDashoffset: '628',
             transform: 'rotateY(180deg) rotateZ(-90deg)',
-            transformOrigin: '46% 50%', // fix no support transform-box: border-box;
           },
         },
         'anim-filler-x': {

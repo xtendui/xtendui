@@ -33,27 +33,7 @@ To **see the default values** see the source code of `node_modules/xtend-library
 
 ## Usage
 
-Use this markup to create a **separator**.
-
-<script type="text/plain" class="language-markup">
-  <span class="separator">
-    <!-- content -->
-  </span>
-</script>
-
-Use **component classes** to create a separator.
-
-<div class="table-scroll">
-
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.separator-dash`                     | `separator-dash`                | Separator with dash            |
-| Component                  | `.separator-slash`                     | `separator-slash`                | Separator with slash            |
-| Component                  | `.separator-pipe`                     | `separator-pipe`                | Separator with pipe            |
-| Component                  | `.separator-point`                     | `separator-point`                | Separator with point            |
-| Component                  | `.separator-arrow`                     | `separator-arrow`                | Separator with arrow            |
-
-</div>
+Use this code to create a **separator**.
 
 <demo>
   <demovanilla src="vanilla/components/addons/separator/usage">

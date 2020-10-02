@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<ul class="list-check">
+<ul class="demo--custom-list">
   <li>Lorem ipsum dolor sit amet</div>
   <li>consectetur adipiscing elit</li>
   <li>Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</li>

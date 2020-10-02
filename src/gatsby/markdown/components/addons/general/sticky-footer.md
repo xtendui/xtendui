@@ -8,7 +8,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 ## Usage
 
-Here's code to create a **sticky footer**.
+Use this code to create a **sticky footer**.
 
 <demo>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/general/sticky-footer">

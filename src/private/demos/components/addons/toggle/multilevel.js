@@ -1,11 +1,7 @@
 import { Xt } from 'xtend-library'
 
-/**
- * multilevel
- */
-
 Xt.mount.push({
-  matches: '.multilevel',
+  matches: '.demo--multilevel',
   mount: object => {
     // init
 

@@ -10,10 +10,9 @@ description: "Toggle is the main js component that toggle classes, it's inherite
 
 #### Javascript
 
-Follow the [js installation](/introduction/getting-started/setup#js-installation) instructions and **import the component javascript** file.
+Follow the [javascript installation](/introduction/getting-started/setup#javascript-installation) instructions and **import the component javascript** file.
 
 ```jsx
-import { Xt } from 'xtend-library'
 import 'xtend-library/src/core/toggle'
 ```
 
@@ -56,15 +55,15 @@ The **unique** mode is useful when triggering **targets outside the scope** of t
 
 You can also toggle the **same targets on multiple toggles**.
 
+[[notePrimary]]
+| To activate **unique mode** you **need** to specify targets with **#id**.
+
 <demo>
   <demovanilla src="vanilla/components/core/toggle/usage-unique-same">
   </demovanilla>
 </demo>
 
 Check subpage to [customize interaction](/components/core/toggle/interaction).
-
-[[notePrimary]]
-| To activate **unique mode** you **need** to specify targets with **#id**.
 
 #### Multiple
 

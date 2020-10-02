@@ -10,16 +10,15 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 #### Javascript
 
-Follow the [js installation](/introduction/getting-started/setup#js-installation) instructions and **import the component javascript** file.
+Follow the [javascript installation](/introduction/getting-started/setup#javascript-installation) instructions and **import the component javascript** file.
 
 ```jsx
-import { Xt } from 'xtend-library'
 import 'xtend-library/src/addons/general/infinite-scroll'
 ```
 
 ## Usage
 
-Here's code to create an **infinite scroll**.
+Use this code to create an **infinite scroll**.
 
 <demo>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/general/infinite-scroll">
@@ -28,7 +27,7 @@ Here's code to create an **infinite scroll**.
 
 ## Options
 
-Here are the main javascript options.
+Here are the main **javascript options**.
 
 For advanced options see javascript file source code `xtend-library/src/addons/general/infinite-scroll.js`.
 

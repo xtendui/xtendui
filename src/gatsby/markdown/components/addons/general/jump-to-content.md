@@ -8,7 +8,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 ## Usage
 
-Here's code to create a **jump to content**.
+Use this code to create a **jump to content**.
 
 Use the tab key to reveal the **jump to content** button.
 

@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="multilevel">
+<div class="demo--multilevel">
 
   <nav role="navigation" class="toggle" data-multilevel-tab>
 
