@@ -21,7 +21,7 @@ demo.htmlSource = `
       <div class="row row-space-x-4 row-space-y-3">
 
         <div class="w-full md:w-auto md:self-center">
-          <label class="form-label flex whitespace-no-wrap ${labelDefault()}">
+          <label class="form-label whitespace-no-wrap ${labelDefault()}">
             Lorem ipsum
           </label>
         </div>
@@ -37,7 +37,7 @@ demo.htmlSource = `
       <div class="row row-space-x-4 row-space-y-3">
 
         <div class="w-full md:w-auto md:self-center">
-          <label class="form-label flex whitespace-no-wrap ${labelDefault()}">
+          <label class="form-label whitespace-no-wrap ${labelDefault()}">
             Dolor sit amet
           </label>
         </div>
@@ -53,7 +53,7 @@ demo.htmlSource = `
       <div class="row row-space-x-4 row-space-y-3">
 
         <div class="w-full md:w-auto md:self-center">
-          <label class="form-label flex whitespace-no-wrap ${labelDefault()}">
+          <label class="form-label whitespace-no-wrap ${labelDefault()}">
             Lorem ipsum
           </label>
         </div>
@@ -85,7 +85,7 @@ demo.htmlSource = `
       <div class="row row-space-x-4 row-space-y-3">
 
         <div class="w-full md:w-auto md:self-baseline">
-          <label class="form-label flex whitespace-no-wrap ${labelDefault()}">
+          <label class="form-label whitespace-no-wrap ${labelDefault()}">
             Checkbox
           </label>
         </div>
@@ -117,7 +117,7 @@ demo.htmlSource = `
       <div class="row row-space-x-4 row-space-y-3">
 
         <div class="w-full md:w-auto md:self-baseline">
-          <label class="form-label flex whitespace-no-wrap ${labelDefault()}">
+          <label class="form-label whitespace-no-wrap ${labelDefault()}">
             Radio
           </label>
         </div>
@@ -149,7 +149,7 @@ demo.htmlSource = `
       <div class="row row-space-x-4 row-space-y-3">
 
         <div class="w-full md:w-auto md:self-baseline">
-          <label class="form-label flex whitespace-no-wrap ${labelDefault()}">
+          <label class="form-label whitespace-no-wrap ${labelDefault()}">
             Switch
           </label>
         </div>

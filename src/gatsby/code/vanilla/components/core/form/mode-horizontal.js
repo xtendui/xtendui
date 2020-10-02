@@ -21,7 +21,7 @@ demo.htmlSource = `
       <div class="row row-space-x-4 row-space-y-3">
 
         <div class="w-full md:w-2/12 md:self-center">
-          <label class="form-label flex ${labelDefault()}">
+          <label class="form-label ${labelDefault()}">
             Lorem ipsum
           </label>
         </div>
@@ -37,7 +37,7 @@ demo.htmlSource = `
       <div class="row row-space-x-4 row-space-y-3">
 
         <div class="w-full md:w-2/12 md:self-center">
-          <label class="form-label flex ${labelDefault()}">
+          <label class="form-label ${labelDefault()}">
             Dolor sit amet
           </label>
         </div>
@@ -53,7 +53,7 @@ demo.htmlSource = `
       <div class="row row-space-x-4 row-space-y-3">
 
         <div class="w-full md:w-4/12 md:self-center">
-          <label class="form-label flex ${labelDefault()}">
+          <label class="form-label ${labelDefault()}">
             Lorem ipsum
           </label>
         </div>
@@ -68,7 +68,7 @@ demo.htmlSource = `
     <div class="w-full md:w-6/12">
       <div class="row row-space-x-4 row-space-y-3">
         <div class="w-full md:w-4/12 md:self-center">
-          <label class="form-label flex ${labelDefault()}">
+          <label class="form-label ${labelDefault()}">
             Dolor sit amet
           </label>
         </div>
@@ -84,7 +84,7 @@ demo.htmlSource = `
       <div class="row row-space-x-4 row-space-y-3">
 
         <div class="w-full md:w-2/12 md:self-baseline">
-          <label class="form-label flex ${labelDefault()}">
+          <label class="form-label ${labelDefault()}">
             Checkbox
           </label>
         </div>
@@ -116,7 +116,7 @@ demo.htmlSource = `
       <div class="row row-space-x-4 row-space-y-3">
 
         <div class="w-full md:w-2/12 md:self-baseline">
-          <label class="form-label flex ${labelDefault()}">
+          <label class="form-label ${labelDefault()}">
             Radio
           </label>
         </div>
@@ -148,7 +148,7 @@ demo.htmlSource = `
       <div class="row row-space-x-4 row-space-y-3">
 
         <div class="w-full md:w-2/12 md:self-baseline">
-          <label class="form-label flex ${labelDefault()}">
+          <label class="form-label ${labelDefault()}">
             Switch
           </label>
         </div>

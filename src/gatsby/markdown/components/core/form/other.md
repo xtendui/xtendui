@@ -6,7 +6,16 @@ title: "Other"
 date: "2005-10-10"
 ---
 
-## Other
+## Label addon
+
+Use **tailwind classes** to create a label addon.
+
+<demo>
+  <demovanilla src="vanilla/components/core/form/label-addon">
+  </demovanilla>
+</demo>
+
+## Fieldset Legend Note
 
 Use **component classes** to create `fieldset` and `legend`.
 

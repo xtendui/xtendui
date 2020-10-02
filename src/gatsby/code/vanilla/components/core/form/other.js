@@ -107,7 +107,7 @@ demo.htmlSource = `
         <div class="row row-space-x-4 row-space-y-3">
 
           <div class="w-full md:w-2/12 md:self-baseline">
-            <label class="form-label flex ${labelDefault()}">
+            <label class="form-label ${labelDefault()}">
               Checkbox
             </label>
           </div>

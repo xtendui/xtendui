@@ -245,7 +245,7 @@ export default () => {
 
                       <div class="form-group-inline">
 
-                        <label class="form-label flex-full">
+                        <label class="form-label">
                           Select an option
                         </label>
 

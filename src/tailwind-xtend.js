@@ -872,8 +872,7 @@ module.exports = theme => ({
         '.form-label': {
           // setup
           cursor: 'pointer',
-          display: 'inline-block',
-          verticalAlign: 'middle', // @FIX inline-block spacing
+          display: 'flex',
           // styles
           fontWeight: theme('fontWeight.semibold'),
           fontSize: '1em',
