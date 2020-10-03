@@ -458,8 +458,14 @@ module.exports = theme => ({
           },
         },
         '.initial': {
-          // instant transitions and animation on init and reinit
+          // instant animations on components init and reinit
           '&, *': {
+            '@apply duration-none !important': '',
+          },
+        },
+        '@media (prefers-reduced-motion: reduce), (update: slow)': {
+          // instant animations accessibility
+          '*': {
             '@apply duration-none !important': '',
           },
         },

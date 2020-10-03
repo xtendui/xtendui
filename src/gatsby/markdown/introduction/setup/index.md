@@ -210,6 +210,8 @@ Xt.vars = {
   timeHuge: 3000,
 }
 
+// instant animations accessibility
+
 if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce), (update: slow)').matches) {
   Xt.vars.timeMicro = 0
   Xt.vars.timeMini = 0
