@@ -8,8 +8,8 @@ const version = JSON.parse(fs.readFileSync('package.json').toString()).version
 
 module.exports = {
   siteMetadata: {
-    title: 'Xtend',
-    description: 'Xtend library',
+    title: 'Xtend UI',
+    description: 'Powerful frontend library with Tailwind components and vanilla Javascript',
     author: 'Riccardo Caroli',
     version: version,
     npm: 'https://www.npmjs.com/package/xtend-library',

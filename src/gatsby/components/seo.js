@@ -25,6 +25,7 @@ function SEO({ description, lang, meta, keywords, title }) {
     `
   )
 
+  let metaTitle = title === 'Introduction' ? site.siteMetadata.description : title || site.siteMetadata.description // @DOCINDEX
   const metaDescription = description || site.siteMetadata.description
 
   return (
@@ -32,11 +33,8 @@ function SEO({ description, lang, meta, keywords, title }) {
       htmlAttributes={{
         lang,
       }}
-      title={title
-        .split(/[\s-]+/)
-        .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
-        .join(' ')}
-      titleTemplate={`%s — ${site.siteMetadata.title}`}
+      title={metaTitle}
+      titleTemplate={`${site.siteMetadata.title} - %s`}
       meta={[
         {
           name: 'description',

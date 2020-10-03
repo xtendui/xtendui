@@ -19,14 +19,19 @@ class Template extends React.Component {
     const { data } = this.props
     const seo = {}
     seo.title = data.post.frontmatter.title
-    seo.title += data.post.frontmatter.parent && data.post.frontmatter.parent !== data.post.frontmatter.title ? ' ' + data.post.frontmatter.parent : ''
-    seo.title += ' — '
+    seo.title = seo.title
+      .split(/[\s-]+/)
+      .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
+      .join(' ')
+    seo.title =
+      data.post.frontmatter.parent && data.post.frontmatter.parent !== data.post.frontmatter.title ? data.post.frontmatter.parent + ' ' + seo.title : seo.title
+    seo.title += ' - '
     seo.title += data.post.frontmatter.category && data.post.frontmatter.category !== data.post.frontmatter.title ? ' ' + data.post.frontmatter.category : ''
     seo.title += data.post.frontmatter.type && data.post.frontmatter.type !== data.post.frontmatter.title ? ' ' + data.post.frontmatter.type : ''
-    seo.description = data.post.frontmatter.description ? data.post.frontmatter.description : data.post.frontmatter.parent
+    seo.description = data.post.frontmatter.description ? data.post.frontmatter.description : data.parent.frontmatter.description
     return (
       <Layout seo={seo} page={data}>
-        <SEO title={seo.title} />
+        <SEO title={seo.title} description={seo.description} />
         {data.post.htmlAst !== '<div></div>' ? renderAst(data.post.htmlAst) : null}
 
         {data.post.frontmatter.parent === data.post.frontmatter.title ? (
@@ -164,6 +169,7 @@ export const query = graphql`
         type
         category
         parent
+        description
         title
       }
     }
@@ -239,6 +245,7 @@ Template.propTypes = {
         category: PropTypes.string,
         parent: PropTypes.string,
         title: PropTypes.string.isRequired,
+        description: PropTypes.string,
       }).isRequired,
     }),
     post: PropTypes.shape({

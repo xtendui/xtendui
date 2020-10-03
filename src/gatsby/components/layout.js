@@ -7,6 +7,7 @@ import Footer from 'components/includes/footer'
 import DocHead from 'components/includes/doc-head'
 import DocFoot from 'components/includes/doc-foot'
 import DocFullscreen from 'components/includes/doc-fullscreen'
+import { markdownSlug } from 'components/snippets/markdown-slug'
 
 import { makeDocument } from 'assets/scripts/theme'
 import { populateBlock } from 'assets/scripts/demo'
@@ -58,7 +59,7 @@ class Layout extends React.Component {
                   <div className="gatsby_site_article prose max-w-none">
                     <DocFullscreen />
                     <main className="gatsby_site_article_inner" id="gatsby_open-full-inner">
-                      {page ? <DocHead page={page} /> : null}
+                      {page && markdownSlug(page.post) !== '/introduction' ? <DocHead page={page} /> : null}
                       <article className="gatsby_site_article_content">
                         <div className="gatsby_site_article_content_inner">{children}</div>
                       </article>

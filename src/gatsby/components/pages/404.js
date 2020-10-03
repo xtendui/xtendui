@@ -10,7 +10,7 @@ class Page extends React.Component {
     seo.description = 'Page not found'
     return (
       <Layout seo={seo}>
-        <SEO title={seo.title} />
+        <SEO title={seo.title} description={seo.description} />
         <h1>Error 404</h1>
         <p>Page not found.</p>
       </Layout>

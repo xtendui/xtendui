@@ -45,10 +45,10 @@ class DocSidebar extends React.Component {
             <div className="gatsby_site_header_links">
               <div>
                 <Link
-                  to="/introduction"
+                  to="/" // @DOCINDEX
                   className={`btn gatsby_btn-site_header_link ${
                     page && page.post
-                      ? markdownSlug(page.post) === '/' + 'introduction'
+                      ? markdownSlug(page.post) === '/introduction' // @DOCINDEX
                         ? 'active'
                         : page.post.frontmatter.type === 'Introduction'
                         ? 'current'

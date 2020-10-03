@@ -50,8 +50,10 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors)
     }
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      let slug = markdownSlug(node)
+      slug = slug === '/introduction' ? '/' : slug // @DOCINDEX
       createPage({
-        path: markdownSlug(node), // needs gatsby-source-filesystem resolve name
+        path: slug, // needs gatsby-source-filesystem resolve name
         component: node.frontmatter.parent ? docPageTemplate : docCategoryTemplate,
         context: {
           // for graphql query($type: String)
