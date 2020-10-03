@@ -9,14 +9,6 @@ date: "2050-10-10"
 
 ## Setup
 
-#### Javascript
-
-Follow the [javascript installation](/introduction/getting-started/setup#javascript-installation) instructions and **import the component javascript** file.
-
-```jsx
-import 'xtend-library/src/vars'
-```
-
 #### Css
 
 Follow the [css installation](/introduction/getting-started/setup#css-installation) instructions. To [customize styles](/introduction/getting-started/setup#css-customization) in your `tailwind.config.js` file.

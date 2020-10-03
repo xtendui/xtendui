@@ -6,10 +6,6 @@ title: "Javascript"
 date: "2050-05-05"
 ---
 
-## Variables
-
-In `xtend-library/src/vars` there are javascript variables. You can access them with `Xt.vars.<property>`. You'll need also to install [gsap](https://greensock.com/gsap/) when using xtend vars, it's all documented in the docs demos.
-
 ## Event Delay
 
 For the `resize` and `scroll` events we use a special wrapper `Xt.eventDelay` that set the delay on which the resize gets triggered with `Xt.resizeDelay` and `Xt.scrollDelay`.

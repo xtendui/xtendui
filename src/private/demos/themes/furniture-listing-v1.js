@@ -1,5 +1,4 @@
 import { Xt } from 'xtend-library'
-import 'xtend-library/src/vars'
 import gsap from 'gsap'
 
 /**

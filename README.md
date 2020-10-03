@@ -79,7 +79,9 @@ module.exports = {
 
 ## Javascript Installation
 
-You need to install [core-js](https://www.npmjs.com/package/core-js), [@babel/core](https://www.npmjs.com/package/@babel/core), [@babel/preset-env](https://www.npmjs.com/package/@babel/preset-env), [@babel/plugin-transform-runtime](https://www.npmjs.com/package/@babel/plugin-transform-runtime), [babel-plugin-module-resolver](https://www.npmjs.com/package/babel-plugin-module-resolver).
+#### Babel and Corejs
+
+You need to install [corejs](https://www.npmjs.com/package/core-js), [@babel/core](https://www.npmjs.com/package/@babel/core), [@babel/preset-env](https://www.npmjs.com/package/@babel/preset-env), [@babel/plugin-transform-runtime](https://www.npmjs.com/package/@babel/plugin-transform-runtime), [babel-plugin-module-resolver](https://www.npmjs.com/package/babel-plugin-module-resolver).
 
 ```Shell
 npm install core-js@3 @babel/core @babel/preset-env @babel/plugin-transform-runtime babel-plugin-module-resolver --save-dev
@@ -115,6 +117,12 @@ module.exports = {
 }
 ```
 
+Then import the **corejs**.
+
+```jsx
+import 'core-js'
+```
+
 You need also to set a `.browserslistrc` in the root of your project.
 
 ```
@@ -128,26 +136,82 @@ Opera >= 25
 
 #### Xtend
 
-You need to import the **polyfills** and the **main js** file.
+Install **xtend**.
+
+```Shell
+npm install xtend-library --save
+```
+
+Then import the **xtend main file**.
 
 ```jsx
-import 'core-js'
 import { Xt } from 'xtend-library'
 ```
 
-Then you can import the **components you need** as described in the docs:
+Then you can import the **components you need** as described in the docs.
 
 ```jsx
 import 'xtend-library/src/core/toggle'
 import 'xtend-library/src/core/slider'
 ```
 
-#### Gsap
+#### Animations
 
-This library in the demos uses [gsap](https://github.com/greensock/GSAP) and [bezier-easing](https://github.com/gre/bezier-easing) for javascript animations.
+This library in the demos uses [gsap](https://github.com/greensock/GSAP) for javascript animations. Install it.
 
 ```
-npm install gsap bezier-easing --save
+npm install gsap --save
+```
+
+Then **setup gsap** this way. Also add the following **xtend variables**.
+
+```jsx
+/**
+ * gsap setup
+ */
+
+import gsap from 'gsap'
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
+
+gsap.defaults({
+  overwrite: 'auto',
+})
+
+gsap.config({
+  force3D: false,
+})
+
+gsap.globalTimeline.timeScale(1000) // milliseconds instead of seconds
+
+gsap.registerPlugin(ScrollToPlugin)
+
+/**
+ * Xt.vars
+ */
+
+Xt.vars = {
+  timeMicro: 50,
+  timeMini: 100,
+  timeTiny: 250,
+  timeSmall: 500,
+  timeMedium: 750,
+  timeLarge: 1000,
+  timeBig: 1500,
+  timeGiant: 2000,
+  timeHuge: 3000,
+}
+
+if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce), (update: slow)').matches) {
+  Xt.vars.timeMicro = 0
+  Xt.vars.timeMini = 0
+  Xt.vars.timeTiny = 0
+  Xt.vars.timeSmall = 0
+  Xt.vars.timeMedium = 0
+  Xt.vars.timeLarge = 0
+  Xt.vars.timeBig = 0
+  Xt.vars.timeGiant = 0
+  Xt.vars.timeHuge = 0
+}
 ```
 
 ## Css Customization
