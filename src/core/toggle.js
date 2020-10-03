@@ -1779,8 +1779,13 @@ class Toggle {
       self.specialClassHtml(actionCurrent)
       self.specialScrollbar(actionCurrent)
       if (options.focusLimit) {
-        const el = obj.targets ? obj.targets.queueEls[0] : obj.elements.queueEls[0]
-        Xt.focusLimit.on(el)
+        if (obj.targets) {
+          if (type === 'targets') {
+            Xt.focusLimit.on(obj.targets.queueEls[0])
+          }
+        } else if (type === 'elements') {
+          Xt.focusLimit.on(obj.elements.queueEls[0])
+        }
       }
       // @FIX when standalone !self.targets.length && type === 'elements'
       if (type === 'targets' || (!self.targets.length && type === 'elements')) {

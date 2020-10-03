@@ -362,10 +362,6 @@ module.exports = theme => ({
     core: {
       // general
       general: {
-        ':focus': {
-          // setup
-          outline: 'none !important', // disable focus outline
-        },
         html: {
           // setup
           touchAction: 'manipulation', // disable double-tap
@@ -411,6 +407,24 @@ module.exports = theme => ({
           },
           scrollbarWidth: 'thin',
           scrollbarColor: theme('colors.accent.700') + ' transparent',
+        },
+        'html:not(.xt-focus-disable)': {
+          ':focus': {
+            // setup disable default focus outline
+            outline: 'none !important',
+          },
+          '&.xt-focus-visible': {
+            // styles enable custom focus outline
+            ':focus': {
+              outline: `5px auto ${theme('colors.accent.700')} !important`,
+            },
+            // setup disable focus forms outline
+            'input:not([type="checkbox"]):not([type="radio"]), select, textarea': {
+              '&:focus': {
+                outline: 'none !important',
+              },
+            },
+          },
         },
         '[disabled], .disabled': {
           // setup
@@ -963,9 +977,12 @@ module.exports = theme => ({
           // animation
           transitionProperty: 'all',
           transitionDuration: theme('transitionDuration.500'),
-          transitionTimingFunction: theme('transitionTimingFunction.in'),
+          transitionTimingFunction: theme('transitionTimingFunction.out'),
           '&:checked': {
-            transitionTimingFunction: theme('transitionTimingFunction.out'),
+            transitionTimingFunction: theme('transitionTimingFunction.in'),
+          },
+          '&:hover, &:focus': {
+            transitionTimingFunction: theme('transitionTimingFunction.ease.in'),
           },
         },
         '.form-checkbox': {

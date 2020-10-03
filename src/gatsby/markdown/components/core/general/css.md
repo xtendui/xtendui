@@ -36,3 +36,13 @@ Use **component classes** for general purpose.
 | Component                  | `.design-setup`                     | `design-setup`                | Apply design setup styles            |
 
 </div>
+
+Xtend has custom `:focus` styles, sort of `:focus-visbile` polyfill. You can customize the global `.xt-focus-visible` style or **disable focus management and styles** with the class `html.xt-focus-disable`.
+
+<div class="table-scroll">
+
+|               | Syntax                          | Mixin               | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Component                  | `html.xt-focus-disable`                     | `NOT POSSIBLE`                | Disable focus management and styles            |
+
+</div>
