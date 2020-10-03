@@ -17,7 +17,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn-md ${btnPrimary()}">
       screen image full
     </button>
-    <div class="overlay md:overlay-screen">
+    <div class="overlay overlay-screen">
       <div class="overlay-container">
         <div class="overlay-inner">
 
@@ -37,7 +37,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn-md ${btnPrimary()}">
       screen max-w-3xl
     </button>
-    <div class="overlay md:overlay-screen">
+    <div class="overlay overlay-screen">
       <div class="overlay-container">
         <div class="overlay-inner">
 
@@ -63,7 +63,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn-md ${btnPrimary()}">
       screen group max-w-3xl
     </button>
-    <div class="overlay md:overlay-screen">
+    <div class="overlay overlay-screen">
       <div class="overlay-container">
         <div class="overlay-inner">
 

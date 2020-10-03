@@ -263,8 +263,6 @@ module.exports = {
             },
           },
         },
-        // disable addons
-        addons: false,
       },
       components: {
         core: {
@@ -277,8 +275,16 @@ module.exports = {
             },
           },
         },
-        // disable addons
-        addons: false,
+        addons: {
+          // disable addon
+          addonName: false,
+          // modify addon
+          addonName: {
+            '.selector': {
+              myStyle: 'myStyleValue',
+            },
+          },
+        },
       },
     }),
   },

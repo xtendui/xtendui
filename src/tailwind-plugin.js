@@ -107,37 +107,11 @@ module.exports = plugin.withOptions(() => {
               let css = {}
               css[utility] = options[utility]
               const variants = ['responsive']
-              const hoverUtils = ['.text-default', '.text-inverse']
-              if (hoverUtils.includes(utility)) {
+              if (['.text-default', '.text-inverse'].includes(utility)) {
                 variants.push('hover')
               }
               addUtilities(css, variants)
             }
-          }
-        }
-      }
-    }
-
-    /**
-     * utilities addons
-     */
-
-    const utilitiesAddonsBase = base(theme).utilities.addons || {}
-    const utilitiesAddonsCustom = custom.utilities ? custom.utilities.addons || {} : {}
-    for (const component of Object.keys(utilitiesAddonsBase)) {
-      if (utilitiesAddonsCustom[component] !== false) {
-        const options = merge(...castArray(utilitiesAddonsBase[component] || {}), utilitiesAddonsCustom[component] || {})
-        const utilities = Object.keys(options)
-        for (const utility of utilities) {
-          if (utilitiesAddonsCustom[utility] !== false) {
-            let css = {}
-            css[utility] = options[utility]
-            const variants = ['responsive']
-            const hoverUtils = ['.text-default', '.text-inverse']
-            if (hoverUtils.includes(utility)) {
-              variants.push('hover')
-            }
-            addUtilities(css, variants)
           }
         }
       }

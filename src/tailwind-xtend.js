@@ -356,7 +356,6 @@ module.exports = theme => ({
         },
       },
     },
-    addons: {},
   },
   components: {
     core: {
