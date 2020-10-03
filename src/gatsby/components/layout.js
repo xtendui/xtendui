@@ -58,20 +58,24 @@ class Layout extends React.Component {
                   <Header site={data} seo={seo} page={page} />
                   <div className="gatsby_site_article prose max-w-none">
                     <DocFullscreen />
-                    <main className="gatsby_site_article_inner" id="gatsby_open-full-inner">
-                      {page && markdownSlug(page.post) !== '/introduction' ? <DocHead page={page} /> : null}
-                      <article className="gatsby_site_article_content">
-                        <div className="gatsby_site_article_content_inner">{children}</div>
-                      </article>
-                      <footer className="gatsby_site_footer">
-                        <div className="gatsby_site_footer_inner">
-                          {page && page.post.frontmatter.type !== page.post.frontmatter.title && page.post.frontmatter.type !== 'Introduction' ? (
-                            <DocFoot page={page} />
-                          ) : null}
-                          <Footer site={data} />
-                        </div>
-                      </footer>
-                    </main>
+                    {page && markdownSlug(page.post) === '/introduction' ? (
+                      children
+                    ) : (
+                      <main className="gatsby_site_article_inner" id="gatsby_open-full-inner">
+                        <DocHead page={page} />
+                        <article className="gatsby_site_article_content">
+                          <div className="gatsby_site_article_content_inner">{children}</div>
+                        </article>
+                        <footer className="gatsby_site_footer">
+                          <div className="gatsby_site_footer_inner">
+                            {page && page.post.frontmatter.type !== page.post.frontmatter.title && page.post.frontmatter.type !== 'Introduction' ? (
+                              <DocFoot page={page} />
+                            ) : null}
+                            <Footer site={data} />
+                          </div>
+                        </footer>
+                      </main>
+                    )}
                   </div>
                 </div>
               </div>
