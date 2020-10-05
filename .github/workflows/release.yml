@@ -5,7 +5,7 @@ on:
     branches:
       - master
       - release-0.14
-      - release-0.15
+      - dev-0.15
 
 env:
   NODE: 12.x
