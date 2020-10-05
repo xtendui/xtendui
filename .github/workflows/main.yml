@@ -3,9 +3,8 @@ name: Release
 on:
   push:
     branches:
-      - master
-      - release-0.14
       - dev-0.15
+      - release-0.14
 
 jobs:
   build:

@@ -1,13 +1,7 @@
 module.exports = {
   debug: true,
   repositoryUrl: 'https://github.com/minimit/xtend-library',
-  branches: [
-    'master',
-    { name: 'release-0.14', prerelease: false, range: '0.14.x' },
-    { name: 'dev-0.15', prerelease: false, range: '0.15.x' },
-    { name: 'beta', prerelease: true },
-    { name: 'alpha', prerelease: true },
-  ],
+  branches: ['dev-0.15', { name: 'release-0.14', prerelease: false, range: '0.14.x' }, { name: 'beta', prerelease: true }, { name: 'alpha', prerelease: true }],
   plugins: [
     ['@semantic-release/commit-analyzer'],
     ['@semantic-release/release-notes-generator'],
