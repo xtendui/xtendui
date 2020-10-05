@@ -1,4 +1,4 @@
-# PORTED TO TAILWIND [xtend-ui](https://github.com/minimit/xtend-ui)
+# PORTED TO TAILWIND [xtend-ui](https://www.npmjs.com/package/xtend-ui)
 
 ## Installation
 
