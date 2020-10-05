@@ -1,4 +1,4 @@
-import { Xt } from 'xtend-library'
+import { Xt } from 'xtend-ui'
 const cardSlide = require('components/snippets/classes/card-slide').default
 
 Xt.mount.push({

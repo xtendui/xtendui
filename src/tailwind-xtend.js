@@ -1233,7 +1233,7 @@ module.exports = theme => ({
           'svg': {
             '&:nth-child(1)': {
               'circle': {
-                animation: 'anim-spinner 1500ms infinite', // see node_modules/xtend-library/src/tailwind-theme.js
+                animation: 'anim-spinner 1500ms infinite', // see node_modules/xtend-ui/src/tailwind-theme.js
               },
             },
           },
@@ -1242,7 +1242,7 @@ module.exports = theme => ({
           // animation
           '.filler': {
             'span:nth-child(1)': {
-              animation: 'anim-filler-x 1500ms infinite', // see node_modules/xtend-library/src/tailwind-theme.js
+              animation: 'anim-filler-x 1500ms infinite', // see node_modules/xtend-ui/src/tailwind-theme.js
             },
           },
         },
@@ -1250,7 +1250,7 @@ module.exports = theme => ({
           // animation
           '.filler': {
             'span:nth-child(1)': {
-              animation: 'anim-filler-y 1500ms infinite', // see node_modules/xtend-library/src/tailwind-theme.js
+              animation: 'anim-filler-y 1500ms infinite', // see node_modules/xtend-ui/src/tailwind-theme.js
             },
           },
         },

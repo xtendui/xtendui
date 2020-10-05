@@ -1,6 +1,6 @@
 module.exports = {
   debug: true,
-  repositoryUrl: 'https://github.com/minimit/xtend-library',
+  repositoryUrl: 'https://github.com/minimit/xtend-ui',
   branches: [
     'master',
     { name: 'release-0.14', prerelease: false, range: '0.14.x' },

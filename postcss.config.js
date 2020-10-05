@@ -5,7 +5,7 @@ module.exports = {
   map: true,
   plugins: [
     require(`postcss-import`)({
-      // resolve xtend-library import css
+      // resolve xtend-ui import css
       resolve: function (id) {
         const arr = id.split('/')
         const theme = path.resolve(__dirname, './' + arr.slice(1).join('/'))

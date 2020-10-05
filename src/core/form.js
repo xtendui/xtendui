@@ -1,4 +1,4 @@
-import { Xt } from 'xtend-library'
+import { Xt } from 'xtend-ui'
 
 /**
  * Radio change event on same name radios

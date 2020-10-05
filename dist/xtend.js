@@ -1,12 +1,12 @@
 /**
  * Xtend (https://getxtend.com/)
  * @copyright (c) 2017 - 2020 Riccardo Caroli
- * @license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE)
+ * @license MIT (https://github.com/minimit/xtend-ui/blob/master/LICENSE)
  */
 
-import { Xt } from 'xtend-library'
-import 'xtend-library/dist/xtend-core'
-import 'xtend-library/dist/xtend-addons'
+import { Xt } from 'xtend-ui'
+import 'xtend-ui/dist/xtend-core'
+import 'xtend-ui/dist/xtend-addons'
 
 // export UMD
 /* eslint-disable */

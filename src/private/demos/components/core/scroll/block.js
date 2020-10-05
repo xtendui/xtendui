@@ -1,4 +1,4 @@
-import { Xt } from 'xtend-library'
+import { Xt } from 'xtend-ui'
 
 Xt.mount.push({
   matches: '.demo--scroll-block',

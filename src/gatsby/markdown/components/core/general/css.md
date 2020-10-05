@@ -10,7 +10,7 @@ date: "2050-10-10"
 
 Xtend adds a custom variant `active` to Tailwind, it styles when user presses the element with `:active` but also when the element is activated by javascript plugins with `.active`.
 
-When you use Tailwind classes you can style it with the variant `active:`, it's activated on the same tailwind utilities that have `hover:`, see `xtend-library/src/tailwind-variants`.
+When you use Tailwind classes you can style it with the variant `active:`, it's activated on the same tailwind utilities that have `hover:`, see `xtend-ui/src/tailwind-variants`.
 
 When you style pseudo selector remember to style `&:active, &.active`.
 

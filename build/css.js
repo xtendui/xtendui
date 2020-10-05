@@ -6,7 +6,7 @@ const writeFile = require('write')
 let cssDemos = ''
 const cssDemosGlob = new glob.Glob('src/private/demos/**/*.css', { ignore: ['**/_*.css'] }, (er, files) => {
   for (const file of files) {
-    cssDemos += `@import 'xtend-library/${file}';\n`
+    cssDemos += `@import 'xtend-ui/${file}';\n`
   }
 })
 cssDemosGlob.on('end', () => {

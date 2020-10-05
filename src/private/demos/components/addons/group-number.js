@@ -1,1 +1,1 @@
-import 'xtend-library/src/addons/group-number'
+import 'xtend-ui/src/addons/group-number'

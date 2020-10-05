@@ -1,5 +1,5 @@
-import { Xt } from 'xtend-library'
-import 'xtend-library/src/core/toggle'
+import { Xt } from 'xtend-ui'
+import 'xtend-ui/src/core/toggle'
 import JSON5 from 'json5'
 
 /**

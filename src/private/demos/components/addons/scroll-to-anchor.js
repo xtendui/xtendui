@@ -1,5 +1,5 @@
-import { Xt } from 'xtend-library'
-import 'xtend-library/src/addons/scroll-to-anchor'
+import { Xt } from 'xtend-ui'
+import 'xtend-ui/src/addons/scroll-to-anchor'
 import gsap from 'gsap'
 import 'gsap/ScrollToPlugin'
 
