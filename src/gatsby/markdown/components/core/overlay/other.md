@@ -3,42 +3,69 @@ type: "Components"
 category: "Core"
 parent: "Overlay"
 title: "Other"
-date: "2019-03-15"
+date: "2005-10-10"
 ---
 
-[[notePrimary]]
-| Overlay uses **card** to style it's content, refer to [card's other](/components/core/card/other).
+## Disable
 
-## Special
+You can disable styles and javascript using `.overlay-disable`.
 
 <div class="table-scroll">
 
-|                         | Class                                     | Mixin                         | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `.overlay-close-fixed`                | `.overlay-close-fixed()`        | Close button position fixed and styles            |
-| Option                  | `.overlay-disable`                | `.overlay-disable()`        | Disable overlay, useful within media queries            |
-| Option                  | `.overlay-squared`                | `.overlay-squared()`        | No border-radius on overlay           |
-| Option                  | `.overlay-noborder`                | `.overlay-noborder()`        | No border on overlay            |
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
+| Util                  | `.overlay-disable`       | `overlay-disable !important`                | `responsive`                | Reset overlay styles and javascript            |
 
 </div>
-
-You can have the `.btn-close` with `position: fixed` using `.overlay-close-fixed`.
-
-<demo>
-  <demovanilla src="vanilla/components/core/overlay/close-fixed">
-  </demovanilla>
-</demo>
-
-You can disable overlay using `.overlay-disable` (resize to mobile to see it in action).
 
 <demo>
   <demovanilla src="vanilla/components/core/overlay/disable">
   </demovanilla>
 </demo>
 
-## Unique mode and nested
+## Preset
+
+You can overlay that covers the screen with `.overlay-screen`, remember to use also align and justify the `.card`.
+
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
+| Util                  | `.overlay-screen`       | `overlay-screen`                | `responsive`                | Overlay that covers the screen            |
+
+</div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/overlay/nested">
+  <demovanilla src="vanilla/components/core/overlay/screen">
   </demovanilla>
 </demo>
+
+With `.overlay-screen` you can also use **tailwind classes** to modify `.overlay-container` **position** and **size**.
+
+<demo>
+  <demovanilla src="vanilla/components/core/overlay/position">
+  </demovanilla>
+</demo>
+
+## Close fixed
+
+You can have the `.btn-close` with `fixed z-top` to have it always visible also when scrolling.
+
+<demo>
+  <demovanilla src="vanilla/components/core/overlay/close-fixed">
+  </demovanilla>
+</demo>
+
+## Other
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `closeAuto:Boolean`                          | `true`        | Close automatically on `closeauto.trigger.xt` event            |
+| Option                  | `closeInside:Query`                          | `'.overlay-dismiss, .btn-close, .backdrop'`        | Query Node inside to close on click            |
+| Option                  | `appendTo:Query`                          | `'body'`        | Append targets to Node on activation            |
+| Option                  | `scrollbar:Boolean`                          | `true`        | Hide body scrollbars on activation            |
+| Option                  | `focusLimit:Boolean`                          | `true`        | Limit focus on activation            |
+
+</div>

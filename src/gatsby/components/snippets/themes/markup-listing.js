@@ -17,7 +17,7 @@ export default () => {
                   ${img({})}
                 </div>
                 <div class="card-block card-item">
-                  <div class="card-title">
+                  <div class="h4">
                     Lorem Ipsum
                   </div>
                   <div class="listing-page_price">
@@ -38,7 +38,7 @@ export default () => {
                   ${imgAlt({})}
                 </div>
                 <div class="card-block card-item">
-                  <div class="card-title">
+                  <div class="h4">
                     Dolor sit amet
                   </div>
                   <div class="listing-page_price">
@@ -59,7 +59,7 @@ export default () => {
                   ${img({})}
                 </div>
                 <div class="card-block card-item">
-                  <div class="card-title">
+                  <div class="h4">
                     Consectetur adipiscing elit
                   </div>
                   <div class="listing-page_price">
@@ -80,7 +80,7 @@ export default () => {
                   ${imgAlt({})}
                 </div>
                 <div class="card-block card-item">
-                  <div class="card-title">
+                  <div class="h4">
                     Lorem Ipsum
                   </div>
                   <div class="listing-page_price">
@@ -101,7 +101,7 @@ export default () => {
                   ${img({})}
                 </div>
                 <div class="card-block card-item">
-                  <div class="card-title">
+                  <div class="h4">
                     Dolor sit amet
                   </div>
                   <div class="listing-page_price">
@@ -122,7 +122,7 @@ export default () => {
                   ${imgAlt({})}
                 </div>
                 <div class="card-block card-item">
-                  <div class="card-title">
+                  <div class="h4">
                     Consectetur adipiscing elit
                   </div>
                   <div class="listing-page_price">
@@ -143,7 +143,7 @@ export default () => {
                   ${img({})}
                 </div>
                 <div class="card-block card-item">
-                  <div class="card-title">
+                  <div class="h4">
                     Lorem Ipsum
                   </div>
                   <div class="listing-page_price">
@@ -164,7 +164,7 @@ export default () => {
                   ${imgAlt({})}
                 </div>
                 <div class="card-block card-item">
-                  <div class="card-title">
+                  <div class="h4">
                     Dolor sit amet
                   </div>
                   <div class="listing-page_price">
@@ -185,7 +185,7 @@ export default () => {
                   ${img({})}
                 </div>
                 <div class="card-block card-item">
-                  <div class="card-title">
+                  <div class="h4">
                     Lorem Ipsum
                   </div>
                   <div class="listing-page_price">
@@ -206,7 +206,7 @@ export default () => {
                   ${imgAlt({})}
                 </div>
                 <div class="card-block card-item">
-                  <div class="card-title">
+                  <div class="h4">
                     Dolor sit amet
                   </div>
                   <div class="listing-page_price">

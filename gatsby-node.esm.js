@@ -6,7 +6,7 @@
 
 import path from 'path'
 import { markdownSlug } from './src/gatsby/components/snippets/markdown-slug.js'
-require('./build/less.js')
+require('./build/css.js')
 require('./build/js.js')
 
 // webpack config
@@ -15,7 +15,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
       alias: {
-        // resolve xtend-library import js and less
+        // resolve xtend-library import js and css
         'xtend-library': path.resolve(__dirname, './'),
         // https://github.com/gatsbyjs/gatsby/issues/11934
         'react-dom': '@hot-loader/react-dom',
@@ -45,13 +45,15 @@ exports.createPages = ({ actions, graphql }) => {
         }
       }
     }
-  `).then((result) => {
+  `).then(result => {
     if (result.errors) {
       return Promise.reject(result.errors)
     }
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      let slug = markdownSlug(node)
+      slug = slug === '/introduction' ? '/' : slug // @DOCINDEX
       createPage({
-        path: markdownSlug(node), // needs gatsby-source-filesystem resolve name
+        path: slug, // needs gatsby-source-filesystem resolve name
         component: node.frontmatter.parent ? docPageTemplate : docCategoryTemplate,
         context: {
           // for graphql query($type: String)

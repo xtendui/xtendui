@@ -2,7 +2,7 @@ const path = require('path')
 const TerserJSPlugin = require('terser-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-require('./build/less.js')
+require('./build/css.js')
 require('./build/js.js')
 
 module.exports = {
@@ -10,7 +10,7 @@ module.exports = {
   performance: { hints: false },
   context: path.resolve(__dirname, ''),
   entry: {
-    'dist/xtend': ['./dist/xtend.js', './dist/xtend.less'],
+    'dist/xtend': ['./dist/xtend.js', './dist/xtend.css'],
   },
   output: {
     filename: '[name].min.js',
@@ -18,7 +18,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      // resolve xtend-library import js and less
+      // resolve xtend-library import js and css
       'xtend-library': path.resolve(__dirname, './'),
     },
   },
@@ -39,12 +39,13 @@ module.exports = {
                   },
                 ],
               ],
+              plugins: [require.resolve('@babel/plugin-transform-runtime')],
             },
           },
         ],
       },
       {
-        test: /\.less$/,
+        test: /\.css$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -57,10 +58,7 @@ module.exports = {
             },
           },
           {
-            loader: 'less-loader',
-            options: {
-              sourceMap: true,
-            },
+            loader: 'postcss-loader',
           },
         ],
       },

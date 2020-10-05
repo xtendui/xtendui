@@ -8,35 +8,36 @@ description: "Simple and extensible button styles."
 
 ## Setup
 
-To use this component import the **less** files accordingly:
+#### Css
 
-```less
-@import 'xtend-library/src/core/button/button.less';
+Follow the [css installation](/introduction/getting-started/setup#css-installation) instructions. To [customize styles](/introduction/getting-started/setup#css-customization) in your `tailwind.config.js` file.
+
+```jsx
+module.exports = {
+  theme: require('xtend-library/src/tailwind-theme')({
+    // xtend utilities and components in node_modules/xtend-library/src/tailwind-xtend.js
+    xtend: theme => ({
+      components: {
+        core: {
+          btn: {
+            // modify component
+          },
+        },
+      },
+    }),
+  })
+}
 ```
 
-Or just import **core**:
-
-```less
-@import 'xtend-library/src/xtend-core.less';
-```
-
-[[noteDefault]]
-| To modify a **less** or **js** file add [webpack resolve](/introduction/setup#usage-webpack) and fork the file copying it in your project.
+To **see the default values** see the source code of `node_modules/xtend-library/src/tailwind-xtend.js`.
 
 ## Usage
 
-Use this markup to create a **button**.
+Use this code to create a **button**.
 
-<script type="text/plain" class="language-markup">
-  <a href="#" class="btn btn-default">
-    <!-- content -->
-  </a>
+<demo>
+  <demovanilla src="vanilla/components/core/button/usage">
+  </demovanilla>
+</demo>
 
-  <button type="button" class="btn btn-default">
-    <!-- content -->
-  </button>
-
-  <div class="btn btn-default">
-    <!-- content -->
-  </div>
-</script>
+Check subpage to [customize content](/components/core/button/content).

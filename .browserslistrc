@@ -1,8 +1,8 @@
-# Configures browser support for
-# Webpack
 # https://github.com/ai/browserslist
 
-> 2%
-not dead
-not op_mini all
-ie >= 11
+Chrome >= 38
+Safari >= 10
+iOS >= 10
+Firefox >= 38
+Edge >= 12
+Opera >= 25

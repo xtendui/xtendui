@@ -1,8 +1,6 @@
 import { Xt } from 'xtend-library'
-import 'xtend-library/src/vars.js'
-import 'xtend-library/src/extensions/slider/slider.js'
-import 'xtend-library/src/addons/slider/navigation-sides.js'
-import 'xtend-library/src/addons/animation/propagate-interaction.js'
+import 'xtend-library/src/core/slider'
+import 'xtend-library/src/addons/propagate-interaction'
 import gsap from 'gsap'
 
 /**
@@ -11,7 +9,7 @@ import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '#iframe--sequential-megamenu-v1 #check-sequential-megamenu-v1',
-  mount: (object) => {
+  mount: object => {
     // mouse events instead of click
 
     const checkChange = () => {
@@ -41,7 +39,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '#iframe--sequential-megamenu-v1 body .megamenus', // add your own selector instead of body to contain the code
-  mount: (object) => {
+  mount: object => {
     // vars
 
     const contentXOn = -40
@@ -84,7 +82,7 @@ Xt.mount.push({
 
     // on
 
-    const eventOn = (e) => {
+    const eventOn = e => {
       const tr = e.target
       // useCapture delegation
       if (self.targets.includes(tr)) {
@@ -115,7 +113,7 @@ Xt.mount.push({
 
     // on
 
-    const eventOff = (e) => {
+    const eventOff = e => {
       const tr = e.target
       // useCapture delegation
       if (self.targets.includes(tr)) {
@@ -135,7 +133,7 @@ Xt.mount.push({
               gsap.set(design, { opacity: 0 })
             } else {
               // others
-              for (const other of self.targets.filter((x) => x !== tr)) {
+              for (const other of self.targets.filter(x => x !== tr)) {
                 // design
                 const design = other.querySelector('.drop-design')
                 gsap.set(design, { opacity: 0 })
@@ -194,7 +192,7 @@ Xt.mount.push({
 
     // enter
 
-    const eventEnter = (e) => {
+    const eventEnter = e => {
       const el = e.target
       // raf fix not off on sequential
       cancelAnimationFrame(Xt.dataStorage.get(object, 'lineFrame'))

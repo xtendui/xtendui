@@ -8,71 +8,42 @@ description: "Css component to group up buttons and form inputs."
 
 ## Setup
 
-To use this component import the **less** files accordingly:
+#### Css
 
-```less
-@import 'xtend-library/src/core/group/group.less';
+Follow the [css installation](/introduction/getting-started/setup#css-installation) instructions. To [customize styles](/introduction/getting-started/setup#css-customization) in your `tailwind.config.js` file.
+
+```jsx
+module.exports = {
+@TODO
+}
 ```
 
-Or just import **core**:
-
-```less
-@import 'xtend-library/src/xtend-core.less';
-```
-
-[[noteDefault]]
-| To modify a **less** or **js** file add [webpack resolve](/introduction/setup#usage-webpack) and fork the file copying it in your project.
+To **see the default values** see the source code of `node_modules/xtend-library/src/tailwind-xtend.js`.
 
 ## Usage
 
 #### Button
 
-Use this markup to create a **button group as line**.
-
-<script type="text/plain" class="language-markup">
-  <div class="group">
-
-    <button type="button" class="btn btn-default">
-      <!-- content -->
-    </button>
-
-    <button type="button" class="btn btn-default">
-      <!-- content -->
-    </button>
-
-  </div>
-</script>
-
-Use this markup to create a button group as stack.
-
-<script type="text/plain" class="language-markup">
-  <div class="group">
-
-    <div class="group-inner">
-      <button type="button" class="btn btn-default">
-        <!-- content -->
-      </button>
-      <button type="button" class="btn btn-default">
-        <!-- content -->
-      </button>
-    </div>
-
-  </div>
-</script>
+Use this code to create a **button group as line**.
 
 <demo>
   <demovanilla src="vanilla/components/core/group/button-line">
   </demovanilla>
+</demo>
+
+Use this code to create a **button group as stack**.
+
+<demo>
   <demovanilla src="vanilla/components/core/group/button-stack">
   </demovanilla>
 </demo>
 
 #### Input
 
-Use this markup to create a input group as line.
+Use this code to create a **input group as line**.
 
 <script type="text/plain" class="language-markup">
-<form class="form-default">
+<form>
   <div class="form-group">
     <div class="group">
 
@@ -91,10 +62,10 @@ Use this markup to create a input group as line.
 </form>
 </script>
 
-Use this markup to create a input group as stack.
+Use this code to create a **input group as stack**.
 
 <script type="text/plain" class="language-markup">
-<form class="form-default">
+<form>
   <div class="form-group">
     <div class="group">
 

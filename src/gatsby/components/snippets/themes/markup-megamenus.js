@@ -26,7 +26,7 @@ export default () => {
 
                       <div class="megamenu_col_left">
                         <div class="megamenu_left">
-                          ${img({ classes: 'media-cover', ratio: '72.6%', loading: 'eager' })}
+                          ${img({ classes: 'object-cover object-center', ratio: '72.6%', loading: 'eager' })}
                         </div>
                       </div>
 
@@ -123,7 +123,7 @@ export default () => {
 
                       <div class="megamenu_col_left">
                         <div class="megamenu_left">
-                          ${img({ classes: 'media-cover', ratio: '100%', loading: 'eager' })}
+                          ${img({ classes: 'object-cover object-center', ratio: '100%', loading: 'eager' })}
                         </div>
                       </div>
 
@@ -262,7 +262,7 @@ export default () => {
 
                       <div class="megamenu_col_left">
                         <div class="megamenu_left">
-                          ${img({ classes: 'media-cover', ratio: '50%', loading: 'eager' })}
+                          ${img({ classes: 'object-cover object-center', ratio: '50%', loading: 'eager' })}
                         </div>
                       </div>
 

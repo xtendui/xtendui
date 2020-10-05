@@ -8,8 +8,8 @@ const version = JSON.parse(fs.readFileSync('package.json').toString()).version
 
 module.exports = {
   siteMetadata: {
-    title: 'Xtend',
-    description: 'Xtend library',
+    title: 'Xtend UI',
+    description: 'Powerful frontend library with Tailwind components and vanilla Javascript',
     author: 'Riccardo Caroli',
     version: version,
     npm: 'https://www.npmjs.com/package/xtend-library',
@@ -20,7 +20,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',
-    'gatsby-plugin-less',
+    'gatsby-plugin-postcss',
     // manifest
     {
       resolve: 'gatsby-plugin-manifest',
@@ -46,7 +46,7 @@ module.exports = {
         aliases: {
           assets: './src/gatsby/assets',
           components: './src/gatsby/components',
-          // resolve xtend-library import js and less
+          // resolve xtend-library import js and css
           'xtend-library': path.resolve(__dirname, './'),
         },
       },
@@ -87,10 +87,10 @@ module.exports = {
             options: {
               blocks: {
                 noteDefault: {
-                  classes: 'note note-default note-background gatbsy_note',
+                  classes: 'card card-block card-block-sm text-default rounded-md bg-gray-200 gatsby_note',
                 },
                 notePrimary: {
-                  classes: 'note note-primary note-background gatbsy_note',
+                  classes: 'card card-block card-block-sm text-inverse rounded-md bg-accent-500 gatsby_note',
                 },
               },
             },

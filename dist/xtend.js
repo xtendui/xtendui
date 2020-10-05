@@ -4,11 +4,9 @@
  * @license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE)
  */
 
-import 'xtend-library/src/polyfill.js'
 import { Xt } from 'xtend-library'
-import 'xtend-library/src/xtend-core.js'
-import 'xtend-library/src/xtend-extensions.js'
-import 'xtend-library/src/xtend-addons.js'
+import 'xtend-library/dist/xtend-core'
+import 'xtend-library/dist/xtend-addons'
 
 // export UMD
 /* eslint-disable */

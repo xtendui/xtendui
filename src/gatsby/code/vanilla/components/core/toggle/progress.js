@@ -1,4 +1,6 @@
 import path from 'path'
+const btnDefault = require('components/snippets/classes/btn-default').default
+const cardToggle = require('components/snippets/classes/card-toggle').default
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -8,84 +10,84 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-default list-space-small align-items-center demo--toggle-progress">
+<div class="list list-space-2 items-center demo--toggle-progress">
 
-  <button type="button" class="btn btn-default">
-    <span>
-      Toggle 0
-    </span>
-    <span class="loader loader-y loader-js">
-      <span class="filler">
-        <span></span><span></span>
+  <button type="button" class="btn btn-md ${btnDefault()}">
+    Toggle 0
+    <span class="loader loader-y">
+      <span class="filler text-accent-500">
+        <span class="bg-current"></span>
+        <span class="bg-current opacity-25"></span>
       </span>
     </span>
   </button>
 
-  <button type="button" class="btn btn-default">
-    <span>
-      Toggle 1
-    </span>
-    <span class="loader loader-y loader-js">
-      <span class="filler">
-        <span></span><span></span>
+  <button type="button" class="btn btn-md ${btnDefault()}">
+    Toggle 1
+    <span class="loader loader-y">
+      <span class="filler text-accent-500">
+        <span class="bg-current"></span>
+        <span class="bg-current opacity-25"></span>
       </span>
     </span>
   </button>
 
-  <button type="button" class="btn btn-default active-toggle">
-    <span>
-      Toggle 2
-    </span>
-    <span class="loader loader-y loader-js">
-      <span class="filler">
-        <span></span><span></span>
+  <button type="button" class="btn btn-md ${btnDefault()}">
+    Toggle 2
+    <span class="loader loader-y">
+      <span class="filler text-accent-500">
+        <span class="bg-current"></span>
+        <span class="bg-current opacity-25"></span>
       </span>
     </span>
   </button>
 
-  <button type="button" class="btn btn-default">
-    <span>
-      Toggle 3
-    </span>
-    <span class="loader loader-y loader-js">
-      <span class="filler">
-        <span></span><span></span>
+  <button type="button" class="btn btn-md ${btnDefault()}">
+    Toggle 3
+    <span class="loader loader-y">
+      <span class="filler text-accent-500">
+        <span class="bg-current"></span>
+        <span class="bg-current opacity-25"></span>
       </span>
     </span>
   </button>
 
-  <div class="note note-default note-background toggle-block">
+  <div class="card toggle ${cardToggle()}">
     Target 0
-    <div class="loader loader-x loader-size-bottom loader-js">
-      <div class="filler">
-        <span></span><span></span>
-      </div>
-    </div>
+    <span class="loader loader-x loader-size-bottom">
+      <span class="filler text-accent-500">
+        <span class="bg-current"></span>
+        <span class="bg-current opacity-25"></span>
+      </span>
+    </span>
   </div>
 
-  <div class="note note-default note-background toggle-block">
+  <div class="card toggle ${cardToggle()}">
     Target 1
-    <div class="loader loader-x loader-size-bottom loader-js">
-      <div class="filler">
-        <span></span><span></span>
-      </div>
-    </div>
+    <span class="loader loader-x loader-size-bottom">
+      <span class="filler text-accent-500">
+        <span class="bg-current"></span>
+        <span class="bg-current opacity-25"></span>
+      </span>
+    </span>
   </div>
 
-  <div class="note note-default note-background toggle-block">
+  <div class="card toggle ${cardToggle()}">
     Target 2
-    <div class="loader loader-x loader-size-bottom loader-js">
-      <div class="filler">
-        <span></span><span></span>
-      </div>
-    </div>
+    <span class="loader loader-x loader-size-bottom">
+      <span class="filler text-accent-500">
+        <span class="bg-current"></span>
+        <span class="bg-current opacity-25"></span>
+      </span>
+    </span>
   </div>
 
-  <div class="note note-default note-background toggle-block">
+  <div class="card toggle ${cardToggle()}">
     Target 3
-    <span class="loader loader-x loader-size-bottom loader-js">
-      <span class="filler">
-        <span></span><span></span>
+    <span class="loader loader-x loader-size-bottom">
+      <span class="filler text-accent-500">
+        <span class="bg-current"></span>
+        <span class="bg-current opacity-25"></span>
       </span>
     </span>
   </div>

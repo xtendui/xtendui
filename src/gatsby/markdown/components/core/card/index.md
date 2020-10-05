@@ -8,40 +8,50 @@ description: "Generic component to display content in a box."
 
 ## Setup
 
-To use this component import the **less** files accordingly:
+#### Css
 
-```less
-@import 'xtend-library/src/core/card/card.less';
+Follow the [css installation](/introduction/getting-started/setup#css-installation) instructions. To [customize styles](/introduction/getting-started/setup#css-customization) in your `tailwind.config.js` file.
+
+```jsx
+module.exports = {
+  theme: require('xtend-library/src/tailwind-theme')({
+    // xtend utilities and components in node_modules/xtend-library/src/tailwind-xtend.js
+    xtend: theme => ({
+      utilities: {
+        core: {
+          card: {
+            // modify utility
+          },
+        },
+      },
+      components: {
+        core: {
+          card: {
+            // modify component
+          },
+        },
+      },
+    }),
+  })
+}
 ```
 
-Or just import **core**:
-
-```less
-@import 'xtend-library/src/xtend-core.less';
-```
-
-[[noteDefault]]
-| To modify a **less** or **js** file add [webpack resolve](/introduction/setup#usage-webpack) and fork the file copying it in your project.
+To **see the default values** see the source code of `node_modules/xtend-library/src/tailwind-xtend.js`.
 
 ## Usage
 
-Use this markup to create a **card**.
+Use this code to create a **card**.
 
-<script type="text/plain" class="language-markup">
-  <div class="card card-primary">
-    <div class="card-design"></div>
-    <div class="card-inner">
-      <div class="card-content">
+<demo>
+  <demovanilla src="vanilla/components/core/card/usage">
+  </demovanilla>
+</demo>
 
-        <div class="card-asset">
-          <!-- content -->
-        </div>
+You can add `.card-block` classes directly to `.card`
 
-        <div class="card-block card-item">
-          <!-- content -->
-        </div>
+<demo>
+  <demovanilla src="vanilla/components/core/card/usage-block">
+  </demovanilla>
+</demo>
 
-      </div>
-    </div>
-  </div>
-</script>
+Check subpage to [customize content](/components/core/card/content).

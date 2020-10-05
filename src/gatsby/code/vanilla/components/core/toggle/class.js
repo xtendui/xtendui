@@ -1,4 +1,6 @@
 import path from 'path'
+const btnDefault = require('components/snippets/classes/btn-default').default
+const cardToggle = require('components/snippets/classes/card-toggle').default
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -8,14 +10,13 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-default list-space-small align-items-center"
-     data-xt-toggle="{ class: 'active demo--toggle-custom-class' }">
+<div class="list list-space-2 items-center" data-xt-toggle="{ class: 'active active-toggle demo--toggle-custom-class' }">
 
-  <button type="button" class="btn btn-default">
+  <button type="button" class="btn btn-md ${btnDefault()}">
     Toggle
   </button>
 
-  <div class="note note-default note-background toggle-block">
+  <div class="card toggle ${cardToggle()}">
     Target
   </div>
 

@@ -1,4 +1,6 @@
 import path from 'path'
+const btnDefault = require('components/snippets/classes/btn-default').default
+const cardToggle = require('components/snippets/classes/card-toggle').default
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -8,46 +10,45 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-default list-space-small align-items-center"
-     data-xt-toggle="{ navigation: '[data-xt-nav]' }">
+<div class="list list-space-2 items-center" data-xt-toggle="{ navigation: '[data-xt-nav]' }">
 
-  <button type="button" class="btn btn-default">
+  <button type="button" class="btn btn-md ${btnDefault()}">
     Toggle 0
   </button>
 
-  <button type="button" class="btn btn-default">
+  <button type="button" class="btn btn-md ${btnDefault()}">
     Toggle 1
   </button>
 
-  <button type="button" class="btn btn-default">
+  <button type="button" class="btn btn-md ${btnDefault()}">
     Toggle 2
   </button>
 
-  <button type="button" class="btn btn-default">
+  <button type="button" class="btn btn-md ${btnDefault()}">
     Toggle 3
   </button>
 
-  <button type="button" class="btn btn-default" data-xt-nav="-1" title="Previous slide">
-    <span class="icon-xt-chevron-left"></span>
+  <button type="button" class="btn ${btnDefault()}" data-xt-nav="-1" title="Previous slide">
+    <span class="icon-arrow-left"></span>
   </button>
 
-  <button type="button" class="btn btn-default" data-xt-nav="1" title="Next slide">
-    <span class="icon-xt-chevron-right"></span>
+  <button type="button" class="btn ${btnDefault()}" data-xt-nav="1" title="Next slide">
+    <span class="icon-arrow-right"></span>
   </button>
 
-  <div class="note note-default note-background toggle-block">
+  <div class="card toggle ${cardToggle()}">
     Target 0
   </div>
 
-  <div class="note note-default note-background toggle-block">
+  <div class="card toggle ${cardToggle()}">
     Target 1
   </div>
 
-  <div class="note note-default note-background toggle-block">
+  <div class="card toggle ${cardToggle()}">
     Target 2
   </div>
 
-  <div class="note note-default note-background toggle-block">
+  <div class="card toggle ${cardToggle()}">
     Target 3
   </div>
 

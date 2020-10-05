@@ -1,4 +1,6 @@
 import path from 'path'
+const btnDefault = require('components/snippets/classes/btn-default').default
+const btnPrimary = require('components/snippets/classes/btn-primary').default
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -8,22 +10,22 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-default list-space-small align-items-center text-inverse"
+<div class="list list-space-2 items-center text-inverse"
   style="padding: 1rem 1.5rem; background: #0078ff;">
 
-  <button type="button" class="btn btn-default">
+  <button type="button" class="btn btn-md">
+    btn
+  </button>
+
+  <button type="button" class="btn btn-md ${btnDefault()}">
     default
   </button>
 
-  <button type="button" class="btn btn-primary">
+  <button type="button" class="btn btn-md ${btnPrimary()}">
     primary
   </button>
 
-  <button type="button" class="btn btn-text">
-    text
-  </button>
-
-  <button type="button" class="btn btn-link">
+  <button type="button" class="btn link">
     link
   </button>
 

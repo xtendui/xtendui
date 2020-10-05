@@ -1,0 +1,19 @@
+.demo--slider-progress {
+  > .loader {
+    /* touch */
+    @media (hover: none) {
+      transform: none !important;
+      position: absolute;
+      overflow: visible;
+      top: auto;
+      right: auto;
+      left: 0;
+      bottom: 12px;
+      margin: 0;
+    }
+    /* mouse */
+    @media (hover: hover) {
+      @apply loader-mouse mouse-follow;
+    }
+  }
+}

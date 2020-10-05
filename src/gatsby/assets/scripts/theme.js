@@ -1,13 +1,57 @@
 import 'core-js'
-import 'xtend-library/src/polyfill.js'
 import { Xt } from 'xtend-library'
-import 'xtend-library/src/xtend-core.js'
-import 'xtend-library/src/xtend-extensions.js'
-import 'xtend-library/src/xtend-addons.js'
-import 'xtend-library/src/xtend-demos.js'
-import 'xtend-library/src/vars.js'
+import 'xtend-library/dist/xtend-core'
+import 'xtend-library/dist/xtend-addons'
+import 'xtend-library/dist/xtend-demos'
+
+/**
+ * gsap setup
+ */
+
 import gsap from 'gsap'
-import 'gsap/ScrollToPlugin.js'
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
+
+gsap.defaults({
+  overwrite: 'auto',
+})
+
+gsap.config({
+  force3D: false,
+})
+
+gsap.globalTimeline.timeScale(1000) // milliseconds instead of seconds
+
+gsap.registerPlugin(ScrollToPlugin)
+
+/**
+ * Xt.vars
+ */
+
+Xt.vars = {
+  timeMicro: 50,
+  timeMini: 100,
+  timeTiny: 250,
+  timeSmall: 500,
+  timeMedium: 750,
+  timeLarge: 1000,
+  timeBig: 1500,
+  timeGiant: 2000,
+  timeHuge: 3000,
+}
+
+// instant animations accessibility
+
+if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce), (update: slow)').matches) {
+  Xt.vars.timeMicro = 0
+  Xt.vars.timeMini = 0
+  Xt.vars.timeTiny = 0
+  Xt.vars.timeSmall = 0
+  Xt.vars.timeMedium = 0
+  Xt.vars.timeLarge = 0
+  Xt.vars.timeBig = 0
+  Xt.vars.timeGiant = 0
+  Xt.vars.timeHuge = 0
+}
 
 /**
  * favicon
@@ -33,39 +77,16 @@ if (typeof window !== 'undefined') {
 }
 
 /**
- * sticky
+ * #gatsby_open-full-trigger
  */
 
 Xt.mount.push({
-  matches: '.gatsby_site_article_sidebar_inner',
-  mount: function (object) {
-    // init
-
-    let self = new Xt.Sticky(object, {
-      sticky: 'fixed',
-    })
-
-    // unmount
-
-    const unmount = () => {
-      self.destroy()
-      self = null
-    }
-    return unmount
-  },
-})
-
-/**
- * #gatbsy_open-full-trigger
- */
-
-Xt.mount.push({
-  matches: '#gatbsy_open-full-trigger',
-  mount: (object) => {
+  matches: '#gatsby_open-full-trigger',
+  mount: object => {
     // init
 
     let self = new Xt.Toggle(object, {
-      targets: '#gatbsy_open-full',
+      targets: '#gatsby_open-full',
       closeInside: ':scope > .btn-close',
       closeAuto: true, // needed for onPreRouteUpdate gatsby-browser.js
       scrollbar: true,
@@ -87,7 +108,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '.gatsby_site_article',
-  mount: (object) => {
+  mount: object => {
     // vars
 
     object = object.closest('body')
@@ -231,7 +252,7 @@ const makeDocument = () => {
   if (docs) {
     const tables = docs.querySelectorAll('table')
     for (const table of tables) {
-      table.classList.add('table', 'table-border', 'gatbsy_table')
+      table.classList.add('table', 'gatsby_table')
       for (const el of table.querySelectorAll('tr td:first-child')) {
         el.outerHTML = el.outerHTML.replace(/(<\s*\/?\s*)td(\s*([^>]*)?\s*>)/gi, '$1th$2') // regex replace tagname
         el.setAttribute('scope', 'row')

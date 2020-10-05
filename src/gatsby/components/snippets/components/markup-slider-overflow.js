@@ -1,37 +1,26 @@
+const btnDefault = require('components/snippets/classes/btn-default').default
+const cardSlide = require('components/snippets/classes/card-slide').default
+
 export default () => {
   return `
 <div class="slides">
-  <nav class="slides-inner">
+  <nav class="slides-inner row row-space-2">
 
-    <div class="slide col-6 col-4-sm">
+    <div class="slide w-6/12 sm:w-4/12 opacity-50 active:opacity-100">
       <div class="slide-inner">
 
-        <div class="card card-slide">
-          <div class="card-design"></div>
-          <div class="card-inner">
-            <div class="card-content">
-              <div class="card-block card-item">
-                <div class="card-title">1</div>
-              </div>
-            </div>
-          </div>
+        <div class="card ${cardSlide()}">
+          <div class="h4">1</div>
         </div>
 
       </div>
     </div>
 
-    <div class="slide col-6 col-4-sm">
+    <div class="slide w-6/12 sm:w-4/12 opacity-50 active:opacity-100">
       <div class="slide-inner">
 
-        <div class="card card-slide">
-          <div class="card-design"></div>
-          <div class="card-inner">
-            <div class="card-content">
-              <div class="card-block card-item">
-                <div class="card-title">2</div>
-              </div>
-            </div>
-          </div>
+        <div class="card ${cardSlide()}">
+          <div class="h4">2</div>
         </div>
 
       </div>
@@ -40,14 +29,14 @@ export default () => {
   </nav>
 </div>
 
-<nav class="slider-pagination slider-navigation">
-  <button type="button" class="btn btn-default" data-xt-nav="-1" title="Previous slide">
-    <span class="icon-xt-chevron-left icon-left"></span> prev
+<nav class="slider-pagination list list-space-2">
+  <button type="button" class="btn ${btnDefault()}" data-xt-nav="-1" title="Previous slide">
+    prev
   </button>
-  <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
+  <button type="button" class="btn ${btnDefault()} xt-ignore" data-xt-pag title="Slide xt-num">
   </button>
-  <button type="button" class="btn btn-default" data-xt-nav="1" title="Next slide">
-    next <span class="icon-xt-chevron-right icon-right"></span>
+  <button type="button" class="btn ${btnDefault()}" data-xt-nav="1" title="Next slide">
+    next
   </button>
 </nav>
 `

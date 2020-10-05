@@ -1,4 +1,5 @@
 import path from 'path'
+const btnDefault = require('components/snippets/classes/btn-default').default
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -8,30 +9,18 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-default list-space-small align-items-center">
+<div class="list list-space-2 items-center">
 
-  <button type="button" class="btn btn-default">
-    default
-  </button>
-
-  <button type="button" class="btn btn-default btn-tiny">
-    tiny
-  </button>
-
-  <button type="button" class="btn btn-default btn-small">
+  <button type="button" class="btn btn-sm ${btnDefault()}">
     small
   </button>
 
-  <button type="button" class="btn btn-default btn-medium">
+  <button type="button" class="btn btn-md ${btnDefault()}">
     medium
   </button>
 
-  <button type="button" class="btn btn-default btn-large">
+  <button type="button" class="btn btn-lg ${btnDefault()}">
     large
-  </button>
-
-  <button type="button" class="btn btn-default btn-big">
-    big
   </button>
 
 </div>

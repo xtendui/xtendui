@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 
 import { Xt } from 'xtend-library'
 
-import { makeDocument } from 'assets/scripts/theme.js'
-import ResizeSensor from 'assets/scripts/ResizeSensor.js'
+import { makeDocument } from 'assets/scripts/theme'
+import ResizeSensor from 'assets/scripts/ResizeSensor'
 
-import 'assets/styles/theme.less'
+import 'assets/styles/theme.css'
 
 class Layout extends React.Component {
   componentDidMount() {

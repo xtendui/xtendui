@@ -3,32 +3,41 @@ type: "Components"
 category: "Core"
 parent: "Row"
 title: "Other"
-date: "2019-03-15"
+date: "2005-10-10"
 ---
 
 ## Stretch
 
-Use `.row-stretch` to stretch vertically columns.
+Use `.row-stretch` to stretch content vertically.
 
-You can space with `margin-<position>: auto;` on `.card-block`.
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `.row-stretch`                     | `row-stretch`                | Stretch content vertically            |
+
+</div>
+
+When using cards you can space with `margin auto` on `.card-block`. When not using cards, be sure that the content have class `flex-auto`.
 
 <demo>
-  <demovanilla src="vanilla/components/core/row/stretch-card">
+  <demovanilla src="vanilla/components/core/row/stretch">
   </demovanilla>
 </demo>
 
-Or use flex util on `.card-content`.
+## Overflow
+
+Use `.row-overflow` to have browser overflow scroll on **touch devices** (use touch device to see it in action).
+
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `.row-overflow`                     | `row-overflow`                | Overflow on touch devices            |
+
+</div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/row/stretch-card-flex">
-  </demovanilla>
-</demo>
-
-## Touch overflow
-
-Use `.row-touch-overflow` to have browser overflow scroll on touch devices (use touch device to see it in action).
-
-<demo>
-  <demovanilla src="vanilla/components/core/row/touch-overflow">
+  <demovanilla src="vanilla/components/core/row/overflow">
   </demovanilla>
 </demo>

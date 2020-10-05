@@ -1,6 +1,5 @@
 import { Xt } from 'xtend-library'
-import 'xtend-library/src/vars.js'
-import 'xtend-library/src/extensions/slider/slider.js'
+import 'xtend-library/src/core/slider'
 import gsap from 'gsap'
 
 /**
@@ -9,7 +8,7 @@ import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '#iframe--brands-featured-v1 body .slider', // add your own selector instead of body to contain the code
-  mount: (object) => {
+  mount: object => {
     // vars
 
     const timeScaleTimeOn = Xt.vars.timeMedium
@@ -32,7 +31,7 @@ Xt.mount.push({
 
     // on
 
-    const eventOn = (e) => {
+    const eventOn = e => {
       const tr = e.target
       // useCapture delegation
       if (self.targets.includes(tr)) {

@@ -27,15 +27,15 @@ class DemoVanillaIframe extends React.Component {
             }
           }
         `}
-        render={(data) => (
+        render={data => (
           <Layout seo={seo} demo={demo}>
-            <SEO title={seo.title} />
+            <SEO title={seo.title} description={seo.description} />
             <div id="body-outer">
               {
-                data.allFile.files.filter((x) => x.file.relativePath === `${demo.path}.less`).map(() => (demo.cssSource = cssSource(demo))) && <div /> // @FIX react render string
+                data.allFile.files.filter(x => x.file.relativePath === `${demo.path}.css`).map(() => (demo.cssSource = cssSource(demo))) && <div /> // @FIX react render string
               }
               {
-                data.allFile.files.filter((x) => x.file.relativePath === `${demo.path}.js`).map(() => (demo.jsSource = jsSource(demo))) && <div /> // @FIX react render string
+                data.allFile.files.filter(x => x.file.relativePath === `${demo.path}.js`).map(() => (demo.jsSource = jsSource(demo))) && <div /> // @FIX react render string
               }
               <div id="gatsby_body-inner" className="gatsby_demo_source--from" dangerouslySetInnerHTML={{ __html: demo.htmlSource }} />
             </div>

@@ -21,7 +21,7 @@ demo.htmlSource = `
       <div class="card-inner">
         <div class="card-content">
           <div class="card-block card-item">
-            <div class="card-title">Header</div>
+            <div class="h4">Header</div>
           </div>
         </div>
       </div>
@@ -42,40 +42,35 @@ demo.htmlSource = `
                   <div class="product-page_images">
                     <div class="list-block">
                       <a href="#product-image-overlay-0" class="product-page_image">
-                        <div class="media-container media-container-responsive"
-                          data-xt-overlay="{ targets: '#overlay--product-page_images' }">
+                        <div class="media-container media-container-responsive" data-xt-overlay="{ targets: '#overlay--product-page_images' }">
                           <div class="media-inner">
                             <img class="media" id="product-image-0" src="/img.svg" loading="lazy" alt=""/>
                           </div>
                         </div>
                       </a>
                       <a href="#product-image-overlay-1" class="product-page_image">
-                        <div class="media-container media-container-responsive"
-                          data-xt-overlay="{ targets: '#overlay--product-page_images' }">
+                        <div class="media-container media-container-responsive" data-xt-overlay="{ targets: '#overlay--product-page_images' }">
                           <div class="media-inner">
                             <img class="media" id="product-image-1" src="/img.svg" loading="lazy" alt=""/>
                           </div>
                         </div>
                       </a>
                       <a href="#product-image-overlay-3" class="product-page_image">
-                        <div class="media-container media-container-responsive"
-                          data-xt-overlay="{ targets: '#overlay--product-page_images' }">
+                        <div class="media-container media-container-responsive" data-xt-overlay="{ targets: '#overlay--product-page_images' }">
                           <div class="media-inner">
                             <img class="media" id="product-image-2" src="/img.svg" loading="lazy" alt=""/>
                           </div>
                         </div>
                       </a>
                       <a href="#product-image-overlay-4" class="product-page_image">
-                        <div class="media-container media-container-responsive"
-                          data-xt-overlay="{ targets: '#overlay--product-page_images' }">
+                        <div class="media-container media-container-responsive" data-xt-overlay="{ targets: '#overlay--product-page_images' }">
                           <div class="media-inner">
                             <img class="media" id="product-image-3" src="/img.svg" loading="lazy" alt=""/>
                           </div>
                         </div>
                       </a>
                       <a href="#product-image-overlay-4" class="product-page_image">
-                        <div class="media-container media-container-responsive"
-                          data-xt-overlay="{ targets: '#overlay--product-page_images' }">
+                        <div class="media-container media-container-responsive" data-xt-overlay="{ targets: '#overlay--product-page_images' }">
                           <div class="media-inner">
                             <img class="media" id="product-image-4" src="/img.svg" loading="lazy" alt=""/>
                           </div>
@@ -115,12 +110,12 @@ demo.htmlSource = `
                   </div>
 
                   <div class="overlay overlay-default overlay-screen overlay-size-full" id="overlay--product-page_images">
-                    <div class="overlay-container">
+                    <div class="overlay-container max-w-4xl">
                       <div class="overlay-inner">
                         <div class="overlay-design"></div>
                         <div class="card card-overlay">
                           <div class="card-design"></div>
-                          <div class="btn btn-close" aria-label="Close"></div>
+                          <div class="btn btn-close p-5" aria-label="Close"><span class="icon-close"></span></div>
                           <div class="card-inner">
                             <div class="card-content">
                               <div class="card-asset">
@@ -223,7 +218,7 @@ demo.htmlSource = `
       <div class="card-inner">
         <div class="card-content">
           <div class="card-block card-item">
-            <div class="card-title">Footer</div>
+            <div class="h4">Footer</div>
           </div>
         </div>
       </div>

@@ -8,29 +8,46 @@ description: "Flex row to space any element with paddings, also spaces verticall
 
 ## Setup
 
-To use this component import the **less** files accordingly:
+#### Css
 
-```less
-@import 'xtend-library/src/core/row/row.less';
+Follow the [css installation](/introduction/getting-started/setup#css-installation) instructions. To [customize styles](/introduction/getting-started/setup#css-customization) in your `tailwind.config.js` file.
+
+```jsx
+module.exports = {
+  theme: require('xtend-library/src/tailwind-theme')({
+    // xtend utilities and components in node_modules/xtend-library/src/tailwind-xtend.js
+    xtend: theme => ({
+      utilities: {
+        core: {
+          row: {
+            // modify utility
+          },
+        },
+      },
+      components: {
+        core: {
+          row: {
+            // modify component
+          },
+        },
+      },
+    }),
+  })
+}
 ```
 
-Or just import **core**:
-
-```less
-@import 'xtend-library/src/xtend-core.less';
-```
-
-[[noteDefault]]
-| To modify a **less** or **js** file add [webpack resolve](/introduction/setup#usage-webpack) and fork the file copying it in your project.
+To **see the default values** see the source code of `node_modules/xtend-library/src/tailwind-xtend.js`.
 
 ## Usage
 
-Use this markup to create a **row**.
+Use this code to create a **row**.
 
-<script type="text/plain" class="language-markup">
-  <div class="row">
-    <!-- content -->
-  </div>
-</script>
+<demo>
+  <demovanilla src="vanilla/components/core/row/usage">
+  </demovanilla>
+</demo>
 
-Inside row you should always use columns [columns](/components/core/column), otherwise use [list](/components/core/list) that spaces with spaced with **margin** instead of **padding**.
+Check subpage to [customize content](/components/core/row/content).
+
+[[noteDefault]]
+| You should always use **tailwind width classes** inside `.row`. Otherwise you can space contents with [list](/components/core/list).

@@ -1,13 +1,15 @@
 import { Xt } from 'xtend-library'
+const btnDefault = require('components/snippets/classes/btn-default').default
+const cardToggle = require('components/snippets/classes/card-toggle').default
 
 Xt.mount.push({
   matches: '#demo--toggle-events',
-  mount: (object) => {
+  mount: object => {
     // init
 
     let self = new Xt.Toggle(object, {
       elements: 'a, button',
-      targets: '[class^="toggle-"], [class*=" toggle-"]',
+      targets: '.toggle',
       min: 1,
       auto: {
         time: 2000,
@@ -19,7 +21,7 @@ Xt.mount.push({
 
     const log = document.querySelector('#demo--toggle-events-log')
 
-    const logAdd = (text) => {
+    const logAdd = text => {
       log.innerHTML += text + '<br/>'
       // scroll
       log.scrollTo(0, log.scrollHeight)
@@ -86,11 +88,11 @@ Xt.mount.push({
         logAdd('<strong>add</strong>')
         // elements
         const elIndex = self.getElementsGroups().length
-        const strEl = `<button type="button" class="btn btn-default">Toggle ${elIndex}</button>`
+        const strEl = `<button type="button" class="btn btn-md ${btnDefault()}">Toggle ${elIndex}</button>`
         document.querySelector('#demo--toggle-events-elements').append(Xt.createElement(strEl))
         // targets
         const indexTr = self.getTargetsGroups().length
-        const strTr = `<div class="note note-default note-background toggle-block">Target ${indexTr}</div>`
+        const strTr = `<div class="card toggle ${cardToggle()}">Target ${indexTr}</div>`
         document.querySelector('#demo--toggle-events-targets').append(Xt.createElement(strTr))
         // reinit
         logAdd('<strong>reinit</strong>')
@@ -188,7 +190,7 @@ Xt.mount.push({
 
     // events
 
-    const events = (e) => {
+    const events = e => {
       let str = 'event <strong>' + e.type + '</strong>' + ' direction <strong>' + self.direction + '</strong>'
       if (e.target.getAttribute('title')) {
         str += ' from <strong>' + e.target.getAttribute('title') + '</strong>'

@@ -3,20 +3,35 @@ type: "Components"
 category: "Core"
 parent: "Drop"
 title: "Other"
-date: "2019-03-15"
+date: "2005-10-10"
 ---
 
-## Special
+## Disable
+
+You can disable styles and javascript using `.drop-container-disable`.
 
 <div class="table-scroll">
 
-|                         | Class                                     | Mixin                         | Description                   |
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
+| Util                  | `.drop-container-disable`       | `drop-container-disable !important`                | `responsive`                | Reset drop styles and javascript            |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/core/drop/disable">
+  </demovanilla>
+</demo>
+
+## Static
+
+If you want a drop with size and position **relative to a parent Node** use `drop-container-static`.
+
+<div class="table-scroll">
+
+|                         | Syntax                                     | Mixin                         | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `.drop-container-static`                | `.drop-container-static()`        | Position relative to closest element with `position: relative;`.    
-| Option                  | `.drop-container-disable`                | `.drop-container-disable()`        | Disable drop, useful within media queries            |
-| Option                  | `.drop-squared`                | `.drop-squared()`        | No border-radius on drop            |
-| Option                  | `.drop-noborder`                | `.drop-noborder()`        | No border on drop            |
-| Option                  | `.drop-nospace`                | `.drop-nospace()`        | No space on drop            |
+| Component                  | `.drop-container-static`                | `drop-container-static`        | Position relative to closest element with `.relative`    
 
 </div>
 
@@ -25,20 +40,13 @@ date: "2019-03-15"
   </demovanilla>
 </demo>
 
-<demo>
-  <demovanilla src="vanilla/components/core/drop/disable">
-  </demovanilla>
-</demo>
-
 ## Prevent Event
 
-You can have **element's link** and **other events** that trigger after drop with `preventEvent: true`.
-
-If the toggle is on <code>"on": "mouseenter"</code> or <code>"on": "mousehover"</code> the link gets activated on the second touch event on touch devices.
+You can have **element's link** and **click events** prevented when the drop opens with `preventEvent: true`, they will trigger only if the drop is already opened.
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `preventEvent:Boolean`                          | `false`        | Prevent interaction until activated depending on `on` and `off` events (second click or mouseenter)            |
 
@@ -50,3 +58,15 @@ If the toggle is on <code>"on": "mouseenter"</code> or <code>"on": "mousehover"<
   <demovanilla src="vanilla/components/core/drop/prevent-event-hover">
   </demovanilla>
 </demo>
+
+## Other
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `closeAuto:Boolean`                          | `true`        | Close automatically on `closeauto.trigger.xt` event            |
+| Option                  | `closeOutside:Query`                          | `'body'`        | Query Node outside to close on click            |
+| Option                  | `closeInside:Query`                          | `'.drop-dismiss, .backdrop, .btn-close'`        | Query Node inside to close on click            |
+
+</div>

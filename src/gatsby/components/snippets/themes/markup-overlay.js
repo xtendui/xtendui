@@ -2,24 +2,24 @@ const img = require('components/snippets/img').default
 
 export default () => {
   return `
-<div class="list list-default list-space-small align-items-center">
+<div class="list list-space-2 items-center">
 
   <div data-xt-overlay>
     <button type="button" class="btn btn-primary">
       overlay full
     </button>
     <div class="overlay overlay-default overlay-screen overlay-size-full">
-      <div class="overlay-container">
+      <div class="overlay-container max-w-4xl">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
 
             <div class="card card-overlay">
               <div class="card-design"></div>
-              <div class="btn btn-close" aria-label="Close"></div>
+              <div class="btn btn-close p-5" aria-label="Close"><span class="icon-close"></span></div>
               <div class="card-inner">
                 <div class="card-content">
                   <div class="card-asset">
-                    ${img({ classes: 'media-cover', ratio: '100%' })}
+                    ${img({ classes: 'object-cover object-center', ratio: '100%' })}
                   </div>
                 </div>
               </div>
@@ -35,14 +35,14 @@ export default () => {
       overlay menu left
     </button>
     <div class="overlay overlay-default overlay-position-left overlay-close-outside">
-      <div class="overlay-container">
+      <div class="overlay-container max-w-4xl">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
 
           <div class="card card-overlay"
             style="align-items: stretch;">
             <div class="card-design"></div>
-            <div class="btn btn-close" aria-label="Close"></div>
+            <div class="btn btn-close p-5" aria-label="Close"><span class="icon-close"></span></div>
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-item card-item--menu">
@@ -59,10 +59,10 @@ export default () => {
                   </div>
                 </div>
                 <div class="card-asset">
-                  ${img({ classes: 'media-cover', ratio: '37.5%' })}
+                  ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
                 </div>
                 <div class="card-block card-item">
-                  <div class="card-title">Lorem ipsum</div>
+                  <div class="h4">Lorem ipsum</div>
                   <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
                 </div>
                 <div class="card-block card-item card-block-side"
@@ -83,14 +83,14 @@ export default () => {
       overlay contact
     </button>
     <div class="overlay overlay-default overlay-close-outside">
-      <div class="overlay-container">
+      <div class="overlay-container max-w-4xl">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
 
           <div class="card card-overlay"
             style="align-items: stretch;">
             <div class="card-design"></div>
-            <div class="btn btn-close" aria-label="Close"></div>
+            <div class="btn btn-close p-5" aria-label="Close"><span class="icon-close"></span></div>
             <div class="card-inner">
               <div class="card-content">
 
@@ -98,11 +98,11 @@ export default () => {
 
                   <div class="card-block card-item">
 
-                    <div class="card-title">
+                    <div class="h4">
                       Contact us
                     </div>
 
-                    <form class="form-default">
+                    <form>
 
                       <div class="row row-form">
                         <div class="col-form-double">
@@ -110,8 +110,7 @@ export default () => {
                             <label class="form-label">
                               Name
                             </label>
-                            <input type="text" class="form-item"
-                              placeholder="Name" required>
+                            <input type="text" class="form-item" placeholder="Name" required>
                           </div>
                         </div>
                         <div class="col-form-double">
@@ -119,8 +118,7 @@ export default () => {
                             <label class="form-label">
                               Surname
                             </label>
-                            <input type="text" class="form-item"
-                              placeholder="Surname" required>
+                            <input type="text" class="form-item" placeholder="Surname" required>
                           </div>
                         </div>
                       </div>
@@ -131,8 +129,7 @@ export default () => {
                             <label class="form-label">
                               Email
                             </label>
-                            <input type="email" class="form-item"
-                              placeholder="Email" required>
+                            <input type="email" class="form-item" placeholder="Email" required>
                           </div>
                         </div>
                         <div class="col-form-double">
@@ -140,8 +137,7 @@ export default () => {
                             <label class="form-label">
                               Telephone
                             </label>
-                            <input type="text" class="form-item"
-                              placeholder="Telephone" required>
+                            <input type="text" class="form-item" placeholder="Telephone" required>
                           </div>
                         </div>
                       </div>
@@ -150,8 +146,7 @@ export default () => {
                         <label class="form-label">
                           Select an option
                         </label>
-                        <select class="form-item"
-                          required>
+                        <select class="form-item" required>
                           <option selected value="">Select an option</option>
                           <option>Option 1</option>
                           <option>Option 2</option>
@@ -163,13 +158,11 @@ export default () => {
                         <label class="form-label">
                           Textarea
                         </label>
-                        <textarea class="form-item"
-                          placeholder="Textarea" required></textarea>
+                        <textarea class="form-item h-24 resize-vertical duration-150" placeholder="Textarea" required></textarea>
                       </div>
 
                       <div class="form-group">
-                        <input type="checkbox" id="check-contact" name="check-contact"
-                          required>
+                        <input type="checkbox" id="check-contact" name="check-contact" required>
                         <label class="form-label" for="check-contact">
                         <span>
                           I <strong>read and accept</strong> the <a href="#" target="_blank">sales conditions</a> and the <a href="#" target="_blank">privacy policy</a>.
@@ -184,7 +177,7 @@ export default () => {
 
                   </div>
 
-                  <div class="card-item card-block-side col-5-sm"
+                  <div class="card-item card-block-side sm:w-5/12"
                     style="display: flex; flex-direction: column">
                     <div class="card-block card-item">
                       <p class="h5">
@@ -196,7 +189,7 @@ export default () => {
                     </div>
                     <div class="card-asset"
                       style="margin-top: auto">
-                      ${img({ classes: 'media-cover', ratio: '100%', loading: 'eager' })}
+                      ${img({ classes: 'object-cover object-center', ratio: '100%', loading: 'eager' })}
                     </div>
                   </div>
 
@@ -215,59 +208,56 @@ export default () => {
     <button type="button" class="btn btn-primary">
       overlay newsletter
     </button>
-    <div class="overlay overlay-default overlay-size-small overlay-close-outside">
-      <div class="overlay-container">
+    <div class="overlay overlay-default overlay-size-sm overlay-close-outside">
+      <div class="overlay-container max-w-4xl">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
 
           <div class="card card-overlay"
             style="align-items: stretch;">
             <div class="card-design"></div>
-            <div class="btn btn-close" aria-label="Close"></div>
+            <div class="btn btn-close p-5" aria-label="Close"><span class="icon-close"></span></div>
             <div class="card-inner">
               <div class="card-content">
 
                 <div class="card-item-nested card-item card-group-sm">
 
-                  <div class="card-item col-5-sm">
+                  <div class="card-item sm:w-5/12">
                     <div class="card-asset full-y">
-                      ${img({ classes: 'media-cover', ratio: '37.5%', loading: 'eager' })}
+                      ${img({ classes: 'object-cover object-center', ratio: '37.5%', loading: 'eager' })}
                     </div>
                   </div>
 
                   <div class="card-block card-item">
 
-                    <div class="card-title">
+                    <div class="h4">
                       Subscribe to our newsletter
                     </div>
 
-                    <form class="form-default">
+                    <form>
 
                       <div class="form-group">
                         <label class="form-label">
                           Email
                         </label>
-                        <input type="email" class="form-item"
-                          placeholder="Email" required>
+                        <input type="email" class="form-item" placeholder="Email" required>
                       </div>
 
                       <div class="form-group-inline">
 
-                        <label class="form-label flex-full">
+                        <label class="form-label">
                           Select an option
                         </label>
 
                         <div class="form-group">
-                          <input type="radio" id="radio-newsletter-0" name="radio-newsletter"
-                            required>
+                          <input type="radio" id="radio-newsletter-0" name="radio-newsletter" required>
                           <label class="form-label" for="radio-newsletter-0">
                             Option 1
                           </label>
                         </div>
 
                         <div class="form-group">
-                          <input type="radio" id="radio-newsletter-1" name="radio-newsletter"
-                            required>
+                          <input type="radio" id="radio-newsletter-1" name="radio-newsletter" required>
                           <label class="form-label" for="radio-valinewsletterdation-1">
                             Option 2
                           </label>
@@ -276,8 +266,7 @@ export default () => {
                       </div>
 
                       <div class="form-group">
-                        <input type="checkbox" id="check-newsletter" name="check-newsletter"
-                          required>
+                        <input type="checkbox" id="check-newsletter" name="check-newsletter" required>
                         <label class="form-label" for="check-newsletter">
                         <span>
                           I <strong>read and accept</strong> the <a href="#" target="_blank">sales conditions</a> and the <a href="#" target="_blank">privacy policy</a>.
@@ -294,7 +283,7 @@ export default () => {
 
                 </div>
 
-                <div class="card-block card-item card-block-side card-block-small">
+                <div class="card-block card-item card-block-side card-block-sm text-sm">
                   <p>Receive <strong>free discount</strong> periodically on all our products.</p>
                 </div>
 

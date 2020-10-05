@@ -1,10 +1,9 @@
 import { Xt } from 'xtend-library'
-import 'xtend-library/src/vars.js'
 import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '.demo--loader-js-spinner',
-  mount: (object) => {
+  mount: object => {
     // vars
 
     const spinnerTime = Xt.vars.timeBig

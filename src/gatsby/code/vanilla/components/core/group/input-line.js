@@ -8,16 +8,16 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<form class="form-default">
+<form>
   <div class="form-group">
     <div class="group">
       <div class="group-inner">
-        <button type="button" class="btn btn-default btn-large">
+        <button type="button" class="btn btn-default btn-lg">
           Lorem
         </button>
       </div>
       <div class="group-inner">
-        <button type="button" class="btn btn-primary btn-large">
+        <button type="button" class="btn btn-primary btn-lg">
           ipsum
         </button>
       </div>

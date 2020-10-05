@@ -1,8 +1,6 @@
 import { Xt } from 'xtend-library'
-import 'xtend-library/src/vars.js'
-import 'xtend-library/src/extensions/slider/slider.js'
-import 'xtend-library/src/addons/slider/navigation-sides.js'
-import 'xtend-library/src/addons/animation/propagate-interaction.js'
+import 'xtend-library/src/core/slider'
+import 'xtend-library/src/addons/propagate-interaction'
 import gsap from 'gsap'
 
 /**
@@ -11,7 +9,7 @@ import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '#iframe--furniture-hero-v1 body a, #iframe--furniture-hero-v1 body button', // add your own selector instead of body to contain the code
-  mount: (object) => {
+  mount: object => {
     new Xt.PropagateInteraction(object, {
       targets: '.btn',
     })
@@ -62,7 +60,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '#iframe--furniture-hero-v1 body .slider', // add your own selector instead of body to contain the code
-  mount: (object) => {
+  mount: object => {
     // vars
 
     const assetMaskTimeOn = Xt.vars.timeBig
@@ -108,14 +106,14 @@ Xt.mount.push({
     // drag
 
     const eventDrag = () => {
-      const tr = self.targets.filter((x) => self.hasCurrent(x))[0]
+      const tr = self.targets.filter(x => self.hasCurrent(x))[0]
       // assetMask
       const assetMask = tr.querySelector('.hero')
       gsap.set(assetMask, { x: -100 * self.detail.dragRatio * self.direction + '%' })
       const assetMaskInner = assetMask.querySelector('.hero_inner')
       gsap.set(assetMaskInner, { x: (100 * self.detail.dragRatio * self.direction) / 2 + '%' })
       // nextsOld
-      const nextsOld = self.targets.filter((x) => x.classList.contains('next'))
+      const nextsOld = self.targets.filter(x => x.classList.contains('next'))
       for (const next of nextsOld) {
         next.classList.remove('next')
       }
@@ -142,14 +140,14 @@ Xt.mount.push({
     // dragreset
 
     const eventDragReset = () => {
-      const tr = self.targets.filter((x) => self.hasCurrent(x))[0]
+      const tr = self.targets.filter(x => self.hasCurrent(x))[0]
       // assetMask
       const assetMask = tr.querySelector('.hero')
       gsap.to(assetMask, { x: 0, duration: Xt.vars.timeTiny, ease: assetMaskEaseOff })
       const assetMaskInner = assetMask.querySelector('.hero_inner')
       gsap.to(assetMaskInner, { x: 0, duration: Xt.vars.timeTiny, ease: assetMaskEaseOff })
       // next
-      const nexts = self.targets.filter((x) => x.classList.contains('next'))
+      const nexts = self.targets.filter(x => x.classList.contains('next'))
       for (const next of nexts) {
         // assetMask
         const assetMask = next.querySelector('.hero')
@@ -164,7 +162,7 @@ Xt.mount.push({
 
     // on
 
-    const eventOn = (e) => {
+    const eventOn = e => {
       const tr = e.target
       // useCapture delegation
       if (self.targets.includes(tr)) {
@@ -254,7 +252,7 @@ Xt.mount.push({
 
     // off
 
-    const eventOff = (e) => {
+    const eventOff = e => {
       const tr = e.target
       // useCapture delegation
       if (self.targets.includes(tr)) {
@@ -272,7 +270,7 @@ Xt.mount.push({
           ease: self.detail.dragging ? assetMaskEaseDragging : assetMaskEaseOff,
         })
         // nextsOld
-        const nextsOld = self.targets.filter((x) => x.classList.contains('next'))
+        const nextsOld = self.targets.filter(x => x.classList.contains('next'))
         for (const next of nextsOld) {
           next.classList.remove('next')
         }

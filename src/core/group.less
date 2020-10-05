@@ -1,0 +1,49 @@
+@import 'xtend-library/src/core/group/_group.less';
+
+/**
+ * group
+ */
+
+// variant
+
+.group-default {
+  @group-border-width: 2px;
+  @group-border-radius: 6px;
+  border-radius: @group-border-radius;
+  border-width: @group-border-width;
+  border-style: solid;
+  border-color: transparent;
+  // content
+  .group-inner {
+    > .btn {
+      border-radius: @group-border-radius;
+      border-width: @group-border-width;
+      border-color: @shade-100 !important;
+      &:hover, &:active, &.active {
+        border-color: @shade-200 !important;
+      }
+    }
+    > .form-item {
+      border-radius: @group-border-radius;
+      border-width: @group-border-width;
+      border-color: @shade-100 !important;
+      &:focus, &.active {
+        border-color: @shade-200 !important;
+      }
+    }
+  }
+  // collapse border
+  .group-inner {
+    &:not(:last-child) {
+      margin-right: -@group-border-width;
+    }
+    > * + * {
+      margin-top: -@group-border-width;
+    }
+  }
+  // list
+  > .list {
+    .list-space(small) !important;
+    flex-wrap: nowrap;
+  }
+}

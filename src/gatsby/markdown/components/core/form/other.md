@@ -3,70 +3,79 @@ type: "Components"
 category: "Core"
 parent: "Form"
 title: "Other"
-date: "2019-03-15"
+date: "2005-10-10"
 ---
 
-## Legend
+## Fieldset Legend and Note
+
+Use **component classes** to create `fieldset` and `legend`.
 
 <div class="table-scroll">
 
-|                         | Tag                                     | Class                                     | Mixin                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `legend` | `.legend`                 | `.legend()`        | Legend styles            |
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `fieldset, .fieldset`                     | `fieldset`                | Fieldset styles            |
+| Component                  | `legend, .legend`                     | `legend`                | Legend styles            |
 
 </div>
 
+Use **tailwind classes** to create a note.
+
 <demo>
-  <demovanilla src="vanilla/components/core/form/legend">
+  <demovanilla src="vanilla/components/core/form/fieldset-legend">
   </demovanilla>
 </demo>
 
-## Fieldset
+## Label addon
 
-<div class="table-scroll">
-
-|                         | Tag                                     | Class                                     | Mixin                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `fieldset` | `.fieldset`                 | `.fieldset()`        | Fieldset styles            |
-
-</div>
+Use **tailwind classes** to create a label addon.
 
 <demo>
-  <demovanilla src="vanilla/components/core/form/fieldset">
+  <demovanilla src="vanilla/components/core/form/label-addon">
   </demovanilla>
 </demo>
 
-## Note
+## Checks button
 
-Form note uses the [note component](/components/core/note).
-
-<div class="table-scroll">
-
-|                         | Class                                     | Mixin                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `.form-note`                 | `.form-note()`        | Form note styles            |
-
-</div>
+Use [button](/components/core/button) with `label` to create checks with button.
 
 <demo>
-  <demovanilla src="vanilla/components/core/form/note">
+  <demovanilla src="vanilla/components/core/form/checks-button">
+  </demovanilla>
+</demo>
+
+## Checks card
+
+Use [card](/components/core/card) with `label` to create checks with card.
+
+<demo>
+  <demovanilla src="vanilla/components/core/form/checks-card">
   </demovanilla>
 </demo>
 
 ## Group
 
-Refer to [Group page](/components/core/group#usage-input).
+@TODO
 
 ## Validation
 
-Validation with html attributes.
+Html validation and Constraint Validation API.
 
-[[notePrimary]]
-| Form validation must be inside `form` or `.form` to work.
+It **automatically runs** on **form submit** and **automatically scrolls** on the **first invalid** form item.
+
+Use **component classes** to style validation.
+
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `form[novalidate]`                     | `NOT POSSIBLE`                | Do not validate form            |
+| Component                  | `.form-valid`                     | `form-valid`                | Validation valid class            |
+| Component                  | `.form-invalid`                     | `form-invalid`                | Validation invalid class            |
+
+</div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/form/validation-default">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/form/validation-inverse">
+  <demovanilla src="vanilla/components/core/form/validation">
   </demovanilla>
 </demo>

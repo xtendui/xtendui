@@ -1,6 +1,6 @@
 #iframe--fashion-gallery-v1 {
-  //##START
-  body { // add your own selector instead of body to contain the code
+  /*##START*/
+  body { /* add your own selector instead of body to contain the code */
 
     /**
      * product-page
@@ -108,7 +108,7 @@
         .list-space(none);
       }
     }
-  
+
     .product-page_image {
       display: block;
       .full();
@@ -125,7 +125,7 @@
         }
       }
     }
-  
+
     .media_mask {
       position: absolute;
       z-index: @index-active + 1;
@@ -169,7 +169,7 @@
 
     .product-page_images_nav_item {
       .padding(y, .5rem);
-      .padding(x, 1.5rem);
+      .padding(x, 1rem);
       .product-page_images_nav_item_inner {
         display: flex;
         align-items: center;
@@ -184,7 +184,7 @@
         border-radius: 50%;
         border: 2px solid transparent;
         background: @shade-700;
-        transition: all @time-small @ease-in-out-expo;
+        transition: all @time-sm @ease-in-out-expo;
       }
       &:active, &.active {
         span {
@@ -192,7 +192,7 @@
           height: 10px;
           border: 2px solid @shade-700;
           background: transparent;
-          transition: all @time-small @ease-in-out-expo;
+          transition: all @time-sm @ease-in-out-expo;
         }
       }
     }
@@ -225,5 +225,5 @@
     }
 
   }
-  //##END
+  /*##END*/
 }

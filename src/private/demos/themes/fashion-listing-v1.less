@@ -1,6 +1,6 @@
 #iframe--fashion-listing-v1 {
-  //##START
-  body { // add your own selector instead of body to contain the code
+  /*##START*/
+  body { /* add your own selector instead of body to contain the code */
 
     /**
       * .listing-page
@@ -27,7 +27,7 @@
       .full();
       // card
       .card-white();
-      .card-small();
+      .card-sm();
       .card-squared();
       .card-none-x();
       text-align: center;
@@ -40,7 +40,7 @@
           .padding(bottom, 150%);
         }
         .media {
-          .media-cover();
+          .object-cover();
         }
       }
     }
@@ -86,13 +86,13 @@
       &.fade {
         opacity: 1;
         animation-name: anim-fashion-listing-v1-in;
-        animation-duration: @time-medium;
+        animation-duration: @time-md;
         animation-timing-function: @ease-out-quint;
         transform-origin: center top;
         &.inverse {
           opacity: 1;
           animation-name: anim-fashion-listing-v1-inverse-in;
-          animation-duration: @time-medium;
+          animation-duration: @time-md;
           animation-timing-function: @ease-out-quint;
           transform-origin: center bottom;
         }
@@ -100,13 +100,13 @@
       &.fade-out {
         opacity: 0;
         animation-name: anim-fashion-listing-v1-inverse-out;
-        animation-duration: @time-medium;
+        animation-duration: @time-md;
         animation-timing-function: @ease-out-quint;
         transform-origin: center bottom;
         &.inverse {
           opacity: 0;
           animation-name: anim-fashion-listing-v1-out;
-          animation-duration: @time-medium;
+          animation-duration: @time-md;
           animation-timing-function: @ease-out-quint;
           transform-origin: center top;
         }
@@ -162,5 +162,5 @@
     }
 
   }
-  //##END
+  /*##END*/
 }

@@ -8,8 +8,8 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="media-container media-container-responsive">
-  <div class="media-inner">
+<div class="media-container">
+  <div class="media-inner relative">
     <img class="media" src="/img.svg" loading="lazy" alt=""/>
   </div>
 </div>

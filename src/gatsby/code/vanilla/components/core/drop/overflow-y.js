@@ -1,4 +1,7 @@
 import path from 'path'
+const img = require('components/snippets/img').default
+const btnPrimary = require('components/snippets/classes/btn-primary').default
+const cardDefaultDrop = require('components/snippets/classes/card-default-drop').default
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -8,85 +11,53 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-default list-space-small align-items-center">
+<div class="list list-space-2 items-center">
 
   <div class="drop-container" data-xt-drop>
-    <button type="button" class="btn btn-primary">
-      list
+
+    <button type="button" class="btn btn-md ${btnPrimary()}">
+      group
     </button>
-    <div class="drop drop-default drop-overflow-y">
+
+    <div class="drop">
       <div class="drop-inner">
-        <div class="drop-design"></div>
-        <div class="drop-content">
-      
-          <nav class="list-block list-drop">
-            <button type="button">
-              Lorem ipsum dolor
-            </button>
-            <button type="button">
-              Lorem ipsum dolor
-            </button>
-            <button type="button">
-              Lorem ipsum dolor
-            </button>
-            <button type="button">
-              Dolor sit
-            </button>
-            <button type="button">
-              Dolor sit
-            </button>
-            <button type="button">
-              Dolor sit
-            </button>
-            <button type="button">
-              Amet
-            </button>
-            <button type="button">
-              Amet
-            </button>
-            <button type="button">
-              Amet
-            </button>
-          </nav>
-      
+        <div class="card card-md ${cardDefaultDrop()} overflow-y-auto overflow-x-hidden overflow-sub max-h-64">
+          <div class="card-asset rounded-t-md">
+            ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
+          </div>
+          <div class="card-block card-block-md">
+            <div class="h4">Lorem ipsum</div>
+            <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+            <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+            <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+          </div>
         </div>
       </div>
     </div>
+
   </div>
 
   <div class="drop-container" data-xt-drop>
-    <button type="button" class="btn btn-primary">
-      card
+
+    <button type="button" class="btn btn-md ${btnPrimary()}">
+      group
     </button>
-    <div class="drop drop-default drop-overflow-y">
+
+    <div class="drop">
       <div class="drop-inner">
-        <div class="drop-design"></div>
-        <div class="drop-content">
-      
-          <div class="card card-drop">
-            <div class="card-design"></div>
-            <div class="btn btn-close" aria-label="Close"></div>
-            <div class="card-inner">
-              <div class="card-content">
-                <div class="card-block card-item">
-                  <div class="card-title">Primary</div>
-                  <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-                  <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-                  <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-                  <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-                  <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-                  <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-                  <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-                  <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-                  <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-                </div>
-              </div>
-            </div>
+        <div class="card card-md ${cardDefaultDrop()}">
+          <div class="card-asset rounded-t-md">
+            ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
           </div>
-      
-        </div>
+          <div class="card-block card-block-md overflow-y-auto overflow-x-hidden overflow-sub max-h-64">
+            <div class="h4">Lorem ipsum</div>
+            <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+            <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+            <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+          </div>
       </div>
     </div>
+
   </div>
 
 </div>

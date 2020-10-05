@@ -1,6 +1,7 @@
 import path from 'path'
-const markupDrop = require('components/snippets/components/markup-drop').default
-const indentString = require('indent-string')
+const btnPrimary = require('components/snippets/classes/btn-primary').default
+const btnDefaultDrop = require('components/snippets/classes/btn-default-drop').default
+const cardDefaultDropList = require('components/snippets/classes/card-default-drop-list').default
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -10,12 +11,35 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="drop-container" data-xt-drop="{ preventEvent: true }">
-  <a href="#drop-with-link-0" class="btn btn-primary">
-    Toggle
-  </a>
-  <div class="drop drop-default">
-  ${indentString(markupDrop(), 4)}
+<div class="list list-space-2 items-center">
+
+  <div class="drop-container" data-xt-drop="{ preventEvent: true }">
+
+    <a href="#drop-with-link-0" class="btn btn-md ${btnPrimary()}">
+      drop
+    </a>
+
+    <div class="drop">
+      <div class="drop-inner">
+        <div class="card card-sm ${cardDefaultDropList()}">
+          <div class="card-block py-3">
+            <nav class="list-block">
+              <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              </a>
+              <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+                Dolor sit
+              </button>
+              <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+                Amet
+              </button>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
 </div>
 `

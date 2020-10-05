@@ -8,59 +8,53 @@ description: "Flex lists to space any element with margins, also spaces vertical
 
 ## Setup
 
-To use this component import the **less** files accordingly:
+#### Css
 
-```less
-@import 'xtend-library/src/core/list/list.less';
+Follow the [css installation](/introduction/getting-started/setup#css-installation) instructions. To [customize styles](/introduction/getting-started/setup#css-customization) in your `tailwind.config.js` file.
+
+```jsx
+module.exports = {
+  theme: require('xtend-library/src/tailwind-theme')({
+    // xtend utilities and components in node_modules/xtend-library/src/tailwind-xtend.js
+    xtend: theme => ({
+      utilities: {
+        core: {
+          list: {
+            // modify utility
+          },
+        },
+      },
+      components: {
+        core: {
+          list: {
+            // modify component
+          },
+        },
+      },
+    }),
+  })
+}
 ```
 
-Or just import **core**:
-
-```less
-@import 'xtend-library/src/xtend-core.less';
-```
-
-[[noteDefault]]
-| To modify a **less** or **js** file add [webpack resolve](/introduction/setup#usage-webpack) and fork the file copying it in your project.
+To **see the default values** see the source code of `node_modules/xtend-library/src/tailwind-xtend.js`.
 
 ## Usage
 
-Use this markup to create a **horizontal list**.
-
-<script type="text/plain" class="language-markup">
-  <nav class="list">
-    <!-- content -->
-  </nav>
-</script>
-
-Use this markup to create a **vertical list**.
-
-<script type="text/plain" class="language-markup">
-  <nav class="list-block">
-    <!-- content -->
-  </nav>
-</script>
-
-#### Anything
-
-You can use list to space childrens like [row](/components/core/row/content) does. But the childrens are spaced with **margin** instead of **padding**.
+Use this code to create a **horizontal list**.
 
 <demo>
-  <demovanilla src="vanilla/components/core/list/anything-row" name="horizontal">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/list/anything-column" name="vertical">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/list/anything-nested" name="nested">
+  <demovanilla src="vanilla/components/core/list/usage-horizontal">
   </demovanilla>
 </demo>
 
-#### Button
+Use this code to create a **vertical list**.
 
 <demo>
-  <demovanilla src="vanilla/components/core/list/button-row" name="horizontal">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/list/button-column" name="vertical">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/list/button-nested" name="nested">
+  <demovanilla src="vanilla/components/core/list/usage-vertical">
   </demovanilla>
 </demo>
+
+Check subpage to [customize content](/components/core/list/content).
+
+[[noteDefault]]
+| You can space anything inside `.list`. If you need to use **tailwind width classes** use [row](/components/core/row).

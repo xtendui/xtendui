@@ -1,10 +1,9 @@
 import { Xt } from 'xtend-library'
-import 'xtend-library/src/vars.js'
-import 'xtend-library/src/extensions/scroll/scroll.js'
-import 'xtend-library/src/extensions/sticky/sticky.js'
-import 'xtend-library/src/addons/animation/scroll-to-anchor.js'
+import 'xtend-library/src/core/scroll'
+import 'xtend-library/src/core/sticky'
+import 'xtend-library/src/addons/scroll-to-anchor'
 import gsap from 'gsap'
-import 'gsap/ScrollToPlugin.js'
+import 'gsap/ScrollToPlugin'
 
 /**
  * sticky
@@ -39,7 +38,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '#iframe--fashion-gallery-v1 body #gatsby_body-inner', // add your own selector instead of body to contain the code
-  mount: (object) => {
+  mount: object => {
     // vars
 
     object = document.documentElement
@@ -89,7 +88,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '#iframe--fashion-gallery-v1 body .product-page_continue', // add your own selector instead of body to contain the code
-  mount: (object) => {
+  mount: object => {
     // vars
 
     const icon = object.querySelector(':scope > *')
@@ -133,7 +132,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '#iframe--fashion-gallery-v1 body .product-page_image', // add your own selector instead of body to contain the code
-  mount: (object) => {
+  mount: object => {
     // markup
 
     if (!object.querySelector('.media_mask')) {
@@ -148,7 +147,7 @@ Xt.mount.push({
 
     // enter
 
-    const eventEnter = (e) => {
+    const eventEnter = e => {
       const tr = e.target
       // mask
       const img = tr.querySelector('.media-container')
@@ -165,7 +164,7 @@ Xt.mount.push({
 
     // leave
 
-    const eventLeave = (e) => {
+    const eventLeave = e => {
       const tr = e.target
       // mask
       const mask = tr.querySelector('.media_mask')

@@ -1,0 +1,16 @@
+.demo--overlay-message-outside {
+  position: fixed;
+  z-index: theme('zIndex.overlay');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: calc(100vw - 28rem); /* same as max-w-md */
+  pointer-events: none;
+  > * {
+    pointer-events: auto;
+  }
+  @media (max-width: theme('screens.md')) {
+    display: none;
+  }
+}

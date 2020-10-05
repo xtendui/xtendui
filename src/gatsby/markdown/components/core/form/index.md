@@ -8,27 +8,44 @@ description: "Form styles with multiple layouts, custom checkbox/radio, and more
 
 ## Setup
 
-To use this component import the **less** and **js** files accordingly:
+#### Javascript
 
-```less
-@import 'xtend-library/src/core/form/form.less';
-```
+Follow the [javascript installation](/introduction/getting-started/setup#javascript-installation) instructions and **import the component javascript** file.
 
 ```jsx
-import '/src/core/form/form.js'
+import 'xtend-library/src/core/form'
 ```
 
-Or just import **core**:
+#### Css
 
-```less
-@import 'xtend-library/src/xtend-core.less';
-```
+Follow the [css installation](/introduction/getting-started/setup#css-installation) instructions. To [customize styles](/introduction/getting-started/setup#css-customization) in your `tailwind.config.js` file.
 
 ```jsx
-import '/src/xtend-core.js'
+module.exports = {
+  theme: require('xtend-library/src/tailwind-theme')({
+    // xtend utilities and components in node_modules/xtend-library/src/tailwind-xtend.js
+    xtend: theme => ({
+      components: {
+        core: {
+          form: {
+            // modify component
+          },
+        },
+      },
+    }),
+  })
+}
 ```
 
-[[noteDefault]]
-| To modify a **less** or **js** file add [webpack resolve](/introduction/setup#usage-webpack) and fork the file copying it in your project.
+To **see the default values** see the source code of `node_modules/xtend-library/src/tailwind-xtend.js`.
 
+## Usage
 
+Use this code to create a **form items**.
+
+<demo>
+  <demovanilla src="vanilla/components/core/form/usage">
+  </demovanilla>
+</demo>
+
+Check subpage to [customize content](/components/core/form/content) and [customize layout](/components/core/form/layout).

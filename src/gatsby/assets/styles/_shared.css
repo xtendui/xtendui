@@ -1,0 +1,93 @@
+/**
+ * .gatsby_make-line
+*/
+
+.gatsby_make-line {
+  position: relative;
+  z-index: 1;
+  .gatsby_make-line_container {
+    display: block;
+    position: relative;
+    width: 100%;
+    .gatsby_make-line_line {
+      display: inline-block;
+      padding-right: 15px;
+      background: theme('colors.white');
+    }
+    .gatsby_make-line_line:after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      bottom: .5em;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: theme('colors.gray.500');
+    }
+  }
+  .gatsby_make-line_container {
+    .gatsby_make-line_line:after {
+      left: 100%;
+      width: 0;
+      opacity: 0;
+      transition: all theme('transitionDuration.500') theme('transitionTimingFunction.out');
+    }
+  }
+  &:hover, &:active {
+    .gatsby_make-line_container {
+      .gatsby_make-line_line:after {
+        left: 0;
+        width: 100%;
+        opacity: 1;
+        transition: all theme('transitionDuration.500') theme('transitionTimingFunction.in');
+      }
+    }
+  }
+}
+
+/**
+ * .gatsby_make-anchor
+*/
+
+.gatsby_make-anchor {
+  position: relative;
+  width: 100%;
+  a:not([class]) {
+    display: block;
+    @apply text-accent-900 !important;
+  }
+  .gatsby_site_article_anchor {
+    pointer-events: none;
+  }
+  .gatsby_site_article_anchor {
+    opacity: 0;
+    transition: all theme('transitionDuration.500') theme('transitionTimingFunction.out') theme('transitionDelay.500');
+  }
+  &:hover, &:active {
+    .gatsby_site_article_anchor {
+      opacity: 1;
+      transition: all theme('transitionDuration.500') theme('transitionTimingFunction.in') theme('transitionDelay.500');
+    }
+  }
+}
+
+.gatsby_site_article_anchor {
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  right: 12px;
+  h2 & {
+    bottom: -1px;
+  }
+  .btn {
+    padding: 7px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border-color: theme('colors.white') !important;
+    background: theme('colors.white') !important;
+    font-size: 17px;
+    color: theme('colors.accent.500');
+    line-height: 1;
+  }
+}

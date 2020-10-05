@@ -4,133 +4,316 @@ category: "Getting Started"
 parent: "Setup"
 title: "Setup"
 description: "Setup and compilation instructions."
-date: "2018-01-01"
+date: "2050-10-10"
 ---
 
-# WIP pre 1.0 version: api changing fast
+## Boilerplate
 
-## Installation
+If you want we have some boilerplate projects to start a project all ready to go!
+
+* [xtend-theme-vanilla](https://github.com/minimit/xtend-theme-vanilla)
+
+## Css Installation
+
+#### Tailwind
+
+Follow the instructions to [install tailwind](https://tailwindcss.com/docs/installation).
+
+```Shell
+npm install tailwindcss --save-dev
+```
+
+Install **postcss import** and **postcss nesting**.
+
+```Shell
+npm install postcss-import postcss-nesting --save-dev
+```
+
+Then in `postcss.config.js` set up compilation.
+
+```jsx
+const postcssImport = require(`postcss-import`)
+const postcssNesting = require('postcss-nesting')
+const tailwindcss = require(`tailwindcss`)
+
+module.exports = {
+  map: true,
+  plugins: [postcssImport(), tailwindcss(), postcssNesting()],
+}
+```
+
+Then you can use css with tailwind.
+
+```css
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "./custom.css"; /* custom code here */
+
+@import "tailwindcss/utilities";
+```
+
+#### Xtend
+
+Install **xtend**.
 
 ```Shell
 npm install xtend-library --save
 ```
 
-## Usage
-
-We have some boilerplate setup projects to start a project:
-
-* [vanilla boilerplate](https://github.com/minimit/xtend-theme-vanilla)
-
-#### Webpack
-
-This library is made to be used by [webpack](https://github.com/webpack). In essence you have to setup webpack's resolve to be able to import the scripts and styles from the `node_modules/xtend-library` or from your custom folder if present (`./dist/xtend-library` in this case).
+Then add **xtend** plugins and variables inside `tailwind.config.js`, with this special format that merges your configuration with xtend configuration.
 
 ```jsx
-  resolve: {
-    alias: {
-      // resolve xtend-library js and less
-      'xtend-library': [
-        path.resolve(__dirname, './dist/xtend-library'),
-        path.resolve(__dirname, './node_modules/xtend-library'),
-      ],
+module.exports = {
+  purge: [],
+  theme: require('xtend-library/src/tailwind-theme')({
+    // add here your theme settings
+    extend: {
+      // add here your theme extend settings
     },
+  }),
+  variants: require('xtend-library/src/tailwind-variants')({
+    // add here your variants
+  }),
+  plugins: [require('xtend-library/src/tailwind-plugin')],
+  experimental: {
+    applyComplexClasses: true,
+    extendedSpacingScale: true,
+    defaultLineHeights: true,
+    removeDeprecatedGapUtilities: true,
   },
-  module: {
-    unsafeCache: false,
+}
 ```
 
-With this setup you can **fork** css and js files inside `./dist/xtend-library` and the webpack resolver will load files from it or fallback to `./node_modules/xtend-library`.
+## Javascript Installation
 
-**IMPORTANT** do not fork the files inside `./core/demos` they can change anytime
+#### Babel and Corejs
 
-#### Css
-
-You need to import the **reset** file as first import:
-
-```less
-@import 'xtend-library/src/xtend-reset.less'; // always first loaded
-```
-
-Then you can import the **components you need** as described in the docs:
-
-```less
-@import (reference) '/src/xtend-core.less'; // be sure to import the library as reference first
-@import 'xtend-library/src/extensions/slider/slider.less';
-```
-
-Or just import **all core** and **extensions** and **addons** needed (preferred method):
-
-```less
-@import 'xtend-library/src/xtend-core.less';
-@import 'xtend-library/src/extensions/slider/slider.less';
-```
-
-To modify a **less** or **js** file add [webpack resolve](/introduction/setup#usage-webpack) and fork the file copying it in your project.
-
-#### Js
-
-You need to install [relaxed-json](https://www.npmjs.com/package/relaxed-json):
+You need to install [corejs](https://www.npmjs.com/package/core-js), [@babel/core](https://www.npmjs.com/package/@babel/core), [@babel/preset-env](https://www.npmjs.com/package/@babel/preset-env), [@babel/plugin-transform-runtime](https://www.npmjs.com/package/@babel/plugin-transform-runtime), [babel-plugin-module-resolver](https://www.npmjs.com/package/babel-plugin-module-resolver).
 
 ```Shell
-npm install --save relaxed-json
+npm install core-js@3 @babel/core @babel/preset-env @babel/plugin-transform-runtime babel-plugin-module-resolver --save-dev
 ```
 
-You need to install and import [core-js](https://github.com/zloirock/core-js):
+Then in the root of your project set up polyfills with `babel.config.js`.
 
-```Shell
-npm install --save core-js@2
+```jsx
+const path = require('path')
+
+module.exports = {
+  presets: [
+    [
+      '@babel/preset-env',
+      {
+        useBuiltIns: 'entry',
+        corejs: 3,
+      },
+    ],
+  ],
+  plugins: [
+    [require.resolve('@babel/plugin-transform-runtime')],
+    [
+      require.resolve('babel-plugin-module-resolver'),
+      {
+        alias: {
+          // if you want to fork javascript file add a local path.resolve as first in array
+          'xtend-library': [path.resolve(__dirname, './node_modules/xtend-library')],
+        },
+      },
+    ],
+  ],
+}
 ```
+
+Then import the **corejs**.
 
 ```jsx
 import 'core-js'
 ```
 
-You need to import the **polyfills** files and the **main** js:
+You need also to set a `.browserslistrc` in the root of your project.
+
+```
+Chrome >= 38
+Safari >= 10
+iOS >= 10
+Firefox >= 38
+Edge >= 12
+Opera >= 25
+```
+
+#### Xtend
+
+Install **xtend**.
+
+```Shell
+npm install xtend-library --save
+```
+
+Then import the **xtend main file**.
 
 ```jsx
-import '/src/polyfill.js'
-import { Xt } from '/src/xt.js'
+import { Xt } from 'xtend-library'
 ```
 
-Then you can import the **components you need** as described in the docs:
+Then you can import the **components you need** as described in the docs.
 
 ```jsx
-import '/src/extensions/slider/slider.js'
+import 'xtend-library/src/core/toggle'
+import 'xtend-library/src/core/slider'
 ```
 
-Or just import **all core** and **extensions** and **addons** needed (preferred method):
+#### Animations
+
+This library in the demos uses [gsap](https://github.com/greensock/GSAP) for javascript animations. Install it.
+
+```
+npm install gsap --save
+```
+
+Then **setup gsap** this way. Also add the following **xtend variables**.
 
 ```jsx
-import '/src/xtend-core.js'
-import '/src/extensions/slider/slider.js'
+/**
+ * gsap setup
+ */
+
+import gsap from 'gsap'
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
+
+gsap.defaults({
+  overwrite: 'auto',
+})
+
+gsap.config({
+  force3D: false,
+})
+
+gsap.globalTimeline.timeScale(1000) // milliseconds instead of seconds
+
+gsap.registerPlugin(ScrollToPlugin)
+
+/**
+ * Xt.vars
+ */
+
+Xt.vars = {
+  timeMicro: 50,
+  timeMini: 100,
+  timeTiny: 250,
+  timeSmall: 500,
+  timeMedium: 750,
+  timeLarge: 1000,
+  timeBig: 1500,
+  timeGiant: 2000,
+  timeHuge: 3000,
+}
+
+// instant animations accessibility
+
+if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce), (update: slow)').matches) {
+  Xt.vars.timeMicro = 0
+  Xt.vars.timeMini = 0
+  Xt.vars.timeTiny = 0
+  Xt.vars.timeSmall = 0
+  Xt.vars.timeMedium = 0
+  Xt.vars.timeLarge = 0
+  Xt.vars.timeBig = 0
+  Xt.vars.timeGiant = 0
+  Xt.vars.timeHuge = 0
+}
 ```
 
-To modify a **less** or **js** file add [webpack resolve](/introduction/setup#usage-webpack) and fork the file copying it in your project.
+## Css Customization
 
-#### Gsap
+To **customize the theme** use [tailwind theme configuration](https://tailwindcss.com/docs/theme) in the theme section of your `tailwind.config.js` file, with this special format that merges your configuration with xtend configuration..
 
-This library in the demos uses [gsap](https://github.com/greensock/GSAP) and [bezier-easing](https://github.com/gre/bezier-easing) for javascript animations.
-
+```jsx
+module.exports = {
+  theme: require('xtend-library/src/tailwind-theme')({
+    // extend theme in node_modules/xtend-library/src/tailwind-theme.js
+    extend: {
+      colors: {
+        accent: {
+          100: '#F1F0FE',
+          200: '#DDD9FD',
+          300: '#C8C2FC',
+          400: '#9E95FA',
+          500: '#7567F8',
+          600: '#695DDF',
+          700: '#463E95',
+          800: '#352E70',
+          900: '#231F4A',
+        },
+      },
+    },
+  },
+}
 ```
-npm install --save gsap bezier-easing
+
+To **see the xtend theme options** see the source code of `node_modules/xtend-library/src/tailwind-theme.js`.
+
+To **customize the utilities and components** add your overrides under the **xtend key** in the theme section of your `tailwind.config.js` file, with this special format that merges your configuration with xtend configuration..
+
+```jsx
+module.exports = {
+  theme: require('xtend-library/src/tailwind-theme')({
+    // xtend utilities and components in node_modules/xtend-library/src/tailwind-xtend.js
+    xtend: theme => ({
+      utilities: {
+        core: {
+          // disable utility
+          utilityName: false,
+          // modify utility
+          utilityName: {
+            '.selector': {
+              myStyle: 'myStyleValue',
+            },
+          },
+        },
+      },
+      components: {
+        core: {
+          // disable component
+          componentName: false,
+          // modify component
+          componentName: {
+            '.selector': {
+              myStyle: 'myStyleValue',
+            },
+          },
+        },
+        addons: {
+          // disable addon
+          addonName: false,
+          // modify addon
+          addonName: {
+            '.selector': {
+              myStyle: 'myStyleValue',
+            },
+          },
+        },
+      },
+    }),
+  },
+}
 ```
+
+To **see the default values** see the source code of `node_modules/xtend-library/src/tailwind-xtend.js`.
 
 ## Browser support
 
-Supported browsers are as follow: **explorer 12**, **firefox 38**, **opera 25**, **safari 10**, **chrome 38**.
+Supported browsers are as follow: **chrome 38**, **safari 10**, **ios 10**, **firefox 38**, **edge 12**, **opera 25**.
 
 ## Documentation
 
-We use gatsby to serve the docs:
+We use [gatsby](https://www.npmjs.com/package/gatsby) to serve the docs:
 
 * Install required npm packages with `npm install`
 * Use `npm run build` to build the docs in `/public`
 * Use `npm run dev` to serve a develop version
-* Use `npm run serve`to serve a production version
-
-## Acknowledgements
-
-* Icons with [feather icons](https://github.com/feathericons/feather)
+* Use `npm run serve` to serve a production version
 
 ## Copyright
 

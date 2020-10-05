@@ -6,7 +6,7 @@ import { Xt } from 'xtend-library'
 
 Xt.mount.push({
   matches: '#iframe--stores-listing-v1 body .listing-page_item', // add your own selector instead of body to contain the code
-  mount: (object) => {
+  mount: object => {
     // vars
 
     const actionBtn = object.querySelector('.listing-page_action')
@@ -14,7 +14,7 @@ Xt.mount.push({
 
     // eventClick
 
-    const eventClick = (e) => {
+    const eventClick = e => {
       e.stopPropagation()
       object.classList.add('active')
     }
@@ -23,7 +23,7 @@ Xt.mount.push({
 
     // eventClose
 
-    const eventClose = (e) => {
+    const eventClose = e => {
       e.stopPropagation()
       object.classList.remove('active')
     }

@@ -1,6 +1,6 @@
 #iframe--sequential-megamenu-v1 {
-  //##START
-  body { // add your own selector instead of body to contain the code
+  /*##START*/
+  body { /* add your own selector instead of body to contain the code */
 
     /**
       * .megamenus
@@ -19,8 +19,7 @@
     }
 
     .btn_megamenus {
-      .btn-text();
-      .btn-large();
+      .btn-lg();
       .padding(y, 1.5em);
     }
 
@@ -123,8 +122,8 @@
       .link-none();
       .spacing-tiny();
       .font-sans-semibold();
-      .line-height-medium();
-      font-size: 1.5rem;
+      .line-height-md();
+      font-size: 1rem;
       color: @white;
       letter-spacing: .025em;
     }
@@ -137,15 +136,15 @@
         .link-none();
         .padding(y, .25rem);
         .font-sans-semibold();
-        .line-height-medium();
+        .line-height-md();
         font-size: 13px;
         color: fade(@white, 50%) !important;
-        &:hover, &.hover, &:active, &.active {
+        &:hover, &:active, &.active {
           color: @white !important;
         }
       }
     }
 
   }
-  //##END
+  /*##END*/
 }

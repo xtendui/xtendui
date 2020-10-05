@@ -8,35 +8,24 @@ description: "Toggle is the main js component that toggle classes, it's inherite
 
 ## Setup
 
-To use this component import the **less** and **js** files accordingly:
+#### Javascript
 
-```less
-@import 'xtend-library/src/core/toggle/toggle.less';
-```
+Follow the [javascript installation](/introduction/getting-started/setup#javascript-installation) instructions and **import the component javascript** file.
 
 ```jsx
-import '/src/core/toggle/toggle.js'
+import 'xtend-library/src/core/toggle'
 ```
-
-Or just import **core**:
-
-```jsx
-import '/src/xtend-core.js'
-```
-
-[[noteDefault]]
-| To modify a **less** or **js** file add [webpack resolve](/introduction/setup#usage-webpack) and fork the file copying it in your project.
 
 ## Usage
 
-Set `elements` `targets` `elementsInner` `targetsInner`, elements are responding to events, targets are activated on events.
+Pass **elements** and **targets** options if different from defaults. **Elements** listens to events, **targets and inners** activate on events.
 
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `elements:Query`                          | `:scope > a, :scope > button`        | Elements query            |
-| Option                  | `targets:Query`                          | `:scope > [class^="toggle-"], :scope > [class*=" toggle-"]`        | Targets query            |
+| Option                  | `targets:Query`                          | `:scope > .toggle, :scope > [class^="toggle-"], :scope > [class*=" toggle-"]`        | Targets query            |
 | Option                  | `elementsInner:Query`                          | `false`        | Inner elements query (scope inside elements)            |
 | Option                  | `targetsInner:Query`                          | `false`        | Inner targets query (scope inside targets)     
 
@@ -44,100 +33,52 @@ Set `elements` `targets` `elementsInner` `targetsInner`, elements are responding
 
 #### Self
 
-Use this markup to create a **self toggle**.
-
-<script type="text/plain" class="language-markup">
-  <button type="button" data-xt-toggle>
-    <!-- content -->
-  </button>
-</script>
+Use this code to create a **self toggle**.
 
 <demo>
-  <demovanilla src="vanilla/components/core/toggle/self">
+  <demovanilla src="vanilla/components/core/toggle/usage-self">
   </demovanilla>
 </demo>
 
+Check subpage to [customize interaction](/components/core/toggle/interaction).
+
 #### Unique
 
-Use this markup to create a **unique toggle**.
+Use this code to create a **unique toggle**.
 
 The **unique** mode is useful when triggering **targets outside the scope** of the component.
+
+<demo>
+  <demovanilla src="vanilla/components/core/toggle/usage-unique-single">
+  </demovanilla>
+</demo>
+
+You can also toggle the **same targets on multiple toggles**.
 
 [[notePrimary]]
 | To activate **unique mode** you **need** to specify targets with **#id**.
 
-<script type="text/plain" class="language-markup">
-  <button type="button" data-xt-toggle="{ targets: '#my-target' }">
-    <!-- content -->
-  </button>
-  <div class="toggle-block" id="my-target">
-    <!-- content -->
-  </div>
-</script>
-
 <demo>
-  <demovanilla src="vanilla/components/core/toggle/unique-single">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/toggle/unique-same">
+  <demovanilla src="vanilla/components/core/toggle/usage-unique-same">
   </demovanilla>
 </demo>
+
+Check subpage to [customize interaction](/components/core/toggle/interaction).
 
 #### Multiple
 
-Use this markup to create **multiple toggle**.
-
-<script type="text/plain" class="language-markup">
-  <div data-xt-toggle="{ elements: '.my-elements', targets: '.my-targets' }">
-    <button type="button" class="my-elements">
-      <!-- content -->
-    </button>
-    <div class="toggle-block" class="my-targets">
-      <!-- content -->
-    </div>
-  </div>
-</script>
+Use this code to create **multiple toggle**.
 
 <demo>
-  <demovanilla src="vanilla/components/core/toggle/multiple-default">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/toggle/multiple-custom">
+  <demovanilla src="vanilla/components/core/toggle/usage-multiple-default">
   </demovanilla>
 </demo>
 
-## Initialization
+You can also specify your own `elements` and `targets`.
 
-Initialize automatically within markup with `[data-xt-toggle="{ <options> }"]` on the **object**:
+<demo>
+  <demovanilla src="vanilla/components/core/toggle/usage-multiple-custom">
+  </demovanilla>
+</demo>
 
-[[noteDefault]]
-| **Object** is the DOM element you want to assign the component.
-
-Or initialize with javascript:
-
-```js
-let self = new Xt.Toggle(document.querySelector('#my-object'), {
-  // options
-})
-```
-
-Or inizialize with **mutation observer** (preferred method):
-
-```js
-Xt.mount.push({
-  matches: '#my-object',
-  mount: object => {
-    // init
-
-    let self = new Xt.Toggle(object, {
-      // options
-    })
-
-    // unmount
-
-    const unmount = () => {
-      self.destroy()
-      self = null
-    }
-    return unmount
-  }
-})
-```
+Check subpage to [customize interaction](/components/core/toggle/interaction).

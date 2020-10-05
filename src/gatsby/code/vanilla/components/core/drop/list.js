@@ -1,4 +1,6 @@
 import path from 'path'
+const btnPrimary = require('components/snippets/classes/btn-primary').default
+const cardDefaultDrop = require('components/snippets/classes/card-default-drop').default
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -8,29 +10,33 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="drop-container" data-xt-drop>
-  <button type="button" class="btn btn-primary">
-    Toggle
-  </button>
-  <div class="drop drop-default">
-    <div class="drop-inner">
-      <div class="drop-design"></div>
-      <div class="drop-content">
-    
-        <nav class="list-block list-drop">
-          <a href="#">
-            Lorem Ipsum
-          </a>
-          <button type="button">
-            Dolor sit
-          </button>
-          <button type="button" class="btn btn-default btn-small btn-wide btn-squared">
-            Dolor sit
-          </button>
-        </nav>
-    
+<div class="list list-space-2 items-center">
+
+  <div class="drop-container" data-xt-drop>
+
+    <button type="button" class="btn btn-md ${btnPrimary()}">
+      list
+    </button>
+
+    <div class="drop">
+      <div class="drop-inner">
+        <div class="card card-lg ${cardDefaultDrop()}">
+          <div class="card-block card-block-md">
+            <div class="list list-space-2 flex-no-wrap items-baseline">
+              <div>
+                <span class="icon-chevron-right"></span>
+              </div>
+              <div>
+                <div class="h4">Lorem ipsum</div>
+                <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+
   </div>
+
 </div>
 `

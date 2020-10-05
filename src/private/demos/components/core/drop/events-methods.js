@@ -2,20 +2,19 @@ import { Xt } from 'xtend-library'
 
 Xt.mount.push({
   matches: '#demo--drop-events',
-  mount: (object) => {
+  mount: object => {
     // init
 
     let self = new Xt.Drop(object, {
       elements: ':scope > .drop-container',
       targets: ':scope > .drop-container > .drop',
-      closeOutside: false,
     })
 
     // log
 
     const log = document.querySelector('#demo--drop-events-log')
 
-    const logAdd = (text) => {
+    const logAdd = text => {
       log.innerHTML += text + '<br/>'
       // scroll
       log.scrollTo(0, log.scrollHeight)
@@ -53,6 +52,9 @@ Xt.mount.push({
     // add
 
     const addBtn = document.querySelector('#demo--drop-events-add')
+    const btnPrimary = require('components/snippets/classes/btn-primary').default
+    const btnDefaultDrop = require('components/snippets/classes/btn-default-drop').default
+    const cardDefaultDropList = require('components/snippets/classes/card-default-drop-list').default
 
     const addFnc = () => {
       clearTimeout(parseFloat(object.dataset.reinitTimeout))
@@ -61,29 +63,31 @@ Xt.mount.push({
         // elements
         const strEl = `
         <div class="drop-container">
-          <button type="button" class="btn btn-primary">
+
+          <button type="button" class="btn btn-md ${btnPrimary()}">
             drop
           </button>
-          <div class="drop drop-default">
+
+          <div class="drop">
             <div class="drop-inner">
-              <div class="drop-design"></div>
-              <div class="drop-content">
-
-                <nav class="list-block list-drop">
-                  <button type="button">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                  </button>
-                  <button type="button">
-                    Dolor sit
-                  </button>
-                  <button type="button">
-                    Amet
-                  </button>
-                </nav>
-
+              <div class="card card-sm ${cardDefaultDropList()}">
+                <div class="card-block py-3">
+                  <nav class="list-block">
+                    <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                    </a>
+                    <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+                      Dolor sit
+                    </button>
+                    <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+                      Amet
+                    </button>
+                  </nav>
+                </div>
               </div>
             </div>
           </div>
+
         </div>
       `
         document.querySelector('#demo--drop-events').append(Xt.createElement(strEl))
@@ -180,7 +184,7 @@ Xt.mount.push({
 
     // events
 
-    const events = (e) => {
+    const events = e => {
       let str = 'event <strong>' + e.type + '</strong>' + ' direction <strong>' + self.direction + '</strong>'
       if (e.target.getAttribute('title')) {
         str += ' from <strong>' + e.target.getAttribute('title') + '</strong>'

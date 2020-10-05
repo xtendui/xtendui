@@ -1,0 +1,32 @@
+/**
+ * footer
+ */
+
+.gatsby_site_footer_bottom {
+  opacity: 0.75;
+  a {
+    @apply font-semibold;
+    color: theme('colors.black');
+    text-decoration: none;
+    &:hover, &:active, &.active {
+      color: theme('colors.black');
+      text-decoration: underline;
+    }
+  }
+}
+
+.gatsby_site_footer_bottom_row {
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  flex: 1 1 auto;
+  font-size: 11px;
+  @screeen md {
+    font-size: 12px;
+  }
+}
+
+.gatsby_site_footer_bottom_right {
+  @screeen md {
+    margin-left: auto;
+  }
+}

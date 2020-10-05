@@ -7,15 +7,17 @@ import Footer from 'components/includes/footer'
 import DocHead from 'components/includes/doc-head'
 import DocFoot from 'components/includes/doc-foot'
 import DocFullscreen from 'components/includes/doc-fullscreen'
+import { markdownSlug } from 'components/snippets/markdown-slug'
 
-import { makeDocument } from 'assets/scripts/theme.js'
-import { populateBlock } from 'assets/scripts/demo.js'
+import { makeDocument } from 'assets/scripts/theme'
+import { populateBlock } from 'assets/scripts/demo'
 
-import 'assets/styles/theme.less'
+import 'assets/styles/icomoon/style.css'
+import 'assets/styles/theme.css'
 
 if (typeof window !== 'undefined' && window.self === window.top) {
   if (module.hot) {
-    module.hot.addStatusHandler((status) => {
+    module.hot.addStatusHandler(status => {
       if (status === 'apply') {
         window.location.reload()
       }
@@ -48,24 +50,32 @@ class Layout extends React.Component {
             }
           }
         `}
-        render={(data) => (
+        render={data => (
           <>
             <div className="gatsby_site_wrapper">
               <div className="gatsby_site_main">
                 <div className="gatsby_site_main_inner">
                   <Header site={data} seo={seo} page={page} />
-                  <div className="gatsby_site_article">
+                  <div className="gatsby_site_article prose max-w-none">
                     <DocFullscreen />
-                    <main className="gatsby_site_article_inner" id="gatbsy_open-full-inner">
-                      {page ? <DocHead page={page} /> : null}
-                      <article className="gatsby_site_article_content">
-                        <div className="gatsby_site_article_content_inner">{children}</div>
-                      </article>
-                      {page && page.post.frontmatter.type !== page.post.frontmatter.title && page.post.frontmatter.type !== 'Introduction' ? (
-                        <DocFoot page={page} />
-                      ) : null}
-                      <Footer site={data} />
-                    </main>
+                    {page && markdownSlug(page.post) === '/introduction' ? (
+                      children
+                    ) : (
+                      <main className="gatsby_site_article_inner" id="gatsby_open-full-inner">
+                        <DocHead page={page} />
+                        <article className="gatsby_site_article_content">
+                          <div className="gatsby_site_article_content_inner">{children}</div>
+                        </article>
+                        <footer className="gatsby_site_footer">
+                          <div className="gatsby_site_footer_inner">
+                            {page && page.post.frontmatter.type !== page.post.frontmatter.title && page.post.frontmatter.type !== 'Introduction' ? (
+                              <DocFoot page={page} />
+                            ) : null}
+                            <Footer site={data} />
+                          </div>
+                        </footer>
+                      </main>
+                    )}
                   </div>
                 </div>
               </div>

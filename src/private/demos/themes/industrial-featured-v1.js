@@ -1,6 +1,5 @@
 import { Xt } from 'xtend-library'
-import 'xtend-library/src/vars.js'
-import 'xtend-library/src/extensions/slider/slider.js'
+import 'xtend-library/src/core/slider'
 import gsap from 'gsap'
 
 /**
@@ -9,7 +8,7 @@ import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '#iframe--industrial-featured-v1 body .slider', // add your own selector instead of body to contain the code
-  mount: (object) => {
+  mount: object => {
     // vars
 
     const assetMaskTimeOn = Xt.vars.timeLarge
@@ -54,7 +53,7 @@ Xt.mount.push({
     // drag
 
     const eventDrag = () => {
-      const tr = self.targets.filter((x) => self.hasCurrent(x))[0]
+      const tr = self.targets.filter(x => self.hasCurrent(x))[0]
       // assetMask
       const assetMasks = tr.querySelectorAll('.featured-item_asset .media-container')
       for (const assetMask of assetMasks) {
@@ -79,7 +78,7 @@ Xt.mount.push({
     // dragreset
 
     const eventDragReset = () => {
-      const tr = self.targets.filter((x) => self.hasCurrent(x))[0]
+      const tr = self.targets.filter(x => self.hasCurrent(x))[0]
       // assetMask
       const assetMasks = tr.querySelectorAll('.featured-item_asset .media-container')
       for (const assetMask of assetMasks) {
@@ -103,7 +102,7 @@ Xt.mount.push({
 
     // on
 
-    const eventOn = (e) => {
+    const eventOn = e => {
       const tr = e.target
       // useCapture delegation
       if (self.targets.includes(tr)) {
@@ -172,7 +171,7 @@ Xt.mount.push({
 
     // off
 
-    const eventOff = (e) => {
+    const eventOff = e => {
       const tr = e.target
       // useCapture delegation
       if (self.targets.includes(tr)) {
@@ -204,7 +203,7 @@ Xt.mount.push({
 
     // on elements
 
-    const eventOnElements = (e) => {
+    const eventOnElements = e => {
       const tr = e.target
       // useCapture delegation
       if (self.elements.includes(tr)) {

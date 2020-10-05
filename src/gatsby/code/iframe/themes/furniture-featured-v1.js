@@ -24,7 +24,7 @@ demo.htmlSource = `
         <div class="featured_item_inner">
           <div class="row">
             <div class="featured_img_col">
-              ${img({ classes: 'media-cover', ratio: '121%' })}
+              ${img({ classes: 'object-cover object-center', ratio: '121%' })}
             </div>
             <div class="featured_content_col">
               <div class="featured_content">
@@ -52,7 +52,7 @@ demo.htmlSource = `
         <div class="featured_item_inner">
           <div class="row">
             <div class="featured_img_col">
-              ${img({ classes: 'media-cover', ratio: '72.6%' })}
+              ${img({ classes: 'object-cover object-center', ratio: '72.6%' })}
             </div>
             <div class="featured_content_col">
               <div class="featured_content">
@@ -80,7 +80,7 @@ demo.htmlSource = `
         <div class="featured_item_inner">
           <div class="row">
             <div class="featured_img_col">
-              ${img({ classes: 'media-cover', ratio: '121%' })}
+              ${img({ classes: 'object-cover object-center', ratio: '121%' })}
             </div>
             <div class="featured_content_col">
               <div class="featured_content">
@@ -112,7 +112,7 @@ demo.htmlSource = `
         <div class="featured_item_inner">
           <div class="row">
             <div class="featured_img_col">
-              ${img({ classes: 'media-cover', ratio: '121%' })}
+              ${img({ classes: 'object-cover object-center', ratio: '121%' })}
             </div>
             <div class="featured_content_col">
               <div class="featured_content">

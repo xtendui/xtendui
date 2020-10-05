@@ -15,14 +15,14 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="h5 header-block">
+<div class="h5 h-block rounded-md bg-gray-200 text-center">
   Constant speed
 </div>
 
 <div class="slider slider--text">
 
   <div class="slides">
-    <ul class="slides-inner">
+    <ul class="slides-inner row row-space-2">
 
       <div class="slide">
         <div class="slide-inner">
@@ -70,21 +70,21 @@ demo.htmlSource = `
     </ul>
   </div>
 
-  <nav class="slider-pagination display-none">
+  <nav class="slider-pagination list list-space-2 hidden">
     <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
     </button>
   </nav>
 
 </div>
 
-<div class="h5 header-block">
+<div class="h5 h-block rounded-md bg-gray-200 text-center">
   Faster or slower depending on horizontal space
 </div>
 
 <div class="slider slider--text slider--factor">
 
   <div class="slides">
-    <ul class="slides-inner">
+    <ul class="slides-inner row row-space-2">
 
       <div class="slide">
         <div class="slide-inner">
@@ -132,42 +132,42 @@ demo.htmlSource = `
     </ul>
   </div>
 
-  <nav class="slider-pagination display-none">
+  <nav class="slider-pagination list list-space-2 hidden">
     <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
     </button>
   </nav>
 
 </div>
 
-<div class="h5 header-block">
+<div class="h5 h-block rounded-md bg-gray-200 text-center">
   Images
 </div>
 
 <div class="slider slider--img">
 
   <div class="slides">
-    <ul class="slides-inner">
+    <ul class="slides-inner row row-space-2">
 
       <div class="slide">
         <div class="slide-inner">
           <div class="brand">
             <a href="#test-link-1" class="brand_content">
-              ${img({ classes: 'media-cover', ratio: '37.5%', loading: 'eager' })}
+              ${img({ classes: 'object-cover object-center', ratio: '37.5%', loading: 'eager' })}
             </a>
             <a href="#test-link-2" class="brand_content">
-              ${img({ classes: 'media-cover', ratio: '37.5%', loading: 'eager' })}
+              ${img({ classes: 'object-cover object-center', ratio: '37.5%', loading: 'eager' })}
             </a>
             <a href="#test-link-3" class="brand_content">
-              ${img({ classes: 'media-cover', ratio: '37.5%', loading: 'eager' })}
+              ${img({ classes: 'object-cover object-center', ratio: '37.5%', loading: 'eager' })}
             </a>
             <a href="#test-link-4" class="brand_content">
-              ${img({ classes: 'media-cover', ratio: '37.5%', loading: 'eager' })}
+              ${img({ classes: 'object-cover object-center', ratio: '37.5%', loading: 'eager' })}
             </a>
             <a href="#test-link-5" class="brand_content">
-              ${img({ classes: 'media-cover', ratio: '37.5%', loading: 'eager' })}
+              ${img({ classes: 'object-cover object-center', ratio: '37.5%', loading: 'eager' })}
             </a>
             <a href="#test-link-6" class="brand_content">
-              ${imgAlt({ classes: 'media-cover', ratio: '37.5%', loading: 'eager' })}
+              ${imgAlt({ classes: 'object-cover object-center', ratio: '37.5%', loading: 'eager' })}
             </a>
           </div>
         </div>
@@ -176,7 +176,7 @@ demo.htmlSource = `
     </ul>
   </div>
 
-  <nav class="slider-pagination display-none">
+  <nav class="slider-pagination list list-space-2 hidden">
     <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
     </button>
   </nav>

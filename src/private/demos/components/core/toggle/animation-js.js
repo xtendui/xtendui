@@ -1,28 +1,27 @@
 import { Xt } from 'xtend-library'
-import 'xtend-library/src/vars.js'
-import 'xtend-library/src/core/toggle/toggle.js'
+import 'xtend-library/src/core/toggle'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '.demo--toggle-js',
-  mount: (object) => {
+  matches: '.demo--toggle-animation-js',
+  mount: object => {
     // vars
 
-    const targetTimeOn = Xt.vars.timeLarge
-    const targetEaseOn = 'cheetah'
-    const targetTimeOff = Xt.vars.timeLarge
-    const targetEaseOff = 'cheetah'
+    const targetTimeOn = Xt.vars.timeSmall
+    const targetEaseOn = 'quad.out'
+    const targetTimeOff = Xt.vars.timeSmall
+    const targetEaseOff = 'quad.inOut'
 
     // init
 
     let self = new Xt.Toggle(object, {
-      durationOn: Xt.vars.timeLarge,
-      durationOff: Xt.vars.timeLarge,
+      durationOn: Xt.vars.timeSmall,
+      durationOff: Xt.vars.timeSmall,
     })
 
     // on
 
-    const eventOn = (e) => {
+    const eventOn = e => {
       const tr = e.target
       gsap.set(tr, { opacity: 0 })
       if (!tr.classList.contains('inverse')) {
@@ -39,7 +38,7 @@ Xt.mount.push({
 
     // off
 
-    const eventOff = (e) => {
+    const eventOff = e => {
       const tr = e.target
       if (!tr.classList.contains('inverse')) {
         gsap.to(tr, { x: 15, opacity: 0, duration: targetTimeOff, ease: targetEaseOff })

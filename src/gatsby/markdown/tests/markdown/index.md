@@ -9,23 +9,25 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 ## Demos
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/core/toggle/events-methods">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/toggle/events-methods">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/extensions/slider/events-methods">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/slider/events-methods">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/extensions/scroll/direction">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/direction">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/extensions/scroll/block">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/block">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/addons/animation/scroll-to-anchor-nested">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/scroll-to-anchor">
   </div>
-  <demovanilla src="vanilla/components/extensions/slider/progress">
+  <demovanilla src="vanilla/components/core/slider/progress">
   </demovanilla>
-  <demovanilla src="vanilla/components/core/toggle/timing-duration">
+  <demovanilla src="vanilla/components/core/toggle/timing">
   </demovanilla>
-  <demovanilla src="vanilla/components/core/toggle/timing-delay-fnc">
+  <demovanilla src="vanilla/components/core/toggle/auto">
   </demovanilla>
-  <demovanilla src="vanilla/components/extensions/slider/overflow-auto-false">
+  <demovanilla src="vanilla/components/core/toggle/prevent-event">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/slider/overflow-auto-false">
   </demovanilla>
 </demo>
 
@@ -34,86 +36,122 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
   </demovanilla>
   <demovanilla src="vanilla/components/core/drop/backdrop">
   </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/prevent-event">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/prevent-event-hover">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/overlay/nested">
+  <demovanilla src="vanilla/components/core/overlay/disable">
   </demovanilla>
   <demovanilla src="vanilla/components/core/overlay/position">
   </demovanilla>
 </demo>
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/brands-featured-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/brands-featured-v1">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/fashion-hero-v2">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/fashion-hero-v2">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/furniture-hero-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/furniture-hero-v1">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/industrial-featured-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/industrial-featured-v1">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/fashion-hero-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/fashion-hero-v1">
   </div>
 </demo>
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/sequential-megamenu-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/sequential-megamenu-v1">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/xtend-theme-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/xtend-theme-v1">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/collapse-theme-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/collapse-theme-v1">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/furniture-featured-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/furniture-featured-v1">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/furniture-listing-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/furniture-listing-v1">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/fashion-listing-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/fashion-listing-v1">
   </div>
 </demo>
 
 ## Markdown
 
+Use this code to create a **card**.
+
+Check subpage to [customize content](/components/core/loader/content#spinner).
+
+Use **tailwind classes** to create a mouse follow.
+
+Use **component classes** to create a mouse follow.
+
+Use **component classes** to assign size (e.g.: padding, font size).
+
+See [group component](/components/core/loader) to create a button with group.
+
+See [mouse follow addon](/components/core/loader) to create a loader with mouse follow.
+
+[[notePrimary]]
+| This addon uses [separator](/components/separator). Visit the component page to import and initialize.
+
+(use touch device to see it in action)
+
+(use narrow screen to see it in action)
+
 <div class="table-scroll">
 
-|                         | Syntax                                    | Example                       |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.drop-{variant}`                        | `.drop-default` `.drop-primary` |
-| Mixin                   | `.drop-{variant}()`                      | `.drop-default()` `.drop-primary()`         |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Function                  | `Xt.eventDelay:Function`              | `e:Event, element:Node, function:Function, prefix:String = '', instant:Boolean = false`       | event delay wrapper                  |
+| Variable                  | `Xt.resizeDelay:Number|Boolean`              | `500`        | Delay for the `resize` event with `Xt.eventDelay`            |
+| Option                    | `elements:Query`                          | `false`        | Elements query            |
+| Object                   | `let self = Xt.get('xt-drop', {DOM element})`       | `object` `elements` `targets` | Get object self for this component class             |
+| Property                  | `initial:Boolean`       | If initial or reset activation            |
 
 </div>
 
+For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/customizing-spacing).
+
 <div class="table-scroll">
 
-|                         | Syntax                                    | Default                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `class:String`                          | `active active-overlay`        | Class name for activation            |
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
+| Util                  | `.list-space-<space>`       | `list-space-<space>`                | `responsive`                | Space contents horizontally and vertically            |
 
 </div>
 
+For `<direction>` values use `x` or `y`.
+
 <div class="table-scroll">
 
-|                         | Class                                     | Mixin                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `.drop-container-static`                 | `.drop-container-static()`        | Position relative to closest element with `position: relative;`.            |
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `.loader-<direction>`                     | `loader-<direction>`                | Loader direction for filler            |
+
+</div>
+
+You can set **scroll mode** with css selectors.
+
+<div class="table-scroll">
+
+|                      | Syntax                          |  Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Selector                  | `&:not(.scroll-done) {`                     | Animate once            |
 
 </div>
 
 Lorem ipsum `dolor sit` amet, *consectetur* **adipiscing** elit. Nam in [laoreet tellus](/components/group/button), nec commodo massa. Aenean ut ex at ex pellentesque efficitur.
 
-Maecenas pulvinar mauris eget pharetra elementum. Sed sit amet ultrices metus, vitae cursus metus. Proin tristique finibus pretium. Morbi sit amet magna faucibus, luctus enim tempor, dignissim quam. Nam a ornare quam, varius cursus felis. Fusce nunc lacus, iaculis vel cursus non, facilisis id quam.
+<p class="text-xs">Maecenas pulvinar mauris eget pharetra elementum. Sed sit amet ultrices metus, vitae cursus metus. Proin tristique finibus pretium. Morbi sit amet magna faucibus, luctus enim tempor, dignissim quam. Nam a ornare quam, varius cursus felis. Fusce nunc lacus, iaculis vel cursus non, facilisis id quam.</p>
 
-Sed gravida massa in commodo eleifend. Curabitur ac pellentesque nisl. Nunc ut placerat velit, aliquet faucibus erat. In imperdiet ligula ex, ut vestibulum ipsum fermentum in. Fusce ante ex, molestie at condimentum non, ullamcorper a lorem. Morbi et eros pellentesque, congue sem non, dapibus tellus.
+<p class="text-sm">Maecenas pulvinar mauris eget pharetra elementum. Sed sit amet ultrices metus, vitae cursus metus. Proin tristique finibus pretium. Morbi sit amet magna faucibus, luctus enim tempor, dignissim quam. Nam a ornare quam, varius cursus felis. Fusce nunc lacus, iaculis vel cursus non, facilisis id quam.</p>
+
+<p class="text-base">Maecenas pulvinar mauris eget pharetra elementum. Sed sit amet ultrices metus, vitae cursus metus. Proin tristique finibus pretium. Morbi sit amet magna faucibus, luctus enim tempor, dignissim quam. Nam a ornare quam, varius cursus felis. Fusce nunc lacus, iaculis vel cursus non, facilisis id quam.</p>
+
+<p class="text-lg">Maecenas pulvinar mauris eget pharetra elementum. Sed sit amet ultrices metus, vitae cursus metus. Proin tristique finibus pretium. Morbi sit amet magna faucibus, luctus enim tempor, dignissim quam. Nam a ornare quam, varius cursus felis. Fusce nunc lacus, iaculis vel cursus non, facilisis id quam.</p>
+
+<p class="text-xl">Maecenas pulvinar mauris eget pharetra elementum. Sed sit amet ultrices metus, vitae cursus metus. Proin tristique finibus pretium. Morbi sit amet magna faucibus, luctus enim tempor, dignissim quam. Nam a ornare quam, varius cursus felis. Fusce nunc lacus, iaculis vel cursus non, facilisis id quam.</p>
 
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut ex at ex pellentesque efficitur.
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut ex at ex pellentesque efficitur.
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut ex at ex pellentesque efficitur. Maecenas pulvinar mauris eget pharetra elementum.
-
-[[noteDefault]]
-| With **multiple mode** you **can't** specify targets with **#id** `.class`.
-
-[[notePrimary]]
-| With **multiple mode** you **can't** specify targets with **#id** `.class`.
 
 <script type="text/plain" class="language-markup">
   <a href="#" class="btn btn-default">
@@ -130,17 +168,12 @@ mkdir -p xtend-library/
 cp -r node_modules/xtend-library/dist/ xtend-library/
 ```
 
-```less
-// test comment
-
-.test > * {
-  @media @min-sm {
-    .test();
-  }
-}
-
+```css
 body {
   background: #ff0000;
+}
+
+.test > * {
 }
 ```
 
@@ -148,25 +181,11 @@ body {
 const test = 'test'
 ```
 
-## Tables
-
-<div class="table-scroll">
-
-|                         | Syntax                                    | Example                       |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.col-{number}`                           | `.col-6`                      |
-| Class responsive        | `.col-{number}-{breakpoint}`              | `.col-6-sm`                   |
-| Mixin                   | `.col({number})`                          | `.col(6)`                     |
-| Mixin responsive min    | `.col({number}, {breakpoint})`            | `.col(6, sm)`                 |
-
-</div>
-
 ## Demo
-
 
 <demo>
   <div class="gatsby_demo-inline">
-    <div class="gatsby_demo_item gatsby_demo_preview" data-name="inline">
+    <div class="gatsby_demo_item toggle gatsby_demo_preview" data-name="inline">
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
         Inline
       </div>
@@ -177,7 +196,7 @@ const test = 'test'
       test vanilla <strong>strong</strong> <code>code</code>
     </div>
   </demovanilla>
-  <div class="gatsby_demo_item" data-iframe="iframe/test/demo-vanilla-iframe" data-name="demo vanilla frame">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/test/demo-vanilla-iframe" data-name="demo vanilla frame">
     <div class="gatsby_demo_text">
       <a href="/iframe/test/demo-vanilla-iframe">test vanilla iframe</a>
     </div>

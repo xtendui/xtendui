@@ -1,11 +1,11 @@
+
 import { Xt } from 'xtend-library'
-import 'xtend-library/src/vars.js'
-import 'xtend-library/src/core/toggle/toggle.js'
+import 'xtend-library/src/core/toggle'
 import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '.demo--toggle-progress',
-  mount: (object) => {
+  mount: object => {
     // vars
 
     const fillerTime = Xt.vars.timeTiny
@@ -16,7 +16,7 @@ Xt.mount.push({
     let self = new Xt.Toggle(object, {
       auto: {
         time: 4000,
-        pause: ':scope > button, .toggle-block',
+        pause: ':scope > button, .toggle',
       },
     })
 
@@ -24,7 +24,7 @@ Xt.mount.push({
 
     const eventAutostart = () => {
       // elements
-      const elements = self.elements.filter((x) => self.hasCurrent(x))
+      const elements = self.elements.filter(x => self.hasCurrent(x))
       for (const element of elements) {
         const fillers = element.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
@@ -33,7 +33,7 @@ Xt.mount.push({
         }
       }
       // targets
-      const targets = self.targets.filter((x) => self.hasCurrent(x))
+      const targets = self.targets.filter(x => self.hasCurrent(x))
       for (const target of targets) {
         const fillers = target.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
@@ -49,7 +49,7 @@ Xt.mount.push({
 
     const eventAutostop = () => {
       // elements
-      const elements = self.elements.filter((x) => self.hasCurrent(x))
+      const elements = self.elements.filter(x => self.hasCurrent(x))
       for (const element of elements) {
         const fillers = element.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
@@ -57,7 +57,7 @@ Xt.mount.push({
         }
       }
       // targets
-      const targets = self.targets.filter((x) => self.hasCurrent(x))
+      const targets = self.targets.filter(x => self.hasCurrent(x))
       for (const target of targets) {
         const fillers = target.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
@@ -72,7 +72,7 @@ Xt.mount.push({
 
     const eventAutopause = () => {
       // elements
-      const elements = self.elements.filter((x) => self.hasCurrent(x))
+      const elements = self.elements.filter(x => self.hasCurrent(x))
       for (const element of elements) {
         const fillers = element.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
@@ -80,7 +80,7 @@ Xt.mount.push({
         }
       }
       // targets
-      const targets = self.targets.filter((x) => self.hasCurrent(x))
+      const targets = self.targets.filter(x => self.hasCurrent(x))
       for (const target of targets) {
         const fillers = target.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {

@@ -3,41 +3,30 @@ type: "Components"
 category: "Core"
 parent: "Card"
 title: "Other"
-date: "2019-03-15"
+date: "2005-10-10"
 ---
 
-## Stretch
+## Disable
 
-Refer to [Row page](/components/core/row/other#stretch).
-
-## Special
+You can disable styles using `.card-disable`.
 
 <div class="table-scroll">
 
-|                         | Class                                     | Mixin                         | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `.card-disable`                | `.card-disable()`        | Disable card, useful within media queries            |
-| Option                  | `.card-nodesign`                | `.card-nodesign()`        | No design on card            |
-| Option                  | `.card-squared`                | `.card-squared()`        | No border-radius on card            |
-| Option                  | `.card-noborder`                | `.card-noborder()`        | No border on card            |
-| Option                  | `.card-none`                | `.card-none()`        | No padding on `.card-block`            |
-| Option                  | `.card-none-x`                | `.card-none-x()`        | No horizontal padding on `.card-block`            |
-| Option                  | `.card-none-y`                | `.card-none-y()`        | No vertical padding on `.card-block`            |
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
+| Util                  | `.card-disable`       | `card-disable`                | `responsive`                | Reset card styles            |
 
 </div>
-
-You can disable card using `.card-disable` (resize to mobile to see it in action).
 
 <demo>
   <demovanilla src="vanilla/components/core/card/disable">
   </demovanilla>
 </demo>
 
-## Close
+## Stretch
 
-Usage of `.btn-close` inside card.
+You can stretch cards vertically inside row, see [row stretch](/components/core/row/other#stretch).
 
-<demo>
-  <demovanilla src="vanilla/components/core/card/close">
-  </demovanilla>
-</demo>
+## Checks
+
+Refer to [form checks card](/components/core/form/other#checks-card).

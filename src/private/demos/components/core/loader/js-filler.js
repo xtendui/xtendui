@@ -1,10 +1,9 @@
 import { Xt } from 'xtend-library'
-import 'xtend-library/src/vars.js'
 import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '.demo--loader-js-filler',
-  mount: (object) => {
+  mount: object => {
     // vars
 
     const fillerTime = Xt.vars.timeBig

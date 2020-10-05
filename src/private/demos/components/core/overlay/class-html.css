@@ -1,0 +1,9 @@
+.demo--overlay-class-html {
+  /* DO NOT APPLY to selector with descendants with position: fixed; or it bugs position: fixed; */
+  .demo--overlay-class-html-left & {
+    transform: translateX(4rem);
+  }
+  .demo--overlay-class-html-right & {
+    transform: translateX(-4rem);
+  }
+}

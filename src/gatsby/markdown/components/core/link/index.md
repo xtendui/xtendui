@@ -3,40 +3,67 @@ type: "Components"
 category: "Core"
 parent: "Link"
 title: "Link"
-description: "Global link styles."
+description: "Default link styles for html links, buttons and divs."
 ---
 
 ## Setup
 
-To use this component import the **less** files accordingly:
+#### Css
 
-```less
-@import 'xtend-library/src/core/link/link.less';
+Follow the [css installation](/introduction/getting-started/setup#css-installation) instructions. To [customize styles](/introduction/getting-started/setup#css-customization) in your `tailwind.config.js` file.
+
+```jsx
+module.exports = {
+  theme: require('xtend-library/src/tailwind-theme')({
+    // xtend utilities and components in node_modules/xtend-library/src/tailwind-xtend.js
+    xtend: theme => ({
+      utilities: {
+        core: {
+          link: {
+            // modify utility
+          },
+        },
+      },
+      components: {
+        core: {
+          link: {
+            // modify component
+          },
+        },
+      },
+    }),
+  })
+}
 ```
 
-Or just import **core**:
-
-```less
-@import 'xtend-library/src/xtend-core.less';
-```
-
-[[noteDefault]]
-| To modify a **less** or **js** file add [webpack resolve](/introduction/setup#usage-webpack) and fork the file copying it in your project.
+To **see the default values** see the source code of `node_modules/xtend-library/src/tailwind-xtend.js`.
 
 ## Usage
 
-Use this markup to create a **link**.
+Use this code to create a **link**.
 
-<script type="text/plain" class="language-markup">
-  <a href="#">
-    <!-- content -->
-  </a>
+<demo>
+  <demovanilla src="vanilla/components/core/link/usage">
+  </demovanilla>
+</demo>
 
-  <button type="button" class="btn btn-link">
-    <!-- content -->
-  </button>
-  
-  <div class="a-link>
-    <!-- content -->
-  </div>
-</script>
+Inside `.text-inverse` links are styled accordingly.
+
+<demo>
+  <demovanilla src="vanilla/components/core/link/usage-inverse">
+  </demovanilla>
+</demo>
+
+You can use `.link` to style any element as a link.
+
+<div class="table-scroll">
+
+|                         | Syntax                                     | Mixin                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Component                  | `.link`                 | `link`              | Stile a tag with link            |
+
+</div>
+
+[[noteDefault]]
+| Links `a` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
+

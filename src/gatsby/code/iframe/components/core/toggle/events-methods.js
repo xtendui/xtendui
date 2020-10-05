@@ -1,5 +1,9 @@
 import React from 'react'
 import path from 'path'
+const btnDefault = require('components/snippets/classes/btn-default').default
+const btnPrimary = require('components/snippets/classes/btn-primary').default
+const cardDefault = require('components/snippets/classes/card-default').default
+const cardToggle = require('components/snippets/classes/card-toggle').default
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -13,38 +17,38 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-default list-space-tiny align-items-center">
-  <button type="button" class="btn btn-primary btn-tiny" id="demo--toggle-events-first-element">
+<div class="list list-space-1 items-center">
+  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--toggle-events-first-element">
     1st element
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo--toggle-events-first-target">
+  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--toggle-events-first-target">
     1st target
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo--toggle-events-autostart">
+  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--toggle-events-autostart">
     Autostart
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo--toggle-events-autostop">
+  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--toggle-events-autostop">
     Autostop
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo--toggle-events-add">
+  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--toggle-events-add">
     Add
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo--toggle-events-remove">
+  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--toggle-events-remove">
     Remove
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo--toggle-events-block">
+  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--toggle-events-block">
     Block/Unblock
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo--toggle-events-reinit">
+  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--toggle-events-reinit">
     Reinit
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo--toggle-events-restart">
+  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--toggle-events-restart">
     Restart
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo--toggle-events-destroy">
+  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--toggle-events-destroy">
     Destroy
   </button>
-  <button type="button" class="btn btn-primary btn-tiny" id="demo--toggle-events-unmount">
+  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--toggle-events-unmount">
     Unmount
   </button>
 </div>
@@ -53,47 +57,42 @@ demo.htmlSource = `
 
 <div id="demo--toggle-events">
 
-  <div class="list list-default list-space-small align-items-center" id="demo--toggle-events-elements">
-    <button type="button" class="btn btn-default" data-xt-group="0">
+  <div class="list list-space-2 items-center" id="demo--toggle-events-elements">
+    <button type="button" class="btn btn-md ${btnDefault()}" data-xt-group="0">
       Toggle Group 0
     </button>
-    <button type="button" class="btn btn-default" data-xt-group="0">
+    <button type="button" class="btn btn-md ${btnDefault()}" data-xt-group="0">
       Toggle Group 0
     </button>
-    <button type="button" class="btn btn-default">
+    <button type="button" class="btn btn-md ${btnDefault()}">
       Toggle 1
     </button>
-    <button type="button" class="btn btn-default">
+    <button type="button" class="btn btn-md ${btnDefault()}">
       Toggle 2
     </button>
   </div>
 
-  <div class="list list-default list-space-small align-items-center" id="demo--toggle-events-targets">
-    <div class="note note-default note-background toggle-block" data-xt-group="0">
+  <br>
+
+  <div class="list list-space-2 items-center" id="demo--toggle-events-targets">
+    <div class="card toggle ${cardToggle()}" data-xt-group="0">
       Target Group 0
     </div>
-    <div class="note note-default note-background toggle-block" data-xt-group="0">
+    <div class="card toggle ${cardToggle()}" data-xt-group="0">
       Target Group 0
     </div>
-    <div class="note note-default note-background toggle-block">
+    <div class="card toggle ${cardToggle()}">
       Target 1
     </div>
-    <div class="note note-default note-background toggle-block">
+    <div class="card toggle ${cardToggle()}">
       Target 2
     </div>
   </div>
 
 </div>
 
-<br/>
-
-<div class="card card-default card-small">
-  <div class="card-design"></div>
-  <div class="card-inner">
-    <div class="card-content">
-      <div class="card-block card-item card-overflow-y" id="demo--toggle-events-log">
-      </div>
-    </div>
+<div class="card ${cardDefault()} mt-6">
+  <div class="card-block card-block-sm text-sm overflow-y-auto overflow-x-hidden overflow-sub max-h-56" id="demo--toggle-events-log">
   </div>
 </div>
 `

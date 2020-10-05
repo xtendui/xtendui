@@ -6,7 +6,7 @@ import { cssSource, jsSource } from 'assets/scripts/source'
 
 class DemoVanilla extends React.Component {
   render() {
-    const { src, children, name, mode } = this.props
+    const { src, children, name } = this.props
     const demo = require('../../code/' + src + '.js').demo
     demo.path = `private/demos/${demo.dirs.join('/')}/${demo.name}`.replace('/vanilla', '').replace('src/gatsby/code/', '')
     return (
@@ -22,31 +22,23 @@ class DemoVanilla extends React.Component {
             }
           }
         `}
-        render={(data) => (
+        render={data => (
           <div
-            className={'gatsby_demo_item gatsby_demo_preview'}
+            className={'gatsby_demo_item toggle gatsby_demo_preview'}
             data-name={name || demo.name.split('-').join(' ')}
             data-file={demo.path.split('-').join(' ')}
             data-inline={src}
           >
             {children}
             <script type="text/plain" data-lang="html" dangerouslySetInnerHTML={{ __html: demo.htmlSource }} />
-            <div
-              className={
-                mode === 'grid'
-                  ? 'gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate gatsby_demo-cols'
-                  : mode === 'grid-nested'
-                  ? 'gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate gatsby_demo-cols-nested'
-                  : 'gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate'
-              }
-            />
+            <div className="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate" />
             {data.allFile.files
-              .filter((x) => x.file.relativePath === `${demo.path}.less`)
+              .filter(x => x.file.relativePath === `${demo.path}.css`)
               .map((file, i) => (
-                <div className="gatsby_demo_source xt-ignore" data-lang="less" dangerouslySetInnerHTML={{ __html: cssSource(demo) }} key={i} />
+                <div className="gatsby_demo_source xt-ignore" data-lang="css" dangerouslySetInnerHTML={{ __html: cssSource(demo) }} key={i} />
               ))}
             {data.allFile.files
-              .filter((x) => x.file.relativePath === `${demo.path}.js`)
+              .filter(x => x.file.relativePath === `${demo.path}.js`)
               .map((file, i) => (
                 <div className="gatsby_demo_source xt-ignore" data-lang="js" dangerouslySetInnerHTML={{ __html: jsSource(demo) }} key={i} />
               ))}

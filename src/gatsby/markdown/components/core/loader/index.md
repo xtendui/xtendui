@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Extensions"
+category: "Core"
 parent: "Loader"
 title: "Loader"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
@@ -8,39 +8,43 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 ## Setup
 
-To use this component import the **less** files accordingly:
+#### Css
 
-```less
-@import 'xtend-library/src/extensions/loader/loader.less';
+Follow the [css installation](/introduction/getting-started/setup#css-installation) instructions. To [customize styles](/introduction/getting-started/setup#css-customization) in your `tailwind.config.js` file.
+
+```jsx
+module.exports = {
+  theme: require('xtend-library/src/tailwind-theme')({
+    // xtend utilities and components in node_modules/xtend-library/src/tailwind-xtend.js
+    xtend: theme => ({
+      components: {
+        core: {
+          loader: {
+            // modify component
+          },
+        },
+      },
+    }),
+  })
+}
 ```
 
-Or just import **extensions**:
-
-```less
-@import 'xtend-library/src/xtend-extensions.less';
-```
-
-[[noteDefault]]
-| To modify a **less** or **js** file add [webpack resolve](/introduction/setup#usage-webpack) and fork the file copying it in your project.
+To **see the default values** see the source code of `node_modules/xtend-library/src/tailwind-xtend.js`.
 
 ## Usage
 
-Use this markup to create a **spinner loader**.
+Use this code to create a **loader spinner**.
 
-<script type="text/plain" class="language-markup">
-  <div class="loader loader-spinner">
-    <div class="spinner">
-      <svg viewBox="0 0 250 250"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"/></svg><svg viewBox="0 0 250 250" preserveAspectRatio="xMinYMin meet"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"/></svg>
-    </div>
-  </div>
-</script>
+<demo>
+  <demovanilla src="vanilla/components/core/loader/spinner">
+  </demovanilla>
+</demo>
 
-Use this markup to create a **filler loader**.
+Use this code to create a **loader filler**.
 
-<script type="text/plain" class="language-markup">
-  <span class="loader loader-x">
-    <span class="filler">
-      <span></span><span></span>
-    </span>
-  </span>
-</script>
+<demo>
+  <demovanilla src="vanilla/components/core/loader/filler-x">
+  </demovanilla>
+</demo>
+
+Check subpage to [customize content](/components/core/loader/content#filler).

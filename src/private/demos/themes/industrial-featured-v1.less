@@ -1,6 +1,6 @@
 #iframe--industrial-featured-v1 {
-  //##START
-  body { // add your own selector instead of body to contain the code
+  /*##START*/
+  body { /* add your own selector instead of body to contain the code */
 
     /**
       * slider
@@ -13,7 +13,7 @@
         .transform-none() !important;
       }
       .slide {
-        .toggle-block();
+        .toggle();
         .col(12);
       }
       .featured-item {
@@ -27,7 +27,7 @@
         .btn-default();
         font-size: 10px;
         [class^='icon-'], [class*=' icon-'] {
-          .icon-medium();
+          .icon-md();
         }
       }
       &.slider--nonav {
@@ -78,7 +78,7 @@
         .col(12);
         .col(8, sm);
       }
-      .featured-item_assets_col--small {
+      .featured-item_assets_col--sm {
         .col(12);
         .col(4, sm);
         @media @max-sm {
@@ -145,5 +145,5 @@
     }
 
   }
-  //##END
+  /*##END*/
 }

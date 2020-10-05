@@ -1,0 +1,76 @@
+#iframe--infinite-scroll {
+  /*##START*/
+  body { /* add your own selector instead of body to contain the code */
+
+    .infinite-scroll--spinner {
+      opacity: 0;
+      transition-property: opacity;
+      transition-duration: theme('transitionDuration.500');
+      transition-timing-function: theme('transitionTimingFunction.out');
+      .spinner {
+        opacity: 0;
+        transform: scale(.75);
+        transition-property: all;
+        transition-duration: theme('transitionDuration.500');
+        transition-timing-function: theme('transitionTimingFunction.out');
+      }
+    }
+
+    .infinite-scroll-loading {
+      .infinite-scroll--spinner {
+        opacity: 1;
+        transition-timing-function: theme('transitionTimingFunction.in');
+        .spinner {
+          opacity: 1;
+          transform: scale(1);
+          transition-timing-function: theme('transitionTimingFunction.in');
+        }
+      }
+    }
+
+    [data-xt-infinite-scroll-trigger] {
+      .infinite-scroll--trigger_content-nomore {
+        display: none;
+      }
+      .infinite-scroll--trigger_content {
+        transition-property: transform, opacity;
+        transition-duration: theme('transitionDuration.500');
+        transition-timing-function: theme('transitionTimingFunction.out');
+      }
+    }
+
+    .infinite-scroll-loading {
+      [data-xt-infinite-scroll-trigger] {
+        pointer-events: none;
+        > .infinite-scroll--trigger_content {
+          opacity: 0;
+          transform: translateY(0.7rem);
+          transition-timing-function: theme('transitionTimingFunction.in');
+        }
+      }
+    }
+
+    .infinite-scroll-nomore {
+      [data-xt-infinite-scroll-trigger] {
+        pointer-events: none;
+        .infinite-scroll--trigger_content {
+          display: none;
+        }
+        .infinite-scroll--trigger_content-nomore {
+          display: block;
+        }
+      }
+    }
+
+    .infinite-scroll-pre {
+      display: none;
+    }
+
+    .infinite-scroll-reset {
+      .infinite-scroll-pre {
+        display: block;
+      }
+    }
+  }
+  /*##END*/
+}
