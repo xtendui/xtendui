@@ -1,7 +1,6 @@
 import path from 'path'
 const btnPrimary = require('components/snippets/classes/btn-primary').default
 const cardDefaultOverlay = require('components/snippets/classes/card-default-overlay').default
-const cardPrimaryOverlay = require('components/snippets/classes/card-primary-overlay').default
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
