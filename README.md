@@ -1,4 +1,4 @@
-# PORTED TO TAILWIND [vanilla boilerplate](https://github.com/minimit/xtend-theme-vanilla)
+# PORTED TO TAILWIND [xtend-ui](https://github.com/minimit/xtend-ui)
 
 ## Installation
 
