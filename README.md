@@ -1,4 +1,4 @@
-# WIP pre 1.0 version: api changing fast
+# PORTED TO TAILWIND [vanilla boilerplate](https://github.com/minimit/xtend-theme-vanilla)
 
 ## Installation
 

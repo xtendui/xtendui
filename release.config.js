@@ -4,7 +4,7 @@ module.exports = {
   branches: [
     'master',
     { name: 'release-0.14', prerelease: false, range: '0.14.x' },
-    { name: 'release-0.15', prerelease: false, range: '0.15.x' },
+    { name: 'dev-0.15', prerelease: false, range: '0.15.x' },
     { name: 'beta', prerelease: true },
     { name: 'alpha', prerelease: true },
   ],
