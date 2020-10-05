@@ -1,134 +1,104 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link href="/styles.c0ffdbab2573b5692f05.css" rel="stylesheet" type="text/css"/><meta name="generator" content="Gatsby 2.24.27"/><title data-react-helmet="true">Markdown — Tests Tests — Xtend</title><meta data-react-helmet="true" name="description" content="Xtend library"/><meta data-react-helmet="true" property="og:title" content="Markdown —  Tests Tests"/><meta data-react-helmet="true" property="og:description" content="Xtend library"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="Riccardo Caroli"/><meta data-react-helmet="true" name="twitter:title" content="Markdown —  Tests Tests"/><meta data-react-helmet="true" name="twitter:description" content="Xtend library"/><link rel="icon" href="/favicon-32x32.png?v=786161dea6a68b62a4dd87bac610d44f" type="image/png"/><link rel="manifest" href="/manifest.webmanifest"/><meta name="theme-color" content="#0058C6"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=786161dea6a68b62a4dd87bac610d44f"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=786161dea6a68b62a4dd87bac610d44f"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=786161dea6a68b62a4dd87bac610d44f"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=786161dea6a68b62a4dd87bac610d44f"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=786161dea6a68b62a4dd87bac610d44f"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=786161dea6a68b62a4dd87bac610d44f"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=786161dea6a68b62a4dd87bac610d44f"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=786161dea6a68b62a4dd87bac610d44f"/><link as="script" rel="preload" href="/webpack-runtime-e1c68c998498e82dc3e3.js"/><link as="script" rel="preload" href="/framework-d6175fc7136da3fa9c90.js"/><link as="script" rel="preload" href="/a284c5a4-66bda8868c1bdb28be07.js"/><link as="script" rel="preload" href="/app-41a8368cd2fdc0d675a2.js"/><link as="script" rel="preload" href="/styles-c2fe8482057191dca484.js"/><link as="script" rel="preload" href="/615b8327cd29e672249a18d1a8af450a8db5dbd3-067de73343fdb0abd148.js"/><link as="script" rel="preload" href="/631c75be43ee74705d86a34ff20bbca071f1c66c-b341ec5bb6c23e5fecc1.js"/><link as="script" rel="preload" href="/8bde3421076ad7fbd92fa219db935678ab2c4e72-cf28d1e76eecc1fb4691.js"/><link as="script" rel="preload" href="/2318670a6823a5de6f43ce3b84bfbe5ae69688aa-6aa9f377d042fbb384a6.js"/><link as="script" rel="preload" href="/component---src-gatsby-components-templates-doc-page-js-d3e6e083933adad105de.js"/><link as="fetch" rel="preload" href="/page-data/tests/markdown/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/static/d/2814916633.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/static/d/2814916633.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/static/d/4022244071.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/static/d/63159454.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><noscript id="gatsby-noscript">This app works best with JavaScript enabled.</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="gatsby_site_wrapper"><div class="gatsby_site_main"><div class="gatsby_site_main_inner"><div class="gatsby_site_article_sidebar"><div class="gatsby_site_article_sidebar_inner drop-container"><header class="gatsby_site_header"><div class="gatsby_site_header_inner"><div><div class="gatsby_site_header_content"><div class="gatsby_site_header_logo"><a title="Home" class="gatsby_logo-icon
-                                      " href="/"><img src="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMV9jb3B5IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMC42MSA5LjEyIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmxvZ28td2hpdGU8L3RpdGxlPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTMuNjksMy40MSw1LjI5LjQ3aDJMNC44Miw0LjcsNy4zNyw5aC0yTDMuNjksNiwyLDlIMEwyLjU1LDQuNy4wNi40N2gyWiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTkuOSwxLjFWMi42NkgxMVYzLjlIOS45VjcuMDdhLjc1Ljc1LDAsMCwwLC4xMy41LjcuNywwLDAsMCwuNTIuMTUsMi41MywyLjUzLDAsMCwwLC41LDBWOWEzLjI2LDMuMjYsMCwwLDEtMSwuMTYsMS42MSwxLjYxLDAsMCwxLTEuODEtMS44VjMuOUg3LjI4VjIuNjZoLjkzVjEuMVoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xNC43Myw5LjEyYTMuMTIsMy4xMiwwLDAsMS0yLjI3LS44NkEzLjA1LDMuMDUsMCwwLDEsMTEuNTksNlY1LjgyQTMuNzcsMy43NywwLDAsMSwxMiw0LjExLDIuNjcsMi42NywwLDAsMSwxMywzYTMsMywwLDAsMSwxLjU1LS40MSwyLjY0LDIuNjQsMCwwLDEsMiwuODIsMy4zNSwzLjM1LDAsMCwxLC43NSwyLjMzdi42OWgtNGExLjYsMS42LDAsMCwwLC41LDEsMS40NywxLjQ3LDAsMCwwLDEsLjM3QTEuNzksMS43OSwwLDAsMCwxNi4zNyw3bC44NC45M2EyLjY2LDIuNjYsMCwwLDEtMSwuODVBMy4zNywzLjM3LDAsMCwxLDE0LjczLDkuMTJabS0uMTktNS4yMWExLjA1LDEuMDUsMCwwLDAtLjgyLjM0LDEuNzcsMS43NywwLDAsMC0uNCwxaDIuMzZWNS4wOWExLjIyLDEuMjIsMCwwLDAtLjMxLS44N0ExLjA2LDEuMDYsMCwwLDAsMTQuNTQsMy45MVoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yMCwyLjY2bC4wNS43M2EyLjI0LDIuMjQsMCwwLDEsMS44Mi0uODUsMS44MywxLjgzLDAsMCwxLDEuNS41OSwyLjc5LDIuNzksMCwwLDEsLjUxLDEuNzdWOUgyMi4xNVY1YTEuMTEsMS4xMSwwLDAsMC0uMjQtLjc5LDEuMDYsMS4wNiwwLDAsMC0uNzgtLjI0LDEuMTYsMS4xNiwwLDAsMC0xLjA3LjYxVjlIMTguMzdWMi42NloiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNC45LDUuNzhhMy44NCwzLjg0LDAsMCwxLC42Ni0yLjM2LDIuMTcsMi4xNywwLDAsMSwxLjgyLS44OCwxLjk0LDEuOTQsMCwwLDEsMS41My42OVYwaDEuN1Y5SDI5LjA4TDI5LDguMzNhMiwyLDAsMCwxLTEuNjMuNzksMi4xNywyLjE3LDAsMCwxLTEuOC0uODhBNCw0LDAsMCwxLDI0LjksNS43OFptMS42OS4xM2EyLjUsMi41LDAsMCwwLC4zMSwxLjM3LDEsMSwwLDAsMCwuOS40NywxLjE0LDEuMTQsMCwwLDAsMS4xMS0uNjZWNC41OGExLjEyLDEuMTIsMCwwLDAtMS4xLS42NkMyNywzLjkyLDI2LjU5LDQuNTgsMjYuNTksNS45MVoiLz48L3N2Zz4K" alt="Xtend"/></a></div><div><div class="gatsby_site_header_top_social"><a href="https://github.com/minimit/xtend-library" target="_blank" rel="noreferrer" class="btn gatsby_btn-site_header_top_social" title="Github"><span class="icon-github"></span></a><a href="https://www.npmjs.com/package/xtend-library" target="_blank" rel="noreferrer" class="btn gatsby_btn-site_header_top_social" title="Npm"><span class="icon-npm"></span></a><a href="https://twitter.com/beaver82minimit" target="_blank" rel="noreferrer" class="btn gatsby_btn-site_header_top_social" title="Npm"><span class="icon-twitter"></span></a></div><button type="button" class="btn gatsby_btn-site_header_top_menu" data-xt-drop="{ targets: &#x27;#gatsby_drop--menu&#x27; }"><span class="icon-menu gatsby_btn-site_header_top_menu_on"></span><span class="icon-close gatsby_btn-site_header_top_menu_off"></span></button></div></div></div></div></header><div class="drop drop-default drop-static drop-squared drop-nospace drop-noborder" id="gatsby_drop--menu"><div class="drop-inner"><div class="drop-design"></div><div class="drop-content"><div class="card card-drop"><div class="card-design"></div><div class="btn btn-close" aria-label="Close"></div><div class="card-inner"><div class="card-content"><div class="gatsby_site_header_links_container"><div class="gatsby_site_header_links"><div><a class="btn gatsby_btn-site_header_link " href="/introduction"><span>Introduction</span></a></div><div><a class="btn gatsby_btn-site_header_link " href="/components"><span>Components</span></a></div><div><a class="btn gatsby_btn-site_header_link " href="/themes"><span>Themes</span></a></div></div></div><nav class="gatsby_site_header_listing"><div><div class="gatsby_site_header_cat"><div class="gatsby_cat--site_article_sidebar">Tests</div><div class="gatsby_site_header_sub"><div class="gatsby_site_header_item"><div class="gatsby_site_header_item_container"><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/tests/listing"><span>Listing</span></a><div class="gatsby_site_header_adiacent_inner"><div class="gatsby_site_header_item"></div></div></div></div><div class="gatsby_site_header_item_container"><div><a aria-current="page" class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub active" href="/tests/markdown"><span>Markdown</span></a><div class="gatsby_site_header_adiacent_inner"><div class="gatsby_site_header_item"></div></div></div><div class="gatsby_site_header_adiacent active"><div class="gatsby_site_header_item"></div></div></div></div></div></div></div></nav></div></div></div></div></div></div></div></div><div class="gatsby_site_article"><div id="gatbsy_open-full-trigger"></div><div id="gatbsy_open-full"><div class="btn btn-close" aria-label="Close"></div><div class="card-content" id="gatbsy_open-full-content"></div></div><main class="gatsby_site_article_inner" id="gatbsy_open-full-inner"><header class="gatsby_site_article_hero"><div class="gatsby_site_article_hero_inner"><div class="gatsby_site_article_hero_content"><div class="gatsby_site_article_hero_content_inner"><h1><span>Markdown<!-- --> </span><div class="badge badge-default badge-small">Tests</div></h1><h2 class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis.</h2></div></div></div></header><article class="gatsby_site_article_content"><div class="gatsby_site_article_content_inner"><div class="gatsby_listing"><div class="row"><div class="gatsby_listing_group"><div class="gatsby_listing_items"><div class="row"></div></div></div></div></div><div><h2>Demos</h2>
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link href="/styles.0e35a16cfe98d291bb9f.css" rel="stylesheet" type="text/css"/><meta name="generator" content="Gatsby 2.23.20"/><title data-react-helmet="true">Xtend UI - Markdown -  Tests Tests</title><meta data-react-helmet="true" name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."/><meta data-react-helmet="true" property="og:title" content="Markdown -  Tests Tests"/><meta data-react-helmet="true" property="og:description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="Riccardo Caroli"/><meta data-react-helmet="true" name="twitter:title" content="Markdown -  Tests Tests"/><meta data-react-helmet="true" name="twitter:description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."/><link rel="icon" href="/favicon-32x32.png?v=786161dea6a68b62a4dd87bac610d44f"/><link rel="manifest" href="/manifest.webmanifest"/><meta name="theme-color" content="#0058C6"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=786161dea6a68b62a4dd87bac610d44f"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=786161dea6a68b62a4dd87bac610d44f"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=786161dea6a68b62a4dd87bac610d44f"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=786161dea6a68b62a4dd87bac610d44f"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=786161dea6a68b62a4dd87bac610d44f"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=786161dea6a68b62a4dd87bac610d44f"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=786161dea6a68b62a4dd87bac610d44f"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=786161dea6a68b62a4dd87bac610d44f"/><link as="script" rel="preload" href="/webpack-runtime-18bd555efa0933199c45.js"/><link as="script" rel="preload" href="/framework-f3f6a2bb9db0f4de88ab.js"/><link as="script" rel="preload" href="/a284c5a4-49ee7b7c83966ecd1464.js"/><link as="script" rel="preload" href="/app-4519c126e24c4b24a62a.js"/><link as="script" rel="preload" href="/styles-c2fe8482057191dca484.js"/><link as="script" rel="preload" href="/2b76600154e36604cd1e523e6a77a9d8425f1d9b-1a6d6bcb2864dd643cc9.js"/><link as="script" rel="preload" href="/ad5ba5715777bb085364f9028b9e9ed552f53ad4-e79f04a2f86dc9e8f943.js"/><link as="script" rel="preload" href="/ce548cbe1bad6fd7fa2a1d8b7e90181ff4b1ff55-c880428b74ce1c34cabf.js"/><link as="script" rel="preload" href="/2318670a6823a5de6f43ce3b84bfbe5ae69688aa-a00dbd805c5b4ce822f8.js"/><link as="script" rel="preload" href="/component---src-gatsby-components-templates-doc-page-js-1ed25bd8c8d8e90ec1bc.js"/><link as="fetch" rel="preload" href="/page-data/tests/markdown/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><noscript id="gatsby-noscript">This app works best with JavaScript enabled.</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="gatsby_site_wrapper"><div class="gatsby_site_main"><div class="gatsby_site_main_inner"><div class="gatsby_site_article_sidebar"><div class="gatsby_site_article_sidebar_inner"><header class="gatsby_site_header"><div class="gatsby_site_header_inner"><div><div class="gatsby_site_header_content"><div class="gatsby_site_header_logo"><a title="Home" class="gatsby_logo-icon
+                                      " href="/"><img src="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMV9jb3B5IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMC42MSA5LjEyIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmxvZ28td2hpdGU8L3RpdGxlPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTMuNjksMy40MSw1LjI5LjQ3aDJMNC44Miw0LjcsNy4zNyw5aC0yTDMuNjksNiwyLDlIMEwyLjU1LDQuNy4wNi40N2gyWiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTkuOSwxLjFWMi42NkgxMVYzLjlIOS45VjcuMDdhLjc1Ljc1LDAsMCwwLC4xMy41LjcuNywwLDAsMCwuNTIuMTUsMi41MywyLjUzLDAsMCwwLC41LDBWOWEzLjI2LDMuMjYsMCwwLDEtMSwuMTYsMS42MSwxLjYxLDAsMCwxLTEuODEtMS44VjMuOUg3LjI4VjIuNjZoLjkzVjEuMVoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xNC43Myw5LjEyYTMuMTIsMy4xMiwwLDAsMS0yLjI3LS44NkEzLjA1LDMuMDUsMCwwLDEsMTEuNTksNlY1LjgyQTMuNzcsMy43NywwLDAsMSwxMiw0LjExLDIuNjcsMi42NywwLDAsMSwxMywzYTMsMywwLDAsMSwxLjU1LS40MSwyLjY0LDIuNjQsMCwwLDEsMiwuODIsMy4zNSwzLjM1LDAsMCwxLC43NSwyLjMzdi42OWgtNGExLjYsMS42LDAsMCwwLC41LDEsMS40NywxLjQ3LDAsMCwwLDEsLjM3QTEuNzksMS43OSwwLDAsMCwxNi4zNyw3bC44NC45M2EyLjY2LDIuNjYsMCwwLDEtMSwuODVBMy4zNywzLjM3LDAsMCwxLDE0LjczLDkuMTJabS0uMTktNS4yMWExLjA1LDEuMDUsMCwwLDAtLjgyLjM0LDEuNzcsMS43NywwLDAsMC0uNCwxaDIuMzZWNS4wOWExLjIyLDEuMjIsMCwwLDAtLjMxLS44N0ExLjA2LDEuMDYsMCwwLDAsMTQuNTQsMy45MVoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yMCwyLjY2bC4wNS43M2EyLjI0LDIuMjQsMCwwLDEsMS44Mi0uODUsMS44MywxLjgzLDAsMCwxLDEuNS41OSwyLjc5LDIuNzksMCwwLDEsLjUxLDEuNzdWOUgyMi4xNVY1YTEuMTEsMS4xMSwwLDAsMC0uMjQtLjc5LDEuMDYsMS4wNiwwLDAsMC0uNzgtLjI0LDEuMTYsMS4xNiwwLDAsMC0xLjA3LjYxVjlIMTguMzdWMi42NloiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNC45LDUuNzhhMy44NCwzLjg0LDAsMCwxLC42Ni0yLjM2LDIuMTcsMi4xNywwLDAsMSwxLjgyLS44OCwxLjk0LDEuOTQsMCwwLDEsMS41My42OVYwaDEuN1Y5SDI5LjA4TDI5LDguMzNhMiwyLDAsMCwxLTEuNjMuNzksMi4xNywyLjE3LDAsMCwxLTEuOC0uODhBNCw0LDAsMCwxLDI0LjksNS43OFptMS42OS4xM2EyLjUsMi41LDAsMCwwLC4zMSwxLjM3LDEsMSwwLDAsMCwuOS40NywxLjE0LDEuMTQsMCwwLDAsMS4xMS0uNjZWNC41OGExLjEyLDEuMTIsMCwwLDAtMS4xLS42NkMyNywzLjkyLDI2LjU5LDQuNTgsMjYuNTksNS45MVoiLz48L3N2Zz4K" alt="Xtend UI"/></a></div><div><div class="gatsby_site_header_top_social"><a href="https://github.com/minimit/xtend-ui" target="_blank" rel="noreferrer" class="btn gatsby_btn-site_header_top_social" title="Github"><span class="icon-github"></span></a><a href="https://www.npmjs.com/package/xtend-ui" target="_blank" rel="noreferrer" class="btn gatsby_btn-site_header_top_social" title="Npm"><span class="icon-npm"></span></a><a href="https://twitter.com/beaver82minimit" target="_blank" rel="noreferrer" class="btn gatsby_btn-site_header_top_social" title="Npm"><span class="icon-twitter"></span></a></div></div></div></div></div></header><div class="gatsby_site_header_links_container"><div class="gatsby_site_header_links"><div><a class="btn gatsby_btn-site_header_link " href="/"><span>Introduction</span></a></div><div><a class="btn gatsby_btn-site_header_link " href="/components"><span>Components</span></a></div><div><a class="btn gatsby_btn-site_header_link " href="/themes"><span>Themes</span></a></div></div></div><nav class="gatsby_site_header_listing"><div><div class="gatsby_site_header_cat"><div class="gatsby_cat--site_article_sidebar">Tests</div><div class="gatsby_site_header_sub"><div class="gatsby_site_header_item"><div class="gatsby_site_header_item_container"><div><a class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub " href="/tests/listing"><span>Listing</span></a><div class="gatsby_site_header_adiacent_inner"><div class="gatsby_site_header_item"></div></div></div></div><div class="gatsby_site_header_item_container"><div><a aria-current="page" class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub active" href="/tests/markdown"><span>Markdown</span></a><div class="gatsby_site_header_adiacent_inner"><div class="gatsby_site_header_item"></div></div></div><div class="gatsby_site_header_adiacent active"><div class="gatsby_site_header_item"></div></div></div></div></div></div></div></nav></div></div><div class="gatsby_site_article prose max-w-none"><div id="gatsby_open-full-trigger"></div><div id="gatsby_open-full" class="toggle"><div class="btn btn-close" aria-label="Close"><span class="icon-close"></span></div><div class="card-content" id="gatsby_open-full-content"></div></div><main class="gatsby_site_article_inner" id="gatsby_open-full-inner"><header class="gatsby_site_article_hero"><div class="gatsby_site_article_hero_inner"><div class="gatsby_site_article_hero_content"><div class="gatsby_site_article_hero_content_inner"><h1><span>Markdown<!-- --> </span><div class="badge badge-sm">Tests</div></h1><h2 class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis.</h2></div></div></div></header><article class="gatsby_site_article_content"><div class="gatsby_site_article_content_inner"><div><h2>Demos</h2>
 <div class="gatsby_demo">
-  <div class="gatsby_demo_item" data-iframe="iframe/components/core/toggle/events-methods">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/toggle/events-methods">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/extensions/slider/events-methods">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/slider/events-methods">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/extensions/scroll/direction">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/direction">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/extensions/scroll/block">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/block">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/components/addons/animation/scroll-to-anchor-nested">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/scroll-to-anchor">
   </div>
-  <div class="gatsby_demo_item gatsby_demo_preview" data-name="progress" data-file="private/demos/components/extensions/slider/progress" data-inline="vanilla/components/extensions/slider/progress">
+  <div class="gatsby_demo_item toggle gatsby_demo_preview" data-name="progress" data-file="private/demos/components/core/slider/progress" data-inline="vanilla/components/core/slider/progress">
   <script type="text/plain" data-lang="html">
 <div class="slider demo--slider-progress">
 
-  <div class="loader loader-spinner loader-mouse loader-js">
-    <span class="spinner">
-      <svg viewBox="0 0 250 250"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"/></svg><svg viewBox="0 0 250 250" preserveAspectRatio="xMinYMin meet"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"/></svg>
+  <span class="loader loader-animated">
+    <span class="spinner text-accent-500">
+        <svg viewBox="0 0 250 250"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628" class="stroke-current"/></svg><svg viewBox="0 0 250 250" preserveAspectRatio="xMinYMin meet"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628" class="stroke-current opacity-25"/></svg>
     </span>
-  </div>
+  </span>
 
   <div class="slides">
-    <nav class="slides-inner">
+    <nav class="slides-inner row row-space-2">
 
-      <div class="slide col-6 col-4-sm">
+      <div class="slide w-6/12 sm:w-4/12 opacity-50 active:opacity-100">
         <div class="slide-inner">
 
-          <div class="card card-slide">
-            <div class="card-design"></div>
-            <div class="card-inner">
-              <div class="card-content">
-                <div class="card-block card-item">
-                  <div class="card-title">1</div>
-                </div>
-                <div class="loader loader-x loader-size-bottom loader-js">
-                  <div class="filler">
-                    <span></span><span></span>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="card card-block card-block-md items-center justify-center text-default rounded-md bg-gray-200">
+            <div class="h4">1</div>
+            <span class="loader loader-x loader-size-bottom">
+              <span class="filler text-accent-500">
+                <span class="bg-current"></span>
+                <span class="bg-current opacity-25"></span>
+              </span>
+            </span>
           </div>
 
         </div>
       </div>
 
-      <div class="slide col-6 col-4-sm">
+      <div class="slide w-6/12 sm:w-4/12 opacity-50 active:opacity-100">
         <div class="slide-inner">
 
-          <div class="card card-slide">
-            <div class="card-design"></div>
-            <div class="card-inner">
-              <div class="card-content">
-                <div class="card-block card-item">
-                  <div class="card-title">2</div>
-                </div>
-                <div class="loader loader-x loader-size-bottom loader-js">
-                  <div class="filler">
-                    <span></span><span></span>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="card card-block card-block-md items-center justify-center text-default rounded-md bg-gray-200">
+            <div class="h4">2</div>
+            <span class="loader loader-x loader-size-bottom">
+              <span class="filler text-accent-500">
+                <span class="bg-current"></span>
+                <span class="bg-current opacity-25"></span>
+              </span>
+            </span>
           </div>
 
         </div>
       </div>
 
-      <div class="slide col-6 col-4-sm">
+      <div class="slide w-6/12 sm:w-4/12 opacity-50 active:opacity-100">
         <div class="slide-inner">
 
-          <div class="card card-slide">
-            <div class="card-design"></div>
-            <div class="card-inner">
-              <div class="card-content">
-                <div class="card-block card-item">
-                  <div class="card-title">3</div>
-                </div>
-                <div class="loader loader-x loader-size-bottom loader-js">
-                  <div class="filler">
-                    <span></span><span></span>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="card card-block card-block-md items-center justify-center text-default rounded-md bg-gray-200">
+            <div class="h4">3</div>
+            <span class="loader loader-x loader-size-bottom">
+              <span class="filler text-accent-500">
+                <span class="bg-current"></span>
+                <span class="bg-current opacity-25"></span>
+              </span>
+            </span>
           </div>
 
         </div>
       </div>
 
-      <div class="slide col-7 col-5-sm">
+      <div class="slide w-7/12 sm:w-5/12 opacity-50 active:opacity-100">
         <div class="slide-inner">
 
-          <div class="card card-slide">
-            <div class="card-design"></div>
-            <div class="card-inner">
-              <div class="card-content">
-                <div class="card-block card-item">
-                  <div class="card-title">4</div>
-                </div>
-                <div class="loader loader-x loader-size-bottom loader-js">
-                  <div class="filler">
-                    <span></span><span></span>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="card card-block card-block-md items-center justify-center text-default rounded-md bg-gray-200">
+            <div class="h4">4</div>
+            <span class="loader loader-x loader-size-bottom">
+              <span class="filler text-accent-500">
+                <span class="bg-current"></span>
+                <span class="bg-current opacity-25"></span>
+              </span>
+            </span>
           </div>
 
         </div>
       </div>
 
-      <div class="slide col-7 col-5-sm">
+      <div class="slide w-7/12 sm:w-5/12 opacity-50 active:opacity-100">
         <div class="slide-inner">
 
-          <div class="card card-slide">
-            <div class="card-design"></div>
-            <div class="card-inner">
-              <div class="card-content">
-                <div class="card-block card-item">
-                  <div class="card-title">5</div>
-                </div>
-                <div class="loader loader-x loader-size-bottom loader-js">
-                  <div class="filler">
-                    <span></span><span></span>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="card card-block card-block-md items-center justify-center text-default rounded-md bg-gray-200">
+            <div class="h4">5</div>
+            <span class="loader loader-x loader-size-bottom">
+              <span class="filler text-accent-500">
+                <span class="bg-current"></span>
+                <span class="bg-current opacity-25"></span>
+              </span>
+            </span>
           </div>
 
         </div>
@@ -137,43 +107,45 @@
     </nav>
   </div>
 
-  <nav class="slider-pagination">
-    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
-      <span class="loader loader-y loader-js">
-        <span class="filler">
-          <span></span><span></span>
+  <nav class="slider-pagination list list-space-2">
+    <button type="button" class="btn text-default rounded-md bg-gray-200 hover:bg-gray-300 active:bg-gray-400 xt-ignore" data-xt-pag title="Slide xt-num">
+      <span class="loader loader-y">
+        <span class="filler text-accent-500">
+          <span class="bg-current"></span>
+          <span class="bg-current opacity-25"></span>
         </span>
       </span>
     </button>
   </nav>
 
 </div>
-</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div><div class="gatsby_demo_source xt-ignore" data-lang="less">.demo--slider-progress {
-  .loader-mouse {
-    .mouse-follow();
-    // touch
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div><div class="gatsby_demo_source xt-ignore" data-lang="css">.demo--slider-progress {
+  > .loader {
+    /* touch */
     @media (hover: none) {
-      position: absolute !important;
-      top: auto !important;
-      left: 0 !important;
-      bottom: 0 !important;
-      margin: 0 !important;
-      .transform-none() !important;
-      .spinner, .filler {
-        margin: 0 !important;
-      }
+      transform: none !important;
+      position: absolute;
+      overflow: visible;
+      top: auto;
+      right: auto;
+      left: 0;
+      bottom: 12px;
+      margin: 0;
+    }
+    /* mouse */
+    @media (hover: hover) {
+      @apply loader-mouse mouse-follow;
     }
   }
 }
-</div><div class="gatsby_demo_source xt-ignore" data-lang="js">import { Xt } from 'xtend-library'
-import 'xtend-library/src/vars.js'
-import 'xtend-library/src/extensions/slider/slider.js'
-import 'xtend-library/src/addons/animation/mouse-follow.js'
+</div><div class="gatsby_demo_source xt-ignore" data-lang="js">import { Xt } from 'xtend-ui'
+import 'xtend-ui/src/core/slider'
+import 'xtend-ui/src/addons/mouse-follow'
 import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '.demo--slider-progress',
-  mount: (object) => {
+  mount: object => {
     // vars
 
     const spinnerTime = Xt.vars.timeTiny
@@ -198,7 +170,7 @@ Xt.mount.push({
       timeline.to(spinner, { strokeDashoffset: 628, duration: spinnerTime, ease: spinnerEase, autoRound: false })
       timeline.to(spinner, { strokeDashoffset: 0, duration: self.options.auto.time - spinnerTime, ease: spinnerEase, autoRound: false })
       // elements
-      const elements = self.elements.filter((x) => self.hasCurrent(x))
+      const elements = self.elements.filter(x => self.hasCurrent(x))
       for (const element of elements) {
         const fillers = element.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
@@ -207,7 +179,7 @@ Xt.mount.push({
         }
       }
       // targets
-      const targets = self.targets.filter((x) => self.hasCurrent(x))
+      const targets = self.targets.filter(x => self.hasCurrent(x))
       for (const target of targets) {
         const fillers = target.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
@@ -223,7 +195,7 @@ Xt.mount.push({
 
     const eventAutostop = () => {
       // elements
-      const elements = self.elements.filter((x) => self.hasCurrent(x))
+      const elements = self.elements.filter(x => self.hasCurrent(x))
       for (const element of elements) {
         const fillers = element.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
@@ -231,7 +203,7 @@ Xt.mount.push({
         }
       }
       // targets
-      const targets = self.targets.filter((x) => self.hasCurrent(x))
+      const targets = self.targets.filter(x => self.hasCurrent(x))
       for (const target of targets) {
         const fillers = target.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
@@ -249,7 +221,7 @@ Xt.mount.push({
       const spinner = self.object.querySelectorAll('.spinner svg:nth-child(1) circle')
       gsap.to(spinner, { strokeDashoffset: 628, duration: spinnerTime, ease: spinnerEase, autoRound: false })
       // elements
-      const elements = self.elements.filter((x) => self.hasCurrent(x))
+      const elements = self.elements.filter(x => self.hasCurrent(x))
       for (const element of elements) {
         const fillers = element.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
@@ -257,7 +229,7 @@ Xt.mount.push({
         }
       }
       // targets
-      const targets = self.targets.filter((x) => self.hasCurrent(x))
+      const targets = self.targets.filter(x => self.hasCurrent(x))
       for (const target of targets) {
         const fillers = target.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
@@ -270,13 +242,8 @@ Xt.mount.push({
 
     // mousefollow
 
-    const mouseFollowObject = document.querySelector('.loader-mouse')
-    const mouseFollowContainer = object
-    let mouseFollow = new Xt.MouseFollow(mouseFollowObject, mouseFollowContainer, {
-      mouseCheck: function () {
-        // eslint-disable-next-line no-invalid-this
-        return !this.object.classList.contains('loader-disable') || this.object.classList.contains('loader-js')
-      },
+    let mouseFollow = new Xt.MouseFollow(object, {
+      targets: ':scope > .loader',
     })
 
     // unmount
@@ -291,109 +258,47 @@ Xt.mount.push({
   },
 })
 </div></div>
-  <div class="gatsby_demo_item gatsby_demo_preview" data-name="timing duration" data-file="private/demos/components/core/toggle/timing duration" data-inline="vanilla/components/core/toggle/timing-duration">
+  <div class="gatsby_demo_item toggle gatsby_demo_preview" data-name="timing" data-file="private/demos/components/core/toggle/timing" data-inline="vanilla/components/core/toggle/timing">
   <script type="text/plain" data-lang="html">
-<div class="list list-default list-space-small align-items-center"
-     data-xt-toggle="{ durationOn: 1000, durationOff: 1000 }">
+<div class="list list-space-2 items-center demo--toggle-timing">
 
-  <button type="button" class="btn btn-default">
+  <button type="button" class="btn btn-md text-default rounded-md bg-gray-200 hover:bg-gray-300 active:bg-gray-400">
     Toggle 0
   </button>
 
-  <button type="button" class="btn btn-default">
-    Toggle 1
-  </button>
-
-  <button type="button" class="btn btn-default">
-    Toggle 2
-  </button>
-
-  <div class="note note-default note-background toggle-block">
-    Target 0
-  </div>
-
-  <div class="note note-default note-background toggle-block">
-    Target 1
-  </div>
-
-  <div class="note note-default note-background toggle-block">
-    Target 2
-  </div>
-
-</div>
-
-<br>
-
-<div class="list list-default list-space-small align-items-center"
-     data-xt-toggle="{ on: 'mouseenter', off: 'mouseleave', durationOn: 1000, durationOff: 1000 }">
-
-  <button type="button" class="btn btn-default">
-    Toggle 0
-  </button>
-
-  <button type="button" class="btn btn-default">
-    Toggle 1
-  </button>
-
-  <button type="button" class="btn btn-default">
-    Toggle 2
-  </button>
-
-  <div class="note note-default note-background toggle-block">
-    Target 0
-  </div>
-
-  <div class="note note-default note-background toggle-block">
-    Target 1
-  </div>
-
-  <div class="note note-default note-background toggle-block">
-    Target 2
-  </div>
-
-</div>
-</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
-  <div class="gatsby_demo_item gatsby_demo_preview" data-name="timing delay fnc" data-file="private/demos/components/core/toggle/timing delay fnc" data-inline="vanilla/components/core/toggle/timing-delay-fnc">
-  <script type="text/plain" data-lang="html">
-<div class="list list-default list-space-small align-items-center demo--toggle-timing-delay-fnc">
-
-  <button type="button" class="btn btn-default">
-    Toggle 0
-  </button>
-
-  <button type="button" class="btn btn-default" data-xt-group="0">
+  <button type="button" class="btn btn-md text-default rounded-md bg-gray-200 hover:bg-gray-300 active:bg-gray-400" data-xt-group="0">
     Group 0
   </button>
 
-  <button type="button" class="btn btn-default" data-xt-group="1">
+  <button type="button" class="btn btn-md text-default rounded-md bg-gray-200 hover:bg-gray-300 active:bg-gray-400" data-xt-group="1">
     Group 1
   </button>
 
-  <div class="note note-default note-background toggle-block">
+  <div class="card toggle card-block card-block-sm text-sm text-default rounded-md bg-gray-200">
     Target 0
   </div>
 
-  <div class="note note-default note-background toggle-block" data-xt-group="0">
+  <div class="card toggle card-block card-block-sm text-sm text-default rounded-md bg-gray-200" data-xt-group="0">
     Group 0a
   </div>
 
-  <div class="note note-default note-background toggle-block" data-xt-group="1">
+  <div class="card toggle card-block card-block-sm text-sm text-default rounded-md bg-gray-200" data-xt-group="1">
     Group 1a
   </div>
 
-  <div class="note note-default note-background toggle-block" data-xt-group="0">
+  <div class="card toggle card-block card-block-sm text-sm text-default rounded-md bg-gray-200" data-xt-group="0">
     Group 0b
   </div>
 
-  <div class="note note-default note-background toggle-block" data-xt-group="1">
+  <div class="card toggle card-block card-block-sm text-sm text-default rounded-md bg-gray-200" data-xt-group="1">
     Group 1b
   </div>
 
-  <div class="note note-default note-background toggle-block" data-xt-group="0">
+  <div class="card toggle card-block card-block-sm text-sm text-default rounded-md bg-gray-200" data-xt-group="0">
     Group 0c
   </div>
 
-  <div class="note note-default note-background toggle-block" data-xt-group="1">
+  <div class="card toggle card-block card-block-sm text-sm text-default rounded-md bg-gray-200" data-xt-group="1">
     Group 1c
   </div>
 
@@ -401,58 +306,79 @@ Xt.mount.push({
 
 <br>
 
-<div class="list list-default list-space-small align-items-center demo--toggle-timing-delay-fnc--hover">
+<div class="list list-space-2 items-center demo--toggle-timing--event">
 
-  <button type="button" class="btn btn-default">
-    Toggle 0
+  <button type="button" class="btn btn-md text-default rounded-md bg-gray-200 hover:bg-gray-300 active:bg-gray-400">
+    Toggle 0 hover
   </button>
 
-  <button type="button" class="btn btn-default" data-xt-group="0">
-    Group 0
+  <button type="button" class="btn btn-md text-default rounded-md bg-gray-200 hover:bg-gray-300 active:bg-gray-400" data-xt-group="0">
+    Group 0 hover
   </button>
 
-  <button type="button" class="btn btn-default" data-xt-group="1">
-    Group 1
+  <button type="button" class="btn btn-md text-default rounded-md bg-gray-200 hover:bg-gray-300 active:bg-gray-400" data-xt-group="1">
+    Group 1 hover
   </button>
 
-  <div class="note note-default note-background toggle-block">
-    Target 0
+  <div class="card toggle card-block card-block-sm text-sm text-default rounded-md bg-gray-200">
+    Target 0 hover
   </div>
 
-  <div class="note note-default note-background toggle-block" data-xt-group="0">
-    Group 0a
+  <div class="card toggle card-block card-block-sm text-sm text-default rounded-md bg-gray-200" data-xt-group="0">
+    Group 0a hover
   </div>
 
-  <div class="note note-default note-background toggle-block" data-xt-group="1">
-    Group 1a
+  <div class="card toggle card-block card-block-sm text-sm text-default rounded-md bg-gray-200" data-xt-group="1">
+    Group 1a hover
   </div>
 
-  <div class="note note-default note-background toggle-block" data-xt-group="0">
-    Group 0b
+  <div class="card toggle card-block card-block-sm text-sm text-default rounded-md bg-gray-200" data-xt-group="0">
+    Group 0b hover
   </div>
 
-  <div class="note note-default note-background toggle-block" data-xt-group="1">
-    Group 1b
+  <div class="card toggle card-block card-block-sm text-sm text-default rounded-md bg-gray-200" data-xt-group="1">
+    Group 1b hover
   </div>
 
-  <div class="note note-default note-background toggle-block" data-xt-group="0">
-    Group 0c
+  <div class="card toggle card-block card-block-sm text-sm text-default rounded-md bg-gray-200" data-xt-group="0">
+    Group 0c hover
   </div>
 
-  <div class="note note-default note-background toggle-block" data-xt-group="1">
-    Group 1c
+  <div class="card toggle card-block card-block-sm text-sm text-default rounded-md bg-gray-200" data-xt-group="1">
+    Group 1c hover
   </div>
 
 </div>
-</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div><div class="gatsby_demo_source xt-ignore" data-lang="js">import { Xt } from 'xtend-library'
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div><div class="gatsby_demo_source xt-ignore" data-lang="css">.demo--toggle-timing, .demo--toggle-timing--event {
+  .card {
+    /* initial */
+    @apply transform transition-all duration-500;
+    @apply opacity-0 -translate-x-4;
+    &.inverse {
+      @apply translate-x-4;
+    }
+    /* in */
+    &.in {
+      @apply opacity-100 translate-x-0 ease-in;
+    }
+    /* out */
+    &.out {
+      @apply opacity-0 translate-x-4 ease-out;
+      &.inverse {
+        @apply -translate-x-4;
+      }
+    }
+  }
+}
+</div><div class="gatsby_demo_source xt-ignore" data-lang="js">import { Xt } from 'xtend-ui'
 
 Xt.mount.push({
-  matches: '.demo--toggle-timing-delay-fnc',
-  mount: (object) => {
+  matches: '.demo--toggle-timing',
+  mount: object => {
     // init
 
     let self = new Xt.Toggle(object, {
-      delayOn: (current) => {
+      delayOn: current => {
         return Math.min(current * 150, 300)
       },
       delayOff: (current, total) => {
@@ -471,14 +397,14 @@ Xt.mount.push({
 })
 
 Xt.mount.push({
-  matches: '.demo--toggle-timing-delay-fnc--hover',
-  mount: (object) => {
+  matches: '.demo--toggle-timing--event',
+  mount: object => {
     // init
 
     let self = new Xt.Toggle(object, {
       on: 'mouseenter',
       off: 'mouseleave',
-      delayOn: (current) => {
+      delayOn: current => {
         return Math.min(current * 150, 300)
       },
       delayOff: (current, total) => {
@@ -496,43 +422,118 @@ Xt.mount.push({
   },
 })
 </div></div>
-  <div class="gatsby_demo_item gatsby_demo_preview" data-name="overflow auto false" data-file="private/demos/components/extensions/slider/overflow auto false" data-inline="vanilla/components/extensions/slider/overflow-auto-false">
+  <div class="gatsby_demo_item toggle gatsby_demo_preview" data-name="auto" data-file="private/demos/components/core/toggle/auto" data-inline="vanilla/components/core/toggle/auto">
   <script type="text/plain" data-lang="html">
-<div class="slider demo--slider-overflow-auto"
-    data-xt-slider="{ align: 'center', drag: { wrap: true, overflow: false }, overflowAuto: false }">
+<div class="list list-space-2 items-center" data-xt-toggle="{ auto: { time: 2000, initial: false, step: 3, inverse: true, pause: ':scope > button, .toggle' } }">
+
+  <button type="button" class="btn btn-md text-default rounded-md bg-gray-200 hover:bg-gray-300 active:bg-gray-400">
+    Toggle 0
+  </button>
+
+  <button type="button" class="btn btn-md text-default rounded-md bg-gray-200 hover:bg-gray-300 active:bg-gray-400">
+    Toggle 1
+  </button>
+
+  <button type="button" class="btn btn-md text-default rounded-md bg-gray-200 hover:bg-gray-300 active:bg-gray-400 active-toggle">
+    Toggle 2
+  </button>
+
+  <button type="button" class="btn btn-md text-default rounded-md bg-gray-200 hover:bg-gray-300 active:bg-gray-400">
+    Toggle 3
+  </button>
+
+  <button type="button" class="btn btn-md text-default rounded-md bg-gray-200 hover:bg-gray-300 active:bg-gray-400">
+    Toggle 4
+  </button>
+
+  <div class="card toggle card-block card-block-sm text-sm text-default rounded-md bg-gray-200">
+    Target 0
+  </div>
+
+  <div class="card toggle card-block card-block-sm text-sm text-default rounded-md bg-gray-200">
+    Target 1
+  </div>
+
+  <div class="card toggle card-block card-block-sm text-sm text-default rounded-md bg-gray-200">
+    Target 2
+  </div>
+
+  <div class="card toggle card-block card-block-sm text-sm text-default rounded-md bg-gray-200">
+    Target 3
+  </div>
+
+  <div class="card toggle card-block card-block-sm text-sm text-default rounded-md bg-gray-200">
+    Target 4
+  </div>
+
+</div>
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
+  <div class="gatsby_demo_item toggle gatsby_demo_preview" data-name="prevent event" data-file="private/demos/components/core/toggle/prevent event" data-inline="vanilla/components/core/toggle/prevent-event">
+  <script type="text/plain" data-lang="html">
+<div class="list list-space-2 items-center" data-xt-toggle="{ min: 1, preventEvent: true }">
+
+  <a href="#toggle--prevent-event-0" class="btn btn-md text-default rounded-md bg-gray-200 hover:bg-gray-300 active:bg-gray-400">
+    Toggle 0
+  </a>
+
+  <a href="#toggle--prevent-event-1" class="btn btn-md text-default rounded-md bg-gray-200 hover:bg-gray-300 active:bg-gray-400">
+    Toggle 1
+  </a>
+
+  <div class="card toggle card-block card-block-sm text-sm text-default rounded-md bg-gray-200">
+    Target 0
+  </div>
+
+  <div class="card toggle card-block card-block-sm text-sm text-default rounded-md bg-gray-200">
+    Target 1
+  </div>
+
+</div>
+
+<br/>
+
+<div class="list list-space-2 items-center" data-xt-toggle="{ min: 1, on: 'mouseenter', off: 'mouseleave', preventEvent: true }">
+
+  <a href="#toggle--prevent-event-1-hover" class="btn btn-md text-default rounded-md bg-gray-200 hover:bg-gray-300 active:bg-gray-400">
+    Toggle 1 hover
+  </a>
+
+  <a href="#toggle--prevent-event-2-hover" class="btn btn-md text-default rounded-md bg-gray-200 hover:bg-gray-300 active:bg-gray-400">
+    Toggle 2 hover
+  </a>
+
+  <div class="card toggle card-block card-block-sm text-sm text-default rounded-md bg-gray-200">
+    Target 1 hover
+  </div>
+
+  <div class="card toggle card-block card-block-sm text-sm text-default rounded-md bg-gray-200">
+    Target 2 hover
+  </div>
+
+</div>
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
+  <div class="gatsby_demo_item toggle gatsby_demo_preview" data-name="overflow auto false" data-file="private/demos/components/core/slider/overflow auto false" data-inline="vanilla/components/core/slider/overflow-auto-false">
+  <script type="text/plain" data-lang="html">
+<div class="slider demo--slider-overflow-auto" data-xt-slider="{ align: 'center', drag: { wrap: true, overflow: false }, overflowAuto: false }">
 
   <div class="slides">
-    <nav class="slides-inner">
+    <nav class="slides-inner row row-space-2">
 
-      <div class="slide col-6 col-4-sm">
+      <div class="slide w-6/12 sm:w-4/12 opacity-50 active:opacity-100">
         <div class="slide-inner">
 
-          <div class="card card-slide">
-            <div class="card-design"></div>
-            <div class="card-inner">
-              <div class="card-content">
-                <div class="card-block card-item">
-                  <div class="card-title">1</div>
-                </div>
-              </div>
-            </div>
+          <div class="card card-block card-block-md items-center justify-center text-default rounded-md bg-gray-200">
+            <div class="h4">1</div>
           </div>
 
         </div>
       </div>
 
-      <div class="slide col-6 col-4-sm">
+      <div class="slide w-6/12 sm:w-4/12 opacity-50 active:opacity-100">
         <div class="slide-inner">
 
-          <div class="card card-slide">
-            <div class="card-design"></div>
-            <div class="card-inner">
-              <div class="card-content">
-                <div class="card-block card-item">
-                  <div class="card-title">2</div>
-                </div>
-              </div>
-            </div>
+          <div class="card card-block card-block-md items-center justify-center text-default rounded-md bg-gray-200">
+            <div class="h4">2</div>
           </div>
 
         </div>
@@ -541,14 +542,14 @@ Xt.mount.push({
     </nav>
   </div>
 
-  <nav class="slider-pagination slider-navigation">
-    <button type="button" class="btn btn-default" data-xt-nav="-1" title="Previous slide">
-      <span class="icon-xt-chevron-left icon-left"></span> prev
+  <nav class="slider-pagination list list-space-2">
+    <button type="button" class="btn text-default rounded-md bg-gray-200 hover:bg-gray-300 active:bg-gray-400" data-xt-nav="-1" title="Previous slide">
+      prev
     </button>
-    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
+    <button type="button" class="btn text-default rounded-md bg-gray-200 hover:bg-gray-300 active:bg-gray-400 xt-ignore" data-xt-pag title="Slide xt-num">
     </button>
-    <button type="button" class="btn btn-default" data-xt-nav="1" title="Next slide">
-      next <span class="icon-xt-chevron-right icon-right"></span>
+    <button type="button" class="btn text-default rounded-md bg-gray-200 hover:bg-gray-300 active:bg-gray-400" data-xt-nav="1" title="Next slide">
+      next
     </button>
   </nav>
 
@@ -556,410 +557,307 @@ Xt.mount.push({
 </script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
 </div>
 <div class="gatsby_demo">
-  <div class="gatsby_demo_item gatsby_demo_preview" data-name="event" data-file="private/demos/components/core/drop/event" data-inline="vanilla/components/core/drop/event">
+  <div class="gatsby_demo_item toggle gatsby_demo_preview" data-name="event" data-file="private/demos/components/core/drop/event" data-inline="vanilla/components/core/drop/event">
   <script type="text/plain" data-lang="html">
-<div class="list list-default list-space-small align-items-center">
+<div class="list list-space-2 items-center">
 
   <div class="drop-container" data-xt-drop="{ on: 'mouseenter', off: 'mouseleave', closeOutside: false }">
-    <button type="button" class="btn btn-primary">
-      mouseenter
+
+    <button type="button" class="btn btn-md text-inverse rounded-md bg-accent-500 hover:bg-accent-600 active:bg-accent-700">
+      mouse
     </button>
-    <div class="drop drop-default">
-    
+
+    <div class="drop">
       <div class="drop-inner">
-        <div class="drop-design"></div>
-        <div class="drop-content">
-
-          <nav class="list-block list-drop">
-            <button type="button">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
-            </button>
-            <button type="button">
-              Dolor sit
-            </button>
-            <button type="button">
-              Amet
-            </button>
-          </nav>
-
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-</div>
-</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
-  <div class="gatsby_demo_item gatsby_demo_preview" data-name="backdrop" data-file="private/demos/components/core/drop/backdrop" data-inline="vanilla/components/core/drop/backdrop">
-  <script type="text/plain" data-lang="html">
-<div class="list list-default list-space-small align-items-center">
-
-  <div class="drop-container" data-xt-drop="{ backdrop: true }">
-    <button type="button" class="btn btn-primary">
-      backdrop
-    </button>
-    <div class="drop drop-default drop-bottom drop-left">
-    
-      <div class="drop-inner">
-        <div class="drop-design"></div>
-        <div class="drop-content">
-
-          <nav class="list-block list-drop">
-            <button type="button">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
-            </button>
-            <button type="button">
-              Dolor sit
-            </button>
-            <button type="button">
-              Amet
-            </button>
-          </nav>
-
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="drop-container" data-xt-drop="{ on: 'mouseenter', off: 'mouseleave', backdrop: true }">
-    <button type="button" class="btn btn-primary">
-    backdrop mouseenter
-    </button>
-    <div class="drop drop-default drop-bottom drop-left">
-    
-      <div class="drop-inner">
-        <div class="drop-design"></div>
-        <div class="drop-content">
-
-          <nav class="list-block list-drop">
-            <button type="button">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
-            </button>
-            <button type="button">
-              Dolor sit
-            </button>
-            <button type="button">
-              Amet
-            </button>
-          </nav>
-
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-</div>
-</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
-  <div class="gatsby_demo_item gatsby_demo_preview" data-name="prevent event" data-file="private/demos/components/core/drop/prevent event" data-inline="vanilla/components/core/drop/prevent-event">
-  <script type="text/plain" data-lang="html">
-<div class="drop-container" data-xt-drop="{ preventEvent: true }">
-  <a href="#drop-with-link-0" class="btn btn-primary">
-    Toggle
-  </a>
-  <div class="drop drop-default">
-  
-    <div class="drop-inner">
-      <div class="drop-design"></div>
-      <div class="drop-content">
-
-        <nav class="list-block list-drop">
-          <button type="button">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit
-          </button>
-          <button type="button">
-            Dolor sit
-          </button>
-          <button type="button">
-            Amet
-          </button>
-        </nav>
-
-      </div>
-    </div>
-
-  </div>
-</div>
-</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
-  <div class="gatsby_demo_item gatsby_demo_preview" data-name="prevent event hover" data-file="private/demos/components/core/drop/prevent event hover" data-inline="vanilla/components/core/drop/prevent-event-hover">
-  <script type="text/plain" data-lang="html">
-<div class="drop-container"
-  data-xt-drop="{ on: 'mouseenter', off: 'mouseleave', closeOutside: false, preventEvent: true }">
-  <a href="#drop-with-link-1" class="btn btn-primary">
-    Toggle
-  </a>
-  <div class="drop drop-default">
-  
-    <div class="drop-inner">
-      <div class="drop-design"></div>
-      <div class="drop-content">
-
-        <nav class="list-block list-drop">
-          <button type="button">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit
-          </button>
-          <button type="button">
-            Dolor sit
-          </button>
-          <button type="button">
-            Amet
-          </button>
-        </nav>
-
-      </div>
-    </div>
-
-  </div>
-</div>
-</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
-  <div class="gatsby_demo_item gatsby_demo_preview" data-name="nested" data-file="private/demos/components/core/overlay/nested" data-inline="vanilla/components/core/overlay/nested">
-  <script type="text/plain" data-lang="html">
-<button type="button" class="btn btn-primary" id="overlay-nested-toggle">
-  Toggle with API
-</button>
-
-<div class="overlay overlay-default overlay-large" id="overlay-nested"
-  data-xt-overlay="{ on: false, instant: false }">
-  <div class="overlay-container">
-    <div class="overlay-inner">
-      <div class="overlay-design"></div>
-
-      <div class="card card-overlay">
-        <div class="card-design"></div>
-        <div class="btn btn-close" aria-label="Close"></div>
-        <div class="card-inner">
-          <div class="card-content">
-            <div class="card-block card-item">
-              <div class="card-title">Lorem ipsum</div>
-              <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-              <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat, ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
-              <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
-
-              <div data-xt-overlay>
-                <button type="button" class="btn btn-primary">
-                  Toggle
-                </button>
-                <div class="overlay overlay-default overlay-size-small">
-                  <div class="overlay-container">
-                    <div class="overlay-inner">
-                      <div class="overlay-design"></div>
-
-                      <div class="card card-overlay">
-                        <div class="card-design"></div>
-                        <div class="btn btn-close" aria-label="Close"></div>
-                        <div class="card-inner">
-                          <div class="card-content">
-                            <div class="card-block card-item">
-                              <div class="card-title">Lorem ipsum</div>
-                              <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-                              <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat, ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
-                              <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
-                              <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-                              <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat, ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
-                              <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
-                              <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-                              <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat, ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
-                              <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
-                              <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-                              <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat, ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
-                              <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
-                              <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-                              <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat, ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
-                              <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
-                              <div class="drop-container" data-xt-drop="{ backdrop: true }">
-                                <button type="button" class="btn btn-primary">
-                                  drop backdrop
-                                </button>
-                                <div class="drop drop-default drop-top">
-                                  <div class="drop-inner">
-                                    <div class="drop-design"></div>
-                                    <div class="drop-content">
-
-                                      <nav class="list-block list-drop">
-                                        <button type="button" class="btn btn-default">
-                                          Lorem ipsum dolor
-                                        </button>
-                                        <button type="button" class="btn btn-default">
-                                          Dolor sit
-                                        </button>
-                                        <button type="button" class="btn btn-default">
-                                          Amet
-                                        </button>
-                                      </nav>
-
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
+        <div class="card card-sm text-default rounded-md bg-white shadow-lg">
+          <div class="card-block py-3">
+            <nav class="list-block">
+              <a href="#" class="btn btn-sm px-6 w-full text-default hover:text-opacity-75 active:text-opacity-75">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              </a>
+              <button type="button" class="btn btn-sm px-6 w-full text-default hover:text-opacity-75 active:text-opacity-75">
+                Dolor sit
+              </button>
+              <button type="button" class="btn btn-sm px-6 w-full text-default hover:text-opacity-75 active:text-opacity-75">
+                Amet
+              </button>
+            </nav>
           </div>
         </div>
       </div>
+    </div>
+
+  </div>
+
+</div>
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
+  <div class="gatsby_demo_item toggle gatsby_demo_preview" data-name="backdrop" data-file="private/demos/components/core/drop/backdrop" data-inline="vanilla/components/core/drop/backdrop">
+  <script type="text/plain" data-lang="html">
+<div class="list list-space-2 items-center">
+
+  <div class="drop-container" data-xt-drop="{ backdrop: true }">
+
+    <button type="button" class="btn btn-md text-inverse rounded-md bg-accent-500 hover:bg-accent-600 active:bg-accent-700">
+      backdrop
+    </button>
+
+    <div class="drop">
+      <div class="drop-inner">
+        <div class="card card-sm text-default rounded-md bg-white shadow-lg">
+          <div class="card-block py-3">
+            <nav class="list-block">
+              <a href="#" class="btn btn-sm px-6 w-full text-default hover:text-opacity-75 active:text-opacity-75">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              </a>
+              <button type="button" class="btn btn-sm px-6 w-full text-default hover:text-opacity-75 active:text-opacity-75">
+                Dolor sit
+              </button>
+              <button type="button" class="btn btn-sm px-6 w-full text-default hover:text-opacity-75 active:text-opacity-75">
+                Amet
+              </button>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="drop-container" data-xt-drop="{ on: 'mouseenter', off: 'mouseleave', backdrop: true }">
+
+    <button type="button" class="btn btn-md text-inverse rounded-md bg-accent-500 hover:bg-accent-600 active:bg-accent-700">
+      backdrop mouse
+    </button>
+
+    <div class="drop">
+      <div class="drop-inner">
+        <div class="card card-sm text-default rounded-md bg-white shadow-lg">
+          <div class="card-block py-3">
+            <nav class="list-block">
+              <a href="#" class="btn btn-sm px-6 w-full text-default hover:text-opacity-75 active:text-opacity-75">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              </a>
+              <button type="button" class="btn btn-sm px-6 w-full text-default hover:text-opacity-75 active:text-opacity-75">
+                Dolor sit
+              </button>
+              <button type="button" class="btn btn-sm px-6 w-full text-default hover:text-opacity-75 active:text-opacity-75">
+                Amet
+              </button>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
+  <div class="gatsby_demo_item toggle gatsby_demo_preview" data-name="disable" data-file="private/demos/components/core/overlay/disable" data-inline="vanilla/components/core/overlay/disable">
+  <script type="text/plain" data-lang="html">
+<button type="button" class="btn btn-md text-inverse rounded-md bg-accent-500 hover:bg-accent-600 active:bg-accent-700" id="demo--overlay-nested-disable-toggle">
+  Nested
+</button>
+
+<div class="overlay" id="demo--overlay-nested-disable"
+  data-xt-overlay="{ on: false, instant: false }">
+  <div class="overlay-container max-w-4xl">
+    <div class="overlay-inner">
+
+      <div class="card text-default rounded-md bg-white shadow-lg">
+        <div class="btn btn-close p-5" aria-label="Close"><span class="icon-close"></span></div>
+        <div class="card-block card-block-lg">
+          <div class="h3">Lorem ipsum</div>
+          <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+          <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat, ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+          <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
+
+          <div data-xt-overlay>
+
+            <button type="button" class="btn btn-md text-inverse rounded-md bg-accent-500 hover:bg-accent-600 active:bg-accent-700">
+              Overlay
+            </button>
+
+            <div class="overlay">
+              <div class="overlay-container max-w-2xl">
+                <div class="overlay-inner">
+
+                  <div class="card text-default rounded-md bg-white shadow-lg">
+                    <div class="btn btn-close p-5" aria-label="Close"><span class="icon-close"></span></div>
+                    <div class="card-block card-block-lg">
+                      <div class="h3">Lorem ipsum</div>
+                      <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+                      <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat, ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                      <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
 
     </div>
   </div>
 </div>
-</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div><div class="gatsby_demo_source xt-ignore" data-lang="js">import { Xt } from 'xtend-library'
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div><div class="gatsby_demo_source xt-ignore" data-lang="css">#demo--overlay-nested-disable-toggle {
+  /*@apply md:hidden !important;*/
+  @apply hidden !important;
+}
+
+#demo--overlay-nested-disable {
+  /*@apply md:overlay-disable !important;*/
+  @apply overlay-disable !important;
+}
+</div><div class="gatsby_demo_source xt-ignore" data-lang="js">import { Xt } from 'xtend-ui'
 
 Xt.mount.push({
-  matches: '#overlay-nested-toggle',
-  mount: (object) => {
+  matches: '#demo--overlay-nested-disable-toggle',
+  mount: object => {
     // event
 
     const click = () => {
-      document.querySelector('#overlay-nested').dispatchEvent(new CustomEvent('on.trigger.xt'))
+      document.querySelector('#demo--overlay-nested-disable').dispatchEvent(new CustomEvent('on.trigger.xt'))
     }
 
     object.addEventListener('click', click)
   },
 })
 </div></div>
-  <div class="gatsby_demo_item gatsby_demo_preview" data-name="position" data-file="private/demos/components/core/overlay/position" data-inline="vanilla/components/core/overlay/position">
+  <div class="gatsby_demo_item toggle gatsby_demo_preview" data-name="position" data-file="private/demos/components/core/overlay/position" data-inline="vanilla/components/core/overlay/position">
   <script type="text/plain" data-lang="html">
-<div class="list list-default list-space-small align-items-center">
+<div class="list list-space-2 items-center">
 
   <div data-xt-overlay>
-    <button type="button" class="btn btn-primary">
-      position left
+
+    <button type="button" class="btn btn-md text-inverse rounded-md bg-accent-500 hover:bg-accent-600 active:bg-accent-700">
+      left
     </button>
-    <div class="overlay overlay-default overlay-position-left">
-      <div class="overlay-container">
+
+    <div class="overlay overlay-screen">
+      <div class="overlay-container max-w-md ml-0 mr-auto">
         <div class="overlay-inner">
-          <div class="overlay-design"></div>
 
-            <div class="card card-overlay">
-              <div class="card-design"></div>
-              <div class="btn btn-close" aria-label="Close"></div>
-              <div class="card-inner">
-                <div class="card-content">
-                  <div class="card-block card-item">
-                    <div class="card-title">Lorem ipsum</div>
-                    <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-                    <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat, ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
-                    <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div data-xt-overlay>
-    <button type="button" class="btn btn-primary">
-      position right
-    </button>
-    <div class="overlay overlay-default overlay-position-right">
-      <div class="overlay-container">
-        <div class="overlay-inner">
-          <div class="overlay-design"></div>
-
-            <div class="card card-overlay">
-              <div class="card-design"></div>
-              <div class="btn btn-close" aria-label="Close"></div>
-              <div class="card-inner">
-                <div class="card-content">
-                  <div class="card-block card-item">
-                    <div class="card-title">Lorem ipsum</div>
-                    <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-                    <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat, ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
-                    <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div data-xt-overlay>
-    <button type="button" class="btn btn-primary">
-      position left blocks
-    </button>
-    <div class="overlay overlay-default overlay-position-left">
-      <div class="overlay-container">
-        <div class="overlay-inner">
-          <div class="overlay-design"></div>
-
-          <div class="card card-overlay"
-            style="align-items: stretch;">
-            <div class="card-design"></div>
-            <div class="btn btn-close" aria-label="Close"></div>
-            <div class="card-inner">
-              <div class="card-content">
-                <div class="card-asset">
-                  <div class="media-container" style="padding-bottom:100%;"><div class="media-inner"><img class="media media-cover" src="/img.svg" loading="lazy" alt=""/></div></div>
-                </div>
-                <div class="card-block card-item">
-                  <div class="card-title">Lorem ipsum</div>
-                  <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-                </div>
-                <div class="card-block card-item card-block-side"
-                  style="margin-top: auto">
-                  <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-                </div>
-              </div>
+          <div class="card text-default bg-white shadow-lg">
+            <div class="btn btn-close p-5" aria-label="Close"><span class="icon-close"></span></div>
+            <div class="card-block card-block-lg">
+              <div class="h3">Lorem ipsum</div>
+              <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+              <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat, ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+              <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
             </div>
           </div>
 
         </div>
       </div>
     </div>
+
+  </div>
+
+  <div data-xt-overlay>
+
+    <button type="button" class="btn btn-md text-inverse rounded-md bg-accent-500 hover:bg-accent-600 active:bg-accent-700">
+      right
+    </button>
+
+    <div class="overlay overlay-screen">
+      <div class="overlay-container max-w-md ml-auto mr-0">
+        <div class="overlay-inner">
+
+          <div class="card text-default bg-white shadow-lg">
+            <div class="btn btn-close p-5" aria-label="Close"><span class="icon-close"></span></div>
+            <div class="card-block card-block-lg">
+              <div class="h3">Lorem ipsum</div>
+              <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+              <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat, ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+              <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div data-xt-overlay>
+
+    <button type="button" class="btn btn-md text-inverse rounded-md bg-accent-500 hover:bg-accent-600 active:bg-accent-700">
+      left blocks
+    </button>
+
+    <div class="overlay overlay-screen">
+      <div class="overlay-container max-w-md ml-0 mr-auto">
+        <div class="overlay-inner">
+
+          <div class="card text-default bg-white shadow-lg">
+            <div class="btn btn-close p-5" aria-label="Close"><span class="icon-close"></span></div>
+            <div class="card-asset">
+              <div class="media-container" style="padding-bottom:100%;"><div class="media-inner"><img class="media object-cover object-center" src="/img.svg" loading="lazy" alt=""/></div></div>
+            </div>
+            <div class="card-block card-block-md">
+              <div class="h3">Lorem ipsum</div>
+              <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+            </div>
+            <div class="card-block card-block-md bg-gray-500 mt-auto">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
   </div>
 
 </div>
 </script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div></div>
 </div>
 <div class="gatsby_demo">
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/brands-featured-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/brands-featured-v1">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/fashion-hero-v2">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/fashion-hero-v2">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/furniture-hero-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/furniture-hero-v1">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/industrial-featured-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/industrial-featured-v1">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/fashion-hero-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/fashion-hero-v1">
   </div>
 </div>
 <div class="gatsby_demo">
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/sequential-megamenu-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/sequential-megamenu-v1">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/xtend-theme-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/xtend-theme-v1">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/collapse-theme-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/collapse-theme-v1">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/furniture-featured-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/furniture-featured-v1">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/furniture-listing-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/furniture-listing-v1">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/themes/fashion-listing-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/fashion-listing-v1">
   </div>
 </div>
 <h2>Markdown</h2>
+<p>Use this code to create a <strong>card</strong>.</p>
+<p>Check subpage to <a href="/components/core/loader/content#spinner" class="link">customize content</a>.</p>
+<p>Use <strong>tailwind classes</strong> to create a mouse follow.</p>
+<p>Use <strong>component classes</strong> to create a mouse follow.</p>
+<p>Use <strong>component classes</strong> to assign size (e.g.: padding, font size).</p>
+<p>See <a href="/components/core/loader" class="link">group component</a> to create a button with group.</p>
+<p>See <a href="/components/core/loader" class="link">mouse follow addon</a> to create a loader with mouse follow.</p>
+<div class="custom-block card card-block card-block-sm text-inverse rounded-md bg-accent-500 gatsby_note"><div class="custom-block-body"><p>This addon uses <a href="/components/separator" class="link">separator</a>. Visit the component page to import and initialize.</p></div></div>
+<p>(use touch device to see it in action)</p>
+<p>(use narrow screen to see it in action)</p>
 <div class="table-scroll">
 
 
@@ -981,8 +879,30 @@ Xt.mount.push({
 
 
 
-<table><thead><tr><th></th><th>Syntax</th><th>Example</th></tr></thead><tbody><tr><td>Class</td><td><code>.drop-{variant}</code></td><td><code>.drop-default</code> <code>.drop-primary</code></td></tr><tr><td>Mixin</td><td><code>.drop-{variant}()</code></td><td><code>.drop-default()</code> <code>.drop-primary()</code></td></tr></tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>Syntax</th><th>Default / Arguments</th><th>Description</th></tr></thead><tbody><tr><td>Function</td><td><code>Xt.eventDelay:Function</code></td><td><code>e:Event, element:Node, function:Function, prefix:String = &#x27;&#x27;, instant:Boolean = false</code></td><td>event delay wrapper</td></tr><tr><td>Variable</td><td><code>Xt.resizeDelay:Number|Boolean</code></td><td><code>500</code></td><td>Delay for the <code>resize</code> event with <code>Xt.eventDelay</code></td></tr><tr><td>Option</td><td><code>elements:Query</code></td><td><code>false</code></td><td>Elements query</td></tr><tr><td>Object</td><td><code>let self = Xt.get(&#x27;xt-drop&#x27;, {DOM element})</code></td><td><code>object</code> <code>elements</code> <code>targets</code></td><td>Get object self for this component class</td></tr><tr><td>Property</td><td><code>initial:Boolean</code></td><td>If initial or reset activation</td><td></td></tr></tbody></table>
 </div>
+<p>For <code>&lt;space&gt;</code> values use any of <a href="https://tailwindcss.com/docs/customizing-spacing" class="link">tailwind spacing</a>.</p>
 <div class="table-scroll">
 
 
@@ -1001,8 +921,11 @@ Xt.mount.push({
 
 
 
-<table><thead><tr><th></th><th>Syntax</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td>Option</td><td><code>class:String</code></td><td><code>active active-overlay</code></td><td>Class name for activation</td></tr></tbody></table>
+
+
+<table><thead><tr><th></th><th>Syntax</th><th>Mixin</th><th>Variants</th><th>Description</th></tr></thead><tbody><tr><td>Util</td><td><code>.list-space-&lt;space&gt;</code></td><td><code>list-space-&lt;space&gt;</code></td><td><code>responsive</code></td><td>Space contents horizontally and vertically</td></tr></tbody></table>
 </div>
+<p>For <code>&lt;direction&gt;</code> values use <code>x</code> or <code>y</code>.</p>
 <div class="table-scroll">
 
 
@@ -1021,18 +944,46 @@ Xt.mount.push({
 
 
 
-<table><thead><tr><th></th><th>Class</th><th>Mixin</th><th>Description</th></tr></thead><tbody><tr><td>Option</td><td><code>.drop-container-static</code></td><td><code>.drop-container-static()</code></td><td>Position relative to closest element with <code>position: relative;</code>.</td></tr></tbody></table>
+<table><thead><tr><th></th><th>Syntax</th><th>Mixin</th><th>Description</th></tr></thead><tbody><tr><td>Component</td><td><code>.loader-&lt;direction&gt;</code></td><td><code>loader-&lt;direction&gt;</code></td><td>Loader direction for filler</td></tr></tbody></table>
+</div>
+<p>You can set <strong>scroll mode</strong> with css selectors.</p>
+<div class="table-scroll">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>Syntax</th><th>Description</th><th></th></tr></thead><tbody><tr><td>Selector</td><td><code>&amp;:not(.scroll-done) {</code></td><td>Animate once</td><td></td></tr></tbody></table>
 </div>
 <p>Lorem ipsum <code>dolor sit</code> amet, <em>consectetur</em> <strong>adipiscing</strong> elit. Nam in <a href="/components/group/button" class="link">laoreet tellus</a>, nec commodo massa. Aenean ut ex at ex pellentesque efficitur.</p>
-<p>Maecenas pulvinar mauris eget pharetra elementum. Sed sit amet ultrices metus, vitae cursus metus. Proin tristique finibus pretium. Morbi sit amet magna faucibus, luctus enim tempor, dignissim quam. Nam a ornare quam, varius cursus felis. Fusce nunc lacus, iaculis vel cursus non, facilisis id quam.</p>
-<p>Sed gravida massa in commodo eleifend. Curabitur ac pellentesque nisl. Nunc ut placerat velit, aliquet faucibus erat. In imperdiet ligula ex, ut vestibulum ipsum fermentum in. Fusce ante ex, molestie at condimentum non, ullamcorper a lorem. Morbi et eros pellentesque, congue sem non, dapibus tellus.</p>
+<p class="text-xs">Maecenas pulvinar mauris eget pharetra elementum. Sed sit amet ultrices metus, vitae cursus metus. Proin tristique finibus pretium. Morbi sit amet magna faucibus, luctus enim tempor, dignissim quam. Nam a ornare quam, varius cursus felis. Fusce nunc lacus, iaculis vel cursus non, facilisis id quam.</p>
+<p class="text-sm">Maecenas pulvinar mauris eget pharetra elementum. Sed sit amet ultrices metus, vitae cursus metus. Proin tristique finibus pretium. Morbi sit amet magna faucibus, luctus enim tempor, dignissim quam. Nam a ornare quam, varius cursus felis. Fusce nunc lacus, iaculis vel cursus non, facilisis id quam.</p>
+<p class="text-base">Maecenas pulvinar mauris eget pharetra elementum. Sed sit amet ultrices metus, vitae cursus metus. Proin tristique finibus pretium. Morbi sit amet magna faucibus, luctus enim tempor, dignissim quam. Nam a ornare quam, varius cursus felis. Fusce nunc lacus, iaculis vel cursus non, facilisis id quam.</p>
+<p class="text-lg">Maecenas pulvinar mauris eget pharetra elementum. Sed sit amet ultrices metus, vitae cursus metus. Proin tristique finibus pretium. Morbi sit amet magna faucibus, luctus enim tempor, dignissim quam. Nam a ornare quam, varius cursus felis. Fusce nunc lacus, iaculis vel cursus non, facilisis id quam.</p>
+<p class="text-xl">Maecenas pulvinar mauris eget pharetra elementum. Sed sit amet ultrices metus, vitae cursus metus. Proin tristique finibus pretium. Morbi sit amet magna faucibus, luctus enim tempor, dignissim quam. Nam a ornare quam, varius cursus felis. Fusce nunc lacus, iaculis vel cursus non, facilisis id quam.</p>
+<ul>
+<li>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 <ul>
 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut ex at ex pellentesque efficitur.</li>
+</ul>
+</li>
+<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut ex at ex pellentesque efficitur.</li>
 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut ex at ex pellentesque efficitur. Maecenas pulvinar mauris eget pharetra elementum.</li>
 </ul>
-<div class="custom-block note note-default note-background gatbsy_note"><div class="custom-block-body"><p>With <strong>multiple mode</strong> you <strong>can&#x27;t</strong> specify targets with <strong>#id</strong> <code>.class</code>.</p></div></div>
-<div class="custom-block note note-primary note-background gatbsy_note"><div class="custom-block-body"><p>With <strong>multiple mode</strong> you <strong>can&#x27;t</strong> specify targets with <strong>#id</strong> <code>.class</code>.</p></div></div>
 <script type="text/plain" class="language-markup">
   &lt;a href=&quot;#&quot; class=&quot;btn btn-default&quot;&gt;
     &lt;!-- content --&gt;
@@ -1042,67 +993,28 @@ Xt.mount.push({
     &lt;!-- content --&gt;
   &lt;/button&gt;
 </script>
-<pre><code>mkdir -p xtend-library/
-cp -r node_modules/xtend-library/dist/ xtend-library/
+<pre><code>mkdir -p xtend-ui/
+cp -r node_modules/xtend-ui/dist/ xtend-ui/
 </code></pre>
-<pre><code class="language-less">// test comment
-
-.test &gt; * {
-  @media @min-sm {
-    .test();
-  }
+<pre><code class="language-css">body {
+  background: #ff0000;
 }
 
-body {
-  background: #ff0000;
+.test &gt; * {
 }
 </code></pre>
 <pre><code class="language-jsx">const test = &#x27;test&#x27;
 </code></pre>
-<h2>Tables</h2>
-<div class="table-scroll">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th></th><th>Syntax</th><th>Example</th></tr></thead><tbody><tr><td>Class</td><td><code>.col-{number}</code></td><td><code>.col-6</code></td></tr><tr><td>Class responsive</td><td><code>.col-{number}-{breakpoint}</code></td><td><code>.col-6-sm</code></td></tr><tr><td>Mixin</td><td><code>.col({number})</code></td><td><code>.col(6)</code></td></tr><tr><td>Mixin responsive min</td><td><code>.col({number}, {breakpoint})</code></td><td><code>.col(6, sm)</code></td></tr></tbody></table>
-</div>
 <h2>Demo</h2>
 <div class="gatsby_demo">
   <div class="gatsby_demo-inline">
-    <div class="gatsby_demo_item gatsby_demo_preview" data-name="inline">
+    <div class="gatsby_demo_item toggle gatsby_demo_preview" data-name="inline">
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
         Inline
       </div>
     </div>
   </div>
-  <div class="gatsby_demo_item gatsby_demo_preview" data-name="demo vanilla" data-file="private/demos/test/demo vanilla" data-inline="vanilla/test/demo-vanilla">
+  <div class="gatsby_demo_item toggle gatsby_demo_preview" data-name="demo vanilla" data-file="private/demos/test/demo vanilla" data-inline="vanilla/test/demo-vanilla">
     <div class="gatsby_demo_text">
       test vanilla <strong>strong</strong> <code>code</code>
     </div>
@@ -1110,12 +1022,11 @@ body {
 <div>
   Vanilla
 </div>
-</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div><div class="gatsby_demo_source xt-ignore" data-lang="less">// Vanilla less
-</div><div class="gatsby_demo_source xt-ignore" data-lang="js">// Vanilla js
+</script><div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"></div><div class="gatsby_demo_source xt-ignore" data-lang="js">// Vanilla js
 </div></div>
-  <div class="gatsby_demo_item" data-iframe="iframe/test/demo-vanilla-iframe" data-name="demo vanilla frame">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/test/demo-vanilla-iframe" data-name="demo vanilla frame">
     <div class="gatsby_demo_text">
       <a href="/iframe/test/demo-vanilla-iframe">test vanilla iframe</a>
     </div>
   </div>
-</div></div></div></article><footer class="gatsby_site_article_foot"><div class="gatsby_site_article_foot_inner"><div class="gatsby_listing_group"><div class="gatsby_listing_items"><div class="row"><div class="gatsby_listing_column"><a class="card card-primary card-full card-collapse gatsby_listing_item" href="/introduction"><div class="card-design"></div><div class="card-inner"><div class="card-content"><div class="card-block card-item"><div class="card-title">Setup or other problems?</div><p>Visit the <strong>Introduction</strong> page.</p></div></div></div></a></div></div></div></div></div></footer><footer class="gatsby_site_footer"><div class="gatsby_site_footer_bottom"><div class="container full"><div class="gatsby_site_footer_inner"><div class="row gatsby_site_footer_bottom_row"><div>Xtend<!-- --> v<!-- -->0.15.50<!-- --> and demos licensed<!-- --> <a href="https://github.com/minimit/xtend-library/blob/master/LICENSE" target="_blank" rel="noreferrer">MIT</a><span class="separator separator-dash"></span> Docs licensed<!-- --> <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noreferrer">CC BY 3.0</a> </div><div class="gatsby_site_footer_bottom_right">© 2017 <span class="separator separator-dash"></span> <!-- -->2020<!-- --> <!-- -->Riccardo Caroli</div></div></div></div></div></footer></main></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/tests/markdown";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-746a985fd6ee5b3c4e40.js"],"app":["/app-41a8368cd2fdc0d675a2.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-4dfecd1f2d0e74648e38.js"],"component---src-gatsby-code-iframe-components-addons-animation-scroll-to-anchor-js":["/component---src-gatsby-code-iframe-components-addons-animation-scroll-to-anchor-js-bd2e453ca02ddcc40cd5.js"],"component---src-gatsby-code-iframe-components-addons-animation-scroll-to-anchor-nested-js":["/component---src-gatsby-code-iframe-components-addons-animation-scroll-to-anchor-nested-js-fb4fafa273b723cfc4f7.js"],"component---src-gatsby-code-iframe-components-addons-structure-google-locator-js":["/component---src-gatsby-code-iframe-components-addons-structure-google-locator-js-8841423c4952c9014219.js"],"component---src-gatsby-code-iframe-components-addons-structure-infinite-scroll-js":["/component---src-gatsby-code-iframe-components-addons-structure-infinite-scroll-js-baad61863e2ea56510a2.js"],"component---src-gatsby-code-iframe-components-addons-structure-jump-to-content-js":["/component---src-gatsby-code-iframe-components-addons-structure-jump-to-content-js-1281550e384138fc36fe.js"],"component---src-gatsby-code-iframe-components-addons-structure-sticky-footer-js":["/component---src-gatsby-code-iframe-components-addons-structure-sticky-footer-js-224f05c3e792ce873c48.js"],"component---src-gatsby-code-iframe-components-core-drop-events-methods-js":["/component---src-gatsby-code-iframe-components-core-drop-events-methods-js-87aa8f204c0908a7e836.js"],"component---src-gatsby-code-iframe-components-core-overlay-events-methods-js":["/component---src-gatsby-code-iframe-components-core-overlay-events-methods-js-b21d3f0e824b56ee34c4.js"],"component---src-gatsby-code-iframe-components-core-overlay-standalone-js":["/component---src-gatsby-code-iframe-components-core-overlay-standalone-js-6c2f58b361f34ad6a5dc.js"],"component---src-gatsby-code-iframe-components-core-toggle-events-methods-js":["/component---src-gatsby-code-iframe-components-core-toggle-events-methods-js-4359018a828bc94cd91e.js"],"component---src-gatsby-code-iframe-components-extensions-scroll-block-js":["/component---src-gatsby-code-iframe-components-extensions-scroll-block-js-40ecfdea50c224e8a7bc.js"],"component---src-gatsby-code-iframe-components-extensions-scroll-delay-js":["/component---src-gatsby-code-iframe-components-extensions-scroll-delay-js-32a33474dfa1319ceb43.js"],"component---src-gatsby-code-iframe-components-extensions-scroll-direction-js":["/component---src-gatsby-code-iframe-components-extensions-scroll-direction-js-12f3062da5174848e00c.js"],"component---src-gatsby-code-iframe-components-extensions-scroll-distance-js":["/component---src-gatsby-code-iframe-components-extensions-scroll-distance-js-01f33f1c2c021b10c4e8.js"],"component---src-gatsby-code-iframe-components-extensions-scroll-indicator-js":["/component---src-gatsby-code-iframe-components-extensions-scroll-indicator-js-bc9b5d1ccb929b2b0354.js"],"component---src-gatsby-code-iframe-components-extensions-scroll-mode-infinite-js":["/component---src-gatsby-code-iframe-components-extensions-scroll-mode-infinite-js-ed7ce7052c63e42bf97f.js"],"component---src-gatsby-code-iframe-components-extensions-scroll-mode-inside-js":["/component---src-gatsby-code-iframe-components-extensions-scroll-mode-inside-js-9c055cafd51a1b89a1df.js"],"component---src-gatsby-code-iframe-components-extensions-scroll-mode-once-js":["/component---src-gatsby-code-iframe-components-extensions-scroll-mode-once-js-445d56f90b5e98efda5d.js"],"component---src-gatsby-code-iframe-components-extensions-scroll-mode-outside-js":["/component---src-gatsby-code-iframe-components-extensions-scroll-mode-outside-js-b64a335470a02c57bf15.js"],"component---src-gatsby-code-iframe-components-extensions-scroll-mode-outside-once-js":["/component---src-gatsby-code-iframe-components-extensions-scroll-mode-outside-once-js-0c286742ec6ea8642319.js"],"component---src-gatsby-code-iframe-components-extensions-scroll-mode-responsive-js":["/component---src-gatsby-code-iframe-components-extensions-scroll-mode-responsive-js-2fbbe092252404dcbc5c.js"],"component---src-gatsby-code-iframe-components-extensions-scroll-parallax-js":["/component---src-gatsby-code-iframe-components-extensions-scroll-parallax-js-923b0d9c1e69623271fc.js"],"component---src-gatsby-code-iframe-components-extensions-slider-events-methods-js":["/component---src-gatsby-code-iframe-components-extensions-slider-events-methods-js-0d29c50b5d6c583941a9.js"],"component---src-gatsby-code-iframe-components-extensions-sticky-block-js":["/component---src-gatsby-code-iframe-components-extensions-sticky-block-js-6b8a8a9fa669cc8b59b3.js"],"component---src-gatsby-code-iframe-components-extensions-sticky-contain-bottom-js":["/component---src-gatsby-code-iframe-components-extensions-sticky-contain-bottom-js-52e7acecdeccd8699bee.js"],"component---src-gatsby-code-iframe-components-extensions-sticky-contain-top-js":["/component---src-gatsby-code-iframe-components-extensions-sticky-contain-top-js-811fa3126eb280b6c3b1.js"],"component---src-gatsby-code-iframe-components-extensions-sticky-disable-js":["/component---src-gatsby-code-iframe-components-extensions-sticky-disable-js-5f9bec44d9ae5e2f53bd.js"],"component---src-gatsby-code-iframe-components-extensions-sticky-hide-js":["/component---src-gatsby-code-iframe-components-extensions-sticky-hide-js-020bb797f91a69248011.js"],"component---src-gatsby-code-iframe-components-extensions-sticky-limit-js":["/component---src-gatsby-code-iframe-components-extensions-sticky-limit-js-7855bed37aaab68c1331.js"],"component---src-gatsby-code-iframe-components-extensions-sticky-mode-absolute-js":["/component---src-gatsby-code-iframe-components-extensions-sticky-mode-absolute-js-be2cbe67ffdc2e478f85.js"],"component---src-gatsby-code-iframe-components-extensions-sticky-mode-fixed-always-js":["/component---src-gatsby-code-iframe-components-extensions-sticky-mode-fixed-always-js-981234b4f0138cb4b86b.js"],"component---src-gatsby-code-iframe-components-extensions-sticky-mode-fixed-js":["/component---src-gatsby-code-iframe-components-extensions-sticky-mode-fixed-js-1a7e0b4d3da2825c3a36.js"],"component---src-gatsby-code-iframe-components-extensions-sticky-position-js":["/component---src-gatsby-code-iframe-components-extensions-sticky-position-js-a5cb2487e5fbbbc8aadf.js"],"component---src-gatsby-code-iframe-components-extensions-sticky-showhide-bottom-js":["/component---src-gatsby-code-iframe-components-extensions-sticky-showhide-bottom-js-fa5b5afb4fdb54488079.js"],"component---src-gatsby-code-iframe-components-extensions-sticky-showhide-hide-js":["/component---src-gatsby-code-iframe-components-extensions-sticky-showhide-hide-js-dbc6de78073d1eedc230.js"],"component---src-gatsby-code-iframe-components-extensions-sticky-showhide-top-js":["/component---src-gatsby-code-iframe-components-extensions-sticky-showhide-top-js-f14ca68c1af5adcbab35.js"],"component---src-gatsby-code-iframe-test-demo-vanilla-iframe-js":["/component---src-gatsby-code-iframe-test-demo-vanilla-iframe-js-c19a298eab27ca93c4c1.js"],"component---src-gatsby-code-iframe-themes-brands-featured-v-1-js":["/component---src-gatsby-code-iframe-themes-brands-featured-v-1-js-102ed14d3cf6d685d369.js"],"component---src-gatsby-code-iframe-themes-collapse-theme-v-1-js":["/component---src-gatsby-code-iframe-themes-collapse-theme-v-1-js-fffc8a8db9c24eb635f4.js"],"component---src-gatsby-code-iframe-themes-fashion-gallery-v-1-js":["/component---src-gatsby-code-iframe-themes-fashion-gallery-v-1-js-fb69556ca91b6f3ba2cb.js"],"component---src-gatsby-code-iframe-themes-fashion-hero-v-1-js":["/component---src-gatsby-code-iframe-themes-fashion-hero-v-1-js-8102b040ba55dd66bca6.js"],"component---src-gatsby-code-iframe-themes-fashion-hero-v-2-js":["/component---src-gatsby-code-iframe-themes-fashion-hero-v-2-js-caea8be0b8439e3e1c8c.js"],"component---src-gatsby-code-iframe-themes-fashion-listing-v-1-js":["/component---src-gatsby-code-iframe-themes-fashion-listing-v-1-js-89eae4ccd8af4845808e.js"],"component---src-gatsby-code-iframe-themes-furniture-featured-v-1-js":["/component---src-gatsby-code-iframe-themes-furniture-featured-v-1-js-1a9087bea5f984e2a8e9.js"],"component---src-gatsby-code-iframe-themes-furniture-hero-v-1-js":["/component---src-gatsby-code-iframe-themes-furniture-hero-v-1-js-01fa83563271c70c3ea3.js"],"component---src-gatsby-code-iframe-themes-furniture-listing-v-1-js":["/component---src-gatsby-code-iframe-themes-furniture-listing-v-1-js-4d26f792c33067c7b013.js"],"component---src-gatsby-code-iframe-themes-industrial-featured-v-1-js":["/component---src-gatsby-code-iframe-themes-industrial-featured-v-1-js-188db9cf227acbb56baa.js"],"component---src-gatsby-code-iframe-themes-opacity-listing-v-1-js":["/component---src-gatsby-code-iframe-themes-opacity-listing-v-1-js-fe135075ce90584fb634.js"],"component---src-gatsby-code-iframe-themes-sequential-megamenu-v-1-js":["/component---src-gatsby-code-iframe-themes-sequential-megamenu-v-1-js-126e754fb23d94cb7d13.js"],"component---src-gatsby-code-iframe-themes-slide-overlay-v-1-js":["/component---src-gatsby-code-iframe-themes-slide-overlay-v-1-js-a82669b6b5180eb8700d.js"],"component---src-gatsby-code-iframe-themes-stores-listing-v-1-js":["/component---src-gatsby-code-iframe-themes-stores-listing-v-1-js-1e8861a0843e280418fd.js"],"component---src-gatsby-code-iframe-themes-stores-listing-v-2-js":["/component---src-gatsby-code-iframe-themes-stores-listing-v-2-js-ece3384517026377f87b.js"],"component---src-gatsby-code-iframe-themes-xtend-theme-v-1-js":["/component---src-gatsby-code-iframe-themes-xtend-theme-v-1-js-bfbe753f4c4055a756db.js"],"component---src-gatsby-components-pages-404-js":["/component---src-gatsby-components-pages-404-js-112fe6c44bc96d2321e9.js"],"component---src-gatsby-components-pages-index-js":["/component---src-gatsby-components-pages-index-js-85f4c96ab8a5197fa729.js"],"component---src-gatsby-components-templates-doc-category-js":["/component---src-gatsby-components-templates-doc-category-js-a68437547fe34ca38476.js"],"component---src-gatsby-components-templates-doc-page-js":["/component---src-gatsby-components-templates-doc-page-js-d3e6e083933adad105de.js"]};/*]]>*/</script><script src="/polyfill-746a985fd6ee5b3c4e40.js" nomodule=""></script><script src="/component---src-gatsby-components-templates-doc-page-js-d3e6e083933adad105de.js" async=""></script><script src="/2318670a6823a5de6f43ce3b84bfbe5ae69688aa-6aa9f377d042fbb384a6.js" async=""></script><script src="/8bde3421076ad7fbd92fa219db935678ab2c4e72-cf28d1e76eecc1fb4691.js" async=""></script><script src="/631c75be43ee74705d86a34ff20bbca071f1c66c-b341ec5bb6c23e5fecc1.js" async=""></script><script src="/615b8327cd29e672249a18d1a8af450a8db5dbd3-067de73343fdb0abd148.js" async=""></script><script src="/styles-c2fe8482057191dca484.js" async=""></script><script src="/app-41a8368cd2fdc0d675a2.js" async=""></script><script src="/a284c5a4-66bda8868c1bdb28be07.js" async=""></script><script src="/framework-d6175fc7136da3fa9c90.js" async=""></script><script src="/webpack-runtime-e1c68c998498e82dc3e3.js" async=""></script></body></html>
+</div></div></div></article><footer class="gatsby_site_footer"><div class="gatsby_site_footer_inner"><div class="gatsby_site_article_foot"><div class="gatsby_listing_group"><div class="gatsby_listing_items"><div class="row row-space-2 lg:row-space-4 row-stretch"><div class="gatsby_listing_column"><a class="card gatsby_listing_item" href="/introduction"><div class="card-design"></div><div class="card-block card-block-md"><div class="h5">Setup or other problems?</div><p>Check out the <strong>Introductions pages</strong>.</p></div></a></div></div></div></div></div><div class="gatsby_site_footer_bottom"><div class="row row-space-2 gatsby_site_footer_bottom_row"><div>Xtend UI<!-- --> v<!-- -->0.16.0<!-- --> and demos licensed<!-- --> <a href="https://github.com/minimit/xtend-ui/blob/master/LICENSE" target="_blank" rel="noreferrer">MIT</a><span class="separator separator-dash"></span> Docs licensed<!-- --> <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noreferrer">CC BY 3.0</a> </div><div class="gatsby_site_footer_bottom_right">© 2017 <span class="separator separator-dash"></span> <!-- -->2020<!-- --> <!-- -->Riccardo Caroli</div></div></div></div></footer></main></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/tests/markdown";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-4519c126e24c4b24a62a.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-c9875e2473a7c518755f.js"],"component---src-gatsby-code-iframe-components-addons-google-locator-js":["/component---src-gatsby-code-iframe-components-addons-google-locator-js-4309f10377df24870960.js"],"component---src-gatsby-code-iframe-components-addons-infinite-scroll-js":["/component---src-gatsby-code-iframe-components-addons-infinite-scroll-js-d96aa11fcc7b97cf5a43.js"],"component---src-gatsby-code-iframe-components-addons-jump-to-content-js":["/component---src-gatsby-code-iframe-components-addons-jump-to-content-js-d09849573fbaa1da17d6.js"],"component---src-gatsby-code-iframe-components-addons-scroll-to-anchor-js":["/component---src-gatsby-code-iframe-components-addons-scroll-to-anchor-js-261a92e252bdab35fff1.js"],"component---src-gatsby-code-iframe-components-addons-sticky-footer-js":["/component---src-gatsby-code-iframe-components-addons-sticky-footer-js-d176820125148ec598f7.js"],"component---src-gatsby-code-iframe-components-core-drop-events-methods-js":["/component---src-gatsby-code-iframe-components-core-drop-events-methods-js-519869147a0e4148f3e2.js"],"component---src-gatsby-code-iframe-components-core-overlay-events-methods-js":["/component---src-gatsby-code-iframe-components-core-overlay-events-methods-js-9458edd431244d07a4cf.js"],"component---src-gatsby-code-iframe-components-core-overlay-usage-standalone-js":["/component---src-gatsby-code-iframe-components-core-overlay-usage-standalone-js-eaf1326e2f21265b58cb.js"],"component---src-gatsby-code-iframe-components-core-scroll-block-js":["/component---src-gatsby-code-iframe-components-core-scroll-block-js-7508a3e55200e60c6b34.js"],"component---src-gatsby-code-iframe-components-core-scroll-delay-js":["/component---src-gatsby-code-iframe-components-core-scroll-delay-js-ece690adad530f0b273f.js"],"component---src-gatsby-code-iframe-components-core-scroll-distance-js":["/component---src-gatsby-code-iframe-components-core-scroll-distance-js-7e4f47d9cc47111a0481.js"],"component---src-gatsby-code-iframe-components-core-scroll-indicator-js":["/component---src-gatsby-code-iframe-components-core-scroll-indicator-js-db68df2b1891998edbf7.js"],"component---src-gatsby-code-iframe-components-core-scroll-mode-infinite-js":["/component---src-gatsby-code-iframe-components-core-scroll-mode-infinite-js-332b38a032e666140b21.js"],"component---src-gatsby-code-iframe-components-core-scroll-mode-inside-js":["/component---src-gatsby-code-iframe-components-core-scroll-mode-inside-js-56a27b88d8c1fd9adeeb.js"],"component---src-gatsby-code-iframe-components-core-scroll-mode-once-js":["/component---src-gatsby-code-iframe-components-core-scroll-mode-once-js-4edf7ba1799c0932aaf3.js"],"component---src-gatsby-code-iframe-components-core-scroll-mode-outside-js":["/component---src-gatsby-code-iframe-components-core-scroll-mode-outside-js-84a7e828a44d9ca49da1.js"],"component---src-gatsby-code-iframe-components-core-scroll-mode-outside-once-js":["/component---src-gatsby-code-iframe-components-core-scroll-mode-outside-once-js-0c5058bc57258de2cf40.js"],"component---src-gatsby-code-iframe-components-core-scroll-mode-responsive-js":["/component---src-gatsby-code-iframe-components-core-scroll-mode-responsive-js-f43a9b9ba0ef852552e4.js"],"component---src-gatsby-code-iframe-components-core-slider-events-methods-js":["/component---src-gatsby-code-iframe-components-core-slider-events-methods-js-3575c2fcdaee3cbd7c16.js"],"component---src-gatsby-code-iframe-components-core-sticky-block-js":["/component---src-gatsby-code-iframe-components-core-sticky-block-js-6dae006c12f751698d6f.js"],"component---src-gatsby-code-iframe-components-core-sticky-contain-bottom-js":["/component---src-gatsby-code-iframe-components-core-sticky-contain-bottom-js-351720e429be7c1a833f.js"],"component---src-gatsby-code-iframe-components-core-sticky-contain-top-js":["/component---src-gatsby-code-iframe-components-core-sticky-contain-top-js-8a81d7ce0fad04678003.js"],"component---src-gatsby-code-iframe-components-core-sticky-disable-js":["/component---src-gatsby-code-iframe-components-core-sticky-disable-js-b2597fc058ecb5db2bf2.js"],"component---src-gatsby-code-iframe-components-core-sticky-hide-js":["/component---src-gatsby-code-iframe-components-core-sticky-hide-js-7ae1dead6ce1afe07ac0.js"],"component---src-gatsby-code-iframe-components-core-sticky-limit-js":["/component---src-gatsby-code-iframe-components-core-sticky-limit-js-29c337b7070cb9923070.js"],"component---src-gatsby-code-iframe-components-core-sticky-mode-absolute-js":["/component---src-gatsby-code-iframe-components-core-sticky-mode-absolute-js-3b9c1848d6345dd50096.js"],"component---src-gatsby-code-iframe-components-core-sticky-mode-fixed-always-js":["/component---src-gatsby-code-iframe-components-core-sticky-mode-fixed-always-js-f23a97d2502a8a7e7f89.js"],"component---src-gatsby-code-iframe-components-core-sticky-mode-fixed-js":["/component---src-gatsby-code-iframe-components-core-sticky-mode-fixed-js-3680df32f1c7e4418f96.js"],"component---src-gatsby-code-iframe-components-core-sticky-position-js":["/component---src-gatsby-code-iframe-components-core-sticky-position-js-4fbeb5db15ac70c59c08.js"],"component---src-gatsby-code-iframe-components-core-sticky-showhide-bottom-js":["/component---src-gatsby-code-iframe-components-core-sticky-showhide-bottom-js-c06ab49b4e7c3af02de1.js"],"component---src-gatsby-code-iframe-components-core-sticky-showhide-hide-js":["/component---src-gatsby-code-iframe-components-core-sticky-showhide-hide-js-271b1c8a4a29a91c8204.js"],"component---src-gatsby-code-iframe-components-core-sticky-showhide-top-js":["/component---src-gatsby-code-iframe-components-core-sticky-showhide-top-js-11528344fc1254ca8a14.js"],"component---src-gatsby-code-iframe-components-core-toggle-events-methods-js":["/component---src-gatsby-code-iframe-components-core-toggle-events-methods-js-c370e032f0c09d6a5d9c.js"],"component---src-gatsby-code-iframe-test-demo-vanilla-iframe-js":["/component---src-gatsby-code-iframe-test-demo-vanilla-iframe-js-278f520049479f9fb1ee.js"],"component---src-gatsby-code-iframe-themes-brands-featured-v-1-js":["/component---src-gatsby-code-iframe-themes-brands-featured-v-1-js-f5413c4beaa32316031d.js"],"component---src-gatsby-code-iframe-themes-collapse-theme-v-1-js":["/component---src-gatsby-code-iframe-themes-collapse-theme-v-1-js-e5823a3bbbd4a821f22e.js"],"component---src-gatsby-code-iframe-themes-fashion-gallery-v-1-js":["/component---src-gatsby-code-iframe-themes-fashion-gallery-v-1-js-96811644f10357df7e8c.js"],"component---src-gatsby-code-iframe-themes-fashion-hero-v-1-js":["/component---src-gatsby-code-iframe-themes-fashion-hero-v-1-js-ccbcddd3ee7fcae8ec72.js"],"component---src-gatsby-code-iframe-themes-fashion-hero-v-2-js":["/component---src-gatsby-code-iframe-themes-fashion-hero-v-2-js-7915218896a0e76fd755.js"],"component---src-gatsby-code-iframe-themes-fashion-listing-v-1-js":["/component---src-gatsby-code-iframe-themes-fashion-listing-v-1-js-b189bd931c1dc4a060b1.js"],"component---src-gatsby-code-iframe-themes-furniture-featured-v-1-js":["/component---src-gatsby-code-iframe-themes-furniture-featured-v-1-js-76c47c8e3845fd0ca9cc.js"],"component---src-gatsby-code-iframe-themes-furniture-hero-v-1-js":["/component---src-gatsby-code-iframe-themes-furniture-hero-v-1-js-941a2c7e0956eb3d9f7a.js"],"component---src-gatsby-code-iframe-themes-furniture-listing-v-1-js":["/component---src-gatsby-code-iframe-themes-furniture-listing-v-1-js-e27306e464da598c9d0f.js"],"component---src-gatsby-code-iframe-themes-industrial-featured-v-1-js":["/component---src-gatsby-code-iframe-themes-industrial-featured-v-1-js-37f11c0882baf38f8c66.js"],"component---src-gatsby-code-iframe-themes-opacity-listing-v-1-js":["/component---src-gatsby-code-iframe-themes-opacity-listing-v-1-js-631fee358f7e91d5ff41.js"],"component---src-gatsby-code-iframe-themes-sequential-megamenu-v-1-js":["/component---src-gatsby-code-iframe-themes-sequential-megamenu-v-1-js-4383e76364645d4252bc.js"],"component---src-gatsby-code-iframe-themes-slide-overlay-v-1-js":["/component---src-gatsby-code-iframe-themes-slide-overlay-v-1-js-9fe4e1d631b966a334bb.js"],"component---src-gatsby-code-iframe-themes-stores-listing-v-1-js":["/component---src-gatsby-code-iframe-themes-stores-listing-v-1-js-28ce4c0b354eb0557895.js"],"component---src-gatsby-code-iframe-themes-stores-listing-v-2-js":["/component---src-gatsby-code-iframe-themes-stores-listing-v-2-js-cc61d84eb673d3f2a385.js"],"component---src-gatsby-code-iframe-themes-xtend-theme-v-1-js":["/component---src-gatsby-code-iframe-themes-xtend-theme-v-1-js-32c002b174ff44e59c9c.js"],"component---src-gatsby-components-pages-404-js":["/component---src-gatsby-components-pages-404-js-24aef5d6b898181461b6.js"],"component---src-gatsby-components-templates-doc-category-js":["/component---src-gatsby-components-templates-doc-category-js-98157e298f71c15b3d4c.js"],"component---src-gatsby-components-templates-doc-page-js":["/component---src-gatsby-components-templates-doc-page-js-1ed25bd8c8d8e90ec1bc.js"]};/*]]>*/</script><script src="/component---src-gatsby-components-templates-doc-page-js-1ed25bd8c8d8e90ec1bc.js" async=""></script><script src="/2318670a6823a5de6f43ce3b84bfbe5ae69688aa-a00dbd805c5b4ce822f8.js" async=""></script><script src="/ce548cbe1bad6fd7fa2a1d8b7e90181ff4b1ff55-c880428b74ce1c34cabf.js" async=""></script><script src="/ad5ba5715777bb085364f9028b9e9ed552f53ad4-e79f04a2f86dc9e8f943.js" async=""></script><script src="/2b76600154e36604cd1e523e6a77a9d8425f1d9b-1a6d6bcb2864dd643cc9.js" async=""></script><script src="/styles-c2fe8482057191dca484.js" async=""></script><script src="/app-4519c126e24c4b24a62a.js" async=""></script><script src="/a284c5a4-49ee7b7c83966ecd1464.js" async=""></script><script src="/framework-f3f6a2bb9db0f4de88ab.js" async=""></script><script src="/webpack-runtime-18bd555efa0933199c45.js" async=""></script></body></html>
