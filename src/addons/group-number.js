@@ -27,12 +27,10 @@ Xt.mount.push({
       addEl.removeAttribute('disabled')
       removeEl.removeAttribute('disabled')
       // check min and max
-      const minAttributeAsFloat = parseFloat(input.getAttribute('min'));
-      const inputMin = isNaN(minAttributeAsFloat) ? 1 : minAttributeAsFloat;
-
-      const maxAttributeAsFloat = parseFloat(input.getAttribute('max'));
-      const inputMax = isNaN(maxAttributeAsFloat) ? Infinity : maxAttributeAsFloat;
-
+      const minAttributeAsFloat = parseFloat(input.getAttribute('min'))
+      const inputMin = isNaN(minAttributeAsFloat) ? 1 : minAttributeAsFloat
+      const maxAttributeAsFloat = parseFloat(input.getAttribute('max'))
+      const inputMax = isNaN(maxAttributeAsFloat) ? Infinity : maxAttributeAsFloat
       if (val <= inputMin) {
         val = inputMin
         removeEl.setAttribute('disabled', 'disabled')
