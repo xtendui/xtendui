@@ -1,6 +1,6 @@
 /* global google */
 import { Xt } from 'xtend-ui'
-import MarkerClusterer from '@google/markerclusterer'
+import MarkerClusterer from '@googlemaps/markerclustererplus'
 
 /**
  * GoogleLocator
