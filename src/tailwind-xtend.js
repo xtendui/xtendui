@@ -1,4 +1,3 @@
-
 // rem and em
 // https://github.com/tailwindlabs/tailwindcss-typography/blob/master/src/styles.js
 const round = num =>
@@ -7,7 +6,7 @@ const round = num =>
     .replace(/(\.[0-9]+?)0+$/, '$1')
     .replace(/\.0$/, '')
 const rem = px => `${round(px / 16)}rem`
-const em = (px, base) => `${round(px / base)}em`
+//const em = (px, base) => `${round(px / base)}em`
 
 module.exports = theme => ({
   utilities: {
@@ -866,7 +865,7 @@ module.exports = theme => ({
       },
       // form
       form: {
-        'label': {
+        label: {
           cursor: 'pointer',
         },
         'form, .form': {
@@ -945,7 +944,9 @@ module.exports = theme => ({
           backgroundRepeat: 'no-repeat',
           // styles
           paddingRight: '3em',
-          backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="none" stroke="${encodeURIComponent(theme('colors.black'))}" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 5l6 6 6-6"/></svg>')`,
+          backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="none" stroke="${encodeURIComponent(
+            theme('colors.black')
+          )}" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 5l6 6 6-6"/></svg>')`,
           backgroundSize: '1em',
           backgroundPosition: 'right 1rem center',
           '&[multiple]': {
@@ -989,7 +990,9 @@ module.exports = theme => ({
           top: '-1px',
           width: '1.5em',
           height: '1.5em',
-          backgroundImage: `url('data:image/svg+xml;utf8,<svg viewBox="0 0 16 16" fill="${encodeURIComponent(theme('colors.white'))}" xmlns="http://www.w3.org/2000/svg"><path d="M5.707 7.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L7 8.586 5.707 7.293z"/></svg>')`,
+          backgroundImage: `url('data:image/svg+xml;utf8,<svg viewBox="0 0 16 16" fill="${encodeURIComponent(
+            theme('colors.white')
+          )}" xmlns="http://www.w3.org/2000/svg"><path d="M5.707 7.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L7 8.586 5.707 7.293z"/></svg>')`,
           backgroundSize: '0',
           backgroundPosition: 'center center',
           '&:checked': {
@@ -1002,7 +1005,9 @@ module.exports = theme => ({
           top: '-1px',
           width: '1.5em',
           height: '1.5em',
-          backgroundImage: `url('data:image/svg+xml;utf8,<svg viewBox="0 0 16 16" fill="${encodeURIComponent(theme('colors.white'))}" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="3"/></svg>')`,
+          backgroundImage: `url('data:image/svg+xml;utf8,<svg viewBox="0 0 16 16" fill="${encodeURIComponent(
+            theme('colors.white')
+          )}" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="3"/></svg>')`,
           backgroundPosition: 'center center',
           backgroundSize: '0',
           '&:checked': {
@@ -1015,11 +1020,15 @@ module.exports = theme => ({
           top: '-1px',
           width: '2.5em',
           height: '1.5em',
-          backgroundImage: `url('data:image/svg+xml;utf8,<svg viewBox="-4 -4 8 8" fill="${encodeURIComponent(theme('colors.gray.600'))}" xmlns="http://www.w3.org/2000/svg"><circle  r="3"/></svg>')`,
+          backgroundImage: `url('data:image/svg+xml;utf8,<svg viewBox="-4 -4 8 8" fill="${encodeURIComponent(
+            theme('colors.gray.600')
+          )}" xmlns="http://www.w3.org/2000/svg"><circle  r="3"/></svg>')`,
           backgroundSize: 'contain',
           backgroundPosition: 'left center',
           '&:checked': {
-            backgroundImage: `url('data:image/svg+xml;utf8,<svg viewBox="-4 -4 8 8" fill="${encodeURIComponent(theme('colors.white'))}" xmlns="http://www.w3.org/2000/svg"><circle  r="3"/></svg>')`,
+            backgroundImage: `url('data:image/svg+xml;utf8,<svg viewBox="-4 -4 8 8" fill="${encodeURIComponent(
+              theme('colors.white')
+            )}" xmlns="http://www.w3.org/2000/svg"><circle  r="3"/></svg>')`,
             backgroundPosition: 'right center',
             backgroundColor: 'currentColor',
             borderColor: 'currentColor',
@@ -1081,7 +1090,7 @@ module.exports = theme => ({
           bottom: '0',
           right: '0',
           margin: 'auto',
-          'span': {
+          span: {
             position: 'absolute',
             top: '0',
             left: '0',
@@ -1103,8 +1112,8 @@ module.exports = theme => ({
             width: '1em',
             height: '1em',
           },
-          'svg': {
-            'circle': {
+          svg: {
+            circle: {
               fill: 'none',
               strokeWidth: '30',
               transformBox: 'border-box',
@@ -1116,7 +1125,7 @@ module.exports = theme => ({
             '&:nth-child(1)': {
               position: 'relative',
               zIndex: theme('zIndex.active'),
-              'circle': {
+              circle: {
                 strokeDashoffset: '628',
                 transform: 'rotateY(0deg) rotateZ(-90deg)',
               },
@@ -1125,7 +1134,7 @@ module.exports = theme => ({
               position: 'absolute',
               top: '0',
               left: '0',
-              'circle': {
+              circle: {
                 strokeDashoffset: '0',
               },
             },
@@ -1134,7 +1143,7 @@ module.exports = theme => ({
         '.loader-x': {
           // setup
           '.filler': {
-            'span': {
+            span: {
               width: '100%',
               height: '100%',
             },
@@ -1147,7 +1156,7 @@ module.exports = theme => ({
         '.loader-y': {
           // setup
           '.filler': {
-            'span': {
+            span: {
               width: '100%',
               height: '100%',
             },
@@ -1161,7 +1170,7 @@ module.exports = theme => ({
           // setup
           '.filler': {
             bottom: 'auto',
-            'span': {
+            span: {
               top: '0',
             },
           },
@@ -1170,7 +1179,7 @@ module.exports = theme => ({
           // setup
           '.filler': {
             top: 'auto',
-            'span': {
+            span: {
               bottom: '0',
             },
           },
@@ -1179,7 +1188,7 @@ module.exports = theme => ({
           // setup
           '.filler': {
             right: 'auto',
-            'span': {
+            span: {
               left: '0',
             },
           },
@@ -1188,7 +1197,7 @@ module.exports = theme => ({
           // setup
           '.filler': {
             left: 'auto',
-            'span': {
+            span: {
               right: '0',
             },
           },
@@ -1230,9 +1239,9 @@ module.exports = theme => ({
         },
         '.spinner-animated': {
           // animation
-          'svg': {
+          svg: {
             '&:nth-child(1)': {
-              'circle': {
+              circle: {
                 animation: 'anim-spinner 1500ms infinite', // see node_modules/xtend-ui/src/tailwind-theme.js
               },
             },
@@ -1399,7 +1408,8 @@ module.exports = theme => ({
           // setup
           position: 'relative',
           overflow: 'hidden',
-          '&:not(.xt-slider)': { // @FIX page load height without .active slides
+          '&:not(.xt-slider)': {
+            // @FIX page load height without .active slides
             '.slide': {
               '&:first-child': {
                 display: 'block !important',
@@ -1514,7 +1524,7 @@ module.exports = theme => ({
               display: 'block',
             },
             '.hide-sticky': {
-              display:' none',
+              display: 'none',
             },
           },
         },
