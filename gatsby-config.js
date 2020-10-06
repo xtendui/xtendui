@@ -4,18 +4,20 @@
 
 const fs = require('fs')
 const path = require('path')
-const version = JSON.parse(fs.readFileSync('package.json').toString()).version
+const pack = JSON.parse(fs.readFileSync('package.json').toString())
+const version = pack.version
+const description = pack.description
 
 module.exports = {
   siteMetadata: {
     title: 'Xtend UI',
-    description: 'Powerful frontend library with Tailwind components and vanilla Javascript',
+    description: description,
     author: 'Riccardo Caroli',
     version: version,
-    npm: 'https://www.npmjs.com/package/xtend-library',
-    github: 'https://github.com/minimit/xtend-library',
+    npm: 'https://www.npmjs.com/package/xtend-ui',
+    github: 'https://github.com/minimit/xtend-ui',
     twitter: 'https://twitter.com/beaver82minimit',
-    download: 'https://github.com/minimit/xtend-library/releases',
+    download: 'https://github.com/minimit/xtend-ui/releases',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -46,8 +48,8 @@ module.exports = {
         aliases: {
           assets: './src/gatsby/assets',
           components: './src/gatsby/components',
-          // resolve xtend-library import js and css
-          'xtend-library': path.resolve(__dirname, './'),
+          // resolve xtend-ui import js and css
+          'xtend-ui': path.resolve(__dirname, './'),
         },
       },
     },

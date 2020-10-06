@@ -62,7 +62,7 @@ class Layout extends React.Component {
                       children
                     ) : (
                       <main className="gatsby_site_article_inner" id="gatsby_open-full-inner">
-                        <DocHead page={page} />
+                        {page ? <DocHead page={page} /> : null}
                         <article className="gatsby_site_article_content">
                           <div className="gatsby_site_article_content_inner">{children}</div>
                         </article>

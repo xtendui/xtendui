@@ -1,5 +1,5 @@
-import { Xt } from 'xtend-library'
-import 'xtend-library/src/core/slider'
+import { Xt } from 'xtend-ui'
+import 'xtend-ui/src/core/slider'
 import gsap from 'gsap'
 
 /**

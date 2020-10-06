@@ -1,4 +1,3 @@
-
 const spinner = require('components/snippets/spinner').default
 const btnDefault = require('components/snippets/classes/btn-default').default
 const cardSlide = require('components/snippets/classes/card-slide').default

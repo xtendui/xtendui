@@ -1,4 +1,4 @@
-import { Xt } from 'xtend-library'
+import { Xt } from 'xtend-ui'
 const btnDefault = require('components/snippets/classes/btn-default').default
 const cardToggle = require('components/snippets/classes/card-toggle').default
 

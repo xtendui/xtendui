@@ -79,13 +79,7 @@ class DocSidebar extends React.Component {
                 <Link
                   to="/themes"
                   className={`btn gatsby_btn-site_header_link ${
-                    page && page.post
-                      ? markdownSlug(page.post) === '/' + 'themes'
-                        ? 'active'
-                        : page.post.frontmatter.type === 'Themes'
-                        ? 'current'
-                        : ''
-                      : ''
+                    page && page.post ? (markdownSlug(page.post) === '/' + 'themes' ? 'active' : page.post.frontmatter.type === 'Themes' ? 'current' : '') : ''
                   }`}
                 >
                   <span>Themes</span>
@@ -158,8 +152,7 @@ class DocSidebar extends React.Component {
                                     </div>
                                   </div>
                                 )}
-                                {post.frontmatter.parent === page.post.frontmatter.parent &&
-                                post.frontmatter.category === page.post.frontmatter.category ? (
+                                {post.frontmatter.parent === page.post.frontmatter.parent && post.frontmatter.category === page.post.frontmatter.category ? (
                                   <div className="gatsby_site_header_adiacent active">
                                     <div className="gatsby_site_header_item">
                                       {page.postsAdiacent.posts.map(({ post: adiacent }, i) =>

@@ -13,7 +13,7 @@ description: "Content animation when you scroll the page, fade in elements, para
 Follow the [javascript installation](/introduction/getting-started/setup#javascript-installation) instructions and **import the component javascript** file.
 
 ```jsx
-import 'xtend-library/src/core/scroll'
+import 'xtend-ui/src/core/scroll'
 ```
 
 ## Usage

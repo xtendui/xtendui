@@ -1,6 +1,6 @@
 import Prism from 'prismjs'
 import ClipboardJS from 'clipboard'
-import { Xt } from 'xtend-library'
+import { Xt } from 'xtend-ui'
 import kebabCase from 'lodash.kebabcase'
 
 require('prismjs/plugins/unescaped-markup/prism-unescaped-markup')
@@ -136,73 +136,76 @@ const populateBlock = () => {
     Prism.highlightElement(el)
   }
   // overlay fullscreen
-  for (const el of document.querySelectorAll('[data-gatsby-listing-toggle]')) {
-    el.addEventListener('click', e => {
-      e.preventDefault()
-      location.hash = el.nextSibling.querySelector('.gatsby_demo_item ').getAttribute('id')
-      cancelAnimationFrame(Xt.dataStorage.get(document, 'gatsby_open-full-raf'))
-    })
-  }
-  document.querySelector('#gatsby_open-full').addEventListener('off.xt', e => {
-    if (e.target === document.querySelector('#gatsby_open-full')) {
-      const content = document.querySelector('#gatsby_open-full-content')
-      // scrollToItem
-      scrollToItem()
-      // iframe
-      const container = content.querySelector('.gatsby_demo')
-      if (container.dataset.isFullscreenOnly) {
-        // populate iframe
-        for (const item of container.querySelectorAll('.gatsby_demo_item.active')) {
-          if (item.getAttribute('data-iframe-fullscreen')) {
-            item.classList.remove('loaded')
-            item.dispatchEvent(new CustomEvent('offdone.xt'))
+  const full = document.querySelector('#gatsby_open-full')
+  if (full) {
+    for (const el of document.querySelectorAll('[data-gatsby-listing-toggle]')) {
+      el.addEventListener('click', e => {
+        e.preventDefault()
+        location.hash = el.nextSibling.querySelector('.gatsby_demo_item ').getAttribute('id')
+        cancelAnimationFrame(Xt.dataStorage.get(document, 'gatsby_open-full-raf'))
+      })
+    }
+    full.addEventListener('off.xt', e => {
+      if (e.target === full) {
+        const content = document.querySelector('#gatsby_open-full-content')
+        // scrollToItem
+        scrollToItem()
+        // iframe
+        const container = content.querySelector('.gatsby_demo')
+        if (container.dataset.isFullscreenOnly) {
+          // populate iframe
+          for (const item of container.querySelectorAll('.gatsby_demo_item.active')) {
+            if (item.getAttribute('data-iframe-fullscreen')) {
+              item.classList.remove('loaded')
+              item.dispatchEvent(new CustomEvent('offdone.xt'))
+            }
+          }
+          // populate source
+          const sourceTo = content.querySelector('.gatsby_demo_source_populate')
+          if (sourceTo) {
+            sourceTo.innerHTML = ''
           }
         }
-        // populate source
-        const sourceTo = content.querySelector('.gatsby_demo_source_populate')
-        if (sourceTo) {
-          sourceTo.innerHTML = ''
+        // btnOpenFull
+        for (const btn of document.querySelectorAll('.btn-open-full.active')) {
+          btn.classList.remove('active')
         }
+        // toggles
+        const listingToggles = document.querySelectorAll('[data-gatsby-listing-toggle]')
+        for (const el of listingToggles) {
+          el.classList.remove('active')
+        }
+        // move code block
+        const appendOrigin = document.querySelector('[data-xt-origin="gatsby_open-full-content"]')
+        const moving = content.childNodes[0]
+        moving.classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
+        appendOrigin.before(moving)
+        // @FIX demo fullscreen
+        const current = appendOrigin.previousSibling.querySelector('.gatsby_demo_item.active')
+        // triggering e.detail.container
+        dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: current } }))
+        appendOrigin.remove()
+        // set hash
+        cancelAnimationFrame(Xt.dataStorage.get(document, 'gatsby_open-full-raf'))
+        Xt.dataStorage.set(
+          document,
+          'gatsby_open-full-raf',
+          requestAnimationFrame(() => {
+            // no location.hash or page scroll to top
+            history.pushState({}, '', '#')
+          })
+        )
       }
-      // btnOpenFull
-      for (const btn of document.querySelectorAll('.btn-open-full.active')) {
-        btn.classList.remove('active')
-      }
-      // toggles
-      const listingToggles = document.querySelectorAll('[data-gatsby-listing-toggle]')
-      for (const el of listingToggles) {
-        el.classList.remove('active')
-      }
-      // move code block
-      const appendOrigin = document.querySelector('[data-xt-origin="gatsby_open-full-content"]')
-      const moving = content.childNodes[0]
-      moving.classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
-      appendOrigin.before(moving)
+    })
+    // trigger fullscreen or change tabs
+    full.addEventListener('on.xt', () => {
       // @FIX demo fullscreen
-      const current = appendOrigin.previousSibling.querySelector('.gatsby_demo_item.active')
+      const content = document.querySelector('#gatsby_open-full-content')
+      const current = content.querySelector('.gatsby_demo_item.active')
       // triggering e.detail.container
       dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: current } }))
-      appendOrigin.remove()
-      // set hash
-      cancelAnimationFrame(Xt.dataStorage.get(document, 'gatsby_open-full-raf'))
-      Xt.dataStorage.set(
-        document,
-        'gatsby_open-full-raf',
-        requestAnimationFrame(() => {
-          // no location.hash or page scroll to top
-          history.pushState({}, '', '#')
-        })
-      )
-    }
-  })
-  // trigger fullscreen or change tabs
-  document.querySelector('#gatsby_open-full').addEventListener('on.xt', () => {
-    // @FIX demo fullscreen
-    const content = document.querySelector('#gatsby_open-full-content')
-    const current = content.querySelector('.gatsby_demo_item.active')
-    // triggering e.detail.container
-    dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: current } }))
-  })
+    })
+  }
 }
 
 /**

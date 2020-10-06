@@ -1,5 +1,5 @@
-import { Xt } from 'xtend-library'
-import 'xtend-library/src/addons/scroll-to-anchor'
+import { Xt } from 'xtend-ui'
+import 'xtend-ui/src/addons/scroll-to-anchor'
 import gsap from 'gsap'
 import 'gsap/ScrollToPlugin'
 
@@ -13,11 +13,7 @@ Xt.mount.push({
     // init
 
     let self = new Xt.ScrollToAnchor(object, {
-      scrollElements: [
-        document.scrollingElement,
-        object.querySelector('.demo--scroll-to-anchor'),
-        object.querySelector('#demo--overlay-scroll-to-anchor'),
-      ],
+      scrollElements: [document.scrollingElement, object.querySelector('.demo--scroll-to-anchor'), object.querySelector('#demo--overlay-scroll-to-anchor')],
       scrollSpace: (self, scrollingElement) => {
         let scrollSpace = 0
         if (scrollingElement === document.scrollingElement) {
