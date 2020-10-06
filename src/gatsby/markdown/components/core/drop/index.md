@@ -13,7 +13,7 @@ description: "Highly customizable dropdowns that can contain anything you want."
 Follow the [javascript installation](/introduction/getting-started/setup#javascript-installation) instructions and **import the component javascript** file.
 
 ```jsx
-import 'xtend-library/src/core/drop'
+import 'xtend-ui/src/core/drop'
 ```
 
 #### Css
@@ -22,8 +22,8 @@ Follow the [css installation](/introduction/getting-started/setup#css-installati
 
 ```jsx
 module.exports = {
-  theme: require('xtend-library/src/tailwind-theme')({
-    // xtend utilities and components in node_modules/xtend-library/src/tailwind-xtend.js
+  theme: require('xtend-ui/src/tailwind-theme')({
+    // xtend utilities and components in node_modules/xtend-ui/src/tailwind-xtend.js
     xtend: theme => ({
       utilities: {
         core: {
@@ -44,7 +44,7 @@ module.exports = {
 }
 ```
 
-To **see the default values** see the source code of `node_modules/xtend-library/src/tailwind-xtend.js`.
+To **see the default values** see the source code of `node_modules/xtend-ui/src/tailwind-xtend.js`.
 
 ## Usage
 

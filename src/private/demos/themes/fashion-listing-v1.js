@@ -1,4 +1,4 @@
-import { Xt } from 'xtend-library'
+import { Xt } from 'xtend-ui'
 import gsap from 'gsap'
 
 /**

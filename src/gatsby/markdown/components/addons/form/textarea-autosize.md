@@ -13,7 +13,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 Follow the [javascript installation](/introduction/getting-started/setup#javascript-installation) instructions and **import the component javascript** file.
 
 ```jsx
-import 'xtend-library/src/addons/textarea-autosize'
+import 'xtend-ui/src/addons/textarea-autosize'
 ```
 
 ## Usage

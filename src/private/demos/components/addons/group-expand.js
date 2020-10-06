@@ -1,1 +1,1 @@
-import 'xtend-library/src/addons/group-expand'
+import 'xtend-ui/src/addons/group-expand'

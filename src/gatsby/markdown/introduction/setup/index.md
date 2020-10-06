@@ -59,7 +59,7 @@ Then you can use css with tailwind.
 Install **xtend**.
 
 ```Shell
-npm install xtend-library --save
+npm install xtend-ui --save
 ```
 
 Then add **xtend** plugins and variables inside `tailwind.config.js`, with this special format that merges your configuration with xtend configuration.
@@ -67,16 +67,16 @@ Then add **xtend** plugins and variables inside `tailwind.config.js`, with this 
 ```jsx
 module.exports = {
   purge: [],
-  theme: require('xtend-library/src/tailwind-theme')({
+  theme: require('xtend-ui/src/tailwind-theme')({
     // add here your theme settings
     extend: {
       // add here your theme extend settings
     },
   }),
-  variants: require('xtend-library/src/tailwind-variants')({
+  variants: require('xtend-ui/src/tailwind-variants')({
     // add here your variants
   }),
-  plugins: [require('xtend-library/src/tailwind-plugin')],
+  plugins: [require('xtend-ui/src/tailwind-plugin')],
   experimental: {
     applyComplexClasses: true,
     extendedSpacingScale: true,
@@ -118,7 +118,7 @@ module.exports = {
       {
         alias: {
           // if you want to fork javascript file add a local path.resolve as first in array
-          'xtend-library': [path.resolve(__dirname, './node_modules/xtend-library')],
+          'xtend-ui': [path.resolve(__dirname, './node_modules/xtend-ui')],
         },
       },
     ],
@@ -148,20 +148,20 @@ Opera >= 25
 Install **xtend**.
 
 ```Shell
-npm install xtend-library --save
+npm install xtend-ui --save
 ```
 
 Then import the **xtend main file**.
 
 ```jsx
-import { Xt } from 'xtend-library'
+import { Xt } from 'xtend-ui'
 ```
 
 Then you can import the **components you need** as described in the docs.
 
 ```jsx
-import 'xtend-library/src/core/toggle'
-import 'xtend-library/src/core/slider'
+import 'xtend-ui/src/core/toggle'
+import 'xtend-ui/src/core/slider'
 ```
 
 #### Animations
@@ -231,8 +231,8 @@ To **customize the theme** use [tailwind theme configuration](https://tailwindcs
 
 ```jsx
 module.exports = {
-  theme: require('xtend-library/src/tailwind-theme')({
-    // extend theme in node_modules/xtend-library/src/tailwind-theme.js
+  theme: require('xtend-ui/src/tailwind-theme')({
+    // extend theme in node_modules/xtend-ui/src/tailwind-theme.js
     extend: {
       colors: {
         accent: {
@@ -252,14 +252,14 @@ module.exports = {
 }
 ```
 
-To **see the xtend theme options** see the source code of `node_modules/xtend-library/src/tailwind-theme.js`.
+To **see the xtend theme options** see the source code of `node_modules/xtend-ui/src/tailwind-theme.js`.
 
 To **customize the utilities and components** add your overrides under the **xtend key** in the theme section of your `tailwind.config.js` file, with this special format that merges your configuration with xtend configuration..
 
 ```jsx
 module.exports = {
-  theme: require('xtend-library/src/tailwind-theme')({
-    // xtend utilities and components in node_modules/xtend-library/src/tailwind-xtend.js
+  theme: require('xtend-ui/src/tailwind-theme')({
+    // xtend utilities and components in node_modules/xtend-ui/src/tailwind-xtend.js
     xtend: theme => ({
       utilities: {
         core: {
@@ -300,7 +300,7 @@ module.exports = {
 }
 ```
 
-To **see the default values** see the source code of `node_modules/xtend-library/src/tailwind-xtend.js`.
+To **see the default values** see the source code of `node_modules/xtend-ui/src/tailwind-xtend.js`.
 
 ## Browser support
 
@@ -317,5 +317,5 @@ We use [gatsby](https://www.npmjs.com/package/gatsby) to serve the docs:
 
 ## Copyright
 
-Licensed under [MIT license](https://github.com/minimit/xtend-library/blob/master/LICENSE).
-Docs licensed under [CC BY 3.0](https://github.com/minimit/xtend-library/blob/master/LICENSE-DOCS).
+Licensed under [MIT license](https://github.com/minimit/xtend-ui/blob/master/LICENSE).
+Docs licensed under [CC BY 3.0](https://github.com/minimit/xtend-ui/blob/master/LICENSE-DOCS).

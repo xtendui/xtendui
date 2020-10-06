@@ -1,5 +1,5 @@
-import { Xt } from 'xtend-library'
-import 'xtend-library/src/core/drop'
+import { Xt } from 'xtend-ui'
+import 'xtend-ui/src/core/drop'
 import gsap from 'gsap'
 
 Xt.mount.push({

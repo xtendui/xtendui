@@ -1,5 +1,5 @@
-import { Xt } from 'xtend-library'
-import 'xtend-library/src/addons/ripple'
+import { Xt } from 'xtend-ui'
+import 'xtend-ui/src/addons/ripple'
 import gsap from 'gsap'
 
 Xt.mount.push({

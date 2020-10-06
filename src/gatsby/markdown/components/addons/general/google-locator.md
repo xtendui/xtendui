@@ -13,7 +13,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 Follow the [javascript installation](/introduction/getting-started/setup#javascript-installation) instructions and **import the component javascript** file.
 
 ```jsx
-import 'xtend-library/src/addons/google-locator'
+import 'xtend-ui/src/addons/google-locator'
 ```
 
 Install also `@google/markerclusterer`.
@@ -36,7 +36,7 @@ Use this code to create a **google locator**.
 
 ## Options
 
-For advanced options see javascript file source code `xtend-library/src/addons/google-locator.js`.
+For advanced options see javascript file source code `xtend-ui/src/addons/google-locator.js`.
 
 ## Listen
 

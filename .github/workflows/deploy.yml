@@ -42,7 +42,7 @@ jobs:
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
-        ACCESS_TOKEN: ${{ secrets.github_pages_github_token }}
+        ACCESS_TOKEN: ${{ secrets.semantic_release_github_token }}
         BRANCH: gh-pages
         FOLDER: public
         GIT_CONFIG_NAME: minimit

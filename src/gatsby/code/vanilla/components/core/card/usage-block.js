@@ -1,5 +1,4 @@
 import path from 'path'
-const cardDefault = require('components/snippets/classes/card-default').default
 const cardDefaultBlock = require('components/snippets/classes/card-default-block').default
 
 const filename = __filename.replace(/\\/g, '/')

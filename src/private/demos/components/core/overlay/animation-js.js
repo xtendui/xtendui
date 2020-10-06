@@ -1,5 +1,5 @@
-import { Xt } from 'xtend-library'
-import 'xtend-library/src/core/overlay'
+import { Xt } from 'xtend-ui'
+import 'xtend-ui/src/core/overlay'
 import gsap from 'gsap'
 
 Xt.mount.push({
