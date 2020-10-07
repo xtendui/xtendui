@@ -1,8 +1,8 @@
 import 'core-js'
 import { Xt } from 'xtend-ui'
-import 'xtend-ui/dist/xtend-core'
-import 'xtend-ui/dist/xtend-addons'
-import 'xtend-ui/dist/xtend-demos'
+import 'xtend-ui/build/xtend-core'
+import 'xtend-ui/build/xtend-addons'
+import 'xtend-ui/build/xtend-demos'
 
 /**
  * gsap setup
