@@ -27,7 +27,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Xtend Library',
+        name: 'xtend-ui',
         short_name: 'Xtend',
         start_url: '/',
         background_color: '#0078ff',
