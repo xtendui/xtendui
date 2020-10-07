@@ -3,6 +3,7 @@ import { Xt } from 'xtend-ui'
 /**
  * Radio change event on same name radios
  */
+
 Xt.mount.push({
   matches: 'input[type="radio"]',
   mount: object => {
@@ -27,6 +28,7 @@ Xt.mount.push({
 /**
  * checks labels .active
  */
+
 Xt.mount.push({
   matches: 'label input[type="checkbox"], label input[type="radio"]',
   mount: object => {
@@ -52,6 +54,7 @@ Xt.mount.push({
 /**
  * Validation
  */
+
 Xt.mount.push({
   matches: 'form:not([novalidate])',
   mount: object => {

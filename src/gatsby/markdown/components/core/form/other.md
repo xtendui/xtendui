@@ -89,6 +89,7 @@ Use **component classes** to style validation.
 | Component                  | `form[novalidate]`                     | `NOT POSSIBLE`                | Do not validate form            |
 | Component                  | `.form-valid`                     | `form-valid`                | Validation valid class            |
 | Component                  | `.form-invalid`                     | `form-invalid`                | Validation invalid class            |
+| Component                  | `.form-label-required`                     | `form-label-required`                | Label required with asterisk            |
 
 </div>
 

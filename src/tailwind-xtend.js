@@ -918,6 +918,13 @@ module.exports = theme => ({
           letterSpacing: theme('letterSpacing.wider'),
           textTransform: 'uppercase',
         },
+        '.form-label-required': {
+          // styles
+          '&:after': {
+            content: '"*"',
+            marginLeft: theme('spacing.1'),
+          },
+        },
         '.form-item': {
           // setup
           display: 'block', // @FIX select and textarea space below

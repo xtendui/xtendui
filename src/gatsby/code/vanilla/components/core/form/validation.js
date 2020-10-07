@@ -18,49 +18,49 @@ demo.htmlSource = `
   <div class="row row-space-x-4 row-space-y-3">
 
     <div class="w-full">
-      <label class="form-label mb-4 ${labelDefault()}">
+      <label class="form-label mb-4 ${labelDefault()} form-label-required">
         Custom constrain
       </label>
       <input type="text" class="form-item ${inputDefault()} demo--custom-constrain" placeholder="Custom constrain" required>
     </div>
 
     <div class="w-full">
-      <label class="form-label mb-4 ${labelDefault()}">
+      <label class="form-label mb-4 ${labelDefault()} form-label-required">
         Email
       </label>
       <input type="email" class="form-item ${inputDefault()} " placeholder="Email" required>
     </div>
 
     <div class="w-full">
-      <label class="form-label mb-4 ${labelDefault()}">
+      <label class="form-label mb-4 ${labelDefault()} form-label-required">
         Number
       </label>
       <input type="number" class="form-item ${inputDefault()} " placeholder="Number" required min="1" max="10">
     </div>
 
     <div class="w-full">
-      <label class="form-label mb-4 ${labelDefault()}">
+      <label class="form-label mb-4 ${labelDefault()} form-label-required">
         Letters
       </label>
       <input type="text" class="form-item ${inputDefault()} " placeholder="Letter" required pattern="[A-Za-z]+">
     </div>
 
     <div class="w-full">
-      <label class="form-label mb-4 ${labelDefault()}">
+      <label class="form-label mb-4 ${labelDefault()} form-label-required">
         File
       </label>
       <input type="file" class="form-item ${inputDefault()}" required/>
     </div>
 
     <div class="w-full">
-      <label class="form-label mb-4 ${labelDefault()}">
+      <label class="form-label mb-4 ${labelDefault()} form-label-required">
         Textarea
       </label>
       <textarea class="form-item ${inputDefault()} h-24 resize-vertical duration-150" placeholder="Textarea" required></textarea>
     </div>
 
     <div class="w-full">
-      <label class="form-label mb-4 ${labelDefault()}">
+      <label class="form-label mb-4 ${labelDefault()} form-label-required">
         Select
       </label>
       <select class="form-item form-select ${inputDefault()}" required>
@@ -72,7 +72,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <label class="form-label mb-4 ${labelDefault()}">
+      <label class="form-label mb-4 ${labelDefault()} form-label-required">
         Select multiple
       </label>
       <select class="form-item form-select ${inputDefault()}" multiple required>
@@ -84,7 +84,7 @@ demo.htmlSource = `
 
     <div class="w-full">
 
-      <label class="form-label mb-4 ${labelDefault()}">
+      <label class="form-label mb-4 ${labelDefault()} form-label-required">
         Checkbox
       </label>
 
@@ -110,7 +110,7 @@ demo.htmlSource = `
 
     <div class="w-full">
 
-      <label class="form-label mb-4 ${labelDefault()}">
+      <label class="form-label mb-4 ${labelDefault()} form-label-required">
         Radio
       </label>
 
@@ -136,7 +136,7 @@ demo.htmlSource = `
 
     <div class="w-full">
 
-      <label class="form-label mb-4 ${labelDefault()}">
+      <label class="form-label mb-4 ${labelDefault()} form-label-required">
         Switch
       </label>
 
