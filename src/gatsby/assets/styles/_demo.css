@@ -83,9 +83,6 @@ pre {
   }
   @apply border-3 border-gray-200;
   transition: border-color theme('transitionDuration.500') theme('transitionTimingFunction.out');
-  .gatsby_demo_tabs {
-    overflow: hidden;
-  }
   #gatsby_open-full & {
     border: 0 !important;
     .gatsby_demo_code_body,
@@ -266,7 +263,7 @@ pre {
     @apply text-inverse rounded-md border-accent-500 bg-accent-500 hover:text-opacity-75 hover:border-accent-600 hover:bg-accent-600;
     top: 0;
     right: 0;
-    padding: 12px;
+    padding: 14px;
     border-radius: 0;
     font-size: 15px;
   }
