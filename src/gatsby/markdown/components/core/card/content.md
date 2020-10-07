@@ -114,13 +114,14 @@ Use **tailwind classes** to style borders for separation.
 
 ## Overflow
 
-Use **tailwind classes** to overflow divs, you can style it with `overflow-sub`.
+Use **tailwind classes** to overflow divs. Use **component classes** to style overflow.
 
 <div class="table-scroll">
 
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.overflow-sub`       | `overflow-sub`                | Overflow styles           |
+|               | Syntax                          | Mixin               | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Component                  | `.overflow-main`                     | `overflow-main`                | Overflow scrollbar style            |
+| Component                  | `.overflow-sub`                     | `overflow-sub`                | Overflow scrollbar style small version            |
 
 </div>
 

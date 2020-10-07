@@ -41,6 +41,7 @@ Use **component classes** for general purpose.
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Component                  | `.overflow-main`                     | `overflow-main`                | Overflow scrollbar style            |
 | Component                  | `.overflow-sub`                     | `overflow-sub`                | Overflow scrollbar style small version            |
+| Component                  | `[readonly], [disabled], .disabled`                     | `disabled`                | Disabled styles            |
 | Component                  | `.design-setup`                     | `design-setup`                | Apply design setup styles            |
 
 </div>

@@ -6,6 +6,23 @@ title: "Other"
 date: "2005-10-10"
 ---
 
+## Disabled
+
+Use **component classes** to style disabled.
+
+<div class="table-scroll">
+
+|               | Syntax                          | Mixin               | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Component                  | `[readonly], [disabled], .disabled`                     | `disabled`                | Disabled styles            |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/core/form/disabled">
+  </demovanilla>
+</demo>
+
 ## Fieldset Legend and Note
 
 Use **component classes** to create `fieldset` and `legend`.

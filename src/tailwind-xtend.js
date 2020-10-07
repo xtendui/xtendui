@@ -424,13 +424,13 @@ module.exports = theme => ({
             },
           },
         },
-        '[disabled], .disabled': {
+        '[readonly], [disabled], .disabled': {
           // setup
           cursor: 'not-allowed',
           pointerEvents: 'none',
           // styles
-          // when not .active also graphic changes
           '&:not(.active)': {
+            // when not .active
             opacity: '.75',
           },
         },
