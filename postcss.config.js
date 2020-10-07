@@ -2,7 +2,6 @@ const path = require('path')
 const fs = require('fs')
 
 module.exports = {
-  map: true,
   plugins: [
     require(`postcss-import`)({
       // resolve xtend-ui import css

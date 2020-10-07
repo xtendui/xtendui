@@ -20,6 +20,8 @@
   },
   "files": [
     "dist/*.min.*",
+    "src/*.*",
+    "!src/html.js",
     "src/addons/*.*",
     "src/core/*.*"
   ],
