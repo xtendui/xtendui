@@ -13,10 +13,16 @@
     "vanilla",
     "tailwind"
   ],
-  "main": "src/xt.js",
+  "main": "dist/xtend.min.js",
+  "module": "src/xt.js",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
+  "files": [
+    "dist/*.min.*",
+    "src/addons/*.*",
+    "src/core/*.*"
+  ],
   "scripts": {
     "webpack": "webpack --progress --colors",
     "build": "gatsby clean && gatsby build",
