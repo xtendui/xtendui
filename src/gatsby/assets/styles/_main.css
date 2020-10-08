@@ -59,10 +59,6 @@ body {
   @apply py-5;
 }
 
-.gatsby_site_footer_bottom {
-  @apply pt-4;
-}
-
 /* container */
 
 .gatsby_site_article_hero_inner, .gatsby_site_article_content, .gatsby_site_footer_inner {
