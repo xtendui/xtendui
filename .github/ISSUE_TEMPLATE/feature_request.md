@@ -4,6 +4,6 @@ about: Request new core or addons features.
 labels: "type: feature"
 ---
 
-## Suggestion
+## Feature
 
 <!-- Describe the feature -->
