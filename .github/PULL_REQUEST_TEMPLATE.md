@@ -1,9 +1,5 @@
 <!--
-
-Make a better world a pull request at time
-
-Ask first before starting work on any significant new features. There's a issue template for that "Feature or Pull Request".
-
+Make a better world one commit at time!
+Please make sure to read the Pull Request Guidelines:
 https://github.com/minimit/xtend-ui/blob/master/.github/CONTRIBUTING.md
-
 -->
