@@ -62,7 +62,7 @@ module.exports = function (custom = {}) {
         last: '1000',
       },
       inset: {
-        '100': '100%',
+        100: '100%',
       },
       transitionTimingFunction: {
         in: 'cubic-bezier(.25,.46,.45,.94)', // outQuad
