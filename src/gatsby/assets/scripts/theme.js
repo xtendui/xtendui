@@ -242,7 +242,7 @@ const makeDocument = () => {
     el.classList.add('gatsby_make-anchor')
     // wrapInner
     const link = Xt.createElement('<a href="#' + id + '"></a>')
-    el.classList.add('xt-ignore') // @FIX ignore once for mount when moving
+    el.classList.add('xt-ignore')
     el.before(link)
     const inner = el.querySelector(':scope > *')
     el.append(link)

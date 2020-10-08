@@ -10,13 +10,13 @@
   <a href="https://getxtend.com">Introduction</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://getxtend.com/components">Components</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://getxtend.com/themes">Themes</a>
   <br/><br/>
   <a href="https://github.com/minimit/xtend-ui/actions?query=workflow%3ARelease" style="display: inline-block;">
-    <img src="https://img.shields.io/github/workflow/status/minimit/xtend-ui/Release" alt="Build Status">
+    <img src="https://img.shields.io/github/workflow/status/minimit/xtend-ui/Release" alt="Build Status" loading="eager">
   </a>
   <a href="https://www.npmjs.com/package/xtend-ui" style="display: inline-block;">
-    <img src="https://img.shields.io/npm/v/xtend-ui.svg" alt="Latest Release">
+    <img src="https://img.shields.io/npm/v/xtend-ui.svg" alt="Latest Release" loading="eager">
   </a>
   <a href="https://github.com/minimit/xtend-ui/blob/master/LICENSE" style="display: inline-block;">
-    <img src="https://img.shields.io/npm/l/xtend-ui.svg" alt="License">
+    <img src="https://img.shields.io/npm/l/xtend-ui.svg" alt="License" loading="eager">
   </a>
 </p>
 
