@@ -17,23 +17,19 @@ const spinner = require('components/snippets/spinner').default
  * demoHash
  */
 
-const scrollToItem = () => {
-  const top = document.querySelector('[data-xt-origin="gatsby_open-full-content"]').offsetTop
-  if (top !== 0) {
-    const distanceY = window.innerHeight / 6
-    // add space
-    let scrollAdd = 0
-    // sticky space
-    const stickys = document.querySelectorAll('.xt-sticky.xt-clone.active')
-    for (const sticky of stickys) {
-      scrollAdd += sticky.clientHeight
-    }
-    // scroll
-    document.scrollingElement.scrollTo(0, top - scrollAdd - distanceY)
+let scrollCache = 0
+
+const scrollToItem = (initial = false) => {
+  const origin = document.querySelector('[data-xt-origin="gatsby_open-full-content"]')
+  if (initial && origin) {
+    scrollCache = document.scrollingElement.scrollTop + origin.offsetTop
+    document.scrollingElement.scrollTo(0, scrollCache)
+  } else {
+    document.scrollingElement.scrollTo(0, scrollCache)
   }
 }
 
-const demoHash = (e, skipIgnore = false) => {
+const demoHash = (e, initial = false) => {
   // call offdone.xt
   if (document.querySelector('#gatsby_open-full-trigger')) {
     document.querySelector('#gatsby_open-full-trigger').dispatchEvent(new CustomEvent('off.trigger.xt'))
@@ -47,9 +43,9 @@ const demoHash = (e, skipIgnore = false) => {
         if (demo) {
           // raf fix reopen options.scrollbar
           requestAnimationFrame(() => {
-            makeFullscreen(demo, skipIgnore)
+            makeFullscreen(demo, initial)
             // scrollToItem
-            scrollToItem()
+            scrollToItem(initial)
             // makeGatsbyWithIframe
             makeGatsbyWithIframe(item)
             // trigger fullscreen or change tabs
@@ -152,7 +148,7 @@ const populateBlock = () => {
         scrollToItem()
         // iframe
         const container = content.querySelector('.gatsby_demo')
-        if (container.dataset.isFullscreenOnly) {
+        if (container && container.dataset.isFullscreenOnly) {
           // populate iframe
           for (const item of container.querySelectorAll('.gatsby_demo_item.active')) {
             if (item.getAttribute('data-iframe-fullscreen')) {
@@ -291,7 +287,9 @@ const populateDemo = (container, i) => {
   }
   // set hash
   for (const btnOpenFull of container.querySelectorAll('.btn-open-full')) {
-    btnOpenFull.addEventListener('click', () => {
+    btnOpenFull.addEventListener('click', e => {
+      e.preventDefault()
+      scrollCache = document.scrollingElement.scrollTop
       location.hash = container.querySelector('.gatsby_demo_item.active').getAttribute('id')
       cancelAnimationFrame(Xt.dataStorage.get(document, 'gatsby_open-full-raf'))
     })
@@ -365,7 +363,7 @@ const makeGatsbyWithIframe = item => {
  * makeFullscreen
  */
 
-const makeFullscreen = (container, skipIgnore = false) => {
+const makeFullscreen = (container, initial = false) => {
   const toggle = document.querySelector('#gatsby_open-full-trigger')
   const content = document.querySelector('#gatsby_open-full-content')
   // toggles
@@ -393,7 +391,7 @@ const makeFullscreen = (container, skipIgnore = false) => {
   container.before(
     Xt.createElement('<div class="gatsby_demo xt-ignore" data-xt-origin="gatsby_open-full-content" style="height: ' + container.offsetHeight + 'px"></div>')
   )
-  if (!container.dataset.isFullscreenOnly && !skipIgnore) {
+  if (!container.dataset.isFullscreenOnly && !initial) {
     container.classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
   }
   content.append(container)
