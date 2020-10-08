@@ -27,6 +27,7 @@ function SEO({ description, lang, meta, keywords, title }) {
   )
 
   let metaTitle = title === 'Introduction' ? site.siteMetadata.description : title || site.siteMetadata.description // @DOCINDEX
+  metaTitle = `Xtend UI - ${metaTitle}`
   const metaDescription = description || site.siteMetadata.description
 
   return (
@@ -35,7 +36,6 @@ function SEO({ description, lang, meta, keywords, title }) {
         lang,
       }}
       title={metaTitle}
-      titleTemplate={`${site.siteMetadata.title} - %s`}
       meta={[
         {
           name: 'description',
