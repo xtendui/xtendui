@@ -1,14 +1,15 @@
 const path = require('path')
 const fs = require('fs')
 
-require('@fullhuman/postcss-purgecss')({
+const purgecss = require('@fullhuman/postcss-purgecss')({
   content: ['./src/**/*.md', './src/**/*.js', './src/**/*.css'],
   defaultExtractor: content => {
     const broadMatches = content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || [] // Capture as liberally as possible, including things like `h-(screen-1.5)`
     const innerMatches = content.match(/[^<>"'`\s.()]*[^<>"'`\s.():]/g) || [] // Capture classes within other delimiters like .block(class="w-1/2") in Pug
     return broadMatches.concat(innerMatches)
   },
-}),
+})
+
 module.exports = {
   plugins: [
     require(`postcss-import`)({
@@ -28,8 +29,6 @@ module.exports = {
     }),
     require(`tailwindcss`),
     require('postcss-nested'),
-    ...process.env.NODE_ENV === 'production'
-      ? [purgecss]
-      : []
+    ...(process.env.NODE_ENV === 'production' ? [purgecss] : []),
   ],
 }
