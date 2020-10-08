@@ -240,7 +240,13 @@ const makeDocument = () => {
     // gatsby_make-anchor
     el.setAttribute('id', id)
     el.classList.add('gatsby_make-anchor')
-    el.innerHTML = '<a href="#' + id + '">' + el.innerHTML + '</a>'
+    // wrapInner
+    const link = Xt.createElement('<a href="#' + id + '"></a>')
+    el.classList.add('xt-ignore') // @FIX ignore once for mount when moving
+    el.before(link)
+    const inner = el.querySelector(':scope > *')
+    el.append(link)
+    link.append(inner)
     el.append(
       Xt.createElement(
         '<span class="gatsby_site_article_anchor"><span class="btn btn-default"><span class="icon-link" aria-hidden="true"></span></span></span>'
