@@ -1,12 +1,24 @@
-<p align="center">
-  <a href="https://getxtend.com/">
+
+<p style="text-align: center;">
+  <a href="https://getxtend.com/" style="display: inline-block;">
     <img src="https://getxtend.com/logo.svg" alt="Xtend UI" width="176" height="37">
   </a>
 </p>
 
-<p align="center">
-  Powerful frontend library with Tailwind components and vanilla Javascript.<br/>
+<p style="text-align: center; margin-top: 20px;">
+  Powerful frontend library with Tailwind components and vanilla Javascript.
+  <br/>
   <a href="https://getxtend.com">Introduction</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://getxtend.com/components">Components</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://getxtend.com/themes">Themes</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://github.com/minimit/xtend-ui/issues">Issues</a>
+  <br/><br/>
+  <a href="https://github.com/minimit/xtend-ui/actions?query=workflow%3ARelease" style="display: inline-block;">
+    <img src="https://img.shields.io/github/workflow/status/minimit/xtend-ui/Release" alt="Build Status">
+  </a>
+  <a href="https://www.npmjs.com/package/xtend-ui" style="display: inline-block;">
+    <img src="https://img.shields.io/npm/v/xtend-ui.svg" alt="Latest Release">
+  </a>
+  <a href="https://github.com/minimit/xtend-ui/blob/master/LICENSE" style="display: inline-block;">
+    <img src="https://img.shields.io/npm/l/xtend-ui.svg" alt="License">
+  </a>
 </p>
 
 <br/>
@@ -322,6 +334,10 @@ To **see the default values** see the source code of `node_modules/xtend-ui/src/
 ## Browser support
 
 Supported browsers are as follow: **chrome 38**, **safari 10**, **ios 10**, **firefox 38**, **edge 12**, **opera 25**.
+
+## Contributing
+
+Read our [contributing docs](https://github.com/minimit/xtend-ui/blob/master/.github/CONTRIBUTING.md) before submitting a pull request.
 
 ## Documentation
 
