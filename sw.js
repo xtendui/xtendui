@@ -27,23 +27,26 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-205827edc80e2446a7dd.js"
+    "url": "webpack-runtime-a11bfb9a36c895c450d8.js"
   },
   {
-    "url": "framework-f3f6a2bb9db0f4de88ab.js"
+    "url": "framework-d7d765163571dbeedf13.js"
   },
   {
-    "url": "a284c5a4-49ee7b7c83966ecd1464.js"
+    "url": "a284c5a4-8adf30e47cbb815d4b39.js"
   },
   {
-    "url": "app-67599e218d3624a591c3.js"
+    "url": "app-6cb9cbc60bf118ec01b5.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "866e4117ea3910019e5d84b78bf4f06d"
+    "revision": "efa1c70e8b0fda1cd139ff395c60627d"
   },
   {
-    "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-c9875e2473a7c518755f.js"
+    "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-a95b272f8c25b9a8a758.js"
+  },
+  {
+    "url": "polyfill-0c2d8a872c156a076171.js"
   },
   {
     "url": "manifest.webmanifest",
@@ -53,8 +56,7 @@ self.__precacheManifest = [
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
 workbox.routing.registerRoute(/(\.js$|\.css$|static\/)/, new workbox.strategies.CacheFirst(), 'GET');
-workbox.routing.registerRoute(/^https?:.*\page-data\/.*\/page-data\.json/, new workbox.strategies.StaleWhileRevalidate(), 'GET');
-workbox.routing.registerRoute(/^https?:.*\/page-data\/app-data\.json/, new workbox.strategies.StaleWhileRevalidate(), 'GET');
+workbox.routing.registerRoute(/^https?:.*\/page-data\/.*\.json/, new workbox.strategies.StaleWhileRevalidate(), 'GET');
 workbox.routing.registerRoute(/^https?:.*\.(png|jpg|jpeg|webp|svg|gif|tiff|js|woff|woff2|json|css)$/, new workbox.strategies.StaleWhileRevalidate(), 'GET');
 workbox.routing.registerRoute(/^https?:\/\/fonts\.googleapis\.com\/css/, new workbox.strategies.StaleWhileRevalidate(), 'GET');
 
@@ -140,7 +142,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-67599e218d3624a591c3.js`))) {
+  if (!resources || !(await caches.match(`/app-6cb9cbc60bf118ec01b5.js`))) {
     return await fetch(event.request)
   }
 
