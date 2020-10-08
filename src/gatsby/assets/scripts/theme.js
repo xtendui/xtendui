@@ -240,7 +240,7 @@ const makeDocument = () => {
     // gatsby_make-anchor
     el.setAttribute('id', id)
     el.classList.add('gatsby_make-anchor')
-    el.innerHTML = '<a href="#' + id + '" aria-label="Anchor to ' + el.textContent + '" tabindex="-1">' + el.innerHTML + '</a>'
+    el.innerHTML = '<a href="#' + id + '">' + el.innerHTML + '</a>'
     el.append(
       Xt.createElement(
         '<span class="gatsby_site_article_anchor"><span class="btn btn-default"><span class="icon-link" aria-hidden="true"></span></span></span>'
