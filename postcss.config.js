@@ -3,9 +3,10 @@ const fs = require('fs')
 
 const purgecss = require('@fullhuman/postcss-purgecss')({
   content: ['./src/**/*.md', './src/**/*.js', './src/**/*.css'],
+  safelist: ['code', 'pre', '.token'], // prism-themes/themes/prism-base16-ateliersulphurpool.light.css
   defaultExtractor: content => {
-    const broadMatches = content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || [] // Capture as liberally as possible, including things like `h-(screen-1.5)`
-    const innerMatches = content.match(/[^<>"'`\s.()]*[^<>"'`\s.():]/g) || [] // Capture classes within other delimiters like .block(class="w-1/2") in Pug
+    const broadMatches = content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || []
+    const innerMatches = content.match(/[^<>"'`\s.()]*[^<>"'`\s.():]/g) || []
     return broadMatches.concat(innerMatches)
   },
 })
