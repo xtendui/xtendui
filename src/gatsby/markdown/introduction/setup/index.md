@@ -3,7 +3,7 @@ type: "Introduction"
 category: "Getting Started"
 parent: "Setup"
 title: "Setup"
-description: "Setup and compilation instructions."
+description: "Installation instructions and project informations."
 date: "2050-10-10"
 ---
 
@@ -34,16 +34,12 @@ npm install tailwindcss --save-dev
 Install **postcss import** and **postcss nesting**.
 
 ```Shell
-npm install postcss-import postcss-nesting --save-dev
+npm install postcss-import postcss-nested --save-dev
 ```
 
 Then in `postcss.config.js` set up compilation (with purgecss as explained in [tailwind docs](https://tailwindcss.com/docs/controlling-file-size)).
 
 ```jsx
-const postcssImport = require(`postcss-import`)
-const postcssNesting = require('postcss-nesting')
-const tailwindcss = require(`tailwindcss`)
-
 const purgecss = require('@fullhuman/postcss-purgecss')({
   // Specify the paths to all of the template files in your project
   content: ['./src/**/*.html', './src/**/*.js'],
@@ -55,7 +51,7 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
 })
 
 module.exports = {
-  plugins: [postcssImport(), tailwindcss(), postcssNesting(), ...(process.env.NODE_ENV === 'production' ? [purgecss] : [])],
+  plugins: [require(`postcss-import`), require(`tailwindcss`), require('postcss-nested'), ...(process.env.NODE_ENV === 'production' ? [purgecss] : [])],
 }
 ```
 
