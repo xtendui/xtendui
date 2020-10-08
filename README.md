@@ -1,11 +1,10 @@
-
-<p style="text-align: center;">
+<p align="center">
   <a href="https://getxtend.com/" style="display: inline-block;">
     <img src="https://getxtend.com/logo.svg" alt="Xtend UI" width="176" height="37">
   </a>
 </p>
 
-<p style="text-align: center; margin-top: 20px;">
+<p align="center">
   Powerful frontend library with Tailwind components and vanilla Javascript.
   <br/>
   <a href="https://getxtend.com">Introduction</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://getxtend.com/components">Components</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://getxtend.com/themes">Themes</a>
@@ -20,8 +19,6 @@
     <img src="https://img.shields.io/npm/l/xtend-ui.svg" alt="License">
   </a>
 </p>
-
-<br/>
 
 ## Boilerplate
 
