@@ -1,15 +1,15 @@
 ---
-name: 'Bug Report'
-about: 'Report a bug.'
-title: ''
-labels: ''
-assignees: ''
+name: Bug Report 🐞
+about: Report a reproducible bug.
+labels: "type: bug"
 ---
 
-# Describe the bug
+<!-- Before opening a new bug issue, please search existing issues: https://github.com/minimit/xtend-ui/issues -->
+
+## Describe the bug
 
 <!-- What happends? describe the steps to reproduce the bug and how it should behave instead -->
 
-# Link to minimal reproduction
+## Link to minimal reproduction (if possible)
 
-<!-- Please provide the bug minimal working example (github, codepen, etc..) -->
+<!-- Provide the bug minimal working example (github, codepen, etc..) -->
