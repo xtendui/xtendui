@@ -4,6 +4,14 @@ If you want we have some boilerplate projects to start a project all ready to go
 
 * [xtend-theme-vanilla](https://github.com/minimit/xtend-theme-vanilla)
 
+## CDN Installation
+
+If you need to do a **fast installation** of css and js use [core-js CDN](https://cdnjs.com/libraries/core-js) and [xtend-ui CDN](https://www.jsdelivr.com/package/npm/xtend-ui), the css and js are inside the `dist/` folder.
+
+The CDN `dist/` files are large because they include tailwindcss and all components / addons, **it's not representative of the sizes** you see when including xtend-ui as part of your build process.
+
+Please note that many of the features that make xtend-ui great **are not available without incorporating xtend-ui into your build process**.
+
 ## Css Installation
 
 #### Tailwind
@@ -20,7 +28,7 @@ Install **postcss import** and **postcss nesting**.
 npm install postcss-import postcss-nesting --save-dev
 ```
 
-Then in `postcss.config.js` set up compilation (with purgecss as explained in [tailwind docs](https://tailwindcss.com/docs/controlling-file-size).
+Then in `postcss.config.js` set up compilation (with purgecss as explained in [tailwind docs](https://tailwindcss.com/docs/controlling-file-size)).
 
 ```jsx
 const postcssImport = require(`postcss-import`)
