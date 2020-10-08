@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { markdownSlug } from 'components/snippets/markdown-slug'
-import logoIcon from 'assets/images/logo-white.svg'
 
 class DocSidebar extends React.Component {
   render() {
@@ -21,7 +20,7 @@ class DocSidebar extends React.Component {
                       className={`gatsby_logo-icon
                                       ${seo.title.toLowerCase() === 'home' ? 'active' : ''}`}
                     >
-                      <img src={logoIcon} alt={site.site.siteMetadata.title} />
+                      <img src={'/logo-white.svg'} alt={site.site.siteMetadata.title} />
                     </Link>
                   </div>
                   <div>

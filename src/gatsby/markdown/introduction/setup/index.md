@@ -7,6 +7,19 @@ description: "Installation instructions and project informations."
 date: "2050-10-10"
 ---
 
+<p align="center">
+  <a href="https://getxtend.com/">
+    <img src="https://getxtend.com/logo.svg" alt="Xtend UI" width="176" height="37">
+  </a>
+</p>
+
+<p align="center">
+  Powerful frontend library with Tailwind components and vanilla Javascript.<br/>
+  <a href="https://getxtend.com">Introduction</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://getxtend.com/components">Components</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://getxtend.com/themes">Themes</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://github.com/minimit/xtend-ui/issues">Issues</a>
+</p>
+
+<br/>
+
 ## Boilerplate
 
 If you want we have some boilerplate projects to start a project all ready to go!

@@ -1,7 +1,7 @@
 {
   "name": "xtend-ui",
   "version": "0.16.3",
-  "description": "Powerful frontend library with Tailwind components and vanilla Javascript",
+  "description": "Powerful frontend library with Tailwind components and vanilla Javascript.",
   "homepage": "http://getxtend.com/",
   "license": "MIT",
   "author": "Riccardo Caroli <beaver82@gmail.com>",
