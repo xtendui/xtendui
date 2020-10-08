@@ -17,9 +17,9 @@ If you want we have some boilerplate projects to start a project all ready to go
 
 If you need to do a **fast installation** of css and js use [core-js CDN](https://cdnjs.com/libraries/core-js) and [xtend-ui CDN](https://www.jsdelivr.com/package/npm/xtend-ui), the css and js are inside the `dist/` folder.
 
-The CDN `dist/` files are large because they include tailwindcss and all components / addons, **it's not representative of the sizes** you see when including xtend-ui as part of your build process.
+The CDN `dist/` files are large because they include tailwindcss and all components / addons, **it's not representative of the sizes** you see when including Xtend UI as part of your build process.
 
-Please note that many of the features that make xtend-ui great **are not available without incorporating xtend-ui into your build process**.
+Please note that many of the features that make Xtend UI great **are not available without incorporating Xtend UI into your build process**.
 
 ## Css Installation
 
@@ -27,13 +27,13 @@ Please note that many of the features that make xtend-ui great **are not availab
 
 Follow the instructions to [install tailwind](https://tailwindcss.com/docs/installation).
 
-```Shell
+```sh
 npm install tailwindcss --save-dev
 ```
 
 Install **postcss import** and **postcss nesting**.
 
-```Shell
+```sh
 npm install postcss-import postcss-nested --save-dev
 ```
 
@@ -71,7 +71,7 @@ Then you can use css with tailwind.
 
 Install **xtend**.
 
-```Shell
+```sh
 npm install xtend-ui --save
 ```
 
@@ -103,7 +103,7 @@ module.exports = {
 
 You need to install [corejs](https://www.npmjs.com/package/core-js), [@babel/core](https://www.npmjs.com/package/@babel/core), [@babel/preset-env](https://www.npmjs.com/package/@babel/preset-env), [@babel/plugin-transform-runtime](https://www.npmjs.com/package/@babel/plugin-transform-runtime), [babel-plugin-module-resolver](https://www.npmjs.com/package/babel-plugin-module-resolver).
 
-```Shell
+```sh
 npm install core-js@3 @babel/core @babel/preset-env @babel/plugin-transform-runtime babel-plugin-module-resolver --save-dev
 ```
 
@@ -158,7 +158,7 @@ Opera >= 25
 
 Install **xtend**.
 
-```Shell
+```sh
 npm install xtend-ui --save
 ```
 

@@ -18,7 +18,7 @@ import 'xtend-ui/src/addons/google-locator'
 
 Install also `@google/markerclusterer`.
 
-```Shell
+```sh
 npm install @google/markerclusterer --save
 ```
 
