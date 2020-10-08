@@ -1,7 +1,7 @@
 ---
-name: Feature Request 💡
+name: Feature or Pull Request 💡
 about: Request new core or addons features.
-labels: "type: feature"
+labels: "type: request"
 ---
 
 ## Feature
