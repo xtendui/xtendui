@@ -20,7 +20,7 @@ class DocSidebar extends React.Component {
                       className={`gatsby_logo-icon
                                       ${seo.title.toLowerCase() === 'home' ? 'active' : ''}`}
                     >
-                      <img src={'/logo-white.svg'} alt={site.site.siteMetadata.title} />
+                      <img src={'/logo-white.svg'} loading="eager" alt={site.site.siteMetadata.title} />
                     </Link>
                   </div>
                   <div>
