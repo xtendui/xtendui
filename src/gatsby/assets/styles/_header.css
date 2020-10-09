@@ -32,7 +32,7 @@
   align-items: center;
   height: 100%;
   img {
-    width: 7.4rem;
+    width: 8.5rem;
   }
   img {
     transition: opacity theme('transitionDuration.500') theme('transitionTimingFunction.out');

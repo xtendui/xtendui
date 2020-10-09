@@ -11,20 +11,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
 function SEO({ description, lang, meta, keywords, title }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            image
-            author
-          }
-        }
-      }
-    `
-  )
+  const { site } = useStaticQuery(query)
 
   let metaTitle = title === 'Introduction' ? site.siteMetadata.description : title || site.siteMetadata.description // @DOCINDEX
   metaTitle = `Xtend UI - ${metaTitle}`
@@ -103,3 +90,16 @@ SEO.defaultProps = {
 }
 
 export default SEO
+
+const query = graphql`
+  query SEO {
+    site {
+      siteMetadata {
+        title
+        description
+        image
+        author
+      }
+    }
+  }
+`
