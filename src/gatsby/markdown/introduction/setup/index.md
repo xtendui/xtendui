@@ -9,7 +9,7 @@ date: "2050-10-10"
 
 <p align="center">
   <a href="https://xtendui.com/" style="display: inline-block;">
-    <img src="https://xtendui.com/logo.svg" alt="Xtend UI" width="200" height="40">
+    <img src="https://raw.githubusercontent.com/minimit/xtend-ui/master/static/logo.svg" alt="Xtend UI" width="200" height="47">
   </a>
 </p>
 
