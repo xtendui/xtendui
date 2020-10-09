@@ -1,10 +1,13 @@
 name: Release
 
 on:
-  push:
+  workflow_run:
+    workflows: ["CodeQL", "Lint"]
     branches:
       - master
       - dev-0.16
+    types:
+      - completed
 
 env:
   NODE: 12.x
@@ -38,6 +41,8 @@ jobs:
     - name: Install
       if: steps.yarn-cache.outputs.cache-hit != 'true'
       run: yarn install --frozen-lockfile
+    - name: Lint
+      run: yarn lint
     - name: Release
       uses: cycjimmy/semantic-release-action@v2
       with:
