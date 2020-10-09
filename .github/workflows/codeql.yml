@@ -6,6 +6,8 @@ on:
     branches:
       - master
       - dev-0.16
+    types:
+      - completed
   schedule:
     - cron: '0 14 * * 1'
 

@@ -5,6 +5,8 @@ on:
     workflows: ["Release"]
     branches:
       - master
+    types:
+      - completed
 
 env:
   NODE: 12.x
