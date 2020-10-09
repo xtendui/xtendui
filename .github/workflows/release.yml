@@ -14,6 +14,9 @@ env:
 
 jobs:
   release:
+
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+
     if: "!contains(github.event.commits[0].message, '[skip ci]')"
     runs-on: ubuntu-latest
     steps:
@@ -41,8 +44,6 @@ jobs:
     - name: Install
       if: steps.yarn-cache.outputs.cache-hit != 'true'
       run: yarn install --frozen-lockfile
-    - name: Lint
-      run: yarn lint
     - name: Release
       uses: cycjimmy/semantic-release-action@v2
       with:
