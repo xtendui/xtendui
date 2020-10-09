@@ -5,7 +5,7 @@ on:
     workflows: ["CodeQL"]
     branches:
       - master
-      - dev-0.16
+      - 0.16
     types:
       - completed
 

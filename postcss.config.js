@@ -3,6 +3,9 @@ const fs = require('fs')
 
 const purgecss = require('@fullhuman/postcss-purgecss')({
   content: ['./src/**/*.md', './src/**/*.js', './src/**/*.css', 'node_modules/prism-themes/themes/prism-base16-ateliersulphurpool.light.css'],
+  safelist: {
+    greedy: [/^iframe--/],
+  },
   defaultExtractor: content => {
     const broadMatches = content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || []
     const innerMatches = content.match(/[^<>"'`\s.()]*[^<>"'`\s.():]/g) || []

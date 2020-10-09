@@ -1,11 +1,11 @@
-name: "CodeQL"
+name: CodeQL
 
 on:
   workflow_run:
     workflows: ["Lint"]
     branches:
       - master
-      - dev-0.16
+      - 0.16
     types:
       - completed
 
