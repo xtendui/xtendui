@@ -14,7 +14,7 @@ env:
 
 jobs:
   release:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }} && "!contains(github.event.commits[0].message, '[skip ci]')"
+    if: ${{ !contains(github.event.commits[0].message, '[skip ci]') && github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
