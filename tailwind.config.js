@@ -29,7 +29,7 @@ module.exports = {
   experimental: {
     applyComplexClasses: true,
     extendedSpacingScale: true,
-    defaultLineHeights: true
+    defaultLineHeights: true,
     removeDeprecatedGapUtilities: true,
   },
 }
