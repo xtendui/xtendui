@@ -21,7 +21,7 @@ module.exports = {
     download: 'https://github.com/minimit/xtend-ui/releases',
   },
   plugins: [
-    `babel-plugin-remove-graphql-queries`,
+    'gatsby-plugin-remove-serviceworker',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-postcss',
@@ -41,7 +41,6 @@ module.exports = {
         },
       },
     },
-    `gatsby-plugin-offline`,
     // resolve
     {
       resolve: 'gatsby-plugin-module-resolver',
