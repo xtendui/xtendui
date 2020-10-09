@@ -1,13 +1,11 @@
 name: "CodeQL"
 
 on:
-  push:
+  workflow_run:
+    workflows: ["Lint"]
     branches:
       - master
       - dev-0.16
-  pull_request:
-    branches:
-      - master
   schedule:
     - cron: '0 14 * * 1'
 

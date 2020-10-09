@@ -2,7 +2,7 @@ name: Release
 
 on:
   workflow_run:
-    workflows: ["CodeQL", "Lint"]
+    workflows: ["CodeQL"]
     branches:
       - master
       - dev-0.16
