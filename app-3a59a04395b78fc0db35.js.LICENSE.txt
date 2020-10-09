@@ -3,7 +3,7 @@
  * ie10 fix - Mikael Kristiansson 2019
  */
 
-/** @license React v0.19.1
+/** @license React v0.20.0-rc.2
  * scheduler.production.min.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
