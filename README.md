@@ -47,7 +47,7 @@ npm install tailwindcss --save-dev
 Install **postcss import** and **postcss nesting**.
 
 ```sh
-npm install postcss-import postcss-nested --save-dev
+npm install postcss postcss-import postcss-nested --save-dev
 ```
 
 Then in `postcss.config.js` set up compilation (with purgecss as explained in [tailwind docs](https://tailwindcss.com/docs/controlling-file-size)).
