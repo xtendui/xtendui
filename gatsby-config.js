@@ -17,7 +17,7 @@ module.exports = {
     version: version,
     npm: 'https://www.npmjs.com/package/xtend-ui',
     github: 'https://github.com/minimit/xtend-ui',
-    twitter: 'https://twitter.com/beaver82minimit',
+    twitter: 'https://twitter.com/xtendui',
     download: 'https://github.com/minimit/xtend-ui/releases',
   },
   plugins: [
