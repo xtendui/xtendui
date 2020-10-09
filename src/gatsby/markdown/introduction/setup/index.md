@@ -8,15 +8,15 @@ date: "2050-10-10"
 ---
 
 <p align="center">
-  <a href="https://getxtend.com/" style="display: inline-block;">
-    <img src="https://getxtend.com/logo.svg" alt="Xtend UI" width="176" height="37">
+  <a href="https://xtendui.com/" style="display: inline-block;">
+    <img src="https://xtendui.com/logo.svg" alt="Xtend UI" width="176" height="37">
   </a>
 </p>
 
 <p align="center">
   Powerful frontend library with Tailwind components and vanilla Javascript.
   <br/>
-  <a href="https://getxtend.com">Introduction</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://getxtend.com/components">Components</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://getxtend.com/themes">Themes</a>
+  <a href="https://xtendui.com">Introduction</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://xtendui.com/components">Components</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://xtendui.com/themes">Themes</a>
   <br/><br/>
   <a href="https://github.com/minimit/xtend-ui/actions?query=workflow%3ARelease" style="display: inline-block;">
     <img src="https://img.shields.io/github/workflow/status/minimit/xtend-ui/Release" alt="Build Status" loading="eager">

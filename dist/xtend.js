@@ -1,5 +1,5 @@
 /**
- * Xtend (https://getxtend.com/)
+ * Xtend (https://xtendui.com/)
  * @copyright (c) 2017 - 2020 Riccardo Caroli
  * @license MIT (https://github.com/minimit/xtend-ui/blob/master/LICENSE)
  */
