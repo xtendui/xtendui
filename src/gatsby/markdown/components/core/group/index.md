@@ -14,7 +14,18 @@ Follow the [css installation](/introduction/getting-started/setup#css-installati
 
 ```jsx
 module.exports = {
-@TODO
+  theme: require('xtend-ui/src/tailwind-theme')({
+    // xtend utilities and components in node_modules/xtend-ui/src/tailwind-xtend.js
+    xtend: theme => ({
+      components: {
+        core: {
+          group: {
+            // modify component
+          },
+        },
+      },
+    }),
+  })
 }
 ```
 
@@ -22,74 +33,25 @@ To **see the default values** see the source code of `node_modules/xtend-ui/src/
 
 ## Usage
 
-#### Button
+Use this code to create a **horizontal group**.
 
-Use this code to create a **button group as line**.
+Use **tailwind classes** to assign styles (e.g.: border, border radius).
 
 <demo>
-  <demovanilla src="vanilla/components/core/group/button-line">
+  <demovanilla src="vanilla/components/core/group/usage">
   </demovanilla>
 </demo>
 
-Use this code to create a **button group as stack**.
+Use this code to create a **vertical group** with `.flex-col`.
+
+Use **tailwind classes** to assign styles (e.g.: border, border radius).
 
 <demo>
-  <demovanilla src="vanilla/components/core/group/button-stack">
+  <demovanilla src="vanilla/components/core/group/usage-vertical">
   </demovanilla>
 </demo>
 
-#### Input
+[[notePrimary]]
+| This demos uses [button](/components/core/button) and [input](/components/core/form). Visit the component page to import and customize.
 
-Use this code to create a **input group as line**.
-
-<script type="text/plain" class="language-markup">
-<form>
-  <div class="form-group">
-    <div class="group">
-
-      <div class="group-inner">
-        <button type="button" class="btn btn-default">
-          <!-- content -->
-        </button>
-      </div>
-
-      <div class="group-inner">
-        <input type="text" class="form-item"/>
-      </div>
-
-    </div>
-  </div>
-</form>
-</script>
-
-Use this code to create a **input group as stack**.
-
-<script type="text/plain" class="language-markup">
-<form>
-  <div class="form-group">
-    <div class="group">
-
-      <div class="group-inner">
-        <button type="button" class="btn btn-default">
-          <!-- content -->
-        </button>
-        <button type="button" class="btn btn-default">
-          <!-- content -->
-        </button>
-      </div>
-
-      <div class="group-inner">
-        <input type="text" class="form-item"/>
-      </div>
-
-    </div>
-  </div>
-</form>
-</script>
-
-<demo>
-  <demovanilla src="vanilla/components/core/group/input-line">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/group/input-stack">
-  </demovanilla>
-</demo>
+Check subpage to [customize content](/components/core/group/content).

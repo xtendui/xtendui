@@ -6,64 +6,19 @@ title: "Other"
 date: "2005-10-10"
 ---
 
-## Full
+## Merge
 
-Use `.full` to have full width fluid group. Use `.group-inner.flex-auto` to expand groups.
+You can make group a **single interactive object**.
+
+[[notePrimary]]
+| This demos uses [propagate-interaction](/components/addons/propagate-interaction). Visit the component page to import and customize.
 
 <demo>
-  <demovanilla src="vanilla/components/core/group/options-full-line">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/group/options-full-stack">
+  <demovanilla src="vanilla/components/core/group/merge">
   </demovanilla>
 </demo>
 
-## Merge
-
-You can merge buttons in a single interactive object.
-
-Use markup to merge multiple `.btn` in one `[button]` as line.
-
-[[notePrimary]]
-| Needs [propagate-interaction](/components/addons/propagate-interaction) extension
-
-<script type="text/plain" class="language-markup">
-  <button type="button" class="group">
-
-    <div class="group-inner">
-      <div class="btn btn-default">
-        <!-- content -->
-      </div>
-    </div>
-
-    <div class="group-inner">
-      <div class="btn btn-default">
-        <!-- content -->
-      </div>
-    </div>
-
-  </button>
-</script>
-
-Use markup to merge multiple `.btn` in one `[button]` as stack.
-
-<script type="text/plain" class="language-markup">
-  <button type="button" class="group">
-
-    <div class="group-inner">
-      <div class="btn btn-default">
-        <!-- content -->
-      </div>
-      <div class="btn btn-default">
-        <!-- content -->
-      </div>
-    </div>
-
-  </button>
-</script>
-
 <demo>
-  <demovanilla src="vanilla/components/core/group/merge-line">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/group/merge-stack">
+  <demovanilla src="vanilla/components/core/group/merge-vertical">
   </demovanilla>
 </demo>

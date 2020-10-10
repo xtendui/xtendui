@@ -25,7 +25,7 @@ Use **component classes** to style disabled.
 
 ## Group
 
-@TODO
+Refer to [group](/components/core/group).
 
 ## Checks
 

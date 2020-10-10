@@ -6,36 +6,39 @@ title: "Content"
 date: "2030-10-10"
 ---
 
-[[notePrimary]]
-| Group uses **list** to style it's content, refer to [list's options](/components/core/list/option-css).
+## Space
 
-## Variant
-
-Classes for assigning variant (e.g.: border, background, color).
-
-<div class="table-scroll">
-
-|                         | Syntax                                    | Example                       |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Syntax                   | `.group-{variant}`                        | `.group-default`             |
-| Mixin                   | `.group-{variant}()`                      | `.group-default()`            |
-
-</div>
+Use **component classes** to assign space (e.g.: margin).
 
 <demo>
-  <demovanilla src="vanilla/components/core/group/options-variant-line">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/group/options-variant-stack">
+  <demovanilla src="vanilla/components/core/group/space">
   </demovanilla>
 </demo>
 
-## List
+<demo>
+  <demovanilla src="vanilla/components/core/group/space-vertical">
+  </demovanilla>
+</demo>
 
-Space group elements with list's options.
+## Size
+
+Use **tailwind classes** to assign size (e.g.: width).
 
 <demo>
-  <demovanilla src="vanilla/components/core/group/options-list-line">
+  <demovanilla src="vanilla/components/core/group/size">
   </demovanilla>
-  <demovanilla src="vanilla/components/core/group/options-list-stack">
+</demo>
+
+## Border
+
+Use **tailwind classes** to assign border.
+
+<demo>
+  <demovanilla src="vanilla/components/core/group/border">
+  </demovanilla>
+</demo>
+
+<demo>
+  <demovanilla src="vanilla/components/core/group/border-vertical">
   </demovanilla>
 </demo>

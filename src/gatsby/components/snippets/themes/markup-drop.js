@@ -11,7 +11,7 @@ export default () => {
         <div class="drop-design"></div>
         <div class="drop-content">
 
-          <nav class="list-block list-drop">
+          <nav class="list flex-col list-drop">
             <button type="button">
               Lorem ipsum dolor
             </button>

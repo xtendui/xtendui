@@ -43,11 +43,11 @@ To **see the default values** see the source code of `node_modules/xtend-ui/src/
 Use this code to create a **horizontal list**.
 
 <demo>
-  <demovanilla src="vanilla/components/core/list/usage-horizontal">
+  <demovanilla src="vanilla/components/core/list/usage">
   </demovanilla>
 </demo>
 
-Use this code to create a **vertical list**.
+Use this code to create a **vertical list** with `.flex-col`.
 
 <demo>
   <demovanilla src="vanilla/components/core/list/usage-vertical">

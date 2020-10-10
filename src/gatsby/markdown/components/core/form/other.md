@@ -72,7 +72,7 @@ Use [card](/components/core/card) with `label` to create checks with card.
 
 ## Group
 
-@TODO
+Refer to [group](/components/core/group).
 
 ## Validation
 

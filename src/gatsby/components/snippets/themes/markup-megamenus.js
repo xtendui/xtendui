@@ -39,7 +39,7 @@ export default () => {
                                 Lorem ipsum
                               </a>
                               <div class="megamenu_item_content">
-                                <div class="list-block">
+                                <div class="list flex-col">
                                   <a href="#">
                                     Lorem ipsum
                                   </a>
@@ -63,7 +63,7 @@ export default () => {
                                 dolor sit amet
                               </a>
                               <div class="megamenu_item_content">
-                                <div class="list-block">
+                                <div class="list flex-col">
                                   <a href="#">
                                     Lorem ipsum
                                   </a>
@@ -136,7 +136,7 @@ export default () => {
                                 Lorem ipsum
                               </a>
                               <div class="megamenu_item_content">
-                                <div class="list-block">
+                                <div class="list flex-col">
                                   <a href="#">
                                     Lorem ipsum
                                   </a>
@@ -160,7 +160,7 @@ export default () => {
                                 dolor sit amet
                               </a>
                               <div class="megamenu_item_content">
-                                <div class="list-block">
+                                <div class="list flex-col">
                                   <a href="#">
                                     Lorem ipsum
                                   </a>
@@ -178,7 +178,7 @@ export default () => {
                                 consectetur
                               </a>
                               <div class="megamenu_item_content">
-                                <div class="list-block">
+                                <div class="list flex-col">
                                   <a href="#">
                                     consectetur
                                   </a>
@@ -196,7 +196,7 @@ export default () => {
                                 adipiscing elit
                               </a>
                               <div class="megamenu_item_content">
-                                <div class="list-block">
+                                <div class="list flex-col">
                                   <a href="#">
                                     Lorem ipsum
                                   </a>
@@ -275,7 +275,7 @@ export default () => {
                                 Lorem ipsum
                               </a>
                               <div class="megamenu_item_content">
-                                <div class="list-block">
+                                <div class="list flex-col">
                                   <a href="#">
                                     Lorem ipsum
                                   </a>
@@ -299,7 +299,7 @@ export default () => {
                                 dolor sit amet
                               </a>
                               <div class="megamenu_item_content">
-                                <div class="list-block">
+                                <div class="list flex-col">
                                   <a href="#">
                                     Lorem ipsum
                                   </a>

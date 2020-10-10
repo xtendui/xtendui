@@ -40,7 +40,7 @@ demo.htmlSource = `
                 <div class="product-page_left">
 
                   <div class="product-page_images">
-                    <div class="list-block">
+                    <div class="list flex-col">
                       <a href="#product-image-overlay-0" class="product-page_image">
                         <div class="media-container media-container-responsive" data-xt-overlay="{ targets: '#overlay--product-page_images' }">
                           <div class="media-inner">
@@ -80,7 +80,7 @@ demo.htmlSource = `
                   </div>
 
                   <div class="product-page_images_nav">
-                    <div class="list-block">
+                    <div class="list flex-col">
                       <a href="#product-image-0" class="product-page_images_nav_item" title="Go to image 0">
                         <div class="product-page_images_nav_item_inner">
                           <span></span>
@@ -119,7 +119,7 @@ demo.htmlSource = `
                           <div class="card-inner">
                             <div class="card-content">
                               <div class="card-asset">
-                                <div class="list-block">
+                                <div class="list flex-col">
                                   <div class="media-container media-container-responsive">
                                     <div class="media-inner">
                                       <img class="media" id="product-image-overlay-0" src="/img.svg" loading="eager" alt=""/>

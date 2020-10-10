@@ -9,15 +9,15 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<nav class="list-block list-space-2 items-center">
+<nav class="list flex-col list-space-2 items-center">
 
   <div>
-    <div class="list list-space-2">
+    <div class="list list-space-2 items-center">
 
       <div>
-        <div class="list-block list-space-2 items-center">
+        <div class="list flex-col list-space-2 items-center">
 
-          <button type="button" class="btn btn-md ${btnDefault()}">
+          <button type="button" class="btn btn-sm ${btnDefault()}">
             Lorem Ipsum
           </button>
 
@@ -25,7 +25,7 @@ demo.htmlSource = `
             Dolor sit
           </button>
 
-          <button type="button" class="btn btn-md ${btnDefault()}">
+          <button type="button" class="btn btn-lg ${btnDefault()}">
             Amet
           </button>
 
@@ -36,7 +36,7 @@ demo.htmlSource = `
         Dolor sit
       </button>
 
-      <button type="button" class="btn btn-md ${btnDefault()}">
+      <button type="button" class="btn btn-lg ${btnDefault()}">
         Amet
       </button>
 

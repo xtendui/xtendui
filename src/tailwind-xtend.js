@@ -1042,6 +1042,18 @@ module.exports = theme => ({
           },
         },
       },
+      // group
+      group: {
+        '.group': {
+          display: 'inline-flex',
+          flexWrap: 'nowrap',
+          alignItems: 'stretch',
+          whiteSpace: 'nowrap',
+        },
+        '.group-inner': {
+          display: 'inline-flex',
+        },
+      },
       // link
       link: {
         'a:not([class]), .link': {
@@ -1066,13 +1078,6 @@ module.exports = theme => ({
           display: 'flex',
           flexWrap: 'wrap',
           flexDirection: 'row',
-          alignItems: 'flex-start',
-        },
-        '.list-block': {
-          // setup
-          display: 'flex',
-          flexWrap: 'nowrap',
-          flexDirection: 'column',
           alignItems: 'flex-start',
         },
       },

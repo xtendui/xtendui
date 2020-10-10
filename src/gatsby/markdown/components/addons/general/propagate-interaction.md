@@ -6,7 +6,11 @@ title: "propagate-interaction"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
-@TODO vedere se serve ancora
+@TODO
+
+## Group
+
+Refer to [group](/components/core/group/other#merge).
 
 <!--
 ```jsx

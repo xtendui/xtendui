@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<nav class="list-block list-space-2">
+<nav class="list flex-col list-space-2">
 
   <button type="button" class="btn btn-md ${btnDefault()}">
     Lorem Ipsum

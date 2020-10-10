@@ -23,7 +23,7 @@ demo.htmlSource = `
       <div class="drop-inner">
         <div class="card card-sm ${cardDefaultDropList()}">
           <div class="card-block py-3">
-            <nav class="list-block">
+            <nav class="list flex-col">
               <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </a>
@@ -51,7 +51,7 @@ demo.htmlSource = `
       <div class="drop-inner">
         <div class="card card-sm ${cardDefaultDropList()}">
           <div class="card-block py-3">
-            <nav class="list-block">
+            <nav class="list flex-col">
               <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </a>

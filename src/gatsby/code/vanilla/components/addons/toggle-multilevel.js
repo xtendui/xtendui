@@ -21,7 +21,7 @@ demo.htmlSource = `
       </button>
     </div>
 
-    <nav class="list-block multilevel-list">
+    <nav class="list flex-col multilevel-list">
       <button type="button" class="btn link" data-xt-group="cat-0" data-multilevel-element>
         Category 0
       </button>
@@ -41,7 +41,7 @@ demo.htmlSource = `
         About
       </div>
     </div>
-    <nav class="list-block multilevel-list">
+    <nav class="list flex-col multilevel-list">
       <a href="#" class="btn link">
         Link 0
       </a>
@@ -63,7 +63,7 @@ demo.htmlSource = `
       </button>
     </div>
 
-    <nav class="list-block multilevel-list">
+    <nav class="list flex-col multilevel-list">
       <button type="button" class="btn link" data-xt-group="cat-0a" data-multilevel-element>
         Category 0a
       </button>
@@ -91,7 +91,7 @@ demo.htmlSource = `
       </button>
     </div>
 
-    <nav class="list-block multilevel-list">
+    <nav class="list flex-col multilevel-list">
       <a href="#" class="btn link">
         Link 0
       </a>
@@ -113,7 +113,7 @@ demo.htmlSource = `
       </button>
     </div>
 
-    <nav class="list-block multilevel-list">
+    <nav class="list flex-col multilevel-list">
       <a href="#" class="btn link">
         Link 0
       </a>
@@ -135,7 +135,7 @@ demo.htmlSource = `
       </button>
     </div>
 
-    <nav class="list-block multilevel-list">
+    <nav class="list flex-col multilevel-list">
       <a href="#" class="btn link">
         Link 0
       </a>

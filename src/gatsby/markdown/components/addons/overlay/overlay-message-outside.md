@@ -9,7 +9,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 Use this code to create a **message outside**.
 
 [[notePrimary]]
-| This addon uses [overlay](/components/core/overlay). Visit the component page to import and initialize.
+| This addon uses [overlay](/components/core/overlay). Visit the component page to import and customize.
 
 <demo>
   <demovanilla src="vanilla/components/addons/overlay-message-outside">
