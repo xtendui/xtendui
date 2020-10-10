@@ -6,15 +6,36 @@ title: "Other"
 date: "2005-10-10"
 ---
 
-## Disabled
+## Activation
 
-Use **component classes** to style disabled.
+Use **component classes** to style active.
+
+Refer to [aria guidelines](/introduction/guidelines/aria) for aria attributes.
 
 <div class="table-scroll">
 
 |               | Syntax                          | Mixin               | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Component                  | `[readonly], [disabled], .disabled`                     | `disabled`                | Disabled styles            |
+| Component                  | `.active`                     | `active`                | Active styles            |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/core/button/active">
+  </demovanilla>
+</demo>
+
+## Disabled
+
+Use **component classes** to style disabled.
+
+Refer to [aria guidelines](/introduction/guidelines/aria) for aria attributes.
+
+<div class="table-scroll">
+
+|               | Syntax                          | Mixin               | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Component                  | `.disabled`                     | `disabled`                | Disabled styles            |
 
 </div>
 

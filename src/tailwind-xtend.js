@@ -665,6 +665,7 @@ module.exports = theme => ({
           flexWrap: 'nowrap',
           alignItems: 'center',
           justifyContent: 'space-between',
+          textAlign: 'left',
           // styles
           fontFamily: theme('fontFamily.sans').toString(),
           fontWeight: theme('fontWeight.semibold'),

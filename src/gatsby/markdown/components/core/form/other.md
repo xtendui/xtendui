@@ -10,6 +10,8 @@ date: "2005-10-10"
 
 Use **component classes** to style disabled.
 
+For aria use `aria-disabled="true"` when using the class `.disabled`.
+
 <div class="table-scroll">
 
 |               | Syntax                          | Mixin               | Description                   |

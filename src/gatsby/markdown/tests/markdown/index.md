@@ -72,11 +72,11 @@ Use this code to create a **card**.
 
 Check subpage to [customize content](/components/core/loader/content#spinner).
 
-Use **tailwind classes** to create a mouse follow.
+Use **tailwind classes** to assign size (e.g.: padding, font size).
 
-Use **component classes** to create a mouse follow.
+Use **tailwind classes** to create a navigation. Remember to use `.whitespace-normal`.
 
-Use **component classes** to assign size (e.g.: padding, font size).
+Use **component classes** to create a style disabled.
 
 See [group component](/components/core/loader) to create a button with group.
 
