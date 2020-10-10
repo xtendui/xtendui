@@ -6,11 +6,22 @@ title: "Content"
 date: "2030-10-10"
 ---
 
+## Toolbar
+
+Use [group space](/components/core/group/content#space) to create a toolbar.
+
+For aria purpose use `role="toolbar"`.
+
+<demo>
+  <demovanilla src="vanilla/components/core/group/toolbar">
+  </demovanilla>
+</demo>
+
 ## Nav
 
-Use **tailwind classes** to create a navigation. Remember to use `.whitespace-normal`.
+Use **vertical group** and [group size](/components/core/group/content#size) to create a navigation. Remember to use `.whitespace-normal`.
 
-Refer to [aria guidelines](/introduction/guidelines/aria) for aria attributes.
+For aria purpose use `<nav></nav>`.
 
 <demo>
   <demovanilla src="vanilla/components/core/group/nav">
@@ -23,11 +34,6 @@ Use **tailwind classes** to assign size (e.g.: width). Remember to use `.max-w-f
 
 <demo>
   <demovanilla src="vanilla/components/core/group/size">
-  </demovanilla>
-</demo>
-
-<demo>
-  <demovanilla src="vanilla/components/core/group/size-nav">
   </demovanilla>
 </demo>
 

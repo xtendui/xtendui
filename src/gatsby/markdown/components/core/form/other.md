@@ -10,7 +10,7 @@ date: "2005-10-10"
 
 Use **component classes** to style disabled.
 
-For aria use `aria-disabled="true"` when using the class `.disabled`.
+For aria purpose use `aria-disabled="true"` when using the class `.disabled`.
 
 <div class="table-scroll">
 
@@ -72,10 +72,6 @@ Use [card](/components/core/card) with `label` to create checks with card.
   </demovanilla>
 </demo>
 
-## Group
-
-Refer to [group](/components/core/group).
-
 ## Validation
 
 Html validation and Constraint Validation API.
@@ -99,3 +95,7 @@ Use **component classes** to style validation.
   <demovanilla src="vanilla/components/core/form/validation">
   </demovanilla>
 </demo>
+
+## Group / Toolbar / Nav
+
+Refer to [group](/components/core/group).

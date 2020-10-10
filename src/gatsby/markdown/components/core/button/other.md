@@ -10,7 +10,7 @@ date: "2005-10-10"
 
 Use **component classes** to style active.
 
-Refer to [aria guidelines](/introduction/guidelines/aria) for aria attributes.
+For aria purpose use `aria-selected="true"` when using the class `.active`.
 
 <div class="table-scroll">
 
@@ -29,7 +29,7 @@ Refer to [aria guidelines](/introduction/guidelines/aria) for aria attributes.
 
 Use **component classes** to style disabled.
 
-Refer to [aria guidelines](/introduction/guidelines/aria) for aria attributes.
+For aria purpose use `aria-disabled="true"` when using the class `.disabled`.
 
 <div class="table-scroll">
 
@@ -44,10 +44,10 @@ Refer to [aria guidelines](/introduction/guidelines/aria) for aria attributes.
   </demovanilla>
 </demo>
 
-## Group
-
-Refer to [group](/components/core/group).
-
 ## Checks
 
 Refer to [form checks button](/components/core/form/other#checks-button).
+
+## Group / Toolbar / Nav
+
+Refer to [group](/components/core/group).

@@ -9,8 +9,14 @@ export const demo = {
 
 demo.htmlSource = `
 <ul class="demo--list-custom">
-  <li>Lorem ipsum dolor sit amet</div>
-  <li>consectetur adipiscing elit</li>
-  <li>Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</li>
+  <li>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <ul class="demo--list-custom">
+      <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+      <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut ex at ex pellentesque efficitur.</li>
+    </ul>
+  </li>
+  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut ex at ex pellentesque efficitur.</li>
+  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut ex at ex pellentesque efficitur. Maecenas pulvinar mauris eget pharetra elementum.</li>
 </ul>
 `

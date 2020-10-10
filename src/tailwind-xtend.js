@@ -1629,7 +1629,7 @@ module.exports = theme => ({
           // setup
           width: '100%',
           // styles
-          marginBottom: theme('spacing.5'),
+          marginBottom: theme('spacing.3'),
           '@apply mb-lc': {},
         },
         th: {
@@ -1782,16 +1782,16 @@ module.exports = theme => ({
         },
         'p, .p': {
           // style
-          marginBottom: theme('spacing.5'),
+          marginBottom: theme('spacing.3'),
           '@apply text-reset mb-lc': {},
         },
         'ul:not([class]), ol:not([class])': {
           // style
-          marginBottom: theme('spacing.5'),
+          marginBottom: theme('spacing.3'),
           '@apply mb-lc': {},
           '> li': {
             position: 'relative',
-            marginBottom: theme('spacing.5'),
+            marginBottom: theme('spacing.3'),
             '@apply mb-lc': {},
             '&:before': {
               position: 'absolute',
@@ -1799,7 +1799,7 @@ module.exports = theme => ({
               left: '0',
             },
             '> ul:not([class]), > ol:not([class])': {
-              marginTop: theme('spacing.5'),
+              marginTop: theme('spacing.3'),
             },
           },
         },
@@ -1825,8 +1825,8 @@ module.exports = theme => ({
           },
         },
         hr: {
-          marginTop: theme('spacing.5'),
-          marginBottom: theme('spacing.5'),
+          marginTop: theme('spacing.3'),
+          marginBottom: theme('spacing.3'),
         },
       },
     },

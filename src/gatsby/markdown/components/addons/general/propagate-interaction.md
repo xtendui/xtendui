@@ -8,10 +8,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 @TODO
 
-## Group
-
-Refer to [group](/components/core/group/other#merge).
-
 <!--
 ```jsx
 import 'xtend-ui/src/addons/propagate-interaction'

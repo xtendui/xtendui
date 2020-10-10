@@ -13,7 +13,7 @@ export const demo = {
 demo.htmlSource = `
 <form>
 
-  <div class="group w-full">
+  <div class="group max-w-full" style="width: 35rem">
 
     <button type="button" class="btn btn-md rounded-l-md ${btnDefaultGroup()}">
       <span class="icon-search"></span>

@@ -80,6 +80,12 @@ Use **tailwind classes** to create a navigation. Remember to use `.whitespace-no
 
 Use **component classes** to create a style disabled.
 
+For aria purpose use `role="toolbar"`.
+
+For aria purpose use `aria-selected="true"` when using the class `.active`.
+
+For aria purpose use `aria-disabled="true"` when using the class `.disabled`.
+
 See [group component](/components/core/loader) to create a button with group.
 
 See [mouse follow addon](/components/core/loader) to create a loader with mouse follow.
@@ -145,9 +151,9 @@ Lorem ipsum `dolor sit` amet, *consectetur* **adipiscing** elit. Nam in [laoreet
 
 <p class="text-xl">Maecenas pulvinar mauris eget pharetra elementum. Sed sit amet ultrices metus, vitae cursus metus. Proin tristique finibus pretium. Morbi sit amet magna faucibus, luctus enim tempor, dignissim quam. Nam a ornare quam, varius cursus felis. Fusce nunc lacus, iaculis vel cursus non, facilisis id quam.</p>
 
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut ex at ex pellentesque efficitur.
+- Lorem ipsum dolor sit amet.
+  - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut ex at ex pellentesque efficitur.
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut ex at ex pellentesque efficitur.
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut ex at ex pellentesque efficitur. Maecenas pulvinar mauris eget pharetra elementum.
 

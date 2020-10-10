@@ -3,7 +3,7 @@ type: "Components"
 category: "Core"
 parent: "Group"
 title: "Group"
-description: "Css component to group up buttons and form inputs."
+description: "Css component to group up buttons and inputs. Can easily create toolbar and navigations."
 ---
 
 ## Setup
