@@ -339,13 +339,19 @@ To **see the default values** see the source code of `node_modules/xtend-ui/src/
 
 Supported browsers are as follow: **chrome 38**, **safari 10**, **ios 10**, **firefox 38**, **edge 12**, **opera 25**.
 
-## Contributing
+## Clone
+
+```sh
+git clone https://github.com/minimit/xtend-ui.git --depth 1
+```
+
+#### Contributing
 
 Read our [contributing docs](https://github.com/minimit/xtend-ui/blob/master/.github/CONTRIBUTING.md) before submitting a pull request.
 
-## Documentation
+#### Documentation
 
-We use [gatsby](https://www.npmjs.com/package/gatsby) to serve the docs:
+We use [gatsby](https://www.npmjs.com/package/gatsby) to serve the docs.
 
 * Install required npm packages with `npm install`
 * Use `npm run build` to build the docs in `/public`

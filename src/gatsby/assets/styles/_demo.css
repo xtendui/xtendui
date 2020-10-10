@@ -35,7 +35,7 @@ html.gatsby_iframe-inside {
 code {
   @apply font-mono;
   font-size: .875em;
-  color: #22a2c9;
+  color: #728fcb;
 }
 
 .text-inverse {
@@ -50,15 +50,20 @@ pre[class*="language-"] {
   @apply overflow-sub mt-0 mb-5 mb-lc py-4 px-5;
   width: 100%;
   border-radius: 6px;
+  .gatsby_demo_code_body & {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
   border: 0 !important;
   background: theme('colors.gray.200') !important;
   line-height: 0 !important;
+  font-size: 1rem;
   code {
     width: 100%;
     background: transparent !important;
     @apply font-mono;
-    font-size: 0.75rem !important;
-    line-height: 1.6 !important;
+    font-size: 0.8125rem !important;
+    line-height: 1.4 !important;
     white-space: pre-wrap !important;
   }
   ::selection {

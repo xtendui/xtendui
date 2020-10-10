@@ -28,18 +28,20 @@ module.exports = function (custom = {}) {
       colors: {
         // https://javisperez.github.io/tailwindcolorshades/#/?hawkes-blue=bdd3ff
         gray: {
-          100: '#F8FBFF',
-          200: '#EFF4FF',
-          300: '#E5EDFF',
-          400: '#D1E0FF',
-          500: '#BDD3FF',
-          600: '#AABEE6',
-          700: '#717F99',
-          800: '#555F73',
-          900: '#393F4D',
+          50: '#FCFDFF',
+          100: '#FAFCFF',
+          200: '#F2F6FF',
+          300: '#EAF1FF',
+          400: '#DBE7FF',
+          500: '#CBDCFF',
+          600: '#B7C6E6',
+          700: '#7A8499',
+          800: '#5B6373',
+          900: '#3D424D',
         },
         // https://javisperez.github.io/tailwindcolorshades/#/?Azure%20Radiance=0078ff&tv=1
         accent: {
+          50: '#F2F8FF',
           100: '#E6F2FF',
           200: '#BFDDFF',
           300: '#99C9FF',

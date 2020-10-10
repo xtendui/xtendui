@@ -1679,11 +1679,14 @@ module.exports = theme => ({
           '@apply text-default': '',
           lineHeight: 1.8,
           fontSize: rem(14),
-          '@screen md': {
+          '@screen sm': {
             fontSize: rem(15),
           },
-          '@screen xl': {
+          '@screen md': {
             fontSize: rem(16),
+          },
+          '@screen xl': {
+            fontSize: rem(17),
           },
         },
         'h1, .h1': {

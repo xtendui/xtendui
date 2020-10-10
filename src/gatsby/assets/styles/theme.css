@@ -8,12 +8,12 @@
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
 @import "prismjs/plugins/unescaped-markup/prism-unescaped-markup.css";
-@import "prism-themes/themes/prism-base16-ateliersulphurpool.light.css";
-@import "xtend-ui/build/xtend-demos.css";
+@import "./_prism.css";
 @import "./_shared.css";
 @import "./_header.css";
 @import "./_footer.css";
 @import "./_main.css";
 @import "./_demo.css";
+@import "xtend-ui/build/xtend-demos.css";
 
 @import "tailwindcss/utilities";

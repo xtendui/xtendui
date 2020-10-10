@@ -173,14 +173,16 @@ const populateBlock = () => {
         }
         // move code block
         const appendOrigin = document.querySelector('[data-xt-origin="gatsby_open-full-content"]')
-        const moving = content.childNodes[0]
-        moving.classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
-        appendOrigin.before(moving)
-        // @FIX demo fullscreen
-        const current = appendOrigin.previousSibling.querySelector('.gatsby_demo_item.active')
-        // triggering e.detail.container
-        dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: current } }))
-        appendOrigin.remove()
+        if (appendOrigin) {
+          const moving = content.childNodes[0]
+          moving.classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
+          appendOrigin.before(moving)
+          // @FIX demo fullscreen
+          const current = appendOrigin.previousSibling.querySelector('.gatsby_demo_item.active')
+          // triggering e.detail.container
+          dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: current } }))
+          appendOrigin.remove()
+        }
         // set hash
         cancelAnimationFrame(Xt.dataStorage.get(document, 'gatsby_open-full-raf'))
         Xt.dataStorage.set(
