@@ -70,6 +70,8 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 Use this code to create a **card**.
 
+Use this code to create a **vertical group** with `.flex-col`.
+
 Check subpage to [customize content](/components/core/loader/content#spinner).
 
 Use **tailwind classes** to assign size (e.g.: padding, font size).

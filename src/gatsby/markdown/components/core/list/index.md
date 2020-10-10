@@ -40,7 +40,7 @@ To **see the default values** see the source code of `node_modules/xtend-ui/src/
 
 ## Usage
 
-Use this code to create a **horizontal list**.
+Use this code to create a **list**.
 
 <demo>
   <demovanilla src="vanilla/components/core/list/usage">
@@ -54,7 +54,7 @@ Use this code to create a **vertical list** with `.flex-col`.
   </demovanilla>
 </demo>
 
-Check subpage to [customize content](/components/core/list/content).
-
 [[notePrimary]]
 | You can space anything inside `.list`. If you need to use **tailwind width classes** use [row](/components/core/row).
+
+Check subpage to [customize content](/components/core/list/content).

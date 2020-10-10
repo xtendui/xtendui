@@ -47,7 +47,7 @@ Use this code to create a **row**.
   </demovanilla>
 </demo>
 
-Check subpage to [customize content](/components/core/row/content).
-
 [[notePrimary]]
 | You should always use **tailwind width classes** inside `.row`. Otherwise you can space contents with [list](/components/core/list).
+
+Check subpage to [customize content](/components/core/row/content).

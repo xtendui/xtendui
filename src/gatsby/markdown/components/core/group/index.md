@@ -33,7 +33,7 @@ To **see the default values** see the source code of `node_modules/xtend-ui/src/
 
 ## Usage
 
-Use this code to create a **horizontal group**.
+Use this code to create a **group**.
 
 Use **tailwind classes** to assign styles (e.g.: border, border radius).
 
