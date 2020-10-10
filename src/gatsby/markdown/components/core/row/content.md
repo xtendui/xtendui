@@ -20,6 +20,9 @@ For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/
 
 </div>
 
+[[notePrimary]]
+| **Do not use margin** css or classes on `.row` because it has automatic negative margins for internal spacing.
+
 <demo>
   <demovanilla src="vanilla/components/core/row/space-px">
   </demovanilla>

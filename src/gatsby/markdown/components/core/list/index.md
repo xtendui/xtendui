@@ -56,5 +56,5 @@ Use this code to create a **vertical list**.
 
 Check subpage to [customize content](/components/core/list/content).
 
-[[noteDefault]]
+[[notePrimary]]
 | You can space anything inside `.list`. If you need to use **tailwind width classes** use [row](/components/core/row).
