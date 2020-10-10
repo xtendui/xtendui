@@ -40,14 +40,18 @@ To **see the default values** see the source code of `node_modules/xtend-ui/src/
 
 ## Usage
 
-Use this code to create a **list**.
+#### Horizontal
+
+Use this code to create a **list horizontal**.
 
 <demo>
   <demovanilla src="vanilla/components/core/list/usage">
   </demovanilla>
 </demo>
 
-Use this code to create a **vertical list** with `.flex-col`.
+#### Vertical
+
+Use this code to create a **list vertical** with `.flex-col`.
 
 <demo>
   <demovanilla src="vanilla/components/core/list/usage-vertical">

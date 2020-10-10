@@ -96,6 +96,10 @@ Use **component classes** to style validation.
   </demovanilla>
 </demo>
 
-## Group / Toolbar / Nav
+## Group
 
 Refer to [group](/components/core/group).
+
+## Toolbar
+
+Refer to [toolbar](/components/addons/toolbar).

@@ -24,7 +24,7 @@ Use this code to create a **group number**.
   <div data-xt-group-number>
 
     <button type="button" data-xt-group-number-step="<value to add on click>">
-      -
+      <!-- content -->
     </button>
 
     <input type="number" value="<initial value>" min="<min value>" max="<max value>">

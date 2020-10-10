@@ -33,7 +33,9 @@ To **see the default values** see the source code of `node_modules/xtend-ui/src/
 
 ## Usage
 
-Use this code to create a **group**.
+#### Horizontal
+
+Use this code to create a **group horizontal**.
 
 Use **tailwind classes** to assign styles (e.g.: border, border radius).
 
@@ -42,7 +44,9 @@ Use **tailwind classes** to assign styles (e.g.: border, border radius).
   </demovanilla>
 </demo>
 
-Use this code to create a **vertical group** with `.flex-col`.
+#### Vertical
+
+Use this code to create a **group vertical** with `.flex-col`.
 
 Use **tailwind classes** to assign styles (e.g.: border, border radius).
 

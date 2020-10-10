@@ -48,6 +48,14 @@ For aria purpose use `aria-disabled="true"` when using the class `.disabled`.
 
 Refer to [form checks button](/components/core/form/other#checks-button).
 
-## Group / Toolbar / Nav
+## Group
 
 Refer to [group](/components/core/group).
+
+## Toolbar
+
+Refer to [toolbar](/components/addons/toolbar).
+
+## Nav
+
+Refer to [nav](/components/addons/nav).

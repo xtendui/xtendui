@@ -2,15 +2,17 @@
 type: "Components"
 category: "Addons"
 parent: "Group"
-title: "expand"
+title: "toolbar"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
 ## Usage
 
-Use this code to create a **group expand**.
+Use [group space](/components/core/group/content#space) to create a toolbar.
+
+For aria purpose use `role="toolbar"`.
 
 <demo>
-  <demovanilla src="vanilla/components/addons/group-expand">
+  <demovanilla src="vanilla/components/addons/group-toolbar">
   </demovanilla>
 </demo>
