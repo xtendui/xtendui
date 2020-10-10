@@ -18,6 +18,7 @@ Xt.mount.push({
     const inputNumberValidate = val => {
       const input = object.querySelector('input')
       const steps = object.querySelectorAll('[data-xt-group-number-step]')
+      val = isNaN(val) ? 0 : val
       // check min and max
       const minAttributeAsFloat = parseFloat(input.getAttribute('min'))
       const inputMin = isNaN(minAttributeAsFloat) ? 1 : minAttributeAsFloat
