@@ -1,4 +1,7 @@
 import path from 'path'
+const btnDefaultGroup = require('components/snippets/classes/btn-default-group').default
+const btnPrimaryGroup = require('components/snippets/classes/btn-primary-group').default
+const inputDefaultGroup = require('components/snippets/classes/input-default-group').default
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -9,20 +12,20 @@ export const demo = {
 
 demo.htmlSource = `
 <form>
-  <div class="form-group">
-    <div class="group group-expand">
 
-      <div class="group-inner flex-auto">
-        <input type="text" class="form-item" placeholder="Insert search query">
-      </div>
+  <div class="group demo--group-expand">
 
-      <div class="group-inner">
-        <button type="button" class="btn btn-default">
-          Search
-        </button>
-      </div>
+    <button type="button" class="btn btn-md rounded-l-md ${btnDefaultGroup()}">
+      <span class="icon-search"></span>
+    </button>
 
-    </div>
+    <input type="text" class="form-item ${inputDefaultGroup()}" placeholder="Insert search query" />
+
+    <button type="button" class="btn btn-md rounded-r-md ${btnPrimaryGroup()}">
+      Search
+    </button>
+
   </div>
+
 </form>
 `

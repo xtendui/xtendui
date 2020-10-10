@@ -11,6 +11,12 @@ class DocIndex extends React.Component {
                 Design
                 <ul>
                   <li>
+                    <a href="https://www.framer.com/">framer</a>
+                  </li>
+                  <li>
+                    <a href="https://www.framer.com/motion/">framer motion</a>
+                  </li>
+                  <li>
                     <a href="https://www.algolia.com/doc/">ghost</a>
                   </li>
                   <li>

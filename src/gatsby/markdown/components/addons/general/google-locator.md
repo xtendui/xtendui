@@ -24,7 +24,7 @@ npm install @google/markerclusterer --save
 
 ## Usage
 
-Use this code to create a **google locator**.
+Use this code to create a **google locator**. Search for "New York" to see it in action.
 
 [[notePrimary]]
 | Needs google API key with **Maps Javascript API**, **Places API**.

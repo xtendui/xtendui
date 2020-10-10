@@ -76,22 +76,21 @@
 
     .google-locator_aside_head {
       position: relative;
-      .btn-locate-store-outer {
-        position: relative;
-        width: auto;
-      }
-      padding: 3rem;
+      padding: 2rem;
+      border-bottom: 1px solid theme('colors.gray.200');
+    }
+
+    .google-locator_result {
+      @apply text-xs;
+      padding-bottom: 0.7rem;
       border-bottom: 1px solid theme('colors.gray.200');
     }
 
     .google-locator_aside_body {
       position: relative;
-      padding: 3rem;
+      padding: 2rem;
       .google-locator_result {
         display: none;
-        padding-bottom: 0.7rem;
-        border-bottom: 1px solid theme('colors.gray.200');
-        font-size: 0.8rem;
       }
       [data-xt-google-locator-result-initial] {
         display: block;
@@ -154,7 +153,7 @@
     .google-locator_items .google-locator_item {
       /* activation when clicking marker */
       cursor: pointer;
-      border: 1px solid transparent;
+      border-bottom: 1px solid theme('colors.gray.200');
       transition-property: border;
       transition-duration: theme('transitionDuration.500');
       transition-timing-function: theme('transitionTimingFunction.out');
@@ -165,27 +164,22 @@
     }
 
     .google-locator_item_name {
-      /*.full();*/
-      /*.h5();*/
+      @apply h5;
     }
 
     .google-locator_item_address {
-      /*.full();*/
-      font-size: 0.8rem;
-      line-height: 1.4;
+      @apply text-sm;
+      font-style: normal;
       text-transform: uppercase;
     }
 
     .google-locator_item_additional {
-      /*.full();*/
-      font-size: 0.8rem;
-      line-height: 1.4;
+      @apply text-sm;
       text-transform: uppercase;
     }
 
     .google-locator_item_directions {
-      font-size: 0.8rem;
-      line-height: 1.4;
+      @apply text-sm;
       text-transform: uppercase;
     }
 

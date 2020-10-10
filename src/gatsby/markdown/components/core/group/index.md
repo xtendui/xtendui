@@ -51,7 +51,4 @@ Use **tailwind classes** to assign styles (e.g.: border, border radius).
   </demovanilla>
 </demo>
 
-[[notePrimary]]
-| This demos uses [button](/components/core/button) and [input](/components/core/form). Visit the component page to import and customize.
-
 Check subpage to [customize content](/components/core/group/content).

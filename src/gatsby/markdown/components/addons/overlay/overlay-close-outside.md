@@ -8,9 +8,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 Use this code to create a **close outside**.
 
-[[notePrimary]]
-| This addon uses [overlay](/components/core/overlay). Visit the component page to import and customize.
-
 <demo>
   <demovanilla src="vanilla/components/addons/overlay-close-outside">
   </demovanilla>

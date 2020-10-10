@@ -25,7 +25,7 @@ module.exports = {
   theme: require('xtend-ui/src/tailwind-theme')({
     // xtend utilities and components in node_modules/xtend-ui/src/tailwind-xtend.js
     xtend: theme => ({
-      utilities: {
+      utilities: { // highlight-line
         core: {
           slider: {
             // modify utility

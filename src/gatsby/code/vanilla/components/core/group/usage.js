@@ -19,7 +19,7 @@ demo.htmlSource = `
       <span class="icon-search"></span>
     </button>
 
-    <input type="text" class="form-item ${inputDefaultGroup()}" placeholder="Lorem ipsum" />
+    <input type="text" class="form-item ${inputDefaultGroup()}" placeholder="Insert search query" />
 
     <button type="button" class="btn btn-md rounded-r-md ${btnPrimaryGroup()}">
       Search

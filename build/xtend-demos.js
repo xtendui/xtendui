@@ -1,7 +1,6 @@
 if (typeof window !== 'undefined') {
   require('xtend-ui/src/private/demos/components/addons/google-locator.js')
   require('xtend-ui/src/private/demos/components/addons/group-expand.js')
-  require('xtend-ui/src/private/demos/components/addons/group-number.js')
   require('xtend-ui/src/private/demos/components/addons/jump-to-content.js')
   require('xtend-ui/src/private/demos/components/addons/ripple.js')
   require('xtend-ui/src/private/demos/components/addons/scroll-to-anchor.js')

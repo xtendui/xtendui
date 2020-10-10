@@ -1,11 +1,7 @@
 import { Xt } from 'xtend-ui'
 
-/**
- * group-number
- */
-
 Xt.mount.push({
-  matches: '.group-number',
+  matches: '[data-xt-group-number]',
   mount: object => {
     // methods
 
@@ -21,23 +17,24 @@ Xt.mount.push({
 
     const inputNumberValidate = val => {
       const input = object.querySelector('input')
-      const addEl = object.querySelector('.group-number-add')
-      const removeEl = object.querySelector('.group-number-remove')
-      // disabled
-      addEl.removeAttribute('disabled')
-      removeEl.removeAttribute('disabled')
+      const steps = object.querySelectorAll('[data-xt-group-number-step]')
       // check min and max
       const minAttributeAsFloat = parseFloat(input.getAttribute('min'))
       const inputMin = isNaN(minAttributeAsFloat) ? 1 : minAttributeAsFloat
       const maxAttributeAsFloat = parseFloat(input.getAttribute('max'))
       const inputMax = isNaN(maxAttributeAsFloat) ? Infinity : maxAttributeAsFloat
-      if (val <= inputMin) {
-        val = inputMin
-        removeEl.setAttribute('disabled', 'disabled')
-      }
-      if (val >= inputMax) {
-        val = inputMax
-        addEl.setAttribute('disabled', 'disabled')
+      // disabled
+      for (const step of steps) {
+        const qty = parseFloat(step.getAttribute('data-xt-group-number-step'))
+        step.removeAttribute('disabled')
+        if (val <= inputMin && qty < 0) {
+          val = inputMin
+          step.setAttribute('disabled', 'disabled')
+        }
+        if (val >= inputMax && qty > 0) {
+          val = inputMax
+          step.setAttribute('disabled', 'disabled')
+        }
       }
       // set value
       input.value = val
@@ -52,25 +49,18 @@ Xt.mount.push({
     // vars
 
     const inputEl = object.querySelector('input')
-    const step = parseFloat(inputEl.getAttribute('step')) || 1
 
-    // add
+    // steps
 
-    const addEl = object.querySelector('.group-number-add')
-    const addStep = step
-    let addHandler = Xt.dataStorage.get(addEl, 'addHandler')
-    addHandler = addHandler || Xt.dataStorage.set(addEl, 'addHandler', inputNumberChange.bind(object, addStep))
-    addEl.removeEventListener('click', addHandler)
-    addEl.addEventListener('click', addHandler)
+    const steps = object.querySelectorAll('[data-xt-group-number-step]')
 
-    // remove
-
-    const removeEl = object.querySelector('.group-number-remove')
-    const removeStep = -step
-    let removeHandler = Xt.dataStorage.get(removeEl, 'removeHandler')
-    removeHandler = removeHandler || Xt.dataStorage.set(removeEl, 'removeHandler', inputNumberChange.bind(object, removeStep))
-    removeEl.removeEventListener('click', removeHandler)
-    removeEl.addEventListener('click', removeHandler)
+    for (const step of steps) {
+      const qty = parseFloat(step.getAttribute('data-xt-group-number-step'))
+      let addHandler = Xt.dataStorage.get(step, 'addHandler')
+      addHandler = addHandler || Xt.dataStorage.set(step, 'addHandler', inputNumberChange.bind(object, qty))
+      step.removeEventListener('click', addHandler)
+      step.addEventListener('click', addHandler)
+    }
 
     // change
 

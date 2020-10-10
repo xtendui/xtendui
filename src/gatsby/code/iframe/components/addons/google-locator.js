@@ -1,9 +1,9 @@
 import React from 'react'
 import path from 'path'
 const spinner = require('components/snippets/spinner').default
-const btnDefault = require('components/snippets/classes/btn-default').default
+const btnDefaultGroup = require('components/snippets/classes/btn-default-group').default
 const btnPrimary = require('components/snippets/classes/btn-primary').default
-const inputDefault = require('components/snippets/classes/input-default').default
+const inputDefaultGroup = require('components/snippets/classes/input-default-group').default
 const switchDefault = require('components/snippets/classes/form-switch-default').default
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
@@ -24,46 +24,52 @@ demo.htmlSource = `
 
     <div class="google-locator_aside_head">
 
-      <input type="text" class="form-item ${inputDefault()}" placeholder="Search" data-xt-google-locator-search-input>
+      <div class="form">
+        <div class="row row-space-x-4 row-space-y-3">
 
-      <button type="button" class="btn btn-md ${btnDefault()}" data-xt-google-locator-locate-btn="Locate">
-        <span class="icon-locate icon-big"></span>
-      </button>
+          <div class="w-full">
+            <div class="group">
+              <input type="text" class="form-item rounded-l-md ${inputDefaultGroup()}" placeholder="Search" data-xt-google-locator-search-input>
 
-      <button type="button" class="btn btn-md ${btnDefault()}" data-xt-google-locator-search-btn>
-        <span class="icon-search icon-big"></span>
-      </button>
+              <button type="button" class="btn btn-md ${btnDefaultGroup()}" data-xt-google-locator-locate-btn="Locate">
+                <span class="icon-locate icon-big"></span>
+              </button>
 
-      <div class="row row-space-x-4 row-space-y-3">
+              <button type="button" class="btn btn-md rounded-r-md ${btnDefaultGroup()}" data-xt-google-locator-search-btn>
+                <span class="icon-search icon-big"></span>
+              </button>
+            </div>
+          </div>
 
-        <div class="w-full">
-          <label class="form-label-check">
-            <input type="radio" class="form-check form-radio ${switchDefault()}" name="google-locator-options" value="" checked data-xt-google-locator-option/>
-            <span class="ml-3">All types</span>
-          </label>
+          <div class="w-full">
+            <label class="form-label-check">
+              <input type="radio" class="form-check form-radio ${switchDefault()}" name="google-locator-options" value="" checked data-xt-google-locator-option/>
+              <span class="ml-3">All types</span>
+            </label>
+          </div>
+
+          <div class="w-full">
+            <label class="form-label-check">
+              <input type="radio" class="form-check form-radio ${switchDefault()}" name="google-locator-options" value="restaurant" data-xt-google-locator-option/>
+              <span class="ml-3">Restaurant</span>
+            </label>
+          </div>
+
+          <div class="w-full">
+            <label class="form-label-check" for="google-locator-options-school">
+              <input type="radio" class="form-check form-radio ${switchDefault()}" id="google-locator-options-school" name="google-locator-options" value="school" data-xt-google-locator-option/>
+              <span class="ml-3">School</span>
+            </label>
+          </div>
+
+          <div class="w-full">
+            <label class="form-label-check" for="google-locator-options-fav">
+              <input type="checkbox" class="form-check form-switch ${switchDefault()}" id="google-locator-options-fav" name="google-locator-fav" value="fav" data-xt-google-locator-option/>
+              <span class="ml-3">Favourite</span>
+            </label>
+          </div>
+
         </div>
-
-        <div class="w-full">
-          <label class="form-label-check">
-            <input type="radio" class="form-check form-radio ${switchDefault()}" name="google-locator-options" value="restaurant" data-xt-google-locator-option/>
-            <span class="ml-3">Restaurant</span>
-          </label>
-        </div>
-
-        <div class="w-full">
-          <label class="form-label-check" for="google-locator-options-school">
-            <input type="radio" class="form-check form-radio ${switchDefault()}" id="google-locator-options-school" name="google-locator-options" value="school" data-xt-google-locator-option/>
-            <span class="ml-3">School</span>
-          </label>
-        </div>
-
-        <div class="w-full">
-          <label class="form-label-check" for="google-locator-options-fav">
-            <input type="checkbox" class="form-check form-switch ${switchDefault()}" id="google-locator-options-fav" name="google-locator-fav" value="fav" data-xt-google-locator-option/>
-            <span class="ml-3">Favourite</span>
-          </label>
-        </div>
-
       </div>
 
     </div>

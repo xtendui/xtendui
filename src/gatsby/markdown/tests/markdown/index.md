@@ -85,10 +85,7 @@ See [group component](/components/core/loader) to create a button with group.
 See [mouse follow addon](/components/core/loader) to create a loader with mouse follow.
 
 [[notePrimary]]
-| This demos uses [button](/components/core/button) and [input](/components/core/form). Visit the component page to import and customize.
-
-[[notePrimary]]
-| This addon uses [separator](/components/core/separator). Visit the component page to import and customize.
+| This addon uses [separator](/components/core/separator) additionally. Visit the component page to import and customize.
 
 (use touch device to see it in action)
 
