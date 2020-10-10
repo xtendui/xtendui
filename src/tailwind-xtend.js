@@ -891,10 +891,10 @@ module.exports = theme => ({
           lineHeight: theme('lineHeight.snug'),
         },
         '.form-valid': {
-          borderColor: `${theme('colors.green.500')} !important`,
+          borderColor: `${theme('colors.success')} !important`,
         },
         '.form-invalid': {
-          borderColor: `${theme('colors.red.500')} !important`,
+          borderColor: `${theme('colors.error')} !important`,
         },
         '.form-sm': {
           // styles
