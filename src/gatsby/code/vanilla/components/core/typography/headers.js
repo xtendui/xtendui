@@ -8,31 +8,39 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<h6 class="h1">
+<h1>
   h1. Lorem Ipsum
-</h6>
+</h1>
 
-<h6 class="h2">
+<h2>
   h2. Lorem Ipsum
-</h6>
+</h2>
 
-<h6 class="h3">
+<h3>
   h3. Lorem Ipsum
-</h6>
+</h3>
 
-<h6 class="h4">
+<h4>
   h4. Lorem Ipsum
-</h6>
+</h4>
 
-<h6 class="h5">
+<h5>
   h5. Lorem Ipsum
+</h5>
+
+<h6>
+  h6. Lorem Ipsum
 </h6>
 
-<h6 class="h6">
+<h6>
   h6. Lorem Ipsum
 </h6>
 
 <div class="h5 h-block rounded-md bg-gray-200 text-center">
   h5. Lorem Ipsum
 </div>
+
+<h3 class="h6 sm:h5 md:h4">
+  responsive. Lorem Ipsum
+</h6>
 `

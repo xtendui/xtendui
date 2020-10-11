@@ -427,9 +427,16 @@ module.exports = theme => ({
           paddingRight: theme('spacing.6'),
         },
         '.p': {
+          // setup
+          fontFamily: 'inherit',
+          fontStyle: 'inherit',
+          fontWeight: 'inherit',
+          letterSpacing: 'inherit',
+          textTransform: 'inherit',
           // style
+          marginTop: theme('spacing.3'),
           marginBottom: theme('spacing.3'),
-          '@apply text-reset mb-lc': {},
+          '@apply text-base mb-lc': {},
         },
         '.text-reset': {
           // setup

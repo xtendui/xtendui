@@ -8,10 +8,6 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="p">
-  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
-</div>
-
 <p class="text-xs">
   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
 </p>
@@ -32,23 +28,7 @@ demo.htmlSource = `
   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
 </p>
 
-<p class="text-2xl">
-  Lorem Ipsum
-</p>
-
-<p class="text-3xl">
-  Lorem Ipsum
-</p>
-
-<p class="text-4xl">
-  Lorem Ipsum
-</p>
-
-<p class="text-5xl">
-  Lorem Ipsum
-</p>
-
-<p class="text-6xl">
-  Lorem Ipsum
-</p>
+<h6 class="md:p">
+  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
+</h6>
 `
