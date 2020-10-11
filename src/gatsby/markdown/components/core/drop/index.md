@@ -35,7 +35,7 @@ module.exports = {
       components: {
         core: {
           drop: {
-            // modify component
+            // modify core component
           },
         },
       },

@@ -20,7 +20,7 @@ module.exports = {
       components: {
         core: {
           group: {
-            // modify component
+            // modify core component
           },
         },
       },

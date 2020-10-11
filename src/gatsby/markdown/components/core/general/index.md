@@ -28,7 +28,7 @@ module.exports = {
       components: {
         core: {
           general: {
-            // modify component
+            // modify core component
           },
         },
       },

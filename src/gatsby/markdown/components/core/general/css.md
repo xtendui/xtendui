@@ -16,7 +16,18 @@ When you style pseudo selector remember to style `&:active, &.active`.
 
 ## Utils
 
-Use **component utilities** for general purpose.
+These are **automatic spacing classes** to reset margin top when `:first-child` with `mt-fc` and margin bottom when `:last-child` with `mb-lc`.
+
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
+| Util                  | `.mt-fc`                     | `mt-fc`                | `responsive`                | Reset margin top on `:first-child`            |
+| Util                  | `.mb-lc`                     | `mb-lc`                | `responsive`                | Reset margin bottom on `:last-child`            |
+
+</div>
+
+These are general's **component utilities**.
 
 <div class="table-scroll">
 
@@ -33,7 +44,7 @@ Use **component utilities** for general purpose.
 
 ## Components
 
-Use **component classes** for general purpose.
+These are general's **component utilities**.
 
 <div class="table-scroll">
 

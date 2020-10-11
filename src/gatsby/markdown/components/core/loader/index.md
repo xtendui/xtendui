@@ -20,7 +20,7 @@ module.exports = {
       components: {
         core: {
           loader: {
-            // modify component
+            // modify core component
           },
         },
       },

@@ -28,7 +28,7 @@ module.exports = {
       components: {
         core: {
           form: {
-            // modify component
+            // modify core component
           },
         },
       },

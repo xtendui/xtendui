@@ -35,7 +35,7 @@ module.exports = {
       components: {
         core: {
           overlay: {
-            // modify component
+            // modify core component
           },
         },
       },

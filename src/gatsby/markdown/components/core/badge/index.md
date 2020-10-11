@@ -20,7 +20,7 @@ module.exports = {
       components: {
         core: {
           badge: {
-            // modify component
+            // modify core component
           },
         },
       },

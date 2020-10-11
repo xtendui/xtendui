@@ -13,32 +13,38 @@ module.exports = theme => ({
     core: {
       // general
       general: {
-        '.container-reset': {
-          padding: 0,
-          width: 'auto',
-          maxWidth: 'none',
-        },
         '.mt-fc': {
+          // setup
           '&:first-child': {
             marginTop: theme('spacing.0'),
           },
         },
         '.mb-lc': {
+          // setup
           '&:last-child': {
             marginBottom: theme('spacing.0'),
           },
         },
+        '.container-reset': {
+          // setup
+          padding: 0,
+          width: 'auto',
+          maxWidth: 'none',
+        },
         '.toggle': {
+          // setup
           '&:not(.active):not(.out)': {
             display: 'none',
           },
         },
         '.toggle-inverse': {
+          // setup
           '&.done': {
             display: 'none',
           },
         },
         '.duration-none': {
+          // setup
           transitionDuration: 'initial',
           transitionDelay: 'initial',
           animationDuration: 'initial',
@@ -49,10 +55,12 @@ module.exports = theme => ({
       // card
       card: {
         '.card-group': {
+          // setup
           display: 'flex',
           alignItems: 'inherit',
         },
         '.card-disable': {
+          // setup
           '@apply text-default': '',
           borderWidth: '0',
           backgroundColor: 'transparent',
@@ -197,6 +205,7 @@ module.exports = theme => ({
       // list
       list: {
         space: {
+          // styles
           ...theme('spacing'),
         },
       },
@@ -312,6 +321,7 @@ module.exports = theme => ({
       // row
       row: {
         space: {
+          // styles
           ...theme('spacing'),
         },
       },
@@ -325,7 +335,104 @@ module.exports = theme => ({
           // use @apply text to have tailwind opacity utilities
           '@apply text-white': '',
         },
+        '.h1': {
+          // style
+          marginTop: theme('spacing.6'),
+          marginBottom: theme('spacing.4'),
+          '@apply mt-fc mb-lc': {},
+          fontFamily: theme('fontFamily.sans').toString(),
+          fontWeight: theme('fontWeight.semibold'),
+          fontSize: rem(35),
+          lineHeight: theme('lineHeight.snug'),
+          letterSpacing: theme('letterSpacing.normal'),
+          textTransform: 'none',
+          '@screen lg': {
+            fontSize: rem(40),
+          },
+        },
+        '.h2': {
+          // style
+          marginTop: theme('spacing.6'),
+          marginBottom: theme('spacing.4'),
+          '@apply mt-fc mb-lc': {},
+          fontFamily: theme('fontFamily.sans').toString(),
+          fontWeight: theme('fontWeight.semibold'),
+          fontSize: rem(30),
+          lineHeight: theme('lineHeight.snug'),
+          letterSpacing: theme('letterSpacing.normal'),
+          textTransform: 'none',
+          '@screen lg': {
+            fontSize: rem(35),
+          },
+        },
+        '.h3': {
+          // style
+          marginTop: theme('spacing.6'),
+          marginBottom: theme('spacing.4'),
+          '@apply mt-fc mb-lc': {},
+          fontFamily: theme('fontFamily.sans').toString(),
+          fontWeight: theme('fontWeight.semibold'),
+          fontSize: rem(25),
+          lineHeight: theme('lineHeight.snug'),
+          letterSpacing: theme('letterSpacing.normal'),
+          textTransform: 'none',
+          '@screen lg': {
+            fontSize: rem(30),
+          },
+        },
+        '.h4': {
+          // style
+          marginTop: theme('spacing.6'),
+          marginBottom: theme('spacing.4'),
+          '@apply mt-fc mb-lc': {},
+          fontFamily: theme('fontFamily.sans').toString(),
+          fontWeight: theme('fontWeight.semibold'),
+          fontSize: rem(24),
+          lineHeight: theme('lineHeight.snug'),
+          letterSpacing: theme('letterSpacing.normal'),
+          textTransform: 'none',
+        },
+        '.h5': {
+          // style
+          marginTop: theme('spacing.3'),
+          marginBottom: theme('spacing.2'),
+          '@apply mt-fc mb-lc': {},
+          fontFamily: theme('fontFamily.sans').toString(),
+          fontWeight: theme('fontWeight.semibold'),
+          fontSize: rem(18),
+          lineHeight: theme('lineHeight.snug'),
+          letterSpacing: theme('letterSpacing.normal'),
+          textTransform: 'none',
+        },
+        '.h6': {
+          // style
+          marginTop: theme('spacing.2'),
+          marginBottom: theme('spacing.1'),
+          '@apply mt-fc mb-lc': {},
+          fontFamily: theme('fontFamily.sans').toString(),
+          fontWeight: theme('fontWeight.semibold'),
+          fontSize: '13px',
+          lineHeight: theme('lineHeight.snug'),
+          letterSpacing: theme('letterSpacing.wide'),
+          textTransform: 'uppercase',
+        },
+        '.h-block': {
+          // style
+          marginTop: theme('spacing.8'),
+          marginBottom: theme('spacing.6'),
+          '@apply mt-fc mb-lc': {},
+          paddingTop: theme('spacing.3'),
+          paddingBottom: theme('spacing.3'),
+          paddingLeft: theme('spacing.6'),
+          paddingRight: theme('spacing.6'),
+        },
+        '.p': {
+          // style
+          marginBottom: theme('spacing.3'),
+          '@apply text-reset mb-lc': {},
+        },
         '.text-reset': {
+          // setup
           fontFamily: 'inherit',
           fontStyle: 'inherit',
           fontWeight: 'inherit',
@@ -335,6 +442,7 @@ module.exports = theme => ({
           textTransform: 'inherit',
         },
         '.ellipsis': {
+          // setup
           overflow: 'hidden',
           whiteSpace: 'nowrap',
           textOverflow: 'ellipsis',
@@ -344,14 +452,11 @@ module.exports = theme => ({
           },
         },
         '.lowercase-capitalize': {
+          // setup
           textTransform: 'lowercase',
           '&:first-letter': {
             textTransform: 'uppercase',
           },
-        },
-        '.align-uppercase': {
-          position: 'relative',
-          top: '-.1em',
         },
       },
     },
@@ -1629,8 +1734,9 @@ module.exports = theme => ({
           // setup
           width: '100%',
           // styles
-          marginBottom: theme('spacing.3'),
-          '@apply mb-lc': {},
+          marginTop: theme('spacing.6'),
+          marginBottom: theme('spacing.6'),
+          '@apply mt-fc mb-lc': {},
         },
         th: {
           // styles
@@ -1689,101 +1795,33 @@ module.exports = theme => ({
             fontSize: rem(17),
           },
         },
-        'h1, .h1': {
-          // style
-          marginTop: theme('spacing.6'),
-          marginBottom: theme('spacing.4'),
-          '@apply mt-fc mb-lc': {},
-          fontFamily: theme('fontFamily.sans').toString(),
-          fontWeight: theme('fontWeight.semibold'),
-          fontSize: rem(35),
-          lineHeight: theme('lineHeight.snug'),
-          letterSpacing: theme('letterSpacing.normal'),
-          textTransform: 'none',
-          '@screen lg': {
-            fontSize: rem(40),
-          },
+        h1: {
+          // setup
+          '@apply h1': '',
         },
-        'h2, .h2': {
-          // style
-          marginTop: theme('spacing.6'),
-          marginBottom: theme('spacing.4'),
-          '@apply mt-fc mb-lc': {},
-          fontFamily: theme('fontFamily.sans').toString(),
-          fontWeight: theme('fontWeight.semibold'),
-          fontSize: rem(30),
-          lineHeight: theme('lineHeight.snug'),
-          letterSpacing: theme('letterSpacing.normal'),
-          textTransform: 'none',
-          '@screen lg': {
-            fontSize: rem(35),
-          },
+        h2: {
+          // setup
+          '@apply h2': '',
         },
-        'h3, .h3': {
-          // style
-          marginTop: theme('spacing.6'),
-          marginBottom: theme('spacing.4'),
-          '@apply mt-fc mb-lc': {},
-          fontFamily: theme('fontFamily.sans').toString(),
-          fontWeight: theme('fontWeight.semibold'),
-          fontSize: rem(25),
-          lineHeight: theme('lineHeight.snug'),
-          letterSpacing: theme('letterSpacing.normal'),
-          textTransform: 'none',
-          '@screen lg': {
-            fontSize: rem(30),
-          },
+        h3: {
+          // setup
+          '@apply h3': '',
         },
-        'h4, .h4': {
-          // style
-          marginTop: theme('spacing.6'),
-          marginBottom: theme('spacing.4'),
-          '@apply mt-fc mb-lc': {},
-          fontFamily: theme('fontFamily.sans').toString(),
-          fontWeight: theme('fontWeight.semibold'),
-          fontSize: rem(24),
-          lineHeight: theme('lineHeight.snug'),
-          letterSpacing: theme('letterSpacing.normal'),
-          textTransform: 'none',
+        h4: {
+          // setup
+          '@apply h4': '',
         },
-        'h5, .h5': {
-          // style
-          marginTop: theme('spacing.3'),
-          marginBottom: theme('spacing.2'),
-          '@apply mt-fc mb-lc': {},
-          fontFamily: theme('fontFamily.sans').toString(),
-          fontWeight: theme('fontWeight.semibold'),
-          fontSize: rem(18),
-          lineHeight: theme('lineHeight.snug'),
-          letterSpacing: theme('letterSpacing.normal'),
-          textTransform: 'none',
+        h5: {
+          // setup
+          '@apply h5': '',
         },
-        'h6, .h6': {
-          // style
-          marginTop: theme('spacing.2'),
-          marginBottom: theme('spacing.1'),
-          '@apply mt-fc mb-lc': {},
-          fontFamily: theme('fontFamily.sans').toString(),
-          fontWeight: theme('fontWeight.semibold'),
-          fontSize: '13px',
-          lineHeight: theme('lineHeight.snug'),
-          letterSpacing: theme('letterSpacing.wide'),
-          textTransform: 'uppercase',
+        h6: {
+          // setup
+          '@apply h6': '',
         },
-        '.h-block': {
-          // style
-          marginTop: theme('spacing.8'),
-          marginBottom: theme('spacing.6'),
-          '@apply mt-fc mb-lc': {},
-          paddingTop: theme('spacing.3'),
-          paddingBottom: theme('spacing.3'),
-          paddingLeft: theme('spacing.6'),
-          paddingRight: theme('spacing.6'),
-        },
-        'p, .p': {
-          // style
-          marginBottom: theme('spacing.3'),
-          '@apply text-reset mb-lc': {},
+        p: {
+          // setup
+          '@apply p': '',
         },
         'ul:not([class]), ol:not([class])': {
           // style
@@ -1825,14 +1863,37 @@ module.exports = theme => ({
           },
         },
         hr: {
-          marginTop: theme('spacing.3'),
-          marginBottom: theme('spacing.3'),
+          marginTop: theme('spacing.6'),
+          marginBottom: theme('spacing.6'),
+          '@apply mt-fc mb-lc': {},
         },
+        'figure, .figure': {
+          marginTop: theme('spacing.6'),
+          marginBottom: theme('spacing.6'),
+          '@apply mt-fc mb-lc': {},
+        },
+        'figcaption, .figcaption': {
+          marginTop: theme('spacing.3'),
+          fontSize: rem(14),
+          lineHeight: theme('lineHeight.snug'),
+        }
       },
     },
     addons: {
-      // general
-      general: {
+      // groupNumber
+      groupNumber: {
+        '[data-xt-group-number]': {
+          'input[type="number"]': {
+            '-moz-appearance': 'textfield',
+            '&::-webkit-inner-spin-button, &::-webkit-outer-spin-button': {
+              '-webkit-appearance': 'none',
+              appearance: 'none',
+            },
+          },
+        },
+      },
+      // mouseFollow
+      mousefollow: {
         '.mouse-follow': {
           pointerEvents: 'none',
           position: 'fixed',
@@ -1841,6 +1902,9 @@ module.exports = theme => ({
           right: 'auto',
           bottom: 'auto',
         },
+      },
+      // ripple
+      ripple: {
         '.ripple-container': {
           // setup
           overflow: 'hidden',
@@ -1861,20 +1925,48 @@ module.exports = theme => ({
           background: theme('colors.black'),
         },
       },
-      // group
-      group: {
-        '[data-xt-group-number]': {
-          'input[type="number"]': {
-            '-moz-appearance': 'textfield',
-            '&::-webkit-inner-spin-button, &::-webkit-outer-spin-button': {
-              '-webkit-appearance': 'none',
-              appearance: 'none',
-            },
+      // separator
+      separator: {
+        '.separator': {
+          // setup
+          display: 'inline-block',
+          position: 'relative',
+          fontSize: '1em',
+          verticalAlign: 'baseline',
+        },
+        '.separator-dash': {
+          // styles
+          '&:after': {
+            content: '"-"',
+          },
+        },
+        '.separator-slash': {
+          // styles
+          '&:after': {
+            content: '"/"',
+          },
+        },
+        '.separator-pipe': {
+          // styles
+          '&:after': {
+            content: '"|"',
+          },
+        },
+        '.separator-point': {
+          // styles
+          '&:after': {
+            content: '"•"',
+          },
+        },
+        '.separator-arrow': {
+          // styles
+          '&:after': {
+            content: '">"',
           },
         },
       },
-      // slider
-      slider: {
+      // sliderNavigationSides
+      sliderNavigationSides: {
         '.slider-navigation-sides': {
           // setup
           cursor: 'none',
@@ -1929,46 +2021,6 @@ module.exports = theme => ({
             marginTop: '-0.7rem',
             marginLeft: '-0.7rem',
             opacity: '1',
-          },
-        },
-      },
-      // typography
-      typography: {
-        '.separator': {
-          // setup
-          display: 'inline-block',
-          position: 'relative',
-          fontSize: '1em',
-          verticalAlign: 'baseline',
-        },
-        '.separator-dash': {
-          // styles
-          '&:after': {
-            content: '"-"',
-          },
-        },
-        '.separator-slash': {
-          // styles
-          '&:after': {
-            content: '"/"',
-          },
-        },
-        '.separator-pipe': {
-          // styles
-          '&:after': {
-            content: '"|"',
-          },
-        },
-        '.separator-point': {
-          // styles
-          '&:after': {
-            content: '"•"',
-          },
-        },
-        '.separator-arrow': {
-          // styles
-          '&:after': {
-            content: '">"',
           },
         },
       },

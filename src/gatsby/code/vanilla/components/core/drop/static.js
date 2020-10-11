@@ -11,7 +11,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="relative" style="padding: 1rem 1.5rem; background: #0078ff;">
+<div class="relative py-4 px-6 bg-accent-500">
 
   <div class="drop-container drop-container-static" data-xt-drop>
 

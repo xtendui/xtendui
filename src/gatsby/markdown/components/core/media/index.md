@@ -20,7 +20,7 @@ module.exports = {
       components: {
         core: {
           media: {
-            // modify component
+            // modify core component
           },
         },
       },

@@ -308,9 +308,9 @@ module.exports = {
       },
       components: {
         core: {
-          // disable component
+          // disable core component
           componentName: false,
-          // modify component
+          // modify core component
           componentName: {
             '.selector': {
               myStyle: 'myStyleValue',
@@ -318,9 +318,9 @@ module.exports = {
           },
         },
         addons: {
-          // disable addon
+          // disable addon component
           addonName: false,
-          // modify addon
+          // modify addon component
           addonName: {
             '.selector': {
               myStyle: 'myStyleValue',

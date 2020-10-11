@@ -6,4 +6,38 @@ title: "Typography"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
-@TODO
+## Setup
+
+#### Css
+
+Follow the [css installation](/introduction/getting-started/setup#css-installation) instructions. To [customize styles](/introduction/getting-started/setup#css-customization) in your `tailwind.config.js` file.
+
+```jsx
+module.exports = {
+  theme: require('xtend-ui/src/tailwind-theme')({
+    // xtend utilities and components in node_modules/xtend-ui/src/tailwind-xtend.js
+    xtend: theme => ({
+      utilities: {
+        core: {
+          typography: {
+            // modify utility
+          },
+        },
+      },
+      components: {
+        core: {
+          typography: {
+            // modify core component
+          },
+        },
+      },
+    }),
+  })
+}
+```
+
+To **see the default values** see the source code of `node_modules/xtend-ui/src/tailwind-xtend.js`.
+
+## Usage
+
+Check subpage to [customize content](/components/core/typography/content).

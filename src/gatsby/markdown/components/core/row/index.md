@@ -27,7 +27,7 @@ module.exports = {
       components: {
         core: {
           row: {
-            // modify component
+            // modify core component
           },
         },
       },

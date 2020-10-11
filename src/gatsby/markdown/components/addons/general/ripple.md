@@ -28,7 +28,7 @@ module.exports = {
       components: {
         addons: {
           ripple: {
-            // modify component
+            // modify core component
           },
         },
       },

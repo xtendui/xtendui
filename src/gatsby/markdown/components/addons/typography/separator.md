@@ -20,7 +20,7 @@ module.exports = {
       components: {
         addons: {
           separator: {
-            // modify component
+            // modify core component
           },
         },
       },

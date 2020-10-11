@@ -8,8 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-space-2 items-center text-inverse"
-  style="padding: 1rem 1.5rem; background: #0078ff;">
+<div class="list list-space-2 items-center text-inverse py-4 px-6 bg-accent-500">
 
   <a href="#">
     link

@@ -35,7 +35,7 @@ module.exports = {
       components: {
         core: {
           slider: {
-            // modify component
+            // modify core component
           },
         },
       },

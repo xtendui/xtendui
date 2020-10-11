@@ -8,10 +8,10 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<ul class="demo--list-custom">
+<ul>
   <li>
     <p><strong>Lorem ipsum dolor sit amet.</strong></p>
-    <ul class="demo--list-custom">
+    <ul>
       <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
       <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut ex at ex pellentesque efficitur.</li>
     </ul>
@@ -19,4 +19,18 @@ demo.htmlSource = `
   <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut ex at ex pellentesque efficitur.</li>
   <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut ex at ex pellentesque efficitur. Maecenas pulvinar mauris eget pharetra elementum.</li>
 </ul>
+
+<hr>
+
+<ol>
+  <li>
+    <p><strong>Lorem ipsum dolor sit amet.</strong></p>
+    <ol>
+      <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+      <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut ex at ex pellentesque efficitur.</li>
+    </ol>
+  </li>
+  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut ex at ex pellentesque efficitur.</li>
+  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut ex at ex pellentesque efficitur. Maecenas pulvinar mauris eget pharetra elementum.</li>
+</ol>
 `

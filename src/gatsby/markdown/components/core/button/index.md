@@ -20,7 +20,7 @@ module.exports = {
       components: {
         core: {
           btn: {
-            // modify component
+            // modify core component
           },
         },
       },

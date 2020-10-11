@@ -28,7 +28,7 @@ module.exports = {
       components: {
         addons: {
           mousefollow: {
-            // modify component
+            // modify core component
           },
         },
       },

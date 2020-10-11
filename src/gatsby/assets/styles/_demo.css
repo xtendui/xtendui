@@ -81,7 +81,7 @@ pre {
 }
 
 .gatsby_demo {
-  @apply my-5 mt-fc mb-lc;
+  @apply my-6 mt-fc mb-lc;
   border-radius: 6px;
   pre {
     border-width: 0 !important;

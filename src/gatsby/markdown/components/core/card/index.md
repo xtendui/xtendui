@@ -27,7 +27,7 @@ module.exports = {
       components: {
         core: {
           card: {
-            // modify component
+            // modify core component
           },
         },
       },

@@ -8,7 +8,7 @@ module.exports = plugin.withOptions(() => {
     const custom = theme(`xtend`, {})
 
     /**
-     * components core
+     * core components
      */
 
     const componentsCoreBase = base(theme).components.core || {}
@@ -21,7 +21,7 @@ module.exports = plugin.withOptions(() => {
     }
 
     /**
-     * components addons
+     * addons components
      */
 
     const componentsAddonsBase = base(theme).components.addons || {}
@@ -34,7 +34,7 @@ module.exports = plugin.withOptions(() => {
     }
 
     /**
-     * utilities core
+     * core utilities
      */
 
     const utilitiesCoreBase = base(theme).utilities.core || {}
@@ -120,6 +120,7 @@ module.exports = plugin.withOptions(() => {
     /**
      * variant
      */
+
     addVariant('active', ({ modifySelectors, separator }) => {
       modifySelectors(({ className }) => {
         return `.${e(`active${separator}${className}`)}:active,.${e(`active${separator}${className}`)}.active`

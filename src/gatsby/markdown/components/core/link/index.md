@@ -27,7 +27,7 @@ module.exports = {
       components: {
         core: {
           link: {
-            // modify component
+            // modify core component
           },
         },
       },
@@ -42,18 +42,6 @@ To **see the default values** see the source code of `node_modules/xtend-ui/src/
 
 Use this code to create a **link**.
 
-<demo>
-  <demovanilla src="vanilla/components/core/link/usage">
-  </demovanilla>
-</demo>
-
-Inside `.text-inverse` links are styled accordingly.
-
-<demo>
-  <demovanilla src="vanilla/components/core/link/usage-inverse">
-  </demovanilla>
-</demo>
-
 You can use `.link` to style any element as a link.
 
 <div class="table-scroll">
@@ -67,3 +55,23 @@ You can use `.link` to style any element as a link.
 [[noteDefault]]
 | Links `a` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
 
+<demo>
+  <demovanilla src="vanilla/components/core/link/usage">
+  </demovanilla>
+</demo>
+
+Use `.text-inverse` to style with inverse colors.
+
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
+| Util                  | `.text-default`       | `text-default`                | `responsive hover`                | Default text and links colors            |
+| Util                  | `.text-inverse`       | `text-inverse`                | `responsive hover`                | Inverse text and links colors            |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/core/link/usage-inverse">
+  </demovanilla>
+</demo>

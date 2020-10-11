@@ -35,7 +35,7 @@ module.exports = {
       components: {
         core: {
           sticky: {
-            // modify component
+            // modify core component
           },
         },
       },
