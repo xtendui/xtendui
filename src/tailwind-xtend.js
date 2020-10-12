@@ -1171,6 +1171,7 @@ module.exports = theme => ({
         '.icon': {
           // setup
           display: 'inline-block',
+          stroke: 'currentColor',
         },
         '.icon-sm': {
           // styles

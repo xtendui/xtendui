@@ -76,10 +76,10 @@ You can add navigation with the `navigation:Query` option, on the queried elemen
 
 <script type="text/plain" class="language-markup">
   <button type="button" class="btn btn-md" data-xt-nav="-1" title="Previous slide">
-    <span class="icon-chevron-left"></span>
+    <!-- content -->
   </button>
   <button type="button" class="btn btn-md" data-xt-nav="1" title="Next slide">
-    <span class="icon-chevron-right"></span>
+    <!-- content -->
   </button>
 </script>
 

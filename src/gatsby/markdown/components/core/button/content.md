@@ -47,3 +47,15 @@ Use **component classes** to assign size (e.g.: padding, font size).
 </demo>
 
 You can add **additional size** for example `.btn-xs` or `.btn-xl`.
+
+## Alignment and Icons
+
+Use **tailwind classes** to assign alignment (e.g.: align items, justify content).
+
+[[notePrimary]]
+| This demo uses [icons](/components/core/icons). Visit the component page to import and customize.
+
+<demo>
+  <demovanilla src="vanilla/components/core/button/icons">
+  </demovanilla>
+</demo>

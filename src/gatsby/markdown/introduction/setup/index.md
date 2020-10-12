@@ -351,12 +351,16 @@ Read our [contributing docs](https://github.com/minimit/xtend-ui/blob/master/.gi
 
 #### Documentation
 
-We use [gatsby](https://www.npmjs.com/package/gatsby) to serve the docs.
-
 * Install required npm packages with `npm install`
 * Use `npm run build` to build the docs in `/public`
 * Use `npm run dev` to serve a develop version
 * Use `npm run serve` to serve a production version
+
+## Acknowledgement
+
+* Utility by [TailwindCss](https://tailwindcss.com/) MIT License
+* Docs by [Gatsby](https://www.gatsbyjs.com/) MIT License
+* Icons by [Tabler Icons](https://tablericons.com/) MIT License
 
 ## Copyright
 

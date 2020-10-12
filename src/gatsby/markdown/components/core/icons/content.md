@@ -31,7 +31,7 @@ Use [typography variant](/components/core/typography/content#variant) to style i
 
 ## Size
 
-Use **component classes** to assign size (e.g.: font size).
+Use **component classes** to assign size (e.g.: font size, stroke width).
 
 <div class="table-scroll">
 
@@ -53,6 +53,6 @@ Use **component classes** to assign size (e.g.: font size).
 
 You can add **additional size** for example `.icon-xs` or `.icon-xl`.
 
-## Button and Alignment
+## Button
 
-Refer to [button icons and alignment](/components/core/button/other#icons-and-alignment).
+Refer to [button alignment and icons](/components/core/button/content#alignment-and-icons).

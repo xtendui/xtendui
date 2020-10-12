@@ -5,6 +5,8 @@ const btnDefaultGroup = require('components/snippets/classes/btn-default-group')
 const btnPrimary = require('components/snippets/classes/btn-primary').default
 const inputDefaultGroup = require('components/snippets/classes/input-default-group').default
 const switchDefault = require('components/snippets/classes/form-switch-default').default
+const iconLocate = require('components/snippets/icons').iconLocate
+const iconSearch = require('components/snippets/icons').iconSearch
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -32,11 +34,11 @@ demo.htmlSource = `
               <input type="text" class="form-item rounded-l-md ${inputDefaultGroup()}" placeholder="Search" data-xt-google-locator-search-input>
 
               <button type="button" class="btn btn-md ${btnDefaultGroup()}" data-xt-google-locator-locate-btn="Locate">
-                <span class="icon-locate icon-big"></span>
+                ${iconLocate({ classes: 'icon-lg' })}
               </button>
 
               <button type="button" class="btn btn-md rounded-r-md ${btnDefaultGroup()}" data-xt-google-locator-search-btn>
-                <span class="icon-search icon-big"></span>
+                ${iconSearch({ classes: 'icon-lg' })}
               </button>
             </div>
           </div>
@@ -105,7 +107,7 @@ demo.htmlSource = `
               </div>
               <a href="#" target="_blank" class="google-locator_item_directions" title="directions" data-xt-google-locator-data="direction">
                 <span class="google-locator_item_directions_icon">
-                  <span class="icon-xt-search icon-big"></span>
+                  ${iconSearch({ classes: 'icon-lg' })}
                 </span>
                 <span data-xt-google-locator-data="distance"></span>
               </a>

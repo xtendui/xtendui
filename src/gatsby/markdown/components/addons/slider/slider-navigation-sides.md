@@ -36,7 +36,7 @@ To **see the default values** see the source code of `node_modules/xtend-ui/src/
 Use this code to create a **navigation sides**.
 
 [[notePrimary]]
-| This addon uses [mouse follow](/components/addons/general/mouse-follow) additionally. Visit the component page to import and customize.
+| This addon uses [mouse follow](/components/addons/general/mouse-follow). Visit the component page to import and customize.
 
 <demo>
   <demovanilla src="vanilla/components/addons/slider-navigation-sides">

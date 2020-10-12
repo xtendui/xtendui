@@ -332,7 +332,7 @@ To **see the default values** see the source code of `node_modules/xtend-ui/src/
 
 Supported browsers are as follow: **chrome 38**, **safari 10**, **ios 10**, **firefox 38**, **edge 12**, **opera 25**.
 
-## Clone
+## Fork
 
 ```sh
 git clone https://github.com/minimit/xtend-ui.git --depth 1
@@ -350,6 +350,12 @@ We use [gatsby](https://www.npmjs.com/package/gatsby) to serve the docs.
 * Use `npm run build` to build the docs in `/public`
 * Use `npm run dev` to serve a develop version
 * Use `npm run serve` to serve a production version
+
+## Acknowledgement
+
+* Utility by [TailwindCss](https://tailwindcss.com/) MIT License
+* Docs by [Gatsby](https://www.gatsbyjs.com/) MIT License
+* Icons by [Tabler Icons](https://tablericons.com/) MIT License
 
 ## Copyright
 

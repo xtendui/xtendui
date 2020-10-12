@@ -1,5 +1,7 @@
 const btnDefault = require('components/snippets/classes/btn-default').default
 const cardSlide = require('components/snippets/classes/card-slide').default
+const iconChevronLeft = require('components/snippets/icons').iconChevronLeft
+const iconChevronRight = require('components/snippets/icons').iconChevronRight
 
 export default () => {
   return `
@@ -13,10 +15,10 @@ export default () => {
           <div class="h4">1</div>
           <nav class="slider-navigation list list-space-2">
             <button type="button" class="btn ${btnDefault()}" data-xt-nav="-1" title="Previous slide">
-              <span class="icon-chevron-left"></span>
+              ${iconChevronLeft({ classes: 'icon-lg' })}
             </button>
             <button type="button" class="btn ${btnDefault()}" data-xt-nav="1" title="Next slide">
-              <span class="icon-chevron-right"></span>
+              ${iconChevronRight({ classes: 'icon-lg' })}
             </button>
           </nav>
         </div>
@@ -31,10 +33,10 @@ export default () => {
           <div class="h4">2</div>
           <nav class="slider-navigation list list-space-2">
             <button type="button" class="btn ${btnDefault()}" data-xt-nav="-1" title="Previous slide">
-              <span class="icon-chevron-left"></span>
+              ${iconChevronLeft({ classes: 'icon-lg' })}
             </button>
             <button type="button" class="btn ${btnDefault()}" data-xt-nav="1" title="Next slide">
-              <span class="icon-chevron-right"></span>
+              ${iconChevronRight({ classes: 'icon-lg' })}
             </button>
           </nav>
         </div>
@@ -49,10 +51,10 @@ export default () => {
           <div class="h4">3</div>
           <nav class="slider-navigation list list-space-2">
             <button type="button" class="btn ${btnDefault()}" data-xt-nav="-1" title="Previous slide">
-              <span class="icon-chevron-left"></span>
+              ${iconChevronLeft({ classes: 'icon-lg' })}
             </button>
             <button type="button" class="btn ${btnDefault()}" data-xt-nav="1" title="Next slide">
-              <span class="icon-chevron-right"></span>
+              ${iconChevronRight({ classes: 'icon-lg' })}
             </button>
           </nav>
         </div>
@@ -67,10 +69,10 @@ export default () => {
           <div class="h4">4</div>
           <nav class="slider-navigation list list-space-2">
             <button type="button" class="btn ${btnDefault()}" data-xt-nav="-1" title="Previous slide">
-              <span class="icon-chevron-left"></span>
+              ${iconChevronLeft({ classes: 'icon-lg' })}
             </button>
             <button type="button" class="btn ${btnDefault()}" data-xt-nav="1" title="Next slide">
-              <span class="icon-chevron-right"></span>
+              ${iconChevronRight({ classes: 'icon-lg' })}
             </button>
           </nav>
         </div>
@@ -85,10 +87,10 @@ export default () => {
           <div class="h4">5</div>
           <nav class="slider-navigation list list-space-2">
             <button type="button" class="btn ${btnDefault()}" data-xt-nav="-1" title="Previous slide">
-              <span class="icon-chevron-left"></span>
+              ${iconChevronLeft({ classes: 'icon-lg' })}
             </button>
             <button type="button" class="btn ${btnDefault()}" data-xt-nav="1" title="Next slide">
-              <span class="icon-chevron-right"></span>
+              ${iconChevronRight({ classes: 'icon-lg' })}
             </button>
           </nav>
         </div>
@@ -101,12 +103,12 @@ export default () => {
 
 <nav class="slider-pagination list list-space-2">
   <button type="button" class="btn ${btnDefault()}" data-xt-nav="-1" title="Previous slide">
-    prev
+    ${iconChevronLeft({ classes: 'icon-lg' })}
   </button>
   <button type="button" class="btn ${btnDefault()} xt-ignore" data-xt-pag title="Slide xt-num">
   </button>
   <button type="button" class="btn ${btnDefault()}" data-xt-nav="1" title="Next slide">
-    next
+    ${iconChevronRight({ classes: 'icon-lg' })}
   </button>
 </nav>
 `

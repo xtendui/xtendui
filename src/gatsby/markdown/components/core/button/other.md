@@ -44,17 +44,6 @@ For aria purpose use `aria-disabled="true"` when using the class `.disabled`.
   </demovanilla>
 </demo>
 
-## Icons and Alignment
-
-Use [icons](/components/core/icons) with button.
-
-Use **tailwind classes** to assign alignment (e.g.: align items, justify content).
-
-<demo>
-  <demovanilla src="vanilla/components/core/button/icons">
-  </demovanilla>
-</demo>
-
 ## Group
 
 Refer to [group](/components/core/group).

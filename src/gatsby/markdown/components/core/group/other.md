@@ -11,7 +11,7 @@ date: "2005-10-10"
 You can make group a **single interactive object**.
 
 [[notePrimary]]
-| This demos uses [propagate-interaction](/components/addons/propagate-interaction) additionally. Visit the component page to import and customize.
+| This demos uses [propagate-interaction](/components/addons/propagate-interaction). Visit the component page to import and customize.
 
 <demo>
   <demovanilla src="vanilla/components/core/group/merge">
