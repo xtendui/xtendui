@@ -1168,16 +1168,22 @@ module.exports = theme => ({
       },
       // icons
       icons: {
+        '.icon': {
+          // setup
+          display: 'inline-block',
+        },
         '.icon-sm': {
           // styles
           width: '.75em',
           height: '.75em',
         },
         '.icon-md': {
+          // styles
           width: '1em',
           height: '1em',
         },
         '.icon-lg': {
+          // styles
           width: '1.25em',
           height: '1.25em',
           // Size bigger than `1em` has negative margin

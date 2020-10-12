@@ -23,7 +23,7 @@ Use [typography variant](/components/core/typography/content#variant) to style t
 | `.text-default` and `.text-inverse` don't support `text-opacity`. Use tailwind colors instead when using `text-opacity`.
 
 <demo>
-  <demovanilla src="vanilla/components/core/button/inverse">
+  <demovanilla src="vanilla/components/core/button/variant-inverse">
   </demovanilla>
 </demo>
 

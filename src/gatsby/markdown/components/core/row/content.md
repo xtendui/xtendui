@@ -38,7 +38,7 @@ For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/
 
 ## Alignment
 
-Use **tailwind classes** to assign flex alignment.
+Use **tailwind classes** to assign alignment (e.g.: align items, justify content).
 
 <demo>
   <demovanilla src="vanilla/components/core/row/alignment">

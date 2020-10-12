@@ -6,11 +6,6 @@ title: "Other"
 date: "2005-10-10"
 ---
 
-## Button
+## Button and Alignment
 
-Use [button](/components/core/button) with icons.
-
-<demo>
-  <demovanilla src="vanilla/components/core/icons/button">
-  </demovanilla>
-</demo>
+Refer to [button icons and alignment](/components/core/button/other#icons-and-alignment).

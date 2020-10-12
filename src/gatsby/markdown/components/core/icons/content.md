@@ -12,7 +12,7 @@ Use **tailwind classes** to assign variant (e.g.: color, opacity).
 
 
 [[notePrimary]]
-| Svg needs `fill: currentColor` or `stroke: currentColor` to have parent color.
+| Svg needs `fill: currentColor` or `stroke: currentColor` to have parent text color.
 
 <demo>
   <demovanilla src="vanilla/components/core/icons/variant">
@@ -25,7 +25,7 @@ Use [typography variant](/components/core/typography/content#variant) to style i
 | `.text-default` and `.text-inverse` don't support `text-opacity`. Use tailwind colors instead when using `text-opacity`.
 
 <demo>
-  <demovanilla src="vanilla/components/core/icons/inverse">
+  <demovanilla src="vanilla/components/core/icons/variant-inverse">
   </demovanilla>
 </demo>
 
@@ -44,7 +44,7 @@ Use **component classes** to assign size (e.g.: font size).
 </div>
 
 [[noteDefault]]
-| Size bigger than `1em` has negative margin to not enlarge the parent element (e.g.: button).
+| **Size bigger** than `1em` **has negative margin** to not enlarge the parent element (e.g.: button).
 
 <demo>
   <demovanilla src="vanilla/components/core/icons/size">
