@@ -33,6 +33,9 @@ To **see the default values** see the source code of `node_modules/xtend-ui/src/
 
 ## Usage
 
+[[noteDefault]]
+| Xtend UI icons are from [Heroicons](https://heroicons.com/).
+
 Use this code to create **icons with svg**.
 
 <demo>
@@ -40,7 +43,14 @@ Use this code to create **icons with svg**.
   </demovanilla>
 </demo>
 
-[[noteDefault]]
-| Xtend UI icons are from [Heroicons](https://heroicons.com/).
+Use this code to create **icons with img**.
+
+<demo>
+  <demovanilla src="vanilla/components/core/icons/usage-img">
+  </demovanilla>
+</demo>
+
+[[notePrimary]]
+| Icons with img don't support [icons variant](/components/core/icons/content#variant)
 
 Check subpage to [customize content](/components/core/icons/content).

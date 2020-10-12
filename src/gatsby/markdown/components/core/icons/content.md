@@ -52,3 +52,7 @@ Use **component classes** to assign size (e.g.: font size).
 </demo>
 
 You can add **additional size** for example `.icon-xs` or `.icon-xl`.
+
+## Button and Alignment
+
+Refer to [button icons and alignment](/components/core/button/other#icons-and-alignment).
