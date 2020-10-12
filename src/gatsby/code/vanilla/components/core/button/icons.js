@@ -18,17 +18,17 @@ demo.htmlSource = `
 
   <button type="button" class="btn btn-sm ${btnPrimary()}">
     <span>icon small</span>
-    ${iconSearch({ classes: 'icon-sm ml-2' })}
+    ${iconSearch({ classes: 'icon-sm ml-1' })}
   </button>
 
   <button type="button" class="btn btn-sm ${btnPrimary()}">
     <span>icon medium</span>
-    ${iconSearch({ classes: 'icon-md ml-2' })}
+    ${iconSearch({ classes: 'icon-md ml-1' })}
   </button>
 
   <button type="button" class="btn btn-sm ${btnPrimary()}">
     <span>icon large</span>
-    ${iconSearch({ classes: 'icon-lg ml-2' })}
+    ${iconSearch({ classes: 'icon-lg ml-1' })}
   </button>
 
 </div>
@@ -41,17 +41,17 @@ demo.htmlSource = `
 
   <button type="button" class="btn btn-md ${btnPrimary()}">
     <span>icon small</span>
-    ${iconSearch({ classes: 'icon-sm ml-2' })}
+    ${iconSearch({ classes: 'icon-sm ml-1.5' })}
   </button>
 
   <button type="button" class="btn btn-md ${btnPrimary()}">
     <span>icon medium</span>
-    ${iconSearch({ classes: 'icon-md ml-2' })}
+    ${iconSearch({ classes: 'icon-md ml-1.5' })}
   </button>
 
   <button type="button" class="btn btn-md ${btnPrimary()}">
     <span>icon large</span>
-    ${iconSearch({ classes: 'icon-lg ml-2' })}
+    ${iconSearch({ classes: 'icon-lg ml-1.5' })}
   </button>
 
 </div>
