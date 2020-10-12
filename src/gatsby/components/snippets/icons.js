@@ -21,6 +21,16 @@ export const iconArrowRight = ({ classes = null } = {}) => {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon${classes}"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>`
 }
 
+export const iconArrowUp = ({ classes = null } = {}) => {
+  classes = classes ? ' ' + classes : ''
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon${classes}"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>`
+}
+
+export const iconArrowDown = ({ classes = null } = {}) => {
+  classes = classes ? ' ' + classes : ''
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon${classes}"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>`
+}
+
 export const iconChevronLeft = ({ classes = null } = {}) => {
   classes = classes ? ' ' + classes : ''
   return `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon${classes}"><polyline points="15 18 9 12 15 6"></polyline></svg>`
@@ -29,6 +39,16 @@ export const iconChevronLeft = ({ classes = null } = {}) => {
 export const iconChevronRight = ({ classes = null } = {}) => {
   classes = classes ? ' ' + classes : ''
   return `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon${classes}"><polyline points="9 18 15 12 9 6"></polyline></svg>`
+}
+
+export const iconChevronUp = ({ classes = null } = {}) => {
+  classes = classes ? ' ' + classes : ''
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon${classes}"><polyline points="18 15 12 9 6 15"></polyline></svg>`
+}
+
+export const iconChevronDown = ({ classes = null } = {}) => {
+  classes = classes ? ' ' + classes : ''
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon${classes}"><polyline points="6 9 12 15 18 9"></polyline></svg>`
 }
 
 export const iconLocate = ({ classes = null } = {}) => {
