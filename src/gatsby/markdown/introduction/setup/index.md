@@ -360,7 +360,7 @@ Read our [contributing docs](https://github.com/minimit/xtend-ui/blob/master/.gi
 
 * Utility by [TailwindCss](https://tailwindcss.com/) MIT License
 * Docs by [Gatsby](https://www.gatsbyjs.com/) MIT License
-* Icons by [Tabler Icons](https://tablericons.com/) MIT License
+* Icons by [Feather Icons](https://feathericons.com/) MIT License
 
 ## Copyright
 

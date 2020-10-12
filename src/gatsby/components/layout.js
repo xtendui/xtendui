@@ -58,7 +58,16 @@ class Layout extends React.Component {
                   <div className="gatsby_site_article prose max-w-none">
                     <DocFullscreen />
                     {page && markdownSlug(page.post) === '/introduction' ? (
-                      children
+                      <main className="gatsby_site_article_inner" id="gatsby_open-full-inner">
+                        <article className="gatsby_site_article_content">
+                          <div className="gatsby_site_article_content_inner">{children}</div>
+                        </article>
+                        <footer className="gatsby_site_footer">
+                          <div className="gatsby_site_footer_inner">
+                            <Footer site={data} />
+                          </div>
+                        </footer>
+                      </main>
                     ) : (
                       <main className="gatsby_site_article_inner" id="gatsby_open-full-inner">
                         {page ? <DocHead page={page} /> : null}
@@ -67,9 +76,7 @@ class Layout extends React.Component {
                         </article>
                         <footer className="gatsby_site_footer">
                           <div className="gatsby_site_footer_inner">
-                            {page && page.post.frontmatter.type !== page.post.frontmatter.title && page.post.frontmatter.type !== 'Introduction' ? (
-                              <DocFoot page={page} />
-                            ) : null}
+                            {page && page.post.frontmatter.type !== page.post.frontmatter.title ? <DocFoot page={page} /> : null}
                             <Footer site={data} />
                           </div>
                         </footer>

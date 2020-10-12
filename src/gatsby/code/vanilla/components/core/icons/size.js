@@ -10,32 +10,32 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="h5 h-block rounded-md text-default bg-gray-200 text-center">
-  Icon small
+  Stroke default
+</div>
+
+${iconSearch({ classes: 'icon-sm' })}
+
+${iconSearch({ classes: 'icon-md' })}
+
+${iconSearch({ classes: 'icon-lg' })}
+
+<div class="h5 h-block rounded-md text-default bg-gray-200 text-center">
+  Stroke 1
 </div>
 
 ${iconSearch({ classes: 'icon-sm stroke-1' })}
 
-${iconSearch({ classes: 'icon-sm' })}
-
-${iconSearch({ classes: 'icon-sm stroke-2' })}
-
-<div class="h5 h-block rounded-md text-default bg-gray-200 text-center">
-  Icon medium
-</div>
-
 ${iconSearch({ classes: 'icon-md stroke-1' })}
-
-${iconSearch({ classes: 'icon-md' })}
-
-${iconSearch({ classes: 'icon-md stroke-2' })}
-
-<div class="h5 h-block rounded-md text-default bg-gray-200 text-center">
-  Icon large
-</div>
 
 ${iconSearch({ classes: 'icon-lg stroke-1' })}
 
-${iconSearch({ classes: 'icon-lg' })}
+<div class="h5 h-block rounded-md text-default bg-gray-200 text-center">
+  Stroke 2
+</div>
+
+${iconSearch({ classes: 'icon-sm stroke-2' })}
+
+${iconSearch({ classes: 'icon-md stroke-2' })}
 
 ${iconSearch({ classes: 'icon-lg stroke-2' })}
 `
