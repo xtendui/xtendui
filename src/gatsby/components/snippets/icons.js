@@ -1,5 +1,5 @@
 // const iconArrowLeft = require('components/snippets/icons').iconClose
-// ${iconArrowLeft()}
+// ${iconArrowLeft({ classes: 'icon-md' })}
 
 export const iconClose = ({ classes = null } = {}) => {
   return `<svg ${

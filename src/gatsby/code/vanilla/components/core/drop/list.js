@@ -25,7 +25,7 @@ demo.htmlSource = `
           <div class="card-block card-block-md">
             <div class="list list-space-2 flex-no-wrap items-baseline">
               <div>
-                ${iconChevronRight()}
+                ${iconChevronRight({ classes: 'icon-lg' })}
               </div>
               <div>
                 <div class="h4">Lorem ipsum</div>

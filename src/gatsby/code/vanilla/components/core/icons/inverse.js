@@ -11,37 +11,37 @@ export const demo = {
 demo.htmlSource = `
 <div class="text-inverse py-4 px-6 bg-accent-500">
 
-  ${iconSearch()}
+  ${iconSearch({ classes: 'icon-md' })}
 
-  ${iconSearch({ classes: 'text-accent-50' })}
+  ${iconSearch({ classes: 'icon-md text-accent-50' })}
 
-  ${iconSearch({ classes: 'text-accent-100' })}
+  ${iconSearch({ classes: 'icon-md text-accent-100' })}
 
-  ${iconSearch({ classes: 'text-accent-200' })}
+  ${iconSearch({ classes: 'icon-md text-accent-200' })}
 
-  ${iconSearch({ classes: 'text-accent-300' })}
+  ${iconSearch({ classes: 'icon-md text-accent-300' })}
 
-  ${iconSearch({ classes: 'text-accent-400' })}
+  ${iconSearch({ classes: 'icon-md text-accent-400' })}
 
-  ${iconSearch({ classes: 'text-accent-500' })}
+  ${iconSearch({ classes: 'icon-md text-accent-500' })}
 
-  ${iconSearch({ classes: 'text-accent-600' })}
+  ${iconSearch({ classes: 'icon-md text-accent-600' })}
 
-  ${iconSearch({ classes: 'text-accent-700' })}
+  ${iconSearch({ classes: 'icon-md text-accent-700' })}
 
-  ${iconSearch({ classes: 'text-accent-800' })}
+  ${iconSearch({ classes: 'icon-md text-accent-800' })}
 
-  ${iconSearch({ classes: 'text-accent-900' })}
+  ${iconSearch({ classes: 'icon-md text-accent-900' })}
 
-  ${iconSearch({ classes: 'text-white text-opacity-0' })}
+  ${iconSearch({ classes: 'icon-md text-white text-opacity-0' })}
 
-  ${iconSearch({ classes: 'text-white text-opacity-25' })}
+  ${iconSearch({ classes: 'icon-md text-white text-opacity-25' })}
 
-  ${iconSearch({ classes: 'text-white text-opacity-50' })}
+  ${iconSearch({ classes: 'icon-md text-white text-opacity-50' })}
 
-  ${iconSearch({ classes: 'text-white text-opacity-75' })}
+  ${iconSearch({ classes: 'icon-md text-white text-opacity-75' })}
 
-  ${iconSearch({ classes: 'text-white text-opacity-100' })}
+  ${iconSearch({ classes: 'icon-md text-white text-opacity-100' })}
 
 </div>
 `

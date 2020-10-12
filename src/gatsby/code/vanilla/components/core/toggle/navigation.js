@@ -31,11 +31,11 @@ demo.htmlSource = `
   </button>
 
   <button type="button" class="btn ${btnDefault()}" data-xt-nav="-1" title="Previous slide">
-    ${iconArrowLeft()}
+    ${iconArrowLeft({ classes: 'icon-lg' })}
   </button>
 
   <button type="button" class="btn ${btnDefault()}" data-xt-nav="1" title="Next slide">
-    ${iconArrowRight()}
+    ${iconArrowRight({ classes: 'icon-lg' })}
   </button>
 
   <div class="card toggle ${cardToggle()}">

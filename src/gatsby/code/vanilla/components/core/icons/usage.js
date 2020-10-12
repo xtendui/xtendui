@@ -14,15 +14,15 @@ export const demo = {
 }
 
 demo.htmlSource = `
-${iconSearch()}
+${iconSearch({ classes: 'icon-md' })}
 
-${iconClose()}
+${iconClose({ classes: 'icon-md' })}
 
-${iconArrowLeft()}
+${iconArrowLeft({ classes: 'icon-md' })}
 
-${iconArrowRight()}
+${iconArrowRight({ classes: 'icon-md' })}
 
-${iconChevronLeft()}
+${iconChevronLeft({ classes: 'icon-md' })}
 
-${iconChevronRight()}
+${iconChevronRight({ classes: 'icon-md' })}
 `

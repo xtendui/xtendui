@@ -21,7 +21,7 @@ demo.htmlSource = `
     </div>
 
     <div class="btn btn-md rounded-b-md ${btnDefaultGroup()}">
-      ${iconSearch()}
+      ${iconSearch({ classes: 'icon-lg' })}
     </div>
 
   </button>

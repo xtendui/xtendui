@@ -44,9 +44,9 @@ For aria purpose use `aria-disabled="true"` when using the class `.disabled`.
   </demovanilla>
 </demo>
 
-## Checks
+## Icons
 
-Refer to [form checks button](/components/core/form/other#checks-button).
+Refer to [icons button](/components/core/icons/other#button).
 
 ## Group
 
@@ -59,3 +59,7 @@ Refer to [toolbar](/components/addons/toolbar).
 ## Nav
 
 Refer to [nav](/components/addons/nav).
+
+## Checks
+
+Refer to [form checks button](/components/core/form/other#checks-button).

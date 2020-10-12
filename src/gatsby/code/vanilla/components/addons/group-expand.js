@@ -17,7 +17,7 @@ demo.htmlSource = `
   <div class="group demo--group-expand">
 
     <button type="button" class="btn btn-md rounded-l-md ${btnDefaultGroup()}">
-      ${iconSearch()}
+      ${iconSearch({ classes: 'icon-lg' })}
     </button>
 
     <input type="text" class="form-item ${inputDefaultGroup()}" placeholder="Insert search query" />

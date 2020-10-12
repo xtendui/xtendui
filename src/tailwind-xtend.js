@@ -1168,12 +1168,8 @@ module.exports = theme => ({
       },
       // icons
       icons: {
-        svg: {
-          // setup
-          '@apply icon-md': '',
-          display: 'inline-block',
-        },
         '.icon-sm': {
+          // styles
           width: '.75em',
           height: '.75em',
         },
@@ -1184,6 +1180,9 @@ module.exports = theme => ({
         '.icon-lg': {
           width: '1.25em',
           height: '1.25em',
+          // Size bigger than `1em` has negative margin
+          marginTop: 'calc((1em - 1.25em) / 2)',
+          marginBottom: 'calc((1em - 1.25em) / 2)',
         },
       },
       // link

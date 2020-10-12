@@ -43,16 +43,12 @@ Use **component classes** to assign size (e.g.: font size).
 
 </div>
 
+[[noteDefault]]
+| Size bigger than `1em` has negative margin to not enlarge the parent element (e.g.: button).
+
 <demo>
   <demovanilla src="vanilla/components/core/icons/size">
   </demovanilla>
 </demo>
 
 You can add **additional size** for example `.icon-xs` or `.icon-xl`.
-
-## Button
-
-<demo>
-  <demovanilla src="vanilla/components/core/icons/button">
-  </demovanilla>
-</demo>
