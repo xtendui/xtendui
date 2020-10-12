@@ -2,7 +2,7 @@ import path from 'path'
 const btnPrimary = require('components/snippets/classes/btn-primary').default
 const cardDefault = require('components/snippets/classes/card-default').default
 const cardDefaultOverlayScreen = require('components/snippets/classes/card-default-overlay-screen').default
-const iconClose = require('components/snippets/icons').iconClose
+const iconX = require('components/snippets/icons').iconX
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -36,7 +36,7 @@ demo.htmlSource = `
 
           <div class="card ${cardDefaultOverlayScreen()}">
             <div class="btn btn-close" aria-label="Close">
-              ${iconClose()}
+              ${iconX()}
             </div>
             <div class="card-block card-block-lg">
               <div class="h3">Lorem ipsum</div>
@@ -75,7 +75,7 @@ demo.htmlSource = `
 
           <div class="card ${cardDefaultOverlayScreen()}">
             <div class="btn btn-close" aria-label="Close">
-              ${iconClose()}
+              ${iconX()}
             </div>
             <div class="card-block card-block-lg">
               <div class="h3">Lorem ipsum</div>

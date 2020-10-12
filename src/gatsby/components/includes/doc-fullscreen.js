@@ -1,5 +1,5 @@
 import React from 'react'
-const iconClose = require('components/snippets/icons').iconClose
+const iconX = require('components/snippets/icons').iconX
 
 class DocFullscreen extends React.Component {
   render() {

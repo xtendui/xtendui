@@ -1,7 +1,7 @@
 import path from 'path'
 const cardDefault = require('components/snippets/classes/card-default').default
 const cardPrimary = require('components/snippets/classes/card-primary').default
-const iconClose = require('components/snippets/icons').iconClose
+const iconX = require('components/snippets/icons').iconX
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -16,7 +16,7 @@ demo.htmlSource = `
   <div class="w-full md:w-6/12">
     <div class="card ${cardDefault()}">
       <div class="btn btn-close" aria-label="Close">
-        ${iconClose()}
+        ${iconX()}
       </div>
       <div class="card-block card-block-md">
         <div class="h4">Default</div>
@@ -28,7 +28,7 @@ demo.htmlSource = `
   <div class="w-full md:w-6/12">
     <div class="card ${cardPrimary()}">
       <div class="btn btn-close" aria-label="Close">
-        ${iconClose()}
+        ${iconX()}
       </div>
       <div class="card-block card-block-md">
         <div class="h4">Primary</div>

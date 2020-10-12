@@ -2,7 +2,7 @@ import path from 'path'
 const img = require('components/snippets/img').default
 const btnPrimary = require('components/snippets/classes/btn-primary').default
 const cardDefaultDrop = require('components/snippets/classes/card-default-drop').default
-const iconClose = require('components/snippets/icons').iconClose
+const iconX = require('components/snippets/icons').iconX
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -24,7 +24,7 @@ demo.htmlSource = `
       <div class="drop-inner">
         <div class="card card-md ${cardDefaultDrop()}">
           <div class="btn btn-close" aria-label="Close">
-            ${iconClose()}
+            ${iconX()}
           </div>
           <div class="card-asset rounded-md">
             ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
@@ -45,7 +45,7 @@ demo.htmlSource = `
       <div class="drop-inner">
         <div class="card card-md ${cardDefaultDrop()}">
           <div class="btn btn-close" aria-label="Close">
-            ${iconClose()}
+            ${iconX()}
           </div>
           <div class="card-asset rounded-t-md">
             ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}

@@ -23,6 +23,9 @@
   @screeen md {
     font-size: 12px;
   }
+  @screeen lg {
+    font-size: 13px;
+  }
 }
 
 .gatsby_site_footer_bottom_right {

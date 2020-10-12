@@ -1,4 +1,4 @@
-const iconClose = require('components/snippets/icons').iconClose
+const iconX = require('components/snippets/icons').iconX
 
 export default () => {
   return `
@@ -42,7 +42,7 @@ export default () => {
           <div class="card card-drop">
             <div class="card-design"></div>
             <div class="btn btn-close" aria-label="Close">
-              ${iconClose()}
+              ${iconX()}
             </div>
             <div class="card-inner">
               <div class="card-content">

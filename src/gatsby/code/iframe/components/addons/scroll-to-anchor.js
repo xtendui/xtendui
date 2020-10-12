@@ -4,7 +4,7 @@ const btnDefault = require('components/snippets/classes/btn-default').default
 const btnPrimary = require('components/snippets/classes/btn-primary').default
 const cardStickyDefault = require('components/snippets/classes/card-sticky-default').default
 const cardStickyPrimary = require('components/snippets/classes/card-sticky-primary').default
-const iconClose = require('components/snippets/icons').iconClose
+const iconX = require('components/snippets/icons').iconX
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -43,7 +43,7 @@ demo.htmlSource = `
 
       <div class="card items-center justify-center">
         <div class="btn btn-close" aria-label="Close">
-          ${iconClose()}
+          ${iconX()}
         </div>
         <div class="max-w-3xl">
 

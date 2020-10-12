@@ -1,9 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-current-location" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <circle cx="12" cy="12" r="3" />
-  <circle cx="12" cy="12" r="8" />
-  <line x1="12" y1="2" x2="12" y2="4" />
-  <line x1="12" y1="20" x2="12" y2="22" />
-  <line x1="20" y1="12" x2="22" y2="12" />
-  <line x1="2" y1="12" x2="4" y2="12" />
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>

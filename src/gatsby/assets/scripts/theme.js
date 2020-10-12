@@ -3,6 +3,7 @@ import { Xt } from 'xtend-ui'
 import 'xtend-ui/build/xtend-core'
 import 'xtend-ui/build/xtend-addons'
 import 'xtend-ui/build/xtend-demos'
+const iconLink = require('components/snippets/icons').iconLink
 
 /**
  * gsap setup
@@ -248,9 +249,12 @@ const makeDocument = () => {
     el.append(link)
     link.append(inner)
     el.append(
-      Xt.createElement(
-        '<span class="gatsby_site_article_anchor"><span class="btn btn-default"><svg xmlns="http://www.w3.org/2000/svg" class="icon" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00BCD4" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5"/><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5"/></svg></span></span>'
-      )
+      Xt.createElement(`
+<span class="gatsby_site_article_anchor">
+  <span class="btn btn-default">
+  ${iconLink()}
+  </span>
+</span>`)
     )
   }
   // docs tables

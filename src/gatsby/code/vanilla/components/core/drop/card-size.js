@@ -1,7 +1,7 @@
 import path from 'path'
 const btnPrimary = require('components/snippets/classes/btn-primary').default
 const cardDefaultDrop = require('components/snippets/classes/card-default-drop').default
-const iconClose = require('components/snippets/icons').iconClose
+const iconX = require('components/snippets/icons').iconX
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -23,7 +23,7 @@ demo.htmlSource = `
       <div class="drop-inner">
         <div class="card card-sm ${cardDefaultDrop()}">
           <div class="btn btn-close" aria-label="Close">
-            ${iconClose()}
+            ${iconX()}
           </div>
           <div class="card-block card-block-sm text-sm">
             <div class="h5">Lorem ipsum</div>
@@ -45,7 +45,7 @@ demo.htmlSource = `
       <div class="drop-inner">
         <div class="card card-md ${cardDefaultDrop()}">
           <div class="btn btn-close" aria-label="Close">
-            ${iconClose()}
+            ${iconX()}
           </div>
           <div class="card-block card-block-md">
             <div class="h4">Lorem ipsum</div>
@@ -67,7 +67,7 @@ demo.htmlSource = `
       <div class="drop-inner">
         <div class="card card-lg ${cardDefaultDrop()}">
           <div class="btn btn-close" aria-label="Close">
-            ${iconClose()}
+            ${iconX()}
           </div>
           <div class="card-block card-block-lg text-lg">
             <div class="h3">Lorem ipsum</div>

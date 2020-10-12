@@ -51,7 +51,7 @@ body {
 
 .gatsby_site_article_foot {
   .gatsby_listing_column {
-    @apply my-5;
+    @apply mt-5 mb-6;
   }
 }
 

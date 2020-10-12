@@ -1,6 +1,6 @@
 const img = require('components/snippets/img').default
 const imgAlt = require('components/snippets/img').alt
-const iconClose = require('components/snippets/icons').iconClose
+const iconX = require('components/snippets/icons').iconX
 
 export default () => {
   return `
@@ -43,7 +43,7 @@ export default () => {
               <div class="card listing-page_back">
                 <div class="card-design"></div>
                 <div class="btn btn-close" aria-label="Close">
-                  ${iconClose()}
+                  ${iconX()}
                 </div>
                 <div class="card-inner">
                   <div class="card-content">
@@ -110,7 +110,7 @@ export default () => {
               <div class="card listing-page_back">
                 <div class="card-design"></div>
                 <div class="btn btn-close" aria-label="Close">
-                  ${iconClose()}
+                  ${iconX()}
                 </div>
                 <div class="card-inner">
                   <div class="card-content">
@@ -177,7 +177,7 @@ export default () => {
               <div class="card listing-page_back">
                 <div class="card-design"></div>
                 <div class="btn btn-close" aria-label="Close">
-                  ${iconClose()}
+                  ${iconX()}
                 </div>
                 <div class="card-inner">
                   <div class="card-content">
@@ -244,7 +244,7 @@ export default () => {
               <div class="card listing-page_back">
                 <div class="card-design"></div>
                 <div class="btn btn-close" aria-label="Close">
-                  ${iconClose()}
+                  ${iconX()}
                 </div>
                 <div class="card-inner">
                   <div class="card-content">
@@ -311,7 +311,7 @@ export default () => {
               <div class="card listing-page_back">
                 <div class="card-design"></div>
                 <div class="btn btn-close" aria-label="Close">
-                  ${iconClose()}
+                  ${iconX()}
                 </div>
                 <div class="card-inner">
                   <div class="card-content">
@@ -378,7 +378,7 @@ export default () => {
               <div class="card listing-page_back">
                 <div class="card-design"></div>
                 <div class="btn btn-close" aria-label="Close">
-                  ${iconClose()}
+                  ${iconX()}
                 </div>
                 <div class="card-inner">
                   <div class="card-content">

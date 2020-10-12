@@ -10,7 +10,7 @@ export const demo = {
 demo.htmlSource = `
 <img class="icon icon-md" src="/icons/search.svg" loading="eager" alt=""/>
 
-<img class="icon icon-md" src="/icons/close.svg" loading="eager" alt=""/>
+<img class="icon icon-md" src="/icons/x.svg" loading="eager" alt=""/>
 
 <img class="icon icon-md" src="/icons/arrow-left.svg" loading="eager" alt=""/>
 

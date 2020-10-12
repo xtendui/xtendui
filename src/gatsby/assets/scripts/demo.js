@@ -9,6 +9,10 @@ require('prismjs/components/prism-less.min')
 Prism.manual = true
 
 const spinner = require('components/snippets/spinner').default
+const iconCode = require('components/snippets/icons').iconCode
+const iconMaximize = require('components/snippets/icons').iconMaximize
+const iconExternal = require('components/snippets/icons').iconExternal
+const iconCopy = require('components/snippets/icons').iconCopy
 
 /**
  * demoHash
@@ -215,24 +219,24 @@ const populateDemo = (container, i) => {
       '<div class="gatsby_demo_tabs"><div class="gatsby_demo_tabs_left list list-space-px"></div><div class="gatsby_demo_tabs_right list list-space-px"></div></div>'
     )
   )
-  container
-    .querySelector('.gatsby_demo_tabs_right')
-    .append(Xt.createElement(`
+  container.querySelector('.gatsby_demo_tabs_right').append(
+    Xt.createElement(`
 <button type="button" class="btn btn-show-code" aria-label="Toggle Code">
-    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00BCD4" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="7 8 3 12 7 16" /><polyline points="17 8 21 12 17 16" /><line x1="14" y1="4" x2="10" y2="20" /></svg>
-</button>`))
-  container
-    .querySelector('.gatsby_demo_tabs_right')
-    .append(Xt.createElement(`
+  ${iconCode()}
+</button>`)
+  )
+  container.querySelector('.gatsby_demo_tabs_right').append(
+    Xt.createElement(`
 <button type="button" class="btn btn-open-full" aria-label="Toggle Fullscreen">
-    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00BCD4" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8v-2a2 2 0 0 1 2 -2h2"/><path d="M4 16v2a2 2 0 0 0 2 2h2"/><path d="M16 4h2a2 2 0 0 1 2 2v2"/><path d="M16 20h2a2 2 0 0 0 2 -2v-2"/></svg>
-</button>`))
-  container
-    .querySelector('.gatsby_demo_tabs_right')
-    .append(Xt.createElement(`
+  ${iconMaximize()}
+</button>`)
+  )
+  container.querySelector('.gatsby_demo_tabs_right').append(
+    Xt.createElement(`
 <a href="#" target="_blank" class="btn btn-open-iframe" aria-label="Open Iframe">
-    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00BCD4" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"/><line x1="10" y1="14" x2="20" y2="4"/><polyline points="15 4 20 4 20 9"/></svg>
-</a>`))
+  ${iconExternal()}
+</a>`)
+  )
   // loop itemsi
   for (const [k, item] of items.entries()) {
     // populate tabs
@@ -258,7 +262,7 @@ const populateDemo = (container, i) => {
       <div class="gatsby_demo_code_tabs_left list list-space-px"></div>
       <div class="gatsby_demo_code_tabs_right list list-space-px">
         <button type="button" class="btn btn-tiny btn-clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00BCD4" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><rect x="8" y="8" width="12" height="12" rx="2" /><path d="M16 8v-2a2 2 0 0 0 -2 -2h-8a2 2 0 0 0 -2 2v8a2 2 0 0 0 2 2h2" /></svg>
+          ${iconCopy()}
         </button>
       </div>
     </div>

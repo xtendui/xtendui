@@ -23,7 +23,7 @@ demo.htmlSource = `
 
           <div class="card ${cardDefaultOverlay()}">
             <div class="btn btn-close" aria-label="Close">
-          ${iconClose()}
+          ${iconX()}
         </div>
             <div class="card-asset rounded-t-md">
               ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}

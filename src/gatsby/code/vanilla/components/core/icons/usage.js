@@ -1,6 +1,6 @@
 import path from 'path'
 const iconSearch = require('components/snippets/icons').iconSearch
-const iconClose = require('components/snippets/icons').iconClose
+const iconX = require('components/snippets/icons').iconX
 const iconArrowLeft = require('components/snippets/icons').iconArrowLeft
 const iconArrowRight = require('components/snippets/icons').iconArrowRight
 const iconChevronLeft = require('components/snippets/icons').iconChevronLeft
@@ -16,7 +16,7 @@ export const demo = {
 demo.htmlSource = `
 ${iconSearch({ classes: 'icon-md' })}
 
-${iconClose({ classes: 'icon-md' })}
+${iconX({ classes: 'icon-md' })}
 
 ${iconArrowLeft({ classes: 'icon-md' })}
 

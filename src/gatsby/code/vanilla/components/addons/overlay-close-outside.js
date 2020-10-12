@@ -3,7 +3,7 @@ const btnPrimary = require('components/snippets/classes/btn-primary').default
 const btnCloseOutside = require('components/snippets/classes/btn-close-outside').default
 const cardDefaultOverlay = require('components/snippets/classes/card-default-overlay').default
 const cardDefaultOverlayScreen = require('components/snippets/classes/card-default-overlay-screen').default
-const iconClose = require('components/snippets/icons').iconClose
+const iconX = require('components/snippets/icons').iconX
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -27,7 +27,7 @@ demo.htmlSource = `
 
           <div class="card ${cardDefaultOverlay()}">
             <div class="btn btn-close ${btnCloseOutside()} md:p-2 md:right-auto md:left-100" aria-label="Close">
-              ${iconClose()}
+              ${iconX()}
             </div>
             <div class="card-block card-block-lg text-lg">
               <div class="h2">Lorem ipsum</div>
@@ -56,7 +56,7 @@ demo.htmlSource = `
 
           <div class="card ${cardDefaultOverlayScreen()}">
             <div class="btn btn-close ${btnCloseOutside()} md:p-2 md:right-auto md:left-100" aria-label="Close">
-              ${iconClose()}
+              ${iconX()}
             </div>
             <div class="card-block card-block-lg">
               <div class="h3">Lorem ipsum</div>
@@ -85,7 +85,7 @@ demo.htmlSource = `
 
           <div class="card ${cardDefaultOverlayScreen()}">
             <div class="btn btn-close ${btnCloseOutside()} md:p-2 md:left-auto md:right-100" aria-label="Close">
-              ${iconClose()}
+              ${iconX()}
             </div>
             <div class="card-block card-block-lg">
               <div class="h3">Lorem ipsum</div>

@@ -1,7 +1,7 @@
 import path from 'path'
 const btnPrimary = require('components/snippets/classes/btn-primary').default
 const cardDefaultOverlay = require('components/snippets/classes/card-default-overlay').default
-const iconClose = require('components/snippets/icons').iconClose
+const iconX = require('components/snippets/icons').iconX
 const iconChevronRight = require('components/snippets/icons').iconChevronRight
 
 const filename = __filename.replace(/\\/g, '/')
@@ -26,7 +26,7 @@ demo.htmlSource = `
 
           <div class="card ${cardDefaultOverlay()}">
             <div class="btn btn-close" aria-label="Close">
-              ${iconClose()}
+              ${iconX()}
             </div>
             <div class="card-block card-block-md">
               <div class="list list-space-2 flex-no-wrap items-baseline">

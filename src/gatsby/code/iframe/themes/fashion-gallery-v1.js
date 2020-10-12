@@ -1,6 +1,6 @@
 import React from 'react'
 import path from 'path'
-const iconClose = require('components/snippets/icons').iconClose
+const iconX = require('components/snippets/icons').iconX
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -117,7 +117,7 @@ demo.htmlSource = `
                         <div class="card card-overlay">
                           <div class="card-design"></div>
                           <div class="btn btn-close" aria-label="Close">
-                            ${iconClose()}
+                            ${iconX()}
                           </div>
                           <div class="card-inner">
                             <div class="card-content">
