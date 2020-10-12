@@ -818,6 +818,8 @@ module.exports = theme => ({
           '& + *': {
             margin: '0 !important',
           },
+          // styles
+          fontSize: '1.5rem',
         },
       },
       // card
@@ -1165,6 +1167,16 @@ module.exports = theme => ({
         },
         '.group-inner': {
           display: 'inline-flex',
+        },
+      },
+      // icon
+      icon: {
+        svg: {
+          // setup
+          fill: 'currentColor',
+          stroke: 'currentColor',
+          width: '1em',
+          height: '1em',
         },
       },
       // link
