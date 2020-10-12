@@ -17,7 +17,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-space-1 items-center">
+<div class="list list-1 items-center">
   <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--slider-events-first-element">
     1st element
   </button>

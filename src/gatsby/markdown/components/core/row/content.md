@@ -14,9 +14,9 @@ For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Util                  | `.row-space-<space>`       | `row-space-<space>`                | `responsive`                | Space contents horizontally and vertically            |
-| Util                  | `.row-space-x-<space>`       | `row-space-x-<space>`                | `responsive`                | Space contents horizontally            |
-| Util                  | `.row-space-y-<space>`       | `row-space-y-<space>`                | `responsive`                | Space contents vertically            |
+| Util                  | `.row-<space>`       | `row-<space>`                | `responsive`                | Space contents horizontally and vertically            |
+| Util                  | `.row-x-<space>`       | `row-x-<space>`                | `responsive`                | Space contents horizontally            |
+| Util                  | `.row-y-<space>`       | `row-y-<space>`                | `responsive`                | Space contents vertically            |
 
 </div>
 

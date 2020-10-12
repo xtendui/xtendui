@@ -5,7 +5,7 @@ const btnPrimary = require('components/snippets/classes/btn-primary').default
 
 export default () => {
   return `
-<div class="row row-space-3">
+<div class="row row-3">
 
     <div class="w-full md:w-6/12">
       <a role="button" class="card ${cardDefault()}">

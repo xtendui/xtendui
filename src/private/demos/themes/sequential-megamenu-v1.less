@@ -87,8 +87,8 @@
 
     .megamenu_inner {
       > .row {
-        .row-space(medium);
-        .row-space(big, lg);
+        .row(medium);
+        .row(big, lg);
       }
     }
 
@@ -104,9 +104,9 @@
       .col(8, sm);
       .col(9, lg);
       > .row {
-        .row-space-y(small);
-        .row-space-x(medium);
-        .row-space-x(big, lg);
+        .row-y(small);
+        .row-x(medium);
+        .row-x(big, lg);
         // max-height set in style
         flex-direction: column;
         flex-wrap: wrap;
@@ -130,7 +130,7 @@
 
     .megamenu_item_content {
       > .list-block {
-        .list-space(none);
+        .list(none);
       }
       a {
         .link-none();

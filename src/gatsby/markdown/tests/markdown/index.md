@@ -118,7 +118,7 @@ For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Util                  | `.list-space-<space>`       | `list-space-<space>`                | `responsive`                | Space contents horizontally and vertically            |
+| Util                  | `.list-<space>`       | `list-<space>`                | `responsive`                | Space contents horizontally and vertically            |
 
 </div>
 

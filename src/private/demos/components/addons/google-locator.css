@@ -143,7 +143,7 @@
     .google-locator_item {
       @apply py-2;
       > .list {
-        @apply list-space-2;
+        @apply list-2;
         flex-wrap: nowrap;
         align-items: center;
         justify-content: space-between;

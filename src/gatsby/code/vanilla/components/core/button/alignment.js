@@ -14,7 +14,7 @@ demo.htmlSource = `
   align items
 </div>
 
-<div class="list list-space-2 items-center">
+<div class="list list-2 items-center">
 
   <button type="button" class="btn btn-md ${btnPrimary()}">
     <span>align items<br>default</span>
@@ -37,7 +37,7 @@ demo.htmlSource = `
   justify content
 </div>
 
-<div class="list list-space-2 items-center">
+<div class="list list-2 items-center">
 
   <button type="button" class="btn btn-md w-full ${btnPrimary()}">
     <span>justify content<br>default</span>

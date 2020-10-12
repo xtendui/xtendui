@@ -11,13 +11,13 @@ export const demo = {
 
 demo.htmlSource = `
 <form>
-  <div class="row row-space-x-4 row-space-y-3">
+  <div class="row row-x-4 row-y-3">
 
     <div class="w-full">
       <label class="form-label mb-4 ${labelDefault()}">
         Lorem ipsum
         <div class="ml-4">
-          <div class="list list-space-2 items-center">
+          <div class="list list-2 items-center">
             <a href="#" class="btn">
               btn
             </a>
@@ -34,7 +34,7 @@ demo.htmlSource = `
       <label class="form-label mb-4 ${labelDefault()}">
         Dolor sit amet
         <div class="ml-auto">
-          <div class="list list-space-2 items-center">
+          <div class="list list-2 items-center">
             <a href="#" class="btn">
               btn
             </a>
@@ -48,13 +48,13 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <div class="row row-space-x-4 row-space-y-3">
+      <div class="row row-x-4 row-y-3">
 
         <div class="w-full md:w-2/12 md:self-center">
           <label class="form-label flex-col ${labelDefault()}">
             Lorem ipsum
             <div class="mt-2">
-              <div class="list list-space-2 items-center">
+              <div class="list list-2 items-center">
                 <a href="#" class="btn">
                   btn
                 </a>
@@ -74,13 +74,13 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <div class="row row-space-x-4 row-space-y-3">
+      <div class="row row-x-4 row-y-3">
 
         <div class="w-full md:w-2/12 md:self-center">
           <label class="form-label flex-col ${labelDefault()}">
             Dolor sit amet
             <div class="mt-auto">
-              <div class="list list-space-2 items-center">
+              <div class="list list-2 items-center">
                 <a href="#" class="btn">
                   btn
                 </a>

@@ -14,7 +14,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="row row-space-3 demo--scroll-distance"
+<div class="row row-3 demo--scroll-distance"
   data-xt-scroll="{ elements: '.card', distance: 0 }">
 
   <div class="w-full">

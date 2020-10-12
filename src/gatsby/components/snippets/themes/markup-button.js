@@ -3,7 +3,7 @@ const btnPrimary = require('components/snippets/classes/btn-primary').default
 
 export default () => {
   return `
-<div class="list list-space-2 items-center">
+<div class="list list-2 items-center">
 
   <button type="button" class="btn btn-md ${btnDefault()}">
     button

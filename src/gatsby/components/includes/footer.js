@@ -6,7 +6,7 @@ class Footer extends React.Component {
     const { site } = this.props
     return (
       <div className="gatsby_site_footer_bottom">
-        <div className="row row-space-2 gatsby_site_footer_bottom_row">
+        <div className="row row-2 gatsby_site_footer_bottom_row">
           <div>
             {site.site.siteMetadata.title} v{site.site.siteMetadata.version} and demos licensed{' '}
             <a href="https://github.com/minimit/xtend-ui/blob/master/LICENSE" target="_blank" rel="noreferrer">

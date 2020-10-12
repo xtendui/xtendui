@@ -49,13 +49,13 @@ module.exports = plugin.withOptions(() => {
               let css = {}
               Object.keys(options[utility]).forEach(name => {
                 let value = options[utility][name]
-                css[`.list-space-${e(name)}`] = {
+                css[`.list-${e(name)}`] = {
                   margin: `-${value}`,
                   '> *': {
                     margin: `${value}`,
                   },
                 }
-                css[`.list-space-x-${e(name)}`] = {
+                css[`.list-x-${e(name)}`] = {
                   marginLeft: `-${value}`,
                   marginRight: `-${value}`,
                   '> *': {
@@ -63,7 +63,7 @@ module.exports = plugin.withOptions(() => {
                     marginRight: `${value}`,
                   },
                 }
-                css[`.list-space-y-${e(name)}`] = {
+                css[`.list-y-${e(name)}`] = {
                   marginTop: `-${value}`,
                   marginBottom: `-${value}`,
                   '> *': {
@@ -78,13 +78,13 @@ module.exports = plugin.withOptions(() => {
               let css = {}
               Object.keys(options[utility]).forEach(name => {
                 let value = options[utility][name]
-                css[`.row-space-${e(name)}`] = {
+                css[`.row-${e(name)}`] = {
                   margin: `-${value}`,
                   '> *': {
                     padding: `${value}`,
                   },
                 }
-                css[`.row-space-x-${e(name)}`] = {
+                css[`.row-x-${e(name)}`] = {
                   marginLeft: `-${value}`,
                   marginRight: `-${value}`,
                   '> *': {
@@ -92,7 +92,7 @@ module.exports = plugin.withOptions(() => {
                     paddingRight: `${value}`,
                   },
                 }
-                css[`.row-space-y-${e(name)}`] = {
+                css[`.row-y-${e(name)}`] = {
                   marginTop: `-${value}`,
                   marginBottom: `-${value}`,
                   '> *': {

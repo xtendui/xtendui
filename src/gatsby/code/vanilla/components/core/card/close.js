@@ -11,7 +11,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="row row-space-3">
+<div class="row row-3">
 
   <div class="w-full md:w-6/12">
     <div class="card ${cardDefault()}">

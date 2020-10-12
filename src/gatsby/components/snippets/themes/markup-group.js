@@ -1,6 +1,6 @@
 export default () => {
   return `
-<div class="list list-space-2 items-center">
+<div class="list list-2 items-center">
 
   <form class="form-default flex-full" data-xt-toggle="{ elements: '.form-group > .btn', targets: '.group' }">
     <div class="form-group">

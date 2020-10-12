@@ -216,7 +216,7 @@ const populateDemo = (container, i) => {
   // multiple elements
   container.prepend(
     Xt.createElement(
-      '<div class="gatsby_demo_tabs"><div class="gatsby_demo_tabs_left list list-space-px"></div><div class="gatsby_demo_tabs_right list list-space-px"></div></div>'
+      '<div class="gatsby_demo_tabs"><div class="gatsby_demo_tabs_left list list-px"></div><div class="gatsby_demo_tabs_right list list-px"></div></div>'
     )
   )
   container.querySelector('.gatsby_demo_tabs_right').append(
@@ -259,8 +259,8 @@ const populateDemo = (container, i) => {
 <div class="gatsby_demo_code">
   <div class="gatsby_demo_code_inner">
     <div class="gatsby_demo_code_tabs">
-      <div class="gatsby_demo_code_tabs_left list list-space-px"></div>
-      <div class="gatsby_demo_code_tabs_right list list-space-px">
+      <div class="gatsby_demo_code_tabs_left list list-px"></div>
+      <div class="gatsby_demo_code_tabs_right list list-px">
         <button type="button" class="btn btn-tiny btn-clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">
           ${iconCopy()}
         </button>

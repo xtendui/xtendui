@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-space-2 items-center">
+<div class="list list-2 items-center">
 
   <div class="drop-container" data-xt-drop>
 

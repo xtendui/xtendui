@@ -4,7 +4,7 @@ const cardSlide = require('components/snippets/classes/card-slide').default
 export default () => {
   return `
 <div class="slides">
-  <nav class="slides-inner row row-space-2">
+  <nav class="slides-inner row row-2">
 
     <div class="slide w-6/12 sm:w-4/12 opacity-50 active:opacity-100">
       <div class="slide-inner">
@@ -59,7 +59,7 @@ export default () => {
   </nav>
 </div>
 
-<nav class="slider-pagination list list-space-2">
+<nav class="slider-pagination list list-2">
   <button type="button" class="btn ${btnDefault()} xt-ignore" data-xt-pag title="Slide xt-num">
   </button>
 </nav>

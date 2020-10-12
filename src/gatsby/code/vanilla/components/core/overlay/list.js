@@ -12,7 +12,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-space-2 items-center">
+<div class="list list-2 items-center">
 
   <div data-xt-overlay>
 
@@ -29,7 +29,7 @@ demo.htmlSource = `
               ${iconX()}
             </div>
             <div class="card-block card-block-md">
-              <div class="list list-space-2 flex-no-wrap items-baseline">
+              <div class="list list-2 flex-no-wrap items-baseline">
                 <div>
                   ${iconChevronRight({ classes: 'icon-lg' })}
                 </div>

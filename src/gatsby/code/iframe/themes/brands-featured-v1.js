@@ -22,7 +22,7 @@ demo.htmlSource = `
 <div class="slider slider--text">
 
   <div class="slides">
-    <ul class="slides-inner row row-space-2">
+    <ul class="slides-inner row row-2">
 
       <div class="slide">
         <div class="slide-inner">
@@ -70,7 +70,7 @@ demo.htmlSource = `
     </ul>
   </div>
 
-  <nav class="slider-pagination list list-space-2 hidden">
+  <nav class="slider-pagination list list-2 hidden">
     <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
     </button>
   </nav>
@@ -84,7 +84,7 @@ demo.htmlSource = `
 <div class="slider slider--text slider--factor">
 
   <div class="slides">
-    <ul class="slides-inner row row-space-2">
+    <ul class="slides-inner row row-2">
 
       <div class="slide">
         <div class="slide-inner">
@@ -132,7 +132,7 @@ demo.htmlSource = `
     </ul>
   </div>
 
-  <nav class="slider-pagination list list-space-2 hidden">
+  <nav class="slider-pagination list list-2 hidden">
     <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
     </button>
   </nav>
@@ -146,7 +146,7 @@ demo.htmlSource = `
 <div class="slider slider--img">
 
   <div class="slides">
-    <ul class="slides-inner row row-space-2">
+    <ul class="slides-inner row row-2">
 
       <div class="slide">
         <div class="slide-inner">
@@ -176,7 +176,7 @@ demo.htmlSource = `
     </ul>
   </div>
 
-  <nav class="slider-pagination list list-space-2 hidden">
+  <nav class="slider-pagination list list-2 hidden">
     <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
     </button>
   </nav>

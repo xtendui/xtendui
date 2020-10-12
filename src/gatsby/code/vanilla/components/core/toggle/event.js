@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-space-2 items-center" data-xt-toggle="{ min: 1, on: 'mouseenter', off: 'mouseleave' }">
+<div class="list list-2 items-center" data-xt-toggle="{ min: 1, on: 'mouseenter', off: 'mouseleave' }">
 
   <button type="button" class="btn btn-md ${btnDefault()}">
     Toggle 0

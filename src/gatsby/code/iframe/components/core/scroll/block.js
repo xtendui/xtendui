@@ -15,7 +15,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="row row-space-3 demo--scroll-block">
+<div class="row row-3 demo--scroll-block">
 
   <div class="w-full">
     <button type="button" class="btn btn-md ${btnPrimary()} demo--scroll-block--btn">

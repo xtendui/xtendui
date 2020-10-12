@@ -14,7 +14,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="row row-space-3 demo--scroll-inside"
+<div class="row row-3 demo--scroll-inside"
   data-xt-scroll="{ elements: '.card' }">
 
   <div class="w-full">

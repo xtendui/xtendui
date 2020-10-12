@@ -16,7 +16,7 @@ demo.htmlSource = `
 <form>
 
   <fieldset>
-    <div class="row row-space-x-4 row-space-y-3">
+    <div class="row row-x-4 row-y-3">
 
       <div class="w-full">
         <legend>Legend #1</legend>
@@ -41,7 +41,7 @@ demo.htmlSource = `
 
       <div class="w-full">
 
-        <div class="row row-space-x-4 row-space-y-3">
+        <div class="row row-x-4 row-y-3">
 
           <div class="w-full md:w-auto">
             <label class="form-label mb-4 ${labelDefault()}">
@@ -69,7 +69,7 @@ demo.htmlSource = `
   </fieldset>
 
   <fieldset>
-    <div class="row row-space-x-4 row-space-y-3">
+    <div class="row row-x-4 row-y-3">
 
       <div class="w-full">
         <legend>Legend #2</legend>
@@ -81,7 +81,7 @@ demo.htmlSource = `
           Checkbox
         </label>
 
-        <div class="row row-space-x-4 row-space-y-3">
+        <div class="row row-x-4 row-y-3">
 
           <div class="w-full">
             <label class="form-label-check">
@@ -105,7 +105,7 @@ demo.htmlSource = `
       </div>
 
       <div class="w-full">
-        <div class="row row-space-x-4 row-space-y-3">
+        <div class="row row-x-4 row-y-3">
 
           <div class="w-full md:w-2/12 md:self-baseline">
             <label class="form-label ${labelDefault()}">
@@ -114,7 +114,7 @@ demo.htmlSource = `
           </div>
 
           <div class="w-full md:w-10/12">
-            <div class="row row-space-x-4 row-space-y-3">
+            <div class="row row-x-4 row-y-3">
 
               <div class="w-full">
                 <label class="form-label-check">
@@ -149,7 +149,7 @@ demo.htmlSource = `
           Checkbox
         </label>
 
-        <div class="row row-space-x-4 row-space-y-3">
+        <div class="row row-x-4 row-y-3">
 
           <div class="w-full md:w-auto">
             <label class="form-label-check">

@@ -12,7 +12,7 @@ export const demo = {
 demo.htmlSource = `
 <form>
 
-  <div class="row row-space-x-4 row-space-y-3">
+  <div class="row row-x-4 row-y-3">
 
     <div class="w-full">
       <label class="form-label mb-4 ${labelDefault()}">

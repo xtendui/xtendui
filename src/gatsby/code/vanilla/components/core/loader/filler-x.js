@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-space-2 items-center justify-center">
+<div class="list list-2 items-center justify-center">
 
   <div class="card ${cardDefault()}">
     <div class="card-block card-block-sm text-sm">

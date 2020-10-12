@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="row row-space-3 row-overflow">
+<div class="row row-3 row-overflow">
 
   <div class="w-11/12 sm:w-8/12">
     <div class="card ${cardDefault()}">

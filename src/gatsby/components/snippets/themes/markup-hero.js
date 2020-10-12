@@ -4,7 +4,7 @@ const imgAlt = require('components/snippets/img').alt
 export default () => {
   return `
 <div class="slides">
-  <nav class="slides-inner row row-space-2">
+  <nav class="slides-inner row row-2">
 
     <div class="slide">
       <div class="slide-inner">

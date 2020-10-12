@@ -9,13 +9,13 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<nav class="list flex-col list-space-2">
+<nav class="list flex-col list-2">
 
   <div>
-    <div class="list list-space-2">
+    <div class="list list-2">
 
       <div>
-        <div class="list flex-col list-space-2">
+        <div class="list flex-col list-2">
 
           <button type="button" class="btn btn-md ${btnDefault()}">
             Lorem Ipsum
@@ -44,7 +44,7 @@ demo.htmlSource = `
   </div>
 
   <div>
-    <div class="list list-space-2">
+    <div class="list list-2">
 
       <button type="button" class="btn btn-md ${btnDefault()}">
         Lorem Ipsum

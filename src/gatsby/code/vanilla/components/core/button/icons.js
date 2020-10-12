@@ -14,7 +14,7 @@ demo.htmlSource = `
   Button small
 </div>
 
-<div class="list list-space-2 items-center">
+<div class="list list-2 items-center">
 
   <button type="button" class="btn btn-sm ${btnPrimary()}">
     <span>icon small</span>
@@ -37,7 +37,7 @@ demo.htmlSource = `
   Button medium
 </div>
 
-<div class="list list-space-2 items-center">
+<div class="list list-2 items-center">
 
   <button type="button" class="btn btn-md ${btnPrimary()}">
     <span>icon small</span>
@@ -60,7 +60,7 @@ demo.htmlSource = `
   Button large
 </div>
 
-<div class="list list-space-2 items-center">
+<div class="list list-2 items-center">
 
   <button type="button" class="btn btn-lg ${btnPrimary()}">
     <span>icon small</span>

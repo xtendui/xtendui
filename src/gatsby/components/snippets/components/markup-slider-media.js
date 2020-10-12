@@ -3,7 +3,7 @@ const btnDefault = require('components/snippets/classes/btn-default').default
 export default () => {
   return `
 <div class="slides">
-  <nav class="slides-inner row row-space-2">
+  <nav class="slides-inner row row-2">
 
     <div class="slide">
       <div class="slide-inner">
@@ -80,7 +80,7 @@ export default () => {
   </nav>
 </div>
 
-<nav class="slider-pagination list list-space-2">
+<nav class="slider-pagination list list-2">
   <button type="button" class="btn ${btnDefault()} xt-ignore" data-xt-pag title="Slide xt-num">
   </button>
 </nav>

@@ -11,7 +11,7 @@
     .slider {
       background: @black;
       .slides-inner {
-        .row-space(none);
+        .row(none);
         // dragger animations
         transition: transform @time-lg @ease-out-quart;
       }
@@ -66,7 +66,7 @@
         display: inline-block;
         .margin(top, medium);
         > .list {
-          .list-space(medium)
+          .list(medium)
         }
         .btn {
           .btn-big();
