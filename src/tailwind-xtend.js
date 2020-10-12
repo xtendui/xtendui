@@ -819,7 +819,8 @@ module.exports = theme => ({
             margin: '0 !important',
           },
           // styles
-          fontSize: '1.5rem',
+          padding: theme('spacing.5'),
+          fontSize: '1.75rem',
         },
       },
       // card
@@ -1173,8 +1174,6 @@ module.exports = theme => ({
       icon: {
         svg: {
           // setup
-          fill: 'currentColor',
-          stroke: 'currentColor',
           width: '1em',
           height: '1em',
         },

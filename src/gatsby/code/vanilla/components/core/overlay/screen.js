@@ -2,6 +2,7 @@ import path from 'path'
 const img = require('components/snippets/img').default
 const btnPrimary = require('components/snippets/classes/btn-primary').default
 const cardDefaultOverlayScreen = require('components/snippets/classes/card-default-overlay-screen').default
+const iconClose = require('components/snippets/icons').iconClose
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -22,7 +23,9 @@ demo.htmlSource = `
         <div class="overlay-inner">
 
           <div class="card ${cardDefaultOverlayScreen()} items-center justify-center">
-            <div class="btn btn-close p-5" aria-label="Close"><span class="icon-close"></span></div>
+            <div class="btn btn-close" aria-label="Close">
+              ${iconClose()}
+            </div>
             <div class="card-asset">
               ${img({ classes: 'object-cover object-center', ratio: '100%' })}
             </div>
@@ -42,7 +45,9 @@ demo.htmlSource = `
         <div class="overlay-inner">
 
           <div class="card ${cardDefaultOverlayScreen()} items-center justify-center">
-            <div class="btn btn-close p-5" aria-label="Close"><span class="icon-close"></span></div>
+            <div class="btn btn-close" aria-label="Close">
+              ${iconClose()}
+            </div>
             <div class="max-w-3xl">
               <div class="card-block card-block-lg">
                 <div class="h3">Lorem ipsum</div>
@@ -68,7 +73,9 @@ demo.htmlSource = `
         <div class="overlay-inner">
 
           <div class="card ${cardDefaultOverlayScreen()} items-center justify-center">
-            <div class="btn btn-close p-5" aria-label="Close"><span class="icon-close"></span></div>
+            <div class="btn btn-close" aria-label="Close">
+              ${iconClose()}
+            </div>
             <div class="max-w-3xl">
               <div class="sm:card-group">
                 <div class="card-block card-block-md sm:w-7/12">

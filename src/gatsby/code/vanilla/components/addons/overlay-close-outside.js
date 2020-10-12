@@ -3,6 +3,7 @@ const btnPrimary = require('components/snippets/classes/btn-primary').default
 const btnCloseOutside = require('components/snippets/classes/btn-close-outside').default
 const cardDefaultOverlay = require('components/snippets/classes/card-default-overlay').default
 const cardDefaultOverlayScreen = require('components/snippets/classes/card-default-overlay-screen').default
+const iconClose = require('components/snippets/icons').iconClose
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -25,7 +26,9 @@ demo.htmlSource = `
         <div class="overlay-inner">
 
           <div class="card ${cardDefaultOverlay()}">
-            <div class="btn btn-close p-5 ${btnCloseOutside()} md:p-4 md:right-auto md:left-100" aria-label="Close"><span class="icon-close"></span></div>
+            <div class="btn btn-close ${btnCloseOutside()} md:p-2 md:right-auto md:left-100" aria-label="Close">
+              ${iconClose()}
+            </div>
             <div class="card-block card-block-lg text-lg">
               <div class="h2">Lorem ipsum</div>
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
@@ -52,7 +55,9 @@ demo.htmlSource = `
         <div class="overlay-inner">
 
           <div class="card ${cardDefaultOverlayScreen()}">
-            <div class="btn btn-close p-5 ${btnCloseOutside()} md:p-4 md:right-auto md:left-100" aria-label="Close"><span class="icon-close"></span></div>
+            <div class="btn btn-close ${btnCloseOutside()} md:p-2 md:right-auto md:left-100" aria-label="Close">
+              ${iconClose()}
+            </div>
             <div class="card-block card-block-lg">
               <div class="h3">Lorem ipsum</div>
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
@@ -79,7 +84,9 @@ demo.htmlSource = `
         <div class="overlay-inner">
 
           <div class="card ${cardDefaultOverlayScreen()}">
-            <div class="btn btn-close p-5 ${btnCloseOutside()} md:p-4 md:left-auto md:right-100" aria-label="Close"><span class="icon-close"></span></div>
+            <div class="btn btn-close ${btnCloseOutside()} md:p-2 md:left-auto md:right-100" aria-label="Close">
+              ${iconClose()}
+            </div>
             <div class="card-block card-block-lg">
               <div class="h3">Lorem ipsum</div>
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>

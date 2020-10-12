@@ -1,4 +1,5 @@
 const img = require('components/snippets/img').default
+const iconClose = require('components/snippets/icons').iconClose
 
 export default () => {
   return `
@@ -15,7 +16,9 @@ export default () => {
 
             <div class="card card-overlay">
               <div class="card-design"></div>
-              <div class="btn btn-close p-5" aria-label="Close"><span class="icon-close"></span></div>
+              <div class="btn btn-close" aria-label="Close">
+                ${iconClose()}
+              </div>
               <div class="card-inner">
                 <div class="card-content">
                   <div class="card-asset">
@@ -42,7 +45,9 @@ export default () => {
           <div class="card card-overlay"
             style="align-items: stretch;">
             <div class="card-design"></div>
-            <div class="btn btn-close p-5" aria-label="Close"><span class="icon-close"></span></div>
+            <div class="btn btn-close" aria-label="Close">
+              ${iconClose()}
+            </div>
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-item card-item--menu">
@@ -90,7 +95,9 @@ export default () => {
           <div class="card card-overlay"
             style="align-items: stretch;">
             <div class="card-design"></div>
-            <div class="btn btn-close p-5" aria-label="Close"><span class="icon-close"></span></div>
+            <div class="btn btn-close" aria-label="Close">
+              ${iconClose()}
+            </div>
             <div class="card-inner">
               <div class="card-content">
 
@@ -216,7 +223,9 @@ export default () => {
           <div class="card card-overlay"
             style="align-items: stretch;">
             <div class="card-design"></div>
-            <div class="btn btn-close p-5" aria-label="Close"><span class="icon-close"></span></div>
+            <div class="btn btn-close" aria-label="Close">
+              ${iconClose()}
+            </div>
             <div class="card-inner">
               <div class="card-content">
 

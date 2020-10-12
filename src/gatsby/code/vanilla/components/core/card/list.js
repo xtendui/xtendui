@@ -1,5 +1,6 @@
 import path from 'path'
 const cardDefault = require('components/snippets/classes/card-default').default
+const iconChevronRight = require('components/snippets/icons').iconChevronRight
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -16,7 +17,7 @@ demo.htmlSource = `
       <div class="card-block card-block-md">
         <div class="list list-space-2 flex-no-wrap items-baseline">
           <div>
-            <span class="icon-chevron-right"></span>
+            ${iconChevronRight()}
           </div>
           <div>
             <div class="h4">Lorem ipsum</div>

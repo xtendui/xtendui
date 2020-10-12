@@ -1,5 +1,6 @@
 const img = require('components/snippets/img').default
 const imgAlt = require('components/snippets/img').alt
+const iconClose = require('components/snippets/icons').iconClose
 
 export default () => {
   return `
@@ -41,7 +42,9 @@ export default () => {
 
               <div class="card listing-page_back">
                 <div class="card-design"></div>
-                <div class="btn btn-close p-5" aria-label="Close"><span class="icon-close"></span></div>
+                <div class="btn btn-close" aria-label="Close">
+                  ${iconClose()}
+                </div>
                 <div class="card-inner">
                   <div class="card-content">
                     <div class="card-block card-item listing-page_content">
@@ -106,7 +109,9 @@ export default () => {
 
               <div class="card listing-page_back">
                 <div class="card-design"></div>
-                <div class="btn btn-close p-5" aria-label="Close"><span class="icon-close"></span></div>
+                <div class="btn btn-close" aria-label="Close">
+                  ${iconClose()}
+                </div>
                 <div class="card-inner">
                   <div class="card-content">
                     <div class="card-block card-item listing-page_content">
@@ -171,7 +176,9 @@ export default () => {
 
               <div class="card listing-page_back">
                 <div class="card-design"></div>
-                <div class="btn btn-close p-5" aria-label="Close"><span class="icon-close"></span></div>
+                <div class="btn btn-close" aria-label="Close">
+                  ${iconClose()}
+                </div>
                 <div class="card-inner">
                   <div class="card-content">
                     <div class="card-block card-item listing-page_content">
@@ -236,7 +243,9 @@ export default () => {
 
               <div class="card listing-page_back">
                 <div class="card-design"></div>
-                <div class="btn btn-close p-5" aria-label="Close"><span class="icon-close"></span></div>
+                <div class="btn btn-close" aria-label="Close">
+                  ${iconClose()}
+                </div>
                 <div class="card-inner">
                   <div class="card-content">
                     <div class="card-block card-item listing-page_content">
@@ -301,7 +310,9 @@ export default () => {
 
               <div class="card listing-page_back">
                 <div class="card-design"></div>
-                <div class="btn btn-close p-5" aria-label="Close"><span class="icon-close"></span></div>
+                <div class="btn btn-close" aria-label="Close">
+                  ${iconClose()}
+                </div>
                 <div class="card-inner">
                   <div class="card-content">
                     <div class="card-block card-item">
@@ -366,7 +377,9 @@ export default () => {
 
               <div class="card listing-page_back">
                 <div class="card-design"></div>
-                <div class="btn btn-close p-5" aria-label="Close"><span class="icon-close"></span></div>
+                <div class="btn btn-close" aria-label="Close">
+                  ${iconClose()}
+                </div>
                 <div class="card-inner">
                   <div class="card-content">
                     <div class="card-block card-item">

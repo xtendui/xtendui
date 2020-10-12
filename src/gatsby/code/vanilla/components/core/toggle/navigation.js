@@ -1,6 +1,8 @@
 import path from 'path'
 const btnDefault = require('components/snippets/classes/btn-default').default
 const cardToggle = require('components/snippets/classes/card-toggle').default
+const iconArrowLeft = require('components/snippets/icons').iconArrowLeft
+const iconArrowRight = require('components/snippets/icons').iconArrowRight
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -29,11 +31,11 @@ demo.htmlSource = `
   </button>
 
   <button type="button" class="btn ${btnDefault()}" data-xt-nav="-1" title="Previous slide">
-    <span class="icon-arrow-left"></span>
+    ${iconArrowLeft()}
   </button>
 
   <button type="button" class="btn ${btnDefault()}" data-xt-nav="1" title="Next slide">
-    <span class="icon-arrow-right"></span>
+    ${iconArrowRight()}
   </button>
 
   <div class="card toggle ${cardToggle()}">

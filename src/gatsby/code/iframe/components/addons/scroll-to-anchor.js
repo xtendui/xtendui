@@ -4,6 +4,7 @@ const btnDefault = require('components/snippets/classes/btn-default').default
 const btnPrimary = require('components/snippets/classes/btn-primary').default
 const cardStickyDefault = require('components/snippets/classes/card-sticky-default').default
 const cardStickyPrimary = require('components/snippets/classes/card-sticky-primary').default
+const iconClose = require('components/snippets/icons').iconClose
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -41,7 +42,9 @@ demo.htmlSource = `
     <div class="overlay-inner">
 
       <div class="card items-center justify-center">
-        <div class="btn btn-close p-5" aria-label="Close"><span class="icon-close"></span></div>
+        <div class="btn btn-close" aria-label="Close">
+          ${iconClose()}
+        </div>
         <div class="max-w-3xl">
 
           <div class="card ${cardStickyDefault()}" id="anchor-overlay-0">
