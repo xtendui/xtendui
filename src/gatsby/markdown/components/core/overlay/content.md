@@ -31,7 +31,9 @@ Use **component classes** to assign size (e.g.: padding, font size).
 
 </div>
 
-Use **tailwind classes** to assign overlay size (e.g.: max-width). If you **omit max-width** classes the overlay is **full width**.
+You can add **additional size** for example `.card-block-xs` or `.card-block-xl`.
+
+Use **tailwind classes** to assign overlay size (e.g.: [max-width](https://tailwindcss.com/docs/max-width)). If you **omit max-width** classes the overlay is **full width**.
 
 <div class="table-scroll">
 

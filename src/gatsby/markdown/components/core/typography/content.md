@@ -8,7 +8,7 @@ date: "2030-10-10"
 
 ## Automatic spacing
 
-Check out the [automatic spacing classes](/components/core/general/css#utils) to reset margin top when `:first-child` with `mt-fc` and margin bottom when `:last-child` with `mb-lc`.
+Check out the [automatic spacing classes](/components/core/general/css#utils) to **reset margin top** when `:first-child` with `mt-fc` and **reset margin bottom** when `:last-child` with `mb-lc`.
 
 ## Html
 
@@ -20,7 +20,7 @@ Inside `html` there are the styles for **base rem typography**. We assign a root
 
 ## Variant
 
-Use `.text-inverse` to style with inverse colors.
+Use **typography variants** to style text color.
 
 <div class="table-scroll">
 
@@ -30,6 +30,9 @@ Use `.text-inverse` to style with inverse colors.
 | Util                  | `.text-inverse`       | `text-inverse`                | `responsive hover`                | Inverse text and links colors            |
 
 </div>
+
+[[notePrimary]]
+| `.text-default` and `.text-inverse` don't support `text-opacity`. Use tailwind colors instead when using `text-opacity`.
 
 <demo>
   <demovanilla src="vanilla/components/core/typography/variant">
@@ -59,7 +62,7 @@ You can use headers **tags or classes**, classes takes precedence with css speci
   </demovanilla>
 </demo>
 
-You can add for example additional `.h7` or `.h-line`.
+You can add **additional headers** for example `.h7` or `.h-line`.
 
 ## Paragraph
 

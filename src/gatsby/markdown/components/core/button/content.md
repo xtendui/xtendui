@@ -17,7 +17,10 @@ Use `.link` to create a [link](/components/core/link).
   </demovanilla>
 </demo>
 
-Inside `.text-inverse` buttons are styled accordingly.
+Use [typography variant](/components/core/typography/content#variant) to style text color.
+
+[[notePrimary]]
+| `.text-default` and `.text-inverse` don't support `text-opacity`. Use tailwind colors instead when using `text-opacity`.
 
 <demo>
   <demovanilla src="vanilla/components/core/button/inverse">
@@ -42,3 +45,5 @@ Use **component classes** to assign size (e.g.: padding, font size).
   <demovanilla src="vanilla/components/core/button/size">
   </demovanilla>
 </demo>
+
+You can add **additional size** for example `.btn-xs` or `.btn-xl`.

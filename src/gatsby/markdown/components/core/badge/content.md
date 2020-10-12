@@ -42,3 +42,5 @@ Use **component classes** to assign size (e.g.: padding, font size).
   <demovanilla src="vanilla/components/core/badge/size">
   </demovanilla>
 </demo>
+
+You can add **additional size** for example `.badge-xs` or `.badge-xl`.

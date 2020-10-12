@@ -31,6 +31,8 @@ Use **component classes** to assign size (e.g.: padding, font size).
 
 </div>
 
+You can add **additional size** for example `.card-block-xs` or `.card-block-xl`.
+
 Use **card classes** to assign card size (e.g.: min-width).
 
 <div class="table-scroll">
@@ -47,6 +49,8 @@ Use **card classes** to assign card size (e.g.: min-width).
   <demovanilla src="vanilla/components/core/drop/card-size">
   </demovanilla>
 </demo>
+
+You can add **additional size** for example `.card-xs` or `.card-xl`.
 
 ## Asset
 

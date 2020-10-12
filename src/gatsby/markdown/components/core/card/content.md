@@ -45,6 +45,8 @@ Use **component classes** to assign size (e.g.: padding, font size).
   </demovanilla>
 </demo>
 
+You can add **additional size** for example `.card-block-xs` or `.card-block-xl`.
+
 ## Asset
 
 If you want full width assets use `.card-asset`.

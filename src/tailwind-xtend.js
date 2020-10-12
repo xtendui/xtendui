@@ -184,20 +184,18 @@ module.exports = theme => ({
       // link
       link: {
         '.text-default': {
-          // use @apply text to have tailwind opacity utilities
           'a:not([class]), .link': {
-            '@apply text-accent-500': '',
+            color: theme('colors.accent.500'),
             '&:hover, &:active, &.active': {
-              '@apply text-accent-600': '',
+              color: theme('colors.accent.600'),
             },
           },
         },
         '.text-inverse': {
-          // use @apply text to have tailwind opacity utilities
           'a:not([class]), .link': {
-            '@apply text-white': '',
+            color: theme('colors.white'),
             '&:hover, &:active, &.active': {
-              '@apply text-white': '',
+              color: theme('colors.white'),
             },
           },
         },
@@ -328,12 +326,10 @@ module.exports = theme => ({
       // typography
       typography: {
         '.text-default': {
-          // use @apply text to have tailwind opacity utilities
-          '@apply text-accent-900': '',
+          color: theme('colors.accent.900'),
         },
         '.text-inverse': {
-          // use @apply text to have tailwind opacity utilities
-          '@apply text-white': '',
+          color: theme('colors.white'),
         },
         '.h1': {
           // style
@@ -436,7 +432,7 @@ module.exports = theme => ({
           // style
           marginTop: theme('spacing.3'),
           marginBottom: theme('spacing.3'),
-          '@apply text-base mb-lc': {},
+          '@apply text-reset mt-fc mb-lc': {},
         },
         '.text-reset': {
           // setup
@@ -1170,12 +1166,24 @@ module.exports = theme => ({
           display: 'inline-flex',
         },
       },
-      // icon
-      icon: {
+      // icons
+      icons: {
         svg: {
           // setup
+          '@apply icon-md': '',
+          display: 'inline-block',
+        },
+        '.icon-sm': {
+          width: '.75em',
+          height: '.75em',
+        },
+        '.icon-md': {
           width: '1em',
           height: '1em',
+        },
+        '.icon-lg': {
+          width: '1.25em',
+          height: '1.25em',
         },
       },
       // link
@@ -1813,6 +1821,10 @@ module.exports = theme => ({
             fontSize: rem(17),
           },
         },
+        body: {
+          // style
+          '@apply text-base': '',
+        },
         h1: {
           // setup
           '@apply h1': '',
@@ -1840,6 +1852,8 @@ module.exports = theme => ({
         p: {
           // setup
           '@apply p': '',
+          // @FIX NESTED APPLY
+          '@apply text-reset mt-fc mb-lc': {},
         },
         'ul:not([class]), ol:not([class])': {
           // style

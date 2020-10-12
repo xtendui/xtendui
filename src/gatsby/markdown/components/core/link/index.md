@@ -60,7 +60,10 @@ You can use `.link` to style any element as a link.
   </demovanilla>
 </demo>
 
-Use `.text-inverse` to style with inverse colors.
+Use [typography variant](/components/core/typography/content#variant) to style text color.
+
+[[notePrimary]]
+| `.text-default` and `.text-inverse` don't support `text-opacity`. Use tailwind colors instead when using `text-opacity`.
 
 <div class="table-scroll">
 

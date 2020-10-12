@@ -40,3 +40,5 @@ Use **component classes** to assign size (e.g.: padding, font size).
   <demovanilla src="vanilla/components/core/form/size-lg">
   </demovanilla>
 </demo>
+
+You can add **additional size** for example `.form-xs` or `.form-xl`.

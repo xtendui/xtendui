@@ -35,3 +35,5 @@ Use [button classes](/components/core/button/content#size) to assign button size
   <demovanilla src="vanilla/components/core/drop/list-size">
   </demovanilla>
 </demo>
+
+You can add **additional size** for example `.card-block-xs` or `.card-block-xl`.
