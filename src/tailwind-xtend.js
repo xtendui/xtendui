@@ -1177,15 +1177,10 @@ module.exports = theme => ({
         },
         '.icon-sm': {
           // styles
-          width: '.75em',
-          height: '.75em',
-        },
-        '.icon-md': {
-          // styles
           width: '1em',
           height: '1em',
         },
-        '.icon-lg': {
+        '.icon-md': {
           // styles
           width: '1.25em',
           height: '1.25em',
@@ -1193,7 +1188,7 @@ module.exports = theme => ({
           marginTop: 'calc((1em - 1.25em) / 2)',
           marginBottom: 'calc((1em - 1.25em) / 2)',
         },
-        '.icon-xl': {
+        '.icon-lg': {
           // styles
           width: '1.5em',
           height: '1.5em',

@@ -36,7 +36,7 @@ demo.htmlSource = `
   h6. Lorem Ipsum
 </h6>
 
-<div class="h5 h-block rounded-md bg-gray-200 text-center">
+<div class="h5 h-block rounded-md text-default bg-gray-200 text-center">
   h5. Lorem Ipsum
 </div>
 

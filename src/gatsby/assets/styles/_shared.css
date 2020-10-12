@@ -12,7 +12,7 @@
 .gatsby_demo_tabs, .gatsby_demo_code_tabs {
   .btn:not(.btn-close) {
     .icon {
-      @apply icon-xl stroke-2;
+      @apply icon-lg stroke-2;
     }
   }
 }

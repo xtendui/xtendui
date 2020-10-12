@@ -40,7 +40,7 @@ class Template extends React.Component {
               <div className="row row-space-3">
                 <div className="gatsby_listing_group">
                   {data.post.frontmatter.type === 'Components' ? (
-                    <h2 className="h5 h-block rounded-md bg-gray-200 text-center">{'Styling and interactions'}</h2>
+                    <h2 className="h5 h-block rounded-md text-default bg-gray-200 text-center">{'Styling and interactions'}</h2>
                   ) : null}
                   <div className="gatsby_listing_items">
                     <div className="row row row-space-2 lg:row-space-4">

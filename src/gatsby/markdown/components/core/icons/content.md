@@ -40,7 +40,6 @@ Use **component classes** to assign size (e.g.: font size, stroke width).
 | Component                  | `.icon-sm`                     | `icon-sm`                | Size small            |
 | Component                  | `.icon-md`                     | `icon-md`                | Size medium            |
 | Component                  | `.icon-lg`                     | `icon-lg`                | Size large            |
-| Component                  | `.icon-xl`                     | `icon-xl`                | Size extra large            |
 
 </div>
 
@@ -56,4 +55,4 @@ You can add **additional size** for example `.icon-xs`.
 
 ## Button
 
-Refer to [button alignment and icons](/components/core/button/content#alignment-and-icons).
+Refer to [button icons and alignment](/components/core/button/content#icons-and-alignment).

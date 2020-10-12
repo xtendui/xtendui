@@ -11,7 +11,15 @@ export const demo = {
 demo.htmlSource = `
 <div class="text-inverse py-4 px-6 bg-accent-500">
 
+  <div class="h5 h-block rounded-md text-default bg-gray-200 text-center">
+    Default
+  </div>
+
   ${iconSearch({ classes: 'icon-md' })}
+
+  <div class="h5 h-block rounded-md text-default bg-gray-200 text-center">
+    Accent
+  </div>
 
   ${iconSearch({ classes: 'icon-md text-accent-50' })}
 
@@ -32,6 +40,10 @@ demo.htmlSource = `
   ${iconSearch({ classes: 'icon-md text-accent-800' })}
 
   ${iconSearch({ classes: 'icon-md text-accent-900' })}
+
+  <div class="h5 h-block rounded-md text-default bg-gray-200 text-center">
+    White opacity
+  </div>
 
   ${iconSearch({ classes: 'icon-md text-white text-opacity-0' })}
 
