@@ -1063,9 +1063,9 @@ module.exports = theme => ({
           backgroundRepeat: 'no-repeat',
           // styles
           paddingRight: '3em',
-          backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="none" stroke="${encodeURIComponent(
+          backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="${encodeURIComponent(
             theme('colors.black')
-          )}" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 5l6 6 6-6"/></svg>')`,
+          )}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>')`,
           backgroundSize: '1em',
           backgroundPosition: 'right 1rem center',
           '&[multiple]': {
@@ -1124,9 +1124,9 @@ module.exports = theme => ({
           top: '-1px',
           width: '1.5em',
           height: '1.5em',
-          backgroundImage: `url('data:image/svg+xml;utf8,<svg viewBox="0 0 16 16" fill="${encodeURIComponent(
+          backgroundImage: `url('data:image/svg+xml;utf8,<svg viewBox="-6 -6 12 12" fill="${encodeURIComponent(
             theme('colors.white')
-          )}" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="3"/></svg>')`,
+          )}" xmlns="http://www.w3.org/2000/svg"><circle r="3"/></svg>')`,
           backgroundPosition: 'center center',
           backgroundSize: '0',
           '&:checked': {
@@ -1139,15 +1139,15 @@ module.exports = theme => ({
           top: '-1px',
           width: '2.5em',
           height: '1.5em',
-          backgroundImage: `url('data:image/svg+xml;utf8,<svg viewBox="-4 -4 8 8" fill="${encodeURIComponent(
+          backgroundImage: `url('data:image/svg+xml;utf8,<svg viewBox="-5 -5 10 10" fill="${encodeURIComponent(
             theme('colors.gray.600')
-          )}" xmlns="http://www.w3.org/2000/svg"><circle  r="3"/></svg>')`,
+          )}" xmlns="http://www.w3.org/2000/svg"><circle r="3"/></svg>')`,
           backgroundSize: 'contain',
           backgroundPosition: 'left center',
           '&:checked': {
-            backgroundImage: `url('data:image/svg+xml;utf8,<svg viewBox="-4 -4 8 8" fill="${encodeURIComponent(
+            backgroundImage: `url('data:image/svg+xml;utf8,<svg viewBox="-5 -5 10 10" fill="${encodeURIComponent(
               theme('colors.white')
-            )}" xmlns="http://www.w3.org/2000/svg"><circle  r="3"/></svg>')`,
+            )}" xmlns="http://www.w3.org/2000/svg"><circle r="3"/></svg>')`,
             backgroundPosition: 'right center',
             backgroundColor: 'currentColor',
             borderColor: 'currentColor',
