@@ -1883,7 +1883,7 @@ module.exports = theme => ({
           marginTop: theme('spacing.3'),
           fontSize: rem(14),
           lineHeight: theme('lineHeight.snug'),
-        }
+        },
       },
     },
     addons: {
