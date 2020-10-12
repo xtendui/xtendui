@@ -12,7 +12,6 @@ import { markdownSlug } from 'components/snippets/markdown-slug'
 import { makeDocument } from 'assets/scripts/theme'
 import { populateBlock } from 'assets/scripts/demo'
 
-import 'assets/styles/icomoon/style.css'
 import 'assets/styles/theme.css'
 
 if (typeof window !== 'undefined' && window.self === window.top) {

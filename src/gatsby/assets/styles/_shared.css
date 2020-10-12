@@ -1,6 +1,32 @@
 /**
+ * docs icons
+ */
+
+.gatsby_btn-site_header_top_social {
+  font-size: 1.25rem;
+  .icon {
+    fill: rgba(255, 255, 255, 0.25);
+  }
+}
+
+.gatsby_demo_tabs, .gatsby_demo_code_tabs {
+  .btn:not(.btn-close) {
+    .icon {
+      @apply icon-xl stroke-2;
+    }
+  }
+}
+
+#gatsby_open-full {
+  > .btn-close {
+    padding: 8px;
+    font-size: 27px;
+  }
+}
+
+/**
  * .gatsby_make-line
-*/
+ */
 
 .gatsby_make-line {
   position: relative;
@@ -47,7 +73,7 @@
 
 /**
  * .gatsby_make-anchor
-*/
+ */
 
 .gatsby_make-anchor {
   position: relative;
@@ -81,12 +107,10 @@
   }
   .btn {
     padding: 7px;
-    width: 30px;
-    height: 30px;
+    font-size: 1.25rem;
     border-radius: 50%;
     border-color: theme('colors.white') !important;
     background: theme('colors.white') !important;
-    font-size: 17px;
     color: theme('colors.accent.500');
     line-height: 1;
   }

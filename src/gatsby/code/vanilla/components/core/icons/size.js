@@ -9,21 +9,27 @@ export const demo = {
 }
 
 demo.htmlSource = `
-${iconSearch({ classes: 'icon-sm' })}
-
 ${iconSearch({ classes: 'icon-sm stroke-1' })}
+
+${iconSearch({ classes: 'icon-sm' })}
 
 ${iconSearch({ classes: 'icon-sm stroke-2' })}
 
-${iconSearch({ classes: 'icon-md' })}
-
 ${iconSearch({ classes: 'icon-md stroke-1' })}
+
+${iconSearch({ classes: 'icon-md' })}
 
 ${iconSearch({ classes: 'icon-md stroke-2' })}
 
-${iconSearch({ classes: 'icon-lg' })}
-
 ${iconSearch({ classes: 'icon-lg stroke-1' })}
 
+${iconSearch({ classes: 'icon-lg' })}
+
 ${iconSearch({ classes: 'icon-lg stroke-2' })}
+
+${iconSearch({ classes: 'icon-xl stroke-1' })}
+
+${iconSearch({ classes: 'icon-xl' })}
+
+${iconSearch({ classes: 'icon-xl stroke-2' })}
 `

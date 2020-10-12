@@ -72,19 +72,21 @@
   margin-bottom: -5px;
   padding: 5px;
   border-radius: 0;
-  font-size: 1rem;
   @apply text-inverse;
   line-height: 1;
-  text-transform: uppercase;
-  opacity: 0.8;
-  &:hover, &:active {
-    opacity: 1;
-  }
-  &:active {
-    transform: scale(1.2);
-  }
   &:last-child {
     padding-right: 0;
+  }
+  opacity: 0.8;
+  &:hover {
+    opacity: 1;
+    transform: scale(1.2);
+    transition-duration: theme('transitionDuration.200');
+  }
+  &:active {
+    opacity: 1;
+    transform: scale(1);
+    transition-duration: theme('transitionDuration.200');
   }
 }
 

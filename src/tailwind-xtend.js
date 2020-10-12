@@ -1172,6 +1172,8 @@ module.exports = theme => ({
           // setup
           display: 'inline-block',
           stroke: 'currentColor',
+          // styles
+          '@apply icon-md': '',
         },
         '.icon-sm': {
           // styles
@@ -1190,6 +1192,14 @@ module.exports = theme => ({
           // Size bigger than `1em` has negative margin
           marginTop: 'calc((1em - 1.25em) / 2)',
           marginBottom: 'calc((1em - 1.25em) / 2)',
+        },
+        '.icon-xl': {
+          // styles
+          width: '1.5em',
+          height: '1.5em',
+          // Size bigger than `1em` has negative margin
+          marginTop: 'calc((1em - 1.5em) / 2)',
+          marginBottom: 'calc((1em - 1.5em) / 2)',
         },
       },
       // link

@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { markdownSlug } from 'components/snippets/markdown-slug'
+const iconPackage = require('components/snippets/icons').iconPackage
+const iconGithub = require('components/snippets/icons').iconGithub
 
 class DocSidebar extends React.Component {
   render() {
@@ -25,11 +27,9 @@ class DocSidebar extends React.Component {
                   </div>
                   <div>
                     <div className="gatsby_site_header_top_social">
-                      <a href={site.site.siteMetadata.github} target="_blank" rel="noreferrer" className="btn gatsby_btn-site_header_top_social" title="Github">
-                        <span className="icon-github"></span>
+                      <a href={site.site.siteMetadata.npm} target="_blank" rel="noreferrer" className="btn gatsby_btn-site_header_top_social" title="Npm" dangerouslySetInnerHTML={{__html: iconPackage({ classes: 'icon-lg' })}}>
                       </a>
-                      <a href={site.site.siteMetadata.npm} target="_blank" rel="noreferrer" className="btn gatsby_btn-site_header_top_social" title="Npm">
-                        <span className="icon-npm"></span>
+                      <a href={site.site.siteMetadata.github} target="_blank" rel="noreferrer" className="btn gatsby_btn-site_header_top_social" title="Github" dangerouslySetInnerHTML={{__html: iconGithub({ classes: 'icon-lg' })}}>
                       </a>
                     </div>
                   </div>

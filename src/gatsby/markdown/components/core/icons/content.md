@@ -40,6 +40,7 @@ Use **component classes** to assign size (e.g.: font size, stroke width).
 | Component                  | `.icon-sm`                     | `icon-sm`                | Size small            |
 | Component                  | `.icon-md`                     | `icon-md`                | Size medium            |
 | Component                  | `.icon-lg`                     | `icon-lg`                | Size large            |
+| Component                  | `.icon-xl`                     | `icon-xl`                | Size extra large            |
 
 </div>
 
@@ -51,7 +52,7 @@ Use **component classes** to assign size (e.g.: font size, stroke width).
   </demovanilla>
 </demo>
 
-You can add **additional size** for example `.icon-xs` or `.icon-xl`.
+You can add **additional size** for example `.icon-xs`.
 
 ## Button
 

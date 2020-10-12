@@ -268,9 +268,7 @@ pre {
     @apply text-inverse rounded-md border-accent-500 bg-accent-500 hover:text-opacity-75 hover:border-accent-600 hover:bg-accent-600;
     top: 0;
     right: 0;
-    padding: 14px;
     border-radius: 0;
-    font-size: 15px;
   }
   .gatsby_demo_tabs_right {
     padding-right: 45px;

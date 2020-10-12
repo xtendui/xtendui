@@ -8,15 +8,15 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<img class="icon icon-md" src="/icons/icon-search.svg" loading="eager" alt=""/>
+<img class="icon icon-md" src="/icons/search.svg" loading="eager" alt=""/>
 
-<img class="icon icon-md" src="/icons/icon-close.svg" loading="eager" alt=""/>
+<img class="icon icon-md" src="/icons/close.svg" loading="eager" alt=""/>
 
-<img class="icon icon-md" src="/icons/icon-arrow-left.svg" loading="eager" alt=""/>
+<img class="icon icon-md" src="/icons/arrow-left.svg" loading="eager" alt=""/>
 
-<img class="icon icon-md" src="/icons/icon-arrow-right.svg" loading="eager" alt=""/>
+<img class="icon icon-md" src="/icons/arrow-right.svg" loading="eager" alt=""/>
 
-<img class="icon icon-md" src="/icons/icon-chevron-left.svg" loading="eager" alt=""/>
+<img class="icon icon-md" src="/icons/chevron-left.svg" loading="eager" alt=""/>
 
-<img class="icon icon-md" src="/icons/icon-chevron-right.svg" loading="eager" alt=""/>
+<img class="icon icon-md" src="/icons/chevron-right.svg" loading="eager" alt=""/>
 `
