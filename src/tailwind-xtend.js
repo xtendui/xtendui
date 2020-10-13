@@ -326,7 +326,7 @@ module.exports = theme => ({
       // typography
       typography: {
         '.text-default': {
-          color: theme('colors.accent.900'),
+          color: theme('colors.black'),
         },
         '.text-inverse': {
           color: theme('colors.white'),
@@ -337,7 +337,7 @@ module.exports = theme => ({
           marginBottom: theme('spacing.4'),
           '@apply mt-fc mb-lc': {},
           fontFamily: theme('fontFamily.sans').toString(),
-          fontWeight: theme('fontWeight.semibold'),
+          fontWeight: theme('fontWeight.bold'),
           fontSize: rem(35),
           lineHeight: theme('lineHeight.snug'),
           letterSpacing: theme('letterSpacing.normal'),
@@ -481,8 +481,8 @@ module.exports = theme => ({
         },
         '::selection': {
           // styles
-          backgroundColor: theme('colors.accent.600'),
-          color: theme('colors.white'),
+          backgroundColor: '#79ffe1',
+          color: theme('colors.black'),
         },
         '.overflow-main': {
           // styles
@@ -490,15 +490,16 @@ module.exports = theme => ({
           '&::-webkit-scrollbar': {
             height: '10px',
             width: '10px',
-            background: theme('colors.gray.200'),
+            background: theme('colors.white'),
             '@media (hover: none)': {
               display: 'none',
             },
           },
           '&::-webkit-scrollbar-thumb': {
-            background: theme('colors.accent.700'),
+            background: theme('colors.gray.500'),
           },
-          scrollbarColor: theme('colors.accent.700') + ' transparent',
+          scrollbarWidth: 'auto',
+          scrollbarColor: theme('colors.gray.500') + ' transparent',
         },
         '.overflow-sub': {
           // styles
@@ -509,10 +510,11 @@ module.exports = theme => ({
             background: 'transparent',
           },
           '&::-webkit-scrollbar-thumb': {
-            background: theme('colors.accent.700'),
+            background: theme('colors.white'),
+            opacity: 0.5,
           },
           scrollbarWidth: 'thin',
-          scrollbarColor: theme('colors.accent.700') + ' transparent',
+          scrollbarColor: theme('colors.white') + ' transparent',
         },
         'html:not(.xt-focus-disable)': {
           ':focus': {
@@ -997,7 +999,7 @@ module.exports = theme => ({
           '@apply mt-fc mb-lc': {},
           width: '100%',
           fontFamily: theme('fontFamily.sans').toString(),
-          fontWeight: theme('fontWeight.semibold'),
+          fontWeight: theme('fontWeight.bold'),
           fontSize: rem(24),
           lineHeight: theme('lineHeight.snug'),
         },
@@ -1027,8 +1029,6 @@ module.exports = theme => ({
           fontWeight: theme('fontWeight.semibold'),
           fontSize: '1em',
           lineHeight: theme('lineHeight.snug'),
-          letterSpacing: theme('letterSpacing.wider'),
-          textTransform: 'uppercase',
         },
         '.form-label-required': {
           // styles
@@ -1863,6 +1863,9 @@ module.exports = theme => ({
           '@apply p': '',
           // @FIX NESTED APPLY
           '@apply text-reset mt-fc mb-lc': {},
+        },
+        strong: {
+          fontWeight: theme('fontWeight.semibold'),
         },
         'ul:not([class]), ol:not([class])': {
           // style

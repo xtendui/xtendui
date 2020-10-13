@@ -1,172 +1,138 @@
-/*
-Name:   Duotone Light
-Author: Simurai, adapted from DuoTone themes for Atom (http://simurai.com/projects/2016/01/01/duotone-themes)
-
-Conversion: Bram de Haan (http://atelierbram.github.io/Base2Tone-prism/output/prism/prism-base2tone-morning-light.css)
-Generated with Base16 Builder (https://github.com/base16-builder/base16-builder)
-*/
-
-code[class*="language-"],
-pre[class*="language-"] {
-	font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
-	font-size: 14px;
-	line-height: 1.375;
-	direction: ltr;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
-
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
-	background: #faf8f5;
-	color: #728fcb;
-}
-
-pre > code[class*="language-"] {
-	font-size: 1em;
-}
-
-pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
-	text-shadow: none;
-	background: #faf8f5;
-}
-
-pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
-code[class*="language-"]::selection, code[class*="language-"] ::selection {
-	text-shadow: none;
-	background: #faf8f5;
-}
-
-/* Code blocks */
-pre[class*="language-"] {
-	padding: 1em;
-	margin: .5em 0;
-	overflow: auto;
-}
-
-/* Inline code */
-:not(pre) > code[class*="language-"] {
-	padding: .1em;
-	border-radius: .3em;
-}
-
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-	color: #b6ad9a;
-}
-
-.token.punctuation {
-	color: #b6ad9a;
-}
-
-.token.namespace {
-	opacity: .7;
-}
-
-.token.tag,
-.token.operator,
-.token.number {
-	color: #063289;
-}
-
-.token.property,
-.token.function {
-	color: #b29762;
-}
-
-.token.tag-id,
-.token.selector,
-.token.atrule-id {
-	color: #2d2006;
-}
-
-code.language-javascript,
-.token.attr-name {
-	color: #896724;
-}
-
-code.language-css,
-code.language-scss,
-.token.boolean,
-.token.string,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.language-scss .token.string,
-.style .token.string,
-.token.attr-value,
-.token.keyword,
-.token.control,
-.token.directive,
-.token.unit,
-.token.statement,
-.token.regex,
-.token.atrule {
-	color: #728fcb;
-}
-
-.token.placeholder,
-.token.variable {
-	color: #93abdc;
-}
-
-.token.deleted {
-	text-decoration: line-through;
-}
-
-.token.inserted {
-	border-bottom: 1px dotted #2d2006;
-	text-decoration: none;
-}
-
-.token.italic {
-	font-style: italic;
-}
-
-.token.important,
-.token.bold {
-	font-weight: bold;
-}
-
-.token.important {
-	color: #896724;
-}
-
-.token.entity {
-	cursor: help;
-}
-
-pre > code.highlight {
-	outline: .4em solid #896724;
-	outline-offset: .4em;
-}
-
-/* overrides color-values for the Line Numbers plugin
- * http://prismjs.com/plugins/line-numbers/
+/**
+ * Tailwind CSS theme for `prism.js`
+ * Based on the syntax theme used in the Tailwind CSS docs, which is based on Atom's
+ * `atom-dark` theme: https://github.com/atom/atom-dark-syntax
+ * @author Taylor Bryant
  */
-.line-numbers .line-numbers-rows {
-	border-right-color: #ece8de;
-}
 
-.line-numbers-rows > span:before {
-	color: #cdc4b1;
-}
+ code[class*="language-"],
+ pre[class*="language-"] {
+   font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+   -webkit-overflow-scrolling: touch;
+   -webkit-font-smoothing: auto;
+   -moz-osx-font-smoothing: auto;
+   color: #fff;
+   color: #edf2f7;
+   direction: ltr;
+   text-align: left;
+   white-space: pre;
+   word-spacing: normal;
+   word-break: normal;
+   line-height: 1.5;
+   tab-size: 4;
+   hyphens: none;
+ }
 
-/* overrides color-values for the Line Highlight plugin
- * http://prismjs.com/plugins/line-highlight/
- */
-.line-highlight {
-	background: rgba(45, 32, 6, 0.2);
-	background: -webkit-linear-gradient(left, rgba(45, 32, 6, 0.2) 70%, rgba(45, 32, 6, 0));
-	background: linear-gradient(to right, rgba(45, 32, 6, 0.2) 70%, rgba(45, 32, 6, 0));
-}
+ pre[class*="language-"] {
+   overflow: auto;
+   padding: 1rem;
+   border-radius: 0.5rem;
+ }
+
+ :not(pre) > code[class*="language-"],
+ pre[class*="language-"] {
+   background-color: #2d3748;
+   font-size: 0.875rem;
+ }
+
+ code.language-js .token.regex,
+ pre.language-js .token.regex,
+ .token.selector,
+ .token.attr-name,
+ .token.property,
+ .token.regex,
+ .token.class-name,
+ .token.entity {
+   color: #ffe484;
+ }
+
+ code.language-diff,
+ pre.language-diff {
+   color: #cbd5e0;
+ }
+
+ code.language-diff .token.inserted,
+ pre.language-diff .token.inserted,
+ .token.url,
+ .token.attr-value,
+ .token.char,
+ .token.string,
+ .token.builtin,
+ .token.inserted,
+ .token.boolean,
+ .token.constant {
+   color: #b5f4a5;
+ }
+
+ :not(pre) > code[class*="language-"] {
+   padding: 0.1em;
+   border-radius: 0.3em;
+ }
+
+ .token.comment,
+ .token.prolog,
+ .token.doctype,
+ .token.cdata {
+   color: #a0aec0;
+ }
+
+ .namespace {
+   opacity: 0.7;
+ }
+
+ .token.symbol,
+ .token.deleted,
+ .token.tag,
+ .token.number,
+ code.language-js .token.boolean,
+ pre.language-js .token.boolean {
+   color: #ff8383;
+ }
+
+ .token.unit,
+ .token.function,
+ .token.punctuation,
+ .token.hexcode,
+ .token.operator,
+ code.language-js .token.operator,
+ pre.language-js .token.operator {
+   color: #93ddfd;
+ }
+
+ .token.atrule,
+ .token.atrule > .token.property,
+ .token.atrule > .token.property + .token.punctuation,
+ .token.atrule
+   > .token.property
+   + .token.punctuation
+   + .token.number
+   + .token.unit,
+ .token.atrule > .token.number,
+ .token.atrule > .token.unit,
+ code.language-js .token.punctuation,
+ pre.language-js .token.punctuation,
+ code.language-js .token.keyword,
+ pre.language-js .token.keyword,
+ code.language-bash .token.function,
+ pre.language-bash .token.function {
+   color: #fff;
+ }
+
+ .token.rule,
+ .token.important,
+ .token.variable {
+   font-weight: inherit;
+   color: #d9a9ff;
+ }
+
+ .token.bold {
+   font-weight: bold;
+ }
+
+ .token.italic {
+   font-style: italic;
+ }
+
+ .token.entity {
+   cursor: help;
+ }

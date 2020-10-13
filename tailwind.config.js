@@ -22,7 +22,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: [
-          '"Open Sans"',
+          '"Inter"',
           'system-ui',
           '-apple-system',
           'BlinkMacSystemFont',

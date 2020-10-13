@@ -112,23 +112,6 @@
   position: relative;
 }
 
-.gatsby_site_header_item {
-  &:not(:empty) {
-    > * {
-      &:first-child {
-        .btn {
-          padding-top: 2px;
-        }
-      }
-      &:last-child {
-        .btn {
-          padding-bottom: 2px;
-        }
-      }
-    }
-  }
-}
-
 .gatsby_site_header_sub {
   @apply w-full;
 }
@@ -206,7 +189,7 @@
     letter-spacing: .05em;
   }
   &.gatsby_btn-site_header_link {
-    @apply font-semibold;
+    font-weight: theme('fontWeight.semibold');
     padding-top: 1px;
     padding-bottom: 1px;
     > span {
@@ -216,7 +199,7 @@
     }
   }
   &.gatsby_btn-site_article_sidebar--sub {
-    @apply font-normal;
+    font-weight: theme('fontWeight.normal');
     padding-top: 1px;
     padding-bottom: 1px;
     > span {
@@ -224,7 +207,7 @@
     }
   }
   &.gatsby_btn-site_article_sidebar--adiacent {
-    @apply font-normal;
+    font-weight: theme('fontWeight.normal');
     padding-top: 1px;
     padding-bottom: 1px;
     > span {
@@ -233,13 +216,12 @@
     }
   }
   &.gatsby_btn-site_article_sidebar--adiacent_inner {
+    font-weight: theme('fontWeight.normal');
     padding-top: 1px;
     padding-bottom: 1px;
     > span {
-      @apply font-normal;
-      font-size: 9px;
-      text-transform: uppercase;
-      letter-spacing: .1em;
+      padding: .2rem .4rem;
+      font-size: 12px;
     }
   }
   &:hover {
@@ -250,6 +232,7 @@
     }
   }
   &:active, &.active, &.current {
+    font-weight: theme('fontWeight.semibold');
     > span {
       @apply bg-accent-900 bg-opacity-50;
       transform: none;

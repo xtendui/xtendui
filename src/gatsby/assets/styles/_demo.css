@@ -34,8 +34,9 @@ html.gatsby_iframe-inside {
 
 code {
   @apply font-mono;
+  font-weight: theme('fontWeight.semibold');
   font-size: .875em;
-  color: #728fcb;
+  color: #7567F8;
 }
 
 .text-inverse {
@@ -55,7 +56,6 @@ pre[class*="language-"] {
     border-top-right-radius: 0;
   }
   border: 0 !important;
-  background: theme('colors.gray.200') !important;
   line-height: 0 !important;
   font-size: 1rem;
   code {
@@ -65,10 +65,6 @@ pre[class*="language-"] {
     font-size: 0.8125rem !important;
     line-height: 1.4 !important;
     white-space: pre-wrap !important;
-  }
-  ::selection {
-    background-color: theme('colors.accent.600');
-    color: theme('colors.white');
   }
 }
 

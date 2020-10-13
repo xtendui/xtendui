@@ -80,7 +80,7 @@
   width: 100%;
   a:not([class]) {
     display: block;
-    @apply text-accent-900 !important;
+    @apply text-black !important;
   }
   .gatsby_site_article_anchor {
     pointer-events: none;

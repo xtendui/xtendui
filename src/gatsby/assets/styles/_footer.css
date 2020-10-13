@@ -5,7 +5,7 @@
 .gatsby_site_footer_bottom {
   opacity: 0.75;
   a {
-    @apply font-semibold;
+    font-weight: theme('fontWeight.semibold');
     color: theme('colors.black');
     text-decoration: none;
     &:hover, &:active, &.active {
