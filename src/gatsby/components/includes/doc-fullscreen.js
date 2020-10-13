@@ -1,5 +1,4 @@
 import React from 'react'
-const iconX = require('components/snippets/icons').iconX
 
 class DocFullscreen extends React.Component {
   render() {
