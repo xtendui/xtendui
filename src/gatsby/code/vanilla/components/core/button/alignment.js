@@ -17,17 +17,17 @@ demo.htmlSource = `
 <div class="list list-2 items-center">
 
   <button type="button" class="btn btn-md ${btnPrimary()}">
-    <span>align items<br>default</span>
+    align items<br>default
     ${iconSearch({ classes: 'icon-lg ml-2' })}
   </button>
 
   <button type="button" class="btn btn-md items-start ${btnPrimary()}">
-    <span>align items<br>items-start</span>
+    align items<br>items-start
     ${iconSearch({ classes: 'icon-lg ml-2' })}
   </button>
 
   <button type="button" class="btn btn-md items-end ${btnPrimary()}">
-    <span>align items<br>items-end</span>
+    align items<br>items-end
     ${iconSearch({ classes: 'icon-lg ml-2' })}
   </button>
 
@@ -40,17 +40,22 @@ demo.htmlSource = `
 <div class="list list-2 items-center">
 
   <button type="button" class="btn btn-md w-full ${btnPrimary()}">
-    <span>justify content<br>default</span>
+    justify content<br>default
     ${iconSearch({ classes: 'icon-lg ml-2' })}
   </button>
 
   <button type="button" class="btn btn-md w-full justify-start ${btnPrimary()}">
-    <span>justify content<br>items-start</span>
+    justify content<br>items-start
     ${iconSearch({ classes: 'icon-lg ml-2' })}
   </button>
 
-  <button type="button" class="btn btn-md w-full justify-end ${btnPrimary()}">
-    <span>justify content<br>items-end</span>
+  <button type="button" class="btn btn-md w-full justify-center text-center ${btnPrimary()}">
+    justify content<br>items-center + text-center
+    ${iconSearch({ classes: 'icon-lg ml-2' })}
+  </button>
+
+  <button type="button" class="btn btn-md w-full justify-end text-right ${btnPrimary()}">
+    justify content<br>items-end + text-right
     ${iconSearch({ classes: 'icon-lg ml-2' })}
   </button>
 

@@ -1816,19 +1816,20 @@ module.exports = theme => ({
       // typography
       typography: {
         html: {
-          // style
-          '@apply text-default': '',
-          lineHeight: 1.8,
+          // base rem value
           fontSize: rem(14),
           '@screen sm': {
-            fontSize: rem(15),
+            fontSize: rem(15.5), // odd number with .5 to fix chrome alignment
           },
           '@screen md': {
             fontSize: rem(16),
           },
           '@screen xl': {
-            fontSize: rem(17),
+            fontSize: rem(17.5), // odd number with .5 to fix chrome alignment
           },
+          // style
+          '@apply text-default': '',
+          lineHeight: 1.8,
         },
         body: {
           // style

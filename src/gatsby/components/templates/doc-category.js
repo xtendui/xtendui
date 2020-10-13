@@ -47,7 +47,7 @@ class Template extends React.Component {
                   <div className="gatsby_listing_group" key={i}>
                     <h2 className="h5 h-block rounded-md bg-gray-200 text-center">{category.title.split('-').pop()}</h2>
                     <div className="gatsby_listing_items">
-                      <div className="row row-2 lg:row-4">
+                      <div className="row row-x-1.5 row-y-2.5 lg:row-x-2 lg:row-y-3 xl:row-x-3 xl:row-y-4">
                         {category.posts.map(({ post }, z) =>
                           post.frontmatter.link ? (
                             <div className="gatsby_listing_column" key={z}>

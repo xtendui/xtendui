@@ -124,14 +124,15 @@ body {
 
 .gatsby_site_article_hero_content {
   .badge {
-    @apply text-default border-gray-300 bg-gray-300 -mt-4 ml-4;
+    @apply border-gray-300 bg-gray-300 -mt-4 ml-4;
+    font-weight: theme('fontWeight.bold');
   }
   h1 {
     span {
       display: inline-block;
     }
     span span {
-      @apply font-medium;
+      font-weight: theme('fontWeight.normal');
       color: theme('colors.gray.500');
     }
   }
@@ -193,12 +194,12 @@ body {
     .card-block {
       @apply p-0;
       .h4 {
-        @apply mt-4 mb-2 mt-fc mb-lc;
+        @apply mb-1 mt-fc mb-lc;
         font-size: 1rem;
       }
       p {
-        @apply text-sm;
-        opacity: 0.75;
+        @apply mt-1 text-sm;
+        opacity: 0.5;
       }
     }
     &:hover {

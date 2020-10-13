@@ -57,7 +57,7 @@ Use [icons](/components/core/icons) as content.
   </demovanilla>
 </demo>
 
-Use **tailwind classes** to assign alignment (e.g.: align items, justify content).
+Use **tailwind classes** to assign alignment (e.g.: align items, justify content, text align).
 
 <demo>
   <demovanilla src="vanilla/components/core/button/alignment">
