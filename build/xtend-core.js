@@ -1,5 +1,4 @@
 if (typeof window !== 'undefined') {
-  require('xtend-ui/src/core/ajax.js')
   require('xtend-ui/src/core/drop.js')
   require('xtend-ui/src/core/form.js')
   require('xtend-ui/src/core/overlay.js')
