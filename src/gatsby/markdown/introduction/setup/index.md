@@ -29,6 +29,13 @@ date: "2050-10-10"
   </a>
 </p>
 
+## Intro
+  
+* Css with [TailwindCss](https://tailwindcss.com/)
+* Docs with [Gatsby](https://www.gatsbyjs.com/)
+* Animations with [Gsap](https://greensock.com/gsap/)
+* Icons with [Feather Icons](https://feathericons.com/)
+
 ## Boilerplate
 
 If you want we have some boilerplate projects to start a project all ready to go!
@@ -37,7 +44,7 @@ If you want we have some boilerplate projects to start a project all ready to go
 
 ## CDN Installation
 
-If you need to do a **fast installation** of css and js use [core-js CDN](https://cdnjs.com/libraries/core-js) and [xtend-ui CDN](https://www.jsdelivr.com/package/npm/xtend-ui), the css and js are inside the `dist/` folder.
+If you need to do a **fast installation** of css and js use [core-js CDN](https://cdnjs.com/libraries/core-js) and [xtend-ui CDN](https://unpkg.com/xtend-ui/), the css and js are inside the `dist/` folder.
 
 The CDN `dist/` files are large because they include tailwindcss and all components / addons, **it's not representative of the sizes** you see when including Xtend UI as part of your build process.
 
@@ -356,12 +363,6 @@ Read our [contributing docs](https://github.com/minimit/xtend-ui/blob/master/.gi
 * Use `npm run build` to build the docs in `/public`
 * Use `npm run dev` to serve a develop version
 * Use `npm run serve` to serve a production version
-
-## Acknowledgement
-
-* Utility by [TailwindCss](https://tailwindcss.com/) MIT License
-* Docs by [Gatsby](https://www.gatsbyjs.com/) MIT License
-* Icons by [Feather Icons](https://feathericons.com/) MIT License
 
 ## Copyright
 

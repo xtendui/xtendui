@@ -1220,6 +1220,9 @@ module.exports = theme => ({
           flexWrap: 'wrap',
           flexDirection: 'row',
           alignItems: 'flex-start',
+          '&:empty': {
+            display: 'none',
+          },
         },
       },
       // loader
@@ -1529,6 +1532,9 @@ module.exports = theme => ({
           alignItems: 'flex-start',
           '> *': {
             flex: '0 0 auto', // @FIX column flex shrink
+          },
+          '&:empty': {
+            display: 'none',
           },
         },
         '.row-stretch': {

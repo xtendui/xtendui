@@ -2,6 +2,10 @@
  * footer
  */
 
+.gatsby_site_footer_inner {
+  @apply py-5;
+}
+
 .gatsby_site_footer_bottom {
   opacity: 0.75;
   a {
@@ -20,16 +24,16 @@
   justify-content: space-between;
   flex: 1 1 auto;
   font-size: 11px;
-  @screeen md {
+  @screen md {
     font-size: 12px;
   }
-  @screeen lg {
+  @screen lg {
     font-size: 13px;
   }
 }
 
 .gatsby_site_footer_bottom_right {
-  @screeen md {
+  @screen md {
     margin-left: auto;
   }
 }

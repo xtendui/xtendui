@@ -55,10 +55,6 @@ body {
   }
 }
 
-.gatsby_site_footer_inner {
-  @apply py-5;
-}
-
 /* container */
 
 .gatsby_site_article_hero_inner, .gatsby_site_article_content, .gatsby_site_footer_inner {
