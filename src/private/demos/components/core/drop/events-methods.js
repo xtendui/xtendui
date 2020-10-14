@@ -61,14 +61,16 @@ Xt.mount.push({
       object.dataset.reinitTimeout = setTimeout(() => {
         logAdd('<strong>add</strong>')
         // elements
+        const elements = self.elements.filter(x => !x.classList.contains('xt-wrap'))
+        const indexEl = elements.length + 1
         const strEl = `
         <div class="drop-container">
 
           <button type="button" class="btn btn-md ${btnPrimary()}">
-            drop
+            Element ${indexEl}
           </button>
 
-          <div class="drop">
+          <div class="drop" title="Target ${indexEl}">
             <div class="drop-inner">
               <div class="card card-sm ${cardDefaultDropList()}">
                 <div class="card-block py-3">
@@ -188,8 +190,12 @@ Xt.mount.push({
       let str = 'event <strong>' + e.type + '</strong>' + ' direction <strong>' + self.direction + '</strong>'
       if (e.target.getAttribute('title')) {
         str += ' from <strong>' + e.target.getAttribute('title') + '</strong>'
-      } else if (e.target.querySelector('.card-title')) {
-        str += ' from <strong>' + e.target.querySelector('.card-title').innerHTML + '</strong>'
+      } else if (e.target.querySelector(':scope > .btn')) {
+        str += ' from <strong>' + e.target.querySelector(':scope > .btn').textContent + '</strong>'
+      } else if (e.target.querySelector('.card-block > *')) {
+        str += ' from <strong>' + e.target.querySelector('.card-block > *').textContent + '</strong>'
+      } else if (e.target.querySelector(':scope > *')) {
+        str += ' from <strong>' + e.target.querySelector(':scope > *').textContent + '</strong>'
       } else if (!e.target.querySelector('*')) {
         str += ' from <strong>' + e.target.innerHTML + '</strong>'
       }

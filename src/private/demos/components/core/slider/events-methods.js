@@ -200,8 +200,12 @@ Xt.mount.push({
       let str = 'event <strong>' + e.type + '</strong>' + ' direction <strong>' + self.direction + '</strong>'
       if (e.target.getAttribute('title')) {
         str += ' from <strong>' + e.target.getAttribute('title') + '</strong>'
-      } else if (e.target.querySelector('.card-title')) {
-        str += ' from <strong> Target ' + e.target.querySelector('.card-title').innerHTML + '</strong>'
+      } else if (e.target.querySelector(':scope > .btn')) {
+        str += ' from <strong>' + e.target.querySelector(':scope > .btn').textContent + '</strong>'
+      } else if (e.target.querySelector('.card-block > *')) {
+        str += ' from <strong>' + e.target.querySelector('.card-block > *').textContent + '</strong>'
+      } else if (e.target.querySelector(':scope > *')) {
+        str += ' from <strong>' + e.target.querySelector(':scope > *').textContent + '</strong>'
       } else if (!e.target.querySelector('*')) {
         str += ' from <strong>' + e.target.innerHTML + '</strong>'
       }

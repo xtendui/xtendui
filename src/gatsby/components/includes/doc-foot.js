@@ -36,7 +36,7 @@ class DocFoot extends React.Component {
                   <Link to={'/introduction'} className="card gatsby_listing_item">
                     <div className="card-design"></div>
                     <div className="card-block card-block-md">
-                      <div className="h5">Setup or other problems?</div>
+                      <div className="h4">Setup or other problems?</div>
                       <p>
                         Check out the <strong>Introductions pages</strong>.
                       </p>

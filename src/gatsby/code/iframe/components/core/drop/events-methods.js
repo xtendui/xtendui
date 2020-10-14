@@ -49,15 +49,15 @@ demo.htmlSource = `
 
 <br/>
 
-<div class="list list-2 items-center inline-flex" id="demo--drop-events">
+<div class="list list-2 items-center inline-flex" id="demo--drop-events" title="Object">
 
   <div class="drop-container">
 
     <button type="button" class="btn btn-md ${btnPrimary()}">
-      drop
+      Element 0
     </button>
 
-    <div class="drop">
+    <div class="drop" title="Target 0">
       <div class="drop-inner">
         <div class="card card-sm ${cardDefaultDropList()}">
           <div class="card-block py-3">
@@ -82,10 +82,10 @@ demo.htmlSource = `
   <div class="drop-container">
 
     <button type="button" class="btn btn-md ${btnPrimary()}">
-      drop
+      Element 1
     </button>
 
-    <div class="drop">
+    <div class="drop" title="Target 1">
       <div class="drop-inner">
         <div class="card card-sm ${cardDefaultDropList()}">
           <div class="card-block py-3">
