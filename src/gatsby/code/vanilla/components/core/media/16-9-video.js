@@ -10,7 +10,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="media-container" style="padding-bottom: 56.2%">
   <div class="media-inner">
-    <video class="media" poster="/placeholder-1080.jpg" muted loop playsinline controls>
+    <video class="media" poster="/placeholder-1080.jpg" preload="metadata" muted playsinline loop autoplay>
       <source type="video/mp4" src="/placeholder-1080.mp4" />
     </video>
   </div>
