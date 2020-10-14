@@ -80,7 +80,7 @@
   width: 100%;
   a:not([class]) {
     display: block;
-    @apply text-black !important;
+    color: inherit !important;
   }
   .gatsby_site_article_anchor {
     pointer-events: none;
@@ -100,7 +100,7 @@
 .gatsby_site_article_anchor {
   position: absolute;
   z-index: 2;
-  bottom: 0;
+  bottom: -4px;
   right: 12px;
   h2 & {
     bottom: -1px;

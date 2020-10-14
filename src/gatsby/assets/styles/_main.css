@@ -125,7 +125,6 @@ body {
 .gatsby_site_article_hero_content {
   .badge {
     @apply border-gray-300 bg-gray-300 -mt-4 ml-4;
-    font-weight: theme('fontWeight.bold');
   }
   h1 {
     span {

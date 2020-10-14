@@ -326,7 +326,7 @@ module.exports = theme => ({
       // typography
       typography: {
         '.text-default': {
-          color: theme('colors.black'),
+          color: theme('colors.accent.800'),
         },
         '.text-inverse': {
           color: theme('colors.white'),
@@ -340,7 +340,7 @@ module.exports = theme => ({
           fontWeight: theme('fontWeight.bold'),
           fontSize: rem(35),
           lineHeight: theme('lineHeight.snug'),
-          letterSpacing: theme('letterSpacing.normal'),
+          letterSpacing: theme('letterSpacing.tight'),
           textTransform: 'none',
           '@screen lg': {
             fontSize: rem(40),
@@ -355,7 +355,7 @@ module.exports = theme => ({
           fontWeight: theme('fontWeight.semibold'),
           fontSize: rem(30),
           lineHeight: theme('lineHeight.snug'),
-          letterSpacing: theme('letterSpacing.normal'),
+          letterSpacing: theme('letterSpacing.tight'),
           textTransform: 'none',
           '@screen lg': {
             fontSize: rem(35),
@@ -370,7 +370,7 @@ module.exports = theme => ({
           fontWeight: theme('fontWeight.semibold'),
           fontSize: rem(25),
           lineHeight: theme('lineHeight.snug'),
-          letterSpacing: theme('letterSpacing.normal'),
+          letterSpacing: theme('letterSpacing.tight'),
           textTransform: 'none',
           '@screen lg': {
             fontSize: rem(30),
@@ -385,7 +385,7 @@ module.exports = theme => ({
           fontWeight: theme('fontWeight.semibold'),
           fontSize: rem(24),
           lineHeight: theme('lineHeight.snug'),
-          letterSpacing: theme('letterSpacing.normal'),
+          letterSpacing: theme('letterSpacing.tight'),
           textTransform: 'none',
         },
         '.h5': {
@@ -397,7 +397,7 @@ module.exports = theme => ({
           fontWeight: theme('fontWeight.semibold'),
           fontSize: rem(18),
           lineHeight: theme('lineHeight.snug'),
-          letterSpacing: theme('letterSpacing.normal'),
+          letterSpacing: theme('letterSpacing.tight'),
           textTransform: 'none',
         },
         '.h6': {
