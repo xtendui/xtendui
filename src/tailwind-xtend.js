@@ -519,7 +519,8 @@ module.exports = theme => ({
         'html:not(.xt-focus-disable)': {
           ':focus': {
             // setup disable default focus outline
-            outline: 'none !important',
+            outline: '5px auto transparent',
+            outlineOffset: '1px',
           },
           '&.xt-focus-visible': {
             // styles enable custom focus outline
