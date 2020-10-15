@@ -13,13 +13,11 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 import 'xtend-ui/src/addons/propagate-interaction'
 ```
 
-<script type="text/plain" class="language-markup">
-  <button type="button" data-xt-propagate-interaction="{ targets: '.btn' }">
-    <div class="btn btn-primary">
-      propagate interactions here
-    </div>
-  </button>
-</script>
+<button type="button" data-xt-propagate-interaction="{ targets: '.btn' }">
+  <div class="btn btn-primary">
+    propagate interactions here
+  </div>
+</button>
 
 /**
  * propagate-interaction

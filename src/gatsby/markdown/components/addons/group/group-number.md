@@ -43,18 +43,6 @@ To **see the default values** see the source code of `node_modules/xtend-ui/src/
 
 Use this code to create a **group number**.
 
-<script type="text/plain" class="language-markup">
-  <div data-xt-group-number>
-
-    <button type="button" data-xt-group-number-step="<value to add on click>">
-      <!-- content -->
-    </button>
-
-    <input type="number" value="<initial value>" min="<min value>" max="<max value>">
-
-  </div>
-</script>
-
 <demo>
   <demovanilla src="vanilla/components/addons/group-number">
   </demovanilla>

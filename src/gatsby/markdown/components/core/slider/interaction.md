@@ -46,14 +46,6 @@ Inside it you can use this strings that gets populated with variables:
 
 </div>
 
-<script type="text/plain" class="language-markup">
-  <nav class="slider-pagination list">
-    <button type="button" class="btn btn-md xt-ignore" data-xt-pag title="Slide xt-num">
-      xt-num of xt-tot
-    </button>
-  </nav>
-</script>
-
 [[notePrimary]]
 | `[data-xt-pag].xt-ignore` is essential to the functioning of the slider, but you can hide it using the class `.hidden`.
 
@@ -73,15 +65,6 @@ You can add navigation with the `navigation:Query` option, on the queried elemen
 | Option                  | `navigation:Query`                          | `[data-xt-nav]`        | Query for navigation elements             |
 
 </div>
-
-<script type="text/plain" class="language-markup">
-  <button type="button" class="btn btn-md" data-xt-nav="-1" title="Previous slide">
-    <!-- content -->
-  </button>
-  <button type="button" class="btn btn-md" data-xt-nav="1" title="Next slide">
-    <!-- content -->
-  </button>
-</script>
 
 <demo>
   <demovanilla src="vanilla/components/core/slider/navigation">
