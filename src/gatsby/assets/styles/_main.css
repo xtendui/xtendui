@@ -184,7 +184,7 @@ body {
 
 .gatsby_listing_item {
   &.card {
-    @apply p-6 text-xs text-default rounded-md hover:text-inverse hover:bg-accent-500  active:bg-accent-600;
+    @apply p-6 text-xs text-default rounded-md transform hover:text-inverse hover:bg-accent-500 hover:shadow-2xl hover:-translate-y-2 active:text-inverse active:bg-accent-600 active:shadow-none active:translate-y-0;
     .card-block {
       @apply p-0;
       .h4 {
@@ -194,18 +194,6 @@ body {
       p {
         opacity: 0.5;
       }
-    }
-    &:hover {
-      transform: translateY(-.5rem);
-      box-shadow: 0 .2rem .4rem theme('colors.accent.300');
-    }
-    &:active, &.active {
-      transform: translateY(-.5rem);
-      box-shadow: none;
-    }
-    &:active {
-      transform: none;
-      box-shadow: none;
     }
   }
 }
