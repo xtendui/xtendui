@@ -21,7 +21,7 @@ demo.htmlSource = `
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="card card-md ${cardDefaultDrop()} overflow-y-auto overflow-x-hidden overflow-sub max-h-64">
+        <div class="card w-screen max-w-md ${cardDefaultDrop()} overflow-y-auto overflow-x-hidden overflow-sub max-h-64">
           <div class="card-asset rounded-t-md">
             ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
           </div>
@@ -45,7 +45,7 @@ demo.htmlSource = `
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="card card-md ${cardDefaultDrop()}">
+        <div class="card w-screen max-w-md ${cardDefaultDrop()}">
           <div class="card-asset rounded-t-md">
             ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
           </div>

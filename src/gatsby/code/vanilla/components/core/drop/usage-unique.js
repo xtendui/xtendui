@@ -21,7 +21,7 @@ demo.htmlSource = `
 
   <div class="drop" id="drop--unique">
     <div class="drop-inner">
-      <div class="card card-sm ${cardDefaultDropList()}">
+      <div class="card w-screen max-w-sm ${cardDefaultDropList()}">
         <div class="card-block py-3">
           <nav class="list flex-col">
             <a href="#" class="btn btn-sm ${btnDefaultDrop()}">

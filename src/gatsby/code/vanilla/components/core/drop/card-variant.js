@@ -22,7 +22,7 @@ demo.htmlSource = `
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="card card-md ${cardDefaultDrop()}">
+        <div class="card w-screen max-w-md ${cardDefaultDrop()}">
           <div class="btn btn-close p-5 text-xl" aria-label="Close">
             ${iconX()}
           </div>

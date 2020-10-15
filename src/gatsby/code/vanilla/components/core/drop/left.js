@@ -21,7 +21,7 @@ demo.htmlSource = `
 
     <div class="drop md:drop-bottom md:drop-left">
       <div class="drop-inner">
-        <div class="card card-sm ${cardDefaultDropList()}">
+        <div class="card w-screen max-w-sm ${cardDefaultDropList()}">
           <div class="card-block py-3">
             <nav class="list flex-col">
               <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
@@ -49,7 +49,7 @@ demo.htmlSource = `
 
     <div class="drop md:drop-top md:drop-left">
       <div class="drop-inner">
-        <div class="card card-sm ${cardDefaultDropList()}">
+        <div class="card w-screen max-w-sm ${cardDefaultDropList()}">
           <div class="card-block py-3">
             <nav class="list flex-col">
               <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
@@ -77,7 +77,7 @@ demo.htmlSource = `
 
     <div class="drop md:drop-left md:drop-middle">
       <div class="drop-inner">
-        <div class="card card-sm ${cardDefaultDropList()}">
+        <div class="card w-screen max-w-sm ${cardDefaultDropList()}">
           <div class="card-block py-3">
             <nav class="list flex-col">
               <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
@@ -105,7 +105,7 @@ demo.htmlSource = `
 
     <div class="drop md:drop-left md:drop-contain-bottom">
       <div class="drop-inner">
-        <div class="card card-sm ${cardDefaultDropList()}">
+        <div class="card w-screen max-w-sm ${cardDefaultDropList()}">
           <div class="card-block py-3">
             <nav class="list flex-col">
               <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
@@ -133,7 +133,7 @@ demo.htmlSource = `
 
     <div class="drop md:drop-left md:drop-contain-top">
       <div class="drop-inner">
-        <div class="card card-sm ${cardDefaultDropList()}">
+        <div class="card w-screen max-w-sm ${cardDefaultDropList()}">
           <div class="card-block py-3">
             <nav class="list flex-col">
               <a href="#" class="btn btn-sm ${btnDefaultDrop()}">

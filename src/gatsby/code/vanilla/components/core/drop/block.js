@@ -20,7 +20,7 @@ demo.htmlSource = `
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="card card-md ${cardDefaultDrop()}">
+        <div class="card w-screen max-w-md ${cardDefaultDrop()}">
           <div class="card-block py-8 px-9 rounded-t-md bg-gray-500">
             <div class="h4">Lorem ipsum</div>
           </div>

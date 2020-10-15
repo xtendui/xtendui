@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   height: 100%;
-  width: calc(100vw - 28rem); /* same as max-w-md */
+  width: calc(100vw - 28rem); /* same as w-screen max-w-md */
   pointer-events: none;
   > * {
     pointer-events: auto;

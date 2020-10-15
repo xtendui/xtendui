@@ -21,7 +21,7 @@ demo.htmlSource = `
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="card card-sm ${cardDefaultDropList()}">
+        <div class="card w-screen max-w-sm ${cardDefaultDropList()}">
           <div class="card-block py-3">
             <nav class="list flex-col">
               <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
@@ -49,7 +49,7 @@ demo.htmlSource = `
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="card card-md ${cardDefaultDropList()}">
+        <div class="card w-screen max-w-md ${cardDefaultDropList()}">
           <div class="card-block py-3">
             <nav class="list flex-col">
               <a href="#" class="btn btn-md ${btnDefaultDrop()}">
@@ -77,7 +77,7 @@ demo.htmlSource = `
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="card card-lg ${cardDefaultDropList()}">
+        <div class="card w-screen max-w-lg ${cardDefaultDropList()}">
           <div class="card-block py-3">
             <nav class="list flex-col">
               <a href="#" class="btn btn-lg ${btnDefaultDrop()}">

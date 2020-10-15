@@ -17,26 +17,12 @@ Use **tailwind classes** to assign variant (e.g.: border, background, color).
 
 ## Size
 
-Use **tailwind classes** to assign size (e.g.: padding, font size).
-
-Use **card classes** to assign card size (e.g.: min-width).
-
-<div class="table-scroll">
-
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.card-sm`                     | `card-sm`                | Width small            |
-| Component                  | `.card-md`                     | `card-md`                | Width medium            |
-| Component                  | `.card-lg`                     | `card-lg`                | Width large            |
-
-</div>
+Use **tailwind classes** to assign size (e.g.: padding, font size) and width (width, max width).
 
 <demo>
   <demovanilla src="vanilla/components/core/drop/card-size">
   </demovanilla>
 </demo>
-
-You can add **additional size** for example `.card-xs` or `.card-xl`.
 
 ## Asset
 

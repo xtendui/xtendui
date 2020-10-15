@@ -17,9 +17,7 @@ Use **tailwind classes** to assign variant (e.g.: border, background, color).
 
 ## Size
 
-Use **tailwind classes** to assign size (e.g.: padding, font size).
-
-Use **tailwind classes** to assign overlay size (e.g.: [max-width](https://tailwindcss.com/docs/max-width)). If you **omit max-width** classes the overlay is **full width**.
+Use **tailwind classes** to assign size (e.g.: padding, font size) and width ([max-width](https://tailwindcss.com/docs/max-width)).
 
 <div class="table-scroll">
 

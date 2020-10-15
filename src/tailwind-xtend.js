@@ -841,18 +841,6 @@ module.exports = theme => ({
             },
           },
         },
-        '.card-sm': {
-          // styles
-          minWidth: `${rem(300)}`,
-        },
-        '.card-md': {
-          // styles
-          minWidth: `${rem(400)}`,
-        },
-        '.card-lg': {
-          // styles
-          minWidth: `${rem(500)}`,
-        },
         '.card-block': {
           // setup
           position: 'relative',
