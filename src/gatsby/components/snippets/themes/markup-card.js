@@ -9,7 +9,7 @@ export default () => {
 
     <div class="w-full md:w-6/12">
       <a role="button" class="card ${cardDefault()}">
-        <div class="card-block card-block-md">
+        <div class="card-block py-8 px-9">
           <div class="h4">Lorem ipsum dolor sit amet</div>
           <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
         </div>
@@ -18,7 +18,7 @@ export default () => {
 
     <div class="w-full md:w-6/12">
       <a role="button" class="card ${cardPrimary()}">
-        <div class="card-block card-block-md">
+        <div class="card-block py-8 px-9">
           <div class="h4">Lorem ipsum dolor sit amet</div>
           <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
         </div>
@@ -27,7 +27,7 @@ export default () => {
 
     <div class="w-full md:w-6/12">
       <div class="card ${cardDefault()}">
-        <div class="card-block card-block-md">
+        <div class="card-block py-8 px-9">
           <div class="h4">Lorem ipsum dolor sit amet</div>
           <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
           <button type="button" class="btn btn-md ${btnPrimary()}">
@@ -39,7 +39,7 @@ export default () => {
 
     <div class="w-full md:w-6/12">
       <div class="card ${cardPrimary()}">
-        <div class="card-block card-block-md">
+        <div class="card-block py-8 px-9">
           <div class="h4">Lorem ipsum dolor sit amet</div>
           <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
           <button type="button" class="btn btn-md ${btnDefault()}">

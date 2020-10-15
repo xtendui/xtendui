@@ -23,10 +23,10 @@ demo.htmlSource = `
     <div class="drop">
       <div class="drop-inner">
         <div class="card card-md ${cardDefaultDrop()}">
-          <div class="btn btn-close" aria-label="Close">
+          <div class="btn btn-close p-5 text-xl" aria-label="Close">
             ${iconX()}
           </div>
-          <div class="card-block card-block-md">
+          <div class="card-block py-8 px-9">
             <div class="h4">Lorem ipsum</div>
             <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
           </div>
@@ -45,10 +45,10 @@ demo.htmlSource = `
     <div class="drop">
       <div class="drop-inner">
         <div class="card ${cardPrimaryDrop()}">
-          <div class="btn btn-close" aria-label="Close">
+          <div class="btn btn-close p-5 text-xl" aria-label="Close">
             ${iconX()}
           </div>
-          <div class="card-block card-block-md">
+          <div class="card-block py-8 px-9">
             <div class="h4">Lorem ipsum</div>
             <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
           </div>

@@ -111,12 +111,12 @@ demo.htmlSource = `
                   </div>
 
                   <div class="overlay overlay-default overlay-screen overlay-size-full" id="overlay--product-page_images">
-                    <div class="overlay-container max-w-4xl">
+                    <div class="overlay-container max-w-5xl">
                       <div class="overlay-inner">
                         <div class="overlay-design"></div>
                         <div class="card card-overlay">
                           <div class="card-design"></div>
-                          <div class="btn btn-close" aria-label="Close">
+                          <div class="btn btn-close p-5 text-2xl" aria-label="Close">
                             ${iconX()}
                           </div>
                           <div class="card-inner">

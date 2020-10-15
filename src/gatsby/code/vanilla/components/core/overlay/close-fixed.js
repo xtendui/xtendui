@@ -21,14 +21,14 @@ demo.htmlSource = `
     </button>
 
     <div class="overlay">
-      <div class="overlay-container max-w-4xl">
+      <div class="overlay-container max-w-5xl">
         <div class="overlay-inner">
 
           <div class="card ${cardDefaultOverlay()} justify-center">
-            <div class="btn btn-close fixed z-top" aria-label="Close">
+            <div class="btn btn-close p-5 fixed z-top" aria-label="Close">
               ${iconX()}
             </div>
-            <div class="card-block card-block-lg">
+            <div class="card-block py-10 px-11">
               <div class="h3">Lorem ipsum</div>
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
               <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
@@ -66,11 +66,11 @@ demo.htmlSource = `
         <div class="overlay-inner">
 
           <div class="card ${cardDefaultOverlayScreen()} justify-center">
-            <div class="btn btn-close fixed z-top" aria-label="Close">
+            <div class="btn btn-close p-5 fixed z-top" aria-label="Close">
               ${iconX()}
             </div>
             <div class="max-w-3xl">
-              <div class="card-block card-block-lg">
+              <div class="card-block py-10 px-11">
                 <div class="h3">Lorem ipsum</div>
                 <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
                 <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>

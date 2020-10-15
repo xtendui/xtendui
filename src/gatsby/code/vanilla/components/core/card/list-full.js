@@ -14,7 +14,7 @@ demo.htmlSource = `
 
   <div class="w-full md:w-6/12">
     <div class="card ${cardDefaultfull()}">
-      <div class="card-block card-block-md p-0">
+      <div class="card-block py-8 px-9 p-0">
         <div class="list list-2 flex-no-wrap items-baseline">
           <div>
             ${iconChevronRight({ classes: 'icon-lg' })}
@@ -30,7 +30,7 @@ demo.htmlSource = `
 
   <div class="w-full md:w-6/12">
     <div class="card ${cardDefaultfull()}">
-      <div class="card-block card-block-md p-0">
+      <div class="card-block py-8 px-9 p-0">
         <div class="list list-2 flex-no-wrap items-baseline">
           <div>
             <div class="h4">Lorem ipsum</div>

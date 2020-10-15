@@ -10,13 +10,13 @@ export default () => {
       overlay full
     </button>
     <div class="overlay overlay-default overlay-screen overlay-size-full">
-      <div class="overlay-container max-w-4xl">
+      <div class="overlay-container max-w-5xl">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
 
             <div class="card card-overlay">
               <div class="card-design"></div>
-              <div class="btn btn-close" aria-label="Close">
+              <div class="btn btn-close p-5 text-2xl" aria-label="Close">
                 ${iconX()}
               </div>
               <div class="card-inner">
@@ -38,14 +38,14 @@ export default () => {
       overlay menu left
     </button>
     <div class="overlay overlay-default overlay-position-left overlay-close-outside">
-      <div class="overlay-container max-w-4xl">
+      <div class="overlay-container max-w-5xl">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
 
           <div class="card card-overlay"
             style="align-items: stretch;">
             <div class="card-design"></div>
-            <div class="btn btn-close" aria-label="Close">
+            <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>
             <div class="card-inner">
@@ -88,14 +88,14 @@ export default () => {
       overlay contact
     </button>
     <div class="overlay overlay-default overlay-close-outside">
-      <div class="overlay-container max-w-4xl">
+      <div class="overlay-container max-w-5xl">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
 
           <div class="card card-overlay"
             style="align-items: stretch;">
             <div class="card-design"></div>
-            <div class="btn btn-close" aria-label="Close">
+            <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>
             <div class="card-inner">
@@ -216,14 +216,14 @@ export default () => {
       overlay newsletter
     </button>
     <div class="overlay overlay-default overlay-size-sm overlay-close-outside">
-      <div class="overlay-container max-w-4xl">
+      <div class="overlay-container max-w-5xl">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
 
           <div class="card card-overlay"
             style="align-items: stretch;">
             <div class="card-design"></div>
-            <div class="btn btn-close" aria-label="Close">
+            <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>
             <div class="card-inner">
@@ -292,7 +292,7 @@ export default () => {
 
                 </div>
 
-                <div class="card-block card-item card-block-side card-block-sm text-sm">
+                <div class="card-block card-item card-block-side py-4 px-5 text-sm">
                   <p>Receive <strong>free discount</strong> periodically on all our products.</p>
                 </div>
 

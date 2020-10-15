@@ -10,7 +10,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="card ${cardDefault()}">
-  <div class="card-block card-block-md">
+  <div class="card-block py-8 px-9">
     <div class="h4">Lorem ipsum</div>
     <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
   </div>

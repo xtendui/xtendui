@@ -41,7 +41,7 @@ export default () => {
 
           <div class="card card-drop">
             <div class="card-design"></div>
-            <div class="btn btn-close" aria-label="Close">
+            <div class="btn btn-close p-5 text-xl" aria-label="Close">
               ${iconX()}
             </div>
             <div class="card-inner">

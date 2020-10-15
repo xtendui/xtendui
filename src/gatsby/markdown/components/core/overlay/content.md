@@ -17,21 +17,7 @@ Use **tailwind classes** to assign variant (e.g.: border, background, color).
 
 ## Size
 
-Use **tailwind classes** to assign text size.
-
-Use **component classes** to assign size (e.g.: padding, font size).
-
-<div class="table-scroll">
-
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.card-block-sm`                     | `card-block-sm`                | Size small            |
-| Component                  | `.card-block-md`                     | `card-block-md`                | Size medium            |
-| Component                  | `.card-block-lg`                     | `card-block-lg`                | Size large            |
-
-</div>
-
-You can add **additional size** for example `.card-block-xs` or `.card-block-xl`.
+Use **tailwind classes** to assign size (e.g.: padding, font size).
 
 Use **tailwind classes** to assign overlay size (e.g.: [max-width](https://tailwindcss.com/docs/max-width)). If you **omit max-width** classes the overlay is **full width**.
 
@@ -40,8 +26,8 @@ Use **tailwind classes** to assign overlay size (e.g.: [max-width](https://tailw
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
 | Component                  | `.max-w-xl`                     | `max-w-xl`                | Width small            |
-| Component                  | `.max-w-2xl`                     | `max-w-2xl`                | Width medium            |
-| Component                  | `.max-w-4xl`                     | `max-w-4xl`                | Width large            |
+| Component                  | `.max-w-3xl`                     | `max-w-3xl`                | Width medium            |
+| Component                  | `.max-w-5xl`                     | `max-w-5xl`                | Width large            |
 
 </div>
 

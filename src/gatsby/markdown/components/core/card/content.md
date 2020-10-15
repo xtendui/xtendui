@@ -26,26 +26,12 @@ Use **tailwind classes** to modify variants for interactive animations.
 
 ## Size
 
-Use **tailwind classes** to assign text size.
-
-Use **component classes** to assign size (e.g.: padding, font size).
-
-<div class="table-scroll">
-
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.card-block-sm`                     | `card-block-sm`                | Size small            |
-| Component                  | `.card-block-md`                     | `card-block-md`                | Size medium            |
-| Component                  | `.card-block-lg`                     | `card-block-lg`                | Size large            |
-
-</div>
+Use **tailwind classes** to assign size (e.g.: padding, font size).
 
 <demo>
   <demovanilla src="vanilla/components/core/card/size">
   </demovanilla>
 </demo>
-
-You can add **additional size** for example `.card-block-xs` or `.card-block-xl`.
 
 ## Asset
 
@@ -143,7 +129,7 @@ You can use [list component](/components/core/list) to space card's internal con
 
 ## Close button
 
-Close button inside card.
+Use **tailwind classes** to assign size (e.g.: padding, font size).
 
 <demo>
   <demovanilla src="vanilla/components/core/card/close">

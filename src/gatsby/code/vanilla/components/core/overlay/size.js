@@ -24,10 +24,10 @@ demo.htmlSource = `
         <div class="overlay-inner">
 
           <div class="card ${cardDefaultOverlay()}">
-            <div class="btn btn-close" aria-label="Close">
+            <div class="btn btn-close p-5 text-lg" aria-label="Close">
               ${iconX()}
             </div>
-            <div class="card-block card-block-sm text-sm">
+            <div class="card-block py-6 px-7 text-sm">
               <div class="h5">Lorem ipsum</div>
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
               <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
@@ -45,18 +45,18 @@ demo.htmlSource = `
   <div data-xt-overlay>
 
     <button type="button" class="btn btn-md ${btnPrimary()}">
-      medium max-w-2xl
+      medium max-w-3xl
     </button>
 
     <div class="overlay">
-      <div class="overlay-container max-w-2xl">
+      <div class="overlay-container max-w-3xl">
         <div class="overlay-inner">
 
           <div class="card ${cardDefaultOverlay()}">
-            <div class="btn btn-close" aria-label="Close">
+            <div class="btn btn-close p-5 text-xl" aria-label="Close">
               ${iconX()}
             </div>
-            <div class="card-block card-block-md">
+            <div class="card-block py-8 px-9">
               <div class="h4">Lorem ipsum</div>
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
               <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
@@ -74,18 +74,18 @@ demo.htmlSource = `
   <div data-xt-overlay>
 
     <button type="button" class="btn btn-md ${btnPrimary()}">
-      large max-w-4xl
+      large max-w-5xl
     </button>
 
     <div class="overlay">
-      <div class="overlay-container max-w-4xl">
+      <div class="overlay-container max-w-5xl">
         <div class="overlay-inner">
 
           <div class="card ${cardDefaultOverlay()}">
-            <div class="btn btn-close" aria-label="Close">
+            <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>
-            <div class="card-block card-block-lg text-lg">
+            <div class="card-block py-10 px-11 text-lg">
               <div class="h3">Lorem ipsum</div>
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
               <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
@@ -111,10 +111,10 @@ demo.htmlSource = `
         <div class="overlay-inner">
 
           <div class="card ${cardDefaultOverlay()}">
-            <div class="btn btn-close" aria-label="Close">
+            <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>
-            <div class="card-block card-block-lg text-lg">
+            <div class="card-block py-10 px-11 text-lg">
               <div class="h2">Lorem ipsum</div>
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
               <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>

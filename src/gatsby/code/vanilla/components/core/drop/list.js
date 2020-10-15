@@ -22,7 +22,7 @@ demo.htmlSource = `
     <div class="drop">
       <div class="drop-inner">
         <div class="card card-lg ${cardDefaultDrop()}">
-          <div class="card-block card-block-md">
+          <div class="card-block py-8 px-9">
             <div class="list list-2 flex-no-wrap items-baseline">
               <div>
                 ${iconChevronRight({ classes: 'icon-lg' })}

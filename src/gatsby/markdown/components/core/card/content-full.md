@@ -129,7 +129,7 @@ You can use [list component](/components/core/list) to space card's internal con
 
 ## Close button
 
-Close button inside card.
+Use **tailwind classes** to assign size (e.g.: padding, font size).
 
 <demo>
   <demovanilla src="vanilla/components/core/card/close-full">

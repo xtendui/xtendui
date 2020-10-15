@@ -334,7 +334,7 @@ module.exports = theme => ({
         '.h1': {
           // style
           marginTop: theme('spacing.6'),
-          marginBottom: theme('spacing.4'),
+          marginBottom: theme('spacing.2'),
           '@apply mt-fc mb-lc': {},
           fontFamily: theme('fontFamily.sans').toString(),
           fontWeight: theme('fontWeight.bold'),
@@ -349,7 +349,7 @@ module.exports = theme => ({
         '.h2': {
           // style
           marginTop: theme('spacing.6'),
-          marginBottom: theme('spacing.4'),
+          marginBottom: theme('spacing.2'),
           '@apply mt-fc mb-lc': {},
           fontFamily: theme('fontFamily.sans').toString(),
           fontWeight: theme('fontWeight.semibold'),
@@ -364,7 +364,7 @@ module.exports = theme => ({
         '.h3': {
           // style
           marginTop: theme('spacing.6'),
-          marginBottom: theme('spacing.4'),
+          marginBottom: theme('spacing.2'),
           '@apply mt-fc mb-lc': {},
           fontFamily: theme('fontFamily.sans').toString(),
           fontWeight: theme('fontWeight.semibold'),
@@ -379,7 +379,7 @@ module.exports = theme => ({
         '.h4': {
           // style
           marginTop: theme('spacing.6'),
-          marginBottom: theme('spacing.4'),
+          marginBottom: theme('spacing.2'),
           '@apply mt-fc mb-lc': {},
           fontFamily: theme('fontFamily.sans').toString(),
           fontWeight: theme('fontWeight.semibold'),
@@ -390,8 +390,8 @@ module.exports = theme => ({
         },
         '.h5': {
           // style
-          marginTop: theme('spacing.3'),
-          marginBottom: theme('spacing.2'),
+          marginTop: theme('spacing.6'),
+          marginBottom: theme('spacing.1'),
           '@apply mt-fc mb-lc': {},
           fontFamily: theme('fontFamily.sans').toString(),
           fontWeight: theme('fontWeight.semibold'),
@@ -402,7 +402,7 @@ module.exports = theme => ({
         },
         '.h6': {
           // style
-          marginTop: theme('spacing.2'),
+          marginTop: theme('spacing.6'),
           marginBottom: theme('spacing.1'),
           '@apply mt-fc mb-lc': {},
           fontFamily: theme('fontFamily.sans').toString(),
@@ -414,8 +414,8 @@ module.exports = theme => ({
         },
         '.h-block': {
           // style
-          marginTop: theme('spacing.8'),
-          marginBottom: theme('spacing.6'),
+          marginTop: theme('spacing.6'),
+          marginBottom: theme('spacing.2'),
           '@apply mt-fc mb-lc': {},
           paddingTop: theme('spacing.3'),
           paddingBottom: theme('spacing.3'),
@@ -430,9 +430,8 @@ module.exports = theme => ({
           letterSpacing: 'inherit',
           textTransform: 'inherit',
           // style
-          marginTop: theme('spacing.3'),
           marginBottom: theme('spacing.3'),
-          '@apply text-reset mt-fc mb-lc': {},
+          '@apply text-reset mb-lc': {},
         },
         '.text-reset': {
           // setup
@@ -817,9 +816,6 @@ module.exports = theme => ({
           '& + *': {
             margin: '0 !important',
           },
-          // styles
-          padding: theme('spacing.5'),
-          fontSize: '1.75rem',
         },
       },
       // card
@@ -861,18 +857,6 @@ module.exports = theme => ({
           // setup
           position: 'relative',
           width: '100%',
-        },
-        '.card-block-sm': {
-          // styles
-          padding: `${rem(20)} ${rem(25)}`,
-        },
-        '.card-block-md': {
-          // styles
-          padding: `${rem(25)} ${rem(30)}`,
-        },
-        '.card-block-lg': {
-          // styles
-          padding: `${rem(35)} ${rem(40)}`,
         },
         '.card-design': {
           // setup
@@ -1173,6 +1157,8 @@ module.exports = theme => ({
           // setup
           display: 'inline-block',
           stroke: 'currentColor',
+          // styles
+          '@apply icon-md': '',
         },
         '.icon-sm': {
           // styles

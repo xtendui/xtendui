@@ -35,7 +35,7 @@ class DocFoot extends React.Component {
                 <div className="gatsby_listing_column">
                   <Link to={'/introduction'} className="card gatsby_listing_item">
                     <div className="card-design"></div>
-                    <div className="card-block card-block-md">
+                    <div className="card-block py-8 px-9">
                       <div className="h4">Setup or other problems?</div>
                       <p>
                         Check out the <strong>Introductions pages</strong>.
@@ -49,7 +49,7 @@ class DocFoot extends React.Component {
                 <div className="gatsby_listing_column">
                   <Link to={'/components/core/' + kebabCase(page.post.frontmatter.parent)} className="card gatsby_listing_item">
                     <div className="card-design"></div>
-                    <div className="card-block card-block-md">
+                    <div className="card-block py-8 px-9">
                       <div className="h4">Visit the Core pages</div>
                       <p>
                         There {postsCore.length === 1 ? 'is' : 'are'} {postsCore.length} <strong>core page{postsAddons.length === 1 ? '' : 's'}</strong> for{' '}
@@ -64,7 +64,7 @@ class DocFoot extends React.Component {
                 <div className="gatsby_listing_column">
                   <Link to={'/components/addons/' + kebabCase(page.post.frontmatter.parent)} className="card gatsby_listing_item">
                     <div className="card-design"></div>
-                    <div className="card-block card-block-md">
+                    <div className="card-block py-8 px-9">
                       <div className="h4">Visit the Addons page</div>
                       <p>
                         There {postsAddons.length === 1 ? 'is' : 'are'} {postsAddons.length} <strong>addon page{postsAddons.length === 1 ? '' : 's'}</strong>{' '}
@@ -79,7 +79,7 @@ class DocFoot extends React.Component {
                 <div className="gatsby_listing_column">
                   <Link to={'/themes/' + kebabCase(page.post.frontmatter.parent)} className="card gatsby_listing_item">
                     <div className="card-design"></div>
-                    <div className="card-block card-block-md">
+                    <div className="card-block py-8 px-9">
                       <div className="h4">Visit the Theme page</div>
                       <p>
                         There {postsThemes.length === 1 ? 'is' : 'are'} {postsThemes.length} <strong>theme{postsAddons.length === 1 ? '' : 's'}</strong> for{' '}

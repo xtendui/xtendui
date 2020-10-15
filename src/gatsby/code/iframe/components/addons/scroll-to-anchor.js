@@ -42,7 +42,7 @@ demo.htmlSource = `
     <div class="overlay-inner">
 
       <div class="card items-center justify-center">
-        <div class="btn btn-close" aria-label="Close">
+        <div class="btn btn-close p-5 text-2xl" aria-label="Close">
           ${iconX()}
         </div>
         <div class="max-w-3xl">

@@ -42,7 +42,7 @@ export default () => {
 
               <div class="card listing-page_back">
                 <div class="card-design"></div>
-                <div class="btn btn-close" aria-label="Close">
+                <div class="btn btn-close p-5 text-2xl" aria-label="Close">
                   ${iconX()}
                 </div>
                 <div class="card-inner">
@@ -109,7 +109,7 @@ export default () => {
 
               <div class="card listing-page_back">
                 <div class="card-design"></div>
-                <div class="btn btn-close" aria-label="Close">
+                <div class="btn btn-close p-5 text-2xl" aria-label="Close">
                   ${iconX()}
                 </div>
                 <div class="card-inner">
@@ -176,7 +176,7 @@ export default () => {
 
               <div class="card listing-page_back">
                 <div class="card-design"></div>
-                <div class="btn btn-close" aria-label="Close">
+                <div class="btn btn-close p-5 text-2xl" aria-label="Close">
                   ${iconX()}
                 </div>
                 <div class="card-inner">
@@ -243,7 +243,7 @@ export default () => {
 
               <div class="card listing-page_back">
                 <div class="card-design"></div>
-                <div class="btn btn-close" aria-label="Close">
+                <div class="btn btn-close p-5 text-2xl" aria-label="Close">
                   ${iconX()}
                 </div>
                 <div class="card-inner">
@@ -310,7 +310,7 @@ export default () => {
 
               <div class="card listing-page_back">
                 <div class="card-design"></div>
-                <div class="btn btn-close" aria-label="Close">
+                <div class="btn btn-close p-5 text-2xl" aria-label="Close">
                   ${iconX()}
                 </div>
                 <div class="card-inner">
@@ -377,7 +377,7 @@ export default () => {
 
               <div class="card listing-page_back">
                 <div class="card-design"></div>
-                <div class="btn btn-close" aria-label="Close">
+                <div class="btn btn-close p-5 text-2xl" aria-label="Close">
                   ${iconX()}
                 </div>
                 <div class="card-inner">

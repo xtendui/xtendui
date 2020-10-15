@@ -17,21 +17,7 @@ Use **tailwind classes** to assign variant (e.g.: border, background, color).
 
 ## Size
 
-Use **tailwind classes** to assign text size.
-
-Use **component classes** to assign size (e.g.: padding, font size).
-
-<div class="table-scroll">
-
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.card-block-sm`                     | `card-block-sm`                | Size small            |
-| Component                  | `.card-block-md`                     | `card-block-md`                | Size medium            |
-| Component                  | `.card-block-lg`                     | `card-block-lg`                | Size large            |
-
-</div>
-
-You can add **additional size** for example `.card-block-xs` or `.card-block-xl`.
+Use **tailwind classes** to assign size (e.g.: padding, font size).
 
 Use **card classes** to assign card size (e.g.: min-width).
 

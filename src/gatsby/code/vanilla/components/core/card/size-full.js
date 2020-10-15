@@ -13,7 +13,7 @@ demo.htmlSource = `
 
   <div class="w-full md:w-6/12">
     <div class="card ${cardDefaultFull()}">
-      <div class="card-block card-block-sm text-sm p-0">
+      <div class="card-block py-4 px-5 text-sm p-0">
         <div class="h5">Small</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>
@@ -22,7 +22,7 @@ demo.htmlSource = `
 
   <div class="w-full md:w-6/12">
     <div class="card ${cardDefaultFull()}">
-      <div class="card-block card-block-md p-0">
+      <div class="card-block py-8 px-9 p-0">
         <div class="h4">Medium</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>
@@ -31,7 +31,7 @@ demo.htmlSource = `
 
   <div class="w-full md:w-6/12">
     <div class="card ${cardDefaultFull()}">
-      <div class="card-block card-block-lg text-lg p-0">
+      <div class="card-block py-10 px-11 text-lg p-0">
         <div class="h3">Large</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>

@@ -53,7 +53,7 @@ class Template extends React.Component {
                             <div className="gatsby_listing_column" key={z}>
                               <a href={post.frontmatter.link} target="_blank" rel="noreferrer" className="card gatsby_listing_item">
                                 <div className="card-design"></div>
-                                <div className="card-block card-block-md">
+                                <div className="card-block py-8 px-9">
                                   <div className="h4">
                                     {post.frontmatter.title
                                       .split(/[\s-]+/)
@@ -68,7 +68,7 @@ class Template extends React.Component {
                             <div className="gatsby_listing_column" key={z}>
                               <Link to={markdownSlug(post)} className="card gatsby_listing_item">
                                 <div className="card-design"></div>
-                                <div className="card-block card-block-md">
+                                <div className="card-block py-8 px-9">
                                   <div className="h4">
                                     {post.frontmatter.title
                                       .split(/[\s-]+/)

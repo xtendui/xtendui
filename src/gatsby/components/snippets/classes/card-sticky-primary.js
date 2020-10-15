@@ -1,3 +1,3 @@
 export default () => {
-  return `card-block card-block-sm text-inverse bg-accent-500`
+  return `card-block py-4 px-5 text-inverse bg-accent-500`
 }

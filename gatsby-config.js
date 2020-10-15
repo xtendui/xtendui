@@ -90,10 +90,10 @@ module.exports = {
             options: {
               blocks: {
                 noteDefault: {
-                  classes: 'card card-block card-block-sm text-default rounded-md bg-gray-200 gatsby_note',
+                  classes: 'card card-block py-4 px-5 text-default rounded-md bg-gray-200 gatsby_note',
                 },
                 notePrimary: {
-                  classes: 'card card-block card-block-sm text-inverse rounded-md bg-accent-500 gatsby_note',
+                  classes: 'card card-block py-4 px-5 text-inverse rounded-md bg-accent-500 gatsby_note',
                 },
               },
             },

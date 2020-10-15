@@ -18,19 +18,19 @@ demo.htmlSource = `
   </button>
 
   <div class="overlay">
-    <div class="overlay-container max-w-4xl">
+    <div class="overlay-container max-w-5xl">
       <div class="overlay-inner">
 
         <div class="card ${cardDefaultOverlay()}">
-          <div class="btn btn-close" aria-label="Close">
+          <div class="btn btn-close p-5 text-2xl" aria-label="Close">
             ${iconX()}
           </div>
           <div class="sm:card-group">
-            <div class="card-block card-block-md">
+            <div class="card-block py-8 px-9">
               <div class="h3">Lorem ipsum</div>
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
             </div>
-            <div class="card-block card-block-md rounded-b-md sm:rounded-b-none sm:rounded-r-md bg-gray-400">
+            <div class="card-block py-8 px-9 rounded-b-md sm:rounded-b-none sm:rounded-r-md bg-gray-400">
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
             </div>
           </div>

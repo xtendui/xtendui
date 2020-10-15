@@ -17,17 +17,7 @@ Use **tailwind classes** to assign variant (e.g.: border, background, color).
 
 ## Size
 
-Use **component classes** to assign size (e.g.: padding, font size).
-
-<div class="table-scroll">
-
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.card-block-sm`                     | `card-block-sm`                | Size small            |
-| Component                  | `.card-block-md`                     | `card-block-md`                | Size medium            |
-| Component                  | `.card-block-lg`                     | `card-block-lg`                | Size large            |
-
-</div>
+Use **tailwind classes** to assign size (e.g.: padding, font size).
 
 Use [button classes](/components/core/button/content#size) to assign button size (e.g.: padding, font size).
 
@@ -35,5 +25,3 @@ Use [button classes](/components/core/button/content#size) to assign button size
   <demovanilla src="vanilla/components/core/drop/list-size">
   </demovanilla>
 </demo>
-
-You can add **additional size** for example `.card-block-xs` or `.card-block-xl`.
