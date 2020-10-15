@@ -517,16 +517,12 @@ module.exports = theme => ({
         },
         'html:not(.xt-focus-disable)': {
           ':focus': {
-            // setup disable default focus outline
-            outline: '5px auto transparent',
-            outlineOffset: '1px',
+            outline: 'none !important',
           },
           '&.xt-focus-visible': {
-            // styles enable custom focus outline
             ':focus': {
               outline: `5px auto ${theme('colors.accent.700')} !important`,
             },
-            // setup disable focus forms outline
             'input:not([type="checkbox"]):not([type="radio"]), select, textarea': {
               '&:focus': {
                 outline: 'none !important',
