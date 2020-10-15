@@ -1173,8 +1173,6 @@ module.exports = theme => ({
           // setup
           display: 'inline-block',
           stroke: 'currentColor',
-          // styles
-          '@apply icon-md': '',
         },
         '.icon-sm': {
           // styles
