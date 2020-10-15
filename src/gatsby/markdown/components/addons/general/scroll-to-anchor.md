@@ -45,6 +45,18 @@ Here are the main **javascript options**.
 
 </div>
 
+## Trigger
+
+Trigger events on **DOM elements**.
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | DOM Element                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Event                   | `scroll.trigger.xt.scrolltoanchor`       | `scrollElement` | Scroll event             |
+
+</div>
+
 ## Listen
 
 Listen to events on **DOM elements**.

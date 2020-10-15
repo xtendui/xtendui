@@ -44,6 +44,7 @@ class ScrollToAnchor {
         } else {
           scrollElement.addEventListener('scroll', self.eventScrollHandler.bind(self).bind(self, scrollElement))
         }
+        scrollElement.addEventListener('scroll.trigger.xt.scrolltoanchor', self.eventScrollHandler.bind(self).bind(self, scrollElement))
         // initial
         requestAnimationFrame(() => {
           self.scrollElementCurrent = scrollElement
@@ -287,7 +288,7 @@ ScrollToAnchor.optionsDefault = {
   // class
   class: 'active',
   // event
-  scrollDelay: 200,
+  scrollDelay: 75,
   // scroll
   position: (self, scrollingElement) => {
     const rect = self.target.getBoundingClientRect()
