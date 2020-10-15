@@ -1,7 +1,7 @@
 import path from 'path'
 const btnPrimary = require('components/snippets/classes/btn-primary').default
 const cardDefaultDrop = require('components/snippets/classes/card-default-drop').default
-const iconChevronRight = require('components/snippets/icons').iconChevronRight
+const iconPackage = require('components/snippets/icons').iconPackage
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -23,9 +23,9 @@ demo.htmlSource = `
       <div class="drop-inner">
         <div class="card w-screen max-w-lg ${cardDefaultDrop()}">
           <div class="card-block py-8 px-9">
-            <div class="list list-2 flex-no-wrap items-baseline">
+            <div class="list list-3 flex-no-wrap items-baseline">
               <div>
-                ${iconChevronRight({ classes: 'icon-lg' })}
+                ${iconPackage({ classes: 'icon-lg text-2xl' })}
               </div>
               <div>
                 <div class="h4">Lorem ipsum</div>
