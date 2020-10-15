@@ -19,18 +19,7 @@ Use **tailwind classes** to assign variant (e.g.: border, background, color).
 
 ## Size
 
-Use **component classes** to assign size (e.g.: padding, font size).
-
-<div class="table-scroll">
-
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `form, .form`                     | `form`                | Default size            |
-| Component                  | `.form-sm`                     | `form-sm`                | Size small            |
-| Component                  | `.form-md`                     | `form-md`                | Size medium            |
-| Component                  | `.form-lg`                     | `form-lg`                | Size large            |
-
-</div>
+Use **tailwind classes** to assign size (e.g.: font size).
 
 <demo>
   <demovanilla src="vanilla/components/core/form/size-sm">
@@ -40,5 +29,3 @@ Use **component classes** to assign size (e.g.: padding, font size).
   <demovanilla src="vanilla/components/core/form/size-lg">
   </demovanilla>
 </demo>
-
-You can add **additional size** for example `.form-xs` or `.form-xl`.

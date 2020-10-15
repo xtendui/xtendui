@@ -6,7 +6,7 @@ const round = num =>
     .replace(/(\.[0-9]+?)0+$/, '$1')
     .replace(/\.0$/, '')
 const rem = px => `${round(px / 16)}rem`
-//const em = (px, base) => `${round(px / base)}em`
+const em = (px, base) => `${round(px / base)}em`
 
 module.exports = theme => ({
   utilities: {
@@ -967,10 +967,6 @@ module.exports = theme => ({
         label: {
           cursor: 'pointer',
         },
-        'form, .form': {
-          // styles
-          '@apply form-md': '',
-        },
         'fieldset, .fieldset': {
           // styles
           '& + &': {
@@ -994,25 +990,13 @@ module.exports = theme => ({
         '.form-invalid': {
           borderColor: `${theme('colors.error')} !important`,
         },
-        '.form-sm': {
-          // styles
-          fontSize: rem(12),
-        },
-        '.form-md': {
-          // styles
-          fontSize: rem(14),
-        },
-        '.form-lg': {
-          // styles
-          fontSize: rem(16),
-        },
         '.form-label': {
           // setup
           cursor: 'pointer',
           display: 'flex',
           // styles
           fontWeight: theme('fontWeight.semibold'),
-          fontSize: '1em',
+          fontSize: '0.8em',
           lineHeight: theme('lineHeight.snug'),
         },
         '.form-label-required': {
@@ -1032,7 +1016,7 @@ module.exports = theme => ({
           // styles
           padding: `.75em 1.2em`,
           width: '100%',
-          fontSize: '1em',
+          fontSize: '0.8em',
           lineHeight: theme('lineHeight.snug'),
           // animation
           transitionProperty: 'all',
@@ -1062,7 +1046,7 @@ module.exports = theme => ({
           cursor: 'pointer',
           display: 'inline-flex',
           // styles
-          fontSize: '1em',
+          fontSize: '0.8em',
           lineHeight: theme('lineHeight.snug'),
         },
         '.form-check': {

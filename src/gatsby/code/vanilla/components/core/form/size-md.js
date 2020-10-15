@@ -14,7 +14,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="form-md">
+<form class="text-base">
   <div class="row row-x-4 row-y-3">
 
     <div class="w-full">
@@ -153,5 +153,5 @@ demo.htmlSource = `
     </div>
 
   </div>
-</div>
+</form>
 `
