@@ -46,9 +46,10 @@ module.exports = {
   variants: require('./src/tailwind-variants')({}),
   plugins: [require('./src/tailwind-plugin')],
   experimental: {
+    purgeLayersByDefault: true,
+    defaultLineHeights: true,
     applyComplexClasses: true,
     extendedSpacingScale: true,
-    defaultLineHeights: true,
     removeDeprecatedGapUtilities: true,
   },
 }

@@ -7,7 +7,6 @@
 }
 
 .gatsby_site_footer_bottom {
-  opacity: 0.75;
   a {
     font-weight: theme('fontWeight.semibold');
     color: theme('colors.black');
@@ -16,6 +15,14 @@
       color: theme('colors.black');
       text-decoration: underline;
     }
+  }
+  opacity: 0.5;
+  transition-property: opacity;
+  transition-duration: theme('transitionDuration.500');
+  transition-timing-function: theme('transitionTimingFunction.out');
+  &:hover {
+    opacity: 1;
+    transition-timing-function: theme('transitionTimingFunction.in');
   }
 }
 

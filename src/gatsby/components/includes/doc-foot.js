@@ -30,11 +30,10 @@ class DocFoot extends React.Component {
       <div className="gatsby_site_article_foot">
         <div className="gatsby_listing_group">
           <div className="gatsby_listing_items">
-            <div className="row row-x-1.5 row-y-2.5 lg:row-x-2 lg:row-y-3 xl:row-x-3 xl:row-y-4">
+            <div className="row">
               {page.post.frontmatter.type !== 'Introduction' && postsIntroduction ? (
                 <div className="gatsby_listing_column">
                   <Link to={'/introduction'} className="card gatsby_listing_item">
-                    <div className="card-design"></div>
                     <div className="card-block py-8 px-9">
                       <div className="h4">Setup or other problems?</div>
                       <p>
@@ -48,7 +47,6 @@ class DocFoot extends React.Component {
               {page.post.frontmatter.category !== 'Core' && page.post.frontmatter.category !== 'Core' && postsCore.length ? (
                 <div className="gatsby_listing_column">
                   <Link to={'/components/core/' + kebabCase(page.post.frontmatter.parent)} className="card gatsby_listing_item">
-                    <div className="card-design"></div>
                     <div className="card-block py-8 px-9">
                       <div className="h4">Visit the Core pages</div>
                       <p>
@@ -63,7 +61,6 @@ class DocFoot extends React.Component {
               {page.post.frontmatter.type !== 'Addons' && page.post.frontmatter.category !== 'Addons' && postsAddons.length ? (
                 <div className="gatsby_listing_column">
                   <Link to={'/components/addons/' + kebabCase(page.post.frontmatter.parent)} className="card gatsby_listing_item">
-                    <div className="card-design"></div>
                     <div className="card-block py-8 px-9">
                       <div className="h4">Visit the Addons page</div>
                       <p>
@@ -78,7 +75,6 @@ class DocFoot extends React.Component {
               {page.post.frontmatter.type !== 'Themes' && postsThemes.length ? (
                 <div className="gatsby_listing_column">
                   <Link to={'/themes/' + kebabCase(page.post.frontmatter.parent)} className="card gatsby_listing_item">
-                    <div className="card-design"></div>
                     <div className="card-block py-8 px-9">
                       <div className="h4">Visit the Theme page</div>
                       <p>

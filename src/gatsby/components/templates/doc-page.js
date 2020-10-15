@@ -43,13 +43,12 @@ class Template extends React.Component {
                     <h2 className="h5 h-block rounded-md text-default bg-gray-200 text-center">{'Styling and interactions'}</h2>
                   ) : null}
                   <div className="gatsby_listing_items">
-                    <div className="row row row-x-1.5 row-y-2.5 lg:row-x-2 lg:row-y-3 xl:row-x-3 xl:row-y-4">
+                    <div className="row">
                       {data.postsAdiacent.posts.map(({ post: adiacent }, i) =>
                         adiacent.frontmatter.parent !== adiacent.frontmatter.title ? (
                           adiacent.frontmatter.demos ? (
                             <div className="gatsby_listing_column" key={i}>
                               <a role="button" className="card gatsby_listing_item" data-gatsby-listing-toggle>
-                                <div className="card-design"></div>
                                 <div className="card-block py-8 px-9">
                                   <div className="h4">
                                     {adiacent.frontmatter.title
@@ -76,7 +75,6 @@ class Template extends React.Component {
                           ) : (
                             <div className="gatsby_listing_column" key={i}>
                               <Link to={markdownSlug(adiacent)} className="card gatsby_listing_item">
-                                <div className="card-design"></div>
                                 <div className="card-block py-8 px-9">
                                   <div className="h4">
                                     {adiacent.frontmatter.title

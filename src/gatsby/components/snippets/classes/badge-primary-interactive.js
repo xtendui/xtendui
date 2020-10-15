@@ -1,3 +1,3 @@
 export default () => {
-  return `text-inverse bg-accent-500 hover:bg-accent-600 active:bg-accent-700`
+  return `text-inverse bg-accent-500 hover:bg-accent-500 active:bg-accent-600`
 }

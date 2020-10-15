@@ -6,7 +6,7 @@ const round = num =>
     .replace(/(\.[0-9]+?)0+$/, '$1')
     .replace(/\.0$/, '')
 const rem = px => `${round(px / 16)}rem`
-const em = (px, base) => `${round(px / base)}em`
+//const em = (px, base) => `${round(px / base)}em`
 
 module.exports = theme => ({
   utilities: {
@@ -842,10 +842,6 @@ module.exports = theme => ({
           position: 'relative',
           width: '100%',
         },
-        '.card-design': {
-          // setup
-          '@apply design-setup': '',
-        },
         '.card-asset': {
           // setup
           position: 'relative',
@@ -853,52 +849,6 @@ module.exports = theme => ({
           '> *': {
             width: '100%',
             height: 'auto',
-          },
-        },
-        '.card-default-full-interactive': {
-          // styles
-          '.card-design': {
-            top: `-${rem(25)}`,
-            left: `-${rem(30)}`,
-            bottom: `-${rem(25)}`,
-            right: `-${rem(30)}`,
-            borderColor: theme('colors.transparent'),
-            backgroundColor: theme('colors.transparent'),
-          },
-          '&:hover': {
-            '.card-design': {
-              borderColor: theme('colors.gray.200'),
-              backgroundColor: theme('colors.gray.200'),
-            },
-          },
-          '&:active, &.active': {
-            '.card-design': {
-              borderColor: theme('colors.gray.300'),
-              backgroundColor: theme('colors.gray.300'),
-            },
-          },
-        },
-        '.card-primary-full-interactive': {
-          // styles
-          '.card-design': {
-            top: `-${rem(25)}`,
-            left: `-${rem(30)}`,
-            bottom: `-${rem(25)}`,
-            right: `-${rem(30)}`,
-            borderColor: theme('colors.transparent'),
-            backgroundColor: theme('colors.transparent'),
-          },
-          '&:hover': {
-            '.card-design': {
-              borderColor: theme('colors.accent.500'),
-              backgroundColor: theme('colors.accent.500'),
-            },
-          },
-          '&:active, &.active': {
-            '.card-design': {
-              borderColor: theme('colors.accent.600'),
-              backgroundColor: theme('colors.accent.600'),
-            },
           },
         },
       },
@@ -928,10 +878,6 @@ module.exports = theme => ({
           // setup
           position: 'relative',
           zIndex: theme('zIndex.drop'),
-        },
-        '.drop-design': {
-          // setup
-          '@apply design-setup': '',
         },
         '.drop-container-static': {
           // setup
@@ -1435,10 +1381,6 @@ module.exports = theme => ({
           bottom: '0', // @FIX no height or it bugs collapse animation
           right: '0', // @FIX no width or it bugs collapse animation
           overflow: 'hidden',
-        },
-        '.overlay-design': {
-          // setup
-          '@apply design-setup': '',
         },
         '.overlay-container': {
           // setup

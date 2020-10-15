@@ -274,10 +274,12 @@ const populateDemo = (container, i) => {
     // https://github.com/zenorocha/clipboard.js/
     const clipboard = new ClipboardJS('.btn-clipboard', {
       target: trigger => {
-        console.debug(
-          'code copy',
-          trigger.closest('.gatsby_demo').querySelector('.gatsby_demo_item.active .gatsby_demo_code .gatsby_demo_code_body_item.active pre code')
-        )
+        if (Xt.debug === true) {
+          console.debug(
+            'code copy',
+            trigger.closest('.gatsby_demo').querySelector('.gatsby_demo_item.active .gatsby_demo_code .gatsby_demo_code_body_item.active pre code')
+          )
+        }
         return trigger.closest('.gatsby_demo').querySelector('.gatsby_demo_item.active .gatsby_demo_code .gatsby_demo_code_body_item.active pre code')
       },
     })

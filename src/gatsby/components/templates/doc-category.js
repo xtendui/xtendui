@@ -47,12 +47,11 @@ class Template extends React.Component {
                   <div className="gatsby_listing_group" key={i}>
                     <h2 className="h5 h-block rounded-md bg-gray-200 text-center">{category.title.split('-').pop()}</h2>
                     <div className="gatsby_listing_items">
-                      <div className="row row-x-1.5 row-y-2.5 lg:row-x-2 lg:row-y-3 xl:row-x-3 xl:row-y-4">
+                      <div className="row">
                         {category.posts.map(({ post }, z) =>
                           post.frontmatter.link ? (
                             <div className="gatsby_listing_column" key={z}>
                               <a href={post.frontmatter.link} target="_blank" rel="noreferrer" className="card gatsby_listing_item">
-                                <div className="card-design"></div>
                                 <div className="card-block py-8 px-9">
                                   <div className="h4">
                                     {post.frontmatter.title
@@ -67,7 +66,6 @@ class Template extends React.Component {
                           ) : post.frontmatter.parent === post.frontmatter.title ? (
                             <div className="gatsby_listing_column" key={z}>
                               <Link to={markdownSlug(post)} className="card gatsby_listing_item">
-                                <div className="card-design"></div>
                                 <div className="card-block py-8 px-9">
                                   <div className="h4">
                                     {post.frontmatter.title

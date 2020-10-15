@@ -49,12 +49,6 @@ body {
   background: linear-gradient(70deg, theme('colors.gray.100') 33%, theme('colors.gray.200') 100%);
 }
 
-.gatsby_site_article_foot {
-  .gatsby_listing_column {
-    @apply mt-5 mb-6;
-  }
-}
-
 /* container */
 
 .gatsby_site_article_hero_inner, .gatsby_site_article_content, .gatsby_site_footer_inner {
@@ -162,10 +156,22 @@ body {
   .gatsby_listing_group:last-child & {
     @apply mb-0;
   }
+  > .row {
+    @media (max-width: theme('screens.sm')) {
+      @apply row-x-1;
+      @apply -m-4;
+    }
+    @screen sm {
+      @apply -m-6;
+    }
+    .gatsby_site_article_foot & {
+      @apply mt-0 mb-4;
+    }
+  }
 }
 
 .gatsby_listing_column {
-  @apply w-2/4 md:w-2/6;
+  @apply w-2/4 md:w-2/6 lg:w-2/4 xl:w-2/6;
   .gatsby_site_article_foot & {
     &:nth-child(1) {
       display: none;
@@ -178,44 +184,28 @@ body {
 
 .gatsby_listing_item {
   &.card {
-    @apply card-primary-full-interactive text-default rounded-md hover:text-inverse;
-    .card-design {
-      top: -20px;
-      left: -25px;
-      bottom: -20px;
-      right: -25px;
-      @apply border-transparent bg-transparent;
-    }
+    @apply p-6 text-xs text-default rounded-md hover:text-inverse hover:bg-accent-500  active:bg-accent-600;
     .card-block {
       @apply p-0;
       .h4 {
-        @apply mb-1 mt-fc mb-lc;
+        @apply mb-1.5 mt-fc mb-lc;
         font-size: 1rem;
       }
       p {
-        @apply mt-1 text-sm;
         opacity: 0.5;
       }
     }
     &:hover {
       transform: translateY(-.5rem);
-      .card-design {
-        @apply border-accent-500 bg-accent-500;
-        box-shadow: 0 .2rem .4rem theme('colors.accent.300');
-      }
+      box-shadow: 0 .2rem .4rem theme('colors.accent.300');
     }
     &:active, &.active {
       transform: translateY(-.5rem);
-      .card-design {
-        @apply border-accent-600 bg-accent-600;
-        box-shadow: none;
-      }
+      box-shadow: none;
     }
     &:active {
       transform: none;
-      .card-design {
-        box-shadow: none;
-      }
+      box-shadow: none;
     }
   }
 }
