@@ -326,7 +326,7 @@ module.exports = theme => ({
       // typography
       typography: {
         '.text-default': {
-          color: theme('colors.accent.800'),
+          color: theme('colors.black'),
         },
         '.text-inverse': {
           color: theme('colors.white'),
