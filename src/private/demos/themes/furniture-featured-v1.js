@@ -4,27 +4,6 @@ import 'xtend-ui/src/addons/propagate-interaction'
 import gsap from 'gsap'
 
 /**
- * smooth
- */
-
-Xt.mount.push({
-  matches: '#iframe--furniture-featured-v1 body #body--smooth', // add your own selector instead of body to contain the code
-  mount: object => {
-    // init
-
-    let self = new Xt.Smooth(object, {})
-
-    // unmount
-
-    const unmount = () => {
-      self.destroy()
-      self = null
-    }
-    return unmount
-  },
-})
-
-/**
  * .btn--line
  */
 
