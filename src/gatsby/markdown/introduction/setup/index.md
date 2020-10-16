@@ -1,8 +1,8 @@
 ---
 type: "Introduction"
 category: "Getting Started"
-parent: "Setup"
-title: "Setup"
+parent: "Installation"
+title: "Installation"
 description: "Installation instructions, css and js setup."
 date: "2050-10-10"
 ---

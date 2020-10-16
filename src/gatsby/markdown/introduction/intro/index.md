@@ -40,9 +40,9 @@ date: "2050-10-05"
 * Animations with [Gsap](https://greensock.com/gsap/)
 * Icons with [Feather Icons](https://feathericons.com/)
 
-## Setup
+## Installation
 
-For a complete css and js setup guide visit [online setup page](https://xtendui.com/introduction/getting-started/setup) or [github setup page](https://github.com/minimit/xtendui/blob/master/SETUP.md).
+For a complete css and js setup guide visit [online installation page](https://xtendui.com/introduction/getting-started/installation) or [github installation page](https://github.com/minimit/xtendui/blob/master/INSTALLATION.md).
 
 ## Boilerplate
 

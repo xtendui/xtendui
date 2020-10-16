@@ -300,31 +300,3 @@ module.exports = {
 ```
 
 To **see the default values** see the source code of `node_modules/xtendui/src/tailwind-xtend.js`.
-
-## Browser support
-
-Supported browsers are as follow: **chrome 38**, **safari 10**, **ios 10**, **firefox 38**, **edge 12**, **opera 25**.
-
-## Fork
-
-```sh
-git clone https://github.com/minimit/xtendui.git --depth 1
-```
-
-#### Contributing
-
-Read our [contributing docs](https://github.com/minimit/xtendui/blob/master/.github/CONTRIBUTING.md) before submitting a pull request.
-
-#### Documentation
-
-We use [gatsby](https://www.npmjs.com/package/gatsby) to serve the docs.
-
-* Install required npm packages with `npm install`
-* Use `npm run build` to build the docs in `/public`
-* Use `npm run dev` to serve a develop version
-* Use `npm run serve` to serve a production version
-
-## Copyright
-
-Licensed under [MIT license](https://github.com/minimit/xtendui/blob/master/LICENSE).
-Docs licensed under [CC BY 3.0](https://github.com/minimit/xtendui/blob/master/LICENSE-DOCS).
