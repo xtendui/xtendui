@@ -1,6 +1,6 @@
-import { Xt } from 'xtend-ui'
-import 'xtend-ui/src/core/slider'
-import 'xtend-ui/src/addons/mouse-follow'
+import { Xt } from 'xtendui'
+import 'xtendui/src/core/slider'
+import 'xtendui/src/addons/mouse-follow'
 import gsap from 'gsap'
 
 Xt.mount.push({

@@ -14,8 +14,8 @@ Follow the [css installation](/introduction/getting-started/setup#css-installati
 
 ```jsx
 module.exports = {
-  theme: require('xtend-ui/src/tailwind-theme')({
-    // xtend utilities and components in node_modules/xtend-ui/src/tailwind-xtend.js
+  theme: require('xtendui/src/tailwind-theme')({
+    // xtend utilities and components in node_modules/xtendui/src/tailwind-xtend.js
     xtend: theme => ({
       components: {
         addons: {
@@ -29,7 +29,7 @@ module.exports = {
 }
 ```
 
-To **see the default values** see the source code of `node_modules/xtend-ui/src/tailwind-xtend.js`.
+To **see the default values** see the source code of `node_modules/xtendui/src/tailwind-xtend.js`.
 
 ## Usage
 

@@ -1,6 +1,6 @@
-import { Xt } from 'xtend-ui'
-import 'xtend-ui/src/core/scroll'
-import 'xtend-ui/src/addons/propagate-interaction'
+import { Xt } from 'xtendui'
+import 'xtendui/src/core/scroll'
+import 'xtendui/src/addons/propagate-interaction'
 import gsap from 'gsap'
 
 /**

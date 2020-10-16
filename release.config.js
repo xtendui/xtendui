@@ -1,6 +1,6 @@
 module.exports = {
   debug: true,
-  repositoryUrl: 'https://github.com/minimit/xtend-ui',
+  repositoryUrl: 'https://github.com/minimit/xtendui',
   branches: ['master', { name: '0.16', prerelease: false, range: '0.16.x' }, { name: 'beta', prerelease: true }, { name: 'alpha', prerelease: true }],
   plugins: [
     ['@semantic-release/commit-analyzer'],

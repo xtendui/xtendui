@@ -155,8 +155,8 @@ Lorem ipsum `dolor sit` amet, *consectetur* **adipiscing** elit. Nam in [laoreet
 </script>
 
 ```
-mkdir -p xtend-ui/
-cp -r node_modules/xtend-ui/dist/ xtend-ui/
+mkdir -p xtendui/
+cp -r node_modules/xtendui/dist/ xtendui/
 ```
 
 ```css

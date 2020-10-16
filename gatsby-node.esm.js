@@ -15,8 +15,8 @@ exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
       alias: {
-        // resolve xtend-ui import js and css
-        'xtend-ui': path.resolve(__dirname, './'),
+        // resolve xtendui import js and css
+        'xtendui': path.resolve(__dirname, './'),
         // https://github.com/gatsbyjs/gatsby/issues/11934
         'react-dom': '@hot-loader/react-dom',
       },

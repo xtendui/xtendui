@@ -1,7 +1,7 @@
-import { Xt } from 'xtend-ui'
-import 'xtend-ui/src/core/scroll'
-import 'xtend-ui/src/core/sticky'
-import 'xtend-ui/src/addons/scroll-to-anchor'
+import { Xt } from 'xtendui'
+import 'xtendui/src/core/scroll'
+import 'xtendui/src/core/sticky'
+import 'xtendui/src/addons/scroll-to-anchor'
 import gsap from 'gsap'
 import 'gsap/ScrollToPlugin'
 

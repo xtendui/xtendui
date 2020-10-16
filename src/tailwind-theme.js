@@ -29,7 +29,6 @@ module.exports = function (custom = {}) {
           900: '#00244D',
         },
       },
-      boxShadow: {},
       zIndex: {
         base: '0',
         active: '5',

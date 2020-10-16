@@ -15,10 +15,10 @@ module.exports = {
     author: 'Riccardo Caroli',
     image: 'https://xtendui.com/social.jpg',
     version: version,
-    npm: 'https://www.npmjs.com/package/xtend-ui',
-    github: 'https://github.com/minimit/xtend-ui',
+    npm: 'https://www.npmjs.com/package/xtendui',
+    github: 'https://github.com/minimit/xtendui',
     twitter: 'https://twitter.com/xtendui',
-    download: 'https://github.com/minimit/xtend-ui/releases',
+    download: 'https://github.com/minimit/xtendui/releases',
   },
   plugins: [
     'gatsby-plugin-remove-serviceworker',
@@ -29,8 +29,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'xtend-ui',
-        short_name: 'Xtend',
+        name: 'Xtend UI',
         start_url: '/',
         background_color: '#0078ff',
         theme_color: '#0058C6',
@@ -49,8 +48,8 @@ module.exports = {
         aliases: {
           assets: './src/gatsby/assets',
           components: './src/gatsby/components',
-          // resolve xtend-ui import js and css
-          'xtend-ui': path.resolve(__dirname, './'),
+          // resolve xtendui import js and css
+          'xtendui': path.resolve(__dirname, './'),
         },
       },
     },

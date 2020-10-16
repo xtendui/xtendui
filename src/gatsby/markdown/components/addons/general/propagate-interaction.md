@@ -10,7 +10,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 <!--
 ```jsx
-import 'xtend-ui/src/addons/propagate-interaction'
+import 'xtendui/src/addons/propagate-interaction'
 ```
 
 <button type="button" data-xt-propagate-interaction="{ targets: '.btn' }">

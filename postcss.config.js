@@ -16,7 +16,7 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
 module.exports = {
   plugins: [
     require(`postcss-import`)({
-      // resolve xtend-ui import css
+      // resolve xtendui import css
       resolve: function (id) {
         const arr = id.split('/')
         const theme = path.resolve(__dirname, './' + arr.slice(1).join('/'))

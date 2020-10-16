@@ -1,4 +1,4 @@
-import { Xt } from 'xtend-ui'
+import { Xt } from 'xtendui'
 
 Xt.mount.push({
   matches: '#demo--overlay-events, #demo--overlay-events-alt',

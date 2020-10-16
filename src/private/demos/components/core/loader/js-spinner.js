@@ -1,4 +1,4 @@
-import { Xt } from 'xtend-ui'
+import { Xt } from 'xtendui'
 import gsap from 'gsap'
 
 Xt.mount.push({

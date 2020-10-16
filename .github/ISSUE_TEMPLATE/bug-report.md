@@ -4,7 +4,7 @@ about: Report a reproducible bug.
 labels: "type: bug"
 ---
 
-<!-- Before opening a new bug issue, please search existing issues: https://github.com/minimit/xtend-ui/issues -->
+<!-- Before opening a new bug issue, please search existing issues: https://github.com/minimit/xtendui/issues -->
 
 ## Describe the bug
 

@@ -18,8 +18,8 @@ module.exports = {
   },
   resolve: {
     alias: {
-      // resolve xtend-ui import js and css
-      'xtend-ui': path.resolve(__dirname, './'),
+      // resolve xtendui import js and css
+      'xtendui': path.resolve(__dirname, './'),
     },
   },
   module: {

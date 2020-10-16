@@ -9,7 +9,7 @@ date: "2050-10-10"
 
 <p align="center">
   <a href="https://xtendui.com/" style="display: inline-block;">
-    <img src="https://raw.githubusercontent.com/minimit/xtend-ui/master/static/logo.svg" alt="Xtend UI" width="200" height="47">
+    <img src="https://raw.githubusercontent.com/minimit/xtendui/master/static/logo.svg" alt="Xtend UI" width="200" height="47">
   </a>
 </p>
 
@@ -18,14 +18,14 @@ date: "2050-10-10"
   <br/>
   <a href="https://xtendui.com">Introduction</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://xtendui.com/components">Components</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://xtendui.com/themes">Themes</a>
   <br/><br/>
-  <a href="https://github.com/minimit/xtend-ui/actions?query=workflow%3ARelease" style="display: inline-block;">
-    <img src="https://img.shields.io/github/workflow/status/minimit/xtend-ui/Release" alt="Build Status" loading="eager">
+  <a href="https://github.com/minimit/xtendui/blob/master/LICENSE" style="display: inline-block;">
+    <img src="https://img.shields.io/npm/l/xtendui.svg" alt="License" loading="eager">
   </a>
-  <a href="https://www.npmjs.com/package/xtend-ui" style="display: inline-block;">
-    <img src="https://img.shields.io/npm/v/xtend-ui.svg" alt="Latest Release" loading="eager">
+  <a href="https://www.npmjs.com/package/xtendui" style="display: inline-block;">
+    <img src="https://img.shields.io/npm/v/xtendui.svg" alt="Latest Release" loading="eager">
   </a>
-  <a href="https://github.com/minimit/xtend-ui/blob/master/LICENSE" style="display: inline-block;">
-    <img src="https://img.shields.io/npm/l/xtend-ui.svg" alt="License" loading="eager">
+  <a href="https://github.com/minimit/xtendui/actions?query=workflow%3ARelease" style="display: inline-block;">
+    <img src="https://img.shields.io/github/workflow/status/minimit/xtendui/Release" alt="Build Status" loading="eager">
   </a>
 </p>
 
@@ -44,7 +44,7 @@ If you want we have some boilerplate projects to start a project all ready to go
 
 ## CDN Installation
 
-If you need to do a **fast installation** of css and js use [core-js CDN](https://cdnjs.com/libraries/core-js) and [xtend-ui CDN](https://unpkg.com/xtend-ui/), the css and js are inside the `dist/` folder.
+If you need to do a **fast installation** of css and js use [core-js CDN](https://cdnjs.com/libraries/core-js) and [xtendui CDN](https://unpkg.com/xtendui/), the css and js are inside the `dist/` folder.
 
 The CDN `dist/` files are large because they include tailwindcss and all components / addons, **it's not representative of the sizes** you see when including Xtend UI as part of your build process.
 
@@ -101,7 +101,7 @@ Then you can use css with tailwind.
 Install **xtend**.
 
 ```sh
-npm install xtend-ui --save
+npm install xtendui --save
 ```
 
 Then add **xtend** plugins and variables inside `tailwind.config.js`, with this special format that merges your configuration with xtend configuration.
@@ -109,16 +109,16 @@ Then add **xtend** plugins and variables inside `tailwind.config.js`, with this 
 ```jsx
 module.exports = {
   purge: [],
-  theme: require('xtend-ui/src/tailwind-theme')({
+  theme: require('xtendui/src/tailwind-theme')({
     // add here your theme settings
     extend: {
       // add here your theme extend settings
     },
   }),
-  variants: require('xtend-ui/src/tailwind-variants')({
+  variants: require('xtendui/src/tailwind-variants')({
     // add here your variants
   }),
-  plugins: [require('xtend-ui/src/tailwind-plugin')],
+  plugins: [require('xtendui/src/tailwind-plugin')],
   experimental: {
     applyComplexClasses: true,
     extendedSpacingScale: true,
@@ -158,7 +158,7 @@ module.exports = {
       {
         alias: {
           // if you want to fork javascript file add a local path.resolve as first in array
-          'xtend-ui': [path.resolve(__dirname, './node_modules/xtend-ui')],
+          'xtendui': [path.resolve(__dirname, './node_modules/xtendui')],
         },
       },
     ],
@@ -188,20 +188,20 @@ Opera >= 25
 Install **xtend**.
 
 ```sh
-npm install xtend-ui --save
+npm install xtendui --save
 ```
 
 Then import the **xtend main file**.
 
 ```jsx
-import { Xt } from 'xtend-ui'
+import { Xt } from 'xtendui'
 ```
 
 Then you can import the **components you need** as described in the docs.
 
 ```jsx
-import 'xtend-ui/src/core/toggle'
-import 'xtend-ui/src/core/slider'
+import 'xtendui/src/core/toggle'
+import 'xtendui/src/core/slider'
 ```
 
 #### Animations
@@ -271,8 +271,8 @@ To **customize the theme** use [tailwind theme configuration](https://tailwindcs
 
 ```jsx
 module.exports = {
-  theme: require('xtend-ui/src/tailwind-theme')({
-    // extend theme in node_modules/xtend-ui/src/tailwind-theme.js
+  theme: require('xtendui/src/tailwind-theme')({
+    // extend theme in node_modules/xtendui/src/tailwind-theme.js
     extend: {
       colors: {
         accent: {
@@ -293,14 +293,14 @@ module.exports = {
 }
 ```
 
-To **see the xtend theme options** see the source code of `node_modules/xtend-ui/src/tailwind-theme.js`.
+To **see the xtend theme options** see the source code of `node_modules/xtendui/src/tailwind-theme.js`.
 
 To **customize the utilities and components** add your overrides under the **xtend key** in the theme section of your `tailwind.config.js` file, with this special format that merges your configuration with xtend configuration..
 
 ```jsx
 module.exports = {
-  theme: require('xtend-ui/src/tailwind-theme')({
-    // xtend utilities and components in node_modules/xtend-ui/src/tailwind-xtend.js
+  theme: require('xtendui/src/tailwind-theme')({
+    // xtend utilities and components in node_modules/xtendui/src/tailwind-xtend.js
     xtend: theme => ({
       utilities: {
         core: {
@@ -341,7 +341,7 @@ module.exports = {
 }
 ```
 
-To **see the default values** see the source code of `node_modules/xtend-ui/src/tailwind-xtend.js`.
+To **see the default values** see the source code of `node_modules/xtendui/src/tailwind-xtend.js`.
 
 ## Browser support
 
@@ -350,12 +350,12 @@ Supported browsers are as follow: **chrome 38**, **safari 10**, **ios 10**, **fi
 ## Clone
 
 ```sh
-git clone https://github.com/minimit/xtend-ui.git --depth 1
+git clone https://github.com/minimit/xtendui.git --depth 1
 ```
 
 #### Contributing
 
-Read our [contributing docs](https://github.com/minimit/xtend-ui/blob/master/.github/CONTRIBUTING.md) before submitting a pull request.
+Read our [contributing docs](https://github.com/minimit/xtendui/blob/master/.github/CONTRIBUTING.md) before submitting a pull request.
 
 #### Documentation
 
@@ -366,5 +366,5 @@ Read our [contributing docs](https://github.com/minimit/xtend-ui/blob/master/.gi
 
 ## Copyright
 
-Licensed under [MIT license](https://github.com/minimit/xtend-ui/blob/master/LICENSE).
-Docs licensed under [CC BY 3.0](https://github.com/minimit/xtend-ui/blob/master/LICENSE-DOCS).
+Licensed under [MIT license](https://github.com/minimit/xtendui/blob/master/LICENSE).
+Docs licensed under [CC BY 3.0](https://github.com/minimit/xtendui/blob/master/LICENSE-DOCS).

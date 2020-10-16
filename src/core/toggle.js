@@ -1,5 +1,5 @@
 import JSON5 from 'json5'
-import { Xt } from 'xtend-ui'
+import { Xt } from 'xtendui'
 
 /**
  * Toggle

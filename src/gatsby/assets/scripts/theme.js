@@ -1,8 +1,8 @@
 import 'core-js'
-import { Xt } from 'xtend-ui'
-import 'xtend-ui/build/xtend-core'
-import 'xtend-ui/build/xtend-addons'
-import 'xtend-ui/build/xtend-demos'
+import { Xt } from 'xtendui'
+import 'xtendui/build/xtend-core'
+import 'xtendui/build/xtend-addons'
+import 'xtendui/build/xtend-demos'
 const iconLink = require('components/snippets/icons').iconLink
 
 /**

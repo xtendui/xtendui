@@ -1,4 +1,4 @@
-import 'xtend-ui/src/polyfill.js'
+import 'xtendui/src/polyfill.js'
 
 //
 // constructor

@@ -9,7 +9,7 @@ class Footer extends React.Component {
         <div className="row row-2 gatsby_site_footer_bottom_row">
           <div>
             {site.site.siteMetadata.title} v{site.site.siteMetadata.version} and demos licensed{' '}
-            <a href="https://github.com/minimit/xtend-ui/blob/master/LICENSE" target="_blank" rel="noreferrer">
+            <a href="https://github.com/minimit/xtendui/blob/master/LICENSE" target="_blank" rel="noreferrer">
               MIT
             </a>
             <span className="separator separator-dash"></span> Docs licensed{' '}

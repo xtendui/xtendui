@@ -5,5 +5,5 @@ parent: "Issues"
 title: "Issues"
 description: "Find solutions or report issues."
 date: "2050-10-30"
-link: "https://github.com/minimit/xtend-ui/issues"
+link: "https://github.com/minimit/xtendui/issues"
 ---
