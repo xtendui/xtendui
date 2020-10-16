@@ -10,7 +10,7 @@ description: "Form styles with multiple layouts, custom checkbox/radio, and more
 
 #### Javascript
 
-Follow the [javascript installation](/introduction/getting-started/setup#javascript-installation) instructions and **import the component javascript** file.
+Follow the [javascript installation](/introduction/getting-started/installation#javascript-installation) instructions and **import the component javascript** file.
 
 ```jsx
 import 'xtendui/src/core/form'
@@ -18,7 +18,7 @@ import 'xtendui/src/core/form'
 
 #### Css
 
-Follow the [css installation](/introduction/getting-started/setup#css-installation) instructions. To [customize styles](/introduction/getting-started/setup#css-customization) in your `tailwind.config.js` file.
+Follow the [css installation](/introduction/getting-started/installation#css-installation) instructions. To [customize styles](/introduction/getting-started/installation#css-customization) in your `tailwind.config.js` file.
 
 ```jsx
 module.exports = {
