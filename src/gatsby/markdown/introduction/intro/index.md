@@ -44,21 +44,11 @@ date: "2050-10-05"
 
 For a complete css and js setup guide visit [online installation page](https://xtendui.com/introduction/getting-started/installation) or [github installation page](https://github.com/minimit/xtendui/blob/master/INSTALLATION.md).
 
-## Boilerplate
+#### Boilerplate
 
 If you want we have some boilerplate projects to start a project all ready to go!
 
 * [xtendui-vanilla](https://github.com/minimit/xtendui-vanilla)
-
-## Browser support
-
-Supported browsers are as follow: **chrome 38**, **safari 10**, **ios 10**, **firefox 38**, **edge 12**, **opera 25**.
-
-## Clone
-
-```sh
-git clone https://github.com/minimit/xtendui.git --depth 1
-```
 
 ## Contributing
 
@@ -66,10 +56,15 @@ Read our [contributing docs](https://github.com/minimit/xtendui/blob/master/.git
 
 ## Documentation
 
+* Clone the repository `git clone https://github.com/minimit/xtendui.git --depth 1`
 * Install required npm packages with `npm install`
 * Use `npm run build` to build the docs in `/public`
 * Use `npm run dev` to serve a develop version
 * Use `npm run serve` to serve a production version
+
+## Browser support
+
+Supported browsers are as follow: **chrome 38**, **safari 10**, **ios 10**, **firefox 38**, **edge 12**, **opera 25**.
 
 ## Copyright
 
