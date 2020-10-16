@@ -4660,8 +4660,8 @@ ee-first@1.1.1:
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
 
 electron-to-chromium@^1.3.571:
-  version "1.3.578"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.578.tgz#e6671936f4571a874eb26e2e833aa0b2c0b776e0"
+  version "1.3.582"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.582.tgz#1adfac5affce84d85b3d7b3dfbc4ade293a6ffc4"
 
 elliptic@^6.5.3:
   version "6.5.3"
@@ -9332,8 +9332,8 @@ node-object-hash@^2.0.0:
   resolved "https://registry.yarnpkg.com/node-object-hash/-/node-object-hash-2.0.0.tgz#9971fcdb7d254f05016bd9ccf508352bee11116b"
 
 node-releases@^1.1.61:
-  version "1.1.61"
-  resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.61.tgz#707b0fca9ce4e11783612ba4a2fcba09047af16e"
+  version "1.1.63"
+  resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.63.tgz#db6dbb388544c31e888216304e8fd170efee3ff5"
 
 noms@0.0.0:
   version "0.0.0"
@@ -13094,8 +13094,8 @@ table@^5.2.3:
     string-width "^3.0.0"
 
 tailwindcss@^1.8.12:
-  version "1.9.1"
-  resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-1.9.1.tgz#5cd83b7962c0e22d7608bc502daf4185962995fc"
+  version "1.9.2"
+  resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-1.9.2.tgz#6a6b423d0a2ff4376ca1a007ef70eae852788562"
   dependencies:
     "@fullhuman/postcss-purgecss" "^2.1.2"
     autoprefixer "^9.4.5"
