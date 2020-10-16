@@ -19,7 +19,7 @@ module.exports = {
   resolve: {
     alias: {
       // resolve xtendui import js and css
-      'xtendui': path.resolve(__dirname, './'),
+      xtendui: path.resolve(__dirname, './'),
     },
   },
   module: {

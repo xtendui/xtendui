@@ -49,7 +49,7 @@ module.exports = {
           assets: './src/gatsby/assets',
           components: './src/gatsby/components',
           // resolve xtendui import js and css
-          'xtendui': path.resolve(__dirname, './'),
+          xtendui: path.resolve(__dirname, './'),
         },
       },
     },
