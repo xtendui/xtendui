@@ -1,12 +1,3 @@
----
-type: "Introduction"
-category: "Getting Started"
-parent: "Setup"
-title: "Setup"
-description: "Installation instructions, css and js setup."
-date: "2050-10-10"
----
-
 ## CDN Installation
 
 If you need to do a **fast installation** of css and js use [core-js CDN](https://cdnjs.com/libraries/core-js) and [xtendui CDN](https://unpkg.com/xtendui/), the css and js are inside the `dist/` folder.
@@ -92,6 +83,8 @@ module.exports = {
   },
 }
 ```
+
+## Javascript Installation
 
 #### Babel and Corejs
 
@@ -307,3 +300,31 @@ module.exports = {
 ```
 
 To **see the default values** see the source code of `node_modules/xtendui/src/tailwind-xtend.js`.
+
+## Browser support
+
+Supported browsers are as follow: **chrome 38**, **safari 10**, **ios 10**, **firefox 38**, **edge 12**, **opera 25**.
+
+## Fork
+
+```sh
+git clone https://github.com/minimit/xtendui.git --depth 1
+```
+
+#### Contributing
+
+Read our [contributing docs](https://github.com/minimit/xtendui/blob/master/.github/CONTRIBUTING.md) before submitting a pull request.
+
+#### Documentation
+
+We use [gatsby](https://www.npmjs.com/package/gatsby) to serve the docs.
+
+* Install required npm packages with `npm install`
+* Use `npm run build` to build the docs in `/public`
+* Use `npm run dev` to serve a develop version
+* Use `npm run serve` to serve a production version
+
+## Copyright
+
+Licensed under [MIT license](https://github.com/minimit/xtendui/blob/master/LICENSE).
+Docs licensed under [CC BY 3.0](https://github.com/minimit/xtendui/blob/master/LICENSE-DOCS).

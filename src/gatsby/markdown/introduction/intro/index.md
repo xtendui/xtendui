@@ -1,3 +1,12 @@
+---
+type: "Introduction"
+category: "Getting Started"
+parent: "Intro"
+title: "Intro"
+description: "Project informations."
+date: "2050-10-05"
+---
+
 <p align="center">
   <a href="https://xtendui.com/" style="display: inline-block;">
     <img src="https://raw.githubusercontent.com/minimit/xtendui/master/static/logo.svg" alt="Xtend UI" width="200" height="47">
@@ -45,19 +54,17 @@ If you want we have some boilerplate projects to start a project all ready to go
 
 Supported browsers are as follow: **chrome 38**, **safari 10**, **ios 10**, **firefox 38**, **edge 12**, **opera 25**.
 
-## Fork
+## Clone
 
 ```sh
 git clone https://github.com/minimit/xtendui.git --depth 1
 ```
 
-#### Contributing
+## Contributing
 
 Read our [contributing docs](https://github.com/minimit/xtendui/blob/master/.github/CONTRIBUTING.md) before submitting a pull request.
 
-#### Documentation
-
-We use [gatsby](https://www.npmjs.com/package/gatsby) to serve the docs.
+## Documentation
 
 * Install required npm packages with `npm install`
 * Use `npm run build` to build the docs in `/public`
