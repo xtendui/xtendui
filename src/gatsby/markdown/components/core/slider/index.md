@@ -24,7 +24,7 @@ Follow the [css installation](/introduction/getting-started/installation#css-ins
 module.exports = {
   theme: {
     // xtend utilities and components in node_modules/xtendui/src/tailwind-xtend.js
-    xtend: theme => ({
+    xtendui: theme => ({
       utilities: { // highlight-line
         core: {
           slider: {

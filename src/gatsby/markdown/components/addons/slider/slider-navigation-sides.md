@@ -16,7 +16,7 @@ Follow the [css installation](/introduction/getting-started/installation#css-ins
 module.exports = {
   theme: {
     // xtend utilities and components in node_modules/xtendui/src/tailwind-xtend.js
-    xtend: theme => ({
+    xtendui: theme => ({
       components: {
         addons: {
           sliderNavigationSides: {

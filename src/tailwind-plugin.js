@@ -1,50 +1,41 @@
 const plugin = require('tailwindcss/plugin')
 const merge = require('lodash/merge')
 const castArray = require('lodash/castArray')
-const base = require('./tailwind-xtend.js')
 
 module.exports = plugin.withOptions(() => {
   return function ({ addComponents, addUtilities, addVariant, e, theme }) {
-    const custom = theme(`xtend`, {})
+    const componentsBase = require('./tailwind-xtend.js') || {}
+    const componentsCustom = theme(`xtendui`, {}) || {}
 
     /**
-     * core components
+     * components
      */
 
-    const componentsCoreBase = base(theme).components.core || {}
-    const componentsCoreCustom = custom.components ? custom.components.core || {} : {}
-    for (const component of Object.keys(componentsCoreBase)) {
-      if (componentsCoreCustom[component] !== false) {
-        const css = merge(...castArray(componentsCoreBase[component] || {}), componentsCoreCustom[component] || {})
+    for (const component of Object.keys(componentsBase)) {
+      const componentBase = componentsBase[component] || {}
+      const componentCustom = componentsCustom[component] || {}
+      if (componentCustom !== false && componentCustom.components !== false) {
+        const base = typeof componentBase.components === 'function' ? componentBase.components(theme) : componentBase.components
+        const custom = typeof componentCustom.components === 'function' ? componentCustom.components(theme) : componentCustom.components
+        const css = merge(...castArray(base || {}), custom || {})
         addComponents(css)
       }
     }
 
     /**
-     * addons components
+     * utilities
      */
 
-    const componentsAddonsBase = base(theme).components.addons || {}
-    const componentsAddonsCustom = custom.components ? custom.components.addons || {} : {}
-    for (const addon of Object.keys(componentsAddonsBase)) {
-      if (componentsAddonsCustom[addon] !== false) {
-        const css = merge(...castArray(componentsAddonsBase[addon] || {}), componentsAddonsCustom[addon] || {})
-        addComponents(css)
-      }
-    }
-
-    /**
-     * core utilities
-     */
-
-    const utilitiesCoreBase = base(theme).utilities.core || {}
-    const utilitiesCoreCustom = custom.utilities ? custom.utilities.core || {} : {}
-    for (const component of Object.keys(utilitiesCoreBase)) {
-      if (utilitiesCoreCustom[component] !== false) {
-        const options = merge(...castArray(utilitiesCoreBase[component] || {}), utilitiesCoreCustom[component] || {})
+    for (const component of Object.keys(componentsBase)) {
+      const componentBase = componentsBase[component] || {}
+      const componentCustom = componentsCustom[component] || {}
+      if (componentCustom !== false && componentCustom.utilities !== false) {
+        const base = typeof componentBase.utilities === 'function' ? componentBase.utilities(theme) : componentBase.utilities
+        const custom = typeof componentCustom.utilities === 'function' ? componentCustom.utilities(theme) : componentCustom.utilities
+        const options = merge(...castArray(base || {}), custom || {})
         const utilities = Object.keys(options)
         for (const utility of utilities) {
-          if (utilitiesCoreCustom[utility] !== false) {
+          if (componentsCustom[utility] !== false) {
             if (component === 'list' && utility === 'space') {
               let css = {}
               Object.keys(options[utility]).forEach(name => {
