@@ -6,7 +6,6 @@ title: "Installation"
 description: "Installation instructions, css and js setup."
 date: "2050-10-10"
 ---
-
 ## CDN Installation
 
 If you need to do a **fast installation** of css and js use [core-js CDN](https://cdnjs.com/libraries/core-js) and [xtendui CDN](https://unpkg.com/xtendui/), the css and js are inside the `dist/` folder.
@@ -19,19 +18,19 @@ Please note that many of the features that make Xtend UI great **are not availab
 
 #### Tailwind
 
-Follow the instructions to [install tailwind](https://tailwindcss.com/docs/installation).
+Install **tailwind** as explained in [tailwind docs](https://tailwindcss.com/docs/using-with-preprocessors).
 
 ```sh
-npm install tailwindcss --save-dev
+npm install tailwindcss --save
 ```
 
 Install **postcss import** and **postcss nesting**.
 
 ```sh
-npm install postcss postcss-import postcss-nested --save-dev
+npm install postcss postcss-import postcss-nested postcss-purgecss --save-dev
 ```
 
-Then in `postcss.config.js` set up compilation (with purgecss as explained in [tailwind docs](https://tailwindcss.com/docs/controlling-file-size)).
+Then in `postcss.config.js` set up compilation, with purgecss as explained in [tailwind docs](https://tailwindcss.com/docs/controlling-file-size).
 
 ```jsx
 const purgecss = require('@fullhuman/postcss-purgecss')({
@@ -92,6 +91,8 @@ module.exports = {
   },
 }
 ```
+
+## Javascript Installation
 
 #### Babel and Corejs
 

@@ -1,8 +1,8 @@
 ---
 type: "Introduction"
 category: "Getting Started"
-parent: "Intro"
-title: "Intro"
+parent: "Info"
+title: "Info"
 description: "Project informations."
 date: "2050-10-05"
 ---
