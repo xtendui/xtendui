@@ -7,14 +7,6 @@ description: "Installation instructions, css and js setup."
 date: "2050-10-10"
 ---
 
-## CDN Installation
-
-If you need to do a **fast installation** of css and js use [core-js CDN](https://cdnjs.com/libraries/core-js) and [xtendui CDN](https://unpkg.com/xtendui/), the css and js are inside the `dist/` folder.
-
-The CDN `dist/` files are large because they include tailwindcss and all components / addons, **it's not representative of the sizes** you see when including Xtend UI as part of your build process.
-
-Please note that many of the features that make Xtend UI great **are not available without incorporating Xtend UI into your build process**.
-
 ## Css Installation
 
 See Tailwind docs: [tailwind postcss](https://tailwindcss.com/docs/using-with-preprocessors), [tailwind purgecss](https://tailwindcss.com/docs/controlling-file-size), [tailwind theme](https://tailwindcss.com/docs/theme).
@@ -92,6 +84,10 @@ module.exports = {
           800: '#352E70',
           900: '#231F4A',
         },
+      },
+      transitionTimingFunction: {
+        in: 'cubic-bezier(.19,1,.22,1)',
+        out: 'cubic-bezier(1,0,0,1)',
       },
     },
     // xtend utilities and components in node_modules/xtendui/src/tailwind-xtend.js
@@ -275,3 +271,11 @@ if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion:
   Xt.vars.timeHuge = 0
 }
 ```
+
+## CDN Installation
+
+If you need to do a **fast installation** of css and js use [core-js CDN](https://cdnjs.com/libraries/core-js) and [xtendui CDN](https://unpkg.com/xtendui/), the css and js are inside the `dist/` folder.
+
+The CDN `dist/` files are large because they include tailwindcss and all components / addons, **it's not representative of the sizes** you see when including Xtend UI as part of your build process.
+
+Please note that many of the features that make Xtend UI great **are not available without incorporating Xtend UI into your build process**.
