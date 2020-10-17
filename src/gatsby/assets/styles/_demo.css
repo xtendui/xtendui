@@ -48,7 +48,7 @@ code {
 pre[class*="language-"] {
   overflow-x: hidden !important;
   overflow-y: auto !important;
-  @apply overflow-sub mt-0 mb-5 mb-lc py-5 px-5;
+  @apply overflow-sub my-5 mt-fc mb-lc py-5 px-5;
   width: 100%;
   border-radius: 6px;
   .gatsby_demo_code_body & {

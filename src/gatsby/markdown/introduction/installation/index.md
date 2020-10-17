@@ -6,6 +6,7 @@ title: "Installation"
 description: "Installation instructions, css and js setup."
 date: "2050-10-10"
 ---
+
 ## CDN Installation
 
 If you need to do a **fast installation** of css and js use [core-js CDN](https://cdnjs.com/libraries/core-js) and [xtendui CDN](https://unpkg.com/xtendui/), the css and js are inside the `dist/` folder.
@@ -16,21 +17,16 @@ Please note that many of the features that make Xtend UI great **are not availab
 
 ## Css Installation
 
-#### Tailwind
+See Tailwind docs: [tailwind postcss](https://tailwindcss.com/docs/using-with-preprocessors), [tailwind purgecss](https://tailwindcss.com/docs/controlling-file-size), [tailwind theme](https://tailwindcss.com/docs/theme).
 
-Install **tailwind** as explained in [tailwind docs](https://tailwindcss.com/docs/using-with-preprocessors).
-
-```sh
-npm install tailwindcss --save
-```
-
-Install **postcss import** and **postcss nesting**.
+Install **tailwind**, **xtendui**, **postcss import**, **postcss nested** and **postcss purgecss**.
 
 ```sh
+npm install tailwindcss xtendui --save
 npm install postcss postcss-import postcss-nested postcss-purgecss --save-dev
 ```
 
-Then in `postcss.config.js` set up compilation, with purgecss as explained in [tailwind docs](https://tailwindcss.com/docs/controlling-file-size).
+Then in `postcss.config.js` set up compilation.
 
 ```jsx
 const purgecss = require('@fullhuman/postcss-purgecss')({
@@ -48,6 +44,20 @@ module.exports = {
 }
 ```
 
+Create a `tailwind.config.js` and add **xtendui preset**.
+
+```jsx
+module.exports = {
+  presets: [require('tailwindcss/defaultConfig'), require('xtendui/src/tailwind-preset')],
+  theme: {
+    // add here your theme settings
+    extend: {
+      // add here your theme extend settings
+    },
+  },
+}
+```
+
 Then you can use css with tailwind.
 
 ```css
@@ -55,42 +65,77 @@ Then you can use css with tailwind.
 
 @import "tailwindcss/components";
 
-@import "./custom.css"; /* custom code here */
+@import "./custom.css"; /* custom css here */
 
 @import "tailwindcss/utilities";
 ```
 
-#### Xtend
+#### Customization
 
-Install **xtend**.
-
-```sh
-npm install xtendui --save
-```
-
-Then add **xtend** plugins and variables inside `tailwind.config.js`, with this special format that merges your configuration with xtend configuration.
+You can **customize xtendui** inside `tailwind.config.js`.
 
 ```jsx
 module.exports = {
-  purge: [],
-  theme: require('xtendui/src/tailwind-theme')({
-    // add here your theme settings
+  theme:{
+    // extend theme in node_modules/xtendui/src/tailwind-config.js
     extend: {
-      // add here your theme extend settings
+      colors: {
+        accent: {
+          50: '#F8F7FF',
+          100: '#F1F0FE',
+          200: '#DDD9FD',
+          300: '#C8C2FC',
+          400: '#9E95FA',
+          500: '#7567F8',
+          600: '#695DDF',
+          700: '#463E95',
+          800: '#352E70',
+          900: '#231F4A',
+        },
+      },
     },
-  }),
-  variants: require('xtendui/src/tailwind-variants')({
-    // add here your variants
-  }),
-  plugins: [require('xtendui/src/tailwind-plugin')],
-  experimental: {
-    applyComplexClasses: true,
-    extendedSpacingScale: true,
-    defaultLineHeights: true,
-    removeDeprecatedGapUtilities: true,
+    // xtend utilities and components in node_modules/xtendui/src/tailwind-xtend.js
+    xtend: theme => ({
+      utilities: {
+        core: {
+          // disable utility
+          utilityName: false,
+          // modify utility
+          utilityName: {
+            '.selector': {
+              myStyle: 'myStyleValue',
+            },
+          },
+        },
+      },
+      components: {
+        core: {
+          // disable core component
+          componentName: false,
+          // modify core component
+          componentName: {
+            '.selector': {
+              myStyle: 'myStyleValue',
+            },
+          },
+        },
+        addons: {
+          // disable addon component
+          addonName: false,
+          // modify addon component
+          addonName: {
+            '.selector': {
+              myStyle: 'myStyleValue',
+            },
+          },
+        },
+      },
+    }),
   },
 }
 ```
+
+To **see the default values** see the source code of `node_modules/xtendui/src/tailwind-xtend.js`.
 
 ## Javascript Installation
 
@@ -151,13 +196,13 @@ Opera >= 25
 
 #### Xtend
 
-Install **xtend**.
+Install **xtendui**.
 
 ```sh
 npm install xtendui --save
 ```
 
-Then import the **xtend main file**.
+Then import the **xtendui main file**.
 
 ```jsx
 import { Xt } from 'xtendui'
@@ -178,7 +223,7 @@ This library in the demos uses [gsap](https://github.com/greensock/GSAP) for jav
 npm install gsap --save
 ```
 
-Then **setup gsap** this way. Also add the following **xtend variables**.
+Then **setup gsap** this way. Also add the following **xtendui variables**.
 
 ```jsx
 /**
@@ -230,81 +275,3 @@ if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion:
   Xt.vars.timeHuge = 0
 }
 ```
-
-## Css Customization
-
-To **customize the theme** use [tailwind theme configuration](https://tailwindcss.com/docs/theme) in the theme section of your `tailwind.config.js` file, with this special format that merges your configuration with xtend configuration..
-
-```jsx
-module.exports = {
-  theme: require('xtendui/src/tailwind-theme')({
-    // extend theme in node_modules/xtendui/src/tailwind-theme.js
-    extend: {
-      colors: {
-        accent: {
-          50: '#F8F7FF',
-          100: '#F1F0FE',
-          200: '#DDD9FD',
-          300: '#C8C2FC',
-          400: '#9E95FA',
-          500: '#7567F8',
-          600: '#695DDF',
-          700: '#463E95',
-          800: '#352E70',
-          900: '#231F4A',
-        },
-      },
-    },
-  },
-}
-```
-
-To **see the xtend theme options** see the source code of `node_modules/xtendui/src/tailwind-theme.js`.
-
-To **customize the utilities and components** add your overrides under the **xtend key** in the theme section of your `tailwind.config.js` file, with this special format that merges your configuration with xtend configuration..
-
-```jsx
-module.exports = {
-  theme: require('xtendui/src/tailwind-theme')({
-    // xtend utilities and components in node_modules/xtendui/src/tailwind-xtend.js
-    xtend: theme => ({
-      utilities: {
-        core: {
-          // disable utility
-          utilityName: false,
-          // modify utility
-          utilityName: {
-            '.selector': {
-              myStyle: 'myStyleValue',
-            },
-          },
-        },
-      },
-      components: {
-        core: {
-          // disable core component
-          componentName: false,
-          // modify core component
-          componentName: {
-            '.selector': {
-              myStyle: 'myStyleValue',
-            },
-          },
-        },
-        addons: {
-          // disable addon component
-          addonName: false,
-          // modify addon component
-          addonName: {
-            '.selector': {
-              myStyle: 'myStyleValue',
-            },
-          },
-        },
-      },
-    }),
-  },
-}
-```
-
-To **see the default values** see the source code of `node_modules/xtendui/src/tailwind-xtend.js`.

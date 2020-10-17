@@ -27,7 +27,7 @@
 
 <@TODO phylosophy>
 
-* Css with [TailwindCss](https://tailwindcss.com/)
+* Css with [TailwindCss](https://tailwindcss.com/) and [Postcss](https://postcss.org/)
 * Docs with [Gatsby](https://www.gatsbyjs.com/)
 * Animations with [Gsap](https://greensock.com/gsap/)
 * Icons with [Feather Icons](https://feathericons.com/)

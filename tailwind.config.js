@@ -1,5 +1,6 @@
 module.exports = {
-  theme: require('./src/tailwind-theme')({
+  presets: [require('tailwindcss/defaultConfig'), require('./src/tailwind-config')],
+  theme: {
     // only some colors
     colors: {
       transparent: 'transparent',
@@ -42,13 +43,5 @@ module.exports = {
         3: '3px',
       },
     },
-  }),
-  variants: require('./src/tailwind-variants')({}),
-  plugins: [require('./src/tailwind-plugin')],
-  experimental: {
-    purgeLayersByDefault: true,
-    defaultLineHeights: true,
-    applyComplexClasses: true,
-    extendedSpacingScale: true,
   },
 }

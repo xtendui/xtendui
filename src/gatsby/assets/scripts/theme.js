@@ -218,9 +218,9 @@ const makeDocument = () => {
     // id
     let id = ''
     if (prevElement) {
-      id += prevElement.textContent.replace(/\W/g, '-').toLowerCase() + '-'
+      id += prevElement.textContent.trim().replace(/\W/g, '-').toLowerCase() + '-'
     }
-    id += el.textContent.replace(/\W/g, '-').toLowerCase()
+    id += el.textContent.trim().replace(/\W/g, '-').toLowerCase()
     // sidebar links
     if (el.tagName === 'H2') {
       let container = document.querySelector('.gatsby_btn-site_article_sidebar--adiacent.active ~ .gatsby_site_header_adiacent_inner')

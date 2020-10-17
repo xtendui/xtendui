@@ -10,11 +10,11 @@ description: "Flex lists to space any element with margins, also spaces vertical
 
 #### Css
 
-Follow the [css installation](/introduction/getting-started/installation#css-installation) instructions. To [customize styles](/introduction/getting-started/installation#css-customization) in your `tailwind.config.js` file.
+Follow the [css installation](/introduction/getting-started/installation#css-installation) instructions. To [customize styles](/introduction/getting-started/installation#css-installation-customization) in your `tailwind.config.js` file.
 
 ```jsx
 module.exports = {
-  theme: require('xtendui/src/tailwind-theme')({
+  theme: {
     // xtend utilities and components in node_modules/xtendui/src/tailwind-xtend.js
     xtend: theme => ({
       utilities: {
@@ -32,7 +32,7 @@ module.exports = {
         },
       },
     }),
-  })
+  },
 }
 ```
 

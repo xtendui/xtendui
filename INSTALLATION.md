@@ -47,7 +47,7 @@ Then you can use css with tailwind.
 
 @import "tailwindcss/components";
 
-@import "./custom.css"; /* custom code here */
+@import "./custom.css"; /* custom css here */
 
 @import "tailwindcss/utilities";
 ```
@@ -65,7 +65,7 @@ Then add **xtend** plugins and variables inside `tailwind.config.js`, with this 
 ```jsx
 module.exports = {
   purge: [],
-  theme: require('xtendui/src/tailwind-theme')({
+  theme: {
     // add here your theme settings
     extend: {
       // add here your theme extend settings
@@ -229,8 +229,8 @@ To **customize the theme** use [tailwind theme configuration](https://tailwindcs
 
 ```jsx
 module.exports = {
-  theme: require('xtendui/src/tailwind-theme')({
-    // extend theme in node_modules/xtendui/src/tailwind-theme.js
+  theme: {
+    // extend theme in node_modules/xtendui/src/tailwind-config.js
     extend: {
       colors: {
         accent: {
@@ -251,13 +251,13 @@ module.exports = {
 }
 ```
 
-To **see the xtend theme options** see the source code of `node_modules/xtendui/src/tailwind-theme.js`.
+To **see the xtend theme options** see the source code of `node_modules/xtendui/src/tailwind-config.js`.
 
 To **customize the utilities and components** add your overrides under the **xtend key** in the theme section of your `tailwind.config.js` file, with this special format that merges your configuration with xtend configuration..
 
 ```jsx
 module.exports = {
-  theme: require('xtendui/src/tailwind-theme')({
+  theme: {
     // xtend utilities and components in node_modules/xtendui/src/tailwind-xtend.js
     xtend: theme => ({
       utilities: {
