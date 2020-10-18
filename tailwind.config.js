@@ -1,7 +1,7 @@
 module.exports = {
   presets: [require('tailwindcss/defaultConfig'), require('./src/tailwind-config')],
   theme: {
-    // only some colors
+    // only some tailwind colors
     colors: {
       transparent: 'transparent',
       current: 'currentColor',

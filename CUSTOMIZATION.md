@@ -1,11 +1,3 @@
----
-type: "Introduction"
-category: "Getting Started"
-parent: "Customization"
-title: "Customization"
-description: "Css and js customization instructions."
-date: "2050-10-15"
----
 
 ## Css
 
