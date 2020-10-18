@@ -40,9 +40,17 @@ date: "2050-10-05"
 * Animations with [Gsap](https://greensock.com/gsap/)
 * Icons with [Feather Icons](https://feathericons.com/)
 
-## Installation
+Supported browsers are as follow: **chrome 38**, **safari 10**, **ios 10**, **firefox 38**, **edge 12**, **opera 25**.
+
+## Setup
+
+#### Installation
 
 For a complete css and js setup guide visit [online installation page](https://xtendui.com/introduction/getting-started/installation) or [github installation page](https://github.com/minimit/xtendui/blob/master/INSTALLATION.md).
+
+#### Customization
+
+To customize css and js visit [online customization page](https://xtendui.com/introduction/getting-started/customization) or [github customization page](https://github.com/minimit/xtendui/blob/master/CUSTOMIZATION.md).
 
 #### Boilerplate
 

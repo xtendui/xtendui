@@ -6,30 +6,23 @@ title: "Button"
 description: "Simple and extensible button styles."
 ---
 
-## Setup
+## Customization
 
-#### Css
-
-Follow the [css installation](/introduction/getting-started/installation#css-installation) instructions. To [customize styles](/introduction/getting-started/installation#css-installation-customization) in your `tailwind.config.js` file.
+You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/btn.css.js](https://github.com/minimit/xtendui/blob/master/src/core/btn.css.js) for default values.
 
 ```jsx
 module.exports = {
-  theme: {
-    // xtend utilities and components in node_modules/xtendui/src/tailwind-xtend.js
-    xtendui: theme => ({
-      components: {
-        core: {
-          btn: {
-            // modify core component
-          },
-        },
+  theme:{
+    xtendui: {
+      btn: {
+        components: theme => ({
+          // modify components
+        }),
       },
-    }),
+    },
   },
 }
 ```
-
-To **see the default values** see the source code of `node_modules/xtendui/src/tailwind-xtend.js`.
 
 ## Usage
 

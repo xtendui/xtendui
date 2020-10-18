@@ -1,43 +1,36 @@
 ---
 type: "Components"
 category: "Addons"
-parent: "General"
+parent: "Structure"
 title: "mouse-follow"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
-## Setup
+## Installation
 
-#### Javascript
-
-Follow the [javascript installation](/introduction/getting-started/installation#javascript-installation) instructions and **import the component javascript** file.
+Import the **component javascript** file.
 
 ```jsx
 import 'xtendui/src/addons/mousefollow'
 ```
 
-#### Css
+## Customization
 
-Follow the [css installation](/introduction/getting-started/installation#css-installation) instructions. To [customize styles](/introduction/getting-started/installation#css-installation-customization) in your `tailwind.config.js` file.
+You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/addons/mouse-follow.css.js](https://github.com/minimit/xtendui/blob/master/src/addons/mouse-follow.css.js) for default values.
 
 ```jsx
 module.exports = {
-  theme: {
-    // xtend utilities and components in node_modules/xtendui/src/tailwind-xtend.js
-    xtendui: theme => ({
-      components: {
-        addons: {
-          mousefollow: {
-            // modify core component
-          },
-        },
+  theme:{
+    xtendui: {
+      'mouse-follow': {
+        components: theme => ({
+          // modify components
+        }),
       },
-    }),
+    },
   },
 }
 ```
-
-To **see the default values** see the source code of `node_modules/xtendui/src/tailwind-xtend.js`.
 
 ## Usage
 

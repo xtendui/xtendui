@@ -1,6 +1,6 @@
 ---
-type: "Components"
-category: "Core"
+type: "Tests"
+category: "Tests"
 parent: "Sticky"
 title: "API"
 date: "1980-05-05"

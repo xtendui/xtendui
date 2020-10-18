@@ -6,45 +6,34 @@ title: "Overlay"
 description: "Used when you need to display any content over the main page."
 ---
 
-## Setup
+## Installation
 
-#### Javascript
-
-Follow the [javascript installation](/introduction/getting-started/installation#javascript-installation) instructions and **import the component javascript** file.
+Import the **component javascript** file.
 
 ```jsx
 import 'xtendui/src/core/overlay'
 ```
 
-#### Css
+## Customization
 
-Follow the [css installation](/introduction/getting-started/installation#css-installation) instructions. To [customize styles](/introduction/getting-started/installation#css-installation-customization) in your `tailwind.config.js` file.
+You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/overlay.css.js](https://github.com/minimit/xtendui/blob/master/src/core/overlay.css.js) for default values.
 
 ```jsx
 module.exports = {
-  theme: {
-    // xtend utilities and components in node_modules/xtendui/src/tailwind-xtend.js
-    xtendui: theme => ({
-      utilities: {
-        core: {
-          overlay: {
-            // modify utility
-          },
-        },
+  theme:{
+    xtendui: {
+      overlay: {
+        components: theme => ({
+          // modify components
+        }),
+        utilities: theme => ({
+          // modify utilities
+        }),
       },
-      components: {
-        core: {
-          overlay: {
-            // modify core component
-          },
-        },
-      },
-    }),
+    },
   },
 }
 ```
-
-To **see the default values** see the source code of `node_modules/xtendui/src/tailwind-xtend.js`.
 
 [[notePrimary]]
 | Overlays are moved to **body** to prevent **z-index** problems. Style and query overlay's content accordingly.

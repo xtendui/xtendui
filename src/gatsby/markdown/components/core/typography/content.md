@@ -8,7 +8,7 @@ date: "2030-10-10"
 
 ## Automatic spacing
 
-Check out the [automatic spacing classes](/components/core/general/css#utils) to **reset margin top** when `:first-child` with `mt-fc` and **reset margin bottom** when `:last-child` with `mb-lc`.
+Check out the [automatic spacing classes](/components/core/structure/css#utils) to **reset margin top** when `:first-child` with `mt-fc` and **reset margin bottom** when `:last-child` with `mb-lc`.
 
 ## Html
 
@@ -113,7 +113,7 @@ Use **component classes** to style `figure` and` figcaption`.
 
 ## Other Utilities
 
-These are typography's **component utilities**.
+These are typography's **component classes**.
 
 <div class="table-scroll">
 

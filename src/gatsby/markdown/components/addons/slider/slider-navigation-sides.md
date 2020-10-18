@@ -6,37 +6,30 @@ title: "navigation-sides"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
-## Setup
+## Customization
 
-#### Css
-
-Follow the [css installation](/introduction/getting-started/installation#css-installation) instructions. To [customize styles](/introduction/getting-started/installation#css-installation-customization) in your `tailwind.config.js` file.
+You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/addons/slider-navigation-sides.css.js](https://github.com/minimit/xtendui/blob/master/src/addons/slider-navigation-sides.css.js) for default values.
 
 ```jsx
 module.exports = {
-  theme: {
-    // xtend utilities and components in node_modules/xtendui/src/tailwind-xtend.js
-    xtendui: theme => ({
-      components: {
-        addons: {
-          sliderNavigationSides: {
-            // modify core component
-          },
-        },
+  theme:{
+    xtendui: {
+      'slider-navigation-sides': {
+        components: theme => ({
+          // modify components
+        }),
       },
-    }),
+    },
   },
 }
 ```
-
-To **see the default values** see the source code of `node_modules/xtendui/src/tailwind-xtend.js`.
 
 ## Usage
 
 Use this code to create a **navigation sides**.
 
 [[notePrimary]]
-| This addon uses [mouse follow](/components/addons/general/mouse-follow). Visit the component page to import and customize.
+| This addon uses [mouse follow](/components/addons/structure/mouse-follow). Visit the component page to import and customize.
 
 <demo>
   <demovanilla src="vanilla/components/addons/slider-navigation-sides">

@@ -1,7 +1,7 @@
 ---
 type: "Components"
 category: "Addons"
-parent: "General"
+parent: "Structure"
 title: "propagate-interaction"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---

@@ -6,15 +6,9 @@ title: "textarea-autosize"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
-## Setup
+## Installation
 
-#### Javascript
-
-Follow the [javascript installation](/introduction/getting-started/installation#javascript-installation) instructions and **import the component javascript** file.
-
-```jsx
-import 'xtendui/src/addons/textarea-autosize'
-```
+Import the **component javascript** file.
 
 ## Usage
 

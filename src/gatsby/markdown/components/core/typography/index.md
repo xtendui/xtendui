@@ -6,37 +6,26 @@ title: "Typography"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
-## Setup
+## Customization
 
-#### Css
-
-Follow the [css installation](/introduction/getting-started/installation#css-installation) instructions. To [customize styles](/introduction/getting-started/installation#css-installation-customization) in your `tailwind.config.js` file.
+You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/typography.css.js](https://github.com/minimit/xtendui/blob/master/src/core/typography.css.js) for default values.
 
 ```jsx
 module.exports = {
-  theme: {
-    // xtend utilities and components in node_modules/xtendui/src/tailwind-xtend.js
-    xtendui: theme => ({
-      utilities: {
-        core: {
-          typography: {
-            // modify utility
-          },
-        },
+  theme:{
+    xtendui: {
+      typography: {
+        components: theme => ({
+          // modify components
+        }),
+        utilities: theme => ({
+          // modify utilities
+        }),
       },
-      components: {
-        core: {
-          typography: {
-            // modify core component
-          },
-        },
-      },
-    }),
+    },
   },
 }
 ```
-
-To **see the default values** see the source code of `node_modules/xtendui/src/tailwind-xtend.js`.
 
 ## Usage
 

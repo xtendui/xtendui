@@ -5,7 +5,6 @@ module.exports = {
   card: require('./core/card.css.js'),
   drop: require('./core/drop.css.js'),
   form: require('./core/form.css.js'),
-  general: require('./core/general.css.js'),
   group: require('./core/group.css.js'),
   icons: require('./core/icons.css.js'),
   link: require('./core/link.css.js'),
@@ -15,7 +14,9 @@ module.exports = {
   overlay: require('./core/overlay.css.js'),
   row: require('./core/row.css.js'),
   slider: require('./core/slider.css.js'),
+  structure: require('./core/structure.css.js'),
   table: require('./core/table.css.js'),
+  toggle: require('./core/toggle.css.js'),
   typography: require('./core/typography.css.js'),
   // addons
   'group-number': require('./addons/group-number.css.js'),

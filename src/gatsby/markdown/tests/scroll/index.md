@@ -1,16 +1,14 @@
 ---
-type: "Components"
-category: "Core"
+type: "Tests"
+category: "Tests"
 parent: "Scroll"
 title: "Scroll"
 description: "Content animation when you scroll the page, fade in elements, parallax."
 ---
 
-## Setup
+## Installation
 
-#### Javascript
-
-Follow the [javascript installation](/introduction/getting-started/installation#javascript-installation) instructions and **import the component javascript** file.
+Import the **component javascript** file.
 
 ```jsx
 import 'xtendui/src/core/scroll'

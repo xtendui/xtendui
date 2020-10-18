@@ -1,6 +1,6 @@
 ---
-type: "Components"
-category: "Core"
+type: "Tests"
+category: "Tests"
 parent: "Scroll"
 title: "Interaction"
 date: "2010-10-10"

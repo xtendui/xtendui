@@ -196,7 +196,6 @@
     font-weight: theme('fontWeight.semibold');
     > span {
       @apply w-full;
-      padding: .35rem .6rem;
       text-transform: uppercase;
     }
   }

@@ -6,38 +6,31 @@ title: "Form"
 description: "Form styles with multiple layouts, custom checkbox/radio, and more."
 ---
 
-## Setup
+## Installation
 
-#### Javascript
-
-Follow the [javascript installation](/introduction/getting-started/installation#javascript-installation) instructions and **import the component javascript** file.
+Import the **component javascript** file.
 
 ```jsx
 import 'xtendui/src/core/form'
 ```
 
-#### Css
+## Customization
 
-Follow the [css installation](/introduction/getting-started/installation#css-installation) instructions. To [customize styles](/introduction/getting-started/installation#css-installation-customization) in your `tailwind.config.js` file.
+You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/form.css.js](https://github.com/minimit/xtendui/blob/master/src/core/form.css.js) for default values.
 
 ```jsx
 module.exports = {
-  theme: {
-    // xtend utilities and components in node_modules/xtendui/src/tailwind-xtend.js
-    xtendui: theme => ({
-      components: {
-        core: {
-          form: {
-            // modify core component
-          },
-        },
+  theme:{
+    xtendui: {
+      form: {
+        components: theme => ({
+          // modify components
+        }),
       },
-    }),
+    },
   },
 }
 ```
-
-To **see the default values** see the source code of `node_modules/xtendui/src/tailwind-xtend.js`.
 
 ## Usage
 

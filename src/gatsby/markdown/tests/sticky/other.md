@@ -1,6 +1,6 @@
 ---
-type: "Components"
-category: "Core"
+type: "Tests"
+category: "Tests"
 parent: "Sticky"
 title: "Other"
 date: "2005-10-10"

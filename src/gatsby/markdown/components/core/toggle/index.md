@@ -6,14 +6,30 @@ title: "Toggle"
 description: "Toggle is the main js component that toggle classes, it's inherited by many other js components."
 ---
 
-## Setup
+## Installation
 
-#### Javascript
-
-Follow the [javascript installation](/introduction/getting-started/installation#javascript-installation) instructions and **import the component javascript** file.
+Import the **component javascript** file.
 
 ```jsx
 import 'xtendui/src/core/toggle'
+```
+
+## Customization
+
+You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/toggle.css.js](https://github.com/minimit/xtendui/blob/master/src/core/toggle.css.js) for default values.
+
+```jsx
+module.exports = {
+  theme:{
+    xtendui: {
+      toggle: {
+        utilities: theme => ({
+          // modify utilities
+        }),
+      },
+    },
+  },
+}
 ```
 
 ## Usage
