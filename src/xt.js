@@ -10,7 +10,7 @@ export const Xt = {}
 // vars
 //
 
-Xt.debug = process.env.NODE_ENV === 'development'
+Xt.debug = window.process && process.env.NODE_ENV === 'development'
 Xt.mount = []
 Xt.unmount = []
 Xt.currents = {} // Xt currents based on namespace (so shared between Xt objects)
