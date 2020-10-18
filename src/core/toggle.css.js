@@ -1,5 +1,5 @@
 module.exports = {
-  utilities: {
+  utility: {
     '.toggle': {
       // setup
       '&:not(.active):not(.out)': {

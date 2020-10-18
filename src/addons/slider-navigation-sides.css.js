@@ -1,5 +1,5 @@
 module.exports = {
-  components: theme => ({
+  component: theme => ({
     '.slider-navigation-sides': {
       // setup
       cursor: 'none',

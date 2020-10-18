@@ -1,5 +1,5 @@
 module.exports = {
-  components: theme => ({
+  component: theme => ({
     '.ripple-container': {
       // setup
       overflow: 'hidden',

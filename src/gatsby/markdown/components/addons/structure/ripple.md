@@ -23,7 +23,7 @@ module.exports = {
   theme:{
     xtendui: {
       ripple: {
-        components: theme => ({
+        component: theme => ({
           // modify components
         }),
       },

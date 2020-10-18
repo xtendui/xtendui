@@ -15,7 +15,7 @@ module.exports = {
   theme:{
     xtendui: {
       icons: {
-        components: theme => ({
+        component: theme => ({
           // modify components
         }),
       },

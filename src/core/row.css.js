@@ -1,5 +1,5 @@
 module.exports = {
-  components: {
+  component: {
     '.row': {
       // setup
       display: 'flex',
@@ -37,7 +37,7 @@ module.exports = {
       },
     },
   },
-  utilities: theme => ({
+  utility: theme => ({
     space: {
       // styles
       ...theme('spacing'),

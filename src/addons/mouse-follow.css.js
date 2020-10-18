@@ -1,5 +1,5 @@
 module.exports = {
-  components: {
+  component: {
     '.mouse-follow': {
       pointerEvents: 'none',
       position: 'fixed',

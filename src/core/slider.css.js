@@ -6,7 +6,7 @@ const round = num =>
 const rem = px => `${round(px / 16)}rem`
 
 module.exports = {
-  components: theme => ({
+  component: theme => ({
     '.slider': {
       // setup
       position: 'relative',
@@ -92,7 +92,7 @@ module.exports = {
       },
     },
   }),
-  utilities: {
+  utility: {
     '.slider-disable': {
       // setup
       '@apply xt-disable-after-init': '',

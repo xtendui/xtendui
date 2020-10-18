@@ -23,7 +23,7 @@ module.exports = {
   theme:{
     xtendui: {
       form: {
-        components: theme => ({
+        component: theme => ({
           // modify components
         }),
       },

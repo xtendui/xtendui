@@ -23,10 +23,10 @@ module.exports = {
   theme:{
     xtendui: {
       slider: {
-        components: theme => ({
+        component: theme => ({
           // modify components
         }),
-        utilities: theme => ({
+        utility: theme => ({
           // modify utilities
         }),
       },

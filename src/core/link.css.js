@@ -1,5 +1,5 @@
 module.exports = {
-  components: theme => ({
+  component: theme => ({
     'a:not([class]), .link': {
       // setup
       '@apply text-reset !important': {},
@@ -15,7 +15,7 @@ module.exports = {
       },
     },
   }),
-  utilities: theme => ({
+  utility: theme => ({
     '.text-default': {
       'a:not([class]), .link': {
         color: theme('colors.accent.500'),

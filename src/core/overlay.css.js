@@ -1,5 +1,5 @@
 module.exports = {
-  components: theme => ({
+  component: theme => ({
     '.overlay': {
       // setup
       '@apply toggle overflow-main': '',
@@ -46,7 +46,7 @@ module.exports = {
       borderRadius: 'inherit',
     },
   }),
-  utilities: theme => ({
+  utility: theme => ({
     '.overlay-screen': {
       // setup
       '.overlay-container': {

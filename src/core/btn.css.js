@@ -6,7 +6,7 @@ const round = num =>
 const rem = px => `${round(px / 16)}rem`
 
 module.exports = {
-  components: theme => ({
+  component: theme => ({
     '.btn': {
       // setup
       cursor: 'pointer',

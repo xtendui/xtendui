@@ -1,5 +1,5 @@
 module.exports = {
-  components: theme => ({
+  component: theme => ({
     'html.xt-scrollbar': {
       // setup
       body: {

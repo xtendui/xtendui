@@ -23,7 +23,7 @@ module.exports = {
   theme:{
     xtendui: {
       'mouse-follow': {
-        components: theme => ({
+        component: theme => ({
           // modify components
         }),
       },

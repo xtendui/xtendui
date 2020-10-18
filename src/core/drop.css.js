@@ -1,5 +1,5 @@
 module.exports = {
-  components: theme => ({
+  component: theme => ({
     '.drop-container': {
       // setup
       position: 'relative',
@@ -38,7 +38,7 @@ module.exports = {
       },
     },
   }),
-  utilities: {
+  utility: {
     '.drop-container-disable': {
       // setup
       '@apply xt-disable': '',

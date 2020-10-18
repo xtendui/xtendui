@@ -14,9 +14,9 @@ module.exports = plugin.withOptions(() => {
     for (const component of Object.keys(componentsBase)) {
       const componentBase = componentsBase[component] || {}
       const componentCustom = componentsCustom[component] || {}
-      if (componentCustom !== false && componentCustom.components !== false) {
-        const base = typeof componentBase.components === 'function' ? componentBase.components(theme) : componentBase.components
-        const custom = typeof componentCustom.components === 'function' ? componentCustom.components(theme) : componentCustom.components
+      if (componentCustom !== false && componentCustom.component !== false) {
+        const base = typeof componentBase.component === 'function' ? componentBase.component(theme) : componentBase.component
+        const custom = typeof componentCustom.component === 'function' ? componentCustom.component(theme) : componentCustom.component
         const css = merge(...castArray(base || {}), custom || {})
         addComponents(css)
       }
@@ -29,9 +29,9 @@ module.exports = plugin.withOptions(() => {
     for (const component of Object.keys(componentsBase)) {
       const componentBase = componentsBase[component] || {}
       const componentCustom = componentsCustom[component] || {}
-      if (componentCustom !== false && componentCustom.utilities !== false) {
-        const base = typeof componentBase.utilities === 'function' ? componentBase.utilities(theme) : componentBase.utilities
-        const custom = typeof componentCustom.utilities === 'function' ? componentCustom.utilities(theme) : componentCustom.utilities
+      if (componentCustom !== false && componentCustom.utility !== false) {
+        const base = typeof componentBase.utility === 'function' ? componentBase.utility(theme) : componentBase.utility
+        const custom = typeof componentCustom.utility === 'function' ? componentCustom.utility(theme) : componentCustom.utility
         const options = merge(...castArray(base || {}), custom || {})
         const utilities = Object.keys(options)
         for (const utility of utilities) {

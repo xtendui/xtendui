@@ -1,5 +1,5 @@
 module.exports = {
-  components: {
+  component: {
     '[data-xt-group-number]': {
       'input[type="number"]': {
         '-moz-appearance': 'textfield',

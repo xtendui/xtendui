@@ -23,7 +23,7 @@ module.exports = {
   theme:{
     xtendui: {
       'group-number': {
-        components: theme => ({
+        component: theme => ({
           // modify components
         }),
       },

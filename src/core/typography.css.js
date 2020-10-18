@@ -6,7 +6,7 @@ const round = num =>
 const rem = px => `${round(px / 16)}rem`
 
 module.exports = {
-  components: theme => ({
+  component: theme => ({
     html: {
       // base rem value
       fontSize: rem(14),
@@ -115,7 +115,7 @@ module.exports = {
       lineHeight: theme('lineHeight.snug'),
     },
   }),
-  utilities: theme => ({
+  utility: theme => ({
     '.text-default': {
       color: theme('colors.black'),
     },

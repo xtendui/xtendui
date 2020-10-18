@@ -1,5 +1,5 @@
 module.exports = {
-  components: theme => ({
+  component: theme => ({
     html: {
       // setup
       touchAction: 'manipulation', // disable double-tap
@@ -99,9 +99,9 @@ module.exports = {
         },
       },
     },
-    ...require('./structurejs.css.js').components(theme),
+    ...require('./structurejs.css.js').component(theme),
   }),
-  utilities: theme => ({
+  utility: theme => ({
     '.container-reset': {
       // setup
       padding: 0,

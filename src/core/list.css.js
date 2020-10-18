@@ -1,5 +1,5 @@
 module.exports = {
-  components: {
+  component: {
     '.list': {
       // setup
       display: 'flex',
@@ -11,7 +11,7 @@ module.exports = {
       },
     },
   },
-  utilities: theme => ({
+  utility: theme => ({
     space: {
       // styles
       ...theme('spacing'),

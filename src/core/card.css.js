@@ -1,5 +1,5 @@
 module.exports = {
-  components: theme => ({
+  component: theme => ({
     '.card': {
       // setup
       position: 'relative',
@@ -36,7 +36,7 @@ module.exports = {
       },
     },
   }),
-  utilities: {
+  utility: {
     '.card-group': {
       // setup
       display: 'flex',

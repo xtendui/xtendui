@@ -15,7 +15,7 @@ module.exports = {
   theme:{
     xtendui: {
       loader: {
-        components: theme => ({
+        component: theme => ({
           // modify components
         }),
       },

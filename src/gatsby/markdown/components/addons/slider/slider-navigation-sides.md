@@ -15,7 +15,7 @@ module.exports = {
   theme:{
     xtendui: {
       'slider-navigation-sides': {
-        components: theme => ({
+        component: theme => ({
           // modify components
         }),
       },

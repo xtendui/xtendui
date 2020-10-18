@@ -1,5 +1,5 @@
 module.exports = {
-  components: theme => ({
+  component: theme => ({
     '.xt-sticky': {
       // setup
       '&.xt-clone': {
@@ -107,7 +107,7 @@ module.exports = {
       opacity: '1 !important',
     },
   }),
-  utilities: {
+  utility: {
     '.sticky-disable': {
       // setup
       '@apply xt-disable': '',

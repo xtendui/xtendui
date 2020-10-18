@@ -15,7 +15,7 @@ module.exports = {
   theme:{
     xtendui: {
       separator: {
-        components: theme => ({
+        component: theme => ({
           // modify components
         }),
       },

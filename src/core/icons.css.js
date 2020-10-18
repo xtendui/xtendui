@@ -1,5 +1,5 @@
 module.exports = {
-  components: {
+  component: {
     '.icon': {
       // setup
       display: 'inline-block',

@@ -1,5 +1,5 @@
 module.exports = {
-  components: {
+  component: {
     '.separator': {
       // setup
       display: 'inline-block',
