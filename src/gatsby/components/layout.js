@@ -57,7 +57,7 @@ class Layout extends React.Component {
                   <Header site={data} seo={seo} page={page} />
                   <div className="gatsby_site_article prose max-w-none">
                     <DocFullscreen />
-                    {page && markdownSlug(page.post) === '/introduction' ? (
+                    {page && markdownSlug(page.post) === '/introduction' ? ( // @DOCINDEX
                       <main className="gatsby_site_article_inner" id="gatsby_open-full-inner">
                         <article className="gatsby_site_article_content">
                           <div className="gatsby_site_article_content_inner">{children}</div>

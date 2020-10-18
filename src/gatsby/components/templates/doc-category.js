@@ -24,7 +24,7 @@ class Template extends React.Component {
     return (
       <Layout seo={seo} page={data}>
         <SEO title={seo.title} description={seo.description} />
-        {markdownSlug(data.post) === '/introduction' ? (
+        {markdownSlug(data.post) === '/introduction' ? ( // @DOCINDEX
           // @DOCINDEX
           <DocIndex />
         ) : (

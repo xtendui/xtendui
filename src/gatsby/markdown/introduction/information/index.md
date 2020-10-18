@@ -1,8 +1,8 @@
 ---
 type: "Introduction"
 category: "Getting Started"
-parent: "Info"
-title: "Info"
+parent: "Information"
+title: "Information"
 description: "Project informations."
 date: "2050-10-05"
 ---
@@ -69,10 +69,6 @@ Read our [contributing docs](https://github.com/minimit/xtendui/blob/master/.git
 * Use `npm run build` to build the docs in `/public`
 * Use `npm run dev` to serve a develop version
 * Use `npm run serve` to serve a production version
-
-## Browser support
-
-Supported browsers are as follow: **chrome 38**, **safari 10**, **ios 10**, **firefox 38**, **edge 12**, **opera 25**.
 
 ## Copyright
 

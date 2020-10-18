@@ -33,11 +33,11 @@ class DocFoot extends React.Component {
             <div className="row">
               {page.post.frontmatter.type !== 'Introduction' && postsIntroduction ? (
                 <div className="gatsby_listing_column">
-                  <Link to={'/introduction'} className="card gatsby_listing_item">
+                  <Link to={'/'} className="card gatsby_listing_item">
                     <div className="card-block py-8 px-9">
                       <div className="h4">Setup or other problems?</div>
                       <p>
-                        Check out the <strong>Introductions pages</strong>.
+                        Check out the <strong>Getting Started</strong> pages.
                       </p>
                     </div>
                   </Link>
@@ -50,8 +50,11 @@ class DocFoot extends React.Component {
                     <div className="card-block py-8 px-9">
                       <div className="h4">Visit the Core pages</div>
                       <p>
-                        There {postsCore.length === 1 ? 'is' : 'are'} {postsCore.length} <strong>core page{postsAddons.length === 1 ? '' : 's'}</strong> for{' '}
-                        {page.post.frontmatter.parent}.
+                        There {postsCore.length === 1 ? 'is' : 'are'}{' '}
+                        <strong>
+                          {postsCore.length} core page{postsAddons.length === 1 ? '' : 's'}{' '}
+                        </strong>{' '}
+                        for {page.post.frontmatter.parent}.
                       </p>
                     </div>
                   </Link>
@@ -64,7 +67,10 @@ class DocFoot extends React.Component {
                     <div className="card-block py-8 px-9">
                       <div className="h4">Visit the Addons page</div>
                       <p>
-                        There {postsAddons.length === 1 ? 'is' : 'are'} {postsAddons.length} <strong>addon page{postsAddons.length === 1 ? '' : 's'}</strong>{' '}
+                        There {postsAddons.length === 1 ? 'is' : 'are'}{' '}
+                        <strong>
+                          {postsAddons.length} addon{postsAddons.length === 1 ? '' : 's'}{' '}
+                        </strong>
                         for {page.post.frontmatter.parent}.
                       </p>
                     </div>
@@ -78,8 +84,11 @@ class DocFoot extends React.Component {
                     <div className="card-block py-8 px-9">
                       <div className="h4">Visit the Theme page</div>
                       <p>
-                        There {postsThemes.length === 1 ? 'is' : 'are'} {postsThemes.length} <strong>theme{postsAddons.length === 1 ? '' : 's'}</strong> for{' '}
-                        {page.post.frontmatter.parent}.
+                        There {postsThemes.length === 1 ? 'is' : 'are'}{' '}
+                        <strong>
+                          {postsThemes.length} theme{postsThemes.length === 1 ? '' : 's'}{' '}
+                        </strong>
+                        for {page.post.frontmatter.parent}.
                       </p>
                     </div>
                   </Link>
