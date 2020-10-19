@@ -28,10 +28,10 @@ module.exports = {
         },
       },
       '&::-webkit-scrollbar-thumb': {
-        background: theme('colors.gray.500'),
+        background: theme('colors.gray.600'),
       },
       scrollbarWidth: 'auto',
-      scrollbarColor: theme('colors.gray.500') + ' transparent',
+      scrollbarColor: theme('colors.gray.600') + ' transparent',
     },
     '.overflow-sub': {
       // styles
@@ -39,14 +39,13 @@ module.exports = {
       '&::-webkit-scrollbar': {
         height: '5px',
         width: '5px',
-        background: 'transparent',
+        background: theme('colors.white'),
       },
       '&::-webkit-scrollbar-thumb': {
-        background: theme('colors.white'),
-        opacity: 0.5,
+        background: theme('colors.gray.600'),
       },
       scrollbarWidth: 'thin',
-      scrollbarColor: theme('colors.white') + ' transparent',
+      scrollbarColor: theme('colors.gray.600') + ' transparent',
     },
     '[readonly], [disabled], .disabled': {
       // setup

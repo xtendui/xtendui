@@ -33,43 +33,18 @@ Use **component classes** to assign size (e.g. [padding](https://tailwindcss.com
   </demovanilla>
 </demo>
 
-## Asset
+## Content
 
-If you want full width assets use `.card-asset`.
-
-<div class="table-scroll">
-
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.card-asset`                     | `card-asset`                | Full width assets            |
-
-</div>
+Card content **stack vertically**. Use **tailwind classes** to assign styles (e.g. [padding](https://tailwindcss.com/docs/padding), [background-color](https://tailwindcss.com/docs/background-color), [border-radius](https://tailwindcss.com/docs/border-radius)) 
 
 <demo>
-  <demovanilla src="vanilla/components/core/card/asset-full">
-  </demovanilla>
-</demo>
-
-## Block
-
-Sequential `.card-block` stack vertically. Use **tailwind classes** to assign styles (e.g. border-radius, background, spacing) 
-
-<div class="table-scroll">
-
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.card-block`                     | `card-block`                | Card stack            |
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/core/card/block-full">
+  <demovanilla src="vanilla/components/core/card/content-full">
   </demovanilla>
 </demo>
 
 ## Group
 
-To stack `.card-block` horizontally wrap them inside `.card-group`.
+To stack card content **horizontally** wrap them inside `.card-group`.
 
 <div class="table-scroll">
 
@@ -79,15 +54,10 @@ To stack `.card-block` horizontally wrap them inside `.card-group`.
 
 </div>
 
+Use **tailwind classes** to assign size (e.g. [width](https://tailwindcss.com/docs/width)).
+
 <demo>
   <demovanilla src="vanilla/components/core/card/group-full">
-  </demovanilla>
-</demo>
-
-The horizontal size of `.card-block` is automatic, but you can specify it with [tailwind width](https://tailwindcss.com/docs/width).
-
-<demo>
-  <demovanilla src="vanilla/components/core/card/group-block-full">
   </demovanilla>
 </demo>
 

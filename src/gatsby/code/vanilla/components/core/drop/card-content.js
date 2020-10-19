@@ -1,7 +1,7 @@
 import path from 'path'
-const img = require('components/snippets/img').default
 const btnPrimary = require('components/snippets/classes/btn-primary').default
 const cardDefaultDrop = require('components/snippets/classes/card-default-drop').default
+const img = require('components/snippets/img').default
 const iconX = require('components/snippets/icons').iconX
 
 const filename = __filename.replace(/\\/g, '/')
@@ -52,6 +52,30 @@ demo.htmlSource = `
           </div>
           <div class="card-block py-8 px-9">
             <div class="h4">Lorem ipsum</div>
+            <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="drop-container" data-xt-drop>
+
+    <button type="button" class="btn btn-md ${btnPrimary()}">
+      text
+    </button>
+
+    <div class="drop">
+      <div class="drop-inner">
+        <div class="card w-screen max-w-md ${cardDefaultDrop()}">
+          <div class="card-block py-8 px-9 rounded-t-md bg-gray-500">
+            <div class="h4">Lorem ipsum</div>
+          </div>
+          <div class="card-block py-8 px-9">
+            <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+          </div>
+          <div class="card-block py-8 px-9 pt-0">
             <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
           </div>
         </div>

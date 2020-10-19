@@ -24,43 +24,18 @@ Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/
   </demovanilla>
 </demo>
 
-## Asset
+## Content
 
-If you want full width assets use `.card-asset`.
-
-<div class="table-scroll">
-
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.card-asset`                     | `card-asset`                | Full width assets            |
-
-</div>
+Card content **stack vertically**. Use **tailwind classes** to assign styles (e.g. [padding](https://tailwindcss.com/docs/padding), [background-color](https://tailwindcss.com/docs/background-color), [border-radius](https://tailwindcss.com/docs/border-radius)) 
 
 <demo>
-  <demovanilla src="vanilla/components/core/drop/asset">
-  </demovanilla>
-</demo>
-
-## Block
-
-Sequential `.card-block` stack vertically. Use **tailwind classes** to assign styles (e.g. border-radius, background, spacing) 
-
-<div class="table-scroll">
-
-|                      | Syntax                          | Mixin            | Variants               | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.card-block`                     | `card-block`                | Card stack            |
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/core/drop/block">
+  <demovanilla src="vanilla/components/core/drop/card-content">
   </demovanilla>
 </demo>
 
 ## Group
 
-To stack `.card-block` horizontally wrap them inside `.card-group`.
+To stack card content **horizontally** wrap them inside `.card-group`.
 
 <div class="table-scroll">
 
@@ -70,15 +45,10 @@ To stack `.card-block` horizontally wrap them inside `.card-group`.
 
 </div>
 
-<demo>
-  <demovanilla src="vanilla/components/core/drop/group">
-  </demovanilla>
-</demo>
-
-The horizontal size of `.card-block` is automatic, but you can specify it with [tailwind width](https://tailwindcss.com/docs/width).
+Use **tailwind classes** to assign size (e.g. [width](https://tailwindcss.com/docs/width)).
 
 <demo>
-  <demovanilla src="vanilla/components/core/drop/group-block">
+  <demovanilla src="vanilla/components/core/drop/card-group">
   </demovanilla>
 </demo>
 
@@ -87,7 +57,7 @@ The horizontal size of `.card-block` is automatic, but you can specify it with [
 Use **tailwind classes** to style borders for separation.
 
 <demo>
-  <demovanilla src="vanilla/components/core/drop/separator">
+  <demovanilla src="vanilla/components/core/drop/card-separator">
   </demovanilla>
 </demo>
 
@@ -105,7 +75,7 @@ Use **tailwind classes** to overflow divs. Use **component classes** to style ov
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/drop/overflow-y">
+  <demovanilla src="vanilla/components/core/drop/card-overflow-y">
   </demovanilla>
 </demo>
 
@@ -114,6 +84,6 @@ Use **tailwind classes** to overflow divs. Use **component classes** to style ov
 You can use [list component](/components/core/list) to space card's internal content.
 
 <demo>
-  <demovanilla src="vanilla/components/core/drop/list">
+  <demovanilla src="vanilla/components/core/drop/card-list">
   </demovanilla>
 </demo>

@@ -18,7 +18,7 @@ Use `.row-stretch` to stretch content vertically.
 
 </div>
 
-When using cards you can space with `margin auto` on `.card-block`. When not using cards, be sure that the content have class `flex-auto`.
+When using cards you can space with `margin auto` on **card content**. When not using cards, be sure that the content have class `flex-auto`.
 
 <demo>
   <demovanilla src="vanilla/components/core/row/stretch">

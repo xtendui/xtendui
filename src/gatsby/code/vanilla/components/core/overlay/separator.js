@@ -27,12 +27,12 @@ demo.htmlSource = `
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>
-            <div class="sm:card-group">
-              <div class="card-block py-8 px-9">
+            <div class="md:card-group">
+              <div class="card-block py-8 px-9 md:w-7/12">
                 <div class="h4">Lorem ipsum</div>
                 <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
               </div>
-              <div class="border-t sm:border-t-0 sm:border-l border-solid border-gray-500">
+              <div class="border-t md:w-5/12 sm:border-t-0 sm:border-l border-solid border-gray-500">
                 <div class="card-block py-8 px-9">
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
                 </div>

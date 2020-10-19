@@ -21,20 +21,6 @@ module.exports = {
         },
       },
     },
-    '.card-block': {
-      // setup
-      position: 'relative',
-      width: '100%',
-    },
-    '.card-asset': {
-      // setup
-      position: 'relative',
-      width: '100%',
-      '> *': {
-        width: '100%',
-        height: 'auto',
-      },
-    },
   }),
   utility: {
     '.card-group': {
@@ -51,11 +37,8 @@ module.exports = {
       '> .card-design': {
         display: 'none',
       },
-      '&, > *': {
+      '&, > *, > * > *': {
         padding: '0',
-        '> .card-block': {
-          padding: '0',
-        },
       },
       '> .btn-close': {
         display: 'none',
