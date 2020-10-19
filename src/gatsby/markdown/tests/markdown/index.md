@@ -74,7 +74,7 @@ Use this code to create a **group vertical** with `.flex-col`.
 
 Check subpage to [customize content](/components/core/loader/content#spinner).
 
-Use **tailwind classes** to assign size (e.g.: padding, font size).
+Use **tailwind classes** to assign size (e.g.: [padding](https://tailwindcss.com/docs/padding), [font-size](https://tailwindcss.com/docs/font-size)).
 
 Use **tailwind classes** to create a navigation. Remember to use `.whitespace-normal`.
 

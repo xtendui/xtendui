@@ -8,7 +8,7 @@ date: "2030-10-10"
 
 ## Variant
 
-Use **tailwind classes** to assign variant (e.g.: color, opacity).
+Use **tailwind classes** to assign variant (e.g.: [text-color](https://tailwindcss.com/docs/text-color), [opacity](https://tailwindcss.com/docs/opacity)).
 
 
 [[notePrimary]]
@@ -31,7 +31,7 @@ Use [typography variant](/components/core/typography/content#variant) to style i
 
 ## Size
 
-Use **component classes** to assign size (e.g.: font size, stroke width).
+Use **component classes** to assign size (e.g.: [font-size](https://tailwindcss.com/docs/font-size), [stroke-width](https://tailwindcss.com/docs/stroke-width)).
 
 <div class="table-scroll">
 

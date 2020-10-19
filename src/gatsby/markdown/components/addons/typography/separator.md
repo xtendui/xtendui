@@ -35,7 +35,7 @@ Use this code to create a **separator**.
 
 ## Type
 
-Use **tailwind classes** to assign styles (e.g.: margin, color).
+Use **tailwind classes** to assign styles (e.g.: [margin](https://tailwindcss.com/docs/margin), [text-color](https://tailwindcss.com/docs/text-color)).
 
 For `<type>` values use `dash`, `slash`, `pipe`, `point` or `arrow`.
 

@@ -30,7 +30,7 @@ module.exports = {
 
 Use this code to create a **group horizontal**.
 
-Use **tailwind classes** to assign styles (e.g.: border, border radius).
+Use **tailwind classes** to assign styles (e.g.: [border-color](https://tailwindcss.com/docs/border-color), [border-radius](https://tailwindcss.com/docs/border-radius)).
 
 <demo>
   <demovanilla src="vanilla/components/core/group/usage">
@@ -41,7 +41,7 @@ Use **tailwind classes** to assign styles (e.g.: border, border radius).
 
 Use this code to create a **group vertical** with `.flex-col`.
 
-Use **tailwind classes** to assign styles (e.g.: border, border radius).
+Use **tailwind classes** to assign styles (e.g.: [border-color](https://tailwindcss.com/docs/border-color), [border-radius](https://tailwindcss.com/docs/border-radius)).
 
 <demo>
   <demovanilla src="vanilla/components/core/group/usage-vertical">

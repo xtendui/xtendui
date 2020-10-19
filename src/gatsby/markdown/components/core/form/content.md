@@ -8,7 +8,7 @@ date: "2030-10-10"
 
 ## Variant
 
-Use **tailwind classes** to assign variant (e.g.: border, background, color).
+Use **tailwind classes** to assign variant (e.g.: [border-color](https://tailwindcss.com/docs/border-color), [background-color](https://tailwindcss.com/docs/background-color), [text-color](https://tailwindcss.com/docs/text-color)).
 
 <demo>
   <demovanilla src="vanilla/components/core/form/variant-default">
@@ -19,7 +19,7 @@ Use **tailwind classes** to assign variant (e.g.: border, background, color).
 
 ## Size
 
-Use **tailwind classes** to assign size (e.g.: font size).
+Use **tailwind classes** to assign size (e.g.: [font-size](https://tailwindcss.com/docs/font-size)).
 
 <demo>
   <demovanilla src="vanilla/components/core/form/size-sm">

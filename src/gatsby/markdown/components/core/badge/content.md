@@ -8,7 +8,7 @@ date: "2030-10-10"
 
 ## Variant
 
-Use **tailwind classes** to assign variant (e.g.: border, background, color).
+Use **tailwind classes** to assign variant (e.g.: [border-color](https://tailwindcss.com/docs/border-color), [background-color](https://tailwindcss.com/docs/background-color), [text-color](https://tailwindcss.com/docs/text-color)).
 
 <demo>
   <demovanilla src="vanilla/components/core/badge/variant">
@@ -26,7 +26,7 @@ Use **tailwind classes** to modify variants for interactive animations.
 
 ## Size
 
-Use **component classes** to assign size (e.g.: padding, font size).
+Use **component classes** to assign size (e.g.: [padding](https://tailwindcss.com/docs/padding), [font-size](https://tailwindcss.com/docs/font-size)).
 
 <div class="table-scroll">
 

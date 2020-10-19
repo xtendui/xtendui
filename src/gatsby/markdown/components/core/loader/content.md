@@ -8,7 +8,7 @@ date: "2030-10-10"
 
 ## Spinner
 
-Use **tailwind classes** to assign variant (e.g.: stroke, opacity).
+Use **tailwind classes** to assign variant (e.g.: [stroke](https://tailwindcss.com/docs/stroke), [opacity](https://tailwindcss.com/docs/opacity)).
 
 Use `.spinner-animated` to assing spinner animation.
 
@@ -51,7 +51,7 @@ Use `.loader-<direction>-animated` to assing filler animation. For `<direction>`
 
 </div>
 
-Use **tailwind classes** to assign variant (e.g.: background, opacity).
+Use **tailwind classes** to assign variant (e.g.: [background-color](https://tailwindcss.com/docs/background-color), [opacity](https://tailwindcss.com/docs/opacity)).
 
 <demo>
   <demovanilla src="vanilla/components/core/loader/filler-x">

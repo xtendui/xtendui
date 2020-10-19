@@ -8,7 +8,7 @@ date: "2030-10-10"
 
 ## Variant
 
-Use **tailwind classes** to assign variant (e.g.: border, background, color).
+Use **tailwind classes** to assign variant (e.g.: [border-color](https://tailwindcss.com/docs/border-color), [background-color](https://tailwindcss.com/docs/background-color), [text-color](https://tailwindcss.com/docs/text-color)).
 
 Use `.link` to create a [link](/components/core/link).
 
@@ -29,7 +29,7 @@ Use [typography variant](/components/core/typography/content#variant) to style t
 
 ## Size
 
-Use **component classes** to assign size (e.g.: padding, font size).
+Use **component classes** to assign size (e.g.: [padding](https://tailwindcss.com/docs/padding), [font-size](https://tailwindcss.com/docs/font-size)).
 
 <div class="table-scroll">
 
@@ -57,7 +57,7 @@ Use [icons](/components/core/icons) as content.
   </demovanilla>
 </demo>
 
-Use **tailwind classes** to assign alignment (e.g.: align items, justify content, text align).
+Use **tailwind classes** to assign alignment (e.g.: [align-items](https://tailwindcss.com/docs/align-items), [justify-content](https://tailwindcss.com/docs/justify-content), [text-align](https://tailwindcss.com/docs/text-align)).
 
 <demo>
   <demovanilla src="vanilla/components/core/button/alignment">
