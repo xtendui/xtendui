@@ -66,7 +66,7 @@ You can add **additional headers** for example `.h7` or `.h-line`.
 
 ## Paragraph
 
-Use **tailwind classes** to style paragraphs (e.g.: [font-size](https://tailwindcss.com/docs/font-size), [line-height](https://tailwindcss.com/docs/line-height)).
+Use **tailwind classes** to style paragraphs (e.g. [font-size](https://tailwindcss.com/docs/font-size), [line-height](https://tailwindcss.com/docs/line-height)).
 
 You can use paragraph **tags or classes**, classes takes precedence with css specificity.
 

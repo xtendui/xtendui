@@ -8,7 +8,7 @@ date: "2030-05-05"
 
 ## Variant
 
-Use **tailwind classes** to assign variant (e.g.: [border-color](https://tailwindcss.com/docs/border-color), [background-color](https://tailwindcss.com/docs/background-color), [text-color](https://tailwindcss.com/docs/text-color)).
+Use **tailwind classes** to assign variant (e.g. [border-color](https://tailwindcss.com/docs/border-color), [background-color](https://tailwindcss.com/docs/background-color), [text-color](https://tailwindcss.com/docs/text-color)).
 
 <demo>
   <demovanilla src="vanilla/components/core/drop/card-variant">
@@ -17,7 +17,7 @@ Use **tailwind classes** to assign variant (e.g.: [border-color](https://tailwin
 
 ## Size
 
-Use **tailwind classes** to assign size (e.g.: [padding](https://tailwindcss.com/docs/padding), [font-size](https://tailwindcss.com/docs/font-size)) and width ([width](https://tailwindcss.com/docs/width), [max-width](https://tailwindcss.com/docs/max-width)).
+Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/docs/padding), [font-size](https://tailwindcss.com/docs/font-size)) and width ([width](https://tailwindcss.com/docs/width), [max-width](https://tailwindcss.com/docs/max-width)).
 
 <demo>
   <demovanilla src="vanilla/components/core/drop/card-size">
@@ -43,7 +43,7 @@ If you want full width assets use `.card-asset`.
 
 ## Block
 
-Sequential `.card-block` stack vertically. Use **tailwind classes** to assign styles (e.g.: border-radius, background, spacing) 
+Sequential `.card-block` stack vertically. Use **tailwind classes** to assign styles (e.g. border-radius, background, spacing) 
 
 <div class="table-scroll">
 

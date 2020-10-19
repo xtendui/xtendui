@@ -8,7 +8,7 @@ date: "2030-10-10"
 
 ## Variant
 
-Use **tailwind classes** to assign variant (e.g.: [text-color](https://tailwindcss.com/docs/text-color), [opacity](https://tailwindcss.com/docs/opacity)).
+Use **tailwind classes** to assign variant (e.g. [text-color](https://tailwindcss.com/docs/text-color), [opacity](https://tailwindcss.com/docs/opacity)).
 
 
 [[notePrimary]]
@@ -31,7 +31,7 @@ Use [typography variant](/components/core/typography/content#variant) to style i
 
 ## Size
 
-Use **component classes** to assign size (e.g.: [font-size](https://tailwindcss.com/docs/font-size), [stroke-width](https://tailwindcss.com/docs/stroke-width)).
+Use **component classes** to assign size (e.g. [font-size](https://tailwindcss.com/docs/font-size), [stroke-width](https://tailwindcss.com/docs/stroke-width)).
 
 <div class="table-scroll">
 
@@ -44,7 +44,7 @@ Use **component classes** to assign size (e.g.: [font-size](https://tailwindcss.
 </div>
 
 [[noteDefault]]
-| **Size bigger** than `1em` **has negative margin** to not enlarge the parent element (e.g.: button).
+| **Size bigger** than `1em` **has negative margin** to not enlarge the parent element (e.g. button).
 
 <demo>
   <demovanilla src="vanilla/components/core/icons/size">
