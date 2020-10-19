@@ -58,8 +58,8 @@ Use [typography variant](/components/core/typography/content#variant) to style t
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Util                  | `.text-default`       | `text-default`                | `responsive hover`                | Default text and links colors            |
-| Util                  | `.text-inverse`       | `text-inverse`                | `responsive hover`                | Inverse text and links colors            |
+| Utility                  | `.text-default`       | `text-default`                | `responsive hover`                | Default text and links colors            |
+| Utility                  | `.text-inverse`       | `text-inverse`                | `responsive hover`                | Inverse text and links colors            |
 
 </div>
 

@@ -26,7 +26,7 @@ demo.htmlSource = `
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>
-            <div class="">
+            <div class="w-full">
               ${img({ classes: 'object-cover object-center', ratio: '100%' })}
             </div>
           </div>
@@ -91,7 +91,7 @@ demo.htmlSource = `
                   </div>
                 </div>
               </div>
-              <div class="">
+              <div class="w-full">
                 ${img({ classes: 'object-cover object-center', ratio: '15%' })}
               </div>
             </div>

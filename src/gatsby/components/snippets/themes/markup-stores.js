@@ -17,7 +17,7 @@ export default () => {
                 <div class="card-design"></div>
                 <div class="card-inner">
                   <div class="card-content">
-                    <div class="">
+                    <div class="w-full">
                       ${img({})}
                     </div>
                     <div class="card-item listing-page_content">
@@ -84,7 +84,7 @@ export default () => {
                 <div class="card-design"></div>
                 <div class="card-inner">
                   <div class="card-content">
-                    <div class="">
+                    <div class="w-full">
                       ${imgAlt({})}
                     </div>
                     <div class="card-item listing-page_content">
@@ -151,7 +151,7 @@ export default () => {
                 <div class="card-design"></div>
                 <div class="card-inner">
                   <div class="card-content">
-                    <div class="">
+                    <div class="w-full">
                       ${img({})}
                     </div>
                     <div class="card-item listing-page_content">
@@ -218,7 +218,7 @@ export default () => {
                 <div class="card-design"></div>
                 <div class="card-inner">
                   <div class="card-content">
-                    <div class="">
+                    <div class="w-full">
                       ${img({})}
                     </div>
                     <div class="card-item listing-page_content">
@@ -285,7 +285,7 @@ export default () => {
                 <div class="card-design"></div>
                 <div class="card-inner">
                   <div class="card-content">
-                    <div class="">
+                    <div class="w-full">
                       ${imgAlt({})}
                     </div>
                     <div class="card-item">
@@ -352,7 +352,7 @@ export default () => {
                 <div class="card-design"></div>
                 <div class="card-inner">
                   <div class="card-content">
-                    <div class="">
+                    <div class="w-full">
                       ${img({})}
                     </div>
                     <div class="card-item">

@@ -14,7 +14,7 @@ You can disable styles and javascript using `.drop-container-disable`.
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Util                  | `.drop-container-disable`       | `drop-container-disable !important`                | `responsive`                | Reset drop styles and javascript            |
+| Utility                  | `.drop-container-disable`       | `drop-container-disable !important`                | `responsive`                | Reset drop styles and javascript            |
 
 </div>
 
@@ -25,13 +25,13 @@ You can disable styles and javascript using `.drop-container-disable`.
 
 ## Static
 
-If you want a drop with size and position **relative to a parent Node** use `drop-container-static`.
+If you want a drop with size and position **relative to a parent Node** use `drop-container-static` and `w-full`.
 
 <div class="table-scroll">
 
-|                         | Syntax                                     | Mixin                         | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Component                  | `.drop-container-static`                | `drop-container-static`        | Position relative to closest element with `.relative`    
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
+| Utility                  | `.drop-container-static`       | `drop-container-static`                | `responsive`                | Position relative to closest element with `.relative`            |
 
 </div>
 

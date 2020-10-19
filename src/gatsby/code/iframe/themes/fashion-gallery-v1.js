@@ -121,7 +121,7 @@ demo.htmlSource = `
                           </div>
                           <div class="card-inner">
                             <div class="card-content">
-                              <div class="">
+                              <div class="w-full">
                                 <div class="list flex-col">
                                   <div class="media-container media-container-responsive">
                                     <div class="media-inner">

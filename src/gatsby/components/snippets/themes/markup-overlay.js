@@ -21,7 +21,7 @@ export default () => {
               </div>
               <div class="card-inner">
                 <div class="card-content">
-                  <div class="">
+                  <div class="w-full">
                     ${img({ classes: 'object-cover object-center', ratio: '100%' })}
                   </div>
                 </div>
@@ -63,7 +63,7 @@ export default () => {
                     </button>
                   </div>
                 </div>
-                <div class="">
+                <div class="w-full">
                   ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
                 </div>
                 <div class="card-item">
@@ -194,7 +194,7 @@ export default () => {
                          Contact our customer service at <a href="tel:+39333010101">+39 333 010101</a> or email us at <a href="mailto:info@info.com">info@info.com</a>.
                       </p>
                     </div>
-                    <div class=""
+                    <div class="w-full"
                       style="margin-top: auto">
                       ${img({ classes: 'object-cover object-center', ratio: '100%', loading: 'eager' })}
                     </div>

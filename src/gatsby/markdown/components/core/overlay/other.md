@@ -14,7 +14,7 @@ You can disable styles and javascript using `.overlay-disable`.
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Util                  | `.overlay-disable`       | `overlay-disable !important`                | `responsive`                | Reset overlay styles and javascript            |
+| Utility                  | `.overlay-disable`       | `overlay-disable !important`                | `responsive`                | Reset overlay styles and javascript            |
 
 </div>
 
@@ -31,7 +31,7 @@ You can overlay that covers the screen with `.overlay-screen`, remember to use a
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Util                  | `.overlay-screen`       | `overlay-screen`                | `responsive`                | Overlay that covers the screen            |
+| Utility                  | `.overlay-screen`       | `overlay-screen`                | `responsive`                | Overlay that covers the screen            |
 
 </div>
 

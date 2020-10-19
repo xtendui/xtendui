@@ -41,7 +41,7 @@ To stack card content **horizontally** wrap them inside `.card-group`.
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
-| Util                  | `.card-group`       | `card-group`                | `responsive`                | Card stack horizontal wrapper           |
+| Utility                  | `.card-group`       | `card-group`                | `responsive`                | Card stack horizontal wrapper           |
 
 </div>
 

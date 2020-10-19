@@ -25,6 +25,8 @@ module.exports = {
       position: 'relative',
       zIndex: theme('zIndex.drop'),
     },
+  }),
+  utility: {
     '.drop-container-static': {
       // setup
       position: 'static',
@@ -37,8 +39,6 @@ module.exports = {
         right: '0 !important',
       },
     },
-  }),
-  utility: {
     '.drop-container-disable': {
       // setup
       '@apply xt-disable': '',

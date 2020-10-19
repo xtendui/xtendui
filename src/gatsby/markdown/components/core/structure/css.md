@@ -50,8 +50,8 @@ These are structure **component classes**.
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
-| Util                  | `.container-reset`       | `container-reset`                | `responsive`                | Reset container styles            |
-| Util                  | `.duration-none`                     | `duration-none`                | `responsive`                | Instant transitions and animations            |
+| Utility                  | `.container-reset`       | `container-reset`                | `responsive`                | Reset container styles            |
+| Utility                  | `.duration-none`                     | `duration-none`                | `responsive`                | Instant transitions and animations            |
 
 </div>
 
@@ -61,7 +61,7 @@ We have also **automatic spacing classes** to reset margin top when `:first-chil
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
-| Util                  | `.mt-fc`                     | `mt-fc`                | `responsive`                | Reset margin top on `:first-child`            |
-| Util                  | `.mb-lc`                     | `mb-lc`                | `responsive`                | Reset margin bottom on `:last-child`            |
+| Utility                  | `.mt-fc`                     | `mt-fc`                | `responsive`                | Reset margin top on `:first-child`            |
+| Utility                  | `.mb-lc`                     | `mb-lc`                | `responsive`                | Reset margin bottom on `:last-child`            |
 
 </div>

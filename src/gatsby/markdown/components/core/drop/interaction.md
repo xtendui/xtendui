@@ -86,13 +86,13 @@ Set drop position with this utils.
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Util                  | `.drop-bottom`       | `drop-bottom`                | `responsive`                | Position bottom            |
-| Util                  | `.drop-top`       | `drop-top`                | `responsive`                | Position top            |
-| Util                  | `.drop-left`       | `drop-left`                | `responsive`                | Position left            |
-| Util                  | `.drop-right`       | `drop-right`                | `responsive`                | Position right            |
-| Util                  | `.drop-center`       | `drop-center`                | `responsive`                | Position center            |
-| Util                  | `.drop-before`       | `drop-before`                | `responsive`                | Position before            |
-| Util                  | `.drop-after`       | `drop-after`                | `responsive`                | Position after            |
+| Utility                  | `.drop-bottom`       | `drop-bottom`                | `responsive`                | Position bottom            |
+| Utility                  | `.drop-top`       | `drop-top`                | `responsive`                | Position top            |
+| Utility                  | `.drop-left`       | `drop-left`                | `responsive`                | Position left            |
+| Utility                  | `.drop-right`       | `drop-right`                | `responsive`                | Position right            |
+| Utility                  | `.drop-center`       | `drop-center`                | `responsive`                | Position center            |
+| Utility                  | `.drop-before`       | `drop-before`                | `responsive`                | Position before            |
+| Utility                  | `.drop-after`       | `drop-after`                | `responsive`                | Position after            |
 
 </div>
 

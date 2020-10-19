@@ -86,7 +86,7 @@ demo.htmlSource = `
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>
-            <div class="">
+            <div class="w-full">
               ${img({ classes: 'object-cover object-center', ratio: '100%' })}
             </div>
             <div class="py-8 px-9">

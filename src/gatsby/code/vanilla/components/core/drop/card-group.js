@@ -27,7 +27,7 @@ demo.htmlSource = `
               <div class="h4">Lorem ipsum</div>
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
             </div>
-            <div class="py-8 px-9 md:w-5/12 rounded-b-md sm:rounded-b-none sm:rounded-r-md bg-gray-400">
+            <div class="py-8 px-9 md:w-5/12 rounded-b-md md:rounded-b-none md:rounded-r-md bg-gray-400">
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
             </div>
           </div>
@@ -47,12 +47,12 @@ demo.htmlSource = `
       <div class="drop-inner">
         <div class="card w-screen max-w-2xl ${cardDefaultDrop()}">
           <div class="md:card-group">
-            <div class="py-8 px-9 md:w-7/12 bg-gray-400 sm:rounded-tl-md">
+            <div class="py-8 px-9 md:w-7/12 bg-gray-400 md:rounded-tl-md">
               <div class="h4">Lorem ipsum</div>
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
             </div>
             <div class="md:w-5/12">
-              <div class="py-8 px-9 bg-gray-500 sm:rounded-tr-md">
+              <div class="py-8 px-9 bg-gray-500 md:rounded-tr-md">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
               </div>
               <div class="py-8 px-9">

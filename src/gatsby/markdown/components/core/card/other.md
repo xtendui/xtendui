@@ -14,7 +14,7 @@ You can disable styles using `.card-disable`.
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Util                  | `.card-disable`       | `card-disable`                | `responsive`                | Reset card styles            |
+| Utility                  | `.card-disable`       | `card-disable`                | `responsive`                | Reset card styles            |
 
 </div>
 

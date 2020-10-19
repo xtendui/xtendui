@@ -14,7 +14,7 @@ You can disable styles and javascript using `.sticky-disable`.
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Util                  | `.sticky-disable`       | `sticky-disable`                | `responsive`                | Disable the slider            |
+| Utility                  | `.sticky-disable`       | `sticky-disable`                | `responsive`                | Disable the slider            |
 
 </div>
 

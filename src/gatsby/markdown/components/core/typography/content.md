@@ -26,8 +26,8 @@ Use **typography variants** to style text color.
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Util                  | `.text-default`       | `text-default`                | `responsive hover`                | Default text and links colors            |
-| Util                  | `.text-inverse`       | `text-inverse`                | `responsive hover`                | Inverse text and links colors            |
+| Utility                  | `.text-default`       | `text-default`                | `responsive hover`                | Default text and links colors            |
+| Utility                  | `.text-inverse`       | `text-inverse`                | `responsive hover`                | Inverse text and links colors            |
 
 </div>
 
@@ -47,13 +47,13 @@ You can use headers **tags or classes**, classes takes precedence with css speci
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Util                  | `h1` or `.h1`       | `h1`                | `responsive`                | Header h1            |
-| Util                  | `h2` or `.h2`       | `h2`                | `responsive`                | Header h2            |
-| Util                  | `h3` or `.h3`       | `h3`                | `responsive`                | Header h3            |
-| Util                  | `h4` or `.h4`       | `h4`                | `responsive`                | Header h4            |
-| Util                  | `h5` or `.h5`       | `h5`                | `responsive`                | Header h5            |
-| Util                  | `h6` or `.h6`       | `h6`                | `responsive`                | Header h6            |
-| Util                  | `.h-block`       | `h-block`                | `responsive`                | Header special block            |
+| Utility                  | `h1` or `.h1`       | `h1`                | `responsive`                | Header h1            |
+| Utility                  | `h2` or `.h2`       | `h2`                | `responsive`                | Header h2            |
+| Utility                  | `h3` or `.h3`       | `h3`                | `responsive`                | Header h3            |
+| Utility                  | `h4` or `.h4`       | `h4`                | `responsive`                | Header h4            |
+| Utility                  | `h5` or `.h5`       | `h5`                | `responsive`                | Header h5            |
+| Utility                  | `h6` or `.h6`       | `h6`                | `responsive`                | Header h6            |
+| Utility                  | `.h-block`       | `h-block`                | `responsive`                | Header special block            |
 
 </div>
 
@@ -74,7 +74,7 @@ You can use paragraph **tags or classes**, classes takes precedence with css spe
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Util                  | `p` or `.p`       | `p`                | `responsive`                | Paragraph            |
+| Utility                  | `p` or `.p`       | `p`                | `responsive`                | Paragraph            |
 
 </div>
 
@@ -119,8 +119,8 @@ These are typography's **component classes**.
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Util                  | `.text-reset`       | `text-reset`                | `responsive`                | Reset text styles            |
-| Util                  | `.ellipsis`       | `ellipsis`                | `responsive`                | Ellipsis text styles            |
-| Util                  | `.lowercase-capitalize`       | `lowercase-capitalize`                | `responsive`                | Text transform lowercase and capitalize first letter            |
+| Utility                  | `.text-reset`       | `text-reset`                | `responsive`                | Reset text styles            |
+| Utility                  | `.ellipsis`       | `ellipsis`                | `responsive`                | Ellipsis text styles            |
+| Utility                  | `.lowercase-capitalize`       | `lowercase-capitalize`                | `responsive`                | Text transform lowercase and capitalize first letter            |
 
 </div>

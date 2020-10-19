@@ -16,7 +16,7 @@ It also hides automatically **pagination** and **navigation** **wrap** and slide
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Util                  | `.slider-disable`       | `slider-disable`                | `responsive`                | Disable the slider            |
+| Utility                  | `.slider-disable`       | `slider-disable`                | `responsive`                | Disable the slider            |
 
 </div>
 
@@ -79,7 +79,7 @@ To disable and expand a slider use `.slider-expand` util.
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Util                  | `.slider-expand`       | `slider-expand`                | `responsive`                | Disable the slider and expand the slides            |
+| Utility                  | `.slider-expand`       | `slider-expand`                | `responsive`                | Disable the slider and expand the slides            |
 
 </div>
 
