@@ -3,18 +3,9 @@
   @apply drop-container-disable !important;
   /* disable additional padding */
   @screen md {
-    > .drop {
-      > .drop-inner {
-        > .card {
-          > .card-block {
-            @apply py-0;
-            > .list-block {
-              > .btn, > * > .btn {
-                @apply px-0;
-              }
-            }
-          }
-        }
+    .list {
+      > .btn, > * > .btn {
+        @apply px-0;
       }
     }
   }

@@ -196,8 +196,8 @@ Xt.mount.push({
         str += ' from <strong>' + e.target.getAttribute('title') + '</strong>'
       } else if (e.target.querySelector(':scope > .btn')) {
         str += ' from <strong>' + e.target.querySelector(':scope > .btn').textContent + '</strong>'
-      } else if (e.target.querySelector('.card-block > *')) {
-        str += ' from <strong>' + e.target.querySelector('.card-block > *').textContent + '</strong>'
+      } else if (e.target.querySelector('.card > *')) {
+        str += ' from <strong>' + e.target.querySelector('.card > *').textContent + '</strong>'
       } else if (e.target.querySelector(':scope > *')) {
         str += ' from <strong>' + e.target.querySelector(':scope > *').textContent + '</strong>'
       } else if (!e.target.querySelector('*')) {
