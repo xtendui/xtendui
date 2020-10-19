@@ -73,7 +73,7 @@ demo.htmlSource = `
                   <div class="card-design"></div>
                   <div class="card-inner">
                     <div class="card-content">
-                      <div class="card-block card-item">
+                      <div class="card-item">
                         <h3 class="h4">
                           Lorem ipsum
                         </h3>
@@ -123,7 +123,7 @@ demo.htmlSource = `
                   <div class="card-design"></div>
                   <div class="card-inner">
                     <div class="card-content">
-                      <div class="card-block card-item">
+                      <div class="card-item">
                         <h3 class="h4">
                           Dolor sit amet
                         </h3>
@@ -173,7 +173,7 @@ demo.htmlSource = `
                   <div class="card-design"></div>
                   <div class="card-inner">
                     <div class="card-content">
-                      <div class="card-block card-item">
+                      <div class="card-item">
                         <h3 class="h4">
                           Consectetur adipiscing elit
                         </h3>
@@ -223,7 +223,7 @@ demo.htmlSource = `
                   <div class="card-design"></div>
                   <div class="card-inner">
                     <div class="card-content">
-                      <div class="card-block card-item">
+                      <div class="card-item">
                         <h3 class="h4">
                           Nam iaculis magna eu consectetur condimentum
                         </h3>

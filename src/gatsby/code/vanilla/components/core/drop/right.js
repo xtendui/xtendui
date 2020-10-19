@@ -22,7 +22,7 @@ demo.htmlSource = `
     <div class="drop md:drop-bottom md:drop-right">
       <div class="drop-inner">
         <div class="card w-screen max-w-sm ${cardDefaultDropList()}">
-          <div class="card-block py-3">
+          <div class="py-3">
             <nav class="list flex-col">
               <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -50,7 +50,7 @@ demo.htmlSource = `
     <div class="drop md:drop-top md:drop-right">
       <div class="drop-inner">
         <div class="card w-screen max-w-sm ${cardDefaultDropList()}">
-          <div class="card-block py-3">
+          <div class="py-3">
             <nav class="list flex-col">
               <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -78,7 +78,7 @@ demo.htmlSource = `
     <div class="drop md:drop-right md:drop-middle">
       <div class="drop-inner">
         <div class="card w-screen max-w-sm ${cardDefaultDropList()}">
-          <div class="card-block py-3">
+          <div class="py-3">
             <nav class="list flex-col">
               <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -106,7 +106,7 @@ demo.htmlSource = `
     <div class="drop md:drop-right md:drop-contain-bottom">
       <div class="drop-inner">
         <div class="card w-screen max-w-sm ${cardDefaultDropList()}">
-          <div class="card-block py-3">
+          <div class="py-3">
             <nav class="list flex-col">
               <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -134,7 +134,7 @@ demo.htmlSource = `
     <div class="drop md:drop-right md:drop-contain-top">
       <div class="drop-inner">
         <div class="card w-screen max-w-sm ${cardDefaultDropList()}">
-          <div class="card-block py-3">
+          <div class="py-3">
             <nav class="list flex-col">
               <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit

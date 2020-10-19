@@ -11,7 +11,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="card ${cardDefault()}">
-  <div class="card-block py-8 px-9">
+  <div class="py-8 px-9">
     <div class="list list-3 flex-no-wrap items-baseline">
       <div>
         ${iconPackage({ classes: 'icon-lg text-2xl' })}

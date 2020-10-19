@@ -14,7 +14,7 @@ demo.htmlSource = `
 
   <div class="w-full md:w-6/12">
     <div class="card ${cardDefaultFull()}">
-      <div class="card-asset rounded-md">
+      <div class="rounded-md">
         ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
       </div>
     </div>
@@ -22,10 +22,10 @@ demo.htmlSource = `
 
   <div class="w-full md:w-6/12">
     <div class="card ${cardDefaultFull()}">
-      <div class="card-asset rounded">
+      <div class="rounded">
         ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
       </div>
-      <div class="card-block py-8 px-0 pb-0">
+      <div class="py-8 px-0 pb-0">
         <div class="h4">Lorem ipsum</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>
@@ -34,13 +34,13 @@ demo.htmlSource = `
 
   <div class="w-full">
     <div class="card ${cardDefaultFull()}">
-      <div class="card-block py-8 px-9 rounded-md bg-gray-500">
+      <div class="py-8 px-9 rounded-md bg-gray-500">
         <div class="h4">Lorem ipsum</div>
       </div>
-      <div class="card-block py-8 px-0">
+      <div class="py-8 px-0">
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>
-      <div class="card-block py-8 px-0 pb-0 pt-0">
+      <div class="py-8 px-0 pb-0 pt-0">
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>
     </div>

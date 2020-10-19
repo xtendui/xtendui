@@ -13,10 +13,10 @@ export default () => {
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
-                <div class="card-asset">
+                <div class="">
                   ${img({})}
                 </div>
-                <div class="card-block card-item">
+                <div class="card-item">
                   <div class="h4">
                     Lorem Ipsum
                   </div>
@@ -34,10 +34,10 @@ export default () => {
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
-                <div class="card-asset">
+                <div class="">
                   ${imgAlt({})}
                 </div>
-                <div class="card-block card-item">
+                <div class="card-item">
                   <div class="h4">
                     Dolor sit amet
                   </div>
@@ -55,10 +55,10 @@ export default () => {
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
-                <div class="card-asset">
+                <div class="">
                   ${img({})}
                 </div>
-                <div class="card-block card-item">
+                <div class="card-item">
                   <div class="h4">
                     Consectetur adipiscing elit
                   </div>
@@ -76,10 +76,10 @@ export default () => {
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
-                <div class="card-asset">
+                <div class="">
                   ${imgAlt({})}
                 </div>
-                <div class="card-block card-item">
+                <div class="card-item">
                   <div class="h4">
                     Lorem Ipsum
                   </div>
@@ -97,10 +97,10 @@ export default () => {
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
-                <div class="card-asset">
+                <div class="">
                   ${img({})}
                 </div>
-                <div class="card-block card-item">
+                <div class="card-item">
                   <div class="h4">
                     Dolor sit amet
                   </div>
@@ -118,10 +118,10 @@ export default () => {
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
-                <div class="card-asset">
+                <div class="">
                   ${imgAlt({})}
                 </div>
-                <div class="card-block card-item">
+                <div class="card-item">
                   <div class="h4">
                     Consectetur adipiscing elit
                   </div>
@@ -139,10 +139,10 @@ export default () => {
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
-                <div class="card-asset">
+                <div class="">
                   ${img({})}
                 </div>
-                <div class="card-block card-item">
+                <div class="card-item">
                   <div class="h4">
                     Lorem Ipsum
                   </div>
@@ -160,10 +160,10 @@ export default () => {
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
-                <div class="card-asset">
+                <div class="">
                   ${imgAlt({})}
                 </div>
-                <div class="card-block card-item">
+                <div class="card-item">
                   <div class="h4">
                     Dolor sit amet
                   </div>
@@ -181,10 +181,10 @@ export default () => {
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
-                <div class="card-asset">
+                <div class="">
                   ${img({})}
                 </div>
-                <div class="card-block card-item">
+                <div class="card-item">
                   <div class="h4">
                     Lorem Ipsum
                   </div>
@@ -202,10 +202,10 @@ export default () => {
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
-                <div class="card-asset">
+                <div class="">
                   ${imgAlt({})}
                 </div>
-                <div class="card-block card-item">
+                <div class="card-item">
                   <div class="h4">
                     Dolor sit amet
                   </div>

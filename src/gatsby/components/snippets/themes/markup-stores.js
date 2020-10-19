@@ -17,10 +17,10 @@ export default () => {
                 <div class="card-design"></div>
                 <div class="card-inner">
                   <div class="card-content">
-                    <div class="card-asset">
+                    <div class="">
                       ${img({})}
                     </div>
-                    <div class="card-block card-item listing-page_content">
+                    <div class="card-item listing-page_content">
                       <div class="h4">
                         Lorem Ipsum
                       </div>
@@ -47,7 +47,7 @@ export default () => {
                 </div>
                 <div class="card-inner">
                   <div class="card-content">
-                    <div class="card-block card-item listing-page_content">
+                    <div class="card-item listing-page_content">
                       <div class="listing-page_subtitle">
                         Contacts
                       </div>
@@ -84,10 +84,10 @@ export default () => {
                 <div class="card-design"></div>
                 <div class="card-inner">
                   <div class="card-content">
-                    <div class="card-asset">
+                    <div class="">
                       ${imgAlt({})}
                     </div>
-                    <div class="card-block card-item listing-page_content">
+                    <div class="card-item listing-page_content">
                       <div class="h4">
                         Dolor sit amet
                       </div>
@@ -114,7 +114,7 @@ export default () => {
                 </div>
                 <div class="card-inner">
                   <div class="card-content">
-                    <div class="card-block card-item listing-page_content">
+                    <div class="card-item listing-page_content">
                       <div class="listing-page_subtitle">
                         Contacts
                       </div>
@@ -151,10 +151,10 @@ export default () => {
                 <div class="card-design"></div>
                 <div class="card-inner">
                   <div class="card-content">
-                    <div class="card-asset">
+                    <div class="">
                       ${img({})}
                     </div>
-                    <div class="card-block card-item listing-page_content">
+                    <div class="card-item listing-page_content">
                       <div class="h4">
                         Consectetur adipiscing elit. Proin molestie diam nec euismod commodo
                       </div>
@@ -181,7 +181,7 @@ export default () => {
                 </div>
                 <div class="card-inner">
                   <div class="card-content">
-                    <div class="card-block card-item listing-page_content">
+                    <div class="card-item listing-page_content">
                       <div class="listing-page_subtitle">
                         Contacts
                       </div>
@@ -218,10 +218,10 @@ export default () => {
                 <div class="card-design"></div>
                 <div class="card-inner">
                   <div class="card-content">
-                    <div class="card-asset">
+                    <div class="">
                       ${img({})}
                     </div>
-                    <div class="card-block card-item listing-page_content">
+                    <div class="card-item listing-page_content">
                       <div class="h4">
                         Lorem Ipsum
                       </div>
@@ -248,7 +248,7 @@ export default () => {
                 </div>
                 <div class="card-inner">
                   <div class="card-content">
-                    <div class="card-block card-item listing-page_content">
+                    <div class="card-item listing-page_content">
                       <div class="listing-page_subtitle">
                         Contacts
                       </div>
@@ -285,10 +285,10 @@ export default () => {
                 <div class="card-design"></div>
                 <div class="card-inner">
                   <div class="card-content">
-                    <div class="card-asset">
+                    <div class="">
                       ${imgAlt({})}
                     </div>
-                    <div class="card-block card-item">
+                    <div class="card-item">
                       <div class="h4">
                         Dolor sit amet
                       </div>
@@ -315,7 +315,7 @@ export default () => {
                 </div>
                 <div class="card-inner">
                   <div class="card-content">
-                    <div class="card-block card-item">
+                    <div class="card-item">
                       <div class="listing-page_subtitle">
                         Contacts
                       </div>
@@ -352,10 +352,10 @@ export default () => {
                 <div class="card-design"></div>
                 <div class="card-inner">
                   <div class="card-content">
-                    <div class="card-asset">
+                    <div class="">
                       ${img({})}
                     </div>
-                    <div class="card-block card-item">
+                    <div class="card-item">
                       <div class="h4">
                         Consectetur adipiscing elit. Proin molestie diam nec euismod commodo
                       </div>
@@ -382,7 +382,7 @@ export default () => {
                 </div>
                 <div class="card-inner">
                   <div class="card-content">
-                    <div class="card-block card-item">
+                    <div class="card-item">
                       <div class="listing-page_subtitle">
                         Contacts
                       </div>

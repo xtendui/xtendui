@@ -21,7 +21,7 @@ export default () => {
               </div>
               <div class="card-inner">
                 <div class="card-content">
-                  <div class="card-asset">
+                  <div class="">
                     ${img({ classes: 'object-cover object-center', ratio: '100%' })}
                   </div>
                 </div>
@@ -63,14 +63,14 @@ export default () => {
                     </button>
                   </div>
                 </div>
-                <div class="card-asset">
+                <div class="">
                   ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
                 </div>
-                <div class="card-block card-item">
+                <div class="card-item">
                   <div class="h4">Lorem ipsum</div>
                   <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
                 </div>
-                <div class="card-block card-item card-block-side"
+                <div class="card-item card-block-side"
                   style="margin-top: auto">
                   <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
                 </div>
@@ -103,7 +103,7 @@ export default () => {
 
                 <div class="card-item-nested card-item card-group-sm card-item--order">
 
-                  <div class="card-block card-item">
+                  <div class="card-item">
 
                     <div class="h4">
                       Contact us
@@ -186,7 +186,7 @@ export default () => {
 
                   <div class="card-item card-block-side sm:w-5/12"
                     style="display: flex; flex-direction: column">
-                    <div class="card-block card-item">
+                    <div class="card-item">
                       <p class="h5">
                         Didn't find what you was looking for?
                       </p>
@@ -194,7 +194,7 @@ export default () => {
                          Contact our customer service at <a href="tel:+39333010101">+39 333 010101</a> or email us at <a href="mailto:info@info.com">info@info.com</a>.
                       </p>
                     </div>
-                    <div class="card-asset"
+                    <div class=""
                       style="margin-top: auto">
                       ${img({ classes: 'object-cover object-center', ratio: '100%', loading: 'eager' })}
                     </div>
@@ -232,12 +232,12 @@ export default () => {
                 <div class="card-item-nested card-item card-group-sm">
 
                   <div class="card-item sm:w-5/12">
-                    <div class="card-asset full-y">
+                    <div class="full-y">
                       ${img({ classes: 'object-cover object-center', ratio: '37.5%', loading: 'eager' })}
                     </div>
                   </div>
 
-                  <div class="card-block card-item">
+                  <div class="card-item">
 
                     <div class="h4">
                       Subscribe to our newsletter
@@ -292,7 +292,7 @@ export default () => {
 
                 </div>
 
-                <div class="card-block card-item card-block-side py-4 px-5 text-sm">
+                <div class="card-item card-block-side py-4 px-5 text-sm">
                   <p>Receive <strong>free discount</strong> periodically on all our products.</p>
                 </div>
 

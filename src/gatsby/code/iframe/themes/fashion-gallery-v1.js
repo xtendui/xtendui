@@ -21,7 +21,7 @@ demo.htmlSource = `
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
-          <div class="card-block card-item">
+          <div class="card-item">
             <div class="h4">Header</div>
           </div>
         </div>
@@ -121,7 +121,7 @@ demo.htmlSource = `
                           </div>
                           <div class="card-inner">
                             <div class="card-content">
-                              <div class="card-asset">
+                              <div class="">
                                 <div class="list flex-col">
                                   <div class="media-container media-container-responsive">
                                     <div class="media-inner">
@@ -220,7 +220,7 @@ demo.htmlSource = `
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
-          <div class="card-block card-item">
+          <div class="card-item">
             <div class="h4">Footer</div>
           </div>
         </div>

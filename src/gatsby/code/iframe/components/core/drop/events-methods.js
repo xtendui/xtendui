@@ -60,7 +60,7 @@ demo.htmlSource = `
     <div class="drop" title="Target 0">
       <div class="drop-inner">
         <div class="card w-screen max-w-sm ${cardDefaultDropList()}">
-          <div class="card-block py-3">
+          <div class="py-3">
             <nav class="list flex-col">
               <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -88,7 +88,7 @@ demo.htmlSource = `
     <div class="drop" title="Target 1">
       <div class="drop-inner">
         <div class="card w-screen max-w-sm ${cardDefaultDropList()}">
-          <div class="card-block py-3">
+          <div class="py-3">
             <nav class="list flex-col">
               <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -110,7 +110,7 @@ demo.htmlSource = `
 </div>
 
 <div class="card ${cardDefault()} mt-6">
-  <div class="card-block py-4 px-5 text-sm overflow-y-auto overflow-x-hidden overflow-sub max-h-56" id="demo--drop-events-log">
+  <div class="py-4 px-5 text-sm overflow-y-auto overflow-x-hidden overflow-sub max-h-56" id="demo--drop-events-log">
   </div>
 </div>
 `
