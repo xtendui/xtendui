@@ -36,11 +36,4 @@ Use this code to create a **card**.
   </demovanilla>
 </demo>
 
-You can add **card content** classes directly to `.card`
-
-<demo>
-  <demovanilla src="vanilla/components/core/card/usage-block">
-  </demovanilla>
-</demo>
-
 Check subpage to [customize content](/components/core/card/content).
