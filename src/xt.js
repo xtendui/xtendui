@@ -6,24 +6,24 @@ import 'xtendui/src/polyfill.js'
 
 export const Xt = {}
 
+//
+// vars
+//
+
+Xt.mount = []
+Xt.unmount = []
+Xt.currents = {} // Xt currents based on namespace (so shared between Xt objects)
+Xt.optionsGlobal = {}
+Xt.resizeDelay = 500
+Xt.scrollDelay = false
+Xt.medialoadedDelay = 500
+Xt.stickyIndex = 800
+Xt.scrollRestoration = 'auto'
+Xt.focusables = 'a, button, details, input, iframe, select, textarea, .btn-close'
+Xt.supportScroll = typeof window === 'undefined' ? false : 'onscroll' in window && !/(gle|ing)bot/.test(navigator.userAgent)
+Xt.debug = typeof window !== 'undefined' && window.process && process.env.NODE_ENV === 'development'
+
 if (typeof window !== 'undefined') {
-  //
-  // vars
-  //
-
-  Xt.debug = window.process && process.env.NODE_ENV === 'development'
-  Xt.mount = []
-  Xt.unmount = []
-  Xt.currents = {} // Xt currents based on namespace (so shared between Xt objects)
-  Xt.optionsGlobal = {}
-  Xt.resizeDelay = 500
-  Xt.scrollDelay = false
-  Xt.medialoadedDelay = 500
-  Xt.stickyIndex = 800
-  Xt.scrollRestoration = 'auto'
-  Xt.focusables = 'a, button, details, input, iframe, select, textarea, .btn-close'
-  Xt.supportScroll = typeof window === 'undefined' ? false : 'onscroll' in window && !/(gle|ing)bot/.test(navigator.userAgent)
-
   //
   // debug
   //
