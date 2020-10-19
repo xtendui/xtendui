@@ -7,7 +7,7 @@ description: "Setup and compilation instructions."
 date: "2018-01-01"
 ---
 
-# WIP pre 1.0 version: api changing fast
+# PORTED TO TAILWIND [xtendui](https://www.npmjs.com/package/xtendui)
 
 ## Installation
 
