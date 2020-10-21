@@ -24,11 +24,9 @@ demo.htmlSource = `
   </header>
 
   <main class="site_main">
-    <div class="card ${cardStickyDefault()}">
-      <div class="card-md">
-        <div class="h4">Main</div>
-        <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-      </div>
+    <div class="card card-md ${cardStickyDefault()}">
+      <div class="h4">Main</div>
+      <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
     </div>
   </main>
 

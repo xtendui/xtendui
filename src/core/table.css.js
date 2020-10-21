@@ -23,9 +23,8 @@ module.exports = {
       // setup
       width: '100%',
       // styles
-      marginTop: theme('spacing.6'),
-      marginBottom: theme('spacing.6'),
-      '@apply mt-fc mb-lc': {},
+      marginBottom: theme('spacing.4'),
+      '@apply mb-lc': {},
     },
     th: {
       // styles

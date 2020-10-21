@@ -49,15 +49,13 @@ class Template extends React.Component {
                           adiacent.frontmatter.demos ? (
                             <div className="gatsby_listing_column" key={i}>
                               <a role="button" className="card gatsby_listing_item" data-gatsby-listing-toggle>
-                                <div className="card-md">
-                                  <div className="h4">
-                                    {adiacent.frontmatter.title
-                                      .split(/[\s-]+/)
-                                      .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
-                                      .join(' ')}
-                                  </div>
-                                  <p>{adiacent.frontmatter.description}</p>
+                                <div className="h4">
+                                  {adiacent.frontmatter.title
+                                    .split(/[\s-]+/)
+                                    .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
+                                    .join(' ')}
                                 </div>
+                                <p>{adiacent.frontmatter.description}</p>
                               </a>
                               {adiacent.frontmatter.demos ? (
                                 <Demo>
@@ -75,24 +73,22 @@ class Template extends React.Component {
                           ) : (
                             <div className="gatsby_listing_column" key={i}>
                               <Link to={markdownSlug(adiacent)} className="card gatsby_listing_item">
-                                <div className="card-md">
-                                  <div className="h4">
-                                    {adiacent.frontmatter.title
-                                      .split(/[\s-]+/)
-                                      .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
-                                      .join(' ')}
-                                  </div>
-                                  <p>
-                                    {adiacent.frontmatter.description
-                                      ? adiacent.frontmatter.description
-                                      : adiacent.frontmatter.parent +
-                                        "'s " +
-                                        adiacent.frontmatter.title
-                                          .split(/[\s-]+/)
-                                          .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
-                                          .join(' ')}
-                                  </p>
+                                <div className="h4">
+                                  {adiacent.frontmatter.title
+                                    .split(/[\s-]+/)
+                                    .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
+                                    .join(' ')}
                                 </div>
+                                <p>
+                                  {adiacent.frontmatter.description
+                                    ? adiacent.frontmatter.description
+                                    : adiacent.frontmatter.parent +
+                                      "'s " +
+                                      adiacent.frontmatter.title
+                                        .split(/[\s-]+/)
+                                        .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
+                                        .join(' ')}
+                                </p>
                               </Link>
                             </div>
                           )

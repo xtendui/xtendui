@@ -16,7 +16,7 @@ module.exports = {
     '.h1': {
       // style
       marginTop: theme('spacing.6'),
-      marginBottom: theme('spacing.2'),
+      marginBottom: theme('spacing.3'),
       '@apply mt-fc mb-lc': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
@@ -31,7 +31,7 @@ module.exports = {
     '.h2': {
       // style
       marginTop: theme('spacing.6'),
-      marginBottom: theme('spacing.2'),
+      marginBottom: theme('spacing.3'),
       '@apply mt-fc mb-lc': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.semibold'),
@@ -46,7 +46,7 @@ module.exports = {
     '.h3': {
       // style
       marginTop: theme('spacing.6'),
-      marginBottom: theme('spacing.2'),
+      marginBottom: theme('spacing.3'),
       '@apply mt-fc mb-lc': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.semibold'),
@@ -60,7 +60,7 @@ module.exports = {
     },
     '.h4': {
       // style
-      marginTop: theme('spacing.6'),
+      marginTop: theme('spacing.4'),
       marginBottom: theme('spacing.2'),
       '@apply mt-fc mb-lc': {},
       fontFamily: theme('fontFamily.sans').toString(),
@@ -72,8 +72,8 @@ module.exports = {
     },
     '.h5': {
       // style
-      marginTop: theme('spacing.6'),
-      marginBottom: theme('spacing.1'),
+      marginTop: theme('spacing.4'),
+      marginBottom: theme('spacing.2'),
       '@apply mt-fc mb-lc': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.semibold'),
@@ -84,8 +84,8 @@ module.exports = {
     },
     '.h6': {
       // style
-      marginTop: theme('spacing.6'),
-      marginBottom: theme('spacing.1'),
+      marginTop: theme('spacing.4'),
+      marginBottom: theme('spacing.2'),
       '@apply mt-fc mb-lc': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.semibold'),
@@ -97,7 +97,7 @@ module.exports = {
     '.h-block': {
       // style
       marginTop: theme('spacing.6'),
-      marginBottom: theme('spacing.2'),
+      marginBottom: theme('spacing.6'),
       '@apply mt-fc mb-lc': {},
       paddingTop: theme('spacing.3'),
       paddingBottom: theme('spacing.3'),

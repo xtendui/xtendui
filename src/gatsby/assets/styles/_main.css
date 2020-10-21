@@ -183,17 +183,12 @@ body {
 }
 
 .gatsby_listing_item {
-  &.card {
-    @apply p-6 text-xs text-default rounded-md transform hover:text-inverse hover:bg-accent-500 hover:shadow-xl hover:-translate-y-2 active:text-inverse active:bg-accent-600 active:shadow-md active:-translate-y-1;
-    > * {
-      @apply p-0;
-      .h4 {
-        @apply mb-1.5 mt-fc mb-lc;
-        font-size: 1rem;
-      }
-      p {
-        opacity: 0.5;
-      }
-    }
+  @apply p-6 text-xs text-default rounded-md transform hover:text-inverse hover:bg-accent-500 hover:shadow-xl hover:-translate-y-2 active:text-inverse active:bg-accent-600 active:shadow-md active:-translate-y-1;
+  .h4 {
+    @apply mb-1.5 mt-fc mb-lc;
+    font-size: 1rem;
+  }
+  p {
+    opacity: 0.5;
   }
 }

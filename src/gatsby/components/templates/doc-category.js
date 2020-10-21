@@ -52,30 +52,26 @@ class Template extends React.Component {
                           post.frontmatter.link ? (
                             <div className="gatsby_listing_column" key={z}>
                               <a href={post.frontmatter.link} target="_blank" rel="noreferrer" className="card gatsby_listing_item">
-                                <div className="card-md">
-                                  <div className="h4">
-                                    {post.frontmatter.title
-                                      .split(/[\s-]+/)
-                                      .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
-                                      .join(' ')}
-                                  </div>
-                                  <p>{post.frontmatter.description}</p>
+                                <div className="h4">
+                                  {post.frontmatter.title
+                                    .split(/[\s-]+/)
+                                    .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
+                                    .join(' ')}
                                 </div>
+                                <p>{post.frontmatter.description}</p>
                               </a>
                             </div>
                           ) : post.frontmatter.parent === post.frontmatter.title ? (
                             <div className="gatsby_listing_column" key={z}>
                               <Link to={markdownSlug(post)} className="card gatsby_listing_item">
-                                <div className="card-md">
-                                  <div className="h4">
-                                    {post.frontmatter.title
-                                      .split(/[\s-]+/)
-                                      .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
-                                      .join(' ')}
-                                  </div>
-                                  <p>{post.frontmatter.description}</p>
-                                  {post.frontmatter.link}
+                                <div className="h4">
+                                  {post.frontmatter.title
+                                    .split(/[\s-]+/)
+                                    .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
+                                    .join(' ')}
                                 </div>
+                                <p>{post.frontmatter.description}</p>
+                                {post.frontmatter.link}
                               </Link>
                             </div>
                           ) : null

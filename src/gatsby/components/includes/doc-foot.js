@@ -34,12 +34,10 @@ class DocFoot extends React.Component {
               {page.post.frontmatter.type !== 'Introduction' && postsIntroduction ? (
                 <div className="gatsby_listing_column">
                   <Link to={'/'} className="card gatsby_listing_item">
-                    <div className="card-md">
-                      <div className="h4">Setup or other problems?</div>
-                      <p>
-                        Check out the <strong>Getting Started</strong> pages.
-                      </p>
-                    </div>
+                    <div className="h4">Setup or other problems?</div>
+                    <p>
+                      Check out the <strong>Getting Started</strong> pages.
+                    </p>
                   </Link>
                 </div>
               ) : null}
@@ -47,16 +45,14 @@ class DocFoot extends React.Component {
               {page.post.frontmatter.category !== 'Core' && page.post.frontmatter.category !== 'Core' && postsCore.length ? (
                 <div className="gatsby_listing_column">
                   <Link to={'/components/core/' + kebabCase(page.post.frontmatter.parent)} className="card gatsby_listing_item">
-                    <div className="card-md">
-                      <div className="h4">Visit the Core pages</div>
-                      <p>
-                        There {postsCore.length === 1 ? 'is' : 'are'}{' '}
-                        <strong>
-                          {postsCore.length} core page{postsAddons.length === 1 ? '' : 's'}{' '}
-                        </strong>{' '}
-                        for {page.post.frontmatter.parent}.
-                      </p>
-                    </div>
+                    <div className="h4">Visit the Core pages</div>
+                    <p>
+                      There {postsCore.length === 1 ? 'is' : 'are'}{' '}
+                      <strong>
+                        {postsCore.length} core page{postsAddons.length === 1 ? '' : 's'}{' '}
+                      </strong>{' '}
+                      for {page.post.frontmatter.parent}.
+                    </p>
                   </Link>
                 </div>
               ) : null}
@@ -64,16 +60,14 @@ class DocFoot extends React.Component {
               {page.post.frontmatter.type !== 'Addons' && page.post.frontmatter.category !== 'Addons' && postsAddons.length ? (
                 <div className="gatsby_listing_column">
                   <Link to={'/components/addons/' + kebabCase(page.post.frontmatter.parent)} className="card gatsby_listing_item">
-                    <div className="card-md">
-                      <div className="h4">Visit the Addons page</div>
-                      <p>
-                        There {postsAddons.length === 1 ? 'is' : 'are'}{' '}
-                        <strong>
-                          {postsAddons.length} addon{postsAddons.length === 1 ? '' : 's'}{' '}
-                        </strong>
-                        for {page.post.frontmatter.parent}.
-                      </p>
-                    </div>
+                    <div className="h4">Visit the Addons page</div>
+                    <p>
+                      There {postsAddons.length === 1 ? 'is' : 'are'}{' '}
+                      <strong>
+                        {postsAddons.length} addon{postsAddons.length === 1 ? '' : 's'}{' '}
+                      </strong>
+                      for {page.post.frontmatter.parent}.
+                    </p>
                   </Link>
                 </div>
               ) : null}
@@ -81,16 +75,14 @@ class DocFoot extends React.Component {
               {page.post.frontmatter.type !== 'Themes' && postsThemes.length ? (
                 <div className="gatsby_listing_column">
                   <Link to={'/themes/' + kebabCase(page.post.frontmatter.parent)} className="card gatsby_listing_item">
-                    <div className="card-md">
-                      <div className="h4">Visit the Theme page</div>
-                      <p>
-                        There {postsThemes.length === 1 ? 'is' : 'are'}{' '}
-                        <strong>
-                          {postsThemes.length} theme{postsThemes.length === 1 ? '' : 's'}{' '}
-                        </strong>
-                        for {page.post.frontmatter.parent}.
-                      </p>
-                    </div>
+                    <div className="h4">Visit the Theme page</div>
+                    <p>
+                      There {postsThemes.length === 1 ? 'is' : 'are'}{' '}
+                      <strong>
+                        {postsThemes.length} theme{postsThemes.length === 1 ? '' : 's'}{' '}
+                      </strong>
+                      for {page.post.frontmatter.parent}.
+                    </p>
                   </Link>
                 </div>
               ) : null}
