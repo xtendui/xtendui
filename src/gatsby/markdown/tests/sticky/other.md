@@ -8,7 +8,7 @@ date: "2005-10-10"
 
 ## Disable
 
-You can disable styles and javascript using `.sticky-disable`.
+Use **component utility** `.sticky-disable` to disable styles and javascript.
 
 <div class="table-scroll">
 

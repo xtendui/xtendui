@@ -16,11 +16,11 @@ module.exports = {
   theme:{
     xtendui: {
       structure: {
-        component: theme => ({
-          // modify components
-        }),
         utility: theme => ({
           // modify utilities
+        }),
+        component: theme => ({
+          // modify components
         }),
       },
     },

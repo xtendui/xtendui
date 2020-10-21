@@ -31,15 +31,15 @@ Use [typography variant](/components/core/typography/content#variant) to style i
 
 ## Size
 
-Use **component classes** to assign size (e.g. [font-size](https://tailwindcss.com/docs/font-size), [stroke-width](https://tailwindcss.com/docs/stroke-width)).
+Use **component utility** to assign size. You can add **additional size** for example `.icon-xs`.
 
 <div class="table-scroll">
 
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.icon-sm`                     | `icon-sm`                | Size small            |
-| Component                  | `.icon-md`                     | `icon-md`                | Size medium            |
-| Component                  | `.icon-lg`                     | `icon-lg`                | Size large            |
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
+| Utility                  | `.icon-sm`       | `icon-sm`                | `responsive`                | Size small            |
+| Utility                  | `.icon-md`       | `icon-md`                | `responsive`                | Size medium            |
+| Utility                  | `.icon-lg`       | `icon-lg`                | `responsive`                | Size large            |
 
 </div>
 
@@ -51,7 +51,7 @@ Use **component classes** to assign size (e.g. [font-size](https://tailwindcss.c
   </demovanilla>
 </demo>
 
-You can add **additional size** for example `.icon-xs`.
+Otherwise use **tailwind classes** to assign size (e.g. [font-size](https://tailwindcss.com/docs/font-size), [stroke-width](https://tailwindcss.com/docs/stroke-width)).
 
 ## Button
 

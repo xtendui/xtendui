@@ -35,7 +35,7 @@ Card content **stack vertically**. Use **tailwind classes** to assign styles (e.
 
 ## Group
 
-To stack card content **horizontally** wrap them inside `.card-group`.
+Use **component utility** `.card-group` to stack card content **horizontally**.
 
 <div class="table-scroll">
 

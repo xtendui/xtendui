@@ -6,6 +6,45 @@ const round = num =>
 const rem = px => `${round(px / 16)}rem`
 
 module.exports = {
+  utility: {
+    '.slider-disable': {
+      // setup
+      '@apply xt-disable-after-init': '',
+      '.slider-pagination, [data-xt-nav]': {
+        display: 'none !important',
+      },
+      '.xt-wrap': {
+        visibility: 'hidden !important',
+        opacity: '0 !important',
+      },
+      // @FIX do calculation first
+      '&.xt-disabled': {
+        '.slide:not(.active)': {
+          visibility: 'hidden !important',
+          opacity: '0 !important',
+          height: '0 !important',
+        },
+      },
+    },
+    '.slider-expand': {
+      // setup
+      '@apply xt-disable': '',
+      '.slides': {
+        overflow: 'visible',
+        height: 'auto !important',
+      },
+      '.slides-inner': {
+        '@apply duration-none transform-none animate-none !important': '',
+        flexWrap: 'wrap !important',
+      },
+      '.slide:not(.active)': {
+        opacity: '1 !important',
+      },
+      '.xt-wrap, .slider-pagination, [data-xt-nav], .loader, .filler, .spinner': {
+        display: 'none !important',
+      },
+    },
+  },
   component: theme => ({
     '.slider': {
       // setup
@@ -92,43 +131,4 @@ module.exports = {
       },
     },
   }),
-  utility: {
-    '.slider-disable': {
-      // setup
-      '@apply xt-disable-after-init': '',
-      '.slider-pagination, [data-xt-nav]': {
-        display: 'none !important',
-      },
-      '.xt-wrap': {
-        visibility: 'hidden !important',
-        opacity: '0 !important',
-      },
-      // @FIX do calculation first
-      '&.xt-disabled': {
-        '.slide:not(.active)': {
-          visibility: 'hidden !important',
-          opacity: '0 !important',
-          height: '0 !important',
-        },
-      },
-    },
-    '.slider-expand': {
-      // setup
-      '@apply xt-disable': '',
-      '.slides': {
-        overflow: 'visible',
-        height: 'auto !important',
-      },
-      '.slides-inner': {
-        '@apply duration-none transform-none animate-none !important': '',
-        flexWrap: 'wrap !important',
-      },
-      '.slide:not(.active)': {
-        opacity: '1 !important',
-      },
-      '.xt-wrap, .slider-pagination, [data-xt-nav], .loader, .filler, .spinner': {
-        display: 'none !important',
-      },
-    },
-  },
 }

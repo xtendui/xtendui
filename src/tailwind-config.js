@@ -140,11 +140,5 @@ module.exports = {
     translate: ({ after }) => after(['active'], 'hover'),
     skew: ({ after }) => after(['active'], 'hover'),
   },
-  experimental: {
-    purgeLayersByDefault: true,
-    defaultLineHeights: true,
-    applyComplexClasses: true,
-    extendedSpacingScale: true,
-  },
   plugins: [require('./tailwind-plugin')],
 }

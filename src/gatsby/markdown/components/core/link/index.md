@@ -15,11 +15,11 @@ module.exports = {
   theme:{
     xtendui: {
       link: {
-        component: theme => ({
-          // modify components
-        }),
         utility: theme => ({
           // modify utilities
+        }),
+        component: theme => ({
+          // modify components
         }),
       },
     },

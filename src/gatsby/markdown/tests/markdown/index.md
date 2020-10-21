@@ -112,7 +112,9 @@ See [mouse follow addon](/components/core/loader) to create a loader with mouse 
 
 </div>
 
-For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/customizing-spacing).
+Use **component utility** `.row-<space>` to space content.
+
+For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/customizing-spacing) up to 10.
 
 <div class="table-scroll">
 

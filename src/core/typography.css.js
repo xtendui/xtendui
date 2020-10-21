@@ -6,115 +6,6 @@ const round = num =>
 const rem = px => `${round(px / 16)}rem`
 
 module.exports = {
-  component: theme => ({
-    html: {
-      // base rem value
-      fontSize: rem(14),
-      '@screen sm': {
-        fontSize: rem(15.5), // odd number with .5 to fix chrome alignment
-      },
-      '@screen md': {
-        fontSize: rem(16),
-      },
-      '@screen xl': {
-        fontSize: rem(17.5), // odd number with .5 to fix chrome alignment
-      },
-      // style
-      '@apply text-default': '',
-      lineHeight: 1.8,
-    },
-    body: {
-      // style
-      '@apply text-base': '',
-    },
-    h1: {
-      // setup
-      '@apply h1': '',
-    },
-    h2: {
-      // setup
-      '@apply h2': '',
-    },
-    h3: {
-      // setup
-      '@apply h3': '',
-    },
-    h4: {
-      // setup
-      '@apply h4': '',
-    },
-    h5: {
-      // setup
-      '@apply h5': '',
-    },
-    h6: {
-      // setup
-      '@apply h6': '',
-    },
-    p: {
-      // setup
-      '@apply p': '',
-      // @FIX NESTED APPLY
-      '@apply text-reset mt-fc mb-lc': {},
-    },
-    strong: {
-      fontWeight: theme('fontWeight.semibold'),
-    },
-    'ul:not([class]), ol:not([class])': {
-      // style
-      marginBottom: theme('spacing.3'),
-      '@apply mb-lc': {},
-      '> li': {
-        position: 'relative',
-        marginBottom: theme('spacing.3'),
-        '@apply mb-lc': {},
-        '&:before': {
-          position: 'absolute',
-          display: 'inline-block',
-          left: '0',
-        },
-        '> ul:not([class]), > ol:not([class])': {
-          marginTop: theme('spacing.3'),
-        },
-      },
-    },
-    'ul:not([class])': {
-      // style
-      '> li': {
-        paddingLeft: '1.25rem',
-        '&:before': {
-          content: '"\\2022"',
-          color: theme('colors.gray.600'),
-        },
-      },
-    },
-    'ol:not([class])': {
-      // style
-      '> li': {
-        counterIncrement: 'ol-counter',
-        paddingLeft: '1.5rem',
-        '&:before': {
-          content: 'counter(ol-counter) "."',
-          color: theme('colors.gray.600'),
-        },
-      },
-    },
-    hr: {
-      marginTop: theme('spacing.6'),
-      marginBottom: theme('spacing.6'),
-      '@apply mt-fc mb-lc': {},
-    },
-    'figure, .figure': {
-      marginTop: theme('spacing.6'),
-      marginBottom: theme('spacing.6'),
-      '@apply mt-fc mb-lc': {},
-    },
-    'figcaption, .figcaption': {
-      marginTop: theme('spacing.3'),
-      fontSize: rem(14),
-      lineHeight: theme('lineHeight.snug'),
-    },
-  }),
   utility: theme => ({
     '.text-default': {
       color: theme('colors.black'),
@@ -250,6 +141,115 @@ module.exports = {
       '&:first-letter': {
         textTransform: 'uppercase',
       },
+    },
+  }),
+  component: theme => ({
+    html: {
+      // base rem value
+      fontSize: rem(14),
+      '@screen sm': {
+        fontSize: rem(15.5), // odd number with .5 to fix chrome alignment
+      },
+      '@screen md': {
+        fontSize: rem(16),
+      },
+      '@screen xl': {
+        fontSize: rem(17.5), // odd number with .5 to fix chrome alignment
+      },
+      // style
+      '@apply text-default': '',
+      lineHeight: 1.8,
+    },
+    body: {
+      // style
+      '@apply text-base': '',
+    },
+    h1: {
+      // setup
+      '@apply h1': '',
+    },
+    h2: {
+      // setup
+      '@apply h2': '',
+    },
+    h3: {
+      // setup
+      '@apply h3': '',
+    },
+    h4: {
+      // setup
+      '@apply h4': '',
+    },
+    h5: {
+      // setup
+      '@apply h5': '',
+    },
+    h6: {
+      // setup
+      '@apply h6': '',
+    },
+    p: {
+      // setup
+      '@apply p': '',
+      // @FIX NESTED APPLY
+      '@apply mb-lc': {},
+    },
+    strong: {
+      fontWeight: theme('fontWeight.semibold'),
+    },
+    'ul:not([class]), ol:not([class])': {
+      // style
+      marginBottom: theme('spacing.3'),
+      '@apply mb-lc': {},
+      '> li': {
+        position: 'relative',
+        marginBottom: theme('spacing.3'),
+        '@apply mb-lc': {},
+        '&:before': {
+          position: 'absolute',
+          display: 'inline-block',
+          left: '0',
+        },
+        '> ul:not([class]), > ol:not([class])': {
+          marginTop: theme('spacing.3'),
+        },
+      },
+    },
+    'ul:not([class])': {
+      // style
+      '> li': {
+        paddingLeft: '1.25rem',
+        '&:before': {
+          content: '"\\2022"',
+          color: theme('colors.gray.600'),
+        },
+      },
+    },
+    'ol:not([class])': {
+      // style
+      '> li': {
+        counterIncrement: 'ol-counter',
+        paddingLeft: '1.5rem',
+        '&:before': {
+          content: 'counter(ol-counter) "."',
+          color: theme('colors.gray.600'),
+        },
+      },
+    },
+    hr: {
+      marginTop: theme('spacing.6'),
+      marginBottom: theme('spacing.6'),
+      '@apply mt-fc mb-lc': {},
+    },
+    'figure, .figure': {
+      marginTop: theme('spacing.6'),
+      marginBottom: theme('spacing.6'),
+      '@apply mt-fc mb-lc': {},
+    },
+    'figcaption, .figcaption': {
+      marginTop: theme('spacing.3'),
+      fontSize: rem(14),
+      lineHeight: theme('lineHeight.snug'),
     },
   }),
 }

@@ -6,6 +6,23 @@ const round = num =>
 const rem = px => `${round(px / 16)}rem`
 
 module.exports = {
+  utility: {
+    '.badge-sm': {
+      // styles
+      padding: `${rem(6)} ${rem(10)}`,
+      fontSize: rem(10),
+    },
+    '.badge-md': {
+      // styles
+      padding: `${rem(8)} ${rem(14)}`,
+      fontSize: rem(12),
+    },
+    '.badge-lg': {
+      // styles
+      padding: `${rem(10)} ${rem(18)}`,
+      fontSize: rem(14),
+    },
+  },
   component: theme => ({
     '.badge': {
       // setup
@@ -28,21 +45,6 @@ module.exports = {
           transitionTimingFunction: theme('transitionTimingFunction.in'),
         },
       },
-    },
-    '.badge-sm': {
-      // styles
-      padding: `${rem(6)} ${rem(10)}`,
-      fontSize: rem(10),
-    },
-    '.badge-md': {
-      // styles
-      padding: `${rem(8)} ${rem(14)}`,
-      fontSize: rem(12),
-    },
-    '.badge-lg': {
-      // styles
-      padding: `${rem(10)} ${rem(18)}`,
-      fontSize: rem(14),
     },
   }),
 }

@@ -6,6 +6,23 @@ const round = num =>
 const rem = px => `${round(px / 16)}rem`
 
 module.exports = {
+  utility: {
+    '.btn-sm': {
+      // styles
+      padding: `${rem(7)} ${rem(11)}`,
+      fontSize: rem(10),
+    },
+    '.btn-md': {
+      // styles
+      padding: `${rem(9)} ${rem(15)}`,
+      fontSize: rem(12),
+    },
+    '.btn-lg': {
+      // styles
+      padding: `${rem(11)} ${rem(19)}`,
+      fontSize: rem(14),
+    },
+  },
   component: theme => ({
     '.btn': {
       // setup
@@ -32,21 +49,6 @@ module.exports = {
         zIndex: theme('zIndex.active'),
         transitionTimingFunction: theme('transitionTimingFunction.in'),
       },
-    },
-    '.btn-sm': {
-      // styles
-      padding: `${rem(7)} ${rem(11)}`,
-      fontSize: rem(10),
-    },
-    '.btn-md': {
-      // styles
-      padding: `${rem(9)} ${rem(15)}`,
-      fontSize: rem(12),
-    },
-    '.btn-lg': {
-      // styles
-      padding: `${rem(11)} ${rem(19)}`,
-      fontSize: rem(14),
     },
     '.btn-close': {
       // setup

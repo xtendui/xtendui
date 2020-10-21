@@ -69,11 +69,11 @@ module.exports = {
   theme:{
     xtendui: {
       typography: {
-        component: theme => ({
-          // modify components
-        }),
         utility: theme => ({
           // modify utilities
+        }),
+        component: theme => ({
+          // modify components
         }),
       },
     },

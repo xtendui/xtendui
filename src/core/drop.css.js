@@ -1,31 +1,4 @@
 module.exports = {
-  component: theme => ({
-    '.drop-container': {
-      // setup
-      position: 'relative',
-    },
-    '.drop': {
-      // setup
-      '@apply toggle': '',
-      position: 'absolute',
-      zIndex: 'inherit',
-      transitionDuration: 'inherit',
-      '&.in': {
-        zIndex: theme('zIndex.drop'),
-      },
-      '&.out': {
-        zIndex: theme('zIndex.drop') - 1,
-      },
-      // styles
-      '@apply drop-left drop-bottom': '',
-      padding: theme('spacing.2'),
-    },
-    '.drop-inner': {
-      // setup
-      position: 'relative',
-      zIndex: theme('zIndex.drop'),
-    },
-  }),
   utility: {
     '.drop-container-static': {
       // setup
@@ -139,4 +112,31 @@ module.exports = {
       bottom: 'auto',
     },
   },
+  component: theme => ({
+    '.drop-container': {
+      // setup
+      position: 'relative',
+    },
+    '.drop': {
+      // setup
+      '@apply toggle': '',
+      position: 'absolute',
+      zIndex: 'inherit',
+      transitionDuration: 'inherit',
+      '&.in': {
+        zIndex: theme('zIndex.drop'),
+      },
+      '&.out': {
+        zIndex: theme('zIndex.drop') - 1,
+      },
+      // styles
+      '@apply drop-left drop-bottom': '',
+      padding: theme('spacing.2'),
+    },
+    '.drop-inner': {
+      // setup
+      position: 'relative',
+      zIndex: theme('zIndex.drop'),
+    },
+  }),
 }

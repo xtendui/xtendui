@@ -1,4 +1,32 @@
 module.exports = {
+  utility: theme => ({
+    '.container-reset': {
+      // setup
+      padding: 0,
+      width: 'auto',
+      maxWidth: 'none',
+    },
+    '.duration-none': {
+      // setup
+      transitionDuration: 'initial',
+      transitionDelay: 'initial',
+      animationDuration: 'initial',
+      animationDelay: 'initial',
+      animationIterationCount: '1',
+    },
+    '.mt-fc': {
+      // setup
+      '&:first-child': {
+        marginTop: theme('spacing.0'),
+      },
+    },
+    '.mb-lc': {
+      // setup
+      '&:last-child': {
+        marginBottom: theme('spacing.0'),
+      },
+    },
+  }),
   component: theme => ({
     html: {
       // setup
@@ -99,33 +127,5 @@ module.exports = {
       },
     },
     ...require('./structurejs.css.js').component(theme),
-  }),
-  utility: theme => ({
-    '.container-reset': {
-      // setup
-      padding: 0,
-      width: 'auto',
-      maxWidth: 'none',
-    },
-    '.duration-none': {
-      // setup
-      transitionDuration: 'initial',
-      transitionDelay: 'initial',
-      animationDuration: 'initial',
-      animationDelay: 'initial',
-      animationIterationCount: '1',
-    },
-    '.mt-fc': {
-      // setup
-      '&:first-child': {
-        marginTop: theme('spacing.0'),
-      },
-    },
-    '.mb-lc': {
-      // setup
-      '&:last-child': {
-        marginBottom: theme('spacing.0'),
-      },
-    },
   }),
 }

@@ -29,24 +29,24 @@ Use [typography variant](/components/core/typography/content#variant) to style t
 
 ## Size
 
-Use **component classes** to assign size (e.g. [padding](https://tailwindcss.com/docs/padding), [font-size](https://tailwindcss.com/docs/font-size)).
+Use **component utility** to assign size. You can add **additional size** for example `.btn-xs` or `.btn-xl`.
 
 <div class="table-scroll">
 
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.btn-sm`                     | `btn-sm`                | Size small            |
-| Component                  | `.btn-md`                     | `btn-md`                | Size medium            |
-| Component                  | `.btn-lg`                     | `btn-lg`                | Size large            |
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
+| Utility                  | `.btn-sm`       | `btn-sm`                | `responsive`                | Size small            |
+| Utility                  | `.btn-md`       | `btn-md`                | `responsive`                | Size medium            |
+| Utility                  | `.btn-lg`       | `btn-lg`                | `responsive`                | Size large            |
 
 </div>
+
+Otherwise use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/docs/padding), [font-size](https://tailwindcss.com/docs/font-size)).
 
 <demo>
   <demovanilla src="vanilla/components/core/button/size">
   </demovanilla>
 </demo>
-
-You can add **additional size** for example `.btn-xs` or `.btn-xl`.
 
 ## Icons and Alignment
 

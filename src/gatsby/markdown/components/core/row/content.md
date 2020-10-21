@@ -8,7 +8,9 @@ date: "2030-10-10"
 
 ## Space
 
-For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/customizing-spacing).
+Use **component utility** `.row-<space>` to space content.
+
+For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/customizing-spacing) up to 10.
 
 <div class="table-scroll">
 

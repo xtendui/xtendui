@@ -1,27 +1,4 @@
 module.exports = {
-  component: theme => ({
-    '.card': {
-      // setup
-      position: 'relative',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'stretch',
-      justifyContent: 'flex-start',
-      flex: '1 1 auto',
-      width: '100%',
-      // animation
-      'a&, button&, label&': {
-        zIndex: theme('zIndex.base'),
-        transitionProperty: 'all',
-        transitionDuration: theme('transitionDuration.500'),
-        transitionTimingFunction: theme('transitionTimingFunction.out'),
-        '&:hover, &:active, &.active': {
-          zIndex: theme('zIndex.active'),
-          transitionTimingFunction: theme('transitionTimingFunction.in'),
-        },
-      },
-    },
-  }),
   utility: {
     '.card-group': {
       // setup
@@ -45,4 +22,27 @@ module.exports = {
       },
     },
   },
+  component: theme => ({
+    '.card': {
+      // setup
+      position: 'relative',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'stretch',
+      justifyContent: 'flex-start',
+      flex: '1 1 auto',
+      width: '100%',
+      // animation
+      'a&, button&, label&': {
+        zIndex: theme('zIndex.base'),
+        transitionProperty: 'all',
+        transitionDuration: theme('transitionDuration.500'),
+        transitionTimingFunction: theme('transitionTimingFunction.out'),
+        '&:hover, &:active, &.active': {
+          zIndex: theme('zIndex.active'),
+          transitionTimingFunction: theme('transitionTimingFunction.in'),
+        },
+      },
+    },
+  }),
 }
