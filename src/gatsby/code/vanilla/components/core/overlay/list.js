@@ -21,14 +21,14 @@ demo.htmlSource = `
     </button>
 
     <div class="overlay">
-      <div class="overlay-container max-w-5xl">
+      <div class="overlay-container max-w-3xl">
         <div class="overlay-inner">
 
           <div class="card ${cardDefaultOverlay()}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>
-            <div class="py-8 px-9">
+            <div class="card-md">
               <div class="list list-3 flex-no-wrap items-baseline">
                 <div>
                   ${iconPackage({ classes: 'icon-lg text-2xl' })}

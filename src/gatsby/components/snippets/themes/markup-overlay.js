@@ -292,7 +292,7 @@ export default () => {
 
                 </div>
 
-                <div class="card-item card-block-side py-4 px-5 text-sm">
+                <div class="card-item card-block-side card-sm">
                   <p>Receive <strong>free discount</strong> periodically on all our products.</p>
                 </div>
 

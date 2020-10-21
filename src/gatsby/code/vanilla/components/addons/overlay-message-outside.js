@@ -24,21 +24,21 @@ demo.htmlSource = `
       <div class="demo--overlay-message-outside right-0">
         <div class="w-10/12 lg:w-8/12">
           <div class="card ${cardDefault()}">
-            <div class="py-8 px-9">
+            <div class="card-md">
               <div class="h4">Lorem ipsum</div>
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="overlay-container w-screen max-w-md ml-0 mr-auto">
+      <div class="overlay-container w-80 ml-0 mr-auto">
         <div class="overlay-inner">
 
           <div class="card ${cardDefaultOverlayScreen()}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>
-            <div class="py-10 px-11">
+            <div class="card-lg">
               <div class="h3">Lorem ipsum</div>
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
               <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
@@ -63,21 +63,21 @@ demo.htmlSource = `
       <div class="demo--overlay-message-outside left-0">
         <div class="w-10/12 lg:w-8/12">
           <div class="card ${cardDefault()}">
-            <div class="py-8 px-9">
+            <div class="card-md">
               <div class="h4">Lorem ipsum</div>
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="overlay-container w-screen max-w-md ml-auto mr-0">
+      <div class="overlay-container w-80 ml-auto mr-0">
         <div class="overlay-inner">
 
           <div class="card ${cardDefaultOverlayScreen()}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>
-            <div class="py-10 px-11">
+            <div class="card-lg">
               <div class="h3">Lorem ipsum</div>
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
               <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>

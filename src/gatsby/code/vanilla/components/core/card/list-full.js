@@ -11,7 +11,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="card ${cardDefaultfull()}">
-  <div class="p-0">
+  <div class="card-md p-0">
     <div class="list list-3 flex-no-wrap items-baseline">
       <div>
         ${iconPackage({ classes: 'icon-lg text-2xl' })}

@@ -72,20 +72,18 @@ Xt.mount.push({
 
           <div class="drop" title="Target ${indexEl}">
             <div class="drop-inner">
-              <div class="card w-screen max-w-sm ${cardDefaultDropList()}">
-                <div class="py-3">
-                  <nav class="list flex-col">
-                    <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                    </a>
-                    <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
-                      Dolor sit
-                    </button>
-                    <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
-                      Amet
-                    </button>
-                  </nav>
-                </div>
+              <div class="w-64 py-3 ${cardDefaultDropList()}">
+                <nav class="list flex-col">
+                  <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                  </a>
+                  <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+                    Dolor sit
+                  </button>
+                  <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+                    Amet
+                  </button>
+                </nav>
               </div>
             </div>
           </div>

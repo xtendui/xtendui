@@ -29,7 +29,7 @@ demo.htmlSource = `
             <div class="btn btn-close p-5 ${btnCloseOutside()} md:p-2 md:right-auto md:left-100" aria-label="Close">
               ${iconX()}
             </div>
-            <div class="py-10 px-11 text-lg">
+            <div class="card-lg">
               <div class="h2">Lorem ipsum</div>
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
               <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
@@ -51,14 +51,14 @@ demo.htmlSource = `
     </button>
 
     <div class="overlay overlay-screen">
-      <div class="overlay-container w-screen max-w-md ml-0 mr-auto">
+      <div class="overlay-container w-80 ml-0 mr-auto">
         <div class="overlay-inner">
 
           <div class="card ${cardDefaultOverlayScreen()}">
             <div class="btn btn-close p-5 ${btnCloseOutside()} md:p-2 md:right-auto md:left-100" aria-label="Close">
               ${iconX()}
             </div>
-            <div class="py-10 px-11">
+            <div class="card-lg">
               <div class="h3">Lorem ipsum</div>
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
               <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
@@ -80,14 +80,14 @@ demo.htmlSource = `
     </button>
 
     <div class="overlay overlay-screen">
-      <div class="overlay-container w-screen max-w-md ml-auto mr-0">
+      <div class="overlay-container w-80 ml-auto mr-0">
         <div class="overlay-inner">
 
           <div class="card ${cardDefaultOverlayScreen()}">
             <div class="btn btn-close p-5 ${btnCloseOutside()} md:p-2 md:left-auto md:right-100" aria-label="Close">
               ${iconX()}
             </div>
-            <div class="py-10 px-11">
+            <div class="card-lg">
               <div class="h3">Lorem ipsum</div>
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
               <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>

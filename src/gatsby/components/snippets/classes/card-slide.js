@@ -1,3 +1,3 @@
 export default () => {
-  return `py-8 px-9 items-center justify-center text-default rounded-md bg-gray-200`
+  return `card-md items-center justify-center text-default rounded-md bg-gray-200`
 }

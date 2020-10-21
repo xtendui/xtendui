@@ -15,9 +15,6 @@ module.exports = {
   theme:{
     xtendui: {
       badge: {
-        utility: theme => ({
-          // modify components
-        }),
         component: theme => ({
           // modify components
         }),

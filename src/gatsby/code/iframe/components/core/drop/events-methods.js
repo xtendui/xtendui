@@ -59,20 +59,18 @@ demo.htmlSource = `
 
     <div class="drop" title="Target 0">
       <div class="drop-inner">
-        <div class="card w-screen max-w-sm ${cardDefaultDropList()}">
-          <div class="py-3">
-            <nav class="list flex-col">
-              <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit
-              </a>
-              <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
-                Dolor sit
-              </button>
-              <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
-                Amet
-              </button>
-            </nav>
-          </div>
+        <div class="w-64 py-3 ${cardDefaultDropList()}">
+          <nav class="list flex-col">
+            <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            </a>
+            <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+              Dolor sit
+            </button>
+            <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+              Amet
+            </button>
+          </nav>
         </div>
       </div>
     </div>
@@ -87,20 +85,18 @@ demo.htmlSource = `
 
     <div class="drop" title="Target 1">
       <div class="drop-inner">
-        <div class="card w-screen max-w-sm ${cardDefaultDropList()}">
-          <div class="py-3">
-            <nav class="list flex-col">
-              <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit
-              </a>
-              <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
-                Dolor sit
-              </button>
-              <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
-                Amet
-              </button>
-            </nav>
-          </div>
+        <div class="w-64 py-3 ${cardDefaultDropList()}">
+          <nav class="list flex-col">
+            <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            </a>
+            <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+              Dolor sit
+            </button>
+            <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+              Amet
+            </button>
+          </nav>
         </div>
       </div>
     </div>
@@ -110,7 +106,7 @@ demo.htmlSource = `
 </div>
 
 <div class="card ${cardDefault()} mt-6">
-  <div class="py-4 px-5 text-sm overflow-y-auto overflow-x-hidden overflow-sub max-h-56" id="demo--drop-events-log">
+  <div class="card-sm overflow-y-auto overflow-x-hidden overflow-sub max-h-56" id="demo--drop-events-log">
   </div>
 </div>
 `

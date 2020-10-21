@@ -1,5 +1,12 @@
 module.exports = {
-  utility: {
+  component: {
+    '.icon': {
+      // setup
+      display: 'inline-block',
+      stroke: 'currentColor',
+      // styles
+      '@apply icon-md': '',
+    },
     '.icon-sm': {
       // styles
       width: '1em',
@@ -18,15 +25,6 @@ module.exports = {
       height: '1.5em',
       // Size bigger than `1em` has negative margin
       margin: 'calc((1em - 1.5em) / 2)',
-    },
-  },
-  component: {
-    '.icon': {
-      // setup
-      display: 'inline-block',
-      stroke: 'currentColor',
-      // styles
-      '@apply icon-md': '',
     },
   },
 }

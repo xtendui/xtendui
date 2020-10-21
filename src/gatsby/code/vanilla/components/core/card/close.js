@@ -18,7 +18,7 @@ demo.htmlSource = `
       <div class="btn btn-close p-5 text-xl" aria-label="Close">
         ${iconX()}
       </div>
-      <div class="py-8 px-9">
+      <div class="card-md">
         <div class="h4">Default</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>
@@ -30,7 +30,7 @@ demo.htmlSource = `
       <div class="btn btn-close p-5 text-xl" aria-label="Close">
         ${iconX()}
       </div>
-      <div class="py-8 px-9">
+      <div class="card-md">
         <div class="h4">Primary</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>

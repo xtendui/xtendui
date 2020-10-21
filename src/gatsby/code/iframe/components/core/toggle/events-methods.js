@@ -92,7 +92,7 @@ demo.htmlSource = `
 </div>
 
 <div class="card ${cardDefault()} mt-6">
-  <div class="py-4 px-5 text-sm overflow-y-auto overflow-x-hidden overflow-sub max-h-56" id="demo--toggle-events-log">
+  <div class="card-sm overflow-y-auto overflow-x-hidden overflow-sub max-h-56" id="demo--toggle-events-log">
   </div>
 </div>
 `

@@ -26,7 +26,19 @@ Use **tailwind classes** to modify variants for interactive animations.
 
 ## Size
 
-Use **component classes** to assign size (e.g. [padding](https://tailwindcss.com/docs/padding), [font-size](https://tailwindcss.com/docs/font-size)).
+Use **component classes** to assign size. You can add **additional size** for example `.card-xs` or `.card-xl`.
+
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ---------------------------- | -----------------| ----------------------------- |
+| Component                  | `.card-sm`       | `card-sm`                | Size small            |
+| Component                  | `.card-md`       | `card-md`                | Size medium            |
+| Component                  | `.card-lg`       | `card-lg`                | Size large            |
+
+</div>
+
+Otherwise use **tailwind classes** to assign custom size (e.g. [padding](https://tailwindcss.com/docs/padding), [font-size](https://tailwindcss.com/docs/font-size)).
 
 <demo>
   <demovanilla src="vanilla/components/core/card/size-full">

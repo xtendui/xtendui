@@ -36,4 +36,11 @@ Use this code to create a **card**.
   </demovanilla>
 </demo>
 
+You can also **stack** card content.
+
+<demo>
+  <demovanilla src="vanilla/components/core/card/usage-stack">
+  </demovanilla>
+</demo>
+
 Check subpage to [customize content](/components/core/card/content).

@@ -21,7 +21,7 @@ demo.htmlSource = `
     </button>
 
     <div class="overlay">
-      <div class="overlay-container max-w-5xl">
+      <div class="overlay-container max-w-3xl">
         <div class="overlay-inner">
 
           <div class="card ${cardDefaultOverlay()}">
@@ -29,11 +29,11 @@ demo.htmlSource = `
               ${iconX()}
             </div>
             <div class="md:card-group">
-              <div class="py-8 px-9 md:w-7/12">
-                <div class="h3">Lorem ipsum</div>
+              <div class="card-md md:w-7/12">
+                <div class="h4">Lorem ipsum</div>
                 <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
               </div>
-              <div class="py-8 px-9 md:w-5/12 rounded-b-md md:rounded-b-none md:rounded-r-md bg-gray-400">
+              <div class="card-sm md:w-5/12 rounded-b-md md:rounded-b-none md:rounded-r-md bg-gray-400">
                 <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
               </div>
             </div>
@@ -52,7 +52,7 @@ demo.htmlSource = `
     </button>
 
     <div class="overlay">
-      <div class="overlay-container max-w-5xl">
+      <div class="overlay-container max-w-3xl">
         <div class="overlay-inner">
 
           <div class="card ${cardDefaultOverlay()}">
@@ -60,15 +60,15 @@ demo.htmlSource = `
               ${iconX()}
             </div>
             <div class="md:card-group">
-              <div class="py-8 px-9 md:w-7/12 bg-gray-400 md:rounded-tl-md">
-                <div class="h3">Lorem ipsum</div>
+              <div class="card-md md:w-7/12 bg-gray-400 md:rounded-tl-md">
+                <div class="h4">Lorem ipsum</div>
                 <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
               </div>
               <div class="md:w-5/12">
-                <div class="py-8 px-9 bg-gray-500 md:rounded-tr-md">
+                <div class="card-sm bg-gray-500 md:rounded-tr-md">
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
                 </div>
-                <div class="py-8 px-9">
+                <div class="card-md">
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
                 </div>
               </div>
