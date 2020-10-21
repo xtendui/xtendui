@@ -1,5 +1,5 @@
 module.exports = {
-  utility: theme => ({
+  utility: {
     space: {
       // styles
       px: '1px',
@@ -19,7 +19,7 @@ module.exports = {
       9: '2.25rem',
       10: '2.5rem',
     },
-  }),
+  },
   component: {
     '.row': {
       // setup
