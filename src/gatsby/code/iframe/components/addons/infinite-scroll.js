@@ -22,7 +22,7 @@ demo.htmlSource = `
   <div class="container">
 
     <div class="infinite-scroll-pre mb-4">
-      <div class="list flex-col list-1 items-center">
+      <div class="list w-full flex-col list-1 items-center">
         <div>
           <button type="button" class="btn btn-md ${btnDefault()}" data-xt-infinitescroll-reset>
             Load previous pages
@@ -134,7 +134,7 @@ demo.htmlSource = `
     </div>
 
     <div class="infinite-scroll mt-4" data-xt-infinite-scroll-scroll>
-      <div class="list flex-col list-1 items-center">
+      <div class="list w-full flex-col list-1 items-center">
 
         <div class="infinite-scroll--trigger">
           <button type="button" class="btn btn-md ${btnPrimary()}" data-xt-infinite-scroll-trigger>
