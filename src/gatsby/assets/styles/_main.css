@@ -34,7 +34,7 @@ body {
   @apply pt-20 pb-16;
   border-bottom: 1px solid theme('colors.gray.200');
   background: theme('colors.gray.100');
-  background: linear-gradient(200deg, theme('colors.gray.100') 33%, theme('colors.gray.200') 100%);
+  background: linear-gradient(225deg, theme('colors.gray.100') 33%, theme('colors.gray.200') 100%);
 }
 
 .gatsby_site_article_content {
@@ -46,7 +46,7 @@ body {
 .gatsby_site_footer {
   border-top: 1px solid theme('colors.gray.200');
   background: theme('colors.gray.100');
-  background: linear-gradient(70deg, theme('colors.gray.100') 33%, theme('colors.gray.200') 100%);
+  background: linear-gradient(225deg, theme('colors.gray.100') 33%, theme('colors.gray.200') 100%);
 }
 
 /* container */

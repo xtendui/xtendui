@@ -14,6 +14,30 @@ When you use Tailwind classes you can style it with the variant `active:`, it's 
 
 When you **style pseudo selector** remember to style `&:active, &.active`.
 
+## Utilities
+
+These are structure **component utilities**.
+
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
+| Utility                  | `.container-reset`       | `container-reset`                | `responsive`                | Reset container styles            |
+| Utility                  | `.duration-none`                     | `duration-none`                | `responsive`                | Instant transitions and animations            |
+
+</div>
+
+We have also **automatic spacing utilities** to reset margin top when `:first-child` with `mt-fc` and margin bottom when `:last-child` with `mb-lc`.
+
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
+| Utility                  | `.mt-fc`                     | `mt-fc`                | `responsive`                | Reset margin top on `:first-child`            |
+| Utility                  | `.mb-lc`                     | `mb-lc`                | `responsive`                | Reset margin bottom on `:last-child`            |
+
+</div>
+
 ## Components
 
 These are structure **component classes**.
@@ -41,27 +65,3 @@ Xtend has custom `:focus` styles, sort of `:focus-visbile` polyfill. You can cus
 </div>
 
 There are many more **component classes for javascript** inside `structurejs.css.js` but they shouldn't be changed.
-
-## Utils
-
-These are structure **component classes**.
-
-<div class="table-scroll">
-
-|                      | Syntax                          | Mixin            | Variants               | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
-| Utility                  | `.container-reset`       | `container-reset`                | `responsive`                | Reset container styles            |
-| Utility                  | `.duration-none`                     | `duration-none`                | `responsive`                | Instant transitions and animations            |
-
-</div>
-
-We have also **automatic spacing classes** to reset margin top when `:first-child` with `mt-fc` and margin bottom when `:last-child` with `mb-lc`.
-
-<div class="table-scroll">
-
-|                      | Syntax                          | Mixin            | Variants               | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
-| Utility                  | `.mt-fc`                     | `mt-fc`                | `responsive`                | Reset margin top on `:first-child`            |
-| Utility                  | `.mb-lc`                     | `mb-lc`                | `responsive`                | Reset margin bottom on `:last-child`            |
-
-</div>

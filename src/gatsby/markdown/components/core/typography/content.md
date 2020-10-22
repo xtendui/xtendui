@@ -31,7 +31,7 @@ See [link variant](/components/core/link#variant) to style links.
   </demovanilla>
 </demo>
 
-## Headers
+## Header
 
 You can use headers **tags or classes**, classes takes precedence with css specificity.
 
@@ -58,8 +58,6 @@ You can add **additional headers** for example `.h7` or `.h-line`.
 
 ## Paragraph
 
-Use **tailwind classes** to style paragraphs (e.g. [font-size](https://tailwindcss.com/docs/font-size), [line-height](https://tailwindcss.com/docs/line-height)).
-
 You can use paragraph **tags or classes**, classes takes precedence with css specificity.
 
 <div class="table-scroll">
@@ -75,13 +73,31 @@ You can use paragraph **tags or classes**, classes takes precedence with css spe
   </demovanilla>
 </demo>
 
-## Lists
+## Text
+
+Text tags are styles by **tailwind or tailwind classes or component classes**.
+
+<demo>
+  <demovanilla src="vanilla/components/core/typography/text">
+  </demovanilla>
+</demo>
+
+## List
 
 [[noteDefault]]
 | List `ul` and `ol` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
 
 <demo>
   <demovanilla src="vanilla/components/core/typography/list">
+  </demovanilla>
+</demo>
+
+## Definition List
+
+Use **tailwind classes** to create a definition list.
+
+<demo>
+  <demovanilla src="vanilla/components/core/typography/definition-list">
   </demovanilla>
 </demo>
 
@@ -103,9 +119,9 @@ Use **component classes** to style `figure` and` figcaption`.
   </demovanilla>
 </demo>
 
-## Other Utilities
+## Other
 
-These are typography's **component classes**.
+These are typography's **component utilities**.
 
 <div class="table-scroll">
 

@@ -190,7 +190,26 @@ module.exports = {
       '@apply mb-lc': {},
     },
     strong: {
+      // styles
       fontWeight: theme('fontWeight.semibold'),
+    },
+    blockquote: {
+      // styles
+      marginTop: theme('spacing.6'),
+      marginBottom: theme('spacing.3'),
+      '@apply mt-fc mb-lc': {},
+    },
+    code: {
+      // styles
+      fontSize: '.875em',
+      color: '#7567F8',
+    },
+    '.links-inverse': {
+      // styles
+      code: {
+        color: theme('colors.white'),
+        opacity: '0.75',
+      },
     },
     'ul:not([class]), ol:not([class])': {
       // style
@@ -231,17 +250,25 @@ module.exports = {
         },
       },
     },
+    dl: {
+      // style
+      marginBottom: theme('spacing.3'),
+      '@apply mb-lc': {},
+    },
     hr: {
+      // style
       marginTop: theme('spacing.6'),
       marginBottom: theme('spacing.6'),
       '@apply mt-fc mb-lc': {},
     },
     'figure, .figure': {
+      // style
       marginTop: theme('spacing.6'),
       marginBottom: theme('spacing.6'),
       '@apply mt-fc mb-lc': {},
     },
     'figcaption, .figcaption': {
+      // style
       marginTop: theme('spacing.3'),
       fontSize: rem(14),
       lineHeight: theme('lineHeight.snug'),

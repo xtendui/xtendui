@@ -20,8 +20,6 @@ demo.htmlSource = `
   <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut ex at ex pellentesque efficitur. Maecenas pulvinar mauris eget pharetra elementum.</li>
 </ul>
 
-<hr>
-
 <ol>
   <li>
     <p><strong>Lorem ipsum dolor sit amet.</strong></p>

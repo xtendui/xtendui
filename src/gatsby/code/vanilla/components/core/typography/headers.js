@@ -60,15 +60,7 @@ demo.htmlSource = `
   Lorem Ipsum h5
 </div>
 
-<p>
-  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
-</p>
-
 <h3 class="h6 sm:h5 md:h4">
   Lorem Ipsum h6 sm:h5 md:h4
 </h6>
-
-<p>
-  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
-</p>
 `

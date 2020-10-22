@@ -32,19 +32,6 @@ html.gatsby_iframe-inside {
  * code
  */
 
-code {
-  font-family: Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
-  font-size: 0.9em;
-  font-size: .875em;
-  color: #7567F8;
-}
-
-.links-inverse {
-  code {
-    @apply text-white text-opacity-75;
-  }
-}
-
 pre[class*="language-"] {
   overflow-x: hidden !important;
   overflow-y: auto !important;
