@@ -18,7 +18,7 @@ import 'xtendui/src/addons/infinite-scroll'
 
 Use this code to create a **infinite scroll**.
 
-Navigate pages by opening [this demo on a new page](http://localhost:8888/iframe/components/addons/infinite-scroll). You can see on page refresh and browser navigation that **the page is retained**.
+Navigate pages by opening [this demo on a new page](https://xtendui.com/iframe/components/addons/infinite-scroll). You can see on page refresh and browser navigation that **the page is retained**.
 
 <demo>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/infinite-scroll">
