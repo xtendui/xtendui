@@ -6,75 +6,63 @@ export default () => {
   <nav class="slides-inner row row-2">
 
     <div class="slide">
-      <div class="slide-inner">
 
-        <div class="media-container">
-          <div class="media-inner relative">
-            <img class="media" src="/img.svg" loading="eager" alt=""/>
-          </div>
+      <div class="media-container">
+        <div class="media-inner relative">
+          <img class="media" src="/img.svg" loading="eager" alt=""/>
         </div>
-
       </div>
+
     </div>
 
     <div class="slide">
-      <div class="slide-inner">
 
-        <div class="media-container">
-          <div class="media-inner relative">
-            <img class="media" src="/img-ratio.svg" loading="eager" alt=""/>
-          </div>
+      <div class="media-container">
+        <div class="media-inner relative">
+          <img class="media" src="/img-ratio.svg" loading="eager" alt=""/>
         </div>
-
       </div>
+
     </div>
 
     <div class="slide">
-      <div class="slide-inner">
 
-        <div class="media-container">
-          <div class="media-inner relative">
-            <img class="media" src="/img.svg" loading="eager" alt=""/>
-          </div>
+      <div class="media-container">
+        <div class="media-inner relative">
+          <img class="media" src="/img.svg" loading="eager" alt=""/>
         </div>
-
       </div>
+
     </div>
 
     <div class="slide">
-      <div class="slide-inner">
 
-        <div class="media-container">
-          <div class="media-inner relative">
-            <img class="media" src="/img-ratio.svg" loading="eager" alt=""/>
-          </div>
+      <div class="media-container">
+        <div class="media-inner relative">
+          <img class="media" src="/img-ratio.svg" loading="eager" alt=""/>
         </div>
-
       </div>
+
     </div>
 
     <div class="slide">
-      <div class="slide-inner">
 
-        <div class="media-container">
-          <div class="media-inner relative">
-            <img class="media" src="/img.svg" loading="eager" alt=""/>
-          </div>
+      <div class="media-container">
+        <div class="media-inner relative">
+          <img class="media" src="/img.svg" loading="eager" alt=""/>
         </div>
-
       </div>
+
     </div>
 
     <div class="slide">
-      <div class="slide-inner">
 
-        <div class="media-container">
-          <div class="media-inner relative">
-            <img class="media" src="/img-ratio.svg" loading="eager" alt=""/>
-          </div>
+      <div class="media-container">
+        <div class="media-inner relative">
+          <img class="media" src="/img-ratio.svg" loading="eager" alt=""/>
         </div>
-
       </div>
+
     </div>
 
   </nav>

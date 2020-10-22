@@ -24,6 +24,8 @@
         }
         &:not(.active) {
           position: absolute;
+          top: 0;
+          left: 0;
         }
       }
       .slider-pagination {
@@ -57,19 +59,16 @@
         height: calc(var(--vh, 1vh) * 100);
       }
     }
-    .hero_content_outer {
+    .hero_content {
+      @apply container;
       position: absolute;
-      z-index: 3;
+      z-index: calc(theme('zIndex.active') + 1);
       top: 0;
       left: 0;
       bottom: 0;
       right: 0;
       display: flex;
       align-items: flex-end;
-    }
-    .hero_content {
-      @apply container;
-      display: flex;
       justify-content: flex-start;
     }
     .hero_content_inner {
@@ -103,7 +102,7 @@
     }
     .hero--middle {
       @screen md {
-        .hero_content_outer {
+        .hero_content {
           align-items: center;
         }
       }

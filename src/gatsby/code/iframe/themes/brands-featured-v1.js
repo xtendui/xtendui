@@ -25,45 +25,43 @@ demo.htmlSource = `
     <ul class="slides-inner row row-2">
 
       <div class="slide">
-        <div class="slide-inner">
-          <div class="brand">
-            <a href="#test-link-1" class="brand_content">
-              One
-            </a>
-            <a href="#test-link-2" class="brand_content">
-              Two
-            </a>
-            <a href="#test-link-3" class="brand_content">
-              Three
-            </a>
-            <a href="#test-link-4" class="brand_content">
-              Four
-            </a>
-            <a href="#test-link-5" class="brand_content">
-              Five
-            </a>
-            <a href="#test-link-6" class="brand_content">
-              Six
-            </a>
-            <a href="#test-link-7" class="brand_content">
-              Seven
-            </a>
-            <a href="#test-link-8" class="brand_content">
-              Eight
-            </a>
-            <a href="#test-link-9" class="brand_content">
-              Nine
-            </a>
-            <a href="#test-link-10" class="brand_content">
-              Ten
-            </a>
-            <a href="#test-link-11" class="brand_content">
-              Eleven
-            </a>
-            <a href="#test-link-12" class="brand_content">
-              Twelve
-            </a>
-          </div>
+        <div class="brand">
+          <a href="#test-link-1" class="brand_content">
+            One
+          </a>
+          <a href="#test-link-2" class="brand_content">
+            Two
+          </a>
+          <a href="#test-link-3" class="brand_content">
+            Three
+          </a>
+          <a href="#test-link-4" class="brand_content">
+            Four
+          </a>
+          <a href="#test-link-5" class="brand_content">
+            Five
+          </a>
+          <a href="#test-link-6" class="brand_content">
+            Six
+          </a>
+          <a href="#test-link-7" class="brand_content">
+            Seven
+          </a>
+          <a href="#test-link-8" class="brand_content">
+            Eight
+          </a>
+          <a href="#test-link-9" class="brand_content">
+            Nine
+          </a>
+          <a href="#test-link-10" class="brand_content">
+            Ten
+          </a>
+          <a href="#test-link-11" class="brand_content">
+            Eleven
+          </a>
+          <a href="#test-link-12" class="brand_content">
+            Twelve
+          </a>
         </div>
       </div>
 
@@ -87,45 +85,43 @@ demo.htmlSource = `
     <ul class="slides-inner row row-2">
 
       <div class="slide">
-        <div class="slide-inner">
-          <div class="brand">
-            <a href="#test-link-1" class="brand_content">
-              One
-            </a>
-            <a href="#test-link-2" class="brand_content">
-              Two
-            </a>
-            <a href="#test-link-3" class="brand_content">
-              Three
-            </a>
-            <a href="#test-link-4" class="brand_content">
-              Four
-            </a>
-            <a href="#test-link-5" class="brand_content">
-              Five
-            </a>
-            <a href="#test-link-6" class="brand_content">
-              Six
-            </a>
-            <a href="#test-link-7" class="brand_content">
-              Seven
-            </a>
-            <a href="#test-link-8" class="brand_content">
-              Eight
-            </a>
-            <a href="#test-link-9" class="brand_content">
-              Nine
-            </a>
-            <a href="#test-link-10" class="brand_content">
-              Ten
-            </a>
-            <a href="#test-link-11" class="brand_content">
-              Eleven
-            </a>
-            <a href="#test-link-12" class="brand_content">
-              Twelve
-            </a>
-          </div>
+        <div class="brand">
+          <a href="#test-link-1" class="brand_content">
+            One
+          </a>
+          <a href="#test-link-2" class="brand_content">
+            Two
+          </a>
+          <a href="#test-link-3" class="brand_content">
+            Three
+          </a>
+          <a href="#test-link-4" class="brand_content">
+            Four
+          </a>
+          <a href="#test-link-5" class="brand_content">
+            Five
+          </a>
+          <a href="#test-link-6" class="brand_content">
+            Six
+          </a>
+          <a href="#test-link-7" class="brand_content">
+            Seven
+          </a>
+          <a href="#test-link-8" class="brand_content">
+            Eight
+          </a>
+          <a href="#test-link-9" class="brand_content">
+            Nine
+          </a>
+          <a href="#test-link-10" class="brand_content">
+            Ten
+          </a>
+          <a href="#test-link-11" class="brand_content">
+            Eleven
+          </a>
+          <a href="#test-link-12" class="brand_content">
+            Twelve
+          </a>
         </div>
       </div>
 
@@ -149,27 +145,25 @@ demo.htmlSource = `
     <ul class="slides-inner row row-2">
 
       <div class="slide">
-        <div class="slide-inner">
-          <div class="brand">
-            <a href="#test-link-1" class="brand_content">
-              ${img({ classes: 'object-cover object-center', ratio: '37.5%', loading: 'eager' })}
-            </a>
-            <a href="#test-link-2" class="brand_content">
-              ${img({ classes: 'object-cover object-center', ratio: '37.5%', loading: 'eager' })}
-            </a>
-            <a href="#test-link-3" class="brand_content">
-              ${img({ classes: 'object-cover object-center', ratio: '37.5%', loading: 'eager' })}
-            </a>
-            <a href="#test-link-4" class="brand_content">
-              ${img({ classes: 'object-cover object-center', ratio: '37.5%', loading: 'eager' })}
-            </a>
-            <a href="#test-link-5" class="brand_content">
-              ${img({ classes: 'object-cover object-center', ratio: '37.5%', loading: 'eager' })}
-            </a>
-            <a href="#test-link-6" class="brand_content">
-              ${imgAlt({ classes: 'object-cover object-center', ratio: '37.5%', loading: 'eager' })}
-            </a>
-          </div>
+        <div class="brand">
+          <a href="#test-link-1" class="brand_content">
+            ${img({ classes: 'object-cover object-center', ratio: '37.5%', loading: 'eager' })}
+          </a>
+          <a href="#test-link-2" class="brand_content">
+            ${img({ classes: 'object-cover object-center', ratio: '37.5%', loading: 'eager' })}
+          </a>
+          <a href="#test-link-3" class="brand_content">
+            ${img({ classes: 'object-cover object-center', ratio: '37.5%', loading: 'eager' })}
+          </a>
+          <a href="#test-link-4" class="brand_content">
+            ${img({ classes: 'object-cover object-center', ratio: '37.5%', loading: 'eager' })}
+          </a>
+          <a href="#test-link-5" class="brand_content">
+            ${img({ classes: 'object-cover object-center', ratio: '37.5%', loading: 'eager' })}
+          </a>
+          <a href="#test-link-6" class="brand_content">
+            ${imgAlt({ classes: 'object-cover object-center', ratio: '37.5%', loading: 'eager' })}
+          </a>
         </div>
       </div>
 

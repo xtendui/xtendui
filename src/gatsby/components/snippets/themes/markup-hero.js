@@ -7,192 +7,156 @@ export default () => {
   <nav class="slides-inner">
 
     <div class="slide">
-      <div class="slide-inner">
+      <div class="hero hero--center hero--big">
+        <div class="hero_inner">
+          <div class="hero_asset">
+            ${img({ classes: 'object-cover object-center', loading: 'eager' })}
+          </div>
+          <div class="hero_content">
+            <a href="#" class="hero_content_inner">
+              <div class="hero_text">
+                <div class="h1">
+                  Lorem ipsum
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-        <div class="hero hero--center hero--big">
-          <div class="hero_inner">
-            <div class="hero_asset">
-              ${img({ classes: 'object-cover object-center', loading: 'eager' })}
-            </div>
-            <div class="hero_content_outer">
-              <div class="hero_content">
-                <a href="#" class="hero_content_inner">
-                  <div class="hero_text">
-                    <div class="h1">
+    <div class="slide">
+      <div class="hero hero--center">
+        <div class="hero_inner">
+          <div class="hero_asset">
+            ${imgAlt({ classes: 'object-cover object-center', loading: 'eager' })}
+          </div>
+          <div class="hero_content">
+            <a href="#" class="hero_content_inner">
+              <div class="hero_text">
+                <div class="h1">
+                  Lorem ipsum dolor sit amet
+                </div>
+              </div>
+              <div class="hero_actions">
+                <div class="list">
+                  <div class="btn">
                       Lorem ipsum
-                    </div>
                   </div>
-                </a>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
-
       </div>
     </div>
 
     <div class="slide">
-      <div class="slide-inner">
-
-        <div class="hero hero--center">
-          <div class="hero_inner">
-            <div class="hero_asset">
-              ${imgAlt({ classes: 'object-cover object-center', loading: 'eager' })}
-            </div>
-            <div class="hero_content_outer">
-              <div class="hero_content">
-                <a href="#" class="hero_content_inner">
-                  <div class="hero_text">
-                    <div class="h1">
-                      Lorem ipsum dolor sit amet
-                    </div>
-                  </div>
-                  <div class="hero_actions">
-                    <div class="list">
-                      <div class="btn">
-                          Lorem ipsum
-                      </div>
-                    </div>
-                  </div>
-                </a>
+      <div class="hero">
+        <div class="hero_inner">
+          <div class="hero_asset">
+            ${img({ classes: 'object-cover object-center', loading: 'eager' })}
+          </div>
+          <div class="hero_content">
+            <a href="#" class="hero_content_inner">
+              <div class="hero_text">
+                <div class="h1">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                </div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
-
       </div>
     </div>
 
     <div class="slide">
-      <div class="slide-inner">
-
-        <div class="hero">
-          <div class="hero_inner">
-            <div class="hero_asset">
-              ${img({ classes: 'object-cover object-center', loading: 'eager' })}
-            </div>
-            <div class="hero_content_outer">
-              <div class="hero_content">
-                <a href="#" class="hero_content_inner">
-                  <div class="hero_text">
-                    <div class="h1">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
+      <div class="hero">
+        <div class="hero_inner">
+          <div class="hero_asset">
+            ${imgAlt({ classes: 'object-cover object-center', loading: 'eager' })}
           </div>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="slide">
-      <div class="slide-inner">
-
-        <div class="hero">
-          <div class="hero_inner">
-            <div class="hero_asset">
-              ${imgAlt({ classes: 'object-cover object-center', loading: 'eager' })}
-            </div>
-            <div class="hero_content_outer">
-              <div class="hero_content">
-                <div class="hero_content_inner">
-                  <div class="hero_text">
-                    <div class="h1">
-                      Lorem ipsum dolor sit amet
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
-                  </div>
-                  <div class="hero_actions">
-                    <div class="list">
-                      <a href="#" class="btn">
-                        Lorem ipsum
-                      </a>
-                      <a href="#" class="btn">
-                        Dolor sit amet
-                      </a>
-                    </div>
-                  </div>
+          <div class="hero_content">
+            <div class="hero_content_inner">
+              <div class="hero_text">
+                <div class="h1">
+                  Lorem ipsum dolor sit amet
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
+              </div>
+              <div class="hero_actions">
+                <div class="list">
+                  <a href="#" class="btn">
+                    Lorem ipsum
+                  </a>
+                  <a href="#" class="btn">
+                    Dolor sit amet
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
 
     <div class="slide">
-      <div class="slide-inner">
-
-        <div class="hero hero--middle hero--left">
-          <div class="hero_inner">
-            <div class="hero_asset">
-              ${img({ classes: 'object-cover object-center', loading: 'eager' })}
-            </div>
-            <div class="hero_content_outer">
-              <div class="hero_content">
-                <div class="hero_content_inner">
-                  <div class="hero_text">
-                    <div class="h1">
-                      Lorem ipsum dolor sit amet
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
-                  </div>
-                  <div class="hero_actions">
-                    <div class="list">
-                      <a href="#" class="btn">
-                        Lorem ipsum
-                      </a>
-                      <a href="#" class="btn">
-                        Dolor sit amet
-                      </a>
-                    </div>
-                  </div>
+      <div class="hero hero--middle hero--left">
+        <div class="hero_inner">
+          <div class="hero_asset">
+            ${img({ classes: 'object-cover object-center', loading: 'eager' })}
+          </div>
+          <div class="hero_content">
+            <div class="hero_content_inner">
+              <div class="hero_text">
+                <div class="h1">
+                  Lorem ipsum dolor sit amet
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
+              </div>
+              <div class="hero_actions">
+                <div class="list">
+                  <a href="#" class="btn">
+                    Lorem ipsum
+                  </a>
+                  <a href="#" class="btn">
+                    Dolor sit amet
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
 
     <div class="slide">
-      <div class="slide-inner">
-
-        <div class="hero hero--middle hero--right">
-          <div class="hero_inner">
-            <div class="hero_asset">
-              ${imgAlt({ classes: 'object-cover object-center', loading: 'eager' })}
-            </div>
-            <div class="hero_content_outer">
-              <div class="hero_content">
-                <div class="hero_content_inner">
-                  <div class="hero_text">
-                    <div class="h1">
-                      Lorem ipsum dolor sit amet
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
-                  </div>
-                  <div class="hero_actions">
-                    <div class="list">
-                      <a href="#" class="btn">
-                        Lorem ipsum
-                      </a>
-                      <a href="#" class="btn">
-                        Dolor sit amet
-                      </a>
-                    </div>
-                  </div>
+      <div class="hero hero--middle hero--right">
+        <div class="hero_inner">
+          <div class="hero_asset">
+            ${imgAlt({ classes: 'object-cover object-center', loading: 'eager' })}
+          </div>
+          <div class="hero_content">
+            <div class="hero_content_inner">
+              <div class="hero_text">
+                <div class="h1">
+                  Lorem ipsum dolor sit amet
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
+              </div>
+              <div class="hero_actions">
+                <div class="list">
+                  <a href="#" class="btn">
+                    Lorem ipsum
+                  </a>
+                  <a href="#" class="btn">
+                    Dolor sit amet
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
 
