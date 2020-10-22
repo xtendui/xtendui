@@ -1,0 +1,138 @@
+#iframe--fashion-hero-v2 {
+  /*##START*/
+  body { /* add your own selector instead of body to contain the code */
+
+    /* slider */
+
+    .slider {
+      position: relative;
+      background: theme('colors.accent.700');
+      .slides-inner {
+        @apply duration-none transform-none !important;
+      }
+      .slide {
+        @apply w-full;
+        position: relative;
+        /* activation */
+        display: none;
+        &.active {
+          display: block;
+          z-index: theme('zIndex.active');
+        }
+        &.out {
+          display: block;
+        }
+        &:not(.active) {
+          position: absolute;
+        }
+      }
+      .slider-pagination {
+        display: none;
+      }
+      .slider-navigation-sides {
+        color: theme('colors.white');
+      }
+    }
+
+    /* hero */
+
+    .hero {
+      @apply w-full;
+      display: block;
+      overflow: hidden;
+    }
+    .hero_cover {
+      pointer-events: none;
+      position: absolute;
+      z-index: theme('zIndex.active');
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: theme('colors.accent.500');
+    }
+    .hero_asset {
+      .media-container {
+        height: 100vh;
+        height: calc(var(--vh, 1vh) * 100);
+      }
+    }
+    .hero_content_outer {
+      position: absolute;
+      z-index: 3;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      display: flex;
+      align-items: flex-end;
+    }
+    .hero_content {
+      @apply container;
+      display: flex;
+      justify-content: flex-start;
+    }
+    .hero_content_inner {
+      @apply block w-full max-w-xl py-16 text-white links-inverse;
+    }
+    .hero_actions {
+      display: inline-block;
+      @apply mt-4;
+      > .list {
+        @apply list-4;
+      }
+    }
+
+    /* variants */
+
+    .hero--big {
+      .hero_text {
+        .h1 {
+          font-size: 3rem;
+          @screen md {
+            font-size: 5rem;
+          }
+        }
+      }
+    }
+    .hero--center {
+      .hero_content {
+        justify-content: center;
+        text-align: center;
+      }
+    }
+    .hero--middle {
+      @screen md {
+        .hero_content_outer {
+          align-items: center;
+        }
+      }
+    }
+    .hero--left {
+      @screen md {
+        .hero_content {
+          justify-content: flex-start;
+          text-align: left;
+        }
+        .hero_content {
+          margin-left: 0;
+          margin-right: auto;
+        }
+      }
+    }
+    .hero--right {
+      @screen md {
+        .hero_content {
+          justify-content: flex-end;
+          text-align: right;
+        }
+        .hero_content {
+          margin-left: auto;
+          margin-right: 0;
+        }
+      }
+    }
+
+  }
+  /*##END*/
+}

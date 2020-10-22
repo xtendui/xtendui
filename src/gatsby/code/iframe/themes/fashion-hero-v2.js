@@ -20,7 +20,7 @@ demo.htmlSource = `
 ${indentString(markupHero(), 2)}
 
   <nav class="slider-pagination list list-2 hidden">
-    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
+    <button type="button" class="btn xt-ignore" data-xt-pag title="Slide xt-num">
     </button>
   </nav>
 

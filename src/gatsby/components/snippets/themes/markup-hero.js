@@ -4,7 +4,7 @@ const imgAlt = require('components/snippets/img').alt
 export default () => {
   return `
 <div class="slides">
-  <nav class="slides-inner row row-2">
+  <nav class="slides-inner">
 
     <div class="slide">
       <div class="slide-inner">
@@ -15,13 +15,15 @@ export default () => {
               ${img({ classes: 'object-cover object-center', loading: 'eager' })}
             </div>
             <div class="hero_content_outer">
-              <a href="#" class="hero_content_inner">
-                <div class="hero_text">
-                  <h2 class="h1">
-                    Lorem ipsum
-                  </h2>
-                </div>
-              </a>
+              <div class="hero_content">
+                <a href="#" class="hero_content_inner">
+                  <div class="hero_text">
+                    <div class="h1">
+                      Lorem ipsum
+                    </div>
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -41,9 +43,9 @@ export default () => {
               <div class="hero_content">
                 <a href="#" class="hero_content_inner">
                   <div class="hero_text">
-                    <h2 class="h1">
+                    <div class="h1">
                       Lorem ipsum dolor sit amet
-                    </h2>
+                    </div>
                   </div>
                   <div class="hero_actions">
                     <div class="list">
@@ -73,9 +75,9 @@ export default () => {
               <div class="hero_content">
                 <a href="#" class="hero_content_inner">
                   <div class="hero_text">
-                    <h2 class="h1">
+                    <div class="h1">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                    </h2>
+                    </div>
                   </div>
                 </a>
               </div>
@@ -98,9 +100,9 @@ export default () => {
               <div class="hero_content">
                 <div class="hero_content_inner">
                   <div class="hero_text">
-                    <h2 class="h1">
+                    <div class="h1">
                       Lorem ipsum dolor sit amet
-                    </h2>
+                    </div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
                   </div>
                   <div class="hero_actions">
@@ -134,9 +136,9 @@ export default () => {
               <div class="hero_content">
                 <div class="hero_content_inner">
                   <div class="hero_text">
-                    <h2 class="h1">
+                    <div class="h1">
                       Lorem ipsum dolor sit amet
-                    </h2>
+                    </div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
                   </div>
                   <div class="hero_actions">
@@ -170,9 +172,9 @@ export default () => {
               <div class="hero_content">
                 <div class="hero_content_inner">
                   <div class="hero_text">
-                    <h2 class="h1">
+                    <div class="h1">
                       Lorem ipsum dolor sit amet
-                    </h2>
+                    </div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
                   </div>
                   <div class="hero_actions">
