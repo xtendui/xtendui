@@ -75,7 +75,7 @@
     }
 
     .hero_content_inner {
-      @apply block w-full max-w-xl py-16 text-white links-inverse;
+      @apply block w-full max-w-xl py-10 md:py-16 text-white links-inverse;
     }
 
     /* variants */
