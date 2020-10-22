@@ -39,7 +39,7 @@ export default () => {
   </nav>
 </div>
 
-<nav class="slider-pagination list list-2">
+<nav class="slider-pagination w-full list list-2">
   <button type="button" class="btn ${btnDefault()} xt-ignore" data-xt-pag title="Slide xt-num">
   </button>
 </nav>

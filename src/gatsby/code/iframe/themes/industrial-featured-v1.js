@@ -17,7 +17,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="slider">
 
-  <nav class="slider-pagination list list-2">
+  <nav class="slider-pagination w-full list list-2">
 
     <div>
       <button type="button" class="btn btn-circle" data-xt-nav="-1" title="Previous slide">
@@ -25,8 +25,8 @@ demo.htmlSource = `
       </button>
     </div>
 
-    <div class="slider-pagination list list-2_inner">
-      <div class="slider-pagination list list-2_scroll">
+    <div class="slider-pagination w-full list list-2_inner">
+      <div class="slider-pagination w-full list list-2_scroll">
         <button type="button" class="btn xt-ignore" data-xt-pag title="Slide xt-num">
             xt-content
         </button>

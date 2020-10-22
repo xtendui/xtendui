@@ -14,10 +14,8 @@ export default () => {
           </div>
           <div class="hero_content">
             <a href="#" class="hero_content_inner">
-              <div class="hero_text">
-                <div class="h1">
-                  Lorem ipsum
-                </div>
+              <div class="h1">
+                Lorem ipsum
               </div>
             </a>
           </div>
@@ -33,16 +31,12 @@ export default () => {
           </div>
           <div class="hero_content">
             <a href="#" class="hero_content_inner">
-              <div class="hero_text">
-                <div class="h1">
-                  Lorem ipsum dolor sit amet
-                </div>
+              <div class="h1">
+                Lorem ipsum dolor sit amet
               </div>
-              <div class="hero_actions">
-                <div class="list">
-                  <div class="btn">
-                      Lorem ipsum
-                  </div>
+              <div class="list list-4">
+                <div class="btn">
+                    Lorem ipsum
                 </div>
               </div>
             </a>
@@ -59,10 +53,8 @@ export default () => {
           </div>
           <div class="hero_content">
             <a href="#" class="hero_content_inner">
-              <div class="hero_text">
-                <div class="h1">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                </div>
+              <div class="h1">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </div>
             </a>
           </div>
@@ -78,21 +70,17 @@ export default () => {
           </div>
           <div class="hero_content">
             <div class="hero_content_inner">
-              <div class="hero_text">
-                <div class="h1">
-                  Lorem ipsum dolor sit amet
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
+              <div class="h1">
+                Lorem ipsum dolor sit amet
               </div>
-              <div class="hero_actions">
-                <div class="list">
-                  <a href="#" class="btn">
-                    Lorem ipsum
-                  </a>
-                  <a href="#" class="btn">
-                    Dolor sit amet
-                  </a>
-                </div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
+              <div class="list list-4">
+                <a href="#" class="btn">
+                  Lorem ipsum
+                </a>
+                <a href="#" class="btn">
+                  Dolor sit amet
+                </a>
               </div>
             </div>
           </div>
@@ -108,21 +96,17 @@ export default () => {
           </div>
           <div class="hero_content">
             <div class="hero_content_inner">
-              <div class="hero_text">
-                <div class="h1">
-                  Lorem ipsum dolor sit amet
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
+              <div class="h1">
+                Lorem ipsum dolor sit amet
               </div>
-              <div class="hero_actions">
-                <div class="list">
-                  <a href="#" class="btn">
-                    Lorem ipsum
-                  </a>
-                  <a href="#" class="btn">
-                    Dolor sit amet
-                  </a>
-                </div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
+              <div class="list list-4">
+                <a href="#" class="btn">
+                  Lorem ipsum
+                </a>
+                <a href="#" class="btn">
+                  Dolor sit amet
+                </a>
               </div>
             </div>
           </div>
@@ -138,21 +122,17 @@ export default () => {
           </div>
           <div class="hero_content">
             <div class="hero_content_inner">
-              <div class="hero_text">
-                <div class="h1">
-                  Lorem ipsum dolor sit amet
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
+              <div class="h1">
+                Lorem ipsum dolor sit amet
               </div>
-              <div class="hero_actions">
-                <div class="list">
-                  <a href="#" class="btn">
-                    Lorem ipsum
-                  </a>
-                  <a href="#" class="btn">
-                    Dolor sit amet
-                  </a>
-                </div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
+              <div class="list list-4">
+                <a href="#" class="btn">
+                  Lorem ipsum
+                </a>
+                <a href="#" class="btn">
+                  Dolor sit amet
+                </a>
               </div>
             </div>
           </div>

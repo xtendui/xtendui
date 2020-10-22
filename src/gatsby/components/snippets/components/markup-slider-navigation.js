@@ -81,7 +81,7 @@ export default () => {
   </nav>
 </div>
 
-<nav class="slider-pagination list list-2">
+<nav class="slider-pagination w-full list list-2">
   <button type="button" class="btn ${btnDefault()}" data-xt-nav="-1" title="Previous slide">
     ${iconChevronLeft({ classes: 'icon-lg' })}
   </button>

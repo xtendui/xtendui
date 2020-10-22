@@ -211,8 +211,8 @@
     }
   }
   &.gatsby_btn-site_article_sidebar--adiacent_inner {
+    padding-bottom: 0;
     > span {
-      padding: .2rem .4rem;
       font-size: 12px;
     }
   }

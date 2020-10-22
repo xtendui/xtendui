@@ -24,7 +24,7 @@ module.exports = {
   component: {
     '.list': {
       // setup
-      display: 'flex',
+      display: 'inline-flex',
       flexWrap: 'wrap',
       flexDirection: 'row',
       alignItems: 'flex-start',

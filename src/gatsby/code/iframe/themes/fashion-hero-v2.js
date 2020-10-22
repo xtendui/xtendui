@@ -19,7 +19,19 @@ demo.htmlSource = `
 
 ${indentString(markupHero(), 2)}
 
-  <nav class="slider-pagination list list-2 hidden">
+  <div class="slider-navigation-sides left-0" data-xt-nav="-1" aria-label="Previous slide" data-xt-mouse-follow="{ targets: '.slider-navigation-sides-btn' }">
+    <div class="slider-navigation-sides-btn mouse-follow text-black text-2xl">
+      <span class="block icon-chevron-left"></span>
+    </div>
+  </div>
+
+  <div class="slider-navigation-sides right-0" data-xt-nav="1" aria-label="Next slide" data-xt-mouse-follow="{ targets: '.slider-navigation-sides-btn' }">
+    <div class="slider-navigation-sides-btn mouse-follow text-black text-2xl">
+      <span class="block icon-chevron-right"></span>
+    </div>
+  </div>
+
+  <nav class="slider-pagination w-full list list-2 hidden">
     <button type="button" class="btn xt-ignore" data-xt-pag title="Slide xt-num">
     </button>
   </nav>

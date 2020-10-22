@@ -7,33 +7,37 @@
     .slider {
       position: relative;
       background: theme('colors.accent.700');
-      .slides-inner {
-        @apply duration-none transform-none !important;
+    }
+    
+    .slides-inner {
+      @apply duration-none transform-none !important;
+    }
+
+    .slide {
+      @apply w-full;
+      position: relative;
+      /* activation */
+      display: none;
+      &.active {
+        display: block;
+        z-index: theme('zIndex.active');
       }
-      .slide {
-        @apply w-full;
-        position: relative;
-        /* activation */
-        display: none;
-        &.active {
-          display: block;
-          z-index: theme('zIndex.active');
-        }
-        &.out {
-          display: block;
-        }
-        &:not(.active) {
-          position: absolute;
-          top: 0;
-          left: 0;
-        }
+      &.out {
+        display: block;
       }
-      .slider-pagination {
-        display: none;
+      &:not(.active) {
+        position: absolute;
+        top: 0;
+        left: 0;
       }
-      .slider-navigation-sides {
-        color: theme('colors.white');
-      }
+    }
+
+    .slider-pagination {
+      display: none;
+    }
+
+    .slider-navigation-sides {
+      color: theme('colors.white');
     }
 
     /* hero */
@@ -43,6 +47,7 @@
       display: block;
       overflow: hidden;
     }
+
     .hero_cover {
       pointer-events: none;
       position: absolute;
@@ -53,12 +58,14 @@
       bottom: 0;
       background: theme('colors.accent.500');
     }
+
     .hero_asset {
       .media-container {
         height: 100vh;
         height: calc(var(--vh, 1vh) * 100);
       }
     }
+
     .hero_content {
       @apply container;
       position: absolute;
@@ -70,36 +77,33 @@
       display: flex;
       align-items: flex-end;
       justify-content: flex-start;
+      .btn {
+        @apply btn-lg px-0;
+      }
     }
+
     .hero_content_inner {
       @apply block w-full max-w-xl py-16 text-white links-inverse;
-    }
-    .hero_actions {
-      display: inline-block;
-      @apply mt-4;
-      > .list {
-        @apply list-4;
-      }
     }
 
     /* variants */
 
     .hero--big {
-      .hero_text {
-        .h1 {
-          font-size: 3rem;
-          @screen md {
-            font-size: 5rem;
-          }
+      .h1 {
+        font-size: 3rem;
+        @screen md {
+          font-size: 5rem;
         }
       }
     }
+
     .hero--center {
       .hero_content {
         justify-content: center;
         text-align: center;
       }
     }
+
     .hero--middle {
       @screen md {
         .hero_content {
@@ -107,6 +111,7 @@
         }
       }
     }
+
     .hero--left {
       @screen md {
         .hero_content {
@@ -119,6 +124,7 @@
         }
       }
     }
+
     .hero--right {
       @screen md {
         .hero_content {

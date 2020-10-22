@@ -68,7 +68,7 @@ demo.htmlSource = `
     </ul>
   </div>
 
-  <nav class="slider-pagination list list-2 hidden">
+  <nav class="slider-pagination w-full list list-2 hidden">
     <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
     </button>
   </nav>
@@ -128,7 +128,7 @@ demo.htmlSource = `
     </ul>
   </div>
 
-  <nav class="slider-pagination list list-2 hidden">
+  <nav class="slider-pagination w-full list list-2 hidden">
     <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
     </button>
   </nav>
@@ -170,7 +170,7 @@ demo.htmlSource = `
     </ul>
   </div>
 
-  <nav class="slider-pagination list list-2 hidden">
+  <nav class="slider-pagination w-full list list-2 hidden">
     <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
     </button>
   </nav>
