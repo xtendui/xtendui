@@ -44,7 +44,7 @@ class DocFoot extends React.Component {
 
               {page.post.frontmatter.category !== 'Core' && page.post.frontmatter.category !== 'Core' && postsCore.length ? (
                 <div className="gatsby_listing_column">
-                  <Link to={'/components/core/' + kebabCase(page.post.frontmatter.parent)} className="card gatsby_listing_item">
+                  <Link to={`/components/core/${kebabCase(page.post.frontmatter.parent)}`} className="card gatsby_listing_item">
                     <div className="h4">Visit the Core pages</div>
                     <p>
                       There {postsCore.length === 1 ? 'is' : 'are'}{' '}
@@ -59,7 +59,7 @@ class DocFoot extends React.Component {
 
               {page.post.frontmatter.type !== 'Addons' && page.post.frontmatter.category !== 'Addons' && postsAddons.length ? (
                 <div className="gatsby_listing_column">
-                  <Link to={'/components/addons/' + kebabCase(page.post.frontmatter.parent)} className="card gatsby_listing_item">
+                  <Link to={`/components/addons/${kebabCase(page.post.frontmatter.parent)}`} className="card gatsby_listing_item">
                     <div className="h4">Visit the Addons page</div>
                     <p>
                       There {postsAddons.length === 1 ? 'is' : 'are'}{' '}
@@ -74,7 +74,12 @@ class DocFoot extends React.Component {
 
               {page.post.frontmatter.type !== 'Themes' && postsThemes.length ? (
                 <div className="gatsby_listing_column">
-                  <Link to={'/themes/' + kebabCase(page.post.frontmatter.parent)} className="card gatsby_listing_item">
+                  <Link
+                    to={`/themes/${kebabCase(
+                      page.postsAll.posts.filter(x => x.post.frontmatter.title === page.post.frontmatter.parent)[0].post.frontmatter.category
+                    )}/${kebabCase(page.post.frontmatter.parent)}`}
+                    className="card gatsby_listing_item"
+                  >
                     <div className="h4">Visit the Theme page</div>
                     <p>
                       There {postsThemes.length === 1 ? 'is' : 'are'}{' '}

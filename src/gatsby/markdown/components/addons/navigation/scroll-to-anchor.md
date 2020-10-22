@@ -1,7 +1,7 @@
 ---
 type: "Components"
 category: "Addons"
-parent: "Structure"
+parent: "Navigation"
 title: "scroll-to-anchor"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---

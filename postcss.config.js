@@ -19,11 +19,11 @@ module.exports = {
       // resolve xtendui import css
       resolve: function (id) {
         const arr = id.split('/')
-        const theme = path.resolve(__dirname, './' + arr.slice(1).join('/'))
+        const theme = path.resolve(__dirname, `./${arr.slice(1).join('/')}`)
         if (fs.existsSync(theme)) {
           return theme
         }
-        const module = path.resolve(__dirname, './node_modules/' + arr.join('/'))
+        const module = path.resolve(__dirname, `./node_modules/${arr.join('/')}`)
         if (fs.existsSync(module)) {
           return module
         }

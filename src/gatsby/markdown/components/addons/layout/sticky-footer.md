@@ -1,7 +1,7 @@
 ---
 type: "Components"
 category: "Addons"
-parent: "Structure"
+parent: "Layout"
 title: "sticky-footer"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
