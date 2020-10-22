@@ -183,7 +183,7 @@ body {
 }
 
 .gatsby_listing_item {
-  @apply p-6 text-xs text-black links-default rounded-md transform hover:text-white hover:bg-accent-500 hover:shadow-xl hover:-translate-y-2 active:text-white active:bg-accent-600 active:shadow-md active:-translate-y-1;
+  @apply py-4 px-5 text-xs text-black links-default rounded-md transform hover:text-white hover:bg-accent-500 hover:shadow-xl hover:-translate-y-2 active:text-white active:bg-accent-600 active:shadow-md active:-translate-y-1;
   .h4 {
     @apply mb-1.5 mt-fc mb-lc;
     font-size: 1rem;
