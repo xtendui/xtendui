@@ -1,4 +1,4 @@
-#iframe--fashion-hero-v2 {
+#iframe--fashion-hero-v1 {
   /*##START*/
   body { /* add your own selector instead of body to contain the code */
 
@@ -20,6 +20,10 @@
       &.out {
         display: block;
       }
+      &.next {
+        display: block;
+        z-index: calc(theme('zIndex.active') + 1);
+      }
       &:not(.active) {
         position: absolute;
         top: 0;
@@ -39,22 +43,21 @@
       overflow: hidden;
     }
 
-    .hero_cover {
-      pointer-events: none;
-      position: absolute;
-      z-index: theme('zIndex.active');
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: theme('colors.accent.500');
-    }
-
     .hero_asset {
       .media-container {
         height: 100vh;
         height: calc(var(--vh, 1vh) * 100);
         background: theme('colors.accent.900');
+      }
+      &:before {/*
+        content: '';
+        position: absolute;
+        z-index: 2;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: 75%;
+        background: linear-gradient(180deg, fade(@black, 0%) 0%, fade(@black, 30%) 100%);*/
       }
     }
 

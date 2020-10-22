@@ -43,8 +43,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
   </div>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/fashion-hero-v2">
   </div>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/furniture-hero-v1">
-  </div>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/industrial-featured-v1">
   </div>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/fashion-hero-v1">

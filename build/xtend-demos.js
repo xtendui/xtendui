@@ -34,7 +34,6 @@ if (typeof window !== 'undefined') {
   require('xtendui/src/private/demos/themes/fashion-hero-v2.js')
   require('xtendui/src/private/demos/themes/fashion-listing-v1.js')
   require('xtendui/src/private/demos/themes/furniture-featured-v1.js')
-  require('xtendui/src/private/demos/themes/furniture-hero-v1.js')
   require('xtendui/src/private/demos/themes/furniture-listing-v1.js')
   require('xtendui/src/private/demos/themes/industrial-featured-v1.js')
   require('xtendui/src/private/demos/themes/opacity-listing-v1.js')

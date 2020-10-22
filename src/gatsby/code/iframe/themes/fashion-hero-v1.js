@@ -2,6 +2,8 @@ import React from 'react'
 import path from 'path'
 const markupHero = require('components/snippets/themes/markup-hero').default
 const indentString = require('indent-string')
+const iconArrowLeft = require('components/snippets/icons').iconArrowLeft
+const iconArrowRight = require('components/snippets/icons').iconArrowRight
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -16,25 +18,23 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="slider">
-
 ${indentString(markupHero(), 2)}
+  <div class="slider-navigation-sides left-0" data-xt-nav="-1" aria-label="Previous slide" data-xt-mouse-follow="{ targets: '.slider-navigation-sides-btn' }">
+    <div class="slider-navigation-sides-btn mouse-follow text-white text-2xl">
+      ${iconArrowLeft({ classes: 'icon-md' })}
+    </div>
+  </div>
+
+  <div class="slider-navigation-sides right-0" data-xt-nav="1" aria-label="Next slide" data-xt-mouse-follow="{ targets: '.slider-navigation-sides-btn' }">
+    <div class="slider-navigation-sides-btn mouse-follow text-white text-2xl">
+      ${iconArrowRight({ classes: 'icon-md' })}
+    </div>
+  </div>
 
   <nav class="slider-pagination w-full list list-2 hidden">
-    <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
+    <button type="button" class="btn xt-ignore" data-xt-pag title="Slide xt-num">
     </button>
   </nav>
-
-  <div class="slider-navigation-sides slider-navigation-sides-prev" data-xt-nav="-1" aria-label="previous slide">
-    <div class="slider-navigation-sides-btn">
-      <span><span class="icon-xt-chevron-left"></span></span>
-    </div>
-  </div>
-
-  <div class="slider-navigation-sides slider-navigation-sides-next" data-xt-nav="1" aria-label="next slide">
-    <div class="slider-navigation-sides-btn">
-      <span><span class="icon-xt-chevron-right"></span></span>
-    </div>
-  </div>
 
 </div>
 `
