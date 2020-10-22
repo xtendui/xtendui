@@ -57,7 +57,7 @@
 }
 
 .gatsby_site_header_content {
-  @apply list;
+  @apply w-full list;
   align-items: baseline;
   justify-content: space-between;
 }

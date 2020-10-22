@@ -2,6 +2,8 @@ import React from 'react'
 import path from 'path'
 const markupHero = require('components/snippets/themes/markup-hero').default
 const indentString = require('indent-string')
+const iconArrowLeft = require('components/snippets/icons').iconArrowLeft
+const iconArrowRight = require('components/snippets/icons').iconArrowRight
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -16,18 +18,16 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="slider">
-
 ${indentString(markupHero(), 2)}
-
   <div class="slider-navigation-sides left-0" data-xt-nav="-1" aria-label="Previous slide" data-xt-mouse-follow="{ targets: '.slider-navigation-sides-btn' }">
     <div class="slider-navigation-sides-btn mouse-follow text-black text-2xl">
-      <span class="block icon-chevron-left"></span>
+      ${iconArrowLeft({ classes: 'icon-md text-white' })}
     </div>
   </div>
 
   <div class="slider-navigation-sides right-0" data-xt-nav="1" aria-label="Next slide" data-xt-mouse-follow="{ targets: '.slider-navigation-sides-btn' }">
     <div class="slider-navigation-sides-btn mouse-follow text-black text-2xl">
-      <span class="block icon-chevron-right"></span>
+      ${iconArrowRight({ classes: 'icon-md text-white' })}
     </div>
   </div>
 

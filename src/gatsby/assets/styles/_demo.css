@@ -38,9 +38,6 @@ pre[class*="language-"] {
   @apply overflow-sub my-5 mt-fc mb-lc py-5 px-5;
   width: 100%;
   border-radius: 6px;
-  &::-webkit-scrollbar {
-    background: transparent;
-  }
   .gatsby_demo_code_body & {
     border-top-left-radius: 0;
     border-top-right-radius: 0;

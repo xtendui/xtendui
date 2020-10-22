@@ -60,7 +60,7 @@ module.exports = {
         background: theme('colors.gray.600'),
       },
       scrollbarWidth: 'auto',
-      scrollbarColor: theme('colors.gray.600') + ' transparent',
+      scrollbarColor: `${theme('colors.gray.600')} ${theme('colors.white')}`,
     },
     '.overflow-sub': {
       // styles
@@ -68,13 +68,13 @@ module.exports = {
       '&::-webkit-scrollbar': {
         height: '5px',
         width: '5px',
-        background: theme('colors.white'),
+        background: 'transparent',
       },
       '&::-webkit-scrollbar-thumb': {
         background: theme('colors.gray.600'),
       },
       scrollbarWidth: 'thin',
-      scrollbarColor: theme('colors.gray.600') + ' transparent',
+      scrollbarColor: `${theme('colors.gray.600')} transparent`,
     },
     '[readonly], [disabled], .disabled': {
       // setup
