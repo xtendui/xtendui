@@ -1,6 +1,6 @@
 import React from 'react'
 import path from 'path'
-const markupHero = require('components/snippets/themes/markup-hero').default
+const markupSliderHero = require('components/snippets/themes/markup-slider-hero').default
 const indentString = require('indent-string')
 const iconArrowLeft = require('components/snippets/icons').iconArrowLeft
 const iconArrowRight = require('components/snippets/icons').iconArrowRight
@@ -18,7 +18,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="slider">
-${indentString(markupHero(), 2)}
+${indentString(markupSliderHero(), 2)}
   <div class="slider-navigation-sides left-0" data-xt-nav="-1" aria-label="Previous slide" data-xt-mouse-follow="{ targets: '.slider-navigation-sides-btn' }">
     <div class="slider-navigation-sides-btn mouse-follow text-white text-2xl">
       ${iconArrowLeft({ classes: 'icon-md' })}

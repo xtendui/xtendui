@@ -249,7 +249,7 @@ Xt.mount.push({
           opacity: assetOpacity,
           duration: self.detail.dragging ? assetTimeDragging : assetTimeOff,
           ease: self.detail.dragging ? assetEaseDragging : assetEaseOff,
-         })
+        })
         // nextsOld
         const nextsOld = self.targets.filter(x => x.classList.contains('next'))
         for (const next of nextsOld) {

@@ -186,8 +186,8 @@
   letter-spacing: theme('letterSpacing.wide');
   > span {
     border-radius: 6px;
-    padding: .3rem .5rem;
-    font-size: 0.8rem;
+    padding: .3125rem .5rem;
+    font-size: 0.8125rem;
     color: rgba(255, 255, 255, 0.6);
     line-height: 1;
     text-transform: none;
