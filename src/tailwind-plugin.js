@@ -32,6 +32,7 @@ module.exports = plugin.withOptions(() => {
       if (componentCustom !== false && componentCustom.utility !== false) {
         const base = typeof componentBase.utility === 'function' ? componentBase.utility(theme) : componentBase.utility
         const custom = typeof componentCustom.utility === 'function' ? componentCustom.utility(theme) : componentCustom.utility
+        const variants = merge(componentBase.variant || [], componentCustom.variant || [])
         const options = merge(...castArray(base || {}), custom || {})
         const utilities = Object.keys(options)
         for (const utility of utilities) {
@@ -63,7 +64,6 @@ module.exports = plugin.withOptions(() => {
                   },
                 }
               })
-              const variants = ['responsive']
               addUtilities(css, variants)
             } else if (component === 'row' && utility === 'space') {
               let css = {}
@@ -92,15 +92,10 @@ module.exports = plugin.withOptions(() => {
                   },
                 }
               })
-              const variants = ['responsive']
               addUtilities(css, variants)
             } else {
               let css = {}
               css[utility] = options[utility]
-              const variants = ['responsive']
-              if (['.links-default', '.links-inverse'].includes(utility)) {
-                variants.push('hover', 'active')
-              }
               addUtilities(css, variants)
             }
           }

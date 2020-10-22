@@ -23,6 +23,7 @@ module.exports = {
   theme:{
     xtendui: {
       toggle: {
+        variant: [],
         utility: theme => ({
           // modify utilities
         }),

@@ -1,4 +1,5 @@
 module.exports = {
+  variant: ['responsive'],
   utility: {
     '.drop-container-static': {
       // setup

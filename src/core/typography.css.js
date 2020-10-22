@@ -6,6 +6,7 @@ const round = num =>
 const rem = px => `${round(px / 16)}rem`
 
 module.exports = {
+  variant: ['responsive'],
   utility: theme => ({
     '.h1': {
       // style

@@ -23,6 +23,7 @@ module.exports = {
   theme:{
     xtendui: {
       overlay: {
+        variant: [],
         utility: theme => ({
           // modify utilities
         }),

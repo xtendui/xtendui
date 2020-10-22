@@ -15,6 +15,7 @@ module.exports = {
   theme:{
     xtendui: {
       link: {
+        variant: [],
         utility: theme => ({
           // modify utilities
         }),
@@ -57,12 +58,12 @@ Use **component utility** `.links-default` and `.links-inverse` on **parent elem
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Utility                  | `.links-default`       | `links-default`                | `responsive hover`                | Default links colors            |
-| Utility                  | `.links-inverse`       | `links-inverse`                | `responsive hover`                | Inverse links colors            |
+| Utility                  | `.links-default`       | `links-default`                | `responsive`                | Default links colors            |
+| Utility                  | `.links-inverse`       | `links-inverse`                | `responsive`                | Inverse links colors            |
 
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/link/usage-inverse">
+  <demovanilla src="vanilla/components/core/link/variant-inverse">
   </demovanilla>
 </demo>

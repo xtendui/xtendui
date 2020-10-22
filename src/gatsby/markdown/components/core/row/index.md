@@ -15,6 +15,7 @@ module.exports = {
   theme:{
     xtendui: {
       row: {
+        variant: [],
         utility: theme => ({
           // modify utilities
         }),
