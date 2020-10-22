@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="h5 h-block rounded-md text-default bg-gray-200 text-center">
+<div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
   align items
 </div>
 
@@ -33,7 +33,7 @@ demo.htmlSource = `
 
 </div>
 
-<div class="h5 h-block rounded-md text-default bg-gray-200 text-center">
+<div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
   justify content
 </div>
 

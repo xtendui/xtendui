@@ -1,3 +1,3 @@
 export default () => {
-  return `text-inverse rounded-md bg-accent-500`
+  return `text-white links-inverse rounded-md bg-accent-500`
 }

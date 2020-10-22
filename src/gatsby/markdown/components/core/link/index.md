@@ -49,17 +49,16 @@ You can use `.link` to style any element as a link.
   </demovanilla>
 </demo>
 
-Use [typography variant](/components/core/typography/content#variant) to style text color.
+## Variant
 
-[[notePrimary]]
-| `.text-default` and `.text-inverse` don't support `text-opacity`. Use tailwind colors instead when using `text-opacity`.
+Use **component utility** `.links-default` and `.links-inverse` on **parent elements** to style **child links**.
 
 <div class="table-scroll">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Utility                  | `.text-default`       | `text-default`                | `responsive hover`                | Default text and links colors            |
-| Utility                  | `.text-inverse`       | `text-inverse`                | `responsive hover`                | Inverse text and links colors            |
+| Utility                  | `.links-default`       | `links-default`                | `responsive hover`                | Default links colors            |
+| Utility                  | `.links-inverse`       | `links-inverse`                | `responsive hover`                | Inverse links colors            |
 
 </div>
 

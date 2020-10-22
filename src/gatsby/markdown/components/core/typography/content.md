@@ -12,7 +12,7 @@ Check out the [automatic spacing classes](/components/core/structure/css#utils) 
 
 ## Html
 
-Inside `html` we assign **default lineHeight** and **default font color** with `@apply text-default`.
+Inside `html` we assign **default lineHeight** and **default font color** with `@apply text-black links-default`.
 
 #### Rem
 
@@ -20,19 +20,11 @@ Inside `html` there are the styles for **base rem typography**. We assign a root
 
 ## Variant
 
-Use **typography variants** to style text color.
+Use **tailwind classes** to assign styles (e.g. [text-color](https://tailwindcss.com/docs/text-color), [text-opacity](https://tailwindcss.com/docs/text-opacity)).
 
-<div class="table-scroll">
+Text styles on **parent elements** are applied when **inerithed**.
 
-|                      | Syntax                          | Mixin            | Variants               | Description                   |
-| ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Utility                  | `.text-default`       | `text-default`                | `responsive hover`                | Default text and links colors            |
-| Utility                  | `.text-inverse`       | `text-inverse`                | `responsive hover`                | Inverse text and links colors            |
-
-</div>
-
-[[notePrimary]]
-| `.text-default` and `.text-inverse` don't support `text-opacity`. Use tailwind colors instead when using `text-opacity`.
+See [link variant](/components/core/link#variant) to style links.
 
 <demo>
   <demovanilla src="vanilla/components/core/typography/variant">

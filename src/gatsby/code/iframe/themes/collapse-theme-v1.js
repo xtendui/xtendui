@@ -16,15 +16,15 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="h5 h-block rounded-md text-default bg-gray-200 text-center">
+<div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
   Drop
 </div>
 ${markupDrop()}
-<div class="h5 h-block rounded-md text-default bg-gray-200 text-center">
+<div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
   Overlay
 </div>
 ${markupOverlay()}
-<div class="h5 h-block rounded-md text-default bg-gray-200 text-center">
+<div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
   Group
 </div>
 ${markupGroup()}

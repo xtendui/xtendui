@@ -7,12 +7,6 @@ const rem = px => `${round(px / 16)}rem`
 
 module.exports = {
   utility: theme => ({
-    '.text-default': {
-      color: theme('colors.black'),
-    },
-    '.text-inverse': {
-      color: theme('colors.white'),
-    },
     '.h1': {
       // style
       marginTop: theme('spacing.6'),
@@ -157,7 +151,7 @@ module.exports = {
         fontSize: rem(17.5), // odd number with .5 to fix chrome alignment
       },
       // style
-      '@apply text-default': '',
+      '@apply text-black links-default': '',
       lineHeight: 1.8,
     },
     body: {

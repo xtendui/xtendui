@@ -1,3 +1,3 @@
 export default () => {
-  return `text-inverse bg-accent-500`
+  return `text-white links-inverse bg-accent-500`
 }

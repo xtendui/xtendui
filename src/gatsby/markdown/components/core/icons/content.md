@@ -19,10 +19,9 @@ Use **tailwind classes** to assign variant (e.g. [text-color](https://tailwindcs
   </demovanilla>
 </demo>
 
-Use [typography variant](/components/core/typography/content#variant) to style inverse colors.
+Use **tailwind classes** to assign styles (e.g. [text-color](https://tailwindcss.com/docs/text-color), [text-opacity](https://tailwindcss.com/docs/text-opacity)).
 
-[[notePrimary]]
-| `.text-default` and `.text-inverse` don't support `text-opacity`. Use tailwind colors instead when using `text-opacity`.
+Text styles on **parent elements** are applied when **inerithed**.
 
 <demo>
   <demovanilla src="vanilla/components/core/icons/variant-inverse">

@@ -14,7 +14,7 @@ module.exports = {
     },
     '.card-disable': {
       // setup
-      '@apply text-default': '',
+      '@apply text-black links-default': '',
       borderWidth: '0',
       backgroundColor: 'transparent',
       boxShadow: 'none',

@@ -1,6 +1,6 @@
 module.exports = {
   utility: theme => ({
-    '.text-default': {
+    '.links-default': {
       'a:not([class]), .link': {
         color: theme('colors.accent.500'),
         '&:hover, &:active, &.active': {
@@ -8,7 +8,7 @@ module.exports = {
         },
       },
     },
-    '.text-inverse': {
+    '.links-inverse': {
       'a:not([class]), .link': {
         color: theme('colors.white'),
         '&:hover, &:active, &.active': {

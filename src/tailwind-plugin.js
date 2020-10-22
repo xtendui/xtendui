@@ -98,7 +98,7 @@ module.exports = plugin.withOptions(() => {
               let css = {}
               css[utility] = options[utility]
               const variants = ['responsive']
-              if (['.text-default', '.text-inverse'].includes(utility)) {
+              if (['.links-default', '.links-inverse'].includes(utility)) {
                 variants.push('hover', 'active')
               }
               addUtilities(css, variants)

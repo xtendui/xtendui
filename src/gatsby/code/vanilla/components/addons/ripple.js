@@ -13,11 +13,11 @@ export const demo = {
 demo.htmlSource = `
 <div class="demo--ripple-default">
 
-  <div class="h5 h-block rounded-md text-default bg-gray-200 text-center">
+  <div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
     Button
   </div>
 ${indentString(markupButton(), 2)}
-  <div class="h5 h-block rounded-md text-default bg-gray-200 text-center">
+  <div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
     Card
   </div>
 ${indentString(markupCard(), 2)}

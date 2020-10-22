@@ -1,3 +1,3 @@
 export default () => {
-  return `text-default rounded-md bg-gray-200`
+  return `text-black links-default rounded-md bg-gray-200`
 }

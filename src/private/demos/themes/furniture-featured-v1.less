@@ -14,13 +14,13 @@
     .featured_item {
       .full();
       .margin(y, huge);
-      .text-default() !important;
+      .text-black links-default() !important;
     }
 
     .featured--inverse {
       background: @shade-700;
       .featured_item {
-        .text-inverse() !important;
+        .text-white links-inverse() !important;
       }
     }
 
@@ -158,9 +158,9 @@
 
     .featured--inverse {
       .btn--line {
-        color: @text-inverse;
+        color: @text-white links-inverse;
         &:hover {
-          color: @text-inverse;
+          color: @text-white links-inverse;
           box-shadow: none;
         }
       }

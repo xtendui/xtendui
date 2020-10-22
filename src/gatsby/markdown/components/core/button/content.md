@@ -17,10 +17,11 @@ Use `.link` to create a [link](/components/core/link).
   </demovanilla>
 </demo>
 
-Use [typography variant](/components/core/typography/content#variant) to style text color.
+Use **tailwind classes** to assign styles (e.g. [text-color](https://tailwindcss.com/docs/text-color), [text-opacity](https://tailwindcss.com/docs/text-opacity)).
 
-[[notePrimary]]
-| `.text-default` and `.text-inverse` don't support `text-opacity`. Use tailwind colors instead when using `text-opacity`.
+Text styles on **parent elements** are applied when **inerithed**.
+
+See [link variant](/components/core/link#variant) to style links.
 
 <demo>
   <demovanilla src="vanilla/components/core/button/variant-inverse">

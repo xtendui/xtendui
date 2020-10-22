@@ -1,3 +1,3 @@
 export default () => {
-  return `card-sm text-inverse bg-accent-500`
+  return `card-sm text-white links-inverse bg-accent-500`
 }
