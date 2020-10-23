@@ -95,12 +95,11 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = () => {
+    return () => {
       removeEventListener('blur', eventPause)
       removeEventListener('focus', eventResume)
       self.destroy()
       self = null
     }
-    return unmount
   },
 })

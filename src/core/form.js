@@ -112,9 +112,8 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = () => {
+    return () => {
       removeEventListener('scroll', eventScroll)
     }
-    return unmount
   },
 })

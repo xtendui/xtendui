@@ -24,11 +24,10 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = function () {
+    return function () {
       self.destroy()
       self = null
     }
-    return unmount
   },
 })
 
@@ -73,12 +72,11 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = () => {
+    return () => {
       self.object.removeEventListener('change.xt.scrolltoanchor', eventChange)
       self.destroy()
       self = null
     }
-    return unmount
   },
 })
 
@@ -118,11 +116,10 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = function () {
+    return function () {
       clearInterval(interval)
       removeEventListener('scroll', eventScroll)
     }
-    return unmount
   },
 })
 
@@ -178,7 +175,6 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = () => {}
-    return unmount
+    return () => {}
   },
 })

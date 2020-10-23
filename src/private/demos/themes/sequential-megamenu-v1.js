@@ -165,11 +165,10 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = function () {
+    return function () {
       self.destroy()
       self = null
     }
-    return unmount
   },
 })
 
@@ -247,10 +246,5 @@ Xt.mount.push({
         drop.addEventListener('off.xt', eventLeave.bind(btn), true)
       }
     }
-
-    // unmount
-
-    const unmount = function () {}
-    return unmount
   },
 })

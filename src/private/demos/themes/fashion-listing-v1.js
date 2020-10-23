@@ -77,8 +77,7 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = () => {}
-    return unmount
+    return () => {}
   },
 })
 
@@ -109,10 +108,9 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = function () {
+    return function () {
       self.destroy()
       self = null
     }
-    return unmount
   },
 })

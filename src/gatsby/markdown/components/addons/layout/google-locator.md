@@ -94,11 +94,10 @@ Xt.mount.push({
 
     // unmount
 
-    const unmount = () => {
+    return () => {
       self.destroy()
       self = null
     }
-    return unmount
   }
 })
 ```

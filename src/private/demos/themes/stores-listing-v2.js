@@ -61,10 +61,5 @@ Xt.mount.push({
     for (const item of items) {
       item.addEventListener('click', eventClick)
     }
-
-    // unmount
-
-    const unmount = () => {}
-    return unmount
   },
 })

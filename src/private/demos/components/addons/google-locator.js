@@ -34,7 +34,7 @@ window.demoGoogleLocator = function () {
 
       // unmount
 
-      const unmount = () => {
+      return () => {
         self.destroy()
         self = null
       }
