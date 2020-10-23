@@ -1,7 +1,7 @@
 ---
 type: "Components"
 category: "Addons"
-parent: "Group"
+parent: "Navigation"
 title: "nav"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
@@ -13,6 +13,6 @@ Use [group vertical](/components/core/group#usage-vertical) and [group size](/co
 For aria purpose use `<nav></nav>`.
 
 <demo>
-  <demovanilla src="vanilla/components/addons/group-nav">
+  <demovanilla src="vanilla/components/addons/nav">
   </demovanilla>
 </demo>
