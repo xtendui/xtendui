@@ -56,10 +56,6 @@ Xt.mount.push({
     }
 
     link.addEventListener('mouseleave', eventLeave)
-
-    // unmount
-
-    return () => {}
   },
 })
 

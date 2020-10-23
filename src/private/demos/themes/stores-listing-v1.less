@@ -12,23 +12,23 @@
     @ease-out: @ease-out-quint;
 
     /**
-      * .listing-page
+      * .listing
       */
 
-    .listing-page_inner {
+    .listing_inner {
       > .row {
         .row-default();
         .row-stretch();
       }
     }
 
-    .listing-page_col {
+    .listing_col {
       .col(12);
       .col(6, sm);
       .col(4, lg);
     }
 
-    .listing-page_item {
+    .listing_item {
       .full();
       .text-black links-default() !important;
       .btn-close {
@@ -47,7 +47,7 @@
       }
     }
 
-    .listing-page_subtitle {
+    .listing_subtitle {
       .spacing-md();
       .font-sans-semibold();
       font-size: 2rem;
@@ -56,19 +56,19 @@
       text-transform: none;
     }
 
-    .listing-page_address {
+    .listing_address {
       .full();
       font-size: 1rem;
       line-height: 1.8;
     }
 
-    .listing-page_additional {
+    .listing_additional {
       .full();
       font-size: 0.9rem;
       line-height: 1.8;
     }
 
-    .listing-page_btns {
+    .listing_btns {
       .list-block();
       .list(tiny);
       margin-top: auto;
@@ -82,7 +82,7 @@
 
     // front and back
 
-    .listing-page_front {
+    .listing_front {
       position: relative;
       z-index: 2;
       -webkit-backface-visibility: hidden;
@@ -101,12 +101,12 @@
         .flex-full();
         padding: 3.5rem;
       }
-      .listing-page_btns {
+      .listing_btns {
         margin-top: auto;
       }
     }
 
-    .listing-page_back {
+    .listing_back {
       position: absolute;
       z-index: 1;
       top: 0;
@@ -129,9 +129,9 @@
       }
     }
 
-    .listing-page_item {
+    .listing_item {
       perspective: 1400px;
-      .listing-page_item_inner {
+      .listing_item_inner {
         height: 100%;
         transform-style: preserve-3d;
         transition-duration: @time-big;
@@ -139,13 +139,13 @@
         transition-timing-function: @ease-out;
       }
       &.active {
-        .listing-page_item_inner {
+        .listing_item_inner {
           transform: rotateY(180deg);
           transition-duration: @time-big;
           transition-delay: initial;
           transition-timing-function: @ease-in;
         }
-        .listing-page_back {
+        .listing_back {
           z-index: 3;
         }
       }

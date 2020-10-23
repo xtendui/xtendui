@@ -18,7 +18,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="listing" data-xt-infinite-scroll="{ max: 2 }">
+<div class="listing" data-xt-infinite-scroll="{ max: 5 }">
   <div class="container">
 
     <div class="infinite-scroll-pre mb-4">
@@ -35,7 +35,7 @@ demo.htmlSource = `
       <div class="row row-3" data-xt-infinite-scroll-items>
 
         <div class="listing_col w-full md:w-6/12 lg:w-4/12">
-          <a href="/" class="listing_item">
+          <a href="#" class="listing_item">
             <div class="listing_img">
               ${img({ classes: 'object-cover object-center', ratio: '75%' })}
             </div>
@@ -51,7 +51,7 @@ demo.htmlSource = `
         </div>
 
         <div class="listing_col w-full md:w-6/12 lg:w-4/12">
-          <a href="/" class="listing_item">
+          <a href="#" class="listing_item">
             <div class="listing_img">
               ${imgAlt({ classes: 'object-cover object-center', ratio: '75%' })}
             </div>
@@ -67,7 +67,7 @@ demo.htmlSource = `
         </div>
 
         <div class="listing_col w-full md:w-6/12 lg:w-4/12">
-          <a href="/" class="listing_item">
+          <a href="#" class="listing_item">
             <div class="listing_img">
               ${img({ classes: 'object-cover object-center', ratio: '75%' })}
             </div>
@@ -83,7 +83,7 @@ demo.htmlSource = `
         </div>
 
         <div class="listing_col w-full md:w-6/12 lg:w-4/12">
-          <a href="/" class="listing_item">
+          <a href="#" class="listing_item">
             <div class="listing_img">
               ${imgAlt({ classes: 'object-cover object-center', ratio: '75%' })}
             </div>
@@ -99,7 +99,7 @@ demo.htmlSource = `
         </div>
 
         <div class="listing_col w-full md:w-6/12 lg:w-4/12">
-          <a href="/" class="listing_item">
+          <a href="#" class="listing_item">
             <div class="listing_img">
               ${img({ classes: 'object-cover object-center', ratio: '75%' })}
             </div>
@@ -115,19 +115,51 @@ demo.htmlSource = `
         </div>
 
         <div class="listing_col w-full md:w-6/12 lg:w-4/12">
-            <a href="/" class="listing_item">
-              <div class="listing_img">
-                ${imgAlt({ classes: 'object-cover object-center', ratio: '75%' })}
+          <a href="#" class="listing_item">
+            <div class="listing_img">
+              ${imgAlt({ classes: 'object-cover object-center', ratio: '75%' })}
+            </div>
+            <div class="listing_content py-4">
+              <div class="listing_title h5">
+                Dolor sit amet
               </div>
-              <div class="listing_content py-4">
-                <div class="listing_title h5">
-                  Dolor sit amet
-                </div>
-                <div class="listing_price h6">
-                  3.772,00 €
-                </div>
+              <div class="listing_price h6">
+                3.772,00 €
               </div>
-            </a>
+            </div>
+          </a>
+        </div>
+
+        <div class="listing_col w-full">
+          <a href="#" class="listing_item">
+            <div class="listing_img">
+              ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
+            </div>
+            <div class="listing_content py-4">
+              <div class="listing_title h5">
+                Lorem Ipsum
+              </div>
+              <div class="listing_price h6">
+                3.772,00 €
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="listing_col w-full">
+          <a href="#" class="listing_item">
+            <div class="listing_img">
+              ${imgAlt({ classes: 'object-cover object-center', ratio: '37.5%' })}
+            </div>
+            <div class="listing_content py-4">
+              <div class="listing_title h5">
+                Dolor sit amet
+              </div>
+              <div class="listing_price h6">
+                3.772,00 €
+              </div>
+            </div>
+          </a>
         </div>
 
       </div>

@@ -79,12 +79,12 @@ module.exports = {
     },
     '.h6': {
       // style
-      marginTop: theme('spacing.4'),
-      marginBottom: theme('spacing.2'),
+      marginTop: theme('spacing.2'),
+      marginBottom: theme('spacing.1'),
       '@apply mt-fc mb-lc': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.semibold'),
-      fontSize: '13px',
+      fontSize: '14px',
       lineHeight: theme('lineHeight.snug'),
       letterSpacing: theme('letterSpacing.wide'),
       textTransform: 'uppercase',

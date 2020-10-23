@@ -38,6 +38,7 @@ module.exports = plugin.withOptions(() => {
         for (const utility of utilities) {
           if (componentsCustom[utility] !== false) {
             if (component === 'list' && utility === 'space') {
+              // list space
               let css = {}
               Object.keys(options[utility]).forEach(name => {
                 let value = options[utility][name]
@@ -66,6 +67,7 @@ module.exports = plugin.withOptions(() => {
               })
               addUtilities(css, variants)
             } else if (component === 'row' && utility === 'space') {
+              // row space
               let css = {}
               Object.keys(options[utility]).forEach(name => {
                 let value = options[utility][name]
@@ -94,6 +96,7 @@ module.exports = plugin.withOptions(() => {
               })
               addUtilities(css, variants)
             } else {
+              // all others
               let css = {}
               css[utility] = options[utility]
               addUtilities(css, variants)
