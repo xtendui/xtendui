@@ -137,7 +137,7 @@ Xt.mount.push({
 
     // unmount
 
-    return () => {
+    const unmount = () => {
       firstEl.removeEventListener('click', firstElFnc)
       firstTr.removeEventListener('click', firstTrFnc)
       reinitBtn.removeEventListener('click', reinitFnc)
@@ -151,5 +151,6 @@ Xt.mount.push({
       self.destroy()
       self = null
     }
+    return unmount
   },
 })

@@ -38,7 +38,6 @@ window.demoGoogleLocator = function () {
         self.destroy()
         self = null
       }
-      return unmount
     },
   })
 }

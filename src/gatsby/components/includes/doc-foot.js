@@ -76,7 +76,8 @@ class DocFoot extends React.Component {
                 <div className="gatsby_listing-column">
                   <Link
                     to={`/themes/${kebabCase(
-                      page.postsAll.posts.filter(x => x.post.frontmatter.type === 'Themes' && x.post.frontmatter.title === page.post.frontmatter.parent)[0].post.frontmatter.category
+                      page.postsAll.posts.filter(x => x.post.frontmatter.type === 'Themes' && x.post.frontmatter.title === page.post.frontmatter.parent)[0].post
+                        .frontmatter.category
                     )}/${kebabCase(page.post.frontmatter.parent)}`}
                     className="card gatsby_listing-item"
                   >
