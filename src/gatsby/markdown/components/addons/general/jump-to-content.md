@@ -1,7 +1,7 @@
 ---
 type: "Components"
 category: "Addons"
-parent: "Layout"
+parent: "General"
 title: "jump-to-content"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---

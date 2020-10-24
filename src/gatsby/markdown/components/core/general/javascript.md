@@ -1,7 +1,7 @@
 ---
 type: "Components"
 category: "Core"
-parent: "Layout"
+parent: "General"
 title: "Javascript"
 date: "2050-05-05"
 ---

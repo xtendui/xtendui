@@ -1,11 +1,11 @@
 ---
 type: "Themes"
 category: "By Type"
-parent: "Layout"
-title: "furniture-featured-v1"
+parent: "Animation"
+title: "xtend-v1"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-date: "2020-02-27"
+date: "2015-10-10"
 demos: [
-  "iframe/themes/furniture-featured-v1"
+  "iframe/themes/xtend-v1"
 ]
 ---

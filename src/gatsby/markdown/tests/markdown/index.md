@@ -52,9 +52,9 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 <demo>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/sequential-megamenu-v1">
   </div>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/xtend-theme-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/xtend-v1">
   </div>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/collapse-theme-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/collapse-v1">
   </div>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/furniture-featured-v1">
   </div>

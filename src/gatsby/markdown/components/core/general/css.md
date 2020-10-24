@@ -1,7 +1,7 @@
 ---
 type: "Components"
 category: "Core"
-parent: "Layout"
+parent: "General"
 title: "Css"
 date: "2050-10-10"
 ---

@@ -149,6 +149,5 @@ module.exports = {
         },
       },
     },
-    ...require('./layoutjs.css.js').component(theme),
   }),
 }

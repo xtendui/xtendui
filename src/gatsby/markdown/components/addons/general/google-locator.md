@@ -1,7 +1,7 @@
 ---
 type: "Components"
 category: "Addons"
-parent: "Layout"
+parent: "General"
 title: "google-locator"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
