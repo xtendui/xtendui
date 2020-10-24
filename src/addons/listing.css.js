@@ -1,6 +1,5 @@
 module.exports = {
   component: {
-    '.listing': {
-    },
+    '.listing': {},
   },
 }
