@@ -4,7 +4,6 @@ category: "Core"
 parent: "Animation"
 title: "Animation"
 description: "Animation components and utilities."
-date: "2050-10-10"
 ---
 
 ## Installation

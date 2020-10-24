@@ -110,7 +110,10 @@ export default Template
 
 export const query = graphql`
   query($title: String!, $type: String, $category: String, $parent: String, $parents: String) {
-    categories: allMarkdownRemark(filter: { frontmatter: { type: { eq: $type } } }, sort: { fields: [frontmatter___date, frontmatter___title], order: ASC }) {
+    categories: allMarkdownRemark(
+      filter: { frontmatter: { type: { eq: $type } } }
+      sort: { fields: [frontmatter___date, frontmatter___title], order: [DESC, ASC] }
+    ) {
       category: group(field: frontmatter___category) {
         title: fieldValue
         posts: edges {

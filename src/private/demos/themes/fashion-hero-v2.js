@@ -97,17 +97,6 @@ Xt.mount.push({
       },
     })
 
-    // init
-
-    for (const target of self.targets) {
-      if (!target.querySelector('.hero-cover')) {
-        // inject
-        const inject = Xt.createElement(`<div class="hero-cover"></div>`)
-        gsap.set(inject, { x: 100 * self.direction + '%', skewX: 0 })
-        target.prepend(inject)
-      }
-    }
-
     // drag
 
     const eventDrag = () => {

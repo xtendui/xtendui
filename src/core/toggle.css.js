@@ -1,5 +1,5 @@
 module.exports = {
-  variant: ['responsive'],
+  variants: ['responsive'],
   utility: {
     '.toggle': {
       // setup

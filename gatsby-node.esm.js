@@ -32,7 +32,7 @@ exports.createPages = ({ actions, graphql }) => {
   const docCategoryTemplate = path.resolve('src/gatsby/components/templates/doc-category.js')
   return graphql(`
     {
-      allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      allMarkdownRemark {
         edges {
           node {
             frontmatter {

@@ -6,7 +6,7 @@ const round = num =>
 const rem = px => `${round(px / 16)}rem`
 
 module.exports = {
-  variant: ['responsive'],
+  variants: ['responsive'],
   utility: {
     '.card-group': {
       // setup

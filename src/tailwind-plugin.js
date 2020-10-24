@@ -32,7 +32,7 @@ module.exports = plugin.withOptions(() => {
       if (componentCustom !== false && componentCustom.utility !== false) {
         const base = typeof componentBase.utility === 'function' ? componentBase.utility(theme) : componentBase.utility
         const custom = typeof componentCustom.utility === 'function' ? componentCustom.utility(theme) : componentCustom.utility
-        const variants = merge(componentBase.variant || [], componentCustom.variant || [])
+        const variants = merge(componentBase.variants || [], componentCustom.variants || [])
         const options = merge(...castArray(base || {}), custom || {})
         const utilities = Object.keys(options)
         for (const utility of utilities) {

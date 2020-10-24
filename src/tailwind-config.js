@@ -29,7 +29,7 @@ module.exports = {
       },
       zIndex: {
         base: '0',
-        active: '5',
+        active: '25',
         top: '50',
         backdrop: '500',
         drop: '600',

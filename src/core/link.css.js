@@ -1,5 +1,5 @@
 module.exports = {
-  variant: ['responsive'],
+  variants: ['responsive'],
   utility: theme => ({
     '.links-default': {
       'a:not([class]), .link': {

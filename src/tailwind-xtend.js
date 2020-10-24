@@ -21,6 +21,8 @@ module.exports = {
   typography: require('./core/typography.css.js'),
   // addons
   'group-number': require('./addons/group-number.css.js'),
+  hero: require('./addons/hero.css.js'),
+  listing: require('./addons/listing.css.js'),
   'mouse-follow': require('./addons/mouse-follow.css.js'),
   ripple: require('./addons/ripple.css.js'),
   'slider-navigation-sides': require('./addons/slider-navigation-sides.css.js'),
