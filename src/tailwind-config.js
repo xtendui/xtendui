@@ -43,6 +43,9 @@ module.exports = {
       transitionTimingFunction: {
         ...require('./core/animation.css.js').transitionTimingFunction,
       },
+      animation: {
+        ...require('./core/animation.css.js').animation,
+      },
       keyframes: theme => ({
         ...require('./core/animation.css.js').keyframes(theme),
       }),

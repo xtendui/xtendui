@@ -171,7 +171,7 @@ module.exports = {
       svg: {
         '&:nth-child(1)': {
           circle: {
-            animation: 'anim-spinner 1500ms infinite', // see node_modules/xtendui/src/tailwind-config.js
+            animation: 'spinner 1500ms infinite',
           },
         },
       },
@@ -180,7 +180,7 @@ module.exports = {
       // animation
       '.filler': {
         'span:nth-child(1)': {
-          animation: 'anim-filler-x 1500ms infinite', // see node_modules/xtendui/src/tailwind-config.js
+          animation: 'filler-x 1500ms infinite',
         },
       },
     },
@@ -188,7 +188,7 @@ module.exports = {
       // animation
       '.filler': {
         'span:nth-child(1)': {
-          animation: 'anim-filler-y 1500ms infinite', // see node_modules/xtendui/src/tailwind-config.js
+          animation: 'filler-y 1500ms infinite',
         },
       },
     },

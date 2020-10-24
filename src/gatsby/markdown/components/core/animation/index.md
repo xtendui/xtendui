@@ -7,9 +7,13 @@ description: "Animation components and utilities."
 date: "2050-10-10"
 ---
 
+## Installation
+
+Follow the [installation instructions](http://localhost:8888/introduction/getting-started/installation#javascript-animations) for javascript animations.
+
 ## Customization
 
-You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/animation.css.js](https://github.com/minimit/xtendui/blob/master/src/core/layout.css.js) for default values.
+You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/animation.css.js](https://github.com/minimit/xtendui/blob/master/src/core/animation.css.js) for default values.
 
 ```jsx
 module.exports = {
@@ -28,4 +32,4 @@ module.exports = {
 
 ## Usage
 
-Check subpage to [use css](/components/core/layout/css) or [use javascript](/components/core/layout/javascript).
+Check subpage to [use css](/components/core/animation/css).
