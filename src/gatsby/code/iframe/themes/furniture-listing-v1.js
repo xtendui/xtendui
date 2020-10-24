@@ -1,7 +1,5 @@
 import React from 'react'
 import path from 'path'
-const img = require('components/snippets/img').default
-const imgAlt = require('components/snippets/img').alt
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -21,7 +19,11 @@ demo.htmlSource = `
     <div class="listing_col w-full md:w-6/12 lg:w-4/12">
       <a href="#" class="listing_item">
         <div class="listing_img">
-          ${img({ classes: 'object-cover object-center', ratio: '75%' })}
+          <div class="media-container" style="padding-bottom: 75%">
+            <div class="media-inner">
+              <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
+            </div>
+          </div>
         </div>
         <div class="listing_content py-4">
           <div class="listing_title h5">
@@ -37,7 +39,11 @@ demo.htmlSource = `
     <div class="listing_col w-full md:w-6/12 lg:w-4/12">
       <a href="#" class="listing_item">
         <div class="listing_img">
-          ${imgAlt({ classes: 'object-cover object-center', ratio: '75%' })}
+          <div class="media-container" style="padding-bottom: 75%">
+            <div class="media-inner">
+              <img class="media object-cover object-center" src="/img-alt.svg" loading="eager" alt="">
+            </div>
+          </div>
         </div>
         <div class="listing_content py-4">
           <div class="listing_title h5">
@@ -53,7 +59,11 @@ demo.htmlSource = `
     <div class="listing_col w-full md:w-6/12 lg:w-4/12">
       <a href="#" class="listing_item">
         <div class="listing_img">
-          ${img({ classes: 'object-cover object-center', ratio: '75%' })}
+          <div class="media-container" style="padding-bottom: 75%">
+            <div class="media-inner">
+              <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
+            </div>
+          </div>
         </div>
         <div class="listing_content py-4">
           <div class="listing_title h5">
@@ -69,7 +79,11 @@ demo.htmlSource = `
     <div class="listing_col w-full md:w-6/12 lg:w-4/12">
       <a href="#" class="listing_item">
         <div class="listing_img">
-          ${imgAlt({ classes: 'object-cover object-center', ratio: '75%' })}
+          <div class="media-container" style="padding-bottom: 75%">
+            <div class="media-inner">
+              <img class="media object-cover object-center" src="/img-alt.svg" loading="eager" alt="">
+            </div>
+          </div>
         </div>
         <div class="listing_content py-4">
           <div class="listing_title h5">
@@ -85,7 +99,11 @@ demo.htmlSource = `
     <div class="listing_col w-full md:w-6/12 lg:w-4/12">
       <a href="#" class="listing_item">
         <div class="listing_img">
-          ${img({ classes: 'object-cover object-center', ratio: '75%' })}
+          <div class="media-container" style="padding-bottom: 75%">
+            <div class="media-inner">
+              <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
+            </div>
+          </div>
         </div>
         <div class="listing_content py-4">
           <div class="listing_title h5">
@@ -101,7 +119,11 @@ demo.htmlSource = `
     <div class="listing_col w-full md:w-6/12 lg:w-4/12">
       <a href="#" class="listing_item">
         <div class="listing_img">
-          ${imgAlt({ classes: 'object-cover object-center', ratio: '75%' })}
+          <div class="media-container" style="padding-bottom: 75%">
+            <div class="media-inner">
+              <img class="media object-cover object-center" src="/img-alt.svg" loading="eager" alt="">
+            </div>
+          </div>
         </div>
         <div class="listing_content py-4">
           <div class="listing_title h5">
@@ -117,7 +139,11 @@ demo.htmlSource = `
     <div class="listing_col w-full">
       <a href="#" class="listing_item">
         <div class="listing_img">
-          ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
+          <div class="media-container" style="padding-bottom: 37.5%">
+            <div class="media-inner">
+              <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
+            </div>
+          </div>
         </div>
         <div class="listing_content py-4">
           <div class="listing_title h5">
@@ -133,7 +159,11 @@ demo.htmlSource = `
     <div class="listing_col w-full">
       <a href="#" class="listing_item">
         <div class="listing_img">
-          ${imgAlt({ classes: 'object-cover object-center', ratio: '37.5%' })}
+          <div class="media-container" style="padding-bottom: 37.5%">
+            <div class="media-inner">
+              <img class="media object-cover object-center" src="/img-alt.svg" loading="eager" alt="">
+            </div>
+          </div>
         </div>
         <div class="listing_content py-4">
           <div class="listing_title h5">
