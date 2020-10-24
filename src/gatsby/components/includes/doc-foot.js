@@ -28,12 +28,12 @@ class DocFoot extends React.Component {
     )
     return (
       <div className="gatsby_site_article_foot">
-        <div className="gatsby_listing_group">
-          <div className="gatsby_listing_items">
+        <div className="gatsby_listing-group">
+          <div className="gatsby_listing-items">
             <div className="row">
               {page.post.frontmatter.type !== 'Introduction' && postsIntroduction ? (
-                <div className="gatsby_listing_column">
-                  <Link to={'/'} className="card gatsby_listing_item">
+                <div className="gatsby_listing-column">
+                  <Link to={'/'} className="card gatsby_listing-item">
                     <div className="h4">Setup or other problems?</div>
                     <p>
                       Check out the <strong>Getting Started</strong> pages.
@@ -43,8 +43,8 @@ class DocFoot extends React.Component {
               ) : null}
 
               {page.post.frontmatter.category !== 'Core' && page.post.frontmatter.category !== 'Core' && postsCore.length ? (
-                <div className="gatsby_listing_column">
-                  <Link to={`/components/core/${kebabCase(page.post.frontmatter.parent)}`} className="card gatsby_listing_item">
+                <div className="gatsby_listing-column">
+                  <Link to={`/components/core/${kebabCase(page.post.frontmatter.parent)}`} className="card gatsby_listing-item">
                     <div className="h4">Visit the Core pages</div>
                     <p>
                       There {postsCore.length === 1 ? 'is' : 'are'}{' '}
@@ -58,8 +58,8 @@ class DocFoot extends React.Component {
               ) : null}
 
               {page.post.frontmatter.type !== 'Addons' && page.post.frontmatter.category !== 'Addons' && postsAddons.length ? (
-                <div className="gatsby_listing_column">
-                  <Link to={`/components/addons/${kebabCase(page.post.frontmatter.parent)}`} className="card gatsby_listing_item">
+                <div className="gatsby_listing-column">
+                  <Link to={`/components/addons/${kebabCase(page.post.frontmatter.parent)}`} className="card gatsby_listing-item">
                     <div className="h4">Visit the Addons page</div>
                     <p>
                       There {postsAddons.length === 1 ? 'is' : 'are'}{' '}
@@ -73,12 +73,12 @@ class DocFoot extends React.Component {
               ) : null}
 
               {page.post.frontmatter.type !== 'Themes' && postsThemes.length ? (
-                <div className="gatsby_listing_column">
+                <div className="gatsby_listing-column">
                   <Link
                     to={`/themes/${kebabCase(
                       page.postsAll.posts.filter(x => x.post.frontmatter.type === 'Themes' && x.post.frontmatter.title === page.post.frontmatter.parent)[0].post.frontmatter.category
                     )}/${kebabCase(page.post.frontmatter.parent)}`}
-                    className="card gatsby_listing_item"
+                    className="card gatsby_listing-item"
                   >
                     <div className="h4">Visit the Theme page</div>
                     <p>

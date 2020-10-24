@@ -15,20 +15,20 @@
       * .listing
       */
 
-    .listing_inner {
+    .listing-inner {
       > .row {
         .row-default();
         .row-stretch();
       }
     }
 
-    .listing_col {
+    .listing-col {
       .col(12);
       .col(6, sm);
       .col(4, lg);
     }
 
-    .listing_item {
+    .listing-item {
       .full();
       .text-black links-default() !important;
       .btn-close {
@@ -47,7 +47,7 @@
       }
     }
 
-    .listing_subtitle {
+    .listing-subtitle {
       .spacing-md();
       .font-sans-semibold();
       font-size: 2rem;
@@ -56,19 +56,19 @@
       text-transform: none;
     }
 
-    .listing_address {
+    .listing-address {
       .full();
       font-size: 1rem;
       line-height: 1.8;
     }
 
-    .listing_additional {
+    .listing-additional {
       .full();
       font-size: 0.9rem;
       line-height: 1.8;
     }
 
-    .listing_btns {
+    .listing-btns {
       .list-block();
       .list(tiny);
       margin-top: auto;
@@ -82,7 +82,7 @@
 
     // front and back
 
-    .listing_front {
+    .listing-front {
       position: relative;
       z-index: 2;
       -webkit-backface-visibility: hidden;
@@ -101,12 +101,12 @@
         .flex-full();
         padding: 3.5rem;
       }
-      .listing_btns {
+      .listing-btns {
         margin-top: auto;
       }
     }
 
-    .listing_back {
+    .listing-back {
       position: absolute;
       z-index: 1;
       top: 0;
@@ -129,9 +129,9 @@
       }
     }
 
-    .listing_item {
+    .listing-item {
       perspective: 1400px;
-      .listing_item_inner {
+      .listing-item_inner {
         height: 100%;
         transform-style: preserve-3d;
         transition-duration: @time-big;
@@ -139,13 +139,13 @@
         transition-timing-function: @ease-out;
       }
       &.active {
-        .listing_item_inner {
+        .listing-item_inner {
           transform: rotateY(180deg);
           transition-duration: @time-big;
           transition-delay: initial;
           transition-timing-function: @ease-in;
         }
-        .listing_back {
+        .listing-back {
           z-index: 3;
         }
       }

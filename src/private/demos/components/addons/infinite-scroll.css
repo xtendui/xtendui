@@ -2,7 +2,7 @@
   /*##START*/
   body { /* add your own selector instead of body to contain the code */
 
-    .infinite-scroll--spinner {
+    .infinite-scroll-spinner {
       opacity: 0;
       transition-property: opacity;
       transition-duration: theme('transitionDuration.500');
@@ -17,7 +17,7 @@
     }
 
     .infinite-scroll-loading {
-      .infinite-scroll--spinner {
+      .infinite-scroll-spinner {
         opacity: 1;
         transition-timing-function: theme('transitionTimingFunction.in');
         .spinner {
@@ -29,10 +29,10 @@
     }
 
     [data-xt-infinite-scroll-trigger] {
-      .infinite-scroll--trigger_content-nomore {
+      .infinite-scroll-trigger-content-nomore {
         display: none;
       }
-      .infinite-scroll--trigger_content {
+      .infinite-scroll-trigger-content {
         transition-property: transform, opacity;
         transition-duration: theme('transitionDuration.500');
         transition-timing-function: theme('transitionTimingFunction.out');
@@ -42,7 +42,7 @@
     .infinite-scroll-loading {
       [data-xt-infinite-scroll-trigger] {
         pointer-events: none;
-        > .infinite-scroll--trigger_content {
+        > .infinite-scroll-trigger-content {
           opacity: 0;
           transform: translateY(0.7rem);
           transition-timing-function: theme('transitionTimingFunction.in');
@@ -53,10 +53,10 @@
     .infinite-scroll-nomore {
       [data-xt-infinite-scroll-trigger] {
         pointer-events: none;
-        .infinite-scroll--trigger_content {
+        .infinite-scroll-trigger-content {
           display: none;
         }
-        .infinite-scroll--trigger_content-nomore {
+        .infinite-scroll-trigger-content-nomore {
           display: block;
         }
       }

@@ -38,17 +38,17 @@ class Template extends React.Component {
           data.postsAdiacent.posts.length > 1 ? (
             <div className="gatsby_listing">
               <div className="row row-3">
-                <div className="gatsby_listing_group">
+                <div className="gatsby_listing-group">
                   {data.post.frontmatter.type === 'Components' ? (
                     <h2 className="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">{'Styling and interactions'}</h2>
                   ) : null}
-                  <div className="gatsby_listing_items">
+                  <div className="gatsby_listing-items">
                     <div className="row">
                       {data.postsAdiacent.posts.map(({ post: adiacent }, i) =>
                         adiacent.frontmatter.parent !== adiacent.frontmatter.title ? (
                           adiacent.frontmatter.demos ? (
-                            <div className="gatsby_listing_column" key={i}>
-                              <a role="button" className="card gatsby_listing_item" data-gatsby-listing-toggle>
+                            <div className="gatsby_listing-column" key={i}>
+                              <a role="button" className="card gatsby_listing-item" data-gatsby-listing-toggle>
                                 <div className="h4">
                                   {adiacent.frontmatter.title
                                     .split(/[\s-]+/)
@@ -71,8 +71,8 @@ class Template extends React.Component {
                               ) : null}
                             </div>
                           ) : (
-                            <div className="gatsby_listing_column" key={i}>
-                              <Link to={markdownSlug(adiacent)} className="card gatsby_listing_item">
+                            <div className="gatsby_listing-column" key={i}>
+                              <Link to={markdownSlug(adiacent)} className="card gatsby_listing-item">
                                 <div className="h4">
                                   {adiacent.frontmatter.title
                                     .split(/[\s-]+/)

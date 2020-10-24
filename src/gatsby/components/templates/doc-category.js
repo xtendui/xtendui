@@ -44,14 +44,14 @@ class Template extends React.Component {
                   return 0
                 })
                 .map((category, i) => (
-                  <div className="gatsby_listing_group" key={i}>
+                  <div className="gatsby_listing-group" key={i}>
                     <h2 className="h5 h-block rounded-md bg-gray-200 text-center">{category.title.split('-').pop()}</h2>
-                    <div className="gatsby_listing_items">
+                    <div className="gatsby_listing-items">
                       <div className="row">
                         {category.posts.map(({ post }, z) =>
                           post.frontmatter.link ? (
-                            <div className="gatsby_listing_column" key={z}>
-                              <a href={post.frontmatter.link} target="_blank" rel="noreferrer" className="card gatsby_listing_item">
+                            <div className="gatsby_listing-column" key={z}>
+                              <a href={post.frontmatter.link} target="_blank" rel="noreferrer" className="card gatsby_listing-item">
                                 <div className="h4">
                                   {post.frontmatter.title
                                     .split(/[\s-]+/)
@@ -62,8 +62,8 @@ class Template extends React.Component {
                               </a>
                             </div>
                           ) : post.frontmatter.parent === post.frontmatter.title ? (
-                            <div className="gatsby_listing_column" key={z}>
-                              <Link to={markdownSlug(post)} className="card gatsby_listing_item">
+                            <div className="gatsby_listing-column" key={z}>
+                              <Link to={markdownSlug(post)} className="card gatsby_listing-item">
                                 <div className="h4">
                                   {post.frontmatter.title
                                     .split(/[\s-]+/)

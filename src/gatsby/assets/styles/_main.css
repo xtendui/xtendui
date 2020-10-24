@@ -51,7 +51,7 @@ body {
 
 /* container */
 
-.gatsby_site_article_hero_inner, .gatsby_site_article_content, .gatsby_site_footer_inner {
+.gatsby_site_article_hero-inner, .gatsby_site_article_content, .gatsby_site_footer_inner {
   @apply container ml-0;
   @screen xl {
     max-width: 1152px;
@@ -108,11 +108,11 @@ body {
   }
 }
 
-.gatsby_site_article_hero_inner {
+.gatsby_site_article_hero-inner {
   position: relative;
 }
 
-.gatsby_site_article_hero_content {
+.gatsby_site_article_hero-content {
   .badge {
     @apply border-gray-300 bg-gray-300 -mt-4 ml-4;
   }
@@ -127,7 +127,7 @@ body {
   }
 }
 
-.gatsby_site_article_hero_content_inner {
+.gatsby_site_article_hero-content-inner {
   max-width: 70rem;
   &:not(.fade) {
      pointer-events: none;
@@ -145,15 +145,15 @@ body {
   }
 }
 
-.gatsby_listing_group {
+.gatsby_listing-group {
   @apply w-full;
 }
 
-.gatsby_listing_items {
+.gatsby_listing-items {
   .gatsby_listing .h-block + & {
     @apply my-10;
   }
-  .gatsby_listing_group:last-child & {
+  .gatsby_listing-group:last-child & {
     @apply mb-0;
   }
   > .row {
@@ -170,7 +170,7 @@ body {
   }
 }
 
-.gatsby_listing_column {
+.gatsby_listing-column {
   @apply w-2/4 md:w-2/6 lg:w-2/4 xl:w-2/6;
   .gatsby_site_article_foot & {
     &:nth-child(1) {
@@ -182,7 +182,7 @@ body {
   }
 }
 
-.gatsby_listing_item {
+.gatsby_listing-item {
   @apply py-4 px-5 text-xs text-black links-default rounded-md transform hover:text-white hover:bg-accent-500 hover:shadow-xl hover:-translate-y-2 active:text-white active:bg-accent-600 active:shadow-md active:-translate-y-1;
   .h4 {
     @apply mb-1.5 mt-fc mb-lc;

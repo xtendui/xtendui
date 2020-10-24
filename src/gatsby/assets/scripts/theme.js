@@ -154,7 +154,7 @@ Xt.mount.push({
  * xt-scroll
 
 Xt.mount.push({
-  matches: '.gatsby_site_article_hero_content_inner',
+  matches: '.gatsby_site_article_hero-content-inner',
   mount: (object) => {
     // init
 

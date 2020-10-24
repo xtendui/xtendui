@@ -5,16 +5,16 @@ export default () => {
 
     <div class="slide w-full slide-absolute">
       <div class="hero block overflow-hidden w-full">
-        <div class="hero_inner">
-          <div class="hero_asset">
+        <div class="hero-inner">
+          <div class="hero-asset">
             <div class="media-container height-vh bg-accent-900">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
               </div>
             </div>
           </div>
-          <div class="hero_content container absolute inset-0 flex items-end justify-center text-center">
-            <a href="#" class="hero_content_inner block w-full max-w-xl py-6 md:py-10 text-white links-inverse">
+          <div class="hero-content container absolute inset-0 flex items-end justify-center text-center">
+            <a href="#" class="hero-content-inner block w-full max-w-xl py-6 md:py-10 text-white links-inverse">
               <div class="h1 h1-display">
                 Lorem ipsum
               </div>
@@ -26,16 +26,16 @@ export default () => {
 
     <div class="slide w-full slide-absolute">
       <div class="hero block overflow-hidden w-full">
-        <div class="hero_inner">
-          <div class="hero_asset">
+        <div class="hero-inner">
+          <div class="hero-asset">
             <div class="media-container height-vh bg-accent-900">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img-alt.svg" loading="eager" alt="">
               </div>
             </div>
           </div>
-          <div class="hero_content container absolute inset-0 flex items-end justify-center text-center">
-            <a href="#" class="hero_content_inner block w-full max-w-xl py-6 md:py-10 text-white links-inverse">
+          <div class="hero-content container absolute inset-0 flex items-end justify-center text-center">
+            <a href="#" class="hero-content-inner block w-full max-w-xl py-6 md:py-10 text-white links-inverse">
               <div class="h1">
                 Lorem ipsum dolor sit amet
               </div>
@@ -52,16 +52,16 @@ export default () => {
 
     <div class="slide w-full slide-absolute">
       <div class="hero block overflow-hidden w-full">
-        <div class="hero_inner">
-          <div class="hero_asset">
+        <div class="hero-inner">
+          <div class="hero-asset">
             <div class="media-container height-vh bg-accent-900">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
               </div>
             </div>
           </div>
-          <div class="hero_content container absolute inset-0 flex items-end">
-            <a href="#" class="hero_content_inner block w-full max-w-xl py-6 md:py-10 text-white links-inverse">
+          <div class="hero-content container absolute inset-0 flex items-end">
+            <a href="#" class="hero-content-inner block w-full max-w-xl py-6 md:py-10 text-white links-inverse">
               <div class="h1">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </div>
@@ -73,16 +73,16 @@ export default () => {
 
     <div class="slide w-full slide-absolute">
       <div class="hero block overflow-hidden w-full">
-        <div class="hero_inner">
-          <div class="hero_asset">
+        <div class="hero-inner">
+          <div class="hero-asset">
             <div class="media-container height-vh bg-accent-900">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img-alt.svg" loading="eager" alt="">
               </div>
             </div>
           </div>
-          <div class="hero_content container absolute inset-0 flex items-end">
-            <div href="#" class="hero_content_inner block w-full max-w-xl py-6 md:py-10 text-white links-inverse">
+          <div class="hero-content container absolute inset-0 flex items-end">
+            <div href="#" class="hero-content-inner block w-full max-w-xl py-6 md:py-10 text-white links-inverse">
               <div class="h1">
                 Lorem ipsum dolor sit amet
               </div>
@@ -103,16 +103,16 @@ export default () => {
 
     <div class="slide w-full slide-absolute">
       <div class="hero block overflow-hidden w-full">
-        <div class="hero_inner">
-          <div class="hero_asset">
+        <div class="hero-inner">
+          <div class="hero-asset">
             <div class="media-container height-vh bg-accent-900">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
               </div>
             </div>
           </div>
-          <div class="hero_content container absolute inset-0 flex items-center">
-            <div href="#" class="hero_content_inner block w-full max-w-xl py-6 md:py-10 text-white links-inverse">
+          <div class="hero-content container absolute inset-0 flex items-center">
+            <div href="#" class="hero-content-inner block w-full max-w-xl py-6 md:py-10 text-white links-inverse">
               <div class="h1">
                 Lorem ipsum dolor sit amet
               </div>
@@ -133,16 +133,16 @@ export default () => {
 
     <div class="slide w-full slide-absolute">
       <div class="hero block overflow-hidden w-full">
-        <div class="hero_inner">
-          <div class="hero_asset">
+        <div class="hero-inner">
+          <div class="hero-asset">
             <div class="media-container height-vh bg-accent-900">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img-alt.svg" loading="eager" alt="">
               </div>
             </div>
           </div>
-          <div class="hero_content container absolute inset-0 flex items-center justify-end text-right">
-            <div href="#" class="hero_content_inner block w-full max-w-xl py-6 md:py-10 text-white links-inverse">
+          <div class="hero-content container absolute inset-0 flex items-center justify-end text-right">
+            <div href="#" class="hero-content-inner block w-full max-w-xl py-6 md:py-10 text-white links-inverse">
               <div class="h1">
                 Lorem ipsum dolor sit amet
               </div>

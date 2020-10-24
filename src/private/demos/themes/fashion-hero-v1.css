@@ -4,7 +4,7 @@
 
     /* hero */
 
-    .hero_asset {
+    .hero-asset {
       &:before {
         content: '';
         position: absolute;
@@ -21,7 +21,7 @@
 
     .hero--left {
       @screen md {
-        .hero_asset {
+        .hero-asset {
           &:before {
             width: 75%;
             height: 100%;
@@ -33,7 +33,7 @@
 
     .hero--right {
       @screen md {
-        .hero_asset {
+        .hero-asset {
           &:before {
             left: auto;
             right: 0;

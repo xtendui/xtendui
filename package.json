@@ -27,8 +27,8 @@
   ],
   "scripts": {
     "webpack": "cross-env NODE_ENV=development webpack --progress --colors",
-    "build": "gatsby clean && gatsby build",
-    "dev": "gatsby clean && gatsby develop -p 8888",
+    "build": "cross-env NODE_ENV=production && gatsby clean && gatsby build",
+    "dev": "cross-env NODE_ENV=development && gatsby clean && gatsby develop -p 8888",
     "serve": "cross-env NODE_ENV=production yarn build && gatsby serve -p 8888",
     "deploy": "cross-env NODE_ENV=production yarn build && gh-pages -d public",
     "release": "npx semantic-release --dry-run --no-ci",

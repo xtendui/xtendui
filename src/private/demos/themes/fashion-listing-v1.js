@@ -6,7 +6,7 @@ import gsap from 'gsap'
  */
 
 Xt.mount.push({
-  matches: '#iframe--fashion-listing-v1 body .listing_item', // add your own selector instead of body to contain the code
+  matches: '#iframe--fashion-listing-v1 body .listing-item', // add your own selector instead of body to contain the code
   mount: object => {
     // vars
 

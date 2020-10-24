@@ -10,7 +10,7 @@ Xt.mount.push({
   mount: object => {
     // vars
 
-    const items = object.querySelectorAll('.listing_item')
+    const items = object.querySelectorAll('.listing-item')
 
     // click
 
@@ -19,10 +19,10 @@ Xt.mount.push({
         // class
         tr.classList.add('active')
         // front
-        const front = tr.querySelector('.listing_front')
+        const front = tr.querySelector('.listing-front')
         gsap.to(front, { opacity: 0, duration: Xt.vars.timeSmall, ease: 'expo.out' })
         // front
-        const back = tr.querySelector('.listing_back')
+        const back = tr.querySelector('.listing-back')
         gsap.set(back, { y: 40, opacity: 0 })
         gsap.to(back, { y: 0, opacity: 1, duration: Xt.vars.timeSmall, ease: 'expo.out' })
       } else {
@@ -35,17 +35,17 @@ Xt.mount.push({
         // class
         tr.classList.remove('active')
         // front
-        const front = tr.querySelector('.listing_front')
+        const front = tr.querySelector('.listing-front')
         gsap.set(front, { y: -40, opacity: 0 })
         gsap.to(front, { y: 0, opacity: 1, duration: Xt.vars.timeSmall, ease: 'expo.out' })
         // front
-        const back = tr.querySelector('.listing_back')
+        const back = tr.querySelector('.listing-back')
         gsap.to(back, { y: 0, opacity: 0, duration: Xt.vars.timeSmall, ease: 'expo.out' })
       }
     }
 
     const eventClick = e => {
-      const tr = e.target.closest('.listing_item')
+      const tr = e.target.closest('.listing-item')
       // disable on mobile
       if (matchMedia('(max-width: 767px)').matches) {
         return

@@ -15,7 +15,7 @@
       }
     }
 
-    .google-locator_main {
+    .google-locator-main {
       flex: 1 1 auto;
       position: relative;
       min-height: 100%;
@@ -47,18 +47,18 @@
       }
     }
 
-    .google-locator_main_inner {
+    .google-locator-main-inner {
       position: relative;
       width: 100%;
       height: 100%;
     }
 
-    .google-locator_main_map {
+    .google-locator-main-map {
       width: 100%;
       height: 100%;
     }
 
-    .google-locator_aside {
+    .google-locator-aside {
       position: relative;
       z-index: 1;
       @screen md {
@@ -74,29 +74,29 @@
       }
     }
 
-    .google-locator_aside_head {
+    .google-locator-aside-head {
       position: relative;
       padding: 2rem;
       border-bottom: 1px solid theme('colors.gray.200');
     }
 
-    .google-locator_result {
+    .google-locator-result {
       @apply text-xs;
       padding-bottom: 0.7rem;
       border-bottom: 1px solid theme('colors.gray.200');
     }
 
-    .google-locator_aside_body {
+    .google-locator-aside-body {
       position: relative;
       padding: 2rem;
-      .google-locator_result {
+      .google-locator-result {
         display: none;
       }
       [data-xt-google-locator-result-initial] {
         display: block;
       }
       &.found {
-        .google-locator_result {
+        .google-locator-result {
           display: none;
         }
         [data-xt-google-locator-result-founds] {
@@ -104,7 +104,7 @@
         }
       }
       &.noplace {
-        .google-locator_result {
+        .google-locator-result {
           display: none;
         }
         [data-xt-google-locator-result-noplace] {
@@ -112,7 +112,7 @@
         }
       }
       &.empty {
-        .google-locator_result {
+        .google-locator-result {
           display: none;
         }
         [data-xt-google-locator-result-empty] {
@@ -120,7 +120,7 @@
         }
       }
       &.error {
-        .google-locator_result {
+        .google-locator-result {
           display: none;
         }
         [data-xt-google-locator-result-error] {
@@ -129,18 +129,18 @@
       }
     }
 
-    .google-locator_repeat {
+    .google-locator-repeat {
       position: absolute;
       z-index: 2;
       top: 2rem;
       left: 2rem;
     }
 
-    .google-locator_items {
+    .google-locator-items {
       @apply mt-4;
     }
 
-    .google-locator_item {
+    .google-locator-item {
       @apply py-2;
       > .list {
         @apply list-2;
@@ -150,7 +150,7 @@
       }
     }
 
-    .google-locator_items .google-locator_item {
+    .google-locator-items .google-locator-item {
       /* activation when clicking marker */
       cursor: pointer;
       border-bottom: 1px solid theme('colors.gray.200');
@@ -163,22 +163,22 @@
       }
     }
 
-    .google-locator_item_name {
+    .google-locator-item-name {
       @apply h5;
     }
 
-    .google-locator_item_address {
+    .google-locator-item-address {
       @apply text-sm;
       font-style: normal;
       text-transform: uppercase;
     }
 
-    .google-locator_item_additional {
+    .google-locator-item-additional {
       @apply text-sm;
       text-transform: uppercase;
     }
 
-    .google-locator_item_directions {
+    .google-locator-item-directions {
       @apply text-sm;
       text-transform: uppercase;
     }

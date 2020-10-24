@@ -4,7 +4,7 @@
 
     /* hero */
 
-    .hero_cover {
+    .hero-cover {
       pointer-events: none;
       position: absolute;
       z-index: theme('zIndex.active');
