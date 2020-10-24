@@ -29,6 +29,10 @@ module.exports = {
       // setup
       cursor: 'pointer',
     },
+    '.xt-transition-none': {
+      // setup
+      transition: 'none !important',
+    },
     '.xt-container': {
       // setup
       position: 'relative',

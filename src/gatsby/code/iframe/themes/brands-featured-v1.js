@@ -19,48 +19,48 @@ demo.htmlSource = `
   Constant speed
 </div>
 
-<div class="slider slider--text">
+<div class="slider slider--text py-12">
 
   <div class="slides">
-    <ul class="slides-inner row row-2">
+    <ul class="slides-inner row row-10 transition-none">
 
       <div class="slide">
-        <div class="brand">
+        <div class="brand list list-10 flex-no-wrap whitespace-no-wrap">
           <a href="#test-link-1" class="brand_content">
-            One
+            <div class="h4">One</div>
           </a>
           <a href="#test-link-2" class="brand_content">
-            Two
+            <div class="h4">Two</div>
           </a>
           <a href="#test-link-3" class="brand_content">
-            Three
+            <div class="h4">Three</div>
           </a>
           <a href="#test-link-4" class="brand_content">
-            Four
+            <div class="h4">Four</div>
           </a>
           <a href="#test-link-5" class="brand_content">
-            Five
+            <div class="h4">Five</div>
           </a>
           <a href="#test-link-6" class="brand_content">
-            Six
+            <div class="h4">Six</div>
           </a>
           <a href="#test-link-7" class="brand_content">
-            Seven
+            <div class="h4">Seven</div>
           </a>
           <a href="#test-link-8" class="brand_content">
-            Eight
+            <div class="h4">Eight</div>
           </a>
           <a href="#test-link-9" class="brand_content">
-            Nine
+            <div class="h4">Nine</div>
           </a>
           <a href="#test-link-10" class="brand_content">
-            Ten
+            <div class="h4">Ten</div>
           </a>
           <a href="#test-link-11" class="brand_content">
-            Eleven
+            <div class="h4">Eleven</div>
           </a>
           <a href="#test-link-12" class="brand_content">
-            Twelve
+            <div class="h4">Twelve</div>
           </a>
         </div>
       </div>
@@ -79,48 +79,48 @@ demo.htmlSource = `
   Faster or slower depending on horizontal space
 </div>
 
-<div class="slider slider--text slider--factor">
+<div class="slider slider--text slider--factor py-12">
 
   <div class="slides">
-    <ul class="slides-inner row row-2">
+    <ul class="slides-inner row row-10 transition-none">
 
       <div class="slide">
-        <div class="brand">
+        <div class="brand list list-10 flex-no-wrap whitespace-no-wrap">
           <a href="#test-link-1" class="brand_content">
-            One
+            <div class="h4">One</div>
           </a>
           <a href="#test-link-2" class="brand_content">
-            Two
+            <div class="h4">Two</div>
           </a>
           <a href="#test-link-3" class="brand_content">
-            Three
+            <div class="h4">Three</div>
           </a>
           <a href="#test-link-4" class="brand_content">
-            Four
+            <div class="h4">Four</div>
           </a>
           <a href="#test-link-5" class="brand_content">
-            Five
+            <div class="h4">Five</div>
           </a>
           <a href="#test-link-6" class="brand_content">
-            Six
+            <div class="h4">Six</div>
           </a>
           <a href="#test-link-7" class="brand_content">
-            Seven
+            <div class="h4">Seven</div>
           </a>
           <a href="#test-link-8" class="brand_content">
-            Eight
+            <div class="h4">Eight</div>
           </a>
           <a href="#test-link-9" class="brand_content">
-            Nine
+            <div class="h4">Nine</div>
           </a>
           <a href="#test-link-10" class="brand_content">
-            Ten
+            <div class="h4">Ten</div>
           </a>
           <a href="#test-link-11" class="brand_content">
-            Eleven
+            <div class="h4">Eleven</div>
           </a>
           <a href="#test-link-12" class="brand_content">
-            Twelve
+            <div class="h4">Twelve</div>
           </a>
         </div>
       </div>
@@ -139,13 +139,13 @@ demo.htmlSource = `
   Images
 </div>
 
-<div class="slider slider--img">
+<div class="slider slider--img py-12">
 
   <div class="slides">
-    <ul class="slides-inner row row-2">
+    <ul class="slides-inner row row-px transition-none">
 
       <div class="slide">
-        <div class="brand">
+        <div class="brand list list-px flex-no-wrap">
           <a href="#test-link-1" class="brand_content">
             ${img({ classes: 'object-cover object-center', ratio: '37.5%', loading: 'eager' })}
           </a>

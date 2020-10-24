@@ -7,7 +7,7 @@ import gsap from 'gsap'
  */
 
 Xt.mount.push({
-  matches: '#iframe--brands-featured-v1 body .slider', // add your own selector instead of body to contain the code
+  matches: '#iframe--brands-featured-v1 body .slider.slider--factor', // add your own selector instead of body to contain the code
   mount: object => {
     // vars
 
@@ -40,9 +40,10 @@ Xt.mount.push({
         const draggerWidth = self.dragger.offsetWidth
         let time = slideWidth * 15 // constant speed
         if (object.classList.contains('slider--factor')) {
-          time = (draggerWidth / slideWidth) * 50000 // faster or slower depending on horizontal space
+          time = (draggerWidth / slideWidth) * 5000 // faster or slower depending on horizontal space
         }
         // animate
+        console.log(self.initial, self.wrap)
         if (self.initial) {
           // reset dragging position
           gsap.set(self.dragger, { x: self.detail.dragPos })

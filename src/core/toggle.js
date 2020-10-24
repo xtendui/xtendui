@@ -175,18 +175,18 @@ class Toggle {
   initStart(saveCurrents = false) {
     const self = this
     const options = self.options
+    // currents
+    self.setCurrents([])
+    // vars
+    let currents = 0
+    self.initial = true
+    self.wrap = false
+    self.currentIndex = null
+    self.oldIndex = null
+    // [disabled]
+    self.destroyDisabled()
     // @fix raf because after .xt custom listeners
     requestAnimationFrame(() => {
-      // currents
-      self.setCurrents([])
-      // vars
-      let currents = 0
-      self.initial = true
-      self.wrap = false
-      self.currentIndex = null
-      self.oldIndex = null
-      // [disabled]
-      self.destroyDisabled()
       // automatic initial currents
       const elements = self.getElementsGroups()
       if (elements.length) {

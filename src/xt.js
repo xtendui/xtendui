@@ -816,11 +816,11 @@ if (typeof window !== 'undefined') {
         let val = parseFloat(style[prop])
         val = old !== '' ? val - parseFloat(old) : val
         const str = 'calc(' + val + 'px + ' + width + 'px)'
-        element.classList.add('transition-none')
+        element.classList.add('xt-transition-none')
         requestAnimationFrame(() => {
           element.style[prop] = str
           requestAnimationFrame(() => {
-            element.classList.remove('transition-none')
+            element.classList.remove('xt-transition-none')
           })
         })
       }
@@ -841,12 +841,12 @@ if (typeof window !== 'undefined') {
     // xt-fixed
     const elements = container.querySelectorAll('.xt-fixed')
     for (const element of elements) {
-      element.classList.add('transition-none')
+      element.classList.add('xt-transition-none')
       requestAnimationFrame(() => {
         element.style.right = ''
         element.style.paddingRight = ''
         requestAnimationFrame(() => {
-          element.classList.remove('transition-none')
+          element.classList.remove('xt-transition-none')
         })
       })
     }

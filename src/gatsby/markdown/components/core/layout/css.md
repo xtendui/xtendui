@@ -25,6 +25,7 @@ These are layout **component utilities**.
 | Utility                  | `.container-reset`       | `container-reset`                | `responsive`                | Reset container styles            |
 | Utility                  | `.height-vh`       | `height-vh`                | `responsive`                | Height `100vh` and retain height on vertical scroll/resize on mobile           |
 | Utility                  | `.transform-none`                     | `transform-none`                | `responsive`                | Disable transform (!important)            |
+| Utility                  | `.transition-none`                     | `transition-none`                | `responsive`                | Disable transform (!important)            |
 | Utility                  | `.animate-none`                     | `animate-none`                | `responsive`                | Disable animation (!important)            |
 | Utility                  | `.duration-none`                     | `duration-none`                | `responsive`                | Instant transitions and animations (!important)            |
 

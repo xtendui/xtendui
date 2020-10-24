@@ -17,6 +17,10 @@ module.exports = {
       // setup
       transform: 'none !important',
     },
+    '.transition-none': {
+      // setup
+      transition: 'none !important',
+    },
     '.animate-none': {
       // setup
       animation: 'none !important',

@@ -78,10 +78,6 @@ module.exports = {
     '.slide': {
       // setup
       position: 'relative',
-      '> *': {
-        display: 'block',
-        position: 'relative',
-      },
     },
     '.slide-absolute': {
       // setup

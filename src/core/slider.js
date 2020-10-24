@@ -1006,11 +1006,11 @@ class Slider extends Xt.Toggle {
     self.inverse = self.direction < 0
     // drag position
     if (self.initial) {
-      self.dragger.classList.add('transition-none')
+      self.dragger.classList.add('xt-transition-none')
     }
     dragger.style.transform = 'translateX(' + self.detail.dragPos + 'px)'
     if (self.initial) {
-      self.dragger.classList.remove('transition-none')
+      self.dragger.classList.remove('xt-transition-none')
     }
     // listener dispatch
     if (!self.initial) {
@@ -1121,11 +1121,11 @@ class Slider extends Xt.Toggle {
     )
     // drag position
     if (self.initial) {
-      self.dragger.classList.add('transition-none')
+      self.dragger.classList.add('xt-transition-none')
     }
     dragger.style.transform = 'translateX(' + self.detail.dragPosCurrent + 'px)'
     if (self.initial) {
-      self.dragger.classList.remove('transition-none')
+      self.dragger.classList.remove('xt-transition-none')
     }
     // auto
     self.eventAutostart()
@@ -1149,9 +1149,9 @@ class Slider extends Xt.Toggle {
     // enable
     if (dragger) {
       // dragger
-      dragger.classList.add('transition-none')
+      dragger.classList.add('xt-transition-none')
       requestAnimationFrame(() => {
-        dragger.classList.remove('transition-none')
+        dragger.classList.remove('xt-transition-none')
       })
     }
   }
@@ -1173,9 +1173,9 @@ class Slider extends Xt.Toggle {
       // jump
       dragger.classList.add('xt-jumps-none')
       // dragger
-      dragger.classList.add('transition-none')
+      dragger.classList.add('xt-transition-none')
       requestAnimationFrame(() => {
-        dragger.classList.remove('transition-none')
+        dragger.classList.remove('xt-transition-none')
       })
     }
     if (self.autoHeight) {
