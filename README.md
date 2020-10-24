@@ -33,11 +33,11 @@
 
 Supported browsers are as follow: **chrome 38**, **safari 10**, **ios 10**, **firefox 38**, **edge 12**, **opera 25**.
 
-## Setup
+## Installation
 
-#### Installation
+#### Setup
 
-For a complete css and js setup guide visit [online installation page](https://xtendui.com/introduction/getting-started/installation) or [github installation page](https://github.com/minimit/xtendui/blob/master/INSTALLATION.md).
+For a complete css and js setup guide visit [online installation page](https://xtendui.com/introduction/getting-started/setup) or [github installation page](https://github.com/minimit/xtendui/blob/master/SETUP.md).
 
 #### Customization
 

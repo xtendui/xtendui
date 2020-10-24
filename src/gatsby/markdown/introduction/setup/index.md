@@ -1,10 +1,10 @@
 ---
 type: "Introduction"
 category: "Getting Started"
-parent: "Installation"
-title: "Installation"
+parent: "Setup"
+title: "Setup"
 description: "Installation instructions, css and js setup."
-date: "2050-10-10"
+date: "2050-09-10"
 ---
 
 Install **xtendui**.

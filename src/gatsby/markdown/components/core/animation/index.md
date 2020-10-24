@@ -8,7 +8,7 @@ description: "Animation components and utilities."
 
 ## Installation
 
-Follow the [installation instructions](http://localhost:8888/introduction/getting-started/installation#javascript-animations) for javascript animations.
+Follow the [installation instructions](http://localhost:8888/introduction/getting-started/setup#javascript-animations) for javascript animations.
 
 ## Customization
 

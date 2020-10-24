@@ -4,7 +4,7 @@ category: "Getting Started"
 parent: "Customization"
 title: "Customization"
 description: "Css and js customization instructions."
-date: "2050-10-15"
+date: "2050-08-10"
 ---
 
 ## Css
