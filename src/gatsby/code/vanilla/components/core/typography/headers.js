@@ -9,7 +9,7 @@ export const demo = {
 
 demo.htmlSource = `
 <h1 class="h1-display">
-  Lorem Ipsum h1
+  Lorem ipsum dolor sit amet
 </h1>
 
 <p>
@@ -17,7 +17,7 @@ demo.htmlSource = `
 </p>
 
 <h1>
-  Lorem Ipsum h1
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit
 </h1>
 
 <p>
@@ -25,7 +25,7 @@ demo.htmlSource = `
 </p>
 
 <h2>
-  Lorem Ipsum h2
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit
 </h2>
 
 <p>
@@ -33,7 +33,7 @@ demo.htmlSource = `
 </p>
 
 <h3>
-  Lorem Ipsum h3
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit
 </h3>
 
 <p>
@@ -41,7 +41,7 @@ demo.htmlSource = `
 </p>
 
 <h4>
-  Lorem Ipsum h4
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit
 </h4>
 
 <p>
@@ -49,7 +49,7 @@ demo.htmlSource = `
 </p>
 
 <h5>
-  Lorem Ipsum h5
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit
 </h5>
 
 <p>
@@ -57,7 +57,7 @@ demo.htmlSource = `
 </p>
 
 <h6>
-  Lorem Ipsum h6
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit
 </h6>
 
 <p>
@@ -65,10 +65,10 @@ demo.htmlSource = `
 </p>
 
 <div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
-  Lorem Ipsum h5
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit
 </div>
 
 <h3 class="h6 sm:h5 md:h4">
-  Lorem Ipsum h6 sm:h5 md:h4
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit
 </h6>
 `
