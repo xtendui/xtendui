@@ -13,13 +13,21 @@ module.exports = {
       // eslint-disable-next-line no-dupe-keys
       height: 'calc(var(--vh, 1vh) * 100)',
     },
+    '.transform-none': {
+      // setup
+      transform: 'none !important',
+    },
+    '.animate-none': {
+      // setup
+      animation: 'none !important',
+    },
     '.duration-none': {
       // setup
-      transitionDuration: 'initial',
-      transitionDelay: 'initial',
-      animationDuration: 'initial',
-      animationDelay: 'initial',
-      animationIterationCount: '1',
+      transitionDuration: 'initial !important',
+      transitionDelay: 'initial !important',
+      animationDuration: 'initial !important',
+      animationDelay: 'initial !important',
+      animationIterationCount: '1 !important',
     },
     '.mt-fc': {
       // setup

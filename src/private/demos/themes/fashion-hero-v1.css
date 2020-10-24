@@ -2,33 +2,9 @@
   /*##START*/
   body { /* add your own selector instead of body to contain the code */
 
-    /* slider */
-
-    .slides-inner {
-      @apply duration-none transform-none !important;
-    }
-
-    .slide {
-      @apply w-full slide-absolute;
-    }
-
-    .slider-pagination {
-      display: none;
-    }
-
     /* hero */
 
-    .hero {
-      @apply w-full;
-      display: block;
-      overflow: hidden;
-    }
-
     .hero_asset {
-      .media-container {
-        @apply height-vh;
-        background: theme('colors.accent.900');
-      }
       &:before {
         content: '';
         position: absolute;
@@ -41,51 +17,7 @@
       }
     }
 
-    .hero_content {
-      @apply container;
-      position: absolute;
-      z-index: calc(theme('zIndex.active') + 1);
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      display: flex;
-      align-items: flex-end;
-      justify-content: flex-start;
-      .btn {
-        @apply btn-lg px-0;
-      }
-    }
-
-    .hero_content_inner {
-      @apply block w-full max-w-xl py-6 md:py-10 text-white links-inverse;
-    }
-
     /* variants */
-
-    .hero--big {
-      .h1 {
-        font-size: 3rem;
-        @screen md {
-          font-size: 5rem;
-        }
-      }
-    }
-
-    .hero--center {
-      .hero_content {
-        justify-content: center;
-        text-align: center;
-      }
-    }
-
-    .hero--middle {
-      @screen md {
-        .hero_content {
-          align-items: center;
-        }
-      }
-    }
 
     .hero--left {
       @screen md {
@@ -95,10 +27,6 @@
             height: 100%;
             background: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 33%, rgba(0, 0, 0, 0) 100%);
           }
-        }
-        .hero_content {
-          justify-content: flex-start;
-          text-align: left;
         }
       }
     }
@@ -113,10 +41,6 @@
             height: 100%;
             background: linear-gradient(-90deg, rgba(0, 0, 0, 0.3) 33%, rgba(0, 0, 0, 0) 100%);
           }
-        }
-        .hero_content {
-          justify-content: flex-end;
-          text-align: right;
         }
       }
     }

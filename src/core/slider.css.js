@@ -35,7 +35,7 @@ module.exports = {
         height: 'auto !important',
       },
       '.slides-inner': {
-        '@apply duration-none transform-none animate-none !important': '',
+        '@apply duration-none transform-none !important': '',
         flexWrap: 'wrap !important',
       },
       '.slide:not(.active)': {

@@ -23,6 +23,19 @@ module.exports = {
         fontSize: rem(40),
       },
     },
+    '.h1-display': {
+      // style
+      fontSize: rem(45),
+      '@screen sm': {
+        fontSize: rem(50),
+      },
+      '@screen md': {
+        fontSize: rem(55),
+      },
+      '@screen lg': {
+        fontSize: rem(60),
+      },
+    },
     '.h2': {
       // style
       marginTop: theme('spacing.6'),

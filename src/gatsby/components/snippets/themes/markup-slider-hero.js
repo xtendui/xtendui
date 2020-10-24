@@ -1,20 +1,21 @@
-const img = require('components/snippets/img').default
-const imgAlt = require('components/snippets/img').alt
-
 export default () => {
   return `
 <div class="slides">
-  <nav class="slides-inner">
+  <nav class="slides-inner duration-none transform-none">
 
-    <div class="slide">
-      <div class="hero hero--center hero--big">
+    <div class="slide w-full slide-absolute">
+      <div class="hero block overflow-hidden w-full">
         <div class="hero_inner">
           <div class="hero_asset">
-            ${img({ classes: 'object-cover object-center', loading: 'eager' })}
+            <div class="media-container height-vh bg-accent-900">
+              <div class="media-inner">
+                <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
+              </div>
+            </div>
           </div>
-          <div class="hero_content">
-            <a href="#" class="hero_content_inner">
-              <div class="h1">
+          <div class="hero_content container absolute inset-0 flex items-end justify-center text-center">
+            <a href="#" class="hero_content_inner block w-full max-w-xl py-6 md:py-10 text-white links-inverse">
+              <div class="h1 h1-display">
                 Lorem ipsum
               </div>
             </a>
@@ -23,19 +24,23 @@ export default () => {
       </div>
     </div>
 
-    <div class="slide">
-      <div class="hero hero--center">
+    <div class="slide w-full slide-absolute">
+      <div class="hero block overflow-hidden w-full">
         <div class="hero_inner">
           <div class="hero_asset">
-            ${imgAlt({ classes: 'object-cover object-center', loading: 'eager' })}
+            <div class="media-container height-vh bg-accent-900">
+              <div class="media-inner">
+                <img class="media object-cover object-center" src="/img-alt.svg" loading="eager" alt="">
+              </div>
+            </div>
           </div>
-          <div class="hero_content">
-            <a href="#" class="hero_content_inner">
+          <div class="hero_content container absolute inset-0 flex items-end justify-center text-center">
+            <a href="#" class="hero_content_inner block w-full max-w-xl py-6 md:py-10 text-white links-inverse">
               <div class="h1">
                 Lorem ipsum dolor sit amet
               </div>
               <div class="list list-4">
-                <div class="btn">
+                <div class="btn btn-lg px-0">
                     Lorem ipsum
                 </div>
               </div>
@@ -45,14 +50,18 @@ export default () => {
       </div>
     </div>
 
-    <div class="slide">
-      <div class="hero">
+    <div class="slide w-full slide-absolute">
+      <div class="hero block overflow-hidden w-full">
         <div class="hero_inner">
           <div class="hero_asset">
-            ${img({ classes: 'object-cover object-center', loading: 'eager' })}
+            <div class="media-container height-vh bg-accent-900">
+              <div class="media-inner">
+                <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
+              </div>
+            </div>
           </div>
-          <div class="hero_content">
-            <a href="#" class="hero_content_inner">
+          <div class="hero_content container absolute inset-0 flex items-end">
+            <a href="#" class="hero_content_inner block w-full max-w-xl py-6 md:py-10 text-white links-inverse">
               <div class="h1">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </div>
@@ -62,23 +71,27 @@ export default () => {
       </div>
     </div>
 
-    <div class="slide">
-      <div class="hero">
+    <div class="slide w-full slide-absolute">
+      <div class="hero block overflow-hidden w-full">
         <div class="hero_inner">
           <div class="hero_asset">
-            ${imgAlt({ classes: 'object-cover object-center', loading: 'eager' })}
+            <div class="media-container height-vh bg-accent-900">
+              <div class="media-inner">
+                <img class="media object-cover object-center" src="/img-alt.svg" loading="eager" alt="">
+              </div>
+            </div>
           </div>
-          <div class="hero_content">
-            <div class="hero_content_inner">
+          <div class="hero_content container absolute inset-0 flex items-end">
+            <div href="#" class="hero_content_inner block w-full max-w-xl py-6 md:py-10 text-white links-inverse">
               <div class="h1">
                 Lorem ipsum dolor sit amet
               </div>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
               <div class="list list-4">
-                <a href="#" class="btn">
+                <a href="#" class="btn btn-lg px-0">
                   Lorem ipsum
                 </a>
-                <a href="#" class="btn">
+                <a href="#" class="btn btn-lg px-0">
                   Dolor sit amet
                 </a>
               </div>
@@ -88,23 +101,27 @@ export default () => {
       </div>
     </div>
 
-    <div class="slide">
-      <div class="hero hero--middle hero--left">
+    <div class="slide w-full slide-absolute">
+      <div class="hero block overflow-hidden w-full">
         <div class="hero_inner">
           <div class="hero_asset">
-            ${img({ classes: 'object-cover object-center', loading: 'eager' })}
+            <div class="media-container height-vh bg-accent-900">
+              <div class="media-inner">
+                <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
+              </div>
+            </div>
           </div>
-          <div class="hero_content">
-            <div class="hero_content_inner">
+          <div class="hero_content container absolute inset-0 flex items-center">
+            <div href="#" class="hero_content_inner block w-full max-w-xl py-6 md:py-10 text-white links-inverse">
               <div class="h1">
                 Lorem ipsum dolor sit amet
               </div>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
               <div class="list list-4">
-                <a href="#" class="btn">
+                <a href="#" class="btn btn-lg px-0">
                   Lorem ipsum
                 </a>
-                <a href="#" class="btn">
+                <a href="#" class="btn btn-lg px-0">
                   Dolor sit amet
                 </a>
               </div>
@@ -114,23 +131,27 @@ export default () => {
       </div>
     </div>
 
-    <div class="slide">
-      <div class="hero hero--middle hero--right">
+    <div class="slide w-full slide-absolute">
+      <div class="hero block overflow-hidden w-full">
         <div class="hero_inner">
           <div class="hero_asset">
-            ${imgAlt({ classes: 'object-cover object-center', loading: 'eager' })}
+            <div class="media-container height-vh bg-accent-900">
+              <div class="media-inner">
+                <img class="media object-cover object-center" src="/img-alt.svg" loading="eager" alt="">
+              </div>
+            </div>
           </div>
-          <div class="hero_content">
-            <div class="hero_content_inner">
+          <div class="hero_content container absolute inset-0 flex items-center justify-end text-right">
+            <div href="#" class="hero_content_inner block w-full max-w-xl py-6 md:py-10 text-white links-inverse">
               <div class="h1">
                 Lorem ipsum dolor sit amet
               </div>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
               <div class="list list-4">
-                <a href="#" class="btn">
+                <a href="#" class="btn btn-lg px-0">
                   Lorem ipsum
                 </a>
-                <a href="#" class="btn">
+                <a href="#" class="btn btn-lg px-0">
                   Dolor sit amet
                 </a>
               </div>

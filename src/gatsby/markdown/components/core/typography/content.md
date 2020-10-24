@@ -39,6 +39,7 @@ You can use headers **tags or classes**, classes takes precedence with css speci
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
+| Utility                  | `.h1-display`       | `h1-display`                | `responsive`                | Header h1 display            |
 | Utility                  | `h1` or `.h1`       | `h1`                | `responsive`                | Header h1            |
 | Utility                  | `h2` or `.h2`       | `h2`                | `responsive`                | Header h2            |
 | Utility                  | `h3` or `.h3`       | `h3`                | `responsive`                | Header h3            |

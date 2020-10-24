@@ -47,7 +47,7 @@ module.exports = {
       },
       '.slider-navigation-sides-btn': {
         // styles
-        '@apply transform-none !important': '',
+        '@apply transform-none': '',
         position: 'absolute',
         top: '50%',
         left: '50%',
