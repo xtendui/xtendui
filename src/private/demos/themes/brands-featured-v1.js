@@ -7,7 +7,7 @@ import gsap from 'gsap'
  */
 
 Xt.mount.push({
-  matches: '#iframe--brands-featured-v1 body .slider.slider--factor', // add your own selector instead of body to contain the code
+  matches: '#iframe--brands-featured-v1 body .slider', // add your own selector instead of body to contain the code
   mount: object => {
     // vars
 
@@ -29,30 +29,36 @@ Xt.mount.push({
       },
     })
 
+    // init
+
+    const eventInit = () => {
+      if (!self.wrap) {
+        // reset dragging position
+        gsap.set(self.dragger, { x: self.detail.dragPos })
+        self.goToNext()
+      }
+    }
+
+    self.object.addEventListener('init.xt', eventInit, true)
+
     // on
 
     const eventOn = e => {
       const tr = e.target
       // useCapture delegation
       if (self.targets.includes(tr)) {
-        // time depending on target and dragger width
-        const slideWidth = tr.offsetWidth
-        const draggerWidth = self.dragger.offsetWidth
-        let time = slideWidth * 15 // constant speed
-        if (object.classList.contains('slider--factor')) {
-          time = (draggerWidth / slideWidth) * 5000 // faster or slower depending on horizontal space
-        }
         // animate
-        console.log(self.initial, self.wrap)
-        if (self.initial) {
-          // reset dragging position
-          gsap.set(self.dragger, { x: self.detail.dragPos })
-          self.goToNext()
-        }
         if (self.wrap) {
           // end dragging position instant
           gsap.set(self.dragger, { x: self.detail.dragPos })
         } else {
+          // time depending on target and dragger width
+          const slideWidth = tr.offsetWidth
+          const draggerWidth = self.dragger.offsetWidth
+          let time = slideWidth * 15 // constant speed
+          if (object.classList.contains('slider--factor')) {
+            time = (draggerWidth / slideWidth) * 50000 // faster or slower depending on horizontal space
+          }
           // end dragging position
           gsap.to(self.dragger, { x: self.detail.dragPos, duration: time, ease: 'linear' }).eventCallback('onComplete', () => {
             // wrap before changing slide if needed, needed with drag.wrap = true
