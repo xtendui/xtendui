@@ -83,6 +83,27 @@ module.exports = {
         position: 'relative',
       },
     },
+    '.slide-absolute': {
+      // setup
+      position: 'relative',
+      display: 'none',
+      '&.active': {
+        display: 'block',
+        zIndex: theme('zIndex.active'),
+      },
+      '&.out': {
+        display: 'block',
+      },
+      '&.next': {
+        display: 'block',
+        zIndex: `calc(${theme('zIndex.active')} + 1)`,
+      },
+      '&:not(.active)': {
+        position: 'absolute',
+        top: '0',
+        left: '0',
+      },
+    },
     '.slides-inner': {
       // styles
       flexWrap: 'nowrap',

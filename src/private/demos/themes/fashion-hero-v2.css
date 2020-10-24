@@ -9,22 +9,7 @@
     }
 
     .slide {
-      @apply w-full;
-      position: relative;
-      /* activation */
-      display: none;
-      &.active {
-        display: block;
-        z-index: theme('zIndex.active');
-      }
-      &.out {
-        display: block;
-      }
-      &:not(.active) {
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
+      @apply w-full slide-absolute;
     }
 
     .slider-pagination {
@@ -52,8 +37,7 @@
 
     .hero_asset {
       .media-container {
-        height: 100vh;
-        height: calc(var(--vh, 1vh) * 100);
+        @apply height-vh;
         background: theme('colors.accent.900');
       }
     }
@@ -75,7 +59,7 @@
     }
 
     .hero_content_inner {
-      @apply block w-full max-w-xl py-10 md:py-16 text-white links-inverse;
+      @apply block w-full max-w-xl py-6 md:py-10 text-white links-inverse;
     }
 
     /* variants */
