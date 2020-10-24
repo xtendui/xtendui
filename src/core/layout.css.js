@@ -137,6 +137,6 @@ module.exports = {
         },
       },
     },
-    ...require('./structurejs.css.js').component(theme),
+    ...require('./layoutjs.css.js').component(theme),
   }),
 }

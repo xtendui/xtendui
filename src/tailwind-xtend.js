@@ -14,7 +14,7 @@ module.exports = {
   overlay: require('./core/overlay.css.js'),
   row: require('./core/row.css.js'),
   slider: require('./core/slider.css.js'),
-  structure: require('./core/structure.css.js'),
+  layout: require('./core/layout.css.js'),
   table: require('./core/table.css.js'),
   toggle: require('./core/toggle.css.js'),
   typography: require('./core/typography.css.js'),

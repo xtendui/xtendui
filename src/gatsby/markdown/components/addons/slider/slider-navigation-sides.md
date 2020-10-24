@@ -29,7 +29,7 @@ module.exports = {
 Use this code to create a **navigation sides**.
 
 [[notePrimary]]
-| This addon uses [mouse follow](/components/addons/structure/mouse-follow). Visit the component page to import and customize.
+| This addon uses [mouse follow](/components/addons/animation/mouse-follow). Visit the component page to import and customize.
 
 <demo>
   <demovanilla src="vanilla/components/addons/slider-navigation-sides">

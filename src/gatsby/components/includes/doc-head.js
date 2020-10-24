@@ -21,7 +21,11 @@ class DocHead extends React.Component {
                 </span>
                 {page.post.frontmatter.category ? <div className="badge badge-sm">{page.post.frontmatter.category}</div> : null}
               </h1>
-              {page.post.frontmatter.description ? <h2 className="p">{page.post.frontmatter.description}</h2> : null}
+              {page.post.frontmatter.description ? (
+                <h2 className="p">{page.post.frontmatter.description}</h2>
+              ) : (
+                <h2 className="p">{page.parent.frontmatter.description}</h2>
+              )}
             </div>
           </div>
         </div>
@@ -32,6 +36,15 @@ class DocHead extends React.Component {
 
 DocHead.propTypes = {
   page: PropTypes.shape({
+    parent: PropTypes.shape({
+      frontmatter: PropTypes.shape({
+        type: PropTypes.string.isRequired,
+        category: PropTypes.string,
+        parent: PropTypes.string,
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string,
+      }).isRequired,
+    }),
     post: PropTypes.shape({
       htmlAst: PropTypes.object.isRequired,
       frontmatter: PropTypes.shape({
@@ -42,7 +55,7 @@ DocHead.propTypes = {
         description: PropTypes.string,
       }).isRequired,
     }).isRequired,
-  }),
+  }).isRequired,
 }
 
 export default DocHead
