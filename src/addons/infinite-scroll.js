@@ -40,6 +40,10 @@ class InfiniteScroll {
     self.triggerElement = self.object.querySelector(self.options.elements.trigger)
     self.resetElement = self.object.querySelector(self.options.elements.reset)
     self.itemsElement = self.object.querySelector(self.options.elements.items)
+    // fake
+    if (!self.options.get) {
+      self.itemsFake = self.object.querySelector(self.options.elements.items).cloneNode(true)
+    }
     // unload
     const unloadHandler = Xt.dataStorage.put(window, 'on.xt.unload' + '/' + self.namespace, self.eventUnloadHandler.bind(self))
     addEventListener('unload', unloadHandler)
@@ -285,9 +289,13 @@ class InfiniteScroll {
     if (items) {
       self.populate(items)
     } else {
+      // debug
+      if (Xt.debug === true) {
+        console.debug('Xt.debug: xt-infinitescroll fake populate because no items found')
+      }
       // fake
       setTimeout(() => {
-        self.populate(self.object.querySelector(self.options.elements.items).cloneNode(true))
+        self.populate(self.itemsFake.cloneNode(true))
       }, 1000)
     }
   }
@@ -303,16 +311,18 @@ class InfiniteScroll {
 
   /**
    * populate
-   * @param {Node|HTMLElement|EventTarget|Window} items Items to add
+   * @param {Node|HTMLElement|EventTarget|Window} itemsElement Items element
    */
-  populate(items) {
+  populate(itemsElement) {
     const self = this
+    // vars
+    let items = itemsElement.querySelectorAll(self.options.elements.item)
     // current page
-    const found = items.querySelector(self.options.elements.item)
-    found.setAttribute('data-xt-infinitescroll-item-first', self.current)
+    items[0].setAttribute('data-xt-infinitescroll-item-first', self.current)
     // populate dom
-    for (const item of items.querySelectorAll(':scope > *')) {
-      self.itemsElement.querySelector(':scope > *:last-child').after(item)
+    for (const item of items) {
+      // querySelector here because it always needs to be the last inside loop
+      self.itemsElement.querySelector(`${self.options.elements.item}:last-child`).after(item)
     }
     // class
     self.object.classList.remove(...self.classes)
@@ -407,7 +417,7 @@ class InfiniteScroll {
 InfiniteScroll.componentName = 'xt-infinite-scroll'
 InfiniteScroll.optionsDefault = {
   // infiniteScroll
-  get: 'page',
+  get: false,
   // element
   elements: {
     scroll: '[data-xt-infinite-scroll-scroll]',

@@ -18,7 +18,9 @@ import 'xtendui/src/addons/infinite-scroll'
 
 Use this code to create a **infinite scroll**.
 
-Navigate pages by opening [this demo on a new page](https://xtendui.com/iframe/components/addons/infinite-scroll). You can see on page refresh and browser navigation that **the page is retained**.
+Set a `options.get` variable for a **get request on current url** for more items, and remember also to set `options.max` number of pages.
+
+Check advanced feature [open this demo on a new page](/iframe/components/addons/infinite-scroll). You can see on page refresh and browser navigation that **the page is retained**.
 
 <demo>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/infinite-scroll">
@@ -35,7 +37,7 @@ For advanced options see javascript file source code `xtendui/src/addons/infinit
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                    | `get:String`                          | `'page'`        | **url get** variable to use            |
+| Option                    | `get:String`                          | `false`        | **url get** variable to use            |
 | Option                    | `min:Number`                          | `1`        | Initial and minimum page number            |
 | Option                    | `max:Number`                          | `'Infinity'`        | Maximum page number            |
 | Option                    | `add:Number`                          | `1`        | Amount to increase page number            |

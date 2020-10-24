@@ -18,7 +18,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="listing" data-xt-infinite-scroll="{ max: 2 }">
+<div class="listing" data-xt-infinite-scroll="{ max: 4 }">
   <div class="container">
 
     <div class="infinite-scroll-pre mb-4">
