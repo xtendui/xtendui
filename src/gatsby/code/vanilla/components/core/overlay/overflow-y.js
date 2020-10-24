@@ -12,7 +12,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-2 items-center">
+<div class="list list-2 items-center w-full">
 
   <div data-xt-overlay>
 

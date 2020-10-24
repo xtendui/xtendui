@@ -12,7 +12,7 @@ demo.htmlSource = `
 <nav class="list flex-col list-2 items-center">
 
   <div>
-    <div class="list list-2 items-center">
+    <div class="list list-2 items-center w-full">
 
       <div>
         <div class="list flex-col list-2 items-center">
@@ -44,7 +44,7 @@ demo.htmlSource = `
   </div>
 
   <div>
-    <div class="list list-2 items-center">
+    <div class="list list-2 items-center w-full">
 
       <button type="button" class="btn btn-sm ${btnDefault()}">
         Lorem Ipsum

@@ -3,7 +3,7 @@ const merge = require('lodash/merge')
 const castArray = require('lodash/castArray')
 
 module.exports = plugin.withOptions(() => {
-  return function ({ addComponents, addUtilities, addVariant, e, theme }) {
+  return function ({ addComponents, addVariant, e, theme }) {
     const componentsBase = require('./tailwind-xtend.js') || {}
     const componentsCustom = theme(`xtendui`, {}) || {}
 
@@ -65,7 +65,7 @@ module.exports = plugin.withOptions(() => {
                   },
                 }
               })
-              addUtilities(css, variants)
+              addComponents(css, variants)
             } else if (component === 'row' && utility === 'space') {
               // row space
               let css = {}
@@ -94,12 +94,12 @@ module.exports = plugin.withOptions(() => {
                   },
                 }
               })
-              addUtilities(css, variants)
+              addComponents(css, variants)
             } else {
               // all others
               let css = {}
               css[utility] = options[utility]
-              addUtilities(css, variants)
+              addComponents(css, variants)
             }
           }
         }

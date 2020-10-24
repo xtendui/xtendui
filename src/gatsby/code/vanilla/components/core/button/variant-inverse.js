@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-2 items-center text-white links-inverse py-4 px-6 bg-accent-500">
+<div class="list list-2 items-center w-full text-white links-inverse py-4 px-6 bg-accent-500">
 
   <button type="button" class="btn btn-md">
     btn

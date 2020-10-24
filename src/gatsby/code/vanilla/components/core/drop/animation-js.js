@@ -11,7 +11,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-2 items-center inline-flex demo--drop-animation-js">
+<div class="list list-2 items-center w-full demo--drop-animation-js">
 
   <div class="drop-container">
 

@@ -17,7 +17,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-1 items-center">
+<div class="list list-1 items-center mb-4">
   <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--toggle-events-first-element">
     1st element
   </button>
@@ -53,11 +53,9 @@ demo.htmlSource = `
   </button>
 </div>
 
-<br/>
-
 <div id="demo--toggle-events">
 
-  <div class="list list-2 items-center" id="demo--toggle-events-elements">
+  <div class="list list-2 items-center w-full mb-4" id="demo--toggle-events-elements">
     <button type="button" class="btn btn-md ${btnDefault()}" data-xt-group="0">
       Toggle Group 0
     </button>
@@ -72,9 +70,7 @@ demo.htmlSource = `
     </button>
   </div>
 
-  <br>
-
-  <div class="list list-2 items-center" id="demo--toggle-events-targets">
+  <div class="list list-2 items-center w-full" id="demo--toggle-events-targets">
     <div class="card toggle ${cardToggle()}" data-xt-group="0">
       Target Group 0
     </div>

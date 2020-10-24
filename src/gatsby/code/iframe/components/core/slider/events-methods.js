@@ -17,7 +17,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-1 items-center">
+<div class="list list-1 items-center mb-4">
   <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--slider-events-first-element">
     1st element
   </button>
@@ -52,8 +52,6 @@ demo.htmlSource = `
     Unmount
   </button>
 </div>
-
-<br/>
 
 <div class="slider" id="demo--slider-events">
 ${indentString(markupSlider(), 2)}

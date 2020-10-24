@@ -18,7 +18,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-1 items-center">
+<div class="list list-1 items-center mb-4">
   <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--overlay-events-first-element">
     1st element
   </button>
@@ -42,9 +42,7 @@ demo.htmlSource = `
   </button>
 </div>
 
-<br/>
-
-<div class="list list-1 items-center">
+<div class="list list-1 items-center mb-4">
   <button type="button" class="btn btn-md ${btnDefault()}" id="demo--overlay-events">
     Toggle 0
   </button>
