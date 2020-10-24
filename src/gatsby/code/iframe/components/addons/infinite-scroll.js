@@ -35,7 +35,7 @@ demo.htmlSource = `
       <div class="row row-3" data-xt-infinite-scroll-items>
 
         <div class="listing-col w-full md:w-6/12 lg:w-4/12">
-          <a href="#" class="listing-item">
+          <a href="https://github.com/minimit/xtendui" class="listing-item">
             <div class="listing-img">
               ${img({ classes: 'object-cover object-center', ratio: '75%' })}
             </div>
@@ -51,7 +51,7 @@ demo.htmlSource = `
         </div>
 
         <div class="listing-col w-full md:w-6/12 lg:w-4/12">
-          <a href="#" class="listing-item">
+          <a href="https://github.com/minimit/xtendui" class="listing-item">
             <div class="listing-img">
               ${imgAlt({ classes: 'object-cover object-center', ratio: '75%' })}
             </div>
@@ -67,7 +67,7 @@ demo.htmlSource = `
         </div>
 
         <div class="listing-col w-full md:w-6/12 lg:w-4/12">
-          <a href="#" class="listing-item">
+          <a href="https://github.com/minimit/xtendui" class="listing-item">
             <div class="listing-img">
               ${img({ classes: 'object-cover object-center', ratio: '75%' })}
             </div>
@@ -83,7 +83,7 @@ demo.htmlSource = `
         </div>
 
         <div class="listing-col w-full md:w-6/12 lg:w-4/12">
-          <a href="#" class="listing-item">
+          <a href="https://github.com/minimit/xtendui" class="listing-item">
             <div class="listing-img">
               ${imgAlt({ classes: 'object-cover object-center', ratio: '75%' })}
             </div>
@@ -99,7 +99,7 @@ demo.htmlSource = `
         </div>
 
         <div class="listing-col w-full md:w-6/12 lg:w-4/12">
-          <a href="#" class="listing-item">
+          <a href="https://github.com/minimit/xtendui" class="listing-item">
             <div class="listing-img">
               ${img({ classes: 'object-cover object-center', ratio: '75%' })}
             </div>
@@ -115,7 +115,7 @@ demo.htmlSource = `
         </div>
 
         <div class="listing-col w-full md:w-6/12 lg:w-4/12">
-          <a href="#" class="listing-item">
+          <a href="https://github.com/minimit/xtendui" class="listing-item">
             <div class="listing-img">
               ${imgAlt({ classes: 'object-cover object-center', ratio: '75%' })}
             </div>
@@ -131,7 +131,7 @@ demo.htmlSource = `
         </div>
 
         <div class="listing-col w-full">
-          <a href="#" class="listing-item">
+          <a href="https://github.com/minimit/xtendui" class="listing-item">
             <div class="listing-img">
               ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
             </div>
@@ -147,7 +147,7 @@ demo.htmlSource = `
         </div>
 
         <div class="listing-col w-full">
-          <a href="#" class="listing-item">
+          <a href="https://github.com/minimit/xtendui" class="listing-item">
             <div class="listing-img">
               ${imgAlt({ classes: 'object-cover object-center', ratio: '37.5%' })}
             </div>
