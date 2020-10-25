@@ -10,7 +10,5 @@ const cssDemosGlob = new glob.Glob('src/private/demos/**/*.css', { ignore: ['**/
   }
 })
 cssDemosGlob.on('end', () => {
-  writeFile('./build/xtend-demos.css', cssDemos, err => {
-    if (err) console.log(err)
-  })
+  writeFile('./build/xtend-demos.css', cssDemos)
 })

@@ -13,9 +13,7 @@ const jsCoreGlob = new glob.Glob('src/core/**/*.js', { ignore: ['**/*.css.js'] }
   jsCore += '\n'
 })
 jsCoreGlob.on('end', () => {
-  writeFile('./build/xtend-core.js', jsCore, err => {
-    if (err) console.log(err)
-  })
+  writeFile('./build/xtend-core.js', jsCore)
 })
 
 let jsAddons = `if (typeof window !== 'undefined') {\n`
@@ -28,9 +26,7 @@ const jsAddonsGlob = new glob.Glob('src/addons/**/*.js', { ignore: ['**/*.css.js
   jsAddons += '\n'
 })
 jsAddonsGlob.on('end', () => {
-  writeFile('./build/xtend-addons.js', jsAddons, err => {
-    if (err) console.log(err)
-  })
+  writeFile('./build/xtend-addons.js', jsAddons)
 })
 
 let jsDemos = `if (typeof window !== 'undefined') {\n`
@@ -42,7 +38,5 @@ const jsDemosGlob = new glob.Glob('src/private/demos/**/*.js', { ignore: ['**/*.
   jsDemos += '\n'
 })
 jsDemosGlob.on('end', () => {
-  writeFile('./build/xtend-demos.js', jsDemos, err => {
-    if (err) console.log(err)
-  })
+  writeFile('./build/xtend-demos.js', jsDemos)
 })
