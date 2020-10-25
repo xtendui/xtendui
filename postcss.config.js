@@ -1,6 +1,18 @@
 const path = require('path')
 const fs = require('fs')
 
+const purgecss = require('@fullhuman/postcss-purgecss')({
+  content: ['./src/**/*.md', './src/**/*.js', './src/**/*.css'],
+  safelist: {
+    greedy: [/^iframe--/, /pre/, /code/, /token/],
+  },
+  defaultExtractor: content => {
+    const broadMatches = content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || []
+    const innerMatches = content.match(/[^<>"'`\s.()]*[^<>"'`\s.():]/g) || []
+    return broadMatches.concat(innerMatches)
+  },
+})
+
 module.exports = {
   plugins: [
     require(`postcss-import`)({
@@ -20,5 +32,6 @@ module.exports = {
     }),
     require(`tailwindcss`),
     require('postcss-nested'),
+    ...(process.env.NODE_ENV === 'production' ? [purgecss] : []),
   ],
 }
