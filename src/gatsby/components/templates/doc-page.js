@@ -39,8 +39,8 @@ class Template extends React.Component {
             <div className="gatsby_listing">
               <div className="row row-3">
                 <div className="gatsby_listing-group">
-                  {data.post.frontmatter.type === 'Components' ? (
-                    <h2 className="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">{'Styling and interactions'}</h2>
+                  {data.post.frontmatter.category === 'Core' ? (
+                    <h2 className="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">{'Customization and interactions'}</h2>
                   ) : null}
                   <div className="gatsby_listing-items">
                     <div className="row">
