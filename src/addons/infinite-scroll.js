@@ -286,7 +286,7 @@ class InfiniteScroll {
     const html = document.createElement('html')
     html.innerHTML = request.responseText.trim()
     const items = html.querySelector(self.options.elements.items)
-    if (items) {
+    if (self.options.get && items) {
       self.populate(items)
     } else {
       // debug
