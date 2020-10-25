@@ -25,7 +25,7 @@ demo.htmlSource = `
     <ul class="slides-inner row row-10 transition-none">
 
       <div class="slide">
-        <div class="brand list list-10 flex-no-wrap whitespace-no-wrap">
+        <div class="brand list list-10 flex-no-wrap whitespace-nowrap">
           <a href="#test-link-1" class="brand_content">
             <div class="h4">One</div>
           </a>
@@ -85,7 +85,7 @@ demo.htmlSource = `
     <ul class="slides-inner row row-10 transition-none">
 
       <div class="slide">
-        <div class="brand list list-10 flex-no-wrap whitespace-no-wrap">
+        <div class="brand list list-10 flex-no-wrap whitespace-nowrap">
           <a href="#test-link-1" class="brand_content">
             <div class="h4">One</div>
           </a>

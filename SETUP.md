@@ -7,30 +7,20 @@ npm install xtendui --save
 
 ## Css
 
-See Tailwind docs: [tailwind postcss](https://tailwindcss.com/docs/using-with-preprocessors), [tailwind purgecss](https://tailwindcss.com/docs/controlling-file-size), [tailwind theme](https://tailwindcss.com/docs/theme).
+See Tailwind docs: [tailwind postcss](https://tailwindcss.com/docs/using-with-preprocessors), [tailwind theme](https://tailwindcss.com/docs/theme).
 
-Install **tailwind**, **xtendui**, **postcss import**, **postcss nested** and **postcss purgecss**.
+Install **tailwind**, **xtendui**, **postcss import**, **postcss nested**.
 
 ```sh
 npm install tailwindcss xtendui --save
-npm install postcss postcss-import postcss-nested postcss-purgecss --save-dev
+npm install postcss postcss-import postcss-nested --save-dev
 ```
 
 Then in `postcss.config.js` set up compilation.
 
 ```jsx
-const purgecss = require('@fullhuman/postcss-purgecss')({
-  // Specify the paths to all of the template files in your project
-  content: ['./src/**/*.html', './src/**/*.js'],
-  defaultExtractor: content => {
-    const broadMatches = content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || []
-    const innerMatches = content.match(/[^<>"'`\s.()]*[^<>"'`\s.():]/g) || []
-    return broadMatches.concat(innerMatches)
-  },
-})
-
 module.exports = {
-  plugins: [require(`postcss-import`), require(`tailwindcss`), require('postcss-nested'), ...(process.env.NODE_ENV === 'production' ? [purgecss] : [])],
+  plugins: [require(`postcss-import`), require(`tailwindcss`), require('postcss-nested')],
 }
 ```
 
@@ -38,6 +28,10 @@ Create a `tailwind.config.js` and add **xtendui preset**.
 
 ```jsx
 module.exports = {
+  purge: {
+    content: ['./dist/**/*.html', './dist/**/*.css', './dist/**/*.js'],
+    options: {},
+  },
   presets: [require('tailwindcss/defaultConfig'), require('xtendui/src/tailwind-preset')],
   theme: {
     // add here your theme settings

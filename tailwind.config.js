@@ -1,4 +1,12 @@
 module.exports = {
+  purge: {
+    content: ['./dist/**/*.html', './src/**/*.md', './dist/**/*.css', './dist/**/*.js'],
+    options: {
+      safelist: {
+        greedy: [/^iframe--/, /pre/, /code/, /token/],
+      },
+    },
+  },
   presets: [require('tailwindcss/defaultConfig'), require('./src/tailwind-config')],
   theme: {
     // only some tailwind colors
