@@ -9,7 +9,7 @@ import ResizeSensor from 'assets/scripts/ResizeSensor'
 import 'assets/styles/theme.css'
 
 class Layout extends React.Component {
-  componentDidMount() {
+  render() {
     const { demo } = this.props
     let cname = 'gatsby_iframe-inside'
     if (demo.full) {
@@ -33,9 +33,6 @@ class Layout extends React.Component {
       makeDocument()
     }
     Xt.ready(iframeLoaded)
-  }
-
-  render() {
     const { children } = this.props
     return <>{children}</>
   }
