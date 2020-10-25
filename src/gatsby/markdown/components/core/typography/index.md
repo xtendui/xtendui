@@ -15,7 +15,6 @@ module.exports = {
   theme:{
     xtendui: {
       typography: {
-        variants: [],
         utility: theme => ({
           // modify utilities
         }),

@@ -6,6 +6,21 @@ title: "Css"
 date: "2050-10-10"
 ---
 
+## Utilities
+
+These are structure **component utilities**.
+
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
+| Utility                  | `.transform-none`                     | `transform-none`                | `responsive`                | Disable transform (!important)            |
+| Utility                  | `.transition-none`                     | `transition-none`                | `responsive`                | Disable transform (!important)            |
+| Utility                  | `.animate-none`                     | `animate-none`                | `responsive`                | Disable animation (!important)            |
+| Utility                  | `.duration-none`                     | `duration-none`                | `responsive`                | Instant transitions and animations (!important)            |
+
+</div>
+
 ## Timing Function
 
 We add in theme additional easing on [tailwind timing functions](https://tailwindcss.com/docs/transition-timing-function).

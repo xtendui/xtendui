@@ -39,11 +39,11 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 </demo>
 
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/brands-featured-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/brands-structure-v1">
   </div>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/fashion-hero-v2">
   </div>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/industrial-featured-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/industrial-structure-v1">
   </div>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/fashion-hero-v1">
   </div>
@@ -56,7 +56,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
   </div>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/collapse-v1">
   </div>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/furniture-featured-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/furniture-structure-v1">
   </div>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/furniture-listing-v1">
   </div>

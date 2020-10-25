@@ -23,7 +23,6 @@ module.exports = {
   theme:{
     xtendui: {
       slider: {
-        variants: [],
         utility: theme => ({
           // modify utilities
         }),

@@ -15,7 +15,6 @@ module.exports = {
   theme:{
     xtendui: {
       card: {
-        variants: [],
         utility: theme => ({
           // modify utilities
         }),

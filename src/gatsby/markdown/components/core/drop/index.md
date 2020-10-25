@@ -23,7 +23,6 @@ module.exports = {
   theme:{
     xtendui: {
       drop: {
-        variants: [],
         utility: theme => ({
           // modify utilities
         }),
