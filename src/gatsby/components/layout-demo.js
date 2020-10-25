@@ -10,30 +10,31 @@ import 'assets/styles/theme.css'
 
 class Layout extends React.Component {
   render() {
-    const { demo } = this.props
-    let cname = 'gatsby_iframe-inside'
-    if (demo.full) {
-      cname += ' gatsby_iframe-full'
-    }
-    if (demo.container) {
-      cname += ' gatsby_iframe-container'
-    }
-    document.documentElement.classList.add(...cname.split(' '))
-    document.documentElement.setAttribute('id', 'iframe--' + demo.name)
-    const iframeLoaded = () => {
-      if (window.self !== window.top) {
-        window.parent.initIframe(window.name, demo.htmlSource, demo.jsxSource, demo.cssSource, demo.jsSource)
-        window.parent.resizeIframe(window.frameElement.getAttribute('name'))
-        if (demo.full) {
-          new ResizeSensor(document.querySelector('#body-outer'), () => {
-            window.parent.resizeIframe(window.frameElement.getAttribute('name'))
-          })
-        }
+    const { demo, children } = this.props
+    if (typeof window !== 'undefined') {
+      let cname = 'gatsby_iframe-inside'
+      if (demo.full) {
+        cname += ' gatsby_iframe-full'
       }
-      makeDocument()
+      if (demo.container) {
+        cname += ' gatsby_iframe-container'
+      }
+      document.documentElement.classList.add(...cname.split(' '))
+      document.documentElement.setAttribute('id', 'iframe--' + demo.name)
+      const iframeLoaded = () => {
+        if (window.self !== window.top) {
+          window.parent.initIframe(window.name, demo.htmlSource, demo.jsxSource, demo.cssSource, demo.jsSource)
+          window.parent.resizeIframe(window.frameElement.getAttribute('name'))
+          if (demo.full) {
+            new ResizeSensor(document.querySelector('#body-outer'), () => {
+              window.parent.resizeIframe(window.frameElement.getAttribute('name'))
+            })
+          }
+        }
+        makeDocument()
+      }
+      Xt.ready(iframeLoaded)
     }
-    Xt.ready(iframeLoaded)
-    const { children } = this.props
     return <>{children}</>
   }
 }
