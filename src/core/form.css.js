@@ -84,6 +84,10 @@ module.exports = {
         backgroundImage: 'none !important',
       },
     },
+    textarea: {
+      // styles
+      minHeight: '3.5rem',
+    },
     '.form-label-check': {
       // setup
       cursor: 'pointer',
