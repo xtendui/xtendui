@@ -37,7 +37,7 @@ export default () => {
     <button type="button" class="btn btn-primary">
       overlay menu left
     </button>
-    <div class="overlay overlay-default overlay-position-left overlay-close-outside">
+    <div class="overlay overlay-default overlay-container-position-left overlay-close-outside">
       <div class="overlay-container max-w-5xl">
         <div class="overlay-inner">
           <div class="overlay-design"></div>

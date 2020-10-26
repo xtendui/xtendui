@@ -102,7 +102,7 @@ body {
 }
 .gatsby_site_article_hero {
   .p {
-    @apply -mt-2 mb-2 text-lg;
+    @apply mt-0 mb-2;
     line-height: theme('lineHeight.snug');
     opacity: 0.5;
   }

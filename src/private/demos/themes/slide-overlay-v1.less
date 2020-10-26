@@ -77,8 +77,8 @@
 
     // animation
 
-    [class^='overlay-position-'], [class*=' overlay-position-'] {
-      &.overlay-position-left {
+    [class^='overlay-container-position-'], [class*=' overlay-container-position-'] {
+      &.overlay-container-position-left {
         .overlay-design {
           opacity: 0;
           transform: translateX(-125%);
@@ -90,7 +90,7 @@
           }
         }
       }
-      &.overlay-position-right {
+      &.overlay-container-position-right {
         .overlay-design {
           opacity: 0;
           transform: translateX(125%);
@@ -119,7 +119,7 @@
       }
       &.out {
         animation-duration: @time-sm; // needed for animation time, put max animation time
-        &.overlay-position-left {
+        &.overlay-container-position-left {
           .overlay-design {
             opacity: 0;
             transform: translateX(-125%);
@@ -136,7 +136,7 @@
             }
           }
         }
-        &.overlay-position-right {
+        &.overlay-container-position-right {
           .overlay-design {
             opacity: 0;
             transform: translateX(125%);
