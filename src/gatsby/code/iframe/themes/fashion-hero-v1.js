@@ -187,17 +187,17 @@ demo.htmlSource = `
     </nav>
   </div>
 
-  <div class="nav-sides left-0" data-xt-nav="-1" aria-label="Previous slide" data-xt-mouse-follow="{ targets: '.nav-sides-btn' }">
+  <button type="button" class="nav-sides left-0" data-xt-nav="-1" aria-label="Previous slide" data-xt-mouse-follow="{ targets: '.nav-sides-btn' }">
     <div class="nav-sides-btn mouse-follow text-white text-2xl">
       ${iconArrowLeft({ classes: 'icon-md' })}
     </div>
-  </div>
+  </button>
 
-  <div class="nav-sides right-0" data-xt-nav="1" aria-label="Next slide" data-xt-mouse-follow="{ targets: '.nav-sides-btn' }">
+  <button type="button" class="nav-sides right-0" data-xt-nav="1" aria-label="Next slide" data-xt-mouse-follow="{ targets: '.nav-sides-btn' }">
     <div class="nav-sides-btn mouse-follow text-white text-2xl">
       ${iconArrowRight({ classes: 'icon-md' })}
     </div>
-  </div>
+  </button>
 
   <nav class="slider-pagination w-full list list-2 hidden">
     <button type="button" class="btn xt-ignore" data-xt-pag title="Slide xt-num">
