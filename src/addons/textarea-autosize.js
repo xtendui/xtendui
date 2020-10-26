@@ -59,10 +59,10 @@ class TextareaAutosize {
   keychange() {
     const self = this
     self.object.style.height = '5px'
-    self.object.style.height = self.object.scrollHeight + 'px' // fixes both safari RAF and form reset
+    self.object.style.height = `${self.object.scrollHeight}px` // fixes both safari RAF and form reset
     requestAnimationFrame(() => {
       self.object.style.height = '5px' // fixes both safari RAF and form reset
-      self.object.style.height = self.object.scrollHeight + 'px'
+      self.object.style.height = `${self.object.scrollHeight}px`
     })
   }
 
@@ -110,11 +110,11 @@ Xt.TextareaAutosize = TextareaAutosize
 //
 
 Xt.mount.push({
-  matches: '[data-' + Xt.TextareaAutosize.componentName + ']',
+  matches: `[data-${Xt.TextareaAutosize.componentName}]`,
   mount: object => {
     // vars
 
-    const optionsMarkup = object.getAttribute('data-' + Xt.TextareaAutosize.componentName)
+    const optionsMarkup = object.getAttribute(`data-${Xt.TextareaAutosize.componentName}`)
     const options = optionsMarkup ? JSON5.parse(optionsMarkup) : {}
 
     // init

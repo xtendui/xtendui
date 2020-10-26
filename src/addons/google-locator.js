@@ -389,7 +389,7 @@ class GoogleLocator {
       self.animatingLoc = loc
     }
     // activation
-    const item = self.itemsContainer.querySelector('[data-xt-google-locator-index="' + loc.index + '"]')
+    const item = self.itemsContainer.querySelector(`[data-xt-google-locator-index="${loc.index}"]`)
     const old = self.itemsContainer.querySelector('[data-xt-google-locator-index].active')
     if (old) {
       old.classList.remove('active')
@@ -649,15 +649,15 @@ GoogleLocator.optionsDefault = {
     direction: function (self, loc, el) {
       let str = 'https://www.google.com/maps/dir/?api=1&destination='
       str += loc.marker.name
-      str += '+' + loc.marker.address
+      str += `+${loc.marker.address}`
       el.setAttribute('href', encodeURI(str))
     },
     distance: function (self, loc, el) {
       let distance
       if (loc.distance > 1000) {
-        distance = Math.round(loc.distance / 1000) + ' Km'
+        distance = `${Math.round(loc.distance / 1000)} Km`
       } else {
-        distance = Math.round(loc.distance) + ' m'
+        distance = `${Math.round(loc.distance)} m`
       }
       el.innerHTML = distance
       if (self.searchInput.value === '') {

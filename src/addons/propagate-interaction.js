@@ -142,11 +142,11 @@ Xt.PropagateInteraction = PropagateInteraction
 //
 
 Xt.mount.push({
-  matches: '[data-' + Xt.PropagateInteraction.componentName + ']',
+  matches: `[data-${Xt.PropagateInteraction.componentName}]`,
   mount: object => {
     // vars
 
-    const optionsMarkup = object.getAttribute('data-' + Xt.PropagateInteraction.componentName)
+    const optionsMarkup = object.getAttribute(`data-${Xt.PropagateInteraction.componentName}`)
     const options = optionsMarkup ? JSON5.parse(optionsMarkup) : {}
 
     // init

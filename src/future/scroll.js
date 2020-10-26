@@ -50,10 +50,10 @@ class Scroll extends Xt.Toggle {
           target.classList.add('xt-clone', 'xt-ignore')
           target.classList.remove('xt-ignore-once') // @FIX ignore once for mount when moving
           for (const elId of target.querySelectorAll('[id]')) {
-            elId.setAttribute('id', elId.getAttribute('id') + '-clone')
+            elId.setAttribute('id', `${elId.getAttribute('id')}-clone`)
           }
           for (const elName of target.querySelectorAll('[name]')) {
-            elName.setAttribute('name', elName.getAttribute('name') + '-clone')
+            elName.setAttribute('name', `${elName.getAttribute('name')}-clone`)
           }
           container.append(target)
         }
@@ -112,7 +112,7 @@ class Scroll extends Xt.Toggle {
       return
     }
     // event scroll and resize
-    const scrollHandler = Xt.dataStorage.put(window, options.on + '/' + self.namespace, self.eventScrollHandler.bind(self).bind(self, false))
+    const scrollHandler = Xt.dataStorage.put(window, `${options.on}/${self.namespace}`, self.eventScrollHandler.bind(self).bind(self, false))
     const events = [...'scroll resize'.split(' ')]
     for (const event of events) {
       addEventListener(event, scrollHandler, { passive: true })
@@ -140,7 +140,7 @@ class Scroll extends Xt.Toggle {
         // handler
         self.eventScroll()
       },
-      self.componentNamespace + 'Scroll'
+      `${self.componentNamespace}Scroll`
     )
   }
 
@@ -181,7 +181,7 @@ class Scroll extends Xt.Toggle {
         const elHeight = tr.offsetHeight
         // size fix when position fixed
         if (options.sticky) {
-          el.style.width = tr.offsetWidth + 'px'
+          el.style.width = `${tr.offsetWidth}px`
         }
         // position
         self.detail.start = self.detail.startReal = elTop - windowHeight + Xt.windowPercent(options.start) + self.detail.distance
@@ -193,7 +193,7 @@ class Scroll extends Xt.Toggle {
         self.detail.end = self.detail.end < self.detail.start + fallback ? self.detail.start + fallback : self.detail.end // limit fixes deactivation on page top
         // ratio
         const position = scrollTop + self.detail.trigger - self.detail.start
-        Xt.dataStorage.set(el, self.componentNamespace + 'Position', position)
+        Xt.dataStorage.set(el, `${self.componentNamespace}Position`, position)
         const total = self.detail.end - self.detail.start
         self.detail.ratio = Math.max(0, position) / total
         self.detail.ratio = self.detail.ratio > 0 ? self.detail.ratio : 0
@@ -207,8 +207,8 @@ class Scroll extends Xt.Toggle {
           if (changed) {
             currentsOn.push(el)
             // activation
-            Xt.dataStorage.set(el, self.componentNamespace + 'OnCount', currentOn)
-            Xt.dataStorage.set(el, self.componentNamespace + 'OnTot', currentsOn.length)
+            Xt.dataStorage.set(el, `${self.componentNamespace}OnCount`, currentOn)
+            Xt.dataStorage.set(el, `${self.componentNamespace}OnTot`, currentsOn.length)
             currentOn++
           }
         } else {
@@ -219,28 +219,28 @@ class Scroll extends Xt.Toggle {
             el.classList.add('scroll-done')
             currentsOff.push(el)
             // deactivate
-            Xt.dataStorage.set(el, self.componentNamespace + 'OffCount', currentOff)
-            Xt.dataStorage.set(el, self.componentNamespace + 'OffTot', currentsOff.length)
+            Xt.dataStorage.set(el, `${self.componentNamespace}OffCount`, currentOff)
+            Xt.dataStorage.set(el, `${self.componentNamespace}OffTot`, currentsOff.length)
             currentOff++
           }
         }
         // indicator
         if (el.classList.contains('scroll-indicator')) {
           const triggerEl = document.body.querySelector('.xt-indicator-trigger')
-          triggerEl.style.top = self.detail.trigger + 'px'
+          triggerEl.style.top = `${self.detail.trigger}px`
           const startEl = document.body.querySelector('.xt-indicator-start')
-          startEl.style.top = self.detail.start - scrollTop + 'px'
+          startEl.style.top = `${self.detail.start - scrollTop}px`
           const endEl = document.body.querySelector('.xt-indicator-end')
-          endEl.style.top = self.detail.end - scrollTop + 'px'
+          endEl.style.top = `${self.detail.end - scrollTop}px`
           const startRealEl = document.body.querySelector('.xt-indicator-start-real')
-          startRealEl.style.top = self.detail.startReal - scrollTop + 'px'
+          startRealEl.style.top = `${self.detail.startReal - scrollTop}px`
           const endRealEl = document.body.querySelector('.xt-indicator-end-real')
-          endRealEl.style.top = self.detail.endReal - scrollTop + 'px'
+          endRealEl.style.top = `${self.detail.endReal - scrollTop}px`
         }
-        cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'ScrollDispatchFrame'))
+        cancelAnimationFrame(Xt.dataStorage.get(el, `${self.componentNamespace}ScrollDispatchFrame`))
         Xt.dataStorage.set(
           el,
-          self.componentNamespace + 'ScrollDispatchFrame',
+          `${self.componentNamespace}ScrollDispatchFrame`,
           requestAnimationFrame(() => {
             // disabled
             if (self.disabled) {
@@ -311,11 +311,11 @@ Xt.Scroll = Scroll
 //
 
 Xt.mount.push({
-  matches: '[data-' + Scroll.componentName + ']',
+  matches: `[data-${Scroll.componentName}]`,
   mount: object => {
     // vars
 
-    const optionsMarkup = object.getAttribute('data-' + Xt.Scroll.componentName)
+    const optionsMarkup = object.getAttribute(`data-${Xt.Scroll.componentName}`)
     const options = optionsMarkup ? JSON5.parse(optionsMarkup) : {}
 
     // init

@@ -14,7 +14,7 @@ Xt.mount.push({
     const log = document.querySelector('#demo--overlay-events-log')
 
     const logAdd = text => {
-      log.innerHTML += text + '<br/>'
+      log.innerHTML += `${text}<br/>`
       // scroll
       log.scrollTo(0, log.scrollHeight)
       // hr
@@ -115,17 +115,17 @@ Xt.mount.push({
     // events
 
     const events = e => {
-      let str = 'event <strong>' + e.type + '</strong>' + ' direction <strong>' + self.direction + '</strong>'
+      let str = `event <strong>${e.type}</strong>` + ` direction <strong>${self.direction}</strong>`
       if (e.target.getAttribute('title')) {
-        str += ' from <strong>' + e.target.getAttribute('title') + '</strong>'
+        str += ` from <strong>${e.target.getAttribute('title')}</strong>`
       } else if (e.target.querySelector(':scope > .btn')) {
-        str += ' from <strong>' + e.target.querySelector(':scope > .btn').textContent + '</strong>'
+        str += ` from <strong>${e.target.querySelector(':scope > .btn').textContent}</strong>`
       } else if (e.target.querySelector('.card > *:not(.btn-close) > *')) {
-        str += ' from <strong>' + e.target.querySelector('.card > *:not(.btn-close) > *').textContent + '</strong>'
+        str += ` from <strong>${e.target.querySelector('.card > *:not(.btn-close) > *').textContent}</strong>`
       } else if (e.target.querySelector(':scope > *')) {
-        str += ' from <strong>' + e.target.querySelector(':scope > *').textContent + '</strong>'
+        str += ` from <strong>${e.target.querySelector(':scope > *').textContent}</strong>`
       } else if (!e.target.querySelector('*')) {
-        str += ' from <strong>' + e.target.innerHTML + '</strong>'
+        str += ` from <strong>${e.target.innerHTML}</strong>`
       }
       logAdd(str)
     }

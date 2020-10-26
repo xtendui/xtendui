@@ -38,7 +38,7 @@ const demoHash = (e, initial = false) => {
     cancelAnimationFrame(Xt.dataStorage.get(document, 'gatsby_open-full-raf'))
     // check hash
     if (location.hash) {
-      const item = document.querySelector('[id="' + kebabCase(location.hash) + '"]')
+      const item = document.querySelector(`[id="${kebabCase(location.hash)}"]`)
       if (item) {
         const demo = item.closest('.gatsby_demo')
         if (demo) {
@@ -82,7 +82,7 @@ const formatCode = source => {
     let id = item.getAttribute('data-iframe')
     if (id) {
       const names = id.split('/')
-      id = '#iframe--' + names[names.length - 1]
+      id = `#iframe--${names[names.length - 1]}`
       text = text.replace(new RegExp(`[ ]{0,}${id}[ ]{0,}`, 'gi'), '')
     }
     // replace #gatsby_body-inner
@@ -124,7 +124,7 @@ const formatCode = source => {
 const populateBlock = () => {
   for (const el of document.querySelectorAll('script[type="text/plain"][class*="language-"]')) {
     const language = el.getAttribute('class')
-    el.after(Xt.createElement('<pre class="' + language + '"><code class="' + language + '">' + el.innerHTML + '</code></pre>'))
+    el.after(Xt.createElement(`<pre class="${language}"><code class="${language}">${el.innerHTML}</code></pre>`))
     el.remove()
   }
   for (const el of document.querySelectorAll('pre:not(.noedit) code')) {
@@ -251,7 +251,7 @@ const populateDemo = (container, i) => {
       file = file.split('/').splice(3, 10).join('-')
     }
     item.setAttribute('id', kebabCase(file))
-    container.querySelector('.gatsby_demo_tabs_left').append(Xt.createElement('<button type="button" class="btn">' + name + '</button>'))
+    container.querySelector('.gatsby_demo_tabs_left').append(Xt.createElement(`<button type="button" class="btn">${name}</button>`))
     // tabs
     item.prepend(
       Xt.createElement(
@@ -318,7 +318,7 @@ const populateDemo = (container, i) => {
   }
   // get hash
   if (location.hash) {
-    const item = document.querySelector('[id="' + kebabCase(location.hash) + '"]')
+    const item = document.querySelector(`[id="${kebabCase(location.hash)}"]`)
     if (item) {
       const demo = item.closest('.gatsby_demo')
       demo.querySelector('.btn-open-full').classList.add('active')
@@ -352,16 +352,16 @@ const populateDemo = (container, i) => {
     })
   }
   // .btn-show-code
-  const demoId = 'gatsby_demo_' + i
+  const demoId = `gatsby_demo_${i}`
   container.setAttribute('id', demoId)
   new Xt.Toggle(container.querySelector('.btn-show-code'), {
-    targets: '#' + demoId + ' .gatsby_demo_code',
+    targets: `#${demoId} .gatsby_demo_code`,
     instant: true,
   })
-  document.querySelector('#' + demoId + ' .gatsby_demo_code').addEventListener('on.xt', e => {
+  document.querySelector(`#${demoId} .gatsby_demo_code`).addEventListener('on.xt', e => {
     e.target.closest('.gatsby_demo_item').classList.add('active-code')
   })
-  document.querySelector('#' + demoId + ' .gatsby_demo_code').addEventListener('off.xt', e => {
+  document.querySelector(`#${demoId} .gatsby_demo_code`).addEventListener('off.xt', e => {
     e.target.closest('.gatsby_demo_item').classList.remove('active-code')
   })
 }
@@ -411,7 +411,7 @@ const makeFullscreen = (container, initial = false) => {
   })
   // move code block
   container.before(
-    Xt.createElement('<div class="gatsby_demo xt-ignore" data-xt-origin="gatsby_open-full-content" style="height: ' + container.offsetHeight + 'px"></div>')
+    Xt.createElement(`<div class="gatsby_demo xt-ignore" data-xt-origin="gatsby_open-full-content" style="height: ${container.offsetHeight}px"></div>`)
   )
   if (!container.dataset.isFullscreenOnly && !initial) {
     container.classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
@@ -434,9 +434,9 @@ const makeFullscreen = (container, initial = false) => {
 const initializeIframe = (container, item) => {
   if (!item.classList.contains('populated-iframe')) {
     item.classList.add('populated-iframe')
-    const src = '/' + item.getAttribute('data-iframe')
+    const src = `/${item.getAttribute('data-iframe')}`
     const id = item.getAttribute('id')
-    item.append(Xt.createElement('<div class="gatsby_demo_item_wrapper"><iframe data-src="' + src + '" name="' + id + '"></iframe></div>'))
+    item.append(Xt.createElement(`<div class="gatsby_demo_item_wrapper"><iframe data-src="${src}" name="${id}"></iframe></div>`))
     item.querySelector('.gatsby_demo_item_wrapper').append(
       Xt.createElement(`
           <div class="loader">
@@ -471,7 +471,7 @@ const unloadIframe = iframe => {
 
 if (typeof window !== 'undefined') {
   window.initIframe = (name, htmlSource, jsxSource, cssSource, jsSource) => {
-    const src = 'iframe[name="' + name + '"]'
+    const src = `iframe[name="${name}"]`
     const iframes = document.querySelectorAll(src)
     for (const iframe of iframes) {
       const item = iframe.closest('.gatsby_demo_item')
@@ -480,7 +480,7 @@ if (typeof window !== 'undefined') {
     }
   }
   window.resizeIframe = name => {
-    const src = 'iframe[name="' + name + '"]'
+    const src = `iframe[name="${name}"]`
     const iframes = document.querySelectorAll(src)
     for (const iframe of iframes) {
       const container = iframe.closest('.gatsby_demo')
@@ -492,11 +492,11 @@ if (typeof window !== 'undefined') {
           const target = iframe.contentWindow.document.querySelector('#body-outer')
           const h = target.offsetHeight
           if (h !== parseFloat(iframe.dataset.iframeHeight)) {
-            iframe.style.height = h + 'px'
+            iframe.style.height = `${h}px`
             iframe.dataset.iframeHeight = h.toString()
           }
           for (const wrapper of wrappers) {
-            wrapper.style.height = h + 'px'
+            wrapper.style.height = `${h}px`
           }
         } else {
           for (const wrapper of wrappers) {
@@ -513,16 +513,16 @@ const populateIframe = (item, iframe, htmlSource, jsxSource, cssSource, jsSource
     item.classList.add('populated')
     // inject code
     if (htmlSource) {
-      item.append(Xt.createElement('<div class="gatsby_demo_source xt-ignore" data-lang="html">' + htmlSource + '</div>'))
+      item.append(Xt.createElement(`<div class="gatsby_demo_source xt-ignore" data-lang="html">${htmlSource}</div>`))
     }
     if (jsxSource) {
-      item.append(Xt.createElement('<div class="gatsby_demo_source xt-ignore" data-lang="jsx">' + jsxSource + '</div>'))
+      item.append(Xt.createElement(`<div class="gatsby_demo_source xt-ignore" data-lang="jsx">${jsxSource}</div>`))
     }
     if (cssSource) {
-      item.append(Xt.createElement('<div class="gatsby_demo_source xt-ignore" data-lang="css">' + cssSource + '</div>'))
+      item.append(Xt.createElement(`<div class="gatsby_demo_source xt-ignore" data-lang="css">${cssSource}</div>`))
     }
     if (jsSource) {
-      item.append(Xt.createElement('<div class="gatsby_demo_source xt-ignore" data-lang="js">' + jsSource + '</div>'))
+      item.append(Xt.createElement(`<div class="gatsby_demo_source xt-ignore" data-lang="js">${jsSource}</div>`))
     }
     // populate
     const els = item.querySelectorAll('[data-lang]')
@@ -582,7 +582,7 @@ const populateSources = (item, element, z) => {
   item
     .querySelector('.gatsby_demo_code_body')
     .append(Xt.createElement('<div class="gatsby_demo_code_body_item toggle"><pre class="noedit"><code></code></pre></div>'))
-  item.querySelector('.gatsby_demo_code_tabs_left').append(Xt.createElement('<button type="button" class="btn btn-tiny">' + lang + '</button>'))
+  item.querySelector('.gatsby_demo_code_tabs_left').append(Xt.createElement(`<button type="button" class="btn btn-tiny">${lang}</button>`))
   // format code
   const itemInside = item.querySelectorAll('.gatsby_demo_code_body .gatsby_demo_code_body_item')[z]
   const codeInside = itemInside.querySelector('pre code')

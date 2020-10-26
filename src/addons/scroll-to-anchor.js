@@ -155,10 +155,10 @@ class ScrollToAnchor {
     const self = this
     const options = self.options
     // timeout
-    clearTimeout(Xt.dataStorage.get(scrollElement, self.componentNamespace + 'ScrollTimeout'))
+    clearTimeout(Xt.dataStorage.get(scrollElement, `${self.componentNamespace}ScrollTimeout`))
     Xt.dataStorage.set(
       scrollElement,
-      self.componentNamespace + 'ScrollTimeout',
+      `${self.componentNamespace}ScrollTimeout`,
       setTimeout(() => {
         // handler
         self.eventScroll(scrollElement)

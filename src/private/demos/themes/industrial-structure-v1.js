@@ -57,9 +57,9 @@ Xt.mount.push({
       // assetMask
       const assetMasks = tr.querySelectorAll('.featured-item_asset .media-container')
       for (const assetMask of assetMasks) {
-        gsap.set(assetMask, { x: -100 * self.detail.dragRatio * self.direction + '%' })
+        gsap.set(assetMask, { x: `${-100 * self.detail.dragRatio * self.direction}%` })
         const assetMaskInner = assetMask.querySelector('.media-inner')
-        gsap.set(assetMaskInner, { x: 100 * self.detail.dragRatio * self.direction + '%', opacity: 1 })
+        gsap.set(assetMaskInner, { x: `${100 * self.detail.dragRatio * self.direction}%`, opacity: 1 })
       }
       // asset
       const assets = tr.querySelectorAll('.featured-item_asset img')
@@ -133,11 +133,11 @@ Xt.mount.push({
           const assetMasks = tr.querySelectorAll('.featured-item_asset .media-container')
           for (const assetMask of assetMasks) {
             if (!self.detail.dragging) {
-              gsap.set(assetMask, { x: 100 * self.direction + '%' })
+              gsap.set(assetMask, { x: `${100 * self.direction}%` })
             }
             gsap.to(assetMask, { x: 0, duration: assetMaskTimeOn, ease: assetMaskEaseOn })
             const assetMaskInner = assetMask.querySelector('.media-inner')
-            gsap.set(assetMaskInner, { x: -100 * self.direction + '%' })
+            gsap.set(assetMaskInner, { x: `${-100 * self.direction}%` })
             gsap.to(assetMaskInner, { x: 0, opacity: 1, duration: assetMaskTimeOn, ease: assetMaskEaseOn })
           }
           // asset
@@ -178,9 +178,9 @@ Xt.mount.push({
         // assetMask
         const assetMasks = tr.querySelectorAll('.featured-item_asset .media-container')
         for (const assetMask of assetMasks) {
-          gsap.to(assetMask, { x: -100 * self.direction + '%', duration: assetMaskTimeOff, ease: assetMaskEaseOff })
+          gsap.to(assetMask, { x: `${-100 * self.direction}%`, duration: assetMaskTimeOff, ease: assetMaskEaseOff })
           const assetMaskInner = assetMask.querySelector('.media-inner')
-          gsap.to(assetMaskInner, { x: 100 * self.direction + '%', opacity: 0, duration: assetMaskTimeOff, ease: assetMaskEaseOff })
+          gsap.to(assetMaskInner, { x: `${100 * self.direction}%`, opacity: 0, duration: assetMaskTimeOff, ease: assetMaskEaseOff })
         }
         // asset
         const assets = tr.querySelectorAll('.featured-item_asset img')
@@ -223,7 +223,7 @@ Xt.mount.push({
             // contain final
             final = leftEl + widthEl / 2 < widthScroll - widthInner / 2 ? final : -widthScroll + widthInner
             // set
-            scroll.style.left = final + 'px'
+            scroll.style.left = `${final}px`
           }
         } else {
           if (e.type === 'on.xt') {

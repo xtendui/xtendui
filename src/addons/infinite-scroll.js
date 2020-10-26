@@ -45,13 +45,13 @@ class InfiniteScroll {
       self.itemsFake = self.object.querySelector(self.options.elements.items).cloneNode(true)
     }
     // unload
-    const unloadHandler = Xt.dataStorage.put(window, 'on.xt.unload' + '/' + self.namespace, self.eventUnloadHandler.bind(self))
+    const unloadHandler = Xt.dataStorage.put(window, `on.xt.unload/${self.namespace}`, self.eventUnloadHandler.bind(self))
     addEventListener('unload', unloadHandler)
     // beforeunload
-    const beforeunloadHandler = Xt.dataStorage.put(window, 'on.xt.beforeunload' + '/' + self.namespace, self.eventBeforeunloadHandler.bind(self))
+    const beforeunloadHandler = Xt.dataStorage.put(window, `on.xt.beforeunload/${self.namespace}`, self.eventBeforeunloadHandler.bind(self))
     addEventListener('beforeunload', beforeunloadHandler)
     // scroll
-    const scrollHandler = Xt.dataStorage.put(window, 'on.xt.scroll' + '/' + self.namespace, self.eventScrollHandler.bind(self))
+    const scrollHandler = Xt.dataStorage.put(window, `on.xt.scroll/${self.namespace}`, self.eventScrollHandler.bind(self))
     addEventListener('scroll', scrollHandler)
     // setCurrent
     self.setCurrent()
@@ -126,7 +126,7 @@ class InfiniteScroll {
         // handler
         self.eventScroll(e)
       },
-      self.componentNamespace + 'Scroll'
+      `${self.componentNamespace}Scroll`
     )
   }
 
@@ -200,7 +200,7 @@ class InfiniteScroll {
       // save scroll position
       self.scrollResume = top + scrollInitial - found.offsetTop
       // replace state
-      const linkOrigin = self.url.origin || self.url.protocol + '//' + self.url.host
+      const linkOrigin = self.url.origin || `${self.url.protocol}//${self.url.host}`
       if (linkOrigin === location.origin) {
         if (self.url.href !== location.href) {
           history.replaceState(null, '', self.url.href)
@@ -453,11 +453,11 @@ Xt.InfiniteScroll = InfiniteScroll
 //
 
 Xt.mount.push({
-  matches: '[data-' + Xt.InfiniteScroll.componentName + ']',
+  matches: `[data-${Xt.InfiniteScroll.componentName}]`,
   mount: object => {
     // vars
 
-    const optionsMarkup = object.getAttribute('data-' + Xt.InfiniteScroll.componentName)
+    const optionsMarkup = object.getAttribute(`data-${Xt.InfiniteScroll.componentName}`)
     const options = optionsMarkup ? JSON5.parse(optionsMarkup) : {}
 
     // init

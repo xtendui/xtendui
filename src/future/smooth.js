@@ -53,11 +53,11 @@ Xt.Smooth = Smooth
 //
 
 Xt.mount.push({
-  matches: '[data-' + Xt.Smooth.componentName + ']',
+  matches: `[data-${Xt.Smooth.componentName}]`,
   mount: object => {
     // vars
 
-    const optionsMarkup = object.getAttribute('data-' + Xt.Smooth.componentName)
+    const optionsMarkup = object.getAttribute(`data-${Xt.Smooth.componentName}`)
     const options = optionsMarkup ? JSON5.parse(optionsMarkup) : {}
 
     // init

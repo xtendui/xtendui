@@ -90,11 +90,11 @@ Xt.Overlay = Overlay
 //
 
 Xt.mount.push({
-  matches: '[data-' + Xt.Overlay.componentName + ']',
+  matches: `[data-${Xt.Overlay.componentName}]`,
   mount: object => {
     // vars
 
-    const optionsMarkup = object.getAttribute('data-' + Xt.Overlay.componentName)
+    const optionsMarkup = object.getAttribute(`data-${Xt.Overlay.componentName}`)
     const options = optionsMarkup ? JSON5.parse(optionsMarkup) : {}
 
     // init

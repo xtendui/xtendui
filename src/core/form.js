@@ -10,7 +10,7 @@ Xt.mount.push({
     // vars
 
     const name = object.getAttribute('name')
-    const others = document.querySelectorAll('input[type="radio"][name="' + name + '"]')
+    const others = document.querySelectorAll(`input[type="radio"][name="${name}"]`)
 
     // eventInput
 

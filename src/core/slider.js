@@ -90,8 +90,8 @@ class Slider extends Xt.Toggle {
       self.detail.draggerLeft = self.dragger.offsetLeft
     }
     for (const slide of self.targets) {
-      Xt.dataStorage.set(slide, self.componentNamespace + 'SlideLeft', slide.offsetLeft)
-      Xt.dataStorage.set(slide, self.componentNamespace + 'SlideWidth', slide.offsetWidth)
+      Xt.dataStorage.set(slide, `${self.componentNamespace}SlideLeft`, slide.offsetLeft)
+      Xt.dataStorage.set(slide, `${self.componentNamespace}SlideWidth`, slide.offsetWidth)
     }
     // width
     const draggerWidth = self.dragger ? self.detail.draggerWidth : self.detail.objectWidth
@@ -114,7 +114,7 @@ class Slider extends Xt.Toggle {
     let totalCount = draggerWidth
     let doneFirst = false
     for (const target of self.targets) {
-      let targetWidth = Xt.dataStorage.get(target, self.componentNamespace + 'SlideWidth')
+      let targetWidth = Xt.dataStorage.get(target, `${self.componentNamespace}SlideWidth`)
       if (targetWidth === 0) {
         // when display none
         const container = target.parentNode
@@ -142,11 +142,11 @@ class Slider extends Xt.Toggle {
       doneFirst = true
       // assign group
       self.groupMq[currentGroup].push(target)
-      target.setAttribute('data-xt-group', self.namespace + '-' + currentGroup)
+      target.setAttribute('data-xt-group', `${self.namespace}-${currentGroup}`)
     }
     self.groupMqInitial = self.groupMq
     // @FIX position values negative margins
-    self.detail.fixNegativeMargin = Xt.dataStorage.get(self.groupMq[0][0], self.componentNamespace + 'SlideLeft')
+    self.detail.fixNegativeMargin = Xt.dataStorage.get(self.groupMq[0][0], `${self.componentNamespace}SlideLeft`)
     // @FIX disable slider if not overflowing
     if (options.overflowAuto && totalCount >= 0) {
       // disable
@@ -182,10 +182,10 @@ class Slider extends Xt.Toggle {
           for (const slide of group) {
             const cloned = cloneSlide(slide)
             wrapLast[wrapLastCountIteration * self.groupMqInitial.length + i].push(cloned)
-            cloned.setAttribute('data-xt-group', self.namespace + '-' + 'wrapLast' + wrapLastCountIteration + i)
+            cloned.setAttribute('data-xt-group', `${self.namespace}-` + `wrapLast${wrapLastCountIteration}${i}`)
             self.targets.push(cloned)
             container.append(cloned)
-            wrapLastCount -= Xt.dataStorage.get(slide, self.componentNamespace + 'SlideWidth')
+            wrapLastCount -= Xt.dataStorage.get(slide, `${self.componentNamespace}SlideWidth`)
           }
           if (wrapLastCount <= wrapMaxWidth) {
             return
@@ -205,10 +205,10 @@ class Slider extends Xt.Toggle {
           for (const slide of group.reverse()) {
             const cloned = cloneSlide(slide)
             wrapFirst[0].unshift(cloned)
-            cloned.setAttribute('data-xt-group', self.namespace + '-' + 'wrapFirst' + wrapFirstCountIteration + i)
+            cloned.setAttribute('data-xt-group', `${self.namespace}-` + `wrapFirst${wrapFirstCountIteration}${i}`)
             self.targets.unshift(cloned)
             container.prepend(cloned)
-            wrapFirstCount -= Xt.dataStorage.get(slide, self.componentNamespace + 'SlideWidth')
+            wrapFirstCount -= Xt.dataStorage.get(slide, `${self.componentNamespace}SlideWidth`)
           }
           if (wrapFirstCount <= wrapMaxWidth) {
             group.reverse() // reset reverse
@@ -225,8 +225,8 @@ class Slider extends Xt.Toggle {
       // @FIX performances
       for (const slide of self.targets) {
         // needs to recalculate not only xt-wrap but all targets
-        Xt.dataStorage.set(slide, self.componentNamespace + 'SlideLeft', slide.offsetLeft)
-        Xt.dataStorage.set(slide, self.componentNamespace + 'SlideWidth', slide.offsetWidth)
+        Xt.dataStorage.set(slide, `${self.componentNamespace}SlideLeft`, slide.offsetLeft)
+        Xt.dataStorage.set(slide, `${self.componentNamespace}SlideWidth`, slide.offsetWidth)
       }
     }
     self.groupMqFirst = wrapFirst
@@ -276,7 +276,7 @@ class Slider extends Xt.Toggle {
           for (const slide of group) {
             const content = slide.querySelector('.slide-pagination-content')
             if (content) {
-              replace += '<span>' + content.innerHTML + '</span>'
+              replace += `<span>${content.innerHTML}</span>`
             }
             const attr = slide.querySelector('[data-slide-pagination-class]')
             if (attr) {
@@ -321,18 +321,18 @@ class Slider extends Xt.Toggle {
     const options = self.options
     // reset done
     for (const slide of self.targets) {
-      Xt.dataStorage.remove(slide, self.componentNamespace + 'GroupPosDone')
+      Xt.dataStorage.remove(slide, `${self.componentNamespace}GroupPosDone`)
     }
     // @FIX performances
     const draggerWidth = self.detail.draggerWidth
     for (const slide of self.targets) {
-      Xt.dataStorage.set(slide, self.componentNamespace + 'SlideHeight', slide.children[0].offsetHeight)
+      Xt.dataStorage.set(slide, `${self.componentNamespace}SlideHeight`, slide.children[0].offsetHeight)
     }
     // slides pos
     let slidesWidth = 0
     for (const slide of self.targets) {
       // once per group
-      if (!Xt.dataStorage.get(slide, self.componentNamespace + 'GroupPosDone')) {
+      if (!Xt.dataStorage.get(slide, `${self.componentNamespace}GroupPosDone`)) {
         // vars
         const targets = self.getTargets(slide)
         let slideLeft = Infinity
@@ -342,17 +342,17 @@ class Slider extends Xt.Toggle {
         // vars
         for (const target of targets) {
           // @FIX performances
-          const tl = Xt.dataStorage.get(target, self.componentNamespace + 'SlideLeft')
-          const sl = Xt.dataStorage.get(slide, self.componentNamespace + 'SlideLeft')
+          const tl = Xt.dataStorage.get(target, `${self.componentNamespace}SlideLeft`)
+          const sl = Xt.dataStorage.get(slide, `${self.componentNamespace}SlideLeft`)
           slideLeft = tl < slideLeft ? sl : slideLeft
-          slideWidth += Xt.dataStorage.get(target, self.componentNamespace + 'SlideWidth')
-          slideHeightTemp = Xt.dataStorage.get(target, self.componentNamespace + 'SlideHeight')
+          slideWidth += Xt.dataStorage.get(target, `${self.componentNamespace}SlideWidth`)
+          slideHeightTemp = Xt.dataStorage.get(target, `${self.componentNamespace}SlideHeight`)
           slidesWidth += slideWidth
           slideHeight = slideHeightTemp > slideHeight ? slideHeightTemp : slideHeight
         }
         for (const target of targets) {
-          Xt.dataStorage.set(target, self.componentNamespace + 'GroupPosDone', true)
-          Xt.dataStorage.set(target, self.componentNamespace + 'GroupHeight', slideHeight)
+          Xt.dataStorage.set(target, `${self.componentNamespace}GroupPosDone`, true)
+          Xt.dataStorage.set(target, `${self.componentNamespace}GroupHeight`, slideHeight)
         }
         // pos with alignment
         let pos
@@ -368,7 +368,7 @@ class Slider extends Xt.Toggle {
         }
         // save pos
         for (const target of targets) {
-          Xt.dataStorage.set(target, self.componentNamespace + 'GroupPos', pos)
+          Xt.dataStorage.set(target, `${self.componentNamespace}GroupPos`, pos)
         }
       }
     }
@@ -380,34 +380,34 @@ class Slider extends Xt.Toggle {
     if (options.contain && slidesWidth > draggerWidth) {
       // only if slides overflow dragger
       const slideFirst = self.targets[0]
-      const slideFirstLeft = Xt.dataStorage.get(slideFirst, self.componentNamespace + 'SlideLeft')
+      const slideFirstLeft = Xt.dataStorage.get(slideFirst, `${self.componentNamespace}SlideLeft`)
       const slideLast = self.targets[self.targets.length - 1]
-      const slideLastLeft = Xt.dataStorage.get(slideLast, self.componentNamespace + 'SlideLeft')
-      const slideLastWidth = Xt.dataStorage.get(slideLast, self.componentNamespace + 'SlideWidth')
+      const slideLastLeft = Xt.dataStorage.get(slideLast, `${self.componentNamespace}SlideLeft`)
+      const slideLastWidth = Xt.dataStorage.get(slideLast, `${self.componentNamespace}SlideWidth`)
       const min = -slideFirstLeft
       const max = -slideLastLeft + draggerWidth - slideLastWidth
       for (const group of self.groupMq) {
         for (const target of group) {
-          let pos = Xt.dataStorage.get(target, self.componentNamespace + 'GroupPos')
+          let pos = Xt.dataStorage.get(target, `${self.componentNamespace}GroupPos`)
           pos = pos > min ? min : pos
           pos = pos < max ? max : pos
-          Xt.dataStorage.set(target, self.componentNamespace + 'GroupPos', pos)
+          Xt.dataStorage.set(target, `${self.componentNamespace}GroupPos`, pos)
         }
       }
     }
     // @FIX position values negative margins
     for (const target of self.targets) {
-      let pos = Xt.dataStorage.get(target, self.componentNamespace + 'GroupPos')
+      let pos = Xt.dataStorage.get(target, `${self.componentNamespace}GroupPos`)
       pos += self.detail.fixNegativeMargin
-      Xt.dataStorage.set(target, self.componentNamespace + 'GroupPos', pos)
+      Xt.dataStorage.set(target, `${self.componentNamespace}GroupPos`, pos)
     }
     // set wheel min and max
     if (options.wheel && options.wheel.selector) {
       const arr = self.targets.filter(x => !x.classList.contains('xt-wrap'))
       const first = arr[0]
       const last = arr[arr.length - 1]
-      self.detail.wheelMin = -Xt.dataStorage.get(first, self.componentNamespace + 'GroupPos')
-      self.detail.wheelMax = -Xt.dataStorage.get(last, self.componentNamespace + 'GroupPos')
+      self.detail.wheelMin = -Xt.dataStorage.get(first, `${self.componentNamespace}GroupPos`)
+      self.detail.wheelMax = -Xt.dataStorage.get(last, `${self.componentNamespace}GroupPos`)
     }
   }
 
@@ -423,13 +423,13 @@ class Slider extends Xt.Toggle {
     if (options.drag && !options.drag.manual) {
       // @FIX prevent dragging links and images
       for (const img of self.dragger.querySelectorAll('img')) {
-        const imgnodragHandler = Xt.dataStorage.put(img, 'mousedown/drag' + '/' + self.namespace, self.eventImgnodragHandler.bind(self))
+        const imgnodragHandler = Xt.dataStorage.put(img, `mousedown/drag/${self.namespace}`, self.eventImgnodragHandler.bind(self))
         img.addEventListener('mousedown', imgnodragHandler)
       }
       // drag start
       const dragstartHandler = Xt.dataStorage.put(
         window,
-        'mousedown touchstart/drag' + '/' + self.namespace,
+        `mousedown touchstart/drag/${self.namespace}`,
         self.eventDragstartHandler.bind(self).bind(self, dragger)
       )
       const events = ['mousedown', 'touchstart']
@@ -452,7 +452,7 @@ class Slider extends Xt.Toggle {
       }
     }
     // resize
-    const reinitHandler = Xt.dataStorage.put(window, 'resize/reinit' + '/' + self.namespace, self.eventReinitHandler.bind(self).bind(self))
+    const reinitHandler = Xt.dataStorage.put(window, `resize/reinit/${self.namespace}`, self.eventReinitHandler.bind(self).bind(self))
     addEventListener('resize', reinitHandler)
   }
 
@@ -494,11 +494,7 @@ class Slider extends Xt.Toggle {
           self.eventDragstart(dragger, e)
         }
         // drag end
-        const dragendHandler = Xt.dataStorage.put(
-          window,
-          'mouseup touchend/drag' + '/' + self.namespace,
-          self.eventDragendHandler.bind(self).bind(self, dragger)
-        )
+        const dragendHandler = Xt.dataStorage.put(window, `mouseup touchend/drag/${self.namespace}`, self.eventDragendHandler.bind(self).bind(self, dragger))
         const events = ['mouseup', 'touchend']
         for (const event of events) {
           addEventListener(event, dragendHandler)
@@ -534,7 +530,7 @@ class Slider extends Xt.Toggle {
   eventDragstart(dragger, e) {
     const self = this
     // event move
-    const dragHandler = Xt.dataStorage.put(window, 'mousemove touchmove/drag' + '/' + self.namespace, self.eventDragHandler.bind(self).bind(self, dragger))
+    const dragHandler = Xt.dataStorage.put(window, `mousemove touchmove/drag/${self.namespace}`, self.eventDragHandler.bind(self).bind(self, dragger))
     const events = ['mousemove', 'touchmove']
     for (const event of events) {
       addEventListener(event, dragHandler, { passive: false })
@@ -551,13 +547,13 @@ class Slider extends Xt.Toggle {
   eventDragend(dragger, e) {
     const self = this
     // event off
-    const dragendHandler = Xt.dataStorage.get(window, 'mouseup touchend/drag' + '/' + self.namespace)
+    const dragendHandler = Xt.dataStorage.get(window, `mouseup touchend/drag/${self.namespace}`)
     const eventsoff = ['mouseup', 'touchend']
     for (const event of eventsoff) {
       removeEventListener(event, dragendHandler)
     }
     // event move
-    const dragHandler = Xt.dataStorage.get(window, 'mousemove touchmove/drag' + '/' + self.namespace)
+    const dragHandler = Xt.dataStorage.get(window, `mousemove touchmove/drag/${self.namespace}`)
     const eventsmove = ['mousemove', 'touchmove']
     for (const event of eventsmove) {
       removeEventListener(event, dragHandler)
@@ -574,10 +570,10 @@ class Slider extends Xt.Toggle {
   eventDragHandler(dragger, e) {
     const self = this
     // logic
-    cancelAnimationFrame(Xt.dataStorage.get(dragger, self.componentNamespace + 'DragFrame'))
+    cancelAnimationFrame(Xt.dataStorage.get(dragger, `${self.componentNamespace}DragFrame`))
     Xt.dataStorage.set(
       dragger,
-      self.componentNamespace + 'DragFrame',
+      `${self.componentNamespace}DragFrame`,
       requestAnimationFrame(() => {
         self.logicDrag(dragger, e)
       })
@@ -608,19 +604,19 @@ class Slider extends Xt.Toggle {
       const slides = self.getTargets(element)
       const slide = slides[0]
       // only one call per group
-      if (Xt.dataStorage.get(slide, self.componentNamespace + 'SlideonDone')) {
+      if (Xt.dataStorage.get(slide, `${self.componentNamespace}SlideonDone`)) {
         return false
       }
-      Xt.dataStorage.set(slide, self.componentNamespace + 'SlideonDone', true)
+      Xt.dataStorage.set(slide, `${self.componentNamespace}SlideonDone`, true)
       requestAnimationFrame(() => {
-        Xt.dataStorage.remove(slide, self.componentNamespace + 'SlideonDone')
+        Xt.dataStorage.remove(slide, `${self.componentNamespace}SlideonDone`)
       })
       // val
-      self.detail.dragPos = self.detail.dragPosCurrent = self.detail.dragPosReal = Xt.dataStorage.get(slide, self.componentNamespace + 'GroupPos')
+      self.detail.dragPos = self.detail.dragPosCurrent = self.detail.dragPosReal = Xt.dataStorage.get(slide, `${self.componentNamespace}GroupPos`)
       // autoHeight and keepHeight
       if (self.autoHeight || (self.keepHeight && self.initial)) {
-        let slideHeight = Xt.dataStorage.get(slide, self.componentNamespace + 'SlideHeight')
-        const groupHeight = Xt.dataStorage.get(slide, self.componentNamespace + 'GroupHeight')
+        let slideHeight = Xt.dataStorage.get(slide, `${self.componentNamespace}SlideHeight`)
+        const groupHeight = Xt.dataStorage.get(slide, `${self.componentNamespace}GroupHeight`)
         slideHeight = groupHeight > slideHeight ? groupHeight : slideHeight
         if (slideHeight > 0) {
           slideHeight += 'px'
@@ -656,7 +652,7 @@ class Slider extends Xt.Toggle {
         }
         // drag position
         if (!options.drag.manual) {
-          dragger.style.transform = 'translateX(' + self.detail.dragPos + 'px)'
+          dragger.style.transform = `translateX(${self.detail.dragPos}px)`
         }
         // disable links not active slide
         Xt.animTimeout(
@@ -666,8 +662,8 @@ class Slider extends Xt.Toggle {
               if (options.jumpOverflow) {
                 const draggerTranslate = Xt.getTranslate(self.dragger)[0]
                 for (const target of self.targets) {
-                  const slideLeft = Xt.dataStorage.get(target, self.componentNamespace + 'SlideLeft')
-                  const slideWidth = Xt.dataStorage.get(target, self.componentNamespace + 'SlideWidth')
+                  const slideLeft = Xt.dataStorage.get(target, `${self.componentNamespace}SlideLeft`)
+                  const slideWidth = Xt.dataStorage.get(target, `${self.componentNamespace}SlideWidth`)
                   const slideBound = slideLeft + slideWidth
                   if (slideLeft < -Math.ceil(draggerTranslate) || slideBound > self.detail.draggerWidth - draggerTranslate) {
                     target.classList.add('xt-links-none')
@@ -766,9 +762,9 @@ class Slider extends Xt.Toggle {
     // @FIX performances
     for (const slide of self.targets) {
       // needs to recalculate not only xt-wrap but all targets
-      Xt.dataStorage.set(slide, self.componentNamespace + 'SlideLeft', slide.offsetLeft)
-      Xt.dataStorage.set(slide, self.componentNamespace + 'SlideWidth', slide.offsetWidth)
-      Xt.dataStorage.set(slide, self.componentNamespace + 'SlideHeight', slide.children[0].offsetHeight)
+      Xt.dataStorage.set(slide, `${self.componentNamespace}SlideLeft`, slide.offsetLeft)
+      Xt.dataStorage.set(slide, `${self.componentNamespace}SlideWidth`, slide.offsetWidth)
+      Xt.dataStorage.set(slide, `${self.componentNamespace}SlideHeight`, slide.children[0].offsetHeight)
     }
     // debug
     if (Xt.debug === true) {
@@ -974,8 +970,8 @@ class Slider extends Xt.Toggle {
       const arr = self.targets.filter(x => !x.classList.contains('xt-wrap'))
       const first = arr[0]
       const last = arr[arr.length - 1]
-      const min = Xt.dataStorage.get(first, self.componentNamespace + 'GroupPos')
-      const max = Xt.dataStorage.get(last, self.componentNamespace + 'GroupPos')
+      const min = Xt.dataStorage.get(first, `${self.componentNamespace}GroupPos`)
+      const max = Xt.dataStorage.get(last, `${self.componentNamespace}GroupPos`)
       // overflow
       const fncOverflow = options.drag.overflow
       if (friction && options.drag.friction) {
@@ -1008,7 +1004,7 @@ class Slider extends Xt.Toggle {
     if (self.initial) {
       self.dragger.classList.add('xt-transition-none')
     }
-    dragger.style.transform = 'translateX(' + self.detail.dragPos + 'px)'
+    dragger.style.transform = `translateX(${self.detail.dragPos}px)`
     if (self.initial) {
       self.dragger.classList.remove('xt-transition-none')
     }
@@ -1047,7 +1043,7 @@ class Slider extends Xt.Toggle {
           if (direction > 0) {
             for (let i = self.currentIndex; i < self.groupMq.length; i++) {
               const group = self.groupMq[i]
-              const pos = Xt.dataStorage.get(group[0], self.componentNamespace + 'GroupPos')
+              const pos = Xt.dataStorage.get(group[0], `${self.componentNamespace}GroupPos`)
               dist += Math.abs(pos)
               if (dragPosCurrent <= dist) {
                 return i
@@ -1056,7 +1052,7 @@ class Slider extends Xt.Toggle {
           } else {
             for (let i = self.currentIndex; i >= 0; i--) {
               const group = self.groupMq[i]
-              const pos = Xt.dataStorage.get(group[0], self.componentNamespace + 'GroupPos')
+              const pos = Xt.dataStorage.get(group[0], `${self.componentNamespace}GroupPos`)
               dist += Math.abs(pos)
               if (dragPosCurrent <= dist) {
                 return i
@@ -1123,7 +1119,7 @@ class Slider extends Xt.Toggle {
     if (self.initial) {
       self.dragger.classList.add('xt-transition-none')
     }
-    dragger.style.transform = 'translateX(' + self.detail.dragPosCurrent + 'px)'
+    dragger.style.transform = `translateX(${self.detail.dragPosCurrent}px)`
     if (self.initial) {
       self.dragger.classList.remove('xt-transition-none')
     }
@@ -1334,11 +1330,11 @@ Xt.Slider = Slider
 //
 
 Xt.mount.push({
-  matches: '[data-' + Xt.Slider.componentName + ']',
+  matches: `[data-${Xt.Slider.componentName}]`,
   mount: object => {
     // vars
 
-    const optionsMarkup = object.getAttribute('data-' + Xt.Slider.componentName)
+    const optionsMarkup = object.getAttribute(`data-${Xt.Slider.componentName}`)
     const options = optionsMarkup ? JSON5.parse(optionsMarkup) : {}
 
     // init

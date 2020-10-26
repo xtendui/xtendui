@@ -7,7 +7,7 @@ import { cssSource, jsSource } from 'assets/scripts/source'
 class DemoVanilla extends React.Component {
   render() {
     const { src, children, name } = this.props
-    const demo = require('../../code/' + src + '.js').demo
+    const demo = require(`../../code/${src}.js`).demo
     demo.path = `private/demos/${demo.dirs.join('/')}/${demo.name}`.replace('/vanilla', '').replace('src/gatsby/code/', '')
     return (
       <StaticQuery

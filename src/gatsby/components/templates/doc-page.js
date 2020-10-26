@@ -24,10 +24,10 @@ class Template extends React.Component {
       .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
       .join(' ')
     seo.title =
-      data.post.frontmatter.parent && data.post.frontmatter.parent !== data.post.frontmatter.title ? data.post.frontmatter.parent + ' ' + seo.title : seo.title
+      data.post.frontmatter.parent && data.post.frontmatter.parent !== data.post.frontmatter.title ? `${data.post.frontmatter.parent} ${seo.title}` : seo.title
     seo.title += ' - '
-    seo.title += data.post.frontmatter.category && data.post.frontmatter.category !== data.post.frontmatter.title ? ' ' + data.post.frontmatter.category : ''
-    seo.title += data.post.frontmatter.type && data.post.frontmatter.type !== data.post.frontmatter.title ? ' ' + data.post.frontmatter.type : ''
+    seo.title += data.post.frontmatter.category && data.post.frontmatter.category !== data.post.frontmatter.title ? ` ${data.post.frontmatter.category}` : ''
+    seo.title += data.post.frontmatter.type && data.post.frontmatter.type !== data.post.frontmatter.title ? ` ${data.post.frontmatter.type}` : ''
     seo.description = data.post.frontmatter.description ? data.post.frontmatter.description : data.parent.frontmatter.description
     return (
       <Layout seo={seo} page={data}>
@@ -82,12 +82,10 @@ class Template extends React.Component {
                                 <p>
                                   {adiacent.frontmatter.description
                                     ? adiacent.frontmatter.description
-                                    : adiacent.frontmatter.parent +
-                                      "'s " +
-                                      adiacent.frontmatter.title
+                                    : `${adiacent.frontmatter.parent}'s ${adiacent.frontmatter.title
                                         .split(/[\s-]+/)
                                         .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
-                                        .join(' ')}
+                                        .join(' ')}`}
                                 </p>
                               </Link>
                             </div>

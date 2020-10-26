@@ -65,7 +65,7 @@ class Ajax extends Xt.Toggle {
       }
       self.groupUrl[url].push(element)
       // assign group
-      element.setAttribute('data-xt-group', self.namespace + '-' + url)
+      element.setAttribute('data-xt-group', `${self.namespace}-${url}`)
     }
   }
 
@@ -214,7 +214,7 @@ class Ajax extends Xt.Toggle {
     self.object.dispatchEvent(new CustomEvent('request.xt'))
     // duration
     self.detail.requestDate = new Date()
-    clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AjaxDurationTimeout'))
+    clearTimeout(Xt.dataStorage.get(self.object, `${self.componentNamespace}AjaxDurationTimeout`))
     if (self.detail.request) {
       self.detail.request.abort()
     } // fix fast change page
@@ -255,7 +255,7 @@ class Ajax extends Xt.Toggle {
     if (self.detail.requestDuration > 0) {
       Xt.dataStorage.set(
         self.object,
-        self.componentNamespace + 'AjaxDurationTimeout',
+        `${self.componentNamespace}AjaxDurationTimeout`,
         setTimeout(() => {
           // request
           if (request.status >= 200 && request.status <= 300) {
@@ -386,11 +386,11 @@ Xt.Ajax = Ajax
 //
 
 Xt.mount.push({
-  matches: '[data-' + Xt.Ajax.componentName + ']',
+  matches: `[data-${Xt.Ajax.componentName}]`,
   mount: object => {
     // vars
 
-    const optionsMarkup = object.getAttribute('data-' + Xt.Ajax.componentName)
+    const optionsMarkup = object.getAttribute(`data-${Xt.Ajax.componentName}`)
     const options = optionsMarkup ? JSON5.parse(optionsMarkup) : {}
 
     // init

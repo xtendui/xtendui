@@ -20,7 +20,7 @@ class Layout extends React.Component {
         cname += ' gatsby_iframe-container'
       }
       document.documentElement.classList.add(...cname.split(' '))
-      document.documentElement.setAttribute('id', 'iframe--' + demo.name)
+      document.documentElement.setAttribute('id', `iframe--${demo.name}`)
       const iframeLoaded = () => {
         if (window.self !== window.top) {
           window.parent.initIframe(window.name, demo.htmlSource, demo.jsxSource, demo.cssSource, demo.jsSource)

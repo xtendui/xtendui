@@ -195,8 +195,8 @@ const makeDocument = () => {
     el.classList.add('gatsby_make-line')
   }
   for (const el of document.querySelectorAll('.gatsby_make-line')) {
-    el.innerHTML = '<span class="gatsby_make-line_line">' + el.innerHTML + '</span>'
-    el.innerHTML = '<span class="gatsby_make-line_container">' + el.innerHTML + '</span>'
+    el.innerHTML = `<span class="gatsby_make-line_line">${el.innerHTML}</span>`
+    el.innerHTML = `<span class="gatsby_make-line_container">${el.innerHTML}</span>`
   }
   // .gatsby_make-anchor
   for (const el of document.querySelectorAll('.gatsby_site_article_content_inner > * > h2, .gatsby_site_article_content_inner > * > h4')) {
@@ -215,7 +215,7 @@ const makeDocument = () => {
     // id
     let id = ''
     if (prevElement) {
-      id += prevElement.textContent.trim().replace(/\W/g, '-').toLowerCase() + '-'
+      id += `${prevElement.textContent.trim().replace(/\W/g, '-').toLowerCase()}-`
     }
     id += el.textContent.trim().replace(/\W/g, '-').toLowerCase()
     // sidebar links
@@ -227,11 +227,7 @@ const makeDocument = () => {
         .querySelector('.gatsby_site_header_item')
         .append(
           Xt.createElement(
-            '<div><a href="#' +
-              id +
-              '" class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--adiacent_inner"><span>' +
-              el.textContent +
-              '</span></button></div>'
+            `<div><a href="#${id}" class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--adiacent_inner"><span>${el.textContent}</span></button></div>`
           )
         )
     }
@@ -239,7 +235,7 @@ const makeDocument = () => {
     el.setAttribute('id', id)
     el.classList.add('gatsby_make-anchor')
     // wrapInner
-    const link = Xt.createElement('<a href="#' + id + '"></a>')
+    const link = Xt.createElement(`<a href="#${id}"></a>`)
     el.classList.add('xt-ignore')
     el.before(link)
     const inner = el.querySelector(':scope > *')

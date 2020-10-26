@@ -107,9 +107,9 @@ Xt.mount.push({
       const tr = self.targets.filter(x => self.hasCurrent(x))[0]
       // assetMask
       const assetMask = tr.querySelector('.hero')
-      gsap.set(assetMask, { x: -100 * self.detail.dragRatio * self.direction + '%' })
+      gsap.set(assetMask, { x: `${-100 * self.detail.dragRatio * self.direction}%` })
       const assetMaskInner = assetMask.querySelector('.hero-inner')
-      gsap.set(assetMaskInner, { x: (100 * self.detail.dragRatio * self.direction) / 2 + '%' })
+      gsap.set(assetMaskInner, { x: `${(100 * self.detail.dragRatio * self.direction) / 2}%` })
       // asset
       const asset = tr.querySelector('.hero-asset .media')
       gsap.set(asset, { opacity: self.detail.dragRatioInverse + assetOpacity })
@@ -124,9 +124,9 @@ Xt.mount.push({
         next.classList.add('next')
         // assetMask
         const assetMask = next.querySelector('.hero')
-        gsap.set(assetMask, { x: 100 * self.detail.dragRatioInverse * self.direction + '%' })
+        gsap.set(assetMask, { x: `${100 * self.detail.dragRatioInverse * self.direction}%` })
         const assetMaskInner = assetMask.querySelector('.hero-inner')
-        gsap.set(assetMaskInner, { x: (-100 * self.detail.dragRatioInverse * self.direction) / 2 + '%' })
+        gsap.set(assetMaskInner, { x: `${(-100 * self.detail.dragRatioInverse * self.direction) / 2}%` })
         // asset
         const asset = next.querySelector('.hero-asset .media')
         gsap.set(asset, { scale: 1 + assetZoom * self.detail.dragRatioInverse, opacity: self.detail.dragRatio + assetOpacity })
@@ -193,12 +193,12 @@ Xt.mount.push({
           // assetMask
           const assetMask = tr.querySelector('.hero')
           if (!self.detail.dragging) {
-            gsap.set(assetMask, { x: 100 * self.direction + '%' })
+            gsap.set(assetMask, { x: `${100 * self.direction}%` })
           }
           gsap.to(assetMask, { x: 0, duration: assetMaskTimeOn, ease: self.detail.dragging ? assetMaskEaseDragging : assetMaskEaseOn })
           const assetMaskInner = assetMask.querySelector('.hero-inner')
           if (!self.detail.dragging) {
-            gsap.set(assetMaskInner, { x: -((100 * self.direction) / 2) + '%' })
+            gsap.set(assetMaskInner, { x: `${-((100 * self.direction) / 2)}%` })
           }
           gsap.to(assetMaskInner, { x: 0, duration: assetMaskTimeOn, ease: self.detail.dragging ? assetMaskEaseDragging : assetMaskEaseOn })
           // asset
@@ -233,13 +233,13 @@ Xt.mount.push({
         // assetMask
         const assetMask = tr.querySelector('.hero')
         gsap.to(assetMask, {
-          x: -100 * self.direction + '%',
+          x: `${-100 * self.direction}%`,
           duration: assetMaskTimeOff,
           ease: self.detail.dragging ? assetMaskEaseDragging : assetMaskEaseOff,
         })
         const assetMaskInner = assetMask.querySelector('.hero-inner')
         gsap.to(assetMaskInner, {
-          x: (100 * self.direction) / 2 + '%',
+          x: `${(100 * self.direction) / 2}%`,
           duration: assetMaskTimeOff,
           ease: self.detail.dragging ? assetMaskEaseDragging : assetMaskEaseOff,
         })

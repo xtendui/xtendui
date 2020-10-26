@@ -579,20 +579,20 @@ if (typeof window !== 'undefined') {
           yCurrent += fncFriction(Math.abs(yDist)) * Math.sign(yDist)
           // set
           if (transform) {
-            el.style.transform = 'translateX(' + xCurrent + 'px) translateY(' + yCurrent + 'px)'
+            el.style.transform = `translateX(${xCurrent}px) translateY(${yCurrent}px)`
           } else {
-            el.style.left = xCurrent + 'px'
-            el.style.top = yCurrent + 'px'
+            el.style.left = `${xCurrent}px`
+            el.style.top = `${yCurrent}px`
           }
         } else {
           xCurrent = obj.x
           yCurrent = obj.y
           // set
           if (transform) {
-            el.style.transform = 'translateX(' + xCurrent + 'px) translateY(' + yCurrent + 'px)'
+            el.style.transform = `translateX(${xCurrent}px) translateY(${yCurrent}px)`
           } else {
-            el.style.top = yCurrent + 'px'
-            el.style.left = xCurrent + 'px'
+            el.style.top = `${yCurrent}px`
+            el.style.left = `${xCurrent}px`
           }
         }
         // next interaction friction position
@@ -671,7 +671,7 @@ if (typeof window !== 'undefined') {
    */
   Xt.getuniqueId = () => {
     Xt.uid = Xt.uid !== undefined ? Xt.uid : 0
-    return 'xt-' + Xt.uid++
+    return `xt-${Xt.uid++}`
   }
 
   /**
@@ -793,11 +793,11 @@ if (typeof window !== 'undefined') {
    */
   Xt.scrollbarSpaceOn = container => {
     const width = Xt.scrollbarWidth
-    container.style.paddingRight = width + 'px'
+    container.style.paddingRight = `${width}px`
     // backdrop
     const backdrops = container.querySelectorAll('.backdrop')
     for (const backdrop of backdrops) {
-      backdrop.style.right = width + 'px'
+      backdrop.style.right = `${width}px`
     }
     // xt-fixed
     const elements = container.querySelectorAll('.xt-fixed')
@@ -815,7 +815,7 @@ if (typeof window !== 'undefined') {
         const old = element.style[prop]
         let val = parseFloat(style[prop])
         val = old !== '' ? val - parseFloat(old) : val
-        const str = 'calc(' + val + 'px + ' + width + 'px)'
+        const str = `calc(${val}px + ${width}px)`
         element.classList.add('xt-transition-none')
         requestAnimationFrame(() => {
           element.style[prop] = str
@@ -858,7 +858,7 @@ if (typeof window !== 'undefined') {
    * @param {Function} callback
    */
   Xt.addScript = (url, callback = null) => {
-    if (!document.querySelector('script[src="' + url + '"]')) {
+    if (!document.querySelector(`script[src="${url}"]`)) {
       const script = document.createElement('script')
       if (callback) {
         script.onload = callback
@@ -913,9 +913,9 @@ if (typeof window !== 'undefined') {
    * @param {Number} timing Optional force time
    */
   Xt.animTimeout = (el, func, suffix = '', timing = null) => {
-    clearTimeout(Xt.dataStorage.get(el, 'xtAnimTimeout' + suffix))
+    clearTimeout(Xt.dataStorage.get(el, `xtAnimTimeout${suffix}`))
     timing = timing || timing === 0 ? timing : Xt.animTime(el)
-    Xt.dataStorage.set(el, 'xtAnimTimeout' + suffix, setTimeout(func, timing))
+    Xt.dataStorage.set(el, `xtAnimTimeout${suffix}`, setTimeout(func, timing))
   }
 
   /**
@@ -924,7 +924,7 @@ if (typeof window !== 'undefined') {
    * @param {String} suffix Timeout suffix
    */
   Xt.animTimeoutClear = (el, suffix = '') => {
-    clearTimeout(Xt.dataStorage.get(el, 'xtAnimTimeout' + suffix))
+    clearTimeout(Xt.dataStorage.get(el, `xtAnimTimeout${suffix}`))
   }
 
   /**
@@ -1023,7 +1023,7 @@ if (typeof window !== 'undefined') {
   Xt.eventDelay = (e, element, func, prefix = '', instant = false) => {
     const container = document.documentElement
     if (e && e.type && (e.type === 'resize' || e.type === 'scroll')) {
-      const delay = e.detail !== undefined && e.detail.delay !== undefined ? e.detail.delay : instant ? 0 : Xt[e.type + 'Delay']
+      const delay = e.detail !== undefined && e.detail.delay !== undefined ? e.detail.delay : instant ? 0 : Xt[`${e.type}Delay`]
       if (e.type === 'resize') {
         const w = window.innerWidth
         const h = window.innerHeight
@@ -1052,10 +1052,10 @@ if (typeof window !== 'undefined') {
         // func
         func(e)
       } else {
-        clearTimeout(Xt.dataStorage.get(element, 'xt' + e.type + prefix + 'Timeout'))
+        clearTimeout(Xt.dataStorage.get(element, `xt${e.type}${prefix}Timeout`))
         Xt.dataStorage.set(
           element,
-          'xt' + e.type + prefix + 'Timeout',
+          `xt${e.type}${prefix}Timeout`,
           setTimeout(() => {
             // func
             func(e)
@@ -1102,10 +1102,10 @@ if (typeof window !== 'undefined') {
     style = style || Xt.dataStorage.set(element, 'xtAnimCssStyle', getComputedStyle(element))
     // save initial
     for (const property of properties) {
-      const initialized = Xt.dataStorage.get(element, 'xtAnimCssInitial' + property)
+      const initialized = Xt.dataStorage.get(element, `xtAnimCssInitial${property}`)
       if (!initialized) {
         isInitial = true
-        Xt.dataStorage.set(element, 'xtAnimCssInitial' + property, style[property])
+        Xt.dataStorage.set(element, `xtAnimCssInitial${property}`, style[property])
       }
     }
     // populate return
@@ -1114,7 +1114,7 @@ if (typeof window !== 'undefined') {
       for (const property of properties) {
         obj[property] = {}
         // set current to current style or initial
-        obj[property].current = element.style[property] || Xt.dataStorage.get(element, 'xtAnimCssInitial' + property)
+        obj[property].current = element.style[property] || Xt.dataStorage.get(element, `xtAnimCssInitial${property}`)
       }
       element.style = '' // reset style to get final css value
       for (const property of properties) {
@@ -1148,7 +1148,7 @@ if (typeof window !== 'undefined') {
      * height: 100vh;
      * height: calc(var(--vh, 1vh) * 100);
      */
-    document.documentElement.style.setProperty('--vh', Xt.windowHeight * 0.01 + 'px')
+    document.documentElement.style.setProperty('--vh', `${Xt.windowHeight * 0.01}px`)
   }
 
   /**

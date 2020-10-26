@@ -174,11 +174,11 @@ Xt.MouseFollow = MouseFollow
 //
 
 Xt.mount.push({
-  matches: '[data-' + Xt.MouseFollow.componentName + ']',
+  matches: `[data-${Xt.MouseFollow.componentName}]`,
   mount: object => {
     // vars
 
-    const optionsMarkup = object.getAttribute('data-' + Xt.MouseFollow.componentName)
+    const optionsMarkup = object.getAttribute(`data-${Xt.MouseFollow.componentName}`)
     const options = optionsMarkup ? JSON5.parse(optionsMarkup) : {}
 
     // init
