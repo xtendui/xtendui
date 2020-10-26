@@ -16,10 +16,6 @@ module.exports = {
         flex: '1 1 auto',
       },
     },
-    '.overlay-container-position': {
-      // styles
-      maxWidth: '24rem',
-    },
     '.overlay-disable': {
       // setup
       '@apply xt-disable': '',
