@@ -1170,6 +1170,9 @@ class Toggle {
     el.classList.remove(...self.classesIn)
     el.classList.remove(...self.classesOut)
     el.classList.remove(...self.classesDone)
+    if (self.initial && !self.wrap) {
+      el.classList.add(...self.classesInitial)
+    }
     // keep the same level of raf as others
     cancelAnimationFrame(Xt.dataStorage.get(el, `${self.componentNamespace}ActivateFrame`))
     Xt.dataStorage.put(
@@ -1177,11 +1180,12 @@ class Toggle {
       `${self.componentNamespace}ActivateFrame`,
       requestAnimationFrame(() => {
         el.classList.add(...self.classesIn)
+        // remove initial instantly when wrap
+        if (el.classList.contains('xt-wrap')) {
+          el.classList.remove(...self.classesInitial)
+        }
       })
     )
-    if (self.initial && !self.wrap) {
-      el.classList.add(...self.classesInitial)
-    }
     // direction
     if (self.direction >= 0) {
       el.classList.remove(...self.classesInverse)
