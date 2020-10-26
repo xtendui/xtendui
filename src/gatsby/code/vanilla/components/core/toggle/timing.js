@@ -54,9 +54,7 @@ demo.htmlSource = `
 
 </div>
 
-<br>
-
-<div class="list list-2 items-center w-full demo--toggle-timing--event">
+<div class="list list-2 items-center w-full mt-4 demo--toggle-timing--event">
 
   <button type="button" class="btn btn-md ${btnDefault()}">
     Toggle 0 hover
