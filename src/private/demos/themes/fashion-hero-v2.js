@@ -195,10 +195,10 @@ Xt.mount.push({
           gsap.to(assetMask, { x: -100 * self.direction + '%', duration: assetMaskTime, ease: assetMaskEase })
           const assetMaskInner = assetMask.querySelector('.hero-inner')
           gsap.to(assetMaskInner, { x: 100 * self.direction + '%', duration: assetMaskTime, ease: assetMaskEase })
-          // content
-          const content = tr.querySelector('.hero-content')
-          gsap.to(content, { x: -contentX * self.direction, opacity: 0, duration: contentTime, ease: contentEase })
         }
+        // content
+        const content = tr.querySelector('.hero-content')
+        gsap.to(content, { x: -contentX * self.direction, opacity: 0, duration: contentTime, ease: contentEase })
       }
     }
 
