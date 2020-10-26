@@ -7,7 +7,7 @@ import gsap from 'gsap'
  */
 
 Xt.mount.push({
-  matches: '#iframe--brands-structure-v1 body .slider', // add your own selector instead of body to contain the code
+  matches: '.demo--slider-infinite .slider', // add your own selector instead of body to contain the code
   mount: object => {
     // vars
 
@@ -103,6 +103,7 @@ Xt.mount.push({
     // unmount
 
     return () => {
+      eventPause()
       removeEventListener('blur', eventPause)
       removeEventListener('focus', eventResume)
       self.destroy()
