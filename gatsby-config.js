@@ -13,7 +13,7 @@ module.exports = {
     title: 'Xtend UI',
     description: description,
     author: 'Riccardo Caroli',
-    image: 'https://xtendui.com/social.jpg',
+    image: '/social.jpg',
     version: version,
     npm: 'https://www.npmjs.com/package/xtendui',
     github: 'https://github.com/minimit/xtendui',

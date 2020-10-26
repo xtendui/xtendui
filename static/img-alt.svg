@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 24.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Generator: Adobe Illustrator 25.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1200 1200" style="enable-background:new 0 0 1200 1200;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#777777;}
 	.st1{fill:#7E7E7E;}
 	.st2{fill:#FFFFFF;}
-	.st3{opacity:0.6;}
+	.st3{opacity:0.5;fill:#FFFFFF;}
 </style>
 <g id="Layer_4">
-	<rect class="st0" width="1200" height="1200"/>
+	<rect y="0" class="st0" width="1200" height="1200"/>
 </g>
 <g id="Layer_5">
 	<polygon class="st1" points="1160,60 1140,80 1120,100 1100,120 1080,140 1060,160 1040,180 1020,200 1000,220 980,240 960,260 
@@ -248,9 +248,7 @@
 <g id="Layer_3">
 	<polyline class="st2" points="614.4,576 634.4,576 634.4,584.9 620,584.9 620,624 614.4,624 	"/>
 	<polyline class="st2" points="587,607.7 578.9,624 565.6,624 579.3,599.8 566,576 579.1,576 587,592 	"/>
-	<g class="st3">
-		<polygon class="st2" points="608,576 603,584.9 608.5,584.9 608.5,624 614.4,624 614.4,576 		"/>
-		<polygon class="st2" points="594.8,576 594.3,577.1 587,592 587,607.7 595.1,624 608.4,624 594.6,599.8 603,584.9 608,576 		"/>
-	</g>
+	<polygon class="st3" points="608,576 594.8,576 594.3,577.1 587,592 587,607.7 595.1,624 608.4,624 594.6,599.8 603,584.9 
+		608.5,584.9 608.5,624 614.4,624 614.4,576 	"/>
 </g>
 </svg>
