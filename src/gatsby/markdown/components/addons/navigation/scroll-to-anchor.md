@@ -19,7 +19,7 @@ import 'xtendui/src/addons/scroll-to-anchor'
 Use this code to create a **scroll to anchor**.
 
 [[notePrimary]]
-| This addon uses [sticky](/components/core/sticky). Visit the component page to import and customize.
+| This addon uses [sticky](/components/core/sticky). Visit the component page to import javascript and customize.
 
 <demo>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/navigation/scroll-to-anchor">

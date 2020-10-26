@@ -26,20 +26,33 @@ module.exports = {
 
 ## Usage
 
-Use **component classes** to create a mouse follow.
+Use **component classes** and **tailwind classes** to create a hero.
+
+<demo>
+  <demovanilla src="vanilla/components/core/hero/usage">
+  </demovanilla>
+</demo>
+
+## Content
+
+Use **tailwind classes** to customize content.
+
+Use **component classes** to add hero shadow.
 
 <div class="table-scroll">
 
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.mouse-follow`                     | `mouse-follow`                | Styles for mouse follow            |
+|               | Syntax                          | Mixin               | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Component                  | `.hero-shadow-top`                     | `hero-shadow-top`                | Hero shadow on top            |
+| Component                  | `.hero-shadow-bottom`                     | `hero-shadow-bottom`                | Hero shadow on bottom            |
+| Component                  | `.hero-shadow-left`                     | `hero-shadow-left`                | Hero shadow on left            |
+| Component                  | `.hero-shadow-right`                     | `hero-shadow-right`                | Hero shadow on right            |
 
 </div>
 
-[[notePrimary]]
-| This addon uses [loader](/components/core/loader). Visit the component page to import and customize.
-
 <demo>
-  <demovanilla src="vanilla/components/addons/mouse-follow">
+  <demovanilla src="vanilla/components/core/hero/content">
   </demovanilla>
 </demo>
+
+Check out [hero themes](/themes/by-type/hero) for advanced interactions.

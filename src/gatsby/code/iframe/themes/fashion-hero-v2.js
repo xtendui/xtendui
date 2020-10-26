@@ -22,10 +22,10 @@ demo.htmlSource = `
 
       <div class="slide w-full slide-absolute">
         <div class="hero-cover absolute inset-0 z-active pointer-events-none bg-accent-500"></div>
-        <div class="hero block overflow-hidden w-full">
+        <div class="hero relative block overflow-hidden w-full">
           <div class="hero-inner">
             <div class="hero-asset">
-              <div class="media-container height-vh bg-accent-900">
+              <div class="media-container h-screen bg-accent-900">
                 <div class="media-inner">
                   <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
                 </div>
@@ -44,10 +44,10 @@ demo.htmlSource = `
 
       <div class="slide w-full slide-absolute">
         <div class="hero-cover absolute inset-0 z-active pointer-events-none bg-accent-500"></div>
-        <div class="hero block overflow-hidden w-full">
+        <div class="hero relative block overflow-hidden w-full">
           <div class="hero-inner">
             <div class="hero-asset">
-              <div class="media-container height-vh bg-accent-900">
+              <div class="media-container h-screen bg-accent-900">
                 <div class="media-inner">
                   <img class="media object-cover object-center" src="/img-alt.svg" loading="eager" alt="">
                 </div>
@@ -71,10 +71,10 @@ demo.htmlSource = `
 
       <div class="slide w-full slide-absolute">
         <div div class="hero-cover absolute inset-0 z-active pointer-events-none bg-accent-500"></div>
-        <div class="hero block overflow-hidden w-full">
+        <div class="hero relative block overflow-hidden w-full">
           <div class="hero-inner">
             <div class="hero-asset">
-              <div class="media-container height-vh bg-accent-900">
+              <div class="media-container h-screen bg-accent-900">
                 <div class="media-inner">
                   <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
                 </div>
@@ -93,10 +93,10 @@ demo.htmlSource = `
 
       <div class="slide w-full slide-absolute">
         <div div class="hero-cover absolute inset-0 z-active pointer-events-none bg-accent-500"></div>
-        <div class="hero block overflow-hidden w-full">
+        <div class="hero relative block overflow-hidden w-full">
           <div class="hero-inner">
             <div class="hero-asset">
-              <div class="media-container height-vh bg-accent-900">
+              <div class="media-container h-screen bg-accent-900">
                 <div class="media-inner">
                   <img class="media object-cover object-center" src="/img-alt.svg" loading="eager" alt="">
                 </div>
@@ -124,10 +124,10 @@ demo.htmlSource = `
 
       <div class="slide w-full slide-absolute">
         <div div class="hero-cover absolute inset-0 z-active pointer-events-none bg-accent-500"></div>
-        <div class="hero block overflow-hidden w-full">
+        <div class="hero relative block overflow-hidden w-full">
           <div class="hero-inner">
             <div class="hero-asset">
-              <div class="media-container height-vh bg-accent-900">
+              <div class="media-container h-screen bg-accent-900">
                 <div class="media-inner">
                   <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
                 </div>
@@ -155,10 +155,10 @@ demo.htmlSource = `
 
       <div class="slide w-full slide-absolute">
         <div div class="hero-cover absolute inset-0 z-active pointer-events-none bg-accent-500"></div>
-        <div class="hero block overflow-hidden w-full">
+        <div class="hero relative block overflow-hidden w-full">
           <div class="hero-inner">
             <div class="hero-asset">
-              <div class="media-container height-vh bg-accent-900">
+              <div class="media-container h-screen bg-accent-900">
                 <div class="media-inner">
                   <img class="media object-cover object-center" src="/img-alt.svg" loading="eager" alt="">
                 </div>

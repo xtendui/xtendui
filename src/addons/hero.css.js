@@ -1,7 +1,7 @@
 module.exports = {
   variants: ['responsive'],
   utility: theme => ({
-    '.hero-shadow-t': {
+    '.hero-shadow-top': {
       pointerEvents: 'none',
       position: 'absolute',
       zIndex: theme('zIndex.active'),
@@ -13,7 +13,7 @@ module.exports = {
       height: '100%',
       background: 'linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%)',
     },
-    '.hero-shadow-b': {
+    '.hero-shadow-bottom': {
       pointerEvents: 'none',
       position: 'absolute',
       zIndex: theme('zIndex.active'),
@@ -25,7 +25,7 @@ module.exports = {
       height: '100%',
       background: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%)',
     },
-    '.hero-shadow-l': {
+    '.hero-shadow-left': {
       pointerEvents: 'none',
       position: 'absolute',
       zIndex: theme('zIndex.active'),
@@ -37,7 +37,7 @@ module.exports = {
       height: '100%',
       background: 'linear-gradient(-90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%)',
     },
-    '.hero-shadow-r': {
+    '.hero-shadow-right': {
       pointerEvents: 'none',
       position: 'absolute',
       zIndex: theme('zIndex.active'),

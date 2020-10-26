@@ -7,11 +7,9 @@ module.exports = {
       width: 'auto',
       maxWidth: 'none',
     },
-    '.height-vh': {
+    '.h-screen': {
       // setup
-      height: '100vh',
-      // eslint-disable-next-line no-dupe-keys
-      height: 'calc(var(--vh, 1vh) * 100)',
+      height: 'calc(var(--vh, 1vh) * 100) !important',
     },
     '.mt-fc': {
       // setup

@@ -11,7 +11,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 Use this code to create a **toggle multilevel**.
 
 [[notePrimary]]
-| This addon uses [toggle](/components/core/toggle). Visit the component page to import and customize.
+| This addon uses [toggle](/components/core/toggle). Visit the component page to import javascript and customize.
 
 <demo>
   <demovanilla src="vanilla/components/addons/navigation/multilevel">

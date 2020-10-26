@@ -23,7 +23,7 @@ These are structure **component utilities**.
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
 | Utility                  | `.container-reset`       | `container-reset`                | `responsive`                | Reset container styles            |
-| Utility                  | `.height-vh`       | `height-vh`                | `responsive`                | Height `100vh` and retain height on vertical scroll/resize on mobile           |
+| Utility                  | `.h-screen`       | `h-screen`                | `responsive`                | Height `100vh` and retain height on vertical scroll/resize on mobile           |
 
 </div>
 

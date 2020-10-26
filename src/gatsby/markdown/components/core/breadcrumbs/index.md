@@ -10,9 +10,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 Use this code to create a **breadcrumbs**.
 
-[[notePrimary]]
-| This addon uses [separator](/components/core/separator). Visit the component page to import and customize.
-
 <demo>
   <demovanilla src="vanilla/components/core/breadcrumbs/usage">
   </demovanilla>

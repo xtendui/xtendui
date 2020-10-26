@@ -89,7 +89,7 @@ See [group component](/components/core/loader) to create a button with group.
 See [mouse follow addon](/components/core/loader) to create a loader with mouse follow.
 
 [[notePrimary]]
-| This addon uses [separator](/components/core/separator). Visit the component page to import and customize.
+| This addon uses [mouse follow](/components/addons/animation/mouse-follow). Visit the component page to import javascript and customize.
 
 [[noteDefault]]
 | List `ul` and `old` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.

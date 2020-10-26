@@ -31,7 +31,7 @@ module.exports = {
 Use this code to create a **navigation sides** on toggle. Position relative to closest element with `.relative`.
 
 [[notePrimary]]
-| This addon uses [mouse follow](/components/addons/animation/mouse-follow). Visit the component page to import and customize.
+| This addon uses [mouse follow](/components/addons/animation/mouse-follow). Visit the component page to import javascript and customize.
 
 <demo>
   <demovanilla src="vanilla/components/addons/navigation/nav-sides-toggle">
@@ -43,7 +43,7 @@ Use this code to create a **navigation sides** on toggle. Position relative to c
 Use this code to create a **navigation sides** on slider.
 
 [[notePrimary]]
-| This addon uses [mouse follow](/components/addons/animation/mouse-follow). Visit the component page to import and customize.
+| This addon uses [mouse follow](/components/addons/animation/mouse-follow). Visit the component page to import javascript and customize.
 
 <demo>
   <demovanilla src="vanilla/components/addons/navigation/nav-sides-slider">
