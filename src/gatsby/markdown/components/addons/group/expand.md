@@ -1,16 +1,16 @@
 ---
 type: "Components"
 category: "Addons"
-parent: "Overlay"
-title: "close-outside"
+parent: "Group"
+title: "expand"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
 ## Usage
 
-Use this code to create a **close outside**.
+Use this code to create a **group expand**.
 
 <demo>
-  <demovanilla src="vanilla/components/addons/overlay-close-outside">
+  <demovanilla src="vanilla/components/addons/group/expand">
   </demovanilla>
 </demo>

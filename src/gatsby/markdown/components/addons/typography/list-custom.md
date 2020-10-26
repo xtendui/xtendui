@@ -11,6 +11,6 @@ description: "Custom ordered and unordered lists."
 Use this code to create a **custom list**.
 
 <demo>
-  <demovanilla src="vanilla/components/addons/list-custom">
+  <demovanilla src="vanilla/components/addons/typography/list-custom">
   </demovanilla>
 </demo>

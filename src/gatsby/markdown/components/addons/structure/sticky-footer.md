@@ -11,6 +11,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 Use this code to create a **sticky footer**.
 
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/sticky-footer">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/structure/sticky-footer">
   </div>
 </demo>

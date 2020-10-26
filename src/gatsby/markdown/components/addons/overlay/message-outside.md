@@ -11,6 +11,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 Use this code to create a **message outside**.
 
 <demo>
-  <demovanilla src="vanilla/components/addons/overlay-message-outside">
+  <demovanilla src="vanilla/components/addons/overlay/message-outside">
   </demovanilla>
 </demo>

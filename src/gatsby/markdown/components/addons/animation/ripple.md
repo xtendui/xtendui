@@ -37,7 +37,7 @@ module.exports = {
 Use this code to create a **ripple**.
 
 <demo>
-  <demovanilla src="vanilla/components/addons/ripple">
+  <demovanilla src="vanilla/components/addons/animation/ripple">
   </demovanilla>
 </demo>
 

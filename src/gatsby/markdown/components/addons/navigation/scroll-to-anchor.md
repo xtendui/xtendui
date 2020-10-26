@@ -22,7 +22,7 @@ Use this code to create a **scroll to anchor**.
 | This addon uses [sticky](/components/core/sticky). Visit the component page to import and customize.
 
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/scroll-to-anchor">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/navigation/scroll-to-anchor">
   </div>
 </demo>
 

@@ -15,7 +15,7 @@ Import the **component javascript** file.
 Use this code to create a **textarea autosize**.
 
 <demo>
-  <demovanilla src="vanilla/components/addons/textarea-autosize">
+  <demovanilla src="vanilla/components/addons/form/textarea-autosize">
   </demovanilla>
 </demo>
 

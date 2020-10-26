@@ -13,6 +13,6 @@ Use [group space](/components/core/group/content#space) to create a toolbar.
 For aria purpose use `role="toolbar"`.
 
 <demo>
-  <demovanilla src="vanilla/components/addons/toolbar">
+  <demovanilla src="vanilla/components/core/navigation/toolbar">
   </demovanilla>
 </demo>

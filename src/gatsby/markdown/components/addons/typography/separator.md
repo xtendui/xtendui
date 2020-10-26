@@ -29,7 +29,7 @@ module.exports = {
 Use this code to create a **separator**.
 
 <demo>
-  <demovanilla src="vanilla/components/addons/separator">
+  <demovanilla src="vanilla/components/addons/typography/separator">
   </demovanilla>
 </demo>
 
@@ -48,6 +48,6 @@ For `<type>` values use `dash`, `slash`, `pipe`, `point` or `arrow`.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/addons/separator-type">
+  <demovanilla src="vanilla/components/addons/typography/separator-type">
   </demovanilla>
 </demo>

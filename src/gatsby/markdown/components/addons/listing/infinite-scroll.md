@@ -21,10 +21,10 @@ Use this code to create a **infinite scroll**.
 Set a `options.get` variable for a **get request on current url** for more items, and remember also to set `options.max` number of pages.
 
 [[noteDefault]]
-| Check advanced feature [open this demo on a new page](/iframe/components/addons/infinite-scroll). You can see on page refresh and browser navigation that **the page is retained**.
+| Check advanced feature [open this demo on a new page](/iframe/components/addons/listing/infinite-scroll). You can see on page refresh and browser navigation that **the page is retained**.
 
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/infinite-scroll">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/listing/infinite-scroll">
   </div>
 </demo>
 
@@ -32,7 +32,7 @@ Set a `options.get` variable for a **get request on current url** for more items
 
 Here are the main **javascript options**.
 
-For advanced options see javascript file source code `xtendui/src/addons/infinite-scroll.js`.
+For advanced options see javascript file source code `xtendui/src/addons/listing/infinite-scroll.js`.
 
 <div class="table-scroll">
 

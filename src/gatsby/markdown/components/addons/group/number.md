@@ -11,7 +11,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 Import the **component javascript** file.
 
 ```jsx
-import 'xtendui/src/addons/group-number'
+import 'xtendui/src/addons/group/number'
 ```
 
 ## Customization
@@ -37,6 +37,6 @@ module.exports = {
 Use this code to create a **group number**.
 
 <demo>
-  <demovanilla src="vanilla/components/addons/group-number">
+  <demovanilla src="vanilla/components/addons/group/number">
   </demovanilla>
 </demo>

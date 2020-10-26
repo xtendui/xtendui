@@ -48,7 +48,7 @@ Use **component classes** to create a mouse follow.
 | This addon uses [loader](/components/core/loader). Visit the component page to import and customize.
 
 <demo>
-  <demovanilla src="vanilla/components/addons/mouse-follow">
+  <demovanilla src="vanilla/components/addons/animation/mouse-follow">
   </demovanilla>
 </demo>
 

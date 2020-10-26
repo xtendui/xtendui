@@ -26,12 +26,26 @@ module.exports = {
 
 ## Usage
 
-Use this code to create a **navigation sides**.
+#### Toggle
+
+Use this code to create a **navigation sides** on toggle.
 
 [[notePrimary]]
 | This addon uses [mouse follow](/components/addons/animation/mouse-follow). Visit the component page to import and customize.
 
 <demo>
-  <demovanilla src="vanilla/components/addons/nav-sides">
+  <demovanilla src="vanilla/components/addons/navigation/nav-sides-toggle">
+  </demovanilla>
+</demo>
+
+#### Slider
+
+Use this code to create a **navigation sides** on slider.
+
+[[notePrimary]]
+| This addon uses [mouse follow](/components/addons/animation/mouse-follow). Visit the component page to import and customize.
+
+<demo>
+  <demovanilla src="vanilla/components/addons/navigation/nav-sides-slider">
   </demovanilla>
 </demo>

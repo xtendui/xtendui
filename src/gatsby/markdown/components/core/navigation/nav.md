@@ -13,6 +13,6 @@ Use [group vertical](/components/core/group#usage-vertical) and [group size](/co
 For aria purpose use `<nav></nav>`.
 
 <demo>
-  <demovanilla src="vanilla/components/addons/nav">
+  <demovanilla src="vanilla/components/core/navigation/nav">
   </demovanilla>
 </demo>

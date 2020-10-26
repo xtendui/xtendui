@@ -1,7 +1,7 @@
 ---
 type: "Components"
 category: "Addons"
-parent: "Toggle"
+parent: "Navigation"
 title: "multilevel"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
@@ -14,6 +14,6 @@ Use this code to create a **toggle multilevel**.
 | This addon uses [toggle](/components/core/toggle). Visit the component page to import and customize.
 
 <demo>
-  <demovanilla src="vanilla/components/addons/toggle-multilevel">
+  <demovanilla src="vanilla/components/addons/navigation/multilevel">
   </demovanilla>
 </demo>
