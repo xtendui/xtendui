@@ -1,9 +1,10 @@
 name: CodeQL
 
 on:
-  branches:
-    - master
-    - 0.16
+  push:
+    branches:
+      - master
+      - 0.16
   pull_request:
     branches:
       - master
