@@ -46,7 +46,7 @@ jobs:
       id: build-cache
       with:
         path: |
-          ~/public
+          /public
         key: ${{ runner.os }}-node-v${{ env.NODE }}-build-${{ hashFiles('~/src/**') }}
         restore-keys: |
           ${{ runner.os }}-node-v${{ env.NODE }}-build-

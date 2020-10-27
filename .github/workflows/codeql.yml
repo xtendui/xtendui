@@ -15,7 +15,7 @@ jobs:
   analyze:
     name: Analyze
     runs-on: ubuntu-latest
-    if: ${{ !contains(github.event.commits[0].message, '[skip ci]') && github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ !contains(github.event.commits[0].message, '[skip ci]') }}
     strategy:
       fail-fast: false
       matrix:
