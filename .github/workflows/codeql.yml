@@ -1,13 +1,9 @@
 name: CodeQL
 
 on:
-  workflow_run:
-    workflows: ["Lint"]
-    branches:
-      - master
-      - 0.16
-    types:
-      - completed
+  branches:
+    - master
+    - 0.16
   pull_request:
     branches:
       - master

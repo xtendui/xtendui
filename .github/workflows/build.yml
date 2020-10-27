@@ -1,13 +1,9 @@
 name: Build
 
 on:
-  workflow_run:
-    workflows: ["CodeQL"]
-    branches:
-      - master
-      - 0.16
-    types:
-      - completed
+  branches:
+    - master
+    - 0.16
   pull_request:
     branches:
       - master
@@ -51,7 +47,7 @@ jobs:
       with:
         path: |
           ~/public
-        key: ${{ runner.os }}-node-v${{ env.NODE }}-build-${{ hashFiles('~/src/**') }}
+        key: ${{ runner.os }}-node-v${{ env.NODE }}-build-${{ hashFiles('src/**/**') }}
         restore-keys: |
           ${{ runner.os }}-node-v${{ env.NODE }}-build-
     - name: Build
