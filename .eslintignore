@@ -1,8 +1,8 @@
-# gatsby files
+# folders
 .cache/
 public
 
-# build
+# files
 polyfill.js
 ResizeSensor.js
 **/*.min.js

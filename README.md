@@ -12,11 +12,14 @@
   <a href="https://github.com/minimit/xtendui/blob/master/LICENSE" style="display: inline-block;">
     <img src="https://img.shields.io/npm/l/xtendui.svg" alt="License" loading="eager">
   </a>
-  <a href="https://www.npmjs.com/package/xtendui" style="display: inline-block;">
-    <img src="https://img.shields.io/npm/v/xtendui.svg" alt="Latest Release" loading="eager">
-  </a>
   <a href="https://github.com/minimit/xtendui/actions?query=workflow%3ARelease" style="display: inline-block;">
     <img src="https://img.shields.io/github/workflow/status/minimit/xtendui/Release" alt="Build Status" loading="eager">
+  </a>
+  <a href="https://github.com/minimit/xtendui/actions?query=workflow%3ARelease" style="display: inline-block;">
+    <img src="https://img.shields.io/david/minimit/xtendui" alt="Dependencies" loading="eager">
+  </a>
+  <a href="https://www.npmjs.com/package/xtendui" style="display: inline-block;">
+    <img src="https://img.shields.io/npm/v/xtendui.svg" alt="Latest Release" loading="eager">
   </a>
 </p>
 
@@ -45,9 +48,7 @@ To customize css and js visit [online customization page](https://xtendui.com/in
 
 #### Boilerplate
 
-If you want we have some boilerplate projects to start a project all ready to go!
-
-* [xtendui-vanilla](https://github.com/minimit/xtendui-vanilla)
+If you want we have some boilerplate projects to start a project all ready to go! Check out [xtendui-boilerplate](https://github.com/minimit/xtendui-boilerplate) and [tailwind examples](https://tailwindcss.com/docs/installation#build-tool-examples).
 
 ## Contributing
 
