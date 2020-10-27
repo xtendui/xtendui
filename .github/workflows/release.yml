@@ -1,6 +1,13 @@
 name: Release
 
 on:
+  workflow_run:
+    workflows: ["Build"]
+    branches:
+      - master
+      - 0.16
+    types:
+      - completed
 
 env:
   NODE: 12.x
