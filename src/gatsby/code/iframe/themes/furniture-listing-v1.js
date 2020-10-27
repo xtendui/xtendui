@@ -29,7 +29,7 @@ demo.htmlSource = `
           <div class="listing-title h5">
             Lorem ipsum
           </div>
-          <div class="listing-price h6">
+          <div class="listing-price -mt-2 text-sm font-semibold">
             3.772,00 €
           </div>
         </div>
@@ -49,7 +49,7 @@ demo.htmlSource = `
           <div class="listing-title h5">
             Dolor sit amet
           </div>
-          <div class="listing-price h6">
+          <div class="listing-price -mt-2 text-sm font-semibold">
             3.772,00 €
           </div>
         </div>
@@ -69,7 +69,7 @@ demo.htmlSource = `
           <div class="listing-title h5">
             Consectetur
           </div>
-          <div class="listing-price h6">
+          <div class="listing-price -mt-2 text-sm font-semibold">
             3.772,00 €
           </div>
         </div>
@@ -89,7 +89,7 @@ demo.htmlSource = `
           <div class="listing-title h5">
             Adipiscing elit
           </div>
-          <div class="listing-price h6">
+          <div class="listing-price -mt-2 text-sm font-semibold">
             3.772,00 €
           </div>
         </div>
@@ -109,7 +109,7 @@ demo.htmlSource = `
           <div class="listing-title h5">
             Lorem Ipsum
           </div>
-          <div class="listing-price h6">
+          <div class="listing-price -mt-2 text-sm font-semibold">
             3.772,00 €
           </div>
         </div>
@@ -129,7 +129,7 @@ demo.htmlSource = `
           <div class="listing-title h5">
             Dolor sit amet
           </div>
-          <div class="listing-price h6">
+          <div class="listing-price -mt-2 text-sm font-semibold">
             3.772,00 €
           </div>
         </div>
@@ -149,7 +149,7 @@ demo.htmlSource = `
           <div class="listing-title h5">
             Lorem Ipsum
           </div>
-          <div class="listing-price h6">
+          <div class="listing-price -mt-2 text-sm font-semibold">
             3.772,00 €
           </div>
         </div>
@@ -169,7 +169,7 @@ demo.htmlSource = `
           <div class="listing-title h5">
             Dolor sit amet
           </div>
-          <div class="listing-price h6">
+          <div class="listing-price -mt-2 text-sm font-semibold">
             3.772,00 €
           </div>
         </div>

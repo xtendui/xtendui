@@ -68,8 +68,8 @@ module.exports = {
     },
     '.h4': {
       // style
-      marginTop: theme('spacing.4'),
-      marginBottom: theme('spacing.2'),
+      marginTop: theme('spacing.6'),
+      marginBottom: theme('spacing.3'),
       '@apply mt-fc mb-lc': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.semibold'),
@@ -80,8 +80,8 @@ module.exports = {
     },
     '.h5': {
       // style
-      marginTop: theme('spacing.4'),
-      marginBottom: theme('spacing.2'),
+      marginTop: theme('spacing.6'),
+      marginBottom: theme('spacing.3'),
       '@apply mt-fc mb-lc': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.semibold'),
@@ -92,8 +92,8 @@ module.exports = {
     },
     '.h6': {
       // style
-      marginTop: theme('spacing.2'),
-      marginBottom: theme('spacing.1'),
+      marginTop: theme('spacing.6'),
+      marginBottom: theme('spacing.3'),
       '@apply mt-fc mb-lc': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.semibold'),
