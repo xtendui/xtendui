@@ -1,13 +1,10 @@
 name: Build
 
 on:
-  workflow_run:
-    workflows: [CodeQL"]
+  push:
     branches:
       - master
       - 0.16
-    types:
-      - completed
   pull_request:
     branches:
       - master
