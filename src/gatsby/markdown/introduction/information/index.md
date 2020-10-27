@@ -24,8 +24,8 @@ date: "2050-10-10"
   <a href="https://github.com/minimit/xtendui/actions?query=workflow%3ARelease" style="display: inline-block;">
     <img src="https://img.shields.io/github/workflow/status/minimit/xtendui/Release" alt="Build Status" loading="eager">
   </a>
-  <a href="https://github.com/minimit/xtendui/actions?query=workflow%3ARelease" style="display: inline-block;">
-    <img src="https://img.shields.io/david/minimit/xtendui" alt="Dependencies" loading="eager">
+  <a href="https://depfu.com/repos/github/minimit/xtendui" style="display: inline-block;">
+    <img src="https://img.shields.io/depfu/minimit/xtendui" alt="Dependencies" loading="eager">
   </a>
   <a href="https://www.npmjs.com/package/xtendui" style="display: inline-block;">
     <img src="https://img.shields.io/npm/v/xtendui.svg" alt="Latest Release" loading="eager">
