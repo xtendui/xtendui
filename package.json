@@ -64,7 +64,7 @@
     "esm": "^3.2.25",
     "gatsby": "^2.24.72",
     "gatsby-plugin-catch-links": "^2.3.10",
-    "gatsby-plugin-manifest": "^2.4.17",
+    "gatsby-plugin-manifest": "^2.4.35",
     "gatsby-plugin-module-resolver": "^1.0.3",
     "gatsby-plugin-page-creator": "^2.3.15",
     "gatsby-plugin-postcss": "^3.0.1",
