@@ -28,10 +28,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: "${{ env.NODE }}"
-    - name: Cache Yarn Path
+    - name: Yarn Cache Path
       id: yarn-cache-dir-path
       run: echo "::set-output name=dir::$(yarn cache dir)"
-    - name: Cache Yarn
+    - name: Yarn Cache
       uses: actions/cache@v2
       id: yarn-cache
       with:
@@ -42,10 +42,10 @@ jobs:
         key: ${{ runner.os }}-node-v${{ env.NODE }}-yarn-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
           ${{ runner.os }}-node-v${{ env.NODE }}-yarn-
-    - name: Install
+    - name: Yarn
       if: steps.yarn-cache.outputs.cache-hit != 'true'
       run: yarn install --frozen-lockfile
-    - name: Cache Build
+    - name: Build Cache
       uses: actions/cache@v2
       id: build-cache
       with:
