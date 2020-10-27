@@ -1,7 +1,8 @@
 name: CodeQL
 
 on:
-  push:
+  workflow_run:
+    workflows: ["Lint"]
     branches:
       - master
       - 0.16
@@ -13,9 +14,8 @@ on:
 
 jobs:
   analyze:
-    name: Analyze
+    if: ${{ !contains(github.event.commits[0].message, '[skip ci]') && github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
-    if: ${{ !contains(github.event.commits[0].message, '[skip ci]') }}
     strategy:
       fail-fast: false
       matrix:

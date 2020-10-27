@@ -2,7 +2,7 @@ name: Deploy
 
 on:
   workflow_run:
-    workflows: ["Lint", "CodeQL", "Build", "Release"]
+    workflows: ["Release"]
     branches:
       - master
     types:
