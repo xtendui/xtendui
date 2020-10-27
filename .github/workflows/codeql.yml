@@ -8,6 +8,9 @@ on:
       - 0.16
     types:
       - completed
+  pull_request:
+    branches:
+      - master
   schedule:
     - cron: '0 14 * * 1'
 
