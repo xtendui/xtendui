@@ -1,4 +1,3 @@
-import 'core-js'
 import { Xt } from 'xtendui'
 import 'xtendui/build/xtend-core'
 import 'xtendui/build/xtend-addons'

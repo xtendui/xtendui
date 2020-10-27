@@ -79,7 +79,6 @@ module.exports = {
   optimization: {
     minimizer: [
       new TerserJSPlugin({
-        sourceMap: true,
         extractComments: false,
       }),
       new OptimizeCSSAssetsPlugin({

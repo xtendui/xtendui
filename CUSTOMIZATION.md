@@ -92,7 +92,7 @@ module.exports = {
     [
       '@babel/preset-env',
       {
-        useBuiltIns: 'entry',
+        useBuiltIns: 'usage',
         corejs: 3,
       },
     ],
@@ -110,12 +110,6 @@ module.exports = {
     ],
   ],
 }
-```
-
-Then import the **corejs**.
-
-```jsx
-import 'core-js'
 ```
 
 You need also to set a `.browserslistrc` in the root of your project.
