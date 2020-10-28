@@ -32,7 +32,13 @@
         }
       }
       .listing-front {
-        cursor: pointer;
+        @media (max-width: theme('screens.md')) {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+        @screen md {
+          cursor: pointer;
+        }
       }
       .listing-back {
         @media (max-width: theme('screens.md')) {

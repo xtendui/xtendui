@@ -46,7 +46,7 @@ demo.htmlSource = `
               </div>
 
               <div class="listing-back h-full card ${cardDefaultFull()}">
-                <div class="btn btn-close p-5 text-xl" aria-label="Close">
+                <div class="btn btn-close text-xl" aria-label="Close">
                   ${iconX()}
                 </div>
                 <div class="listing-content">
@@ -103,7 +103,7 @@ demo.htmlSource = `
               </div>
 
               <div class="listing-back h-full card ${cardDefaultFull()}">
-                <div class="btn btn-close p-5 text-xl" aria-label="Close">
+                <div class="btn btn-close text-xl" aria-label="Close">
                   ${iconX()}
                 </div>
                 <div class="listing-content">
@@ -148,7 +148,7 @@ demo.htmlSource = `
               </div>
 
               <div class="listing-back h-full card ${cardDefaultFull()}">
-                <div class="btn btn-close p-5 text-xl" aria-label="Close">
+                <div class="btn btn-close text-xl" aria-label="Close">
                   ${iconX()}
                 </div>
                 <div class="listing-content">
@@ -205,7 +205,7 @@ demo.htmlSource = `
               </div>
 
               <div class="listing-back h-full card ${cardDefaultFull()}">
-                <div class="btn btn-close p-5 text-xl" aria-label="Close">
+                <div class="btn btn-close text-xl" aria-label="Close">
                   ${iconX()}
                 </div>
                 <div class="listing-content">
@@ -250,7 +250,7 @@ demo.htmlSource = `
               </div>
 
               <div class="listing-back h-full card ${cardDefaultFull()}">
-                <div class="btn btn-close p-5 text-xl" aria-label="Close">
+                <div class="btn btn-close text-xl" aria-label="Close">
                   ${iconX()}
                 </div>
                 <div class="listing-content">
@@ -307,7 +307,7 @@ demo.htmlSource = `
               </div>
 
               <div class="listing-back h-full card ${cardDefaultFull()}">
-                <div class="btn btn-close p-5 text-xl" aria-label="Close">
+                <div class="btn btn-close text-xl" aria-label="Close">
                   ${iconX()}
                 </div>
                 <div class="listing-content">

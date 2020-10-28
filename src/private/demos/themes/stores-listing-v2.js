@@ -59,7 +59,8 @@ Xt.mount.push({
     }
 
     for (const item of items) {
-      item.addEventListener('click', eventClick)
+      item.querySelector('.listing-front').addEventListener('click', eventClick)
+      item.querySelector('.btn-close').addEventListener('click', () => { eventOff(item) })
     }
   },
 })
