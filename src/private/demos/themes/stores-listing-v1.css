@@ -1,0 +1,46 @@
+#iframe--stores-listing-v1 {
+  /*##START*/
+  body { /* add your own selector instead of body to contain the code */
+
+    .listing-front {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      z-index: theme('zIndex.active');
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+
+    .listing-back {
+      position: relative;
+      min-height: 22rem;
+      transform: rotateY(180deg);
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+
+    .listing-item {
+      perspective: 1400px;
+      .listing-item_inner {
+        height: 100%;
+        transform-style: preserve-3d;
+        transition-property: transform;
+        transition-duration: theme('transitionDuration.500');
+        transition-timing-function: theme('transitionTimingFunction.out');
+      }
+      &.active {
+        .listing-item_inner {
+          transform: rotateY(180deg);
+          transition-timing-function: theme('transitionTimingFunction.in');
+        }
+        .listing-back {
+          z-index: theme('zIndex.active');
+        }
+      }
+    }
+
+  }
+  /*##END*/
+}
