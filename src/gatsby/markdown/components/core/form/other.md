@@ -8,9 +8,10 @@ date: "2005-10-10"
 
 ## Disabled
 
-Use **component classes** to style disabled.
+Use **component classes** to style **disabled**.
 
-For aria purpose use `aria-disabled="true"` when using the class `.disabled`.
+[[notePrimary]]
+| For aria purpose use `aria-disabled="true"` when using the class `.disabled`.
 
 <div class="table-scroll">
 
@@ -27,7 +28,7 @@ For aria purpose use `aria-disabled="true"` when using the class `.disabled`.
 
 ## Fieldset Legend and Note
 
-Use **component classes** to create `fieldset` and `legend`.
+Use **component classes** to create **fieldset** and **legend**.
 
 <div class="table-scroll">
 
@@ -38,7 +39,7 @@ Use **component classes** to create `fieldset` and `legend`.
 
 </div>
 
-Use **tailwind classes** to create a note.
+Use **tailwind classes** to create a **note**.
 
 <demo>
   <demovanilla src="vanilla/components/core/form/fieldset-legend">
@@ -47,7 +48,7 @@ Use **tailwind classes** to create a note.
 
 ## Label addon
 
-Use **tailwind classes** to create a label addon.
+Use **tailwind classes** to create a **label addon**.
 
 <demo>
   <demovanilla src="vanilla/components/core/form/label-addon">
@@ -56,7 +57,7 @@ Use **tailwind classes** to create a label addon.
 
 ## Checks button
 
-Use [button](/components/core/button) with `label` to create checks with button.
+Use [button](/components/core/button) with `label` to create **checks with button**.
 
 <demo>
   <demovanilla src="vanilla/components/core/form/checks-button">
@@ -65,7 +66,7 @@ Use [button](/components/core/button) with `label` to create checks with button.
 
 ## Checks card
 
-Use [card](/components/core/card) with `label` to create checks with card.
+Use [card](/components/core/card) with `label` to create **checks with card**.
 
 <demo>
   <demovanilla src="vanilla/components/core/form/checks-card">
@@ -78,7 +79,7 @@ Html validation and Constraint Validation API.
 
 It **automatically runs** on **form submit** and **automatically scrolls** on the **first invalid** form item.
 
-Use **component classes** to style validation.
+Use **component classes** to style **validation**.
 
 <div class="table-scroll">
 

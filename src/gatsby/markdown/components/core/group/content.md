@@ -1,14 +1,14 @@
 ---
 type: "Components"
 category: "Core"
-parent: "Group"
+parent: "List Group"
 title: "Content"
 date: "2030-10-10"
 ---
 
 ## Size
 
-Use **tailwind classes** to assign size (e.g. [flex](https://tailwindcss.com/docs/flex), [max-width](https://tailwindcss.com/docs/max-width)). On responsive the content will shrink.
+Use **tailwind classes** to assign size (e.g. [max-width](https://tailwindcss.com/docs/max-width)). On responsive the content will shrink.
 
 <demo>
   <demovanilla src="vanilla/components/core/group/size">

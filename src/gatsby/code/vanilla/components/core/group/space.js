@@ -16,7 +16,7 @@ demo.htmlSource = `
 
   <div class="list list-1">
 
-    <div class="list-inner">
+    <div class="list-inner flex-auto">
       <button type="button" class="btn btn-md rounded-l-md ${btnDefaultGroup()}">
         ${iconSearch({ classes: 'icon-lg' })}
       </button>

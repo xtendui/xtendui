@@ -8,7 +8,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 ## Usage
 
-Use **component classes** and **tailwind classes** to create a listing.
+Use **component classes** and **tailwind classes** to create a **listing**.
 
 <demo>
   <demovanilla src="vanilla/components/core/listing/usage">

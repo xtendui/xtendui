@@ -1,16 +1,17 @@
 ---
 type: "Components"
-category: "Core"
-parent: "Navigation"
+category: "Addons"
+parent: "List Group"
 title: "toolbar"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
 ## Usage
 
-Use [group space](/components/core/group/content#space) to create a toolbar.
+Use [list group](/components/core/list-group) to create a **toolbar**.
 
-For aria purpose use `role="toolbar"`.
+[[notePrimary]]
+| For aria purpose use `role="toolbar"`.
 
 <demo>
   <demovanilla src="vanilla/components/core/navigation/toolbar">

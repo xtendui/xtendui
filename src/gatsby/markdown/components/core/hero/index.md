@@ -26,7 +26,7 @@ module.exports = {
 
 ## Usage
 
-Use **component classes** and **tailwind classes** to create a hero.
+Use **component classes** and **tailwind classes** to create a **hero**.
 
 <demo>
   <demovanilla src="vanilla/components/core/hero/usage">

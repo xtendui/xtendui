@@ -24,7 +24,7 @@ Use **tailwind classes** to assign styles (e.g. [text-color](https://tailwindcss
 
 Text styles on **parent elements** are applied when **inerithed**.
 
-See [link variant](/components/core/link#variant) to style links.
+See [link variant](/components/core/link#variant) to style **links**.
 
 <demo>
   <demovanilla src="vanilla/components/core/typography/variant">
@@ -97,7 +97,7 @@ Use the tags `ul` or `ol` to create a **unordered or ordered list**.
 
 ## Definition List
 
-Use **tailwind classes** to create a definition list.
+Use **tailwind classes** to create a **definition list**.
 
 <demo>
   <demovanilla src="vanilla/components/core/typography/definition-list">

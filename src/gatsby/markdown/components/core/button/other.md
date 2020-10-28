@@ -8,9 +8,7 @@ date: "2005-10-10"
 
 ## Activation
 
-Use **component classes** to style active.
-
-For aria purpose use `aria-selected="true"` when using the class `.active`.
+Use **component classes** to style **active**.
 
 <div class="table-scroll">
 
@@ -20,6 +18,9 @@ For aria purpose use `aria-selected="true"` when using the class `.active`.
 
 </div>
 
+[[notePrimary]]
+| For aria purpose use `aria-selected="true"` when using the class `.active`.
+
 <demo>
   <demovanilla src="vanilla/components/core/button/active">
   </demovanilla>
@@ -27,9 +28,10 @@ For aria purpose use `aria-selected="true"` when using the class `.active`.
 
 ## Disabled
 
-Use **component classes** to style disabled.
+Use **component classes** to style **disabled**.
 
-For aria purpose use `aria-disabled="true"` when using the class `.disabled`.
+[[notePrimary]]
+| For aria purpose use `aria-disabled="true"` when using the class `.disabled`.
 
 <div class="table-scroll">
 

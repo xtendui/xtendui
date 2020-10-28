@@ -18,23 +18,6 @@ demo.htmlSource = `
     Back
   </button>
 
-  <div class="list-inner ml-auto">
-    <button type="button" class="btn btn-md rounded-l-md ${btnDefaultGroup()}">
-      Clear
-    </button>
-    <button type="button" class="btn btn-md rounded-r-md ${btnPrimaryGroup()}">
-      Submit
-    </button>
-  </div>
-
-</div>
-
-<div class="list list-1 w-full" role="toolbar">
-
-  <button type="button" class="btn btn-md rounded-md ${btnDefaultGroup()}">
-    Back
-  </button>
-
   <div class="list-inner">
     <button type="button" class="btn btn-md rounded-l-md ${btnDefaultGroup()}">
       ${iconSearch({ classes: 'icon-lg' })}

@@ -1,7 +1,7 @@
 ---
 type: "Components"
 category: "Addons"
-parent: "Group"
+parent: "List Group"
 title: "expand"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---

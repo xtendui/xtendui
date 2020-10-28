@@ -68,7 +68,7 @@ Use **tailwind classes** to assign size (e.g. [width](https://tailwindcss.com/do
 
 ## Separator
 
-Use **tailwind classes** to style borders for separation.
+Use **tailwind classes** to style **borders** for separation.
 
 <demo>
   <demovanilla src="vanilla/components/core/drop/card-separator">
@@ -77,7 +77,7 @@ Use **tailwind classes** to style borders for separation.
 
 ## Overflow
 
-Use **tailwind classes** to overflow divs. Use **component classes** to style overflow.
+Use **tailwind classes** to overflow divs. Use **component classes** to style **overflow**.
 
 <div class="table-scroll">
 

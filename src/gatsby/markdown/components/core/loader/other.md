@@ -45,7 +45,7 @@ Example loader filler with activation animation.
 
 ## Mouse
 
-Use **component classes** to create a loader positioned for mouse.
+Use **component classes** to create a **loader positioned for mouse**.
 
 <div class="table-scroll">
 
@@ -55,4 +55,4 @@ Use **component classes** to create a loader positioned for mouse.
 
 </div>
 
-See [mouse follow addon](/components/addons/mouse-follow) to create a loader with mouse follow.
+See [mouse follow addon](/components/addons/mouse-follow) to create a **loader with mouse follow**.

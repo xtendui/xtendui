@@ -31,7 +31,7 @@ module.exports = {
 
 Use this code to create a **link**.
 
-You can use `.link` to style any element as a link.
+You can use `.link` to style **any element** as a link.
 
 <div class="table-scroll">
 

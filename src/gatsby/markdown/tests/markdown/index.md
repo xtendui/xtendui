@@ -72,27 +72,47 @@ Use this code to create a **group vertical** with `.flex-col`.
 
 Check subpage to [customize content](/components/core/loader/content#spinner).
 
+Use **tailwind classes** to create a **navigation**.
+
 Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/docs/padding), [font-size](https://tailwindcss.com/docs/font-size)).
 
-Use **tailwind classes** to create a navigation. Remember to use `.whitespace-normal`.
+Use **component classes** to create a **style disabled**.
 
-Use **component classes** to create a style disabled.
+<div class="table-scroll">
 
-For aria purpose use `role="toolbar"`.
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ---------------------------- | -----------------| ----------------------------- |
+| Component                  | `.badge-sm`       | `badge-sm`                | Size small            |
+| Component                  | `.badge-md`       | `badge-md`                | Size medium            |
+| Component                  | `.badge-lg`       | `badge-lg`                | Size large            |
 
-For aria purpose use `aria-selected="true"` when using the class `.active`.
+</div>
 
-For aria purpose use `aria-disabled="true"` when using the class `.disabled`.
+Use **component utility** `.card-group` to stack card content **horizontally**.
 
-See [group component](/components/core/loader) to create a button with group.
+<div class="table-scroll">
 
-See [mouse follow addon](/components/core/loader) to create a loader with mouse follow.
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
+| Utility                  | `.card-group`       | `card-group`                | `responsive`                | Card stack horizontal wrapper           |
+
+</div>
+
+See [group component](/components/core/loader) to create a **button with group**.
+
+See [mouse follow addon](/components/core/loader) to create a **loader with mouse follow**.
+
+[[noteDefault]]
+| List `ul` and `old` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
 
 [[notePrimary]]
 | This addon uses [mouse follow](/components/addons/animation/mouse-follow). Visit the component page to import javascript and customize.
 
-[[noteDefault]]
-| List `ul` and `old` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
+[[notePrimary]]
+| For aria purpose use `role="toolbar"`.
+
+[[notePrimary]]
+| For aria purpose use `aria-disabled="true"` when using the class `.disabled`.
 
 (use touch device to see it in action)
 

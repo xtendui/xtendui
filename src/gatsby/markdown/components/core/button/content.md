@@ -21,7 +21,7 @@ Use **tailwind classes** to assign styles (e.g. [text-color](https://tailwindcss
 
 Text styles on **parent elements** are applied when **inerithed**.
 
-See [link variant](/components/core/link#variant) to style links.
+See [link variant](/components/core/link#variant) to style **links**.
 
 <demo>
   <demovanilla src="vanilla/components/core/button/variant-inverse">

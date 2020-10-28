@@ -1,33 +1,14 @@
 ---
 type: "Components"
 category: "Core"
-parent: "Group"
-title: "Group"
+parent: "List Group"
+title: "List Group"
 description: "Css component to group up buttons and inputs. Can easily create toolbar and navigations."
 ---
 
-## Customization
-
-You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/list.css.js](https://github.com/minimit/xtendui/blob/master/src/core/list.css.js) for default values.
-
-```jsx
-module.exports = {
-  theme:{
-    xtendui: {
-      list: {
-        utility: theme => ({
-          // modify utilities
-        }),
-        component: theme => ({
-          // modify components
-        }),
-      },
-    },
-  },
-}
-```
-
 ## Usage
+
+Use [list](/components/core/list) to create a **group**.
 
 #### Horizontal
 
@@ -52,3 +33,22 @@ Use **tailwind classes** to assign styles (e.g. [border-color](https://tailwindc
 </demo>
 
 Check subpage to [customize content](/components/core/group/content).
+
+#### Nested
+
+Use **component classes** to style **nested**.
+
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ---------------------------- | -----------------| ----------------------------- |
+| Component                  | `.list-inner`       | `list-inner`                | Group list content            |
+
+</div>
+
+You can nest `.list-inner` and [flex-direction](https://tailwindcss.com/docs/flex-direction).
+
+<demo>
+  <demovanilla src="vanilla/components/core/group/usage-nested">
+  </demovanilla>
+</demo>

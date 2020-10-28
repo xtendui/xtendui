@@ -1,16 +1,17 @@
 ---
 type: "Components"
-category: "Core"
-parent: "Navigation"
+category: "Addons"
+parent: "List Group"
 title: "nav"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
 ## Usage
 
-Use [group vertical](/components/core/group#usage-vertical) and [group size](/components/core/group/content#size) to create a nav. Remember to use `.whitespace-normal`.
+Use [list group](/components/core/list-group) to create a **nav**.
 
-For aria purpose use `<nav></nav>`.
+[[notePrimary]]
+| For aria purpose use `<nav></nav>`.
 
 <demo>
   <demovanilla src="vanilla/components/core/navigation/nav">

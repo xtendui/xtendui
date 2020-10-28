@@ -1,7 +1,7 @@
 ---
 type: "Components"
 category: "Core"
-parent: "Group"
+parent: "List Group"
 title: "Other"
 date: "2005-10-10"
 ---
