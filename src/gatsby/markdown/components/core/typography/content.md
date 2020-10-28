@@ -85,6 +85,8 @@ Text tags are styles by **tailwind or tailwind classes or component classes**.
 
 ## List
 
+Use the tags `ul` or `ol` to create a **unordered or ordered list**.
+
 [[noteDefault]]
 | List `ul` and `ol` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
 
