@@ -60,7 +60,7 @@ exports.createPages = ({ actions, graphql }) => {
           type: node.frontmatter.type,
           category: node.frontmatter.category,
           parent: node.frontmatter.parent,
-          parents: `/${node.frontmatter.parent}/`,
+          parents: `/^${node.frontmatter.parent}$/`,
           title: node.frontmatter.title,
         },
       })
