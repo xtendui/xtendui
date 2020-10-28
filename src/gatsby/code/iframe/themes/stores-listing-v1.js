@@ -40,7 +40,7 @@ demo.htmlSource = `
                   <address class="p font-sm not-italic">
                     Street lorem ipsum 42, 00134 City, Nation
                   </address>
-                  <div class="list list-2 mt-auto justify-between w-full">
+                  <div class="list list-2 mt-auto justify-between">
                     <a href="#" class="btn btn-md px-0">
                       Take me here
                     </a>
@@ -101,7 +101,7 @@ demo.htmlSource = `
                   <address class="p font-sm not-italic">
                     Street lorem ipsum 42, 00134 City, Nation
                   </address>
-                  <div class="list list-2 mt-auto justify-between w-full">
+                  <div class="list list-2 mt-auto justify-between">
                     <a href="#" class="btn btn-md px-0">
                       Take me here
                     </a>
@@ -150,7 +150,7 @@ demo.htmlSource = `
                   <address class="p font-sm not-italic">
                     Street lorem ipsum 42, 00134 City, Nation
                   </address>
-                  <div class="list list-2 mt-auto justify-between w-full">
+                  <div class="list list-2 mt-auto justify-between">
                     <a href="#" class="btn btn-md px-0">
                       Take me here
                     </a>
@@ -211,7 +211,7 @@ demo.htmlSource = `
                   <address class="p font-sm not-italic">
                     Street lorem ipsum 42, 00134 City, Nation
                   </address>
-                  <div class="list list-2 mt-auto justify-between w-full">
+                  <div class="list list-2 mt-auto justify-between">
                     <a href="#" class="btn btn-md px-0">
                       Take me here
                     </a>
@@ -260,7 +260,7 @@ demo.htmlSource = `
                   <address class="p font-sm not-italic">
                     Street lorem ipsum 42, 00134 City, Nation
                   </address>
-                  <div class="list list-2 mt-auto justify-between w-full">
+                  <div class="list list-2 mt-auto justify-between">
                     <a href="#" class="btn btn-md px-0">
                       Take me here
                     </a>
@@ -321,7 +321,7 @@ demo.htmlSource = `
                   <address class="p font-sm not-italic">
                     Street lorem ipsum 42, 00134 City, Nation
                   </address>
-                  <div class="list list-2 mt-auto justify-between w-full">
+                  <div class="list list-2 mt-auto justify-between">
                     <a href="#" class="btn btn-md px-0">
                       Take me here
                     </a>

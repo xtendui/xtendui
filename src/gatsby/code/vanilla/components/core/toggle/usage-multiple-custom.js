@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-2 items-center w-full"
+<div class="list list-2 items-center"
   data-xt-toggle="{ elements: ':scope > .btn', targets: ':scope > .demo--toggle-custom-options' }">
 
   <button type="button" class="btn btn-md ${btnDefault()}">

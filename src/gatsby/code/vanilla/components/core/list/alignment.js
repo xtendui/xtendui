@@ -9,15 +9,15 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<nav class="list flex-col list-2 items-center">
+<nav class="list list-2 flex-col items-start">
 
   <div>
-    <div class="list list-2 items-center w-full">
+    <div class="list list-2 items-start">
 
       <div>
-        <div class="list flex-col list-2 items-center">
+        <div class="list list-2 flex-col items-start">
 
-          <button type="button" class="btn btn-sm ${btnDefault()}">
+          <button type="button" class="btn btn-md ${btnDefault()}">
             Lorem Ipsum
           </button>
 
@@ -25,7 +25,7 @@ demo.htmlSource = `
             Dolor sit
           </button>
 
-          <button type="button" class="btn btn-lg ${btnDefault()}">
+          <button type="button" class="btn btn-md ${btnDefault()}">
             Amet
           </button>
 
@@ -36,7 +36,7 @@ demo.htmlSource = `
         Dolor sit
       </button>
 
-      <button type="button" class="btn btn-lg ${btnDefault()}">
+      <button type="button" class="btn btn-md ${btnDefault()}">
         Amet
       </button>
 
@@ -44,9 +44,9 @@ demo.htmlSource = `
   </div>
 
   <div>
-    <div class="list list-2 items-center w-full">
+    <div class="list list-2 items-start">
 
-      <button type="button" class="btn btn-sm ${btnDefault()}">
+      <button type="button" class="btn btn-md ${btnDefault()}">
         Lorem Ipsum
       </button>
 
@@ -54,7 +54,7 @@ demo.htmlSource = `
         Dolor sit
       </button>
 
-        <button type="button" class="btn btn-lg ${btnDefault()}">
+        <button type="button" class="btn btn-md ${btnDefault()}">
         Amet
       </button>
 

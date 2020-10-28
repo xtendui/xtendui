@@ -44,7 +44,7 @@ demo.htmlSource = `
           Lorem ipsum dolor sit amet
         </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
-        <div class="list list-4">
+        <div class="list list-4 justify-start">
           <a href="#" class="btn btn-lg px-0">
             Lorem ipsum
           </a>
@@ -73,7 +73,7 @@ demo.htmlSource = `
           Lorem ipsum dolor sit amet
         </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
-        <div class="list list-4">
+        <div class="list list-4 justify-start">
           <a href="#" class="btn btn-lg px-0">
             Lorem ipsum
           </a>
@@ -102,7 +102,7 @@ demo.htmlSource = `
           Lorem ipsum dolor sit amet
         </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
-        <div class="list list-4">
+        <div class="list list-4 justify-end">
           <a href="#" class="btn btn-lg px-0">
             Lorem ipsum
           </a>

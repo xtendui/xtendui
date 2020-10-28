@@ -47,7 +47,7 @@ demo.htmlSource = `
   </button>
 </div>
 
-<div class="list list-2 items-center w-full" id="demo--drop-events" title="Object">
+<div class="list list-2 items-center" id="demo--drop-events" title="Object">
 
   <div class="drop-container">
 

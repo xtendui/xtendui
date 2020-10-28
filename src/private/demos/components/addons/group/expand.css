@@ -1,11 +1,14 @@
  .demo--group-expand {
-  width: 85%;
-  transition-property: width;
-  transition-duration: theme('transitionDuration.500');
-  transition-timing-function: theme('transitionTimingFunction.out');
+  .list-inner {
+    transition-property: max-width;
+    transition-duration: theme('transitionDuration.500');
+    transition-timing-function: theme('transitionTimingFunction.out');
+  }
   &.expand {
-    width: 100%;
-    transition-timing-function: theme('transitionTimingFunction.in');
+    .list-inner {
+      @apply max-w-md;
+      transition-timing-function: theme('transitionTimingFunction.in');
+    }
   }
 }
 

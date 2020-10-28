@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<nav class="group flex-col whitespace-normal max-w-full" style="width: 20rem">
+<nav class="list flex-col whitespace-normal max-w-full" style="width: 20rem">
 
   <button type="button" class="btn btn-md rounded-t-md ${btnPrimaryGroup()}">
     Lorem ipsum

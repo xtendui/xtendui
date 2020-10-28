@@ -12,7 +12,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-2 items-center w-full">
+<div class="list list-2 items-center">
 
   <label class="btn btn-md ${btnDefault()}">
     Lorem ipsum

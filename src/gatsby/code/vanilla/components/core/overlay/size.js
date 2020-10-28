@@ -11,7 +11,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-2 items-center w-full">
+<div class="list list-2 items-center">
 
   <div data-xt-overlay>
 

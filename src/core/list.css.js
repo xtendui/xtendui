@@ -24,13 +24,16 @@ module.exports = {
   component: {
     '.list': {
       // setup
-      display: 'inline-flex',
+      display: 'flex',
       flexWrap: 'wrap',
       flexDirection: 'row',
-      alignItems: 'flex-start',
+      alignItems: 'stretch',
       '&:empty': {
         display: 'none',
       },
+    },
+    '.list-inner': {
+      display: 'inline-flex',
     },
   },
 }

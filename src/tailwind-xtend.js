@@ -6,7 +6,6 @@ module.exports = {
   card: require('./core/card.css.js'),
   drop: require('./core/drop.css.js'),
   form: require('./core/form.css.js'),
-  group: require('./core/group.css.js'),
   javascript: require('./core/javascript.css.js'),
   hero: require('./addons/hero.css.js'),
   icons: require('./core/icons.css.js'),

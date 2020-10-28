@@ -30,7 +30,7 @@ demo.htmlSource = `
         <div class="row row-x-4 row-y-3">
 
           <div class="w-full">
-            <div class="group">
+            <div class="list">
               <input type="text" class="form-item rounded-l-md ${inputDefaultGroup()}" placeholder="Search" data-xt-google-locator-search-input>
 
               <button type="button" class="btn btn-md ${btnDefaultGroup()}" data-xt-google-locator-locate-btn="Locate">

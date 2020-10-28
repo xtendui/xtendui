@@ -25,7 +25,7 @@ You can disable styles and javascript using `.overlay-disable`.
 
 ## Preset
 
-You can overlay that covers the screen with `.overlay-screen`, remember to use **tailwind classes** ([align-items](https://tailwindcss.com/docs/align-items), [justify-content](https://tailwindcss.com/docs/justify-content)) on `.card`.
+You can overlay that covers the screen with `.overlay-screen`, remember to use **tailwind classes** (e.g. [align-items](https://tailwindcss.com/docs/align-items), [justify-content](https://tailwindcss.com/docs/justify-content)) on `.card`.
 
 <div class="table-scroll">
 
@@ -40,7 +40,7 @@ You can overlay that covers the screen with `.overlay-screen`, remember to use *
   </demovanilla>
 </demo>
 
-To create an **overlay position** with `.overlay-screen`, you can also use **tailwind classes** ([max-width](https://tailwindcss.com/docs/max-width), [margin](https://tailwindcss.com/docs/margin)) on `.overlay-container`.
+To create an **overlay position** with `.overlay-screen`, you can also use **tailwind classes** (e.g. [max-width](https://tailwindcss.com/docs/max-width), [margin](https://tailwindcss.com/docs/margin)) on `.overlay-container`.
 
 <demo>
   <demovanilla src="vanilla/components/core/overlay/position">

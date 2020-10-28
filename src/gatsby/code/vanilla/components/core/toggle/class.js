@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-2 items-center w-full" data-xt-toggle="{ class: 'active active-toggle demo--toggle-custom-class' }">
+<div class="list list-2 items-center" data-xt-toggle="{ class: 'active active-toggle demo--toggle-custom-class' }">
 
   <button type="button" class="btn btn-md ${btnDefault()}">
     Toggle

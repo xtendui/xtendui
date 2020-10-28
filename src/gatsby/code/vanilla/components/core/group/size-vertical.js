@@ -14,17 +14,17 @@ export const demo = {
 demo.htmlSource = `
 <form>
 
-  <div class="list">
+  <div class="list flex-col max-w-md">
 
     <div class="list-inner">
-      <button type="button" class="btn btn-md rounded-l-md border border-gray-500 ${btnDefaultGroup()}">
+      <button type="button" class="btn btn-md rounded-tl-md ${btnDefaultGroup()}">
         ${iconSearch({ classes: 'icon-lg' })}
       </button>
-      <input type="text" class="form-item border border-l-0 border-gray-500 ${inputDefaultGroup()}" placeholder="Insert search query" />
+      <input type="text" class="form-item rounded-tr-md ${inputDefaultGroup()}" placeholder="Insert search query" />
     </div>
 
-    <button type="button" class="btn btn-md rounded-r-md border border-l-0 border-gray-500 ${btnPrimaryGroup()}">
-      Lorem ipsum
+    <button type="button" class="btn btn-md rounded-b-md ${btnPrimaryGroup()}">
+      Search
     </button>
 
   </div>

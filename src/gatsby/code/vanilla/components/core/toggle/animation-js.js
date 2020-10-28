@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-2 items-center w-full demo--toggle-animation-js">
+<div class="list list-2 items-center demo--toggle-animation-js">
 
   <button type="button" class="btn btn-md ${btnDefault()}">
     Toggle 0

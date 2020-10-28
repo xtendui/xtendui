@@ -8,13 +8,16 @@ description: "Css component to group up buttons and inputs. Can easily create to
 
 ## Customization
 
-You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/group.css.js](https://github.com/minimit/xtendui/blob/master/src/core/group.css.js) for default values.
+You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/list.css.js](https://github.com/minimit/xtendui/blob/master/src/core/list.css.js) for default values.
 
 ```jsx
 module.exports = {
   theme:{
     xtendui: {
-      group: {
+      list: {
+        utility: theme => ({
+          // modify utilities
+        }),
         component: theme => ({
           // modify components
         }),

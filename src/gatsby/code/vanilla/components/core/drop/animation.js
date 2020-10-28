@@ -11,7 +11,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-2 items-center w-full"
+<div class="list list-2 items-center"
   data-xt-drop="{ elements: ':scope > .drop-container', targets: ':scope > .drop-container > .drop' }">
 
   <div class="drop-container demo--drop-animation">

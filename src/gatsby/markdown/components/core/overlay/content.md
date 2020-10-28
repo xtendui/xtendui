@@ -17,7 +17,7 @@ Use **tailwind classes** to assign variant (e.g. [border-color](https://tailwind
 
 ## Size
 
-Use **tailwind classes** to assign width ([width](https://tailwindcss.com/docs/width), [max-width](https://tailwindcss.com/docs/max-width)).
+Use **tailwind classes** to assign width (e.g. [width](https://tailwindcss.com/docs/width), [max-width](https://tailwindcss.com/docs/max-width)).
 
 Use **component classes** to assign size. You can add **additional size** for example `.card-xs` or `.card-xl`.
 

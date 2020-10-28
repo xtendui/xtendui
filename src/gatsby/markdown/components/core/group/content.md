@@ -8,16 +8,21 @@ date: "2030-10-10"
 
 ## Size
 
-Use **tailwind classes** to assign size (e.g. [width](https://tailwindcss.com/docs/width)). Remember to use `.max-w-full`.
+Use **tailwind classes** to assign size (e.g. [flex](https://tailwindcss.com/docs/flex), [max-width](https://tailwindcss.com/docs/max-width)). On responsive the content will shrink.
 
 <demo>
   <demovanilla src="vanilla/components/core/group/size">
   </demovanilla>
 </demo>
 
+<demo>
+  <demovanilla src="vanilla/components/core/group/size-vertical">
+  </demovanilla>
+</demo>
+
 ## Space
 
-Use **component classes** to assign space (e.g. [margin](https://tailwindcss.com/docs/margin)).
+Use [list space](/components/core/list/content#space) **component classes** to assign space).
 
 <demo>
   <demovanilla src="vanilla/components/core/group/space">

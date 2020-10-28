@@ -43,7 +43,7 @@ demo.htmlSource = `
         <div class="h1">
           Lorem ipsum dolor sit amet
         </div>
-        <div class="list list-4">
+        <div class="list list-4 justify-center">
           <div class="btn btn-lg px-0">
               Lorem ipsum
           </div>

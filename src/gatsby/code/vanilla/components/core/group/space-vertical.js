@@ -14,16 +14,16 @@ export const demo = {
 demo.htmlSource = `
 <form>
 
-  <div class="group flex-col">
+  <div class="list list-1 flex-col">
 
-    <div class="group-inner">
+    <div class="list-inner">
       <button type="button" class="btn btn-md rounded-tl-md rounded-bl-md ${btnDefaultGroup()}">
         ${iconSearch({ classes: 'icon-lg' })}
       </button>
       <input type="text" class="form-item rounded-tr-md rounded-br-md ${inputDefaultGroup()}" placeholder="Insert search query" />
     </div>
 
-    <button type="button" class="btn btn-md rounded-md mt-2 ${btnPrimaryGroup()}">
+    <button type="button" class="btn btn-md rounded-md ${btnPrimaryGroup()}">
       Search
     </button>
 

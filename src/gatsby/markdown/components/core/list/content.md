@@ -22,8 +22,8 @@ For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/
 
 </div>
 
-[[notePrimary]]
-| **Do not use margin** css or classes on `.list` because it has automatic negative margins for internal spacing.
+[[noteDefault]]
+| If you use **margin on list** be aware that **list space has automatic negative margins** for internal spacing.
 
 <demo>
   <demovanilla src="vanilla/components/core/list/space-px">
@@ -41,6 +41,9 @@ For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/
 ## Alignment
 
 Use **tailwind classes** to assign alignment (e.g. [align-items](https://tailwindcss.com/docs/align-items), [justify-content](https://tailwindcss.com/docs/justify-content)).
+
+[[noteDefault]]
+| By default `.list` has `align-items: stretch`.
 
 <demo>
   <demovanilla src="vanilla/components/core/list/alignment">
