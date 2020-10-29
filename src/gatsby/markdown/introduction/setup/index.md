@@ -7,6 +7,10 @@ description: "Installation instructions, css and js setup."
 date: "2050-09-10"
 ---
 
+## Boilerplate
+
+If you want we have some boilerplate projects to start a project all ready to go! Check out [xtendui-boilerplate](https://github.com/minimit/xtendui-boilerplate).
+
 ## Setup
 
 Install **xtendui**.
@@ -14,10 +18,6 @@ Install **xtendui**.
 ```sh
 npm install xtendui --save
 ```
-
-#### Boilerplate
-
-If you want we have some boilerplate projects to start a project all ready to go! Check out [xtendui-boilerplate](https://github.com/minimit/xtendui-boilerplate).
 
 ## Css
 
