@@ -38,5 +38,5 @@
 @import 'xtendui/src/private/demos/components/core/toggle/timing.css';
 @import 'xtendui/src/private/demos/test/demo-vanilla-iframe.css';
 @import 'xtendui/src/private/demos/test/demo-vanilla.css';
-@import 'xtendui/src/private/demos/themes/stores-listing-v1.css';
-@import 'xtendui/src/private/demos/themes/stores-listing-v2.css';
+@import 'xtendui/src/private/demos/themes/listing/stores-listing-v1.css';
+@import 'xtendui/src/private/demos/themes/listing/stores-listing-v2.css';

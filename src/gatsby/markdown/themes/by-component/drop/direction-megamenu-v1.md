@@ -1,11 +1,11 @@
 ---
 type: "Themes"
-category: "By Type"
-parent: "Hero"
-title: "fashion-hero-v1"
+category: "By Component"
+parent: "Drop"
+title: "direction-megamenu-v1"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-date: "2020-04-27"
+date: "2020-06-07"
 demos: [
-  "iframe/themes/hero/fashion-hero-v1"
+  "iframe/themes/direction-megamenu-v1"
 ]
 ---
