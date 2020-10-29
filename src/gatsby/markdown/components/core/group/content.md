@@ -47,3 +47,17 @@ Use **tailwind classes** to assign border.
   <demovanilla src="vanilla/components/core/group/border-vertical">
   </demovanilla>
 </demo>
+
+## Merge
+
+You can make group a **single interactive object**, be sure to use `group` on the interactive element and the variants `group-hover:` and `group-active:` classes.
+
+<demo>
+  <demovanilla src="vanilla/components/core/group/merge">
+  </demovanilla>
+</demo>
+
+<demo>
+  <demovanilla src="vanilla/components/core/group/merge-vertical">
+  </demovanilla>
+</demo>

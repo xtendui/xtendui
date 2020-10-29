@@ -1,6 +1,5 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/core/slider'
-import 'xtendui/src/addons/propagate-interaction'
 import gsap from 'gsap'
 
 /**

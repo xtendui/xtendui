@@ -1,5 +1,7 @@
 import React from 'react'
 import path from 'path'
+const btnDefault = require('components/snippets/classes/btn-default').default
+const btnPrimary = require('components/snippets/classes/btn-primary').default
 const cardDefault = require('components/snippets/classes/card-default').default
 const iconX = require('components/snippets/icons').iconX
 
@@ -41,10 +43,10 @@ demo.htmlSource = `
                     Street lorem ipsum 42, 00134 City, Nation
                   </address>
                   <div class="list list-2 mt-auto justify-between">
-                    <a href="#" class="btn btn-md px-0">
+                    <a href="#" class="btn btn-md ${btnDefault()}">
                       Take me here
                     </a>
-                    <button type="button" class="listing-action btn btn-md px-0">
+                    <button type="button" class="listing-action btn btn-md ${btnPrimary()}">
                         More info
                     </button>
                   </div>
@@ -102,10 +104,10 @@ demo.htmlSource = `
                     Street lorem ipsum 42, 00134 City, Nation
                   </address>
                   <div class="list list-2 mt-auto justify-between">
-                    <a href="#" class="btn btn-md px-0">
+                    <a href="#" class="btn btn-md ${btnDefault()}">
                       Take me here
                     </a>
-                    <button type="button" class="listing-action btn btn-md px-0">
+                    <button type="button" class="listing-action btn btn-md ${btnPrimary()}">
                         More info
                     </button>
                   </div>
@@ -151,10 +153,10 @@ demo.htmlSource = `
                     Street lorem ipsum 42, 00134 City, Nation
                   </address>
                   <div class="list list-2 mt-auto justify-between">
-                    <a href="#" class="btn btn-md px-0">
+                    <a href="#" class="btn btn-md ${btnDefault()}">
                       Take me here
                     </a>
-                    <button type="button" class="listing-action btn btn-md px-0">
+                    <button type="button" class="listing-action btn btn-md ${btnPrimary()}">
                         More info
                     </button>
                   </div>
@@ -212,10 +214,10 @@ demo.htmlSource = `
                     Street lorem ipsum 42, 00134 City, Nation
                   </address>
                   <div class="list list-2 mt-auto justify-between">
-                    <a href="#" class="btn btn-md px-0">
+                    <a href="#" class="btn btn-md ${btnDefault()}">
                       Take me here
                     </a>
-                    <button type="button" class="listing-action btn btn-md px-0">
+                    <button type="button" class="listing-action btn btn-md ${btnPrimary()}">
                         More info
                     </button>
                   </div>
@@ -261,10 +263,10 @@ demo.htmlSource = `
                     Street lorem ipsum 42, 00134 City, Nation
                   </address>
                   <div class="list list-2 mt-auto justify-between">
-                    <a href="#" class="btn btn-md px-0">
+                    <a href="#" class="btn btn-md ${btnDefault()}">
                       Take me here
                     </a>
-                    <button type="button" class="listing-action btn btn-md px-0">
+                    <button type="button" class="listing-action btn btn-md ${btnPrimary()}">
                         More info
                     </button>
                   </div>
@@ -322,10 +324,10 @@ demo.htmlSource = `
                     Street lorem ipsum 42, 00134 City, Nation
                   </address>
                   <div class="list list-2 mt-auto justify-between">
-                    <a href="#" class="btn btn-md px-0">
+                    <a href="#" class="btn btn-md ${btnDefault()}">
                       Take me here
                     </a>
-                    <button type="button" class="listing-action btn btn-md px-0">
+                    <button type="button" class="listing-action btn btn-md ${btnPrimary()}">
                         More info
                     </button>
                   </div>

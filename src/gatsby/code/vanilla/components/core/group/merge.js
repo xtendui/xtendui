@@ -13,8 +13,7 @@ export const demo = {
 demo.htmlSource = `
 <form>
 
-  <button type="button" class="list"
-    data-xt-propagate-interaction="{ targets: '.btn' }">
+  <button type="button" class="list group">
 
     <div class="btn btn-md rounded-l-md ${btnPrimaryGroup()}">
       Search

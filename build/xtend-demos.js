@@ -9,8 +9,6 @@ if (typeof window !== 'undefined') {
   require('xtendui/src/private/demos/components/core/drop/animation-js.js')
   require('xtendui/src/private/demos/components/core/drop/events-methods.js')
   require('xtendui/src/private/demos/components/core/form/validation.js')
-  require('xtendui/src/private/demos/components/core/group/merge-line.js')
-  require('xtendui/src/private/demos/components/core/group/merge-stack.js')
   require('xtendui/src/private/demos/components/core/loader/js-filler.js')
   require('xtendui/src/private/demos/components/core/loader/js-spinner.js')
   require('xtendui/src/private/demos/components/core/overlay/animation-js.js')

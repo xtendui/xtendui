@@ -8,11 +8,11 @@ date: "2050-10-10"
 
 ## Variants
 
-Xtend adds a **custom variant** `active` to Tailwind, it styles when **user presses the element** with `:active` but also when the element is **activated by javascript** with `.active`.
+Xtend adds **custom tailwind variants** `group-active` and `active`, they styles **when user presses the element** with pseudo selectors `group:active` and `:active` but **also when the element is activated by javascript** with the class `.active`.
 
-When you use Tailwind classes you can style it with the variant `active:`, it's activated on the same tailwind utilities that have `hover:`, see [xtendui/src/tailwind-config.js](https://github.com/minimit/xtendui/blob/master/src/tailwind-config.js) for default values.
+When you use **tailwind classes** you add classes with variants `group-active:` and `active:`, see [xtendui/src/tailwind-config.js](https://github.com/minimit/xtendui/blob/master/src/tailwind-config.js) for default variants.
 
-When you **style pseudo selector** remember to style `&:active, &.active`.
+When you **style active** remember to style `&:active, &.active`.
 
 ## Utilities
 
@@ -24,6 +24,8 @@ These are structure **component utilities**.
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
 | Utility                  | `.container-reset`       | `container-reset`                | `responsive`                | Reset container styles            |
 | Utility                  | `.h-screen`       | `h-screen`                | `responsive`                | Height `100vh` and retain height on vertical scroll/resize on mobile           |
+| Utility                  | `.min-h-screen`       | `min-h-screen`                | `responsive`                | Min height `100vh` and retain height on vertical scroll/resize on mobile           |
+| Utility                  | `.max-h-screen`       | `max-h-screen`                | `responsive`                | Max height `100vh` and retain height on vertical scroll/resize on mobile           |
 
 </div>
 

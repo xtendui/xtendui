@@ -1,23 +1,9 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/core/slider'
-import 'xtendui/src/addons/propagate-interaction'
 import gsap from 'gsap'
 
 /**
- * PropagateInteraction
- */
-
-Xt.mount.push({
-  matches: '#iframe--fashion-hero-v1 body a, #iframe--fashion-hero-v1 body button', // add your own selector instead of body to contain the code
-  mount: object => {
-    new Xt.PropagateInteraction(object, {
-      targets: '.btn',
-    })
-  },
-})
-
-/**
- * link animation
+ * media link animation
  */
 
 Xt.mount.push({

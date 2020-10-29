@@ -11,7 +11,7 @@ module.exports = {
     '.h1': {
       // style
       marginTop: theme('spacing.6'),
-      marginBottom: theme('spacing.3'),
+      marginBottom: theme('spacing.4'),
       '@apply mt-fc mb-lc': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
@@ -39,7 +39,7 @@ module.exports = {
     '.h2': {
       // style
       marginTop: theme('spacing.6'),
-      marginBottom: theme('spacing.3'),
+      marginBottom: theme('spacing.4'),
       '@apply mt-fc mb-lc': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.semibold'),
@@ -54,7 +54,7 @@ module.exports = {
     '.h3': {
       // style
       marginTop: theme('spacing.6'),
-      marginBottom: theme('spacing.3'),
+      marginBottom: theme('spacing.4'),
       '@apply mt-fc mb-lc': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.semibold'),
@@ -69,7 +69,7 @@ module.exports = {
     '.h4': {
       // style
       marginTop: theme('spacing.6'),
-      marginBottom: theme('spacing.3'),
+      marginBottom: theme('spacing.4'),
       '@apply mt-fc mb-lc': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.semibold'),
@@ -81,7 +81,7 @@ module.exports = {
     '.h5': {
       // style
       marginTop: theme('spacing.6'),
-      marginBottom: theme('spacing.3'),
+      marginBottom: theme('spacing.4'),
       '@apply mt-fc mb-lc': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.semibold'),
@@ -93,7 +93,7 @@ module.exports = {
     '.h6': {
       // style
       marginTop: theme('spacing.6'),
-      marginBottom: theme('spacing.3'),
+      marginBottom: theme('spacing.4'),
       '@apply mt-fc mb-lc': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.semibold'),
@@ -120,7 +120,7 @@ module.exports = {
       letterSpacing: 'inherit',
       textTransform: 'inherit',
       // style
-      marginBottom: theme('spacing.3'),
+      marginBottom: theme('spacing.4'),
       '@apply text-reset mb-lc': {},
     },
     '.text-reset': {

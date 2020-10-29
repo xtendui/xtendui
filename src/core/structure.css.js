@@ -11,6 +11,14 @@ module.exports = {
       // setup
       height: 'calc(var(--vh, 1vh) * 100) !important',
     },
+    '.min-h-screen': {
+      // setup
+      minHeight: 'calc(var(--vh, 1vh) * 100) !important',
+    },
+    '.max-h-screen': {
+      // setup
+      maxHeight: 'calc(var(--vh, 1vh) * 100) !important',
+    },
     '.mt-fc': {
       // setup
       '&:first-child': {

@@ -1,6 +1,5 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/future/scroll'
-import 'xtendui/src/addons/propagate-interaction'
 import gsap from 'gsap'
 
 /**

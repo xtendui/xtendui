@@ -9,7 +9,7 @@ module.exports = {
       minHeight: '100%',
       borderRadius: 'inherit',
       // styles
-      backgroundColor: theme('colors.gray.500'),
+      backgroundColor: theme('colors.accent.800'),
     },
     '.media-inner': {
       // setup

@@ -14,8 +14,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div id="body--smooth"
-  data-xt-propagate-interaction="{ targets: '.btn' }">
+<div id="body--smooth">
 
   <div class="featured featured--inverse">
 
