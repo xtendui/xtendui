@@ -241,7 +241,7 @@ Opera >= 25
 
 ## CDN
 
-If you need to do a **fast installation** of css and js use [core-js CDN](https://cdnjs.com/libraries/core-js) and [xtendui CDN](https://unpkg.com/xtendui@1.x.x/), the css and js are inside the `dist/` folder.
+If you need to do a **fast installation** of css and js use [xtendui CDN](https://unpkg.com/xtendui@1.x.x/), the css and js are inside the `dist/` folder.
 
 The CDN `dist/` files are large because they include tailwindcss and all components / addons, **it's not representative of the sizes** you see when including Xtend UI as part of your build process.
 

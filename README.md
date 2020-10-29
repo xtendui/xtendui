@@ -44,7 +44,7 @@ For a complete css and js setup guide visit [online installation page](https://x
 
 #### Boilerplate
 
-If you want we have some boilerplate projects to start a project all ready to go! Check out [xtendui-boilerplate](https://github.com/minimit/xtendui-boilerplate) and [tailwind examples](https://tailwindcss.com/docs/installation#build-tool-examples).
+If you want we have some boilerplate projects to start a project all ready to go! Check out [xtendui-boilerplate](https://github.com/minimit/xtendui-boilerplate) and [tailwind build examples](https://tailwindcss.com/docs/installation#build-tool-examples)  and [tailwind setup examples](https://github.com/tailwindlabs/tailwindcss-setup-examples).
 
 ## Contributing
 
