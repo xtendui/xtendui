@@ -13,8 +13,7 @@
     "vanilla",
     "tailwind"
   ],
-  "main": "dist/xtendui.min.js",
-  "module": "src/xt.js",
+  "main": "src/xt.js",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
