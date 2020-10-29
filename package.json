@@ -23,7 +23,8 @@
     "src/*.*",
     "!src/html.js",
     "src/addons/*.*",
-    "src/core/*.*"
+    "src/core/*.*",
+    "src/future/*.*"
   ],
   "scripts": {
     "webpack": "cross-env NODE_ENV=development webpack --progress",
