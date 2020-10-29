@@ -11,7 +11,7 @@ date: "2050-09-10"
 
 If you want we have some boilerplate projects to start a project all ready to go! Check out [xtendui-boilerplate](https://github.com/minimit/xtendui-boilerplate).
 
-## Setup
+## Installation
 
 Install **xtendui**.
 
