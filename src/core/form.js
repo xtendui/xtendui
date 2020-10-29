@@ -1,4 +1,4 @@
-import { Xt } from 'xtendui'
+import { Xt } from '../xt.js'
 
 /**
  * Radio change event on same name radios

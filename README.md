@@ -42,10 +42,6 @@ Supported browsers are as follow: **chrome 38**, **safari 10**, **ios 10**, **fi
 
 For a complete css and js setup guide visit [online installation page](https://xtendui.com/introduction/getting-started/setup) or [github installation page](https://github.com/minimit/xtendui/blob/master/SETUP.md).
 
-#### Customization
-
-To customize css and js visit [online customization page](https://xtendui.com/introduction/getting-started/customization) or [github customization page](https://github.com/minimit/xtendui/blob/master/CUSTOMIZATION.md).
-
 #### Boilerplate
 
 If you want we have some boilerplate projects to start a project all ready to go! Check out [xtendui-boilerplate](https://github.com/minimit/xtendui-boilerplate) and [tailwind examples](https://tailwindcss.com/docs/installation#build-tool-examples).

@@ -1,4 +1,4 @@
-import { Xt } from 'xtendui'
+import { Xt } from '../xt.js'
 import JSON5 from 'json5'
 
 /**
