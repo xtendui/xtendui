@@ -79,7 +79,7 @@ class Sticky extends Xt.Toggle {
           elId.setAttribute('id', elId.getAttribute('id') + '-clone')
         }
         for (const elFor of target.querySelectorAll('[for]')) {
-          elFor.setAttribute('for', elId.getAttribute('for') + '-clone')
+          elFor.setAttribute('for', elFor.getAttribute('for') + '-clone')
         }
         for (const elName of target.querySelectorAll('[name]')) {
           elName.setAttribute('name', elName.getAttribute('name') + '-clone')
