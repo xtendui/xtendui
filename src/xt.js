@@ -12,7 +12,6 @@ export const Xt = {}
 // vars
 //
 
-Xt.debug = process.env.NODE_ENV === 'development'
 Xt.mount = []
 Xt.unmount = []
 Xt.currents = {} // Xt currents based on namespace (so shared between Xt objects)
@@ -23,6 +22,7 @@ Xt.medialoadedDelay = 500
 Xt.stickyIndex = 500
 Xt.focusables = 'a, button, details, input, iframe, select, textarea, .btn-close'
 Xt.supportScroll = typeof window === 'undefined' ? false : 'onscroll' in window && !/(gle|ing)bot/.test(navigator.userAgent)
+Xt.debug = typeof window !== 'undefined' && typeof process !== 'undefined' && process.env && process.env.NODE_ENV === 'development'
 
 if (typeof window !== 'undefined') {
   //
