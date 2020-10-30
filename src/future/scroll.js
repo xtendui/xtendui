@@ -52,6 +52,9 @@ class Scroll extends Xt.Toggle {
           for (const elId of target.querySelectorAll('[id]')) {
             elId.setAttribute('id', `${elId.getAttribute('id')}-clone`)
           }
+          for (const elFor of target.querySelectorAll('[for]')) {
+            elFor.setAttribute('for', `${elFor.getAttribute('for')}-clone`)
+          }
           for (const elName of target.querySelectorAll('[name]')) {
             elName.setAttribute('name', `${elName.getAttribute('name')}-clone`)
           }
