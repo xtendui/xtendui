@@ -160,12 +160,12 @@ class Slider extends Xt.Toggle {
     let wrapFirstCountIteration = 0
     if (self.dragger && options.drag.wrap) {
       const container = self.targets[0].parentNode
-      if (Xt.debug === true) {
+      if (Xt.debug) {
         if (!options.loop) {
-          console.debug('Xt.debug: Xt.Slider needs "loop": true when using "drag": {"wrap": true}', self.object)
+          console.debug('Xt.debug Xt.Slider needs "loop": true when using "drag": {"wrap": true}', self.object)
         }
         if (options.contain) {
-          console.debug('Xt.debug: Xt.Slider cannot use "contain": true when using "drag": {"wrap": true}', self.object)
+          console.debug('Xt.debug Xt.Slider cannot use "contain": true when using "drag": {"wrap": true}', self.object)
         }
       }
       const cloneSlide = slide => {
@@ -767,8 +767,8 @@ class Slider extends Xt.Toggle {
       Xt.dataStorage.set(slide, `${self.componentNamespace}SlideHeight`, slide.children[0].offsetHeight)
     }
     // debug
-    if (Xt.debug === true) {
-      console.debug('Xt.debug: mediaLoadedReinit', self.object)
+    if (Xt.debug) {
+      console.debug('Xt.debug mediaLoadedReinit', self.object)
     }
     // restart
     self.reinit()

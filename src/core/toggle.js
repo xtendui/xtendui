@@ -1572,8 +1572,8 @@ class Toggle {
   eventMedialoadedReinit() {
     const self = this
     // debug
-    if (Xt.debug === true) {
-      console.debug('Xt.debug: mediaLoadedReinit', self.object)
+    if (Xt.debug) {
+      console.debug('Xt.debug mediaLoadedReinit', self.object)
     }
     // restart
     self.reinit()

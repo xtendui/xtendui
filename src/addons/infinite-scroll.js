@@ -66,8 +66,8 @@ class InfiniteScroll {
     if (state && state.scrollResume) {
       document.scrollingElement.scrollTop = state.scrollResume
       // debug
-      if (Xt.debug === true) {
-        console.debug('Xt.debug: xt-infinitescroll scrollResume', state.scrollResume)
+      if (Xt.debug) {
+        console.debug('Xt.debug xt-infinitescroll scrollResume', state.scrollResume)
       }
     }
     // paginate
@@ -204,13 +204,13 @@ class InfiniteScroll {
       if (linkOrigin === location.origin) {
         if (self.url.href !== location.href) {
           history.replaceState(null, '', self.url.href)
-          if (Xt.debug === true) {
-            console.debug('Xt.debug: xt-infinitescroll history replace', self.url.href)
+          if (Xt.debug) {
+            console.debug('Xt.debug xt-infinitescroll history replace', self.url.href)
           }
         }
       } else {
-        if (Xt.debug === true) {
-          console.error('Xt.debug: xt-infinitescroll cannot set history with different origin', linkOrigin)
+        if (Xt.debug) {
+          console.error('Xt.debug xt-infinitescroll cannot set history with different origin', linkOrigin)
         }
       }
       // request if on bottom
@@ -243,16 +243,16 @@ class InfiniteScroll {
         request.open('GET', self.url.href, true)
         request.onload = () => {
           // debug
-          if (Xt.debug === true) {
-            console.debug('Xt.debug: xt-infinitescroll request success', request, self.url)
+          if (Xt.debug) {
+            console.debug('Xt.debug xt-infinitescroll request success', request, self.url)
           }
           // response
           self.response(request)
         }
         request.onerror = () => {
           // debug
-          if (Xt.debug === true) {
-            console.debug('Xt.debug: xt-infinitescroll request failed', request)
+          if (Xt.debug) {
+            console.debug('Xt.debug xt-infinitescroll request failed', request)
           }
           // response
           self.response(request)
@@ -290,8 +290,8 @@ class InfiniteScroll {
       self.populate(items)
     } else {
       // debug
-      if (Xt.debug === true) {
-        console.debug('Xt.debug: xt-infinitescroll fake populate because no items found')
+      if (Xt.debug) {
+        console.debug('Xt.debug xt-infinitescroll fake populate because no items found')
       }
       // fake
       setTimeout(() => {
