@@ -29,68 +29,62 @@ if (typeof window !== 'undefined') {
   //
 
   if (window.self === window.top && Xt.debug) {
-    console.debug(
-      '%cXt.debug activated, to suppress set "Xt.debug = false" or set NODE_ENV production',
-      'font-weight:bold; color: white; background-color: #0078ff; padding: 6px 10px;'
-    )
-
-    // images
-
-    Xt.mount.push({
-      matches: 'img:not([src^="data:"])',
-      mount: object => {
-        // loading
-        const loading = object.getAttribute('loading')
-        if (!loading) {
-          console.debug('Xt.debug detected an "image" without "loading" attribute', object)
-        }
-        // alt
-        const alt = object.getAttribute('alt')
-        if (!alt && alt !== '') {
-          console.debug('Xt.debug detected an "image" without "alt" attribute', object)
-        }
-      },
-    })
-
-    // links
-
-    Xt.mount.push({
-      matches: 'a[href]',
-      mount: object => {
-        // title
-        const text = object.textContent.trim()
-        const title = object.title
-        const label = object.getAttribute('aria-label')
-        if (!text.length && (!title || title === '') && (!label || label === '')) {
-          console.debug('Xt.debug detected a "link" without "textContent" or "title" or "aria-label', object)
-        }
-      },
-    })
-
-    // input
-
-    Xt.mount.push({
-      matches: 'input:not([type="hidden"]), select, textarea',
-      mount: object => {
-        // label
-        const labels = object.labels
-        if (!labels.length) {
-          console.debug('Xt.debug detected an "input" without "label"', object)
-        }
-      },
-    })
-
-    // document
-
-    Xt.mount.push({
-      matches: 'body',
-      mount: object => {
-        // h1
-        const h1 = object.querySelectorAll('h1')
-        if (!h1.length || h1.length > 1) {
-          console.debug('Xt.debug detected a "document" without or with more thank one "h1"', object)
-        }
-      },
+    requestAnimationFrame(() => {
+      console.debug(
+        '%cXt.debug activated, to suppress set "Xt.debug = false" or set NODE_ENV production',
+        'font-weight:bold; color: white; background-color: #0078ff; padding: 6px 10px;'
+      )
+      // images
+      Xt.mount.push({
+        matches: 'img:not([src^="data:"])',
+        mount: object => {
+          // loading
+          const loading = object.getAttribute('loading')
+          if (!loading) {
+            console.debug('Xt.debug: detected an "image" without "loading" attribute', object)
+          }
+          // alt
+          const alt = object.getAttribute('alt')
+          if (!alt && alt !== '') {
+            console.debug('Xt.debug: detected an "image" without "alt" attribute', object)
+          }
+        },
+      })
+      // links
+      Xt.mount.push({
+        matches: 'a[href]',
+        mount: object => {
+          // title
+          const text = object.textContent.trim()
+          const title = object.title
+          const label = object.getAttribute('aria-label')
+          if (!text.length && (!title || title === '') && (!label || label === '')) {
+            console.debug('Xt.debug: detected a "link" without "textContent" or "title" or "aria-label', object)
+          }
+        },
+      })
+      // input
+      Xt.mount.push({
+        matches: 'input:not([type="hidden"]), select, textarea',
+        mount: object => {
+          // label
+          const labels = object.labels
+          if (!labels.length) {
+            console.debug('Xt.debug: detected an "input" without "label"', object)
+          }
+        },
+      })
+      // document
+      Xt.mount.push({
+        matches: 'body',
+        mount: object => {
+          // h1
+          const h1 = object.querySelectorAll('h1')
+          if (!h1.length || h1.length > 1) {
+            console.debug('Xt.debug: detected a "document" without or with more thank one "h1"', object)
+          }
+        },
+      })
     })
   }
 
