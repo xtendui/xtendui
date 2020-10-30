@@ -18,7 +18,7 @@ class DocSidebar extends React.Component {
                   <div className="gatsby_site_header_logo">
                     <Link
                       to="/"
-                      title="Home"
+                      title="Xtend UI"
                       className={`gatsby_logo-icon
                                       ${seo.title.toLowerCase() === 'home' ? 'active' : ''}`}
                     >
