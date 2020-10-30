@@ -6,6 +6,10 @@ title: "Javascript"
 date: "2050-05-05"
 ---
 
+## Xt.debug
+
+Set `NODE_ENV=development` to have **Xt.debug activated**. On Linux and mac globally with `export NODE_ENV = development`, on windows globally with `$env:NODE_ENV = 'development'`.
+
 ## Event Delay
 
 For the `resize` and `scroll` events we use a special wrapper `Xt.eventDelay` that set the delay on which the resize gets triggered with `Xt.resizeDelay` and `Xt.scrollDelay`.
