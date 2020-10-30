@@ -21,7 +21,7 @@ Xt.stickyIndex = 800
 Xt.scrollRestoration = 'auto'
 Xt.focusables = 'a, button, details, input, iframe, select, textarea, .btn-close'
 Xt.supportScroll = typeof window === 'undefined' ? false : 'onscroll' in window && !/(gle|ing)bot/.test(navigator.userAgent)
-Xt.debug = typeof window !== 'undefined' && process && process.env.NODE_ENV === 'development'
+Xt.debug = typeof window !== 'undefined' && typeof process !== 'undefined' && process.env && process.env.NODE_ENV === 'development'
 
 if (typeof window !== 'undefined') {
   //
