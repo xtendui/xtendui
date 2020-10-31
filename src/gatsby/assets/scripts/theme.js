@@ -227,7 +227,7 @@ const makeDocument = () => {
         )
         container.classList.add('active')
         container.querySelector('.gatsby_site_header_item').append(item)
-        item.querySelector('a').setAttribute('href', `#${id}`)
+        item.querySelector('a').setAttribute('href', `#${encodeURIComponent(id)}`)
         item.querySelector('span').textContent = el.textContent.trim()
       }
     }
@@ -236,7 +236,7 @@ const makeDocument = () => {
     el.classList.add('gatsby_make-anchor')
     // wrapInner
     const link = Xt.createElement(`<a href="#"></a>`)
-    link.setAttribute('href', `#${id}`)
+    link.setAttribute('href', `#${encodeURIComponent(id)}`)
     el.classList.add('xt-ignore')
     el.before(link)
     const inner = el.querySelector(':scope > *')
