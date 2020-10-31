@@ -222,14 +222,12 @@ const makeDocument = () => {
       let container = document.querySelector('.gatsby_btn-site_article_sidebar--adiacent.active ~ .gatsby_site_header_adiacent_inner')
       container = container ? container : document.querySelector('.gatsby_btn-site_article_sidebar--sub.active ~ .gatsby_site_header_adiacent_inner')
       if (container) {
+        const item = Xt.createElement(
+          `<div><a href="#${id}" class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--adiacent_inner"><span></span></button></div>`
+        )
         container.classList.add('active')
-        container
-          .querySelector('.gatsby_site_header_item')
-          .append(
-            Xt.createElement(
-              `<div><a href="#${id}" class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--adiacent_inner"><span>${el.textContent}</span></button></div>`
-            )
-          )
+        container.querySelector('.gatsby_site_header_item').append(item)
+        item.querySelector('span').textContent = el.textContent.trim()
       }
     }
     // gatsby_make-anchor
