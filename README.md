@@ -7,7 +7,7 @@
 <p align="center">
   Powerful frontend library with Tailwind components and vanilla Javascript.
   <br/>
-  <a href="https://xtendui.com">Introduction</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://xtendui.com/components">Components</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://xtendui.com/themes">Themes</a>
+  <a href="https://xtendui.com/introduction/getting-started/setup">Setup</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://xtendui.com/components">Components</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://xtendui.com/themes">Themes</a>
   <br/><br/>
   <a href="https://github.com/minimit/xtendui/blob/master/LICENSE" title="License" style="display: inline-block;">
     <img src="https://img.shields.io/npm/l/xtendui.svg" alt="License" loading="eager">
