@@ -11,7 +11,7 @@ module.exports = {
     '.h1': {
       // style
       marginTop: theme('spacing.6'),
-      marginBottom: theme('spacing.4'),
+      marginBottom: theme('spacing.2'),
       '@apply mt-fc mb-lc': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
@@ -39,10 +39,10 @@ module.exports = {
     '.h2': {
       // style
       marginTop: theme('spacing.6'),
-      marginBottom: theme('spacing.4'),
+      marginBottom: theme('spacing.2'),
       '@apply mt-fc mb-lc': {},
       fontFamily: theme('fontFamily.sans').toString(),
-      fontWeight: theme('fontWeight.semibold'),
+      fontWeight: theme('fontWeight.bold'),
       fontSize: rem(30),
       lineHeight: 1.2,
       letterSpacing: theme('letterSpacing.tight'),
@@ -54,10 +54,10 @@ module.exports = {
     '.h3': {
       // style
       marginTop: theme('spacing.6'),
-      marginBottom: theme('spacing.4'),
+      marginBottom: theme('spacing.2'),
       '@apply mt-fc mb-lc': {},
       fontFamily: theme('fontFamily.sans').toString(),
-      fontWeight: theme('fontWeight.semibold'),
+      fontWeight: theme('fontWeight.bold'),
       fontSize: rem(25),
       lineHeight: 1.2,
       letterSpacing: theme('letterSpacing.tight'),
@@ -69,10 +69,10 @@ module.exports = {
     '.h4': {
       // style
       marginTop: theme('spacing.6'),
-      marginBottom: theme('spacing.4'),
+      marginBottom: theme('spacing.2'),
       '@apply mt-fc mb-lc': {},
       fontFamily: theme('fontFamily.sans').toString(),
-      fontWeight: theme('fontWeight.semibold'),
+      fontWeight: theme('fontWeight.bold'),
       fontSize: rem(24),
       lineHeight: 1.3,
       letterSpacing: theme('letterSpacing.tight'),
@@ -81,10 +81,10 @@ module.exports = {
     '.h5': {
       // style
       marginTop: theme('spacing.6'),
-      marginBottom: theme('spacing.4'),
+      marginBottom: theme('spacing.2'),
       '@apply mt-fc mb-lc': {},
       fontFamily: theme('fontFamily.sans').toString(),
-      fontWeight: theme('fontWeight.semibold'),
+      fontWeight: theme('fontWeight.bold'),
       fontSize: rem(18),
       lineHeight: 1.3,
       letterSpacing: theme('letterSpacing.tight'),
@@ -93,10 +93,10 @@ module.exports = {
     '.h6': {
       // style
       marginTop: theme('spacing.6'),
-      marginBottom: theme('spacing.4'),
+      marginBottom: theme('spacing.2'),
       '@apply mt-fc mb-lc': {},
       fontFamily: theme('fontFamily.sans').toString(),
-      fontWeight: theme('fontWeight.semibold'),
+      fontWeight: theme('fontWeight.bold'),
       fontSize: '14px',
       lineHeight: 1.3,
       letterSpacing: theme('letterSpacing.wide'),

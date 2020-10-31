@@ -125,6 +125,7 @@
 }
 
 .gatsby_cat--site_article_sidebar {
+  font-weight: theme('fontWeight.semibold');
   margin-top: 1rem !important;
   margin-bottom: 0.5rem !important;
   @apply text-white links-inverse;

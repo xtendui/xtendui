@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   presets: [require('tailwindcss/defaultConfig'), require('./src/tailwind-config')],
   theme: {
@@ -22,22 +24,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: [
-          '"Inter"',
-          'system-ui',
-          '-apple-system',
-          'BlinkMacSystemFont',
-          '"Segoe UI"',
-          'Roboto',
-          '"Helvetica Neue"',
-          'Arial',
-          '"Noto Sans"',
-          'sans-serif',
-          '"Apple Color Emoji"',
-          '"Segoe UI Emoji"',
-          '"Segoe UI Symbol"',
-          '"Noto Color Emoji"',
-        ],
+        sans: ['"Inter"', ...defaultTheme.fontFamily.sans],
       },
       borderWidth: {
         3: '3px',
