@@ -777,9 +777,9 @@ if (typeof window !== 'undefined') {
    * @return {Node} HTML elements
    */
   Xt.createElement = str => {
-    const div = document.createElement('div')
-    div.innerHTML = str.trim()
-    return div.firstChild
+    const template = document.createElement('template');
+    template.innerHTML = str.trim()
+    return template.content.firstChild
   }
 
   /**

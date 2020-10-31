@@ -7,7 +7,6 @@ import Footer from 'components/includes/footer'
 import DocHead from 'components/includes/doc-head'
 import DocFoot from 'components/includes/doc-foot'
 import DocFullscreen from 'components/includes/doc-fullscreen'
-import { markdownSlug } from 'components/snippets/markdown-slug'
 
 import { makeDocument } from 'assets/scripts/theme'
 import { populateBlock } from 'assets/scripts/demo'

@@ -58,6 +58,17 @@ Read our [contributing docs](https://github.com/minimit/xtendui/blob/master/.git
 * Use `npm run dev` to serve a develop version
 * Use `npm run serve` to serve a production version
 
+## Browser Support
+
+```
+Chrome >= 38
+Safari >= 10
+iOS >= 10
+Firefox >= 38
+Edge >= 13
+Opera >= 25
+```
+
 ## Copyright
 
 Licensed under [MIT license](https://github.com/minimit/xtendui/blob/master/LICENSE).

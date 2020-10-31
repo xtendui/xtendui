@@ -224,7 +224,7 @@ Chrome >= 38
 Safari >= 10
 iOS >= 10
 Firefox >= 38
-Edge >= 12
+Edge >= 13
 Opera >= 25
 ```
 
