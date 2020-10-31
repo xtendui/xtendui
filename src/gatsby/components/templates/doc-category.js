@@ -233,4 +233,3 @@ Template.propTypes = {
     }).isRequired,
   }).isRequired,
 }
-

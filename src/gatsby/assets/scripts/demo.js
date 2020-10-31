@@ -95,13 +95,7 @@ const formatCode = source => {
     // replace quote entities
     match = match.replace(/&quot;/g, '"')
     // replace entities
-    match = match
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/\"/g, '&quot;')
-      .replace(/\'/g, '&#39;')
-      .replace(/\//g, '&#x2F;')
+    match = match.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/\//g, '&#x2F;')
     // replace empty quotes
     match = match.replace(/=""/g, '')
     return match
