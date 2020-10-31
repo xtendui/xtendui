@@ -31,7 +31,7 @@
   }
 
   .slider--img {
-    .brand_content {
+    .slide_item {
       width: 300px;
       transition-property: transform;
       transition-duration: theme('transitionDuration.500');
@@ -44,7 +44,7 @@
   }
 
   .slider--text {
-    .brand_content {
+    .slide_item {
       transition-property: color;
       transition-duration: theme('transitionDuration.500');
       transition-timing-function: theme('transitionTimingFunction.out');
