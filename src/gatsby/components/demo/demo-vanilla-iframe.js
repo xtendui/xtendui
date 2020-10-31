@@ -49,11 +49,11 @@ export default class DemoVanillaIframe extends React.Component {
 DemoVanillaIframe.propTypes = {
   demo: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    dirs: PropTypes.array.isRequired,
-    path: PropTypes.string.isRequired,
-    htmlSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]).isRequired,
-    jsxSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]).isRequired,
-    jsSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]).isRequired,
-    cssSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]).isRequired,
+    dirs: PropTypes.array,
+    path: PropTypes.string,
+    htmlSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+    jsxSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+    jsSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+    cssSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   }),
 }

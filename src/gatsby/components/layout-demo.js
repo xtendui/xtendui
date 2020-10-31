@@ -43,11 +43,11 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
   demo: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    full: PropTypes.bool.isRequired,
-    container: PropTypes.bool.isRequired,
-    htmlSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]).isRequired,
-    jsxSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]).isRequired,
-    jsSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]).isRequired,
-    cssSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]).isRequired,
+    full: PropTypes.bool,
+    container: PropTypes.bool,
+    htmlSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+    jsxSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+    jsSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+    cssSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   }),
 }

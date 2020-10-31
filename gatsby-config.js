@@ -123,6 +123,11 @@ module.exports = {
       options: {
         repositoryName: 'xtendui',
         lang: '*',
+        imageImgixParams: {
+          auto: 'compress',
+          lossless: true,
+          q: 85,
+        },
         schemas: {
           themes: {
             Main: {
