@@ -188,7 +188,7 @@
     padding: .3125rem .5rem;
     font-weight: theme('fontWeight.normal');
     font-size: 0.8125rem;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.66);
     line-height: 1;
     letter-spacing: theme('letterSpacing.wide');
     text-transform: none;
