@@ -17,13 +17,6 @@ You can **customize this component** inside `tailwind.config.js`, check [xtendui
 ```jsx
 module.exports = {
   theme:{
-    xtendui: {
-      animation: {
-        utility: theme => ({
-          // modify utilities
-        }),
-      },
-    },
     extend: {
       transitionTimingFunction: {
         // add transition timing functions
@@ -31,6 +24,13 @@ module.exports = {
       keyframes: theme => ({
         // add keyframe animations
       }),
+    },
+    xtendui: {
+      animation: {
+        utility: theme => ({
+          // modify utilities
+        }),
+      },
     },
   },
 }

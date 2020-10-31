@@ -72,29 +72,9 @@ Then you can use css with tailwind.
 
 You can **customize theme** inside `tailwind.config.js`, check [xtendui/src/tailwind-config.js](https://github.com/minimit/xtendui/blob/master/src/tailwind-config.js) for default values.
 
-
 ```jsx
 module.exports = {
   theme:{
-    // only some tailwind colors
-    colors: {
-      transparent: 'transparent',
-      current: 'currentColor',
-      black: '#000',
-      white: '#fff',
-      gray: {
-        50: '#FCFDFF',
-        100: '#FAFCFF',
-        200: '#F2F6FF',
-        300: '#EAF1FF',
-        400: '#DBE7FF',
-        500: '#CBDCFF',
-        600: '#B7C6E6',
-        700: '#7A8499',
-        800: '#5B6373',
-        900: '#3D424D',
-      },
-    },
     extend: {
       colors: {
         // customize xtendui colors
@@ -113,11 +93,6 @@ module.exports = {
           900: '#231F4A',
         },
       },
-      // customize xtendui timing functions
-      transitionTimingFunction: {
-        in: 'cubic-bezier(.19,1,.22,1)',
-        out: 'cubic-bezier(1,0,0,1)',
-      },
     },
   },
 }
@@ -129,7 +104,7 @@ You can **customize components** inside `tailwind.config.js`, check [xtendui/src
 module.exports = {
   theme:{
     xtendui: {
-      btn: { // put component name here
+      btn: { // btn component
         variants: [],
         utility: theme => ({
           // modify utilities
