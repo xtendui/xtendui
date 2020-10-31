@@ -10,13 +10,12 @@ import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
-function SEO({ description, lang, meta, keywords, title }) {
+function SEO({ description, lang, meta, title }) {
   const { site } = useStaticQuery(query)
-
   let metaTitle = title === 'Home' ? site.siteMetadata.description : title || site.siteMetadata.description
   metaTitle = `Xtend UI - ${metaTitle}`
   const metaDescription = description || site.siteMetadata.description
-
+  const keywords = site.siteMetadata.keywords
   return (
     <Helmet
       htmlAttributes={{
@@ -77,9 +76,9 @@ function SEO({ description, lang, meta, keywords, title }) {
 SEO.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
+  keywords: PropTypes.arrayOf(PropTypes.string),
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
-  keywords: PropTypes.arrayOf(PropTypes.string),
 }
 
 SEO.defaultProps = {
@@ -97,6 +96,7 @@ const query = graphql`
       siteMetadata {
         title
         description
+        keywords
         image
         author
       }

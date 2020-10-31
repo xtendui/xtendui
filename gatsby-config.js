@@ -7,11 +7,13 @@ const path = require('path')
 const pack = JSON.parse(fs.readFileSync('package.json').toString())
 const version = pack.version
 const description = pack.description
+const keywords = pack.keywords
 
 module.exports = {
   siteMetadata: {
     title: 'Xtend UI',
     description: description,
+    keywords: keywords,
     author: 'Riccardo Caroli',
     image: '/social.jpg',
     version: version,
