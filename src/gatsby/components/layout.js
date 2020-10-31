@@ -93,7 +93,7 @@ Layout.propTypes = {
         parent: PropTypes.string,
         title: PropTypes.string.isRequired,
         description: PropTypes.string,
-      }).isRequired,
-    }).isRequired,
+      }),
+    }),
   }),
 }

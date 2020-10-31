@@ -48,13 +48,20 @@ class Template extends React.Component {
                           adiacent.frontmatter.demos ? (
                             <div className="gatsby_listing-column" key={i}>
                               <a role="button" className="card gatsby_listing-item" data-gatsby-listing-toggle>
-                                <div className="h4">
-                                  {adiacent.frontmatter.title
-                                    .split(/[\s-]+/)
-                                    .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
-                                    .join(' ')}
+                                <div>
+                                  <div className="h4">
+                                    {adiacent.frontmatter.title
+                                      .split(/[\s-]+/)
+                                      .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
+                                      .join(' ')}
+                                  </div>
+                                  {data.media.items.map((prismic, z) => {
+                                    if (prismic.item.uid === adiacent.frontmatter.title) {
+                                      console.log(prismic.item.data.gif.url)
+                                      return <img src={prismic.item.data.gif ? prismic.item.data.gif.url : null} loading="lazy" alt="Gif demo" key={z} />
+                                    }
+                                  })}
                                 </div>
-                                <p>{adiacent.frontmatter.description}</p>
                               </a>
                               {adiacent.frontmatter.demos ? (
                                 <Demo>
@@ -105,6 +112,18 @@ class Template extends React.Component {
 
 export const query = graphql`
   query($title: String!, $type: String, $category: String, $parent: String, $parents: String) {
+    media: allPrismicThemes {
+      items: edges {
+        item: node {
+          uid
+          data {
+            gif {
+              url
+            }
+          }
+        }
+      }
+    }
     categories: allMarkdownRemark(
       filter: { frontmatter: { type: { eq: $type } } }
       sort: { fields: [frontmatter___date, frontmatter___title], order: [DESC, ASC] }
@@ -180,6 +199,20 @@ export const query = graphql`
 
 Template.propTypes = {
   data: PropTypes.shape({
+    media: PropTypes.shape({
+      items: PropTypes.arrayOf(
+        PropTypes.shape({
+          item: PropTypes.shape({
+            uid: PropTypes.string.isRequired,
+            data: PropTypes.shape({
+              gif: PropTypes.shape({
+                url: PropTypes.string.isRequired,
+              }),
+            }),
+          }),
+        })
+      ),
+    }),
     categories: PropTypes.shape({
       category: PropTypes.arrayOf(
         PropTypes.shape({
@@ -193,11 +226,11 @@ Template.propTypes = {
                   parent: PropTypes.string,
                   title: PropTypes.string.isRequired,
                   description: PropTypes.string,
-                }).isRequired,
-              }).isRequired,
-            }).isRequired
+                }),
+              }),
+            })
           ),
-        }).isRequired
+        })
       ),
     }),
     postsAll: PropTypes.shape({
@@ -210,11 +243,11 @@ Template.propTypes = {
               parent: PropTypes.string,
               title: PropTypes.string.isRequired,
               description: PropTypes.string,
-            }).isRequired,
-          }).isRequired,
-        }).isRequired
+            }),
+          }),
+        })
       ),
-    }).isRequired,
+    }),
     postsAdiacent: PropTypes.shape({
       posts: PropTypes.arrayOf(
         PropTypes.shape({
@@ -226,11 +259,11 @@ Template.propTypes = {
               title: PropTypes.string.isRequired,
               description: PropTypes.string,
               demos: PropTypes.array,
-            }).isRequired,
-          }).isRequired,
-        }).isRequired
+            }),
+          }),
+        })
       ),
-    }).isRequired,
+    }),
     parent: PropTypes.shape({
       frontmatter: PropTypes.shape({
         type: PropTypes.string.isRequired,
@@ -238,7 +271,7 @@ Template.propTypes = {
         parent: PropTypes.string,
         title: PropTypes.string.isRequired,
         description: PropTypes.string,
-      }).isRequired,
+      }),
     }),
     post: PropTypes.shape({
       htmlAst: PropTypes.object.isRequired,
@@ -248,9 +281,9 @@ Template.propTypes = {
         parent: PropTypes.string,
         title: PropTypes.string.isRequired,
         description: PropTypes.string,
-      }).isRequired,
-    }).isRequired,
-  }).isRequired,
+      }),
+    }),
+  }),
 }
 
 export default Template

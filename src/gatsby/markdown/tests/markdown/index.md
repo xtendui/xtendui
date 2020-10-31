@@ -36,7 +36,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
   </demovanilla>
   <demovanilla src="vanilla/components/core/overlay/position">
   </demovanilla>
-  <demovanilla src="vanilla/components/addons/slider/infinite">
+  <demovanilla src="vanilla/components/addons/slider/automatic-scroll">
   </demovanilla>
 </demo>
 

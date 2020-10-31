@@ -178,11 +178,11 @@ Template.propTypes = {
                   parent: PropTypes.string,
                   title: PropTypes.string.isRequired,
                   description: PropTypes.string,
-                }).isRequired,
-              }).isRequired,
-            }).isRequired
+                }),
+              }),
+            })
           ),
-        }).isRequired
+        })
       ),
     }),
     postsAll: PropTypes.shape({
@@ -195,11 +195,11 @@ Template.propTypes = {
               parent: PropTypes.string,
               title: PropTypes.string.isRequired,
               description: PropTypes.string,
-            }).isRequired,
-          }).isRequired,
-        }).isRequired
+            }),
+          }),
+        })
       ),
-    }).isRequired,
+    }),
     postsAdiacent: PropTypes.shape({
       posts: PropTypes.arrayOf(
         PropTypes.shape({
@@ -208,18 +208,18 @@ Template.propTypes = {
               type: PropTypes.string.isRequired,
               parent: PropTypes.string,
               title: PropTypes.string.isRequired,
-            }).isRequired,
-          }).isRequired,
-        }).isRequired
+            }),
+          }),
+        })
       ),
-    }).isRequired,
+    }),
     parent: PropTypes.shape({
       frontmatter: PropTypes.shape({
         type: PropTypes.string.isRequired,
         category: PropTypes.string,
         parent: PropTypes.string,
         title: PropTypes.string.isRequired,
-      }).isRequired,
+      }),
     }),
     post: PropTypes.shape({
       htmlAst: PropTypes.object.isRequired,
@@ -229,7 +229,7 @@ Template.propTypes = {
         parent: PropTypes.string,
         title: PropTypes.string.isRequired,
         description: PropTypes.string,
-      }).isRequired,
-    }).isRequired,
-  }).isRequired,
+      }),
+    }),
+  }),
 }

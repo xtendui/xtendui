@@ -43,7 +43,7 @@ DocHead.propTypes = {
         parent: PropTypes.string,
         title: PropTypes.string.isRequired,
         description: PropTypes.string,
-      }).isRequired,
+      }),
     }),
     post: PropTypes.shape({
       htmlAst: PropTypes.object.isRequired,
@@ -53,7 +53,7 @@ DocHead.propTypes = {
         parent: PropTypes.string,
         title: PropTypes.string.isRequired,
         description: PropTypes.string,
-      }).isRequired,
-    }).isRequired,
-  }).isRequired,
+      }),
+    }),
+  }),
 }

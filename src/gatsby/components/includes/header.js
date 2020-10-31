@@ -229,11 +229,11 @@ Header.propTypes = {
                   parent: PropTypes.string,
                   title: PropTypes.string.isRequired,
                   description: PropTypes.string,
-                }).isRequired,
-              }).isRequired,
-            }).isRequired
+                }),
+              }),
+            })
           ),
-        }).isRequired
+        })
       ),
     }),
     post: PropTypes.shape({
@@ -244,8 +244,8 @@ Header.propTypes = {
         parent: PropTypes.string,
         title: PropTypes.string.isRequired,
         description: PropTypes.string,
-      }).isRequired,
-    }).isRequired,
+      }),
+    }),
     postsAdiacent: PropTypes.shape({
       posts: PropTypes.arrayOf(
         PropTypes.shape({
@@ -257,10 +257,10 @@ Header.propTypes = {
               title: PropTypes.string.isRequired,
               description: PropTypes.string,
               demos: PropTypes.array,
-            }).isRequired,
-          }).isRequired,
-        }).isRequired
+            }),
+          }),
+        })
       ),
-    }).isRequired,
+    }),
   }),
 }

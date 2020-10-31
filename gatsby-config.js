@@ -117,5 +117,32 @@ module.exports = {
         ],
       },
     },
+    // prismic
+    {
+      resolve: 'gatsby-source-prismic',
+      options: {
+        repositoryName: 'xtendui',
+        lang: '*',
+        schemas: {
+          themes: {
+            Main: {
+              uid: {
+                type: 'UID',
+                config: {
+                  label: 'slug',
+                },
+              },
+              gif: {
+                type: 'Link',
+                config: {
+                  select: 'media',
+                  label: 'gif',
+                },
+              },
+            },
+          },
+        },
+      },
+    },
   ],
 }

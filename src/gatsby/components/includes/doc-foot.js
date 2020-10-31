@@ -110,8 +110,8 @@ DocFoot.propTypes = {
         parent: PropTypes.string,
         title: PropTypes.string.isRequired,
         description: PropTypes.string,
-      }).isRequired,
-    }).isRequired,
+      }),
+    }),
     postsAll: PropTypes.shape({
       posts: PropTypes.arrayOf(
         PropTypes.shape({
@@ -122,10 +122,10 @@ DocFoot.propTypes = {
               parent: PropTypes.string,
               title: PropTypes.string.isRequired,
               description: PropTypes.string,
-            }).isRequired,
-          }).isRequired,
-        }).isRequired
+            }),
+          }),
+        })
       ),
-    }).isRequired,
+    }),
   }),
 }
