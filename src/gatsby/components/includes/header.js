@@ -53,10 +53,10 @@ class DocSidebar extends React.Component {
             <div className="gatsby_site_header_links">
               <div>
                 <Link
-                  to="/" // @DOCINDEX
+                  to="/introduction"
                   className={`btn gatsby_btn-site_header_link ${
                     page && page.post
-                      ? markdownSlug(page.post) === '/introduction' // @DOCINDEX
+                      ? markdownSlug(page.post) === '/introduction'
                         ? 'active'
                         : page.post.frontmatter.type === 'Introduction'
                         ? 'current'
@@ -72,7 +72,7 @@ class DocSidebar extends React.Component {
                   to="/components"
                   className={`btn gatsby_btn-site_header_link ${
                     page && page.post
-                      ? markdownSlug(page.post) === '/' + 'components'
+                      ? markdownSlug(page.post) === '/components'
                         ? 'active'
                         : page.post.frontmatter.type === 'Components'
                         ? 'current'
@@ -87,7 +87,7 @@ class DocSidebar extends React.Component {
                 <Link
                   to="/themes"
                   className={`btn gatsby_btn-site_header_link ${
-                    page && page.post ? (markdownSlug(page.post) === '/' + 'themes' ? 'active' : page.post.frontmatter.type === 'Themes' ? 'current' : '') : ''
+                    page && page.post ? (markdownSlug(page.post) === '/themes' ? 'active' : page.post.frontmatter.type === 'Themes' ? 'current' : '') : ''
                   }`}
                 >
                   <span>Themes</span>

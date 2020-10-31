@@ -51,7 +51,6 @@ exports.createPages = ({ actions, graphql }) => {
     }
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       let slug = markdownSlug(node)
-      slug = slug === '/introduction' ? '/' : slug // @DOCINDEX
       createPage({
         path: slug, // needs gatsby-source-filesystem resolve name
         component: node.frontmatter.parent ? docPageTemplate : docCategoryTemplate,

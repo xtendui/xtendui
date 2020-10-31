@@ -221,14 +221,16 @@ const makeDocument = () => {
     if (el.tagName === 'H2') {
       let container = document.querySelector('.gatsby_btn-site_article_sidebar--adiacent.active ~ .gatsby_site_header_adiacent_inner')
       container = container ? container : document.querySelector('.gatsby_btn-site_article_sidebar--sub.active ~ .gatsby_site_header_adiacent_inner')
-      container.classList.add('active')
-      container
-        .querySelector('.gatsby_site_header_item')
-        .append(
-          Xt.createElement(
-            `<div><a href="#${id}" class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--adiacent_inner"><span>${el.textContent}</span></button></div>`
+      if (container) {
+        container.classList.add('active')
+        container
+          .querySelector('.gatsby_site_header_item')
+          .append(
+            Xt.createElement(
+              `<div><a href="#${id}" class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--adiacent_inner"><span>${el.textContent}</span></button></div>`
+            )
           )
-        )
+      }
     }
     // gatsby_make-anchor
     el.setAttribute('id', id)

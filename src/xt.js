@@ -1180,7 +1180,7 @@ if (typeof window !== 'undefined') {
       () => {
         Xt.windowHeightSet()
       },
-      'xtWindowHeight' + 'Resize',
+      'xtWindowHeightResize',
       true
     )
   })

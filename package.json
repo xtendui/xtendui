@@ -26,11 +26,11 @@
     "src/future/*.*"
   ],
   "scripts": {
-    "webpack": "cross-env NODE_ENV=development webpack --progress",
-    "build": "cross-env NODE_ENV=production && gatsby clean && gatsby build",
-    "dev": "cross-env NODE_ENV=development && gatsby clean && gatsby develop -p 8888",
-    "serve": "cross-env NODE_ENV=production yarn build && gatsby serve -p 8888",
-    "deploy": "cross-env NODE_ENV=production yarn build && gh-pages -d public",
+    "webpack": "webpack --progress",
+    "build": "gatsby clean && gatsby build",
+    "dev": "gatsby clean && gatsby develop -p 8888",
+    "serve": "yarn build && gatsby serve -p 8888",
+    "deploy": "yarn build && gh-pages -d public",
     "release": "npx semantic-release --dry-run --no-ci",
     "lint": "eslint . --ext .js",
     "postversion": "yarn webpack"
@@ -58,7 +58,6 @@
     "@semantic-release/release-notes-generator": "^9.0.1",
     "babel-loader": "^8.0.6",
     "clipboard": "^2.0.4",
-    "cross-env": "^7.0.2",
     "css-loader": "^5.0.0",
     "eslint": "7.12.1",
     "eslint-config-prettier": "^6.14.0",

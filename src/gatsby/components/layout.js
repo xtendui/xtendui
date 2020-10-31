@@ -51,13 +51,11 @@ class Layout extends React.Component {
         `}
         render={data => (
           <>
-            <div className="gatsby_site_wrapper">
-              <div className="gatsby_site_main">
-                <div className="gatsby_site_main_inner">
-                  <Header site={data} seo={seo} page={page} />
-                  <div className="gatsby_site_article prose max-w-none">
-                    <DocFullscreen />
-                    {page && markdownSlug(page.post) === '/introduction' ? ( // @DOCINDEX
+            {seo.title === 'Home' ? (
+              <div className="gatsby_site_wrapper">
+                <div className="gatsby_site_main">
+                  <div className="gatsby_site_main_inner">
+                    <div className="gatsby_site_article gatsby_site_article--home prose max-w-none">
                       <main className="gatsby_site_article_inner" id="gatsby_open-full-inner">
                         <article className="gatsby_site_article_content">
                           <div className="gatsby_site_article_content_inner">{children}</div>
@@ -68,7 +66,17 @@ class Layout extends React.Component {
                           </div>
                         </footer>
                       </main>
-                    ) : (
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="gatsby_site_wrapper">
+                <div className="gatsby_site_main">
+                  <div className="gatsby_site_main_inner">
+                    <Header site={data} seo={seo} page={page} />
+                    <div className="gatsby_site_article gatsby_site_article--markdown prose max-w-none">
+                      <DocFullscreen />
                       <main className="gatsby_site_article_inner" id="gatsby_open-full-inner">
                         {page ? <DocHead page={page} /> : null}
                         <article className="gatsby_site_article_content">
@@ -81,11 +89,11 @@ class Layout extends React.Component {
                           </div>
                         </footer>
                       </main>
-                    )}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            )}
           </>
         )}
       />

@@ -28,36 +28,6 @@ body {
   z-index: 7;
 }
 
-/* spacing and background */
-
-.gatsby_site_article_hero {
-  @apply pt-20 pb-16;
-  border-bottom: 1px solid theme('colors.gray.200');
-  background: theme('colors.gray.100');
-  background: linear-gradient(225deg, theme('colors.gray.100') 33%, theme('colors.gray.200') 100%);
-}
-
-.gatsby_site_article_content {
-  @apply py-16;
-  flex: 1 1 auto;
-  background: theme('colors.white');
-}
-
-.gatsby_site_footer {
-  border-top: 1px solid theme('colors.gray.200');
-  background: theme('colors.gray.100');
-  background: linear-gradient(225deg, theme('colors.gray.100') 33%, theme('colors.gray.200') 100%);
-}
-
-/* container */
-
-.gatsby_site_article_hero-inner, .gatsby_site_article_content, .gatsby_site_footer_inner {
-  @apply container ml-0;
-  @screen xl {
-    max-width: 1152px;
-  }
-}
-
 /* prevent horizontal overflow */
 
 .gatsby_site_wrapper {
@@ -87,11 +57,33 @@ body {
   flex: 1 1 auto;
 }
 
-/**
- * article
- */
+.gatsby_site_article_content {
+  flex: 1 1 auto;
+}
 
-.gatsby_site_article {
+/* structure */
+
+.gatsby_site_article_hero {
+  @apply pt-20 pb-16;
+  border-bottom: 1px solid theme('colors.gray.200');
+  background: theme('colors.gray.100');
+  background: linear-gradient(225deg, theme('colors.gray.100') 33%, theme('colors.gray.200') 100%);
+}
+
+.gatsby_site_footer {
+  border-top: 1px solid theme('colors.gray.200');
+  background: theme('colors.gray.100');
+  background: linear-gradient(225deg, theme('colors.gray.100') 33%, theme('colors.gray.200') 100%);
+}
+
+.gatsby_site_article--home {
+  @apply bg-white;
+  .gatsby_site_footer_inner {
+    @apply container;
+  }
+}
+
+.gatsby_site_article--markdown {
   @apply bg-white;
   @screen lg {
     margin-left: 18rem;
@@ -99,7 +91,18 @@ body {
   @screen xl {
     margin-left: 20rem;
   }
+  .gatsby_site_article_hero-inner, .gatsby_site_article_content, .gatsby_site_footer_inner {
+    @apply container ml-0;
+    @screen xl {
+      max-width: 1152px;
+    }
+  }
+  .gatsby_site_article_content {
+    @apply py-16;
+    background: theme('colors.white');
+  }
 }
+
 .gatsby_site_article_hero {
   .p {
     @apply mt-0 mb-2;

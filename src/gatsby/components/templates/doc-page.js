@@ -33,7 +33,6 @@ class Template extends React.Component {
       <Layout seo={seo} page={data}>
         <SEO title={seo.title} description={seo.description} />
         {data.post.htmlAst !== '<div></div>' ? renderAst(data.post.htmlAst) : null}
-
         {data.post.frontmatter.parent === data.post.frontmatter.title ? (
           data.postsAdiacent.posts.length > 1 ? (
             <div className="gatsby_listing">

@@ -36,31 +36,31 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
   </demovanilla>
   <demovanilla src="vanilla/components/core/overlay/position">
   </demovanilla>
+  <demovanilla src="vanilla/components/addons/slider/infinite">
+  </demovanilla>
 </demo>
 
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/brands-structure-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/hero/fashion-hero-v2">
   </div>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/fashion-hero-v2">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/hero/fashion-hero-v1">
   </div>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/industrial-structure-v1">
-  </div>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/fashion-hero-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/structure/industrial-structure-v1">
   </div>
 </demo>
 
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/sequential-megamenu-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/navigation/direction-megamenu-v1">
   </div>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/xtend-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/animation/xtend-v1">
   </div>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/collapse-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/theme/animation/collapse-v1">
   </div>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/furniture-structure-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/structure/furniture-structure-v1">
   </div>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/furniture-listing-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/listing/furniture-listing-v1">
   </div>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/fashion-listing-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/listing/fashion-listing-v1">
   </div>
 </demo>
 

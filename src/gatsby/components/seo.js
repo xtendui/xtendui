@@ -13,7 +13,7 @@ import Helmet from 'react-helmet'
 function SEO({ description, lang, meta, keywords, title }) {
   const { site } = useStaticQuery(query)
 
-  let metaTitle = title === 'Introduction' ? site.siteMetadata.description : title || site.siteMetadata.description // @DOCINDEX
+  let metaTitle = title === 'Home' ? site.siteMetadata.description : title || site.siteMetadata.description
   metaTitle = `Xtend UI - ${metaTitle}`
   const metaDescription = description || site.siteMetadata.description
 
@@ -75,11 +75,11 @@ function SEO({ description, lang, meta, keywords, title }) {
 }
 
 SEO.propTypes = {
+  title: PropTypes.string.isRequired,
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   keywords: PropTypes.arrayOf(PropTypes.string),
-  title: PropTypes.string.isRequired,
 }
 
 SEO.defaultProps = {
