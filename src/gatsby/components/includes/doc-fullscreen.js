@@ -1,6 +1,6 @@
 import React from 'react'
 
-class DocFullscreen extends React.Component {
+export default class DocFullscreen extends React.Component {
   render() {
     return (
       <>
@@ -30,5 +30,3 @@ class DocFullscreen extends React.Component {
     )
   }
 }
-
-export default DocFullscreen

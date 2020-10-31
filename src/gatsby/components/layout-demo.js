@@ -8,7 +8,7 @@ import ResizeSensor from 'assets/scripts/ResizeSensor'
 
 import 'assets/styles/theme.css'
 
-class Layout extends React.Component {
+export default class Layout extends React.Component {
   render() {
     const { demo, children } = this.props
     if (typeof window !== 'undefined') {
@@ -51,5 +51,3 @@ Layout.propTypes = {
     cssSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   }).isRequired,
 }
-
-export default Layout

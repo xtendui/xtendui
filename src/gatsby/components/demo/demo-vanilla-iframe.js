@@ -7,7 +7,7 @@ import Layout from 'components/layout-demo'
 
 import { cssSource, jsSource } from 'assets/scripts/source'
 
-class DemoVanillaIframe extends React.Component {
+export default class DemoVanillaIframe extends React.Component {
   render() {
     const { demo } = this.props
     const seo = {}
@@ -28,7 +28,7 @@ class DemoVanillaIframe extends React.Component {
           }
         `}
         render={data => (
-          <Layout seo={seo} demo={demo}>
+          <Layout demo={demo}>
             <SEO title={seo.title} description={seo.description} />
             <div id="body-outer">
               {
@@ -45,8 +45,6 @@ class DemoVanillaIframe extends React.Component {
     )
   }
 }
-
-export default DemoVanillaIframe
 
 DemoVanillaIframe.propTypes = {
   demo: PropTypes.shape({

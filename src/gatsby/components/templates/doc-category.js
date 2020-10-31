@@ -14,7 +14,7 @@ const renderAst = new RehypeReact({
   components: { demo: Demo, demovanilla: DemoVanilla },
 }).Compiler
 
-class Template extends React.Component {
+export default class Template extends React.Component {
   render() {
     const { data } = this.props
     const seo = {}
@@ -29,7 +29,7 @@ class Template extends React.Component {
     seo.description = data.post.frontmatter.description
     seo.title = markdownSlug(data.post) === '/introduction' ? seo.description : seo.title // @DOCINDEX
     return (
-      <Layout seo={seo} page={data}>
+      <Layout page={data}>
         <SEO title={seo.title} description={seo.description} />
         {data.post.htmlAst !== '<div></div>' ? renderAst(data.post.htmlAst) : null}
         <div className="gatsby_listing">
@@ -90,8 +90,6 @@ class Template extends React.Component {
     )
   }
 }
-
-export default Template
 
 export const query = graphql`
   query($title: String!, $type: String, $category: String, $parent: String, $parents: String) {
@@ -235,3 +233,4 @@ Template.propTypes = {
     }).isRequired,
   }).isRequired,
 }
+

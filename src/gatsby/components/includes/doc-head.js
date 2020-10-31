@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-class DocHead extends React.Component {
+export default class DocHead extends React.Component {
   render() {
     const { page } = this.props
     return (
@@ -57,5 +57,3 @@ DocHead.propTypes = {
     }).isRequired,
   }).isRequired,
 }
-
-export default DocHead

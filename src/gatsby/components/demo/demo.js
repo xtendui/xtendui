@@ -3,12 +3,11 @@ import PropTypes from 'prop-types'
 
 import { populateDemo, demoHash } from 'assets/scripts/demo'
 
-class Demo extends React.Component {
+export default class Demo extends React.Component {
   constructor() {
     super()
     this.demoRef = React.createRef()
   }
-
   componentDidMount() {
     const container = this.demoRef.current
     // fix demo index when changing page
@@ -24,7 +23,6 @@ class Demo extends React.Component {
       }
     }
   }
-
   render() {
     const { children } = this.props
     return (
@@ -34,8 +32,6 @@ class Demo extends React.Component {
     )
   }
 }
-
-export default Demo
 
 Demo.propTypes = {
   children: PropTypes.node.isRequired,

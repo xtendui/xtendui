@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import { cssSource, jsSource } from 'assets/scripts/source'
 
-class DemoVanilla extends React.Component {
+export default class DemoVanilla extends React.Component {
   render() {
     const { src, children, name } = this.props
     const demo = require(`../../code/${src}.js`).demo
@@ -48,8 +48,6 @@ class DemoVanilla extends React.Component {
     )
   }
 }
-
-export default DemoVanilla
 
 DemoVanilla.propTypes = {
   children: PropTypes.node.isRequired,

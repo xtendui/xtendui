@@ -30,7 +30,7 @@ class Template extends React.Component {
     seo.title += data.post.frontmatter.type && data.post.frontmatter.type !== data.post.frontmatter.title ? ` ${data.post.frontmatter.type}` : ''
     seo.description = data.post.frontmatter.description ? data.post.frontmatter.description : data.parent.frontmatter.description
     return (
-      <Layout seo={seo} page={data}>
+      <Layout page={data}>
         <SEO title={seo.title} description={seo.description} />
         {data.post.htmlAst !== '<div></div>' ? renderAst(data.post.htmlAst) : null}
         {data.post.frontmatter.parent === data.post.frontmatter.title ? (
@@ -102,8 +102,6 @@ class Template extends React.Component {
     )
   }
 }
-
-export default Template
 
 export const query = graphql`
   query($title: String!, $type: String, $category: String, $parent: String, $parents: String) {
@@ -254,3 +252,5 @@ Template.propTypes = {
     }).isRequired,
   }).isRequired,
 }
+
+export default Template

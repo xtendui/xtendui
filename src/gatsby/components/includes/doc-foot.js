@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import kebabCase from 'lodash.kebabcase'
 
-class DocFoot extends React.Component {
+export default class DocFoot extends React.Component {
   render() {
     const { page } = this.props
     const postsIntroduction = page.postsAll.posts.filter(
@@ -129,5 +129,3 @@ DocFoot.propTypes = {
     }).isRequired,
   }),
 }
-
-export default DocFoot
