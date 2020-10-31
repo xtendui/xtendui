@@ -194,7 +194,11 @@ body {
   p {
     opacity: 0.5;
   }
-  img {
-    @apply mt-2 rounded-md border-3 border-gray-700 border-opacity-25;
+  .media-container {
+    @apply mt-3 rounded-md border-3 border-gray-500 border-opacity-25 bg-gray-200;
+    padding-bottom: 60.6%;
+  }
+  .gatsby_listing-item--themes& {
+    text-align: center;
   }
 }

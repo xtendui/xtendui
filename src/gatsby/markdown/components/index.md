@@ -1,5 +1,5 @@
 ---
 type: "Components"
 title: "Components"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+description: "Tailwind components with cssinjs and classes for customization, and vanilla javascript components."
 ---

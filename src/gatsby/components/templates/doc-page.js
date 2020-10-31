@@ -47,7 +47,7 @@ class Template extends React.Component {
                         adiacent.frontmatter.parent !== adiacent.frontmatter.title ? (
                           adiacent.frontmatter.demos ? (
                             <div className="gatsby_listing-column" key={i}>
-                              <a role="button" className="card gatsby_listing-item" data-gatsby-listing-toggle>
+                              <a role="button" className="card gatsby_listing-item gatsby_listing-item--themes" data-gatsby-listing-toggle>
                                 <div>
                                   <div className="h4">
                                     {adiacent.frontmatter.title
@@ -57,8 +57,18 @@ class Template extends React.Component {
                                   </div>
                                   {data.media.items.map((prismic, z) => {
                                     if (prismic.item.uid === adiacent.frontmatter.title) {
-                                      console.log(prismic.item.data.gif.url)
-                                      return <img src={prismic.item.data.gif ? prismic.item.data.gif.url : null} loading="lazy" alt="Gif demo" key={z} />
+                                      return (
+                                        <div className="media-container" key={z}>
+                                          <div className="media-inner">
+                                            <img
+                                              className="media object-cover object-center"
+                                              src={prismic.item.data.gif ? prismic.item.data.gif.url : null}
+                                              loading="lazy"
+                                              alt="Gif demo"
+                                            />
+                                          </div>
+                                        </div>
+                                      )
                                     }
                                   })}
                                 </div>
