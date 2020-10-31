@@ -16,16 +16,16 @@ description: "Extremely customizable and designed for building custom websites w
   <a href="https://xtendui.com/introduction/getting-started/setup">Setup</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://xtendui.com/components">Components</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://xtendui.com/themes">Themes</a>
   <br/><br/>
   <a href="https://github.com/minimit/xtendui/blob/master/LICENSE" title="License" style="display: inline-block;">
-    <img src="https://img.shields.io/npm/l/xtendui.svg" alt="License" loading="eager">
+    <img src="https://img.shields.io/npm/l/xtendui.svg?style=flat-square" alt="License" loading="eager">
   </a>
   <a href="https://github.com/minimit/xtendui/actions?query=workflow%3ARelease" title="Build Status" style="display: inline-block;">
-    <img src="https://img.shields.io/github/workflow/status/minimit/xtendui/Release" alt="Build Status" loading="eager">
+    <img src="https://img.shields.io/github/workflow/status/minimit/xtendui/Release?style=flat-square" alt="Build Status" loading="eager">
   </a>
   <a href="https://depfu.com/repos/github/minimit/xtendui" title="Dependencies" style="display: inline-block;">
-    <img src="https://img.shields.io/depfu/minimit/xtendui" alt="Dependencies" loading="eager">
+    <img src="https://img.shields.io/depfu/minimit/xtendui?style=flat-square" alt="Dependencies" loading="eager">
   </a>
   <a href="https://www.npmjs.com/package/xtendui" title="Latest Release" style="display: inline-block;">
-    <img src="https://img.shields.io/npm/v/xtendui.svg" alt="Latest Release" loading="eager">
+    <img src="https://img.shields.io/npm/v/xtendui.svg?style=flat-square" alt="Latest Release" loading="eager">
   </a>
 </p>
 
