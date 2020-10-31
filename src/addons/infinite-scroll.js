@@ -40,6 +40,7 @@ class InfiniteScroll {
     self.triggerElement = self.object.querySelector(self.options.elements.trigger)
     self.resetElement = self.object.querySelector(self.options.elements.reset)
     self.itemsElement = self.object.querySelector(self.options.elements.items)
+    self.spaceAdditionalElements = self.object.querySelectorAll(self.options.elements.spaceAdditional)
     // fake
     if (!self.options.get) {
       self.itemsFake = self.object.querySelector(self.options.elements.items).cloneNode(true)
@@ -61,17 +62,6 @@ class InfiniteScroll {
         found.setAttribute('data-xt-infinitescroll-item-first', self.current)
       }
     }
-    // resume state
-    const state = history.state
-    if (state && state.scrollResume) {
-      document.scrollingElement.scrollTop = state.scrollResume
-      // debug
-      if (Xt.debug) {
-        console.debug('Xt.debug xt-infinitescroll scrollResume', state.scrollResume)
-      }
-    }
-    // paginate
-    self.paginate()
     // class
     if (self.current > self.options.min) {
       self.object.classList.add(...self.classesReset)
@@ -84,6 +74,27 @@ class InfiniteScroll {
     if (self.options.events.reset) {
       self.resetElement.addEventListener(self.options.events.reset, self.eventReset.bind(self))
     }
+    // resume state
+    const state = history.state
+    if (state && state.scrollResume) {
+      let add = 0
+      for (const additional of self.spaceAdditionalElements) {
+        add += additional.offsetHeight
+      }
+      document.scrollingElement.scrollTop = state.scrollResume - state.scrollRemove + add
+      // debug
+      if (Xt.debug) {
+        console.debug('Xt.debug xt-infinitescroll scrollResume', state.scrollResume)
+      }
+    }
+    // scrollRemove
+    let space = 0
+    for (const additional of self.spaceAdditionalElements) {
+      space += additional.offsetHeight
+    }
+    self.scrollRemove = space
+    // paginate
+    self.paginate()
     // initialized class
     self.object.classList.add(self.componentName)
     // @FIX raf because after .xt custom listeners
@@ -172,7 +183,7 @@ class InfiniteScroll {
     const self = this
     // save scroll position
     if (self.scrollResume) {
-      history.replaceState({ scrollResume: self.scrollResume }, '', self.url.href)
+      history.replaceState({ scrollResume: self.scrollResume, scrollRemove: self.scrollRemove }, '', self.url.href)
     }
   }
 
@@ -424,6 +435,7 @@ InfiniteScroll.optionsDefault = {
     trigger: '[data-xt-infinite-scroll-trigger]',
     reset: '[data-xt-infinitescroll-reset]',
     items: '[data-xt-infinite-scroll-items]',
+    spaceAdditional: '[data-xt-infinite-scroll-spaceadditional]',
     item: ':scope > *',
   },
   // class
