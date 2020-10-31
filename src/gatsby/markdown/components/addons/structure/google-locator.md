@@ -3,7 +3,7 @@ type: "Components"
 category: "Addons"
 parent: "Structure"
 title: "google-locator"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+description: "Plug and play a google maps locator, with all the basic functionality and more."
 ---
 
 ## Installation

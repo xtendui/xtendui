@@ -11,7 +11,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
-  align items
+  Align items
 </div>
 
 <div class="list list-2 items-center">
@@ -34,7 +34,7 @@ demo.htmlSource = `
 </div>
 
 <div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
-  justify content
+  Justify content
 </div>
 
 <div class="list list-2 items-center">

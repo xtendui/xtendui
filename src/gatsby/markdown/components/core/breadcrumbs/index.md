@@ -3,12 +3,15 @@ type: "Components"
 category: "Core"
 parent: "Breadcrumbs"
 title: "Breadcrumbs"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+description: "Examples of breadcrumbs, with all the basic functionality and more."
 ---
 
 ## Usage
 
 Use this code to create a **breadcrumbs**.
+
+[[notePrimary]]
+| For aria purpose use `<nav></nav>`.
 
 <demo>
   <demovanilla src="vanilla/components/core/breadcrumbs/usage">

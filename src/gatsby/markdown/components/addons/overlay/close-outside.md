@@ -3,7 +3,7 @@ type: "Components"
 category: "Addons"
 parent: "Overlay"
 title: "close-outside"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+description: "Overlay close button positioned outside on desktop."
 ---
 
 ## Usage

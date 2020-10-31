@@ -10,7 +10,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="demo--multilevel">
 
-  <nav role="navigation" class="toggle" data-multilevel-tab>
+  <nav class="toggle" data-multilevel-tab>
 
     <div class="h5 flex items-center justify-between">
       <div>
@@ -52,7 +52,7 @@ demo.htmlSource = `
 
   </nav>
 
-  <nav role="navigation" class="toggle" data-multilevel-tab data-xt-group="cat-0">
+  <nav class="toggle" data-multilevel-tab data-xt-group="cat-0">
 
     <div class="h5 flex items-center justify-between">
       <div>
@@ -80,7 +80,7 @@ demo.htmlSource = `
 
   </nav>
 
-  <nav role="navigation" class="toggle" data-multilevel-tab data-xt-group="cat-0a">
+  <nav class="toggle" data-multilevel-tab data-xt-group="cat-0a">
 
     <div class="h5 flex items-center justify-between">
       <div>
@@ -102,7 +102,7 @@ demo.htmlSource = `
 
   </nav>
 
-  <nav role="navigation" class="toggle" data-multilevel-tab data-xt-group="cat-0b">
+  <nav class="toggle" data-multilevel-tab data-xt-group="cat-0b">
 
     <div class="h5 flex items-center justify-between">
       <div>
@@ -124,7 +124,7 @@ demo.htmlSource = `
 
   </nav>
 
-  <nav role="navigation" class="toggle" data-multilevel-tab data-xt-group="cat-1">
+  <nav class="toggle" data-multilevel-tab data-xt-group="cat-1">
 
     <div class="h5 flex items-center justify-between">
       <div>

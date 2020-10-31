@@ -1,9 +1,9 @@
 if (typeof window !== 'undefined') {
   require('xtendui/src/private/demos/components/addons/animation/ripple.js')
-  require('xtendui/src/private/demos/components/addons/group/expand.js')
+  require('xtendui/src/private/demos/components/addons/list-group/expand.js')
   require('xtendui/src/private/demos/components/addons/navigation/multilevel.js')
   require('xtendui/src/private/demos/components/addons/navigation/scroll-to-anchor.js')
-  require('xtendui/src/private/demos/components/addons/slider/infinite.js')
+  require('xtendui/src/private/demos/components/addons/slider/automatic-scroll.js')
   require('xtendui/src/private/demos/components/addons/structure/google-locator.js')
   require('xtendui/src/private/demos/components/addons/structure/jump-to-content.js')
   require('xtendui/src/private/demos/components/core/drop/animation-js.js')

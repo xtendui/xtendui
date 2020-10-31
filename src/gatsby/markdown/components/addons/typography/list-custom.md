@@ -3,7 +3,7 @@ type: "Components"
 category: "Addons"
 parent: "Typography"
 title: "list-custom"
-description: "Custom ordered and unordered lists."
+description: "Customize ordered and unordered lists with svg instead of bullet points."
 ---
 
 ## Usage

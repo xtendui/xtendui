@@ -3,7 +3,7 @@ type: "Components"
 category: "Core"
 parent: "Slider"
 title: "Slider"
-description: "Customizable sliders with custom animation and interaction."
+description: "Create visually stunning sliders, has a comprehensive javascript api."
 ---
 
 ## Installation

@@ -3,7 +3,7 @@ type: "Components"
 category: "Addons"
 parent: "Structure"
 title: "sticky-footer"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+description: "Example with simple markup and css for a sticky footer."
 ---
 
 ## Usage

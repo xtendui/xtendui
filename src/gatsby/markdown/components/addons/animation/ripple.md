@@ -3,7 +3,7 @@ type: "Components"
 category: "Addons"
 parent: "Animation"
 title: "ripple"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+description: "Material ripple effect on user interaction."
 ---
 
 ## Installation

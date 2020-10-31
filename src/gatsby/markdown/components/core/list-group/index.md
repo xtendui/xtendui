@@ -3,7 +3,7 @@ type: "Components"
 category: "Core"
 parent: "List Group"
 title: "List Group"
-description: "Css component to group up buttons and inputs. Can easily create toolbar and navigations."
+description: "List subcomponent to group up buttons, inputs and other content."
 ---
 
 ## Usage
@@ -17,7 +17,7 @@ Use this code to create a **group horizontal**.
 Use **tailwind classes** to assign styles (e.g. [border-color](https://tailwindcss.com/docs/border-color), [border-radius](https://tailwindcss.com/docs/border-radius)).
 
 <demo>
-  <demovanilla src="vanilla/components/core/group/usage">
+  <demovanilla src="vanilla/components/core/list-group/usage">
   </demovanilla>
 </demo>
 
@@ -28,11 +28,11 @@ Use this code to create a **group vertical** with `.flex-col`.
 Use **tailwind classes** to assign styles (e.g. [border-color](https://tailwindcss.com/docs/border-color), [border-radius](https://tailwindcss.com/docs/border-radius)).
 
 <demo>
-  <demovanilla src="vanilla/components/core/group/usage-vertical">
+  <demovanilla src="vanilla/components/core/list-group/usage-vertical">
   </demovanilla>
 </demo>
 
-Check subpage to [customize content](/components/core/group/content).
+Check subpage to [customize content](/components/core/list-group/content).
 
 #### Nested
 
@@ -49,6 +49,6 @@ Use **component classes** to style **nested**.
 You can nest `.list-inner` and [flex-direction](https://tailwindcss.com/docs/flex-direction).
 
 <demo>
-  <demovanilla src="vanilla/components/core/group/usage-nested">
+  <demovanilla src="vanilla/components/core/list-group/usage-nested">
   </demovanilla>
 </demo>

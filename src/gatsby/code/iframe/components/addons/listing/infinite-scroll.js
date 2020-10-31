@@ -21,7 +21,7 @@ demo.htmlSource = `
 <div class="listing" data-xt-infinite-scroll="{ max: 4 }">
   <div class="container">
 
-    <div class="infinite-scroll-pre mb-4">
+    <div class="infinite-scroll-pre mb-4" data-xt-infinite-scroll-spaceadditional>
       <div class="list list-1 flex-col items-center">
         <div>
           <button type="button" class="btn btn-md ${btnDefault()}" data-xt-infinitescroll-reset>

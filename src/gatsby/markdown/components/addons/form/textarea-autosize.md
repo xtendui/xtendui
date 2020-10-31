@@ -3,7 +3,7 @@ type: "Components"
 category: "Addons"
 parent: "Form"
 title: "textarea-autosize"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+description: "Textarea with dynamic height depending on content."
 ---
 
 ## Installation

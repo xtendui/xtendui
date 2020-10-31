@@ -3,7 +3,7 @@ type: "Components"
 category: "Core"
 parent: "Icons"
 title: "Icons"
-description: "Simple and extensible button styles."
+description: "Everything you need to stylize svg icons."
 ---
 
 ## Customization

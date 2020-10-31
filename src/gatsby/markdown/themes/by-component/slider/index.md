@@ -3,5 +3,5 @@ type: "Themes"
 category: "By Component"
 parent: "Slider"
 title: "Slider"
-description: "Customizable sliders with custom animation and interaction."
+description: "Create visually stunning sliders with a comprehensive javascript api."
 ---

@@ -3,5 +3,5 @@ type: "Themes"
 category: "By Component"
 parent: "List Group"
 title: "List Group"
-description: "Css component to group up buttons and form inputs."
+description: "List subcomponent to group up buttons, inputs and other content."
 ---

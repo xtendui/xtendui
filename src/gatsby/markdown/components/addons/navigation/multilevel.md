@@ -3,12 +3,15 @@ type: "Components"
 category: "Addons"
 parent: "Navigation"
 title: "multilevel"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+description: "Simple example of multilevel navigation with toggle component."
 ---
 
 ## Usage
 
 Use this code to create a **toggle multilevel**.
+
+[[notePrimary]]
+| For aria purpose use `<nav></nav>`.
 
 [[notePrimary]]
 | This addon uses [toggle](/components/core/toggle). Visit the component page to import javascript and customize.

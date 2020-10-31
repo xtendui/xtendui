@@ -3,5 +3,5 @@ type: "Themes"
 category: "By Type"
 parent: "Animation"
 title: "Animation"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+description: "Animation components and utilities with css transitions/animations or javascript animations."
 ---

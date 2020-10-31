@@ -3,7 +3,7 @@ type: "Components"
 category: "Core"
 parent: "Structure"
 title: "Structure"
-description: "Structure components and utilities."
+description: "Generic and layout css, javascript and themes."
 ---
 
 ## Customization

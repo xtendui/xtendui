@@ -3,7 +3,7 @@ type: "Components"
 category: "Core"
 parent: "Drop"
 title: "Drop"
-description: "Highly customizable dropdowns that can contain anything you want."
+description: "Nested navigation to show on user interaction, can contain lists and more complex graphics."
 ---
 
 ## Installation

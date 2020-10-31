@@ -3,7 +3,7 @@ type: "Components"
 category: "Core"
 parent: "Listing"
 title: "Listing"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+description: "Listing markup component for category pages or simple product listing."
 ---
 
 ## Usage

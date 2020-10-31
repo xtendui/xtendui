@@ -3,7 +3,7 @@ type: "Components"
 category: "Addons"
 parent: "List Group"
 title: "toolbar"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+description: "Simple toolbar component as a subcomponent of list group."
 ---
 
 ## Usage

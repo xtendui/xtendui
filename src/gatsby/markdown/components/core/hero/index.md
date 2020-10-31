@@ -3,7 +3,7 @@ type: "Components"
 category: "Core"
 parent: "Hero"
 title: "Hero"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+description: "Hero markup component for pages introductions or banners."
 ---
 
 ## Customization

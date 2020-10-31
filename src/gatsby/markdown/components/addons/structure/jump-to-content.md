@@ -3,7 +3,7 @@ type: "Components"
 category: "Addons"
 parent: "Structure"
 title: "jump-to-content"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+description: "Example aria jump to content that activates on focus using the tab key."
 ---
 
 ## Usage

@@ -3,7 +3,7 @@ type: "Components"
 category: "Core"
 parent: "Loader"
 title: "Loader"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+description: "Plug and play visual loaders, can easily integrate with javascript."
 ---
 
 ## Customization

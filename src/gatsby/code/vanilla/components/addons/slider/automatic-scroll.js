@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="demo--slider-infinite">
+<div class="demo--slider-automaticscroll">
 
   <div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
     Constant speed

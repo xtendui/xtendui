@@ -3,7 +3,7 @@ type: "Components"
 category: "Core"
 parent: "Link"
 title: "Link"
-description: "Default link styles for html links, buttons and divs."
+description: "Default link styles for html links, can also be applied to buttons and other tags."
 ---
 
 ## Customization

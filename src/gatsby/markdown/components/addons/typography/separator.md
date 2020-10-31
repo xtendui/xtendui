@@ -3,7 +3,7 @@ type: "Components"
 category: "Addons"
 parent: "Typography"
 title: "Separator"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+description: "Separator to be used in text content"
 ---
 
 ## Customization

@@ -3,7 +3,7 @@ type: "Components"
 category: "Core"
 parent: "Media"
 title: "Media"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+description: "Wrapper to have media with aspect ratio, also on page load, useful also for advanced animations."
 ---
 
 ## Customization

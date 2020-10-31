@@ -3,7 +3,7 @@ type: "Components"
 category: "Core"
 parent: "Row"
 title: "Row"
-description: "Flex row to space any element with paddings, also spaces vertically."
+description: "Flex component to space columns with paddings, also spaces vertically."
 ---
 
 ## Customization

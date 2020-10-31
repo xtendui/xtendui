@@ -3,7 +3,7 @@ type: "Components"
 category: "Addons"
 parent: "List Group"
 title: "nav"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+description: "Simple nav component as a subcomponent of list group."
 ---
 
 ## Usage

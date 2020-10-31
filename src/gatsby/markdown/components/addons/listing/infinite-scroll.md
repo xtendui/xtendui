@@ -3,7 +3,7 @@ type: "Components"
 category: "Addons"
 parent: "Listing"
 title: "Infinite Scroll"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+description: "Automatic pagination activable on click or on scroll, with browser navigation support that loads only the current page."
 ---
 
 ## Installation
@@ -32,7 +32,7 @@ Set a `options.get` variable for a **get request on current url** for more items
 
 Here are the main **javascript options**.
 
-For advanced options see javascript file source code `xtendui/src/addons/listing/infinite-scroll.js`.
+For advanced options see javascript file source code `xtendui/src/addons/infinite-scroll.js`.
 
 <div class="table-scroll">
 

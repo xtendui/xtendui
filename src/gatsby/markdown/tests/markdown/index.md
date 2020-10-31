@@ -66,6 +66,10 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 ## Markdown
 
+description: "Examples of breadcrumbs, with all the basic functionality and more."
+
+description: "Listing markup component for category pages or simple product listing."
+
 Use this code to create a **card**.
 
 Use this code to create a **group vertical** with `.flex-col`.
@@ -101,6 +105,9 @@ Use **component utility** `.card-group` to stack card content **horizontally**.
 See [group component](/components/core/loader) to create a **button with group**.
 
 See [mouse follow addon](/components/core/loader) to create a **loader with mouse follow**.
+
+[[notePrimary]]
+| For aria purpose use `<nav></nav>`.
 
 [[noteDefault]]
 | List `ul` and `old` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
@@ -162,7 +169,7 @@ You can set **scroll mode** with css selectors.
 
 </div>
 
-Lorem ipsum `dolor sit` amet, *consectetur* **adipiscing** elit. Nam in [laoreet tellus](/components/group/button), nec commodo massa. Aenean ut ex at ex pellentesque efficitur.
+Lorem ipsum `dolor sit` amet, *consectetur* **adipiscing** elit. Nam in [laoreet tellus](/components/list-group/button), nec commodo massa. Aenean ut ex at ex pellentesque efficitur.
 
 <script type="text/plain" class="language-markup">
   <a href="#" class="btn btn-default">

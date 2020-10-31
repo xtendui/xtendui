@@ -3,7 +3,7 @@ type: "Components"
 category: "Core"
 parent: "List"
 title: "List"
-description: "Flex lists to space any element with margins, also spaces vertically."
+description: "Flex component to space any element with margins, also spaces vertically."
 ---
 
 ## Customization

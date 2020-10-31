@@ -3,7 +3,7 @@ type: "Components"
 category: "Addons"
 parent: "Overlay"
 title: "message-outside"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+description: "Add content on the available side space of overlay with sides."
 ---
 
 ## Usage

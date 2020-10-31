@@ -3,7 +3,7 @@ type: "Components"
 category: "Addons"
 parent: "Navigation"
 title: "nav-sides"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+description: "Arrow navigation on sides that appears and follows the mouse."
 ---
 
 ## Customization
@@ -26,12 +26,12 @@ module.exports = {
 
 ## Usage
 
+[[notePrimary]]
+| This addon uses [mouse follow](/components/addons/animation/mouse-follow). Visit the component page to import javascript and customize.
+
 #### Toggle
 
 Use this code to create a **navigation sides** on toggle. Position relative to closest element with `.relative`.
-
-[[notePrimary]]
-| This addon uses [mouse follow](/components/addons/animation/mouse-follow). Visit the component page to import javascript and customize.
 
 <demo>
   <demovanilla src="vanilla/components/addons/navigation/nav-sides-toggle">
@@ -41,9 +41,6 @@ Use this code to create a **navigation sides** on toggle. Position relative to c
 #### Slider
 
 Use this code to create a **navigation sides** on slider.
-
-[[notePrimary]]
-| This addon uses [mouse follow](/components/addons/animation/mouse-follow). Visit the component page to import javascript and customize.
 
 <demo>
   <demovanilla src="vanilla/components/addons/navigation/nav-sides-slider">

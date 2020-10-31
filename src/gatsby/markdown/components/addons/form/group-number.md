@@ -1,9 +1,9 @@
 ---
 type: "Components"
 category: "Addons"
-parent: "List Group"
-title: "number"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+parent: "Form"
+title: "group-number"
+description: "Input number with list group and javascript for and effective interaction."
 ---
 
 ## Installation
@@ -11,7 +11,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 Import the **component javascript** file.
 
 ```jsx
-import 'xtendui/src/addons/group/number'
+import 'xtendui/src/addons/group-number'
 ```
 
 ## Customization
@@ -34,9 +34,9 @@ module.exports = {
 
 ## Usage
 
-Use this code to create a **group number**.
+Use this code to create a **list group number**.
 
 <demo>
-  <demovanilla src="vanilla/components/addons/group/number">
+  <demovanilla src="vanilla/components/addons/form/group-number">
   </demovanilla>
 </demo>

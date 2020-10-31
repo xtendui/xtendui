@@ -1,7 +1,7 @@
-@import 'xtendui/src/private/demos/components/addons/group/expand.css';
+@import 'xtendui/src/private/demos/components/addons/list-group/expand.css';
 @import 'xtendui/src/private/demos/components/addons/listing/infinite-scroll.css';
 @import 'xtendui/src/private/demos/components/addons/overlay/message-outside.css';
-@import 'xtendui/src/private/demos/components/addons/slider/infinite.css';
+@import 'xtendui/src/private/demos/components/addons/slider/automatic-scroll.css';
 @import 'xtendui/src/private/demos/components/addons/structure/google-locator.css';
 @import 'xtendui/src/private/demos/components/addons/structure/jump-to-content.css';
 @import 'xtendui/src/private/demos/components/addons/structure/sticky-footer.css';

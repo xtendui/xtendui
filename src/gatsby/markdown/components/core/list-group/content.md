@@ -11,12 +11,12 @@ date: "2030-10-10"
 Use **tailwind classes** to assign size (e.g. [max-width](https://tailwindcss.com/docs/max-width)). On responsive the content will shrink.
 
 <demo>
-  <demovanilla src="vanilla/components/core/group/size">
+  <demovanilla src="vanilla/components/core/list-group/size">
   </demovanilla>
 </demo>
 
 <demo>
-  <demovanilla src="vanilla/components/core/group/size-vertical">
+  <demovanilla src="vanilla/components/core/list-group/size-vertical">
   </demovanilla>
 </demo>
 
@@ -25,12 +25,12 @@ Use **tailwind classes** to assign size (e.g. [max-width](https://tailwindcss.co
 Use [list space](/components/core/list/content#space) **component classes** to assign space).
 
 <demo>
-  <demovanilla src="vanilla/components/core/group/space">
+  <demovanilla src="vanilla/components/core/list-group/space">
   </demovanilla>
 </demo>
 
 <demo>
-  <demovanilla src="vanilla/components/core/group/space-vertical">
+  <demovanilla src="vanilla/components/core/list-group/space-vertical">
   </demovanilla>
 </demo>
 
@@ -39,12 +39,12 @@ Use [list space](/components/core/list/content#space) **component classes** to a
 Use **tailwind classes** to assign border.
 
 <demo>
-  <demovanilla src="vanilla/components/core/group/border">
+  <demovanilla src="vanilla/components/core/list-group/border">
   </demovanilla>
 </demo>
 
 <demo>
-  <demovanilla src="vanilla/components/core/group/border-vertical">
+  <demovanilla src="vanilla/components/core/list-group/border-vertical">
   </demovanilla>
 </demo>
 
@@ -53,11 +53,11 @@ Use **tailwind classes** to assign border.
 You can make group a **single interactive object**, be sure to use `group` on the interactive element and the variants `group-hover:` and `group-active:` classes.
 
 <demo>
-  <demovanilla src="vanilla/components/core/group/merge">
+  <demovanilla src="vanilla/components/core/list-group/merge">
   </demovanilla>
 </demo>
 
 <demo>
-  <demovanilla src="vanilla/components/core/group/merge-vertical">
+  <demovanilla src="vanilla/components/core/list-group/merge-vertical">
   </demovanilla>
 </demo>

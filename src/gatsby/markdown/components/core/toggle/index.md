@@ -3,7 +3,7 @@ type: "Components"
 category: "Core"
 parent: "Toggle"
 title: "Toggle"
-description: "Toggle is the main js component that toggle classes, it's inherited by many other js components."
+description: "Create advanced interactions with ease, has a comprehensive javascript api."
 ---
 
 ## Installation

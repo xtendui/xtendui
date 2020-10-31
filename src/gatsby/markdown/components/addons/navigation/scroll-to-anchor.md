@@ -3,7 +3,7 @@ type: "Components"
 category: "Addons"
 parent: "Navigation"
 title: "scroll-to-anchor"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+description: "Automatically scroll to an id clicking the relative anchor with that id."
 ---
 
 ## Installation

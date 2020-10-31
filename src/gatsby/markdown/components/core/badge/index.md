@@ -3,7 +3,7 @@ type: "Components"
 category: "Core"
 parent: "Badge"
 title: "Badge"
-description: "Badge component for showing very short messages."
+description: "Component for showing short and relevant tags."
 ---
 
 ## Customization
