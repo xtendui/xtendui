@@ -28,10 +28,10 @@ export default class Layout extends React.Component {
     makeDocument()
   }
   render() {
-    const { page, children } = this.props
+    const { children, page, seo } = this.props
     return (
       <>
-        {!page ? (
+        {seo && seo.title === 'Home' ? (
           <div className="gatsby_site_wrapper">
             <div className="gatsby_site_main">
               <div className="gatsby_site_main_inner">
@@ -81,6 +81,9 @@ export default class Layout extends React.Component {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  seo: PropTypes.shape({
+    title: PropTypes.string,
+  }),
   page: PropTypes.shape({
     post: PropTypes.shape({
       htmlAst: PropTypes.object.isRequired,

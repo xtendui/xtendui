@@ -9,7 +9,7 @@ export default class Page extends React.Component {
     seo.title = 'Home'
     seo.description = ''
     return (
-      <Layout>
+      <Layout seo={seo}>
         <SEO title={seo.title} description={seo.description} />
         <p>@TODO</p>
       </Layout>
