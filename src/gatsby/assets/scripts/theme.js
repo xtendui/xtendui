@@ -235,7 +235,8 @@ const makeDocument = () => {
     el.setAttribute('id', id)
     el.classList.add('gatsby_make-anchor')
     // wrapInner
-    const link = Xt.createElement(`<a href="#${id}"></a>`)
+    const link = Xt.createElement(`<a href="#"></a>`)
+    link.setAttribute('href', `#${id}`)
     el.classList.add('xt-ignore')
     el.before(link)
     const inner = el.querySelector(':scope > *')
