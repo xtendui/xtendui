@@ -183,20 +183,20 @@
   padding-bottom: 1px;
   border-width: 0;
   @apply w-full font-sans;
-  font-weight: theme('fontWeight.normal');
-  letter-spacing: theme('letterSpacing.wide');
   > span {
     border-radius: 6px;
     padding: .3125rem .5rem;
+    font-weight: theme('fontWeight.normal');
     font-size: 0.8125rem;
     color: rgba(255, 255, 255, 0.6);
     line-height: 1;
+    letter-spacing: theme('letterSpacing.wide');
     text-transform: none;
   }
   &.gatsby_btn-site_header_link {
-    font-weight: theme('fontWeight.semibold');
     > span {
       @apply w-full;
+      font-weight: theme('fontWeight.semibold');
       text-transform: uppercase;
     }
   }
@@ -225,10 +225,10 @@
     }
   }
   &:active, &.active, &.current {
-    font-weight: theme('fontWeight.semibold');
     > span {
       @apply bg-accent-900 bg-opacity-50;
       transform: none;
+      font-weight: theme('fontWeight.semibold');
       color: theme('colors.white');
     }
   }
