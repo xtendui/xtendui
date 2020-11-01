@@ -51,15 +51,6 @@ module.exports = {
       // setup
       position: 'relative',
       overflow: 'hidden',
-      '&:not(.xt-slider)': {
-        // @FIX page load height without .active slides
-        '.slide': {
-          '&:first-child': {
-            display: 'block !important',
-            position: 'relative !important',
-          },
-        },
-      },
     },
     '.slides': {
       // setup
@@ -98,6 +89,15 @@ module.exports = {
         position: 'absolute',
         top: '0',
         left: '0',
+      },
+      // @FIX page load height without .active slides
+      '&:not(.xt-slider)': {
+        '.slide': {
+          '&:first-child': {
+            display: 'block !important',
+            position: 'relative !important',
+          },
+        },
       },
     },
     '.slides-inner': {

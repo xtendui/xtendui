@@ -22,7 +22,7 @@ demo.htmlSource = `
     <nav class="slides-inner duration-none transform-none">
 
       <div class="slide w-full slide-absolute">
-        <div class="hero-cover absolute inset-0 z-active pointer-events-none bg-accent-500"></div>
+        <div class="hero-cover absolute inset-0 z-active pointer-events-none bg-accent-500 transform translate-x-full"></div>
         <div class="hero relative block overflow-hidden w-full">
           <div class="hero-inner">
             <div class="hero-asset">
@@ -44,7 +44,7 @@ demo.htmlSource = `
       </div>
 
       <div class="slide w-full slide-absolute">
-        <div class="hero-cover absolute inset-0 z-active pointer-events-none bg-accent-500"></div>
+        <div class="hero-cover absolute inset-0 z-active pointer-events-none bg-accent-500 transform translate-x-full"></div>
         <div class="hero relative block overflow-hidden w-full">
           <div class="hero-inner">
             <div class="hero-asset">
@@ -71,7 +71,7 @@ demo.htmlSource = `
       </div>
 
       <div class="slide w-full slide-absolute">
-        <div div class="hero-cover absolute inset-0 z-active pointer-events-none bg-accent-500"></div>
+        <div div class="hero-cover absolute inset-0 z-active pointer-events-none bg-accent-500 transform translate-x-full"></div>
         <div class="hero relative block overflow-hidden w-full">
           <div class="hero-inner">
             <div class="hero-asset">
@@ -93,7 +93,7 @@ demo.htmlSource = `
       </div>
 
       <div class="slide w-full slide-absolute">
-        <div div class="hero-cover absolute inset-0 z-active pointer-events-none bg-accent-500"></div>
+        <div div class="hero-cover absolute inset-0 z-active pointer-events-none bg-accent-500 transform translate-x-full"></div>
         <div class="hero relative block overflow-hidden w-full">
           <div class="hero-inner">
             <div class="hero-asset">
@@ -124,7 +124,7 @@ demo.htmlSource = `
       </div>
 
       <div class="slide w-full slide-absolute">
-        <div div class="hero-cover absolute inset-0 z-active pointer-events-none bg-accent-500"></div>
+        <div div class="hero-cover absolute inset-0 z-active pointer-events-none bg-accent-500 transform translate-x-full"></div>
         <div class="hero relative block overflow-hidden w-full">
           <div class="hero-inner">
             <div class="hero-asset">
@@ -155,7 +155,7 @@ demo.htmlSource = `
       </div>
 
       <div class="slide w-full slide-absolute">
-        <div div class="hero-cover absolute inset-0 z-active pointer-events-none bg-accent-500"></div>
+        <div div class="hero-cover absolute inset-0 z-active pointer-events-none bg-accent-500 transform translate-x-full"></div>
         <div class="hero relative block overflow-hidden w-full">
           <div class="hero-inner">
             <div class="hero-asset">
