@@ -1,1 +1,0 @@
-[{"path":["themes","uid"],"type":"String"},{"path":["themes","alternate_languages"],"type":"AlternateLanguages"},{"path":["themes","data"],"type":"PrismicThemesDataType"},{"path":["themes","data","gif"],"type":"PrismicLinkType"},{"path":["themes"],"type":"PrismicThemes"}]
