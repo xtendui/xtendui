@@ -137,11 +137,11 @@ module.exports = {
                   label: 'slug',
                 },
               },
-              gif: {
+              video: {
                 type: 'Link',
                 config: {
                   select: 'media',
-                  label: 'gif',
+                  label: 'video',
                 },
               },
             },

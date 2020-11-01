@@ -60,12 +60,9 @@ class Template extends React.Component {
                                       return (
                                         <div className="media-container" key={z}>
                                           <div className="media-inner">
-                                            <img
-                                              className="media object-cover object-center"
-                                              src={prismic.item.data.gif ? prismic.item.data.gif.url : null}
-                                              loading="lazy"
-                                              alt="Gif demo"
-                                            />
+                                            <video className="media object-cover object-center" preload="metadata" muted playsInline loop autoPlay>
+                                              <source type="video/mp4" src={prismic.item.data.video ? prismic.item.data.video.url : null} />
+                                            </video>
                                           </div>
                                         </div>
                                       )
@@ -127,7 +124,7 @@ export const query = graphql`
         item: node {
           uid
           data {
-            gif {
+            video {
               url
             }
           }
@@ -215,7 +212,7 @@ Template.propTypes = {
           item: PropTypes.shape({
             uid: PropTypes.string.isRequired,
             data: PropTypes.shape({
-              gif: PropTypes.shape({
+              video: PropTypes.shape({
                 url: PropTypes.string.isRequired,
               }),
             }),
