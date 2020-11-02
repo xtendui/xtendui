@@ -53,6 +53,9 @@ jobs:
     - name: Build
       if: steps.build-cache.outputs.cache-hit != 'true'
       run: yarn build
+      env:
+        CONTENTFUL_SPACE: ${{ secrets.CONTENTFUL_SPACE }}
+        CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
