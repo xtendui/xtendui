@@ -28,5 +28,9 @@ demo.htmlSource = `
     link
   </button>
 
+  <button type="button" class="btn btn-md text-reset">
+    text
+  </button>
+
 </div>
 `

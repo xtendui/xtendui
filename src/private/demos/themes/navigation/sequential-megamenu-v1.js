@@ -2,17 +2,13 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/core/slider'
 import gsap from 'gsap'
 
-/**
- * mouse events instead of click you can remove this
- */
+// mouse events instead of click you can remove this
 
 Xt.mount.push({
-  matches: '#iframe--sequential-megamenu-v1 #check-sequential-megamenu-v1',
+  matches: '#iframe--sequential-megamenu-v1 body input[type="checkbox"]',
   mount: object => {
-    // mouse events instead of click
-
     const checkChange = () => {
-      const component = document.querySelector('#iframe--sequential-megamenu-v1 body .megamenus')
+      const component = document.querySelector('#iframe--sequential-megamenu-v1 body .megamenu')
       if (component) {
         const self = Xt.get('xt-drop', component)
         if (self) {
@@ -33,11 +29,11 @@ Xt.mount.push({
 })
 
 /**
- * .megamenus drops
+ * .megamenu drops
  */
 
 Xt.mount.push({
-  matches: '#iframe--sequential-megamenu-v1 body .megamenus', // add your own selector instead of body to contain the code
+  matches: '#iframe--sequential-megamenu-v1 body .megamenu', // add your own selector instead of body to contain the code
   mount: object => {
     // vars
 
@@ -56,8 +52,8 @@ Xt.mount.push({
     // init
 
     let self = new Xt.Drop(object, {
-      elements: '.megamenu_outer',
-      targets: '.megamenu_outer > .drop',
+      elements: '.drop-container',
+      targets: '.drop-container > .drop',
       durationOn: Xt.vars.timeLarge,
       durationOff: Xt.vars.timeLarge,
       preventEvent: true,
@@ -66,7 +62,7 @@ Xt.mount.push({
       instant: true,
       zIndex: {
         targets: {
-          start: 500,
+          start: 600, // same as zIndex backdrop
           factor: -1,
         },
       },
@@ -90,7 +86,7 @@ Xt.mount.push({
         gsap.set(content, { x: contentXOn * self.direction, opacity: 0 })
         gsap.to(content, { x: 0, opacity: 1, duration: contentTime, delay: contentDelayOn, ease: contentEase })
         // design
-        const design = tr.querySelector('.drop-design')
+        const design = tr.querySelector('.design-setup')
         const designOpacityCache = Xt.dataStorage.get(self.object, 'designOpacityCache') || 0
         gsap.set(design, { opacity: designOpacityCache })
         gsap.to(design, { opacity: 1, duration: designTime, ease: designEase }).eventCallback('onUpdate', () => {
@@ -117,10 +113,10 @@ Xt.mount.push({
       // useCapture delegation
       if (self.targets.includes(tr)) {
         // eventOff after eventOn sequential interaction
-        cancelAnimationFrame(Xt.dataStorage.get(self.object, 'dropMegamenusFrame'))
+        cancelAnimationFrame(Xt.dataStorage.get(self.object, 'dropmegamenuFrame'))
         Xt.dataStorage.set(
           self.object,
-          'dropMegamenusFrame',
+          'dropmegamenuFrame',
           requestAnimationFrame(() => {
             // when self.direction it's sequential interaction
             if (self.direction) {
@@ -128,13 +124,13 @@ Xt.mount.push({
               const content = tr.querySelector('.drop-content')
               gsap.to(content, { x: contentXOff * self.direction * -1, opacity: 0, duration: contentTime, ease: contentEase, overwrite: true })
               // design
-              const design = tr.querySelector('.drop-design')
+              const design = tr.querySelector('.design-setup')
               gsap.set(design, { opacity: 0 })
             } else {
               // others
               for (const other of self.targets.filter(x => x !== tr)) {
                 // design
-                const design = other.querySelector('.drop-design')
+                const design = other.querySelector('.design-setup')
                 gsap.set(design, { opacity: 0 })
                 // inner
                 const inner = other.querySelector('.drop-inner')
@@ -144,7 +140,7 @@ Xt.mount.push({
               const content = tr.querySelector('.drop-content')
               gsap.to(content, { opacity: 0, duration: contentTime, ease: contentEase })
               // design
-              const design = tr.querySelector('.drop-design')
+              const design = tr.querySelector('.design-setup')
               gsap.to(design, { opacity: 0, duration: designTime, ease: designEase }).eventCallback('onUpdate', () => {
                 Xt.dataStorage.set(self.object, 'designOpacityCache', design.style.opacity)
               })
@@ -172,17 +168,17 @@ Xt.mount.push({
 })
 
 /**
- * .megamenus line
+ * .megamenu line
  */
 
 Xt.mount.push({
-  matches: '.megamenus',
+  matches: '.megamenu',
   mount: function (object) {
     // vars
 
     let lineFirst = true
-    const btns = object.querySelectorAll('.btn_megamenus')
-    const line = object.querySelector('.megamenus_line')
+    const btns = object.querySelectorAll('.drop-container > .btn')
+    const line = object.querySelector('.megamenu-line')
 
     const lineHeight = 4
     const lineTime = Xt.vars.timeSmall
@@ -221,7 +217,7 @@ Xt.mount.push({
         'lineFrame',
         requestAnimationFrame(() => {
           // not when drop is still open
-          const dropBtnActive = object.querySelector('.megamenus .drop-container > .btn.active')
+          const dropBtnActive = object.querySelector('.drop-container > .btn.active')
           if (!dropBtnActive) {
             // line
             const lineY = el.getBoundingClientRect().top + el.offsetHeight

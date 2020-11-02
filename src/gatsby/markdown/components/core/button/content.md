@@ -12,6 +12,8 @@ Use **tailwind classes** to assign variant (e.g. [border-color](https://tailwind
 
 Use `.link` to create a [link](/components/core/link).
 
+Use `.text-reset` to create a button with inherited text.
+
 <demo>
   <demovanilla src="vanilla/components/core/button/variant">
   </demovanilla>

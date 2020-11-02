@@ -47,7 +47,7 @@ module.exports = {
         active: '25',
         top: '50',
         backdrop: '500',
-        drop: '600',
+        drop: '600', // same as javascript and decreses with sequential drop
         sticky: '800', // same as javascript and decreses with sequential sticky
         overlay: '900',
         last: '1000',

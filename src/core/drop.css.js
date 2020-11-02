@@ -29,7 +29,7 @@ module.exports = {
         bottom: 'auto',
         '> .drop-inner': {
           zIndex: 'initial',
-          '> .drop-design': {
+          '> .design-setup': {
             display: 'none',
           },
           '> .card': {
@@ -129,6 +129,7 @@ module.exports = {
       },
       '&.out': {
         zIndex: theme('zIndex.drop') - 1,
+        pointerEvents: 'none',
       },
       // styles
       '@apply drop-left drop-bottom': '',

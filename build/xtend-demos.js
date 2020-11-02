@@ -34,7 +34,7 @@ if (typeof window !== 'undefined') {
   require('xtendui/src/private/demos/themes/listing/furniture-listing-v1.js')
   require('xtendui/src/private/demos/themes/listing/stores-listing-v1.js')
   require('xtendui/src/private/demos/themes/listing/stores-listing-v2.js')
-  require('xtendui/src/private/demos/themes/navigation/direction-megamenu-v1.js')
+  require('xtendui/src/private/demos/themes/navigation/sequential-megamenu-v1.js')
   require('xtendui/src/private/demos/themes/structure/furniture-structure-v1.js')
   require('xtendui/src/private/demos/themes/structure/industrial-structure-v1.js')
 }

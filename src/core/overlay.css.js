@@ -29,9 +29,6 @@ module.exports = {
       right: 'auto',
       width: 'auto',
       height: 'auto',
-      '.overlay-design': {
-        display: 'none',
-      },
       '.overlay-container': {
         zIndex: 'initial',
         padding: '0',

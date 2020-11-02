@@ -50,7 +50,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 </demo>
 
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/navigation/direction-megamenu-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/navigation/sequential-megamenu-v1">
   </div>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/animation/xtend-v1">
   </div>
