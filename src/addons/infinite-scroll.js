@@ -59,7 +59,7 @@ class InfiniteScroll {
     if (self.itemsElement) {
       const found = self.itemsElement.querySelector(self.options.elements.item)
       if (found) {
-        found.setAttribute('data-xt-infinitescroll-item-first', self.current)
+        found.setAttribute('data-item-first', self.current)
       }
     }
     // class
@@ -200,14 +200,14 @@ class InfiniteScroll {
       // current page
       let found = self.itemsElement.querySelector(self.options.elements.item)
       const scrollInitial = found.offsetTop
-      const items = self.itemsElement.querySelectorAll('[data-xt-infinitescroll-item-first]')
+      const items = self.itemsElement.querySelectorAll('[data-item-first]')
       for (const item of items) {
         const itemTop = item.offsetTop
         if (top > itemTop - height) {
           found = item
         }
       }
-      self.setCurrent(parseFloat(found.getAttribute('data-xt-infinitescroll-item-first')))
+      self.setCurrent(parseFloat(found.getAttribute('data-item-first')))
       // save scroll position
       self.scrollResume = top + scrollInitial - found.offsetTop
       // replace state
@@ -329,7 +329,7 @@ class InfiniteScroll {
     // vars
     let items = itemsElement.querySelectorAll(self.options.elements.item)
     // current page
-    items[0].setAttribute('data-xt-infinitescroll-item-first', self.current)
+    items[0].setAttribute('data-item-first', self.current)
     // populate dom
     for (const item of items) {
       // querySelector here because it always needs to be the last inside loop
@@ -350,10 +350,10 @@ class InfiniteScroll {
     const self = this
     const options = self.options
     // paginate
-    for (const el of self.object.querySelectorAll('[data-xt-infinite-scroll-tot]')) {
+    for (const el of self.object.querySelectorAll('[data-tot]')) {
       el.innerHTML = options.max
     }
-    for (const el of self.object.querySelectorAll('[data-xt-infinite-scroll-num]')) {
+    for (const el of self.object.querySelectorAll('[data-num]')) {
       el.innerHTML = self.current
     }
     // class
@@ -431,11 +431,11 @@ InfiniteScroll.optionsDefault = {
   get: false,
   // element
   elements: {
-    scrollOffset: '[data-xt-infinite-scroll-offset]',
-    trigger: '[data-xt-infinite-scroll-trigger]',
-    reset: '[data-xt-infinitescroll-reset]',
-    items: '[data-xt-infinite-scroll-items]',
-    spaceAdditional: '[data-xt-infinite-scroll-spaceadditional]',
+    scrollOffset: '.infinite-scroll',
+    trigger: '.infinite-scroll-trigger .btn',
+    reset: '.infinite-scroll-pre .btn',
+    items: '.listing-inner .row',
+    spaceAdditional: '.infinite-scroll-pre',
     item: ':scope > *',
   },
   // class

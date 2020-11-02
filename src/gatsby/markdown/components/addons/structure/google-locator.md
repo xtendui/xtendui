@@ -28,7 +28,33 @@ Use this code to create a **google locator**. Search for "New York" to see it in
 
 ## Options
 
+Here are the main **javascript options**.
+
+Additionally you can pass functions to `options.formatData` to populate inside `options.itemsTemplate` with query `data-populate="<FunctionName>"`, see javascript file source code `xtendui/src/addons/google-locator.js`.
+
 For advanced options see javascript file source code `xtendui/src/addons/google-locator.js`.
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                    | `initialLocate:Boolean`                          | `false`        | Automatic locate on page load (**needs https**)            |
+| Option                    | `initialSearch:Boolean`                          | `false`        | Automatic search on page load            |
+| Option                    | `seachMapBounds:Boolean`                          | `false`        | Map bounds of current map  when searching             |
+| Option                    | `locateRadius:Number`                          | `25000`        | Radius for locate            |
+| Option                    | `elements.loader:Query`                          | `'.loader'`        | Object query for loader             |
+| Option                    | `elements.searchInput:Query`                          | `'input[type="text"]'`        | Object query for searh input             |
+| Option                    | `elements.searchBtn:Query`                          | `'.btn-search'`        | Object query for search button             |
+| Option                    | `elements.map:Query`                          | `'.google-locator-main-map'`        | Object query for google map             |
+| Option                    | `elements.itemsTemplate:Query`                          | `'script[type="text/x-template"]'`        | Object query for template cloned for maps items             |
+| Option                    | `elements.itemsContainer:Query`                          | `'.google-locator-items'`        | Object query for items container to append items to             |
+| Option                    | `elements.results:Query`                          | `'.google-locator-aside-body'`        | Object query for results messages             |
+| Option                    | `elements.resultsFounds:Query`                          | `'.google-locator-result-found'`        | Object query for results found             |
+| Option                    | `elements.locateBtn:Query`                          | `'.btn-locate'`        | Object query for             |
+| Option                    | `elements.repeatBtn:Query`                          | `'.btn-repeat'`        | Object query for repeat search             |
+| Option                    | `elements.filter:Query`                          | `'input[type="checkbox"], input[type="radio"]'`        | Object query for             |
+
+</div>
 
 ## Listen
 
@@ -70,9 +96,7 @@ Access properties by getting component object.
 
 ## Initialization
 
-Initialize automatically within markup with `[data-xt-google-locator="{ <options> }"]` on the **object** (the DOM element you assigned the component).
-
-Or initialize with **javascript**.
+Initialize with **javascript**.
 
 ```js
 let self = new Xt.GoogleLocator(document.querySelector('#my-object'), {

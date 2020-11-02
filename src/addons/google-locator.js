@@ -37,7 +37,7 @@ class GoogleLocator {
     self.itemsTemplate = self.object.querySelector(self.options.elements.itemsTemplate)
     self.itemsContainer = self.object.querySelector(self.options.elements.itemsContainer)
     self.resultElement = self.object.querySelector(self.options.elements.results)
-    self.foundElement = self.object.querySelector(self.options.elements.founds)
+    self.foundElement = self.object.querySelector(self.options.elements.resultsFound)
     // init
     const options = self.options
     self.mapElement = self.object.querySelector(self.options.elements.map)
@@ -113,8 +113,8 @@ class GoogleLocator {
       })
     })
     // submitCurrent
-    if (options.elements.repeat) {
-      self.repeatElement = self.object.querySelector(options.elements.repeat)
+    if (options.elements.repeatBtn) {
+      self.repeatElement = self.object.querySelector(options.elements.repeatBtn)
       if (self.repeatElement) {
         self.repeatElement.addEventListener('click', self.submitCurrent.bind(self).bind(self, false))
       }
@@ -128,8 +128,8 @@ class GoogleLocator {
       })
     }
     // locate
-    if (self.options.elements.locate) {
-      self.locateElement = self.object.querySelector(options.elements.locate)
+    if (self.options.elements.locateBtn) {
+      self.locateElement = self.object.querySelector(options.elements.locateBtn)
       if (self.locateElement) {
         if (location.protocol === 'https:') {
           if (navigator.geolocation) {
@@ -352,13 +352,13 @@ class GoogleLocator {
     cloned.innerHTML = self.itemsTemplate.innerHTML
     cloned = cloned.querySelector(':scope > *')
     cloned.classList.add('xt-google-locator-clone')
-    cloned.setAttribute('data-xt-google-locator-index', loc.index.toString())
+    cloned.setAttribute('data-index', loc.index.toString())
     // append clone
     self.itemsContainer.append(cloned)
     // populate clone
-    const els = cloned.querySelectorAll('[data-xt-google-locator-data]')
+    const els = cloned.querySelectorAll('[data-populate]')
     for (const el of els) {
-      const fnc = options.formatData[el.getAttribute('data-xt-google-locator-data')]
+      const fnc = options.formatData[el.getAttribute('data-populate')]
       if (fnc) {
         fnc(self, loc, el)
       }
@@ -389,8 +389,8 @@ class GoogleLocator {
       self.animatingLoc = loc
     }
     // activation
-    const item = self.itemsContainer.querySelector(`[data-xt-google-locator-index="${loc.index}"]`)
-    const old = self.itemsContainer.querySelector('[data-xt-google-locator-index].active')
+    const item = self.itemsContainer.querySelector(`[data-index="${loc.index}"]`)
+    const old = self.itemsContainer.querySelector('[data-index].active')
     if (old) {
       old.classList.remove('active')
     }
@@ -459,7 +459,7 @@ class GoogleLocator {
     // loader
     self.loaderHide()
     // position
-    self.searchInput.value = self.locateElement.getAttribute('data-xt-google-locator-locate-btn')
+    self.searchInput.value = self.locateElement.getAttribute(self.options.locateText)
     self.position = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude)
     self.viewport = null
     self.radius = options.locateRadius
@@ -544,19 +544,20 @@ GoogleLocator.optionsDefault = {
   initialSearch: false,
   seachMapBounds: false,
   locateRadius: 25000,
+  locateText: 'Locate',
   // element
   elements: {
-    loader: '[data-xt-google-locator-loader]',
-    searchInput: '[data-xt-google-locator-search-input]',
-    searchBtn: '[data-xt-google-locator-search-btn]',
-    map: '[data-xt-google-locator-map]',
+    loader: '.loader',
+    searchInput: 'input[type="text"]',
+    searchBtn: '.btn-search',
+    map: '.google-locator-main-map',
     itemsTemplate: 'script[type="text/x-template"]',
-    itemsContainer: '[data-xt-google-locator-items]',
-    results: '[data-xt-google-locator-results]',
-    founds: '[data-xt-google-locator-result-found]',
-    locate: '[data-xt-google-locator-locate-btn]',
-    repeat: '[data-xt-google-locator-repeat]',
-    filter: '[data-xt-google-locator-option]',
+    itemsContainer: '.google-locator-items',
+    results: '.google-locator-aside-body',
+    resultsFound: '.google-locator-result-found',
+    locateBtn: '.btn-locate',
+    repeatBtn: '.btn-repeat',
+    filter: 'input[type="checkbox"], input[type="radio"]',
   },
   // event
   events: {

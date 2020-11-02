@@ -18,13 +18,24 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="listing" data-xt-infinite-scroll="{ max: 4 }">
+<div class="listing" data-xt-infinite-scroll="{
+    get: false,
+    max: 4,
+    elements: {
+      scrollOffset: '.infinite-scroll',
+      trigger: '.infinite-scroll-trigger .btn',
+      reset: '.infinite-scroll-pre .btn',
+      items: '.listing-inner .row',
+      spaceAdditional: '.infinite-scroll-pre',
+      item: ':scope > *',
+    },
+  }">
   <div class="container">
 
-    <div class="infinite-scroll-pre mb-4" data-xt-infinite-scroll-spaceadditional>
+    <div class="infinite-scroll-pre mb-4">
       <div class="list list-1 flex-col items-center">
         <div>
-          <button type="button" class="btn btn-md ${btnDefault()}" data-xt-infinitescroll-reset>
+          <button type="button" class="btn btn-md ${btnDefault()}">
             Load previous pages
           </button>
         </div>
@@ -32,7 +43,7 @@ demo.htmlSource = `
     </div>
 
     <div class="listing-inner">
-      <div class="row row-3" data-xt-infinite-scroll-items>
+      <div class="row row-3" >
 
         <div class="listing-col w-full md:w-6/12 lg:w-4/12">
           <a href="https://github.com/minimit/xtendui" class="listing-item">
@@ -165,11 +176,11 @@ demo.htmlSource = `
       </div>
     </div>
 
-    <div class="infinite-scroll mt-4" data-xt-infinite-scroll-offset>
+    <div class="infinite-scroll mt-4">
       <div class="list list-1 flex-col items-center">
 
         <div class="infinite-scroll-trigger">
-          <button type="button" class="btn btn-md ${btnPrimary()}" data-xt-infinite-scroll-trigger>
+          <button type="button" class="btn btn-md ${btnPrimary()}">
 
             <span class="infinite-scroll-trigger-content">
               Show more products
@@ -189,7 +200,7 @@ demo.htmlSource = `
         </div>
 
         <div class="infinite-scroll-more h6">
-          Page <span data-xt-infinite-scroll-num></span> of <span data-xt-infinite-scroll-tot></span>
+          Page <span data-num></span> of <span data-tot></span>
         </div>
 
       </div>

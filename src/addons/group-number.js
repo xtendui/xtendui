@@ -1,7 +1,7 @@
 import { Xt } from '../xt.js'
 
 Xt.mount.push({
-  matches: '[data-xt-group-number]',
+  matches: '.group-number',
   mount: object => {
     // methods
 
@@ -17,7 +17,7 @@ Xt.mount.push({
 
     const inputNumberValidate = val => {
       const input = object.querySelector('input')
-      const steps = object.querySelectorAll('[data-xt-group-number-step]')
+      const steps = object.querySelectorAll('[data-step]')
       val = isNaN(val) ? 0 : val
       // check min and max
       const minAttributeAsFloat = parseFloat(input.getAttribute('min'))
@@ -26,7 +26,7 @@ Xt.mount.push({
       const inputMax = isNaN(maxAttributeAsFloat) ? Infinity : maxAttributeAsFloat
       // disabled
       for (const step of steps) {
-        const qty = parseFloat(step.getAttribute('data-xt-group-number-step'))
+        const qty = parseFloat(step.getAttribute('data-step'))
         step.removeAttribute('disabled')
         if (val <= inputMin && qty < 0) {
           val = inputMin
@@ -53,10 +53,10 @@ Xt.mount.push({
 
     // steps
 
-    const steps = object.querySelectorAll('[data-xt-group-number-step]')
+    const steps = object.querySelectorAll('[data-step]')
 
     for (const step of steps) {
-      const qty = parseFloat(step.getAttribute('data-xt-group-number-step'))
+      const qty = parseFloat(step.getAttribute('data-step'))
       let addHandler = Xt.dataStorage.get(step, 'addHandler')
       addHandler = addHandler || Xt.dataStorage.set(step, 'addHandler', inputNumberChange.bind(object, qty))
       step.removeEventListener('click', addHandler)

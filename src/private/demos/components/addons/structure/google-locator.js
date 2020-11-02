@@ -15,6 +15,24 @@ window.demoGoogleLocator = function () {
       // init
 
       let self = new Xt.GoogleLocator(object, {
+        initialLocate: false,
+        initialSearch: false,
+        seachMapBounds: false,
+        locateRadius: 25000,
+        locateText: 'Locate',
+        elements: {
+          loader: '.loader',
+          searchInput: 'input[type="text"]',
+          searchBtn: '.btn-search',
+          map: '.google-locator-main-map',
+          itemsTemplate: 'script[type="text/x-template"]',
+          itemsContainer: '.google-locator-items',
+          results: '.google-locator-aside-body',
+          resultsFound: '.google-locator-result-found',
+          locateBtn: '.btn-locate',
+          repeatBtn: '.btn-repeat',
+          filter: 'input[type="checkbox"], input[type="radio"]',
+        },
         events: {
           animateMarkerResultClick: google.maps.Animation.BOUNCE,
           infoWindowMarkerClick: true,

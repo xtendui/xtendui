@@ -30,9 +30,9 @@
       }
     }
 
-    /* [data-xt-infinite-scroll-trigger] */
+    /* .infinite-scroll-trigger .btn */
 
-    [data-xt-infinite-scroll-trigger] {
+    .infinite-scroll-trigger .btn {
       .infinite-scroll-trigger-content-nomore {
         display: none;
       }
@@ -44,7 +44,7 @@
     }
 
     .infinite-scroll-loading {
-      [data-xt-infinite-scroll-trigger] {
+      .infinite-scroll-trigger .btn {
         pointer-events: none;
         > .infinite-scroll-trigger-content {
           opacity: 0;
@@ -57,7 +57,7 @@
     /* .infinite-scroll-nomore */
 
     .infinite-scroll-nomore {
-      [data-xt-infinite-scroll-trigger] {
+      .infinite-scroll-trigger .btn {
         pointer-events: none;
         .infinite-scroll-trigger-content {
           display: none;

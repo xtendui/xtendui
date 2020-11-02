@@ -42,7 +42,7 @@ demo.htmlSource = `
                       Street lorem ipsum 42, 00134 City, Nation
                     </address>
                   </div>
-                  </div>
+                </div>
               </div>
 
               <div class="listing-back h-full card ${cardDefaultFull()}">

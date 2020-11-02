@@ -92,14 +92,14 @@
       .google-locator-result {
         display: none;
       }
-      [data-xt-google-locator-result-initial] {
+      .google-locator-result-initial {
         display: block;
       }
       &.found {
         .google-locator-result {
           display: none;
         }
-        [data-xt-google-locator-result-founds] {
+        .google-locator-result-founds {
           display: block;
         }
       }
@@ -107,7 +107,7 @@
         .google-locator-result {
           display: none;
         }
-        [data-xt-google-locator-result-noplace] {
+        .google-locator-result-noplace {
           display: block;
         }
       }
@@ -115,7 +115,7 @@
         .google-locator-result {
           display: none;
         }
-        [data-xt-google-locator-result-empty] {
+        .google-locator-result-empty {
           display: block;
         }
       }
@@ -123,13 +123,13 @@
         .google-locator-result {
           display: none;
         }
-        [data-xt-google-locator-result-error] {
+        .google-locator-result-error {
           display: block;
         }
       }
     }
 
-    .google-locator-repeat {
+    .btn-repeat {
       position: absolute;
       z-index: 2;
       top: 2rem;
