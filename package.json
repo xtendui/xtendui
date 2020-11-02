@@ -76,6 +76,7 @@
     "gatsby-remark-component": "^1.1.3",
     "gatsby-remark-custom-blocks": "^2.3.14",
     "gatsby-remark-external-links": "^0.0.4",
+    "gatsby-source-contentful": "3.0.7",
     "gatsby-source-filesystem": "^2.3.37",
     "gatsby-source-prismic": "^3.2.1",
     "gatsby-transformer-remark": "^2.8.46",

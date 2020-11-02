@@ -117,36 +117,13 @@ module.exports = {
         ],
       },
     },
-    // prismic
+    // contenful
     {
-      resolve: 'gatsby-source-prismic',
+      resolve: `gatsby-source-contentful`,
       options: {
-        repositoryName: 'xtendui',
-        lang: '*',
-        imageImgixParams: {
-          auto: 'compress',
-          lossless: true,
-          q: 85,
-        },
-        schemas: {
-          themes: {
-            Main: {
-              uid: {
-                type: 'UID',
-                config: {
-                  label: 'slug',
-                },
-              },
-              video: {
-                type: 'Link',
-                config: {
-                  select: 'media',
-                  label: 'video',
-                },
-              },
-            },
-          },
-        },
+        spaceId: `zz2mxhceab95`,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        downloadLocal: true,
       },
     },
   ],

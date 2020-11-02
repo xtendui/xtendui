@@ -55,13 +55,13 @@ class Template extends React.Component {
                                       .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
                                       .join(' ')}
                                   </div>
-                                  {data.media.items.map((prismic, z) => {
-                                    if (prismic.item.uid === adiacent.frontmatter.title) {
+                                  {data.media.items.map((assets, z) => {
+                                    if (assets.item.title === adiacent.frontmatter.title) {
                                       return (
                                         <div className="media-container" key={z}>
                                           <div className="media-inner">
                                             <video className="media object-cover object-center" preload="metadata" muted playsInline loop autoPlay>
-                                              <source type="video/mp4" src={prismic.item.data.video ? prismic.item.data.video.url : null} />
+                                              <source type="video/mp4" src={assets.item.file.url ? assets.item.file.url : null} />
                                             </video>
                                           </div>
                                         </div>
@@ -119,14 +119,12 @@ class Template extends React.Component {
 
 export const query = graphql`
   query($title: String!, $type: String, $category: String, $parent: String, $parents: String) {
-    media: allPrismicThemes {
+    media: allContentfulAsset {
       items: edges {
         item: node {
-          uid
-          data {
-            video {
-              url
-            }
+          title
+          file {
+            url
           }
         }
       }
@@ -210,11 +208,9 @@ Template.propTypes = {
       items: PropTypes.arrayOf(
         PropTypes.shape({
           item: PropTypes.shape({
-            uid: PropTypes.string.isRequired,
-            data: PropTypes.shape({
-              video: PropTypes.shape({
-                url: PropTypes.string.isRequired,
-              }),
+            title: PropTypes.string.isRequired,
+            file: PropTypes.shape({
+              url: PropTypes.string.isRequired,
             }),
           }),
         })

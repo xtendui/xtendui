@@ -45,6 +45,7 @@ jobs:
       uses: actions/cache@v2
       id: build-cache
       with:
+        ACCESS_TOKEN: ${{ secrets.contentful_access_token }}
         path: |
           public
         key: ${{ runner.os }}-node-v${{ env.NODE }}-build-${{ hashFiles('src/**/**') }}
