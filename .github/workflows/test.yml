@@ -107,6 +107,3 @@ jobs:
     - name: Build
       if: steps.build-cache.outputs.cache-hit != 'true'
       run: yarn build
-      with:
-        CONTENTFUL_SPACE: ${{ secrets.contentful_space }}
-        CONTENTFUL_ACCESS_TOKEN: ${{ secrets.contentful_access_token }}
