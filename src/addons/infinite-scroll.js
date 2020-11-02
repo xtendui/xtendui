@@ -41,6 +41,7 @@ class InfiniteScroll {
     self.resetElement = self.object.querySelector(self.options.elements.reset)
     self.itemsElement = self.object.querySelector(self.options.elements.items)
     self.spaceAdditionalElements = self.object.querySelectorAll(self.options.elements.spaceAdditional)
+    self.paginationElements = self.object.querySelectorAll(self.options.elements.pagination)
     // fake
     if (!self.options.get) {
       self.itemsFake = self.object.querySelector(self.options.elements.items).cloneNode(true)
@@ -350,11 +351,18 @@ class InfiniteScroll {
     const self = this
     const options = self.options
     // paginate
-    for (const el of self.object.querySelectorAll('[data-tot]')) {
-      el.innerHTML = options.max
-    }
-    for (const el of self.object.querySelectorAll('[data-num]')) {
-      el.innerHTML = self.current
+    for (const pagination of self.paginationElements) {
+      pagination.dataset.html = pagination.dataset.html ? pagination.dataset.html : pagination.innerHTML
+      let html = pagination.dataset.html
+      let regex = new RegExp('xt-num', 'ig')
+      if (html.search(regex) !== -1) {
+        html = html.replace(regex, self.current)
+      }
+      regex = new RegExp('xt-tot', 'ig')
+      if (html.search(regex) !== -1) {
+        html = html.replace(regex, options.max)
+      }
+      pagination.innerHTML = html
     }
     // class
     if (self.current >= options.max) {
@@ -436,6 +444,7 @@ InfiniteScroll.optionsDefault = {
     reset: '.infinite-scroll-pre .btn',
     items: '.listing-inner .row',
     spaceAdditional: '.infinite-scroll-pre',
+    pagination: '.infinite-scroll-pagination',
     item: ':scope > *',
   },
   // class

@@ -105,13 +105,13 @@ demo.htmlSource = `
           <div class="google-locator-item" tabindex="-1">
             <div class="list">
               <div class="google-locator-item-content">
-                <div class="google-locator-item-name" data-populate="name"></div>
-                <address class="google-locator-item-address" data-populate="address"></address>
-                <div class="google-locator-item-additional" data-populate="additional"></div>
+                <div class="google-locator-item-name" data-xt-populate="name"></div>
+                <address class="google-locator-item-address" data-xt-populate="address"></address>
+                <div class="google-locator-item-additional" data-xt-populate="additional"></div>
               </div>
-              <a href="#" target="_blank" class="google-locator-item-directions list list-1 flex-col items-center" title="directions" data-populate="direction">
+              <a href="#" target="_blank" class="google-locator-item-directions list list-1 flex-col items-center" title="directions" data-xt-populate="direction">
                 ${iconLocate({ classes: 'icon-lg' })}
-                <span data-populate="distance"></span>
+                <span data-xt-populate="distance"></span>
               </a>
             </div>
           </div>

@@ -27,6 +27,7 @@ demo.htmlSource = `
       reset: '.infinite-scroll-pre .btn',
       items: '.listing-inner .row',
       spaceAdditional: '.infinite-scroll-pre',
+      pagination: '.infinite-scroll-pagination',
       item: ':scope > *',
     },
   }">
@@ -199,8 +200,8 @@ demo.htmlSource = `
           </button>
         </div>
 
-        <div class="infinite-scroll-more h6">
-          Page <span data-num></span> of <span data-tot></span>
+        <div class="infinite-scroll-pagination h6">
+          Page xt-num of xt-tot
         </div>
 
       </div>

@@ -352,13 +352,13 @@ class GoogleLocator {
     cloned.innerHTML = self.itemsTemplate.innerHTML
     cloned = cloned.querySelector(':scope > *')
     cloned.classList.add('xt-google-locator-clone')
-    cloned.setAttribute('data-index', loc.index.toString())
+    cloned.setAttribute('data-xt-index', loc.index.toString())
     // append clone
     self.itemsContainer.append(cloned)
     // populate clone
-    const els = cloned.querySelectorAll('[data-populate]')
+    const els = cloned.querySelectorAll('[data-xt-populate]')
     for (const el of els) {
-      const fnc = options.formatData[el.getAttribute('data-populate')]
+      const fnc = options.formatData[el.getAttribute('data-xt-populate')]
       if (fnc) {
         fnc(self, loc, el)
       }
@@ -389,8 +389,8 @@ class GoogleLocator {
       self.animatingLoc = loc
     }
     // activation
-    const item = self.itemsContainer.querySelector(`[data-index="${loc.index}"]`)
-    const old = self.itemsContainer.querySelector('[data-index].active')
+    const item = self.itemsContainer.querySelector(`[data-xt-index="${loc.index}"]`)
+    const old = self.itemsContainer.querySelector('[data-xt-index].active')
     if (old) {
       old.classList.remove('active')
     }

@@ -30,7 +30,7 @@ Use this code to create a **google locator**. Search for "New York" to see it in
 
 Here are the main **javascript options**.
 
-Additionally you can pass functions to `options.formatData` to populate inside `options.itemsTemplate` with query `data-populate="<FunctionName>"`, see javascript file source code `xtendui/src/addons/google-locator.js`.
+Additionally you can pass functions to `options.formatData` to populate inside `options.itemsTemplate` with query `data-xt-populate="<FunctionName>"`, see javascript file source code `xtendui/src/addons/google-locator.js`.
 
 For advanced options see javascript file source code `xtendui/src/addons/google-locator.js`.
 

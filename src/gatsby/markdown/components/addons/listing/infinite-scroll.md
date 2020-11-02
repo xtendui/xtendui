@@ -36,6 +36,11 @@ Here are the main **javascript options**.
 
 For advanced options see javascript file source code `xtendui/src/addons/infinite-scroll.js`.
 
+Inside `elements.pagination:Query` you can use this strings that gets populated with variables:
+
+- `xt-num` replaced with current page number
+- `xt-tot` replaced with total pages number
+
 <div class="table-scroll">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
@@ -51,6 +56,7 @@ For advanced options see javascript file source code `xtendui/src/addons/infinit
 | Option                    | `elements.trigger:Query`                          | `'.infinite-scroll-trigger .btn'`        | Object query for trigger element            |
 | Option                    | `elements.reset:Query`                          | `'.infinite-scroll-pre .btn'`        | Object query for reset element            |
 | Option                    | `elements.spaceAdditional:Query`                          | `'.infinite-scroll-pre'`        | Object query for additional space on reset            |
+| Option                    | `elements.pagination:Query`                          | `'.infinite-scroll-pagination'`        | Object query for pagination            |
 | Option                    | `elements.items:Query`                          | `'.listing-inner .row'`        | Object query for items container            |
 | Option                    | `elements.item:Query`                          | `':scope > *'`        | Items container query for items            |
 
