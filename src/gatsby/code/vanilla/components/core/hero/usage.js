@@ -11,7 +11,6 @@ export const demo = {
 demo.htmlSource = `
 <div class="hero relative block overflow-hidden w-full">
   <div class="hero-inner">
-    <div class="hero-shadow-bottom"></div>
     <div class="hero-asset">
       <div class="media-container" style="padding-bottom: 100%;">
         <div class="media-inner">
@@ -31,7 +30,6 @@ demo.htmlSource = `
 
 <div class="hero relative block overflow-hidden w-full">
   <div class="hero-inner">
-    <div class="hero-shadow-bottom"></div>
     <div class="hero-asset">
       <div class="media-container" style="padding-bottom: 100%;">
         <div class="media-inner">
