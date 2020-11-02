@@ -97,7 +97,8 @@ const formatCode = source => {
     // replace entities
     match = match.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/\//g, '&#x2F;')
     // replace empty quotes
-    match = match.replace(/=""/g, '')
+    match = match.replace(/=&quot;&quot;/g, '')
+    console.log(match)
     return match
   })
   // remove tabs
