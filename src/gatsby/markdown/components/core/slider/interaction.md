@@ -62,7 +62,7 @@ You can add navigation with the `navigation:Query` option, on the queried elemen
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `navigation:Query`                          | `[data-xt-nav]`        | Query for navigation elements             |
+| Option                  | `navigation:Query`                          | `'[data-xt-nav]'`        | Query for navigation elements             |
 
 </div>
 
@@ -135,7 +135,7 @@ Use `wheel: { selector: 'object' }` or `wheel: { selector: Query }` to enable mo
 | Option                  | `auto.initial:Boolean`                          | `true`        | Automatic activation on initial            |
 | Option                  | `auto.step:Number`                          | `1`        | Automatic activation steps            |
 | Option                  | `auto.inverse:Boolean`                          | `false`        | Automatic activation inverse order            |
-| Option                  | `auto.pause:Query`                          | `[data-xt-pag], [data-xt-nav], .btn`        | Elements that pause automatic on mouseenter            |
+| Option                  | `auto.pause:Query`                          | `'[data-xt-pag], [data-xt-nav], .btn'`        | Elements that pause automatic on mouseenter            |
 
 </div>
 

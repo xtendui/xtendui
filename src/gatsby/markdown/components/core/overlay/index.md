@@ -46,8 +46,8 @@ Pass **elements** and **targets** options if different from defaults. **Elements
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `elements:Query`                          | `:scope > a, :scope > button`        | Elements query            |
-| Option                  | `targets:Query`                          | `:scope > .overlay`        | Targets query            |
+| Option                  | `elements:Query`                          | `':scope > a, :scope > button'`        | Elements query            |
+| Option                  | `targets:Query`                          | `':scope > .overlay'`        | Targets query            |
 | Option                  | `elementsInner:Query`                          | `false`        | Inner elements query (scope inside elements)            |
 | Option                  | `targetsInner:Query`                          | `false`        | Inner targets query (scope inside targets)     
 

@@ -45,8 +45,8 @@ Pass **elements** and **targets** options if different from defaults. **Elements
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `elements:Query`                          | `false`        | Elements query            |
 | Option                  | `targets:Query`                          | `:scope > .drop`        | Targets query            |
-| Option                  | `elementsInner:Query`                          | `:scope > a, :scope > button`        | Inner elements query (scope inside elements)            |
-| Option                  | `targetsInner:Query`                          | `:scope > .drop-inner`        | Inner targets query (scope inside targets)           |
+| Option                  | `elementsInner:Query`                          | `':scope > a, :scope > button'`        | Inner elements query (scope inside elements)            |
+| Option                  | `targetsInner:Query`                          | `':scope > .drop-inner'`        | Inner targets query (scope inside targets)           |
 
 </div>
 

@@ -40,8 +40,8 @@ Pass **elements** and **targets** options if different from defaults. **Elements
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `elements:Query`                          | `:scope > a, :scope > button`        | Elements query            |
-| Option                  | `targets:Query`                          | `:scope > .toggle, :scope > [class^="toggle-"], :scope > [class*=" toggle-"]`        | Targets query            |
+| Option                  | `elements:Query`                          | `':scope > a, :scope > button'`        | Elements query            |
+| Option                  | `targets:Query`                          | `':scope > .toggle, :scope > [class^="toggle-"], :scope > [class*=" toggle-"]'`        | Targets query            |
 | Option                  | `elementsInner:Query`                          | `false`        | Inner elements query (scope inside elements)            |
 | Option                  | `targetsInner:Query`                          | `false`        | Inner targets query (scope inside targets)     
 

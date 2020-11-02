@@ -18,7 +18,7 @@ import 'xtendui/src/addons/infinite-scroll'
 
 Use this code to create a **infinite scroll**.
 
-Set a `options.get` variable for a **get request on current url** for more items, and remember also to set `options.max` number of pages.
+Set a `options.get` variable for a **get request on current url** to load items, and remember also to set `options.max` number of pages.
 
 [[noteDefault]]
 | Check advanced feature [open this demo on a new page](/iframe/components/addons/listing/infinite-scroll). You can see on page refresh and browser navigation that **the page is retained**.
@@ -45,8 +45,12 @@ For advanced options see javascript file source code `xtendui/src/addons/infinit
 | Option                    | `events.scroll:Boolean`                          | `true`        | Automatically activate on scroll            |
 | Option                    | `events.trigger:String`                          | `'click'`        | Event to trigger infinite scroll            |
 | Option                    | `events.reset:String`                          | `'click'`        | Event to trigger infinite scroll reset            |
-
-</div>
+| Option                    | `elements.scrollOffset:Query`                          | `'[data-xt-infinite-scroll-offset]'`        | Object query for automatic scroll element            |
+| Option                    | `elements.trigger:Query`                          | `'[data-xt-infinite-scroll-trigger]'`        | Object query for trigger element            |
+| Option                    | `elements.reset:Query`                          | `'[data-xt-infinitescroll-reset]'`        | Object query for reset element            |
+| Option                    | `elements.spaceAdditional:Query`                          | `'[data-xt-infinite-scroll-spaceadditional]'`        | Object query for additional space on reset            |
+| Option                    | `elements.items:Query`                          | `'[data-xt-infinite-scroll-items]'`        | Object query for items container            |
+| Option                    | `elements.item:Query`                          | `':scope > *'`        | Items container query for items            |
 
 ## Listen
 

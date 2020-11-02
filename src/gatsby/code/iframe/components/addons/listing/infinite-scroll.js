@@ -165,7 +165,7 @@ demo.htmlSource = `
       </div>
     </div>
 
-    <div class="infinite-scroll mt-4" data-xt-infinite-scroll-scroll>
+    <div class="infinite-scroll mt-4" data-xt-infinite-scroll-offset>
       <div class="list list-1 flex-col items-center">
 
         <div class="infinite-scroll-trigger">

@@ -2,6 +2,8 @@
   /*##START*/
   body { /* add your own selector instead of body to contain the code */
 
+    /* .infinite-scroll-spinner */
+
     .infinite-scroll-spinner {
       opacity: 0;
       transition-property: opacity;
@@ -28,6 +30,8 @@
       }
     }
 
+    /* [data-xt-infinite-scroll-trigger] */
+
     [data-xt-infinite-scroll-trigger] {
       .infinite-scroll-trigger-content-nomore {
         display: none;
@@ -50,6 +54,8 @@
       }
     }
 
+    /* .infinite-scroll-nomore */
+
     .infinite-scroll-nomore {
       [data-xt-infinite-scroll-trigger] {
         pointer-events: none;
@@ -61,6 +67,8 @@
         }
       }
     }
+
+    /* .infinite-scroll-pre */
 
     .infinite-scroll-pre {
       display: none;

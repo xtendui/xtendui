@@ -36,7 +36,7 @@ class InfiniteScroll {
     self.classesNoMore = self.options.classNoMore ? [...self.options.classNoMore.split(' ')] : []
     self.classesReset = self.options.classReset ? [...self.options.classReset.split(' ')] : []
     // elements
-    self.scrollElement = self.object.querySelector(self.options.elements.scroll)
+    self.scrollOffsetElement = self.object.querySelector(self.options.elements.scrollOffset)
     self.triggerElement = self.object.querySelector(self.options.elements.trigger)
     self.resetElement = self.object.querySelector(self.options.elements.reset)
     self.itemsElement = self.object.querySelector(self.options.elements.items)
@@ -226,7 +226,7 @@ class InfiniteScroll {
       }
       // request if on bottom
       if (self.options.events.scroll) {
-        const bottom = self.scrollElement.offsetTop + self.scrollElement.offsetHeight
+        const bottom = self.scrollOffsetElement.offsetTop + self.scrollOffsetElement.offsetHeight
         if (top > bottom - height) {
           self.request()
         }
@@ -431,7 +431,7 @@ InfiniteScroll.optionsDefault = {
   get: false,
   // element
   elements: {
-    scroll: '[data-xt-infinite-scroll-scroll]',
+    scrollOffset: '[data-xt-infinite-scroll-offset]',
     trigger: '[data-xt-infinite-scroll-trigger]',
     reset: '[data-xt-infinitescroll-reset]',
     items: '[data-xt-infinite-scroll-items]',
