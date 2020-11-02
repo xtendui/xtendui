@@ -1,5 +1,5 @@
 ---
 type: "Themes"
 title: "Themes"
-description: "Single or multi component themes with advanced UI."
+description: "Tailwind and vanilla javascript components themes with advanced UI."
 ---
