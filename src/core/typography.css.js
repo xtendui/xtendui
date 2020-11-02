@@ -11,7 +11,7 @@ module.exports = {
     '.h1': {
       // style
       marginTop: theme('spacing.6'),
-      marginBottom: theme('spacing.2'),
+      marginBottom: theme('spacing.4'),
       '@apply mt-fc mb-lc': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
@@ -39,7 +39,7 @@ module.exports = {
     '.h2': {
       // style
       marginTop: theme('spacing.6'),
-      marginBottom: theme('spacing.2'),
+      marginBottom: theme('spacing.4'),
       '@apply mt-fc mb-lc': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
@@ -54,7 +54,7 @@ module.exports = {
     '.h3': {
       // style
       marginTop: theme('spacing.6'),
-      marginBottom: theme('spacing.2'),
+      marginBottom: theme('spacing.4'),
       '@apply mt-fc mb-lc': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
@@ -80,7 +80,7 @@ module.exports = {
     },
     '.h5': {
       // style
-      marginTop: theme('spacing.6'),
+      marginTop: theme('spacing.4'),
       marginBottom: theme('spacing.2'),
       '@apply mt-fc mb-lc': {},
       fontFamily: theme('fontFamily.sans').toString(),
@@ -92,7 +92,7 @@ module.exports = {
     },
     '.h6': {
       // style
-      marginTop: theme('spacing.6'),
+      marginTop: theme('spacing.4'),
       marginBottom: theme('spacing.2'),
       '@apply mt-fc mb-lc': {},
       fontFamily: theme('fontFamily.sans').toString(),
