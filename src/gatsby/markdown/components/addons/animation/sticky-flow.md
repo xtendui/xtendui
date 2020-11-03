@@ -17,3 +17,10 @@ import 'xtendui/src/addons/sticky-flow'
 ## Usage
 
 @TODO
+
+(use large screen to see it in action)
+
+<demo>
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/animation/sticky-flow">
+  </div>
+</demo>
