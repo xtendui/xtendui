@@ -5,5 +5,6 @@ if (typeof window !== 'undefined') {
   require('xtendui/src/addons/mouse-follow.js')
   require('xtendui/src/addons/ripple.js')
   require('xtendui/src/addons/scroll-to-anchor.js')
+  require('xtendui/src/addons/sticky-flow.js')
   require('xtendui/src/addons/textarea-autosize.js')
 }

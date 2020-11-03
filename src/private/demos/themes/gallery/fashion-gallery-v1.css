@@ -1,0 +1,58 @@
+#iframe--fashion-gallery-v1 {
+  /*##START*/
+  body { /* add your own selector instead of body to contain the code */
+
+    .product-gallery {
+      @apply overflow-y-auto overflow-x-hidden overflow-sub;
+      @media (max-width: theme('screens.md')) {
+        height: 60vh;
+        height: calc(var(--vh, 1vh) * 60);
+      }
+    }
+
+    .product-dot {
+      > * {
+        width: 7px;
+        height: 7px;
+        transition-property: all;
+        transition-duration: theme('transitionDuration.500');
+        transition-timing-function: theme('transitionTimingFunction.out');
+      }
+      &:active > *, &.active > * {
+        width: 9px;
+        height: 9px;
+      }
+    }
+
+    /*
+    // FARE O TOGLIERE MARKUP
+
+    .product-page_continue {
+      @screen lg {
+        display: none;
+      }
+      .anim-y.in();
+      position: fixed;
+      z-index: @index-sticky;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      .align-center();
+      .padding(all, medium);
+      .padding(bottom, small);
+      font-size: 3rem;
+      color: @black;
+      background: linear-gradient(0deg, @white 0%, @white 50%, fade(@white, 0%) 100%);
+      .icon-caret-down {
+        display: inline-block;
+      }
+      &.scrolled {
+        .anim-y.out();
+        pointer-events: none;
+      }
+    }
+    */
+
+  }
+  /*##END*/
+}
