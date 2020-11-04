@@ -131,7 +131,7 @@ Xt.mount.push({
           gsap.killTweensOf(assetMaskInner)
           gsap.set(assetMaskInner, { x: 0 })
           // asset
-          const asset = tr.querySelector('.hero-asset .media')
+          const asset = tr.querySelector('.media')
           gsap.killTweensOf(asset)
           gsap.set(asset, { scale: 1 })
         } else {
@@ -150,7 +150,7 @@ Xt.mount.push({
           gsap.set(assetMaskInner, { x: `${-125 * self.direction}%` }) // @FIX 125% to cover skew
           gsap.to(assetMaskInner, { x: 0, duration: assetMaskTime, ease: assetMaskEase })
           // asset
-          const asset = tr.querySelector('.hero-asset .media')
+          const asset = tr.querySelector('.media')
           gsap.set(asset, { scale: 1 + assetZoom })
           gsap.to(asset, { scale: 1, duration: assetTime, ease: assetEase, delay: assetDelay })
           // content

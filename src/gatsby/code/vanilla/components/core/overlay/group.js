@@ -2,7 +2,6 @@ import path from 'path'
 const btnPrimary = require('components/snippets/classes/btn-primary').default
 const cardDefaultOverlay = require('components/snippets/classes/card-default-overlay').default
 const iconX = require('components/snippets/icons').iconX
-const img = require('components/snippets/img').default
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -73,8 +72,10 @@ demo.htmlSource = `
                 </div>
               </div>
             </div>
-            <div class="rounded-b-md">
-              ${img({ classes: 'object-cover object-center', ratio: '15%' })}
+            <div class="media-container rounded-b-md" style="padding-bottom: 15%;">
+              <div class="media-inner">
+                <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+              </div>
             </div>
           </div>
 

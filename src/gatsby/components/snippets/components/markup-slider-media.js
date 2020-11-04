@@ -9,7 +9,7 @@ export default () => {
 
       <div class="media-container">
         <div class="media-inner relative">
-          <img class="media" src="/img.svg" loading="eager" alt=""/>
+          <img class="media" src="/img.svg" loading="lazy" alt=""/>
         </div>
       </div>
 
@@ -19,7 +19,7 @@ export default () => {
 
       <div class="media-container">
         <div class="media-inner relative">
-          <img class="media" src="/img-ratio.svg" loading="eager" alt=""/>
+          <img class="media" src="/img-ratio.svg" loading="lazy" alt=""/>
         </div>
       </div>
 
@@ -29,7 +29,7 @@ export default () => {
 
       <div class="media-container">
         <div class="media-inner relative">
-          <img class="media" src="/img.svg" loading="eager" alt=""/>
+          <img class="media" src="/img.svg" loading="lazy" alt=""/>
         </div>
       </div>
 
@@ -39,7 +39,7 @@ export default () => {
 
       <div class="media-container">
         <div class="media-inner relative">
-          <img class="media" src="/img-ratio.svg" loading="eager" alt=""/>
+          <img class="media" src="/img-ratio.svg" loading="lazy" alt=""/>
         </div>
       </div>
 
@@ -49,7 +49,7 @@ export default () => {
 
       <div class="media-container">
         <div class="media-inner relative">
-          <img class="media" src="/img.svg" loading="eager" alt=""/>
+          <img class="media" src="/img.svg" loading="lazy" alt=""/>
         </div>
       </div>
 
@@ -59,7 +59,7 @@ export default () => {
 
       <div class="media-container">
         <div class="media-inner relative">
-          <img class="media" src="/img-ratio.svg" loading="eager" alt=""/>
+          <img class="media" src="/img-ratio.svg" loading="lazy" alt=""/>
         </div>
       </div>
 

@@ -1,6 +1,5 @@
 import React from 'react'
 import path from 'path'
-const img = require('components/snippets/img').default
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -23,7 +22,11 @@ demo.htmlSource = `
         <div class="featured_item_inner">
           <div class="row">
             <div class="featured_img_col">
-              ${img({ classes: 'object-cover object-center', ratio: '121%' })}
+              <div class="media-container" style="padding-bottom: 121%;">
+                <div class="media-inner">
+                  <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+                </div>
+              </div>
             </div>
             <div class="featured_content_col">
               <div class="featured_content">
@@ -51,7 +54,11 @@ demo.htmlSource = `
         <div class="featured_item_inner">
           <div class="row">
             <div class="featured_img_col">
-              ${img({ classes: 'object-cover object-center', ratio: '72.6%' })}
+              <div class="media-container" style="padding-bottom: 72.6%;">
+                <div class="media-inner">
+                  <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+                </div>
+              </div>
             </div>
             <div class="featured_content_col">
               <div class="featured_content">
@@ -79,7 +86,11 @@ demo.htmlSource = `
         <div class="featured_item_inner">
           <div class="row">
             <div class="featured_img_col">
-              ${img({ classes: 'object-cover object-center', ratio: '121%' })}
+              <div class="media-container" style="padding-bottom: 121%;">
+                <div class="media-inner">
+                  <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+                </div>
+              </div>
             </div>
             <div class="featured_content_col">
               <div class="featured_content">
@@ -111,7 +122,11 @@ demo.htmlSource = `
         <div class="featured_item_inner">
           <div class="row">
             <div class="featured_img_col">
-              ${img({ classes: 'object-cover object-center', ratio: '121%' })}
+              <div class="media-container" style="padding-bottom: 121%;">
+                <div class="media-inner">
+                  <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+                </div>
+              </div>
             </div>
             <div class="featured_content_col">
               <div class="featured_content">

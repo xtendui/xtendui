@@ -6,23 +6,6 @@ title: "Other"
 date: "2005-10-10"
 ---
 
-## Disable
-
-You can disable styles and javascript using `.overlay-disable`.
-
-<div class="table-scroll">
-
-|                      | Syntax                          | Mixin            | Variants               | Description                   |
-| ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Utility                  | `.overlay-disable`       | `overlay-disable !important`                | `responsive`                | Reset overlay styles and javascript            |
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/core/overlay/disable">
-  </demovanilla>
-</demo>
-
 ## Preset
 
 You can overlay that covers the screen with `.overlay-screen`, remember to use **tailwind classes** (e.g. [align-items](https://tailwindcss.com/docs/align-items), [justify-content](https://tailwindcss.com/docs/justify-content)) on `.card`.
@@ -44,6 +27,23 @@ To create an **overlay position** with `.overlay-screen`, you can also use **tai
 
 <demo>
   <demovanilla src="vanilla/components/core/overlay/position">
+  </demovanilla>
+</demo>
+
+## Disable
+
+You can disable styles and javascript using `.overlay-disable`.
+
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
+| Utility                  | `.overlay-disable`       | `overlay-disable !important`                | `responsive`                | Reset overlay styles and javascript            |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/core/overlay/disable">
   </demovanilla>
 </demo>
 

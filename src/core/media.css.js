@@ -6,8 +6,6 @@ module.exports = {
       position: 'relative',
       overflow: 'hidden',
       width: '100%',
-      minHeight: '100%',
-      borderRadius: 'inherit',
       // styles
       backgroundColor: theme('colors.accent.800'),
     },

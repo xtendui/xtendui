@@ -21,7 +21,9 @@ These are structure **component utilities**.
 <div class="table-scroll">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
+| ----------------------- | ----------------------------------------- | -----------------------------| 
+----------------------------- | ----------------------------- |
+| Utility                  | `.flex-full`       | `flex-full`                | `responsive`                | `flex: 1 1 100%`            |
 | Utility                  | `.container-reset`       | `container-reset`                | `responsive`                | Reset container styles            |
 | Utility                  | `.h-screen`       | `h-screen`                | `responsive`                | Height `100vh` and retain height on vertical scroll/resize on mobile           |
 | Utility                  | `.min-h-screen`       | `min-h-screen`                | `responsive`                | Min height `100vh` and retain height on vertical scroll/resize on mobile           |

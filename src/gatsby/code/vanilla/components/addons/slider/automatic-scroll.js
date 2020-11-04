@@ -1,6 +1,4 @@
 import path from 'path'
-const img = require('components/snippets/img').default
-const imgAlt = require('components/snippets/img').alt
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -139,22 +137,46 @@ demo.htmlSource = `
 
         <div class="slide list list-px flex-no-wrap">
           <a href="#test-link-1" class="slide_item" title="item 0">
-            ${img({ classes: 'object-cover object-center', ratio: '37.5%', loading: 'eager' })}
+            <div class="media-container" style="padding-bottom: 37.5%;">
+              <div class="media-inner">
+                <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
+              </div>
+            </div>
           </a>
           <a href="#test-link-2" class="slide_item" title="item 1">
-            ${img({ classes: 'object-cover object-center', ratio: '37.5%', loading: 'eager' })}
+            <div class="media-container" style="padding-bottom: 37.5%;">
+              <div class="media-inner">
+                <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
+              </div>
+            </div>
           </a>
           <a href="#test-link-3" class="slide_item" title="item 2">
-            ${img({ classes: 'object-cover object-center', ratio: '37.5%', loading: 'eager' })}
+            <div class="media-container" style="padding-bottom: 37.5%;">
+              <div class="media-inner">
+                <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
+              </div>
+            </div>
           </a>
           <a href="#test-link-4" class="slide_item" title="item 3">
-            ${img({ classes: 'object-cover object-center', ratio: '37.5%', loading: 'eager' })}
+            <div class="media-container" style="padding-bottom: 37.5%;">
+              <div class="media-inner">
+                <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
+              </div>
+            </div>
           </a>
           <a href="#test-link-5" class="slide_item" title="item 4">
-            ${img({ classes: 'object-cover object-center', ratio: '37.5%', loading: 'eager' })}
+            <div class="media-container" style="padding-bottom: 37.5%;">
+              <div class="media-inner">
+                <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
+              </div>
+            </div>
           </a>
           <a href="#test-link-6" class="slide_item" title="item 5">
-            ${imgAlt({ classes: 'object-cover object-center', ratio: '37.5%', loading: 'eager' })}
+            <div class="media-container" style="padding-bottom: 37.5%;">
+              <div class="media-inner">
+                <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
+              </div>
+            </div>
           </a>
         </div>
 

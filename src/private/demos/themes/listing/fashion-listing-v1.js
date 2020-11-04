@@ -2,7 +2,7 @@ import { Xt } from 'xtendui'
 import gsap from 'gsap'
 
 /**
- * media scale and mask
+ * listing scale and mask
  */
 
 Xt.mount.push({
@@ -12,7 +12,6 @@ Xt.mount.push({
 
     const imgContainerScale = 0.004
     const imgScale = 0.06
-    const titleY = -10
     const maskOpacityOn = 0.2
     const maskOpacityOff = 0.2
     const maskOpacityDone = 0.1
@@ -34,11 +33,6 @@ Xt.mount.push({
         gsap.to(mask, { skewY: 0, duration: Xt.vars.timeSmall / 2, ease: 'quart.out' })
       })
       gsap.to(mask, { opacity: maskOpacityDone, duration: Xt.vars.timeMedium, ease: 'quart.out', delay: Xt.vars.timeSmall })
-      // item
-      const item = tr.querySelector('.card-item')
-      if (item) {
-        gsap.to(item, { y: titleY, duration: Xt.vars.timeSmall, ease: 'expo.out' })
-      }
     }
 
     object.addEventListener('mouseenter', eventEnter)
@@ -58,11 +52,6 @@ Xt.mount.push({
       gsap.to(mask, { skewY: 10, duration: Xt.vars.timeSmall / 2, ease: 'quart.out' }).eventCallback('onComplete', () => {
         gsap.to(mask, { skewY: 0, duration: Xt.vars.timeSmall / 2, ease: 'quart.out' })
       })
-      // item
-      const item = tr.querySelector('.card-item')
-      if (item) {
-        gsap.to(item, { y: 0, duration: Xt.vars.timeSmall, ease: 'expo.out' })
-      }
     }
 
     object.addEventListener('mouseleave', eventLeave)

@@ -1,6 +1,10 @@
 module.exports = {
   variants: ['responsive'],
   utility: theme => ({
+    '.flex-full': {
+      // setup
+      flex: '1 1 100%',
+    },
     '.container-reset': {
       // setup
       padding: 0,

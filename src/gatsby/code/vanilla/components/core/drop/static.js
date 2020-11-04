@@ -1,5 +1,4 @@
 import path from 'path'
-const img = require('components/snippets/img').default
 const btnPrimary = require('components/snippets/classes/btn-primary').default
 const cardDefaultDrop = require('components/snippets/classes/card-default-drop').default
 
@@ -36,8 +35,10 @@ demo.htmlSource = `
               </div>
             </div>
           </div>
-          <div class="rounded-b-md">
-            ${img({ classes: 'object-cover object-center', ratio: '15%' })}
+          <div class="media-container rounded-b-md" style="padding-bottom: 15%;">
+            <div class="media-inner">
+              <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+            </div>
           </div>
         </div>
       </div>

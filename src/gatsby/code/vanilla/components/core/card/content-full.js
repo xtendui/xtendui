@@ -1,6 +1,5 @@
 import path from 'path'
 const cardDefaultFull = require('components/snippets/classes/card-default-full').default
-const img = require('components/snippets/img').default
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -14,16 +13,20 @@ demo.htmlSource = `
 
   <div class="w-full md:w-6/12">
     <div class="card ${cardDefaultFull()}">
-      <div class="rounded-md">
-        ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
+      <div class="media-container rounded-md" style="padding-bottom: 37.5%;">
+        <div class="media-inner">
+          <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+        </div>
       </div>
     </div>
   </div>
 
   <div class="w-full md:w-6/12">
     <div class="card ${cardDefaultFull()}">
-      <div class="rounded">
-        ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
+      <div class="media-container rounded-t-md" style="padding-bottom: 37.5%;">
+        <div class="media-inner">
+          <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+        </div>
       </div>
       <div class="card-md px-0 pb-0">
         <div class="h4">Lorem ipsum</div>

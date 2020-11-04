@@ -1,7 +1,6 @@
 import path from 'path'
 const btnPrimary = require('components/snippets/classes/btn-primary').default
 const cardDefaultDrop = require('components/snippets/classes/card-default-drop').default
-const img = require('components/snippets/img').default
 const iconX = require('components/snippets/icons').iconX
 
 const filename = __filename.replace(/\\/g, '/')
@@ -26,8 +25,10 @@ demo.htmlSource = `
           <div class="btn btn-close p-5 text-xl" aria-label="Close">
             ${iconX()}
           </div>
-          <div class="rounded-md">
-            ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
+          <div class="media-container rounded-md" style="padding-bottom: 37.5%;">
+            <div class="media-inner">
+              <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+            </div>
           </div>
         </div>
       </div>
@@ -47,8 +48,10 @@ demo.htmlSource = `
           <div class="btn btn-close p-5 text-xl" aria-label="Close">
             ${iconX()}
           </div>
-          <div class="rounded-t-md">
-            ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
+          <div class="media-container rounded-t-md" style="padding-bottom: 37.5%;">
+            <div class="media-inner">
+              <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+            </div>
           </div>
           <div class="card-md">
             <div class="h4">Lorem ipsum</div>

@@ -1,5 +1,4 @@
 import path from 'path'
-const img = require('components/snippets/img').default
 const btnPrimary = require('components/snippets/classes/btn-primary').default
 const cardDefaultOverlayScreen = require('components/snippets/classes/card-default-overlay-screen').default
 const iconX = require('components/snippets/icons').iconX
@@ -26,8 +25,10 @@ demo.htmlSource = `
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>
-            <div class="w-full">
-              ${img({ classes: 'object-cover object-center', ratio: '100%' })}
+            <div class="media-container" style="padding-bottom: 100%;">
+              <div class="media-inner">
+                <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+              </div>
             </div>
           </div>
 
@@ -91,8 +92,10 @@ demo.htmlSource = `
                   </div>
                 </div>
               </div>
-              <div class="w-full">
-                ${img({ classes: 'object-cover object-center', ratio: '15%' })}
+              <div class="media-container" style="padding-bottom: 15%;">
+                <div class="media-inner">
+                  <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+                </div>
               </div>
             </div>
           </div>

@@ -1,5 +1,4 @@
 import path from 'path'
-const img = require('components/snippets/img').default
 const btnPrimary = require('components/snippets/classes/btn-primary').default
 const cardDefaultDrop = require('components/snippets/classes/card-default-drop').default
 
@@ -22,8 +21,10 @@ demo.htmlSource = `
     <div class="drop">
       <div class="drop-inner">
         <div class="card w-80 ${cardDefaultDrop()} overflow-y-auto overflow-x-hidden overflow-sub max-h-96">
-          <div class="rounded-t-md">
-            ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
+          <div class="media-container rounded-t-md" style="padding-bottom: 37.5%;">
+            <div class="media-inner">
+              <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+            </div>
           </div>
           <div class="card-md">
             <div class="h4">Lorem ipsum</div>
@@ -46,8 +47,10 @@ demo.htmlSource = `
     <div class="drop">
       <div class="drop-inner">
         <div class="card w-80 ${cardDefaultDrop()}">
-          <div class="rounded-t-md">
-            ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
+          <div class="media-container rounded-t-md" style="padding-bottom: 37.5%;">
+            <div class="media-inner">
+              <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+            </div>
           </div>
           <div class="card-md overflow-y-auto overflow-x-hidden overflow-sub max-h-64">
             <div class="h4">Lorem ipsum</div>

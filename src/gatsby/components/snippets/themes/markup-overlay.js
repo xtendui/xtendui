@@ -1,4 +1,3 @@
-const img = require('components/snippets/img').default
 const iconX = require('components/snippets/icons').iconX
 
 export default () => {
@@ -21,8 +20,10 @@ export default () => {
               </div>
               <div class="card-inner">
                 <div class="card-content">
-                  <div class="w-full">
-                    ${img({ classes: 'object-cover object-center', ratio: '100%' })}
+                  <div class="media-container" style="padding-bottom: 100%;">
+                    <div class="media-inner">
+                      <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+                    </div>
                   </div>
                 </div>
               </div>
@@ -63,8 +64,10 @@ export default () => {
                     </button>
                   </div>
                 </div>
-                <div class="w-full">
-                  ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
+                <div class="media-container" style="padding-bottom: 37.5%;">
+                  <div class="media-inner">
+                    <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+                  </div>
                 </div>
                 <div class="card-item">
                   <div class="h4">Lorem ipsum</div>
@@ -194,9 +197,10 @@ export default () => {
                          Contact our customer service at <a href="tel:+39333010101">+39 333 010101</a> or email us at <a href="mailto:info@info.com">info@info.com</a>.
                       </p>
                     </div>
-                    <div class="w-full"
-                      style="margin-top: auto">
-                      ${img({ classes: 'object-cover object-center', ratio: '100%', loading: 'eager' })}
+                    <div class="media-container" style="padding-bottom: 100%; margin-top: auto;">
+                      <div class="media-inner">
+                        <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+                      </div>
                     </div>
                   </div>
 
@@ -232,8 +236,10 @@ export default () => {
                 <div class="card-item-nested card-item card-group-sm">
 
                   <div class="card-item sm:w-5/12">
-                    <div class="full-y">
-                      ${img({ classes: 'object-cover object-center', ratio: '37.5%', loading: 'eager' })}
+                    <div class="media-container full-y" style="padding-bottom: 37.5%;">
+                      <div class="media-inner">
+                        <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+                      </div>
                     </div>
                   </div>
 

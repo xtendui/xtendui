@@ -123,31 +123,31 @@ demo.htmlSource = `
 
                         <div class="media-container">
                           <div class="media-inner relative">
-                            <img class="media" id="product-image-overlay-1" src="/img.svg" loading="eager" alt=""/>
+                            <img class="media" id="product-image-overlay-1" src="/img.svg" loading="lazy" alt=""/>
                           </div>
                         </div>
 
                         <div class="media-container">
                           <div class="media-inner relative">
-                            <img class="media" id="product-image-overlay-2" src="/img.svg" loading="eager" alt=""/>
+                            <img class="media" id="product-image-overlay-2" src="/img.svg" loading="lazy" alt=""/>
                           </div>
                         </div>
 
                         <div class="media-container">
                           <div class="media-inner relative">
-                            <img class="media" id="product-image-overlay-3" src="/img.svg" loading="eager" alt=""/>
+                            <img class="media" id="product-image-overlay-3" src="/img.svg" loading="lazy" alt=""/>
                           </div>
                         </div>
 
                         <div class="media-container">
                           <div class="media-inner relative">
-                            <img class="media" id="product-image-overlay-4" src="/img.svg" loading="eager" alt=""/>
+                            <img class="media" id="product-image-overlay-4" src="/img.svg" loading="eagelazyr" alt=""/>
                           </div>
                         </div>
 
                         <div class="media-container">
                           <div class="media-inner relative">
-                            <img class="media" id="product-image-overlay-5" src="/img.svg" loading="eager" alt=""/>
+                            <img class="media" id="product-image-overlay-5" src="/img.svg" loading="lazy" alt=""/>
                           </div>
                         </div>
 

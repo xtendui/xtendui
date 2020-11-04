@@ -28,16 +28,25 @@ module.exports = {
 
 Use **component classes** and **tailwind classes** to create a **hero**.
 
+If you want to interact with `.hero-content-inner` add the class `.group` use taildinw `group:` variant classes.
+
 <demo>
   <demovanilla src="vanilla/components/core/hero/usage">
   </demovanilla>
 </demo>
 
-## Content
+## Direction
 
-Use **tailwind classes** to customize content.
+Use **tailwind classes** to customize content direction.
 
-Use **component classes** to add hero shadow.
+<demo>
+  <demovanilla src="vanilla/components/core/hero/direction">
+  </demovanilla>
+</demo>
+
+## Shadow
+
+Use **component classes** to add shadow.
 
 <div class="table-scroll">
 
@@ -51,7 +60,7 @@ Use **component classes** to add hero shadow.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/hero/content">
+  <demovanilla src="vanilla/components/core/hero/shadow">
   </demovanilla>
 </demo>
 

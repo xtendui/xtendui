@@ -2,7 +2,7 @@ import { Xt } from 'xtendui'
 import gsap from 'gsap'
 
 /**
- * media scale
+ * listing scale
  */
 
 Xt.mount.push({
@@ -13,6 +13,7 @@ Xt.mount.push({
     const imgScale = 0.04
     const imgOpacityIn = 0.75
     const imgOpacityOut = 1
+    const contentY = -7
 
     // enter
 
@@ -23,6 +24,11 @@ Xt.mount.push({
       gsap.to(img, { opacity: imgOpacityIn, scale: 1 - imgScale, duration: Xt.vars.timeSmall, ease: 'expo.out' })
       const imgInner = tr.querySelector('.media-inner')
       gsap.to(imgInner, { scale: 1 + imgScale, duration: Xt.vars.timeSmall, ease: 'expo.out' })
+      // content
+      const content = tr.querySelector('.listing-content')
+      if (content) {
+        gsap.to(content, { y: contentY, duration: Xt.vars.timeSmall, ease: 'expo.out' })
+      }
     }
 
     object.addEventListener('mouseenter', eventEnter)
@@ -36,6 +42,11 @@ Xt.mount.push({
       gsap.to(img, { opacity: imgOpacityOut, scale: 1, duration: Xt.vars.timeMedium, ease: 'expo.out' })
       const imgInner = tr.querySelector('.media-inner')
       gsap.to(imgInner, { scale: 1, duration: Xt.vars.timeMedium, ease: 'expo.out' })
+      // content
+      const content = tr.querySelector('.listing-content')
+      if (content) {
+        gsap.to(content, { y: 0, duration: Xt.vars.timeSmall, ease: 'expo.out' })
+      }
     }
 
     object.addEventListener('mouseleave', eventLeave)

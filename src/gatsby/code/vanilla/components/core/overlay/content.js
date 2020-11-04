@@ -2,7 +2,6 @@ import path from 'path'
 const btnPrimary = require('components/snippets/classes/btn-primary').default
 const cardDefaultOverlay = require('components/snippets/classes/card-default-overlay').default
 const iconX = require('components/snippets/icons').iconX
-const img = require('components/snippets/img').default
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -28,9 +27,10 @@ demo.htmlSource = `
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>
-            <div class="rounded-md">
-              ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
-            </div>
+            <div class="media-container rounded-md" style="padding-bottom: 37.5%;">
+              <div class="media-inner">
+                <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+              </div>
           </div>
 
         </div>
@@ -53,8 +53,10 @@ demo.htmlSource = `
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>
-            <div class="rounded-t-md">
-              ${img({ classes: 'object-cover object-center', ratio: '37.5%' })}
+            <div class="media-container rounded-t-md" style="padding-bottom: 37.5%;">
+              <div class="media-inner">
+                <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+              </div>
             </div>
             <div class="card-md">
               <div class="h4">Lorem ipsum</div>
