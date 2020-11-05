@@ -28,8 +28,6 @@ module.exports = {
 
 Use **component classes** and **tailwind classes** to create a **hero**.
 
-If you want to interact with `.hero-content-inner` add the class `.group` use taildinw `group:` variant classes.
-
 <demo>
   <demovanilla src="vanilla/components/core/hero/usage">
   </demovanilla>
@@ -63,5 +61,3 @@ Use **component classes** to add shadow.
   <demovanilla src="vanilla/components/core/hero/shadow">
   </demovanilla>
 </demo>
-
-Check out [hero themes](/themes/by-type/hero) for advanced interactions.

@@ -24,8 +24,8 @@ demo.htmlSource = `
       <div class="slide w-full slide-absolute">
         <div class="hero relative block overflow-hidden w-full">
           <div class="hero-inner">
-            <div class="hero-shadow-bottom"></div>
             <div class="media-container h-screen">
+              <div class="hero-shadow-bottom"></div>
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
               </div>
@@ -44,8 +44,8 @@ demo.htmlSource = `
       <div class="slide w-full slide-absolute">
         <div class="hero relative block overflow-hidden w-full">
           <div class="hero-inner">
-            <div class="hero-shadow-bottom"></div>
             <div class="media-container h-screen">
+              <div class="hero-shadow-bottom"></div>
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
               </div>
@@ -64,8 +64,8 @@ demo.htmlSource = `
       <div class="slide w-full slide-absolute">
         <div class="hero relative block overflow-hidden w-full">
           <div class="hero-inner">
-            <div class="hero-shadow-bottom md:hero-shadow-left"></div>
             <div class="media-container h-screen">
+              <div class="hero-shadow-bottom md:hero-shadow-left"></div>
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
               </div>
@@ -93,8 +93,8 @@ demo.htmlSource = `
       <div class="slide w-full slide-absolute">
         <div class="hero relative block overflow-hidden w-full">
           <div class="hero-inner">
-            <div class="hero-shadow-bottom md:hero-shadow-right"></div>
             <div class="media-container h-screen">
+              <div class="hero-shadow-bottom md:hero-shadow-right"></div>
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
               </div>

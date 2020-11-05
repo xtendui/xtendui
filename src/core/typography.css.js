@@ -15,7 +15,7 @@ module.exports = {
       '@apply mt-fc mb-lc': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
-      fontSize: rem(35),
+      fontSize: rem(30),
       lineHeight: 1.1,
       letterSpacing: theme('letterSpacing.tight'),
       textTransform: 'none',
@@ -25,7 +25,7 @@ module.exports = {
     },
     '.h1-display': {
       // style
-      fontSize: rem(45),
+      fontSize: rem(35),
       '@screen sm': {
         fontSize: rem(50),
       },
@@ -43,7 +43,7 @@ module.exports = {
       '@apply mt-fc mb-lc': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
-      fontSize: rem(30),
+      fontSize: rem(25),
       lineHeight: 1.2,
       letterSpacing: theme('letterSpacing.tight'),
       textTransform: 'none',
@@ -58,7 +58,7 @@ module.exports = {
       '@apply mt-fc mb-lc': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
-      fontSize: rem(25),
+      fontSize: rem(20),
       lineHeight: 1.2,
       letterSpacing: theme('letterSpacing.tight'),
       textTransform: 'none',
@@ -73,10 +73,13 @@ module.exports = {
       '@apply mt-fc mb-lc': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
-      fontSize: rem(24),
+      fontSize: rem(19),
       lineHeight: 1.3,
       letterSpacing: theme('letterSpacing.tight'),
       textTransform: 'none',
+      '@screen lg': {
+        fontSize: rem(24),
+      },
     },
     '.h5': {
       // style
@@ -85,10 +88,13 @@ module.exports = {
       '@apply mt-fc mb-lc': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
-      fontSize: rem(18),
+      fontSize: rem(15),
       lineHeight: 1.3,
       letterSpacing: theme('letterSpacing.tight'),
       textTransform: 'none',
+      '@screen lg': {
+        fontSize: rem(18),
+      },
     },
     '.h6': {
       // style
