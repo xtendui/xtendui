@@ -312,7 +312,7 @@ const populateDemo = (container, i) => {
     btnOpenFull.addEventListener('click', e => {
       e.preventDefault()
       scrollCache = document.scrollingElement.scrollTop
-      location.hash = container.querySelector('.gatsby_demo_item.active').getAttribute('id')
+      location.hash = container.querySelector('.gatsby_demo_item.in').getAttribute('id')
       cancelAnimationFrame(Xt.dataStorage.get(document, 'gatsby_open-full-raf'))
     })
   }
@@ -418,7 +418,7 @@ const makeFullscreen = (container, initial = false) => {
   }
   content.append(container)
   // populate iframe
-  for (const item of container.querySelectorAll('.gatsby_demo_item.active')) {
+  for (const item of container.querySelectorAll('.gatsby_demo_item.in')) {
     if (item.getAttribute('data-iframe-fullscreen')) {
       item.setAttribute('data-iframe', item.getAttribute('data-iframe-fullscreen'))
       initializeIframe(container, item)
