@@ -267,7 +267,14 @@ class Toggle {
           found = true
         }
         requestAnimationFrame(() => {
-          elReset.classList.remove(...self.classes, ...self.classesActive, ...self.classesOut, ...self.classesDone, ...self.classesInitial, ...self.classesInverse)
+          elReset.classList.remove(
+            ...self.classes,
+            ...self.classesActive,
+            ...self.classesOut,
+            ...self.classesDone,
+            ...self.classesInitial,
+            ...self.classesInverse
+          )
           const elementsInner = Xt.queryAll(elReset, options.elementsInner)
           for (const elementInner of elementsInner) {
             elementInner.classList.remove(
