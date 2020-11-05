@@ -64,6 +64,7 @@ Xt.mount.push({
     // vars
 
     const icon = object.querySelector(':scope > *')
+    const posY = 15
 
     // interval
 
@@ -79,9 +80,12 @@ Xt.mount.push({
 
     const eventScroll = () => {
       if (document.scrollingElement.scrollTop > 0) {
-        object.classList.add('scrolled')
+        gsap.to(object, { y: posY, opacity: 0, duration: Xt.vars.timeTiny, ease: 'quart.inOut' }).eventCallback('onComplete', () => {
+          object.classList.add('hidden')
+        })
       } else {
-        object.classList.remove('scrolled')
+        object.classList.remove('hidden')
+        gsap.to(object, { y: 0, opacity: 1, duration: Xt.vars.timeTiny, ease: 'quart.inOut' })
       }
     }
 
@@ -98,7 +102,7 @@ Xt.mount.push({
 })
 
 /**
- * media scale and mask
+ * product image scale and mask
  */
 
 Xt.mount.push({

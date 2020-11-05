@@ -31,7 +31,7 @@ demo.htmlSource = `
               </div>
             </div>
             <div class="hero-content container z-active absolute inset-0 flex items-end justify-center text-center">
-              <a href="#" class="group block w-full max-w-xl py-10 md:py-16 text-white links-inverse">
+              <a href="#" class="group block w-full max-w-xl container-y text-white links-inverse">
                 <div class="h1 h1-display">
                   Lorem ipsum
                 </div>
@@ -51,7 +51,7 @@ demo.htmlSource = `
               </div>
             </div>
             <div class="hero-content container z-active absolute inset-0 flex items-end justify-center text-center md:justify-start md:text-left">
-              <a href="#" class="group block w-full max-w-xl py-10 md:py-16 text-white links-inverse">
+              <a href="#" class="group block w-full max-w-xl container-y text-white links-inverse">
                 <div class="h1">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit
                 </div>
@@ -71,12 +71,12 @@ demo.htmlSource = `
               </div>
             </div>
             <div class="hero-content container z-active absolute inset-0 flex items-end justify-center text-center md:items-center md:justify-start md:text-left">
-              <div class="block w-full max-w-xl py-10 md:py-16 text-white links-inverse">
+              <div class="block w-full max-w-xl container-y text-white links-inverse">
                 <div class="h1">
                   Lorem ipsum dolor sit amet
                 </div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
-                <div class="list list-2 justify-start">
+                <div class="list list-2 justify-center md:justify-start">
                   <a href="#" class="btn btn-md ${btnPrimary()}">
                     Lorem ipsum
                   </a>
@@ -100,12 +100,12 @@ demo.htmlSource = `
               </div>
             </div>
             <div class="hero-content container z-active absolute inset-0 flex items-end justify-center text-center md:items-center md:justify-end md:text-right">
-              <div class="block w-full max-w-xl py-10 md:py-16 text-white links-inverse">
+              <div class="block w-full max-w-xl container-y text-white links-inverse">
                 <div class="h1">
                   Lorem ipsum dolor sit amet
                 </div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
-                <div class="list list-2 justify-end">
+                <div class="list list-2 justify-center md:justify-end">
                   <a href="#" class="btn btn-md ${btnPrimary()}">
                     Lorem ipsum
                   </a>

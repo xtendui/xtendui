@@ -2,7 +2,7 @@ import { Xt } from 'xtendui'
 import gsap from 'gsap'
 
 /**
- * listing scale and mask
+ * .listing-item scale and mask
  */
 
 Xt.mount.push({

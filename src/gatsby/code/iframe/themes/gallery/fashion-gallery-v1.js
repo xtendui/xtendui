@@ -189,7 +189,7 @@ demo.htmlSource = `
       </div>
     </div>
 
-    <a href="#product-continue-target" class="product-continue">
+    <a href="#product-continue-target" class="product-continue fixed lg:hidden p-4 z-sticky bottom-0 inset-x-0 text-4xl text-center bg-gradient-to-b from-transparent to-white">
       ${iconChevronDown({ classes: 'icon-md' })}
     </a>
 

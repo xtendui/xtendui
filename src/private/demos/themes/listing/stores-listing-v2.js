@@ -2,7 +2,7 @@ import { Xt } from 'xtendui'
 import gsap from 'gsap'
 
 /**
- * listing
+ * .listing activation
  */
 
 Xt.mount.push({

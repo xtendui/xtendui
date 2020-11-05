@@ -3,44 +3,6 @@ import 'xtendui/src/core/slider'
 import gsap from 'gsap'
 
 /**
- * media link animation
- */
-
-Xt.mount.push({
-  matches: '#iframe--fashion-hero-v1 body .slide', // add your own selector instead of body to contain the code
-  mount: function (object) {
-    // vars
-
-    const links = object.tagName === 'A' || object.tagName === 'BUTTON' ? Xt.arrSingle(object) : object.querySelectorAll('a, button')
-    const img = object.querySelector('.media')
-    const imgOpacityIn = 0.75
-    const imgOpacityOut = 1
-
-    // enter
-
-    const eventEnter = () => {
-      // img
-      gsap.to(img, { opacity: imgOpacityIn, duration: Xt.vars.timeSmall, ease: 'quart.out' })
-    }
-
-    for (const link of links) {
-      link.addEventListener('mouseenter', eventEnter)
-    }
-
-    // enter
-
-    const eventLeave = () => {
-      // img
-      gsap.to(img, { opacity: imgOpacityOut, duration: Xt.vars.timeSmall, ease: 'quart.out', overwrite: true })
-    }
-
-    for (const link of links) {
-      link.addEventListener('mouseleave', eventLeave)
-    }
-  },
-})
-
-/**
  * slider
  */
 
@@ -251,6 +213,44 @@ Xt.mount.push({
     return () => {
       self.destroy()
       self = null
+    }
+  },
+})
+
+/**
+ * .slide link animation
+ */
+
+Xt.mount.push({
+  matches: '#iframe--fashion-hero-v1 body .slide', // add your own selector instead of body to contain the code
+  mount: function (object) {
+    // vars
+
+    const links = object.tagName === 'A' || object.tagName === 'BUTTON' ? Xt.arrSingle(object) : object.querySelectorAll('a, button')
+    const img = object.querySelector('.media')
+    const imgOpacityIn = 0.75
+    const imgOpacityOut = 1
+
+    // enter
+
+    const eventEnter = () => {
+      // img
+      gsap.to(img, { opacity: imgOpacityIn, duration: Xt.vars.timeSmall, ease: 'quart.out' })
+    }
+
+    for (const link of links) {
+      link.addEventListener('mouseenter', eventEnter)
+    }
+
+    // enter
+
+    const eventLeave = () => {
+      // img
+      gsap.to(img, { opacity: imgOpacityOut, duration: Xt.vars.timeSmall, ease: 'quart.out', overwrite: true })
+    }
+
+    for (const link of links) {
+      link.addEventListener('mouseleave', eventLeave)
     }
   },
 })

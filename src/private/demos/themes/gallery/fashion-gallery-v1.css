@@ -24,35 +24,6 @@
       }
     }
 
-    /*
-    // FARE O TOGLIERE MARKUP
-
-    .product-page_continue {
-      @screen lg {
-        display: none;
-      }
-      .anim-y.in();
-      position: fixed;
-      z-index: @index-sticky;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      .align-center();
-      .padding(all, medium);
-      .padding(bottom, small);
-      font-size: 3rem;
-      color: @black;
-      background: linear-gradient(0deg, @white 0%, @white 50%, fade(@white, 0%) 100%);
-      .icon-caret-down {
-        display: inline-block;
-      }
-      &.scrolled {
-        .anim-y.out();
-        pointer-events: none;
-      }
-    }
-    */
-
   }
   /*##END*/
 }

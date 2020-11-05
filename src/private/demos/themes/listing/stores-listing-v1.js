@@ -1,7 +1,7 @@
 import { Xt } from 'xtendui'
 
 /**
- * listing
+ * .listing-item activation
  */
 
 Xt.mount.push({

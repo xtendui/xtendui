@@ -11,6 +11,6 @@ description: "Listing markup component for category pages or simple product list
 Use **component classes** and **tailwind classes** to create a **listing**.
 
 <demo>
-  <demovanilla src="vanilla/components/core/listing/usage">
-  </demovanilla>
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/listing/usage">
+  </div>
 </demo>

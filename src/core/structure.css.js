@@ -49,10 +49,6 @@ module.exports = {
     },
   }),
   component: theme => ({
-    '.container': {
-      // setup
-      maxWidth: '1600px',
-    },
     html: {
       // setup
       touchAction: 'manipulation', // disable double-tap

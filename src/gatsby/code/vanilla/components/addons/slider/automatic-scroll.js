@@ -61,6 +61,10 @@ demo.htmlSource = `
       </ul>
     </div>
 
+    <div class="absolute inset-y-0 left-0 w-16 bg-gradient-to-l from-transparent to-white"></div>
+
+    <div class="absolute inset-y-0 right-0 w-16 bg-gradient-to-r from-transparent to-white"></div>
+
     <nav class="slider-pagination w-full list list-2 hidden">
       <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
       </button>
@@ -118,6 +122,10 @@ demo.htmlSource = `
 
       </ul>
     </div>
+
+    <div class="absolute inset-y-0 left-0 w-16 bg-gradient-to-l from-transparent to-white"></div>
+
+    <div class="absolute inset-y-0 right-0 w-16 bg-gradient-to-r from-transparent to-white"></div>
 
     <nav class="slider-pagination w-full list list-2 hidden">
       <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
@@ -182,6 +190,10 @@ demo.htmlSource = `
 
       </ul>
     </div>
+
+    <div class="absolute inset-y-0 left-0 w-16 bg-gradient-to-l from-transparent to-white"></div>
+
+    <div class="absolute inset-y-0 right-0 w-16 bg-gradient-to-r from-transparent to-white"></div>
 
     <nav class="slider-pagination w-full list list-2 hidden">
       <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">

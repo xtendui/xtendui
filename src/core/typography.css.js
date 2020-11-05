@@ -19,7 +19,7 @@ module.exports = {
       lineHeight: 1.1,
       letterSpacing: theme('letterSpacing.tight'),
       textTransform: 'none',
-      '@screen lg': {
+      '@screen md': {
         fontSize: rem(40),
       },
     },
@@ -47,7 +47,7 @@ module.exports = {
       lineHeight: 1.2,
       letterSpacing: theme('letterSpacing.tight'),
       textTransform: 'none',
-      '@screen lg': {
+      '@screen md': {
         fontSize: rem(35),
       },
     },
@@ -62,7 +62,7 @@ module.exports = {
       lineHeight: 1.2,
       letterSpacing: theme('letterSpacing.tight'),
       textTransform: 'none',
-      '@screen lg': {
+      '@screen md': {
         fontSize: rem(30),
       },
     },
@@ -77,7 +77,7 @@ module.exports = {
       lineHeight: 1.3,
       letterSpacing: theme('letterSpacing.tight'),
       textTransform: 'none',
-      '@screen lg': {
+      '@screen md': {
         fontSize: rem(24),
       },
     },
@@ -92,7 +92,7 @@ module.exports = {
       lineHeight: 1.3,
       letterSpacing: theme('letterSpacing.tight'),
       textTransform: 'none',
-      '@screen lg': {
+      '@screen md': {
         fontSize: rem(18),
       },
     },

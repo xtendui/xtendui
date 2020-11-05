@@ -7,7 +7,6 @@ module.exports = {
   drop: require('./core/drop.css.js'),
   form: require('./core/form.css.js'),
   javascript: require('./core/javascript.css.js'),
-  hero: require('./addons/hero.css.js'),
   icons: require('./core/icons.css.js'),
   link: require('./core/link.css.js'),
   list: require('./core/list.css.js'),
