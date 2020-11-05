@@ -976,7 +976,7 @@ if (typeof window !== 'undefined') {
    * @param {String} suffix Timeout suffix
    */
   Xt.animOn = (el, suffix = '') => {
-    el.classList.add('active')
+    el.classList.add('in')
     el.classList.remove('out')
     // keep the same level of raf as others
     cancelAnimationFrame(Xt.dataStorage.get(el, suffix))
@@ -984,7 +984,7 @@ if (typeof window !== 'undefined') {
       el,
       suffix,
       requestAnimationFrame(() => {
-        el.classList.add('in')
+        el.classList.add('active')
       })
     )
   }
@@ -996,8 +996,8 @@ if (typeof window !== 'undefined') {
    * @param {Number} timing Optional force time
    */
   Xt.animOff = (el, suffix = '', timing = null) => {
-    el.classList.remove('active')
     el.classList.remove('in')
+    el.classList.remove('active')
     el.classList.add('out')
     Xt.animTimeout(
       el,

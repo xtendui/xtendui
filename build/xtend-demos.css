@@ -7,10 +7,11 @@
 @import 'xtendui/src/private/demos/components/addons/structure/sticky-footer.css';
 @import 'xtendui/src/private/demos/components/addons/typography/list-custom.css';
 @import 'xtendui/src/private/demos/components/core/card/disable.css';
-@import 'xtendui/src/private/demos/components/core/drop/animation.css';
+@import 'xtendui/src/private/demos/components/core/drop/animation-css-multiple.css';
+@import 'xtendui/src/private/demos/components/core/drop/animation-css.css';
 @import 'xtendui/src/private/demos/components/core/drop/disable.css';
 @import 'xtendui/src/private/demos/components/core/form/variant-primary.css';
-@import 'xtendui/src/private/demos/components/core/overlay/animation.css';
+@import 'xtendui/src/private/demos/components/core/overlay/animation-css.css';
 @import 'xtendui/src/private/demos/components/core/overlay/class-html.css';
 @import 'xtendui/src/private/demos/components/core/overlay/disable.css';
 @import 'xtendui/src/private/demos/components/core/scroll/block.css';

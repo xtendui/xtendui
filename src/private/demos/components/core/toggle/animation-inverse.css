@@ -3,8 +3,8 @@
     /* initial */
     @apply transform transition-all duration-500;
     @apply opacity-100 translate-x-0 ease-in;
-    /* in */
-    &.in {
+    /* active */
+    &.active {
       @apply opacity-0 translate-x-4 ease-out;
       &.inverse {
         @apply -translate-x-4;

@@ -13,15 +13,15 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-2 items-center">
+<div class="list list-2 items-center demo--drop-animation-js-multiple">
 
-  <div class="drop-container" data-xt-drop>
+  <div class="drop-container">
 
     <button type="button" class="btn btn-md ${btnPrimary()}">
       list
     </button>
 
-    <div class="drop transform transition-all duration-500 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
+    <div class="drop">
       <div class="drop-inner">
         <div class="w-64 py-3 ${cardDefaultDropList()}">
           <nav class="list flex-col">
@@ -41,13 +41,13 @@ demo.htmlSource = `
 
   </div>
 
-  <div class="drop-container" data-xt-drop>
+  <div class="drop-container">
 
     <button type="button" class="btn btn-md ${btnPrimary()}">
       card
     </button>
 
-    <div class="drop transform transition-all duration-500 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
+    <div class="drop">
       <div class="drop-inner">
         <div class="card w-80 ${cardDefaultDrop()}">
           <div class="btn btn-close p-5 text-xl" aria-label="Close">

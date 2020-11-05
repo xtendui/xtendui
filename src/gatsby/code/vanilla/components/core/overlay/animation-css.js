@@ -17,7 +17,7 @@ demo.htmlSource = `
     overlay
   </button>
 
-  <div class="overlay transform transition-all duration-500 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
+  <div class="overlay demo--overlay-animation-css">
     <div class="overlay-container max-w-3xl">
       <div class="overlay-inner">
 

@@ -60,14 +60,22 @@ Overlay.optionsDefault = {
   // element
   elements: ':scope > a, :scope > button',
   targets: ':scope > .overlay',
+  targetsInner: ':scope > .overlay-container > .overlay-inner',
   // class
-  class: 'active active-overlay',
+  class: 'in in-overlay',
   // quantity
   min: 0,
   max: 1,
   // event
   on: 'click',
   eventLimit: '.event-limit, :scope > .overlay-container > .overlay-inner > .card-overlay .card-content',
+  // timing
+  instant: {
+    elements: true,
+    targets: false,
+    elementsInner: true,
+    targetsInner: false,
+  },
   // other
   backdrop: true,
   closeAuto: true,

@@ -13,9 +13,10 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-2 items-center">
+<div class="list list-2 items-center"
+  data-xt-drop="{ elements: ':scope > .drop-container', targets: ':scope > .drop-container > .drop' }">
 
-  <div class="drop-container" data-xt-drop>
+  <div class="drop-container">
 
     <button type="button" class="btn btn-md ${btnPrimary()}">
       list
@@ -41,7 +42,7 @@ demo.htmlSource = `
 
   </div>
 
-  <div class="drop-container" data-xt-drop>
+  <div class="drop-container">
 
     <button type="button" class="btn btn-md ${btnPrimary()}">
       card

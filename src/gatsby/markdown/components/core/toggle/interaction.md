@@ -14,8 +14,8 @@ You can customize the **class names** used with the component.
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `class:String`                          | `active active-toggle`        | Class name for activation            |
-| Option                  | `classIn:String`                          | `in`        | Class name for in animation            |
+| Option                  | `class:String`                          | `in in-toggle`        | Class name for activation            |
+| Option                  | `classActive:String`                          | `active`        | Class name for in animation            |
 | Option                  | `classOut:String`                          | `out`        | Class name for out animation            |
 | Option                  | `classDone:String`                          | `done`        | Class name for in animation done            |
 | Option                  | `classInitial:String`                          | `initial`        | Class name for initialization            |
@@ -69,6 +69,30 @@ You can use **javascript animations**, just use [toggle api](/components/core/to
   </demovanilla>
 </demo>
 
+## Timing
+
+Activation/deactivation automatically waits for the <strong>duration</strong> of animations and transitions on <code>.active</code> and <code>.out</code>.
+
+You can use a function for <code>delayOn</code> and <code>delayOff</code> for example <code>(current, total) => {return Math.min((total - current) * 150, 300)}</code>.
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `instant:Boolean|Object`                 | `{ elements: true, targets: false, elementsInner: true, targetsInner: true }`     | Set instant activation and deactivation, can be one or more booleans `elements` `elementsInner` `targets` `targetsInner`          |
+| Option                  | `delayOn:Milliseconds|Function`                          | `false`        | Activation delay            |
+| Option                  | `delayOff:Milliseconds|Function`                          | `false`        | Deactivation delay            |
+| Option                  | `delayInitial:Boolean`                          | `true`        | Initial activation delay            |
+| Option                  | `durationOn:Milliseconds`                          | `false`        | Activation duration            |
+| Option                  | `durationOff:Milliseconds`                          | `false`        | Deactivation duration            |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/core/toggle/timing">
+  </demovanilla>
+</demo>
+
 ## Quantity
 
 You can specify `min` and `max` concurrent activations. The `min` option is fulfilled on initialization, the `max` options deactivates the first activated when max is reached.
@@ -105,30 +129,6 @@ You can specify **on** and **off** events for the toggle. Fore example `on: 'mou
 
 <demo>
   <demovanilla src="vanilla/components/core/toggle/event">
-  </demovanilla>
-</demo>
-
-## Timing
-
-Activation/deactivation automatically waits for the <strong>duration</strong> of animations and transitions on <code>.active</code> and <code>.out</code>.
-
-You can use a function for <code>delayOn</code> and <code>delayOff</code> for example <code>(current, total) => {return Math.min((total - current) * 150, 300)}</code>.
-
-<div class="table-scroll">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `instant:Boolean|Object`                 | `{ elements: true, targets: false, elementsInner: true, targetsInner: true }`     | Set instant activation and deactivation, can be one or more booleans `elements` `elementsInner` `targets` `targetsInner`          |
-| Option                  | `delayOn:Milliseconds|Function`                          | `false`        | Activation delay            |
-| Option                  | `delayOff:Milliseconds|Function`                          | `false`        | Deactivation delay            |
-| Option                  | `delayInitial:Boolean`                          | `true`        | Initial activation delay            |
-| Option                  | `durationOn:Milliseconds`                          | `false`        | Activation duration            |
-| Option                  | `durationOff:Milliseconds`                          | `false`        | Deactivation duration            |
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/core/toggle/timing">
   </demovanilla>
 </demo>
 

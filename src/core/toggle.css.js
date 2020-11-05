@@ -3,7 +3,7 @@ module.exports = {
   utility: {
     '.toggle': {
       // setup
-      '&:not(.active):not(.out)': {
+      '&:not(.in):not(.out)': {
         display: 'none',
       },
     },

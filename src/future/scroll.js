@@ -289,8 +289,8 @@ Scroll.optionsDefault = {
   elements: false,
   targets: false,
   // class
-  class: 'fade fade-scroll',
-  classIn: 'fade-in',
+  class: 'fade-in in-scroll',
+  classActive: 'fade-active',
   classOut: 'fade-out',
   // quantity
   min: 0,

@@ -7,8 +7,8 @@
     &.inverse {
       @apply translate-x-4;
     }
-    /* in */
-    &.fade-in {
+    /* active */
+    &.fade-active {
       @apply opacity-100 translate-x-0 ease-in;
     }
     /* out */

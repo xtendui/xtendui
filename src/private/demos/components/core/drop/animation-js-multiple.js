@@ -1,9 +1,9 @@
 import { Xt } from 'xtendui'
-import 'xtendui/src/core/overlay'
+import 'xtendui/src/core/drop'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '.demo--overlay-animation-js',
+  matches: '.demo--drop-animation-js-multiple',
   mount: object => {
     // vars
 
@@ -14,7 +14,9 @@ Xt.mount.push({
 
     // init
 
-    let self = new Xt.Overlay(object, {
+    let self = new Xt.Drop(object, {
+      elements: ':scope > .drop-container',
+      targets: ':scope > .drop-container > .drop',
       durationOn: Xt.vars.timeSmall,
       durationOff: Xt.vars.timeSmall,
     })
@@ -23,14 +25,13 @@ Xt.mount.push({
 
     const eventOn = e => {
       const tr = e.target
-      const inner = tr.querySelector('.overlay-inner')
+      gsap.set(tr, { opacity: 0 })
       if (!tr.classList.contains('inverse')) {
-        gsap.set(inner, { x: -15 })
+        gsap.set(tr, { x: -15 })
       } else {
-        gsap.set(inner, { x: 15 })
+        gsap.set(tr, { x: 15 })
       }
-      gsap.set(inner, { opacity: 0 })
-      gsap.to(inner, { x: 0, opacity: 1, duration: targetTimeOn, ease: targetEaseOn })
+      gsap.to(tr, { x: 0, opacity: 1, duration: targetTimeOn, ease: targetEaseOn })
     }
 
     for (const target of self.targets) {
@@ -42,11 +43,9 @@ Xt.mount.push({
     const eventOff = e => {
       const tr = e.target
       if (!tr.classList.contains('inverse')) {
-        const inner = tr.querySelector('.overlay-inner')
-        gsap.to(inner, { x: 15, opacity: 0, duration: targetTimeOff, ease: targetEaseOff })
+        gsap.to(tr, { x: 15, opacity: 0, duration: targetTimeOff, ease: targetEaseOff })
       } else {
-        const inner = tr.querySelector('.overlay-inner')
-        gsap.to(inner, { x: -15, opacity: 0, duration: targetTimeOff, ease: targetEaseOff })
+        gsap.to(tr, { x: -15, opacity: 0, duration: targetTimeOff, ease: targetEaseOff })
       }
     }
 

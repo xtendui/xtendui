@@ -69,7 +69,7 @@ class Toggle {
     self.options = Xt.merge([self.optionsDefault, self.optionsCustom])
     // classes
     self.classes = self.options.class ? [...self.options.class.split(' ')] : []
-    self.classesIn = self.options.classIn ? [...self.options.classIn.split(' ')] : []
+    self.classesIn = self.options.classActive ? [...self.options.classActive.split(' ')] : []
     self.classesOut = self.options.classOut ? [...self.options.classOut.split(' ')] : []
     self.classesDone = self.options.classDone ? [...self.options.classDone.split(' ')] : []
     self.classesInitial = self.options.classInitial ? [...self.options.classInitial.split(' ')] : []
@@ -3058,8 +3058,8 @@ Toggle.optionsDefaultSuper = {
   elementsInner: false,
   targetsInner: false,
   // class
-  class: 'active active-toggle',
-  classIn: 'in',
+  class: 'in in-toggle',
+  classActive: 'active',
   classOut: 'out',
   classDone: 'done',
   classInitial: 'initial',

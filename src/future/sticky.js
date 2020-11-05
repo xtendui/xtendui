@@ -458,7 +458,7 @@ Sticky.optionsDefault = {
   elements: false,
   targets: false,
   // class
-  class: 'active active-sticky',
+  class: 'in in-sticky',
   // quantity
   min: 0,
   max: 'Infinity',

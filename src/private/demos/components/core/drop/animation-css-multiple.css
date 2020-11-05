@@ -1,20 +1,20 @@
-.demo--scroll-distance {
-  .card {
-    /* mode-infinite */
+.demo--drop-animation-css-multiple {
+  @apply duration-500; /* needed for animation time, put max animation time */
+  > .drop {
     /* initial */
     @apply transform transition-all duration-500;
     @apply opacity-0 -translate-x-4;
-    &.inverse {
+    .inverse& {
       @apply translate-x-4;
     }
     /* active */
-    &.fade-active {
+    &.active {
       @apply opacity-100 translate-x-0 ease-in;
     }
     /* out */
-    &.fade-out {
+    &.out {
       @apply opacity-0 translate-x-4 ease-out;
-      &.inverse {
+      .inverse& {
         @apply -translate-x-4;
       }
     }

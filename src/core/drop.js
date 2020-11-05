@@ -55,7 +55,7 @@ Drop.optionsDefault = {
   targets: ':scope > .drop',
   targetsInner: ':scope > .drop-inner',
   // class
-  class: 'active active-drop',
+  class: 'in in-drop',
   // quantity
   min: 0,
   max: 1,
@@ -64,7 +64,7 @@ Drop.optionsDefault = {
   eventLimit: '.event-limit, .drop > .drop-inner',
   // timing
   instant: {
-    elements: false,
+    elements: true,
     targets: false,
     elementsInner: true,
     targetsInner: false,

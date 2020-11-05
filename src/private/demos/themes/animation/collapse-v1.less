@@ -48,7 +48,7 @@
           transform: translateY(-1rem);
         }
       }
-      &.in {
+      &.active {
         animation-duration: @time-md; // needed for animation time, put max animation time
         > .drop-inner {
           transition: height @time-md @ease-in;
@@ -109,7 +109,7 @@
           transform: translateY(-2.5rem);
         }
       }
-      &.in {
+      &.active {
         animation-duration: @time-md; // needed for animation time, put max animation time
         transition: height @time-md @ease-in;
         .overlay-design {
@@ -161,7 +161,7 @@
 
     .group {
       .collapse-width();
-      &.in {
+      &.active {
         transition: width @time-md @ease-out;
       }
       &.out {

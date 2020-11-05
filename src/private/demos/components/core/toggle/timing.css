@@ -6,8 +6,8 @@
     &.inverse {
       @apply translate-x-4;
     }
-    /* in */
-    &.in {
+    /* active */
+    &.active {
       @apply opacity-100 translate-x-0 ease-in;
     }
     /* out */

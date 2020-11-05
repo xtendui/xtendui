@@ -116,7 +116,14 @@ module.exports = {
       height: '100%',
       // styles
       backgroundColor: theme('colors.gray.900'),
-      opacity: '.3',
+      opacity: '0',
+      // animation
+      transitionProperty: 'opacity',
+      transitionDuration: theme('transitionDuration.500'),
+      transitionTimingFunction: theme('transitionTimingFunction.ease.inOut'),
+      '.active &': {
+        opacity: '.3',
+      },
     },
     'html:not(.xt-focus-disable)': {
       ':focus': {

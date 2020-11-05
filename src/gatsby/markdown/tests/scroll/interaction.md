@@ -15,7 +15,7 @@ You can customize the **class names** used with the component.
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `class:String`                          | `fade fade-scroll`        | Class name for activation            |
-| Option                  | `classIn:String`                          | `fade-in`        | Class name for in animation            |
+| Option                  | `classActive:String`                          | `fade-in`        | Class name for in animation            |
 | Option                  | `classOut:String`                          | `fade-out`        | Class name for out animation            |
 | Option                  | `classDone:String`                          | `done`        | Class name for in animation done            |
 | Option                  | `classInitial:String`                          | `initial`        | Class name for initialization            |

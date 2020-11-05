@@ -6,6 +6,7 @@ if (typeof window !== 'undefined') {
   require('xtendui/src/private/demos/components/addons/slider/automatic-scroll.js')
   require('xtendui/src/private/demos/components/addons/structure/google-locator.js')
   require('xtendui/src/private/demos/components/addons/structure/jump-to-content.js')
+  require('xtendui/src/private/demos/components/core/drop/animation-js-multiple.js')
   require('xtendui/src/private/demos/components/core/drop/animation-js.js')
   require('xtendui/src/private/demos/components/core/drop/events-methods.js')
   require('xtendui/src/private/demos/components/core/form/validation.js')

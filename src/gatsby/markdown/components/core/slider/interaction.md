@@ -14,8 +14,8 @@ You can customize the **class names** used with the component.
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `class:String`                          | `active active-slider`        | Class name for activation            |
-| Option                  | `classIn:String`                          | `in`        | Class name for in animation            |
+| Option                  | `class:String`                          | `in in-slider`        | Class name for activation            |
+| Option                  | `classActive:String`                          | `active`        | Class name for in animation            |
 | Option                  | `classOut:String`                          | `out`        | Class name for out animation            |
 | Option                  | `classDone:String`                          | `done`        | Class name for in animation done            |
 | Option                  | `classInitial:String`                          | `initial`        | Class name for initialization            |

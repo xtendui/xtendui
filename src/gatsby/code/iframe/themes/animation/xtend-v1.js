@@ -58,11 +58,11 @@ demo.htmlSource = `
 
   <div class="drop-container" data-xt-drop>
 
-    <button type="button" class="btn btn-md ${btnPrimary()}">
+    <button type="button" class="btn btn-md text-white links-inverse rounded-md bg-accent-500 transform ease-in-out-sine duration-300 border hover:bg-accent-600 hover:border-accent-700 hover:shadow-lg hover:-translate-y-1 active:bg-accent-700 active:shadow-sm active:translate-y-0">
       list
     </button>
 
-    <div class="drop">
+    <div class="drop group">
       <div class="drop-inner">
         <div class="w-64 py-3 ${cardDefaultDropList()}">
           <nav class="list flex-col">
@@ -84,7 +84,7 @@ demo.htmlSource = `
 
   <div class="drop-container" data-xt-drop>
 
-    <button type="button" class="btn btn-md ${btnPrimary()}">
+    <button type="button" class="btn btn-md text-white links-inverse rounded-md bg-accent-500 transform ease-in-out-sine duration-300 border hover:bg-accent-600 hover:border-accent-700 hover:shadow-lg hover:-translate-y-1 active:bg-accent-700 active:shadow-sm active:translate-y-0">
       card
     </button>
 
