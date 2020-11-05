@@ -11,6 +11,18 @@ module.exports = {
       width: 'auto',
       maxWidth: 'none',
     },
+    '.container-y': {
+      // setup
+      ...theme('container.padding'),
+    },
+    '.-container': {
+      // setup
+      ...theme('container.padding'),
+    },
+    '.-container-y': {
+      // setup
+      ...theme('container.padding'),
+    },
     '.h-screen': {
       // setup
       height: 'calc(var(--vh, 1vh) * 100) !important',

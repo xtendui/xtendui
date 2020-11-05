@@ -33,7 +33,7 @@ demo.htmlSource = `
       <div class="row row-4 lg:row-6 items-stretch">
 
         <div class="w-full md:w-6/12 lg:w-7/12">
-          <div class="relative pt-6 md:py-6">
+          <div class="relative md:py-6">
             <div class="product-gallery">
 
               <div class="list flex-col">

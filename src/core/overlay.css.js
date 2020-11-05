@@ -67,7 +67,7 @@ module.exports = {
       margin: 'auto', // @FIX http://stackoverflow.com/questions/33454533/cant-scroll-to-top-of-flex-item-that-is-overflowing-container
       width: '100%',
       minHeight: '100vh',
-      padding: theme('container.padding.default'),
+      padding: theme('container.padding.DEFAULT'),
       '@screen sm': {
         padding: theme('container.padding.sm'),
       },

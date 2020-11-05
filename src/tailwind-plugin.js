@@ -95,6 +95,66 @@ module.exports = plugin.withOptions(() => {
                 }
               })
               addComponents(css, variants)
+            } else if (component === 'structure' && utility === '.container-y') {
+              let css = {}
+              Object.keys(options[utility]).forEach(name => {
+                let value = options[utility][name]
+                if (name === 'DEFAULT') {
+                  css[utility] = {
+                    paddingTop: value,
+                    paddingBottom: value,
+                  }
+                } else {
+                  css[utility] = {
+                    ...css[utility],
+                    [`@screen ${name}`]: {
+                      paddingTop: value,
+                      paddingBottom: value,
+                    },
+                  }
+                }
+              })
+              addComponents(css, variants)
+            } else if (component === 'structure' && utility === '.-container') {
+              let css = {}
+              Object.keys(options[utility]).forEach(name => {
+                let value = options[utility][name]
+                if (name === 'DEFAULT') {
+                  css[utility] = {
+                    marginLeft: `-${value}`,
+                    marginRight: `-${value}`,
+                  }
+                } else {
+                  css[utility] = {
+                    ...css[utility],
+                    [`@screen ${name}`]: {
+                      marginLeft: `-${value}`,
+                      marginRight: `-${value}`,
+                    },
+                  }
+                }
+              })
+              addComponents(css, variants)
+            } else if (component === 'structure' && utility === '.-container-y') {
+              let css = {}
+              Object.keys(options[utility]).forEach(name => {
+                let value = options[utility][name]
+                if (name === 'DEFAULT') {
+                  css[utility] = {
+                    marginTop: `-${value}`,
+                    marginBottom: `-${value}`,
+                  }
+                } else {
+                  css[utility] = {
+                    ...css[utility],
+                    [`@screen ${name}`]: {
+                      marginTop: `-${value}`,
+                      marginBottom: `-${value}`,
+                    },
+                  }
+                }
+              })
+              addComponents(css, variants)
             } else {
               // all others
               let css = {}

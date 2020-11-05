@@ -3,7 +3,7 @@
   body { /* add your own selector instead of body to contain the code */
 
     .product-gallery {
-      @apply overflow-y-auto overflow-x-hidden overflow-sub;
+      @apply overflow-y-auto overflow-x-hidden overflow-sub -container md:mx-0;
       @media (max-width: theme('screens.md')) {
         height: 60vh;
         height: calc(var(--vh, 1vh) * 60);

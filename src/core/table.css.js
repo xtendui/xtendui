@@ -48,8 +48,8 @@ module.exports = {
     },
     'th, td': {
       // styles
-      borderRightWidth: theme('borderWidth.default'),
-      borderBottomWidth: theme('borderWidth.default'),
+      borderRightWidth: theme('borderWidth.DEFAULT'),
+      borderBottomWidth: theme('borderWidth.DEFAULT'),
       borderColor: theme('borderColor.gray.200'),
       '&:last-child': {
         borderRight: '0',
