@@ -31,8 +31,8 @@
 @import 'xtendui/src/private/demos/components/core/slider/progress.css';
 @import 'xtendui/src/private/demos/components/core/slider/touch-overflow.css';
 @import 'xtendui/src/private/demos/components/core/sticky/disable.css';
-@import 'xtendui/src/private/demos/components/core/toggle/animation-inverse.css';
-@import 'xtendui/src/private/demos/components/core/toggle/animation.css';
+@import 'xtendui/src/private/demos/components/core/toggle/animation-css-inverse.css';
+@import 'xtendui/src/private/demos/components/core/toggle/animation-css.css';
 @import 'xtendui/src/private/demos/components/core/toggle/class.css';
 @import 'xtendui/src/private/demos/components/core/toggle/custom-options.css';
 @import 'xtendui/src/private/demos/components/core/toggle/jump.css';

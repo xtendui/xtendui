@@ -35,7 +35,7 @@ class Toggle {
     self.optionsCustom = optionsCustom || self.optionsCustom
     // vars
     self.classes = []
-    self.classesIn = []
+    self.classesActive = []
     self.classesOut = []
     self.classesInitial = []
     self.classesInverse = []
@@ -69,7 +69,7 @@ class Toggle {
     self.options = Xt.merge([self.optionsDefault, self.optionsCustom])
     // classes
     self.classes = self.options.class ? [...self.options.class.split(' ')] : []
-    self.classesIn = self.options.classActive ? [...self.options.classActive.split(' ')] : []
+    self.classesActive = self.options.classActive ? [...self.options.classActive.split(' ')] : []
     self.classesOut = self.options.classOut ? [...self.options.classOut.split(' ')] : []
     self.classesDone = self.options.classDone ? [...self.options.classDone.split(' ')] : []
     self.classesInitial = self.options.classInitial ? [...self.options.classInitial.split(' ')] : []
@@ -267,12 +267,12 @@ class Toggle {
           found = true
         }
         requestAnimationFrame(() => {
-          elReset.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesDone, ...self.classesInitial, ...self.classesInverse)
+          elReset.classList.remove(...self.classes, ...self.classesActive, ...self.classesOut, ...self.classesDone, ...self.classesInitial, ...self.classesInverse)
           const elementsInner = Xt.queryAll(elReset, options.elementsInner)
           for (const elementInner of elementsInner) {
             elementInner.classList.remove(
               ...self.classes,
-              ...self.classesIn,
+              ...self.classesActive,
               ...self.classesOut,
               ...self.classesDone,
               ...self.classesInitial,
@@ -1122,7 +1122,7 @@ class Toggle {
   checkAnim(elements) {
     const self = this
     // check
-    elements = elements.filter(x => x.classList.contains(self.classesIn[0]) || x.classList.contains(self.classesOut[0]))
+    elements = elements.filter(x => x.classList.contains(self.classesActive[0]) || x.classList.contains(self.classesOut[0]))
     return elements.length > 0
   }
 
@@ -1167,7 +1167,7 @@ class Toggle {
     const self = this
     // activation
     el.classList.add(...self.classes)
-    el.classList.remove(...self.classesIn)
+    el.classList.remove(...self.classesActive)
     el.classList.remove(...self.classesOut)
     el.classList.remove(...self.classesDone)
     if (self.initial && !self.wrap) {
@@ -1179,7 +1179,7 @@ class Toggle {
       el,
       `${self.componentNamespace}ActivateFrame`,
       requestAnimationFrame(() => {
-        el.classList.add(...self.classesIn)
+        el.classList.add(...self.classesActive)
         // remove initial instantly when wrap
         if (el.classList.contains('xt-wrap')) {
           el.classList.remove(...self.classesInitial)
@@ -1212,7 +1212,7 @@ class Toggle {
     const self = this
     // activation
     el.classList.remove(...self.classes)
-    el.classList.remove(...self.classesIn)
+    el.classList.remove(...self.classesActive)
     el.classList.add(...self.classesOut)
     el.classList.remove(...self.classesDone)
     if (self.direction >= 0) {
@@ -3078,7 +3078,7 @@ Toggle.optionsDefaultSuper = {
     elements: true,
     targets: false,
     elementsInner: true,
-    targetsInner: false,
+    targetsInner: true,
   },
   delayOn: false,
   delayOff: false,

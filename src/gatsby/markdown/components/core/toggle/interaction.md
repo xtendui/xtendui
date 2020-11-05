@@ -39,7 +39,7 @@ Additionally on component initialization the class `xt-toggle` gets added to the
 
 ## Animations
 
-The util class `.toggle` sets `display: none` when **not activated**. If you want `display: none` when **activated** `.toggle-inverse`.
+The util class `.toggle` sets `display: none` when **not activated**. If you want `display: none` when **activated** use `.toggle-inverse`.
 
 <div class="table-scroll">
 
@@ -50,19 +50,24 @@ The util class `.toggle` sets `display: none` when **not activated**. If you wan
 
 </div>
 
-You can use **css animations**, just add them with **class names**.
+
+Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).
 
 <demo>
   <demovanilla src="vanilla/components/core/toggle/animation">
   </demovanilla>
 </demo>
 
+You can use also **css animations**, just add them with **class names** `.in`, `.out` and `.inverse`.
+
 <demo>
-  <demovanilla src="vanilla/components/core/toggle/animation-inverse">
+  <demovanilla src="vanilla/components/core/toggle/animation-css">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/toggle/animation-css-inverse">
   </demovanilla>
 </demo>
 
-You can use **javascript animations**, just use [toggle api](/components/core/toggle/api), and remember to set `durationOn: Milliseconds` and `durationOff: Milliseconds`.
+You can use also **javascript animations**, just use [drop api](/components/core/drop/api), and remember to set `durationOn: Milliseconds` and `durationOff: Milliseconds`.
 
 <demo>
   <demovanilla src="vanilla/components/core/toggle/animation-js">

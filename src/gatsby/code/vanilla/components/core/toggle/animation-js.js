@@ -24,15 +24,15 @@ demo.htmlSource = `
     Toggle 2
   </button>
 
-  <div class="card toggle ${cardToggle()}">
+  <div class="card toggle ${cardToggle()} transition-none">
     Target 0
   </div>
 
-  <div class="card toggle ${cardToggle()}">
+  <div class="card toggle ${cardToggle()} transition-none">
     Target 1
   </div>
 
-  <div class="card toggle ${cardToggle()}">
+  <div class="card toggle ${cardToggle()} transition-none">
     Target 2
   </div>
 
