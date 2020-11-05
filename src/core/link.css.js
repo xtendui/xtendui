@@ -26,12 +26,9 @@ module.exports = {
       overflowWrap: 'break-word',
       textDecoration: 'underline',
       // animation
-      transitionProperty: 'color',
+      transitionProperty: 'all',
       transitionDuration: theme('transitionDuration.500'),
-      transitionTimingFunction: theme('transitionTimingFunction.ease.out'),
-      '&:hover, &:active, &.active': {
-        transitionTimingFunction: theme('transitionTimingFunction.ease.in'),
-      },
+      transitionTimingFunction: theme('transitionTimingFunction.ease.inOut'),
     },
   }),
 }

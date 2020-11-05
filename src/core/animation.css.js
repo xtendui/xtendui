@@ -25,6 +25,7 @@ module.exports = {
   transitionTimingFunction: {
     in: 'cubic-bezier(.25,.46,.45,.94)', // outQuad
     out: 'cubic-bezier(.455,.03,.515,.955)', // inOutQuad
+    'in-out': 'cubic-bezier(.455,.03,.515,.955)', // inOutQuad
     'in-sine': 'cubic-bezier(.47,0,.745,.715)',
     'out-sine': 'cubic-bezier(.39,.575,.565,1)',
     'in-out-sine': 'cubic-bezier(.445,.05,.55,.95)',

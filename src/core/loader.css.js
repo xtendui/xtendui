@@ -192,28 +192,5 @@ module.exports = {
         },
       },
     },
-    '.loader-animated': {
-      // animation
-      opacity: '0',
-      transitionProperty: 'opacity',
-      transitionDuration: theme('transitionDuration.500'),
-      transitionTimingFunction: theme('transitionTimingFunction.ease.out'),
-      '> *': {
-        opacity: '0',
-        transform: 'scale(.75)',
-        transitionProperty: 'all',
-        transitionDuration: theme('transitionDuration.500'),
-        transitionTimingFunction: theme('transitionTimingFunction.ease.out'),
-      },
-      '&.in': {
-        opacity: '1',
-        transitionTimingFunction: theme('transitionTimingFunction.ease.in'),
-        '> *': {
-          opacity: '1',
-          transform: 'scale(1)',
-          transitionTimingFunction: theme('transitionTimingFunction.ease.in'),
-        },
-      },
-    },
   }),
 }

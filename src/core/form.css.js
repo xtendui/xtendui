@@ -64,10 +64,7 @@ module.exports = {
       // animation
       transitionProperty: 'all',
       transitionDuration: theme('transitionDuration.500'),
-      transitionTimingFunction: theme('transitionTimingFunction.ease.out'),
-      '&:hover, &:focus': {
-        transitionTimingFunction: theme('transitionTimingFunction.ease.in'),
-      },
+      transitionTimingFunction: theme('transitionTimingFunction.ease.inOut'),
     },
     '.form-select': {
       // setup
@@ -112,13 +109,7 @@ module.exports = {
       // animation
       transitionProperty: 'all',
       transitionDuration: theme('transitionDuration.500'),
-      transitionTimingFunction: theme('transitionTimingFunction.out'),
-      '&:checked': {
-        transitionTimingFunction: theme('transitionTimingFunction.in'),
-      },
-      '&:hover, &:focus': {
-        transitionTimingFunction: theme('transitionTimingFunction.ease.in'),
-      },
+      transitionTimingFunction: theme('transitionTimingFunction.ease.inOut'),
     },
     '.form-checkbox': {
       // styles

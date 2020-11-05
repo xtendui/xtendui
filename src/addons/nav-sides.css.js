@@ -16,13 +16,12 @@ module.exports = {
       '.nav-sides-btn > *': {
         transitionProperty: 'opacity, transform',
         transitionDuration: theme('transitionDuration.200'),
-        transitionTimingFunction: theme('transitionTimingFunction.ease.out'),
+        transitionTimingFunction: theme('transitionTimingFunction.ease.inOut'),
       },
       '&:active': {
         '.nav-sides-btn > *': {
           opacity: '.75',
           transform: 'scale(0.8)',
-          transitionTimingFunction: theme('transitionTimingFunction.ease.in'),
         },
       },
     },
@@ -34,10 +33,9 @@ module.exports = {
       opacity: '0',
       transitionProperty: 'opacity',
       transitionDuration: theme('transitionDuration.200'),
-      transitionTimingFunction: theme('transitionTimingFunction.ease.out'),
+      transitionTimingFunction: theme('transitionTimingFunction.ease.inOut'),
       '&.in': {
         opacity: '1',
-        transitionTimingFunction: theme('transitionTimingFunction.ease.in'),
       },
     },
     '@media (hover: none)': {

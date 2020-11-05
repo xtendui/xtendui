@@ -41,15 +41,12 @@ module.exports = {
       flex: '1 1 auto',
       width: '100%',
       // animation
-      'a&, button&, label&': {
-        zIndex: theme('zIndex.base'),
-        transitionProperty: 'all',
-        transitionDuration: theme('transitionDuration.500'),
-        transitionTimingFunction: theme('transitionTimingFunction.out'),
-        '&:hover, &:active, &.active': {
-          zIndex: theme('zIndex.active'),
-          transitionTimingFunction: theme('transitionTimingFunction.in'),
-        },
+      zIndex: theme('zIndex.base'),
+      transitionProperty: 'all',
+      transitionDuration: theme('transitionDuration.500'),
+      transitionTimingFunction: theme('transitionTimingFunction.ease.inOut'),
+      '&:hover, &:active, &.active': {
+        zIndex: theme('zIndex.active'),
       },
     },
     '.card-sm': {

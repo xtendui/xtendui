@@ -6,25 +6,37 @@ Xt.mount.push({
   mount: object => {
     // vars
 
-    const fillerTime = Xt.vars.timeBig
-    const fillerEase = 'linear'
+    let timeout
 
     // init
 
     const loaderTimeout = () => {
       const filler = object.querySelectorAll('.filler span:nth-child(1)')
-      object.dataset.loaderActive = object.dataset.loaderActive === 'true' ? 'false' : 'true'
-      if (object.dataset.loaderActive === 'true') {
-        Xt.animOn(object)
+      if (object.dataset.loaderTimeout) {
+        clearTimeout(object.dataset.loaderTimeout)
+        delete object.dataset.loaderTimeout
+        object.classList.remove('hidden')
+        requestAnimationFrame(() => {
+          object.classList.add('active')
+        })
         gsap.set(filler, { width: 0 })
-        gsap.to(filler, { width: '100%', duration: fillerTime, ease: fillerEase })
-        setTimeout(loaderTimeout, fillerTime)
+        gsap.to(filler, { width: '100%', duration: 1000, ease: 'linear' }).eventCallback('onComplete', loaderTimeout)
       } else {
-        Xt.animOff(object)
-        Xt.animTimeout(object, loaderTimeout)
+        delete object.dataset.loaderActive
+        object.classList.remove('active')
+        Xt.animTimeout(object, () => {
+          object.classList.add('hidden')
+          object.dataset.loaderTimeout = setTimeout(loaderTimeout, 3000)
+        })
       }
     }
 
-    loaderTimeout()
+    object.dataset.loaderTimeout = setTimeout(loaderTimeout, 3000)
+
+    // unmount
+
+    return () => {
+      clearTimeout(object.dataset.loaderTimeout)
+    }
   },
 })

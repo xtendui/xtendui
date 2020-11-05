@@ -17,26 +17,18 @@ Use **tailwind classes** to assign variant (e.g. [background-color](https://tail
   </demovanilla>
 </demo>
 
-## Activation
+## Activation animation
 
-Use **component classes** to assign loader activation animation. 
+Use **tailwind classes** to assign loader activation animation. 
 
-<div class="table-scroll">
-
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.loader-animated`                     | `loader-animated`                | Loader activation animation            |
-
-</div>
-
-Example loader spinner with activation animation*.
+Example loader spinner with **activation animation**.
 
 <demo>
   <demovanilla src="vanilla/components/core/loader/js-spinner">
   </demovanilla>
 </demo>
 
-Example loader filler with activation animation.
+Example loader filler with **activation animation**.
 
 <demo>
   <demovanilla src="vanilla/components/core/loader/js-filler">
