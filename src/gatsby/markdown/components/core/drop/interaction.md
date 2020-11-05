@@ -15,8 +15,8 @@ You can customize the **class names** used with the component.
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `class:String`                          | `in in-drop`        | Class name for activation            |
-| Option                  | `classActive:String`                          | `active`        | Class name for in animation            |
-| Option                  | `classOut:String`                          | `out`        | Class name for out animation            |
+| Option                  | `classActive:String`                          | `active`        | Class name for active            |
+| Option                  | `classOut:String`                          | `out`        | Class name for out            |
 | Option                  | `classDone:String`                          | `done`        | Class name for in animation done            |
 | Option                  | `classInitial:String`                          | `initial`        | Class name for initialization            |
 | Option                  | `classInverse:String`                          | `inverse`        | Class name for inverse direction activation            |

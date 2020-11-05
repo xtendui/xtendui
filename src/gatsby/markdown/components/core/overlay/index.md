@@ -84,7 +84,7 @@ Check subpage to [customize interaction](/components/core/overlay/interaction) a
 
 Use this code to create a **overlay** in **standalone mode**.
 
-Just use the class `active-overlay` if you want to automatically open, or use the [api](/components/core/overlay/api)
+Just use the class `in-overlay` if you want to automatically open, or use the [api](/components/core/overlay/api)
 
 <demo>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/overlay/usage-standalone">
