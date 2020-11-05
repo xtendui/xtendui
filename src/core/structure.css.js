@@ -134,7 +134,6 @@ module.exports = {
       },
     },
     '.design-setup': {
-      content: '""',
       position: 'absolute',
       zIndex: '-1',
       top: '0',
