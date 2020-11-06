@@ -78,8 +78,6 @@ Install it and use as described in the docs.
 npm install gsap --save
 ```
 
-Then **setup gsap** this way. Also add the following **variables**.
-
 ## Customization
 
 You can **customize theme** inside `tailwind.config.js`, check [xtendui/src/tailwind-config.js](https://github.com/minimit/xtendui/blob/master/src/tailwind-config.js) for default values.
