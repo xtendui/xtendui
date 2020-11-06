@@ -209,7 +209,7 @@ demo.htmlSource = `
 
             <div class="lg:card-group">
 
-              <div class="card-lg text-sm lg:w-7/12">
+              <div class="card-md md:card-lg text-sm lg:w-7/12">
                 <div class="h4">
                   Contact us
                 </div>
@@ -336,7 +336,7 @@ demo.htmlSource = `
                 </div>
               </div>
 
-              <div class="card-lg text-sm lg:w-7/12">
+              <div class="card-md md:card-lg text-sm lg:w-7/12">
                 <div class="h4">
                   Subscribe to our newsletter
                 </div>
@@ -423,102 +423,6 @@ demo.htmlSource = `
       </div>
     </div>
 
-  </div>
-
-  <div data-xt-overlay>
-    <button type="button" class="btn btn-primary">
-      overlay newsletter
-    </button>
-    <div class="overlay overlay-default overlay-size-sm">
-      <div class="overlay-container max-w-5xl">
-        <div class="overlay-inner">
-          <div class="overlay-design"></div>
-
-          <div class="card card-overlay"
-            style="align-items: stretch;">
-            <div class="card-design"></div>
-            <div class="btn btn-close p-5 text-2xl" aria-label="Close">
-              ${iconX()}
-            </div>
-            <div class="card-inner">
-              <div class="card-content">
-
-                <div class="card-item-nested card-item card-group-sm">
-
-                  <div class="card-item sm:w-5/12">
-                    <div class="media-container full-y" style="padding-bottom: 37.5%;">
-                      <div class="media-inner">
-                        <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="card-item">
-
-                    <div class="h4">
-                      Subscribe to our newsletter
-                    </div>
-
-                    <form>
-
-                      <div class="form-group">
-                        <label class="form-label">
-                          Email
-                        </label>
-                        <input type="email" class="form-item" placeholder="Email" required>
-                      </div>
-
-                      <div class="form-group-inline">
-
-                        <label class="form-label">
-                          Select an option
-                        </label>
-
-                        <div class="form-group">
-                          <input type="radio" id="radio-newsletter-0" name="radio-newsletter" required>
-                          <label class="form-label" for="radio-newsletter-0">
-                            Option 1
-                          </label>
-                        </div>
-
-                        <div class="form-group">
-                          <input type="radio" id="radio-newsletter-1" name="radio-newsletter" required>
-                          <label class="form-label" for="radio-valinewsletterdation-1">
-                            Option 2
-                          </label>
-                        </div>
-
-                      </div>
-
-                      <div class="form-group">
-                        <input type="checkbox" id="check-newsletter" name="check-newsletter" required>
-                        <label class="form-label" for="check-newsletter">
-                        <span>
-                          I <strong>read and accept</strong> the <a href="#" target="_blank">sales conditions</a> and the <a href="#" target="_blank">privacy policy</a>.
-                        </label>
-                      </div>
-
-                      <button type="submit" class="btn btn-primary btn-wide">
-                        Subscribe
-                      </button>
-
-                    </form>
-
-                  </div>
-
-                </div>
-
-                <div class="card-item card-block-side card-sm">
-                  <p>Receive <strong>free discount</strong> periodically on all our products.</p>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
   </div>
 
 </div>

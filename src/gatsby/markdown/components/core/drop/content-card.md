@@ -23,11 +23,11 @@ Use **component classes** to assign size. You can add **additional size** for ex
 
 <div class="table-scroll">
 
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ---------------------------- | -----------------| ----------------------------- |
-| Component                  | `.card-sm`       | `card-sm`                | Size small            |
-| Component                  | `.card-md`       | `card-md`                | Size medium            |
-| Component                  | `.card-lg`       | `card-lg`                | Size large            |
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
+| Utility                  | `.card-sm`                     | `card-sm`                | `responsive`                | Size small            |
+| Utility                  | `.card-md`                     | `card-md`                | `responsive`                | Size medium            |
+| Utility                  | `.card-lg`                     | `card-lg`                | `responsive`                | Size large            |
 
 </div>
 

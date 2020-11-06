@@ -69,7 +69,7 @@ demo.htmlSource = `
           <div class="btn btn-close p-5 text-2xl" aria-label="Close">
             ${iconX()}
           </div>
-          <div class="card-lg">
+          <div class="card-md md:card-lg">
             <div class="h3">Lorem ipsum</div>
             <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
           </div>
