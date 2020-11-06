@@ -39,9 +39,9 @@ Here are the main **javascript options**.
 | Option                    | `scrollElements:Array`                          | `[document.scrollingElement]`        | Scroll nodes (ordered parent > child)             |
 | Option                    | `class:String`                          | `'active'`        | Activation class             |
 | Option                    | `scrollDelay:Number`                          | `250`        | Delay on scroll checks             |
-| Option                    | `position(self, scrollingElement):Function`             | `<Function>`        | Positioning function return `Number`             |
-| Option                    | `scrollDistance:Function`                          | `<Function>`        | Distance from top on scroll checks return `Number`            |
-| Option                    | `scrollSpace:Function`                          | `<Function>`        | Positioning space from top return `Number`             |
+| Option                    | `position(scrollingElement, target, self):Function`             | `<Function>`        | Positioning function return `Number`             |
+| Option                    | `scrollSpace(scrollingElement, target, self):Function`                          | `<Function>`        | Positioning space from top return `Number`             |
+| Option                    | `scrollDistance(scrollingElement, target, self):Function`                          | `<Function>`        | Distance from top on scroll checks return `Number`            |
 
 </div>
 

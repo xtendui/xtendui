@@ -48,8 +48,8 @@ class ScrollToAnchor {
         // initial
         requestAnimationFrame(() => {
           self.scrollElementCurrent = scrollElement
-          self.eventScrollHandler(scrollElement)
           self.eventStart()
+          self.eventScrollHandler(scrollElement)
         })
       }
     }
@@ -213,9 +213,9 @@ class ScrollToAnchor {
             }
           }
           // vars
-          self.scrollSpace = options.scrollSpace(self, self.scrollElementCurrent)
-          self.scrollDistance = options.scrollDistance(self, self.scrollElementCurrent)
-          self.position = options.position(self, self.scrollElementCurrent)
+          self.position = options.position(self.scrollElementCurrent, self.target)
+          self.scrollSpace = options.scrollSpace(self.scrollElementCurrent, self.target)
+          self.scrollDistance = options.scrollDistance(self.scrollElementCurrent, self.target)
           // check if activating
           if (scrollTop >= Math.floor(self.position - self.scrollSpace - self.scrollDistance)) {
             // loop multiple els of
@@ -290,8 +290,8 @@ ScrollToAnchor.optionsDefault = {
   // event
   scrollDelay: 75,
   // scroll
-  position: (self, scrollingElement) => {
-    const rect = self.target.getBoundingClientRect()
+  position: (scrollingElement, target) => {
+    const rect = target.getBoundingClientRect()
     let position = rect.top + scrollingElement.scrollTop
     if (scrollingElement !== document.scrollingElement) {
       const rectScrollingElement = scrollingElement.getBoundingClientRect()
@@ -299,10 +299,10 @@ ScrollToAnchor.optionsDefault = {
     }
     return position
   },
-  scrollDistance: () => {
+  scrollSpace: () => {
     return 0
   },
-  scrollSpace: () => {
+  scrollDistance: () => {
     return 0
   },
 }
