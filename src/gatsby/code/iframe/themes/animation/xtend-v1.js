@@ -1,11 +1,5 @@
 import React from 'react'
 import path from 'path'
-const classesDefault =
-  'text-black links-default rounded-md bg-gray-200 border-transparent transform ease-out-quint duration-500 border hover:bg-gray-300 hover:border-gray-400 hover:shadow-lg hover:-translate-y-1 active:bg-gray-400 active:shadow-sm active:translate-y-0'
-const classesPrimary =
-  'text-white links-inverse rounded-md bg-accent-500 border-transparent transform ease-out-quint duration-500 border hover:bg-accent-600 hover:border-accent-700 hover:shadow-lg hover:-translate-y-1 active:bg-accent-700 active:shadow-sm active:translate-y-0'
-const cardDefault =
-  'rounded-md bg-white shadow-lg transform ease-out-quint duration-500 delay-200 opacity-0 scale-50 group-active:delay-0 group-active:opacity-100 group-active:scale-100'
 const btnDefaultDrop = require('components/snippets/classes/btn-default-drop').default
 const btnCloseOutside = require('components/snippets/classes/btn-close-outside').default
 const labelDefault = require('components/snippets/classes/label-default').default
@@ -13,6 +7,14 @@ const inputDefault = require('components/snippets/classes/input-default').defaul
 const checkDefault = require('components/snippets/classes/form-check-default').default
 const radioDefault = require('components/snippets/classes/form-radio-default').default
 const iconX = require('components/snippets/icons').iconX
+const classesDefault =
+  'text-black links-default rounded-md bg-gray-200 border-transparent transform ease-out-quint duration-500 border hover:bg-gray-300 hover:border-gray-400 hover:shadow-lg hover:-translate-y-1 active:bg-gray-400 active:shadow-sm active:translate-y-0'
+const classesPrimary =
+  'text-white links-inverse rounded-md bg-accent-500 border-transparent transform ease-out-quint duration-500 border hover:bg-accent-600 hover:border-accent-700 hover:shadow-lg hover:-translate-y-1 active:bg-accent-700 active:shadow-sm active:translate-y-0'
+const cardDesign =
+  'bg-white shadow-lg transform ease-in-out-quint duration-500 delay-200 opacity-0 scale-50 group-active:ease-out-quint group-active:delay-0 group-active:opacity-100 group-active:scale-100'
+const cardContent =
+  'text-black links-default transform ease-in-out-quint duration-500 delay-0 opacity-0 -translate-y-2 group-active:ease-out-quint group-active:delay-300 group-active:opacity-100 group-active:translate-y-0'
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -62,14 +64,14 @@ demo.htmlSource = `
 
   <div class="drop-container" data-xt-drop>
 
-    <button type="button" class="btn btn-md text-white links-inverse rounded-md bg-accent-500 border-transparent border-transparent transform ease-out-quint duration-500 border hover:bg-accent-600 hover:border-accent-700 hover:shadow-lg hover:-translate-y-1 active:bg-accent-700 active:shadow-sm active:translate-y-0">
+    <button type="button" class="btn btn-md ${classesPrimary}">
       list
     </button>
 
-    <div class="drop group duration-700">  <!-- needed for animation time, put max animation time -->
+    <div class="drop group duration-700"> <!-- needed for animation time, put max animation time -->
       <div class="drop-inner">
-        <div class="design-setup ${cardDefault}"></div>
-        <div class="w-64 py-3 text-black links-default transform ease-out-quint duration-500 delay-0 opacity-0 -translate-y-2 group-active:delay-300 group-active:opacity-100 group-active:translate-y-0">
+        <div class="design-setup rounded-md ${cardDesign}"></div>
+        <div class="w-64 py-3 ${cardContent}">
           <nav class="list flex-col">
             <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -93,10 +95,10 @@ demo.htmlSource = `
       card
     </button>
 
-    <div class="drop group duration-700">  <!-- needed for animation time, put max animation time -->
+    <div class="drop group duration-700"> <!-- needed for animation time, put max animation time -->
       <div class="drop-inner">
-        <div class="design-setup ${cardDefault}"></div>
-        <div class="card w-80 text-black links-default transform ease-out-quint duration-500 delay-0 opacity-0 -translate-y-2 group-active:delay-300 group-active:opacity-100 group-active:translate-y-0">
+        <div class="design-setup rounded-md ${cardDesign}"></div>
+        <div class="card w-80 ${cardContent}">
           <div class="btn btn-close p-5 text-xl" aria-label="Close">
             ${iconX()}
           </div>
@@ -122,13 +124,13 @@ demo.htmlSource = `
     <button type="button" class="btn btn-md ${classesPrimary}">
       screen image full
     </button>
-    <div class="overlay overlay-screen group duration-700">  <!-- needed for animation time, put max animation time -->
+    <div class="overlay overlay-screen group duration-700"> <!-- needed for animation time, put max animation time -->
       <div class="overlay-container">
         <div class="overlay-inner">
 
-          <div class="design-setup ${cardDefault}"></div>
+          <div class="design-setup rounded-md ${cardDesign}"></div>
 
-          <div class="card items-center justify-center text-black links-default transform ease-out-quint duration-500 delay-0 opacity-0 -translate-y-2 group-active:delay-300 group-active:opacity-100 group-active:translate-y-0">
+          <div class="card ${cardContent}">
             <div class="btn btn-close p-5 text-2xl fixed z-top" aria-label="Close">
               ${iconX()}
             </div>
@@ -150,24 +152,24 @@ demo.htmlSource = `
       left blocks
     </button>
 
-    <div class="overlay overlay-screen group duration-700">  <!-- needed for animation time, put max animation time -->
+    <div class="overlay overlay-screen group duration-700"> <!-- needed for animation time, put max animation time -->
       <div class="overlay-container max-w-md ml-0 mr-auto">
         <div class="overlay-inner">
 
-          <div class="design-setup ${cardDefault}"></div>
+          <div class="design-setup rounded-md ${cardDesign}"></div>
 
-          <div class="card text-black links-default transform ease-out-quint duration-500 delay-0 opacity-0 -translate-y-2 group-active:delay-300 group-active:opacity-100 group-active:translate-y-0">
+          <div class="card ${cardContent}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>
-            <div class="bg-accent-500">
-              <button type="button" class="btn btn-md text-white links-inverse bg-accent-500 border-transparent transform ease-out-quint duration-500 border hover:bg-accent-600 hover:border-accent-700 hover:shadow-lg hover:translate-y-1 active:bg-accent-700 active:shadow-sm active:translate-y-0">
+            <div class="list bg-accent-500">
+              <button type="button" class="btn btn-md ${classesPrimary}">
                 Menu
               </button>
-              <button type="button" class="btn btn-md text-white links-inverse bg-accent-500 border-transparent transform ease-out-quint duration-500 border hover:bg-accent-600 hover:border-accent-700 hover:shadow-lg hover:translate-y-1 active:bg-accent-700 active:shadow-sm active:translate-y-0">
+              <button type="button" class="btn btn-md ${classesPrimary}">
                 Info
               </button>
-              <button type="button" class="btn btn-md text-white links-inverse bg-accent-500 border-transparent transform ease-out-quint duration-500 border hover:bg-accent-600 hover:border-accent-700 hover:shadow-lg hover:translate-y-1 active:bg-accent-700 active:shadow-sm active:translate-y-0">
+              <button type="button" class="btn btn-md ${classesPrimary}">
                 Account
               </button>
             </div>
@@ -197,13 +199,13 @@ demo.htmlSource = `
       contact
     </button>
 
-    <div class="overlay group duration-700">  <!-- needed for animation time, put max animation time -->
+    <div class="overlay group duration-700"> <!-- needed for animation time, put max animation time -->
       <div class="overlay-container max-w-5xl">
         <div class="overlay-inner">
 
-          <div class="design-setup rounded-md md:rounded-tr-none bg-white shadow-lg transform ease-out-quint duration-500 delay-200 opacity-0 scale-50 group-active:delay-0 group-active:opacity-100 group-active:scale-100"></div>
+          <div class="design-setup rounded-md md:rounded-tr-none ${cardDesign}"></div>
 
-          <div class="card text-black links-default transform ease-out-quint duration-500 delay-0 opacity-0 -translate-y-2 group-active:delay-300 group-active:opacity-100 group-active:translate-y-0">
+          <div class="card ${cardContent}">
             <div class="btn btn-close p-5 text-2xl ${btnCloseOutside()} md:p-3 md:right-auto md:left-100" aria-label="Close">
               ${iconX()}
             </div>
@@ -262,7 +264,7 @@ demo.htmlSource = `
                       <label class="form-label mb-3 ${labelDefault()}">
                         Message
                       </label>
-                      <textarea class="form-item ${inputDefault()} h-24 resize-vertical duration-150" aria-label="Message"></textarea>
+                      <textarea class="form-item ${inputDefault()} h-24 resize-vertical" aria-label="Message"></textarea>
                     </div>
 
                     <div class="w-full">
@@ -316,13 +318,13 @@ demo.htmlSource = `
       newsletter
     </button>
 
-    <div class="overlay group duration-700">  <!-- needed for animation time, put max animation time -->
+    <div class="overlay group duration-700"> <!-- needed for animation time, put max animation time -->
       <div class="overlay-container max-w-5xl">
         <div class="overlay-inner">
 
-          <div class="design-setup rounded-md md:rounded-tr-none bg-white shadow-lg transform ease-out-quint duration-500 delay-200 opacity-0 scale-50 group-active:delay-0 group-active:opacity-100 group-active:scale-100"></div>
+          <div class="design-setup rounded-md md:rounded-tr-none ${cardDesign}"></div>
 
-          <div class="card text-black links-default transform ease-out-quint duration-500 delay-0 opacity-0 -translate-y-2 group-active:delay-300 group-active:opacity-100 group-active:translate-y-0">
+          <div class="card ${cardContent}">
             <div class="btn btn-close p-5 text-2xl ${btnCloseOutside()} md:p-3 md:right-auto md:left-100" aria-label="Close">
               ${iconX()}
             </div>

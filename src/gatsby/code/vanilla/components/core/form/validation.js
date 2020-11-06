@@ -56,7 +56,7 @@ demo.htmlSource = `
       <label class="form-label mb-3 ${labelDefault()} form-label-required">
         Textarea
       </label>
-      <textarea class="form-item ${inputDefault()} h-24 resize-vertical duration-150" aria-label="Textarea" placeholder="Textarea" required></textarea>
+      <textarea class="form-item ${inputDefault()} h-24 resize-vertical" aria-label="Textarea" placeholder="Textarea" required></textarea>
     </div>
 
     <div class="w-full">
