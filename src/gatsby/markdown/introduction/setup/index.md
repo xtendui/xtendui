@@ -105,7 +105,6 @@ module.exports = {
   theme:{
     xtendui: {
       btn: { // btn component
-        variants: [],
         utility: theme => ({
           // modify utilities
         }),
