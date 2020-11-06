@@ -129,7 +129,9 @@ import 'xtendui/src/core/toggle'
 
 #### Animations
 
-This library in the demos uses [gsap](https://github.com/greensock/GSAP) for javascript animations. Install it.
+This library in the demos uses [gsap](https://github.com/greensock/GSAP) for javascript animations.
+
+Install it and use as described in the docs.
 
 ```
 npm install gsap --save
@@ -177,7 +179,7 @@ Opera >= 25
 
 ## CDN
 
-If you need to do a **fast installation** of css and js use [xtendui CDN](https://unpkg.com/xtendui), the css and js are inside the `dist/` folder.
+If you need to do a **fast installation** of css and js use [xtendui CDN](https://unpkg.com/xtendui/), the css and js are inside the `dist/` folder.
 
 The CDN `dist/` files are large because they include tailwindcss and all components / addons, **it's not representative of the sizes** you see when including Xtend UI as part of your build process.
 
