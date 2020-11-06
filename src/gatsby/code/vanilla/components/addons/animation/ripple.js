@@ -22,7 +22,7 @@ demo.htmlSource = `
 
   <div class="list list-2 items-center">
 
-    <button type="button" class="btn btn-md transform ease-out-quint duration-500 hover:-translate-y-1 active:translate-y-0">
+    <button type="button" class="btn btn-md">
       btn
     </button>
 
@@ -34,11 +34,11 @@ demo.htmlSource = `
       primary
     </button>
 
-    <button type="button" class="btn btn-md link transform ease-out-quint duration-500 hover:-translate-y-1 active:translate-y-0">
+    <button type="button" class="btn btn-md link">
       link
     </button>
 
-    <button type="button" class="btn btn-md text-reset transform ease-out-quint duration-500 hover:-translate-y-1 active:translate-y-0">
+    <button type="button" class="btn btn-md text-reset">
       text
     </button>
 

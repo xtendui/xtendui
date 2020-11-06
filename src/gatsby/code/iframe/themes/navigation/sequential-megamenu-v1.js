@@ -26,7 +26,7 @@ demo.htmlSource = `
 
         <div class="drop-container drop-container-static">
 
-          <a href="#menu1" type="button" class="btn btn-lg py-6">
+          <a href="#menu1" type="button" class="btn btn-lg btn-line py-6">
             Menu #1
           </a>
 
@@ -109,7 +109,7 @@ demo.htmlSource = `
 
         <div class="drop-container drop-container-static">
 
-          <a href="#menu2" type="button" class="btn btn-lg py-6">
+          <a href="#menu2" type="button" class="btn btn-lg btn-line py-6">
             Menu #2
           </a>
 
@@ -210,7 +210,7 @@ demo.htmlSource = `
 
         <div class="drop-container drop-container-static">
 
-          <a href="#menu3" type="button" class="btn btn-lg py-6">
+          <a href="#menu3" type="button" class="btn btn-lg btn-line py-6">
             Menu #3
           </a>
 
@@ -279,11 +279,11 @@ demo.htmlSource = `
 
         </div>
 
-        <a href="#menu4" class="btn btn-lg py-6">
+        <a href="#menu4" class="btn btn-lg btn-line py-6">
           Link #4
         </a>
 
-        <a href="#menu5" class="btn btn-lg py-6">
+        <a href="#menu5" class="btn btn-lg btn-line py-6">
           Link #5
         </a>
 

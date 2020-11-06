@@ -1,6 +1,5 @@
 import { Xt } from 'xtendui'
 import gsap from 'gsap'
-gsap.defaults({ overwrite: 'auto' })
 gsap.config({ force3D: false })
 
 Xt.mount.push({
@@ -18,17 +17,17 @@ Xt.mount.push({
           object.classList.add('active')
         })
         gsap.set(spinner, { strokeDashoffset: 628 })
-        gsap.to(spinner, { strokeDashoffset: 0, duration: 1000, ease: 'linear', autoRound: false }).eventCallback('onComplete', loaderTimeout)
+        gsap.to(spinner, { strokeDashoffset: 0, duration: 1, ease: 'linear', autoRound: false }).eventCallback('onComplete', loaderTimeout)
       } else {
         object.classList.remove('active')
         Xt.animTimeout(object, () => {
           object.classList.add('hidden')
-          object.dataset.loaderTimeout = setTimeout(loaderTimeout, 3000)
+          object.dataset.loaderTimeout = setTimeout(loaderTimeout, 2000)
         })
       }
     }
 
-    object.dataset.loaderTimeout = setTimeout(loaderTimeout, 3000)
+    object.dataset.loaderTimeout = setTimeout(loaderTimeout, 2000)
 
     // unmount
 

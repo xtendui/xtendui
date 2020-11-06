@@ -1,10 +1,9 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/addons/scroll-to-anchor'
 import gsap from 'gsap'
+gsap.config({ force3D: false })
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 gsap.registerPlugin(ScrollToPlugin)
-gsap.defaults({ overwrite: 'auto' })
-gsap.config({ force3D: false })
 
 Xt.mount.push({
   matches: '#iframe--scroll-to-anchor body #gatsby_body-inner', // add your own selector instead of body to contain the code

@@ -12,12 +12,12 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-2 items-center demo--toggle-progress">
 
-  <button type="button" class="btn btn-md ${btnDefault()}">
+  <button type="button" class="btn btn-md in-toggle ${btnDefault()}">
     Toggle 0
     <span class="loader loader-y">
       <span class="filler text-accent-500">
         <span class="bg-current"></span>
-        <span class="bg-current opacity-25"></span>
+        <span class="bg-current opacity-0"></span>
       </span>
     </span>
   </button>
@@ -27,7 +27,7 @@ demo.htmlSource = `
     <span class="loader loader-y">
       <span class="filler text-accent-500">
         <span class="bg-current"></span>
-        <span class="bg-current opacity-25"></span>
+        <span class="bg-current opacity-0"></span>
       </span>
     </span>
   </button>
@@ -37,7 +37,7 @@ demo.htmlSource = `
     <span class="loader loader-y">
       <span class="filler text-accent-500">
         <span class="bg-current"></span>
-        <span class="bg-current opacity-25"></span>
+        <span class="bg-current opacity-0"></span>
       </span>
     </span>
   </button>
@@ -47,7 +47,7 @@ demo.htmlSource = `
     <span class="loader loader-y">
       <span class="filler text-accent-500">
         <span class="bg-current"></span>
-        <span class="bg-current opacity-25"></span>
+        <span class="bg-current opacity-0"></span>
       </span>
     </span>
   </button>
@@ -57,7 +57,7 @@ demo.htmlSource = `
     <span class="loader loader-x loader-size-bottom">
       <span class="filler text-accent-500">
         <span class="bg-current"></span>
-        <span class="bg-current opacity-25"></span>
+        <span class="bg-current opacity-0"></span>
       </span>
     </span>
   </div>
@@ -67,7 +67,7 @@ demo.htmlSource = `
     <span class="loader loader-x loader-size-bottom">
       <span class="filler text-accent-500">
         <span class="bg-current"></span>
-        <span class="bg-current opacity-25"></span>
+        <span class="bg-current opacity-0"></span>
       </span>
     </span>
   </div>
@@ -77,7 +77,7 @@ demo.htmlSource = `
     <span class="loader loader-x loader-size-bottom">
       <span class="filler text-accent-500">
         <span class="bg-current"></span>
-        <span class="bg-current opacity-25"></span>
+        <span class="bg-current opacity-0"></span>
       </span>
     </span>
   </div>
@@ -87,7 +87,7 @@ demo.htmlSource = `
     <span class="loader loader-x loader-size-bottom">
       <span class="filler text-accent-500">
         <span class="bg-current"></span>
-        <span class="bg-current opacity-25"></span>
+        <span class="bg-current opacity-0"></span>
       </span>
     </span>
   </div>

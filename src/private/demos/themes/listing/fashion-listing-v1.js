@@ -1,6 +1,5 @@
 import { Xt } from 'xtendui'
 import gsap from 'gsap'
-gsap.defaults({ overwrite: 'auto' })
 gsap.config({ force3D: false })
 
 /**
@@ -12,7 +11,7 @@ Xt.mount.push({
   mount: object => {
     // vars
 
-    const imgContainerScale = 0.004
+    const imgContainerScale = 0.015
     const imgScale = 0.06
     const maskOpacityOn = 0.2
     const maskOpacityOff = 0.2
@@ -29,6 +28,7 @@ Xt.mount.push({
       gsap.to(imgInner, { scale: 1 + imgScale, duration: 1.5, ease: 'quart.out' })
       // mask
       const mask = tr.querySelector('.media-mask')
+      gsap.killTweensOf(mask)
       gsap.set(mask, { height: 0, y: img.offsetHeight, skewY: 0, opacity: maskOpacityOff })
       gsap.to(mask, { height: '150%', y: 0, opacity: maskOpacityOn, duration: 0.5, ease: 'quart.out' }) // @FIX to cover height: '150%'
       gsap.to(mask, { skewY: -10, duration: 0.5 / 2, ease: 'quart.out' }).eventCallback('onComplete', () => {

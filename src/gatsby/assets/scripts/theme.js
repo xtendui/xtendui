@@ -3,6 +3,7 @@ import 'xtendui/build/xtend-core'
 import 'xtendui/build/xtend-addons'
 import 'xtendui/build/xtend-demos'
 import gsap from 'gsap'
+gsap.config({ force3D: false })
 const iconLink = require('components/snippets/icons').iconLink
 
 /**

@@ -1,6 +1,5 @@
 import { Xt } from 'xtendui'
 import gsap from 'gsap'
-gsap.defaults({ overwrite: 'auto' })
 gsap.config({ force3D: false })
 
 Xt.mount.push({
@@ -18,18 +17,18 @@ Xt.mount.push({
           object.classList.add('active')
         })
         gsap.set(filler, { width: 0 })
-        gsap.to(filler, { width: '100%', duration: 1000, ease: 'linear' }).eventCallback('onComplete', loaderTimeout)
+        gsap.to(filler, { width: '100%', duration: 1, ease: 'linear' }).eventCallback('onComplete', loaderTimeout)
       } else {
         delete object.dataset.loaderActive
         object.classList.remove('active')
         Xt.animTimeout(object, () => {
           object.classList.add('hidden')
-          object.dataset.loaderTimeout = setTimeout(loaderTimeout, 3000)
+          object.dataset.loaderTimeout = setTimeout(loaderTimeout, 2000)
         })
       }
     }
 
-    object.dataset.loaderTimeout = setTimeout(loaderTimeout, 3000)
+    object.dataset.loaderTimeout = setTimeout(loaderTimeout, 2000)
 
     // unmount
 

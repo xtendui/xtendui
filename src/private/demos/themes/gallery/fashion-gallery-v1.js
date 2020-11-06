@@ -3,10 +3,9 @@ import 'xtendui/src/future/scroll'
 import 'xtendui/src/addons/sticky-flow'
 import 'xtendui/src/addons/scroll-to-anchor'
 import gsap from 'gsap'
+gsap.config({ force3D: false })
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 gsap.registerPlugin(ScrollToPlugin)
-gsap.defaults({ overwrite: 'auto' })
-gsap.config({ force3D: false })
 
 /**
  * scroll-to-anchor

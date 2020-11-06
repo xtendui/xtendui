@@ -1,7 +1,6 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/core/slider'
 import gsap from 'gsap'
-gsap.defaults({ overwrite: 'auto' })
 gsap.config({ force3D: false })
 
 /**

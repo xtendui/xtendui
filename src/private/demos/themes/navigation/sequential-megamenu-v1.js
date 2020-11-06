@@ -1,7 +1,6 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/core/slider'
 import gsap from 'gsap'
-gsap.defaults({ overwrite: 'auto' })
 gsap.config({ force3D: false })
 
 // mouse events instead of click you can remove this
@@ -85,10 +84,12 @@ Xt.mount.push({
       if (self.targets.includes(tr)) {
         // content
         const content = tr.querySelector('.drop-content')
+        gsap.killTweensOf(content)
         gsap.set(content, { x: contentXOn * self.direction, opacity: 0 })
         gsap.to(content, { x: 0, opacity: 1, duration: contentTime, delay: contentDelayOn, ease: contentEase })
         // design
         const design = tr.querySelector('.design-setup')
+        gsap.killTweensOf(design)
         const designOpacityCache = Xt.dataStorage.get(self.object, 'designOpacityCache') || 0
         gsap.set(design, { opacity: designOpacityCache })
         gsap.to(design, { opacity: 1, duration: designTime, ease: designEase }).eventCallback('onUpdate', () => {
@@ -96,6 +97,7 @@ Xt.mount.push({
         })
         // inner
         const inner = tr.querySelector('.drop-inner')
+        gsap.killTweensOf(inner)
         gsap.set(inner, { height: '' })
         const innerHeight = inner.clientHeight
         const innerHeightCache = Xt.dataStorage.get(self.object, 'innerHeightCache') || 0
@@ -124,31 +126,38 @@ Xt.mount.push({
             if (self.direction) {
               // content
               const content = tr.querySelector('.drop-content')
+              gsap.killTweensOf(content)
               gsap.to(content, { x: contentXOff * self.direction * -1, opacity: 0, duration: contentTime, ease: contentEase, overwrite: true })
               // design
               const design = tr.querySelector('.design-setup')
+              gsap.killTweensOf(design)
               gsap.set(design, { opacity: 0 })
             } else {
               // others
               for (const other of self.targets.filter(x => x !== tr)) {
                 // design
                 const design = other.querySelector('.design-setup')
+                gsap.killTweensOf(design)
                 gsap.set(design, { opacity: 0 })
                 // inner
                 const inner = other.querySelector('.drop-inner')
+                gsap.killTweensOf(inner)
                 gsap.set(inner, { height: 0 })
               }
               // content
               const content = tr.querySelector('.drop-content')
+              gsap.killTweensOf(content)
               gsap.to(content, { opacity: 0, duration: contentTime, ease: contentEase })
               // design
               const design = tr.querySelector('.design-setup')
+              gsap.killTweensOf(design)
               gsap.to(design, { opacity: 0, duration: designTime, ease: designEase }).eventCallback('onUpdate', () => {
                 Xt.dataStorage.set(self.object, 'designOpacityCache', design.style.opacity)
               })
               // inner
               const inner = tr.querySelector('.drop-inner')
               const innerHeight = 0
+              gsap.killTweensOf(inner)
               gsap.to(inner, { height: innerHeight, duration: innerTime, ease: innerEase }).eventCallback('onUpdate', () => {
                 Xt.dataStorage.set(self.object, 'innerHeightCache', inner.clientHeight)
               })
@@ -174,12 +183,12 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '.megamenu',
+  matches: '#iframe--sequential-megamenu-v1 body .megamenu',
   mount: function (object) {
     // vars
 
     let lineFirst = true
-    const btns = object.querySelectorAll('.drop-container > .btn')
+    const btns = object.querySelectorAll('.btn-line')
     const line = object.querySelector('.megamenu-line')
 
     const lineHeight = 4

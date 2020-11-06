@@ -1,7 +1,6 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/future/scroll'
 import gsap from 'gsap'
-gsap.defaults({ overwrite: 'auto' })
 gsap.config({ force3D: false })
 
 /**

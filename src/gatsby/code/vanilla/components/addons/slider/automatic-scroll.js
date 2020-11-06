@@ -182,7 +182,7 @@ demo.htmlSource = `
           <a href="#test-link-6" class="slide_item" title="item 5">
             <div class="media-container" style="padding-bottom: 37.5%;">
               <div class="media-inner">
-                <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
+                <img class="media object-cover object-center" src="/img-alt.svg" loading="eager" alt="">
               </div>
             </div>
           </a>

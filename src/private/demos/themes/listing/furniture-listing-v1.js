@@ -1,6 +1,5 @@
 import { Xt } from 'xtendui'
 import gsap from 'gsap'
-gsap.defaults({ overwrite: 'auto' })
 gsap.config({ force3D: false })
 
 /**
@@ -15,7 +14,7 @@ Xt.mount.push({
     const imgScale = 0.04
     const imgOpacityIn = 0.75
     const imgOpacityOut = 1
-    const contentY = -7
+    const contentY = -10
 
     // enter
 

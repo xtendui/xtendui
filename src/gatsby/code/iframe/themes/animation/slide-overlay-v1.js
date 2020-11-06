@@ -115,9 +115,9 @@ demo.htmlSource = `
               ${iconX()}
             </div>
 
-            <div class="lg:card-group ${cardItem}">
+            <div class="md:card-group ${cardItem}">
 
-              <div class="card-md md:card-lg lg:w-7/12">
+              <div class="card-md md:card-lg md:w-7/12">
                 <div class="h4">
                   Contact us
                 </div>
@@ -125,28 +125,28 @@ demo.htmlSource = `
                 <form class="text-lg">
                   <div class="row row-x-3 row-y-2">
 
-                    <div class="w-full lg:w-6/12">
+                    <div class="w-full md:w-6/12">
                       <label class="form-label mb-3 ${labelDefault()}">
                         Name
                       </label>
                       <input type="text" class="form-item ${inputDefault()}" aria-label="Name">
                     </div>
 
-                    <div class="w-full lg:w-6/12">
+                    <div class="w-full md:w-6/12">
                       <label class="form-label mb-3 ${labelDefault()}">
                         Surname
                       </label>
                       <input type="text" class="form-item ${inputDefault()}" aria-label="Surname">
                     </div>
 
-                    <div class="w-full lg:w-6/12">
+                    <div class="w-full md:w-6/12">
                       <label class="form-label mb-3 ${labelDefault()}">
                         Email
                       </label>
                       <input type="text" class="form-item ${inputDefault()}" aria-label="Email">
                     </div>
 
-                    <div class="w-full lg:w-6/12">
+                    <div class="w-full md:w-6/12">
                       <label class="form-label mb-3 ${labelDefault()}">
                         Telephone
                       </label>
@@ -191,7 +191,7 @@ demo.htmlSource = `
                 </form>
               </div>
 
-              <div class="lg:w-5/12 flex flex-col">
+              <div class="md:w-5/12 flex flex-col">
                 <div class="card-md bg-gray-300 flex-full text-sm">
                   <p class="h5">
                     Didn't find what you was looking for?
@@ -200,7 +200,7 @@ demo.htmlSource = `
                       Contact our customer service at <a href="tel:+39333010101">+39 333 010101</a> or email us at <a href="mailto:info@info.com">info@info.com</a>.
                   </p>
                 </div>
-                <div class="media-container rounded-b-md lg:rounded-bl-none lg:rounded-br-md" style="padding-bottom: 100%;">
+                <div class="media-container rounded-b-md md:rounded-bl-none md:rounded-br-md" style="padding-bottom: 100%;">
                   <div class="media-inner">
                     <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
                   </div>
@@ -232,9 +232,9 @@ demo.htmlSource = `
               ${iconX()}
             </div>
 
-            <div class="lg:card-group ${cardItem}">
+            <div class="md:card-group ${cardItem}">
 
-              <div class="lg:w-5/12 flex flex-col">
+              <div class="md:w-5/12 flex flex-col">
                 <div class="media-container flex-full rounded-t-md md:rounded-tr-none" style="padding-bottom: 100%;">
                   <div class="media-inner">
                     <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
@@ -242,7 +242,7 @@ demo.htmlSource = `
                 </div>
               </div>
 
-              <div class="card-md md:card-lg lg:w-7/12">
+              <div class="card-md md:card-lg md:w-7/12">
                 <div class="h4">
                   Subscribe to our newsletter
                 </div>

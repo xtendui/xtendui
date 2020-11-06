@@ -1,7 +1,6 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/addons/ripple'
 import gsap from 'gsap'
-gsap.defaults({ overwrite: 'auto' })
 gsap.config({ force3D: false })
 
 Xt.mount.push({

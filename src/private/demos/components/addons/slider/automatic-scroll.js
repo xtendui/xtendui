@@ -1,7 +1,6 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/core/slider'
 import gsap from 'gsap'
-gsap.defaults({ overwrite: 'auto' })
 gsap.config({ force3D: false })
 
 /**
@@ -15,7 +14,7 @@ Xt.mount.push({
 
     const timeScaleTimeOn = 0.75
     const timeScaleEaseOn = 'quint.in'
-    const timeScaleTimeOff = 1.5
+    const timeScaleTimeOff = 0.75
     const timeScaleEaseOff = 'quint.out'
 
     // slider
@@ -57,11 +56,12 @@ Xt.mount.push({
           // time depending on target and dragger width
           const slideWidth = tr.offsetWidth
           const draggerWidth = self.dragger.offsetWidth
-          let time = slideWidth * 15 // constant speed
+          let time = (slideWidth * 15) / 1000 // constant speed
           if (object.classList.contains('slider--factor')) {
-            time = (draggerWidth / slideWidth) * 50000 // faster or slower depending on horizontal space
+            time = (draggerWidth / slideWidth) * 50 // faster or slower depending on horizontal space
           }
           // end dragging position
+          gsap.killTweensOf(self.dragger)
           gsap.to(self.dragger, { x: self.detail.dragPos, duration: time, ease: 'linear' }).eventCallback('onComplete', () => {
             // wrap before changing slide if needed, needed with drag.wrap = true
             self.eventWrap()
