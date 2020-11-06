@@ -121,6 +121,9 @@ See [mouse follow addon](/components/core/loader) to create a **loader with mous
 [[notePrimary]]
 | For aria purpose use `aria-disabled="true"` when using the class `.disabled`.
 
+[[notePrimary]]
+| For aria purpose use `aria-label="<Description>"` on `input:not([type="hidden"]), select, textarea`.
+
 (use touch device to see it in action)
 
 (use narrow screen to see it in action)

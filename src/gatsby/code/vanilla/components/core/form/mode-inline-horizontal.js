@@ -15,10 +15,10 @@ export const demo = {
 
 demo.htmlSource = `
 <form>
-  <div class="row row-x-4 row-y-3">
+  <div class="row row-x-3 row-y-2">
 
     <div class="w-full md:w-auto">
-      <div class="row row-x-4 row-y-3">
+      <div class="row row-x-3 row-y-2">
 
         <div class="w-full md:w-auto md:self-center">
           <label class="form-label whitespace-nowrap ${labelDefault()}">
@@ -27,14 +27,14 @@ demo.htmlSource = `
         </div>
 
         <div class="w-full md:w-auto md:self-center">
-          <input type="text" class="form-item ${inputDefault()}"/>
+          <input type="text" class="form-item ${inputDefault()}" aria-label="Lorem ipsum"/>
         </div>
 
       </div>
     </div>
 
     <div class="w-full md:w-auto">
-      <div class="row row-x-4 row-y-3">
+      <div class="row row-x-3 row-y-2">
 
         <div class="w-full md:w-auto md:self-center">
           <label class="form-label whitespace-nowrap ${labelDefault()}">
@@ -43,14 +43,14 @@ demo.htmlSource = `
         </div>
 
         <div class="w-full md:w-auto md:self-center">
-          <input type="text" class="form-item ${inputDefault()}"/>
+          <input type="text" class="form-item ${inputDefault()}" aria-label="Dolor sit amet"/>
         </div>
 
       </div>
     </div>
 
     <div class="w-full md:w-auto">
-      <div class="row row-x-4 row-y-3">
+      <div class="row row-x-3 row-y-2">
 
         <div class="w-full md:w-auto md:self-center">
           <label class="form-label whitespace-nowrap ${labelDefault()}">
@@ -59,14 +59,14 @@ demo.htmlSource = `
         </div>
 
         <div class="w-full md:w-auto md:self-center">
-          <input type="text" class="form-item ${inputDefault()}"/>
+          <input type="text" class="form-item ${inputDefault()}" aria-label="Lorem ipsum"/>
         </div>
 
       </div>
     </div>
 
     <div class="w-full md:w-auto">
-      <div class="row row-x-4 row-y-3">
+      <div class="row row-x-3 row-y-2">
 
         <div class="w-full md:w-auto md:self-center">
           <label class="form-label whitespace-nowrap ${labelDefault()}">
@@ -75,14 +75,14 @@ demo.htmlSource = `
         </div>
 
         <div class="w-full md:w-auto md:self-center">
-          <input type="text" class="form-item ${inputDefault()}"/>
+          <input type="text" class="form-item ${inputDefault()}" aria-label="Dolor sit amet"/>
         </div>
 
       </div>
     </div>
 
     <div class="w-full">
-      <div class="row row-x-4 row-y-3">
+      <div class="row row-x-3 row-y-2">
 
         <div class="w-full md:w-auto md:self-baseline">
           <label class="form-label whitespace-nowrap ${labelDefault()}">
@@ -114,7 +114,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <div class="row row-x-4 row-y-3">
+      <div class="row row-x-3 row-y-2">
 
         <div class="w-full md:w-auto md:self-baseline">
           <label class="form-label whitespace-nowrap ${labelDefault()}">
@@ -146,7 +146,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <div class="row row-x-4 row-y-3">
+      <div class="row row-x-3 row-y-2">
 
         <div class="w-full md:w-auto md:self-baseline">
           <label class="form-label whitespace-nowrap ${labelDefault()}">

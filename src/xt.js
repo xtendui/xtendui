@@ -69,7 +69,8 @@ if (typeof window !== 'undefined') {
         mount: object => {
           // label
           const labels = object.labels
-          if (!labels.length) {
+          const label = object.getAttribute('aria-label')
+          if (!labels.length && (!label || label === '')) {
             console.warn('Xt.debug: detected an "input" without "label"', object)
           }
         },

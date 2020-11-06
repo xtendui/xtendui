@@ -11,10 +11,10 @@ export const demo = {
 
 demo.htmlSource = `
 <form>
-  <div class="row row-x-4 row-y-3">
+  <div class="row row-x-3 row-y-2">
 
     <div class="w-full">
-      <label class="form-label mb-4 ${labelDefault()}">
+      <label class="form-label mb-3 ${labelDefault()}">
         Lorem ipsum
         <div class="ml-4">
           <div class="list list-2 items-center">
@@ -27,11 +27,11 @@ demo.htmlSource = `
           </div>
         </div>
       </label>
-      <input type="text" class="form-item ${inputDefault()}"/>
+      <input type="text" class="form-item ${inputDefault()}" aria-label="Lorem ipsum"/>
     </div>
 
     <div class="w-full">
-      <label class="form-label mb-4 ${labelDefault()}">
+      <label class="form-label mb-3 ${labelDefault()}">
         Dolor sit amet
         <div class="ml-auto">
           <div class="list list-2 items-center">
@@ -44,11 +44,11 @@ demo.htmlSource = `
           </div>
         </div>
       </label>
-      <input type="text" class="form-item ${inputDefault()}"/>
+      <input type="text" class="form-item ${inputDefault()}" aria-label="Dolor sit amet"/>
     </div>
 
     <div class="w-full">
-      <div class="row row-x-4 row-y-3">
+      <div class="row row-x-3 row-y-2">
 
         <div class="w-full md:w-2/12 md:self-center">
           <label class="form-label flex-col ${labelDefault()}">
@@ -67,14 +67,14 @@ demo.htmlSource = `
         </div>
 
         <div class="w-full md:w-10/12">
-          <input type="text" class="form-item ${inputDefault()}"/>
+          <input type="text" class="form-item ${inputDefault()}" aria-label="Lorem ipsum"/>
         </div>
 
       </div>
     </div>
 
     <div class="w-full">
-      <div class="row row-x-4 row-y-3">
+      <div class="row row-x-3 row-y-2">
 
         <div class="w-full md:w-2/12 md:self-center">
           <label class="form-label flex-col ${labelDefault()}">
@@ -93,7 +93,7 @@ demo.htmlSource = `
         </div>
 
         <div class="w-full md:w-10/12">
-          <input type="text" class="form-item ${inputDefault()}"/>
+          <input type="text" class="form-item ${inputDefault()}" aria-label="Dolor sit amet"/>
         </div>
 
       </div>

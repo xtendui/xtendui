@@ -15,34 +15,34 @@ export const demo = {
 
 demo.htmlSource = `
 <form>
-  <div class="row row-x-4 row-y-3">
+  <div class="row row-x-3 row-y-2">
 
     <div class="w-full">
-      <label class="form-label mb-4 ${labelDefault()}">
+      <label class="form-label mb-3 ${labelDefault()}">
         Input
       </label>
-      <input type="text" class="form-item ${inputDefault()}" placeholder="Input" disabled>
+      <input type="text" class="form-item ${inputDefault()}" aria-label="Input" placeholder="Input" disabled>
     </div>
 
     <div class="w-full">
-      <label class="form-label mb-4 ${labelDefault()}">
+      <label class="form-label mb-3 ${labelDefault()}">
         File
       </label>
-      <input type="file" class="form-item ${inputDefault()}" disabled/>
+      <input type="file" class="form-item ${inputDefault()}" aria-label="File" disabled/>
     </div>
 
     <div class="w-full">
-      <label class="form-label mb-4 ${labelDefault()}">
+      <label class="form-label mb-3 ${labelDefault()}">
         Textarea
       </label>
-      <textarea class="form-item ${inputDefault()} h-24 resize-vertical duration-150" placeholder="Textarea" disabled></textarea>
+      <textarea class="form-item ${inputDefault()} h-24 resize-vertical duration-150" aria-label="Textarea" placeholder="Textarea" disabled></textarea>
     </div>
 
     <div class="w-full">
-      <label class="form-label mb-4 ${labelDefault()}">
+      <label class="form-label mb-3 ${labelDefault()}">
         Select
       </label>
-      <select class="form-item form-select ${inputDefault()}" disabled>
+      <select class="form-item form-select ${inputDefault()}" aria-label="Select" disabled>
         <option selected value="">Select an option</option>
         <option>Test</option>
         <option>Test</option>
@@ -51,10 +51,10 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <label class="form-label mb-4 ${labelDefault()}">
+      <label class="form-label mb-3 ${labelDefault()}">
         Select multiple
       </label>
-      <select class="form-item form-select ${inputDefault()}" multiple disabled>
+      <select class="form-item form-select ${inputDefault()}" aria-label="Select multiple" multiple disabled>
         <option>Option 1</option>
         <option>Option 2</option>
         <option>Option 3</option>
@@ -63,7 +63,7 @@ demo.htmlSource = `
 
     <div class="w-full">
 
-      <label class="form-label mb-4 ${labelDefault()}">
+      <label class="form-label mb-3 ${labelDefault()}">
         Checkbox
       </label>
 
@@ -89,7 +89,7 @@ demo.htmlSource = `
 
     <div class="w-full">
 
-      <label class="form-label mb-4 ${labelDefault()}">
+      <label class="form-label mb-3 ${labelDefault()}">
         Radio
       </label>
 
@@ -115,7 +115,7 @@ demo.htmlSource = `
 
     <div class="w-full">
 
-      <label class="form-label mb-4 ${labelDefault()}">
+      <label class="form-label mb-3 ${labelDefault()}">
         Switch
       </label>
 

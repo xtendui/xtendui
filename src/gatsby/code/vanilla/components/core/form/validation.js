@@ -15,55 +15,55 @@ export const demo = {
 
 demo.htmlSource = `
 <form>
-  <div class="row row-x-4 row-y-3">
+  <div class="row row-x-3 row-y-2">
 
     <div class="w-full">
-      <label class="form-label mb-4 ${labelDefault()} form-label-required">
+      <label class="form-label mb-3 ${labelDefault()} form-label-required">
         Custom constrain
       </label>
-      <input type="text" class="form-item ${inputDefault()} demo--custom-constrain" placeholder="Custom constrain" required>
+      <input type="text" class="form-item ${inputDefault()} demo--custom-constrain" aria-label="Custom constrain" placeholder="Custom constrain" required>
     </div>
 
     <div class="w-full">
-      <label class="form-label mb-4 ${labelDefault()} form-label-required">
+      <label class="form-label mb-3 ${labelDefault()} form-label-required">
         Email
       </label>
-      <input type="email" class="form-item ${inputDefault()} " placeholder="Email" required>
+      <input type="email" class="form-item ${inputDefault()}" aria-label="Email" placeholder="Email" required>
     </div>
 
     <div class="w-full">
-      <label class="form-label mb-4 ${labelDefault()} form-label-required">
+      <label class="form-label mb-3 ${labelDefault()} form-label-required">
         Number
       </label>
-      <input type="number" class="form-item ${inputDefault()} " placeholder="Number" required min="1" max="10">
+      <input type="number" class="form-item ${inputDefault()}" aria-label="Number" placeholder="Number" required min="1" max="10">
     </div>
 
     <div class="w-full">
-      <label class="form-label mb-4 ${labelDefault()} form-label-required">
+      <label class="form-label mb-3 ${labelDefault()} form-label-required">
         Letters
       </label>
-      <input type="text" class="form-item ${inputDefault()} " placeholder="Letter" required pattern="[A-Za-z]+">
+      <input type="text" class="form-item ${inputDefault()}" aria-label="Letters" placeholder="Letters" required pattern="[A-Za-z]+">
     </div>
 
     <div class="w-full">
-      <label class="form-label mb-4 ${labelDefault()} form-label-required">
+      <label class="form-label mb-3 ${labelDefault()} form-label-required">
         File
       </label>
-      <input type="file" class="form-item ${inputDefault()}" required/>
+      <input type="file" class="form-item ${inputDefault()}" aria-label="File" required/>
     </div>
 
     <div class="w-full">
-      <label class="form-label mb-4 ${labelDefault()} form-label-required">
+      <label class="form-label mb-3 ${labelDefault()} form-label-required">
         Textarea
       </label>
-      <textarea class="form-item ${inputDefault()} h-24 resize-vertical duration-150" placeholder="Textarea" required></textarea>
+      <textarea class="form-item ${inputDefault()} h-24 resize-vertical duration-150" aria-label="Textarea" placeholder="Textarea" required></textarea>
     </div>
 
     <div class="w-full">
-      <label class="form-label mb-4 ${labelDefault()} form-label-required">
+      <label class="form-label mb-3 ${labelDefault()} form-label-required">
         Select
       </label>
-      <select class="form-item form-select ${inputDefault()}" required>
+      <select class="form-item form-select ${inputDefault()}" aria-label="Select" required>
         <option selected value="">Select an option</option>
         <option>Test</option>
         <option>Test</option>
@@ -72,10 +72,10 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <label class="form-label mb-4 ${labelDefault()} form-label-required">
+      <label class="form-label mb-3 ${labelDefault()} form-label-required">
         Select multiple
       </label>
-      <select class="form-item form-select ${inputDefault()}" multiple required>
+      <select class="form-item form-select ${inputDefault()}" aria-label="Select multiple" multiple required>
         <option>Option 1</option>
         <option>Option 2</option>
         <option>Option 3</option>
@@ -84,7 +84,7 @@ demo.htmlSource = `
 
     <div class="w-full">
 
-      <label class="form-label mb-4 ${labelDefault()} form-label-required">
+      <label class="form-label mb-3 ${labelDefault()} form-label-required">
         Checkbox
       </label>
 
@@ -110,7 +110,7 @@ demo.htmlSource = `
 
     <div class="w-full">
 
-      <label class="form-label mb-4 ${labelDefault()} form-label-required">
+      <label class="form-label mb-3 ${labelDefault()} form-label-required">
         Radio
       </label>
 
@@ -136,7 +136,7 @@ demo.htmlSource = `
 
     <div class="w-full">
 
-      <label class="form-label mb-4 ${labelDefault()} form-label-required">
+      <label class="form-label mb-3 ${labelDefault()} form-label-required">
         Switch
       </label>
 

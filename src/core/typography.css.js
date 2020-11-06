@@ -226,7 +226,7 @@ module.exports = {
       // styles
       code: {
         color: theme('colors.white'),
-        opacity: '0.75',
+        opacity: '0.8',
       },
     },
     'ul:not([class]), ol:not([class])': {

@@ -16,45 +16,45 @@ demo.htmlSource = `
 <form>
 
   <fieldset>
-    <div class="row row-x-4 row-y-3">
+    <div class="row row-x-3 row-y-2">
 
       <div class="w-full">
         <legend>Legend #1</legend>
       </div>
 
       <div class="w-full md:w-6/12">
-        <label class="form-label mb-4 ${labelDefault()}">
+        <label class="form-label mb-3 ${labelDefault()}">
           Lorem Ipsum
         </label>
-        <input type="text" class="form-item ${inputDefault()}"/>
+        <input type="text" class="form-item ${inputDefault()}" aria-label="Lorem ipsum"/>
         <div class="mt-3 ${note()}">
           <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
         </div>
       </div>
 
       <div class="w-full md:w-6/12">
-        <label class="form-label mb-4 ${labelDefault()}">
+        <label class="form-label mb-3 ${labelDefault()}">
           Dolor sit amet
         </label>
-        <input type="text" class="form-item ${inputDefault()}"/>
+        <input type="text" class="form-item ${inputDefault()}" aria-label="Dolor sit amet"/>
       </div>
 
       <div class="w-full">
 
-        <div class="row row-x-4 row-y-3">
+        <div class="row row-x-3 row-y-2">
 
           <div class="w-full md:w-auto">
-            <label class="form-label mb-4 ${labelDefault()}">
+            <label class="form-label mb-3 ${labelDefault()}">
               Lorem ipsum
             </label>
-            <input type="text" class="form-item ${inputDefault()}"/>
+            <input type="text" class="form-item ${inputDefault()}" aria-label="Lorem ipsum"/>
           </div>
 
           <div class="w-full md:w-auto">
-            <label class="form-label mb-4 ${labelDefault()}">
+            <label class="form-label mb-3 ${labelDefault()}">
               Dolor sit amet
             </label>
-            <input type="text" class="form-item ${inputDefault()}"/>
+            <input type="text" class="form-item ${inputDefault()}" aria-label="Dolor sit amet"/>
           </div>
 
         </div>
@@ -69,7 +69,7 @@ demo.htmlSource = `
   </fieldset>
 
   <fieldset>
-    <div class="row row-x-4 row-y-3">
+    <div class="row row-x-3 row-y-2">
 
       <div class="w-full">
         <legend>Legend #2</legend>
@@ -77,7 +77,7 @@ demo.htmlSource = `
 
       <div class="w-full">
 
-        <label class="form-label mb-4 ${labelDefault()}">
+        <label class="form-label mb-3 ${labelDefault()}">
           Checkbox
         </label>
 
@@ -105,7 +105,7 @@ demo.htmlSource = `
       </div>
 
       <div class="w-full">
-        <div class="row row-x-4 row-y-3">
+        <div class="row row-x-3 row-y-2">
 
           <div class="w-full md:w-2/12 md:self-baseline">
             <label class="form-label ${labelDefault()}">
@@ -145,7 +145,7 @@ demo.htmlSource = `
 
       <div class="w-full">
 
-        <label class="form-label mb-4 ${labelDefault()}">
+        <label class="form-label mb-3 ${labelDefault()}">
           Checkbox
         </label>
 

@@ -12,10 +12,10 @@ export const demo = {
 demo.htmlSource = `
 <form>
 
-  <div class="row row-x-4 row-y-3">
+  <div class="row row-x-3 row-y-2">
 
     <div class="w-full">
-      <label class="form-label mb-4 ${labelDefault()}">
+      <label class="form-label mb-3 ${labelDefault()}">
         Textarea autosize
       </label>
       <textarea class="form-item ${inputDefault()} overflow-hidden resize-none duration-none" data-xt-textarea-autosize></textarea>

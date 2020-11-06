@@ -36,6 +36,9 @@ module.exports = {
 
 Use this code to create a **form items**.
 
+[[notePrimary]]
+| For aria purpose use `aria-label="<Description>"` on `input:not([type="hidden"]), select, textarea`.
+
 <demo>
   <demovanilla src="vanilla/components/core/form/usage">
   </demovanilla>

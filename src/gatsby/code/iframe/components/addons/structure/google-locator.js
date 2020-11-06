@@ -27,7 +27,7 @@ demo.htmlSource = `
     <div class="google-locator-aside-head">
 
       <div class="form">
-        <div class="row row-x-4 row-y-3">
+        <div class="row row-x-3 row-y-2">
 
           <div class="w-full">
             <div class="list">

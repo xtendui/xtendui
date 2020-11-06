@@ -15,34 +15,34 @@ export const demo = {
 
 demo.htmlSource = `
 <form class="text-sm">
-  <div class="row row-x-4 row-y-3">
+  <div class="row row-x-3 row-y-2">
 
     <div class="w-full">
       <label class="form-label mb-3 ${labelDefault()}">
         Input
       </label>
-      <input type="text" class="form-item ${inputDefault()}" placeholder="Input">
+      <input type="text" class="form-item ${inputDefault()}" aria-label="Input" placeholder="Input">
     </div>
 
     <div class="w-full">
       <label class="form-label mb-3 ${labelDefault()}">
         File
       </label>
-      <input type="file" class="form-item ${inputDefault()}"/>
+      <input type="file" class="form-item ${inputDefault()}" aria-label="File"/>
     </div>
 
     <div class="w-full">
       <label class="form-label mb-3 ${labelDefault()}">
         Textarea
       </label>
-      <textarea class="form-item ${inputDefault()} h-24 resize-vertical duration-150" placeholder="Textarea"></textarea>
+      <textarea class="form-item ${inputDefault()} h-24 resize-vertical duration-150" aria-label="Textarea" placeholder="Textarea"></textarea>
     </div>
 
     <div class="w-full">
       <label class="form-label mb-3 ${labelDefault()}">
         Select
       </label>
-      <select class="form-item form-select ${inputDefault()}">
+      <select class="form-item form-select ${inputDefault()}" aria-label="Select">
         <option selected value="">Select an option</option>
         <option>Option 1</option>
         <option>Option 2</option>
@@ -54,7 +54,7 @@ demo.htmlSource = `
       <label class="form-label mb-3 ${labelDefault()}">
         Select multiple
       </label>
-      <select class="form-item form-select ${inputDefault()}" multiple>
+      <select class="form-item form-select ${inputDefault()}" multiple aria-label="Select multiple">
         <option>Option 1</option>
         <option>Option 2</option>
         <option>Option 3</option>

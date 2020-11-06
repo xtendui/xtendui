@@ -201,7 +201,7 @@ demo.htmlSource = `
       <div class="overlay-container max-w-5xl">
         <div class="overlay-inner">
 
-          <div class="design-setup rounded-md lg:rounded-tr-none bg-white shadow-lg transform ease-out-quint duration-500 delay-200 opacity-0 scale-50 group-active:delay-0 group-active:opacity-100 group-active:scale-100"></div>
+          <div class="design-setup rounded-md md:rounded-tr-none bg-white shadow-lg transform ease-out-quint duration-500 delay-200 opacity-0 scale-50 group-active:delay-0 group-active:opacity-100 group-active:scale-100"></div>
 
           <div class="card text-black links-default transform ease-out-quint duration-500 delay-0 opacity-0 -translate-y-2 group-active:delay-300 group-active:opacity-100 group-active:translate-y-0">
             <div class="btn btn-close p-5 text-2xl ${btnCloseOutside()} md:p-3 md:right-auto md:left-100" aria-label="Close">
@@ -210,47 +210,47 @@ demo.htmlSource = `
 
             <div class="lg:card-group">
 
-              <div class="card-md md:card-lg text-sm lg:w-7/12">
+              <div class="card-md md:card-lg lg:w-7/12">
                 <div class="h4">
                   Contact us
                 </div>
-                <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est.</p>
                 <form class="text-lg">
-                  <div class="row row-x-4 row-y-3">
+                  <div class="row row-x-3 row-y-2">
 
                     <div class="w-full lg:w-6/12">
-                      <label class="form-label mb-4 ${labelDefault()}">
+                      <label class="form-label mb-3 ${labelDefault()}">
                         Name
                       </label>
-                      <input type="text" class="form-item ${inputDefault()}" placeholder="Input">
+                      <input type="text" class="form-item ${inputDefault()}" aria-label="Name">
                     </div>
 
                     <div class="w-full lg:w-6/12">
-                      <label class="form-label mb-4 ${labelDefault()}">
+                      <label class="form-label mb-3 ${labelDefault()}">
                         Surname
                       </label>
-                      <input type="text" class="form-item ${inputDefault()}" placeholder="Input">
+                      <input type="text" class="form-item ${inputDefault()}" aria-label="Surname">
                     </div>
 
                     <div class="w-full lg:w-6/12">
-                      <label class="form-label mb-4 ${labelDefault()}">
+                      <label class="form-label mb-3 ${labelDefault()}">
                         Email
                       </label>
-                      <input type="text" class="form-item ${inputDefault()}" placeholder="Input">
+                      <input type="text" class="form-item ${inputDefault()}" aria-label="Email">
                     </div>
 
                     <div class="w-full lg:w-6/12">
-                      <label class="form-label mb-4 ${labelDefault()}">
+                      <label class="form-label mb-3 ${labelDefault()}">
                         Telephone
                       </label>
-                      <input type="text" class="form-item ${inputDefault()}" placeholder="Input">
+                      <input type="text" class="form-item ${inputDefault()}" aria-label="Telephone">
                     </div>
 
                     <div class="w-full">
-                      <label class="form-label mb-4 ${labelDefault()}">
+                      <label class="form-label mb-3 ${labelDefault()}">
                         Subject
                       </label>
-                      <select class="form-item form-select ${inputDefault()}">
+                      <select class="form-item form-select ${inputDefault()}" aria-label="Subject">
                         <option selected value="">Select an option</option>
                         <option>Test</option>
                         <option>Test</option>
@@ -259,10 +259,10 @@ demo.htmlSource = `
                     </div>
 
                     <div class="w-full">
-                      <label class="form-label mb-4 ${labelDefault()}">
-                        Textarea
+                      <label class="form-label mb-3 ${labelDefault()}">
+                        Message
                       </label>
-                      <textarea class="form-item ${inputDefault()} h-24 resize-vertical duration-150" placeholder="Textarea"></textarea>
+                      <textarea class="form-item ${inputDefault()} h-24 resize-vertical duration-150" aria-label="Message"></textarea>
                     </div>
 
                     <div class="w-full">
@@ -320,7 +320,7 @@ demo.htmlSource = `
       <div class="overlay-container max-w-5xl">
         <div class="overlay-inner">
 
-          <div class="design-setup rounded-md lg:rounded-tr-none bg-white shadow-lg transform ease-out-quint duration-500 delay-200 opacity-0 scale-50 group-active:delay-0 group-active:opacity-100 group-active:scale-100"></div>
+          <div class="design-setup rounded-md md:rounded-tr-none bg-white shadow-lg transform ease-out-quint duration-500 delay-200 opacity-0 scale-50 group-active:delay-0 group-active:opacity-100 group-active:scale-100"></div>
 
           <div class="card text-black links-default transform ease-out-quint duration-500 delay-0 opacity-0 -translate-y-2 group-active:delay-300 group-active:opacity-100 group-active:translate-y-0">
             <div class="btn btn-close p-5 text-2xl ${btnCloseOutside()} md:p-3 md:right-auto md:left-100" aria-label="Close">
@@ -330,31 +330,31 @@ demo.htmlSource = `
             <div class="lg:card-group">
 
               <div class="lg:w-5/12 flex flex-col">
-                <div class="media-container flex-full rounded-t-md lg:rounded-tr-none" style="padding-bottom: 100%;">
+                <div class="media-container flex-full rounded-t-md md:rounded-tr-none" style="padding-bottom: 100%;">
                   <div class="media-inner">
                     <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
                   </div>
                 </div>
               </div>
 
-              <div class="card-md md:card-lg text-sm lg:w-7/12">
+              <div class="card-md md:card-lg lg:w-7/12">
                 <div class="h4">
                   Subscribe to our newsletter
                 </div>
-                <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est.</p>
                 <form class="text-lg">
-                  <div class="row row-x-4 row-y-3">
+                  <div class="row row-x-3 row-y-2">
 
                     <div class="w-full">
-                      <label class="form-label mb-4 ${labelDefault()}">
+                      <label class="form-label mb-3 ${labelDefault()}">
                         Email
                       </label>
-                      <input type="text" class="form-item ${inputDefault()}" placeholder="Input">
+                      <input type="text" class="form-item ${inputDefault()}" aria-label="Email">
                     </div>
 
                     <div class="w-full">
 
-                      <label class="form-label mb-4 ${labelDefault()}">
+                      <label class="form-label mb-3 ${labelDefault()}">
                         Subject
                       </label>
 

@@ -15,41 +15,41 @@ export const demo = {
 
 demo.htmlSource = `
 <form class="demo--form-variant-primary py-4 px-6 bg-accent-500">
-  <div class="row row-x-4 row-y-3">
+  <div class="row row-x-3 row-y-2">
 
     <div class="w-full">
-      <label class="form-label mb-4 ${labelPrimary()}">
+      <label class="form-label mb-3 ${labelPrimary()}">
         Input
       </label>
-      <input type="text" class="form-item ${inputPrimary()}" placeholder="Input">
+      <input type="text" class="form-item ${inputPrimary()}" aria-label="Input" placeholder="Input">
     </div>
 
     <div class="w-full">
-      <label class="form-label mb-4 ${labelPrimary()}">
+      <label class="form-label mb-3 ${labelPrimary()}">
         Disabled
       </label>
-      <input type="text" class="form-item ${inputPrimary()}" placeholder="Input" disabled>
+      <input type="text" class="form-item ${inputPrimary()}" aria-label="Input" placeholder="Input" disabled>
     </div>
 
     <div class="w-full">
-      <label class="form-label mb-4 ${labelPrimary()}">
+      <label class="form-label mb-3 ${labelPrimary()}">
         File
       </label>
-      <input type="file" class="form-item ${inputPrimary()}"/>
+      <input type="file" class="form-item ${inputPrimary()}" aria-label="File"/>
     </div>
 
     <div class="w-full">
-      <label class="form-label mb-4 ${labelPrimary()}">
+      <label class="form-label mb-3 ${labelPrimary()}">
         Textarea
       </label>
-      <textarea class="form-item ${inputPrimary()} h-24 resize-vertical duration-150" placeholder="Textarea"></textarea>
+      <textarea class="form-item ${inputPrimary()} h-24 resize-vertical duration-150" aria-label="Textarea" placeholder="Textarea"></textarea>
     </div>
 
     <div class="w-full">
-      <label class="form-label mb-4 ${labelPrimary()}">
+      <label class="form-label mb-3 ${labelPrimary()}">
         Select
       </label>
-      <select class="form-item form-select form-select-primary ${inputPrimary()}">
+      <select class="form-item form-select form-select-primary ${inputPrimary()}" aria-label="Select">
         <option selected value="">Select an option</option>
         <option>Option 1</option>
         <option>Option 2</option>
@@ -58,10 +58,10 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <label class="form-label mb-4 ${labelPrimary()}">
+      <label class="form-label mb-3 ${labelPrimary()}">
         Select multiple
       </label>
-      <select class="form-item form-select form-select-primary ${inputPrimary()}" multiple>
+      <select class="form-item form-select form-select-primary ${inputPrimary()}" aria-label="Select multiple" multiple>
         <option>Option 1</option>
         <option>Option 2</option>
         <option>Option 3</option>
@@ -70,7 +70,7 @@ demo.htmlSource = `
 
     <div class="w-full">
 
-      <label class="form-label mb-4 ${labelPrimary()}">
+      <label class="form-label mb-3 ${labelPrimary()}">
         Checkbox
       </label>
 
@@ -96,7 +96,7 @@ demo.htmlSource = `
 
     <div class="w-full">
 
-      <label class="form-label mb-4 ${labelPrimary()}">
+      <label class="form-label mb-3 ${labelPrimary()}">
         Radio
       </label>
 
@@ -122,7 +122,7 @@ demo.htmlSource = `
 
     <div class="w-full">
 
-      <label class="form-label mb-4 ${labelPrimary()}">
+      <label class="form-label mb-3 ${labelPrimary()}">
         Switch
       </label>
 
