@@ -114,7 +114,7 @@ You can **customize components** inside `tailwind.config.js`, check [xtendui/src
 module.exports = {
   theme:{
     xtendui: {
-      btn: { // btn component
+      structure: { // structure component
         utility: theme => ({
           // modify utilities
         }),
