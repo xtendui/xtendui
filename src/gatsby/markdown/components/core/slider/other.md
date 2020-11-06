@@ -10,7 +10,7 @@ date: "2005-10-10"
 
 You can disable styles and javascript using `.slider-disable`.
 
-It also hides automatically **pagination** and **navigation** **wrap** and slides not `active`.
+It also hides automatically **pagination** and **navigation** **wrap** and slides not `in`.
 
 <div class="table-scroll">
 

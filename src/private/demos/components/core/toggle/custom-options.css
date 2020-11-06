@@ -1,5 +1,5 @@
 .demo--toggle-custom-options {
-  &:not(.active):not(.out) {
+  &:not(.in):not(.out) {
     display: none;
   }
 }

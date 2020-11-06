@@ -15,7 +15,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="overlay active-overlay" id="overlay--standalone" data-xt-overlay="{ on: false, instant: false }">
+<div class="overlay in-overlay" id="overlay--standalone" data-xt-overlay="{ on: false, instant: false }">
   <div class="overlay-container max-w-3xl">
     <div class="overlay-inner">
 

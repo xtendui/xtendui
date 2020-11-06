@@ -10,8 +10,10 @@
 
 html.gatsby_iframe-inside {
   body {
-    @apply overflow-main;
+    overflow-x: hidden;
+    overflow-y: scroll;
     background: theme('colors.white') !important;
+    @apply overflow-main;
   }
   #gatsby_body-inner {
     height: initial;

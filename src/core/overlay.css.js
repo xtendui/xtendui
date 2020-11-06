@@ -57,6 +57,9 @@ module.exports = {
       bottom: '0', // @FIX no height or it bugs collapse animation
       right: '0', // @FIX no width or it bugs collapse animation
       overflow: 'hidden',
+      '&.out': {
+        pointerEvents: 'none',
+      },
     },
     '.overlay-container': {
       // setup

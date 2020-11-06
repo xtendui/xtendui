@@ -31,6 +31,7 @@ demo.htmlSource = `
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
               </div>
+            </div>
           </div>
 
         </div>

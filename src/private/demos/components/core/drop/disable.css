@@ -1,7 +1,6 @@
+/*
 .demo--drop-container-disable {
-  /*@apply md:drop-container-disable !important;*/
-  @apply drop-container-disable !important;
-  /* disable additional padding */
+  @apply md:drop-container-disable !important;
   @screen md {
     .list {
       > .btn, > * > .btn {
@@ -10,3 +9,4 @@
     }
   }
 }
+*/

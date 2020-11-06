@@ -20,7 +20,7 @@ module.exports = {
       },
       // @FIX do calculation first
       '&.xt-disabled': {
-        '.slide:not(.active)': {
+        '.slide:not(.in)': {
           visibility: 'hidden !important',
           opacity: '0 !important',
           height: '0 !important',
@@ -38,7 +38,7 @@ module.exports = {
         '@apply duration-none transform-none !important': '',
         flexWrap: 'wrap !important',
       },
-      '.slide:not(.active)': {
+      '.slide:not(.in)': {
         opacity: '1 !important',
       },
       '.xt-wrap, .slider-pagination, [data-xt-nav], .loader, .filler, .spinner': {
@@ -85,7 +85,7 @@ module.exports = {
         display: 'block',
         zIndex: `calc(${theme('zIndex.active')} + 1)`,
       },
-      '&:not(.active)': {
+      '&:not(.in)': {
         position: 'absolute',
         top: '0',
         left: '0',

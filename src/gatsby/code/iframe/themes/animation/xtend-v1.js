@@ -1,9 +1,9 @@
 import React from 'react'
 import path from 'path'
-const btnPrimary = require('components/snippets/classes/btn-primary').default
-const btnDefault = require('components/snippets/classes/btn-default').default
-const cardDefault = require('components/snippets/classes/card-default').default
-const cardPrimary = require('components/snippets/classes/card-primary').default
+const btnPrimary =
+  'text-white links-inverse rounded-md bg-accent-500 border-transparent transform ease-out-quint duration-500 border hover:bg-accent-600 hover:border-accent-700 hover:shadow-lg hover:-translate-y-1 active:bg-accent-700 active:shadow-sm active:translate-y-0'
+const cardDefault =
+  'rounded-md bg-white shadow-lg transform ease-out-quint duration-500 delay-200 opacity-0 scale-50 group-active:delay-0 group-active:opacity-100 group-active:scale-100'
 const btnDefaultDrop = require('components/snippets/classes/btn-default-drop').default
 const btnCloseOutside = require('components/snippets/classes/btn-close-outside').default
 const labelDefault = require('components/snippets/classes/label-default').default
@@ -38,7 +38,7 @@ demo.htmlSource = `
     default
   </button>
 
-  <button type="button" class="btn btn-md text-white links-inverse rounded-md bg-accent-500 border-transparent transform ease-out-quint duration-500 border hover:bg-accent-600 hover:border-accent-700 hover:shadow-lg hover:-translate-y-1 active:bg-accent-700 active:shadow-sm active:translate-y-0">
+  <button type="button" class="btn btn-md ${btnPrimary}">
     primary
   </button>
 
@@ -66,7 +66,7 @@ demo.htmlSource = `
 
     <div class="drop group duration-700">  <!-- needed for animation time, put max animation time -->
       <div class="drop-inner">
-        <div class="design-setup rounded-md bg-white shadow-lg transform ease-out-quint duration-500 delay-200 opacity-0 scale-50 group-active:delay-0 group-active:opacity-100 group-active:scale-100"></div>
+        <div class="design-setup ${cardDefault}"></div>
         <div class="w-64 py-3 text-black links-default transform ease-out-quint duration-500 delay-0 opacity-0 -translate-y-2 group-active:delay-300 group-active:opacity-100 group-active:translate-y-0">
           <nav class="list flex-col">
             <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
@@ -87,13 +87,13 @@ demo.htmlSource = `
 
   <div class="drop-container" data-xt-drop>
 
-    <button type="button" class="btn btn-md text-white links-inverse rounded-md bg-accent-500 border-transparent transform ease-out-quint duration-500 border hover:bg-accent-600 hover:border-accent-700 hover:shadow-lg hover:-translate-y-1 active:bg-accent-700 active:shadow-sm active:translate-y-0">
+    <button type="button" class="btn btn-md ${btnPrimary}">
       card
     </button>
 
     <div class="drop group duration-700">  <!-- needed for animation time, put max animation time -->
       <div class="drop-inner">
-        <div class="design-setup rounded-md bg-white shadow-lg transform ease-out-quint duration-500 delay-200 opacity-0 scale-50 group-active:delay-0 group-active:opacity-100 group-active:scale-100"></div>
+        <div class="design-setup ${cardDefault}"></div>
         <div class="card w-80 text-black links-default transform ease-out-quint duration-500 delay-0 opacity-0 -translate-y-2 group-active:delay-300 group-active:opacity-100 group-active:translate-y-0">
           <div class="btn btn-close p-5 text-xl" aria-label="Close">
             ${iconX()}
@@ -117,14 +117,14 @@ demo.htmlSource = `
 <div class="list list-2 items-center">
 
   <div data-xt-overlay>
-    <button type="button" class="btn btn-md text-white links-inverse rounded-md bg-accent-500 border-transparent transform ease-out-quint duration-500 border hover:bg-accent-600 hover:border-accent-700 hover:shadow-lg hover:-translate-y-1 active:bg-accent-700 active:shadow-sm active:translate-y-0">
+    <button type="button" class="btn btn-md ${btnPrimary}">
       screen image full
     </button>
     <div class="overlay overlay-screen group duration-700">  <!-- needed for animation time, put max animation time -->
       <div class="overlay-container">
         <div class="overlay-inner">
 
-          <div class="design-setup rounded-md bg-white shadow-lg transform ease-out-quint duration-500 delay-200 opacity-0 scale-50 group-active:delay-0 group-active:opacity-100 group-active:scale-100"></div>
+          <div class="design-setup ${cardDefault}"></div>
 
           <div class="card items-center justify-center text-black links-default transform ease-out-quint duration-500 delay-0 opacity-0 -translate-y-2 group-active:delay-300 group-active:opacity-100 group-active:translate-y-0">
             <div class="btn btn-close p-5 text-2xl fixed z-top" aria-label="Close">
@@ -144,7 +144,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
 
-    <button type="button" class="btn btn-md text-white links-inverse rounded-md bg-accent-500 border-transparent transform ease-out-quint duration-500 border hover:bg-accent-600 hover:border-accent-700 hover:shadow-lg hover:-translate-y-1 active:bg-accent-700 active:shadow-sm active:translate-y-0">
+    <button type="button" class="btn btn-md ${btnPrimary}">
       left blocks
     </button>
 
@@ -152,7 +152,7 @@ demo.htmlSource = `
       <div class="overlay-container max-w-md ml-0 mr-auto">
         <div class="overlay-inner">
 
-          <div class="design-setup rounded-md bg-white shadow-lg transform ease-out-quint duration-500 delay-200 opacity-0 scale-50 group-active:delay-0 group-active:opacity-100 group-active:scale-100"></div>
+          <div class="design-setup ${cardDefault}"></div>
 
           <div class="card text-black links-default transform ease-out-quint duration-500 delay-0 opacity-0 -translate-y-2 group-active:delay-300 group-active:opacity-100 group-active:translate-y-0">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
@@ -191,7 +191,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
 
-    <button type="button" class="btn btn-md text-white links-inverse rounded-md bg-accent-500 border-transparent transform ease-out-quint duration-500 border hover:bg-accent-600 hover:border-accent-700 hover:shadow-lg hover:-translate-y-1 active:bg-accent-700 active:shadow-sm active:translate-y-0">
+    <button type="button" class="btn btn-md ${btnPrimary}">
       contact
     </button>
 
@@ -199,7 +199,7 @@ demo.htmlSource = `
       <div class="overlay-container max-w-5xl">
         <div class="overlay-inner">
 
-          <div class="design-setup rounded-md bg-white shadow-lg transform ease-out-quint duration-500 delay-200 opacity-0 scale-50 group-active:delay-0 group-active:opacity-100 group-active:scale-100"></div>
+          <div class="design-setup rounded-md lg:rounded-tr-none bg-white shadow-lg transform ease-out-quint duration-500 delay-200 opacity-0 scale-50 group-active:delay-0 group-active:opacity-100 group-active:scale-100"></div>
 
           <div class="card text-black links-default transform ease-out-quint duration-500 delay-0 opacity-0 -translate-y-2 group-active:delay-300 group-active:opacity-100 group-active:translate-y-0">
             <div class="btn btn-close p-5 text-2xl ${btnCloseOutside()} md:p-3 md:right-auto md:left-100" aria-label="Close">
@@ -273,7 +273,7 @@ demo.htmlSource = `
                     </div>
 
                     <div class="w-full">
-                      <button type="submit" class="btn btn-md text-white links-inverse rounded-md bg-accent-500 border-transparent transform ease-out-quint duration-500 border hover:bg-accent-600 hover:border-accent-700 hover:shadow-lg hover:-translate-y-1 active:bg-accent-700 active:shadow-sm active:translate-y-0">
+                      <button type="submit" class="btn btn-md ${btnPrimary}">
                         Send
                       </button>
                     </div>
@@ -310,7 +310,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
 
-    <button type="button" class="btn btn-md text-white links-inverse rounded-md bg-accent-500 border-transparent transform ease-out-quint duration-500 border hover:bg-accent-600 hover:border-accent-700 hover:shadow-lg hover:-translate-y-1 active:bg-accent-700 active:shadow-sm active:translate-y-0">
+    <button type="button" class="btn btn-md ${btnPrimary}">
       newsletter
     </button>
 
@@ -318,7 +318,7 @@ demo.htmlSource = `
       <div class="overlay-container max-w-5xl">
         <div class="overlay-inner">
 
-          <div class="design-setup rounded-md bg-white shadow-lg transform ease-out-quint duration-500 delay-200 opacity-0 scale-50 group-active:delay-0 group-active:opacity-100 group-active:scale-100"></div>
+          <div class="design-setup rounded-md lg:rounded-tr-none bg-white shadow-lg transform ease-out-quint duration-500 delay-200 opacity-0 scale-50 group-active:delay-0 group-active:opacity-100 group-active:scale-100"></div>
 
           <div class="card text-black links-default transform ease-out-quint duration-500 delay-0 opacity-0 -translate-y-2 group-active:delay-300 group-active:opacity-100 group-active:translate-y-0">
             <div class="btn btn-close p-5 text-2xl ${btnCloseOutside()} md:p-3 md:right-auto md:left-100" aria-label="Close">
@@ -328,7 +328,7 @@ demo.htmlSource = `
             <div class="lg:card-group">
 
               <div class="lg:w-5/12 flex flex-col">
-                <div class="media-container flex-full" style="padding-bottom: 100%;">
+                <div class="media-container flex-full rounded-t-md lg:rounded-tr-none" style="padding-bottom: 100%;">
                   <div class="media-inner">
                     <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
                   </div>
@@ -399,7 +399,7 @@ demo.htmlSource = `
                     </div>
 
                     <div class="w-full">
-                      <button type="submit" class="btn btn-md text-white links-inverse rounded-md bg-accent-500 border-transparent transform ease-out-quint duration-500 border hover:bg-accent-600 hover:border-accent-700 hover:shadow-lg hover:-translate-y-1 active:bg-accent-700 active:shadow-sm active:translate-y-0">
+                      <button type="submit" class="btn btn-md ${btnPrimary}">
                         Subscribe
                       </button>
                     </div>
@@ -442,7 +442,7 @@ demo.htmlSource = `
   </div>
 
   <div class="w-full md:w-6/12">
-    <a role="button" class="card text-white links-inverse rounded-md bg-accent-500 border-transparent transform ease-out-quint duration-500 border hover:bg-accent-600 hover:border-accent-700 hover:shadow-lg hover:-translate-y-1 active:bg-accent-700 active:shadow-sm active:translate-y-0">
+    <a role="button" class="card ${btnPrimary}">
       <div class="card-md">
         <div class="h4">Primary</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>

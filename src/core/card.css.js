@@ -30,18 +30,18 @@ module.exports = {
     },
     '.card-disable': {
       // setup
-      '@apply text-black links-default': '',
-      borderWidth: '0',
-      backgroundColor: 'transparent',
-      boxShadow: 'none',
+      '@apply text-black links-default !important': '',
+      borderWidth: '0 !important',
+      backgroundColor: 'transparent !important',
+      boxShadow: 'none !important',
       '> .design-setup': {
-        display: 'none',
+        display: 'none !important',
       },
       '&, > *, > * > *': {
-        padding: '0',
+        padding: '0 !important',
       },
       '> .btn-close': {
-        display: 'none',
+        display: 'none !important',
       },
     },
   },

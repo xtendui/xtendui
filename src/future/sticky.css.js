@@ -30,10 +30,10 @@ module.exports = {
         position: 'relative',
         width: '100%',
       },
-      '&.xt-clone:not(.active)': {
+      '&.xt-clone:not(.in)': {
         position: 'absolute',
       },
-      '&:not(.xt-clone):not(.active)': {
+      '&:not(.xt-clone):not(.in)': {
         position: 'relative',
       },
       '.show-sticky': {
@@ -59,13 +59,13 @@ module.exports = {
       '&.xt-clone': {
         position: 'relative',
       },
-      '&.xt-clone:not(.active)': {
+      '&.xt-clone:not(.in)': {
         position: 'relative',
       },
-      '&:not(.xt-clone):not(.active)': {
+      '&:not(.xt-clone):not(.in)': {
         position: 'relative',
       },
-      '&.xt-fixed:not(.xt-clone):not(.active)': {
+      '&.xt-fixed:not(.xt-clone):not(.in)': {
         position: 'absolute',
         width: '100%',
       },
@@ -75,13 +75,13 @@ module.exports = {
       '&.xt-clone': {
         position: 'relative',
       },
-      '&.xt-clone:not(.active)': {
+      '&.xt-clone:not(.in)': {
         position: 'relative',
       },
-      '&:not(.xt-clone):not(.active)': {
+      '&:not(.xt-clone):not(.in)': {
         position: 'relative',
       },
-      '&.xt-fixed:not(.xt-clone):not(.active)': {
+      '&.xt-fixed:not(.xt-clone):not(.in)': {
         position: 'fixed',
         zIndex: theme('zIndex.sticky'),
         width: '100%',
@@ -92,15 +92,15 @@ module.exports = {
       '&.xt-clone': {
         position: 'absolute',
       },
-      '&.xt-clone:not(.active)': {
+      '&.xt-clone:not(.in)': {
         position: 'absolute',
       },
-      '&:not(.xt-clone):not(.active)': {
+      '&:not(.xt-clone):not(.in)': {
         position: 'fixed',
         zIndex: theme('zIndex.sticky'),
         width: '100%',
       },
-      '&.xt-fixed:not(.xt-clone):not(.active)': {
+      '&.xt-fixed:not(.xt-clone):not(.in)': {
         position: 'fixed',
         zIndex: theme('zIndex.sticky'),
         width: '100%',

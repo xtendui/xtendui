@@ -3,10 +3,10 @@ module.exports = {
     'html.xt-scrollbar': {
       // setup
       body: {
-        overflowY: 'hidden',
+        overflowY: 'hidden !important',
       },
       '.overlay': {
-        overflowY: 'scroll',
+        overflowY: 'scroll !important',
       },
     },
     '.initial': {
@@ -54,7 +54,7 @@ module.exports = {
     },
     '.xt-jump': {
       // setup
-      '&:not(.active)': {
+      '&:not(.in)': {
         cursor: 'pointer',
       },
       '&.xt-jumps-none, .xt-jumps-none &': {

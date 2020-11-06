@@ -20,7 +20,7 @@ demo.htmlSource = `
     Toggle 1
   </button>
 
-  <button type="button" class="btn btn-md ${btnDefault()} active-toggle">
+  <button type="button" class="btn btn-md ${btnDefault()} in-toggle">
     Toggle 2
   </button>
 

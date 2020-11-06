@@ -19,7 +19,7 @@ demo.htmlSource = `
     <div class="slides">
       <ul class="slides-inner row row-10 transition-none">
 
-        <div class="slide list list-10 flex-no-wrap whitespace-nowrap">
+        <div class="slide list list-10 flex-nowrap whitespace-nowrap">
           <a href="#test-link-1" class="slide_item" title="item 1">
             <div class="h4">One</div>
           </a>
@@ -81,7 +81,7 @@ demo.htmlSource = `
     <div class="slides">
       <ul class="slides-inner row row-10 transition-none">
 
-        <div class="slide list list-10 flex-no-wrap whitespace-nowrap">
+        <div class="slide list list-10 flex-nowrap whitespace-nowrap">
           <a href="#test-link-1" class="slide_item" title="item 1">
             <div class="h4">One</div>
           </a>
@@ -143,7 +143,7 @@ demo.htmlSource = `
     <div class="slides">
       <ul class="slides-inner row row-px transition-none">
 
-        <div class="slide list list-px flex-no-wrap">
+        <div class="slide list list-px flex-nowrap">
           <a href="#test-link-1" class="slide_item" title="item 0">
             <div class="media-container" style="padding-bottom: 37.5%;">
               <div class="media-inner">

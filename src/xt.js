@@ -1033,7 +1033,7 @@ if (typeof window !== 'undefined') {
     if (!query) {
       return []
     }
-    if (!element.length) {
+    if (!element) {
       // search element
       return Xt.arrSingle(element.querySelectorAll(query))
     } else {

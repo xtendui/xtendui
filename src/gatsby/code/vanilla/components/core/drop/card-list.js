@@ -23,7 +23,7 @@ demo.htmlSource = `
       <div class="drop-inner">
         <div class="card w-96 ${cardDefaultDrop()}">
           <div class="card-md">
-            <div class="list list-3 flex-no-wrap items-baseline">
+            <div class="list list-3 flex-nowrap items-baseline">
               <div>
                 ${iconPackage({ classes: 'icon-lg text-2xl' })}
               </div>
