@@ -1116,7 +1116,7 @@ if (typeof window !== 'undefined') {
   Xt.dataStorage.set(document.documentElement, 'xtEventDelayHeight', window.innerHeight)
 
   /**
-   * animate css properties
+   * animate css properties from current values to final values
    * @param {Node|HTMLElement|EventTarget|Window} element Element to save timeout
    * @param {Array} properties Array of css properties camel case
    * @returns {Object}

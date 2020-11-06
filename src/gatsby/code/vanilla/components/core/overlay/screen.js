@@ -15,31 +15,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
     <button type="button" class="btn btn-md ${btnPrimary()}">
-      screen image full
-    </button>
-    <div class="overlay overlay-screen">
-      <div class="overlay-container">
-        <div class="overlay-inner">
-
-          <div class="card items-center justify-center ${cardDefaultOverlayScreen()}">
-            <div class="btn btn-close p-5 text-2xl fixed z-top" aria-label="Close">
-              ${iconX()}
-            </div>
-            <div class="media-container" style="padding-bottom: 100%;">
-              <div class="media-inner">
-                <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div data-xt-overlay>
-    <button type="button" class="btn btn-md ${btnPrimary()}">
-      screen max-w-3xl
+      screen
     </button>
     <div class="overlay overlay-screen">
       <div class="overlay-container">
@@ -67,7 +43,31 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
     <button type="button" class="btn btn-md ${btnPrimary()}">
-      screen group max-w-3xl
+      screen full
+    </button>
+    <div class="overlay overlay-screen">
+      <div class="overlay-container">
+        <div class="overlay-inner">
+
+          <div class="card items-center justify-center ${cardDefaultOverlayScreen()}">
+            <div class="btn btn-close p-5 text-2xl fixed z-top" aria-label="Close">
+              ${iconX()}
+            </div>
+            <div class="media-container" style="padding-bottom: 100%;">
+              <div class="media-inner">
+                <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-xt-overlay>
+    <button type="button" class="btn btn-md ${btnPrimary()}">
+      screen group
     </button>
     <div class="overlay overlay-screen">
       <div class="overlay-container">

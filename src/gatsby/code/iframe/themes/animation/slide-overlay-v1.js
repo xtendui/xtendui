@@ -33,7 +33,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
     <button type="button" class="btn btn-md ${btnPrimary()}">
-      screen image full
+      screen full
     </button>
     <div class="overlay overlay-screen group duration-1000">  <!-- needed for animation time, put max animation time -->
       <div class="overlay-container">
