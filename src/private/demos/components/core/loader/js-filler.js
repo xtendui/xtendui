@@ -4,10 +4,6 @@ import gsap from 'gsap'
 Xt.mount.push({
   matches: '.demo--loader-js-filler',
   mount: object => {
-    // vars
-
-    let timeout
-
     // init
 
     const loaderTimeout = () => {

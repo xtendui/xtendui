@@ -1,8 +1,5 @@
 import React from 'react'
 import path from 'path'
-const markupDrop = require('components/snippets/themes/markup-drop').default
-const markupOverlay = require('components/snippets/themes/markup-overlay').default
-const markupGroup = require('components/snippets/themes/markup-group').default
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -19,15 +16,34 @@ demo.htmlSource = `
 <div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
   Drop
 </div>
-${markupDrop()}
 <div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
   Overlay
 </div>
-${markupOverlay()}
 <div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
   Group
 </div>
-${markupGroup()}
+
+<div class="list list-2 items-center">
+
+  <form class="form-default flex-full" data-xt-toggle="{ elements: '.form-group > .btn', targets: '.group' }">
+    <div class="form-group">
+      <button type="button" class="btn btn-primary">
+        group
+      </button>
+      <div class="list group-default">
+        <div class="list-inner">
+          <button type="button" class="btn btn-default btn-lg">
+            ipsum
+          </button>
+        </div>
+        <div class="list-inner">
+          <input type="text" class="form-item" />
+        </div>
+      </div>
+    </button>
+  </form>
+
+</div>
 `
 
 class Page extends React.Component {

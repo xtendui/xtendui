@@ -1,6 +1,5 @@
 import React from 'react'
 import path from 'path'
-const markupOverlay = require('components/snippets/themes/markup-overlay').default
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -14,7 +13,6 @@ export const demo = {
 }
 
 demo.htmlSource = `
-${markupOverlay()}
 `
 
 class Page extends React.Component {
