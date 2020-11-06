@@ -1,6 +1,8 @@
 import React from 'react'
 import path from 'path'
-const btnPrimary =
+const classesDefault =
+  'text-black links-default rounded-md bg-gray-200 border-transparent transform ease-out-quint duration-500 border hover:bg-gray-300 hover:border-gray-400 hover:shadow-lg hover:-translate-y-1 active:bg-gray-400 active:shadow-sm active:translate-y-0'
+const classesPrimary =
   'text-white links-inverse rounded-md bg-accent-500 border-transparent transform ease-out-quint duration-500 border hover:bg-accent-600 hover:border-accent-700 hover:shadow-lg hover:-translate-y-1 active:bg-accent-700 active:shadow-sm active:translate-y-0'
 const cardDefault =
   'rounded-md bg-white shadow-lg transform ease-out-quint duration-500 delay-200 opacity-0 scale-50 group-active:delay-0 group-active:opacity-100 group-active:scale-100'
@@ -34,11 +36,11 @@ demo.htmlSource = `
     btn
   </button>
 
-  <button type="button" class="btn btn-md text-black links-default rounded-md bg-gray-200 border-transparent transform ease-out-quint duration-500 border hover:bg-gray-300 hover:border-gray-400 hover:shadow-lg hover:-translate-y-1 active:bg-gray-400 active:shadow-sm active:translate-y-0">
+  <button type="button" class="btn btn-md ${classesDefault}">
     default
   </button>
 
-  <button type="button" class="btn btn-md ${btnPrimary}">
+  <button type="button" class="btn btn-md ${classesPrimary}">
     primary
   </button>
 
@@ -87,7 +89,7 @@ demo.htmlSource = `
 
   <div class="drop-container" data-xt-drop>
 
-    <button type="button" class="btn btn-md ${btnPrimary}">
+    <button type="button" class="btn btn-md ${classesPrimary}">
       card
     </button>
 
@@ -117,7 +119,7 @@ demo.htmlSource = `
 <div class="list list-2 items-center">
 
   <div data-xt-overlay>
-    <button type="button" class="btn btn-md ${btnPrimary}">
+    <button type="button" class="btn btn-md ${classesPrimary}">
       screen image full
     </button>
     <div class="overlay overlay-screen group duration-700">  <!-- needed for animation time, put max animation time -->
@@ -144,7 +146,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
 
-    <button type="button" class="btn btn-md ${btnPrimary}">
+    <button type="button" class="btn btn-md ${classesPrimary}">
       left blocks
     </button>
 
@@ -191,7 +193,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
 
-    <button type="button" class="btn btn-md ${btnPrimary}">
+    <button type="button" class="btn btn-md ${classesPrimary}">
       contact
     </button>
 
@@ -273,7 +275,7 @@ demo.htmlSource = `
                     </div>
 
                     <div class="w-full">
-                      <button type="submit" class="btn btn-md ${btnPrimary}">
+                      <button type="submit" class="btn btn-md ${classesPrimary}">
                         Send
                       </button>
                     </div>
@@ -310,7 +312,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
 
-    <button type="button" class="btn btn-md ${btnPrimary}">
+    <button type="button" class="btn btn-md ${classesPrimary}">
       newsletter
     </button>
 
@@ -399,7 +401,7 @@ demo.htmlSource = `
                     </div>
 
                     <div class="w-full">
-                      <button type="submit" class="btn btn-md ${btnPrimary}">
+                      <button type="submit" class="btn btn-md ${classesPrimary}">
                         Subscribe
                       </button>
                     </div>
@@ -433,7 +435,7 @@ demo.htmlSource = `
 <div class="row row-3">
 
   <div class="w-full md:w-6/12">
-    <a role="button" class="card text-black links-default rounded-md bg-gray-200 border-transparent transform ease-out-quint duration-500 border hover:bg-gray-300 hover:border-gray-400 hover:shadow-lg hover:-translate-y-1 active:bg-gray-400 active:shadow-sm active:translate-y-0">
+    <a role="button" class="card ${classesDefault}">
       <div class="card-md">
         <div class="h4">Default</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
@@ -442,7 +444,7 @@ demo.htmlSource = `
   </div>
 
   <div class="w-full md:w-6/12">
-    <a role="button" class="card ${btnPrimary}">
+    <a role="button" class="card ${classesPrimary}">
       <div class="card-md">
         <div class="h4">Primary</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
