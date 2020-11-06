@@ -1,5 +1,7 @@
 import { Xt } from 'xtendui'
 import gsap from 'gsap'
+gsap.defaults({ overwrite: 'auto' })
+gsap.config({ force3D: false })
 
 Xt.mount.push({
   matches: '.demo--loader-js-filler',

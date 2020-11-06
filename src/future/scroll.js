@@ -169,7 +169,7 @@ class Scroll extends Xt.Toggle {
     const scrollingElement = document.scrollingElement
     const scrollHeight = scrollingElement.scrollHeight
     const scrollTop = scrollingElement.scrollTop
-    const windowHeight = Xt.windowHeight
+    const windowHeight = Xt.innerHeight
     const fallback = Xt.windowPercent(options.fallback)
     self.detail.distance = Xt.windowPercent(options.distance)
     self.detail.trigger = Xt.windowPercent(options.trigger)

@@ -1,22 +1,24 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/core/drop'
 import gsap from 'gsap'
+gsap.defaults({ overwrite: 'auto' })
+gsap.config({ force3D: false })
 
 Xt.mount.push({
   matches: '.demo--drop-animation-js',
   mount: object => {
     // vars
 
-    const targetTimeOn = Xt.vars.timeSmall
+    const targetTimeOn = 0.5
     const targetEaseOn = 'quad.out'
-    const targetTimeOff = Xt.vars.timeSmall
+    const targetTimeOff = 0.5
     const targetEaseOff = 'quad.inOut'
 
     // init
 
     let self = new Xt.Drop(object, {
-      durationOn: Xt.vars.timeSmall,
-      durationOff: Xt.vars.timeSmall,
+      durationOn: 500,
+      durationOff: 500,
     })
 
     // on

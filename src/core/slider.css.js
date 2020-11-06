@@ -74,7 +74,7 @@ module.exports = {
       // setup
       position: 'relative',
       display: 'none',
-      '&.active': {
+      '&.in': {
         display: 'block',
         zIndex: theme('zIndex.active'),
       },

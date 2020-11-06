@@ -3,7 +3,10 @@ import 'xtendui/src/future/scroll'
 import 'xtendui/src/addons/sticky-flow'
 import 'xtendui/src/addons/scroll-to-anchor'
 import gsap from 'gsap'
-import 'gsap/ScrollToPlugin'
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
+gsap.registerPlugin(ScrollToPlugin)
+gsap.defaults({ overwrite: 'auto' })
+gsap.config({ force3D: false })
 
 /**
  * scroll-to-anchor
@@ -38,7 +41,7 @@ Xt.mount.push({
         // if component on activation
         gsap.set(scrollingElement, { scrollTo: pos })
       } else {
-        gsap.to(scrollingElement, { scrollTo: pos, duration: Xt.vars.timeLarge, ease: 'quart.inOut' })
+        gsap.to(scrollingElement, { scrollTo: pos, duration: 1, ease: 'quart.inOut' })
       }
     }
 
@@ -50,53 +53,6 @@ Xt.mount.push({
       self.object.removeEventListener('change.xt.scrolltoanchor', eventChange)
       self.destroy()
       self = null
-    }
-  },
-})
-
-/**
- *  .product-continue
- */
-
-Xt.mount.push({
-  matches: '#iframe--fashion-gallery-v1 body .product-continue', // add your own selector instead of body to contain the code
-  mount: object => {
-    // vars
-
-    const icon = object.querySelector(':scope > *')
-    const posY = 15
-
-    // interval
-
-    const move = () => {
-      gsap.to(icon, { y: 6, duration: Xt.vars.timeSmall, ease: 'back.out(4)' }).eventCallback('onComplete', () => {
-        gsap.to(icon, { y: 0, duration: Xt.vars.timeSmall, ease: 'quart.out' }).delay(Xt.vars.timeMedium)
-      })
-    }
-
-    let interval = setInterval(move, Xt.vars.timeGiant)
-
-    // scroll
-
-    const eventScroll = () => {
-      if (document.scrollingElement.scrollTop > 0) {
-        gsap.to(object, { y: posY, opacity: 0, duration: Xt.vars.timeTiny, ease: 'quart.inOut' }).eventCallback('onComplete', () => {
-          object.classList.add('hidden')
-        })
-      } else {
-        object.classList.remove('hidden')
-        gsap.to(object, { y: 0, opacity: 1, duration: Xt.vars.timeTiny, ease: 'quart.inOut' })
-      }
-    }
-
-    addEventListener('scroll', eventScroll)
-    eventScroll()
-
-    // unmount
-
-    return function () {
-      clearInterval(interval)
-      removeEventListener('scroll', eventScroll)
     }
   },
 })
@@ -123,21 +79,21 @@ Xt.mount.push({
       const tr = e.target
       // img
       const img = tr.querySelector('.media-container')
-      gsap.to(img, { scale: 1 + imgContainerScale, duration: Xt.vars.timeSmall, ease: 'quart.out' })
+      gsap.to(img, { scale: 1 + imgContainerScale, duration: 0.5, ease: 'quart.out' })
       const imgInner = tr.querySelector('.media-inner')
-      gsap.to(imgInner, { scale: 1 + imgScale, duration: Xt.vars.timeBig, ease: 'quart.out' })
+      gsap.to(imgInner, { scale: 1 + imgScale, duration: 1.5, ease: 'quart.out' })
       // mask
       const mask = tr.querySelector('.media-mask')
       gsap.set(mask, { height: 0, y: img.offsetHeight, skewY: 0, opacity: maskOpacityOff })
-      gsap.to(mask, { height: '150%', y: 0, opacity: maskOpacityOn, duration: Xt.vars.timeSmall, ease: 'quart.out' }) // @FIX to cover height: '150%'
-      gsap.to(mask, { skewY: -10, duration: Xt.vars.timeSmall / 2, ease: 'quart.out' }).eventCallback('onComplete', () => {
-        gsap.to(mask, { skewY: 0, duration: Xt.vars.timeSmall / 2, ease: 'quart.out' })
+      gsap.to(mask, { height: '150%', y: 0, opacity: maskOpacityOn, duration: 0.5, ease: 'quart.out' }) // @FIX to cover height: '150%'
+      gsap.to(mask, { skewY: -10, duration: 0.5 / 2, ease: 'quart.out' }).eventCallback('onComplete', () => {
+        gsap.to(mask, { skewY: 0, duration: 0.5 / 2, ease: 'quart.out' })
       })
-      gsap.to(mask, { opacity: maskOpacityDone, duration: Xt.vars.timeMedium, ease: 'quart.out', delay: Xt.vars.timeSmall })
+      gsap.to(mask, { opacity: maskOpacityDone, duration: 0.75, ease: 'quart.out', delay: 0.5 })
       // item
       const item = tr.querySelector('.card-item')
       if (item) {
-        gsap.to(item, { y: titleY, duration: Xt.vars.timeSmall, ease: 'expo.out' })
+        gsap.to(item, { y: titleY, duration: 0.5, ease: 'expo.out' })
       }
     }
 
@@ -149,22 +105,69 @@ Xt.mount.push({
       const tr = e.target
       // img
       const img = tr.querySelector('.media-container')
-      gsap.to(img, { scale: 1, duration: Xt.vars.timeSmall, ease: 'quart.out' })
+      gsap.to(img, { scale: 1, duration: 0.5, ease: 'quart.out' })
       const imgInner = tr.querySelector('.media-inner')
-      gsap.to(imgInner, { scale: 1, duration: Xt.vars.timeBig, ease: 'quart.out' })
+      gsap.to(imgInner, { scale: 1, duration: 1.5, ease: 'quart.out' })
       // mask
       const mask = tr.querySelector('.media-mask')
-      gsap.to(mask, { height: '50%', y: '-100%', opacity: maskOpacityOff, duration: Xt.vars.timeSmall, ease: 'quart.out' }) // @FIX to cover height: '50%', y: '-100%'
-      gsap.to(mask, { skewY: 10, duration: Xt.vars.timeSmall / 2, ease: 'quart.out' }).eventCallback('onComplete', () => {
-        gsap.to(mask, { skewY: 0, duration: Xt.vars.timeSmall / 2, ease: 'quart.out' })
+      gsap.to(mask, { height: '50%', y: '-100%', opacity: maskOpacityOff, duration: 0.5, ease: 'quart.out' }) // @FIX to cover height: '50%', y: '-100%'
+      gsap.to(mask, { skewY: 10, duration: 0.5 / 2, ease: 'quart.out' }).eventCallback('onComplete', () => {
+        gsap.to(mask, { skewY: 0, duration: 0.5 / 2, ease: 'quart.out' })
       })
       // item
       const item = tr.querySelector('.card-item')
       if (item) {
-        gsap.to(item, { y: 0, duration: Xt.vars.timeSmall, ease: 'expo.out' })
+        gsap.to(item, { y: 0, duration: 0.5, ease: 'expo.out' })
       }
     }
 
     object.addEventListener('mouseleave', eventLeave)
+  },
+})
+
+/**
+ *  .product-continue
+ */
+
+Xt.mount.push({
+  matches: '#iframe--fashion-gallery-v1 body .product-continue', // add your own selector instead of body to contain the code
+  mount: object => {
+    // vars
+
+    const icon = object.querySelector(':scope > *')
+    const posY = 15
+
+    // interval
+
+    const move = () => {
+      gsap.to(icon, { y: 6, duration: 0.5, ease: 'back.out(4)' }).eventCallback('onComplete', () => {
+        gsap.to(icon, { y: 0, duration: 0.5, ease: 'quart.out' }).delay(0.25)
+      })
+    }
+
+    let interval = setInterval(move, 2000)
+
+    // scroll
+
+    const eventScroll = () => {
+      if (document.scrollingElement.scrollTop > 0) {
+        gsap.to(object, { y: posY, opacity: 0, duration: 0.25, ease: 'quart.inOut' }).eventCallback('onComplete', () => {
+          object.classList.add('hidden')
+        })
+      } else {
+        object.classList.remove('hidden')
+        gsap.to(object, { y: 0, opacity: 1, duration: 0.25, ease: 'quart.inOut' })
+      }
+    }
+
+    addEventListener('scroll', eventScroll)
+    eventScroll()
+
+    // unmount
+
+    return function () {
+      clearInterval(interval)
+      removeEventListener('scroll', eventScroll)
+    }
   },
 })

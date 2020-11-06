@@ -19,10 +19,10 @@ demo.htmlSource = `
     <div class="w-full md:w-6/12 lg:w-4/12">
       <a href="#" class="listing-item group">
         <div class="media-container" style="padding-bottom: 150%">
-          <div class="media-mask absolute z-active top-0 lelft-0 w-full h-0 bg-white"></div>
           <div class="media-inner">
             <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
           </div>
+          <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
         </div>
         <div class="py-4">
           <div class="h5 group-hover:text-accent-500">
@@ -38,10 +38,10 @@ demo.htmlSource = `
     <div class="w-full md:w-6/12 lg:w-4/12">
       <a href="#" class="listing-item group">
         <div class="media-container" style="padding-bottom: 150%">
-          <div class="media-mask absolute z-active top-0 lelft-0 w-full h-0 bg-white"></div>
           <div class="media-inner">
             <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
           </div>
+          <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
         </div>
         <div class="py-4">
           <div class="h5 group-hover:text-accent-500">
@@ -57,10 +57,10 @@ demo.htmlSource = `
     <div class="w-full md:w-6/12 lg:w-4/12">
       <a href="#" class="listing-item group">
         <div class="media-container" style="padding-bottom: 150%">
-          <div class="media-mask absolute z-active top-0 lelft-0 w-full h-0 bg-white"></div>
           <div class="media-inner">
             <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
           </div>
+          <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
         </div>
         <div class="py-4">
           <div class="h5 group-hover:text-accent-500">
@@ -76,10 +76,10 @@ demo.htmlSource = `
     <div class="w-full md:w-6/12 lg:w-4/12">
       <a href="#" class="listing-item group">
         <div class="media-container" style="padding-bottom: 150%">
-          <div class="media-mask absolute z-active top-0 lelft-0 w-full h-0 bg-white"></div>
           <div class="media-inner">
             <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
           </div>
+          <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
         </div>
         <div class="py-4">
           <div class="h5 group-hover:text-accent-500">
@@ -95,10 +95,10 @@ demo.htmlSource = `
     <div class="w-full md:w-6/12 lg:w-4/12">
       <a href="#" class="listing-item group">
         <div class="media-container" style="padding-bottom: 150%">
-          <div class="media-mask absolute z-active top-0 lelft-0 w-full h-0 bg-white"></div>
           <div class="media-inner">
             <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
           </div>
+          <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
         </div>
         <div class="py-4">
           <div class="h5 group-hover:text-accent-500">
@@ -114,10 +114,10 @@ demo.htmlSource = `
     <div class="w-full md:w-6/12 lg:w-4/12">
       <a href="#" class="listing-item group">
         <div class="media-container" style="padding-bottom: 150%">
-          <div class="media-mask absolute z-active top-0 lelft-0 w-full h-0 bg-white"></div>
           <div class="media-inner">
             <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
           </div>
+          <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
         </div>
         <div class="py-4">
           <div class="h5 group-hover:text-accent-500">
@@ -133,10 +133,10 @@ demo.htmlSource = `
     <div class="w-full">
       <a href="#" class="listing-item group">
         <div class="media-container" style="padding-bottom: 50%">
-          <div class="media-mask absolute z-active top-0 lelft-0 w-full h-0 bg-white"></div>
           <div class="media-inner">
             <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
           </div>
+          <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
         </div>
         <div class="py-4">
           <div class="h5 group-hover:text-accent-500">
@@ -152,10 +152,10 @@ demo.htmlSource = `
     <div class="w-full">
       <a href="#" class="listing-item group">
         <div class="media-container" style="padding-bottom: 50%">
-          <div class="media-mask absolute z-active top-0 lelft-0 w-full h-0 bg-white"></div>
           <div class="media-inner">
             <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
           </div>
+          <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
         </div>
         <div class="py-4">
           <div class="h5 group-hover:text-accent-500">

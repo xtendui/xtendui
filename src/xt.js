@@ -107,7 +107,7 @@ if (typeof window !== 'undefined') {
    */
   Xt.ready(() => {
     Xt.setScrollbarWidth()
-    Xt.windowHeightSet()
+    Xt.innerHeightSet()
     Xt.mountCheck(document.documentElement)
     Xt.observer.disconnect()
     Xt.observer.observe(document.documentElement, {
@@ -1018,7 +1018,7 @@ if (typeof window !== 'undefined') {
   Xt.windowPercent = num => {
     if (typeof num === 'string' || num instanceof String) {
       if (num.indexOf('%') !== -1) {
-        num = (Xt.windowHeight * parseFloat(num)) / 100
+        num = (Xt.innerHeight * parseFloat(num)) / 100
       }
     }
     return num
@@ -1135,7 +1135,7 @@ if (typeof window !== 'undefined') {
     backgroundColor: animCss.backgroundColor.final,
     borderColor: animCss.borderColor.final,
     boxShadow: animCss.boxShadow.final,
-    duration: Xt.vars.timeTiny,
+    duration: 0.25,
     ease: 'linear',
   })
   */
@@ -1170,30 +1170,32 @@ if (typeof window !== 'undefined') {
   }
 
   /**
-   * Xt.windowHeight
-   * vindow height value only on width resize to fix mobile window height changes
+   * utility vars
    */
+
+  // window height value only on width resize to fix mobile window height changes
+  // height: 100vh;
+  // height: calc(var(--vh, 1vh) * 100);
+
+  Xt.innerHeightSet = () => {
+    Xt.innerHeight = window.innerHeight
+    document.documentElement.style.setProperty('--vh', `${Xt.innerHeight * 0.01}px`)
+  }
+
+  // init
 
   addEventListener('resize', e => {
     Xt.eventDelay(
       e,
       document.documentElement,
       () => {
-        Xt.windowHeightSet()
+        Xt.innerHeightSet()
       },
       'xtWindowHeightResize',
       true
     )
   })
-
-  Xt.windowHeightSet = () => {
-    Xt.windowHeight = window.innerHeight
-    /* https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
-     * height: 100vh;
-     * height: calc(var(--vh, 1vh) * 100);
-     */
-    document.documentElement.style.setProperty('--vh', `${Xt.windowHeight * 0.01}px`)
-  }
+  Xt.innerHeightSet()
 
   /**
    * scrollRestoration

@@ -1,13 +1,15 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/core/toggle'
 import gsap from 'gsap'
+gsap.defaults({ overwrite: 'auto' })
+gsap.config({ force3D: false })
 
 Xt.mount.push({
   matches: '.demo--toggle-progress',
   mount: object => {
     // vars
 
-    const fillerTime = Xt.vars.timeTiny
+    const fillerTime = 0.25
     const fillerEase = 'linear'
 
     // init

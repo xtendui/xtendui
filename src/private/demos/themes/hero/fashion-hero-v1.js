@@ -1,6 +1,8 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/core/slider'
 import gsap from 'gsap'
+gsap.defaults({ overwrite: 'auto' })
+gsap.config({ force3D: false })
 
 /**
  * slider
@@ -11,23 +13,23 @@ Xt.mount.push({
   mount: object => {
     // vars
 
-    const assetMaskTimeOn = Xt.vars.timeBig
+    const assetMaskTimeOn = 1.5
     const assetMaskEaseOn = 'quint.inOut'
-    const assetMaskTimeOff = Xt.vars.timeBig
+    const assetMaskTimeOff = 1.5
     const assetMaskEaseOff = 'quint.inOut'
     const assetMaskEaseDragging = 'quint.out'
 
     const assetZoom = 0.25
     const assetOpacity = 0.5
-    const assetTimeOn = Xt.vars.timeBig
+    const assetTimeOn = 1.5
     const assetEaseOn = 'quint.inOut'
-    const assetTimeOff = Xt.vars.timeBig
+    const assetTimeOff = 1.5
     const assetEaseOff = 'quint.inOut'
-    const assetTimeDragging = Xt.vars.timeBig + Xt.vars.timeBig
+    const assetTimeDragging = 1.5 + 1.5
     const assetEaseDragging = 'quint.out'
 
     const contentX = 50
-    const contentTime = Xt.vars.timeBig
+    const contentTime = 1.5
     const contentEase = 'quint.inOut'
     const contentEaseDragging = 'quint.out'
 
@@ -35,8 +37,8 @@ Xt.mount.push({
 
     let self = new Xt.Slider(object, {
       instant: true,
-      durationOn: Xt.vars.timeBig,
-      durationOff: Xt.vars.timeBig,
+      durationOn: 1500,
+      durationOff: 1500,
       auto: {
         time: 5000,
         pause: '.hero-content-inner',
@@ -44,7 +46,7 @@ Xt.mount.push({
       autoHeight: false,
       groupMq: false,
       drag: {
-        duration: Xt.vars.timeBig,
+        duration: 1500,
         overflow: false,
       },
     })
@@ -92,24 +94,24 @@ Xt.mount.push({
       const tr = self.targets.filter(x => self.hasCurrent(x))[0]
       // assetMask
       const assetMask = tr.querySelector('.hero')
-      gsap.to(assetMask, { x: 0, duration: Xt.vars.timeTiny, ease: assetMaskEaseOff })
+      gsap.to(assetMask, { x: 0, duration: 0.25, ease: assetMaskEaseOff })
       const assetMaskInner = assetMask.querySelector('.hero-inner')
-      gsap.to(assetMaskInner, { x: 0, duration: Xt.vars.timeTiny, ease: assetMaskEaseOff })
+      gsap.to(assetMaskInner, { x: 0, duration: 0.25, ease: assetMaskEaseOff })
       // asset
       const asset = tr.querySelector('.media')
-      gsap.to(asset, { x: 0, opacity: 1, duration: Xt.vars.timeTiny, ease: assetEaseOn })
+      gsap.to(asset, { x: 0, opacity: 1, duration: 0.25, ease: assetEaseOn })
       // next
       const nexts = self.targets.filter(x => x.classList.contains('next'))
       for (const next of nexts) {
         // assetMask
         const assetMask = next.querySelector('.hero')
         const xCurrent = assetMask.clientWidth * self.direction
-        gsap.to(assetMask, { x: xCurrent, duration: Xt.vars.timeTiny, ease: assetMaskEaseOff })
+        gsap.to(assetMask, { x: xCurrent, duration: 0.25, ease: assetMaskEaseOff })
         const assetMaskInner = assetMask.querySelector('.hero-inner')
-        gsap.to(assetMaskInner, { x: -xCurrent / 2, duration: Xt.vars.timeTiny, ease: assetMaskEaseOff })
+        gsap.to(assetMaskInner, { x: -xCurrent / 2, duration: 0.25, ease: assetMaskEaseOff })
         // asset
         const asset = next.querySelector('.media')
-        gsap.set(asset, { opacity: assetOpacity, duration: Xt.vars.timeTiny, ease: assetEaseOn })
+        gsap.set(asset, { opacity: assetOpacity, duration: 0.25, ease: assetEaseOn })
       }
     }
 
@@ -235,7 +237,7 @@ Xt.mount.push({
 
     const eventEnter = () => {
       // img
-      gsap.to(img, { opacity: imgOpacityIn, duration: Xt.vars.timeSmall, ease: 'quart.out' })
+      gsap.to(img, { opacity: imgOpacityIn, duration: 0.5, ease: 'quart.out' })
     }
 
     for (const link of links) {
@@ -246,7 +248,7 @@ Xt.mount.push({
 
     const eventLeave = () => {
       // img
-      gsap.to(img, { opacity: imgOpacityOut, duration: Xt.vars.timeSmall, ease: 'quart.out', overwrite: true })
+      gsap.to(img, { opacity: imgOpacityOut, duration: 0.5, ease: 'quart.out', overwrite: true })
     }
 
     for (const link of links) {

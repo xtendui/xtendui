@@ -83,7 +83,7 @@ Xt.mount.push({
     // invalid
 
     const eventScroll = () => {
-      window.scrollTo(window.scrollX, window.scrollY - Xt.windowHeight * scrollWindowFactor)
+      window.scrollTo(window.scrollX, window.scrollY - Xt.innerHeight * scrollWindowFactor)
     }
 
     const eventInvalid = e => {

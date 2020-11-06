@@ -1,6 +1,8 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/core/slider'
 import gsap from 'gsap'
+gsap.defaults({ overwrite: 'auto' })
+gsap.config({ force3D: false })
 
 /**
  * slider
@@ -11,28 +13,28 @@ Xt.mount.push({
   mount: object => {
     // vars
 
-    const assetCoverTime = Xt.vars.timeBig
+    const assetCoverTime = 1.5
     const assetCoverEase = 'quint.inOut'
 
-    const assetMaskTime = Xt.vars.timeBig - 100 // @FIX - 100 to cover skew
+    const assetMaskTime = 1.5 - 0.1 // @FIX - 0.1 to cover skew
     const assetMaskEase = 'quint.inOut'
 
     const assetZoom = 0.25
-    const assetTime = Xt.vars.timeBig
-    const assetDelay = Xt.vars.timeBig / 2
+    const assetTime = 1.5
+    const assetDelay = 1.5 / 2
     const assetEase = 'expo.out'
 
     const contentX = 50
-    const contentTime = Xt.vars.timeBig
-    const contentDelayOn = Xt.vars.timeTiny
+    const contentTime = 1.5
+    const contentDelayOn = 0.25
     const contentEase = 'quint.inOut'
 
     // slider
 
     let self = new Xt.Slider(object, {
       instant: true,
-      durationOn: Xt.vars.timeBig,
-      durationOff: Xt.vars.timeBig,
+      durationOn: 1500,
+      durationOff: 1500,
       auto: {
         time: 5000,
         pause: '.hero-content-inner',
@@ -40,7 +42,7 @@ Xt.mount.push({
       autoHeight: false,
       groupMq: false,
       drag: {
-        duration: Xt.vars.timeBig,
+        duration: 1500,
         overflow: false,
       },
     })
@@ -66,10 +68,10 @@ Xt.mount.push({
       const tr = self.targets.filter(x => self.hasCurrent(x))[0]
       // cover
       const assetCover = tr.querySelector('.hero-cover')
-      gsap.to(assetCover, { skewX: 0, x: `${100 * self.direction}%`, duration: Xt.vars.timeTiny, ease: assetCoverEase })
+      gsap.to(assetCover, { skewX: 0, x: `${100 * self.direction}%`, duration: 0.25, ease: assetCoverEase })
       // content
       const content = tr.querySelector('.hero-content')
-      gsap.to(content, { x: 0, opacity: 1, duration: Xt.vars.timeTiny, ease: contentEase })
+      gsap.to(content, { x: 0, opacity: 1, duration: 0.25, ease: contentEase })
     }
 
     self.dragger.addEventListener('dragreset.xt', eventDragReset)
@@ -179,7 +181,7 @@ Xt.mount.push({
 
     const eventEnter = () => {
       // img
-      gsap.to(img, { opacity: imgOpacityIn, duration: Xt.vars.timeSmall, ease: 'quart.out' })
+      gsap.to(img, { opacity: imgOpacityIn, duration: 0.5, ease: 'quart.out' })
     }
 
     for (const link of links) {
@@ -190,7 +192,7 @@ Xt.mount.push({
 
     const eventLeave = () => {
       // img
-      gsap.to(img, { opacity: imgOpacityOut, duration: Xt.vars.timeSmall, ease: 'quart.out', overwrite: true })
+      gsap.to(img, { opacity: imgOpacityOut, duration: 0.5, ease: 'quart.out', overwrite: true })
     }
 
     for (const link of links) {

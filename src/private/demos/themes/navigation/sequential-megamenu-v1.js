@@ -1,6 +1,8 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/core/slider'
 import gsap from 'gsap'
+gsap.defaults({ overwrite: 'auto' })
+gsap.config({ force3D: false })
 
 // mouse events instead of click you can remove this
 
@@ -39,14 +41,14 @@ Xt.mount.push({
 
     const contentXOn = -40
     const contentXOff = -40
-    const contentTime = Xt.vars.timeMedium
-    const contentDelayOn = Xt.vars.timeTiny
+    const contentTime = 0.75
+    const contentDelayOn = 0.25
     const contentEase = 'quint.out'
 
-    const designTime = Xt.vars.timeLarge
+    const designTime = 1
     const designEase = 'expo.out'
 
-    const innerTime = Xt.vars.timeLarge
+    const innerTime = 1
     const innerEase = 'expo.out'
 
     // init
@@ -54,8 +56,8 @@ Xt.mount.push({
     let self = new Xt.Drop(object, {
       elements: '.drop-container',
       targets: '.drop-container > .drop',
-      durationOn: Xt.vars.timeLarge,
-      durationOff: Xt.vars.timeLarge,
+      durationOn: 1000,
+      durationOff: 1000,
       preventEvent: true,
       // on: 'mouseenter',
       // off: 'mouseleave',
@@ -181,7 +183,7 @@ Xt.mount.push({
     const line = object.querySelector('.megamenu-line')
 
     const lineHeight = 4
-    const lineTime = Xt.vars.timeSmall
+    const lineTime = 0.5
     const lineEase = 'quint.out'
 
     // enter

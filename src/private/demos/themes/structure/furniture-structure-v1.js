@@ -1,6 +1,8 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/future/scroll'
 import gsap from 'gsap'
+gsap.defaults({ overwrite: 'auto' })
+gsap.config({ force3D: false })
 
 /**
  * .btn--line
@@ -23,17 +25,17 @@ Xt.mount.push({
     const eventEnter = () => {
       // img
       const img = link.querySelector('.media-container')
-      gsap.to(img, { scale: 1 - imgScale, duration: Xt.vars.timeMedium, ease: 'expo.out' })
+      gsap.to(img, { scale: 1 - imgScale, duration: 0.75, ease: 'expo.out' })
       const imgInner = link.querySelector('.media-inner')
-      gsap.to(imgInner, { scale: 1 + imgScale, duration: Xt.vars.timeMedium, ease: 'expo.out' })
+      gsap.to(imgInner, { scale: 1 + imgScale, duration: 0.75, ease: 'expo.out' })
       // text
       const text = object.querySelector('.btn--line_text')
-      gsap.to(text, { x: lineX, duration: Xt.vars.timeMedium, delay: Xt.vars.timeSmall, ease: 'expo.out' })
+      gsap.to(text, { x: lineX, duration: 0.75, delay: 0.5, ease: 'expo.out' })
       // line
       const line = object.querySelector('.btn--line_line')
       gsap.set(line, { width: 0, x: -lineWidthMax, opacity: lineOpacity, overwrite: true })
-      gsap.to(line, { width: lineWidthMax, x: -lineWidthMax + lineWidth, opacity: 1, duration: Xt.vars.timeSmall, ease: 'expo.in' })
-      gsap.to(line, { width: lineWidth + lineX, x: 0, opacity: 1, duration: Xt.vars.timeMedium, delay: Xt.vars.timeSmall, ease: 'expo.out' })
+      gsap.to(line, { width: lineWidthMax, x: -lineWidthMax + lineWidth, opacity: 1, duration: 0.5, ease: 'expo.in' })
+      gsap.to(line, { width: lineWidth + lineX, x: 0, opacity: 1, duration: 0.75, delay: 0.5, ease: 'expo.out' })
     }
 
     link.addEventListener('mouseenter', eventEnter)
@@ -43,15 +45,15 @@ Xt.mount.push({
     const eventLeave = () => {
       // img
       const img = link.querySelector('.media-container')
-      gsap.to(img, { scale: 1, duration: Xt.vars.timeMedium, ease: 'expo.inOut' })
+      gsap.to(img, { scale: 1, duration: 0.75, ease: 'expo.inOut' })
       const imgInner = link.querySelector('.media-inner')
-      gsap.to(imgInner, { scale: 1, duration: Xt.vars.timeMedium, ease: 'expo.inOut' })
+      gsap.to(imgInner, { scale: 1, duration: 0.75, ease: 'expo.inOut' })
       // text
       const text = object.querySelector('.btn--line_text')
-      gsap.to(text, { x: 0, duration: Xt.vars.timeMedium, ease: 'expo.inOut' })
+      gsap.to(text, { x: 0, duration: 0.75, ease: 'expo.inOut' })
       // line
       const line = object.querySelector('.btn--line_line')
-      gsap.to(line, { width: lineWidth, x: 0, opacity: lineOpacity, duration: Xt.vars.timeMedium, ease: 'expo.inOut', overwrite: true })
+      gsap.to(line, { width: lineWidth, x: 0, opacity: lineOpacity, duration: 0.75, ease: 'expo.inOut', overwrite: true })
     }
 
     link.addEventListener('mouseleave', eventLeave)

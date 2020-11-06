@@ -1,5 +1,7 @@
 import { Xt } from 'xtendui'
 import gsap from 'gsap'
+gsap.defaults({ overwrite: 'auto' })
+gsap.config({ force3D: false })
 
 /**
  * .listing activation
@@ -20,11 +22,11 @@ Xt.mount.push({
         tr.classList.add('active')
         // front
         const front = tr.querySelector('.listing-front')
-        gsap.to(front, { opacity: 0, duration: Xt.vars.timeSmall, ease: 'expo.out' })
+        gsap.to(front, { opacity: 0, duration: 0.5, ease: 'expo.out' })
         // front
         const back = tr.querySelector('.listing-back')
         gsap.set(back, { y: 40, opacity: 0 })
-        gsap.to(back, { y: 0, opacity: 1, duration: Xt.vars.timeSmall, ease: 'expo.out' })
+        gsap.to(back, { y: 0, opacity: 1, duration: 0.5, ease: 'expo.out' })
       } else {
         eventOff(tr)
       }
@@ -37,10 +39,10 @@ Xt.mount.push({
         // front
         const front = tr.querySelector('.listing-front')
         gsap.set(front, { y: -40, opacity: 0 })
-        gsap.to(front, { y: 0, opacity: 1, duration: Xt.vars.timeSmall, ease: 'expo.out' })
+        gsap.to(front, { y: 0, opacity: 1, duration: 0.5, ease: 'expo.out' })
         // front
         const back = tr.querySelector('.listing-back')
-        gsap.to(back, { y: 0, opacity: 0, duration: Xt.vars.timeSmall, ease: 'expo.out' })
+        gsap.to(back, { y: 0, opacity: 0, duration: 0.5, ease: 'expo.out' })
       }
     }
 

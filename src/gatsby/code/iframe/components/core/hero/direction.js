@@ -20,7 +20,7 @@ demo.htmlSource = `
       <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
     </div>
   </div>
-  <div class="container z-active md:absolute inset-0 flex items-end justify-center text-center md:justify-start md:text-left">
+  <div class="container md:absolute inset-0 flex items-end justify-center text-center md:justify-start md:text-left">
     <div class="block w-full max-w-xl container-y md:text-white md:links-inverse">
       <div class="h1">
         Lorem ipsum dolor sit amet
@@ -44,7 +44,7 @@ demo.htmlSource = `
       <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
     </div>
   </div>
-  <div class="container z-active md:absolute inset-0 flex items-end justify-center text-center md:items-center md:justify-start md:text-left">
+  <div class="container md:absolute inset-0 flex items-end justify-center text-center md:items-center md:justify-start md:text-left">
     <div class="block w-full max-w-xl container-y md:text-white md:links-inverse">
       <div class="h1">
         Lorem ipsum dolor sit amet
@@ -68,7 +68,7 @@ demo.htmlSource = `
       <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
     </div>
   </div>
-  <div class="container z-active md:absolute inset-0 flex items-end justify-center text-center md:items-center md:justify-end md:text-right">
+  <div class="container md:absolute inset-0 flex items-end justify-center text-center md:items-center md:justify-end md:text-right">
     <div class="block w-full max-w-xl container-y md:text-white md:links-inverse">
       <div class="h1">
         Lorem ipsum dolor sit amet

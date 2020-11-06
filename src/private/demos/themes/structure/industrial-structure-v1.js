@@ -1,6 +1,8 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/core/slider'
 import gsap from 'gsap'
+gsap.defaults({ overwrite: 'auto' })
+gsap.config({ force3D: false })
 
 /**
  * slider
@@ -11,24 +13,24 @@ Xt.mount.push({
   mount: object => {
     // vars
 
-    const assetMaskTimeOn = Xt.vars.timeLarge
+    const assetMaskTimeOn = 1
     const assetMaskEaseOn = 'expo.out'
-    const assetMaskTimeOff = Xt.vars.timeSmall
+    const assetMaskTimeOff = 0.5
     const assetMaskEaseOff = 'quart.out'
 
     const assetZoom = 0.2
-    const assetTimeOn = Xt.vars.timeLarge
+    const assetTimeOn = 1
     const assetEaseOn = 'quart.out'
-    const assetTimeOff = Xt.vars.timeTiny
+    const assetTimeOff = 0.25
     const assetEaseOff = 'quart.inOut'
 
     const cardContentX = 25
-    const cardContentTimeOn = Xt.vars.timeLarge
+    const cardContentTimeOn = 1
     const cardContentEaseOn = 'expo.out'
-    const cardContentTimeOff = Xt.vars.timeTiny
+    const cardContentTimeOff = 0.25
     const cardContentEaseOff = 'expo.inOut'
 
-    const cardTime = Xt.vars.timeLarge
+    const cardTime = 1
     const cardEase = 'expo.out'
 
     // slider
@@ -38,8 +40,8 @@ Xt.mount.push({
         elements: true,
         elementsInner: true,
       },
-      durationOn: Xt.vars.timeLarge,
-      durationOff: Xt.vars.timeSmall,
+      durationOn: 1000,
+      durationOff: 500,
       auto: {
         time: 4000,
       },
@@ -82,19 +84,19 @@ Xt.mount.push({
       // assetMask
       const assetMasks = tr.querySelectorAll('.featured-item_asset .media-container')
       for (const assetMask of assetMasks) {
-        gsap.to(assetMask, { x: 0, duration: Xt.vars.timeTiny, ease: assetMaskEaseOff })
+        gsap.to(assetMask, { x: 0, duration: 0.25, ease: assetMaskEaseOff })
         const assetMaskInner = assetMask.querySelector('.media-inner')
-        gsap.to(assetMaskInner, { x: 0, opacity: 1, duration: Xt.vars.timeTiny, ease: assetMaskEaseOff })
+        gsap.to(assetMaskInner, { x: 0, opacity: 1, duration: 0.25, ease: assetMaskEaseOff })
       }
       // asset
       const assets = tr.querySelectorAll('.featured-item_asset img')
       for (const asset of assets) {
-        gsap.to(asset, { scale: 1, duration: Xt.vars.timeTiny, ease: assetEaseOff })
+        gsap.to(asset, { scale: 1, duration: 0.25, ease: assetEaseOff })
       }
       // cardContent
       const cardContents = tr.querySelectorAll('.slide_card .card-item')
       for (const cardContent of cardContents) {
-        gsap.to(cardContent, { x: 0, opacity: 1, duration: Xt.vars.timeTiny, ease: cardContentEaseOff })
+        gsap.to(cardContent, { x: 0, opacity: 1, duration: 0.25, ease: cardContentEaseOff })
       }
     }
 

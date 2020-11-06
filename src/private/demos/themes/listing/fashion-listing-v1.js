@@ -1,5 +1,7 @@
 import { Xt } from 'xtendui'
 import gsap from 'gsap'
+gsap.defaults({ overwrite: 'auto' })
+gsap.config({ force3D: false })
 
 /**
  * .listing-item scale and mask
@@ -22,17 +24,17 @@ Xt.mount.push({
       const tr = e.target
       // img
       const img = tr.querySelector('.media-container')
-      gsap.to(img, { scale: 1 + imgContainerScale, duration: Xt.vars.timeSmall, ease: 'quart.out' })
+      gsap.to(img, { scale: 1 + imgContainerScale, duration: 0.5, ease: 'quart.out' })
       const imgInner = tr.querySelector('.media-inner')
-      gsap.to(imgInner, { scale: 1 + imgScale, duration: Xt.vars.timeBig, ease: 'quart.out' })
+      gsap.to(imgInner, { scale: 1 + imgScale, duration: 1.5, ease: 'quart.out' })
       // mask
       const mask = tr.querySelector('.media-mask')
       gsap.set(mask, { height: 0, y: img.offsetHeight, skewY: 0, opacity: maskOpacityOff })
-      gsap.to(mask, { height: '150%', y: 0, opacity: maskOpacityOn, duration: Xt.vars.timeSmall, ease: 'quart.out' }) // @FIX to cover height: '150%'
-      gsap.to(mask, { skewY: -10, duration: Xt.vars.timeSmall / 2, ease: 'quart.out' }).eventCallback('onComplete', () => {
-        gsap.to(mask, { skewY: 0, duration: Xt.vars.timeSmall / 2, ease: 'quart.out' })
+      gsap.to(mask, { height: '150%', y: 0, opacity: maskOpacityOn, duration: 0.5, ease: 'quart.out' }) // @FIX to cover height: '150%'
+      gsap.to(mask, { skewY: -10, duration: 0.5 / 2, ease: 'quart.out' }).eventCallback('onComplete', () => {
+        gsap.to(mask, { skewY: 0, duration: 0.5 / 2, ease: 'quart.out' })
       })
-      gsap.to(mask, { opacity: maskOpacityDone, duration: Xt.vars.timeMedium, ease: 'quart.out', delay: Xt.vars.timeSmall })
+      gsap.to(mask, { opacity: maskOpacityDone, duration: 0.75, ease: 'quart.out', delay: 0.5 })
     }
 
     object.addEventListener('mouseenter', eventEnter)
@@ -43,14 +45,14 @@ Xt.mount.push({
       const tr = e.target
       // img
       const img = tr.querySelector('.media-container')
-      gsap.to(img, { scale: 1, duration: Xt.vars.timeSmall, ease: 'quart.out' })
+      gsap.to(img, { scale: 1, duration: 0.5, ease: 'quart.out' })
       const imgInner = tr.querySelector('.media-inner')
-      gsap.to(imgInner, { scale: 1, duration: Xt.vars.timeBig, ease: 'quart.out' })
+      gsap.to(imgInner, { scale: 1, duration: 1.5, ease: 'quart.out' })
       // mask
       const mask = tr.querySelector('.media-mask')
-      gsap.to(mask, { height: '50%', y: '-100%', opacity: maskOpacityOff, duration: Xt.vars.timeSmall, ease: 'quart.out' }) // @FIX to cover height: '50%', y: '-100%'
-      gsap.to(mask, { skewY: 10, duration: Xt.vars.timeSmall / 2, ease: 'quart.out' }).eventCallback('onComplete', () => {
-        gsap.to(mask, { skewY: 0, duration: Xt.vars.timeSmall / 2, ease: 'quart.out' })
+      gsap.to(mask, { height: '50%', y: '-100%', opacity: maskOpacityOff, duration: 0.5, ease: 'quart.out' }) // @FIX to cover height: '50%', y: '-100%'
+      gsap.to(mask, { skewY: 10, duration: 0.5 / 2, ease: 'quart.out' }).eventCallback('onComplete', () => {
+        gsap.to(mask, { skewY: 0, duration: 0.5 / 2, ease: 'quart.out' })
       })
     }
 

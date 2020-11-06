@@ -1,5 +1,7 @@
 import { Xt } from 'xtendui'
 import gsap from 'gsap'
+gsap.defaults({ overwrite: 'auto' })
+gsap.config({ force3D: false })
 
 /**
  * .listing-item scale
@@ -21,13 +23,13 @@ Xt.mount.push({
       const tr = e.target
       // img
       const img = tr.querySelector('.media-container')
-      gsap.to(img, { opacity: imgOpacityIn, scale: 1 - imgScale, duration: Xt.vars.timeSmall, ease: 'expo.out' })
+      gsap.to(img, { opacity: imgOpacityIn, scale: 1 - imgScale, duration: 0.5, ease: 'expo.out' })
       const imgInner = tr.querySelector('.media-inner')
-      gsap.to(imgInner, { scale: 1 + imgScale, duration: Xt.vars.timeSmall, ease: 'expo.out' })
+      gsap.to(imgInner, { scale: 1 + imgScale, duration: 0.5, ease: 'expo.out' })
       // content
       const content = tr.querySelector('.listing-content')
       if (content) {
-        gsap.to(content, { y: contentY, duration: Xt.vars.timeSmall, ease: 'expo.out' })
+        gsap.to(content, { y: contentY, duration: 0.5, ease: 'expo.out' })
       }
     }
 
@@ -39,13 +41,13 @@ Xt.mount.push({
       const tr = e.target
       // img
       const img = tr.querySelector('.media-container')
-      gsap.to(img, { opacity: imgOpacityOut, scale: 1, duration: Xt.vars.timeMedium, ease: 'expo.out' })
+      gsap.to(img, { opacity: imgOpacityOut, scale: 1, duration: 0.75, ease: 'expo.out' })
       const imgInner = tr.querySelector('.media-inner')
-      gsap.to(imgInner, { scale: 1, duration: Xt.vars.timeMedium, ease: 'expo.out' })
+      gsap.to(imgInner, { scale: 1, duration: 0.75, ease: 'expo.out' })
       // content
       const content = tr.querySelector('.listing-content')
       if (content) {
-        gsap.to(content, { y: 0, duration: Xt.vars.timeSmall, ease: 'expo.out' })
+        gsap.to(content, { y: 0, duration: 0.5, ease: 'expo.out' })
       }
     }
 

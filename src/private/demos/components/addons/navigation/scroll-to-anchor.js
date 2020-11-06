@@ -1,7 +1,10 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/addons/scroll-to-anchor'
 import gsap from 'gsap'
-import 'gsap/ScrollToPlugin'
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
+gsap.registerPlugin(ScrollToPlugin)
+gsap.defaults({ overwrite: 'auto' })
+gsap.config({ force3D: false })
 
 Xt.mount.push({
   matches: '#iframe--scroll-to-anchor body #gatsby_body-inner', // add your own selector instead of body to contain the code
@@ -39,7 +42,7 @@ Xt.mount.push({
       pos = pos < min ? min : pos
       pos = pos > max ? max : pos
       // scroll
-      gsap.to(scrollingElement, { scrollTo: pos, duration: Xt.vars.timeLarge, ease: 'quart.inOut' })
+      gsap.to(scrollingElement, { scrollTo: pos, duration: 1, ease: 'quart.inOut' })
     }
 
     self.object.addEventListener('change.xt.scrolltoanchor', eventChange)

@@ -1,6 +1,8 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/core/slider'
 import gsap from 'gsap'
+gsap.defaults({ overwrite: 'auto' })
+gsap.config({ force3D: false })
 
 /**
  * slider
@@ -11,9 +13,9 @@ Xt.mount.push({
   mount: object => {
     // vars
 
-    const timeScaleTimeOn = Xt.vars.timeMedium
+    const timeScaleTimeOn = 0.75
     const timeScaleEaseOn = 'quint.in'
-    const timeScaleTimeOff = Xt.vars.timeBig
+    const timeScaleTimeOff = 1.5
     const timeScaleEaseOff = 'quint.out'
 
     // slider

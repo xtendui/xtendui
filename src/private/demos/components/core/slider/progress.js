@@ -2,15 +2,17 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/core/slider'
 import 'xtendui/src/addons/mouse-follow'
 import gsap from 'gsap'
+gsap.defaults({ overwrite: 'auto' })
+gsap.config({ force3D: false })
 
 Xt.mount.push({
   matches: '.demo--slider-progress',
   mount: object => {
     // vars
 
-    const spinnerTime = Xt.vars.timeTiny
+    const spinnerTime = 0.25
     const spinnerEase = 'linear'
-    const fillerTime = Xt.vars.timeTiny
+    const fillerTime = 0.25
     const fillerEase = 'linear'
 
     // init

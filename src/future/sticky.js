@@ -205,7 +205,7 @@ class Sticky extends Xt.Toggle {
     let hide = false
     let add = 0
     let addHide = 0
-    const windowHeight = Xt.windowHeight
+    const windowHeight = Xt.innerHeight
     const scrollingElement = document.scrollingElement
     const scrollHeight = scrollingElement.scrollHeight
     const scrollTop = scrollingElement.scrollTop

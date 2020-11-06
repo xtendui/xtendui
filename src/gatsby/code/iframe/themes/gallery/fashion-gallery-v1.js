@@ -38,48 +38,48 @@ demo.htmlSource = `
 
               <div class="list flex-col">
 
-                <a href="#product-image-overlay-1" class="w-full">
+                <a href="#product-image-overlay-1" class="product-image w-full" id="product-image-1">
                   <div class="media-container" data-xt-overlay="{ targets: '#overlay-product-images' }">
-                    <div class="media-mask absolute inset-0 z-active pointer-events-none bg-white transform -translate-y-full"></div>
                     <div class="media-inner relative">
-                      <img class="media" id="product-image-1" src="/img.svg" loading="lazy" alt=""/>
+                      <img class="media" src="/img.svg" loading="eager" alt=""/>
                     </div>
+                    <div class="media-mask absolute inset-0 pointer-events-none bg-white transform -translate-y-full"></div>
                   </div>
                 </a>
 
-                <a href="#product-image-overlay-3" class="w-full">
+                <a href="#product-image-overlay-3" class="product-image w-full" id="product-image-2">
                   <div class="media-container" data-xt-overlay="{ targets: '#overlay-product-images' }">
-                    <div class="media-mask absolute inset-0 z-active pointer-events-none bg-white transform -translate-y-full"></div>
                     <div class="media-inner relative">
-                      <img class="media" id="product-image-2" src="/img.svg" loading="lazy" alt=""/>
+                      <img class="media" src="/img.svg" loading="eager" alt=""/>
                     </div>
+                    <div class="media-mask absolute inset-0 pointer-events-none bg-white transform -translate-y-full"></div>
                   </div>
                 </a>
 
-                <a href="#product-image-overlay-4" class="w-full">
+                <a href="#product-image-overlay-4" class="product-image w-full" id="product-image-3">
                   <div class="media-container" data-xt-overlay="{ targets: '#overlay-product-images' }">
-                    <div class="media-mask absolute inset-0 z-active pointer-events-none bg-white transform -translate-y-full"></div>
                     <div class="media-inner relative">
-                      <img class="media" id="product-image-3" src="/img.svg" loading="lazy" alt=""/>
+                      <img class="media" src="/img.svg" loading="eager" alt=""/>
                     </div>
+                    <div class="media-mask absolute inset-0 pointer-events-none bg-white transform -translate-y-full"></div>
                   </div>
                 </a>
 
-                <a href="#product-image-overlay-4" class="w-full">
+                <a href="#product-image-overlay-4" class="product-image w-full" id="product-image-4">
                   <div class="media-container" data-xt-overlay="{ targets: '#overlay-product-images' }">
-                    <div class="media-mask absolute inset-0 z-active pointer-events-none bg-white transform -translate-y-full"></div>
                     <div class="media-inner relative">
-                      <img class="media" id="product-image-4" src="/img.svg" loading="lazy" alt=""/>
+                      <img class="media" src="/img.svg" loading="eager" alt=""/>
                     </div>
+                    <div class="media-mask absolute inset-0 pointer-events-none bg-white transform -translate-y-full"></div>
                   </div>
                 </a>
 
-                <a href="#product-image-overlay-5" class="w-full">
+                <a href="#product-image-overlay-5" class="product-image w-full" id="product-image-5">
                   <div class="media-container" data-xt-overlay="{ targets: '#overlay-product-images' }">
-                    <div class="media-mask absolute inset-0 z-active pointer-events-none bg-white transform -translate-y-full"></div>
                     <div class="media-inner relative">
-                      <img class="media" id="product-image-5" src="/img.svg" loading="lazy" alt=""/>
+                      <img class="media"" src="/img.svg" loading="eager" alt=""/>
                     </div>
+                    <div class="media-mask absolute inset-0 pointer-events-none bg-white transform -translate-y-full"></div>
                   </div>
                 </a>
 
@@ -189,7 +189,7 @@ demo.htmlSource = `
       </div>
     </div>
 
-    <a href="#product-continue-target" class="product-continue fixed lg:hidden p-4 z-sticky bottom-0 inset-x-0 text-4xl text-center bg-gradient-to-b from-transparent to-white">
+    <a href="#product-continue-target" class="product-continue fixed md:hidden p-4 z-sticky bottom-0 inset-x-0 text-4xl text-center bg-gradient-to-b from-transparent to-white">
       ${iconChevronDown({ classes: 'icon-md' })}
     </a>
 
