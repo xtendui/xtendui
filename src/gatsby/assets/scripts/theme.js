@@ -2,6 +2,7 @@ import { Xt } from 'xtendui'
 import 'xtendui/build/xtend-core'
 import 'xtendui/build/xtend-addons'
 import 'xtendui/build/xtend-demos'
+import gsap from 'gsap'
 const iconLink = require('components/snippets/icons').iconLink
 
 /**
@@ -85,7 +86,7 @@ Xt.mount.push({
       pos = pos < min ? min : pos
       pos = pos > max ? max : pos
       // scroll
-      gsap.to(scrollingElement, { scrollTo: pos, duration: Xt.vars.timeLarge, ease: 'quart.inOut' })
+      gsap.to(scrollingElement, { scrollTo: pos, duration: 1, ease: 'quart.inOut' })
     }
 
     self.object.addEventListener('change.xt.scrolltoanchor', eventChange)
