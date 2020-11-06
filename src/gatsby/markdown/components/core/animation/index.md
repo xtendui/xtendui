@@ -18,6 +18,8 @@ You can **customize this component** inside `tailwind.config.js`, check [xtendui
 module.exports = {
   theme:{
     extend: {
+      transitionDelay: {
+      },
       transitionTimingFunction: {
         // add transition timing functions
       },

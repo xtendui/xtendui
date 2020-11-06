@@ -55,6 +55,9 @@ module.exports = {
       inset: {
         100: '100%',
       },
+      transitionDelay: {
+        ...require('./core/animation.css.js').transitionDelay,
+      },
       transitionTimingFunction: {
         ...require('./core/animation.css.js').transitionTimingFunction,
       },
@@ -81,6 +84,14 @@ module.exports = {
     rotate: ({ after }) => after(['group-active'], 'group-hover', after(['active'], 'hover')),
     translate: ({ after }) => after(['group-active'], 'group-hover', after(['active'], 'hover')),
     skew: ({ after }) => after(['group-active'], 'group-hover', after(['active'], 'hover')),
+    transitionProperty: ({ after }) =>
+      after(['group-active'], 'group-hover', after(['active'], 'hover'), after(['group-hover'], 'hover'), after(['hover'], 'responsive')),
+    transitionTimingFunction: ({ after }) =>
+      after(['group-active'], 'group-hover', after(['active'], 'hover'), after(['group-hover'], 'hover'), after(['hover'], 'responsive')),
+    transitionDuration: ({ after }) =>
+      after(['group-active'], 'group-hover', after(['active'], 'hover'), after(['group-hover'], 'hover'), after(['hover'], 'responsive')),
+    transitionDelay: ({ after }) =>
+      after(['group-active'], 'group-hover', after(['active'], 'hover'), after(['group-hover'], 'hover'), after(['hover'], 'responsive')),
   },
   plugins: [require('./tailwind-plugin')],
 }

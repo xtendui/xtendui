@@ -24,7 +24,7 @@ demo.htmlSource = `
         <div class="overlay-inner">
 
           <div class="card ${cardDefaultOverlayScreen()}">
-            <div class="btn btn-close p-5 text-2xl" aria-label="Close">
+            <div class="btn btn-close p-5 text-2xl fixed z-top" aria-label="Close">
               ${iconX()}
             </div>
             <div class="card-md">
@@ -53,7 +53,7 @@ demo.htmlSource = `
         <div class="overlay-inner">
 
           <div class="card ${cardDefaultOverlayScreen()}">
-            <div class="btn btn-close p-5 text-2xl" aria-label="Close">
+            <div class="btn btn-close p-5 text-2xl fixed z-top" aria-label="Close">
               ${iconX()}
             </div>
             <div class="card-md">

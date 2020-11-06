@@ -67,7 +67,7 @@ demo.htmlSource = `
         Checkbox
       </label>
 
-      <div class="row row-x-4 row-y-3">
+      <div class="row row-x-4 row-y-1">
 
         <div class="w-full">
           <label class="form-label-check">
@@ -93,7 +93,7 @@ demo.htmlSource = `
         Radio
       </label>
 
-      <div class="row row-x-4 row-y-3">
+      <div class="row row-x-4 row-y-1">
 
         <div class="w-full">
           <label class="form-label-check">
@@ -119,7 +119,7 @@ demo.htmlSource = `
         Switch
       </label>
 
-      <div class="row row-x-4 row-y-3">
+      <div class="row row-x-4 row-y-1">
 
         <div class="w-full">
           <label class="form-label-check">

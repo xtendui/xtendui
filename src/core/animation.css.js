@@ -22,6 +22,9 @@ module.exports = {
       animationIterationCount: '1 !important',
     },
   },
+  transitionDelay: {
+    0: '0ms',
+  },
   transitionTimingFunction: {
     in: 'cubic-bezier(.25,.46,.45,.94)', // outQuad
     out: 'cubic-bezier(.455,.03,.515,.955)', // inOutQuad

@@ -3,6 +3,55 @@
   body { /* add your own selector instead of body to contain the code */
 
     /**
+      * vars
+      */
+
+    // ease
+
+    @ease-in: @ease-out-quint;
+    @ease-out: @ease-in-out-quint;
+
+    /**
+      * button
+      */
+
+    // variant
+
+    .btn-default {
+      &:hover {
+        transform: translateY(-.25rem);
+        box-shadow: @shadow-light;
+      }
+      &:active, &.active {
+        transform: none;
+        box-shadow: @shadow-none;
+      }
+    }
+
+    .btn-primary {
+      &:hover {
+        transform: translateY(-.25rem);
+        box-shadow: @shadow-accent;
+      }
+      &:active, &.active {
+        transform: none;
+        box-shadow: @shadow-none;
+      }
+    }
+
+    // animation
+
+    .btn {
+      transition: all @time-tiny @ease-out;
+      &:hover {
+        transition: all @time-tiny @ease-in;
+      }
+      &:active, &.active {
+        transition: all @time-tiny @ease-in;
+      }
+    }
+
+    /**
       * drop
       */
 
@@ -19,7 +68,7 @@
           transform: translateY(-1rem);
         }
       }
-      &.active {
+      &.in {
         animation-duration: @time-sm + @time-tiny; // needed for animation time, put max animation time
         > .drop-inner {
           > .drop-design {
@@ -77,7 +126,7 @@
           transform: translateY(-1rem);
         }
       }
-      &.active {
+      &.in {
         animation-duration: @time-md + @time-tiny; // needed for animation time, put max animation time
         .card-overlay {
           .card-design {

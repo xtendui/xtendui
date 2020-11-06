@@ -21,7 +21,7 @@ demo.htmlSource = `
       default
     </button>
 
-    <div class="overlay overlay-close-outside">
+    <div class="overlay">
       <div class="overlay-container max-w-3xl">
         <div class="overlay-inner">
 

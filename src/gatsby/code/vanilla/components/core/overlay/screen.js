@@ -21,8 +21,8 @@ demo.htmlSource = `
       <div class="overlay-container">
         <div class="overlay-inner">
 
-          <div class="card ${cardDefaultOverlayScreen()} items-center justify-center">
-            <div class="btn btn-close p-5 text-2xl" aria-label="Close">
+          <div class="card items-center justify-center ${cardDefaultOverlayScreen()}">
+            <div class="btn btn-close p-5 text-2xl fixed z-top" aria-label="Close">
               ${iconX()}
             </div>
             <div class="media-container" style="padding-bottom: 100%;">
@@ -45,8 +45,8 @@ demo.htmlSource = `
       <div class="overlay-container">
         <div class="overlay-inner">
 
-          <div class="card ${cardDefaultOverlayScreen()} items-center justify-center">
-            <div class="btn btn-close p-5 text-2xl" aria-label="Close">
+          <div class="card items-center justify-center ${cardDefaultOverlayScreen()}">
+            <div class="btn btn-close p-5 text-2xl fixed z-top" aria-label="Close">
               ${iconX()}
             </div>
             <div class="max-w-3xl">
@@ -73,8 +73,8 @@ demo.htmlSource = `
       <div class="overlay-container">
         <div class="overlay-inner">
 
-          <div class="card ${cardDefaultOverlayScreen()} items-center justify-center">
-            <div class="btn btn-close p-5 text-2xl" aria-label="Close">
+          <div class="card items-center justify-center ${cardDefaultOverlayScreen()}">
+            <div class="btn btn-close p-5 text-2xl fixed z-top" aria-label="Close">
               ${iconX()}
             </div>
             <div class="max-w-3xl">

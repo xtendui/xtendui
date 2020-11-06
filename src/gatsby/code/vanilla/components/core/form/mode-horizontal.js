@@ -90,7 +90,7 @@ demo.htmlSource = `
         </div>
 
         <div class="w-full md:w-10/12">
-          <div class="row row-x-4 row-y-3">
+          <div class="row row-x-4 row-y-1">
 
             <div class="w-full">
               <label class="form-label-check">
@@ -122,7 +122,7 @@ demo.htmlSource = `
         </div>
 
         <div class="w-full md:w-10/12">
-          <div class="row row-x-4 row-y-3">
+          <div class="row row-x-4 row-y-1">
 
             <div class="w-full">
               <label class="form-label-check">
@@ -154,7 +154,7 @@ demo.htmlSource = `
         </div>
 
         <div class="w-full md:w-10/12">
-          <div class="row row-x-4 row-y-3">
+          <div class="row row-x-4 row-y-1">
 
             <div class="w-full">
               <label class="form-label-check">

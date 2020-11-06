@@ -115,7 +115,7 @@ demo.htmlSource = `
                 <div class="overlay-container">
                   <div class="overlay-inner">
 
-                    <div class="card ${cardDefaultOverlayScreen()} items-center justify-center">
+                    <div class="card items-center justify-center ${cardDefaultOverlayScreen()}">
                       <div class="btn btn-close p-5 text-2xl fixed z-top" aria-label="Close">
                         ${iconX()}
                       </div>
