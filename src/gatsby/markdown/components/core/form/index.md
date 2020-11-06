@@ -37,7 +37,7 @@ module.exports = {
 Use this code to create a **form items**.
 
 [[notePrimary]]
-| For aria purpose use `aria-label="<Description>"` on `input:not([type="hidden"]), select, textarea`.
+| For aria purpose [label form controls](https://www.w3.org/WAI/tutorials/forms/labels/) on `input, select, textarea`, we use `aria-label="Label"`.
 
 <demo>
   <demovanilla src="vanilla/components/core/form/usage">
