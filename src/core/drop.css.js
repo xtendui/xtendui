@@ -1,6 +1,6 @@
 module.exports = {
   variants: ['responsive'],
-  utility: {
+  utility: theme => ({
     '.drop-container-static': {
       // setup
       position: 'static',
@@ -42,11 +42,51 @@ module.exports = {
       // setup
       left: 'auto',
       right: '100%',
+      // styles
+      // styles
+      paddingLeft: `${theme('spacing.2')}`,
+      paddingRight: `${theme('spacing.2')}`,
     },
     '.drop-after': {
       // setup
       left: '100%',
       right: 'auto',
+      // styles
+      paddingLeft: `${theme('spacing.2')}`,
+      paddingRight: `${theme('spacing.2')}`,
+    },
+    '.drop-bottom': {
+      // setup
+      top: '100%',
+      bottom: 'auto',
+      '&:after': {
+        display: 'none',
+        content: '""',
+      },
+      // styles
+      paddingTop: `${theme('spacing.2')}`,
+      paddingBottom: `${theme('spacing.2')}`,
+    },
+    '.drop-top': {
+      // setup
+      top: 'auto',
+      bottom: '100%',
+      '&:after': {
+        display: 'none',
+        content: '""',
+      },
+      // styles
+      paddingTop: `${theme('spacing.2')}`,
+      paddingBottom: `${theme('spacing.2')}`,
+    },
+    '.drop-middle': {
+      // setup
+      paddingTop: '0',
+      paddingBottom: '0',
+      '&:after': {
+        display: 'none',
+        content: '"xt-drop-middle"',
+      },
     },
     '.drop-left': {
       // setup
@@ -66,38 +106,11 @@ module.exports = {
         content: '""',
       },
     },
-    '.drop-bottom': {
-      // setup
-      top: '100%',
-      bottom: 'auto',
-      '&:after': {
-        display: 'none',
-        content: '""',
-      },
-    },
-    '.drop-top': {
-      // setup
-      top: 'auto',
-      bottom: '100%',
-      '&:after': {
-        display: 'none',
-        content: '""',
-      },
-    },
     '.drop-center': {
       // setup
       '&:before': {
         display: 'none',
         content: '"xt-drop-center"',
-      },
-    },
-    '.drop-middle': {
-      // setup
-      paddingTop: '0',
-      paddingBottom: '0',
-      '&:after': {
-        display: 'none',
-        content: '"xt-drop-middle"',
       },
     },
     '.drop-contain-bottom': {
@@ -112,7 +125,7 @@ module.exports = {
       top: '0',
       bottom: 'auto',
     },
-  },
+  }),
   component: theme => ({
     '.drop-container': {
       // setup
@@ -133,7 +146,6 @@ module.exports = {
       },
       // styles
       '@apply drop-left drop-bottom': '',
-      padding: theme('spacing.2'),
     },
     '.drop-inner': {
       // setup
