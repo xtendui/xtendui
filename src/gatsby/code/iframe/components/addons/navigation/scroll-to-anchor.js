@@ -4,7 +4,6 @@ const btnDefault = require('components/snippets/classes/btn-default').default
 const btnPrimary = require('components/snippets/classes/btn-primary').default
 const cardStickyDefault = require('components/snippets/classes/card-sticky-default').default
 const cardStickyPrimary = require('components/snippets/classes/card-sticky-primary').default
-const cardDefaultOverlayScreen = require('components/snippets/classes/card-default-overlay-screen').default
 const iconX = require('components/snippets/icons').iconX
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
