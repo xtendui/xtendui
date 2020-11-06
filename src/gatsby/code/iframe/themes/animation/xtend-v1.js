@@ -10,7 +10,6 @@ const labelDefault = require('components/snippets/classes/label-default').defaul
 const inputDefault = require('components/snippets/classes/input-default').default
 const checkDefault = require('components/snippets/classes/form-check-default').default
 const radioDefault = require('components/snippets/classes/form-radio-default').default
-const switchDefault = require('components/snippets/classes/form-switch-default').default
 const iconX = require('components/snippets/icons').iconX
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
@@ -433,47 +432,23 @@ demo.htmlSource = `
 
 <div class="row row-3">
 
-    <div class="w-full md:w-6/12">
-      <a role="button" class="card ${cardDefault()}">
-        <div class="card-md">
-          <div class="h4">Lorem ipsum dolor sit amet</div>
-          <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-        </div>
-      </a>
-    </div>
-
-    <div class="w-full md:w-6/12">
-      <a role="button" class="card ${cardPrimary()}">
-        <div class="card-md">
-          <div class="h4">Lorem ipsum dolor sit amet</div>
-          <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-        </div>
-      </a>
-    </div>
-
-    <div class="w-full md:w-6/12">
-      <div class="card ${cardDefault()}">
-        <div class="card-md">
-          <div class="h4">Lorem ipsum dolor sit amet</div>
-          <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-          <button type="button" class="btn btn-md ${btnPrimary()}">
-            primary
-          </button>
-        </div>
+  <div class="w-full md:w-6/12">
+    <a role="button" class="card text-black links-default rounded-md bg-gray-200 border-transparent transform ease-out-quint duration-500 border hover:bg-gray-300 hover:border-gray-400 hover:shadow-lg hover:-translate-y-1 active:bg-gray-400 active:shadow-sm active:translate-y-0">
+      <div class="card-md">
+        <div class="h4">Default</div>
+        <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>
-    </div>
+    </a>
+  </div>
 
-    <div class="w-full md:w-6/12">
-      <div class="card ${cardPrimary()}">
-        <div class="card-md">
-          <div class="h4">Lorem ipsum dolor sit amet</div>
-          <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-          <button type="button" class="btn btn-md ${btnDefault()}">
-            default
-          </button>
-        </div>
+  <div class="w-full md:w-6/12">
+    <a role="button" class="card text-white links-inverse rounded-md bg-accent-500 border-transparent transform ease-out-quint duration-500 border hover:bg-accent-600 hover:border-accent-700 hover:shadow-lg hover:-translate-y-1 active:bg-accent-700 active:shadow-sm active:translate-y-0">
+      <div class="card-md">
+        <div class="h4">Primary</div>
+        <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>
-    </div>
+    </a>
+  </div>
 
 </div>
 `
