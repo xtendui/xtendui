@@ -1030,10 +1030,10 @@ if (typeof window !== 'undefined') {
    * @return {Array}
    */
   Xt.queryAll = (element, query) => {
-    if (!query) {
+    if (!element || !query) {
       return []
     }
-    if (!element) {
+    if (!element.length) {
       // search element
       return Xt.arrSingle(element.querySelectorAll(query))
     } else {
