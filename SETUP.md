@@ -64,7 +64,7 @@ Then you can use css with tailwind.
 You can import the **components you need** as described in the docs.
 
 ```jsx
-import 'xtendui'
+import { Xt } from 'xtendui'
 import 'xtendui/src/core/toggle'
 ```
 
