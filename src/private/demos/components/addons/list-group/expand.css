@@ -2,12 +2,11 @@
   .list-inner {
     transition-property: max-width;
     transition-duration: theme('transitionDuration.500');
-    transition-timing-function: theme('transitionTimingFunction.out');
+    transition-timing-function: theme('transitionTimingFunction.in-out');
   }
   &.expand {
     .list-inner {
       @apply max-w-md;
-      transition-timing-function: theme('transitionTimingFunction.in');
     }
   }
 }

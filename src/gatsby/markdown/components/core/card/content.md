@@ -17,7 +17,7 @@ Use **tailwind classes** to assign variant (e.g. [border-color](https://tailwind
 
 ## Interactive
 
-Use **tailwind classes** to modify variants for interactive animations.
+Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).
 
 <demo>
   <demovanilla src="vanilla/components/core/card/interactive">

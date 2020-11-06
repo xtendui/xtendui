@@ -64,7 +64,7 @@ module.exports = {
       '0%': {
         strokeDashoffset: '628',
         transform: 'rotateY(0deg) rotateZ(-90deg)',
-        animationTimingFunction: theme('transitionTimingFunction.ease.in'),
+        animationTimingFunction: theme('transitionTimingFunction.in'),
       },
       '50%': {
         strokeDashoffset: '0',
@@ -73,7 +73,7 @@ module.exports = {
       '50.0001%': {
         strokeDashoffset: '0',
         transform: 'rotateY(180deg) rotateZ(90deg)',
-        animationTimingFunction: theme('transitionTimingFunction.ease.out'),
+        animationTimingFunction: theme('transitionTimingFunction.out'),
       },
       '100%': {
         strokeDashoffset: '628',
@@ -84,12 +84,12 @@ module.exports = {
       '0%': {
         left: '0',
         width: '0',
-        animationTimingFunction: theme('transitionTimingFunction.ease.in'),
+        animationTimingFunction: theme('transitionTimingFunction.in'),
       },
       '50%': {
         left: '0',
         width: '100%',
-        animationTimingFunction: theme('transitionTimingFunction.ease.out'),
+        animationTimingFunction: theme('transitionTimingFunction.out'),
       },
       '100%': {
         left: '100%',
@@ -100,12 +100,12 @@ module.exports = {
       '0%': {
         top: '0',
         height: '0',
-        animationTimingFunction: theme('transitionTimingFunction.ease.in'),
+        animationTimingFunction: theme('transitionTimingFunction.in'),
       },
       '50%': {
         top: '0',
         height: '100%',
-        animationTimingFunction: theme('transitionTimingFunction.ease.out'),
+        animationTimingFunction: theme('transitionTimingFunction.out'),
       },
       '100%': {
         top: '100%',

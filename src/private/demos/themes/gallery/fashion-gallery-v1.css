@@ -16,7 +16,7 @@
         height: 7px;
         transition-property: all;
         transition-duration: theme('transitionDuration.500');
-        transition-timing-function: theme('transitionTimingFunction.out');
+        transition-timing-function: theme('transitionTimingFunction.in-out');
       }
       &:active > *, &.active > * {
         width: 9px;

@@ -63,7 +63,7 @@ module.exports = {
         // animation autoHeight
         transitionProperty: 'height',
         transitionDuration: theme('transitionDuration.500'),
-        transitionTimingFunction: theme('transitionTimingFunction.ease.inOut'),
+        transitionTimingFunction: theme('transitionTimingFunction.in-out'),
       },
     },
     '.slide': {
@@ -107,7 +107,7 @@ module.exports = {
       // animation dragger
       transitionProperty: 'transform',
       transitionDuration: theme('transitionDuration.500'),
-      transitionTimingFunction: theme('transitionTimingFunction.ease.inOut'),
+      transitionTimingFunction: theme('transitionTimingFunction.in-out'),
     },
     '.slider-pagination, .slider-navigation': {
       // styles
@@ -127,7 +127,7 @@ module.exports = {
       // animation
       transitionProperty: 'all',
       transitionDuration: theme('transitionDuration.500'),
-      transitionTimingFunction: theme('transitionTimingFunction.ease.inOut'),
+      transitionTimingFunction: theme('transitionTimingFunction.in-out'),
     },
     '[data-xt-nav].btn': {
       minHeight: '1.3rem',

@@ -28,12 +28,11 @@
         transform-style: preserve-3d;
         transition-property: transform;
         transition-duration: theme('transitionDuration.500');
-        transition-timing-function: theme('transitionTimingFunction.out');
+        transition-timing-function: theme('transitionTimingFunction.in-out');
       }
       &.active {
         .listing-item_inner {
           transform: rotateY(180deg);
-          transition-timing-function: theme('transitionTimingFunction.in');
         }
         .listing-back {
           z-index: theme('zIndex.active');

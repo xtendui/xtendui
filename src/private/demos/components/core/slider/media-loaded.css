@@ -10,7 +10,7 @@
       opacity: 1;
       transition-property: opacity;
       transition-duration: theme('transitionDuration.500');
-      transition-timing-function: theme('transitionTimingFunction.in');
+      transition-timing-function: theme('transitionTimingFunction.in-out');
     }
   }
 }

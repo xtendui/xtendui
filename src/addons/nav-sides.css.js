@@ -16,7 +16,7 @@ module.exports = {
       '.nav-sides-btn > *': {
         transitionProperty: 'opacity, transform',
         transitionDuration: theme('transitionDuration.200'),
-        transitionTimingFunction: theme('transitionTimingFunction.ease.inOut'),
+        transitionTimingFunction: theme('transitionTimingFunction.in-out'),
       },
       '&:active': {
         '.nav-sides-btn > *': {
@@ -33,7 +33,7 @@ module.exports = {
       opacity: '0',
       transitionProperty: 'opacity',
       transitionDuration: theme('transitionDuration.200'),
-      transitionTimingFunction: theme('transitionTimingFunction.ease.inOut'),
+      transitionTimingFunction: theme('transitionTimingFunction.in-out'),
       '&.in': {
         opacity: '1',
       },

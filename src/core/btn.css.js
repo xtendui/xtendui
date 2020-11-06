@@ -27,7 +27,7 @@ module.exports = {
       zIndex: theme('zIndex.base'),
       transitionProperty: 'all',
       transitionDuration: theme('transitionDuration.500'),
-      transitionTimingFunction: theme('transitionTimingFunction.inOut'),
+      transitionTimingFunction: theme('transitionTimingFunction.in-out'),
       '&:hover, &:active, &.active': {
         zIndex: theme('zIndex.active'),
       },

@@ -110,7 +110,7 @@ module.exports = {
       // animation
       transitionProperty: 'top, bottom, opacity',
       transitionDuration: theme('transitionDuration.500'),
-      transitionTimingFunction: theme('transitionTimingFunction.ease.inOut'),
+      transitionTimingFunction: theme('transitionTimingFunction.in-out'),
     },
     '.sticky-hide': {
       // styles

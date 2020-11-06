@@ -19,10 +19,9 @@
   opacity: 0.5;
   transition-property: opacity;
   transition-duration: theme('transitionDuration.500');
-  transition-timing-function: theme('transitionTimingFunction.out');
+  transition-timing-function: theme('transitionTimingFunction.in-out');
   &:hover {
     opacity: 1;
-    transition-timing-function: theme('transitionTimingFunction.in');
   }
 }
 

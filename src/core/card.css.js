@@ -55,11 +55,7 @@ module.exports = {
       justifyContent: 'flex-start',
       flex: '1 1 auto',
       width: '100%',
-      // animation
       zIndex: theme('zIndex.base'),
-      transitionProperty: 'all',
-      transitionDuration: theme('transitionDuration.500'),
-      transitionTimingFunction: theme('transitionTimingFunction.ease.inOut'),
       '&:hover, &:active, &.active': {
         zIndex: theme('zIndex.active'),
       },

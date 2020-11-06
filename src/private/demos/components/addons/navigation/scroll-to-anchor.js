@@ -17,7 +17,7 @@ Xt.mount.push({
 
     let self = new Xt.ScrollToAnchor(object, {
       scrollElements: [document.scrollingElement, object.querySelector('.demo--scroll-to-anchor'), object.querySelector('#demo--overlay-scroll-to-anchor')],
-      scrollSpace: (self, scrollingElement) => {
+      scrollSpace: scrollingElement => {
         let scrollSpace = 0
         if (scrollingElement === document.scrollingElement) {
           const spaces = document.querySelectorAll('.xt-sticky.xt-clone')

@@ -35,7 +35,7 @@
     width: 8.5rem;
   }
   img {
-    transition: opacity theme('transitionDuration.500') theme('transitionTimingFunction.out');
+    transition: opacity theme('transitionDuration.500') theme('transitionTimingFunction.in-out');
   }
   &:hover, &:active {
     img {
@@ -233,11 +233,6 @@
     }
   }
   > span {
-    transition: all theme('transitionDuration.200') theme('transitionTimingFunction.out');
-  }
-  &:hover, &:active, &.active {
-    > span {
-      transition: all theme('transitionDuration.200') theme('transitionTimingFunction.in');
-    }
+    transition: all theme('transitionDuration.200') theme('transitionTimingFunction.in-out');
   }
 }

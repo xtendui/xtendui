@@ -72,7 +72,7 @@ pre {
     border-width: 0 !important;
   }
   @apply border-3 border-gray-200;
-  transition: border-color theme('transitionDuration.500') theme('transitionTimingFunction.out');
+  transition: border-color theme('transitionDuration.500') theme('transitionTimingFunction.in-out');
   #gatsby_open-full & {
     border: 0 !important;
     .gatsby_demo_code_body,

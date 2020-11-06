@@ -120,7 +120,7 @@ module.exports = {
       // animation
       transitionProperty: 'opacity',
       transitionDuration: theme('transitionDuration.500'),
-      transitionTimingFunction: theme('transitionTimingFunction.ease.inOut'),
+      transitionTimingFunction: theme('transitionTimingFunction.in-out'),
       '.active &': {
         opacity: '.3',
       },

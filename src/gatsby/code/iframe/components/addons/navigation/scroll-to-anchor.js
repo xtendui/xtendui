@@ -4,6 +4,7 @@ const btnDefault = require('components/snippets/classes/btn-default').default
 const btnPrimary = require('components/snippets/classes/btn-primary').default
 const cardStickyDefault = require('components/snippets/classes/card-sticky-default').default
 const cardStickyPrimary = require('components/snippets/classes/card-sticky-primary').default
+const cardDefaultOverlayScreen = require('components/snippets/classes/card-default-overlay-screen').default
 const iconX = require('components/snippets/icons').iconX
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
@@ -41,68 +42,63 @@ demo.htmlSource = `
   <div class="overlay-container p-0">
     <div class="overlay-inner">
 
-      <div class="card items-center justify-center">
-        <div class="btn btn-close p-5 text-2xl" aria-label="Close">
-          ${iconX()}
+      <div class="btn btn-close p-5 text-2xl" aria-label="Close">
+        ${iconX()}
+      </div>
+
+      <div class="card ${cardStickyDefault()}" id="anchor-overlay-0">
+        <div class="h4">Lorem ipsum dolor sit amet</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
+        <div class="list list-2">
+          <a href="#anchor-overlay-0" class="btn btn-md ${btnDefault()}">
+            anchor overlay 0
+          </a>
+          <a href="#anchor-overlay-1" class="btn btn-md ${btnDefault()}">
+            anchor overlay 1
+          </a>
+          <a href="#anchor-overlay-2" class="btn btn-md ${btnDefault()}">
+            anchor overlay 2
+          </a>
         </div>
-        <div class="max-w-3xl">
+      </div>
 
-          <div class="card ${cardStickyDefault()}" id="anchor-overlay-0">
-            <div class="h4">Lorem ipsum dolor sit amet</div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
-            <div class="list list-2">
-              <a href="#anchor-overlay-0" class="btn btn-md ${btnDefault()}">
-                anchor overlay 0
-              </a>
-              <a href="#anchor-overlay-1" class="btn btn-md ${btnDefault()}">
-                anchor overlay 1
-              </a>
-              <a href="#anchor-overlay-2" class="btn btn-md ${btnDefault()}">
-                anchor overlay 2
-              </a>
-            </div>
-          </div>
+      <br/><br/><br/><br/><br/><br/><br/>
+      <br/><br/><br/><br/><br/><br/><br/>
+      <br/><br/><br/><br/><br/><br/><br/>
 
-          <br/><br/><br/><br/><br/><br/><br/>
-          <br/><br/><br/><br/><br/><br/><br/>
-          <br/><br/><br/><br/><br/><br/><br/>
+      <div class="card ${cardStickyDefault()}" id="anchor-overlay-1">
+        <div class="h4">Lorem ipsum dolor sit amet</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
+        <div class="list list-2">
+          <a href="#anchor-overlay-0" class="btn btn-md ${btnDefault()}">
+            anchor overlay 0
+          </a>
+          <a href="#anchor-overlay-1" class="btn btn-md ${btnDefault()}">
+            anchor overlay 1
+          </a>
+          <a href="#anchor-overlay-2" class="btn btn-md ${btnDefault()}">
+            anchor overlay 2
+          </a>
+        </div>
+      </div>
 
-          <div class="card ${cardStickyDefault()}" id="anchor-overlay-1">
-            <div class="h4">Lorem ipsum dolor sit amet</div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
-            <div class="list list-2">
-              <a href="#anchor-overlay-0" class="btn btn-md ${btnDefault()}">
-                anchor overlay 0
-              </a>
-              <a href="#anchor-overlay-1" class="btn btn-md ${btnDefault()}">
-                anchor overlay 1
-              </a>
-              <a href="#anchor-overlay-2" class="btn btn-md ${btnDefault()}">
-                anchor overlay 2
-              </a>
-            </div>
-          </div>
+      <br/><br/><br/><br/><br/><br/><br/>
+      <br/><br/><br/><br/><br/><br/><br/>
+      <br/><br/><br/><br/><br/><br/><br/>
 
-          <br/><br/><br/><br/><br/><br/><br/>
-          <br/><br/><br/><br/><br/><br/><br/>
-          <br/><br/><br/><br/><br/><br/><br/>
-
-          <div class="card ${cardStickyDefault()}" id="anchor-overlay-2">
-            <div class="h4">Lorem ipsum dolor sit amet</div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
-            <div class="list list-2">
-              <a href="#anchor-overlay-0" class="btn btn-md ${btnDefault()}">
-                anchor overlay 0
-              </a>
-              <a href="#anchor-overlay-1" class="btn btn-md ${btnDefault()}">
-                anchor overlay 1
-              </a>
-              <a href="#anchor-overlay-2" class="btn btn-md ${btnDefault()}">
-                anchor overlay 2
-              </a>
-            </div>
-          </div>
-
+      <div class="card ${cardStickyDefault()}" id="anchor-overlay-2">
+        <div class="h4">Lorem ipsum dolor sit amet</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
+        <div class="list list-2">
+          <a href="#anchor-overlay-0" class="btn btn-md ${btnDefault()}">
+            anchor overlay 0
+          </a>
+          <a href="#anchor-overlay-1" class="btn btn-md ${btnDefault()}">
+            anchor overlay 1
+          </a>
+          <a href="#anchor-overlay-2" class="btn btn-md ${btnDefault()}">
+            anchor overlay 2
+          </a>
         </div>
       </div>
 

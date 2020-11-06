@@ -135,9 +135,9 @@ class ScrollToAnchor {
                 history.pushState({}, '', loc.hash)
               }
               // vars
-              self.scrollSpace = options.scrollSpace(self, self.scrollElementCurrent)
-              self.scrollDistance = options.scrollDistance(self, self.scrollElementCurrent)
-              self.position = options.position(self, self.scrollElementCurrent)
+              self.position = options.position(self.scrollElementCurrent, self.target)
+              self.scrollSpace = options.scrollSpace(self.scrollElementCurrent, self.target)
+              self.scrollDistance = options.scrollDistance(self.scrollElementCurrent, self.target)
               // listener dispatch
               self.object.dispatchEvent(new CustomEvent('change.xt.scrolltoanchor'))
             }

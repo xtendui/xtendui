@@ -8,24 +8,23 @@
       opacity: 0;
       transition-property: opacity;
       transition-duration: theme('transitionDuration.500');
-      transition-timing-function: theme('transitionTimingFunction.out');
+      transition-timing-function: theme('transitionTimingFunction.in-out');
       .spinner {
         opacity: 0;
         transform: scale(.75);
         transition-property: all;
         transition-duration: theme('transitionDuration.500');
-        transition-timing-function: theme('transitionTimingFunction.out');
+        transition-timing-function: theme('transitionTimingFunction.in-out');
       }
     }
 
     .infinite-scroll-loading {
       .infinite-scroll-spinner {
         opacity: 1;
-        transition-timing-function: theme('transitionTimingFunction.in');
+        transition-timing-function: theme('transitionTimingFunction.in-out');
         .spinner {
           opacity: 1;
           transform: scale(1);
-          transition-timing-function: theme('transitionTimingFunction.in');
         }
       }
     }
@@ -39,7 +38,7 @@
       .infinite-scroll-trigger-content {
         transition-property: transform, opacity;
         transition-duration: theme('transitionDuration.500');
-        transition-timing-function: theme('transitionTimingFunction.out');
+        transition-timing-function: theme('transitionTimingFunction.in-out');
       }
     }
 
@@ -49,7 +48,6 @@
         > .infinite-scroll-trigger-content {
           opacity: 0;
           transform: translateY(0.7rem);
-          transition-timing-function: theme('transitionTimingFunction.in');
         }
       }
     }

@@ -15,10 +15,9 @@
       width: 300px;
       transition-property: transform;
       transition-duration: theme('transitionDuration.500');
-      transition-timing-function: theme('transitionTimingFunction.out');
+      transition-timing-function: theme('transitionTimingFunction.in-out');
       &:hover, &:active, &.active {
         transform: scale(0.98);
-        transition-timing-function: theme('transitionTimingFunction.in');
       }
     }
   }
@@ -27,10 +26,9 @@
     .slide_item {
       transition-property: color;
       transition-duration: theme('transitionDuration.500');
-      transition-timing-function: theme('transitionTimingFunction.out');
+      transition-timing-function: theme('transitionTimingFunction.in-out');
       &:hover, &:active, &.active {
         color: theme('colors.accent.500');
-        transition-timing-function: theme('transitionTimingFunction.in');
       }
     }
   }
