@@ -117,14 +117,17 @@ module.exports = {
         ],
       },
     },
-    // contenful
-    {
-      resolve: `gatsby-source-contentful`,
-      options: {
-        spaceId: process.env.CONTENTFUL_SPACE,
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-        downloadLocal: true,
-      },
-    },
   ],
+}
+
+// contenful
+if (process.env.CONTENTFUL_SPACE && process.env.CONTENTFUL_ACCESS_TOKEN) {
+  module.exports.plugins.push({
+    resolve: `gatsby-source-contentful`,
+    options: {
+      spaceId: process.env.CONTENTFUL_SPACE,
+      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      downloadLocal: true,
+    },
+  })
 }
