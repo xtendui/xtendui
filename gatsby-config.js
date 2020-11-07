@@ -121,7 +121,8 @@ module.exports = {
 }
 
 // contenful
-if (process.env.CONTENTFUL_SPACE && process.env.CONTENTFUL_ACCESS_TOKEN) {
+
+if (process.env.CONTENTFUL_SPACE) {
   module.exports.plugins.push({
     resolve: `gatsby-source-contentful`,
     options: {

@@ -56,11 +56,12 @@ exports.createPages = ({ actions, graphql }) => {
         component: node.frontmatter.parent ? docPageTemplate : docCategoryTemplate,
         context: {
           // for graphql query($type: String)
+          title: node.frontmatter.title,
           type: node.frontmatter.type,
           category: node.frontmatter.category,
           parent: node.frontmatter.parent,
           parents: `/^${node.frontmatter.parent}$/`,
-          title: node.frontmatter.title,
+          contentful: !!process.env.CONTENTFUL_SPACE,
         },
       })
     })
