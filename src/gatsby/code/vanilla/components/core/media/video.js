@@ -8,9 +8,11 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="media-container ratio-37.5">
+<div class="media-container ratio-56.2">
   <div class="media-inner">
-    <img class="media object-contain object-center" src="/img.svg" loading="lazy" alt=""/>
+    <video class="media" poster="/placeholder-1080.jpg" preload="metadata" muted playsinline loop autoplay>
+      <source type="video/mp4" src="/placeholder-1080.mp4" />
+    </video>
   </div>
 </div>
 `

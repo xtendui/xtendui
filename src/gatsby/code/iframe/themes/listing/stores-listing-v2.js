@@ -8,14 +8,14 @@ import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
 export const demo = {
-  container: true,
+  container: false,
   full: false,
   name: path.basename(filename, '.js'),
   dirs: dirs,
 }
 
 demo.htmlSource = `
-<div class="listing">
+<div class="listing py-10">
   <div class="container">
     <div class="row row-3 row-stretch">
 

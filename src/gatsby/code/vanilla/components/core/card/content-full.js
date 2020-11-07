@@ -13,7 +13,7 @@ demo.htmlSource = `
 
   <div class="w-full md:w-6/12">
     <div class="card ${cardDefaultFull()}">
-      <div class="media-container rounded-md" style="padding-bottom: 37.5%;">
+      <div class="media-container rounded-md ratio-37.5">
         <div class="media-inner">
           <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
         </div>
@@ -23,7 +23,7 @@ demo.htmlSource = `
 
   <div class="w-full md:w-6/12">
     <div class="card ${cardDefaultFull()}">
-      <div class="media-container rounded-t-md" style="padding-bottom: 37.5%;">
+      <div class="media-container rounded-t-md ratio-37.5">
         <div class="media-inner">
           <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
         </div>

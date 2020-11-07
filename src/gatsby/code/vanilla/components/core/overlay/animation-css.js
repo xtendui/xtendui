@@ -25,7 +25,7 @@ demo.htmlSource = `
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>
-            <div class="media-container rounded-t-md" style="padding-bottom: 37.5%;">
+            <div class="media-container rounded-t-md ratio-37.5">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
               </div>

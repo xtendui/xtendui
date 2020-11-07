@@ -15,6 +15,9 @@ module.exports = {
   theme:{
     xtendui: {
       media: {
+        utility: theme => ({
+          // modify utilities
+        }),
         component: theme => ({
           // modify components
         }),

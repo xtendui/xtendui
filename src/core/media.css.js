@@ -1,4 +1,28 @@
 module.exports = {
+  variants: ['responsive'],
+  utility: {
+    '.ratio-15': {
+      paddingBottom: '15%',
+    },
+    '.ratio-37\\.5': {
+      paddingBottom: '37.5%',
+    },
+    '.ratio-56\\.2': {
+      paddingBottom: '56.2%',
+    },
+    '.ratio-75': {
+      paddingBottom: '75%',
+    },
+    '.ratio-100': {
+      paddingBottom: '100%',
+    },
+    '.ratio-125': {
+      paddingBottom: '125%',
+    },
+    '.ratio-150': {
+      paddingBottom: '150%',
+    },
+  },
   component: theme => ({
     '.media-container': {
       // setup

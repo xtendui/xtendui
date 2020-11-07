@@ -145,42 +145,42 @@ demo.htmlSource = `
 
         <div class="slide list list-px flex-nowrap">
           <a href="#test-link-1" class="slide_item" title="item 0">
-            <div class="media-container" style="padding-bottom: 37.5%;">
+            <div class="media-container ratio-37.5">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
               </div>
             </div>
           </a>
           <a href="#test-link-2" class="slide_item" title="item 1">
-            <div class="media-container" style="padding-bottom: 37.5%;">
+            <div class="media-container ratio-37.5">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
               </div>
             </div>
           </a>
           <a href="#test-link-3" class="slide_item" title="item 2">
-            <div class="media-container" style="padding-bottom: 37.5%;">
+            <div class="media-container ratio-37.5">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
               </div>
             </div>
           </a>
           <a href="#test-link-4" class="slide_item" title="item 3">
-            <div class="media-container" style="padding-bottom: 37.5%;">
+            <div class="media-container ratio-37.5">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
               </div>
             </div>
           </a>
           <a href="#test-link-5" class="slide_item" title="item 4">
-            <div class="media-container" style="padding-bottom: 37.5%;">
+            <div class="media-container ratio-37.5">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
               </div>
             </div>
           </a>
           <a href="#test-link-6" class="slide_item" title="item 5">
-            <div class="media-container" style="padding-bottom: 37.5%;">
+            <div class="media-container ratio-37.5">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img-alt.svg" loading="eager" alt="">
               </div>

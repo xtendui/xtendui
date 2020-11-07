@@ -8,7 +8,7 @@ date: "2030-10-10"
 
 ## Responsive
 
-Use **tailwind classes** to assign relative position. The result is a **responsive media**.
+Use **tailwind classes** on `.media-inner` to assign relative position. The result is a **responsive media**.
 
 <div class="table-scroll">
 
@@ -23,9 +23,35 @@ Use **tailwind classes** to assign relative position. The result is a **responsi
   </demovanilla>
 </demo>
 
+## Aspect ratio
+
+Assing `padding-bottom` on `.media-container` to the aspect ratio you desire.
+
+<demo>
+  <demovanilla src="vanilla/components/core/media/ratio">
+  </demovanilla>
+</demo>
+
+Use **component utility** `.ratio-<value>` on `.media-container` to make aspect ratio images (resize screen to see it in action).
+
+Value can be `15`, `37.5`, `56.2`, `75`, `100`, `125`, `150`. You can add your own as media utility.
+
+<div class="table-scroll">
+
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
+| Utility                  | `.ratio-<value>`       | `ratio-<value>`                | `responsive`                | Apply aspect ratio            |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/core/media/ratio-class">
+  </demovanilla>
+</demo>
+
 ## Object fit
 
-Use **tailwind classes** to assign object fit and `padding-bottom` to assign aspect ratio.
+Use **tailwind classes** to assign object fit.
 
 <demo>
   <demovanilla src="vanilla/components/core/media/cover">
@@ -34,14 +60,12 @@ Use **tailwind classes** to assign object fit and `padding-bottom` to assign asp
   </demovanilla>
 </demo>
 
-You can also use **video** or **iframe** for media. Just use `padding-bottom` to assign aspect ratio.
+You can also use **video** or **iframe** for media.
 
 <demo>
-  <demovanilla src="vanilla/components/core/media/16-9">
+  <demovanilla src="vanilla/components/core/media/video">
   </demovanilla>
-  <demovanilla src="vanilla/components/core/media/16-9-video">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/media/16-9-iframe">
+  <demovanilla src="vanilla/components/core/media/iframe">
   </demovanilla>
 </demo>
 

@@ -8,9 +8,9 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="media-container" style="padding-bottom: 56.2%">
+<div class="media-container" style="padding-bottom: 56.2%;">
   <div class="media-inner">
-    <iframe class="media" type="text/html" src="https://www.youtube.com/embed/hNQFjqDvPhA?autoplay=0&showinfo=0&enablejsapi=1&rel=0" frameborder="0"></iframe>
+    <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt=""/>
   </div>
 </div>
 `

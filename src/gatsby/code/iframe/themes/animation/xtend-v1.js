@@ -134,7 +134,7 @@ demo.htmlSource = `
             <div class="btn btn-close p-5 text-2xl fixed z-top" aria-label="Close">
               ${iconX()}
             </div>
-            <div class="media-container" style="padding-bottom: 100%;">
+            <div class="media-container ratio-100">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
               </div>
@@ -173,7 +173,7 @@ demo.htmlSource = `
                 Account
               </button>
             </div>
-            <div class="media-container" style="padding-bottom: 37.5%;">
+            <div class="media-container ratio-37.5">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
               </div>
@@ -295,7 +295,7 @@ demo.htmlSource = `
                       Contact our customer service at <a href="tel:+39333010101">+39 333 010101</a> or email us at <a href="mailto:info@info.com">info@info.com</a>.
                   </p>
                 </div>
-                <div class="media-container rounded-b-md md:rounded-bl-none md:rounded-br-md" style="padding-bottom: 100%;">
+                <div class="media-container rounded-b-md md:rounded-bl-none md:rounded-br-md ratio-100">
                   <div class="media-inner">
                     <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
                   </div>
@@ -332,7 +332,7 @@ demo.htmlSource = `
             <div class="md:card-group">
 
               <div class="md:w-5/12 flex flex-col">
-                <div class="media-container flex-full rounded-t-md md:rounded-tr-none" style="padding-bottom: 100%;">
+                <div class="media-container flex-full rounded-t-md md:rounded-tr-none ratio-100">
                   <div class="media-inner">
                     <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
                   </div>

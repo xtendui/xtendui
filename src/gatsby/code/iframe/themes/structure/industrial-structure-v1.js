@@ -54,7 +54,7 @@ demo.htmlSource = `
               <div class="row">
                 <div class="featured-item_assets_col--big featured-item_assets_col--big">
                   <div class="featured-item_asset">
-                    <div class="media-container" style="padding-bottom: 37.5%;">
+                    <div class="media-container ratio-37.5">
                       <div class="media-inner">
                         <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
                       </div>
@@ -63,7 +63,7 @@ demo.htmlSource = `
                 </div>
                 <div class="featured-item_assets_col--sm featured-item_assets_col--sm">
                   <div class="featured-item_asset">
-                    <div class="media-container" style="padding-bottom: 37.5%;">
+                    <div class="media-container ratio-37.5">
                       <div class="media-inner">
                         <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
                       </div>
@@ -110,7 +110,7 @@ demo.htmlSource = `
               <div class="row">
                 <div class="featured-item_assets_col--sm">
                   <div class="featured-item_asset">
-                    <div class="media-container" style="padding-bottom: 37.5%;">
+                    <div class="media-container ratio-37.5">
                       <div class="media-inner">
                         <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
                       </div>
@@ -119,7 +119,7 @@ demo.htmlSource = `
                 </div>
                 <div class="featured-item_assets_col--big">
                   <div class="featured-item_asset">
-                    <div class="media-container" style="padding-bottom: 37.5%;">
+                    <div class="media-container ratio-37.5">
                       <div class="media-inner">
                         <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
                       </div>
@@ -166,7 +166,7 @@ demo.htmlSource = `
               <div class="row">
                 <div class="featured-item_assets_col--big">
                   <div class="featured-item_asset">
-                    <div class="media-container" style="padding-bottom: 37.5%;">
+                    <div class="media-container ratio-37.5">
                       <div class="media-inner">
                         <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
                       </div>
@@ -175,7 +175,7 @@ demo.htmlSource = `
                 </div>
                 <div class="featured-item_assets_col--sm">
                   <div class="featured-item_asset">
-                    <div class="media-container" style="padding-bottom: 37.5%;">
+                    <div class="media-container ratio-37.5">
                       <div class="media-inner">
                         <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
                       </div>
@@ -222,7 +222,7 @@ demo.htmlSource = `
               <div class="row">
                 <div class="featured-item_assets_col--sm">
                   <div class="featured-item_asset">
-                    <div class="media-container" style="padding-bottom: 37.5%;">
+                    <div class="media-container ratio-37.5">
                       <div class="media-inner">
                         <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
                       </div>
@@ -231,7 +231,7 @@ demo.htmlSource = `
                 </div>
                 <div class="featured-item_assets_col--big">
                   <div class="featured-item_asset">
-                    <div class="media-container" style="padding-bottom: 37.5%;">
+                    <div class="media-container ratio-37.5">
                       <div class="media-inner">
                         <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
                       </div>

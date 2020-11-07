@@ -39,7 +39,7 @@ demo.htmlSource = `
                   <div class="row row-4">
 
                     <div class="w-full md:w-4/12 lg:w-3/12 pr-6">
-                      <div class="media-container" style="padding-bottom: 72.6%;">
+                      <div class="media-container ratio-75">
                         <div class="media-inner">
                           <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
                         </div>
@@ -122,7 +122,7 @@ demo.htmlSource = `
                   <div class="row row-4">
 
                     <div class="w-full md:w-4/12 lg:w-3/12 pr-6">
-                      <div class="media-container" style="padding-bottom: 100%;">
+                      <div class="media-container ratio-100">
                         <div class="media-inner">
                           <img class="media object-cover object-center" src="/img-ratio.svg" loading="lazy" alt="">
                         </div>
@@ -223,7 +223,7 @@ demo.htmlSource = `
                   <div class="row row-4">
 
                     <div class="w-full md:w-4/12 lg:w-3/12 pr-6">
-                      <div class="media-container" style="padding-bottom: 72.6%;">
+                      <div class="media-container ratio-75">
                         <div class="media-inner">
                           <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
                         </div>

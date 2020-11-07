@@ -9,14 +9,14 @@ import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
 export const demo = {
-  container: true,
+  container: false,
   full: false,
   name: path.basename(filename, '.js'),
   dirs: dirs,
 }
 
 demo.htmlSource = `
-<div data-xt-infinite-scroll="{
+<div class="py-10" data-xt-infinite-scroll="{
     get: false,
     max: 4,
     elements: {
@@ -41,11 +41,11 @@ demo.htmlSource = `
       </div>
     </div>
 
-    <div class="row row-3" >
+    <div class="row row-3">
 
       <div class="w-full md:w-6/12 lg:w-4/12">
         <a href="https://github.com/minimit/xtendui" class="text-black">
-          <div class="media-container" style="padding-bottom: 75%;">
+          <div class="media-container ratio-75">
             <div class="media-inner">
               <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
             </div>
@@ -63,7 +63,7 @@ demo.htmlSource = `
 
       <div class="w-full md:w-6/12 lg:w-4/12">
         <a href="https://github.com/minimit/xtendui" class="text-black">
-          <div class="media-container" style="padding-bottom: 75%;">
+          <div class="media-container ratio-75">
             <div class="media-inner">
               <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
             </div>
@@ -81,7 +81,7 @@ demo.htmlSource = `
 
       <div class="w-full md:w-6/12 lg:w-4/12">
         <a href="https://github.com/minimit/xtendui" class="text-black">
-          <div class="media-container" style="padding-bottom: 75%;">
+          <div class="media-container ratio-75">
             <div class="media-inner">
               <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
             </div>
@@ -99,7 +99,7 @@ demo.htmlSource = `
 
       <div class="w-full md:w-6/12 lg:w-4/12">
         <a href="https://github.com/minimit/xtendui" class="text-black">
-          <div class="media-container" style="padding-bottom: 75%;">
+          <div class="media-container ratio-75">
             <div class="media-inner">
               <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
             </div>
@@ -117,7 +117,7 @@ demo.htmlSource = `
 
       <div class="w-full md:w-6/12 lg:w-4/12">
         <a href="https://github.com/minimit/xtendui" class="text-black">
-          <div class="media-container" style="padding-bottom: 75%;">
+          <div class="media-container ratio-75">
             <div class="media-inner">
               <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
             </div>
@@ -135,7 +135,7 @@ demo.htmlSource = `
 
       <div class="w-full md:w-6/12 lg:w-4/12">
         <a href="https://github.com/minimit/xtendui" class="text-black">
-          <div class="media-container" style="padding-bottom: 75%;">
+          <div class="media-container ratio-75">
             <div class="media-inner">
               <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
             </div>
@@ -153,7 +153,7 @@ demo.htmlSource = `
 
       <div class="w-full">
         <a href="https://github.com/minimit/xtendui" class="text-black">
-          <div class="media-container" style="padding-bottom: 75%;">
+          <div class="media-container ratio-75">
             <div class="media-inner">
               <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
             </div>
@@ -171,7 +171,7 @@ demo.htmlSource = `
 
       <div class="w-full">
         <a href="https://github.com/minimit/xtendui" class="text-black">
-          <div class="media-container" style="padding-bottom: 75%;">
+          <div class="media-container ratio-75">
             <div class="media-inner">
               <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
             </div>

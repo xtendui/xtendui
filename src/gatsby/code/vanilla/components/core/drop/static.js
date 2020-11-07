@@ -35,7 +35,7 @@ demo.htmlSource = `
               </div>
             </div>
           </div>
-          <div class="media-container rounded-b-md" style="padding-bottom: 15%;">
+          <div class="media-container rounded-b-md ratio-15">
             <div class="media-inner">
               <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
             </div>

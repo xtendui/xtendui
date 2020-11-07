@@ -53,7 +53,7 @@ demo.htmlSource = `
             <div class="btn btn-close p-5 text-2xl fixed z-top" aria-label="Close">
               ${iconX()}
             </div>
-            <div class="media-container" style="padding-bottom: 100%;">
+            <div class="media-container ratio-100">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
               </div>
@@ -92,7 +92,7 @@ demo.htmlSource = `
                   </div>
                 </div>
               </div>
-              <div class="media-container" style="padding-bottom: 15%;">
+              <div class="media-container ratio-15">
                 <div class="media-inner">
                   <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
                 </div>
