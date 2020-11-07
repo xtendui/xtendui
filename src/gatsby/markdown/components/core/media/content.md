@@ -34,7 +34,7 @@ Assing `padding-bottom` on `.media-container` to the aspect ratio you desire.
 
 Use **component utility** `.ratio-<value>` on `.media-container` to make aspect ratio images (resize screen to see it in action).
 
-Value can be `15`, `37.5`, `56.2`, `75`, `100`, `125`, `150`. You can add your own as media utility.
+Value can be `15`, `37.5`, `50`, `56.2`, `75`, `100`, `125`, `150`. You can add your own as media utility.
 
 <div class="table-scroll">
 

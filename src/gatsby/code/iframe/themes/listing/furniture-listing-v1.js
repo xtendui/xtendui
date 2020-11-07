@@ -17,7 +17,7 @@ demo.htmlSource = `
   <div class="container">
     <div class="row row-3">
 
-      <div class="w-full md:w-6/12 lg:w-4/12">
+      <div class="w-6/12 md:w-4/12">
         <a href="#" class="listing-item">
           <div class="listing-img">
             <div class="media-container ratio-75">
@@ -37,7 +37,7 @@ demo.htmlSource = `
         </a>
       </div>
 
-      <div class="w-full md:w-6/12 lg:w-4/12">
+      <div class="w-6/12 md:w-4/12">
         <a href="#" class="listing-item">
           <div class="listing-img">
             <div class="media-container ratio-75">
@@ -57,7 +57,7 @@ demo.htmlSource = `
         </a>
       </div>
 
-      <div class="w-full md:w-6/12 lg:w-4/12">
+      <div class="w-6/12 md:w-4/12">
         <a href="#" class="listing-item">
           <div class="listing-img">
             <div class="media-container ratio-75">
@@ -68,7 +68,7 @@ demo.htmlSource = `
           </div>
           <div class="listing-content py-4">
             <div class="h5">
-              Consectetur
+              Lorem ipsum
             </div>
             <div class="-mt-2 text-sm font-semibold">
               3.772,00 €
@@ -77,47 +77,7 @@ demo.htmlSource = `
         </a>
       </div>
 
-      <div class="w-full md:w-6/12 lg:w-4/12">
-        <a href="#" class="listing-item">
-          <div class="listing-img">
-            <div class="media-container ratio-75">
-              <div class="media-inner">
-                <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
-              </div>
-            </div>
-          </div>
-          <div class="listing-content py-4">
-            <div class="h5">
-              Adipiscing elit
-            </div>
-            <div class="-mt-2 text-sm font-semibold">
-              3.772,00 €
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="w-full md:w-6/12 lg:w-4/12">
-        <a href="#" class="listing-item">
-          <div class="listing-img">
-            <div class="media-container ratio-75">
-              <div class="media-inner">
-                <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
-              </div>
-            </div>
-          </div>
-          <div class="listing-content py-4">
-            <div class="h5">
-              Lorem Ipsum
-            </div>
-            <div class="-mt-2 text-sm font-semibold">
-              3.772,00 €
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="w-full md:w-6/12 lg:w-4/12">
+      <div class="w-6/12 md:w-4/12">
         <a href="#" class="listing-item">
           <div class="listing-img">
             <div class="media-container ratio-75">
@@ -137,10 +97,10 @@ demo.htmlSource = `
         </a>
       </div>
 
-      <div class="w-full">
+      <div class="w-6/12 md:w-4/12">
         <a href="#" class="listing-item">
           <div class="listing-img">
-            <div class="media-container ratio-37.5">
+            <div class="media-container ratio-75">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
               </div>
@@ -157,10 +117,50 @@ demo.htmlSource = `
         </a>
       </div>
 
-      <div class="w-full">
+      <div class="w-6/12 md:w-4/12">
         <a href="#" class="listing-item">
           <div class="listing-img">
-            <div class="media-container ratio-37.5">
+            <div class="media-container ratio-75">
+              <div class="media-inner">
+                <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="listing-content py-4">
+            <div class="h5">
+              Dolor sit amet
+            </div>
+            <div class="-mt-2 text-sm font-semibold">
+              3.772,00 €
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="w-6/12">
+        <a href="#" class="listing-item">
+          <div class="listing-img">
+            <div class="media-container ratio-75 md:ratio-50">
+              <div class="media-inner">
+                <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="listing-content py-4">
+            <div class="h5">
+              Lorem Ipsum
+            </div>
+            <div class="-mt-2 text-sm font-semibold">
+              3.772,00 €
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="w-6/12">
+        <a href="#" class="listing-item">
+          <div class="listing-img">
+            <div class="media-container ratio-75 md:ratio-50">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
               </div>

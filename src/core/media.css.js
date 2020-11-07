@@ -1,14 +1,17 @@
 module.exports = {
   variants: ['responsive'],
   utility: {
-    '.ratio-15': {
-      paddingBottom: '15%',
+    '.ratio-25': {
+      paddingBottom: '25%',
     },
     '.ratio-37\\.5': {
       paddingBottom: '37.5%',
     },
     '.ratio-56\\.2': {
       paddingBottom: '56.2%',
+    },
+    '.ratio-50': {
+      paddingBottom: '50%',
     },
     '.ratio-75': {
       paddingBottom: '75%',

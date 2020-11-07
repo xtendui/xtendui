@@ -80,7 +80,7 @@ demo.htmlSource = `
                 Account
               </button>
             </div>
-            <div class="media-container ${cardItem} ratio-37.5">
+            <div class="media-container ${cardItem} h-48">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
               </div>
@@ -200,7 +200,7 @@ demo.htmlSource = `
                       Contact our customer service at <a href="tel:+39333010101">+39 333 010101</a> or email us at <a href="mailto:info@info.com">info@info.com</a>.
                   </p>
                 </div>
-                <div class="media-container rounded-b-md md:rounded-bl-none md:rounded-br-md ratio-100">
+                <div class="media-container rounded-b-md md:rounded-bl-none md:rounded-br-md h-32 lg:ratio-100">
                   <div class="media-inner">
                     <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
                   </div>
@@ -235,7 +235,7 @@ demo.htmlSource = `
             <div class="md:card-group ${cardItem}">
 
               <div class="md:w-5/12 flex flex-col">
-                <div class="media-container flex-full rounded-t-md md:rounded-tr-none ratio-100">
+                <div class="media-container rounded-t-md md:rounded-tr-none h-48 lg:ratio-100 md:flex-full">
                   <div class="media-inner">
                     <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
                   </div>

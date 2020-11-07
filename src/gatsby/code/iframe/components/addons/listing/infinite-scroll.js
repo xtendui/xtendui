@@ -43,7 +43,7 @@ demo.htmlSource = `
 
     <div class="row row-3">
 
-      <div class="w-full md:w-6/12 lg:w-4/12">
+      <div class="w-6/12 md:w-4/12">
         <a href="https://github.com/minimit/xtendui" class="text-black">
           <div class="media-container ratio-75">
             <div class="media-inner">
@@ -61,7 +61,7 @@ demo.htmlSource = `
         </a>
       </div>
 
-      <div class="w-full md:w-6/12 lg:w-4/12">
+      <div class="w-6/12 md:w-4/12">
         <a href="https://github.com/minimit/xtendui" class="text-black">
           <div class="media-container ratio-75">
             <div class="media-inner">
@@ -79,7 +79,7 @@ demo.htmlSource = `
         </a>
       </div>
 
-      <div class="w-full md:w-6/12 lg:w-4/12">
+      <div class="w-6/12 md:w-4/12">
         <a href="https://github.com/minimit/xtendui" class="text-black">
           <div class="media-container ratio-75">
             <div class="media-inner">
@@ -97,7 +97,7 @@ demo.htmlSource = `
         </a>
       </div>
 
-      <div class="w-full md:w-6/12 lg:w-4/12">
+      <div class="w-6/12 md:w-4/12">
         <a href="https://github.com/minimit/xtendui" class="text-black">
           <div class="media-container ratio-75">
             <div class="media-inner">
@@ -115,7 +115,7 @@ demo.htmlSource = `
         </a>
       </div>
 
-      <div class="w-full md:w-6/12 lg:w-4/12">
+      <div class="w-6/12 md:w-4/12">
         <a href="https://github.com/minimit/xtendui" class="text-black">
           <div class="media-container ratio-75">
             <div class="media-inner">
@@ -133,7 +133,7 @@ demo.htmlSource = `
         </a>
       </div>
 
-      <div class="w-full md:w-6/12 lg:w-4/12">
+      <div class="w-6/12 md:w-4/12">
         <a href="https://github.com/minimit/xtendui" class="text-black">
           <div class="media-container ratio-75">
             <div class="media-inner">
@@ -151,9 +151,9 @@ demo.htmlSource = `
         </a>
       </div>
 
-      <div class="w-full">
+      <div class="w-6/12">
         <a href="https://github.com/minimit/xtendui" class="text-black">
-          <div class="media-container ratio-75">
+          <div class="media-container ratio-75 md:ratio-50">
             <div class="media-inner">
               <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
             </div>
@@ -169,9 +169,9 @@ demo.htmlSource = `
         </a>
       </div>
 
-      <div class="w-full">
+      <div class="w-6/12">
         <a href="https://github.com/minimit/xtendui" class="text-black">
-          <div class="media-container ratio-75">
+          <div class="media-container ratio-75 md:ratio-50">
             <div class="media-inner">
               <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
             </div>
