@@ -14,7 +14,7 @@ demo.htmlSource = `
     Constant speed
   </div>
 
-  <div class="slider slider--text py-12">
+  <div class="slider slider--text my-12">
 
     <div class="slides">
       <ul class="slides-inner row row-10 transition-none">
@@ -76,7 +76,7 @@ demo.htmlSource = `
     Faster or slower depending on horizontal space
   </div>
 
-  <div class="slider slider--text slider--factor py-12">
+  <div class="slider slider--text slider--factor my-12">
 
     <div class="slides">
       <ul class="slides-inner row row-10 transition-none">
@@ -138,7 +138,7 @@ demo.htmlSource = `
     Images
   </div>
 
-  <div class="slider slider--img py-12">
+  <div class="slider slider--img my-12">
 
     <div class="slides">
       <ul class="slides-inner row row-px transition-none">

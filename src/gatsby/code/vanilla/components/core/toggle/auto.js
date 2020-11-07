@@ -12,11 +12,11 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-2 items-center" data-xt-toggle="{ auto: { time: 2000, initial: false, step: 3, inverse: true, pause: ':scope > button, .toggle' } }">
 
-  <button type="button" class="btn btn-md ${btnDefault()}">
+  <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
     Toggle 0
   </button>
 
-  <button type="button" class="btn btn-md ${btnDefault()}">
+  <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
     Toggle 1
   </button>
 
@@ -24,31 +24,31 @@ demo.htmlSource = `
     Toggle 2
   </button>
 
-  <button type="button" class="btn btn-md ${btnDefault()}">
+  <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
     Toggle 3
   </button>
 
-  <button type="button" class="btn btn-md ${btnDefault()}">
+  <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
     Toggle 4
   </button>
 
-  <div class="card toggle ${cardToggle()}">
+  <div class="card toggle rounded-md ${cardToggle()}">
     Target 0
   </div>
 
-  <div class="card toggle ${cardToggle()}">
+  <div class="card toggle rounded-md ${cardToggle()}">
     Target 1
   </div>
 
-  <div class="card toggle ${cardToggle()}">
+  <div class="card toggle rounded-md ${cardToggle()}">
     Target 2
   </div>
 
-  <div class="card toggle ${cardToggle()}">
+  <div class="card toggle rounded-md ${cardToggle()}">
     Target 3
   </div>
 
-  <div class="card toggle ${cardToggle()}">
+  <div class="card toggle rounded-md ${cardToggle()}">
     Target 4
   </div>
 

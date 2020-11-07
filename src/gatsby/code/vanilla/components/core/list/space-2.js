@@ -17,26 +17,26 @@ demo.htmlSource = `
       <div>
         <div class="list list-2 flex-col">
 
-          <button type="button" class="btn btn-md ${btnDefault()}">
+          <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
             Lorem Ipsum
           </button>
 
-          <button type="button" class="btn btn-md ${btnDefault()}">
+          <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
             Dolor sit
           </button>
 
-          <button type="button" class="btn btn-md ${btnDefault()}">
+          <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
             Amet
           </button>
 
         </div>
       </div>
 
-      <button type="button" class="btn btn-md ${btnDefault()}">
+      <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
         Dolor sit
       </button>
 
-      <button type="button" class="btn btn-md ${btnDefault()}">
+      <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
         Amet
       </button>
 
@@ -46,15 +46,15 @@ demo.htmlSource = `
   <div>
     <div class="list list-2">
 
-      <button type="button" class="btn btn-md ${btnDefault()}">
+      <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
         Lorem Ipsum
       </button>
 
-      <button type="button" class="btn btn-md ${btnDefault()}">
+      <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
         Dolor sit
       </button>
 
-        <button type="button" class="btn btn-md ${btnDefault()}">
+        <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
         Amet
       </button>
 

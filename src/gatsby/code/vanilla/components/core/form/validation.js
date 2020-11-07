@@ -21,49 +21,49 @@ demo.htmlSource = `
       <label class="form-label mb-3 ${labelDefault()} form-label-required">
         Custom constrain
       </label>
-      <input type="text" class="form-item ${inputDefault()} demo--custom-constrain" aria-label="Custom constrain" placeholder="Custom constrain" required>
+      <input type="text" class="form-item rounded-md ${inputDefault()} demo--custom-constrain" aria-label="Custom constrain" placeholder="Custom constrain" required>
     </div>
 
     <div class="w-full">
       <label class="form-label mb-3 ${labelDefault()} form-label-required">
         Email
       </label>
-      <input type="email" class="form-item ${inputDefault()}" aria-label="Email" placeholder="Email" required>
+      <input type="email" class="form-item rounded-md ${inputDefault()}" aria-label="Email" placeholder="Email" required>
     </div>
 
     <div class="w-full">
       <label class="form-label mb-3 ${labelDefault()} form-label-required">
         Number
       </label>
-      <input type="number" class="form-item ${inputDefault()}" aria-label="Number" placeholder="Number" required min="1" max="10">
+      <input type="number" class="form-item rounded-md ${inputDefault()}" aria-label="Number" placeholder="Number" required min="1" max="10">
     </div>
 
     <div class="w-full">
       <label class="form-label mb-3 ${labelDefault()} form-label-required">
         Letters
       </label>
-      <input type="text" class="form-item ${inputDefault()}" aria-label="Letters" placeholder="Letters" required pattern="[A-Za-z]+">
+      <input type="text" class="form-item rounded-md ${inputDefault()}" aria-label="Letters" placeholder="Letters" required pattern="[A-Za-z]+">
     </div>
 
     <div class="w-full">
       <label class="form-label mb-3 ${labelDefault()} form-label-required">
         File
       </label>
-      <input type="file" class="form-item ${inputDefault()}" aria-label="File" required/>
+      <input type="file" class="form-item rounded-md ${inputDefault()}" aria-label="File" required/>
     </div>
 
     <div class="w-full">
       <label class="form-label mb-3 ${labelDefault()} form-label-required">
         Textarea
       </label>
-      <textarea class="form-item ${inputDefault()} h-24 resize-vertical" aria-label="Textarea" placeholder="Textarea" required></textarea>
+      <textarea class="form-item rounded-md ${inputDefault()} h-24 resize-vertical" aria-label="Textarea" placeholder="Textarea" required></textarea>
     </div>
 
     <div class="w-full">
       <label class="form-label mb-3 ${labelDefault()} form-label-required">
         Select
       </label>
-      <select class="form-item form-select ${inputDefault()}" aria-label="Select" required>
+      <select class="form-item form-select rounded-md ${inputDefault()}" aria-label="Select" required>
         <option selected value="">Select an option</option>
         <option>Test</option>
         <option>Test</option>
@@ -75,7 +75,7 @@ demo.htmlSource = `
       <label class="form-label mb-3 ${labelDefault()} form-label-required">
         Select multiple
       </label>
-      <select class="form-item form-select ${inputDefault()}" aria-label="Select multiple" multiple required>
+      <select class="form-item form-select rounded-md ${inputDefault()}" aria-label="Select multiple" multiple required>
         <option>Option 1</option>
         <option>Option 2</option>
         <option>Option 3</option>
@@ -92,14 +92,14 @@ demo.htmlSource = `
 
         <div class="w-full">
           <label class="form-label-check">
-            <input type="checkbox" class="form-check form-checkbox ${checkDefault()}" required disabled>
+            <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}" required disabled>
             <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
           </label>
         </div>
 
         <div class="w-full">
           <label class="form-label-check">
-            <input type="checkbox" class="form-check form-checkbox ${checkDefault()}" required>
+            <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}" required>
             <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
           </label>
         </div>
@@ -118,14 +118,14 @@ demo.htmlSource = `
 
         <div class="w-full">
           <label class="form-label-check">
-            <input type="radio" class="form-check form-radio ${radioDefault()}" name="radio-validation" required>
+            <input type="radio" class="form-check form-radio rounded-full ${radioDefault()}" name="radio-validation" required>
             <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
           </label>
         </div>
 
         <div class="w-full">
           <label class="form-label-check">
-            <input type="radio" class="form-check form-radio ${radioDefault()}" name="radio-validation">
+            <input type="radio" class="form-check form-radio rounded-full ${radioDefault()}" name="radio-validation">
             <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
           </label>
         </div>
@@ -144,21 +144,21 @@ demo.htmlSource = `
 
         <div class="w-full">
           <label class="form-label-check">
-            <input type="checkbox" class="form-check form-switch ${switchDefault()}" required>
+            <input type="checkbox" class="form-check form-switch rounded-full ${switchDefault()}" required>
             <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
           </label>
         </div>
 
         <div class="w-full">
           <label class="form-label-check">
-            <input type="radio" class="form-check form-switch ${switchDefault()}" name="switch-validation" required>
+            <input type="radio" class="form-check form-switch rounded-full ${switchDefault()}" name="switch-validation" required>
             <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
           </label>
         </div>
 
         <div class="w-full">
           <label class="form-label-check">
-            <input type="radio" class="form-check form-switch ${switchDefault()}" name="switch-validation">
+            <input type="radio" class="form-check form-switch rounded-full ${switchDefault()}" name="switch-validation">
             <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
           </label>
         </div>
@@ -168,7 +168,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <button type="submit" class="btn btn-md ${btnPrimary()}">
+      <button type="submit" class="btn btn-md rounded-md ${btnPrimary()}">
         submit
       </button>
     </div>

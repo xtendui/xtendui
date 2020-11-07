@@ -34,7 +34,7 @@ demo.htmlSource = `
     <div class="infinite-scroll-pre mb-4">
       <div class="list list-1 flex-col items-center">
         <div>
-          <button type="button" class="btn btn-md ${btnDefault()}">
+          <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
             Load previous pages
           </button>
         </div>
@@ -194,7 +194,7 @@ demo.htmlSource = `
     <div class="list list-1 flex-col items-center">
 
       <div class="infinite-scroll-trigger">
-        <button type="button" class="btn btn-md ${btnPrimary()}">
+        <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
 
           <span class="infinite-scroll-trigger-content">
             Show more products

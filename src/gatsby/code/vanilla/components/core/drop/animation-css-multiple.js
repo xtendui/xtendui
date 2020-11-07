@@ -18,13 +18,13 @@ demo.htmlSource = `
 
   <div class="drop-container demo--drop-animation-css-multiple">
 
-    <button type="button" class="btn btn-md ${btnPrimary()}">
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       list
     </button>
 
     <div class="drop group">
       <div class="drop-inner">
-        <div class="w-64 py-3 ${cardDefaultDropList()}">
+        <div class="w-64 py-3 rounded-md ${cardDefaultDropList()}">
           <nav class="list flex-col">
             <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -44,13 +44,13 @@ demo.htmlSource = `
 
   <div class="drop-container demo--drop-animation-css-multiple">
 
-    <button type="button" class="btn btn-md ${btnPrimary()}">
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       card
     </button>
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="card w-80 ${cardDefaultDrop()}">
+        <div class="card w-80 rounded-md ${cardDefaultDrop()}">
           <div class="btn btn-close p-5 text-xl" aria-label="Close">
             ${iconX()}
           </div>

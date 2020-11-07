@@ -26,7 +26,7 @@ demo.htmlSource = `
         <label class="form-label mb-3 ${labelDefault()}">
           Lorem Ipsum
         </label>
-        <input type="text" class="form-item ${inputDefault()}" aria-label="Lorem ipsum"/>
+        <input type="text" class="form-item rounded-md ${inputDefault()}" aria-label="Lorem ipsum"/>
         <div class="mt-3 ${note()}">
           <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
         </div>
@@ -36,7 +36,7 @@ demo.htmlSource = `
         <label class="form-label mb-3 ${labelDefault()}">
           Dolor sit amet
         </label>
-        <input type="text" class="form-item ${inputDefault()}" aria-label="Dolor sit amet"/>
+        <input type="text" class="form-item rounded-md ${inputDefault()}" aria-label="Dolor sit amet"/>
       </div>
 
       <div class="w-full">
@@ -47,14 +47,14 @@ demo.htmlSource = `
             <label class="form-label mb-3 ${labelDefault()}">
               Lorem ipsum
             </label>
-            <input type="text" class="form-item ${inputDefault()}" aria-label="Lorem ipsum"/>
+            <input type="text" class="form-item rounded-md ${inputDefault()}" aria-label="Lorem ipsum"/>
           </div>
 
           <div class="w-full md:w-auto">
             <label class="form-label mb-3 ${labelDefault()}">
               Dolor sit amet
             </label>
-            <input type="text" class="form-item ${inputDefault()}" aria-label="Dolor sit amet"/>
+            <input type="text" class="form-item rounded-md ${inputDefault()}" aria-label="Dolor sit amet"/>
           </div>
 
         </div>
@@ -85,14 +85,14 @@ demo.htmlSource = `
 
           <div class="w-full">
             <label class="form-label-check">
-              <input type="checkbox" class="form-check form-checkbox ${checkDefault()}" checked>
+              <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}" checked>
               <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
             </label>
           </div>
 
           <div class="w-full">
             <label class="form-label-check">
-              <input type="checkbox" class="form-check form-checkbox ${checkDefault()}">
+              <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}">
               <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
             </label>
             <div class="mt-3 ${note()}">
@@ -118,14 +118,14 @@ demo.htmlSource = `
 
               <div class="w-full">
                 <label class="form-label-check">
-                  <input type="checkbox" class="form-check form-checkbox ${checkDefault()}" checked>
+                  <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}" checked>
                   <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
                 </label>
               </div>
 
               <div class="w-full">
                 <label class="form-label-check">
-                  <input type="checkbox" class="form-check form-checkbox ${checkDefault()}" checked>
+                  <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}" checked>
                   <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
                 </label>
                 <div class="mt-3 ${note()}">
@@ -153,14 +153,14 @@ demo.htmlSource = `
 
           <div class="w-full md:w-auto">
             <label class="form-label-check">
-              <input type="checkbox" class="form-check form-checkbox ${checkDefault()}" checked>
+              <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}" checked>
               <span class="ml-3">Lorem ipsum</span>
             </label>
           </div>
 
           <div class="w-full md:w-auto">
             <label class="form-label-check">
-              <input type="checkbox" class="form-check form-checkbox ${checkDefault()}">
+              <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}">
               <span class="ml-3">Lorem ipsum</span>
             </label>
           </div>
@@ -174,7 +174,7 @@ demo.htmlSource = `
       </div>
 
       <div class="w-full">
-        <button type="submit" class="btn btn-md ${btnPrimary()}">
+        <button type="submit" class="btn btn-md rounded-md ${btnPrimary()}">
           submit
         </button>
       </div>

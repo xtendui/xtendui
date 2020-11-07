@@ -18,37 +18,37 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="list list-1 items-center mb-4">
-  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--toggle-events-first-element">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--toggle-events-first-element">
     1st element
   </button>
-  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--toggle-events-first-target">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--toggle-events-first-target">
     1st target
   </button>
-  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--toggle-events-autostart">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--toggle-events-autostart">
     Autostart
   </button>
-  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--toggle-events-autostop">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--toggle-events-autostop">
     Autostop
   </button>
-  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--toggle-events-add">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--toggle-events-add">
     Add
   </button>
-  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--toggle-events-remove">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--toggle-events-remove">
     Remove
   </button>
-  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--toggle-events-block">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--toggle-events-block">
     Block/Unblock
   </button>
-  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--toggle-events-reinit">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--toggle-events-reinit">
     Reinit
   </button>
-  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--toggle-events-restart">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--toggle-events-restart">
     Restart
   </button>
-  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--toggle-events-destroy">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--toggle-events-destroy">
     Destroy
   </button>
-  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--toggle-events-unmount">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--toggle-events-unmount">
     Unmount
   </button>
 </div>
@@ -56,38 +56,38 @@ demo.htmlSource = `
 <div id="demo--toggle-events">
 
   <div class="list list-2 items-center mb-4" id="demo--toggle-events-elements">
-    <button type="button" class="btn btn-md ${btnDefault()}" data-xt-group="0">
+    <button type="button" class="btn btn-md rounded-md ${btnDefault()}" data-xt-group="0">
       Toggle Group 0
     </button>
-    <button type="button" class="btn btn-md ${btnDefault()}" data-xt-group="0">
+    <button type="button" class="btn btn-md rounded-md ${btnDefault()}" data-xt-group="0">
       Toggle Group 0
     </button>
-    <button type="button" class="btn btn-md ${btnDefault()}">
+    <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
       Toggle 1
     </button>
-    <button type="button" class="btn btn-md ${btnDefault()}">
+    <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
       Toggle 2
     </button>
   </div>
 
   <div class="list list-2 items-center" id="demo--toggle-events-targets">
-    <div class="card toggle ${cardToggle()}" data-xt-group="0">
+    <div class="card toggle rounded-md ${cardToggle()}" data-xt-group="0">
       Target Group 0
     </div>
-    <div class="card toggle ${cardToggle()}" data-xt-group="0">
+    <div class="card toggle rounded-md ${cardToggle()}" data-xt-group="0">
       Target Group 0
     </div>
-    <div class="card toggle ${cardToggle()}">
+    <div class="card toggle rounded-md ${cardToggle()}">
       Target 1
     </div>
-    <div class="card toggle ${cardToggle()}">
+    <div class="card toggle rounded-md ${cardToggle()}">
       Target 2
     </div>
   </div>
 
 </div>
 
-<div class="card ${cardDefault()} mt-6">
+<div class="card rounded-md ${cardDefault()} mt-6">
   <div class="card-sm overflow-y-auto overflow-x-hidden overflow-sub max-h-56" id="demo--toggle-events-log">
   </div>
 </div>

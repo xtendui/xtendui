@@ -24,7 +24,7 @@ demo.htmlSource = `
         <div class="listing-item w-full">
           <div class="listing-item_inner">
 
-            <div class="listing-front card ${cardDefault()}">
+            <div class="listing-front card rounded-md ${cardDefault()}">
               <div class="media-container flex-full rounded-t-md h-40">
                 <div class="media-inner">
                   <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
@@ -38,14 +38,14 @@ demo.htmlSource = `
                   Street lorem ipsum 42, 00134 City, Nation
                 </address>
                 <div class="list list-2 mt-auto justify-end">
-                  <button type="button" class="listing-action btn btn-md ${btnPrimary()}">
+                  <button type="button" class="listing-action btn btn-md rounded-md ${btnPrimary()}">
                       More info
                   </button>
                 </div>
               </div>
             </div>
 
-            <div class="listing-back h-full card ${cardDefault()}">
+            <div class="listing-back h-full card rounded-md ${cardDefault()}">
               <div class="btn btn-close p-5 text-xl" aria-label="Close">
                 ${iconX()}
               </div>
@@ -80,7 +80,7 @@ demo.htmlSource = `
         <div class="listing-item w-full">
           <div class="listing-item_inner">
 
-            <div class="listing-front card ${cardDefault()}">
+            <div class="listing-front card rounded-md ${cardDefault()}">
               <div class="media-container flex-full rounded-t-md h-40">
                 <div class="media-inner">
                   <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
@@ -94,14 +94,14 @@ demo.htmlSource = `
                   Street lorem ipsum 42, 00134 City, Nation
                 </address>
                 <div class="list list-2 mt-auto justify-end">
-                  <button type="button" class="listing-action btn btn-md ${btnPrimary()}">
+                  <button type="button" class="listing-action btn btn-md rounded-md ${btnPrimary()}">
                       More info
                   </button>
                 </div>
               </div>
             </div>
 
-            <div class="listing-back h-full card ${cardDefault()}">
+            <div class="listing-back h-full card rounded-md ${cardDefault()}">
               <div class="btn btn-close p-5 text-xl" aria-label="Close">
                 ${iconX()}
               </div>
@@ -124,7 +124,7 @@ demo.htmlSource = `
         <div class="listing-item w-full">
           <div class="listing-item_inner">
 
-            <div class="listing-front card ${cardDefault()}">
+            <div class="listing-front card rounded-md ${cardDefault()}">
               <div class="media-container flex-full rounded-t-md h-40">
                 <div class="media-inner">
                   <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
@@ -138,14 +138,14 @@ demo.htmlSource = `
                   Street lorem ipsum 42, 00134 City, Nation
                 </address>
                 <div class="list list-2 mt-auto justify-end">
-                  <button type="button" class="listing-action btn btn-md ${btnPrimary()}">
+                  <button type="button" class="listing-action btn btn-md rounded-md ${btnPrimary()}">
                       More info
                   </button>
                 </div>
               </div>
             </div>
 
-            <div class="listing-back h-full card ${cardDefault()}">
+            <div class="listing-back h-full card rounded-md ${cardDefault()}">
               <div class="btn btn-close p-5 text-xl" aria-label="Close">
                 ${iconX()}
               </div>
@@ -180,7 +180,7 @@ demo.htmlSource = `
         <div class="listing-item w-full">
           <div class="listing-item_inner">
 
-            <div class="listing-front card ${cardDefault()}">
+            <div class="listing-front card rounded-md ${cardDefault()}">
               <div class="media-container flex-full rounded-t-md h-40">
                 <div class="media-inner">
                   <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
@@ -194,14 +194,14 @@ demo.htmlSource = `
                   Street lorem ipsum 42, 00134 City, Nation
                 </address>
                 <div class="list list-2 mt-auto justify-end">
-                  <button type="button" class="listing-action btn btn-md ${btnPrimary()}">
+                  <button type="button" class="listing-action btn btn-md rounded-md ${btnPrimary()}">
                       More info
                   </button>
                 </div>
               </div>
             </div>
 
-            <div class="listing-back h-full card ${cardDefault()}">
+            <div class="listing-back h-full card rounded-md ${cardDefault()}">
               <div class="btn btn-close p-5 text-xl" aria-label="Close">
                 ${iconX()}
               </div>
@@ -224,7 +224,7 @@ demo.htmlSource = `
         <div class="listing-item w-full">
           <div class="listing-item_inner">
 
-            <div class="listing-front card ${cardDefault()}">
+            <div class="listing-front card rounded-md ${cardDefault()}">
               <div class="media-container flex-full rounded-t-md h-40">
                 <div class="media-inner">
                   <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
@@ -238,14 +238,14 @@ demo.htmlSource = `
                   Street lorem ipsum 42, 00134 City, Nation
                 </address>
                 <div class="list list-2 mt-auto justify-end">
-                  <button type="button" class="listing-action btn btn-md ${btnPrimary()}">
+                  <button type="button" class="listing-action btn btn-md rounded-md ${btnPrimary()}">
                       More info
                   </button>
                 </div>
               </div>
             </div>
 
-            <div class="listing-back h-full card ${cardDefault()}">
+            <div class="listing-back h-full card rounded-md ${cardDefault()}">
               <div class="btn btn-close p-5 text-xl" aria-label="Close">
                 ${iconX()}
               </div>
@@ -280,7 +280,7 @@ demo.htmlSource = `
         <div class="listing-item w-full">
           <div class="listing-item_inner">
 
-            <div class="listing-front card ${cardDefault()}">
+            <div class="listing-front card rounded-md ${cardDefault()}">
               <div class="media-container flex-full rounded-t-md h-40">
                 <div class="media-inner">
                   <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
@@ -294,14 +294,14 @@ demo.htmlSource = `
                   Street lorem ipsum 42, 00134 City, Nation
                 </address>
                 <div class="list list-2 mt-auto justify-end">
-                  <button type="button" class="listing-action btn btn-md ${btnPrimary()}">
+                  <button type="button" class="listing-action btn btn-md rounded-md ${btnPrimary()}">
                       More info
                   </button>
                 </div>
               </div>
             </div>
 
-            <div class="listing-back h-full card ${cardDefault()}">
+            <div class="listing-back h-full card rounded-md ${cardDefault()}">
               <div class="btn btn-close p-5 text-xl" aria-label="Close">
                 ${iconX()}
               </div>

@@ -12,7 +12,7 @@ demo.htmlSource = `
 <div class="row row-3">
 
   <div class="w-full md:w-6/12">
-    <div class="card ${cardDefaultFull()}">
+    <div class="card rounded-md ${cardDefaultFull()}">
       <div class="media-container rounded-md ratio-37.5">
         <div class="media-inner">
           <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
@@ -22,7 +22,7 @@ demo.htmlSource = `
   </div>
 
   <div class="w-full md:w-6/12">
-    <div class="card ${cardDefaultFull()}">
+    <div class="card rounded-md ${cardDefaultFull()}">
       <div class="media-container rounded-t-md ratio-37.5">
         <div class="media-inner">
           <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
@@ -36,7 +36,7 @@ demo.htmlSource = `
   </div>
 
   <div class="w-full">
-    <div class="card ${cardDefaultFull()}">
+    <div class="card rounded-md ${cardDefaultFull()}">
       <div class="card-md rounded-md bg-gray-500">
         <div class="h4">Lorem ipsum</div>
       </div>

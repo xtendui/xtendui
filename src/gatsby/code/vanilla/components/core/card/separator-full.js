@@ -12,7 +12,7 @@ demo.htmlSource = `
 <div class="row row-3">
 
   <div class="w-full">
-    <div class="card ${cardDefaultFull()}">
+    <div class="card rounded-md ${cardDefaultFull()}">
       <div class="md:card-group">
         <div class="card-md px-0 pt-0 sm:pb-0 sm:pr-6 md:w-7/12">
           <div class="h4">Lorem ipsum</div>

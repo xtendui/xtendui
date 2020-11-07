@@ -18,69 +18,69 @@ demo.htmlSource = `
 <div class="row row-3 demo--scroll-block">
 
   <div class="w-full">
-    <button type="button" class="btn btn-md ${btnPrimary()} demo--scroll-block--btn">
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()} demo--scroll-block--btn">
       Click to block/unblock and fade out/in
     </button>
   </div>
 
   <div class="w-full">
-    <div class="card ${cardScroll()}">
+    <div class="card rounded-md ${cardScroll()}">
       <div class="h4">Lorem ipsum</div>
       <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
     </div>
   </div>
 
   <div class="w-full">
-    <div class="card ${cardScroll()}">
+    <div class="card rounded-md ${cardScroll()}">
       <div class="h4">Lorem ipsum</div>
       <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
     </div>
   </div>
 
   <div class="w-full md:w-6/12">
-    <div class="card ${cardScroll()}">
+    <div class="card rounded-md ${cardScroll()}">
       <div class="h4">Lorem ipsum</div>
       <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
     </div>
   </div>
 
   <div class="w-full md:w-6/12">
-    <div class="card ${cardScroll()}">
+    <div class="card rounded-md ${cardScroll()}">
       <div class="h4">Lorem ipsum</div>
       <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
     </div>
   </div>
 
   <div class="w-full md:w-6/12">
-    <div class="card ${cardScroll()}">
+    <div class="card rounded-md ${cardScroll()}">
       <div class="h4">Lorem ipsum</div>
       <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
     </div>
   </div>
 
   <div class="w-full md:w-6/12">
-    <div class="card ${cardScroll()}">
+    <div class="card rounded-md ${cardScroll()}">
       <div class="h4">Lorem ipsum</div>
       <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
     </div>
   </div>
 
   <div class="w-6/12 sm:w-4/12">
-    <div class="card ${cardScroll()}">
+    <div class="card rounded-md ${cardScroll()}">
       <div class="h4">Lorem ipsum</div>
       <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
     </div>
   </div>
 
   <div class="w-6/12 sm:w-4/12">
-    <div class="card ${cardScroll()}">
+    <div class="card rounded-md ${cardScroll()}">
       <div class="h4">Lorem ipsum</div>
       <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
     </div>
   </div>
 
   <div class="w-6/12 sm:w-4/12">
-    <div class="card ${cardScroll()}">
+    <div class="card rounded-md ${cardScroll()}">
       <div class="h4">Lorem ipsum</div>
       <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
     </div>

@@ -12,27 +12,27 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-2 items-center" data-xt-toggle="{ targets: '.demo--toggle-jump', jump: true }">
 
-  <button type="button" class="btn btn-md ${btnDefault()}">
+  <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
     Toggle 0
   </button>
 
-  <button type="button" class="btn btn-md ${btnDefault()}">
+  <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
     Toggle 1
   </button>
 
-  <button type="button" class="btn btn-md ${btnDefault()}">
+  <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
     Toggle 2
   </button>
 
-  <div class="card demo--toggle-jump ${cardToggle()}">
+  <div class="card demo--toggle-jump rounded-md ${cardToggle()}">
     Target 0
   </div>
 
-  <div class="card demo--toggle-jump ${cardToggle()}">
+  <div class="card demo--toggle-jump rounded-md ${cardToggle()}">
     Target 1
   </div>
 
-  <div class="card demo--toggle-jump ${cardToggle()}">
+  <div class="card demo--toggle-jump rounded-md ${cardToggle()}">
     Target 2
   </div>
 

@@ -16,7 +16,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
 
-    <button type="button" class="btn btn-md ${btnPrimary()}">
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       closed fixed
     </button>
 
@@ -24,7 +24,7 @@ demo.htmlSource = `
       <div class="overlay-container max-w-3xl">
         <div class="overlay-inner">
 
-          <div class="card items-center justify-center ${cardDefaultOverlay()}">
+          <div class="card items-center justify-center rounded-md ${cardDefaultOverlay()}">
             <div class="btn btn-close p-5 text-2xl fixed z-top" aria-label="Close">
               ${iconX()}
             </div>
@@ -57,7 +57,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
 
-    <button type="button" class="btn btn-md ${btnPrimary()}">
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       screen closed fixed
     </button>
 

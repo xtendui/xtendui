@@ -17,7 +17,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
 
-    <button type="button" class="btn btn-md ${btnPrimary()}">
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       default
     </button>
 
@@ -25,7 +25,7 @@ demo.htmlSource = `
       <div class="overlay-container max-w-3xl">
         <div class="overlay-inner">
 
-          <div class="card ${cardDefaultOverlay()}">
+          <div class="card rounded-md md:rounded-tr-none ${cardDefaultOverlay()}">
             <div class="btn btn-close p-5 text-2xl ${btnCloseOutside()} md:p-3 md:right-auto md:left-100" aria-label="Close">
               ${iconX()}
             </div>
@@ -46,7 +46,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
 
-    <button type="button" class="btn btn-md ${btnPrimary()}">
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       left
     </button>
 
@@ -75,7 +75,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
 
-    <button type="button" class="btn btn-md ${btnPrimary()}">
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       right
     </button>
 

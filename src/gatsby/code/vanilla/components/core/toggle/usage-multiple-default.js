@@ -12,35 +12,35 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-2 items-center" data-xt-toggle>
 
-  <button type="button" class="btn btn-md ${btnDefault()}">
+  <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
     Toggle 0
   </button>
 
-  <button type="button" class="btn btn-md ${btnDefault()}">
+  <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
     Toggle 1
   </button>
 
-  <button type="button" class="btn btn-md ${btnDefault()}">
+  <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
     Toggle 2
   </button>
 
-  <div class="card toggle ${cardToggle()}">
+  <div class="card toggle rounded-md ${cardToggle()}">
     Target 0
-    <div class="card toggle ${cardToggle()}">
+    <div class="card toggle rounded-md ${cardToggle()}">
       Nested targets are not toggled
     </div>
   </div>
 
-  <div class="card toggle ${cardToggle()}">
+  <div class="card toggle rounded-md ${cardToggle()}">
     Target 1
-    <div class="card toggle ${cardToggle()}">
+    <div class="card toggle rounded-md ${cardToggle()}">
       Nested targets are not toggled
     </div>
   </div>
 
-  <div class="card toggle ${cardToggle()}">
+  <div class="card toggle rounded-md ${cardToggle()}">
     Target 2
-    <div class="card toggle ${cardToggle()}">
+    <div class="card toggle rounded-md ${cardToggle()}">
       Nested targets are not toggled
     </div>
   </div>

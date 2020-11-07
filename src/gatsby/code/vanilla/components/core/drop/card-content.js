@@ -15,13 +15,13 @@ demo.htmlSource = `
 
   <div class="drop-container" data-xt-drop>
 
-    <button type="button" class="btn btn-md ${btnPrimary()}">
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       asset
     </button>
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="card w-80 ${cardDefaultDrop()}">
+        <div class="card w-80 rounded-md ${cardDefaultDrop()}">
           <div class="btn btn-close p-5 text-xl" aria-label="Close">
             ${iconX()}
           </div>
@@ -38,13 +38,13 @@ demo.htmlSource = `
 
   <div class="drop-container" data-xt-drop>
 
-    <button type="button" class="btn btn-md ${btnPrimary()}">
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       asset and text
     </button>
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="card w-80 ${cardDefaultDrop()}">
+        <div class="card w-80 rounded-md ${cardDefaultDrop()}">
           <div class="btn btn-close p-5 text-xl" aria-label="Close">
             ${iconX()}
           </div>
@@ -65,13 +65,13 @@ demo.htmlSource = `
 
   <div class="drop-container" data-xt-drop>
 
-    <button type="button" class="btn btn-md ${btnPrimary()}">
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       text
     </button>
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="card w-80 ${cardDefaultDrop()}">
+        <div class="card w-80 rounded-md ${cardDefaultDrop()}">
           <div class="card-md rounded-t-md bg-gray-500">
             <div class="h4">Lorem ipsum</div>
           </div>

@@ -62,7 +62,7 @@ module.exports = {
       fontSize: '0.8em',
       lineHeight: theme('lineHeight.snug'),
       // animation
-      transitionProperty: 'all',
+      transitionProperty: 'border, background, color',
       transitionDuration: theme('transitionDuration.500'),
       transitionTimingFunction: theme('transitionTimingFunction.in-out'),
     },

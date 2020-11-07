@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="card ${cardDefaultfull()}">
+<div class="card rounded-md ${cardDefaultfull()}">
   <div class="card-md p-0">
     <div class="list list-3 flex-nowrap items-baseline">
       <div>

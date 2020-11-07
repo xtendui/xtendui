@@ -13,7 +13,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-2 items-center justify-center">
 
-  <div class="card ${cardPrimary()}">
+  <div class="card rounded-md ${cardPrimary()}">
     <div class="card-sm">
       <div class="h5">Small</div>
       <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
@@ -25,7 +25,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <button type="button" class="btn btn-md ${btnPrimary()}">
+  <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
     Lorem ipsum
     <span class="loader">
       <span class="spinner spinner-animated text-white">

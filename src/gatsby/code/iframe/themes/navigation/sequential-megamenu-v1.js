@@ -26,7 +26,7 @@ demo.htmlSource = `
 
         <div class="drop-container drop-container-static">
 
-          <a href="#menu1" type="button" class="btn btn-lg btn-line py-6">
+          <a href="#menu1" type="button" class="btn btn-lg rounded-md btn-line py-6">
             Menu #1
           </a>
 
@@ -46,7 +46,7 @@ demo.htmlSource = `
                       </div>
                     </div>
 
-                    <div class="w-full md:w-8/12 lg:w-9/12">
+                    <div class="w-6/12 md:w-8/12 lg:w-9/12">
                       <div class="row row-2 flex-col flex-wrap" style="max-height: 15rem;">
 
                         <div class="w-full md:w-4/12">
@@ -54,16 +54,16 @@ demo.htmlSource = `
                             Lorem ipsum
                           </a>
                           <div class="list flex-col">
-                            <a href="#" class="btn btn-sm text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
+                            <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
                               Lorem ipsum
                             </a>
-                            <a href="#" class="btn btn-sm text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
+                            <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
                               Dolor sit amet
                             </a>
-                            <a href="#" class="btn btn-sm text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
+                            <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
                               Consectetur
                             </a>
-                            <a href="#" class="btn btn-sm text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
+                            <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
                               Adipiscing elit
                             </a>
                           </div>
@@ -74,10 +74,10 @@ demo.htmlSource = `
                             Dolor sit amet
                           </a>
                           <div class="list flex-col">
-                            <a href="#" class="btn btn-sm text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
+                            <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
                               Lorem ipsum
                             </a>
-                            <a href="#" class="btn btn-sm text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
+                            <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
                               Dolor sit amet
                             </a>
                           </div>
@@ -109,7 +109,7 @@ demo.htmlSource = `
 
         <div class="drop-container drop-container-static">
 
-          <a href="#menu2" type="button" class="btn btn-lg btn-line py-6">
+          <a href="#menu2" type="button" class="btn btn-lg rounded-md btn-line py-6">
             Menu #2
           </a>
 
@@ -124,12 +124,12 @@ demo.htmlSource = `
                     <div class="w-full md:w-4/12 lg:w-3/12 pr-6">
                       <div class="media-container ratio-100">
                         <div class="media-inner">
-                          <img class="media object-cover object-center" src="/img-ratio.svg" loading="lazy" alt="">
+                          <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
                         </div>
                       </div>
                     </div>
 
-                    <div class="w-full md:w-8/12 lg:w-9/12">
+                    <div class="w-6/12 md:w-8/12 lg:w-9/12">
                       <div class="row row-2 flex-col flex-wrap" style="max-height: 20rem;">
 
                         <div class="w-full md:w-4/12">
@@ -137,28 +137,28 @@ demo.htmlSource = `
                             Lorem ipsum
                           </a>
                           <div class="list flex-col">
-                            <a href="#" class="btn btn-sm text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
+                            <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
                               Lorem ipsum
                             </a>
-                            <a href="#" class="btn btn-sm text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
+                            <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
                               Dolor sit amet
                             </a>
-                            <a href="#" class="btn btn-sm text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
+                            <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
                               Consectetur
                             </a>
-                            <a href="#" class="btn btn-sm text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
+                            <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
                               Adipiscing elit
                             </a>
-                            <a href="#" class="btn btn-sm text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
+                            <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
                               Lorem ipsum
                             </a>
-                            <a href="#" class="btn btn-sm text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
+                            <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
                               Dolor sit amet
                             </a>
-                            <a href="#" class="btn btn-sm text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
+                            <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
                               Consectetur
                             </a>
-                            <a href="#" class="btn btn-sm text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
+                            <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
                               Adipiscing elit
                             </a>
                           </div>
@@ -169,16 +169,16 @@ demo.htmlSource = `
                             Dolor sit amet
                           </a>
                           <div class="list flex-col">
-                            <a href="#" class="btn btn-sm text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
+                            <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
                               Lorem ipsum
                             </a>
-                            <a href="#" class="btn btn-sm text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
+                            <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
                               Dolor sit amet
                             </a>
-                            <a href="#" class="btn btn-sm text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
+                            <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
                               Lorem ipsum
                             </a>
-                            <a href="#" class="btn btn-sm text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
+                            <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
                               Dolor sit amet
                             </a>
                           </div>
@@ -210,7 +210,7 @@ demo.htmlSource = `
 
         <div class="drop-container drop-container-static">
 
-          <a href="#menu3" type="button" class="btn btn-lg btn-line py-6">
+          <a href="#menu3" type="button" class="btn btn-lg rounded-md btn-line py-6">
             Menu #3
           </a>
 
@@ -223,14 +223,14 @@ demo.htmlSource = `
                   <div class="row row-4">
 
                     <div class="w-full md:w-4/12 lg:w-3/12 pr-6">
-                      <div class="media-container ratio-75">
+                      <div class="media-container ratio-50">
                         <div class="media-inner">
-                          <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
+                          <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
                         </div>
                       </div>
                     </div>
 
-                    <div class="w-full md:w-8/12 lg:w-9/12">
+                    <div class="w-6/12 md:w-8/12 lg:w-9/12">
                       <div class="row row-2 flex-col flex-wrap" style="max-height: 15rem;">
 
                         <div class="w-full md:w-4/12">
@@ -238,16 +238,16 @@ demo.htmlSource = `
                             Lorem ipsum
                           </a>
                           <div class="list flex-col">
-                            <a href="#" class="btn btn-sm text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
+                            <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
                               Lorem ipsum
                             </a>
-                            <a href="#" class="btn btn-sm text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
+                            <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
                               Dolor sit amet
                             </a>
-                            <a href="#" class="btn btn-sm text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
+                            <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
                               Consectetur
                             </a>
-                            <a href="#" class="btn btn-sm text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
+                            <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
                               Adipiscing elit
                             </a>
                           </div>
@@ -258,10 +258,10 @@ demo.htmlSource = `
                             Dolor sit amet
                           </a>
                           <div class="list flex-col">
-                            <a href="#" class="btn btn-sm text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
+                            <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
                               Lorem ipsum
                             </a>
-                            <a href="#" class="btn btn-sm text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
+                            <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
                               Dolor sit amet
                             </a>
                           </div>
@@ -279,11 +279,11 @@ demo.htmlSource = `
 
         </div>
 
-        <a href="#menu4" class="btn btn-lg btn-line py-6">
+        <a href="#menu4" class="btn btn-lg rounded-md btn-line py-6">
           Link #4
         </a>
 
-        <a href="#menu5" class="btn btn-lg btn-line py-6">
+        <a href="#menu5" class="btn btn-lg rounded-md btn-line py-6">
           Link #5
         </a>
 
@@ -295,7 +295,7 @@ demo.htmlSource = `
   <!-- mouse events instead of click you can remove this -->
   <div class="container pt-4">
     <label class="form-label-check">
-      <input type="checkbox" class="form-check form-checkbox ${checkDefault()}">
+      <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}">
       <span class="ml-3">Use mouse events</span>
     </label>
   </div>

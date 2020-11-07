@@ -12,15 +12,15 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-2 items-center text-white links-inverse py-4 px-6 bg-accent-500">
 
-  <button type="button" class="btn btn-md">
+  <button type="button" class="btn btn-md rounded-md">
     btn
   </button>
 
-  <button type="button" class="btn btn-md ${btnDefault()}">
+  <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
     default
   </button>
 
-  <button type="button" class="btn btn-md ${btnPrimary()}">
+  <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
     primary
   </button>
 
@@ -28,7 +28,7 @@ demo.htmlSource = `
     link
   </button>
 
-  <button type="button" class="btn btn-md text-reset">
+  <button type="button" class="btn btn-md rounded-md text-reset">
     text
   </button>
 

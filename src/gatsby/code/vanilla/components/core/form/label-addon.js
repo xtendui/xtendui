@@ -27,7 +27,7 @@ demo.htmlSource = `
           </div>
         </div>
       </label>
-      <input type="text" class="form-item ${inputDefault()}" aria-label="Lorem ipsum"/>
+      <input type="text" class="form-item rounded-md ${inputDefault()}" aria-label="Lorem ipsum"/>
     </div>
 
     <div class="w-full">
@@ -44,7 +44,7 @@ demo.htmlSource = `
           </div>
         </div>
       </label>
-      <input type="text" class="form-item ${inputDefault()}" aria-label="Dolor sit amet"/>
+      <input type="text" class="form-item rounded-md ${inputDefault()}" aria-label="Dolor sit amet"/>
     </div>
 
     <div class="w-full">
@@ -67,7 +67,7 @@ demo.htmlSource = `
         </div>
 
         <div class="w-full md:w-10/12">
-          <input type="text" class="form-item ${inputDefault()}" aria-label="Lorem ipsum"/>
+          <input type="text" class="form-item rounded-md ${inputDefault()}" aria-label="Lorem ipsum"/>
         </div>
 
       </div>
@@ -93,7 +93,7 @@ demo.htmlSource = `
         </div>
 
         <div class="w-full md:w-10/12">
-          <input type="text" class="form-item ${inputDefault()}" aria-label="Dolor sit amet"/>
+          <input type="text" class="form-item rounded-md ${inputDefault()}" aria-label="Dolor sit amet"/>
         </div>
 
       </div>

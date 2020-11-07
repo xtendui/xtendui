@@ -20,7 +20,7 @@ demo.htmlSource = `
 
 <div class="demo--sticky-block">
   <div class="card ${cardStickyPrimary()}">
-    <button type="button" class="btn btn-md ${btnPrimary()} demo--sticky-block--btn">
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()} demo--sticky-block--btn">
       Click to block/unblock
     </button>
   </div>

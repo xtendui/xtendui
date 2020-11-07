@@ -33,7 +33,7 @@ demo.htmlSource = `
             <div class="list">
               <div class="list-inner flex-auto">
                 <input type="text" class="form-item rounded-l-md ${inputDefaultGroup()}" placeholder="Search">
-                <button type="button" class="btn-locate btn btn-md ${btnDefaultGroup()}">
+                <button type="button" class="btn-locate btn btn-md rounded-md ${btnDefaultGroup()}">
                   ${iconLocate({ classes: 'icon-lg' })}
                 </button>
                 <button type="button" class="btn-search btn btn-md rounded-r-md ${btnDefaultGroup()}">
@@ -45,28 +45,28 @@ demo.htmlSource = `
 
           <div class="w-full">
             <label class="form-label-check">
-              <input type="radio" class="form-check form-radio ${switchDefault()}" name="google-locator-options" value="" checked/>
+              <input type="radio" class="form-check form-radio rounded-full ${switchDefault()}" name="google-locator-options" value="" checked/>
               <span class="ml-3">All types</span>
             </label>
           </div>
 
           <div class="w-full">
             <label class="form-label-check">
-              <input type="radio" class="form-check form-radio ${switchDefault()}" name="google-locator-options" value="restaurant"/>
+              <input type="radio" class="form-check form-radio rounded-full ${switchDefault()}" name="google-locator-options" value="restaurant"/>
               <span class="ml-3">Restaurant</span>
             </label>
           </div>
 
           <div class="w-full">
             <label class="form-label-check" for="google-locator-options-school">
-              <input type="radio" class="form-check form-radio ${switchDefault()}" id="google-locator-options-school" name="google-locator-options" value="school"/>
+              <input type="radio" class="form-check form-radio rounded-full ${switchDefault()}" id="google-locator-options-school" name="google-locator-options" value="school"/>
               <span class="ml-3">School</span>
             </label>
           </div>
 
           <div class="w-full">
             <label class="form-label-check" for="google-locator-options-fav">
-              <input type="checkbox" class="form-check form-switch ${switchDefault()}" id="google-locator-options-fav" name="google-locator-fav" value="fav"/>
+              <input type="checkbox" class="form-check form-switch rounded-full ${switchDefault()}" id="google-locator-options-fav" name="google-locator-fav" value="fav"/>
               <span class="ml-3">Favourite</span>
             </label>
           </div>
@@ -129,7 +129,7 @@ demo.htmlSource = `
       <div class="google-locator-main-map">
       </div>
 
-      <button type="button" class="btn-repeat btn btn-md ${btnPrimary()}">
+      <button type="button" class="btn-repeat btn btn-md rounded-md ${btnPrimary()}">
         Search in this area
       </button>
 

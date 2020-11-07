@@ -15,13 +15,13 @@ demo.htmlSource = `
 
   <div class="drop-container" data-xt-drop>
 
-    <button type="button" class="btn btn-md ${btnPrimary()}">
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       small
     </button>
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="w-64 py-3 ${cardDefaultDropList()}">
+        <div class="w-64 py-3 rounded-md ${cardDefaultDropList()}">
           <nav class="list flex-col">
             <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -41,13 +41,13 @@ demo.htmlSource = `
 
   <div class="drop-container" data-xt-drop>
 
-    <button type="button" class="btn btn-md ${btnPrimary()}">
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       medium
     </button>
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="w-80 py-3 ${cardDefaultDropList()}">
+        <div class="w-80 py-3 rounded-md ${cardDefaultDropList()}">
           <nav class="list flex-col">
             <a href="#" class="btn btn-md ${btnDefaultDrop()}">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -67,13 +67,13 @@ demo.htmlSource = `
 
   <div class="drop-container" data-xt-drop>
 
-    <button type="button" class="btn btn-md ${btnPrimary()}">
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       large
     </button>
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="w-96 py-3 ${cardDefaultDropList()}">
+        <div class="w-96 py-3 rounded-md ${cardDefaultDropList()}">
           <nav class="list flex-col">
             <a href="#" class="btn btn-lg ${btnDefaultDrop()}">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit

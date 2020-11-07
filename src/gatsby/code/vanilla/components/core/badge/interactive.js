@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-1">
+<div class="list list-1 items-center">
 
   <a role="button" class="badge badge-md ${badgeDefaultInteractive()}">
     Default

@@ -12,15 +12,15 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-2 items-center">
 
-  <button type="button" class="btn btn-md active" aria-selected="true">
+  <button type="button" class="btn btn-md rounded-md active" aria-selected="true">
     btn
   </button>
 
-  <button type="button" class="btn btn-md active ${btnDefault()}" aria-selected="true">
+  <button type="button" class="btn btn-md rounded-md active ${btnDefault()}" aria-selected="true">
     default
   </button>
 
-  <button type="button" class="btn btn-md active ${btnPrimary()}" aria-selected="true">
+  <button type="button" class="btn btn-md rounded-md active ${btnPrimary()}" aria-selected="true">
     primary
   </button>
 

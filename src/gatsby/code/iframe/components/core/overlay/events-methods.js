@@ -19,34 +19,34 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="list list-1 items-center mb-4">
-  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--overlay-events-first-element">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--overlay-events-first-element">
     1st element
   </button>
-  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--overlay-events-first-target">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--overlay-events-first-target">
     1st target
   </button>
-  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--overlay-events-block">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--overlay-events-block">
     Block/Unblock
   </button>
-  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--overlay-events-reinit">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--overlay-events-reinit">
     Reinit
   </button>
-  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--overlay-events-restart">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--overlay-events-restart">
     Restart
   </button>
-  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--overlay-events-destroy">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--overlay-events-destroy">
     Destroy
   </button>
-  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--overlay-events-unmount">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--overlay-events-unmount">
     Unmount
   </button>
 </div>
 
 <div class="list list-1 items-center mb-4">
-  <button type="button" class="btn btn-md ${btnDefault()}" id="demo--overlay-events">
+  <button type="button" class="btn btn-md rounded-md ${btnDefault()}" id="demo--overlay-events">
     Toggle 0
   </button>
-  <button type="button" class="btn btn-md ${btnDefault()}" id="demo--overlay-events-alt">
+  <button type="button" class="btn btn-md rounded-md ${btnDefault()}" id="demo--overlay-events-alt">
     Toggle 1
   </button>
 </div>
@@ -55,7 +55,7 @@ demo.htmlSource = `
   <div class="overlay-container max-w-5xl">
     <div class="overlay-inner">
 
-      <div class="card ${cardDefaultOverlay()}">
+      <div class="card rounded-md ${cardDefaultOverlay()}">
         <div class="btn btn-close p-5 text-2xl" aria-label="Close">
           ${iconX()}
         </div>
@@ -72,7 +72,7 @@ demo.htmlSource = `
   </div>
 </div>
 
-<div class="card ${cardDefault()} mt-6">
+<div class="card rounded-md ${cardDefault()} mt-6">
   <div class="card-sm overflow-y-auto overflow-x-hidden overflow-sub max-h-56" id="demo--overlay-events-log">
   </div>
 </div>

@@ -14,7 +14,7 @@ demo.htmlSource = `
 <div class="row row-3">
 
   <div class="w-full md:w-6/12">
-    <div class="card ${cardDefault()}">
+    <div class="card rounded-md ${cardDefault()}">
       <div class="btn btn-close p-5 text-xl" aria-label="Close">
         ${iconX()}
       </div>
@@ -26,7 +26,7 @@ demo.htmlSource = `
   </div>
 
   <div class="w-full md:w-6/12">
-    <div class="card ${cardPrimary()}">
+    <div class="card rounded-md ${cardPrimary()}">
       <div class="btn btn-close p-5 text-xl" aria-label="Close">
         ${iconX()}
       </div>

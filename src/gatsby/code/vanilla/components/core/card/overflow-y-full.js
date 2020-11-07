@@ -12,7 +12,7 @@ demo.htmlSource = `
 <div class="row row-3">
 
   <div class="w-full md:w-6/12">
-    <div class="card ${cardDefaultFull()} overflow-y-auto overflow-x-hidden overflow-sub max-h-96">
+    <div class="card rounded-md ${cardDefaultFull()} overflow-y-auto overflow-x-hidden overflow-sub max-h-96">
       <div class="media-container rounded-md ratio-37.5">
         <div class="media-inner">
           <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
@@ -28,7 +28,7 @@ demo.htmlSource = `
   </div>
 
   <div class="w-full md:w-6/12">
-    <div class="card ${cardDefaultFull()}">
+    <div class="card rounded-md ${cardDefaultFull()}">
       <div class="media-container rounded-md ratio-37.5">
         <div class="media-inner">
           <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">

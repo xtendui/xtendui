@@ -11,15 +11,15 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-2 items-center">
 
-  <button type="button" class="btn btn-sm ${btnPrimary()}">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}">
     small
   </button>
 
-  <button type="button" class="btn btn-md ${btnPrimary()}">
+  <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
     medium
   </button>
 
-  <button type="button" class="btn btn-lg ${btnPrimary()}">
+  <button type="button" class="btn btn-lg rounded-md ${btnPrimary()}">
     large
   </button>
 

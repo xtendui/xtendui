@@ -28,10 +28,10 @@ demo.htmlSource = `
       </div>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
       <div class="list list-2 justify-center md:justify-start">
-        <a href="#" class="btn btn-md ${btnPrimary()}">
+        <a href="#" class="btn btn-md rounded-md ${btnPrimary()}">
           Lorem ipsum
         </a>
-        <a href="#" class="btn btn-md ${btnPrimary()}">
+        <a href="#" class="btn btn-md rounded-md ${btnPrimary()}">
           Dolor sit amet
         </a>
       </div>
@@ -53,10 +53,10 @@ demo.htmlSource = `
       </div>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
       <div class="list list-2 justify-center md:justify-start">
-        <a href="#" class="btn btn-md ${btnPrimary()}">
+        <a href="#" class="btn btn-md rounded-md ${btnPrimary()}">
           Lorem ipsum
         </a>
-        <a href="#" class="btn btn-md ${btnPrimary()}">
+        <a href="#" class="btn btn-md rounded-md ${btnPrimary()}">
           Dolor sit amet
         </a>
       </div>
@@ -78,10 +78,10 @@ demo.htmlSource = `
       </div>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
       <div class="list list-2 justify-center md:justify-end">
-        <a href="#" class="btn btn-md ${btnPrimary()}">
+        <a href="#" class="btn btn-md rounded-md ${btnPrimary()}">
           Lorem ipsum
         </a>
-        <a href="#" class="btn btn-md ${btnPrimary()}">
+        <a href="#" class="btn btn-md rounded-md ${btnPrimary()}">
           Dolor sit amet
         </a>
       </div>

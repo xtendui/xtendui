@@ -16,17 +16,17 @@ demo.htmlSource = `
 
 <div class="list list-2 items-center">
 
-  <button type="button" class="btn btn-sm ${btnPrimary()}">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}">
     icon small
     ${iconSearch({ classes: 'icon-sm ml-1' })}
   </button>
 
-  <button type="button" class="btn btn-sm ${btnPrimary()}">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}">
     icon medium
     ${iconSearch({ classes: 'icon-md ml-1' })}
   </button>
 
-  <button type="button" class="btn btn-sm ${btnPrimary()}">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}">
     icon large
     ${iconSearch({ classes: 'icon-lg ml-1' })}
   </button>
@@ -39,17 +39,17 @@ demo.htmlSource = `
 
 <div class="list list-2 items-center">
 
-  <button type="button" class="btn btn-md ${btnPrimary()}">
+  <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
     icon small
     ${iconSearch({ classes: 'icon-sm ml-1.5' })}
   </button>
 
-  <button type="button" class="btn btn-md ${btnPrimary()}">
+  <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
     icon medium
     ${iconSearch({ classes: 'icon-md ml-1.5' })}
   </button>
 
-  <button type="button" class="btn btn-md ${btnPrimary()}">
+  <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
     icon large
     ${iconSearch({ classes: 'icon-lg ml-1.5' })}
   </button>
@@ -62,17 +62,17 @@ demo.htmlSource = `
 
 <div class="list list-2 items-center">
 
-  <button type="button" class="btn btn-lg ${btnPrimary()}">
+  <button type="button" class="btn btn-lg rounded-md ${btnPrimary()}">
     icon small
     ${iconSearch({ classes: 'icon-sm ml-2' })}
   </button>
 
-  <button type="button" class="btn btn-lg ${btnPrimary()}">
+  <button type="button" class="btn btn-lg rounded-md ${btnPrimary()}">
     icon medium
     ${iconSearch({ classes: 'icon-md ml-2' })}
   </button>
 
-  <button type="button" class="btn btn-lg ${btnPrimary()}">
+  <button type="button" class="btn btn-lg rounded-md ${btnPrimary()}">
     icon large
     ${iconSearch({ classes: 'icon-lg ml-2' })}
   </button>

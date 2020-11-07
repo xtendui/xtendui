@@ -18,7 +18,7 @@ demo.htmlSource = `
       <label class="form-label mb-3 ${labelDefault()}">
         Textarea autosize
       </label>
-      <textarea class="form-item ${inputDefault()} overflow-hidden resize-none duration-none" data-xt-textarea-autosize></textarea>
+      <textarea class="form-item rounded-md ${inputDefault()} overflow-hidden resize-none" data-xt-textarea-autosize></textarea>
     </div>
 
   </div>

@@ -17,13 +17,13 @@ demo.htmlSource = `
 
   <div class="drop-container demo--drop-container-disable" data-xt-drop>
 
-    <button type="button" class="btn btn-md ${btnPrimary()}">
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       disable sm
     </button>
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="w-64 py-3 ${cardDefaultDropList()}">
+        <div class="w-64 py-3 rounded-md ${cardDefaultDropList()}">
           <nav class="list flex-col">
             <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -39,7 +39,7 @@ demo.htmlSource = `
 
               <div class="drop drop-center drop-middle">
                 <div class="drop-inner">
-                  <div class="w-64 py-3 ${cardPrimaryDropList()}">
+                  <div class="w-64 py-3 rounded-md ${cardPrimaryDropList()}">
                     <nav class="list flex-col">
                       <a href="#" class="btn btn-sm ${btnPrimaryDrop()}">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit

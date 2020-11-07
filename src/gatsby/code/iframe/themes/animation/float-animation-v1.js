@@ -71,7 +71,7 @@ demo.htmlSource = `
     <div class="drop group duration-700"> <!-- needed for animation time, put max animation time -->
       <div class="drop-inner">
         <div class="design-setup rounded-md ${cardDesign}"></div>
-        <div class="w-64 py-3 ${cardContent}">
+        <div class="w-64 py-3 rounded-md ${cardContent}">
           <nav class="list flex-col">
             <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -98,7 +98,7 @@ demo.htmlSource = `
     <div class="drop group duration-700"> <!-- needed for animation time, put max animation time -->
       <div class="drop-inner">
         <div class="design-setup rounded-md ${cardDesign}"></div>
-        <div class="card w-80 ${cardContent}">
+        <div class="card w-80 rounded-md ${cardContent}">
           <div class="btn btn-close p-5 text-xl" aria-label="Close">
             ${iconX()}
           </div>
@@ -130,7 +130,7 @@ demo.htmlSource = `
 
           <div class="design-setup rounded-md ${cardDesign}"></div>
 
-          <div class="card items-center justify-center ${cardContent}">
+          <div class="card items-center justify-center rounded-md ${cardContent}">
             <div class="btn btn-close p-5 text-2xl fixed z-top" aria-label="Close">
               ${iconX()}
             </div>
@@ -156,7 +156,7 @@ demo.htmlSource = `
       <div class="overlay-container max-w-md ml-0 mr-auto">
         <div class="overlay-inner">
 
-          <div class="design-setup rounded-md ${cardDesign}"></div>
+          <div class="design-setup ${cardDesign}"></div>
 
           <div class="card ${cardContent}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
@@ -203,9 +203,9 @@ demo.htmlSource = `
       <div class="overlay-container max-w-5xl">
         <div class="overlay-inner">
 
-          <div class="design-setup rounded-md md:rounded-tr-none ${cardDesign}"></div>
+          <div class="design-setup rounded-md md:rounded-tr-none rounded-md ${cardDesign}"></div>
 
-          <div class="card ${cardContent}">
+          <div class="card rounded-md ${cardContent}">
             <div class="btn btn-close p-5 text-2xl ${btnCloseOutside()} md:p-3 md:right-auto md:left-100" aria-label="Close">
               ${iconX()}
             </div>
@@ -224,35 +224,35 @@ demo.htmlSource = `
                       <label class="form-label mb-3 ${labelDefault()}">
                         Name
                       </label>
-                      <input type="text" class="form-item ${inputDefault()}" aria-label="Name">
+                      <input type="text" class="form-item rounded-md ${inputDefault()}" aria-label="Name">
                     </div>
 
                     <div class="w-full md:w-6/12">
                       <label class="form-label mb-3 ${labelDefault()}">
                         Surname
                       </label>
-                      <input type="text" class="form-item ${inputDefault()}" aria-label="Surname">
+                      <input type="text" class="form-item rounded-md ${inputDefault()}" aria-label="Surname">
                     </div>
 
                     <div class="w-full md:w-6/12">
                       <label class="form-label mb-3 ${labelDefault()}">
                         Email
                       </label>
-                      <input type="text" class="form-item ${inputDefault()}" aria-label="Email">
+                      <input type="text" class="form-item rounded-md ${inputDefault()}" aria-label="Email">
                     </div>
 
                     <div class="w-full md:w-6/12">
                       <label class="form-label mb-3 ${labelDefault()}">
                         Telephone
                       </label>
-                      <input type="text" class="form-item ${inputDefault()}" aria-label="Telephone">
+                      <input type="text" class="form-item rounded-md ${inputDefault()}" aria-label="Telephone">
                     </div>
 
                     <div class="w-full">
                       <label class="form-label mb-3 ${labelDefault()}">
                         Subject
                       </label>
-                      <select class="form-item form-select ${inputDefault()}" aria-label="Subject">
+                      <select class="form-item form-select rounded-md ${inputDefault()}" aria-label="Subject">
                         <option selected value="">Select an option</option>
                         <option>Test</option>
                         <option>Test</option>
@@ -264,12 +264,12 @@ demo.htmlSource = `
                       <label class="form-label mb-3 ${labelDefault()}">
                         Message
                       </label>
-                      <textarea class="form-item ${inputDefault()} h-24 resize-vertical" aria-label="Message"></textarea>
+                      <textarea class="form-item rounded-md ${inputDefault()} h-24 resize-vertical" aria-label="Message"></textarea>
                     </div>
 
                     <div class="w-full">
                       <label class="form-label-check">
-                        <input type="checkbox" class="form-check form-checkbox ${checkDefault()}">
+                        <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}">
                         <span class="ml-3">
                           I <strong>read and accept</strong> the <a href="#" target="_blank" rel="noopener">sales conditions</a> and the <a href="#" target="_blank" rel="noopener">privacy policy</a>.
                         </span>
@@ -295,7 +295,7 @@ demo.htmlSource = `
                       Contact our customer service at <a href="tel:+39333010101">+39 333 010101</a> or email us at <a href="mailto:info@info.com">info@info.com</a>.
                   </p>
                 </div>
-                <div class="media-container rounded-b-md md:rounded-bl-none md:rounded-br-md h-32 lg:ratio-100">
+                <div class="media-container rounded-b-md md:rounded-bl-none md:rounded-br-md h-48 md:ratio-100">
                   <div class="media-inner">
                     <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
                   </div>
@@ -322,9 +322,9 @@ demo.htmlSource = `
       <div class="overlay-container max-w-5xl">
         <div class="overlay-inner">
 
-          <div class="design-setup rounded-md md:rounded-tr-none ${cardDesign}"></div>
+          <div class="design-setup rounded-md md:rounded-tr-none rounded-md ${cardDesign}"></div>
 
-          <div class="card ${cardContent}">
+          <div class="card rounded-md ${cardContent}">
             <div class="btn btn-close p-5 text-2xl ${btnCloseOutside()} md:p-3 md:right-auto md:left-100" aria-label="Close">
               ${iconX()}
             </div>
@@ -351,7 +351,7 @@ demo.htmlSource = `
                       <label class="form-label mb-3 ${labelDefault()}">
                         Email
                       </label>
-                      <input type="text" class="form-item ${inputDefault()}" aria-label="Email">
+                      <input type="text" class="form-item rounded-md ${inputDefault()}" aria-label="Email">
                     </div>
 
                     <div class="w-full">
@@ -364,7 +364,7 @@ demo.htmlSource = `
 
                         <div class="w-full sm:w-auto">
                           <label class="form-label-check">
-                            <input type="radio" class="form-check form-radio ${radioDefault()}" name="radio-usage" checked>
+                            <input type="radio" class="form-check form-radio rounded-full ${radioDefault()}" name="radio-usage" checked>
                             <span class="ml-3">
                               Option 1
                             </span>
@@ -373,7 +373,7 @@ demo.htmlSource = `
 
                         <div class="w-full sm:w-auto">
                           <label class="form-label-check">
-                            <input type="radio" class="form-check form-radio ${radioDefault()}" name="radio-usage">
+                            <input type="radio" class="form-check form-radio rounded-full ${radioDefault()}" name="radio-usage">
                             <span class="ml-3">
                               Option 2
                             </span>
@@ -382,7 +382,7 @@ demo.htmlSource = `
 
                         <div class="w-full sm:w-auto">
                           <label class="form-label-check">
-                            <input type="radio" class="form-check form-radio ${radioDefault()}" name="radio-usage">
+                            <input type="radio" class="form-check form-radio rounded-full ${radioDefault()}" name="radio-usage">
                             <span class="ml-3">
                               Option 3
                             </span>
@@ -395,7 +395,7 @@ demo.htmlSource = `
 
                     <div class="w-full">
                       <label class="form-label-check">
-                        <input type="checkbox" class="form-check form-checkbox ${checkDefault()}">
+                        <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}">
                         <span class="ml-3">
                           I <strong>read and accept</strong> the <a href="#" target="_blank" rel="noopener">sales conditions</a> and the <a href="#" target="_blank" rel="noopener">privacy policy</a>.
                         </span>

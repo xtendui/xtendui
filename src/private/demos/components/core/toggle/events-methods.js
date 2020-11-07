@@ -88,11 +88,11 @@ Xt.mount.push({
         logAdd('<strong>add</strong>')
         // elements
         const elIndex = self.getElementsGroups().length
-        const strEl = `<button type="button" class="btn btn-md ${btnDefault()}">Toggle ${elIndex}</button>`
+        const strEl = `<button type="button" class="btn btn-md rounded-md ${btnDefault()}">Toggle ${elIndex}</button>`
         document.querySelector('#demo--toggle-events-elements').append(Xt.createElement(strEl))
         // targets
         const indexTr = self.getTargetsGroups().length
-        const strTr = `<div class="card toggle ${cardToggle()}">Target ${indexTr}</div>`
+        const strTr = `<div class="card toggle rounded-md ${cardToggle()}">Target ${indexTr}</div>`
         document.querySelector('#demo--toggle-events-targets').append(Xt.createElement(strTr))
         // reinit
         logAdd('<strong>reinit</strong>')

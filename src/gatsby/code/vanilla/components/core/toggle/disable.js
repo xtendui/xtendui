@@ -12,19 +12,19 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-2 items-center xt-disable" data-xt-toggle>
 
-  <button type="button" class="btn btn-md ${btnDefault()}">
+  <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
     Toggle 0
   </button>
 
-  <button type="button" class="btn btn-md ${btnDefault()}">
+  <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
     Toggle 1
   </button>
 
-  <div class="card toggle ${cardToggle()}">
+  <div class="card toggle rounded-md ${cardToggle()}">
     Target 0
   </div>
 
-  <div class="card toggle in-toggle ${cardToggle()}">
+  <div class="card toggle in-toggle rounded-md ${cardToggle()}">
     Target 1
   </div>
 
@@ -34,19 +34,19 @@ demo.htmlSource = `
 
 <div class="list list-2 items-center xt-disable-after-init" data-xt-toggle>
 
-  <button type="button" class="btn btn-md ${btnDefault()}">
+  <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
     Toggle 0
   </button>
 
-  <button type="button" class="btn btn-md ${btnDefault()}">
+  <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
     Toggle 1
   </button>
 
-  <div class="card toggle ${cardToggle()}">
+  <div class="card toggle rounded-md ${cardToggle()}">
     Target 0
   </div>
 
-  <div class="card toggle in-toggle ${cardToggle()}">
+  <div class="card toggle in-toggle rounded-md ${cardToggle()}">
     Target 1
   </div>
 

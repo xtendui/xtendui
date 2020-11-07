@@ -23,7 +23,7 @@ demo.htmlSource = `
       <input type="text" class="form-item rounded-tr-md rounded-br-md ${inputDefaultGroup()}" placeholder="Insert search query" />
     </div>
 
-    <button type="button" class="btn btn-md rounded-md ${btnPrimaryGroup()}">
+    <button type="button" class="btn btn-md ${btnPrimaryGroup()}">
       Search
     </button>
 

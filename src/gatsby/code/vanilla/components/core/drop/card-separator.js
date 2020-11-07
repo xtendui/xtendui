@@ -14,13 +14,13 @@ demo.htmlSource = `
 
   <div class="drop-container" data-xt-drop>
 
-    <button type="button" class="btn btn-md ${btnPrimary()}">
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       separator
     </button>
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="card w-screen max-w-2xl ${cardDefaultDrop()}">
+        <div class="card w-screen max-w-2xl rounded-md ${cardDefaultDrop()}">
           <div class="md:card-group">
             <div class="card-md md:w-7/12">
               <div class="h4">Lorem ipsum</div>

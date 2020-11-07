@@ -90,7 +90,7 @@ Xt.mount.push({
         const indexTr = targets.length + 1
         const strTr = `
         <div class="slide w-6/12 sm:w-4/12 opacity-50 active:opacity-100">
-          <div class="card ${cardSlide()}">
+          <div class="card rounded-md ${cardSlide()}">
             <div class="h4">${indexTr}</div>
           </div>
         </div>

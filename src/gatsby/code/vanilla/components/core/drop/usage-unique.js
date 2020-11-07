@@ -11,7 +11,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<button type="button" class="btn btn-md ${btnPrimary()}" data-xt-drop="{ targets: '#drop--unique' }">
+<button type="button" class="btn btn-md rounded-md ${btnPrimary()}" data-xt-drop="{ targets: '#drop--unique' }">
   drop
 </button>
 
@@ -21,7 +21,7 @@ demo.htmlSource = `
 
   <div class="drop" id="drop--unique">
     <div class="drop-inner">
-      <div class="w-64 py-3 ${cardDefaultDropList()}">
+      <div class="w-64 py-3 rounded-md ${cardDefaultDropList()}">
         <nav class="list flex-col">
           <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit

@@ -15,7 +15,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
 
-    <button type="button" class="btn btn-md ${btnPrimary()}">
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       inner
     </button>
 
@@ -23,7 +23,7 @@ demo.htmlSource = `
       <div class="overlay-container max-w-3xl">
         <div class="overlay-inner">
 
-          <div class="card ${cardDefaultOverlay()} overflow-y-auto overflow-x-hidden overflow-sub max-h-96">
+          <div class="card rounded-md ${cardDefaultOverlay()} overflow-y-auto overflow-x-hidden overflow-sub max-h-96">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>
@@ -48,7 +48,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
 
-    <button type="button" class="btn btn-md ${btnPrimary()}">
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       block
     </button>
 
@@ -56,7 +56,7 @@ demo.htmlSource = `
       <div class="overlay-container max-w-3xl">
         <div class="overlay-inner">
 
-          <div class="card ${cardDefaultOverlay()}">
+          <div class="card rounded-md ${cardDefaultOverlay()}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>

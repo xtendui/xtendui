@@ -12,19 +12,19 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-2 items-center">
 
-  <button type="button" class="btn btn-md ${btnDefault()}" data-xt-toggle="{ targets: '#toggle--unique-0' }">
+  <button type="button" class="btn btn-md rounded-md ${btnDefault()}" data-xt-toggle="{ targets: '#toggle--unique-0' }">
     Toggle 0
   </button>
 
-  <button type="button" class="btn btn-md ${btnDefault()}" data-xt-toggle="{ targets: '#toggle--unique-1' }">
+  <button type="button" class="btn btn-md rounded-md ${btnDefault()}" data-xt-toggle="{ targets: '#toggle--unique-1' }">
     Toggle 1
   </button>
 
-  <div class="card toggle ${cardToggle()}" id="toggle--unique-0">
+  <div class="card toggle rounded-md ${cardToggle()}" id="toggle--unique-0">
     Target 0
   </div>
 
-  <div class="card toggle ${cardToggle()}" id="toggle--unique-1">
+  <div class="card toggle rounded-md ${cardToggle()}" id="toggle--unique-1">
     Target 1
   </div>
 

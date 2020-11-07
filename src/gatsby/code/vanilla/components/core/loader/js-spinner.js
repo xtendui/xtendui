@@ -13,7 +13,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-2 items-center justify-center">
 
-  <div class="card ${cardDefault()}">
+  <div class="card rounded-md ${cardDefault()}">
     <div class="card-sm">
       <div class="h5">Small</div>
       <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
@@ -25,7 +25,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <button type="button" class="btn btn-md ${btnDefault()}">
+  <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
     Lorem ipsum
     <span class="loader bg-white bg-opacity-75 hidden opacity-0 transition-opacity duration-500 ease-in-out active:opacity-100 demo--loader-js-spinner">
       <span class="spinner text-accent-500">

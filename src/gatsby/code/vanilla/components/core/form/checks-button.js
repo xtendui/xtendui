@@ -14,34 +14,34 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-2 items-center">
 
-  <label class="btn btn-md ${btnDefault()}">
+  <label class="btn btn-md rounded-md ${btnDefault()}">
     Lorem ipsum
-    <input type="checkbox" class="form-check form-checkbox ml-2 ${checkDefault()}" checked disabled>
+    <input type="checkbox" class="form-check form-checkbox ml-2 rounded-md ${checkDefault()}" checked disabled>
   </label>
 
-  <label class="btn btn-md ${btnDefault()}">
+  <label class="btn btn-md rounded-md ${btnDefault()}">
     Lorem ipsum
-    <input type="checkbox" class="form-check form-checkbox ml-2 ${checkDefault()}">
+    <input type="checkbox" class="form-check form-checkbox ml-2 rounded-md ${checkDefault()}">
   </label>
 
-  <label class="btn btn-md ${btnDefault()}">
+  <label class="btn btn-md rounded-md ${btnDefault()}">
     Lorem ipsum
-    <input type="radio" class="form-check form-radio ml-2 ${radioDefault()}" name="radio-button" checked>
+    <input type="radio" class="form-check form-radio ml-2 rounded-full ${radioDefault()}" name="radio-button" checked>
   </label>
 
-  <label class="btn btn-md ${btnDefault()}">
+  <label class="btn btn-md rounded-md ${btnDefault()}">
     Lorem ipsum
-    <input type="radio" class="form-check form-radio ml-2 ${radioDefault()}" name="radio-button">
+    <input type="radio" class="form-check form-radio ml-2 rounded-full ${radioDefault()}" name="radio-button">
   </label>
 
-  <label class="btn btn-md ${btnDefault()}">
+  <label class="btn btn-md rounded-md ${btnDefault()}">
     Lorem ipsum
-    <input type="radio" class="form-check form-switch ml-2 ${switchDefault()}" name="switch-button" checked>
+    <input type="radio" class="form-check form-switch ml-2 rounded-full ${switchDefault()}" name="switch-button" checked>
   </label>
 
-  <label class="btn btn-md ${btnDefault()}">
+  <label class="btn btn-md rounded-md ${btnDefault()}">
     Lorem ipsum
-    <input type="radio" class="form-check form-switch ml-2 ${switchDefault()}" name="switch-button">
+    <input type="radio" class="form-check form-switch ml-2 rounded-full ${switchDefault()}" name="switch-button">
   </label>
 
 </div>

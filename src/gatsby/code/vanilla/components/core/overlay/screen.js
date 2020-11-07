@@ -14,7 +14,7 @@ demo.htmlSource = `
 <div class="list list-2 items-center">
 
   <div data-xt-overlay>
-    <button type="button" class="btn btn-md ${btnPrimary()}">
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       screen
     </button>
     <div class="overlay overlay-screen">
@@ -42,7 +42,7 @@ demo.htmlSource = `
   </div>
 
   <div data-xt-overlay>
-    <button type="button" class="btn btn-md ${btnPrimary()}">
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       screen full
     </button>
     <div class="overlay overlay-screen">
@@ -66,7 +66,7 @@ demo.htmlSource = `
   </div>
 
   <div data-xt-overlay>
-    <button type="button" class="btn btn-md ${btnPrimary()}">
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       screen group
     </button>
     <div class="overlay overlay-screen">

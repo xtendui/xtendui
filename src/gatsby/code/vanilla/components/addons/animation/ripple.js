@@ -22,23 +22,23 @@ demo.htmlSource = `
 
   <div class="list list-2 items-center">
 
-    <button type="button" class="btn btn-md">
+    <button type="button" class="btn btn-md rounded-md">
       btn
     </button>
 
-    <button type="button" class="btn btn-md ${btnDefault()}">
+    <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
       default
     </button>
 
-    <button type="button" class="btn btn-md ${btnPrimary()}">
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       primary
     </button>
 
-    <button type="button" class="btn btn-md link">
+    <button type="button" class="btn btn-md rounded-md link">
       link
     </button>
 
-    <button type="button" class="btn btn-md text-reset">
+    <button type="button" class="btn btn-md rounded-md text-reset">
       text
     </button>
 
@@ -51,7 +51,7 @@ demo.htmlSource = `
   <div class="row row-3">
 
     <div class="w-full md:w-6/12">
-      <a role="button" class="card ${cardDefaultInteractive()}">
+      <a role="button" class="card rounded-md ${cardDefaultInteractive()}">
         <div class="card-md">
           <div class="h4">Default</div>
           <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
@@ -60,7 +60,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full md:w-6/12">
-      <a role="button" class="card ${cardPrimaryInteractive()}">
+      <a role="button" class="card rounded-md ${cardPrimaryInteractive()}">
         <div class="card-md">
           <div class="h4">Primary</div>
           <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
@@ -69,11 +69,11 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full md:w-6/12">
-      <div class="card ${cardDefault()}">
+      <div class="card rounded-md ${cardDefault()}">
         <div class="card-md">
           <div class="h4">Default</div>
           <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-          <button type="button" class="btn btn-md ${btnDefault()}">
+          <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
             default
           </button>
         </div>
@@ -81,11 +81,11 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full md:w-6/12">
-      <div class="card ${cardPrimary()}">
+      <div class="card rounded-md ${cardPrimary()}">
         <div class="card-md">
           <div class="h4">Primary</div>
           <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-          <button type="button" class="btn btn-md ${btnPrimary()}">
+          <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
             primary
           </button>
         </div>

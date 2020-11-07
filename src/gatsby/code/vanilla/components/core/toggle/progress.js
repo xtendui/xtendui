@@ -22,7 +22,7 @@ demo.htmlSource = `
     </span>
   </button>
 
-  <button type="button" class="btn btn-md ${btnDefault()}">
+  <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
     Toggle 1
     <span class="loader loader-y">
       <span class="filler text-accent-500">
@@ -32,7 +32,7 @@ demo.htmlSource = `
     </span>
   </button>
 
-  <button type="button" class="btn btn-md ${btnDefault()}">
+  <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
     Toggle 2
     <span class="loader loader-y">
       <span class="filler text-accent-500">
@@ -42,7 +42,7 @@ demo.htmlSource = `
     </span>
   </button>
 
-  <button type="button" class="btn btn-md ${btnDefault()}">
+  <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
     Toggle 3
     <span class="loader loader-y">
       <span class="filler text-accent-500">
@@ -52,7 +52,7 @@ demo.htmlSource = `
     </span>
   </button>
 
-  <div class="card toggle ${cardToggle()}">
+  <div class="card toggle rounded-md ${cardToggle()}">
     Target 0
     <span class="loader loader-x loader-size-bottom">
       <span class="filler text-accent-500">
@@ -62,7 +62,7 @@ demo.htmlSource = `
     </span>
   </div>
 
-  <div class="card toggle ${cardToggle()}">
+  <div class="card toggle rounded-md ${cardToggle()}">
     Target 1
     <span class="loader loader-x loader-size-bottom">
       <span class="filler text-accent-500">
@@ -72,7 +72,7 @@ demo.htmlSource = `
     </span>
   </div>
 
-  <div class="card toggle ${cardToggle()}">
+  <div class="card toggle rounded-md ${cardToggle()}">
     Target 2
     <span class="loader loader-x loader-size-bottom">
       <span class="filler text-accent-500">
@@ -82,7 +82,7 @@ demo.htmlSource = `
     </span>
   </div>
 
-  <div class="card toggle ${cardToggle()}">
+  <div class="card toggle rounded-md ${cardToggle()}">
     Target 3
     <span class="loader loader-x loader-size-bottom">
       <span class="filler text-accent-500">

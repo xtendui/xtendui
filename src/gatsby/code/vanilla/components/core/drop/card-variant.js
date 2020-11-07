@@ -16,13 +16,13 @@ demo.htmlSource = `
 
   <div class="drop-container" data-xt-drop>
 
-    <button type="button" class="btn btn-md ${btnPrimary()}">
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       default
     </button>
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="card w-80 ${cardDefaultDrop()}">
+        <div class="card w-80 rounded-md ${cardDefaultDrop()}">
           <div class="btn btn-close p-5 text-xl" aria-label="Close">
             ${iconX()}
           </div>
@@ -38,13 +38,13 @@ demo.htmlSource = `
 
   <div class="drop-container" data-xt-drop>
 
-    <button type="button" class="btn btn-md ${btnPrimary()}">
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       primary
     </button>
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="card ${cardPrimaryDrop()}">
+        <div class="card rounded-md ${cardPrimaryDrop()}">
           <div class="btn btn-close p-5 text-xl" aria-label="Close">
             ${iconX()}
           </div>

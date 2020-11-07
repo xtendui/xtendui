@@ -66,13 +66,13 @@ Xt.mount.push({
         const strEl = `
         <div class="drop-container">
 
-          <button type="button" class="btn btn-md ${btnPrimary()}">
+          <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
             Element ${indexEl}
           </button>
 
           <div class="drop" title="Target ${indexEl}">
             <div class="drop-inner">
-              <div class="w-64 py-3 ${cardDefaultDropList()}">
+              <div class="w-64 py-3 rounded-md ${cardDefaultDropList()}">
                 <nav class="list flex-col">
                   <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit

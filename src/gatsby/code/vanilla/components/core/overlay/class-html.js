@@ -15,7 +15,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay="{ classHtml: 'demo--overlay-class-html-left' }">
 
-    <button type="button" class="btn btn-md ${btnPrimary()}">
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       left
     </button>
 
@@ -44,7 +44,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay="{ classHtml: 'demo--overlay-class-html-right' }">
 
-    <button type="button" class="btn btn-md ${btnPrimary()}">
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       right
     </button>
 

@@ -15,13 +15,13 @@ demo.htmlSource = `
 
   <div class="drop-container" data-xt-drop>
 
-    <button type="button" class="btn btn-md ${btnPrimary()}">
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       list
     </button>
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="card w-96 ${cardDefaultDrop()}">
+        <div class="card w-96 rounded-md ${cardDefaultDrop()}">
           <div class="card-md">
             <div class="list list-3 flex-nowrap items-baseline">
               <div>

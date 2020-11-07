@@ -15,13 +15,13 @@ demo.htmlSource = `
 
   <div class="drop-container" data-xt-drop>
 
-    <button type="button" class="btn btn-md ${btnPrimary()}">
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       small
     </button>
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="card w-64 ${cardDefaultDrop()}">
+        <div class="card w-64 rounded-md ${cardDefaultDrop()}">
           <div class="btn btn-close p-5 text-lg" aria-label="Close">
             ${iconX()}
           </div>
@@ -37,13 +37,13 @@ demo.htmlSource = `
 
   <div class="drop-container" data-xt-drop>
 
-    <button type="button" class="btn btn-md ${btnPrimary()}">
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       medium
     </button>
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="card w-80 ${cardDefaultDrop()}">
+        <div class="card w-80 rounded-md ${cardDefaultDrop()}">
           <div class="btn btn-close p-5 text-xl" aria-label="Close">
             ${iconX()}
           </div>
@@ -59,13 +59,13 @@ demo.htmlSource = `
 
   <div class="drop-container" data-xt-drop>
 
-    <button type="button" class="btn btn-md ${btnPrimary()}">
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       large
     </button>
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="card w-96 ${cardDefaultDrop()}">
+        <div class="card w-96 rounded-md ${cardDefaultDrop()}">
           <div class="btn btn-close p-5 text-2xl" aria-label="Close">
             ${iconX()}
           </div>
@@ -81,13 +81,13 @@ demo.htmlSource = `
 
   <div class="drop-container" data-xt-drop>
 
-    <button type="button" class="btn btn-md ${btnPrimary()}">
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       custom
     </button>
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="card w-96 ${cardDefaultDrop()}">
+        <div class="card w-96 rounded-md ${cardDefaultDrop()}">
           <div class="btn btn-close p-5 text-2xl" aria-label="Close">
             ${iconX()}
           </div>

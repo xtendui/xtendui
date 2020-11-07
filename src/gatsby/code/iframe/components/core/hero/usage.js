@@ -41,7 +41,7 @@ demo.htmlSource = `
         Lorem ipsum dolor sit amet
       </div>
       <div class="list list-2 justify-center">
-        <div class="btn btn-md ${btnPrimary()}">
+        <div class="btn btn-md rounded-md ${btnPrimary()}">
             Lorem ipsum
         </div>
       </div>

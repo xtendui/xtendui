@@ -16,7 +16,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="jump-to-content toggle sr-only xt-fixed-check">
-  <a href="#jump-to-content" class="btn btn-md ${btnPrimary()}">
+  <a href="#jump-to-content" class="btn btn-md rounded-md ${btnPrimary()}">
     Jump to content
   </a>
 </div>
@@ -24,14 +24,14 @@ demo.htmlSource = `
 <div class="row row-3">
 
   <div class="w-full">
-    <div class="card ${cardScroll()}">
+    <div class="card rounded-md ${cardScroll()}">
       <div class="h4">Lorem ipsum</div>
       <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
     </div>
   </div>
 
   <div class="w-full">
-    <div class="card ${cardScroll()}">
+    <div class="card rounded-md ${cardScroll()}">
       <div class="h4">Lorem ipsum</div>
       <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
     </div>

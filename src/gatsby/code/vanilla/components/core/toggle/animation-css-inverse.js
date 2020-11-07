@@ -12,19 +12,19 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-2 items-center demo--toggle-animation-inverse" data-xt-toggle>
 
-  <button type="button" class="btn btn-md ${btnDefault()}">
+  <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
     Toggle 0
   </button>
 
-  <button type="button" class="btn btn-md ${btnDefault()}">
+  <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
     Toggle 1
   </button>
 
-  <div class="card toggle-inverse ${cardToggle()}">
+  <div class="card toggle-inverse rounded-md ${cardToggle()}">
     Target 0
   </div>
 
-  <div class="card toggle-inverse ${cardToggle()}">
+  <div class="card toggle-inverse rounded-md ${cardToggle()}">
     Target 1
   </div>
 

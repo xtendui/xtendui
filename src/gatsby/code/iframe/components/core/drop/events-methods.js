@@ -18,31 +18,31 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="list list-1 items-center mb-4">
-  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--drop-events-first-element">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--drop-events-first-element">
     1st element
   </button>
-  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--drop-events-first-target">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--drop-events-first-target">
     1st target
   </button>
-  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--drop-events-add">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--drop-events-add">
     Add
   </button>
-  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--drop-events-remove">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--drop-events-remove">
     Remove
   </button>
-  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--drop-events-block">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--drop-events-block">
     Block/Unblock
   </button>
-  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--drop-events-reinit">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--drop-events-reinit">
     Reinit
   </button>
-  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--drop-events-restart">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--drop-events-restart">
     Restart
   </button>
-  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--drop-events-destroy">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--drop-events-destroy">
     Destroy
   </button>
-  <button type="button" class="btn btn-sm ${btnPrimary()}" id="demo--drop-events-unmount">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--drop-events-unmount">
     Unmount
   </button>
 </div>
@@ -51,13 +51,13 @@ demo.htmlSource = `
 
   <div class="drop-container">
 
-    <button type="button" class="btn btn-md ${btnPrimary()}">
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       Element 0
     </button>
 
     <div class="drop" title="Target 0">
       <div class="drop-inner">
-        <div class="w-64 py-3 ${cardDefaultDropList()}">
+        <div class="w-64 py-3 rounded-md ${cardDefaultDropList()}">
           <nav class="list flex-col">
             <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -77,13 +77,13 @@ demo.htmlSource = `
 
   <div class="drop-container">
 
-    <button type="button" class="btn btn-md ${btnPrimary()}">
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       Element 1
     </button>
 
     <div class="drop" title="Target 1">
       <div class="drop-inner">
-        <div class="w-64 py-3 ${cardDefaultDropList()}">
+        <div class="w-64 py-3 rounded-md ${cardDefaultDropList()}">
           <nav class="list flex-col">
             <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -103,7 +103,7 @@ demo.htmlSource = `
 
 </div>
 
-<div class="card ${cardDefault()} mt-6">
+<div class="card rounded-md ${cardDefault()} mt-6">
   <div class="card-sm overflow-y-auto overflow-x-hidden overflow-sub max-h-56" id="demo--drop-events-log">
   </div>
 </div>

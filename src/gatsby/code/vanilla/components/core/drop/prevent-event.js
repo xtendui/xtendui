@@ -15,13 +15,13 @@ demo.htmlSource = `
 
   <div class="drop-container" data-xt-drop="{ preventEvent: true }">
 
-    <a href="#drop-with-link-0" class="btn btn-md ${btnPrimary()}">
+    <a href="#drop-with-link-0" class="btn btn-md rounded-md ${btnPrimary()}">
       drop
     </a>
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="w-64 py-3 ${cardDefaultDropList()}">
+        <div class="w-64 py-3 rounded-md ${cardDefaultDropList()}">
           <nav class="list flex-col">
             <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
