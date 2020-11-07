@@ -69,11 +69,18 @@ You can also use **video** or **iframe** for media.
   </demovanilla>
 </demo>
 
-## Min height
+## Height
 
-Use `min-height: <Value>` to have a min height (use narrow screen to see it in action).
+Use **tailwind classes** to assign height (e.g. [height](https://tailwindcss.com/docs/height)).
 
 <demo>
-  <demovanilla src="vanilla/components/core/media/cover-min-height">
+  <demovanilla src="vanilla/components/core/media/height">
+  </demovanilla>
+</demo>
+
+You can also use `min-height: <Value>` to have a min height (use narrow screen to see it in action).
+
+<demo>
+  <demovanilla src="vanilla/components/core/media/min-height">
   </demovanilla>
 </demo>

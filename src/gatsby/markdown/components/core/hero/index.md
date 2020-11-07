@@ -10,6 +10,8 @@ description: "Hero markup component for pages introductions or banners."
 
 Use **component classes** and **tailwind classes** to create a **hero**.
 
+See [media component](/components/core/media) to **customize media**.
+
 <demo>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/hero/usage">
   </div>
@@ -17,7 +19,7 @@ Use **component classes** and **tailwind classes** to create a **hero**.
 
 ## Direction
 
-Use **tailwind classes** to customize content direction.
+Use **tailwind classes** to customize **content direction**.
 
 <demo>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/hero/direction">
@@ -26,7 +28,7 @@ Use **tailwind classes** to customize content direction.
 
 ## Shadow
 
-Use **tailwind classes** to add shadow.
+Use **tailwind classes** to **add shadow**.
 
 <demo>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/hero/shadow">
