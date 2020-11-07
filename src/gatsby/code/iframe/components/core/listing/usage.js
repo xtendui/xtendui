@@ -62,7 +62,7 @@ demo.htmlSource = `
           </div>
           <div class="py-4">
             <div class="h5">
-              Consectetur
+              Lorem ipsum
             </div>
             <div class="-mt-2 text-sm font-semibold">
               3.772,00 €
@@ -80,7 +80,7 @@ demo.htmlSource = `
           </div>
           <div class="py-4">
             <div class="h5">
-              Adipiscing elit
+              Dolor sit amet
             </div>
             <div class="-mt-2 text-sm font-semibold">
               3.772,00 €

@@ -38,6 +38,7 @@ module.exports = {
       zIndex: theme('zIndex.top'),
       top: '0',
       right: '0',
+      lineHeight: '0 !important',
       '& + *': {
         margin: '0 !important',
       },

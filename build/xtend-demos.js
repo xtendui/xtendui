@@ -26,6 +26,7 @@ if (typeof window !== 'undefined') {
   require('xtendui/src/private/demos/components/core/toggle/events-methods.js')
   require('xtendui/src/private/demos/components/core/toggle/progress.js')
   require('xtendui/src/private/demos/components/core/toggle/timing.js')
+  require('xtendui/src/private/demos/components/themes/animation/slide-overlay-v1.js')
   require('xtendui/src/private/demos/test/demo-vanilla-iframe.js')
   require('xtendui/src/private/demos/test/demo-vanilla.js')
   require('xtendui/src/private/demos/themes/gallery/fashion-gallery-v1.js')

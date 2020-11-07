@@ -1,6 +1,10 @@
 import React from 'react'
 import path from 'path'
+const btnDefault = require('components/snippets/classes/btn-default').default
 const btnPrimary = require('components/snippets/classes/btn-primary').default
+const cardDefaultInteractive = require('components/snippets/classes/card-default-interactive').default
+const cardPrimaryInteractive = require('components/snippets/classes/card-primary-interactive').default
+const btnDefaultDrop = require('components/snippets/classes/btn-default-drop').default
 const btnCloseOutside = require('components/snippets/classes/btn-close-outside').default
 const labelDefault = require('components/snippets/classes/label-default').default
 const inputDefault = require('components/snippets/classes/input-default').default
@@ -8,7 +12,7 @@ const checkDefault = require('components/snippets/classes/form-check-default').d
 const radioDefault = require('components/snippets/classes/form-radio-default').default
 const iconX = require('components/snippets/icons').iconX
 const cardDefault =
-  'text-black links-default bg-white shadow-lg transform ease-in-out-quint duration-700 delay-300 opacity-0 translate-y-full group-active:ease-out-quint group-active:delay-0 group-active:opacity-100 group-active:translate-y-0'
+  ' text-black links-default bg-white shadow-lg transform ease-in-out-quint duration-700 delay-300 opacity-0 translate-y-full group-active:ease-out-quint group-active:delay-0 group-active:opacity-100 group-active:translate-y-0'
 const cardItem =
   'transform ease-in-out-quint duration-700 delay-0 opacity-0 translate-y-1/2 group-active:ease-out-quint group-active:delay-300 group-active:opacity-100 group-active:translate-y-0'
 
@@ -24,6 +28,89 @@ export const demo = {
 }
 
 demo.htmlSource = `
+<div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
+  Button
+</div>
+
+<div class="list list-2 items-center">
+
+  <button type="button" class="btn btn-md">
+    btn
+  </button>
+
+  <button type="button" class="btn btn-md ${btnDefault()}">
+    default
+  </button>
+
+  <button type="button" class="btn btn-md ${btnPrimary()}">
+    primary
+  </button>
+
+  <button type="button" class="btn btn-md link">
+    link
+  </button>
+
+  <button type="button" class="btn btn-md text-reset">
+    text
+  </button>
+
+</div>
+
+<div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
+  Drop
+</div>
+
+<div class="list list-2 items-center">
+
+  <div class="drop-container" data-xt-drop>
+
+    <button type="button" class="btn btn-md ${btnPrimary()}">
+      list
+    </button>
+
+    <div class="drop group duration-700"> <!-- needed for animation time, put max animation time -->
+      <div class="drop-inner">
+        <div class="w-64 py-3 rounded-md ${cardDefault}">
+          <nav class="list flex-col ${cardItem}">
+            <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            </a>
+            <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+              Dolor sit
+            </button>
+            <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+              Amet
+            </button>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="drop-container" data-xt-drop>
+
+    <button type="button" class="btn btn-md ${btnPrimary()}">
+      card
+    </button>
+
+    <div class="drop group duration-700"> <!-- needed for animation time, put max animation time -->
+      <div class="drop-inner">
+        <div class="card w-80 ${cardDefault}">
+          <div class="btn btn-close p-5 text-xl" aria-label="Close">
+            ${iconX()}
+          </div>
+          <div class="card-md ${cardItem}">
+            <div class="h4">Lorem ipsum</div>
+            <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
 
 <div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
   Overlay
@@ -39,7 +126,7 @@ demo.htmlSource = `
       <div class="overlay-container">
         <div class="overlay-inner">
 
-          <div class="card items-center justify-center rounded-md ${cardDefault}">
+          <div class="card items-center justify-center ${cardDefault}">
             <div class="btn btn-close p-5 text-2xl fixed z-top" aria-label="Close">
               ${iconX()}
             </div>
@@ -329,6 +416,32 @@ demo.htmlSource = `
       </div>
     </div>
 
+  </div>
+
+</div>
+
+<div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
+  Card
+</div>
+
+<div class="row row-3">
+
+  <div class="w-full md:w-6/12">
+    <a role="button" class="card ${cardDefaultInteractive()}">
+      <div class="card-md">
+        <div class="h4">Default</div>
+        <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+      </div>
+    </a>
+  </div>
+
+  <div class="w-full md:w-6/12">
+    <a role="button" class="card ${cardPrimaryInteractive()}">
+      <div class="card-md">
+        <div class="h4">Primary</div>
+        <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+      </div>
+    </a>
   </div>
 
 </div>
