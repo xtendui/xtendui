@@ -5,14 +5,13 @@ const btnPrimary = require('components/snippets/classes/btn-primary').default
 const cardDefaultInteractive = require('components/snippets/classes/card-default-interactive').default
 const cardPrimaryInteractive = require('components/snippets/classes/card-primary-interactive').default
 const btnDefaultDrop = require('components/snippets/classes/btn-default-drop').default
-const btnCloseOutside = require('components/snippets/classes/btn-close-outside').default
 const labelDefault = require('components/snippets/classes/label-default').default
 const inputDefault = require('components/snippets/classes/input-default').default
 const checkDefault = require('components/snippets/classes/form-check-default').default
 const radioDefault = require('components/snippets/classes/form-radio-default').default
 const iconX = require('components/snippets/icons').iconX
 const cardDefault =
-  ' text-black links-default bg-white shadow-lg transform ease-in-out-quint duration-700 delay-300 opacity-0 translate-y-full group-active:ease-out-quint group-active:delay-0 group-active:opacity-100 group-active:translate-y-0'
+  'overflow-hidden text-black links-default bg-white shadow-lg transform ease-in-out-quint duration-700 delay-300 opacity-0 translate-y-full group-active:ease-out-quint group-active:delay-0 group-active:opacity-100 group-active:translate-y-0'
 const cardItem =
   'transform ease-in-out-quint duration-700 delay-0 opacity-0 translate-y-1/2 group-active:ease-out-quint group-active:delay-300 group-active:opacity-100 group-active:translate-y-0'
 
@@ -198,7 +197,7 @@ demo.htmlSource = `
         <div class="overlay-inner">
 
           <div class="card rounded-md md:rounded-tr-none ${cardDefault}">
-            <div class="btn btn-close p-5 text-2xl ${btnCloseOutside()} md:p-3 md:right-auto md:left-100" aria-label="Close">
+            <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>
 
@@ -315,7 +314,7 @@ demo.htmlSource = `
         <div class="overlay-inner">
 
           <div class="card rounded-md md:rounded-tr-none ${cardDefault}">
-            <div class="btn btn-close p-5 text-2xl ${btnCloseOutside()} md:p-3 md:right-auto md:left-100" aria-label="Close">
+            <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>
 
