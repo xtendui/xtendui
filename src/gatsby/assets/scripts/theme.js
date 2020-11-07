@@ -68,6 +68,7 @@ Xt.mount.push({
     // init
 
     let self = new Xt.ScrollToAnchor(object, {
+      elements: '[href^="#"]:not([aria-controls])',
       scrollDistance: () => {
         return window.innerHeight / 10
       },
@@ -101,41 +102,6 @@ Xt.mount.push({
     }
   },
 })
-
-/**
- * xt-scroll
-
-Xt.mount.push({
-  matches: '.gatsby_site_article_hero-content-inner',
-  mount: (object) => {
-    // init
-
-    let self = new Xt.Scroll(object, {
-      sticky: 'fixed',
-      end: 75,
-    })
-
-    // change
-
-    const eventChange = (e) => {
-      const element = e.target
-      gsap.set(element, { transformOrigin: 'left top' })
-      gsap.set(element, { opacity: self.detail.ratioInverse, scale: 0.9 + 0.1 * self.detail.ratioInverse })
-    }
-
-    for (const el of self.elements) {
-      el.addEventListener('change.xt', eventChange)
-    }
-
-    // unmount
-
-    return () => {
-      self.destroy()
-      self = null
-    }
-  },
-})
-*/
 
 //
 // makeDocument
