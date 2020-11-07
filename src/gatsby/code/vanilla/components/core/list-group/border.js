@@ -20,7 +20,7 @@ demo.htmlSource = `
       <button type="button" class="btn btn-md rounded-l-md border border-gray-500 ${btnDefaultGroup()}">
         ${iconSearch({ classes: 'icon-lg' })}
       </button>
-      <input type="text" class="form-item border border-l-0 border-gray-500 ${inputDefaultGroup()}" placeholder="Insert search query" />
+      <input type="text" class="form-item border border-l-0 border-gray-500 ${inputDefaultGroup()}" aria-label="Search" placeholder="Seach Catalog" />
     </div>
 
     <button type="button" class="btn btn-md rounded-r-md border border-l-0 border-gray-500 ${btnPrimaryGroup()}">

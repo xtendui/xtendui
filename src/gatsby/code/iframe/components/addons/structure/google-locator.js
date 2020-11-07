@@ -32,7 +32,7 @@ demo.htmlSource = `
           <div class="w-full">
             <div class="list">
               <div class="list-inner flex-auto">
-                <input type="text" class="form-item rounded-l-md ${inputDefaultGroup()}" placeholder="Search">
+                <input type="text" class="form-item rounded-l-md ${inputDefaultGroup()}" aria-label="Search" placeholder="Search">
                 <button type="button" class="btn-locate btn btn-md rounded-md ${btnDefaultGroup()}">
                   ${iconLocate({ classes: 'icon-lg' })}
                 </button>

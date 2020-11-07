@@ -22,7 +22,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn-md rounded-l-md ${btnDefaultGroup()}">
       ${iconSearch({ classes: 'icon-lg' })}
     </button>
-    <input type="text" class="form-item rounded-r-md ${inputDefaultGroup()}" placeholder="Insert search query" />
+    <input type="text" class="form-item rounded-r-md ${inputDefaultGroup()}" aria-label="Search" placeholder="Seach Catalog" />
   </div>
 
   <div class="list-inner ml-auto">

@@ -15,7 +15,7 @@ demo.htmlSource = `
   <div class="list">
 
     <div class="list-inner">
-      <input type="number" class="form-item rounded-tl-md rounded-bl-md border border-r-0 border-gray-500 ${inputDefaultGroup()}" value="1" min="0" max="100">
+      <input type="number" class="form-item rounded-tl-md rounded-bl-md border border-r-0 border-gray-500 ${inputDefaultGroup()}" aria-label="Quantity" value="1" min="0" max="100">
       <div class="list-inner flex-col">
         <button type="button" class="btn btn-sm py-1 rounded-tr-md border border-gray-500 ${btnDefaultGroup()}">
           +
