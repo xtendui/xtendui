@@ -16,9 +16,9 @@ export const demo = {
 demo.htmlSource = `
 <div class="megamenu">
 
-  <span class="megamenu-line fixed top-0 left-0 bg-accent-900"></span>
+  <div class="relative bg-accent-500 text-white">
 
-  <div class="relative">
+    <span class="megamenu-line fixed top-0 left-0 bg-white"></span>
 
     <div class="container">
 
@@ -38,18 +38,18 @@ demo.htmlSource = `
                 <div class="container">
                   <div class="row row-4">
 
-                    <div class="w-full md:w-4/12 lg:w-3/12 pr-6">
-                      <div class="media-container ratio-75">
+                    <div class="w-full md:w-4/12">
+                      <div class="media-container ratio-50">
                         <div class="media-inner">
                           <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
                         </div>
                       </div>
                     </div>
 
-                    <div class="w-6/12 md:w-8/12 lg:w-9/12">
-                      <div class="row row-2 flex-col flex-wrap" style="max-height: 15rem;">
+                    <div class="w-6/12 md:w-8/12">
+                      <div class="row row-2 flex-col flex-wrap" style="max-height: 20rem;">
 
-                        <div class="w-full md:w-4/12">
+                        <div class="w-full md:w-6/12 lg:w-4/12">
                           <a href="#" class="h5 inline-block">
                             Lorem ipsum
                           </a>
@@ -69,7 +69,7 @@ demo.htmlSource = `
                           </div>
                         </div>
 
-                        <div class="w-full md:w-4/12">
+                        <div class="w-full md:w-6/12 lg:w-4/12">
                           <a href="#" class="h5 inline-block">
                             Dolor sit amet
                           </a>
@@ -83,13 +83,33 @@ demo.htmlSource = `
                           </div>
                         </div>
 
-                        <div class="w-full md:w-4/12">
+                        <div class="w-full md:w-6/12 lg:w-4/12">
+                          <a href="#" class="h5 inline-block">
+                            Lorem ipsum
+                          </a>
+                          <div class="list flex-col">
+                            <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
+                              Lorem ipsum
+                            </a>
+                            <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
+                              Dolor sit amet
+                            </a>
+                            <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
+                              Consectetur
+                            </a>
+                            <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
+                              Adipiscing elit
+                            </a>
+                          </div>
+                        </div>
+
+                        <div class="w-full md:w-6/12 lg:w-4/12">
                           <a href="#" class="h5 inline-block">
                             Lorem ipsum
                           </a>
                         </div>
 
-                        <div class="w-full md:w-4/12">
+                        <div class="w-full md:w-6/12 lg:w-4/12">
                           <a href="#" class="h5 inline-block">
                             Dolor sit amet
                           </a>
@@ -121,18 +141,18 @@ demo.htmlSource = `
                 <div class="container">
                   <div class="row row-4">
 
-                    <div class="w-full md:w-4/12 lg:w-3/12 pr-6">
-                      <div class="media-container ratio-100">
+                    <div class="w-full md:w-4/12">
+                      <div class="media-container ratio-50">
                         <div class="media-inner">
                           <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
                         </div>
                       </div>
                     </div>
 
-                    <div class="w-6/12 md:w-8/12 lg:w-9/12">
-                      <div class="row row-2 flex-col flex-wrap" style="max-height: 20rem;">
+                    <div class="w-6/12 md:w-8/12">
+                      <div class="row row-2 flex-col flex-wrap" style="max-height: 30rem;">
 
-                        <div class="w-full md:w-4/12">
+                        <div class="w-full md:w-6/12 lg:w-4/12">
                           <a href="#" class="h5 inline-block">
                             Lorem ipsum
                           </a>
@@ -164,7 +184,7 @@ demo.htmlSource = `
                           </div>
                         </div>
 
-                        <div class="w-full md:w-4/12">
+                        <div class="w-full md:w-6/12 lg:w-4/12">
                           <a href="#" class="h5 inline-block">
                             Dolor sit amet
                           </a>
@@ -184,13 +204,45 @@ demo.htmlSource = `
                           </div>
                         </div>
 
-                        <div class="w-full md:w-4/12">
+                        <div class="w-full md:w-6/12 lg:w-4/12">
+                          <a href="#" class="h5 inline-block">
+                            Lorem ipsum
+                          </a>
+                          <div class="list flex-col">
+                            <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
+                              Lorem ipsum
+                            </a>
+                            <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
+                              Dolor sit amet
+                            </a>
+                            <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
+                              Consectetur
+                            </a>
+                            <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
+                              Adipiscing elit
+                            </a>
+                            <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
+                              Lorem ipsum
+                            </a>
+                            <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
+                              Dolor sit amet
+                            </a>
+                            <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
+                              Consectetur
+                            </a>
+                            <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
+                              Adipiscing elit
+                            </a>
+                          </div>
+                        </div>
+
+                        <div class="w-full md:w-6/12 lg:w-4/12">
                           <a href="#" class="h5 inline-block">
                             Lorem ipsum
                           </a>
                         </div>
 
-                        <div class="w-full md:w-4/12">
+                        <div class="w-full md:w-6/12 lg:w-4/12">
                           <a href="#" class="h5 inline-block">
                             Dolor sit amet
                           </a>
@@ -222,7 +274,7 @@ demo.htmlSource = `
                 <div class="container">
                   <div class="row row-4">
 
-                    <div class="w-full md:w-4/12 lg:w-3/12 pr-6">
+                    <div class="w-full md:w-4/12">
                       <div class="media-container ratio-50">
                         <div class="media-inner">
                           <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
@@ -230,10 +282,10 @@ demo.htmlSource = `
                       </div>
                     </div>
 
-                    <div class="w-6/12 md:w-8/12 lg:w-9/12">
+                    <div class="w-6/12 md:w-8/12">
                       <div class="row row-2 flex-col flex-wrap" style="max-height: 15rem;">
 
-                        <div class="w-full md:w-4/12">
+                        <div class="w-full md:w-6/12 lg:w-4/12">
                           <a href="#" class="h5 inline-block">
                             Lorem ipsum
                           </a>
@@ -253,7 +305,7 @@ demo.htmlSource = `
                           </div>
                         </div>
 
-                        <div class="w-full md:w-4/12">
+                        <div class="w-full md:w-6/12 lg:w-4/12">
                           <a href="#" class="h5 inline-block">
                             Dolor sit amet
                           </a>
@@ -283,17 +335,13 @@ demo.htmlSource = `
           Link #4
         </a>
 
-        <a href="#menu5" class="btn btn-lg rounded-md btn-line py-6">
-          Link #5
-        </a>
-
       </div>
 
     </div>
   </div>
 
   <!-- mouse events instead of click you can remove this -->
-  <div class="container pt-4">
+  <div class="container pt-10">
     <label class="form-label-check">
       <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}">
       <span class="ml-3">Use mouse events</span>

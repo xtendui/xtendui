@@ -199,17 +199,23 @@ Xt.mount.push({
 
     const eventEnter = e => {
       const el = e.target
-      // raf fix not off on sequential
+      // eventOff after eventOn sequential interaction
       cancelAnimationFrame(Xt.dataStorage.get(object, 'lineFrame'))
-      // line
-      const lineX = el.offsetLeft
-      const lineY = el.getBoundingClientRect().top + el.offsetHeight
-      const lineWidth = el.offsetWidth
-      if (lineFirst) {
-        gsap.set(line, { x: lineX, y: lineY, width: lineWidth, height: 0 })
-        lineFirst = false
-      }
-      gsap.to(line, { x: lineX, y: lineY - lineHeight, width: lineWidth, height: lineHeight, opacity: 1, duration: lineTime, ease: lineEase })
+      Xt.dataStorage.set(
+        object,
+        'lineFrame',
+        requestAnimationFrame(() => {
+          // line
+          const lineX = el.offsetLeft
+          const lineY = el.getBoundingClientRect().top + el.offsetHeight
+          const lineWidth = el.offsetWidth
+          if (lineFirst) {
+            gsap.set(line, { x: lineX, y: lineY, width: lineWidth, height: 0 })
+            lineFirst = false
+          }
+          gsap.to(line, { x: lineX, y: lineY - lineHeight, width: lineWidth, height: lineHeight, opacity: 1, duration: lineTime, ease: lineEase })
+        })
+      )
     }
 
     for (const btn of btns) {
@@ -221,26 +227,28 @@ Xt.mount.push({
     const eventLeave = function () {
       // eslint-disable-next-line no-invalid-this
       const el = this
-      // eventEnter after eventLeave sequential interaction
+      // eventOff after eventOn sequential interaction
       cancelAnimationFrame(Xt.dataStorage.get(object, 'lineFrame'))
       Xt.dataStorage.set(
         object,
         'lineFrame',
         requestAnimationFrame(() => {
-          // not when drop is still open
-          const dropBtnActive = object.querySelector('.drop-container > .btn.active')
-          if (!dropBtnActive) {
-            // line
-            const lineY = el.getBoundingClientRect().top + el.offsetHeight
-            lineFirst = true
-            gsap.to(line, { y: lineY, opacity: 0, duration: lineTime, ease: lineEase })
-          } else {
-            // line
-            const lineX = dropBtnActive.offsetLeft
-            const lineY = dropBtnActive.getBoundingClientRect().top + dropBtnActive.offsetHeight
-            const lineWidth = dropBtnActive.offsetWidth
-            gsap.to(line, { x: lineX, y: lineY - lineHeight, width: lineWidth, height: lineHeight, opacity: 1, duration: lineTime, ease: lineEase })
-          }
+          requestAnimationFrame(() => {
+            // not when drop is still open
+            const dropBtnActive = object.querySelector('.drop-container > .btn.active')
+            if (!dropBtnActive) {
+              // line
+              const lineY = el.getBoundingClientRect().top + el.offsetHeight
+              lineFirst = true
+              gsap.to(line, { y: lineY, opacity: 0, duration: lineTime, ease: lineEase })
+            } else {
+              // line
+              const lineX = dropBtnActive.offsetLeft
+              const lineY = dropBtnActive.getBoundingClientRect().top + dropBtnActive.offsetHeight
+              const lineWidth = dropBtnActive.offsetWidth
+              gsap.to(line, { x: lineX, y: lineY - lineHeight, width: lineWidth, height: lineHeight, opacity: 1, duration: lineTime, ease: lineEase })
+            }
+          })
         })
       )
     }
