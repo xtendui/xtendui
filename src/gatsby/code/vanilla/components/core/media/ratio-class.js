@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="media-container ratio-37.5 md:ratio-75 lg:ratio-100">
+<div class="media-container ratio-50 md:ratio-75 lg:ratio-50">
   <div class="media-inner">
     <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt=""/>
   </div>
