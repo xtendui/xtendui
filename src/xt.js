@@ -1031,7 +1031,8 @@ if (typeof window !== 'undefined') {
    * @return {Array}
    */
   Xt.queryAll = (element, query) => {
-    if (!element || !query) {
+    // not when no query or empty array
+    if (!query || element.length === 0) {
       return []
     }
     if (!element.length) {
