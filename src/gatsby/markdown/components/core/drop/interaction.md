@@ -112,37 +112,6 @@ You can specify **on** and **off** events for the drop. Fore example `on: 'mouse
   </demovanilla>
 </demo>
 
-## Position
-
-Set drop position with this utils.
-
-<div class="table-scroll">
-
-|                      | Syntax                          | Mixin            | Variants               | Description                   |
-| ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Utility                  | `.drop-bottom`       | `drop-bottom`                | `responsive`                | Position bottom            |
-| Utility                  | `.drop-top`       | `drop-top`                | `responsive`                | Position top            |
-| Utility                  | `.drop-left`       | `drop-left`                | `responsive`                | Position left            |
-| Utility                  | `.drop-right`       | `drop-right`                | `responsive`                | Position right            |
-| Utility                  | `.drop-center`       | `drop-center`                | `responsive`                | Position center            |
-| Utility                  | `.drop-before`       | `drop-before`                | `responsive`                | Position before            |
-| Utility                  | `.drop-after`       | `drop-after`                | `responsive`                | Position after            |
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/core/drop/left">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/right">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/center">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/before">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/after">
-  </demovanilla>
-</demo>
-
 ## Block
 
 You can block the activations with the class `.xt-block` on elements.

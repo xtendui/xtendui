@@ -62,7 +62,7 @@ module.exports = {
     },
     '::selection': {
       // styles
-      backgroundColor: '#79ffe1',
+      backgroundColor: '#00FFDD',
       color: theme('colors.black'),
     },
     '.overflow-main': {
