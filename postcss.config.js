@@ -4,7 +4,7 @@ const fs = require('fs')
 const purgecss = require('@fullhuman/postcss-purgecss')({
   content: ['./src/**/*.md', './src/**/*.js', './src/**/*.css'],
   safelist: {
-    greedy: [/^iframe--/, /pre/, /code/, /token/, /data-popper-placement/],
+    greedy: [/^iframe--/, /pre/, /code/, /token/, /\^data-popper-placement]/],
   },
   defaultExtractor: content => {
     const broadMatches = content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || []
