@@ -57,7 +57,7 @@ class Drop extends Xt.Toggle {
           ],
           ...options.popperjs,
         })
-        Xt.dataStorage.set(element, `${self.componentNamespace}Popper`, popperInstance) // change also in doc xtdropPopperInstance
+        Xt.dataStorage.set(target, `${self.componentNamespace}Popper`, popperInstance) // change also in doc xtdropPopperInstance
       }
     }
   }
@@ -93,14 +93,10 @@ class Drop extends Xt.Toggle {
     // popper
     const popperInstance = Xt.dataStorage.get(el, `${self.componentNamespace}Popper`) // change also in doc xtdropPopperInstance
     if (popperInstance) {
-      for (const target of self.getTargets(el)) {
-        target.classList.add('xt-transition-none')
-      }
+      el.classList.add('xt-transition-none')
       popperInstance.update()
       requestAnimationFrame(() => {
-        for (const target of self.getTargets(el)) {
-          target.classList.remove('xt-transition-none')
-        }
+        el.classList.remove('xt-transition-none')
       })
     }
   }
