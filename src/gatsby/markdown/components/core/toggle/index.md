@@ -49,7 +49,7 @@ Pass **elements** and **targets** options if different from defaults. **Elements
 
 #### Self
 
-Use this code to create a **self toggle**.
+Use this code to create a **toggle** in **self mode**.
 
 <demo>
   <demovanilla src="vanilla/components/core/toggle/usage-self">
@@ -60,7 +60,7 @@ Check subpage to [customize interaction](/components/core/toggle/interaction).
 
 #### Unique
 
-Use this code to create a **unique toggle**.
+Use this code to create a **toggle** in **unique mode**.
 
 The **unique** mode is useful when triggering **targets outside the scope** of the component.
 
@@ -83,7 +83,7 @@ Check subpage to [customize interaction](/components/core/toggle/interaction).
 
 #### Multiple
 
-Use this code to create **multiple toggle**.
+Use this code to create a **toggle** in **multiple mode**.
 
 <demo>
   <demovanilla src="vanilla/components/core/toggle/usage-multiple-default">

@@ -57,7 +57,7 @@ Pass **elements** and **targets** options if different from defaults. **Elements
 
 #### Self
 
-Use this code to create a **self drop**.
+Use this code to create a **drop** in **self mode**.
 
 <demo>
   <demovanilla src="vanilla/components/core/drop/usage-self">
@@ -68,7 +68,7 @@ Check subpage to [customize interaction](/components/core/drop/interaction) and 
 
 #### Unique
 
-Use this code to create a **unique drop**.
+Use this code to create a **drop** in **unique mode**.
 
 The **unique** mode is useful when triggering **targets outside the scope** of the component.
 
@@ -84,7 +84,7 @@ Check subpage to [customize interaction](/components/core/drop/interaction) and 
 
 #### Multiple
 
-Use this code to create **multiple drop**.
+Use this code to create **drop** in **multiple mode**.
 
 <demo>
   <demovanilla src="vanilla/components/core/drop/usage-multiple">
