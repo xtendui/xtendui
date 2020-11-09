@@ -1,7 +1,7 @@
 ---
 type: "Components"
 category: "Addons"
-parent: "Structure"
+parent: "Layout"
 title: "google-locator"
 description: "Plug and play a google maps locator, with all the basic functionality and more."
 ---
@@ -22,7 +22,7 @@ Use this code to create a **google locator**. Search for "New York" to see it in
 | Needs google API key with **Maps Javascript API**, **Places API**.
 
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/structure/google-locator">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/layout/google-locator">
   </div>
 </demo>
 

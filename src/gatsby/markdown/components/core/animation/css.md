@@ -8,7 +8,7 @@ date: "2050-10-10"
 
 ## Utilities
 
-These are structure **component utilities**.
+These are general **component utilities**.
 
 <div class="table-scroll">
 

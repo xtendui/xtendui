@@ -95,7 +95,7 @@ module.exports = plugin.withOptions(() => {
                 }
               })
               addComponents(css, variants)
-            } else if (component === 'structure' && utility === '.container-y') {
+            } else if (component === 'layout' && utility === '.container-y') {
               let css = {}
               Object.keys(options[utility]).forEach(name => {
                 let value = options[utility][name]
@@ -115,7 +115,7 @@ module.exports = plugin.withOptions(() => {
                 }
               })
               addComponents(css, variants)
-            } else if (component === 'structure' && utility === '.-container') {
+            } else if (component === 'layout' && utility === '.-container') {
               let css = {}
               Object.keys(options[utility]).forEach(name => {
                 let value = options[utility][name]
@@ -135,7 +135,7 @@ module.exports = plugin.withOptions(() => {
                 }
               })
               addComponents(css, variants)
-            } else if (component === 'structure' && utility === '.-container-y') {
+            } else if (component === 'layout' && utility === '.-container-y') {
               let css = {}
               Object.keys(options[utility]).forEach(name => {
                 let value = options[utility][name]

@@ -1,7 +1,7 @@
 ---
 type: "Components"
 category: "Addons"
-parent: "Structure"
+parent: "Layout"
 title: "sticky-footer"
 description: "Example with simple markup and css for a sticky footer."
 ---
@@ -11,6 +11,6 @@ description: "Example with simple markup and css for a sticky footer."
 Use this code to create a **sticky footer**.
 
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/structure/sticky-footer">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/layout/sticky-footer">
   </div>
 </demo>

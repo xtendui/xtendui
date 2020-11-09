@@ -1,14 +1,14 @@
 ---
 type: "Components"
 category: "Core"
-parent: "Structure"
+parent: "Layout"
 title: "Javascript"
 date: "2050-05-05"
 ---
 
 ## Xt.debug
 
-Set `NODE_ENV=development` to have **Xt.debug activated**. On Linux and mac globally with `export NODE_ENV = development`, on windows globally with `$env:NODE_ENV = 'development'`.
+Set `NODE_ENV=development` to have **Xt.debug activated**. On Linux and mac globally with `export NODE_ENV = development`, on windows globally with `Add-Content -Path $Profile.CurrentUserAllHosts -Value '$Env:NODE_ENV = "development"'`.
 
 ## Event Delay
 

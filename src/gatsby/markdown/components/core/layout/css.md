@@ -1,7 +1,7 @@
 ---
 type: "Components"
 category: "Core"
-parent: "Structure"
+parent: "Layout"
 title: "Css"
 date: "2050-10-10"
 ---
@@ -16,7 +16,7 @@ When you **style active with css** remember to style `&:active, &.active`.
 
 ## Utilities
 
-These are structure **component utilities**.
+These are layout **component utilities**.
 
 <div class="table-scroll">
 
@@ -46,7 +46,7 @@ We have also **automatic spacing utilities** to reset margin top when `:first-ch
 
 ## Components
 
-These are structure **component classes**.
+These are layout **component classes**.
 
 <div class="table-scroll">
 
@@ -69,4 +69,4 @@ Xtend has custom `:focus` styles, sort of `:focus-visbile` polyfill. You can cus
 
 </div>
 
-There are many more **component classes for javascript** inside `structurejs.css.js` but they shouldn't be changed.
+There are many more **component classes for javascript** inside `layoutjs.css.js` but they shouldn't be changed.

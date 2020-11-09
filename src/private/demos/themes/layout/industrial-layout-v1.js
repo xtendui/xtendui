@@ -8,7 +8,7 @@ gsap.config({ force3D: false })
  */
 
 Xt.mount.push({
-  matches: '#iframe--industrial-structure-v1 body .slider', // add your own selector instead of body to contain the code
+  matches: '#iframe--industrial-layout-v1 body .slider', // add your own selector instead of body to contain the code
   mount: object => {
     // vars
 

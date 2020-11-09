@@ -1,10 +1,10 @@
+@import 'xtendui/src/private/demos/components/addons/layout/google-locator.css';
+@import 'xtendui/src/private/demos/components/addons/layout/jump-to-content.css';
+@import 'xtendui/src/private/demos/components/addons/layout/sticky-footer.css';
 @import 'xtendui/src/private/demos/components/addons/list-group/expand.css';
 @import 'xtendui/src/private/demos/components/addons/listing/infinite-scroll.css';
 @import 'xtendui/src/private/demos/components/addons/overlay/message-outside.css';
 @import 'xtendui/src/private/demos/components/addons/slider/automatic-scroll.css';
-@import 'xtendui/src/private/demos/components/addons/structure/google-locator.css';
-@import 'xtendui/src/private/demos/components/addons/structure/jump-to-content.css';
-@import 'xtendui/src/private/demos/components/addons/structure/sticky-footer.css';
 @import 'xtendui/src/private/demos/components/addons/typography/list-custom.css';
 @import 'xtendui/src/private/demos/components/core/card/disable.css';
 @import 'xtendui/src/private/demos/components/core/drop/animation-css-multiple.css';

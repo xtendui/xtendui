@@ -8,7 +8,7 @@ gsap.config({ force3D: false })
  */
 
 Xt.mount.push({
-  matches: '#iframe--furniture-structure-v1 body .btn--line', // add your own selector instead of body to contain the code
+  matches: '#iframe--furniture-layout-v1 body .btn--line', // add your own selector instead of body to contain the code
   mount: object => {
     // vars
 
@@ -64,7 +64,7 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '#iframe--furniture-structure-v1 body .featured_item', // add your own selector instead of body to contain the code
+  matches: '#iframe--furniture-layout-v1 body .featured_item', // add your own selector instead of body to contain the code
   mount: object => {
     // vars
 

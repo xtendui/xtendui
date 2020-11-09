@@ -104,7 +104,7 @@ You can **customize components** inside `tailwind.config.js`, check [xtendui/src
 module.exports = {
   theme:{
     xtendui: {
-      structure: { // structure component
+      layout: { // layout component
         utility: theme => ({
           // modify utilities
         }),

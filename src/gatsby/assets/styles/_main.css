@@ -61,7 +61,7 @@ body {
   flex: 1 1 auto;
 }
 
-/* structure */
+/* layout */
 
 .gatsby_site_article_hero {
   @apply pt-20 pb-16;

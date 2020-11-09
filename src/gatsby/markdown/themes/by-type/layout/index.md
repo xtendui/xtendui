@@ -1,7 +1,7 @@
 ---
 type: "Themes"
 category: "By Type"
-parent: "Structure"
-title: "Structure"
+parent: "Layout"
+title: "Layout"
 description: "Generic and layout css, javascript and themes."
 ---
