@@ -52,7 +52,7 @@ Use **js option** `offset: <Array>` to specify [popperjs offset](https://popper.
 
 ## Static
 
-If you want a drop with size and position **relative to a parent Node** use `.drop-static` and `.card.w-full`.
+If you want a drop with size and position **relative to a parent Node with relative** use `.drop-static` and `.card.w-full`.
 
 <div class="table-scroll">
 
