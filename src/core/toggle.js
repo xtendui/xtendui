@@ -2561,7 +2561,11 @@ class Toggle {
         if (options.closeOutside) {
           const closeElements = document.querySelectorAll(options.closeOutside)
           for (const closeElement of closeElements) {
-            const specialcloseoutsideHandler = Xt.dataStorage.put(closeElement, `click/close/${self.namespace}`, self.eventSpecialcloseoutsideHandler.bind(self))
+            const specialcloseoutsideHandler = Xt.dataStorage.put(
+              closeElement,
+              `click/close/${self.namespace}`,
+              self.eventSpecialcloseoutsideHandler.bind(self)
+            )
             // @FIX do not close when clicking things that trigger this
             requestAnimationFrame(() => {
               closeElement.addEventListener('click', specialcloseoutsideHandler)
