@@ -18,7 +18,9 @@ Use **js option** `position: <value>` to specify [popperjs placement](https://po
 
 </div>
 
-Use `<div class="drop-arrow" data-arrow></div>` at the end of `.drop` to add an arrow. It's styled in [drop component](/components/core/drop#customization).
+Use `<div class="drop-arrow" data-arrow></div>` at the end of `.drop` to add an arrow.
+
+You can customize **position and arrow** in the [drop component](/components/core/drop#customization). **We use padding** instead of popperjs offset to support mouseenter and mouseleave events.
 
 <demo>
   <demovanilla src="vanilla/components/core/drop/bottom">
@@ -30,23 +32,6 @@ Use `<div class="drop-arrow" data-arrow></div>` at the end of `.drop` to add an 
   <demovanilla src="vanilla/components/core/drop/right">
   </demovanilla>
   <demovanilla src="vanilla/components/core/drop/auto">
-  </demovanilla>
-</demo>
-
-## Offset
-
-Use **js option** `offset: <Array>` to specify [popperjs offset](https://popper.js.org/docs/v2/modifiers/offset/).
-
-<div class="table-scroll">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `offset:Array`                          | `[0, 15]`        | Offset option for popperjs            |
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/core/drop/offset">
   </demovanilla>
 </demo>
 

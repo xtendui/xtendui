@@ -39,7 +39,7 @@ demo.htmlSource = `
 
   </div>
 
-  <div data-xt-drop="{ on: 'mouseenter', off: 'mouseleave', backdrop: true }">
+  <div data-xt-drop="{ elements: false, elementsInner: ':scope > a, :scope > button', on: 'mouseenter', off: 'mouseleave', backdrop: true }">
 
     <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       backdrop mouse

@@ -42,12 +42,6 @@ class Drop extends Xt.Toggle {
               },
             },
             {
-              name: 'offset',
-              options: {
-                offset: options.offset,
-              },
-            },
-            {
               name: 'arrow',
               options: {
                 element: '[data-arrow]',
@@ -130,7 +124,6 @@ Drop.optionsDefault = {
   },
   // other
   position: 'bottom-start',
-  offset: [0, 15],
   popperjs: null,
   closeAuto: true,
   closeOutside: 'body',

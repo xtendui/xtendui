@@ -7,6 +7,7 @@ module.exports = {
     '.drop-static': {
       // setup
       width: '100%',
+      padding: 0,
       '> .drop-inner': {
         width: '100%',
       },
@@ -69,17 +70,29 @@ module.exports = {
       height: '1rem',
       background: theme('colors.white'),
       '[data-popper-placement^="top"] &': {
-        bottom: '-0.25rem',
+        bottom: '0.5rem',
       },
       '[data-popper-placement^="bottom"] &': {
-        top: '-0.25rem',
+        top: '0.5rem',
       },
       '[data-popper-placement^="left"] &': {
-        right: '-0.25rem',
+        right: '0.5rem',
       },
       '[data-popper-placement^="right"] &': {
-        left: '-0.25rem',
+        left: '0.5rem',
       },
+    },
+    '[data-popper-placement^="top"]': {
+      paddingBottom: theme('spacing.4'),
+    },
+    '[data-popper-placement^="bottom"]': {
+      paddingTop: theme('spacing.4'),
+    },
+    '[data-popper-placement^="left"]': {
+      paddingRight: theme('spacing.4'),
+    },
+    '[data-popper-placement^="right"]': {
+      paddingLeft: theme('spacing.4'),
     },
   }),
 }

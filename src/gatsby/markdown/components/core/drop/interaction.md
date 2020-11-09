@@ -92,6 +92,9 @@ You can specify **on** and **off** events for the drop. Fore example `on: 'mouse
 
 </div>
 
+[[notePrimary]]
+| When using `mouseenter` and `mouseleave` events only [drops with self mode](/components/core/drop#usage-self) are supported with also `elements: false, elementsInner: ':scope > a, :scope > button'`.
+
 <demo>
   <demovanilla src="vanilla/components/core/drop/event">
   </demovanilla>

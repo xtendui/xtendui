@@ -1776,7 +1776,7 @@ class Toggle {
       const before = getComputedStyle(el, ':before').getPropertyValue('content').replace(/['"]+/g, '')
       const after = getComputedStyle(el, ':after').getPropertyValue('content').replace(/['"]+/g, '')
       self.specialCollapse(actionCurrent, el, before, after)
-      self.specialBackdrop(actionCurrent, obj)
+      self.specialBackdrop(actionCurrent, obj, el, type)
       self.specialClassHtml(actionCurrent)
       self.specialScrollbar(actionCurrent)
       if (options.focusLimit) {
@@ -1931,6 +1931,8 @@ class Toggle {
       // activation
       self.deactivateDone(el)
       // special
+      self.specialBackdrop(actionCurrent, obj, el, type)
+      self.specialScrollbar(actionCurrent)
       if (type === 'targets' || (!self.targets.length && type === 'elements')) {
         // appendTo
         if (options.appendTo) {
@@ -2046,10 +2048,6 @@ class Toggle {
         self.initial = false
         self.wrap = false
       })
-    } else if (actionCurrent === 'Off') {
-      // special
-      self.specialBackdrop(actionCurrent, obj)
-      self.specialScrollbar(actionCurrent)
     }
   }
 
@@ -2618,32 +2616,35 @@ class Toggle {
    * backdrop append to element
    * @param {String} actionCurrent Current action
    * @param {Object} obj Queue object
+   * @param {Node|HTMLElement|EventTarget|Window} el Element to be animated
+   * @param {String} type Type of element
    */
-  specialBackdrop(actionCurrent, obj) {
+  specialBackdrop(actionCurrent, obj, el, type) {
     const self = this
     const options = self.options
     // backdrop
     if (options.backdrop) {
-      const elements = obj['targets'] ? Xt.arrSingle(obj['targets'].queueEls) : Xt.arrSingle(self.object)
-      for (const element of elements) {
+      if ((obj['targets'] && type === 'targets') || (!obj['targets'] && type === 'elements')) {
         if (actionCurrent === 'On') {
-          const backdrops = element.querySelectorAll('.backdrop')
+          console.log('on', el)
+          const backdrops = el.querySelectorAll('.backdrop')
           if (!backdrops.length) {
             const backdrop = Xt.createElement('<div class="backdrop xt-ignore"></div>')
-            element.append(backdrop)
+            el.append(backdrop)
             // @FIX pass wheel event or when you mousewheel over .backdrop it doesn't scroll
             const eWheel = 'onwheel' in backdrop ? 'wheel' : backdrop.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll'
             backdrop.addEventListener(
               eWheel,
               e => {
                 const delta = -e.deltaY || e.wheelDeltaY
-                element.scrollTop -= delta
+                el.scrollTop -= delta
               },
               { passive: true }
             )
           }
         } else if (actionCurrent === 'Off') {
-          const backdrops = element.querySelectorAll('.backdrop')
+          console.log('off', el)
+          const backdrops = el.querySelectorAll('.backdrop')
           if (backdrops.length) {
             for (const backdrop of backdrops) {
               backdrop.remove()
