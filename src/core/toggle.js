@@ -1180,12 +1180,22 @@ class Toggle {
     if (self.initial && !self.wrap) {
       el.classList.add(...self.classesInitial)
     }
+    // popper
+    const popperInstance = Xt.dataStorage.get(el, `${self.componentNamespace}Popper`) // change also in doc xtdropPopperInstance
+    if (popperInstance) {
+      el.classList.add('xt-transition-none')
+      popperInstance.update()
+    }
     // keep the same level of raf as others
     cancelAnimationFrame(Xt.dataStorage.get(el, `${self.componentNamespace}ActivateFrame`))
     Xt.dataStorage.put(
       el,
       `${self.componentNamespace}ActivateFrame`,
       requestAnimationFrame(() => {
+        // popper
+        if (popperInstance) {
+          el.classList.remove('xt-transition-none')
+        }
         el.classList.add(...self.classesActive)
         // remove initial instantly when wrap
         if (el.classList.contains('xt-wrap')) {
@@ -3030,7 +3040,7 @@ Toggle.componentName = 'xt-toggle'
 Toggle.optionsDefaultSuper = {
   // element
   elements: ':scope > a, :scope > button',
-  targets: ':scope > .toggle, :scope > [class^="toggle-"], :scope > [class*=" toggle-"]',
+  targets: ':scope > .toggle, :scope > .toggle-inverse',
   elementsInner: false,
   targetsInner: false,
   // class

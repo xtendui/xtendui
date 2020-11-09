@@ -48,19 +48,19 @@ Pass **elements** and **targets** options if different from defaults. **Elements
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `elements:Query`                          | `false`        | Elements query            |
-| Option                  | `targets:Query`                          | `:scope > .drop`        | Targets query            |
-| Option                  | `elementsInner:Query`                          | `':scope > a, :scope > button'`        | Inner elements query (scope inside elements)            |
-| Option                  | `targetsInner:Query`                          | `':scope > .drop-inner'`        | Inner targets query (scope inside targets)           |
+| Option                  | `elements:Query`                          | `':scope > a, :scope > button'`        | Elements query            |
+| Option                  | `targets:Query`                          | `':scope > .drop'`        | Targets query            |
+| Option                  | `elementsInner:Query`                          | `false`        | Inner elements query (scope inside elements)            |
+| Option                  | `targetsInner:Query`                          | `false`        | Inner targets query (scope inside targets)           |
 
 </div>
 
-#### Self
+#### Multiple
 
-Use this code to create a **drop** in **self mode**.
+Use this code to create **drop** in **multiple mode**.
 
 <demo>
-  <demovanilla src="vanilla/components/core/drop/usage-self">
+  <demovanilla src="vanilla/components/core/drop/usage-multiple">
   </demovanilla>
 </demo>
 
@@ -82,12 +82,12 @@ The **unique** mode is useful when triggering **targets outside the scope** of t
 
 Check subpage to [customize interaction](/components/core/drop/interaction) and [customize lists](/components/core/drop/content-list) or [customize card](/components/core/drop/content-card).
 
-#### Multiple
+#### Self
 
-Use this code to create **drop** in **multiple mode**.
+Use this code to create a **drop** in **self mode**.
 
 <demo>
-  <demovanilla src="vanilla/components/core/drop/usage-multiple">
+  <demovanilla src="vanilla/components/core/drop/usage-self">
   </demovanilla>
 </demo>
 

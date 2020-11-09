@@ -11,7 +11,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div data-xt-drop>
+<div data-xt-drop="{ elements: false, elementsInner: ':scope > a, :scope > button' }">
 
   <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
     drop

@@ -76,25 +76,6 @@ class Drop extends Xt.Toggle {
     }
   }
 
-  /**
-   * activate element
-   * @param {Node|HTMLElement|EventTarget|Window} el Elements to be activated
-   */
-  activate(el) {
-    const self = this
-    // super
-    super.activate(el)
-    // popper
-    const popperInstance = Xt.dataStorage.get(el, `${self.componentNamespace}Popper`) // change also in doc xtdropPopperInstance
-    if (popperInstance) {
-      el.classList.add('xt-transition-none')
-      popperInstance.update()
-      requestAnimationFrame(() => {
-        el.classList.remove('xt-transition-none')
-      })
-    }
-  }
-
   //
 }
 

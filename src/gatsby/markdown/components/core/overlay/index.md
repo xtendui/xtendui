@@ -58,12 +58,12 @@ Pass **elements** and **targets** options if different from defaults. **Elements
 
 </div>
 
-#### Self
+#### Multiple
 
-Use this code to create a **overlay** in **self mode**.
+Use this code to create a **overlay** in **multiple mode**.
 
 <demo>
-  <demovanilla src="vanilla/components/core/overlay/usage-self">
+  <demovanilla src="vanilla/components/core/overlay/usage-multiple">
   </demovanilla>
 </demo>
 
@@ -85,14 +85,14 @@ The **unique** mode is useful when triggering **targets outside the scope** of t
 
 Check subpage to [customize interaction](/components/core/overlay/interaction) and [customize content](/components/core/overlay/content).
 
-#### Standalone
+#### Self
 
-Use this code to create a **overlay** in **standalone mode**.
+Use this code to create a **overlay** in **self mode**.
 
 Just use the class `in-overlay` if you want to automatically open, or use the [api](/components/core/overlay/api)
 
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/overlay/usage-standalone">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/overlay/usage-self">
   </div>
 </demo>
 

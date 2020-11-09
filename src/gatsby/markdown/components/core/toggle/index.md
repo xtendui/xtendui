@@ -41,18 +41,18 @@ Pass **elements** and **targets** options if different from defaults. **Elements
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `elements:Query`                          | `':scope > a, :scope > button'`        | Elements query            |
-| Option                  | `targets:Query`                          | `':scope > .toggle, :scope > [class^="toggle-"], :scope > [class*=" toggle-"]'`        | Targets query            |
+| Option                  | `targets:Query`                          | `':scope > .toggle, :scope > .toggle-inverse'`        | Targets query            |
 | Option                  | `elementsInner:Query`                          | `false`        | Inner elements query (scope inside elements)            |
 | Option                  | `targetsInner:Query`                          | `false`        | Inner targets query (scope inside targets)     
 
 </div>
 
-#### Self
+#### Multiple
 
-Use this code to create a **toggle** in **self mode**.
+Use this code to create a **toggle** in **multiple mode**.
 
 <demo>
-  <demovanilla src="vanilla/components/core/toggle/usage-self">
+  <demovanilla src="vanilla/components/core/toggle/usage-multiple">
   </demovanilla>
 </demo>
 
@@ -64,36 +64,24 @@ Use this code to create a **toggle** in **unique mode**.
 
 The **unique** mode is useful when triggering **targets outside the scope** of the component.
 
-<demo>
-  <demovanilla src="vanilla/components/core/toggle/usage-unique-single">
-  </demovanilla>
-</demo>
-
-You can also toggle the **same targets on multiple toggles**.
-
 [[notePrimary]]
 | To activate **unique mode** you **need** to specify targets with **#id**.
 
 <demo>
+  <demovanilla src="vanilla/components/core/toggle/usage-unique">
+  </demovanilla>
   <demovanilla src="vanilla/components/core/toggle/usage-unique-same">
   </demovanilla>
 </demo>
 
 Check subpage to [customize interaction](/components/core/toggle/interaction).
 
-#### Multiple
+#### Self
 
-Use this code to create a **toggle** in **multiple mode**.
-
-<demo>
-  <demovanilla src="vanilla/components/core/toggle/usage-multiple-default">
-  </demovanilla>
-</demo>
-
-You can also specify your own `elements` and `targets`.
+Use this code to create a **toggle** in **self mode**.
 
 <demo>
-  <demovanilla src="vanilla/components/core/toggle/usage-multiple-custom">
+  <demovanilla src="vanilla/components/core/toggle/usage-self">
   </demovanilla>
 </demo>
 

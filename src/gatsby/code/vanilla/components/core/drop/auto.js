@@ -19,7 +19,7 @@ demo.htmlSource = `
       auto
     </button>
 
-    <div class="drop md:drop-left md:drop-middle">
+    <div class="drop">
       <div class="drop-inner">
         <div class="w-64 py-3 rounded-md ${cardDefaultDropList()}">
           <nav class="list flex-col">
@@ -46,7 +46,7 @@ demo.htmlSource = `
       auto start
     </button>
 
-    <div class="drop md:drop-bottom md:drop-left">
+    <div class="drop">
       <div class="drop-inner">
         <div class="w-64 py-3 rounded-md ${cardDefaultDropList()}">
           <nav class="list flex-col">
@@ -73,7 +73,7 @@ demo.htmlSource = `
       auto end
     </button>
 
-    <div class="drop md:drop-top md:drop-left">
+    <div class="drop">
       <div class="drop-inner">
         <div class="w-64 py-3 rounded-md ${cardDefaultDropList()}">
           <nav class="list flex-col">
