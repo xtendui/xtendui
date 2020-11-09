@@ -15,7 +15,7 @@ demo.htmlSource = `
 
   <div data-xt-drop="{ backdrop: true }">
 
-    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()} active:z-drop">
       backdrop
     </button>
 
@@ -41,8 +41,8 @@ demo.htmlSource = `
 
   <div data-xt-drop="{ elements: false, elementsInner: ':scope > a, :scope > button', on: 'mouseenter', off: 'mouseleave', backdrop: true }">
 
-    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
-      backdrop mouse
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()} active:z-drop">
+      backdrop mouse z-drop
     </button>
 
     <div class="drop">

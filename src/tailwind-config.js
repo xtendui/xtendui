@@ -96,6 +96,7 @@ module.exports = {
       after(['group-active'], 'group-hover', after(['active'], 'hover', after(['group-hover'], 'hover', after(['hover'], 'responsive')))),
     transitionDelay: ({ after }) =>
       after(['group-active'], 'group-hover', after(['active'], 'hover', after(['group-hover'], 'hover', after(['hover'], 'responsive')))),
+    zIndex: ({ after }) => after(['group-active'], 'active', after(['active'], 'responsive')),
   },
   plugins: [require('./tailwind-plugin')],
 }

@@ -19,9 +19,9 @@ demo.htmlSource = `
       left
     </button>
 
-    <div class="overlay overlay-screen">
+    <div class="overlay overlay-screen duration-500"> <!-- needed for animation time, put max animation time -->
       <div class="overlay-container max-w-md ml-0 mr-auto">
-        <div class="overlay-inner">
+        <div class="overlay-inner transform transition-all duration-500 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
 
           <div class="card ${cardDefaultOverlayScreen()}">
             <div class="btn btn-close p-5 text-2xl fixed z-top" aria-label="Close">
@@ -48,9 +48,9 @@ demo.htmlSource = `
       right
     </button>
 
-    <div class="overlay overlay-screen">
+    <div class="overlay overlay-screen duration-500"> <!-- needed for animation time, put max animation time -->
       <div class="overlay-container max-w-md ml-auto mr-0">
-        <div class="overlay-inner">
+        <div class="overlay-inner transform transition-all duration-500 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
 
           <div class="card ${cardDefaultOverlayScreen()}">
             <div class="btn btn-close p-5 text-2xl fixed z-top" aria-label="Close">

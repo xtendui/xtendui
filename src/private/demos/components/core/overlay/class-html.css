@@ -1,5 +1,8 @@
 .demo--overlay-class-html {
-  /* DO NOT APPLY to selector with descendants with position: fixed; or it bugs position: fixed; */
+  /* DO NOT APPLY to selector with descendants with position: fixed; or transforms bugs position: fixed; */
+  transition-property: transform;
+  transition-duration: theme('transitionDuration.500');
+  transition-timing-function: theme('transitionTimingFunction.in-out');
   .demo--overlay-class-html-left & {
     transform: translateX(4rem);
   }
