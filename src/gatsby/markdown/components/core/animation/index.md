@@ -19,12 +19,16 @@ module.exports = {
   theme:{
     extend: {
       transitionDelay: {
+        // modify transition delay
       },
       transitionTimingFunction: {
-        // add transition timing functions
+        // modify transition timing function
+      },
+      animation: {
+        // modify animations
       },
       keyframes: theme => ({
-        // add keyframe animations
+        // modify keyframe
       }),
     },
     xtendui: {

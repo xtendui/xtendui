@@ -1,6 +1,7 @@
 import { Xt } from '../xt.js'
 import './toggle'
 import JSON5 from 'json5'
+import { createPopper } from '@popperjs/core'
 
 /**
  * Drop
@@ -19,6 +20,47 @@ class Drop extends Xt.Toggle {
   //
   // init
   //
+
+  /**
+   * init elements, targets and currents
+   */
+  initScope() {
+    const self = this
+    const options = self.options
+    // super
+    super.initScope()
+    // popper
+    for (const element of self.elements) {
+      for (const target of self.getTargets(element)) {
+        const popperInstance = createPopper(element, target, {
+          placement: options.position,
+          modifiers: [
+            {
+              name: 'computeStyles',
+              options: {
+                gpuAcceleration: false,
+              },
+            },
+            {
+              name: 'offset',
+              options: {
+                offset: options.offset,
+              },
+            },
+            {
+              name: 'arrow',
+              options: {
+                element: '[data-arrow]',
+                padding: 15,
+              },
+            },
+          ],
+          ...options.popperjs,
+        })
+        Xt.dataStorage.set(element, `${self.componentNamespace}Popper`, popperInstance) // change also in doc xtdropPopperInstance
+      }
+    }
+  }
 
   /**
    * init aria
@@ -40,6 +82,29 @@ class Drop extends Xt.Toggle {
     }
   }
 
+  /**
+   * activate element
+   * @param {Node|HTMLElement|EventTarget|Window} el Elements to be activated
+   */
+  activate(el) {
+    const self = this
+    // super
+    super.activate(el)
+    // popper
+    const popperInstance = Xt.dataStorage.get(el, `${self.componentNamespace}Popper`) // change also in doc xtdropPopperInstance
+    if (popperInstance) {
+      for (const target of self.getTargets(el)) {
+        target.classList.add('xt-transition-none')
+      }
+      popperInstance.update()
+      requestAnimationFrame(() => {
+        for (const target of self.getTargets(el)) {
+          target.classList.remove('xt-transition-none')
+        }
+      })
+    }
+  }
+
   //
 }
 
@@ -50,10 +115,8 @@ class Drop extends Xt.Toggle {
 Drop.componentName = 'xt-drop'
 Drop.optionsDefault = {
   // element
-  elements: false,
-  elementsInner: ':scope > a, :scope > button',
+  elements: ':scope > a, :scope > button',
   targets: ':scope > .drop',
-  targetsInner: ':scope > .drop-inner',
   // class
   class: 'in in-drop',
   // quantity
@@ -70,6 +133,9 @@ Drop.optionsDefault = {
     targetsInner: true,
   },
   // other
+  position: 'bottom-start',
+  offset: [0, 15],
+  popperjs: null,
   closeAuto: true,
   closeOutside: 'body',
   closeInside: '.drop-dismiss, .backdrop, .btn-close',

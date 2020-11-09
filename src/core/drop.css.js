@@ -1,19 +1,20 @@
 module.exports = {
+  boxShadow: {
+    drop: '0 0 20px 0 rgba(0, 0, 0, 0.1), 0 0 10px 0px rgba(0, 0, 0, 0.05)',
+  },
   variants: ['responsive'],
-  utility: theme => ({
-    '.drop-container-static': {
+  utility: {
+    '.drop-static': {
       // setup
-      position: 'static',
-      '> .drop': {
+      width: '100%',
+      '> .drop-inner': {
         width: '100%',
-        '> .drop-inner': {
-          width: '100%',
-        },
-        left: '0 !important',
-        right: '0 !important',
       },
+      top: '100% !important',
+      left: '0 !important',
+      right: '0 !important',
     },
-    '.drop-container-disable': {
+    '.drop-disable': {
       // setup
       '@apply xt-disable': '',
       position: 'initial',
@@ -38,105 +39,13 @@ module.exports = {
         },
       },
     },
-    '.drop-before': {
-      // setup
-      left: 'auto',
-      right: '100%',
-      // styles
-      // styles
-      paddingLeft: `${theme('spacing.2')}`,
-      paddingRight: `${theme('spacing.2')}`,
-    },
-    '.drop-after': {
-      // setup
-      left: '100%',
-      right: 'auto',
-      // styles
-      paddingLeft: `${theme('spacing.2')}`,
-      paddingRight: `${theme('spacing.2')}`,
-    },
-    '.drop-bottom': {
-      // setup
-      top: '100%',
-      bottom: 'auto',
-      '&:after': {
-        display: 'none',
-        content: '""',
-      },
-      // styles
-      paddingTop: `${theme('spacing.2')}`,
-      paddingBottom: `${theme('spacing.2')}`,
-    },
-    '.drop-top': {
-      // setup
-      top: 'auto',
-      bottom: '100%',
-      '&:after': {
-        display: 'none',
-        content: '""',
-      },
-      // styles
-      paddingTop: `${theme('spacing.2')}`,
-      paddingBottom: `${theme('spacing.2')}`,
-    },
-    '.drop-middle': {
-      // setup
-      paddingTop: '0',
-      paddingBottom: '0',
-      '&:after': {
-        display: 'none',
-        content: '"xt-drop-middle"',
-      },
-    },
-    '.drop-left': {
-      // setup
-      left: '0',
-      right: 'auto',
-      '&:before': {
-        display: 'none',
-        content: '""',
-      },
-    },
-    '.drop-right': {
-      // setup
-      left: 'auto',
-      right: '0',
-      '&:before': {
-        display: 'none',
-        content: '""',
-      },
-    },
-    '.drop-center': {
-      // setup
-      '&:before': {
-        display: 'none',
-        content: '"xt-drop-center"',
-      },
-    },
-    '.drop-contain-bottom': {
-      // setup
-      '@apply drop-middle': '',
-      top: 'auto',
-      bottom: '0',
-    },
-    '.drop-contain-top': {
-      // setup
-      '@apply drop-middle': '',
-      top: '0',
-      bottom: 'auto',
-    },
-  }),
+  },
   component: theme => ({
-    '.drop-container': {
-      // setup
-      position: 'relative',
-    },
     '.drop': {
       // setup
       '@apply toggle': '',
       position: 'absolute',
       zIndex: 'inherit',
-      transitionDuration: 'inherit',
       '&.in': {
         zIndex: theme('zIndex.drop'),
       },
@@ -144,13 +53,33 @@ module.exports = {
         zIndex: theme('zIndex.drop') - 1,
         pointerEvents: 'none',
       },
-      // styles
-      '@apply drop-left drop-bottom': '',
     },
     '.drop-inner': {
       // setup
       position: 'relative',
       zIndex: theme('zIndex.drop'),
+    },
+    '.drop-arrow': {
+      // setup
+      position: 'absolute',
+      zIndex: theme('zIndex.drop'),
+      transform: 'rotate(45deg)',
+      // styles
+      width: '1rem',
+      height: '1rem',
+      background: theme('colors.white'),
+      '[data-popper-placement^="top"] &': {
+        bottom: '-0.25rem',
+      },
+      '[data-popper-placement^="bottom"] &': {
+        top: '-0.25rem',
+      },
+      '[data-popper-placement^="left"] &': {
+        right: '-0.25rem',
+      },
+      '[data-popper-placement^="right"] &': {
+        left: '-0.25rem',
+      },
     },
   }),
 }

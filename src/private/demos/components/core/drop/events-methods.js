@@ -5,10 +5,7 @@ Xt.mount.push({
   mount: object => {
     // init
 
-    let self = new Xt.Drop(object, {
-      elements: ':scope > .drop-container',
-      targets: ':scope > .drop-container > .drop',
-    })
+    let self = new Xt.Drop(object)
 
     // log
 
@@ -64,13 +61,15 @@ Xt.mount.push({
         const elements = self.elements.filter(x => !x.classList.contains('xt-wrap'))
         const indexEl = elements.length + 1
         const strEl = `
-        <div class="drop-container">
-
           <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
             Element ${indexEl}
           </button>
-
-          <div class="drop" title="Target ${indexEl}">
+        `
+        document.querySelector('#demo--drop-events').append(Xt.createElement(strEl))
+        const targets = self.targets.filter(x => !x.classList.contains('xt-wrap'))
+        const indexTr = targets.length + 1
+        const strTr = `
+          <div class="drop" title="Target ${indexTr}">
             <div class="drop-inner">
               <div class="w-64 py-3 rounded-md ${cardDefaultDropList()}">
                 <nav class="list flex-col">
@@ -87,10 +86,8 @@ Xt.mount.push({
               </div>
             </div>
           </div>
-
-        </div>
-      `
-        document.querySelector('#demo--drop-events').append(Xt.createElement(strEl))
+        `
+        document.querySelector('#demo--drop-events').append(Xt.createElement(strTr))
         // reinit
         logAdd('<strong>reinit</strong>')
         self.reinit()

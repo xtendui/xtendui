@@ -1775,8 +1775,6 @@ class Toggle {
       // special
       const before = getComputedStyle(el, ':before').getPropertyValue('content').replace(/['"]+/g, '')
       const after = getComputedStyle(el, ':after').getPropertyValue('content').replace(/['"]+/g, '')
-      self.specialCenter(el, before)
-      self.specialMiddle(el, before, after)
       self.specialCollapse(actionCurrent, el, before, after)
       self.specialBackdrop(actionCurrent, obj)
       self.specialClassHtml(actionCurrent)
@@ -2653,37 +2651,6 @@ class Toggle {
           }
         }
       }
-    }
-  }
-
-  /**
-   * center position on activation
-   * @param {Node|HTMLElement|EventTarget|Window} el Element
-   * @param {String} before Before content
-   */
-  specialCenter(el, before) {
-    const self = this
-    // specialCenter
-    if (before === 'xt-drop-center') {
-      const add = self.object.clientWidth
-      const remove = el.clientWidth
-      el.style.left = `${(add - remove) / 2}px`
-    }
-  }
-
-  /**
-   * middle position on activation
-   * @param {Node|HTMLElement|EventTarget|Window} el Element
-   * @param {String} before Before content
-   * @param {String} after After content
-   */
-  specialMiddle(el, before, after) {
-    const self = this
-    // specialMiddle
-    if (after === 'xt-drop-middle') {
-      const add = self.object.clientHeight
-      const remove = el.clientHeight
-      el.style.top = `${(add - remove) / 2}px`
     }
   }
 

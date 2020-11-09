@@ -11,7 +11,7 @@ const checkDefault = require('components/snippets/classes/form-check-default').d
 const radioDefault = require('components/snippets/classes/form-radio-default').default
 const iconX = require('components/snippets/icons').iconX
 const cardDefault =
-  'overflow-hidden text-black links-default bg-white shadow-lg transform ease-in-out-quint duration-700 delay-300 opacity-0 translate-y-full group-active:ease-out-quint group-active:delay-0 group-active:opacity-100 group-active:translate-y-0'
+  'overflow-hidden text-black links-default bg-white transform ease-in-out-quint duration-700 delay-300 opacity-0 translate-y-full group-active:ease-out-quint group-active:delay-0 group-active:opacity-100 group-active:translate-y-0'
 const cardItem =
   'transform ease-in-out-quint duration-700 delay-0 opacity-0 translate-y-1/2 group-active:ease-out-quint group-active:delay-300 group-active:opacity-100 group-active:translate-y-0'
 
@@ -61,7 +61,7 @@ demo.htmlSource = `
 
 <div class="list list-2 items-center">
 
-  <div class="drop-container" data-xt-drop>
+  <div data-xt-drop>
 
     <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       list
@@ -69,7 +69,7 @@ demo.htmlSource = `
 
     <div class="drop group duration-700"> <!-- needed for animation time, put max animation time -->
       <div class="drop-inner">
-        <div class="w-64 py-3 rounded-md rounded-md ${cardDefault}">
+        <div class="w-64 py-3 rounded-md shadow-drop ${cardDefault}">
           <nav class="list flex-col rounded-md ${cardItem}">
             <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -87,7 +87,7 @@ demo.htmlSource = `
 
   </div>
 
-  <div class="drop-container" data-xt-drop>
+  <div data-xt-drop>
 
     <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       card
@@ -95,7 +95,7 @@ demo.htmlSource = `
 
     <div class="drop group duration-700"> <!-- needed for animation time, put max animation time -->
       <div class="drop-inner">
-        <div class="card w-80 rounded-md ${cardDefault}">
+        <div class="card w-80 rounded-md shadow-drop ${cardDefault}">
           <div class="btn btn-close p-5 text-xl" aria-label="Close">
             ${iconX()}
           </div>
@@ -125,11 +125,11 @@ demo.htmlSource = `
       <div class="overlay-container">
         <div class="overlay-inner">
 
-          <div class="card items-center justify-center rounded-md ${cardDefault}">
+          <div class="card items-center justify-center shadow-xl ${cardDefault}">
             <div class="btn btn-close p-5 text-2xl fixed z-top" aria-label="Close">
               ${iconX()}
             </div>
-            <div class="media-container rounded-md ${cardItem} ratio-100">
+            <div class="media-container ${cardItem} ratio-100">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
               </div>
@@ -151,7 +151,7 @@ demo.htmlSource = `
       <div class="overlay-container max-w-md ml-0 mr-auto">
         <div class="overlay-inner">
 
-          <div class="card ${cardDefault}">
+          <div class="card shadow-overlay ${cardDefault}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>
@@ -196,7 +196,7 @@ demo.htmlSource = `
       <div class="overlay-container max-w-5xl">
         <div class="overlay-inner">
 
-          <div class="card rounded-md rounded-md ${cardDefault}">
+          <div class="card rounded-md shadow-overlay ${cardDefault}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>
@@ -277,7 +277,12 @@ demo.htmlSource = `
                 </form>
               </div>
 
-              <div class="md:w-5/12 flex flex-col">
+              <div class="md:w-5/12 flex flex-col ${cardItem}">
+                <div class="media-container rounded-b-md md:rounded-bl-none md:rounded-br-md h-48 md:ratio-100">
+                  <div class="media-inner">
+                    <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+                  </div>
+                </div>
                 <div class="card-md bg-gray-300 flex-full text-sm">
                   <p class="h5">
                     Didn't find what you was looking for?
@@ -285,11 +290,6 @@ demo.htmlSource = `
                   <p>
                       Contact our customer service at <a href="tel:+39333010101">+39 333 010101</a> or email us at <a href="mailto:info@info.com">info@info.com</a>.
                   </p>
-                </div>
-                <div class="media-container rounded-b-md md:rounded-bl-none md:rounded-br-md h-48 md:ratio-100">
-                  <div class="media-inner">
-                    <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
-                  </div>
                 </div>
               </div>
 
@@ -313,7 +313,7 @@ demo.htmlSource = `
       <div class="overlay-container max-w-5xl">
         <div class="overlay-inner">
 
-          <div class="card rounded-md rounded-md ${cardDefault}">
+          <div class="card rounded-md shadow-overlay ${cardDefault}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>

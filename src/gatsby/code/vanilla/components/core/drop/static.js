@@ -12,13 +12,13 @@ export const demo = {
 demo.htmlSource = `
 <div class="relative py-4 px-6 bg-accent-500">
 
-  <div class="drop-container drop-container-static" data-xt-drop>
+  <div data-xt-drop>
 
     <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       static
     </button>
 
-    <div class="drop p-0">
+    <div class="drop drop-static p-0">
       <div class="drop-inner">
         <div class="card w-full rounded-md ${cardDefaultDrop()}">
           <div class="md:card-group">

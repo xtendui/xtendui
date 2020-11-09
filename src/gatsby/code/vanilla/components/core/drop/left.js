@@ -13,62 +13,10 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-2 items-center">
 
-  <div class="drop-container" data-xt-drop>
+  <div data-xt-drop="{ position: 'left' }">
 
     <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
-      bottom left
-    </button>
-
-    <div class="drop md:drop-bottom md:drop-left">
-      <div class="drop-inner">
-        <div class="w-64 py-3 rounded-md ${cardDefaultDropList()}">
-          <nav class="list flex-col">
-            <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
-            </a>
-            <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
-              Dolor sit
-            </button>
-            <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
-              Amet
-            </button>
-          </nav>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="drop-container" data-xt-drop>
-
-    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
-      top left
-    </button>
-
-    <div class="drop md:drop-top md:drop-left">
-      <div class="drop-inner">
-        <div class="w-64 py-3 rounded-md ${cardDefaultDropList()}">
-          <nav class="list flex-col">
-            <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
-            </a>
-            <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
-              Dolor sit
-            </button>
-            <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
-              Amet
-            </button>
-          </nav>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="drop-container" data-xt-drop>
-
-    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
-      left middle
+      left
     </button>
 
     <div class="drop md:drop-left md:drop-middle">
@@ -87,17 +35,18 @@ demo.htmlSource = `
           </nav>
         </div>
       </div>
+      <div class="drop-arrow" data-arrow></div>
     </div>
 
   </div>
 
-  <div class="drop-container" data-xt-drop>
+  <div data-xt-drop="{ position: 'left-start' }">
 
     <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
-      left contain-bottom
+      left start
     </button>
 
-    <div class="drop md:drop-left md:drop-contain-bottom">
+    <div class="drop md:drop-bottom md:drop-left">
       <div class="drop-inner">
         <div class="w-64 py-3 rounded-md ${cardDefaultDropList()}">
           <nav class="list flex-col">
@@ -113,17 +62,18 @@ demo.htmlSource = `
           </nav>
         </div>
       </div>
+      <div class="drop-arrow" data-arrow></div>
     </div>
 
   </div>
 
-  <div class="drop-container" data-xt-drop>
+  <div data-xt-drop="{ position: 'left-end' }">
 
     <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
-      left contain-top
+      left end
     </button>
 
-    <div class="drop md:drop-left md:drop-contain-top">
+    <div class="drop md:drop-top md:drop-left">
       <div class="drop-inner">
         <div class="w-64 py-3 rounded-md ${cardDefaultDropList()}">
           <nav class="list flex-col">
@@ -139,6 +89,7 @@ demo.htmlSource = `
           </nav>
         </div>
       </div>
+      <div class="drop-arrow" data-arrow></div>
     </div>
 
   </div>

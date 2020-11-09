@@ -8,11 +8,11 @@ const checkDefault = require('components/snippets/classes/form-check-default').d
 const radioDefault = require('components/snippets/classes/form-radio-default').default
 const iconX = require('components/snippets/icons').iconX
 const classesDefault =
-  'text-black links-default rounded-md bg-gray-200 border-transparent transform ease-out-quint duration-500 border hover:bg-gray-300 hover:border-gray-400 hover:shadow-lg hover:-translate-y-1 active:bg-gray-400 active:shadow-sm active:translate-y-0'
+  'text-black links-default rounded-md bg-gray-200 border-transparent transform ease-out-quint duration-500 border hover:bg-gray-300 hover:border-gray-400 hover:-translate-y-1 active:bg-gray-400 active:translate-y-0'
 const classesPrimary =
-  'text-white links-inverse rounded-md bg-accent-500 border-transparent transform ease-out-quint duration-500 border hover:bg-accent-600 hover:border-accent-700 hover:shadow-lg hover:-translate-y-1 active:bg-accent-700 active:shadow-sm active:translate-y-0'
+  'text-white links-inverse rounded-md bg-accent-500 border-transparent transform ease-out-quint duration-500 border hover:bg-accent-600 hover:border-accent-700 hover:-translate-y-1 active:bg-accent-700 active:translate-y-0'
 const cardDesign =
-  'bg-white shadow-lg transform ease-in-out-quint duration-500 delay-200 opacity-0 scale-50 group-active:ease-out-quint group-active:delay-0 group-active:opacity-100 group-active:scale-100'
+  'bg-white transform ease-in-out-quint duration-500 delay-200 opacity-0 scale-50 group-active:ease-out-quint group-active:delay-0 group-active:opacity-100 group-active:scale-100'
 const cardContent =
   'text-black links-default transform ease-in-out-quint duration-500 delay-0 opacity-0 -translate-y-2 group-active:ease-out-quint group-active:delay-300 group-active:opacity-100 group-active:translate-y-0'
 
@@ -38,11 +38,11 @@ demo.htmlSource = `
     btn
   </button>
 
-  <button type="button" class="btn btn-md ${classesDefault}">
+  <button type="button" class="btn btn-md ${classesDefault} hover:shadow-lg active:shadow-sm">
     default
   </button>
 
-  <button type="button" class="btn btn-md ${classesPrimary}">
+  <button type="button" class="btn btn-md ${classesPrimary} hover:shadow-lg active:shadow-sm">
     primary
   </button>
 
@@ -62,15 +62,15 @@ demo.htmlSource = `
 
 <div class="list list-2 items-center">
 
-  <div class="drop-container" data-xt-drop>
+  <div data-xt-drop>
 
-    <button type="button" class="btn btn-md ${classesPrimary}">
+    <button type="button" class="btn btn-md ${classesPrimary} hover:shadow-lg active:shadow-sm">
       list
     </button>
 
     <div class="drop group duration-700"> <!-- needed for animation time, put max animation time -->
       <div class="drop-inner">
-        <div class="design-setup rounded-md ${cardDesign}"></div>
+        <div class="design-setup rounded-md shadow-drop ${cardDesign}"></div>
         <div class="w-64 py-3 rounded-md ${cardContent}">
           <nav class="list flex-col">
             <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
@@ -89,15 +89,15 @@ demo.htmlSource = `
 
   </div>
 
-  <div class="drop-container" data-xt-drop>
+  <div data-xt-drop>
 
-    <button type="button" class="btn btn-md ${classesPrimary}">
+    <button type="button" class="btn btn-md ${classesPrimary} hover:shadow-lg active:shadow-sm">
       card
     </button>
 
     <div class="drop group duration-700"> <!-- needed for animation time, put max animation time -->
       <div class="drop-inner">
-        <div class="design-setup rounded-md ${cardDesign}"></div>
+        <div class="design-setup rounded-md shadow-drop ${cardDesign}"></div>
         <div class="card w-80 rounded-md ${cardContent}">
           <div class="btn btn-close p-5 text-xl" aria-label="Close">
             ${iconX()}
@@ -121,14 +121,14 @@ demo.htmlSource = `
 <div class="list list-2 items-center">
 
   <div data-xt-overlay>
-    <button type="button" class="btn btn-md ${classesPrimary}">
+    <button type="button" class="btn btn-md ${classesPrimary} hover:shadow-lg active:shadow-sm">
       screen full
     </button>
     <div class="overlay overlay-screen group duration-700"> <!-- needed for animation time, put max animation time -->
       <div class="overlay-container">
         <div class="overlay-inner">
 
-          <div class="design-setup rounded-md ${cardDesign}"></div>
+          <div class="design-setup rounded-md shadow-overlay ${cardDesign}"></div>
 
           <div class="card items-center justify-center rounded-md ${cardContent}">
             <div class="btn btn-close p-5 text-2xl fixed z-top" aria-label="Close">
@@ -148,7 +148,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
 
-    <button type="button" class="btn btn-md ${classesPrimary}">
+    <button type="button" class="btn btn-md ${classesPrimary} hover:shadow-lg active:shadow-sm">
       left blocks
     </button>
 
@@ -156,20 +156,20 @@ demo.htmlSource = `
       <div class="overlay-container max-w-md ml-0 mr-auto">
         <div class="overlay-inner">
 
-          <div class="design-setup ${cardDesign}"></div>
+          <div class="design-setup shadow-overlay ${cardDesign}"></div>
 
           <div class="card ${cardContent}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>
             <div class="list bg-accent-500">
-              <button type="button" class="btn btn-md ${classesPrimary}">
+              <button type="button" class="btn btn-md ${classesPrimary} hover:shadow-lg active:shadow-sm">
                 Menu
               </button>
-              <button type="button" class="btn btn-md ${classesPrimary}">
+              <button type="button" class="btn btn-md ${classesPrimary} hover:shadow-lg active:shadow-sm">
                 Info
               </button>
-              <button type="button" class="btn btn-md ${classesPrimary}">
+              <button type="button" class="btn btn-md ${classesPrimary} hover:shadow-lg active:shadow-sm">
                 Account
               </button>
             </div>
@@ -195,7 +195,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
 
-    <button type="button" class="btn btn-md ${classesPrimary}">
+    <button type="button" class="btn btn-md ${classesPrimary} hover:shadow-lg active:shadow-sm">
       contact
     </button>
 
@@ -203,7 +203,7 @@ demo.htmlSource = `
       <div class="overlay-container max-w-5xl">
         <div class="overlay-inner">
 
-          <div class="design-setup rounded-md md:rounded-tr-none rounded-md ${cardDesign}"></div>
+          <div class="design-setup rounded-md md:rounded-tr-none rounded-md shadow-overlay ${cardDesign}"></div>
 
           <div class="card rounded-md ${cardContent}">
             <div class="btn btn-close p-5 text-2xl ${btnCloseOutside()} md:p-3 md:right-auto md:left-100" aria-label="Close">
@@ -277,7 +277,7 @@ demo.htmlSource = `
                     </div>
 
                     <div class="w-full">
-                      <button type="submit" class="btn btn-md ${classesPrimary}">
+                      <button type="submit" class="btn btn-md ${classesPrimary} hover:shadow-lg active:shadow-sm">
                         Send
                       </button>
                     </div>
@@ -287,6 +287,11 @@ demo.htmlSource = `
               </div>
 
               <div class="md:w-5/12 flex flex-col">
+                <div class="media-container rounded-b-md md:rounded-bl-none md:rounded-br-md h-48 md:ratio-100">
+                  <div class="media-inner">
+                    <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+                  </div>
+                </div>
                 <div class="card-md bg-gray-300 flex-full text-sm">
                   <p class="h5">
                     Didn't find what you was looking for?
@@ -294,11 +299,6 @@ demo.htmlSource = `
                   <p>
                       Contact our customer service at <a href="tel:+39333010101">+39 333 010101</a> or email us at <a href="mailto:info@info.com">info@info.com</a>.
                   </p>
-                </div>
-                <div class="media-container rounded-b-md md:rounded-bl-none md:rounded-br-md h-48 md:ratio-100">
-                  <div class="media-inner">
-                    <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
-                  </div>
                 </div>
               </div>
 
@@ -314,7 +314,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
 
-    <button type="button" class="btn btn-md ${classesPrimary}">
+    <button type="button" class="btn btn-md ${classesPrimary} hover:shadow-lg active:shadow-sm">
       newsletter
     </button>
 
@@ -322,7 +322,7 @@ demo.htmlSource = `
       <div class="overlay-container max-w-5xl">
         <div class="overlay-inner">
 
-          <div class="design-setup rounded-md md:rounded-tr-none rounded-md ${cardDesign}"></div>
+          <div class="design-setup rounded-md md:rounded-tr-none rounded-md shadow-overlay ${cardDesign}"></div>
 
           <div class="card rounded-md ${cardContent}">
             <div class="btn btn-close p-5 text-2xl ${btnCloseOutside()} md:p-3 md:right-auto md:left-100" aria-label="Close">
@@ -403,7 +403,7 @@ demo.htmlSource = `
                     </div>
 
                     <div class="w-full">
-                      <button type="submit" class="btn btn-md ${classesPrimary}">
+                      <button type="submit" class="btn btn-md ${classesPrimary} hover:shadow-lg active:shadow-sm">
                         Subscribe
                       </button>
                     </div>
@@ -437,7 +437,7 @@ demo.htmlSource = `
 <div class="row row-3">
 
   <div class="w-full md:w-6/12">
-    <a role="button" class="card ${classesDefault}">
+    <a role="button" class="card ${classesDefault} hover:shadow-xl active:shadow-md">
       <div class="card-md">
         <div class="h4">Default</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
@@ -446,7 +446,7 @@ demo.htmlSource = `
   </div>
 
   <div class="w-full md:w-6/12">
-    <a role="button" class="card ${classesPrimary}">
+    <a role="button" class="card ${classesPrimary} hover:shadow-xl active:shadow-md">
       <div class="card-md">
         <div class="h4">Primary</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>

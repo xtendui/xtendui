@@ -11,59 +11,51 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-2 items-center"
-  data-xt-drop="{ elements: ':scope > .drop-container', targets: ':scope > .drop-container > .drop' }">
+<div class="list list-2 items-center" data-xt-drop>
 
-  <div class="drop-container">
+  <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+    drop
+  </button>
 
-    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
-      drop
-    </button>
-
-    <div class="drop">
-      <div class="drop-inner">
-        <div class="w-64 py-3 rounded-md ${cardDefaultDropList()}">
-          <nav class="list flex-col">
-            <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
-            </a>
-            <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
-              Dolor sit
-            </button>
-            <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
-              Amet
-            </button>
-          </nav>
-        </div>
+  <div class="drop">
+    <div class="drop-inner">
+      <div class="w-64 py-3 rounded-md ${cardDefaultDropList()}">
+        <nav class="list flex-col">
+          <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+          </a>
+          <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+            Dolor sit
+          </button>
+          <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+            Amet
+          </button>
+        </nav>
       </div>
     </div>
-
   </div>
 
-  <div class="drop-container">
+  <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+    drop
+  </button>
 
-    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
-      drop
-    </button>
-
-    <div class="drop">
-      <div class="drop-inner">
-        <div class="w-64 py-3 rounded-md ${cardDefaultDropList()}">
-          <nav class="list flex-col">
-            <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
-            </a>
-            <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
-              Dolor sit
-            </button>
-            <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
-              Amet
-            </button>
-          </nav>
+  <div class="drop">
+    <div class="drop-inner">
+      <div class="w-64 py-3 rounded-md ${cardDefaultDropList()}">
+        <nav class="list flex-col">
+          <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+          </a>
+          <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+            Dolor sit
+          </button>
+          <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+            Amet
+          </button>
+        </nav>
         </div>
       </div>
     </div>
-
   </div>
 
 </div>

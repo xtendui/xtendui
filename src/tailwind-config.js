@@ -55,6 +55,10 @@ module.exports = {
       inset: {
         100: '100%',
       },
+      boxShadow: {
+        ...require('./core/drop.css.js').boxShadow,
+        ...require('./core/overlay.css.js').boxShadow,
+      },
       transitionDelay: {
         ...require('./core/animation.css.js').transitionDelay,
       },

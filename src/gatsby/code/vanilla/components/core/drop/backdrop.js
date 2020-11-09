@@ -13,7 +13,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-2 items-center">
 
-  <div class="drop-container" data-xt-drop="{ backdrop: true }">
+  <div data-xt-drop="{ backdrop: true }">
 
     <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       backdrop
@@ -39,7 +39,7 @@ demo.htmlSource = `
 
   </div>
 
-  <div class="drop-container" data-xt-drop="{ on: 'mouseenter', off: 'mouseleave', backdrop: true }">
+  <div data-xt-drop="{ on: 'mouseenter', off: 'mouseleave', backdrop: true }">
 
     <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       backdrop mouse

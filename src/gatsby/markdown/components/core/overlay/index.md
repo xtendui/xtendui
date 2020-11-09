@@ -21,6 +21,11 @@ You can **customize this component** inside `tailwind.config.js`, check [xtendui
 ```jsx
 module.exports = {
   theme:{
+    extend: {
+      boxShadow: {
+        // modify box shadow
+      },
+    },
     xtendui: {
       overlay: {
         utility: theme => ({

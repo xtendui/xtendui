@@ -53,8 +53,8 @@ Xt.mount.push({
     // init
 
     let self = new Xt.Drop(object, {
-      elements: '.drop-container',
-      targets: '.drop-container > .drop',
+      elements: '.drops > a, .drops > button',
+      targets: '.drops > .drop',
       durationOn: 1000,
       durationOff: 1000,
       preventEvent: true,
@@ -235,7 +235,7 @@ Xt.mount.push({
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
             // not when drop is still open
-            const dropBtnActive = object.querySelector('.drop-container > .btn.active')
+            const dropBtnActive = object.querySelector('.drops > .btn.active')
             if (!dropBtnActive) {
               // line
               const lineY = el.getBoundingClientRect().top + el.offsetHeight
@@ -255,10 +255,7 @@ Xt.mount.push({
 
     for (const btn of btns) {
       btn.addEventListener('mouseleave', eventLeave, true)
-      const drop = btn.closest('.drop-container')
-      if (drop) {
-        drop.addEventListener('off.xt', eventLeave.bind(btn), true)
-      }
+      object.addEventListener('off.xt', eventLeave.bind(btn), true)
     }
   },
 })

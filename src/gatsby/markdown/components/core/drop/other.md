@@ -8,35 +8,18 @@ date: "2005-10-10"
 
 ## Disable
 
-You can disable styles and javascript using `.drop-container-disable`.
+You can disable styles and javascript using `.drop-disable`.
 
 <div class="table-scroll">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Utility                  | `.drop-container-disable`       | `drop-container-disable !important`                | `responsive`                | Reset drop styles and javascript            |
+| Utility                  | `.drop-disable`       | `drop-disable !important`                | `responsive`                | Reset drop styles and javascript            |
 
 </div>
 
 <demo>
   <demovanilla src="vanilla/components/core/drop/disable">
-  </demovanilla>
-</demo>
-
-## Static
-
-If you want a drop with size and position **relative to a parent Node** use `drop-container-static` and `w-full`.
-
-<div class="table-scroll">
-
-|                      | Syntax                          | Mixin            | Variants               | Description                   |
-| ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Utility                  | `.drop-container-static`       | `drop-container-static`                | `responsive`                | Position relative to closest element with `.relative`            |
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/core/drop/static">
   </demovanilla>
 </demo>
 
@@ -58,6 +41,20 @@ You can have **element's link** and **click events** prevented when the drop ope
   <demovanilla src="vanilla/components/core/drop/prevent-event-hover">
   </demovanilla>
 </demo>
+
+## Popperjs
+
+You can **pass an option** to initialize [popperjs](https://popper.js.org/docs/v2/) with different options.
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `popperjs:Object`                          | `null`        | Options for popperjs            |
+
+</div>
+
+If you need to get the **popperjs instance** use `Xt.dataStorage.get(element, 'xtdropPopperInstance')` where `element` is the **element that triggers the drop**.
 
 ## Other
 

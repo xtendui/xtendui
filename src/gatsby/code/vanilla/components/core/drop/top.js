@@ -13,13 +13,13 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-2 items-center">
 
-  <div data-xt-drop>
+  <div data-xt-drop="{ position: 'top' }">
 
     <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
-      small
+      top
     </button>
 
-    <div class="drop">
+    <div class="drop md:drop-left md:drop-middle">
       <div class="drop-inner">
         <div class="w-64 py-3 rounded-md ${cardDefaultDropList()}">
           <nav class="list flex-col">
@@ -35,58 +35,61 @@ demo.htmlSource = `
           </nav>
         </div>
       </div>
+      <div class="drop-arrow" data-arrow></div>
     </div>
 
   </div>
 
-  <div data-xt-drop>
+  <div data-xt-drop="{ position: 'top-start' }">
 
     <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
-      medium
+      top start
     </button>
 
-    <div class="drop">
+    <div class="drop md:drop-bottom md:drop-left">
       <div class="drop-inner">
-        <div class="w-80 py-3 rounded-md ${cardDefaultDropList()}">
+        <div class="w-64 py-3 rounded-md ${cardDefaultDropList()}">
           <nav class="list flex-col">
-            <a href="#" class="btn btn-md ${btnDefaultDrop()}">
+            <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
             </a>
-            <button type="button" class="btn btn-md ${btnDefaultDrop()}">
+            <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
               Dolor sit
             </button>
-            <button type="button" class="btn btn-md ${btnDefaultDrop()}">
+            <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
               Amet
             </button>
           </nav>
         </div>
       </div>
+      <div class="drop-arrow" data-arrow></div>
     </div>
 
   </div>
 
-  <div data-xt-drop>
+  <div data-xt-drop="{ position: 'top-end' }">
 
     <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
-      large
+      top end
     </button>
 
-    <div class="drop">
+    <div class="drop md:drop-top md:drop-left">
       <div class="drop-inner">
-        <div class="w-96 py-3 rounded-md ${cardDefaultDropList()}">
+        <div class="w-64 py-3 rounded-md ${cardDefaultDropList()}">
           <nav class="list flex-col">
-            <a href="#" class="btn btn-lg ${btnDefaultDrop()}">
+            <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
             </a>
-            <button type="button" class="btn btn-lg ${btnDefaultDrop()}">
+            <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
               Dolor sit
             </button>
-            <button type="button" class="btn btn-lg ${btnDefaultDrop()}">
+            <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
               Amet
             </button>
           </nav>
         </div>
       </div>
+      <div class="drop-arrow" data-arrow></div>
     </div>
 
   </div>

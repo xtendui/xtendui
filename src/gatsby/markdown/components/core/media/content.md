@@ -34,15 +34,15 @@ Assing `padding-bottom` on `.media-container` to the aspect ratio you desire.
 
 Use **component utility** `.ratio-<value>` on `.media-container` to make aspect ratio images (resize screen to see it in action).
 
-Value can be `15`, `37.5`, `50`, `56.2`, `75`, `100`, `125`, `150`. You can add your own as media utility.
-
 <div class="table-scroll">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Utility                  | `.ratio-<value>`       | `ratio-<value>`                | `responsive`                | Apply aspect ratio            |
+| Utility                  | `.ratio-<value>`       | `ratio-<value>`                | `responsive`                | Apply aspect ratio, can be `15`, `37.5`, `50`, `56.2`, `75`, `100`, `125`, `150`            |
 
 </div>
+
+You can add your own aspect ratio value as [media utility](/components/core/media#customization).
 
 <demo>
   <demovanilla src="vanilla/components/core/media/ratio-class">

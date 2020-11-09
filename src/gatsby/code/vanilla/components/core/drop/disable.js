@@ -15,7 +15,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-2 items-center">
 
-  <div class="drop-container demo--drop-container-disable" data-xt-drop>
+  <div class="demo--drop-disable" data-xt-drop>
 
     <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       disable sm
@@ -31,7 +31,7 @@ demo.htmlSource = `
             <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
               Dolor sit
             </button>
-            <div class="drop-container" data-xt-drop>
+            <div data-xt-drop>
 
               <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
                 Drop inner

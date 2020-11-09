@@ -15,7 +15,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-2 items-center">
 
-  <div class="drop-container" data-xt-drop>
+  <div data-xt-drop>
 
     <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       default
@@ -41,7 +41,7 @@ demo.htmlSource = `
 
   </div>
 
-  <div class="drop-container" data-xt-drop>
+  <div data-xt-drop>
 
     <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       primary

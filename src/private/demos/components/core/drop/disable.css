@@ -1,6 +1,6 @@
 /*
-.demo--drop-container-disable {
-  @apply md:drop-container-disable !important;
+.demo--drop-coniner-disable {
+  @apply md:drop-disable !important;
   @screen md {
     .list {
       > .btn, > * > .btn {

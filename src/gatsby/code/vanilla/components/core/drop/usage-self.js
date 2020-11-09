@@ -11,7 +11,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="drop-container" data-xt-drop>
+<div data-xt-drop>
 
   <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
     drop

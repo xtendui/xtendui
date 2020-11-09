@@ -6,33 +6,63 @@ title: "Position"
 date: "2009-10-10"
 ---
 
-## Position
+## Position and arrow
 
-Set drop position with this utils.
+Use **js option** `position: <value>` to specify [popperjs placement](https://popper.js.org/docs/v2/constructors/#placement).
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `position:String`                          | `bottom-start`        | Position option for popperjs, can be `bottom`, `bottom-start`, `bottom-end`, `top`, `top-start`, `top-end`, `left`, `left-start`, `left-end`, `right`, `right-start`, `right-end`, `auto`, `auto-start`, `auto-end`.           |
+
+</div>
+
+Use `<div class="drop-arrow" data-arrow></div>` at the end of `.drop` to add an arrow. It's styled in [drop component](/components/core/drop#customization).
+
+<demo>
+  <demovanilla src="vanilla/components/core/drop/bottom">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/drop/top">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/drop/left">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/drop/right">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/drop/auto">
+  </demovanilla>
+</demo>
+
+## Offset
+
+Use **js option** `offset: <Array>` to specify [popperjs offset](https://popper.js.org/docs/v2/modifiers/offset/).
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `offset:Array`                          | `[0, 15]`        | Offset option for popperjs            |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/core/drop/offset">
+  </demovanilla>
+</demo>
+
+## Static
+
+If you want a drop with size and position **relative to a parent Node** use `.drop-static` and `.card.w-full`.
 
 <div class="table-scroll">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Utility                  | `.drop-bottom`       | `drop-bottom`                | `responsive`                | Position bottom            |
-| Utility                  | `.drop-top`       | `drop-top`                | `responsive`                | Position top            |
-| Utility                  | `.drop-left`       | `drop-left`                | `responsive`                | Position left            |
-| Utility                  | `.drop-right`       | `drop-right`                | `responsive`                | Position right            |
-| Utility                  | `.drop-center`       | `drop-center`                | `responsive`                | Position center            |
-| Utility                  | `.drop-before`       | `drop-before`                | `responsive`                | Position before            |
-| Utility                  | `.drop-after`       | `drop-after`                | `responsive`                | Position after            |
+| Utility                  | `.drop-static`       | `drop-static`                | `responsive`                | Position relative to closest element with `.relative`            |
 
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/drop/left">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/right">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/center">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/before">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/after">
+  <demovanilla src="vanilla/components/core/drop/static">
   </demovanilla>
 </demo>
