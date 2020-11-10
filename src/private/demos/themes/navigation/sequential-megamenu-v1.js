@@ -62,12 +62,6 @@ Xt.mount.push({
       // on: 'mouseenter',
       // off: 'mouseleave',
       instant: true,
-      zIndex: {
-        targets: {
-          start: 600, // same as zIndex backdrop
-          factor: -1,
-        },
-      },
     })
 
     // setup

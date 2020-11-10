@@ -1618,34 +1618,14 @@ class Toggle {
       }
       */
       if (!objOther || !objOther[type] || objOther[type].done) {
-        // zIndex
-        if (options.zIndex) {
-          // eslint-disable-next-line guard-for-in
-          for (const type in options.zIndex) {
-            for (const el of obj[type].queueEls) {
-              self.detail.zIndex = self.detail.zIndex ? self.detail.zIndex : options.zIndex[type].start
-              self.detail.zIndex = self.detail.zIndex + options.zIndex[type].factor
-              el.style.zIndex = self.detail.zIndex
-              // zIndex reset after duration
-              const duration = Xt.animTime(el, options[`duration${actionCurrent}`])
-              clearTimeout(Xt.dataStorage.get(el, `${self.componentNamespace}indexTimeout`))
-              Xt.dataStorage.set(
-                el,
-                `${self.componentNamespace}indexTimeout`,
-                setTimeout(() => {
-                  self.detail.zIndex = options.zIndex[type].start
-                  el.style.zIndex = self.detail.zIndex
-                }, duration)
-              )
-            }
-          }
-        }
         // @FIX if initial must be instant, fixes queue
         if (self.initial || (typeof options.instant !== 'object' && options.instant === true)) {
           obj[type].instant = true
         } else if (typeof options.instant === 'object' && options.instant[type]) {
           obj[type].instantType = true
         }
+        // special
+        self.specialZindex(actionCurrent, obj)
         // start queue
         self.queueDelay(actionCurrent, actionOther, obj, type, queueInitial)
       }
@@ -2328,6 +2308,37 @@ class Toggle {
   //
 
   /**
+   * zindex on activation
+   * @param {String} actionCurrent Current action
+   * @param {Object} obj Queue object
+   */
+  specialZindex(actionCurrent, obj) {
+    const self = this
+    const options = self.options
+    if (options.zIndex) {
+      // eslint-disable-next-line guard-for-in
+      for (const type in options.zIndex) {
+        for (const el of obj[type].queueEls) {
+          self.detail.zIndex = self.detail.zIndex ? self.detail.zIndex : options.zIndex[type].start
+          self.detail.zIndex = self.detail.zIndex + options.zIndex[type].factor
+          el.style.zIndex = self.detail.zIndex
+          // zIndex reset after duration
+          const duration = Xt.animTime(el, options[`duration${actionCurrent}`])
+          clearTimeout(Xt.dataStorage.get(el, `${self.componentNamespace}indexTimeout`))
+          Xt.dataStorage.set(
+            el,
+            `${self.componentNamespace}indexTimeout`,
+            setTimeout(() => {
+              self.detail.zIndex = options.zIndex[type].start
+              el.style.zIndex = self.detail.zIndex
+            }, duration)
+          )
+        }
+      }
+    }
+  }
+
+  /**
    * backdrop append to element
    * @param {String} actionCurrent Current action
    * @param {Object} obj Queue object
@@ -2522,7 +2533,6 @@ class Toggle {
     }
   }
 
-  //
   /**
    * add or remove close events on element
    * @param {String} actionCurrent Current action

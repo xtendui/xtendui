@@ -124,7 +124,12 @@ Drop.optionsDefault = {
   closeAuto: true,
   closeOutside: 'body',
   closeInside: '.drop-dismiss, .backdrop, .btn-close',
-  zIndex: false,
+  zIndex: {
+    targets: {
+      start: 600, // same as zIndex backdrop
+      factor: -1,
+    },
+  },
   ariaControls: ':scope > a, :scope > button',
 }
 
