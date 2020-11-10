@@ -53,16 +53,16 @@ class Drop extends Xt.Toggle {
   activate(el, type) {
     const self = this
     const options = self.options
+    // super
+    super.activate(el)
     // instant
     el.classList.add('xt-transition-none')
     requestAnimationFrame(() => {
       el.classList.remove('xt-transition-none')
     })
-    // super
-    super.activate(el)
     // popper
     if (type === 'targets') {
-      const popperInstance = Xt.dataStorage.get(el, `${self.componentNamespace}Popper`) // change also in doc xtdropPopperInstance
+      const popperInstance = Xt.dataStorage.get(el, `${self.componentNamespace}Popper`)
       if (popperInstance) {
         popperInstance.update()
       } else {
@@ -87,6 +87,26 @@ class Drop extends Xt.Toggle {
           ...options.popperjs,
         })
         Xt.dataStorage.set(el, `${self.componentNamespace}Popper`, popperInstance) // change also in doc xtdropPopperInstance
+      }
+    }
+  }
+
+  /**
+   * deactivate element done
+   * @param {Node|HTMLElement|EventTarget|Window} el Elements to be deactivated
+   * @param {String} type Type of elements
+   */
+  deactivateDone(el, type) {
+    const self = this
+    // super
+    super.deactivateDone(el)
+    // popper
+    if (type === 'targets') {
+      const popperInstance = Xt.dataStorage.get(el, `${self.componentNamespace}Popper`)
+      if (popperInstance) {
+        console.log(el)
+        popperInstance.destroy()
+        Xt.dataStorage.remove(el, `${self.componentNamespace}Popper`)
       }
     }
   }

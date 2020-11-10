@@ -1814,7 +1814,6 @@ class Toggle {
     } else if (actionCurrent === 'Off') {
       // activation
       self.deactivate(el)
-      /*
       // special
       const before = getComputedStyle(el, ':before').getPropertyValue('content').replace(/['"]+/g, '')
       const after = getComputedStyle(el, ':after').getPropertyValue('content').replace(/['"]+/g, '')
@@ -1828,7 +1827,7 @@ class Toggle {
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
         el.dispatchEvent(new CustomEvent('off.xt'))
-      }*/
+      }
     }
     // queue
     if (!skipQueue) {
@@ -1906,7 +1905,7 @@ class Toggle {
       }
     } else if (actionCurrent === 'Off') {
       // activation
-      self.deactivateDone(el)
+      self.deactivateDone(el, type)
       // special
       self.specialBackdrop(actionCurrent, obj, el, type)
       self.specialScrollbar(actionCurrent, type)
@@ -1972,7 +1971,6 @@ class Toggle {
    * @param {Object} obj Queue object
    * @param {String} type Type of element
    */
-
   queueDone(actionCurrent, actionOther, obj, type) {
     const self = this
     // check
