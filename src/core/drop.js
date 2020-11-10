@@ -69,22 +69,25 @@ class Drop extends Xt.Toggle {
         const element = self.getElements(el)[0]
         const popperInstance = createPopper(element, el, {
           placement: options.position,
+          resize: false,
           modifiers: [
             {
               name: 'computeStyles',
               options: {
-                gpuAcceleration: true,
+                gpuAcceleration: false,
               },
             },
             {
               name: 'preventOverflow',
               options: {
+                rootBoundary: 'document',
                 padding: self.options.spaceOverflow,
               },
             },
             {
               name: 'flip',
               options: {
+                rootBoundary: 'document',
                 padding: self.options.spaceFlip,
               },
             },
