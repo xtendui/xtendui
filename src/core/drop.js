@@ -158,7 +158,7 @@ Drop.optionsDefault = {
   spaceArrow: 0,
   popperjs: null,
   closeAuto: true,
-  closeOutside: 'body',
+  closeOutside: '.gatsby_site_wrapper',
   closeInside: '.drop-dismiss, .backdrop, .btn-close',
   zIndex: {
     targets: {
