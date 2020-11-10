@@ -62,46 +62,6 @@ class Drop extends Xt.Toggle {
     })
     // popper
     if (type === 'targets') {
-      const popperInstance = Xt.dataStorage.get(el, `${self.componentNamespace}Popper`)
-      if (popperInstance) {
-        popperInstance.update()
-      } else {
-        const element = self.getElements(el)[0]
-        const popperInstance = createPopper(element, el, {
-          placement: options.position,
-          resize: false,
-          modifiers: [
-            {
-              name: 'computeStyles',
-              options: {
-                gpuAcceleration: false,
-              },
-            },
-            {
-              name: 'preventOverflow',
-              options: {
-                rootBoundary: 'document',
-                padding: self.options.spaceOverflow,
-              },
-            },
-            {
-              name: 'flip',
-              options: {
-                padding: self.options.spaceFlip,
-              },
-            },
-            {
-              name: 'arrow',
-              options: {
-                element: '[data-arrow]',
-                padding: self.options.spaceArrow,
-              },
-            },
-          ],
-          ...options.popperjs,
-        })
-        Xt.dataStorage.set(el, `${self.componentNamespace}Popper`, popperInstance) // change also in doc xtdropPopperInstance
-      }
     }
   }
 
