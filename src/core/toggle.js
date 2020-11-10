@@ -2577,6 +2577,7 @@ class Toggle {
             )
             // @FIX do not close when clicking things that trigger this
             requestAnimationFrame(() => {
+              // @FIX no click bug android jitter
               closeElement.removeEventListener('mousedown', specialcloseoutsideHandler)
               closeElement.removeEventListener('touchstart', specialcloseoutsideHandler)
               closeElement.addEventListener('mousedown', specialcloseoutsideHandler)
@@ -2603,6 +2604,7 @@ class Toggle {
           const closeElements = document.querySelectorAll(options.closeOutside)
           for (const closeElement of closeElements) {
             const specialcloseoutsideHandler = Xt.dataStorage.get(closeElement, `click/close/${self.namespace}`)
+            // @FIX no click bug android jitter
             closeElement.removeEventListener('mousedown', specialcloseoutsideHandler)
             closeElement.removeEventListener('touchstart', specialcloseoutsideHandler)
           }
@@ -2633,6 +2635,7 @@ class Toggle {
    */
   eventSpecialcloseinsideKeydownHandler(closeElement, e) {
     const code = e.keyCode ? e.keyCode : e.which
+    // key enter or space
     if (code === 13 || code === 32) {
       e.preventDefault()
       closeElement.dispatchEvent(new CustomEvent('click'))

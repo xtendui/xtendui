@@ -473,6 +473,7 @@ if (typeof window !== 'undefined') {
      */
     changeKey: e => {
       const code = e.keyCode ? e.keyCode : e.which
+      // key tab
       if (code === 9) {
         if (!Xt.focus.block) {
           // remember Xt.focus
@@ -572,6 +573,7 @@ if (typeof window !== 'undefined') {
      */
     limit: e => {
       const code = e.keyCode ? e.keyCode : e.which
+      // key tab
       if (code === 9) {
         if (!Xt.focusLimit.focusables.includes(document.activeElement)) {
           if (e.shiftKey) {
