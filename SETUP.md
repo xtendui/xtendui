@@ -62,7 +62,7 @@ More info in Tailwind docs [tailwind postcss](https://tailwindcss.com/docs/using
 
 ## Javascript
 
-You can import the **components you need** as described in the docs.
+You can import the **components you need** as described in the demos.
 
 ```jsx
 import { Xt } from 'xtendui'
@@ -73,7 +73,7 @@ import 'xtendui/src/core/toggle'
 
 This library in the demos uses [gsap](https://github.com/greensock/GSAP) for javascript animations.
 
-Install it and use as described in the docs.
+Install it and use as described in the demos.
 
 ```
 npm install gsap --save

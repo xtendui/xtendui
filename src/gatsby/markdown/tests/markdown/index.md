@@ -126,6 +126,11 @@ See [mouse follow addon](/components/core/loader) to create a **loader with mous
 [[notePrimary]]
 | For aria purpose use `aria-label="<Description>"` on `input:not([type="hidden"]), select, textarea`.
 
+[[notePrimary]]
+| For aria purpose use `<nav></nav>`. For seo purpose add [breadscrumb metadata](https://developers.google.com/search/docs/data-types/breadcrumb).
+
+<!-- For seo purpose add product metadata https://developers.google.com/search/docs/data-types/product -->
+
 (use touch device to see it in action)
 
 (use narrow screen to see it in action)

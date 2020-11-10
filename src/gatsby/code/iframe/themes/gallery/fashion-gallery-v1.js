@@ -19,6 +19,8 @@ export const demo = {
 }
 
 demo.htmlSource = `
+<!-- For seo purpose add product metadata https://developers.google.com/search/docs/data-types/product -->
+
 <div class="site_wrapper">
 
   <header class="site_header">

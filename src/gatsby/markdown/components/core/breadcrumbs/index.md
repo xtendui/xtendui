@@ -11,11 +11,18 @@ description: "Examples of breadcrumbs, with all the basic functionality and more
 Use this code to create a **breadcrumbs**.
 
 [[notePrimary]]
-| For aria purpose use `<nav></nav>`.
+| For aria purpose use `<nav></nav>`. For seo purpose add [breadscrumb metadata](https://developers.google.com/search/docs/data-types/breadcrumb).
 
 <demo>
   <demovanilla src="vanilla/components/core/breadcrumbs/usage">
   </demovanilla>
 </demo>
 
-Check subpage to [customize content](/components/core/breadcrumbs/content).
+## Title
+
+Use **tailwind classes** to add title and background.
+
+<demo>
+  <demovanilla src="vanilla/components/core/breadcrumbs/title">
+  </demovanilla>
+</demo>
