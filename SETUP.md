@@ -12,8 +12,6 @@ npm install xtendui --save
 
 ## Css
 
-See Tailwind docs: [tailwind postcss](https://tailwindcss.com/docs/using-with-preprocessors), [tailwind theme](https://tailwindcss.com/docs/theme).
-
 Install **tailwind**, **xtendui**, **postcss import**, **postcss nested**.
 
 ```sh
@@ -59,6 +57,8 @@ Then you can use css with tailwind.
 
 @import "tailwindcss/utilities";
 ```
+
+More info in Tailwind docs [tailwind postcss](https://tailwindcss.com/docs/using-with-preprocessors), [tailwind theme](https://tailwindcss.com/docs/theme).
 
 ## Javascript
 
