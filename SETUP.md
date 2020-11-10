@@ -109,7 +109,7 @@ module.exports = {
 }
 ```
 
-You can **customize components** inside `tailwind.config.js`, check [xtendui/tailwind.xtend.js](https://github.com/minimit/xtendui/blob/master/tailwind.xtend.js) for default values.
+You can **customize components** inside `tailwind.config.js`, check [xtendui/tailwind.components.js](https://github.com/minimit/xtendui/blob/master/tailwind.components.js) for default values.
 
 ```jsx
 module.exports = {
