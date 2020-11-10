@@ -794,7 +794,6 @@ if (typeof window !== 'undefined') {
       addEventListener('resize', scrollbarWidthHandler)
     }
     // add outer
-    alert('resize')
     const outer = document.createElement('div')
     outer.style.visibility = 'hidden'
     outer.style.width = '100%'
@@ -1065,51 +1064,9 @@ if (typeof window !== 'undefined') {
    * @param {String} prefix Timeout prefix
    * @param {Boolean} instant If instant
    */
-  Xt.eventDelay = (e, element, func, prefix = '', instant = false) => {
-    const container = document.documentElement
+  Xt.eventDelay = e => {
     if (e && e.type && (e.type === 'resize' || e.type === 'scroll')) {
-      const delay = e.detail !== undefined && e.detail.delay !== undefined ? e.detail.delay : instant ? 0 : Xt[`${e.type}Delay`]
-      if (e.type === 'resize') {
-        const w = window.innerWidth
-        const h = window.innerHeight
-        // multiple calls check
-        if (
-          (e.detail === undefined || e.detail.force === undefined) && // not when setting delay on event
-          Xt.dataStorage.get(container, 'xtEventDelayWidth') === w && // when width changes
-          (window.matchMedia('(hover: none)').matches || Xt.dataStorage.get(container, 'xtEventDelayHeight') === h) // when height changes not touch
-        ) {
-          // only width no height because it changes on scroll on mobile
-          return
-        }
-        // save after a frame to execute all eventDelay
-        cancelAnimationFrame(Xt.dataStorage.get(container, 'xtEventDelayFrame'))
-        Xt.dataStorage.set(
-          container,
-          'xtEventDelayFrame',
-          requestAnimationFrame(() => {
-            Xt.dataStorage.set(container, 'xtEventDelayWidth', w)
-            Xt.dataStorage.set(container, 'xtEventDelayHeight', h)
-          })
-        )
-      }
-      // delay
-      if (!delay) {
-        // func
-        func(e)
-      } else {
-        clearTimeout(Xt.dataStorage.get(element, `xt${e.type}${prefix}Timeout`))
-        Xt.dataStorage.set(
-          element,
-          `xt${e.type}${prefix}Timeout`,
-          setTimeout(() => {
-            // func
-            func(e)
-          }, delay)
-        )
-      }
-    } else {
-      // func
-      func(e)
+      alert(e.type)
     }
   }
 
