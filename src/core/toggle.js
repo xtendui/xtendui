@@ -2650,7 +2650,6 @@ class Toggle {
   eventSpecialcloseoutsideHandler(e) {
     const self = this
     // handler
-    if (!Xt.contains([self.object, ...self.elements, ...self.targets], e.target)) {
       const currents = self.getCurrents()
       // only one close when both closeInside and closeOutside
       cancelAnimationFrame(Xt.dataStorage.get(self.object, `${self.componentNamespace}SpecialCloseOutsideFrame`))
@@ -2663,7 +2662,6 @@ class Toggle {
           }
         })
       )
-    }
   }
 
   // index
