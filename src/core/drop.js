@@ -55,13 +55,14 @@ class Drop extends Xt.Toggle {
     const options = self.options
     // super
     super.activate(el)
-    // instant
-    el.classList.add('xt-transition-none')
-    requestAnimationFrame(() => {
-      el.classList.remove('xt-transition-none')
-    })
-    // popper
+    // targets
     if (type === 'targets') {
+      // instant
+      el.classList.add('xt-transition-none')
+      requestAnimationFrame(() => {
+        el.classList.remove('xt-transition-none')
+      })
+      // popper
       const popperInstance = Xt.dataStorage.get(el, `${self.componentNamespace}Popper`)
       if (popperInstance) {
         popperInstance.update()

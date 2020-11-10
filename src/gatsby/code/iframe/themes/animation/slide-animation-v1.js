@@ -171,11 +171,11 @@ demo.htmlSource = `
                 <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
               </div>
             </div>
-            <div class="card-md rounded-md ${cardItem}">
+            <div class="card-md ${cardItem}">
               <div class="h4">Lorem ipsum</div>
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
             </div>
-            <div class="card-sm bg-gray-500 mt-auto rounded-md ${cardItem}">
+            <div class="card-sm bg-gray-500 mt-auto ${cardItem}">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
             </div>
           </div>
@@ -403,7 +403,7 @@ demo.htmlSource = `
 
             </div>
 
-            <div class="card-sm rounded-b-md bg-gray-300 text-xs">
+            <div class="card-sm rounded-b-md bg-gray-300 text-xs ${cardItem}">
               <p>
                 Receive <strong>free discount</strong> periodically on all our products.
               </p>
