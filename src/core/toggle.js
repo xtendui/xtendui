@@ -1813,7 +1813,7 @@ class Toggle {
       }
     } else if (actionCurrent === 'Off') {
       // activation
-      self.deactivate(el)
+      self.deactivate(el, type)
       // special
       const before = getComputedStyle(el, ':before').getPropertyValue('content').replace(/['"]+/g, '')
       const after = getComputedStyle(el, ':after').getPropertyValue('content').replace(/['"]+/g, '')

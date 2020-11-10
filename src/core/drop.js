@@ -110,14 +110,15 @@ class Drop extends Xt.Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} el Elements to be deactivated
    * @param {String} type Type of elements
    */
-  deactivateDone(el, type) {
+  deactivate(el, type) {
     const self = this
     // super
-    super.deactivateDone(el)
+    super.deactivate(el)
     // popper
     if (type === 'targets') {
       const popperInstance = Xt.dataStorage.get(el, `${self.componentNamespace}Popper`)
       if (popperInstance) {
+        console.log(el)
         popperInstance.destroy()
         Xt.dataStorage.remove(el, `${self.componentNamespace}Popper`)
       }
