@@ -67,7 +67,6 @@ class Drop extends Xt.Toggle {
         popperInstance.update()
       } else {
         const element = self.getElements(el)[0]
-        console.log(element, el)
         const popperInstance = createPopper(element, el, {
           placement: options.position,
           modifiers: [
