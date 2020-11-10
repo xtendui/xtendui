@@ -786,35 +786,34 @@ if (typeof window !== 'undefined') {
 
   /**
    * Set scrollbar width of document
-   * @param {Boolean} force Force recalc
    */
-  Xt.setScrollbarWidth = (force = false) => {
+  Xt.setScrollbarWidth = () => {
     if (Xt.scrollbarWidth === undefined) {
-      const scrollbarWidthHandler = Xt.dataStorage.put(window, 'resize/scrollbar', Xt.setScrollbarWidth.bind(true))
+      const scrollbarWidthHandler = Xt.dataStorage.put(window, 'resize/scrollbar', Xt.setScrollbarWidth)
+      removeEventListener('resize', scrollbarWidthHandler)
       addEventListener('resize', scrollbarWidthHandler)
     }
-    if (force || Xt.scrollbarWidth === undefined) {
-      // add outer
-      const outer = document.createElement('div')
-      outer.style.visibility = 'hidden'
-      outer.style.width = '100%'
-      outer.style.msOverflowStyle = 'scrollbar' // needed for WinJS apps
-      outer.classList.add('xt-ignore', 'overflow-main')
-      document.body.append(outer)
-      // force scrollbars
-      outer.style.overflow = 'scroll'
-      // add inner
-      const inner = document.createElement('div')
-      inner.style.width = '100%'
-      inner.classList.add('xt-ignore')
-      outer.append(inner)
-      // return
-      const widthNoScroll = outer.offsetWidth
-      const widthWithScroll = inner.offsetWidth
-      Xt.scrollbarWidth = widthNoScroll - widthWithScroll
-      // remove
-      outer.remove()
-    }
+    // add outer
+    alert('resize')
+    const outer = document.createElement('div')
+    outer.style.visibility = 'hidden'
+    outer.style.width = '100%'
+    outer.style.msOverflowStyle = 'scrollbar' // needed for WinJS apps
+    outer.classList.add('xt-ignore', 'overflow-main')
+    document.body.append(outer)
+    // force scrollbars
+    outer.style.overflow = 'scroll'
+    // add inner
+    const inner = document.createElement('div')
+    inner.style.width = '100%'
+    inner.classList.add('xt-ignore')
+    outer.append(inner)
+    // return
+    const widthNoScroll = outer.offsetWidth
+    const widthWithScroll = inner.offsetWidth
+    Xt.scrollbarWidth = widthNoScroll - widthWithScroll
+    // remove
+    outer.remove()
   }
 
   /**

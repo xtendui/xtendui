@@ -1,6 +1,7 @@
 import { Xt } from '../xt.js'
 import './toggle'
 import JSON5 from 'json5'
+import { createPopper } from '@popperjs/core'
 
 /**
  * Drop
@@ -49,7 +50,9 @@ class Drop extends Xt.Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} el Elements to be activated
    * @param {String} type Type of elements
    */
-  activate(el) {
+  activate(el, type) {
+    const self = this
+    const options = self.options
     // super
     super.activate(el)
     // instant
@@ -57,6 +60,68 @@ class Drop extends Xt.Toggle {
     requestAnimationFrame(() => {
       el.classList.remove('xt-transition-none')
     })
+    // popper
+    if (type === 'targets') {
+      const popperInstance = Xt.dataStorage.get(el, `${self.componentNamespace}Popper`)
+      if (popperInstance) {
+        popperInstance.update()
+      } else {
+        const element = self.getElements(el)[0]
+        const popperInstance = createPopper(element, el, {
+          placement: options.position,
+          resize: false,
+          modifiers: [
+            {
+              name: 'computeStyles',
+              options: {
+                gpuAcceleration: false,
+              },
+            },
+            {
+              name: 'preventOverflow',
+              options: {
+                rootBoundary: 'document',
+                padding: self.options.spaceOverflow,
+              },
+            },
+            {
+              name: 'flip',
+              options: {
+                padding: self.options.spaceFlip,
+              },
+            },
+            {
+              name: 'arrow',
+              options: {
+                element: '[data-arrow]',
+                padding: self.options.spaceArrow,
+              },
+            },
+          ],
+          ...options.popperjs,
+        })
+        Xt.dataStorage.set(el, `${self.componentNamespace}Popper`, popperInstance) // change also in doc xtdropPopperInstance
+      }
+    }
+  }
+
+  /**
+   * deactivate element done
+   * @param {Node|HTMLElement|EventTarget|Window} el Elements to be deactivated
+   * @param {String} type Type of elements
+   */
+  deactivateDone(el, type) {
+    const self = this
+    // super
+    super.deactivateDone(el)
+    // popper
+    if (type === 'targets') {
+      const popperInstance = Xt.dataStorage.get(el, `${self.componentNamespace}Popper`)
+      if (popperInstance) {
+        popperInstance.destroy()
+        Xt.dataStorage.remove(el, `${self.componentNamespace}Popper`)
+      }
+    }
   }
 
   //
