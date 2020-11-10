@@ -2577,8 +2577,8 @@ class Toggle {
             )
             // @FIX do not close when clicking things that trigger this
             requestAnimationFrame(() => {
-              closeElement.removeEventListener('click', specialcloseoutsideHandler)
-              closeElement.addEventListener('click', specialcloseoutsideHandler)
+              closeElement.removeEventListener('click', specialcloseoutsideHandler, true)
+              closeElement.addEventListener('click', specialcloseoutsideHandler, true)
             })
           }
         }
@@ -2601,7 +2601,7 @@ class Toggle {
           const closeElements = document.querySelectorAll(options.closeOutside)
           for (const closeElement of closeElements) {
             const specialcloseoutsideHandler = Xt.dataStorage.get(closeElement, `click/close/${self.namespace}`)
-            closeElement.removeEventListener('click', specialcloseoutsideHandler)
+            closeElement.removeEventListener('click', specialcloseoutsideHandler, true)
           }
         }
       }
@@ -2649,7 +2649,11 @@ class Toggle {
       for (const current of currents) {
         self.eventOff(current, true)
       }
-      return false // @FIX no click bug android jitter
+      // @FIX no click bug android jitter
+      e.preventDefault()
+      e.stopPropagation()
+      e.stopImmediatePropagation()
+      return false
     }
   }
 
