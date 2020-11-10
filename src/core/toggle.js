@@ -1814,6 +1814,7 @@ class Toggle {
     } else if (actionCurrent === 'Off') {
       // activation
       self.deactivate(el)
+      /*
       // special
       const before = getComputedStyle(el, ':before').getPropertyValue('content').replace(/['"]+/g, '')
       const after = getComputedStyle(el, ':after').getPropertyValue('content').replace(/['"]+/g, '')
@@ -1827,7 +1828,7 @@ class Toggle {
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
         el.dispatchEvent(new CustomEvent('off.xt'))
-      }
+      }*/
     }
     // queue
     if (!skipQueue) {
