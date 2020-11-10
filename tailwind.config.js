@@ -1,6 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
+  presets: [require('tailwindcss/defaultConfig'), require('./tailwind.preset')],
   purge: {
     content: ['./src/**/*.ejs', './src/**/*.css', './src/**/*.js'],
     options: {
@@ -18,7 +19,6 @@ module.exports = {
       },
     },
   },
-  presets: [require('tailwindcss/defaultConfig'), require('./tailwind.preset')],
   theme: {
     // only some tailwind colors
     colors: {

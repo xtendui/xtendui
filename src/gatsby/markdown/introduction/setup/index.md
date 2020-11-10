@@ -42,6 +42,7 @@ Create a `tailwind.config.js` and add **xtendui preset**.
 
 ```jsx
 module.exports = {
+  presets: [require('tailwindcss/defaultConfig'), require('xtendui/tailwind.preset')],
   purge: {
     content: ['./src/**/*.html', './src/**/*.css', './src/**/*.js'], // put your purge content
     options: {
@@ -51,13 +52,6 @@ module.exports = {
           /^data-popper-/,
        ],
       },
-    },
-  },
-  presets: [require('tailwindcss/defaultConfig'), require('xtendui/tailwind.preset')],
-  theme: {
-    // add here your theme settings
-    extend: {
-      // add here your theme extend settings
     },
   },
 }
