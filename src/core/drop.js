@@ -1,7 +1,7 @@
 import { Xt } from '../xt.js'
 import './toggle'
 import JSON5 from 'json5'
-import { createPopper } from '@popperjs/core'
+import { createPopper } from '@popperjs/core/lib/popper-lite'
 
 /**
  * Drop
@@ -87,7 +87,6 @@ class Drop extends Xt.Toggle {
             {
               name: 'flip',
               options: {
-                rootBoundary: 'document',
                 padding: self.options.spaceFlip,
               },
             },
