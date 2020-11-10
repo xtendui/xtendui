@@ -2577,6 +2577,7 @@ class Toggle {
             )
             // @FIX do not close when clicking things that trigger this
             requestAnimationFrame(() => {
+              closeElement.removeEventListener('click', specialcloseoutsideHandler)
               closeElement.addEventListener('click', specialcloseoutsideHandler)
             })
           }
@@ -2616,17 +2617,9 @@ class Toggle {
     // handler
     if (Xt.contains([self.object, ...self.elements, ...self.targets], e.target)) {
       const currents = self.getCurrents()
-      // only one close when both closeInside and closeOutside
-      cancelAnimationFrame(Xt.dataStorage.get(self.object, `${self.componentNamespace}SpecialCloseInsideFrame`))
-      Xt.dataStorage.set(
-        self.object,
-        `${self.componentNamespace}SpecialCloseInsideFrame`,
-        requestAnimationFrame(() => {
-          for (const current of currents) {
-            self.eventOff(current, true)
-          }
-        })
-      )
+      for (const current of currents) {
+        self.eventOff(current, true)
+      }
     }
   }
 
@@ -2645,22 +2638,18 @@ class Toggle {
 
   /**
    * specialClose off handler
+   * @param {Event} e
    */
-  eventSpecialcloseoutsideHandler() {
+  eventSpecialcloseoutsideHandler(e) {
     const self = this
     // handler
-    const currents = self.getCurrents()
-    // only one close when both closeInside and closeOutside
-    cancelAnimationFrame(Xt.dataStorage.get(self.object, `${self.componentNamespace}SpecialCloseOutsideFrame`))
-    Xt.dataStorage.set(
-      self.object,
-      `${self.componentNamespace}SpecialCloseOutsideFrame`,
-      requestAnimationFrame(() => {
-        for (const current of currents) {
-          self.eventOff(current, true)
-        }
-      })
-    )
+    if (!Xt.contains([self.object, ...self.elements, ...self.targets], e.target)) {
+      e.preventDefault() // @FIX android jitter on close
+      const currents = self.getCurrents()
+      for (const current of currents) {
+        self.eventOff(current, true)
+      }
+    }
   }
 
   // index
