@@ -77,10 +77,22 @@ class Drop extends Xt.Toggle {
               },
             },
             {
+              name: 'preventOverflow',
+              options: {
+                padding: self.options.spaceOverflow,
+              },
+            },
+            {
+              name: 'flip',
+              options: {
+                padding: self.options.spaceFlip,
+              },
+            },
+            {
               name: 'arrow',
               options: {
                 element: '[data-arrow]',
-                padding: 15,
+                padding: self.options.spaceArrow,
               },
             },
           ],
@@ -104,7 +116,6 @@ class Drop extends Xt.Toggle {
     if (type === 'targets') {
       const popperInstance = Xt.dataStorage.get(el, `${self.componentNamespace}Popper`)
       if (popperInstance) {
-        console.log(el)
         popperInstance.destroy()
         Xt.dataStorage.remove(el, `${self.componentNamespace}Popper`)
       }
@@ -140,6 +151,9 @@ Drop.optionsDefault = {
   },
   // other
   position: 'bottom-start',
+  spaceOverflow: 15,
+  spaceFlip: 15,
+  spaceArrow: 0,
   popperjs: null,
   closeAuto: true,
   closeOutside: 'body',

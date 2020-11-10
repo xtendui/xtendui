@@ -70,16 +70,16 @@ module.exports = {
       height: '1rem',
       background: theme('colors.white'),
       '[data-popper-placement^="top"] &': {
-        bottom: '0.5rem',
+        bottom: theme('spacing.3'),
       },
       '[data-popper-placement^="bottom"] &': {
-        top: '0.5rem',
+        top: theme('spacing.3'),
       },
       '[data-popper-placement^="left"] &': {
-        right: '0.5rem',
+        right: theme('spacing.3'),
       },
       '[data-popper-placement^="right"] &': {
-        left: '0.5rem',
+        left: theme('spacing.3'),
       },
     },
     '[data-popper-placement^="top"]': {
