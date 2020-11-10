@@ -73,7 +73,7 @@ class Drop extends Xt.Toggle {
             {
               name: 'computeStyles',
               options: {
-                gpuAcceleration: false,
+                gpuAcceleration: true,
               },
             },
             {
