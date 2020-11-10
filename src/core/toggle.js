@@ -2645,23 +2645,22 @@ class Toggle {
 
   /**
    * specialClose off handler
-   * @param {Event} e
    */
-  eventSpecialcloseoutsideHandler(e) {
+  eventSpecialcloseoutsideHandler() {
     const self = this
     // handler
-      const currents = self.getCurrents()
-      // only one close when both closeInside and closeOutside
-      cancelAnimationFrame(Xt.dataStorage.get(self.object, `${self.componentNamespace}SpecialCloseOutsideFrame`))
-      Xt.dataStorage.set(
-        self.object,
-        `${self.componentNamespace}SpecialCloseOutsideFrame`,
-        requestAnimationFrame(() => {
-          for (const current of currents) {
-            self.eventOff(current, true)
-          }
-        })
-      )
+    const currents = self.getCurrents()
+    // only one close when both closeInside and closeOutside
+    cancelAnimationFrame(Xt.dataStorage.get(self.object, `${self.componentNamespace}SpecialCloseOutsideFrame`))
+    Xt.dataStorage.set(
+      self.object,
+      `${self.componentNamespace}SpecialCloseOutsideFrame`,
+      requestAnimationFrame(() => {
+        for (const current of currents) {
+          self.eventOff(current, true)
+        }
+      })
+    )
   }
 
   // index
