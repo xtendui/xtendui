@@ -5,6 +5,6 @@ parent: "Card"
 title: "stores-listing-v2"
 date: "2020-07-09"
 demos: [
-  "iframe/themes/stores-v2"
+  "iframe/themes/listing/stores-v2"
 ]
 ---

@@ -59,12 +59,9 @@ module.exports = {
       verticalAlign: 'top', // @FIX inline-block margin below
       width: '100%',
       // styles
-      '&.xt-autoHeight': {
-        // animation autoHeight
-        transitionProperty: 'height',
-        transitionDuration: theme('transitionDuration.500'),
-        transitionTimingFunction: theme('transitionTimingFunction.in-out'),
-      },
+      transitionProperty: 'height',
+      transitionDuration: theme('transitionDuration.500'),
+      transitionTimingFunction: theme('transitionTimingFunction.in-out'),
     },
     '.slide': {
       // setup

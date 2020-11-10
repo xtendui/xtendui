@@ -5,6 +5,6 @@ parent: "Slider"
 title: "fashion-hero-v1"
 date: "2020-04-27"
 demos: [
-  "iframe/themes/fashion-hero-v1"
+  "iframe/themes/hero/fashion-hero-v1"
 ]
 ---
