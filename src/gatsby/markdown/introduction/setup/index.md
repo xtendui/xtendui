@@ -43,10 +43,17 @@ Create a `tailwind.config.js` and add **xtendui preset**.
 ```jsx
 module.exports = {
   purge: {
-    content: ['./src/**/*.html', './src/**/*.css', './src/**/*.js'],
-    options: {},
+    content: ['./src/**/*.html', './src/**/*.css', './src/**/*.js'], // put your purge content
+    options: {
+      safelist: {
+        greedy: [
+          // popperjs
+          /^data-popper-/,
+       ],
+      },
+    },
   },
-  presets: [require('tailwindcss/defaultConfig'), require('xtendui/src/tailwind-preset')],
+  presets: [require('tailwindcss/defaultConfig'), require('xtendui/tailwind.preset')],
   theme: {
     // add here your theme settings
     extend: {
@@ -70,7 +77,7 @@ Then you can use css with tailwind.
 
 #### Customization
 
-You can **customize theme** inside `tailwind.config.js`, check [xtendui/src/tailwind-config.js](https://github.com/minimit/xtendui/blob/master/src/tailwind-config.js) for default values.
+You can **customize theme** inside `tailwind.config.js`, check [xtendui/tailwind.preset.js](https://github.com/minimit/xtendui/blob/master/tailwind.preset.js) for default values.
 
 ```jsx
 module.exports = {
@@ -98,7 +105,7 @@ module.exports = {
 }
 ```
 
-You can **customize components** inside `tailwind.config.js`, check [xtendui/src/tailwind-xtend.js](https://github.com/minimit/xtendui/blob/master/src/tailwind-xtend.js) for default values.
+You can **customize components** inside `tailwind.config.js`, check [xtendui/tailwind.xtend.js](https://github.com/minimit/xtendui/blob/master/tailwind.xtend.js) for default values.
 
 ```jsx
 module.exports = {

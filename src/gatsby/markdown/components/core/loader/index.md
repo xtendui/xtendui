@@ -24,7 +24,7 @@ module.exports = {
 }
 ```
 
-To **see the default values** see the source code of `node_modules/xtendui/src/tailwind-xtend.js`.
+To **see the default values** see the source code of `node_modules/xtendui/tailwind.xtend.js`.
 
 ## Usage
 

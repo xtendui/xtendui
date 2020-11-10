@@ -1,7 +1,24 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  presets: [require('tailwindcss/defaultConfig'), require('./src/tailwind-config')],
+  purge: {
+    content: ['./src/**/*.ejs', './src/**/*.css', './src/**/*.js'],
+    options: {
+      safelist: {
+        greedy: [
+          // demos
+          /^iframe--/,
+          // code
+          /pre/,
+          /code/,
+          /token/,
+          // popperjs
+          /^data-popper-/,
+        ],
+      },
+    },
+  },
+  presets: [require('tailwindcss/defaultConfig'), require('./tailwind.preset')],
   theme: {
     // only some tailwind colors
     colors: {

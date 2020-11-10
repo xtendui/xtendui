@@ -4,7 +4,7 @@ const castArray = require('lodash/castArray')
 
 module.exports = plugin.withOptions(() => {
   return function ({ addComponents, addVariant, e, theme }) {
-    const componentsBase = require('./tailwind-xtend.js') || {}
+    const componentsBase = require('./tailwind.components.js') || {}
     const componentsCustom = theme(`xtendui`, {}) || {}
 
     /**

@@ -8,7 +8,7 @@ date: "2050-10-10"
 
 ## Variants
 
-Xtend adds **custom tailwind variants** (see [xtendui/src/tailwind-config.js](https://github.com/minimit/xtendui/blob/master/src/tailwind-config.js) for default variants) `active` and `group-active`.
+Xtend adds **custom tailwind variants** (see [xtendui/tailwind.preset.js](https://github.com/minimit/xtendui/blob/master/tailwind.preset.js) for default variants) `active` and `group-active`.
 
 They styles **when user presses the element** with pseudo selectors `:active` and `.group:active` but also **when the element is activated by javascript** with the class `.active` and `.group.active`.
 

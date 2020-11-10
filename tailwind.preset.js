@@ -56,20 +56,20 @@ module.exports = {
         100: '100%',
       },
       boxShadow: {
-        ...require('./core/drop.css.js').boxShadow,
-        ...require('./core/overlay.css.js').boxShadow,
+        ...require('./src/core/drop.css.js').boxShadow,
+        ...require('./src/core/overlay.css.js').boxShadow,
       },
       transitionDelay: {
-        ...require('./core/animation.css.js').transitionDelay,
+        ...require('./src/core/animation.css.js').transitionDelay,
       },
       transitionTimingFunction: {
-        ...require('./core/animation.css.js').transitionTimingFunction,
+        ...require('./src/core/animation.css.js').transitionTimingFunction,
       },
       animation: {
-        ...require('./core/animation.css.js').animation,
+        ...require('./src/core/animation.css.js').animation,
       },
       keyframes: theme => ({
-        ...require('./core/animation.css.js').keyframes(theme),
+        ...require('./src/core/animation.css.js').keyframes(theme),
       }),
     },
   },
@@ -98,5 +98,5 @@ module.exports = {
       after(['group-active'], 'group-hover', after(['active'], 'hover', after(['group-hover'], 'hover', after(['hover'], 'responsive')))),
     zIndex: ({ after }) => after(['group-active'], 'active', after(['active'], 'responsive')),
   },
-  plugins: [require('./tailwind-plugin')],
+  plugins: [require('./tailwind.plugin')],
 }
