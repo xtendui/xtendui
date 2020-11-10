@@ -700,13 +700,12 @@ if (typeof window !== 'undefined') {
    * @return {Boolean}
    */
   Xt.contains = (elements, target) => {
-    let result = false
     for (const el of elements) {
       if (el.contains(target)) {
-        result = true
+        return true
       }
     }
-    return result
+    return false
   }
 
   /**

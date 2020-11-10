@@ -1,7 +1,7 @@
 import { Xt } from '../xt.js'
 import './toggle'
 import JSON5 from 'json5'
-import { createPopper } from '@popperjs/core/lib/popper-lite'
+import { createPopper } from '@popperjs/core'
 
 /**
  * Drop

@@ -2617,10 +2617,10 @@ class Toggle {
     if (Xt.contains([self.object, ...self.elements, ...self.targets], e.target)) {
       const currents = self.getCurrents()
       // only one close when both closeInside and closeOutside
-      cancelAnimationFrame(Xt.dataStorage.get(self.object, `${self.componentNamespace}SpecialCloseFrame`))
+      cancelAnimationFrame(Xt.dataStorage.get(self.object, `${self.componentNamespace}SpecialCloseInsideFrame`))
       Xt.dataStorage.set(
         self.object,
-        `${self.componentNamespace}SpecialCloseFrame`,
+        `${self.componentNamespace}SpecialCloseInsideFrame`,
         requestAnimationFrame(() => {
           for (const current of currents) {
             self.eventOff(current, true)
@@ -2653,10 +2653,10 @@ class Toggle {
     if (!Xt.contains([self.object, ...self.elements, ...self.targets], e.target)) {
       const currents = self.getCurrents()
       // only one close when both closeInside and closeOutside
-      cancelAnimationFrame(Xt.dataStorage.get(self.object, `${self.componentNamespace}SpecialCloseFrame`))
+      cancelAnimationFrame(Xt.dataStorage.get(self.object, `${self.componentNamespace}SpecialCloseOutsideFrame`))
       Xt.dataStorage.set(
         self.object,
-        `${self.componentNamespace}SpecialCloseFrame`,
+        `${self.componentNamespace}SpecialCloseOutsideFrame`,
         requestAnimationFrame(() => {
           for (const current of currents) {
             self.eventOff(current, true)
