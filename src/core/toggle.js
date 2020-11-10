@@ -3076,7 +3076,7 @@ Toggle.optionsDefaultSuper = {
   classHtml: false,
   closeAuto: false,
   closeInside: false,
-  closeOutside: false,
+  closeOutside: 'body',
   closeOnDisable: false,
   scrollbar: false,
   onBlock: false,
