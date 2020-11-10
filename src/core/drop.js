@@ -22,17 +22,53 @@ class Drop extends Xt.Toggle {
   //
 
   /**
-   * init elements, targets and currents
+   * init aria
    */
-  initScope() {
+  initAriaRole() {
     const self = this
     const options = self.options
+    // aria
+    if (options.aria) {
+      // role
+      for (const el of self.elements) {
+        const ariaEls = Xt.queryAll(el, options.ariaControls)
+        const ariaEl = ariaEls.length ? ariaEls[0] : el
+        ariaEl.setAttribute('aria-haspopup', 'listbox')
+      }
+      for (const tr of self.targets) {
+        tr.setAttribute('role', 'listbox')
+      }
+    }
+  }
+
+  //
+  // event util
+  //
+
+  /**
+   * activate element
+   * @param {Node|HTMLElement|EventTarget|Window} el Elements to be activated
+   * @param {String} type Type of elements
+   */
+  activate(el, type) {
+    const self = this
+    const options = self.options
+    // instant
+    el.classList.add('xt-transition-none')
+    requestAnimationFrame(() => {
+      el.classList.remove('xt-transition-none')
+    })
     // super
-    super.initScope()
+    super.activate(el)
     // popper
-    for (const element of self.elements) {
-      for (const target of self.getTargets(element)) {
-        const popperInstance = createPopper(element, target, {
+    if (type === 'targets') {
+      const popperInstance = Xt.dataStorage.get(el, `${self.componentNamespace}Popper`) // change also in doc xtdropPopperInstance
+      if (popperInstance) {
+        popperInstance.update()
+      } else {
+        const element = self.getElements(el)[0]
+        console.log(element, el)
+        const popperInstance = createPopper(element, el, {
           placement: options.position,
           modifiers: [
             {
@@ -51,27 +87,7 @@ class Drop extends Xt.Toggle {
           ],
           ...options.popperjs,
         })
-        Xt.dataStorage.set(target, `${self.componentNamespace}Popper`, popperInstance) // change also in doc xtdropPopperInstance
-      }
-    }
-  }
-
-  /**
-   * init aria
-   */
-  initAriaRole() {
-    const self = this
-    const options = self.options
-    // aria
-    if (options.aria) {
-      // role
-      for (const el of self.elements) {
-        const ariaEls = Xt.queryAll(el, options.ariaControls)
-        const ariaEl = ariaEls.length ? ariaEls[0] : el
-        ariaEl.setAttribute('aria-haspopup', 'listbox')
-      }
-      for (const tr of self.targets) {
-        tr.setAttribute('role', 'listbox')
+        Xt.dataStorage.set(el, `${self.componentNamespace}Popper`, popperInstance) // change also in doc xtdropPopperInstance
       }
     }
   }

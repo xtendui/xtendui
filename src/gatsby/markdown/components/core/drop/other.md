@@ -54,7 +54,7 @@ You can **pass an option** to initialize [popperjs](https://popper.js.org/docs/v
 
 </div>
 
-If you need to get the **popperjs instance** use `Xt.dataStorage.get(element, 'xtdropPopperInstance')` where `element` is the **element that triggers the drop**.
+If you need to get the **popperjs instance** use `Xt.dataStorage.get(target, 'xtdropPopperInstance')`.
 
 ## Other
 
