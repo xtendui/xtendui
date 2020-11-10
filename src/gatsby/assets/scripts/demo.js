@@ -566,7 +566,7 @@ const populateInline = item => {
  * sources
  */
 
-const populateSources = (item, element, z) => {
+const populateSources = (item, element) => {
   let lang = element.getAttribute('data-lang')
   // set text
   if (lang === 'language-markup') {
@@ -584,8 +584,8 @@ const populateSources = (item, element, z) => {
     .append(Xt.createElement('<div class="gatsby_demo_code_body_item toggle"><pre class="noedit"><code></code></pre></div>'))
   item.querySelector('.gatsby_demo_code_tabs_left').append(Xt.createElement(`<button type="button" class="btn btn-tiny">${lang}</button>`))
   // format code
-  const itemInside = item.querySelectorAll('.gatsby_demo_code_body .gatsby_demo_code_body_item')[z]
-  const codeInside = itemInside.querySelector('pre code')
+  //const itemInside = item.querySelectorAll('.gatsby_demo_code_body .gatsby_demo_code_body_item')[z]
+  //const codeInside = itemInside.querySelector('pre code')
   // set text
   if (lang === 'html') {
     lang = 'language-markup'
