@@ -596,9 +596,9 @@ const populateSources = (item, element, z) => {
   } else if (lang === 'jsx') {
     lang = 'language-jsx'
   }
-  codeInside.innerHTML = formatCode(element)
-  codeInside.classList.add(lang)
-  Prism.highlightElement(codeInside)
+  //codeInside.innerHTML = formatCode(element)
+  //codeInside.classList.add(lang)
+  //Prism.highlightElement(codeInside)
 }
 
 export { populateBlock, populateDemo, makeFullscreen, demoHash }
