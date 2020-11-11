@@ -1,3 +1,3 @@
 export default () => {
-  return `w-80 text-white links-inverse bg-accent-500 shadow-drop`
+  return `w-80 text-white links-inverse bg-accent-500`
 }

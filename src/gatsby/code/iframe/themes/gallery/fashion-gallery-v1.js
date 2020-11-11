@@ -3,7 +3,7 @@ import path from 'path'
 const btnPrimary = require('components/snippets/classes/btn-primary').default
 const cardStickyDefault = require('components/snippets/classes/card-sticky-default').default
 const cardStickyPrimary = require('components/snippets/classes/card-sticky-primary').default
-const cardDefaultOverlayScreen = require('components/snippets/classes/card-default-overlay-screen').default
+const cardDefaultOverlay = require('components/snippets/classes/card-default-overlay').default
 const iconX = require('components/snippets/icons').iconX
 const iconChevronDown = require('components/snippets/icons').iconChevronDown
 
@@ -113,11 +113,11 @@ demo.htmlSource = `
                 </div>
               </div>
 
-              <div class="overlay overlay-screen" id="overlay-product-images">
-                <div class="overlay-container">
+              <div class="overlay" id="overlay-product-images">
+                <div class="overlay-container p-0">
                   <div class="overlay-inner">
 
-                    <div class="card items-center justify-center ${cardDefaultOverlayScreen()}">
+                    <div class="card items-center justify-center shadow-overlay ${cardDefaultOverlay()}">
                       <div class="btn btn-close p-5 text-2xl fixed z-top" aria-label="Close">
                         ${iconX()}
                       </div>

@@ -1,6 +1,6 @@
 import path from 'path'
 const btnPrimary = require('components/snippets/classes/btn-primary').default
-const cardDefaultOverlayScreen = require('components/snippets/classes/card-default-overlay-screen').default
+const cardDefaultOverlay = require('components/snippets/classes/card-default-overlay').default
 const iconX = require('components/snippets/icons').iconX
 
 const filename = __filename.replace(/\\/g, '/')
@@ -19,11 +19,11 @@ demo.htmlSource = `
       left
     </button>
 
-    <div class="overlay overlay-screen duration-500"> <!-- needed for animation time, put max animation time -->
-      <div class="overlay-container max-w-md ml-0 mr-auto">
-        <div class="overlay-inner transform transition-all duration-500 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
+    <div class="overlay">
+      <div class="overlay-container p-0 max-w-md ml-0 mr-auto">
+        <div class="overlay-inner">
 
-          <div class="card ${cardDefaultOverlayScreen()}">
+          <div class="card min-h-screen shadow-overlay ${cardDefaultOverlay()}">
             <div class="btn btn-close p-5 text-2xl fixed z-top" aria-label="Close">
               ${iconX()}
             </div>
@@ -48,11 +48,11 @@ demo.htmlSource = `
       right
     </button>
 
-    <div class="overlay overlay-screen duration-500"> <!-- needed for animation time, put max animation time -->
-      <div class="overlay-container max-w-md ml-auto mr-0">
-        <div class="overlay-inner transform transition-all duration-500 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
+    <div class="overlay">
+      <div class="overlay-container p-0 max-w-md ml-auto mr-0">
+        <div class="overlay-inner">
 
-          <div class="card ${cardDefaultOverlayScreen()}">
+          <div class="card min-h-screen shadow-overlay ${cardDefaultOverlay()}">
             <div class="btn btn-close p-5 text-2xl fixed z-top" aria-label="Close">
               ${iconX()}
             </div>

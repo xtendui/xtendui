@@ -1,6 +1,6 @@
 import path from 'path'
 const btnPrimary = require('components/snippets/classes/btn-primary').default
-const cardDefaultOverlayScreen = require('components/snippets/classes/card-default-overlay-screen').default
+const cardDefaultOverlay = require('components/snippets/classes/card-default-overlay').default
 const iconX = require('components/snippets/icons').iconX
 
 const filename = __filename.replace(/\\/g, '/')
@@ -17,11 +17,11 @@ demo.htmlSource = `
     <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       screen
     </button>
-    <div class="overlay overlay-screen">
-      <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-container p-0">
         <div class="overlay-inner">
 
-          <div class="card items-center justify-center ${cardDefaultOverlayScreen()}">
+          <div class="card min-h-screen items-center justify-center shadow-overlay ${cardDefaultOverlay()}">
             <div class="btn btn-close p-5 text-2xl fixed z-top" aria-label="Close">
               ${iconX()}
             </div>
@@ -45,11 +45,11 @@ demo.htmlSource = `
     <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       screen full
     </button>
-    <div class="overlay overlay-screen">
-      <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-container p-0">
         <div class="overlay-inner">
 
-          <div class="card items-center justify-center ${cardDefaultOverlayScreen()}">
+          <div class="card min-h-screen items-center justify-center shadow-overlay ${cardDefaultOverlay()}">
             <div class="btn btn-close p-5 text-2xl fixed z-top" aria-label="Close">
               ${iconX()}
             </div>
@@ -69,11 +69,11 @@ demo.htmlSource = `
     <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       screen group
     </button>
-    <div class="overlay overlay-screen">
-      <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-container p-0">
         <div class="overlay-inner">
 
-          <div class="card items-center justify-center ${cardDefaultOverlayScreen()}">
+          <div class="card min-h-screen items-center justify-center shadow-overlay ${cardDefaultOverlay()}">
             <div class="btn btn-close p-5 text-2xl fixed z-top" aria-label="Close">
               ${iconX()}
             </div>

@@ -2,23 +2,7 @@ module.exports = {
   boxShadow: {
     overlay: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
   },
-  utility: theme => ({
-    '.overlay-screen': {
-      // setup
-      '.overlay-container': {
-        position: 'relative',
-        zIndex: theme('zIndex.overlay'),
-        padding: '0 !important',
-        '.overlay-inner': {
-          position: 'static',
-        },
-      },
-      '.overlay-inner': {
-        display: 'flex',
-        flexDirection: 'column',
-        flex: '1 1 auto',
-      },
-    },
+  utility: {
     '.overlay-disable': {
       // setup
       '@apply xt-disable': '',
@@ -48,7 +32,7 @@ module.exports = {
         display: 'none !important',
       },
     },
-  }),
+  },
   component: theme => ({
     '.overlay': {
       // setup
@@ -69,6 +53,7 @@ module.exports = {
       display: 'flex',
       flexWrap: 'nowrap',
       flexDirection: 'column',
+      alignItems: 'center',
       justifyContent: 'center',
       margin: 'auto', // @FIX http://stackoverflow.com/questions/33454533/cant-scroll-to-top-of-flex-item-that-is-overflowing-container
       width: '100%',
@@ -90,13 +75,12 @@ module.exports = {
     '.overlay-inner': {
       // setup
       display: 'flex',
+      flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
-      alignSelf: 'center',
       position: 'relative',
       zIndex: theme('zIndex.overlay'),
       width: '100%',
-      borderRadius: 'inherit',
     },
   }),
 }

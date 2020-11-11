@@ -1753,12 +1753,10 @@ class Toggle {
       // activation
       self.activate(el, type)
       // special
-      const before = getComputedStyle(el, ':before').getPropertyValue('content').replace(/['"]+/g, '')
-      const after = getComputedStyle(el, ':after').getPropertyValue('content').replace(/['"]+/g, '')
       self.specialBackdrop(actionCurrent, obj, el, type)
       self.specialClassHtml(actionCurrent, type)
       self.specialScrollbar(actionCurrent, type)
-      self.specialCollapse(actionCurrent, el, before, after)
+      self.specialCollapse(actionCurrent, el, type)
       self.specialClose(actionCurrent, el, type)
       if (options.focusLimit) {
         if (obj.targets) {
@@ -1815,10 +1813,8 @@ class Toggle {
       // activation
       self.deactivate(el)
       // special
-      const before = getComputedStyle(el, ':before').getPropertyValue('content').replace(/['"]+/g, '')
-      const after = getComputedStyle(el, ':after').getPropertyValue('content').replace(/['"]+/g, '')
       self.specialClassHtml(actionCurrent, type)
-      self.specialCollapse(actionCurrent, el, before, after)
+      self.specialCollapse(actionCurrent, el, type)
       self.specialClose(actionCurrent, el, type)
       if (options.focusLimit) {
         const el = obj.targets ? obj.targets.queueEls[0] : obj.elements.queueEls[0]
@@ -1896,9 +1892,7 @@ class Toggle {
       // activation
       self.activateDone(el)
       // special
-      const before = getComputedStyle(el, ':before').getPropertyValue('content').replace(/['"]+/g, '')
-      const after = getComputedStyle(el, ':after').getPropertyValue('content').replace(/['"]+/g, '')
-      self.specialCollapse('Reset', el, before, after)
+      self.specialCollapse('Reset', el, type)
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
         el.dispatchEvent(new CustomEvent('ondone.xt'))
@@ -2446,14 +2440,15 @@ class Toggle {
    * open or close or reset collapse
    * @param {String} actionCurrent Current action
    * @param {Node|HTMLElement|EventTarget|Window} el Element
-   * @param {String} before Before content
-   * @param {String} after After content
+   * @param {String} type Type of element
    */
-  specialCollapse(actionCurrent, el, before, after) {
+  specialCollapse(actionCurrent, el, type) {
+    const self = this
+    const options = self.options
     if (el instanceof HTMLElement) {
       if (actionCurrent === 'On') {
-        if (before === 'xt-collapse-height') {
-          el.classList.remove('collapse-reset')
+        if (options.collapseHeight === type) {
+          el.classList.remove('xt-collapse-reset')
           el.classList.add('trans-anim-none')
           el.style.height = 'auto'
           const h = `${el.clientHeight}px`
@@ -2469,8 +2464,8 @@ class Toggle {
             })
           )
         }
-        if (after === 'xt-collapse-width') {
-          el.classList.remove('collapse-reset')
+        if (options.collapseWidth === type) {
+          el.classList.remove('xt-collapse-reset')
           el.classList.add('trans-anim-none')
           el.style.width = 'auto'
           const w = `${el.clientWidth}px`
@@ -2487,8 +2482,8 @@ class Toggle {
           )
         }
       } else if (actionCurrent === 'Off') {
-        if (before === 'xt-collapse-height') {
-          el.classList.remove('collapse-reset')
+        if (options.collapseHeight === type) {
+          el.classList.remove('xt-collapse-reset')
           el.classList.add('trans-anim-none')
           const h = `${el.offsetHeight}px`
           el.style.height = h
@@ -2503,8 +2498,8 @@ class Toggle {
             })
           )
         }
-        if (after === 'xt-collapse-width') {
-          el.classList.remove('collapse-reset')
+        if (options.collapseWidth === type) {
+          el.classList.remove('xt-collapse-reset')
           el.classList.add('trans-anim-none')
           const w = `${el.offsetWidth}px`
           el.style.width = w
@@ -2520,13 +2515,13 @@ class Toggle {
           )
         }
       } else if (actionCurrent === 'Reset') {
-        if (before === 'xt-collapse-height') {
+        if (options.collapseHeight === type) {
           el.style.height = 'inherit'
-          el.classList.add('collapse-reset')
+          el.classList.add('xt-collapse-reset')
         }
-        if (after === 'xt-collapse-width') {
+        if (options.collapseWidth === type) {
           el.style.width = 'inherit'
-          el.classList.add('collapse-reset')
+          el.classList.add('xt-collapse-reset')
         }
       }
     }

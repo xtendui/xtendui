@@ -17,11 +17,11 @@ demo.htmlSource = `
     overlay
   </button>
 
-  <div class="overlay duration-500"> <!-- needed for animation time, put max animation time -->
+  <div class="overlay group duration-500"> <!-- needed for animation time, put max animation time -->
     <div class="overlay-container max-w-3xl">
-      <div class="overlay-inner transform transition-all duration-500 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
+      <div class="overlay-inner transform transition-all duration-500 opacity-0 translate-y-2 group-active:opacity-100 groupactive:translate-y-0">
 
-          <div class="card rounded-md ${cardDefaultOverlay()}">
+          <div class="card rounded-md shadow-overlay ${cardDefaultOverlay()}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>

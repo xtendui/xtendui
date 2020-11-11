@@ -60,7 +60,6 @@ Overlay.optionsDefault = {
   // element
   elements: ':scope > a, :scope > button',
   targets: ':scope > .overlay',
-  targetsInner: ':scope > .overlay-container > .overlay-inner',
   // class
   class: 'in in-overlay',
   // quantity

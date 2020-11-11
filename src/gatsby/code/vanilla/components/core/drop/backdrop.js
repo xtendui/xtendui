@@ -21,7 +21,7 @@ demo.htmlSource = `
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="w-64 py-3 rounded-md ${cardDefaultDropList()}">
+        <div class="w-64 py-3 rounded-md shadow-drop ${cardDefaultDropList()}">
           <nav class="list flex-col">
             <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -47,7 +47,7 @@ demo.htmlSource = `
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="w-64 py-3 rounded-md ${cardDefaultDropList()}">
+        <div class="w-64 py-3 rounded-md shadow-drop ${cardDefaultDropList()}">
           <nav class="list flex-col">
             <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit

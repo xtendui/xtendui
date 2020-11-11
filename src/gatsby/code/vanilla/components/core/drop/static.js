@@ -20,7 +20,7 @@ demo.htmlSource = `
 
     <div class="drop drop-static p-0">
       <div class="drop-inner">
-        <div class="card w-full rounded-md ${cardDefaultDrop()}">
+        <div class="card w-full rounded-md shadow-drop ${cardDefaultDrop()}">
           <div class="md:card-group">
             <div class="card-md md:w-7/12 bg-gray-400">
               <div class="h4">Lorem ipsum</div>

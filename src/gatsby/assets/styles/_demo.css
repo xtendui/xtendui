@@ -184,6 +184,9 @@ pre {
       &:not(.gatsby_iframe-full) {
         height: 36rem;
       }
+      #gatsby_open-full & {
+        height: auto;
+      }
     }
   }
   &:not(.populated) {

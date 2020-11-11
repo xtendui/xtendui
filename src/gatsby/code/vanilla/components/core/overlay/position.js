@@ -1,6 +1,6 @@
 import path from 'path'
 const btnPrimary = require('components/snippets/classes/btn-primary').default
-const cardDefaultOverlayScreen = require('components/snippets/classes/card-default-overlay-screen').default
+const cardDefaultOverlay = require('components/snippets/classes/card-default-overlay').default
 const iconX = require('components/snippets/icons').iconX
 
 const filename = __filename.replace(/\\/g, '/')
@@ -19,11 +19,11 @@ demo.htmlSource = `
       left
     </button>
 
-    <div class="overlay overlay-screen">
-      <div class="overlay-container max-w-md ml-0 mr-auto">
+    <div class="overlay">
+      <div class="overlay-container p-0 max-w-md ml-0 mr-auto">
         <div class="overlay-inner">
 
-          <div class="card ${cardDefaultOverlayScreen()}">
+          <div class="card min-h-screen shadow-overlay ${cardDefaultOverlay()}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>
@@ -48,11 +48,11 @@ demo.htmlSource = `
       right
     </button>
 
-    <div class="overlay overlay-screen">
-      <div class="overlay-container max-w-md ml-auto mr-0">
+    <div class="overlay">
+      <div class="overlay-container p-0 max-w-md ml-auto mr-0">
         <div class="overlay-inner">
 
-          <div class="card ${cardDefaultOverlayScreen()}">
+          <div class="card min-h-screen shadow-overlay ${cardDefaultOverlay()}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>
@@ -77,11 +77,11 @@ demo.htmlSource = `
       left blocks
     </button>
 
-    <div class="overlay overlay-screen">
-      <div class="overlay-container max-w-md ml-0 mr-auto">
+    <div class="overlay">
+      <div class="overlay-container p-0 max-w-md ml-0 mr-auto">
         <div class="overlay-inner">
 
-          <div class="card ${cardDefaultOverlayScreen()}">
+          <div class="card min-h-screen shadow-overlay ${cardDefaultOverlay()}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>

@@ -37,7 +37,7 @@ demo.htmlSource = `
   </div>
 </div>
 
-<div class="overlay overlay-screen" id="demo--overlay-scroll-to-anchor">
+<div class="overlay" id="demo--overlay-scroll-to-anchor">
   <div class="overlay-container p-0">
     <div class="overlay-inner">
 

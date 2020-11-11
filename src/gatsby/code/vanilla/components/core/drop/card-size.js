@@ -21,7 +21,7 @@ demo.htmlSource = `
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="card w-64 rounded-md ${cardDefaultDrop()}">
+        <div class="card w-64 rounded-md shadow-drop ${cardDefaultDrop()}">
           <div class="btn btn-close p-5 text-lg" aria-label="Close">
             ${iconX()}
           </div>
@@ -43,7 +43,7 @@ demo.htmlSource = `
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="card w-80 rounded-md ${cardDefaultDrop()}">
+        <div class="card w-80 rounded-md shadow-drop ${cardDefaultDrop()}">
           <div class="btn btn-close p-5 text-xl" aria-label="Close">
             ${iconX()}
           </div>
@@ -65,7 +65,7 @@ demo.htmlSource = `
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="card w-96 rounded-md ${cardDefaultDrop()}">
+        <div class="card w-96 rounded-md shadow-drop ${cardDefaultDrop()}">
           <div class="btn btn-close p-5 text-2xl" aria-label="Close">
             ${iconX()}
           </div>
@@ -87,7 +87,7 @@ demo.htmlSource = `
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="card w-96 rounded-md ${cardDefaultDrop()}">
+        <div class="card w-96 rounded-md shadow-drop ${cardDefaultDrop()}">
           <div class="btn btn-close p-5 text-2xl" aria-label="Close">
             ${iconX()}
           </div>

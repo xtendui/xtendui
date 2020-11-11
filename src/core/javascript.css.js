@@ -93,6 +93,10 @@ module.exports = {
       visibility: 'hidden !important',
       opacity: '0 !important',
     },
+    '.xt-collapse-reset': {
+      // setup
+      overflow: 'visible !important',
+    },
     '.xt-indicator': {
       pointerEvents: 'none',
       position: 'fixed',

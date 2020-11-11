@@ -1,7 +1,5 @@
 import React from 'react'
 import path from 'path'
-const btnDefault = require('components/snippets/classes/btn-default').default
-const btnPrimary = require('components/snippets/classes/btn-primary').default
 const cardDefaultInteractive = require('components/snippets/classes/card-default-interactive').default
 const cardPrimaryInteractive = require('components/snippets/classes/card-primary-interactive').default
 const btnDefaultDrop = require('components/snippets/classes/btn-default-drop').default
@@ -10,6 +8,8 @@ const inputDefault = require('components/snippets/classes/input-default').defaul
 const checkDefault = require('components/snippets/classes/form-check-default').default
 const radioDefault = require('components/snippets/classes/form-radio-default').default
 const iconX = require('components/snippets/icons').iconX
+const btnDefault = require('components/snippets/classes/btn-default').default
+const btnPrimary = require('components/snippets/classes/btn-primary').default
 const cardDefault =
   'overflow-hidden text-black links-default bg-white transform ease-in-out-quint duration-700 delay-300 opacity-0 translate-y-full group-active:ease-out-quint group-active:delay-0 group-active:opacity-100 group-active:translate-y-0'
 const cardItem =
@@ -69,7 +69,7 @@ demo.htmlSource = `
 
     <div class="drop group duration-700"> <!-- needed for animation time, put max animation time -->
       <div class="drop-inner">
-        <div class="w-64 py-3 rounded-md shadow-drop ${cardDefault}">
+        <div class="card w-64 py-3 rounded-md shadow-drop ${cardDefault}">
           <nav class="list flex-col rounded-md ${cardItem}">
             <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -121,11 +121,11 @@ demo.htmlSource = `
     <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       screen full
     </button>
-    <div class="overlay overlay-screen group duration-1000">  <!-- needed for animation time, put max animation time -->
-      <div class="overlay-container">
+    <div class="overlay group duration-1000"> <!-- needed for animation time, put max animation time -->
+      <div class="overlay-container p-0">
         <div class="overlay-inner">
 
-          <div class="card items-center justify-center shadow-xl ${cardDefault}">
+          <div class="card min-h-screen items-center justify-center shadow-xl ${cardDefault}">
             <div class="btn btn-close p-5 text-2xl fixed z-top" aria-label="Close">
               ${iconX()}
             </div>
@@ -147,11 +147,11 @@ demo.htmlSource = `
       left blocks
     </button>
 
-    <div class="overlay overlay-screen group duration-1000">  <!-- needed for animation time, put max animation time -->
-      <div class="overlay-container max-w-md ml-0 mr-auto">
+    <div class="overlay group duration-1000"> <!-- needed for animation time, put max animation time -->
+      <div class="overlay-container p-0 max-w-md ml-0 mr-auto">
         <div class="overlay-inner">
 
-          <div class="card shadow-overlay ${cardDefault}">
+          <div class="card min-h-screen shadow-overlay ${cardDefault}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>
@@ -192,7 +192,7 @@ demo.htmlSource = `
       contact
     </button>
 
-    <div class="overlay group duration-1000">  <!-- needed for animation time, put max animation time -->
+    <div class="overlay group duration-1000"> <!-- needed for animation time, put max animation time -->
       <div class="overlay-container max-w-5xl">
         <div class="overlay-inner">
 
@@ -309,7 +309,7 @@ demo.htmlSource = `
       newsletter
     </button>
 
-    <div class="overlay group duration-1000">  <!-- needed for animation time, put max animation time -->
+    <div class="overlay group duration-1000"> <!-- needed for animation time, put max animation time -->
       <div class="overlay-container max-w-5xl">
         <div class="overlay-inner">
 

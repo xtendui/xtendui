@@ -20,7 +20,7 @@ demo.htmlSource = `
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="card w-80 rounded-md ${cardDefaultDrop()} overflow-y-auto overflow-x-hidden overflow-sub max-h-96">
+        <div class="card w-80 rounded-md shadow-drop ${cardDefaultDrop()} overflow-y-auto overflow-x-hidden overflow-sub max-h-96">
           <div class="media-container rounded-t-md ratio-37.5">
             <div class="media-inner">
               <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
@@ -46,7 +46,7 @@ demo.htmlSource = `
 
     <div class="drop">
       <div class="drop-inner">
-        <div class="card w-80 rounded-md ${cardDefaultDrop()}">
+        <div class="card w-80 rounded-md shadow-drop ${cardDefaultDrop()}">
           <div class="media-container rounded-t-md ratio-37.5">
             <div class="media-inner">
               <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">

@@ -54,7 +54,7 @@ Pass **elements** and **targets** options if different from defaults. **Elements
 | Option                  | `elements:Query`                          | `':scope > a, :scope > button'`        | Elements query            |
 | Option                  | `targets:Query`                          | `':scope > .overlay'`        | Targets query            |
 | Option                  | `elementsInner:Query`                          | `false`        | Inner elements query (scope inside elements)            |
-| Option                  | `targetsInner:Query`                          | `':scope > .overlay-container > .overlay-inner'`        | Inner targets query (scope inside targets)     
+| Option                  | `targetsInner:Query`                          | `false`        | Inner targets query (scope inside targets)     
 
 </div>
 

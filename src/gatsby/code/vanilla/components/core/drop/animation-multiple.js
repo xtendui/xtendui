@@ -23,7 +23,7 @@ demo.htmlSource = `
 
     <div class="drop transform transition-all duration-500 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
       <div class="drop-inner">
-        <div class="w-64 py-3 rounded-md ${cardDefaultDropList()}">
+        <div class="w-64 py-3 rounded-md shadow-drop ${cardDefaultDropList()}">
           <nav class="list flex-col">
             <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -49,7 +49,7 @@ demo.htmlSource = `
 
     <div class="drop transform transition-all duration-500 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
       <div class="drop-inner">
-        <div class="card w-80 rounded-md ${cardDefaultDrop()}">
+        <div class="card w-80 rounded-md shadow-drop ${cardDefaultDrop()}">
           <div class="btn btn-close p-5 text-xl" aria-label="Close">
             ${iconX()}
           </div>

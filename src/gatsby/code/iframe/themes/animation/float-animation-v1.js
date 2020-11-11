@@ -124,13 +124,13 @@ demo.htmlSource = `
     <button type="button" class="btn btn-md ${classesPrimary} hover:shadow-lg active:shadow-sm">
       screen full
     </button>
-    <div class="overlay overlay-screen group duration-700"> <!-- needed for animation time, put max animation time -->
-      <div class="overlay-container">
+    <div class="overlay group duration-700"> <!-- needed for animation time, put max animation time -->
+      <div class="overlay-container p-0">
         <div class="overlay-inner">
 
           <div class="design-setup rounded-md shadow-overlay ${cardDesign}"></div>
 
-          <div class="card items-center justify-center rounded-md ${cardContent}">
+          <div class="card min-h-screen items-center justify-center rounded-md ${cardContent}">
             <div class="btn btn-close p-5 text-2xl fixed z-top" aria-label="Close">
               ${iconX()}
             </div>
@@ -152,13 +152,13 @@ demo.htmlSource = `
       left blocks
     </button>
 
-    <div class="overlay overlay-screen group duration-700"> <!-- needed for animation time, put max animation time -->
-      <div class="overlay-container max-w-md ml-0 mr-auto">
+    <div class="overlay group duration-700"> <!-- needed for animation time, put max animation time -->
+      <div class="overlay-container p-0 max-w-md ml-0 mr-auto">
         <div class="overlay-inner">
 
           <div class="design-setup shadow-overlay ${cardDesign}"></div>
 
-          <div class="card ${cardContent}">
+          <div class="card min-h-screen ${cardContent}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>
