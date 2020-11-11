@@ -1,5 +1,7 @@
 import React from 'react'
 import path from 'path'
+const btnDefault = require('components/snippets/classes/btn-default').default
+const btnPrimary = require('components/snippets/classes/btn-primary').default
 const cardDefaultInteractive = require('components/snippets/classes/card-default-interactive').default
 const cardPrimaryInteractive = require('components/snippets/classes/card-primary-interactive').default
 const btnDefaultDrop = require('components/snippets/classes/btn-default-drop').default
@@ -8,8 +10,7 @@ const inputDefault = require('components/snippets/classes/input-default').defaul
 const checkDefault = require('components/snippets/classes/form-check-default').default
 const radioDefault = require('components/snippets/classes/form-radio-default').default
 const iconX = require('components/snippets/icons').iconX
-const btnDefault = require('components/snippets/classes/btn-default').default
-const btnPrimary = require('components/snippets/classes/btn-primary').default
+
 const cardDefault =
   'overflow-hidden text-black links-default bg-white transform ease-in-out-quint duration-700 delay-300 opacity-0 translate-y-full group-active:ease-out-quint group-active:delay-0 group-active:opacity-100 group-active:translate-y-0'
 const cardItem =
@@ -128,7 +129,7 @@ demo.htmlSource = `
       <div class="overlay-container p-0">
         <div class="overlay-inner">
 
-          <div class="card min-h-screen items-center justify-center shadow-xl ${cardDefault}">
+          <div class="card min-h-screen items-center justify-center ${cardDefault}">
             <div class="media-container ${cardItem} ratio-100">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
@@ -151,7 +152,7 @@ demo.htmlSource = `
       <div class="overlay-container p-0 max-w-md ml-0 mr-auto">
         <div class="overlay-inner">
 
-          <div class="card min-h-screen shadow-overlay ${cardDefault}">
+          <div class="card min-h-screen ${cardDefault}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>

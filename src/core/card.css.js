@@ -45,7 +45,7 @@ module.exports = {
       },
     },
   },
-  component: theme => ({
+  component: {
     '.card': {
       // setup
       position: 'relative',
@@ -56,5 +56,5 @@ module.exports = {
       flex: '1 1 auto',
       width: '100%',
     },
-  }),
+  },
 }

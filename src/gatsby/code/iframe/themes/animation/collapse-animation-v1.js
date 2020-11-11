@@ -1,20 +1,24 @@
 import React from 'react'
 import path from 'path'
-const cardDefaultInteractive = require('components/snippets/classes/card-default-interactive').default
-const cardPrimaryInteractive = require('components/snippets/classes/card-primary-interactive').default
+const btnPrimary = require('components/snippets/classes/btn-primary').default
+const cardDefaultDrop = require('components/snippets/classes/card-default-drop').default
+const cardDefaultOverlay = require('components/snippets/classes/card-default-overlay').default
+const btnDefaultGroup = require('components/snippets/classes/btn-default-group').default
+const btnPrimaryGroup = require('components/snippets/classes/btn-primary-group').default
+const inputDefaultGroup = require('components/snippets/classes/input-default-group').default
+const iconSearch = require('components/snippets/icons').iconSearch
 const btnDefaultDrop = require('components/snippets/classes/btn-default-drop').default
 const labelDefault = require('components/snippets/classes/label-default').default
 const inputDefault = require('components/snippets/classes/input-default').default
 const checkDefault = require('components/snippets/classes/form-check-default').default
 const radioDefault = require('components/snippets/classes/form-radio-default').default
 const iconX = require('components/snippets/icons').iconX
-const btnDefault = require('components/snippets/classes/btn-default').default
-const btnPrimary = require('components/snippets/classes/btn-primary').default
-const cardDefaultDrop = require('components/snippets/classes/card-default-drop').default
-const cardDefaultOverlay = require('components/snippets/classes/card-default-overlay').default
-const cardCollapse = 'h-0 overflow-hidden ease-in-out-quint duration-500 delay-200 group-active:ease-out-quint group-active:delay-0'
+
+const listCollapse = 'w-0 overflow-hidden transform ease-in-out-quint duration-700 -translate-x-4 active:ease-out-quint active:delay-0 active:translate-x-0'
+const cardCollapse =
+  'h-0 overflow-hidden transform ease-in-out-quint duration-700 -translate-y-4 group-active:ease-out-quint group-active:delay-0 group-active:translate-y-0'
 const cardItem =
-  'transform ease-in-out-quint duration-700 opacity-0 translate-y-4 group-active:ease-out-quint group-active:opacity-100 group-active:translate-y-0'
+  'transform ease-in-out-quint duration-700 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:opacity-100 group-active:translate-y-0'
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -29,32 +33,39 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
-  Button
+  List Group
 </div>
 
-<div class="list list-2 items-center">
+<form data-xt-toggle="{ elements: '.w-full > .btn', targets: '.w-full > .list', collapseWidth: 'targets' }">
 
-  <button type="button" class="btn btn-md rounded-md">
-    btn
-  </button>
+  <div class="row row-x-3 row-y-2">
 
-  <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
-    default
-  </button>
+    <div class="w-full md:w-auto">
+      <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+        List group
+      </button>
+    </div>
 
-  <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
-    primary
-  </button>
+    <div class="w-full md:w-auto">
+      <div class="list flex-nowrap max-w-sm ${listCollapse}">
 
-  <button type="button" class="btn btn-md rounded-md link">
-    link
-  </button>
+        <div class="list-inner flex-auto">
+          <button type="button" class="btn btn-md rounded-l-md ${btnDefaultGroup()}">
+            ${iconSearch({ classes: 'icon-lg' })}
+          </button>
+          <input type="text" class="form-item ${inputDefaultGroup()}" aria-label="Search" placeholder="Seach Catalog" />
+        </div>
 
-  <button type="button" class="btn btn-md rounded-md text-reset">
-    text
-  </button>
+        <button type="button" class="btn btn-md rounded-r-md ${btnPrimaryGroup()}">
+          Search
+        </button>
 
-</div>
+      </div>
+    </div>
+
+  </div>
+
+</form>
 
 <div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
   Drop
@@ -127,7 +138,7 @@ demo.htmlSource = `
         ${iconX()}
       </div>
       <div class="overlay-container p-0">
-        <div class="overlay-inner shadow-overlay ${cardCollapse}">
+        <div class="overlay-inner ${cardCollapse}">
 
           <div class="card min-h-screen items-center justify-center ${cardDefaultOverlay()} ${cardItem}">
             <div class="media-container ratio-100">
@@ -150,7 +161,7 @@ demo.htmlSource = `
 
     <div class="overlay group duration-700"> <!-- needed for animation time, put max animation time -->
       <div class="overlay-container p-0 max-w-md ml-0 mr-auto">
-        <div class="overlay-inner shadow-overlay ${cardCollapse}">
+        <div class="overlay-inner ${cardCollapse}">
 
           <div class="card min-h-screen ${cardDefaultOverlay()} ${cardItem}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
@@ -416,32 +427,6 @@ demo.htmlSource = `
       </div>
     </div>
 
-  </div>
-
-</div>
-
-<div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
-  Card
-</div>
-
-<div class="row row-3">
-
-  <div class="w-full md:w-6/12">
-    <a role="button" class="card rounded-md ${cardDefaultInteractive()}">
-      <div class="card-md">
-        <div class="h4">Default</div>
-        <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-      </div>
-    </a>
-  </div>
-
-  <div class="w-full md:w-6/12">
-    <a role="button" class="card rounded-md ${cardPrimaryInteractive()}">
-      <div class="card-md">
-        <div class="h4">Primary</div>
-        <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-      </div>
-    </a>
   </div>
 
 </div>

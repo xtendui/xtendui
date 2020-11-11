@@ -14,9 +14,9 @@ export const demo = {
 demo.htmlSource = `
 <form>
 
-  <div class="list demo--group-expand">
+  <div class="list flex-nowrap max-w-sm demo--group-expand">
 
-    <div class="list-inner flex-auto max-w-sm">
+    <div class="list-inner flex-auto">
       <button type="button" class="btn btn-md rounded-l-md ${btnDefaultGroup()}">
         ${iconSearch({ classes: 'icon-lg' })}
       </button>

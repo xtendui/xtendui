@@ -14,7 +14,7 @@ export const demo = {
 demo.htmlSource = `
 <form>
 
-  <div class="list">
+  <div class="list flex-nowrap">
 
     <div class="list-inner flex-auto">
       <button type="button" class="btn btn-md rounded-l-md border border-gray-500 ${btnDefaultGroup()}">

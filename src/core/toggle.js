@@ -3080,6 +3080,8 @@ Toggle.optionsDefaultSuper = {
   mediaLoadedReinit: false,
   zIndex: false,
   focusLimit: false,
+  collapseHeight: false,
+  collapseWidth: false,
   aria: {
     tabindex: true,
     controls: true,

@@ -30,7 +30,7 @@ demo.htmlSource = `
         <div class="row row-x-3 row-y-2">
 
           <div class="w-full">
-            <div class="list">
+            <div class="list flex-nowrap">
               <div class="list-inner flex-auto">
                 <input type="text" class="form-item rounded-l-md ${inputDefaultGroup()}" aria-label="Search" placeholder="Search">
                 <button type="button" class="btn-locate btn btn-md rounded-md ${btnDefaultGroup()}">

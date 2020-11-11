@@ -7,6 +7,7 @@ const inputDefault = require('components/snippets/classes/input-default').defaul
 const checkDefault = require('components/snippets/classes/form-check-default').default
 const radioDefault = require('components/snippets/classes/form-radio-default').default
 const iconX = require('components/snippets/icons').iconX
+
 const classesDefault =
   'text-black links-default rounded-md bg-gray-200 border-transparent transform ease-out-quint duration-500 border hover:bg-gray-300 hover:border-gray-400 hover:-translate-y-1 active:bg-gray-400 active:translate-y-0'
 const classesPrimary =
@@ -131,7 +132,7 @@ demo.htmlSource = `
       <div class="overlay-container p-0">
         <div class="overlay-inner">
 
-          <div class="design-setup rounded-md shadow-overlay ${cardDesign}"></div>
+          <div class="design-setup rounded-md ${cardDesign}"></div>
 
           <div class="card min-h-screen items-center justify-center rounded-md ${cardContent}">
             <div class="media-container ratio-100">
@@ -156,7 +157,7 @@ demo.htmlSource = `
       <div class="overlay-container p-0 max-w-md ml-0 mr-auto">
         <div class="overlay-inner">
 
-          <div class="design-setup shadow-overlay ${cardDesign}"></div>
+          <div class="design-setup ${cardDesign}"></div>
 
           <div class="card min-h-screen ${cardContent}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
