@@ -20,11 +20,11 @@ demo.htmlSource = `
     Toggle 1
   </button>
 
-  <div class="card toggle rounded-md ${cardToggle()} transform transition-all duration-500 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
+  <div class="card toggle rounded-md ${cardToggle()} transform transition opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
     Target 0
   </div>
 
-  <div class="card toggle rounded-md ${cardToggle()} transform transition-all duration-500 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
+  <div class="card toggle rounded-md ${cardToggle()} transform transition opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
     Target 1
   </div>
 

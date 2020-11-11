@@ -16,12 +16,10 @@
       text-decoration: underline;
     }
   }
-  opacity: 0.5;
-  transition-property: opacity;
-  transition-duration: theme('transitionDuration.500');
-  transition-timing-function: theme('transitionTimingFunction.in-out');
+  @apply transition opacity-50;
   &:hover {
     opacity: 1;
+    @apply opacity-100;
   }
 }
 

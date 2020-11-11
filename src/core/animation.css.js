@@ -2,10 +2,14 @@ module.exports = {
   transitionDelay: {
     0: '0ms',
   },
+  transitionDuration: {
+    DEFAULT: '700ms',
+  },
   transitionTimingFunction: {
-    in: 'cubic-bezier(.25,.46,.45,.94)', // outQuad
-    out: 'cubic-bezier(.455,.03,.515,.955)', // inOutQuad
-    'in-out': 'cubic-bezier(.455,.03,.515,.955)', // inOutQuad
+    DEFAULT: 'cubic-bezier(.23,1,.32,1)', // out-quint
+    in: 'cubic-bezier(.755,.05,.855,.06)', // in-quint
+    out: 'cubic-bezier(.23,1,.32,1)', // out-quint
+    'in-out': 'cubic-bezier(.86,0,.07,1)', // in-out-quint
     'in-sine': 'cubic-bezier(.47,0,.745,.715)',
     'out-sine': 'cubic-bezier(.39,.575,.565,1)',
     'in-out-sine': 'cubic-bezier(.445,.05,.55,.95)',

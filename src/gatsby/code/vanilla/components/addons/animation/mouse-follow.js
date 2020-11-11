@@ -15,7 +15,7 @@ demo.htmlSource = `
     <div class="h4">Default</div>
     <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
   </div>
-  <span class="loader loader-mouse mouse-follow pointer-events-none opacity-0 transition-opacity duration-500 ease-in-out active:opacity-100">
+  <span class="loader loader-mouse mouse-follow pointer-events-none opacity-0 transition active:opacity-100">
     <span class="spinner spinner-animated text-accent-500">
         ${spinner({})}
     </span>

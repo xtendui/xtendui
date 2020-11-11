@@ -8,10 +8,10 @@ Xt.mount.push({
   mount: object => {
     // vars
 
-    const targetTimeOn = 0.5
-    const targetEaseOn = 'quad.out'
-    const targetTimeOff = 0.5
-    const targetEaseOff = 'quad.inOut'
+    const targetTimeOn = 0.7
+    const targetEaseOn = 'quint.out'
+    const targetTimeOff = 0.7
+    const targetEaseOff = 'quint.out'
 
     // init
 

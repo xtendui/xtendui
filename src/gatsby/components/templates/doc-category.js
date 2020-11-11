@@ -51,7 +51,7 @@ export default class Template extends React.Component {
                 <div className="gatsby_listing-group" key={i}>
                   <h2 className="h5 h-block rounded-md bg-gray-200 text-center">{category.title.split('-').pop()}</h2>
                   <div className="gatsby_listing-items">
-                    <div className="row">
+                    <div className="row row-stretch">
                       {category.posts.map(({ post }, z) =>
                         post.frontmatter.link ? (
                           <div className="gatsby_listing-column" key={z}>

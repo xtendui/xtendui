@@ -21,6 +21,9 @@ module.exports = {
       transitionDelay: {
         // modify transition delay
       },
+      transitionDuration: {
+        // modify transition duration
+      },
       transitionTimingFunction: {
         // modify transition timing function
       },

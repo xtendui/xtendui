@@ -35,7 +35,7 @@
     width: 8.5rem;
   }
   img {
-    transition: opacity theme('transitionDuration.500') theme('transitionTimingFunction.in-out');
+    @apply transition;
   }
   &:hover, &:active {
     img {
@@ -77,16 +77,15 @@
   &:last-child {
     padding-right: 0;
   }
+  @apply transition;
   opacity: 0.8;
   &:hover {
     opacity: 1;
     transform: scale(1.2);
-    transition-duration: theme('transitionDuration.200');
   }
   &:active {
     opacity: 1;
     transform: scale(1);
-    transition-duration: theme('transitionDuration.200');
   }
 }
 
@@ -184,6 +183,7 @@
   border-width: 0;
   @apply w-full font-sans;
   > span {
+    @apply transition duration-500 ease-in-out hover:ease-out active:ease-out;
     border-radius: 6px;
     padding: .3125rem .5rem;
     font-weight: theme('fontWeight.normal');
@@ -231,8 +231,5 @@
       font-weight: theme('fontWeight.semibold');
       color: theme('colors.white');
     }
-  }
-  > span {
-    transition: all theme('transitionDuration.200') theme('transitionTimingFunction.in-out');
   }
 }

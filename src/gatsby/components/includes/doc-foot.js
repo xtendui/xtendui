@@ -30,7 +30,7 @@ export default class DocFoot extends React.Component {
       <div className="gatsby_site_article_foot">
         <div className="gatsby_listing-group">
           <div className="gatsby_listing-items">
-            <div className="row">
+            <div className="row row-stretch">
               {page.post.frontmatter.type !== 'Introduction' && postsIntroduction ? (
                 <div className="gatsby_listing-column">
                   <Link to={'/'} className="card gatsby_listing-item">

@@ -56,7 +56,7 @@
       left: 100%;
       width: 0;
       opacity: 0;
-      transition: all theme('transitionDuration.500') theme('transitionTimingFunction.in-out');
+      @apply transition-all;
     }
   }
   &:hover, &:active {
@@ -86,7 +86,7 @@
   }
   .gatsby_site_article_anchor {
     opacity: 0;
-    transition: all theme('transitionDuration.500') theme('transitionTimingFunction.in-out') theme('transitionDelay.500');
+    @apply transition-all delay-500;
   }
   &:hover, &:active {
     .gatsby_site_article_anchor {

@@ -5,26 +5,17 @@
     /* .infinite-scroll-spinner */
 
     .infinite-scroll-spinner {
-      opacity: 0;
-      transition-property: opacity;
-      transition-duration: theme('transitionDuration.500');
-      transition-timing-function: theme('transitionTimingFunction.in-out');
+      @apply transition opacity-0;
       .spinner {
-        opacity: 0;
-        transform: scale(.75);
-        transition-property: all;
-        transition-duration: theme('transitionDuration.500');
-        transition-timing-function: theme('transitionTimingFunction.in-out');
+        @apply transition-all opacity-0 scale-75;
       }
     }
 
     .infinite-scroll-loading {
       .infinite-scroll-spinner {
-        opacity: 1;
-        transition-timing-function: theme('transitionTimingFunction.in-out');
+        @apply opacity-100;
         .spinner {
-          opacity: 1;
-          transform: scale(1);
+          @apply opacity-100 scale-100;
         }
       }
     }
@@ -36,9 +27,7 @@
         display: none;
       }
       .infinite-scroll-trigger-content {
-        transition-property: transform, opacity;
-        transition-duration: theme('transitionDuration.500');
-        transition-timing-function: theme('transitionTimingFunction.in-out');
+        @apply transition;
       }
     }
 
@@ -46,8 +35,7 @@
       .infinite-scroll-trigger .btn {
         pointer-events: none;
         > .infinite-scroll-trigger-content {
-          opacity: 0;
-          transform: translateY(0.7rem);
+          @apply opacity-0;
         }
       }
     }

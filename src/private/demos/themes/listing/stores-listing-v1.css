@@ -26,9 +26,7 @@
       .listing-item_inner {
         height: 100%;
         transform-style: preserve-3d;
-        transition-property: transform;
-        transition-duration: theme('transitionDuration.500');
-        transition-timing-function: theme('transitionTimingFunction.in-out');
+        @apply transition ease-in-out-quad duration-500;
       }
       &.active {
         .listing-item_inner {

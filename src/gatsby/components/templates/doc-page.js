@@ -43,7 +43,7 @@ class Template extends React.Component {
                     <h2 className="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">{'Customization and interactions'}</h2>
                   ) : null}
                   <div className="gatsby_listing-items">
-                    <div className="row">
+                    <div className="row row-stretch">
                       {data.postsAdiacent.posts.map(({ post: adiacent }, i) =>
                         adiacent.frontmatter.parent !== adiacent.frontmatter.title ? (
                           adiacent.frontmatter.demos ? (

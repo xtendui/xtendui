@@ -27,7 +27,7 @@ You can start with toggled elements and targets just by adding **one of the clas
 
 Additionally on component initialization the class `xt-drop` gets added to the **object** (the DOM element you assigned the component).
 
-## Animations
+## Animation
 
 Checkout out [drop's themes](/themes/by-component/drop) for **advanced animations**.
 

@@ -13,9 +13,7 @@
   .slider--img {
     .slide_item {
       width: 300px;
-      transition-property: transform;
-      transition-duration: theme('transitionDuration.500');
-      transition-timing-function: theme('transitionTimingFunction.in-out');
+      @apply transform transition;
       &:hover, &:active, &.active {
         transform: scale(0.98);
       }
@@ -24,9 +22,7 @@
 
   .slider--text {
     .slide_item {
-      transition-property: color;
-      transition-duration: theme('transitionDuration.500');
-      transition-timing-function: theme('transitionTimingFunction.in-out');
+      @apply transform transition;
       &:hover, &:active, &.active {
         color: theme('colors.accent.500');
       }

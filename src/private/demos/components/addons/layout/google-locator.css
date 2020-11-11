@@ -154,9 +154,7 @@
       /* activation when clicking marker */
       cursor: pointer;
       border-bottom: 1px solid theme('colors.gray.200');
-      transition-property: border;
-      transition-duration: theme('transitionDuration.500');
-      transition-timing-function: theme('transitionTimingFunction.in-out');
+      @apply transition;
       &.active {
         border-bottom: 1px solid theme('colors.accent.500');
       }

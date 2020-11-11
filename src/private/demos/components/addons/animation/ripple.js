@@ -30,7 +30,7 @@ Xt.mount.push({
       const ripple = self.container.querySelector('.ripple:last-child')
       // animate
       if (ripple) {
-        gsap.to(ripple, { opacity: 0, duration: 0.5, ease: 'quad.out', delay: 0.1 }).eventCallback('onComplete', () => {
+        gsap.to(ripple, { opacity: 0, duration: 0.5, ease: 'quad.inOut', delay: 0.1 }).eventCallback('onComplete', () => {
           ripple.remove()
         })
       }

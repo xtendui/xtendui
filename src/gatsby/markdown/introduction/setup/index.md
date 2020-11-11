@@ -127,7 +127,7 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/core/toggle'
 ```
 
-#### Animations
+#### Animation
 
 This library in the demos uses [gsap](https://github.com/greensock/GSAP) for javascript animations.
 

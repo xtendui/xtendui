@@ -62,6 +62,9 @@ module.exports = {
       transitionDelay: {
         ...require('./src/core/animation.css.js').transitionDelay,
       },
+      transitionDuration: {
+        ...require('./src/core/animation.css.js').transitionDuration,
+      },
       transitionTimingFunction: {
         ...require('./src/core/animation.css.js').transitionTimingFunction,
       },
