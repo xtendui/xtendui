@@ -183,7 +183,7 @@
   border-width: 0;
   @apply w-full font-sans;
   > span {
-    @apply transition duration-500 ease-in-out hover:ease-out active:ease-out;
+    @apply transition duration-500 ease-in-out-quint hover:duration-300 hover:ease-out-quint active:ease-out-quint;
     border-radius: 6px;
     padding: .3125rem .5rem;
     font-weight: theme('fontWeight.normal');
