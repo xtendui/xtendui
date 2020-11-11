@@ -55,10 +55,6 @@ module.exports = {
       justifyContent: 'flex-start',
       flex: '1 1 auto',
       width: '100%',
-      zIndex: theme('zIndex.base'),
-      '&:hover, &:active, &.active': {
-        zIndex: theme('zIndex.active'),
-      },
     },
   }),
 }

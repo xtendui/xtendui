@@ -25,7 +25,7 @@ You can disable styles and javascript using `.overlay-disable`.
 
 ## Close fixed
 
-You can have the `.btn-close` with `fixed z-top` to have it always visible also when scrolling.
+You can have the `.btn-close` with `.fixed.z-last.mr-2` and moved inside `.overlay` to have it **fixed inside the overlay**.
 
 <demo>
   <demovanilla src="vanilla/components/core/overlay/close-fixed">

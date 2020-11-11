@@ -14,7 +14,7 @@ const cardDefaultDrop = require('components/snippets/classes/card-default-drop')
 const cardDefaultOverlay = require('components/snippets/classes/card-default-overlay').default
 const cardCollapse = 'h-0 overflow-hidden ease-in-out-quint duration-500 delay-200 group-active:ease-out-quint group-active:delay-0'
 const cardItem =
-  'transform ease-in-out-quint duration-700 opacity-0 translate-y-2 group-active:ease-out-quint group-active:opacity-100 group-active:translate-y-0'
+  'transform ease-in-out-quint duration-700 opacity-0 translate-y-4 group-active:ease-out-quint group-active:opacity-100 group-active:translate-y-0'
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -123,13 +123,13 @@ demo.htmlSource = `
       screen full
     </button>
     <div class="overlay group duration-700"> <!-- needed for animation time, put max animation time -->
+      <div class="btn btn-close p-5 text-2xl fixed z-last mr-2 ${cardItem}" aria-label="Close">
+        ${iconX()}
+      </div>
       <div class="overlay-container p-0">
         <div class="overlay-inner shadow-overlay ${cardCollapse}">
 
           <div class="card min-h-screen items-center justify-center ${cardDefaultOverlay()} ${cardItem}">
-            <div class="btn btn-close p-5 text-2xl fixed z-top" aria-label="Close">
-              ${iconX()}
-            </div>
             <div class="media-container ratio-100">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">

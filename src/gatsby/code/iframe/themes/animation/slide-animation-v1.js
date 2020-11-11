@@ -122,13 +122,13 @@ demo.htmlSource = `
       screen full
     </button>
     <div class="overlay group duration-1000"> <!-- needed for animation time, put max animation time -->
+      <div class="btn btn-close p-5 text-2xl fixed z-last mr-2 ${cardItem}" aria-label="Close">
+        ${iconX()}
+      </div>
       <div class="overlay-container p-0">
         <div class="overlay-inner">
 
           <div class="card min-h-screen items-center justify-center shadow-xl ${cardDefault}">
-            <div class="btn btn-close p-5 text-2xl fixed z-top" aria-label="Close">
-              ${iconX()}
-            </div>
             <div class="media-container ${cardItem} ratio-100">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">

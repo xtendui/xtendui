@@ -21,10 +21,13 @@ demo.htmlSource = `
 
     <div class="overlay">
       <div class="overlay-container p-0 max-w-md ml-0 mr-auto">
+        <div class="btn btn-close p-5 text-2xl fixed z-last mr-2" aria-label="Close">
+          ${iconX()}
+        </div>
         <div class="overlay-inner">
 
           <div class="card min-h-screen shadow-overlay ${cardDefaultOverlay()}">
-            <div class="btn btn-close p-5 text-2xl fixed z-top" aria-label="Close">
+            <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>
             <div class="card-md">
@@ -53,7 +56,7 @@ demo.htmlSource = `
         <div class="overlay-inner">
 
           <div class="card min-h-screen shadow-overlay ${cardDefaultOverlay()}">
-            <div class="btn btn-close p-5 text-2xl fixed z-top" aria-label="Close">
+            <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>
             <div class="card-md">

@@ -20,13 +20,13 @@ demo.htmlSource = `
     </button>
 
     <div class="overlay">
+      <div class="btn btn-close p-5 text-2xl fixed z-last mr-2" aria-label="Close">
+        ${iconX()}
+      </div>
       <div class="overlay-container max-w-3xl">
         <div class="overlay-inner">
 
           <div class="card items-center justify-center rounded-md shadow-overlay ${cardDefaultOverlay()}">
-            <div class="btn btn-close p-5 text-2xl fixed z-top" aria-label="Close">
-              ${iconX()}
-            </div>
             <div class="card-md">
               <div class="h4">Lorem ipsum</div>
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
@@ -61,13 +61,13 @@ demo.htmlSource = `
     </button>
 
     <div class="overlay">
+      <div class="btn btn-close p-5 text-2xl fixed z-last mr-2" aria-label="Close">
+        ${iconX()}
+      </div>
       <div class="overlay-container p-0">
         <div class="overlay-inner">
 
           <div class="card min-h-screen items-center justify-center shadow-overlay ${cardDefaultOverlay()}">
-            <div class="btn btn-close p-5 text-2xl fixed z-top" aria-label="Close">
-              ${iconX()}
-            </div>
             <div class="max-w-3xl">
               <div class="card-md">
                 <div class="h4">Lorem ipsum</div>

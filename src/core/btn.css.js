@@ -24,13 +24,9 @@ module.exports = {
       letterSpacing: theme('letterSpacing.wider'),
       textTransform: 'uppercase',
       // animation
-      zIndex: theme('zIndex.base'),
       transitionProperty: 'all',
       transitionDuration: theme('transitionDuration.500'),
       transitionTimingFunction: theme('transitionTimingFunction.in-out'),
-      '&:hover, &:active, &.active': {
-        zIndex: theme('zIndex.active'),
-      },
     },
     '.btn-close': {
       // setup

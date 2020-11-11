@@ -52,10 +52,6 @@ module.exports = {
     '.form-item': {
       // setup
       display: 'block', // @FIX select and textarea space below
-      zIndex: theme('zIndex.base'),
-      '&:focus, &.active': {
-        zIndex: theme('zIndex.active'),
-      },
       // styles
       padding: `.75em 1.2em`,
       width: '100%',
