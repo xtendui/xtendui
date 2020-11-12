@@ -119,7 +119,7 @@ You can specify `min` and `max` concurrent activations. The `min` option is fulf
 
 ## Event
 
-You can specify **on** and **off** events for the toggle. Fore example `on: 'mouseenter'` `off: 'mouseleave'`. Default is `on: 'click'`.
+You can specify **on** and **off** events for the toggle.
 
 <div class="table-scroll">
 
@@ -133,7 +133,9 @@ You can specify **on** and **off** events for the toggle. Fore example `on: 'mou
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/toggle/event">
+  <demovanilla src="vanilla/components/core/toggle/event-mouse">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/toggle/event-focus">
   </demovanilla>
 </demo>
 
