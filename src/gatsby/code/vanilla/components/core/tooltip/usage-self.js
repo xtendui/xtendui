@@ -1,5 +1,4 @@
 import path from 'path'
-const btnPrimary = require('components/snippets/classes/btn-primary').default
 const cardDefaultTooltip = require('components/snippets/classes/card-default-tooltip').default
 
 const filename = __filename.replace(/\\/g, '/')
@@ -10,17 +9,14 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="inline-block" data-xt-tooltip="{ elements: false, elementsInner: ':scope > a, :scope > button' }">
-
-  <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
-    tooltip
-  </button>
-
+Lorem ipsum
+<span data-xt-tooltip="{ elements: false, elementsInner: ':scope > a, :scope > button' }">
+  <a href="#">dolor</a>
   <div class="tooltip">
     <div class="tooltip-md rounded shadow-tooltip ${cardDefaultTooltip()}">
       Lorem ipsum dolor sit amet
     </div>
   </div>
-
-</div>
+</span>
+sit amet
 `

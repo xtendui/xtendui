@@ -237,7 +237,9 @@ class Toggle {
         }
       }
       // initialized class
-      self.object.classList.add(self.componentName)
+      if (!options.classSkip || !options.classSkip['elements']) {
+        self.object.classList.add(self.componentName)
+      }
       // listener dispatch
       self.object.dispatchEvent(new CustomEvent('init.xt'))
     })

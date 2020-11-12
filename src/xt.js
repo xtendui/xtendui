@@ -61,6 +61,14 @@ if (typeof window !== 'undefined') {
           if (!text.length && (!title || title === '') && (!label || label === '')) {
             console.warn('Xt.debug: detected a "link" without "textContent" or "title" or "aria-label', object)
           }
+          // target
+          const target = object.getAttribute('target')
+          if (target && target.toLowerCase() === '_blank') {
+            const rel = object.getAttribute('rel')
+            if (!rel || rel === '' || (rel.toLowerCase() !== 'noopener' && rel.toLowerCase() !== 'noreferrer')) {
+              console.warn('Xt.debug: detected a "link" with target="_blank" without rel="noopener" or rel="noreferrer"', object)
+            }
+          }
         },
       })
       // input

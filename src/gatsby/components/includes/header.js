@@ -129,8 +129,8 @@ export default function Header({ page }) {
                                 <div>
                                   <a
                                     href={post.frontmatter.link}
-                                    target="_blank"
                                     rel="noreferrer"
+                                    target="_blank"
                                     className={`btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub ${
                                       markdownSlug(page.post) === markdownSlug(post)
                                         ? 'active'
