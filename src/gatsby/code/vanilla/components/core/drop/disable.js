@@ -22,42 +22,38 @@ demo.htmlSource = `
     </button>
 
     <div class="drop">
-      <div class="drop-inner">
-        <div class="w-64 py-3 rounded-md shadow-drop ${cardDefaultDropList()}">
-          <nav class="list flex-col">
-            <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
-            </a>
+      <div class="w-64 py-3 rounded-md shadow-drop ${cardDefaultDropList()}">
+        <nav class="list flex-col">
+          <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+          </a>
+          <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+            Dolor sit
+          </button>
+          <div data-xt-drop>
+
             <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
-              Dolor sit
+              Drop inner
             </button>
-            <div data-xt-drop>
 
-              <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
-                Drop inner
-              </button>
-
-              <div class="drop drop-center drop-middle">
-                <div class="drop-inner">
-                  <div class="w-64 py-3 rounded-md shadow-drop ${cardPrimaryDropList()}">
-                    <nav class="list flex-col">
-                      <a href="#" class="btn btn-sm ${btnPrimaryDrop()}">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                      </a>
-                      <button type="button" class="btn btn-sm ${btnPrimaryDrop()}">
-                        Dolor sit
-                      </button>
-                      <button type="button" class="btn btn-sm ${btnPrimaryDrop()}">
-                        Amet
-                      </button>
-                    </nav>
-                  </div>
-                </div>
+            <div class="drop drop-center drop-middle">
+              <div class="w-64 py-3 rounded-md shadow-drop ${cardPrimaryDropList()}">
+                <nav class="list flex-col">
+                  <a href="#" class="btn btn-sm ${btnPrimaryDrop()}">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                  </a>
+                  <button type="button" class="btn btn-sm ${btnPrimaryDrop()}">
+                    Dolor sit
+                  </button>
+                  <button type="button" class="btn btn-sm ${btnPrimaryDrop()}">
+                    Amet
+                  </button>
+                </nav>
               </div>
-
             </div>
-          </nav>
-        </div>
+
+          </div>
+        </nav>
       </div>
     </div>
 

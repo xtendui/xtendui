@@ -20,20 +20,18 @@ demo.htmlSource = `
   </button>
 
   <div class="drop transform transition opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
-    <div class="drop-inner">
-      <div class="w-64 py-3 rounded-md shadow-drop ${cardDefaultDropList()}">
-        <nav class="list flex-col">
-          <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit
-          </a>
-          <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
-            Dolor sit
-          </button>
-          <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
-            Amet
-          </button>
-        </nav>
-      </div>
+    <div class="w-64 py-3 rounded-md shadow-drop ${cardDefaultDropList()}">
+      <nav class="list flex-col">
+        <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit
+        </a>
+        <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+          Dolor sit
+        </button>
+        <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+          Amet
+        </button>
+      </nav>
     </div>
   </div>
 
@@ -42,15 +40,13 @@ demo.htmlSource = `
   </button>
 
   <div class="drop transform transition opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
-    <div class="drop-inner">
-      <div class="card w-80 rounded-md shadow-drop ${cardDefaultDrop()}">
-        <div class="btn btn-close p-5 text-xl" aria-label="Close">
-          ${iconX()}
-        </div>
-        <div class="card-md">
-          <div class="h4">Lorem ipsum</div>
-          <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-        </div>
+    <div class="card w-80 rounded-md shadow-drop ${cardDefaultDrop()}">
+      <div class="btn btn-close p-5 text-xl" aria-label="Close">
+        ${iconX()}
+      </div>
+      <div class="card-md">
+        <div class="h4">Lorem ipsum</div>
+        <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>
     </div>
   </div>

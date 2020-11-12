@@ -19,19 +19,17 @@ demo.htmlSource = `
     </button>
 
     <div class="drop">
-      <div class="drop-inner">
-        <div class="card w-80 rounded-md shadow-drop ${cardDefaultDrop()} overflow-y-auto overflow-x-hidden overflow-sub max-h-96">
-          <div class="media-container rounded-t-md ratio-37.5">
-            <div class="media-inner">
-              <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
-            </div>
+      <div class="card w-80 rounded-md shadow-drop ${cardDefaultDrop()} overflow-y-auto overflow-x-hidden overflow-sub max-h-96">
+        <div class="media-container rounded-t-md ratio-37.5">
+          <div class="media-inner">
+            <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
           </div>
-          <div class="card-md">
-            <div class="h4">Lorem ipsum</div>
-            <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-            <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-            <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-          </div>
+        </div>
+        <div class="card-md">
+          <div class="h4">Lorem ipsum</div>
+          <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+          <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+          <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
         </div>
       </div>
     </div>
@@ -45,19 +43,18 @@ demo.htmlSource = `
     </button>
 
     <div class="drop">
-      <div class="drop-inner">
-        <div class="card w-80 rounded-md shadow-drop ${cardDefaultDrop()}">
-          <div class="media-container rounded-t-md ratio-37.5">
-            <div class="media-inner">
-              <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
-            </div>
+      <div class="card w-80 rounded-md shadow-drop ${cardDefaultDrop()}">
+        <div class="media-container rounded-t-md ratio-37.5">
+          <div class="media-inner">
+            <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
           </div>
-          <div class="card-md overflow-y-auto overflow-x-hidden overflow-sub max-h-64">
-            <div class="h4">Lorem ipsum</div>
-            <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-            <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-            <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-          </div>
+        </div>
+        <div class="card-md overflow-y-auto overflow-x-hidden overflow-sub max-h-64">
+          <div class="h4">Lorem ipsum</div>
+          <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+          <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+          <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+        </div>
       </div>
     </div>
 

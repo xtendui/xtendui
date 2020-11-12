@@ -90,7 +90,7 @@ You can specify **on** and **off** events for the tooltip. Fore example `on: 'cl
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `on:String`                              | `'click'`                     | Set event to listen for activation           |
 | Option                  | `off:String`                             | `false`                       | Set event to listen for deactivation if not present `options.on` deactivate when already activated          |
-| Option                  | `eventLimit:Query`                          | `'.event-limit, .tooltip-inner'`        | Limit events inside self.object            |
+| Option                  | `eventLimit:Query`                          | `'.event-limit, .tooltip > *:first-child'`        | Limit events inside self.object            |
 
 </div>
 

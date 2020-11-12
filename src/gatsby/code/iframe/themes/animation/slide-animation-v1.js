@@ -68,20 +68,18 @@ demo.htmlSource = `
     </button>
 
     <div class="drop group duration-700"> <!-- needed for animation time, put max time with delay -->
-      <div class="drop-inner">
-        <div class="card w-64 py-3 rounded-md shadow-drop ${cardDefault}">
-          <nav class="list flex-col rounded-md ${cardItem}">
-            <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
-            </a>
-            <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
-              Dolor sit
-            </button>
-            <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
-              Amet
-            </button>
-          </nav>
-        </div>
+      <div class="card w-64 py-3 rounded-md shadow-drop ${cardDefault}">
+        <nav class="list flex-col rounded-md ${cardItem}">
+          <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+          </a>
+          <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+            Dolor sit
+          </button>
+          <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+            Amet
+          </button>
+        </nav>
       </div>
     </div>
 
@@ -94,15 +92,13 @@ demo.htmlSource = `
     </button>
 
     <div class="drop group duration-700"> <!-- needed for animation time, put max time with delay -->
-      <div class="drop-inner">
-        <div class="card w-80 rounded-md shadow-drop ${cardDefault}">
-          <div class="btn btn-close p-5 text-xl" aria-label="Close">
-            ${iconX()}
-          </div>
-          <div class="card-md rounded-md ${cardItem}">
-            <div class="h4">Lorem ipsum</div>
-            <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-          </div>
+      <div class="card w-80 rounded-md shadow-drop ${cardDefault}">
+        <div class="btn btn-close p-5 text-xl" aria-label="Close">
+          ${iconX()}
+        </div>
+        <div class="card-md rounded-md ${cardItem}">
+          <div class="h4">Lorem ipsum</div>
+          <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
         </div>
       </div>
     </div>

@@ -144,7 +144,7 @@ Drop.optionsDefault = {
   max: 1,
   // event
   on: 'click',
-  eventLimit: '.event-limit, .drop > .drop-inner',
+  eventLimit: '.event-limit, .drop > *:first-child',
   // timing
   instant: {
     elements: true,

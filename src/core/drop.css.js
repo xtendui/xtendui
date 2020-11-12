@@ -8,9 +8,6 @@ module.exports = {
       // setup
       width: '100%',
       padding: 0,
-      '> .drop-inner': {
-        width: '100%',
-      },
       top: '100% !important',
       left: '0 !important',
       right: '0 !important',
@@ -29,14 +26,14 @@ module.exports = {
         left: 'auto',
         right: 'auto',
         bottom: 'auto',
-        '> .drop-inner': {
+        '> *:first-child': {
           zIndex: 'initial',
-          '> .design-setup': {
-            display: 'none',
-          },
-          '> .card': {
-            '@apply card-disable !important': '',
-          },
+        },
+        '> .design-setup': {
+          display: 'none',
+        },
+        '> .card': {
+          '@apply card-disable !important': '',
         },
       },
     },
@@ -48,6 +45,10 @@ module.exports = {
       position: 'absolute',
       '&.out': {
         pointerEvents: 'none',
+      },
+      '> *:first-child': {
+        position: 'relative',
+        zIndex: theme('zIndex.drop'),
       },
       // styles
       '[data-popper-placement^="top"]&': {
@@ -62,11 +63,6 @@ module.exports = {
       '[data-popper-placement^="right"]&': {
         paddingLeft: theme('spacing.4'),
       },
-    },
-    '.drop-inner': {
-      // setup
-      position: 'relative',
-      zIndex: theme('zIndex.drop'),
     },
     '.drop-arrow': {
       // setup

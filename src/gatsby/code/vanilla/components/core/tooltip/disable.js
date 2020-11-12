@@ -17,13 +17,13 @@ demo.htmlSource = `
   <div class="tooltip">
     <div class="card card-tooltip rounded shadow-tooltip ${cardDefaultTooltip()}">
 
-      <div data-xt-tooltip>
+      <div data-xt-tooltip="{ elements: false, elementsInner: ':scope > a, :scope > button' }">
 
         Lorem ipsum <a href="#">dolor</a> sit amet
 
         <div class="tooltip">
           <div class="card card-tooltip rounded shadow-tooltip ${cardDefaultTooltip()}">
-            Lorem ipsum dolor sit amet
+            Consectetur adipiscing elit
           </div>
         </div>
 

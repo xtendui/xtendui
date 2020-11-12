@@ -71,7 +71,7 @@ demo.htmlSource = `
 
 <div class="list list-2 items-center">
 
-  <div data-xt-drop="{ targetsInner: ':scope > .drop-inner', collapseHeight: 'targetsInner' }">
+  <div data-xt-drop="{ targetsInner: '.drop-inner', collapseHeight: 'targetsInner' }">
 
     <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       list
@@ -97,7 +97,7 @@ demo.htmlSource = `
 
   </div>
 
-  <div data-xt-drop="{ targetsInner: ':scope > .drop-inner', collapseHeight: 'targetsInner' }">
+  <div data-xt-drop="{ targetsInner: '.drop-inner', collapseHeight: 'targetsInner' }">
 
     <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       card
