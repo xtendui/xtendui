@@ -88,7 +88,7 @@ module.exports = {
         left: '0',
       },
       // @FIX page load height without .active slides
-      '&:not(.xt-slider)': {
+      '&:not([data-xt-component="xt-slider"])': {
         '.slide': {
           '&:first-child': {
             display: 'block !important',

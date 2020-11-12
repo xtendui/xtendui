@@ -237,9 +237,7 @@ class Toggle {
         }
       }
       // initialized class
-      if (!options.classSkip || !options.classSkip['elements']) {
-        self.object.classList.add(self.componentName)
-      }
+      self.object.setAttribute('data-xt-component', self.componentName)
       // listener dispatch
       self.object.dispatchEvent(new CustomEvent('init.xt'))
     })
@@ -3005,7 +3003,7 @@ class Toggle {
     // weak
     if (!weak) {
       // initialized class
-      self.object.classList.remove(self.componentName)
+      self.object.removeAttribute('data-xt-component', self.componentName)
       // set self
       Xt.remove(self.componentName, self.object)
       // listener dispatch

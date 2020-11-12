@@ -97,7 +97,7 @@ class InfiniteScroll {
     // paginate
     self.paginate()
     // initialized class
-    self.object.classList.add(self.componentName)
+    self.object.setAttribute('data-xt-component', self.componentName)
     // @FIX raf because after .xt custom listeners
     requestAnimationFrame(() => {
       // listener dispatch
@@ -420,6 +420,8 @@ class InfiniteScroll {
     removeEventListener('unload', self.eventUnloadHandler.bind(self))
     removeEventListener('beforeunload', self.eventBeforeunloadHandler.bind(self))
     removeEventListener('scroll', self.eventScrollHandler.bind(self))
+    // initialized class
+    self.object.removeAttribute('data-xt-component', self.componentName)
     // set self
     Xt.remove(self.componentName, self.object)
     // listener dispatch

@@ -26,7 +26,7 @@ You can customize the **class names** used by the component.
 
 You can start with toggled elements and targets just by adding **one of the class names for activation** to the **elements** or **targets**.
 
-Additionally on component initialization the class `xt-scroll` gets added to the **object** (the DOM element you assigned the component).
+Additionally on component initialization the attribute `[data-xt-component="xt-scroll"]` gets added to the **object**.
 
 ## Mode
 

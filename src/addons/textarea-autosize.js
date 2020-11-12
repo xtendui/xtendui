@@ -41,7 +41,7 @@ class TextareaAutosize {
     // initial
     self.keychange.bind(self)()
     // initialized class
-    self.object.classList.add(self.componentName)
+    self.object.setAttribute('data-xt-component', self.componentName)
     // @FIX raf because after .xt custom listeners
     requestAnimationFrame(() => {
       // listener dispatch
@@ -82,7 +82,7 @@ class TextareaAutosize {
     self.object.removeEventListener('keydown', self.keychange.bind(self))
     self.object.removeEventListener('keyup', self.keychange.bind(self))
     // initialized class
-    self.object.classList.remove(self.componentName)
+    self.object.removeAttribute('data-xt-component', self.componentName)
     // set self
     Xt.remove(self.componentName, self.object)
     // listener dispatch

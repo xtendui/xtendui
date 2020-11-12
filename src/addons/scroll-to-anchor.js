@@ -54,7 +54,7 @@ class ScrollToAnchor {
       }
     }
     // initialized class
-    self.object.classList.add(self.componentName)
+    self.object.setAttribute('data-xt-component', self.componentName)
     // @FIX raf because after .xt custom listeners
     requestAnimationFrame(() => {
       // listener dispatch
@@ -265,7 +265,7 @@ class ScrollToAnchor {
       }
     }
     // initialized class
-    self.object.classList.remove(self.componentName)
+    self.object.removeAttribute('data-xt-component', self.componentName)
     // set self
     Xt.remove(self.componentName, self.object)
     // listener dispatch

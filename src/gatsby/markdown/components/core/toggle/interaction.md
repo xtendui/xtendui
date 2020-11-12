@@ -36,7 +36,7 @@ You can start with toggled elements and targets just by adding **one of the clas
   </demovanilla>
 </demo>
 
-Additionally on component initialization the class `xt-toggle` gets added to the **object** (the DOM element you assigned the component).
+Additionally on component initialization the attribute `[data-xt-component="xt-toggle"]` gets added to the **object**.
 
 ## Animation
 
