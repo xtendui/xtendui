@@ -7,7 +7,7 @@
   background: theme('colors.accent.500');
   @screen lg {
     position: fixed;
-    z-index: calc(theme('zIndex.top') + 101);
+    z-index: 2;
     top: 0;
     left: 0;
     bottom: 0;
@@ -58,7 +58,7 @@
 
 .gatsby_site_header_content {
   @apply w-full list;
-  align-items: baseline;
+  align-items: flex-end;
   justify-content: space-between;
 }
 

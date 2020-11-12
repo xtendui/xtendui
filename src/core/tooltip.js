@@ -70,6 +70,7 @@ class Tooltip extends Xt.Toggle {
         const element = self.getElements(el)[0]
         const popperInstance = createPopper(element, el, {
           placement: options.position,
+          strategy: options.strategy,
           resize: false,
           modifiers: [
             {
@@ -159,6 +160,7 @@ Tooltip.optionsDefault = {
   },
   // other
   position: 'top',
+  strategy: 'absolute',
   spaceOverflow: 15,
   spaceFlip: 15,
   spaceArrow: 0,

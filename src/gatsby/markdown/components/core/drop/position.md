@@ -41,6 +41,7 @@ There are some spacing javascript options.
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `strategy:String`                          | `'absolute'`        | Position strategy, can be `'absolute'` or `'fixed'`            |----------------------------- |
 | Option                  | `spaceOverflow:Number`                          | `15`        | Space to contain the drop            |
 | Option                  | `spaceFlip:Number`                          | `15`        | Space to flip the drop            |
 | Option                  | `spaceArrow:Number`                          | `0`        | Space for arrow            |
