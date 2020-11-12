@@ -150,7 +150,7 @@ Drop.optionsDefault = {
     elements: true,
     targets: false,
     elementsInner: true,
-    targetsInner: true,
+    targetsInner: false,
   },
   // other
   position: 'bottom-start',

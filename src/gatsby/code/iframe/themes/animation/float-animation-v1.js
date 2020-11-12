@@ -15,7 +15,7 @@ const classesPrimary =
 const cardDesign =
   'bg-white transform ease-in-out-quint duration-500 delay-200 opacity-0 scale-50 group-active:ease-out-quint group-active:delay-0 group-active:opacity-100 group-active:scale-100'
 const cardContent =
-  'text-black links-default transform ease-in-out-quint duration-500 delay-0 opacity-0 -translate-y-2 group-active:ease-out-quint group-active:delay-300 group-active:opacity-100 group-active:translate-y-0'
+  'text-black links-default transform ease-in-out-quint duration-500 opacity-0 -translate-y-2 group-active:ease-out-quint group-active:delay-300 group-active:opacity-100 group-active:translate-y-0'
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -68,7 +68,7 @@ demo.htmlSource = `
       list
     </button>
 
-    <div class="drop group duration-700"> <!-- needed for animation time, put max animation time -->
+    <div class="drop group duration-700"> <!-- needed for animation time, put max time with delay -->
       <div class="drop-inner">
         <div class="design-setup rounded-md shadow-drop ${cardDesign}"></div>
         <div class="w-64 py-3 rounded-md ${cardContent}">
@@ -95,7 +95,7 @@ demo.htmlSource = `
       card
     </button>
 
-    <div class="drop group duration-700"> <!-- needed for animation time, put max animation time -->
+    <div class="drop group duration-700"> <!-- needed for animation time, put max time with delay -->
       <div class="drop-inner">
         <div class="design-setup rounded-md shadow-drop ${cardDesign}"></div>
         <div class="card w-80 rounded-md ${cardContent}">
@@ -124,7 +124,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn-md ${classesPrimary} hover:shadow-lg active:shadow-sm">
       screen full
     </button>
-    <div class="overlay group duration-700"> <!-- needed for animation time, put max animation time -->
+    <div class="overlay group duration-700"> <!-- needed for animation time, put max time with delay -->
       <div class="btn btn-close p-5 text-2xl fixed z-last mr-2 ${cardContent}" aria-label="Close">
         ${iconX()}
       </div>
@@ -136,7 +136,7 @@ demo.htmlSource = `
           <div class="card min-h-screen items-center justify-center rounded-md ${cardContent}">
             <div class="media-container ratio-100">
               <div class="media-inner">
-                <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+                <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
               </div>
             </div>
           </div>
@@ -152,7 +152,7 @@ demo.htmlSource = `
       left blocks
     </button>
 
-    <div class="overlay group duration-700"> <!-- needed for animation time, put max animation time -->
+    <div class="overlay group duration-700"> <!-- needed for animation time, put max time with delay -->
       <div class="overlay-container p-0 max-w-md ml-0 mr-auto">
         <div class="overlay-inner">
 
@@ -175,7 +175,7 @@ demo.htmlSource = `
             </div>
             <div class="media-container h-48">
               <div class="media-inner">
-                <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+                <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
               </div>
             </div>
             <div class="card-md">
@@ -199,7 +199,7 @@ demo.htmlSource = `
       contact
     </button>
 
-    <div class="overlay group duration-700"> <!-- needed for animation time, put max animation time -->
+    <div class="overlay group duration-700"> <!-- needed for animation time, put max time with delay -->
       <div class="overlay-container max-w-5xl">
         <div class="overlay-inner">
 
@@ -289,7 +289,7 @@ demo.htmlSource = `
               <div class="md:w-5/12 flex flex-col">
                 <div class="media-container rounded-b-md md:rounded-bl-none md:rounded-br-md h-48 md:ratio-100">
                   <div class="media-inner">
-                    <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+                    <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
                   </div>
                 </div>
                 <div class="card-md bg-gray-300 flex-full text-sm">
@@ -318,7 +318,7 @@ demo.htmlSource = `
       newsletter
     </button>
 
-    <div class="overlay group duration-700"> <!-- needed for animation time, put max animation time -->
+    <div class="overlay group duration-700"> <!-- needed for animation time, put max time with delay -->
       <div class="overlay-container max-w-5xl">
         <div class="overlay-inner">
 
@@ -334,7 +334,7 @@ demo.htmlSource = `
               <div class="md:w-5/12 flex flex-col">
                 <div class="media-container rounded-t-md md:rounded-tr-none h-48 lg:ratio-100 md:flex-full">
                   <div class="media-inner">
-                    <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+                    <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
                   </div>
                 </div>
               </div>

@@ -14,11 +14,10 @@ const checkDefault = require('components/snippets/classes/form-check-default').d
 const radioDefault = require('components/snippets/classes/form-radio-default').default
 const iconX = require('components/snippets/icons').iconX
 
-const listCollapse = 'w-0 overflow-hidden transform ease-in-out-quint duration-700 -translate-x-4 active:ease-out-quint active:delay-0 active:translate-x-0'
-const cardCollapse =
-  'h-0 overflow-hidden transform ease-in-out-quint duration-700 -translate-y-4 group-active:ease-out-quint group-active:delay-0 group-active:translate-y-0'
+const listCollapse = 'w-0 overflow-hidden transform ease-in-out-quint duration-700 -translate-x-4 active:ease-out-quint active:translate-x-0'
+const cardCollapse = 'h-0 overflow-hidden transform ease-in-out-quint duration-700 -translate-y-4 group-active:ease-out-quint group-active:translate-y-0'
 const cardItem =
-  'transform ease-in-out-quint duration-700 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:opacity-100 group-active:translate-y-0'
+  'transform ease-in-out-quint duration-700 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0'
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -78,10 +77,10 @@ demo.htmlSource = `
       list
     </button>
 
-    <div class="drop group duration-700"> <!-- needed for animation time, put max animation time -->
+    <div class="drop group duration-700"> <!-- needed for animation time, put max time with delay -->
       <div class="drop-inner rounded-md shadow-drop ${cardCollapse}">
-        <div class="card w-64 py-3 rounded-md ${cardDefaultDrop()}">
-          <nav class="list flex-col rounded-md ${cardItem}">
+        <div class="card w-64 py-3 rounded-md ${cardDefaultDrop()} ">
+          <nav class="list flex-col rounded-md${cardItem}">
             <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
             </a>
@@ -104,13 +103,13 @@ demo.htmlSource = `
       card
     </button>
 
-    <div class="drop group duration-700"> <!-- needed for animation time, put max animation time -->
+    <div class="drop group duration-700"> <!-- needed for animation time, put max time with delay -->
       <div class="drop-inner rounded-md shadow-drop ${cardCollapse}">
-        <div class="card w-80 rounded-md ${cardDefaultDrop()} ${cardItem}">
-          <div class="btn btn-close p-5 text-xl" aria-label="Close">
+        <div class="card w-80 rounded-md ${cardDefaultDrop()}">
+          <div class="btn btn-close p-5 text-xl ${cardItem}" aria-label="Close">
             ${iconX()}
           </div>
-          <div class="card-md rounded-md">
+          <div class="card-md rounded-md ${cardItem}">
             <div class="h4">Lorem ipsum</div>
             <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
           </div>
@@ -132,17 +131,17 @@ demo.htmlSource = `
     <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       screen full
     </button>
-    <div class="overlay group duration-700"> <!-- needed for animation time, put max animation time -->
+    <div class="overlay group duration-700"> <!-- needed for animation time, put max time with delay -->
       <div class="btn btn-close p-5 text-2xl fixed z-last mr-2 ${cardItem}" aria-label="Close">
         ${iconX()}
       </div>
       <div class="overlay-container p-0">
         <div class="overlay-inner ${cardCollapse}">
 
-          <div class="card min-h-screen items-center justify-center ${cardDefaultOverlay()} ${cardItem}">
-            <div class="media-container ratio-100">
+          <div class="card min-h-screen items-center justify-center ${cardDefaultOverlay()}">
+            <div class="media-container ratio-100 ${cardItem}">
               <div class="media-inner">
-                <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+                <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
               </div>
             </div>
           </div>
@@ -158,15 +157,15 @@ demo.htmlSource = `
       left blocks
     </button>
 
-    <div class="overlay group duration-700"> <!-- needed for animation time, put max animation time -->
+    <div class="overlay group duration-700"> <!-- needed for animation time, put max time with delay -->
       <div class="overlay-container p-0 max-w-md ml-0 mr-auto">
         <div class="overlay-inner ${cardCollapse}">
 
-          <div class="card min-h-screen ${cardDefaultOverlay()} ${cardItem}">
+          <div class="card min-h-screen ${cardDefaultOverlay()}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>
-            <div class="list bg-accent-500">
+            <div class="list bg-accent-500 ${cardItem}">
               <button type="button" class="btn btn-md ${btnPrimary()}">
                 Menu
               </button>
@@ -177,16 +176,16 @@ demo.htmlSource = `
                 Account
               </button>
             </div>
-            <div class="media-container h-48">
+            <div class="media-container h-48 ${cardItem}">
               <div class="media-inner">
-                <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+                <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
               </div>
             </div>
-            <div class="card-md">
+            <div class="card-md ${cardItem}">
               <div class="h4">Lorem ipsum</div>
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
             </div>
-            <div class="card-sm bg-gray-500 mt-auto">
+            <div class="card-sm bg-gray-500 mt-auto ${cardItem}">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
             </div>
           </div>
@@ -203,16 +202,16 @@ demo.htmlSource = `
       contact
     </button>
 
-    <div class="overlay group duration-700"> <!-- needed for animation time, put max animation time -->
+    <div class="overlay group duration-700"> <!-- needed for animation time, put max time with delay -->
       <div class="overlay-container max-w-5xl">
         <div class="overlay-inner rounded-md shadow-overlay ${cardCollapse}">
 
-          <div class="card rounded-md ${cardDefaultOverlay()} ${cardItem}">
+          <div class="card rounded-md ${cardDefaultOverlay()}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>
 
-            <div class="md:card-group rounded-md">
+            <div class="md:card-group rounded-md ${cardItem}">
 
               <div class="card-md md:card-lg md:w-7/12">
                 <div class="h4">
@@ -288,10 +287,10 @@ demo.htmlSource = `
                 </form>
               </div>
 
-              <div class="md:w-5/12 flex flex-col">
+              <div class="md:w-5/12 flex flex-col ${cardItem}">
                 <div class="media-container rounded-b-md md:rounded-bl-none md:rounded-br-md h-48 md:ratio-100">
                   <div class="media-inner">
-                    <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+                    <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
                   </div>
                 </div>
                 <div class="card-md bg-gray-300 flex-full text-sm">
@@ -320,21 +319,21 @@ demo.htmlSource = `
       newsletter
     </button>
 
-    <div class="overlay group duration-700"> <!-- needed for animation time, put max animation time -->
+    <div class="overlay group duration-700"> <!-- needed for animation time, put max time with delay -->
       <div class="overlay-container max-w-5xl">
         <div class="overlay-inner rounded-md shadow-overlay ${cardCollapse}">
 
-          <div class="card rounded-md ${cardDefaultOverlay()} ${cardItem}">
+          <div class="card rounded-md ${cardDefaultOverlay()}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>
 
-            <div class="md:card-group rounded-md">
+            <div class="md:card-group rounded-md ${cardItem}">
 
               <div class="md:w-5/12 flex flex-col">
                 <div class="media-container rounded-t-md md:rounded-tr-none h-48 lg:ratio-100 md:flex-full">
                   <div class="media-inner">
-                    <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+                    <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
                   </div>
                 </div>
               </div>
@@ -414,7 +413,121 @@ demo.htmlSource = `
 
             </div>
 
-            <div class="card-sm rounded-b-md bg-gray-300 text-xs">
+            <div class="card-sm rounded-b-md bg-gray-300 text-xs ${cardItem}">
+              <p>
+                Receive <strong>free discount</strong> periodically on all our products.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div data-xt-overlay="{ collapseHeight: 'targets' }">
+
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+      collapse targets
+    </button>
+
+    <div class="overlay group h-0 overflow-hidden ease-in-out-quint duration-700"> <!-- needed for animation time, put max time with delay -->
+      <div class="overlay-container max-w-5xl">
+        <div class="overlay-inner rounded-md shadow-overlay">
+
+          <div class="card rounded-md ${cardDefaultOverlay()}">
+            <div class="btn btn-close p-5 text-2xl" aria-label="Close">
+              ${iconX()}
+            </div>
+
+            <div class="md:card-group rounded-md ${cardItem}">
+
+              <div class="md:w-5/12 flex flex-col">
+                <div class="media-container rounded-t-md md:rounded-tr-none h-48 lg:ratio-100 md:flex-full">
+                  <div class="media-inner">
+                    <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-md md:card-lg md:w-7/12">
+                <div class="h4">
+                  Subscribe to our newsletter
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est.</p>
+                <form class="text-lg">
+                  <div class="row row-x-3 row-y-2">
+
+                    <div class="w-full">
+                      <label class="form-label mb-3 ${labelDefault()}">
+                        Email
+                      </label>
+                      <input type="text" class="form-item rounded-md ${inputDefault()}" aria-label="Email">
+                    </div>
+
+                    <div class="w-full">
+
+                      <label class="form-label mb-3 ${labelDefault()}">
+                        Subject
+                      </label>
+
+                      <div class="row row-x-4 row-y-1">
+
+                        <div class="w-full sm:w-auto">
+                          <label class="form-label-check">
+                            <input type="radio" class="form-check form-radio rounded-full ${radioDefault()}" name="radio-usage" checked>
+                            <span class="ml-3">
+                              Option 1
+                            </span>
+                          </label>
+                        </div>
+
+                        <div class="w-full sm:w-auto">
+                          <label class="form-label-check">
+                            <input type="radio" class="form-check form-radio rounded-full ${radioDefault()}" name="radio-usage">
+                            <span class="ml-3">
+                              Option 2
+                            </span>
+                          </label>
+                        </div>
+
+                        <div class="w-full sm:w-auto">
+                          <label class="form-label-check">
+                            <input type="radio" class="form-check form-radio rounded-full ${radioDefault()}" name="radio-usage">
+                            <span class="ml-3">
+                              Option 3
+                            </span>
+                          </label>
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                    <div class="w-full">
+                      <label class="form-label-check">
+                        <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}">
+                        <span class="ml-3">
+                          I <strong>read and accept</strong> the <a href="#" target="_blank" rel="noopener">sales conditions</a> and the <a href="#" target="_blank" rel="noopener">privacy policy</a>.
+                        </span>
+                      </label>
+                    </div>
+
+                    <div class="w-full">
+                      <button type="submit" class="btn btn-md rounded-md ${btnPrimary()}">
+                        Subscribe
+                      </button>
+                    </div>
+
+                  </div>
+                </form>
+              </div>
+
+            </div>
+
+            <div class="card-sm rounded-b-md bg-gray-300 text-xs ${cardItem}">
               <p>
                 Receive <strong>free discount</strong> periodically on all our products.
               </p>

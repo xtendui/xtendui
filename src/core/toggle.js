@@ -1695,7 +1695,7 @@ class Toggle {
     const els = obj[type].queueEls
     for (const el of els) {
       // delay
-      let delay = options[`delay${actionCurrent}`]
+      let delay = options.delay || options[`delay${actionCurrent}`]
       if (delay) {
         if (isNaN(delay)) {
           const count = Xt.dataStorage.get(el, `${self.componentNamespace + actionCurrent}Count`) || els.findIndex(x => x === el)
@@ -1853,7 +1853,7 @@ class Toggle {
     const self = this
     const options = self.options
     // anim
-    const duration = Xt.animTime(el, options[`duration${actionCurrent}`])
+    const duration = Xt.animTime(el, options.duration || options[`duration${actionCurrent}`])
     clearTimeout(Xt.dataStorage.get(el, `${self.componentNamespace + type}AnimTimeout`))
     // queue done
     if (!duration) {
@@ -2318,7 +2318,7 @@ class Toggle {
           self.detail.zIndex = self.detail.zIndex + options.zIndex[type].factor
           el.style.zIndex = self.detail.zIndex
           // zIndex reset after duration
-          const duration = Xt.animTime(el, options[`duration${actionCurrent}`])
+          const duration = Xt.animTime(el, options.duration || options[`duration${actionCurrent}`])
           clearTimeout(Xt.dataStorage.get(el, `${self.componentNamespace}indexTimeout`))
           Xt.dataStorage.set(
             el,
@@ -3046,11 +3046,13 @@ Toggle.optionsDefaultSuper = {
     elements: true,
     targets: false,
     elementsInner: true,
-    targetsInner: true,
+    targetsInner: false,
   },
+  delay: false,
   delayOn: false,
   delayOff: false,
   delayInitial: true,
+  duration: false,
   durationOn: false,
   durationOff: false,
   // auto

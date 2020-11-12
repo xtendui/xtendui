@@ -1,5 +1,5 @@
 .demo--overlay-animation-css {
-  @apply duration-500; /* needed for animation time, put max animation time */
+  @apply duration-500; /* needed for animation time, put max time with delay */
   /* initial */
   .overlay-inner {
     @apply transform transition;

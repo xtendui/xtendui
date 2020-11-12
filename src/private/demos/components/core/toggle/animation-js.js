@@ -16,8 +16,7 @@ Xt.mount.push({
     // init
 
     let self = new Xt.Toggle(object, {
-      durationOn: 500,
-      durationOff: 500,
+      duration: 500,
     })
 
     // on

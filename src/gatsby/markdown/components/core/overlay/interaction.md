@@ -62,10 +62,12 @@ You can use a function for <code>delayOn</code> and <code>delayOff</code> for ex
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `instant:Boolean|Object`                 | `{ elements: true, targets: false, elementsInner: true, targetsInner: true }`     | Set instant activation and deactivation, can be one or more booleans `elements` `elementsInner` `targets` `targetsInner`          |
+| Option                  | `instant:Boolean|Object`                 | `{ elements: true, targets: false, elementsInner: true, targetsInner: false }`     | Set instant activation and deactivation, can be one or more booleans `elements` `elementsInner` `targets` `targetsInner`          |
+| Option                  | `delay:Milliseconds|Function`                          | `false`        | Activation and Deactivation delay            |
 | Option                  | `delayOn:Milliseconds|Function`                          | `false`        | Activation delay            |
 | Option                  | `delayOff:Milliseconds|Function`                          | `false`        | Deactivation delay            |
 | Option                  | `delayInitial:Boolean`                          | `true`        | Initial activation delay            |
+| Option                  | `duration:Milliseconds`                          | `false`        | Activation and Deactivation duration            |
 | Option                  | `durationOn:Milliseconds`                          | `false`        | Activation duration            |
 | Option                  | `durationOff:Milliseconds`                          | `false`        | Deactivation duration            |
 

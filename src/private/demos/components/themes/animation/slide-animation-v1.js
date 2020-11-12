@@ -8,12 +8,10 @@ Xt.mount.push({
     // vars
 
     let content = object.querySelector('.content')
-    const contentX = 10
-    const contentScale = 0.95
+    const contentX = 20
 
     let clone = object.querySelector('.clone')
-    const cloneX = 10
-    const cloneScale = 0.95
+    const cloneX = 20
 
     // inject
 
@@ -27,7 +25,7 @@ Xt.mount.push({
       clone = object.querySelector('.clone')
       content.innerHTML = text
       clone.innerHTML = text
-      gsap.set(clone, { x: -cloneX, scale: cloneScale, opacity: 0 })
+      gsap.set(clone, { x: -cloneX, opacity: 0 })
     }
 
     // on
@@ -37,16 +35,16 @@ Xt.mount.push({
       const content = object.querySelector('.content')
       gsap.killTweensOf(clone)
       gsap.set(content, { transformOrigin: 'right center' })
-      gsap.set(content, { x: 0, scale: 1, opacity: 1 })
-      gsap.to(content, { x: contentX, scale: contentScale, opacity: 0, duration: 0.7, ease: 'quint.out' })
+      gsap.set(content, { x: 0, opacity: 1 })
+      gsap.to(content, { x: contentX, opacity: 0, duration: 0.7, ease: 'quint.out' })
       // clone
       const clone = object.querySelector('.clone')
       gsap.killTweensOf(clone)
       gsap.set(clone, { transformOrigin: 'left center' })
-      gsap.set(clone, { x: -cloneX, scale: cloneScale, opacity: 0 })
-      gsap.to(clone, { x: 0, scale: 1, opacity: 1, duration: 0.7, ease: 'quint.out', delay: 0.3 })
+      gsap.set(clone, { x: -cloneX, opacity: 0 })
+      gsap.to(clone, { x: 0, opacity: 1, duration: 0.7, ease: 'quint.out', delay: 0.3 })
     }
 
-    object.addEventListener('mousedown', eventOn)
+    object.addEventListener('click', eventOn)
   },
 })
