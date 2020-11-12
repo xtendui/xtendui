@@ -8,7 +8,7 @@ date: "2010-10-10"
 
 ## Class
 
-You can customize the **class names** used with the component.
+You can customize the **class names** used by the component.
 
 <div class="table-scroll">
 
@@ -20,6 +20,7 @@ You can customize the **class names** used with the component.
 | Option                  | `classDone:String`                          | `done`        | Class name for in animation done            |
 | Option                  | `classInitial:String`                          | `initial`        | Class name for initialization            |
 | Option                  | `classInverse:String`                          | `inverse`        | Class name for inverse direction activation            |
+| Option                  | `classSkip:Object`                          | `false`        | Skip class activation and deactivation, can be one or more booleans ex: `{ elements: true, elementsInner: true,  targets: true, targetsInner: true }`            |
 
 </div>
 
@@ -84,7 +85,7 @@ You can use a function for <code>delayOn</code> and <code>delayOff</code> for ex
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `instant:Boolean|Object`                 | `{ elements: true, targets: false, elementsInner: true, targetsInner: false }`     | Set instant activation and deactivation, can be one or more booleans `elements` `elementsInner` `targets` `targetsInner`          |
+| Option                  | `instant:Boolean|Object`                 | `{ elements: true, targets: false, elementsInner: true, targetsInner: false }`     | Set instant activation and deactivation, can be one or more booleans ex: `{ elements: true, elementsInner: true,  targets: true, targetsInner: true }`          |
 | Option                  | `delay:Milliseconds|Function`                          | `false`        | Activation and Deactivation delay            |
 | Option                  | `delayOn:Milliseconds|Function`                          | `false`        | Activation delay            |
 | Option                  | `delayOff:Milliseconds|Function`                          | `false`        | Deactivation delay            |
@@ -130,7 +131,6 @@ You can specify **on** and **off** events for the toggle.
 | Option                  | `on:String`                          | `'click'`        | Activation event to attach to elements            |
 | Option                  | `off:String`                          | `false`        | Dectivation event to attach to elements            |
 | Option                  | `eventLimit:Query`                          | `'.event-limit'`        | Limit events inside self.object            |
-| Option                  | `preventEvent:Boolean`                          | `false`        | Prevent interaction until activated depending on `on` and `off` events (second click or mouseenter)            |
 
 </div>
 
@@ -138,6 +138,23 @@ You can specify **on** and **off** events for the toggle.
   <demovanilla src="vanilla/components/core/toggle/event-mouse">
   </demovanilla>
   <demovanilla src="vanilla/components/core/toggle/event-focus">
+  </demovanilla>
+</demo>
+
+You can have **element's link** and **other events** that trigger after toggle with `preventEvent: true`.
+
+If the toggle is on `"on": "mouseenter"` or `"on": "mousehover"` the link gets activated on the second touch event on touch devices.
+
+<div class="table-scroll">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `preventEvent:Boolean`                          | `false`        | Prevent interaction until activated depending on `on` and `off` events (second click or mouseenter)            |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/core/toggle/prevent-event">
   </demovanilla>
 </demo>
 

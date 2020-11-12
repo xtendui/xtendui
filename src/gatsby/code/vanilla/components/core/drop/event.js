@@ -13,7 +13,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-2 items-center">
 
-  <div data-xt-drop="{ elements: false, elementsInner: ':scope > a, :scope > button', on: 'mouseenter', off: 'mouseleave', closeOutside: false }">
+  <div class="inline-block" data-xt-drop="{ elements: false, elementsInner: ':scope > a, :scope > button', on: 'mouseenter', off: 'mouseleave', closeOutside: false }">
 
     <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       mouse

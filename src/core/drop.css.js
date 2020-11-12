@@ -46,13 +46,21 @@ module.exports = {
       // setup
       '@apply toggle': '',
       position: 'absolute',
-      zIndex: 'inherit',
-      '&.in': {
-        zIndex: theme('zIndex.drop'),
-      },
       '&.out': {
-        zIndex: theme('zIndex.drop') - 1,
         pointerEvents: 'none',
+      },
+      // styles
+      '[data-popper-placement^="top"]&': {
+        paddingBottom: theme('spacing.4'),
+      },
+      '[data-popper-placement^="bottom"]&': {
+        paddingTop: theme('spacing.4'),
+      },
+      '[data-popper-placement^="left"]&': {
+        paddingRight: theme('spacing.4'),
+      },
+      '[data-popper-placement^="right"]&': {
+        paddingLeft: theme('spacing.4'),
       },
     },
     '.drop-inner': {
@@ -63,9 +71,9 @@ module.exports = {
     '.drop-arrow': {
       // setup
       position: 'absolute',
-      zIndex: theme('zIndex.drop'),
       transform: 'rotate(45deg)',
       // styles
+      zIndex: theme('zIndex.drop'),
       width: '1rem',
       height: '1rem',
       background: theme('colors.white'),
@@ -81,18 +89,6 @@ module.exports = {
       '[data-popper-placement^="right"] &': {
         left: theme('spacing.3'),
       },
-    },
-    '[data-popper-placement^="top"]': {
-      paddingBottom: theme('spacing.4'),
-    },
-    '[data-popper-placement^="bottom"]': {
-      paddingTop: theme('spacing.4'),
-    },
-    '[data-popper-placement^="left"]': {
-      paddingRight: theme('spacing.4'),
-    },
-    '[data-popper-placement^="right"]': {
-      paddingLeft: theme('spacing.4'),
     },
   }),
 }

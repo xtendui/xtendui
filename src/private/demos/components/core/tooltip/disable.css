@@ -1,0 +1,12 @@
+/*
+.demo--tooltip-coniner-disable {
+  @apply md:tooltip-disable !important;
+  @screen md {
+    .list {
+      > .btn, > * > .btn {
+        @apply px-0;
+      }
+    }
+  }
+}
+*/

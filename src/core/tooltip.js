@@ -4,9 +4,9 @@ import JSON5 from 'json5'
 import { createPopper } from '@popperjs/core'
 
 /**
- * Drop
+ * Tooltip
  */
-class Drop extends Xt.Toggle {
+class Tooltip extends Xt.Toggle {
   /**
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
@@ -53,6 +53,7 @@ class Drop extends Xt.Toggle {
   activate(el, type) {
     const self = this
     const options = self.options
+    console.log(self.elements)
     // super
     super.activate(el, type)
     // targets
@@ -101,7 +102,7 @@ class Drop extends Xt.Toggle {
           ],
           ...options.popperjs,
         })
-        Xt.dataStorage.set(el, `${self.componentNamespace}Popper`, popperInstance) // change also in doc xtdropPopperInstance
+        Xt.dataStorage.set(el, `${self.componentNamespace}Popper`, popperInstance) // change also in doc xttooltipPopperInstance
       }
     }
   }
@@ -132,19 +133,23 @@ class Drop extends Xt.Toggle {
 // options
 //
 
-Drop.componentName = 'xt-drop'
-Drop.optionsDefault = {
+Tooltip.componentName = 'xt-tooltip'
+Tooltip.optionsDefault = {
   // element
   elements: ':scope > a, :scope > button',
-  targets: ':scope > .drop',
+  targets: ':scope > .tooltip',
   // class
-  class: 'in in-drop',
+  class: 'in in-tooltip',
+  classSkip: {
+    elements: true,
+  },
   // quantity
   min: 0,
   max: 1,
   // event
-  on: 'click',
-  eventLimit: '.event-limit, .drop > .drop-inner',
+  on: 'mouseenter',
+  off: 'mouseleave',
+  eventLimit: '.event-limit, .tooltip > .tooltip-inner',
   // timing
   instant: {
     elements: true,
@@ -153,17 +158,17 @@ Drop.optionsDefault = {
     targetsInner: false,
   },
   // other
-  position: 'bottom-start',
+  position: 'top',
   spaceOverflow: 15,
   spaceFlip: 15,
   spaceArrow: 0,
   popperjs: null,
   closeAuto: true,
   closeOutside: 'body',
-  closeInside: '.drop-dismiss, .backdrop, .btn-close',
+  closeInside: '.tooltip-dismiss, .backdrop, .btn-close',
   zIndex: {
     targets: {
-      start: 600, // do not change: same as javascript and decreses with sequential drop
+      start: 650, // do not change: same as javascript and decreses with sequential tooltip
       factor: -1,
     },
   },
@@ -174,23 +179,23 @@ Drop.optionsDefault = {
 // export
 //
 
-Xt.Drop = Drop
+Xt.Tooltip = Tooltip
 
 //
 // observe
 //
 
 Xt.mount.push({
-  matches: `[data-${Xt.Drop.componentName}]`,
+  matches: `[data-${Xt.Tooltip.componentName}]`,
   mount: object => {
     // vars
 
-    const optionsMarkup = object.getAttribute(`data-${Xt.Drop.componentName}`)
+    const optionsMarkup = object.getAttribute(`data-${Xt.Tooltip.componentName}`)
     const options = optionsMarkup ? JSON5.parse(optionsMarkup) : {}
 
     // init
 
-    let self = new Xt.Drop(object, options)
+    let self = new Xt.Tooltip(object, options)
 
     // unmount
 

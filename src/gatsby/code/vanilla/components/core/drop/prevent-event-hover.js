@@ -13,7 +13,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-2 items-center">
 
-  <div data-xt-drop="{ elements: false, elementsInner: ':scope > a, :scope > button', on: 'mouseenter', off: 'mouseleave', closeOutside: false, preventEvent: true }">
+  <div class="inline-block" data-xt-drop="{ elements: false, elementsInner: ':scope > a, :scope > button', on: 'mouseenter', off: 'mouseleave', closeOutside: false, preventEvent: true }">
 
     <a href="#drop-with-link-1" class="btn btn-md rounded-md ${btnPrimary()}">
       drop

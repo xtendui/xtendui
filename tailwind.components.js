@@ -18,6 +18,7 @@ module.exports = {
   slider: require('./src/core/slider.css.js'),
   table: require('./src/core/table.css.js'),
   toggle: require('./src/core/toggle.css.js'),
+  tooltip: require('./src/core/tooltip.css.js'),
   typography: require('./src/core/typography.css.js'),
   // addons
   'group-number': require('./src/addons/group-number.css.js'),

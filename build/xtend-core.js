@@ -4,4 +4,5 @@ if (typeof window !== 'undefined') {
   require('xtendui/src/core/overlay.js')
   require('xtendui/src/core/slider.js')
   require('xtendui/src/core/toggle.js')
+  require('xtendui/src/core/tooltip.js')
 }

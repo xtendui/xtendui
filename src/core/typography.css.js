@@ -219,6 +219,7 @@ module.exports = {
     },
     code: {
       // styles
+      fontSize: '0.85em',
       color: theme('colors.accent.600'),
     },
     '.links-inverse': {

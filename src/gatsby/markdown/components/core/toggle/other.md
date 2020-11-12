@@ -39,25 +39,6 @@ When you need to reinit the component when the media is loaded and the **width**
 
 </div>
 
-## Prevent event
-
-You can have **element's link** and **other events** that trigger after toggle with `preventEvent: true`.
-
-If the toggle is on `"on": "mouseenter"` or `"on": "mousehover"` the link gets activated on the second touch event on touch devices.
-
-<div class="table-scroll">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `preventEvent:Boolean`                          | `false`        | Prevent interaction until activated depending on `on` and `off` events (second click or mouseenter)            |
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/core/toggle/prevent-event">
-  </demovanilla>
-</demo>
-
 ## Group
 
 If you need to toggle **multiple targets** with the **same element** assign `data-xt-group` to **elements** and the associated targets **targets**. Group's additional elements aren't counted for min and max.
@@ -83,7 +64,7 @@ If you need to toggle **multiple targets** with the **same element** assign `dat
 | Option                  | `scrollbar:Boolean`                          | `false`        | Hide body scrollbars on activation            |
 | Option                  | `onBlock:Milliseconds`                          | `true`        | Block concurrent activation events for some time            |
 | Option                  | `offBlock:Milliseconds`                          | `true`        | Block concurrent deactivation events for some time            |
-| Option                  | `zIndex:Boolean|Object`                 | `false`     | Set zIndex on activation, can be one or more objects `elements` `elementsInner` `targets` `targetsInner`, the object have `start` and `factor` for the starting zIndex and the factor number to add          |
+| Option                  | `zIndex:Boolean|Object`                 | `false`     | Set zIndex on activation, can be one or more objects ex: `{ elements: true, elementsInner: true,  targets: true, targetsInner: true }`, the object have `start` and `factor` for the starting zIndex and the factor number to add          |
 | Option                  | `focusLimit:Boolean`                          | `false`        | Limit focus on activation            |
 | Option                  | `aria:Object|false`                          | `Object`        | Inject aria attributes            |
 | Option                  | `aria.tabindex:Boolean`                          | `true`        | Inject aria tabindex attributes            |

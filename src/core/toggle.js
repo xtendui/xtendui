@@ -1169,74 +1169,90 @@ class Toggle {
   /**
    * activate element
    * @param {Node|HTMLElement|EventTarget|Window} el Elements to be activated
+   * @param {String} type Type of element
    */
-  activate(el) {
+  activate(el, type) {
     const self = this
+    const options = self.options
     // activation
-    el.classList.add(...self.classes)
-    el.classList.remove(...self.classesActive)
-    el.classList.remove(...self.classesOut)
-    el.classList.remove(...self.classesDone)
-    if (self.initial && !self.wrap) {
-      el.classList.add(...self.classesInitial)
-    }
-    // keep the same level of raf as others
-    cancelAnimationFrame(Xt.dataStorage.get(el, `${self.componentNamespace}ActivateFrame`))
-    Xt.dataStorage.put(
-      el,
-      `${self.componentNamespace}ActivateFrame`,
-      requestAnimationFrame(() => {
-        el.classList.add(...self.classesActive)
-        // remove initial instantly when wrap
-        if (el.classList.contains('xt-wrap')) {
-          el.classList.remove(...self.classesInitial)
-        }
-      })
-    )
-    // direction
-    if (self.direction >= 0) {
-      el.classList.remove(...self.classesInverse)
-    } else {
-      el.classList.add(...self.classesInverse)
+    if (!options.classSkip || !options.classSkip[type]) {
+      el.classList.add(...self.classes)
+      el.classList.remove(...self.classesActive)
+      el.classList.remove(...self.classesOut)
+      el.classList.remove(...self.classesDone)
+      if (self.initial && !self.wrap) {
+        el.classList.add(...self.classesInitial)
+      }
+      // keep the same level of raf as others
+      cancelAnimationFrame(Xt.dataStorage.get(el, `${self.componentNamespace}ActivateFrame`))
+      Xt.dataStorage.put(
+        el,
+        `${self.componentNamespace}ActivateFrame`,
+        requestAnimationFrame(() => {
+          el.classList.add(...self.classesActive)
+          // remove initial instantly when wrap
+          if (el.classList.contains('xt-wrap')) {
+            el.classList.remove(...self.classesInitial)
+          }
+        })
+      )
+      // direction
+      if (self.direction >= 0) {
+        el.classList.remove(...self.classesInverse)
+      } else {
+        el.classList.add(...self.classesInverse)
+      }
     }
   }
 
   /**
    * activate element done
    * @param {Node|HTMLElement|EventTarget|Window} el Elements to be deactivated
+   * @param {String} type Type of element
    */
-  activateDone(el) {
+  activateDone(el, type) {
     const self = this
+    const options = self.options
     // activation
-    el.classList.add(...self.classesDone)
+    if (!options.classSkip || !options.classSkip[type]) {
+      el.classList.add(...self.classesDone)
+    }
   }
 
   /**
    * deactivate element
    * @param {Node|HTMLElement|EventTarget|Window} el Elements to be deactivated
+   * @param {String} type Type of element
    */
-  deactivate(el) {
+  deactivate(el, type) {
     const self = this
+    const options = self.options
     // activation
-    el.classList.remove(...self.classes)
-    el.classList.remove(...self.classesActive)
-    el.classList.add(...self.classesOut)
-    el.classList.remove(...self.classesDone)
-    if (self.direction >= 0) {
-      el.classList.remove(...self.classesInverse)
-    } else {
-      el.classList.add(...self.classesInverse)
+    if (!options.classSkip || !options.classSkip[type]) {
+      el.classList.remove(...self.classes)
+      el.classList.remove(...self.classesActive)
+      el.classList.add(...self.classesOut)
+      el.classList.remove(...self.classesDone)
+      if (self.direction >= 0) {
+        el.classList.remove(...self.classesInverse)
+      } else {
+        el.classList.add(...self.classesInverse)
+      }
     }
   }
 
   /**
    * deactivate element done
    * @param {Node|HTMLElement|EventTarget|Window} el Elements to be deactivated
+   * @param {String} type Type of element
    */
-  deactivateDone(el) {
+  deactivateDone(el, type) {
     const self = this
+    const options = self.options
     // activation
-    el.classList.remove(...self.classesOut)
+    if (!options.classSkip || !options.classSkip[type]) {
+      el.classList.remove(...self.classesOut)
+    }
   }
 
   //
@@ -1813,7 +1829,7 @@ class Toggle {
       }
     } else if (actionCurrent === 'Off') {
       // activation
-      self.deactivate(el)
+      self.deactivate(el, type)
       // special
       self.specialClassHtml(actionCurrent, type)
       self.specialCollapse(actionCurrent, el, type)
@@ -1892,7 +1908,7 @@ class Toggle {
     // special
     if (actionCurrent === 'On') {
       // activation
-      self.activateDone(el)
+      self.activateDone(el, type)
       // special
       self.specialCollapse('Reset', el, type)
       // listener dispatch
@@ -2324,7 +2340,7 @@ class Toggle {
             el,
             `${self.componentNamespace}indexTimeout`,
             setTimeout(() => {
-              self.detail.zIndex = options.zIndex[type].start
+              self.detail.zIndex = options.zIndex[type].start + options.zIndex[type].factor
               el.style.zIndex = self.detail.zIndex
             }, duration)
           )
@@ -2612,7 +2628,7 @@ class Toggle {
   eventSpecialcloseinsideHandler(e) {
     const self = this
     // handler
-    if (Xt.contains([self.object, ...self.elements, ...self.targets], e.target)) {
+    if (Xt.contains([...self.elements, ...self.targets], e.target)) {
       const currents = self.getCurrents()
       for (const current of currents) {
         self.eventOff(current, true)
@@ -2641,7 +2657,7 @@ class Toggle {
   eventSpecialcloseoutsideHandler(e) {
     const self = this
     // handler
-    if (!Xt.contains([self.object, ...self.elements, ...self.targets], e.target)) {
+    if (!Xt.contains([...self.elements, ...self.targets], e.target)) {
       const currents = self.getCurrents()
       for (const current of currents) {
         self.eventOff(current, true)
@@ -3032,6 +3048,7 @@ Toggle.optionsDefaultSuper = {
   classDone: 'done',
   classInitial: 'initial',
   classInverse: 'inverse',
+  classSkip: false,
   // quantity
   min: 0,
   max: 1,

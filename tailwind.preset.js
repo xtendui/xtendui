@@ -28,8 +28,8 @@ module.exports = {
         },
       },
       fontSize: {
-        xs: ['0.75rem', { lineHeight: '1.6' }],
-        sm: ['0.875rem', { lineHeight: '1.6' }],
+        xs: ['0.75rem', { lineHeight: '1.4' }],
+        sm: ['0.875rem', { lineHeight: '1.5' }],
         base: ['1rem', { lineHeight: '1.6' }],
         lg: ['1.125rem', { lineHeight: '1.6' }],
         xl: ['1.25rem', { lineHeight: '1.5' }],
@@ -47,8 +47,9 @@ module.exports = {
         active: '25',
         top: '50',
         backdrop: '500',
-        drop: '600', // same as javascript and decreses with sequential drop
-        sticky: '800', // same as javascript and decreses with sequential sticky
+        drop: '600', // do not change: same as javascript and decreses with sequential drop
+        tooltip: '650', // do not change: same as javascript and decreses with sequential tooltip
+        sticky: '800', // do not change: same as javascript and decreses with sequential sticky
         overlay: '900',
         last: '1000',
       },
@@ -58,6 +59,7 @@ module.exports = {
       boxShadow: {
         ...require('./src/core/drop.css.js').boxShadow,
         ...require('./src/core/overlay.css.js').boxShadow,
+        ...require('./src/core/tooltip.css.js').boxShadow,
       },
       transitionDelay: {
         ...require('./src/core/animation.css.js').transitionDelay,
