@@ -48,16 +48,16 @@ demo.htmlSource = `
                   </div>
                 </a>
 
-                <a href="#product-image-overlay-3" class="product-image w-full" id="product-image-2">
+                <a href="#product-image-overlay-2" class="product-image w-full" id="product-image-2">
                   <div class="media-container" data-xt-overlay="{ targets: '#overlay-product-images' }">
                     <div class="media-inner relative">
-                      <img class="media" src="/img.svg" loading="eager" alt=""/>
+                      <img class="media" src="/img-alt.svg" loading="eager" alt=""/>
                     </div>
                     <div class="media-mask absolute inset-0 pointer-events-none bg-white transform -translate-y-full"></div>
                   </div>
                 </a>
 
-                <a href="#product-image-overlay-4" class="product-image w-full" id="product-image-3">
+                <a href="#product-image-overlay-3" class="product-image w-full" id="product-image-3">
                   <div class="media-container" data-xt-overlay="{ targets: '#overlay-product-images' }">
                     <div class="media-inner relative">
                       <img class="media" src="/img.svg" loading="eager" alt=""/>
@@ -69,7 +69,7 @@ demo.htmlSource = `
                 <a href="#product-image-overlay-4" class="product-image w-full" id="product-image-4">
                   <div class="media-container" data-xt-overlay="{ targets: '#overlay-product-images' }">
                     <div class="media-inner relative">
-                      <img class="media" src="/img.svg" loading="eager" alt=""/>
+                      <img class="media" src="/img-alt.svg" loading="eager" alt=""/>
                     </div>
                     <div class="media-mask absolute inset-0 pointer-events-none bg-white transform -translate-y-full"></div>
                   </div>
@@ -112,7 +112,7 @@ demo.htmlSource = `
                 </div>
               </div>
 
-              <div class="overlay" id="overlay-product-images">
+              <div class="overlay ease-in-out-quint duration-500 opacity-0 active:ease-out-quint active:opacity-100" id="overlay-product-images">
                 <div class="btn btn-close p-5 text-2xl fixed z-last mr-2" aria-label="Close">
                   ${iconX()}
                 </div>
@@ -130,7 +130,7 @@ demo.htmlSource = `
 
                         <div class="media-container">
                           <div class="media-inner relative">
-                            <img class="media" id="product-image-overlay-2" src="/img.svg" loading="lazy" alt=""/>
+                            <img class="media" id="product-image-overlay-2" src="/img-alt.svg" loading="lazy" alt=""/>
                           </div>
                         </div>
 
@@ -142,7 +142,7 @@ demo.htmlSource = `
 
                         <div class="media-container">
                           <div class="media-inner relative">
-                            <img class="media" id="product-image-overlay-4" src="/img.svg" loading="eagelazyr" alt=""/>
+                            <img class="media" id="product-image-overlay-4" src="/img-alt.svg" loading="eagelazyr" alt=""/>
                           </div>
                         </div>
 
