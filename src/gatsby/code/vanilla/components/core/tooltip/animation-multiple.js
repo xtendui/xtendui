@@ -17,7 +17,7 @@ demo.htmlSource = `
   </button>
 
   <div class="tooltip transform transition opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
-    <div class="card card-tooltip rounded shadow-tooltip ${cardDefaultTooltip()}">
+    <div class="tooltip-md rounded shadow-tooltip ${cardDefaultTooltip()}">
       Lorem ipsum dolor sit amet
     </div>
   </div>
@@ -27,7 +27,7 @@ demo.htmlSource = `
   </button>
 
   <div class="tooltip transform transition opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
-    <div class="card card-tooltip rounded shadow-tooltip ${cardDefaultTooltip()}">
+    <div class="tooltip-md rounded shadow-tooltip ${cardDefaultTooltip()}">
       Consectetur adipiscing elit
     </div>
   </div>

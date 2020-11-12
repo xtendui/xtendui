@@ -15,14 +15,14 @@ demo.htmlSource = `
   Lorem ipsum <a href="#">dolor</a> sit amet
 
   <div class="tooltip">
-    <div class="card card-tooltip rounded shadow-tooltip ${cardDefaultTooltip()}">
+    <div class="tooltip-md rounded shadow-tooltip ${cardDefaultTooltip()}">
 
       <div data-xt-tooltip="{ elements: false, elementsInner: ':scope > a, :scope > button' }">
 
         Lorem ipsum <a href="#">dolor</a> sit amet
 
         <div class="tooltip">
-          <div class="card card-tooltip rounded shadow-tooltip ${cardDefaultTooltip()}">
+          <div class="tooltip-md rounded shadow-tooltip ${cardDefaultTooltip()}">
             Consectetur adipiscing elit
           </div>
         </div>

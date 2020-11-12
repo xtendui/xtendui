@@ -64,7 +64,7 @@ Use this code to create **tooltip** in **multiple mode**.
   </demovanilla>
 </demo>
 
-Check subpage to [customize interaction](/components/core/tooltip/interaction).
+Check subpage to [customize interaction](/components/core/tooltip/interaction) and [customize content](/components/core/tooltip/content).
 
 #### Unique
 
@@ -80,7 +80,7 @@ The **unique** mode is useful when triggering **targets outside the scope** of t
   </demovanilla>
 </demo>
 
-Check subpage to [customize interaction](/components/core/tooltip/interaction).
+Check subpage to [customize interaction](/components/core/tooltip/interaction) and [customize content](/components/core/tooltip/content).
 
 #### Self
 
@@ -94,4 +94,4 @@ Use this code to create a **tooltip** in **self mode**.
   </demovanilla>
 </demo>
 
-Check subpage to [customize interaction](/components/core/tooltip/interaction).
+Check subpage to [customize interaction](/components/core/tooltip/interaction) and [customize content](/components/core/tooltip/content).

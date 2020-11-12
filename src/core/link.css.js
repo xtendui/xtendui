@@ -2,7 +2,7 @@ module.exports = {
   variants: ['responsive'],
   utility: theme => ({
     '.links-default': {
-      'a:not([class]), .link': {
+      'a:not([class]), a[class=""], .link': {
         color: theme('colors.accent.500'),
         '&:hover, &:active, &.active': {
           color: theme('colors.accent.600'),
@@ -10,7 +10,7 @@ module.exports = {
       },
     },
     '.links-inverse': {
-      'a:not([class]), .link': {
+      'a:not([class]), a[class=""], .link': {
         color: theme('colors.white'),
         '&:hover, &:active, &.active': {
           color: theme('colors.white'),
@@ -19,7 +19,7 @@ module.exports = {
     },
   }),
   component: theme => ({
-    'a:not([class]), .link': {
+    'a:not([class]), a[class=""], .link': {
       // setup
       '@apply text-reset !important': {},
       wordWrap: 'break-word',

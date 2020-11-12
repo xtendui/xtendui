@@ -23,11 +23,6 @@ module.exports = {
       '@apply text-lg': '',
       padding: `${rem(40)} ${rem(45)}`,
     },
-    '.card-tooltip': {
-      // styles
-      '@apply text-xs': '',
-      padding: `${rem(5)} ${rem(10)}`,
-    },
     '.card-group': {
       // setup
       display: 'flex',

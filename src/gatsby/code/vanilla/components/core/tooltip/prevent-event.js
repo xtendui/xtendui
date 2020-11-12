@@ -19,7 +19,7 @@ demo.htmlSource = `
     </a>
 
     <div class="tooltip">
-      <div class="card card-tooltip rounded shadow-tooltip ${cardDefaultTooltip()}">
+      <div class="tooltip-md rounded shadow-tooltip ${cardDefaultTooltip()}">
         Lorem ipsum dolor sit amet
       </div>
     </div>

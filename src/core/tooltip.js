@@ -141,6 +141,7 @@ Tooltip.optionsDefault = {
   class: 'in in-tooltip',
   classSkip: {
     elements: true,
+    elementsInner: true,
   },
   // quantity
   min: 0,

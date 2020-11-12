@@ -77,7 +77,7 @@
 .gatsby_make-anchor {
   position: relative;
   width: 100%;
-  a:not([class]) {
+  a:not([class]), a[class=""] {
     display: block;
     color: inherit !important;
   }

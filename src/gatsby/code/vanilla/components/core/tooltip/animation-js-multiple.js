@@ -17,7 +17,7 @@ demo.htmlSource = `
   </button>
 
   <div class="tooltip">
-    <div class="card card-tooltip rounded shadow-tooltip ${cardDefaultTooltip()}">
+    <div class="tooltip-md rounded shadow-tooltip ${cardDefaultTooltip()}">
       Consectetur adipiscing elit
     </div>
   </div>
@@ -27,7 +27,7 @@ demo.htmlSource = `
   </button>
 
   <div class="tooltip">
-    <div class="card card-tooltip rounded shadow-tooltip ${cardDefaultTooltip()}">
+    <div class="tooltip-md rounded shadow-tooltip ${cardDefaultTooltip()}">
       Consectetur adipiscing elit
     </div>
   </div>
