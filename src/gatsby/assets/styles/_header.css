@@ -7,7 +7,7 @@
   background: theme('colors.accent.500');
   @screen lg {
     position: fixed;
-    z-index: 2;
+    z-index: calc(theme('zIndex.top') + 101);
     top: 0;
     left: 0;
     bottom: 0;
@@ -155,14 +155,10 @@
 .gatsby_site_header_sub {
   margin-left: -.5rem;
   margin-right: -.5rem;
-  .gatsby_site_header_item {
-    position: relative;
-  }
 }
 
 .gatsby_site_header_adiacent {
   .gatsby_site_header_item {
-    position: relative;
     padding-left: .5rem;
   }
 }
@@ -171,7 +167,6 @@
   padding-top: 3px;
   padding-bottom: 3px;
   .gatsby_site_header_item {
-    position: relative;
     padding-left: .5rem;
   }
 }

@@ -222,33 +222,33 @@ const populateDemo = (container, i) => {
   )
   container.querySelector('.gatsby_demo_tabs_right').append(
     Xt.createElement(`
-<div data-xt-tooltip="{ position: 'left' }">
+<div data-xt-tooltip="{ position: 'bottom-end' }">
   <button type="button" class="btn btn-show-code" aria-label="Toggle Code">
     ${iconCode()}
   </button>
   <div class="tooltip">
     <div class="tooltip-sm rounded shadow-tooltip ${cardDefaultTooltip()}">
-      Toggle Code
+      Show Code
     </div>
   </div>
 </div>`)
   )
   container.querySelector('.gatsby_demo_tabs_right').append(
     Xt.createElement(`
-<div data-xt-tooltip="{ position: 'left' }">
+<div data-xt-tooltip="{ position: 'bottom-end' }">
   <button type="button" class="btn btn-open-full" aria-label="Toggle Fullscreen">
     ${iconMaximize()}
   </button>
   <div class="tooltip">
     <div class="tooltip-sm rounded shadow-tooltip ${cardDefaultTooltip()}">
-      Toggle Fullscreen
+      Open Fullscreen
     </div>
   </div>
 </div>`)
   )
   container.querySelector('.gatsby_demo_tabs_right').append(
     Xt.createElement(`
-<div data-xt-tooltip="{ position: 'left' }">
+<div data-xt-tooltip="{ position: 'bottom-end' }">
   <a href="#" target="_blank" class="btn btn-open-iframe" aria-label="Open Iframe">
     ${iconExternal()}
   </a>
@@ -283,7 +283,7 @@ const populateDemo = (container, i) => {
     <div class="gatsby_demo_code_tabs">
       <div class="gatsby_demo_code_tabs_left list list-px"></div>
       <div class="gatsby_demo_code_tabs_right list list-px">
-        <div data-xt-tooltip="{ position: 'left' }">
+        <div data-xt-tooltip="{ position: 'bottom-end' }">
           <button type="button" class="btn btn-tiny btn-clipboard" aria-label="Copy to clipboard">
             ${iconCopy()}
           </button>

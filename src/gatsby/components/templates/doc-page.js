@@ -108,6 +108,17 @@ class Template extends React.Component {
 
 export const query = graphql`
   query($title: String!, $type: String, $category: String, $parent: String, $parents: String) {
+    menus: allMarkdownRemark(filter: { frontmatter: { menu: { eq: true } } }, sort: { fields: [frontmatter___date, frontmatter___title], order: [DESC, ASC] }) {
+      posts: edges {
+        post: node {
+          frontmatter {
+            type
+            title
+            description
+          }
+        }
+      }
+    }
     categories: allMarkdownRemark(
       filter: { frontmatter: { type: { eq: $type } } }
       sort: { fields: [frontmatter___date, frontmatter___title], order: [DESC, ASC] }
@@ -183,6 +194,20 @@ export const query = graphql`
 
 Template.propTypes = {
   data: PropTypes.shape({
+    menus: PropTypes.shape({
+      posts: PropTypes.arrayOf(
+        PropTypes.shape({
+          post: PropTypes.shape({
+            frontmatter: PropTypes.shape({
+              type: PropTypes.string.isRequired,
+              parent: PropTypes.string,
+              title: PropTypes.string.isRequired,
+              description: PropTypes.string,
+            }),
+          }),
+        })
+      ),
+    }),
     categories: PropTypes.shape({
       category: PropTypes.arrayOf(
         PropTypes.shape({

@@ -5,7 +5,10 @@ const markdownSlug = page => {
   const slugCategory = kebabCase(page.frontmatter.category)
   const slugParent = kebabCase(page.frontmatter.parent)
   const slugTitle = kebabCase(page.frontmatter.title)
-  let slug = `/${slugType}`
+  let slug = ''
+  if (page.frontmatter.type) {
+    slug += `/${slugType}`
+  }
   if (page.frontmatter.category && page.frontmatter.category !== page.frontmatter.type) {
     slug += `/${slugCategory}`
   }

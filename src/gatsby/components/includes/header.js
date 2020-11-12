@@ -40,7 +40,7 @@ export default function Header({ page }) {
                 </div>
                 <div>
                   <div className="gatsby_site_header_top_social">
-                    <div data-xt-tooltip="{ position: 'top' }">
+                    <div data-xt-tooltip="{ position: 'top', popperjs: { strategy: 'fixed' } }">
                       <a
                         href={site.siteMetadata.npm}
                         target="_blank"
@@ -53,7 +53,7 @@ export default function Header({ page }) {
                         <div className={`tooltip-sm rounded shadow-tooltip ${cardDefaultTooltip()}`}>Visit on Npm</div>
                       </div>
                     </div>
-                    <span data-xt-tooltip="{ position: 'top' }">
+                    <span data-xt-tooltip="{ position: 'top', popperjs: { strategy: 'fixed' } }">
                       <a
                         href={site.siteMetadata.github}
                         target="_blank"
@@ -74,42 +74,19 @@ export default function Header({ page }) {
         </header>
         <div className="gatsby_site_header_links_container">
           <div className="gatsby_site_header_links">
-            <div>
-              <Link
-                to="/introduction"
-                className={`btn gatsby_btn-site_header_link ${
-                  page && page.post
-                    ? markdownSlug(page.post) === '/introduction'
-                      ? 'active'
-                      : page.post.frontmatter.type === 'Introduction'
-                      ? 'current'
-                      : ''
-                    : ''
-                }`}
-              >
-                <span>Introduction</span>
-              </Link>
-            </div>
-            <div>
-              <Link
-                to="/components"
-                className={`btn gatsby_btn-site_header_link ${
-                  page && page.post ? (markdownSlug(page.post) === '/components' ? 'active' : page.post.frontmatter.type === 'Components' ? 'current' : '') : ''
-                }`}
-              >
-                <span>Components</span>
-              </Link>
-            </div>
-            <div>
-              <Link
-                to="/themes"
-                className={`btn gatsby_btn-site_header_link ${
-                  page && page.post ? (markdownSlug(page.post) === '/themes' ? 'active' : page.post.frontmatter.type === 'Themes' ? 'current' : '') : ''
-                }`}
-              >
-                <span>Themes</span>
-              </Link>
-            </div>
+            {page.menus.posts.map(({ post }, i) => (
+              <div key={i}>
+                <Link
+                  to={markdownSlug(post)}
+                  title={post.frontmatter.description}
+                  className={`btn gatsby_btn-site_header_link ${
+                    markdownSlug(page.post) === markdownSlug(post) ? 'active' : post.frontmatter.type === page.post.frontmatter.type ? 'current' : ''
+                  }`}
+                >
+                  <span>{post.frontmatter.title}</span>
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
         {page ? (
@@ -137,11 +114,12 @@ export default function Header({ page }) {
                           post.frontmatter.parent === post.frontmatter.title ? (
                             <div className="gatsby_site_header_item_container" key={z}>
                               {post.frontmatter.link ? (
-                                <div data-xt-tooltip="{ position: 'top-start' }">
+                                <div>
                                   <a
                                     href={post.frontmatter.link}
                                     rel="noreferrer"
                                     target="_blank"
+                                    title={post.frontmatter.description}
                                     className={`btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub ${
                                       markdownSlug(page.post) === markdownSlug(post)
                                         ? 'active'
@@ -156,14 +134,12 @@ export default function Header({ page }) {
                                   <div className="gatsby_site_header_adiacent_inner">
                                     <div className="gatsby_site_header_item"></div>
                                   </div>
-                                  <div className="tooltip">
-                                    <div className={`tooltip-sm rounded shadow-tooltip ${cardDefaultTooltip()}`}>{post.frontmatter.description}</div>
-                                  </div>
                                 </div>
                               ) : (
-                                <div data-xt-tooltip="{ position: 'top-start' }">
+                                <div>
                                   <Link
                                     to={markdownSlug(post)}
+                                    title={post.frontmatter.description}
                                     className={`btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub ${
                                       markdownSlug(page.post) === markdownSlug(post)
                                         ? 'active'
@@ -177,9 +153,6 @@ export default function Header({ page }) {
                                   </Link>
                                   <div className="gatsby_site_header_adiacent_inner">
                                     <div className="gatsby_site_header_item"></div>
-                                  </div>
-                                  <div className="tooltip">
-                                    <div className={`tooltip-sm rounded shadow-tooltip ${cardDefaultTooltip()}`}>{post.frontmatter.description}</div>
                                   </div>
                                 </div>
                               )}
@@ -233,6 +206,19 @@ export default function Header({ page }) {
 
 Header.propTypes = {
   page: PropTypes.shape({
+    menus: PropTypes.shape({
+      posts: PropTypes.arrayOf(
+        PropTypes.shape({
+          post: PropTypes.shape({
+            frontmatter: PropTypes.shape({
+              parent: PropTypes.string,
+              title: PropTypes.string.isRequired,
+              description: PropTypes.string,
+            }),
+          }),
+        })
+      ),
+    }),
     categories: PropTypes.shape({
       category: PropTypes.arrayOf(
         PropTypes.shape({
