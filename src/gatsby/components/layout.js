@@ -58,13 +58,13 @@ export default class Layout extends React.Component {
                 <div className="gatsby_site_article gatsby_site_article--markdown prose max-w-none">
                   <DocFullscreen />
                   <main className="gatsby_site_article_inner" id="gatsby_open-full-inner">
-                    {page ? <DocHead page={page} /> : null}
+                    {page && page.post ? <DocHead page={page} /> : null}
                     <article className="gatsby_site_article_content">
                       <div className="gatsby_site_article_content_inner">{children}</div>
                     </article>
                     <footer className="gatsby_site_footer">
                       <div className="gatsby_site_footer_inner">
-                        {page && page.post.frontmatter.type !== page.post.frontmatter.title ? <DocFoot page={page} /> : null}
+                        {page && page.post && page.post.frontmatter.type !== page.post.frontmatter.title ? <DocFoot page={page} /> : null}
                         <Footer />
                       </div>
                     </footer>

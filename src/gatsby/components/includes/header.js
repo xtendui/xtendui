@@ -80,7 +80,13 @@ export default function Header({ page }) {
                   to={markdownSlug(post)}
                   title={post.frontmatter.description}
                   className={`btn gatsby_btn-site_header_link ${
-                    markdownSlug(page.post) === markdownSlug(post) ? 'active' : post.frontmatter.type === page.post.frontmatter.type ? 'current' : ''
+                    page && page.post
+                      ? markdownSlug(page.post) === markdownSlug(post)
+                        ? 'active'
+                        : post.frontmatter.type === page.post.frontmatter.type
+                        ? 'current'
+                        : ''
+                      : ''
                   }`}
                 >
                   <span>{post.frontmatter.title}</span>
@@ -89,7 +95,7 @@ export default function Header({ page }) {
             ))}
           </div>
         </div>
-        {page ? (
+        {page && page.post ? (
           <nav className="gatsby_site_header_listing">
             {page.categories.category
               .sort((a, b) => {
