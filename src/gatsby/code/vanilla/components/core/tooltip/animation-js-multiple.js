@@ -12,32 +12,24 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-2 items-center demo--tooltip-animation-js-multiple">
 
-  <div>
+  <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+    tooltip
+  </button>
 
-    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
-      tooltip
-    </button>
-
-    <div class="tooltip">
-      <div class="card card-tooltip rounded shadow-tooltip ${cardDefaultTooltip()}">
-        Consectetur adipiscing elit
-      </div>
+  <div class="tooltip">
+    <div class="card card-tooltip rounded shadow-tooltip ${cardDefaultTooltip()}">
+      Consectetur adipiscing elit
     </div>
-
   </div>
 
-  <div>
+  <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+    tooltip
+  </button>
 
-    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
-      tooltip
-    </button>
-
-    <div class="tooltip">
-      <div class="card card-tooltip rounded shadow-tooltip ${cardDefaultTooltip()}">
-        Consectetur adipiscing elit
-      </div>
+  <div class="tooltip">
+    <div class="card card-tooltip rounded shadow-tooltip ${cardDefaultTooltip()}">
+      Consectetur adipiscing elit
     </div>
-
   </div>
 
 </div>

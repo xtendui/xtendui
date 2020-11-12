@@ -53,7 +53,6 @@ class Tooltip extends Xt.Toggle {
   activate(el, type) {
     const self = this
     const options = self.options
-    console.log(self.elements)
     // super
     super.activate(el, type)
     // targets

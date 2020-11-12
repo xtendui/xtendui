@@ -10,34 +10,26 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-2 items-center demo--tooltip-animation-css-multiple" data-xt-tooltip="{ elements: ':scope > div > a, :scope > div > button', targets: ':scope > div > .tooltip' }">
+<div class="list list-2 items-center demo--tooltip-animation-css-multiple" data-xt-tooltip="{ elements: ':scope > a, :scope > button', targets: ':scope > .tooltip' }">
 
-  <div>
+  <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+    tooltip
+  </button>
 
-    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
-      tooltip
-    </button>
-
-    <div class="tooltip group">
-      <div class="card card-tooltip rounded shadow-tooltip ${cardDefaultTooltip()}">
-        Lorem ipsum dolor sit amet
-      </div>
+  <div class="tooltip group">
+    <div class="card card-tooltip rounded shadow-tooltip ${cardDefaultTooltip()}">
+      Lorem ipsum dolor sit amet
     </div>
-
   </div>
 
-  <div>
+  <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+    tooltip
+  </button>
 
-    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
-      tooltip
-    </button>
-
-    <div class="tooltip">
-      <div class="card card-tooltip rounded shadow-tooltip ${cardDefaultTooltip()}">
-        Consectetur adipiscing elit
-      </div>
+  <div class="tooltip">
+    <div class="card card-tooltip rounded shadow-tooltip ${cardDefaultTooltip()}">
+      Consectetur adipiscing elit
     </div>
-
   </div>
 
 </div>
