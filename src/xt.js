@@ -682,8 +682,7 @@ if (typeof window !== 'undefined') {
 
   Xt.getTranslate = element => {
     const transArr = []
-    const style = getComputedStyle(element)
-    const transform = style.transform
+    const transform = element.style.transform
     let mat = transform.match(/^matrix3d\((.+)\)$/)
     if (mat) {
       transArr.push(parseFloat(mat[1].split(', ')[13]))
@@ -1114,60 +1113,6 @@ if (typeof window !== 'undefined') {
 
   Xt.dataStorage.set(document.documentElement, 'xtEventDelayWidth', window.innerWidth)
   Xt.dataStorage.set(document.documentElement, 'xtEventDelayHeight', window.innerHeight)
-
-  /**
-   * animate css properties from current values to final values
-   * @param {Node|HTMLElement|EventTarget|Window} element Element to save timeout
-   * @param {Array} properties Array of css properties camel case
-   * @returns {Object}
-   */
-  /* USAGE:
-  // setup
-  Xt.animCss(object, ['backgroundColor', 'borderColor', 'boxShadow'])
-  // event
-  const animCss = Xt.animCss(object, ['backgroundColor', 'borderColor', 'boxShadow'])
-  gsap.set(object, {
-    backgroundColor: animCss.backgroundColor.current,
-    borderColor: animCss.borderColor.current,
-    boxShadow: animCss.boxShadow.current,
-  })
-  gsap.to(object, {
-    backgroundColor: animCss.backgroundColor.final,
-    borderColor: animCss.borderColor.final,
-    boxShadow: animCss.boxShadow.final,
-    duration: 0.25,
-    ease: 'linear',
-  })
-  */
-  Xt.animCss = (element, properties) => {
-    let isInitial = false
-    // save style
-    let style = Xt.dataStorage.get(element, 'xtAnimCssStyle')
-    style = style || Xt.dataStorage.set(element, 'xtAnimCssStyle', getComputedStyle(element))
-    // save initial
-    for (const property of properties) {
-      const initialized = Xt.dataStorage.get(element, `xtAnimCssInitial${property}`)
-      if (!initialized) {
-        isInitial = true
-        Xt.dataStorage.set(element, `xtAnimCssInitial${property}`, style[property])
-      }
-    }
-    // populate return
-    if (!isInitial) {
-      const obj = {}
-      for (const property of properties) {
-        obj[property] = {}
-        // set current to current style or initial
-        obj[property].current = element.style[property] || Xt.dataStorage.get(element, `xtAnimCssInitial${property}`)
-      }
-      element.style = '' // reset style to get final css value
-      for (const property of properties) {
-        // set final to final css value
-        obj[property].final = style[property]
-      }
-      return obj
-    }
-  }
 
   /**
    * utility vars

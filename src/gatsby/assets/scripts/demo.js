@@ -479,33 +479,6 @@ if (typeof window !== 'undefined') {
       item.classList.add('loaded')
     }
   }
-  window.resizeIframe = name => {
-    const src = `iframe[name="${name}"]`
-    const iframes = document.querySelectorAll(src)
-    for (const iframe of iframes) {
-      const container = iframe.closest('.gatsby_demo')
-      const wrappers = container.querySelectorAll('.gatsby_demo_item.active .gatsby_demo_item_wrapper')
-      if (iframe) {
-        const iframeFull = iframe.contentWindow.document.documentElement.classList.contains('gatsby_iframe-full')
-        if (iframeFull) {
-          iframe.classList.add('gatsby_iframe-full')
-          const target = iframe.contentWindow.document.querySelector('#body-outer')
-          const h = target.offsetHeight
-          if (h !== parseFloat(iframe.dataset.iframeHeight)) {
-            iframe.style.height = `${h}px`
-            iframe.dataset.iframeHeight = h.toString()
-          }
-          for (const wrapper of wrappers) {
-            wrapper.style.height = `${h}px`
-          }
-        } else {
-          for (const wrapper of wrappers) {
-            wrapper.style.height = ''
-          }
-        }
-      }
-    }
-  }
 }
 
 const populateIframe = (item, iframe, htmlSource, jsxSource, cssSource, jsSource) => {

@@ -9,13 +9,12 @@ const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
 export const demo = {
   container: true,
-  full: false,
   name: path.basename(filename, '.js'),
   dirs: dirs,
 }
 
 demo.htmlSource = `
-<div class="jump-to-content toggle sr-only xt-fixed-check">
+<div class="jump-to-content toggle sr-only xt-fixed">
   <a href="#jump-to-content" class="btn btn-md rounded-md ${btnPrimary()}">
     Jump to content
   </a>

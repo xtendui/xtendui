@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import { Xt } from 'xtendui'
 
 import { makeDocument } from 'assets/scripts/theme'
-import ResizeSensor from 'assets/scripts/ResizeSensor'
 
 import 'assets/styles/theme.css'
 
@@ -13,9 +12,6 @@ export default class Layout extends React.Component {
     const { demo, children } = this.props
     if (typeof window !== 'undefined') {
       let cname = 'gatsby_iframe-inside'
-      if (demo.full) {
-        cname += ' gatsby_iframe-full'
-      }
       if (demo.container) {
         cname += ' gatsby_iframe-container'
       }
@@ -24,12 +20,6 @@ export default class Layout extends React.Component {
       const iframeLoaded = () => {
         if (window.self !== window.top) {
           window.parent.initIframe(window.name, demo.htmlSource, demo.jsxSource, demo.cssSource, demo.jsSource)
-          window.parent.resizeIframe(window.frameElement.getAttribute('name'))
-          if (demo.full) {
-            new ResizeSensor(document.querySelector('#body-outer'), () => {
-              window.parent.resizeIframe(window.frameElement.getAttribute('name'))
-            })
-          }
         }
         makeDocument()
       }
@@ -43,7 +33,6 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
   demo: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    full: PropTypes.bool,
     container: PropTypes.bool,
     htmlSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
     jsxSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),

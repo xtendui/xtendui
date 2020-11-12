@@ -181,9 +181,7 @@ pre {
       width: 100%;
       height: 0;
       border: 0;
-      &:not(.gatsby_iframe-full) {
-        height: 36rem;
-      }
+      height: 36rem;
       #gatsby_open-full & {
         height: auto;
       }

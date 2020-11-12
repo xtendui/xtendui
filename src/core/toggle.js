@@ -1418,16 +1418,18 @@ class Toggle {
   eventAuto() {
     const self = this
     const options = self.options
+    // disabled
+    if (self.disabled) {
+      return
+    }
     // auto
     if (!self.detail.autopaused) {
       if (Xt.visible(self.object)) {
         // not when disabled
-        if (getComputedStyle(self.object).pointerEvents !== 'none') {
-          if (options.auto.inverse) {
-            self.goToPrev(options.auto.step)
-          } else {
-            self.goToNext(options.auto.step)
-          }
+        if (options.auto.inverse) {
+          self.goToPrev(options.auto.step)
+        } else {
+          self.goToNext(options.auto.step)
         }
       }
     }
