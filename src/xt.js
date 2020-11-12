@@ -64,9 +64,11 @@ if (typeof window !== 'undefined') {
           // target
           const target = object.getAttribute('target')
           if (target && target.toLowerCase() === '_blank') {
-            const rel = object.getAttribute('rel')
-            if (!rel || rel === '' || (rel.toLowerCase() !== 'noopener' && rel.toLowerCase() !== 'noreferrer')) {
-              console.warn('Xt.debug: detected a "link" with target="_blank" without rel="noopener" or rel="noreferrer"', object)
+            if (object.hostname.length && location.hostname !== object.hostname) {
+              const rel = object.getAttribute('rel')
+              if (!rel || rel === '' || (!rel.toLowerCase().indexOf('noopener') && !rel.toLowerCase().indexOf('noreferrer'))) {
+                console.warn('Xt.debug: detected a "link" with target="_blank" without rel="noopener" or rel="noreferrer"', object)
+              }
             }
           }
         },

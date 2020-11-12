@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 
 import { markdownSlug } from 'components/snippets/markdown-slug'
+const cardDefaultTooltip = require('components/snippets/classes/card-default-tooltip').default
 const iconPackage = require('components/snippets/icons').iconPackage
 const iconGithub = require('components/snippets/icons').iconGithub
 
@@ -39,22 +40,32 @@ export default function Header({ page }) {
                 </div>
                 <div>
                   <div className="gatsby_site_header_top_social">
-                    <a
-                      href={site.siteMetadata.npm}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="btn gatsby_btn-site_header_top_social"
-                      title="Npm"
-                      dangerouslySetInnerHTML={{ __html: iconPackage() }}
-                    ></a>
-                    <a
-                      href={site.siteMetadata.github}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="btn gatsby_btn-site_header_top_social"
-                      title="Github"
-                      dangerouslySetInnerHTML={{ __html: iconGithub() }}
-                    ></a>
+                    <div data-xt-tooltip="{ position: 'top' }">
+                      <a
+                        href={site.siteMetadata.npm}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="btn gatsby_btn-site_header_top_social"
+                        title="Npm"
+                        dangerouslySetInnerHTML={{ __html: iconPackage() }}
+                      ></a>
+                      <div className="tooltip">
+                        <div className={`tooltip-sm rounded shadow-tooltip ${cardDefaultTooltip()}`}>Visit on Npm</div>
+                      </div>
+                    </div>
+                    <span data-xt-tooltip="{ position: 'top' }">
+                      <a
+                        href={site.siteMetadata.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="btn gatsby_btn-site_header_top_social"
+                        title="Github"
+                        dangerouslySetInnerHTML={{ __html: iconGithub() }}
+                      ></a>
+                      <div className="tooltip">
+                        <div className={`tooltip-sm rounded shadow-tooltip ${cardDefaultTooltip()}`}>Visit on Github</div>
+                      </div>
+                    </span>
                   </div>
                 </div>
               </div>
@@ -126,7 +137,7 @@ export default function Header({ page }) {
                           post.frontmatter.parent === post.frontmatter.title ? (
                             <div className="gatsby_site_header_item_container" key={z}>
                               {post.frontmatter.link ? (
-                                <div>
+                                <div data-xt-tooltip="{ position: 'top-start' }">
                                   <a
                                     href={post.frontmatter.link}
                                     rel="noreferrer"
@@ -145,9 +156,12 @@ export default function Header({ page }) {
                                   <div className="gatsby_site_header_adiacent_inner">
                                     <div className="gatsby_site_header_item"></div>
                                   </div>
+                                  <div className="tooltip">
+                                    <div className={`tooltip-sm rounded shadow-tooltip ${cardDefaultTooltip()}`}>{post.frontmatter.description}</div>
+                                  </div>
                                 </div>
                               ) : (
-                                <div>
+                                <div data-xt-tooltip="{ position: 'top-start' }">
                                   <Link
                                     to={markdownSlug(post)}
                                     className={`btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub ${
@@ -163,6 +177,9 @@ export default function Header({ page }) {
                                   </Link>
                                   <div className="gatsby_site_header_adiacent_inner">
                                     <div className="gatsby_site_header_item"></div>
+                                  </div>
+                                  <div className="tooltip">
+                                    <div className={`tooltip-sm rounded shadow-tooltip ${cardDefaultTooltip()}`}>{post.frontmatter.description}</div>
                                   </div>
                                 </div>
                               )}

@@ -8,6 +8,7 @@ require('prismjs/components/prism-jsx.min')
 require('prismjs/components/prism-less.min')
 Prism.manual = true
 
+const cardDefaultTooltip = require('components/snippets/classes/card-default-tooltip').default
 const spinner = require('components/snippets/spinner').default
 const iconCode = require('components/snippets/icons').iconCode
 const iconMaximize = require('components/snippets/icons').iconMaximize
@@ -221,21 +222,42 @@ const populateDemo = (container, i) => {
   )
   container.querySelector('.gatsby_demo_tabs_right').append(
     Xt.createElement(`
-<button type="button" class="btn btn-show-code" aria-label="Toggle Code">
-  ${iconCode()}
-</button>`)
+<div data-xt-tooltip="{ position: 'left' }">
+  <button type="button" class="btn btn-show-code" aria-label="Toggle Code">
+    ${iconCode()}
+  </button>
+  <div class="tooltip">
+    <div class="tooltip-sm rounded shadow-tooltip ${cardDefaultTooltip()}">
+      Toggle Code
+    </div>
+  </div>
+</div>`)
   )
   container.querySelector('.gatsby_demo_tabs_right').append(
     Xt.createElement(`
-<button type="button" class="btn btn-open-full" aria-label="Toggle Fullscreen">
-  ${iconMaximize()}
-</button>`)
+<div data-xt-tooltip="{ position: 'left' }">
+  <button type="button" class="btn btn-open-full" aria-label="Toggle Fullscreen">
+    ${iconMaximize()}
+  </button>
+  <div class="tooltip">
+    <div class="tooltip-sm rounded shadow-tooltip ${cardDefaultTooltip()}">
+      Toggle Fullscreen
+    </div>
+  </div>
+</div>`)
   )
   container.querySelector('.gatsby_demo_tabs_right').append(
     Xt.createElement(`
-<a href="#" target="_blank" class="btn btn-open-iframe" aria-label="Open Iframe">
-  ${iconExternal()}
-</a>`)
+<div data-xt-tooltip="{ position: 'left' }">
+  <a href="#" target="_blank" class="btn btn-open-iframe" aria-label="Open Iframe">
+    ${iconExternal()}
+  </a>
+  <div class="tooltip">
+    <div class="tooltip-sm rounded shadow-tooltip ${cardDefaultTooltip()}">
+      Open Iframe
+    </div>
+  </div>
+</div>`)
   )
   // loop itemsi
   for (const [k, item] of items.entries()) {
@@ -261,9 +283,16 @@ const populateDemo = (container, i) => {
     <div class="gatsby_demo_code_tabs">
       <div class="gatsby_demo_code_tabs_left list list-px"></div>
       <div class="gatsby_demo_code_tabs_right list list-px">
-        <button type="button" class="btn btn-tiny btn-clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">
-          ${iconCopy()}
-        </button>
+        <div data-xt-tooltip="{ position: 'left' }">
+          <button type="button" class="btn btn-tiny btn-clipboard" aria-label="Copy to clipboard">
+            ${iconCopy()}
+          </button>
+          <div class="tooltip">
+            <div class="tooltip-sm rounded shadow-tooltip ${cardDefaultTooltip()}">
+              Copy to clipboard
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="gatsby_demo_code_body"></div>
