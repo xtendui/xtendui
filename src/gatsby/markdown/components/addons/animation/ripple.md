@@ -37,8 +37,8 @@ module.exports = {
 Use this code to create a **ripple**.
 
 <demo>
-  <demovanilla src="vanilla/components/addons/animation/ripple">
-  </demovanilla>
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/animation/ripple-animation-v1">
+  </div>
 </demo>
 
 ## Options

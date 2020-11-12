@@ -4,7 +4,7 @@ import gsap from 'gsap'
 gsap.config({ force3D: false })
 
 Xt.mount.push({
-  matches: '.demo--ripple-default .btn, .demo--ripple-default .card',
+  matches: '#iframe--ripple-animation-v1 body .btn, #iframe--ripple-animation-v1 body .card', // add your own selector instead of body to contain the code
   mount: object => {
     // init
 

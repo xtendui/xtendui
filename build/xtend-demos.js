@@ -1,5 +1,4 @@
 if (typeof window !== 'undefined') {
-  require('xtendui/src/private/demos/components/addons/animation/ripple.js')
   require('xtendui/src/private/demos/components/addons/layout/google-locator.js')
   require('xtendui/src/private/demos/components/addons/layout/jump-to-content.js')
   require('xtendui/src/private/demos/components/addons/list-group/expand.js')
@@ -26,6 +25,7 @@ if (typeof window !== 'undefined') {
   require('xtendui/src/private/demos/components/core/toggle/events-methods.js')
   require('xtendui/src/private/demos/components/core/toggle/progress.js')
   require('xtendui/src/private/demos/components/core/toggle/timing.js')
+  require('xtendui/src/private/demos/components/themes/animation/ripple-animation-v1.js')
   require('xtendui/src/private/demos/components/themes/animation/slide-animation-v1.js')
   require('xtendui/src/private/demos/test/demo-vanilla-iframe.js')
   require('xtendui/src/private/demos/test/demo-vanilla.js')
