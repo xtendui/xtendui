@@ -150,12 +150,20 @@ Xt.mount.push({
 
     const eventScroll = () => {
       if (document.scrollingElement.scrollTop > 0) {
-        gsap.to(object, { y: posY, opacity: 0, duration: 0.25, ease: 'quart.inOut' }).eventCallback('onComplete', () => {
-          object.classList.add('hidden')
-        })
+        if (!object.classList.contains('deactivated')) {
+          gsap.killTweensOf(object)
+          object.classList.add('deactivated')
+          gsap.to(object, { y: posY, opacity: 0, duration: 0.25, ease: 'quart.inOut' }).eventCallback('onComplete', () => {
+            object.classList.add('hidden')
+          })
+        }
       } else {
-        object.classList.remove('hidden')
-        gsap.to(object, { y: 0, opacity: 1, duration: 0.25, ease: 'quart.inOut' })
+        if (object.classList.contains('deactivated')) {
+          object.classList.remove('deactivated')
+          object.classList.remove('hidden')
+          gsap.killTweensOf(object)
+          gsap.to(object, { y: 0, opacity: 1, duration: 0.25, ease: 'quart.inOut' })
+        }
       }
     }
 
