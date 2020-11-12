@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-2 items-center md:text-white md:links-inverse py-4 px-6 bg-accent-500">
+<div class="list list-2 items-center md:text-white md:links-inverse md:bg-accent-500 py-4 px-6">
 
   <a href="#">
     link

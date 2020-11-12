@@ -44,6 +44,9 @@ You can use `.link` to style **any element** as a link.
 [[noteDefault]]
 | Links `a` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
 
+[[notePrimary]]
+| Links `a` with `target="_blank"` needs `rel="noopener"` or `rel="noreferrer"` to avoid [cross-origin issues](https://web.dev/external-anchors-use-rel-noopener/).
+
 <demo>
   <demovanilla src="vanilla/components/core/link/usage">
   </demovanilla>
