@@ -692,7 +692,8 @@ if (typeof window !== 'undefined') {
 
   Xt.getTranslate = element => {
     const transArr = []
-    const transform = element.style.transform
+    const style = getComputedStyle(element)
+    const transform = style.transform
     let mat = transform.match(/^matrix3d\((.+)\)$/)
     if (mat) {
       transArr.push(parseFloat(mat[1].split(', ')[13]))

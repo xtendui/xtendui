@@ -155,7 +155,7 @@ MouseFollow.optionsDefault = {
   // elements
   targets: ':scope > .mouse-follow',
   // mousefollow
-  transform: false,
+  transform: true,
   friction: delta => {
     return delta / 9
   },

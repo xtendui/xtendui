@@ -34,7 +34,7 @@ module.exports = {
 
 ## Usage
 
-Use **component classes** to create a **mouse follow**.
+Use **component classes** to create a **mouse follow**. Remember **not to transition** `.mouse-follow` element.
 
 <div class="table-scroll">
 

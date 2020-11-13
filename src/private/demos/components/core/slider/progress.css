@@ -10,6 +10,9 @@
       left: 0;
       bottom: 12px;
       margin: 0;
+      .spinner {
+        opacity: 1;
+      }
     }
     /* mouse */
     @media (hover: hover) {

@@ -67,7 +67,7 @@ If you want a tooltip with size and position **relative to a parent Node with re
 
 ## Mouse Follow
 
-Use **tailwind classes** to create a **loader positioned for mouse**.
+Use **component classes** to create a **mouse follow**. Remember **not to transition** `.mouse-follow` element.
 
 [[notePrimary]]
 | This demo uses [mouse follow](/components/addons/animation/mouse-follow). Visit the component page to import javascript and customize.

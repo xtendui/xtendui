@@ -4,8 +4,8 @@ const cardSlide = require('components/snippets/classes/card-slide').default
 
 export default () => {
   return `
-<span class="loader pointer-events-none opacity-0 transition active:opacity-100">
-  <span class="spinner text-accent-500">
+<span class="loader group pointer-events-none">
+  <span class="spinner text-accent-500 transition opacity-0 group-active:opacity-100">
       ${spinner({})}
   </span>
 </span>
