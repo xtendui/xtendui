@@ -1315,6 +1315,7 @@ Slider.optionsDefault = {
     selector: '.slides',
   },
   aria: {
+    describedby: true,
     labelledby: false,
   },
 }

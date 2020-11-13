@@ -69,6 +69,7 @@ If you need to toggle **multiple targets** with the **same element** assign `dat
 | Option                  | `aria:Object|false`                          | `Object`        | Inject aria attributes            |
 | Option                  | `aria.tabindex:Boolean`                          | `true`        | Inject aria tabindex attributes            |
 | Option                  | `aria.controls:Boolean`                          | `true`        | Inject aria controls attributes            |
-| Option                  | `aria.labelledby:Boolean`                          | `true`        | Inject aria labelledby attributes            |
+| Option                  | `aria.describedby:Boolean`                          | `true`        | Inject aria describedby attributes            |
+| Option                  | `aria.labelledby:Boolean`                          | `false`        | Inject aria labelledby attributes            |
 
 </div>

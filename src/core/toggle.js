@@ -360,6 +360,18 @@ class Toggle {
               tr.setAttribute('id', Xt.getuniqueId())
             }
           }
+          // describedby
+          if (options.aria === true || options.aria.describedby) {
+            const els = self.getElements(tr)
+            let str = ' '
+            str += ''
+            for (const el of els) {
+              const ariaEls = Xt.queryAll(el, options.ariaControls)
+              const ariaEl = ariaEls.length ? ariaEls[0] : el
+              str += ` ${ariaEl.getAttribute('id')}`
+            }
+            tr.setAttribute('aria-describedby', str.trim())
+          }
           // labelledby
           if (options.aria === true || options.aria.labelledby) {
             const els = self.getElements(tr)
@@ -1010,12 +1022,7 @@ class Toggle {
     }
     if (self.mode === 'unique' || !el) {
       // xtNamespace linked components
-      const final = []
-      const selfs = Xt.dataStorage.get(self.namespace, 'xtNamespace')
-      for (const item of selfs) {
-        // choose element by group
-        final.push(...item.getTargetsGroups())
-      }
+      const final = self.getTargetsGroups()
       return final
     } else if (self.mode === 'multiple') {
       // choose only target by group
@@ -3106,7 +3113,8 @@ Toggle.optionsDefaultSuper = {
   aria: {
     tabindex: true,
     controls: true,
-    labelledby: true,
+    describedby: true,
+    labelledby: false,
   },
 }
 
