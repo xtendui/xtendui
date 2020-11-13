@@ -3,7 +3,7 @@ type: "Introduction"
 category: "Getting Started"
 parent: "Information"
 title: "Information"
-description: "Extremely customizable and designed for building custom websites with complex interactions."
+description: "Project informations readme."
 date: "2050-09-10"
 ---
 

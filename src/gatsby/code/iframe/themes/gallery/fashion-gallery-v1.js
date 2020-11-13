@@ -39,7 +39,7 @@ demo.htmlSource = `
 
               <div class="list flex-col">
 
-                <a href="#product-image-overlay-1" class="product-image w-full" id="product-image-1">
+                <a href="#product-image-overlay-1" class="product-image overflow-hidden w-full" id="product-image-1">
                   <div class="media-container" data-xt-overlay="{ targets: '#overlay-product-images' }">
                     <div class="media-inner relative">
                       <img class="media" src="/img.svg" loading="eager" alt=""/>
@@ -48,7 +48,7 @@ demo.htmlSource = `
                   </div>
                 </a>
 
-                <a href="#product-image-overlay-2" class="product-image w-full" id="product-image-2">
+                <a href="#product-image-overlay-2" class="product-image overflow-hidden w-full" id="product-image-2">
                   <div class="media-container" data-xt-overlay="{ targets: '#overlay-product-images' }">
                     <div class="media-inner relative">
                       <img class="media" src="/img-alt.svg" loading="eager" alt=""/>
@@ -57,7 +57,7 @@ demo.htmlSource = `
                   </div>
                 </a>
 
-                <a href="#product-image-overlay-3" class="product-image w-full" id="product-image-3">
+                <a href="#product-image-overlay-3" class="product-image overflow-hidden w-full" id="product-image-3">
                   <div class="media-container" data-xt-overlay="{ targets: '#overlay-product-images' }">
                     <div class="media-inner relative">
                       <img class="media" src="/img.svg" loading="eager" alt=""/>
@@ -66,7 +66,7 @@ demo.htmlSource = `
                   </div>
                 </a>
 
-                <a href="#product-image-overlay-4" class="product-image w-full" id="product-image-4">
+                <a href="#product-image-overlay-4" class="product-image overflow-hidden w-full" id="product-image-4">
                   <div class="media-container" data-xt-overlay="{ targets: '#overlay-product-images' }">
                     <div class="media-inner relative">
                       <img class="media" src="/img-alt.svg" loading="eager" alt=""/>
@@ -75,7 +75,7 @@ demo.htmlSource = `
                   </div>
                 </a>
 
-                <a href="#product-image-overlay-5" class="product-image w-full" id="product-image-5">
+                <a href="#product-image-overlay-5" class="product-image overflow-hidden w-full" id="product-image-5">
                   <div class="media-container" data-xt-overlay="{ targets: '#overlay-product-images' }">
                     <div class="media-inner relative">
                       <img class="media"" src="/img.svg" loading="eager" alt=""/>
@@ -180,6 +180,7 @@ demo.htmlSource = `
             </a>
 
             <div class="text-lg text-opacity-75">
+              <p><strong>(navigate on mobile for different behaviour)</strong></p>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est. Etiam egestas efficitur semper. Donec imperdiet eget justo at pellentesque. Proin a ultricies orci. Vivamus ut scelerisque lorem. Suspendisse lobortis consequat magna ut ultricies. Duis consequat vitae justo nec commodo. Vestibulum id eros eu sapien aliquam feugiat. Aenean id accumsan orci, nec elementum ex. Fusce a dolor in lacus facilisis vulputate vitae vitae nunc. Phasellus odio quam, semper in finibus at, consequat quis lacus. Sed varius sem commodo tellus pretium, posuere pharetra mauris elementum. Nunc et aliquam velit, quis suscipit justo. Ut ac pretium massa. Aenean ullamcorper mollis urna eu pharetra.</p>
               <p>Proin eget lectus pharetra, pretium nunc sed, pulvinar nibh. Quisque ac tellus ac mi posuere tristique. Ut dictum elit sed facilisis rutrum. In sagittis ac ante at blandit. Sed at felis fermentum, semper lorem sed, sagittis lacus. Cras justo massa, molestie sit amet lacinia a, luctus ac velit. Cras tristique, urna in hendrerit laoreet, nisi sem interdum urna, rutrum elementum nisl turpis id est.</p>
             </div>

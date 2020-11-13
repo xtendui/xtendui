@@ -139,6 +139,8 @@ See [mouse follow addon](/components/core/loader) to create a **loader with mous
 
 (resize screen to see it in action)
 
+(navigate on mobile for different behaviour)
+
 <div class="table-scroll">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
