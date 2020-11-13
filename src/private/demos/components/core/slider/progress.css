@@ -16,7 +16,7 @@
     }
     /* mouse */
     @media (hover: hover) {
-      @apply mouse-follow overflow-visible;
+      @apply mouse-follow;
       .spinner {
         @apply -mt-1 ml-4;
       }

@@ -31,7 +31,7 @@ You can **pass an option** to initialize [popperjs](https://popper.js.org/docs/v
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `popperjs:Object`                          | `null`        | Options for popperjs            |
+| Option                  | `popperjs:Object|Boolean`                          | `true`        | Options for popperjs or `false` to disable            |
 
 </div>
 

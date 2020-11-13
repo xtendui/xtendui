@@ -66,7 +66,7 @@ class Tooltip extends Xt.Toggle {
       const popperInstance = Xt.dataStorage.get(el, `${self.componentNamespace}Popper`)
       if (popperInstance) {
         popperInstance.update()
-      } else {
+      } else if (options.popperjs) {
         const element = self.getElements(el)[0]
         const popperInstance = createPopper(element, el, {
           placement: options.position,
@@ -164,7 +164,7 @@ Tooltip.optionsDefault = {
   spaceOverflow: 15,
   spaceFlip: 15,
   spaceArrow: 0,
-  popperjs: null,
+  popperjs: true,
   closeAuto: true,
   closeOutside: 'body',
   closeInside: '.tooltip-dismiss, .backdrop, .btn-close',
