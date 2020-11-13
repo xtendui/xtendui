@@ -67,8 +67,9 @@ module.exports = {
     },
     '.tooltip-arrow': {
       // setup
+      '@apply transform': '',
+      '@apply rotate-45 !important': '',
       position: 'absolute',
-      transform: 'rotate(45deg)',
       // styles
       zIndex: `calc(${theme('zIndex.tooltip')} - 1)`,
       width: '1rem',

@@ -1,10 +1,12 @@
 import React from 'react'
 import path from 'path'
+const btnDefault = require('components/snippets/classes/btn-default').default
 const btnPrimary = require('components/snippets/classes/btn-primary').default
 const cardDefaultDrop = require('components/snippets/classes/card-default-drop').default
 const cardDefaultOverlay = require('components/snippets/classes/card-default-overlay').default
 const btnDefaultGroup = require('components/snippets/classes/btn-default-group').default
 const btnPrimaryGroup = require('components/snippets/classes/btn-primary-group').default
+const cardDefaultTooltip = require('components/snippets/classes/card-default-tooltip').default
 const inputDefaultGroup = require('components/snippets/classes/input-default-group').default
 const iconSearch = require('components/snippets/icons').iconSearch
 const btnDefaultDrop = require('components/snippets/classes/btn-default-drop').default
@@ -15,9 +17,9 @@ const radioDefault = require('components/snippets/classes/form-radio-default').d
 const iconX = require('components/snippets/icons').iconX
 
 const listCollapse = 'w-0 overflow-hidden transform ease-in-out-quint duration-700 -translate-x-4 active:ease-out-quint active:translate-x-0'
-const cardCollapse = 'h-0 overflow-hidden transform ease-in-out-quint duration-700 -translate-y-4 group-active:ease-out-quint group-active:translate-y-0'
+const cardCollapse = 'h-0 overflow-hidden transform ease-in-out-quint duration-500 delay-200 -translate-y-4 group-active:ease-out-quint group-active:delay-0 group-active:translate-y-0'
 const cardItem =
-  'transform ease-in-out-quint duration-700 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0'
+  'transform ease-in-out-quint duration-500 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0'
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -34,7 +36,7 @@ demo.htmlSource = `
   List Group
 </div>
 
-<form data-xt-toggle="{ elements: '.w-full > .btn', targets: '.w-full > .list', collapseWidth: 'targets' }">
+<form data-xt-toggle="{ elements: '.w-full > .btn', targets: '.w-full > .list', instant: true, collapseWidth: 'targets' }">
 
   <div class="row row-x-3 row-y-2">
 
@@ -71,7 +73,7 @@ demo.htmlSource = `
 
 <div class="list list-2 items-center">
 
-  <div data-xt-drop="{ targetsInner: '.drop-inner', collapseHeight: 'targetsInner' }">
+  <div data-xt-drop="{ targetsInner: '.drop-inner', instant: true, collapseHeight: 'targetsInner' }">
 
     <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       list
@@ -93,11 +95,12 @@ demo.htmlSource = `
           </nav>
         </div>
       </div>
+      <div class="drop-arrow ${cardItem} group-active:delay-300" data-arrow></div>
     </div>
 
   </div>
 
-  <div data-xt-drop="{ targetsInner: '.drop-inner', collapseHeight: 'targetsInner' }">
+  <div data-xt-drop="{ targetsInner: '.drop-inner', instant: true, collapseHeight: 'targetsInner' }">
 
     <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       card
@@ -115,6 +118,64 @@ demo.htmlSource = `
           </div>
         </div>
       </div>
+      <div class="drop-arrow ${cardItem} group-active:delay-300" data-arrow></div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
+  Tooltip
+</div>
+
+<div class="list list-2 items-center">
+
+  <div data-xt-tooltip="{ elements: false, elementsInner: ':scope > a, :scope > button', targetsInner: '.tooltip-inner', instant: true, collapseHeight: 'targetsInner' }">
+
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+      tooltip
+    </button>
+
+    <div class="tooltip group duration-700"> <!-- needed for animation time, put max time with delay -->
+      <div class="tooltip-inner ${cardCollapse}">
+        <div class="tooltip-md rounded shadow-tooltip ${cardDefaultTooltip()}">
+          Lorem ipsum dolor sit amet
+        </div>
+      </div>
+      <div class="tooltip-arrow ${cardItem} group-active:delay-300" data-arrow></div>
+    </div>
+
+  </div>
+
+  <div data-xt-tooltip="{ elements: false, elementsInner: ':scope > a, :scope > button', targetsInner: '.tooltip-inner', instant: true, collapseHeight: 'targetsInner' }">
+
+    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+      list group
+    </button>
+
+    <div class="tooltip group duration-700"> <!-- needed for animation time, put max time with delay -->
+      <div class="tooltip-inner rounded-md shadow-tooltip text-black links-default bg-white ${cardCollapse}">
+        <form>
+
+          <div class="list flex-nowrap max-w-sm ${cardItem}">
+
+            <div class="list-inner flex-auto">
+              <button type="button" class="btn btn-md rounded-l-md ${btnDefault()}">
+                ${iconSearch({ classes: 'icon-lg' })}
+              </button>
+              <input type="text" class="form-item ${inputDefaultGroup()}" aria-label="Search" placeholder="Seach Catalog" />
+            </div>
+
+            <button type="button" class="btn btn-md rounded-r-md ${btnPrimary()}">
+              Search
+            </button>
+
+          </div>
+
+        </form>
+      </div>
+      <div class="tooltip-arrow ${cardItem} group-active:delay-300" data-arrow></div>
     </div>
 
   </div>
@@ -127,7 +188,7 @@ demo.htmlSource = `
 
 <div class="list list-2 items-center">
 
-  <div data-xt-overlay="{ targetsInner: ':scope > .overlay-container > .overlay-inner', collapseHeight: 'targetsInner' }">
+  <div data-xt-overlay="{ targetsInner: ':scope > .overlay-container > .overlay-inner', instant: true, collapseHeight: 'targetsInner' }">
     <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       screen full
     </button>
@@ -151,7 +212,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div data-xt-overlay="{ targetsInner: ':scope > .overlay-container > .overlay-inner', collapseHeight: 'targetsInner' }">
+  <div data-xt-overlay="{ targetsInner: ':scope > .overlay-container > .overlay-inner', instant: true, collapseHeight: 'targetsInner' }">
 
     <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       left blocks
@@ -196,7 +257,7 @@ demo.htmlSource = `
 
   </div>
 
-  <div data-xt-overlay="{ targetsInner: ':scope > .overlay-container > .overlay-inner', collapseHeight: 'targetsInner' }">
+  <div data-xt-overlay="{ targetsInner: ':scope > .overlay-container > .overlay-inner', instant: true, collapseHeight: 'targetsInner' }">
 
     <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       contact
@@ -313,7 +374,7 @@ demo.htmlSource = `
 
   </div>
 
-  <div data-xt-overlay="{ targetsInner: ':scope > .overlay-container > .overlay-inner', collapseHeight: 'targetsInner' }">
+  <div data-xt-overlay="{ targetsInner: ':scope > .overlay-container > .overlay-inner', instant: true, collapseHeight: 'targetsInner' }">
 
     <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       newsletter

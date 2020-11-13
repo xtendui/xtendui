@@ -66,8 +66,9 @@ module.exports = {
     },
     '.drop-arrow': {
       // setup
+      '@apply transform': '',
+      '@apply rotate-45 !important': '',
       position: 'absolute',
-      transform: 'rotate(45deg)',
       // styles
       zIndex: theme('zIndex.drop'),
       width: '1rem',

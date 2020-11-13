@@ -2,6 +2,9 @@ import React from 'react'
 import path from 'path'
 const btnDefaultDrop = require('components/snippets/classes/btn-default-drop').default
 const btnCloseOutside = require('components/snippets/classes/btn-close-outside').default
+const cardDefaultTooltip = require('components/snippets/classes/card-default-tooltip').default
+const inputDefaultGroup = require('components/snippets/classes/input-default-group').default
+const iconSearch = require('components/snippets/icons').iconSearch
 const labelDefault = require('components/snippets/classes/label-default').default
 const inputDefault = require('components/snippets/classes/input-default').default
 const checkDefault = require('components/snippets/classes/form-check-default').default
@@ -13,7 +16,7 @@ const classesDefault =
 const classesPrimary =
   'text-white links-inverse rounded-md bg-accent-500 border-transparent transform ease-out-quint duration-500 border hover:bg-accent-600 hover:border-accent-700 hover:-translate-y-1 active:bg-accent-700 active:translate-y-0'
 const cardDesign =
-  'bg-white transform ease-in-out-quint duration-500 delay-200 opacity-0 scale-50 group-active:ease-out-quint group-active:delay-0 group-active:opacity-100 group-active:scale-100'
+  'transform ease-in-out-quint duration-500 delay-200 opacity-0 scale-50 group-active:ease-out-quint group-active:delay-0 group-active:opacity-100 group-active:scale-100'
 const cardContent =
   'text-black links-default transform ease-in-out-quint duration-500 opacity-0 -translate-y-2 group-active:ease-out-quint group-active:delay-300 group-active:opacity-100 group-active:translate-y-0'
 
@@ -70,7 +73,7 @@ demo.htmlSource = `
 
     <div class="drop group duration-700"> <!-- needed for animation time, put max time with delay -->
       <div class="drop-inner">
-        <div class="design-setup rounded-md shadow-drop ${cardDesign}"></div>
+        <div class="design-setup rounded-md shadow-drop bg-white ${cardDesign}"></div>
         <div class="w-64 py-3 rounded-md ${cardContent}">
           <nav class="list flex-col">
             <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
@@ -85,6 +88,7 @@ demo.htmlSource = `
           </nav>
         </div>
       </div>
+      <div class="drop-arrow ${cardContent} group-active:delay-300" data-arrow></div>
     </div>
 
   </div>
@@ -97,7 +101,7 @@ demo.htmlSource = `
 
     <div class="drop group duration-700"> <!-- needed for animation time, put max time with delay -->
       <div class="drop-inner">
-        <div class="design-setup rounded-md shadow-drop ${cardDesign}"></div>
+        <div class="design-setup rounded-md shadow-drop bg-white ${cardDesign}"></div>
         <div class="card w-80 rounded-md ${cardContent}">
           <div class="btn btn-close p-5 text-xl" aria-label="Close">
             ${iconX()}
@@ -108,6 +112,62 @@ demo.htmlSource = `
           </div>
         </div>
       </div>
+      <div class="drop-arrow ${cardContent} group-active:delay-300" data-arrow></div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
+  Tooltip
+</div>
+
+<div class="list list-2 items-center">
+
+  <div data-xt-tooltip="{ elements: false, elementsInner: ':scope > a, :scope > button' }">
+
+    <button type="button" class="btn btn-md ${classesPrimary} hover:shadow-lg active:shadow-sm">
+      tooltip
+    </button>
+
+    <div class="tooltip group duration-700"> <!-- needed for animation time, put max time with delay -->
+      <div class="tooltip-md rounded shadow-tooltip ${cardDefaultTooltip()} ${cardDesign}">
+        Lorem ipsum dolor sit amet
+      </div>
+      <div class="tooltip-arrow ${cardContent} group-active:delay-300" data-arrow></div>
+    </div>
+
+  </div>
+
+  <div data-xt-tooltip="{ elements: false, elementsInner: ':scope > a, :scope > button' }">
+
+    <button type="button" class="btn btn-md rounded-md ${classesPrimary} hover:shadow-lg active:shadow-sm">
+      list group
+    </button>
+
+    <div class="tooltip group duration-700"> <!-- needed for animation time, put max time with delay -->
+      <div class="rounded-md shadow-tooltip text-black links-default bg-white bg-white ${cardDesign}">
+        <form>
+
+          <div class="list flex-nowrap max-w-sm ${cardContent}">
+
+            <div class="list-inner flex-auto">
+              <button type="button" class="btn btn-md rounded-l-md ${classesDefault} hover:shadow-lg active:shadow-sm">
+                ${iconSearch({ classes: 'icon-lg' })}
+              </button>
+              <input type="text" class="form-item ${inputDefaultGroup()}" aria-label="Search" placeholder="Seach Catalog" />
+            </div>
+
+            <button type="button" class="btn btn-md rounded-r-md ${classesPrimary} hover:shadow-lg active:shadow-sm">
+              Search
+            </button>
+
+          </div>
+
+        </form>
+      </div>
+      <div class="tooltip-arrow ${cardContent} group-active:delay-300" data-arrow></div>
     </div>
 
   </div>
@@ -131,7 +191,7 @@ demo.htmlSource = `
         </div>
         <div class="overlay-inner">
 
-          <div class="design-setup rounded-md ${cardDesign}"></div>
+          <div class="design-setup rounded-md bg-white ${cardDesign}"></div>
 
           <div class="card min-h-screen items-center justify-center rounded-md ${cardContent}">
             <div class="media-container ratio-100">
@@ -156,7 +216,7 @@ demo.htmlSource = `
       <div class="overlay-container p-0 max-w-md ml-0 mr-auto">
         <div class="overlay-inner">
 
-          <div class="design-setup ${cardDesign}"></div>
+          <div class="design-setup bg-white ${cardDesign}"></div>
 
           <div class="card min-h-screen ${cardContent}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
@@ -203,7 +263,7 @@ demo.htmlSource = `
       <div class="overlay-container max-w-5xl">
         <div class="overlay-inner">
 
-          <div class="design-setup rounded-md md:rounded-tr-none rounded-md shadow-overlay ${cardDesign}"></div>
+          <div class="design-setup rounded-md md:rounded-tr-none rounded-md shadow-overlay bg-white ${cardDesign}"></div>
 
           <div class="card rounded-md ${cardContent}">
             <div class="btn btn-close p-5 text-2xl ${btnCloseOutside()} md:p-3 md:right-auto md:left-100" aria-label="Close">
@@ -322,7 +382,7 @@ demo.htmlSource = `
       <div class="overlay-container max-w-5xl">
         <div class="overlay-inner">
 
-          <div class="design-setup rounded-md md:rounded-tr-none rounded-md shadow-overlay ${cardDesign}"></div>
+          <div class="design-setup rounded-md md:rounded-tr-none rounded-md shadow-overlay bg-white ${cardDesign}"></div>
 
           <div class="card rounded-md ${cardContent}">
             <div class="btn btn-close p-5 text-2xl ${btnCloseOutside()} md:p-3 md:right-auto md:left-100" aria-label="Close">
