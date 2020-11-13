@@ -157,15 +157,6 @@ module.exports = {
         bottom: '25%',
       },
     },
-    '.loader-mouse': {
-      overflow: 'visible',
-      '.filler, .spinner': {
-        display: 'block',
-        position: 'relative',
-        marginTop: '-10px',
-        marginLeft: '40px',
-      },
-    },
     '.spinner-animated': {
       // animation
       svg: {

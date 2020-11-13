@@ -37,14 +37,12 @@ Example loader filler with **activation animation**.
 
 ## Mouse
 
-Use **component classes** to create a **loader positioned for mouse**.
+Use **tailwind classes** to create a **loader positioned for mouse**.
 
-<div class="table-scroll">
+[[notePrimary]]
+| This demo uses [mouse follow](/components/addons/animation/mouse-follow). Visit the component page to import javascript and customize.
 
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.loader-mouse`                     | `loader-mouse`                | Loader position for mouse            |
-
-</div>
-
-See [mouse follow addon](/components/addons/mouse-follow) to create a **loader with mouse follow**.
+<demo>
+  <demovanilla src="vanilla/components/addons/animation/mouse-follow">
+  </demovanilla>
+</demo>

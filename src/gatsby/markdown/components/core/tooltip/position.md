@@ -64,3 +64,15 @@ If you want a tooltip with size and position **relative to a parent Node with re
   <demovanilla src="vanilla/components/core/tooltip/static">
   </demovanilla>
 </demo>
+
+## Mouse Follow
+
+Use **tailwind classes** to create a **loader positioned for mouse**.
+
+[[notePrimary]]
+| This demo uses [mouse follow](/components/addons/animation/mouse-follow). Visit the component page to import javascript and customize.
+
+<demo>
+  <demovanilla src="vanilla/components/core/tooltip/mouse-follow">
+  </demovanilla>
+</demo>

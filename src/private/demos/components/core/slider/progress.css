@@ -13,7 +13,10 @@
     }
     /* mouse */
     @media (hover: hover) {
-      @apply loader-mouse mouse-follow;
+      @apply mouse-follow overflow-visible;
+      .spinner {
+        @apply -mt-1 ml-4;
+      }
     }
   }
 }

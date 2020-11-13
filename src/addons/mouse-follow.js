@@ -90,16 +90,15 @@ class MouseFollow {
         self.height = rect.height
         // class
         Xt.animOn(tr)
-        // initial
-        Xt.friction(
-          tr,
-          {
-            x: e.clientX - self.width / 2,
-            y: e.clientY - self.height / 2,
-            friction: options.friction,
-          },
-          options.transform
-        )
+        // set
+        const x = e.clientX - self.width / 2
+        const y = e.clientY - self.height / 2
+        if (options.transform) {
+          tr.style.transform = `translateX(${x}px) translateY(${y}px)`
+        } else {
+          tr.style.left = `${x}px`
+          tr.style.top = `${y}px`
+        }
       }
       // listener dispatch
       self.object.dispatchEvent(new CustomEvent('on.xt.mousefollow'))
@@ -156,7 +155,7 @@ MouseFollow.optionsDefault = {
   // elements
   targets: ':scope > .mouse-follow',
   // mousefollow
-  transform: true,
+  transform: false,
   friction: delta => {
     return delta / 9
   },
