@@ -3,7 +3,7 @@ type: "Components"
 category: "Core"
 parent: "Tooltip"
 title: "Tooltip"
-description: "Nested navigation to show on user interaction, can contain lists and more complex graphics."
+description: "Informations or elements to show on user interaction, can contain simple text and more complex graphics."
 ---
 
 ## Installation

@@ -17,7 +17,8 @@ const radioDefault = require('components/snippets/classes/form-radio-default').d
 const iconX = require('components/snippets/icons').iconX
 
 const listCollapse = 'w-0 overflow-hidden transform ease-in-out-quint duration-700 -translate-x-4 active:ease-out-quint active:translate-x-0'
-const cardCollapse = 'h-0 overflow-hidden transform ease-in-out-quint duration-500 delay-200 -translate-y-4 group-active:ease-out-quint group-active:delay-0 group-active:translate-y-0'
+const cardCollapse =
+  'h-0 overflow-hidden transform ease-in-out-quint duration-500 delay-200 -translate-y-4 group-active:ease-out-quint group-active:delay-0 group-active:translate-y-0'
 const cardItem =
   'transform ease-in-out-quint duration-500 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0'
 
