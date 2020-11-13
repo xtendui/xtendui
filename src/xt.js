@@ -50,6 +50,18 @@ if (typeof window !== 'undefined') {
           }
         },
       })
+      // input
+      Xt.mount.push({
+        matches: 'input:not([type="hidden"]), select, textarea',
+        mount: object => {
+          // label
+          const labels = object.labels
+          const label = object.getAttribute('aria-label') || object.getAttribute('aria-labelledby')
+          if (!labels.length && (!label || label === '')) {
+            console.warn('Xt.debug: detected an "input" without "label" or "aria-label" or "aria-labelledby"', object)
+          }
+        },
+      })
       // links
       Xt.mount.push({
         matches: 'a[href]',
@@ -57,9 +69,9 @@ if (typeof window !== 'undefined') {
           // title
           const text = object.textContent.trim()
           const title = object.title
-          const label = object.getAttribute('aria-label')
+          const label = object.getAttribute('aria-label') || object.getAttribute('aria-labelledby')
           if (!text.length && (!title || title === '') && (!label || label === '')) {
-            console.warn('Xt.debug: detected a "link" without "textContent" or "title" or "aria-label', object)
+            console.warn('Xt.debug: detected a "link" without "textContent" or "title" or "aria-label" or "aria-labelledby"', object)
           }
           // target
           const target = object.getAttribute('target')
@@ -70,18 +82,6 @@ if (typeof window !== 'undefined') {
                 console.warn('Xt.debug: detected a "link" with target="_blank" without rel="noopener" or rel="noreferrer"', object)
               }
             }
-          }
-        },
-      })
-      // input
-      Xt.mount.push({
-        matches: 'input:not([type="hidden"]), select, textarea',
-        mount: object => {
-          // label
-          const labels = object.labels
-          const label = object.getAttribute('aria-label')
-          if (!labels.length && (!label || label === '')) {
-            console.warn('Xt.debug: detected an "input" without "label"', object)
           }
         },
       })
