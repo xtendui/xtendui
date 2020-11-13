@@ -2,6 +2,7 @@ import path from 'path'
 const btnPrimary = require('components/snippets/classes/btn-primary').default
 const btnDefaultDrop = require('components/snippets/classes/btn-default-drop').default
 const cardDefaultDropList = require('components/snippets/classes/card-default-drop-list').default
+const inputDefault = require('components/snippets/classes/input-default').default
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -18,6 +19,28 @@ demo.htmlSource = `
     <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       mouse
     </button>
+
+    <div class="drop">
+      <div class="w-64 py-3 rounded-md shadow-drop ${cardDefaultDropList()}">
+        <nav class="list flex-col">
+          <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+          </a>
+          <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+            Dolor sit
+          </button>
+          <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+            Amet
+          </button>
+        </nav>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="inline-block" data-xt-drop="{ elements: ':scope > input', on: 'focus' }">
+
+    <input type="text" class="form-item rounded-md ${inputDefault()}" aria-label="Focus" placeholder="Focus">
 
     <div class="drop">
       <div class="w-64 py-3 rounded-md shadow-drop ${cardDefaultDropList()}">
