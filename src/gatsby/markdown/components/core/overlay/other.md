@@ -6,6 +6,24 @@ title: "Other"
 date: "2005-10-10"
 ---
 
+## Close fixed
+
+You can have the `.btn-close` with `.fixed.z-last.mr-2` and moved inside `.overlay-container` to have it **fixed inside the overlay**.
+
+<demo>
+  <demovanilla src="vanilla/components/core/overlay/close-fixed">
+  </demovanilla>
+</demo>
+
+## Other Content
+
+You can put **any content** inside, here are some examples.
+
+<demo>
+  <demovanilla src="vanilla/components/core/overlay/other-content">
+  </demovanilla>
+</demo>
+
 ## Disable
 
 You can disable styles and javascript using `.overlay-disable`.
@@ -20,15 +38,6 @@ You can disable styles and javascript using `.overlay-disable`.
 
 <demo>
   <demovanilla src="vanilla/components/core/overlay/disable">
-  </demovanilla>
-</demo>
-
-## Close fixed
-
-You can have the `.btn-close` with `.fixed.z-last.mr-2` and moved inside `.overlay` to have it **fixed inside the overlay**.
-
-<demo>
-  <demovanilla src="vanilla/components/core/overlay/close-fixed">
   </demovanilla>
 </demo>
 

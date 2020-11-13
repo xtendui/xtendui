@@ -125,10 +125,10 @@ demo.htmlSource = `
       screen full
     </button>
     <div class="overlay group duration-700"> <!-- needed for animation time, put max time with delay -->
-      <div class="btn btn-close p-5 text-2xl fixed z-last mr-2 ${cardContent}" aria-label="Close">
-        ${iconX()}
-      </div>
       <div class="overlay-container p-0">
+        <div class="btn btn-close p-5 text-2xl fixed z-last mr-2 ${cardContent}" aria-label="Close">
+          ${iconX()}
+        </div>
         <div class="overlay-inner">
 
           <div class="design-setup rounded-md ${cardDesign}"></div>

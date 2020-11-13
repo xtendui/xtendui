@@ -8,7 +8,7 @@ date: "2005-10-10"
 
 ## Other Content
 
-You can put **any content** inside tooltip. Here are some examples.
+You can put **any content** inside, here are some examples.
 
 <demo>
   <demovanilla src="vanilla/components/core/tooltip/other-content">

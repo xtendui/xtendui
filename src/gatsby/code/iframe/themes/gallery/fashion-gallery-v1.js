@@ -113,10 +113,10 @@ demo.htmlSource = `
               </div>
 
               <div class="overlay ease-in-out-quint duration-500 opacity-0 active:ease-out-quint active:opacity-100" id="overlay-product-images">
-                <div class="btn btn-close p-5 text-2xl fixed z-last mr-2" aria-label="Close">
-                  ${iconX()}
-                </div>
                 <div class="overlay-container p-0">
+                  <div class="btn btn-close p-5 text-2xl fixed z-last mr-2" aria-label="Close">
+                    ${iconX()}
+                  </div>
                   <div class="overlay-inner">
 
                     <div class="card items-center justify-center shadow-overlay ${cardDefaultOverlay()}">
