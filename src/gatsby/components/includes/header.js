@@ -49,7 +49,7 @@ export default function Header({ page }) {
                         title="Npm"
                         dangerouslySetInnerHTML={{ __html: iconPackage() }}
                       ></a>
-                      <div className="tooltip">
+                      <div className="tooltip transform transition duration-300 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
                         <div className={`tooltip-sm rounded shadow-tooltip ${cardDefaultTooltip()}`}>Visit on Npm</div>
                       </div>
                     </div>
@@ -62,7 +62,7 @@ export default function Header({ page }) {
                         title="Github"
                         dangerouslySetInnerHTML={{ __html: iconGithub() }}
                       ></a>
-                      <div className="tooltip">
+                      <div className="tooltip transform transition duration-300 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
                         <div className={`tooltip-sm rounded shadow-tooltip ${cardDefaultTooltip()}`}>Visit on Github</div>
                       </div>
                     </span>

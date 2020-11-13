@@ -116,7 +116,7 @@ You can have **element's link** and **click events** prevented when the tooltip 
   </demovanilla>
 </demo>
 
-## backdrop
+## Backdrop
 
 <div class="table-scroll">
 

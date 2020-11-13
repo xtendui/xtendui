@@ -1,15 +1,15 @@
 import { Xt } from 'xtendui'
 
 Xt.mount.push({
-  matches: '#demo--drop-events',
+  matches: '#demo--tooltip-events',
   mount: object => {
     // init
 
-    let self = new Xt.Drop(object)
+    let self = new Xt.Tooltip(object)
 
     // log
 
-    const log = document.querySelector('#demo--drop-events-log')
+    const log = document.querySelector('#demo--tooltip-events-log')
 
     const logAdd = text => {
       log.innerHTML += `${text}<br/>`
@@ -24,7 +24,7 @@ Xt.mount.push({
 
     // first element
 
-    const firstEl = document.querySelector('#demo--drop-events-first-element')
+    const firstEl = document.querySelector('#demo--tooltip-events-first-element')
 
     const firstElFnc = () => {
       logAdd('<strong>1st element</strong>')
@@ -36,7 +36,7 @@ Xt.mount.push({
 
     // first target
 
-    const firstTr = document.querySelector('#demo--drop-events-first-target')
+    const firstTr = document.querySelector('#demo--tooltip-events-first-target')
 
     const firstTrFnc = () => {
       logAdd('<strong>1st target</strong>')
@@ -48,10 +48,9 @@ Xt.mount.push({
 
     // add
 
-    const addBtn = document.querySelector('#demo--drop-events-add')
+    const addBtn = document.querySelector('#demo--tooltip-events-add')
     const btnPrimary = require('components/snippets/classes/btn-primary').default
-    const btnDefaultDrop = require('components/snippets/classes/btn-default-drop').default
-    const cardDefaultDropList = require('components/snippets/classes/card-default-drop-list').default
+    const cardDefaultTooltip = require('components/snippets/classes/card-default-tooltip').default
 
     const addFnc = () => {
       clearTimeout(parseFloat(object.dataset.reinitTimeout))
@@ -65,27 +64,17 @@ Xt.mount.push({
             Element ${indexEl}
           </button>
         `
-        document.querySelector('#demo--drop-events').append(Xt.createElement(strEl))
+        document.querySelector('#demo--tooltip-events').append(Xt.createElement(strEl))
         const targets = self.targets.filter(x => !x.classList.contains('xt-wrap'))
         const indexTr = targets.length + 1
         const strTr = `
-          <div class="drop" title="Target ${indexTr}">
-            <div class="w-64 py-3 rounded-md shadow-drop ${cardDefaultDropList()}">
-              <nav class="list flex-col">
-                <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                </a>
-                <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
-                  Dolor sit
-                </button>
-                <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
-                  Amet
-                </button>
-              </nav>
+          <div class="tooltip" title="Target ${indexTr}">
+            <div class="tooltip-md rounded shadow-tooltip ${cardDefaultTooltip()}">
+              Lorem ipsum dolor sit amet
             </div>
           </div>
         `
-        document.querySelector('#demo--drop-events').append(Xt.createElement(strTr))
+        document.querySelector('#demo--tooltip-events').append(Xt.createElement(strTr))
         // reinit
         logAdd('<strong>reinit</strong>')
         self.reinit()
@@ -96,7 +85,7 @@ Xt.mount.push({
 
     // remove
 
-    const removeBtn = document.querySelector('#demo--drop-events-remove')
+    const removeBtn = document.querySelector('#demo--tooltip-events-remove')
 
     const removeFnc = () => {
       clearTimeout(parseFloat(object.dataset.reinitTimeout))
@@ -115,7 +104,7 @@ Xt.mount.push({
 
     // block
 
-    const blockBtn = document.querySelector('#demo--drop-events-block')
+    const blockBtn = document.querySelector('#demo--tooltip-events-block')
 
     const blockFnc = () => {
       logAdd('<strong>block/unblock</strong>')
@@ -132,7 +121,7 @@ Xt.mount.push({
 
     // reinit
 
-    const reinitBtn = document.querySelector('#demo--drop-events-reinit')
+    const reinitBtn = document.querySelector('#demo--tooltip-events-reinit')
 
     const reinitFnc = () => {
       clearTimeout(parseFloat(object.dataset.reinitTimeout))
@@ -146,7 +135,7 @@ Xt.mount.push({
 
     // restart
 
-    const restartBtn = document.querySelector('#demo--drop-events-restart')
+    const restartBtn = document.querySelector('#demo--tooltip-events-restart')
 
     const restartFnc = () => {
       logAdd('<strong>restart</strong>')
@@ -157,7 +146,7 @@ Xt.mount.push({
 
     // destroy
 
-    const destroyBtn = document.querySelector('#demo--drop-events-destroy')
+    const destroyBtn = document.querySelector('#demo--tooltip-events-destroy')
 
     const destroyFnc = () => {
       logAdd('<strong>destroy</strong>')
@@ -168,7 +157,7 @@ Xt.mount.push({
 
     // unmount
 
-    const unmountBtn = document.querySelector('#demo--drop-events-unmount')
+    const unmountBtn = document.querySelector('#demo--tooltip-events-unmount')
 
     const unmountFnc = () => {
       logAdd('<strong>unmount</strong>')

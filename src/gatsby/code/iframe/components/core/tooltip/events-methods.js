@@ -1,9 +1,8 @@
 import React from 'react'
 import path from 'path'
 const btnPrimary = require('components/snippets/classes/btn-primary').default
+const cardDefaultTooltip = require('components/snippets/classes/card-default-tooltip').default
 const cardDefault = require('components/snippets/classes/card-default').default
-const btnDefaultDrop = require('components/snippets/classes/btn-default-drop').default
-const cardDefaultDropList = require('components/snippets/classes/card-default-drop-list').default
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -17,54 +16,44 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="list list-1 items-center mb-4">
-  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--drop-events-first-element">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--tooltip-events-first-element">
     1st element
   </button>
-  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--drop-events-first-target">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--tooltip-events-first-target">
     1st target
   </button>
-  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--drop-events-add">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--tooltip-events-add">
     Add
   </button>
-  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--drop-events-remove">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--tooltip-events-remove">
     Remove
   </button>
-  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--drop-events-block">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--tooltip-events-block">
     Block/Unblock
   </button>
-  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--drop-events-reinit">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--tooltip-events-reinit">
     Reinit
   </button>
-  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--drop-events-restart">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--tooltip-events-restart">
     Restart
   </button>
-  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--drop-events-destroy">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--tooltip-events-destroy">
     Destroy
   </button>
-  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--drop-events-unmount">
+  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--tooltip-events-unmount">
     Unmount
   </button>
 </div>
 
-<div class="list list-2 items-center" id="demo--drop-events" title="Object">
+<div class="list list-2 items-center" id="demo--tooltip-events" title="Object">
 
   <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
     Element 0
   </button>
 
-  <div class="drop" title="Target 0">
-    <div class="w-64 py-3 rounded-md shadow-drop ${cardDefaultDropList()}">
-      <nav class="list flex-col">
-        <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit
-        </a>
-        <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
-          Dolor sit
-        </button>
-        <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
-          Amet
-        </button>
-      </nav>
+  <div class="tooltip" title="Target 0">
+    <div class="tooltip-md rounded shadow-tooltip ${cardDefaultTooltip()}">
+      Lorem ipsum dolor sit amet
     </div>
   </div>
 
@@ -72,26 +61,16 @@ demo.htmlSource = `
     Element 1
   </button>
 
-  <div class="drop" title="Target 1">
-    <div class="w-64 py-3 rounded-md shadow-drop ${cardDefaultDropList()}">
-      <nav class="list flex-col">
-        <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit
-        </a>
-        <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
-          Dolor sit
-        </button>
-        <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
-          Amet
-        </button>
-      </nav>
+  <div class="tooltip" title="Target 1">
+    <div class="tooltip-md rounded shadow-tooltip ${cardDefaultTooltip()}">
+      Lorem ipsum dolor sit amet
     </div>
   </div>
 
 </div>
 
 <div class="card rounded-md ${cardDefault()} mt-6">
-  <div class="card-sm overflow-y-auto overflow-x-hidden overflow-sub max-h-56" id="demo--drop-events-log">
+  <div class="card-sm overflow-y-auto overflow-x-hidden overflow-sub max-h-56" id="demo--tooltip-events-log">
   </div>
 </div>
 `

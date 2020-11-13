@@ -18,7 +18,7 @@ demo.htmlSource = `
       tooltip
     </button>
 
-    <div class="tooltip transform transition opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
+    <div class="tooltip transform transition duration-300 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
       <div class="tooltip-md rounded shadow-tooltip ${cardDefaultTooltip()}">
         Lorem ipsum dolor sit amet
       </div>

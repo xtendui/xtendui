@@ -28,7 +28,10 @@ export default class DocFullscreen extends React.Component {
           </div>
           <div className="card-content" id="gatsby_open-full-content"></div>
         </div>
-        <div className="tooltip" id="gatsby_open-full-tooltip">
+        <div
+          className="tooltip transform transition duration-300 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0"
+          id="gatsby_open-full-tooltip"
+        >
           <div className={`tooltip-sm rounded shadow-tooltip ${cardDefaultTooltip()}`}>Close Fullscreen</div>
         </div>
       </>

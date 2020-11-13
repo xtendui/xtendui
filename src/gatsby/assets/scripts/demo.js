@@ -226,7 +226,7 @@ const populateDemo = (container, i) => {
   <button type="button" class="btn btn-show-code" aria-label="Toggle Code">
     ${iconCode()}
   </button>
-  <div class="tooltip">
+  <div class="tooltip transform transition duration-300 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
     <div class="tooltip-sm rounded shadow-tooltip ${cardDefaultTooltip()}">
       Show Code
     </div>
@@ -239,7 +239,7 @@ const populateDemo = (container, i) => {
   <button type="button" class="btn btn-open-full" aria-label="Toggle Fullscreen">
     ${iconMaximize()}
   </button>
-  <div class="tooltip">
+  <div class="tooltip transform transition duration-300 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
     <div class="tooltip-sm rounded shadow-tooltip ${cardDefaultTooltip()}">
       Open Fullscreen
     </div>
@@ -252,7 +252,7 @@ const populateDemo = (container, i) => {
   <a href="#" target="_blank" class="btn btn-open-iframe" aria-label="Open Iframe">
     ${iconExternal()}
   </a>
-  <div class="tooltip">
+  <div class="tooltip transform transition duration-300 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
     <div class="tooltip-sm rounded shadow-tooltip ${cardDefaultTooltip()}">
       Open Iframe
     </div>
@@ -287,7 +287,7 @@ const populateDemo = (container, i) => {
           <button type="button" class="btn btn-tiny btn-clipboard" aria-label="Copy to clipboard">
             ${iconCopy()}
           </button>
-          <div class="tooltip">
+          <div class="tooltip transform transition duration-300 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
             <div class="tooltip-sm rounded shadow-tooltip ${cardDefaultTooltip()}">
               Copy to clipboard
             </div>

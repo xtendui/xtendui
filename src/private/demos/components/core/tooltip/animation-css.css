@@ -1,7 +1,7 @@
 .demo--tooltip-animation-css {
   > .tooltip {
     /* initial */
-    @apply transform transition;
+    @apply transform transition duration-300;
     @apply opacity-0 -translate-x-4;
     .inverse& {
       @apply translate-x-4;
