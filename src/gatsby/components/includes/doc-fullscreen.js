@@ -1,7 +1,5 @@
 import React from 'react'
 
-const cardBlack = require('components/snippets/classes/card-black').default
-
 export default class DocFullscreen extends React.Component {
   render() {
     return (
