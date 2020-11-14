@@ -1,7 +1,6 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/core/slider'
 import gsap from 'gsap'
-gsap.config({ force3D: false })
 
 /**
  * slider
@@ -40,7 +39,6 @@ Xt.mount.push({
       autoHeight: false,
       groupMq: false,
       drag: {
-        duration: 1500,
         overflow: false,
       },
     })

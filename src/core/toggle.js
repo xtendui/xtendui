@@ -1469,7 +1469,7 @@ class Toggle {
       return
     }
     // start
-    if (options.auto && options.auto.time && !self.wrap) {
+    if (options.auto && options.auto.time && !Xt.noAuto && !self.wrap) {
       // not when nothing activated
       if (self.currentIndex !== null && (!self.initial || options.auto.initial)) {
         // clear
@@ -1876,7 +1876,7 @@ class Toggle {
     const self = this
     const options = self.options
     // anim
-    const duration = Xt.animTime(el, options.duration || options[`duration${actionCurrent}`])
+    const duration = Xt.noDuration ? 0 : Xt.animTime(el, options.duration || options[`duration${actionCurrent}`])
     clearTimeout(Xt.dataStorage.get(el, `${self.componentNamespace + type}AnimTimeout`))
     // queue done
     if (!duration) {
@@ -2339,7 +2339,7 @@ class Toggle {
           self.detail.zIndex = self.detail.zIndex + options.zIndex[type].factor
           el.style.zIndex = self.detail.zIndex
           // zIndex reset after duration
-          const duration = Xt.animTime(el, options.duration || options[`duration${actionCurrent}`])
+          const duration = Xt.noDuration ? 0 : Xt.animTime(el, options.duration || options[`duration${actionCurrent}`])
           clearTimeout(Xt.dataStorage.get(el, `${self.componentNamespace}indexTimeout`))
           Xt.dataStorage.set(
             el,

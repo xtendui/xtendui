@@ -1,7 +1,6 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/addons/scroll-to-anchor'
 import gsap from 'gsap'
-gsap.config({ force3D: false })
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 gsap.registerPlugin(ScrollToPlugin)
 

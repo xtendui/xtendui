@@ -64,7 +64,6 @@ class Drop extends Xt.Toggle {
           el.classList.remove('xt-transition-none')
         })
         // popperjs
-        Xt.dataStorage.get(el, 'PopperInstance').destroy()
         const element = self.getElements(el)[0]
         const popperInstance = createPopper(element, el, {
           placement: options.position,

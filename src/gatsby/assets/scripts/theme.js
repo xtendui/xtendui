@@ -4,8 +4,17 @@ import 'xtendui/build/xtend-addons'
 import 'xtendui/build/xtend-future'
 import 'xtendui/build/xtend-demos'
 import gsap from 'gsap'
-gsap.config({ force3D: false })
 const iconLink = require('components/snippets/icons').iconLink
+
+// no force3d
+
+gsap.config({ force3D: false })
+
+// instant animations accessibility
+
+if (Xt.noDuration) {
+  gsap.globalTimeline.timeScale(1000)
+}
 
 /**
  * favicon

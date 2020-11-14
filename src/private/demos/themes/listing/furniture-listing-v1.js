@@ -1,6 +1,5 @@
 import { Xt } from 'xtendui'
 import gsap from 'gsap'
-gsap.config({ force3D: false })
 
 /**
  * .listing-item scale

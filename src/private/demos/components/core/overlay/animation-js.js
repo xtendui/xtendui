@@ -1,7 +1,6 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/core/overlay'
 import gsap from 'gsap'
-gsap.config({ force3D: false })
 
 Xt.mount.push({
   matches: '.demo--overlay-animation-js',

@@ -11,7 +11,9 @@ export default class DocFoot extends React.Component {
     )
     const postsGlobals = page.postsAll.posts.filter(
       x =>
-        ['Components'].includes(x.post.frontmatter.type) && x.post.frontmatter.category === 'Globals' && x.post.frontmatter.parent === page.post.frontmatter.parent
+        ['Components'].includes(x.post.frontmatter.type) &&
+        x.post.frontmatter.category === 'Globals' &&
+        x.post.frontmatter.parent === page.post.frontmatter.parent
     )
     const postsCore = page.postsAll.posts.filter(
       x =>

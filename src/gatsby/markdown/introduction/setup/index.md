@@ -131,10 +131,22 @@ import 'xtendui/src/core/toggle'
 
 This library in the demos uses [gsap](https://github.com/greensock/GSAP) for javascript animations.
 
-Install it and use as described in the demos.
-
 ```
 npm install gsap --save
+```
+
+Then add this one time to setup gsap, **we disable force3D** for smoother pixels animations, and we make **instant animations** when the the user has activated "Prefers Reduced Motion".
+
+```jsx
+// no force3d
+
+gsap.config({ force3D: false })
+
+// instant animations accessibility
+
+if (Xt.noDuration) {
+  gsap.globalTimeline.timeScale(1000)
+}
 ```
 
 #### Polyfill

@@ -2,7 +2,6 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/core/slider'
 import 'xtendui/src/addons/mouse-follow'
 import gsap from 'gsap'
-gsap.config({ force3D: false })
 
 Xt.mount.push({
   matches: '.demo--slider-progress',

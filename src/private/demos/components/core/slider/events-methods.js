@@ -13,7 +13,9 @@ Xt.mount.push({
       },
       align: 'center',
       groupMq: { all: 1, '(min-width: 768px)': 0.8 },
-      drag: { wrap: true },
+      drag: {
+        wrap: true,
+      },
     })
 
     // log

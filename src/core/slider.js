@@ -687,7 +687,7 @@ class Slider extends Xt.Toggle {
             }
           },
           'draggerDisableLinks',
-          self.initial ? 0 : self.options.duration || self.options.durationOn
+          Xt.noDuration ? 0 : self.initial ? 0 : self.options.duration || self.options.durationOn
         )
         // disable dragger
         dragger.classList.add('xt-pointer-events-none')
@@ -709,7 +709,7 @@ class Slider extends Xt.Toggle {
             }
           },
           'draggerDisable',
-          self.initial ? 0 : self.options.duration || self.options.durationOn
+          Xt.noDuration ? 0 : self.initial ? 0 : self.options.duration || self.options.durationOn
         )
         // disable links
         dragger.classList.remove('xt-links-none')
@@ -1113,7 +1113,7 @@ class Slider extends Xt.Toggle {
         }
       },
       'draggerDisable',
-      self.initial ? 0 : self.options.duration || self.options.durationOn
+      Xt.noDuration ? 0 : self.initial ? 0 : self.options.duration || self.options.durationOn
     )
     // drag position
     if (self.initial) {

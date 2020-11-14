@@ -38,11 +38,11 @@ There are various css styles used by various javascript components, they **shoul
 
 You can **opt out** some behaviour:
 
-* Flash of Unstyled Content (FOUC): Xtend UI **automatically disables page load duration** for animation and transition until javascript is loaded, add `no-js-fouc` to `html` to disable this behaviour.
+* Flash of Unstyled Content (FOUC): Xtend UI **automatically disables page load duration** for animation and transition until javascript is loaded, add `html.no-js-fouc` to disable this behaviour.
 
-* Prefers Reduced Motion: Xtend UI **automatically disables duration** for animation and transition when the the user has activated "Prefers Reduced Motion", add `no-js-prm` to `html` to disable this behaviour.
+* Initial component animations: Xtend UI **automatically disables duration** for animation and transition on `initial` class used in components init and reinit, add `html.no-js-initial` to disable this behaviour.
 
-* Initial component animations: Xtend UI **automatically disables duration** for animation and transition on `initial` class used in components init and reinit, add `no-js-initial` to `html` to disable this behaviour.
+* Prefers Reduced Motion: Xtend UI **automatically disables duration** for animation and transition when the the user has activated "Prefers Reduced Motion" (needs also [gsap setup](/introduction/getting-started/setup#javascript-animation)), add `html.no-js-prm` to disable this behaviour, also set this variables `Xt.noDuration = false` and `Xt.noAuto = false`.
 
 ## Xt.debug
 

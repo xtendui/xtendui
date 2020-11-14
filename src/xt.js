@@ -21,6 +21,7 @@ Xt.stickyIndex = 800
 Xt.scrollRestoration = 'auto'
 Xt.focusables = 'a, button, details, input, iframe, select, textarea, .btn-close'
 Xt.supportScroll = typeof window === 'undefined' ? false : 'onscroll' in window && !/(gle|ing)bot/.test(navigator.userAgent)
+Xt.noDuration = Xt.noAuto = typeof window !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce), (update: slow)').matches
 Xt.debug = typeof window !== 'undefined' && typeof process !== 'undefined' && process.env && process.env.NODE_ENV === 'development'
 
 if (typeof window !== 'undefined') {
@@ -31,7 +32,7 @@ if (typeof window !== 'undefined') {
   if (window.self === window.top && Xt.debug) {
     requestAnimationFrame(() => {
       console.debug(
-        '%cXt.debug activated, to suppress set "Xt.debug = false" or set NODE_ENV production',
+        '%cXt.debug activated, to suppress set "Xt.debug = false" or set NODE_ENV="production"',
         'font-weight:bold; color: white; background-color: #0078ff; padding: 6px 10px;'
       )
       // images
@@ -632,7 +633,7 @@ if (typeof window !== 'undefined') {
         // momentum
         const fncFriction = obj.friction
         // set
-        if (fncFriction && Xt.dataStorage.get(el, 'xtFrictionX')) {
+        if (fncFriction && Xt.dataStorage.get(el, 'xtFrictionX') && !Xt.noDuration) {
           // friction
           xCurrent += fncFriction(Math.abs(xDist)) * Math.sign(xDist)
           yCurrent += fncFriction(Math.abs(yDist)) * Math.sign(yDist)
@@ -658,7 +659,7 @@ if (typeof window !== 'undefined') {
         Xt.dataStorage.set(el, 'xtFrictionX', xCurrent)
         Xt.dataStorage.set(el, 'xtFrictionY', yCurrent)
         // loop
-        if (fncFriction) {
+        if (fncFriction && !Xt.noDuration) {
           const frictionLimit = obj.frictionLimit ? obj.frictionLimit : 1.5
           xDist = obj.x - xCurrent
           yDist = obj.y - yCurrent
@@ -964,7 +965,7 @@ if (typeof window !== 'undefined') {
    */
   Xt.animTimeout = (el, func, suffix = '', timing = null) => {
     clearTimeout(Xt.dataStorage.get(el, `xtAnimTimeout${suffix}`))
-    timing = timing || timing === 0 ? timing : Xt.animTime(el)
+    timing = Xt.noDuration ? 0 : timing || timing === 0 ? timing : Xt.animTime(el)
     Xt.dataStorage.set(el, `xtAnimTimeout${suffix}`, setTimeout(func, timing))
   }
 

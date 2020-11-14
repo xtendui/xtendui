@@ -1,7 +1,6 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/addons/ripple'
 import gsap from 'gsap'
-gsap.config({ force3D: false })
 
 Xt.mount.push({
   matches: '#iframe--ripple-animation-v1 body .btn, #iframe--ripple-animation-v1 body .card', // add your own selector instead of body to contain the code
