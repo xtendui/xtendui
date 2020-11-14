@@ -12,7 +12,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-2 items-center demo--toggle-progress">
 
-  <button type="button" class="btn btn-md in-toggle ${btnDefault()}">
+  <button type="button" class="btn btn-md rounded-md ${btnDefault()} in-toggle">
     Toggle 0
     <span class="loader loader-y">
       <span class="filler text-accent-500">

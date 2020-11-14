@@ -31,7 +31,7 @@ module.exports = {
     '.btn-close': {
       // setup
       position: 'absolute',
-      zIndex: theme('zIndex.top'),
+      zIndex: `calc(${theme('zIndex.top')} - 1)`,
       top: '0',
       right: '0',
       lineHeight: '0 !important',

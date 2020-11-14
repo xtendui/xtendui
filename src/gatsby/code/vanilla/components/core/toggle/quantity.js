@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-2 items-center" data-xt-toggle="{ min: 2, max: 2, autoDisable: true }">
+<div class="list list-2 items-center" data-xt-toggle="{ min: 2, max: 2 }">
 
   <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
     Toggle 0

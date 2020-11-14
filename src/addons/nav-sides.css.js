@@ -4,7 +4,7 @@ module.exports = {
       // setup
       cursor: 'none',
       position: 'absolute',
-      zIndex: theme('zIndex.top'),
+      zIndex: `calc(${theme('zIndex.top')} - 1)`,
       top: '0',
       height: '100%',
       '.slider.xt-disabled &': {

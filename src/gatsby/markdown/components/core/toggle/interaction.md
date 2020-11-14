@@ -111,7 +111,7 @@ You can specify `min` and `max` concurrent activations. The `min` option is fulf
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `min:Number`                          | `0`        | Minimum number of concurrent elements activated            |
 | Option                  | `max:Number`                          | `1`        | Maximum number of concurrent elements activated            |
-| Option                  | `autoDisable:Boolean`                          | `false`        | Disable automatically when cannot be activated             |
+| Option                  | `autoDisable:Boolean`                          | `true`        | Disable automatically when cannot be activated due to `min` and `max` values             |
 
 </div>
 

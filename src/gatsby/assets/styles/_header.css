@@ -172,7 +172,6 @@
 }
 
 .gatsby_btn-site_article_sidebar, .gatsby_btn-site_header_link {
-  pointer-events: auto !important;
   padding: 0;
   padding-bottom: 1px;
   border-width: 0;

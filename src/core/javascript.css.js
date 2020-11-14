@@ -110,7 +110,7 @@ module.exports = {
       marginTop: '-9px',
       width: '100px',
       height: '18px',
-      zIndex: theme('zIndex.top') + 1,
+      zIndex: theme('zIndex.top'),
       lineHeight: '0',
       textAlign: 'right',
       '&:before': {

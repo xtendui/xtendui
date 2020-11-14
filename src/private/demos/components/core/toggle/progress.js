@@ -14,6 +14,7 @@ Xt.mount.push({
     // init
 
     let self = new Xt.Toggle(object, {
+      min: 1,
       auto: {
         time: 4000,
         pause: ':scope > button, .toggle',

@@ -24,7 +24,7 @@ demo.htmlSource = `
     Target 0
   </div>
 
-  <div class="card toggle in-toggle rounded-md ${cardToggle()}">
+  <div class="card toggle rounded-md ${cardToggle()} in-toggle">
     Target 1
   </div>
 
@@ -46,7 +46,7 @@ demo.htmlSource = `
     Target 0
   </div>
 
-  <div class="card toggle in-toggle rounded-md ${cardToggle()}">
+  <div class="card toggle rounded-md ${cardToggle()} in-toggle">
     Target 1
   </div>
 

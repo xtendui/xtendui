@@ -3046,7 +3046,7 @@ Toggle.optionsDefaultSuper = {
   // quantity
   min: 0,
   max: 1,
-  autoDisable: false,
+  autoDisable: true,
   // event
   on: 'click',
   off: false,

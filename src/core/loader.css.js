@@ -3,7 +3,7 @@ module.exports = {
     '.loader': {
       // setup
       position: 'absolute',
-      zIndex: theme('zIndex.top'),
+      zIndex: `calc(${theme('zIndex.top')} - 1)`,
       top: '0',
       left: '0',
       bottom: '0',

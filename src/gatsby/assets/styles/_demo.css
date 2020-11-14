@@ -167,7 +167,7 @@ pre {
       height: 100%;
     }
     &.active {
-      z-index: 11;
+      z-index: theme('zIndex.top');
     }
   }
   &[data-iframe] {
@@ -235,7 +235,7 @@ pre {
 
 #gatsby_open-full {
   position: fixed;
-  z-index: calc(theme('zIndex.top') + 100);
+  z-index: theme('zIndex.top');
   top: 0;
   left: 0;
   bottom: 0;
