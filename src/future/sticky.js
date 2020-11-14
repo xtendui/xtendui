@@ -28,7 +28,7 @@ class Sticky extends Xt.Toggle {
     // container
     let container = self.object.closest('.xt-container')
     if (!container) {
-      container = Xt.createElement('<div class="xt-container xt-fixed-check xt-cloned"></div>')
+      container = Xt.createElement('<div class="xt-container xt-cloned"></div>')
       self.object.before(container)
       // @FIX mount inside clone components (sticky, scroll etc..)
       requestAnimationFrame(() => {

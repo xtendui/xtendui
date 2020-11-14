@@ -37,7 +37,7 @@ class Scroll extends Xt.Toggle {
         // sticky container
         let container = el.closest('.xt-container')
         if (!container) {
-          container = Xt.createElement('<div class="xt-container xt-fixed-check"></div>')
+          container = Xt.createElement('<div class="xt-container"></div>')
           el.before(container)
           // @FIX mount inside clone components (sticky, scroll etc..)
           container.classList.add('xt-ignore', 'xt-ignore-once')

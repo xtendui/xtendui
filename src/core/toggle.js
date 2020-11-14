@@ -2433,16 +2433,6 @@ class Toggle {
         if (actionCurrent === 'On') {
           // checks
           Xt.scrollbar.add(self.namespace)
-          // check fixed
-          const checks = document.querySelectorAll('.xt-fixed-check, .xt-fixed-check > *')
-          for (const check of checks) {
-            const style = getComputedStyle(check)
-            if (style.position === 'fixed') {
-              check.classList.add('xt-fixed')
-            } else {
-              check.classList.remove('xt-fixed')
-            }
-          }
           // scrollbar
           const container = document.documentElement
           container.classList.add('xt-scrollbar')
