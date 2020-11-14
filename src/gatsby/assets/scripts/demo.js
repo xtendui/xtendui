@@ -284,12 +284,12 @@ const populateDemo = (container, i) => {
       <div class="gatsby_demo_code_tabs_left list list-px"></div>
       <div class="gatsby_demo_code_tabs_right list list-px">
         <div data-xt-tooltip="{ position: 'bottom-end' }">
-          <button type="button" class="btn btn-tiny btn-clipboard" aria-label="Copy to clipboard">
+          <button type="button" class="btn btn-tiny btn-clipboard" aria-label="Copy to Clipboard">
             ${iconCopy()}
           </button>
           <div class="tooltip transform transition duration-300 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
             <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()}">
-              Copy to clipboard
+              Copy to Clipboard
             </div>
           </div>
         </div>

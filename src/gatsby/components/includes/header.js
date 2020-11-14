@@ -40,7 +40,7 @@ export default function Header({ page }) {
                 </div>
                 <div>
                   <div className="gatsby_site_header_top_social">
-                    <div data-xt-tooltip="{ position: 'left', strategy: 'fixed' }">
+                    <div data-xt-tooltip="{ position: 'bottom-end' }">
                       <a
                         href={site.siteMetadata.npm}
                         target="_blank"
@@ -53,7 +53,7 @@ export default function Header({ page }) {
                         <div className={`tooltip-sm rounded shadow-tooltip ${cardBlack()}`}>Visit on Npm</div>
                       </div>
                     </div>
-                    <span data-xt-tooltip="{ position: 'left', strategy: 'fixed' }">
+                    <span data-xt-tooltip="{ position: 'bottom-end' }">
                       <a
                         href={site.siteMetadata.github}
                         target="_blank"

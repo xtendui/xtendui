@@ -1195,6 +1195,7 @@ class Slider extends Xt.Toggle {
 
   /**
    * destroy
+   * @param {Boolean} weak Do not destroy component
    */
   destroy(weak = false) {
     const self = this

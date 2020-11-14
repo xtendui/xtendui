@@ -55,18 +55,15 @@ class Tooltip extends Xt.Toggle {
     const options = self.options
     // super
     super.activate(el, type)
-    // targets
-    if (type === 'targets') {
-      // instant
-      el.classList.add('xt-transition-none')
-      requestAnimationFrame(() => {
-        el.classList.remove('xt-transition-none')
-      })
-      // popper
-      const popperInstance = Xt.dataStorage.get(el, `${self.componentNamespace}Popper`)
-      if (popperInstance) {
-        popperInstance.update()
-      } else if (options.popperjs) {
+    // popperjs
+    if (options.popperjs) {
+      if (type === 'targets') {
+        // instant
+        el.classList.add('xt-transition-none')
+        requestAnimationFrame(() => {
+          el.classList.remove('xt-transition-none')
+        })
+        // popperjs
         const element = self.getElements(el)[0]
         const popperInstance = createPopper(element, el, {
           placement: options.position,
@@ -102,7 +99,7 @@ class Tooltip extends Xt.Toggle {
           ],
           ...options.popperjs,
         })
-        Xt.dataStorage.set(el, `${self.componentNamespace}Popper`, popperInstance) // change also in doc xttooltipPopperInstance
+        Xt.dataStorage.set(el, 'PopperInstance', popperInstance)
       }
     }
   }
@@ -114,14 +111,17 @@ class Tooltip extends Xt.Toggle {
    */
   deactivateDone(el, type) {
     const self = this
+    const options = self.options
     // super
     super.deactivateDone(el, type)
-    // popper
-    if (type === 'targets') {
-      const popperInstance = Xt.dataStorage.get(el, `${self.componentNamespace}Popper`)
-      if (popperInstance) {
-        popperInstance.destroy()
-        Xt.dataStorage.remove(el, `${self.componentNamespace}Popper`)
+    // popperjs
+    if (options.popperjs) {
+      if (type === 'targets') {
+        const popperInstance = Xt.dataStorage.get(el, 'PopperInstance')
+        if (popperInstance) {
+          popperInstance.destroy()
+          Xt.dataStorage.remove(el, 'PopperInstance')
+        }
       }
     }
   }

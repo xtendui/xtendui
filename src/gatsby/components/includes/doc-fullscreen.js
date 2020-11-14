@@ -8,7 +8,7 @@ export default class DocFullscreen extends React.Component {
       <>
         <div id="gatsby_open-full-trigger"></div>
         <div id="gatsby_open-full" className="toggle">
-          <div className="btn btn-close" aria-label="Close" data-xt-tooltip="{ targets: '#gatsby_open-full-tooltip', position: 'bottom-end' }">
+          <div className="btn btn-close" aria-label="Close">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="icon"
@@ -27,12 +27,6 @@ export default class DocFullscreen extends React.Component {
             </svg>
           </div>
           <div className="card-content" id="gatsby_open-full-content"></div>
-        </div>
-        <div
-          className="tooltip transform transition duration-300 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0"
-          id="gatsby_open-full-tooltip"
-        >
-          <div className={`tooltip-sm rounded shadow-tooltip ${cardBlack()}`}>Close Fullscreen</div>
         </div>
       </>
     )
