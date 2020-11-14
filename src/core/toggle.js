@@ -2082,7 +2082,6 @@ class Toggle {
    * event wheel smooth for Xt
    * @param {Event} e
    */
-
   eventWheelsmooth(e) {
     const self = this
     const options = self.options
@@ -2206,10 +2205,11 @@ class Toggle {
           self.detail.wheelCurrent = el.scrollTop
         }
       } else {
+        const translate = Xt.getTranslate(el)
         if (options.wheel.horizontal) {
-          self.detail.wheelCurrent = -Xt.getTranslate(el)[0]
+          self.detail.wheelCurrent = -translate[0]
         } else {
-          self.detail.wheelCurrent = -Xt.getTranslate(el)[1]
+          self.detail.wheelCurrent = -translate[1]
         }
       }
       // set end
@@ -2254,7 +2254,6 @@ class Toggle {
    * @param {Number} min Minimum value
    * @param {Number} max Maximum value
    */
-
   eventFrictionsmooth(el, min, max) {
     const self = this
     const options = self.options
@@ -2313,7 +2312,6 @@ class Toggle {
   /**
    * event wheel stop for Xt
    */
-
   eventWheelstop() {
     const self = this
     const el = self.wheel
@@ -3013,7 +3011,6 @@ class Toggle {
   /**
    * destroy disabled
    */
-
   destroyDisabled() {
     const self = this
     const options = self.options

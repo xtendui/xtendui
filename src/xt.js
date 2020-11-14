@@ -618,8 +618,9 @@ if (typeof window !== 'undefined') {
         let xCurrent
         let yCurrent
         if (transform) {
-          xCurrent = Xt.getTranslate(el)[0]
-          yCurrent = Xt.getTranslate(el)[1]
+          const translate = Xt.getTranslate(el)
+          xCurrent = translate[0]
+          yCurrent = translate[1]
         } else {
           const rect = el.getBoundingClientRect()
           xCurrent = rect.left
@@ -629,11 +630,11 @@ if (typeof window !== 'undefined') {
         let yDist = obj.y - yCurrent
         // momentum
         const fncFriction = obj.friction
-        // instant position if Xt.dataStorage.get
+        // set
         if (fncFriction && Xt.dataStorage.get(el, 'xtFrictionX')) {
+          // friction
           xCurrent += fncFriction(Math.abs(xDist)) * Math.sign(xDist)
           yCurrent += fncFriction(Math.abs(yDist)) * Math.sign(yDist)
-          // set
           if (transform) {
             el.style.transform = `translateX(${xCurrent}px) translateY(${yCurrent}px)`
           } else {
@@ -641,6 +642,7 @@ if (typeof window !== 'undefined') {
             el.style.top = `${yCurrent}px`
           }
         } else {
+          // instant
           xCurrent = obj.x
           yCurrent = obj.y
           // set
@@ -651,7 +653,7 @@ if (typeof window !== 'undefined') {
             el.style.left = `${xCurrent}px`
           }
         }
-        // next interaction friction position
+        // next interaction friction
         Xt.dataStorage.set(el, 'xtFrictionX', xCurrent)
         Xt.dataStorage.set(el, 'xtFrictionY', yCurrent)
         // loop
@@ -668,7 +670,7 @@ if (typeof window !== 'undefined') {
                 // continue friction
                 Xt.friction(el, obj, transform)
               } else {
-                // next interaction instant position
+                // next interaction instant
                 Xt.dataStorage.remove(el, 'xtFrictionX')
                 Xt.dataStorage.remove(el, 'xtFrictionY')
               }
@@ -684,12 +686,6 @@ if (typeof window !== 'undefined') {
    * @param {Node|HTMLElement|EventTarget|Window} element Element to check target
    * @return {Array} Values [x, y]
    */
-  /*
-  USAGE:
-  Xt.getTranslate(el)[0]; // for translateX
-  Xt.getTranslate(el)[1]; // for translateY
-  */
-
   Xt.getTranslate = element => {
     const transArr = []
     const style = getComputedStyle(element)
@@ -1128,11 +1124,6 @@ if (typeof window !== 'undefined') {
   /**
    * utility vars
    */
-
-  // window height value only on width resize to fix mobile window height changes
-  // height: 100vh;
-  // height: calc(var(--vh, 1vh) * 100);
-
   Xt.innerHeightSet = () => {
     Xt.innerHeight = window.innerHeight
     document.documentElement.style.setProperty('--vh', `${Xt.innerHeight * 0.01}px`)
@@ -1156,7 +1147,6 @@ if (typeof window !== 'undefined') {
   /**
    * scrollRestoration
    */
-
   Xt.ready(() => {
     if ('scrollRestoration' in history) {
       history.scrollRestoration = Xt.scrollRestoration
