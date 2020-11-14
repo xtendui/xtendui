@@ -1649,8 +1649,6 @@ class Toggle {
         } else if (typeof options.instant === 'object' && options.instant[type]) {
           obj[type].instantType = true
         }
-        // special
-        self.specialZindex(actionCurrent, obj)
         // start queue
         self.queueDelay(actionCurrent, actionOther, obj, type, queueInitial)
       }
@@ -1875,6 +1873,8 @@ class Toggle {
   queueAnim(actionCurrent, actionOther, obj, el, type) {
     const self = this
     const options = self.options
+    // special
+    self.specialZindex(actionCurrent, el, type)
     // anim
     const duration = Xt.noDuration ? 0 : Xt.animTime(el, options.duration || options[`duration${actionCurrent}`])
     clearTimeout(Xt.dataStorage.get(el, `${self.componentNamespace + type}AnimTimeout`))
@@ -2326,30 +2326,20 @@ class Toggle {
   /**
    * zindex on activation
    * @param {String} actionCurrent Current action
-   * @param {Object} obj Queue object
+   * @param {Node|HTMLElement|EventTarget|Window} el Element to be animated
+   * @param {String} type Type of element
    */
-  specialZindex(actionCurrent, obj) {
+  specialZindex(actionCurrent, el, type) {
     const self = this
     const options = self.options
-    if (options.zIndex) {
-      // eslint-disable-next-line guard-for-in
-      for (const type in options.zIndex) {
-        for (const el of obj[type].queueEls) {
-          self.detail.zIndex = self.detail.zIndex ? self.detail.zIndex : options.zIndex[type].start
-          self.detail.zIndex = self.detail.zIndex + options.zIndex[type].factor
-          el.style.zIndex = self.detail.zIndex
-          // zIndex reset after duration
-          const duration = Xt.noDuration ? 0 : Xt.animTime(el, options.duration || options[`duration${actionCurrent}`])
-          clearTimeout(Xt.dataStorage.get(el, `${self.componentNamespace}indexTimeout`))
-          Xt.dataStorage.set(
-            el,
-            `${self.componentNamespace}indexTimeout`,
-            setTimeout(() => {
-              self.detail.zIndex = options.zIndex[type].start + options.zIndex[type].factor
-              el.style.zIndex = self.detail.zIndex
-            }, duration)
-          )
-        }
+    if (options.zIndex && options.zIndex[type]) {
+      if (actionCurrent === 'On') {
+        self.detail.zIndex = self.detail.zIndex ? self.detail.zIndex : options.zIndex[type].start
+        self.detail.zIndex = self.detail.zIndex + options.zIndex[type].factor
+        el.style.zIndex = self.detail.zIndex
+      } else if (actionCurrent === 'Off') {
+        self.detail.zIndex = options.zIndex[type].start + options.zIndex[type].factor
+        el.style.zIndex = self.detail.zIndex
       }
     }
   }
