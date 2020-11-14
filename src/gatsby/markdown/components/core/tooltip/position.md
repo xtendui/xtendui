@@ -35,7 +35,9 @@ You can customize **position and arrow** in the [tooltip component](/components/
   </demovanilla>
 </demo>
 
-There are some spacing javascript options.
+Use `.tooltip-nospace` to **disable tooltip spacing**.
+
+Here are the main spacing javascript options, more [popperjs](https://popper.js.org/docs/v2/) options with [popperjs options](/components/core/tooltip/other#popperjs).
 
 <div class="table-scroll">
 

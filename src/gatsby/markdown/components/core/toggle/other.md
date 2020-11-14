@@ -64,7 +64,7 @@ If you need to toggle **multiple targets** with the **same element** assign `dat
 | Option                  | `scrollbar:Boolean`                          | `false`        | Hide body scrollbars on activation            |
 | Option                  | `onBlock:Milliseconds`                          | `true`        | Block concurrent activation events for some time            |
 | Option                  | `offBlock:Milliseconds`                          | `true`        | Block concurrent deactivation events for some time            |
-| Option                  | `zIndex:Boolean|Object`                 | `false`     | Set zIndex on activation, can be one or more objects ex: `{ elements: true, elementsInner: true,  targets: true, targetsInner: true }`, the object have `start` and `factor` for the starting zIndex and the factor number to add          |
+| Option                  | `zIndex:Object|Boolean`                 | `false`     | Set `z-index` on activation, can be one or more objects ex: `zIndex: { targets: { start: 600, factor: -1 } },` can be `elements`, `targets`, `elementsInner`, `targetsInner`          |
 | Option                  | `focusLimit:Boolean`                          | `false`        | Limit focus on activation            |
 | Option                  | `aria:Object|false`                          | `Object`        | Inject aria attributes            |
 | Option                  | `aria.tabindex:Boolean`                          | `true`        | Inject aria tabindex attributes            |

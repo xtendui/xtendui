@@ -29,7 +29,7 @@ demo.htmlSource = `
             Menu #1
           </a>
 
-          <div class="drop drop-static p-0">
+          <div class="drop drop-static drop-nospace">
             <div class="drop-inner overflow-hidden">
               <div class="design-setup bg-accent-900"></div>
               <div class="drop-content py-10 text-white links-inverse text-sm">
@@ -132,7 +132,7 @@ demo.htmlSource = `
             Menu #2
           </a>
 
-          <div class="drop drop-static p-0">
+          <div class="drop drop-static drop-nospace">
             <div class="drop-inner overflow-hidden">
               <div class="design-setup bg-accent-900"></div>
               <div class="drop-content py-10 text-white links-inverse text-sm">
@@ -265,7 +265,7 @@ demo.htmlSource = `
             Menu #3
           </a>
 
-          <div class="drop drop-static p-0">
+          <div class="drop drop-static drop-nospace">
             <div class="drop-inner overflow-hidden">
               <div class="design-setup bg-accent-900"></div>
               <div class="drop-content py-10 text-white links-inverse text-sm">

@@ -34,7 +34,7 @@ You can disable styles and javascript using `.tooltip-disable`.
 
 ## Popperjs
 
-You can **pass an option** to initialize [popperjs](https://popper.js.org/docs/v2/) with different options.
+You can **pass an option** to [popperjs](https://popper.js.org/docs/v2/) for initialization.
 
 <div class="table-scroll">
 

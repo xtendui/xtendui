@@ -35,7 +35,9 @@ You can customize **position and arrow** in the [drop component](/components/cor
   </demovanilla>
 </demo>
 
-There are some spacing javascript options.
+Use `.drop-nospace` to **disable drop spacing**.
+
+Here are the main spacing javascript options, more [popperjs](https://popper.js.org/docs/v2/) options with [popperjs options](/components/core/drop/other#popperjs).
 
 <div class="table-scroll">
 

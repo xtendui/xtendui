@@ -52,16 +52,16 @@ module.exports = {
         zIndex: theme('zIndex.tooltip'),
       },
       // styles
-      '[data-popper-placement^="top"]&': {
+      '[data-popper-placement^="top"]&:not(.tooltip-nospace)': {
         paddingBottom: theme('spacing.2'),
       },
-      '[data-popper-placement^="bottom"]&': {
+      '[data-popper-placement^="bottom"]&:not(.tooltip-nospace)': {
         paddingTop: theme('spacing.2'),
       },
-      '[data-popper-placement^="left"]&': {
+      '[data-popper-placement^="left"]&:not(.tooltip-nospace)': {
         paddingRight: theme('spacing.2'),
       },
-      '[data-popper-placement^="right"]&': {
+      '[data-popper-placement^="right"]&:not(.tooltip-nospace)': {
         paddingLeft: theme('spacing.2'),
       },
     },

@@ -18,7 +18,7 @@ demo.htmlSource = `
       static
     </button>
 
-    <div class="drop drop-static p-0">
+    <div class="drop drop-static drop-nospace">
       <div class="card w-full rounded-md shadow-drop ${cardWhite()}">
         <div class="md:card-group">
           <div class="card-md md:w-7/12 bg-gray-400">

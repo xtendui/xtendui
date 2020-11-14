@@ -51,16 +51,16 @@ module.exports = {
         zIndex: theme('zIndex.drop'),
       },
       // styles
-      '[data-popper-placement^="top"]&': {
+      '[data-popper-placement^="top"]&:not(.drop-nospace)': {
         paddingBottom: theme('spacing.4'),
       },
-      '[data-popper-placement^="bottom"]&': {
+      '[data-popper-placement^="bottom"]&:not(.drop-nospace)': {
         paddingTop: theme('spacing.4'),
       },
-      '[data-popper-placement^="left"]&': {
+      '[data-popper-placement^="left"]&:not(.drop-nospace)': {
         paddingRight: theme('spacing.4'),
       },
-      '[data-popper-placement^="right"]&': {
+      '[data-popper-placement^="right"]&:not(.drop-nospace)': {
         paddingLeft: theme('spacing.4'),
       },
     },
