@@ -1,4 +1,7 @@
 module.exports = {
+  // globals
+  javascript: require('./src/core/javascript.css.js'),
+  layout: require('./src/core/layout.css.js'),
   // core
   animation: require('./src/core/animation.css.js'),
   badge: require('./src/core/badge.css.js'),
@@ -6,9 +9,7 @@ module.exports = {
   card: require('./src/core/card.css.js'),
   drop: require('./src/core/drop.css.js'),
   form: require('./src/core/form.css.js'),
-  javascript: require('./src/core/javascript.css.js'),
   icons: require('./src/core/icons.css.js'),
-  layout: require('./src/core/layout.css.js'),
   link: require('./src/core/link.css.js'),
   list: require('./src/core/list.css.js'),
   loader: require('./src/core/loader.css.js'),
@@ -26,6 +27,6 @@ module.exports = {
   ripple: require('./src/addons/ripple.css.js'),
   separator: require('./src/addons/separator.css.js'),
   'nav-sides': require('./src/addons/nav-sides.css.js'),
-  // next
+  // future
   sticky: require('./src/future/sticky.css.js'),
 }

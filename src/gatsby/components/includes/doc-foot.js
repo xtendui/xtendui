@@ -9,6 +9,10 @@ export default class DocFoot extends React.Component {
     const postsIntroduction = page.postsAll.posts.filter(
       x => ['Introduction'].includes(x.post.frontmatter.type) && x.post.frontmatter.title !== x.post.frontmatter.parent
     )
+    const postsGlobals = page.postsAll.posts.filter(
+      x =>
+        ['Components'].includes(x.post.frontmatter.type) && x.post.frontmatter.category === 'Globals' && x.post.frontmatter.parent === page.post.frontmatter.parent
+    )
     const postsCore = page.postsAll.posts.filter(
       x =>
         ['Components'].includes(x.post.frontmatter.type) && x.post.frontmatter.category === 'Core' && x.post.frontmatter.parent === page.post.frontmatter.parent
@@ -37,6 +41,21 @@ export default class DocFoot extends React.Component {
                     <div className="h4">Setup or other problems?</div>
                     <p>
                       Check out the <strong>Getting Started</strong> pages.
+                    </p>
+                  </Link>
+                </div>
+              ) : null}
+
+              {page.post.frontmatter.category !== 'Globals' && page.post.frontmatter.category !== 'Globals' && postsGlobals.length ? (
+                <div className="gatsby_listing-column">
+                  <Link to={`/components/globals/${kebabCase(page.post.frontmatter.parent)}`} className="card gatsby_listing-item">
+                    <div className="h4">Visit the Globals pages</div>
+                    <p>
+                      There {postsGlobals.length === 1 ? 'is' : 'are'}{' '}
+                      <strong>
+                        {postsGlobals.length} globals page{postsAddons.length === 1 ? '' : 's'}{' '}
+                      </strong>{' '}
+                      for {page.post.frontmatter.parent}.
                     </p>
                   </Link>
                 </div>

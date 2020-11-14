@@ -1,18 +1,31 @@
 ---
 type: "Components"
-category: "Core"
+category: "Globals"
 parent: "Layout"
-title: "Css"
-date: "2050-10-10"
+title: "Layout"
+description: "Structural and layout components."
 ---
 
-## Variants
+## Customization
 
-Xtend adds **custom tailwind variants** (see [xtendui/tailwind.preset.js](https://github.com/minimit/xtendui/blob/master/tailwind.preset.js) for default variants) `active` and `group-active`.
+You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/layout.css.js](https://github.com/minimit/xtendui/blob/master/src/core/layout.css.js) for default values.
 
-They styles **when user presses the element** with pseudo selectors `:active` and `.group:active` but also **when the element is activated by javascript** with the class `.active` and `.group.active`.
-
-When you **style active with css** remember to style `&:active, &.active`.
+```jsx
+module.exports = {
+  theme:{
+    xtendui: {
+      layout: {
+        utility: theme => ({
+          // modify utilities
+        }),
+        component: theme => ({
+          // modify components
+        }),
+      },
+    },
+  },
+}
+```
 
 ## Utilities
 

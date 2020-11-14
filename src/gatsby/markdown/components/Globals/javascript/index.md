@@ -1,10 +1,48 @@
 ---
 type: "Components"
-category: "Core"
-parent: "Layout"
+category: "Globals"
+parent: "Javascript"
 title: "Javascript"
-date: "2050-05-05"
+description: "Javascript utilities and animations usability improvements."
 ---
+
+## Installation
+
+Import the **component javascript** file.
+
+```jsx
+import { Xt } from 'xtendui'
+```
+
+## Customization
+
+You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/layout.css.js](https://github.com/minimit/xtendui/blob/master/src/core/javascript.css.js) for default values.
+
+```jsx
+module.exports = {
+  theme:{
+    xtendui: {
+      javascript: {
+        component: theme => ({
+          // modify components
+        }),
+      },
+    },
+  },
+}
+```
+
+## Components
+
+There are various css styles used by various javascript components, they **should not be modified**.
+
+You can **opt out** some behaviour:
+
+* Flash of Unstyled Content (FOUC): Xtend UI **automatically disables page load duration** for animation and transition until javascript is loaded, add `no-js-fouc` to `html` to disable this behaviour.
+
+* Prefers Reduced Motion: Xtend UI **automatically disables duration** for animation and transition when the the user has activated "Prefers Reduced Motion", add `no-js-prm` to `html` to disable this behaviour.
+
+* Initial component animations: Xtend UI **automatically disables duration** for animation and transition on `initial` class used in components init and reinit, add `no-js-initial` to `html` to disable this behaviour.
 
 ## Xt.debug
 
