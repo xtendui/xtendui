@@ -325,7 +325,7 @@ const populateDemo = (container, i) => {
     // populate source
     const sourceTo = item.querySelector('.gatsby_demo_source_populate')
     if (sourceTo) {
-      if (getComputedStyle(sourceTo).display === 'inline-flex') {
+      if (sourceTo.closest('.gatsby_listing-column')) {
         // populate source disable
         container.dataset.isFullscreenOnly = 'true'
       } else {

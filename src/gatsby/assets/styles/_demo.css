@@ -202,9 +202,6 @@ pre {
 
 [data-gatsby-listing-toggle] + .gatsby_demo {
   display: none;
-  .gatsby_demo_source_populate {
-    display: inline-flex; /* populate source disable */
-  }
 }
 
 .gatsby_demo, .gatsby_demo_item, .gatsby_demo_item_wrapper, .gatsby_demo_item_wrapper iframe {
