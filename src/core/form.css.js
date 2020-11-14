@@ -64,7 +64,8 @@ module.exports = {
     },
     '.form-select': {
       // setup
-      '@apply appearance-none': '',
+      '-webkit-appearance': 'none',
+      appearance: 'none',
       backgroundRepeat: 'no-repeat',
       // styles
       paddingRight: '3em',
@@ -91,7 +92,8 @@ module.exports = {
     },
     '.form-check': {
       // setup
-      '@apply appearance-none': '',
+      '-webkit-appearance': 'none',
+      appearance: 'none',
       cursor: 'pointer',
       position: 'relative',
       flexShrink: '0',
