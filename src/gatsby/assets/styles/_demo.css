@@ -3,12 +3,13 @@
  */
 
 #gatsby_body-inner {
+  visibility: hidden;
   position: relative;
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
 }
 
-html.gatsby_iframe-inside {
+.gatsby_iframe-inside {
   body {
     overflow-x: hidden;
     overflow-y: scroll;
@@ -16,11 +17,10 @@ html.gatsby_iframe-inside {
     @apply overflow-main;
   }
   #gatsby_body-inner {
+    visibility: visible;
     height: initial;
     max-width: none;
-  }
-  &.gatsby_iframe-container {
-    #gatsby_body-inner {
+    .gatsby_iframe-container& {
       @apply p-4 md:p-6 lg:p-8;
     }
   }
