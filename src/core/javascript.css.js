@@ -9,6 +9,12 @@ module.exports = {
         overflowY: 'scroll !important',
       },
     },
+    'html:not(.xt-ready)': {
+      // instant animations on page load
+      '*': {
+        '@apply duration-none !important': '',
+      },
+    },
     '.initial': {
       // instant animations on components init and reinit
       '&, *': {

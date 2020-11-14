@@ -116,6 +116,7 @@ if (typeof window !== 'undefined') {
    * init
    */
   Xt.ready(() => {
+    document.querySelector('html').classList.add('xt-ready')
     Xt.setScrollbarWidth()
     Xt.innerHeightSet()
     Xt.mountCheck(document.documentElement)
