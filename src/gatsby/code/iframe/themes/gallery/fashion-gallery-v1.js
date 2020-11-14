@@ -1,9 +1,9 @@
 import React from 'react'
 import path from 'path'
 const btnPrimary = require('components/snippets/classes/btn-primary').default
-const cardStickyDefault = require('components/snippets/classes/card-sticky-default').default
-const cardStickyPrimary = require('components/snippets/classes/card-sticky-primary').default
-const cardDefaultOverlay = require('components/snippets/classes/card-default-overlay').default
+const cardDefault = require('components/snippets/classes/card-default').default
+const cardPrimary = require('components/snippets/classes/card-primary').default
+const cardWhite = require('components/snippets/classes/card-white').default
 const iconX = require('components/snippets/icons').iconX
 const iconChevronDown = require('components/snippets/icons').iconChevronDown
 
@@ -23,7 +23,7 @@ demo.htmlSource = `
 <div class="site_wrapper">
 
   <header class="site_header">
-    <div class="card ${cardStickyPrimary()}">
+    <div class="card card-sm ${cardPrimary()}">
       <div class="h4">Header</div>
     </div>
   </header>
@@ -119,7 +119,7 @@ demo.htmlSource = `
                   </div>
                   <div class="overlay-inner">
 
-                    <div class="card items-center justify-center shadow-overlay ${cardDefaultOverlay()}">
+                    <div class="card items-center justify-center shadow-overlay ${cardWhite()}">
                       <div class="w-full">
 
                         <div class="media-container">
@@ -198,7 +198,7 @@ demo.htmlSource = `
   </main>
 
   <footer class="site_footer">
-    <div class="card h-32 ${cardStickyDefault()}">
+    <div class="card h-32 card-sm ${cardDefault()}">
       <div class="h4">Footer</div>
     </div>
   </footer>

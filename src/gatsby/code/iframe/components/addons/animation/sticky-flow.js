@@ -1,8 +1,8 @@
 import React from 'react'
 import path from 'path'
 const btnPrimary = require('components/snippets/classes/btn-primary').default
-const cardStickyDefault = require('components/snippets/classes/card-sticky-default').default
-const cardStickyPrimary = require('components/snippets/classes/card-sticky-primary').default
+const cardDefault = require('components/snippets/classes/card-default').default
+const cardPrimary = require('components/snippets/classes/card-primary').default
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -17,7 +17,7 @@ export const demo = {
 demo.htmlSource = `
 
 <header class="site_header">
-  <div class="card ${cardStickyPrimary()}">
+  <div class="card card-sm ${cardPrimary()}">
     <div class="h4">Header</div>
   </div>
 </header>
@@ -107,7 +107,7 @@ demo.htmlSource = `
 </main>
 
 <footer class="site_footer">
-  <div class="card h-32 ${cardStickyDefault()}">
+  <div class="card h-32 card-sm ${cardDefault()}">
     <div class="h4">Footer</div>
   </div>
 </footer>

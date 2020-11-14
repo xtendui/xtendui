@@ -1,6 +1,6 @@
 import path from 'path'
 const btnPrimary = require('components/snippets/classes/btn-primary').default
-const cardDefaultTooltip = require('components/snippets/classes/card-default-tooltip').default
+const cardBlack = require('components/snippets/classes/card-black').default
 const inputDefault = require('components/snippets/classes/input-default').default
 
 const filename = __filename.replace(/\\/g, '/')
@@ -20,7 +20,7 @@ demo.htmlSource = `
     </button>
 
     <div class="tooltip">
-      <div class="tooltip-md rounded shadow-tooltip ${cardDefaultTooltip()}">
+      <div class="tooltip-md rounded shadow-tooltip ${cardBlack()}">
         Lorem ipsum dolor sit amet
       </div>
     </div>
@@ -32,7 +32,7 @@ demo.htmlSource = `
     <input type="text" class="form-item rounded-md ${inputDefault()}" aria-label="Focus" placeholder="Focus">
 
     <div class="tooltip">
-      <div class="tooltip-md rounded shadow-tooltip ${cardDefaultTooltip()}">
+      <div class="tooltip-md rounded shadow-tooltip ${cardBlack()}">
         Lorem ipsum dolor sit amet
       </div>
     </div>

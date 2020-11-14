@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 
 import { markdownSlug } from 'components/snippets/markdown-slug'
-const cardDefaultTooltip = require('components/snippets/classes/card-default-tooltip').default
+const cardBlack = require('components/snippets/classes/card-black').default
 const iconPackage = require('components/snippets/icons').iconPackage
 const iconGithub = require('components/snippets/icons').iconGithub
 
@@ -50,7 +50,7 @@ export default function Header({ page }) {
                         dangerouslySetInnerHTML={{ __html: iconPackage() }}
                       ></a>
                       <div className="tooltip transform transition duration-300 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
-                        <div className={`tooltip-sm rounded shadow-tooltip ${cardDefaultTooltip()}`}>Visit on Npm</div>
+                        <div className={`tooltip-sm rounded shadow-tooltip ${cardBlack()}`}>Visit on Npm</div>
                       </div>
                     </div>
                     <span data-xt-tooltip="{ position: 'left', strategy: 'fixed' }">
@@ -63,7 +63,7 @@ export default function Header({ page }) {
                         dangerouslySetInnerHTML={{ __html: iconGithub() }}
                       ></a>
                       <div className="tooltip transform transition duration-300 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
-                        <div className={`tooltip-sm rounded shadow-tooltip ${cardDefaultTooltip()}`}>Visit on Github</div>
+                        <div className={`tooltip-sm rounded shadow-tooltip ${cardBlack()}`}>Visit on Github</div>
                       </div>
                     </span>
                   </div>

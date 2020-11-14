@@ -1,7 +1,7 @@
 import path from 'path'
 const btnPrimary = require('components/snippets/classes/btn-primary').default
-const cardDefaultDrop = require('components/snippets/classes/card-default-drop').default
-const cardPrimaryDrop = require('components/snippets/classes/card-primary-drop').default
+const cardWhite = require('components/snippets/classes/card-white').default
+const cardPrimary = require('components/snippets/classes/card-primary').default
 const iconX = require('components/snippets/icons').iconX
 
 const filename = __filename.replace(/\\/g, '/')
@@ -21,7 +21,7 @@ demo.htmlSource = `
     </button>
 
     <div class="drop">
-      <div class="card w-80 rounded-md shadow-drop ${cardDefaultDrop()}">
+      <div class="card w-80 rounded-md shadow-drop ${cardWhite()}">
         <div class="btn btn-close p-5 text-xl" aria-label="Close">
           ${iconX()}
         </div>
@@ -41,7 +41,7 @@ demo.htmlSource = `
     </button>
 
     <div class="drop">
-      <div class="card rounded-md shadow-drop ${cardPrimaryDrop()}">
+      <div class="card w-80 rounded-md shadow-drop ${cardPrimary()}">
         <div class="btn btn-close p-5 text-xl" aria-label="Close">
           ${iconX()}
         </div>

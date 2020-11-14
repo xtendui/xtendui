@@ -50,7 +50,7 @@ Xt.mount.push({
 
     const addBtn = document.querySelector('#demo--tooltip-events-add')
     const btnPrimary = require('components/snippets/classes/btn-primary').default
-    const cardDefaultTooltip = require('components/snippets/classes/card-default-tooltip').default
+    const cardBlack = require('components/snippets/classes/card-black').default
 
     const addFnc = () => {
       clearTimeout(parseFloat(object.dataset.reinitTimeout))
@@ -69,7 +69,7 @@ Xt.mount.push({
         const indexTr = targets.length + 1
         const strTr = `
           <div class="tooltip" title="Target ${indexTr}">
-            <div class="tooltip-md rounded shadow-tooltip ${cardDefaultTooltip()}">
+            <div class="tooltip-md rounded shadow-tooltip ${cardBlack()}">
               Lorem ipsum dolor sit amet
             </div>
           </div>

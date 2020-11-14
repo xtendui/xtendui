@@ -1,7 +1,7 @@
 import React from 'react'
 import path from 'path'
 const btnPrimary = require('components/snippets/classes/btn-primary').default
-const cardDefaultTooltip = require('components/snippets/classes/card-default-tooltip').default
+const cardBlack = require('components/snippets/classes/card-black').default
 const cardDefault = require('components/snippets/classes/card-default').default
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
@@ -52,7 +52,7 @@ demo.htmlSource = `
   </button>
 
   <div class="tooltip" title="Target 0">
-    <div class="tooltip-md rounded shadow-tooltip ${cardDefaultTooltip()}">
+    <div class="tooltip-md rounded shadow-tooltip ${cardBlack()}">
       Lorem ipsum dolor sit amet
     </div>
   </div>
@@ -62,7 +62,7 @@ demo.htmlSource = `
   </button>
 
   <div class="tooltip" title="Target 1">
-    <div class="tooltip-md rounded shadow-tooltip ${cardDefaultTooltip()}">
+    <div class="tooltip-md rounded shadow-tooltip ${cardBlack()}">
       Lorem ipsum dolor sit amet
     </div>
   </div>

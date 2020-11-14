@@ -1,6 +1,6 @@
 import path from 'path'
 const btnPrimary = require('components/snippets/classes/btn-primary').default
-const cardDefaultDrop = require('components/snippets/classes/card-default-drop').default
+const cardWhite = require('components/snippets/classes/card-white').default
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -19,7 +19,7 @@ demo.htmlSource = `
     </button>
 
     <div class="drop">
-      <div class="card w-80 rounded-md shadow-drop ${cardDefaultDrop()} overflow-y-auto overflow-x-hidden overflow-sub max-h-96">
+      <div class="card w-80 rounded-md shadow-drop ${cardWhite()} overflow-y-auto overflow-x-hidden overflow-sub max-h-96">
         <div class="media-container rounded-t-md ratio-37.5">
           <div class="media-inner">
             <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
@@ -43,7 +43,7 @@ demo.htmlSource = `
     </button>
 
     <div class="drop">
-      <div class="card w-80 rounded-md shadow-drop ${cardDefaultDrop()}">
+      <div class="card w-80 rounded-md shadow-drop ${cardWhite()}">
         <div class="media-container rounded-t-md ratio-37.5">
           <div class="media-inner">
             <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">

@@ -1,6 +1,6 @@
 import path from 'path'
 const btnPrimary = require('components/snippets/classes/btn-primary').default
-const cardDefaultDrop = require('components/snippets/classes/card-default-drop').default
+const cardWhite = require('components/snippets/classes/card-white').default
 const iconPackage = require('components/snippets/icons').iconPackage
 
 const filename = __filename.replace(/\\/g, '/')
@@ -20,7 +20,7 @@ demo.htmlSource = `
     </button>
 
     <div class="drop">
-      <div class="card w-96 rounded-md shadow-drop ${cardDefaultDrop()}">
+      <div class="card w-96 rounded-md shadow-drop ${cardWhite()}">
         <div class="card-md">
           <div class="list list-3 flex-nowrap items-baseline">
             <div>

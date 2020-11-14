@@ -1,7 +1,7 @@
 import path from 'path'
-const btnDefaultGroup = require('components/snippets/classes/btn-default-group').default
-const btnPrimaryGroup = require('components/snippets/classes/btn-primary-group').default
-const inputDefaultGroup = require('components/snippets/classes/input-default-group').default
+const btnDefault = require('components/snippets/classes/btn-default').default
+const btnPrimary = require('components/snippets/classes/btn-primary').default
+const inputDefault = require('components/snippets/classes/input-default').default
 const iconSearch = require('components/snippets/icons').iconSearch
 
 const filename = __filename.replace(/\\/g, '/')
@@ -17,13 +17,13 @@ demo.htmlSource = `
   <div class="list flex-nowrap">
 
     <div class="list-inner flex-auto">
-      <button type="button" class="btn btn-md rounded-l-md ${btnDefaultGroup()}">
+      <button type="button" class="btn btn-md rounded-l-md ${btnDefault()}">
         ${iconSearch({ classes: 'icon-lg' })}
       </button>
-      <input type="text" class="form-item ${inputDefaultGroup()}" aria-label="Search" placeholder="Seach Catalog" />
+      <input type="text" class="form-item ${inputDefault()}" aria-label="Search" placeholder="Seach Catalog" />
     </div>
 
-    <button type="button" class="btn btn-md rounded-r-md ${btnPrimaryGroup()}">
+    <button type="button" class="btn btn-md rounded-r-md ${btnPrimary()}">
       Search
     </button>
 

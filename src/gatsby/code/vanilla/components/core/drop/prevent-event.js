@@ -1,7 +1,7 @@
 import path from 'path'
 const btnPrimary = require('components/snippets/classes/btn-primary').default
 const btnDefaultDrop = require('components/snippets/classes/btn-default-drop').default
-const cardDefaultDropList = require('components/snippets/classes/card-default-drop-list').default
+const cardWhite = require('components/snippets/classes/card-white').default
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -20,7 +20,7 @@ demo.htmlSource = `
     </a>
 
     <div class="drop">
-      <div class="w-64 py-3 rounded-md shadow-drop ${cardDefaultDropList()}">
+      <div class="w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
         <nav class="list flex-col">
           <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit

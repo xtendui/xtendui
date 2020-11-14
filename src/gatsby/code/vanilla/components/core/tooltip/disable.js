@@ -1,5 +1,5 @@
 import path from 'path'
-const cardDefaultTooltip = require('components/snippets/classes/card-default-tooltip').default
+const cardBlack = require('components/snippets/classes/card-black').default
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -14,14 +14,14 @@ demo.htmlSource = `
   Lorem ipsum <a href="#">dolor</a> sit amet
 
   <div class="tooltip">
-    <div class="tooltip-md rounded shadow-tooltip ${cardDefaultTooltip()}">
+    <div class="tooltip-md rounded shadow-tooltip ${cardBlack()}">
 
       <div data-xt-tooltip="{ elements: false, elementsInner: ':scope > a, :scope > button' }">
 
         Lorem ipsum <a href="#">dolor</a> sit amet
 
         <div class="tooltip">
-          <div class="tooltip-md rounded shadow-tooltip ${cardDefaultTooltip()}">
+          <div class="tooltip-md rounded shadow-tooltip ${cardBlack()}">
             Consectetur adipiscing elit
           </div>
         </div>

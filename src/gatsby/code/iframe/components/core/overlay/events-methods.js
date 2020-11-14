@@ -3,7 +3,7 @@ import path from 'path'
 const btnPrimary = require('components/snippets/classes/btn-primary').default
 const btnDefault = require('components/snippets/classes/btn-default').default
 const cardDefault = require('components/snippets/classes/card-default').default
-const cardDefaultOverlay = require('components/snippets/classes/card-default-overlay').default
+const cardWhite = require('components/snippets/classes/card-white').default
 const iconX = require('components/snippets/icons').iconX
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
@@ -54,7 +54,7 @@ demo.htmlSource = `
   <div class="overlay-container max-w-5xl">
     <div class="overlay-inner">
 
-      <div class="card rounded-md shadow-overlay ${cardDefaultOverlay()}">
+      <div class="card rounded-md shadow-overlay ${cardWhite()}">
         <div class="btn btn-close p-5 text-2xl" aria-label="Close">
           ${iconX()}
         </div>

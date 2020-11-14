@@ -1,7 +1,7 @@
 import path from 'path'
 const btnPrimary = require('components/snippets/classes/btn-primary').default
-const cardDefaultTooltip = require('components/snippets/classes/card-default-tooltip').default
-const cardPrimaryTooltip = require('components/snippets/classes/card-primary-tooltip').default
+const cardBlack = require('components/snippets/classes/card-black').default
+const cardPrimary = require('components/snippets/classes/card-primary').default
 const iconLink = require('components/snippets/icons').iconLink
 
 const filename = __filename.replace(/\\/g, '/')
@@ -21,7 +21,7 @@ demo.htmlSource = `
     </button>
 
     <div class="tooltip">
-      <div class="tooltip-md rounded shadow-tooltip ${cardDefaultTooltip()}">
+      <div class="tooltip-md rounded shadow-tooltip ${cardBlack()}">
         <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.<br/>Proin molestie ${iconLink({
           classes: 'icon-md',
         })} diam nec euismod commodo.
@@ -37,7 +37,7 @@ demo.htmlSource = `
     </button>
 
     <div class="tooltip">
-      <div class="tooltip-md rounded shadow-tooltip ${cardPrimaryTooltip()}">
+      <div class="tooltip-md rounded shadow-tooltip ${cardPrimary()}">
         <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.<br/>Proin molestie ${iconLink({
           classes: 'icon-md',
         })} diam nec euismod commodo.

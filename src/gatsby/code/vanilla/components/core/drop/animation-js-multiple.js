@@ -1,8 +1,7 @@
 import path from 'path'
 const btnPrimary = require('components/snippets/classes/btn-primary').default
 const btnDefaultDrop = require('components/snippets/classes/btn-default-drop').default
-const cardDefaultDrop = require('components/snippets/classes/card-default-drop').default
-const cardDefaultDropList = require('components/snippets/classes/card-default-drop-list').default
+const cardWhite = require('components/snippets/classes/card-white').default
 const iconX = require('components/snippets/icons').iconX
 
 const filename = __filename.replace(/\\/g, '/')
@@ -20,7 +19,7 @@ demo.htmlSource = `
   </button>
 
   <div class="drop">
-    <div class="w-64 py-3 rounded-md shadow-drop ${cardDefaultDropList()}">
+    <div class="w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
       <nav class="list flex-col">
         <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -40,7 +39,7 @@ demo.htmlSource = `
   </button>
 
   <div class="drop">
-    <div class="card w-80 rounded-md shadow-drop ${cardDefaultDrop()}">
+    <div class="card w-80 rounded-md shadow-drop ${cardWhite()}">
       <div class="btn btn-close p-5 text-xl" aria-label="Close">
         ${iconX()}
       </div>

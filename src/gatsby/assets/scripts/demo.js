@@ -8,7 +8,7 @@ require('prismjs/components/prism-jsx.min')
 require('prismjs/components/prism-less.min')
 Prism.manual = true
 
-const cardDefaultTooltip = require('components/snippets/classes/card-default-tooltip').default
+const cardBlack = require('components/snippets/classes/card-black').default
 const spinner = require('components/snippets/spinner').default
 const iconCode = require('components/snippets/icons').iconCode
 const iconMaximize = require('components/snippets/icons').iconMaximize
@@ -227,7 +227,7 @@ const populateDemo = (container, i) => {
     ${iconCode()}
   </button>
   <div class="tooltip transform transition duration-300 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
-    <div class="tooltip-sm rounded shadow-tooltip ${cardDefaultTooltip()}">
+    <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()}">
       Show Code
     </div>
   </div>
@@ -240,7 +240,7 @@ const populateDemo = (container, i) => {
     ${iconMaximize()}
   </button>
   <div class="tooltip transform transition duration-300 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
-    <div class="tooltip-sm rounded shadow-tooltip ${cardDefaultTooltip()}">
+    <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()}">
       Open Fullscreen
     </div>
   </div>
@@ -253,7 +253,7 @@ const populateDemo = (container, i) => {
     ${iconExternal()}
   </a>
   <div class="tooltip transform transition duration-300 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
-    <div class="tooltip-sm rounded shadow-tooltip ${cardDefaultTooltip()}">
+    <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()}">
       Open Iframe
     </div>
   </div>
@@ -288,7 +288,7 @@ const populateDemo = (container, i) => {
             ${iconCopy()}
           </button>
           <div class="tooltip transform transition duration-300 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
-            <div class="tooltip-sm rounded shadow-tooltip ${cardDefaultTooltip()}">
+            <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()}">
               Copy to clipboard
             </div>
           </div>

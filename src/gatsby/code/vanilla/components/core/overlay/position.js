@@ -1,6 +1,6 @@
 import path from 'path'
 const btnPrimary = require('components/snippets/classes/btn-primary').default
-const cardDefaultOverlay = require('components/snippets/classes/card-default-overlay').default
+const cardWhite = require('components/snippets/classes/card-white').default
 const iconX = require('components/snippets/icons').iconX
 
 const filename = __filename.replace(/\\/g, '/')
@@ -23,7 +23,7 @@ demo.htmlSource = `
       <div class="overlay-container p-0 max-w-md ml-0 mr-auto">
         <div class="overlay-inner">
 
-          <div class="card min-h-screen shadow-overlay ${cardDefaultOverlay()}">
+          <div class="card min-h-screen shadow-overlay ${cardWhite()}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>
@@ -52,7 +52,7 @@ demo.htmlSource = `
       <div class="overlay-container p-0 max-w-md ml-auto mr-0">
         <div class="overlay-inner">
 
-          <div class="card min-h-screen shadow-overlay ${cardDefaultOverlay()}">
+          <div class="card min-h-screen shadow-overlay ${cardWhite()}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>
@@ -81,7 +81,7 @@ demo.htmlSource = `
       <div class="overlay-container p-0 max-w-md ml-0 mr-auto">
         <div class="overlay-inner">
 
-          <div class="card min-h-screen shadow-overlay ${cardDefaultOverlay()}">
+          <div class="card min-h-screen shadow-overlay ${cardWhite()}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>

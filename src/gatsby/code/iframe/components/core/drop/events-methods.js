@@ -3,7 +3,7 @@ import path from 'path'
 const btnPrimary = require('components/snippets/classes/btn-primary').default
 const cardDefault = require('components/snippets/classes/card-default').default
 const btnDefaultDrop = require('components/snippets/classes/btn-default-drop').default
-const cardDefaultDropList = require('components/snippets/classes/card-default-drop-list').default
+const cardWhite = require('components/snippets/classes/card-white').default
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -53,7 +53,7 @@ demo.htmlSource = `
   </button>
 
   <div class="drop" title="Target 0">
-    <div class="w-64 py-3 rounded-md shadow-drop ${cardDefaultDropList()}">
+    <div class="w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
       <nav class="list flex-col">
         <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -73,7 +73,7 @@ demo.htmlSource = `
   </button>
 
   <div class="drop" title="Target 1">
-    <div class="w-64 py-3 rounded-md shadow-drop ${cardDefaultDropList()}">
+    <div class="w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
       <nav class="list flex-col">
         <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit

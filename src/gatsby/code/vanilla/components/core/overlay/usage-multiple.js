@@ -1,6 +1,6 @@
 import path from 'path'
 const btnPrimary = require('components/snippets/classes/btn-primary').default
-const cardDefaultOverlay = require('components/snippets/classes/card-default-overlay').default
+const cardWhite = require('components/snippets/classes/card-white').default
 const iconX = require('components/snippets/icons').iconX
 
 const filename = __filename.replace(/\\/g, '/')
@@ -21,7 +21,7 @@ demo.htmlSource = `
     <div class="overlay-container max-w-3xl">
       <div class="overlay-inner">
 
-        <div class="card rounded-md shadow-overlay ${cardDefaultOverlay()}">
+        <div class="card rounded-md shadow-overlay ${cardWhite()}">
           <div class="btn btn-close p-5 text-2xl" aria-label="Close">
             ${iconX()}
           </div>
@@ -46,7 +46,7 @@ demo.htmlSource = `
     <div class="overlay-container max-w-3xl">
       <div class="overlay-inner">
 
-        <div class="card rounded-md shadow-overlay ${cardDefaultOverlay()}">
+        <div class="card rounded-md shadow-overlay ${cardWhite()}">
           <div class="btn btn-close p-5 text-2xl" aria-label="Close">
             ${iconX()}
           </div>

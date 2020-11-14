@@ -1,6 +1,6 @@
 import React from 'react'
 
-const cardDefaultTooltip = require('components/snippets/classes/card-default-tooltip').default
+const cardBlack = require('components/snippets/classes/card-black').default
 
 export default class DocFullscreen extends React.Component {
   render() {
@@ -32,7 +32,7 @@ export default class DocFullscreen extends React.Component {
           className="tooltip transform transition duration-300 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0"
           id="gatsby_open-full-tooltip"
         >
-          <div className={`tooltip-sm rounded shadow-tooltip ${cardDefaultTooltip()}`}>Close Fullscreen</div>
+          <div className={`tooltip-sm rounded shadow-tooltip ${cardBlack()}`}>Close Fullscreen</div>
         </div>
       </>
     )

@@ -1,7 +1,7 @@
 import path from 'path'
 const btnPrimary = require('components/snippets/classes/btn-primary').default
 const btnDefaultDrop = require('components/snippets/classes/btn-default-drop').default
-const cardDefaultDropList = require('components/snippets/classes/card-default-drop-list').default
+const cardWhite = require('components/snippets/classes/card-white').default
 const inputDefault = require('components/snippets/classes/input-default').default
 
 const filename = __filename.replace(/\\/g, '/')
@@ -21,7 +21,7 @@ demo.htmlSource = `
     </button>
 
     <div class="drop">
-      <div class="w-64 py-3 rounded-md shadow-drop ${cardDefaultDropList()}">
+      <div class="w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
         <nav class="list flex-col">
           <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -43,7 +43,7 @@ demo.htmlSource = `
     <input type="text" class="form-item rounded-md ${inputDefault()}" aria-label="Focus" placeholder="Focus">
 
     <div class="drop">
-      <div class="w-64 py-3 rounded-md shadow-drop ${cardDefaultDropList()}">
+      <div class="w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
         <nav class="list flex-col">
           <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit

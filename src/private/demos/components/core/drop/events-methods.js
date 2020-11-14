@@ -51,7 +51,7 @@ Xt.mount.push({
     const addBtn = document.querySelector('#demo--drop-events-add')
     const btnPrimary = require('components/snippets/classes/btn-primary').default
     const btnDefaultDrop = require('components/snippets/classes/btn-default-drop').default
-    const cardDefaultDropList = require('components/snippets/classes/card-default-drop-list').default
+    const cardWhite = require('components/snippets/classes/card-white').default
 
     const addFnc = () => {
       clearTimeout(parseFloat(object.dataset.reinitTimeout))
@@ -70,7 +70,7 @@ Xt.mount.push({
         const indexTr = targets.length + 1
         const strTr = `
           <div class="drop" title="Target ${indexTr}">
-            <div class="w-64 py-3 rounded-md shadow-drop ${cardDefaultDropList()}">
+            <div class="w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
               <nav class="list flex-col">
                 <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit

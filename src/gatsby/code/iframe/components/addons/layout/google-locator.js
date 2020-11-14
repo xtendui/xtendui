@@ -1,9 +1,9 @@
 import React from 'react'
 import path from 'path'
 const spinner = require('components/snippets/spinner').default
-const btnDefaultGroup = require('components/snippets/classes/btn-default-group').default
+const btnDefault = require('components/snippets/classes/btn-default').default
 const btnPrimary = require('components/snippets/classes/btn-primary').default
-const inputDefaultGroup = require('components/snippets/classes/input-default-group').default
+const inputDefault = require('components/snippets/classes/input-default').default
 const switchDefault = require('components/snippets/classes/form-switch-default').default
 const iconLocate = require('components/snippets/icons').iconLocate
 const iconSearch = require('components/snippets/icons').iconSearch
@@ -31,11 +31,11 @@ demo.htmlSource = `
           <div class="w-full">
             <div class="list flex-nowrap">
               <div class="list-inner flex-auto">
-                <input type="text" class="form-item rounded-l-md ${inputDefaultGroup()}" aria-label="Search" placeholder="Search">
-                <button type="button" class="btn-locate btn btn-md rounded-md ${btnDefaultGroup()}">
+                <input type="text" class="form-item rounded-l-md ${inputDefault()}" aria-label="Search" placeholder="Search">
+                <button type="button" class="btn-locate btn btn-md rounded-md ${btnDefault()}">
                   ${iconLocate({ classes: 'icon-lg' })}
                 </button>
-                <button type="button" class="btn-search btn btn-md rounded-r-md ${btnDefaultGroup()}">
+                <button type="button" class="btn-search btn btn-md rounded-r-md ${btnDefault()}">
                   ${iconSearch({ classes: 'icon-lg' })}
                 </button>
               </div>
