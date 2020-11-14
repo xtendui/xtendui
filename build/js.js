@@ -1,8 +1,6 @@
 const glob = require('glob')
 const writeFile = require('write')
 
-// build xtend js
-
 let jsCore = ''
 const jsCoreGlob = new glob.Glob('src/core/**/*.js', { ignore: ['**/*.css.js'] }, (er, files) => {
   jsCore += `if (typeof window !== 'undefined') {\n`
@@ -27,6 +25,19 @@ const jsAddonsGlob = new glob.Glob('src/addons/**/*.js', { ignore: ['**/*.css.js
 })
 jsAddonsGlob.on('end', () => {
   writeFile('./build/xtend-addons.js', jsAddons)
+})
+
+let jsFuture = `if (typeof window !== 'undefined') {\n`
+const jsFutureGlob = new glob.Glob('src/future/**/*.js', { ignore: ['**/*.css.js'] }, (er, files) => {
+  for (const file of files) {
+    // const obj = path.parse(file); ${obj.dir}/${obj.name}
+    jsFuture += `  require('xtendui/${file}')\n`
+  }
+  jsFuture += '}'
+  jsFuture += '\n'
+})
+jsFutureGlob.on('end', () => {
+  writeFile('./build/xtend-future.js', jsFuture)
 })
 
 let jsDemos = `if (typeof window !== 'undefined') {\n`
