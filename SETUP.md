@@ -60,38 +60,7 @@ Then you can use css with tailwind.
 
 More info in Tailwind docs [tailwind postcss](https://tailwindcss.com/docs/using-with-preprocessors), [tailwind theme](https://tailwindcss.com/docs/theme).
 
-## Javascript
-
-You can import the **components you need** as described in the demos.
-
-```jsx
-import { Xt } from 'xtendui'
-import 'xtendui/src/core/toggle'
-```
-
-#### Animation
-
-This library in the demos uses [gsap](https://github.com/greensock/GSAP) for javascript animations.
-
-```
-npm install gsap --save
-```
-
-Then add this one time to setup gsap, **we disable force3D** for smoother pixels animations, and we make **instant animations** when the the user has activated "Prefers Reduced Motion".
-
-```jsx
-// no force3d
-
-gsap.config({ force3D: false })
-
-// instant animations accessibility
-
-if (Xt.noDuration) {
-  gsap.globalTimeline.timeScale(1000)
-}
-```
-
-## Customization
+#### Customization
 
 You can **customize theme** inside `tailwind.config.js`, check [xtendui/tailwind.preset.js](https://github.com/minimit/xtendui/blob/master/tailwind.preset.js) for default values.
 
@@ -140,7 +109,37 @@ module.exports = {
 }
 ```
 
-## Polyfill
+## Javascript
+
+You can import the **components you need** as described in the demos.
+
+```jsx
+import { Xt } from 'xtendui'
+import 'xtendui/src/core/toggle'
+```
+
+#### Animation
+
+This library in the demos uses [gsap](https://github.com/greensock/GSAP) for javascript animations.
+
+```
+npm install gsap --save
+```
+
+Then add this one time to setup gsap, **we disable force3D** for smoother pixels animations, and we make **instant animations** and **double automatic change time** when the the user has activated "Prefers Reduced Motion".
+
+```jsx
+gsap.config({ force3D: false })
+
+if (Xt.durationTimescale === 1000) {
+  // instant animations accessibility
+  gsap.globalTimeline.timeScale(1000)
+  // double auto time accessibility
+  Xt.autoTimescale = 0.5
+}
+```
+
+#### Polyfill
 
 You need to install [@babel/core](https://www.npmjs.com/package/@babel/core), [@babel/preset-env](https://www.npmjs.com/package/@babel/preset-env), [@babel/plugin-transform-runtime](https://www.npmjs.com/package/@babel/plugin-transform-runtime).
 

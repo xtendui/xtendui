@@ -1469,7 +1469,7 @@ class Toggle {
       return
     }
     // start
-    if (options.auto && options.auto.time && !Xt.noAuto && !self.wrap) {
+    if (options.auto && options.auto.time && Xt.autoTimescale && !self.wrap) {
       // not when nothing activated
       if (self.currentIndex !== null && (!self.initial || options.auto.initial)) {
         // clear
@@ -1485,7 +1485,7 @@ class Toggle {
             setTimeout(() => {
               // auto
               self.eventAuto()
-            }, time)
+            }, time / Xt.autoTimescale)
           )
           // listener dispatch
           self.object.dispatchEvent(new CustomEvent('autostart.xt'))
@@ -1876,7 +1876,7 @@ class Toggle {
     // special
     self.specialZindex(actionCurrent, el, type)
     // anim
-    const duration = Xt.noDuration ? 0 : Xt.animTime(el, options.duration || options[`duration${actionCurrent}`])
+    const duration = Xt.animTime(el, options.duration || options[`duration${actionCurrent}`]) / Xt.durationTimescale
     clearTimeout(Xt.dataStorage.get(el, `${self.componentNamespace + type}AnimTimeout`))
     // queue done
     if (!duration) {

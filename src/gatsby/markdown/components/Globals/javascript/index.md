@@ -32,17 +32,51 @@ module.exports = {
 }
 ```
 
-## Components
+## Animations
 
-There are various css styles used by various javascript components, they **should not be modified**.
+You can **opt out** some animations behaviour:
 
-You can **opt out** some behaviour:
+* **Flash of Unstyled Content (FOUC)**: Xtend UI **automatically disables page load duration** for animation and transition until javascript is loaded, add `html.no-js-fouc` to disable this behaviour.
 
-* Flash of Unstyled Content (FOUC): Xtend UI **automatically disables page load duration** for animation and transition until javascript is loaded, add `html.no-js-fouc` to disable this behaviour.
+* **Initial component animations**: Xtend UI **automatically disables duration** for animation and transition on `initial` class used in components init and reinit, add `html.no-js-initial` to disable this behaviour.
 
-* Initial component animations: Xtend UI **automatically disables duration** for animation and transition on `initial` class used in components init and reinit, add `html.no-js-initial` to disable this behaviour.
+* **Prefers Reduced Motion**: Xtend UI **automatically disables duration** for animation and transition when the the user has activated "Prefers Reduced Motion" (needs also [gsap setup](/introduction/getting-started/setup#javascript-animation)), add `html.no-js-prm` to disable this behaviour, also set this variables `Xt.durationTimescale = 1` and `Xt.autoTimescale = 1`.
 
-* Prefers Reduced Motion: Xtend UI **automatically disables duration** for animation and transition when the the user has activated "Prefers Reduced Motion" (needs also [gsap setup](/introduction/getting-started/setup#javascript-animation)), add `html.no-js-prm` to disable this behaviour, also set this variables `Xt.noDuration = false` and `Xt.noAuto = false`.
+* **Global Duration Timescale**: Xtend UI have an option to **change javascript durations timescales**, for example set this variables `Xt.durationTimescale = 1.5` to have faster animations by an half.
+
+* **Global Auto Timescale**: Xtend UI have an option to **change javascript auto duration timescales**, for example set this variables `Xt.autoTimescale = 0.5` to have double time on component auto changes.
+
+An **example setup** for accessibility and faster animation on mobile, used in this docs and demos is this:
+
+```js
+/**
+ * animations setup
+ */
+
+gsap.config({ force3D: false })
+
+if (Xt.durationTimescale === 1000) {
+  // instant animations accessibility
+  gsap.globalTimeline.timeScale(1000)
+  // double auto time accessibility
+  Xt.autoTimescale = 0.5
+}
+
+// faster javascript animations on small screens
+
+const animationResponsive = () => {
+  if (Xt.durationTimescale !== 1000 && typeof window !== 'undefined' && matchMedia('(max-width: 767px)').matches) {
+    gsap.globalTimeline.timeScale(1.5)
+    Xt.durationTimescale = 1.5
+  } else {
+    gsap.globalTimeline.timeScale(1)
+    Xt.durationTimescale = 1
+  }
+}
+
+addEventListener('resize', animationResponsive)
+animationResponsive()
+```
 
 ## Xt.debug
 

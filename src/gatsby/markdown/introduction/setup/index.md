@@ -135,17 +135,16 @@ This library in the demos uses [gsap](https://github.com/greensock/GSAP) for jav
 npm install gsap --save
 ```
 
-Then add this one time to setup gsap, **we disable force3D** for smoother pixels animations, and we make **instant animations** when the the user has activated "Prefers Reduced Motion".
+Then add this one time to setup gsap, **we disable force3D** for smoother pixels animations, and we make **instant animations** and **double automatic change time** when the the user has activated "Prefers Reduced Motion".
 
 ```jsx
-// no force3d
-
 gsap.config({ force3D: false })
 
-// instant animations accessibility
-
-if (Xt.noDuration) {
+if (Xt.durationTimescale === 1000) {
+  // instant animations accessibility
   gsap.globalTimeline.timeScale(1000)
+  // double auto time accessibility
+  Xt.autoTimescale = 0.5
 }
 ```
 
