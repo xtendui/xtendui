@@ -1,3 +1,9 @@
+/*!
+ * Xtend (https://xtendui.com/)
+ * @copyright (c) 2017 - 2020 Riccardo Caroli
+ * @license MIT (https://github.com/minimit/xtendui/blob/master/LICENSE)
+ */
+
 import './polyfill.js'
 
 //
