@@ -1,22 +1,79 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
+import RehypeReact from 'rehype-react'
+import { markdownSlug } from 'components/snippets/markdown-slug'
+import { typeSort } from 'components/snippets/type-sort'
 
 import SEO from 'components/seo'
 import Layout from 'components/layout'
-import DocCategory from 'components/includes/doc-category'
-import { docTitle } from 'components/snippets/doc-title'
+import Demo from 'components/demo/demo'
+import DemoVanilla from 'components/demo/demo-vanilla'
+
+const renderAst = new RehypeReact({
+  createElement: React.createElement,
+  components: { demo: Demo, demovanilla: DemoVanilla },
+}).Compiler
 
 export default class Template extends React.Component {
   render() {
     const { data } = this.props
     const seo = {}
-    seo.title = docTitle(data)
+    seo.title = data.post.frontmatter.title
+    seo.title = seo.title
+      .split(/[\s-]+/)
+      .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
+      .join(' ')
+    seo.title += data.post.frontmatter.parent && data.post.frontmatter.parent !== data.post.frontmatter.title ? data.post.frontmatter.parent : ''
+    seo.title += data.post.frontmatter.category && data.post.frontmatter.category !== data.post.frontmatter.title ? data.post.frontmatter.category : ''
+    seo.title += data.post.frontmatter.type && data.post.frontmatter.type !== data.post.frontmatter.title ? data.post.frontmatter.type : ''
     seo.description = data.post.frontmatter.description
+    seo.title = markdownSlug(data.post) === '/introduction' ? seo.description : seo.title // @DOCINDEX
     return (
       <Layout page={data}>
         <SEO title={seo.title} description={seo.description} />
-        <DocCategory data={data}></DocCategory>
+        {data.post.htmlAst !== '<div></div>' ? renderAst(data.post.htmlAst) : null}
+        <div className="gatsby_listing">
+          <div className="row row-3">
+            {data.categories.category.sort(typeSort).map((category, i) => (
+              <div className="gatsby_listing-group" key={i}>
+                <h2 className="h5 h-block rounded-md bg-gray-200 text-center">{category.title.split('-').pop()}</h2>
+                <div className="gatsby_listing-items">
+                  <div className="row row-stretch">
+                    {category.posts.map(({ post }, z) =>
+                      post.frontmatter.link ? (
+                        <div className="gatsby_listing-column" key={z}>
+                          <a href={post.frontmatter.link} target="_blank" rel="noreferrer" className="card gatsby_listing-item">
+                            <div className="h4">
+                              {post.frontmatter.title
+                                .split(/[\s-]+/)
+                                .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
+                                .join(' ')}
+                            </div>
+                            <p>{post.frontmatter.description}</p>
+                          </a>
+                        </div>
+                      ) : post.frontmatter.parent === post.frontmatter.title ? (
+                        <div className="gatsby_listing-column" key={z}>
+                          <Link to={markdownSlug(post)} className="card gatsby_listing-item">
+                            <div className="h4">
+                              {post.frontmatter.title
+                                .split(/[\s-]+/)
+                                .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
+                                .join(' ')}
+                            </div>
+                            <p>{post.frontmatter.description}</p>
+                            {post.frontmatter.link}
+                          </Link>
+                        </div>
+                      ) : null
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </Layout>
     )
   }
