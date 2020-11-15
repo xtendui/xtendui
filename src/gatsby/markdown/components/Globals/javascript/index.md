@@ -49,10 +49,6 @@ You can **opt out** some animations behaviour:
 An **example setup** for accessibility and faster animation on mobile, used in this docs and demos is this:
 
 ```js
-/**
- * animations setup
- */
-
 gsap.config({ force3D: false })
 
 if (Xt.durationTimescale === 1000) {
