@@ -12,6 +12,7 @@ const renderAst = new RehypeReact({
   createElement: React.createElement,
   components: { demo: Demo, demovanilla: DemoVanilla },
 }).Compiler
+
 export default class DocPage extends React.Component {
   render() {
     const { data } = this.props
