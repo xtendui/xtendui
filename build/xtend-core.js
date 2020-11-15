@@ -1,8 +1,6 @@
-if (typeof window !== 'undefined') {
-  require('xtendui/src/core/drop.js')
-  require('xtendui/src/core/form.js')
-  require('xtendui/src/core/overlay.js')
-  require('xtendui/src/core/slider.js')
-  require('xtendui/src/core/toggle.js')
-  require('xtendui/src/core/tooltip.js')
-}
+import 'xtendui/src/core/drop.js'
+import 'xtendui/src/core/form.js'
+import 'xtendui/src/core/overlay.js'
+import 'xtendui/src/core/slider.js'
+import 'xtendui/src/core/toggle.js'
+import 'xtendui/src/core/tooltip.js'

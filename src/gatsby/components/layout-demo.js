@@ -1,16 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Xt } from 'xtendui'
-
-import { makeDocument } from 'assets/scripts/theme'
-
 import 'assets/styles/theme.css'
 
 export default class Layout extends React.Component {
   render() {
     const { demo, children } = this.props
     if (typeof window !== 'undefined') {
+      const Xt = require('xtendui').Xt
+      const makeDocument = require('assets/scripts/theme').makeDocument
       let cname = 'gatsby_iframe-inside'
       if (demo.container) {
         cname += ' gatsby_iframe-container'

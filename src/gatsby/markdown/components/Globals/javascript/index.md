@@ -60,19 +60,17 @@ if (Xt.durationTimescale === 1000) {
 
 // faster javascript animations on small screens
 
-if (typeof window !== 'undefined') {
-  const animationResponsive = () => {
-    if (Xt.durationTimescale !== 1000 && matchMedia('(max-width: 767px)').matches) {
-      gsap.globalTimeline.timeScale(1.5)
-      Xt.durationTimescale = 1.5
-    } else {
-      gsap.globalTimeline.timeScale(1)
-      Xt.durationTimescale = 1
-    }
+const animationResponsive = () => {
+  if (Xt.durationTimescale !== 1000 && matchMedia('(max-width: 767px)').matches) {
+    gsap.globalTimeline.timeScale(1.5)
+    Xt.durationTimescale = 1.5
+  } else {
+    gsap.globalTimeline.timeScale(1)
+    Xt.durationTimescale = 1
   }
-  addEventListener('resize', animationResponsive)
-  animationResponsive()
 }
+addEventListener('resize', animationResponsive)
+animationResponsive()
 ```
 
 ## Xt.debug

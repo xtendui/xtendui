@@ -7,25 +7,16 @@ import DocHead from 'components/includes/doc-head'
 import DocFoot from 'components/includes/doc-foot'
 import DocFullscreen from 'components/includes/doc-fullscreen'
 
-import { makeDocument } from 'assets/scripts/theme'
-import { populateBlock } from 'assets/scripts/demo'
-
 import 'assets/styles/theme.css'
-
-if (typeof window !== 'undefined' && window.self === window.top) {
-  if (module.hot) {
-    module.hot.addStatusHandler(status => {
-      if (status === 'apply') {
-        window.location.reload()
-      }
-    })
-  }
-}
 
 export default class Layout extends React.Component {
   componentDidMount() {
-    populateBlock()
-    makeDocument()
+    if (typeof window !== 'undefined') {
+      const makeDocument = require('assets/scripts/theme').makeDocument
+      const populateBlock = require('assets/scripts/demo').populateBlock
+      populateBlock()
+      makeDocument()
+    }
   }
   render() {
     const { children, page, seo } = this.props

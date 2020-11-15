@@ -1,6 +1,7 @@
 import Prism from 'prismjs'
 import ClipboardJS from 'clipboard'
 import { Xt } from 'xtendui'
+import 'xtendui/src/core/toggle.js'
 import kebabCase from 'lodash.kebabcase'
 
 require('prismjs/plugins/unescaped-markup/prism-unescaped-markup')
@@ -59,9 +60,7 @@ const demoHash = (e, initial = false) => {
   }
 }
 
-if (typeof window !== 'undefined') {
-  addEventListener('hashchange', demoHash)
-}
+addEventListener('hashchange', demoHash)
 
 /**
  * formatCode
@@ -498,15 +497,13 @@ const unloadIframe = iframe => {
   iframe.removeAttribute('src')
 }
 
-if (typeof window !== 'undefined') {
-  window.initIframe = (name, htmlSource, jsxSource, cssSource, jsSource) => {
-    const src = `iframe[name="${name}"]`
-    const iframes = document.querySelectorAll(src)
-    for (const iframe of iframes) {
-      const item = iframe.closest('.gatsby_demo_item')
-      populateIframe(item, iframe, htmlSource, jsxSource, cssSource, jsSource)
-      item.classList.add('loaded')
-    }
+window.initIframe = (name, htmlSource, jsxSource, cssSource, jsSource) => {
+  const src = `iframe[name="${name}"]`
+  const iframes = document.querySelectorAll(src)
+  for (const iframe of iframes) {
+    const item = iframe.closest('.gatsby_demo_item')
+    populateIframe(item, iframe, htmlSource, jsxSource, cssSource, jsSource)
+    item.classList.add('loaded')
   }
 }
 
