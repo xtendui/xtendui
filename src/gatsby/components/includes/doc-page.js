@@ -3,16 +3,15 @@ import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import RehypeReact from 'rehype-react'
 
-const renderAst = new RehypeReact({
-  createElement: React.createElement,
-  components: { demo: Demo, demovanilla: DemoVanilla },
-}).Compiler
-
 import { markdownSlug } from 'components/snippets/markdown-slug'
 import Demo from 'components/demo/demo'
 import DemoVanilla from 'components/demo/demo-vanilla'
 import DocVideo from 'components/includes/doc-video'
 
+const renderAst = new RehypeReact({
+  createElement: React.createElement,
+  components: { demo: Demo, demovanilla: DemoVanilla },
+}).Compiler
 export default class DocPage extends React.Component {
   render() {
     const { data } = this.props
