@@ -21,18 +21,19 @@ if (Xt.durationTimescale === 1000) {
 
 // faster javascript animations on small screens
 
-const animationResponsive = () => {
-  if (Xt.durationTimescale !== 1000 && typeof window !== 'undefined' && matchMedia('(max-width: 767px)').matches) {
-    gsap.globalTimeline.timeScale(1.5)
-    Xt.durationTimescale = 1.5
-  } else {
-    gsap.globalTimeline.timeScale(1)
-    Xt.durationTimescale = 1
+if (typeof window !== 'undefined') {
+  const animationResponsive = () => {
+    if (Xt.durationTimescale !== 1000 && matchMedia('(max-width: 767px)').matches) {
+      gsap.globalTimeline.timeScale(1.5)
+      Xt.durationTimescale = 1.5
+    } else {
+      gsap.globalTimeline.timeScale(1)
+      Xt.durationTimescale = 1
+    }
   }
+  addEventListener('resize', animationResponsive)
+  animationResponsive()
 }
-
-addEventListener('resize', animationResponsive)
-animationResponsive()
 
 /**
  * favicon
