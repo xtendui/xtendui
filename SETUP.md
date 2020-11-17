@@ -129,6 +129,10 @@ npm install gsap --save
 Then add this one time to setup gsap, **we disable force3D** for smoother pixels animations, and we make **instant animations** and **double automatic change time** when the the user has activated "Prefers Reduced Motion".
 
 ```jsx
+/**
+ * animations setup
+ */
+
 gsap.config({ force3D: false })
 
 if (Xt.durationTimescale === 1000) {
