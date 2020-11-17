@@ -62,7 +62,6 @@ if (Xt.durationTimescale === 1000) {
   Xt.autoTimescale = 0.5
 }
 
-
 const animationResponsive = () => {
   // faster javascript animations on small screens
   if (Xt.durationTimescale !== 1000 && matchMedia('(max-width: 767px)').matches) {
