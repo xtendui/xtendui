@@ -11,6 +11,7 @@ const keywords = pack.keywords
 
 module.exports = {
   siteMetadata: {
+    siteUrl: `https://xtendui.com`,
     title: 'Xtend UI',
     description: description,
     keywords: keywords,
@@ -23,10 +24,17 @@ module.exports = {
     download: 'https://github.com/minimit/xtendui/releases',
   },
   plugins: [
-    'gatsby-plugin-remove-serviceworker',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-postcss',
+    // sitemap
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: `/some-other-sitemap.xml`,
+        exclude: [`/iframe/**/*`],
+      },
+    },
     // manifest
     {
       resolve: 'gatsby-plugin-manifest',
