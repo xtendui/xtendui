@@ -507,7 +507,31 @@ window.initIframe = (name, htmlSource, jsxSource, cssSource, jsSource) => {
   }
 }
 
-const populateIframe = (item, iframe, htmlSource, jsxSource, cssSource, jsSource) => {
+/**
+ * populate
+ */
+
+const source = async (item, el, z) => {
+  const url = el.getAttribute('data-fetch')
+  if (url) {
+    const request = await fetch(url, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'text/plain',
+      },
+    })
+    const response = await request
+    const body = await response.text()
+    if (response.ok) {
+      el.innerHTML = body
+      populateSources(item, el, z)
+    }
+  } else {
+    populateSources(item, el, z)
+  }
+}
+
+const populateIframe = async (item, iframe, htmlSource, jsxSource, cssSource, jsSource) => {
   if (!item.classList.contains('populated')) {
     item.classList.add('populated')
     // inject code
@@ -518,15 +542,16 @@ const populateIframe = (item, iframe, htmlSource, jsxSource, cssSource, jsSource
       item.append(Xt.createElement(`<div class="gatsby_demo_source xt-ignore" data-lang="jsx">${jsxSource}</div>`))
     }
     if (cssSource) {
-      item.append(Xt.createElement(`<div class="gatsby_demo_source xt-ignore" data-lang="css">${cssSource}</div>`))
+      item.append(Xt.createElement(`<div class="gatsby_demo_source xt-ignore" data-lang="css" data-fetch=${cssSource}></div>`))
     }
     if (jsSource) {
-      item.append(Xt.createElement(`<div class="gatsby_demo_source xt-ignore" data-lang="js">${jsSource}</div>`))
+      item.append(Xt.createElement(`<div class="gatsby_demo_source xt-ignore" data-lang="js" data-fetch=${jsSource}></div>`))
     }
+    console.log(cssSource, jsSource)
     // populate
     const els = item.querySelectorAll('[data-lang]')
     for (const [z, el] of els.entries()) {
-      populateSources(item, el, z)
+      await source(item, el, z)
       el.remove()
     }
     new Xt.Toggle(item.querySelector('.gatsby_demo_code_inner'), {
@@ -538,16 +563,12 @@ const populateIframe = (item, iframe, htmlSource, jsxSource, cssSource, jsSource
   }
 }
 
-/**
- * inline
- */
-
-const populateInline = item => {
+const populateInline = async item => {
   if (!item.classList.contains('populated')) {
     item.classList.add('populated')
     const els = item.querySelectorAll('[data-lang]')
     for (const [z, el] of els.entries()) {
-      populateSources(item, el, z)
+      await source(item, el, z)
       if (!item.classList.contains('gatsby_demo_preview')) {
         el.style.display = 'none'
       }

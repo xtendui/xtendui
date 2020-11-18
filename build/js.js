@@ -34,7 +34,7 @@ jsFutureGlob.on('end', () => {
 })
 
 let jsDemos = ``
-const jsDemosGlob = new glob.Glob('src/private/demos/**/*.js', { ignore: ['**/*.css.js'] }, (er, files) => {
+const jsDemosGlob = new glob.Glob('static/demos/**/*.js', { ignore: ['**/*.css.js'] }, (er, files) => {
   for (const file of files) {
     jsDemos += `import 'xtendui/${file}'\n`
   }
