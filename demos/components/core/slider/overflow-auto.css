@@ -1,0 +1,12 @@
+.demo--slider-overflow-auto {
+  &.xt-disabled {
+    .slide {
+      @apply opacity-100;
+    }
+  }
+  &.xt-overflow-auto {
+    .slides-inner {
+      justify-content: center;
+    }
+  }
+}
