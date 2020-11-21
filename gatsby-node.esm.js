@@ -4,7 +4,6 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-const webpack = require('webpack')
 import path from 'path'
 import { markdownSlug } from './src/gatsby/components/snippets/markdown-slug.js'
 require('./build/css.js')
@@ -22,14 +21,6 @@ exports.onCreateWebpackConfig = ({ actions }) => {
         'react-dom': '@hot-loader/react-dom',
       },
     },
-  })
-  const env = new webpack.DefinePlugin({
-    'process.env': {
-      CONTENTFUL_SPACE: !!process.env.CONTENTFUL_SPACE,
-    },
-  })
-  actions.setWebpackConfig({
-    plugins: [env],
   })
 }
 

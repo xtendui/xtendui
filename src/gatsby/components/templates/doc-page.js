@@ -8,7 +8,6 @@ import SEO from 'components/seo'
 import Layout from 'components/layout'
 import Demo from 'components/demo/demo'
 import DemoVanilla from 'components/demo/demo-vanilla'
-import DocVideo from 'components/includes/doc-video'
 
 const renderAst = new RehypeReact({
   createElement: React.createElement,
@@ -56,7 +55,19 @@ class Template extends React.Component {
                                       .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
                                       .join(' ')}
                                   </div>
-                                  {process.env.CONTENTFUL_SPACE ? <DocVideo adiacent={adiacent} /> : ''}
+                                  {data.media.items.map((assets, z) => {
+                                    if (assets.item.title === adiacent.frontmatter.title) {
+                                      return (
+                                        <div className="media-container" key={z}>
+                                          <div className="media-inner">
+                                            <video className="media object-cover object-center" preload="metadata" muted playsInline loop autoPlay>
+                                              <source type="video/mp4" src={assets.item.file.url ? assets.item.file.url : null} />
+                                            </video>
+                                          </div>
+                                        </div>
+                                      )
+                                    }
+                                  })}
                                 </div>
                               </a>
                               {adiacent.frontmatter.demos ? (
@@ -108,6 +119,16 @@ class Template extends React.Component {
 
 export const query = graphql`
   query($title: String!, $type: String, $category: String, $parent: String, $parents: String) {
+    media: allContentfulAsset {
+      items: edges {
+        item: node {
+          title
+          file {
+            url
+          }
+        }
+      }
+    }
     menus: allMarkdownRemark(filter: { frontmatter: { menu: { eq: true } } }, sort: { fields: [frontmatter___date, frontmatter___title], order: [DESC, ASC] }) {
       posts: edges {
         post: node {
@@ -194,6 +215,18 @@ export const query = graphql`
 
 Template.propTypes = {
   data: PropTypes.shape({
+    media: PropTypes.shape({
+      items: PropTypes.arrayOf(
+        PropTypes.shape({
+          item: PropTypes.shape({
+            title: PropTypes.string.isRequired,
+            file: PropTypes.shape({
+              url: PropTypes.string.isRequired,
+            }),
+          }),
+        })
+      ),
+    }),
     menus: PropTypes.shape({
       posts: PropTypes.arrayOf(
         PropTypes.shape({
