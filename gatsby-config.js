@@ -8,7 +8,7 @@ const pack = JSON.parse(fs.readFileSync('package.json').toString())
 const version = pack.version
 const description = pack.description
 const keywords = pack.keywords
-require('dotenv').config({ path: `.env.${process.env.NODE_ENV}` })
+require('dotenv').config()
 
 module.exports = {
   siteMetadata: {
