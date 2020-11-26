@@ -25,7 +25,7 @@ Install **tailwind**, **xtendui**, **postcss import**, **postcss nested**.
 
 ```sh
 npm install tailwindcss xtendui --save
-npm install postcss postcss-import postcss-nested --save-dev
+npm install postcss postcss-import postcss-nested autoprefixer --save-dev
 ```
 
 Then in `postcss.config.js` set up compilation.
