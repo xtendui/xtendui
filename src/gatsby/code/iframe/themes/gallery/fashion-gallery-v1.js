@@ -33,8 +33,8 @@ demo.htmlSource = `
     <div class="container">
       <div class="row row-4 lg:row-6 items-stretch">
 
-        <div class="w-full md:w-6/12 lg:w-7/12">
-          <div class="relative md:py-6">
+        <div class="w-full md:w-5/12 lg:w-6/12 xl:w-7/12">
+          <div class="relative md:py-12">
             <div class="product-gallery">
 
               <div class="list flex-col">
@@ -163,7 +163,7 @@ demo.htmlSource = `
           </div>
         </div>
 
-        <div class="w-full md:w-6/12 lg:w-5/12" id="product-continue-target">
+        <div class="w-full md:w-7/12 lg:w-6/12 xl:w-5/12" id="product-continue-target">
           <div class="sticky-flow-filler pointer-events-none absolute md:relative"></div>
           <div class="md:py-12 md:sticky sticky-flow">
 
@@ -198,7 +198,7 @@ demo.htmlSource = `
   </main>
 
   <footer class="site_footer">
-    <div class="card h-32 card-sm ${cardDefault()}">
+    <div class="card card-sm ${cardDefault()}">
       <div class="h4">Footer</div>
     </div>
   </footer>

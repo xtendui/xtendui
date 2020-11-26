@@ -32,7 +32,7 @@ module.exports = {
 }
 ```
 
-## Animations
+## Animation
 
 You can **opt out** some animations behaviour:
 

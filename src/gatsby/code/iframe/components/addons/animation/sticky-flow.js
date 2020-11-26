@@ -107,7 +107,7 @@ demo.htmlSource = `
 </main>
 
 <footer class="site_footer">
-  <div class="card h-32 card-sm ${cardDefault()}">
+  <div class="card card-sm ${cardDefault()}">
     <div class="h4">Footer</div>
   </div>
 </footer>
