@@ -87,12 +87,8 @@ module.exports = {
       cursor: 'grab',
       'a, img': {
         // prevent browser drag
-        '-webkit-user-drag': 'none',
         userDrag: 'none',
         // prevent browser selection
-        '-webkit-user-select': 'none',
-        '-moz-user-select': 'none',
-        '-ms-user-select': 'none',
         userSelect: 'none',
       },
     },

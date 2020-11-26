@@ -56,6 +56,7 @@
     "@semantic-release/github": "^7.2.0",
     "@semantic-release/npm": "^7.0.8",
     "@semantic-release/release-notes-generator": "^9.0.1",
+    "autoprefixer": "^10.0.2",
     "babel-loader": "^8.2.1",
     "clipboard": "^2.0.4",
     "css-loader": "^5.0.1",

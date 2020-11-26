@@ -547,7 +547,6 @@ const populateIframe = async (item, iframe, htmlSource, jsxSource, cssSource, js
     if (jsSource) {
       item.append(Xt.createElement(`<div class="gatsby_demo_source xt-ignore" data-lang="js" data-fetch=${jsSource}></div>`))
     }
-    console.log(cssSource, jsSource)
     // populate
     const els = item.querySelectorAll('[data-lang]')
     for (const [z, el] of els.entries()) {

@@ -64,7 +64,6 @@ module.exports = {
     },
     '.form-select': {
       // setup
-      '-webkit-appearance': 'none',
       appearance: 'none',
       backgroundRepeat: 'no-repeat',
       // styles
@@ -92,7 +91,6 @@ module.exports = {
     },
     '.form-check': {
       // setup
-      '-webkit-appearance': 'none',
       appearance: 'none',
       cursor: 'pointer',
       position: 'relative',

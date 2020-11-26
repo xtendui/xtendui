@@ -9,7 +9,6 @@
       bottom: 0;
       right: 0;
       z-index: theme('zIndex.active');
-      -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
     }
 
@@ -17,7 +16,6 @@
       position: relative;
       min-height: 22rem;
       transform: rotateY(180deg);
-      -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
     }
 
