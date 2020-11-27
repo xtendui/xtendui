@@ -8,7 +8,6 @@ export default class Layout extends React.Component {
     const { demo, children } = this.props
     if (typeof window !== 'undefined') {
       const Xt = require('xtendui').Xt
-      const makeDocument = require('assets/scripts/app').makeDocument
       let cname = 'gatsby_iframe-inside'
       if (demo.container) {
         cname += ' gatsby_iframe-container'
@@ -19,7 +18,6 @@ export default class Layout extends React.Component {
         if (window.self !== window.top) {
           window.parent.initIframe(window.name, demo.htmlSource, demo.jsxSource, demo.cssSource, demo.jsSource)
         }
-        makeDocument()
       }
       Xt.ready(iframeLoaded)
     }
