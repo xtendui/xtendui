@@ -17,6 +17,26 @@ demo.htmlSource = `
     drop
   </button>
 
+  <button type="button" class="btn btn-md rounded-md ${btnPrimary()}" data-xt-group="another-group">
+    drop
+  </button>
+
+  <div class="drop" data-xt-group="another-group">
+    <div class="w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
+      <nav class="list flex-col">
+        <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit
+        </a>
+        <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+          Dolor sit
+        </button>
+        <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+          Amet
+        </button>
+      </nav>
+    </div>
+  </div>
+
   <div class="drop" data-xt-group="my-group">
     <div class="w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
       <nav class="list flex-col">

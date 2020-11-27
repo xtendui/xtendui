@@ -11,7 +11,13 @@ export const demo = {
 demo.htmlSource = `
 <div data-xt-tooltip>
 
-  Lorem ipsum <a href="#" data-xt-group="my-group">dolor</a> sit <a href="#">amet</a>
+  Lorem ipsum <a href="#" data-xt-group="my-group">dolor</a> sit <a href="#" data-xt-group="another-group">amet</a>
+
+  <div class="tooltip" data-xt-group="another-group">
+    <div class="tooltip-md rounded shadow-tooltip ${cardBlack()}">
+      Lorem ipsum dolor sit amet
+    </div>
+  </div>
 
   <div class="tooltip" data-xt-group="my-group">
     <div class="tooltip-md rounded shadow-tooltip ${cardBlack()}">
