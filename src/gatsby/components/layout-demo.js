@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import 'assets/styles/app.css'
+
 export default class Layout extends React.Component {
   render() {
     const { demo, children } = this.props
     if (typeof window !== 'undefined') {
-      require('assets/styles/app.css')
       require('assets/scripts/app.js')
       const Xt = require('xtendui').Xt
       let cname = 'gatsby_iframe-inside'

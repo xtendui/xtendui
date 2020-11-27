@@ -7,10 +7,11 @@ import DocHead from 'components/includes/doc-head'
 import DocFoot from 'components/includes/doc-foot'
 import DocFullscreen from 'components/includes/doc-fullscreen'
 
+import 'assets/styles/app.css'
+
 export default class Layout extends React.Component {
   componentDidMount() {
     if (typeof window !== 'undefined') {
-      require('assets/styles/app.css')
       require('assets/scripts/app.js')
       const makeDocument = require('assets/scripts/app').makeDocument
       const populateBlock = require('assets/scripts/demo').populateBlock
