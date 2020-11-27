@@ -45,10 +45,17 @@ module.exports = {
         background_color: '#0078ff',
         theme_color: '#0058C6',
         display: 'minimal-ui',
-        icon: './static/apple-touch-icon.png',
+        icon: './static/favicon.png',
         icon_options: {
           purpose: `maskable any`,
         },
+        icons: [
+          {
+            src: `./static/apple-touch-icon.png`,
+            sizes: `512x512`,
+            type: `image/png`,
+          },
+        ],
       },
     },
     // resolve
