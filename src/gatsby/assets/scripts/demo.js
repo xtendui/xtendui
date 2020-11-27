@@ -328,10 +328,7 @@ const populateDemo = (container, i) => {
         // populate source disable
         container.dataset.isFullscreenOnly = 'true'
       } else {
-        requestAnimationFrame(() => {
-          // @FIX multiple initializations
-          sourceTo.innerHTML = item.querySelector('script[type="text/plain"]').innerHTML
-        })
+        sourceTo.innerHTML = item.querySelector('script[type="text/plain"]').innerHTML
       }
     }
   }
@@ -550,8 +547,13 @@ const populateIframe = async (item, iframe, htmlSource, jsxSource, cssSource, js
     // populate
     const els = item.querySelectorAll('[data-lang]')
     for (const el of els) {
-      await source(item, el)
-      el.remove()
+      try {
+        await source(item, el)
+      } catch (e) {
+        console.error(e)
+      } finally {
+        el.remove()
+      }
     }
     new Xt.Toggle(item.querySelector('.gatsby_demo_code_inner'), {
       elements: '.gatsby_demo_code_tabs_left .btn',
@@ -566,10 +568,13 @@ const populateInline = async item => {
   if (!item.classList.contains('populated')) {
     item.classList.add('populated')
     const els = item.querySelectorAll('[data-lang]')
-    for (const [z, el] of els.entries()) {
-      await source(item, el, z)
-      if (!item.classList.contains('gatsby_demo_preview')) {
-        el.style.display = 'none'
+    for (const el of els) {
+      try {
+        await source(item, el)
+      } catch (e) {
+        console.error(e)
+      } finally {
+        el.remove()
       }
     }
     new Xt.Toggle(item.querySelector('.gatsby_demo_code_inner'), {

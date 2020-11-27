@@ -214,25 +214,3 @@ body {
 ```jsx
 const test = 'test'
 ```
-
-## Demo
-
-<demo>
-  <div class="gatsby_demo-inline">
-    <div class="gatsby_demo_item toggle gatsby_demo_preview" data-name="inline">
-      <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
-        Inline
-      </div>
-    </div>
-  </div>
-  <demovanilla src="vanilla/test/demo-vanilla" name="demo vanilla">
-    <div class="gatsby_demo_text">
-      test vanilla <strong>strong</strong> <code>code</code>
-    </div>
-  </demovanilla>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/test/demo-vanilla-iframe" data-name="demo vanilla frame">
-    <div class="gatsby_demo_text">
-      <a href="/iframe/test/demo-vanilla-iframe">test vanilla iframe</a>
-    </div>
-  </div>
-</demo>
