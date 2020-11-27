@@ -519,7 +519,7 @@ const source = async (item, el) => {
     })
     const response = await request
     const body = await response.text()
-    if (response.ok) {
+    if (response.ok && body.substring(0, 9) !== '<!DOCTYPE') {
       el.innerHTML = body
       populateSources(item, el)
     }
