@@ -7,7 +7,7 @@ export default class Layout extends React.Component {
   render() {
     const { demo, children } = this.props
     if (typeof window !== 'undefined') {
-      require('assets/scripts/app.js')
+      require('assets/scripts/shared')
       const Xt = require('xtendui').Xt
       let cname = 'gatsby_iframe-inside'
       if (demo.container) {

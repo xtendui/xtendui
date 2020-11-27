@@ -1,57 +1,15 @@
 import { Xt } from 'xtendui'
-import 'xtendui/build/xtend-demos'
+import 'xtendui/src/core/toggle'
+import 'xtendui/src/addons/scroll-to-anchor'
 import gsap from 'gsap'
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
+gsap.registerPlugin(ScrollToPlugin)
 const iconLink = require('components/snippets/icons').iconLink
 
-/**
- * animations setup
- */
-
-gsap.config({ force3D: false })
-
-if (Xt.durationTimescale === 1000) {
-  // instant animations accessibility
-  gsap.globalTimeline.timeScale(1000)
-  // double auto time accessibility
-  Xt.autoTimescale = 0.5
-}
-
-const animationResponsive = () => {
-  // faster javascript animations on small screens
-  if (Xt.durationTimescale !== 1000 && matchMedia('(max-width: 767px)').matches) {
-    gsap.globalTimeline.timeScale(1.5)
-    Xt.durationTimescale = 1.5
-  } else {
-    gsap.globalTimeline.timeScale(1)
-    Xt.durationTimescale = 1
-  }
-}
-addEventListener('resize', animationResponsive)
-animationResponsive()
+import 'assets/scripts/shared'
 
 /**
- * favicon
- */
-
-const changeMq = () => {
-  const colorSchemeMq = window.matchMedia('(prefers-color-scheme: dark)')
-  const favicon = document.querySelector('link[rel="icon"]')
-  if (favicon) {
-    favicon.remove()
-  }
-  if (colorSchemeMq.matches) {
-    const icon = Xt.createElement('<link rel="icon" href="/favicon-dark.png">')
-    document.head.append(icon)
-  } else {
-    const icon = Xt.createElement('<link rel="icon" href="/favicon.png">')
-    document.head.append(icon)
-  }
-}
-
-changeMq()
-
-/**
- * #gatsby_open-full-trigger
+ * #gatsby_open-full-triggergrop
  */
 
 Xt.mount.push({
