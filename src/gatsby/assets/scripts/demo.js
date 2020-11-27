@@ -324,7 +324,7 @@ const populateDemo = (container, i) => {
       const tooltip = btn.closest('[data-xt-tooltip]')
       // close tooltip
       tooltip.dispatchEvent(new CustomEvent('off.trigger.xt'))
-      // switch tooltip
+      // swap tooltip
       let self = Xt.get('xt-tooltip', tooltip)
       self.targets[0].style.display = 'none'
       self.targets[1].style.display = ''
@@ -334,7 +334,7 @@ const populateDemo = (container, i) => {
     const btn = btnClipboard
     const tooltip = btn.closest('[data-xt-tooltip]')
     tooltip.addEventListener('off.xt', () => {
-      // switch tooltip
+      // swap tooltip
       let self = Xt.get('xt-tooltip', tooltip)
       self.targets[0].style.display = ''
       self.targets[1].style.display = 'none'
@@ -415,7 +415,7 @@ const populateDemo = (container, i) => {
     const tooltip = btn.closest('[data-xt-tooltip]')
     // close tooltip
     tooltip.dispatchEvent(new CustomEvent('off.trigger.xt'))
-    // switch tooltip
+    // swap tooltip
     let self = Xt.get('xt-tooltip', tooltip)
     if (btn.classList.contains('in')) {
       self.targets[0].style.display = 'none'
