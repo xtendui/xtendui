@@ -221,13 +221,18 @@ const populateDemo = (container, i) => {
   )
   container.querySelector('.gatsby_demo_tabs_right').append(
     Xt.createElement(`
-<div data-xt-tooltip="{ position: 'bottom-end' }">
+<div data-xt-tooltip="{ targets: '#tooltip--show-code--on-${i}, #tooltip--show-code--off-${i}', position: 'bottom-end' }">
   <button type="button" class="btn btn-show-code" aria-label="Toggle Code">
     ${iconCode()}
   </button>
-  <div class="tooltip transform transition duration-300 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
+  <div id="tooltip--show-code--on-${i}" class="tooltip transform transition duration-300 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
     <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()}">
       Show Code
+    </div>
+  </div>
+  <div id="tooltip--show-code--off-${i}" style="display: none" class="tooltip transform transition duration-300 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
+    <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()}">
+      Hide Code
     </div>
   </div>
 </div>`)
@@ -282,13 +287,18 @@ const populateDemo = (container, i) => {
     <div class="gatsby_demo_code_tabs">
       <div class="gatsby_demo_code_tabs_left list list-px"></div>
       <div class="gatsby_demo_code_tabs_right list list-px">
-        <div data-xt-tooltip="{ position: 'bottom-end' }">
+        <div data-xt-tooltip="{ targets: '#tooltip--clipboard--on-${i}, #tooltip--clipboard--off-${i}', position: 'bottom-end' }">
           <button type="button" class="btn btn-tiny btn-clipboard" aria-label="Copy to Clipboard">
             ${iconCopy()}
           </button>
-          <div class="tooltip transform transition duration-300 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
+          <div id="tooltip--clipboard--on-${i}" class="tooltip transform transition duration-300 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
             <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()}">
               Copy to Clipboard
+            </div>
+          </div>
+          <div id="tooltip--clipboard--off-${i}" style="display: none" class="tooltip transform transition duration-300 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
+            <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()}">
+              Copied!
             </div>
           </div>
         </div>
@@ -300,7 +310,8 @@ const populateDemo = (container, i) => {
       )
     )
     // https://github.com/zenorocha/clipboard.js/
-    const clipboard = new ClipboardJS(container.querySelector('.btn-clipboard'), {
+    const btnClipboard = container.querySelector('.btn-clipboard')
+    const clipboard = new ClipboardJS(btnClipboard, {
       target: trigger => {
         console.debug('code copied')
         return trigger.closest('.gatsby_demo').querySelector('.gatsby_demo_item.active .gatsby_demo_code .gatsby_demo_code_body_item.active pre code')
@@ -308,10 +319,25 @@ const populateDemo = (container, i) => {
     })
     clipboard.on('success', e => {
       e.clearSelection()
-      // $(e.trigger).attr('data-original-title', 'Done').tooltip('show')
+      // tooltip
+      const btn = btnClipboard
+      const tooltip = btn.closest('[data-xt-tooltip]')
+      // close tooltip
+      tooltip.dispatchEvent(new CustomEvent('off.trigger.xt'))
+      // switch tooltip
+      let self = Xt.get('xt-tooltip', tooltip)
+      self.targets[0].style.display = 'none'
+      self.targets[1].style.display = ''
+      // open tooltip
+      tooltip.dispatchEvent(new CustomEvent('on.trigger.xt'))
     })
-    clipboard.on('error', () => {
-      // $(e.trigger).attr('data-original-title', 'Error: copy manually').tooltip('show')
+    const btn = btnClipboard
+    const tooltip = btn.closest('[data-xt-tooltip]')
+    tooltip.addEventListener('off.xt', () => {
+      // switch tooltip
+      let self = Xt.get('xt-tooltip', tooltip)
+      self.targets[0].style.display = ''
+      self.targets[1].style.display = 'none'
     })
     // inject iframe
     if (!item.getAttribute('data-iframe-fullscreen')) {
@@ -379,9 +405,27 @@ const populateDemo = (container, i) => {
   // .btn-show-code
   const demoId = `gatsby_demo_${i}`
   container.setAttribute('id', demoId)
-  new Xt.Toggle(container.querySelector('.btn-show-code'), {
+  const btnCode = container.querySelector('.btn-show-code')
+  new Xt.Toggle(btnCode, {
     targets: `#${demoId} .gatsby_demo_code`,
     instant: true,
+  })
+  btnCode.addEventListener('click', function () {
+    const btn = this
+    const tooltip = btn.closest('[data-xt-tooltip]')
+    // close tooltip
+    tooltip.dispatchEvent(new CustomEvent('off.trigger.xt'))
+    // switch tooltip
+    let self = Xt.get('xt-tooltip', tooltip)
+    if (btn.classList.contains('in')) {
+      self.targets[0].style.display = 'none'
+      self.targets[1].style.display = ''
+    } else {
+      self.targets[0].style.display = ''
+      self.targets[1].style.display = 'none'
+    }
+    // open tooltip
+    tooltip.dispatchEvent(new CustomEvent('on.trigger.xt'))
   })
   document.querySelector(`#${demoId} .gatsby_demo_code`).addEventListener('on.xt', e => {
     e.target.closest('.gatsby_demo_item').classList.add('active-code')

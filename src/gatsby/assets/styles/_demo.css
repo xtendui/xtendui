@@ -43,6 +43,9 @@ pre[class*="language-"] {
   .gatsby_demo_code_body & {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+    #gatsby_open-full & {
+      border-radius: 0;
+    }
   }
   border: 0 !important;
   line-height: 0 !important;
@@ -252,6 +255,8 @@ pre {
     top: 0;
     right: 0;
     border-radius: 0;
+    padding: 10px;
+    font-size: 23px;
   }
   .gatsby_demo_tabs_right {
     padding-right: 45px;

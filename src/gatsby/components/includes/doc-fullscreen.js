@@ -1,12 +1,18 @@
 import React from 'react'
 
+const cardBlack = require('components/snippets/classes/card-black').default
+
 export default class DocFullscreen extends React.Component {
   render() {
     return (
       <>
         <div id="gatsby_open-full-trigger"></div>
         <div id="gatsby_open-full" className="toggle">
-          <div className="btn btn-close" aria-label="Close">
+          <div
+            className="btn btn-close"
+            aria-label="Close"
+            data-xt-tooltip="{ targets: '#gatsby_open-full_tooltip', position: 'bottom-end', spaceOverflow: 0 }"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="icon"
@@ -23,6 +29,12 @@ export default class DocFullscreen extends React.Component {
               <line x1="18" y1="6" x2="6" y2="18" />
               <line x1="6" y1="6" x2="18" y2="18" />
             </svg>
+          </div>
+          <div
+            id="gatsby_open-full_tooltip"
+            className="tooltip transform transition duration-300 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0"
+          >
+            <div className={`tooltip-sm rounded shadow-tooltip ${cardBlack()}`}>Close Fullscreen</div>
           </div>
           <div className="card-content" id="gatsby_open-full-content"></div>
         </div>
