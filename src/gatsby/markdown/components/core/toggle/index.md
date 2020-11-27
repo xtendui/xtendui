@@ -47,12 +47,12 @@ Pass **elements** and **targets** options if different from defaults. **Elements
 
 </div>
 
-#### Multiple
+#### Self
 
-Use this code to create a **toggle** in **multiple mode**.
+Use this code to create a **toggle** in **self mode**.
 
 <demo>
-  <demovanilla src="vanilla/components/core/toggle/usage-multiple">
+  <demovanilla src="vanilla/components/core/toggle/usage-self">
   </demovanilla>
 </demo>
 
@@ -76,12 +76,19 @@ The **unique** mode is useful when triggering **targets outside the scope** of t
 
 Check subpage to [customize interaction](/components/core/toggle/interaction).
 
-#### Self
+#### Multiple
 
-Use this code to create a **toggle** in **self mode**.
+Use this code to create a **toggle** in **multiple mode**.
 
 <demo>
-  <demovanilla src="vanilla/components/core/toggle/usage-self">
+  <demovanilla src="vanilla/components/core/toggle/usage-multiple">
+  </demovanilla>
+</demo>
+
+If you need to toggle **multiple targets** with the **same element** assign `data-xt-group` to **elements** and the associated **targets**. Group's additional elements aren't counted for min and max.
+
+<demo>
+  <demovanilla src="vanilla/components/core/toggle/usage-multiple-group">
   </demovanilla>
 </demo>
 

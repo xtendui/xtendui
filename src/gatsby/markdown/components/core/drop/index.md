@@ -55,12 +55,12 @@ Pass **elements** and **targets** options if different from defaults. **Elements
 
 </div>
 
-#### Multiple
+#### Self
 
-Use this code to create **drop** in **multiple mode**.
+Use this code to create a **drop** in **self mode**.
 
 <demo>
-  <demovanilla src="vanilla/components/core/drop/usage-multiple">
+  <demovanilla src="vanilla/components/core/drop/usage-self">
   </demovanilla>
 </demo>
 
@@ -78,16 +78,25 @@ The **unique** mode is useful when triggering **targets outside the scope** of t
 <demo>
   <demovanilla src="vanilla/components/core/drop/usage-unique">
   </demovanilla>
+  <demovanilla src="vanilla/components/core/drop/usage-unique-same">
+  </demovanilla>
 </demo>
 
 Check subpage to [customize interaction](/components/core/drop/interaction) and [customize lists](/components/core/drop/content-list) or [customize card](/components/core/drop/content-card).
 
-#### Self
+#### Multiple
 
-Use this code to create a **drop** in **self mode**.
+Use this code to create **drop** in **multiple mode**.
 
 <demo>
-  <demovanilla src="vanilla/components/core/drop/usage-self">
+  <demovanilla src="vanilla/components/core/drop/usage-multiple">
+  </demovanilla>
+</demo>
+
+If you need to toggle **multiple targets** with the **same element** assign `data-xt-group` to **elements** and the associated **targets**. Group's additional elements aren't counted for min and max.
+
+<demo>
+  <demovanilla src="vanilla/components/core/drop/usage-multiple-group">
   </demovanilla>
 </demo>
 

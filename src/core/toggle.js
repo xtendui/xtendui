@@ -1797,7 +1797,7 @@ class Toggle {
           const appendToTarget = document.querySelector(options.appendTo)
           const appendOrigin = document.querySelector(`[data-xt-origin="${self.namespace}"]`)
           if (!appendOrigin) {
-            el.before(Xt.createElement(`<div class="xt-ignore" data-xt-origin="${self.namespace}"></div>`))
+            el.before(Xt.createElement(`<div class="xt-ignore hidden" data-xt-origin="${self.namespace}"></div>`))
           }
           el.classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
           appendToTarget.append(el)

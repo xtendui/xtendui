@@ -39,15 +39,6 @@ When you need to reinit the component when the media is loaded and the **width**
 
 </div>
 
-## Group
-
-If you need to toggle **multiple targets** with the **same element** assign `data-xt-group` to **elements** and the associated targets **targets**. Group's additional elements aren't counted for min and max.
-
-<demo>
-  <demovanilla src="vanilla/components/core/toggle/group">
-  </demovanilla>
-</demo>
-
 ## Other
 
 <div class="table-scroll">

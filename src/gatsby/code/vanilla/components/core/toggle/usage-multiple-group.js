@@ -12,7 +12,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-2 items-center" data-xt-toggle>
 
-  <button type="button" class="btn btn-md rounded-md ${btnDefault()}" data-xt-group="0">
+  <button type="button" class="btn btn-md rounded-md ${btnDefault()}" data-xt-group="my-group">
     Toggle Group 0
   </button>
 
@@ -20,7 +20,7 @@ demo.htmlSource = `
     Toggle 1
   </button>
 
-  <button type="button" class="btn btn-md rounded-md ${btnDefault()}" data-xt-group="0">
+  <button type="button" class="btn btn-md rounded-md ${btnDefault()}" data-xt-group="my-group">
     Toggle Group 0
   </button>
 
@@ -28,7 +28,7 @@ demo.htmlSource = `
     Toggle 2
   </button>
 
-  <button type="button" class="btn btn-md rounded-md ${btnDefault()}" data-xt-group="3">
+  <button type="button" class="btn btn-md rounded-md ${btnDefault()}" data-xt-group="another-group">
     Toggle Group 3
   </button>
 
@@ -36,15 +36,15 @@ demo.htmlSource = `
     Target 1
   </div>
 
-  <div class="card toggle rounded-md ${cardToggle()}" data-xt-group="0">
+  <div class="card toggle rounded-md ${cardToggle()}" data-xt-group="my-group">
     Target Group 0
   </div>
 
-  <div class="card toggle rounded-md ${cardToggle()}" data-xt-group="3">
+  <div class="card toggle rounded-md ${cardToggle()}" data-xt-group="another-group">
     Target Group 3
   </div>
 
-  <div class="card toggle rounded-md ${cardToggle()}" data-xt-group="0">
+  <div class="card toggle rounded-md ${cardToggle()}" data-xt-group="my-group">
     Target Group 0
   </div>
 
@@ -52,7 +52,7 @@ demo.htmlSource = `
     Target 2
   </div>
 
-  <div class="card toggle rounded-md ${cardToggle()}" data-xt-group="3">
+  <div class="card toggle rounded-md ${cardToggle()}" data-xt-group="another-group">
     Target Group 3
   </div>
 

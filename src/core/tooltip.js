@@ -66,7 +66,7 @@ class Tooltip extends Xt.Toggle {
         // popperjs
         const element = self.getElements(el)[0]
         const popperInstance = createPopper(element, el, {
-          placement: options.position,
+          placement: el.getAttribute('data-xt-position') || options.position,
           strategy: options.strategy,
           resize: false,
           modifiers: [

@@ -10,6 +10,8 @@ date: "2009-10-10"
 
 Use **js option** `position: <value>` to specify [popperjs placement](https://popper.js.org/docs/v2/constructors/#placement).
 
+If you want to **control a specific tooltip position** use `[data-xt-position=<value>]` on the `.tooltip`
+
 <div class="table-scroll">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
