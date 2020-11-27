@@ -2,19 +2,19 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/addons/google-locator'
 
-// add yout api key here
+Xt.mount.push({
+  matches: '#iframe--google-locator body .google-locator', // add your own selector instead of body to contain the code
+  mount: object => {
+    // add yout api key here
 
-Xt.addScript(
-  'https://maps.googleapis.com/maps/api/js?key=AIzaSyDSZt9TUgS20QyAbAAL-X3tJIKVLEaCrts&v=3&libraries=places,geometry&language=en&&region=US&callback=demoGoogleLocator'
-)
+    Xt.addScript(
+      'https://maps.googleapis.com/maps/api/js?key=AIzaSyDSZt9TUgS20QyAbAAL-X3tJIKVLEaCrts&v=3&libraries=places,geometry&language=en&&region=US&callback=demoGoogleLocator'
+    )
 
-window.demoGoogleLocator = function () {
-  Xt.mount.push({
-    matches: '#iframe--google-locator body .google-locator', // add your own selector instead of body to contain the code
-    mount: object => {
-      // init
+    // init
 
-      let self = new Xt.GoogleLocator(object, {
+    window.demoGoogleLocator = function () {
+      new Xt.GoogleLocator(object, {
         initialLocate: false,
         initialSearch: false,
         seachMapBounds: false,
@@ -49,13 +49,6 @@ window.demoGoogleLocator = function () {
           },
         },
       })
-
-      // unmount
-
-      return () => {
-        self.destroy()
-        self = null
-      }
-    },
-  })
-}
+    }
+  },
+})
