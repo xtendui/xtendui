@@ -12,7 +12,6 @@ import 'assets/styles/app.css'
 export default class Layout extends React.Component {
   componentDidMount() {
     if (typeof window !== 'undefined') {
-      require('assets/scripts/app.js')
       const makeDocument = require('assets/scripts/app').makeDocument
       const populateBlock = require('assets/scripts/demo').populateBlock
       populateBlock()
