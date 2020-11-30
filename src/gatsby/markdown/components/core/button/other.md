@@ -18,9 +18,6 @@ Use **component classes** to style **active**.
 
 </div>
 
-[[notePrimary]]
-| For aria purpose use `aria-selected="true"` when using the class `.active`.
-
 <demo>
   <demovanilla src="vanilla/components/core/button/active">
   </demovanilla>

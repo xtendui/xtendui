@@ -15,7 +15,7 @@ demo.htmlSource = `
     Lorem ipsum
   </button>
 
-  <button type="button" class="btn btn-md active ${btnPrimary()}" aria-selected="true">
+  <button type="button" class="btn btn-md active ${btnPrimary()}">
     dolor sit amet
   </button>
 

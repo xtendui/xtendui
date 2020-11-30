@@ -456,6 +456,25 @@ class Slider extends Xt.Toggle {
     addEventListener('resize', reinitHandler)
   }
 
+  /**
+   * init aria
+   */
+  initAriaRole() {
+    const self = this
+    const options = self.options
+    // aria
+    if (options.aria) {
+      // role
+      if (options.aria === true || options.aria.role) {
+        for (const tr of self.targets) {
+          tr.setAttribute('role', 'group')
+          tr.setAttribute('aria-roledescription', 'slide')
+        }
+        self.object.setAttribute('aria-roledescription', 'carousel')
+      }
+    }
+  }
+
   //
   // handler
   //
@@ -1314,10 +1333,6 @@ Slider.optionsDefault = {
   navigation: '[data-xt-nav]',
   keyboard: {
     selector: '.slides',
-  },
-  aria: {
-    describedby: true,
-    labelledby: false,
   },
 }
 

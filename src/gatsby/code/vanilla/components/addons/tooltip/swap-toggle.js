@@ -15,13 +15,13 @@ demo.htmlSource = `
   Swap toggle
 </button>
 
-<div class="tooltip transform transition duration-300 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0" id="tooltip--swap-toggle">
+<div class="tooltip transform transition duration-150 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0" id="tooltip--swap-toggle">
   <div class="tooltip-md rounded shadow-tooltip ${cardBlack()}">
     Lorem ipsum dolor sit amet
   </div>
 </div>
 
-<div class="tooltip transform transition duration-300 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0" id="tooltip--swap-toggle-swap" style="display: none">
+<div class="tooltip transform transition duration-150 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0" id="tooltip--swap-toggle-swap" style="display: none">
   <div class="tooltip-md rounded shadow-tooltip ${cardBlack()}">
     Toggled!
   </div>

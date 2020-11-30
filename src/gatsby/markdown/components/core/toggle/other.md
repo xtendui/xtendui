@@ -58,9 +58,11 @@ When you need to reinit the component when the media is loaded and the **width**
 | Option                  | `zIndex:Object|Boolean`                 | `false`     | Set `z-index` on activation, can be one or more objects ex: `zIndex: { targets: { start: 600, factor: -1 } },` can be `elements`, `targets`, `elementsInner`, `targetsInner`          |
 | Option                  | `focusLimit:Boolean`                          | `false`        | Limit focus on activation            |
 | Option                  | `aria:Object|false`                          | `Object`        | Inject aria attributes            |
+| Option                  | `aria.activation:Boolean`                          | `true`        | Inject aria selected, expanded and live attributes            |
+| Option                  | `aria.role:Boolean`                          | `true`        | Inject aria role attributes            |
 | Option                  | `aria.tabindex:Boolean`                          | `true`        | Inject aria tabindex attributes            |
 | Option                  | `aria.controls:Boolean`                          | `true`        | Inject aria controls attributes            |
-| Option                  | `aria.describedby:Boolean`                          | `true`        | Inject aria describedby attributes            |
+| Option                  | `aria.describedby:Boolean`                          | `false`        | Inject aria describedby attributes            |
 | Option                  | `aria.labelledby:Boolean`                          | `false`        | Inject aria labelledby attributes            |
 
 </div>

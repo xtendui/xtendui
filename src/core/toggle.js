@@ -325,26 +325,48 @@ class Toggle {
     // aria
     if (options.aria) {
       if (self.targets.length) {
-        // elements
-        for (const el of self.elements) {
-          const ariaEls = Xt.queryAll(el, options.ariaControls)
-          const ariaEl = ariaEls.length ? ariaEls[0] : el
+        // targets
+        for (const tr of self.targets) {
           // id
           if (options.aria === true || options.aria.labelledby || options.aria.controls) {
-            const id = ariaEl.getAttribute('id')
+            const id = tr.getAttribute('id')
             if (!id) {
-              ariaEl.setAttribute('id', Xt.getuniqueId())
+              tr.setAttribute('id', Xt.getuniqueId())
             }
           }
+        }
+        // elements
+        for (const el of self.elements) {
           // selected
-          ariaEl.setAttribute('aria-selected', 'false')
+          if (options.aria === true || options.aria.activation) {
+            el.setAttribute('aria-selected', 'false')
+          }
+          // id
+          if (options.aria === true || options.aria.labelledby || options.aria.controls) {
+            const id = el.getAttribute('id')
+            if (!id) {
+              el.setAttribute('id', Xt.getuniqueId())
+            }
+          }
+          // controls
+          if (options.aria === true || options.aria.controls) {
+            const trs = self.getTargets(el)
+            let str = ' '
+            str += ''
+            for (const tr of trs) {
+              str += ` ${tr.getAttribute('id')}`
+            }
+            el.setAttribute('aria-controls', str.trim())
+          }
         }
         // targets
         for (const tr of self.targets) {
           // expanded
-          const role = tr.getAttribute('role')
-          if (role === 'tabpanel' || role === 'listbox' || role === 'dialog') {
-            tr.setAttribute('aria-expanded', 'false')
+          if (options.aria === true || options.aria.activation) {
+            const role = tr.getAttribute('role')
+            if (role === 'tabpanel' || role === 'listbox' || role === 'tooltip' || role === 'dialog') {
+              tr.setAttribute('aria-expanded', 'false')
+            }
           }
           // tabindex
           if (options.aria === true || options.aria.tabindex) {
@@ -353,22 +375,13 @@ class Toggle {
               focusable.setAttribute('tabindex', '-1')
             }
           }
-          // id
-          if (options.aria === true || options.aria.labelledby || options.aria.controls) {
-            const id = tr.getAttribute('id')
-            if (!id) {
-              tr.setAttribute('id', Xt.getuniqueId())
-            }
-          }
           // describedby
           if (options.aria === true || options.aria.describedby) {
             const els = self.getElements(tr)
             let str = ' '
             str += ''
             for (const el of els) {
-              const ariaEls = Xt.queryAll(el, options.ariaControls)
-              const ariaEl = ariaEls.length ? ariaEls[0] : el
-              str += ` ${ariaEl.getAttribute('id')}`
+              str += ` ${el.getAttribute('id')}`
             }
             tr.setAttribute('aria-describedby', str.trim())
           }
@@ -378,26 +391,9 @@ class Toggle {
             let str = ' '
             str += ''
             for (const el of els) {
-              const ariaEls = Xt.queryAll(el, options.ariaControls)
-              const ariaEl = ariaEls.length ? ariaEls[0] : el
-              str += ` ${ariaEl.getAttribute('id')}`
+              str += ` ${el.getAttribute('id')}`
             }
             tr.setAttribute('aria-labelledby', str.trim())
-          }
-        }
-        // ariaControls
-        if (options.aria === true || options.aria.controls) {
-          for (const el of self.elements) {
-            const trs = self.getTargets(el)
-            const ariaEls = Xt.queryAll(el, options.ariaControls)
-            const ariaEl = ariaEls.length ? ariaEls[0] : el
-            // controls
-            let str = ' '
-            str += ''
-            for (const tr of trs) {
-              str += ` ${tr.getAttribute('id')}`
-            }
-            ariaEl.setAttribute('aria-controls', str.trim())
           }
         }
       }
@@ -414,18 +410,18 @@ class Toggle {
     if (options.aria) {
       if (self.targets.length) {
         // role
-        if (self.mode === 'multiple') {
-          self.object.setAttribute('role', 'tablist')
-          if (options.max > 1) {
-            self.object.setAttribute('aria-multiselectable', 'true')
-          }
-          for (const el of self.elements) {
-            const ariaEls = Xt.queryAll(el, options.ariaControls)
-            const ariaEl = ariaEls.length ? ariaEls[0] : el
-            ariaEl.setAttribute('role', 'tab')
-          }
-          for (const tr of self.targets) {
-            tr.setAttribute('role', 'tabpanel')
+        if (options.aria === true || options.aria.role) {
+          if (self.mode === 'multiple') {
+            self.object.setAttribute('role', 'tablist')
+            if (options.max > 1) {
+              self.object.setAttribute('aria-multiselectable', 'true')
+            }
+            for (const el of self.elements) {
+              el.setAttribute('role', 'tab')
+            }
+            for (const tr of self.targets) {
+              tr.setAttribute('role', 'tabpanel')
+            }
           }
         }
       }
@@ -1487,6 +1483,10 @@ class Toggle {
               self.eventAuto()
             }, time / Xt.autoTimescale)
           )
+          // aria
+          if (options.aria === true || options.aria.activation) {
+            self.object.setAttribute('aria-live', 'off')
+          }
           // listener dispatch
           self.object.dispatchEvent(new CustomEvent('autostart.xt'))
         })
@@ -1504,6 +1504,10 @@ class Toggle {
     if (options.auto && options.auto.time && !self.wrap) {
       // clear
       clearTimeout(Xt.dataStorage.get(self.object, `${self.componentNamespace}AutoTimeout`))
+      // aria
+      if (options.aria === true || options.aria.activation) {
+        self.object.setAttribute('aria-live', 'polite')
+      }
       // listener dispatch
       self.object.dispatchEvent(new CustomEvent('autostop.xt'))
     }
@@ -1526,6 +1530,10 @@ class Toggle {
         self.detail.autopaused = true
         // clear
         clearTimeout(Xt.dataStorage.get(self.object, `${self.componentNamespace}AutoTimeout`))
+        // aria
+        if (options.aria === true || options.aria.activation) {
+          self.object.setAttribute('aria-live', 'polite')
+        }
         // listener dispatch
         self.object.dispatchEvent(new CustomEvent('autopause.xt'))
       }
@@ -1807,15 +1815,17 @@ class Toggle {
       if (options.aria) {
         if (type === 'elements') {
           // selected
-          const ariaEls = Xt.queryAll(el, options.ariaControls)
-          const ariaEl = ariaEls.length ? ariaEls[0] : el
-          ariaEl.setAttribute('aria-selected', 'true')
+          if (options.aria === true || options.aria.activation) {
+            el.setAttribute('aria-selected', 'true')
+          }
         }
         if (type === 'targets') {
           // expanded
-          const role = el.getAttribute('role')
-          if (role === 'tabpanel' || role === 'listbox' || role === 'dialog') {
-            el.setAttribute('aria-expanded', 'true')
+          if (options.aria === true || options.aria.activation) {
+            const role = el.getAttribute('role')
+            if (role === 'tabpanel' || role === 'listbox' || role === 'tooltip' || role === 'dialog') {
+              el.setAttribute('aria-expanded', 'true')
+            }
           }
         }
         // tabindex
@@ -1945,15 +1955,17 @@ class Toggle {
       if (options.aria) {
         // selected
         if (type === 'elements') {
-          const ariaEls = Xt.queryAll(el, options.ariaControls)
-          const ariaEl = ariaEls.length ? ariaEls[0] : el
-          ariaEl.setAttribute('aria-selected', 'false')
+          if (options.aria === true || options.aria.activation) {
+            el.setAttribute('aria-selected', 'false')
+          }
         }
         if (type === 'targets') {
           // expanded
-          const role = el.getAttribute('role')
-          if (role === 'tabpanel' || role === 'listbox' || role === 'dialog') {
-            el.setAttribute('aria-expanded', 'false')
+          if (options.aria === true || options.aria.activation) {
+            const role = el.getAttribute('role')
+            if (role === 'tabpanel' || role === 'listbox' || role === 'tooltip' || role === 'dialog') {
+              el.setAttribute('aria-expanded', 'false')
+            }
           }
           // tabindex
           if (options.aria === true || (typeof options.aria === 'object' && options.aria.tabindex)) {
@@ -3089,9 +3101,11 @@ Toggle.optionsDefaultSuper = {
   collapseHeight: false,
   collapseWidth: false,
   aria: {
+    activation: true,
+    role: true,
     tabindex: true,
     controls: true,
-    describedby: true,
+    describedby: false,
     labelledby: false,
   },
 }

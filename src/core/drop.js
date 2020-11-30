@@ -30,13 +30,13 @@ class Drop extends Xt.Toggle {
     // aria
     if (options.aria) {
       // role
-      for (const el of self.elements) {
-        const ariaEls = Xt.queryAll(el, options.ariaControls)
-        const ariaEl = ariaEls.length ? ariaEls[0] : el
-        ariaEl.setAttribute('aria-haspopup', 'listbox')
-      }
-      for (const tr of self.targets) {
-        tr.setAttribute('role', 'listbox')
+      if (options.aria === true || options.aria.role) {
+        for (const el of self.elements) {
+          el.setAttribute('aria-haspopup', 'true')
+        }
+        for (const tr of self.targets) {
+          tr.setAttribute('role', 'listbox')
+        }
       }
     }
   }
@@ -169,7 +169,6 @@ Drop.optionsDefault = {
       factor: -1,
     },
   },
-  ariaControls: ':scope > a, :scope > button',
 }
 
 //

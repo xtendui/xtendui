@@ -225,12 +225,12 @@ const populateDemo = (container, i) => {
   <button type="button" class="btn btn-show-code" aria-label="Toggle Code">
     ${iconCode()}
   </button>
-  <div id="tooltip--show-code--on-${i}" class="tooltip transform transition duration-300 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
+  <div id="tooltip--show-code--on-${i}" class="tooltip transform transition duration-150 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
     <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()}">
       Show Code
     </div>
   </div>
-  <div id="tooltip--show-code--off-${i}" style="display: none" class="tooltip transform transition duration-300 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
+  <div id="tooltip--show-code--off-${i}" style="display: none" class="tooltip transform transition duration-150 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
     <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()}">
       Hide Code
     </div>
@@ -243,7 +243,7 @@ const populateDemo = (container, i) => {
   <button type="button" class="btn btn-open-full" aria-label="Toggle Fullscreen">
     ${iconMaximize()}
   </button>
-  <div class="tooltip transform transition duration-300 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
+  <div class="tooltip transform transition duration-150 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
     <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()}">
       Open Fullscreen
     </div>
@@ -256,7 +256,7 @@ const populateDemo = (container, i) => {
   <a href="#" target="_blank" class="btn btn-open-iframe" aria-label="Open Iframe">
     ${iconExternal()}
   </a>
-  <div class="tooltip transform transition duration-300 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
+  <div class="tooltip transform transition duration-150 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
     <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()}">
       Open Iframe
     </div>
@@ -291,12 +291,12 @@ const populateDemo = (container, i) => {
           <button type="button" class="btn btn-tiny btn-clipboard" aria-label="Copy to Clipboard">
             ${iconCopy()}
           </button>
-          <div id="tooltip--clipboard--on-${i}-${k}" class="tooltip transform transition duration-300 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
+          <div id="tooltip--clipboard--on-${i}-${k}" class="tooltip transform transition duration-150 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
             <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()}">
               Copy to Clipboard
             </div>
           </div>
-          <div id="tooltip--clipboard--off-${i}-${k}" style="display: none" class="tooltip transform transition duration-300 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
+          <div id="tooltip--clipboard--off-${i}-${k}" style="display: none" class="tooltip transform transition duration-150 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
             <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()}">
               Copied!
             </div>

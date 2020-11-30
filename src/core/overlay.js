@@ -29,20 +29,20 @@ class Overlay extends Xt.Toggle {
     // aria
     if (options.aria) {
       // role
-      if (self.targets.length) {
-        for (const el of self.elements) {
-          const ariaEls = Xt.queryAll(el, options.ariaControls)
-          const ariaEl = ariaEls.length ? ariaEls[0] : el
-          ariaEl.setAttribute('aria-haspopup', 'dialog')
-        }
-        for (const tr of self.targets) {
-          tr.setAttribute('role', 'dialog')
-          tr.setAttribute('aria-modal', 'true')
-        }
-      } else {
-        for (const el of self.elements) {
-          el.setAttribute('role', 'dialog')
-          el.setAttribute('aria-modal', 'true')
+      if (options.aria === true || options.aria.role) {
+        if (self.targets.length) {
+          for (const el of self.elements) {
+            el.setAttribute('aria-haspopup', 'dialog')
+          }
+          for (const tr of self.targets) {
+            tr.setAttribute('role', 'dialog')
+            tr.setAttribute('aria-modal', 'true')
+          }
+        } else {
+          for (const el of self.elements) {
+            el.setAttribute('role', 'dialog')
+            el.setAttribute('aria-modal', 'true')
+          }
         }
       }
     }
