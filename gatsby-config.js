@@ -116,10 +116,10 @@ module.exports = {
             options: {
               blocks: {
                 noteDefault: {
-                  classes: 'card card-sm text-black links-default rounded-md bg-gray-200 gatsby_note',
+                  classes: 'card card-sm my-5 mt-fc mb-lc text-black links-default rounded-md bg-gray-200 gatsby_note',
                 },
                 notePrimary: {
-                  classes: 'card card-sm text-white links-inverse rounded-md bg-accent-500 gatsby_note',
+                  classes: 'card card-sm my-5 mt-fc mb-lc text-white links-inverse rounded-md bg-accent-500 gatsby_note',
                 },
               },
             },

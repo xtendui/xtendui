@@ -27,6 +27,10 @@ You can disable styles using `.card-disable`.
 
 You can stretch cards vertically inside row, see [row stretch](/components/core/row/other#stretch).
 
+## Note
+
+Refer to [note component](/components/core/note).
+
 ## Checks
 
 Refer to [form checks card](/components/core/form/other#checks-card).

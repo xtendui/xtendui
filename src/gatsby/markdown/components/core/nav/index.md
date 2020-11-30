@@ -1,8 +1,8 @@
 ---
 type: "Components"
-category: "Addons"
-parent: "List Group"
-title: "nav"
+category: "Core"
+parent: "Nav"
+title: "Nav"
 description: "Simple nav component as a subcomponent of list group."
 ---
 
@@ -10,10 +10,13 @@ description: "Simple nav component as a subcomponent of list group."
 
 Use [list group](/components/core/list-group) to create a **nav**.
 
+[[noteDefault]]
+| This component uses [list group](/components/core/list-group) see documentation to **import javascript** and **customize**.
+
 [[notePrimary]]
 | For aria purpose use `<nav></nav>`.
 
 <demo>
-  <demovanilla src="vanilla/components/core/navigation/nav">
+  <demovanilla src="vanilla/components/core/nav/usage">
   </demovanilla>
 </demo>

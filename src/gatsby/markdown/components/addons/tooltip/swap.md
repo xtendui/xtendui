@@ -17,8 +17,8 @@ Use this code to create a **tooltip swap**.
 
 Use this code to create a **tooltip swap toggle**.
 
-[[notePrimary]]
-| This addon uses [toggle](/components/core/tooltip) see documentation to import javascript and customize.
+[[noteDefault]]
+| This addon uses [toggle](/components/core/tooltip) see documentation to **import javascript** and **customize**.
 
 <demo>
   <demovanilla src="vanilla/components/addons/tooltip/swap-toggle">
