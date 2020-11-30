@@ -14,7 +14,7 @@ Use this code to create a **toggle multilevel**.
 | For aria purpose use `<nav></nav>`.
 
 [[notePrimary]]
-| This addon uses [toggle](/components/core/toggle). Visit the component page to import javascript and customize.
+| This addon uses [toggle](/components/core/toggle) see documentation to import javascript and customize.
 
 <demo>
   <demovanilla src="vanilla/components/addons/navigation/multilevel">

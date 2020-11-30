@@ -115,7 +115,7 @@ See [mouse follow addon](/components/core/loader) to create a **loader with mous
 | List `ul` and `old` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
 
 [[notePrimary]]
-| This addon uses [mouse follow](/components/addons/animation/mouse-follow). Visit the component page to import javascript and customize.
+| This addon uses [mouse follow](/components/addons/animation/mouse-follow) see documentation to import javascript and customize.
 
 [[notePrimary]]
 | For aria purpose use `role="toolbar"`.

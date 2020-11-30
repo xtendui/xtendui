@@ -80,6 +80,7 @@ module.exports = {
     textarea: {
       // styles
       minHeight: '3.5rem',
+      maxHeight: '10.5rem',
     },
     '.form-label-check': {
       // setup

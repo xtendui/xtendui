@@ -27,7 +27,7 @@ module.exports = {
 ## Usage
 
 [[notePrimary]]
-| This addon uses [mouse follow](/components/addons/animation/mouse-follow). Visit the component page to import javascript and customize.
+| This addon uses [mouse follow](/components/addons/animation/mouse-follow) see documentation to import javascript and customize.
 
 #### Toggle
 

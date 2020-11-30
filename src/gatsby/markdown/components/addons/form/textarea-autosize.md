@@ -12,7 +12,7 @@ Import the **component javascript** file.
 
 ## Usage
 
-Use this code to create a **textarea autosize**.
+Use this code to create a **textarea autosize**. You can customize `min-height` and `max-height` of the textarea.
 
 <demo>
   <demovanilla src="vanilla/components/addons/form/textarea-autosize">

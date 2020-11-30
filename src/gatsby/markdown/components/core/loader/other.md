@@ -40,7 +40,7 @@ Example loader filler with **activation animation**.
 Use **component classes** to create a **mouse follow**. Remember **not to transition** `.mouse-follow` element.
 
 [[notePrimary]]
-| This demo uses [mouse follow](/components/addons/animation/mouse-follow). Visit the component page to import javascript and customize.
+| This demo uses [mouse follow](/components/addons/animation/mouse-follow) see documentation to import javascript and customize.
 
 <demo>
   <demovanilla src="vanilla/components/addons/animation/mouse-follow">
