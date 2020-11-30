@@ -287,16 +287,16 @@ const populateDemo = (container, i) => {
     <div class="gatsby_demo_code_tabs">
       <div class="gatsby_demo_code_tabs_left list list-px"></div>
       <div class="gatsby_demo_code_tabs_right list list-px">
-        <div data-xt-tooltip="{ targets: '#tooltip--clipboard--on-${i}, #tooltip--clipboard--off-${i}', position: 'bottom-end' }">
+        <div data-xt-tooltip="{ targets: '#tooltip--clipboard--on-${i}-${k}, #tooltip--clipboard--off-${i}-${k}', position: 'bottom-end' }">
           <button type="button" class="btn btn-tiny btn-clipboard" aria-label="Copy to Clipboard">
             ${iconCopy()}
           </button>
-          <div id="tooltip--clipboard--on-${i}" class="tooltip transform transition duration-300 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
+          <div id="tooltip--clipboard--on-${i}-${k}" class="tooltip transform transition duration-300 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
             <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()}">
               Copy to Clipboard
             </div>
           </div>
-          <div id="tooltip--clipboard--off-${i}" style="display: none" class="tooltip transform transition duration-300 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
+          <div id="tooltip--clipboard--off-${i}-${k}" style="display: none" class="tooltip transform transition duration-300 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
             <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()}">
               Copied!
             </div>
@@ -313,7 +313,6 @@ const populateDemo = (container, i) => {
     const btnClipboard = container.querySelector('.btn-clipboard')
     const clipboard = new ClipboardJS(btnClipboard, {
       target: trigger => {
-        console.debug('code copied')
         return trigger.closest('.gatsby_demo').querySelector('.gatsby_demo_item.active .gatsby_demo_code .gatsby_demo_code_body_item.active pre code')
       },
     })

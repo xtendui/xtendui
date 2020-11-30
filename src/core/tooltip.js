@@ -36,7 +36,7 @@ class Tooltip extends Xt.Toggle {
         ariaEl.setAttribute('aria-haspopup', 'listbox')
       }
       for (const tr of self.targets) {
-        tr.setAttribute('role', 'listbox')
+        tr.setAttribute('role', 'tooltip')
       }
     }
   }
