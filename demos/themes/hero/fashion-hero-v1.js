@@ -38,7 +38,7 @@ Xt.mount.push({
       duration: 1500,
       auto: {
         time: 5000,
-        pause: '.hero-content-inner',
+        pause: '.hero-content > *',
       },
       autoHeight: false,
       groupMq: false,
