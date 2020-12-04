@@ -1,4 +1,6 @@
 import path from 'path'
+const btnDefault = require('components/snippets/classes/btn-default').default
+const btnPrimary = require('components/snippets/classes/btn-primary').default
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -14,38 +16,24 @@ demo.htmlSource = `
 
     <div class="h5 flex items-center justify-between">
       <div>
-        Products
+        Menu
       </div>
-      <button type="button" class="multilevel-reset btn link hidden">
+      <button type="button" class="multilevel-reset btn btn-sm ${btnPrimary()}  hidden">
         Back
       </button>
     </div>
 
     <nav class="multilevel-list list flex-col">
-      <button type="button" class="btn link" data-xt-group="cat-0">
+      <button type="button" class="btn btn-md ${btnDefault()}" data-xt-group="cat-0">
         Category 0
       </button>
-      <button type="button" class="btn link" data-xt-group="cat-1">
+      <button type="button" class="btn btn-md ${btnDefault()}" data-xt-group="cat-1">
         Category 1
       </button>
-      <a href="#" class="btn link">
+      <a href="#" class="btn btn-md ${btnDefault()}">
         Link 0
       </a>
-      <a href="#" class="btn link">
-        Link 1
-      </a>
-    </nav>
-
-    <div class="h5 flex items-center justify-between">
-      <div>
-        About
-      </div>
-    </div>
-    <nav class="multilevel-list list flex-col">
-      <a href="#" class="btn link">
-        Link 0
-      </a>
-      <a href="#" class="btn link">
+      <a href="#" class="btn btn-md ${btnDefault()}">
         Link 1
       </a>
     </nav>
@@ -58,22 +46,22 @@ demo.htmlSource = `
       <div>
         Category 0
       </div>
-      <button type="button" class="multilevel-reset btn link">
+      <button type="button" class="multilevel-reset btn btn-sm ${btnPrimary()} ">
         Back
       </button>
     </div>
 
     <nav class="multilevel-list list flex-col">
-      <button type="button" class="btn link" data-xt-group="cat-0a">
+      <button type="button" class="btn btn-md ${btnDefault()}" data-xt-group="cat-0a">
         Category 0a
       </button>
-      <button type="button" class="btn link" data-xt-group="cat-0b">
+      <button type="button" class="btn btn-md ${btnDefault()}" data-xt-group="cat-0b">
         Category 0b
       </button>
-      <a href="#" class="btn link">
+      <a href="#" class="btn btn-md ${btnDefault()}">
         Link 0
       </a>
-      <a href="#" class="btn link">
+      <a href="#" class="btn btn-md ${btnDefault()}">
         Link 1
       </a>
     </nav>
@@ -86,16 +74,16 @@ demo.htmlSource = `
       <div>
         Category 0a
       </div>
-      <button type="button" class="multilevel-reset btn link">
+      <button type="button" class="multilevel-reset btn btn-sm ${btnPrimary()} ">
         Back
       </button>
     </div>
 
     <nav class="multilevel-list list flex-col">
-      <a href="#" class="btn link">
+      <a href="#" class="btn btn-md ${btnDefault()}">
         Link 0
       </a>
-      <a href="#" class="btn link">
+      <a href="#" class="btn btn-md ${btnDefault()}">
         Link 1
       </a>
     </nav>
@@ -108,16 +96,16 @@ demo.htmlSource = `
       <div>
         Category 0b
       </div>
-      <button type="button" class="multilevel-reset btn link">
+      <button type="button" class="multilevel-reset btn btn-sm ${btnPrimary()} ">
         Back
       </button>
     </div>
 
     <nav class="multilevel-list list flex-col">
-      <a href="#" class="btn link">
+      <a href="#" class="btn btn-md ${btnDefault()}">
         Link 0
       </a>
-      <a href="#" class="btn link">
+      <a href="#" class="btn btn-md ${btnDefault()}">
         Link 1
       </a>
     </nav>
@@ -130,16 +118,16 @@ demo.htmlSource = `
       <div>
         Category 1
       </div>
-      <button type="button" class="multilevel-reset btn link">
+      <button type="button" class="multilevel-reset btn btn-sm ${btnPrimary()} ">
         Back
       </button>
     </div>
 
     <nav class="multilevel-list list flex-col">
-      <a href="#" class="btn link">
+      <a href="#" class="btn btn-md ${btnDefault()}">
         Link 0
       </a>
-      <a href="#" class="btn link">
+      <a href="#" class="btn btn-md ${btnDefault()}">
         Link 1
       </a>
     </nav>
