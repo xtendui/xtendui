@@ -90,8 +90,10 @@
  */
 
  .gatsby_site_header {
-  html.demo-full-open & {
-    display: none;
+  @media (max-width: calc(theme('screens.lg') - 1px)) {
+    html.demo-full-open & {
+      display: none;
+    }
   }
   @screen lg {
     /*@apply sticky-disable;*/
