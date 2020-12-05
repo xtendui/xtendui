@@ -4,7 +4,7 @@
 
     .product-gallery {
       @apply overflow-y-auto overflow-x-hidden overflow-sub -container md:mx-0;
-      @media (max-width: theme('screens.md')) {
+      @media (max-width: calc(theme('screens.md') - 1px)) {
         height: 65vh;
         height: calc(var(--vh, 1vh) * 65);
       }

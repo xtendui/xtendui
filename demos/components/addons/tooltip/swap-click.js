@@ -27,8 +27,10 @@ Xt.mount.push({
     tooltip.addEventListener('off.xt', () => {
       // swap tooltip
       let self = Xt.get('xt-tooltip', object)
-      self.targets[0].style.display = ''
-      self.targets[1].style.display = 'none'
+      if (self) {
+        self.targets[0].style.display = ''
+        self.targets[1].style.display = 'none'
+      }
     })
   },
 })

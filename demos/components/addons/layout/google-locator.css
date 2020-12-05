@@ -6,7 +6,7 @@
       display: flex;
       flex-wrap: wrap;
       flex: 1 1 auto;
-      @media (max-width: theme('screens.md')) {
+      @media (max-width: calc(theme('screens.md') - 1px)) {
         flex-flow: column;
       }
       @screen md {
@@ -34,7 +34,7 @@
         padding-left: 30rem;
       }
       /* hide map on mobile */
-      @media (max-width: theme('screens.md')) {
+      @media (max-width: calc(theme('screens.md') - 1px)) {
         @apply sr-only;
         height: 100vh;
         visibility: hidden;
