@@ -2860,7 +2860,7 @@ class Toggle {
       self.disabled = false
       self.object.classList.remove('xt-disabled')
       // listener dispatch
-      self.dispatchEvent(new CustomEvent('status.xt'))
+      self.object.dispatchEvent(new CustomEvent('status.xt'))
     }
   }
 
@@ -2885,7 +2885,7 @@ class Toggle {
       self.disabled = true
       self.object.classList.add('xt-disabled')
       // listener dispatch
-      self.dispatchEvent(new CustomEvent('status.xt'))
+      self.object.dispatchEvent(new CustomEvent('status.xt'))
     }
   }
 
