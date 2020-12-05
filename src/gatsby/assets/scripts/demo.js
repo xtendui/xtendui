@@ -219,18 +219,19 @@ const populateDemo = (container, i) => {
       '<div class="gatsby_demo_tabs"><div class="gatsby_demo_tabs_left list list-px"></div><div class="gatsby_demo_tabs_right list list-px"></div></div>'
     )
   )
+  const showCodeUid = Xt.getuniqueId()
   container.querySelector('.gatsby_demo_tabs_right').append(
     Xt.createElement(`
-<div data-xt-tooltip="{ targets: '#tooltip--show-code--on-${i}, #tooltip--show-code--off-${i}', position: 'bottom-end' }">
+<div data-xt-tooltip="{ targets: '#tooltip--show-code--on-${showCodeUid}, #tooltip--show-code--off-${showCodeUid}', position: 'bottom-end' }">
   <button type="button" class="btn btn-show-code" aria-label="Toggle Code">
     ${iconCode()}
   </button>
-  <div id="tooltip--show-code--on-${i}" class="tooltip transform transition duration-150 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
+  <div id="tooltip--show-code--on-${showCodeUid}" class="tooltip transform transition duration-150 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
     <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()}">
       Show Code
     </div>
   </div>
-  <div id="tooltip--show-code--off-${i}" style="display: none" class="tooltip transform transition duration-150 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
+  <div id="tooltip--show-code--off-${showCodeUid}" style="display: none" class="tooltip transform transition duration-150 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
     <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()}">
       Hide Code
     </div>
@@ -279,6 +280,7 @@ const populateDemo = (container, i) => {
     item.setAttribute('id', kebabCase(file))
     container.querySelector('.gatsby_demo_tabs_left').append(Xt.createElement(`<button type="button" class="btn">${name}</button>`))
     // tabs
+    const clipboardUid = Xt.getuniqueId()
     item.prepend(
       Xt.createElement(
         `
@@ -287,16 +289,16 @@ const populateDemo = (container, i) => {
     <div class="gatsby_demo_code_tabs">
       <div class="gatsby_demo_code_tabs_left list list-px"></div>
       <div class="gatsby_demo_code_tabs_right list list-px">
-        <div data-xt-tooltip="{ targets: '#tooltip--clipboard--on-${i}-${k}, #tooltip--clipboard--off-${i}-${k}', position: 'bottom-end' }">
+        <div data-xt-tooltip="{ targets: '#tooltip--clipboard--on-${clipboardUid}, #tooltip--clipboard--off-${clipboardUid}', position: 'bottom-end' }">
           <button type="button" class="btn btn-tiny btn-clipboard" aria-label="Copy to Clipboard">
             ${iconCopy()}
           </button>
-          <div id="tooltip--clipboard--on-${i}-${k}" class="tooltip transform transition duration-150 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
+          <div id="tooltip--clipboard--on-${clipboardUid}" class="tooltip transform transition duration-150 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
             <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()}">
               Copy to Clipboard
             </div>
           </div>
-          <div id="tooltip--clipboard--off-${i}-${k}" style="display: none" class="tooltip transform transition duration-150 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
+          <div id="tooltip--clipboard--off-${clipboardUid}" style="display: none" class="tooltip transform transition duration-150 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
             <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()}">
               Copied!
             </div>
@@ -325,18 +327,22 @@ const populateDemo = (container, i) => {
       tooltip.dispatchEvent(new CustomEvent('off.trigger.xt'))
       // swap tooltip
       let self = Xt.get('xt-tooltip', tooltip)
-      self.targets[0].style.display = 'none'
-      self.targets[1].style.display = ''
-      // open tooltip
-      tooltip.dispatchEvent(new CustomEvent('on.trigger.xt'))
+      if (self) {
+        self.targets[0].style.display = 'none'
+        self.targets[1].style.display = ''
+        // open tooltip
+        tooltip.dispatchEvent(new CustomEvent('on.trigger.xt'))
+      }
     })
     const btn = btnClipboard
     const tooltip = btn.closest('[data-xt-tooltip]')
     tooltip.addEventListener('off.xt', () => {
       // swap tooltip
       let self = Xt.get('xt-tooltip', tooltip)
-      self.targets[0].style.display = ''
-      self.targets[1].style.display = 'none'
+      if (self) {
+        self.targets[0].style.display = ''
+        self.targets[1].style.display = 'none'
+      }
     })
     // inject iframe
     if (!item.getAttribute('data-iframe-fullscreen')) {
@@ -416,15 +422,17 @@ const populateDemo = (container, i) => {
     tooltip.dispatchEvent(new CustomEvent('off.trigger.xt'))
     // swap tooltip
     let self = Xt.get('xt-tooltip', tooltip)
-    if (btn.classList.contains('in')) {
-      self.targets[0].style.display = 'none'
-      self.targets[1].style.display = ''
-    } else {
-      self.targets[0].style.display = ''
-      self.targets[1].style.display = 'none'
+    if (self) {
+      if (btn.classList.contains('in')) {
+        self.targets[0].style.display = 'none'
+        self.targets[1].style.display = ''
+      } else {
+        self.targets[0].style.display = ''
+        self.targets[1].style.display = 'none'
+      }
+      // open tooltip
+      tooltip.dispatchEvent(new CustomEvent('on.trigger.xt'))
     }
-    // open tooltip
-    tooltip.dispatchEvent(new CustomEvent('on.trigger.xt'))
   })
   document.querySelector(`#${demoId} .gatsby_demo_code`).addEventListener('on.xt', e => {
     e.target.closest('.gatsby_demo_item').classList.add('active-code')

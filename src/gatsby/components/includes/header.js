@@ -7,7 +7,6 @@ import { typeSort } from 'components/snippets/type-sort'
 const cardBlack = require('components/snippets/classes/card-black').default
 const iconPackage = require('components/snippets/icons').iconPackage
 const iconGithub = require('components/snippets/icons').iconGithub
-const iconX = require('components/snippets/icons').iconX
 
 export default function Header({ page }) {
   const { site } = useStaticQuery(graphql`

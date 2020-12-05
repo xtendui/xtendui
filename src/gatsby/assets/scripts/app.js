@@ -1,9 +1,11 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/core/toggle'
+import 'xtendui/src/core/tooltip'
 import 'xtendui/src/addons/scroll-to-anchor'
 import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 gsap.registerPlugin(ScrollToPlugin)
+const cardBlack = require('components/snippets/classes/card-black').default
 const iconLink = require('components/snippets/icons').iconLink
 
 import 'assets/scripts/shared'
@@ -23,6 +25,24 @@ Xt.mount.push({
       closeAuto: true, // needed for onPreRouteUpdate gatsby-browser.js
       scrollbar: true,
       classHtml: 'demo-full-open',
+    })
+
+    // tooltip
+
+    const close = document.querySelector('#gatsby_open-full > .btn-close')
+    const closeUid = Xt.getuniqueId()
+    document.querySelector('#gatsby_open-full').append(
+      Xt.createElement(`
+<div id="tooltip--demo--close-${closeUid}" class="tooltip transform transition duration-150 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
+  <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()}">
+    Close Fullscreen
+  </div>
+</div>`)
+    )
+    new Xt.Tooltip(close, {
+      targets: `#tooltip--demo--close-${closeUid}`,
+      position: 'bottom-end',
+      spaceOverflow: 0,
     })
 
     // unmount
