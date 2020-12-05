@@ -1,6 +1,6 @@
 /**
  * sidebar
-*/
+ */
 
 .gatsby_site_article_sidebar {
   @apply text-white links-inverse overflow-sub;
@@ -23,9 +23,99 @@
   }
 }
 
+.gatsby_site_header_menu_link {
+  @screen lg {
+    @apply hidden !important;
+  }
+  > .btn {
+    padding: 0;
+    padding-left: 1rem;
+    font-size: 1.15rem;
+    svg {
+      width: 1.5em;
+      height: 1.5em;
+      margin: calc((1em - 1.5em) / 2);
+    }
+  }
+}
+
+#gatsby_menu--overlay {
+  @media (max-width: calc(theme('screens.lg') - 1px)) {
+    .design-setup {
+      @apply bg-accent-500;
+    }
+    .card {
+      @apply min-h-screen;
+    }
+    .backdrop {
+      opacity: 0.3;
+    }
+  }
+  @media (min-width: theme('screens.lg')) {
+    /*@apply overlay-disable;*/
+    &:after {
+      display: none;
+      content: "xt-disable";
+    }
+    display: flex !important;
+    overflow: initial !important;
+    position: static;
+    z-index: initial;
+    top: auto;
+    left: auto;
+    bottom: auto;
+    right: auto;
+    width: auto;
+    height: auto;
+    .overlay-container {
+      z-index: initial;
+      padding: 0;
+      width: 100%;
+      min-height: auto;
+      max-width: none;
+    }
+    .overlay-inner {
+      > .card {
+        @apply card-disable !important;
+      }
+    }
+    > .backdrop {
+      display: none !important;
+    }
+  }
+}
+
 /**
  * header
-*/
+ */
+
+ .gatsby_site_header {
+  html.demo-full-open & {
+    display: none;
+  }
+  @screen lg {
+    /*@apply sticky-disable;*/
+    &:after {
+      display: none;
+      content: "xt-disable";
+    }
+    position: relative !important;
+    top: initial !important;
+    left: initial !important;
+    right: initial !important;
+    bottom: initial !important;
+    &.xt-clone {
+      display: none !important;
+    }
+    &:not(.xt-clone) {
+      position: relative !important;
+    }
+  }
+}
+
+ .gatsby_site_header_logo {
+   line-height: 0;
+ }
 
 .gatsby_logo-icon {
   display: inline-flex;
@@ -45,11 +135,16 @@
 }
 
 .gatsby_site_header {
-  @apply text-white links-inverse;
-  padding-top: 2rem;
-  padding-bottom: 1.25rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  @apply text-white bg-accent-500 links-inverse container;
+  max-width: 1280px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  @screen lg {
+    padding-top: 2rem;
+    padding-bottom: 1.25rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
   @screen xl {
     padding-left: 2rem;
     padding-right: 2rem;
@@ -58,8 +153,14 @@
 
 .gatsby_site_header_content {
   @apply w-full list;
-  align-items: flex-end;
-  justify-content: space-between;
+  align-items: center;
+  @screen lg {
+    align-items: flex-end;
+  }
+}
+
+.gatsby_site_header_top_social_container {
+  margin-left: auto;
 }
 
 .gatsby_site_header_top_social {
@@ -90,13 +191,9 @@
 }
 
 .gatsby_site_header_listing {
-  padding-top: 2rem;
-  padding-bottom: 1.5rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding: 1.5rem;
   @screen xl {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding: 2rem;
   }
 }
 
@@ -140,12 +237,15 @@
     padding-left: 2rem;
     padding-right: 2rem;
   }
+  @media (max-width: calc(theme('screens.lg') - 1px)) {
+    margin-top: 4rem;
+  }
 }
 
 .gatsby_site_header_links {
   @apply border-t border-b border-accent-900 border-opacity-25;
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   > * {
     margin-left: -.5rem;
     margin-right: -.5rem;

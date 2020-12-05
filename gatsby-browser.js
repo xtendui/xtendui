@@ -5,29 +5,41 @@
  */
 
 let keepSidebarScroll = 0
+let menuOpen = false
 
 exports.onPreRouteUpdate = () => {
+  const menu = document.querySelector('#gatsby_menu--overlay')
+  const sidebarArticle = document.querySelector('.gatsby_site_article_sidebar')
   // fix demo index when changing page
   document.documentElement.setAttribute('data-demo-index', '0')
+  // menuOpen
+  if (menu) {
+    menuOpen = menu.classList.contains('in')
+  }
+  // keepSidebarScroll
+  if (menu && sidebarArticle) {
+    keepSidebarScroll = menu.scrollTop || sidebarArticle.scrollTop
+  }
   // closeauto
   dispatchEvent(new CustomEvent('closeauto.trigger.xt'))
-  // keepSidebarScroll
-  const sidebarArticle = document.querySelector('.gatsby_site_article_sidebar')
-  if (sidebarArticle) {
-    keepSidebarScroll = sidebarArticle.scrollTop
-  }
 }
 
 exports.onRouteUpdate = () => {
+  const menu = document.querySelector('#gatsby_menu--overlay')
+  const sidebarArticle = document.querySelector('.gatsby_site_article_sidebar')
   // scroll top
   document.scrollingElement.scrollTop = 0
+  // menuOpen
+  if (menu && menuOpen) {
+    menu.classList.add('in', 'active')
+  }
   // keepSidebarScroll
-  const sidebarArticle = document.querySelector('.gatsby_site_article_sidebar')
-  if (sidebarArticle) {
+  if (menu && sidebarArticle) {
+    menu.scrollTop = keepSidebarScroll
     sidebarArticle.scrollTop = keepSidebarScroll
   }
   // scrollSidebarToContent
-  require('assets/scripts/gatsby.js').gatsbySidebar()
+  require('assets/scripts/gatsby.js').gatsbySidebarContain()
   // @FIX popstate #gatsby_open-full
   for (const link of document.querySelectorAll('.gatsby_btn-site_article_sidebar.active')) {
     link.addEventListener('click', e => {

@@ -42,7 +42,7 @@ module.exports = {
       '.hide-sticky': {
         display: 'block',
       },
-      '&:not(.xt-clone).active': {
+      '&:not(.xt-clone).in': {
         position: 'fixed',
         zIndex: theme('zIndex.sticky'),
         width: '100%',

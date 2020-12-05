@@ -5,7 +5,7 @@
     .listing-item {
       position: relative;
       overflow: hidden;
-      @media (max-width: theme('screens.md')) {
+      @media (max-width: calc(theme('screens.md') - 1px)) {
         .listing-front {
           .listing-item_content {
             display: none;
@@ -32,7 +32,7 @@
         }
       }
       .listing-front {
-        @media (max-width: theme('screens.md')) {
+        @media (max-width: calc(theme('screens.md') - 1px)) {
           opacity: 1 !important;
           transform: none !important;
         }
@@ -41,7 +41,7 @@
         }
       }
       .listing-back {
-        @media (max-width: theme('screens.md')) {
+        @media (max-width: calc(theme('screens.md') - 1px)) {
           opacity: 1 !important;
           transform: none !important;
           margin-top: theme('spacing.6');

@@ -37,7 +37,7 @@ module.exports = {
       '> .design-setup': {
         display: 'none !important',
       },
-      '&, > *, > * > *': {
+      '&, > [class^="card-"], > [class*=" card-"]': {
         padding: '0 !important',
       },
       '> .btn-close': {

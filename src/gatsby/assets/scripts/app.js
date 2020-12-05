@@ -9,7 +9,7 @@ const iconLink = require('components/snippets/icons').iconLink
 import 'assets/scripts/shared'
 
 /**
- * #gatsby_open-full-triggergrop
+ * #gatsby_open-full-trigger
  */
 
 Xt.mount.push({
@@ -22,6 +22,7 @@ Xt.mount.push({
       closeInside: ':scope > .btn-close',
       closeAuto: true, // needed for onPreRouteUpdate gatsby-browser.js
       scrollbar: true,
+      classHtml: 'demo-full-open',
     })
 
     // unmount
@@ -162,7 +163,7 @@ const makeDocument = () => {
     }
   }
   // scrollSidebarToContent
-  require('assets/scripts/gatsby.js').gatsbySidebar()
+  require('assets/scripts/gatsby.js').gatsbySidebarContain()
   // restart xt-scroll-to-anchor
   const gatsby = document.querySelector('.gatsby_site_wrapper')
   if (gatsby) {

@@ -92,9 +92,10 @@ body {
     margin-left: 20rem;
   }
   .gatsby_site_article_hero-inner, .gatsby_site_article_content, .gatsby_site_footer_inner {
-    @apply container ml-0;
-    @screen xl {
-      max-width: 1280px;
+    @apply container;
+    max-width: 1280px;
+    @screen lg {
+      @apply ml-0;
     }
   }
   .gatsby_site_article_content {
@@ -139,7 +140,7 @@ body {
 
 /**
  * listing
-*/
+ */
 
 .gatsby_listing {
   @apply mt-16 mt-fc;
@@ -160,7 +161,7 @@ body {
     @apply mb-0;
   }
   > .row {
-    @media (max-width: theme('screens.sm')) {
+    @media (max-width: calc(theme('screens.sm') - 1px)) {
       @apply row-x-1;
       @apply -m-4;
     }

@@ -10,7 +10,7 @@
   > * {
     pointer-events: auto;
   }
-  @media (max-width: theme('screens.md')) {
+  @media (max-width: calc(theme('screens.md') - 1px)) {
     display: none;
   }
 }

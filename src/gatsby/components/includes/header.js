@@ -7,6 +7,7 @@ import { typeSort } from 'components/snippets/type-sort'
 const cardBlack = require('components/snippets/classes/card-black').default
 const iconPackage = require('components/snippets/icons').iconPackage
 const iconGithub = require('components/snippets/icons').iconGithub
+const iconX = require('components/snippets/icons').iconX
 
 export default function Header({ page }) {
   const { site } = useStaticQuery(graphql`
@@ -25,7 +26,7 @@ export default function Header({ page }) {
   return (
     <div className="gatsby_site_article_sidebar">
       <div className="gatsby_site_article_sidebar_inner">
-        <header className="gatsby_site_header">
+        <header className="gatsby_site_header" data-xt-sticky="{ sticky: 'fixed', hide: 'down' }">
           <div className="gatsby_site_header_inner">
             <div>
               <div className="gatsby_site_header_content">
@@ -39,7 +40,7 @@ export default function Header({ page }) {
                     <img src={'/logo-white.svg'} loading="eager" alt={site.siteMetadata.title} />
                   </Link>
                 </div>
-                <div>
+                <div className="gatsby_site_header_top_social_container">
                   <div className="gatsby_site_header_top_social">
                     <div data-xt-tooltip="{ position: 'bottom-end' }">
                       <a
@@ -69,128 +70,187 @@ export default function Header({ page }) {
                     </span>
                   </div>
                 </div>
+                <div className="gatsby_site_header_menu_link">
+                  <button
+                    type="button"
+                    className="btn btn-md rounded-md ${btnPrimary()}"
+                    data-xt-overlay="{ targets: '#gatsby_menu--overlay', appendTo: false }"
+                    aria-label="Menu"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="icon"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <line x1="3" y1="12" x2="21" y2="12"></line>
+                      <line x1="3" y1="6" x2="21" y2="6"></line>
+                      <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </header>
-        <div className="gatsby_site_header_links_container">
-          <div className="gatsby_site_header_links">
-            {page.menus.posts.map(({ post }, i) => (
-              <div key={i}>
-                <Link
-                  to={markdownSlug(post)}
-                  title={post.frontmatter.description}
-                  className={`btn gatsby_btn-site_header_link ${
-                    page && page.post
-                      ? markdownSlug(page.post) === markdownSlug(post)
-                        ? 'active'
-                        : post.frontmatter.type === page.post.frontmatter.type
-                        ? 'current'
-                        : ''
-                      : ''
-                  }`}
-                >
-                  <span>{post.frontmatter.title}</span>
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-        {page && page.post ? (
-          <nav className="gatsby_site_header_listing">
-            {page.categories.category.sort(typeSort).map((category, i) => (
-              <div key={i}>
-                <div className="gatsby_site_header_cat">
-                  <div className="gatsby_cat--site_article_sidebar">{category.title.split('-').pop()}</div>
-                  <div className="gatsby_site_header_sub">
-                    <div className="gatsby_site_header_item">
-                      {category.posts.map(({ post }, z) =>
-                        post.frontmatter.parent === post.frontmatter.title ? (
-                          <div className="gatsby_site_header_item_container" key={z}>
-                            {post.frontmatter.link ? (
-                              <div>
-                                <a
-                                  href={post.frontmatter.link}
-                                  rel="noreferrer"
-                                  target="_blank"
-                                  title={post.frontmatter.description}
-                                  className={`btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub ${
-                                    markdownSlug(page.post) === markdownSlug(post)
-                                      ? 'active'
-                                      : page.post.frontmatter.parent === post.frontmatter.parent && post.frontmatter.category === page.post.frontmatter.category
-                                      ? 'current'
-                                      : ''
-                                  }`}
-                                >
-                                  <span>{post.frontmatter.title}</span>
-                                </a>
-                                <div className="gatsby_site_header_adiacent_inner">
-                                  <div className="gatsby_site_header_item"></div>
-                                </div>
-                              </div>
-                            ) : (
-                              <div>
-                                <Link
-                                  to={markdownSlug(post)}
-                                  title={post.frontmatter.description}
-                                  className={`btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub ${
-                                    markdownSlug(page.post) === markdownSlug(post)
-                                      ? 'active'
-                                      : page.post.frontmatter.parent === post.frontmatter.parent && post.frontmatter.category === page.post.frontmatter.category
-                                      ? 'current'
-                                      : ''
-                                  }`}
-                                >
-                                  <span>{post.frontmatter.title}</span>
-                                </Link>
-                                <div className="gatsby_site_header_adiacent_inner">
-                                  <div className="gatsby_site_header_item"></div>
-                                </div>
-                              </div>
-                            )}
-                            {post.frontmatter.parent === page.post.frontmatter.parent && post.frontmatter.category === page.post.frontmatter.category ? (
-                              <div className="gatsby_site_header_adiacent active">
-                                <div className="gatsby_site_header_item">
-                                  {page.postsAdiacent.posts.map(({ post: adiacent }, i) =>
-                                    adiacent.frontmatter.title !== post.frontmatter.parent ? (
-                                      !adiacent.frontmatter.demos ? (
-                                        <div key={i}>
-                                          <Link
-                                            to={markdownSlug(adiacent)}
-                                            className={`btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--adiacent ${
-                                              page.post.frontmatter.title === adiacent.frontmatter.title &&
-                                              post.frontmatter.category === page.post.frontmatter.category
+
+        <div className="overlay text-white links-inverse" id="gatsby_menu--overlay">
+          <div className="overlay-container p-0 max-w-xs ml-auto mr-0">
+            <div className="overlay-inner">
+              <div className="design-setup"></div>
+              <div className="card">
+                <div className="btn btn-close p-5 text-2xl fixed z-last mr-2" aria-label="Close">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="icon"
+                    width="44"
+                    height="44"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="#2c3e50"
+                    fill="none"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
+                </div>
+                <div className="mt-6">
+                  <div className="gatsby_site_header_links_container">
+                    <div className="gatsby_site_header_links">
+                      {page.menus.posts.map(({ post }, i) => (
+                        <div key={i}>
+                          <Link
+                            to={markdownSlug(post)}
+                            title={post.frontmatter.description}
+                            className={`btn gatsby_btn-site_header_link ${
+                              page && page.post
+                                ? markdownSlug(page.post) === markdownSlug(post)
+                                  ? 'active'
+                                  : post.frontmatter.type === page.post.frontmatter.type
+                                  ? 'current'
+                                  : ''
+                                : ''
+                            }`}
+                          >
+                            <span>{post.frontmatter.title}</span>
+                          </Link>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  {page && page.post ? (
+                    <nav className="gatsby_site_header_listing">
+                      {page.categories.category.sort(typeSort).map((category, i) => (
+                        <div key={i}>
+                          <div className="gatsby_site_header_cat">
+                            <div className="gatsby_cat--site_article_sidebar">{category.title.split('-').pop()}</div>
+                            <div className="gatsby_site_header_sub">
+                              <div className="gatsby_site_header_item">
+                                {category.posts.map(({ post }, z) =>
+                                  post.frontmatter.parent === post.frontmatter.title ? (
+                                    <div className="gatsby_site_header_item_container" key={z}>
+                                      {post.frontmatter.link ? (
+                                        <div>
+                                          <a
+                                            href={post.frontmatter.link}
+                                            rel="noreferrer"
+                                            target="_blank"
+                                            title={post.frontmatter.description}
+                                            className={`btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub ${
+                                              markdownSlug(page.post) === markdownSlug(post)
                                                 ? 'active'
+                                                : page.post.frontmatter.parent === post.frontmatter.parent &&
+                                                  post.frontmatter.category === page.post.frontmatter.category
+                                                ? 'current'
                                                 : ''
                                             }`}
                                           >
-                                            <span>
-                                              {adiacent.frontmatter.title
-                                                .split(/[\s-]+/)
-                                                .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
-                                                .join(' ')}
-                                            </span>
+                                            <span>{post.frontmatter.title}</span>
+                                          </a>
+                                          <div className="gatsby_site_header_adiacent_inner">
+                                            <div className="gatsby_site_header_item"></div>
+                                          </div>
+                                        </div>
+                                      ) : (
+                                        <div>
+                                          <Link
+                                            to={markdownSlug(post)}
+                                            title={post.frontmatter.description}
+                                            className={`btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub ${
+                                              markdownSlug(page.post) === markdownSlug(post)
+                                                ? 'active'
+                                                : page.post.frontmatter.parent === post.frontmatter.parent &&
+                                                  post.frontmatter.category === page.post.frontmatter.category
+                                                ? 'current'
+                                                : ''
+                                            }`}
+                                          >
+                                            <span>{post.frontmatter.title}</span>
                                           </Link>
                                           <div className="gatsby_site_header_adiacent_inner">
                                             <div className="gatsby_site_header_item"></div>
                                           </div>
                                         </div>
-                                      ) : null
-                                    ) : null
-                                  )}
-                                </div>
+                                      )}
+                                      {post.frontmatter.parent === page.post.frontmatter.parent &&
+                                      post.frontmatter.category === page.post.frontmatter.category ? (
+                                        <div className="gatsby_site_header_adiacent active">
+                                          <div className="gatsby_site_header_item">
+                                            {page.postsAdiacent.posts.map(({ post: adiacent }, i) =>
+                                              adiacent.frontmatter.title !== post.frontmatter.parent ? (
+                                                !adiacent.frontmatter.demos ? (
+                                                  <div key={i}>
+                                                    <Link
+                                                      to={markdownSlug(adiacent)}
+                                                      className={`btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--adiacent ${
+                                                        page.post.frontmatter.title === adiacent.frontmatter.title &&
+                                                        post.frontmatter.category === page.post.frontmatter.category
+                                                          ? 'active'
+                                                          : ''
+                                                      }`}
+                                                    >
+                                                      <span>
+                                                        {adiacent.frontmatter.title
+                                                          .split(/[\s-]+/)
+                                                          .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
+                                                          .join(' ')}
+                                                      </span>
+                                                    </Link>
+                                                    <div className="gatsby_site_header_adiacent_inner">
+                                                      <div className="gatsby_site_header_item"></div>
+                                                    </div>
+                                                  </div>
+                                                ) : null
+                                              ) : null
+                                            )}
+                                          </div>
+                                        </div>
+                                      ) : null}
+                                    </div>
+                                  ) : null
+                                )}
                               </div>
-                            ) : null}
+                            </div>
                           </div>
-                        ) : null
-                      )}
-                    </div>
-                  </div>
+                        </div>
+                      ))}
+                    </nav>
+                  ) : null}
                 </div>
               </div>
-            ))}
-          </nav>
-        ) : null}
+            </div>
+          </div>
+          <div className="backdrop transition-none"></div>
+        </div>
       </div>
     </div>
   )

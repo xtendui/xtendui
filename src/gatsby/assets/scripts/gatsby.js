@@ -1,4 +1,4 @@
-const gatsbySidebar = () => {
+const gatsbySidebarContain = () => {
   requestAnimationFrame(() => {
     const sidebarArticle = document.querySelector('.gatsby_site_article_sidebar')
     let sidebarActive = document.querySelector('.gatsby_btn-site_article_sidebar--sub.active, .gatsby_btn-site_article_sidebar--sub.current')
@@ -17,4 +17,4 @@ const gatsbySidebar = () => {
   })
 }
 
-export { gatsbySidebar }
+export { gatsbySidebarContain }

@@ -1,6 +1,6 @@
 .demo--scroll-responsive {
   .card {
-    @media (max-width: theme('screens.md')) {
+    @media (max-width: calc(theme('screens.md') - 1px)) {
       /* mode-infinite */
       /* initial */
       @apply transform transition;
