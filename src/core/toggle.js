@@ -16,7 +16,6 @@ class Toggle {
     self.object = object
     self.optionsCustom = optionsCustom
     self.componentName = self.constructor.componentName
-    self.cns = self.componentName.replace(/^[^a-z]+|[ ,#_:.-]+/gi, '.')
     Xt.destroyAndInit(self)
   }
 
@@ -97,7 +96,6 @@ class Toggle {
       Xt.dataStorage.set(self.container, 'xtUniqueId', uniqueId || Xt.getuniqueId())
       self.ns = `${self.componentName}-${Xt.dataStorage.get(self.container, 'xtUniqueId')}`
     }
-    console.log(self.cns, self.ns)
     // final namespace
     self.ns = self.ns.replace(/^[^a-z]+|[ ,#_:.-]+/gi, '')
     // currents array based on namespace (so shared between Xt objects)

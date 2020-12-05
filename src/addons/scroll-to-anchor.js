@@ -15,7 +15,6 @@ class ScrollToAnchor {
     self.object = object
     self.optionsCustom = optionsCustom
     self.componentName = self.constructor.componentName
-    self.cns = self.componentName.replace(/^[^a-z]+|[ ,#_:.-]+/gi, '.')
     Xt.destroyAndInit(self)
   }
 

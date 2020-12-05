@@ -66,7 +66,7 @@ addEventListener('hashchange', demoHash)
  * formatCode
  */
 
-const formatCode = source => {
+const formatCode = (source, sourceCode) => {
   let text = source.innerHTML
   // ##START and ##END
   const metas = text.match(/\/\*##START\*\/\n([\S\s]*?)\/\*##END\*\/\n/g)
@@ -89,6 +89,15 @@ const formatCode = source => {
     id = '#gatsby_body-inner'
     text = text.replace(new RegExp(`[ ]{0,}${id}[ ]{0,}`, 'gi'), '')
   }
+  // clipboard
+  text = text
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&#x2F;/g, '/')
+  Xt.dataStorage.set(sourceCode, 'sourceCode', text)
   // search html tags
   const re = /<[^>]*>/g
   text = text.replace(re, match => {
@@ -129,7 +138,7 @@ const populateBlock = () => {
   }
   for (const el of document.querySelectorAll('pre:not(.noedit) code')) {
     // set text
-    el.innerHTML = formatCode(el)
+    el.innerHTML = formatCode(el, el)
     Prism.highlightElement(el)
   }
   // overlay fullscreen
@@ -151,7 +160,7 @@ const populateBlock = () => {
         const container = content.querySelector('.gatsby_demo')
         if (container && container.dataset.isFullscreenOnly) {
           // populate iframe
-          for (const item of container.querySelectorAll('.gatsby_demo_item.active')) {
+          for (const item of container.querySelectorAll('.gatsby_demo_item.in')) {
             if (item.getAttribute('data-iframe-fullscreen')) {
               item.classList.remove('loaded')
               item.dispatchEvent(new CustomEvent('offdone.xt'))
@@ -164,7 +173,7 @@ const populateBlock = () => {
           }
         }
         // btnOpenFull
-        for (const btn of document.querySelectorAll('.btn-open-full.active')) {
+        for (const btn of document.querySelectorAll('.btn-open-full.in')) {
           btn.classList.remove('active')
         }
         // toggles
@@ -179,7 +188,7 @@ const populateBlock = () => {
           moving.classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
           appendOrigin.before(moving)
           // @FIX demo fullscreen
-          const current = appendOrigin.previousSibling.querySelector('.gatsby_demo_item.active')
+          const current = appendOrigin.previousSibling.querySelector('.gatsby_demo_item.in')
           // triggering e.detail.container
           dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: current } }))
           appendOrigin.remove()
@@ -200,7 +209,7 @@ const populateBlock = () => {
     full.addEventListener('on.xt', () => {
       // @FIX demo fullscreen
       const content = document.querySelector('#gatsby_open-full-content')
-      const current = content.querySelector('.gatsby_demo_item.active')
+      const current = content.querySelector('.gatsby_demo_item.in')
       // triggering e.detail.container
       dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: current } }))
     })
@@ -311,39 +320,6 @@ const populateDemo = (container, i) => {
 </div>`
       )
     )
-    // https://github.com/zenorocha/clipboard.js/
-    const btnClipboard = container.querySelector('.btn-clipboard')
-    const clipboard = new ClipboardJS(btnClipboard, {
-      target: trigger => {
-        return trigger.closest('.gatsby_demo').querySelector('.gatsby_demo_item.active .gatsby_demo_code .gatsby_demo_code_body_item.active pre code')
-      },
-    })
-    clipboard.on('success', e => {
-      e.clearSelection()
-      // tooltip
-      const btn = btnClipboard
-      const tooltip = btn.closest('[data-xt-tooltip]')
-      // close tooltip
-      tooltip.dispatchEvent(new CustomEvent('off.trigger.xt'))
-      // swap tooltip
-      let self = Xt.get('xt-tooltip', tooltip)
-      if (self) {
-        self.targets[0].style.display = 'none'
-        self.targets[1].style.display = ''
-        // open tooltip
-        tooltip.dispatchEvent(new CustomEvent('on.trigger.xt'))
-      }
-    })
-    const btn = btnClipboard
-    const tooltip = btn.closest('[data-xt-tooltip]')
-    tooltip.addEventListener('off.xt', () => {
-      // swap tooltip
-      let self = Xt.get('xt-tooltip', tooltip)
-      if (self) {
-        self.targets[0].style.display = ''
-        self.targets[1].style.display = 'none'
-      }
-    })
     // inject iframe
     if (!item.getAttribute('data-iframe-fullscreen')) {
       if (item.getAttribute('data-iframe')) {
@@ -405,6 +381,43 @@ const populateDemo = (container, i) => {
       }
       // makeGatsbyWithIframe
       makeGatsbyWithIframe(item)
+      // https://github.com/zenorocha/clipboard.js/
+      const btnClipboard = item.querySelector('.btn-clipboard')
+      const clipboard = new ClipboardJS(btnClipboard, {
+        text: trigger => {
+          const elSourceCode = trigger.closest('.gatsby_demo').querySelector('.gatsby_demo_item.in .gatsby_demo_code .gatsby_demo_code_body_item.in pre code')
+          return Xt.dataStorage.get(elSourceCode, 'sourceCode')
+        },
+      })
+      clipboard.on('success', e => {
+        if (!Xt.dataStorage.get(clipboard, 'ClipboardFrame') !== e.text) {
+          Xt.dataStorage.set(clipboard, 'ClipboardFrame', e.text)
+          e.clearSelection()
+          // tooltip
+          const btn = btnClipboard
+          const tooltip = btn.closest('[data-xt-tooltip]')
+          // close tooltip
+          tooltip.dispatchEvent(new CustomEvent('off.trigger.xt'))
+          // swap tooltip
+          let self = Xt.get('xt-tooltip', tooltip)
+          if (self) {
+            self.targets[0].style.display = 'none'
+            self.targets[1].style.display = ''
+            // open tooltip
+            tooltip.dispatchEvent(new CustomEvent('on.trigger.xt'))
+          }
+        }
+      })
+      const btn = btnClipboard
+      const tooltip = btn.closest('[data-xt-tooltip]')
+      tooltip.addEventListener('off.xt', () => {
+        // swap tooltip
+        let self = Xt.get('xt-tooltip', tooltip)
+        if (self) {
+          self.targets[0].style.display = ''
+          self.targets[1].style.display = 'none'
+        }
+      })
     })
   }
   // .btn-show-code
@@ -470,7 +483,7 @@ const makeFullscreen = (container, initial = false) => {
     listingToggle.classList.add('active')
   }
   // populate
-  const items = container.querySelectorAll('.gatsby_demo_item.active')
+  const items = container.querySelectorAll('.gatsby_demo_item.in')
   for (const item of items) {
     const sourceTo = item.querySelector('.gatsby_demo_source_populate')
     // populate source
@@ -671,7 +684,7 @@ const populateSources = (item, element) => {
   } else if (lang === 'jsx') {
     lang = 'language-jsx'
   }
-  codeInside.innerHTML = formatCode(element)
+  codeInside.innerHTML = formatCode(element, codeInside)
   codeInside.classList.add(lang)
   Prism.highlightElement(codeInside)
 }
