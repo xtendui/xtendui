@@ -15,7 +15,7 @@ class ScrollToAnchor {
     self.object = object
     self.optionsCustom = optionsCustom
     self.componentName = self.constructor.componentName
-    self.componentNamespace = self.componentName.replace(/^[^a-z]+|[ ,#_:.-]+/gi, '')
+    self.cns = self.componentName.replace(/^[^a-z]+|[ ,#_:.-]+/gi, '.')
     Xt.destroyAndInit(self)
   }
 
@@ -30,6 +30,10 @@ class ScrollToAnchor {
     const self = this
     // options
     self.options = Xt.merge([self.constructor.optionsDefault, self.optionsCustom])
+    // namespace
+    const uniqueId = Xt.dataStorage.get(self.container, 'xtUniqueId')
+    Xt.dataStorage.set(self.container, 'xtUniqueId', uniqueId || Xt.getuniqueId())
+    self.ns = `${self.componentName}-${Xt.dataStorage.get(self.container, 'xtUniqueId')}`
     // class
     self.classes = self.options.class ? [...self.options.class.split(' ')] : []
     // click
@@ -155,10 +159,10 @@ class ScrollToAnchor {
     const self = this
     const options = self.options
     // timeout
-    clearTimeout(Xt.dataStorage.get(scrollElement, `${self.componentNamespace}ScrollTimeout`))
+    clearTimeout(Xt.dataStorage.get(scrollElement, `${self.ns}ScrollTimeout`))
     Xt.dataStorage.set(
       scrollElement,
-      `${self.componentNamespace}ScrollTimeout`,
+      `${self.ns}ScrollTimeout`,
       setTimeout(() => {
         // handler
         self.eventScroll(scrollElement)

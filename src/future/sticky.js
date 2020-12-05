@@ -132,7 +132,7 @@ class Sticky extends Xt.Toggle {
     const self = this
     const options = self.options
     // event scroll and resize
-    const stickyHandler = Xt.dataStorage.put(window, `${options.on}/${self.namespace}`, self.eventStickyHandler.bind(self))
+    const stickyHandler = Xt.dataStorage.put(window, `${options.on}/${self.ns}`, self.eventStickyHandler.bind(self))
     const events = [...'scroll resize'.split(' ')]
     for (const event of events) {
       addEventListener(event, stickyHandler, { passive: true })
@@ -140,7 +140,7 @@ class Sticky extends Xt.Toggle {
     addEventListener('sticky.trigger.xt', stickyHandler)
     self.eventStickyHandler()
     // focusin
-    const focusInHandler = Xt.dataStorage.put(document, `focusin/sticky/${self.namespace}`, self.eventFocusinHandler.bind(self))
+    const focusInHandler = Xt.dataStorage.put(document, `focusin/sticky/${self.ns}`, self.eventFocusinHandler.bind(self))
     document.addEventListener('focusin', focusInHandler, { passive: true })
   }
 
@@ -161,7 +161,7 @@ class Sticky extends Xt.Toggle {
         // handler
         self.eventSticky()
       },
-      `${self.componentNamespace}Sticky`
+      `${self.ns}Sticky`
     )
   }
 
@@ -180,7 +180,7 @@ class Sticky extends Xt.Toggle {
         if (active) {
           el.style.top = '0px'
         } else {
-          el.style.top = `${Xt.dataStorage.get(el, `${self.componentNamespace}AddOld`)}px`
+          el.style.top = `${Xt.dataStorage.get(el, `${self.ns}AddOld`)}px`
         }
       }
     }
@@ -266,7 +266,7 @@ class Sticky extends Xt.Toggle {
         }
       }
       // save real add for calculation
-      Xt.dataStorage.set(el, `${self.componentNamespace}Add`, add)
+      Xt.dataStorage.set(el, `${self.ns}Add`, add)
       // activation
       const checkTop = scrollTop >= top - add + addHide
       const checkBottom = scrollTop < bottom + add - addHide
@@ -343,7 +343,7 @@ class Sticky extends Xt.Toggle {
       }
       */
       // set add
-      if (add !== Xt.dataStorage.get(el, `${self.componentNamespace}AddOld`)) {
+      if (add !== Xt.dataStorage.get(el, `${self.ns}AddOld`)) {
         el.style[options.position] = `${add}px`
       }
       // fix position fixed width 100% of parent
@@ -354,7 +354,7 @@ class Sticky extends Xt.Toggle {
       // listener dispatch
       el.dispatchEvent(new CustomEvent('change.xt'))
       // save for direction
-      Xt.dataStorage.set(el, `${self.componentNamespace}AddOld`, add)
+      Xt.dataStorage.set(el, `${self.ns}AddOld`, add)
     }
     // save for direction
     self.detail.scrollTopOld = scrollTop
@@ -376,7 +376,7 @@ class Sticky extends Xt.Toggle {
         let found = false
         val = 0
         for (const el of elements) {
-          const add = Xt.dataStorage.get(el, `${self.componentNamespace}Add`)
+          const add = Xt.dataStorage.get(el, `${self.ns}Add`)
           if (add) {
             // if sticky-hide get real add
             const style = getComputedStyle(el)

@@ -115,7 +115,7 @@ class Scroll extends Xt.Toggle {
       return
     }
     // event scroll and resize
-    const scrollHandler = Xt.dataStorage.put(window, `${options.on}/${self.namespace}`, self.eventScrollHandler.bind(self).bind(self, false))
+    const scrollHandler = Xt.dataStorage.put(window, `${options.on}/${self.ns}`, self.eventScrollHandler.bind(self).bind(self, false))
     const events = [...'scroll resize'.split(' ')]
     for (const event of events) {
       addEventListener(event, scrollHandler, { passive: true })
@@ -143,7 +143,7 @@ class Scroll extends Xt.Toggle {
         // handler
         self.eventScroll()
       },
-      `${self.componentNamespace}Scroll`
+      `${self.ns}Scroll`
     )
   }
 
@@ -196,7 +196,7 @@ class Scroll extends Xt.Toggle {
         self.detail.end = self.detail.end < self.detail.start + fallback ? self.detail.start + fallback : self.detail.end // limit fixes deactivation on page top
         // ratio
         const position = scrollTop + self.detail.trigger - self.detail.start
-        Xt.dataStorage.set(el, `${self.componentNamespace}Position`, position)
+        Xt.dataStorage.set(el, `${self.ns}Position`, position)
         const total = self.detail.end - self.detail.start
         self.detail.ratio = Math.max(0, position) / total
         self.detail.ratio = self.detail.ratio > 0 ? self.detail.ratio : 0
@@ -210,8 +210,8 @@ class Scroll extends Xt.Toggle {
           if (changed) {
             currentsOn.push(el)
             // activation
-            Xt.dataStorage.set(el, `${self.componentNamespace}OnCount`, currentOn)
-            Xt.dataStorage.set(el, `${self.componentNamespace}OnTot`, currentsOn.length)
+            Xt.dataStorage.set(el, `${self.ns}OnCount`, currentOn)
+            Xt.dataStorage.set(el, `${self.ns}OnTot`, currentsOn.length)
             currentOn++
           }
         } else {
@@ -222,8 +222,8 @@ class Scroll extends Xt.Toggle {
             el.classList.add('scroll-done')
             currentsOff.push(el)
             // deactivate
-            Xt.dataStorage.set(el, `${self.componentNamespace}OffCount`, currentOff)
-            Xt.dataStorage.set(el, `${self.componentNamespace}OffTot`, currentsOff.length)
+            Xt.dataStorage.set(el, `${self.ns}OffCount`, currentOff)
+            Xt.dataStorage.set(el, `${self.ns}OffTot`, currentsOff.length)
             currentOff++
           }
         }
@@ -240,10 +240,10 @@ class Scroll extends Xt.Toggle {
           const endRealEl = document.body.querySelector('.xt-indicator-end-real')
           endRealEl.style.top = `${self.detail.endReal - scrollTop}px`
         }
-        cancelAnimationFrame(Xt.dataStorage.get(el, `${self.componentNamespace}ScrollDispatchFrame`))
+        cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}ScrollDispatchFrame`))
         Xt.dataStorage.set(
           el,
-          `${self.componentNamespace}ScrollDispatchFrame`,
+          `${self.ns}ScrollDispatchFrame`,
           requestAnimationFrame(() => {
             // disabled
             if (self.disabled) {
