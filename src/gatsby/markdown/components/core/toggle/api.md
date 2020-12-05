@@ -119,6 +119,7 @@ object.addEventListener('on.xt', eventOn, true)
 | Event                   | `autostop.xt`           | `object` | Auto stop event             |
 | Event                   | `autopause.xt`           | `object` | Auto pause event             |
 | Event                   | `init.xt`           | `object` | Init event             |
+| Event                   | `status.xt`           | `object` | Status event (enabled or disabled)             |
 | Event                   | `restart.xt`           | `object` | Restart event             |
 | Event                   | `reinit.xt`           | `object` | Reinit event             |
 | Event                   | `destroy.xt`           | `object` | Destroy event             |
@@ -143,7 +144,8 @@ const elements = self.elements
 | Property                   | `object:Node`       | Object node             |
 | Property                   | `elements:Array`       | Elements nodes             |
 | Property                   | `targets:Array`       | Targets nodes            |
-| Property                  | `initial:Boolean`       | If initial or reset activation            |
+| Property                   | `initial:Boolean`       | If initial or reset activation            |
+| Property                   | `disabled:Boolean`       | If component disabled            |
 | Property                   | `direction:Number`       | Direction `1` or `-1`            |
 
 </div>

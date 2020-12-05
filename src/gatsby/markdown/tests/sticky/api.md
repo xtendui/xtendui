@@ -113,6 +113,7 @@ object.addEventListener('change.xt', eventChange, true)
 | Event                   | `hide.xt`       | `elements` | Hide event             |
 | Event                   | `medialoaded.xt`           | `elements` `targets` | Images loaded event            |
 | Event                   | `init.xt`           | `object` | Init event             |
+| Event                   | `status.xt`           | `object` | Status event (enabled or disabled)             |
 | Event                   | `restart.xt`           | `object` | Restart event             |
 | Event                   | `reinit.xt`           | `object` | Reinit event             |
 | Event                   | `destroy.xt`           | `object` | Destroy event             |
@@ -137,7 +138,8 @@ const elements = self.elements
 | Property                   | `object:Node`       | Object node             |
 | Property                   | `elements:Array`       | Elements nodes             |
 | Property                   | `targets:Array`       | Targets nodes            |
-| Property                  | `initial:Boolean`       | If initial or reset activation            |
+| Property                   | `initial:Boolean`       | If initial or reset activation            |
+| Property                   | `disabled:Boolean`       | If component disabled            |
 
 </div>
 
