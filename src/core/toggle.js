@@ -251,7 +251,6 @@ class Toggle {
    */
   initReset(el, saveCurrents = false) {
     const self = this
-    const options = self.options
     let found = false
     // reset
     const reset = elReset => {
@@ -266,27 +265,6 @@ class Toggle {
         if (saveCurrents) {
           found = true
         }
-        requestAnimationFrame(() => {
-          elReset.classList.remove(
-            ...self.classes,
-            ...self.classesActive,
-            ...self.classesOut,
-            ...self.classesDone,
-            ...self.classesInitial,
-            ...self.classesInverse
-          )
-          const elementsInner = Xt.queryAll(elReset, options.elementsInner)
-          for (const elementInner of elementsInner) {
-            elementInner.classList.remove(
-              ...self.classes,
-              ...self.classesActive,
-              ...self.classesOut,
-              ...self.classesDone,
-              ...self.classesInitial,
-              ...self.classesInverse
-            )
-          }
-        })
       }
       return found
     }
