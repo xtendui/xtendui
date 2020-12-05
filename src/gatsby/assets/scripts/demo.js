@@ -174,12 +174,12 @@ const populateBlock = () => {
         }
         // btnOpenFull
         for (const btn of document.querySelectorAll('.btn-open-full.in')) {
-          btn.classList.remove('active')
+          btn.classList.remove('in')
         }
         // toggles
         const listingToggles = document.querySelectorAll('[data-gatsby-listing-toggle]')
         for (const el of listingToggles) {
-          el.classList.remove('active')
+          el.classList.remove('in')
         }
         // move code block
         const appendOrigin = document.querySelector('[data-xt-origin="gatsby_open-full-content"]')
@@ -353,8 +353,8 @@ const populateDemo = (container, i) => {
     const item = document.querySelector(`[id="${kebabCase(location.hash)}"]`)
     if (item) {
       const demo = item.closest('.gatsby_demo')
-      demo.querySelector('.btn-open-full').classList.add('active')
-      item.classList.add('active')
+      demo.querySelector('.btn-open-full').classList.add('in-toggle')
+      item.classList.add('in-toggle')
     }
   }
   // gatsby_demo_tabs_left
@@ -374,7 +374,7 @@ const populateDemo = (container, i) => {
         })
       }
       // only if demo opened
-      if (document.querySelector('#gatsby_open-full-trigger').classList.contains('active')) {
+      if (document.querySelector('#gatsby_open-full-trigger').classList.contains('in')) {
         // set hash
         location.hash = item.getAttribute('id')
         cancelAnimationFrame(Xt.dataStorage.get(document, 'gatsby_open-full-raf'))
@@ -480,7 +480,7 @@ const makeFullscreen = (container, initial = false) => {
   // toggles
   const listingToggle = container.previousSibling
   if (listingToggle instanceof Element && listingToggle.getAttribute('data-gatsby-listing-toggle')) {
-    listingToggle.classList.add('active')
+    listingToggle.classList.add('in-toggle')
   }
   // populate
   const items = container.querySelectorAll('.gatsby_demo_item.in')
