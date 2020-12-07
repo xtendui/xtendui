@@ -843,18 +843,11 @@ class Toggle {
     }
     // triggering e.detail.container
     if (!e || !e.detail || !e.detail.container || e.detail.container.contains(check)) {
-      Xt.eventDelay(
-        e,
-        check,
-        () => {
-          // handler
-          const currents = self.getCurrents()
-          for (const current of currents) {
-            self.eventOff(current, true)
-          }
-        },
-        `${self.ns}Status`
-      )
+      // handler
+      const currents = self.getCurrents()
+      for (const current of currents) {
+        self.eventOff(current, true)
+      }
     }
   }
 

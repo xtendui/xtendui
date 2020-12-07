@@ -20,8 +20,6 @@ exports.onPreRouteUpdate = () => {
   if (menu && sidebarArticle) {
     keepSidebarScroll = menu.scrollTop || sidebarArticle.scrollTop
   }
-  // closeauto
-  dispatchEvent(new CustomEvent('closeauto.trigger.xt'))
 }
 
 exports.onRouteUpdate = () => {
