@@ -427,11 +427,7 @@ class Slider extends Xt.Toggle {
         img.addEventListener('mousedown', imgnodragHandler)
       }
       // drag start
-      const dragstartHandler = Xt.dataStorage.put(
-        window,
-        `mousedown touchstart/drag/${self.ns}`,
-        self.eventDragstartHandler.bind(self).bind(self, dragger)
-      )
+      const dragstartHandler = Xt.dataStorage.put(window, `mousedown touchstart/drag/${self.ns}`, self.eventDragstartHandler.bind(self).bind(self, dragger))
       const events = ['mousedown', 'touchstart']
       for (const event of events) {
         addEventListener(event, dragstartHandler, { passive: true })

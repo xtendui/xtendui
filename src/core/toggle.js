@@ -578,11 +578,7 @@ class Toggle {
         for (const img of imgs) {
           if (!Xt.dataStorage.get(img, `${self.ns}MedialoadedDone`)) {
             if (!img.complete) {
-              const medialoadedHandler = Xt.dataStorage.put(
-                img,
-                `load/media/${self.ns}`,
-                self.eventMedialoadedHandler.bind(self).bind(self, img, tr, true)
-              )
+              const medialoadedHandler = Xt.dataStorage.put(img, `load/media/${self.ns}`, self.eventMedialoadedHandler.bind(self).bind(self, img, tr, true))
               img.addEventListener('load', medialoadedHandler)
             } else {
               self.eventMedialoadedHandler(img, tr)
@@ -2550,11 +2546,7 @@ class Toggle {
         if (options.closeOutside) {
           const closeElements = document.querySelectorAll(options.closeOutside)
           for (const closeElement of closeElements) {
-            const specialcloseoutsideHandler = Xt.dataStorage.put(
-              closeElement,
-              `click/close/${self.ns}`,
-              self.eventSpecialcloseoutsideHandler.bind(self)
-            )
+            const specialcloseoutsideHandler = Xt.dataStorage.put(closeElement, `click/close/${self.ns}`, self.eventSpecialcloseoutsideHandler.bind(self))
             // @FIX do not close when clicking things that trigger this
             requestAnimationFrame(() => {
               closeElement.removeEventListener('click', specialcloseoutsideHandler)
