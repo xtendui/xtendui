@@ -189,22 +189,28 @@ Xt.mountCheck = (added = document.documentElement) => {
           Xt.ignoreOnce(elIgnore) // @FIX ignore once for mount when moving
           continue
         }
-        // call
-        requestAnimationFrame(() => {
-          // @FIX react when componentDidMount
-          const destroy = obj.mount(el, i, obj.matches) // object, index, matches
-          if (destroy) {
-            Xt.unmount.push({
-              object: el,
-              unmount: destroy,
-              unmountRemove: () => {
-                Xt.unmount.filter(x => {
-                  return x.object !== el
-                })
-              },
-            })
-          }
-        })
+        // @FIX raf react when componentDidMount
+        cancelAnimationFrame(Xt.dataStorage.get(el, `${obj.matches}xtMountFrame`))
+        Xt.dataStorage.set(
+          el,
+          `${obj.matches}xtMountFrame`,
+          requestAnimationFrame(() => {
+            // call
+            const destroy = obj.mount(el, i, obj.matches) // object, index, matches
+            // destroy
+            if (destroy) {
+              Xt.unmount.push({
+                object: el,
+                unmount: destroy,
+                unmountRemove: () => {
+                  Xt.unmount.filter(x => {
+                    return x.object !== el && x.matches !== obj.matches
+                  })
+                },
+              })
+            }
+          })
+        )
       }
     }
   }

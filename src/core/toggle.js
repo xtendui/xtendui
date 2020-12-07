@@ -1155,7 +1155,7 @@ class Toggle {
     const self = this
     const options = self.options
     // activation
-    if (!options.classSkip || !options.classSkip[type]) {
+    if (options.classSkip !== true && !options.classSkip[type]) {
       el.classList.add(...self.classes)
       el.classList.remove(...self.classesActive)
       el.classList.remove(...self.classesOut)
@@ -1194,7 +1194,7 @@ class Toggle {
     const self = this
     const options = self.options
     // activation
-    if (!options.classSkip || !options.classSkip[type]) {
+    if (options.classSkip !== true && !options.classSkip[type]) {
       el.classList.add(...self.classesDone)
     }
   }
@@ -1208,7 +1208,7 @@ class Toggle {
     const self = this
     const options = self.options
     // activation
-    if (!options.classSkip || !options.classSkip[type]) {
+    if (options.classSkip !== true && !options.classSkip[type]) {
       el.classList.remove(...self.classes)
       el.classList.remove(...self.classesActive)
       el.classList.add(...self.classesOut)
@@ -1230,7 +1230,7 @@ class Toggle {
     const self = this
     const options = self.options
     // activation
-    if (!options.classSkip || !options.classSkip[type]) {
+    if (options.classSkip !== true && !options.classSkip[type]) {
       el.classList.remove(...self.classesOut)
     }
   }
@@ -2854,10 +2854,13 @@ class Toggle {
    */
   enable() {
     const self = this
+    const options = self.options
     if (self.disabled) {
       // enable
       self.disabled = false
-      self.object.classList.remove('xt-disabled')
+      if (options.classSkip !== true) {
+        self.object.classList.remove('xt-disabled')
+      }
       // listener dispatch
       self.object.dispatchEvent(new CustomEvent('status.xt'))
     }
@@ -2882,7 +2885,9 @@ class Toggle {
       clearTimeout(Xt.dataStorage.get(self.object, `${self.ns}AutoTimeout`))
       // disable
       self.disabled = true
-      self.object.classList.add('xt-disabled')
+      if (options.classSkip !== true) {
+        self.object.classList.add('xt-disabled')
+      }
       // listener dispatch
       self.object.dispatchEvent(new CustomEvent('status.xt'))
     }
@@ -2977,8 +2982,8 @@ class Toggle {
     }
     // xtNamespace linked components
     const selfs = Xt.dataStorage.get(self.ns, 'xtNamespace')
-    selfs.filter(x => x !== self)
-    Xt.dataStorage.set(self.ns, 'xtNamespace', selfs)
+    const newSelfs = selfs.filter(x => x !== self)
+    Xt.dataStorage.set(self.ns, 'xtNamespace', newSelfs)
     // weak
     if (!weak) {
       // initialized class

@@ -31,7 +31,7 @@ demo.htmlSource = `
   </div>
 </div>
 
-<div class="drop" id="drop--unique-2" data-xt-position="top">
+<div class="drop" id="drop--unique-2" data-xt-position="right-end">
   <div class="w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
     <nav class="list flex-col">
       <a href="#" class="btn btn-sm ${btnDefaultDrop()}">

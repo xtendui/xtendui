@@ -1218,6 +1218,11 @@ class Slider extends Xt.Toggle {
    */
   destroy(weak = false) {
     const self = this
+    const options = self.options
+    // drag position
+    if (!options.drag.manual) {
+      self.dragger.style.transform = ''
+    }
     // clean pagination
     self.destroyPags()
     // clean wraps

@@ -16,7 +16,7 @@ Lorem ipsum <a href="#" data-xt-tooltip="{ targets: '#tooltip--unique-1, #toolti
     Lorem ipsum dolor sit amet
   </div>
 </div>
-<div class="tooltip" id="tooltip--unique-2" data-xt-position="bottom">
+<div class="tooltip" id="tooltip--unique-2" data-xt-position="right-end">
   <div class="tooltip-md rounded shadow-tooltip ${cardBlack()}">
     Consectetur adipiscing elit
   </div>
