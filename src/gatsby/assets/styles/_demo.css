@@ -157,8 +157,14 @@ pre {
   }
   .gatsby_demo_code {
     order: 2;
+    @media (max-width: calc(theme('screens.lg') - 1px)) {
+      /*@apply toggle;*/
+      &:not(.in):not(.out) {
+        display: none;
+      }
+    }
     #gatsby_open-full & {
-      @apply toggle;
+      @apply toggle !important;
       order: -1;
       position: absolute;
       width: 100%;

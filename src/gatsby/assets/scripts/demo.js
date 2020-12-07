@@ -207,6 +207,10 @@ const populateBlock = () => {
     })
     // trigger fullscreen or change tabs
     full.addEventListener('on.xt', () => {
+      // close tooltip on mobile
+      for (const btn of document.querySelectorAll('.btn-open-full + .tooltip')) {
+        btn.dispatchEvent(new CustomEvent('off.trigger.xt'))
+      }
       // @FIX demo fullscreen
       const content = document.querySelector('#gatsby_open-full-content')
       const current = content.querySelector('.gatsby_demo_item.in')
