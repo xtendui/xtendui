@@ -101,10 +101,9 @@ class InfiniteScroll {
     self.paginate()
     // initialized class
     self.object.setAttribute('data-xt-component', self.componentName)
-    // @FIX raf because after .xt custom listeners
+    // listener dispatch
     requestAnimationFrame(() => {
-      // listener dispatch
-      self.object.dispatchEvent(new CustomEvent('init.xt.infinitescroll'))
+      self.object.dispatchEvent(new CustomEvent('init.xt'))
     })
   }
 

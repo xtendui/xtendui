@@ -187,60 +187,58 @@ class Toggle {
     self.oldIndex = null
     // [disabled]
     self.destroyDisabled()
-    // @fix raf because after .xt custom listeners
-    requestAnimationFrame(() => {
-      // automatic initial currents
-      const elements = self.getElementsGroups()
-      if (elements.length) {
-        // check elements
-        for (const element of elements) {
-          // reset
-          const found = self.initReset(element, saveCurrents)
-          if (found && currents < options.max) {
-            // initial
-            currents++
-            // reactivate after raf
-            requestAnimationFrame(() => {
-              self.eventOn(element, true)
-            })
-          }
-        }
-        // if currents < min
-        let todo = options.min - currents
-        let start = 0
-        if (todo > 0 && self.targets.length) {
-          // @FIX initial activation drag wrap
-          if ((!self.disabled || !self.initial) && self.wrapIndex) {
-            start = self.wrapIndex
-            todo += start
-          }
+    // automatic initial currents
+    const elements = self.getElementsGroups()
+    if (elements.length) {
+      // check elements
+      for (const element of elements) {
+        // reset
+        const found = self.initReset(element, saveCurrents)
+        if (found && currents < options.max) {
           // initial
-          currents += todo
-        }
-        if (todo > 0 && self.targets.length) {
-          for (let i = start; i < todo; i++) {
-            self.eventOn(self.elements[i], true)
-          }
-        }
-        // currents
-        if (saveCurrents) {
-          // initialCurrents after raf
+          currents++
+          // reactivate after raf
           requestAnimationFrame(() => {
-            self.initialCurrents = self.getCurrents().slice(0)
+            self.eventOn(element, true)
           })
         }
-        // no currents
-        if (currents === 0) {
-          // vars
-          self.initial = false
-          // @FIX autostart after self.initial or it gives error on reinitialization (demos fullscreen)
-          // auto
-          self.eventAutostart()
+      }
+      // if currents < min
+      let todo = options.min - currents
+      let start = 0
+      if (todo > 0 && self.targets.length) {
+        // @FIX initial activation drag wrap
+        if ((!self.disabled || !self.initial) && self.wrapIndex) {
+          start = self.wrapIndex
+          todo += start
+        }
+        // initial
+        currents += todo
+      }
+      if (todo > 0 && self.targets.length) {
+        for (let i = start; i < todo; i++) {
+          self.eventOn(self.elements[i], true)
         }
       }
-      // initialized class
-      self.object.setAttribute('data-xt-component', self.componentName)
-      // listener dispatch
+      // currents
+      if (saveCurrents) {
+        // initialCurrents after raf
+        requestAnimationFrame(() => {
+          self.initialCurrents = self.getCurrents().slice(0)
+        })
+      }
+      // no currents
+      if (currents === 0) {
+        // @FIX autostart after self.initial or it gives error on reinitialization (demos fullscreen)
+        self.initial = false
+        // auto
+        self.eventAutostart()
+      }
+    }
+    // initialized class
+    self.object.setAttribute('data-xt-component', self.componentName)
+    // listener dispatch
+    requestAnimationFrame(() => {
       self.object.dispatchEvent(new CustomEvent('init.xt'))
     })
   }

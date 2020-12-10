@@ -61,10 +61,9 @@ class ScrollToAnchor {
     }
     // initialized class
     self.object.setAttribute('data-xt-component', self.componentName)
-    // @FIX raf because after .xt custom listeners
+    // listener dispatch
     requestAnimationFrame(() => {
-      // listener dispatch
-      self.object.dispatchEvent(new CustomEvent('init.xt.scrolltoanchor'))
+      self.object.dispatchEvent(new CustomEvent('init.xt'))
     })
   }
 
