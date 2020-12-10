@@ -43,7 +43,7 @@ if (window.self === window.top && Xt.debug) {
     )
     // images
     Xt.mount.push({
-      matches: 'img:not([src^="data:"])',
+      matches: 'img[src]:not([src^="data:"])',
       mount: object => {
         // loading
         const loading = object.getAttribute('loading')
