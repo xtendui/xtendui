@@ -10,7 +10,7 @@ date: "2010-10-10"
 
 You can customize the **class names** used by the component.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -59,7 +59,7 @@ Activation/deactivation automatically waits for the <strong>duration</strong> of
 
 You can use a function for <code>delayOn</code> and <code>delayOff</code> for example <code>(current, total) => {return Math.min((total - current) * 150, 300)}</code>.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -76,7 +76,7 @@ You can use a function for <code>delayOn</code> and <code>delayOff</code> for ex
 
 ## Class html
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -93,7 +93,7 @@ You can use a function for <code>delayOn</code> and <code>delayOff</code> for ex
 
 You can block the activations with the class `.xt-block` on elements.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |

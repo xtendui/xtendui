@@ -47,7 +47,7 @@ module.exports = {
 
 Pass **elements** and **targets** options if different from defaults. **Elements** listens to events, **targets and inners** activate on events.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |

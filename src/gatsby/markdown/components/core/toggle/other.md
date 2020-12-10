@@ -10,7 +10,7 @@ date: "2005-10-10"
 
 You can disable javascript using `.xt-disable` and `.xt-disable-after-init`.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
@@ -30,7 +30,7 @@ If you want to animate on image loaded, with `mediaLoaded: true` use the class `
 
 When you need to reinit the component when the media is loaded and the **width** of the image is calculated with `mediaLoadedReinit: true`.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -41,7 +41,7 @@ When you need to reinit the component when the media is loaded and the **width**
 
 ## Other
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |

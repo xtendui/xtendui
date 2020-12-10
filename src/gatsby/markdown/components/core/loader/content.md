@@ -12,7 +12,7 @@ Use **tailwind classes** to assign variant (e.g. [stroke](https://tailwindcss.co
 
 Use `.spinner-animated` to assing spinner animation.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
@@ -33,7 +33,7 @@ Use `.spinner-animated` to assing spinner animation.
 
 Use **component classes** to assign direction. For `<direction>` values use `x` or `y`.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
@@ -43,7 +43,7 @@ Use **component classes** to assign direction. For `<direction>` values use `x` 
 
 Use `.loader-<direction>-animated` to assing filler animation. For `<direction>` values use `x` or `y`.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
@@ -66,7 +66,7 @@ Use **tailwind classes** to assign variant (e.g. [background-color](https://tail
 
 For `<size>` values use `x`, `top` or `bottom`.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
@@ -85,7 +85,7 @@ For `<size>` values use `x`, `top` or `bottom`.
 
 For `<size>` values use `y`, `left` or `right`.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |

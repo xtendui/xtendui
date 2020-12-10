@@ -10,7 +10,7 @@ date: "2010-10-10"
 
 You can customize the **class names** used by the component.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -42,7 +42,7 @@ Additionally on component initialization the attribute `[data-xt-component="xt-t
 
 The util class `.toggle` sets `display: none` when **not activated**. If you want `display: none` when **activated** use `.toggle-inverse`.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
@@ -81,7 +81,7 @@ Activation/deactivation automatically waits for the <strong>duration</strong> of
 
 You can use a function for <code>delayOn</code> and <code>delayOff</code> for example <code>(current, total) => {return Math.min((total - current) * 150, 300)}</code>.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -105,7 +105,7 @@ You can use a function for <code>delayOn</code> and <code>delayOff</code> for ex
 
 You can specify `min` and `max` concurrent activations. The `min` option is fulfilled on initialization, the `max` options deactivates the first activated when max is reached.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -124,7 +124,7 @@ You can specify `min` and `max` concurrent activations. The `min` option is fulf
 
 You can specify **on** and **off** events for the toggle.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -145,7 +145,7 @@ You can have **element's link** and **other events** that trigger after toggle w
 
 If the toggle is on `"on": "mouseenter"` or `"on": "mousehover"` the link gets activated on the second touch event on touch devices.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -160,7 +160,7 @@ If the toggle is on `"on": "mouseenter"` or `"on": "mousehover"` the link gets a
 
 ## Auto
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -191,7 +191,7 @@ Use the [api](/components/core/slider/api#listen) and listen to events to make a
 
 Use `loop: false` to disable looping on activation.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -203,7 +203,7 @@ Use `loop: false` to disable looping on activation.
 
 Use `jump: true` to enable clicking on a **target** to jump to them.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -220,7 +220,7 @@ Use `jump: true` to enable clicking on a **target** to jump to them.
 
 You can add navigation with the `navigation:Query` option, on the queried elements use the attribute `[data-xt-nav="value"]` to set the amount to add (`+1`) or remove (`-1`) to the current activation index.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -237,7 +237,7 @@ You can add navigation with the `navigation:Query` option, on the queried elemen
 
 Use `keyboard: { selector: 'object' }` or `keyboard: { selector: Query }` to enable keyboard navigation on focus.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -254,7 +254,7 @@ Use `keyboard: { selector: 'object' }` or `keyboard: { selector: Query }` to ena
 
 You can block the activations with the class `.xt-block` on elements.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |

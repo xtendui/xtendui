@@ -84,7 +84,7 @@ Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindc
 
 Use **component classes** to create a **style disabled**.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |
@@ -96,7 +96,7 @@ Use **component classes** to create a **style disabled**.
 
 Use **component utility** `.card-group` to stack card content **horizontally**.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
@@ -144,7 +144,7 @@ See [mouse follow addon](/components/core/loader) to create a **loader with mous
 
 (navigate on mobile for different behaviour)
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -160,7 +160,7 @@ Use **component utility** `.row-<space>` to space content.
 
 For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/customizing-spacing) up to 10.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
@@ -170,7 +170,7 @@ For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/
 
 For `<direction>` values use `x` or `y`.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
@@ -180,7 +180,7 @@ For `<direction>` values use `x` or `y`.
 
 You can set **scroll mode** with css selectors.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          |  Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |

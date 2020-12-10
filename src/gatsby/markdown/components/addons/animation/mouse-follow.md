@@ -36,7 +36,7 @@ module.exports = {
 
 Use **component classes** to create a **mouse follow**. Remember **not to transition** `.mouse-follow` element.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
@@ -53,7 +53,7 @@ Use **component classes** to create a **mouse follow**. Remember **not to transi
  
 Here are the main **javascript options**.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -68,7 +68,7 @@ Here are the main **javascript options**.
 
 Listen to events on **DOM elements**.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -84,7 +84,7 @@ Listen to events on **DOM elements**.
 
 Access properties by getting component object.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |

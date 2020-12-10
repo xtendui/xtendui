@@ -31,7 +31,7 @@ module.exports = {
 
 These are layout **component utilities**.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
@@ -48,7 +48,7 @@ These are layout **component utilities**.
 
 We have also **automatic spacing utilities** to reset margin top when `:first-child` with `mt-fc` and margin bottom when `:last-child` with `mb-lc`.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
@@ -61,7 +61,7 @@ We have also **automatic spacing utilities** to reset margin top when `:first-ch
 
 These are layout **component classes**.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |               | Syntax                          | Mixin               | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -74,7 +74,7 @@ These are layout **component classes**.
 
 Xtend has custom `:focus` styles, sort of `:focus-visbile` polyfill. You can customize the global `.xt-focus-visible` style or **disable focus management and styles** with the class `html.xt-focus-disable`.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |               | Syntax                          | Mixin               | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |

@@ -10,7 +10,7 @@ date: "2005-10-10"
 
 Use `.row-stretch` to stretch content vertically.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
@@ -29,7 +29,7 @@ When using cards you can space with `margin auto` on **card content**. When not 
 
 Use `.row-overflow` to have browser overflow scroll on **touch devices** (use touch device to see it in action).
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |

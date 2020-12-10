@@ -34,7 +34,7 @@ Additionally you can pass functions to `options.formatData` to populate inside `
 
 For advanced options see javascript file source code `xtendui/src/addons/google-locator.js`.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -60,7 +60,7 @@ For advanced options see javascript file source code `xtendui/src/addons/google-
 
 Listen to events on **DOM elements**.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -74,7 +74,7 @@ Listen to events on **DOM elements**.
 
 Access properties by getting component object.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |

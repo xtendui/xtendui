@@ -12,7 +12,7 @@ You can disable styles and javascript using `.slider-disable`.
 
 It also hides automatically **pagination** and **navigation** **wrap** and slides not `in`.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
@@ -31,7 +31,7 @@ If you want to animate on image loaded, with `mediaLoaded: true` use the class `
 
 When you need to reinit the component when the media is loaded and the **width** of the image is calculated with `mediaLoadedReinit: true`.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -49,7 +49,7 @@ When you need to reinit the component when the media is loaded and the **width**
 
 Slider with `overflowAuto:Boolean` automatically disable when not overflowing. It also hides automatically **pagination**, **navigation** and **wrap**.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -75,7 +75,7 @@ You can disable **overflow auto** behaviour with `overflowAuto: false`.
 
 To disable and expand a slider use `.slider-expand` util.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |

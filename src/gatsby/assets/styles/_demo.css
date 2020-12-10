@@ -285,6 +285,10 @@ pre {
 }
 
 .gatsby_table {
+  border-collapse: separate;
   border-radius: 6px;
-  border: 3px solid theme('colors.gray.200');
+  border: 2px solid theme('colors.gray.200');
+  th, td {
+    border-color: theme('borderColor.gray.200');
+  }
 }

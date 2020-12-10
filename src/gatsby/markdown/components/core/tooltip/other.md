@@ -19,7 +19,7 @@ You can put **any content** inside, here are some examples.
 
 You can disable styles and javascript using `.tooltip-disable`.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
@@ -36,7 +36,7 @@ You can disable styles and javascript using `.tooltip-disable`.
 
 You can **pass an option** to [popperjs](https://popper.js.org/docs/v2/) for initialization.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -48,7 +48,7 @@ If you need to get the **popperjs instance** use `Xt.dataStorage.get(target, 'Po
 
 ## Other
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |

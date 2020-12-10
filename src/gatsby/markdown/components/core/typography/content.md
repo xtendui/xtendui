@@ -35,7 +35,7 @@ See [link variant](/components/core/link#variant) to style **links**.
 
 You can use headers **tags or classes**, classes takes precedence with css specificity.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
@@ -61,7 +61,7 @@ You can add **additional headers** for example `.h7` or `.h-line`.
 
 You can use paragraph **tags or classes**, classes takes precedence with css specificity.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
@@ -108,7 +108,7 @@ Use **tailwind classes** to create a **definition list**.
 
 Use **component classes** to style `figure` and` figcaption`.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
@@ -126,7 +126,7 @@ Use **component classes** to style `figure` and` figcaption`.
 
 These are typography's **component utilities**.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |

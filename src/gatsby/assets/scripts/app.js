@@ -170,11 +170,11 @@ const makeDocument = () => {
     )
   }
   // docs tables
-  const docs = document.querySelector('.gatsby_site_article_content_inner')
+  const docs = document.querySelector('.gatsby_site_article_content_inner > div')
   if (docs) {
-    const tables = docs.querySelectorAll('table')
+    const tables = docs.querySelectorAll(':scope > .table-overflow > table')
     for (const table of tables) {
-      table.classList.add('table', 'gatsby_table')
+      table.classList.add('gatsby_table')
       for (const el of table.querySelectorAll('tr td:first-child')) {
         el.outerHTML = el.outerHTML.replace(/(<\s*\/?\s*)td(\s*([^>]*)?\s*>)/gi, '$1th$2') // regex replace tagname
         el.setAttribute('scope', 'row')

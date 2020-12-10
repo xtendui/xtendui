@@ -10,7 +10,7 @@ date: "2030-10-10"
 
 Use **tailwind classes** on `.media-inner` to assign relative position. The result is a **responsive media**.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
@@ -34,7 +34,7 @@ Assing `padding-bottom` on `.media-container` to the aspect ratio you desire.
 
 Use **component utility** `.ratio-<value>` on `.media-container` to make aspect ratio images (resize screen to see it in action).
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |

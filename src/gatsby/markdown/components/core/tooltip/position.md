@@ -12,7 +12,7 @@ Use **js option** `position: <value>` to specify [popperjs placement](https://po
 
 If you want to **control a specific tooltip position** use `[data-xt-position=<value>]` on the `.tooltip`
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -41,7 +41,7 @@ Use `.tooltip-nospace` to **disable tooltip spacing**.
 
 Here are the main spacing javascript options, more [popperjs](https://popper.js.org/docs/v2/) options with [popperjs options](/components/core/tooltip/other#popperjs).
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | 
@@ -56,7 +56,7 @@ Here are the main spacing javascript options, more [popperjs](https://popper.js.
 
 If you want a tooltip with size and position **relative to a parent Node with relative** use `.tooltip-static`.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |

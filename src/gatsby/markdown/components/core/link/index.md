@@ -33,7 +33,7 @@ Use this code to create a **link**.
 
 You can use `.link` to style **any element** as a link.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                     | Mixin                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -56,7 +56,7 @@ You can use `.link` to style **any element** as a link.
 
 Use **component utility** `.links-default` and `.links-inverse` on **parent elements** to style **child links**.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |

@@ -10,7 +10,7 @@ date: "2005-10-10"
 
 Use **component utility** `.sticky-disable` to disable styles and javascript.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
@@ -27,7 +27,7 @@ Use **component utility** `.sticky-disable` to disable styles and javascript.
 
 To show or hide content when sticky activates use `.show-sticky` or `.hide-sticky`.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |

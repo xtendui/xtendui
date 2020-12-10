@@ -1,7 +1,7 @@
 ---
 type: "Components"
 category: "Core"
-parent: "Badge"
+parent: "Table"
 title: "Content"
 date: "2030-10-10"
 ---
@@ -11,7 +11,7 @@ date: "2030-10-10"
 Use **tailwind classes** to assign variant (e.g. [border-color](https://tailwindcss.com/docs/border-color), [background-color](https://tailwindcss.com/docs/background-color), [text-color](https://tailwindcss.com/docs/text-color)).
 
 <demo>
-  <demovanilla src="vanilla/components/core/badge/variant">
+  <demovanilla src="vanilla/components/core/table/variant">
   </demovanilla>
 </demo>
 
@@ -20,27 +20,32 @@ Use **tailwind classes** to assign variant (e.g. [border-color](https://tailwind
 Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).
 
 <demo>
-  <demovanilla src="vanilla/components/core/badge/interactive">
+  <demovanilla src="vanilla/components/core/table/interactive">
   </demovanilla>
 </demo>
 
 ## Size
 
-Use **component classes** to assign size. You can add **additional size** for example `.badge-xs` or `.badge-xl`.
+Use **tailwind classes** to assign custom size (e.g. [padding](https://tailwindcss.com/docs/padding), [font-size](https://tailwindcss.com/docs/font-size)).
+
+<demo>
+  <demovanilla src="vanilla/components/core/table/size">
+  </demovanilla>
+</demo>
+
+## Overflow
+
+Use **component classes** to overflow with scroll when content is too long (use narrow screen to see it in action).
 
 <div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |
-| Component                  | `.badge-sm`       | `badge-sm`                | Size small            |
-| Component                  | `.badge-md`       | `badge-md`                | Size medium            |
-| Component                  | `.badge-lg`       | `badge-lg`                | Size large            |
+| Component                  | `.table-overflow`       | `table-overflow`                | Overflow with scroll when content is too long            |
 
 </div>
 
-Otherwise use **tailwind classes** to assign custom size (e.g. [padding](https://tailwindcss.com/docs/padding), [font-size](https://tailwindcss.com/docs/font-size)).
-
 <demo>
-  <demovanilla src="vanilla/components/core/badge/size">
+  <demovanilla src="vanilla/components/core/table/overflow">
   </demovanilla>
 </demo>

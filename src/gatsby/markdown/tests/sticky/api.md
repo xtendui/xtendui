@@ -42,7 +42,7 @@ Xt.mount.push({
 
 ## Util
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -58,7 +58,7 @@ Trigger events on **DOM elements**.
 document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('on.trigger.xt'))
 ```
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -104,7 +104,7 @@ const eventChange = e => {
 object.addEventListener('change.xt', eventChange, true)
 ```
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -130,7 +130,7 @@ let self = Xt.get('xt-sticky', object)
 const elements = self.elements
 ```
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
@@ -153,7 +153,7 @@ self.destroy()
 self = null
 ```
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |

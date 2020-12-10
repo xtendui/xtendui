@@ -23,7 +23,7 @@ Use **tailwind classes** to assign width (e.g. [width](https://tailwindcss.com/d
 
 Use **component classes** to assign size. You can add **additional size** for example `.tooltip-xs` or `.tooltip-xl`.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |

@@ -23,7 +23,7 @@ Use this code to create a **textarea autosize**. You can customize `min-height` 
 
 Listen to events on **DOM elements**.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -36,7 +36,7 @@ Listen to events on **DOM elements**.
 
 Access properties by getting component object.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |

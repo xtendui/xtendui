@@ -21,7 +21,7 @@ Use **tailwind classes** to assign width (e.g. [width](https://tailwindcss.com/d
 
 Use **component classes** to assign size. You can add **additional size** for example `.card-xs` or `.card-xl`.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
@@ -51,7 +51,7 @@ Card content **stack vertically**. Use **tailwind classes** to assign styles (e.
 
 Use **component utility** `.card-group` to stack card content **horizontally**.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
@@ -79,7 +79,7 @@ Use **tailwind classes** to style **borders** for separation.
 
 Use **tailwind classes** to overflow divs. Use **component classes** to style **overflow**.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |               | Syntax                          | Mixin               | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |

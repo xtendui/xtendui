@@ -10,7 +10,7 @@ date: "2005-10-10"
 
 You can disable styles using `.card-disable`.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |

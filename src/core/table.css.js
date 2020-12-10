@@ -7,19 +7,18 @@ const rem = px => `${round(px / 16)}rem`
 
 module.exports = {
   component: theme => ({
-    '.table': {
+    'table, .table': {
       // setup
-      borderCollapse: 'separate',
+      borderCollapse: 'collapse',
       borderSpacing: '0',
-      width: '100%',
     },
-    '.table-scroll': {
+    '.table-overflow': {
       // setup
       '@apply overflow-sub': '',
       overflowX: 'scroll',
       overflowY: 'hidden',
     },
-    '.table, .table-scroll': {
+    'table, .table, .table-overflow': {
       // setup
       width: '100%',
       // styles
@@ -49,22 +48,8 @@ module.exports = {
     },
     'th, td': {
       // styles
-      borderRightWidth: theme('borderWidth.DEFAULT'),
-      borderBottomWidth: theme('borderWidth.DEFAULT'),
-      borderColor: theme('borderColor.gray.200'),
-      '&:last-child': {
-        borderRight: '0',
-      },
-    },
-    tbody: {
-      // styles
-      tr: {
-        '&:last-child': {
-          'th, td': {
-            borderBottom: '0',
-          },
-        },
-      },
+      borderWidth: theme('borderWidth.DEFAULT'),
+      borderColor: theme('borderColor.gray.300'),
     },
   }),
 }

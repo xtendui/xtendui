@@ -38,7 +38,7 @@ Check subpage to [customize content](/components/core/list-group/content).
 
 Use **component classes** to style **nested**.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |

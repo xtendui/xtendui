@@ -41,7 +41,7 @@ Inside `elements.pagination:Query` you can use this strings that gets populated 
 - `xt-num` replaced with current page number
 - `xt-tot` replaced with total pages number
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -66,7 +66,7 @@ Inside `elements.pagination:Query` you can use this strings that gets populated 
 
 Listen to events on **DOM elements**.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -79,7 +79,7 @@ Listen to events on **DOM elements**.
 
 Access properties by getting component object.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |

@@ -10,7 +10,7 @@ date: "2010-10-10"
 
 You can customize the **class names** used by the component.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -32,7 +32,7 @@ Additionally on component initialization the attribute `[data-xt-component="xt-s
 
 You can set **scroll mode** with css selectors.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          |  Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
@@ -64,7 +64,7 @@ Use `distance: Number` activation and deactivation distance. For percent use `di
 
 You can also set a **fallback** distance from top and bottom for elements that are too close to window's top or bottom.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -82,7 +82,7 @@ You can also set a **fallback** distance from top and bottom for elements that a
 
 You can use `delayOn` and `delayOff` for a delay on activation and deactivation.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -97,7 +97,7 @@ You can use `delayOn` and `delayOff` for a delay on activation and deactivation.
 
 ## Sticky
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -109,7 +109,7 @@ You can use `delayOn` and `delayOff` for a delay on activation and deactivation.
 
 ## Position
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -126,7 +126,7 @@ You can use `delayOn` and `delayOff` for a delay on activation and deactivation.
 
 You can block the activations with the class `.xt-block` on elements.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |

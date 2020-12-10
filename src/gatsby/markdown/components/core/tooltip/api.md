@@ -42,7 +42,7 @@ Xt.mount.push({
 
 ## Util
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -58,7 +58,7 @@ Trigger events on **DOM elements**.
 document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('on.trigger.xt'))
 ```
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -104,7 +104,7 @@ const eventOn = e => {
 object.addEventListener('on.xt', eventOn, true)
 ```
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -131,7 +131,7 @@ let self = Xt.get('xt-tooltip', object)
 const elements = self.elements
 ```
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
@@ -154,7 +154,7 @@ self.destroy()
 self = null
 ```
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |

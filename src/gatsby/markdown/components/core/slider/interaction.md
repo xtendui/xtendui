@@ -10,7 +10,7 @@ date: "2010-10-10"
 
 You can customize the **class names** used by the component.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -39,7 +39,7 @@ Inside it you can use this strings that gets populated with variables:
 - `xt-content` replaced with slide's `.slide-pagination-content` **innerHTML**.
 - Classes added with slide's `[data-slide-pagination-class]` **value**.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -59,7 +59,7 @@ Inside it you can use this strings that gets populated with variables:
 
 You can add navigation with the `navigation:Query` option, on the queried elements use the attribute `[data-xt-nav="value"]` to set the amount to add (`+1`) or remove (`-1`) to the current activation index.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -74,7 +74,7 @@ You can add navigation with the `navigation:Query` option, on the queried elemen
 
 ## Drag
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -93,7 +93,7 @@ You can set friction with `drag: { friction: Function }`, for example `(velocity
 
 You can disable friction with `drag: { friction: false }`.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -109,7 +109,7 @@ You can disable friction with `drag: { friction: false }`.
 
 You can set overflow with `drag: { overflow: Function }`, for example `(overflow) => {return Math.pow(overflow, 0.73)}`.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -128,7 +128,7 @@ Use `wheel: { selector: 'object' }` or `wheel: { selector: Query }` to enable mo
 
 ## Auto
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -154,7 +154,7 @@ Use the [api](/components/core/slider/api#listen) and listen to events to make a
 
 You can block the activations with the class `.xt-block` on elements.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
@@ -168,7 +168,7 @@ Do not loop slides activation with `loop: false`.
 
 Disable the jump feature (clicking on not activated slides jumps to the slide) with `jump: false`. Jump only if the slide isn't entirely on screen.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |

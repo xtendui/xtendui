@@ -32,7 +32,7 @@ Text styles on **parent elements** are applied when **inerithed**.
 
 Use **component classes** to assign size. You can add **additional size** for example `.icon-xs`.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |

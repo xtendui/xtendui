@@ -10,7 +10,7 @@ date: "2009-10-10"
 
 Align the slides.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -31,7 +31,7 @@ Align the slides.
 
 Contain the slides.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -54,7 +54,7 @@ With `groupMq: { MediaQuery: Number }` you set a decimal number from 0 to 1 to g
 
 `MediaQuery` is a media query, you can have multiple, for example `groupMq: { all: 1, '(min-width: 768px)': 0.8 }`.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -71,7 +71,7 @@ With `groupMq: { MediaQuery: Number }` you set a decimal number from 0 to 1 to g
 
 You can wrap the slides with `drag: { wrap: true }`. With `drag.wrap` you have to set `loop: true` and you can't use `contain: true`.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -94,7 +94,7 @@ If you have slides of different height you can set `autoHeight: '.slides'` to ha
 
 If you want to keep the first element height on the slide use `keepHeight: '.slides'`.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |

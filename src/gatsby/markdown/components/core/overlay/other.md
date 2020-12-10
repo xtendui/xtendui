@@ -28,7 +28,7 @@ You can put **any content** inside, here are some examples.
 
 You can disable styles and javascript using `.overlay-disable`.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
@@ -43,7 +43,7 @@ You can disable styles and javascript using `.overlay-disable`.
 
 ## Other
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |

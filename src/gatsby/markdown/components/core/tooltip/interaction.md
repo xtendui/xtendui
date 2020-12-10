@@ -10,7 +10,7 @@ date: "2010-10-10"
 
 You can customize the **class names** used by the component.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -65,7 +65,7 @@ Activation/deactivation automatically waits for the <strong>duration</strong> of
 
 You can use a function for <code>delayOn</code> and <code>delayOff</code> for example <code>(current, total) => {return Math.min((total - current) * 150, 300)}</code>.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -84,7 +84,7 @@ You can use a function for <code>delayOn</code> and <code>delayOff</code> for ex
 
 You can specify **on** and **off** events for the tooltip. Fore example `on: 'click'` `off: false`.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -101,7 +101,7 @@ You can specify **on** and **off** events for the tooltip. Fore example `on: 'cl
 
 You can have **element's link** and **click events** prevented when the tooltip opens with `preventEvent: true`, they will trigger only if the tooltip is already opened.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -118,7 +118,7 @@ You can have **element's link** and **click events** prevented when the tooltip 
 
 ## Backdrop
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -135,7 +135,7 @@ You can have **element's link** and **click events** prevented when the tooltip 
 
 You can block the activations with the class `.xt-block` on elements.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |

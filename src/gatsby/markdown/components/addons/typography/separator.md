@@ -39,7 +39,7 @@ Use **tailwind classes** to assign styles (e.g. [margin](https://tailwindcss.com
 
 For `<type>` values use `dash`, `slash`, `pipe`, `point` or `arrow`.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |

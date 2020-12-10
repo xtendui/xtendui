@@ -30,7 +30,7 @@ Use this code to create a **scroll to anchor**.
  
 Here are the main **javascript options**.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -49,7 +49,7 @@ Here are the main **javascript options**.
 
 Trigger events on **DOM elements**.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -61,7 +61,7 @@ Trigger events on **DOM elements**.
 
 Listen to events on **DOM elements**.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -75,7 +75,7 @@ Listen to events on **DOM elements**.
 
 Access properties by getting component object.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |

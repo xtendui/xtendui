@@ -34,7 +34,7 @@ See [link variant](/components/core/link#variant) to style **links**.
 
 Use **component classes** to assign size. You can add **additional size** for example `.btn-xs` or `.btn-xl`.
 
-<div class="table-scroll">
+<div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |
