@@ -17,7 +17,10 @@ class GoogleLocator {
     self.object = object
     self.optionsCustom = optionsCustom
     self.componentName = self.constructor.componentName
-    Xt.destroyAndInit(self)
+    // set self
+    Xt.set(self.componentName, self.object, self)
+    // init
+    self.init()
   }
 
   //

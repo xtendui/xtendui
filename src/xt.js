@@ -189,28 +189,20 @@ Xt.mountCheck = (added = document.documentElement) => {
           Xt.ignoreOnce(elIgnore) // @FIX ignore once for mount when moving
           continue
         }
-        // @FIX raf react when componentDidMount
-        cancelAnimationFrame(Xt.dataStorage.get(el, `${obj.matches}xtMountFrame`))
-        Xt.dataStorage.set(
-          el,
-          `${obj.matches}xtMountFrame`,
-          requestAnimationFrame(() => {
-            // call
-            const destroy = obj.mount(el, i, obj.matches) // object, index, matches
-            // destroy
-            if (destroy) {
-              Xt.unmount.push({
-                object: el,
-                unmount: destroy,
-                unmountRemove: () => {
-                  Xt.unmount.filter(x => {
-                    return x.object !== el && x.matches !== obj.matches
-                  })
-                },
+        // call
+        const destroy = obj.mount(el, i, obj.matches) // object, index, matches
+        // destroy
+        if (destroy) {
+          Xt.unmount.push({
+            object: el,
+            unmount: destroy,
+            unmountRemove: () => {
+              Xt.unmount = Xt.unmount.filter(x => {
+                return x.object !== el && x.matches !== obj.matches
               })
-            }
+            },
           })
-        )
+        }
       }
     }
   }
@@ -269,23 +261,6 @@ Xt.get = (name, element) => {
  */
 Xt.remove = (name, element) => {
   return Xt.dataStorage.remove(element, name)
-}
-
-/**
- * destroy component if defined and set
- * @param {Object} self Component self
- * @param {Function} fnc Component init
- */
-Xt.destroyAndInit = self => {
-  // @FIX multiple initializations
-  const old = Xt.get(self.componentName, self.object)
-  if (old) {
-    old.destroy()
-  }
-  // set self
-  Xt.set(self.componentName, self.object, self)
-  // init
-  self.init()
 }
 
 //

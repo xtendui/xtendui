@@ -33,10 +33,12 @@ const scrollToItem = (initial = false) => {
 }
 
 const demoHash = (e, initial = false) => {
+  const demoFull = document.querySelector('#gatsby_open-full-trigger')
   // call offdone.xt
-  if (document.querySelector('#gatsby_open-full-trigger')) {
-    document.querySelector('#gatsby_open-full-trigger').dispatchEvent(new CustomEvent('off.trigger.xt'))
-    // set hash cancel
+  if (demoFull) {
+    // close demo full
+    demoFull.dispatchEvent(new CustomEvent('off.trigger.xt'))
+    // hash cancel
     cancelAnimationFrame(Xt.dataStorage.get(document, 'gatsby_open-full-raf'))
     // check hash
     if (location.hash) {
@@ -44,16 +46,13 @@ const demoHash = (e, initial = false) => {
       if (item) {
         const demo = item.closest('.gatsby_demo')
         if (demo) {
-          // raf fix reopen options.scrollbar
-          requestAnimationFrame(() => {
-            makeFullscreen(demo, initial)
-            // scrollToItem
-            scrollToItem(initial)
-            // makeGatsbyWithIframe
-            makeGatsbyWithIframe(item)
-            // trigger fullscreen or change tabs
-            item.dispatchEvent(new CustomEvent('on.trigger.xt'))
-          })
+          makeFullscreen(demo, initial)
+          // scrollToItem
+          scrollToItem(initial)
+          // makeGatsbyWithIframe
+          makeGatsbyWithIframe(item)
+          // trigger fullscreen or change tabs
+          item.dispatchEvent(new CustomEvent('on.trigger.xt'))
         }
       }
     }
@@ -147,7 +146,9 @@ const populateBlock = () => {
     for (const el of document.querySelectorAll('[data-gatsby-listing-toggle]')) {
       el.addEventListener('click', e => {
         e.preventDefault()
+        // hash
         location.hash = el.nextSibling.querySelector('.gatsby_demo_item ').getAttribute('id')
+        // hash cancel
         cancelAnimationFrame(Xt.dataStorage.get(document, 'gatsby_open-full-raf'))
       })
     }
@@ -193,7 +194,7 @@ const populateBlock = () => {
           dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: current } }))
           appendOrigin.remove()
         }
-        // set hash
+        // hash
         cancelAnimationFrame(Xt.dataStorage.get(document, 'gatsby_open-full-raf'))
         Xt.dataStorage.set(
           document,
@@ -348,7 +349,9 @@ const populateDemo = (container, i) => {
     btnOpenFull.addEventListener('click', e => {
       e.preventDefault()
       scrollCache = document.scrollingElement.scrollTop
+      // hash
       location.hash = container.querySelector('.gatsby_demo_item.in').getAttribute('id')
+      // hash cancel
       cancelAnimationFrame(Xt.dataStorage.get(document, 'gatsby_open-full-raf'))
     })
   }
@@ -373,14 +376,13 @@ const populateDemo = (container, i) => {
     item.addEventListener('on.xt', () => {
       if (!self.initial) {
         // triggering e.detail.container
-        requestAnimationFrame(() => {
-          dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: item.querySelector('.gatsby_demo_source'), delay: 0 } }))
-        })
+        dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: item.querySelector('.gatsby_demo_source'), delay: 0 } }))
       }
       // only if demo opened
       if (document.querySelector('#gatsby_open-full-trigger').classList.contains('in')) {
-        // set hash
+        // hash
         location.hash = item.getAttribute('id')
+        // hash cancel
         cancelAnimationFrame(Xt.dataStorage.get(document, 'gatsby_open-full-raf'))
       }
       // makeGatsbyWithIframe
@@ -491,12 +493,9 @@ const makeFullscreen = (container, initial = false) => {
   for (const item of items) {
     const sourceTo = item.querySelector('.gatsby_demo_source_populate')
     // populate source
-    requestAnimationFrame(() => {
-      // requestAnimationFrame fixes errors
-      if (sourceTo && container.dataset.isFullscreenOnly) {
-        sourceTo.innerHTML = item.querySelector('script[type="text/plain"]').innerHTML
-      }
-    })
+    if (sourceTo && container.dataset.isFullscreenOnly) {
+      sourceTo.innerHTML = item.querySelector('script[type="text/plain"]').innerHTML
+    }
   }
   toggle.dispatchEvent(new CustomEvent('on.trigger.xt'))
   toggle.addEventListener('init.xt', () => {
@@ -510,14 +509,17 @@ const makeFullscreen = (container, initial = false) => {
     container.classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
   }
   content.append(container)
-  // populate iframe
-  for (const item of container.querySelectorAll('.gatsby_demo_item.in')) {
-    if (item.getAttribute('data-iframe-fullscreen')) {
-      item.setAttribute('data-iframe', item.getAttribute('data-iframe-fullscreen'))
-      initializeIframe(container, item)
-      item.dispatchEvent(new CustomEvent('ondone.xt'))
+  // raf after initialization
+  requestAnimationFrame(() => {
+    // populate iframe after initialization
+    for (const item of container.querySelectorAll('.gatsby_demo_item.in')) {
+      if (item.getAttribute('data-iframe-fullscreen')) {
+        item.setAttribute('data-iframe', item.getAttribute('data-iframe-fullscreen'))
+        initializeIframe(container, item)
+        item.dispatchEvent(new CustomEvent('ondone.xt'))
+      }
     }
-  }
+  })
 }
 
 /**
