@@ -174,31 +174,37 @@ Xt.mountCheck = (added = document.documentElement) => {
   }
   for (const obj of Xt.mount) {
     // check
-    const els = []
+    const objects = []
     if (added.matches(obj.matches)) {
-      els.push(added)
+      objects.push(added)
     }
-    for (const element of added.querySelectorAll(obj.matches)) {
-      els.push(element)
+    for (const object of added.querySelectorAll(obj.matches)) {
+      objects.push(object)
     }
     // call
-    if (els.length) {
-      for (const [i, el] of els.entries()) {
-        const elIgnore = el.closest('.xt-ignore')
-        if (elIgnore) {
-          Xt.ignoreOnce(elIgnore) // @FIX ignore once for mount when moving
+    if (objects.length) {
+      for (const [i, object] of objects.entries()) {
+        const ignore = object.closest('.xt-ignore')
+        if (ignore) {
+          Xt.ignoreOnce(ignore) // @FIX ignore once for mount when moving
           continue
         }
+        // @FIX multiple initialization because we observe also childs with querySelectorAll
+        if (Xt.dataStorage.get(object, `Mount${obj.matches}`)) {
+          return
+        }
+        Xt.dataStorage.set(object, `Mount${obj.matches}`, true)
         // call
-        const destroy = obj.mount(el, i, obj.matches) // object, index, matches
+        const call = obj.mount(object, i, obj.matches) // object, index, matches
         // destroy
-        if (destroy) {
+        if (call) {
           Xt.unmount.push({
-            object: el,
-            unmount: destroy,
+            object: object,
+            unmount: call,
             unmountRemove: () => {
+              Xt.dataStorage.remove(object, `Mount${obj.matches}`)
               Xt.unmount = Xt.unmount.filter(x => {
-                return x.object !== el && x.matches !== obj.matches
+                return x.object !== object && x.matches !== obj.matches
               })
             },
           })
