@@ -41,7 +41,7 @@ class MouseFollow {
     self.object.addEventListener('mouseenter', self.mouseenter.bind(self))
     self.object.addEventListener('mouseleave', self.mouseleave.bind(self))
     // initialized class
-    self.object.setAttribute('data-xt-component', self.componentName)
+    self.object.classList.add(self.componentName)
     // listener dispatch
     requestAnimationFrame(() => {
       self.object.dispatchEvent(new CustomEvent('init.xt'))
@@ -138,7 +138,7 @@ class MouseFollow {
     self.object.removeEventListener('mouseleave', self.mouseleave.bind(self))
     removeEventListener('mouseup', self.mouseleave.bind(self))
     // initialized class
-    self.object.removeAttribute('data-xt-component', self.componentName)
+    self.object.classList.remove(self.componentName)
     // set self
     Xt.remove(self.componentName, self.object)
     // listener dispatch

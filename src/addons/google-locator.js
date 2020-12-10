@@ -149,7 +149,7 @@ class GoogleLocator {
       }
     }
     // initialized class
-    self.object.setAttribute('data-xt-component', self.componentName)
+    self.object.classList.add(self.componentName)
     // listener dispatch
     requestAnimationFrame(() => {
       self.object.dispatchEvent(new CustomEvent('init.xt'))
@@ -527,7 +527,7 @@ class GoogleLocator {
       self.repeatElement.removeEventListener('click', self.submitCurrent.bind(self).bind(self, false))
     }
     // initialized class
-    self.object.removeAttribute('data-xt-component', self.componentName)
+    self.object.classList.remove(self.componentName)
     // set self
     Xt.remove(self.componentName, self.object)
     // listener dispatch
