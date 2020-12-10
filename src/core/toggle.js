@@ -236,7 +236,9 @@ class Toggle {
       }
     }
     // initialized class
-    self.object.classList.add(self.componentName)
+    if (!options.classSkip) {
+      self.object.classList.add(self.componentName)
+    }
     // listener dispatch
     requestAnimationFrame(() => {
       self.object.dispatchEvent(new CustomEvent('init.xt'))
@@ -2844,7 +2846,7 @@ class Toggle {
     if (self.disabled) {
       // enable
       self.disabled = false
-      if (options.classSkip !== true) {
+      if (!options.classSkip) {
         self.object.classList.remove('xt-disabled')
       }
       // listener dispatch
@@ -2871,7 +2873,7 @@ class Toggle {
       clearTimeout(Xt.dataStorage.get(self.object, `${self.ns}AutoTimeout`))
       // disable
       self.disabled = true
-      if (options.classSkip !== true) {
+      if (!options.classSkip) {
         self.object.classList.add('xt-disabled')
       }
       // listener dispatch
