@@ -1,6 +1,6 @@
 ---
 name: Bug Report 🐞
-about: Report a reproducible bug.
+about: Report a reproducible bug
 labels: "type: bug"
 ---
 

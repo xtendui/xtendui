@@ -1,6 +1,6 @@
 ---
 name: Docs and themes 📝
-about: Suggest better documentation or new themes.
+about: Suggest better documentation or new themes
 labels: "type: documentation"
 ---
 
