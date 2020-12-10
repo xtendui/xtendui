@@ -44,6 +44,7 @@ module.exports = {
       // setup
       '@apply toggle': '',
       position: 'absolute',
+      margin: '0 !important',
       '&.out': {
         pointerEvents: 'none',
       },

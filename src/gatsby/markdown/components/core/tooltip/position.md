@@ -45,7 +45,7 @@ Here are the main spacing javascript options, more [popperjs](https://popper.js.
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | 
-| Option                  | `strategy:String`                          | `'absolute'`        | Position strategy, can be `'absolute'` or `'fixed'`            |----------------------------- |
+| Option                  | `strategy:String`                          | `'fixed'`        | Position strategy, can be `'absolute'` or `'fixed'`            |----------------------------- |
 | Option                  | `spaceOverflow:Number`                          | `15`        | Space to contain the tooltip            |
 | Option                  | `spaceFlip:Number`                          | `15`        | Space to flip the tooltip            |
 | Option                  | `spaceArrow:Number`                          | `0`        | Space for arrow            |

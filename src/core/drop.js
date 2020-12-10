@@ -155,7 +155,7 @@ Drop.optionsDefault = {
   },
   // other
   position: 'bottom-start',
-  strategy: 'absolute',
+  strategy: 'fixed',
   spaceOverflow: 15,
   spaceFlip: 15,
   spaceArrow: 0,

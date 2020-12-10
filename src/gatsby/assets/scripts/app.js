@@ -42,7 +42,6 @@ Xt.mount.push({
     new Xt.Tooltip(close, {
       targets: `#tooltip--demo--close-${closeUid}`,
       position: 'bottom-end',
-      spaceOverflow: 0,
     })
 
     // unmount
