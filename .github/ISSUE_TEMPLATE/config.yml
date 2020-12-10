@@ -1,6 +1,9 @@
 blank_issues_enabled: false
 
 contact_links:
-  - name: Xtend UI Docs
+  - name: Discussion
+    url: https://github.com/minimit/xtendui/discussions/new
+    about: If you have a question or need help use the dicussion forums
+  - name: FAQ
     url: https://xtendui.com/
     about: Check out the docs for answers to common questions
