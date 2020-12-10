@@ -58,13 +58,10 @@ class Slider extends Xt.Toggle {
    */
   initStart(saveCurrents = false) {
     const self = this
-    // @fix raf because after .xt custom listeners
-    requestAnimationFrame(() => {
-      // initSliderPos
-      if (self.dragger) {
-        self.initSliderPos()
-      }
-    })
+    // initSliderPos
+    if (self.dragger) {
+      self.initSliderPos()
+    }
     // super
     super.initStart(saveCurrents)
   }
