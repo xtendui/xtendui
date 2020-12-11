@@ -7,26 +7,38 @@ Xt.mount.push({
 
     const tooltip = object.parentNode.querySelector('.tooltip')
 
-    // eventClick
+    // eventOn
 
-    const eventClick = () => {
+    const eventOn = () => {
       // close tooltip
-      tooltip.dispatchEvent(new CustomEvent('off.trigger.xt'))
+      tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
       // swap tooltip
       let self = Xt.get('xt-tooltip', object)
       if (self) {
-        if (object.classList.contains('in')) {
-          self.targets[0].style.display = 'none'
-          self.targets[1].style.display = ''
-        } else {
-          self.targets[0].style.display = ''
-          self.targets[1].style.display = 'none'
-        }
+        self.targets[0].style.display = 'none'
+        self.targets[1].style.display = ''
         // open tooltip
-        tooltip.dispatchEvent(new CustomEvent('on.trigger.xt'))
+        tooltip.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
       }
     }
 
-    object.addEventListener('click', eventClick)
+    object.addEventListener('on.xt.toggle', eventOn, true)
+
+    // eventOff
+
+    const eventOff = () => {
+      // close tooltip
+      tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+      // swap tooltip
+      let self = Xt.get('xt-tooltip', object)
+      if (self) {
+        self.targets[0].style.display = ''
+        self.targets[1].style.display = 'none'
+        // open tooltip
+        tooltip.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
+      }
+    }
+
+    object.addEventListener('off.xt.toggle', eventOff, true)
   },
 })

@@ -22,10 +22,10 @@ Xt.mount.push({
           // unblock
           element.classList.remove('xt-block')
           // fade in
-          element.dispatchEvent(new CustomEvent('on.trigger.xt'))
+          element.dispatchEvent(new CustomEvent('on.trigger.xt.scroll'))
         } else {
           // fade out
-          element.dispatchEvent(new CustomEvent('off.trigger.xt'))
+          element.dispatchEvent(new CustomEvent('off.trigger.xt.scroll'))
           // block
           element.classList.add('xt-block')
         }

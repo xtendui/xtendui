@@ -56,7 +56,7 @@ Xt.mount.push({
       gsap.set(content, { x: -contentX * self.detail.dragRatio * self.direction, opacity: 1 * self.detail.dragRatioInverse })
     }
 
-    self.dragger.addEventListener('drag.xt', eventDrag)
+    self.dragger.addEventListener('drag.xt.slider', eventDrag)
 
     // dragreset
 
@@ -70,7 +70,7 @@ Xt.mount.push({
       gsap.to(content, { x: 0, opacity: 1, duration: 0.25, ease: contentEase })
     }
 
-    self.dragger.addEventListener('dragreset.xt', eventDragReset)
+    self.dragger.addEventListener('dragreset.xt.slider', eventDragReset)
 
     // on
 
@@ -121,7 +121,7 @@ Xt.mount.push({
       }
     }
 
-    self.object.addEventListener('on.xt', eventOn, true)
+    self.object.addEventListener('on.xt.slider', eventOn, true)
 
     // on
 
@@ -148,7 +148,7 @@ Xt.mount.push({
       }
     }
 
-    self.object.addEventListener('off.xt', eventOff, true)
+    self.object.addEventListener('off.xt.slider', eventOff, true)
 
     // unmount
 

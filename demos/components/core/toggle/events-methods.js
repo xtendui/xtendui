@@ -39,7 +39,7 @@ Xt.mount.push({
     const firstElFnc = () => {
       logAdd('<strong>1st element</strong>')
       const elements = self.elements
-      elements[0].dispatchEvent(new CustomEvent('on.trigger.xt'))
+      elements[0].dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
     }
 
     firstEl.addEventListener('click', firstElFnc)
@@ -51,7 +51,7 @@ Xt.mount.push({
     const firstTrFnc = () => {
       logAdd('<strong>1st target</strong>')
       const targets = self.targets
-      targets[0].dispatchEvent(new CustomEvent('on.trigger.xt'))
+      targets[0].dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
     }
 
     firstTr.addEventListener('click', firstTrFnc)
@@ -62,7 +62,7 @@ Xt.mount.push({
 
     const autstartFnc = () => {
       logAdd('<strong>autostart</strong>')
-      self.object.dispatchEvent(new CustomEvent('autostart.trigger.xt'))
+      self.object.dispatchEvent(new CustomEvent('autostart.trigger.xt.toggle'))
     }
 
     autostartEl.addEventListener('click', autstartFnc)
@@ -73,7 +73,7 @@ Xt.mount.push({
 
     const autostopFnc = () => {
       logAdd('<strong>autostop</strong>')
-      self.object.dispatchEvent(new CustomEvent('autostop.trigger.xt'))
+      self.object.dispatchEvent(new CustomEvent('autostop.trigger.xt.toggle'))
     }
 
     autostopEl.addEventListener('click', autostopFnc)
@@ -206,10 +206,10 @@ Xt.mount.push({
       logAdd(str)
     }
 
-    object.addEventListener('init.xt', events)
-    object.addEventListener('destroy.xt', events)
-    document.addEventListener('on.xt', events, true)
-    document.addEventListener('off.xt', events, true)
+    object.addEventListener('init.xt.toggle', events)
+    object.addEventListener('destroy.xt.toggle', events)
+    document.addEventListener('on.xt.toggle', events, true)
+    document.addEventListener('off.xt.toggle', events, true)
 
     // unmount
 
@@ -222,10 +222,10 @@ Xt.mount.push({
       restartBtn.removeEventListener('click', restartFnc)
       destroyBtn.removeEventListener('click', destroyFnc)
       unmountBtn.removeEventListener('click', unmountFnc)
-      object.removeEventListener('init.xt', events)
-      object.removeEventListener('destroy.xt', events)
-      document.removeEventListener('on.xt', events, true)
-      document.removeEventListener('off.xt', events, true)
+      object.removeEventListener('init.xt.toggle', events)
+      object.removeEventListener('destroy.xt.toggle', events)
+      document.removeEventListener('on.xt.toggle', events, true)
+      document.removeEventListener('off.xt.toggle', events, true)
       self.destroy()
       self = null
     }

@@ -32,7 +32,7 @@ Xt.mount.push({
     }
 
     for (const target of self.targets) {
-      target.addEventListener('on.xt', eventOn)
+      target.addEventListener('on.xt.drop', eventOn)
     }
 
     // off
@@ -47,7 +47,7 @@ Xt.mount.push({
     }
 
     for (const target of self.targets) {
-      target.addEventListener('off.xt', eventOff)
+      target.addEventListener('off.xt.drop', eventOff)
     }
 
     // unmount

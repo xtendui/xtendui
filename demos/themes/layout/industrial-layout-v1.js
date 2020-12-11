@@ -73,7 +73,7 @@ Xt.mount.push({
       }
     }
 
-    self.dragger.addEventListener('drag.xt', eventDrag)
+    self.dragger.addEventListener('drag.xt.slider', eventDrag)
 
     // dragreset
 
@@ -98,7 +98,7 @@ Xt.mount.push({
       }
     }
 
-    self.dragger.addEventListener('dragreset.xt', eventDragReset)
+    self.dragger.addEventListener('dragreset.xt.slider', eventDragReset)
 
     // on
 
@@ -167,7 +167,7 @@ Xt.mount.push({
       }
     }
 
-    self.object.addEventListener('on.xt', eventOn, true)
+    self.object.addEventListener('on.xt.slider', eventOn, true)
 
     // off
 
@@ -199,7 +199,7 @@ Xt.mount.push({
       }
     }
 
-    self.object.addEventListener('off.xt', eventOff, true)
+    self.object.addEventListener('off.xt.slider', eventOff, true)
 
     // on elements
 
@@ -212,7 +212,7 @@ Xt.mount.push({
         const scroll = self.object.querySelector('.slider-pagination_scroll')
         if (inner.offsetWidth < scroll.offsetWidth) {
           self.object.classList.remove('slider--nonav')
-          if (e.type === 'on.xt') {
+          if (e.type === 'on.xt.slider') {
             const widthInner = inner.offsetWidth
             const widthScroll = scroll.offsetWidth
             const leftEl = tr.offsetLeft
@@ -226,7 +226,7 @@ Xt.mount.push({
             scroll.style.left = `${final}px`
           }
         } else {
-          if (e.type === 'on.xt') {
+          if (e.type === 'on.xt.slider') {
             self.object.classList.add('slider--nonav')
             // set
             scroll.style.left = ''
@@ -235,8 +235,8 @@ Xt.mount.push({
       }
     }
 
-    self.object.addEventListener('on.xt', eventOnElements, true)
-    self.object.addEventListener('medialoaded.xt', eventOnElements, true)
+    self.object.addEventListener('on.xt.slider', eventOnElements, true)
+    self.object.addEventListener('medialoaded.xt.slider', eventOnElements, true)
 
     // unmount
 

@@ -1,6 +1,6 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/core/slider'
-import 'xtendui/src/addons/mouse-follow'
+import 'xtendui/src/addons/mousefollow'
 import gsap from 'gsap'
 
 Xt.mount.push({
@@ -52,7 +52,7 @@ Xt.mount.push({
       }
     }
 
-    self.object.addEventListener('autostart.xt', eventAutostart)
+    self.object.addEventListener('autostart.xt.slider', eventAutostart)
 
     // stop auto
 
@@ -77,7 +77,7 @@ Xt.mount.push({
       }
     }
 
-    self.object.addEventListener('autostop.xt', eventAutostop)
+    self.object.addEventListener('autostop.xt.slider', eventAutostop)
 
     // pause auto
 
@@ -106,11 +106,11 @@ Xt.mount.push({
       }
     }
 
-    self.object.addEventListener('autopause.xt', eventAutopause)
+    self.object.addEventListener('autopause.xt.slider', eventAutopause)
 
     // mousefollow
 
-    let mouseFollow = new Xt.MouseFollow(object, {
+    let mouseFollow = new Xt.Mousefollow(object, {
       targets: ':scope > .loader',
     })
 

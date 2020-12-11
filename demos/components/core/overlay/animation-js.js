@@ -33,7 +33,7 @@ Xt.mount.push({
     }
 
     for (const target of self.targets) {
-      target.addEventListener('on.xt', eventOn)
+      target.addEventListener('on.xt.overlay', eventOn)
     }
 
     // off
@@ -50,7 +50,7 @@ Xt.mount.push({
     }
 
     for (const target of self.targets) {
-      target.addEventListener('off.xt', eventOff)
+      target.addEventListener('off.xt.overlay', eventOff)
     }
 
     // unmount

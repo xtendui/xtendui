@@ -101,7 +101,7 @@ Xt.mount.push({
       }
     }
 
-    self.object.addEventListener('on.xt', eventOn, true)
+    self.object.addEventListener('on.xt.drop', eventOn, true)
 
     // on
 
@@ -160,7 +160,7 @@ Xt.mount.push({
       }
     }
 
-    self.object.addEventListener('off.xt', eventOff, true)
+    self.object.addEventListener('off.xt.drop', eventOff, true)
 
     // unmount
 
@@ -250,7 +250,7 @@ Xt.mount.push({
       btn.addEventListener('mouseleave', eventLeave, true)
       const drop = btn.closest('.drop-container')
       if (drop) {
-        drop.addEventListener('off.xt', eventLeave.bind(btn), true)
+        drop.addEventListener('off.xt.drop', eventLeave.bind(btn), true)
       }
     }
   },

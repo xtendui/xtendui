@@ -29,7 +29,7 @@ Xt.mount.push({
     const firstElFnc = () => {
       logAdd('<strong>1st element</strong>')
       const elements = self.elements
-      elements[0].dispatchEvent(new CustomEvent('on.trigger.xt'))
+      elements[0].dispatchEvent(new CustomEvent('on.trigger.xt.drop'))
     }
 
     firstEl.addEventListener('click', firstElFnc)
@@ -41,7 +41,7 @@ Xt.mount.push({
     const firstTrFnc = () => {
       logAdd('<strong>1st target</strong>')
       const targets = self.targets
-      targets[0].dispatchEvent(new CustomEvent('on.trigger.xt'))
+      targets[0].dispatchEvent(new CustomEvent('on.trigger.xt.drop'))
     }
 
     firstTr.addEventListener('click', firstTrFnc)
@@ -195,10 +195,10 @@ Xt.mount.push({
       logAdd(str)
     }
 
-    object.addEventListener('init.xt', events)
-    object.addEventListener('destroy.xt', events)
-    document.addEventListener('on.xt', events, true)
-    document.addEventListener('off.xt', events, true)
+    object.addEventListener('init.xt.drop', events)
+    object.addEventListener('destroy.xt.drop', events)
+    document.addEventListener('on.xt.drop', events, true)
+    document.addEventListener('off.xt.drop', events, true)
 
     // unmount
 
@@ -211,10 +211,10 @@ Xt.mount.push({
       restartBtn.removeEventListener('click', restartFnc)
       destroyBtn.removeEventListener('click', destroyFnc)
       unmountBtn.removeEventListener('click', unmountFnc)
-      object.removeEventListener('init.xt', events)
-      object.removeEventListener('destroy.xt', events)
-      document.removeEventListener('on.xt', events, true)
-      document.removeEventListener('off.xt', events, true)
+      object.removeEventListener('init.xt.drop', events)
+      object.removeEventListener('destroy.xt.drop', events)
+      document.removeEventListener('on.xt.drop', events, true)
+      document.removeEventListener('off.xt.drop', events, true)
       self.destroy()
       self = null
     }
