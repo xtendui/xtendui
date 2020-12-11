@@ -15,14 +15,14 @@ demo.htmlSource = `
   Swap click
 </button>
 
-<div class="tooltip transform transition duration-150 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0" id="tooltip--swap-click">
-  <div class="tooltip-md rounded shadow-tooltip ${cardBlack()}">
+<div class="tooltip group duration-200" id="tooltip--swap-click"> <!-- needed for animation time, put max time with delay -->
+  <div class="tooltip-md rounded shadow-tooltip ${cardBlack()} transform transition duration-200 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
     Lorem ipsum dolor sit amet
   </div>
 </div>
 
-<div class="tooltip transform transition duration-150 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0" id="tooltip--swap-click-swap" style="display: none">
-  <div class="tooltip-md rounded shadow-tooltip ${cardBlack()}">
+<div class="tooltip group duration-200" id="tooltip--swap-click-swap" style="display: none"> <!-- needed for animation time, put max time with delay -->
+  <div class="tooltip-md rounded shadow-tooltip ${cardBlack()} transform transition duration-200 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
     Clicked!
   </div>
 </div>

@@ -50,8 +50,13 @@ export default function Header({ page }) {
                         title="Npm"
                         dangerouslySetInnerHTML={{ __html: iconPackage() }}
                       ></a>
-                      <div className="tooltip transform transition duration-150 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
-                        <div className={`tooltip-sm rounded shadow-tooltip ${cardBlack()}`}>Visit on Npm</div>
+                      <div className="tooltip group duration-200">
+                        {/* needed for animation time, put max time with delay -->*/}
+                        <div
+                          className={`tooltip-sm rounded shadow-tooltip ${cardBlack()} transform transition duration-200 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
+                        >
+                          Visit on Npm
+                        </div>
                       </div>
                     </div>
                     <span data-xt-tooltip="{ position: 'bottom-end' }">
@@ -63,8 +68,13 @@ export default function Header({ page }) {
                         title="Github"
                         dangerouslySetInnerHTML={{ __html: iconGithub() }}
                       ></a>
-                      <div className="tooltip transform transition duration-150 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
-                        <div className={`tooltip-sm rounded shadow-tooltip ${cardBlack()}`}>Visit on Github</div>
+                      <div className="tooltip group duration-200">
+                        {/* needed for animation time, put max time with delay -->*/}
+                        <div
+                          className={`tooltip-sm rounded shadow-tooltip ${cardBlack()} transform transition duration-200 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
+                        >
+                          Visit on Github
+                        </div>
                       </div>
                     </span>
                   </div>

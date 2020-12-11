@@ -240,13 +240,13 @@ const populateDemo = (container, i) => {
   <button type="button" class="btn btn-show-code" aria-label="Toggle Code">
     ${iconCode()}
   </button>
-  <div id="tooltip--show-code--on-${showCodeUid}" class="tooltip transform transition duration-150 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
-    <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()}">
+  <div id="tooltip--show-code--on-${showCodeUid}" class="tooltip group duration-200"> <!-- needed for animation time, put max time with delay -->
+    <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()} transform transition duration-200 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
       Show Code
     </div>
   </div>
-  <div id="tooltip--show-code--off-${showCodeUid}" style="display: none" class="tooltip transform transition duration-150 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
-    <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()}">
+  <div id="tooltip--show-code--off-${showCodeUid}" style="display: none" class="tooltip group duration-200"> <!-- needed for animation time, put max time with delay -->
+    <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()} transform transition duration-200 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
       Hide Code
     </div>
   </div>
@@ -258,8 +258,8 @@ const populateDemo = (container, i) => {
   <button type="button" class="btn btn-open-full" aria-label="Toggle Fullscreen">
     ${iconMaximize()}
   </button>
-  <div class="tooltip transform transition duration-150 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
-    <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()}">
+  <div class="tooltip group duration-200"> <!-- needed for animation time, put max time with delay -->
+    <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()} transform transition duration-200 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
       Open Fullscreen
     </div>
   </div>
@@ -271,8 +271,8 @@ const populateDemo = (container, i) => {
   <a href="#" target="_blank" class="btn btn-open-iframe" aria-label="Open Iframe">
     ${iconExternal()}
   </a>
-  <div class="tooltip transform transition duration-150 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
-    <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()}">
+  <div class="tooltip group duration-200"> <!-- needed for animation time, put max time with delay -->
+    <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()} transform transition duration-200 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
       Open Iframe
     </div>
   </div>
@@ -307,13 +307,13 @@ const populateDemo = (container, i) => {
           <button type="button" class="btn btn-tiny btn-clipboard" aria-label="Copy to Clipboard">
             ${iconCopy()}
           </button>
-          <div id="tooltip--clipboard--on-${clipboardUid}" class="tooltip transform transition duration-150 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
-            <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()}">
+          <div id="tooltip--clipboard--on-${clipboardUid}" class="tooltip group duration-200"> <!-- needed for animation time, put max time with delay -->
+            <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()} transform transition duration-200 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
               Copy to Clipboard
             </div>
           </div>
-          <div id="tooltip--clipboard--off-${clipboardUid}" style="display: none" class="tooltip transform transition duration-150 opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
-            <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()}">
+          <div id="tooltip--clipboard--off-${clipboardUid}" style="display: none" class="tooltip group duration-200"> <!-- needed for animation time, put max time with delay -->
+            <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()} transform transition duration-200 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
               Copied!
             </div>
           </div>

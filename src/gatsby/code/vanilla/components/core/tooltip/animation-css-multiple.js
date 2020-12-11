@@ -16,7 +16,7 @@ demo.htmlSource = `
     tooltip
   </button>
 
-  <div class="tooltip group">
+  <div class="tooltip">
     <div class="tooltip-md rounded shadow-tooltip ${cardBlack()}">
       Lorem ipsum dolor sit amet
     </div>
