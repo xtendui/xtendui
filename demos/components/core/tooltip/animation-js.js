@@ -7,15 +7,15 @@ Xt.mount.push({
   mount: object => {
     // vars
 
-    const targetTimeOn = 0.3
+    const targetTimeOn = 0.2
     const targetEaseOn = 'quint.out'
-    const targetTimeOff = 0.3
+    const targetTimeOff = 0.2
     const targetEaseOff = 'quint.out'
 
     // init
 
     let self = new Xt.Tooltip(object, {
-      duration: 500,
+      duration: 200,
     })
 
     // on
@@ -23,12 +23,8 @@ Xt.mount.push({
     const eventOn = e => {
       const tr = e.target
       gsap.set(tr, { opacity: 0 })
-      if (!tr.classList.contains('inverse')) {
-        gsap.set(tr, { x: -15 })
-      } else {
-        gsap.set(tr, { x: 15 })
-      }
-      gsap.to(tr, { x: 0, opacity: 1, duration: targetTimeOn, ease: targetEaseOn })
+      gsap.set(tr, { y: 5 })
+      gsap.to(tr, { y: 0, opacity: 1, duration: targetTimeOn, ease: targetEaseOn })
     }
 
     for (const target of self.targets) {
@@ -39,11 +35,7 @@ Xt.mount.push({
 
     const eventOff = e => {
       const tr = e.target
-      if (!tr.classList.contains('inverse')) {
-        gsap.to(tr, { x: 15, opacity: 0, duration: targetTimeOff, ease: targetEaseOff })
-      } else {
-        gsap.to(tr, { x: -15, opacity: 0, duration: targetTimeOff, ease: targetEaseOff })
-      }
+      gsap.to(tr, { y: 5, opacity: 0, duration: targetTimeOff, ease: targetEaseOff })
     }
 
     for (const target of self.targets) {
