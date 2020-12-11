@@ -210,7 +210,7 @@ const populateBlock = () => {
     full.addEventListener('on.xt.toggle', () => {
       // close tooltip on mobile
       for (const btn of document.querySelectorAll('.btn-open-full + .tooltip')) {
-        btn.dispatchEvent(new CustomEvent('off.trigger.xt.toggle'))
+        btn.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
       }
       // @FIX demo fullscreen
       const content = document.querySelector('#gatsby_open-full-content')

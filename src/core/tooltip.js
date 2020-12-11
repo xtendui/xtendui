@@ -160,7 +160,7 @@ Tooltip.optionsDefault = {
   },
   // other
   position: 'top',
-  strategy: 'fixed',
+  strategy: 'absolute',
   spaceOverflow: 15,
   spaceFlip: 15,
   spaceArrow: 0,
