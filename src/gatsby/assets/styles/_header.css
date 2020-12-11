@@ -46,6 +46,11 @@
     }
     .card {
       @apply min-h-screen;
+      /* add to gatsby_menu--overlay group duration-1000 */
+      /*@apply overflow-hidden transform ease-in-out-quint duration-700 delay-300 opacity-0 -translate-x-full group-active:ease-out-quint group-active:delay-0 group-active:opacity-100 group-active:translate-x-0;*/
+      > * {
+        /*@apply transform ease-in-out-quint duration-700 opacity-0 -translate-x-1/2 group-active:ease-out-quint group-active:delay-300 group-active:opacity-100 group-active:translate-x-0;*/
+      }
     }
     .backdrop {
       opacity: 0.3;

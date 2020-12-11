@@ -6,10 +6,14 @@ const animDesign =
 const animItem =
   'transform ease-in-out-quint duration-700 opacity-0 translate-y-1/2 group-active:ease-out-quint group-active:delay-300 group-active:opacity-100 group-active:translate-y-0'
 
+const animDesignLeft =
+  'overflow-hidden transform ease-in-out-quint duration-700 delay-300 opacity-0 -translate-x-full group-active:ease-out-quint group-active:delay-0 group-active:opacity-100 group-active:translate-x-0'
+const animItemLeft =
+  'transform ease-in-out-quint duration-700 opacity-0 -translate-x-1/2 group-active:ease-out-quint group-active:delay-300 group-active:opacity-100 group-active:translate-x-0'
+
 const btnDefault = require('components/snippets/classes/btn-default').default
 const btnPrimary = require('components/snippets/classes/btn-primary').default
 const btnDefaultDrop = require('components/snippets/classes/btn-default-drop').default
-const btnCloseOutside = require('components/snippets/classes/btn-closeoutside').default
 
 const cardWhite = require('components/snippets/classes/card-white').default
 const cardBlack = require('components/snippets/classes/card-black').default
@@ -213,11 +217,11 @@ demo.htmlSource = `
       <div class="overlay-container p-0 max-w-md ml-0 mr-auto">
         <div class="overlay-inner">
 
-          <div class="card min-h-screen ${cardWhite()} ${animDesign}">
-            <div class="btn btn-close p-5 text-2xl ${btnCloseOutside()} md:p-3 md:right-auto md:left-100" aria-label="Close">
+          <div class="card min-h-screen ${cardWhite()} ${animDesignLeft}">
+            <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>
-            <div class="list bg-accent-500 ${animItem}">
+            <div class="list bg-accent-500 ${animItemLeft}">
               <button type="button" class="btn btn-md ${btnPrimary()}">
                 Menu
               </button>
@@ -228,16 +232,16 @@ demo.htmlSource = `
                 Account
               </button>
             </div>
-            <div class="media-container h-48 ${animItem}">
+            <div class="media-container h-48 ${animItemLeft}">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
               </div>
             </div>
-            <div class="card-md ${animItem}">
+            <div class="card-md ${animItemLeft}">
               <div class="h4">Lorem ipsum</div>
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
             </div>
-            <div class="card-sm bg-gray-500 mt-auto ${animItem}">
+            <div class="card-sm bg-gray-500 mt-auto ${animItemLeft}">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
             </div>
           </div>
@@ -259,7 +263,7 @@ demo.htmlSource = `
         <div class="overlay-inner">
 
           <div class="card rounded-md shadow-overlay ${cardWhite()} ${animDesign}">
-            <div class="btn btn-close p-5 text-2xl ${btnCloseOutside()} md:p-3 md:right-auto md:left-100" aria-label="Close">
+            <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </div>
 
