@@ -52,7 +52,7 @@ Xt.mount.push({
       }
     }
 
-    self.object.addEventListener('autostart.xt', eventAutostart)
+    self.object.addEventListener('autostart.xt.slider', eventAutostart)
 
     // stop auto
 
@@ -77,7 +77,7 @@ Xt.mount.push({
       }
     }
 
-    self.object.addEventListener('autostop.xt', eventAutostop)
+    self.object.addEventListener('autostop.xt.slider', eventAutostop)
 
     // pause auto
 
@@ -106,7 +106,7 @@ Xt.mount.push({
       }
     }
 
-    self.object.addEventListener('autopause.xt', eventAutopause)
+    self.object.addEventListener('autopause.xt.slider', eventAutopause)
 
     // mousefollow
 

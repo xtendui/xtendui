@@ -55,16 +55,16 @@ Xt.mount.push({
 Trigger events on **DOM elements**.
 
 ```js
-document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('on.trigger.xt'))
+document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('on.trigger.xt.drop'))
 ```
 
 <div class="table-overflow">
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `on.trigger.xt`       | `elements` `targets` | Activation event             |
-| Event                   | `off.trigger.xt`      | `elements` `targets` | Deactivation event            |
-| Event                   | `closeauto.trigger.xt`           | `window` | Autclose all components with `closeAuto: true` option             |
+| Event                   | `on.trigger.xt.drop`       | `elements` `targets` | Activation event             |
+| Event                   | `off.trigger.xt.drop`      | `elements` `targets` | Deactivation event            |
+| Event                   | `closeauto.trigger.xt.drop`           | `window` | Autclose all components with `closeAuto: true` option             |
 
 </div>
 
@@ -81,7 +81,7 @@ const eventOn = e => {
   }
 }
 
-el.addEventListener('on.xt', eventOn)
+el.addEventListener('on.xt.drop', eventOn)
 ```
 
 Listen to events delegation with **useCapture** this way:
@@ -101,23 +101,23 @@ const eventOn = e => {
   }
 }
 
-object.addEventListener('on.xt', eventOn, true)
+object.addEventListener('on.xt.drop', eventOn, true)
 ```
 
 <div class="table-overflow">
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `on.xt`       | `elements` `targets` | Activation event             |
-| Event                   | `off.xt`      | `elements` `targets` | Deactivation event            |
-| Event                   | `ondone.xt`           | `elements` `targets` | Activation event after delay and duration             |
-| Event                   | `offdone.xt`           | `elements` `targets` | Deactivation event after delay and duration             |
-| Event                   | `medialoaded.xt`           | `elements` `targets` | Images loaded event            |
-| Event                   | `init.xt`           | `object` | Init event             |
-| Event                   | `status.xt`           | `object` | Status event (enabled or disabled)             |
-| Event                   | `restart.xt`           | `object` | Restart event             |
-| Event                   | `reinit.xt`           | `object` | Reinit event             |
-| Event                   | `destroy.xt`           | `object` | Destroy event             |
+| Event                   | `on.xt.drop`       | `elements` `targets` | Activation event             |
+| Event                   | `off.xt.drop`      | `elements` `targets` | Deactivation event            |
+| Event                   | `ondone.xt.drop`           | `elements` `targets` | Activation event after delay and duration             |
+| Event                   | `offdone.xt.drop`           | `elements` `targets` | Deactivation event after delay and duration             |
+| Event                   | `medialoaded.xt.drop`           | `elements` `targets` | Images loaded event            |
+| Event                   | `init.xt.drop`           | `object` | Init event             |
+| Event                   | `status.xt.drop`           | `object` | Status event (enabled or disabled)             |
+| Event                   | `restart.xt.drop`           | `object` | Restart event             |
+| Event                   | `reinit.xt.drop`           | `object` | Reinit event             |
+| Event                   | `destroy.xt.drop`           | `object` | Destroy event             |
 
 </div>
 

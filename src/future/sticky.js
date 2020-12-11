@@ -137,7 +137,7 @@ class Sticky extends Xt.Toggle {
     for (const event of events) {
       addEventListener(event, stickyHandler, { passive: true })
     }
-    addEventListener('sticky.trigger.xt', stickyHandler)
+    addEventListener(`sticky.trigger.${self.componentNs}`, stickyHandler)
     self.eventStickyHandler()
     // focusin
     const focusInHandler = Xt.dataStorage.put(document, `focusin/sticky/${self.ns}`, self.eventFocusinHandler.bind(self))
@@ -295,15 +295,15 @@ class Sticky extends Xt.Toggle {
           if (!el.classList.contains('sticky-hide')) {
             el.classList.add('sticky-hide')
             // closeauto
-            dispatchEvent(new CustomEvent('closeauto.trigger.xt', { detail: { container: el } }))
+            dispatchEvent(new CustomEvent(`closeauto.trigger.${self.componentNs}`, { detail: { container: el } }))
             // listener dispatch
-            el.dispatchEvent(new CustomEvent('hide.xt'))
+            el.dispatchEvent(new CustomEvent(`hide.${self.componentNs}`))
           }
         } else {
           if (el.classList.contains('sticky-hide')) {
             el.classList.remove('sticky-hide')
             // listener dispatch
-            el.dispatchEvent(new CustomEvent('show.xt'))
+            el.dispatchEvent(new CustomEvent(`show.${self.componentNs}`))
           }
         }
       } else {
@@ -352,7 +352,7 @@ class Sticky extends Xt.Toggle {
         el.style.width = width
       }
       // listener dispatch
-      el.dispatchEvent(new CustomEvent('change.xt'))
+      el.dispatchEvent(new CustomEvent(`change.${self.componentNs}`))
       // save for direction
       Xt.dataStorage.set(el, `${self.ns}AddOld`, add)
     }

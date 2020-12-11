@@ -22,11 +22,11 @@ module.exports = {
   tooltip: require('./src/core/tooltip.css.js'),
   typography: require('./src/core/typography.css.js'),
   // addons
-  'groupnumber': require('./src/addons/groupnumber.css.js'),
-  'mousefollow': require('./src/addons/mousefollow.css.js'),
+  groupnumber: require('./src/addons/groupnumber.css.js'),
+  mousefollow: require('./src/addons/mousefollow.css.js'),
   ripple: require('./src/addons/ripple.css.js'),
   separator: require('./src/addons/separator.css.js'),
-  'navsides': require('./src/addons/navsides.css.js'),
+  navsides: require('./src/addons/navsides.css.js'),
   // future
   sticky: require('./src/future/sticky.css.js'),
 }

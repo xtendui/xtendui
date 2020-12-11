@@ -55,7 +55,7 @@ Xt.mount.push({
 Trigger events on **DOM elements**.
 
 ```js
-document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('on.trigger.xt'))
+document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('on.trigger.xt.slider'))
 ```
 
 <div class="table-overflow">
@@ -82,7 +82,7 @@ const eventOn = e => {
   }
 }
 
-el.addEventListener('on.xt', eventOn)
+el.addEventListener('on.xt.slider', eventOn)
 ```
 
 Listen to events delegation with **useCapture** this way:
@@ -102,34 +102,34 @@ const eventOn = e => {
   }
 }
 
-object.addEventListener('on.xt', eventOn, true)
+object.addEventListener('on.xt.slider', eventOn, true)
 ```
 
 <div class="table-overflow">
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `on.xt`       | `elements` `targets` | Activation event             |
-| Event                   | `off.xt`      | `elements` `targets` | Deactivation event            |
-| Event                   | `ondone.xt`           | `elements` `targets` | Activation event after delay and duration             |
-| Event                   | `offdone.xt`           | `elements` `targets` | Deactivation event after delay and duration             |
-| Event                   | `medialoaded.xt`           | `elements` `targets` | Images loaded event, only when setting `options.mediaLoaded: true`           |
-| Event                   | `autostart.xt`           | `object` | Auto start event             |
-| Event                   | `autostop.xt`           | `object` | Auto stop event             |
-| Event                   | `autopause.xt`           | `object` | Auto pause event             |
-| Event                   | `autoheight.xt`           | `targets` | Autoheight event             |
-| Event                   | `wheelstart.xt`           | `wheel` | Wheel start event             |
-| Event                   | `wheelend.xt`           | `wheel` | Wheel end event             |
-| Event                   | `wheel.xt`           | `wheel` | Wheel event             |
-| Event                   | `dragstart.xt`           | `dragger` | Drag start event             |
-| Event                   | `dragend.xt`           | `dragger` | Drag end event             |
-| Event                   | `drag.xt`           | `dragger` | Drag event             |
-| Event                   | `dragreset.xt`           | `dragger` | Drag reset event             |
-| Event                   | `init.xt`           | `object` | Init event             |
-| Event                   | `status.xt`           | `object` | Status event (enabled or disabled)             |
-| Event                   | `restart.xt`           | `object` | Restart event             |
-| Event                   | `reinit.xt`           | `object` | Reinit event             |
-| Event                   | `destroy.xt`           | `object` | Destroy event             |
+| Event                   | `on.xt.slider`       | `elements` `targets` | Activation event             |
+| Event                   | `off.xt.slider`      | `elements` `targets` | Deactivation event            |
+| Event                   | `ondone.xt.slider`           | `elements` `targets` | Activation event after delay and duration             |
+| Event                   | `offdone.xt.slider`           | `elements` `targets` | Deactivation event after delay and duration             |
+| Event                   | `medialoaded.xt.slider`           | `elements` `targets` | Images loaded event, only when setting `options.mediaLoaded: true`           |
+| Event                   | `autostart.xt.slider`           | `object` | Auto start event             |
+| Event                   | `autostop.xt.slider`           | `object` | Auto stop event             |
+| Event                   | `autopause.xt.slider`           | `object` | Auto pause event             |
+| Event                   | `autoheight.xt.slider`           | `targets` | Autoheight event             |
+| Event                   | `wheelstart.xt.slider`           | `wheel` | Wheel start event             |
+| Event                   | `wheelend.xt.slider`           | `wheel` | Wheel end event             |
+| Event                   | `wheel.xt.slider`           | `wheel` | Wheel event             |
+| Event                   | `dragstart.xt.slider`           | `dragger` | Drag start event             |
+| Event                   | `dragend.xt.slider`           | `dragger` | Drag end event             |
+| Event                   | `drag.xt.slider`           | `dragger` | Drag event             |
+| Event                   | `dragreset.xt.slider`           | `dragger` | Drag reset event             |
+| Event                   | `init.xt.slider`           | `object` | Init event             |
+| Event                   | `status.xt.slider`           | `object` | Status event (enabled or disabled)             |
+| Event                   | `restart.xt.slider`           | `object` | Restart event             |
+| Event                   | `reinit.xt.slider`           | `object` | Reinit event             |
+| Event                   | `destroy.xt.slider`           | `object` | Destroy event             |
 
 </div>
 

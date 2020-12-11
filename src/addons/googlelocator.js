@@ -17,6 +17,7 @@ class Googlelocator {
     self.object = object
     self.optionsCustom = optionsCustom
     self.componentName = self.constructor.componentName
+    self.componentNs = self.componentName.replace('-', '.')
     // set self
     Xt.set(self.componentName, self.object, self)
     // init
@@ -152,7 +153,7 @@ class Googlelocator {
     self.object.classList.add(self.componentName)
     // listener dispatch
     requestAnimationFrame(() => {
-      self.object.dispatchEvent(new CustomEvent('init.xt'))
+      self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
     })
   }
 
@@ -304,7 +305,7 @@ class Googlelocator {
       console.debug('Xt.debug xt-googlelocator locations', self.locations)
     }
     // listener dispatch
-    self.object.dispatchEvent(new CustomEvent('change.xt.googlelocator'))
+    self.object.dispatchEvent(new CustomEvent(`change.${self.componentNs}`))
   }
 
   /**
@@ -531,7 +532,7 @@ class Googlelocator {
     // set self
     Xt.remove(self.componentName, self.object)
     // listener dispatch
-    self.object.dispatchEvent(new CustomEvent('destroy.xt.googlelocator'))
+    self.object.dispatchEvent(new CustomEvent(`destroy.${self.componentNs}`))
   }
 }
 

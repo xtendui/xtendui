@@ -16,6 +16,7 @@ class Toggle {
     self.object = object
     self.optionsCustom = optionsCustom
     self.componentName = self.constructor.componentName
+    self.componentNs = self.componentName.replace('-', '.')
     // set self
     Xt.set(self.componentName, self.object, self)
     // init
@@ -241,7 +242,7 @@ class Toggle {
     }
     // listener dispatch
     requestAnimationFrame(() => {
-      self.object.dispatchEvent(new CustomEvent('init.xt'))
+      self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
     })
   }
 
@@ -448,7 +449,7 @@ class Toggle {
         Xt.dataStorage.put(el, `active/preventevent/${self.ns}`, self.hasCurrent(el))
       }
       const onHandlerCustom = Xt.dataStorage.put(el, `on/${self.ns}`, self.eventOnHandler.bind(self).bind(self, el))
-      el.addEventListener('on.trigger.xt', onHandlerCustom)
+      el.addEventListener(`on.trigger.${self.componentNs}`, onHandlerCustom)
       // event off
       if (options.off) {
         const offHandler = Xt.dataStorage.put(el, `${options.off}/${self.ns}`, self.eventOffHandler.bind(self).bind(self, el))
@@ -457,23 +458,23 @@ class Toggle {
           el.addEventListener(event, offHandler)
         }
         const offHandlerCustom = Xt.dataStorage.put(el, `off/${self.ns}`, self.eventOffHandler.bind(self).bind(self, el))
-        el.addEventListener('off.trigger.xt', offHandlerCustom)
+        el.addEventListener(`off.trigger.${self.componentNs}`, offHandlerCustom)
       } else {
         const offHandlerCustom = Xt.dataStorage.put(el, `off/${self.ns}`, self.eventOnHandler.bind(self).bind(self, el))
-        el.addEventListener('off.trigger.xt', offHandlerCustom)
+        el.addEventListener(`off.trigger.${self.componentNs}`, offHandlerCustom)
       }
     }
     // targets
     for (const tr of self.targets) {
       // event
       const onHandler = Xt.dataStorage.put(tr, `${options.on}/${self.ns}`, self.eventOnHandler.bind(self).bind(self, tr))
-      tr.addEventListener('on.trigger.xt', onHandler)
+      tr.addEventListener(`on.trigger.${self.componentNs}`, onHandler)
       if (options.off) {
         const offHandlerCustom = Xt.dataStorage.put(tr, `off/${self.ns}`, self.eventOffHandler.bind(self).bind(self, tr))
-        tr.addEventListener('off.trigger.xt', offHandlerCustom)
+        tr.addEventListener(`off.trigger.${self.componentNs}`, offHandlerCustom)
       } else {
         const offHandlerCustom = Xt.dataStorage.put(tr, `off/${self.ns}`, self.eventOnHandler.bind(self).bind(self, tr))
-        tr.addEventListener('off.trigger.xt', offHandlerCustom)
+        tr.addEventListener(`off.trigger.${self.componentNs}`, offHandlerCustom)
       }
     }
     // auto
@@ -486,13 +487,13 @@ class Toggle {
       addEventListener('blur', blurHandler)
       // event
       const autostartHandler = Xt.dataStorage.put(self.object, `autostart/${self.ns}`, self.eventAutostart.bind(self))
-      self.object.addEventListener('autostart.trigger.xt', autostartHandler)
+      self.object.addEventListener(`autostart.trigger.${self.componentNs}`, autostartHandler)
       const autostopHandler = Xt.dataStorage.put(self.object, `autostop/${self.ns}`, self.eventAutostop.bind(self))
-      self.object.addEventListener('autostop.trigger.xt', autostopHandler)
+      self.object.addEventListener(`autostop.trigger.${self.componentNs}`, autostopHandler)
       const autopauseHandler = Xt.dataStorage.put(self.object, `autopause/${self.ns}`, self.eventAutopause.bind(self))
-      self.object.addEventListener('autopause.trigger.xt', autopauseHandler)
+      self.object.addEventListener(`autopause.trigger.${self.componentNs}`, autopauseHandler)
       const autoresumeHandler = Xt.dataStorage.put(self.object, `autoresume/${self.ns}`, self.eventAutoresume.bind(self))
-      self.object.addEventListener('autoresume.trigger.xt', autoresumeHandler)
+      self.object.addEventListener(`autoresume.trigger.${self.componentNs}`, autoresumeHandler)
       // autopause
       if (options.auto.pause) {
         const autopauseEls = self.object.querySelectorAll(options.auto.pause)
@@ -556,7 +557,7 @@ class Toggle {
     // closeauto
     if (options.closeAuto) {
       const closeautoHandler = Xt.dataStorage.put(window, `closeauto/${self.ns}`, self.eventAutocloseHandler.bind(self))
-      addEventListener('closeauto.trigger.xt', closeautoHandler)
+      addEventListener(`closeauto.trigger.${self.componentNs}`, closeautoHandler)
     }
     // mediaLoaded
     if (options.mediaLoaded || options.mediaLoadedReinit) {
@@ -605,7 +606,7 @@ class Toggle {
       wheel.addEventListener(eWheel, wheelHandler, { passive: false })
       // stop
       const wheelstopHandler = Xt.dataStorage.put(wheel, `${eWheel}/stop/${self.ns}`, self.eventWheelstop.bind(self))
-      wheel.addEventListener('wheelstop.trigger.xt', wheelstopHandler, { passive: false })
+      wheel.addEventListener(`wheelstop.trigger.${self.componentNs}`, wheelstopHandler, { passive: false })
       // block
       if (options.wheel.block) {
         const block = wheel.parentNode
@@ -700,7 +701,7 @@ class Toggle {
     el.addEventListener('click', preventeventHandler)
     // event reset
     const preventeventResetHandler = Xt.dataStorage.put(el, `off/preventevent/${self.ns}`, self.eventPreventeventResetHandler.bind(self).bind(self, el))
-    el.addEventListener('off.xt', preventeventResetHandler)
+    el.addEventListener(`off.${self.componentNs}`, preventeventResetHandler)
   }
 
   /**
@@ -714,7 +715,7 @@ class Toggle {
     el.removeEventListener('click', preventeventHandler)
     // event reset
     const preventeventResetHandler = Xt.dataStorage.get(el, `off/preventevent/${self.ns}`)
-    el.removeEventListener('off.xt', preventeventResetHandler)
+    el.removeEventListener(`off.${self.componentNs}`, preventeventResetHandler)
   }
 
   /**
@@ -734,7 +735,7 @@ class Toggle {
       Xt.dataStorage.remove(el, `${self.ns}PreventeventDone`)
       Xt.dataStorage.remove(el, `active/preventevent/${self.ns}`)
       // off on second interaction on touch
-      el.dispatchEvent(new CustomEvent('off.trigger.xt'))
+      el.dispatchEvent(new CustomEvent(`off.trigger.${self.componentNs}`))
     }
   }
 
@@ -878,7 +879,7 @@ class Toggle {
       el.classList.add('xt-medialoaded')
     }
     // listener dispatch
-    el.dispatchEvent(new CustomEvent('medialoaded.xt', { detail: { deferred: deferred } }))
+    el.dispatchEvent(new CustomEvent(`medialoaded.${self.componentNs}`, { detail: { deferred: deferred } }))
   }
 
   //
@@ -1246,7 +1247,7 @@ class Toggle {
       return false
     }
     // toggle
-    if (force || (self.checkOn(element) && (!e || !e.type || e.type !== 'off.trigger.xt'))) {
+    if (force || (self.checkOn(element) && (!e || !e.type || e.type !== `off.trigger.${self.componentNs}`))) {
       // auto
       self.eventAutostop()
       // on
@@ -1280,7 +1281,7 @@ class Toggle {
       }
       // activationd
       return true
-    } else if (!e || !e.type || e.type !== 'on.trigger.xt') {
+    } else if (!e || !e.type || e.type !== `on.trigger.${self.componentNs}`) {
       self.eventOff(element, false, e)
     }
     // activationd
@@ -1457,7 +1458,7 @@ class Toggle {
             self.object.setAttribute('aria-live', 'off')
           }
           // listener dispatch
-          self.object.dispatchEvent(new CustomEvent('autostart.xt'))
+          self.object.dispatchEvent(new CustomEvent(`autostart.${self.componentNs}`))
         })
       }
     }
@@ -1478,7 +1479,7 @@ class Toggle {
         self.object.setAttribute('aria-live', 'polite')
       }
       // listener dispatch
-      self.object.dispatchEvent(new CustomEvent('autostop.xt'))
+      self.object.dispatchEvent(new CustomEvent(`autostop.${self.componentNs}`))
     }
   }
 
@@ -1504,7 +1505,7 @@ class Toggle {
           self.object.setAttribute('aria-live', 'polite')
         }
         // listener dispatch
-        self.object.dispatchEvent(new CustomEvent('autopause.xt'))
+        self.object.dispatchEvent(new CustomEvent(`autopause.${self.componentNs}`))
       }
     }
   }
@@ -1529,7 +1530,7 @@ class Toggle {
           // resume
           self.eventAutostart()
           // listener dispatch
-          self.object.dispatchEvent(new CustomEvent('autoresume.xt'))
+          self.object.dispatchEvent(new CustomEvent(`autoresume.${self.componentNs}`))
         }
       }
     })
@@ -1707,10 +1708,10 @@ class Toggle {
       }
       if (actionCurrent === 'On') {
         // listener dispatch
-        el.dispatchEvent(new CustomEvent('ondelay.xt'))
+        el.dispatchEvent(new CustomEvent(`ondelay.${self.componentNs}`))
       } else if (actionCurrent === 'Off') {
         // listener dispatch
-        el.dispatchEvent(new CustomEvent('offdelay.xt'))
+        el.dispatchEvent(new CustomEvent(`offdelay.${self.componentNs}`))
       }
       // delay fnc
       cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns + type}AnimFrame`))
@@ -1809,7 +1810,7 @@ class Toggle {
       }
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
-        el.dispatchEvent(new CustomEvent('on.xt'))
+        el.dispatchEvent(new CustomEvent(`on.${self.componentNs}`))
       }
     } else if (actionCurrent === 'Off') {
       // activation
@@ -1824,7 +1825,7 @@ class Toggle {
       }
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
-        el.dispatchEvent(new CustomEvent('off.xt'))
+        el.dispatchEvent(new CustomEvent(`off.${self.componentNs}`))
       }
     }
     // queue
@@ -1899,7 +1900,7 @@ class Toggle {
       self.specialCollapse('Reset', el, type)
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
-        el.dispatchEvent(new CustomEvent('ondone.xt'))
+        el.dispatchEvent(new CustomEvent(`ondone.${self.componentNs}`))
       }
     } else if (actionCurrent === 'Off') {
       // activation
@@ -1948,7 +1949,7 @@ class Toggle {
       }
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
-        el.dispatchEvent(new CustomEvent('offdone.xt'))
+        el.dispatchEvent(new CustomEvent(`offdone.${self.componentNs}`))
       }
     }
     // queue
@@ -2145,8 +2146,8 @@ class Toggle {
         self.goToPrev(1)
       }
       // listener dispatch
-      self.wheel.dispatchEvent(new CustomEvent('wheelstart.xt'))
-      self.wheel.dispatchEvent(new CustomEvent('wheelend.xt'))
+      self.wheel.dispatchEvent(new CustomEvent(`wheelstart.${self.componentNs}`))
+      self.wheel.dispatchEvent(new CustomEvent(`wheelend.${self.componentNs}`))
       // return
       return
     }
@@ -2223,7 +2224,7 @@ class Toggle {
     if (!self.detail.wheelMoving) {
       self.detail.wheelMoving = true
       // listener dispatch
-      self.wheel.dispatchEvent(new CustomEvent('wheelstart.xt', { detail: { wheelX: -self.detail.wheelCurrent } }))
+      self.wheel.dispatchEvent(new CustomEvent(`wheelstart.${self.componentNs}`, { detail: { wheelX: -self.detail.wheelCurrent } }))
       // friction
       self.eventFrictionsmooth(el, min, max)
     }
@@ -2279,14 +2280,14 @@ class Toggle {
         })
       )
       // listener dispatch
-      self.wheel.dispatchEvent(new CustomEvent('wheel.xt', { detail: { wheelX: -self.detail.wheelCurrent } }))
+      self.wheel.dispatchEvent(new CustomEvent(`wheel.${self.componentNs}`, { detail: { wheelX: -self.detail.wheelCurrent } }))
     } else {
       // moving
       self.detail.wheelMoving = false
       // vars
       self.detail.wheelEnd = false
       // listener dispatch
-      self.wheel.dispatchEvent(new CustomEvent('wheelend.xt', { detail: { wheelX: -self.detail.wheelCurrent } }))
+      self.wheel.dispatchEvent(new CustomEvent(`wheelend.${self.componentNs}`, { detail: { wheelX: -self.detail.wheelCurrent } }))
     }
   }
 
@@ -2823,13 +2824,13 @@ class Toggle {
     ) {
       // @FIX do calculation first
       const afterInitDisable = () => {
-        self.object.removeEventListener('init.xt', afterInitDisable)
+        self.object.removeEventListener(`init.${self.componentNs}`, afterInitDisable)
         // @FIX after init activation
         requestAnimationFrame(() => {
           self.disable()
         })
       }
-      self.object.addEventListener('init.xt', afterInitDisable)
+      self.object.addEventListener(`init.${self.componentNs}`, afterInitDisable)
     } else if (str === 'xt-disable') {
       self.disable()
     } else {
@@ -2850,7 +2851,7 @@ class Toggle {
         self.object.classList.remove('xt-disabled')
       }
       // listener dispatch
-      self.object.dispatchEvent(new CustomEvent('status.xt'))
+      self.object.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
     }
   }
 
@@ -2866,7 +2867,7 @@ class Toggle {
         // @FIX appendTo targets
         for (const target of self.targets) {
           // listener dispatch
-          target.dispatchEvent(new CustomEvent('off.trigger.xt'))
+          target.dispatchEvent(new CustomEvent(`off.trigger.${self.componentNs}`))
         }
       }
       // stop auto
@@ -2877,7 +2878,7 @@ class Toggle {
         self.object.classList.add('xt-disabled')
       }
       // listener dispatch
-      self.object.dispatchEvent(new CustomEvent('status.xt'))
+      self.object.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
     }
   }
 
@@ -2921,7 +2922,7 @@ class Toggle {
     // reinit
     self.initLogic(saveCurrents)
     // listener dispatch
-    self.object.dispatchEvent(new CustomEvent('reinit.xt'))
+    self.object.dispatchEvent(new CustomEvent(`reinit.${self.componentNs}`))
   }
 
   /**
@@ -2932,7 +2933,7 @@ class Toggle {
     // restart
     self.initStart()
     // listener dispatch
-    self.object.dispatchEvent(new CustomEvent('restart.xt'))
+    self.object.dispatchEvent(new CustomEvent(`restart.${self.componentNs}`))
   }
 
   /**
@@ -2979,7 +2980,7 @@ class Toggle {
       // set self
       Xt.remove(self.componentName, self.object)
       // listener dispatch
-      self.object.dispatchEvent(new CustomEvent('destroy.xt'))
+      self.object.dispatchEvent(new CustomEvent(`destroy.${self.componentNs}`))
       // delete
       delete this
     }

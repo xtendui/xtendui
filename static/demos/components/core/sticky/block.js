@@ -22,10 +22,10 @@ Xt.mount.push({
           // unblock
           element.classList.remove('xt-block')
           // recheck
-          dispatchEvent(new CustomEvent('sticky.trigger.xt'))
+          dispatchEvent(new CustomEvent('sticky.trigger.xt.sticky'))
         } else {
           // recheck
-          dispatchEvent(new CustomEvent('sticky.trigger.xt'))
+          dispatchEvent(new CustomEvent('sticky.trigger.xt.sticky'))
           // block
           element.classList.add('xt-block')
         }

@@ -39,7 +39,7 @@ Xt.mount.push({
       }
     }
 
-    self.object.addEventListener('init.xt', eventInit, true)
+    self.object.addEventListener('init.xt.slider', eventInit, true)
 
     // on
 
@@ -73,7 +73,7 @@ Xt.mount.push({
       }
     }
 
-    self.object.addEventListener('on.xt', eventOn, true)
+    self.object.addEventListener('on.xt.slider', eventOn, true)
 
     // eventPause
 

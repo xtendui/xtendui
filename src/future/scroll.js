@@ -120,7 +120,7 @@ class Scroll extends Xt.Toggle {
     for (const event of events) {
       addEventListener(event, scrollHandler, { passive: true })
     }
-    addEventListener('scroll.trigger.xt', scrollHandler)
+    addEventListener(`scroll.trigger.${self.componentNs}`, scrollHandler)
     requestAnimationFrame(() => {
       self.eventScrollHandler()
     })
@@ -250,7 +250,7 @@ class Scroll extends Xt.Toggle {
               return
             }
             // listener dispatch
-            el.dispatchEvent(new CustomEvent('change.xt'))
+            el.dispatchEvent(new CustomEvent(`change.${self.componentNs}`))
           })
         )
       }

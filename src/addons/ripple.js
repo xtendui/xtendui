@@ -16,6 +16,7 @@ class Ripple {
     self.object = object
     self.optionsCustom = optionsCustom
     self.componentName = self.constructor.componentName
+    self.componentNs = self.componentName.replace('-', '.')
     // set self
     Xt.set(self.componentName, self.object, self)
     // init
@@ -45,7 +46,7 @@ class Ripple {
     self.object.classList.add(self.componentName)
     // listener dispatch
     requestAnimationFrame(() => {
-      self.object.dispatchEvent(new CustomEvent('init.xt'))
+      self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
     })
   }
 
@@ -102,7 +103,7 @@ class Ripple {
       self.sizeFinal = sizeFinal
       self.scaleFinal = scaleFinal
       // listener dispatch
-      self.object.dispatchEvent(new CustomEvent('on.xt.ripple'))
+      self.object.dispatchEvent(new CustomEvent(`on.${self.componentNs}`))
       // off
       self.offListener = self.eventEnd.bind(self)
       addEventListener('mouseup', self.offListener)
@@ -119,7 +120,7 @@ class Ripple {
     removeEventListener('mouseup', self.offListener)
     removeEventListener('touchend', self.offListener)
     // listener dispatch
-    self.object.dispatchEvent(new CustomEvent('off.xt.ripple'))
+    self.object.dispatchEvent(new CustomEvent(`off.${self.componentNs}`))
   }
 
   //
@@ -145,7 +146,7 @@ class Ripple {
     // set self
     Xt.remove(self.componentName, self.object)
     // listener dispatch
-    self.object.dispatchEvent(new CustomEvent('destroy.xt.ripple'))
+    self.object.dispatchEvent(new CustomEvent(`destroy.${self.componentNs}`))
   }
 
   //

@@ -14,7 +14,7 @@ Xt.mount.push({
     // click
 
     const eventClick = () => {
-      object.querySelector('.multilevel-reset').dispatchEvent(new CustomEvent('on.trigger.xt'))
+      object.querySelector('.multilevel-reset').dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
     }
 
     const btns = object.querySelectorAll('.multilevel-reset')

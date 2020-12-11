@@ -55,7 +55,7 @@ Xt.mount.push({
 Trigger events on **DOM elements**.
 
 ```js
-document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('on.trigger.xt'))
+document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('on.trigger.xt.sticky'))
 ```
 
 <div class="table-overflow">
@@ -81,7 +81,7 @@ const eventOn = e => {
   }
 }
 
-el.addEventListener('on.xt', eventOn)
+el.addEventListener('on.xt.sticky', eventOn)
 ```
 
 Listen to events delegation with **useCapture** this way:
@@ -101,22 +101,22 @@ const eventChange = e => {
   }
 }
 
-object.addEventListener('change.xt', eventChange, true)
+object.addEventListener('change.xt.sticky', eventChange, true)
 ```
 
 <div class="table-overflow">
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `change.xt`       | `elements` | Computation event             |
-| Event                   | `show.xt`       | `elements` | Show event             |
-| Event                   | `hide.xt`       | `elements` | Hide event             |
-| Event                   | `medialoaded.xt`           | `elements` `targets` | Images loaded event            |
-| Event                   | `init.xt`           | `object` | Init event             |
-| Event                   | `status.xt`           | `object` | Status event (enabled or disabled)             |
-| Event                   | `restart.xt`           | `object` | Restart event             |
-| Event                   | `reinit.xt`           | `object` | Reinit event             |
-| Event                   | `destroy.xt`           | `object` | Destroy event             |
+| Event                   | `change.xt.sticky`       | `elements` | Computation event             |
+| Event                   | `show.xt.sticky`       | `elements` | Show event             |
+| Event                   | `hide.xt.sticky`       | `elements` | Hide event             |
+| Event                   | `medialoaded.xt.sticky`           | `elements` `targets` | Images loaded event            |
+| Event                   | `init.xt.sticky`           | `object` | Init event             |
+| Event                   | `status.xt.sticky`           | `object` | Status event (enabled or disabled)             |
+| Event                   | `restart.xt.sticky`           | `object` | Restart event             |
+| Event                   | `reinit.xt.sticky`           | `object` | Reinit event             |
+| Event                   | `destroy.xt.sticky`           | `object` | Destroy event             |
 
 </div>
 

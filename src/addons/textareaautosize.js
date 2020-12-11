@@ -16,6 +16,7 @@ class Textareaautosize {
     self.object = object
     self.optionsCustom = optionsCustom
     self.componentName = self.constructor.componentName
+    self.componentNs = self.componentName.replace('-', '.')
     // set self
     Xt.set(self.componentName, self.object, self)
     // init
@@ -47,7 +48,7 @@ class Textareaautosize {
     self.object.classList.add(self.componentName)
     // listener dispatch
     requestAnimationFrame(() => {
-      self.object.dispatchEvent(new CustomEvent('init.xt'))
+      self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
     })
   }
 
@@ -88,7 +89,7 @@ class Textareaautosize {
     // set self
     Xt.remove(self.componentName, self.object)
     // listener dispatch
-    self.object.dispatchEvent(new CustomEvent('destroy.xt.textareaautosize'))
+    self.object.dispatchEvent(new CustomEvent(`destroy.${self.componentNs}`))
   }
 
   //

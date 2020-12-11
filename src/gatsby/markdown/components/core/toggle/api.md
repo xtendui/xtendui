@@ -55,7 +55,7 @@ Xt.mount.push({
 Trigger events on **DOM elements**.
 
 ```js
-document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('on.trigger.xt'))
+document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
 ```
 
 <div class="table-overflow">
@@ -83,7 +83,7 @@ const eventOn = e => {
   }
 }
 
-el.addEventListener('on.xt', eventOn)
+el.addEventListener('on.xt.toggle', eventOn)
 ```
 
 Listen to events delegation with **useCapture** this way:
@@ -103,26 +103,26 @@ const eventOn = e => {
   }
 }
 
-object.addEventListener('on.xt', eventOn, true)
+object.addEventListener('on.xt.toggle', eventOn, true)
 ```
 
 <div class="table-overflow">
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `on.xt`       | `elements` `targets` | Activation event             |
-| Event                   | `off.xt`      | `elements` `targets` | Deactivation event            |
-| Event                   | `ondone.xt`           | `elements` `targets` | Activation event after delay and duration             |
-| Event                   | `offdone.xt`           | `elements` `targets` | Deactivation event after delay and duration             |
-| Event                   | `medialoaded.xt`           | `elements` `targets` | Images loaded event            |
-| Event                   | `autostart.xt`           | `object` | Auto start event             |
-| Event                   | `autostop.xt`           | `object` | Auto stop event             |
-| Event                   | `autopause.xt`           | `object` | Auto pause event             |
-| Event                   | `init.xt`           | `object` | Init event             |
-| Event                   | `status.xt`           | `object` | Status event (enabled or disabled)             |
-| Event                   | `restart.xt`           | `object` | Restart event             |
-| Event                   | `reinit.xt`           | `object` | Reinit event             |
-| Event                   | `destroy.xt`           | `object` | Destroy event             |
+| Event                   | `on.xt.toggle`       | `elements` `targets` | Activation event             |
+| Event                   | `off.xt.toggle`      | `elements` `targets` | Deactivation event            |
+| Event                   | `ondone.xt.toggle`           | `elements` `targets` | Activation event after delay and duration             |
+| Event                   | `offdone.xt.toggle`           | `elements` `targets` | Deactivation event after delay and duration             |
+| Event                   | `medialoaded.xt.toggle`           | `elements` `targets` | Images loaded event            |
+| Event                   | `autostart.xt.toggle`           | `object` | Auto start event             |
+| Event                   | `autostop.xt.toggle`           | `object` | Auto stop event             |
+| Event                   | `autopause.xt.toggle`           | `object` | Auto pause event             |
+| Event                   | `init.xt.toggle`           | `object` | Init event             |
+| Event                   | `status.xt.toggle`           | `object` | Status event (enabled or disabled)             |
+| Event                   | `restart.xt.toggle`           | `object` | Restart event             |
+| Event                   | `reinit.xt.toggle`           | `object` | Reinit event             |
+| Event                   | `destroy.xt.toggle`           | `object` | Destroy event             |
 
 </div>
 

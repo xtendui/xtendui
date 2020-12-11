@@ -6,7 +6,7 @@ Xt.mount.push({
     // event
 
     const click = () => {
-      document.querySelector('#demo--overlay-nested-disable').dispatchEvent(new CustomEvent('on.trigger.xt'))
+      document.querySelector('#demo--overlay-nested-disable').dispatchEvent(new CustomEvent('on.trigger.xt.overlay'))
     }
 
     object.addEventListener('click', click)

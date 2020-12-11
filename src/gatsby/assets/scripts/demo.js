@@ -37,7 +37,7 @@ const demoHash = (e, initial = false) => {
   // call offdone.xt
   if (demoFull) {
     // close demo full
-    demoFull.dispatchEvent(new CustomEvent('off.trigger.xt'))
+    demoFull.dispatchEvent(new CustomEvent('off.trigger.xt.toggle'))
     // hash cancel
     cancelAnimationFrame(Xt.dataStorage.get(document, 'gatsby_open-full-raf'))
     // check hash
@@ -52,7 +52,7 @@ const demoHash = (e, initial = false) => {
           // makeGatsbyWithIframe
           makeGatsbyWithIframe(item)
           // trigger fullscreen or change tabs
-          item.dispatchEvent(new CustomEvent('on.trigger.xt'))
+          item.dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
         }
       }
     }
@@ -152,7 +152,7 @@ const populateBlock = () => {
         cancelAnimationFrame(Xt.dataStorage.get(document, 'gatsby_open-full-raf'))
       })
     }
-    full.addEventListener('off.xt', e => {
+    full.addEventListener('off.xt.toggle', e => {
       if (e.target === full) {
         const content = document.querySelector('#gatsby_open-full-content')
         // scrollToItem
@@ -164,7 +164,7 @@ const populateBlock = () => {
           for (const item of container.querySelectorAll('.gatsby_demo_item.in')) {
             if (item.getAttribute('data-iframe-fullscreen')) {
               item.classList.remove('loaded')
-              item.dispatchEvent(new CustomEvent('offdone.xt'))
+              item.dispatchEvent(new CustomEvent('offdone.xt.toggle'))
             }
           }
           // populate source
@@ -207,10 +207,10 @@ const populateBlock = () => {
       }
     })
     // trigger fullscreen or change tabs
-    full.addEventListener('on.xt', () => {
+    full.addEventListener('on.xt.toggle', () => {
       // close tooltip on mobile
       for (const btn of document.querySelectorAll('.btn-open-full + .tooltip')) {
-        btn.dispatchEvent(new CustomEvent('off.trigger.xt'))
+        btn.dispatchEvent(new CustomEvent('off.trigger.xt.toggle'))
       }
       // @FIX demo fullscreen
       const content = document.querySelector('#gatsby_open-full-content')
@@ -373,7 +373,7 @@ const populateDemo = (container, i) => {
   })
   for (const item of items) {
     // @FIX demo fullscreen
-    item.addEventListener('on.xt', () => {
+    item.addEventListener('on.xt.toggle', () => {
       if (!self.initial) {
         // triggering e.detail.container
         dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: item.querySelector('.gatsby_demo_source'), delay: 0 } }))
@@ -403,20 +403,20 @@ const populateDemo = (container, i) => {
           const btn = btnClipboard
           const tooltip = btn.closest('[data-xt-tooltip]')
           // close tooltip
-          tooltip.dispatchEvent(new CustomEvent('off.trigger.xt'))
+          tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
           // swap tooltip
           let self = Xt.get('xt-tooltip', tooltip)
           if (self) {
             self.targets[0].style.display = 'none'
             self.targets[1].style.display = ''
             // open tooltip
-            tooltip.dispatchEvent(new CustomEvent('on.trigger.xt'))
+            tooltip.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
           }
         }
       })
       const btn = btnClipboard
       const tooltip = btn.closest('[data-xt-tooltip]')
-      tooltip.addEventListener('off.xt', () => {
+      tooltip.addEventListener('off.xt.tooltip', () => {
         // swap tooltip
         let self = Xt.get('xt-tooltip', tooltip)
         if (self) {
@@ -438,7 +438,7 @@ const populateDemo = (container, i) => {
     const btn = this
     const tooltip = btn.closest('[data-xt-tooltip]')
     // close tooltip
-    tooltip.dispatchEvent(new CustomEvent('off.trigger.xt'))
+    tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
     // swap tooltip
     let self = Xt.get('xt-tooltip', tooltip)
     if (self) {
@@ -450,13 +450,13 @@ const populateDemo = (container, i) => {
         self.targets[1].style.display = 'none'
       }
       // open tooltip
-      tooltip.dispatchEvent(new CustomEvent('on.trigger.xt'))
+      tooltip.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
     }
   })
-  document.querySelector(`#${demoId} .gatsby_demo_code`).addEventListener('on.xt', e => {
+  document.querySelector(`#${demoId} .gatsby_demo_code`).addEventListener('on.xt.toggle', e => {
     e.target.closest('.gatsby_demo_item').classList.add('active-code')
   })
-  document.querySelector(`#${demoId} .gatsby_demo_code`).addEventListener('off.xt', e => {
+  document.querySelector(`#${demoId} .gatsby_demo_code`).addEventListener('off.xt.toggle', e => {
     e.target.closest('.gatsby_demo_item').classList.remove('active-code')
   })
 }
@@ -497,9 +497,9 @@ const makeFullscreen = (container, initial = false) => {
       sourceTo.innerHTML = item.querySelector('script[type="text/plain"]').innerHTML
     }
   }
-  toggle.dispatchEvent(new CustomEvent('on.trigger.xt'))
-  toggle.addEventListener('init.xt', () => {
-    toggle.dispatchEvent(new CustomEvent('on.trigger.xt'))
+  toggle.dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
+  toggle.addEventListener('init.xt.toggle', () => {
+    toggle.dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
   })
   // move code block
   container.before(
@@ -516,7 +516,7 @@ const makeFullscreen = (container, initial = false) => {
       if (item.getAttribute('data-iframe-fullscreen')) {
         item.setAttribute('data-iframe', item.getAttribute('data-iframe-fullscreen'))
         initializeIframe(container, item)
-        item.dispatchEvent(new CustomEvent('ondone.xt'))
+        item.dispatchEvent(new CustomEvent('ondone.xt.toggle'))
       }
     }
   })
@@ -543,11 +543,11 @@ const initializeIframe = (container, item) => {
     // load
     if (!item.dataset.iframeLoadEvents) {
       item.dataset.iframeLoadEvents = 'true'
-      item.addEventListener('ondone.xt', () => {
+      item.addEventListener('ondone.xt.toggle', () => {
         const iframe = item.querySelector('iframe')
         loadIframe(iframe)
       })
-      item.addEventListener('offdone.xt', () => {
+      item.addEventListener('offdone.xt.toggle', () => {
         const iframe = item.querySelector('iframe')
         item.classList.remove('loaded')
         unloadIframe(iframe)

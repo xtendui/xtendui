@@ -206,9 +206,9 @@ class Ajax extends Xt.Toggle {
     self.locationFrom = self.locationTo || self.locationFrom // fix fast change page
     self.locationTo = new URL(url, location)
     // closeauto
-    dispatchEvent(new CustomEvent('closeauto.trigger.xt'))
+    dispatchEvent(new CustomEvent(`closeauto.trigger.${self.componentNs}`))
     // listener dispatch
-    self.object.dispatchEvent(new CustomEvent('request.xt'))
+    self.object.dispatchEvent(new CustomEvent(`request.${self.componentNs}`))
     // duration
     self.detail.requestDate = new Date()
     clearTimeout(Xt.dataStorage.get(self.object, `${self.ns}AjaxDurationTimeout`))
@@ -301,7 +301,7 @@ class Ajax extends Xt.Toggle {
     html = null
     replace = null
     // listener dispatch
-    self.object.dispatchEvent(new CustomEvent('replace.xt.ajax'))
+    self.object.dispatchEvent(new CustomEvent('populate.xt.ajax'))
     // reinit
     if (!self.initial && date === self.detail.requestDate) {
       // fix fast change page
@@ -327,7 +327,7 @@ class Ajax extends Xt.Toggle {
     // reinit currents
     self.initStart()
     // listener dispatch
-    self.object.dispatchEvent(new CustomEvent('replace.xt.ajax'))
+    self.object.dispatchEvent(new CustomEvent('populate.xt.ajax'))
   }
 
   /**

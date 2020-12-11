@@ -45,7 +45,7 @@ Xt.mount.push({
       }
     }
 
-    self.object.addEventListener('autostart.xt', eventAutostart)
+    self.object.addEventListener('autostart.xt.toggle', eventAutostart)
 
     // stop auto
 
@@ -70,7 +70,7 @@ Xt.mount.push({
       }
     }
 
-    self.object.addEventListener('autostop.xt', eventAutostop)
+    self.object.addEventListener('autostop.xt.toggle', eventAutostop)
 
     // pause auto
 
@@ -95,7 +95,7 @@ Xt.mount.push({
       }
     }
 
-    self.object.addEventListener('autopause.xt', eventAutopause)
+    self.object.addEventListener('autopause.xt.toggle', eventAutopause)
 
     // unmount
 

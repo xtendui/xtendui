@@ -55,7 +55,7 @@ Xt.mount.push({
 Trigger events on **DOM elements**.
 
 ```js
-document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('on.trigger.xt'))
+document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('on.trigger.xt.overlay'))
 ```
 
 <div class="table-overflow">
@@ -81,7 +81,7 @@ const eventOn = e => {
   }
 }
 
-el.addEventListener('on.xt', eventOn)
+el.addEventListener('on.xt.overlay', eventOn)
 ```
 
 Listen to events delegation with **useCapture** this way:
@@ -101,23 +101,23 @@ const eventOn = e => {
   }
 }
 
-object.addEventListener('on.xt', eventOn, true)
+object.addEventListener('on.xt.overlay', eventOn, true)
 ```
 
 <div class="table-overflow">
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `on.xt`       | `elements` `targets` | Activation event             |
-| Event                   | `off.xt`      | `elements` `targets` | Deactivation event            |
-| Event                   | `ondone.xt`           | `elements` `targets` | Activation event after delay and duration             |
-| Event                   | `offdone.xt`           | `elements` `targets` | Deactivation event after delay and duration             |
-| Event                   | `medialoaded.xt`           | `elements` `targets` | Images loaded event            |
-| Event                   | `init.xt`           | `object` | Init event             |
-| Event                   | `status.xt`           | `object` | Status event (enabled or disabled)             |
-| Event                   | `restart.xt`           | `object` | Restart event             |
-| Event                   | `reinit.xt`           | `object` | Reinit event             |
-| Event                   | `destroy.xt`           | `object` | Destroy event             |
+| Event                   | `on.xt.overlay`       | `elements` `targets` | Activation event             |
+| Event                   | `off.xt.overlay`      | `elements` `targets` | Deactivation event            |
+| Event                   | `ondone.xt.overlay`           | `elements` `targets` | Activation event after delay and duration             |
+| Event                   | `offdone.xt.overlay`           | `elements` `targets` | Deactivation event after delay and duration             |
+| Event                   | `medialoaded.xt.overlay`           | `elements` `targets` | Images loaded event            |
+| Event                   | `init.xt.overlay`           | `object` | Init event             |
+| Event                   | `status.xt.overlay`           | `object` | Status event (enabled or disabled)             |
+| Event                   | `restart.xt.overlay`           | `object` | Restart event             |
+| Event                   | `reinit.xt.overlay`           | `object` | Reinit event             |
+| Event                   | `destroy.xt.overlay`           | `object` | Destroy event             |
 
 </div>
 

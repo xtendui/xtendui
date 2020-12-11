@@ -70,6 +70,7 @@ Listen to events on **DOM elements**.
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Event                   | `populate.xt.infinitescroll`           | `object` | Replace event             |
 | Event                   | `init.xt.infinitescroll`           | `object` | Init event             |
 | Event                   | `destroy.xt.infinitescroll`           | `object` | Destroy event             |
 

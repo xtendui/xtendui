@@ -15,7 +15,7 @@ class Scrolltoanchor {
     self.object = object
     self.optionsCustom = optionsCustom
     self.componentName = self.constructor.componentName
-    console.log(self.componentName)
+    self.componentNs = self.componentName.replace('-', '.')
     // set self
     Xt.set(self.componentName, self.object, self)
     // init
@@ -51,7 +51,7 @@ class Scrolltoanchor {
         } else {
           scrollElement.addEventListener('scroll', self.eventScrollHandler.bind(self).bind(self, scrollElement))
         }
-        scrollElement.addEventListener('scroll.trigger.xt.scrolltoanchor', self.eventScrollHandler.bind(self).bind(self, scrollElement))
+        scrollElement.addEventListener(`scroll.trigger.${self.componentNs}`, self.eventScrollHandler.bind(self).bind(self, scrollElement))
         // initial
         requestAnimationFrame(() => {
           self.scrollElementCurrent = scrollElement
@@ -64,7 +64,7 @@ class Scrolltoanchor {
     self.object.classList.add(self.componentName)
     // listener dispatch
     requestAnimationFrame(() => {
-      self.object.dispatchEvent(new CustomEvent('init.xt'))
+      self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
     })
   }
 
@@ -145,7 +145,7 @@ class Scrolltoanchor {
               self.scrollSpace = options.scrollSpace(self.scrollElementCurrent, self.target)
               self.scrollDistance = options.scrollDistance(self.scrollElementCurrent, self.target)
               // listener dispatch
-              self.object.dispatchEvent(new CustomEvent('change.xt.scrolltoanchor'))
+              self.object.dispatchEvent(new CustomEvent(`change.${self.componentNs}`))
             }
           }
         }
@@ -275,7 +275,7 @@ class Scrolltoanchor {
     // set self
     Xt.remove(self.componentName, self.object)
     // listener dispatch
-    self.object.dispatchEvent(new CustomEvent('destroy.xt.scrolltoanchor'))
+    self.object.dispatchEvent(new CustomEvent(`destroy.${self.componentNs}`))
   }
 
   //

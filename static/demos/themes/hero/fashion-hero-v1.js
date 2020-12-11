@@ -82,7 +82,7 @@ Xt.mount.push({
       }
     }
 
-    self.dragger.addEventListener('drag.xt', eventDrag)
+    self.dragger.addEventListener('drag.xt.slider', eventDrag)
 
     // dragreset
 
@@ -111,7 +111,7 @@ Xt.mount.push({
       }
     }
 
-    self.dragger.addEventListener('dragreset.xt', eventDragReset)
+    self.dragger.addEventListener('dragreset.xt.slider', eventDragReset)
 
     // on
 
@@ -168,7 +168,7 @@ Xt.mount.push({
       }
     }
 
-    self.object.addEventListener('on.xt', eventOn, true)
+    self.object.addEventListener('on.xt.slider', eventOn, true)
 
     // off
 
@@ -204,7 +204,7 @@ Xt.mount.push({
       }
     }
 
-    self.object.addEventListener('off.xt', eventOff, true)
+    self.object.addEventListener('off.xt.slider', eventOff, true)
 
     // unmount
 

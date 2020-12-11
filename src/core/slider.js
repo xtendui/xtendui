@@ -438,10 +438,10 @@ class Slider extends Xt.Toggle {
       // wheel
       if (options.wheel && options.wheel.selector) {
         const wheel = self.wheel
-        wheel.addEventListener('wheelstart.xt', self.logicDragstart.bind(self).bind(self, dragger))
-        wheel.addEventListener('wheel.xt', self.logicDrag.bind(self).bind(self, dragger))
-        wheel.addEventListener('wheelend.xt', self.logicDragend.bind(self).bind(self, dragger))
-        wheel.addEventListener('wheelend.xt', self.logicDragfrictionend.bind(self).bind(self, dragger))
+        wheel.addEventListener(`wheelstart.${self.componentNs}`, self.logicDragstart.bind(self).bind(self, dragger))
+        wheel.addEventListener(`wheel.${self.componentNs}`, self.logicDrag.bind(self).bind(self, dragger))
+        wheel.addEventListener(`wheelend.${self.componentNs}`, self.logicDragend.bind(self).bind(self, dragger))
+        wheel.addEventListener(`wheelend.${self.componentNs}`, self.logicDragfrictionend.bind(self).bind(self, dragger))
       }
     }
     // resize
@@ -611,7 +611,7 @@ class Slider extends Xt.Toggle {
       return false
     }
     // toggle
-    if (force || (self.checkOn(element) && (!e || !e.type || e.type !== 'off.trigger.xt'))) {
+    if (force || (self.checkOn(element) && (!e || !e.type || e.type !== `off.trigger.${self.componentNs}`))) {
       // @FIX targets handler
       const slides = self.getTargets(element)
       const slide = slides[0]
@@ -639,7 +639,7 @@ class Slider extends Xt.Toggle {
               }
               self.autoHeight.style.height = slideHeight
               // listener dispatch
-              slide.dispatchEvent(new CustomEvent('autoheight.xt'))
+              slide.dispatchEvent(new CustomEvent(`autoheight.${self.componentNs}`))
             }
           }
           if (self.keepHeight) {
@@ -738,7 +738,7 @@ class Slider extends Xt.Toggle {
           )
         }
       }
-    } else if (!e || !e.type || e.type !== 'on.trigger.xt') {
+    } else if (!e || !e.type || e.type !== `on.trigger.${self.componentNs}`) {
       // drag reset
       self.logicDragreset(self.dragger)
     }
@@ -829,7 +829,7 @@ class Slider extends Xt.Toggle {
     self.detail.dragBlock = false
     // listener dispatch
     if (!self.initial) {
-      dragger.dispatchEvent(new CustomEvent('dragstart.xt'))
+      dragger.dispatchEvent(new CustomEvent(`dragstart.${self.componentNs}`))
     }
   }
 
@@ -1022,7 +1022,7 @@ class Slider extends Xt.Toggle {
     }
     // listener dispatch
     if (!self.initial) {
-      dragger.dispatchEvent(new CustomEvent('drag.xt'))
+      dragger.dispatchEvent(new CustomEvent(`drag.${self.componentNs}`))
     }
   }
 
@@ -1096,7 +1096,7 @@ class Slider extends Xt.Toggle {
     self.detail.dragging = false
     // listener dispatch
     if (!self.initial) {
-      dragger.dispatchEvent(new CustomEvent('dragend.xt'))
+      dragger.dispatchEvent(new CustomEvent(`dragend.${self.componentNs}`))
     }
   }
 
@@ -1139,7 +1139,7 @@ class Slider extends Xt.Toggle {
     self.eventAutostart()
     // listener dispatch
     if (!self.initial) {
-      dragger.dispatchEvent(new CustomEvent('dragreset.xt'))
+      dragger.dispatchEvent(new CustomEvent(`dragreset.${self.componentNs}`))
     }
   }
 

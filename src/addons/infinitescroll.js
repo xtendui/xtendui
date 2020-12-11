@@ -16,6 +16,7 @@ class Infinitescroll {
     self.object = object
     self.optionsCustom = optionsCustom
     self.componentName = self.constructor.componentName
+    self.componentNs = self.componentName.replace('-', '.')
     // set self
     Xt.set(self.componentName, self.object, self)
     // init
@@ -50,7 +51,7 @@ class Infinitescroll {
       self.itemsFake = self.object.querySelector(self.options.elements.items).cloneNode(true)
     }
     // unload
-    addEventListener('unload',  self.eventUnloadHandler.bind(self))
+    addEventListener('unload', self.eventUnloadHandler.bind(self))
     // beforeunload
     addEventListener('beforeunload', self.eventBeforeunloadHandler.bind(self))
     // scroll
@@ -100,7 +101,7 @@ class Infinitescroll {
     self.object.classList.add(self.componentName)
     // listener dispatch
     requestAnimationFrame(() => {
-      self.object.dispatchEvent(new CustomEvent('init.xt'))
+      self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
     })
   }
 
@@ -332,7 +333,7 @@ class Infinitescroll {
     // paginate
     self.paginate()
     // listener dispatch
-    self.object.dispatchEvent(new CustomEvent('replace.xt.infinitescroll'))
+    self.object.dispatchEvent(new CustomEvent(`populate.${self.componentNs}`))
   }
 
   /**
@@ -416,7 +417,7 @@ class Infinitescroll {
     // set self
     Xt.remove(self.componentName, self.object)
     // listener dispatch
-    self.object.dispatchEvent(new CustomEvent('destroy.xt.infinitescroll'))
+    self.object.dispatchEvent(new CustomEvent(`destroy.${self.componentNs}`))
   }
 
   //

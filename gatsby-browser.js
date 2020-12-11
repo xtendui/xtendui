@@ -14,7 +14,7 @@ exports.onPreRouteUpdate = ({ location, prevLocation }) => {
     // close demo full
     const demoFull = document.querySelector('#gatsby_open-full-trigger.in')
     if (demoFull) {
-      demoFull.dispatchEvent(new CustomEvent('off.trigger.xt'))
+      demoFull.dispatchEvent(new CustomEvent('off.trigger.xt.toggle'))
     }
     // fix demo index when changing page
     document.documentElement.setAttribute('data-demo-index', '0')
@@ -52,7 +52,7 @@ exports.onRouteUpdate = ({ location, prevLocation }) => {
         e.preventDefault()
         // no location.hash or page scroll to top
         history.pushState({}, '', '#')
-        document.querySelector('#gatsby_open-full-trigger').dispatchEvent(new CustomEvent('off.trigger.xt'))
+        document.querySelector('#gatsby_open-full-trigger').dispatchEvent(new CustomEvent('off.trigger.xt.toggle'))
       })
     }
   }

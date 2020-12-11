@@ -17,6 +17,7 @@ class Mousefollow {
     self.object = object
     self.optionsCustom = optionsCustom
     self.componentName = self.constructor.componentName
+    self.componentNs = self.componentName.replace('-', '.')
     // set self
     Xt.set(self.componentName, self.object, self)
     // init
@@ -44,7 +45,7 @@ class Mousefollow {
     self.object.classList.add(self.componentName)
     // listener dispatch
     requestAnimationFrame(() => {
-      self.object.dispatchEvent(new CustomEvent('init.xt'))
+      self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
     })
   }
 
@@ -75,7 +76,7 @@ class Mousefollow {
       )
     }
     // listener dispatch
-    self.object.dispatchEvent(new CustomEvent('change.xt.mousefollow'))
+    self.object.dispatchEvent(new CustomEvent(`change.${self.componentNs}`))
   }
 
   /**
@@ -103,7 +104,7 @@ class Mousefollow {
         }
       }
       // listener dispatch
-      self.object.dispatchEvent(new CustomEvent('on.xt.mousefollow'))
+      self.object.dispatchEvent(new CustomEvent(`on.${self.componentNs}`))
     }
   }
 
@@ -119,7 +120,7 @@ class Mousefollow {
         Xt.animOff(tr)
       }
       // listener dispatch
-      self.object.dispatchEvent(new CustomEvent('off.xt.mousefollow'))
+      self.object.dispatchEvent(new CustomEvent(`off.${self.componentNs}`))
     }
   }
 
@@ -142,7 +143,7 @@ class Mousefollow {
     // set self
     Xt.remove(self.componentName, self.object)
     // listener dispatch
-    self.object.dispatchEvent(new CustomEvent('destroy.xt.mousefollow'))
+    self.object.dispatchEvent(new CustomEvent(`destroy.${self.componentNs}`))
   }
 
   //
