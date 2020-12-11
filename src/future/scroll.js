@@ -296,7 +296,7 @@ Scroll.optionsDefault = {
   min: 0,
   max: 'Infinity',
   // event
-  on: 'on.xt.scroll',
+  on: 'on.xt.scroll.fake',
   // timing
   instant: true,
   // other

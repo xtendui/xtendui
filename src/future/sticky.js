@@ -463,7 +463,7 @@ Sticky.optionsDefault = {
   min: 0,
   max: 'Infinity',
   // event
-  on: 'on.xt.sticky',
+  on: 'on.xt.sticky.fake',
   // timing
   instant: true,
   // other
