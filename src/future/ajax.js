@@ -206,7 +206,7 @@ class Ajax extends Xt.Toggle {
     self.locationFrom = self.locationTo || self.locationFrom // fix fast change page
     self.locationTo = new URL(url, location)
     // closeauto
-    dispatchEvent(new CustomEvent(`closeauto.trigger.${self.componentNs}`))
+    dispatchEvent(new CustomEvent(`closeauto.trigger.xt`))
     // listener dispatch
     self.object.dispatchEvent(new CustomEvent(`request.${self.componentNs}`))
     // duration

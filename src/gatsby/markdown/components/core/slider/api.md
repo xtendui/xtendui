@@ -62,10 +62,10 @@ document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('o
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `on.trigger.xt`       | `elements` `targets` | Activation event             |
-| Event                   | `off.trigger.xt`      | `elements` `targets` | Deactivation event            |
-| Event                   | `autostart.trigger.xt`           | `object` | Auto start event             |
-| Event                   | `autostop.trigger.xt`           | `object` | Auto stop event             |
+| Event                   | `on.trigger.xt.slider`       | `elements` `targets` | Activation event             |
+| Event                   | `off.trigger.xt.slider`      | `elements` `targets` | Deactivation event            |
+| Event                   | `autostart.trigger.xt.slider`           | `object` | Auto start event             |
+| Event                   | `autostop.trigger.xt.slider`           | `object` | Auto stop event             |
 
 </div>
 

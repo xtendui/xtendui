@@ -27,7 +27,7 @@ It also hides automatically **pagination** and **navigation** **wrap** and slide
 
 ## Media loaded
 
-If you want to animate on image loaded, with `mediaLoaded: true` use the class `.xt-medialoaded` or the js event `medialoaded.xt`.
+If you want to animate on image loaded, with `mediaLoaded: true` use the class `.xt-medialoaded` or the js event `medialoaded.xt.slider`.
 
 When you need to reinit the component when the media is loaded and the **width** of the image is calculated with `mediaLoadedReinit: true`.
 

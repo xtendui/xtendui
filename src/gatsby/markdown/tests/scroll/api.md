@@ -62,9 +62,9 @@ document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('o
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `scroll.trigger.xt`      | `window` | Run scroll checks for activation/deactivation            |
-| Event                   | `on.trigger.xt`       | `elements` `targets` | Activation event             |
-| Event                   | `off.trigger.xt`      | `elements` `targets` | Deactivation event            |
+| Event                   | `scroll.trigger.xt.scroll`      | `window` | Run scroll checks for activation/deactivation            |
+| Event                   | `on.trigger.xt.scroll`       | `elements` `targets` | Activation event             |
+| Event                   | `off.trigger.xt.scroll`      | `elements` `targets` | Deactivation event            |
 
 </div>
 

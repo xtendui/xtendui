@@ -62,9 +62,9 @@ document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('o
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `sticky.trigger.xt`      | `window` | Run sticky checks for activation/deactivation            |
-| Event                   | `on.trigger.xt`       | `elements` `targets` | Activation event             |
-| Event                   | `off.trigger.xt`      | `elements` `targets` | Deactivation event            |
+| Event                   | `sticky.trigger.xt.sticky`      | `window` | Run sticky checks for activation/deactivation            |
+| Event                   | `on.trigger.xt.sticky`       | `elements` `targets` | Activation event             |
+| Event                   | `off.trigger.xt.sticky`      | `elements` `targets` | Deactivation event            |
 
 </div>
 

@@ -557,7 +557,7 @@ class Toggle {
     // closeauto
     if (options.closeAuto) {
       const closeautoHandler = Xt.dataStorage.put(window, `closeauto/${self.ns}`, self.eventAutocloseHandler.bind(self))
-      addEventListener(`closeauto.trigger.${self.componentNs}`, closeautoHandler)
+      addEventListener(`closeauto.trigger.xt`, closeautoHandler)
     }
     // mediaLoaded
     if (options.mediaLoaded || options.mediaLoadedReinit) {
