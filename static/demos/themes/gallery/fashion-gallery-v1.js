@@ -1,13 +1,13 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/future/scroll'
-import 'xtendui/src/addons/sticky-flow'
-import 'xtendui/src/addons/scroll-to-anchor'
+import 'xtendui/src/addons/stickyflow'
+import 'xtendui/src/addons/scrolltoanchor'
 import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 gsap.registerPlugin(ScrollToPlugin)
 
 /**
- * scroll-to-anchor
+ * scrolltoanchor
  */
 
 Xt.mount.push({
@@ -19,7 +19,7 @@ Xt.mount.push({
 
     // init
 
-    let self = new Xt.ScrollToAnchor(object, {
+    let self = new Xt.Scrolltoanchor(object, {
       scrollElements: [document.scrollingElement, object.querySelector('.product-gallery'), object.querySelector('#overlay-product-images')],
     })
 

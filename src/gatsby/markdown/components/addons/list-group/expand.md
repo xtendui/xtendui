@@ -2,7 +2,7 @@
 type: "Components"
 category: "Addons"
 parent: "List Group"
-title: "expand"
+title: "Expand"
 description: "Simple effect demo to expand a list group with input."
 ---
 

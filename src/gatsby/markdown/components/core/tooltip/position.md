@@ -71,12 +71,12 @@ If you want a tooltip with size and position **relative to a parent Node with re
 
 ## Mouse Follow
 
-Use **component classes** to create a **mouse follow**. Remember **not to transition** `.mouse-follow` element.
+Use **component classes** to create a **mouse follow**. Remember **not to transition** `.mousefollow` element.
 
 [[noteDefault]]
-| This demo uses [mouse follow](/components/addons/animation/mouse-follow) see documentation to **import javascript** and **customize**.
+| This demo uses [mouse follow](/components/addons/animation/mousefollow) see documentation to **import javascript** and **customize**.
 
 <demo>
-  <demovanilla src="vanilla/components/core/tooltip/mouse-follow">
+  <demovanilla src="vanilla/components/core/tooltip/mousefollow">
   </demovanilla>
 </demo>

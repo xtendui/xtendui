@@ -2,7 +2,7 @@
 type: "Components"
 category: "Addons"
 parent: "Tooltip"
-title: "swap"
+title: "Swap"
 description: "Swap tooltip content dynamically."
 ---
 

@@ -13,7 +13,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
   </div>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/slider/events-methods">
   </div>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/navigation/scroll-to-anchor">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/navigation/scrolltoanchor">
   </div>
   <demovanilla src="vanilla/components/core/slider/progress">
   </demovanilla>
@@ -36,7 +36,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
   </demovanilla>
   <demovanilla src="vanilla/components/core/overlay/position">
   </demovanilla>
-  <demovanilla src="vanilla/components/addons/slider/automatic-scroll">
+  <demovanilla src="vanilla/components/addons/slider/automaticscroll">
   </demovanilla>
 </demo>
 
@@ -118,7 +118,7 @@ See [mouse follow addon](/components/core/loader) to create a **loader with mous
 | This component uses [card](/components/core/card) see documentation to **import javascript** and **customize**.
 
 [[noteDefault]]
-| This addon uses [mouse follow](/components/addons/animation/mouse-follow) see documentation to **import javascript** and **customize**.
+| This addon uses [mouse follow](/components/addons/animation/mousefollow) see documentation to **import javascript** and **customize**.
 
 [[notePrimary]]
 | For aria purpose use `role="toolbar"`.

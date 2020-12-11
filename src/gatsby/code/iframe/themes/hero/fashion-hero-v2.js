@@ -121,14 +121,14 @@ demo.htmlSource = `
     </nav>
   </div>
 
-  <button type="button" class="nav-sides left-0" data-xt-nav="-1" aria-label="Previous slide" data-xt-mouse-follow="{ targets: '.nav-sides-btn' }">
-    <div class="nav-sides-btn mouse-follow text-white text-2xl">
+  <button type="button" class="navsides left-0" data-xt-nav="-1" aria-label="Previous slide" data-xt-mousefollow="{ targets: '.navsides-btn' }">
+    <div class="navsides-btn mousefollow text-white text-2xl">
       ${iconArrowLeft({ classes: 'icon-md' })}
     </div>
   </button>
 
-  <button type="button" class="nav-sides right-0" data-xt-nav="1" aria-label="Next slide" data-xt-mouse-follow="{ targets: '.nav-sides-btn' }">
-    <div class="nav-sides-btn mouse-follow text-white text-2xl">
+  <button type="button" class="navsides right-0" data-xt-nav="1" aria-label="Next slide" data-xt-mousefollow="{ targets: '.navsides-btn' }">
+    <div class="navsides-btn mousefollow text-white text-2xl">
       ${iconArrowRight({ classes: 'icon-md' })}
     </div>
   </button>

@@ -1,6 +1,6 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/core/slider'
-import 'xtendui/src/addons/mouse-follow'
+import 'xtendui/src/addons/mousefollow'
 import gsap from 'gsap'
 
 Xt.mount.push({
@@ -110,7 +110,7 @@ Xt.mount.push({
 
     // mousefollow
 
-    let mouseFollow = new Xt.MouseFollow(object, {
+    let mouseFollow = new Xt.Mousefollow(object, {
       targets: ':scope > .loader',
     })
 

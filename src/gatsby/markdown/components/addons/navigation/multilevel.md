@@ -2,7 +2,7 @@
 type: "Components"
 category: "Addons"
 parent: "Navigation"
-title: "multilevel"
+title: "Multilevel"
 description: "Simple example of multilevel navigation with toggle component."
 ---
 

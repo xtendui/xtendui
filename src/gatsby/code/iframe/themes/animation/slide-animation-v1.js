@@ -9,7 +9,7 @@ const animItem =
 const btnDefault = require('components/snippets/classes/btn-default').default
 const btnPrimary = require('components/snippets/classes/btn-primary').default
 const btnDefaultDrop = require('components/snippets/classes/btn-default-drop').default
-const btnCloseOutside = require('components/snippets/classes/btn-close-outside').default
+const btnCloseOutside = require('components/snippets/classes/btn-closeoutside').default
 
 const cardWhite = require('components/snippets/classes/card-white').default
 const cardBlack = require('components/snippets/classes/card-black').default

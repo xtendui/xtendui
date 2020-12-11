@@ -13,7 +13,7 @@ const animItem =
 const btnDefault = () => `${classesDefault} hover:shadow-lg active:shadow-sm`
 const btnPrimary = () => `${classesPrimary} hover:shadow-lg active:shadow-sm`
 const btnDefaultDrop = require('components/snippets/classes/btn-default-drop').default
-const btnCloseOutside = require('components/snippets/classes/btn-close-outside').default
+const btnCloseOutside = require('components/snippets/classes/btn-closeoutside').default
 
 const cardWhite = () => 'text-black links-default'
 const cardBlack = require('components/snippets/classes/card-black').default

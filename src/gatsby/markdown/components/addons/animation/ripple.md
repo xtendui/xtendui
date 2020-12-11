@@ -2,7 +2,7 @@
 type: "Components"
 category: "Addons"
 parent: "Animation"
-title: "ripple"
+title: "Ripple"
 description: "Material ripple effect on user interaction."
 ---
 

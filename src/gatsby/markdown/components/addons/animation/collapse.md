@@ -2,7 +2,7 @@
 type: "Components"
 category: "Addons"
 parent: "Animation"
-title: "collapse"
+title: "Collapse"
 description: "Collapse horizontal and vertical on interactions."
 ---
 

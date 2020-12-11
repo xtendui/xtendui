@@ -1,7 +1,7 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/core/toggle'
 import 'xtendui/src/core/tooltip'
-import 'xtendui/src/addons/scroll-to-anchor'
+import 'xtendui/src/addons/scrolltoanchor'
 import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 gsap.registerPlugin(ScrollToPlugin)
@@ -54,7 +54,7 @@ Xt.mount.push({
 })
 
 /**
- * xt-scroll-to-anchor
+ * xt-scrolltoanchor
  */
 
 Xt.mount.push({
@@ -66,7 +66,7 @@ Xt.mount.push({
 
     // init
 
-    let self = new Xt.ScrollToAnchor(object, {
+    let self = new Xt.Scrolltoanchor(object, {
       elements: '[href^="#"]:not([aria-controls])',
       scrollDistance: () => {
         return window.innerHeight / 10
@@ -183,10 +183,10 @@ const makeDocument = () => {
   }
   // scrollSidebarToContent
   require('assets/scripts/gatsby.js').gatsbySidebarContain()
-  // restart xt-scroll-to-anchor
+  // restart xt-scrolltoanchor
   const gatsby = document.querySelector('.gatsby_site_wrapper')
   if (gatsby) {
-    const scrollToAnchor = Xt.get('xt-scroll-to-anchor', gatsby.closest('body'))
+    const scrollToAnchor = Xt.get('xt-scrolltoanchor', gatsby.closest('body'))
     if (scrollToAnchor) {
       scrollToAnchor.eventStart()
     }
