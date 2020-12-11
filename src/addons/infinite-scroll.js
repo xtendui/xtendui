@@ -50,14 +50,11 @@ class InfiniteScroll {
       self.itemsFake = self.object.querySelector(self.options.elements.items).cloneNode(true)
     }
     // unload
-    const unloadHandler = Xt.dataStorage.put(window, `on.xt.unload/${self.ns}`, self.eventUnloadHandler.bind(self))
-    addEventListener('unload', unloadHandler)
+    addEventListener('unload',  self.eventUnloadHandler.bind(self))
     // beforeunload
-    const beforeunloadHandler = Xt.dataStorage.put(window, `on.xt.beforeunload/${self.ns}`, self.eventBeforeunloadHandler.bind(self))
-    addEventListener('beforeunload', beforeunloadHandler)
+    addEventListener('beforeunload', self.eventBeforeunloadHandler.bind(self))
     // scroll
-    const scrollHandler = Xt.dataStorage.put(window, `on.xt.scroll/${self.ns}`, self.eventScrollHandler.bind(self))
-    addEventListener('scroll', scrollHandler)
+    addEventListener('scroll', self.eventScrollHandler.bind(self))
     // setCurrent
     self.setCurrent()
     if (self.itemsElement) {
@@ -133,15 +130,7 @@ class InfiniteScroll {
    */
   eventScrollHandler(e = null) {
     const self = this
-    Xt.eventDelay(
-      e,
-      self.object,
-      () => {
-        // handler
-        self.eventScroll(e)
-      },
-      `${self.ns}Scroll`
-    )
+    self.eventScroll(e)
   }
 
   //
