@@ -64,12 +64,14 @@ if (Xt.durationTimescale === 1000) {
 
 const animationResponsive = () => {
   // faster javascript animations on small screens
-  if (Xt.durationTimescale !== 1000 && matchMedia('(max-width: 767px)').matches) {
-    gsap.globalTimeline.timeScale(1.5)
-    Xt.durationTimescale = 1.5
-  } else {
-    gsap.globalTimeline.timeScale(1)
-    Xt.durationTimescale = 1
+  if (Xt.durationTimescale !== 1000) {
+    if (matchMedia('(max-width: 767px)').matches) {
+      gsap.globalTimeline.timeScale(1.5)
+      Xt.durationTimescale = 1.5
+    } else {
+      gsap.globalTimeline.timeScale(1)
+      Xt.durationTimescale = 1
+    }
   }
 }
 addEventListener('resize', animationResponsive)
