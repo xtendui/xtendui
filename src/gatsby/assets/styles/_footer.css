@@ -24,11 +24,11 @@
 }
 
 .gatsby_site_footer_bottom_row {
-  flex-wrap: nowrap;
-  justify-content: space-between;
   flex: 1 1 auto;
   font-size: 11px;
   @screen md {
+    flex-wrap: nowrap;
+    justify-content: space-between;
     font-size: 12px;
   }
   @screen lg {
@@ -36,8 +36,6 @@
   }
 }
 
-.gatsby_site_footer_bottom_right {
-  @screen md {
-    margin-left: auto;
-  }
+.gatsby_site_footer_bottom_margin {
+  margin-right: auto;
 }
