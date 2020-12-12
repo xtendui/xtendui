@@ -18,6 +18,9 @@ import 'xtendui/src/addons/googlelocator'
 
 Use this code to create a **google locator**. Search for "New York" to see it in action.
 
+[[noteDefault]]
+| This addon uses [loader](/components/core/loader) see documentation to **import javascript** and **customize**.
+
 [[notePrimary]]
 | Needs google API key with **Maps Javascript API**, **Places API**.
 

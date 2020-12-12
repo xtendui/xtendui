@@ -136,7 +136,7 @@ demo.htmlSource = `
   </div>
 
   <div class="loader bg-white bg-opacity-75 toggle">
-    <span class="spinner spinner-animated text-white">
+    <span class="spinner spinner-animated text-accent-500">
       ${spinner({})}
     </span>
   </div>

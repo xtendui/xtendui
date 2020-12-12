@@ -10,14 +10,14 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="inline-block" data-xt-tooltip="{ popperjs: false, duration: 200 }" data-xt-mousefollow>
+<div class="inline-block" data-xt-tooltip="{ popperjs: false }" data-xt-mousefollow>
 
   <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
     mouse follow
   </button>
 
-  <div class="tooltip group mousefollow">
-    <div class="tooltip-md rounded shadow-tooltip ${cardBlack()} -mt-1 ml-4 pointer-events-none transform transition duration-200 opacity-0 translate-x-2 group-active:opacity-100 group-active:translate-x-0">
+  <div class="tooltip group mousefollow" data-xt-duration="200">
+    <div class="tooltip-md rounded shadow-tooltip ${cardBlack()} -mt-1 ml-4 pointer-events-none transform transition duration-200 ease-in-out-quint opacity-0 translate-x-2 group-active:opacity-100 group-active:translate-x-0">
       Lorem ipsum dolor sit amet
     </div>
   </div>

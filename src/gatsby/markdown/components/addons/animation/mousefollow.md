@@ -49,6 +49,12 @@ Use **component classes** to create a **mouse follow**. Remember **not to transi
   </demovanilla>
 </demo>
 
+## Timing
+
+Xtend **automatically detects animation time** on activation and deactivation **before setting display property** with `in` and `out` classes.
+
+It's possible to **assign them also on single nodes** with `data-xt-duration="Milliseconds"` or  `data-xt-durationOn="Milliseconds"` and  `data-xt-durationOff="Milliseconds"`.
+
 ## Options
  
 Here are the main **javascript options**.

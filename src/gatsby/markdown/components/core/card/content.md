@@ -24,6 +24,8 @@ Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindc
   </demovanilla>
 </demo>
 
+Checkout out [cards's themes](/themes/by-component/card) for **advanced animations**.
+
 ## Size
 
 Use **component classes** to assign size. You can add **additional size** for example `.card-xs` or `.card-xl`.

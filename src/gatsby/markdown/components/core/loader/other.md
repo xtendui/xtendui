@@ -17,7 +17,7 @@ Use **tailwind classes** to assign variant (e.g. [background-color](https://tail
   </demovanilla>
 </demo>
 
-## Activation animation
+## Activation
 
 Use **tailwind classes** to assign loader activation animation. 
 
@@ -34,6 +34,12 @@ Example loader filler with **activation animation**.
   <demovanilla src="vanilla/components/core/loader/js-filler">
   </demovanilla>
 </demo>
+
+## Timing
+
+Xtend **automatically detects animation time** on activation and deactivation **before setting display property** with `in` and `out` classes.
+
+It's possible to **assign them also on single nodes** with `data-xt-duration="Milliseconds"` or  `data-xt-durationOn="Milliseconds"` and  `data-xt-durationOff="Milliseconds"`.
 
 ## Mouse Follow
 

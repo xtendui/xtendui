@@ -30,8 +30,6 @@ Additionally on component initialization the class `.xt-tooltip` gets added to t
 
 ## Animation
 
-Checkout out [tooltip's themes](/themes/by-component/tooltip) for **advanced animations**.
-
 Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).
 
 <demo>
@@ -59,11 +57,17 @@ You can use also **javascript animations**, just use [tooltip api](/components/c
   </demovanilla>
 </demo>
 
+Checkout out [tooltip's themes](/themes/by-component/tooltip) for **advanced animations**.
+
 ## Timing
 
-Activation/deactivation automatically waits for the <strong>duration</strong> of animations and transitions on <code>.active</code> and <code>.out</code>.
+Xtend **automatically detects animation time** on activation and deactivation **before setting display property** with `in` and `out` classes.
 
-You can use a function for <code>delayOn</code> and <code>delayOff</code> for example <code>(current, total) => {return Math.min((total - current) * 150, 300)}</code>.
+If you want to manually set it use `options.duration` or `options.durationOn` and `options.durationOff`.
+
+It's possible to **assign them also on single nodes** with `data-xt-duration="Milliseconds"` or  `data-xt-durationOn="Milliseconds"` and  `data-xt-durationOff="Milliseconds"`.
+
+You can also use a function for <code>delay</code>, <code>delayOn</code> and <code>delayOff</code> see javascript in the demo below.
 
 <div class="table-overflow">
 

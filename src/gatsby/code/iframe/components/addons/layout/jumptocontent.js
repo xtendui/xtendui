@@ -14,7 +14,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="jumptocontent toggle sr-only xt-fixed">
+<div class="jumptocontent toggle xt-fixed">
   <a href="#jumptocontent" class="btn btn-md rounded-md ${btnPrimary()}">
     Jump to content
   </a>

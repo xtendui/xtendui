@@ -930,57 +930,16 @@ Xt.ignoreOnce = el => {
 }
 
 /**
- * get transition or animation time
- * @param {Node|HTMLElement|EventTarget|Window} el Element animating
- * @param {Number} timing Force duration in milliseconds
- * @return {Number} Time in milliseconds
- */
-Xt.animTime = (el, timing = null) => {
-  if (timing || timing === 0) {
-    return timing
-  } else {
-    const style = getComputedStyle(el)
-    const transition = parseFloat(style.transitionDuration) + parseFloat(style.transitionDelay)
-    const animation = parseFloat(style.animationDuration) + parseFloat(style.animationDelay)
-    if (transition || animation) {
-      timing = Math.max(transition, animation)
-    }
-    return timing * 1000
-  }
-}
-
-/**
- * execute function after transition or animation
- * @param {Node|HTMLElement|EventTarget|Window} el Element animating
- * @param {Function} func Function to execute after transition or animation
- * @param {String} suffix Timeout suffix
- * @param {Number} timing Optional force time
- */
-Xt.animTimeout = (el, func, suffix = '', timing = null) => {
-  clearTimeout(Xt.dataStorage.get(el, `xtAnimTimeout${suffix}`))
-  timing = timing || timing === 0 ? timing / Xt.durationTimescale : Xt.animTime(el) / Xt.durationTimescale
-  Xt.dataStorage.set(el, `xtAnimTimeout${suffix}`, setTimeout(func, timing))
-}
-
-/**
- * clear animTimeout
- * @param {Node|HTMLElement|EventTarget|Window} el Element animating
- * @param {String} suffix Timeout suffix
- */
-Xt.animTimeoutClear = (el, suffix = '') => {
-  clearTimeout(Xt.dataStorage.get(el, `xtAnimTimeout${suffix}`))
-}
-
-/**
  * animation on classes
  * @param {Node|HTMLElement|EventTarget|Window} el Element animating
  * @param {String} suffix Timeout suffix
  */
 Xt.animOn = (el, suffix = '') => {
   el.classList.add('in')
+  el.classList.remove('active')
   el.classList.remove('out')
   // keep the same level of raf as others
-  cancelAnimationFrame(Xt.dataStorage.get(el, suffix))
+  cancelAnimationFrame(Xt.dataStorage.get(el, `AnimFrame${suffix}`))
   Xt.dataStorage.put(
     el,
     suffix,
@@ -1005,9 +964,56 @@ Xt.animOff = (el, suffix = '', timing = null) => {
     () => {
       el.classList.remove('out')
     },
-    suffix,
-    timing
+    `AnimFrame${suffix}`,
+    timing,
+    'Off'
   )
+}
+
+/**
+ * execute function after transition or animation
+ * @param {Node|HTMLElement|EventTarget|Window} el Element animating
+ * @param {Function} func Function to execute after transition or animation
+ * @param {String} suffix Timeout suffix
+ * @param {Number} timing Optional force time
+ * @param {String} actionCurrent Current action
+ */
+Xt.animTimeout = (el, func, suffix = '', timing = null, actionCurrent = null) => {
+  clearTimeout(Xt.dataStorage.get(el, `AnimTimeout${suffix}`))
+  timing = Xt.animTime(el, timing, actionCurrent)
+  Xt.dataStorage.set(el, `AnimTimeout${suffix}`, setTimeout(func, timing))
+}
+
+/**
+ * clear animTimeout
+ * @param {Node|HTMLElement|EventTarget|Window} el Element animating
+ * @param {String} suffix Timeout suffix
+ */
+Xt.animTimeoutClear = (el, suffix = '') => {
+  clearTimeout(Xt.dataStorage.get(el, `AnimTimeout${suffix}`))
+}
+
+/**
+ * get transition or animation time
+ * @param {Node|HTMLElement|EventTarget|Window} el Element animating
+ * @param {Number} timing Force duration in milliseconds
+ * @param {String} actionCurrent Current action
+ * @return {Number} Time in milliseconds
+ */
+Xt.animTime = (el, timing = null, actionCurrent = null) => {
+  if (timing || timing === 0) {
+    return timing / Xt.durationTimescale
+  } else if ((timing = (actionCurrent && el.getAttribute(`data-xt-duration${actionCurrent}`)) || (timing = el.getAttribute('data-xt-duration')))) {
+    return parseFloat(timing) / Xt.durationTimescale
+  } else {
+    const style = getComputedStyle(el)
+    const transition = parseFloat(style.transitionDuration) + parseFloat(style.transitionDelay)
+    const animation = parseFloat(style.animationDuration) + parseFloat(style.animationDelay)
+    if (transition || animation) {
+      timing = Math.max(transition, animation)
+    }
+    return timing * 1000
+  }
 }
 
 /**
@@ -1097,10 +1103,10 @@ Xt.eventDelay = (e, element, func, prefix = '', instant = false) => {
       // func
       func(e)
     } else {
-      clearTimeout(Xt.dataStorage.get(element, `xt${e.type}${prefix}Timeout`))
+      clearTimeout(Xt.dataStorage.get(element, `${e.type}${prefix}Timeout`))
       Xt.dataStorage.set(
         element,
-        `xt${e.type}${prefix}Timeout`,
+        `${e.type}${prefix}Timeout`,
         setTimeout(() => {
           // func
           func(e)

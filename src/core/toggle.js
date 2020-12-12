@@ -864,10 +864,10 @@ class Toggle {
     Xt.dataStorage.set(img, `${self.ns}MedialoadedDone`, true)
     // mediaLoadedReinit
     if (options.mediaLoadedReinit && deferred) {
-      clearTimeout(Xt.dataStorage.get(self.object, `xt${self.ns}MedialoadedInit` + `Timeout`))
+      clearTimeout(Xt.dataStorage.get(self.object, `${self.ns}MedialoadedInit` + `Timeout`))
       Xt.dataStorage.set(
         self.object,
-        `xt${self.ns}MedialoadedInit` + `Timeout`,
+        `${self.ns}MedialoadedInit` + `Timeout`,
         setTimeout(() => {
           // mediaLoaded
           self.eventMediaLoadedReinit()
@@ -1856,7 +1856,7 @@ class Toggle {
     // special
     self.specialZindex(actionCurrent, el, type)
     // anim
-    const duration = Xt.animTime(el, options.duration || options[`duration${actionCurrent}`]) / Xt.durationTimescale
+    const duration = Xt.animTime(el, options.duration || options[`duration${actionCurrent}`], actionCurrent)
     clearTimeout(Xt.dataStorage.get(el, `${self.ns + type}AnimTimeout`))
     // queue done
     if (!duration) {
