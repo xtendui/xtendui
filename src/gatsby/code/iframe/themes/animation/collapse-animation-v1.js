@@ -79,7 +79,7 @@ demo.htmlSource = `
       list
     </button>
 
-    <div class="drop group duration-700"> <!-- needed for animation time, put max time with delay -->
+    <div class="drop group" data-xt-duration="700">
       <div class="drop-inner rounded-md shadow-drop ${animDesign}">
         <div class="card w-64 py-3 rounded-md ${cardWhite()} ">
           <nav class="list flex-col rounded-md${animItem}">
@@ -106,7 +106,7 @@ demo.htmlSource = `
       card
     </button>
 
-    <div class="drop group duration-700"> <!-- needed for animation time, put max time with delay -->
+    <div class="drop group" data-xt-duration="700">
       <div class="drop-inner rounded-md shadow-drop ${animDesign}">
         <div class="card w-80 rounded-md ${cardWhite()}">
           <div class="btn btn-close p-5 text-xl ${animItem}" aria-label="Close">
@@ -137,7 +137,7 @@ demo.htmlSource = `
       tooltip
     </button>
 
-    <div class="tooltip group duration-700"> <!-- needed for animation time, put max time with delay -->
+    <div class="tooltip group" data-xt-duration="700">
       <div class="tooltip-inner ${animDesign}">
         <div class="tooltip-md rounded shadow-tooltip ${cardBlack()}">
           <div class="${animItem}">
@@ -156,7 +156,7 @@ demo.htmlSource = `
       list group
     </button>
 
-    <div class="tooltip group duration-700"> <!-- needed for animation time, put max time with delay -->
+    <div class="tooltip group" data-xt-duration="700">
       <div class="tooltip-inner rounded-md shadow-tooltip text-black links-default bg-white ${animDesign}">
         <form>
 
@@ -194,7 +194,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       screen full
     </button>
-    <div class="overlay group duration-700"> <!-- needed for animation time, put max time with delay -->
+    <div class="overlay group" data-xt-duration="700">
       <div class="overlay-container p-0">
         <div class="btn btn-close p-5 text-2xl fixed z-last mr-2 ${animItem}" aria-label="Close">
           ${iconX()}
@@ -220,7 +220,7 @@ demo.htmlSource = `
       left blocks
     </button>
 
-    <div class="overlay group duration-700"> <!-- needed for animation time, put max time with delay -->
+    <div class="overlay group" data-xt-duration="700">
       <div class="overlay-container p-0 max-w-md ml-0 mr-auto">
         <div class="overlay-inner ${animDesign}">
 
@@ -265,7 +265,7 @@ demo.htmlSource = `
       contact
     </button>
 
-    <div class="overlay group duration-700"> <!-- needed for animation time, put max time with delay -->
+    <div class="overlay group" data-xt-duration="700">
       <div class="overlay-container max-w-5xl">
         <div class="overlay-inner rounded-md shadow-overlay ${animDesign}">
 
@@ -382,7 +382,7 @@ demo.htmlSource = `
       newsletter
     </button>
 
-    <div class="overlay group duration-700"> <!-- needed for animation time, put max time with delay -->
+    <div class="overlay group" data-xt-duration="700">
       <div class="overlay-container max-w-5xl">
         <div class="overlay-inner rounded-md shadow-overlay ${animDesign}">
 
@@ -496,7 +496,7 @@ demo.htmlSource = `
       collapse targets
     </button>
 
-    <div class="overlay group h-0 overflow-hidden ease-in-out-quint duration-700"> <!-- needed for animation time, put max time with delay -->
+    <div class="overlay group h-0 overflow-hidden ease-in-out-quint" data-xt-duration="700">
       <div class="overlay-container max-w-5xl">
         <div class="overlay-inner rounded-md shadow-overlay">
 

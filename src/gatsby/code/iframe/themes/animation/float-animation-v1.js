@@ -76,7 +76,7 @@ demo.htmlSource = `
       list
     </button>
 
-    <div class="drop group duration-700"> <!-- needed for animation time, put max time with delay -->
+    <div class="drop group" data-xt-duration="700">
       <div class="drop-inner">
         <div class="design-setup rounded-md shadow-drop bg-white ${animDesign}"></div>
         <div class="w-64 py-3 rounded-md ${cardWhite()} ${animItem}">
@@ -104,7 +104,7 @@ demo.htmlSource = `
       card
     </button>
 
-    <div class="drop group duration-700"> <!-- needed for animation time, put max time with delay -->
+    <div class="drop group" data-xt-duration="700">
       <div class="drop-inner">
         <div class="design-setup rounded-md shadow-drop bg-white ${animDesign}"></div>
         <div class="card w-80 rounded-md ${cardWhite()} ${animItem}">
@@ -136,7 +136,7 @@ demo.htmlSource = `
       tooltip
     </button>
 
-    <div class="tooltip group duration-700"> <!-- needed for animation time, put max time with delay -->
+    <div class="tooltip group" data-xt-duration="700">
       <div class="tooltip-md rounded shadow-tooltip ${cardBlack()} ${animDesign}">
         <div class="${animItem}">
           Lorem ipsum dolor sit amet
@@ -153,7 +153,7 @@ demo.htmlSource = `
       list group
     </button>
 
-    <div class="tooltip group duration-700"> <!-- needed for animation time, put max time with delay -->
+    <div class="tooltip group" data-xt-duration="700">
       <div class="rounded-md shadow-tooltip text-black links-default bg-white ${animDesign}">
         <form>
 
@@ -191,7 +191,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn-md ${btnPrimary()}">
       screen full
     </button>
-    <div class="overlay group duration-700"> <!-- needed for animation time, put max time with delay -->
+    <div class="overlay group" data-xt-duration="700">
       <div class="overlay-container p-0">
         <div class="btn btn-close p-5 text-2xl fixed z-last mr-2 ${cardWhite()} ${animItem}" aria-label="Close">
           ${iconX()}
@@ -219,7 +219,7 @@ demo.htmlSource = `
       left blocks
     </button>
 
-    <div class="overlay group duration-700"> <!-- needed for animation time, put max time with delay -->
+    <div class="overlay group" data-xt-duration="700">
       <div class="overlay-container p-0 max-w-md ml-0 mr-auto">
         <div class="overlay-inner">
 
@@ -266,7 +266,7 @@ demo.htmlSource = `
       contact
     </button>
 
-    <div class="overlay group duration-700"> <!-- needed for animation time, put max time with delay -->
+    <div class="overlay group" data-xt-duration="700">
       <div class="overlay-container max-w-5xl">
         <div class="overlay-inner">
 
@@ -385,7 +385,7 @@ demo.htmlSource = `
       newsletter
     </button>
 
-    <div class="overlay group duration-700"> <!-- needed for animation time, put max time with delay -->
+    <div class="overlay group" data-xt-duration="700">
       <div class="overlay-container max-w-5xl">
         <div class="overlay-inner">
 

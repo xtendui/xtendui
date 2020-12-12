@@ -1,6 +1,5 @@
 .demo--tooltip-animation-css-multiple {
   .tooltip {
-    @apply duration-200; /* needed for animation time, put max time with delay */
     /* initial */
     > * {
       @apply transform transition duration-200;

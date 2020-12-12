@@ -33,7 +33,7 @@ Xt.mount.push({
     const closeUid = Xt.getuniqueId()
     document.querySelector('#gatsby_open-full').append(
       Xt.createElement(`
-<div id="tooltip--demo--close-${closeUid}" class="tooltip group duration-200"> <!-- needed for animation time, put max time with delay -->
+<div id="tooltip--demo--close-${closeUid}" class="tooltip group" data-xt-duration="200">
   <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()} transform transition duration-200 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
     Close Fullscreen
   </div>

@@ -16,7 +16,7 @@ demo.htmlSource = `
     tooltip
   </button>
 
-  <div class="tooltip">
+  <div class="tooltip" data-xt-duration="200">
     <div class="tooltip-md rounded shadow-tooltip ${cardBlack()}">
       Lorem ipsum dolor sit amet
     </div>

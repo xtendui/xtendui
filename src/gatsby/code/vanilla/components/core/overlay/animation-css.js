@@ -17,7 +17,7 @@ demo.htmlSource = `
     overlay
   </button>
 
-  <div class="overlay demo--overlay-animation-css">
+  <div class="overlay demo--overlay-animation-css" data-xt-duration="500">
     <div class="overlay-container max-w-3xl">
       <div class="overlay-inner">
 

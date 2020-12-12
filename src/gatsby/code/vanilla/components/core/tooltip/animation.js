@@ -18,7 +18,7 @@ demo.htmlSource = `
       tooltip
     </button>
 
-    <div class="tooltip group duration-200"> <!-- needed for animation time, put max time with delay -->
+    <div class="tooltip group" data-xt-duration="200">
       <div class="tooltip-md rounded shadow-tooltip ${cardBlack()} transform transition duration-200 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
         Lorem ipsum dolor sit amet
       </div>
