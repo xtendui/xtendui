@@ -861,12 +861,8 @@ Xt.scrollbarSpaceOn = container => {
       val = old !== '' ? val - parseFloat(old) : val
       const str = `calc(${val}px + ${width}px)`
       element.classList.add('xt-transition-none')
-      requestAnimationFrame(() => {
-        element.style[prop] = str
-        requestAnimationFrame(() => {
-          element.classList.remove('xt-transition-none')
-        })
-      })
+      element.style[prop] = str
+      element.classList.remove('xt-transition-none')
     }
   }
 }
@@ -886,13 +882,9 @@ Xt.scrollbarSpaceOff = container => {
   const elements = container.querySelectorAll('.xt-fixed')
   for (const element of elements) {
     element.classList.add('xt-transition-none')
-    requestAnimationFrame(() => {
-      element.style.right = ''
-      element.style.paddingRight = ''
-      requestAnimationFrame(() => {
-        element.classList.remove('xt-transition-none')
-      })
-    })
+    element.style.right = ''
+    element.style.paddingRight = ''
+    element.classList.remove('xt-transition-none')
   }
 }
 
@@ -919,13 +911,7 @@ Xt.addScript = (url, callback = null) => {
  */
 Xt.ignoreOnce = el => {
   if (el.classList.contains('xt-ignore-once')) {
-    requestAnimationFrame(() => {
-      // @FIX react when componentDidMount
-      requestAnimationFrame(() => {
-        // @FIX react when componentDidMount
-        el.classList.remove('xt-ignore', 'xt-ignore-once')
-      })
-    })
+    el.classList.remove('xt-ignore', 'xt-ignore-once')
   }
 }
 
@@ -944,7 +930,10 @@ Xt.animOn = (el, suffix = '') => {
     el,
     suffix,
     requestAnimationFrame(() => {
-      el.classList.add('active')
+      // @FIX raf sometimes el isn't already display: block (overlay and firefox expecially)
+      requestAnimationFrame(() => {
+        el.classList.add('active')
+      })
     })
   )
 }

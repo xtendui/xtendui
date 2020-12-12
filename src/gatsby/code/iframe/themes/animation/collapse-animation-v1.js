@@ -95,7 +95,7 @@ demo.htmlSource = `
           </nav>
         </div>
       </div>
-      <div class="drop-arrow ${animItem} group-active:delay-300" data-arrow></div>
+      <div class="drop-arrow ${animItem} group-active:delay-500" data-arrow></div>
     </div>
 
   </div>
@@ -118,7 +118,7 @@ demo.htmlSource = `
           </div>
         </div>
       </div>
-      <div class="drop-arrow ${animItem} group-active:delay-300" data-arrow></div>
+      <div class="drop-arrow ${animItem} group-active:delay-500" data-arrow></div>
     </div>
 
   </div>
@@ -145,7 +145,7 @@ demo.htmlSource = `
           </div>
         </div>
       </div>
-      <div class="tooltip-arrow ${animItem} group-active:delay-300" data-arrow></div>
+      <div class="tooltip-arrow ${animItem} group-active:delay-500" data-arrow></div>
     </div>
 
   </div>
@@ -177,7 +177,7 @@ demo.htmlSource = `
 
         </form>
       </div>
-      <div class="tooltip-arrow ${animItem} group-active:delay-300" data-arrow></div>
+      <div class="tooltip-arrow ${animItem} group-active:delay-500" data-arrow></div>
     </div>
 
   </div>

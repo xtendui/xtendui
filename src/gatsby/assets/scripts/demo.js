@@ -189,9 +189,12 @@ const populateBlock = () => {
           moving.classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
           appendOrigin.before(moving)
           // @FIX demo fullscreen
-          const current = appendOrigin.previousSibling.querySelector('.gatsby_demo_item.in')
-          // triggering e.detail.container
-          dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: current } }))
+          const previous = appendOrigin.previousSibling
+          if (previous) {
+            const current = appendOrigin.previousSibling.querySelector('.gatsby_demo_item.in')
+            // triggering e.detail.container
+            dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: current } }))
+          }
           appendOrigin.remove()
         }
         // hash
@@ -209,8 +212,8 @@ const populateBlock = () => {
     // trigger fullscreen or change tabs
     full.addEventListener('on.xt.toggle', () => {
       // close tooltip on mobile
-      for (const btn of document.querySelectorAll('.btn-open-full + .tooltip')) {
-        btn.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+      for (const tooltipToClose of document.querySelectorAll('.btn-open-full + .tooltip')) {
+        tooltipToClose.classList.remove('in')
       }
       // @FIX demo fullscreen
       const content = document.querySelector('#gatsby_open-full-content')

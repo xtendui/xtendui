@@ -1162,11 +1162,14 @@ class Toggle {
         el,
         `${self.ns}ActivateFrame`,
         requestAnimationFrame(() => {
-          el.classList.add(...self.classesActive)
-          // remove initial instantly when wrap
-          if (el.classList.contains('xt-wrap')) {
-            el.classList.remove(...self.classesInitial)
-          }
+          // @FIX raf sometimes el isn't already display: block (overlay and firefox expecially)
+          requestAnimationFrame(() => {
+            el.classList.add(...self.classesActive)
+            // remove initial instantly when wrap
+            if (el.classList.contains('xt-wrap')) {
+              el.classList.remove(...self.classesInitial)
+            }
+          })
         })
       )
       // direction
@@ -1866,7 +1869,10 @@ class Toggle {
         el,
         `${self.ns + type}AnimFrame`,
         requestAnimationFrame(() => {
-          self.queueAnimDone(actionCurrent, actionOther, obj, el, type)
+          // @FIX raf sometimes el isn't already display: block (overlay and firefox expecially)
+          requestAnimationFrame(() => {
+            self.queueAnimDone(actionCurrent, actionOther, obj, el, type)
+          })
         })
       )
     } else {
@@ -2445,7 +2451,10 @@ class Toggle {
             el,
             `${self.ns}CollapseFrame`,
             requestAnimationFrame(() => {
-              el.style.height = h
+              // @FIX raf sometimes el isn't already display: block (overlay and firefox expecially)
+              requestAnimationFrame(() => {
+                el.style.height = h
+              })
             })
           )
         }
@@ -2462,7 +2471,10 @@ class Toggle {
             el,
             `${self.ns}CollapseFrame`,
             requestAnimationFrame(() => {
-              el.style.width = w
+              // @FIX raf sometimes el isn't already display: block (overlay and firefox expecially)
+              requestAnimationFrame(() => {
+                el.style.width = w
+              })
             })
           )
         }
@@ -2479,7 +2491,10 @@ class Toggle {
             el,
             `${self.ns}CollapseFrame`,
             requestAnimationFrame(() => {
-              el.style.height = '0'
+              // @FIX raf sometimes el isn't already display: block (overlay and firefox expecially)
+              requestAnimationFrame(() => {
+                el.style.height = '0'
+              })
             })
           )
         }
@@ -2495,7 +2510,10 @@ class Toggle {
             el,
             `${self.ns}CollapseFrame`,
             requestAnimationFrame(() => {
-              el.style.width = '0'
+              // @FIX raf sometimes el isn't already display: block (overlay and firefox expecially)
+              requestAnimationFrame(() => {
+                el.style.width = '0'
+              })
             })
           )
         }
