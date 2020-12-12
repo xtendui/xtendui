@@ -11,19 +11,12 @@ Xt.mount.push({
       if (object.dataset.loaderTimeout) {
         clearTimeout(object.dataset.loaderTimeout)
         delete object.dataset.loaderTimeout
-        object.classList.remove('hidden')
-        requestAnimationFrame(() => {
-          object.classList.add('active')
-        })
+        Xt.animOn(object)
         gsap.set(filler, { width: 0 })
         gsap.to(filler, { width: '100%', duration: 1, ease: 'linear' }).eventCallback('onComplete', loaderTimeout)
       } else {
-        delete object.dataset.loaderActive
-        object.classList.remove('active')
-        Xt.animTimeout(object, () => {
-          object.classList.add('hidden')
-          object.dataset.loaderTimeout = setTimeout(loaderTimeout, 2000)
-        })
+        Xt.animOff(object)
+        object.dataset.loaderTimeout = setTimeout(loaderTimeout, 2000)
       }
     }
 

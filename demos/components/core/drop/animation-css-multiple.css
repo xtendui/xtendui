@@ -1,5 +1,4 @@
 .demo--drop-animation-css-multiple {
-  @apply duration-500; /* needed for animation time, put max time with delay */
   .drop {
     /* initial */
     @apply transform transition;
