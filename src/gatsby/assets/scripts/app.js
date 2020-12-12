@@ -22,7 +22,7 @@ Xt.mount.push({
     let self = new Xt.Toggle(object, {
       targets: '#gatsby_open-full',
       closeInside: ':scope > .btn-close',
-      closeAuto: true, // needed for onPreRouteUpdate gatsby-browser.js
+      closeAuto: true,
       scrollbar: true,
       classHtml: 'demo-full-open',
     })
