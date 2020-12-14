@@ -99,7 +99,7 @@
 <table><thead><tr><th></th><th>Syntax</th><th>Default / Arguments</th><th>Description</th></tr></thead><tbody><tr><td>Option</td><td><code>targets:Query</code></td><td><code>&#x27;:scope &gt; .mousefollow&#x27;</code></td><td>Mouse follow targets</td></tr><tr><td>Option</td><td><code>transform:Boolean</code></td><td><code>true</code></td><td>Use transform instead of position</td></tr><tr><td>Option</td><td><code>friction:Function</code></td><td><code>&lt;function&gt;</code></td><td>Function for friction</td></tr><tr><td>Option</td><td><code>mouseCheck(self):Function</code></td><td><code>false</code></td><td>Function called on activate/deactivate, return false to not activate/deactivate</td></tr></tbody></table>
 </div>
 <h2>Listen</h2>
-<p>Listen to events on <strong>DOM elements</strong>.</p>
+<p>Listen to events.</p>
 <div class="table-overflow">
 
 
@@ -175,7 +175,7 @@
 <table><thead><tr><th></th><th>Syntax</th><th>Description</th></tr></thead><tbody><tr><td>Property</td><td><code>options:Object</code></td><td>Final options</td></tr><tr><td>Property</td><td><code>object:Node</code></td><td>Object node</td></tr><tr><td>Property</td><td><code>targets:Array</code></td><td>Targets nodes</td></tr></tbody></table>
 </div>
 <h2>Initialization</h2>
-<p>Initialize automatically within markup with <code>[data-xt-mousefollow=&quot;{ &lt;options&gt; }&quot;]</code> on the <strong>object</strong> (the DOM element you assigned the component).</p>
+<p>Initialize automatically <strong>within markup</strong> with <code>[data-xt-mousefollow=&quot;{ &lt;options&gt; }&quot;]</code> on the <strong>object</strong> (the DOM element you assigned the component).</p>
 <p>Or initialize with <strong>javascript</strong>.</p>
 <pre><code class="language-js">let self = new Xt.Mousefollow(document.querySelector(&#x27;#my-object&#x27;), {
   // options
