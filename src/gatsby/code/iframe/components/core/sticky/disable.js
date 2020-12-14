@@ -16,7 +16,7 @@ export const demo = {
 demo.htmlSource = `
 <br><br><br><br><br><br><br>
 
-<div class="sticky-0 demo--sticky-disable" data-xt-sticky="{ limit: { top: 0, bottom: '.sticky-1.xt-clone' } }"> <!-- if limit to sticky use .xt-clone -->
+<div class="sticky-0" data-xt-sticky="{ limit: { top: 0, bottom: '.sticky-1.xt-clone' }, matches: { '(min-width: 768px)': { disabled: true } } }"> <!-- if limit to sticky use .xt-clone -->
   <div class="card card-sm ${cardPrimary()}">
     <div class="h4">Sticky</div>
   </div>
@@ -27,7 +27,7 @@ demo.htmlSource = `
   <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
 </div>
 
-<div class="sticky-1 demo--sticky-disable" data-xt-sticky="{ position: 'bottom', limit: { bottom: 50 } }">
+<div class="sticky-1" data-xt-sticky="{ position: 'bottom', limit: { bottom: 50 }, matches: { '(min-width: 768px)': { disabled: true } } }">
   <div class="card card-sm ${cardPrimary()}">
     <div class="h4">Sticky</div>
   </div>

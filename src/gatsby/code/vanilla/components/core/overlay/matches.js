@@ -11,7 +11,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div data-xt-overlay="{ matches: { '(min-width: 768px)': { disabled: true } } }">
+<div data-xt-overlay="{ matches: { '(max-width: 767px)': { disabled: true }, '(min-width: 768px)': { backdrop: false } } }">
 
   <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
     Overlay

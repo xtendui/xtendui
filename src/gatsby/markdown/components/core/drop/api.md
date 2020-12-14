@@ -40,6 +40,23 @@ Xt.mount.push({
 })
 ```
 
+## Match Media
+
+You can add **additional options** that gets added on **match media query**. You can use different queries with different and nested options.
+
+<div class="table-overflow">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `matches:Object`                              | `false`                     | Add additional options on match media query           |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/core/drop/matches">
+  </demovanilla>
+</demo>
+
 ## Util
 
 <div class="table-overflow">

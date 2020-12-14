@@ -34,10 +34,6 @@ module.exports = {
       left: '0 !important',
       right: '0 !important',
     },
-    '.tooltip-disable': {
-      // setup
-      '@apply xt-disable': '',
-    },
   },
   component: theme => ({
     '.tooltip': {

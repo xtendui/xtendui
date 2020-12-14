@@ -21,7 +21,7 @@ demo.htmlSource = `
     </button>
 
     <div class="drop">
-      <div class="w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
+      <div class="card w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
         <nav class="list flex-col">
           <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -43,7 +43,7 @@ demo.htmlSource = `
     <input type="text" class="form-item rounded-md ${inputDefault()}" aria-label="Focus" placeholder="Focus">
 
     <div class="drop">
-      <div class="w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
+      <div class="card w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
         <nav class="list flex-col">
           <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit

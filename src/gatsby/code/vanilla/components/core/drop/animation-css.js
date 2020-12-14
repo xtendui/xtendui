@@ -21,7 +21,7 @@ demo.htmlSource = `
     </button>
 
     <div class="drop group">
-      <div class="w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
+      <div class="card w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
         <nav class="list flex-col">
           <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit

@@ -79,7 +79,7 @@ demo.htmlSource = `
     <div class="drop group" data-xt-duration="700">
       <div class="drop-inner">
         <div class="design-setup rounded-md shadow-drop bg-white ${animDesign}"></div>
-        <div class="w-64 py-3 rounded-md ${cardWhite()} ${animItem}">
+        <div class="card w-64 py-3 rounded-md ${cardWhite()} ${animItem}">
           <nav class="list flex-col">
             <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit

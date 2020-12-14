@@ -48,20 +48,6 @@ module.exports = {
       position: 'relative',
       width: '100%',
     },
-    '.xt-disable': {
-      // setup
-      '&:after': {
-        display: 'none',
-        content: '"xt-disable"',
-      },
-    },
-    '.xt-disable-after-init': {
-      // setup
-      '&:after': {
-        display: 'none',
-        content: '"xt-disable-after-init"',
-      },
-    },
     '.xt-jump': {
       // setup
       '&:not(.in)': {

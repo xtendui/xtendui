@@ -7,7 +7,7 @@ module.exports = {
       zIndex: `calc(${theme('zIndex.top')} - 1)`,
       top: '0',
       height: '100%',
-      '.slider.xt-disabled &': {
+      '.xt-slider-disabled &': {
         display: 'none',
       },
       // styles

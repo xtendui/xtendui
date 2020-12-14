@@ -729,7 +729,7 @@ Xt.getStickyIndex = () => {
 }
 
 /**
- * Merge objects
+ * Merge deep array of objects
  * @param {Array} arr Array of objects to merge
  * @return {Object} Merged object
  */
@@ -743,13 +743,39 @@ Xt.merge = arr => {
           typeof value === 'object' &&
           !Array.isArray(value) && // not array
           !value.nodeName && // not HTML element
-          value !== window // not HTML element
+          value !== window // not window
         ) {
-          // not window
           final[key] = Xt.merge([final[key], value])
         } else {
           final[key] = value
         }
+      }
+    }
+  }
+  return final
+}
+
+/**
+ * Merge deep reset object only when equals to check
+ * @param {Object} start object Start object
+ * @param {Object} reset object Reset object
+ * @param {Object} check object Check with start object to reset with reset object
+ * @return {Object} Merged object
+ */
+Xt.mergeReset = (start, reset, check) => {
+  const final = start
+  for (const [key, value] of Object.entries(check)) {
+    if (
+      value !== null &&
+      typeof value === 'object' &&
+      !Array.isArray(value) && // not array
+      !value.nodeName && // not HTML element
+      value !== window // not window
+    ) {
+      final[key] = Xt.mergeReset(start[key], reset[key], check[key])
+    } else {
+      if (start[key] === check[key]) {
+        final[key] = reset[key]
       }
     }
   }
@@ -1071,7 +1097,7 @@ Xt.eventDelay = (e, element, func, prefix = '', instant = false) => {
       if (
         (e.detail === undefined || e.detail.force === undefined) && // not when setting delay on event
         Xt.dataStorage.get(container, 'xtEventDelayWidth') === w && // when width changes
-        (window.matchMedia('(hover: none)').matches || Xt.dataStorage.get(container, 'xtEventDelayHeight') === h) // when height changes not touch
+        (matchMedia('(hover: none)').matches || Xt.dataStorage.get(container, 'xtEventDelayHeight') === h) // when height changes not touch
       ) {
         // only width no height because it changes on scroll on mobile
         return
@@ -1092,10 +1118,10 @@ Xt.eventDelay = (e, element, func, prefix = '', instant = false) => {
       // func
       func(e)
     } else {
-      clearTimeout(Xt.dataStorage.get(element, `${e.type}${prefix}Timeout`))
+      clearTimeout(Xt.dataStorage.get(element, `${prefix}Timeout`))
       Xt.dataStorage.set(
         element,
-        `${e.type}${prefix}Timeout`,
+        `${prefix}Timeout`,
         setTimeout(() => {
           // func
           func(e)

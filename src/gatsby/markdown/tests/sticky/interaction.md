@@ -134,3 +134,20 @@ You can block the activations with the class `.xt-block` on elements.
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/sticky/block">
   </div>
 </demo>
+
+## Disable
+
+Example of **component disabled on desktop** with [match media](/components/core/toggle/api#match-media).
+
+<div class="table-overflow">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `disabled:Boolean`                              | `false`                     | Disable the component           |
+
+</div>
+
+<demo>
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/sticky/disable">
+  </div>
+</demo>

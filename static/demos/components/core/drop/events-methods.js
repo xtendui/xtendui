@@ -70,7 +70,7 @@ Xt.mount.push({
         const indexTr = targets.length + 1
         const strTr = `
           <div class="drop" title="Target ${indexTr}">
-            <div class="w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
+            <div class="card w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
               <nav class="list flex-col">
                 <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit

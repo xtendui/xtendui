@@ -16,7 +16,7 @@ demo.htmlSource = `
 </button>
 
 <div class="drop" id="drop--unique-1">
-  <div class="w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
+  <div class="card w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
     <nav class="list flex-col">
       <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -32,7 +32,7 @@ demo.htmlSource = `
 </div>
 
 <div class="drop" id="drop--unique-2" data-xt-position="right-end">
-  <div class="w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
+  <div class="card w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
     <nav class="list flex-col">
       <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit

@@ -2,37 +2,6 @@ module.exports = {
   boxShadow: {
     overlay: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
   },
-  utility: {
-    '.overlay-disable': {
-      // setup
-      '@apply xt-disable': '',
-      display: 'flex !important',
-      overflow: 'initial !important',
-      position: 'static',
-      zIndex: 'initial',
-      top: 'auto',
-      left: 'auto',
-      bottom: 'auto',
-      right: 'auto',
-      width: 'auto',
-      height: 'auto',
-      '.overlay-container': {
-        zIndex: 'initial',
-        padding: '0',
-        width: '100%',
-        minHeight: 'auto',
-        maxWidth: 'none',
-      },
-      '.overlay-inner': {
-        '> .card': {
-          '@apply card-disable !important': '',
-        },
-      },
-      '> .backdrop': {
-        display: 'none !important',
-      },
-    },
-  },
   component: theme => ({
     '.overlay': {
       // setup
@@ -81,6 +50,39 @@ module.exports = {
       position: 'relative',
       zIndex: theme('zIndex.overlay'),
       width: '100%',
+    },
+    '.xt-overlay-disabled': {
+      // setup
+      'a&, button&': {
+        display: 'none',
+      },
+      '.overlay&': {
+        display: 'flex !important',
+        overflow: 'initial !important',
+        position: 'static',
+        zIndex: 'initial',
+        top: 'auto',
+        left: 'auto',
+        bottom: 'auto',
+        right: 'auto',
+        width: 'auto',
+        height: 'auto',
+        '.overlay-container': {
+          zIndex: 'initial',
+          padding: '0',
+          width: '100%',
+          minHeight: 'auto',
+          maxWidth: 'none',
+        },
+        '.overlay-inner': {
+          '> .card': {
+            '@apply card-disable !important': '',
+          },
+        },
+        '> .backdrop': {
+          display: 'none !important',
+        },
+      },
     },
   }),
 }

@@ -12,31 +12,6 @@ module.exports = {
       left: '0 !important',
       right: '0 !important',
     },
-    '.drop-disable': {
-      // setup
-      '@apply xt-disable': '',
-      position: 'initial',
-      '> a, > button': {
-        display: 'none',
-      },
-      '> .drop': {
-        display: 'inline-block !important',
-        position: 'relative',
-        top: 'auto',
-        left: 'auto',
-        right: 'auto',
-        bottom: 'auto',
-        '> *:first-child': {
-          zIndex: 'initial',
-        },
-        '> .design-setup': {
-          display: 'none',
-        },
-        '> .card': {
-          '@apply card-disable !important': '',
-        },
-      },
-    },
   },
   component: theme => ({
     '.drop': {
@@ -86,6 +61,29 @@ module.exports = {
       },
       '[data-popper-placement^="right"] &': {
         left: theme('spacing.3'),
+      },
+    },
+    '.xt-drop-disabled': {
+      // setup
+      'a&, button&': {
+        display: 'none',
+      },
+      '.drop&': {
+        display: 'inline-block !important',
+        position: 'relative',
+        top: 'auto',
+        left: 'auto',
+        right: 'auto',
+        bottom: 'auto',
+        '> *:first-child': {
+          zIndex: 'initial',
+        },
+        '> .design-setup': {
+          display: 'none',
+        },
+        '> .card': {
+          '@apply card-disable !important': '',
+        },
       },
     },
   }),

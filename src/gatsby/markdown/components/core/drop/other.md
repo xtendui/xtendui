@@ -15,23 +15,6 @@ You can put **any content** inside, here are some examples.
   </demovanilla>
 </demo>
 
-## Disable
-
-You can disable styles and javascript using `.drop-disable`.
-
-<div class="table-overflow">
-
-|                      | Syntax                          | Mixin            | Variants               | Description                   |
-| ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Utility                  | `.drop-disable`       | `drop-disable !important`                | `responsive`                | Reset drop styles and javascript            |
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/core/drop/disable">
-  </demovanilla>
-</demo>
-
 ## Popperjs
 
 You can **pass an option** to [popperjs](https://popper.js.org/docs/v2/) for initialization.

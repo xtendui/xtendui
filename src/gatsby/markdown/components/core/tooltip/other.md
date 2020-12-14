@@ -15,23 +15,6 @@ You can put **any content** inside, here are some examples.
   </demovanilla>
 </demo>
 
-## Disable
-
-You can disable styles and javascript using `.tooltip-disable`.
-
-<div class="table-overflow">
-
-|                      | Syntax                          | Mixin            | Variants               | Description                   |
-| ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Utility                  | `.tooltip-disable`       | `tooltip-disable !important`                | `responsive`                | Reset tooltip styles and javascript            |
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/core/tooltip/disable">
-  </demovanilla>
-</demo>
-
 ## Popperjs
 
 You can **pass an option** to [popperjs](https://popper.js.org/docs/v2/) for initialization.

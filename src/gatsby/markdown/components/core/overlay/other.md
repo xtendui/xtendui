@@ -24,23 +24,6 @@ You can put **any content** inside, here are some examples.
   </demovanilla>
 </demo>
 
-## Disable
-
-You can disable styles and javascript using `.overlay-disable`.
-
-<div class="table-overflow">
-
-|                      | Syntax                          | Mixin            | Variants               | Description                   |
-| ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Utility                  | `.overlay-disable`       | `overlay-disable !important`                | `responsive`                | Reset overlay styles and javascript            |
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/core/overlay/disable">
-  </demovanilla>
-</demo>
-
 ## Other
 
 <div class="table-overflow">

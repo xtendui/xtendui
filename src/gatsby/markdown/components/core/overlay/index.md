@@ -28,9 +28,6 @@ module.exports = {
     },
     xtendui: {
       overlay: {
-        utility: theme => ({
-          // modify utilities
-        }),
         component: theme => ({
           // modify components
         }),

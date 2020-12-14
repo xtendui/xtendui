@@ -6,24 +6,6 @@ title: "Other"
 date: "2005-10-10"
 ---
 
-## Disable
-
-You can disable javascript using `.xt-disable` and `.xt-disable-after-init`.
-
-<div class="table-overflow">
-
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.xt-disable`                     | `xt-disable`                | Assign to `object` to disable component            |
-| Component                  | `.xt-disable-after-init`                     | `xt-disable-after-init`                | Assign to `object` to disable component after init            |
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/core/toggle/disable">
-  </demovanilla>
-</demo>
-
 ## Media loaded
 
 If you want to animate on image loaded, with `mediaLoaded: true` use the class `.xt-medialoaded` or the js event `medialoaded.xt.toggle`.

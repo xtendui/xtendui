@@ -6,25 +6,6 @@ title: "Other"
 date: "2005-10-10"
 ---
 
-## Disable
-
-You can disable styles and javascript using `.slider-disable`.
-
-It also hides automatically **pagination** and **navigation** **wrap** and slides not `in`.
-
-<div class="table-overflow">
-
-|                      | Syntax                          | Mixin            | Variants               | Description                   |
-| ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Utility                  | `.slider-disable`       | `slider-disable`                | `responsive`                | Disable the slider            |
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/core/slider/disable">
-  </demovanilla>
-</demo>
-
 ## Media loaded
 
 If you want to animate on image loaded, with `mediaLoaded: true` use the class `.xt-medialoaded` or the js event `medialoaded.xt.slider`.
@@ -57,14 +38,14 @@ Slider with `overflowAuto:Boolean` automatically disable when not overflowing. I
 
 </div>
 
-Use the class `.xt-overflow-auto` to assign horizontal alignment when not overflowing.
+Use the class `.xt-overflow-auto` to **style horizontal alignment** when not overflowing.
 
 <demo>
   <demovanilla src="vanilla/components/core/slider/overflow-auto">
   </demovanilla>
 </demo>
 
-You can disable **overflow auto** behaviour with `overflowAuto: false`.
+You can disable the **automatic overflow auto** behaviour with `overflowAuto: false`.
 
 <demo>
   <demovanilla src="vanilla/components/core/slider/overflow-auto-false">
@@ -73,13 +54,13 @@ You can disable **overflow auto** behaviour with `overflowAuto: false`.
 
 ## Expand
 
-To disable and expand a slider use `.slider-expand` util.
+To **disable and expand** a slider use `.slider-expand` and [match media](/components/core/slider/api#match-media) (use narrow screen to see it in action).
 
 <div class="table-overflow">
 
-|                      | Syntax                          | Mixin            | Variants               | Description                   |
+|                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Utility                  | `.slider-expand`       | `slider-expand`                | `responsive`                | Disable the slider and expand the slides            |
+| Component                  | `.slider-expand`       | `slider-expand`                | Expand the slider            |
 
 </div>
 
@@ -90,7 +71,7 @@ To disable and expand a slider use `.slider-expand` util.
 
 ## Touch Overflow
 
-To have browser overflow scroll on touch devices use this css (use touch device to see it in action).
+To have **browser overflow scroll** on **touch devices** use this **css media query** and [match media](/components/core/slider/api#match-media) (use touch device to see it in action).
 
 <demo>
   <demovanilla src="vanilla/components/core/slider/touch-overflow">

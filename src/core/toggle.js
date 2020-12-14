@@ -57,7 +57,6 @@ class Toggle {
     self.destroyElements = [document, window, self.object]
     // init
     self.initVars()
-    self.initSetup()
     self.initLogic()
   }
 
@@ -69,7 +68,7 @@ class Toggle {
     // options
     self.optionsDefault = Xt.merge([self.constructor.optionsDefaultSuper, self.constructor.optionsDefault])
     self.optionsDefault = Xt.merge([self.optionsDefault, Xt.optionsGlobal[self.componentName]])
-    self.options = Xt.merge([self.optionsDefault, self.optionsCustom])
+    self.optionsInitial = self.options = Xt.merge([self.optionsDefault, self.optionsCustom])
     // classes
     self.classes = self.options.class ? [...self.options.class.split(' ')] : []
     self.classesActive = self.options.classActive ? [...self.options.classActive.split(' ')] : []
@@ -77,6 +76,22 @@ class Toggle {
     self.classesDone = self.options.classDone ? [...self.options.classDone.split(' ')] : []
     self.classesInitial = self.options.classInitial ? [...self.options.classInitial.split(' ')] : []
     self.classesInverse = self.options.classInverse ? [...self.options.classInverse.split(' ')] : []
+  }
+
+  /**
+   * init logic
+   * @param {Boolean} saveCurrents
+   */
+  initLogic(saveCurrents = true) {
+    const self = this
+    // init
+    self.initSetup()
+    self.initMatch()
+    self.initScope()
+    self.initAria()
+    self.initStatus()
+    self.initEvents()
+    self.initStart(saveCurrents)
   }
 
   /**
@@ -102,27 +117,12 @@ class Toggle {
     }
     // final namespace
     self.ns = self.ns.replace(/^[^a-z]+|[ ,#_:.-]+/gi, '')
-    // currents array based on namespace (so shared between Xt objects)
-    self.setCurrents([])
     // xtNamespace linked components
     const arr = Xt.dataStorage.get(self.ns, 'xtNamespace') || []
     arr.push(self)
     Xt.dataStorage.set(self.ns, 'xtNamespace', arr)
-  }
-
-  /**
-   * init logic
-   * @param {Boolean} saveCurrents
-   */
-  initLogic(saveCurrents = true) {
-    const self = this
-    // init
-    self.enable()
-    self.initScope()
-    self.initAria()
-    self.eventStatusHandler()
-    self.initEvents()
-    self.initStart(saveCurrents)
+    // currents array based on namespace (so shared between Xt objects)
+    self.setCurrents([])
   }
 
   /**
@@ -415,9 +415,6 @@ class Toggle {
   initEvents() {
     const self = this
     const options = self.options
-    // status
-    const checkHandler = Xt.dataStorage.put(window, `resize/check/${self.ns}`, self.eventStatusHandler.bind(self).bind(self))
-    addEventListener('resize', checkHandler)
     // elements
     for (const el of self.elements) {
       // event on
@@ -947,11 +944,14 @@ class Toggle {
       // xtNamespace linked components
       const final = []
       const selfs = Xt.dataStorage.get(self.ns, 'xtNamespace')
-      for (const item of selfs) {
-        // choose element by group
-        final.push(...item.getElementsGroups())
+      if (selfs.length) {
+        for (const item of selfs) {
+          // choose element by group
+          final.push(...item.getElementsGroups())
+        }
+        return final
       }
-      return final
+      return []
     } else if (self.mode === 'multiple') {
       // choose element by group
       let final
@@ -2796,14 +2796,58 @@ class Toggle {
   }
 
   //
-  // status
+  // match and status
   //
 
   /**
-   * status handler
+   * init match
+   */
+  initMatch() {
+    const self = this
+    const options = self.options
+    // matches
+    if (self.initial === undefined) {
+      if (options.matches) {
+        const mqs = Object.entries(options.matches)
+        if (mqs.length) {
+          for (const [key, value] of mqs) {
+            // matches
+            const mq = matchMedia(key)
+            self.eventMatch(value, mq, true)
+            mq.removeListener(self.eventMatch.bind(self).bind(self, value))
+            mq.addListener(self.eventMatch.bind(self).bind(self, value))
+          }
+        }
+      }
+    }
+  }
+
+  /**
+   * match
+   * @param {Object} mq Match media query
+   * @param {Object} value Match media value
+   * @param {Boolean} skipReinit Skip reinit
+   */
+  eventMatch(value, mq, skipReinit = false) {
+    const self = this
+    // replace options
+    if (mq.matches) {
+      self.options = Xt.merge([self.options, value])
+    } else {
+      self.options = Xt.mergeReset(self.options, self.optionsInitial, value)
+    }
+    // reinit one time only with raf
+    if (!skipReinit) {
+      cancelAnimationFrame(Xt.dataStorage.get(self.object, `${self.ns}MatchFrame`))
+      Xt.dataStorage.set(self.object, `${self.ns}MatchFrame`, requestAnimationFrame(self.eventReinitHandler.bind(self)))
+    }
+  }
+
+  /**
+   * init status
    * @param {Event} e
    */
-  eventStatusHandler(e = null) {
+  initStatus(e = null) {
     const self = this
     // check
     let check = self.object
@@ -2829,28 +2873,14 @@ class Toggle {
    */
   eventStatus() {
     const self = this
+    const options = self.options
     // check
-    let check = self.object
-    if (self.mode === 'unique') {
-      check = self.targets[0]
-    }
-    // status
-    const str = getComputedStyle(check, ':after').getPropertyValue('content').replace(/['"]+/g, '')
-    if (
-      check instanceof HTMLElement && // @FIX not on window
-      str === 'xt-disable-after-init'
-    ) {
-      // @FIX do calculation first
-      const afterInitDisable = () => {
-        self.object.removeEventListener(`init.${self.componentNs}`, afterInitDisable)
-        // @FIX after init activation
-        requestAnimationFrame(() => {
-          self.disable()
-        })
+    if (options.disabled) {
+      if (!options.disableAfterInit) {
+        self.disable()
+      } else {
+        self.object.addEventListener(`init.${self.componentNs}`, self.afterInitDisable.bind(self))
       }
-      self.object.addEventListener(`init.${self.componentNs}`, afterInitDisable)
-    } else if (str === 'xt-disable') {
-      self.disable()
     } else {
       self.enable()
     }
@@ -2866,11 +2896,34 @@ class Toggle {
       // enable
       self.disabled = false
       if (!options.classSkip) {
-        self.object.classList.remove('xt-disabled')
+        self.object.classList.remove(`${self.componentName}-disabled`)
+      }
+      if (options.classSkip !== true && !options.classSkip['elements']) {
+        for (const el of self.elements) {
+          el.classList.remove(`${self.componentName}-disabled`)
+        }
+      }
+      if (options.classSkip !== true && !options.classSkip['targets']) {
+        for (const tr of self.targets) {
+          tr.classList.remove(`${self.componentName}-disabled`)
+        }
       }
       // listener dispatch
       self.object.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
     }
+  }
+
+  /**
+   * afterInitDisable
+   */
+  afterInitDisable() {
+    const self = this
+    // remove
+    self.object.removeEventListener(`init.${self.componentNs}`, self.afterInitDisable)
+    // @FIX after init activation
+    requestAnimationFrame(() => {
+      self.disable()
+    })
   }
 
   /**
@@ -2883,7 +2936,7 @@ class Toggle {
       // closeOnDisable
       if (options.closeOnDisable) {
         // @FIX appendTo targets
-        for (const target of self.targets) {
+        for (const target of self.targets.filter(x => self.hasCurrent(x))) {
           // listener dispatch
           target.dispatchEvent(new CustomEvent(`off.trigger.${self.componentNs}`))
         }
@@ -2893,7 +2946,17 @@ class Toggle {
       // disable
       self.disabled = true
       if (!options.classSkip) {
-        self.object.classList.add('xt-disabled')
+        self.object.classList.add(`${self.componentName}-disabled`)
+      }
+      if (options.classSkip !== true && !options.classSkip['elements']) {
+        for (const el of self.elements) {
+          el.classList.add(`${self.componentName}-disabled`)
+        }
+      }
+      if (options.classSkip !== true && !options.classSkip['targets']) {
+        for (const tr of self.targets) {
+          tr.classList.add(`${self.componentName}-disabled`)
+        }
       }
       // listener dispatch
       self.object.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
@@ -2989,8 +3052,10 @@ class Toggle {
     }
     // xtNamespace linked components
     const selfs = Xt.dataStorage.get(self.ns, 'xtNamespace')
-    const newSelfs = selfs.filter(x => x !== self)
-    Xt.dataStorage.set(self.ns, 'xtNamespace', newSelfs)
+    if (selfs.length) {
+      const newSelfs = selfs.filter(x => x !== self)
+      Xt.dataStorage.set(self.ns, 'xtNamespace', newSelfs)
+    }
     // weak
     if (!weak) {
       // initialized class
@@ -3071,6 +3136,9 @@ Toggle.optionsDefaultSuper = {
     pause: false,
   },
   // other
+  matches: false,
+  disabled: false,
+  disableAfterInit: false,
   loop: true,
   jump: false,
   navigation: false,

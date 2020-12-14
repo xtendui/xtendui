@@ -13,7 +13,6 @@
 @import 'xtendui/static/demos/components/core/form/variant-primary.css';
 @import 'xtendui/static/demos/components/core/overlay/animation-css.css';
 @import 'xtendui/static/demos/components/core/overlay/class-html.css';
-@import 'xtendui/static/demos/components/core/overlay/disable.css';
 @import 'xtendui/static/demos/components/core/scroll/block.css';
 @import 'xtendui/static/demos/components/core/scroll/delay.css';
 @import 'xtendui/static/demos/components/core/scroll/distance.css';
@@ -24,13 +23,11 @@
 @import 'xtendui/static/demos/components/core/scroll/mode-outside-once.css';
 @import 'xtendui/static/demos/components/core/scroll/mode-outside.css';
 @import 'xtendui/static/demos/components/core/scroll/mode-responsive.css';
-@import 'xtendui/static/demos/components/core/slider/disable.css';
 @import 'xtendui/static/demos/components/core/slider/expand.css';
 @import 'xtendui/static/demos/components/core/slider/media-loaded.css';
 @import 'xtendui/static/demos/components/core/slider/overflow-auto.css';
 @import 'xtendui/static/demos/components/core/slider/progress.css';
 @import 'xtendui/static/demos/components/core/slider/touch-overflow.css';
-@import 'xtendui/static/demos/components/core/sticky/disable.css';
 @import 'xtendui/static/demos/components/core/toggle/animation-css-inverse.css';
 @import 'xtendui/static/demos/components/core/toggle/animation-css.css';
 @import 'xtendui/static/demos/components/core/toggle/class.css';
@@ -39,7 +36,6 @@
 @import 'xtendui/static/demos/components/core/toggle/timing.css';
 @import 'xtendui/static/demos/components/core/tooltip/animation-css-multiple.css';
 @import 'xtendui/static/demos/components/core/tooltip/animation-css.css';
-@import 'xtendui/static/demos/components/core/tooltip/disable.css';
 @import 'xtendui/static/demos/test/demo-vanilla-iframe.css';
 @import 'xtendui/static/demos/test/demo-vanilla.css';
 @import 'xtendui/static/demos/themes/gallery/fashion-gallery-v1.css';

@@ -149,3 +149,20 @@ You can block the activations with the class `.xt-block` on elements.
 | Component                  | `.xt-block`                     | `NOT POSSIBLE`                | Block scroll on element            |
 
 </div>
+
+## Disable
+
+Example of **component disabled on desktop** with [match media](/components/core/drop/api#match-media).
+
+<div class="table-overflow">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `disabled:Boolean`                              | `false`                     | Disable the component           |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/core/drop/disable">
+  </demovanilla>
+</demo>

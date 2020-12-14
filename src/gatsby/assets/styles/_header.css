@@ -56,38 +56,6 @@
       opacity: 0.3;
     }
   }
-  @media (min-width: theme('screens.lg')) {
-    /*@apply overlay-disable;*/
-    &:after {
-      display: none;
-      content: "xt-disable";
-    }
-    display: flex !important;
-    overflow: initial !important;
-    position: static;
-    z-index: initial;
-    top: auto;
-    left: auto;
-    bottom: auto;
-    right: auto;
-    width: auto;
-    height: auto;
-    .overlay-container {
-      z-index: initial;
-      padding: 0;
-      width: 100%;
-      min-height: auto;
-      max-width: none;
-    }
-    .overlay-inner {
-      > .card {
-        @apply card-disable !important;
-      }
-    }
-    > .backdrop {
-      display: none !important;
-    }
-  }
 }
 
 /**
@@ -98,24 +66,6 @@
   @media (max-width: calc(theme('screens.lg') - 1px)) {
     html.demo-full-open & {
       display: none;
-    }
-  }
-  @screen lg {
-    /*@apply sticky-disable;*/
-    &:after {
-      display: none;
-      content: "xt-disable";
-    }
-    position: relative !important;
-    top: initial !important;
-    left: initial !important;
-    right: initial !important;
-    bottom: initial !important;
-    &.xt-clone {
-      display: none !important;
-    }
-    &:not(.xt-clone) {
-      position: relative !important;
     }
   }
 }

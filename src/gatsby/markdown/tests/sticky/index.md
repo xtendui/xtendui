@@ -23,9 +23,6 @@ module.exports = {
   theme:{
     xtendui: {
       sticky: {
-        utility: theme => ({
-          // modify utilities
-        }),
         component: theme => ({
           // modify components
         }),

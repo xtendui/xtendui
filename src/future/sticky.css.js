@@ -1,21 +1,4 @@
 module.exports = {
-  utility: {
-    '.sticky-disable': {
-      // setup
-      '@apply xt-disable': '',
-      position: 'relative !important',
-      top: 'initial !important',
-      left: 'initial !important',
-      right: 'initial !important',
-      bottom: 'initial !important',
-      '&.xt-clone': {
-        display: 'none !important',
-      },
-      '&:not(.xt-clone)': {
-        position: 'relative !important',
-      },
-    },
-  },
   component: theme => ({
     '.xt-sticky': {
       // setup
@@ -116,7 +99,19 @@ module.exports = {
       // styles
       opacity: '0',
     },
-    '.sticky-disable': {
+    '.xt-sticky-disabled': {
+      // setup
+      position: 'relative !important',
+      top: 'initial !important',
+      left: 'initial !important',
+      right: 'initial !important',
+      bottom: 'initial !important',
+      '&.xt-clone': {
+        display: 'none !important',
+      },
+      '&:not(.xt-clone)': {
+        position: 'relative !important',
+      },
       // styles
       opacity: '1 !important',
     },

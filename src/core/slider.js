@@ -98,7 +98,7 @@ class Slider extends Xt.Toggle {
       const mqs = Object.entries(options.groupMq)
       if (mqs.length) {
         for (const [key, value] of mqs) {
-          if (window.matchMedia(key).matches) {
+          if (matchMedia(key).matches) {
             draggerWidthAvailable = draggerWidth * value
           }
         }
@@ -146,8 +146,9 @@ class Slider extends Xt.Toggle {
     self.detail.fixNegativeMargin = Xt.dataStorage.get(self.groupMq[0][0], `${self.ns}SlideLeft`)
     // @FIX disable slider if not overflowing
     if (options.overflowAuto && totalCount >= 0) {
-      // disable
       self.object.classList.add('xt-overflow-auto')
+      // afterInitDisable
+      self.object.addEventListener(`init.${self.componentNs}`, self.afterInitDisable.bind(self))
     }
     // drag wrap
     const wrapFirst = []
@@ -1325,6 +1326,7 @@ Slider.optionsDefault = {
     frictionLimit: 1.5,
   },
   // other
+  disableAfterInit: true,
   loop: true,
   jump: true,
   jumpOverflow: false,

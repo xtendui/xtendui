@@ -38,7 +38,7 @@ animationResponsive()
  */
 
 const changeMq = () => {
-  const colorSchemeMq = window.matchMedia('(prefers-color-scheme: dark)')
+  const colorSchemeMq = matchMedia('(prefers-color-scheme: dark)')
   const favicon = document.querySelector('link[rel="icon"]')
   if (favicon) {
     favicon.remove()
