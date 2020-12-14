@@ -61,7 +61,7 @@ For advanced options see javascript file source code `xtendui/src/addons/googlel
 
 ## Listen
 
-Listen to events on **DOM elements**.
+Listen to events.
 
 <div class="table-overflow">
 

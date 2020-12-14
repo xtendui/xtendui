@@ -8,7 +8,7 @@ date: "1980-05-05"
 
 ## Initialization
 
-Initialize automatically within markup with `[data-xt-scroll="{ <options> }"]` on the **object** (the DOM element you assigned the component).
+Initialize automatically **within markup** with `[data-xt-scroll="{ <options> }"]` on the **object** (the DOM element you assigned the component).
 
 Or initialize with **javascript**.
 
@@ -70,38 +70,51 @@ document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('o
 
 ## Listen
 
-Listen to events on **DOM elements**.
+Listen to events on **single Nodes**.
 
 ```js
 const el = document.querySelector('#my-element-or-target')
 
-const eventChange = e => {
+const eventOn = e => {
   if (e.target === el) {
-  // logic
+    // logic
   }
 }
 
 el.addEventListener('change.xt.scroll', eventOn)
 ```
 
-Listen to events delegation with **useCapture** this way:
+Listen to events on **elements or targets**.
 
 ```js
 let object = document.querySelector('#my-object')
 let self = Xt.get('xt-scroll', object)
 
-const eventChange = e => {
-  const element = e.target
+const eventOn = e => {
+  const tr = e.target
+  // logic
+}
+
+for (const target of self.targets) {
+  target.addEventListener('change.xt.scroll', eventOn)
+}
+```
+
+Listen to events delegation with **useCapture**.
+
+```js
+let object = document.querySelector('#my-object')
+let self = Xt.get('xt-scroll', object)
+
+const eventOn = e => {
+  const tr = e.target
   // useCapture delegation
-  if (self.elements.includes(element)) {
-    // logic
-  }
-  if (self.targets.includes(element)) {
+  if (self.targets.includes(tr)) {
     // logic
   }
 }
 
-object.addEventListener('change.xt.scroll', eventChange, true)
+object.addEventListener('change.xt.scroll', eventOn, true)
 ```
 
 <div class="table-overflow">

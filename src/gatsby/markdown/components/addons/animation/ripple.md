@@ -56,7 +56,7 @@ Here are the main **javascript options**.
 
 ## Listen
 
-Listen to events on **DOM elements**.
+Listen to events.
 
 <div class="table-overflow">
 
@@ -86,7 +86,7 @@ Access properties by getting component object.
 
 ## Initialization
 
-Initialize automatically within markup with `[data-xt-ripple="{ <options> }"]` on the **object** (the DOM element you assigned the component).
+Initialize automatically **within markup** with `[data-xt-ripple="{ <options> }"]` on the **object** (the DOM element you assigned the component).
 
 Or initialize with **javascript**.
 
