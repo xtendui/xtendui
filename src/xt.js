@@ -1118,7 +1118,6 @@ Xt.eventDelay = (e, element, func, prefix = '', instant = false) => {
       // func
       func(e)
     } else {
-      clearTimeout(Xt.dataStorage.get(element, `${prefix}Timeout`))
       Xt.dataStorage.set(
         element,
         `${prefix}Timeout`,
@@ -1132,6 +1131,7 @@ Xt.eventDelay = (e, element, func, prefix = '', instant = false) => {
     // func
     func(e)
   }
+  clearTimeout(Xt.dataStorage.get(element, `${prefix}Timeout`))
 }
 
 Xt.dataStorage.set(document.documentElement, 'xtEventDelayWidth', window.innerWidth)

@@ -240,9 +240,12 @@ class Toggle {
     if (!options.classSkip) {
       self.object.classList.add(self.componentName)
     }
-    // listener dispatch
+    // keep the same level of raf as others
     requestAnimationFrame(() => {
-      self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+      requestAnimationFrame(() => {
+        // listener dispatch
+        self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+      })
     })
   }
 
@@ -1246,7 +1249,7 @@ class Toggle {
     const self = this
     const options = self.options
     // disabled
-    if (self.disabled) {
+    if (self.disabled && !self.initial) {
       return false
     }
     // toggle
@@ -1302,7 +1305,7 @@ class Toggle {
     const self = this
     const options = self.options
     // disabled
-    if (self.disabled) {
+    if (self.disabled && !self.initial) {
       return false
     }
     // toggle
@@ -2854,7 +2857,6 @@ class Toggle {
     if (self.mode === 'unique') {
       check = self.targets[0]
     }
-    // triggering e.detail.container
     if (!e || !e.detail || !e.detail.container || e.detail.container.contains(check)) {
       Xt.eventDelay(
         e,
@@ -2874,16 +2876,17 @@ class Toggle {
   eventStatus() {
     const self = this
     const options = self.options
-    // check
-    if (options.disabled) {
-      if (!options.disableAfterInit) {
-        self.disable()
-      } else {
-        self.object.addEventListener(`init.${self.componentNs}`, self.afterInitDisable.bind(self))
-      }
-    } else {
-      self.enable()
-    }
+    // keep the same level of raf as others
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        // check
+        if (options.disabled) {
+          self.disable()
+        } else {
+          self.enable()
+        }
+      })
+    })
   }
 
   /**
@@ -2911,19 +2914,6 @@ class Toggle {
       // listener dispatch
       self.object.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
     }
-  }
-
-  /**
-   * afterInitDisable
-   */
-  afterInitDisable() {
-    const self = this
-    // remove
-    self.object.removeEventListener(`init.${self.componentNs}`, self.afterInitDisable)
-    // @FIX after init activation
-    requestAnimationFrame(() => {
-      self.disable()
-    })
   }
 
   /**
@@ -2986,6 +2976,9 @@ class Toggle {
         () => {
           // handler
           self.reinit()
+          if (self.componentName === 'xt-slider') {
+            console.log(self.object, self.options.disabled, self.disabled)
+          }
         },
         `${self.ns}Reinit`
       )

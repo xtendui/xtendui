@@ -147,8 +147,7 @@ class Slider extends Xt.Toggle {
     // @FIX disable slider if not overflowing
     if (options.overflowAuto && totalCount >= 0) {
       self.object.classList.add('xt-overflow-auto')
-      // afterInitDisable
-      self.object.addEventListener(`init.${self.componentNs}`, self.afterInitDisable.bind(self))
+      self.disable()
     }
     // drag wrap
     const wrapFirst = []
@@ -608,8 +607,8 @@ class Slider extends Xt.Toggle {
     const self = this
     const options = self.options
     // disabled
-    if (self.disabled) {
-      return false
+    if (self.disabled && !self.initial) {
+      return
     }
     // toggle
     if (force || (self.checkOn(element) && (!e || !e.type || e.type !== `off.trigger.${self.componentNs}`))) {
