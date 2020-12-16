@@ -119,7 +119,7 @@ module.exports = {
       },
     },
     '.xt-slider-disabled': {
-      '.slider&': {
+      '&.slider': {
         // setup
         '.slider-pagination, [data-xt-nav]': {
           display: 'none !important',

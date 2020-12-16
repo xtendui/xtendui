@@ -56,10 +56,12 @@ module.exports = {
       'a&, button&': {
         display: 'none',
       },
-      '.overlay&': {
+      '&.overlay': {
         display: 'flex !important',
-        overflow: 'initial !important',
         position: 'static',
+        'html.xt-scrollbar &': {
+          overflow: 'initial !important',
+        },
         zIndex: 'initial',
         top: 'auto',
         left: 'auto',

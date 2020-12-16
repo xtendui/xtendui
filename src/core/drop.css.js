@@ -68,7 +68,7 @@ module.exports = {
       'a&, button&': {
         display: 'none',
       },
-      '.drop&': {
+      '&.drop': {
         display: 'inline-block !important',
         position: 'relative',
         top: 'auto',
