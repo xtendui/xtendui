@@ -2976,9 +2976,6 @@ class Toggle {
         () => {
           // handler
           self.reinit()
-          if (self.componentName === 'xt-slider') {
-            console.log(self.object, self.options.disabled, self.disabled)
-          }
         },
         `${self.ns}Reinit`
       )

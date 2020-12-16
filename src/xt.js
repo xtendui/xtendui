@@ -20,9 +20,9 @@ Xt.mount = []
 Xt.unmount = []
 Xt.currents = {} // Xt currents based on namespace (so shared between Xt objects)
 Xt.optionsGlobal = {}
-Xt.resizeDelay = 500
+Xt.resizeDelay = 250
 Xt.scrollDelay = false
-Xt.medialoadedDelay = 500
+Xt.medialoadedDelay = 250
 Xt.stickyIndex = 800
 Xt.scrollRestoration = 'auto'
 Xt.focusables = 'a, button, details, input, iframe, select, textarea, .btn-close'
@@ -1088,6 +1088,8 @@ Xt.visible = el => {
  */
 Xt.eventDelay = (e, element, func, prefix = '', instant = false) => {
   const container = document.documentElement
+  cancelAnimationFrame(Xt.dataStorage.get(element, `${prefix}Frame`))
+  clearTimeout(Xt.dataStorage.get(element, `${prefix}Timeout`))
   if (e && e.type && (e.type === 'resize' || e.type === 'scroll')) {
     const delay = e.detail !== undefined && e.detail.delay !== undefined ? e.detail.delay : instant ? 0 : Xt[`${e.type}Delay`]
     if (e.type === 'resize') {
@@ -1115,8 +1117,7 @@ Xt.eventDelay = (e, element, func, prefix = '', instant = false) => {
     }
     // delay
     if (!delay) {
-      // func
-      func(e)
+      Xt.dataStorage.set(element, `${prefix}Frame`, requestAnimationFrame(func.bind(e)))
     } else {
       Xt.dataStorage.set(
         element,
@@ -1128,10 +1129,8 @@ Xt.eventDelay = (e, element, func, prefix = '', instant = false) => {
       )
     }
   } else {
-    // func
-    func(e)
+    Xt.dataStorage.set(element, `${prefix}Frame`, requestAnimationFrame(func.bind(e)))
   }
-  clearTimeout(Xt.dataStorage.get(element, `${prefix}Timeout`))
 }
 
 Xt.dataStorage.set(document.documentElement, 'xtEventDelayWidth', window.innerWidth)
