@@ -155,21 +155,26 @@ body {
 
 .gatsby_listing-items {
   .gatsby_listing .h-block + & {
-    @apply my-10;
+    @apply my-5;
+    @screen sm {
+      @apply my-10;
+    }
   }
   .gatsby_listing-group:last-child & {
     @apply mb-0;
   }
   > .row {
-    @media (max-width: calc(theme('screens.sm') - 1px)) {
-      @apply row-x-1;
-      @apply -m-4;
-    }
+    @apply -m-3;
     @screen sm {
-      @apply -m-6;
+      @apply -m-5;
     }
-    .gatsby_site_article_foot & {
-      @apply mt-0 mb-4;
+  }
+}
+
+.gatsby_site_article_foot {
+  .gatsby_listing-items {
+    > .row {
+      @apply mt-0 mb-4 !important;
     }
   }
 }
