@@ -171,6 +171,20 @@ class Sticky extends Xt.Toggle {
    * @param {Event} e
    */
   eventFocusinHandler(e) {
+    const self = this
+    // handler
+    for (const tr of self.targets) {
+      const el = self.getElements(tr)[0]
+      // show element if is hiding on focus
+      if (el.classList.contains('sticky-hide')) {
+        const active = el.contains(e.target)
+        if (active) {
+          el.style.top = '0px'
+        } else {
+          el.style.top = `${Xt.dataStorage.get(el, `${self.ns}AddOld`)}px`
+        }
+      }
+    }
   }
 
   //
