@@ -94,19 +94,12 @@ class Slider extends Xt.Toggle {
     const draggerWidth = self.dragger ? self.detail.draggerWidth : self.detail.objectWidth
     let draggerWidthAvailable = 0
     // draggerWidthAvailable
-    if (options.groupMq) {
-      const mqs = Object.entries(options.groupMq)
-      if (mqs.length) {
-        for (const [key, value] of mqs) {
-          if (matchMedia(key).matches) {
-            draggerWidthAvailable = draggerWidth * value
-          }
-        }
-      }
+    if (options.group) {
+      draggerWidthAvailable = draggerWidth * options.group
     }
-    // groupMqInitial
-    self.groupMq = []
-    self.groupMq.push([])
+    // groupInitial
+    self.group = []
+    self.group.push([])
     let currentCount = draggerWidthAvailable
     let totalCount = draggerWidth
     let doneFirst = false
@@ -124,26 +117,26 @@ class Slider extends Xt.Toggle {
       currentCount -= targetWidth
       totalCount -= targetWidth
       // overflow
-      let currentGroup = self.groupMq.length - 1
-      if (currentCount < 0 && self.groupMq[currentGroup].length) {
-        self.groupMq.push([])
-        currentGroup = self.groupMq.length - 1
+      let currentGroup = self.group.length - 1
+      if (currentCount < 0 && self.group[currentGroup].length) {
+        self.group.push([])
+        currentGroup = self.group.length - 1
         currentCount = draggerWidthAvailable
         currentCount -= targetWidth
       }
       // @FIX when dragger not :visible with draggerWidth === 0 groups of 1 slide
       if (draggerWidth === 0 && doneFirst) {
-        self.groupMq.push([])
-        currentGroup = self.groupMq.length - 1
+        self.group.push([])
+        currentGroup = self.group.length - 1
       }
       doneFirst = true
       // assign group
-      self.groupMq[currentGroup].push(target)
+      self.group[currentGroup].push(target)
       target.setAttribute('data-xt-group', `${self.ns}-${currentGroup}`)
     }
-    self.groupMqInitial = self.groupMq
+    self.groupInitial = self.group
     // @FIX position values negative margins
-    self.detail.fixNegativeMargin = Xt.dataStorage.get(self.groupMq[0][0], `${self.ns}SlideLeft`)
+    self.detail.fixNegativeMargin = Xt.dataStorage.get(self.group[0][0], `${self.ns}SlideLeft`)
     // @FIX disable slider if not overflowing
     if (options.overflowAuto && totalCount >= 0) {
       self.object.classList.add('xt-overflow-auto')
@@ -174,11 +167,11 @@ class Slider extends Xt.Toggle {
       // wrapLast
       let wrapLastCount = draggerWidth
       const wrapLastFunction = () => {
-        for (const [i, group] of self.groupMqInitial.entries()) {
+        for (const [i, group] of self.groupInitial.entries()) {
           wrapLast.push([])
           for (const slide of group) {
             const cloned = cloneSlide(slide)
-            wrapLast[wrapLastCountIteration * self.groupMqInitial.length + i].push(cloned)
+            wrapLast[wrapLastCountIteration * self.groupInitial.length + i].push(cloned)
             cloned.setAttribute('data-xt-group', `${self.ns}-` + `wrapLast${wrapLastCountIteration}${i}`)
             self.targets.push(cloned)
             container.append(cloned)
@@ -186,7 +179,7 @@ class Slider extends Xt.Toggle {
           }
           if (wrapLastCount <= wrapMaxWidth) {
             return
-          } else if (i === self.groupMqInitial.length - 1) {
+          } else if (i === self.groupInitial.length - 1) {
             wrapLastCountIteration++
             wrapLastFunction()
           }
@@ -195,9 +188,9 @@ class Slider extends Xt.Toggle {
       wrapLastFunction()
       // wrapFirst
       let wrapFirstCount = draggerWidth
-      self.groupMqInitial.reverse()
+      self.groupInitial.reverse()
       const wrapFirstFunction = () => {
-        for (const [i, group] of self.groupMqInitial.entries()) {
+        for (const [i, group] of self.groupInitial.entries()) {
           wrapFirst.unshift([])
           for (const slide of group.reverse()) {
             const cloned = cloneSlide(slide)
@@ -210,7 +203,7 @@ class Slider extends Xt.Toggle {
           if (wrapFirstCount <= wrapMaxWidth) {
             group.reverse() // reset reverse
             return
-          } else if (i === self.groupMqInitial.length - 1) {
+          } else if (i === self.groupInitial.length - 1) {
             wrapFirstCountIteration++
             group.reverse() // reset reverse
             wrapFirstFunction()
@@ -218,7 +211,7 @@ class Slider extends Xt.Toggle {
         }
       }
       wrapFirstFunction()
-      self.groupMqInitial.reverse() // reset reverse
+      self.groupInitial.reverse() // reset reverse
       // @FIX performances
       for (const slide of self.targets) {
         // needs to recalculate not only xt-wrap but all targets
@@ -226,10 +219,10 @@ class Slider extends Xt.Toggle {
         Xt.dataStorage.set(slide, `${self.ns}SlideWidth`, slide.offsetWidth)
       }
     }
-    self.groupMqFirst = wrapFirst
-    self.groupMqLast = wrapLast
-    self.groupMq = wrapFirst.concat(self.groupMq.concat(wrapLast))
-    self.wrapIndex = self.groupMqFirst.length
+    self.groupFirst = wrapFirst
+    self.groupLast = wrapLast
+    self.group = wrapFirst.concat(self.group.concat(wrapLast))
+    self.wrapIndex = self.groupFirst.length
   }
 
   /**
@@ -256,7 +249,7 @@ class Slider extends Xt.Toggle {
       const cloned = pag.querySelector('[data-xt-pag]')
       cloned.classList.add('xt-ignore')
       const container = cloned.parentNode
-      const arr = self.groupMq
+      const arr = self.group
       // populate
       self.pags[z] = []
       for (const [i, group] of arr.entries()) {
@@ -288,7 +281,7 @@ class Slider extends Xt.Toggle {
         }
         regex = new RegExp('xt-tot', 'ig')
         if (html.search(regex) !== -1) {
-          html = html.replace(regex, self.groupMqInitial.length.toString())
+          html = html.replace(regex, self.groupInitial.length.toString())
         }
         item.innerHTML = html
         if (classes.length) {
@@ -301,7 +294,7 @@ class Slider extends Xt.Toggle {
         // drag wrap
         if (self.dragger && options.drag.wrap) {
           const min = self.wrapIndex
-          const max = self.wrapIndex + self.groupMqInitial.length - 1
+          const max = self.wrapIndex + self.groupInitial.length - 1
           if (i < min || i > max) {
             self.pags[z][i].classList.add('xt-clone', 'xt-wrap', 'hidden')
           }
@@ -383,7 +376,7 @@ class Slider extends Xt.Toggle {
       const slideLastWidth = Xt.dataStorage.get(slideLast, `${self.ns}SlideWidth`)
       const min = -slideFirstLeft
       const max = -slideLastLeft + draggerWidth - slideLastWidth
-      for (const group of self.groupMq) {
+      for (const group of self.group) {
         for (const target of group) {
           let pos = Xt.dataStorage.get(target, `${self.ns}GroupPos`)
           pos = pos > min ? min : pos
@@ -753,7 +746,7 @@ class Slider extends Xt.Toggle {
     const self = this
     // wrap around xt-wrap items
     const min = self.wrapIndex
-    const max = self.wrapIndex + self.groupMqInitial.length - 1
+    const max = self.wrapIndex + self.groupInitial.length - 1
     if (self.currentIndex < min) {
       self.initial = true
       self.wrap = true
@@ -1046,15 +1039,15 @@ class Slider extends Xt.Toggle {
       // get nearest
       let found = self.currentIndex
       if (found === 0 && direction > 0) {
-        found = self.groupMq.length - 1
-      } else if (found === self.groupMq.length - 1 && direction < 0) {
+        found = self.group.length - 1
+      } else if (found === self.group.length - 1 && direction < 0) {
         found = 0
       } else {
         const findNext = () => {
           let dist = 0
           if (direction > 0) {
-            for (let i = self.currentIndex; i < self.groupMq.length; i++) {
-              const group = self.groupMq[i]
+            for (let i = self.currentIndex; i < self.group.length; i++) {
+              const group = self.group[i]
               const pos = Xt.dataStorage.get(group[0], `${self.ns}GroupPos`)
               dist += Math.abs(pos)
               if (dragPosCurrent <= dist) {
@@ -1063,7 +1056,7 @@ class Slider extends Xt.Toggle {
             }
           } else {
             for (let i = self.currentIndex; i >= 0; i--) {
-              const group = self.groupMq[i]
+              const group = self.group[i]
               const pos = Xt.dataStorage.get(group[0], `${self.ns}GroupPos`)
               dist += Math.abs(pos)
               if (dragPosCurrent <= dist) {
@@ -1272,7 +1265,7 @@ Slider.optionsDefault = {
   // slider
   autoHeight: false,
   keepHeight: false,
-  groupMq: false,
+  group: false,
   align: 'center',
   contain: false,
   pagination: '.slider-pagination',

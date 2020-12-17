@@ -50,17 +50,17 @@ Contain the slides.
 
 ## Group
 
-With `groupMq: { MediaQuery: Number }` you set a decimal number from 0 to 1 to group the slides with a factor of the available `drag.dragger` width.
-
-`MediaQuery` is a media query, you can have multiple, for example `groupMq: { all: 1, '(min-width: 768px)': 0.8 }`.
+With `group: Number` you set a decimal number from 0 to 1 to group the slides with a factor of the available `drag.dragger` width.
 
 <div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `groupMq:Object`                          | `false`        | Set automatic grouping based on available width from 0 to 1            |
+| Option                  | `group:Number`                          | `false`        | Set automatic grouping based on available width from 0 to 1            |
 
 </div>
+
+Example of **responsive group** with [match media](/components/core/slider/api#match-media).
 
 <demo>
   <demovanilla src="vanilla/components/core/slider/group-responsive">

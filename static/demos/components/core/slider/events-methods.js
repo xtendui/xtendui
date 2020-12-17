@@ -12,9 +12,14 @@ Xt.mount.push({
         initial: false,
       },
       align: 'center',
-      groupMq: { all: 1, '(min-width: 768px)': 0.8 },
       drag: {
         wrap: true,
+      },
+      group: 1,
+      matches: {
+        '(min-width: 768px)': {
+          group: 0.8,
+        },
       },
     })
 
