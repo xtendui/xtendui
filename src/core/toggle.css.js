@@ -13,5 +13,9 @@ module.exports = {
         display: 'none',
       },
     },
+    '.xt-toggle-disabled': {
+      // setup
+      cursor: 'default',
+    },
   },
 }

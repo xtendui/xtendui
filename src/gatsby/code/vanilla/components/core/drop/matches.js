@@ -13,7 +13,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-2 items-center">
 
-  <div data-xt-drop="{ matches: { '(max-width: 767px)': { disabled: true }, '(min-width: 768px)': { backdrop: true } } }">
+  <div data-xt-drop="{ matches: { '(max-width: 767px)': { disabled: true }, '(min-width: 768px)': { position: 'top-start', backdrop: true } } }">
 
     <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       drop
