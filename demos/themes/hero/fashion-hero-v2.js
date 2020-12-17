@@ -36,8 +36,6 @@ Xt.mount.push({
         time: 5000,
         pause: '.hero-content > *',
       },
-      autoHeight: false,
-      groupMq: false,
       drag: {
         overflow: false,
       },

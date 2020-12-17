@@ -20,8 +20,6 @@ Xt.mount.push({
 
     let self = new Xt.Slider(object, {
       align: 'left',
-      groupMq: false,
-      autoHeight: false,
       jump: false,
       drag: {
         manual: true,

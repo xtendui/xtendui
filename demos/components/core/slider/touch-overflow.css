@@ -1,6 +1,5 @@
 .demo--slider-touch-overflow {
   @media (hover: none) {
-    @apply xt-disable-after-init;
     .slides {
       @apply overflow-sub;
       overflow-x: auto;

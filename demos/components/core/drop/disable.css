@@ -1,12 +1,10 @@
-/*
-.demo--drop-coniner-disable {
-  @apply md:drop-disable !important;
-  @screen md {
+.demo--drop-disable {
+  /* xt-drop-disabled additional reset styles */
+  .drop.xt-drop-disabled {
     .list {
-      > .btn, > * > .btn {
+      > .btn {
         @apply px-0;
       }
     }
   }
 }
-*/
