@@ -25,7 +25,7 @@ export default function Header({ page }) {
   return (
     <div className="gatsby_site_article_sidebar">
       <div className="gatsby_site_article_sidebar_inner">
-        <header className="gatsby_site_header" data-xt-sticky="{ sticky: 'fixed', hide: 'down', matches: { '(min-width: 768px)': { disabled: true } } }">
+        <header className="gatsby_site_header" data-xt-sticky="{ sticky: 'fixed', matches: { '(min-width: 768px)': { disabled: true } } }">
           <div className="gatsby_site_header_inner">
             <div>
               <div className="gatsby_site_header_content">
@@ -107,7 +107,7 @@ export default function Header({ page }) {
           </div>
         </header>
 
-        <div className="overlay text-white links-inverse" id="gatsby_menu--overlay">
+        <div className="overlay text-white links-inverse in active xt-overlay-disabled" id="gatsby_menu--overlay">
           <div className="overlay-container p-0 max-w-xs ml-auto mr-0">
             <div className="overlay-inner">
               <div className="design-setup"></div>

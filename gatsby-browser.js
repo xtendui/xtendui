@@ -4,14 +4,20 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-let keepSidebarScroll = 0
-let menuOpen = false
+window.keepSidebarScroll = 0
+window.menuOpen = false
 
 exports.onPreRouteUpdate = ({ location, prevLocation }) => {
+  const menu = document.querySelector('.gatsby_site_header_menu_link [data-xt-overlay]')
+  const overlay = document.querySelector('#gatsby_menu--overlay')
+  const sidebar = document.querySelector('.gatsby_site_article_sidebar')
+  // keepSidebarScroll
+  if (overlay && sidebar) {
+    window.keepSidebarScroll = overlay.scrollTop || sidebar.scrollTop
+  }
+  // only if changing page
   if (prevLocation) {
     if (location.pathname !== prevLocation.pathname) {
-      const menu = document.querySelector('#gatsby_menu--overlay')
-      const sidebarArticle = document.querySelector('.gatsby_site_article_sidebar')
       // close demo full
       const demoFull = document.querySelector('#gatsby_open-full-trigger.in')
       if (demoFull) {
@@ -21,34 +27,33 @@ exports.onPreRouteUpdate = ({ location, prevLocation }) => {
       document.documentElement.setAttribute('data-demo-index', '0')
       // menuOpen
       if (menu) {
-        menuOpen = menu.classList.contains('in')
-      }
-      // keepSidebarScroll
-      if (menu && sidebarArticle) {
-        keepSidebarScroll = menu.scrollTop || sidebarArticle.scrollTop
+        window.menuOpen = menu.classList.contains('in')
       }
     }
   }
 }
 
 exports.onRouteUpdate = ({ location, prevLocation }) => {
+  const menu = document.querySelector('.gatsby_site_header_menu_link [data-xt-overlay]')
+  const overlay = document.querySelector('#gatsby_menu--overlay')
+  const sidebar = document.querySelector('.gatsby_site_article_sidebar')
+  // scroll top
+  document.scrollingElement.scrollTop = 0
+  // menuOpen
+  if (menu && !window.menuOpen) {
+    overlay.classList.remove('in', 'active')
+  }
+  // keepSidebarScroll
+  if (overlay && sidebar) {
+    if (matchMedia('(max-width: 767px)').matches) {
+      overlay.classList.remove('xt-overlay-disabled')
+    }
+    overlay.scrollTop = window.keepSidebarScroll
+    require('assets/scripts/gatsby.js').gatsbySidebarContain()
+  }
+  // only if changing page
   if (prevLocation) {
     if (location.pathname !== prevLocation.pathname) {
-      const menu = document.querySelector('#gatsby_menu--overlay')
-      const sidebarArticle = document.querySelector('.gatsby_site_article_sidebar')
-      // scroll top
-      document.scrollingElement.scrollTop = 0
-      // menuOpen
-      if (menu && menuOpen) {
-        menu.classList.add('in', 'active')
-      }
-      // keepSidebarScroll
-      if (menu && sidebarArticle) {
-        menu.scrollTop = keepSidebarScroll
-        sidebarArticle.scrollTop = keepSidebarScroll
-      }
-      // scrollSidebarToContent
-      require('assets/scripts/gatsby.js').gatsbySidebarContain()
       // @FIX popstate #gatsby_open-full
       for (const link of document.querySelectorAll('.gatsby_btn-site_article_sidebar.active')) {
         link.addEventListener('click', e => {

@@ -181,8 +181,6 @@ const makeDocument = () => {
       }
     }
   }
-  // scrollSidebarToContent
-  require('assets/scripts/gatsby.js').gatsbySidebarContain()
   // restart xt-scrolltoanchor
   const gatsby = document.querySelector('.gatsby_site_wrapper')
   if (gatsby) {

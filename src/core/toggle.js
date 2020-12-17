@@ -198,9 +198,11 @@ class Toggle {
         if (found && currents < options.max) {
           // initial
           currents++
-          // reactivate after raf
+          // keep the same level of raf as others
           requestAnimationFrame(() => {
-            self.eventOn(element, true)
+            requestAnimationFrame(() => {
+              self.eventOn(element, true)
+            })
           })
         }
       }
@@ -2851,27 +2853,13 @@ class Toggle {
    */
   initStatus() {
     const self = this
-    // handler
-    self.eventStatus()
-  }
-
-  /**
-   * status
-   */
-  eventStatus() {
-    const self = this
     const options = self.options
-    // keep the same level of raf as others
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        // check
-        if (options.disabled) {
-          self.disable()
-        } else {
-          self.enable()
-        }
-      })
-    })
+    // check
+    if (options.disabled) {
+      self.disable()
+    } else {
+      self.enable()
+    }
   }
 
   /**
