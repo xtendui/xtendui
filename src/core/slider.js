@@ -78,7 +78,7 @@ class Slider extends Xt.Toggle {
     }
     // @FIX disable slider if not overflowing
     self.object.classList.remove('xt-overflow-auto')
-    // drag wrap
+    // clean wraps
     self.destroyWraps()
     // @FIX performances
     self.detail.objectWidth = self.object.offsetWidth
@@ -247,7 +247,7 @@ class Slider extends Xt.Toggle {
     if (!pags.length) {
       console.error('Error: Xt.Slider pagination not found for', self.object)
     }
-    // clean pags
+    // clean pagination
     self.destroyPags()
     // pags
     self.pags = self.pags ? self.pags : []
@@ -1236,6 +1236,7 @@ class Slider extends Xt.Toggle {
           oldPag.remove()
         }
       }
+      self.pags = []
     }
   }
 
@@ -1244,9 +1245,8 @@ class Slider extends Xt.Toggle {
    */
   destroyWraps() {
     const self = this
-    const options = self.options
     // drag wrap
-    if (self.dragger && options.drag.wrap) {
+    if (self.dragger) {
       // clear elements
       for (const el of self.elements.filter(x => x.classList.contains('xt-wrap'))) {
         el.remove()

@@ -2848,26 +2848,11 @@ class Toggle {
 
   /**
    * init status
-   * @param {Event} e
    */
-  initStatus(e = null) {
+  initStatus() {
     const self = this
-    // check
-    let check = self.object
-    if (self.mode === 'unique') {
-      check = self.targets[0]
-    }
-    if (!e || !e.detail || !e.detail.container || e.detail.container.contains(check)) {
-      Xt.eventDelay(
-        e,
-        check,
-        () => {
-          // handler
-          self.eventStatus()
-        },
-        `${self.ns}Status`
-      )
-    }
+    // handler
+    self.eventStatus()
   }
 
   /**
