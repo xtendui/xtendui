@@ -25,7 +25,10 @@ export default function Header({ page }) {
   return (
     <div className="gatsby_site_article_sidebar">
       <div className="gatsby_site_article_sidebar_inner">
-        <header className="gatsby_site_header" data-xt-sticky="{ sticky: 'fixed', matches: { '(min-width: 768px)': { disabled: true } } }">
+        <header
+          className="gatsby_site_header xt-sticky-disabled"
+          data-xt-sticky="{ sticky: 'fixed', disabled: true, matches: { '(max-width: 1023px)': { disabled: false } } }"
+        >
           <div className="gatsby_site_header_inner">
             <div>
               <div className="gatsby_site_header_content">
@@ -81,7 +84,7 @@ export default function Header({ page }) {
                   <button
                     type="button"
                     className="btn btn-md rounded-md"
-                    data-xt-overlay="{ targets: '#gatsby_menu--overlay', appendTo: false, matches: { '(min-width: 768px)': { disabled: true } } }"
+                    data-xt-overlay="{ targets: '#gatsby_menu--overlay', appendTo: false, disabled: true, matches: { '(max-width: 1023px)': { disabled: false } } }"
                     aria-label="Menu"
                   >
                     <svg

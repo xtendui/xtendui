@@ -2854,12 +2854,17 @@ class Toggle {
   initStatus() {
     const self = this
     const options = self.options
-    // check
-    if (options.disabled) {
-      self.disable()
-    } else {
-      self.enable()
-    }
+    // keep the same level of raf as others
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        // check
+        if (options.disabled) {
+          self.disable()
+        } else {
+          self.enable()
+        }
+      })
+    })
   }
 
   /**

@@ -43,9 +43,12 @@ exports.onRouteUpdate = ({ location, prevLocation }) => {
   }
   // keepSidebarScroll
   if (overlay && sidebar) {
-    if (matchMedia('(max-width: 767px)').matches) {
+    // instant enable
+    if (matchMedia('(max-width: 1023px)').matches) {
       overlay.classList.remove('xt-overlay-disabled')
+      document.querySelector('.gatsby_site_header').classList.remove('xt-sticky-disabled')
     }
+    // scroll
     overlay.scrollTop = window.keepSidebarScroll
     require('assets/scripts/gatsby.js').gatsbySidebarContain()
   }
