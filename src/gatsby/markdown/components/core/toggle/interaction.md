@@ -267,7 +267,7 @@ You can block the activations with the class `.xt-block` on elements.
 
 ## Disable
 
-Example of **component disabled on desktop** with [match media](/components/core/toggle/api#match-media).
+If you want to **disable the component** use the `options.disabled`, besides that you can add the class `.xt-toggle-disabled` to `object`, `elements` and `targets` to disable them before javascript initialization.
 
 <div class="table-overflow">
 
@@ -276,6 +276,8 @@ Example of **component disabled on desktop** with [match media](/components/core
 | Option                  | `disabled:Boolean`                              | `false`                     | Disable the component           |
 
 </div>
+
+Example of **component disabled on desktop** with [match media](/components/core/toggle/api#match-media).
 
 <demo>
   <demovanilla src="vanilla/components/core/toggle/disable">

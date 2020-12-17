@@ -185,7 +185,7 @@ Disable the jump feature (clicking on not activated slides jumps to the slide) w
 
 ## Disable
 
-Example of **component disabled on desktop** with [match media](/components/core/slider/api#match-media).
+If you want to **disable the component** use the `options.disabled`, besides that you can add the class `.xt-slider-disabled` to `object`, `elements` and `targets` to disable them before javascript initialization.
 
 <div class="table-overflow">
 
@@ -194,6 +194,8 @@ Example of **component disabled on desktop** with [match media](/components/core
 | Option                  | `disabled:Boolean`                              | `false`                     | Disable the component           |
 
 </div>
+
+Example of **component disabled on desktop** with [match media](/components/core/slider/api#match-media).
 
 <demo>
   <demovanilla src="vanilla/components/core/slider/disable">

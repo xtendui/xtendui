@@ -85,5 +85,11 @@ module.exports = {
         left: theme('spacing[1.5]'),
       },
     },
+    '.xt-tooltip-disabled': {
+      // setup
+      '&.tooltip': {
+        display: 'none !important',
+      },
+    },
   }),
 }
