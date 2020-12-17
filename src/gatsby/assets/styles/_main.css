@@ -168,12 +168,7 @@ body {
     @screen sm {
       @apply -m-5;
     }
-  }
-}
-
-.gatsby_site_article_foot {
-  .gatsby_listing-items {
-    > .row {
+    .gatsby_site_article_foot & {
       @apply mt-0 mb-4 !important;
     }
   }
