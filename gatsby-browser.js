@@ -37,8 +37,6 @@ exports.onRouteUpdate = ({ location, prevLocation }) => {
   const menu = document.querySelector('.gatsby_site_header_menu_link [data-xt-overlay]')
   const overlay = document.querySelector('#gatsby_menu--overlay')
   const sidebar = document.querySelector('.gatsby_site_article_sidebar')
-  // scroll top
-  document.scrollingElement.scrollTop = 0
   // menuOpen
   if (menu && !window.menuOpen) {
     overlay.classList.remove('in', 'active')
@@ -54,6 +52,8 @@ exports.onRouteUpdate = ({ location, prevLocation }) => {
   // only if changing page
   if (prevLocation) {
     if (location.pathname !== prevLocation.pathname) {
+      // scroll top
+      document.scrollingElement.scrollTop = 0
       // @FIX popstate #gatsby_open-full
       for (const link of document.querySelectorAll('.gatsby_btn-site_article_sidebar.active')) {
         link.addEventListener('click', e => {

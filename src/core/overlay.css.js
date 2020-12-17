@@ -12,7 +12,7 @@ module.exports = {
       left: '0',
       bottom: '0', // @FIX no height or it bugs collapse animation
       right: '0', // @FIX no width or it bugs collapse animation
-      overflow: 'hidden',
+      overflowY: 'scroll',
       '&.out': {
         pointerEvents: 'none',
       },
@@ -59,9 +59,7 @@ module.exports = {
       '&.overlay': {
         display: 'flex !important',
         position: 'static',
-        'html.xt-scrollbar &': {
-          overflow: 'initial !important',
-        },
+        overflowY: 'initial',
         zIndex: 'initial',
         top: 'auto',
         left: 'auto',

@@ -25,10 +25,7 @@ module.exports = {
     'html.xt-scrollbar': {
       // setup
       body: {
-        overflowY: 'hidden !important',
-      },
-      '.overlay': {
-        overflowY: 'scroll !important',
+        overflow: 'hidden !important',
       },
     },
     '[data-xt-pag].xt-ignore': {
