@@ -18,9 +18,9 @@
     "registry": "https://registry.npmjs.org/"
   },
   "files": [
+    "tailwind.*.js",
     "dist/*.min.*",
     "src/*.*",
-    "!src/html.js",
     "src/addons/*.*",
     "src/core/*.*",
     "src/future/*.*"
