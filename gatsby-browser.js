@@ -37,12 +37,12 @@ exports.onRouteUpdate = ({ location, prevLocation }) => {
   const menu = document.querySelector('.gatsby_site_header_menu_link [data-xt-overlay]')
   const overlay = document.querySelector('#gatsby_menu--overlay')
   const sidebar = document.querySelector('.gatsby_site_article_sidebar')
-  // menuOpen
-  if (menu && !window.menuOpen) {
-    overlay.classList.remove('in', 'active')
-  }
   // keepSidebarScroll
   if (overlay && sidebar) {
+    // menuOpen
+    if (menu && !window.menuOpen) {
+      overlay.classList.remove('in')
+    }
     // instant enable
     if (matchMedia('(max-width: 1023px)').matches) {
       overlay.classList.remove('xt-overlay-disabled')

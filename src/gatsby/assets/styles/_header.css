@@ -55,6 +55,9 @@
     .backdrop {
       opacity: 0.3;
     }
+    .xt-overlay-disabled& {
+      display: none !important;
+    }
   }
 }
 
