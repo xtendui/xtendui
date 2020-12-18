@@ -10,18 +10,18 @@
 <url> <loc>https://xtendui.com/introduction/getting-started/setup</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/components/globals/javascript</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/components/globals/layout</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://xtendui.com/components/addons/animation/collapse</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/components/globals/preset</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://xtendui.com/components/addons/animation/collapse</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/components/addons/animation</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/components/addons/animation/mouse-follow</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/components/addons/animation/ripple</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://xtendui.com/components/addons/animation/sticky-flow</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/components/addons/form/group-number</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/components/addons/form</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/components/addons/form/textarea-autosize</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/components/addons/layout/google-locator</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/components/addons/layout</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/components/addons/layout/jump-to-content</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://xtendui.com/components/addons/layout/sticky-flow</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/components/addons/layout/sticky-footer</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/components/addons/list-group/expand</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/components/addons/list-group</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -166,8 +166,8 @@
 <url> <loc>https://xtendui.com/themes/by-type/listing/stores-listing-v-1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/themes/by-type/navigation</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/themes/by-type/navigation/sequential-megamenu-v-1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://xtendui.com/components/core/overlay/interaction</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://xtendui.com/components/core/overlay/other</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/components/core/overlay</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://xtendui.com/components/core/overlay/other</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://xtendui.com/components/core/overlay/interaction</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
