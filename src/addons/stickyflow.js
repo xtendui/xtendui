@@ -1,61 +1,171 @@
 import { Xt } from '../xt.js'
+import JSON5 from 'json5'
 
-Xt.mount.push({
-  matches: '.stickyflow',
-  mount(object) {
+/**
+ * Stickyflow
+ */
+class Stickyflow {
+  /**
+   * constructor
+   * @param {Node|HTMLElement|EventTarget|Window} object Base node
+   * @param {Object} optionsCustom User options
+   * @constructor
+   */
+  constructor(object, optionsCustom = {}) {
+    const self = this
+    self.object = object
+    self.optionsCustom = optionsCustom
+    self.componentName = self.constructor.componentName
+    self.componentNs = self.componentName.replace('-', '.')
+    // set self
+    Xt.set(self.componentName, self.object, self)
+    // init
+    self.init()
+  }
+
+  //
+  // init
+  //
+
+  /**
+   * init
+   */
+  init() {
+    const self = this
+    // namespace
+    const uniqueId = Xt.dataStorage.get(self.object, 'xtUniqueId')
+    Xt.dataStorage.set(self.object, 'xtUniqueId', uniqueId || Xt.getuniqueId())
+    self.ns = `${self.componentName}-${Xt.dataStorage.get(self.object, 'xtUniqueId')}`
+    // options
+    self.options = Xt.merge([self.constructor.optionsDefault, self.optionsCustom])
+    // elements
+    self.element = self.object.querySelector(self.options.element)
+    self.filler = self.object.querySelector(self.options.filler)
     // vars
+    self.scrollTopOld = 0
+    // events
+    let changeHandler = Xt.dataStorage.put(window, `scroll/resize/${self.ns}`, self.eventChange.bind(self))
+    addEventListener('scroll', changeHandler)
+    addEventListener('resize', changeHandler)
+    // initial
+    self.eventChange()
+    // initialized class
+    self.object.classList.add(self.componentName)
+    // listener dispatch
+    requestAnimationFrame(() => {
+      self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+    })
+  }
 
-    let scrollTopOld = 0
-    const spaceTop = 75
-    const container = object.parentNode
-    const fill = container.querySelector('.stickyflow-filler')
+  //
+  // methods
+  //
 
-    // eventSticky
-
-    const eventSticky = () => {
-      const scrollTop = document.scrollingElement.scrollTop
-      const windowHeight = window.innerHeight
-      const objectHeight = object.offsetHeight
-      if (objectHeight + spaceTop < windowHeight) {
-        fill.style.height = ''
-        object.style.top = `${spaceTop}px`
-        object.style.bottom = ''
+  /**
+   * eventChange
+   * @param {Node|HTMLElement|EventTarget|Window} step
+   * @param {Event} e
+   */
+  eventChange() {
+    const self = this
+    // logic
+    const scrollTop = document.scrollingElement.scrollTop
+    const windowHeight = window.innerHeight
+    const objectHeight = self.element.offsetHeight
+    if (objectHeight < windowHeight) {
+      self.filler.style.height = ''
+      self.element.style.top = '0'
+      self.element.style.bottom = ''
+    } else {
+      if (scrollTop > self.scrollTopOld) {
+        if (!self.element.classList.contains('xt-stickyflow-top')) {
+          const pos = windowHeight - objectHeight
+          const height = Math.max(0, self.element.offsetTop - self.filler.offsetTop)
+          self.filler.style.height = `${height}px`
+          self.element.style.top = `${pos}px`
+          self.element.style.bottom = ''
+          self.element.classList.remove('xt-stickyflow-bottom')
+          self.element.classList.add('xt-stickyflow-top')
+        }
       } else {
-        if (scrollTop > scrollTopOld) {
-          if (!object.classList.contains('sticky-top')) {
-            const pos = windowHeight - objectHeight
-            const height = Math.max(0, object.offsetTop - spaceTop)
-            fill.style.height = `${height}px`
-            object.style.top = `${pos}px`
-            object.style.bottom = ''
-            object.classList.remove('sticky-bottom')
-            object.classList.add('sticky-top')
-          }
-        } else {
-          if (!object.classList.contains('sticky-bottom')) {
-            const pos = windowHeight - objectHeight - spaceTop
-            const height = Math.max(0, object.offsetTop - container.offsetTop)
-            fill.style.height = `${height}px`
-            object.style.top = ''
-            object.style.bottom = `${pos}px`
-            object.classList.add('sticky-bottom')
-            object.classList.remove('sticky-top')
-          }
+        if (!self.element.classList.contains('xt-stickyflow-bottom')) {
+          const pos = windowHeight - objectHeight
+          const height = Math.max(0, self.element.offsetTop - self.filler.offsetTop)
+          self.filler.style.height = `${height}px`
+          self.element.style.top = ''
+          self.element.style.bottom = `${pos}px`
+          self.element.classList.add('xt-stickyflow-bottom')
+          self.element.classList.remove('xt-stickyflow-top')
         }
       }
-      scrollTopOld = scrollTop
     }
+    // listener dispatch
+    self.object.dispatchEvent(new CustomEvent(`change.${self.componentNs}`))
+    self.scrollTopOld = scrollTop
+  }
 
-    addEventListener('scroll', eventSticky)
-    addEventListener('resize', eventSticky)
-    eventSticky()
+  //
+  // util
+  //
+
+  /**
+   * destroy
+   */
+  destroy() {
+    const self = this
+    // remove events
+    let changeHandler = Xt.dataStorage.get(window, `scroll/resize/${self.ns}`)
+    removeEventListener('scroll', changeHandler)
+    removeEventListener('resize', changeHandler)
+    // initialized class
+    self.object.classList.remove(self.componentName)
+    // set self
+    Xt.remove(self.componentName, self.object)
+    // listener dispatch
+    self.object.dispatchEvent(new CustomEvent(`destroy.${self.componentNs}`))
+  }
+
+  //
+}
+
+//
+// options
+//
+
+Stickyflow.componentName = 'xt-stickyflow'
+Stickyflow.optionsDefault = {
+  // elements
+  element: '.stickyflow',
+  filler: '.stickyflow-filler',
+}
+
+//
+// export
+//
+
+Xt.Stickyflow = Stickyflow
+
+//
+// observe
+//
+
+Xt.mount.push({
+  matches: `[data-${Xt.Stickyflow.componentName}]`,
+  mount: object => {
+    // vars
+
+    const optionsMarkup = object.getAttribute(`data-${Xt.Stickyflow.componentName}`)
+    const options = optionsMarkup ? JSON5.parse(optionsMarkup) : {}
+
+    // init
+
+    let self = new Xt.Stickyflow(object, options)
 
     // unmount
 
-    const unmount = function () {
-      removeEventListener('scroll', eventSticky)
-      removeEventListener('resize', eventSticky)
+    return () => {
+      self.destroy()
+      self = null
     }
-    return unmount
   },
 })

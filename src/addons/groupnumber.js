@@ -44,16 +44,16 @@ class Groupnumber {
     // steps
     for (const step of self.steps) {
       const qty = parseFloat(step.getAttribute('data-xt-step'))
-      let stepHandler = Xt.dataStorage.put(step, `change/${self.ns}`, self.change.bind(self, qty))
+      let stepHandler = Xt.dataStorage.put(step, `change/${self.ns}`, self.eventChange.bind(self, qty))
       step.addEventListener('click', stepHandler)
     }
     // inputs
     for (const input of self.inputs) {
-      let inputHandler = Xt.dataStorage.put(input, `change/${self.ns}`, self.change.bind(self, 0))
+      let inputHandler = Xt.dataStorage.put(input, `change/${self.ns}`, self.eventChange.bind(self, 0))
       input.addEventListener('change', inputHandler)
     }
     // initial
-    self.change.bind(self, 0)()
+    self.eventChange.bind(self, 0)()
     // initialized class
     self.object.classList.add(self.componentName)
     // listener dispatch
@@ -71,7 +71,7 @@ class Groupnumber {
    * @param {Node|HTMLElement|EventTarget|Window} step
    * @param {Event} e
    */
-  change(step, e) {
+  eventChange(step, e) {
     const self = this
     // trigger external events and skip internal events
     if (!e || !e.detail || !e.detail.skip) {

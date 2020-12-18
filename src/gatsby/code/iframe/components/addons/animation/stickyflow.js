@@ -77,7 +77,7 @@ demo.htmlSource = `
         </div>
       </div>
 
-      <div class="w-full md:w-6/12 lg:w-5/12">
+      <div class="w-full md:w-6/12 lg:w-5/12" data-xt-stickyflow>
         <div class="stickyflow-filler pointer-events-none absolute md:relative"></div>
         <div class="md:py-12 md:sticky stickyflow">
 
