@@ -57,7 +57,7 @@ Inside it you can use this strings that gets populated with variables:
 
 ## Navigation	
 
-You can add navigation with the `navigation:Query` option, on the queried elements use the attribute `[data-xt-nav="value"]` to set the amount to add (`+1`) or remove (`-1`) to the current activation index.	
+You can add navigation with `[data-xt-nav="value"]` to set the amount to add (`+1`) or remove (`-1`) to the current activation index.	
 
 <div class="table-overflow">	
 

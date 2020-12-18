@@ -221,7 +221,7 @@ Use `jump: true` to enable clicking on a **target** to jump to them.
 
 ## Navigation
 
-You can add navigation with the `navigation:Query` option, on the queried elements use the attribute `[data-xt-nav="value"]` to set the amount to add (`+1`) or remove (`-1`) to the current activation index.
+You can add navigation with `navigation: '[data-xt-nav]'` option, then with `[data-xt-nav="value"]` to set the amount to add (`+1`) or remove (`-1`) to the current activation index.
 
 <div class="table-overflow">
 

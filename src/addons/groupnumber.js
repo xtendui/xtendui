@@ -1,32 +1,104 @@
 import { Xt } from '../xt.js'
+import JSON5 from 'json5'
 
-Xt.mount.push({
-  matches: '.groupnumber',
-  mount: object => {
-    // methods
+/**
+ * Groupnumber
+ */
+class Groupnumber {
+  /**
+   * constructor
+   * @param {Node|HTMLElement|EventTarget|Window} object Base node
+   * @param {Object} optionsCustom User options
+   * @constructor
+   */
+  constructor(object, optionsCustom = {}) {
+    const self = this
+    self.object = object
+    self.optionsCustom = optionsCustom
+    self.componentName = self.constructor.componentName
+    self.componentNs = self.componentName.replace('-', '.')
+    // set self
+    Xt.set(self.componentName, self.object, self)
+    // init
+    self.init()
+  }
 
-    const inputNumberChange = (step, e) => {
-      // trigger external events and skip internal events
-      if (!e || !e.detail || !e.detail.skip) {
-        const input = object.querySelector('input')
-        let val = parseFloat(input.value)
-        val = val + step
-        inputNumberValidate.bind(object)(val)
-      }
+  //
+  // init
+  //
+
+  /**
+   * init
+   */
+  init() {
+    const self = this
+    // namespace
+    const uniqueId = Xt.dataStorage.get(self.object, 'xtUniqueId')
+    Xt.dataStorage.set(self.object, 'xtUniqueId', uniqueId || Xt.getuniqueId())
+    self.ns = `${self.componentName}-${Xt.dataStorage.get(self.object, 'xtUniqueId')}`
+    // options
+    self.options = Xt.merge([self.constructor.optionsDefault, self.optionsCustom])
+    // elements
+    self.inputs = self.object.querySelectorAll(self.options.inputs)
+    self.steps = self.object.querySelectorAll(self.options.steps)
+    // steps
+    for (const step of self.steps) {
+      const qty = parseFloat(step.getAttribute('data-xt-step'))
+      let stepHandler = Xt.dataStorage.put(step, `change/${self.ns}`, self.change.bind(self, qty))
+      step.addEventListener('click', stepHandler)
     }
+    // inputs
+    for (const input of self.inputs) {
+      let inputHandler = Xt.dataStorage.put(input, `change/${self.ns}`, self.change.bind(self, 0))
+      input.addEventListener('change', inputHandler)
+    }
+    // initial
+    self.change.bind(self, 0)()
+    // initialized class
+    self.object.classList.add(self.componentName)
+    // listener dispatch
+    requestAnimationFrame(() => {
+      self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+    })
+  }
 
-    const inputNumberValidate = val => {
-      const input = object.querySelector('input')
-      const steps = object.querySelectorAll('[data-step]')
-      val = isNaN(val) ? 0 : val
+  //
+  // methods
+  //
+
+  /**
+   * change
+   * @param {Node|HTMLElement|EventTarget|Window} step
+   * @param {Event} e
+   */
+  change(step, e) {
+    const self = this
+    // trigger external events and skip internal events
+    if (!e || !e.detail || !e.detail.skip) {
+      const input = self.object.querySelector('input')
+      let val = parseFloat(input.value)
+      val = val + step
+      self.validate(val)
+    }
+  }
+
+  /**
+   * validate
+   * @param {Number} val
+   */
+  validate(val) {
+    const self = this
+    // logic
+    val = isNaN(val) ? 0 : val
+    for (const input of self.inputs) {
       // check min and max
       const minAttributeAsFloat = parseFloat(input.getAttribute('min'))
       const inputMin = isNaN(minAttributeAsFloat) ? 1 : minAttributeAsFloat
       const maxAttributeAsFloat = parseFloat(input.getAttribute('max'))
       const inputMax = isNaN(maxAttributeAsFloat) ? Infinity : maxAttributeAsFloat
       // disabled
-      for (const step of steps) {
-        const qty = parseFloat(step.getAttribute('data-step'))
+      for (const step of self.steps) {
+        const qty = parseFloat(step.getAttribute('data-xt-step'))
         step.removeAttribute('disabled')
         if (val <= inputMin && qty < 0) {
           val = inputMin
@@ -42,32 +114,75 @@ Xt.mount.push({
       // trigger external events and skip internal events
       input.dispatchEvent(new CustomEvent('change', { detail: { skip: true } }))
     }
+  }
+
+  //
+  // util
+  //
+
+  /**
+   * destroy
+   */
+  destroy() {
+    const self = this
+    // remove events
+    for (const step of self.steps) {
+      let stepHandler = Xt.dataStorage.get(step, `change/${self.ns}`)
+      step.removeEventListener('click', stepHandler)
+    }
+    for (const input of self.inputs) {
+      let inputHandler = Xt.dataStorage.get(input, `change/${self.ns}`)
+      input.removeEventListener('change', inputHandler)
+    }
+    // initialized class
+    self.object.classList.remove(self.componentName)
+    // set self
+    Xt.remove(self.componentName, self.object)
+    // listener dispatch
+    self.object.dispatchEvent(new CustomEvent(`destroy.${self.componentNs}`))
+  }
+
+  //
+}
+
+//
+// options
+//
+
+Groupnumber.componentName = 'xt-groupnumber'
+Groupnumber.optionsDefault = {
+  // elements
+  inputs: 'input[type="number"]',
+  steps: '[data-xt-step]',
+}
+
+//
+// export
+//
+
+Xt.Groupnumber = Groupnumber
+
+//
+// observe
+//
+
+Xt.mount.push({
+  matches: `[data-${Xt.Groupnumber.componentName}]`,
+  mount: object => {
+    // vars
+
+    const optionsMarkup = object.getAttribute(`data-${Xt.Groupnumber.componentName}`)
+    const options = optionsMarkup ? JSON5.parse(optionsMarkup) : {}
 
     // init
 
-    inputNumberChange.bind(object, 0)()
+    let self = new Xt.Groupnumber(object, options)
 
-    // vars
+    // unmount
 
-    const inputEl = object.querySelector('input')
-
-    // steps
-
-    const steps = object.querySelectorAll('[data-step]')
-
-    for (const step of steps) {
-      const qty = parseFloat(step.getAttribute('data-step'))
-      let addHandler = Xt.dataStorage.get(step, 'addHandler')
-      addHandler = addHandler || Xt.dataStorage.set(step, 'addHandler', inputNumberChange.bind(object, qty))
-      step.removeEventListener('click', addHandler)
-      step.addEventListener('click', addHandler)
+    return () => {
+      self.destroy()
+      self = null
     }
-
-    // change
-
-    let inputHandler = Xt.dataStorage.get(inputEl, 'inputHandler')
-    inputHandler = inputHandler || Xt.dataStorage.set(inputEl, 'inputHandler', inputNumberChange.bind(object, 0))
-    inputEl.removeEventListener('change', inputHandler)
-    inputEl.addEventListener('change', inputHandler)
   },
 })

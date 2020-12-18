@@ -10,6 +10,10 @@ description: "Textarea with dynamic height depending on content."
 
 Import the **component javascript** file.
 
+```jsx
+import 'xtendui/src/addons/textareaautosize'
+```
+
 ## Usage
 
 Use this code to create a **textarea autosize**. You can customize `min-height` and `max-height` of the textarea.
