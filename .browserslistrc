@@ -1,5 +1,7 @@
-# https://github.com/ai/browserslist
-
+>= 0.5%
+last 2 major versions
+not dead
+Firefox ESR
 Chrome >= 38
 Safari >= 10
 iOS >= 10
