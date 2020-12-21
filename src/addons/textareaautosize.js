@@ -34,13 +34,17 @@ class Textareaautosize {
     const self = this
     // options
     self.options = Xt.merge([self.constructor.optionsDefault, self.optionsCustom])
+    // namespace
+    const uniqueId = Xt.dataStorage.get(self.object, 'xtUniqueId')
+    Xt.dataStorage.set(self.object, 'xtUniqueId', uniqueId || Xt.getuniqueId())
+    self.ns = `${self.componentName}-${Xt.dataStorage.get(self.object, 'xtUniqueId')}`
     // key
-    self.object.addEventListener('keydown', self.keychange.bind(self))
-    self.object.addEventListener('keyup', self.keychange.bind(self))
-    // form
+    let changeHandler = Xt.dataStorage.put(self.object, `keydown/keyup/reset/${self.ns}`, self.keychange.bind(self))
+    self.object.addEventListener('keydown', changeHandler)
+    self.object.addEventListener('keyup', changeHandler)
     self.form = self.object.closest('form')
     if (self.form) {
-      self.form.addEventListener('reset', self.keychange.bind(self))
+      self.form.addEventListener('reset', changeHandler)
     }
     // initial
     self.keychange.bind(self)()
@@ -79,11 +83,12 @@ class Textareaautosize {
   destroy() {
     const self = this
     // remove events
+    let changeHandler = Xt.dataStorage.get(self.object, `keydown/keyup/reset/${self.ns}`)
+    self.object.removeEventListener('keydown', changeHandler)
+    self.object.removeEventListener('keyup', changeHandler)
     if (self.form) {
-      self.form.removeEventListener('reset', self.keychange.bind(self))
+      self.form.removeEventListener('reset', changeHandler)
     }
-    self.object.removeEventListener('keydown', self.keychange.bind(self))
-    self.object.removeEventListener('keyup', self.keychange.bind(self))
     // initialized class
     self.object.classList.remove(self.componentName)
     // set self

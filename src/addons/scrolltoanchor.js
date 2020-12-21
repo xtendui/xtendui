@@ -40,18 +40,21 @@ class Scrolltoanchor {
     // class
     self.classes = self.options.class ? [...self.options.class.split(' ')] : []
     // click
-    self.object.addEventListener('click', self.eventChange.bind(self).bind(self, false, null))
+    let clickHandler = Xt.dataStorage.put(self.object, `click/${self.ns}`, self.eventChange.bind(self).bind(self, false, null))
+    self.object.addEventListener('click', clickHandler)
     // hash
-    addEventListener('hashchange', self.eventChange.bind(self).bind(self, true, null))
+    let hashHandler = Xt.dataStorage.put(window, `hashchange/${self.ns}`, self.eventChange.bind(self).bind(self, true, null))
+    addEventListener('hashchange', hashHandler)
     // scroll
     for (const scrollElement of self.options.scrollElements) {
       if (scrollElement) {
+        let scrollHandler = Xt.dataStorage.put(scrollElement, `scroll/${self.ns}`, self.eventScrollHandler.bind(self).bind(self, scrollElement))
         if (scrollElement === document.scrollingElement) {
-          addEventListener('scroll', self.eventScrollHandler.bind(self).bind(self, scrollElement))
+          addEventListener('scroll', scrollHandler)
         } else {
-          scrollElement.addEventListener('scroll', self.eventScrollHandler.bind(self).bind(self, scrollElement))
+          scrollElement.addEventListener('scroll', scrollHandler)
         }
-        scrollElement.addEventListener(`scroll.trigger.${self.componentNs}`, self.eventScrollHandler.bind(self).bind(self, scrollElement))
+        scrollElement.addEventListener(`scroll.trigger.${self.componentNs}`, scrollHandler)
         // initial
         requestAnimationFrame(() => {
           self.scrollElementCurrent = scrollElement
@@ -261,13 +264,19 @@ class Scrolltoanchor {
     const self = this
     const options = self.options
     // remove events
-    self.object.removeEventListener('click', self.eventChange.bind(self, false, null))
-    removeEventListener('hashchange', self.eventChange.bind(self).bind(self, true, null))
+    let clickHandler = Xt.dataStorage.get(self.object, `click/${self.ns}`)
+    self.object.removeEventListener('click', clickHandler)
+    let hashHandler = Xt.dataStorage.get(window, `hashchange/${self.ns}`)
+    removeEventListener('hashchange', hashHandler)
     for (const scrollElement of options.scrollElements) {
-      if (scrollElement === document.scrollingElement) {
-        removeEventListener('scroll', self.eventScrollHandler.bind(self).bind(self, scrollElement))
-      } else {
-        scrollElement.removeEventListener('scroll', self.eventScrollHandler.bind(self).bind(self, scrollElement))
+      if (scrollElement) {
+        let scrollHandler = Xt.dataStorage.get(scrollElement, `scroll/${self.ns}`)
+        if (scrollElement === document.scrollingElement) {
+          removeEventListener('scroll', scrollHandler)
+        } else {
+          scrollElement.removeEventListener('scroll', scrollHandler)
+        }
+        scrollElement.removeEventListener(`scroll.trigger.${self.componentNs}`, scrollHandler)
       }
     }
     // initialized class

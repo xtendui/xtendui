@@ -35,12 +35,19 @@ class Mousefollow {
     const self = this
     // options
     self.options = Xt.merge([self.constructor.optionsDefault, self.optionsCustom])
+    // namespace
+    const uniqueId = Xt.dataStorage.get(self.container, 'xtUniqueId')
+    Xt.dataStorage.set(self.container, 'xtUniqueId', uniqueId || Xt.getuniqueId())
+    self.ns = `${self.componentName}-${Xt.dataStorage.get(self.container, 'xtUniqueId')}`
     // targets
     self.targets = self.object.querySelectorAll(self.options.targets)
     // events
-    self.object.addEventListener('mousemove', self.mousemove.bind(self))
-    self.object.addEventListener('mouseenter', self.mouseenter.bind(self))
-    self.object.addEventListener('mouseleave', self.mouseleave.bind(self))
+    let moveHandler = Xt.dataStorage.put(self.object, `mousemove/${self.ns}`, self.mousemove.bind(self))
+    self.object.addEventListener('mousemove', moveHandler)
+    let enterHandler = Xt.dataStorage.put(self.object, `mouseenter/${self.ns}`, self.mouseenter.bind(self))
+    self.object.addEventListener('mouseenter', enterHandler)
+    let leaveHandler = Xt.dataStorage.put(self.object, `mouseleave/${self.ns}`, self.mouseleave.bind(self))
+    self.object.addEventListener('mouseleave', leaveHandler)
     // initialized class
     self.object.classList.add(self.componentName)
     // listener dispatch
@@ -134,10 +141,12 @@ class Mousefollow {
   destroy() {
     const self = this
     // remove events
-    self.object.removeEventListener('mousemove', self.mousemove.bind(self))
-    self.object.removeEventListener('mouseenter', self.mouseenter.bind(self))
-    self.object.removeEventListener('mouseleave', self.mouseleave.bind(self))
-    removeEventListener('mouseup', self.mouseleave.bind(self))
+    let moveHandler = Xt.dataStorage.get(self.object, `mousemove/${self.ns}`)
+    self.object.removeEventListener('mousemove', moveHandler)
+    let enterHandler = Xt.dataStorage.get(self.object, `mouseenter/${self.ns}`)
+    self.object.removeEventListener('mouseenter', enterHandler)
+    let leaveHandler = Xt.dataStorage.get(self.object, `mouseleave/${self.ns}`)
+    self.object.removeEventListener('mouseleave', leaveHandler)
     // initialized class
     self.object.classList.remove(self.componentName)
     // set self

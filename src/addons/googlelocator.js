@@ -33,8 +33,12 @@ class Googlelocator {
    */
   init() {
     const self = this
-    // js options
+    // options
     self.options = Xt.merge([self.constructor.optionsDefault, self.optionsCustom])
+    // namespace
+    const uniqueId = Xt.dataStorage.get(self.container, 'xtUniqueId')
+    Xt.dataStorage.set(self.container, 'xtUniqueId', uniqueId || Xt.getuniqueId())
+    self.ns = `${self.componentName}-${Xt.dataStorage.get(self.container, 'xtUniqueId')}`
     // vars
     self.locateCache = null
     self.loaderElement = self.object.querySelector(self.options.elements.loader)
@@ -48,10 +52,12 @@ class Googlelocator {
     self.map = new google.maps.Map(self.mapElement, options.map)
     self.searchInput = self.object.querySelector(self.options.elements.searchInput)
     self.search = new google.maps.places.Autocomplete(self.searchInput)
-    self.searchInput.addEventListener('keypress', self.searchSubmit.bind(self))
+    let searchHandler = Xt.dataStorage.put(self.searchInput, `keypress/${self.ns}`, self.searchSubmit.bind(self))
+    self.searchInput.addEventListener('keypress', searchHandler)
     // submit triggers places autocomplete
     self.searchBtn = self.object.querySelector(self.options.elements.searchBtn)
-    self.searchBtn.addEventListener('click', self.searchClick.bind(self))
+    let submitHandler = Xt.dataStorage.put(self.searchBtn, `click/${self.ns}`, self.searchClick.bind(self))
+    self.searchBtn.addEventListener('click', submitHandler)
     // minimum zoom
     if (options.map.zoomMin) {
       google.maps.event.addListener(self.map, 'zoom_changed', () => {
@@ -120,7 +126,8 @@ class Googlelocator {
     if (options.elements.repeatBtn) {
       self.repeatElement = self.object.querySelector(options.elements.repeatBtn)
       if (self.repeatElement) {
-        self.repeatElement.addEventListener('click', self.submitCurrent.bind(self).bind(self, false))
+        let repeatHandler = Xt.dataStorage.put(self.repeatElement, `click/${self.ns}`, self.submitCurrent.bind(self).bind(self, false))
+        self.repeatElement.addEventListener('click', repeatHandler)
       }
     }
     // initialSearch
@@ -140,7 +147,8 @@ class Googlelocator {
             if (options.initialLocate) {
               self.locate(true)
             }
-            self.locateElement.addEventListener('click', self.locate.bind(self))
+            let locateHandler = Xt.dataStorage.put(self.locateElement, `click/${self.ns}`, self.locate.bind(self))
+            self.locateElement.addEventListener('click', locateHandler)
           } else {
             self.locateElement.style.display = 'none'
           }
@@ -513,19 +521,30 @@ class Googlelocator {
    */
   destroy() {
     const self = this
-    // remove old
+    // events
+    let searchHandler = Xt.dataStorage.get(self.searchInput, `keypress/${self.ns}`)
+    self.searchInput.removeEventListener('keypress', searchHandler)
+    let submitHandler = Xt.dataStorage.get(self.searchBtn, `click/${self.ns}`)
+    self.searchBtn.removeEventListener('click', submitHandler)
+    if (self.locateElement) {
+      let locateHandler = Xt.dataStorage.get(self.locateElement, `click/${self.ns}`)
+      self.locateElement.removeEventListener('click', locateHandler)
+    }
+    if (self.repeatElement) {
+      let repeatHandler = Xt.dataStorage.get(self.repeatElement, `click/${self.ns}`)
+      self.repeatElement.removeEventListener('click', repeatHandler)
+    }
+    // populate
+    if (self.resultElement) {
+      self.resultElement.classList.remove('noplace')
+      self.resultElement.classList.remove('empty')
+      self.resultElement.classList.remove('found')
+      self.resultElement.classList.remove('error')
+    }
+    // clone
     const removes = self.object.querySelectorAll('.xt-googlelocator-clone')
     for (const remove of removes) {
       remove.remove()
-    }
-    // events
-    self.searchBtn.removeEventListener('click', self.searchClick.bind(self))
-    self.searchInput.removeEventListener('keypress', self.searchSubmit.bind(self))
-    if (self.locateElement) {
-      self.locateElement.removeEventListener('click', self.locate.bind(self))
-    }
-    if (self.repeatElement) {
-      self.repeatElement.removeEventListener('click', self.submitCurrent.bind(self).bind(self, false))
     }
     // initialized class
     self.object.classList.remove(self.componentName)

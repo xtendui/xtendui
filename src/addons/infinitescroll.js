@@ -34,6 +34,10 @@ class Infinitescroll {
     const self = this
     // options
     self.options = Xt.merge([self.constructor.optionsDefault, self.optionsCustom])
+    // namespace
+    const uniqueId = Xt.dataStorage.get(self.container, 'xtUniqueId')
+    Xt.dataStorage.set(self.container, 'xtUniqueId', uniqueId || Xt.getuniqueId())
+    self.ns = `${self.componentName}-${Xt.dataStorage.get(self.container, 'xtUniqueId')}`
     // vars
     self.current = self.options.min
     self.classes = self.options.class ? [...self.options.class.split(' ')] : []
@@ -50,12 +54,13 @@ class Infinitescroll {
     if (!self.options.get) {
       self.itemsFake = self.object.querySelector(self.options.elements.items).cloneNode(true)
     }
-    // unload
-    addEventListener('unload', self.eventUnloadHandler.bind(self))
-    // beforeunload
-    addEventListener('beforeunload', self.eventBeforeunloadHandler.bind(self))
-    // scroll
-    addEventListener('scroll', self.eventScrollHandler.bind(self))
+    // events
+    let unloadHandler = Xt.dataStorage.put(window, `unload/${self.ns}`, self.eventUnloadHandler.bind(self))
+    addEventListener('unload', unloadHandler)
+    let beforeunloadHandler = Xt.dataStorage.put(window, `beforeunload/${self.ns}`, self.eventBeforeunloadHandler.bind(self))
+    addEventListener('beforeunload', beforeunloadHandler)
+    let scrollHandler = Xt.dataStorage.put(window, `scroll/${self.ns}`, self.eventScrollHandler.bind(self))
+    addEventListener('scroll', scrollHandler)
     // setCurrent
     self.setCurrent()
     if (self.itemsElement) {
@@ -70,11 +75,13 @@ class Infinitescroll {
     }
     // trigger
     if (self.options.events.trigger) {
-      self.triggerElement.addEventListener(self.options.events.trigger, self.eventTrigger.bind(self))
+      let triggerHandler = Xt.dataStorage.put(self.triggerElement, `${self.options.events.trigger}}/${self.ns}`, self.eventTrigger.bind(self))
+      self.triggerElement.addEventListener(self.options.events.trigger, triggerHandler)
     }
     // reset
     if (self.options.events.reset) {
-      self.resetElement.addEventListener(self.options.events.reset, self.eventReset.bind(self))
+      let resetHandler = Xt.dataStorage.put(self.resetElement, `${self.options.events.reset}}/${self.ns}`, self.eventReset.bind(self))
+      self.resetElement.addEventListener(self.options.events.reset, resetHandler)
     }
     // resume state
     const state = history.state
@@ -408,10 +415,21 @@ class Infinitescroll {
    */
   destroy() {
     const self = this
-    // class
-    removeEventListener('unload', self.eventUnloadHandler.bind(self))
-    removeEventListener('beforeunload', self.eventBeforeunloadHandler.bind(self))
-    removeEventListener('scroll', self.eventScrollHandler.bind(self))
+    // events
+    let unloadHandler = Xt.dataStorage.get(window, `unload/${self.ns}`)
+    removeEventListener('unload', unloadHandler)
+    let beforeunloadHandler = Xt.dataStorage.get(window, `beforeunload/${self.ns}`)
+    removeEventListener('beforeunload', beforeunloadHandler)
+    let scrollHandler = Xt.dataStorage.get(window, `scroll/${self.ns}`)
+    removeEventListener('scroll', scrollHandler)
+    if (self.options.events.trigger) {
+      let triggerHandler = Xt.dataStorage.get(self.triggerElement, `${self.options.events.trigger}}/${self.ns}`)
+      self.triggerElement.removeEventListener(self.options.events.trigger, triggerHandler)
+    }
+    if (self.options.events.reset) {
+      let resetHandler = Xt.dataStorage.get(self.resetElement, `${self.options.events.reset}}/${self.ns}`)
+      self.resetElement.removeEventListener(self.options.events.reset, resetHandler)
+    }
     // initialized class
     self.object.classList.remove(self.componentName)
     // set self

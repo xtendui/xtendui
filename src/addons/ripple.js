@@ -40,8 +40,9 @@ class Ripple {
       self.container = self.object.querySelector(':scope > .ripple-container')
     }
     // on
-    self.object.addEventListener('mousedown', self.eventStart.bind(self))
-    self.object.addEventListener('touchstart', self.eventStart.bind(self), { passive: true })
+    let onHandler = Xt.dataStorage.put(self.object, `mousedown/touchstart/${self.ns}`, self.eventStart.bind(self))
+    self.object.addEventListener('mousedown', onHandler)
+    self.object.addEventListener('touchstart', onHandler, { passive: true })
     // initialized class
     self.object.classList.add(self.componentName)
     // listener dispatch
@@ -105,9 +106,9 @@ class Ripple {
       // listener dispatch
       self.object.dispatchEvent(new CustomEvent(`on.${self.componentNs}`))
       // off
-      self.offListener = self.eventEnd.bind(self)
-      addEventListener('mouseup', self.offListener)
-      addEventListener('touchend', self.offListener, { passive: true })
+      let endHandler = Xt.dataStorage.put(window, `mouseup/touchend/${self.ns}`, self.eventEnd.bind(self))
+      addEventListener('mouseup', endHandler)
+      addEventListener('touchend', endHandler, { passive: true })
     }
   }
 
@@ -117,8 +118,9 @@ class Ripple {
   eventEnd() {
     const self = this
     // off
-    removeEventListener('mouseup', self.offListener)
-    removeEventListener('touchend', self.offListener)
+    let endHandler = Xt.dataStorage.get(window, `mouseup/touchend/${self.ns}`)
+    removeEventListener('mouseup', endHandler)
+    removeEventListener('touchend', endHandler)
     // listener dispatch
     self.object.dispatchEvent(new CustomEvent(`off.${self.componentNs}`))
   }
@@ -136,11 +138,13 @@ class Ripple {
     self.object.querySelector(':scope > .ripple-container').remove()
     // remove events
     // on
-    self.object.removeEventListener('mousedown', self.eventStart.bind(self))
-    self.object.removeEventListener('touchstart', self.eventStart.bind(self), { passive: true })
+    let onHandler = Xt.dataStorage.get(self.object, `mousedown/touchstart/${self.ns}`)
+    self.object.removeEventListener('mousedown', onHandler)
+    self.object.removeEventListener('touchstart', onHandler, { passive: true })
     // off
-    removeEventListener('mouseup', self.offListener)
-    removeEventListener('touchend', self.offListener)
+    let endHandler = Xt.dataStorage.get(window, `mouseup/touchend/${self.ns}`)
+    removeEventListener('mouseup', endHandler)
+    removeEventListener('touchend', endHandler)
     // initialized class
     self.object.classList.remove(self.componentName)
     // set self
