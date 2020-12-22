@@ -6,6 +6,13 @@ title: "Markdown"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
+<demo>
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/slider/events-methods">
+  </div>
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/hero/fashion-hero-v2">
+  </div>
+</demo>
+
 ## Markdown
 
 description: "Examples of breadcrumbs, with all the basic functionality and more."

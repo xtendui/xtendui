@@ -63,8 +63,8 @@ module.exports = {
       alignItems: 'flex-start',
       // animation dragger
       transitionProperty: 'transform',
-      transitionDuration: theme('transitionDuration.500'),
-      transitionTimingFunction: theme('transitionTimingFunction.in-out'),
+      transitionDuration: theme('transitionDuration.700'),
+      transitionTimingFunction: theme('transitionTimingFunction.out'),
     },
     '.slider-pagination, .slider-navigation': {
       // styles
