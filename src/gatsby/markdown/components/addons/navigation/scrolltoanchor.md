@@ -81,6 +81,10 @@ Access properties by getting component object.
 | ----------------------- | ---------------------------------------- | ----------------------------- |
 | Property                   | `options:Object`       | Final options             |
 | Property                   | `object:Node`       | Object node             |
+| Property                   | `scrollElement:Node`       | Current scrolling element             |
+| Property                   | `position:Number`       | Current scroll position             |
+| Property                   | `scrollSpace:Number`       | Current scroll space             |
+| Property                   | `scrollDistance:Number`       | Current scroll distance             |
 
 </div>
 

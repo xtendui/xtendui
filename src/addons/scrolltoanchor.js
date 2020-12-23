@@ -57,7 +57,7 @@ class Scrolltoanchor {
         scrollElement.addEventListener(`scroll.trigger.${self.componentNs}`, scrollHandler)
         // initial
         requestAnimationFrame(() => {
-          self.scrollElementCurrent = scrollElement
+          self.scrollElement = scrollElement
           self.eventStart()
           self.eventScrollHandler(scrollElement)
         })
@@ -128,12 +128,12 @@ class Scrolltoanchor {
               for (const scrollElement of options.scrollElements) {
                 if (scrollElement) {
                   if (scrollElement.contains(self.target)) {
-                    self.scrollElementCurrent = scrollElement
+                    self.scrollElement = scrollElement
                   }
                 }
               }
               // els
-              let els = Array.from(self.scrollElementCurrent.querySelectorAll(options.elements))
+              let els = Array.from(self.scrollElement.querySelectorAll(options.elements))
               // class
               for (const other of els) {
                 other.classList.remove(...self.classes)
@@ -144,9 +144,9 @@ class Scrolltoanchor {
                 history.pushState({}, '', loc.hash)
               }
               // vars
-              self.position = options.position(self.scrollElementCurrent, self.target)
-              self.scrollSpace = options.scrollSpace(self.scrollElementCurrent, self.target)
-              self.scrollDistance = options.scrollDistance(self.scrollElementCurrent, self.target)
+              self.position = options.position(self.scrollElement, self.target)
+              self.scrollSpace = options.scrollSpace(self.scrollElement, self.target)
+              self.scrollDistance = options.scrollDistance(self.scrollElement, self.target)
               // listener dispatch
               self.object.dispatchEvent(new CustomEvent(`change.${self.componentNs}`))
             }
@@ -217,16 +217,16 @@ class Scrolltoanchor {
           for (const scrollElement of options.scrollElements) {
             if (scrollElement) {
               if (scrollElement.contains(self.target)) {
-                self.scrollElementCurrent = scrollElement
+                self.scrollElement = scrollElement
               }
             }
           }
           // vars
-          self.position = options.position(self.scrollElementCurrent, self.target)
-          self.scrollSpace = options.scrollSpace(self.scrollElementCurrent, self.target)
-          self.scrollDistance = options.scrollDistance(self.scrollElementCurrent, self.target)
+          const position = options.position(self.scrollElement, self.target)
+          const space = options.scrollSpace(self.scrollElement, self.target)
+          const distance = options.scrollDistance(self.scrollElement, self.target)
           // check if activating
-          if (scrollTop >= Math.floor(self.position - self.scrollSpace - self.scrollDistance)) {
+          if (scrollTop >= Math.floor(position - space - distance)) {
             // loop multiple els of
             const matches = options.matches.replace('{hash}', loc.hash)
             const currents = els.filter(x => x.matches(matches))

@@ -11,12 +11,8 @@ gsap.registerPlugin(ScrollToPlugin)
  */
 
 Xt.mount.push({
-  matches: '#iframe--fashion-gallery-v1 body #gatsby_body-inner', // add your own selector instead of body to contain the code
+  matches: '#iframe--fashion-gallery-v1 body', // add your own selector instead of body to contain the code
   mount: object => {
-    // vars
-
-    object = document.documentElement
-
     // init
 
     let self = new Xt.Scrolltoanchor(object, {
@@ -27,19 +23,19 @@ Xt.mount.push({
 
     const eventChange = () => {
       // val
-      const scrollingElement = self.scrollElementCurrent
       let pos = self.position - self.scrollSpace - self.scrollDistance
       const min = 0
-      const max = scrollingElement.scrollHeight - scrollingElement.offsetHeight
+      const max = self.scrollElement.scrollHeight - self.scrollElement.offsetHeight
       pos = pos < min ? min : pos
       pos = pos > max ? max : pos
       // scroll
-      const component = self.scrollElementCurrent.closest('.overlay')
+      const component = self.scrollElement.closest('.overlay')
       if (component) {
         // if component on activation
-        gsap.set(scrollingElement, { scrollTo: pos })
+        gsap.set(self.scrollElement, { scrollTo: pos })
       } else {
-        gsap.to(scrollingElement, { scrollTo: pos, duration: 1, ease: 'quart.inOut' })
+        gsap.killTweensOf(self.scrollElement)
+        gsap.to(self.scrollElement, { scrollTo: pos, duration: 1, ease: 'quart.inOut' })
       }
     }
 

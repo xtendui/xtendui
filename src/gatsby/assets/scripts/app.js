@@ -58,12 +58,8 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '.gatsby_site-article',
+  matches: 'body',
   mount: object => {
-    // vars
-
-    object = object.closest('body')
-
     // init
 
     let self = new Xt.Scrolltoanchor(object, {
@@ -71,23 +67,20 @@ Xt.mount.push({
       scrollDistance: () => {
         return window.innerHeight / 10
       },
-      scrollSpace: () => {
-        return 0
-      },
     })
 
     // change
 
     const eventChange = () => {
       // val
-      const scrollingElement = self.scrollElementCurrent
       let pos = self.position - self.scrollSpace - self.scrollDistance
       const min = 0
-      const max = scrollingElement.scrollHeight - scrollingElement.offsetHeight
+      const max = self.scrollElement.scrollHeight - self.scrollElement.offsetHeight
       pos = pos < min ? min : pos
       pos = pos > max ? max : pos
       // scroll
-      gsap.to(scrollingElement, { scrollTo: pos, duration: 1, ease: 'quart.inOut' })
+      gsap.killTweensOf(self.scrollElement)
+      gsap.to(self.scrollElement, { scrollTo: pos, duration: 1, ease: 'quart.inOut' })
     }
 
     self.object.addEventListener('change.xt.scrolltoanchor', eventChange)
