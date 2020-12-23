@@ -23,16 +23,16 @@ export default function Header({ page }) {
     }
   `)
   return (
-    <div className="gatsby_site_article_sidebar">
-      <div className="gatsby_site_article_sidebar_inner">
+    <div className="gatsby_site-article_sidebar">
+      <div className="gatsby_site-article_sidebar_inner">
         <header
-          className="gatsby_site_header xt-sticky-disabled"
+          className="gatsby_site-header xt-sticky-disabled"
           data-xt-sticky="{ sticky: 'fixed', disabled: true, matches: { '(max-width: 1023px)': { disabled: false } } }"
         >
-          <div className="gatsby_site_header_inner">
+          <div className="gatsby_site-header_inner">
             <div>
-              <div className="gatsby_site_header_content">
-                <div className="gatsby_site_header_logo">
+              <div className="gatsby_site-header_content">
+                <div className="gatsby_site-header_logo">
                   <Link
                     to="/"
                     title="Xtend UI"
@@ -42,14 +42,14 @@ export default function Header({ page }) {
                     <img src={'/logo-white.svg'} loading="eager" alt={site.siteMetadata.title} />
                   </Link>
                 </div>
-                <div className="gatsby_site_header_top_social_container">
-                  <div className="gatsby_site_header_top_social">
+                <div className="gatsby_site-header_top_social_container">
+                  <div className="gatsby_site-header_top_social">
                     <div data-xt-tooltip="{ position: 'bottom-end' }">
                       <a
                         href={site.siteMetadata.npm}
                         target="_blank"
                         rel="noreferrer"
-                        className="btn gatsby_btn-site_header_top_social"
+                        className="btn gatsby_btn-site-header_top_social"
                         title="Npm"
                         dangerouslySetInnerHTML={{ __html: iconPackage() }}
                       ></a>
@@ -66,7 +66,7 @@ export default function Header({ page }) {
                         href={site.siteMetadata.github}
                         target="_blank"
                         rel="noreferrer"
-                        className="btn gatsby_btn-site_header_top_social"
+                        className="btn gatsby_btn-site-header_top_social"
                         title="Github"
                         dangerouslySetInnerHTML={{ __html: iconGithub() }}
                       ></a>
@@ -80,7 +80,7 @@ export default function Header({ page }) {
                     </span>
                   </div>
                 </div>
-                <div className="gatsby_site_header_menu_link">
+                <div className="gatsby_site-header_menu_link">
                   <button
                     type="button"
                     className="btn btn-md rounded-md"
@@ -134,14 +134,14 @@ export default function Header({ page }) {
                   </svg>
                 </div>
                 <div className="mt-6">
-                  <div className="gatsby_site_header_links_container">
-                    <div className="gatsby_site_header_links">
+                  <div className="gatsby_site-header_links_container">
+                    <div className="gatsby_site-header_links">
                       {page.menus.posts.map(({ post }, i) => (
                         <div key={i}>
                           <Link
                             to={markdownSlug(post)}
                             title={post.frontmatter.description}
-                            className={`btn gatsby_btn-site_header_link ${
+                            className={`btn gatsby_btn-site-header_link ${
                               page && page.post
                                 ? markdownSlug(page.post) === markdownSlug(post)
                                   ? 'active'
@@ -158,16 +158,16 @@ export default function Header({ page }) {
                     </div>
                   </div>
                   {page && page.post ? (
-                    <nav className="gatsby_site_header_listing">
+                    <nav className="gatsby_site-header_listing">
                       {page.categories.category.sort(typeSort).map((category, i) => (
                         <div key={i}>
-                          <div className="gatsby_site_header_cat">
+                          <div className="gatsby_site-header_cat">
                             <div className="gatsby_cat--site_article_sidebar">{category.title.split('-').pop()}</div>
-                            <div className="gatsby_site_header_sub">
-                              <div className="gatsby_site_header_item">
+                            <div className="gatsby_site-header_sub">
+                              <div className="gatsby_site-header_item">
                                 {category.posts.map(({ post }, z) =>
                                   post.frontmatter.parent === post.frontmatter.title ? (
-                                    <div className="gatsby_site_header_item_container" key={z}>
+                                    <div className="gatsby_site-header_item_container" key={z}>
                                       {post.frontmatter.link ? (
                                         <div>
                                           <a
@@ -186,8 +186,8 @@ export default function Header({ page }) {
                                           >
                                             <span>{post.frontmatter.title}</span>
                                           </a>
-                                          <div className="gatsby_site_header_adiacent_inner">
-                                            <div className="gatsby_site_header_item"></div>
+                                          <div className="gatsby_site-header_adiacent_inner">
+                                            <div className="gatsby_site-header_item"></div>
                                           </div>
                                         </div>
                                       ) : (
@@ -206,15 +206,15 @@ export default function Header({ page }) {
                                           >
                                             <span>{post.frontmatter.title}</span>
                                           </Link>
-                                          <div className="gatsby_site_header_adiacent_inner">
-                                            <div className="gatsby_site_header_item"></div>
+                                          <div className="gatsby_site-header_adiacent_inner">
+                                            <div className="gatsby_site-header_item"></div>
                                           </div>
                                         </div>
                                       )}
                                       {post.frontmatter.parent === page.post.frontmatter.parent &&
                                       post.frontmatter.category === page.post.frontmatter.category ? (
-                                        <div className="gatsby_site_header_adiacent active">
-                                          <div className="gatsby_site_header_item">
+                                        <div className="gatsby_site-header_adiacent active">
+                                          <div className="gatsby_site-header_item">
                                             {page.postsAdiacent.posts.map(({ post: adiacent }, i) =>
                                               adiacent.frontmatter.title !== post.frontmatter.parent ? (
                                                 !adiacent.frontmatter.demos ? (
@@ -235,8 +235,8 @@ export default function Header({ page }) {
                                                           .join(' ')}
                                                       </span>
                                                     </Link>
-                                                    <div className="gatsby_site_header_adiacent_inner">
-                                                      <div className="gatsby_site_header_item"></div>
+                                                    <div className="gatsby_site-header_adiacent_inner">
+                                                      <div className="gatsby_site-header_item"></div>
                                                     </div>
                                                   </div>
                                                 ) : null

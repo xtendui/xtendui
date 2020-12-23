@@ -5,10 +5,10 @@ export default class DocHead extends React.Component {
   render() {
     const { page } = this.props
     return (
-      <header className="gatsby_site_article_hero">
-        <div className="gatsby_site_article_hero-inner">
-          <div className="gatsby_site_article_hero-content">
-            <div className="gatsby_site_article_hero-content-inner">
+      <header className="gatsby_site-article_hero">
+        <div className="gatsby_site-article_hero-inner">
+          <div className="gatsby_site-article_hero-content">
+            <div className="gatsby_site-article_hero-content-inner">
               <h1>
                 <span>
                   {page.post.frontmatter.title

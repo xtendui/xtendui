@@ -5,13 +5,6 @@
     .listing-item {
       position: relative;
       overflow: hidden;
-      @media (max-width: calc(theme('screens.md') - 1px)) {
-        .listing-front {
-          .listing-item_content {
-            display: none;
-          }
-        }
-      }
       @screen md {
         .listing-front {
           display: block;

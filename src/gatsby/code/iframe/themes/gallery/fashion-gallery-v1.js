@@ -20,15 +20,15 @@ export const demo = {
 demo.htmlSource = `
 <!-- For seo purpose add product metadata https://developers.google.com/search/docs/data-types/product -->
 
-<div class="site_wrapper">
+<div class="site-wrapper">
 
-  <header class="site_header">
+  <header class="site-header">
     <div class="card card-sm ${cardPrimary()}">
       <div class="h4">Header</div>
     </div>
   </header>
 
-  <main class="site_main">
+  <main class="site-main">
 
     <div class="container">
       <div class="row row-4 lg:row-6 items-stretch">
@@ -197,7 +197,7 @@ demo.htmlSource = `
 
   </main>
 
-  <footer class="site_footer">
+  <footer class="site-footer">
     <div class="card card-sm ${cardDefault()}">
       <div class="h4">Footer</div>
     </div>

@@ -21,13 +21,13 @@
 
     .listing-item {
       perspective: 1400px;
-      .listing-item_inner {
+      .listing-item-inner {
         height: 100%;
         transform-style: preserve-3d;
         @apply transition ease-in-out-quad duration-500;
       }
       &.active {
-        .listing-item_inner {
+        .listing-item-inner {
           transform: rotateY(180deg);
         }
         .listing-back {

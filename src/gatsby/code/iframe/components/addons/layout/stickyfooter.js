@@ -14,22 +14,22 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="site_wrapper">
+<div class="site-wrapper">
 
-  <header class="site_header">
+  <header class="site-header">
     <div class="card card-sm ${cardPrimary()}">
       <div class="h4">Header</div>
     </div>
   </header>
 
-  <main class="site_main">
+  <main class="site-main">
     <div class="card card-md card-sm ${cardDefault()}">
       <div class="h4">Main</div>
       <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
     </div>
   </main>
 
-  <footer class="site_footer">
+  <footer class="site-footer">
     <div class="card card-sm ${cardPrimary()}">
       <div class="h4">Footer</div>
     </div>

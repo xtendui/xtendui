@@ -58,7 +58,7 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '.gatsby_site_article',
+  matches: '.gatsby_site-article',
   mount: object => {
     // vars
 
@@ -108,7 +108,7 @@ Xt.mount.push({
 
 const makeDocument = () => {
   // .gatsby_make-line
-  for (const el of document.querySelectorAll('.gatsby_site_article_content_inner > * > h2, .gatsby_site_article_content_inner > * > h4')) {
+  for (const el of document.querySelectorAll('.gatsby_site-article_content_inner > * > h2, .gatsby_site-article_content_inner > * > h4')) {
     el.classList.add('gatsby_make-line')
   }
   for (const el of document.querySelectorAll('.gatsby_make-line')) {
@@ -116,7 +116,7 @@ const makeDocument = () => {
     el.innerHTML = `<span class="gatsby_make-line_container">${el.innerHTML}</span>`
   }
   // .gatsby_make-anchor
-  for (const el of document.querySelectorAll('.gatsby_site_article_content_inner > * > h2, .gatsby_site_article_content_inner > * > h4')) {
+  for (const el of document.querySelectorAll('.gatsby_site-article_content_inner > * > h2, .gatsby_site-article_content_inner > * > h4')) {
     el.classList.add('gatsby_make-line')
     // previous h2 if h4
     let prevElement
@@ -137,14 +137,14 @@ const makeDocument = () => {
     id += el.textContent.trim().replace(/\W/g, '-').toLowerCase()
     // sidebar links
     if (el.tagName === 'H2') {
-      let container = document.querySelector('.gatsby_btn-site_article_sidebar--adiacent.active ~ .gatsby_site_header_adiacent_inner')
-      container = container ? container : document.querySelector('.gatsby_btn-site_article_sidebar--sub.active ~ .gatsby_site_header_adiacent_inner')
+      let container = document.querySelector('.gatsby_btn-site_article_sidebar--adiacent.active ~ .gatsby_site-header_adiacent_inner')
+      container = container ? container : document.querySelector('.gatsby_btn-site_article_sidebar--sub.active ~ .gatsby_site-header_adiacent_inner')
       if (container) {
         const item = Xt.createElement(
           `<div><a href="#" class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--adiacent_inner"><span></span></button></div>`
         )
         container.classList.add('active')
-        container.querySelector('.gatsby_site_header_item').append(item)
+        container.querySelector('.gatsby_site-header_item').append(item)
         item.querySelector('a').setAttribute('href', `#${encodeURIComponent(id)}`)
         item.querySelector('span').textContent = el.textContent.trim()
       }
@@ -162,7 +162,7 @@ const makeDocument = () => {
     link.append(inner)
     el.append(
       Xt.createElement(`
-<span class="gatsby_site_article_anchor">
+<span class="gatsby_site-article_anchor">
   <span class="btn btn-default">
   ${iconLink()}
   </span>
@@ -170,7 +170,7 @@ const makeDocument = () => {
     )
   }
   // docs tables
-  const docs = document.querySelector('.gatsby_site_article_content_inner > div')
+  const docs = document.querySelector('.gatsby_site-article_content_inner > div')
   if (docs) {
     const tables = docs.querySelectorAll(':scope > .table-overflow > table')
     for (const table of tables) {
@@ -182,7 +182,7 @@ const makeDocument = () => {
     }
   }
   // restart xt-scrolltoanchor
-  const gatsby = document.querySelector('.gatsby_site_wrapper')
+  const gatsby = document.querySelector('.gatsby_site-wrapper')
   if (gatsby) {
     const scrollToAnchor = Xt.get('xt-scrolltoanchor', gatsby.closest('body'))
     if (scrollToAnchor) {

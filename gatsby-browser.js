@@ -8,9 +8,9 @@ window.keepSidebarScroll = 0
 window.menuOpen = false
 
 exports.onPreRouteUpdate = ({ location, prevLocation }) => {
-  const menu = document.querySelector('.gatsby_site_header_menu_link [data-xt-overlay]')
+  const menu = document.querySelector('.gatsby_site-header_menu_link [data-xt-overlay]')
   const overlay = document.querySelector('#gatsby_menu--overlay')
-  const sidebar = document.querySelector('.gatsby_site_article_sidebar')
+  const sidebar = document.querySelector('.gatsby_site-article_sidebar')
   // keepSidebarScroll
   if (overlay && sidebar) {
     window.keepSidebarScroll = overlay.scrollTop || sidebar.scrollTop
@@ -34,9 +34,9 @@ exports.onPreRouteUpdate = ({ location, prevLocation }) => {
 }
 
 exports.onRouteUpdate = ({ location, prevLocation }) => {
-  const menu = document.querySelector('.gatsby_site_header_menu_link [data-xt-overlay]')
+  const menu = document.querySelector('.gatsby_site-header_menu_link [data-xt-overlay]')
   const overlay = document.querySelector('#gatsby_menu--overlay')
-  const sidebar = document.querySelector('.gatsby_site_article_sidebar')
+  const sidebar = document.querySelector('.gatsby_site-article_sidebar')
   // keepSidebarScroll
   if (overlay && sidebar) {
     // menuOpen
@@ -46,7 +46,7 @@ exports.onRouteUpdate = ({ location, prevLocation }) => {
     // instant enable
     if (matchMedia('(max-width: 1023px)').matches) {
       overlay.classList.remove('xt-overlay-disabled')
-      document.querySelector('.gatsby_site_header').classList.remove('xt-sticky-disabled')
+      document.querySelector('.gatsby_site-header').classList.remove('xt-sticky-disabled')
     }
     // scroll
     overlay.scrollTop = window.keepSidebarScroll

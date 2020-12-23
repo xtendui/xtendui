@@ -23,16 +23,16 @@ export default class Layout extends React.Component {
     return (
       <>
         {seo && seo.title === 'Home' ? (
-          <div className="gatsby_site_wrapper">
-            <div className="gatsby_site_main">
-              <div className="gatsby_site_main_inner">
-                <div className="gatsby_site_article gatsby_site_article--home prose max-w-none">
-                  <main className="gatsby_site_article_inner" id="gatsby_open-full-inner">
-                    <article className="gatsby_site_article_content">
-                      <div className="gatsby_site_article_content_inner">{children}</div>
+          <div className="gatsby_site-wrapper">
+            <div className="gatsby_site-main">
+              <div className="gatsby_site-main_inner">
+                <div className="gatsby_site-article gatsby_site-article--home prose max-w-none">
+                  <main className="gatsby_site-article_inner" id="gatsby_open-full-inner">
+                    <article className="gatsby_site-article_content">
+                      <div className="gatsby_site-article_content_inner">{children}</div>
                     </article>
-                    <footer className="gatsby_site_footer">
-                      <div className="gatsby_site_footer_inner">
+                    <footer className="gatsby_site-footer">
+                      <div className="gatsby_site-footer_inner">
                         <Footer />
                       </div>
                     </footer>
@@ -42,19 +42,19 @@ export default class Layout extends React.Component {
             </div>
           </div>
         ) : (
-          <div className="gatsby_site_wrapper">
-            <div className="gatsby_site_main">
-              <div className="gatsby_site_main_inner">
+          <div className="gatsby_site-wrapper">
+            <div className="gatsby_site-main">
+              <div className="gatsby_site-main_inner">
                 <Header page={page} />
-                <div className="gatsby_site_article gatsby_site_article--markdown prose max-w-none">
+                <div className="gatsby_site-article gatsby_site-article--markdown prose max-w-none">
                   <DocFullscreen />
-                  <main className="gatsby_site_article_inner" id="gatsby_open-full-inner">
+                  <main className="gatsby_site-article_inner" id="gatsby_open-full-inner">
                     {page && page.post ? <DocHead page={page} /> : null}
-                    <article className="gatsby_site_article_content">
-                      <div className="gatsby_site_article_content_inner">{children}</div>
+                    <article className="gatsby_site-article_content">
+                      <div className="gatsby_site-article_content_inner">{children}</div>
                     </article>
-                    <footer className="gatsby_site_footer">
-                      <div className="gatsby_site_footer_inner">
+                    <footer className="gatsby_site-footer">
+                      <div className="gatsby_site-footer_inner">
                         {page && page.post && page.post.frontmatter.type !== page.post.frontmatter.title ? <DocFoot page={page} /> : null}
                         <Footer />
                       </div>

@@ -2,11 +2,11 @@
  * footer
  */
 
-.gatsby_site_footer_inner {
+.gatsby_site-footer_inner {
   @apply py-5;
 }
 
-.gatsby_site_footer_bottom {
+.gatsby_site-footer_bottom {
   a {
     font-weight: theme('fontWeight.semibold');
     color: theme('colors.black');
@@ -23,7 +23,7 @@
   }
 }
 
-.gatsby_site_footer_bottom_row {
+.gatsby_site-footer_bottom_row {
   flex: 1 1 auto;
   font-size: 11px;
   @screen md {
@@ -36,6 +36,6 @@
   }
 }
 
-.gatsby_site_footer_bottom_margin {
+.gatsby_site-footer_bottom_margin {
   margin-right: auto;
 }

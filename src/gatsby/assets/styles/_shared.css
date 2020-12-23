@@ -2,7 +2,7 @@
  * docs icons
  */
 
-.gatsby_btn-site_header_top_social {
+.gatsby_btn-site-header_top_social {
   font-size: 1rem;
   .icon {
     fill: rgba(255, 255, 255, 0.25);
@@ -74,21 +74,21 @@
     display: block;
     color: inherit !important;
   }
-  .gatsby_site_article_anchor {
+  .gatsby_site-article_anchor {
     pointer-events: none;
   }
-  .gatsby_site_article_anchor {
+  .gatsby_site-article_anchor {
     opacity: 0;
     @apply transition-all delay-500;
   }
   &:hover, &:active {
-    .gatsby_site_article_anchor {
+    .gatsby_site-article_anchor {
       opacity: 1;
     }
   }
 }
 
-.gatsby_site_article_anchor {
+.gatsby_site-article_anchor {
   position: absolute;
   z-index: 2;
   bottom: -4px;

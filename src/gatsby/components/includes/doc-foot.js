@@ -33,7 +33,7 @@ export default class DocFoot extends React.Component {
         x.post.frontmatter.title !== x.post.frontmatter.parent
     )
     return (
-      <div className="gatsby_site_article_foot">
+      <div className="gatsby_site-article_foot">
         <div className="gatsby_listing-group">
           <div className="gatsby_listing-items">
             <div className="row row-stretch">
