@@ -49,8 +49,6 @@ const demoHash = (e, initial = false) => {
           makeFullscreen(demo, initial)
           // scrollToItem
           scrollToItem(initial)
-          // makeGatsbyWithIframe
-          makeGatsbyWithIframe(item)
           // trigger fullscreen or change tabs
           item.dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
         }
@@ -381,6 +379,7 @@ const populateDemo = (container, i) => {
     // @FIX demo fullscreen
     item.addEventListener('on.xt.toggle', () => {
       if (!self.initial) {
+        btnOpenIframe(item)
         // triggering e.detail.container
         dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: item.querySelector('.gatsby_demo_source'), delay: 0 } }))
       }
@@ -391,8 +390,6 @@ const populateDemo = (container, i) => {
         // hash cancel
         cancelAnimationFrame(Xt.dataStorage.get(document, 'gatsby_open-full-raf'))
       }
-      // makeGatsbyWithIframe
-      makeGatsbyWithIframe(item)
       // https://github.com/zenorocha/clipboard.js/
       const btnClipboard = item.querySelector('.btn-clipboard')
       const clipboard = new ClipboardJS(btnClipboard, {
@@ -468,12 +465,12 @@ const populateDemo = (container, i) => {
 }
 
 /**
- * makeGatsbyWithIframe
+ * btnOpenIframe
  */
-const makeGatsbyWithIframe = item => {
-  // btn-open-iframe
+const btnOpenIframe = item => {
   const iframe = item.querySelector('iframe')
   const btn = item.closest('.gatsby_demo').querySelector('.btn-open-iframe')
+  console.log(iframe)
   if (iframe) {
     btn.classList.add('gatsby_with-iframe')
     btn.setAttribute('href', iframe.getAttribute('data-src'))
@@ -552,6 +549,7 @@ const initializeIframe = (container, item) => {
       item.addEventListener('ondone.xt.toggle', () => {
         const iframe = item.querySelector('iframe')
         loadIframe(iframe)
+        btnOpenIframe(item)
       })
       item.addEventListener('offdone.xt.toggle', () => {
         const iframe = item.querySelector('iframe')
@@ -701,4 +699,4 @@ const populateSources = (item, element) => {
   Prism.highlightElement(codeInside)
 }
 
-export { populateBlock, populateDemo, makeFullscreen, demoHash }
+export { populateBlock, populateDemo, demoHash }

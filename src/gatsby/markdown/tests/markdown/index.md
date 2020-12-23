@@ -7,6 +7,12 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 ---
 
 <demo>
+  <demovanilla src="vanilla/components/core/slider/wrap">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/slider/wrap-left">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/slider/wrap-right">
+  </demovanilla>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/slider/events-methods">
   </div>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/hero/fashion-hero-v2">
