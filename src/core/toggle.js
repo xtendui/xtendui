@@ -1635,6 +1635,9 @@ class Toggle {
         } else if (typeof options.instant === 'object' && options.instant[type]) {
           obj[type].instantType = true
         }
+        // special
+        self.specialClassHtml(actionCurrent)
+        self.specialScrollbar(actionCurrent)
         // start queue
         self.queueDelay(actionCurrent, actionOther, obj, type, queueInitial)
       }
@@ -1763,8 +1766,6 @@ class Toggle {
       self.activate(el, type)
       // special
       self.specialBackdrop(actionCurrent, obj, el, type)
-      self.specialClassHtml(actionCurrent, type)
-      self.specialScrollbar(actionCurrent, type)
       self.specialCollapse(actionCurrent, el, type)
       self.specialClose(actionCurrent, el, type)
       if (options.focusLimit) {
@@ -1918,7 +1919,6 @@ class Toggle {
       self.deactivateDone(el, type)
       // special
       self.specialBackdrop(actionCurrent, obj, el, type)
-      self.specialScrollbar(actionCurrent, type)
       if (type === 'targets' || (!self.targets.length && type === 'elements')) {
         // appendTo
         if (options.appendTo) {
@@ -2381,22 +2381,19 @@ class Toggle {
   /**
    * add or remove html class
    * @param {String} actionCurrent Current action
-   * @param {String} type Type of element
    */
-  specialClassHtml(actionCurrent, type) {
+  specialClassHtml(actionCurrent) {
     const self = this
     const options = self.options
     if (options.classHtml) {
-      if (type === 'elements') {
-        if (actionCurrent === 'On') {
-          // class on
-          const container = document.documentElement
-          container.classList.add(...options.classHtml.split(' '))
-        } else if (actionCurrent === 'Off') {
-          // class off
-          const container = document.documentElement
-          container.classList.remove(...options.classHtml.split(' '))
-        }
+      if (actionCurrent === 'On') {
+        // class on
+        const container = document.documentElement
+        container.classList.add(...options.classHtml.split(' '))
+      } else if (actionCurrent === 'Off') {
+        // class off
+        const container = document.documentElement
+        container.classList.remove(...options.classHtml.split(' '))
       }
     }
   }
@@ -2404,29 +2401,26 @@ class Toggle {
   /**
    * scrollbar activation
    * @param {String} actionCurrent Current action
-   * @param {String} type Type of element
    */
-  specialScrollbar(actionCurrent, type) {
+  specialScrollbar(actionCurrent) {
     const self = this
     const options = self.options
     if (options.scrollbar) {
-      if (type === 'elements') {
-        if (actionCurrent === 'On') {
-          // checks
-          Xt.scrollbar.add(self.ns)
+      if (actionCurrent === 'On') {
+        // checks
+        Xt.scrollbar.add(self.ns)
+        // scrollbar
+        const container = document.documentElement
+        container.classList.add('xt-scrollbar')
+        Xt.scrollbarSpaceOn(container)
+      } else if (actionCurrent === 'Off') {
+        // checks
+        Xt.scrollbar.remove(self.ns)
+        if (!Xt.scrollbar.get().length) {
           // scrollbar
           const container = document.documentElement
-          container.classList.add('xt-scrollbar')
-          Xt.scrollbarSpaceOn(container)
-        } else if (actionCurrent === 'Off') {
-          // checks
-          Xt.scrollbar.remove(self.ns)
-          if (!Xt.scrollbar.get().length) {
-            // scrollbar
-            const container = document.documentElement
-            container.classList.remove('xt-scrollbar')
-            Xt.scrollbarSpaceOff(container)
-          }
+          container.classList.remove('xt-scrollbar')
+          Xt.scrollbarSpaceOff(container)
         }
       }
     }
