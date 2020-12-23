@@ -93,7 +93,7 @@ body {
   }
   .gatsby_site-article_hero-inner, .gatsby_site-article_content, .gatsby_site-footer_inner {
     @apply container;
-    max-width: 1280px;
+    max-width: 1152px;
     @screen lg {
       @apply ml-0;
     }
