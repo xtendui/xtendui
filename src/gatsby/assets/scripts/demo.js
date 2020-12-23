@@ -470,7 +470,6 @@ const populateDemo = (container, i) => {
 const btnOpenIframe = item => {
   const iframe = item.querySelector('iframe')
   const btn = item.closest('.gatsby_demo').querySelector('.btn-open-iframe')
-  console.log(iframe)
   if (iframe) {
     btn.classList.add('gatsby_with-iframe')
     btn.setAttribute('href', iframe.getAttribute('data-src'))

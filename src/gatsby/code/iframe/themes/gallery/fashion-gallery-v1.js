@@ -39,7 +39,7 @@ demo.htmlSource = `
 
               <div class="list flex-col">
 
-                <a href="#product-image-overlay-1" class="product-image overflow-hidden w-full" id="product-image-1">
+                <a href="#product-image-overlay-1" class="product-image overflow-hidden w-full" id="product-image-1" title="Expand image 1">
                   <div class="media-container" data-xt-overlay="{ targets: '#overlay-product-images' }">
                     <div class="media-inner relative">
                       <img class="media" src="/img.svg" loading="eager" alt=""/>
@@ -48,7 +48,7 @@ demo.htmlSource = `
                   </div>
                 </a>
 
-                <a href="#product-image-overlay-2" class="product-image overflow-hidden w-full" id="product-image-2">
+                <a href="#product-image-overlay-2" class="product-image overflow-hidden w-full" id="product-image-2" title="Expand image 2">
                   <div class="media-container" data-xt-overlay="{ targets: '#overlay-product-images' }">
                     <div class="media-inner relative">
                       <img class="media" src="/img-alt.svg" loading="eager" alt=""/>
@@ -57,7 +57,7 @@ demo.htmlSource = `
                   </div>
                 </a>
 
-                <a href="#product-image-overlay-3" class="product-image overflow-hidden w-full" id="product-image-3">
+                <a href="#product-image-overlay-3" class="product-image overflow-hidden w-full" id="product-image-3" title="Expand image 3">
                   <div class="media-container" data-xt-overlay="{ targets: '#overlay-product-images' }">
                     <div class="media-inner relative">
                       <img class="media" src="/img.svg" loading="eager" alt=""/>
@@ -66,7 +66,7 @@ demo.htmlSource = `
                   </div>
                 </a>
 
-                <a href="#product-image-overlay-4" class="product-image overflow-hidden w-full" id="product-image-4">
+                <a href="#product-image-overlay-4" class="product-image overflow-hidden w-full" id="product-image-4" title="Expand image 4">
                   <div class="media-container" data-xt-overlay="{ targets: '#overlay-product-images' }">
                     <div class="media-inner relative">
                       <img class="media" src="/img-alt.svg" loading="eager" alt=""/>
@@ -75,7 +75,7 @@ demo.htmlSource = `
                   </div>
                 </a>
 
-                <a href="#product-image-overlay-5" class="product-image overflow-hidden w-full" id="product-image-5">
+                <a href="#product-image-overlay-5" class="product-image overflow-hidden w-full" id="product-image-5" title="Expand image 5">
                   <div class="media-container" data-xt-overlay="{ targets: '#overlay-product-images' }">
                     <div class="media-inner relative">
                       <img class="media"" src="/img.svg" loading="eager" alt=""/>
@@ -191,7 +191,7 @@ demo.htmlSource = `
       </div>
     </div>
 
-    <a href="#product-continue-target" class="product-continue fixed md:hidden p-4 z-sticky bottom-0 inset-x-0 text-4xl text-center bg-gradient-to-b from-transparent to-white">
+    <a href="#product-continue-target" class="product-continue fixed md:hidden p-4 z-sticky bottom-0 inset-x-0 text-4xl text-center bg-gradient-to-b from-transparent to-white" title="Scroll to content">
       ${iconChevronDown({ classes: 'icon-md' })}
     </a>
 

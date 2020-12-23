@@ -43,6 +43,7 @@ if (window.self === window.top && Xt.debug) {
     )
     // images
     Xt.mount.push({
+      ignore: false,
       matches: 'img[src]:not([src^="data:"])',
       mount: object => {
         // loading
@@ -59,6 +60,7 @@ if (window.self === window.top && Xt.debug) {
     })
     // input
     Xt.mount.push({
+      ignore: false,
       matches: 'input:not([type="hidden"]), select, textarea',
       mount: object => {
         // label
@@ -71,6 +73,7 @@ if (window.self === window.top && Xt.debug) {
     })
     // links
     Xt.mount.push({
+      ignore: false,
       matches: 'a[href]',
       mount: object => {
         // title
@@ -167,12 +170,8 @@ Xt.observer = new MutationObserver(mutationsList => {
  * @param {Node|HTMLElement|EventTarget|Window} added
  */
 Xt.mountCheck = (added = document.documentElement) => {
-  const addedIgnore = added.closest('.xt-ignore')
-  if (addedIgnore) {
-    Xt.ignoreOnce(addedIgnore) // @FIX ignore once for mount when moving
-    return
-  }
   for (const obj of Xt.mount) {
+    const ignoreStr = obj.ignore ? obj.ignore : obj.ignore === false ? false : '.xt-ignore'
     // check
     const objects = []
     if (added.matches(obj.matches)) {
@@ -184,10 +183,12 @@ Xt.mountCheck = (added = document.documentElement) => {
     // call
     if (objects.length) {
       for (const [i, object] of objects.entries()) {
-        const ignore = object.closest('.xt-ignore')
-        if (ignore) {
-          Xt.ignoreOnce(ignore) // @FIX ignore once for mount when moving
-          continue
+        if (ignoreStr) {
+          const ignore = object.closest(ignoreStr)
+          if (ignore) {
+            Xt.ignoreOnce(ignore) // @FIX ignore once for mount when moving
+            continue
+          }
         }
         // @FIX multiple initialization because we observe also childs with querySelectorAll
         if (Xt.dataStorage.get(object, `Mount${obj.matches}`)) {
@@ -219,9 +220,6 @@ Xt.mountCheck = (added = document.documentElement) => {
  * @param {Node|HTMLElement|EventTarget|Window} removed
  */
 Xt.unmountCheck = (removed = document.documentElement) => {
-  if (removed.closest('.xt-ignore')) {
-    return
-  }
   for (const obj of Xt.unmount) {
     // check
     if (removed === obj.object || removed.contains(obj.object)) {
