@@ -171,7 +171,15 @@ Xt.observer = new MutationObserver(mutationsList => {
  */
 Xt.mountCheck = (added = document.documentElement) => {
   for (const obj of Xt.mount) {
+    // ignore
     const ignoreStr = obj.ignore ? obj.ignore : obj.ignore === false ? false : '.xt-ignore'
+    if (ignoreStr) {
+      const ignore = added.closest(ignoreStr)
+      if (ignore) {
+        Xt.ignoreOnce(ignore) // @FIX ignore once for mount when moving
+        continue
+      }
+    }
     // check
     const objects = []
     if (added.matches(obj.matches)) {
@@ -183,13 +191,6 @@ Xt.mountCheck = (added = document.documentElement) => {
     // call
     if (objects.length) {
       for (const [i, object] of objects.entries()) {
-        if (ignoreStr) {
-          const ignore = object.closest(ignoreStr)
-          if (ignore) {
-            Xt.ignoreOnce(ignore) // @FIX ignore once for mount when moving
-            continue
-          }
-        }
         // @FIX multiple initialization because we observe also childs with querySelectorAll
         if (Xt.dataStorage.get(object, `Mount${obj.matches}`)) {
           return
