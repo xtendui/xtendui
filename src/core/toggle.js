@@ -1825,7 +1825,6 @@ class Toggle {
       // activation
       self.deactivate(el, type)
       // special
-      self.specialClassHtml(actionCurrent, type)
       self.specialCollapse(actionCurrent, el, type)
       self.specialClose(actionCurrent, el, type)
       if (options.focusLimit) {

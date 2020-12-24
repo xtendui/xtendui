@@ -12,11 +12,10 @@ module.exports = {
       left: '0',
       bottom: '0', // @FIX no height or it bugs collapse animation
       right: '0', // @FIX no width or it bugs collapse animation
+      overflowY: 'scroll',
       '&.out': {
+        overflowY: 'initial',
         pointerEvents: 'none',
-      },
-      'html.xt-scrollbar &': {
-        overflowY: 'scroll',
       },
     },
     '.overlay-container': {
@@ -68,9 +67,7 @@ module.exports = {
         right: 'auto',
         width: 'auto',
         height: 'auto',
-        'html.xt-scrollbar &': {
-          overflowY: 'initial',
-        },
+        overflowY: 'initial',
         '.overlay-container': {
           zIndex: 'initial',
           padding: '0',
