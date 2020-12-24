@@ -3,6 +3,9 @@
  */
 
 .gatsby_site-article_sidebar {
+}
+
+.gatsby_site-article_sidebar {
   @apply text-white links-inverse overflow-sub;
   background: theme('colors.accent.500');
   @screen lg {
@@ -65,7 +68,10 @@
  * header
  */
 
- .gatsby_site-header {
+.gatsby_site-header {
+  /* sticky */
+  z-index: theme('zIndex.sticky');
+  /* hide sticky when demo-full-open */
   @media (max-width: calc(theme('screens.lg') - 1px)) {
     html.demo-full-open & {
       display: none;
@@ -73,9 +79,9 @@
   }
 }
 
- .gatsby_site-header_logo {
-   line-height: 0;
- }
+.gatsby_site-header_logo {
+  line-height: 0;
+}
 
 .gatsby_logo-icon {
   display: inline-flex;
@@ -94,7 +100,7 @@
   }
 }
 
-.gatsby_site-header {
+.gatsby_site-header_inner {
   @apply text-white bg-accent-500 links-inverse container;
   max-width: 1280px;
   padding-top: 1rem;

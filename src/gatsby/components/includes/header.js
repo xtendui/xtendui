@@ -25,10 +25,7 @@ export default function Header({ page }) {
   return (
     <div className="gatsby_site-article_sidebar">
       <div className="gatsby_site-article_sidebar_inner">
-        <header
-          className="gatsby_site-header xt-sticky-disabled"
-          data-xt-sticky="{ sticky: 'fixed', disabled: true, matches: { '(max-width: 1023px)': { disabled: false } } }"
-        >
+        <header className="gatsby_site-header">
           <div className="gatsby_site-header_inner">
             <div>
               <div className="gatsby_site-header_content">
@@ -39,7 +36,7 @@ export default function Header({ page }) {
                     className={`gatsby_logo-icon
                                     ${site.siteMetadata.title.toLowerCase() === 'home' ? 'active' : ''}`}
                   >
-                    <img src={'/logo-white.svg'} loading="eager" alt={site.siteMetadata.title} />
+                    <img src={'/logo-white.svg'} loading="eager" alt={site.siteMetadata.title} width="300" height="72" />
                   </Link>
                 </div>
                 <div className="gatsby_site-header_top_social_container">
@@ -115,7 +112,7 @@ export default function Header({ page }) {
             <div className="overlay-inner">
               <div className="design-setup"></div>
               <div className="card">
-                <div className="btn btn-close p-5 text-2xl fixed z-last mr-2" aria-label="Close">
+                <div className="btn btn-close p-5 pr-3 text-2xl fixed z-last mr-2" aria-label="Close">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="icon"

@@ -13,23 +13,94 @@ const iconLink = require('components/snippets/icons').iconLink
 import 'assets/scripts/shared'
 
 /**
- * .gatsby_site-article_hero-inner scroll
+ * .gatsby_site-header
  */
 
 Xt.mount.push({
-  matches: '.gatsby_site-article_hero-inner',
+  matches: '.gatsby_site-header',
   mount: object => {
-    console.log(object)
-    // init
+    // only on mobile
+
+    ScrollTrigger.matchMedia({
+      '(max-width: 1023px)': () => {
+        // sticky
+
+        gsap.to(object, {
+          scrollTrigger: {
+            trigger: object,
+            start: 0,
+            end: 99999999,
+            pin: true,
+            pinSpacing: false,
+            matchMedia: {},
+          },
+        })
+
+        // hide depending on scroll direction
+
+        let hiding = true
+
+        gsap.to(object, {
+          scrollTrigger: {
+            trigger: object,
+            start: -1,
+            endTrigger: document.documentElement,
+            end: 'bottom top',
+            onUpdate: self => {
+              if (hiding && self.direction < 0) {
+                hiding = false
+                gsap.killTweensOf(object)
+                gsap.to(object, { y: 0, duration: 0.75, ease: 'quart.out' })
+              } else if (!hiding && self.direction > 0) {
+                hiding = true
+                gsap.killTweensOf(object)
+                gsap.to(object, { y: '-100%', duration: 0.75, ease: 'quart.out' })
+              }
+            },
+          },
+        })
+
+        hiding = false
+
+        // hide depending on .gatsby_site-article_hero
+
+        gsap.to(object, {
+          scrollTrigger: {
+            trigger: object,
+            start: -1,
+            endTrigger: document.querySelector('.gatsby_site-article_hero'),
+            end: 'bottom top',
+            onUpdate: self => {
+              if (self.isActive) {
+                hiding = false
+                gsap.killTweensOf(object)
+                gsap.to(object, { y: 0, duration: 0.75, ease: 'quart.out' })
+              }
+            },
+          },
+        })
+      },
+    })
+  },
+})
+
+/**
+ * .gatsby_site-article_hero
+ */
+
+Xt.mount.push({
+  matches: '.gatsby_site-article_hero',
+  mount: object => {
+    // sticky
 
     gsap.to(object, {
       scrollTrigger: {
         trigger: object,
-        start: 0,
+        start: -1,
         end: 'bottom top',
-        pin: true,
-        pinSpacing: false,
+        scrub: true,
       },
+      y: '50%',
     })
   },
 })
