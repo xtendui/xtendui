@@ -5,10 +5,34 @@ import 'xtendui/src/addons/scrolltoanchor'
 import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 gsap.registerPlugin(ScrollToPlugin)
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
 const cardBlack = require('components/snippets/classes/card-black').default
 const iconLink = require('components/snippets/icons').iconLink
 
 import 'assets/scripts/shared'
+
+/**
+ * .gatsby_site-article_hero-inner scroll
+ */
+
+Xt.mount.push({
+  matches: '.gatsby_site-article_hero-inner',
+  mount: object => {
+    console.log(object)
+    // init
+
+    gsap.to(object, {
+      scrollTrigger: {
+        trigger: object,
+        start: 0,
+        end: 'bottom top',
+        pin: true,
+        pinSpacing: false,
+      },
+    })
+  },
+})
 
 /**
  * #gatsby_open-full-trigger

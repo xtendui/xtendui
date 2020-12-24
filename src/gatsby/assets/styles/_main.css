@@ -64,7 +64,7 @@ body {
 /* layout */
 
 .gatsby_site-article_hero {
-  @apply pt-20 pb-16;
+  @apply py-10 md:py-20;
   border-bottom: 1px solid theme('colors.gray.200');
   background: theme('colors.gray.100');
   background: linear-gradient(225deg, theme('colors.gray.100') 33%, theme('colors.gray.200') 100%);
@@ -99,7 +99,7 @@ body {
     }
   }
   .gatsby_site-article_content {
-    @apply py-16;
+    @apply py-10 md:py-20;
     background: theme('colors.white');
   }
 }
@@ -143,7 +143,7 @@ body {
  */
 
 .gatsby_listing {
-  @apply mt-16 mt-fc;
+  @apply mt-10 md:mt-20 mt-fc;
   div:empty + & {
     @apply mt-0;
   }
@@ -169,7 +169,10 @@ body {
       @apply -m-5;
     }
     .gatsby_site-article_foot & {
-      @apply mt-0 mb-4 !important;
+      @apply my-0 !important;
+      .gatsby_listing-column {
+        @apply mb-4 !important;
+      }
     }
   }
 }
