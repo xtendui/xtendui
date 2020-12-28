@@ -23,13 +23,18 @@ Xt.mount.push({
 
     ScrollTrigger.matchMedia({
       '(max-width: 1023px)': () => {
+        // vars
+
+        let hiding = true
+        let active = false
+
         // sticky
 
         gsap.to(object, {
           scrollTrigger: {
             trigger: object,
-            start: 0,
-            end: 99999999,
+            start: -1,
+            end: 9999999999,
             pin: true,
             pinSpacing: false,
             matchMedia: {},
@@ -38,20 +43,17 @@ Xt.mount.push({
 
         // hide depending on scroll direction
 
-        let hiding = true
-
         gsap.to(object, {
           scrollTrigger: {
             trigger: object,
             start: -1,
-            endTrigger: document.documentElement,
-            end: 'bottom top',
+            end: 9999999999,
             onUpdate: self => {
-              if (hiding && self.direction < 0) {
+              if (hiding && !active && self.direction < 0) {
                 hiding = false
                 gsap.killTweensOf(object)
                 gsap.to(object, { y: 0, duration: 0.75, ease: 'quart.out' })
-              } else if (!hiding && self.direction > 0) {
+              } else if (!hiding && !active && self.direction > 0) {
                 hiding = true
                 gsap.killTweensOf(object)
                 gsap.to(object, { y: '-100%', duration: 0.75, ease: 'quart.out' })
@@ -71,10 +73,12 @@ Xt.mount.push({
             endTrigger: document.querySelector('.gatsby_site-article_hero'),
             end: 'bottom top',
             onUpdate: self => {
-              if (self.isActive) {
-                hiding = false
+              if (self.isActive && !active) {
+                active = true
                 gsap.killTweensOf(object)
                 gsap.to(object, { y: 0, duration: 0.75, ease: 'quart.out' })
+              } else if (!self.isActive && active) {
+                active = false
               }
             },
           },
