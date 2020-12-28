@@ -26,9 +26,18 @@ demo.htmlSource = `
 <br><br><br><br><br><br><br>
 <br><br><br><br><br><br><br>
 
-<div class="demo--sticky-limit-topafter scroll-sticky">
+<div class="demo--sticky-limit-topsecond scroll-sticky">
   <div class="card card-sm ${cardDefault()}">
-    <div class="h6">Top After</div>
+    <div class="h6">Top Second</div>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br>
+
+<div class="demo--sticky-limit-topthird scroll-sticky">
+  <div class="card card-sm ${cardDefault()}">
+    <div class="h6">Top Third</div>
   </div>
 </div>
 
@@ -44,9 +53,9 @@ demo.htmlSource = `
 <br><br><br><br><br><br><br>
 <br><br><br><br><br><br><br>
 
-<div class="demo--sticky-limit-bottomafter scroll-sticky">
+<div class="demo--sticky-limit-bottomsecond scroll-sticky">
   <div class="card card-sm ${cardDefault()}">
-    <div class="h6">Bottom After</div>
+    <div class="h6">Bottom Second</div>
   </div>
 </div>
 

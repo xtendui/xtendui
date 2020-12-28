@@ -28,7 +28,28 @@ module.exports = {
 }
 ```
 
-## Start
+## Sticky
+
+Use the **component classes** to create a **sticky**.
+
+<div class="table-overflow">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `.scroll-sticky`                     | `scroll-sticky`                | Styles for sticky            |
+
+</div>
+
+A **sticky pinned to a scroller** has also to `pin: true` and `pinSpacing: false` to pin the sticky (see [Gsap ScrollTrigger API](https://greensock.com/docs/v3/Plugins/ScrollTrigger)). 
+
+<div class="table-overflow">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `pin:Boolean|String|Element`                          | `false`        | Pin the scroll element           |
+| Option                  | `pinSpacing:Boolean|String`                          | `true`        | Add spacing for the pinned element            |
+
+</div>
 
 Use `trigger` and `start` to control sticky starting position (see [Gsap ScrollTrigger API](https://greensock.com/docs/v3/Plugins/ScrollTrigger)).
 
