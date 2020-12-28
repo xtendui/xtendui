@@ -1,5 +1,6 @@
 import React from 'react'
 import path from 'path'
+const cardDefault = require('components/snippets/classes/card-default').default
 const cardPrimary = require('components/snippets/classes/card-primary').default
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
@@ -26,8 +27,8 @@ demo.htmlSource = `
 <br><br><br><br><br><br><br>
 
 <div class="demo--sticky-limit-topafter scroll-sticky">
-  <div class="card card-sm ${cardPrimary()}">
-    <div class="h4">Top After</div>
+  <div class="card card-sm ${cardDefault()}">
+    <div class="h6">Top After</div>
   </div>
 </div>
 
@@ -44,8 +45,8 @@ demo.htmlSource = `
 <br><br><br><br><br><br><br>
 
 <div class="demo--sticky-limit-bottomafter scroll-sticky">
-  <div class="card card-sm ${cardPrimary()}">
-    <div class="h4">Bottom After</div>
+  <div class="card card-sm ${cardDefault()}">
+    <div class="h6">Bottom After</div>
   </div>
 </div>
 

@@ -50,8 +50,8 @@ Xt.mount.push({
       scrollTrigger: {
         trigger: object,
         start: 'bottom bottom',
-        endTrigger: '.demo--sticky-limit-bottomafter',
-        end: 'top bottom',
+        endTrigger: 'html',
+        end: 'bottom top',
         pin: true,
         pinSpacing: false,
       },
@@ -67,11 +67,15 @@ Xt.mount.push({
     gsap.to(object, {
       scrollTrigger: {
         trigger: object,
-        start: 'bottom bottom',
+        start: () => {
+          const endLimit = document.querySelector('.demo--sticky-limit-bottom')
+          return `bottom bottom-=${endLimit.offsetHeight}px`
+        },
         endTrigger: 'html',
         end: 'bottom top',
         pin: true,
         pinSpacing: false,
+        markers: true,
       },
     })
   },
