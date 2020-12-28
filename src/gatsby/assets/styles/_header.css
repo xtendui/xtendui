@@ -69,8 +69,6 @@
  */
 
 .gatsby_site-header {
-  /* sticky */
-  z-index: theme('zIndex.sticky');
   /* hide sticky when demo-full-open */
   @media (max-width: calc(theme('screens.lg') - 1px)) {
     html.demo-full-open & {

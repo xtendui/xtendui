@@ -53,12 +53,10 @@ module.exports = {
       // setup
       touchAction: 'manipulation', // disable double-tap
       '-webkit-tap-highlight-color': 'rgba(0, 0, 0, 0)', // disable tap highlight
-      height: '100%',
     },
     body: {
       // setup
       '@apply overflow-main': '',
-      height: '100%',
     },
     '::selection': {
       // styles

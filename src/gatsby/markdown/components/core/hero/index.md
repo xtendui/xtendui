@@ -34,3 +34,12 @@ Use **tailwind classes** to **add shadow**.
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/hero/shadow">
   </div>
 </demo>
+
+## Shadow
+
+Use **tailwind classes** to **position content outside**.
+
+<demo>
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/hero/outside">
+  </div>
+</demo>

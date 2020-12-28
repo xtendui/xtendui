@@ -34,6 +34,8 @@ module.exports = {
 
 ## Animation
 
+This library uses [gsap](https://github.com/greensock/GSAP) for javascript animations, follow [gsap setup](/introduction/getting-started/setup#javascript-gsap) to **install and use gsap**.
+
 You can **opt out** some animations behaviour:
 
 * **Flash of Unstyled Content (FOUC)**: Xtend UI **automatically disables page load duration** for animation and transition until javascript is loaded, add `html.no-js-fouc` to disable this behaviour.
@@ -49,6 +51,8 @@ You can **opt out** some animations behaviour:
 An **example setup** for accessibility and faster animation on mobile, used in this docs and demos is this:
 
 ```js
+import gsap from 'gsap'
+
 /**
  * animations setup
  */

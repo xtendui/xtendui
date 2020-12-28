@@ -14,13 +14,13 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="relative block overflow-hidden w-full">
-  <div class="media-container h-screen">
+  <div class="media-container h-64">
     <div class="media-inner">
       <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
     </div>
   </div>
-  <div class="container absolute inset-0 flex items-end justify-center text-center">
-    <a href="#" class="group block w-full max-w-xl container-y text-white links-inverse">
+  <div class="container flex items-end justify-center text-center">
+    <a href="#" class="group block w-full max-w-xl container-y">
       <div class="h1 h1-display">
         Lorem ipsum
       </div>
@@ -29,13 +29,13 @@ demo.htmlSource = `
 </div>
 
 <div class="relative block overflow-hidden w-full">
-  <div class="media-container h-screen">
+  <div class="media-container h-64">
     <div class="media-inner">
       <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
     </div>
   </div>
-  <div class="container absolute inset-0 flex items-end justify-center text-center">
-    <a href="#" class="group block w-full max-w-xl container-y text-white links-inverse">
+  <div class="container flex items-end justify-center text-center">
+    <a href="#" class="group block w-full max-w-xl container-y">
       <div class="h1">
         Lorem ipsum dolor sit amet
       </div>

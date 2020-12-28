@@ -34,10 +34,10 @@ Xt.mount.push({
           scrollTrigger: {
             trigger: object,
             start: -1,
-            end: 9999999999,
+            endTrigger: 'html',
+            end: 'bottom top',
             pin: true,
             pinSpacing: false,
-            matchMedia: {},
           },
         })
 
@@ -47,7 +47,8 @@ Xt.mount.push({
           scrollTrigger: {
             trigger: object,
             start: -1,
-            end: 9999999999,
+            endTrigger: 'html',
+            end: 'bottom top',
             onUpdate: self => {
               if (hiding && !active && self.direction < 0) {
                 hiding = false

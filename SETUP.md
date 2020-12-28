@@ -118,17 +118,19 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/core/toggle'
 ```
 
-#### Animation
+#### Gsap
 
-This library in the demos uses [gsap](https://github.com/greensock/GSAP) for javascript animations.
+This library uses [gsap](https://github.com/greensock/GSAP) for javascript animations.
 
 ```
 npm install gsap --save
 ```
 
-Then add this one time to setup gsap, **we disable force3D** for smoother pixels animations, and we make **instant animations** and **double automatic change time** when the the user has activated "Prefers Reduced Motion".
+Then add this one time to setup gsap, **we disable force3D** for smoother pixels animations, and we make **instant animations** and **double automatic change time** when the the user has activated "Prefers Reduced Motion", see [javascript animation](https://xtendui.com/components/globals/javascript#animation).
 
 ```jsx
+import gsap from 'gsap'
+
 /**
  * animations setup
  */

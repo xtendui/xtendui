@@ -1,4 +1,4 @@
-const scrollContainerBlocks = document.querySelectorAll('.demo--scroll-block > *')
+/*const scrollContainerBlocks = document.querySelectorAll('.demo--scroll-block > *')
 
 if (scrollContainerBlocks.length) {
   setTimeout(() => {
@@ -9,3 +9,4 @@ if (scrollContainerBlocks.length) {
     alert('scroll blocked')
   }, 2000)
 }
+*/

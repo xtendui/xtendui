@@ -1,6 +1,5 @@
 import React from 'react'
 import path from 'path'
-const cardDefault = require('components/snippets/classes/card-default').default
 const cardPrimary = require('components/snippets/classes/card-primary').default
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
@@ -15,19 +14,9 @@ export const demo = {
 
 demo.htmlSource = `
 <br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br>
 
-<div data-xt-sticky>
-  <div class="card card-sm ${cardPrimary()}">
-    <div class="h4">Sticky</div>
-  </div>
-</div>
-
-<div class="card card-sm ${cardDefault()}">
-  <div class="h4">Lorem ipsum</div>
-  <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-</div>
-
-<div data-xt-sticky="{ position: 'bottom' }">
+<div class="demo--sticky-position-top scroll-sticky">
   <div class="card card-sm ${cardPrimary()}">
     <div class="h4">Sticky</div>
   </div>
@@ -35,8 +24,13 @@ demo.htmlSource = `
 
 <br><br><br><br><br><br><br>
 <br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br>
+
+<div class="demo--sticky-position-bottom scroll-sticky">
+  <div class="card card-sm ${cardPrimary()}">
+    <div class="h4">Sticky</div>
+  </div>
+</div>
+
 <br><br><br><br><br><br><br>
 <br><br><br><br><br><br><br>
 `

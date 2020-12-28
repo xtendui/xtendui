@@ -1,4 +1,4 @@
-import { Xt } from 'xtendui'
+/*import { Xt } from 'xtendui'
 
 Xt.mount.push({
   matches: '.demo--scroll-delay',
@@ -24,3 +24,4 @@ Xt.mount.push({
     }
   },
 })
+*/

@@ -16,6 +16,7 @@ module.exports = {
   media: require('./src/core/media.css.js'),
   overlay: require('./src/core/overlay.css.js'),
   row: require('./src/core/row.css.js'),
+  scroll: require('./src/core/scroll.css.js'),
   slider: require('./src/core/slider.css.js'),
   table: require('./src/core/table.css.js'),
   toggle: require('./src/core/toggle.css.js'),
@@ -27,6 +28,4 @@ module.exports = {
   ripple: require('./src/addons/ripple.css.js'),
   separator: require('./src/addons/separator.css.js'),
   navsides: require('./src/addons/navsides.css.js'),
-  // future
-  sticky: require('./src/future/sticky.css.js'),
 }

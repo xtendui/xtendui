@@ -1,4 +1,4 @@
-import { Xt } from 'xtendui'
+/*import { Xt } from 'xtendui'
 
 Xt.mount.push({
   matches: '.demo--scroll-direction',
@@ -23,3 +23,4 @@ Xt.mount.push({
     }
   },
 })
+*/

@@ -14,18 +14,18 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="relative block overflow-hidden w-full">
-  <div class="media-container h-64 md:h-screen">
+  <div class="media-container h-screen">
     <div class="media-inner">
       <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
     </div>
   </div>
-  <div class="container md:absolute inset-0 flex items-end justify-center text-center md:justify-start md:text-left">
-    <div class="block w-full max-w-xl container-y md:text-white md:links-inverse">
+  <div class="container absolute inset-0 flex items-end justify-center text-center justify-start text-left">
+    <div class="block w-full max-w-xl container-y text-white links-inverse">
       <div class="h1">
         Lorem ipsum dolor sit amet
       </div>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
-      <div class="list list-2 justify-center md:justify-start">
+      <div class="list list-2 justify-center justify-start">
         <a href="#" class="btn btn-md rounded-md ${btnPrimary()}">
           Lorem ipsum
         </a>
@@ -38,18 +38,18 @@ demo.htmlSource = `
 </div>
 
 <div class="relative block overflow-hidden w-full">
-  <div class="media-container h-64 md:h-screen">
+  <div class="media-container h-screen">
     <div class="media-inner">
       <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
     </div>
   </div>
-  <div class="container md:absolute inset-0 flex items-end justify-center text-center md:items-center md:justify-start md:text-left">
-    <div class="block w-full max-w-xl container-y md:text-white md:links-inverse">
+  <div class="container absolute inset-0 flex items-end justify-center text-center items-center justify-start text-left">
+    <div class="block w-full max-w-xl container-y text-white links-inverse">
       <div class="h1">
         Lorem ipsum dolor sit amet
       </div>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
-      <div class="list list-2 justify-center md:justify-start">
+      <div class="list list-2 justify-center justify-start">
         <a href="#" class="btn btn-md rounded-md ${btnPrimary()}">
           Lorem ipsum
         </a>
@@ -62,18 +62,18 @@ demo.htmlSource = `
 </div>
 
 <div class="relative block overflow-hidden w-full">
-  <div class="media-container h-64 md:h-screen">
+  <div class="media-container h-screen">
     <div class="media-inner">
       <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
     </div>
   </div>
-  <div class="container md:absolute inset-0 flex items-end justify-center text-center md:items-center md:justify-end md:text-right">
-    <div class="block w-full max-w-xl container-y md:text-white md:links-inverse">
+  <div class="container absolute inset-0 flex items-end justify-center text-center items-center justify-end text-right">
+    <div class="block w-full max-w-xl container-y text-white links-inverse">
       <div class="h1">
         Lorem ipsum dolor sit amet
       </div>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
-      <div class="list list-2 justify-center md:justify-end">
+      <div class="list list-2 justify-center justify-end">
         <a href="#" class="btn btn-md rounded-md ${btnPrimary()}">
           Lorem ipsum
         </a>
