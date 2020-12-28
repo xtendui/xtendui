@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 Xt.mount.push({
-  matches: '.demo--sticky-limit-top',
+  matches: '.demo--sticky-stack-top',
   mount: object => {
     // sticky
 
@@ -12,7 +12,7 @@ Xt.mount.push({
       scrollTrigger: {
         trigger: object,
         start: 'top top',
-        endTrigger: '.demo--sticky-limit-topsecond',
+        endTrigger: '.demo--sticky-stack-topsecond',
         end: self => {
           return `top ${self.trigger.offsetHeight}px`
         },
@@ -24,7 +24,7 @@ Xt.mount.push({
 })
 
 Xt.mount.push({
-  matches: '.demo--sticky-limit-topsecond',
+  matches: '.demo--sticky-stack-topsecond',
   mount: object => {
     // sticky
 
@@ -42,7 +42,7 @@ Xt.mount.push({
 })
 
 Xt.mount.push({
-  matches: '.demo--sticky-limit-topthird',
+  matches: '.demo--sticky-stack-topthird',
   mount: object => {
     // sticky
 
@@ -50,7 +50,7 @@ Xt.mount.push({
       scrollTrigger: {
         trigger: object,
         start: () => {
-          const el = document.querySelector('.demo--sticky-limit-topsecond')
+          const el = document.querySelector('.demo--sticky-stack-topsecond')
           return `top top+=${el.offsetHeight}px`
         },
         endTrigger: 'html',
@@ -63,7 +63,7 @@ Xt.mount.push({
 })
 
 Xt.mount.push({
-  matches: '.demo--sticky-limit-bottom',
+  matches: '.demo--sticky-stack-bottom',
   mount: object => {
     // sticky
 
@@ -81,7 +81,7 @@ Xt.mount.push({
 })
 
 Xt.mount.push({
-  matches: '.demo--sticky-limit-bottomsecond',
+  matches: '.demo--sticky-stack-bottomsecond',
   mount: object => {
     // sticky
 
@@ -89,7 +89,7 @@ Xt.mount.push({
       scrollTrigger: {
         trigger: object,
         start: () => {
-          const el = document.querySelector('.demo--sticky-limit-bottom')
+          const el = document.querySelector('.demo--sticky-stack-bottom')
           return `bottom bottom-=${el.offsetHeight}px`
         },
         endTrigger: 'html',

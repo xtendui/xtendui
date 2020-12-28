@@ -29,6 +29,10 @@ A **sticky pinned to a scroller** has also to `pin: true` and `pinSpacing: false
 
 </div>
 
+<demo>
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/sticky"></div>
+</demo>
+
 Use `trigger`, `start`, `endTrigger`, `end` to control sticky **starting and ending position**.
 
 Use `endTrigger: 'html'` and `end: 'bottom top'` to make the **end position infinite**.
@@ -47,10 +51,14 @@ Use `endTrigger: 'html'` and `end: 'bottom top'` to make the **end position infi
 [[notePrimary]]
 | For **full API** see [Gsap ScrollTrigger API](https://greensock.com/docs/v3/Plugins/ScrollTrigger).
 
-<demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/sticky"></div>
-</demo>
+Here's an example of **complex sticky stacking**.
 
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/sticky-complex"></div>
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/sticky-stack"></div>
+</demo>
+
+Here's an example of **complex sticky hide** when scrolling down but only after the first card.
+
+<demo>
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/sticky-hide"></div>
 </demo>

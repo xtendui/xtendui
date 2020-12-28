@@ -34,4 +34,4 @@ Use this code to create a **card**.
 
 @Todo
 
-Check subpage to [scroll sticky](/components/core/scroll/sticky) and [scroll fade](/components/core/scroll/fade) and [scroll parallax](/components/core/scroll/parallax).
+Check subpage to [scroll fade](/components/core/scroll/fade), [scroll parallax](/components/core/scroll/parallax) and [scroll sticky](/components/core/scroll/sticky).

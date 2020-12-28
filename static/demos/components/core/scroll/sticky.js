@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 Xt.mount.push({
-  matches: '.demo--sticky-position-top',
+  matches: '.demo--sticky-top',
   mount: object => {
     // sticky
 
@@ -22,7 +22,7 @@ Xt.mount.push({
 })
 
 Xt.mount.push({
-  matches: '.demo--sticky-position-bottom',
+  matches: '.demo--sticky-bottom',
   mount: object => {
     // sticky
 

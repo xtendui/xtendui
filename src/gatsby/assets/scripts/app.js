@@ -23,17 +23,12 @@ Xt.mount.push({
 
     ScrollTrigger.matchMedia({
       '(max-width: 1023px)': () => {
-        // vars
-
-        let hiding = true
-        let active = false
-
         // sticky
 
         gsap.to(object, {
           scrollTrigger: {
             trigger: object,
-            start: -1,
+            start: 'top top',
             endTrigger: 'html',
             end: 'bottom top',
             pin: true,
@@ -41,7 +36,7 @@ Xt.mount.push({
           },
         })
 
-        // hide depending on scroll direction
+        // scrolling-down depending on scroll direction
 
         gsap.to(object, {
           scrollTrigger: {
@@ -50,20 +45,19 @@ Xt.mount.push({
             endTrigger: 'html',
             end: 'bottom top',
             onUpdate: self => {
-              if (hiding && !active && self.direction < 0) {
-                hiding = false
+              if (!self.getVelocity()) return // skip on initial
+              if (self.trigger.classList.contains('scrolling-down') && self.trigger.classList.contains('hide') && self.direction < 0) {
+                self.trigger.classList.remove('scrolling-down')
                 gsap.killTweensOf(object)
                 gsap.to(object, { y: 0, duration: 0.75, ease: 'quart.out' })
-              } else if (!hiding && !active && self.direction > 0) {
-                hiding = true
+              } else if (!self.trigger.classList.contains('scrolling-down') && self.trigger.classList.contains('hide') && self.direction > 0) {
+                self.trigger.classList.add('scrolling-down')
                 gsap.killTweensOf(object)
-                gsap.to(object, { y: '-100%', duration: 0.75, ease: 'quart.out' })
+                gsap.to(object, { y: -self.trigger.offsetHeight, duration: 0.75, ease: 'quart.out' })
               }
             },
           },
         })
-
-        hiding = false
 
         // hide depending on .gatsby_site-article_hero
 
@@ -72,14 +66,14 @@ Xt.mount.push({
             trigger: object,
             start: -1,
             endTrigger: document.querySelector('.gatsby_site-article_hero'),
-            end: 'bottom top',
+            end: `bottom top`,
             onUpdate: self => {
-              if (self.isActive && !active) {
-                active = true
+              if (self.isActive && self.trigger.classList.contains('hide')) {
+                self.trigger.classList.remove('hide')
                 gsap.killTweensOf(object)
                 gsap.to(object, { y: 0, duration: 0.75, ease: 'quart.out' })
-              } else if (!self.isActive && active) {
-                active = false
+              } else if (!self.isActive && !self.trigger.classList.contains('hide')) {
+                self.trigger.classList.add('hide')
               }
             },
           },

@@ -16,7 +16,7 @@ demo.htmlSource = `
 <br><br><br><br><br><br><br>
 <br><br><br><br><br><br><br>
 
-<div class="demo--sticky-position-top scroll-sticky">
+<div class="demo--sticky-top scroll-sticky">
   <div class="card card-sm ${cardPrimary()}">
     <div class="h4">Top</div>
   </div>
@@ -25,7 +25,7 @@ demo.htmlSource = `
 <br><br><br><br><br><br><br>
 <br><br><br><br><br><br><br>
 
-<div class="demo--sticky-position-bottom scroll-sticky">
+<div class="demo--sticky-bottom scroll-sticky">
   <div class="card card-sm ${cardPrimary()}">
     <div class="h4">Bottom</div>
   </div>
