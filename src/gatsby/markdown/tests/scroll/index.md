@@ -44,7 +44,7 @@ Use `trigger` and `start` to control sticky starting position (see [Gsap ScrollT
 Use `endTrigger: 'html'` and `end: 'bottom top'` to make the scroll activation infinite.
 
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/sticky/position"></div>
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/position"></div>
 </demo>
 
 Use `endTrigger` and `end` to control sticky ending position (see [Gsap ScrollTrigger API](https://greensock.com/docs/v3/Plugins/ScrollTrigger)).
@@ -60,5 +60,5 @@ Use `endTrigger` and `end` to control sticky ending position (see [Gsap ScrollTr
 </div>
 
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/sticky/limit"></div>
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/limit"></div>
 </demo>

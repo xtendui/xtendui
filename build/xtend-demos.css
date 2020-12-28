@@ -13,16 +13,6 @@
 @import 'xtendui/static/demos/components/core/form/variant-primary.css';
 @import 'xtendui/static/demos/components/core/overlay/animation-css.css';
 @import 'xtendui/static/demos/components/core/overlay/class-html.css';
-@import 'xtendui/static/demos/components/core/scroll/block.css';
-@import 'xtendui/static/demos/components/core/scroll/delay.css';
-@import 'xtendui/static/demos/components/core/scroll/distance.css';
-@import 'xtendui/static/demos/components/core/scroll/indicator.css';
-@import 'xtendui/static/demos/components/core/scroll/mode-infinite.css';
-@import 'xtendui/static/demos/components/core/scroll/mode-inside.css';
-@import 'xtendui/static/demos/components/core/scroll/mode-once.css';
-@import 'xtendui/static/demos/components/core/scroll/mode-outside-once.css';
-@import 'xtendui/static/demos/components/core/scroll/mode-outside.css';
-@import 'xtendui/static/demos/components/core/scroll/mode-responsive.css';
 @import 'xtendui/static/demos/components/core/slider/expand.css';
 @import 'xtendui/static/demos/components/core/slider/media-loaded.css';
 @import 'xtendui/static/demos/components/core/slider/overflow-auto.css';
