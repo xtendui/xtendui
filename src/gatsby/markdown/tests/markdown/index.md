@@ -64,6 +64,9 @@ See [group component](/components/core/loader) to create a **button with group**
 See [mouse follow addon](/components/core/loader) to create a **loader with mouse follow**.
 
 [[notePrimary]]
+| For **full API** see [Gsap ScrollTrigger API](https://greensock.com/docs/v3/Plugins/ScrollTrigger).
+
+[[notePrimary]]
 | For aria purpose use `<nav></nav>`.
 
 [[noteDefault]]

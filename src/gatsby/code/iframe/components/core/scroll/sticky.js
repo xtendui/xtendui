@@ -18,7 +18,7 @@ demo.htmlSource = `
 
 <div class="demo--sticky-position-top scroll-sticky">
   <div class="card card-sm ${cardPrimary()}">
-    <div class="h4">Sticky</div>
+    <div class="h4">Top</div>
   </div>
 </div>
 
@@ -27,7 +27,7 @@ demo.htmlSource = `
 
 <div class="demo--sticky-position-bottom scroll-sticky">
   <div class="card card-sm ${cardPrimary()}">
-    <div class="h4">Sticky</div>
+    <div class="h4">Bottom</div>
   </div>
 </div>
 
