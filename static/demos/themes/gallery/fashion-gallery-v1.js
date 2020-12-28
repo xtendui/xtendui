@@ -1,5 +1,4 @@
 import { Xt } from 'xtendui'
-import 'xtendui/src/future/scroll'
 import 'xtendui/src/addons/stickyflow'
 import 'xtendui/src/addons/scrolltoanchor'
 import gsap from 'gsap'

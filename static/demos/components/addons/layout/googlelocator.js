@@ -11,6 +11,8 @@ Xt.mount.push({
       'https://maps.googleapis.com/maps/api/js?key=AIzaSyDSZt9TUgS20QyAbAAL-X3tJIKVLEaCrts&v=3&libraries=places,geometry&language=en&&region=US&callback=demoGooglelocator'
     )
 
+    Xt.addScript('https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js')
+
     // init
 
     window.demoGooglelocator = function () {

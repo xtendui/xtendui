@@ -1,11 +1,6 @@
-/*!
- * Xtend (https://xtendui.com/)
- * @copyright (c) 2017 - 2020 Riccardo Caroli
- * @license MIT (https://github.com/minimit/xtendui/blob/master/LICENSE)
- */
-
 import { Xt } from 'xtendui'
 import 'xtendui/build/xtend-core'
+import 'xtendui/build/xtend-future'
 import 'xtendui/build/xtend-addons'
 
 // export UMD

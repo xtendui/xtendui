@@ -1,6 +1,5 @@
-/* global google */
+/* global google MarkerClusterer */
 import { Xt } from '../xt.js'
-import MarkerClusterer from '@googlemaps/markerclustererplus'
 
 /**
  * Googlelocator
