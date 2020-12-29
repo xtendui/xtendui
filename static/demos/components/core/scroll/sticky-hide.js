@@ -33,12 +33,12 @@ Xt.mount.push({
         end: 'bottom top',
         onUpdate: self => {
           if (!self.getVelocity()) return // skip on initial
-          if (self.trigger.classList.contains('scrolling-down') && self.trigger.classList.contains('hide') && self.direction < 0) {
-            self.trigger.classList.remove('scrolling-down')
+          if (object.classList.contains('scrolling-down') && object.classList.contains('hide') && self.direction < 0) {
+            object.classList.remove('scrolling-down')
             gsap.killTweensOf(object)
             gsap.to(object, { y: 0, duration: 0.5, ease: 'quart.out' })
-          } else if (!self.trigger.classList.contains('scrolling-down') && self.trigger.classList.contains('hide') && self.direction > 0) {
-            self.trigger.classList.add('scrolling-down')
+          } else if (!object.classList.contains('scrolling-down') && object.classList.contains('hide') && self.direction > 0) {
+            object.classList.add('scrolling-down')
             gsap.killTweensOf(object)
             gsap.to(object, { y: -stickyInner.offsetHeight, duration: 0.5, ease: 'quart.out' })
           }
@@ -55,12 +55,12 @@ Xt.mount.push({
         endTrigger: document.querySelector('.demo--sticky-hide-content'),
         end: `bottom top+=${stickyInner.offsetHeight}`,
         onUpdate: self => {
-          if (self.isActive && self.trigger.classList.contains('hide')) {
-            self.trigger.classList.remove('hide')
+          if (self.isActive && object.classList.contains('hide')) {
+            object.classList.remove('hide')
             gsap.killTweensOf(object)
             gsap.to(object, { y: 0, duration: 0.5, ease: 'quart.out' })
-          } else if (!self.isActive && !self.trigger.classList.contains('hide')) {
-            self.trigger.classList.add('hide')
+          } else if (!self.isActive && !object.classList.contains('hide')) {
+            object.classList.add('hide')
           }
         },
       },

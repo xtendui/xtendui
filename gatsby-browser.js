@@ -5,10 +5,10 @@
  */
 
 window.keepSidebarScroll = 0
-window.menuOpen = false
+window.overlayOpen = false
 
 exports.onPreRouteUpdate = ({ location, prevLocation }) => {
-  const menu = document.querySelector('.gatsby_site-header_menu_link [data-xt-overlay]')
+  const btn = document.querySelector('.gatsby_btn--overlay')
   const overlay = document.querySelector('#gatsby_menu--overlay')
   const sidebar = document.querySelector('.gatsby_site-article_sidebar')
   // keepSidebarScroll
@@ -25,22 +25,22 @@ exports.onPreRouteUpdate = ({ location, prevLocation }) => {
       }
       // fix demo index when changing page
       document.documentElement.setAttribute('data-demo-index', '0')
-      // menuOpen
-      if (menu) {
-        window.menuOpen = menu.classList.contains('in')
+      // overlayOpen
+      if (btn) {
+        window.overlayOpen = btn.classList.contains('in')
       }
     }
   }
 }
 
 exports.onRouteUpdate = ({ location, prevLocation }) => {
-  const menu = document.querySelector('.gatsby_site-header_menu_link [data-xt-overlay]')
+  const btn = document.querySelector('.gatsby_btn--overlay')
   const overlay = document.querySelector('#gatsby_menu--overlay')
   const sidebar = document.querySelector('.gatsby_site-article_sidebar')
   // keepSidebarScroll
   if (overlay && sidebar) {
-    // menuOpen
-    if (menu && !window.menuOpen) {
+    // overlayOpen
+    if (btn && !window.overlayOpen) {
       overlay.classList.remove('in')
     }
     // instant enable

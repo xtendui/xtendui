@@ -78,12 +78,7 @@ export default function Header({ page }) {
                   </div>
                 </div>
                 <div className="gatsby_site-header_menu_link">
-                  <button
-                    type="button"
-                    className="btn btn-md rounded-md"
-                    data-xt-overlay="{ targets: '#gatsby_menu--overlay', appendTo: false, disabled: true, matches: { '(max-width: 1023px)': { disabled: false } } }"
-                    aria-label="Menu"
-                  >
+                  <button type="button" className="btn btn-md rounded-md gatsby_btn--overlay" aria-label="Menu">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="icon"

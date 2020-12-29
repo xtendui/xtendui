@@ -13,8 +13,8 @@ Xt.mount.push({
         trigger: object,
         start: 'top top',
         endTrigger: '.demo--sticky-stack-topsecond',
-        end: self => {
-          return `top ${self.trigger.offsetHeight}px`
+        end: () => {
+          return `top ${object.offsetHeight}px`
         },
         pin: true,
         pinSpacing: false,

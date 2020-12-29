@@ -507,7 +507,6 @@ const makeFullscreen = (container, initial) => {
   container.before(
     Xt.createElement(`<div class="gatsby_demo xt-ignore" data-xt-origin="gatsby_open-full-content" style="height: ${container.offsetHeight}px"></div>`)
   )
-  console.log(initial)
   if (!initial) {
     // ignore once for mount when moving
     container.classList.add('xt-ignore', 'xt-ignore-once')

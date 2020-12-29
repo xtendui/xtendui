@@ -13,6 +13,24 @@ const iconLink = require('components/snippets/icons').iconLink
 import 'assets/scripts/shared'
 
 /**
+ * .gatsby_btn--overlay
+ */
+
+Xt.mount.push({
+  matches: '.gatsby_btn--overlay',
+  mount: object => {
+    // overlay
+
+    new Xt.Overlay(object, {
+      targets: '#gatsby_menu--overlay',
+      appendTo: false,
+      disabled: true,
+      matches: { '(max-width: 1023px)': { disabled: false } },
+    })
+  },
+})
+
+/**
  * .gatsby_site-header
  */
 
@@ -46,14 +64,14 @@ Xt.mount.push({
             end: 'bottom top',
             onUpdate: self => {
               if (!self.getVelocity()) return // skip on initial
-              if (self.trigger.classList.contains('scrolling-down') && self.trigger.classList.contains('hide') && self.direction < 0) {
-                self.trigger.classList.remove('scrolling-down')
+              if (object.classList.contains('scrolling-down') && object.classList.contains('hide') && self.direction < 0) {
+                object.classList.remove('scrolling-down')
                 gsap.killTweensOf(object)
                 gsap.to(object, { y: 0, duration: 0.5, ease: 'quart.out' })
-              } else if (!self.trigger.classList.contains('scrolling-down') && self.trigger.classList.contains('hide') && self.direction > 0) {
-                self.trigger.classList.add('scrolling-down')
+              } else if (!object.classList.contains('scrolling-down') && object.classList.contains('hide') && self.direction > 0) {
+                object.classList.add('scrolling-down')
                 gsap.killTweensOf(object)
-                gsap.to(object, { y: -self.trigger.offsetHeight, duration: 0.5, ease: 'quart.out' })
+                gsap.to(object, { y: -object.offsetHeight, duration: 0.5, ease: 'quart.out' })
               }
             },
           },
@@ -68,16 +86,17 @@ Xt.mount.push({
             endTrigger: document.querySelector('.gatsby_site-article_hero'),
             end: `bottom top`,
             onUpdate: self => {
-              if (self.isActive && self.trigger.classList.contains('hide')) {
-                self.trigger.classList.remove('hide')
+              if (self.isActive && object.classList.contains('hide')) {
+                object.classList.remove('hide')
                 gsap.killTweensOf(object)
                 gsap.to(object, { y: 0, duration: 0.5, ease: 'quart.out' })
-              } else if (!self.isActive && !self.trigger.classList.contains('hide')) {
-                self.trigger.classList.add('hide')
+              } else if (!self.isActive && !object.classList.contains('hide')) {
+                object.classList.add('hide')
               }
             },
           },
         })
+        ScrollTrigger.refresh()
       },
     })
   },
@@ -169,7 +188,7 @@ Xt.mount.push({
       // val
       let pos = self.position - self.scrollSpace - self.scrollDistance
       const min = 0
-      const max = self.scrollElement.scrollHeight - self.scrollElement.clientHeight
+      const max = self.scrollElement.scrollHeight - self.scrollElement.offsetHeight
       pos = pos < min ? min : pos
       pos = pos > max ? max : pos
       // scroll
