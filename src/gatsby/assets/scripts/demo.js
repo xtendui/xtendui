@@ -153,15 +153,19 @@ const populateBlock = () => {
     full.addEventListener('off.xt.toggle', e => {
       if (e.target === full) {
         const content = document.querySelector('#gatsby_open-full-content')
+        const container = content.querySelector('.gatsby_demo')
         // scrollToItem
         scrollToItem()
+        // populate iframe
+        for (const item of container.querySelectorAll('.gatsby_demo_item.in')) {
+          // spinner
+          item.classList.remove('loaded')
+        }
         // iframe
-        const container = content.querySelector('.gatsby_demo')
         if (container && container.dataset.isFullscreenOnly) {
           // populate iframe
           for (const item of container.querySelectorAll('.gatsby_demo_item.in')) {
             if (item.getAttribute('data-iframe-fullscreen')) {
-              item.classList.remove('loaded')
               item.dispatchEvent(new CustomEvent('offdone.xt.toggle'))
             }
           }
@@ -487,8 +491,10 @@ const makeFullscreen = container => {
   // populate
   const items = container.querySelectorAll('.gatsby_demo_item.in')
   for (const item of items) {
-    const sourceTo = item.querySelector('.gatsby_demo_source_populate')
+    // spinner
+    item.classList.remove('loaded')
     // populate source
+    const sourceTo = item.querySelector('.gatsby_demo_source_populate')
     if (sourceTo && container.dataset.isFullscreenOnly) {
       sourceTo.innerHTML = item.querySelector('script[type="text/plain"]').innerHTML
     }
@@ -544,8 +550,9 @@ const initializeIframe = (container, item) => {
       })
       item.addEventListener('offdone.xt.toggle', () => {
         const iframe = item.querySelector('iframe')
-        item.classList.remove('loaded')
         unloadIframe(iframe)
+        // spinner
+        item.classList.remove('loaded')
       })
     }
   }
@@ -565,6 +572,7 @@ window.initIframe = (name, htmlSource, jsxSource, cssSource, jsSource) => {
   for (const iframe of iframes) {
     const item = iframe.closest('.gatsby_demo_item')
     populateIframe(item, iframe, htmlSource, jsxSource, cssSource, jsSource)
+    // spinner
     item.classList.add('loaded')
   }
 }
