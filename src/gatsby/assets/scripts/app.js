@@ -19,7 +19,7 @@ import 'assets/scripts/shared'
 Xt.mount.push({
   matches: '.gatsby_site-header',
   mount: object => {
-    // only on mobile
+    // match media
 
     ScrollTrigger.matchMedia({
       '(max-width: 1023px)': () => {

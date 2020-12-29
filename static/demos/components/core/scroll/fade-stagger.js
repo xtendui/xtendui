@@ -6,9 +6,13 @@ gsap.registerPlugin(ScrollTrigger)
 Xt.mount.push({
   matches: '.demo--fade-stagger',
   mount: object => {
+    // vars
+
+    const triggers = object.querySelectorAll('.card')
+
     // fade
 
-    ScrollTrigger.batch(object.querySelectorAll('.card'), {
+    ScrollTrigger.batch(triggers, {
       start: 'top bottom-=10%',
       end: 'bottom top+=10%',
       onEnter: (batch, scrollTriggers) => {

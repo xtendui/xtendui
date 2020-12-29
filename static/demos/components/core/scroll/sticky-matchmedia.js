@@ -6,7 +6,7 @@ gsap.registerPlugin(ScrollTrigger)
 Xt.mount.push({
   matches: '.demo--sticky-matchmedia',
   mount: object => {
-    // only on mobile
+    // match media
 
     ScrollTrigger.matchMedia({
       '(max-width: 639px)': () => {

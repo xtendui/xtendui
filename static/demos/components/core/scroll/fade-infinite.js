@@ -6,9 +6,13 @@ gsap.registerPlugin(ScrollTrigger)
 Xt.mount.push({
   matches: '.demo--fade-infinite',
   mount: object => {
+    // vars
+
+    const triggers = object.querySelectorAll('.card')
+
     // fade
 
-    ScrollTrigger.batch(object.querySelectorAll('.card'), {
+    ScrollTrigger.batch(triggers, {
       onEnter: batch => {
         gsap.killTweensOf(batch)
         gsap.to(batch, { opacity: 1, duration: 0.5, ease: 'quart.out', stagger: 0.15 })
