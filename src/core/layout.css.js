@@ -58,6 +58,10 @@ module.exports = {
       // setup
       '@apply overflow-main': '',
     },
+    '.container': {
+      // styles
+      maxWidth: '1536px !important', // container fluid
+    },
     '::selection': {
       // styles
       backgroundColor: '#00FFDD',

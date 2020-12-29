@@ -64,7 +64,7 @@ body {
 /* layout */
 
 .gatsby_site-article_hero {
-  @apply py-10 md:py-20;
+  @apply py-10 md:py-16;
   border-bottom: 1px solid theme('colors.gray.200');
   background: theme('colors.gray.100');
   background: linear-gradient(225deg, theme('colors.gray.100') 33%, theme('colors.gray.200') 100%);
