@@ -67,6 +67,7 @@ Overlay.optionsDefault = {
   max: 1,
   // event
   on: 'click',
+  off: 'click',
   eventLimit: '.event-limit, :scope > .overlay-container > .overlay-inner > *:first-child',
   // timing
   instant: {

@@ -26,7 +26,7 @@ demo.htmlSource = `
 
   </div>
 
-  <div class="inline-block" data-xt-tooltip="{ on: 'click', off: false, backdrop: true }">
+  <div class="inline-block" data-xt-tooltip="{ on: 'click', off: 'click', backdrop: true }">
 
     <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       backdrop click

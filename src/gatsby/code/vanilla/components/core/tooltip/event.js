@@ -13,7 +13,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-2 items-center">
 
-  <div data-xt-tooltip="{ on: 'click', off: false }">
+  <div data-xt-tooltip="{ on: 'click', off: 'click' }">
 
     <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
       click

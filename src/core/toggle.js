@@ -461,9 +461,6 @@ class Toggle {
         }
         const offHandlerCustom = Xt.dataStorage.put(el, `off/${self.ns}`, self.eventOffHandler.bind(self).bind(self, el))
         el.addEventListener(`off.trigger.${self.componentNs}`, offHandlerCustom)
-      } else {
-        const offHandlerCustom = Xt.dataStorage.put(el, `off/${self.ns}`, self.eventOnHandler.bind(self).bind(self, el))
-        el.addEventListener(`off.trigger.${self.componentNs}`, offHandlerCustom)
       }
     }
     // targets
@@ -3071,7 +3068,7 @@ Toggle.optionsDefaultSuper = {
   autoDisable: true,
   // event
   on: 'click',
-  off: false,
+  off: 'click',
   eventLimit: '.event-limit',
   preventEvent: false,
   // timing

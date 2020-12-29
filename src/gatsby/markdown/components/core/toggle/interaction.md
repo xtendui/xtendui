@@ -132,7 +132,7 @@ You can specify **on** and **off** events for the toggle.
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `on:String`                          | `'click'`        | Activation event to attach to elements            |
-| Option                  | `off:String`                          | `false`        | Dectivation event to attach to elements            |
+| Option                  | `off:String`                          | `'click'`        | Dectivation event to attach to elements            |
 | Option                  | `eventLimit:Query`                          | `'.event-limit'`        | Limit events inside self.object            |
 
 </div>

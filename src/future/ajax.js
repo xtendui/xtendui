@@ -365,6 +365,7 @@ Ajax.optionsDefault = {
   max: 1,
   // event
   on: 'click',
+  off: false,
   // timing
   instant: true,
   duration: false,

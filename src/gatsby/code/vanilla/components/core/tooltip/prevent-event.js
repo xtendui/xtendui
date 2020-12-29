@@ -12,7 +12,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-2 items-center">
 
-  <div class="inline-block" data-xt-tooltip="{ elements: false, elementsInner: ':scope > a, :scope > button', on: 'mouseenter', off: 'mouseleave', closeOutside: false, preventEvent: true }">
+  <div class="inline-block" data-xt-tooltip="{ elements: false, elementsInner: ':scope > a, :scope > button', on: 'mouseenter', off: 'mouseleave', preventEvent: true }">
 
     <a href="#tooltip-with-link-1" class="btn btn-md rounded-md ${btnPrimary()}">
       tooltip

@@ -12,7 +12,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-2 items-center">
 
-  <div data-xt-tooltip="{ on: 'click', off: false, preventEvent: true }">
+  <div data-xt-tooltip="{ on: 'click', off: 'click', preventEvent: true }">
 
     <a href="#tooltip-with-link-0" class="btn btn-md rounded-md ${btnPrimary()}">
       tooltip
