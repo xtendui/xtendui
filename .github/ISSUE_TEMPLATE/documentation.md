@@ -1,14 +1,14 @@
 ---
-name: Bug Report 🐞
-about: Report a reproducible bug
-labels: "type: bug"
+name: Docs and Features 📝
+about: Report Docs errors or suggestions for new features
+labels: "type: suggestion"
 ---
 
 <!-- Before opening a new bug issue, please search existing issues: https://github.com/minimit/xtendui/issues -->
 
-## Describe the bug
+## Documentation
 
-<!-- What happends? describe the steps to reproduce the bug and how it should behave instead -->
+<!-- Describe the documentation errors or suggestions -->
 
 ## Example (if applicable)
 

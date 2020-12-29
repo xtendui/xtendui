@@ -1,14 +1,14 @@
 ---
-name: Bug Report 🐞
-about: Report a reproducible bug
-labels: "type: bug"
+name: Themes 📝
+about: Report Themes errors or suggestions
+labels: "type: theme"
 ---
 
 <!-- Before opening a new bug issue, please search existing issues: https://github.com/minimit/xtendui/issues -->
 
-## Describe the bug
+## Themes
 
-<!-- What happends? describe the steps to reproduce the bug and how it should behave instead -->
+<!-- Describe the themes errors or suggestions -->
 
 ## Example (if applicable)
 
