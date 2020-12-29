@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollToPlugin)
  */
 
 Xt.mount.push({
-  matches: '#iframe--fashion-gallery-v1 body', // add your own selector instead of body to contain the code
+  matches: '#iframe--fashion-gallery-v1 body',
   mount: object => {
     // init
 
@@ -55,7 +55,7 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '#iframe--fashion-gallery-v1 body .product-image', // add your own selector instead of body to contain the code
+  matches: '#iframe--fashion-gallery-v1 .product-image',
   mount: object => {
     // vars
 
@@ -123,7 +123,7 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '#iframe--fashion-gallery-v1 body .product-continue', // add your own selector instead of body to contain the code
+  matches: '#iframe--fashion-gallery-v1 .product-continue',
   mount: object => {
     // vars
 

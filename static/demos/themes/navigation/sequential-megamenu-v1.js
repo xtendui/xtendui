@@ -5,10 +5,10 @@ import gsap from 'gsap'
 // mouse events instead of click you can remove this
 
 Xt.mount.push({
-  matches: '#iframe--sequential-megamenu-v1 body input[type="checkbox"]',
+  matches: '#iframe--sequential-megamenu-v1 input[type="checkbox"]',
   mount: object => {
     const checkChange = () => {
-      const component = document.querySelector('#iframe--sequential-megamenu-v1 body .megamenu')
+      const component = document.querySelector('#iframe--sequential-megamenu-v1 .megamenu')
       if (component) {
         const self = Xt.get('xt-drop', component)
         if (self) {
@@ -33,7 +33,7 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '#iframe--sequential-megamenu-v1 body .megamenu', // add your own selector instead of body to contain the code
+  matches: '#iframe--sequential-megamenu-v1 .megamenu',
   mount: object => {
     // vars
 
@@ -176,7 +176,7 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '#iframe--sequential-megamenu-v1 body .megamenu',
+  matches: '#iframe--sequential-megamenu-v1 .megamenu',
   mount: function (object) {
     // vars
 

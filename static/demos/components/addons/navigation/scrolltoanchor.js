@@ -5,7 +5,7 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 gsap.registerPlugin(ScrollToPlugin)
 
 Xt.mount.push({
-  matches: '#iframe--scrolltoanchor body', // add your own selector instead of body to contain the code
+  matches: '#iframe--scrolltoanchor body',
   mount: object => {
     // init
 

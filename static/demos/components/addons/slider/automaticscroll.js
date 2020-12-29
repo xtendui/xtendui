@@ -7,7 +7,7 @@ import gsap from 'gsap'
  */
 
 Xt.mount.push({
-  matches: '.demo--slider-automaticscroll .slider', // add your own selector instead of body to contain the code
+  matches: '.demo--slider-automaticscroll .slider',
   mount: object => {
     // vars
 

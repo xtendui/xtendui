@@ -7,7 +7,7 @@ import gsap from 'gsap'
  */
 
 Xt.mount.push({
-  matches: '#iframe--fashion-hero-v1 body .slider', // add your own selector instead of body to contain the code
+  matches: '#iframe--fashion-hero-v1 .slider',
   mount: object => {
     // vars
 
@@ -218,7 +218,7 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '#iframe--fashion-hero-v1 body .slide', // add your own selector instead of body to contain the code
+  matches: '#iframe--fashion-hero-v1 .slide',
   mount: function (object) {
     // vars
 
