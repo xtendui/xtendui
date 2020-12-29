@@ -939,7 +939,10 @@ Xt.addScript = (url, callback = null) => {
  */
 Xt.ignoreOnce = el => {
   if (el.classList.contains('xt-ignore-once')) {
-    el.classList.remove('xt-ignore', 'xt-ignore-once')
+    // @FIX react when componentDidMount
+    requestAnimationFrame(() => {
+      el.classList.remove('xt-ignore', 'xt-ignore-once')
+    })
   }
 }
 

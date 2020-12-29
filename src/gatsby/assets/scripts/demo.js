@@ -46,7 +46,7 @@ const demoHash = (e, initial = false) => {
       if (item) {
         const demo = item.closest('.gatsby_demo')
         if (demo) {
-          makeFullscreen(demo, initial)
+          makeFullscreen(demo)
           // scrollToItem
           scrollToItem(initial)
           // trigger fullscreen or change tabs
@@ -173,12 +173,12 @@ const populateBlock = () => {
         }
         // btnOpenFull
         for (const btn of document.querySelectorAll('.btn-open-full.in')) {
-          btn.classList.remove('in')
+          btn.classList.remove('in', 'in-tooltip')
         }
         // toggles
         const listingToggles = document.querySelectorAll('[data-gatsby-listing-toggle]')
         for (const el of listingToggles) {
-          el.classList.remove('in')
+          el.classList.remove('in', 'in-toggle')
         }
         // move code block
         const appendOrigin = document.querySelector('[data-xt-origin="gatsby_open-full-content"]')
@@ -209,10 +209,8 @@ const populateBlock = () => {
     })
     // trigger fullscreen or change tabs
     full.addEventListener('on.xt.toggle', () => {
-      // close tooltip on mobile
-      for (const tooltipToClose of document.querySelectorAll('.btn-open-full + .tooltip')) {
-        tooltipToClose.classList.remove('in')
-      }
+      // close tooltip
+      document.querySelector('.btn-open-full + .tooltip').dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
       // @FIX demo fullscreen
       const content = document.querySelector('#gatsby_open-full-content')
       const current = content.querySelector('.gatsby_demo_item.in')
@@ -370,7 +368,6 @@ const populateDemo = (container, i) => {
     elements: '.gatsby_demo_tabs_left .btn',
     targets: '.gatsby_demo_item',
     min: 1,
-    instant: true,
   })
   for (const item of items) {
     // @FIX demo fullscreen
@@ -479,7 +476,7 @@ const btnOpenIframe = item => {
  * makeFullscreen
  */
 
-const makeFullscreen = (container, initial = false) => {
+const makeFullscreen = container => {
   const toggle = document.querySelector('#gatsby_open-full-trigger')
   const content = document.querySelector('#gatsby_open-full-content')
   // toggles
@@ -496,17 +493,15 @@ const makeFullscreen = (container, initial = false) => {
       sourceTo.innerHTML = item.querySelector('script[type="text/plain"]').innerHTML
     }
   }
-  toggle.dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
-  toggle.addEventListener('init.xt.toggle', () => {
+  // @FIX react when componentDidMount
+  requestAnimationFrame(() => {
     toggle.dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
   })
   // move code block
   container.before(
     Xt.createElement(`<div class="gatsby_demo xt-ignore" data-xt-origin="gatsby_open-full-content" style="height: ${container.offsetHeight}px"></div>`)
   )
-  if (!container.dataset.isFullscreenOnly && !initial) {
-    container.classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
-  }
+  container.classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
   content.append(container)
   // raf after initialization
   requestAnimationFrame(() => {
