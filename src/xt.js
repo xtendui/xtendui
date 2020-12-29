@@ -127,6 +127,9 @@ Xt.ready = fnc => {
  */
 Xt.ready(() => {
   document.querySelector('html').classList.add('xt-ready')
+  if (!Xt.supportScroll) {
+    document.querySelector('html').classList.add('xt-noscroll')
+  }
   Xt.setScrollbarWidth()
   Xt.innerHeightSet()
   Xt.mountCheck(document.documentElement)

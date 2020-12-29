@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 Xt.mount.push({
-  matches: '.demo--fade-stagger',
+  matches: '.demo--fade-distance',
   mount: object => {
     // vars
 

@@ -13,6 +13,11 @@
 @import 'xtendui/static/demos/components/core/form/variant-primary.css';
 @import 'xtendui/static/demos/components/core/overlay/animation-css.css';
 @import 'xtendui/static/demos/components/core/overlay/class-html.css';
+@import 'xtendui/static/demos/components/core/scroll/fade-distance.css';
+@import 'xtendui/static/demos/components/core/scroll/fade-infinite.css';
+@import 'xtendui/static/demos/components/core/scroll/fade-inside.css';
+@import 'xtendui/static/demos/components/core/scroll/fade-matchmedia.css';
+@import 'xtendui/static/demos/components/core/scroll/fade.css';
 @import 'xtendui/static/demos/components/core/scroll/sticky-hide.css';
 @import 'xtendui/static/demos/components/core/slider/expand.css';
 @import 'xtendui/static/demos/components/core/slider/media-loaded.css';

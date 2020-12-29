@@ -1,6 +1,5 @@
 import { Xt } from 'xtendui'
 import 'xtendui/build/xtend-core'
-import 'xtendui/build/xtend-future'
 import 'xtendui/build/xtend-addons'
 
 // export UMD

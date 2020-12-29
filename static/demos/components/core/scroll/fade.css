@@ -1,0 +1,7 @@
+.demo--fade {
+  html:not(.xt-noscroll) & {
+    .card {
+      opacity: 0;
+    }
+  }
+}
