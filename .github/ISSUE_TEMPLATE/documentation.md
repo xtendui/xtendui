@@ -6,9 +6,9 @@ labels: "type: suggestion"
 
 <!-- Before opening a new bug issue, please search existing issues: https://github.com/minimit/xtendui/issues -->
 
-## Documentation
+## Describe the Error or Suggestion
 
-<!-- Describe the documentation errors or suggestions -->
+<!-- Describe the docs errors or suggestions -->
 
 ## Example (if applicable)
 
