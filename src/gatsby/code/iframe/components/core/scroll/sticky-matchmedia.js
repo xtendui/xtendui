@@ -14,12 +14,9 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="demo--sticky-hide-top scroll-sticky">
-  <div class="card card-sm ${cardPrimary()} demo--sticky-hide-top-main">
+<div class="demo--sticky-matchmedia scroll-sticky">
+  <div class="card card-sm ${cardPrimary()}">
     <div class="h4">Top</div>
-  </div>
-  <div class="card card-sm ${cardDefault()} demo--sticky-hide-top-sub">
-    <div class="h6">Top Second</div>
   </div>
 </div>
 

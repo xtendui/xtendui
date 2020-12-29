@@ -10,7 +10,7 @@ date: "2010-10-10"
 
 For **full API** see [Gsap ScrollTrigger API](https://greensock.com/docs/v3/Plugins/ScrollTrigger).
 
-Use [Gsap batch](https://greensock.com/docs/v3/Plugins/ScrollTrigger/static.batch()) to control fade **multiple ScrollTriggers**.
+Use [Gsap batch](https://greensock.com/docs/v3/Plugins/ScrollTrigger/static.batch()) to control **multiple ScrollTriggers**.
 
 <div class="table-overflow">
 
@@ -27,7 +27,7 @@ Use [Gsap batch](https://greensock.com/docs/v3/Plugins/ScrollTrigger/static.batc
 
 You can use `onEnter`, `onLeave`, `onEnterBack`, `onLeaveBack`, `onToggle`, `onUpdate`, `onScrubComplete`, and `onRefresh` to **animate on certain events**.
 
-Use [Gsap stagger](https://greensock.com/docs/v3/Staggers) to control fade **animation stagger**.
+Use [Gsap stagger](https://greensock.com/docs/v3/Staggers) to control **animation stagger**.
 
 <demo>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/fade-infinite"></div>

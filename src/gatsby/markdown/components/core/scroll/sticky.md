@@ -20,7 +20,7 @@ Use the **component classes** to create a **sticky**.
 
 </div>
 
-A **sticky pinned to a scroller** has also to `pin: true` and `pinSpacing: false` to control sticky **pinner position**.
+A **sticky pinned to a scroller** has also to `pin: true` and `pinSpacing: false` to control **pinner position**.
 
 <div class="table-overflow">
 
