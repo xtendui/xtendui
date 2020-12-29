@@ -1,7 +1,7 @@
 ---
 type: "Components"
 category: "Addons"
-parent: "Navigation"
+parent: "Scroll"
 title: "Scroll to Anchor"
 description: "Automatically scroll to an id clicking the relative anchor with that id."
 ---
@@ -13,6 +13,9 @@ Import the **component javascript** file.
 ```jsx
 import 'xtendui/src/addons/scrolltoanchor'
 ```
+
+[[notePrimary]]
+| This addon **doesn't need** Gsap ScrollTrigger.
 
 ## Usage
 
