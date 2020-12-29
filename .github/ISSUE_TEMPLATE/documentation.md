@@ -10,6 +10,6 @@ labels: "type: suggestion"
 
 <!-- Describe the docs errors or suggestions -->
 
-## Example (if applicable)
+## Example or Link
 
-<!-- Provide the minimal working example (github, codepen, etc..) -->
+<!-- Provide the minimal working example (github, codepen, etc..) or website link -->
