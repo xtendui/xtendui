@@ -49,11 +49,11 @@ Xt.mount.push({
               if (self.trigger.classList.contains('scrolling-down') && self.trigger.classList.contains('hide') && self.direction < 0) {
                 self.trigger.classList.remove('scrolling-down')
                 gsap.killTweensOf(object)
-                gsap.to(object, { y: 0, duration: 0.75, ease: 'quart.out' })
+                gsap.to(object, { y: 0, duration: 0.5, ease: 'quart.out' })
               } else if (!self.trigger.classList.contains('scrolling-down') && self.trigger.classList.contains('hide') && self.direction > 0) {
                 self.trigger.classList.add('scrolling-down')
                 gsap.killTweensOf(object)
-                gsap.to(object, { y: -self.trigger.offsetHeight, duration: 0.75, ease: 'quart.out' })
+                gsap.to(object, { y: -self.trigger.offsetHeight, duration: 0.5, ease: 'quart.out' })
               }
             },
           },
@@ -71,7 +71,7 @@ Xt.mount.push({
               if (self.isActive && self.trigger.classList.contains('hide')) {
                 self.trigger.classList.remove('hide')
                 gsap.killTweensOf(object)
-                gsap.to(object, { y: 0, duration: 0.75, ease: 'quart.out' })
+                gsap.to(object, { y: 0, duration: 0.5, ease: 'quart.out' })
               } else if (!self.isActive && !self.trigger.classList.contains('hide')) {
                 self.trigger.classList.add('hide')
               }
