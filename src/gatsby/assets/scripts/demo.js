@@ -46,7 +46,7 @@ const demoHash = (e, initial = false) => {
       if (item) {
         const demo = item.closest('.gatsby_demo')
         if (demo) {
-          makeFullscreen(demo)
+          makeFullscreen(demo, initial)
           // scrollToItem
           scrollToItem(initial)
           // trigger fullscreen or change tabs
@@ -480,7 +480,7 @@ const btnOpenIframe = item => {
  * makeFullscreen
  */
 
-const makeFullscreen = container => {
+const makeFullscreen = (container, initial) => {
   const toggle = document.querySelector('#gatsby_open-full-trigger')
   const content = document.querySelector('#gatsby_open-full-content')
   // toggles
@@ -507,7 +507,11 @@ const makeFullscreen = container => {
   container.before(
     Xt.createElement(`<div class="gatsby_demo xt-ignore" data-xt-origin="gatsby_open-full-content" style="height: ${container.offsetHeight}px"></div>`)
   )
-  container.classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
+  console.log(initial)
+  if (!initial) {
+    // ignore once for mount when moving
+    container.classList.add('xt-ignore', 'xt-ignore-once')
+  }
   content.append(container)
   // raf after initialization
   requestAnimationFrame(() => {
