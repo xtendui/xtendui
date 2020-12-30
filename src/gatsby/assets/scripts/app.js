@@ -43,60 +43,53 @@ Xt.mount.push({
       '(max-width: 1023px)': () => {
         // sticky
 
-        gsap.to(object, {
-          scrollTrigger: {
-            trigger: object,
-            start: 'top top',
-            endTrigger: 'html',
-            end: 'bottom top',
-            pin: true,
-            pinSpacing: false,
-          },
+        ScrollTrigger.create({
+          trigger: object,
+          start: 'top top',
+          endTrigger: 'html',
+          end: 'bottom top',
+          pin: true,
+          pinSpacing: false,
         })
 
         // scrolling-down depending on scroll direction
 
-        gsap.to(object, {
-          scrollTrigger: {
-            trigger: object,
-            start: -1,
-            endTrigger: 'html',
-            end: 'bottom top',
-            onUpdate: self => {
-              if (!self.getVelocity()) return // skip on initial
-              if (object.classList.contains('scrolling-down') && object.classList.contains('hide') && self.direction < 0) {
-                object.classList.remove('scrolling-down')
-                gsap.killTweensOf(object)
-                gsap.to(object, { y: 0, duration: 0.5, ease: 'quart.out' })
-              } else if (!object.classList.contains('scrolling-down') && object.classList.contains('hide') && self.direction > 0) {
-                object.classList.add('scrolling-down')
-                gsap.killTweensOf(object)
-                gsap.to(object, { y: -object.offsetHeight, duration: 0.5, ease: 'quart.out' })
-              }
-            },
+        ScrollTrigger.create({
+          trigger: object,
+          start: -1,
+          endTrigger: 'html',
+          end: 'bottom top',
+          onUpdate: self => {
+            if (!self.getVelocity()) return // skip on initial
+            if (object.classList.contains('scrolling-down') && object.classList.contains('hide') && self.direction < 0) {
+              object.classList.remove('scrolling-down')
+              gsap.killTweensOf(object)
+              gsap.to(object, { y: 0, duration: 0.5, ease: 'quart.out' })
+            } else if (!object.classList.contains('scrolling-down') && object.classList.contains('hide') && self.direction > 0) {
+              object.classList.add('scrolling-down')
+              gsap.killTweensOf(object)
+              gsap.to(object, { y: -object.offsetHeight, duration: 0.5, ease: 'quart.out' })
+            }
           },
         })
 
         // hide depending on .gatsby_site-article_hero
 
-        gsap.to(object, {
-          scrollTrigger: {
-            trigger: object,
-            start: -1,
-            endTrigger: document.querySelector('.gatsby_site-article_hero'),
-            end: `bottom top`,
-            onUpdate: self => {
-              if (self.isActive && object.classList.contains('hide')) {
-                object.classList.remove('hide')
-                gsap.killTweensOf(object)
-                gsap.to(object, { y: 0, duration: 0.5, ease: 'quart.out' })
-              } else if (!self.isActive && !object.classList.contains('hide')) {
-                object.classList.add('hide')
-              }
-            },
+        ScrollTrigger.create({
+          trigger: object,
+          start: -1,
+          endTrigger: document.querySelector('.gatsby_site-article_hero'),
+          end: `bottom top`,
+          onUpdate: self => {
+            if (self.isActive && object.classList.contains('hide')) {
+              object.classList.remove('hide')
+              gsap.killTweensOf(object)
+              gsap.to(object, { y: 0, duration: 0.5, ease: 'quart.out' })
+            } else if (!self.isActive && !object.classList.contains('hide')) {
+              object.classList.add('hide')
+            }
           },
         })
-        ScrollTrigger.refresh()
       },
     })
   },
@@ -111,13 +104,15 @@ Xt.mount.push({
   mount: object => {
     // sticky
 
+    const heroParallax = {
+      trigger: object,
+      start: -1,
+      end: 'bottom top',
+      scrub: true,
+    }
+
     gsap.to(object, {
-      scrollTrigger: {
-        trigger: object,
-        start: -1,
-        end: 'bottom top',
-        scrub: true,
-      },
+      scrollTrigger: heroParallax,
       y: '50%',
     })
   },

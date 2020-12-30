@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 /**
- * .listing-item scale
+ * .listing-item
  */
 
 Xt.mount.push({
@@ -12,20 +12,20 @@ Xt.mount.push({
   mount: object => {
     // vars
 
-    const imgScale = 0.04
-    const imgOpacityIn = 0.75
-    const imgOpacityOut = 1
+    const mediaScale = 0.04
+    const mediaOpacityIn = 0.75
+    const mediaOpacityOut = 1
     const contentY = -10
 
     // enter
 
     const eventEnter = e => {
       const tr = e.target
-      // img
-      const img = tr.querySelector('.media-container')
-      gsap.to(img, { opacity: imgOpacityIn, scale: 1 - imgScale, duration: 0.5, ease: 'expo.out' })
-      const imgInner = tr.querySelector('.media-inner')
-      gsap.to(imgInner, { scale: 1 + imgScale, duration: 0.5, ease: 'expo.out' })
+      // media
+      const media = tr.querySelector('.media-container')
+      gsap.to(media, { opacity: mediaOpacityIn, scale: 1 - mediaScale, duration: 0.5, ease: 'expo.out' })
+      const mediaInner = tr.querySelector('.media-inner')
+      gsap.to(mediaInner, { scale: 1 + mediaScale, duration: 0.5, ease: 'expo.out' })
       // content
       const content = tr.querySelector('.listing-content')
       if (content) {
@@ -39,11 +39,11 @@ Xt.mount.push({
 
     const eventLeave = e => {
       const tr = e.target
-      // img
-      const img = tr.querySelector('.media-container')
-      gsap.to(img, { opacity: imgOpacityOut, scale: 1, duration: 0.75, ease: 'expo.out' })
-      const imgInner = tr.querySelector('.media-inner')
-      gsap.to(imgInner, { scale: 1, duration: 0.75, ease: 'expo.out' })
+      // media
+      const media = tr.querySelector('.media-container')
+      gsap.to(media, { opacity: mediaOpacityOut, scale: 1, duration: 0.75, ease: 'expo.out' })
+      const mediaInner = tr.querySelector('.media-inner')
+      gsap.to(mediaInner, { scale: 1, duration: 0.75, ease: 'expo.out' })
       // content
       const content = tr.querySelector('.listing-content')
       if (content) {

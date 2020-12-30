@@ -8,15 +8,13 @@ Xt.mount.push({
   mount: object => {
     // sticky
 
-    gsap.to(object, {
-      scrollTrigger: {
-        trigger: object,
-        start: 'top top',
-        endTrigger: 'html',
-        end: 'bottom top',
-        pin: true,
-        pinSpacing: false,
-      },
+    ScrollTrigger.create({
+      trigger: object,
+      start: 'top top',
+      endTrigger: 'html',
+      end: 'bottom top',
+      pin: true,
+      pinSpacing: false,
     })
   },
 })
@@ -26,15 +24,13 @@ Xt.mount.push({
   mount: object => {
     // sticky
 
-    gsap.to(object, {
-      scrollTrigger: {
-        trigger: object,
-        start: 'bottom bottom',
-        endTrigger: 'html',
-        end: 'bottom top',
-        pin: true,
-        pinSpacing: false,
-      },
+    ScrollTrigger.create({
+      trigger: object,
+      start: 'bottom bottom',
+      endTrigger: 'html',
+      end: 'bottom top',
+      pin: true,
+      pinSpacing: false,
     })
   },
 })
