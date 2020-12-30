@@ -1,5 +1,6 @@
-.demo--fade-distance {
-  html:not(.xt-noscroll) & {
+
+body:not(.xt-noscroll) {
+  .demo--fade-distance {
     .card {
       opacity: 0;
     }

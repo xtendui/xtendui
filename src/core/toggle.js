@@ -2406,7 +2406,7 @@ class Toggle {
         // checks
         Xt.scrollbar.add(self.ns)
         // scrollbar
-        const container = document.documentElement
+        const container = document.querySelector('body')
         container.classList.add('xt-scrollbar')
         Xt.scrollbarSpaceOn(container)
       } else if (actionCurrent === 'Off') {
@@ -2414,7 +2414,7 @@ class Toggle {
         Xt.scrollbar.remove(self.ns)
         if (!Xt.scrollbar.get().length) {
           // scrollbar
-          const container = document.documentElement
+          const container = document.querySelector('body')
           container.classList.remove('xt-scrollbar')
           Xt.scrollbarSpaceOff(container)
         }

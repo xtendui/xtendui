@@ -38,11 +38,11 @@ This library uses [gsap](https://github.com/greensock/GSAP) for javascript anima
 
 You can **opt out** some animations behaviour:
 
-* **Flash of Unstyled Content (FOUC)**: Xtend UI **automatically disables page load duration** for animation and transition until javascript is loaded, add `html.no-js-fouc` to disable this behaviour.
+* **Flash of Unstyled Content (FOUC)**: Xtend UI **automatically disables page load duration** for animation and transition until javascript is loaded, add `body.no-js-fouc` to disable this behaviour.
 
-* **Initial component animations**: Xtend UI **automatically disables duration** for animation and transition on `initial` class used in components init and reinit, add `html.no-js-initial` to disable this behaviour.
+* **Initial component animations**: Xtend UI **automatically disables duration** for animation and transition on `initial` class used in components init and reinit, add `body.no-js-initial` to disable this behaviour.
 
-* **Prefers Reduced Motion**: Xtend UI **automatically disables duration** for animation and transition when the the user has activated "Prefers Reduced Motion" (needs also [gsap setup](/introduction/getting-started/setup#javascript-animation)), add `html.no-js-prm` to disable this behaviour, also set this variables `Xt.durationTimescale = 1` and `Xt.autoTimescale = 1`.
+* **Prefers Reduced Motion**: Xtend UI **automatically disables duration** for animation and transition when the the user has activated "Prefers Reduced Motion" (needs also [gsap setup](/introduction/getting-started/setup#javascript-animation)), add `body.no-js-prm` to disable this behaviour, also set this variables `Xt.durationTimescale = 1` and `Xt.autoTimescale = 1`.
 
 * **Global Duration Timescale**: Xtend UI have an option to **change javascript durations timescales**, for example set this variables `Xt.durationTimescale = 1.5` to have faster animations by an half.
 

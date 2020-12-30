@@ -25,7 +25,7 @@ Use [Gsap batch](https://greensock.com/docs/v3/Plugins/ScrollTrigger/static.batc
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/fade"></div>
 </demo>
 
-Always hide the elements only if `html:not(.xt-noscroll)` to make them **visible if browser doesn't support scroll** (crawlers, etc..).
+Always hide the elements only if `body:not(.xt-noscroll)` to make them **visible if browser doesn't support scroll** (crawlers, etc..).
 
 You can use `onEnter`, `onLeave`, `onEnterBack`, `onLeaveBack`, `onToggle`, `onUpdate`, `onScrubComplete`, and `onRefresh` to **animate on certain events**.
 

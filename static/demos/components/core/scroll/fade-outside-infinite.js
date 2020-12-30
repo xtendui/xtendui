@@ -32,8 +32,10 @@ Xt.mount.push({
       onRefresh: (batch, scrollTriggers) => {
         for (const self of scrollTriggers) {
           if (self.progress !== 0) {
+            gsap.killTweensOf(self.trigger)
             gsap.set(self.trigger, { opacity: 1 })
           } else {
+            gsap.killTweensOf(self.trigger)
             gsap.set(self.trigger, { opacity: 0 })
           }
         }

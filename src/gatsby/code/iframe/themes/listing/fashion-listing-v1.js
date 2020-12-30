@@ -17,7 +17,7 @@ demo.htmlSource = `
     <div class="row row-3">
 
       <div class="w-6/12 sm:w-4/12">
-        <a href="#" class="listing-item group">
+        <a href="#" class="listing-item block group">
           <div class="media-container ratio-150">
             <div class="media-inner">
               <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
@@ -36,7 +36,7 @@ demo.htmlSource = `
       </div>
 
       <div class="w-6/12 sm:w-4/12">
-        <a href="#" class="listing-item group">
+        <a href="#" class="listing-item block group">
           <div class="media-container ratio-150">
             <div class="media-inner">
               <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
@@ -55,7 +55,7 @@ demo.htmlSource = `
       </div>
 
       <div class="w-6/12 sm:w-4/12">
-        <a href="#" class="listing-item group">
+        <a href="#" class="listing-item block group">
           <div class="media-container ratio-150">
             <div class="media-inner">
               <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
@@ -74,7 +74,7 @@ demo.htmlSource = `
       </div>
 
       <div class="w-6/12 sm:w-4/12">
-        <a href="#" class="listing-item group">
+        <a href="#" class="listing-item block group">
           <div class="media-container ratio-150">
             <div class="media-inner">
               <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
@@ -93,7 +93,7 @@ demo.htmlSource = `
       </div>
 
       <div class="w-6/12 sm:w-4/12">
-        <a href="#" class="listing-item group">
+        <a href="#" class="listing-item block group">
           <div class="media-container ratio-150">
             <div class="media-inner">
               <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
@@ -112,7 +112,7 @@ demo.htmlSource = `
       </div>
 
       <div class="w-6/12 sm:w-4/12">
-        <a href="#" class="listing-item group">
+        <a href="#" class="listing-item block group">
           <div class="media-container ratio-150">
             <div class="media-inner">
               <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
@@ -131,7 +131,7 @@ demo.htmlSource = `
       </div>
 
       <div class="w-6/12">
-        <a href="#" class="listing-item group">
+        <a href="#" class="listing-item block group">
           <div class="media-container ratio-150 sm:ratio-75">
             <div class="media-inner">
               <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
@@ -150,7 +150,7 @@ demo.htmlSource = `
       </div>
 
       <div class="w-6/12">
-        <a href="#" class="listing-item group">
+        <a href="#" class="listing-item block group">
           <div class="media-container ratio-150 sm:ratio-75">
             <div class="media-inner">
               <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">

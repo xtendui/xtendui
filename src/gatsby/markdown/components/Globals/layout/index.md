@@ -72,13 +72,13 @@ These are layout **component classes**.
 
 </div>
 
-Xtend has custom `:focus` styles, sort of `:focus-visbile` polyfill. You can customize the global `.xt-focus-visible` style or **disable focus management and styles** with the class `html.xt-focus-disable`.
+Xtend has custom `:focus` styles, sort of `:focus-visbile` polyfill. You can customize the global `.xt-focus-visible` style or **disable focus management and styles** with the class `body.xt-focus-disable`.
 
 <div class="table-overflow">
 
 |               | Syntax                          | Mixin               | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Component                  | `html.xt-focus-disable`                     | `NOT POSSIBLE`                | Disable focus management and styles            |
+| Component                  | `body.xt-focus-disable`                     | `NOT POSSIBLE`                | Disable focus management and styles            |
 
 </div>
 

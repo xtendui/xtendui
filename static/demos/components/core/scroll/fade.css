@@ -1,5 +1,5 @@
-.demo--fade {
-  html:not(.xt-noscroll) & {
+body:not(.xt-noscroll) {
+  .demo--fade {
     .card {
       opacity: 0;
     }

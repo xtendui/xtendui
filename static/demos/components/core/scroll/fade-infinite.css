@@ -1,5 +1,6 @@
-.demo--fade-infinite {
-  html:not(.xt-noscroll) & {
+
+body:not(.xt-noscroll) {
+  .demo--fade-infinite {
     .card {
       opacity: 0;
     }

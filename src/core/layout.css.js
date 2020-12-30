@@ -127,7 +127,7 @@ module.exports = {
         opacity: '.3',
       },
     },
-    'html:not(.xt-focus-disable)': {
+    'body:not(.xt-focus-disable)': {
       ':focus': {
         outline: 'none !important',
       },

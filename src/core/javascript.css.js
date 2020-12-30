@@ -1,6 +1,6 @@
 module.exports = {
   component: theme => ({
-    'html:not(.no-js-fouc):not(.xt-ready)': {
+    'body:not(.no-js-fouc):not(.xt-ready)': {
       // instant animations on page load
       '*': {
         '@apply duration-none !important': '',
@@ -8,7 +8,7 @@ module.exports = {
     },
     '@media (prefers-reduced-motion: reduce), (update: slow)': {
       // instant animations accessibility
-      'html:not(.no-js-prm)': {
+      'body:not(.no-js-prm)': {
         '*': {
           '@apply duration-none !important': '',
         },
@@ -16,13 +16,13 @@ module.exports = {
     },
     '.initial': {
       // instant animations on components init and reinit
-      'html:not(.no-js-initial)': {
+      'body:not(.no-js-initial)': {
         '&, *': {
           '@apply duration-none !important': '',
         },
       },
     },
-    'html.xt-scrollbar': {
+    'body.xt-scrollbar': {
       // setup
       body: {
         overflow: 'hidden !important',

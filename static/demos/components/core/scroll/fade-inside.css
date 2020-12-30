@@ -1,5 +1,6 @@
-.demo--fade-inside {
-  html:not(.xt-noscroll) & {
+
+body:not(.xt-noscroll) {
+  .demo--fade-inside {
     .card {
       opacity: 0;
     }

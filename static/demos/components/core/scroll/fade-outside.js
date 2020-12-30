@@ -23,6 +23,7 @@ Xt.mount.push({
         for (const self of scrollTriggers) {
           if (self.progress === 0) {
             self.trigger.dataset.todo = 'true'
+            gsap.killTweensOf(self.trigger)
             gsap.set(self.trigger, { opacity: 0 })
           }
         }

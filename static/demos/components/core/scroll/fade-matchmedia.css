@@ -1,5 +1,6 @@
-.demo--fade-matchmedia {
-  html:not(.xt-noscroll) & {
+
+body:not(.xt-noscroll) {
+  .demo--fade-matchmedia {
     .card {
       opacity: 0;
     }

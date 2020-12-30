@@ -1,0 +1,11 @@
+#iframe--fashion-listing-v1 {
+  /*##START*/
+  body:not(.xt-noscroll) {
+    /* add here all fade selectors css and js */
+    .listing-item {
+      opacity: 0;
+    }
+  }
+  /*##END*/
+}
+

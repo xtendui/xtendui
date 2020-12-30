@@ -1,5 +1,7 @@
 import { Xt } from 'xtendui'
 import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
 
 /**
  * .listing-item scale
@@ -50,5 +52,37 @@ Xt.mount.push({
     }
 
     object.addEventListener('mouseleave', eventLeave)
+  },
+})
+
+/**
+ * fade
+ */
+
+Xt.mount.push({
+  matches: '#iframe--furniture-listing-v1 body',
+  mount: object => {
+    // add here all fade selectors css and js
+
+    const triggers = object.querySelectorAll(`.listing-item`)
+
+    // vars
+
+    const scrollY = 30
+
+    // fade
+
+    ScrollTrigger.batch(triggers, {
+      once: true,
+      start: 'top bottom-=10%',
+      end: 'bottom top+=10%',
+      onEnter: (batch, scrollTriggers) => {
+        const direction = scrollTriggers[0].direction
+        const y = direction > 0 ? -scrollY : scrollY
+        gsap.killTweensOf(batch)
+        gsap.set(batch, { y: y })
+        gsap.to(batch, { opacity: 1, y: 0, duration: 0.5, ease: 'quart.out', stagger: 0.15 })
+      },
+    })
   },
 })
