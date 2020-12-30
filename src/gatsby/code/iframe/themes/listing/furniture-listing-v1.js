@@ -23,6 +23,16 @@ demo.htmlSource = `
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
               </div>
+              <div class="absolute top-0 left-0 py-2 px-4 bg-black bg-opacity-50 text-white links-inverse">
+                <div class="list list-1.5 items-center flex-nowrap">
+                  <div class="text-xl font-semibold">
+                    -35%
+                  </div>
+                  <div class="max-w-xs text-xs leading-tight uppercase opacity-50">
+                    For Exhibition<br/>Renewal
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="listing-content py-4">
@@ -42,6 +52,16 @@ demo.htmlSource = `
             <div class="media-container ratio-75">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
+              </div>
+              <div class="absolute top-0 left-0 py-2 px-4 bg-black bg-opacity-50 text-white links-inverse">
+                <div class="list list-1.5 items-center flex-nowrap">
+                  <div class="text-xl font-semibold">
+                    -40%
+                  </div>
+                  <div class="max-w-xs text-xs leading-tight uppercase opacity-50">
+                    Black<br/>Friday
+                  </div>
+                </div>
               </div>
             </div>
           </div>

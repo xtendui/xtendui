@@ -23,6 +23,13 @@ demo.htmlSource = `
               <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
             </div>
             <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+            <div class="absolute top-0 left-0 m-4 py-2 px-4 bg-white bg-opacity-90">
+              <div class="list list-1.5 items-center flex-nowrap">
+                <div class="text-lg font-semibold">
+                  -35%
+                </div>
+              </div>
+            </div>
           </div>
           <div class="py-4">
             <div class="h5 group-hover:text-accent-500">
@@ -42,6 +49,13 @@ demo.htmlSource = `
               <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
             </div>
             <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+            <div class="absolute top-0 left-0 m-4 py-2 px-4 bg-white bg-opacity-90">
+              <div class="list list-1.5 items-center flex-nowrap">
+                <div class="text-lg font-semibold">
+                  -40%
+                </div>
+              </div>
+            </div>
           </div>
           <div class="py-4">
             <div class="h5 group-hover:text-accent-500">
