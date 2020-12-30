@@ -13,24 +13,209 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="py-10">
+
+  <div class="slider slider--listing" data-xt-slider="{ contain: true }">
+    <div class="slides">
+      <div class="container">
+
+        <div class="h4 mb-8">Latest Products</div>
+
+        <nav class="slides-inner row row-2">
+
+          <div class="slide w-6/12 md:w-4/12">
+            <a href="#" class="listing-item block">
+              <div class="media-container ratio-75">
+                <div class="media-inner">
+                  <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+                </div>
+                <div class="absolute top-0 left-0 py-2 px-4 bg-black bg-opacity-50 text-white links-inverse">
+                  <div class="list list-1.5 items-center flex-nowrap">
+                    <div class="text-xl font-semibold">
+                      -35%
+                    </div>
+                    <div class="max-w-xs text-xs leading-tight uppercase opacity-50">
+                      For Exhibition<br/>Renewal
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="listing-content py-4">
+                <div class="h5">
+                  Lorem ipsum
+                </div>
+                <div class="-mt-2 text-sm font-semibold">
+                  3.772,00 €
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="slide w-6/12 md:w-4/12">
+            <a href="#" class="listing-item block">
+              <div class="media-container ratio-75">
+                <div class="media-inner">
+                  <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
+                </div>
+                <div class="absolute top-0 left-0 py-2 px-4 bg-black bg-opacity-50 text-white links-inverse">
+                  <div class="list list-1.5 items-center flex-nowrap">
+                    <div class="text-xl font-semibold">
+                      -40%
+                    </div>
+                    <div class="max-w-xs text-xs leading-tight uppercase opacity-50">
+                      Black<br/>Friday
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="listing-content py-4">
+                <div class="h5">
+                  Dolor sit amet
+                </div>
+                <div class="-mt-2 text-sm font-semibold">
+                  3.772,00 €
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="slide w-6/12 md:w-4/12">
+            <a href="#" class="listing-item block">
+              <div class="media-container ratio-75">
+                <div class="media-inner">
+                  <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+                </div>
+              </div>
+              <div class="listing-content py-4">
+                <div class="h5">
+                  Lorem ipsum
+                </div>
+                <div class="-mt-2 text-sm font-semibold">
+                  3.772,00 €
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="slide w-6/12 md:w-4/12">
+            <a href="#" class="listing-item block">
+              <div class="media-container ratio-75">
+                <div class="media-inner">
+                  <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
+                </div>
+              </div>
+              <div class="listing-content py-4">
+                <div class="h5">
+                  Dolor sit amet
+                </div>
+                <div class="-mt-2 text-sm font-semibold">
+                  3.772,00 €
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="slide w-6/12 md:w-4/12">
+            <a href="#" class="listing-item block">
+              <div class="media-container ratio-75">
+                <div class="media-inner">
+                  <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+                </div>
+              </div>
+              <div class="listing-content py-4">
+                <div class="h5">
+                  Lorem ipsum
+                </div>
+                <div class="-mt-2 text-sm font-semibold">
+                  3.772,00 €
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="slide w-6/12 md:w-4/12">
+            <a href="#" class="listing-item block">
+              <div class="media-container ratio-75">
+                <div class="media-inner">
+                  <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
+                </div>
+              </div>
+              <div class="listing-content py-4">
+                <div class="h5">
+                  Dolor sit amet
+                </div>
+                <div class="-mt-2 text-sm font-semibold">
+                  3.772,00 €
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="slide w-6/12 md:w-4/12">
+            <a href="#" class="listing-item block">
+              <div class="media-container ratio-75">
+                <div class="media-inner">
+                  <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+                </div>
+              </div>
+              <div class="listing-content py-4">
+                <div class="h5">
+                  Lorem ipsum
+                </div>
+                <div class="-mt-2 text-sm font-semibold">
+                  3.772,00 €
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="slide w-6/12 md:w-4/12">
+            <a href="#" class="listing-item block">
+              <div class="media-container ratio-75">
+                <div class="media-inner">
+                  <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
+                </div>
+              </div>
+              <div class="listing-content py-4">
+                <div class="h5">
+                  Dolor sit amet
+                </div>
+                <div class="-mt-2 text-sm font-semibold">
+                  3.772,00 €
+                </div>
+              </div>
+            </a>
+          </div>
+
+        </nav>
+
+        <nav class="slider-pagination">
+          <button type="button" class="btn btn-default xt-ignore" data-xt-pag title="Slide xt-num">
+          </button>
+        </nav>
+
+      </div>
+    </div>
+  </div>
+
   <div class="container">
+
+    <div class="h4 mb-8">Category</div>
+
     <div class="row row-3">
 
       <div class="w-6/12 md:w-4/12">
         <a href="#" class="listing-item block">
-          <div class="listing-img">
-            <div class="media-container ratio-75">
-              <div class="media-inner">
-                <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
-              </div>
-              <div class="absolute top-0 left-0 py-2 px-4 bg-black bg-opacity-50 text-white links-inverse">
-                <div class="list list-1.5 items-center flex-nowrap">
-                  <div class="text-xl font-semibold">
-                    -35%
-                  </div>
-                  <div class="max-w-xs text-xs leading-tight uppercase opacity-50">
-                    For Exhibition<br/>Renewal
-                  </div>
+          <div class="media-container ratio-75">
+            <div class="media-inner">
+              <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+            </div>
+            <div class="absolute top-0 left-0 py-2 px-4 bg-black bg-opacity-50 text-white links-inverse">
+              <div class="list list-1.5 items-center flex-nowrap">
+                <div class="text-xl font-semibold">
+                  -35%
+                </div>
+                <div class="max-w-xs text-xs leading-tight uppercase opacity-50">
+                  For Exhibition<br/>Renewal
                 </div>
               </div>
             </div>
@@ -48,19 +233,17 @@ demo.htmlSource = `
 
       <div class="w-6/12 md:w-4/12">
         <a href="#" class="listing-item block">
-          <div class="listing-img">
-            <div class="media-container ratio-75">
-              <div class="media-inner">
-                <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
-              </div>
-              <div class="absolute top-0 left-0 py-2 px-4 bg-black bg-opacity-50 text-white links-inverse">
-                <div class="list list-1.5 items-center flex-nowrap">
-                  <div class="text-xl font-semibold">
-                    -40%
-                  </div>
-                  <div class="max-w-xs text-xs leading-tight uppercase opacity-50">
-                    Black<br/>Friday
-                  </div>
+          <div class="media-container ratio-75">
+            <div class="media-inner">
+              <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
+            </div>
+            <div class="absolute top-0 left-0 py-2 px-4 bg-black bg-opacity-50 text-white links-inverse">
+              <div class="list list-1.5 items-center flex-nowrap">
+                <div class="text-xl font-semibold">
+                  -40%
+                </div>
+                <div class="max-w-xs text-xs leading-tight uppercase opacity-50">
+                  Black<br/>Friday
                 </div>
               </div>
             </div>
@@ -78,11 +261,9 @@ demo.htmlSource = `
 
       <div class="w-6/12 md:w-4/12">
         <a href="#" class="listing-item block">
-          <div class="listing-img">
-            <div class="media-container ratio-75">
-              <div class="media-inner">
-                <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
-              </div>
+          <div class="media-container ratio-75">
+            <div class="media-inner">
+              <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
             </div>
           </div>
           <div class="listing-content py-4">
@@ -98,11 +279,9 @@ demo.htmlSource = `
 
       <div class="w-6/12 md:w-4/12">
         <a href="#" class="listing-item block">
-          <div class="listing-img">
-            <div class="media-container ratio-75">
-              <div class="media-inner">
-                <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
-              </div>
+          <div class="media-container ratio-75">
+            <div class="media-inner">
+              <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
             </div>
           </div>
           <div class="listing-content py-4">
@@ -118,11 +297,9 @@ demo.htmlSource = `
 
       <div class="w-6/12 md:w-4/12">
         <a href="#" class="listing-item block">
-          <div class="listing-img">
-            <div class="media-container ratio-75">
-              <div class="media-inner">
-                <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
-              </div>
+          <div class="media-container ratio-75">
+            <div class="media-inner">
+              <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
             </div>
           </div>
           <div class="listing-content py-4">
@@ -138,11 +315,9 @@ demo.htmlSource = `
 
       <div class="w-6/12 md:w-4/12">
         <a href="#" class="listing-item block">
-          <div class="listing-img">
-            <div class="media-container ratio-75">
-              <div class="media-inner">
-                <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
-              </div>
+          <div class="media-container ratio-75">
+            <div class="media-inner">
+              <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
             </div>
           </div>
           <div class="listing-content py-4">
@@ -156,18 +331,16 @@ demo.htmlSource = `
         </a>
       </div>
 
-      <div class="w-6/12">
+      <div class="w-6/12 md:w-4/12">
         <a href="#" class="listing-item block">
-          <div class="listing-img">
-            <div class="media-container ratio-75 md:ratio-50">
-              <div class="media-inner">
-                <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
-              </div>
+          <div class="media-container ratio-75">
+            <div class="media-inner">
+              <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
             </div>
           </div>
           <div class="listing-content py-4">
             <div class="h5">
-              Lorem Ipsum
+              Lorem ipsum
             </div>
             <div class="-mt-2 text-sm font-semibold">
               3.772,00 €
@@ -176,18 +349,34 @@ demo.htmlSource = `
         </a>
       </div>
 
-      <div class="w-6/12">
+      <div class="w-6/12 md:w-4/12">
         <a href="#" class="listing-item block">
-          <div class="listing-img">
-            <div class="media-container ratio-75 md:ratio-50">
-              <div class="media-inner">
-                <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
-              </div>
+          <div class="media-container ratio-75">
+            <div class="media-inner">
+              <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
             </div>
           </div>
           <div class="listing-content py-4">
             <div class="h5">
               Dolor sit amet
+            </div>
+            <div class="-mt-2 text-sm font-semibold">
+              3.772,00 €
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="w-6/12 md:w-4/12">
+        <a href="#" class="listing-item block">
+          <div class="media-container ratio-75">
+            <div class="media-inner">
+              <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+            </div>
+          </div>
+          <div class="listing-content py-4">
+            <div class="h5">
+              Lorem ipsum
             </div>
             <div class="-mt-2 text-sm font-semibold">
               3.772,00 €
@@ -198,6 +387,7 @@ demo.htmlSource = `
 
     </div>
   </div>
+
 </div>
 `
 

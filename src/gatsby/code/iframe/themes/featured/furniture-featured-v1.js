@@ -31,7 +31,7 @@ demo.htmlSource = `
         </div>
         <div class="w-full md:w-7/12 z-10">
           <div class="featured-content pt-16 md:pt-0 md:pl-12">
-            <div class="h1 pb-6 md:-ml-32">
+            <div class="h1 mb-6 md:-ml-32">
               Lorem ipsum
             </div>
             <div class="leading-loose">
@@ -61,7 +61,7 @@ demo.htmlSource = `
         </div>
         <div class="w-full md:w-7/12 z-10 sm:order-1">
           <div class="featured-content pt-16 md:pt-0 md:pr-12">
-            <div class="h1 pb-6">
+            <div class="h1 mb-6">
               Dolor sit amet
             </div>
             <div class="leading-loose md:-mr-32 md:pl-12">
@@ -91,7 +91,7 @@ demo.htmlSource = `
         </div>
         <div class="w-full md:w-7/12 z-10">
           <div class="featured-content pt-16 md:pt-0 md:pl-12">
-            <div class="h1 pb-6 md:-ml-32">
+            <div class="h1 mb-6 md:-ml-32">
               Consectetur adipiscing elit
             </div>
             <div class="leading-loose">
@@ -125,7 +125,7 @@ demo.htmlSource = `
         </div>
         <div class="w-full md:w-7/12 z-10">
           <div class="featured-content pt-16 md:pt-0 md:pr-12 md:text-right sm:order-1">
-            <div class="h1 pb-6 md:-mr-32">
+            <div class="h1 mb-6 md:-mr-32">
               Lorem ipsum
             </div>
             <div class="leading-loose">
