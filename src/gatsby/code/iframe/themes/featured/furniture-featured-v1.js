@@ -17,7 +17,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="inline-block bg-accent-900 text-white links-inverse">
+<div class="inline-block w-full bg-accent-900 text-white links-inverse">
 
   <a href="#" class="featured-item block my-28">
     <div class="container">
@@ -111,7 +111,7 @@ demo.htmlSource = `
 
 </div>
 
-<div class="inline-block bg-white">
+<div class="inline-block w-full bg-white">
 
   <a href="#" class="featured-item block my-28">
     <div class="container">
