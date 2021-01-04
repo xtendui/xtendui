@@ -5,8 +5,6 @@
 </p>
 
 <p align="center">
-  Powerful frontend library with Tailwind components and vanilla Javascript.
-  <br/>
   <a href="https://xtendui.com/introduction/getting-started/setup">Setup</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://xtendui.com/components">Components</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://xtendui.com/themes">Themes</a>
   <br/><br/>
   <a href="https://github.com/minimit/xtendui/blob/master/LICENSE" title="License" style="display: inline-block;">
@@ -54,16 +52,23 @@ Read our [contributing docs](https://github.com/minimit/xtendui/blob/master/.git
 * Use `npm run dev` to serve a develop version
 * Use `npm run serve` to serve a production version
 
-## Browser Support
+## Sponsors
 
-```
-Chrome >= 38
-Safari >= 10
-iOS >= 10
-Firefox >= 38
-Edge >= 13
-Opera >= 25
-```
+<a href="https://www.webgriffe.com/" target="_blank" rel="noopener" title="Webgriffe" style="display: inline-block; margin: 30px;">
+  <img src="https://raw.githubusercontent.com/minimit/xtendui/master/static/logo.svg" loading="eager" alt="Webgriffe" width="130px">
+</a>
+
+<a href="https://www.webgriffe.com/" target="_blank" rel="noopener" title="Webgriffe" style="display: inline-block; margin: 30px;">
+  <img src="https://raw.githubusercontent.com/minimit/xtendui/master/static/logo.svg" loading="eager" alt="Webgriffe" width="130px">
+</a>
+
+<a href="https://www.webgriffe.com/" target="_blank" rel="noopener" title="Webgriffe" style="display: inline-block; margin: 30px;">
+  <img src="https://raw.githubusercontent.com/minimit/xtendui/master/static/logo.svg" loading="eager" alt="Webgriffe" width="130px">
+</a>
+
+<a href="https://www.webgriffe.com/" target="_blank" rel="noopener" title="Webgriffe" style="display: inline-block; margin: 30px;">
+  <img src="https://raw.githubusercontent.com/minimit/xtendui/master/static/logo.svg" loading="eager" alt="Webgriffe" width="130px">
+</a>
 
 ## Copyright
 
