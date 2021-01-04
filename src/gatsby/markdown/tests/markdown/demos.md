@@ -40,16 +40,16 @@ title: "Demos"
 </demo>
 
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/hero/fashion-hero-v2">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/hero/slider-hero-v2">
   </div>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/hero/fashion-hero-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/hero/slider-hero-v1">
   </div>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/layout/industrial-layout-v1">
   </div>
 </demo>
 
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/navigation/sequential-megamenu-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/navigation/menu-navigation-v1">
   </div>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/animation/xtend-v1">
   </div>
@@ -57,8 +57,8 @@ title: "Demos"
   </div>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/layout/furniture-layout-v1">
   </div>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/listing/furniture-listing-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/listing/products-listing-v1">
   </div>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/listing/fashion-listing-v1">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/listing/products-listing-v2">
   </div>
 </demo>

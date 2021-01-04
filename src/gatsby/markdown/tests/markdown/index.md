@@ -15,7 +15,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
   </demovanilla>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/slider/events-methods">
   </div>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/hero/fashion-hero-v2">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/hero/slider-hero-v2">
   </div>
 </demo>
 
