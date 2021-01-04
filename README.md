@@ -25,9 +25,9 @@
 
 ## About
 
-<@TODO intro>
+##### A new approach to Custom Frontend Development
 
-<@TODO phylosophy>
+Xtend UI is a UI framework for custom styling, interactions and animations. Extremely customizable and designed for building complex user interfaces.
 
 * Css with [TailwindCss](https://tailwindcss.com/) and [Postcss](https://postcss.org/)
 * Positioning with [Popperjs](https://popper.js.org/)

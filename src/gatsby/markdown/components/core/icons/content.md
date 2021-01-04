@@ -52,6 +52,18 @@ Use **component classes** to assign size. You can add **additional size** for ex
 
 Otherwise use **tailwind classes** to assign size (e.g. [font-size](https://tailwindcss.com/docs/font-size), [stroke-width](https://tailwindcss.com/docs/stroke-width)).
 
-## Button
+## Icons and Alignment
 
-Refer to [button icons and alignment](/components/core/button/content#icons-and-alignment).
+Use [button](/components/core/button) as container or a `display: flex` container.
+
+<demo>
+  <demovanilla src="vanilla/components/core/icons/button">
+  </demovanilla>
+</demo>
+
+Use **tailwind classes** to assign alignment (e.g. [align-items](https://tailwindcss.com/docs/align-items), [justify-content](https://tailwindcss.com/docs/justify-content), [text-align](https://tailwindcss.com/docs/text-align)).
+
+<demo>
+  <demovanilla src="vanilla/components/core/icons/alignment">
+  </demovanilla>
+</demo>

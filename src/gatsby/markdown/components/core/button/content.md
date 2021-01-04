@@ -53,16 +53,4 @@ Otherwise use **tailwind classes** to assign custom size (e.g. [padding](https:/
 
 ## Icons and Alignment
 
-Use [icons](/components/core/icons) as content.
-
-<demo>
-  <demovanilla src="vanilla/components/core/button/icons">
-  </demovanilla>
-</demo>
-
-Use **tailwind classes** to assign alignment (e.g. [align-items](https://tailwindcss.com/docs/align-items), [justify-content](https://tailwindcss.com/docs/justify-content), [text-align](https://tailwindcss.com/docs/text-align)).
-
-<demo>
-  <demovanilla src="vanilla/components/core/button/alignment">
-  </demovanilla>
-</demo>
+Refer to [icons and alignment](/components/core/icons/content#icons-and-alignment).

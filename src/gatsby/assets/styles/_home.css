@@ -10,9 +10,9 @@
 }
 
 .gatsby_home-header_content {
-  @apply relative z-20 py-5 text-white links-inverse text-center transition-all duration-300 ease-out-quart;
+  @apply relative z-20 py-4 text-white links-inverse text-center transition-all duration-300 ease-out-quart;
   .gatsby_logo-icon {
-    @apply pb-2 transition-all duration-300 ease-out-quart;
+    @apply pb-3 transition-all duration-300 ease-out-quart;
   }
   .list {
     @apply list-1 justify-center;
@@ -35,7 +35,7 @@
     }
   }
   .gatsby_home-header.scrolling-hide & {
-    @apply relative py-5;
+    @apply relative py-4;
   }
 }
 
@@ -92,9 +92,60 @@
 }
 
 .gatsby_home-main_head {
-  @apply py-24 text-center;
+  @apply my-24 text-center;
 }
 
+/* features */
+
 .gatsby_home-main_features {
-  @apply py-24 text-center;
+  @apply my-24 text-center;
+}
+
+.gatsby_home-main_feature {
+  @apply py-6 text-left;
+  .row {
+    @apply row-4;
+  }
+}
+
+.gatsby_home-main_feature_left {
+  @apply w-full md:w-6/12 lg:w-5/12;
+  .h1-display {
+    display: flex;
+    align-items: center;
+    font-size: 2.6rem;
+  }
+}
+
+.gatsby_home-main_feature_right {
+  @apply w-full md:w-6/12 lg:w-7/12;
+}
+
+/* philosophies */
+
+.gatsby_home-main_philosophies {
+  @apply my-24 text-center;
+  .row {
+    @apply row-3;
+  }
+}
+
+.gatsby_home-main_philosophy_col {
+  @apply w-6/12 lg:w-4/12;
+}
+
+.gatsby_home-main_philosophy {
+  @apply py-3 sm:py-6 text-left text-sm;
+  .h1-display {
+    @apply mb-3;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+  }
+}
+
+/* actions */
+
+.gatsby_home-main_actions {
+  @apply my-24 text-center;
 }

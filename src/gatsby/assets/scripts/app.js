@@ -107,7 +107,9 @@ Xt.mount.push({
     }
 
     const curve = () => {
-      gsap.to(background, { rx: '50%', duration: 0.5, ease: 'quart.out' })
+      if (!object.classList.contains('scrolling-down')) {
+        gsap.to(background, { rx: '50%', duration: 0.5, ease: 'quart.out' })
+      }
     }
 
     // sticky
@@ -142,7 +144,6 @@ Xt.mount.push({
       trigger: object,
       start: -1, // needs -1 because start trigger is sticky
       end: `top top-=${object.offsetHeight}`,
-      markers: true,
       onUpdate: self => {
         if (self.isActive && object.classList.contains('scrolling-hide')) {
           object.classList.remove('scrolling-hide')

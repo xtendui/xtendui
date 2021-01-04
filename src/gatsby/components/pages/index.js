@@ -26,13 +26,13 @@ export default class Page extends React.Component {
                         <img src={'/logo-white.svg'} loading="eager" alt={data.site.siteMetadata.title} width="300" height="72" />
                       </div>
                       <div className="list">
-                        <Link to={'/introduction/getting-started/setup'} className="btn gatsby_home-header_link">
+                        <Link to="/introduction/getting-started/setup" className="btn gatsby_home-header_link">
                           Setup
                         </Link>
-                        <Link to={'/components'} className="btn gatsby_home-header_link">
+                        <Link to="/components" className="btn gatsby_home-header_link">
                           Components
                         </Link>
-                        <Link to={'/themes'} className="btn gatsby_home-header_link">
+                        <Link to="/themes" className="btn gatsby_home-header_link">
                           Themes
                         </Link>
                       </div>
@@ -54,30 +54,121 @@ export default class Page extends React.Component {
                   </div>
                 </div>
                 <div className="gatsby_home-main_features">
-                  <h3 className="h1-display mb-10">Features</h3>
+                  <div className="container">
+                    <h3 className="h1-display mb-10">Features</h3>
+                    <div className="gatsby_home-main_feature">
+                      <div className="row">
+                        <div className="gatsby_home-main_feature_left">
+                          <h3 className="h1-display">
+                            <img className="icon icon-sm mr-4" src={'/logo-tailwind.svg'} loading="eager" alt="Tailwind Css" /> Tailwind Css
+                          </h3>
+                        </div>
+                        <div className="gatsby_home-main_feature_right">
+                          <ul>
+                            <li>
+                              A <strong>Tailwind plugin</strong> with overridable <strong>basic styles with cssinjs</strong>.
+                            </li>
+                            <li>
+                              Tailwind <strong>component classes</strong> for component basic styling when possible.
+                            </li>
+                            <li>
+                              We use <strong>Tailwind html classes</strong> for design and animations styles when possible.
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="gatsby_home-main_feature">
+                      <div className="row">
+                        <div className="gatsby_home-main_feature_left">
+                          <h3 className="h1-display">
+                            <img className="icon icon-sm mr-4" src={'/logo-js.svg'} loading="eager" alt="Vanilla JS" /> Vanilla JS
+                          </h3>
+                        </div>
+                        <div className="gatsby_home-main_feature_right">
+                          <ul>
+                            <li>
+                              <strong>API</strong> with customizzable behaviour.
+                            </li>
+                            <li>
+                              Ecosystem of vanilla javascript <strong>plugins and addons</strong>.
+                            </li>
+                            <li>
+                              A system to <strong>mount components</strong> with <strong>mutation observer queries</strong>, to structure your javascript code
+                              better.
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="gatsby_home-main_feature">
+                      <div className="row">
+                        <div className="gatsby_home-main_feature_left">
+                          <h3 className="h1-display">
+                            <img className="icon icon-sm mr-4" src={'/logo-gsap.svg'} loading="eager" alt="Gsap" /> Gsap
+                          </h3>
+                        </div>
+                        <div className="gatsby_home-main_feature_right">
+                          <ul>
+                            <li>
+                              Javascript animations when they are <strong>too complex for css</strong>.
+                            </li>
+                            <li>
+                              <strong>Gsap ScrollTrigger</strong> for scroll and sticky interactions.
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
+                <div className="gatsby_home-main_philosophies">
+                  <div className="container">
+                    <h3 className="h1-display mb-10">Philosophy</h3>
+                    <div className="row">
+                      <div className="gatsby_home-main_philosophy_col">
+                        <div className="gatsby_home-main_philosophy">
+                          <h4 className="h1-display">Usability</h4>A keen eye on usability. Aria injected automaticaly with js.
+                        </div>
+                      </div>
+                      <div className="gatsby_home-main_philosophy_col">
+                        <div className="gatsby_home-main_philosophy">
+                          <h4 className="h1-display">Customization</h4>
+                          Focused on working speed, quality and customization.
+                        </div>
+                      </div>
+                      <div className="gatsby_home-main_philosophy_col">
+                        <div className="gatsby_home-main_philosophy">
+                          <h4 className="h1-display">User Explerience</h4>
+                          Support of advanced interactions and animations.
+                        </div>
+                      </div>
+                      <div className="gatsby_home-main_philosophy_col">
+                        <div className="gatsby_home-main_philosophy">
+                          <h4 className="h1-display">Documentation</h4>
+                          Well documented API for components and addons
+                        </div>
+                      </div>
+                      <div className="gatsby_home-main_philosophy_col">
+                        <div className="gatsby_home-main_philosophy">
+                          <h4 className="h1-display">Granular Themes</h4>
+                          Themes for every component instead of global theme.
+                        </div>
+                      </div>
+                      <div className="gatsby_home-main_philosophy_col">
+                        <div className="gatsby_home-main_philosophy">
+                          <h4 className="h1-display">UX Themes</h4>
+                          Themes focused on interactions and animations instead of design
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="gatsby_home-main_actions">
+                  <div className="container">
+                    <h3 className="h1-display mb-10">Start Now!</h3>
+                  </div>
+                </div>
               </main>
             </div>
           </div>

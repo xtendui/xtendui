@@ -16,11 +16,6 @@
       text-decoration: underline;
     }
   }
-  @apply transition opacity-50;
-  &:hover {
-    opacity: 1;
-    @apply opacity-100;
-  }
 }
 
 .gatsby_site-footer_bottom_row {
