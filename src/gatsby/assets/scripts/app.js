@@ -157,7 +157,7 @@ Xt.mount.push({
       },
     })
 
-    //
+    // mouse events
 
     object.addEventListener('mouseenter', straight)
 

@@ -14,9 +14,6 @@
   .gatsby_logo-icon {
     @apply pb-3 transition-all duration-300 ease-out-quart;
   }
-  .list {
-    @apply list-1 justify-center;
-  }
   @screen sm {
     @apply relative py-8;
     .gatsby_logo-icon {
@@ -61,26 +58,6 @@
   }
 }
 
-.gatsby_home-header_link {
-  @apply transition duration-500 ease-in-out-quint hover:duration-300 hover:ease-out-quint active:ease-out-quint;
-  border-radius: 6px;
-  padding: .3125rem .5rem;
-  font-weight: theme('fontWeight.semibold');
-  font-size: 0.8125rem;
-  color: rgba(255, 255, 255, 0.66);
-  line-height: 1;
-  letter-spacing: theme('letterSpacing.wide');
-  text-transform: uppercase;
-  &:hover {
-    @apply bg-accent-900 bg-opacity-50;
-    color: theme('colors.white');
-  }
-  &:active {
-    @apply bg-accent-900 bg-opacity-25;
-    color: theme('colors.white');
-  }
-}
-
 /**
  * main
  */
@@ -92,17 +69,20 @@
 }
 
 .gatsby_home-main_head {
-  @apply my-24 text-center;
+  @apply my-28 text-center;
 }
 
 /* features */
 
 .gatsby_home-main_features {
-  @apply my-24 text-center;
+  @apply my-28 text-center;
+  .row {
+    @apply row-8;
+  }
 }
 
 .gatsby_home-main_feature {
-  @apply py-6 text-left;
+  @apply inline-block w-full text-left;
   .row {
     @apply row-4;
   }
@@ -124,9 +104,9 @@
 /* philosophies */
 
 .gatsby_home-main_philosophies {
-  @apply my-24 text-center;
+  @apply my-28 text-center;
   .row {
-    @apply row-3;
+    @apply row-4;
   }
 }
 
@@ -135,7 +115,7 @@
 }
 
 .gatsby_home-main_philosophy {
-  @apply py-3 sm:py-6 text-left text-sm;
+  @apply text-left text-sm;
   .h1-display {
     @apply mb-3;
     display: flex;
@@ -147,5 +127,55 @@
 /* actions */
 
 .gatsby_home-main_actions {
-  @apply my-24 text-center;
+  @apply my-28 text-center;
+}
+
+.gatsby_home-main_action {
+  display: flex;
+  justify-content: center;
+  .gatsby_home-actions {
+    @apply py-3 px-4 bg-accent-500 rounded;
+  }
+}
+
+.gatsby_home-actions {
+  .list {
+    @apply list-1 justify-center;
+  }
+  .btn {
+    @apply transition duration-500 ease-in-out-quint hover:duration-300 hover:ease-out-quint active:ease-out-quint;
+    border-radius: 6px;
+    padding: .3125rem .5rem;
+    font-weight: theme('fontWeight.semibold');
+    font-size: 0.8125rem;
+    color: rgba(255, 255, 255, 0.66);
+    line-height: 1;
+    letter-spacing: theme('letterSpacing.wide');
+    text-transform: uppercase;
+    &:hover {
+      @apply bg-accent-900 bg-opacity-50;
+      color: theme('colors.white');
+    }
+    &:active {
+      @apply bg-accent-900 bg-opacity-25;
+      color: theme('colors.white');
+    }
+  }
+}
+
+/* supports */
+
+.gatsby_home-main_supports {
+  @apply my-28 text-center;
+  .row {
+    @apply row-4 items-center justify-center;
+  }
+}
+
+.gatsby_home-main_support_col {
+  @apply w-6/12 md:w-4/12 lg:w-3/12;
+}
+
+.gatsby_home-main_support {
+  @apply inline-block w-full transition duration-500 ease-in-out-quint hover:opacity-75 hover:duration-300 hover:ease-out-quint active:opacity-100 active:ease-out-quint;
 }
