@@ -63,19 +63,19 @@ Read our [contributing docs](https://github.com/minimit/xtendui/blob/master/.git
 
 ## Sponsors
 
-<a href="https://www.webgriffe.com/" target="_blank" rel="noopener" title="Webgriffe" style="display: inline-block; margin: 30px;">
+<a href="https://www.webgriffe.com/" target="_blank" rel="noopener" title="Webgriffe" style="display: inline-block;">
   <img src="https://raw.githubusercontent.com/minimit/xtendui/master/static/logo.svg" loading="eager" alt="Webgriffe" width="130px">
 </a>
-
-<a href="https://www.webgriffe.com/" target="_blank" rel="noopener" title="Webgriffe" style="display: inline-block; margin: 30px;">
+&nbsp;&nbsp;
+<a href="https://www.webgriffe.com/" target="_blank" rel="noopener" title="Webgriffe" style="display: inline-block;">
   <img src="https://raw.githubusercontent.com/minimit/xtendui/master/static/logo.svg" loading="eager" alt="Webgriffe" width="130px">
 </a>
-
-<a href="https://www.webgriffe.com/" target="_blank" rel="noopener" title="Webgriffe" style="display: inline-block; margin: 30px;">
+&nbsp;&nbsp;
+<a href="https://www.webgriffe.com/" target="_blank" rel="noopener" title="Webgriffe" style="display: inline-block;">
   <img src="https://raw.githubusercontent.com/minimit/xtendui/master/static/logo.svg" loading="eager" alt="Webgriffe" width="130px">
 </a>
-
-<a href="https://www.webgriffe.com/" target="_blank" rel="noopener" title="Webgriffe" style="display: inline-block; margin: 30px;">
+&nbsp;&nbsp;
+<a href="https://www.webgriffe.com/" target="_blank" rel="noopener" title="Webgriffe" style="display: inline-block;">
   <img src="https://raw.githubusercontent.com/minimit/xtendui/master/static/logo.svg" loading="eager" alt="Webgriffe" width="130px">
 </a>
 
