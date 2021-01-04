@@ -50,16 +50,8 @@ Xt.mount.push({
           end: 'bottom top',
           pin: true,
           pinSpacing: false,
-        })
-
-        // scrolling-down depending on scroll direction
-
-        ScrollTrigger.create({
-          trigger: object,
-          start: -1,
-          endTrigger: 'html',
-          end: 'bottom top',
           onUpdate: self => {
+            // scrolling-down depending on scroll direction
             if (!self.getVelocity()) return // skip on initial
             if (object.classList.contains('scrolling-down') && object.classList.contains('scrolling-hide') && self.direction < 0) {
               object.classList.remove('scrolling-down')
@@ -77,9 +69,10 @@ Xt.mount.push({
 
         ScrollTrigger.create({
           trigger: object,
-          start: -1,
+          start: -1, // needs -1 because start trigger is sticky
           endTrigger: document.querySelector('.gatsby_site-article_hero'),
           end: `bottom top`,
+          markers: true,
           onUpdate: self => {
             if (self.isActive && object.classList.contains('scrolling-hide')) {
               object.classList.remove('scrolling-hide')
@@ -126,16 +119,8 @@ Xt.mount.push({
       end: 'bottom top',
       pin: true,
       pinSpacing: false,
-    })
-
-    // scrolling-down depending on scroll direction
-
-    ScrollTrigger.create({
-      trigger: object,
-      start: -1,
-      endTrigger: 'html',
-      end: 'bottom top',
       onUpdate: self => {
+        // scrolling-down depending on scroll direction
         if (!self.getVelocity()) return // skip on initial
         if (object.classList.contains('scrolling-down') && object.classList.contains('scrolling-hide') && self.direction < 0) {
           object.classList.remove('scrolling-down')
@@ -146,7 +131,6 @@ Xt.mount.push({
           object.classList.add('scrolling-down')
           gsap.killTweensOf(object)
           straight()
-          console.log(logo.offsetHeight)
           gsap.to(object, { y: -logo.offsetHeight, duration: 0.5, ease: 'quart.out' })
         }
       },
@@ -156,7 +140,7 @@ Xt.mount.push({
 
     ScrollTrigger.create({
       trigger: object,
-      start: -1,
+      start: -1, // needs -1 because start trigger is sticky
       end: `top top-=${object.offsetHeight}`,
       markers: true,
       onUpdate: self => {
@@ -191,7 +175,7 @@ Xt.mount.push({
 
     const heroParallax = {
       trigger: object,
-      start: -1,
+      start: 0,
       end: 'bottom top',
       scrub: true,
     }

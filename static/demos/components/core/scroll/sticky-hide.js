@@ -19,16 +19,8 @@ Xt.mount.push({
       end: 'bottom top',
       pin: true,
       pinSpacing: false,
-    })
-
-    // scrolling-down depending on scroll direction
-
-    ScrollTrigger.create({
-      trigger: object,
-      start: -1,
-      endTrigger: 'html',
-      end: 'bottom top',
       onUpdate: self => {
+        // scrolling-down depending on scroll direction
         if (!self.getVelocity()) return // skip on initial
         if (object.classList.contains('scrolling-down') && object.classList.contains('scrolling-hide') && self.direction < 0) {
           object.classList.remove('scrolling-down')
@@ -46,7 +38,7 @@ Xt.mount.push({
 
     ScrollTrigger.create({
       trigger: object,
-      start: -1,
+      start: -1, // needs -1 because start trigger is sticky
       endTrigger: document.querySelector('.demo--sticky-hide-content'),
       end: `bottom top+=${stickyInner.offsetHeight}`,
       onUpdate: self => {
