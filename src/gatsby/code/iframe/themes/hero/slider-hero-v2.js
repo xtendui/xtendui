@@ -18,7 +18,7 @@ demo.htmlSource = `
 <div class="slider">
 
   <div class="slides">
-    <nav class="slides-inner duration-none transform-none">
+    <div class="slides-inner duration-none transform-none">
 
       <div class="slide w-full slide-absolute">
         <div class="hero relative block overflow-hidden w-full">
@@ -118,7 +118,7 @@ demo.htmlSource = `
         <div class="hero-cover absolute inset-0 pointer-events-none bg-accent-500 transform translate-x-full"></div>
       </div>
 
-    </nav>
+    </div>
   </div>
 
   <button type="button" class="navsides left-0" data-xt-nav="-1" aria-label="Previous slide" data-xt-mousefollow="{ targets: '.navsides-btn' }">

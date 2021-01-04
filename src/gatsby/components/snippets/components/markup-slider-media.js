@@ -3,7 +3,7 @@ const btnDefault = require('components/snippets/classes/btn-default').default
 export default () => {
   return `
 <div class="slides">
-  <nav class="slides-inner row row-2">
+  <div class="slides-inner row row-2">
 
     <div class="slide">
 
@@ -65,7 +65,7 @@ export default () => {
 
     </div>
 
-  </nav>
+  </div>
 </div>
 
 <nav class="slider-pagination w-full list list-2">

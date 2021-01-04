@@ -79,12 +79,14 @@ Xt.mount.push({
     const asset = media.querySelector('.media')
     const assetScale = 0.5
 
-    // parallax
+    // vars for full range also on top and bottom of the page
 
     const windowHeight = window.innerHeight
     const offsetTop = object.offsetTop
     let start = windowHeight - offsetTop
     let end = offsetTop - windowHeight
+
+    // parallax
 
     const featuredParallax = {
       trigger: object,
