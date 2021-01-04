@@ -20,22 +20,12 @@ ${iconSearch({ classes: 'icon-md' })}
 ${iconSearch({ classes: 'icon-lg' })}
 
 <div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
-  Stroke 1
+  Custom
 </div>
 
-${iconSearch({ classes: 'icon-sm stroke-1' })}
+${iconSearch({ classes: 'w-6 h-6 stroke-1' })}
 
-${iconSearch({ classes: 'icon-md stroke-1' })}
+${iconSearch({ classes: 'w-10 h-10 stroke-1' })}
 
-${iconSearch({ classes: 'icon-lg stroke-1' })}
-
-<div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
-  Stroke 2
-</div>
-
-${iconSearch({ classes: 'icon-sm stroke-2' })}
-
-${iconSearch({ classes: 'icon-md stroke-2' })}
-
-${iconSearch({ classes: 'icon-lg stroke-2' })}
+${iconSearch({ classes: 'w-16 h-16 stroke-1' })}
 `

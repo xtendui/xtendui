@@ -43,14 +43,14 @@ Use **component classes** to assign size. You can add **additional size** for ex
 </div>
 
 [[noteDefault]]
-| **Size bigger** than `1em` **has negative margin** to not enlarge the parent element (e.g. button).
+| Icon sizes has **has negative margin** to not enlarge the parent element.
+
+Otherwise use **tailwind classes** to assign size (e.g. [width](https://tailwindcss.com/docs/width), [height](https://tailwindcss.com/docs/height), [stroke-width](https://tailwindcss.com/docs/stroke-width)).
 
 <demo>
   <demovanilla src="vanilla/components/core/icons/size">
   </demovanilla>
 </demo>
-
-Otherwise use **tailwind classes** to assign size (e.g. [font-size](https://tailwindcss.com/docs/font-size), [stroke-width](https://tailwindcss.com/docs/stroke-width)).
 
 ## Icons and Alignment
 
