@@ -253,7 +253,7 @@ Xt.mount.push({
       // val
       let pos = self.position - self.scrollSpace - self.scrollDistance
       const min = 0
-      const max = self.scrollElement.scrollHeight - self.scrollElement.offsetHeight
+      const max = self.scrollElement.scrollHeight - self.scrollElement.clientHeight
       pos = pos < min ? min : pos
       pos = pos > max ? max : pos
       // scroll
