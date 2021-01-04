@@ -64,20 +64,9 @@ Read our [contributing docs](https://github.com/minimit/xtendui/blob/master/.git
 ## Sponsors
 
 <a href="https://www.webgriffe.com/" target="_blank" rel="noopener" title="Webgriffe" style="display: inline-block;">
-  <img src="https://raw.githubusercontent.com/minimit/xtendui/master/static/logo.svg" loading="eager" alt="Webgriffe" width="130px">
+  <img src="https://raw.githubusercontent.com/minimit/xtendui/1.0-dev/static/support/webgriffe.svg" loading="eager" alt="Webgriffe" width="130px">
 </a>
 &nbsp;&nbsp;
-<a href="https://www.webgriffe.com/" target="_blank" rel="noopener" title="Webgriffe" style="display: inline-block;">
-  <img src="https://raw.githubusercontent.com/minimit/xtendui/master/static/logo.svg" loading="eager" alt="Webgriffe" width="130px">
-</a>
-&nbsp;&nbsp;
-<a href="https://www.webgriffe.com/" target="_blank" rel="noopener" title="Webgriffe" style="display: inline-block;">
-  <img src="https://raw.githubusercontent.com/minimit/xtendui/master/static/logo.svg" loading="eager" alt="Webgriffe" width="130px">
-</a>
-&nbsp;&nbsp;
-<a href="https://www.webgriffe.com/" target="_blank" rel="noopener" title="Webgriffe" style="display: inline-block;">
-  <img src="https://raw.githubusercontent.com/minimit/xtendui/master/static/logo.svg" loading="eager" alt="Webgriffe" width="130px">
-</a>
 
 ## Copyright
 
