@@ -15,7 +15,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="listing py-10">
-  <div class="container">
+  <div class="container-fluid">
     <div class="row row-3 row-stretch">
 
       <div class="w-full md:w-6/12 lg:w-4/12">

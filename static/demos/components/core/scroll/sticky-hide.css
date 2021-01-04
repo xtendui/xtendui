@@ -2,7 +2,7 @@
   .demo--sticky-hide-top-sub .h6 {
     @apply transition-all duration-500 ease-in-out-quint;
   }
-  &.scrolling-down.hide {
+  &.scrolling-down.scrolling-hide {
     .demo--sticky-hide-top-sub .h6 {
       @apply text-xl;
     }

@@ -25,6 +25,8 @@ module.exports = {
     },
     '.h1-display': {
       // style
+      fontWeight: theme('fontWeight.black'),
+      lineHeight: 1,
       fontSize: rem(35),
       '@screen sm': {
         fontSize: rem(50),

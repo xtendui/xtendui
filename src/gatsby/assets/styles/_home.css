@@ -1,0 +1,100 @@
+/**
+ * header
+ */
+
+.gatsby_home-header_inner {
+  @apply relative;
+  .container {
+    @apply max-w-screen-lg;
+  }
+}
+
+.gatsby_home-header_content {
+  @apply relative z-20 py-5 text-white links-inverse text-center transition-all duration-300 ease-out-quart;
+  .gatsby_logo-icon {
+    @apply pb-2 transition-all duration-300 ease-out-quart;
+  }
+  .list {
+    @apply list-1 justify-center;
+  }
+  @screen sm {
+    @apply relative py-8;
+    .gatsby_logo-icon {
+      @apply pb-3;
+    }
+  }
+  @screen lg {
+    @apply relative py-10;
+    .gatsby_logo-icon {
+      @apply pb-4;
+    }
+  }
+  .gatsby_home-header.scrolling-down & {
+    .gatsby_logo-icon {
+      @apply opacity-0 pointer-events-none;
+    }
+  }
+  .gatsby_home-header.scrolling-hide & {
+    @apply relative py-5;
+  }
+}
+
+.gatsby_home-header_background {
+  @apply absolute z-10;
+  z-index: 12;
+  top: -100%;
+  left: -30%;
+  width: 160%;
+  height: 200%;
+  rect {
+    fill: theme('colors.accent.500');
+    width: 100%;
+    height: 100%;
+  }
+  @screen sm {
+    left: -20%;
+    width: 140%;
+  }
+  @screen lg {
+    left: -8%;
+    width: 116%;
+  }
+}
+
+.gatsby_home-header_link {
+  @apply transition duration-500 ease-in-out-quint hover:duration-300 hover:ease-out-quint active:ease-out-quint;
+  border-radius: 6px;
+  padding: .3125rem .5rem;
+  font-weight: theme('fontWeight.semibold');
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.66);
+  line-height: 1;
+  letter-spacing: theme('letterSpacing.wide');
+  text-transform: uppercase;
+  &:hover {
+    @apply bg-accent-900 bg-opacity-50;
+    color: theme('colors.white');
+  }
+  &:active {
+    @apply bg-accent-900 bg-opacity-25;
+    color: theme('colors.white');
+  }
+}
+
+/**
+ * main
+ */
+
+.gatsby_home-main {
+  .container {
+    @apply max-w-screen-lg;
+  }
+}
+
+.gatsby_home-main_head {
+  @apply py-24 text-center;
+}
+
+.gatsby_home-main_features {
+  @apply py-24 text-center;
+}

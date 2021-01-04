@@ -1,4 +1,35 @@
 /**
+ * indexes
+ */
+
+.gatsby_site-article_hero {
+  position: relative;
+  z-index: 5;
+}
+
+.gatsby_site-article_content {
+  position: relative;
+  z-index: 6;
+}
+
+.gatsby_site-footer {
+  position: relative;
+  z-index: 7;
+}
+
+/* home */
+
+.gatsby_home-header {
+  position: relative;
+  z-index: 7;
+}
+
+.gatsby_home-main {
+  position: relative;
+  z-index: 6;
+}
+
+/**
  * docs icons
  */
 

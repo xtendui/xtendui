@@ -12,7 +12,7 @@ export default class Page extends React.Component {
     seo.title = '404'
     seo.description = 'Page not found'
     return (
-      <Layout page={data}>
+      <Layout page={data} seo={seo}>
         <SEO title={seo.title} description={seo.description} />
         <h1>Error 404</h1>
         <p>Page not found.</p>

@@ -30,12 +30,7 @@ export default function Header({ page }) {
             <div>
               <div className="gatsby_site-header_content">
                 <div className="gatsby_site-header_logo">
-                  <Link
-                    to="/"
-                    title="Xtend UI"
-                    className={`gatsby_logo-icon
-                                    ${site.siteMetadata.title.toLowerCase() === 'home' ? 'active' : ''}`}
-                  >
+                  <Link to="/" title="Xtend UI" className="gatsby_logo-icon">
                     <img src={'/logo-white.svg'} loading="eager" alt={site.siteMetadata.title} width="300" height="72" />
                   </Link>
                 </div>

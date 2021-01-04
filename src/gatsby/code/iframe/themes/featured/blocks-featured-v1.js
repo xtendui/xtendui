@@ -20,7 +20,7 @@ demo.htmlSource = `
 <div class="inline-block w-full bg-accent-900 text-white links-inverse">
 
   <a href="#" class="featured-item block my-28">
-    <div class="container">
+    <div class="container-fluid">
       <div class="row items-center">
         <div class="w-full md:w-5/12 z-0">
           <div class="media-container ratio-75">
@@ -50,7 +50,7 @@ demo.htmlSource = `
   </a>
 
   <a href="#" class="featured-item block my-28">
-    <div class="container">
+    <div class="container-fluid">
       <div class="row items-center">
         <div class="w-full md:w-5/12 z-0 sm:order-2">
           <div class="media-container ratio-75">
@@ -80,7 +80,7 @@ demo.htmlSource = `
   </a>
 
   <a href="#" class="featured-item block my-28">
-    <div class="container">
+    <div class="container-fluid">
       <div class="row items-center">
         <div class="w-full md:w-5/12 z-0">
           <div class="media-container ratio-75">
@@ -114,7 +114,7 @@ demo.htmlSource = `
 <div class="inline-block w-full bg-white">
 
   <a href="#" class="featured-item block my-28">
-    <div class="container">
+    <div class="container-fluid">
       <div class="row items-center">
         <div class="w-full md:w-5/12 z-0 sm:order-2">
           <div class="media-container ratio-75">

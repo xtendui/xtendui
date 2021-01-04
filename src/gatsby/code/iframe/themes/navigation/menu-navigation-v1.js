@@ -19,7 +19,7 @@ demo.htmlSource = `
 
     <span class="megamenu-line fixed top-0 left-0 bg-white"></span>
 
-    <div class="container">
+    <div class="container-fluid">
 
       <div class="list -mx-4">
 
@@ -34,7 +34,7 @@ demo.htmlSource = `
               <div class="design-setup bg-accent-900"></div>
               <div class="drop-content py-10 text-white links-inverse text-sm">
 
-                <div class="container">
+                <div class="container-fluid">
                   <div class="row row-4">
 
                     <div class="w-full md:w-4/12">
@@ -137,7 +137,7 @@ demo.htmlSource = `
               <div class="design-setup bg-accent-900"></div>
               <div class="drop-content py-10 text-white links-inverse text-sm">
 
-                <div class="container">
+                <div class="container-fluid">
                   <div class="row row-4">
 
                     <div class="w-full md:w-4/12">
@@ -270,7 +270,7 @@ demo.htmlSource = `
               <div class="design-setup bg-accent-900"></div>
               <div class="drop-content py-10 text-white links-inverse text-sm">
 
-                <div class="container">
+                <div class="container-fluid">
                   <div class="row row-4">
 
                     <div class="w-full md:w-4/12">
@@ -340,7 +340,7 @@ demo.htmlSource = `
   </div>
 
   <!-- mouse events instead of click you can remove this -->
-  <div class="container pt-10">
+  <div class="container-fluid pt-10">
     <label class="form-label-check">
       <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}">
       <span class="ml-3">Use mouse events</span>

@@ -58,9 +58,11 @@ module.exports = {
       // setup
       '@apply overflow-main': '',
     },
-    '.container': {
+    '.container-fluid': {
+      // setup
+      '@apply container': '',
       // styles
-      maxWidth: '1536px !important', // container fluid
+      maxWidth: '1536px !important',
     },
     '::selection': {
       // styles

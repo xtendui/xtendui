@@ -91,7 +91,7 @@
   img {
     @apply transition;
   }
-  &:hover, &:active {
+  a&:hover, a&:active {
     img {
       opacity: 0.9;
     }

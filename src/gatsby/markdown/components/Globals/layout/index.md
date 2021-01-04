@@ -65,6 +65,7 @@ These are layout **component classes**.
 
 |               | Syntax                          | Mixin               | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Component                  | `.container-fluid`                     | `container-fluid`                | Container fluid with only one `max-width`            |
 | Component                  | `.overflow-main`                     | `overflow-main`                | Overflow scrollbar style            |
 | Component                  | `.overflow-sub`                     | `overflow-sub`                | Overflow scrollbar style small version            |
 | Component                  | `[readonly], [disabled], .disabled`                     | `disabled`                | Disabled styles            |

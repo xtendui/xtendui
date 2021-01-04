@@ -6,28 +6,6 @@ body {
   @apply bg-white;
 }
 
-/* indexes */
-
-.gatsby_site-main {
-  position: relative;
-  z-index: 5;
-}
-
-.gatsby_site-article_hero {
-  position: relative;
-  z-index: 6;
-}
-
-.gatsby_site-article_content {
-  position: relative;
-  z-index: 9;
-}
-
-.gatsby_site-footer {
-  position: relative;
-  z-index: 7;
-}
-
 /* prevent horizontal overflow */
 
 .gatsby_site-wrapper {
@@ -93,7 +71,7 @@ body {
   }
   .gatsby_site-article_hero-inner, .gatsby_site-article_content, .gatsby_site-footer_inner {
     @apply container;
-    max-width: 1152px;
+    max-width: 1152px !important;
     @screen lg {
       @apply ml-0;
     }

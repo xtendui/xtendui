@@ -28,7 +28,7 @@ demo.htmlSource = `
       item: ':scope > *',
     },
   }">
-  <div class="container">
+  <div class="container-fluid">
 
     <div class="infinitescroll-pre mb-4">
       <div class="list list-1 flex-col items-center">

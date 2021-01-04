@@ -104,7 +104,7 @@ demo.htmlSource = `
   </div>
 </div>
 
-<div class="container">
+<div class="container-fluid">
 
   <div class="card card-sm ${cardDefault()}" id="anchor-0">
     <div class="h4">Lorem ipsum dolor sit amet</div>
