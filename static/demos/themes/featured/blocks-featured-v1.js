@@ -81,10 +81,15 @@ Xt.mount.push({
 
     // parallax
 
+    const windowHeight = window.innerHeight
+    const offsetTop = object.offsetTop
+    let start = windowHeight - offsetTop
+    let end = offsetTop - windowHeight
+
     const featuredParallax = {
       trigger: object,
-      start: 'top bottom',
-      end: 'bottom top',
+      start: `top bottom${start > 0 ? `-=${start}` : ''}`,
+      end: `bottom top${end > 0 ? `+=${end}` : ''}`,
       scrub: 2,
     }
 
