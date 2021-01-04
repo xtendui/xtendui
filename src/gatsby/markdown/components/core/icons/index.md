@@ -26,6 +26,16 @@ module.exports = {
 
 ## Usage
 
+Use `.icon` to create a **icon**.
+
+<div class="table-overflow">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `.icon`                     | `icon`                | Icon styles            |
+
+</div>
+
 Use this code to create **icons with svg**.
 
 <demo>

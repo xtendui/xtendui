@@ -26,7 +26,15 @@ module.exports = {
 
 ## Usage
 
-Use this code to create a **button**.
+Use `.btn` to create a **button**.
+
+<div class="table-overflow">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `.btn`                     | `btn`                | Button styles            |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/core/button/usage">

@@ -29,6 +29,19 @@ module.exports = {
 
 ## Usage
 
+Use `.list` to create a **list**.
+
+[[notePrimary]]
+| For aria purpose use `<nav></nav>`.
+
+<div class="table-overflow">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `.list`                     | `list`                | List styles            |
+
+</div>
+
 #### Horizontal
 
 Use this code to create a **list horizontal**.
@@ -37,6 +50,8 @@ Use this code to create a **list horizontal**.
   <demovanilla src="vanilla/components/core/list/usage">
   </demovanilla>
 </demo>
+
+Check subpage to [customize content](/components/core/list/content).
 
 #### Vertical
 

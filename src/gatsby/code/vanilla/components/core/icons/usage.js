@@ -26,39 +26,43 @@ export const demo = {
 }
 
 demo.htmlSource = `
-${iconSearch({ classes: 'icon-md ml-2' })}
+<div class="list list-2">
 
-${iconX({ classes: 'icon-md ml-2' })}
+  ${iconSearch({ classes: 'icon-md' })}
 
-${iconArrowLeft({ classes: 'icon-md ml-2' })}
+  ${iconX({ classes: 'icon-md' })}
 
-${iconArrowRight({ classes: 'icon-md ml-2' })}
+  ${iconArrowLeft({ classes: 'icon-md' })}
 
-${iconArrowUp({ classes: 'icon-md ml-2' })}
+  ${iconArrowRight({ classes: 'icon-md' })}
 
-${iconArrowDown({ classes: 'icon-md ml-2' })}
+  ${iconArrowUp({ classes: 'icon-md' })}
 
-${iconChevronLeft({ classes: 'icon-md ml-2' })}
+  ${iconArrowDown({ classes: 'icon-md' })}
 
-${iconChevronRight({ classes: 'icon-md ml-2' })}
+  ${iconChevronLeft({ classes: 'icon-md' })}
 
-${iconChevronUp({ classes: 'icon-md ml-2' })}
+  ${iconChevronRight({ classes: 'icon-md' })}
 
-${iconChevronDown({ classes: 'icon-md ml-2' })}
+  ${iconChevronUp({ classes: 'icon-md' })}
 
-${iconLocate({ classes: 'icon-md ml-2' })}
+  ${iconChevronDown({ classes: 'icon-md' })}
 
-${iconPackage({ classes: 'icon-md ml-2' })}
+  ${iconLocate({ classes: 'icon-md' })}
 
-${iconGithub({ classes: 'icon-md ml-2' })}
+  ${iconPackage({ classes: 'icon-md' })}
 
-${iconLink({ classes: 'icon-md ml-2' })}
+  ${iconGithub({ classes: 'icon-md' })}
 
-${iconCode({ classes: 'icon-md ml-2' })}
+  ${iconLink({ classes: 'icon-md' })}
 
-${iconMaximize({ classes: 'icon-md ml-2' })}
+  ${iconCode({ classes: 'icon-md' })}
 
-${iconExternal({ classes: 'icon-md ml-2' })}
+  ${iconMaximize({ classes: 'icon-md' })}
 
-${iconCopy({ classes: 'icon-md ml-2' })}
+  ${iconExternal({ classes: 'icon-md' })}
+
+  ${iconCopy({ classes: 'icon-md' })}
+
+</div>
 `

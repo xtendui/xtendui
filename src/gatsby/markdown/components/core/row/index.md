@@ -29,7 +29,15 @@ module.exports = {
 
 ## Usage
 
-Use this code to create a **row**.
+Use `.row` to create a **row**.
+
+<div class="table-overflow">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `.row`                     | `row`                | Row styles            |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/core/row/usage">

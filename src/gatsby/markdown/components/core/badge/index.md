@@ -26,7 +26,15 @@ module.exports = {
 
 ## Usage
 
-Use this code to create a **badge**.
+Use `.badge` to create a **badge**.
+
+<div class="table-overflow">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `.badge`                     | `badge`                | Badge styles            |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/core/badge/usage">

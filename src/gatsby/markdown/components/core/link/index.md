@@ -29,15 +29,13 @@ module.exports = {
 
 ## Usage
 
-Use this code to create a **link**.
-
-You can use `.link` to style **any element** as a link.
+Use `a` without classes or `.link` to create a **link**.
 
 <div class="table-overflow">
 
 |                         | Syntax                                     | Mixin                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Component                  | `.link`                 | `link`              | Stile a tag with link            |
+| Component                  | `.link`                 | `link`              | Link styles            |
 
 </div>
 

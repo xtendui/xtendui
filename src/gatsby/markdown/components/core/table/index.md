@@ -26,7 +26,15 @@ module.exports = {
 
 ## Usage
 
-Use this code to create a **table**.
+Use `.table` to create a **table**.
+
+<div class="table-overflow">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `.table`                     | `table`                | Table styles            |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/core/table/usage">
