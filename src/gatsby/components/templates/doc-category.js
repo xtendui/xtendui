@@ -43,7 +43,7 @@ export default class Template extends React.Component {
                     {category.posts.map(({ post }, z) =>
                       post.frontmatter.link ? (
                         <div className="gatsby_listing-column" key={z}>
-                          <a href={post.frontmatter.link} target="_blank" rel="noreferrer" className="card gatsby_listing-item">
+                          <a href={post.frontmatter.link} target="_blank" rel="noopener noreferrer" className="card gatsby_listing-item">
                             <div className="h4">
                               {post.frontmatter.title
                                 .split(/[\s-]+/)

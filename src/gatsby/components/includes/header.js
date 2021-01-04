@@ -40,7 +40,7 @@ export default function Header({ page }) {
                       <a
                         href={site.siteMetadata.npm}
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener noreferrer"
                         className="btn gatsby_btn-site-header_top_social"
                         title="Npm"
                         dangerouslySetInnerHTML={{ __html: iconPackage() }}
@@ -57,7 +57,7 @@ export default function Header({ page }) {
                       <a
                         href={site.siteMetadata.github}
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener noreferrer"
                         className="btn gatsby_btn-site-header_top_social"
                         title="Github"
                         dangerouslySetInnerHTML={{ __html: iconGithub() }}
@@ -159,7 +159,7 @@ export default function Header({ page }) {
                                         <div>
                                           <a
                                             href={post.frontmatter.link}
-                                            rel="noreferrer"
+                                            rel="noopener noreferrer"
                                             target="_blank"
                                             title={post.frontmatter.description}
                                             className={`btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub ${

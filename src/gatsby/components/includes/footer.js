@@ -18,13 +18,13 @@ export default function Footer() {
       <div className="row row-1 gatsby_site-footer_bottom_row">
         <div>
           {site.siteMetadata.title} v{site.siteMetadata.version} and Demos licensed{' '}
-          <a href="https://github.com/minimit/xtendui/blob/master/LICENSE" target="_blank" rel="noreferrer">
+          <a href="https://github.com/minimit/xtendui/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">
             MIT
           </a>
         </div>
         <div className="gatsby_site-footer_bottom_margin">
           Docs licensed{' '}
-          <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noreferrer">
+          <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener noreferrer">
             CC BY 3.0
           </a>{' '}
         </div>
