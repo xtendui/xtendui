@@ -1,7 +1,7 @@
 {
   "name": "xtendui",
   "version": "0.16.12",
-  "description": "Xtend UI is a UI framework for custom styling, interactions and animations. Extremely customizable and designed for building complex user interfaces.",
+  "description": "UI framework for custom styling, interactions and animations",
   "homepage": "http://xtendui.com/",
   "license": "MIT",
   "author": "Riccardo Caroli <beaver82@gmail.com>",

@@ -3,7 +3,7 @@ type: "Introduction"
 category: "Getting Started"
 parent: "Setup"
 title: "Setup"
-description: "Installation instructions, css and js setup."
+description: "Installation instructions to get Xtend UI up and running."
 date: "2050-09-10"
 ---
 

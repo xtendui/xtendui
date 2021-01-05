@@ -37,8 +37,8 @@ date: "2050-09-10"
 Xtend UI is a UI framework for custom styling, interactions and animations. Extremely customizable and designed for building complex user interfaces.
 
 * Css with [TailwindCss](https://tailwindcss.com/) and [Postcss](https://postcss.org/)
+* Some animations and interactions with [Gsap](https://greensock.com/gsap/)
 * Positioning with [Popperjs](https://popper.js.org/)
-* Animations with [Gsap](https://greensock.com/gsap/)
 * Docs with [Gatsby](https://www.gatsbyjs.com/)
 * Icons with [Feather Icons](https://feathericons.com/)
 

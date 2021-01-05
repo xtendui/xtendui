@@ -72,7 +72,6 @@ Xt.mount.push({
           start: -1, // needs -1 because start trigger is sticky
           endTrigger: document.querySelector('.gatsby_site-article_hero'),
           end: `bottom top`,
-          markers: true,
           onUpdate: self => {
             if (self.isActive && object.classList.contains('scrolling-hide')) {
               object.classList.remove('scrolling-hide')

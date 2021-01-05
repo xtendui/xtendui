@@ -132,6 +132,7 @@ body {
 }
 
 .gatsby_listing-items {
+  @apply w-full text-left;
   .gatsby_listing .h-block + & {
     @apply my-5;
     @screen sm {
@@ -157,6 +158,9 @@ body {
 
 .gatsby_listing-column {
   @apply w-2/4 md:w-2/6 lg:w-2/4 xl:w-2/6;
+  .gatsby_home-main_actions & {
+    @apply w-2/4 md:w-2/6;
+  }
   .gatsby_site-article_foot & {
     &:nth-child(1) {
       display: none;

@@ -170,19 +170,28 @@ export default class Page extends React.Component {
                 </div>
                 <div className="gatsby_home-main_actions">
                   <div className="container">
-                    <h3 className="h1-display mb-8">Start Now!</h3>
+                    <h3 className="h1-display mb-14">Start Now!</h3>
                     <div className="gatsby_home-main_action">
-                      <div className="gatsby_home-actions">
-                        <div className="list">
-                          <Link to="/introduction/getting-started/setup" className="btn">
-                            Setup
-                          </Link>
-                          <Link to="/components" className="btn">
-                            Components
-                          </Link>
-                          <Link to="/themes" className="btn">
-                            Themes
-                          </Link>
+                      <div className="gatsby_listing-items">
+                        <div className="row row-stretch">
+                          <div className="gatsby_listing-column">
+                            <Link to="/introduction/getting-started/setup" className="card gatsby_listing-item">
+                              <div className="h4">Setup</div>
+                              <p>Installation instructions to get Xtend UI up and running.</p>
+                            </Link>
+                          </div>
+                          <div className="gatsby_listing-column">
+                            <Link to="/components" className="card gatsby_listing-item">
+                              <div className="h4">Components</div>
+                              <p>Customizable components and ecosystem of addons..</p>
+                            </Link>
+                          </div>
+                          <div className="gatsby_listing-column">
+                            <Link to="/themes" className="card gatsby_listing-item">
+                              <div className="h4">Themes</div>
+                              <p>UI themes with advanced interactions and animations..</p>
+                            </Link>
+                          </div>
                         </div>
                       </div>
                     </div>
