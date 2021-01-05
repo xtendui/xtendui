@@ -79,20 +79,21 @@ Xt.mount.push({
     const asset = media.querySelector('.media')
     const assetScale = 0.5
 
-    // vars for full range also on top and bottom of the page
+    // scrollTrigger
 
-    const windowHeight = window.innerHeight
-    const offsetTop = object.offsetTop
-    let start = windowHeight - offsetTop
-    let end = offsetTop - windowHeight
-
-    // parallax
-
-    const featuredParallax = {
+    const scrollTrigger = {
       trigger: object,
-      start: `top bottom${start > 0 ? `-=${start}` : ''}`,
-      end: `bottom top${end > 0 ? `+=${end}` : ''}`,
-      scrub: 2,
+      start: () => {
+        // full range of animation also on top of the page
+        const start = window.innerHeight - object.offsetTop
+        return `top${start > 0 ? `+=${start}` : ''} bottom`
+      },
+      end: () => {
+        // full range of animation also on bottom of the page
+        const end = window.innerHeight - document.scrollingElement.scrollHeight + object.offsetTop + object.offsetHeight
+        return `bottom${end > 0 ? `-=${end}` : ''} top`
+      },
+      scrub: 1.5,
     }
 
     // content
@@ -100,7 +101,7 @@ Xt.mount.push({
     gsap.set(content, { y: -contentY })
 
     gsap.to(content, {
-      scrollTrigger: featuredParallax,
+      scrollTrigger: scrollTrigger,
       y: contentY,
     })
 
@@ -109,14 +110,14 @@ Xt.mount.push({
     gsap.set(media, { y: -mediaY })
 
     gsap.to(media, {
-      scrollTrigger: featuredParallax,
+      scrollTrigger: scrollTrigger,
       y: mediaY,
     })
 
     // asset
 
     gsap.to(asset, {
-      scrollTrigger: featuredParallax,
+      scrollTrigger: scrollTrigger,
       scale: 1 + assetScale,
     })
   },

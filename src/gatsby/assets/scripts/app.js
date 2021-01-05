@@ -174,11 +174,37 @@ Xt.mount.push({
     // vars
 
     const triggers = object.querySelectorAll(
-      '.h1-display, .gatsby_home-main_head, .gatsby_home-main_feature, .gatsby_home-main_philosophy_col, .gatsby_listing-column, .gatsby_home-main_support_col'
+      '.gatsby_home-main_head, .h1-display, .gatsby_home-main_feature, .gatsby_home-main_philosophy_col, .gatsby_listing-column, .gatsby_home-main_support_col'
     )
 
-    // fade
+    // scroll
 
+    for (const trigger of triggers) {
+
+      // scrollTrigger
+
+      const scrollTrigger = {
+        trigger: trigger,
+        //once: true,
+        start: 'top bottom-=10%',
+        end: 'bottom bottom-=10%',
+        scrub: 0.5,
+      }
+
+      // fade
+
+      gsap.set(trigger, { y: 30 })
+      gsap.to(trigger, {
+        scrollTrigger: scrollTrigger,
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        ease: 'quart.out',
+        //stagger: 0.15,
+      })
+    }
+
+    /*
     ScrollTrigger.batch(triggers, {
       once: true,
       start: 'top bottom-=10%',
@@ -190,7 +216,7 @@ Xt.mount.push({
         gsap.set(batch, { y: y })
         gsap.to(batch, { opacity: 1, y: 0, duration: 0.5, ease: 'quart.out', stagger: 0.15 })
       },
-    })
+    })*/
   },
 })
 

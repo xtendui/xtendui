@@ -202,7 +202,7 @@ export default class Page extends React.Component {
                     <div className="row">
                       <div className="gatsby_home-main_support_col">
                         <a href="https://www.webgriffe.com/" target="_blank" rel="noopener noreferrer" title="Webgriffe" className="gatsby_home-main_support">
-                          <img className="inline-block w-full" src={'/support/webgriffe.svg'} loading="eager" alt="Webgriffe" />
+                          <img className="inline-block w-full" src={'/support/webgriffe.svg'} loading="eager" alt="Webgriffe" width="300" height="58" />
                         </a>
                       </div>
                     </div>
