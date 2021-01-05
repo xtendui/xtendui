@@ -165,6 +165,36 @@ Xt.mount.push({
 })
 
 /**
+ * .gatsby_home-main
+ */
+
+Xt.mount.push({
+  matches: '.gatsby_home-main',
+  mount: object => {
+    // vars
+
+    const triggers = object.querySelectorAll(
+      '.h1-display, .gatsby_home-main_head, .gatsby_home-main_feature, .gatsby_home-main_philosophy_col, .gatsby_listing-column, .gatsby_home-main_support_col'
+    )
+
+    // fade
+
+    ScrollTrigger.batch(triggers, {
+      once: true,
+      start: 'top bottom-=10%',
+      end: 'bottom top+=10%',
+      onEnter: (batch, scrollTriggers) => {
+        const direction = scrollTriggers[0].direction
+        const y = direction > 0 ? -15 : 15
+        gsap.killTweensOf(batch)
+        gsap.set(batch, { y: y })
+        gsap.to(batch, { opacity: 1, y: 0, duration: 0.5, ease: 'quart.out', stagger: 0.15 })
+      },
+    })
+  },
+})
+
+/**
  * .gatsby_site-article_hero
  */
 

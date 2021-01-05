@@ -25,7 +25,7 @@ export default class Page extends React.Component {
                       <div className="gatsby_logo-icon">
                         <img src={'/logo-white.svg'} loading="eager" alt={data.site.siteMetadata.title} width="300" height="72" />
                       </div>
-                      <div className="gatsby_home-actions">
+                      <div className="gatsby_home-header_actions">
                         <div className="list">
                           <Link to="/introduction/getting-started/setup" className="btn">
                             Setup
@@ -132,37 +132,38 @@ export default class Page extends React.Component {
                     <div className="row">
                       <div className="gatsby_home-main_philosophy_col">
                         <div className="gatsby_home-main_philosophy">
-                          <h4 className="h1-display">Usability</h4>A keen eye on usability. Aria injected automaticaly with js.
+                          <h4 className="h4">Usability</h4>
+                          <p>A keen eye on usability. Aria injected automaticaly with js.</p>
                         </div>
                       </div>
                       <div className="gatsby_home-main_philosophy_col">
                         <div className="gatsby_home-main_philosophy">
-                          <h4 className="h1-display">Customization</h4>
-                          Focused on working speed, quality and customization.
+                          <h4 className="h4">Customization</h4>
+                          <p>Focused on working speed, quality and customization.</p>
                         </div>
                       </div>
                       <div className="gatsby_home-main_philosophy_col">
                         <div className="gatsby_home-main_philosophy">
-                          <h4 className="h1-display">User Explerience</h4>
-                          Support of advanced interactions and animations.
+                          <h4 className="h4">User Explerience</h4>
+                          <p>Support of advanced interactions and animations.</p>
                         </div>
                       </div>
                       <div className="gatsby_home-main_philosophy_col">
                         <div className="gatsby_home-main_philosophy">
-                          <h4 className="h1-display">Documentation</h4>
-                          Well documented API for components and addons
+                          <h4 className="h4">Documentation</h4>
+                          <p>Well documented API for components and addons</p>
                         </div>
                       </div>
                       <div className="gatsby_home-main_philosophy_col">
                         <div className="gatsby_home-main_philosophy">
-                          <h4 className="h1-display">Granular Themes</h4>
-                          Themes for every component instead of global theme.
+                          <h4 className="h4">Granular Themes</h4>
+                          <p>Themes for every component instead of global theme.</p>
                         </div>
                       </div>
                       <div className="gatsby_home-main_philosophy_col">
                         <div className="gatsby_home-main_philosophy">
-                          <h4 className="h1-display">UX Themes</h4>
-                          Themes focused on interactions and animations instead of design
+                          <h4 className="h4">UX Themes</h4>
+                          <p>Themes focused on interactions and animations instead of design</p>
                         </div>
                       </div>
                     </div>
@@ -171,27 +172,25 @@ export default class Page extends React.Component {
                 <div className="gatsby_home-main_actions">
                   <div className="container">
                     <h3 className="h1-display mb-14">Start Now!</h3>
-                    <div className="gatsby_home-main_action">
-                      <div className="gatsby_listing-items">
-                        <div className="row row-stretch">
-                          <div className="gatsby_listing-column">
-                            <Link to="/introduction/getting-started/setup" className="card gatsby_listing-item">
-                              <div className="h4">Setup</div>
-                              <p>Installation instructions to get Xtend UI up and running.</p>
-                            </Link>
-                          </div>
-                          <div className="gatsby_listing-column">
-                            <Link to="/components" className="card gatsby_listing-item">
-                              <div className="h4">Components</div>
-                              <p>Customizable components and ecosystem of addons..</p>
-                            </Link>
-                          </div>
-                          <div className="gatsby_listing-column">
-                            <Link to="/themes" className="card gatsby_listing-item">
-                              <div className="h4">Themes</div>
-                              <p>UI themes with advanced interactions and animations..</p>
-                            </Link>
-                          </div>
+                    <div className="gatsby_listing-items">
+                      <div className="row row-stretch">
+                        <div className="gatsby_listing-column">
+                          <Link to="/introduction/getting-started/setup" className="card gatsby_listing-item">
+                            <div className="h4">Setup</div>
+                            <p>Installation instructions to get Xtend UI up and running.</p>
+                          </Link>
+                        </div>
+                        <div className="gatsby_listing-column">
+                          <Link to="/components" className="card gatsby_listing-item">
+                            <div className="h4">Components</div>
+                            <p>Customizable components and ecosystem of addons..</p>
+                          </Link>
+                        </div>
+                        <div className="gatsby_listing-column">
+                          <Link to="/themes" className="card gatsby_listing-item">
+                            <div className="h4">Themes</div>
+                            <p>UI themes with advanced interactions and animations..</p>
+                          </Link>
                         </div>
                       </div>
                     </div>

@@ -144,7 +144,7 @@ body {
   }
   > .row {
     @apply -m-3;
-    @screen sm {
+    @screen md {
       @apply -m-5;
     }
     .gatsby_site-article_foot & {
@@ -179,6 +179,9 @@ body {
   }
   p {
     opacity: 0.5;
+    .gatsby_home-main_actions & {
+      @apply text-sm;
+    }
   }
   .gatsby_listing-item--themes& {
     text-align: center;

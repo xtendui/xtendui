@@ -58,6 +58,31 @@
   }
 }
 
+.gatsby_home-header_actions {
+  .list {
+    @apply list-1 justify-center;
+  }
+  .btn {
+    @apply transition duration-500 ease-in-out-quint hover:duration-300 hover:ease-out-quint active:ease-out-quint;
+    border-radius: 6px;
+    padding: .3125rem .5rem;
+    font-weight: theme('fontWeight.semibold');
+    font-size: 0.8125rem;
+    color: rgba(255, 255, 255, 0.66);
+    line-height: 1;
+    letter-spacing: theme('letterSpacing.wide');
+    text-transform: uppercase;
+    &:hover {
+      @apply bg-accent-900 bg-opacity-50;
+      color: theme('colors.white');
+    }
+    &:active {
+      @apply bg-accent-900 bg-opacity-25;
+      color: theme('colors.white');
+    }
+  }
+}
+
 /**
  * main
  */
@@ -106,21 +131,23 @@
 .gatsby_home-main_philosophies {
   @apply my-28 text-center;
   .row {
-    @apply row-4;
+    @apply row-3 md:row-5;
   }
 }
 
 .gatsby_home-main_philosophy_col {
-  @apply w-6/12 lg:w-4/12;
+  @apply w-6/12 md:w-2/6;
 }
 
 .gatsby_home-main_philosophy {
   @apply text-left text-sm;
-  .h1-display {
-    @apply mb-3;
-    display: flex;
-    align-items: center;
-    font-size: 16px;
+  .h4 {
+    @apply mb-1.5;
+    font-size: 1rem;
+  }
+  p {
+    @apply text-sm;
+    opacity: 0.5;
   }
 }
 
@@ -128,39 +155,6 @@
 
 .gatsby_home-main_actions {
   @apply my-28 text-center;
-}
-
-.gatsby_home-main_action {
-  display: flex;
-  justify-content: center;
-  .gatsby_home-actions {
-    @apply py-3 px-4 bg-accent-500 rounded;
-  }
-}
-
-.gatsby_home-actions {
-  .list {
-    @apply list-1 justify-center;
-  }
-  .btn {
-    @apply transition duration-500 ease-in-out-quint hover:duration-300 hover:ease-out-quint active:ease-out-quint;
-    border-radius: 6px;
-    padding: .3125rem .5rem;
-    font-weight: theme('fontWeight.semibold');
-    font-size: 0.8125rem;
-    color: rgba(255, 255, 255, 0.66);
-    line-height: 1;
-    letter-spacing: theme('letterSpacing.wide');
-    text-transform: uppercase;
-    &:hover {
-      @apply bg-accent-900 bg-opacity-50;
-      color: theme('colors.white');
-    }
-    &:active {
-      @apply bg-accent-900 bg-opacity-25;
-      color: theme('colors.white');
-    }
-  }
 }
 
 /* supports */
@@ -178,4 +172,14 @@
 
 .gatsby_home-main_support {
   @apply inline-block w-full transition duration-500 ease-in-out-quint hover:opacity-75 hover:duration-300 hover:ease-out-quint active:opacity-100 active:ease-out-quint;
+}
+
+/* fade */
+
+body:not(.xt-noscroll) {
+  .gatsby_home-main {
+    .h1-display, .gatsby_home-main_head, .gatsby_home-main_feature, .gatsby_home-main_philosophy_col, .gatsby_listing-column, .gatsby_home-main_support_col {
+      opacity: 0;
+    }
+  }
 }
