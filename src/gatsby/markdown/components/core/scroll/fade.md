@@ -3,7 +3,7 @@ type: "Components"
 category: "Core"
 parent: "Scroll"
 title: "Fade"
-date: "2010-10-10"
+date: "2010-10-12"
 ---
 
 ## Fade
@@ -40,6 +40,8 @@ Use [Gsap stagger](https://greensock.com/docs/v3/Staggers) to control **animatio
 
 Use `trigger`, `start`, `endTrigger`, `end` to control **viewport start and end**.
 
+You can also use `once: true` to destroy ScrollTrigger as soon as the end position is reached once.
+
 <div class="table-overflow">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
@@ -48,6 +50,7 @@ Use `trigger`, `start`, `endTrigger`, `end` to control **viewport start and end*
 | Option                  | `start:String|Number|Function`                          | `'top bottom'`        | Start position: first argument is for trigger second argument is for scroller            |
 | Option                  | `endTrigger:String|Element`                          | `false`        | End trigger           |
 | Option                  | `end:String|Number|Function`                          | `'bottom top'`        | End position: first argument is for endTrigger second argument is for scroller            |
+| Option                  | `once:Boolean`                          | `false`        | Activate only once             |
 
 </div>
 

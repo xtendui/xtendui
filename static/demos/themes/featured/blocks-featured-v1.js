@@ -79,7 +79,7 @@ Xt.mount.push({
     const asset = media.querySelector('.media')
     const assetScale = 0.5
 
-    // scrollTrigger
+    // parallax
 
     const scrollTrigger = {
       trigger: object,
@@ -96,29 +96,30 @@ Xt.mount.push({
       scrub: 1.5,
     }
 
-    // content
-
     gsap.set(content, { y: -contentY })
-
-    gsap.to(content, {
-      scrollTrigger: scrollTrigger,
-      y: contentY,
-    })
-
-    // media
+    gsap
+      .timeline({
+        scrollTrigger: scrollTrigger,
+      })
+      .to(content, {
+        y: contentY,
+      })
 
     gsap.set(media, { y: -mediaY })
+    gsap
+      .timeline({
+        scrollTrigger: scrollTrigger,
+      })
+      .to(media, {
+        y: mediaY,
+      })
 
-    gsap.to(media, {
-      scrollTrigger: scrollTrigger,
-      y: mediaY,
-    })
-
-    // asset
-
-    gsap.to(asset, {
-      scrollTrigger: scrollTrigger,
-      scale: 1 + assetScale,
-    })
+    gsap
+      .timeline({
+        scrollTrigger: scrollTrigger,
+      })
+      .to(asset, {
+        scale: 1 + assetScale,
+      })
   },
 })

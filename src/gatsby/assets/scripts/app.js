@@ -177,6 +177,52 @@ Xt.mount.push({
       '.h1-display, .gatsby_home-main_head .h4, .gatsby_home-main_feature, .gatsby_home-main_philosophy_col, .gatsby_listing-column, .gatsby_home-main_support_col'
     )
 
+    // parallax
+
+    for (const trigger of triggers) {
+      // leave
+
+      const scrollTriggerLeave = {
+        trigger: trigger,
+        start: 'top top+=100px',
+        end: 'bottom top+=100px',
+        scrub: 0.75,
+      }
+
+      gsap.set(trigger, { y: 0, opacity: 1 })
+      gsap
+        .timeline({
+          scrollTrigger: scrollTriggerLeave,
+        })
+        .to(trigger, {
+          opacity: 0,
+          y: -30,
+          duration: 0.75,
+          ease: 'quart.out',
+        })
+
+      // enter
+
+      const scrollTriggerEnter = {
+        trigger: trigger,
+        start: 'top bottom-=100px',
+        end: 'bottom bottom-=100px',
+        scrub: 0.75,
+      }
+
+      gsap.set(trigger, { y: 30, opacity: 0 })
+      gsap
+        .timeline({
+          scrollTrigger: scrollTriggerEnter,
+        })
+        .to(trigger, {
+          opacity: 1,
+          y: 0,
+          duration: 0.75,
+          ease: 'quart.out',
+        })
+    }
+
     // fade
 
     ScrollTrigger.batch(triggers, {
@@ -186,7 +232,6 @@ Xt.mount.push({
       onEnter: (batch, scrollTriggers) => {
         const triggers = batch.filter(x => !x.dataset.animated)
         if (triggers.length) {
-          console.log(triggers, batch)
           const direction = scrollTriggers[0].direction
           const scale = direction > 0 ? 1.02 : 0.98
           gsap.killTweensOf(triggers)
@@ -202,32 +247,6 @@ Xt.mount.push({
         }
       },
     })
-
-    // scroll
-
-    for (const trigger of triggers) {
-      // scrollTrigger
-
-      const scrollTrigger = {
-        trigger: trigger,
-        //once: true,
-        start: 'top bottom-=10%',
-        end: 'bottom bottom-=10%',
-        scrub: 0.75,
-      }
-
-      // trigger
-
-      gsap.set(trigger, { y: 30 })
-      gsap.to(trigger, {
-        scrollTrigger: scrollTrigger,
-        opacity: 1,
-        y: 0,
-        duration: 0.5,
-        ease: 'quart.out',
-        stagger: 1,
-      })
-    }
   },
 })
 

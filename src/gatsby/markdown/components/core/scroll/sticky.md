@@ -3,7 +3,7 @@ type: "Components"
 category: "Core"
 parent: "Scroll"
 title: "Sticky"
-date: "2010-10-10"
+date: "2010-10-11"
 ---
 
 ## Sticky

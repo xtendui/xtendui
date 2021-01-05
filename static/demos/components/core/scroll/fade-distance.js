@@ -12,34 +12,26 @@ Xt.mount.push({
 
     // fade
 
+    gsap.set(triggers, { y: 15 })
+
     ScrollTrigger.batch(triggers, {
       start: 'top bottom-=10%',
       end: 'bottom top+=10%',
-      onEnter: (batch, scrollTriggers) => {
-        const direction = scrollTriggers[0].direction
-        const y = direction > 0 ? -15 : 15
+      onEnter: batch => {
         gsap.killTweensOf(batch)
-        gsap.set(batch, { y: y, opacity: 0 })
         gsap.to(batch, { opacity: 1, y: 0, duration: 0.5, ease: 'quart.out', stagger: 0.15 })
       },
-      onLeave: (batch, scrollTriggers) => {
-        const direction = scrollTriggers[0].direction
-        const y = direction > 0 ? 15 : -15
+      onLeave: batch => {
         gsap.killTweensOf(batch)
-        gsap.to(batch, { opacity: 0, y: y, duration: 0.5, ease: 'quart.out', stagger: 0.15 })
+        gsap.to(batch, { opacity: 0, y: -15, duration: 0.5, ease: 'quart.out', stagger: 0.15 })
       },
-      onEnterBack: (batch, scrollTriggers) => {
-        const direction = scrollTriggers[0].direction
-        const y = direction > 0 ? -15 : 15
+      onEnterBack: batch => {
         gsap.killTweensOf(batch)
-        gsap.set(batch, { y: y, opacity: 0 })
         gsap.to(batch, { opacity: 1, y: 0, duration: 0.5, ease: 'quart.out', stagger: 0.15 })
       },
-      onLeaveBack: (batch, scrollTriggers) => {
-        const direction = scrollTriggers[0].direction
-        const y = direction > 0 ? 15 : -15
+      onLeaveBack: batch => {
         gsap.killTweensOf(batch)
-        gsap.to(batch, { opacity: 0, y: y, duration: 0.5, ease: 'quart.out', stagger: 0.15 })
+        gsap.to(batch, { opacity: 0, y: 15, duration: 0.5, ease: 'quart.out', stagger: 0.15 })
       },
     })
   },
