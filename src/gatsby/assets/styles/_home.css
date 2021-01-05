@@ -174,11 +174,11 @@
   @apply inline-block w-full transition duration-500 ease-in-out-quint hover:opacity-75 hover:duration-300 hover:ease-out-quint active:opacity-100 active:ease-out-quint;
 }
 
-/* fade */
+/* scroll */
 
 body:not(.xt-noscroll) {
   .gatsby_home-main {
-    .gatsby_home-main_head, .h1-display, .gatsby_home-main_feature, .gatsby_home-main_philosophy_col, .gatsby_listing-column, .gatsby_home-main_support_col {
+    .h1-display, .gatsby_home-main_head .h4, .gatsby_home-main_feature, .gatsby_home-main_philosophy_col, .gatsby_listing-column, .gatsby_home-main_support_col {
       opacity: 0;
     }
   }

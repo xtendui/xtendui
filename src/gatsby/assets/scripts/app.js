@@ -174,13 +174,38 @@ Xt.mount.push({
     // vars
 
     const triggers = object.querySelectorAll(
-      '.gatsby_home-main_head, .h1-display, .gatsby_home-main_feature, .gatsby_home-main_philosophy_col, .gatsby_listing-column, .gatsby_home-main_support_col'
+      '.h1-display, .gatsby_home-main_head .h4, .gatsby_home-main_feature, .gatsby_home-main_philosophy_col, .gatsby_listing-column, .gatsby_home-main_support_col'
     )
+
+    // fade
+
+    ScrollTrigger.batch(triggers, {
+      once: true,
+      start: 'top bottom-=10%',
+      end: 'bottom top+=10%',
+      onEnter: (batch, scrollTriggers) => {
+        const triggers = batch.filter(x => !x.dataset.animated)
+        if (triggers.length) {
+          console.log(triggers, batch)
+          const direction = scrollTriggers[0].direction
+          const scale = direction > 0 ? 1.02 : 0.98
+          gsap.killTweensOf(triggers)
+          gsap.set(triggers, { scale: scale, opacity: 0 })
+          gsap.to(triggers, { opacity: 1, scale: 1, duration: 0.75, ease: 'quart.out', stagger: 0.15 })
+        }
+      },
+      onRefresh: (batch, scrollTriggers) => {
+        for (const self of scrollTriggers) {
+          if (self.progress === 0) {
+            self.trigger.dataset.animated = 'true'
+          }
+        }
+      },
+    })
 
     // scroll
 
     for (const trigger of triggers) {
-
       // scrollTrigger
 
       const scrollTrigger = {
@@ -188,10 +213,10 @@ Xt.mount.push({
         //once: true,
         start: 'top bottom-=10%',
         end: 'bottom bottom-=10%',
-        scrub: 0.5,
+        scrub: 0.75,
       }
 
-      // fade
+      // trigger
 
       gsap.set(trigger, { y: 30 })
       gsap.to(trigger, {
@@ -200,23 +225,9 @@ Xt.mount.push({
         y: 0,
         duration: 0.5,
         ease: 'quart.out',
-        //stagger: 0.15,
+        stagger: 1,
       })
     }
-
-    /*
-    ScrollTrigger.batch(triggers, {
-      once: true,
-      start: 'top bottom-=10%',
-      end: 'bottom top+=10%',
-      onEnter: (batch, scrollTriggers) => {
-        const direction = scrollTriggers[0].direction
-        const y = direction > 0 ? -15 : 15
-        gsap.killTweensOf(batch)
-        gsap.set(batch, { y: y })
-        gsap.to(batch, { opacity: 1, y: 0, duration: 0.5, ease: 'quart.out', stagger: 0.15 })
-      },
-    })*/
   },
 })
 

@@ -19,7 +19,7 @@ Xt.mount.push({
         const direction = scrollTriggers[0].direction
         const y = direction > 0 ? -15 : 15
         gsap.killTweensOf(batch)
-        gsap.set(batch, { y: y })
+        gsap.set(batch, { y: y, opacity: 0 })
         gsap.to(batch, { opacity: 1, y: 0, duration: 0.5, ease: 'quart.out', stagger: 0.15 })
       },
       onLeave: (batch, scrollTriggers) => {
@@ -32,7 +32,7 @@ Xt.mount.push({
         const direction = scrollTriggers[0].direction
         const y = direction > 0 ? -15 : 15
         gsap.killTweensOf(batch)
-        gsap.set(batch, { y: y })
+        gsap.set(batch, { y: y, opacity: 0 })
         gsap.to(batch, { opacity: 1, y: 0, duration: 0.5, ease: 'quart.out', stagger: 0.15 })
       },
       onLeaveBack: (batch, scrollTriggers) => {
