@@ -660,6 +660,7 @@ class Slider extends Xt.Toggle {
           dragger.style.transform = `translateX(${self.detail.dragPos}px)`
         }
         // disable links not active slide
+        const duration = self.options.duration || self.options.durationOn
         Xt.animTimeout(
           dragger,
           () => {
@@ -669,8 +670,8 @@ class Slider extends Xt.Toggle {
                 for (const target of self.targets) {
                   const slideLeft = Xt.dataStorage.get(target, `${self.ns}SlideLeft`)
                   const slideWidth = Xt.dataStorage.get(target, `${self.ns}SlideWidth`)
-                  const slideBound = slideLeft + slideWidth
-                  if (slideLeft < -Math.ceil(draggerTranslate) || slideBound > self.detail.draggerWidth - draggerTranslate) {
+                  const slideBound = slideLeft - self.detail.fixNegativeMargin + slideWidth
+                  if (slideLeft < -Math.ceil(draggerTranslate) || slideBound > Math.ceil(self.detail.draggerWidth - draggerTranslate)) {
                     target.classList.add('xt-links-none')
                     target.classList.remove('xt-jumps-none')
                   } else {
@@ -692,7 +693,7 @@ class Slider extends Xt.Toggle {
             }
           },
           'draggerDisableLinks',
-          self.initial ? 0 : (self.options.duration || self.options.durationOn) / Xt.durationTimescale
+          self.initial ? 0 : duration ? duration / Xt.durationTimescale : null
         )
         // disable dragger
         dragger.classList.add('xt-pointer-events-none')

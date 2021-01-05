@@ -14,7 +14,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="py-10">
 
-  <div class="slider slider--listing" data-xt-slider="{ contain: true }">
+  <div class="slider slider--listing" data-xt-slider="{ contain: true, jumpOverflow: true }">
     <div class="slides">
       <div class="container-fluid">
 
