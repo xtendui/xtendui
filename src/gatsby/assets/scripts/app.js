@@ -227,8 +227,8 @@ Xt.mount.push({
 
     ScrollTrigger.batch(triggers, {
       once: true,
-      start: 'top bottom-=10%',
-      end: 'bottom top+=10%',
+      start: 'top bottom-=50px',
+      end: 'bottom top+=50px',
       onEnter: (batch, scrollTriggers) => {
         const triggers = batch.filter(x => !x.dataset.animated)
         if (triggers.length) {

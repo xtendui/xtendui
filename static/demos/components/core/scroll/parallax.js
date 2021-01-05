@@ -42,8 +42,8 @@ Xt.mount.push({
 
       const scrollTriggerEnter = {
         trigger: trigger,
-        start: 'top bottom-=10%',
-        end: 'bottom bottom-=10%',
+        start: 'top bottom-=50px',
+        end: 'bottom bottom-=50px',
         scrub: 0.75,
       }
 
