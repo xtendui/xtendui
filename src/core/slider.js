@@ -715,7 +715,7 @@ class Slider extends Xt.Toggle {
             }
           },
           'draggerDisable',
-          self.initial ? 0 : (self.options.duration || self.options.durationOn) / Xt.durationTimescale
+          self.initial ? 0 : duration ? duration / Xt.durationTimescale : null
         )
         // disable links
         dragger.classList.remove('xt-links-none')
