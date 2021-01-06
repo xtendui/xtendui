@@ -6,7 +6,7 @@ title: "Sticky"
 date: "2010-10-11"
 ---
 
-## Sticky
+## Usage
 
 For **full API** see [Gsap ScrollTrigger API](https://greensock.com/docs/v3/Plugins/ScrollTrigger).
 
@@ -35,6 +35,18 @@ A **sticky pinned to a scroller** has also to `pin: true` and `pinSpacing: false
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/sticky"></div>
 </demo>
 
+## Event
+
+You can use `onEnter`, `onLeave`, `onEnterBack`, `onLeaveBack`, `onToggle`, `onUpdate`, `onScrubComplete`, and `onRefresh` to **animate on certain events**.
+
+Here's an example of **complex sticky hide** when scrolling down but only after the first card.
+
+<demo>
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/sticky-hide"></div>
+</demo>
+
+## Distance
+
 Use `trigger`, `start`, `endTrigger`, `end` to control **viewport start and end**.
 
 Use `endTrigger: 'html'` and `end: 'bottom top'` to make the **end position infinite**.
@@ -56,13 +68,7 @@ Here's an example of **complex sticky stacking**.
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/sticky-stack"></div>
 </demo>
 
-You can use `onEnter`, `onLeave`, `onEnterBack`, `onLeaveBack`, `onToggle`, `onUpdate`, `onScrubComplete`, and `onRefresh` to **animate on certain events**.
-
-Here's an example of **complex sticky hide** when scrolling down but only after the first card.
-
-<demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/sticky-hide"></div>
-</demo>
+## Other
 
 You can **toggle classes** with ScrollTrigger using `toggleClass: '<className>'`.
 

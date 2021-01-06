@@ -6,7 +6,7 @@ title: "Parallax"
 date: "2010-10-10"
 ---
 
-## Parallax
+## Usage
 
 For **full API** see [Gsap ScrollTrigger API](https://greensock.com/docs/v3/Plugins/ScrollTrigger).
 
@@ -24,6 +24,8 @@ A parallax effect can be achieved by assigning **ScrollTrigger** to a **tween or
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/parallax"></div>
 </demo>
 
+## Toggle Actions
+
 Use `toggleActions` to control the playhead on ScrollTrigger events.
 
 <div class="table-overflow">
@@ -38,11 +40,15 @@ Use `toggleActions` to control the playhead on ScrollTrigger events.
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/parallax-actions"></div>
 </demo>
 
+## Multiple
+
 You can add **multiple ScrollTriggers and animations** on the same elements.
 
 <demo>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/parallax-multiple"></div>
 </demo>
+
+## Distance
 
 Use `trigger`, `start`, `endTrigger`, `end` to control **viewport start and end**.
 
@@ -62,6 +68,8 @@ If you need **full range of animation** also on top and bottom of the page, calc
 <demo>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/parallax-range"></div>
 </demo>
+
+## Other
 
 You can **toggle classes** with ScrollTrigger using `toggleClass: '<className>'`.
 

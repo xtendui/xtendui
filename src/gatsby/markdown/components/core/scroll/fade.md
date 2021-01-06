@@ -6,7 +6,7 @@ title: "Fade"
 date: "2010-10-12"
 ---
 
-## Fade
+## Usage
 
 For **full API** see [Gsap ScrollTrigger API](https://greensock.com/docs/v3/Plugins/ScrollTrigger).
 
@@ -25,6 +25,8 @@ Use [Gsap batch](https://greensock.com/docs/v3/Plugins/ScrollTrigger/static.batc
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/fade"></div>
 </demo>
 
+## Event
+
 Always hide the elements only if `body:not(.xt-noscroll)` to make them **visible if browser doesn't support scroll** (crawlers, etc..).
 
 You can use `onEnter`, `onLeave`, `onEnterBack`, `onLeaveBack`, `onToggle`, `onUpdate`, `onScrubComplete`, and `onRefresh` to **animate on certain events**.
@@ -37,6 +39,8 @@ Use [Gsap stagger](https://greensock.com/docs/v3/Staggers) to control **animatio
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/fade-outside"></div>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/fade-outside-infinite"></div>
 </demo>
+
+## Distance
 
 Use `trigger`, `start`, `endTrigger`, `end` to control **viewport start and end**.
 
@@ -56,6 +60,8 @@ Here's an example of **distance fade** with **animation depending on direction**
 <demo>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/fade-distance"></div>
 </demo>
+
+## Other
 
 You can **toggle classes** with ScrollTrigger using `toggleClass: '<className>'`.
 
