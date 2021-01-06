@@ -12,7 +12,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="demo--parallax">
+<div class="demo--parallax-actions">
 
   <h1 class="pb-96">Scroll down</h1>
 

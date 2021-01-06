@@ -63,3 +63,16 @@ Here's an example of **complex sticky hide** when scrolling down but only after 
 <demo>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/sticky-hide"></div>
 </demo>
+
+You can **toggle classes** with ScrollTrigger using `toggleClass: '<className>'`.
+
+You can also use `once: true` to destroy ScrollTrigger as soon as the end position is reached once.
+
+<div class="table-overflow">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `once:Boolean`                          | `false`        | Activate only once             |
+| Option                  | `toggleClass:String|Object`                          | ``        | Toggle class with ScrollTrigger activation/deactivation             |
+
+</div>

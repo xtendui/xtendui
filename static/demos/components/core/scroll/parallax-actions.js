@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 Xt.mount.push({
-  matches: '.demo--parallax',
+  matches: '.demo--parallax-actions',
   mount: object => {
     // vars
 
@@ -12,10 +12,11 @@ Xt.mount.push({
     const trigger1 = object.querySelector('.box-1')
     const trigger2 = object.querySelector('.box-2')
 
-    // no scrub
+    // play pause reverse pause
 
     const scrollTrigger0 = {
       trigger: trigger0,
+      toggleActions: 'play pause reverse pause',
     }
 
     gsap
@@ -27,11 +28,11 @@ Xt.mount.push({
         ease: 'quart.out',
       })
 
-    // scrub
+    // play restart resume restart
 
     const scrollTrigger1 = {
       trigger: trigger1,
-      scrub: true,
+      toggleActions: 'play reset restart reset',
     }
 
     gsap
@@ -43,11 +44,11 @@ Xt.mount.push({
         ease: 'quart.out',
       })
 
-    // scrub value
+    // play pause resume reset
 
     const scrollTrigger2 = {
       trigger: trigger2,
-      scrub: 1.5,
+      toggleActions: 'play pause resume reset',
     }
 
     gsap
