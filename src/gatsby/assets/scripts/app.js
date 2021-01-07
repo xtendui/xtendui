@@ -169,7 +169,8 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '.gatsby_home-main .h1-display, .gatsby_home-main_head .h4, .gatsby_home-main_feature, .gatsby_home-main_philosophy_col, .gatsby_listing-column, .gatsby_home-main_support_col', // add here all fade selectors css and js
+  matches:
+    '.gatsby_home-main .h1-display, .gatsby_home-main_head .h4, .gatsby_home-main_feature, .gatsby_home-main_philosophy_col, .gatsby_home-main_support_col, .gatsby_home-main .gatsby_listing-column', // add here all fade selectors css and js
   mount: ({ object, mount }) => {
     // multiple mount object with raf
 
