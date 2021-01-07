@@ -150,6 +150,17 @@ const populateBlock = () => {
         cancelAnimationFrame(Xt.dataStorage.get(document, 'gatsby_open-full-raf'))
       })
     }
+    // trigger fullscreen or change tabs
+    full.addEventListener('on.xt.toggle', () => {
+      // @FIX demo fullscreen
+      const content = document.querySelector('#gatsby_open-full-content')
+      const current = content.querySelector('.gatsby_demo_item.in')
+      // hidden tooltip
+      const tooltip = document.querySelector('.btn-open-full + .tooltip')
+      tooltip.classList.add('hidden')
+      // triggering e.detail.container
+      dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: current } }))
+    })
     full.addEventListener('off.xt.toggle', e => {
       if (e.target === full) {
         const content = document.querySelector('#gatsby_open-full-content')
@@ -199,6 +210,9 @@ const populateBlock = () => {
           }
           appendOrigin.remove()
         }
+        // hidden tooltip
+        const tooltip = document.querySelector('.btn-open-full + .tooltip')
+        tooltip.classList.remove('hidden')
         // hash
         cancelAnimationFrame(Xt.dataStorage.get(document, 'gatsby_open-full-raf'))
         Xt.dataStorage.set(
@@ -210,16 +224,6 @@ const populateBlock = () => {
           })
         )
       }
-    })
-    // trigger fullscreen or change tabs
-    full.addEventListener('on.xt.toggle', () => {
-      // close tooltip
-      document.querySelector('.btn-open-full + .tooltip').dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
-      // @FIX demo fullscreen
-      const content = document.querySelector('#gatsby_open-full-content')
-      const current = content.querySelector('.gatsby_demo_item.in')
-      // triggering e.detail.container
-      dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: current } }))
     })
   }
 }
@@ -363,8 +367,8 @@ const populateDemo = (container, i) => {
     const item = document.querySelector(`[id="${kebabCase(location.hash)}"]`)
     if (item) {
       const demo = item.closest('.gatsby_demo')
-      demo.querySelector('.btn-open-full').classList.add('in-toggle')
-      item.classList.add('in-toggle')
+      demo.querySelector('.btn-open-full').classList.add('in', 'in-toggle')
+      item.classList.add('in', 'in-toggle')
     }
   }
   // gatsby_demo_tabs_left
@@ -382,7 +386,7 @@ const populateDemo = (container, i) => {
         dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: item.querySelector('.gatsby_demo_source'), delay: 0 } }))
       }
       // only if demo opened
-      if (document.querySelector('#gatsby_open-full-trigger').classList.contains('in')) {
+      if (document.querySelector('#gatsby_open-full-trigger').classList.contains('in-toggle')) {
         // hash
         location.hash = item.getAttribute('id')
         // hash cancel
@@ -390,31 +394,34 @@ const populateDemo = (container, i) => {
       }
       // https://github.com/zenorocha/clipboard.js/
       const btnClipboard = item.querySelector('.btn-clipboard')
-      const clipboard = new ClipboardJS(btnClipboard, {
-        text: trigger => {
-          const elSourceCode = trigger.closest('.gatsby_demo').querySelector('.gatsby_demo_item.in .gatsby_demo_code .gatsby_demo_code_body_item.in pre code')
-          return Xt.dataStorage.get(elSourceCode, 'sourceCode')
-        },
-      })
-      clipboard.on('success', e => {
-        if (!Xt.dataStorage.get(clipboard, 'ClipboardFrame') !== e.text) {
-          Xt.dataStorage.set(clipboard, 'ClipboardFrame', e.text)
-          e.clearSelection()
-          // tooltip
-          const btn = btnClipboard
-          const tooltip = btn.closest('[data-xt-tooltip]')
-          // close tooltip
-          tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
-          // swap tooltip
-          let self = Xt.get('xt-tooltip', tooltip)
-          if (self) {
-            self.targets[0].style.display = 'none'
-            self.targets[1].style.display = ''
-            // open tooltip
-            tooltip.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
+      if (!btnClipboard.dataset.clipboardDone) {
+        btnClipboard.dataset.clipboardDone = 'true'
+        const clipboard = new ClipboardJS(btnClipboard, {
+          text: trigger => {
+            const elSourceCode = trigger.closest('.gatsby_demo').querySelector('.gatsby_demo_item.in .gatsby_demo_code .gatsby_demo_code_body_item.in pre code')
+            return Xt.dataStorage.get(elSourceCode, 'sourceCode')
+          },
+        })
+        clipboard.on('success', e => {
+          if (!Xt.dataStorage.get(clipboard, 'ClipboardFrame') !== e.text) {
+            Xt.dataStorage.set(clipboard, 'ClipboardFrame', e.text)
+            e.clearSelection()
+            // tooltip
+            const btn = btnClipboard
+            const tooltip = btn.closest('[data-xt-tooltip]')
+            // close tooltip
+            tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+            // swap tooltip
+            let self = Xt.get('xt-tooltip', tooltip)
+            if (self) {
+              self.targets[0].style.display = 'none'
+              self.targets[1].style.display = ''
+              // open tooltip
+              tooltip.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
+            }
           }
-        }
-      })
+        })
+      }
       const btn = btnClipboard
       const tooltip = btn.closest('[data-xt-tooltip]')
       tooltip.addEventListener('off.xt.tooltip', () => {
@@ -486,7 +493,7 @@ const makeFullscreen = (container, initial) => {
   // toggles
   const listingToggle = container.previousSibling
   if (listingToggle instanceof Element && listingToggle.getAttribute('data-gatsby-listing-toggle')) {
-    listingToggle.classList.add('in-toggle')
+    listingToggle.classList.add('in', 'in-toggle')
   }
   // populate
   const items = container.querySelectorAll('.gatsby_demo_item.in')
