@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 Xt.mount.push({
   matches: '#iframe--products-listing-v1 a.listing-item',
-  mount: object => {
+  mount: ({ object }) => {
     // vars
 
     const mediaScale = 0.04
@@ -61,7 +61,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '#iframe--products-listing-v1 .listing-item', // add here all fade selectors css and js
-  mount: (object, mount) => {
+  mount: ({ object, mount }) => {
     // vars
 
     const scrollY = 30

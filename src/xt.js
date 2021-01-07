@@ -45,7 +45,7 @@ if (window.self === window.top && Xt.debug) {
     Xt.mount.push({
       ignore: false,
       matches: 'img[src]:not([src^="data:"])',
-      mount: object => {
+      mount: ({ object }) => {
         // loading
         const loading = object.getAttribute('loading')
         if (!loading) {
@@ -62,7 +62,7 @@ if (window.self === window.top && Xt.debug) {
     Xt.mount.push({
       ignore: false,
       matches: 'input:not([type="hidden"]), select, textarea',
-      mount: object => {
+      mount: ({ object }) => {
         // label
         const labels = object.labels
         const label = object.getAttribute('aria-label') || object.getAttribute('aria-labelledby')
@@ -75,7 +75,7 @@ if (window.self === window.top && Xt.debug) {
     Xt.mount.push({
       ignore: false,
       matches: 'a[href]',
-      mount: object => {
+      mount: ({ object }) => {
         // title
         const text = object.textContent.trim()
         const title = object.title
@@ -174,6 +174,7 @@ Xt.observer = new MutationObserver(mutationsList => {
  */
 Xt.mountCheck = (added = document.documentElement) => {
   for (const mount of Xt.mount) {
+    const matches = mount.matches
     // ignore
     const ignoreStr = mount.ignore ? mount.ignore : mount.ignore === false ? false : '.xt-ignore'
     if (ignoreStr) {
@@ -185,31 +186,31 @@ Xt.mountCheck = (added = document.documentElement) => {
     }
     // check
     const objects = []
-    if (added.matches(mount.matches)) {
+    if (added.matches(matches)) {
       objects.push(added)
     }
-    for (const object of added.querySelectorAll(mount.matches)) {
+    for (const object of added.querySelectorAll(matches)) {
       objects.push(object)
     }
     // call
     if (objects.length) {
       for (const [i, object] of objects.entries()) {
         // @FIX multiple initialization because we observe also childs with querySelectorAll
-        if (Xt.dataStorage.get(object, `Mount${mount.matches}`)) {
+        if (Xt.dataStorage.get(object, `Mount${matches}`)) {
           return
         }
-        Xt.dataStorage.set(object, `Mount${mount.matches}`, true)
+        Xt.dataStorage.set(object, `Mount${matches}`, true)
         // call
-        const call = mount.mount(object, mount, i, mount.matches) // object, mount, index, matches
+        const call = mount.mount({ object, mount, i, matches })
         // destroy
         if (call) {
           Xt.unmount.push({
             object: object,
             unmount: call,
             unmountRemove: () => {
-              Xt.dataStorage.remove(object, `Mount${mount.matches}`)
+              Xt.dataStorage.remove(object, `Mount${matches}`)
               Xt.unmount = Xt.unmount.filter(x => {
-                return x.object !== object && x.matches !== mount.matches
+                return x.object !== object && x.matches !== matches
               })
             },
           })

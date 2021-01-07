@@ -8,7 +8,7 @@ import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '#iframe--slider-hero-v1 .slider',
-  mount: object => {
+  mount: ({ object }) => {
     // vars
 
     const assetMaskTimeOn = 1.5
@@ -219,7 +219,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '#iframe--slider-hero-v1 .slide',
-  mount: function (object) {
+  mount: ({ object }) => {
     // vars
 
     const links = object.tagName === 'A' || object.tagName === 'BUTTON' ? Xt.arrSingle(object) : object.querySelectorAll('a, button')

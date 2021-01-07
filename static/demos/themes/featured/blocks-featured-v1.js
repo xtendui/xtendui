@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 Xt.mount.push({
   matches: '#iframe--blocks-featured-v1 .btn-line',
-  mount: object => {
+  mount: ({ object }) => {
     // vars
 
     const link = object.tagName === 'a' || object.tagName === 'button' ? object : object.closest('a, button')
@@ -67,7 +67,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '#iframe--blocks-featured-v1 .featured-item',
-  mount: object => {
+  mount: ({ object }) => {
     // vars
 
     const content = object.querySelector('.featured-content')

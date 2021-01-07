@@ -7,7 +7,7 @@ import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '#iframe--stores-listing-v2 .listing',
-  mount: object => {
+  mount: ({ object }) => {
     // vars
 
     const items = object.querySelectorAll('.listing-item')

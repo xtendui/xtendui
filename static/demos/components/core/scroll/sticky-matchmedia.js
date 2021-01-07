@@ -5,7 +5,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 Xt.mount.push({
   matches: '.demo--sticky-matchmedia',
-  mount: object => {
+  mount: ({ object }) => {
     // match media
 
     ScrollTrigger.matchMedia({

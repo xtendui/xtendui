@@ -385,7 +385,7 @@ Xt.Ajax = Ajax
 
 Xt.mount.push({
   matches: `[data-${Xt.Ajax.componentName}]`,
-  mount: object => {
+  mount: ({ object }) => {
     // vars
 
     const optionsMarkup = object.getAttribute(`data-${Xt.Ajax.componentName}`)

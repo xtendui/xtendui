@@ -18,7 +18,7 @@ import 'assets/scripts/shared'
 
 Xt.mount.push({
   matches: '.gatsby_btn--overlay',
-  mount: object => {
+  mount: ({ object }) => {
     // overlay
 
     new Xt.Overlay(object, {
@@ -36,7 +36,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '.gatsby_site-header',
-  mount: object => {
+  mount: ({ object }) => {
     // match media
 
     ScrollTrigger.matchMedia({
@@ -93,7 +93,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '.gatsby_home-header',
-  mount: object => {
+  mount: ({ object }) => {
     // vars
 
     const background = object.querySelector('.gatsby_home-header_background rect')
@@ -170,7 +170,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '.gatsby_home-main .h1-display, .gatsby_home-main_head .h4, .gatsby_home-main_feature, .gatsby_home-main_philosophy_col, .gatsby_listing-column, .gatsby_home-main_support_col', // add here all fade selectors css and js
-  mount: (object, mount) => {
+  mount: ({ object, mount }) => {
     // multiple mount object with raf
 
     mount.triggers = mount.triggers ? mount.triggers : []
@@ -262,7 +262,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '.gatsby_site-article_hero',
-  mount: object => {
+  mount: ({ object }) => {
     // sticky
 
     const heroParallax = {
@@ -285,7 +285,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '#gatsby_open-full-trigger',
-  mount: object => {
+  mount: ({ object }) => {
     // init
 
     let self = new Xt.Toggle(object, {
@@ -328,7 +328,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: 'body',
-  mount: object => {
+  mount: ({ object }) => {
     // init
 
     let self = new Xt.Scrolltoanchor(object, {

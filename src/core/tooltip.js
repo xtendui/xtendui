@@ -188,7 +188,7 @@ Xt.Tooltip = Tooltip
 
 Xt.mount.push({
   matches: `[data-${Xt.Tooltip.componentName}]`,
-  mount: object => {
+  mount: ({ object }) => {
     // vars
 
     const optionsMarkup = object.getAttribute(`data-${Xt.Tooltip.componentName}`)

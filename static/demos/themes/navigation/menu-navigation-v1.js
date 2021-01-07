@@ -6,7 +6,7 @@ import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '#iframe--menu-navigation-v1 input[type="checkbox"]',
-  mount: object => {
+  mount: ({ object }) => {
     const checkChange = () => {
       const component = document.querySelector('#iframe--menu-navigation-v1 .megamenu')
       if (component) {
@@ -34,7 +34,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '#iframe--menu-navigation-v1 .megamenu',
-  mount: object => {
+  mount: ({ object }) => {
     // vars
 
     const contentXOn = -40
@@ -177,7 +177,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '#iframe--menu-navigation-v1 .megamenu',
-  mount: function (object) {
+  mount: ({ object }) => {
     // vars
 
     let lineFirst = true

@@ -151,7 +151,7 @@ Xt.Stickyflow = Stickyflow
 
 Xt.mount.push({
   matches: `[data-${Xt.Stickyflow.componentName}]`,
-  mount: object => {
+  mount: ({ object }) => {
     // vars
 
     const optionsMarkup = object.getAttribute(`data-${Xt.Stickyflow.componentName}`)

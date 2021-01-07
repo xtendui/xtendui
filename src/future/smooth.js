@@ -54,7 +54,7 @@ Xt.Smooth = Smooth
 
 Xt.mount.push({
   matches: `[data-${Xt.Smooth.componentName}]`,
-  mount: object => {
+  mount: ({ object }) => {
     // vars
 
     const optionsMarkup = object.getAttribute(`data-${Xt.Smooth.componentName}`)

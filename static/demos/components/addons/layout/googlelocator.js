@@ -4,7 +4,7 @@ import 'xtendui/src/addons/googlelocator'
 
 Xt.mount.push({
   matches: '#iframe--googlelocator .googlelocator',
-  mount: object => {
+  mount: ({ object }) => {
     // add yout api key here
 
     Xt.addScript(

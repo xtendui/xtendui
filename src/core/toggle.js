@@ -3141,7 +3141,7 @@ Xt.Toggle = Toggle
 
 Xt.mount.push({
   matches: `[data-${Xt.Toggle.componentName}]`,
-  mount: object => {
+  mount: ({ object }) => {
     // vars
 
     const optionsMarkup = object.getAttribute(`data-${Xt.Toggle.componentName}`)

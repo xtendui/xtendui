@@ -1341,7 +1341,7 @@ Xt.Slider = Slider
 
 Xt.mount.push({
   matches: `[data-${Xt.Slider.componentName}]`,
-  mount: object => {
+  mount: ({ object }) => {
     // vars
 
     const optionsMarkup = object.getAttribute(`data-${Xt.Slider.componentName}`)

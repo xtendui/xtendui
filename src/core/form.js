@@ -6,7 +6,7 @@ import { Xt } from '../xt.js'
 
 Xt.mount.push({
   matches: 'input[type="radio"]',
-  mount: object => {
+  mount: ({ object }) => {
     // vars
 
     const name = object.getAttribute('name')
@@ -31,7 +31,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: 'label input[type="checkbox"], label input[type="radio"]',
-  mount: object => {
+  mount: ({ object }) => {
     // vars
 
     const label = object.closest('label')
@@ -57,7 +57,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: 'form:not([novalidate])',
-  mount: object => {
+  mount: ({ object }) => {
     // vars
 
     const scrollWindowFactor = 0.2

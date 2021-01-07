@@ -5,7 +5,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 Xt.mount.push({
   matches: '.demo--fade-matchmedia .card', // add here all fade selectors css and js
-  mount: (object, mount) => {
+  mount: ({ object, mount }) => {
     // multiple mount object with raf
 
     mount.triggers = mount.triggers ? mount.triggers : []

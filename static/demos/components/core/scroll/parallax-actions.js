@@ -5,7 +5,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 Xt.mount.push({
   matches: '.demo--parallax-actions',
-  mount: object => {
+  mount: ({ object }) => {
     // vars
 
     const trigger0 = object.querySelector('.box-0')

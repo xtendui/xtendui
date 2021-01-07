@@ -168,7 +168,7 @@ Xt.Groupnumber = Groupnumber
 
 Xt.mount.push({
   matches: `[data-${Xt.Groupnumber.componentName}]`,
-  mount: object => {
+  mount: ({ object }) => {
     // vars
 
     const optionsMarkup = object.getAttribute(`data-${Xt.Groupnumber.componentName}`)

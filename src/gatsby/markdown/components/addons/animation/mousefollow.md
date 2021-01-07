@@ -117,7 +117,7 @@ Or inizialize with **mutation observer**.
 ```js
 Xt.mount.push({
   matches: '#my-object',
-  mount: object => {
+  mount: ({ object }) => {
     // init
 
     let self = new Xt.Mousefollow(object, {

@@ -5,7 +5,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 Xt.mount.push({
   matches: '.demo--sticky-stack-top',
-  mount: object => {
+  mount: ({ object }) => {
     // sticky
 
     ScrollTrigger.create({
@@ -23,7 +23,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '.demo--sticky-stack-topsecond',
-  mount: object => {
+  mount: ({ object }) => {
     // sticky
 
     ScrollTrigger.create({
@@ -39,7 +39,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '.demo--sticky-stack-topthird',
-  mount: object => {
+  mount: ({ object }) => {
     // sticky
 
     ScrollTrigger.create({
@@ -58,7 +58,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '.demo--sticky-stack-bottom',
-  mount: object => {
+  mount: ({ object }) => {
     // sticky
 
     ScrollTrigger.create({
@@ -74,7 +74,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '.demo--sticky-stack-bottomsecond',
-  mount: object => {
+  mount: ({ object }) => {
     // sticky
 
     ScrollTrigger.create({

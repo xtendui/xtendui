@@ -5,7 +5,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 Xt.mount.push({
   matches: '.demo--sticky-hide-top',
-  mount: object => {
+  mount: ({ object }) => {
     // vars
 
     const stickyInner = object.querySelector('.demo--sticky-hide-top-main')

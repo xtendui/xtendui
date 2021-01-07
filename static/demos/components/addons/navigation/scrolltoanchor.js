@@ -6,7 +6,7 @@ gsap.registerPlugin(ScrollToPlugin)
 
 Xt.mount.push({
   matches: '#iframe--scrolltoanchor body',
-  mount: object => {
+  mount: ({ object }) => {
     // init
 
     let self = new Xt.Scrolltoanchor(object, {

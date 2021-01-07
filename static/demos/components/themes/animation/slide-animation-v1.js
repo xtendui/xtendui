@@ -3,7 +3,7 @@ import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '#iframe--slide-animation-v1 .btn, #iframe--slide-animation-v1 a.card',
-  mount: object => {
+  mount: ({ object }) => {
     // vars
 
     let content = object.querySelector('.content')

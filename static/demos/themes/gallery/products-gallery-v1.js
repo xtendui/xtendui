@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollToPlugin)
 
 Xt.mount.push({
   matches: '#iframe--products-gallery-v1 body',
-  mount: object => {
+  mount: ({ object }) => {
     // init
 
     let self = new Xt.Scrolltoanchor(object, {
@@ -56,7 +56,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '#iframe--products-gallery-v1 .product-image',
-  mount: object => {
+  mount: ({ object }) => {
     // vars
 
     const mediaContainerScale = -0.015
@@ -124,7 +124,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '#iframe--products-gallery-v1 .product-continue',
-  mount: object => {
+  mount: ({ object }) => {
     // vars
 
     const icon = object.querySelector(':scope > *')

@@ -5,7 +5,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 Xt.mount.push({
   matches: '.demo--sticky-top',
-  mount: object => {
+  mount: ({ object }) => {
     // sticky
 
     ScrollTrigger.create({
@@ -21,7 +21,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '.demo--sticky-bottom',
-  mount: object => {
+  mount: ({ object }) => {
     // sticky
 
     ScrollTrigger.create({

@@ -8,7 +8,7 @@ import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '.demo--slider-automaticscroll .slider',
-  mount: object => {
+  mount: ({ object }) => {
     // vars
 
     const timeScaleTimeOn = 0.75
