@@ -146,7 +146,7 @@ Drop.optionsDefault = {
   // event
   on: 'click',
   off: false,
-  eventLimit: '.event-limit, .drop > *:first-child',
+  eventLimit: '.event-limit, .drop',
   // timing
   instant: {
     elements: true,

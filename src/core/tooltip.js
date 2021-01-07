@@ -150,7 +150,7 @@ Tooltip.optionsDefault = {
   // event
   on: 'mouseenter',
   off: 'mouseleave',
-  eventLimit: '.event-limit, .tooltip > *:first-child',
+  eventLimit: '.event-limit, .tooltip',
   // timing
   instant: {
     elements: true,
