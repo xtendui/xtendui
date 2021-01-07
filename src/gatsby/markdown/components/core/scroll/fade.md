@@ -21,6 +21,9 @@ Use [Gsap batch](https://greensock.com/docs/v3/Plugins/ScrollTrigger/static.batc
 
 </div>
 
+[[noteDefault]]
+| This demos uses [multiple mount object](/@TODO) for **batching animations** also on content **added dynamically to the dom**.
+
 <demo>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/fade"></div>
 </demo>

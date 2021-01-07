@@ -51,7 +51,7 @@ Xt.mount.push({
 })
 
 /**
- * .product-image
+ * .product-image hover
  */
 
 Xt.mount.push({
@@ -119,7 +119,7 @@ Xt.mount.push({
 })
 
 /**
- *  .product-continue
+ *  .product-continue animation
  */
 
 Xt.mount.push({

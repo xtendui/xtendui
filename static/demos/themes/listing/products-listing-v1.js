@@ -4,11 +4,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 /**
- * .listing-item
+ * media hover
  */
 
 Xt.mount.push({
-  matches: '#iframe--products-listing-v1 .listing-item',
+  matches: '#iframe--products-listing-v1 a.listing-item',
   mount: object => {
     // vars
 
@@ -60,29 +60,37 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '#iframe--products-listing-v1 body',
-  mount: object => {
-    // add here all fade selectors css and js
-
-    const triggers = object.querySelectorAll(`.listing-item`)
-
+  matches: '#iframe--products-listing-v1 .listing-item', // add here all fade selectors css and js
+  mount: (object, mount) => {
     // vars
 
     const scrollY = 30
 
-    // fade
+    // multiple mount object with raf
 
-    ScrollTrigger.batch(triggers, {
-      once: true,
-      start: 'top bottom-=10%',
-      end: 'bottom top+=10%',
-      onEnter: (batch, scrollTriggers) => {
-        const direction = scrollTriggers[0].direction
-        const y = direction > 0 ? -scrollY : scrollY
-        gsap.killTweensOf(batch)
-        gsap.set(batch, { y: y })
-        gsap.to(batch, { opacity: 1, y: 0, duration: 0.5, ease: 'quart.out', stagger: 0.15 })
-      },
+    mount.triggers = mount.triggers ? mount.triggers : []
+    mount.triggers.push(object)
+    cancelAnimationFrame(mount.raf)
+    mount.raf = requestAnimationFrame(() => {
+      // reset mount object
+
+      const triggers = mount.triggers
+      mount.triggers = []
+
+      // fade
+
+      ScrollTrigger.batch(triggers, {
+        once: true,
+        start: 'top bottom-=10%',
+        end: 'bottom top+=10%',
+        onEnter: (batch, scrollTriggers) => {
+          const direction = scrollTriggers[0].direction
+          const y = direction > 0 ? -scrollY : scrollY
+          gsap.killTweensOf(batch)
+          gsap.set(batch, { y: y })
+          gsap.to(batch, { opacity: 1, y: 0, duration: 0.5, ease: 'quart.out', stagger: 0.15 })
+        },
+      })
     })
   },
 })

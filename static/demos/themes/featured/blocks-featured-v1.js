@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 /**
- * .btn-line and media scale
+ * .btn-line and media hover
  */
 
 Xt.mount.push({
@@ -62,7 +62,7 @@ Xt.mount.push({
 })
 
 /**
- * .featured-item
+ * .featured-item parallax
  */
 
 Xt.mount.push({

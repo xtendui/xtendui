@@ -73,6 +73,9 @@ See [mouse follow addon](/components/core/loader) to create a **loader with mous
 | List `ul` and `old` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
 
 [[noteDefault]]
+| This demos uses [multiple mount object](/@TODO) for **batching animations** also on content **added dynamically to the dom**.
+
+[[noteDefault]]
 | This component uses [card](/components/core/card) see documentation to **import javascript** and **customize**.
 
 [[noteDefault]]

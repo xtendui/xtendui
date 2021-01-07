@@ -169,83 +169,89 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '.gatsby_home-main',
-  mount: object => {
-    // vars
+  matches: '.gatsby_home-main .h1-display, .gatsby_home-main_head .h4, .gatsby_home-main_feature, .gatsby_home-main_philosophy_col, .gatsby_listing-column, .gatsby_home-main_support_col', // add here all fade selectors css and js
+  mount: (object, mount) => {
+    // multiple mount object with raf
 
-    const triggers = object.querySelectorAll(
-      '.h1-display, .gatsby_home-main_head .h4, .gatsby_home-main_feature, .gatsby_home-main_philosophy_col, .gatsby_listing-column, .gatsby_home-main_support_col'
-    )
+    mount.triggers = mount.triggers ? mount.triggers : []
+    mount.triggers.push(object)
+    cancelAnimationFrame(mount.raf)
+    mount.raf = requestAnimationFrame(() => {
+      // reset mount object
 
-    // parallax
+      const triggers = mount.triggers
+      mount.triggers = []
 
-    for (const trigger of triggers) {
-      // leave
+      // parallax
 
-      const scrollTriggerLeave = {
-        trigger: trigger,
-        start: 'top top+=100px',
-        end: 'bottom top+=100px',
-        scrub: 0.75,
-      }
+      for (const trigger of triggers) {
+        // leave
 
-      gsap.set(trigger, { y: 0, opacity: 1 })
-      gsap
-        .timeline({
-          scrollTrigger: scrollTriggerLeave,
-        })
-        .to(trigger, {
-          opacity: 0,
-          y: -30,
-          duration: 0.75,
-          ease: 'quart.out',
-        })
-
-      // enter
-
-      const scrollTriggerEnter = {
-        trigger: trigger,
-        start: 'top bottom-=100px',
-        end: 'bottom bottom-=100px',
-        scrub: 0.75,
-      }
-
-      gsap.set(trigger, { y: 30, opacity: 0 })
-      gsap
-        .timeline({
-          scrollTrigger: scrollTriggerEnter,
-        })
-        .to(trigger, {
-          opacity: 1,
-          y: 0,
-          duration: 0.75,
-          ease: 'quart.out',
-        })
-    }
-
-    // fade
-
-    ScrollTrigger.batch(triggers, {
-      once: true,
-      start: 'top bottom-=50px',
-      end: 'bottom top+=50px',
-      onEnter: (batch, scrollTriggers) => {
-        const triggers = batch.filter(x => !x.dataset.animated)
-        if (triggers.length) {
-          const direction = scrollTriggers[0].direction
-          const scale = direction > 0 ? 1.02 : 0.98
-          gsap.killTweensOf(triggers)
-          gsap.set(triggers, { scale: scale, opacity: 0 })
-          gsap.to(triggers, { opacity: 1, scale: 1, duration: 0.75, ease: 'quart.out', stagger: 0.15 })
+        const scrollTriggerLeave = {
+          trigger: trigger,
+          start: 'top top+=100px',
+          end: 'bottom top+=100px',
+          scrub: 0.75,
         }
-      },
-      onRefresh: (batch, scrollTriggers) => {
-        for (const self of scrollTriggers) {
-          if (self.progress === 0) {
-            self.trigger.dataset.animated = 'true'
+
+        gsap.set(trigger, { y: 0, opacity: 1 })
+        gsap
+          .timeline({
+            scrollTrigger: scrollTriggerLeave,
+          })
+          .to(trigger, {
+            opacity: 0,
+            y: -30,
+            duration: 0.75,
+            ease: 'quart.out',
+          })
+
+        // enter
+
+        const scrollTriggerEnter = {
+          trigger: trigger,
+          start: 'top bottom-=100px',
+          end: 'bottom bottom-=100px',
+          scrub: 0.75,
+        }
+
+        gsap.set(trigger, { y: 30, opacity: 0 })
+        gsap
+          .timeline({
+            scrollTrigger: scrollTriggerEnter,
+          })
+          .to(trigger, {
+            opacity: 1,
+            y: 0,
+            duration: 0.75,
+            ease: 'quart.out',
+          })
+      }
+
+      // fade
+
+      ScrollTrigger.batch(triggers, {
+        once: true,
+        start: 'top bottom-=50px',
+        end: 'bottom top+=50px',
+        onEnter: (batch, scrollTriggers) => {
+          const triggers = batch.filter(x => !x.dataset.animated)
+          if (triggers.length) {
+            const direction = scrollTriggers[0].direction
+            const scale = direction > 0 ? 1.02 : 0.98
+            gsap.killTweensOf(triggers)
+            gsap.set(triggers, { scale: scale, opacity: 0 })
+            gsap.to(triggers, { opacity: 1, scale: 1, duration: 0.75, ease: 'quart.out', stagger: 0.15 })
           }
-        }
-      },
+        },
+        onRefresh: (batch, scrollTriggers) => {
+          for (const self of scrollTriggers) {
+            if (self.progress === 0) {
+              self.trigger.dataset.animated = 'true'
+            }
+          }
+        },
+      })
     })
   },
 })

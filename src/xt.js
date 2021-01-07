@@ -173,9 +173,9 @@ Xt.observer = new MutationObserver(mutationsList => {
  * @param {Node|HTMLElement|EventTarget|Window} added
  */
 Xt.mountCheck = (added = document.documentElement) => {
-  for (const obj of Xt.mount) {
+  for (const mount of Xt.mount) {
     // ignore
-    const ignoreStr = obj.ignore ? obj.ignore : obj.ignore === false ? false : '.xt-ignore'
+    const ignoreStr = mount.ignore ? mount.ignore : mount.ignore === false ? false : '.xt-ignore'
     if (ignoreStr) {
       const ignore = added.closest(ignoreStr)
       if (ignore) {
@@ -185,31 +185,31 @@ Xt.mountCheck = (added = document.documentElement) => {
     }
     // check
     const objects = []
-    if (added.matches(obj.matches)) {
+    if (added.matches(mount.matches)) {
       objects.push(added)
     }
-    for (const object of added.querySelectorAll(obj.matches)) {
+    for (const object of added.querySelectorAll(mount.matches)) {
       objects.push(object)
     }
     // call
     if (objects.length) {
       for (const [i, object] of objects.entries()) {
         // @FIX multiple initialization because we observe also childs with querySelectorAll
-        if (Xt.dataStorage.get(object, `Mount${obj.matches}`)) {
+        if (Xt.dataStorage.get(object, `Mount${mount.matches}`)) {
           return
         }
-        Xt.dataStorage.set(object, `Mount${obj.matches}`, true)
+        Xt.dataStorage.set(object, `Mount${mount.matches}`, true)
         // call
-        const call = obj.mount(object, i, obj.matches) // object, index, matches
+        const call = mount.mount(object, mount, i, mount.matches) // object, mount, index, matches
         // destroy
         if (call) {
           Xt.unmount.push({
             object: object,
             unmount: call,
             unmountRemove: () => {
-              Xt.dataStorage.remove(object, `Mount${obj.matches}`)
+              Xt.dataStorage.remove(object, `Mount${mount.matches}`)
               Xt.unmount = Xt.unmount.filter(x => {
-                return x.object !== object && x.matches !== obj.matches
+                return x.object !== object && x.matches !== mount.matches
               })
             },
           })
@@ -224,15 +224,15 @@ Xt.mountCheck = (added = document.documentElement) => {
  * @param {Node|HTMLElement|EventTarget|Window} removed
  */
 Xt.unmountCheck = (removed = document.documentElement) => {
-  for (const obj of Xt.unmount) {
+  for (const unmount of Xt.unmount) {
     // check
-    if (removed === obj.object || removed.contains(obj.object)) {
-      if (obj.object.closest('.xt-ignore')) {
+    if (removed === unmount.object || removed.contains(unmount.object)) {
+      if (unmount.object.closest('.xt-ignore')) {
         return
       }
       // call
-      obj.unmount(obj)
-      obj.unmountRemove()
+      unmount.unmount(unmount)
+      unmount.unmountRemove()
     }
   }
 }
