@@ -190,8 +190,8 @@ Xt.mount.push({
         const scrollTriggerLeave = {
           trigger: trigger,
           start: 'top top+=100px',
-          end: 'bottom top+=100px',
-          scrub: 0.75,
+          end: 'bottom top+=200px',
+          scrub: 1.5,
         }
 
         gsap.set(trigger, { y: 0, opacity: 1 })
@@ -202,17 +202,16 @@ Xt.mount.push({
           .to(trigger, {
             opacity: 0,
             y: -30,
-            duration: 0.75,
-            ease: 'quart.out',
+            ease: 'quint.inOut',
           })
 
         // enter
 
         const scrollTriggerEnter = {
           trigger: trigger,
-          start: 'top bottom-=100px',
-          end: 'bottom bottom-=100px',
-          scrub: 0.75,
+          start: 'top bottom-=50px',
+          end: 'bottom bottom-=50px',
+          scrub: 1.5,
         }
 
         gsap.set(trigger, { y: 30, opacity: 0 })
@@ -223,8 +222,7 @@ Xt.mount.push({
           .to(trigger, {
             opacity: 1,
             y: 0,
-            duration: 0.75,
-            ease: 'quart.out',
+            ease: 'quint.inOut',
           })
       }
 

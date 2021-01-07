@@ -34,7 +34,7 @@ Xt.mount.push({
       })
       .to(trigger, {
         x: '50vw',
-        ease: 'quart.out',
+        ease: 'quint.inOut',
       })
   },
 })

@@ -23,7 +23,6 @@ Xt.mount.push({
       })
       .to(trigger0, {
         x: '50vw',
-        ease: 'quart.out',
       })
 
     gsap
@@ -32,7 +31,7 @@ Xt.mount.push({
       })
       .to(trigger0, {
         rotate: '180deg',
-        ease: 'quart.out',
+        ease: 'quint.inOut',
       })
 
     // scale
@@ -48,7 +47,7 @@ Xt.mount.push({
       })
       .to(trigger0, {
         scale: 1.5,
-        ease: 'quart.out',
+        ease: 'quint.inOut',
       })
   },
 })

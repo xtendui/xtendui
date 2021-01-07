@@ -24,7 +24,7 @@ Xt.mount.push({
       })
       .to(trigger0, {
         x: '50vw',
-        ease: 'quart.out',
+        ease: 'quint.inOut',
       })
 
     // scrub
@@ -40,7 +40,7 @@ Xt.mount.push({
       })
       .to(trigger1, {
         x: '50vw',
-        ease: 'quart.out',
+        ease: 'quint.inOut',
       })
 
     // scrub value
@@ -56,7 +56,7 @@ Xt.mount.push({
       })
       .to(trigger2, {
         x: '50vw',
-        ease: 'quart.out',
+        ease: 'quint.inOut',
       })
   },
 })
