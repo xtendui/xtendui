@@ -18,7 +18,7 @@ demo.htmlSource = `
     <div class="slides">
       <div class="container-fluid">
 
-        <div class="h4 mb-8">Latest Products</div>
+        <div class="h2 mb-8">Latest Products</div>
 
         <div class="slides-inner row row-2">
 
@@ -201,7 +201,7 @@ demo.htmlSource = `
 
   <div class="container-fluid">
 
-    <div class="h4 mb-8">Category</div>
+    <div class="h2 mb-8">Category</div>
 
     <div class="row row-3">
 

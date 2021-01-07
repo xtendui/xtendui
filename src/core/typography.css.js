@@ -8,21 +8,6 @@ const rem = px => `${round(px / 16)}rem`
 module.exports = {
   variants: ['responsive'],
   utility: theme => ({
-    '.h1': {
-      // style
-      marginTop: theme('spacing.5'),
-      marginBottom: theme('spacing.3'),
-      '@apply mt-fc mb-lc': {},
-      fontFamily: theme('fontFamily.sans').toString(),
-      fontWeight: theme('fontWeight.bold'),
-      fontSize: rem(30),
-      lineHeight: 1.1,
-      letterSpacing: theme('letterSpacing.tight'),
-      textTransform: 'none',
-      '@screen md': {
-        fontSize: rem(40),
-      },
-    },
     '.h1-display': {
       // style
       fontWeight: theme('fontWeight.black'),
@@ -38,10 +23,25 @@ module.exports = {
         fontSize: rem(60),
       },
     },
+    '.h1': {
+      // style
+      marginTop: theme('spacing.7'),
+      marginBottom: theme('spacing.5'),
+      '@apply mt-fc mb-lc': {},
+      fontFamily: theme('fontFamily.sans').toString(),
+      fontWeight: theme('fontWeight.bold'),
+      fontSize: rem(35),
+      lineHeight: 1.1,
+      letterSpacing: theme('letterSpacing.tight'),
+      textTransform: 'none',
+      '@screen md': {
+        fontSize: rem(45),
+      },
+    },
     '.h2': {
       // style
-      marginTop: theme('spacing.5'),
-      marginBottom: theme('spacing.3'),
+      marginTop: theme('spacing.6'),
+      marginBottom: theme('spacing.4'),
       '@apply mt-fc mb-lc': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
