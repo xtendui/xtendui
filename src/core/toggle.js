@@ -194,7 +194,7 @@ class Toggle {
       // check elements
       for (const element of elements) {
         // reset
-        const found = self.initReset(element, saveCurrents)
+        const found = self.initCheck(element, saveCurrents)
         if (found && currents < options.max) {
           // initial
           currents++
@@ -225,9 +225,11 @@ class Toggle {
       }
       // currents
       if (saveCurrents) {
-        // initialCurrents after raf
+        // keep the same level of raf as others
         requestAnimationFrame(() => {
-          self.initialCurrents = self.getCurrents().slice(0)
+          requestAnimationFrame(() => {
+            self.initialCurrents = self.getCurrents().slice(0)
+          })
         })
       }
       // no currents
@@ -252,52 +254,56 @@ class Toggle {
   }
 
   /**
-   * init reset element activation
-   * @param {Node|HTMLElement|EventTarget|Window} el Element to check and reset
+   * init check element activation
+   * @param {Node|HTMLElement|EventTarget|Window} el Element to check
    * @param {Boolean} saveCurrents
    * @return {Boolean} if element was activated
    */
-  initReset(el, saveCurrents = false) {
+  initCheck(el, saveCurrents = false) {
     const self = this
-    let found = false
-    // reset
-    const reset = elReset => {
-      let isActive = false
+    const options = self.options
+    // check
+    const check = elCheck => {
+      let activated = false
       for (const c of self.classes) {
-        if (elReset.classList.contains(c)) {
-          isActive = true
+        if (elCheck.classList.contains(c)) {
+          activated = true
           break
         }
       }
-      if (isActive) {
-        if (saveCurrents) {
-          found = true
-        }
-      }
-      return found
+      return activated
     }
-    // elements
-    const group = el.getAttribute('data-xt-group')
-    if (group) {
-      const groupEls = Array.from(self.elements).filter(x => x.getAttribute('data-xt-group') === group)
-      for (const groupEl of groupEls) {
-        found = reset(groupEl)
-        if (!saveCurrents && self.initialCurrents.includes(groupEl)) {
-          found = true
-        }
-      }
-    } else {
-      found = reset(el)
-      if (!saveCurrents && self.initialCurrents.includes(el)) {
-        found = true
-      }
+    // logic
+    let activated = false
+    // check if activated
+    if (saveCurrents) {
+      activated = check(el)
+    } else if (self.initialCurrents.includes(el)) {
+      activated = true
     }
-    // targets
+    // remove classes
+    el.classList.remove(...self.classes, ...self.classesActive, ...self.classesOut, ...self.classesDone, ...self.classesInitial, ...self.classesInverse)
+    const elsInner = Xt.queryAll(el, options.elementsInner)
+    for (const elInner of elsInner) {
+      elInner.classList.remove(...self.classes, ...self.classesIn, ...self.classesInDone, ...self.classesOut, ...self.classesInitial, ...self.classesInverse)
+    }
+    // check targets
     const targets = self.getTargets(el)
     for (const tr of targets) {
-      found = reset(tr)
+      // check if activated
+      if (!activated) {
+        if (saveCurrents) {
+          activated = check(tr)
+        }
+      }
+      // remove classes
+      tr.classList.remove(...self.classes, ...self.classesActive, ...self.classesOut, ...self.classesDone, ...self.classesInitial, ...self.classesInverse)
+      const trsInner = Xt.queryAll(tr, options.targetsInner)
+      for (const trInner of trsInner) {
+        trInner.classList.remove(...self.classes, ...self.classesIn, ...self.classesInDone, ...self.classesOut, ...self.classesInitial, ...self.classesInverse)
+      }
     }
-    return found
+    return activated
   }
 
   /**
@@ -1097,18 +1103,6 @@ class Toggle {
   }
 
   /**
-   * check elements animation
-   * @param {NodeList|Array} elements To be checked
-   * @return {Boolean} If elements are animating
-   */
-  checkAnim(elements) {
-    const self = this
-    // check
-    elements = elements.filter(x => x.classList.contains(self.classesActive[0]) || x.classList.contains(self.classesOut[0]))
-    return elements.length > 0
-  }
-
-  /**
    * set index
    * @param {Node|HTMLElement|EventTarget|Window} element Current element
    */
@@ -1590,7 +1584,7 @@ class Toggle {
     if (Xt.debug) {
       console.debug('Xt.debug mediaLoadedReinit', self.object)
     }
-    // restart
+    // reinit
     self.reinit()
   }
 

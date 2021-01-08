@@ -501,25 +501,22 @@ class Slider extends Xt.Toggle {
     if (!dragger.contains(e.target)) {
       return
     }
-    // handler
+    // not right click or it gets stuck
     if (!e.button || e.button !== 2) {
-      // not right click or it gets stuck
-      if (self.initial || !self.checkAnim(Xt.arrSingle(dragger))) {
-        // logic
-        if (options.eventLimit) {
-          const eventLimit = self.container.querySelectorAll(options.eventLimit)
-          if (!Xt.contains(eventLimit, e.target) || e.target.closest('.event-force')) {
-            self.eventDragstart(dragger, e)
-          }
-        } else {
+      // handler
+      if (options.eventLimit) {
+        const eventLimit = self.container.querySelectorAll(options.eventLimit)
+        if (!Xt.contains(eventLimit, e.target) || e.target.closest('.event-force')) {
           self.eventDragstart(dragger, e)
         }
-        // drag end
-        const dragendHandler = Xt.dataStorage.put(window, `mouseup touchend/drag/${self.ns}`, self.eventDragendHandler.bind(self).bind(self, dragger))
-        const events = ['mouseup', 'touchend']
-        for (const event of events) {
-          addEventListener(event, dragendHandler)
-        }
+      } else {
+        self.eventDragstart(dragger, e)
+      }
+      // dragend
+      const dragendHandler = Xt.dataStorage.put(window, `mouseup touchend/drag/${self.ns}`, self.eventDragendHandler.bind(self).bind(self, dragger))
+      const events = ['mouseup', 'touchend']
+      for (const event of events) {
+        addEventListener(event, dragendHandler)
       }
     }
   }
