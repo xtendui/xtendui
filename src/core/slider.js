@@ -1071,6 +1071,7 @@ class Slider extends Xt.Toggle {
             }
             old = i
           }
+          return found
         }
         found = findNext()
       }
