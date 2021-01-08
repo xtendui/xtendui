@@ -23,7 +23,7 @@
 
 ## About
 
-##### A new approach to Custom Frontend Development
+##### A new paradigm for Custom Frontend Development
 
 Xtend UI is a UI framework for custom styling, interactions and animations. Extremely customizable and designed for building complex user interfaces.
 
