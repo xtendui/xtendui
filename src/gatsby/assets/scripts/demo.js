@@ -506,7 +506,8 @@ const makeFullscreen = (container, initial) => {
       sourceTo.innerHTML = item.querySelector('script[type="text/plain"]').innerHTML
     }
   }
-  // @FIX react when componentDidMount
+  // needs both or sometimes it doesn't open
+  toggle.classList.add('in', 'in-toggle')
   requestAnimationFrame(() => {
     toggle.dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
   })
