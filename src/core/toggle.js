@@ -2664,7 +2664,7 @@ class Toggle {
    * get next element
    * @param {Number} amount
    * @param {Boolean} loop
-   * @return {Number} index
+   * @return {Node|HTMLElement|EventTarget|Window} Element
    */
   getNext(amount = 1, loop = null) {
     const self = this
@@ -2678,12 +2678,15 @@ class Toggle {
    * @param {Number} amount
    * @param {Boolean} force
    * @param {Boolean} loop
+   * @return {Number} Index
    */
   goToNext(amount = 1, force = false, loop = null) {
     const self = this
     // goToNum
     self.inverse = false
-    self.goToNum(self.getNextIndex(amount, loop), force, loop)
+    const index = self.getNextIndex(amount, loop)
+    self.goToNum(index, force, loop)
+    return index
   }
 
   /**
@@ -2720,12 +2723,15 @@ class Toggle {
    * @param {Number} amount
    * @param {Boolean} force
    * @param {Boolean} loop
+   * @return {Number} Index
    */
   goToPrev(amount = 1, force = false, loop = null) {
     const self = this
     // goToNum
     self.inverse = true
-    self.goToNum(self.getPrevIndex(amount, loop), force, loop)
+    const index = self.getPrevIndex(amount, loop)
+    self.goToNum(index, force, loop)
+    return index
   }
 
   /**
@@ -2768,7 +2774,7 @@ class Toggle {
    * get number element
    * @param {Number} index
    * @param {Boolean} loop
-   * @return {Element} element
+   * @return {Node|HTMLElement|EventTarget|Window} Element
    */
   getNum(index = 1, loop = null) {
     const self = this
@@ -2782,12 +2788,14 @@ class Toggle {
    * @param {Number} index
    * @param {Boolean} force
    * @param {Boolean} loop
+   * @return {Number} Index
    */
   goToNum(index, force = false, loop = null) {
     const self = this
     // go
     const el = self.getNum(index, loop)
     self.eventOn(el, force)
+    return index
   }
 
   //

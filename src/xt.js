@@ -194,7 +194,7 @@ Xt.mountCheck = (added = document.documentElement) => {
     }
     // call
     if (objects.length) {
-      for (const [i, object] of objects.entries()) {
+      for (const [index, object] of objects.entries()) {
         // @FIX multiple initialization
         mount.done = mount.done ? mount.done : []
         if (mount.done.includes(object)) {
@@ -202,7 +202,7 @@ Xt.mountCheck = (added = document.documentElement) => {
         }
         mount.done.push(object)
         // call
-        const call = mount.mount({ object, mount, i, matches })
+        const call = mount.mount({ object, mount, index, matches })
         // destroy
         if (call) {
           Xt.unmount.push({
