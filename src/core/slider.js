@@ -1026,11 +1026,10 @@ class Slider extends Xt.Toggle {
   logicDragfrictionend(dragger) {
     const self = this
     const options = self.options
-    const dragPosCurrent = self.detail.dragPosCurrent || 0
     // prevent dragging animation
     dragger.classList.remove('duration-none')
     // check threshold
-    self.detail.dragDist = self.detail.dragPosReal - dragPosCurrent
+    self.detail.dragDist = self.detail.dragPosReal - self.detail.dragPosCurrent
     const direction = Math.sign(self.detail.dragDist)
     if (!self.detail.dragBlock && Math.abs(self.detail.dragDistOther) > Math.abs(self.detail.dragDist)) {
       // drag reset
@@ -1046,26 +1045,29 @@ class Slider extends Xt.Toggle {
         const findNext = () => {
           let dist = 0
           if (direction > 0) {
-            for (let i = self.currentIndex; i < self.group.length; i++) {
+            for (let i = 0; i <= self.currentIndex; i++) {
               const group = self.group[i]
               const pos = Xt.dataStorage.get(group[0], `${self.ns}GroupPos`)
-              dist += Math.abs(pos)
-              if (dragPosCurrent <= dist) {
+              dist = pos
+              console.log(dist, self.detail.dragPosReal, group[0])
+              if (self.detail.dragPosReal >= dist) {
                 return i
               }
             }
           } else {
-            for (let i = self.currentIndex; i >= 0; i--) {
+            for (let i = self.currentIndex; i < self.group.length; i++) {
               const group = self.group[i]
               const pos = Xt.dataStorage.get(group[0], `${self.ns}GroupPos`)
-              dist += Math.abs(pos)
-              if (dragPosCurrent <= dist) {
+              dist += pos
+              console.log(dist, self.detail.dragPosReal, group[0])
+              if (self.detail.dragPosReal >= dist) {
                 return i
               }
             }
           }
         }
         found = findNext()
+        console.log(direction, found, self.currentIndex)
       }
       // goTo with force
       if (found === self.currentIndex) {
