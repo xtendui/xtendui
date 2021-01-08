@@ -74,6 +74,11 @@ module.exports = {
         // prevent browser drag
         '-webkit-user-drag': 'none',
         'user-drag': 'none',
+        // prevent browser selection
+        '-webkit-user-select': 'none',
+        '-moz-user-select': 'none',
+        '-ms-user-select': 'none',
+        'user-select': 'none',
       },
     },
     '.xt-calculating': {
