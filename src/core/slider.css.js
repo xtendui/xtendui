@@ -58,6 +58,11 @@ module.exports = {
       },
     },
     '.slides-inner': {
+      // prevent browser selection
+      '-webkit-user-select': 'none',
+      '-moz-user-select': 'none',
+      '-ms-user-select': 'none',
+      'user-select': 'none',
       // styles
       flexWrap: 'nowrap',
       alignItems: 'flex-start',

@@ -32,6 +32,7 @@ Xtend UI is a UI framework for custom styling, interactions and animations. Extr
 * Positioning with [Popperjs](https://popper.js.org/)
 * Docs with [Gatsby](https://www.gatsbyjs.com/)
 * Icons with [Feather Icons](https://feathericons.com/)
+* Images with [Unsplash](https://source.unsplash.com/)
 
 Supported browsers are as follow: **chrome 38**, **safari 10**, **ios 10**, **firefox 38**, **edge 12**, **opera 25**.
 

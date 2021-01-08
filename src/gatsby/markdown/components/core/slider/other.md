@@ -6,26 +6,6 @@ title: "Other"
 date: "2005-10-10"
 ---
 
-## Media loaded
-
-If you want to animate on image loaded, with `mediaLoaded: true` use the class `.xt-medialoaded` or the js event `medialoaded.xt.slider`.
-
-When you need to reinit the component when the media is loaded and the **width** of the image is calculated with `mediaLoadedReinit: true`.
-
-<div class="table-overflow">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `mediaLoaded:Boolean`                          | `false`        | Add the class `.xt-medialoaded` on img loaded             |
-| Option                  | `mediaLoadedReinit:Boolean`                          | `false`        | Reinit the component on img loaded after a delay set with `Xt.medialoadedDelay`             |
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/core/slider/media-loaded">
-  </demovanilla>
-</demo>
-
 ## Overflow auto
 
 Slider with `overflowAuto:Boolean` automatically disable when not overflowing. It also hides automatically **pagination**, **navigation** and **wrap**.
@@ -77,3 +57,31 @@ To have **browser overflow scroll** on **touch devices** use this **css media qu
   <demovanilla src="vanilla/components/core/slider/touch-overflow">
   </demovanilla>
 </demo>
+
+## Media loaded
+
+Use `loading="lazy"` to lazy load images inside slider.
+
+If you want to animate on image loaded, with `mediaLoaded: true` use the class `.xt-medialoaded` or the js event `medialoaded.xt.slider`.
+
+When you need to reinit the component when the media is loaded and the **width** of the image is calculated with `mediaLoadedReinit: true`.
+
+<div class="table-overflow">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `mediaLoaded:Boolean`                          | `false`        | Add the class `.xt-medialoaded` on img loaded             |
+| Option                  | `mediaLoadedReinit:Boolean`                          | `false`        | Reinit the component on img loaded after a delay set with `Xt.medialoadedDelay`             |
+
+</div>
+
+[[noteDefault]]
+| This demos uses [loader](/components/core/loader) see documentation to **customize**.
+
+<demo>
+  <demovanilla src="vanilla/components/core/slider/media-loaded">
+  </demovanilla>
+</demo>
+
+[[noteDefault]]
+| Images from [Unsplash](https://source.unsplash.com/)

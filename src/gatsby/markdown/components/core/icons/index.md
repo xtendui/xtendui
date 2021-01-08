@@ -50,10 +50,10 @@ Use this code to create **icons with img**.
   </demovanilla>
 </demo>
 
-[[noteDefault]]
-| Xtend UI icons used in this docs are from [Feather Icons](https://feathericons.com).
-
 [[notePrimary]]
 | Icons with img don't support [icons variant](/components/core/icons/content#variant)
+
+[[noteDefault]]
+| Icons from [Feather Icons](https://feathericons.com).
 
 Check subpage to [customize content](/components/core/icons/content).
