@@ -1043,31 +1043,20 @@ class Slider extends Xt.Toggle {
         found = 0
       } else {
         const findNext = () => {
-          let dist = 0
-          if (direction > 0) {
-            for (let i = 0; i <= self.currentIndex; i++) {
-              const group = self.group[i]
-              const pos = Xt.dataStorage.get(group[0], `${self.ns}GroupPos`)
-              dist = pos
-              console.log(dist, self.detail.dragPosReal, group[0])
-              if (self.detail.dragPosReal >= dist) {
-                return i
-              }
-            }
-          } else {
-            for (let i = self.currentIndex; i < self.group.length; i++) {
-              const group = self.group[i]
-              const pos = Xt.dataStorage.get(group[0], `${self.ns}GroupPos`)
-              dist += pos
-              console.log(dist, self.detail.dragPosReal, group[0])
-              if (self.detail.dragPosReal >= dist) {
-                return i
-              }
+          let minDiff = Infinity
+          let minFound = self.currentIndex
+          for (let i = 0; i < self.group.length; i++) {
+            const group = self.group[i]
+            const pos = Xt.dataStorage.get(group[0], `${self.ns}GroupPos`)
+            const diff = Math.abs(self.detail.dragPosReal - pos)
+            if (diff < minDiff) {
+              minDiff = diff
+              minFound = i
             }
           }
+          return minFound
         }
         found = findNext()
-        console.log(direction, found, self.currentIndex)
       }
       // goTo with force
       if (found === self.currentIndex) {
