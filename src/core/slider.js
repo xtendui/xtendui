@@ -45,34 +45,6 @@ class Slider extends Xt.Toggle {
     if (options.keepHeight) {
       self.keepHeight = self.object.querySelector(options.keepHeight)
     }
-    // initSliderGroup
-    self.initSliderGroup()
-    // initSliderPags
-    self.initSliderPags()
-    // elements
-    self.initScopeElements()
-  }
-
-  /**
-   * init start
-   * @param {Boolean} saveCurrents
-   */
-  initStart(saveCurrents = false) {
-    const self = this
-    // initSliderPos
-    if (self.dragger) {
-      self.initSliderPos()
-    }
-    // super
-    super.initStart(saveCurrents)
-  }
-
-  /**
-   * init slider group
-   */
-  initSliderGroup() {
-    const self = this
-    const options = self.options
     // not when empty
     if (!self.targets.length) {
       return false
@@ -89,18 +61,33 @@ class Slider extends Xt.Toggle {
       Xt.dataStorage.set(slide, `${self.ns}SlideLeft`, slide.offsetLeft)
       Xt.dataStorage.set(slide, `${self.ns}SlideWidth`, slide.offsetWidth)
     }
+    // initSliderGroup
+    self.initSliderGroup()
+    // initSliderPos
+    self.initSliderPos()
+    // initSliderPags
+    self.initSliderPags()
+    // elements
+    self.initScopeElements()
+  }
+
+  /**
+   * init slider group
+   */
+  initSliderGroup() {
+    const self = this
+    const options = self.options
     // width
-    const draggerWidth = self.dragger ? self.detail.draggerWidth : self.detail.objectWidth
     let draggerWidthAvailable = 0
     // draggerWidthAvailable
     if (options.group) {
-      draggerWidthAvailable = draggerWidth * options.group
+      draggerWidthAvailable = self.detail.draggerWidth * options.group
     }
     // groupInitial
     self.group = []
     self.group.push([])
     let currentCount = draggerWidthAvailable
-    let totalCount = draggerWidth
+    let totalCount = self.detail.draggerWidth
     let doneFirst = false
     for (const target of self.targets) {
       let targetWidth = Xt.dataStorage.get(target, `${self.ns}SlideWidth`)
@@ -124,7 +111,7 @@ class Slider extends Xt.Toggle {
         currentCount -= targetWidth
       }
       // @FIX when dragger not :visible with draggerWidth === 0 groups of 1 slide
-      if (draggerWidth === 0 && doneFirst) {
+      if (self.detail.draggerWidth === 0 && doneFirst) {
         self.group.push([])
         currentGroup = self.group.length - 1
       }
@@ -149,7 +136,7 @@ class Slider extends Xt.Toggle {
     // drag wrap
     const wrapFirst = []
     const wrapLast = []
-    const wrapMaxWidth = -draggerWidth * (options.drag.wrap - 1)
+    const wrapMaxWidth = -self.detail.draggerWidth * (options.drag.wrap - 1)
     let wrapLastCountIteration = 0
     let wrapFirstCountIteration = 0
     if (self.dragger && options.drag.wrap) {
@@ -169,7 +156,7 @@ class Slider extends Xt.Toggle {
         return cloned
       }
       // wrapLast
-      let wrapLastCount = draggerWidth
+      let wrapLastCount = self.detail.draggerWidth
       const wrapLastFunction = () => {
         for (const [i, group] of self.groupInitial.entries()) {
           wrapLast.push([])
@@ -191,7 +178,7 @@ class Slider extends Xt.Toggle {
       }
       wrapLastFunction()
       // wrapFirst
-      let wrapFirstCount = draggerWidth
+      let wrapFirstCount = self.detail.draggerWidth
       self.groupInitial.reverse()
       const wrapFirstFunction = () => {
         for (const [i, group] of self.groupInitial.entries()) {
@@ -227,6 +214,131 @@ class Slider extends Xt.Toggle {
     self.groupLast = wrapLast
     self.group = wrapFirst.concat(self.group.concat(wrapLast))
     self.wrapIndex = self.groupFirst.length
+  }
+
+  /**
+   * init slider group positions
+   */
+  initSliderPos() {
+    const self = this
+    const options = self.options
+    // reset done
+    for (const slide of self.targets) {
+      Xt.dataStorage.remove(slide, `${self.ns}GroupPosDone`)
+      Xt.dataStorage.remove(slide, `${self.ns}GroupContainDone`)
+    }
+    // @FIX performances
+    for (const slide of self.targets) {
+      Xt.dataStorage.set(slide, `${self.ns}SlideHeight`, slide.children[0].offsetHeight)
+    }
+    // slides pos
+    let slidesWidth = 0
+    for (const slide of self.targets) {
+      // once per group
+      if (!Xt.dataStorage.get(slide, `${self.ns}GroupPosDone`)) {
+        // vars
+        const targets = self.getTargets(slide)
+        let slideLeft = Infinity
+        let slideWidth = 0
+        let slideHeight = 0
+        let slideHeightTemp = 0
+        // vars
+        for (const target of targets) {
+          // @FIX performances
+          const tl = Xt.dataStorage.get(target, `${self.ns}SlideLeft`)
+          const sl = Xt.dataStorage.get(slide, `${self.ns}SlideLeft`)
+          slideLeft = tl < slideLeft ? sl : slideLeft
+          slideWidth += Xt.dataStorage.get(target, `${self.ns}SlideWidth`)
+          slideHeightTemp = Xt.dataStorage.get(target, `${self.ns}SlideHeight`)
+          slidesWidth += slideWidth
+          slideHeight = slideHeightTemp > slideHeight ? slideHeightTemp : slideHeight
+        }
+        for (const target of targets) {
+          Xt.dataStorage.set(target, `${self.ns}GroupPosDone`, true)
+          Xt.dataStorage.set(target, `${self.ns}GroupHeight`, slideHeight)
+        }
+        // pos with alignment
+        let pos
+        if (options.align === 'center') {
+          pos = self.detail.draggerWidth / 2 - slideLeft - slideWidth / 2
+        } else if (options.align === 'left') {
+          pos = -slideLeft
+        } else if (options.align === 'right') {
+          pos = self.detail.draggerWidth - slideLeft - slideWidth
+        }
+        // save pos
+        for (const target of targets) {
+          Xt.dataStorage.set(target, `${self.ns}GroupPos`, pos)
+        }
+      }
+    }
+    // @FIX xt-wrap clone offsetWidth on resize
+    for (const target of self.targets) {
+      target.children[0].style.width = ''
+    }
+    // min max pos with contain
+    if (options.contain && slidesWidth > self.detail.draggerWidth) {
+      // only if slides overflow dragger
+      const slideFirst = self.targets[0]
+      const slideFirstLeft = Xt.dataStorage.get(slideFirst, `${self.ns}SlideLeft`)
+      const slideLast = self.targets[self.targets.length - 1]
+      const slideLastLeft = Xt.dataStorage.get(slideLast, `${self.ns}SlideLeft`)
+      const slideLastWidth = Xt.dataStorage.get(slideLast, `${self.ns}SlideWidth`)
+      const min = -slideFirstLeft
+      const max = -slideLastLeft + self.detail.draggerWidth - slideLastWidth
+      for (let i = 0; i < self.group.length; i++) {
+        const group = self.group[i]
+        for (const slide of group) {
+          // once per group
+          if (!Xt.dataStorage.get(slide, `${self.ns}GroupContainDone`)) {
+            let pos = Xt.dataStorage.get(slide, `${self.ns}GroupPos`)
+            if (pos >= min) {
+              pos = min
+              // reassign group
+              const groupFirst = 0
+              if (i > groupFirst) {
+                for (const target of group) {
+                  self.group[groupFirst].push(target)
+                  target.setAttribute('data-xt-group', `${self.ns}-${groupFirst}`)
+                }
+                self.group.splice(i, 1)
+                i-- // splice reindex
+              }
+            } else if (pos <= max) {
+              pos = max
+              // reassign group
+              const groupLast = self.group.length - 1
+              if (i < groupLast) {
+                for (const target of group) {
+                  self.group[groupLast].push(target)
+                  target.setAttribute('data-xt-group', `${self.ns}-${groupLast}`)
+                }
+                self.group.splice(i, 1)
+                i-- // splice reindex
+              }
+            }
+            for (const target of group) {
+              Xt.dataStorage.set(target, `${self.ns}GroupPos`, pos)
+              Xt.dataStorage.set(target, `${self.ns}GroupContainDone`, true)
+            }
+          }
+        }
+      }
+    }
+    // @FIX position values negative margins
+    for (const target of self.targets) {
+      let pos = Xt.dataStorage.get(target, `${self.ns}GroupPos`)
+      pos += self.detail.fixNegativeMargin
+      Xt.dataStorage.set(target, `${self.ns}GroupPos`, pos)
+    }
+    // set wheel min and max
+    if (options.wheel && options.wheel.selector) {
+      const arr = self.targets.filter(x => !x.classList.contains('xt-wrap'))
+      const first = arr[0]
+      const last = arr[arr.length - 1]
+      self.detail.wheelMin = -Xt.dataStorage.get(first, `${self.ns}GroupPos`)
+      self.detail.wheelMax = -Xt.dataStorage.get(last, `${self.ns}GroupPos`)
+    }
   }
 
   /**
@@ -304,101 +416,6 @@ class Slider extends Xt.Toggle {
           }
         }
       }
-    }
-  }
-
-  /**
-   * init slider group positions
-   */
-  initSliderPos() {
-    const self = this
-    const options = self.options
-    // reset done
-    for (const slide of self.targets) {
-      Xt.dataStorage.remove(slide, `${self.ns}GroupPosDone`)
-    }
-    // @FIX performances
-    const draggerWidth = self.detail.draggerWidth
-    for (const slide of self.targets) {
-      Xt.dataStorage.set(slide, `${self.ns}SlideHeight`, slide.children[0].offsetHeight)
-    }
-    // slides pos
-    let slidesWidth = 0
-    for (const slide of self.targets) {
-      // once per group
-      if (!Xt.dataStorage.get(slide, `${self.ns}GroupPosDone`)) {
-        // vars
-        const targets = self.getTargets(slide)
-        let slideLeft = Infinity
-        let slideWidth = 0
-        let slideHeight = 0
-        let slideHeightTemp = 0
-        // vars
-        for (const target of targets) {
-          // @FIX performances
-          const tl = Xt.dataStorage.get(target, `${self.ns}SlideLeft`)
-          const sl = Xt.dataStorage.get(slide, `${self.ns}SlideLeft`)
-          slideLeft = tl < slideLeft ? sl : slideLeft
-          slideWidth += Xt.dataStorage.get(target, `${self.ns}SlideWidth`)
-          slideHeightTemp = Xt.dataStorage.get(target, `${self.ns}SlideHeight`)
-          slidesWidth += slideWidth
-          slideHeight = slideHeightTemp > slideHeight ? slideHeightTemp : slideHeight
-        }
-        for (const target of targets) {
-          Xt.dataStorage.set(target, `${self.ns}GroupPosDone`, true)
-          Xt.dataStorage.set(target, `${self.ns}GroupHeight`, slideHeight)
-        }
-        // pos with alignment
-        let pos
-        if (options.align === 'center') {
-          pos = draggerWidth / 2 - slideLeft - slideWidth / 2
-        } else if (options.align === 'left') {
-          pos = -slideLeft
-        } else if (options.align === 'right') {
-          pos = draggerWidth - slideLeft - slideWidth
-        }
-        // save pos
-        for (const target of targets) {
-          Xt.dataStorage.set(target, `${self.ns}GroupPos`, pos)
-        }
-      }
-    }
-    // @FIX xt-wrap clone offsetWidth on resize
-    for (const target of self.targets) {
-      target.children[0].style.width = ''
-    }
-    // min max pos with contain
-    if (options.contain && slidesWidth > draggerWidth) {
-      // only if slides overflow dragger
-      const slideFirst = self.targets[0]
-      const slideFirstLeft = Xt.dataStorage.get(slideFirst, `${self.ns}SlideLeft`)
-      const slideLast = self.targets[self.targets.length - 1]
-      const slideLastLeft = Xt.dataStorage.get(slideLast, `${self.ns}SlideLeft`)
-      const slideLastWidth = Xt.dataStorage.get(slideLast, `${self.ns}SlideWidth`)
-      const min = -slideFirstLeft
-      const max = -slideLastLeft + draggerWidth - slideLastWidth
-      for (const group of self.group) {
-        for (const target of group) {
-          let pos = Xt.dataStorage.get(target, `${self.ns}GroupPos`)
-          pos = pos > min ? min : pos
-          pos = pos < max ? max : pos
-          Xt.dataStorage.set(target, `${self.ns}GroupPos`, pos)
-        }
-      }
-    }
-    // @FIX position values negative margins
-    for (const target of self.targets) {
-      let pos = Xt.dataStorage.get(target, `${self.ns}GroupPos`)
-      pos += self.detail.fixNegativeMargin
-      Xt.dataStorage.set(target, `${self.ns}GroupPos`, pos)
-    }
-    // set wheel min and max
-    if (options.wheel && options.wheel.selector) {
-      const arr = self.targets.filter(x => !x.classList.contains('xt-wrap'))
-      const first = arr[0]
-      const last = arr[arr.length - 1]
-      self.detail.wheelMin = -Xt.dataStorage.get(first, `${self.ns}GroupPos`)
-      self.detail.wheelMax = -Xt.dataStorage.get(last, `${self.ns}GroupPos`)
     }
   }
 

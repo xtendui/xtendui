@@ -7,7 +7,13 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 ---
 
 <demo>
-  <demovanilla src="vanilla/components/core/slider/wrap">
+  <demovanilla src="vanilla/components/core/slider/contain-center">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/slider/contain-left">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/slider/contain-right">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/slider/wrap-center">
   </demovanilla>
   <demovanilla src="vanilla/components/core/slider/wrap-left">
   </demovanilla>

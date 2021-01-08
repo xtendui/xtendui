@@ -27,27 +27,6 @@ Align the slides.
   </demovanilla>
 </demo>
 
-## Contain
-
-Contain the slides.
-
-<div class="table-overflow">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `contain:Boolean`                          | `false`        | If true contain the slides on available width            |
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/core/slider/contain-center">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/slider/contain-left">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/slider/contain-right">
-  </demovanilla>
-</demo>
-
 ## Group
 
 With `group: Number` you set a decimal number from 0 to 1 to group the slides with a factor of the available `drag.dragger` width.
@@ -67,6 +46,27 @@ Example of **responsive group** with [match media](/components/core/slider/api#m
   </demovanilla>
 </demo>
 
+## Contain
+
+Contain the slides and **automatically group** them when the scroll position is the same of another slide.
+
+<div class="table-overflow">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `contain:Boolean`                          | `false`        | If true contain the slides on available width            |
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/core/slider/contain-center">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/slider/contain-left">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/slider/contain-right">
+  </demovanilla>
+</demo>
+
 ## Wrap
 
 You can wrap the slides with `drag: { wrap: true }`. With `drag.wrap` you have to set `loop: true` and you can't use `contain: true`.
@@ -80,7 +80,7 @@ You can wrap the slides with `drag: { wrap: true }`. With `drag.wrap` you have t
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/slider/wrap">
+  <demovanilla src="vanilla/components/core/slider/wrap-center">
   </demovanilla>
   <demovanilla src="vanilla/components/core/slider/wrap-left">
   </demovanilla>
