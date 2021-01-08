@@ -3104,7 +3104,6 @@ Toggle.optionsDefaultSuper = {
   // other
   matches: false,
   disabled: false,
-  disableAfterInit: false,
   loop: true,
   jump: false,
   navigation: false,

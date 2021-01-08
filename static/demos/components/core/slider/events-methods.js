@@ -11,7 +11,6 @@ Xt.mount.push({
         time: 2000,
         initial: false,
       },
-      align: 'center',
       drag: {
         wrap: true,
       },

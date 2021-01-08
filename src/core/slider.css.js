@@ -92,15 +92,6 @@ module.exports = {
       padding: `${rem(7)} ${rem(11)}`,
       fontSize: rem(10),
     },
-    '.xt-overflow-auto': {
-      '.slider-pagination, [data-xt-nav], .xt-wrap': {
-        display: 'none !important',
-      },
-      // @FIX disable slider if not overflowing
-      '.slides-inner': {
-        '@apply duration-none transform-none !important': '',
-      },
-    },
     '.slider-expand': {
       // setup
       '.slides': {
@@ -118,6 +109,15 @@ module.exports = {
         display: 'none !important',
       },
     },
+    '.xt-overflow-auto': {
+      '.slider-pagination, [data-xt-nav], .xt-wrap': {
+        display: 'none !important',
+      },
+      // @FIX disable slider if not overflowing
+      '.slides-inner': {
+        '@apply duration-none transform-none !important': '',
+      },
+    },
     '.xt-slider-disabled': {
       '&.slider': {
         // setup
@@ -127,10 +127,6 @@ module.exports = {
         '.xt-wrap': {
           visibility: 'hidden !important',
           opacity: '0 !important',
-        },
-        // styles
-        '.slide': {
-          opacity: '1 !important',
         },
       },
     },

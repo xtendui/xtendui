@@ -77,8 +77,6 @@ class Slider extends Xt.Toggle {
     if (!self.targets.length) {
       return false
     }
-    // @FIX disable slider if not overflowing
-    self.object.classList.remove('xt-overflow-auto')
     // clean wraps
     self.destroyWraps()
     // @FIX performances
@@ -141,7 +139,12 @@ class Slider extends Xt.Toggle {
     // @FIX disable slider if not overflowing
     if (options.overflowAuto && totalCount >= 0) {
       self.object.classList.add('xt-overflow-auto')
-      self.disable()
+      // disable after initialization
+      requestAnimationFrame(() => {
+        self.disable()
+      })
+    } else {
+      self.object.classList.remove('xt-overflow-auto')
     }
     // drag wrap
     const wrapFirst = []
@@ -347,15 +350,12 @@ class Slider extends Xt.Toggle {
         }
         // pos with alignment
         let pos
-        if (!self.object.classList.contains('xt-overflow-auto')) {
-          // @FIX disable slider if not overflowing
-          if (options.align === 'center') {
-            pos = draggerWidth / 2 - slideLeft - slideWidth / 2
-          } else if (options.align === 'left') {
-            pos = -slideLeft
-          } else if (options.align === 'right') {
-            pos = draggerWidth - slideLeft - slideWidth
-          }
+        if (options.align === 'center') {
+          pos = draggerWidth / 2 - slideLeft - slideWidth / 2
+        } else if (options.align === 'left') {
+          pos = -slideLeft
+        } else if (options.align === 'right') {
+          pos = draggerWidth - slideLeft - slideWidth
         }
         // save pos
         for (const target of targets) {
@@ -1308,7 +1308,6 @@ Slider.optionsDefault = {
     frictionLimit: 1.5,
   },
   // other
-  disableAfterInit: true,
   loop: true,
   jump: true,
   jumpOverflow: false,
