@@ -188,57 +188,53 @@ class Toggle {
     self.oldIndex = null
     // [disabled]
     self.destroyDisabled()
-    // automatic initial currents
-    const elements = self.getElementsGroups()
-    if (elements.length) {
-      // check elements
-      for (const element of elements) {
-        // reset
-        const found = self.initCheck(element, saveCurrents)
-        if (found && currents < options.max) {
-          // initial
-          currents++
-          // keep the same level of raf as others
-          requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-              self.eventOn(element, true)
-            })
-          })
-        }
-      }
-      // if currents < min
-      let todo = options.min - currents
-      let start = 0
-      if (todo > 0 && self.targets.length) {
-        // @FIX initial activation drag wrap
-        if ((!self.disabled || !self.initial) && self.wrapIndex) {
-          start = self.wrapIndex
-          todo += start
-        }
+    // check elements
+    for (const element of self.elements) {
+      // reset
+      const found = self.initCheck(element, saveCurrents)
+      if (found && currents < options.max) {
         // initial
-        currents += todo
-      }
-      if (todo > 0 && self.targets.length) {
-        for (let i = start; i < todo; i++) {
-          self.eventOn(self.elements[i], true)
-        }
-      }
-      // currents
-      if (saveCurrents) {
+        currents++
         // keep the same level of raf as others
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
-            self.initialCurrents = self.getCurrents().slice(0)
+            self.eventOn(element, true)
           })
         })
       }
-      // no currents
-      if (currents === 0) {
-        // @FIX autostart after self.initial or it gives error on reinitialization (demos fullscreen)
-        self.initial = false
-        // auto
-        self.eventAutostart()
+    }
+    // if currents < min
+    let todo = options.min - currents
+    let start = 0
+    if (todo > 0 && self.targets.length) {
+      // @FIX initial activation drag wrap
+      if ((!self.disabled || !self.initial) && self.wrapIndex) {
+        start = self.wrapIndex
+        todo += start
       }
+      // initial
+      currents += todo
+    }
+    if (todo > 0 && self.targets.length) {
+      for (let i = start; i < todo; i++) {
+        self.eventOn(self.elements[i], true)
+      }
+    }
+    // currents
+    if (saveCurrents) {
+      // keep the same level of raf as others
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          self.initialCurrents = self.getCurrents().slice(0)
+        })
+      })
+    }
+    // no currents
+    if (currents === 0) {
+      // @FIX autostart after self.initial or it gives error on reinitialization (demos fullscreen)
+      self.initial = false
+      // auto
+      self.eventAutostart()
     }
     // initialized class
     if (!options.classSkip) {
@@ -285,7 +281,7 @@ class Toggle {
     el.classList.remove(...self.classes, ...self.classesActive, ...self.classesOut, ...self.classesDone, ...self.classesInitial, ...self.classesInverse)
     const elsInner = Xt.queryAll(el, options.elementsInner)
     for (const elInner of elsInner) {
-      elInner.classList.remove(...self.classes, ...self.classesIn, ...self.classesInDone, ...self.classesOut, ...self.classesInitial, ...self.classesInverse)
+      elInner.classList.remove(...self.classes, ...self.classesActive, ...self.classesOut, ...self.classesDone, ...self.classesInitial, ...self.classesInverse)
     }
     // check targets
     const targets = self.getTargets(el)
@@ -300,7 +296,14 @@ class Toggle {
       tr.classList.remove(...self.classes, ...self.classesActive, ...self.classesOut, ...self.classesDone, ...self.classesInitial, ...self.classesInverse)
       const trsInner = Xt.queryAll(tr, options.targetsInner)
       for (const trInner of trsInner) {
-        trInner.classList.remove(...self.classes, ...self.classesIn, ...self.classesInDone, ...self.classesOut, ...self.classesInitial, ...self.classesInverse)
+        trInner.classList.remove(
+          ...self.classes,
+          ...self.classesActive,
+          ...self.classesOut,
+          ...self.classesDone,
+          ...self.classesInitial,
+          ...self.classesInverse
+        )
       }
     }
     return activated
@@ -869,14 +872,14 @@ class Toggle {
     Xt.dataStorage.set(img, `${self.ns}MedialoadedDone`, true)
     // mediaLoadedReinit
     if (options.mediaLoadedReinit && deferred) {
-      clearTimeout(Xt.dataStorage.get(self.object, `${self.ns}MedialoadedInit` + `Timeout`))
-      Xt.dataStorage.set(
+      Xt.eventDelay(
+        { detail: { delay: Xt.medialoadedDelay } },
         self.object,
-        `${self.ns}MedialoadedInit` + `Timeout`,
-        setTimeout(() => {
+        () => {
           // mediaLoaded
           self.eventMediaLoadedReinit()
-        }, Xt.medialoadedDelay)
+        },
+        `${self.ns}MedialoadedReinit`
       )
     }
     // mediaLoaded
@@ -2958,8 +2961,6 @@ class Toggle {
    */
   reinit(saveCurrents = true) {
     const self = this
-    // @FIX bug when remove all elements, element becomes the object, then and add new elements
-    self.destroy(true)
     // reinit
     self.initLogic(saveCurrents)
     // listener dispatch

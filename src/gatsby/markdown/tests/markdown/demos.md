@@ -8,6 +8,21 @@ title: "Demos"
 ## Demos
 
 <demo>
+  <demovanilla src="vanilla/components/core/slider/contain-center">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/slider/contain-left">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/slider/contain-right">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/slider/wrap-center">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/slider/wrap-left">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/slider/wrap-right">
+  </demovanilla>
+</demo>
+
+<demo>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/toggle/events-methods">
   </div>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/slider/events-methods">
@@ -42,23 +57,8 @@ title: "Demos"
 <demo>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/hero/slider-hero-v2">
   </div>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/hero/slider-hero-v1">
-  </div>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/layout/industrial-layout-v1">
-  </div>
-</demo>
-
-<demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/navigation/menu-navigation-v1">
-  </div>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/animation/xtend-v1">
-  </div>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/animation/collapse-v1">
-  </div>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/layout/furniture-layout-v1">
-  </div>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/listing/products-listing-v1">
   </div>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/listing/products-listing-v2">
+  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/navigation/menu-navigation-v1">
   </div>
 </demo>

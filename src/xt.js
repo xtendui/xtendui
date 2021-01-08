@@ -20,8 +20,8 @@ Xt.mount = []
 Xt.unmount = []
 Xt.currents = {} // Xt currents based on namespace (so shared between Xt objects)
 Xt.optionsGlobal = {}
-Xt.resizeDelay = 250
 Xt.scrollDelay = false
+Xt.resizeDelay = 250
 Xt.medialoadedDelay = 250
 Xt.stickyIndex = 800
 Xt.scrollRestoration = 'auto'
@@ -1099,7 +1099,7 @@ Xt.eventDelay = (e, element, func, prefix = '', instant = false) => {
   const container = document.documentElement
   cancelAnimationFrame(Xt.dataStorage.get(element, `${prefix}Frame`))
   clearTimeout(Xt.dataStorage.get(element, `${prefix}Timeout`))
-  if (e && e.type && (e.type === 'resize' || e.type === 'scroll')) {
+  if (e) {
     const delay = e.detail !== undefined && e.detail.delay !== undefined ? e.detail.delay : instant ? 0 : Xt[`${e.type}Delay`]
     if (e.type === 'resize') {
       const w = window.innerWidth

@@ -152,7 +152,7 @@ class Slider extends Xt.Toggle {
       const cloneSlide = slide => {
         const cloned = slide.cloneNode(true)
         cloned.classList.add('xt-clone', 'xt-wrap')
-        cloned.classList.remove(...self.classes, ...self.classesActive, ...self.classesOut, ...self.classesInitial, ...self.classesInverse)
+        cloned.classList.remove(...self.classes, ...self.classesActive, ...self.classesOut, ...self.classesDone, ...self.classesInitial, ...self.classesInverse)
         return cloned
       }
       // wrapLast

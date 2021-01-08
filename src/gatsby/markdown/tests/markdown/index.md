@@ -6,25 +6,6 @@ title: "Markdown"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
-<demo>
-  <demovanilla src="vanilla/components/core/slider/contain-center">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/slider/contain-left">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/slider/contain-right">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/slider/wrap-center">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/slider/wrap-left">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/slider/wrap-right">
-  </demovanilla>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/slider/events-methods">
-  </div>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/hero/slider-hero-v2">
-  </div>
-</demo>
-
 ## Markdown
 
 description: "Examples of breadcrumbs, with all the basic functionality and more."
