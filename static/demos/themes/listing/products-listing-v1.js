@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger)
  */
 
 Xt.mount.push({
-  matches: '#iframe--products-listing-v1 a.listing-item',
+  matches: '#iframe--products-listing-v1 .listing-item',
   mount: ({ object }) => {
     // vars
 

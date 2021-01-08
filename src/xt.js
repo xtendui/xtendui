@@ -195,11 +195,12 @@ Xt.mountCheck = (added = document.documentElement) => {
     // call
     if (objects.length) {
       for (const [i, object] of objects.entries()) {
-        // @FIX multiple initialization because we observe also childs with querySelectorAll
-        if (Xt.dataStorage.get(object, `Mount${matches}`)) {
+        // @FIX multiple initialization
+        mount.done = mount.done ? mount.done : []
+        if (mount.done.includes(object)) {
           return
         }
-        Xt.dataStorage.set(object, `Mount${matches}`, true)
+        mount.done.push(object)
         // call
         const call = mount.mount({ object, mount, i, matches })
         // destroy
@@ -208,7 +209,9 @@ Xt.mountCheck = (added = document.documentElement) => {
             object: object,
             unmount: call,
             unmountRemove: () => {
-              Xt.dataStorage.remove(object, `Mount${matches}`)
+              // @FIX multiple initialization
+              mount.done = mount.done.filter(x => x !== object)
+              // unmount remove
               Xt.unmount = Xt.unmount.filter(x => {
                 return x.object !== object && x.matches !== matches
               })
