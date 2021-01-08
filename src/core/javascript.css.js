@@ -63,14 +63,17 @@ module.exports = {
       },
     },
     '.xt-grab': {
-      // setup
-      '@apply select-none': '',
+      // prevent browser selection
+      '-webkit-user-select': 'none',
+      '-moz-user-select': 'none',
+      '-ms-user-select': 'none',
+      'user-select': 'none',
+      // styles
       cursor: 'grab',
       'a, img': {
         // prevent browser drag
-        userDrag: 'none',
-        // prevent browser selection
-        userSelect: 'none',
+        '-webkit-user-drag': 'none',
+        'user-drag': 'none',
       },
     },
     '.xt-calculating': {

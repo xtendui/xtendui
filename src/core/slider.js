@@ -29,6 +29,7 @@ class Slider extends Xt.Toggle {
     // dragger
     if (options.drag && options.drag.dragger) {
       self.dragger = self.object.querySelector(options.drag.dragger)
+      self.destroyElements.push(self.dragger)
     }
     // @FIX performances
     self.detail.objectWidth = self.object.offsetWidth
@@ -411,17 +412,15 @@ class Slider extends Xt.Toggle {
     const dragger = self.dragger
     // dragger
     if (options.drag && !options.drag.manual) {
-      // @FIX prevent dragging links and images
-      for (const img of self.dragger.querySelectorAll('img')) {
-        const imgnodragHandler = Xt.dataStorage.put(img, `mousedown/drag/${self.ns}`, self.eventImgnodragHandler.bind(self))
-        img.addEventListener('mousedown', imgnodragHandler)
-      }
       // drag start
       const dragstartHandler = Xt.dataStorage.put(window, `mousedown touchstart/drag/${self.ns}`, self.eventDragstartHandler.bind(self).bind(self, dragger))
       const events = ['mousedown', 'touchstart']
       for (const event of events) {
         addEventListener(event, dragstartHandler, { passive: true })
       }
+      // @FIX prevent dragging links and images
+      const dragstartFixHandler = Xt.dataStorage.put(window, `dragstart/drag/${self.ns}`, self.eventDragstartFix)
+      dragger.addEventListener('dragstart', dragstartFixHandler)
       // xt-grab
       if (!self.disabled) {
         dragger.classList.add('xt-grab')
@@ -466,10 +465,10 @@ class Slider extends Xt.Toggle {
   //
 
   /**
-   * drag fix handler
+   * element drag fix
    * @param {Event} e
    */
-  eventImgnodragHandler(e) {
+  eventDragstartFix(e) {
     e.preventDefault()
   }
 
