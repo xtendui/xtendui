@@ -19,6 +19,7 @@ Xt.mount.push({
             self.options.on = 'click'
             self.options.off = false
           }
+          self.destroy(true)
           self.reinit()
         }
       }
@@ -190,14 +191,16 @@ Xt.mount.push({
 
     // enter
 
-    const eventEnter = e => {
-      const el = e.target
+    const eventEnter = function () {
+      // eslint-disable-next-line no-invalid-this
+      const el = this
       // eventOff after eventOn sequential interaction
       cancelAnimationFrame(Xt.dataStorage.get(object, 'lineFrame'))
       Xt.dataStorage.set(
         object,
         'lineFrame',
         requestAnimationFrame(() => {
+          console.log('enter', el)
           // line
           const lineX = el.offsetLeft
           const lineY = el.getBoundingClientRect().top + el.offsetHeight
@@ -213,6 +216,10 @@ Xt.mount.push({
 
     for (const btn of btns) {
       btn.addEventListener('mouseenter', eventEnter, true)
+      const drop = btn.closest('.drop-container')
+      if (drop) {
+        drop.addEventListener('on.xt.drop', eventEnter.bind(btn), true)
+      }
     }
 
     // leave
@@ -227,6 +234,7 @@ Xt.mount.push({
         'lineFrame',
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
+            console.log('leave', el)
             // not when drop is still open
             const dropBtnActive = object.querySelector('.drop-container.active')
             if (!dropBtnActive) {
