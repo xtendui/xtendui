@@ -226,31 +226,6 @@ Xt.mount.push({
             ease: 'quint.inOut',
           })
       }
-
-      // fade
-
-      ScrollTrigger.batch(triggers, {
-        once: true,
-        start: 'top bottom-=50px',
-        end: 'bottom top+=50px',
-        onEnter: (batch, scrollTriggers) => {
-          const triggers = batch.filter(x => !x.dataset.animated)
-          if (triggers.length) {
-            const direction = scrollTriggers[0].direction
-            const scale = direction > 0 ? 1.02 : 0.98
-            gsap.killTweensOf(triggers)
-            gsap.set(triggers, { scale: scale, opacity: 0 })
-            gsap.to(triggers, { opacity: 1, scale: 1, duration: 0.75, ease: 'quart.out', stagger: 0.15 })
-          }
-        },
-        onRefresh: (batch, scrollTriggers) => {
-          for (const self of scrollTriggers) {
-            if (self.progress === 0) {
-              self.trigger.dataset.animated = 'true'
-            }
-          }
-        },
-      })
     })
   },
 })
