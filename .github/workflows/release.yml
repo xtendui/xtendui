@@ -5,7 +5,8 @@ on:
     workflows: ["Test"]
     branches:
       - master
-      - 0.16
+      - beta
+      - 1.0-stable
     types:
       - completed
 
