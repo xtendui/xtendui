@@ -9,6 +9,8 @@ on:
   pull_request:
     branches:
       - master
+      - beta
+      - 1.0-stable
 
 env:
   NODE: 12.x
