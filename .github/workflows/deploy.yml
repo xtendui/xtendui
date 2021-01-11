@@ -20,8 +20,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
       with:
-        persist-credentials: false
-        ref: ${{ github.event.workflow_run.head_branch }}
+        ref: ${{ github.event.workflow_run.head_sha }}
     - name: Node
       uses: actions/setup-node@v1
       with:
