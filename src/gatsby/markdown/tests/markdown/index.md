@@ -60,7 +60,7 @@ See [mouse follow addon](/components/core/loader) to create a **loader with mous
 | List `ul` and `old` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
 
 [[noteDefault]]
-| This demos uses [multiple mount object](/@TODO) for **batching animations** also on content **added dynamically to the dom**.
+| This demos uses [multiple mount object](/components/globals/javascript#utilities-xt-mount) for **batching animations** also on content **added dynamically to the dom**.
 
 [[noteDefault]]
 | This demos uses [loader](/components/core/loader) see documentation to **customize**.
@@ -97,13 +97,17 @@ See [mouse follow addon](/components/core/loader) to create a **loader with mous
 
 <div class="table-overflow">
 
+|                         | Syntax                                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Variable                  | `Xt.mount:Array`              | Array of **mount objects**              |
+
+</div>
+
+<div class="table-overflow">
+
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Function                  | `Xt.eventDelay:Function`              | `event:Event, element:Node, function:Function, prefix:String = '', instant:Boolean = false`       | event delay wrapper                  |
-| Variable                  | `Xt.resizeDelay:Number|Boolean`              | `500`        | Delay for the `resize` event with `Xt.eventDelay`            |
-| Option                    | `elements:Query`                          | `false`        | Elements query            |
-| Object                   | `let self = Xt.get('xt-drop', {DOM element})`       | `object` `elements` `targets` | Get object self for this component class             |
-| Property                  | `initial:Boolean`       | If initial or reset activation            |
 
 </div>
 

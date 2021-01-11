@@ -22,7 +22,7 @@ Use [Gsap batch](https://greensock.com/docs/v3/Plugins/ScrollTrigger/static.batc
 </div>
 
 [[noteDefault]]
-| This demos uses [multiple mount object](/@TODO) for **batching animations** also on content **added dynamically to the dom**.
+| This demos uses [multiple mount object](/components/globals/javascript#utilities-xt-mount) for **batching animations** also on content **added dynamically to the dom**.
 
 <demo>
   <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/fade"></div>
@@ -30,7 +30,7 @@ Use [Gsap batch](https://greensock.com/docs/v3/Plugins/ScrollTrigger/static.batc
 
 ## Event
 
-Always hide the elements only if `body:not(.xt-noscroll)` to make them **visible if browser doesn't support scroll** (crawlers, etc..).
+Always hide the elements only if `body:not(.xt-noscroll)` to make them **visible if browser doesn't support scroll** (e.g.: crawlers).
 
 You can use `onEnter`, `onLeave`, `onEnterBack`, `onLeaveBack`, `onToggle`, `onUpdate`, `onScrubComplete`, and `onRefresh` to **animate on certain events**.
 

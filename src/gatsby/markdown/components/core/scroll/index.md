@@ -28,7 +28,7 @@ module.exports = {
 }
 ```
 
-# Usage
+## Usage
 
 Use this code to create a **fade**.
 

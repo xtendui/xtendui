@@ -91,14 +91,14 @@ export default class Page extends React.Component {
                           <div className="gatsby_home-main_feature_right">
                             <ul>
                               <li>
-                                <strong>API</strong> with customizzable behaviour.
+                                <strong>API</strong> with customizzable behaviour (e.g.: <Link to="/components/core/toggle/api">toggle</Link>).
                               </li>
                               <li>
                                 Ecosystem of vanilla javascript <strong>plugins and addons</strong>.
                               </li>
                               <li>
-                                A system to <strong>mount components</strong> with <strong>mutation observer queries</strong>, to structure your javascript code
-                                better.
+                                A system to <Link to="/components/globals/javascript#utilities-xt-mount">mount components</Link> with{' '}
+                                <strong>mutation observer queries</strong>, to structure your javascript code better.
                               </li>
                             </ul>
                           </div>
@@ -117,7 +117,7 @@ export default class Page extends React.Component {
                                 Javascript animations when they are <strong>too complex for css</strong>.
                               </li>
                               <li>
-                                <strong>Gsap ScrollTrigger</strong> for scroll and sticky interactions.
+                                <strong>Gsap ScrollTrigger</strong> for <Link to="/components/core/scroll">scroll interactions</Link>.
                               </li>
                             </ul>
                           </div>

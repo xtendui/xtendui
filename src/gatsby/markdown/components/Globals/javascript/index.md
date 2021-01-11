@@ -82,10 +82,100 @@ addEventListener('resize', animationResponsive)
 animationResponsive()
 ```
 
-## Xt.debug
+## Utilities
+#### Xt.debug
+
+Xtend sends debug messages on `console.debug`, you can find them activating the **verbose console log**.
 
 Set `NODE_ENV=development` to have **Xt.debug activated**. On Linux and mac globally with `export NODE_ENV = development`, on windows globally with `Add-Content -Path $Profile.CurrentUserAllHosts -Value '$Env:NODE_ENV = "development"'`.
+#### Xt.ready
 
+You can execute a function on DOM ready.
+
+<div class="table-overflow">
+
+|                         | Syntax                                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Variable                  | `Xt.ready:Function`              | Execute a function on DOM ready              |
+
+</div>
+
+Or also have css respond to DOM ready with the selector `body.xt-ready`.
+
+#### Xt.mount
+
+You can add Javascript code as a **vanilla component** with `Xt.mount`.
+
+To execute javascript code we use `Xt.mount` for two important reasons:
+
+* Mount listens and execute the query with [Mutation Obsever](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver). So the **code gets executed also if the Node is added on the DOM asynchronously**.
+
+* It create a **anonymous functions to encapsulate code** so **each block is self contained** and it behaves as a sort of **component for Vanilla Html and Js components**.
+
+<div class="table-overflow">
+
+|                         | Syntax                                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Variable                  | `Xt.mount:Array`              | Array of **mount objects**              |
+| Variable                  | `{ matches:String, mount:Function }`       | Example **mount object**                 |
+| Variable                  | `{ object:Node, mount:Function, index:Number, matches:String }`       | Example **mount callback**                 |
+
+</div>
+
+Here's an example of **mounting a query component**, the **return function to unmount** is executed on DOM removal of the query nodes.
+
+```js
+Xt.mount.push({
+  matches: '.my-query',
+  mount: ({ object, mount, index, matches }) => {
+    // logic
+
+    console.log('mounted', object)
+
+    // unmount
+
+    return () => {
+      console.log('unmounted', object)
+    }
+  },
+})
+```
+
+By using `requestAnimationFrame` and `cancelAnimationFrame` you can **execute multiple object mounts** that happends at the same frame.
+
+```js
+Xt.mount.push({
+  matches: '.my-query',
+  mount: ({ object, mount, index, matches }) => {
+    // multiple mount object with raf
+
+    mount.objects = mount.objects ? mount.objects : []
+    mount.objects.push(object)
+    cancelAnimationFrame(mount.raf)
+    mount.raf = requestAnimationFrame(() => {
+      // reset mount object
+
+      const objects = mount.objects
+      mount.objects = []
+
+      // logic
+
+      console.log(objects)
+    })
+  },
+})
+```
+
+#### Viewport height
+
+The document has this css variables added `--vh` for viewport height that **changes only on horizontal resize**, useful to have **mobile viewport height that doesn't resize on vertical scroll**.
+
+```css
+.my-selector {
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+}
+```
 ## Event Delay
 
 For special events like the `resize` and `scroll` events we use a special wrapper `Xt.eventDelay` that set the delay on which the resize gets triggered. It's useful also if you need to **execute one time** a function **with multiple calls**.
