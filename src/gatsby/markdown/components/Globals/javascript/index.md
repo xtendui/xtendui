@@ -168,7 +168,17 @@ Xt.mount.push({
 
 #### Viewport height
 
-The document has this css variables added `--vh` for viewport height that **changes only on horizontal resize**, useful to have **mobile viewport height that doesn't resize on vertical scroll**.
+You have some utilities for viewport height that **changes only on horizontal resize**, useful to have **mobile viewport height that doesn't resize on vertical scroll**.
+
+<div class="table-overflow">
+
+|                         | Syntax                                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Variable                  | `Xt.innerHeight:Number`              | Get window height without mobile resize on page scroll              |
+
+</div>
+
+Or also use css variables for viewport height `--vh`.
 
 ```css
 .my-selector {
@@ -176,6 +186,7 @@ The document has this css variables added `--vh` for viewport height that **chan
   height: calc(var(--vh, 1vh) * 100);
 }
 ```
+
 ## Event Delay
 
 For special events like the `resize` and `scroll` events we use a special wrapper `Xt.eventDelay` that set the delay on which the resize gets triggered. It's useful also if you need to **execute one time** a function **with multiple calls**.
