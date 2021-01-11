@@ -2,7 +2,7 @@ import { Xt } from 'xtendui'
 
 Xt.mount.push({
   matches: '.demo--tooltip--swap-click',
-  mount: object => {
+  mount: ({ object }) => {
     // vars
 
     const tooltip = object.parentNode.querySelector('.tooltip')

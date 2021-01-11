@@ -3,13 +3,15 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/addons/googlelocator'
 
 Xt.mount.push({
-  matches: '#iframe--googlelocator body .googlelocator', // add your own selector instead of body to contain the code
-  mount: object => {
+  matches: '#iframe--googlelocator .googlelocator',
+  mount: ({ object }) => {
     // add yout api key here
 
     Xt.addScript(
       'https://maps.googleapis.com/maps/api/js?key=AIzaSyDSZt9TUgS20QyAbAAL-X3tJIKVLEaCrts&v=3&libraries=places,geometry&language=en&&region=US&callback=demoGooglelocator'
     )
+
+    Xt.addScript('https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js')
 
     // init
 

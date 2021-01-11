@@ -2,7 +2,7 @@ import { Xt } from 'xtendui'
 
 Xt.mount.push({
   matches: '#demo--overlay-events, #demo--overlay-events-alt',
-  mount: object => {
+  mount: ({ object }) => {
     // init
 
     let self = new Xt.Overlay(object, {
