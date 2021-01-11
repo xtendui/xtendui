@@ -2,7 +2,7 @@ import { Xt } from 'xtendui'
 
 Xt.mount.push({
   matches: '.demo--custom-constrain',
-  mount: object => {
+  mount: ({ object }) => {
     // eventValidation
 
     const eventValidation = () => {

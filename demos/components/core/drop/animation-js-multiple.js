@@ -4,7 +4,7 @@ import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '.demo--drop-animation-js-multiple',
-  mount: object => {
+  mount: ({ object }) => {
     // vars
 
     const targetTimeOn = 0.7

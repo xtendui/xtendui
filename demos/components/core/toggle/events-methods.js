@@ -4,7 +4,7 @@ const cardToggle = require('components/snippets/classes/card-toggle').default
 
 Xt.mount.push({
   matches: '#demo--toggle-events',
-  mount: object => {
+  mount: ({ object }) => {
     // init
 
     let self = new Xt.Toggle(object, {

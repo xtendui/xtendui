@@ -2,7 +2,7 @@ import { Xt } from 'xtendui'
 
 Xt.mount.push({
   matches: '.jumptocontent',
-  mount: object => {
+  mount: ({ object }) => {
     // event
 
     const documentFocusin = e => {
