@@ -19,9 +19,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v2.3.2
+      uses: actions/checkout@v2
       with:
-        ref: ${{ github.event.workflow_run.head_sha }}
+        persist-credentials: false
+        ref: ${{ github.event.workflow_run.head.sha }}
     - name: Node
       uses: actions/setup-node@v1
       with:
