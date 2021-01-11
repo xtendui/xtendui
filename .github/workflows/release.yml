@@ -21,7 +21,9 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
       with:
-        ref: ${{ github.event.workflow_run.head.sha }}
+        persist-credentials: false
+        fetch-depth: 0
+        ref: ${{ github.event.workflow_run.head.ref }}
     - name: Node
       uses: actions/setup-node@v1
       with:
