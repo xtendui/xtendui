@@ -2,7 +2,7 @@ import { Xt } from 'xtendui'
 
 Xt.mount.push({
   matches: '.demo--multilevel',
-  mount: ({ object }) => {
+  mount: object => {
     // init
 
     let self = new Xt.Toggle(object, {

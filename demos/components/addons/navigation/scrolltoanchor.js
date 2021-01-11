@@ -5,8 +5,12 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 gsap.registerPlugin(ScrollToPlugin)
 
 Xt.mount.push({
-  matches: '#iframe--scrolltoanchor body',
-  mount: ({ object }) => {
+  matches: '#iframe--scrolltoanchor body #gatsby_body-inner', // add your own selector instead of body to contain the code
+  mount: object => {
+    // vars
+
+    object = document.documentElement
+
     // init
 
     let self = new Xt.Scrolltoanchor(object, {
@@ -29,14 +33,14 @@ Xt.mount.push({
 
     const eventChange = () => {
       // val
+      const scrollingElement = self.scrollElementCurrent
       let pos = self.position - self.scrollSpace - self.scrollDistance
       const min = 0
-      const max = self.scrollElement.scrollHeight - self.scrollElement.clientHeight
+      const max = scrollingElement.scrollHeight - scrollingElement.offsetHeight
       pos = pos < min ? min : pos
       pos = pos > max ? max : pos
       // scroll
-      gsap.killTweensOf(self.scrollElement)
-      gsap.to(self.scrollElement, { scrollTo: pos, duration: 1, ease: 'quart.inOut' })
+      gsap.to(scrollingElement, { scrollTo: pos, duration: 1, ease: 'quart.inOut' })
     }
 
     self.object.addEventListener('change.xt.scrolltoanchor', eventChange)

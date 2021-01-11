@@ -2,7 +2,7 @@ import { Xt } from 'xtendui'
 
 Xt.mount.push({
   matches: '#demo--drop-events',
-  mount: ({ object }) => {
+  mount: object => {
     // init
 
     let self = new Xt.Drop(object)
