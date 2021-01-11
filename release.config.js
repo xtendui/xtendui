@@ -1,7 +1,7 @@
 module.exports = {
   debug: true,
   repositoryUrl: 'https://github.com/minimit/xtendui',
-  branches: ['master'],
+  branches: ['master', { name: '1.0-stable', prerelease: false, range: '1.x.x' }, { name: 'beta', prerelease: true }],
   plugins: [
     ['@semantic-release/commit-analyzer'],
     ['@semantic-release/release-notes-generator'],
