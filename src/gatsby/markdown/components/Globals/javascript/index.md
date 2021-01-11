@@ -88,17 +88,17 @@ Set `NODE_ENV=development` to have **Xt.debug activated**. On Linux and mac glob
 
 ## Event Delay
 
-For the `resize` and `scroll` events we use a special wrapper `Xt.eventDelay` that set the delay on which the resize gets triggered with `Xt.resizeDelay` and `Xt.scrollDelay`.
+For special events like the `resize` and `scroll` events we use a special wrapper `Xt.eventDelay` that set the delay on which the resize gets triggered. It's useful also if you need to **execute one time** a function **with multiple calls**.
 
 ```js
 addEventListener('resize', e => {
-  Xt.eventDelay(e, document.documentElement, () => {
+  Xt.eventDelay({ event: e, element: document.documentElement, func: () => {
     // logic
   })
 })
 
 addEventListener('scroll', e => {
-  Xt.eventDelay(e, document.documentElement, () => {
+  Xt.eventDelay(event: e, element: document.documentElement, func: () => {
     // logic
   })
 })
@@ -108,14 +108,16 @@ addEventListener('scroll', e => {
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Function                  | `Xt.eventDelay:Function`              | `e:Event, element:Node, function:Function, prefix:String = '', instant:Boolean = false`       | event delay wrapper                  |
+| Function                  | `Xt.eventDelay:Function`              | `event:Event, element:Node, function:Function, prefix:String = '', instant:Boolean = false`       | event delay wrapper                  |
 | Variable                  | `Xt.scrollDelay:Number|Boolean`              | `false`        | Delay for the `scroll` event with `Xt.eventDelay`                 |
 | Variable                  | `Xt.resizeDelay:Number|Boolean`              | `250`        | Delay for the `resize` event with `Xt.eventDelay`            |
 | Variable                  | `Xt.medialoadedDelay:Number|Boolean`              | `250`        | Delay for the `mediaLoaded` event with `Xt.eventDelay`            |
 
 </div>
 
-You can also manually specify a **custom delay**, for instant use `delay: 0`.
+You can also manually override with a **custom delay on execution** passing to the **event object** a `detail.delay` value.
+
+For example if you want to override the default delay with an instant one use `detail.delay: 0`.
 
 ```js
 dispatchEvent(new CustomEvent('resize', { detail: { delay: 0 } }))
@@ -133,18 +135,20 @@ dispatchEvent(new CustomEvent('resize', { detail: { force: true } }))
 
 #### Resize Container
 
-You can trigger some components events only inside some **container node**, not possible normally for resize events, just use `e.detail.container`:
+You can **trigger resize events only inside** some **container node**, not possible normally for resize events, just use `e.detail.container`.
+
+```js
+dispatchEvent(new CustomEvent('resize', { detail: { container: document.querySelector('.my-container') } }))
+```
+
+If you want to listen to it, this example explains the listener with a container check.
 
 ```js
 const checkResize = document.querySelector('.my-element')
 const eventResize = function (e) {
-  // triggering e.detail.container
   if (!e || !e.detail || !e.detail.container || e.detail.container.contains(checkResize)) {
     // logic
   }
 }
 document.querySelector.addEventListener(eventResize)
-
-// triggering e.detail.container
-dispatchEvent(new CustomEvent('resize', { detail: { force: true, container: document.querySelector('.my-container') } }))
 ```

@@ -1095,18 +1095,18 @@ Xt.visible = el => {
  * @param {String} prefix Timeout prefix
  * @param {Boolean} instant If instant
  */
-Xt.eventDelay = (e, element, func, prefix = '', instant = false) => {
+Xt.eventDelay = ({ event, element, func, prefix = '', instant = false }) => {
   const container = document.documentElement
   cancelAnimationFrame(Xt.dataStorage.get(element, `${prefix}Frame`))
   clearTimeout(Xt.dataStorage.get(element, `${prefix}Timeout`))
-  if (e) {
-    const delay = e.detail !== undefined && e.detail.delay !== undefined ? e.detail.delay : instant ? 0 : Xt[`${e.type}Delay`]
-    if (e.type === 'resize') {
+  if (event) {
+    const delay = event.detail !== undefined && event.detail.delay !== undefined ? event.detail.delay : instant ? 0 : Xt[`${event.type}Delay`]
+    if (event.type === 'resize') {
       const w = window.innerWidth
       const h = window.innerHeight
       // multiple calls check
       if (
-        (e.detail === undefined || e.detail.force === undefined) && // not when setting delay on event
+        (event.detail === undefined || event.detail.force === undefined) && // not when setting delay on event
         Xt.dataStorage.get(container, 'xtEventDelayWidth') === w && // when width changes
         (matchMedia('(hover: none)').matches || Xt.dataStorage.get(container, 'xtEventDelayHeight') === h) // when height changes not touch
       ) {
@@ -1126,19 +1126,19 @@ Xt.eventDelay = (e, element, func, prefix = '', instant = false) => {
     }
     // delay
     if (!delay) {
-      Xt.dataStorage.set(element, `${prefix}Frame`, requestAnimationFrame(func.bind(e)))
+      Xt.dataStorage.set(element, `${prefix}Frame`, requestAnimationFrame(func.bind(event)))
     } else {
       Xt.dataStorage.set(
         element,
         `${prefix}Timeout`,
         setTimeout(() => {
           // func
-          func(e)
+          func(event)
         }, delay)
       )
     }
   } else {
-    Xt.dataStorage.set(element, `${prefix}Frame`, requestAnimationFrame(func.bind(e)))
+    Xt.dataStorage.set(element, `${prefix}Frame`, requestAnimationFrame(func.bind(event)))
   }
 }
 
@@ -1156,15 +1156,15 @@ Xt.innerHeightSet = () => {
 // init
 
 addEventListener('resize', e => {
-  Xt.eventDelay(
-    e,
-    document.documentElement,
-    () => {
+  Xt.eventDelay({
+    event: e,
+    element: document.documentElement,
+    func: () => {
       Xt.innerHeightSet()
     },
-    'xtWindowHeightResize',
-    true
-  )
+    prefix: 'xtWindowHeightResize',
+    instant: true,
+  })
 })
 Xt.innerHeightSet()
 
