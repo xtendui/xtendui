@@ -1,22 +1,118 @@
 name: Release
 
 on:
-  workflow_run:
-    workflows: ["Test"]
+  push:
     branches:
       - master
       - beta
       - 1.0-stable
-    types:
-      - completed
 
 env:
   NODE: 12.x
 
 jobs:
+  lint:
+    if: ${{ !contains(github.event.commits[0].message, '[skip ci]') }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+        fetch-depth: 0
+    - name: Node
+      uses: actions/setup-node@v1
+      with:
+        node-version: "${{ env.NODE }}"
+    - name: Yarn Cache Path
+      id: yarn-cache-dir-path
+      run: echo "::set-output name=dir::$(yarn cache dir)"
+    - name: Yarn Cache
+      uses: actions/cache@v2
+      id: yarn-cache
+      with:
+        path: |
+          ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          **/node_modules
+          ~/.npm
+        key: ${{ runner.os }}-node-v${{ env.NODE }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-node-v${{ env.NODE }}-yarn-
+    - name: Yarn
+      if: steps.yarn-cache.outputs.cache-hit != 'true'
+      run: yarn install --frozen-lockfile
+    - name: Lint
+      run: yarn lint
+  codeql:
+    if: ${{ !contains(github.event.commits[0].message, '[skip ci]') }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        language: ['javascript']
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 2
+    - run: git checkout HEAD^2
+      if: ${{ github.event_name == 'pull_request' }}
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v1
+      with:
+        languages: ${{ matrix.language }}
+    - name: Autobuild
+      uses: github/codeql-action/autobuild@v1
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v1
+  build:
+    if: ${{ !contains(github.event.commits[0].message, '[skip ci]') }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+    - name: Node
+      uses: actions/setup-node@v1
+      with:
+        node-version: "${{ env.NODE }}"
+    - name: Yarn Cache Path
+      id: yarn-cache-dir-path
+      run: echo "::set-output name=dir::$(yarn cache dir)"
+    - name: Yarn Cache
+      uses: actions/cache@v2
+      id: yarn-cache
+      with:
+        path: |
+          ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          **/node_modules
+          ~/.npm
+        key: ${{ runner.os }}-node-v${{ env.NODE }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-node-v${{ env.NODE }}-yarn-
+    - name: Yarn
+      if: steps.yarn-cache.outputs.cache-hit != 'true'
+      run: yarn install --frozen-lockfile
+    - name: Build Cache
+      uses: actions/cache@v2
+      id: build-cache
+      with:
+        path: |
+          public
+        key: ${{ runner.os }}-node-v${{ env.NODE }}-build-${{ hashFiles('src/**/**') }}
+        restore-keys: |
+          ${{ runner.os }}-node-v${{ env.NODE }}-build-
+    - name: Build
+      if: steps.build-cache.outputs.cache-hit != 'true'
+      run: yarn build
+      env:
+        CONTENTFUL_SPACE: ${{ secrets.CONTENTFUL_SPACE }}
+        CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
   release:
     if: ${{ !contains(github.event.commits[0].message, '[skip ci]') && github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
+    needs: [lint, codeql, build]
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -56,3 +152,58 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.semantic_release_github_token }}
         NPM_TOKEN: ${{ secrets.semantic_release_npm_token }}
+  deploy:
+    if: ${{ github.ref == 'refs/heads/master' || github.ref == 'refs/heads/beta' }}
+    runs-on: ubuntu-latest
+    needs: [lint, codeql, build, release]
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+        fetch-depth: 0
+        ref: ${{ github.event.workflow_run.head.ref }}
+    - name: Node
+      uses: actions/setup-node@v1
+      with:
+        node-version: "${{ env.NODE }}"
+    - name: Yarn Cache Path
+      id: yarn-cache-dir-path
+      run: echo "::set-output name=dir::$(yarn cache dir)"
+    - name: Yarn Cache
+      uses: actions/cache@v2
+      id: yarn-cache
+      with:
+        path: |
+          ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          **/node_modules
+          ~/.npm
+        key: ${{ runner.os }}-node-v${{ env.NODE }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-node-v${{ env.NODE }}-yarn-
+    - name: Yarn
+      if: steps.yarn-cache.outputs.cache-hit != 'true'
+      run: yarn install --frozen-lockfile
+    - name: Build Cache
+      uses: actions/cache@v2
+      id: build-cache
+      with:
+        path: |
+          public
+        key: ${{ runner.os }}-node-v${{ env.NODE }}-build-${{ hashFiles('src/**/**') }}
+        restore-keys: |
+          ${{ runner.os }}-node-v${{ env.NODE }}-build-
+    - name: Build
+      if: steps.build-cache.outputs.cache-hit != 'true'
+      run: yarn build
+      env:
+        CONTENTFUL_SPACE: ${{ secrets.CONTENTFUL_SPACE }}
+        CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        ACCESS_TOKEN: ${{ secrets.semantic_release_github_token }}
+        BRANCH: gh-pages
+        FOLDER: public
+        GIT_CONFIG_NAME: minimit
+        GIT_CONFIG_EMAIL: beaver82@gmail.com

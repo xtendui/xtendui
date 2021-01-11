@@ -1,11 +1,6 @@
-name: Test
+name: Pull Request
 
 on:
-  push:
-    branches:
-      - master
-      - beta
-      - 1.0-stable
   pull_request:
     branches:
       - master
