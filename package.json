@@ -10,8 +10,10 @@
     "frontend",
     "library",
     "components",
-    "vanilla",
-    "tailwind"
+    "javascript",
+    "tailwindcss",
+    "animation",
+    "ui"
   ],
   "main": "src/xt.js",
   "publishConfig": {
