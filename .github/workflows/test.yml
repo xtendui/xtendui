@@ -4,7 +4,8 @@ on:
   push:
     branches:
       - master
-      - 0.16
+      - beta
+      - 1.0-stable
   pull_request:
     branches:
       - master
