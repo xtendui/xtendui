@@ -113,6 +113,11 @@
 <url> <loc>https://xtendui.com/components/core/tooltip/position</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/components/core/typography/content</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/components/core/typography</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://xtendui.com/themes/by-component/button/blocks-featured-v-1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://xtendui.com/themes/by-component/button/float-animation-v-1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://xtendui.com/themes/by-component/button</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://xtendui.com/themes/by-component/button/ripple-animation-v-1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://xtendui.com/themes/by-component/button/slide-animation-v-1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/themes/by-component/card/float-animation-v-1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/themes/by-component/card</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/themes/by-component/card/ripple-animation-v-1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -124,11 +129,6 @@
 <url> <loc>https://xtendui.com/themes/by-component/drop</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/themes/by-component/drop/menu-navigation-v-1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/themes/by-component/drop/slide-animation-v-1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://xtendui.com/themes/by-component/button/blocks-featured-v-1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://xtendui.com/themes/by-component/button/float-animation-v-1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://xtendui.com/themes/by-component/button</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://xtendui.com/themes/by-component/button/ripple-animation-v-1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://xtendui.com/themes/by-component/button/slide-animation-v-1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/themes/by-component/list-group/collapse-animation-v-1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/themes/by-component/list-group</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/themes/by-component/media/blocks-featured-v-1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -174,8 +174,8 @@
 <url> <loc>https://xtendui.com/themes/by-type/listing/stores-listing-v-1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/themes/by-type/navigation</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/themes/by-type/navigation/menu-navigation-v-1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://xtendui.com/components/core/scroll/other</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/components/core/scroll/parallax</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/components/core/scroll</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://xtendui.com/components/core/scroll/other</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
