@@ -16,7 +16,7 @@ If you want we have some boilerplate projects to start a project all ready to go
 Install **xtendui**.
 
 ```sh
-npm install xtendui --save
+npm install xtendui@beta --save
 ```
 
 ## Css
