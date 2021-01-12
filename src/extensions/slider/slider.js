@@ -1058,23 +1058,38 @@ class Slider extends Xt.Toggle {
         found = 0
       } else {
         const findNext = () => {
-          let dist = 0
-          if (direction > 0) {
-            for (let i = self.currentIndex; i < self.groupMq.length; i++) {
-              const group = self.groupMq[i]
-              const pos = Xt.dataStorage.get(group[0], self.componentNamespace + 'GroupPos')
-              dist += Math.abs(pos)
-              if (dragPosCurrent <= dist) {
-                return i
+          if (options.contain) {
+            // next in direction from drag diff
+            let old = self.currentIndex
+            for (let i = 0; i < self.groupMq.length; i++) {
+              const slide = self.groupMq[i][0]
+              const pos = Xt.dataStorage.get(slide, self.componentNamespace + 'GroupPos')
+              const diff = self.detail.dragPos - pos
+              if (diff > 0) {
+                return direction < 0 ? i : old
               }
+              old = i
             }
+            return found
           } else {
-            for (let i = self.currentIndex; i >= 0; i--) {
-              const group = self.groupMq[i]
-              const pos = Xt.dataStorage.get(group[0], self.componentNamespace + 'GroupPos')
-              dist += Math.abs(pos)
-              if (dragPosCurrent <= dist) {
-                return i
+            let dist = 0
+            if (direction > 0) {
+              for (let i = self.currentIndex; i < self.groupMq.length; i++) {
+                const group = self.groupMq[i]
+                const pos = Xt.dataStorage.get(group[0], self.componentNamespace + 'GroupPos')
+                dist += Math.abs(pos)
+                if (dragPosCurrent <= dist) {
+                  return i
+                }
+              }
+            } else {
+              for (let i = self.currentIndex; i >= 0; i--) {
+                const group = self.groupMq[i]
+                const pos = Xt.dataStorage.get(group[0], self.componentNamespace + 'GroupPos')
+                dist += Math.abs(pos)
+                if (dragPosCurrent <= dist) {
+                  return i
+                }
               }
             }
           }
