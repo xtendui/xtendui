@@ -16,7 +16,7 @@ import 'xtendui/src/core/slider'
 
 ## Customization
 
-You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/slider.css.js](https://github.com/minimit/xtendui/blob/master/src/core/slider.css.js) for default values.
+You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/slider.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/slider.css.js) for default values.
 
 ```jsx
 module.exports = {

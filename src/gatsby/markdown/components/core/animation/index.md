@@ -12,7 +12,7 @@ Follow the [installation instructions](http://localhost:8888/introduction/gettin
 
 ## Customization
 
-You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/animation.css.js](https://github.com/minimit/xtendui/blob/master/src/core/animation.css.js) for default values.
+You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/animation.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/animation.css.js) for default values.
 
 ```jsx
 module.exports = {

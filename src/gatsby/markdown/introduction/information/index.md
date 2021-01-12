@@ -16,7 +16,7 @@ date: "2050-09-10"
 <p align="center">
   <a href="/introduction/getting-started/setup">Setup</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="/components">Components</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="/themes">Themes</a>
   <br/><br/>
-  <a href="https://github.com/minimit/xtendui/blob/master/LICENSE" title="License" style="display: inline-block;">
+  <a href="https://github.com/minimit/xtendui/blob/beta/LICENSE" title="License" style="display: inline-block;">
     <img src="https://img.shields.io/npm/l/xtendui.svg?style=flat-square" alt="License" loading="eager">
   </a>
   <a href="https://github.com/minimit/xtendui/actions?query=workflow%3ARelease" title="Build Status" style="display: inline-block;">
@@ -47,11 +47,11 @@ Supported browsers are as follow: **chrome 38**, **safari 10**, **ios 10**, **fi
 
 ## Setup
 
-For a complete css and js setup guide visit [online setup page](/introduction/getting-started/setup) or [github setup page](https://github.com/minimit/xtendui/blob/master/SETUP.md).
+For a complete css and js setup guide visit [online setup page](/introduction/getting-started/setup) or [github setup page](https://github.com/minimit/xtendui/blob/beta/SETUP.md).
 
 ## Contributing
 
-Read our [contributing docs](https://github.com/minimit/xtendui/blob/master/.github/CONTRIBUTING.md) before submitting a pull request.
+Read our [contributing docs](https://github.com/minimit/xtendui/blob/beta/.github/CONTRIBUTING.md) before submitting a pull request.
 
 ## Documentation
 
@@ -71,5 +71,5 @@ Read our [contributing docs](https://github.com/minimit/xtendui/blob/master/.git
 
 ## Copyright
 
-Licensed under [MIT license](https://github.com/minimit/xtendui/blob/master/LICENSE).
-Docs licensed under [CC BY 3.0](https://github.com/minimit/xtendui/blob/master/LICENSE-DOCS).
+Licensed under [MIT license](https://github.com/minimit/xtendui/blob/beta/LICENSE).
+Docs licensed under [CC BY 3.0](https://github.com/minimit/xtendui/blob/beta/LICENSE-DOCS).

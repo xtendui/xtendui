@@ -8,7 +8,7 @@ description: "Arrow navigation on sides that appears and follows the mouse."
 
 ## Customization
 
-You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/addons/navsides.css.js](https://github.com/minimit/xtendui/blob/master/src/addons/navsides.css.js) for default values.
+You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/addons/navsides.css.js](https://github.com/minimit/xtendui/blob/beta/src/addons/navsides.css.js) for default values.
 
 ```jsx
 module.exports = {

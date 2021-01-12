@@ -8,7 +8,7 @@ description: "Plug and play visual loaders, can easily integrate with javascript
 
 ## Customization
 
-You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/loader.css.js](https://github.com/minimit/xtendui/blob/master/src/core/loader.css.js) for default values.
+You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/loader.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/loader.css.js) for default values.
 
 ```jsx
 module.exports = {

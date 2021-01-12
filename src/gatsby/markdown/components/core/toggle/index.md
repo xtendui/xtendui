@@ -16,7 +16,7 @@ import 'xtendui/src/core/toggle'
 
 ## Customization
 
-You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/toggle.css.js](https://github.com/minimit/xtendui/blob/master/src/core/toggle.css.js) for default values.
+You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/toggle.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/toggle.css.js) for default values.
 
 ```jsx
 module.exports = {

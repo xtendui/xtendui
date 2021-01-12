@@ -71,7 +71,7 @@ More info in Tailwind docs [tailwind postcss](https://tailwindcss.com/docs/using
 
 #### Customization
 
-You can **customize theme** inside `tailwind.config.js`, check [xtendui/tailwind.preset.js](https://github.com/minimit/xtendui/blob/master/tailwind.preset.js) for default values.
+You can **customize theme** inside `tailwind.config.js`, check [xtendui/tailwind.preset.js](https://github.com/minimit/xtendui/blob/beta/tailwind.preset.js) for default values.
 
 ```jsx
 module.exports = {
@@ -99,7 +99,7 @@ module.exports = {
 }
 ```
 
-You can **customize components** inside `tailwind.config.js`, check [xtendui/tailwind.components.js](https://github.com/minimit/xtendui/blob/master/tailwind.components.js) for default values.
+You can **customize components** inside `tailwind.config.js`, check [xtendui/tailwind.components.js](https://github.com/minimit/xtendui/blob/beta/tailwind.components.js) for default values.
 
 ```jsx
 module.exports = {

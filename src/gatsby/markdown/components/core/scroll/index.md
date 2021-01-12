@@ -12,7 +12,7 @@ This component uses [Gsap ScrollTrigger](https://greensock.com/docs/v3/Plugins/S
 
 ## Customization
 
-You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/scroll.css.js](https://github.com/minimit/xtendui/blob/master/src/core/scroll.css.js) for default values.
+You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/scroll.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/scroll.css.js) for default values.
 
 ```jsx
 module.exports = {

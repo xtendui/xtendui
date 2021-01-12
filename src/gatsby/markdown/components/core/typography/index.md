@@ -8,7 +8,7 @@ description: "Component for customize headers, body text, text tags and lists."
 
 ## Customization
 
-You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/typography.css.js](https://github.com/minimit/xtendui/blob/master/src/core/typography.css.js) for default values.
+You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/typography.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/typography.css.js) for default values.
 
 ```jsx
 module.exports = {

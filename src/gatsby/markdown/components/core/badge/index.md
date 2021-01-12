@@ -8,7 +8,7 @@ description: "Component for showing short and relevant tags."
 
 ## Customization
 
-You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/badge.css.js](https://github.com/minimit/xtendui/blob/master/src/core/badge.css.js) for default values.
+You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/badge.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/badge.css.js) for default values.
 
 ```jsx
 module.exports = {

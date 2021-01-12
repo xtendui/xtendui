@@ -8,7 +8,7 @@ description: "Base styles for all tables overridable with tailwind classes."
 
 ## Customization
 
-You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/table.css.js](https://github.com/minimit/xtendui/blob/master/src/core/list.css.js) for default values.
+You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/table.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/list.css.js) for default values.
 
 ```jsx
 module.exports = {

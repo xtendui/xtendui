@@ -8,7 +8,7 @@ description: "Xtend UI preset with default theme that extends Tailwind default t
 
 ## Theme
 
-Xtend adds a **default tailwind theme**, see [xtendui/tailwind.preset.js](https://github.com/minimit/xtendui/blob/master/tailwind.preset.js) for default values.
+Xtend adds a **default tailwind theme**, see [xtendui/tailwind.preset.js](https://github.com/minimit/xtendui/blob/beta/tailwind.preset.js) for default values.
 
 The following theme values are added with the preset:
 
@@ -20,7 +20,7 @@ The following theme values are added with the preset:
 
 ## Variants
 
-The theme adds also **custom tailwind variants** `active` and `group-active`, see [xtendui/tailwind.preset.js](https://github.com/minimit/xtendui/blob/master/tailwind.preset.js) for default values.
+The theme adds also **custom tailwind variants** `active` and `group-active`, see [xtendui/tailwind.preset.js](https://github.com/minimit/xtendui/blob/beta/tailwind.preset.js) for default values.
 
 They styles **when user presses the element** with pseudo selectors `:active` and `.group:active` but also **when the element is activated by javascript** with the class `.active` and `.group.active`.
 

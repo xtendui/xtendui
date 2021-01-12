@@ -16,7 +16,7 @@ import 'xtendui/src/addons/ripple'
 
 ## Customization
 
-You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/addons/ripple.css.js](https://github.com/minimit/xtendui/blob/master/src/addons/ripple.css.js) for default values.
+You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/addons/ripple.css.js](https://github.com/minimit/xtendui/blob/beta/src/addons/ripple.css.js) for default values.
 
 ```jsx
 module.exports = {

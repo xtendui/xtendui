@@ -16,7 +16,7 @@ import 'xtendui/src/addons/mousefollow'
 
 ## Customization
 
-You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/addons/mousefollow.css.js](https://github.com/minimit/xtendui/blob/master/src/addons/mousefollow.css.js) for default values.
+You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/addons/mousefollow.css.js](https://github.com/minimit/xtendui/blob/beta/src/addons/mousefollow.css.js) for default values.
 
 ```jsx
 module.exports = {
