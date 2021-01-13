@@ -32,7 +32,7 @@
   }
   > .btn {
     padding: 0;
-    padding-left: 1rem;
+    padding-left: 1.5rem;
     font-size: 1.15rem;
     svg {
       width: 1.5em;
@@ -128,9 +128,31 @@
 }
 
 .gatsby_site-header_top_social {
-  @apply list list-0.5;
+  @apply list -mx-2;
   align-items: stretch;
+  .gatsby_btn-site-header_top_social {
+    @apply px-2;
+  }
+  @screen lg {
+    @apply -mx-1;
+    .gatsby_btn-site-header_top_social {
+      @apply px-1;
+    }
+    svg {
+      @apply icon-sm;
+    }
+  }
+  @screen xl {
+    @apply -mx-2;
+    .gatsby_btn-site-header_top_social {
+      @apply px-2;
+    }
+    svg {
+      @apply icon-md;
+    }
+  }
 }
+/*.gatsby_logo-icon {*/
 
 .gatsby_btn-site-header_top_social {
   margin-top: -5px;

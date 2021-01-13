@@ -5,6 +5,7 @@ import { useStaticQuery, graphql, Link } from 'gatsby'
 import { markdownSlug } from 'components/snippets/markdown-slug'
 import { typeSort } from 'components/snippets/type-sort'
 const cardBlack = require('components/snippets/classes/card-black').default
+const iconTwitter = require('components/snippets/icons').iconTwitter
 const iconPackage = require('components/snippets/icons').iconPackage
 const iconGithub = require('components/snippets/icons').iconGithub
 
@@ -36,6 +37,23 @@ export default function Header({ page }) {
                 </div>
                 <div className="gatsby_site-header_top_social_container">
                   <div className="gatsby_site-header_top_social">
+                    <div data-xt-tooltip="{ position: 'bottom-end' }">
+                      <a
+                        href={site.siteMetadata.twitter}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn gatsby_btn-site-header_top_social"
+                        title="Twitter"
+                        dangerouslySetInnerHTML={{ __html: iconTwitter() }}
+                      ></a>
+                      <div className="tooltip group" data-xt-duration="200">
+                        <div
+                          className={`tooltip-sm rounded shadow-tooltip ${cardBlack()} transform transition duration-200 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
+                        >
+                          Visit on Twitter
+                        </div>
+                      </div>
+                    </div>
                     <div data-xt-tooltip="{ position: 'bottom-end' }">
                       <a
                         href={site.siteMetadata.npm}
