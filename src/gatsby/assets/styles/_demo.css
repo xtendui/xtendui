@@ -251,7 +251,7 @@ pre {
   right: 0;
   @apply bg-white;
   @screen lg {
-    margin-left: 18rem;
+    margin-left: 20rem;
   }
   @screen xl {
     margin-left: 20rem;

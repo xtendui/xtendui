@@ -42,7 +42,7 @@ export default function Header({ page }) {
                         href={site.siteMetadata.twitter}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="btn gatsby_btn-site-header_top_social"
+                        className="btn gatsby_site-header_top_social_btn"
                         title="Twitter"
                         dangerouslySetInnerHTML={{ __html: iconTwitter() }}
                       ></a>
@@ -59,7 +59,7 @@ export default function Header({ page }) {
                         href={site.siteMetadata.npm}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="btn gatsby_btn-site-header_top_social"
+                        className="btn gatsby_site-header_top_social_btn"
                         title="Npm"
                         dangerouslySetInnerHTML={{ __html: iconPackage() }}
                       ></a>
@@ -76,7 +76,7 @@ export default function Header({ page }) {
                         href={site.siteMetadata.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="btn gatsby_btn-site-header_top_social"
+                        className="btn gatsby_site-header_top_social_btn"
                         title="Github"
                         dangerouslySetInnerHTML={{ __html: iconGithub() }}
                       ></a>

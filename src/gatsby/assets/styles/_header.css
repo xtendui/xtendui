@@ -19,7 +19,7 @@
     line-height: 1;
   }
   @screen lg {
-    width: 18rem;
+    width: 20rem;
   }
   @screen xl {
     width: 20rem;
@@ -128,33 +128,14 @@
 }
 
 .gatsby_site-header_top_social {
-  @apply list -mx-2;
+  @apply list list-1;
   align-items: stretch;
-  .gatsby_btn-site-header_top_social {
-    @apply px-2;
-  }
-  @screen lg {
-    @apply -mx-1;
-    .gatsby_btn-site-header_top_social {
-      @apply px-1;
-    }
-    svg {
-      @apply icon-sm;
-    }
-  }
-  @screen xl {
-    @apply -mx-2;
-    .gatsby_btn-site-header_top_social {
-      @apply px-2;
-    }
-    svg {
-      @apply icon-md;
-    }
+  svg {
+    @apply icon-md;
   }
 }
-/*.gatsby_logo-icon {*/
 
-.gatsby_btn-site-header_top_social {
+.gatsby_site-header_top_social_btn {
   margin-top: -5px;
   margin-bottom: -5px;
   padding: 5px;
@@ -165,14 +146,14 @@
     padding-right: 0;
   }
   @apply transition;
-  opacity: 0.8;
+  opacity: 0.5;
   &:hover {
     opacity: 1;
-    transform: scale(1.2);
+    transform: translateY(4px);
   }
   &:active {
     opacity: 1;
-    transform: scale(1);
+    transform: translateY(0);
   }
 }
 

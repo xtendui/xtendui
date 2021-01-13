@@ -5,6 +5,10 @@ import { Link } from 'gatsby'
 
 import SEO from 'components/seo'
 import Layout from 'components/layout'
+const cardBlack = require('components/snippets/classes/card-black').default
+const iconTwitter = require('components/snippets/icons').iconTwitter
+const iconPackage = require('components/snippets/icons').iconPackage
+const iconGithub = require('components/snippets/icons').iconGithub
 
 export default class Page extends React.Component {
   render() {
@@ -50,9 +54,63 @@ export default class Page extends React.Component {
                   <div className="container">
                     <h1 className="h1-display">A new paradigm for Custom Frontend Development</h1>
                     <h2 className="h4 font-normal opacity-50">
-                      Xtend UI is a UI framework for custom styling, interactions and animations. Extremely customizable and designed for building complex user
-                      interfaces.
+                      <span className="gatsby_home-main_head_description">
+                        Xtend UI is a UI framework for custom styling, interactions and animations. Extremely customizable and designed for building complex user interfaces.
+                      </span>
                     </h2>
+                    <div className="gatsby_home-main_social">
+                      <div data-xt-tooltip="{ position: 'top' }">
+                        <a
+                          href={data.site.siteMetadata.twitter}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn gatsby_home-main_social_btn"
+                          title="Twitter"
+                          dangerouslySetInnerHTML={{ __html: iconTwitter() }}
+                        ></a>
+                        <div className="tooltip group" data-xt-duration="200">
+                          <div
+                            className={`tooltip-sm rounded shadow-tooltip ${cardBlack()} transform transition duration-200 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
+                          >
+                            Visit on Twitter
+                          </div>
+                        </div>
+                      </div>
+                      <div data-xt-tooltip="{ position: 'top' }">
+                        <a
+                          href={data.site.siteMetadata.npm}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn gatsby_home-main_social_btn"
+                          title="Npm"
+                          dangerouslySetInnerHTML={{ __html: iconPackage() }}
+                        ></a>
+                        <div className="tooltip group" data-xt-duration="200">
+                          <div
+                            className={`tooltip-sm rounded shadow-tooltip ${cardBlack()} transform transition duration-200 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
+                          >
+                            Visit on Npm
+                          </div>
+                        </div>
+                      </div>
+                      <span data-xt-tooltip="{ position: 'top' }">
+                        <a
+                          href={data.site.siteMetadata.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn gatsby_home-main_social_btn"
+                          title="Github"
+                          dangerouslySetInnerHTML={{ __html: iconGithub() }}
+                        ></a>
+                        <div className="tooltip group" data-xt-duration="200">
+                          <div
+                            className={`tooltip-sm rounded shadow-tooltip ${cardBlack()} transform transition duration-200 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
+                          >
+                            Visit on Github
+                          </div>
+                        </div>
+                      </span>
+                    </div>
                   </div>
                 </div>
                 <div className="gatsby_home-main_features">

@@ -33,13 +33,6 @@
  * docs icons
  */
 
-.gatsby_btn-site-header_top_social {
-  font-size: 1rem;
-  .icon {
-    fill: rgba(255, 255, 255, 0.25);
-  }
-}
-
 .gatsby_demo_tabs, .gatsby_demo_code_tabs {
   .btn:not(.btn-close) {
     .icon {

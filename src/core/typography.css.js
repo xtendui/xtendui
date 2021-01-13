@@ -76,7 +76,7 @@ module.exports = {
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
       fontSize: rem(19),
-      lineHeight: 1.3,
+      lineHeight: 1.4,
       letterSpacing: theme('letterSpacing.tight'),
       textTransform: 'none',
       '@screen md': {
@@ -91,7 +91,7 @@ module.exports = {
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
       fontSize: rem(15),
-      lineHeight: 1.3,
+      lineHeight: 1.4,
       letterSpacing: theme('letterSpacing.tight'),
       textTransform: 'none',
       '@screen md': {
@@ -106,7 +106,7 @@ module.exports = {
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
       fontSize: '14px',
-      lineHeight: 1.3,
+      lineHeight: 1.4,
       letterSpacing: theme('letterSpacing.wide'),
       textTransform: 'uppercase',
     },

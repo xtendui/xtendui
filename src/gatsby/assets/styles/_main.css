@@ -64,7 +64,7 @@ body {
 .gatsby_site-article--markdown {
   @apply bg-white;
   @screen lg {
-    margin-left: 18rem;
+    margin-left: 20rem;
   }
   @screen xl {
     margin-left: 20rem;
