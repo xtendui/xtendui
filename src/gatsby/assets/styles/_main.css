@@ -188,6 +188,6 @@ body {
   }
   .media-container {
     @apply mt-3 rounded-md border-3 border-gray-500 border-opacity-25 bg-gray-200;
-    padding-bottom: 60.6%;
+    padding-bottom: 55.8%;
   }
 }

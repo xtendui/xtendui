@@ -21,7 +21,7 @@ demo.htmlSource = `
 
       <div class="w-full md:w-6/12 lg:w-4/12">
         <div class="listing-item block w-full">
-          <div class="listing-item block-inner">
+          <div class="listing-item-inner">
 
             <div class="listing-front card rounded-md ${cardDefault()}">
               <div class="media-container flex-full rounded-t-md h-40">
@@ -77,7 +77,7 @@ demo.htmlSource = `
 
       <div class="w-full md:w-6/12 lg:w-4/12">
         <div class="listing-item block w-full">
-          <div class="listing-item block-inner">
+          <div class="listing-item-inner">
 
             <div class="listing-front card rounded-md ${cardDefault()}">
               <div class="media-container flex-full rounded-t-md h-40">
@@ -121,7 +121,7 @@ demo.htmlSource = `
 
       <div class="w-full md:w-6/12 lg:w-4/12">
         <div class="listing-item block w-full">
-          <div class="listing-item block-inner">
+          <div class="listing-item-inner">
 
             <div class="listing-front card rounded-md ${cardDefault()}">
               <div class="media-container flex-full rounded-t-md h-40">
@@ -177,7 +177,7 @@ demo.htmlSource = `
 
       <div class="w-full md:w-6/12 lg:w-4/12">
         <div class="listing-item block w-full">
-          <div class="listing-item block-inner">
+          <div class="listing-item-inner">
 
             <div class="listing-front card rounded-md ${cardDefault()}">
               <div class="media-container flex-full rounded-t-md h-40">
@@ -221,7 +221,7 @@ demo.htmlSource = `
 
       <div class="w-full md:w-6/12 lg:w-4/12">
         <div class="listing-item block w-full">
-          <div class="listing-item block-inner">
+          <div class="listing-item-inner">
 
             <div class="listing-front card rounded-md ${cardDefault()}">
               <div class="media-container flex-full rounded-t-md h-40">
@@ -277,7 +277,7 @@ demo.htmlSource = `
 
       <div class="w-full md:w-6/12 lg:w-4/12">
         <div class="listing-item block w-full">
-          <div class="listing-item block-inner">
+          <div class="listing-item-inner">
 
             <div class="listing-front card rounded-md ${cardDefault()}">
               <div class="media-container flex-full rounded-t-md h-40">

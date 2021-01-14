@@ -34,6 +34,10 @@ class Ripple {
     const self = this
     // options
     self.options = Xt.merge([self.constructor.optionsDefault, self.optionsCustom])
+    // namespace
+    const uniqueId = Xt.dataStorage.get(self.object, 'xtUniqueId')
+    Xt.dataStorage.set(self.object, 'xtUniqueId', uniqueId || Xt.getuniqueId())
+    self.ns = `${self.componentName}-${Xt.dataStorage.get(self.object, 'xtUniqueId')}`
     // generate
     if (!self.container) {
       self.object.append(Xt.createElement('<div class="ripple-container"></div>'))
