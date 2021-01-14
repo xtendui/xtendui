@@ -55,7 +55,8 @@ export default class Page extends React.Component {
                     <h1 className="h1-display">A new paradigm for Custom Frontend Development</h1>
                     <h2 className="h4 font-normal opacity-50">
                       <span className="gatsby_home-main_head_description">
-                        Xtend UI is a UI framework for custom styling, interactions and animations. Extremely customizable and designed for building complex user interfaces.
+                        Xtend UI is a UI framework for custom styling, interactions and animations. Extremely customizable and designed for building complex
+                        user interfaces.
                       </span>
                     </h2>
                     <div className="gatsby_home-main_social">
