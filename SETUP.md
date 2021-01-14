@@ -33,7 +33,7 @@ Create a `tailwind.config.js` and add **xtendui preset**.
 module.exports = {
   presets: [require('tailwindcss/defaultConfig'), require('xtendui/tailwind.preset')],
   purge: {
-    content: ['./src/**/*.html', './src/**/*.css', './src/**/*.js'], // put your purge content
+    content: ['./node_modules/xtendui/src/**/*.js'], // put other purge content
     options: {
       safelist: {
         greedy: [
