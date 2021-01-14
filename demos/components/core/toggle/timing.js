@@ -2,7 +2,7 @@ import { Xt } from 'xtendui'
 
 Xt.mount.push({
   matches: '.demo--toggle-timing',
-  mount: object => {
+  mount: ({ object }) => {
     // init
 
     let self = new Xt.Toggle(object, {
@@ -25,7 +25,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '.demo--toggle-timing--event',
-  mount: object => {
+  mount: ({ object }) => {
     // init
 
     let self = new Xt.Toggle(object, {

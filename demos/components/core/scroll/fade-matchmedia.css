@@ -1,0 +1,9 @@
+
+body:not(.xt-noscroll) {
+  .demo--fade-matchmedia {
+    /* add here all fade selectors css and js */
+    .card {
+      opacity: 0;
+    }
+  }
+}

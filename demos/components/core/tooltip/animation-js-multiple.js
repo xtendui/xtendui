@@ -4,7 +4,7 @@ import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '.demo--tooltip-animation-js-multiple',
-  mount: object => {
+  mount: ({ object }) => {
     // vars
 
     const targetTimeOn = 0.2

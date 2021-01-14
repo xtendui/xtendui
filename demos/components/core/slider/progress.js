@@ -5,7 +5,7 @@ import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '.demo--slider-progress',
-  mount: object => {
+  mount: ({ object }) => {
     // vars
 
     const spinnerTime = 0.25

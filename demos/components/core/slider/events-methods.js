@@ -3,7 +3,7 @@ const cardSlide = require('components/snippets/classes/card-slide').default
 
 Xt.mount.push({
   matches: '#demo--slider-events',
-  mount: object => {
+  mount: ({ object }) => {
     // init
 
     let self = new Xt.Slider(object, {
@@ -11,7 +11,6 @@ Xt.mount.push({
         time: 2000,
         initial: false,
       },
-      align: 'center',
       drag: {
         wrap: true,
       },

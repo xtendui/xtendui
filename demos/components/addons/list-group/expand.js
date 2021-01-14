@@ -2,7 +2,7 @@ import { Xt } from 'xtendui'
 
 Xt.mount.push({
   matches: '.demo--group-expand',
-  mount: object => {
+  mount: ({ object }) => {
     // on
 
     object.querySelector('input').addEventListener('focus', () => {

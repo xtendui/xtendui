@@ -3,8 +3,8 @@ import 'xtendui/src/addons/ripple'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '#iframe--ripple-animation-v1 body .btn, #iframe--ripple-animation-v1 body .card', // add your own selector instead of body to contain the code
-  mount: object => {
+  matches: '#iframe--ripple-animation-v1 .btn, #iframe--ripple-animation-v1 .card',
+  mount: ({ object }) => {
     // init
 
     let self = new Xt.Ripple(object, {})

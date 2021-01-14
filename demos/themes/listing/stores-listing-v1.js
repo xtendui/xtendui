@@ -5,8 +5,8 @@ import { Xt } from 'xtendui'
  */
 
 Xt.mount.push({
-  matches: '#iframe--stores-listing-v1 body .listing-item', // add your own selector instead of body to contain the code
-  mount: object => {
+  matches: '#iframe--stores-listing-v1 .listing-item',
+  mount: ({ object }) => {
     // vars
 
     const actionBtn = object.querySelector('.listing-action')
