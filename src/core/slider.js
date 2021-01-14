@@ -1010,6 +1010,7 @@ class Slider extends Xt.Toggle {
       }
     }
     // val
+    self.detail.dragDirection = self.detail.dragPos < self.detail.dragPosOld ? -1 : 1
     self.detail.dragCurrent = self.detail.dragCurrentReal - (self.detail.dragPosReal - dragPos) // dragCurrent when overflowing
     self.detail.dragPosOld = self.detail.dragPos
     self.detail.dragPos = dragPos
@@ -1051,10 +1052,10 @@ class Slider extends Xt.Toggle {
     } else if (Math.abs(self.detail.dragDist) > options.drag.threshold) {
       // get nearest
       let found = self.currentIndex
-      if (found === 0 && direction > 0) {
-        found = self.group.length - 1
-      } else if (found === self.group.length - 1 && direction < 0) {
+      if (found === self.group.length - 1 && direction < 0 && self.detail.dragDirection < 0) {
         found = 0
+      } else if (found === 0 && direction > 0 && self.detail.dragDirection > 0) {
+        found = self.group.length - 1
       } else {
         // next in direction from drag diff
         let old = self.currentIndex
@@ -1064,7 +1065,11 @@ class Slider extends Xt.Toggle {
             const pos = Xt.dataStorage.get(slide, `${self.ns}GroupPos`)
             const diff = self.detail.dragPos - pos
             if (diff > 0) {
-              return direction < 0 ? i : old
+              if (direction < 0 && self.detail.dragDirection < 0) {
+                return i
+              } else if (direction > 0 && self.detail.dragDirection > 0) {
+                return old
+              }
             }
             old = i
           }
@@ -1075,10 +1080,13 @@ class Slider extends Xt.Toggle {
       // goTo with force
       if (found === self.currentIndex) {
         // change at least one
-        if (direction < 0) {
+        if (direction < 0 && self.detail.dragDirection < 0) {
           self.goToNext(1)
-        } else {
+        } else if (direction > 0 && self.detail.dragDirection > 0) {
           self.goToPrev(1)
+        } else {
+          // drag reset
+          self.logicDragreset(dragger)
         }
       } else {
         // goToNum
@@ -1110,7 +1118,14 @@ class Slider extends Xt.Toggle {
     // fix direction
     self.direction = self.detail.dragStart - self.detail.dragCurrentReal < 0 ? -1 : 1
     self.inverse = self.direction < 0
-    // disable drag and links
+    // disable dragger
+    dragger.classList.add('xt-pointer-events-none')
+    for (const nav of self.navs) {
+      nav.classList.add('xt-pointer-events-none')
+    }
+    for (const el of self.elements) {
+      el.classList.add('xt-pointer-events-none')
+    }
     Xt.animTimeout(
       dragger,
       () => {

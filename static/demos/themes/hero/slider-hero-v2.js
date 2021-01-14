@@ -58,10 +58,10 @@ Xt.mount.push({
       const tr = self.targets.filter(x => self.hasCurrent(x))[0]
       // cover
       const assetCover = tr.querySelector('.hero-cover')
-      gsap.to(assetCover, { skewX: 0, x: `${100 * self.direction}%`, duration: 0.25, ease: assetCoverEase })
+      gsap.to(assetCover, { skewX: 0, x: `${100 * self.direction}%`, duration: assetCoverTime, ease: assetCoverEase })
       // content
       const content = tr.querySelector('.hero-content')
-      gsap.to(content, { x: 0, opacity: 1, duration: 0.25, ease: contentEase })
+      gsap.to(content, { x: 0, opacity: 1, duration: contentTime, ease: contentEase })
     }
 
     self.dragger.addEventListener('dragreset.xt.slider', eventDragReset)
