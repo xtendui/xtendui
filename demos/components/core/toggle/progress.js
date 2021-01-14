@@ -4,7 +4,7 @@ import gsap from 'gsap'
 
 Xt.mount.push({
   matches: '.demo--toggle-progress',
-  mount: ({ object }) => {
+  mount: object => {
     // vars
 
     const fillerTime = 0.25

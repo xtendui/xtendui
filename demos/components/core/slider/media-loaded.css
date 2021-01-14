@@ -1,32 +1,12 @@
 .demo--slider-media-loaded {
   .slide {
-    .media-container {
-      @apply bg-gray-400;
-    }
-    /* fixed height */
     img {
       height: 30rem;
       width: auto;
     }
-    /* full width when loading */
-    width: 100%;
+    @apply transition opacity-0;
     &.xt-medialoaded {
-      width: auto;
-    }
-    /* hide loader on mediaLoaded */
-    &.xt-medialoaded {
-      .loader {
-        @apply transition opacity-0;
-      }
-    }
-    /* animate media on mediaLoaded */
-    .media-inner {
-      @apply transition opacity-0;
-    }
-    &.xt-medialoaded {
-      .media-inner {
-        @apply opacity-100;
-      }
+      @apply opacity-100;
     }
   }
 }
