@@ -36,10 +36,6 @@ Xt.mount.push({
     let self = new Xt.Slider(object, {
       instant: true,
       duration: 1500,
-      auto: {
-        time: 5000,
-        pause: '.hero-content > *',
-      },
       drag: {
         overflow: false,
       },

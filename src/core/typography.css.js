@@ -8,21 +8,6 @@ const rem = px => `${round(px / 16)}rem`
 module.exports = {
   variants: ['responsive'],
   utility: theme => ({
-    '.h1-display': {
-      // style
-      fontWeight: theme('fontWeight.black'),
-      lineHeight: 1,
-      fontSize: rem(35),
-      '@screen sm': {
-        fontSize: rem(50),
-      },
-      '@screen md': {
-        fontSize: rem(55),
-      },
-      '@screen lg': {
-        fontSize: rem(60),
-      },
-    },
     '.h1': {
       // style
       marginTop: theme('spacing.7'),
@@ -109,6 +94,21 @@ module.exports = {
       lineHeight: 1.4,
       letterSpacing: theme('letterSpacing.wide'),
       textTransform: 'uppercase',
+    },
+    '.h1-display': {
+      // style
+      fontWeight: theme('fontWeight.black'),
+      lineHeight: 1,
+      fontSize: rem(35),
+      '@screen sm': {
+        fontSize: rem(50),
+      },
+      '@screen md': {
+        fontSize: rem(55),
+      },
+      '@screen lg': {
+        fontSize: rem(60),
+      },
     },
     '.h-block': {
       // style
