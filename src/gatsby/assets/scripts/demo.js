@@ -378,6 +378,45 @@ const populateDemo = (container, i) => {
     min: 1,
   })
   for (const item of items) {
+    // https://github.com/zenorocha/clipboard.js/
+    const btnClipboard = item.querySelector('.btn-clipboard')
+    if (!btnClipboard.dataset.clipboardDone) {
+      btnClipboard.dataset.clipboardDone = 'true'
+      const clipboard = new ClipboardJS(btnClipboard, {
+        text: trigger => {
+          const elSourceCode = trigger.closest('.gatsby_demo').querySelector('.gatsby_demo_item.in .gatsby_demo_code .gatsby_demo_code_body_item.in pre code')
+          return Xt.dataStorage.get(elSourceCode, 'sourceCode')
+        },
+      })
+      clipboard.on('success', e => {
+        if (!Xt.dataStorage.get(clipboard, 'ClipboardFrame') !== e.text) {
+          Xt.dataStorage.set(clipboard, 'ClipboardFrame', e.text)
+          e.clearSelection()
+          // tooltip
+          const btn = btnClipboard
+          const tooltip = btn.closest('[data-xt-tooltip]')
+          // close tooltip
+          tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+          // swap tooltip
+          let self = Xt.get('xt-tooltip', tooltip)
+          if (self) {
+            self.targets[0].style.display = 'none'
+            self.targets[1].style.display = ''
+            // open tooltip
+            tooltip.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
+          }
+        }
+      })
+      const tooltip = btnClipboard.closest('[data-xt-tooltip]')
+      tooltip.addEventListener('off.xt.tooltip', () => {
+        // swap tooltip
+        let self = Xt.get('xt-tooltip', tooltip)
+        if (self) {
+          self.targets[0].style.display = ''
+          self.targets[1].style.display = 'none'
+        }
+      })
+    }
     // @FIX demo fullscreen
     item.addEventListener('on.xt.toggle', () => {
       if (!self.initial) {
@@ -392,46 +431,6 @@ const populateDemo = (container, i) => {
         // hash cancel
         cancelAnimationFrame(Xt.dataStorage.get(document, 'gatsby_open-full-raf'))
       }
-      // https://github.com/zenorocha/clipboard.js/
-      const btnClipboard = item.querySelector('.btn-clipboard')
-      if (!btnClipboard.dataset.clipboardDone) {
-        btnClipboard.dataset.clipboardDone = 'true'
-        const clipboard = new ClipboardJS(btnClipboard, {
-          text: trigger => {
-            const elSourceCode = trigger.closest('.gatsby_demo').querySelector('.gatsby_demo_item.in .gatsby_demo_code .gatsby_demo_code_body_item.in pre code')
-            return Xt.dataStorage.get(elSourceCode, 'sourceCode')
-          },
-        })
-        clipboard.on('success', e => {
-          if (!Xt.dataStorage.get(clipboard, 'ClipboardFrame') !== e.text) {
-            Xt.dataStorage.set(clipboard, 'ClipboardFrame', e.text)
-            e.clearSelection()
-            // tooltip
-            const btn = btnClipboard
-            const tooltip = btn.closest('[data-xt-tooltip]')
-            // close tooltip
-            tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
-            // swap tooltip
-            let self = Xt.get('xt-tooltip', tooltip)
-            if (self) {
-              self.targets[0].style.display = 'none'
-              self.targets[1].style.display = ''
-              // open tooltip
-              tooltip.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
-            }
-          }
-        })
-      }
-      const btn = btnClipboard
-      const tooltip = btn.closest('[data-xt-tooltip]')
-      tooltip.addEventListener('off.xt.tooltip', () => {
-        // swap tooltip
-        let self = Xt.get('xt-tooltip', tooltip)
-        if (self) {
-          self.targets[0].style.display = ''
-          self.targets[1].style.display = 'none'
-        }
-      })
     })
   }
   // .btn-show-code
