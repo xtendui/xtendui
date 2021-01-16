@@ -57,9 +57,15 @@ class Slider extends Xt.Toggle {
       self.detail.draggerWidth = self.dragger.offsetWidth
       self.detail.draggerLeft = self.dragger.offsetLeft
     }
-    for (const slide of self.targets) {
-      Xt.dataStorage.set(slide, `${self.ns}SlideLeft`, slide.offsetLeft)
-      Xt.dataStorage.set(slide, `${self.ns}SlideWidth`, slide.offsetWidth)
+    let fixNegativeMargin = 0
+    for (const [i, slide] of self.targets.entries()) {
+      const left = slide.offsetLeft
+      const width = slide.offsetWidth
+      if (i === 0) {
+        fixNegativeMargin = left
+      }
+      Xt.dataStorage.set(slide, `${self.ns}SlideLeft`, left - fixNegativeMargin)
+      Xt.dataStorage.set(slide, `${self.ns}SlideWidth`, width)
     }
     // initSliderGroup
     self.initSliderGroup()
@@ -121,8 +127,6 @@ class Slider extends Xt.Toggle {
       target.setAttribute('data-xt-group', `${self.ns}-${currentGroup}`)
     }
     self.groupInitial = self.group
-    // @FIX position values negative margins
-    self.detail.fixNegativeMargin = Xt.dataStorage.get(self.group[0][0], `${self.ns}SlideLeft`)
     // @FIX disable slider if not overflowing
     if (options.overflowAuto && totalCount >= 0) {
       self.object.classList.add('xt-overflow-auto')
@@ -204,10 +208,16 @@ class Slider extends Xt.Toggle {
       wrapFirstFunction()
       self.groupInitial.reverse() // reset reverse
       // @FIX performances
-      for (const slide of self.targets) {
+      let fixNegativeMargin = 0
+      for (const [i, slide] of self.targets.entries()) {
         // needs to recalculate not only xt-wrap but all targets
-        Xt.dataStorage.set(slide, `${self.ns}SlideLeft`, slide.offsetLeft)
-        Xt.dataStorage.set(slide, `${self.ns}SlideWidth`, slide.offsetWidth)
+        const left = slide.offsetLeft
+        const width = slide.offsetWidth
+        if (i === 0) {
+          fixNegativeMargin = left
+        }
+        Xt.dataStorage.set(slide, `${self.ns}SlideLeft`, left - fixNegativeMargin)
+        Xt.dataStorage.set(slide, `${self.ns}SlideWidth`, width)
       }
     }
     self.groupFirst = wrapFirst
@@ -343,7 +353,6 @@ class Slider extends Xt.Toggle {
     // @FIX position values negative margins
     for (const target of self.targets) {
       let pos = Xt.dataStorage.get(target, `${self.ns}GroupPos`)
-      pos += self.detail.fixNegativeMargin
       Xt.dataStorage.set(target, `${self.ns}GroupPos`, pos)
     }
     // set wheel min and max
@@ -697,7 +706,7 @@ class Slider extends Xt.Toggle {
                 for (const target of self.targets) {
                   const slideLeft = Xt.dataStorage.get(target, `${self.ns}SlideLeft`)
                   const slideWidth = Xt.dataStorage.get(target, `${self.ns}SlideWidth`)
-                  const slideBound = slideLeft - self.detail.fixNegativeMargin + slideWidth
+                  const slideBound = slideLeft + slideWidth
                   if (slideLeft < -Math.ceil(draggerTranslate) || slideBound > Math.ceil(self.detail.draggerWidth - draggerTranslate)) {
                     target.classList.add('xt-links-none')
                     target.classList.remove('xt-jumps-none')
