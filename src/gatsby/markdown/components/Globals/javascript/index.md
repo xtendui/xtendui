@@ -130,12 +130,12 @@ Xt.mount.push({
   mount: ({ object, mount, index, matches }) => {
     // logic
 
-    console.log('mounted', object)
+    console.debug('mounted', object)
 
     // unmount
 
     return () => {
-      console.log('unmounted', object)
+      console.debug('unmounted', object)
     }
   },
 })
@@ -160,7 +160,7 @@ Xt.mount.push({
 
       // logic
 
-      console.log(objects)
+      console.debug(objects)
     })
   },
 })

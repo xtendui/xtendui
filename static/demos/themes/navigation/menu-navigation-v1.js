@@ -200,7 +200,6 @@ Xt.mount.push({
         object,
         'lineFrame',
         requestAnimationFrame(() => {
-          console.log('enter', el)
           // line
           const lineX = el.offsetLeft
           const lineY = el.getBoundingClientRect().top + el.offsetHeight
@@ -234,7 +233,6 @@ Xt.mount.push({
         'lineFrame',
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
-            console.log('leave', el)
             // not when drop is still open
             const dropBtnActive = object.querySelector('.drop-container.active')
             if (!dropBtnActive) {
