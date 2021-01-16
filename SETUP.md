@@ -126,24 +126,7 @@ This library uses [gsap](https://github.com/greensock/GSAP) for javascript anima
 npm install gsap --save
 ```
 
-Then add this one time to setup gsap, **we disable force3D** for smoother pixels animations, and we make **instant animations** and **double automatic change time** when the the user has activated "Prefers Reduced Motion", see [javascript animation](https://xtendui.com/components/globals/javascript#animation).
-
-```jsx
-import gsap from 'gsap'
-
-/**
- * animations setup
- */
-
-gsap.config({ force3D: false })
-
-if (Xt.durationTimescale === 1000) {
-  // instant animations accessibility
-  gsap.globalTimeline.timeScale(1000)
-  // double auto time accessibility
-  Xt.autoTimescale = 0.5
-}
-```
+Then add one time to setup for gsap, see [javascript animation](https://xtendui.com/components/globals/javascript#animation).
 
 #### Polyfill
 
@@ -187,7 +170,7 @@ Opera >= 25
 
 ## CDN
 
-If you need to do a **fast installation** of css and js use [xtendui CDN](https://unpkg.com/xtendui/), the css and js are inside the `dist/` folder.
+If you need to do a **fast installation** of css and js use [xtendui CDN](https://unpkg.com/xtendui@beta/), the css and js are inside the `dist/` folder.
 
 The CDN `dist/` files are large because they include tailwindcss and all components / addons, **it's not representative of the sizes** you see when including Xtend UI as part of your build process.
 

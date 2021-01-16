@@ -34,7 +34,7 @@ module.exports = {
 
 ## Animation
 
-This library uses [gsap](https://github.com/greensock/GSAP) for javascript animations, follow [gsap setup](/introduction/getting-started/setup#javascript-gsap) to **install and use gsap**.
+This library uses [gsap](https://github.com/greensock/GSAP) for javascript animations.
 
 You can **opt out** some animations behaviour:
 
