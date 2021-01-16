@@ -277,45 +277,57 @@ class Slider extends Xt.Toggle {
     for (const target of self.targets) {
       target.children[0].style.width = ''
     }
+    // cannot have contain and wrap together because not possible and we set groupInitial
+    if (options.contain && options.drag.wrap) {
+      // debug
+      if (Xt.debug) {
+        console.warn('Xt.debug cannot have a slider with "contain: true" and "wrap: true"', self.object)
+      }
+    }
     // min max pos with contain
     if (options.contain && slidesWidth > self.detail.draggerWidth) {
       // only if slides overflow dragger
-      const slideFirst = self.targets[0]
-      const slideFirstLeft = Xt.dataStorage.get(slideFirst, `${self.ns}SlideLeft`)
-      const slideLast = self.targets[self.targets.length - 1]
-      const slideLastLeft = Xt.dataStorage.get(slideLast, `${self.ns}SlideLeft`)
-      const slideLastWidth = Xt.dataStorage.get(slideLast, `${self.ns}SlideWidth`)
-      const min = -slideFirstLeft
-      const max = -slideLastLeft + self.detail.draggerWidth - slideLastWidth
+      const first = self.groupInitial[0][0]
+      const last = self.groupInitial[self.groupInitial.length - 1][0]
+      const firstLeft = Xt.dataStorage.get(first, `${self.ns}SlideLeft`)
+      const lastLeft = Xt.dataStorage.get(last, `${self.ns}SlideLeft`)
+      const lastWidth = Xt.dataStorage.get(last, `${self.ns}SlideWidth`)
+      const min = -firstLeft
+      const max = -lastLeft + self.detail.draggerWidth - lastWidth
+      let iRemoved = 0
       for (let i = 0; i < self.group.length; i++) {
         const group = self.group[i]
         for (const slide of group) {
           // once per group
           if (!Xt.dataStorage.get(slide, `${self.ns}GroupContainDone`)) {
-            let pos = Xt.dataStorage.get(slide, `${self.ns}GroupPos`)
+            let pos = Math.ceil(Xt.dataStorage.get(slide, `${self.ns}GroupPos`))
             if (pos >= min) {
               pos = min
               // reassign group
-              const groupFirst = 0
-              if (i > groupFirst) {
+              const firstIndex = self.wrapIndex
+              if (i > firstIndex) {
                 for (const target of group) {
-                  self.group[groupFirst].push(target)
-                  target.setAttribute('data-xt-group', `${self.ns}-${groupFirst}`)
+                  self.group[firstIndex].push(target)
+                  target.setAttribute('data-xt-group', `${self.ns}-${firstIndex}`)
                 }
                 self.group.splice(i, 1)
-                i-- // splice reindex
+                // splice reindex
+                i--
+                iRemoved++
               }
             } else if (pos <= max) {
               pos = max
               // reassign group
-              const groupLast = self.group.length - 1
-              if (i < groupLast) {
+              const lastIndex = self.wrapIndex + self.groupInitial.length - 1 - iRemoved
+              if (i < lastIndex) {
                 for (const target of group) {
-                  self.group[groupLast].push(target)
-                  target.setAttribute('data-xt-group', `${self.ns}-${groupLast}`)
+                  self.group[lastIndex].push(target)
+                  target.setAttribute('data-xt-group', `${self.ns}-${lastIndex}`)
                 }
                 self.group.splice(i, 1)
-                i-- // splice reindex
+                // splice reindex
+                i--
+                iRemoved++
               }
             }
             for (const target of group) {
@@ -325,6 +337,8 @@ class Slider extends Xt.Toggle {
           }
         }
       }
+      // groupInitial
+      self.groupInitial = self.group
     }
     // @FIX position values negative margins
     for (const target of self.targets) {
@@ -334,9 +348,8 @@ class Slider extends Xt.Toggle {
     }
     // set wheel min and max
     if (options.wheel && options.wheel.selector) {
-      const arr = self.targets.filter(x => !x.classList.contains('xt-wrap'))
-      const first = arr[0]
-      const last = arr[arr.length - 1]
+      const first = self.groupInitial[0][0]
+      const last = self.groupInitial[self.groupInitial.length - 1][0]
       self.detail.wheelMin = -Xt.dataStorage.get(first, `${self.ns}GroupPos`)
       self.detail.wheelMax = -Xt.dataStorage.get(last, `${self.ns}GroupPos`)
     }
@@ -410,9 +423,9 @@ class Slider extends Xt.Toggle {
         self.pags[z][i] = container.querySelectorAll('[data-xt-pag].xt-clone')[i]
         // drag wrap
         if (self.dragger && options.drag.wrap) {
-          const first = self.wrapIndex
-          const last = self.wrapIndex + self.groupInitial.length - 1
-          if (i < first || i > last) {
+          const firstIndex = self.wrapIndex
+          const lastIndex = self.wrapIndex + self.groupInitial.length - 1
+          if (i < firstIndex || i > lastIndex) {
             self.pags[z][i].classList.add('xt-clone', 'xt-wrap', 'hidden')
           }
         }
@@ -760,16 +773,16 @@ class Slider extends Xt.Toggle {
   eventWrap() {
     const self = this
     // wrap around xt-wrap items
-    const first = self.wrapIndex
-    const last = self.wrapIndex + self.groupInitial.length - 1
-    if (self.currentIndex < first) {
+    const firstIndex = self.wrapIndex
+    const lastIndex = self.wrapIndex + self.groupInitial.length - 1
+    if (self.currentIndex < firstIndex) {
       self.initial = true
       self.wrap = true
-      self.goToNum(last + self.currentIndex - first + 1, true)
-    } else if (self.currentIndex > last) {
+      self.goToNum(lastIndex + self.currentIndex - firstIndex + 1, true)
+    } else if (self.currentIndex > lastIndex) {
       self.initial = true
       self.wrap = true
-      self.goToNum(first + self.currentIndex - last - 1, true)
+      self.goToNum(firstIndex + self.currentIndex - lastIndex - 1, true)
     }
   }
 
@@ -989,9 +1002,8 @@ class Slider extends Xt.Toggle {
     self.detail.dragDirection = self.detail.dragPos < self.detail.dragPosOld ? -1 : 1
     // overflow
     if (options.drag.overflow) {
-      const arr = self.targets.filter(x => !x.classList.contains('xt-wrap'))
-      const first = arr[0]
-      const last = arr[arr.length - 1]
+      const first = self.groupInitial[0][0]
+      const last = self.groupInitial[self.groupInitial.length - 1][0]
       const min = Xt.dataStorage.get(first, `${self.ns}GroupPos`)
       const max = Xt.dataStorage.get(last, `${self.ns}GroupPos`)
       // overflow
@@ -1002,13 +1014,13 @@ class Slider extends Xt.Toggle {
           self.detail.dragVelocity = fncOverflow(Math.abs(self.detail.dragVelocity)) * sign
         }
       } else {
-        const first = self.wrapIndex
-        const last = self.wrapIndex + self.groupInitial.length - 1
-        if (dragPos > min && self.currentIndex === first && direction < 0) {
+        const firstIndex = self.wrapIndex
+        const lastIndex = self.wrapIndex + self.groupInitial.length - 1
+        if (dragPos > min && self.currentIndex === firstIndex && direction < 0) {
           self.detail.dragVelocity = -1 // @FIX velocity -1 when done
           const overflow = dragPos - min
           dragPos = min + fncOverflow(overflow)
-        } else if (dragPos < max && self.currentIndex === last && direction > 0) {
+        } else if (dragPos < max && self.currentIndex === lastIndex && direction > 0) {
           self.detail.dragVelocity = -1 // @FIX velocity -1 when done
           const overflow = dragPos - max
           dragPos = max - fncOverflow(-overflow)
@@ -1168,8 +1180,8 @@ class Slider extends Xt.Toggle {
       } else if (diff > 0 && direction > 0 && (self.detail.dragDirection > 0 || diff < self.detail.dragDist)) {
         // next in direction from drag diff or diff drag when dragging and coming back in direction
         return old
-      } else if (i === self.group.length - 1 && diff < 0 && diff < self.detail.dragDist) {
-        // needed for last slide because we return the old, last check is for absolute mode
+      } else if (i === self.group.length - 1 && diff < 0 && diff > -self.detail.dragDist) {
+        // needed for last slide because we return the old, last check is for absolute mode when overflowing
         return i
       }
       old = i

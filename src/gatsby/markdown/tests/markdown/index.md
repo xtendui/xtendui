@@ -6,6 +6,11 @@ title: "Markdown"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
+<demo>
+  <demovanilla src="vanilla/components/core/slider/contain-center">
+  </demovanilla>
+</demo>
+
 ## Markdown
 
 description: "Examples of breadcrumbs, with all the basic functionality and more."
