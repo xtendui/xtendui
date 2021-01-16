@@ -22,6 +22,6 @@ Ask first before starting work on any significant new features.
 - Make sure npm test passes with `npm run test`.
 -->
 
-### Committing Changes
+## Committing Changes
 
 Commit messages should follow the [commit message convention](./COMMIT_CONVENTION.md) so that changelogs can be automatically generated.

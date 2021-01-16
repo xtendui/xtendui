@@ -1,5 +1,5 @@
 
-## Git Commit Message Convention
+# Git Commit Message Convention
 
 We use [Angular commit guidelines](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines) to describe each commit. If you are not sure if your pull request introduces breaking changes or feature, just ask.
 
