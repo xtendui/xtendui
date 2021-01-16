@@ -1168,8 +1168,8 @@ class Slider extends Xt.Toggle {
       } else if (diff > 0 && direction > 0 && (self.detail.dragDirection > 0 || diff < self.detail.dragDist)) {
         // next in direction from drag diff or diff drag when dragging and coming back in direction
         return old
-      } else if (i === self.group.length - 1 && diff <= 0) {
-        // needed for last slide because we return the old
+      } else if (i === self.group.length - 1 && diff < 0 && diff < self.detail.dragDist) {
+        // needed for last slide because we return the old, last check is for absolute mode
         return i
       }
       old = i
