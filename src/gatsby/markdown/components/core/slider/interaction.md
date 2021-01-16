@@ -113,7 +113,7 @@ You can set overflow with `drag: { overflow: Function }`, for example `(overflow
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |	
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |	
-| Option                  | `drag.overflow:Function`                          | `<function>`        | Function for drag overflow             |	
+| Option                  | `drag.overflow:Function|Boolean`                          | `<function>`        | Function for drag overflow             |	
 
 </div>	
 

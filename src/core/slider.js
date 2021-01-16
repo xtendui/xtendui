@@ -993,17 +993,18 @@ class Slider extends Xt.Toggle {
       const min = Xt.dataStorage.get(first, `${self.ns}GroupPos`)
       const max = Xt.dataStorage.get(last, `${self.ns}GroupPos`)
       // overflow
+      const direction = Math.sign(self.detail.dragDist)
       const fncOverflow = options.drag.overflow
       if (friction && options.drag.friction) {
         if (dragPos > min || dragPos < max) {
           self.detail.dragVelocity = fncOverflow(Math.abs(self.detail.dragVelocity)) * sign
         }
       } else {
-        if (dragPos > min) {
+        if (dragPos > min && self.currentIndex === 0 && direction < 0) {
           self.detail.dragVelocity = -1 // @FIX velocity -1 when done
           const overflow = dragPos - min
           dragPos = min + fncOverflow(overflow)
-        } else if (dragPos < max) {
+        } else if (dragPos < max && self.currentIndex === self.group.length - 1 && direction > 0) {
           self.detail.dragVelocity = -1 // @FIX velocity -1 when done
           const overflow = dragPos - max
           dragPos = max - fncOverflow(-overflow)
@@ -1028,6 +1029,35 @@ class Slider extends Xt.Toggle {
     if (self.initial) {
       self.dragger.classList.remove('xt-transition-none')
     }
+    // activation
+    if (Math.abs(self.detail.dragDist) > options.drag.threshold) {
+      // get nearest
+      const direction = Math.sign(self.detail.dragDist)
+      let found = self.currentIndex
+      let old = self.currentIndex
+      const findNext = () => {
+        for (let i = 0; i < self.group.length; i++) {
+          const slide = self.group[i][0]
+          const pos = Xt.dataStorage.get(slide, `${self.ns}GroupPos`)
+          const diff = self.detail.dragPos - pos
+          if (diff > 0) {
+            // next in direction from drag diff or diff drag when dragging and coming back in direction
+            if (direction < 0 && (self.detail.dragDirection < 0 || diff < -self.detail.dragDist)) {
+              return i
+            } else if (direction > 0 && (self.detail.dragDirection > 0 || diff < self.detail.dragDist)) {
+              return old
+            }
+          }
+          old = i
+        }
+        return found
+      }
+      found = findNext()
+      if (found !== self.currentIndex) {
+        console.log(self.getElementsGroups()[found], found)
+        super.eventOn(self.getElementsGroups()[found], true, null)
+      }
+    }
     // listener dispatch
     if (!self.initial) {
       dragger.dispatchEvent(new CustomEvent(`drag.${self.componentNs}`))
@@ -1043,7 +1073,7 @@ class Slider extends Xt.Toggle {
     const options = self.options
     // prevent dragging animation
     dragger.classList.remove('duration-none')
-    // check threshold
+    // activation
     self.detail.dragDist = self.detail.dragPosReal - self.detail.dragPosCurrent
     const direction = Math.sign(self.detail.dragDist)
     if (!self.detail.dragBlock && Math.abs(self.detail.dragDistOther) > Math.abs(self.detail.dragDist)) {
