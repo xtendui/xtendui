@@ -10,6 +10,6 @@ labels: "type: bug"
 
 <!-- What happends? describe the steps to reproduce the bug and how it should behave instead -->
 
-## Link to minimal reproduction (if possible)
+## Example
 
-<!-- Provide the bug minimal working example (github, codepen, etc..) -->
+<!-- Provide the minimal working example (github, codepen, etc..) -->
