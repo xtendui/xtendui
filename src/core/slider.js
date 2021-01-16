@@ -984,6 +984,7 @@ class Slider extends Xt.Toggle {
     // val
     self.detail.dragPosReal = dragPos
     self.detail.dragCurrentReal = self.detail.dragCurrent
+    self.detail.dragDirection = self.detail.dragPos < self.detail.dragPosOld ? -1 : 1
     // overflow
     if (options.drag.overflow) {
       const arr = self.targets.filter(x => !x.classList.contains('xt-wrap'))
@@ -1010,7 +1011,6 @@ class Slider extends Xt.Toggle {
       }
     }
     // val
-    self.detail.dragDirection = self.detail.dragPos < self.detail.dragPosOld ? -1 : 1
     self.detail.dragCurrent = self.detail.dragCurrentReal - (self.detail.dragPosReal - dragPos) // dragCurrent when overflowing
     self.detail.dragPosOld = self.detail.dragPos
     self.detail.dragPos = dragPos
@@ -1057,7 +1057,6 @@ class Slider extends Xt.Toggle {
       } else if (found === 0 && direction > 0 && self.detail.dragDirection > 0) {
         found = self.group.length - 1
       } else {
-        // next in direction from drag diff
         let old = self.currentIndex
         const findNext = () => {
           for (let i = 0; i < self.group.length; i++) {
@@ -1065,9 +1064,10 @@ class Slider extends Xt.Toggle {
             const pos = Xt.dataStorage.get(slide, `${self.ns}GroupPos`)
             const diff = self.detail.dragPos - pos
             if (diff > 0) {
-              if (direction < 0 && self.detail.dragDirection < 0) {
+              // next in direction from drag diff or diff drag when dragging and coming back in direction
+              if (direction < 0 && (self.detail.dragDirection < 0 || diff < -self.detail.dragDist)) {
                 return i
-              } else if (direction > 0 && self.detail.dragDirection > 0) {
+              } else if (direction > 0 && (self.detail.dragDirection > 0 || diff < self.detail.dragDist)) {
                 return old
               }
             }
