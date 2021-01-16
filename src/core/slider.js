@@ -630,21 +630,21 @@ class Slider extends Xt.Toggle {
     if (self.disabled && !self.initial) {
       return
     }
+    // @FIX targets handler
+    const slides = self.getTargets(element)
+    const slide = slides[0]
+    // only one call per group
+    if (Xt.dataStorage.get(slide, `${self.ns}SlideonDone`)) {
+      return false
+    }
+    Xt.dataStorage.set(slide, `${self.ns}SlideonDone`, true)
+    requestAnimationFrame(() => {
+      Xt.dataStorage.remove(slide, `${self.ns}SlideonDone`)
+    })
+    // val
+    self.detail.dragPos = self.detail.dragPosCurrent = self.detail.dragPosReal = Xt.dataStorage.get(slide, `${self.ns}GroupPos`)
     // toggle
     if (force || (self.checkOn(element) && (!e || !e.type || e.type !== `off.trigger.${self.componentNs}`))) {
-      // @FIX targets handler
-      const slides = self.getTargets(element)
-      const slide = slides[0]
-      // only one call per group
-      if (Xt.dataStorage.get(slide, `${self.ns}SlideonDone`)) {
-        return false
-      }
-      Xt.dataStorage.set(slide, `${self.ns}SlideonDone`, true)
-      requestAnimationFrame(() => {
-        Xt.dataStorage.remove(slide, `${self.ns}SlideonDone`)
-      })
-      // val
-      self.detail.dragPos = self.detail.dragPosCurrent = self.detail.dragPosReal = Xt.dataStorage.get(slide, `${self.ns}GroupPos`)
       // autoHeight and keepHeight
       if (self.autoHeight || (self.keepHeight && self.initial)) {
         let slideHeight = Xt.dataStorage.get(slide, `${self.ns}SlideHeight`)
@@ -1085,16 +1085,16 @@ class Slider extends Xt.Toggle {
       if (found === self.detail.dragIndex) {
         // change at least one
         if (direction < 0 && self.detail.dragDirection < 0) {
-          self.goToNext(1, true)
+          self.goToNext(1)
         } else if (direction > 0 && self.detail.dragDirection > 0) {
-          self.goToPrev(1, true)
+          self.goToPrev(1)
         } else {
           // drag reset
           self.logicDragreset(dragger)
         }
       } else {
         // goToNum
-        self.goToNum(found, true)
+        self.goToNum(found)
       }
     } else {
       // drag reset
