@@ -1119,7 +1119,7 @@ class Toggle {
         break
       }
     }
-    self.oldIndex = self.currentIndex
+    self.oldIndex = self.currentIndex ?? index
     self.currentIndex = index
   }
 
