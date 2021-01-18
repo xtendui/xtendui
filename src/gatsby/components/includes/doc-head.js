@@ -19,7 +19,9 @@ export default class DocHead extends React.Component {
                     <span>{page.post.frontmatter.parent}</span>
                   ) : null}
                 </span>
-                {page.post.frontmatter.category ? <div className="badge badge-sm">{page.post.frontmatter.category}</div> : null}
+                {page.post.frontmatter.category ? (
+                  <div className="badge badge-sm">{page.post.frontmatter.category}</div>
+                ) : null}
               </h1>
               {page.post.frontmatter.description ? (
                 <h2 className="p">{page.post.frontmatter.description}</h2>

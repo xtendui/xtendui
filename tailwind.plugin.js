@@ -15,8 +15,10 @@ module.exports = plugin.withOptions(() => {
       const componentBase = componentsBase[component] || {}
       const componentCustom = componentsCustom[component] || {}
       if (componentCustom !== false && componentCustom.component !== false) {
-        const base = typeof componentBase.component === 'function' ? componentBase.component(theme) : componentBase.component
-        const custom = typeof componentCustom.component === 'function' ? componentCustom.component(theme) : componentCustom.component
+        const base =
+          typeof componentBase.component === 'function' ? componentBase.component(theme) : componentBase.component
+        const custom =
+          typeof componentCustom.component === 'function' ? componentCustom.component(theme) : componentCustom.component
         const css = merge(...castArray(base || {}), custom || {})
         addComponents(css)
       }
@@ -31,7 +33,8 @@ module.exports = plugin.withOptions(() => {
       const componentCustom = componentsCustom[component] || {}
       if (componentCustom !== false && componentCustom.utility !== false) {
         const base = typeof componentBase.utility === 'function' ? componentBase.utility(theme) : componentBase.utility
-        const custom = typeof componentCustom.utility === 'function' ? componentCustom.utility(theme) : componentCustom.utility
+        const custom =
+          typeof componentCustom.utility === 'function' ? componentCustom.utility(theme) : componentCustom.utility
         const variants = merge(componentBase.variants || [], componentCustom.variants || [])
         const options = merge(...castArray(base || {}), custom || {})
         const utilities = Object.keys(options)
@@ -172,7 +175,9 @@ module.exports = plugin.withOptions(() => {
 
     addVariant('group-active', ({ modifySelectors, separator }) => {
       modifySelectors(({ className }) => {
-        return `.group:active .${e(`group-active${separator}${className}`)},.group.active .${e(`group-active${separator}${className}`)}`
+        return `.group:active .${e(`group-active${separator}${className}`)},.group.active .${e(
+          `group-active${separator}${className}`
+        )}`
       })
     })
 

@@ -22,14 +22,26 @@ Xt.mount.push({
       onUpdate: self => {
         // scrolling-down depending on scroll direction
         if (!self.getVelocity()) return // skip on initial
-        if (object.classList.contains('scrolling-down') && object.classList.contains('scrolling-hide') && self.direction < 0) {
+        if (
+          object.classList.contains('scrolling-down') &&
+          object.classList.contains('scrolling-hide') &&
+          self.direction < 0
+        ) {
           object.classList.remove('scrolling-down')
           gsap.killTweensOf(object)
           gsap.to(object, { y: 0, duration: 0.5, ease: 'quart.out' })
-        } else if (!object.classList.contains('scrolling-down') && object.classList.contains('scrolling-hide') && self.direction > 0) {
+        } else if (
+          !object.classList.contains('scrolling-down') &&
+          object.classList.contains('scrolling-hide') &&
+          self.direction > 0
+        ) {
           object.classList.add('scrolling-down')
           gsap.killTweensOf(object)
-          gsap.to(object, { y: -stickyInner.offsetHeight, duration: 0.5, ease: 'quart.out' })
+          gsap.to(object, {
+            y: -stickyInner.offsetHeight,
+            duration: 0.5,
+            ease: 'quart.out',
+          })
         }
       },
     })

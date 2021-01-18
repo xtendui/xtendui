@@ -15,9 +15,20 @@ Xt.mount.push({
       const ripple = self.container.querySelector('.ripple:last-child')
       // animate
       if (ripple) {
-        gsap.set(ripple, { height: self.size, width: self.size, top: self.top, left: self.left, scale: 1, opacity: 0 })
+        gsap.set(ripple, {
+          height: self.size,
+          width: self.size,
+          top: self.top,
+          left: self.left,
+          scale: 1,
+          opacity: 0,
+        })
         gsap.to(ripple, { opacity: 1, duration: 0.25, ease: 'quad.inOut' })
-        gsap.to(ripple, { scale: self.scaleFinal, duration: 0.5, ease: 'quad.inOut' })
+        gsap.to(ripple, {
+          scale: self.scaleFinal,
+          duration: 0.5,
+          ease: 'quad.inOut',
+        })
       }
     }
 
@@ -29,9 +40,16 @@ Xt.mount.push({
       const ripple = self.container.querySelector('.ripple:last-child')
       // animate
       if (ripple) {
-        gsap.to(ripple, { opacity: 0, duration: 0.5, ease: 'quad.inOut', delay: 0.1 }).eventCallback('onComplete', () => {
-          ripple.remove()
-        })
+        gsap
+          .to(ripple, {
+            opacity: 0,
+            duration: 0.5,
+            ease: 'quad.inOut',
+            delay: 0.1,
+          })
+          .eventCallback('onComplete', () => {
+            ripple.remove()
+          })
       }
     }
 

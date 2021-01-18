@@ -40,15 +40,27 @@ class Scrolltoanchor {
     // class
     self.classes = self.options.class ? [...self.options.class.split(' ')] : []
     // click
-    let clickHandler = Xt.dataStorage.put(self.object, `click/${self.ns}`, self.eventChange.bind(self).bind(self, false, null))
+    let clickHandler = Xt.dataStorage.put(
+      self.object,
+      `click/${self.ns}`,
+      self.eventChange.bind(self).bind(self, false, null)
+    )
     self.object.addEventListener('click', clickHandler)
     // hash
-    let hashHandler = Xt.dataStorage.put(window, `hashchange/${self.ns}`, self.eventChange.bind(self).bind(self, true, null))
+    let hashHandler = Xt.dataStorage.put(
+      window,
+      `hashchange/${self.ns}`,
+      self.eventChange.bind(self).bind(self, true, null)
+    )
     addEventListener('hashchange', hashHandler)
     // scroll
     for (const scrollElement of self.options.scrollElements) {
       if (scrollElement) {
-        let scrollHandler = Xt.dataStorage.put(scrollElement, `scroll/${self.ns}`, self.eventScrollHandler.bind(self).bind(self, scrollElement))
+        let scrollHandler = Xt.dataStorage.put(
+          scrollElement,
+          `scroll/${self.ns}`,
+          self.eventScrollHandler.bind(self).bind(self, scrollElement)
+        )
         if (scrollElement === document.scrollingElement) {
           addEventListener('scroll', scrollHandler)
         } else {

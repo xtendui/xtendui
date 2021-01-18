@@ -26,7 +26,8 @@ Xt.medialoadedDelay = 250
 Xt.stickyIndex = 800
 Xt.scrollRestoration = 'auto'
 Xt.focusables = 'a, button, details, input, iframe, select, textarea, .btn-close'
-Xt.supportScroll = typeof window === 'undefined' ? false : 'onscroll' in window && !/(gle|ing)bot/.test(navigator.userAgent)
+Xt.supportScroll =
+  typeof window === 'undefined' ? false : 'onscroll' in window && !/(gle|ing)bot/.test(navigator.userAgent)
 Xt.durationTimescale = matchMedia('(prefers-reduced-motion: reduce), (update: slow)').matches ? 1000 : 1
 Xt.autoTimescale = 1
 Xt.debug = typeof process !== 'undefined' && process.env && process.env.NODE_ENV === 'development'
@@ -81,15 +82,25 @@ if (window.self === window.top && Xt.debug) {
         const title = object.title
         const label = object.getAttribute('aria-label') || object.getAttribute('aria-labelledby')
         if (!text.length && (!title || title === '') && (!label || label === '')) {
-          console.warn('Xt.debug: detected a "link" without "textContent" or "title" or "aria-label" or "aria-labelledby"', object)
+          console.warn(
+            'Xt.debug: detected a "link" without "textContent" or "title" or "aria-label" or "aria-labelledby"',
+            object
+          )
         }
         // target
         const target = object.getAttribute('target')
         if (target && target.toLowerCase() === '_blank') {
           if (object.hostname.length && location.hostname !== object.hostname) {
             const rel = object.getAttribute('rel')
-            if (!rel || rel === '' || (!rel.toLowerCase().indexOf('noopener') && !rel.toLowerCase().indexOf('noreferrer'))) {
-              console.warn('Xt.debug: detected a "link" with target="_blank" without rel="noopener" or rel="noreferrer"', object)
+            if (
+              !rel ||
+              rel === '' ||
+              (!rel.toLowerCase().indexOf('noopener') && !rel.toLowerCase().indexOf('noreferrer'))
+            ) {
+              console.warn(
+                'Xt.debug: detected a "link" with target="_blank" without rel="noopener" or rel="noreferrer"',
+                object
+              )
             }
           }
         }
@@ -472,10 +483,18 @@ Xt.focus = {
       document.removeEventListener('keyup', focusChangeKeyHandler)
     }
     // event mouse
-    const focusChangeOtherHandler = Xt.dataStorage.put(document, 'mousedown touchstart pointerdown/focus', Xt.focus.changeOther)
+    const focusChangeOtherHandler = Xt.dataStorage.put(
+      document,
+      'mousedown touchstart pointerdown/focus',
+      Xt.focus.changeOther
+    )
     document.addEventListener('mousedown', focusChangeOtherHandler)
-    document.addEventListener('touchstart', focusChangeOtherHandler, { passive: true })
-    document.addEventListener('pointerdown', focusChangeOtherHandler, { passive: true })
+    document.addEventListener('touchstart', focusChangeOtherHandler, {
+      passive: true,
+    })
+    document.addEventListener('pointerdown', focusChangeOtherHandler, {
+      passive: true,
+    })
   },
 
   /**
@@ -538,7 +557,9 @@ Xt.focusLimit = {
    */
   on: el => {
     // vars
-    Xt.focusLimit.focusables = Array.from(el.querySelectorAll(Xt.focusables)).filter(x => x.matches(':not([disabled]), :not([tabindex="-1"])'))
+    Xt.focusLimit.focusables = Array.from(el.querySelectorAll(Xt.focusables)).filter(x =>
+      x.matches(':not([disabled]), :not([tabindex="-1"])')
+    )
     if (Xt.focusLimit.focusables.length) {
       Xt.focusLimit.first = Xt.focusLimit.focusables[0]
       Xt.focusLimit.last = Xt.focusLimit.focusables[Xt.focusLimit.focusables.length - 1]
@@ -1027,7 +1048,11 @@ Xt.animTimeoutClear = (el, suffix = '') => {
 Xt.animTime = (el, timing = null, actionCurrent = null) => {
   if (timing || timing === 0) {
     return timing / Xt.durationTimescale
-  } else if ((timing = (actionCurrent && el.getAttribute(`data-xt-duration${actionCurrent}`)) || (timing = el.getAttribute('data-xt-duration')))) {
+  } else if (
+    (timing =
+      (actionCurrent && el.getAttribute(`data-xt-duration${actionCurrent}`)) ||
+      (timing = el.getAttribute('data-xt-duration')))
+  ) {
     return parseFloat(timing) / Xt.durationTimescale
   } else {
     const style = getComputedStyle(el)
@@ -1100,7 +1125,12 @@ Xt.eventDelay = ({ event, element, func, prefix = '', instant = false }) => {
   cancelAnimationFrame(Xt.dataStorage.get(element, `${prefix}Frame`))
   clearTimeout(Xt.dataStorage.get(element, `${prefix}Timeout`))
   if (event) {
-    const delay = event.detail !== undefined && event.detail.delay !== undefined ? event.detail.delay : instant ? 0 : Xt[`${event.type}Delay`]
+    const delay =
+      event.detail !== undefined && event.detail.delay !== undefined
+        ? event.detail.delay
+        : instant
+        ? 0
+        : Xt[`${event.type}Delay`]
     if (event.type === 'resize') {
       const w = window.innerWidth
       const h = window.innerHeight

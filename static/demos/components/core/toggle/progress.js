@@ -30,7 +30,12 @@ Xt.mount.push({
         for (const filler of fillers) {
           gsap.killTweensOf(filler)
           gsap.set(filler, { height: 0, top: '100%' })
-          gsap.to(filler, { height: '100%', top: 0, duration: self.options.auto.time / 1000, ease: fillerEase })
+          gsap.to(filler, {
+            height: '100%',
+            top: 0,
+            duration: self.options.auto.time / 1000,
+            ease: fillerEase,
+          })
         }
       }
       // targets
@@ -40,7 +45,12 @@ Xt.mount.push({
         for (const filler of fillers) {
           gsap.killTweensOf(filler)
           gsap.set(filler, { width: 0, left: 0 })
-          gsap.to(filler, { width: '100%', left: 0, duration: self.options.auto.time / 1000, ease: fillerEase })
+          gsap.to(filler, {
+            width: '100%',
+            left: 0,
+            duration: self.options.auto.time / 1000,
+            ease: fillerEase,
+          })
         }
       }
     }
@@ -56,7 +66,12 @@ Xt.mount.push({
         const fillers = element.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
           gsap.killTweensOf(filler)
-          gsap.to(filler, { height: 0, top: 0, duration: fillerTime, ease: fillerEase })
+          gsap.to(filler, {
+            height: 0,
+            top: 0,
+            duration: fillerTime,
+            ease: fillerEase,
+          })
         }
       }
       // targets
@@ -65,7 +80,12 @@ Xt.mount.push({
         const fillers = target.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
           gsap.killTweensOf(filler)
-          gsap.to(filler, { width: 0, left: '100%', duration: fillerTime, ease: fillerEase })
+          gsap.to(filler, {
+            width: 0,
+            left: '100%',
+            duration: fillerTime,
+            ease: fillerEase,
+          })
         }
       }
     }
@@ -81,7 +101,12 @@ Xt.mount.push({
         const fillers = element.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
           gsap.killTweensOf(filler)
-          gsap.to(filler, { height: 0, top: '100%', duration: fillerTime, ease: fillerEase })
+          gsap.to(filler, {
+            height: 0,
+            top: '100%',
+            duration: fillerTime,
+            ease: fillerEase,
+          })
         }
       }
       // targets
@@ -90,7 +115,12 @@ Xt.mount.push({
         const fillers = target.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
           gsap.killTweensOf(filler)
-          gsap.to(filler, { width: 0, left: 0, duration: fillerTime, ease: fillerEase })
+          gsap.to(filler, {
+            width: 0,
+            left: 0,
+            duration: fillerTime,
+            ease: fillerEase,
+          })
         }
       }
     }

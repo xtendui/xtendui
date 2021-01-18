@@ -27,7 +27,13 @@ export default class Page extends React.Component {
                   <div className="gatsby_home-header_content">
                     <div className="container">
                       <div className="gatsby_logo-icon">
-                        <img src={'/logo-white.svg'} loading="eager" alt={data.site.siteMetadata.title} width="300" height="72" />
+                        <img
+                          src={'/logo-white.svg'}
+                          loading="eager"
+                          alt={data.site.siteMetadata.title}
+                          width="300"
+                          height="72"
+                        />
                       </div>
                       <div className="gatsby_home-header_actions">
                         <div className="list">
@@ -55,8 +61,8 @@ export default class Page extends React.Component {
                     <h1 className="h1-display">A new paradigm for Custom Frontend Development</h1>
                     <h2 className="h4 font-normal opacity-50">
                       <span className="gatsby_home-main_head_description">
-                        Xtend UI is a UI framework for custom styling, interactions and animations. Extremely customizable and designed for building complex
-                        user interfaces.
+                        Xtend UI is a UI framework for custom styling, interactions and animations. Extremely
+                        customizable and designed for building complex user interfaces.
                       </span>
                     </h2>
                     <div className="gatsby_home-main_social">
@@ -122,19 +128,27 @@ export default class Page extends React.Component {
                         <div className="row">
                           <div className="gatsby_home-main_feature_left">
                             <h3 className="h1-display">
-                              <img className="icon icon-sm mr-4" src={'/logo-tailwind.svg'} loading="eager" alt="Tailwind Css" /> Tailwind Css
+                              <img
+                                className="icon icon-sm mr-4"
+                                src={'/logo-tailwind.svg'}
+                                loading="eager"
+                                alt="Tailwind Css"
+                              />{' '}
+                              Tailwind Css
                             </h3>
                           </div>
                           <div className="gatsby_home-main_feature_right">
                             <ul>
                               <li>
-                                A <strong>Tailwind plugin</strong> with overridable <strong>basic styles with cssinjs</strong>.
+                                A <strong>Tailwind plugin</strong> with overridable{' '}
+                                <strong>basic styles with cssinjs</strong>.
                               </li>
                               <li>
                                 Tailwind <strong>component classes</strong> for component basic styling when possible.
                               </li>
                               <li>
-                                We use <strong>Tailwind html classes</strong> for design and animations styles when possible.
+                                We use <strong>Tailwind html classes</strong> for design and animations styles when
+                                possible.
                               </li>
                             </ul>
                           </div>
@@ -144,20 +158,30 @@ export default class Page extends React.Component {
                         <div className="row">
                           <div className="gatsby_home-main_feature_left">
                             <h3 className="h1-display">
-                              <img className="icon icon-sm mr-4" src={'/logo-js.svg'} loading="eager" alt="Vanilla JS" /> Vanilla JS
+                              <img
+                                className="icon icon-sm mr-4"
+                                src={'/logo-js.svg'}
+                                loading="eager"
+                                alt="Vanilla JS"
+                              />{' '}
+                              Vanilla JS
                             </h3>
                           </div>
                           <div className="gatsby_home-main_feature_right">
                             <ul>
                               <li>
-                                <strong>API</strong> with customizzable behaviour (e.g.: <Link to="/components/core/toggle/api">toggle</Link>).
+                                <strong>API</strong> with customizzable behaviour (e.g.:{' '}
+                                <Link to="/components/core/toggle/api">toggle</Link>
+                                ).
                               </li>
                               <li>
                                 Ecosystem of vanilla javascript <strong>plugins and addons</strong>.
                               </li>
                               <li>
-                                A system to <Link to="/components/globals/javascript#utilities-xt-mount">mount components</Link> with{' '}
-                                <strong>mutation observer queries</strong>, to structure your javascript code better.
+                                A system to{' '}
+                                <Link to="/components/globals/javascript#utilities-xt-mount">mount components</Link>{' '}
+                                with <strong>mutation observer queries</strong>, to structure your javascript code
+                                better.
                               </li>
                             </ul>
                           </div>
@@ -167,7 +191,8 @@ export default class Page extends React.Component {
                         <div className="row">
                           <div className="gatsby_home-main_feature_left">
                             <h3 className="h1-display">
-                              <img className="icon icon-sm mr-4" src={'/logo-gsap.svg'} loading="eager" alt="Gsap" /> Gsap
+                              <img className="icon icon-sm mr-4" src={'/logo-gsap.svg'} loading="eager" alt="Gsap" />{' '}
+                              Gsap
                             </h3>
                           </div>
                           <div className="gatsby_home-main_feature_right">
@@ -176,7 +201,8 @@ export default class Page extends React.Component {
                                 Javascript animations when they are <strong>too complex for css</strong>.
                               </li>
                               <li>
-                                <strong>Gsap ScrollTrigger</strong> for <Link to="/components/core/scroll">scroll interactions</Link>.
+                                <strong>Gsap ScrollTrigger</strong> for{' '}
+                                <Link to="/components/core/scroll">scroll interactions</Link>.
                               </li>
                             </ul>
                           </div>
@@ -260,8 +286,21 @@ export default class Page extends React.Component {
                     <h3 className="h1-display mb-14">Sponsors</h3>
                     <div className="row">
                       <div className="gatsby_home-main_support_col">
-                        <a href="https://www.webgriffe.com/" target="_blank" rel="noopener noreferrer" title="Webgriffe" className="gatsby_home-main_support">
-                          <img className="inline-block w-full" src={'/support/webgriffe.svg'} loading="eager" alt="Webgriffe" width="300" height="58" />
+                        <a
+                          href="https://www.webgriffe.com/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title="Webgriffe"
+                          className="gatsby_home-main_support"
+                        >
+                          <img
+                            className="inline-block w-full"
+                            src={'/support/webgriffe.svg'}
+                            loading="eager"
+                            alt="Webgriffe"
+                            width="300"
+                            height="58"
+                          />
                         </a>
                       </div>
                     </div>

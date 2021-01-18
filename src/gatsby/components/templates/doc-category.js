@@ -24,9 +24,18 @@ export default class Template extends React.Component {
       .split(/[\s-]+/)
       .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
       .join(' ')
-    seo.title += data.post.frontmatter.parent && data.post.frontmatter.parent !== data.post.frontmatter.title ? data.post.frontmatter.parent : ''
-    seo.title += data.post.frontmatter.category && data.post.frontmatter.category !== data.post.frontmatter.title ? data.post.frontmatter.category : ''
-    seo.title += data.post.frontmatter.type && data.post.frontmatter.type !== data.post.frontmatter.title ? data.post.frontmatter.type : ''
+    seo.title +=
+      data.post.frontmatter.parent && data.post.frontmatter.parent !== data.post.frontmatter.title
+        ? data.post.frontmatter.parent
+        : ''
+    seo.title +=
+      data.post.frontmatter.category && data.post.frontmatter.category !== data.post.frontmatter.title
+        ? data.post.frontmatter.category
+        : ''
+    seo.title +=
+      data.post.frontmatter.type && data.post.frontmatter.type !== data.post.frontmatter.title
+        ? data.post.frontmatter.type
+        : ''
     seo.description = data.post.frontmatter.description
     seo.title = markdownSlug(data.post) === '/introduction' ? seo.description : seo.title // @DOCINDEX
     return (
@@ -43,7 +52,12 @@ export default class Template extends React.Component {
                     {category.posts.map(({ post }, z) =>
                       post.frontmatter.link ? (
                         <div className="gatsby_listing-column" key={z}>
-                          <a href={post.frontmatter.link} target="_blank" rel="noopener noreferrer" className="card gatsby_listing-item">
+                          <a
+                            href={post.frontmatter.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="card gatsby_listing-item"
+                          >
                             <div className="h4">
                               {post.frontmatter.title
                                 .split(/[\s-]+/)
@@ -81,7 +95,10 @@ export default class Template extends React.Component {
 
 export const query = graphql`
   query($title: String!, $type: String, $category: String, $parent: String, $parents: String) {
-    menus: allMarkdownRemark(filter: { frontmatter: { menu: { eq: true } } }, sort: { fields: [frontmatter___date, frontmatter___title], order: [DESC, ASC] }) {
+    menus: allMarkdownRemark(
+      filter: { frontmatter: { menu: { eq: true } } }
+      sort: { fields: [frontmatter___date, frontmatter___title], order: [DESC, ASC] }
+    ) {
       posts: edges {
         post: node {
           frontmatter {
@@ -149,7 +166,9 @@ export const query = graphql`
         title
       }
     }
-    post: markdownRemark(frontmatter: { type: { eq: $type }, category: { eq: $category }, parent: { eq: $parent }, title: { eq: $title } }) {
+    post: markdownRemark(
+      frontmatter: { type: { eq: $type }, category: { eq: $category }, parent: { eq: $parent }, title: { eq: $title } }
+    ) {
       htmlAst
       frontmatter {
         type

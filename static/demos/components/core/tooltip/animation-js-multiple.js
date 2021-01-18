@@ -26,7 +26,12 @@ Xt.mount.push({
       const tr = e.target
       gsap.set(tr, { opacity: 0 })
       gsap.set(tr, { y: 5 })
-      gsap.to(tr, { y: 0, opacity: 1, duration: targetTimeOn, ease: targetEaseOn })
+      gsap.to(tr, {
+        y: 0,
+        opacity: 1,
+        duration: targetTimeOn,
+        ease: targetEaseOn,
+      })
     }
 
     for (const target of self.targets) {
@@ -37,7 +42,12 @@ Xt.mount.push({
 
     const eventOff = e => {
       const tr = e.target
-      gsap.to(tr, { y: 5, opacity: 0, duration: targetTimeOff, ease: targetEaseOff })
+      gsap.to(tr, {
+        y: 5,
+        opacity: 0,
+        duration: targetTimeOff,
+        ease: targetEaseOff,
+      })
     }
 
     for (const target of self.targets) {

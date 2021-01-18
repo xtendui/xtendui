@@ -94,13 +94,29 @@ module.exports = {
     translate: ({ after }) => after(['group-active'], 'group-hover', after(['active'], 'hover')),
     skew: ({ after }) => after(['group-active'], 'group-hover', after(['active'], 'hover')),
     transitionProperty: ({ after }) =>
-      after(['group-active'], 'group-hover', after(['active'], 'hover', after(['group-hover'], 'hover', after(['hover'], 'responsive')))),
+      after(
+        ['group-active'],
+        'group-hover',
+        after(['active'], 'hover', after(['group-hover'], 'hover', after(['hover'], 'responsive')))
+      ),
     transitionTimingFunction: ({ after }) =>
-      after(['group-active'], 'group-hover', after(['active'], 'hover', after(['group-hover'], 'hover', after(['hover'], 'responsive')))),
+      after(
+        ['group-active'],
+        'group-hover',
+        after(['active'], 'hover', after(['group-hover'], 'hover', after(['hover'], 'responsive')))
+      ),
     transitionDuration: ({ after }) =>
-      after(['group-active'], 'group-hover', after(['active'], 'hover', after(['group-hover'], 'hover', after(['hover'], 'responsive')))),
+      after(
+        ['group-active'],
+        'group-hover',
+        after(['active'], 'hover', after(['group-hover'], 'hover', after(['hover'], 'responsive')))
+      ),
     transitionDelay: ({ after }) =>
-      after(['group-active'], 'group-hover', after(['active'], 'hover', after(['group-hover'], 'hover', after(['hover'], 'responsive')))),
+      after(
+        ['group-active'],
+        'group-hover',
+        after(['active'], 'hover', after(['group-hover'], 'hover', after(['hover'], 'responsive')))
+      ),
     zIndex: ({ after }) => after(['group-active'], 'active', after(['active'], 'responsive')),
   },
   plugins: [require('./tailwind.plugin')],

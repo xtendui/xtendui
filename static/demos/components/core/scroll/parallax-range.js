@@ -21,7 +21,8 @@ Xt.mount.push({
       },
       end: () => {
         // full range of animation also on bottom of the page
-        const end = window.innerHeight - document.scrollingElement.scrollHeight + trigger.offsetTop + trigger.offsetHeight
+        const end =
+          window.innerHeight - document.scrollingElement.scrollHeight + trigger.offsetTop + trigger.offsetHeight
         return `bottom${end > 0 ? `-=${end}` : ''} top`
       },
       scrub: 1.5,

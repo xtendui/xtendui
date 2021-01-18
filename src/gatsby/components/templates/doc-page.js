@@ -24,11 +24,21 @@ class Template extends React.Component {
       .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
       .join(' ')
     seo.title =
-      data.post.frontmatter.parent && data.post.frontmatter.parent !== data.post.frontmatter.title ? `${data.post.frontmatter.parent} ${seo.title}` : seo.title
+      data.post.frontmatter.parent && data.post.frontmatter.parent !== data.post.frontmatter.title
+        ? `${data.post.frontmatter.parent} ${seo.title}`
+        : seo.title
     seo.title += ' - '
-    seo.title += data.post.frontmatter.category && data.post.frontmatter.category !== data.post.frontmatter.title ? ` ${data.post.frontmatter.category}` : ''
-    seo.title += data.post.frontmatter.type && data.post.frontmatter.type !== data.post.frontmatter.title ? ` ${data.post.frontmatter.type}` : ''
-    seo.description = data.post.frontmatter.description ? data.post.frontmatter.description : data.parent.frontmatter.description
+    seo.title +=
+      data.post.frontmatter.category && data.post.frontmatter.category !== data.post.frontmatter.title
+        ? ` ${data.post.frontmatter.category}`
+        : ''
+    seo.title +=
+      data.post.frontmatter.type && data.post.frontmatter.type !== data.post.frontmatter.title
+        ? ` ${data.post.frontmatter.type}`
+        : ''
+    seo.description = data.post.frontmatter.description
+      ? data.post.frontmatter.description
+      : data.parent.frontmatter.description
     return (
       <Layout page={data}>
         <SEO title={seo.title} description={seo.description} />
@@ -39,7 +49,9 @@ class Template extends React.Component {
               <div className="row row-3">
                 <div className="gatsby_listing-group">
                   {data.post.frontmatter.category === 'Core' ? (
-                    <h2 className="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">{'Customization and interactions'}</h2>
+                    <h2 className="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
+                      {'Customization and interactions'}
+                    </h2>
                   ) : null}
                   <div className="gatsby_listing-items">
                     <div className="row row-stretch">
@@ -47,7 +59,11 @@ class Template extends React.Component {
                         adiacent.frontmatter.parent !== adiacent.frontmatter.title ? (
                           adiacent.frontmatter.demos ? (
                             <div className="gatsby_listing-column" key={i}>
-                              <a role="button" className="card gatsby_listing-item gatsby_listing-item--themes" data-gatsby-listing-toggle>
+                              <a
+                                role="button"
+                                className="card gatsby_listing-item gatsby_listing-item--themes"
+                                data-gatsby-listing-toggle
+                              >
                                 <div>
                                   <div className="h4">
                                     {adiacent.frontmatter.title
@@ -60,8 +76,18 @@ class Template extends React.Component {
                                       return (
                                         <div className="media-container" key={z}>
                                           <div className="media-inner">
-                                            <video className="media object-cover object-center" preload="metadata" muted playsInline loop autoPlay>
-                                              <source type="video/mp4" src={assets.item.file.url ? assets.item.file.url : null} />
+                                            <video
+                                              className="media object-cover object-center"
+                                              preload="metadata"
+                                              muted
+                                              playsInline
+                                              loop
+                                              autoPlay
+                                            >
+                                              <source
+                                                type="video/mp4"
+                                                src={assets.item.file.url ? assets.item.file.url : null}
+                                              />
                                             </video>
                                           </div>
                                         </div>
@@ -77,7 +103,13 @@ class Template extends React.Component {
                                     if (type === 'vanilla') {
                                       return <DemoVanilla src={demo} key={i}></DemoVanilla>
                                     } else if (type === 'iframe') {
-                                      return <div className="gatsby_demo_item toggle" data-iframe-fullscreen={demo} key={i}></div>
+                                      return (
+                                        <div
+                                          className="gatsby_demo_item toggle"
+                                          data-iframe-fullscreen={demo}
+                                          key={i}
+                                        ></div>
+                                      )
                                     }
                                   })}
                                 </Demo>
@@ -129,7 +161,10 @@ export const query = graphql`
         }
       }
     }
-    menus: allMarkdownRemark(filter: { frontmatter: { menu: { eq: true } } }, sort: { fields: [frontmatter___date, frontmatter___title], order: [DESC, ASC] }) {
+    menus: allMarkdownRemark(
+      filter: { frontmatter: { menu: { eq: true } } }
+      sort: { fields: [frontmatter___date, frontmatter___title], order: [DESC, ASC] }
+    ) {
       posts: edges {
         post: node {
           frontmatter {
@@ -200,7 +235,9 @@ export const query = graphql`
         title
       }
     }
-    post: markdownRemark(frontmatter: { type: { eq: $type }, parent: { eq: $parent }, category: { eq: $category }, title: { eq: $title } }) {
+    post: markdownRemark(
+      frontmatter: { type: { eq: $type }, parent: { eq: $parent }, category: { eq: $category }, title: { eq: $title } }
+    ) {
       htmlAst
       frontmatter {
         type

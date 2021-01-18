@@ -10,7 +10,11 @@ Xt.mount.push({
     // init
 
     let self = new Xt.Scrolltoanchor(object, {
-      scrollElements: [document.scrollingElement, object.querySelector('.demo--scrolltoanchor'), object.querySelector('#demo--overlay-scrolltoanchor')],
+      scrollElements: [
+        document.scrollingElement,
+        object.querySelector('.demo--scrolltoanchor'),
+        object.querySelector('#demo--overlay-scrolltoanchor'),
+      ],
       scrollSpace: scrollingElement => {
         let scrollSpace = 0
         if (scrollingElement === document.scrollingElement) {
@@ -36,7 +40,11 @@ Xt.mount.push({
       pos = pos > max ? max : pos
       // scroll
       gsap.killTweensOf(self.scrollElement)
-      gsap.to(self.scrollElement, { scrollTo: pos, duration: 1, ease: 'quart.inOut' })
+      gsap.to(self.scrollElement, {
+        scrollTo: pos,
+        duration: 1,
+        ease: 'quart.inOut',
+      })
     }
 
     self.object.addEventListener('change.xt.scrolltoanchor', eventChange)

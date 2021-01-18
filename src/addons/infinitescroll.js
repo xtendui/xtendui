@@ -57,7 +57,11 @@ class Infinitescroll {
     // events
     let unloadHandler = Xt.dataStorage.put(window, `unload/${self.ns}`, self.eventUnloadHandler.bind(self))
     addEventListener('unload', unloadHandler)
-    let beforeunloadHandler = Xt.dataStorage.put(window, `beforeunload/${self.ns}`, self.eventBeforeunloadHandler.bind(self))
+    let beforeunloadHandler = Xt.dataStorage.put(
+      window,
+      `beforeunload/${self.ns}`,
+      self.eventBeforeunloadHandler.bind(self)
+    )
     addEventListener('beforeunload', beforeunloadHandler)
     let scrollHandler = Xt.dataStorage.put(window, `scroll/${self.ns}`, self.eventScrollHandler.bind(self))
     addEventListener('scroll', scrollHandler)
@@ -75,12 +79,20 @@ class Infinitescroll {
     }
     // trigger
     if (self.options.events.trigger) {
-      let triggerHandler = Xt.dataStorage.put(self.triggerElement, `${self.options.events.trigger}}/${self.ns}`, self.eventTrigger.bind(self))
+      let triggerHandler = Xt.dataStorage.put(
+        self.triggerElement,
+        `${self.options.events.trigger}}/${self.ns}`,
+        self.eventTrigger.bind(self)
+      )
       self.triggerElement.addEventListener(self.options.events.trigger, triggerHandler)
     }
     // reset
     if (self.options.events.reset) {
-      let resetHandler = Xt.dataStorage.put(self.resetElement, `${self.options.events.reset}}/${self.ns}`, self.eventReset.bind(self))
+      let resetHandler = Xt.dataStorage.put(
+        self.resetElement,
+        `${self.options.events.reset}}/${self.ns}`,
+        self.eventReset.bind(self)
+      )
       self.resetElement.addEventListener(self.options.events.reset, resetHandler)
     }
     // resume state

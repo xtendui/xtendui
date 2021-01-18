@@ -23,9 +23,18 @@ Xt.mount.push({
       const tr = e.target
       // media
       const media = tr.querySelector('.media-container')
-      gsap.to(media, { opacity: mediaOpacityIn, scale: 1 - mediaScale, duration: 0.5, ease: 'expo.out' })
+      gsap.to(media, {
+        opacity: mediaOpacityIn,
+        scale: 1 - mediaScale,
+        duration: 0.5,
+        ease: 'expo.out',
+      })
       const mediaInner = tr.querySelector('.media-inner')
-      gsap.to(mediaInner, { scale: 1 + mediaScale, duration: 0.5, ease: 'expo.out' })
+      gsap.to(mediaInner, {
+        scale: 1 + mediaScale,
+        duration: 0.5,
+        ease: 'expo.out',
+      })
       // content
       const content = tr.querySelector('.listing-content')
       if (content) {
@@ -41,7 +50,12 @@ Xt.mount.push({
       const tr = e.target
       // media
       const media = tr.querySelector('.media-container')
-      gsap.to(media, { opacity: mediaOpacityOut, scale: 1, duration: 0.75, ease: 'expo.out' })
+      gsap.to(media, {
+        opacity: mediaOpacityOut,
+        scale: 1,
+        duration: 0.75,
+        ease: 'expo.out',
+      })
       const mediaInner = tr.querySelector('.media-inner')
       gsap.to(mediaInner, { scale: 1, duration: 0.75, ease: 'expo.out' })
       // content
@@ -88,7 +102,13 @@ Xt.mount.push({
           const y = direction > 0 ? -scrollY : scrollY
           gsap.killTweensOf(batch)
           gsap.set(batch, { y: y })
-          gsap.to(batch, { opacity: 1, y: 0, duration: 0.5, ease: 'quart.out', stagger: 0.15 })
+          gsap.to(batch, {
+            opacity: 1,
+            y: 0,
+            duration: 0.5,
+            ease: 'quart.out',
+            stagger: 0.15,
+          })
         },
       })
     })

@@ -40,9 +40,13 @@ Xt.mount.push({
       const tr = self.targets.filter(x => self.hasCurrent(x))[0]
       // assetMask
       const assetMask = tr.querySelector('.hero')
-      gsap.set(assetMask, { x: `${-100 * self.detail.dragRatio * self.direction}%` })
+      gsap.set(assetMask, {
+        x: `${-100 * self.detail.dragRatio * self.direction}%`,
+      })
       const assetMaskInner = assetMask.querySelector('.hero-inner')
-      gsap.set(assetMaskInner, { x: `${(100 * self.detail.dragRatio * self.direction) / 2}%` })
+      gsap.set(assetMaskInner, {
+        x: `${(100 * self.detail.dragRatio * self.direction) / 2}%`,
+      })
       // asset
       const asset = tr.querySelector('.media')
       gsap.set(asset, { opacity: self.detail.dragRatioInverse + assetOpacity })
@@ -57,15 +61,24 @@ Xt.mount.push({
         next.classList.add('next')
         // assetMask
         const assetMask = next.querySelector('.hero')
-        gsap.set(assetMask, { x: `${100 * self.detail.dragRatioInverse * self.direction}%` })
+        gsap.set(assetMask, {
+          x: `${100 * self.detail.dragRatioInverse * self.direction}%`,
+        })
         const assetMaskInner = assetMask.querySelector('.hero-inner')
-        gsap.set(assetMaskInner, { x: `${(-100 * self.detail.dragRatioInverse * self.direction) / 2}%` })
+        gsap.set(assetMaskInner, {
+          x: `${(-100 * self.detail.dragRatioInverse * self.direction) / 2}%`,
+        })
         // asset
         const asset = next.querySelector('.media')
-        gsap.set(asset, { scale: 1 + assetZoom * self.detail.dragRatioInverse, opacity: self.detail.dragRatio + assetOpacity })
+        gsap.set(asset, {
+          scale: 1 + assetZoom * self.detail.dragRatioInverse,
+          opacity: self.detail.dragRatio + assetOpacity,
+        })
         // content
         const content = next.querySelector('.hero-content')
-        gsap.set(content, { x: contentX * self.detail.dragRatioInverse * self.direction })
+        gsap.set(content, {
+          x: contentX * self.detail.dragRatioInverse * self.direction,
+        })
       }
     }
 
@@ -79,7 +92,11 @@ Xt.mount.push({
       const assetMask = tr.querySelector('.hero')
       gsap.to(assetMask, { x: 0, duration: assetMaskTime, ease: assetMaskEase })
       const assetMaskInner = assetMask.querySelector('.hero-inner')
-      gsap.to(assetMaskInner, { x: 0, duration: assetMaskTime, ease: assetMaskEase })
+      gsap.to(assetMaskInner, {
+        x: 0,
+        duration: assetMaskTime,
+        ease: assetMaskEase,
+      })
       // asset
       const asset = tr.querySelector('.media')
       gsap.to(asset, { x: 0, opacity: 1, duration: assetTime, ease: assetEase })
@@ -89,12 +106,24 @@ Xt.mount.push({
         // assetMask
         const assetMask = next.querySelector('.hero')
         const xCurrent = assetMask.clientWidth * self.direction
-        gsap.to(assetMask, { x: xCurrent, duration: assetMaskTime, ease: assetMaskEase })
+        gsap.to(assetMask, {
+          x: xCurrent,
+          duration: assetMaskTime,
+          ease: assetMaskEase,
+        })
         const assetMaskInner = assetMask.querySelector('.hero-inner')
-        gsap.to(assetMaskInner, { x: -xCurrent / 2, duration: assetMaskTime, ease: assetMaskEase })
+        gsap.to(assetMaskInner, {
+          x: -xCurrent / 2,
+          duration: assetMaskTime,
+          ease: assetMaskEase,
+        })
         // asset
         const asset = next.querySelector('.media')
-        gsap.set(asset, { opacity: assetOpacity, duration: assetTime, ease: assetEase })
+        gsap.set(asset, {
+          opacity: assetOpacity,
+          duration: assetTime,
+          ease: assetEase,
+        })
       }
     }
 
@@ -128,12 +157,20 @@ Xt.mount.push({
           if (!self.detail.dragging) {
             gsap.set(assetMask, { x: `${100 * self.direction}%` })
           }
-          gsap.to(assetMask, { x: 0, duration: assetMaskTime, ease: self.detail.dragging ? assetMaskEaseDragging : assetMaskEase })
+          gsap.to(assetMask, {
+            x: 0,
+            duration: assetMaskTime,
+            ease: self.detail.dragging ? assetMaskEaseDragging : assetMaskEase,
+          })
           const assetMaskInner = assetMask.querySelector('.hero-inner')
           if (!self.detail.dragging) {
             gsap.set(assetMaskInner, { x: `${-((100 * self.direction) / 2)}%` })
           }
-          gsap.to(assetMaskInner, { x: 0, duration: assetMaskTime, ease: self.detail.dragging ? assetMaskEaseDragging : assetMaskEase })
+          gsap.to(assetMaskInner, {
+            x: 0,
+            duration: assetMaskTime,
+            ease: self.detail.dragging ? assetMaskEaseDragging : assetMaskEase,
+          })
           // asset
           const asset = tr.querySelector('.media')
           if (!self.detail.dragging) {
@@ -150,7 +187,11 @@ Xt.mount.push({
           if (!self.detail.dragging) {
             gsap.set(content, { x: contentX * self.direction })
           }
-          gsap.to(content, { x: 0, duration: contentTime, ease: self.detail.dragging ? contentEaseDragging : contentEase })
+          gsap.to(content, {
+            x: 0,
+            duration: contentTime,
+            ease: self.detail.dragging ? contentEaseDragging : contentEase,
+          })
         }
       }
     }
@@ -211,7 +252,10 @@ Xt.mount.push({
   mount: ({ object }) => {
     // vars
 
-    const links = object.tagName === 'A' || object.tagName === 'BUTTON' ? Xt.arrSingle(object) : object.querySelectorAll('a, button')
+    const links =
+      object.tagName === 'A' || object.tagName === 'BUTTON'
+        ? Xt.arrSingle(object)
+        : object.querySelectorAll('a, button')
     const img = object.querySelector('.media')
     const imgOpacityIn = 0.75
     const imgOpacityOut = 1
@@ -231,7 +275,12 @@ Xt.mount.push({
 
     const eventLeave = () => {
       // img
-      gsap.to(img, { opacity: imgOpacityOut, duration: 0.5, ease: 'quart.out', overwrite: true })
+      gsap.to(img, {
+        opacity: imgOpacityOut,
+        duration: 0.5,
+        ease: 'quart.out',
+        overwrite: true,
+      })
     }
 
     for (const link of links) {

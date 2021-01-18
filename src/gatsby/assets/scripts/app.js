@@ -53,14 +53,26 @@ Xt.mount.push({
           onUpdate: self => {
             // scrolling-down depending on scroll direction
             if (!self.getVelocity()) return // skip on initial
-            if (object.classList.contains('scrolling-down') && object.classList.contains('scrolling-hide') && self.direction < 0) {
+            if (
+              object.classList.contains('scrolling-down') &&
+              object.classList.contains('scrolling-hide') &&
+              self.direction < 0
+            ) {
               object.classList.remove('scrolling-down')
               gsap.killTweensOf(object)
               gsap.to(object, { y: 0, duration: 0.5, ease: 'quart.out' })
-            } else if (!object.classList.contains('scrolling-down') && object.classList.contains('scrolling-hide') && self.direction > 0) {
+            } else if (
+              !object.classList.contains('scrolling-down') &&
+              object.classList.contains('scrolling-hide') &&
+              self.direction > 0
+            ) {
               object.classList.add('scrolling-down')
               gsap.killTweensOf(object)
-              gsap.to(object, { y: -object.offsetHeight, duration: 0.5, ease: 'quart.out' })
+              gsap.to(object, {
+                y: -object.offsetHeight,
+                duration: 0.5,
+                ease: 'quart.out',
+              })
             }
           },
         })
@@ -123,16 +135,28 @@ Xt.mount.push({
       onUpdate: self => {
         // scrolling-down depending on scroll direction
         if (!self.getVelocity()) return // skip on initial
-        if (object.classList.contains('scrolling-down') && object.classList.contains('scrolling-hide') && self.direction < 0) {
+        if (
+          object.classList.contains('scrolling-down') &&
+          object.classList.contains('scrolling-hide') &&
+          self.direction < 0
+        ) {
           object.classList.remove('scrolling-down')
           gsap.killTweensOf(object)
           curve()
           gsap.to(object, { y: 0, duration: 0.5, ease: 'quart.out' })
-        } else if (!object.classList.contains('scrolling-down') && object.classList.contains('scrolling-hide') && self.direction > 0) {
+        } else if (
+          !object.classList.contains('scrolling-down') &&
+          object.classList.contains('scrolling-hide') &&
+          self.direction > 0
+        ) {
           object.classList.add('scrolling-down')
           gsap.killTweensOf(object)
           straight()
-          gsap.to(object, { y: -logo.offsetHeight, duration: 0.5, ease: 'quart.out' })
+          gsap.to(object, {
+            y: -logo.offsetHeight,
+            duration: 0.5,
+            ease: 'quart.out',
+          })
         }
       },
     })
@@ -323,7 +347,11 @@ Xt.mount.push({
       pos = pos > max ? max : pos
       // scroll
       gsap.killTweensOf(self.scrollElement)
-      gsap.to(self.scrollElement, { scrollTo: pos, duration: 1, ease: 'quart.inOut' })
+      gsap.to(self.scrollElement, {
+        scrollTo: pos,
+        duration: 1,
+        ease: 'quart.inOut',
+      })
     }
 
     self.object.addEventListener('change.xt.scrolltoanchor', eventChange)
@@ -344,7 +372,9 @@ Xt.mount.push({
 
 const makeDocument = () => {
   // .gatsby_make-line
-  for (const el of document.querySelectorAll('.gatsby_site-article_content_inner > * > h2, .gatsby_site-article_content_inner > * > h4')) {
+  for (const el of document.querySelectorAll(
+    '.gatsby_site-article_content_inner > * > h2, .gatsby_site-article_content_inner > * > h4'
+  )) {
     el.classList.add('gatsby_make-line')
   }
   for (const el of document.querySelectorAll('.gatsby_make-line')) {
@@ -352,7 +382,9 @@ const makeDocument = () => {
     el.innerHTML = `<span class="gatsby_make-line_container">${el.innerHTML}</span>`
   }
   // .gatsby_make-anchor
-  for (const el of document.querySelectorAll('.gatsby_site-article_content_inner > * > h2, .gatsby_site-article_content_inner > * > h4')) {
+  for (const el of document.querySelectorAll(
+    '.gatsby_site-article_content_inner > * > h2, .gatsby_site-article_content_inner > * > h4'
+  )) {
     el.classList.add('gatsby_make-line')
     // previous h2 if h4
     let prevElement
@@ -373,8 +405,12 @@ const makeDocument = () => {
     id += el.textContent.trim().replace(/\W/g, '-').toLowerCase()
     // sidebar links
     if (el.tagName === 'H2') {
-      let container = document.querySelector('.gatsby_btn-site_article_sidebar--adiacent.active ~ .gatsby_site-header_adiacent_inner')
-      container = container ? container : document.querySelector('.gatsby_btn-site_article_sidebar--sub.active ~ .gatsby_site-header_adiacent_inner')
+      let container = document.querySelector(
+        '.gatsby_btn-site_article_sidebar--adiacent.active ~ .gatsby_site-header_adiacent_inner'
+      )
+      container = container
+        ? container
+        : document.querySelector('.gatsby_btn-site_article_sidebar--sub.active ~ .gatsby_site-header_adiacent_inner')
       if (container) {
         const item = Xt.createElement(
           `<div><a href="#" class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--adiacent_inner"><span></span></button></div>`

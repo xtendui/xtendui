@@ -156,7 +156,14 @@ class Slider extends Xt.Toggle {
       const cloneSlide = slide => {
         const cloned = slide.cloneNode(true)
         cloned.classList.add('xt-clone', 'xt-wrap')
-        cloned.classList.remove(...self.classes, ...self.classesActive, ...self.classesOut, ...self.classesDone, ...self.classesInitial, ...self.classesInverse)
+        cloned.classList.remove(
+          ...self.classes,
+          ...self.classesActive,
+          ...self.classesOut,
+          ...self.classesDone,
+          ...self.classesInitial,
+          ...self.classesInverse
+        )
         return cloned
       }
       // wrapLast
@@ -453,7 +460,11 @@ class Slider extends Xt.Toggle {
     // dragger
     if (options.drag && !options.drag.manual) {
       // drag start
-      const dragstartHandler = Xt.dataStorage.put(window, `mousedown touchstart/drag/${self.ns}`, self.eventDragstartHandler.bind(self).bind(self, dragger))
+      const dragstartHandler = Xt.dataStorage.put(
+        window,
+        `mousedown touchstart/drag/${self.ns}`,
+        self.eventDragstartHandler.bind(self).bind(self, dragger)
+      )
       const events = ['mousedown', 'touchstart']
       for (const event of events) {
         addEventListener(event, dragstartHandler, { passive: true })
@@ -477,7 +488,11 @@ class Slider extends Xt.Toggle {
       }
     }
     // resize
-    const reinitHandler = Xt.dataStorage.put(window, `resize/reinit/${self.ns}`, self.eventReinitHandler.bind(self).bind(self))
+    const reinitHandler = Xt.dataStorage.put(
+      window,
+      `resize/reinit/${self.ns}`,
+      self.eventReinitHandler.bind(self).bind(self)
+    )
     addEventListener('resize', reinitHandler)
   }
 
@@ -536,7 +551,11 @@ class Slider extends Xt.Toggle {
         self.eventDragstart(dragger, e)
       }
       // dragend
-      const dragendHandler = Xt.dataStorage.put(window, `mouseup touchend/drag/${self.ns}`, self.eventDragendHandler.bind(self).bind(self, dragger))
+      const dragendHandler = Xt.dataStorage.put(
+        window,
+        `mouseup touchend/drag/${self.ns}`,
+        self.eventDragendHandler.bind(self).bind(self, dragger)
+      )
       const events = ['mouseup', 'touchend']
       for (const event of events) {
         addEventListener(event, dragendHandler)
@@ -571,7 +590,11 @@ class Slider extends Xt.Toggle {
   eventDragstart(dragger, e) {
     const self = this
     // event move
-    const dragHandler = Xt.dataStorage.put(window, `mousemove touchmove/drag/${self.ns}`, self.eventDragHandler.bind(self).bind(self, dragger))
+    const dragHandler = Xt.dataStorage.put(
+      window,
+      `mousemove touchmove/drag/${self.ns}`,
+      self.eventDragHandler.bind(self).bind(self, dragger)
+    )
     const events = ['mousemove', 'touchmove']
     for (const event of events) {
       addEventListener(event, dragHandler, { passive: false })
@@ -651,7 +674,10 @@ class Slider extends Xt.Toggle {
       Xt.dataStorage.remove(slide, `${self.ns}SlideonDone`)
     })
     // val
-    self.detail.dragPos = self.detail.dragPosCurrent = self.detail.dragPosReal = Xt.dataStorage.get(slide, `${self.ns}GroupPos`)
+    self.detail.dragPos = self.detail.dragPosCurrent = self.detail.dragPosReal = Xt.dataStorage.get(
+      slide,
+      `${self.ns}GroupPos`
+    )
     // toggle
     if (force || (self.checkOn(element) && (!e || !e.type || e.type !== `off.trigger.${self.componentNs}`))) {
       // autoHeight and keepHeight
@@ -707,7 +733,10 @@ class Slider extends Xt.Toggle {
                   const slideLeft = Xt.dataStorage.get(target, `${self.ns}SlideLeft`)
                   const slideWidth = Xt.dataStorage.get(target, `${self.ns}SlideWidth`)
                   const slideBound = slideLeft + slideWidth
-                  if (slideLeft < -Math.ceil(draggerTranslate) || slideBound > Math.ceil(self.detail.draggerWidth - draggerTranslate)) {
+                  if (
+                    slideLeft < -Math.ceil(draggerTranslate) ||
+                    slideBound > Math.ceil(self.detail.draggerWidth - draggerTranslate)
+                  ) {
                     target.classList.add('xt-links-none')
                     target.classList.remove('xt-jumps-none')
                   } else {

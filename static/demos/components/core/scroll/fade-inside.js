@@ -25,7 +25,12 @@ Xt.mount.push({
           const triggers = batch.filter(x => !x.dataset.animated)
           if (triggers.length) {
             gsap.killTweensOf(triggers)
-            gsap.to(triggers, { opacity: 1, duration: 0.5, ease: 'quart.out', stagger: 0.15 })
+            gsap.to(triggers, {
+              opacity: 1,
+              duration: 0.5,
+              ease: 'quart.out',
+              stagger: 0.15,
+            })
           }
         },
         onRefresh: (batch, scrollTriggers) => {

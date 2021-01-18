@@ -55,7 +55,9 @@ export default class Layout extends React.Component {
                     </article>
                     <footer className="gatsby_site-footer">
                       <div className="gatsby_site-footer_inner">
-                        {page && page.post && page.post.frontmatter.type !== page.post.frontmatter.title ? <DocFoot page={page} /> : null}
+                        {page && page.post && page.post.frontmatter.type !== page.post.frontmatter.title ? (
+                          <DocFoot page={page} />
+                        ) : null}
                         <Footer />
                       </div>
                     </footer>

@@ -17,7 +17,11 @@ export default class DemoVanillaIframe extends React.Component {
       <Layout demo={demo}>
         <SEO title={seo.title} description={seo.description} />
         <div id="body-outer">
-          <div id="gatsby_body-inner" className="gatsby_demo_source--from" dangerouslySetInnerHTML={{ __html: demo.htmlSource }} />
+          <div
+            id="gatsby_body-inner"
+            className="gatsby_demo_source--from"
+            dangerouslySetInnerHTML={{ __html: demo.htmlSource }}
+          />
         </div>
       </Layout>
     )

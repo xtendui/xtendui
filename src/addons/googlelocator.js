@@ -101,16 +101,23 @@ class Googlelocator {
         if (results && results.length) {
           const placesPreview = document.createElement('div')
           placesPreview.classList.add('display--none')
-          new google.maps.places.PlacesService(placesPreview).getDetails({ reference: results[0].reference }, results => {
-            place = results
-            self.searchInput.value = place.formatted_address
-            self.position = place.geometry.location
-            self.viewport = place.geometry.viewport
-            self.radius = null
-            self.predictionCache = { value: self.searchInput.value, position: self.position, viewport: self.viewport }
-            self.submit()
-            placesPreview.remove()
-          })
+          new google.maps.places.PlacesService(placesPreview).getDetails(
+            { reference: results[0].reference },
+            results => {
+              place = results
+              self.searchInput.value = place.formatted_address
+              self.position = place.geometry.location
+              self.viewport = place.geometry.viewport
+              self.radius = null
+              self.predictionCache = {
+                value: self.searchInput.value,
+                position: self.position,
+                viewport: self.viewport,
+              }
+              self.submit()
+              placesPreview.remove()
+            }
+          )
         } else {
           self.locations = []
           self.populateItems()
@@ -125,7 +132,11 @@ class Googlelocator {
     if (options.elements.repeatBtn) {
       self.repeatElement = self.object.querySelector(options.elements.repeatBtn)
       if (self.repeatElement) {
-        let repeatHandler = Xt.dataStorage.put(self.repeatElement, `click/${self.ns}`, self.submitCurrent.bind(self).bind(self, false))
+        let repeatHandler = Xt.dataStorage.put(
+          self.repeatElement,
+          `click/${self.ns}`,
+          self.submitCurrent.bind(self).bind(self, false)
+        )
         self.repeatElement.addEventListener('click', repeatHandler)
       }
     }
@@ -393,7 +404,12 @@ class Googlelocator {
       self.animatingLoc = null
     }
     // animation
-    const anim = type === 'marker' ? options.events.animateMarkerClick : type === 'result' ? options.events.animateMarkerResultClick : null
+    const anim =
+      type === 'marker'
+        ? options.events.animateMarkerClick
+        : type === 'result'
+        ? options.events.animateMarkerResultClick
+        : null
     if (anim) {
       loc.setAnimation(anim)
       self.animatingLoc = loc
@@ -412,7 +428,12 @@ class Googlelocator {
     }
     // infowindow
     if (options.infoWindow) {
-      const info = type === 'marker' ? options.events.infoWindowMarkerClick : type === 'result' ? options.events.infoWindowMarkerResultClick : null
+      const info =
+        type === 'marker'
+          ? options.events.infoWindowMarkerClick
+          : type === 'result'
+          ? options.events.infoWindowMarkerResultClick
+          : null
       if (info) {
         if (item) {
           const content = options.formatData.info(self, loc, item)
@@ -440,7 +461,10 @@ class Googlelocator {
     self.viewport = null
     self.radius = null
     if (!empty || options.seachMapBounds) {
-      self.radius = google.maps.geometry.spherical.computeDistanceBetween(self.position, self.map.getBounds().getNorthEast())
+      self.radius = google.maps.geometry.spherical.computeDistanceBetween(
+        self.position,
+        self.map.getBounds().getNorthEast()
+      )
     }
     self.submit()
   }
@@ -473,7 +497,10 @@ class Googlelocator {
     self.position = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude)
     self.viewport = null
     self.radius = options.locateRadius
-    self.locateCache = { value: self.searchInput.value, position: self.position }
+    self.locateCache = {
+      value: self.searchInput.value,
+      position: self.position,
+    }
     // debug
     if (Xt.debug) {
       console.debug('Xt.debug xt-googlelocator locate', pos, self.position)

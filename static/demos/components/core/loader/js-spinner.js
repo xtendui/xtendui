@@ -13,7 +13,14 @@ Xt.mount.push({
         delete object.dataset.loaderTimeout
         Xt.animOn(object)
         gsap.set(spinner, { strokeDashoffset: 628 })
-        gsap.to(spinner, { strokeDashoffset: 0, duration: 1, ease: 'linear', autoRound: false }).eventCallback('onComplete', loaderTimeout)
+        gsap
+          .to(spinner, {
+            strokeDashoffset: 0,
+            duration: 1,
+            ease: 'linear',
+            autoRound: false,
+          })
+          .eventCallback('onComplete', loaderTimeout)
       } else {
         Xt.animOff(object)
         object.classList.remove('active')
