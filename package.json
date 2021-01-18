@@ -45,7 +45,7 @@
     "tailwindcss": "^2.0.2"
   },
   "peerDependencies": {
-    "tailwindcss": "^2.0.0"
+    "tailwindcss": "2.x"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
