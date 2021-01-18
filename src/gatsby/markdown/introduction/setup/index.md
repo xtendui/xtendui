@@ -32,17 +32,25 @@ Then in `postcss.config.js` set up compilation.
 
 ```jsx
 module.exports = {
-  plugins: [require(`postcss-import`), require(`tailwindcss`), require('postcss-nested'), require('autoprefixer')],
-}
+  plugins: [
+    require('postcss-import'),
+    require('tailwindcss'),
+    require('postcss-nested'),
+    require('autoprefixer'),
+  ],
+};
 ```
 
 Create a `tailwind.config.js` and add **xtendui preset**.
 
 ```jsx
 module.exports = {
-  presets: [require('tailwindcss/defaultConfig'), require('xtendui/tailwind.preset')],
+  presets: [
+    require('tailwindcss/defaultConfig'),
+    require('xtendui/tailwind.preset'),
+  ],
   purge: {
-    content: ['./node_modules/xtendui/src/**/*.js'], // put other purge content
+    content: ['./src/**/*.css', './src/**/*.js'], // put other purge content
     options: {
       safelist: {
         greedy: [
