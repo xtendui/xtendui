@@ -277,18 +277,9 @@ class Toggle {
     } else if (self.initialCurrents.includes(el)) {
       activated = true
     }
-    // remove classes
-    el.classList.remove(
-      ...self.classes,
-      ...self.classesActive,
-      ...self.classesOut,
-      ...self.classesDone,
-      ...self.classesInitial,
-      ...self.classesInverse
-    )
-    const elsInner = Xt.queryAll(el, options.elementsInner)
-    for (const elInner of elsInner) {
-      elInner.classList.remove(
+    // remove classes !saveCurrents needed to not flickr on initialization
+    if (!saveCurrents) {
+      el.classList.remove(
         ...self.classes,
         ...self.classesActive,
         ...self.classesOut,
@@ -296,6 +287,17 @@ class Toggle {
         ...self.classesInitial,
         ...self.classesInverse
       )
+      const elsInner = Xt.queryAll(el, options.elementsInner)
+      for (const elInner of elsInner) {
+        elInner.classList.remove(
+          ...self.classes,
+          ...self.classesActive,
+          ...self.classesOut,
+          ...self.classesDone,
+          ...self.classesInitial,
+          ...self.classesInverse
+        )
+      }
     }
     // check targets
     const targets = self.getTargets(el)
@@ -306,18 +308,9 @@ class Toggle {
           activated = check(tr)
         }
       }
-      // remove classes
-      tr.classList.remove(
-        ...self.classes,
-        ...self.classesActive,
-        ...self.classesOut,
-        ...self.classesDone,
-        ...self.classesInitial,
-        ...self.classesInverse
-      )
-      const trsInner = Xt.queryAll(tr, options.targetsInner)
-      for (const trInner of trsInner) {
-        trInner.classList.remove(
+      // remove classes !saveCurrents needed to not flickr on initialization
+      if (!saveCurrents) {
+        tr.classList.remove(
           ...self.classes,
           ...self.classesActive,
           ...self.classesOut,
@@ -325,6 +318,17 @@ class Toggle {
           ...self.classesInitial,
           ...self.classesInverse
         )
+        const trsInner = Xt.queryAll(tr, options.targetsInner)
+        for (const trInner of trsInner) {
+          trInner.classList.remove(
+            ...self.classes,
+            ...self.classesActive,
+            ...self.classesOut,
+            ...self.classesDone,
+            ...self.classesInitial,
+            ...self.classesInverse
+          )
+        }
       }
     }
     return activated
