@@ -147,34 +147,7 @@ You need to install [@babel/core](https://www.npmjs.com/package/@babel/core), [@
 npm install @babel/core @babel/preset-env --save-dev
 ```
 
-Then in the root of your project set up polyfills with `babel.config.js`.
-
-```jsx
-const path = require('path')
-
-module.exports = {
-  presets: [
-    [
-      '@babel/preset-env',
-      {
-        useBuiltIns: 'entry',
-        corejs: 3,
-      },
-    ],
-  ],
-}
-```
-
-You need also to set a `.browserslistrc` in the root of your project.
-
-```
-Chrome >= 38
-Safari >= 10
-iOS >= 10
-Firefox >= 38
-Edge >= 13
-Opera >= 25
-```
+Then in the root of your project set up polyfills with [.babel.config.js](https://github.com/minimit/xtendui/blob/beta/.babel.config.js) and [.browserslistrc](https://github.com/minimit/xtendui/blob/beta/.browserslistrc).
 
 ## CDN
 
