@@ -24,6 +24,19 @@ exports.onCreateWebpackConfig = ({ actions }) => {
   })
 }
 
+exports.onCreateBabelConfig = ({ actions }) => {
+  actions.setBabelPreset({
+    name: `babel-preset-gatsby`, // https://github.com/gatsbyjs/gatsby/blob/master/packages/babel-preset-gatsby/README.md
+  })
+  actions.setBabelPreset({
+    name: `@babel/preset-env`,
+    options: {
+      useBuiltIns: 'entry',
+      corejs: 3,
+    },
+  })
+}
+
 // markdown
 
 exports.createPages = ({ actions, graphql }) => {

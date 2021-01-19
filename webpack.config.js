@@ -29,18 +29,6 @@ module.exports = {
         use: [
           {
             loader: 'babel-loader',
-            options: {
-              presets: [
-                [
-                  '@babel/preset-env',
-                  {
-                    useBuiltIns: 'entry',
-                    corejs: 3,
-                  },
-                ],
-              ],
-              plugins: [require.resolve('@babel/plugin-transform-runtime')],
-            },
           },
         ],
       },

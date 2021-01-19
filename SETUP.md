@@ -132,10 +132,10 @@ Then add one time to setup for gsap, see [javascript animation](https://xtendui.
 
 #### Polyfill
 
-You need to install [@babel/core](https://www.npmjs.com/package/@babel/core), [@babel/preset-env](https://www.npmjs.com/package/@babel/preset-env), [@babel/plugin-transform-runtime](https://www.npmjs.com/package/@babel/plugin-transform-runtime).
+You need to install [@babel/core](https://www.npmjs.com/package/@babel/core), [@babel/preset-env](https://www.npmjs.com/package/@babel/preset-env).
 
 ```sh
-npm install @babel/core @babel/preset-env @babel/plugin-transform-runtime --save-dev
+npm install @babel/core @babel/preset-env --save-dev
 ```
 
 Then in the root of your project set up polyfills with `babel.config.js`.
@@ -152,9 +152,6 @@ module.exports = {
         corejs: 3,
       },
     ],
-  ],
-  plugins: [
-    [require.resolve('@babel/plugin-transform-runtime')],
   ],
 }
 ```
