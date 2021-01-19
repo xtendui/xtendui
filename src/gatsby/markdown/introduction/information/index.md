@@ -44,7 +44,7 @@ Xtend UI is a UI framework for custom styling, interactions and animations. Extr
 * Docs icons with [Feather Icons](https://feathericons.com/)
 * Docs images with [Unsplash](https://source.unsplash.com/)
 
-Supported browsers are as follow: **chrome 38**, **safari 10**, **ios 10**, **firefox 38**, **edge 12**, **opera 25**.
+[Supported browsers](https://github.com/minimit/xtendui/blob/beta/.browserslistrc) are the same as [Tailwindcss supported browsers](https://tailwindcss.com/docs/browser-support).
 
 ## Setup
 
