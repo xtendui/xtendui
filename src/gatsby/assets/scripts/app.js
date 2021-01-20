@@ -215,7 +215,7 @@ Xt.mount.push({
         const scrollTriggerLeave = {
           trigger: trigger,
           start: 'top top+=100px',
-          end: 'bottom top+=200px',
+          end: 'bottom top+=100px',
           scrub: 1.5,
         }
 
@@ -234,8 +234,8 @@ Xt.mount.push({
 
         const scrollTriggerEnter = {
           trigger: trigger,
-          start: 'top bottom-=50px',
-          end: 'bottom bottom-=50px',
+          start: 'top bottom+=50px',
+          end: 'bottom bottom+=50px',
           scrub: 1.5,
         }
 
