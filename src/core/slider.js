@@ -59,13 +59,22 @@ class Slider extends Xt.Toggle {
     }
     let fixNegativeMargin = 0
     for (const [i, slide] of self.targets.entries()) {
-      const left = slide.offsetLeft
-      const width = slide.offsetWidth
-      if (i === 0) {
-        fixNegativeMargin = left
+      const slideLeft = slide.offsetLeft
+      let slideWidth = slide.offsetWidth
+      if (slideWidth === 0) {
+        // when display none
+        const container = slide.parentNode
+        const cloned = slide.cloneNode(true)
+        cloned.classList.add('xt-calculating', 'xt-ignore')
+        container.append(cloned)
+        slideWidth = cloned.offsetWidth
+        cloned.remove()
       }
-      Xt.dataStorage.set(slide, `${self.ns}SlideLeft`, left - fixNegativeMargin)
-      Xt.dataStorage.set(slide, `${self.ns}SlideWidth`, width)
+      if (i === 0) {
+        fixNegativeMargin = slideLeft
+      }
+      Xt.dataStorage.set(slide, `${self.ns}SlideLeft`, slideLeft - fixNegativeMargin)
+      Xt.dataStorage.set(slide, `${self.ns}SlideWidth`, slideWidth)
     }
     // initSliderGroup
     self.initSliderGroup()
@@ -97,15 +106,6 @@ class Slider extends Xt.Toggle {
     let doneFirst = false
     for (const target of self.targets) {
       let targetWidth = Xt.dataStorage.get(target, `${self.ns}SlideWidth`)
-      if (targetWidth === 0) {
-        // when display none
-        const container = target.parentNode
-        const cloned = target.cloneNode(true)
-        cloned.classList.add('xt-calculating', 'xt-ignore')
-        container.append(cloned)
-        targetWidth = cloned.offsetWidth
-        cloned.remove()
-      }
       currentCount -= targetWidth
       totalCount -= targetWidth
       // overflow
@@ -218,13 +218,13 @@ class Slider extends Xt.Toggle {
       let fixNegativeMargin = 0
       for (const [i, slide] of self.targets.entries()) {
         // needs to recalculate not only xt-wrap but all targets
-        const left = slide.offsetLeft
-        const width = slide.offsetWidth
+        const slideLeft = slide.offsetLeft
+        const slideWidth = slide.offsetWidth
         if (i === 0) {
-          fixNegativeMargin = left
+          fixNegativeMargin = slideLeft
         }
-        Xt.dataStorage.set(slide, `${self.ns}SlideLeft`, left - fixNegativeMargin)
-        Xt.dataStorage.set(slide, `${self.ns}SlideWidth`, width)
+        Xt.dataStorage.set(slide, `${self.ns}SlideLeft`, slideLeft - fixNegativeMargin)
+        Xt.dataStorage.set(slide, `${self.ns}SlideWidth`, slideWidth)
       }
     }
     self.groupFirst = wrapFirst
@@ -356,11 +356,6 @@ class Slider extends Xt.Toggle {
       }
       // groupInitial
       self.groupInitial = self.group
-    }
-    // @FIX position values negative margins
-    for (const target of self.targets) {
-      let pos = Xt.dataStorage.get(target, `${self.ns}GroupPos`)
-      Xt.dataStorage.set(target, `${self.ns}GroupPos`, pos)
     }
     // set wheel min and max
     if (options.wheel && options.wheel.selector) {
@@ -1112,7 +1107,7 @@ class Slider extends Xt.Toggle {
     // prevent dragging animation
     dragger.classList.remove('duration-none')
     // activation
-    const direction = Math.sign(self.detail.dragPosReal - self.detail.dragPosCurrent)
+    const direction = Math.sign(self.detail.dragDist)
     if (!self.detail.dragBlock && Math.abs(self.detail.dragDistOther) > Math.abs(self.detail.dragDist)) {
       // drag reset
       self.logicDragreset(dragger)
@@ -1120,15 +1115,15 @@ class Slider extends Xt.Toggle {
       // get nearest
       const found = self.logicDragfind(self.currentIndex)
       // if on the same slide as we started draggin
-      // @TEST console.debug(self.currentIndex, found, self.detail.dragIndex)
+      console.debug(self.currentIndex, found, self.detail.dragIndex)
       if (found !== self.detail.dragIndex) {
         // goToNum
         self.goToNum(found)
       } else {
         // change at least one
-        if (direction < 0 && self.detail.dragDirection < 0) {
+        if (direction > 0 && self.detail.dragDirection < 0) {
           self.goToNext(1)
-        } else if (direction > 0 && self.detail.dragDirection > 0) {
+        } else if (direction < 0 && self.detail.dragDirection > 0) {
           self.goToPrev(1)
         } else {
           // drag reset
@@ -1139,8 +1134,6 @@ class Slider extends Xt.Toggle {
       // drag reset
       self.logicDragreset(dragger)
     }
-    // needs to be after logicDragfind
-    self.detail.dragDist = self.detail.dragPosReal - self.detail.dragPosCurrent
     // auto
     self.eventAutoresume()
     // dragging
@@ -1214,10 +1207,10 @@ class Slider extends Xt.Toggle {
         const slide = self.group[i][0]
         const pos = Xt.dataStorage.get(slide, `${self.ns}GroupPos`)
         const width = Xt.dataStorage.get(slide, `${self.ns}GroupWidth`)
-        const diff = self.detail.dragPos - pos - (width / 2) * direction
+        const diff = Math.floor(self.detail.dragPos - pos - (width / 2) * direction)
         // @TEST slide.querySelector('.card').innerHTML = `${diff} ${self.detail.dragDist}`
+        // next in direction from drag diff
         if (diff > 0 && (self.detail.dragDirection < 0 || diff < -self.detail.dragDist)) {
-          // next in direction from drag diff or diff drag when dragging and coming back in direction
           return i
         }
       }
@@ -1226,8 +1219,9 @@ class Slider extends Xt.Toggle {
         const slide = self.group[i][0]
         const pos = Xt.dataStorage.get(slide, `${self.ns}GroupPos`)
         const width = Xt.dataStorage.get(slide, `${self.ns}GroupWidth`)
-        const diff = self.detail.dragPos - pos - (width / 2) * direction
+        const diff = Math.floor(self.detail.dragPos - pos - (width / 2) * direction)
         // @TEST slide.querySelector('.card').innerHTML = `${diff} ${self.detail.dragDist}`
+        // next in direction from drag diff
         if (diff < 0 && (self.detail.dragDirection > 0 || diff > -self.detail.dragDist)) {
           return i
         }
