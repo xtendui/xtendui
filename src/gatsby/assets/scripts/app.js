@@ -53,19 +53,11 @@ Xt.mount.push({
           onUpdate: self => {
             // scrolling-down depending on scroll direction
             if (!self.getVelocity()) return // skip on initial
-            if (
-              object.classList.contains('scrolling-down') &&
-              object.classList.contains('scrolling-hide') &&
-              self.direction < 0
-            ) {
+            if (object.classList.contains('scrolling-hide') && self.direction < 0) {
               object.classList.remove('scrolling-down')
               gsap.killTweensOf(object)
               gsap.to(object, { y: 0, duration: 0.5, ease: 'quart.out' })
-            } else if (
-              !object.classList.contains('scrolling-down') &&
-              object.classList.contains('scrolling-hide') &&
-              self.direction > 0
-            ) {
+            } else if (object.classList.contains('scrolling-hide') && self.direction > 0) {
               object.classList.add('scrolling-down')
               gsap.killTweensOf(object)
               gsap.to(object, {
@@ -114,11 +106,13 @@ Xt.mount.push({
     // methods
 
     const straight = () => {
+      gsap.killTweensOf(background)
       gsap.to(background, { rx: '0%', duration: 0.5, ease: 'quart.out' })
     }
 
     const curve = () => {
       if (!object.classList.contains('scrolling-down')) {
+        gsap.killTweensOf(background)
         gsap.to(background, { rx: '50%', duration: 0.5, ease: 'quart.out' })
       }
     }
@@ -142,8 +136,8 @@ Xt.mount.push({
         ) {
           object.classList.remove('scrolling-down')
           gsap.killTweensOf(object)
-          curve()
           gsap.to(object, { y: 0, duration: 0.5, ease: 'quart.out' })
+          curve()
         } else if (
           !object.classList.contains('scrolling-down') &&
           object.classList.contains('scrolling-hide') &&
@@ -151,12 +145,12 @@ Xt.mount.push({
         ) {
           object.classList.add('scrolling-down')
           gsap.killTweensOf(object)
-          straight()
           gsap.to(object, {
             y: -logo.offsetHeight,
             duration: 0.5,
             ease: 'quart.out',
           })
+          straight()
         }
       },
     })
