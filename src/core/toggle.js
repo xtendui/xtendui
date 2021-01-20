@@ -1715,7 +1715,7 @@ class Toggle {
     if (obj && obj[type] && !obj[type].done) {
       const queueOther = self.detail[`queue${actionOther}`]
       const objOther = queueOther[queueOther.length - 1]
-      /*
+      /* @TEST
       if (objOther) {
         if (objOther[type]) {
           console.debug(actionCurrent, type, objOther[type].done)

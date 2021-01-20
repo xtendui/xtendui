@@ -1087,6 +1087,7 @@ class Slider extends Xt.Toggle {
     if (Math.abs(self.detail.dragDist) > options.drag.threshold) {
       // get nearest
       const found = self.logicDragfind(self.currentIndex)
+      // @TEST console.debug(self.currentIndex, found, self.detail.dragIndex)
       if (found !== self.currentIndex) {
         const currentPos = Xt.dataStorage.get(self.group[found][0], `${self.ns}GroupPos`)
         const pos = Xt.dataStorage.get(self.group[self.currentIndex][0], `${self.ns}GroupPos`)
@@ -1111,16 +1112,19 @@ class Slider extends Xt.Toggle {
     // prevent dragging animation
     dragger.classList.remove('duration-none')
     // activation
-    self.detail.dragDist = self.detail.dragPosReal - self.detail.dragPosCurrent
-    const direction = Math.sign(self.detail.dragDist)
+    const direction = Math.sign(self.detail.dragPosReal - self.detail.dragPosCurrent)
     if (!self.detail.dragBlock && Math.abs(self.detail.dragDistOther) > Math.abs(self.detail.dragDist)) {
       // drag reset
       self.logicDragreset(dragger)
     } else if (Math.abs(self.detail.dragDist) > options.drag.threshold) {
       // get nearest
       const found = self.logicDragfind(self.currentIndex)
-      // if on the same slide as we started dragging
-      if (found === self.detail.dragIndex) {
+      // if on the same slide as we started draggin
+      // @TEST console.debug(self.currentIndex, found, self.detail.dragIndex)
+      if (found !== self.detail.dragIndex) {
+        // goToNum
+        self.goToNum(found)
+      } else {
         // change at least one
         if (direction < 0 && self.detail.dragDirection < 0) {
           self.goToNext(1)
@@ -1130,14 +1134,13 @@ class Slider extends Xt.Toggle {
           // drag reset
           self.logicDragreset(dragger)
         }
-      } else {
-        // goToNum
-        self.goToNum(found)
       }
     } else {
       // drag reset
       self.logicDragreset(dragger)
     }
+    // needs to be after logicDragfind
+    self.detail.dragDist = self.detail.dragPosReal - self.detail.dragPosCurrent
     // auto
     self.eventAutoresume()
     // dragging
@@ -1206,23 +1209,29 @@ class Slider extends Xt.Toggle {
     const self = this
     // find
     const direction = Math.sign(self.detail.dragDist)
-    let old = found
-    for (let i = 0; i < self.group.length; i++) {
-      const slide = self.group[i][0]
-      const pos = Xt.dataStorage.get(slide, `${self.ns}GroupPos`)
-      const width = Xt.dataStorage.get(slide, `${self.ns}GroupWidth`)
-      const diff = self.detail.dragPos - pos - (width / 2) * direction
-      if (diff > 0 && direction < 0 && (self.detail.dragDirection < 0 || diff < -self.detail.dragDist)) {
-        // next in direction from drag diff or diff drag when dragging and coming back in direction
-        return i
-      } else if (diff > 0 && direction > 0 && (self.detail.dragDirection > 0 || diff < self.detail.dragDist)) {
-        // next in direction from drag diff or diff drag when dragging and coming back in direction
-        return old
-      } else if (i === self.group.length - 1 && diff < 0 && diff > -self.detail.dragDist) {
-        // needed for last slide because we return the old, last check is for absolute mode when overflowing
-        return i
+    if (direction < 0) {
+      for (let i = 0; i < self.group.length; i++) {
+        const slide = self.group[i][0]
+        const pos = Xt.dataStorage.get(slide, `${self.ns}GroupPos`)
+        const width = Xt.dataStorage.get(slide, `${self.ns}GroupWidth`)
+        const diff = self.detail.dragPos - pos - (width / 2) * direction
+        // @TEST slide.querySelector('.card').innerHTML = `${diff} ${self.detail.dragDist}`
+        if (diff > 0 && (self.detail.dragDirection < 0 || diff < -self.detail.dragDist)) {
+          // next in direction from drag diff or diff drag when dragging and coming back in direction
+          return i
+        }
       }
-      old = i
+    } else if (direction > 0) {
+      for (let i = self.group.length - 1; i >= 0; i--) {
+        const slide = self.group[i][0]
+        const pos = Xt.dataStorage.get(slide, `${self.ns}GroupPos`)
+        const width = Xt.dataStorage.get(slide, `${self.ns}GroupWidth`)
+        const diff = self.detail.dragPos - pos - (width / 2) * direction
+        // @TEST slide.querySelector('.card').innerHTML = `${diff} ${self.detail.dragDist}`
+        if (diff < 0 && (self.detail.dragDirection > 0 || diff > -self.detail.dragDist)) {
+          return i
+        }
+      }
     }
     return found
   }
