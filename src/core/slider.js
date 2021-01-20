@@ -1210,7 +1210,7 @@ class Slider extends Xt.Toggle {
         const diff = Math.floor(self.detail.dragPos - pos - (width / 2) * direction)
         // @TEST slide.querySelector('.card').innerHTML = `${diff} ${self.detail.dragDist}`
         // next in direction from drag diff
-        if (diff > 0 && (self.detail.dragDirection < 0 || diff < -self.detail.dragDist)) {
+        if (diff > 0 && (self.detail.dragDirection < 0 || diff <= -self.detail.dragDist)) {
           return i
         }
       }
@@ -1222,7 +1222,7 @@ class Slider extends Xt.Toggle {
         const diff = Math.floor(self.detail.dragPos - pos - (width / 2) * direction)
         // @TEST slide.querySelector('.card').innerHTML = `${diff} ${self.detail.dragDist}`
         // next in direction from drag diff
-        if (diff < 0 && (self.detail.dragDirection > 0 || diff > -self.detail.dragDist)) {
+        if (diff < 0 && (self.detail.dragDirection > 0 || diff >= -self.detail.dragDist)) {
           return i
         }
       }
