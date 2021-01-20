@@ -166,7 +166,7 @@ Xt.mount.push({
     ScrollTrigger.create({
       trigger: object,
       start: -1, // needs -1 because start trigger is sticky
-      end: `top top-=${object.offsetHeight}`,
+      end: () => `top top-=${object.offsetHeight}`,
       onUpdate: self => {
         if (self.isActive && object.classList.contains('scrolling-hide')) {
           object.classList.remove('scrolling-hide')
