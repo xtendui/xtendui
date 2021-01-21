@@ -30,6 +30,7 @@ Xt.mount.push({
     // slider
 
     let self = new Xt.Slider(object, {
+      mode: 'absolute',
       instant: true,
       duration: 1500,
     })

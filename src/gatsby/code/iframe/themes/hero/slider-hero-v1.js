@@ -15,12 +15,12 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="slider">
+<div class="slider slider-absolute">
 
   <div class="slides">
     <div class="slides-inner duration-none transform-none">
 
-      <div class="slide w-full slide-absolute">
+      <div class="slide w-full">
         <div class="hero relative block overflow-hidden w-full">
           <div class="hero-inner">
             <div class="media-container h-screen">
@@ -40,7 +40,7 @@ demo.htmlSource = `
         </div>
       </div>
 
-      <div class="slide w-full slide-absolute">
+      <div class="slide w-full">
         <div class="hero relative block overflow-hidden w-full">
           <div class="hero-inner">
             <div class="media-container h-screen">
@@ -60,7 +60,7 @@ demo.htmlSource = `
         </div>
       </div>
 
-      <div class="slide w-full slide-absolute">
+      <div class="slide w-full">
         <div class="hero relative block overflow-hidden w-full">
           <div class="hero-inner">
             <div class="media-container h-screen">
@@ -89,7 +89,7 @@ demo.htmlSource = `
         </div>
       </div>
 
-      <div class="slide w-full slide-absolute">
+      <div class="slide w-full">
         <div class="hero relative block overflow-hidden w-full">
           <div class="hero-inner">
             <div class="media-container h-screen">

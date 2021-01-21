@@ -260,6 +260,9 @@ class Slider extends Xt.Toggle {
           const tl = Xt.dataStorage.get(target, `${self.ns}SlideLeft`)
           const sl = Xt.dataStorage.get(slide, `${self.ns}SlideLeft`)
           slideLeft = tl < slideLeft ? sl : slideLeft
+          if (options.mode === 'absolute') {
+            slideLeft += slidesWidth
+          }
           slideWidth += Xt.dataStorage.get(target, `${self.ns}SlideWidth`)
           slideHeightTemp = Xt.dataStorage.get(target, `${self.ns}SlideHeight`)
           slidesWidth += slideWidth
@@ -1042,13 +1045,11 @@ class Slider extends Xt.Toggle {
           self.detail.dragVelocity = fncOverflow(Math.abs(self.detail.dragVelocity)) * sign
         }
       } else {
-        const firstIndex = self.wrapIndex
-        const lastIndex = self.wrapIndex + self.groupInitial.length - 1
-        if (dragPos > min && self.currentIndex === firstIndex && direction < 0) {
+        if (dragPos > min && direction < 0) {
           self.detail.dragVelocity = -1 // @FIX velocity -1 when done
           const overflow = dragPos - min
           dragPos = min + fncOverflow(overflow)
-        } else if (dragPos < max && self.currentIndex === lastIndex && direction > 0) {
+        } else if (dragPos < max && direction > 0) {
           self.detail.dragVelocity = -1 // @FIX velocity -1 when done
           const overflow = dragPos - max
           dragPos = max - fncOverflow(-overflow)
@@ -1352,6 +1353,7 @@ class Slider extends Xt.Toggle {
 Slider.componentName = 'xt-slider'
 Slider.optionsDefault = {
   // slider
+  mode: 'relative',
   autoHeight: false,
   keepHeight: false,
   group: false,

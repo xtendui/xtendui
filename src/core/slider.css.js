@@ -27,25 +27,27 @@ module.exports = {
       // setup
       position: 'relative',
     },
-    '.slide-absolute': {
+    '.slider-absolute': {
       // setup
-      position: 'relative',
-      display: 'none',
-      '&.in': {
-        display: 'block',
-        zIndex: theme('zIndex.active'),
-      },
-      '&.out': {
-        display: 'block',
-      },
-      '&.next': {
-        display: 'block',
-        zIndex: `calc(${theme('zIndex.active')} + 1)`,
-      },
-      '&:not(.in)': {
-        position: 'absolute',
-        top: '0',
-        left: '0',
+      '.slide': {
+        position: 'relative',
+        display: 'none',
+        '&.in': {
+          display: 'block',
+          zIndex: theme('zIndex.active'),
+        },
+        '&.out': {
+          display: 'block',
+        },
+        '&.next': {
+          display: 'block',
+          zIndex: `calc(${theme('zIndex.active')} + 1)`,
+        },
+        '&:not(.in)': {
+          position: 'absolute',
+          top: '0',
+          left: '0',
+        },
       },
       // @FIX page load height without .active slides
       '&:not(.xt-slider)': {
