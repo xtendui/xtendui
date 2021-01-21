@@ -31,8 +31,6 @@ class Slider extends Xt.Toggle {
       self.dragger = self.object.querySelector(options.drag.dragger)
       self.destroyElements.push(self.dragger)
     }
-    // @FIX performances
-    self.detail.objectWidth = self.object.offsetWidth
     // targets
     self.initScopeTargets()
     // autoHeight and keepHeight
