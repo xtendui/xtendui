@@ -27,10 +27,8 @@ class Slider extends Xt.Toggle {
     const self = this
     const options = self.options
     // dragger
-    if (options.drag && options.drag.dragger) {
-      self.dragger = self.object.querySelector(options.drag.dragger)
-      self.destroyElements.push(self.dragger)
-    }
+    self.dragger = self.object.querySelector(options.drag.dragger)
+    self.destroyElements.push(self.dragger)
     // targets
     self.initScopeTargets()
     // autoHeight and keepHeight
@@ -48,10 +46,8 @@ class Slider extends Xt.Toggle {
     self.destroyWraps()
     // @FIX performances
     self.detail.objectWidth = self.object.offsetWidth
-    if (self.dragger) {
-      self.detail.draggerWidth = self.dragger.offsetWidth
-      self.detail.draggerLeft = self.dragger.offsetLeft
-    }
+    self.detail.draggerWidth = self.dragger.offsetWidth
+    self.detail.draggerLeft = self.dragger.offsetLeft
     let fixNegativeMargin = 0
     for (const [i, slide] of self.targets.entries()) {
       const slideLeft = slide.offsetLeft
@@ -138,7 +134,7 @@ class Slider extends Xt.Toggle {
     const wrapMaxWidth = -self.detail.draggerWidth * (options.drag.wrap - 1)
     let wrapLastCountIteration = 0
     let wrapFirstCountIteration = 0
-    if (self.dragger && options.drag.wrap) {
+    if (options.drag.wrap) {
       const container = self.targets[0].parentNode
       if (Xt.debug) {
         if (!options.loop) {
@@ -432,7 +428,7 @@ class Slider extends Xt.Toggle {
         item.remove()
         self.pags[z][i] = container.querySelectorAll('[data-xt-pag].xt-clone')[i]
         // drag wrap
-        if (self.dragger && options.drag.wrap) {
+        if (options.drag.wrap) {
           const firstIndex = self.wrapIndex
           const lastIndex = self.wrapIndex + self.groupInitial.length - 1
           if (i < firstIndex || i > lastIndex) {
@@ -450,14 +446,13 @@ class Slider extends Xt.Toggle {
     super.initEvents()
     const self = this
     const options = self.options
-    const dragger = self.dragger
     // dragger
-    if (options.drag && !options.drag.manual) {
+    if (!options.drag.manual) {
       // drag start
       const dragstartHandler = Xt.dataStorage.put(
         window,
         `mousedown touchstart/drag/${self.ns}`,
-        self.eventDragstartHandler.bind(self).bind(self, dragger)
+        self.eventDragstartHandler.bind(self)
       )
       const events = ['mousedown', 'touchstart']
       for (const event of events) {
@@ -465,27 +460,23 @@ class Slider extends Xt.Toggle {
       }
       // @FIX prevent dragging links and images
       const dragstartFixHandler = Xt.dataStorage.put(window, `dragstart/drag/${self.ns}`, self.eventDragstartFix)
-      dragger.addEventListener('dragstart', dragstartFixHandler)
+      self.dragger.addEventListener('dragstart', dragstartFixHandler)
       // xt-grab
       if (!self.disabled) {
-        dragger.classList.add('xt-grab')
+        self.dragger.classList.add('xt-grab')
       } else {
-        dragger.classList.remove('xt-grab')
+        self.dragger.classList.remove('xt-grab')
       }
       // wheel
       if (options.wheel && options.wheel.selector) {
         const wheel = self.wheel
-        wheel.addEventListener(`wheelstart.${self.componentNs}`, self.logicDragstart.bind(self).bind(self, dragger))
-        wheel.addEventListener(`wheel.${self.componentNs}`, self.logicDrag.bind(self).bind(self, dragger))
-        wheel.addEventListener(`wheelend.${self.componentNs}`, self.logicDragend.bind(self).bind(self, dragger))
+        wheel.addEventListener(`wheelstart.${self.componentNs}`, self.logicDragstart.bind(self))
+        wheel.addEventListener(`wheel.${self.componentNs}`, self.logicDrag.bind(self))
+        wheel.addEventListener(`wheelend.${self.componentNs}`, self.logicDragend.bind(self))
       }
     }
     // resize
-    const reinitHandler = Xt.dataStorage.put(
-      window,
-      `resize/reinit/${self.ns}`,
-      self.eventReinitHandler.bind(self).bind(self)
-    )
+    const reinitHandler = Xt.dataStorage.put(window, `resize/reinit/${self.ns}`, self.eventReinitHandler.bind(self))
     addEventListener('resize', reinitHandler)
   }
 
@@ -522,14 +513,13 @@ class Slider extends Xt.Toggle {
 
   /**
    * element drag on handler
-   * @param {Node|HTMLElement|EventTarget|Window} dragger
    * @param {Event} e
    */
-  eventDragstartHandler(dragger, e) {
+  eventDragstartHandler(e) {
     const self = this
     const options = self.options
     // not when outside dragger
-    if (!dragger.contains(e.target)) {
+    if (!self.dragger.contains(e.target)) {
       return
     }
     // not right click or it gets stuck
@@ -538,16 +528,16 @@ class Slider extends Xt.Toggle {
       if (options.eventLimit) {
         const eventLimit = self.container.querySelectorAll(options.eventLimit)
         if (!Xt.contains(eventLimit, e.target) || e.target.closest('.event-force')) {
-          self.eventDragstart(dragger, e)
+          self.eventDragstart(e)
         }
       } else {
-        self.eventDragstart(dragger, e)
+        self.eventDragstart(e)
       }
       // dragend
       const dragendHandler = Xt.dataStorage.put(
         window,
         `mouseup touchend/drag/${self.ns}`,
-        self.eventDragendHandler.bind(self).bind(self, dragger)
+        self.eventDragendHandler.bind(self)
       )
       const events = ['mouseup', 'touchend']
       for (const event of events) {
@@ -558,50 +548,47 @@ class Slider extends Xt.Toggle {
 
   /**
    * element drag off handler
-   * @param {Node|HTMLElement|EventTarget|Window} dragger
    * @param {Event} e
    */
-  eventDragendHandler(dragger, e) {
+  eventDragendHandler(e) {
     const self = this
     const options = self.options
     // logic
     if (options.eventLimit) {
       const eventLimit = self.container.querySelectorAll(options.eventLimit)
       if (!Xt.contains(eventLimit, e.target) || e.target.closest('.event-force')) {
-        self.eventDragend(dragger, e)
+        self.eventDragend(e)
       }
     } else {
-      self.eventDragend(dragger, e)
+      self.eventDragend(e)
     }
   }
 
   /**
    * element drag on
-   * @param {Node|HTMLElement|EventTarget|Window} dragger
    * @param {Event} e
    */
-  eventDragstart(dragger, e) {
+  eventDragstart(e) {
     const self = this
     // event move
     const dragHandler = Xt.dataStorage.put(
       window,
       `mousemove touchmove/drag/${self.ns}`,
-      self.eventDragHandler.bind(self).bind(self, dragger)
+      self.eventDragHandler.bind(self)
     )
     const events = ['mousemove', 'touchmove']
     for (const event of events) {
       addEventListener(event, dragHandler, { passive: false })
     }
     // logic
-    self.logicDragstart(dragger, e)
+    self.logicDragstart(e)
   }
 
   /**
    * element drag off
-   * @param {Node|HTMLElement|EventTarget|Window} dragger
    * @param {Event} e
    */
-  eventDragend(dragger, e) {
+  eventDragend(e) {
     const self = this
     // event off
     const dragendHandler = Xt.dataStorage.get(window, `mouseup touchend/drag/${self.ns}`)
@@ -618,24 +605,23 @@ class Slider extends Xt.Toggle {
     // @FIX on.xt.slider event after all drag.xt.slider
     requestAnimationFrame(() => {
       // logic
-      self.logicDragend(dragger, e)
+      self.logicDragend(e)
     })
   }
 
   /**
    * element drag handler
-   * @param {Node|HTMLElement|EventTarget|Window} dragger
    * @param {Event} e
    */
-  eventDragHandler(dragger, e) {
+  eventDragHandler(e) {
     const self = this
     // logic
-    cancelAnimationFrame(Xt.dataStorage.get(dragger, `${self.ns}DragFrame`))
+    cancelAnimationFrame(Xt.dataStorage.get(self.dragger, `${self.ns}DragFrame`))
     Xt.dataStorage.set(
-      dragger,
+      self.dragger,
       `${self.ns}DragFrame`,
       requestAnimationFrame(() => {
-        self.logicDrag(dragger, e)
+        self.logicDrag(e)
       })
     )
   }
@@ -701,26 +687,23 @@ class Slider extends Xt.Toggle {
         }
       }
       // dragger
-      const dragger = self.dragger
-      if (dragger && !options.drag.manual) {
+      if (!options.drag.manual) {
         // prevent alignment animation
-        dragger.classList.remove('duration-none')
+        self.dragger.classList.remove('duration-none')
         // initial or resizing
         if (self.initial) {
           // prevent alignment animation
-          dragger.classList.add('duration-none')
+          self.dragger.classList.add('duration-none')
           requestAnimationFrame(() => {
-            dragger.classList.remove('duration-none')
+            self.dragger.classList.remove('duration-none')
           })
         }
         // drag position
-        if (!options.drag.manual) {
-          dragger.style.transform = `translateX(${self.detail.dragPos}px)`
-        }
+        self.dragger.style.transform = `translateX(${self.detail.dragPos}px)`
         // disable links not active slide
         const duration = self.options.duration || self.options.durationOn
         Xt.animTimeout(
-          dragger,
+          self.dragger,
           () => {
             if (options.jump) {
               if (options.jumpOverflow) {
@@ -757,7 +740,7 @@ class Slider extends Xt.Toggle {
           self.initial ? 0 : duration ? duration / Xt.durationTimescale : null
         )
         // disable dragger
-        dragger.classList.add('xt-pointer-events-none')
+        self.dragger.classList.add('xt-pointer-events-none')
         for (const nav of self.navs) {
           nav.classList.add('xt-pointer-events-none')
         }
@@ -765,9 +748,9 @@ class Slider extends Xt.Toggle {
           el.classList.add('xt-pointer-events-none')
         }
         Xt.animTimeout(
-          dragger,
+          self.dragger,
           () => {
-            dragger.classList.remove('xt-pointer-events-none')
+            self.dragger.classList.remove('xt-pointer-events-none')
             for (const nav of self.navs) {
               nav.classList.remove('xt-pointer-events-none')
             }
@@ -779,13 +762,13 @@ class Slider extends Xt.Toggle {
           self.initial ? 0 : duration ? duration / Xt.durationTimescale : null
         )
         // disable links
-        dragger.classList.remove('xt-links-none')
-        dragger.classList.remove('xt-jumps-none')
+        self.dragger.classList.remove('xt-links-none')
+        self.dragger.classList.remove('xt-jumps-none')
         // drag wrap
-        if (self.dragger && options.drag.wrap && !options.drag.manual && !self.wrap) {
+        if (options.drag.wrap && !options.drag.manual && !self.wrap) {
           // @FIX wrap around xt-wrap items
           Xt.animTimeout(
-            dragger,
+            self.dragger,
             () => {
               self.eventWrap()
             },
@@ -795,7 +778,7 @@ class Slider extends Xt.Toggle {
       }
     } else if (!e || !e.type || e.type !== `on.trigger.${self.componentNs}`) {
       // drag reset
-      self.logicDragreset(self.dragger)
+      self.logicDragreset()
     }
     // super
     super.eventOn(element, force, e)
@@ -847,10 +830,9 @@ class Slider extends Xt.Toggle {
 
   /**
    * element drag on logic
-   * @param {Node|HTMLElement|EventTarget|Window} dragger
    * @param {Event} e
    */
-  logicDragstart(dragger, e) {
+  logicDragstart(e) {
     const self = this
     const options = self.options
     // disabled
@@ -875,7 +857,7 @@ class Slider extends Xt.Toggle {
     // auto
     self.eventAutopause()
     // prevent dragging animation
-    dragger.classList.add('duration-none')
+    self.dragger.classList.add('duration-none')
     // logic
     self.detail.dragIndex = self.currentIndex
     self.detail.dragVelocity = null
@@ -885,16 +867,15 @@ class Slider extends Xt.Toggle {
     self.detail.dragBlock = false
     // listener dispatch
     if (!self.initial) {
-      dragger.dispatchEvent(new CustomEvent(`dragstart.${self.componentNs}`))
+      self.dragger.dispatchEvent(new CustomEvent(`dragstart.${self.componentNs}`))
     }
   }
 
   /**
    * element drag off logic
-   * @param {Node|HTMLElement|EventTarget|Window} dragger
    * @param {Event} e
    */
-  logicDragend(dragger, e) {
+  logicDragend(e) {
     const self = this
     const options = self.options
     // disabled
@@ -921,16 +902,16 @@ class Slider extends Xt.Toggle {
     self.inverse = self.direction < 0
     // disable links
     requestAnimationFrame(() => {
-      dragger.classList.remove('xt-links-none')
-      dragger.classList.remove('xt-jumps-none')
+      self.dragger.classList.remove('xt-links-none')
+      self.dragger.classList.remove('xt-jumps-none')
     })
     // prevent dragging animation
-    dragger.classList.remove('duration-none')
+    self.dragger.classList.remove('duration-none')
     // activation
     const direction = Math.sign(self.detail.dragDist)
     if (!self.detail.dragBlock && Math.abs(self.detail.dragDistOther) > Math.abs(self.detail.dragDist)) {
       // drag reset
-      self.logicDragreset(dragger)
+      self.logicDragreset()
     } else if (Math.abs(self.detail.dragDist) > options.drag.threshold) {
       // get nearest
       const found = self.logicDragfind(self.currentIndex)
@@ -947,12 +928,12 @@ class Slider extends Xt.Toggle {
           self.goToPrev(1)
         } else {
           // drag reset
-          self.logicDragreset(dragger)
+          self.logicDragreset()
         }
       }
     } else {
       // drag reset
-      self.logicDragreset(dragger)
+      self.logicDragreset()
     }
     // auto
     self.eventAutoresume()
@@ -960,16 +941,15 @@ class Slider extends Xt.Toggle {
     self.detail.dragging = false
     // listener dispatch
     if (!self.initial) {
-      dragger.dispatchEvent(new CustomEvent(`dragend.${self.componentNs}`))
+      self.dragger.dispatchEvent(new CustomEvent(`dragend.${self.componentNs}`))
     }
   }
 
   /**
    * element drag logic
-   * @param {Node|HTMLElement|EventTarget|Window} dragger
    * @param {Event} e
    */
-  logicDrag(dragger, e) {
+  logicDrag(e) {
     const self = this
     const options = self.options
     // disabled
@@ -996,8 +976,8 @@ class Slider extends Xt.Toggle {
     self.detail.dragDistOther = self.detail.dragStartOther - self.detail.dragCurrentOther
     if (Math.abs(self.detail.dragDist) > options.drag.threshold) {
       // disable links
-      dragger.classList.add('xt-links-none')
-      dragger.classList.add('xt-jumps-none')
+      self.dragger.classList.add('xt-links-none')
+      self.dragger.classList.add('xt-jumps-none')
     }
     if (!self.detail.dragBlock && Math.abs(self.detail.dragDistOther) > Math.abs(self.detail.dragDist)) {
       // block drag if scrolling
@@ -1057,7 +1037,7 @@ class Slider extends Xt.Toggle {
     if (self.initial) {
       self.dragger.classList.add('xt-transition-none')
     }
-    dragger.style.transform = `translateX(${self.detail.dragPos}px)`
+    self.dragger.style.transform = `translateX(${self.detail.dragPos}px)`
     if (self.initial) {
       self.dragger.classList.remove('xt-transition-none')
     }
@@ -1076,21 +1056,20 @@ class Slider extends Xt.Toggle {
     }
     // listener dispatch
     if (!self.initial) {
-      dragger.dispatchEvent(new CustomEvent(`drag.${self.componentNs}`))
+      self.dragger.dispatchEvent(new CustomEvent(`drag.${self.componentNs}`))
     }
   }
 
   /**
    * element drag reset logic
-   * @param {Node|HTMLElement|EventTarget|Window} dragger
    */
-  logicDragreset(dragger) {
+  logicDragreset() {
     const self = this
     // val
     self.detail.dragPosOld = self.detail.dragPos
     self.detail.dragPos = self.detail.dragPosCurrent
     // disable dragger
-    dragger.classList.add('xt-pointer-events-none')
+    self.dragger.classList.add('xt-pointer-events-none')
     for (const nav of self.navs) {
       nav.classList.add('xt-pointer-events-none')
     }
@@ -1098,9 +1077,9 @@ class Slider extends Xt.Toggle {
       el.classList.add('xt-pointer-events-none')
     }
     Xt.animTimeout(
-      dragger,
+      self.dragger,
       () => {
-        dragger.classList.remove('xt-pointer-events-none')
+        self.dragger.classList.remove('xt-pointer-events-none')
         for (const nav of self.navs) {
           nav.classList.remove('xt-pointer-events-none')
         }
@@ -1115,7 +1094,7 @@ class Slider extends Xt.Toggle {
     if (self.initial) {
       self.dragger.classList.add('xt-transition-none')
     }
-    dragger.style.transform = `translateX(${self.detail.dragPosCurrent}px)`
+    self.dragger.style.transform = `translateX(${self.detail.dragPosCurrent}px)`
     if (self.initial) {
       self.dragger.classList.remove('xt-transition-none')
     }
@@ -1123,7 +1102,7 @@ class Slider extends Xt.Toggle {
     self.eventAutostart()
     // listener dispatch
     if (!self.initial) {
-      dragger.dispatchEvent(new CustomEvent(`dragreset.${self.componentNs}`))
+      self.dragger.dispatchEvent(new CustomEvent(`dragreset.${self.componentNs}`))
     }
   }
 
@@ -1173,15 +1152,11 @@ class Slider extends Xt.Toggle {
   enable() {
     super.enable()
     const self = this
-    const dragger = self.dragger
-    // enable
-    if (dragger) {
-      // dragger
-      dragger.classList.add('xt-transition-none')
-      requestAnimationFrame(() => {
-        dragger.classList.remove('xt-transition-none')
-      })
-    }
+    // dragger
+    self.dragger.classList.add('xt-transition-none')
+    requestAnimationFrame(() => {
+      self.dragger.classList.remove('xt-transition-none')
+    })
   }
 
   /**
@@ -1191,19 +1166,18 @@ class Slider extends Xt.Toggle {
     super.disable()
     const self = this
     const options = self.options
-    const dragger = self.dragger
     // disable
-    if (dragger && !options.drag.manual) {
+    if (!options.drag.manual) {
       // grab
-      dragger.classList.remove('xt-grab')
+      self.dragger.classList.remove('xt-grab')
       // links
-      dragger.classList.remove('xt-links-none')
+      self.dragger.classList.remove('xt-links-none')
       // jump
-      dragger.classList.add('xt-jumps-none')
+      self.dragger.classList.add('xt-jumps-none')
       // dragger
-      dragger.classList.add('xt-transition-none')
+      self.dragger.classList.add('xt-transition-none')
       requestAnimationFrame(() => {
-        dragger.classList.remove('xt-transition-none')
+        self.dragger.classList.remove('xt-transition-none')
       })
     }
     if (self.autoHeight) {
@@ -1265,19 +1239,16 @@ class Slider extends Xt.Toggle {
    */
   destroyWraps() {
     const self = this
-    // drag wrap
-    if (self.dragger) {
-      // clear elements
-      for (const el of self.elements.filter(x => x.classList.contains('xt-wrap'))) {
-        el.remove()
-      }
-      self.elements = self.elements.filter(x => !x.classList.contains('xt-wrap'))
-      // clear targets
-      for (const tr of self.targets.filter(x => x.classList.contains('xt-wrap'))) {
-        tr.remove()
-      }
-      self.targets = self.targets.filter(x => !x.classList.contains('xt-wrap'))
+    // clear wrap elements
+    for (const el of self.elements.filter(x => x.classList.contains('xt-wrap'))) {
+      el.remove()
     }
+    self.elements = self.elements.filter(x => !x.classList.contains('xt-wrap'))
+    // clear wrap targets
+    for (const tr of self.targets.filter(x => x.classList.contains('xt-wrap'))) {
+      tr.remove()
+    }
+    self.targets = self.targets.filter(x => !x.classList.contains('xt-wrap'))
   }
 
   //
