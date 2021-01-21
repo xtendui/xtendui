@@ -261,6 +261,7 @@ class Slider extends Xt.Toggle {
           const sl = Xt.dataStorage.get(slide, `${self.ns}SlideLeft`)
           slideLeft = tl < slideLeft ? sl : slideLeft
           if (options.mode === 'absolute') {
+            // when absolute mode make fake positions as if all items displaced inside dragger
             slideLeft += slidesWidth
           }
           slideWidth += Xt.dataStorage.get(target, `${self.ns}SlideWidth`)
@@ -477,7 +478,6 @@ class Slider extends Xt.Toggle {
         wheel.addEventListener(`wheelstart.${self.componentNs}`, self.logicDragstart.bind(self).bind(self, dragger))
         wheel.addEventListener(`wheel.${self.componentNs}`, self.logicDrag.bind(self).bind(self, dragger))
         wheel.addEventListener(`wheelend.${self.componentNs}`, self.logicDragend.bind(self).bind(self, dragger))
-        wheel.addEventListener(`wheelend.${self.componentNs}`, self.logicDragfrictionend.bind(self).bind(self, dragger))
       }
     }
     // resize
@@ -615,8 +615,11 @@ class Slider extends Xt.Toggle {
     for (const event of eventsmove) {
       removeEventListener(event, dragHandler)
     }
-    // logic
-    self.logicDragend(dragger, e)
+    // @FIX on.xt.slider event after all drag.xt.slider
+    requestAnimationFrame(() => {
+      // logic
+      self.logicDragend(dragger, e)
+    })
   }
 
   /**
@@ -913,42 +916,51 @@ class Slider extends Xt.Toggle {
       self.detail.dragCurrent = e.touches[0].clientX
       self.detail.dragCurrentOther = e.touches[0].clientY
     }
-    // logic
-    self.logicDragfriction(dragger, e)
-  }
-
-  /**
-   * element drag friction logic
-   * @param {Node|HTMLElement|EventTarget|Window} dragger
-   * @param {Event} e
-   */
-  logicDragfriction(dragger, e) {
-    const self = this
-    const options = self.options
-    // friction
-    if (Math.abs(self.detail.dragVelocity) > options.drag.frictionLimit) {
-      // disable dragger
-      dragger.classList.add('xt-pointer-events-none')
-      for (const nav of self.navs) {
-        nav.classList.add('xt-pointer-events-none')
+    // fix direction
+    self.direction = self.detail.dragStart - self.detail.dragCurrentReal < 0 ? -1 : 1
+    self.inverse = self.direction < 0
+    // disable links
+    requestAnimationFrame(() => {
+      dragger.classList.remove('xt-links-none')
+      dragger.classList.remove('xt-jumps-none')
+    })
+    // prevent dragging animation
+    dragger.classList.remove('duration-none')
+    // activation
+    const direction = Math.sign(self.detail.dragDist)
+    if (!self.detail.dragBlock && Math.abs(self.detail.dragDistOther) > Math.abs(self.detail.dragDist)) {
+      // drag reset
+      self.logicDragreset(dragger)
+    } else if (Math.abs(self.detail.dragDist) > options.drag.threshold) {
+      // get nearest
+      const found = self.logicDragfind(self.currentIndex)
+      // if on the same slide as we started draggin
+      // @TEST console.debug(self.currentIndex, found, self.detail.dragIndex)
+      if (found !== self.detail.dragIndex) {
+        // goToNum
+        self.goToNum(found)
+      } else {
+        // change at least one
+        if (direction > 0 && self.detail.dragDirection < 0) {
+          self.goToNext(1)
+        } else if (direction < 0 && self.detail.dragDirection > 0) {
+          self.goToPrev(1)
+        } else {
+          // drag reset
+          self.logicDragreset(dragger)
+        }
       }
-      for (const el of self.elements) {
-        el.classList.add('xt-pointer-events-none')
-      }
-      // drag
-      self.logicDrag(dragger, e, true)
-      // loop
-      requestAnimationFrame(() => {
-        self.logicDragfriction(dragger, e)
-      })
-    } else if (self.detail.dragVelocity) {
-      // disable links
-      requestAnimationFrame(() => {
-        dragger.classList.remove('xt-links-none')
-        dragger.classList.remove('xt-jumps-none')
-      })
-      // dragend
-      requestAnimationFrame(self.logicDragfrictionend.bind(self).bind(e, dragger))
+    } else {
+      // drag reset
+      self.logicDragreset(dragger)
+    }
+    // auto
+    self.eventAutoresume()
+    // dragging
+    self.detail.dragging = false
+    // listener dispatch
+    if (!self.initial) {
+      dragger.dispatchEvent(new CustomEvent(`dragend.${self.componentNs}`))
     }
   }
 
@@ -956,9 +968,8 @@ class Slider extends Xt.Toggle {
    * element drag logic
    * @param {Node|HTMLElement|EventTarget|Window} dragger
    * @param {Event} e
-   * @param {Boolean} friction
    */
-  logicDrag(dragger, e, friction = false) {
+  logicDrag(dragger, e) {
     const self = this
     const options = self.options
     // disabled
@@ -1001,32 +1012,14 @@ class Slider extends Xt.Toggle {
     // calculate
     let dragPos = self.detail.dragPosReal
     const dragPosCurrent = self.detail.dragPosCurrent || 0
-    const sign = Math.sign(self.detail.dragVelocity)
-    if (friction && options.drag.friction) {
-      // momentum
-      const fncFriction = options.drag.friction
-      self.detail.dragVelocity = fncFriction(Math.abs(self.detail.dragVelocity)) * sign
-      // no momentum when stopping
-      if (self.detail.dragDate) {
-        self.detail.dragDateDiff = new Date() - self.detail.dragDate
-        self.detail.dragDate = null
-        if (self.detail.dragDateDiff > options.drag.frictionTime) {
-          self.detail.dragVelocity = -1 // @FIX velocity -1 when done
-        }
-      }
-      // on friction
-      dragPos = dragPos + self.detail.dragVelocity
-      self.detail.dragCurrent = dragPos + self.detail.dragStart - dragPosCurrent
-    } else {
-      // momentum
-      self.detail.dragDate = new Date()
-      // on normal drag
-      const dragPosOld = dragPos || 0
-      dragPos = dragPosCurrent + (self.detail.dragCurrent - self.detail.dragStart) * options.drag.factor
-      // keep some velocity (median value of previous frame and not current frame)
-      self.detail.dragVelocity = (self.detail.dragVelocity + self.detail.dragVelocityNext) / 2
-      self.detail.dragVelocityNext = dragPos - dragPosOld
-    }
+    // momentum
+    self.detail.dragDate = new Date()
+    // on normal drag
+    const dragPosOld = dragPos || 0
+    dragPos = dragPosCurrent + (self.detail.dragCurrent - self.detail.dragStart) * options.drag.factor
+    // keep some velocity (median value of previous frame and not current frame)
+    self.detail.dragVelocity = (self.detail.dragVelocity + self.detail.dragVelocityNext) / 2
+    self.detail.dragVelocityNext = dragPos - dragPosOld
     // val
     self.detail.dragPosReal = dragPos
     self.detail.dragCurrentReal = self.detail.dragCurrent
@@ -1040,20 +1033,14 @@ class Slider extends Xt.Toggle {
       // overflow
       const direction = Math.sign(self.detail.dragDist)
       const fncOverflow = options.drag.overflow
-      if (friction && options.drag.friction) {
-        if (dragPos > min || dragPos < max) {
-          self.detail.dragVelocity = fncOverflow(Math.abs(self.detail.dragVelocity)) * sign
-        }
-      } else {
-        if (dragPos > min && direction < 0) {
-          self.detail.dragVelocity = -1 // @FIX velocity -1 when done
-          const overflow = dragPos - min
-          dragPos = min + fncOverflow(overflow)
-        } else if (dragPos < max && direction > 0) {
-          self.detail.dragVelocity = -1 // @FIX velocity -1 when done
-          const overflow = dragPos - max
-          dragPos = max - fncOverflow(-overflow)
-        }
+      if (dragPos > min && direction < 0) {
+        self.detail.dragVelocity = -1 // @FIX velocity -1 when done
+        const overflow = dragPos - min
+        dragPos = min + fncOverflow(overflow)
+      } else if (dragPos < max && direction > 0) {
+        self.detail.dragVelocity = -1 // @FIX velocity -1 when done
+        const overflow = dragPos - max
+        dragPos = max - fncOverflow(-overflow)
       }
     }
     // val
@@ -1094,54 +1081,7 @@ class Slider extends Xt.Toggle {
   }
 
   /**
-   * element drag friction off logic
-   * @param {Node|HTMLElement|EventTarget|Window} dragger
-   */
-  logicDragfrictionend(dragger) {
-    const self = this
-    const options = self.options
-    // prevent dragging animation
-    dragger.classList.remove('duration-none')
-    // activation
-    const direction = Math.sign(self.detail.dragDist)
-    if (!self.detail.dragBlock && Math.abs(self.detail.dragDistOther) > Math.abs(self.detail.dragDist)) {
-      // drag reset
-      self.logicDragreset(dragger)
-    } else if (Math.abs(self.detail.dragDist) > options.drag.threshold) {
-      // get nearest
-      const found = self.logicDragfind(self.currentIndex)
-      // if on the same slide as we started draggin
-      // @TEST console.debug(self.currentIndex, found, self.detail.dragIndex)
-      if (found !== self.detail.dragIndex) {
-        // goToNum
-        self.goToNum(found)
-      } else {
-        // change at least one
-        if (direction > 0 && self.detail.dragDirection < 0) {
-          self.goToNext(1)
-        } else if (direction < 0 && self.detail.dragDirection > 0) {
-          self.goToPrev(1)
-        } else {
-          // drag reset
-          self.logicDragreset(dragger)
-        }
-      }
-    } else {
-      // drag reset
-      self.logicDragreset(dragger)
-    }
-    // auto
-    self.eventAutoresume()
-    // dragging
-    self.detail.dragging = false
-    // listener dispatch
-    if (!self.initial) {
-      dragger.dispatchEvent(new CustomEvent(`dragend.${self.componentNs}`))
-    }
-  }
-
-  /**
-   * element drag friction off logic
+   * element drag reset logic
    * @param {Node|HTMLElement|EventTarget|Window} dragger
    */
   logicDragreset(dragger) {
@@ -1149,9 +1089,6 @@ class Slider extends Xt.Toggle {
     // val
     self.detail.dragPosOld = self.detail.dragPos
     self.detail.dragPos = self.detail.dragPosCurrent
-    // fix direction
-    self.direction = self.detail.dragStart - self.detail.dragCurrentReal < 0 ? -1 : 1
-    self.inverse = self.direction < 0
     // disable dragger
     dragger.classList.add('xt-pointer-events-none')
     for (const nav of self.navs) {
@@ -1367,14 +1304,6 @@ Slider.optionsDefault = {
     manual: false,
     threshold: 25,
     factor: 1,
-    friction: false,
-    /*
-    friction: velocity => {
-      return Math.pow(velocity, 0.95)
-    },
-    frictionLimit: 1.5,
-    frictionTime: 25,
-    */
     overflow: overflow => {
       return Math.pow(overflow, 0.73)
     },

@@ -85,24 +85,6 @@ You can add navigation with `[data-xt-nav="value"]` to set the amount to add (`+
 
 </div>	
 
-#### Friction	
-
-@TODO	
-
-You can set friction with `drag: { friction: Function }`, for example `(velocity) => {return Math.pow(velocity, 0.9)}`.	
-
-You can disable friction with `drag: { friction: false }`.	
-
-<div class="table-overflow">	
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |	
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |	
-| Option                  | `drag.friction:Function`                          | `<function>`        | Function for friction             |	
-| Option                  | `drag.frictionLimit:Number`                          | `1.5`        | Limit for friction calculation             |	
-| Option                  | `drag.frictionTime:Milliseconds`                          | `25`        | Milliseconds after we disable drag friction building            |	
-
-</div>	
-
 #### Overflow	
 
 @TODO	
