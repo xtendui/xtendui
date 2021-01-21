@@ -33,9 +33,6 @@ class Slider extends Xt.Toggle {
     }
     // @FIX performances
     self.detail.objectWidth = self.object.offsetWidth
-    if (self.dragger) {
-      self.detail.draggerWidth = self.dragger.offsetWidth
-    }
     // targets
     self.initScopeTargets()
     // autoHeight and keepHeight
@@ -1115,7 +1112,7 @@ class Slider extends Xt.Toggle {
       // get nearest
       const found = self.logicDragfind(self.currentIndex)
       // if on the same slide as we started draggin
-      console.debug(self.currentIndex, found, self.detail.dragIndex)
+      // @TEST console.debug(self.currentIndex, found, self.detail.dragIndex)
       if (found !== self.detail.dragIndex) {
         // goToNum
         self.goToNum(found)
